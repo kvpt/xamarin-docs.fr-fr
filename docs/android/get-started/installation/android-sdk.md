@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 08/09/2018
-ms.openlocfilehash: 9d8b3e68aa626890fdce5c004928541ece263703
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
-ms.translationtype: MT
+ms.openlocfilehash: 6e80daf2be1b672dc7d0de3e303dfb9261c10472
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73020804"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940916"
 ---
 # <a name="setting-up-the-android-sdk-for-xamarinandroid"></a>Configuration du kit Android SDK pour Xamarin.Android
 
@@ -29,7 +29,7 @@ Xamarin Android SDK Manager (installé avec la charge de travail du**développem
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Spécifications
 
 Pour utiliser le Gestionnaire Xamarin Android SDK, vous avez besoin des éléments suivants :
 
@@ -45,7 +45,7 @@ Le Gestionnaire Xamarin Android SDK requiert également le Kit de développemen
 
 - Vous pouvez continuer d’utiliser [JDK 7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) si vous développez des applications spécifiquement pour le niveau d’API 23 ou des niveaux antérieurs.
 
-- Si vous utilisez Visual Studio 15,8 Preview 5 ou une version ultérieure, vous pouvez essayer [d’utiliser la distribution mobile openjdk de Microsoft](openjdk.md) plutôt que JDK 8.
+- Si vous utilisez Visual Studio 15.8 Preview 5 ou une version ultérieure, vous pouvez essayer d’avoir recours à la [distribution Mobile OpenJDK de Microsoft](openjdk.md) au lieu du kit JDK 8.
 
 > [!IMPORTANT]
 > Xamarin.Android ne prend pas en charge JDK 9.
@@ -119,13 +119,13 @@ Par défaut, le Gestionnaire Android SDK télécharge les composants et les outi
 
 [![Sélection du référentiel Google](android-sdk-images/win/11-google-repo-w157-sml.png)](android-sdk-images/win/11-google-repo-w157.png#lightbox)
 
-Lorsque le référentiel Google est sélectionné, des packages supplémentaires peuvent apparaître sous l’onglet **Plateformes**, qui n’étaient pas disponibles précédemment. (Dans la capture d’écran ci-dessus, **Android SDK plateforme 28** a été ajoutée en basculant sur le référentiel Google.) Gardez à l’esprit que l’utilisation du référentiel Google n’est pas prise en charge et n’est donc pas recommandée pour le développement quotidien.
+Lorsque le référentiel Google est sélectionné, des packages supplémentaires peuvent apparaître sous l’onglet **Plateformes**, qui n’étaient pas disponibles précédemment. (Dans la capture d’écran ci-dessus, **Android SDK Platform 28** a été ajouté en basculant vers le référentiel Google.) N’oubliez pas que l’utilisation du référentiel Google n’est pas prise en charge et qu’elle n’est donc pas recommandée pour le développement de tous les jours.
 
 Pour revenir au référentiel pris en charge de plateformes et d’outils, cliquez sur **Microsoft (recommandé)** . Cette opération restaure la liste des packages et des outils à la sélection par défaut.
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Spécifications
 
 Pour utiliser le Gestionnaire Xamarin Android SDK, vous avez besoin des éléments suivants :
 
@@ -137,7 +137,7 @@ Le Gestionnaire Xamarin Android SDK requiert également le Kit de développemen
 
 - Vous pouvez continuer d’utiliser [JDK 7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) si vous développez des applications spécifiquement pour le niveau d’API 23 ou des niveaux antérieurs.
 
-- Si vous utilisez Visual Studio pour Mac 7,7 ou une version ultérieure, vous pouvez essayer [d’utiliser la distribution openjdk de Microsoft Mobile](openjdk.md) au lieu de JDK 8.
+- Si vous utilisez Visual Studio pour Mac 7.7 ou une version ultérieure, vous pouvez essayer d’avoir recours à la [distribution Mobile OpenJDK de Microsoft](openjdk.md) au lieu du kit JDK 8.
 
 > [!IMPORTANT]
 > Xamarin.Android ne prend pas en charge JDK 9.
@@ -209,7 +209,7 @@ Par défaut, le Gestionnaire Android SDK télécharge les composants et les outi
 
 [![Sélection du référentiel Google](android-sdk-images/mac/09-google-repo-m75-sml.png)](android-sdk-images/mac/09-google-repo-m75.png#lightbox)
 
-Lorsque le référentiel Google est sélectionné, des packages supplémentaires peuvent apparaître sous l’onglet **Plateformes**, qui n’étaient pas disponibles précédemment. (Dans la capture d’écran ci-dessus, **Android SDK plateforme 28** a été ajoutée en basculant sur le référentiel Google.) Gardez à l’esprit que l’utilisation du référentiel Google n’est pas prise en charge et n’est donc pas recommandée pour le développement quotidien.
+Lorsque le référentiel Google est sélectionné, des packages supplémentaires peuvent apparaître sous l’onglet **Plateformes**, qui n’étaient pas disponibles précédemment. (Dans la capture d’écran ci-dessus, **Android SDK Platform 28** a été ajouté en basculant vers le référentiel Google.) N’oubliez pas que l’utilisation du référentiel Google n’est pas prise en charge et qu’elle n’est donc pas recommandée pour le développement de tous les jours.
 
 Pour revenir au référentiel pris en charge de plateformes et d’outils, cliquez sur **Microsoft (recommandé)** . Cette opération restaure la liste des packages et des outils à la sélection par défaut.
 
@@ -222,4 +222,4 @@ Dans ce guide, vous avez appris à installer et utiliser l’outil Xamarin Andro
 ## <a name="related-links"></a>Liens associés
 
 - [Présentation des niveaux d’API d’Android](~/android/app-fundamentals/android-api-levels.md)
-- [Modifications des outils du kit Android SDK](~/android/troubleshooting/sdk-cli-tooling-changes.md)
+- [Modifications des outils Android SDK](~/android/troubleshooting/sdk-cli-tooling-changes.md)

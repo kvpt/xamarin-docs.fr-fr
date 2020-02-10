@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: ba7148ecabf7f534a953fda3c3d3021abeaa034c
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
-ms.translationtype: MT
+ms.openlocfilehash: bdd28e1ce6d36a0a025ac43a709af2e38a313526
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771564"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940380"
 ---
 # <a name="xamarinforms-string-formatting"></a>Formatage de chaîne dans Xamarin.Forms
 
@@ -44,7 +44,7 @@ La page **String Formatting** (Formatage de chaîne) illustre plusieurs utilisat
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:sys="clr-namespace:System;assembly=netstandard"
              x:Class="DataBindingDemos.StringFormattingPage"
              Title="String Formatting">
 
@@ -123,7 +123,7 @@ La dernière section définit le `BindingContext` sur la valeur de `Math.PI` et 
 
 Voici le programme en cours d’exécution :
 
-[![String Formatting](string-formatting-images/stringformatting-small.png "String Formatting")](string-formatting-images/stringformatting-large.png#lightbox "String Formatting")
+[![String Formatting](string-formatting-images/stringformatting-small.png "Formatage de chaîne")](string-formatting-images/stringformatting-large.png#lightbox "Formatage de chaîne") (Formatage de chaîne)
 
 ## <a name="viewmodels-and-string-formatting"></a>Objets ViewModel et formatage de chaîne
 
@@ -176,7 +176,7 @@ Cette approche est illustrée dans l’exemple **Better Color Selector** (Meille
 
 Il existe désormais trois paires d’éléments `Slider` et `Label` qui sont liés à la même propriété source de l’objet `HslColorViewModel`. La seule différence est que l’objet `Label` a une propriété `StringFormat` pour afficher chaque valeur `Slider`.
 
-[![Better Color Selector](string-formatting-images/bettercolorselector-small.png "Better Color Selector")](string-formatting-images/bettercolorselector-large.png#lightbox "Better Color Selector")
+[![Better Color Selector](string-formatting-images/bettercolorselector-small.png "Better Color Selector (Meilleur sélecteur de couleur)")](string-formatting-images/bettercolorselector-large.png#lightbox "Better Color Selector (Meilleur sélecteur de couleur)") (Meilleur sélecteur de couleur)
 
 Vous vous demandez peut-être comment afficher les valeurs RVB (rouge, vert, bleu) au format hexadécimal à deux chiffres traditionnel. Ces valeurs entières ne sont pas directement disponibles à partir de la structure `Color`. Une solution consisterait à calculer les valeurs entières des composantes de couleur dans le ViewModel et à les exposer en tant que propriétés. Vous pourriez alors les formater à l’aide de la spécification de formatage `X2`.
 

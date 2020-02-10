@@ -8,16 +8,16 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/28/2018
-ms.openlocfilehash: ff5c7cb36305780d12b5fd69b7cbadec0eaef551
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
-ms.translationtype: MT
+ms.openlocfilehash: fcd8333a0623058fceb486183ddb995e85eaf18a
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771558"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940322"
 ---
 # <a name="application-indexing-and-deep-linking"></a>Indexation d’applications et liens ciblés
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/deeplinking)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/deeplinking)
 
 _L’indexation d’applications permet aux applications, qui sinon auraient été oubliées après quelques utilisations, de rester pertinentes en apparaissant dans les résultats de recherche. Les liens ciblés permettent aux applications de répondre à un résultat de recherche qui contient des données d’application, généralement en parcourant une page référencée à partir d’un lien ciblé. Cet article explique comment utiliser l’indexation d’applications et les liens ciblés pour qu’il soit possible de rechercher du contenu d’application Xamarin.Forms sur les appareils iOS et Android._
 
@@ -29,7 +29,7 @@ L’indexation d’applications et les liens ciblés Xamarin.Forms fournissent u
 
 Cet exemple d’application montre une application de liste Todo où les données sont stockées dans une base de données SQLite locale, comme illustré dans les captures d’écran suivantes :
 
-![](deep-linking-images/screenshots.png "Application TodoList")
+![](deep-linking-images/screenshots.png "TodoList Application")
 
 Chaque instance `TodoItem` créée par l’utilisateur est indexée. La recherche propre à la plateforme peut ensuite servir à localiser les données indexées de l’application. Quand l’utilisateur appuie sur un élément de résultat de recherche de l’application, l’application démarre, la `TodoItemPage` est parcourue et le `TodoItem` référencé à partir du lien ciblé s’affiche.
 
@@ -79,6 +79,9 @@ AndroidAppLinks.Init(this);
 ```
 
 Une fois que **google-services.json** est ajouté au projet (et que l’action de génération *GoogleServicesJson** est définie), le processus de génération extrait l’ID client et la clé API, puis ajoute ces informations d’identification au fichier manifeste généré.
+
+> [!NOTE]
+> Dans cet article, les termes « lien d’application » et « lien ciblé » sont souvent utilisés de manière interchangeable. Toutefois, ils ont des significations distinctes sur Android : un lien ciblé est un filtre d’intention qui permet aux utilisateurs d’entrer directement une activité spécifique dans l’application. Un lien ciblé peut ouvrir une boîte de dialogue de désambiguïsation, qui permet à l’utilisateur de sélectionner l’une des nombreuses applications capables de gérer l’URL. Un lien d’application Android est un lien ciblé basé sur l’URL de votre site web, et dont l’appartenance à ce site a été vérifiée. Si vous cliquez sur un lien d’application, votre application s’ouvre si elle est installée, sans ouvrir de boîte de dialogue de désambiguïsation.
 
 Pour plus d’informations, consultez [Deep Link Content with Xamarin.Forms URL Navigation](https://blog.xamarin.com/deep-link-content-with-xamarin-forms-url-navigation/) sur le blog Xamarin.
 
@@ -135,7 +138,7 @@ Elle ajoute l’instance [`AppLinkEntry`](xref:Xamarin.Forms.AppLinkEntry) dans 
 
 Une fois qu’une instance [`AppLinkEntry`](xref:Xamarin.Forms.AppLinkEntry) a été enregistrée pour l’indexation, elle peut apparaître dans les résultats de recherche. La capture d’écran suivante montre le contenu indexé apparaître dans les résultats de recherche sur la plateforme iOS :
 
-![](deep-linking-images/ios-search.png "Contenu indexé dans les résultats de recherche sur iOS")
+![](deep-linking-images/ios-search.png "Indexed Content in Search Results on iOS")
 
 ## <a name="de-registering-indexed-content"></a>Désenregistrement du contenu indexé
 
@@ -234,7 +237,7 @@ De plus, vous pouvez spécifier les valeurs des clés suivantes :
 
 - `contentType` : `string` qui spécifie l’URI du contenu indexé. La convention recommandée à utiliser pour cette valeur est le nom de type de la page contenant le contenu indexé.
 - `associatedWebPage` : `string` qui représente la page web à visiter si le contenu indexé peut également être affiché sur le web, ou si l’application prend en charge les liens ciblés de Safari.
-- `shouldAddToPublicIndex` : `string` `true` ou `false` qui contrôle s’il faut ou non ajouter le contenu indexé dans l’index du cloud public d’Apple, qui peut après être présenté aux utilisateurs qui n’ont pas installé l’application sur leur appareil iOS. Toutefois, ce n’est pas parce que le contenu a été défini pour l’indexation publique que cela signifie qu’il sera ajouté automatiquement à l’index du cloud public d’Apple. Pour plus d’informations, consultez [Indexation de la recherche publique](~/ios/platform/search/nsuseractivity.md). Notez que cette clé doit être définie sur `false` quand vous ajoutez des données personnelles à la collection [`KeyValues`](xref:Xamarin.Forms.IAppLinkEntry.KeyValues).
+- `shouldAddToPublicIndex` : `string``true` ou `false` qui contrôle s’il faut ou non ajouter le contenu indexé dans l’index du cloud public d’Apple, qui peut après être présenté aux utilisateurs qui n’ont pas installé l’application sur leur appareil iOS. Toutefois, ce n’est pas parce que le contenu a été défini pour l’indexation publique que cela signifie qu’il sera ajouté automatiquement à l’index du cloud public d’Apple. Pour plus d’informations, consultez [Indexation de la recherche publique](~/ios/platform/search/nsuseractivity.md). Notez que cette clé doit être définie sur `false` quand vous ajoutez des données personnelles à la collection [`KeyValues`](xref:Xamarin.Forms.IAppLinkEntry.KeyValues).
 
 > [!NOTE]
 > La collection `KeyValues` n’est pas utilisée sur la plateforme Android.

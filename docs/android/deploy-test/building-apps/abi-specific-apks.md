@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/15/2018
-ms.openlocfilehash: b11f21b0d0932013c65ea9298ad9425747afdf79
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
-ms.translationtype: MT
+ms.openlocfilehash: 0520439b89458b7f73a025cd8d6b2cf8fc41dac0
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028132"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940637"
 ---
 # <a name="building-abi-specific-apks"></a>Création de fichiers APK propres à une interface ABI
 
@@ -73,8 +73,8 @@ Pour continuer sur cet exemple, imaginez qu’un bogue spécifique à `armeabi-v
 Imaginez maintenant que la version x86 reçoive des mises à jour ou des correctifs qui ciblent une interface API plus récente (Niveau d’API 19), menant à la version 500 de l’application. Le nouveau `versionCode` passerait alors à 61923500, tandis qu’armeabi/armeabi-v7a resterait inchangé. À ce stade, les codes de version seraient les suivants :
 
 - 11413456 : l’interface ABI est `armeabi` ; niveau d’API ciblé 14 ; écrans de petite à grande taille, avec nom de version 456.
-- 21423457 : l’interface ABI est `armeabi-v7a` ; niveau d’API ciblé 14 ; écrans normaux &amp; petits, avec nom de version 457.
-- 61923500 : l’interface ABI est `x86` ; niveau d’API ciblé 19 ; écrans normaux &amp; petits, avec nom de version 500.
+- 21423457 : l’interface ABI est `armeabi-v7a` ; niveau d’API ciblé 14 ; écrans normaux &amp; grands, avec nom de version 457.
+- 61923500 : l’interface ABI est `x86` ; niveau d’API ciblé 19 ; écrans normaux &amp; grands, avec nom de version 500.
 
 La gestion manuelle de ces codes de version peut être une charge considérable pour le développeur. Le processus de calcul du `android:versionCode` correct et la génération des fichiers APK devraient être automatisés.
 Un exemple de procédure à suivre est abordé dans la procédure pas à pas à la fin de ce document.
@@ -95,19 +95,19 @@ La meilleure façon de générer le fichier APK par le biais de l’interface AB
 
 la liste suivante explique chaque paramètre de ligne de commande :
 
-- `/t:Package` &ndash; crée un fichier APK Android qui est signé en utilisant le magasin de clés de débogage
+- `/t:Package` &ndash; Crée un fichier APK Android signé à l’aide du magasin de clés de débogage
 
-- `/p:AndroidSupportedAbis=<TARGET_ABI>` &ndash; il s’agit de l’interface ABI de la cible. Cela doit être l’une des interfaces `armeabi`, `armeabi-v7a` ou `x86`.
+- `/p:AndroidSupportedAbis=<TARGET_ABI>` &ndash; Interface ABI à cibler. Cela doit être l’une des interfaces `armeabi`, `armeabi-v7a` ou `x86`.
 
-- `/p:IntermediateOutputPath=obj.<TARGET_ABI>/` &ndash; il s’agit du répertoire qui contiendra les fichiers intermédiaires créés dans le cadre de la génération. Si nécessaire, Xamarin.Android créera un répertoire nommé d’après l’interface ABI, par exemple `obj.armeabi-v7a`. Il est recommandé d’utiliser un dossier pour chaque interface ABI, car ceci empêchera des problèmes pouvant entraîner la « fuite » d’une version vers une autre. Notez que cette valeur se termine par un séparateur de répertoire (un `/` dans le cas d’OS X).
+- `/p:IntermediateOutputPath=obj.<TARGET_ABI>/` &ndash; Répertoire qui contiendra les fichiers intermédiaires créés dans le cadre de la build. Si nécessaire, Xamarin.Android créera un répertoire nommé d’après l’interface ABI, par exemple `obj.armeabi-v7a`. Il est recommandé d’utiliser un dossier pour chaque interface ABI, car ceci empêchera des problèmes pouvant entraîner la « fuite » d’une version vers une autre. Notez que cette valeur se termine par un séparateur de répertoire (un `/` dans le cas d’OS X).
 
-- `/p:AndroidManifest` &ndash; cette propriété spécifie le chemin d’accès au fichier **AndroidManifest.XML** qui sera utilisé lors de la génération.
+- `/p:AndroidManifest` &ndash; Cette propriété spécifie le chemin du fichier **AndroidManifest.XML** qui sera utilisé lors de la build.
 
-- `/p:OutputPath=bin.<TARGET_ABI>` &ndash; il s’agit du répertoire qui va héberger le fichier APK final. Xamarin.Android créera un répertoire nommé d’après l’interface ABI, par exemple `bin.armeabi-v7a`.
+- `/p:OutputPath=bin.<TARGET_ABI>` &ndash; Répertoire qui hébergera le fichier APK final. Xamarin.Android créera un répertoire nommé d’après l’interface ABI, par exemple `bin.armeabi-v7a`.
 
-- `/p:Configuration=Release` &ndash; exécuter une version de mise en production du fichier APK. Il n’est pas possible de télécharger des versions de débogage vers Google Play.
+- `/p:Configuration=Release` &ndash; Exécuter une build de mise en production du fichier APK. Il n’est pas possible de télécharger des versions de débogage vers Google Play.
 
-- `<CS_PROJ FILE>` &ndash; il s’agit du chemin d’accès au fichier `.csproj` pour le projet Xamarin.Android.
+- `<CS_PROJ FILE>` &ndash; Chemin du fichier `.csproj` pour le projet Xamarin.Android.
 
 ### <a name="sign-and-zipalign-the-apk"></a>Signer le fichier APK et le compresser dans un fichier Zipalign
 

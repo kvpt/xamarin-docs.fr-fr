@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2019
-ms.openlocfilehash: 3e63a580bbdb1c220d44b100725cdc8ce387b405
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
-ms.translationtype: MT
+ms.openlocfilehash: cb2ae3afe9db86d4db603d499ef0e75e7cbbf552
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72696519"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940399"
 ---
 # <a name="xamarinforms-shell-introduction"></a>Présentation de Xamarin.Forms Shell
 
@@ -28,15 +28,17 @@ Xamarin.Forms Shell réduit la complexité du développement d’applications mo
 En outre, les applications Shell bénéficient d’une vitesse de rendu accrue et d’une consommation de mémoire réduite.
 
 > [!IMPORTANT]
-> Les applications existantes peuvent adopter l’interpréteur de commandes et tirer parti immédiatement de l’amélioration de la navigation, des performances et de l’extensibilité.
+> Les applications existantes peuvent adopter Shell et bénéficier immédiatement d’une navigation, de performances et d’une extensibilité améliorées.
 
 ## <a name="platform-support"></a>Plateforme prise en charge
 
-Xamarin. Forms Shell est entièrement disponible sur iOS et Android, mais uniquement partiellement disponible sur le plateforme Windows universelle (UWP). En outre, Shell est actuellement expérimental sur UWP et ne peut être utilisé qu’en ajoutant la ligne de code suivante à la classe `App` de votre projet UWP, avant d’appeler `Forms.Init` :
+Xamarin.Forms Shell est entièrement disponible sur iOS et Android, mais seulement partiellement disponible sur la plateforme Windows universelle (UWP). En outre, Shell est actuellement expérimental sur UWP et ne peut être utilisé qu’en ajoutant la ligne de code suivante à la classe `App` du projet UWP, avant d’appeler `Forms.Init` :
 
 ```csharp
 global::Xamarin.Forms.Forms.SetFlags("Shell_UWP_Experimental");
 ```
+
+Pour savoir comment ajouter un projet UWP à une solution Xamarin.Forms, consultez [Configurer des projets Windows](~/xamarin-forms/platform/windows/installation/index.md).
 
 ## <a name="shell-navigation-experience"></a>Expérience de navigation Shell
 
@@ -46,14 +48,14 @@ Shell fournit une expérience de navigation robuste, basée sur des menus volant
 
 La sélection d’un élément de menu volant permet de sélectionner et d’afficher cet élément dans un onglet en bas de l’écran :
 
-[![Capture d’écran des onglets en bas de l’interpréteur de commandes, sur iOS et Android](introduction-images/monkeys.png "Onglets du bas du shell")](introduction-images/monkeys-large.png#lightbox "Onglets du bas du shell")
+[![Capture d’écran des onglets du bas Shell, sur iOS et Android](introduction-images/monkeys.png "Onglets du bas Shell")](introduction-images/monkeys-large.png#lightbox "Onglets du bas Shell")
 
 > [!NOTE]
 > Lorsque le menu volant n’est pas ouvert, la barre d’onglets du bas représente le niveau supérieur de navigation dans l’application.
 
 Chaque onglet affiche une [`ContentPage`](xref:Xamarin.Forms.ContentPage). Toutefois, si un onglet inférieur contient plusieurs pages, les pages sont accessibles via la barre d’onglets supérieure :
 
-[![Capture d’écran des principaux onglets de Shell, sur iOS et Android](introduction-images/cats.png "Onglets principaux de l’interpréteur de commandes")](introduction-images/cats-large.png#lightbox "Onglets principaux de l’interpréteur de commandes")
+[![Capture d’écran des onglets du haut Shell, sur iOS et Android](introduction-images/cats.png "Onglets du haut Shell")](introduction-images/cats-large.png#lightbox "Onglets du haut Shell")
 
 Chaque onglet permet d’accéder à des objets [`ContentPage`](xref:Xamarin.Forms.ContentPage) supplémentaires :
 

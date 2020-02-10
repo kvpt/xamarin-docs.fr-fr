@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: ca27b0ba0f9e434809250a78047f3bd503f80b50
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
-ms.translationtype: MT
+ms.openlocfilehash: 79d8df3300b302512a7de4140968dbc4c8e79abc
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771642"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940340"
 ---
 # <a name="xamarinforms-binding-path"></a>Liaison de données Xamarin.Forms
 
@@ -40,7 +40,7 @@ Cet exemple et plusieurs autres sont illustrés dans la page **Path Variations**
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:globe="clr-namespace:System.Globalization;assembly=mscorlib"
+             xmlns:globe="clr-namespace:System.Globalization;assembly=netstandard"
              x:Class="DataBindingDemos.PathVariationsPage"
              Title="Path Variations"
              x:Name="page">
@@ -138,7 +138,7 @@ Cet enfant est un objet `Label`, qui a une propriété `Text` de type `String`, 
 
 Voici le programme en cours d’exécution :
 
-[![Path Variations](binding-path-images/pathvariations-small.png "Path Variations")](binding-path-images/pathvariations-large.png#lightbox "Path Variations")
+[![Path Variations](binding-path-images/pathvariations-small.png "Path Variations (Variations de chemin)")](binding-path-images/pathvariations-large.png#lightbox "Path Variations (Variations de chemin)") (Variations de chemin)
 
 ## <a name="debugging-complex-paths"></a>Débogage de chemins complexes
 
