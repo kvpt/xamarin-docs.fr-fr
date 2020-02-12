@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 7471d6bc66463091fafea855b12da06292055be6
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.openlocfilehash: fe7e11f37f303c2ec1f5bc58e98953449694191c
+ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "67277221"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77135041"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -31,7 +31,7 @@ Pour suivre ce didacticiel, vous devez disposer de Visual Studio 2019 (dernière
     </ContentPage>
     ```
 
-    Ce code définit de manière déclarative l’interface utilisateur de la page, qui comprend un élément [`Editor`](xref:Xamarin.Forms.Editor) dans [`StackLayout`](xref:Xamarin.Forms.StackLayout). La propriété [`Editor.Placeholder`](xref:Xamarin.Forms.Editor.Placeholder) spécifie le texte d’espace réservé qui apparaît lorsque l’élément `Editor` s’affiche pour la première fois. Par ailleurs, la propriété [`HeightRequest`](xref:Xamarin.Forms.VisualElement) spécifie la hauteur de l’élément `Editor` en unités indépendantes de l’appareil.
+    Ce code définit de manière déclarative l’interface utilisateur de la page, qui comprend un élément [`Editor`](xref:Xamarin.Forms.Editor) dans [`StackLayout`](xref:Xamarin.Forms.StackLayout). La propriété [`Editor.Placeholder`](xref:Xamarin.Forms.InputView.Placeholder) spécifie le texte d’espace réservé qui apparaît lorsque l’élément `Editor` s’affiche pour la première fois. Par ailleurs, la propriété [`HeightRequest`](xref:Xamarin.Forms.VisualElement) spécifie la hauteur de l’élément `Editor` en unités indépendantes de l’appareil.
 
 1. Dans la barre d’outils Visual Studio, appuyez sur le bouton **Démarrer** (le bouton triangulaire qui ressemble à un bouton de lecture) pour lancer l’application à l’intérieur du simulateur iOS distant ou de l’émulateur Android de votre choix :
 
@@ -65,7 +65,7 @@ Pour suivre ce didacticiel, vous devez disposer de Visual Studio pour Mac (derni
     </ContentPage>
     ```
 
-    Ce code définit de manière déclarative l’interface utilisateur de la page, qui comprend un élément [`Editor`](xref:Xamarin.Forms.Editor) dans [`StackLayout`](xref:Xamarin.Forms.StackLayout). La propriété [`Editor.Placeholder`](xref:Xamarin.Forms.Editor.Placeholder) spécifie le texte d’espace réservé qui apparaît lorsque l’élément `Editor` s’affiche pour la première fois. Par ailleurs, la propriété [`HeightRequest`](xref:Xamarin.Forms.VisualElement) spécifie la hauteur de l’élément `Editor` en unités indépendantes de l’appareil.
+    Ce code définit de manière déclarative l’interface utilisateur de la page, qui comprend un élément [`Editor`](xref:Xamarin.Forms.Editor) dans [`StackLayout`](xref:Xamarin.Forms.StackLayout). La propriété [`Editor.Placeholder`](xref:Xamarin.Forms.InputView.Placeholder) spécifie le texte d’espace réservé qui apparaît lorsque l’élément `Editor` s’affiche pour la première fois. Par ailleurs, la propriété [`HeightRequest`](xref:Xamarin.Forms.VisualElement) spécifie la hauteur de l’élément `Editor` en unités indépendantes de l’appareil.
 
 1. Dans la barre d’outils Visual Studio pour Mac, appuyez sur le bouton **Démarrer** (le bouton triangulaire qui ressemble à un bouton de lecture) pour lancer l’application dans le simulateur iOS ou dans l’émulateur Android de votre choix :
 

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: c92a97b336e89214bbd95021ad8fb9a56f64cc8c
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.openlocfilehash: 90f3f9ff5ed29a1ae2c93e355fc15bc6550d78dd
+ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "67659800"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77135096"
 ---
 Dans cet exercice, vous créerez une interface utilisateur pour consommer la classe `RestService`, qui à son tour récupère les données de l’API web [OpenWeatherMap](https://openweathermap.org/).
 
@@ -67,7 +67,7 @@ Dans cet exercice, vous créerez une interface utilisateur pour consommer la cla
     </ContentPage>
     ```
 
-    Ce code définit de manière déclarative l’interface utilisateur de la page, qui comprend les éléments [`Entry`](xref:Xamarin.Forms.Entry), [`Button`](xref:Xamarin.Forms.Button) et une série d’instances [`Label`](xref:Xamarin.Forms.Label) dans [`Grid`](xref:Xamarin.Forms.Grid). L’élément `Entry` est prérempli avec « Seattle » en définissant sa propriété [`Text`](xref:Xamarin.Forms.Entry.Text). Le code `Button` définit son événement [`Clicked`](xref:Xamarin.Forms.Button.Clicked) sur un gestionnaire d’événements nommé `OnButtonClicked` qui sera créé à l’étape suivante. La moitié des instances `Label` affichent du texte statique, tandis que les instances de données restantes sont liées aux propriétés `WeatherData`. Lors de l’exécution, les instances `Label` qui utilisent la liaison de données examineront leurs propriétés [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) respectives à la recherche de l’objet `WeatherData` à utiliser dans leurs expressions de liaison. Pour plus d’informations sur la liaison de données, consultez la page [Liaison de données Xamarin.Forms](~/xamarin-forms/app-fundamentals/data-binding/index.md).
+    Ce code définit de manière déclarative l’interface utilisateur de la page, qui comprend les éléments [`Entry`](xref:Xamarin.Forms.Entry), [`Button`](xref:Xamarin.Forms.Button) et une série d’instances [`Label`](xref:Xamarin.Forms.Label) dans [`Grid`](xref:Xamarin.Forms.Grid). L’élément `Entry` est prérempli avec « Seattle » en définissant sa propriété [`Text`](xref:Xamarin.Forms.InputView.Text). Le code `Button` définit son événement [`Clicked`](xref:Xamarin.Forms.Button.Clicked) sur un gestionnaire d’événements nommé `OnButtonClicked` qui sera créé à l’étape suivante. La moitié des instances `Label` affichent du texte statique, tandis que les instances de données restantes sont liées aux propriétés `WeatherData`. Lors de l’exécution, les instances `Label` qui utilisent la liaison de données examineront leurs propriétés [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) respectives à la recherche de l’objet `WeatherData` à utiliser dans leurs expressions de liaison. Pour plus d’informations sur la liaison de données, consultez la page [Liaison de données Xamarin.Forms](~/xamarin-forms/app-fundamentals/data-binding/index.md).
 
     En outre, l’élément [`Entry`](xref:Xamarin.Forms.Entry) dispose d’un nom spécifié avec l’attribut `x:Name`. Ainsi, le fichier code-behind peut accéder à l’objet en utilisant le nom affecté.
 
@@ -187,7 +187,7 @@ Dans cet exercice, vous créerez une interface utilisateur pour consommer la cla
     </ContentPage>
     ```
 
-    Ce code définit de manière déclarative l’interface utilisateur de la page, qui comprend les éléments [`Entry`](xref:Xamarin.Forms.Entry), [`Button`](xref:Xamarin.Forms.Button) et une série d’instances [`Label`](xref:Xamarin.Forms.Label) dans [`Grid`](xref:Xamarin.Forms.Grid). L’élément `Entry` est prérempli avec « Seattle » en définissant sa propriété [`Text`](xref:Xamarin.Forms.Entry.Text). Le code `Button` définit son événement [`Clicked`](xref:Xamarin.Forms.Button.Clicked) sur un gestionnaire d’événements nommé `OnButtonClicked` qui sera créé à l’étape suivante. La moitié des instances `Label` affichent du texte statique, tandis que les instances de données restantes sont liées aux propriétés `WeatherData`. Lors de l’exécution, les instances `Label` qui utilisent la liaison de données examineront leurs propriétés [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) respectives à la recherche de l’objet `WeatherData` à utiliser dans leurs expressions de liaison. Pour plus d’informations sur la liaison de données, consultez la page [Liaison de données Xamarin.Forms](~/xamarin-forms/app-fundamentals/data-binding/index.md).
+    Ce code définit de manière déclarative l’interface utilisateur de la page, qui comprend les éléments [`Entry`](xref:Xamarin.Forms.Entry), [`Button`](xref:Xamarin.Forms.Button) et une série d’instances [`Label`](xref:Xamarin.Forms.Label) dans [`Grid`](xref:Xamarin.Forms.Grid). L’élément `Entry` est prérempli avec « Seattle » en définissant sa propriété [`Text`](xref:Xamarin.Forms.InputView.Text). Le code `Button` définit son événement [`Clicked`](xref:Xamarin.Forms.Button.Clicked) sur un gestionnaire d’événements nommé `OnButtonClicked` qui sera créé à l’étape suivante. La moitié des instances `Label` affichent du texte statique, tandis que les instances de données restantes sont liées aux propriétés `WeatherData`. Lors de l’exécution, les instances `Label` qui utilisent la liaison de données examineront leurs propriétés [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) respectives à la recherche de l’objet `WeatherData` à utiliser dans leurs expressions de liaison. Pour plus d’informations sur la liaison de données, consultez la page [Liaison de données Xamarin.Forms](~/xamarin-forms/app-fundamentals/data-binding/index.md).
 
     En outre, l’élément [`Entry`](xref:Xamarin.Forms.Entry) dispose d’un nom spécifié avec l’attribut `x:Name`. Ainsi, le fichier code-behind peut accéder à l’objet en utilisant le nom affecté.
 

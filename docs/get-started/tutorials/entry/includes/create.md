@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 820761111c609f224a6dda14d5853777d22aa259
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.openlocfilehash: d8c50b1dfb2a2669f7611a6bc6da882c54b877aa
+ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "67277212"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77135121"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -30,7 +30,7 @@ Pour suivre ce didacticiel, vous devez disposer de Visual Studio 2019 (dernière
     </ContentPage>
     ```
 
-    Ce code définit de manière déclarative l’interface utilisateur de la page, qui comprend un élément [`Entry`](xref:Xamarin.Forms.Entry) dans [`StackLayout`](xref:Xamarin.Forms.StackLayout). La propriété [`Entry.Placeholder`](xref:Xamarin.Forms.Entry.Placeholder) spécifie le texte d’espace réservé qui apparaît lorsque `Entry` s’affiche pour la première fois.
+    Ce code définit de manière déclarative l’interface utilisateur de la page, qui comprend un élément [`Entry`](xref:Xamarin.Forms.Entry) dans [`StackLayout`](xref:Xamarin.Forms.StackLayout). La propriété [`Entry.Placeholder`](xref:Xamarin.Forms.InputView.Placeholder) spécifie le texte d’espace réservé qui apparaît lorsque `Entry` s’affiche pour la première fois.
 
 1. Dans la barre d’outils Visual Studio, appuyez sur le bouton **Démarrer** (le bouton triangulaire qui ressemble à un bouton de lecture) pour lancer l’application à l’intérieur du simulateur iOS distant ou de l’émulateur Android de votre choix :
 
@@ -60,7 +60,7 @@ Pour suivre ce didacticiel, vous devez disposer de Visual Studio pour Mac (derni
     </ContentPage>
     ```
 
-    Ce code définit de manière déclarative l’interface utilisateur de la page, qui comprend un élément [`Entry`](xref:Xamarin.Forms.Entry) dans [`StackLayout`](xref:Xamarin.Forms.StackLayout). La propriété [`Entry.Placeholder`](xref:Xamarin.Forms.Entry.Placeholder) spécifie le texte d’espace réservé qui apparaît lorsque l’élément `Entry` s’affiche pour la première fois.
+    Ce code définit de manière déclarative l’interface utilisateur de la page, qui comprend un élément [`Entry`](xref:Xamarin.Forms.Entry) dans [`StackLayout`](xref:Xamarin.Forms.StackLayout). La propriété [`Entry.Placeholder`](xref:Xamarin.Forms.InputView.Placeholder) spécifie le texte d’espace réservé qui apparaît lorsque l’élément `Entry` s’affiche pour la première fois.
 
 1. Dans la barre d’outils Visual Studio pour Mac, appuyez sur le bouton **Démarrer** (le bouton triangulaire qui ressemble à un bouton de lecture) pour lancer l’application dans le simulateur iOS ou dans l’émulateur Android de votre choix :
 
