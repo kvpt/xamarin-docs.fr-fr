@@ -10,12 +10,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/27/2018
-ms.openlocfilehash: 3936fe16ee768505c53ec119c51dcbecef7e6fbe
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.openlocfilehash: c0e8ec27898cc842d485967e525c2936d7a0f56d
+ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "73842953"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77131048"
 ---
 # <a name="xamarinforms-quickstart-deep-dive"></a>Xamarin.Forms - Démarrage rapide en immersion
 
@@ -383,7 +383,7 @@ Pour plus d’informations sur la navigation hiérarchique, consultez [Navigatio
 
 La liaison de données permet de simplifier la façon dont une application Xamarin.Forms affiche ses données et interagit avec elles. Elle établit une connexion entre l’interface utilisateur et l’application sous-jacente. La classe [`BindableObject`](xref:Xamarin.Forms.BindableObject) contient une grande partie de l’infrastructure pour prendre en charge la liaison de données.
 
-La liaison de données connecte deux objets, appelés la *source* et la *cible*. L’objet *source* fournit les données. L’objet *cible* consomme (et affiche souvent) les données de l’objet source. Par exemple, un [`Editor`](xref:Xamarin.Forms.Editor) (objet *cible*) lie généralement sa propriété [`Text`](xref:Xamarin.Forms.Editor.Text) à une propriété publique `string` dans un objet *source*. Le diagramme suivant illustre la relation de liaison :
+La liaison de données connecte deux objets, appelés la *source* et la *cible*. L’objet *source* fournit les données. L’objet *cible* consomme (et affiche souvent) les données de l’objet source. Par exemple, un [`Editor`](xref:Xamarin.Forms.Editor) (objet *cible*) lie généralement sa propriété [`Text`](xref:Xamarin.Forms.InputView.Text) à une propriété publique `string` dans un objet *source*. Le diagramme suivant illustre la relation de liaison :
 
 ![](deepdive-images/data-binding.png "Data Binding")
 
@@ -432,7 +432,7 @@ Dans la méthode `OnNoteAddedClicked`, qui s’exécute quand une nouvelle note 
         ... />
 ```
 
-Une liaison entre la propriété [`Editor.Text`](xref:Xamarin.Forms.Editor.Text) et la propriété `Text` de l’objet *source* est établie. Les changements apportés dans `Editor` sont automatiquement propagés à l’objet `Note`. De même, si des changements sont apportés à la propriété `Note.Text`, le moteur de liaison Xamarin.Forms met également à jour le contenu de `Editor`. Il s’agit là d’une *liaison bidirectionnelle*.
+Une liaison entre la propriété [`Editor.Text`](xref:Xamarin.Forms.InputView.Text) et la propriété `Text` de l’objet *source* est établie. Les changements apportés dans `Editor` sont automatiquement propagés à l’objet `Note`. De même, si des changements sont apportés à la propriété `Note.Text`, le moteur de liaison Xamarin.Forms met également à jour le contenu de `Editor`. Il s’agit là d’une *liaison bidirectionnelle*.
 
 Pour plus d’informations sur la liaison de données, consultez la page [Liaison de données Xamarin.Forms](~/xamarin-forms/app-fundamentals/data-binding/index.md).
 
