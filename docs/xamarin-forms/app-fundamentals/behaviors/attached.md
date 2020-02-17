@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: ab39c79c59855c9f78184614176b1658ee0e29b2
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
-ms.translationtype: MT
+ms.openlocfilehash: 7d16eef4fe5422fb5cf3c039c66d1b0f113727fd
+ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70772110"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77131118"
 ---
 # <a name="attached-behaviors"></a>Comportements attachés
 
@@ -20,7 +20,7 @@ ms.locfileid: "70772110"
 
 _Les comportements attachés sont des classes avec une ou plusieurs propriétés attachées. Cet article montre comment créer et consommer des comportements attachés._
 
-## <a name="overview"></a>Présentation
+## <a name="overview"></a>Vue d'ensemble
 
 Les propriétés attachées constituent un type particulier de propriété liable. Elles sont définies dans une seule classe, mais attachées à d’autres objets. En XAML, elles sont reconnaissables car elles sont représentées sous forme d’attributs contenant un nom de classe et un nom de propriété séparés par un point.
 
@@ -80,7 +80,7 @@ public static class NumericValidationBehavior
 }
 ```
 
-La classe `NumericValidationBehavior` contient une propriété attachée nommée `AttachBehavior` avec une méthode getter ou setter `static`, qui contrôle l’ajout ou la suppression du comportement dans le contrôle auquel il est attaché. Cette propriété attachée inscrit la méthode `OnAttachBehaviorChanged` qui est exécutée au changement de la valeur de la propriété. Cette méthode inscrit ou désinscrit un gestionnaire d’événements pour l’événement [`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged), selon la valeur de la propriété attachée `AttachBehavior`. La fonctionnalité clé du comportement est fournie par la méthode `OnEntryTextChanged`, qui analyse la valeur entrée dans l’[`Entry`](xref:Xamarin.Forms.Entry) par l’utilisateur et définit la propriété `TextColor` sur rouge si la valeur n’est pas un `double`.
+La classe `NumericValidationBehavior` contient une propriété attachée nommée `AttachBehavior` avec une méthode getter ou setter `static`, qui contrôle l’ajout ou la suppression du comportement dans le contrôle auquel il est attaché. Cette propriété attachée inscrit la méthode `OnAttachBehaviorChanged` qui est exécutée au changement de la valeur de la propriété. Cette méthode inscrit ou désinscrit un gestionnaire d’événements pour l’événement [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged), selon la valeur de la propriété attachée `AttachBehavior`. La fonctionnalité clé du comportement est fournie par la méthode `OnEntryTextChanged`, qui analyse la valeur entrée dans l’[`Entry`](xref:Xamarin.Forms.Entry) par l’utilisateur et définit la propriété `TextColor` sur rouge si la valeur n’est pas un `double`.
 
 ## <a name="consuming-an-attached-behavior"></a>Consommation d’un comportement attaché
 
@@ -103,7 +103,7 @@ NumericValidationBehavior.SetAttachBehavior (entry, true);
 
 Lors de l’exécution, le comportement répond à l’interaction avec le contrôle en fonction de l’implémentation de comportement. Les captures d’écran suivantes illustrent le comportement attaché répondant à une entrée non valide :
 
-[![](attached-images/screenshots-sml.png "Exemple d’application avec un comportement attaché")](attached-images/screenshots.png#lightbox "Exemple d’application avec un comportement attaché")
+[![](attached-images/screenshots-sml.png "Sample Application with Attached Behavior")](attached-images/screenshots.png#lightbox "Sample Application with Attached Behavior")
 
 > [!NOTE]
 > Les comportements attachés sont écrits pour un type de contrôle spécifique (ou une superclasse qui peut s’appliquer à de nombreux contrôles) et doivent être ajoutés à un contrôle compatible uniquement. La tentative d’attachement d’un comportement à un contrôle incompatible entraîne un comportement inconnu et dépend de l’implémentation de comportement.
@@ -123,7 +123,7 @@ var entry = new Entry { Placeholder = "Enter a System.Double" };
 NumericValidationBehavior.SetAttachBehavior (entry, false);
 ```
 
-Lors de l’exécution, la méthode `OnAttachBehaviorChanged` est exécutée quand la valeur de la propriété attachée `AttachBehavior` est définie sur `false`. La méthode `OnAttachBehaviorChanged` désinscrit le gestionnaire d’événements pour l’événement [`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) pour garantir que le comportement n’est pas exécuté quand l’utilisateur interagit avec le contrôle.
+Lors de l’exécution, la méthode `OnAttachBehaviorChanged` est exécutée quand la valeur de la propriété attachée `AttachBehavior` est définie sur `false`. La méthode `OnAttachBehaviorChanged` désinscrit le gestionnaire d’événements pour l’événement [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) pour garantir que le comportement n’est pas exécuté quand l’utilisateur interagit avec le contrôle.
 
 ## <a name="summary"></a>Récapitulatif
 

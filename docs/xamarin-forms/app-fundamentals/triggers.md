@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: 056bb16c76887661f054422b2c682a91e6bfa466
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
-ms.translationtype: MT
+ms.openlocfilehash: d046962bf08b85069b1a698324db76a4ac3286d9
+ms.sourcegitcommit: 07941cf9704ff88cf4087de5ebdea623ff54edb1
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75489893"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77144653"
 ---
 # <a name="xamarinforms-triggers"></a>Déclencheurs Xamarin.Forms
 
@@ -22,7 +22,7 @@ Les déclencheurs vous permettent d’exprimer des actions de manière déclarat
 
 Vous pouvez affecter directement un déclencheur à un contrôle, ou vous pouvez l’ajouter à un dictionnaire de ressources de niveau page ou de niveau application afin de l’appliquer à plusieurs contrôles.
 
-Il existe quatre types de déclencheurs :
+Il existe plusieurs types de déclencheurs :
 
 - [Déclencheur de propriétés](#property) : activé lorsqu’une propriété d’un contrôle est définie sur une valeur particulière.
 
@@ -31,6 +31,20 @@ Il existe quatre types de déclencheurs :
 - [Déclencheur d’événements](#event) : activé lorsqu’un événement se produit au niveau d’un contrôle.
 
 - [Déclencheur multiple](#multi) : permet de définir plusieurs conditions de déclenchement avant qu’une action ne se produise.
+
+- [Déclencheur adaptatif](#adaptive) (préversion) : réagit aux modifications de la largeur et de la hauteur d’une fenêtre d’application.
+
+- [Déclencheur de comparaison](#compare) (préversion) : activé quand deux valeurs sont comparées.
+
+- [Déclencheur d’appareil](#device) (préversion) : activé en cas d’exécution sur l’appareil spécifié. 
+
+- [Déclencheur d’orientation](#orientation) (préversion) : activé quand l’orientation de l’appareil change.
+
+Pour pouvoir utiliser les déclencheurs en préversion, veillez à les activer à l’aide de l’indicateur de fonctionnalité dans votre `App.xaml.cs` :
+
+```csharp
+Device.SetFlags(new string[]{ "StateTriggers_Experimental" });
+```
 
 <a name="property" />
 
@@ -147,7 +161,7 @@ Une implémentation d’action de déclencheur doit :
 
 - Remplacer la méthode `Invoke` qui est appelée chaque fois que les critères de déclenchement sont remplis.
 
-- Exposez éventuellement des propriétés qui peuvent être définies dans le XAML lorsque le déclencheur est déclaré. Pour obtenir un exemple, consultez la classe `VisualElementPopTriggerAction` dans l’exemple d’application associé.
+- Si vous le souhaitez, vous pouvez exposer des propriétés qui peuvent être définies dans le code XAML quand le déclencheur est déclaré. Pour obtenir un exemple, consultez la classe `VisualElementPopTriggerAction` dans l’exemple d’application associé.
 
 ```csharp
 public class NumericValidationTriggerAction : TriggerAction<Entry>
@@ -161,7 +175,7 @@ public class NumericValidationTriggerAction : TriggerAction<Entry>
 }
 ```
 
-Le déclencheur d’événements peut ensuite être consommé à partir de XAML :
+Le déclencheur d’événements peut ensuite être consommé à partir du code XAML :
 
 ```xaml
 <EventTrigger Event="TextChanged">
@@ -171,7 +185,7 @@ Le déclencheur d’événements peut ensuite être consommé à partir de XAML�
 
 Soyez prudent lorsque vous partagez des déclencheurs dans un `ResourceDictionary`. En effet, une même instance sera partagée entre plusieurs contrôles, donc tout état configuré une fois sera appliqué à tous les autres contrôles.
 
-Notez que les déclencheurs d’événements ne prennent pas en charge `EnterActions` et `ExitActions`[décrits ci-dessous](#enterexit).
+Notez que les déclencheurs d’événements ne prennent pas en charge `EnterActions` et `ExitActions` qui sont [décrits plus bas](#enterexit).
 
 <a name="multi" />
 
@@ -280,12 +294,12 @@ Dans la partie inférieure de l’écran, le bouton **Login** (Connexion) reste 
 
 Une autre façon d’implémenter des modifications lorsqu’un déclencheur est activé est d’ajouter des collections `EnterActions` et `ExitActions`, et de spécifier des implémentations `TriggerAction<T>`.
 
-La collection [`EnterActions`](xref:Xamarin.Forms.TriggerBase.EnterActions) est utilisée pour définir une `IList` d' [`TriggerAction`](xref:Xamarin.Forms.TriggerAction) objets qui seront appelés lorsque la condition de déclenchement sera remplie. La collection [`ExitActions`](xref:Xamarin.Forms.TriggerBase.ExitActions) est utilisée pour définir une `IList` d' `TriggerAction` objets qui seront appelés une fois que la condition de déclencheur n’est plus remplie.
+La collection [`EnterActions`](xref:Xamarin.Forms.TriggerBase.EnterActions) permet de définir un `IList` d’objets [`TriggerAction`](xref:Xamarin.Forms.TriggerAction) à appeler quand la condition de déclenchement est remplie. La collection [`ExitActions`](xref:Xamarin.Forms.TriggerBase.ExitActions) permet de définir un `IList` d’objets `TriggerAction` à appeler quand la condition de déclenchement n’est plus remplie.
 
 > [!NOTE]
-> Les objets [`TriggerAction`](xref:Xamarin.Forms.TriggerAction) définis dans les collections `EnterActions` et `ExitActions` sont ignorés par la classe [`EventTrigger`](xref:Xamarin.Forms.EventTrigger) .    
+> Les objets [`TriggerAction`](xref:Xamarin.Forms.TriggerAction) définis dans les collections `EnterActions` et `ExitActions` sont ignorés par la classe [`EventTrigger`](xref:Xamarin.Forms.EventTrigger).    
 
-Vous pouvez fournir à la *fois* des `EnterActions` et des `ExitActions`, ainsi que des `Setter`s dans un déclencheur, mais sachez que les `Setter`s sont appelées immédiatement (ils n’attendent pas que l' `EnterAction` ou la `ExitAction` se termine). Vous pouvez également tout effectuer dans le code sans utiliser de `Setter`.
+Vous pouvez fournir *à la fois* `EnterActions` et `ExitActions` ainsi que des `Setter` dans un déclencheur. Sachez toutefois que les `Setter` sont appelés immédiatement (ils n’attendent pas la fin de `EnterAction` ou de `ExitAction`). Vous pouvez également tout effectuer dans le code sans utiliser de `Setter`.
 
 ```xaml
 <Entry Placeholder="enter job title">
@@ -333,6 +347,141 @@ public class FadeTriggerAction : TriggerAction<VisualElement>
     }
 }
 ```
+
+<a name="adaptive" />
+
+## <a name="adaptive-trigger-preview"></a>Déclencheur adaptatif (préversion)
+
+Un `AdaptiveTrigger` se déclenche automatiquement quand la hauteur ou la largeur d’une fenêtre est égale à une valeur spécifiée. Un `AdaptiveTrigger` peut prendre deux propriétés :
+
+- **MinWindowHeight**
+- **MinWindowWidth**
+
+<a name="compare"/>
+
+## <a name="compare-trigger-preview"></a>Déclencheur de comparaison (préversion)
+
+`CompareStateTrigger` est un `StateTrigger` très polyvalent qui se déclenche si **Value** est égal à **Property**.
+
+```xaml
+<Grid>
+    <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup>
+            <VisualState x:Name="Checked">
+                <VisualState.StateTriggers>
+                    <CompareStateTrigger Property="{Binding IsChecked, Source={x:Reference CheckBox}}" Value="True" />
+                </VisualState.StateTriggers>
+                <VisualState.Setters>
+                    <Setter Property="BackgroundColor" Value="Green" />
+                </VisualState.Setters>
+            </VisualState>
+            <VisualState x:Name="UnChecked">
+                <VisualState.StateTriggers>
+                    <CompareStateTrigger Property="{Binding IsChecked, Source={x:Reference CheckBox}}" Value="False" />
+                </VisualState.StateTriggers>
+                <VisualState.Setters>
+                    <Setter Property="BackgroundColor" Value="Red" />
+                </VisualState.Setters>
+            </VisualState>
+        </VisualStateGroup>     
+    </VisualStateManager.VisualStateGroups>  
+    <Frame
+        HorizontalOptions="Center"
+        VerticalOptions="Center"
+        BackgroundColor="White"
+        Margin="24">
+        <StackLayout
+            Orientation="Horizontal">
+            <CheckBox 
+                x:Name="CheckBox"
+                VerticalOptions="Center"/>
+            <Label
+                Text="Checked/Uncheck the CheckBox to modify the Grid BackgroundColor"
+                VerticalOptions="Center"/>
+        </StackLayout>
+    </Frame>
+</Grid>
+```
+
+Cet exemple montre comment modifier le **BackgroundColor** d’un **Grid** en fonction de l’état de la propriété **IsChecked** de **CheckBox**. **StateTrigger** prend en charge les liaisons. Ceci ouvre de nombreuses possibilités pour comparer les valeurs non seulement d’éléments d’interface utilisateur, mais également de **BindingContext**.
+
+<a name="device" />
+
+## <a name="device-trigger-preview"></a>Déclencheur d’appareil (préversion)
+
+Un `DeviceTrigger` vous permet de contrôler la façon dont un état est appliqué sur une plateforme d’appareil spécifique, à l’instar de `OnPlatform`.
+
+```xaml
+<Grid>
+    <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup>
+            <VisualState
+                x:Name="Android">
+                <VisualState.StateTriggers>
+                    <DeviceStateTrigger Device="Android" />
+                </VisualState.StateTriggers>
+                <VisualState.Setters>
+                    <Setter Property="BackgroundColor" Value="Blue" />
+                </VisualState.Setters>
+            </VisualState>
+            <VisualState
+                x:Name="iOS">
+                <VisualState.StateTriggers>
+                    <DeviceStateTrigger Device="iOS" />
+                </VisualState.StateTriggers>
+                <VisualState.Setters>
+                    <Setter Property="BackgroundColor" Value="Red" />
+                </VisualState.Setters>
+            </VisualState>
+        </VisualStateGroup>  
+    </VisualStateManager.VisualStateGroups>  
+    <Label
+        Text="This page changes the color based on the device where the App is running."
+        HorizontalOptions="Center"
+        VerticalOptions="Center"/>
+</Grid>
+```
+
+Dans l’exemple ci-dessus, l’arrière-plan est bleu sur un appareil Android et rouge sur un appareil iOS.
+
+<a name="orientation" />
+
+## <a name="orientation-trigger-preview"></a>Déclencheur d’orientation (préversion)
+
+Un `OrientationTrigger` prend en charge le changement de l’état d’affichage quand l’appareil bascule entre l’orientation paysage et l’orientation portrait.
+
+```xaml
+<Grid>
+    <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup>
+            <VisualState
+                x:Name="Landscape">
+                <VisualState.StateTriggers>
+                    <OrientationStateTrigger Orientation="Landscape" />
+                </VisualState.StateTriggers>
+                <VisualState.Setters>
+                    <Setter Property="BackgroundColor" Value="Blue" />
+                </VisualState.Setters>
+            </VisualState>
+            <VisualState
+                x:Name="Portrait">
+                <VisualState.StateTriggers>
+                    <OrientationStateTrigger Orientation="Portrait" />
+                </VisualState.StateTriggers>
+                <VisualState.Setters>
+                    <Setter Property="BackgroundColor" Value="Red" />
+                </VisualState.Setters>
+            </VisualState>
+        </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>  
+    <Label
+        Text="This Grid changes the color based on the orientation device where the App is running."
+        HorizontalOptions="Center"
+        VerticalOptions="Center"/>
+</Grid>
+```
+
+Dans l’exemple ci-dessus, l’arrière-plan est bleu quand l’appareil est dans l’orientation paysage et rouge dans l’orientation portrait.
 
 ## <a name="related-links"></a>Liens associés
 

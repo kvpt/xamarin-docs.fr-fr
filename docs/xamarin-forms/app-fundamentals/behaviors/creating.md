@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: a3b9653651e3000b954cb6d16154cddc8d5d363a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
-ms.translationtype: MT
+ms.openlocfilehash: 42ad56a7ae34bcef638ed25bea267dcabd21e20c
+ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70772103"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77131090"
 ---
 # <a name="create-xamarinforms-behaviors"></a>Créer des comportements Xamarin.Forms
 
@@ -20,7 +20,7 @@ ms.locfileid: "70772103"
 
 _Les comportements Xamarin.Forms sont créés par dérivation de la classe Behavior ou Behavior&lt;T&gt;. Cet article montre comment créer et consommer des comportements Xamarin.Forms._
 
-## <a name="overview"></a>Présentation
+## <a name="overview"></a>Vue d'ensemble
 
 Le processus de création d’un comportement Xamarin.Forms est le suivant :
 
@@ -84,7 +84,7 @@ public class NumericValidationBehavior : Behavior<Entry>
 }
 ```
 
-`NumericValidationBehavior` dérive de la classe [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1), où `T` est une [`Entry`](xref:Xamarin.Forms.Entry). La méthode [`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) inscrit un gestionnaire d’événements pour l’événement [`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged), tandis que la méthode [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) le désinscrit de l’événement `TextChanged` pour empêcher les fuites de mémoire. La fonctionnalité clé du comportement est fournie par la méthode `OnEntryTextChanged`, qui analyse la valeur entrée par l’utilisateur dans l’`Entry` et définit la propriété [`TextColor`](xref:Xamarin.Forms.Entry.TextColor) sur rouge si la valeur n’est pas un `double`.
+`NumericValidationBehavior` dérive de la classe [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1), où `T` est une [`Entry`](xref:Xamarin.Forms.Entry). La méthode [`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) inscrit un gestionnaire d’événements pour l’événement [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged), tandis que la méthode [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) le désinscrit de l’événement `TextChanged` pour empêcher les fuites de mémoire. La fonctionnalité clé du comportement est fournie par la méthode `OnEntryTextChanged`, qui analyse la valeur entrée par l’utilisateur dans l’`Entry` et définit la propriété [`TextColor`](xref:Xamarin.Forms.InputView.TextColor) sur rouge si la valeur n’est pas un `double`.
 
 > [!NOTE]
 > Xamarin.Forms ne définit pas le `BindingContext` d’un comportement parce que les comportements peuvent être partagés et appliqués à plusieurs contrôles en utilisant des styles.
@@ -110,7 +110,7 @@ entry.Behaviors.Add (new NumericValidationBehavior ());
 
 Lors de l’exécution, le comportement répond à l’interaction avec le contrôle en fonction de l’implémentation de comportement. Les captures d’écran suivantes illustrent le comportement répondant à une entrée non valide :
 
-[![](creating-images/screenshots-sml.png "Exemple d’application avec un comportement Xamarin.Forms")](creating-images/screenshots.png#lightbox "Exemple d’application avec un comportement Xamarin.Forms")
+[![](creating-images/screenshots-sml.png "Sample Application with Xamarin.Forms Behavior")](creating-images/screenshots.png#lightbox "Sample Application with Xamarin.Forms Behavior")
 
 > [!NOTE]
 > Les comportements sont écrits pour un type de contrôle spécifique (ou une superclasse qui peut s’appliquer à de nombreux contrôles) et doivent être ajoutés à un contrôle compatible uniquement. La tentative d’attachement d’un comportement à un contrôle incompatible entraîne la levée d’une exception.

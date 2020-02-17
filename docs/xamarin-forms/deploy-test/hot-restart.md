@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: jimmgarrido
 ms.author: jigarrid
 ms.date: 01/14/2020
-ms.openlocfilehash: fb607ab605322499e42f500e4f3bf08c1c267c23
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.openlocfilehash: 2cf925a96e952e6b760da9ca5416e124a3e3716b
+ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519684"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77071151"
 ---
 # <a name="xamarin-hot-restart-preview"></a>Xamarin Hot Restart (préversion)
 
-![Fonctionnalité en préversion](~/media/shared/preview.png)
+![Fonctionnalité d’évaluation](~/media/shared/preview.png)
 
 Xamarin Hot Restart vous permet de tester rapidement les modifications apportées à votre application pendant le développement, notamment les modifications de code multifichiers, les ressources et les références. Il envoie les nouvelles modifications au bundle d’applications existant sur la cible de débogage, ce qui entraîne un cycle de génération et de déploiement beaucoup plus rapide.
 
@@ -52,7 +52,7 @@ Xamarin Hot Restart vous permet de tester rapidement les modifications apportée
 > Il est recommandé d’utiliser le provisionnement automatique afin que d’autres appareils iOS puissent être facilement configurés pour le déploiement. Toutefois, vous pouvez le désactiver et continuer à utiliser le provisionnement manuel si les bons profils de provisionnement sont présents.
 
 ## <a name="use-xamarin-hot-restart"></a>Utiliser Xamarin Hot Restart
-Après la configuration initiale, votre appareil connecté apparaît dans le menu déroulant de la cible de débogage. Pour déboguer votre application, sélectionnez votre appareil dans le menu déroulant et cliquez sur le bouton **Exécuter**. Vous devrez peut-être lancer manuellement l’application sur l’appareil pour démarrer la session de débogage.
+Après la configuration initiale, votre appareil connecté apparaît dans le menu déroulant de la cible de débogage. Pour déboguer votre application, sélectionnez votre appareil dans le menu déroulant et cliquez sur le bouton **Exécuter**. Vous pouvez voir un message dans Visual Studio vous demandant de lancer manuellement l’application sur l’appareil pour démarrer la session de débogage.
 
 Vous pouvez apporter des modifications à vos fichiers de code pendant le débogage, puis appuyer sur le bouton **Redémarrer** dans la barre d’outils de débogage ou utiliser **Ctrl+Maj+F5** pour redémarrer la session de débogage avec les nouvelles modifications appliquées :
 
@@ -66,6 +66,7 @@ Vous pouvez apporter des modifications à vos fichiers de code pendant le débog
 
 ## <a name="troubleshoot"></a>Résoudre les problèmes
 - L’Assistant d’installation ne détecte pas iTunes si celui-ci n’a pas été installé via le Microsoft Store. Vous devrez d’abord désinstaller cette version, puis télécharger le [programme d’installation à partir d’Apple](https://go.microsoft.com/fwlink/?linkid=2101014).
+- Un problème connu est que l’activation de builds spécifiques à l’appareil empêche l’application d’entrer en mode débogage. Pour contourner ce problème, désactivez cette option sous **Propriétés > Build iOS** et réessayez le débogage. Ceci fera l’objet d’un correctif dans une version future.
 - Si l’application est déjà présente sur l’appareil, la tentative de déploiement avec Hot Restart peut échouer avec une erreur `AMDeviceStartHouseArrestService`. La solution de contournement consiste à désinstaller l’application de l’appareil, puis à la redéployer.
 
 Pour signaler d’autres problèmes, utilisez l’outil de commentaires dans [Aide > Envoyer des commentaires > Signaler un problème](/visualstudio/ide/feedback-options?view=vs-2019#report-a-problem).
