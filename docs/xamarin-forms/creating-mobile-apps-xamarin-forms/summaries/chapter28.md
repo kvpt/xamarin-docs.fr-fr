@@ -9,7 +9,7 @@ ms.author: dabritch
 ms.date: 07/19/2018
 ms.openlocfilehash: 5dcd84536cc6d80deb753fc6fe57f9090f6b2dad
 ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/21/2019
 ms.locfileid: "72697076"
@@ -35,7 +35,7 @@ Angle mesuré au nord ou au sud de l’Équateur à partir du Centre des lignes 
 
 ### <a name="longitude-and-meridians"></a>Longitude et méridiens
 
-Les deux moitiés de grands cercles du pôle Nord au pôle Sud sont des lignes de longitude égale, également appelées *méridiens*. Celles-ci sont relatives au premier méridien de Greenwich, en Angleterre. Par Convention, la longitude est du premier méridien est une valeur positive comprise entre 0 et 180 degrés, tandis que la longitude ouest du premier méridien est une valeur négative comprise entre 0 et &ndash;180 degrés.
+Les deux moitiés de grands cercles du pôle Nord au pôle Sud sont des lignes de longitude égale, également appelées *méridiens*. Celles-ci sont relatives au premier méridien de Greenwich, en Grande-Bretagne. Par Convention, la longitude est du premier méridien est une valeur positive comprise entre 0 et 180 degrés, tandis que la longitude ouest du premier méridien est une valeur négative comprise entre 0 et &ndash;180 degrés.
 
 ### <a name="the-equirectangular-projection"></a>Projection équirectangulaire
 

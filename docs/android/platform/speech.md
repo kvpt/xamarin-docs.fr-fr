@@ -9,7 +9,7 @@ ms.author: daortin
 ms.date: 04/02/2018
 ms.openlocfilehash: e8c7d1a4fb3537644ed3b7737158a5e50abcdae5
 ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/29/2019
 ms.locfileid: "73019765"
@@ -127,7 +127,7 @@ protected override void OnActivityResult(int requestCode, Result resultVal, Inte
 
 La conversion de texte par synthèse vocale n’est pas tout à fait l’inverse de la reconnaissance vocale au texte et s’appuie sur deux composants clés. un moteur de conversion de texte par synthèse vocale installé sur l’appareil et une langue en cours d’installation.
 
-En grande partie, les appareils Android sont fournis avec le service Google TTS par défaut installé et au moins une langue. Cela est établi lorsque l’appareil est configuré pour la première fois et est basé sur l’emplacement de l’appareil à l’heure (par exemple, un téléphone configuré en Allemagne installe la langue allemande, tandis que l’autre en Amérique est l’anglais américain).
+En grande partie, les appareils Android sont fournis avec le service Google TTS par défaut installé et au moins une langue. Cela est établi lorsque l’appareil est configuré pour la première fois et est basé sur l’emplacement de l’appareil à l’heure (par exemple, un téléphone configuré en Allemagne installe la langue allemande, tandis que l’autre aux États-Unis est l’anglais américain).
 
 ### <a name="step-1---instantiating-texttospeech"></a>Étape 1 : instanciation de TextToSpeech
 
