@@ -1,118 +1,177 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Xamarin.Android
+summary: Xamarin.Android expose le kit SDK Android complet pour les développeurs .NET. Créez des applications Android entièrement natives à l’aide de C# ou F# dans Visual Studio.
 metadata:
+  title: Xamarin.Android
   description: Xamarin.Android expose le kit SDK Android complet pour les développeurs .NET.
-  author: davidortinau
-  ms.author: daortin
-  ms.date: 07/27/2018
   ms.topic: landing-page
+  ms.prod: xamarin
   ms.technology: xamarin-android
-abstract:
-  description: 'Xamarin.Android expose le kit SDK Android complet pour les développeurs .NET. Créez des applications Android entièrement natives à l’aide de C# ou F# dans Visual Studio.'
-  menu:
-    items:
-      - href: ~/android/samples/index.md
-        text: Exemples Android
-      - href: 'https://docs.microsoft.com/xamarin/android/release-notes/'
-        text: Notes de publication
-      - href: 'https://developers.google.com/'
-        text: Documentation du développeur de Google
-      - href: /visualstudio/
-        text: Visual Studio
-sections:
-  - title: Bien démarrer
-    items:
-      - type: paragraph
-        text: 'Découvrez comment créer votre première application Android avec Xamarin et C#.'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_setup.svg'
-            text: Installation
-            href: ~/android/get-started/installation/index.md
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_mobileapp.svg'
-            text: 'Hello, Android'
-            href: ~/android/get-started/hello-android/hello-android-quickstart.md
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_mobileapp.svg'
-            text: Applications multi-écran
-            href: ~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-quickstart.md
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_mobile-app-developement.svg'
-            text: Android 10
-            href: ~/android/platform/android-10.md
-  - title: Repères
-    items:
-      - type: list
-        style: cards
-        className: cardsB
-        items:
-          - href: ~/android/get-started/index.md
-            html: Didacticiels pour vous aider à bien démarrer avec Xamarin.Android. Vérifiez que tout est installé correctement et générez vos premières applications Android.
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_get-started.svg'
-              href: ~/android/get-started/index.md
-            title: Prise en main
-          - href: ~/android/app-fundamentals/index.md
-            html: 'Tout ce que vous devez savoir pour créer des applications Android, par exemple l’utilisation de fichiers, d’images, de bases de données, et bien plus encore.'
-            image:
-              src: ~/media/icons/i_app-build.svg
-              href: ~/android/app-fundamentals/index.md
-            title: Notions de base des applications
-          - href: ~/android/user-interface/index.md
-            html: Découvrez-en plus sur le jeu de widgets de contrôle d’interface utilisateur disponible pour Android.
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: ~/android/user-interface/index.md
-            title: Interface utilisateur
-          - href: ~/android/platform/index.md
-            html: 'Utilisation des fonctionnalités de la plateforme Android, telles que l’authentification par empreinte digitale, et des toutes nouvelles fonctionnalités d’Android 8.0 Oreo.'
-            image:
-              src: ~/media/icons/i_platform.svg
-              href: ~/android/platform/index.md
-            title: Fonctionnalités de la plateforme
-          - href: ~/essentials/index.md?context=xamarin/android
-            html: API interplateformes pour les applications mobiles.
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_multi-connect.svg'
-              href: ~/essentials/index.md?context=xamarin/android
-            title: Xamarin.Essentials
-          - href: ~/android/data-cloud/index.md
-            html: 'Stockage et récupération de données sur site et à distance, et autres services cloud.'
-            image:
-              src: ~/media/icons/i_data-cloud.svg
-              href: ~/android/data-cloud/index.md
-            title: Services de données et cloud
-          - href: ~/android/deploy-test/index.md
-            html: 'Instructions pour créer et déployer vos applications dans Google Play, et conseils pour les tester au préalable.'
-            image:
-              src: ~/media/icons/i_deploy-test.svg
-              href: ~/android/deploy-test/index.md
-            title: Déploiement et tests
-          - href: ~/android/internals/index.md
-            html: Informations supplémentaires sur les éléments internes de Xamarin.Android et l’assistance à l’aide de fonctionnalités telles que la localisation et l’accessibilité.
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_advanced.svg'
-              href: ~/android/internals/index.md
-            title: Concepts avancés et éléments internes
-          - href: ~/android/wear/index.md
-            html: Création d’applications pour Android Wear.
-            image:
-              src: ~/media/icons/i_android-wear.svg
-              href: ~/android/wear/index.md
-            title: Android Wear
-  - title: Référence
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: API
-            href: 'https://docs.microsoft.com/dotnet/api/?view=xamarin-android-sdk-9'
-            html: '<p><a href="https://docs.microsoft.com/dotnet/api/?view=xamarin-android-sdk-9">Documentation sur les API Android</a></p><p><a href="https://docs.microsoft.com/dotnet/api/?view=xamarinandroid-7.1">Bibliothèque de classes de base</a></p>'
-          - title: Exemples
-            href: 'https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Android'
-            html: '<p><a href="https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Android">Exemples Android</a></p>'
+  author: davidbritch
+  ms.author: dabritch
+  ms.date: 01/27/2020
+  ms.openlocfilehash: 394812b5150f7bbea46dff476bd2f896083b9a74
+  ms.sourcegitcommit: 24883be72e485e5311dd0eb91f9a22f78eeec11a
+  ms.translationtype: HT
+  ms.contentlocale: fr-FR
+  ms.lasthandoff: 02/17/2020
+  ms.locfileid: "77374082"
+landingContent:
+- title: Prise en main
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Bien démarrer avec Xamarin.Android
+      url: ~/android/get-started/index.md
+    - text: Configuration et installation
+      url: ~/android/get-started/installation/index.md
+    - text: Créer votre première application
+      url: ~/android/get-started/hello-android/index.md
+    - text: Étendre votre première application
+      url: ~/android/get-started/hello-android-multiscreen/index.md
+    - text: Xamarin pour les développeurs Java
+      url: ~/android/get-started/java-developers.md
+- title: Notions de base des applications
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Accessibilité
+      url: ~/android/app-fundamentals/accessibility.md
+    - text: Niveaux d’API Android
+      url: ~/android/app-fundamentals/android-api-levels.md
+    - text: Cycle de vie des activités
+      url: ~/android/app-fundamentals/activity-lifecycle/index.md
+    - text: Récepteurs de diffusion
+      url: ~/android/app-fundamentals/broadcast-receivers.md
+    - text: Graphisme et animation
+      url: ~/android/app-fundamentals/graphics-and-animation.md
+    - text: Localisation
+      url: ~/android/app-fundamentals/localization.md
+    - text: Notifications
+      url: ~/android/app-fundamentals/notifications/index.md
+    - text: Autorisations
+      url: ~/android/app-fundamentals/permissions.md
+    - text: Entrées tactiles et mouvements
+      url: ~/android/app-fundamentals/touch/index.md
+    - text: Afficher plus >
+      url: ~/android/app-fundamentals/index.md
+- title: Interface utilisateur
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Concepteur Android
+      url: ~/android/user-interface/android-designer/index.md
+    - text: Thème matériau
+      url: ~/android/user-interface/material-theme.md
+    - text: Profil utilisateur
+      url: ~/android/user-interface/user-profile.md
+    - text: Écran de démarrage
+      url: ~/android/user-interface/splash-screen.md
+    - text: Dispositions
+      url: ~/android/user-interface/layouts/index.md
+    - text: Contrôles
+      url: ~/android/user-interface/controls/index.md
+- title: Fonctionnalités de la plateforme
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Liaison d’applications
+      url: ~/android/platform/app-linking.md
+    - text: Lier une bibliothèque Java
+      url: ~/android/platform/binding-java-library/index.md
+    - text: Fournisseurs de contenu
+      url: ~/android/platform/content-providers/index.md
+    - text: Accès aux fichiers
+      url: ~/android/platform/files/index.md
+    - text: Authentification par empreinte digitale
+      url: ~/android/platform/fingerprint-authentication/index.md
+    - text: Fragments
+      url: ~/android/platform/fragments/index.md
+    - text: Intégration Java
+      url: ~/android/platform/java-integration/index.md
+    - text: Planificateur de travaux
+      url: ~/android/platform/android-job-scheduler.md
+    - text: Cartes et localisation
+      url: ~/android/platform/maps-and-location/index.md
+    - text: Afficher plus >
+      url: ~/android/platform/index.md
+- title: Xamarin.Essentials
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: À propos de
+      url: ~/essentials/index.md?context=xamarin/android
+    - text: Prise en main
+      url: ~/essentials/get-started.md?context=xamarin/android
+    - text: Prise en charge des plateformes et des fonctionnalités
+      url: ~/essentials/platform-feature-support.md?context=xamarin/android
+    - text: Résolution des problèmes
+      url: ~/essentials/troubleshooting.md?context=xamarin/android
+    - text: Notes de publication
+      url: https://docs.microsoft.com/xamarin/essentials/release-notes/
+- title: Données et services cloud
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Azure Active Directory
+      url: ~/cross-platform/data-cloud/active-directory/index.md?context=xamarin/android
+    - text: Azure Mobile Apps
+      url: ~/cross-platform/data-cloud/mobile-apps.md
+    - text: Accès aux données
+      url: ~/android/data-cloud/data-access/index.md
+    - text: Messagerie Google
+      url: ~/android/data-cloud/google-messaging/index.md
+    - text: Introduction aux services web
+      url: ~/cross-platform/data-cloud/web-services/index.md?context=xamarin/android
+- title: Déploiement et test
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Taille des packages d’application
+      url: ~/android/deploy-test/app-package-size.md
+    - text: Créer des applications
+      url: ~/android/deploy-test/building-apps/index.md
+    - text: Liaison
+      url: ~/android/deploy-test/linker.md
+    - text: Appareils multicœurs
+      url: ~/android/deploy-test/multicore-devices.md
+    - text: Performances
+      url: ~/android/deploy-test/performance.md
+    - text: Profilage
+      url: ~/android/deploy-test/profiling.md
+    - text: Préparer la publication
+      url: ~/android/deploy-test/release-prep/index.md
+    - text: Signer l’APK
+      url: ~/android/deploy-test/signing/index.md
+    - text: Publier une application
+      url: ~/android/deploy-test/publishing/index.md
+    - text: Afficher plus >
+      url: ~/android/deploy-test/index.md
+- title: Éléments internes et concepts avancés
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Architecture
+      url: ~/android/internals/architecture.md
+    - text: Assemblys disponibles
+      url: ~/cross-platform/internals/available-assemblies.md?context=xamarin/android
+    - text: Conception d’API
+      url: ~/android/internals/api-design.md
+    - text: Garbage collection
+      url: ~/android/internals/garbage-collection.md
+    - text: Limitations
+      url: ~/android/internals/limitations.md
+- title: Android Wear
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Prise en main
+      url: ~/android/wear/get-started/index.md
+    - text: Interface utilisateur
+      url: ~/android/wear/user-interface/index.md
+    - text: Fonctionnalités de la plateforme
+      url: ~/android/wear/platform/index.md
+    - text: Tailles d’écran
+      url: ~/android/wear/screen-sizes.md
+    - text: Déploiement et test
+      url: ~/android/wear/deploy-test/index.md
