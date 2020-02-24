@@ -508,6 +508,8 @@
           href: ~/essentials/accelerometer.md?context=xamarin/ios
         - name: Informations de l'application
           href: ~/essentials/app-information.md?context=xamarin/ios
+        - name: Thème d’application
+          href: ~/essentials/app-theme.md?context=xamarin/ios
         - name: Baromètre
           href: ~/essentials/barometer.md?context=xamarin/ios
         - name: Batterie
@@ -550,6 +552,8 @@
           href: ~/essentials/open-browser.md?context=xamarin/ios
         - name: Capteur d’orientation
           href: ~/essentials/orientation-sensor.md?context=xamarin/ios
+        - name: Autorisations
+          href: ~/essentials/permissions.md?context=xamarin/ios
         - name: Numéroteur téléphonique
           href: ~/essentials/phone-dialer.md?context=xamarin/ios
         - name: 'Extensions de plateforme (taille, rectangle, point)'
@@ -942,6 +946,8 @@
               href: ~/essentials/accelerometer.md?context=xamarin/watchos
             - name: Informations de l'application
               href: ~/essentials/app-information.md?context=xamarin/watchos
+            - name: Thème d’application
+              href: ~/essentials/app-theme.md?context=xamarin/watchos
             - name: Baromètre
               href: ~/essentials/barometer.md?context=xamarin/watchos
             - name: Batterie
@@ -968,6 +974,8 @@
               href: ~/essentials/maps.md?context=xamarin/watchos
             - name: Capteur d’orientation
               href: ~/essentials/orientation-sensor.md?context=xamarin/watchos
+            - name: Autorisations
+              href: ~/essentials/permissions.md?context=xamarin/watchos
             - name: 'Extensions de plateforme (taille, rectangle, point)'
               href: ~/essentials/platform-extensions.md?context=xamarin/watchos
             - name: Préférences
@@ -1043,6 +1051,8 @@
               href: ~/essentials/platform-feature-support.md?context=xamarin/tvos
             - name: Informations de l'application
               href: ~/essentials/app-information.md?context=xamarin/tvos
+            - name: Thème d’application
+              href: ~/essentials/app-theme.md?context=xamarin/tvos
             - name: Convertisseurs de couleurs
               href: ~/essentials/color-converters.md?context=xamarin/tvos
             - name: Connectivité
@@ -1055,6 +1065,8 @@
               href: ~/essentials/geocoding.md?context=xamarin/tvos
             - name: Thread principal
               href: ~/essentials/main-thread.md?context=xamarin/tvos
+            - name: Autorisations
+              href: ~/essentials/permissions.md?context=xamarin/tvos
             - name: 'Extensions de plateforme (taille, rectangle, point)'
               href: ~/essentials/platform-extensions.md?context=xamarin/tvos
             - name: Préférences
