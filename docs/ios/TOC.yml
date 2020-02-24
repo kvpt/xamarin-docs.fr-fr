@@ -322,6 +322,11 @@
           items:
             - name: 'Procédure pas à pas : liaison d’une bibliothèque Objective-C iOS'
               href: platform/binding-objective-c/walkthrough.md
+        - name: Lier des bibliothèques iOS Swift
+          href: platform/binding-swift/index.md
+          items:
+            - name: Procédure pas à pas
+              href: platform/binding-swift/walkthrough.md
         - name: CallKit
           href: platform/callkit.md
         - name: Contacts et ContactsUI
