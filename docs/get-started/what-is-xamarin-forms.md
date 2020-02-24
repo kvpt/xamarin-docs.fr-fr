@@ -6,12 +6,12 @@ ms.assetid: C1E24DB9-3099-4F79-BB88-10AABF7D4614
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 09/18/2019
-ms.openlocfilehash: 8bd530e743330ab8058f13cb7ba09f95a30ee886
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.openlocfilehash: aaceb6089a5b7e5f0551dafe9ef1fe50d01433d9
+ms.sourcegitcommit: 24883be72e485e5311dd0eb91f9a22f78eeec11a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "75607839"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77374021"
 ---
 # <a name="what-is-xamarinforms"></a>Qu’est-ce que Xamarin.Forms ?
 
@@ -35,7 +35,7 @@ Xamarin.Forms est destiné aux développeurs qui ont les objectifs suivants :
 
 Xamarin.Forms fournit une API cohérente qui permet de créer des éléments d’interface utilisateur sur plusieurs plateformes. Cette API peut être implémentée en XAML ou en C# et prend en charge la liaison de données pour les modèles comme MVVM (Modèle-vue-vue modèle).
 
-Lors de l’exécution, Xamarin.Forms utilise les renderers de plateforme pour convertir les éléments d’interface utilisateur multiplateformes en contrôles natifs sur Android, iOS et UWP. Il permet aux développeurs d’obtenir des performances et une apparence natives tout en profitant des avantages du partage de code entre les plateformes.
+Lors de l’exécution, Xamarin.Forms utilise les renderers de plateforme pour convertir les éléments d’interface utilisateur multiplateformes en contrôles natifs sur Android, iOS et UWP. Ceci permet aux développeurs d’obtenir des performances et une apparence natives tout en profitant des avantages du partage de code entre les plateformes.
 
 Les applications Xamarin.Forms se composent généralement d’une bibliothèque .NET Standard partagée et de projets de plateforme individuels. La bibliothèque partagée contient les vues XAML ou C# et une logique métier telle que des services, des modèles ou tout autre code. Les projets de plateforme contiennent une logique spécifique à la plateforme ou les packages dont a besoin l’application.
 
@@ -53,7 +53,7 @@ Xamarin.Essentials est une bibliothèque qui fournit des API multiplateformes po
 - Système de fichiers
 - Accéléromètre
 - Numéroteur téléphonique
-- Synthèse vocale
+- Conversion de texte par synthèse vocale
 - Verrouillage d’écran
 
 Pour plus d’informations, consultez [Xamarin.Essentials](~/essentials/index.md).
@@ -72,14 +72,14 @@ Pour plus d’informations, consultez [Shell Xamarin.Forms](~/xamarin-forms/app-
 
 Xamarin.Forms fournit une API commune qui restitue les contrôles natifs sur les plateformes, mais une plateforme donnée peut avoir des fonctionnalités qui n’existent pas sur d’autres plateformes. Par exemple, la plateforme Android offre des fonctionnalités natives pour le défilement rapide dans un `ListView` alors qu’iOS n’en offre pas. Les spécificités de la plateforme Xamarin.Forms vous permettent d’utiliser des fonctionnalités qui sont uniquement disponibles sur une plateforme spécifique sans créer de renderers ou d’effets personnalisés.
 
-Xamarin.Forms comprend des solutions prédéfinies pour diverses fonctionnalités spécifiques à la plateforme. Pour plus d’informations, consultez :
+Xamarin.Forms comprend des solutions prédéfinies pour diverses fonctionnalités spécifiques à la plateforme. Pour plus d'informations, voir :
 
 - [Spécificités de la plateforme Xamarin.Forms](~/xamarin-forms/platform/platform-specifics/index.md)
 - [Spécificités de la plateforme Android](~/xamarin-forms/platform/android/index.md)
 - [Spécificités de la plateforme iOS](~/xamarin-forms/platform/ios/index.md)
 - [Spécificités de la plateforme Windows](~/xamarin-forms/platform/windows/index.md)
 
-### <a name="material-visual"></a>Material Visual
+### <a name="material-visual"></a>Visuel matériau
 
 Xamarin.Forms Material Visual est utilisé pour appliquer les règles de Material Design aux applications Xamarin.Forms. Xamarin.Forms Material Visual utilise la propriété Visual pour appliquer de manière sélective des renderers personnalisés à l’interface utilisateur en vue de donner à une application une apparence cohérente entre iOS et Android.
 

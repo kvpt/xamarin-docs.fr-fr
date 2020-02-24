@@ -555,7 +555,12 @@
                 - name: Style des applications Xamarin.Forms avec des feuilles de style en cascade (CSS)
                   href: user-interface/styles/css/index.md
             - name: Création de thèmes
-              href: user-interface/theming.md
+              href: user-interface/theming/index.md
+              items:
+                - name: Thème d’une application
+                  href: user-interface/theming/theming.md
+                - name: Détecter le mode sombre
+                  href: user-interface/theming/dark-mode.md
             - name: Élément visuel
               href: user-interface/visual/index.md
               items:
