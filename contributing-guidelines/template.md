@@ -8,12 +8,12 @@ ms.date: 02/26/2018
 ms.topic: conceptual
 ms.assetid: 11111111-2222-3333-4444-555555555555
 ms.prod: xamarin
-ms.openlocfilehash: d6300d6d3fdebf851c3710aa2a949575e6fe3f68
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: f26a786f3da909c7d948fe99b4b3a1423352ecbe
+ms.sourcegitcommit: ec62c7f28abc8e121656f1b93146657d90a4cab4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "76530873"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77553562"
 ---
 # <a name="metadata-and-markdown-template"></a>Métadonnées et modèle Markdown
 
@@ -95,7 +95,7 @@ Les titres de second niveau génèrent la table des matières sur la page qui s�
 
 ## <a name="text-styling"></a>Style du texte
 
-*Italique* À utiliser pour les fichiers, dossiers, chemins (pour les éléments longs, séparés sur leur propre ligne), les nouveaux termes, les URL (sauf quand elles sont rendues sous forme de liens, par défaut).
+_Italique_ À utiliser pour les fichiers, dossiers, chemins (pour les éléments longs, séparés sur leur propre ligne), les nouveaux termes, les URL (sauf quand elles sont rendues sous forme de liens, par défaut).
 
 **Gras** À utiliser pour les éléments d’interface utilisateur.
 
@@ -174,7 +174,7 @@ Quand l’UID contient les caractères spéciaux \` ou \#, la valeur de l’UID 
 ### <a name="unordered-lists"></a>Listes non triées
 
 - This
-- est
+- is
 - a
 - bulleted
 - list
