@@ -255,12 +255,14 @@
           items:
             - name: Modèles double écran
               href: app-fundamentals/dual-screen/design-patterns.md
-            - name: TwoPaneView
+            - name: Disposition sur double écran
               href: app-fundamentals/dual-screen/twopaneview.md
-            - name: DualScreenInfo
+            - name: Fonctionnalités des appareils sur double écran
               href: app-fundamentals/dual-screen/dual-screen-info.md
-            - name: DualScreenHelper
+            - name: Assistances aux plateformes sur double écran
               href: app-fundamentals/dual-screen/dual-screen-helper.md
+            - name: Déclencheurs sur double écran
+              href: app-fundamentals/dual-screen/triggers.md
         - name: Effects (Effets)
           href: app-fundamentals/effects/index.md
           items:
