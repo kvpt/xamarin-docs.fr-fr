@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: e0694598fe5637f6e63ebf64dce4a7d9768eba5f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
-ms.translationtype: MT
+ms.openlocfilehash: efe41fa5f25f6257587fd97a2711e9037b94dc6e
+ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771826"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77636014"
 ---
 # <a name="custom-video-transport-controls"></a>Contrôles de transport vidéo personnalisés
 
@@ -522,7 +522,7 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="play-pause-and-stop-buttons"></a>Boutons de lecture, de pause et d’arrêt
 
-L’utilisation de caractères Unicode pour les images **Lecture**, **Pause** et **Arrêt** symboliques est problématique. La section [Divers technique](https://unicode-table.com/en/blocks/miscellaneous-technical/) de la convention Unicode Standard définit trois symboles apparemment appropriés à cet effet. Ces règles sont les suivantes :
+L’utilisation de caractères Unicode pour les images **Lecture**, **Pause** et **Arrêt** symboliques est problématique. La section [Divers technique](https://unicode-table.com/en/blocks/miscellaneous-technical/) de la convention Unicode Standard définit trois symboles apparemment appropriés à cet effet. Ces équivalents sont :
 
 - 0x23F5 (triangle noir moyen pointant vers la droite) ou &#x23F5; pour **Lecture**
 - 0x23F8 (double barre verticale) ou &#x23F8; pour **Pause**
@@ -613,7 +613,7 @@ La page **Transport personnalisé** affecte à la propriété **AreTransportCont
 </ContentPage>
 ```
 
-Les déclencheurs de données sont décrits en détail dans l’article [Déclencheurs de données](~/xamarin-forms/app-fundamentals/triggers.md#data).
+Les déclencheurs de données sont décrits en détail dans l’article [Déclencheurs de données](~/xamarin-forms/app-fundamentals/triggers.md#data-triggers).
 
 Le fichier code-behind contient les gestionnaires pour les événements `Clicked` de bouton :
 
@@ -649,7 +649,7 @@ namespace VideoPlayerDemos
 
 Comme `AutoPlay` a la valeur `false` dans le fichier **CustomTransport.xaml**, vous devez appuyer sur le bouton de **lecture** quand celui-ci est activé pour démarrer la vidéo. Les boutons sont définis afin que les caractères Unicode abordés ci-dessus soient accompagnés de leurs équivalents textuels. Les boutons ont une apparence cohérente sur chaque plateforme lors de la lecture de la vidéo :
 
-[![Transport personnalisé en cours de lecture](custom-transport-images/customtransportplaying-small.png "Transport personnalisé en cours de lecture")](custom-transport-images/customtransportplaying-large.png#lightbox "Transport personnalisé en cours de lecture")
+[![Lecture de transport personnalisé](custom-transport-images/customtransportplaying-small.png "Lecture de transport personnalisé")](custom-transport-images/customtransportplaying-large.png#lightbox "Lecture de transport personnalisé")
 
 Toutefois, sur Android et UWP, le bouton de **lecture** semble très différent quand la vidéo est en pause :
 

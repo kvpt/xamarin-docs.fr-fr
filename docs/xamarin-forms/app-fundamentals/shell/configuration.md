@@ -6,19 +6,19 @@ ms.assetid: 3FC2FBD1-C30B-4408-97B2-B04E3A2E4F03
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/05/2019
-ms.openlocfilehash: e207949d607219393ffeb51fce818ddfb68ae344
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
-ms.translationtype: MT
+ms.date: 01/29/2020
+ms.openlocfilehash: dfa452addd7cfb838091afdfb350484998d0cc9d
+ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75489906"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77636085"
 ---
 # <a name="xamarinforms-shell-page-configuration"></a>Configuration de la page Shell Xamarin.Forms
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
-La classe `Shell` définit des propriétés jointes qui peuvent être utilisées pour configurer l’apparence des pages dans les applications Shell Xamarin.Forms. Cela comprend notamment la configuration des couleurs de la page, la désactivation de la barre de navigation et de la barre d’onglet ainsi que l’apparence des affichages dans la barre de navigation.
+La classe `Shell` définit des propriétés jointes qui peuvent être utilisées pour configurer l’apparence des pages dans les applications Shell Xamarin.Forms. Cela comprend notamment la configuration des couleurs de la page, la configuration du mode de présentation de la page, la désactivation de la barre de navigation et de la barre d’onglet ainsi que l’affichage des vues dans la barre de navigation.
 
 ## <a name="set-page-colors"></a>Définir les couleurs de page
 
@@ -30,7 +30,7 @@ La classe `Shell` définit les propriétés jointes suivantes qui peuvent être 
 - `TitleColor`, de type `Color` : définit la couleur utilisée pour le titre de la page actuelle.
 - `UnselectedColor`, de type `Color` : définit la couleur appliquée au texte et aux icônes non sélectionnés dans le chrome Shell.
 
-Toutes ces propriétés s’appuient sur des objets [`BindableProperty`](xref:Xamarin.Forms.BindableProperty), ce qui signifie qu’elles peuvent être des cibles de liaisons de données et des styles XAML peuvent être appliqués. En outre, les propriétés peuvent être définies à l’aide de feuilles de style en cascade (CSS). Pour plus d’informations, consultez [Propriétés spécifiques de Xamarin.Forms Shell](~/xamarin-forms/user-interface/styles/css/index.md#xamarinforms-shell-specific-properties).
+Toutes ces propriétés s’appuient sur des objets [`BindableProperty`](xref:Xamarin.Forms.BindableProperty), ce qui signifie qu’elles peuvent être des cibles de liaisons de données et des styles XAML peuvent être appliqués. En outre, les propriétés peuvent être définies à l’aide de feuilles de style en cascade (CSS). Pour plus d’informations, voir [Propriétés spécifiques Shell Xamarin.Forms](~/xamarin-forms/user-interface/styles/css/index.md#xamarinforms-shell-specific-properties).
 
 > [!NOTE]
 > Certaines propriétés permettent de définir les couleurs d’onglet. Pour plus d’informations, consultez [Apparence d’onglet](tabs.md#tab-appearance).
@@ -86,11 +86,35 @@ Vous pouvez également définir les propriétés de couleur avec un style XAML :
 
 Pour plus d’informations sur les styles XAML, consultez [Styler des applications Xamarin.Forms avec des styles XAML](~/xamarin-forms/user-interface/styles/xaml/index.md).
 
+## <a name="set-page-presentation-mode"></a>Définir le mode de présentation de la page
+
+Par défaut, une petite animation de navigation se produit lorsqu’une page fait l’objet d’un accès à l’aide de la méthode `GoToAsync`. Toutefois, pour modifier ce comportement, définissez la propriété jointe `Shell.PresentationMode` sur un [`ContentPage`](xref:Xamarin.Forms.ContentPage) l’un des membres de l’énumération `PresentationMode` :
+
+- `NotAnimated` indique que la page sera affichée sans animation de navigation.
+- `Animated` indique que la page sera affichée avec une animation de navigation. Ceci est la valeur par défaut de la propriété jointe `Shell.PresentationMode`.
+- `Modal` indique que la page est affichée comme page modale.
+- `ModalAnimated` indique que la page est affichée comme page modale, avec une animation de navigation.
+- `ModalNotAnimated` indique que la page est affichée comme page modale, sans animation de navigation.
+
+> [!IMPORTANT]
+> Le type `PresentationMode` est une énumération d’indicateurs. Cela signifie qu’une combinaison de membres de l’énumération peut être appliquée dans le code. Toutefois, pour faciliter l’utilisation dans XAML, le membre `ModalAnimated` est une combinaison des membres `Animated` et `Modal`, et le membre `ModalNotAnimated` est une combinaison des membres `NotAnimated` et `Modal`. Pour plus d’informations sur les énumérations d’indicateur, consultez [Types énumération comme indicateurs binaires](/dotnet/csharp/language-reference/builtin-types/enum#enumeration-types-as-bit-flags).
+
+L’exemple XAML suivant définit la propriété jointe `Shell.PresentationMode` sur un [`ContentPage`](xref:Xamarin.Forms.ContentPage) :
+
+```xaml
+<ContentPage ...
+             Shell.PresentationMode="Modal">
+    ...             
+</ContentPage>
+```
+
+Dans cet exemple, [`ContentPage`](xref:Xamarin.Forms.ContentPage) est défini pour s’afficher comme une page modale, lorsque la page fait l’objet d’un accès avec la méthode `GoToAsync`.
+
 ## <a name="enable-navigation-bar-shadow"></a>Activer l’ombre de la barre de navigation
 
-La classe `Shell` définit la `NavBarHasShadow` propriété jointe, de type `bool`, qui contrôle si l’ombre de la barre de navigation est. Par défaut, la valeur de la propriété est `false`.
+La classe `Shell` définit la propriété jointe `NavBarHasShadow`, de type `bool`, qui contrôle si la barre de navigation a une ombre. Par défaut, la valeur de la propriété est `false`.
 
-Bien que cette propriété puisse être définie sur un objet sous-classé `Shell`, elle peut également être définie sur n’importe quelle page qui souhaite activer l’ombre de la barre de navigation. Par exemple, le code XAML suivant illustre l’activation de l’ombre de la barre de navigation à partir d’une [`ContentPage`](xref:Xamarin.Forms.ContentPage):
+Bien que cette propriété puisse être définie sur un objet `Shell` sous-classé, elle peut également être définie sur toutes les pages devant afficher l’ombre de la barre de navigation. Par exemple, le XAML suivant montre l’activation de l’ombre de la barre de navigation sur une page [`ContentPage`](xref:Xamarin.Forms.ContentPage) :
 
 ```xaml
 <ContentPage ...
@@ -116,7 +140,7 @@ Bien que cette propriété puisse être définie sur un objet `Shell` sous-class
 
 Ainsi, la barre de navigation devient invisible lorsque la page s’affiche :
 
-![Capture d’écran de la page de Shell avec une barre de navigation invisible, sur iOS et Android](configuration-images/navigationbar-invisible.png "Page de Shell avec barre de navigation invisible")
+![Capture d’écran de la page Shell avec une barre de navigation invisible sur iOS et Android](configuration-images/navigationbar-invisible.png "Page Shell avec barre de navigation invisible")
 
 ## <a name="disable-the-tab-bar"></a>Désactiver la barre d’onglets
 
@@ -133,7 +157,7 @@ Bien que cette propriété puisse être définie sur un objet `Shell` sous-class
 
 Ainsi, la barre d’onglets devient invisible lorsque la page s’affiche :
 
-![Capture d’écran de la page de Shell avec une barre d’onglet invisible, sur iOS et Android](configuration-images/tabbar-invisible.png "Page de l’interpréteur de commandes avec la barre d’onglet invisible")
+![Capture d’écran de la page Shell avec une barre d’onglets invisible sur iOS et Android](configuration-images/tabbar-invisible.png "Page Shell avec barre d’onglets invisible")
 
 ## <a name="display-views-in-the-navigation-bar"></a>Affichage des vues dans la barre de navigation
 
@@ -154,7 +178,7 @@ Bien que cette propriété puisse être définie sur un objet `Shell` sous-class
 
 Ainsi, une image s’affiche dans la barre de navigation de la page :
 
-![Capture d’écran de la page de Shell avec une vue de titre, sur iOS et Android](configuration-images/titleview.png "Page de Shell avec une vue de titre")
+![Capture d’écran de la page Shell avec une vue de titre sur iOS et Android](configuration-images/titleview.png "Page Shell avec une vue de titre")
 
 > [!IMPORTANT]
 > Si la barre de navigation est invisible, avec la propriété jointe `NavBarIsVisible`, la vue de titre ne s’affichera pas.
@@ -162,6 +186,10 @@ Ainsi, une image s’affiche dans la barre de navigation de la page :
 De nombreuses vues ne s’affichent dans la barre de navigation que si la taille de la vue est spécifiée avec les propriétés [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) et [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest), ou si l’emplacement de la vue est spécifié avec les propriétés [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) et [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions).
 
 La classe [`Layout`](xref:Xamarin.Forms.Layout) dérive de la classe [`View`](xref:Xamarin.Forms.View), la propriété jointe `TitleView` peut donc être configurée de façon à afficher une classe de disposition qui contient plusieurs vues. De même, la classe [`ContentView`](xref:Xamarin.Forms.ContentView) dérive au final de la classe [`View`](xref:Xamarin.Forms.View), la propriété jointe `TitleView` peut donc être configurée de façon à afficher une `ContentView` qui contient plusieurs vues.
+
+## <a name="page-visibility"></a>Visibilité de la page
+
+Shell respecte la visibilité de la page, définie avec la propriété [`IsVisible`](xref:Xamarin.Forms.VisualElement.IsVisible). Par conséquent, lorsque la propriété `IsVisible` d’une page est définie sur `false` elle n’est pas visible dans l’application Shell et il n’est pas possible d’y accéder.
 
 ## <a name="related-links"></a>Liens connexes
 
