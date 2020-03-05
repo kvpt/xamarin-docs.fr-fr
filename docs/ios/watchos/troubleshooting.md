@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 1f5c4135dc1db874de16f6783a86fa7ea927676c
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 06524163fadc4300d55ec90f35723fd1561bb8a0
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032728"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78292564"
 ---
 # <a name="watchos-troubleshooting"></a>Résolution des problèmes surveilléos
 
@@ -36,9 +36,9 @@ Cette page contient des informations supplémentaires et des solutions de contou
 <a name="deploy" />
 
 - Les versions antérieures de Visual Studio pour Mac afficher de manière incorrecte l’une des icônes **AppleCompanionSettings** comme 88x88 pixels ; ce qui entraîne une **erreur d’icône manquante** si vous tentez de l’envoyer à l’App Store.
-    Cette icône doit être 87x87 pixels (29 unités pour **@3x** écrans de retine). Vous ne pouvez pas résoudre ce problème dans Visual Studio pour Mac : modifiez la ressource d’image dans Xcode ou modifiez manuellement le fichier **Contents. JSON** (pour qu’il corresponde à [cet exemple](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132)).
+    Cette icône doit être 87x87 pixels (29 unités pour **@3x** écrans de retine). Vous ne pouvez pas résoudre ce problème dans Visual Studio pour Mac : modifiez la ressource d’image dans Xcode ou modifiez manuellement le fichier **Contents. JSON** .
 
-- Si l' **ID d’offre groupée info. plist** du projet d’Extension Watch > n’est pas [correctement défini](~/ios/watchos/get-started/project-references.md) pour correspondre à l' **ID d’offre groupée**de l’application espion, le débogueur ne parvient pas à se connecter et Visual Studio pour Mac attend le message *«en attente du débogueur se connecter»* .
+- Si l' **ID d’offre groupée info. plist** du projet d’Extension Watch > n’est pas [correctement défini](~/ios/watchos/get-started/project-references.md) pour correspondre à l' **ID d’offre groupée**de l’application espion, le débogueur ne parvient pas à se connecter et Visual Studio pour Mac attend le message *« en attente de la connexion du débogueur »* .
 
 - Le débogage est pris en charge en mode **notifications** , mais peut ne pas être fiable. Une nouvelle tentative peut parfois fonctionner. Confirmez que l' `WKCompanionAppBundleIdentifier` **info. plist** de l’application espion est définie pour correspondre à l’identificateur de Bundle de l’application parent/conteneur iOS (c’est-à-dire, celle qui s’exécute sur l’iPhone).
 
@@ -166,7 +166,7 @@ Il est facile de supprimer le canal alpha sur Mac OS X à l’aide de l’applic
 
     ![](troubleshooting-images/add-6.png "Opening the storyboard in Interface Builder")
 
-8. Sélectionnez votre nouveau contrôleur d’interface et donnez-lui le ClassName que vous avez défini ci-dessus, par exemple. `MyInterfaceController`.,
+8. Sélectionnez votre nouveau contrôleur d’interface et donnez-lui le ClassName que vous avez défini ci-dessus, par exemple. `MyInterfaceController`.
     Si tout fonctionne correctement, il doit apparaître automatiquement dans la liste déroulante **classe :** et vous pouvez le sélectionner à partir de là.
 
     ![](troubleshooting-images/add-4.png "Setting a custom class")
@@ -257,7 +257,7 @@ Les arguments restants sont expliqués ci-dessous :
 
 ### <a name="--sdkroot"></a>--SDKRoot
 
-Requis. Spécifie le chemin d’accès à Xcode (6,2 ou version ultérieure).
+Obligatoire. Spécifie le chemin d’accès à Xcode (6,2 ou version ultérieure).
 
 Exemple :
 
@@ -291,7 +291,7 @@ Exemple :
 --device=:v2:runtime=com.apple.CoreSimulator.SimRuntime.iOS-8-2,devicetype=com.apple.CoreSimulator.SimDeviceType.iPhone-6
 ```
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [WatchKitCatalog (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
 - [WatchTables (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchtables)

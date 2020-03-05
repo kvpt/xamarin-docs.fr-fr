@@ -7,18 +7,18 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: 2eea51764e0e0f13c1a1a91db664872a67420d33
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 0c273797d7512f062260e49e0f71fdd1132f037b
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73020553"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78291973"
 ---
 # <a name="troubleshooting-bindings"></a>Résolution des problèmes de liaisons
 
 _Cet article résume les erreurs de serveur courantes qui peuvent se produire lors de la génération de liaisons, ainsi que les causes possibles et les méthodes suggérées pour les résoudre._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d’ensemble
 
 La liaison d’une bibliothèque Android (un fichier **. AAR** ou **. jar**) est rarement une affaire simple. elle nécessite généralement des efforts supplémentaires pour atténuer les problèmes qui résultent des différences entre Java et .NET.
 Ces problèmes empêchent Xamarin. Android de lier la bibliothèque Android et de se présenter comme des messages d’erreur dans le journal de génération. Ce guide propose des conseils pour résoudre les problèmes, répertorie certains des problèmes/scénarios les plus courants et fournit des solutions possibles pour réussir à lier la bibliothèque Android.
@@ -52,7 +52,7 @@ Une fois que vous avez décompilé la bibliothèque Android, examinez le code so
   - Le nom de la classe comprend un **$** , c’est-à-dire **une classe $.**
   - Le nom de la classe est entièrement compromis en minuscules, c.-à-d. **une classe.**      
 
-- **`import` instructions pour les bibliothèques non référencées** &ndash; identifier la bibliothèque non référencée et ajouter ces dépendances au projet de liaison Xamarin. Android avec une **action de génération** **ReferenceJar** ou **EmbedddedReferenceJar** .
+- **`import` instructions pour les bibliothèques non référencées** &ndash; identifier la bibliothèque non référencée et ajouter ces dépendances au projet de liaison Xamarin. Android avec une **action de génération** **ReferenceJar** ou **EmbedddedReferenceJar**.
 
 > [!NOTE]
 > La décompilation d’une bibliothèque Java peut être interdite ou soumise à des restrictions légales en fonction des lois locales ou de la licence dans laquelle la bibliothèque Java a été publiée. Si nécessaire, inscrivez les services d’un professionnel légal avant de tenter de décompiler une bibliothèque Java et d’inspecter le code source.
@@ -77,7 +77,7 @@ Parfois, les types ne sont pas générés ou des blocages inattendus peuvent se 
 
 Vous recevez l’erreur « au moins une bibliothèque Java est requise », même si un. JAR a été ajouté.
 
-#### <a name="possible-causes"></a>Causes possibles :
+#### <a name="possible-causes"></a>Causes possibles :
 
 Vérifiez que l’action de génération est définie sur `EmbeddedJar`. Puisqu’il existe plusieurs actions de génération pour. Les fichiers JAR (tels que `InputJar`, `EmbeddedJar`, `ReferenceJar` et `EmbeddedReferenceJar`), le générateur de liaisons ne peut pas deviner automatiquement celui à utiliser par défaut. Pour plus d’informations sur les actions de génération, consultez [actions de génération](~/android/platform/binding-java-library/index.md).
 
@@ -93,7 +93,7 @@ Certains. Les bibliothèques JAR qui utilisent l’obscurcissement de code (par 
 
 Le **fichier Binding. dll** est généré mais n’a pas de type Java C# , ou la source générée n’est pas générée en raison d’une erreur indiquant qu’il manque des types.
 
-#### <a name="possible-causes"></a>Causes possibles :
+#### <a name="possible-causes"></a>Causes possibles :
 
 Cette erreur peut se produire pour plusieurs raisons, comme indiqué ci-dessous :
 
@@ -105,7 +105,7 @@ Cette erreur peut se produire pour plusieurs raisons, comme indiqué ci-dessous�
 
 - Java autorise la dérivation d’une classe publique à partir d’une classe non publique, mais cela n’est pas pris en charge dans .NET. Étant donné que le générateur de liaisons ne génère pas de liaisons pour les classes non publiques, les classes dérivées telles que celles-ci ne peuvent pas être générées correctement. Pour résoudre ce problème, supprimez l’entrée de métadonnées pour ces classes dérivées à l’aide de Remove-node dans **Metadata. xml**, ou corrigez les métadonnées qui rend la classe non publique publique. Bien que la dernière solution crée la liaison afin que la C# source soit générée, la classe non publique ne doit pas être utilisée.
 
-  Exemple :
+  Par exemple :
 
   ```xml
   <attr path="/api/package[@name='com.some.package']/class[@name='SomeClass']"
@@ -123,7 +123,7 @@ Cette erreur peut se produire pour plusieurs raisons, comme indiqué ci-dessous�
 
 La source C# générée n’est pas générée. Les types de paramètres de la méthode substituée ne correspondent pas.
 
-#### <a name="possible-causes"></a>Causes possibles :
+#### <a name="possible-causes"></a>Causes possibles :
 
 Xamarin. Android comprend un large éventail de champs Java qui sont mappés aux enums dans C# les liaisons. Celles-ci peuvent entraîner des incompatibilités de type dans les liaisons générées. Pour résoudre ce besoin, les signatures de méthode créées à partir du générateur de liaisons doivent être modifiées pour utiliser les énumérations. Pour plus d’informations, consultez [Correction des énumérations](~/android/platform/binding-java-library/customizing-bindings/java-bindings-metadata.md).
 
@@ -131,7 +131,7 @@ Xamarin. Android comprend un large éventail de champs Java qui sont mappés aux
 
 `java.lang.NoClassDefFoundError` est levée dans l’étape d’empaquetage.
 
-#### <a name="possible-causes"></a>Causes possibles :
+#### <a name="possible-causes"></a>Causes possibles :
 
 La raison la plus probable de cette erreur est qu’une bibliothèque Java obligatoire doit être ajoutée au projet d’application ( **. csproj**). . Les fichiers JAR ne sont pas résolus automatiquement. Une liaison de bibliothèque Java n’est pas toujours générée par rapport à un assembly utilisateur qui n’existe pas dans l’émulateur ou l’appareil cible (par exemple, Google Maps **Maps. jar**). Ce n’est pas le cas pour la prise en charge des projets de bibliothèque Android, en tant que bibliothèque. JAR est incorporé dans la dll de bibliothèque. Par exemple : [bogue 4288](https://bugzilla.xamarin.com/show_bug.cgi?id=4288)
 
@@ -143,7 +143,7 @@ La génération échoue en raison de types EventArgs personnalisés dupliqués. 
 error CS0102: The type `Com.Google.Ads.Mediation.DismissScreenEventArgs' already contains a definition for `p0'
 ```
 
-#### <a name="possible-causes"></a>Causes possibles :
+#### <a name="possible-causes"></a>Causes possibles :
 
 Cela est dû au fait qu’il existe un conflit entre les types d’événements provenant de plusieurs types d’écouteur d’interface qui partagent des méthodes ayant des noms identiques. Par exemple, s’il existe deux interfaces Java comme illustré dans l’exemple ci-dessous, le générateur crée `DismissScreenEventArgs` pour les `MediationBannerListener` et les `MediationInterstitialListener`, provoquant ainsi l’erreur.
 
@@ -157,7 +157,7 @@ public interface MediationInterstitialListener {
 }
 ```
 
-Cela est dû à la conception, afin que les longs noms sur les types d’arguments d’événement soient évités. Pour éviter ces conflits, certaines transformations de métadonnées sont requises. Modifiez [**Transforms\Metadata.xml**](https://github.com/xamarin/monodroid-samples/blob/master/AdMob/AdMob/Transforms/Metadata.xml) et ajoutez un attribut `argsType` sur l’une ou l’autre des interfaces (ou sur la méthode d’interface) :
+Cela est dû à la conception, afin que les longs noms sur les types d’arguments d’événement soient évités. Pour éviter ces conflits, certaines transformations de métadonnées sont requises. Modifiez **Transforms\Metadata.xml** et ajoutez un attribut `argsType` sur l’une ou l’autre des interfaces (ou sur la méthode d’interface) :
 
 ```xml
 <attr path="/api/package[@name='com.google.ads.mediation']/
@@ -188,7 +188,7 @@ implement interface member 'Oauth.Signpost.Http.IHttpRequest.Unwrap()'.
 return type of 'Java.Lang.Object'
 ```
 
-#### <a name="possible-causes"></a>Causes possibles :
+#### <a name="possible-causes"></a>Causes possibles :
 
 Il s’agit d’un problème qui se produit lors de la liaison de méthodes Java avec des types de retour covariants. Dans cet exemple, la méthode `Oauth.Signpost.Http.IHttpRequest.UnWrap()` doit retourner `Java.Lang.Object`. Toutefois, la méthode `Oauth.Signpost.Basic.HttpURLConnectionRequestAdapter.UnWrap()` a un type de retour `HttpURLConnection`. Il existe deux façons de résoudre ce problème :
 
@@ -204,7 +204,7 @@ Il s’agit d’un problème qui se produit lors de la liaison de méthodes Java
   }
   ```
 
-- Supprimez la covariance du code C# généré. Cela implique l’ajout de la transformation suivante à **Transforms\Metadata.xml** , ce qui C# amène le code généré à avoir un type de retour`Java.Lang.Object`:
+- Supprimez la covariance du code C# généré. Cela implique l’ajout de la transformation suivante à **Transforms\Metadata.xml** , ce qui C# amène le code généré à avoir un type de retour `Java.Lang.Object`:
 
   ```xml
   <attr
@@ -231,17 +231,17 @@ En Java, il n’est pas nécessaire qu’une classe dérivée ait la même visib
 
 Certains projets de liaison peuvent également dépendre de la fonctionnalité dans une bibliothèque **. so** . Il est possible que Xamarin. Android ne charge pas automatiquement la bibliothèque **. so** . Lors de l’exécution du code Java encapsulé, Xamarin. Android ne parvient pas à effectuer l’appel JNI et le message d’erreur _java. lang. UnsatisfiedLinkError : méthode Native introuvable :_ s’affiche dans le logcat pour l’application.
 
-Pour résoudre ce problème, vous devez charger manuellement la bibliothèque **. so** avec un appel à `Java.Lang.JavaSystem.LoadLibrary`. Par exemple, en supposant qu’un projet Xamarin. Android contient une bibliothèque partagée **libpocketsphinx_jni. donc** inclus dans le projet de liaison avec une action de génération **EmbeddedNativeLibrary**, l’extrait de code suivant (exécuté avant l’utilisation de la bibliothèque partagée) chargera la bibliothèque **. so** :
+Pour résoudre ce problème, vous devez charger manuellement la bibliothèque **. so** avec un appel à `Java.Lang.JavaSystem.LoadLibrary`. Par exemple, en supposant qu’un projet Xamarin. Android a une bibliothèque partagée **libpocketsphinx_jni. donc** inclus dans le projet de liaison avec une action de génération **EmbeddedNativeLibrary**, l’extrait de code suivant (exécuté avant d’utiliser la bibliothèque partagée) chargera la bibliothèque **. so** :
 
 ```csharp
 Java.Lang.JavaSystem.LoadLibrary("pocketsphinx_jni");
 ```
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Dans cet article, nous avons décrit les problèmes de dépannage courants associés aux liaisons Java et expliqué comment les résoudre.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Projets de bibliothèque](https://developer.android.com/tools/projects/index.html#LibraryProjects)
 - [Utilisation de JNI](~/android/platform/java-integration/working-with-jni.md)

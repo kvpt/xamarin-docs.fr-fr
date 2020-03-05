@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/06/2018
-ms.openlocfilehash: 3d74e2db541e1f30c7626cd1b08228c1e8f57a42
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: d9c655a503ebdd9ebc08646fb385cdd8f4aa5753
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029315"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78292279"
 ---
 # <a name="xamarinandroid-calendar"></a>Calendrier Xamarin. Android
 
@@ -273,8 +273,6 @@ Si nous allons ouvrir l’application de calendrier, nous voyons que l’événe
 
 Comme vous pouvez le voir, Android offre un accès puissant et facile pour récupérer et conserver des données de calendrier, ce qui permet aux applications d’intégrer en toute transparence les fonctionnalités de calendrier.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Démonstration du calendrier (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/calendardemo)
-- [Présentation du sandwich glacé](https://www.android.com/about/ice-cream-sandwich/)
-- [Plateforme Android 4,0](https://developer.android.com/sdk/android-4.0.html)

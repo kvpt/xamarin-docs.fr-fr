@@ -7,18 +7,18 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: c913f18e34f93e9ab7adc09109ea5c9e9e5067a2
-ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
-ms.translationtype: HT
+ms.openlocfilehash: 7413fbe3f08988cfdb7c7b4e5237539aca250772
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728146"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "78292646"
 ---
 # <a name="viewpager-with-views"></a>ViewPager avec des vues
 
 _ViewPager est un gestionnaire de disposition qui vous permet d’implémenter la navigation Gestural. La navigation Gestural permet à l’utilisateur de balayer vers la gauche et vers la droite pour parcourir les pages de données. Ce guide explique comment implémenter une interface utilisateur balayable avec ViewPager et PagerTabStrip, à l’aide de vues comme pages de données (un guide suivant explique comment utiliser des fragments pour les pages)._
 
-## <a name="overview"></a>Vue d'ensemble de
+## <a name="overview"></a>Vue d’ensemble
 
 Ce guide est une procédure pas à pas qui fournit une démonstration pas à pas de l’utilisation de `ViewPager` pour implémenter une galerie d’images d’arbres à feuilles de feuilles et de feuilles à feuilles de feuilles. Dans cette application, l’utilisateur glisse vers la gauche et vers la droite dans un « catalogue d’arborescence » pour afficher les images d’arborescence. En haut de chaque page du catalogue, le nom de l’arborescence est répertorié dans un`PagerTabStrip`, et une image de l’arborescence est affichée dans une `ImageView`. Un adaptateur est utilisé pour l’interface du `ViewPager` au modèle de données sous-jacent. Cette application implémente un adaptateur dérivé de `PagerAdapter`. 
 
@@ -28,7 +28,7 @@ Bien que les applications basées sur les `ViewPager`soient souvent implémenté
 
 Créez un nouveau projet Android appelé **TreePager** (consultez [Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md) pour plus d’informations sur la création de nouveaux projets Android). Ensuite, lancez le gestionnaire de package NuGet. (Pour plus d’informations sur l’installation des packages NuGet, consultez [procédure pas à pas : inclusion d’un NuGet dans votre projet](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)). Rechercher et installer la **bibliothèque de prise en charge Android v4**: 
 
-[![Capture d’écran de la prise en charge de la V4 NuGet sélectionnée dans le gestionnaire de package NuGet](viewpager-and-views-images/01-install-support-lib-sml.png)](viewpager-and-views-images/01-install-support-lib.png#lightbox)
+[Capture d’écran ![de la prise en charge de la V4 NuGet sélectionnée dans le gestionnaire de package NuGet](viewpager-and-views-images/01-install-support-lib-sml.png)](viewpager-and-views-images/01-install-support-lib.png#lightbox)
 
 Cette opération installe également tous les packages supplémentaires réinstallés par **Android Support Library v4**.
 
@@ -62,18 +62,13 @@ Ouvrez **Resources/layout/main. AXML** et remplacez son contenu par le code XML 
     android:layout_height="match_parent" >
 
 </android.support.v4.view.ViewPager>
+```
 
-```csharp
-This XML defines a `ViewPager` that occupies the entire screen. Note that
-you must use the fully-qualified name **android.support.v4.view.ViewPager**
-because `ViewPager` is packaged in a support library. `ViewPager` is
-available only from 
-[Android Support Library v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/);
-it is not available in the Android SDK. 
+Ce code XML définit un `ViewPager` qui occupe tout l’écran. Notez que vous devez utiliser le nom complet **Android. support. v4. View. ViewPager** , car `ViewPager` est empaqueté dans une bibliothèque de prise en charge. `ViewPager` n’est disponible qu’à partir de la [bibliothèque de prise en charge Android v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/); elle n’est pas disponible dans le Android SDK. 
 
-## Set up ViewPager
+## <a name="set-up-viewpager"></a>Configurer ViewPager
 
-Edit **MainActivity.cs** and add the following `using` statement:
+Modifiez **MainActivity.cs** et ajoutez l’instruction `using` suivante :
 
 ```csharp
 using Android.Support.V4.View;
@@ -91,7 +86,7 @@ protected override void OnCreate(Bundle bundle)
 }
 ```
 
-Ce code procède aux opérations suivantes :
+Ce code effectue les actions suivantes :
 
 1. Définit la vue à partir de la ressource de disposition **main. AXML** .
 
@@ -207,7 +202,7 @@ public override Java.Lang.Object InstantiateItem (View container, int position)
 }
 ```
 
-Ce code procède aux opérations suivantes :
+Ce code effectue les actions suivantes :
 
 1. Instancie un nouveau `ImageView` pour afficher l’image de l’arborescence à la position spécifiée. Le `MainActivity` de l’application est le contexte qui sera passé au constructeur `ImageView`.
 
@@ -234,7 +229,7 @@ public override void DestroyItem(View container, int position, Java.Lang.Object 
 }
 ```
 
-Ce code procède aux opérations suivantes :
+Ce code effectue les actions suivantes :
 
 1. Convertit le conteneur passé `View` en une référence `ViewPager`.
 
@@ -296,7 +291,7 @@ Ouvrez **ressources/mise en page/main. AXML** et ajoutez une `PagerTabStrip` à 
 
 les `ViewPager` et les `PagerTabStrip` sont conçus pour fonctionner ensemble. Lorsque vous déclarez un `PagerTabStrip` à l’intérieur d’une disposition de `ViewPager`, le `ViewPager` trouve automatiquement le `PagerTabStrip` et le connecte à l’adaptateur. Lorsque vous générez et exécutez l’application, le `PagerTabStrip` vide doit s’afficher en haut de chaque écran : 
 
-[![capture d’écran gros plan d’un PagerTabStrip vide](viewpager-and-views-images/04-empty-pagetabstrip-cap-sml.png)](viewpager-and-views-images/04-empty-pagetabstrip-cap.png#lightbox)
+[capture d’écran ![gros plan d’un PagerTabStrip vide](viewpager-and-views-images/04-empty-pagetabstrip-cap-sml.png)](viewpager-and-views-images/04-empty-pagetabstrip-cap.png#lightbox)
 
 ### <a name="display-a-title"></a>Afficher un titre
 
@@ -323,10 +318,10 @@ Vous pouvez faire défiler vers l’arrière pour afficher chaque image de l’a
 
 Notez que le soulignement est supprimé lors de la conversion en `PagerTitleStrip`. 
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cette procédure pas à pas a fourni un exemple pas à pas de la création d’une application de base `ViewPager`sans utiliser `Fragment`s. Il a présenté un exemple de source de données contenant des images et des chaînes de légende, une disposition `ViewPager` pour afficher les images et une sous-classe `PagerAdapter` qui connecte la `ViewPager` à la source de données. Pour aider l’utilisateur à naviguer dans le jeu de données, vous trouverez des instructions qui expliquent comment ajouter un `PagerTabStrip` ou `PagerTitleStrip` pour afficher la légende de l’image en haut de chaque page. 
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [TreePager (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-treepager)

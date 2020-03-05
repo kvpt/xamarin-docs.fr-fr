@@ -1,17 +1,17 @@
 ---
 title: Xamarin Profiler
-description: Ce guide explore les principales fonctionnalités de la Xamarin Profiler. Il examine les profileurs, le profilage et le moment où ils doivent être utilisés, et dans un flux de travail standard pour le profilage des applications Xamarin.
+description: Ce guide présente les principales fonctionnalités du profileur Xamarin. Il permet de consulter les profileurs, le profilage, et de savoir quand les utiliser à bon escient et dans un flux de travail standard pour le profilage d’applications de Xamarin.
 ms.prod: xamarin
 ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
 author: davidortinau
 ms.author: daortin
 ms.date: 06/03/2018
-ms.openlocfilehash: 8927e7b2a1b194d1bfab334736c3d024f0542b01
-ms.sourcegitcommit: 60e955ce65194ffea987409157ccc7d5db87c2ba
+ms.openlocfilehash: cb109055b476fee6d34041940c682187074f4e7d
+ms.sourcegitcommit: 099b06e311a40c00eeea85465ff9b97867a5c5de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74690212"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78295441"
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -34,14 +34,14 @@ Le Xamarin Profiler est une application autonome et est intégré à Visual Stud
 
 Téléchargez le package d’installation pour votre plateforme :
 
-- [**macOS**](https://dl.xamarin.com/profiler/profiler-mac-1.6.10-15.pkg)
+- [**macOS**](https://dl.xamarin.com/profiler/profiler-mac-1.6.13-11.pkg)
 - [**Windows**](https://dl.xamarin.com/profiler/XamarinProfiler.Windows.Installer.1.6.10-15.msi)
 
 Une fois le téléchargement terminé, lancez le programme d’installation pour ajouter le Xamarin Profiler à votre système.
 
 ## <a name="profilers-and-profiling"></a>Profileurs et profilage
 
-Le profilage est une étape importante et souvent négligée dans le développement d’applications. Le profilage est une forme d' **analyse de programme dynamique** : il analyse le programme pendant qu’il est en cours d’exécution et en cours d’utilisation. Un profileur est un outil d’exploration de données qui collecte des informations sur la complexité du temps, l’utilisation de méthodes particulières et la mémoire allouée. Un profileur vous permet d’approfondir et d’analyser ces métriques pour identifier les zones à problème dans le code.
+Le profilage est une étape importante et souvent négligée dans le développement d’applications. Le profilage est une forme d' **analyse de programme dynamique** : il analyse le programme pendant qu’il est en cours d’exécution et en cours d’utilisation. Un profileur est un outil d’exploration de données qui collecte des informations sur la complexité temporelle, l’utilisation de méthodes particulières et la mémoire allouée. Un profileur permet d’explorer en profondeur et d'analyser ces mesures pour identifier les zones à problème dans le code.
 
 Lors de la conception et du développement d’une application, il est important de ne pas optimiser prématurément. autrement dit, vous consacrez du temps à développer votre code dans des domaines qui sont rarement accessibles. Il s’agit de la puissance du profilage. Un profileur fournit des informations sur les parties les plus couramment utilisées de votre base de code et vous aide à localiser les zones où vous devez consacrer du temps à apporter des améliorations. Les développeurs doivent s’occuper de savoir où la majeure partie du temps est passée dans votre application et comment la mémoire est utilisée par votre application.
 
@@ -53,11 +53,11 @@ Le Xamarin Profiler offre aux développeurs un moyen de profiler des application
 
 <!-- markdownlint-disable MD001 -->
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 Actuellement, le Xamarin Profiler peut être utilisé pour tester des applications Xamarin. iOS, Xamarin. Android et Xamarin. Mac sur Mac (via Visual Studio pour Mac). Le profileur est un processus distinct de l’IDE, et par conséquent, en plus de lancer à partir de Visual Studio pour Mac, il peut être utilisé comme une application autonome pour examiner les fichiers. exe et `.mlpd` qui ont été produits à partir du [profileur de journal mono](https://www.mono-project.com/docs/debug+profile/profile/profiler/).
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Actuellement, le Xamarin Profiler peut être utilisé pour tester des applications Xamarin. Android sur Windows (par le biais de Visual Studio et Visual Studio pour Mac). Le profileur est un processus distinct de l’IDE. par ailleurs, en plus de lancer à partir de Visual Studio, il peut être utilisé comme une application autonome pour examiner les fichiers. exe et `.mlpd` qui ont été produits à partir du [profileur mono](https://www.mono-project.com/docs/debug+profile/profile/profiler/).
 
@@ -98,13 +98,13 @@ Avant de pouvoir Profiler correctement votre application, vous devez autoriser l
 
 - iOS :
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
   **Générer > le débogage iOS > activer le profilage**
 
   ![Boîte de dialogue Options iOS dans Visual Studio pour Mac](images/ios-options-mac.png)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
   **Propriétés > Build iOS > activer le profilage**
 
@@ -114,13 +114,13 @@ Avant de pouvoir Profiler correctement votre application, vous devez autoriser l
 
 - Android :
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
   **Build > Android Debug > activer l’instrumentation du développeur**
 
   ![Boîte de dialogue Options Android dans Visual Studio pour Mac](images/android-project-options.png)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
   **Build > Android Debug > activer l’instrumentation du développeur**
 
@@ -130,9 +130,9 @@ Avant de pouvoir Profiler correctement votre application, vous devez autoriser l
 
 ### <a name="launching-the-profiler"></a>Lancement du profileur
 
-La Xamarin Profiler peut être lancée à partir de votre IDE lorsque vous profilez votre application iOS ou Android, ou en tant qu’application autonome.
+Le profileur Xamarin peut être lancé à partir de votre IDE quand vous profilez votre application Android ou iOS. Le profileur peut aussi être lancé comme une application indépendante.
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 #### <a name="launching-from-visual-studio-for-mac"></a>Lancement à partir de Visual Studio pour Mac
 
@@ -141,7 +141,7 @@ La Xamarin Profiler peut être lancée à partir de votre IDE lorsque vous profi
 
   ![Lancement du profileur à partir de Visual Studio pour Mac](images/start-profiling-xs.png)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 #### <a name="launching-from-visual-studio"></a>Lancement à partir de Visual Studio
 
@@ -162,13 +162,13 @@ Le profileur peut être utilisé pour mesurer la mémoire et les performances. P
 
 Pour enregistrer une session de profilage à tout moment, choisissez **fichier > enregistrer sous...** dans la barre de menus du profileur. Cela permet d’enregistrer le fichier au format _MLPD_ , un format spécial et hautement compressé pour le profilage des données.
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 Une fois l’installation terminée, le Xamarin Profiler se trouve dans votre dossier applications, comme illustré dans la capture d’écran ci-dessous :
 
 ![Ouvrir le profileur autonome à partir de Mac](images/applications.png)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Une fois installée, l’application Xamarin Profiler se trouve dans le répertoire de votre application :
 
@@ -184,11 +184,11 @@ Pour plus d’informations, consultez [génération de fichiers. MLPD](~/tools/p
 
 La Xamarin Profiler est composée de cinq sections, comme illustré ci-dessous :
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 [![les sections du profileur dans Visual Studio pour Mac](images/profiler-mac-sml.png)](images/profiler-mac.png#lightbox) 
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 [sections du profileur ![dans Visual Studio](images/profiler-vs.png)](images/profiler-vs.png#lightbox)
 
@@ -202,15 +202,15 @@ La Xamarin Profiler est composée de cinq sections, comme illustré ci-dessous 
 
 ### <a name="allocations"></a>Allocations
 
-L’instrument allocations fournit des informations détaillées sur les objets de l’application tels qu’ils sont créés et récupérés par le garbage collector.
+Les informations relatives aux allocations fournissent des informations détaillées sur les objets dans l’application lorsqu'ils sont en cours de création et sur le garbage collector.
 
 En haut du profileur se trouve le graphique allocations, qui affiche la quantité de mémoire allouée à intervalles réguliers pendant le profilage. Actuellement, le graphique allocations est le nombre total d’allocations et non la taille du tas à ce moment précis. Dans un sens, il ne s’arrêtera jamais. cela ne fera que croître. Cela comprend les objets alloués sur la pile. Selon la version du runtime utilisée, le graphique peut paraître différent, même pour la même application.
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 [![l’instrument allocations](images/allocations1.png)](images/allocations1.png#lightbox) 
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 [![l’instrument allocations](images/allocations1-vs.png)](images/allocations1-vs.png#lightbox)
 
@@ -220,27 +220,27 @@ Il existe différentes vues de données dans l’instrument allocations, qui per
 
 - **Allocations** : affiche une liste de toutes les allocations et les regroupe par nom de classe. Vous bénéficiez ainsi d’une vue d’ensemble des classes et des méthodes utilisées, de leur fréquence d’utilisation et de la taille collective des classes utilisées. Double-cliquez sur une classe pour afficher la mémoire allouée : 
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
   [Onglet allocations de ![](images/allocations3.png)](images/allocations3.png#lightbox) 
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
   [Onglet allocations de ![](images/allocations2-vs.png)](images/allocations2-vs.png#lightbox)
 
 -----
 
-La vue Inspector des allocations fournit des options pour filtrer et regrouper des objets, fournir des statistiques sur la mémoire allouée et les allocations les plus importantes, ainsi que des vues pour la trace de la pile et le chemin d’accès à la racine.
+La vue de l’inspecteur pour les Allocations fournit les options de filtrage et regroupement d’objets, en fournissant des statistiques sur la mémoire allouée, ainsi que les allocations supérieures, ainsi que les vues pour la Trace de la pile et le chemin d’accès à la racine.
 
 - **Arborescence des appels** : affiche la totalité de l’arborescence des appels de tous les threads de l’application et comprend des informations sur la mémoire allouée sur chaque nœud. Lorsqu’un élément est sélectionné dans la liste, tous les nœuds frères s’affichent en gris. Vous pouvez développer l’arborescence ou double-cliquer sur l’élément pour l’examiner. Lorsque vous Affichez cette vue de données, vous pouvez utiliser la vue inspecteur des paramètres d’affichage pour modifier la façon dont elle est présentée. Il existe actuellement deux options :
     1. **Inversée arborescence des appels** : prend en compte la trace de la pile de haut en bas. Il s’agit d’une option d’affichage pratique, car elle indique les méthodes les plus profondes dans lesquelles le processeur consacre son temps.
     2. **Séparer par thread** : cette option permet d’organiser l’arborescence des appels par thread.
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
   [Onglet arborescence des appels ![](images/allocations2.png)](images/allocations2.png#lightbox) 
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
   [Onglet arborescence des appels ![](images/allocations3-vs.png)](images/allocations3-vs.png#lightbox)
 
@@ -248,11 +248,11 @@ La vue Inspector des allocations fournit des options pour filtrer et regrouper d
 
 - **Captures instantanées** : ce volet affiche des informations sur les instantanés de la mémoire. Pour les générer lors du profilage d’une application active, cliquez sur le bouton de l' _appareil photo_ dans la barre d’outils à chaque point où vous souhaitez voir la mémoire conservée et libérée. Vous pouvez ensuite cliquer sur chaque instantané pour explorer ce qui se passe en coulisses. Notez que les instantanés ne peuvent être pris que lors du profilage en temps réel d’une application. 
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
   [Onglet ![instantanés](images/allocations4.png)](images/allocations4.png#lightbox) 
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
   [Onglet ![instantanés](images/allocations4-vs.png)](images/allocations4-vs.png#lightbox)
 
@@ -264,13 +264,13 @@ L’instrument du profileur de temps mesure exactement le temps passé dans chaq
 
 Le graphique en courbes, comme indiqué dans la capture d’écran ci-dessous, affiche le nombre d’exemples reçus par l’application pendant son exécution :
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 [Instrumentation du profileur de temps ![](images/time1.png)](images/time1.png#lightbox) 
 
 [![Time Profiler instrument – liste d’exemples](images/time3.png)](images/time3.png#lightbox) 
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 [Instrumentation du profileur de temps ![](images/time1-vs.png)](images/time1-vs.png#lightbox) 
 
@@ -280,11 +280,11 @@ Le graphique en courbes, comme indiqué dans la capture d’écran ci-dessous, a
 
 - **Arborescence des appels** : affiche la durée passée dans chaque méthode :
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
   [Instrumentation du profileur de temps ![– arborescence des appels](images/time2.png)](images/time2.png#lightbox) 
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
   [Instrumentation du profileur de temps ![– arborescence des appels](images/time2-vs.png)](images/time2-vs.png#lightbox) 
 
@@ -294,11 +294,11 @@ Le graphique en courbes, comme indiqué dans la capture d’écran ci-dessous, a
 
 Grâce à l’utilisation C# de F# et du code managé, il peut être assez courant et, malheureusement, il est relativement facile de créer des références à des objets qui ne seront jamais supprimés. Cet instrument vous permet d’identifier ces objets et d’afficher les cycles référencés dans votre application.
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 [Instrument de cycles ![](images/cycles.m751-sml.png)](images/cycles.m751.png#lightbox) 
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 [Instrument de cycles ![](images/cycles-vs-sml.png)](images/cycles-vs.png#lightbox) 
 
@@ -310,11 +310,11 @@ Actuellement, seules les configurations de débogage par défaut peuvent être p
 
 Si vous profilez une application avec une autre configuration, la boîte de dialogue de message suivante s’affiche :
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 [Boîte de dialogue d’erreur de profilage ![](images/image001.png)](images/image001.png#lightbox) 
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 [Boîte de dialogue d’erreur de profilage ![](images/image1vs.png)](images/image1vs.png#lightbox) 
 
@@ -334,11 +334,11 @@ Vous serez invité à entrer un message si votre application utilise le GC Boehm
 
 Pour plus d’informations sur la gestion de la mémoire, reportez-vous au Guide des [meilleures pratiques en matière de performances et de mémoire](~/cross-platform/deploy-test/memory-perf-best-practices.md) .
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Dans ce guide, nous avons vu ce qu’est le profilage et comment il est avantageux pour le développeur. Nous avons ensuite introduit le Xamarin Profiler, en fournissant un historique et des informations sur son fonctionnement. Enfin, nous avons parcouru les fonctionnalités de la Xamarin Profiler et exploré les allocations et les instruments du profileur de temps.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Meilleures pratiques en matière de performances et de mémoire](~/cross-platform/deploy-test/memory-perf-best-practices.md)
 - [Notes de publication](/xamarin/tools/profiler/release-notes/)

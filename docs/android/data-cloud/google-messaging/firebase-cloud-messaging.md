@@ -1,5 +1,5 @@
 ---
-title: Messagerie cloud Firebase
+title: Firebase Cloud Messaging
 description: Firebase Cloud Messaging (FCM) est un service qui facilite la messagerie entre les applications mobiles et les applications serveur. Cet article fournit une vue d’ensemble du fonctionnement de FCM et explique comment configurer Google services afin que votre application puisse utiliser FCM.
 ms.prod: xamarin
 ms.assetid: E5314D7F-2AAC-40DA-BEBA-27C834F078DD
@@ -7,14 +7,14 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 07/31/2018
-ms.openlocfilehash: c97c931445122cbaa613b87e3778f4dc9e92f4d0
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 4cf32bae208efa67acbb08f2e4525e4571b14b16
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73023669"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78292418"
 ---
-# <a name="firebase-cloud-messaging"></a>Messagerie cloud Firebase
+# <a name="firebase-cloud-messaging"></a>Firebase Cloud Messaging
 
 _Firebase Cloud Messaging (FCM) est un service qui facilite la messagerie entre les applications mobiles et les applications serveur. Cet article fournit une vue d’ensemble du fonctionnement de FCM et explique comment configurer Google services afin que votre application puisse utiliser FCM._
 
@@ -22,7 +22,7 @@ _Firebase Cloud Messaging (FCM) est un service qui facilite la messagerie entre 
 
 Cette rubrique fournit une vue d’ensemble de haut niveau de la façon dont Firebase Cloud Messaging achemine les messages entre votre application Xamarin. Android et un serveur d’applications, et fournit une procédure pas-à-pas pour acquérir des informations d’identification afin que votre application puisse utiliser les services FCM.
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d’ensemble
 
 Firebase Cloud Messaging (FCM) est un service multiplateforme qui gère l’envoi, le routage et la mise en file d’attente des messages entre les applications serveur et les applications clientes mobiles. FCM est le successeur de Google Cloud Messaging (GCM) et repose sur Google Play Services.
 
@@ -34,7 +34,7 @@ Comme illustré dans le diagramme suivant, FCM agit comme un intermédiaire entr
 
 ## <a name="fcm-in-action"></a>Firebase Cloud Messaging en action
 
-Lorsqu’un message en aval est envoyé à une application cliente à partir d’un serveur d’applications, le serveur d’applications envoie le message à un *serveur de connexion FCM* fourni par Google. le serveur de connexion FCM, à son tour, transmet le message à un appareil qui exécute l’application cliente. Les messages peuvent être envoyés via HTTP ou [XMPP](https://developers.google.com/cloud-messaging/ccs) (messagerie extensible et protocole de présence). Étant donné que les applications clientes ne sont pas toujours connectées ou en cours d’exécution, le serveur de connexion FCM met en file d’attente et stocke les messages, en les envoyant aux applications clientes lorsqu’ils se reconnectent et deviennent disponibles. De même, FCM met en file d’attente les messages en amont de l’application cliente sur le serveur d’applications si le serveur d’applications n’est pas disponible. Pour plus d’informations sur les serveurs de connexion FCM, consultez [à propos de Firebase Cloud Messaging Server](https://firebase.google.com/docs/cloud-messaging/server).
+Lorsqu’un message en aval est envoyé à une application cliente à partir d’un serveur d’applications, le serveur d’applications envoie le message à un *serveur de connexion FCM* fourni par Google. le serveur de connexion FCM, à son tour, transmet le message à un appareil qui exécute l’application cliente. Les messages peuvent être envoyés via HTTP ou [XMPP](https://firebase.google.com/docs/cloud-messaging/xmpp-server-ref) (messagerie extensible et protocole de présence). Étant donné que les applications clientes ne sont pas toujours connectées ou en cours d’exécution, le serveur de connexion FCM met en file d’attente et stocke les messages, en les envoyant aux applications clientes lorsqu’ils se reconnectent et deviennent disponibles. De même, FCM met en file d’attente les messages en amont de l’application cliente sur le serveur d’applications si le serveur d’applications n’est pas disponible. Pour plus d’informations sur les serveurs de connexion FCM, consultez [à propos de Firebase Cloud Messaging Server](https://firebase.google.com/docs/cloud-messaging/server).
 
 FCM utilise les informations d’identification suivantes pour identifier le serveur d’applications et l’application cliente, et utilise ces informations d’identification pour autoriser les transactions de message via FCM :
 
@@ -141,7 +141,7 @@ Avant de pouvoir utiliser les services FCM dans votre application, vous devez cr
 
 Pour obtenir un exemple détaillé de la façon d’ajouter **Google-services. JSON** à un projet d’application pour recevoir des messages de notification push FCM sur Android, consultez [notifications distantes avec FCM](~/android/data-cloud/google-messaging/remote-notifications-with-fcm.md).
 
-## <a name="for-further-reading"></a>Pour plus d’informations
+## <a name="for-further-reading"></a>Pour aller plus loin
 
 - [Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging/) de Google offre une vue d’ensemble des fonctionnalités clés de Firebase Cloud Messaging, une explication de son fonctionnement et des instructions d’installation.
 
@@ -151,10 +151,10 @@ Pour obtenir un exemple détaillé de la façon d’ajouter **Google-services. J
 
 - [À propos des messages FCM](https://firebase.google.com/docs/cloud-messaging/concept-options) décrit les différents types de messages qui peuvent être envoyés avec Firebase Cloud Messaging.
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article a fourni une vue d’ensemble de Firebase Cloud Messaging (FCM). Il a expliqué les différentes informations d’identification utilisées pour identifier et autoriser la messagerie entre les serveurs d’applications et les applications clientes. Il illustre les scénarios d’inscription et de messagerie en aval, et décrit en détail les étapes d’inscription de votre application auprès de FCM pour utiliser les services FCM.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
-- [Messagerie cloud Firebase](https://firebase.google.com/docs/cloud-messaging/)
+- [Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging/)

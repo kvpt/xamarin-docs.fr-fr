@@ -6,12 +6,12 @@ ms.assetid: 46E0578A-7EB9-C105-ABB0-A043E501F36B
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 07eab1e8229cd6600bb8abdd324cb3eb12a8f886
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: a9f84192a312f9aba98817b75c058229e6c721bb
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016855"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78291768"
 ---
 # <a name="part-6---testing-and-app-store-approvals"></a>Partie 6 : Test et approbations de l’App Store
 
@@ -31,7 +31,7 @@ Vous devez également tester autant de périphériques matériels physiques que 
 
 Le téléphone mobile et l’écosystème de tablettes évoluent tout le temps, ce qui rend impossible le test sur le nombre toujours plus important d’appareils disponibles. Pour résoudre ce problème, un certain nombre de services permettent de contrôler à distance de nombreux appareils différents afin que les applications puissent être installées et testées sans avoir à investir directement dans un grand nombre de matériel.
 
-[App Center Test](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest) offre un moyen simple de tester des applications iOS et Android sur des centaines d’appareils différents.
+App Center Test offre un moyen simple de tester des applications iOS et Android sur des centaines d’appareils différents. Pour plus d’informations, consultez [Preparing Xamarin. Android Apps](/appcenter/test-cloud/preparing-for-upload/xamarin-android-uitest) et [Preparing Xamarin. iOS Apps](/appcenter/test-cloud/preparing-for-upload/xamarin-ios-uitest).
 
 ### <a name="test-management"></a>Gestion des tests
 
@@ -48,7 +48,7 @@ Il existe un certain nombre de services qui permettent de résoudre ces problèm
 
 Xamarin [UITest](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest) peut être utilisé pour créer des scripts de test d’interface utilisateur automatisés qui peuvent être exécutés localement ou téléchargés vers [App Center test](https://docs.microsoft.com/appcenter/test-cloud/).
 
-## <a name="unit-testing"></a>Test unitaire
+## <a name="unit-testing"></a>Tests unitaires
 
 ### <a name="touchunit"></a>Touch. Unit
 
@@ -56,7 +56,7 @@ Xamarin. iOS comprend une infrastructure de tests unitaires appelée Touch. Unit
 
 Pour plus d’informations sur l’écriture de tests et l’exécution de Touch. Unit, consultez la documentation sur [les tests unitaires avec Xamarin. iOS](~/ios/deploy-test/touch.unit.md) .
 
-### <a name="andrunit"></a>Andr. Unit
+### <a name="andrunit"></a>Andr.Unit
 
 Il existe un équivalent Open source de Touch. Unit pour Android appelé Andr. Unit. Vous pouvez le télécharger à partir de [GitHub](https://github.com/spouliot/Andr.Unit) et en savoir plus sur l’outil sur le [blog de@spouliot](https://spouliot.wordpress.com/2011/10/30/andr-unit-joins-the-family/).
 

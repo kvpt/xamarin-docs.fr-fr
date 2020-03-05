@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: bbf580007f4d149501efe424f0e36178a49f6aa5
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: a622684461bfe2e4a57b910288ee1f9afb54c694
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028370"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78292499"
 ---
 # <a name="deploying-watchos-apps-to-the-app-store"></a>Déploiement d’applications Watchos sur l’App Store
 
@@ -128,7 +128,7 @@ Xcode affiche automatiquement les archives créées dans Visual Studio pour Mac.
 
 Vous pouvez ensuite soumettre l’application pour approbation sur la page **versions** . Pour plus d’informations, reportez-vous à la présentation de la [distribution d’applications iOS](~/ios/deploy-test/app-distribution/index.md) .
 
-## <a name="troubleshooting"></a>Résolution des problèmes
+## <a name="troubleshooting"></a>Dépannage
 
 Voici quelques-unes des erreurs que vous pouvez rencontrer lors de l’envoi à l’App Store, ainsi que les étapes à suivre pour les corriger.
 
@@ -177,7 +177,7 @@ Vérifiez que vous disposez de la dernière version de Visual Studio pour Mac, e
 > [!IMPORTANT]
 > Il existe un bogue connu dans la prise en charge de l’icône de surveillance de Visual Studio pour Mac : elle attend une image de pixel 88x88 pour l’image **29x29@3x** (qui doit être 87x87 pixels).
 
-Vous ne pouvez pas résoudre ce problème dans Visual Studio pour Mac : modifiez la ressource d’image dans Xcode ou modifiez manuellement le fichier **Contents. JSON** (pour qu’il corresponde à [cet exemple](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132)).
+Vous ne pouvez pas résoudre ce problème dans Visual Studio pour Mac : modifiez la ressource d’image dans Xcode ou modifiez manuellement le fichier **Contents. JSON** .
 
 ### <a name="invalid-watchkit-support"></a>Prise en charge WatchKit non valide
 
@@ -254,6 +254,6 @@ Error MT5309: Native linking error: clang: error: no such file or directory:
 
 Cette erreur est probablement due au fait que vous avez renommé votre installation Xcode à partir de **Xcode. app**. Par exemple, cette erreur se produit si vous renommez votre installation de **Xcode 6.2. app**.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Guide d’envoi Apple WatchKit](https://developer.apple.com/app-store/watch/)

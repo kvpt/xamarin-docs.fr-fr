@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/06/2018
-ms.openlocfilehash: 4b6fcfc3120c3ef09556f3466295f4bee35fad0c
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 13271b50353d95ecd2db40e25d549788111530f7
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029007"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78291693"
 ---
 # <a name="xamarinandroid-gridlayout"></a>Xamarin. Android GridLayout
 
@@ -233,8 +233,6 @@ Cela a pour résultat une mise en page de la `TextViews` qui est similaire à la
 
  [Capture d’écran ![de GridLayoutDemo avec un bouton qui couvre les deux colonnes](grid-layout-images/05-gridlayout.png)](grid-layout-images/05-gridlayout.png#lightbox)
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [GridLayoutDemo (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/gridlayoutdemo)
-- [Présentation du sandwich glacé](https://www.android.com/about/ice-cream-sandwich/)
-- [Plateforme Android 4,0](https://developer.android.com/sdk/android-4.0.html)

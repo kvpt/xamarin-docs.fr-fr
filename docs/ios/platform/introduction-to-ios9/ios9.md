@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: edc778879aa88d420f41bd2b7b8e15b6d80b5939
-ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
+ms.openlocfilehash: e12bac1f65981776a7bd650cbc840cc0cdf72892
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728263"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78292072"
 ---
 # <a name="ios-9-compatibility"></a>Compatibilité iOS 9
 
@@ -21,9 +21,7 @@ _Même si vous n’envisagez pas d’ajouter directement des fonctionnalités iO
 > [!IMPORTANT]
 > Les informations de cette page sont destinées aux clients ayant déjà des applications dans l’App Store ciblant iOS 8 ou une version antérieure, qui n’ont pas encore envoyé de mises à jour pour la compatibilité avec iOS 9. Si vous utilisez déjà les versions les plus récentes de Xcode 7 et Xamarin. iOS 9-pour le développement de votre application, consultez la [présentation d’iOS 9](~/ios/platform/introduction-to-ios9/index.md).
 
-Lorsque les premières versions d’iOS 9 bêtas apparaissaient, nous avons identifié deux problèmes avec des versions antérieures de Xamarin qui se sont manifestées lorsque les anciennes applications ne peuvent pas démarrer sur iOS 9.
-
-Ces deux problèmes (comme [détaillé sur nos forums](https://forums.xamarin.com/discussion/comment/131529/#Comment_131529)) étaient les suivants :
+Lorsque les premières versions d’iOS 9 bêtas apparaissaient, nous avons identifié deux problèmes avec des versions antérieures de Xamarin qui se sont manifestées lorsque les anciennes applications ne peuvent pas démarrer sur iOS 9 :
 
 - Les applications générées pour iOS 8 ou une version antérieure ne sont pas en mesure de démarrer sur des appareils 32 bits (y compris les applications générées avec le [API unifiée](~/cross-platform/macios/unified/index.md)).
 - Échec de P/Invoke avec le chemin d’accès complet non spécifié.
@@ -99,7 +97,7 @@ Dyld Message: no cache image with name (/System/Library/PrivateFrameworks/JavaSc
 
 **Correctif :** Ce problème sera résolu pour iOS 9, mais il existe une solution de contournement simple que vous pouvez vous appliquer en attendant : ciblez une version iOS ultérieure dans votre projet (vous pouvez essayer iOS 7 dans ce cas). D’autres infrastructures peuvent présenter des problèmes similaires, par exemple l’infrastructure WebKit a été rendue publique dans iOS 8 (et, par conséquent, le ciblage d’iOS 7 entraînera cette erreur ; vous devez cibler iOS 8 pour utiliser WebKit dans votre application).
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [informations sur la version de compatibilité iOS 9](https://releases.xamarin.com/ios-hotfix-for-ios-9-preview-xcode-6/)
 - [Introduction à iOS 9](~/ios/platform/introduction-to-ios9/index.md)

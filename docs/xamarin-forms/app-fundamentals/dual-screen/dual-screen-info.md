@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms DualScreenInfo
+title: Fonctionnalités de l’appareil à deux écrans Xamarin. Forms
 description: Ce guide explique comment utiliser la classe DualScreenInfo de Xamarin.Forms pour optimiser l’expérience de votre application sur des appareils double écran comme Surface Duo et Surface Neo.
 ms.prod: xamarin
 ms.assetid: dd5eb074-f4cb-4ab4-b47d-76f862ac7cfa
@@ -7,16 +7,18 @@ ms.technology: xamarin-forms
 author: davidortinau
 ms.author: daortin
 ms.date: 02/08/2020
-ms.openlocfilehash: e9a01ed3720f1501423eb1c0746d311918af82fb
-ms.sourcegitcommit: 524fc148bad17272bda83c50775771daa45bfd7e
-ms.translationtype: HT
+ms.openlocfilehash: 8dda1960fceaf7738c44d58b10149b8c20fa543f
+ms.sourcegitcommit: 5b6d3bddf7148f8bb374de5657bdedc125d72ea7
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77480579"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78160598"
 ---
-# <a name="xamarinforms-dualscreeninfo"></a>Xamarin.Forms DualScreenInfo
+# <a name="xamarinforms-dual-screen-device-capabilities"></a>Fonctionnalités de l’appareil à deux écrans Xamarin. Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://github.com/xamarin/xamarin-forms-samples/tree/pre-release/UserInterface/DualScreenDemos)
+![](~/media/shared/preview.png "This API is currently pre-release")
+
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/DualScreenDemos)
 
 La classe `DualScreenInfo` vous permet de déterminer le volet où se trouve votre vue, sa taille, la position de l’appareil, l’angle de la charnière, etc.
 
@@ -212,4 +214,4 @@ La capture d’écran suivante montre la disposition résultante :
 
 ## <a name="related-links"></a>Liens connexes
 
-- [DualScreen (sample)](https://github.com/xamarin/xamarin-forms-samples/tree/pre-release/UserInterface/DualScreenDemos)
+- [DualScreen (sample)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/DualScreenDemos)

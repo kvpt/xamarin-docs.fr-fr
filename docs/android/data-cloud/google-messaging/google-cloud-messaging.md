@@ -1,5 +1,5 @@
 ---
-title: Google Cloud Messaging
+title: Google Cloud Messaging
 description: Google Cloud Messaging (GCM) est un service qui facilite la messagerie entre les applications mobiles et les applications serveur. Cet article fournit une vue d’ensemble du fonctionnement de GCM et explique comment configurer Google services afin que votre application puisse utiliser GCM.
 ms.prod: xamarin
 ms.assetid: DF8EF401-F63D-4BA0-B2C6-B22DF8FD60CB
@@ -7,14 +7,14 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2019
-ms.openlocfilehash: 742555da24120eaeadcc4b6232b24d23f41da283
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: e9b0337c9cdcfbd8f738a11c5dffff427df620bc
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73023704"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78292068"
 ---
-# <a name="google-cloud-messaging"></a>Google Cloud Messaging
+# <a name="google-cloud-messaging"></a>Google Cloud Messaging
 
 > [!WARNING]
 > Google a supprimé le GCM le 10 avril 2018. Les documents et exemples de projets suivants peuvent ne plus être gérés. Les API serveur et client GCM de Google seront supprimées dès le 29 mai 2019. Google recommande de migrer des applications GCM vers Firebase Cloud Messaging (FCM). Pour plus d’informations sur la désapprobation et la migration de GCM, voir [Google Deprecated Cloud Messaging](https://developers.google.com/cloud-messaging/).
@@ -27,7 +27,7 @@ _Google Cloud Messaging (GCM) est un service qui facilite la messagerie entre le
 
 Cette rubrique fournit une vue d’ensemble de haut niveau de la façon dont Google Cloud Messaging achemine les messages entre votre application et un serveur d’applications, et fournit une procédure pas-à-pas pour acquérir des informations d’identification afin que votre application puisse utiliser les services GCM.
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d’ensemble
 
 Google Cloud Messaging (GCM) est un service qui gère l’envoi, le routage et la mise en file d’attente des messages entre les applications serveur et les applications clientes mobiles. Une *application cliente* est une application GCM qui s’exécute sur un appareil. Le *serveur d’applications* (fourni par vous ou votre société) est le serveur GCM avec lequel votre application cliente communique via GCM :
 
@@ -35,11 +35,9 @@ Google Cloud Messaging (GCM) est un service qui gère l’envoi, le routage et l
 
 À l’aide de GCM, les serveurs d’applications peuvent envoyer des messages à un seul appareil, à un groupe d’appareils ou à un certain nombre d’appareils abonnés à une rubrique. Votre application cliente peut utiliser GCM pour s’abonner à des messages en aval à partir d’un serveur d’applications (par exemple, pour recevoir des notifications distantes). En outre, GCM permet aux applications clientes d’envoyer des messages en amont au serveur d’applications.
 
-Pour plus d’informations sur l’implémentation d’un serveur d’applications pour GCM, consultez [à propos du serveur de connexion GCM](https://developers.google.com/cloud-messaging/server).
-
 ## <a name="google-cloud-messaging-in-action"></a>Google Cloud Messaging en action
 
-Lorsque des messages en aval sont envoyés à partir d’un serveur d’applications vers une application cliente, le serveur d’applications envoie le message à un *serveur de connexion GCM*. le serveur de connexion GCM transmet ensuite le message à un appareil qui exécute votre application cliente. Les messages peuvent être envoyés via HTTP ou [XMPP](https://developers.google.com/cloud-messaging/ccs) (messagerie extensible et protocole de présence). Étant donné que les applications clientes ne sont pas toujours connectées ou en cours d’exécution, le serveur de connexion GCM met en file d’attente et stocke les messages, en les envoyant aux applications clientes lorsqu’ils se reconnectent et deviennent disponibles. De même, GCM met en file d’attente les messages en amont de l’application cliente sur le serveur d’applications si le serveur d’applications n’est pas disponible.
+Lorsque des messages en aval sont envoyés à partir d’un serveur d’applications vers une application cliente, le serveur d’applications envoie le message à un *serveur de connexion GCM*. le serveur de connexion GCM transmet ensuite le message à un appareil qui exécute votre application cliente. Les messages peuvent être envoyés via HTTP ou [XMPP](https://firebase.google.com/docs/cloud-messaging/xmpp-server-ref) (messagerie extensible et protocole de présence). Étant donné que les applications clientes ne sont pas toujours connectées ou en cours d’exécution, le serveur de connexion GCM met en file d’attente et stocke les messages, en les envoyant aux applications clientes lorsqu’ils se reconnectent et deviennent disponibles. De même, GCM met en file d’attente les messages en amont de l’application cliente sur le serveur d’applications si le serveur d’applications n’est pas disponible.
 
 GCM utilise les informations d’identification suivantes pour identifier le serveur d’applications et votre application cliente, et il utilise ces informations d’identification pour autoriser les transactions de message via GCM :
 
@@ -74,8 +72,6 @@ Le serveur d’applications met en cache le jeton d’inscription pour les commu
 Lorsque l’application cliente ne souhaite plus recevoir de messages du serveur d’applications, elle peut envoyer une demande au serveur d’applications pour supprimer le jeton d’inscription. Si l’application cliente reçoit des messages de rubrique (expliqués plus loin dans cet article), elle peut se désabonner de la rubrique.
 Si l’application cliente est désinstallée d’un appareil, GCM la détecte et avertit automatiquement le serveur d’applications de la suppression du jeton d’inscription.
 
-L' [inscription des applications clientes](https://developers.google.com/cloud-messaging/registration) de Google explique le processus d’inscription plus en détail ; Il explique l’annulation de l’inscription et l’annulation de l’abonnement, et décrit le processus d’annulation de l’inscription lors de la désinstallation d’une application cliente.
-
 ### <a name="downstream-messaging"></a>Messagerie en aval
 
 Lorsque le serveur d’applications envoie un message en aval à l’application cliente, il suit les étapes illustrées dans le diagramme suivant :
@@ -96,15 +92,15 @@ Pour obtenir des informations détaillées (y compris des exemples de code) sur 
 
 #### <a name="topic-messaging"></a>Messagerie de rubrique
 
-La *messagerie de rubrique* est un type de messagerie en aval dans lequel le serveur d’applications envoie un message unique à plusieurs périphériques d’application cliente qui s’abonnent à une rubrique (par exemple, une prévision météorologique). Les messages de rubrique peuvent avoir une longueur de 2 Ko, et la messagerie des rubriques prend en charge jusqu’à 1 million abonnements par application. Si GCM est utilisé uniquement pour la messagerie de rubrique, il n’est pas nécessaire que l’application cliente envoie un jeton d’inscription au serveur d’applications. La [messagerie relative](https://developers.google.com/cloud-messaging/topic-messaging) à la mise en œuvre de Google explique comment envoyer des messages à partir d’un serveur d’applications vers plusieurs appareils qui s’abonnent à une rubrique particulière.
+La *messagerie de rubrique* est un type de messagerie en aval dans lequel le serveur d’applications envoie un message unique à plusieurs périphériques d’application cliente qui s’abonnent à une rubrique (par exemple, une prévision météorologique). Les messages de rubrique peuvent avoir une longueur de 2 Ko, et la messagerie des rubriques prend en charge jusqu’à 1 million abonnements par application. Si GCM est utilisé uniquement pour la messagerie de rubrique, il n’est pas nécessaire que l’application cliente envoie un jeton d’inscription au serveur d’applications.
 
 #### <a name="group-messaging"></a>Messagerie de groupe
 
-La *messagerie de groupe* est un type de messagerie en aval dans lequel le serveur d’applications envoie un message unique à plusieurs périphériques d’application cliente appartenant à un groupe (par exemple, un groupe d’appareils qui appartiennent à un seul utilisateur). Les messages de groupe peuvent avoir une longueur maximale de 2 Ko pour les appareils iOS et jusqu’à 4 Ko pour les appareils Android. Un groupe est limité à un maximum de 20 membres. La [messagerie de groupe d’appareils](https://developers.google.com/cloud-messaging/notifications) Google explique comment les serveurs d’applications peuvent envoyer un message unique à plusieurs instances d’application cliente s’exécutant sur des appareils qui appartiennent à un groupe.
+La *messagerie de groupe* est un type de messagerie en aval dans lequel le serveur d’applications envoie un message unique à plusieurs périphériques d’application cliente appartenant à un groupe (par exemple, un groupe d’appareils qui appartiennent à un seul utilisateur). Les messages de groupe peuvent avoir une longueur maximale de 2 Ko pour les appareils iOS et jusqu’à 4 Ko pour les appareils Android. Un groupe est limité à un maximum de 20 membres.
 
 ### <a name="upstream-messaging"></a>Messagerie en amont
 
-Si votre application cliente se connecte à un serveur qui prend en charge [XMPP](https://developers.google.com/cloud-messaging/ccs), elle peut renvoyer des messages au serveur d’applications, comme illustré dans le diagramme suivant :
+Si votre application cliente se connecte à un serveur qui prend en charge [XMPP](https://firebase.google.com/docs/cloud-messaging/xmpp-server-ref), elle peut renvoyer des messages au serveur d’applications, comme illustré dans le diagramme suivant :
 
 [![diagramme de messagerie en amont](google-cloud-messaging-images/04-upstream-sml.png)](google-cloud-messaging-images/04-upstream.png#lightbox)
 
@@ -118,7 +114,7 @@ Si votre application cliente se connecte à un serveur qui prend en charge [XMPP
 
 5. Le serveur d’applications traite le message.
 
-[Les messages en amont](https://developers.google.com/cloud-messaging/ccs#upstream) de Google expliquent comment structurer les messages JSON et les envoyer aux serveurs d’applications qui exécutent le serveur de connexion Cloud basé sur XMPP de Google.
+[Les messages en amont](https://firebase.google.com/docs/cloud-messaging/xmpp-server-ref#upstream) de Google expliquent comment structurer les messages JSON et les envoyer aux serveurs d’applications qui exécutent le serveur de connexion Cloud basé sur XMPP de Google.
 
 <a name="settingup" />
 
@@ -165,14 +161,12 @@ Pour afficher la **clé API**, cliquez sur **Gestionnaire d’API** , puis sur *
 
 ## <a name="for-further-reading"></a>Pour obtenir des informations supplémentaires
 
-- Les [applications clientes d’inscription](https://developers.google.com/cloud-messaging/registration) de Google décrivent le processus d’inscription du client plus en détail et fournissent des informations sur la configuration de nouvelles tentatives automatiques et la conservation de la synchronisation de l’état d’inscription.
-
 - Les [rfc 6120](https://tools.ietf.org/html/rfc6120) et [RFC 6121](https://tools.ietf.org/html/rfc6121) expliquent et définissent le protocole de messagerie et de présence extensible (XMPP).
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article a fourni une vue d’ensemble de Google Cloud Messaging (GCM). Il a expliqué les différentes informations d’identification utilisées pour identifier et autoriser la messagerie entre les serveurs d’applications et les applications clientes. Il illustre les scénarios de messagerie les plus courants et décrit les étapes d’inscription de votre application avec GCM pour l’utilisation des services GCM.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Messagerie Cloud](https://developers.google.com/cloud-messaging/)

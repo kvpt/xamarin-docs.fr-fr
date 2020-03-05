@@ -6,13 +6,13 @@ ms.assetId: 602456B5-701B-4948-B454-B1F31283F1CF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/11/2019
-ms.openlocfilehash: 4119a650c431013bb0c8e680de600ed4e73d0c93
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.date: 02/11/2020
+ms.openlocfilehash: 6131287b200846a033e0c476d7039dfd774cab68
+ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75490387"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "78292207"
 ---
 # <a name="xamarinforms-swipeview"></a>Xamarin. Forms SwipeView
 
@@ -57,7 +57,7 @@ De plus, `SwipeView` définit une méthode `Close` qui ferme les éléments de b
 
 Un `SwipeView` doit définir le contenu que le `SwipeView` encapsule et les éléments de balayage révélés par le mouvement de balayage. Les éléments de balayage sont un ou plusieurs objets `SwipeItem` placés dans l’une des quatre collections directionnelles `SwipeView`-`LeftItems`, `RightItems`, `TopItems`ou `BottomItems`.
 
-L’exemple suivant montre comment instancier un `SwipeView` dans XAML :
+L’exemple suivant montre comment instancier un `SwipeView` en XAML :
 
 ```xaml
 <SwipeView>
@@ -84,6 +84,49 @@ L’exemple suivant montre comment instancier un `SwipeView` dans XAML :
 </SwipeView>
 ```
 
+Le code C# équivalent est :
+
+```csharp
+// SwipeItems
+SwipeItem favoriteSwipeItem = new SwipeItem
+{
+    Text = "Favorite",
+    IconImageSource = "favorite.png",
+    BackgroundColor = Color.LightGreen
+};
+favoriteSwipeItem.Invoked += OnFavoriteSwipeItemInvoked;
+
+SwipeItem deleteSwipeItem = new SwipeItem
+{
+    Text = "Delete",
+    IconImageSource = "delete.png",
+    BackgroundColor = Color.LightPink
+};
+deleteSwipeItem.Invoked += OnDeleteSwipeItemInvoked;
+
+List<SwipeItem> swipeItems = new List<SwipeItem>() { favoriteSwipeItem, deleteSwipeItem };
+
+// SwipeView content
+Grid grid = new Grid
+{
+    HeightRequest = 60,
+    WidthRequest = 300,
+    BackgroundColor = Color.LightGray
+};
+grid.Children.Add(new Label
+{
+    Text = "Swipe right",
+    HorizontalOptions = LayoutOptions.Center,
+    VerticalOptions = LayoutOptions.Center
+});
+
+SwipeView swipeView = new SwipeView
+{
+    LeftItems = new SwipeItems(swipeItems),
+    Content = grid
+};
+```
+
 Dans cet exemple, le contenu `SwipeView` est un [`Grid`](xref:Xamarin.Forms.Grid) qui contient une [`Label`](xref:Xamarin.Forms.Label):
 
 [![Capture d’écran du contenu SwipeView, sur iOS et Android](swipeview-images/swipeview-content.png "Contenu SwipeView")](swipeview-images/swipeview-content-large.png#lightbox "Contenu SwipeView")
@@ -92,9 +135,9 @@ Les éléments de balayage sont utilisés pour effectuer des actions sur le cont
 
 [![Capture d’écran des éléments de balayage SwipeView, sur iOS et Android](swipeview-images/swipeview-swipeitems.png "SwipeView les éléments de balayage")](swipeview-images/swipeview-swipeitems-large.png#lightbox "SwipeView les éléments de balayage")
 
-Par défaut, un élément balayer est exécuté lorsqu’il est exploité par l’utilisateur. Vous pouvez cependant changer ce comportement. Pour plus d’informations, consultez [mode de balayage](#swipe-mode).
+Par défaut, un élément balayer est exécuté lorsqu’il est exploité par l’utilisateur. Vous pouvez toutefois modifier ce comportement. Pour plus d’informations, consultez [mode de balayage](#swipe-mode).
 
-Une fois qu’un élément balayer a été exécuté, les éléments de balayage sont masqués et le contenu `SwipeView` s’affiche à nouveau. Vous pouvez cependant changer ce comportement. Pour plus d’informations, consultez [comportement de balayage](#swipe-behavior).
+Une fois qu’un élément balayer a été exécuté, les éléments de balayage sont masqués et le contenu `SwipeView` s’affiche à nouveau. Vous pouvez toutefois modifier ce comportement. Pour plus d’informations, consultez [comportement de balayage](#swipe-behavior).
 
 > [!NOTE]
 > Le contenu de balayage et les éléments de balayage peuvent être placés inline ou définis en tant que ressources.
@@ -136,14 +179,16 @@ L’exemple suivant montre deux objets `SwipeItem` dans la collection `LeftItems
 </SwipeView>
 ```
 
-L’apparence de chaque `SwipeItem` est définie par les propriétés `Text`, `IconImageSource`et `BackgroundColor` :
+L’apparence de chaque `SwipeItem` est définie par une combinaison des propriétés `Text`, `IconImageSource`et `BackgroundColor` :
 
 [![Capture d’écran des éléments de balayage SwipeView, sur iOS et Android](swipeview-images/swipeview-swipeitems.png "SwipeView les éléments de balayage")](swipeview-images/swipeview-swipeitems-large.png#lightbox "SwipeView les éléments de balayage")
 
 Lorsqu’un `SwipeItem` est frappé, son événement `Invoked` se déclenche et est géré par son gestionnaire d’événements inscrit. Vous pouvez également définir la propriété `Command` sur une implémentation `ICommand` qui sera exécutée lorsque le `SwipeItem` est appelé.
 
 > [!NOTE]
-> En plus de définir des éléments de balayage en tant qu’objets `SwipeItem`, il est également possible de définir des vues d’éléments de balayage personnalisées. Pour plus d’informations, consultez [éléments de balayage personnalisés](#custom-swipe-items).
+> Lorsque l’apparence d’un `SwipeItem` est définie uniquement à l’aide des propriétés `Text` ou `IconImageSource`, le contenu est toujours centré.
+
+En plus de définir des éléments de balayage en tant qu’objets `SwipeItem`, il est également possible de définir des vues d’éléments de balayage personnalisées. Pour plus d’informations, consultez [éléments de balayage personnalisés](#custom-swipe-items).
 
 ## <a name="swipe-direction"></a>Sens de balayage
 
@@ -288,4 +333,4 @@ En outre, lors de la définition de la propriété `Command` d’un `SwipeItem` 
 ## <a name="related-links"></a>Liens connexes
 
 - [SwipeView (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-swipeviewdemos/)
-- [Xamarin. Forms, MenuItem](~/xamarin-forms/user-interface/menuitem.md)
+- [Xamarin.Forms MenuItem](~/xamarin-forms/user-interface/menuitem.md)

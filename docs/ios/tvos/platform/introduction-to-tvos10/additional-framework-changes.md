@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 1339a6c2909c7ba62592d66dcdf08bcfd2e668a4
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 5b9dfb354f33f67c73b415f8c109ebdc27dcdb6d
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030637"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78292282"
 ---
 # <a name="additional-tvos-10-frameworks-changes"></a>Modifications supplémentaires apportées au Framework tvOS 10
 
@@ -55,7 +55,7 @@ Pour plus d’informations, consultez Référence de l' [infrastructure de donn�
 
 tvOS 10 comprend les améliorations suivantes apportées à l’infrastructure graphique principale :
 
-- La nouvelle classe [CGColorConverterRef](https://developer.apple.com/reference/coregraphics/cgcolorconverterref) peut être utilisée pour effectuer une série de conversions de couleurs.
+- La nouvelle classe CGColorConverterRef peut être utilisée pour effectuer une série de conversions de couleurs.
 
 <a name="Core-Image-Enhancements" />
 
@@ -65,7 +65,7 @@ tvOS 10 apporte les améliorations suivantes à l’infrastructure d’images pr
 
 - La méthode `ImageWithExtent` de la classe [CIFilter](https://developer.apple.com/reference/coreimage/cifilter) peut être utilisée pour insérer un traitement personnalisé dans l’opération de filtrage. L’image principale appellera le rappel donné entre les filtres lors du traitement d’une image pour la sortie ou l’affichage.
 - L’application peut maintenant traiter les images dans un espace de couleurs en dehors de l’espace de couleurs de travail du contexte d’image principal en convertissant dans et en dehors de l’espace de couleurs avant et après le traitement.
-- Plusieurs améliorations des performances de rendu ont été apportées à `UIImage` le rendu (en cas de stockage d’images d’images principales) dans `UIImageView` objets. 
+- Plusieurs améliorations des performances de rendu ont été apportées à `UIImage` le rendu (en cas de stockage d’images d’images principales) dans `UIImageView` objets.
 - les objets `UIImage` avec une large gamme sont rendus sous la forme d’une large gamme de couleurs dans les objets `UIImageView` sur les appareils iOS qui prennent en charge la couleur large.
 - Le code noyau de l’image principale peut désormais demander des formats de sortie pixel spécifiques.
 
@@ -159,7 +159,7 @@ Les améliorations suivantes ont été apportées à l’infrastructure SceneKit
 - SceneKit interprète les valeurs de composant de couleur dans un espace de couleurs RVB linéaire pour tous les types de nuanceur.
 - Étant donné que SceneKit lit et ajuste les informations de profil colorimétrique dans les images de texture, utilisez des catalogues de ressources pour toutes les images pour vous assurer que ces informations sont fournies.
 - Le rendu de l’espace de couleurs linéaire et la grande couleur peuvent être désactivés en spécifiant les clés `SCNDisableLinearSpaceRendering` et `SCNDisableWideGamut` dans le `Info.plist`de l’application.
-- Générez des primates de polygones arbitraires (chargés à partir de fichiers ou générés par programme) pour spécifier Geometry avec la nouvelle classe [SCNGeometryPrimitiveTypePolygon](https://developer.apple.com/reference/scenekit/1772322-scenekit_enumerations/scngeometryprimitivetype/scngeometryprimitivetypepolygon) .
+- Générez des primates de polygones arbitraires (chargés à partir de fichiers ou générés par programme) pour spécifier Geometry avec la nouvelle classe [SCNGeometryPrimitiveTypePolygon](https://developer.apple.com/documentation/scenekit/scngeometryprimitivetype/scngeometryprimitivetypepolygon) .
 
 <a name="SpriteKit-Enhancements" />
 
@@ -181,7 +181,7 @@ Les améliorations suivantes ont été apportées à l’infrastructure UIKit da
 - L’API focus a été améliorée pour prendre en charge le focus d’un élément sans vue en plus de `UIViews`. Les éléments qui prennent en charge le focus _doivent_ implémenter l’interface `IUIFocusItem`.
 - La nouvelle classe `UIGraphicsRender` fournit une méthode orientée objet qui permet de créer des images bitmap ou des fichiers PDF à partir du rendu UIKit ou des graphiques principaux, et remplace la méthode `UIGraphicsBeginImageContext` déconseillée.
 - La classe `UIUserInterfaceStyle` a été ajoutée pour déterminer le thème de l’interface utilisateur (sombre ou clair) qui est actuellement actif.
-- La nouvelle prise en charge de l’animation interruptible, entièrement interactive et basée sur les objets a été ajoutée et Van est liée aux gestes. Agréable consultez Référence du [protocole UIViewAnimating](https://developer.apple.com/reference/uikit/uiviewanimating)d’Apple, référence de la [classe UIViewPropertyAnimator](https://developer.apple.com/reference/uikit/uiviewpropertyanimator), référence du [protocole UITimingCurveProvider](https://developer.apple.com/reference/uikit/uitimingcurveprovider), référence de la [classe UICubicTimingParameters](https://developer.apple.com/reference/uikit/uicubictimingparameters) et [ Référence de la classe UISpringTimingParameter](https://developer.apple.com/reference/uikit/uispringtimingparameters) pour plus d’informations.
+- La nouvelle prise en charge de l’animation interruptible, entièrement interactive et basée sur les objets a été ajoutée et Van est liée aux gestes. Agréable consultez Référence du [protocole UIViewAnimating](https://developer.apple.com/reference/uikit/uiviewanimating)d’Apple, référence de la [classe UIViewPropertyAnimator](https://developer.apple.com/reference/uikit/uiviewpropertyanimator), référence du [protocole UITimingCurveProvider](https://developer.apple.com/reference/uikit/uitimingcurveprovider), référence de la [classe UICubicTimingParameters](https://developer.apple.com/reference/uikit/uicubictimingparameters) et référence de la [classe UISpringTimingParameter](https://developer.apple.com/reference/uikit/uispringtimingparameters) pour plus d’informations.
 - Les nouvelles `UIPreviewInteraction` et `UIPreviewInteractionDelegate` permettent à l’application de fournir une interface personnalisée pour les opérations de lecture et d’affichage.
 - La nouvelle classe `UIAccessibilityCustomRotor` permet à l’application de fournir des fonctionnalités personnalisées, spécifiques au contexte, à des technologies d’assistance telles que la voix.
 - Utilisez les symboles `UIAccessibilityIsAssistiveTouchRunning` et `UIAccessibilityAssistiveTouchStatusDidChangeNotification` pour déterminer si l’assistance tactile est activé.
@@ -195,7 +195,7 @@ Les améliorations suivantes ont été apportées à l’infrastructure UIKit da
 - Initiez le partage CloudKit et modifiez ses propriétés à l’aide des nouvelles classes `UICloudSharingController` et `UICloudSharingControllerDelegate`.
 - Tirez parti des cellules préextraites pour améliorer l’expérience de défilement des `UICollectionViews` avec le nouveau délégué `UICollectionViewDataSourcePrefetching`.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Exemples tvOS](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
 - [Nouveautés de tvOS 10](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewinTVOS/Articles/tvOS10.html#//apple_ref/doc/uid/TP40017259-SW1)

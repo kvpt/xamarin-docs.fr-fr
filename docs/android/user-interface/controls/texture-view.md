@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 05/30/2017
-ms.openlocfilehash: 5d6b1b01cf9597a1d7ae9de762eff1514b494663
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2ffa544789e0d605a241c8e038c790650a7fc6a3
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029121"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78292132"
 ---
 # <a name="xamarinandroid-textureview"></a>Xamarin. Android TextureView
 
@@ -30,16 +30,16 @@ public class TextureViewActivity : Activity,
 {
     Camera _camera;
     TextureView _textureView;
-       
+
     protected override void OnCreate (Bundle bundle)
     {
         base.OnCreate (bundle);
         _textureView = new TextureView (this);
         _textureView.SurfaceTextureListener = this;
-           
+
         SetContentView (_textureView);
     }
-       
+
     public void OnSurfaceTextureAvailable (
         Android.Graphics.SurfaceTexture surface,
         int width, int height)
@@ -56,7 +56,7 @@ public class TextureViewActivity : Activity,
         } catch (Java.IO.IOException ex) {
             Console.WriteLine (ex.Message);
         }
-           
+
         // this is the sort of thing TextureView enables
         _textureView.Rotation = 45.0f;
         _textureView.Alpha = 0.5f;
@@ -71,8 +71,6 @@ Le code ci-dessus crée une instance `TextureView` dans la méthode `OnCreate` d
 
 Pour utiliser le `TextureView`, l’accélération matérielle doit être activée, ce qui est le cas par défaut au niveau de l’API 14. En outre, étant donné que cet exemple utilise l’appareil photo, l’autorisation `android.permission.CAMERA` et la fonctionnalité `android.hardware.camera` doivent être définies dans **fichier AndroidManifest. xml**.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
-- [TextureViewDemo (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/textureviewdemo)
-- [Présentation du sandwich glacé](https://www.android.com/about/ice-cream-sandwich/)
-- [Plateforme Android 4,0](https://developer.android.com/sdk/android-4.0.html)
+- [TextureViewDemo (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/textureviewdemo)/)

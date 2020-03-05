@@ -6,12 +6,12 @@ ms.assetid: 9EE288C5-8952-C5A9-E542-0BD847300EC6
 author: davidortinau
 ms.author: daortin
 ms.date: 11/25/2015
-ms.openlocfilehash: cad352466e7661183c5277f60c63c283342c50fb
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: be2f7f555b76d472f7a66d95e661bb2f5884c58f
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73015878"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78292421"
 ---
 # <a name="overview-of-objective-c-bindings"></a>Vue d’ensemble des liaisons objective-C
 
@@ -73,7 +73,7 @@ Lisez les [documents objective Sharp](~/cross-platform/macios/binding/objective-
 
 Il est possible d’utiliser l’attribut [[register]](xref:Foundation.RegisterAttribute) , l’attribut [[Export]](xref:Foundation.ExportAttribute) et l' [appel manuel d’objective-c](~/ios/internals/objective-c-selectors.md) pour lier manuellement de nouveaux types objective-c (précédemment détachés).
 
-Tout d’abord, recherchez un type que vous souhaitez lier. À des fins de discussion (et de simplicité), nous allons lier le type [NSEnumerator](https://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSEnumerator_Class/Reference/Reference.html) (qui a déjà été lié dans [Foundation. NSEnumerator](xref:Foundation.NSEnumerator); l’implémentation ci-dessous n’est qu’à titre d’exemple).
+Tout d’abord, recherchez un type que vous souhaitez lier. À des fins de discussion (et de simplicité), nous allons lier le type [NSEnumerator](https://developer.apple.com/documentation/foundation/nsenumerator) (qui a déjà été lié dans [Foundation. NSEnumerator](xref:Foundation.NSEnumerator); l’implémentation ci-dessous n’est qu’à titre d’exemple).
 
 Ensuite, nous devons créer le C# type. Nous voulons probablement placer cela dans un espace de noms. comme objective-C ne prend pas en charge les espaces de noms, nous devrons utiliser l’attribut `[Register]` pour modifier le nom du type que Xamarin. iOS inscrira avec le runtime objective-C. Le C# type doit également hériter de [Foundation. NSObject](xref:Foundation.NSObject):
 

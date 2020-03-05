@@ -7,24 +7,24 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 16d576c599dbf5815b19aec4a2e8390f7ed0e601
-ms.sourcegitcommit: 191f1f3b13a14e2afadcb95126c5f653722f126f
+ms.openlocfilehash: 98081ed1a9aef1260150671d4fd026dd64c20b62
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/30/2019
-ms.locfileid: "75545567"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78291987"
 ---
 # <a name="the-path-fill-types"></a>Types de remplissage des tracés
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-_Découvrir les différents effets possibles avec les types de remplissage de chemin d’accès SkiaSharp_
+_Découvrez les différents effets possibles avec les types de remplissage de chemin SkiaSharp_
 
-Deux profils dans un chemin d’accès peuvent se chevaucher, et les lignes qui composent un contour unique peuvent se chevaucher. Toute zone délimitée peut potentiellement être remplie, mais vous souhaiterez peut-être pas remplir toutes les zones fermées. Voici un exemple :
+Deux profils dans un chemin d’accès peuvent se chevaucher, et les lignes qui composent un contour unique peuvent se chevaucher. Toute zone délimitée peut potentiellement être remplie, mais vous souhaiterez peut-être pas remplir toutes les zones fermées. Voici un exemple :
 
 ![](fill-types-images/filltypeexample.png "Five-pointed star partially filles")
 
-Vous contrôlez un peu cela. L’algorithme de remplissage est régie par le [ `SKFillType` ](xref:SkiaSharp.SKPath.FillType) propriété du `SKPath`, que vous définissez à un membre de la [ `SKPathFillType` ](xref:SkiaSharp.SKPathFillType) énumération :
+Vous contrôlez un peu cela. L’algorithme de remplissage est régi par la propriété [`SKFillType`](xref:SkiaSharp.SKPath.FillType) de `SKPath`, que vous définissez sur un membre de l’énumération [`SKPathFillType`](xref:SkiaSharp.SKPathFillType) :
 
 - `Winding`, la valeur par défaut
 - `EvenOdd`
@@ -35,7 +35,7 @@ Les algorithmes enroulement et pair-impair déterminent si n’importe quelle zo
 
 Avec plusieurs chemins de routine, l’algorithme enroulement remplit souvent toutes les zones délimités d’un chemin d’accès. Généralement, l’algorithme pair-impair produit des résultats plus intéressants.
 
-L’exemple classique est une étoile à cinq branches, comme illustré dans le **Five-Pointed en étoile** page. Le [ **FivePointedStarPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/FivePointedStarPage.xaml) fichier instancie deux `Picker` remplir de vues pour sélectionner le chemin d’accès et si le chemin d’accès est rayé ou rempli ou aux deux et dans quel ordre :
+L’exemple classique est une étoile à cinq branches, comme illustré dans la page **étoile à cinq branches** . Le fichier [**FivePointedStarPage. Xaml**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/FivePointedStarPage.xaml) instancie deux vues de `Picker` pour sélectionner le type de remplissage du tracé et si le chemin d’accès est rayé ou rempli, et dans quel ordre :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -102,7 +102,7 @@ L’exemple classique est une étoile à cinq branches, comme illustré dans le 
 </ContentPage>
 ```
 
-Le fichier code-behind utilise à la fois `Picker` valeurs pour dessiner une étoile à cinq branches :
+Le fichier code-behind utilise les deux valeurs `Picker` pour dessiner une étoile à cinq branches :
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -126,7 +126,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
     {
         // angle from vertical
         double angle = i * 4 * Math.PI / 5;
-        path.LineTo(center + new SKPoint(radius * (float)Math.Sin(angle), 
+        path.LineTo(center + new SKPoint(radius * (float)Math.Sin(angle),
                                         -radius * (float)Math.Cos(angle)));
     }
     path.Close();
@@ -168,20 +168,20 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-En règle générale, le type de remplissage de chemin d’accès doit affecter uniquement des remplissages et des traits pas, mais les deux `Inverse` modes affectent les remplissages et les traits. Pour les remplissages, les deux `Inverse` types remplir des zones afin que la zone en dehors de l’étoile est remplie. Pour les tracés, les deux `Inverse` types tout sauf le trait de couleur. À l’aide de ces types de remplissage inverse peut produire des effets impairs, comme le montre la capture d’écran iOS :
+Normalement, le type de remplissage du chemin d’accès doit affecter uniquement les remplissages et non les traits, mais les deux modes d' `Inverse` affectent les remplissages et les traits. Pour les remplissages, les deux types de `Inverse` remplissent les zones de manière opposée afin que la zone en dehors de l’étoile soit remplie. Pour les traits, les deux types de `Inverse` colorent tout sauf le trait. À l’aide de ces types de remplissage inverse peut produire des effets impairs, comme le montre la capture d’écran iOS :
 
 [![](fill-types-images/fivepointedstar-small.png "Triple screenshot of the Five-Pointed Star page")](fill-types-images/fivepointedstar-large.png#lightbox "Triple screenshot of the Five-Pointed Star page")
 
 La capture d’écran Android affiche les effets pair-impair et d’enroulement classiques, mais l’ordre du trait et du remplissage affecte également les résultats.
 
-L’algorithme enroulement est dépendante de la direction que les lignes sont dessinées. Généralement lorsque vous créez un chemin d’accès, vous pouvez contrôler cette direction en tant que vous spécifiez que les lignes sont dessinées à partir d’un point vers un autre. Toutefois, le `SKPath` classe définit également les méthodes, telles que `AddRect` et `AddCircle` qui dessiner les contours entières. Pour contrôler la façon dont ces objets sont dessinés, les méthodes incluent un paramètre de type [ `SKPathDirection` ](xref:SkiaSharp.SKPathDirection), qui a deux membres :
+L’algorithme enroulement est dépendante de la direction que les lignes sont dessinées. Généralement lorsque vous créez un chemin d’accès, vous pouvez contrôler cette direction en tant que vous spécifiez que les lignes sont dessinées à partir d’un point vers un autre. Toutefois, la classe `SKPath` définit également des méthodes comme `AddRect` et `AddCircle` qui dessinent des contours entiers. Pour contrôler la façon dont ces objets sont dessinés, les méthodes incluent un paramètre de type [`SKPathDirection`](xref:SkiaSharp.SKPathDirection), qui a deux membres :
 
 - `Clockwise`
 - `CounterClockwise`
 
-Les méthodes dans `SKPath` qui incluent un `SKPathDirection` paramètre lui donner une valeur par défaut de `Clockwise`.
+Les méthodes de `SKPath` qui incluent un paramètre `SKPathDirection` lui attribuent la valeur par défaut `Clockwise`.
 
-Le **cercles se chevauchant** page crée un chemin d’accès avec quatre cercles se chevauchant avec un type de remplissage de chemin d’accès pair-impair :
+La page cercles qui se **chevauchent** crée un tracé avec quatre cercles qui se chevauchent avec un type de remplissage de tracé pair-impair :
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -225,7 +225,7 @@ Il s’agit d’une image intéressante créée avec un minimum de code :
 
 [![](fill-types-images/overlappingcircles-small.png "Triple screenshot of the Overlapping Circles page")](fill-types-images/overlappingcircles-large.png#lightbox "Triple screenshot of the Overlapping Circles page")
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
-- [API de SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
+- [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

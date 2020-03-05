@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 404483bb0c2c405fb810ebcd3a8007692219f522
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 7e9010eb579f28e62b5f7ab72ac061e9898e7ecf
+ms.sourcegitcommit: a9b180651863cb7da31d3af14182fe3ad44796f7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022002"
+ms.lasthandoff: 02/03/2020
+ms.locfileid: "78292725"
 ---
 # <a name="annotations-and-overlays-in-xamarinios"></a>Annotations et superpositions dans Xamarin. iOS
 
@@ -80,7 +80,7 @@ Commençons par créer un nouveau **projet iOS vide**et lui donner un nom pertin
 
     ```
 
-1. Créez une nouvelle instance de `MapDelegate` et affectez-la à la `Delegate` du `MKMapView`. Là encore, nous implcodeent le `MapDelegate` bientôt :
+1. Créez une nouvelle instance de `MapDelegate` et affectez-la à la `Delegate` du `MKMapView`. Là encore, nous allons implémenter le `MapDelegate` bientôt :
 
     ```csharp
     mapDelegate = new MapDelegate ();
@@ -107,7 +107,7 @@ Commençons par créer un nouveau **projet iOS vide**et lui donner un nom pertin
 
     et chaîne :
 
-    `Maps Walkthrough Docs Sample`.,
+    `Maps Walkthrough Docs Sample`.
 
 ## <a name="conferenceannotationcs--a-class-for-custom-annotations"></a>ConferenceAnnotation.cs : classe pour les annotations personnalisées
 
@@ -245,7 +245,7 @@ Cela termine le code dans `ViewDidLoad`. Nous devons à présent implémenter no
     }
     ```
 
-1. Pour masquer l’image lorsque l’utilisateur désélectionne l’annotation en cliquant n’importe où sur la carte, implémentez la méthode `DidSelectAnnotationView` comme suit :
+1. Pour masquer l’image lorsque l’utilisateur désélectionne l’annotation en cliquant n’importe où sur la carte, implémentez la méthode `DidDeselectAnnotationView` comme suit :
 
     ```csharp
     public override void DidDeselectAnnotationView (MKMapView mapView, MKAnnotationView view)
@@ -280,11 +280,11 @@ Exécutez l'application. Nous disposons maintenant d’une carte interactive ave
 
  [![](ios-maps-walkthrough-images/01-map-image.png "Tap on the annotation and the image of Austin is displayed")](ios-maps-walkthrough-images/01-map-image.png#lightbox)
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Dans cet article, nous avons vu comment ajouter une annotation à une carte et comment ajouter une superposition pour un polygone spécifié. Nous avons également démontré comment ajouter une prise en charge tactile à l’annotation pour animer une image sur une carte.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Exemple de procédure pas à pas de Maps](https://docs.microsoft.com/samples/xamarin/ios-samples/mapswalkthrough)
 - [Exemple de démonstration cartographique](https://docs.microsoft.com/samples/xamarin/ios-samples/mapdemo)

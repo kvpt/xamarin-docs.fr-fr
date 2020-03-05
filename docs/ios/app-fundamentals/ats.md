@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/13/2017
-ms.openlocfilehash: e0ab824eff4c8bb18a2bd1998862df433cdade1a
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 84d235bb7c6874255ea025ff5897e150bd6f023b
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73011106"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78293055"
 ---
 # <a name="app-transport-security-in-xamarinios"></a>Sécurité du transport d’application dans Xamarin. iOS
 
 _Application transport Security (ATS) applique des connexions sécurisées entre les ressources Internet (par exemple, le serveur principal de l’application) et votre application._
 
-Cet article présente les modifications de sécurité apportées par la sécurité du transport d’application sur une application iOS 9 et ce que [cela signifie pour vos projets Xamarin. iOS](#xamarinsupport), elle couvre les [options de configuration](#config) de l’ATS et explique comment refuser l’inscription à l' [ATS](#optout) ATS si nécessaire. Dans la mesure où ATS est activé par défaut, toutes les connexions Internet non sécurisées lèvent une exception dans les applications iOS 9 (à moins que vous ne les ayez explicitement autorisées).
+Cet article présente les modifications de sécurité apportées par la sécurité du transport d’application sur une application iOS 9 et ce que [cela signifie pour vos projets Xamarin. iOS](#xamarinsupport), elle couvre les [options de configuration](#config) de l’ATS et explique comment [refuser](#optout) l’ATS ATS si nécessaire. Dans la mesure où ATS est activé par défaut, toutes les connexions Internet non sécurisées lèvent une exception dans les applications iOS 9 (à moins que vous ne les ayez explicitement autorisées).
 
 ## <a name="about-app-transport-security"></a>À propos de la sécurité du transport d’application
 
@@ -93,11 +93,11 @@ Pour définir l’implémentation HTTPClient utilisée par une application iOS, 
 
 Le gestionnaire géré est le gestionnaire HttpClient entièrement géré qui a été fourni avec les versions précédentes de Xamarin. iOS et est le gestionnaire par défaut.
 
-Professionnels
+Avantages :
 
 - Il est le plus compatible avec Microsoft .NET et une version antérieure de Xamarin.
 
-Inconvénients
+Inconvénients :
 
 - Il n’est pas entièrement intégré à iOS (il est par exemple limité à TLS 1,0).
 - Elle est généralement beaucoup plus lente que les API natives.
@@ -107,12 +107,12 @@ Inconvénients
 
 Le gestionnaire basé sur CFNetwork est basé sur l’infrastructure de `CFNetwork` native.
 
-Professionnels
+Avantages :
 
 - Utilise l’API native pour améliorer les performances et réduire les tailles des exécutables.
 - Ajoute la prise en charge des normes plus récentes, telles que TLS 1,2.
 
-Inconvénients
+Inconvénients :
 
 - Requiert iOS 6 ou version ultérieure.
 - Non disponible dans Watchos.
@@ -122,12 +122,12 @@ Inconvénients
 
 Le gestionnaire basé sur passer est basé sur l’API `NSUrlSession` native.
 
-Professionnels
+Avantages :
 
 - Utilise l’API native pour améliorer les performances et réduire les tailles des exécutables.
 - Ajoute la prise en charge des normes plus récentes, telles que TLS 1,2.
 
-Inconvénients
+Inconvénients :
 
 - Requiert iOS 7 ou une version ultérieure.
 - Certaines fonctionnalités et options HttpClient ne sont pas disponibles.
@@ -136,7 +136,7 @@ Inconvénients
 
 Lorsque vous tentez de vous connecter à Internet, soit directement, soit à partir d’une vue Web dans iOS 9, vous pouvez obtenir une erreur au format suivant :
 
-> La sécurité du transport d’application a bloqué une charge de ressources HTTP en texte clair (http://www.-the-blocked-domain.com), car elle n’est pas sécurisée. Les exceptions temporaires peuvent être configurées via le fichier info. plist de votre application.
+> La sécurité du transport d’application a bloqué une charge de ressource HTTP (`http://www.-the-blocked-domain.com`) en texte clair, car elle n’est pas sécurisée. Les exceptions temporaires peuvent être configurées via le fichier info. plist de votre application.
 
 Dans iOS9, la sécurité d’application transport (ATS) applique des connexions sécurisées entre les ressources Internet (par exemple, le serveur principal de l’application) et votre application. En outre, ATS requiert la communication à l’aide du protocole `HTTPS` et la communication de l’API de haut niveau à chiffrer à l’aide de TLS version 1,2 avec confidentialité ascendante.
 
@@ -245,11 +245,11 @@ Là encore, la désactivation de l’ATS _ne doit être utilisée qu’en_ derni
 
 <a name="Summary" />
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article a introduit la sécurité de transport d’application (ATS) et décrit son mode d’application des communications sécurisées avec Internet. Tout d’abord, nous avons abordé les modifications apportées à ATS requis pour une application Xamarin. iOS s’exécutant sur iOS 9. Nous avons ensuite abordé la maîtrise des fonctionnalités et options ATS. Enfin, nous avons abordé le choix de l’ATS dans votre application Xamarin. iOS.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Exemples iOS 9](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
 - [iOS 9 pour les développeurs](https://developer.apple.com/ios/pre-release/)

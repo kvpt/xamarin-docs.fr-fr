@@ -7,25 +7,25 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/09/2018
-ms.openlocfilehash: 382315f755102d7111db1a5c0f71d43bdea97a10
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 4fbbe1bec317e66166d5218ef0ed54247aa4f6dd
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73020183"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78291624"
 ---
 # <a name="ice-cream-sandwich-features"></a>Caractéristiques du sandwich glace
 
 _Cet article décrit plusieurs des nouvelles fonctionnalités disponibles pour les développeurs d’applications avec l’API Android 4-Ice Ice. Il couvre plusieurs nouvelles technologies d’interface utilisateur, puis examine une série de nouvelles fonctionnalités offertes par Android 4 pour le partage de données entre les applications et entre les appareils._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d’ensemble
 
 Le système d’exploitation Android version 4,0 (niveau d’API 14) représente un retravail majeur du système d’exploitation Android et inclut un certain nombre de modifications et de mises à niveau importantes, notamment :
 
-- **Interface utilisateur mise à jour** : plusieurs nouvelles fonctionnalités de l’interface utilisateur offrent aux développeurs plus de puissance et de flexibilité lorsqu’ils créent des interfaces utilisateur d’application. Ces nouvelles fonctionnalités sont les suivantes : `GridLayout`, `PopupMenu`, `Switch` widget et `TextureView`. 
-- **Meilleure accélération matérielle** : le rendu 2D s’effectue désormais sur le GPU pour tous les contrôles Android. En outre, l’accélération matérielle est activée, par défaut, dans toutes les applications développées pour Android 4,0. 
-- **Nouvelles API de données** : il existe un nouvel accès aux données qui n’étaient pas auparavant officiellement accessibles, telles que les données de calendrier et le profil utilisateur du propriétaire de l’appareil. 
-- **Partage de données d’application** : le partage de données entre les applications et les appareils est désormais plus facile que jamais via des technologies telles que le `ShareActionProvider`, ce qui facilite la création d’une action de partage à partir d’un barre d’action et d’un *faisceau Android* pour les *communications en champ proche ( NFC)* , ce qui en fait un composant logiciel enfichable pour partager des données entre les appareils à proximité l’un de l’autre. 
+- **Interface utilisateur mise à jour** : plusieurs nouvelles fonctionnalités de l’interface utilisateur offrent aux développeurs plus de puissance et de flexibilité lorsqu’ils créent des interfaces utilisateur d’application. Ces nouvelles fonctionnalités sont les suivantes : `GridLayout`, `PopupMenu`, `Switch` widget et `TextureView`.
+- **Meilleure accélération matérielle** : le rendu 2D s’effectue désormais sur le GPU pour tous les contrôles Android. En outre, l’accélération matérielle est activée, par défaut, dans toutes les applications développées pour Android 4,0.
+- **Nouvelles API de données** : il existe un nouvel accès aux données qui n’étaient pas auparavant officiellement accessibles, telles que les données de calendrier et le profil utilisateur du propriétaire de l’appareil.
+- **Partage de données d’application** : le partage de données entre les applications et les appareils est désormais plus facile que jamais via des technologies telles que le `ShareActionProvider`, ce qui facilite la création d’une action de partage à partir d’un barre d’action, et d’un *faisceau Android* pour les *communications en champ proche (NFC)* .
 
 Dans cet article, nous allons explorer ces fonctionnalités et d’autres modifications apportées à l’API Android 4,0, et nous expliquerons comment utiliser chaque fonctionnalité avec Xamarin. Android.
 
@@ -33,10 +33,10 @@ Dans cet article, nous allons explorer ces fonctionnalités et d’autres modifi
 
 Une variété de nouvelles technologies d’interface utilisateur sont disponibles avec Android 4, notamment :
 
-- **[GridLayout](~/android/user-interface/layouts/grid-layout.md)** : prend en charge la disposition en grille 2D des contrôles. 
-- **[Widget de basculement](~/android/user-interface/controls/switch.md)** : permet de basculer entre on ou OFF. 
-- **[TextureView](~/android/user-interface/controls/texture-view.md)** : active le contenu vidéo et OpenGL dans une vue. 
-- **[Barre de navigation](~/android/user-interface/controls/navigation-bar.md)** : contient des boutons virtuels pour l’arrière-plan, la page d’hébergement et l’exécution multitâche. 
+- **[GridLayout](~/android/user-interface/layouts/grid-layout.md)** : prend en charge la disposition en grille 2D des contrôles.
+- **[Widget de basculement](~/android/user-interface/controls/switch.md)** : permet de basculer entre on ou OFF.
+- **[TextureView](~/android/user-interface/controls/texture-view.md)** : active le contenu vidéo et OpenGL dans une vue.
+- **[Barre de navigation](~/android/user-interface/controls/navigation-bar.md)** : contient des boutons virtuels pour l’arrière-plan, la page d’hébergement et l’exécution multitâche.
 
 En outre, d’autres éléments de l’interface utilisateur ont été améliorés, tels que le `<a href"/guides/android/user_interface/popup_menus">PopupMenu</a>`, qui est désormais plus facile à utiliser, et les onglets, qui ont une apparence plus soignée.
 
@@ -45,22 +45,21 @@ En outre, d’autres éléments de l’interface utilisateur ont été amélior�
 Android 4 comprend plusieurs nouvelles technologies qui nous permettent de partager des données entre les appareils et entre les applications. Il permet également d’accéder à différents types de données qui n’étaient pas auparavant disponibles, telles que des informations de calendrier et le profil utilisateur du propriétaire de l’appareil. Dans cette section, nous allons examiner toute une série de fonctionnalités offertes par Android 4, qui répondent aux questions suivantes :
 
 - **[Android Beam](~/android/platform/android-beam.md)** : autorise le partage de données via NFC.
-- **[ShareActionProvider](~/android/user-interface/controls/action-bar.md)** : crée un fournisseur qui permet aux développeurs de spécifier des actions de partage à partir de l’barre d’action. 
-- **[Profil utilisateur](~/android/user-interface/user-profile.md)** : permet d’accéder aux données de profil du propriétaire de l’appareil. 
-- **[API de calendrier](~/android/user-interface/controls/calendar.md)** : permet d’accéder aux données de calendrier à partir du fournisseur de calendrier. 
+- **[ShareActionProvider](~/android/user-interface/controls/action-bar.md)** : crée un fournisseur qui permet aux développeurs de spécifier des actions de partage à partir de l’barre d’action.
+- **[Profil utilisateur](~/android/user-interface/user-profile.md)** : permet d’accéder aux données de profil du propriétaire de l’appareil.
+- **[API de calendrier](~/android/user-interface/controls/calendar.md)** : permet d’accéder aux données de calendrier à partir du fournisseur de calendrier.
 
 ## <a name="x86-emulators"></a>Émulateurs x86
 
 ICS ne prend pas encore en charge le développement avec un émulateur x86. les émulateurs x86 sont uniquement pris en charge avec Android 2.3.3, niveau d’API 10. Pour plus d’informations, consultez [configuration de l’émulateur x86](~/android/get-started/installation/android-emulator/index.md) .
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article a présenté une série de nouvelles technologies désormais disponibles avec Android 4. Nous avons examiné les nouvelles fonctionnalités de l’interface utilisateur, telles que *GridLayout*, *PopupMenu*et le widget de *commutateur* . Nous avons également examiné la nouvelle prise en charge du contrôle de l’interface utilisateur du système, ainsi que l’utilisation de *TextureView*. Nous avons ensuite abordé une variété de nouvelles technologies de partage. Nous avons abordé la manière dont *Android Beam* vous permet de partager des informations entre des appareils qui utilisent *NFC*, décrit la nouvelle *API de calendrier*et vous a également montré comment utiliser le *ShareActionProvider*intégré.
 Enfin, nous avons examiné comment utiliser le fournisseur *ContactsContract* pour accéder aux données de profil utilisateur.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
-- [Exemples de glace glace](https://docs.microsoft.com/samples/xamarin/monodroid-samples/platformfeatures-ics-samples)
 - [TextureViewDemo (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/textureviewdemo)
 - [CalendarDemo (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/calendardemo)
 - [Didacticiel sur la disposition des onglets](~/android/user-interface/layouts/tab-layout/index.md)

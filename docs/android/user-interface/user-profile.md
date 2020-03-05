@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2018
-ms.openlocfilehash: 252a104118b0419f33abdf7f522ad8fc358e3f76
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 395f7c477f1f2bdb608aec918f877f6d320d75cc
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028710"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78292494"
 ---
 # <a name="user-profile"></a>Profil utilisateur
 
@@ -23,7 +23,7 @@ var uri = ContactsContract.Contacts.ContentUri;
 
 // Setup the "projection" (columns we want) for only the ID and display name:
 string[] projection = {
-    ContactsContract.Contacts.InterfaceConsts.Id, 
+    ContactsContract.Contacts.InterfaceConsts.Id,
     ContactsContract.Contacts.InterfaceConsts.DisplayName };
 
 // Use a CursorLoader to retrieve the user's contacts data:
@@ -104,8 +104,6 @@ Quand vous exécutez le code ci-dessus, le profil utilisateur s’affiche comme 
 
 L’utilisation du profil utilisateur est similaire à l’interaction avec d’autres données dans Android, et offre un niveau supplémentaire de personnalisation de l’appareil.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [ContactsProviderDemo (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/contactsproviderdemo)
-- [Présentation du sandwich glacé](https://www.android.com/about/ice-cream-sandwich/)
-- [Plateforme Android 4,0](https://developer.android.com/sdk/android-4.0.html)

@@ -6,18 +6,18 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 01/15/2019
 ms.custom: video
-ms.openlocfilehash: 1c6e55b69ca683b7fc1919995ba576ab77bf3c3b
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: c7d4e4f7ea27e150752b222e3ea4ce2c4256a43a
+ms.sourcegitcommit: 099b06e311a40c00eeea85465ff9b97867a5c5de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75488502"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78295402"
 ---
 # <a name="xamarinessentials-preferences"></a>Xamarin.Essentials : préférences
 
 La classe **Preferences** permet de stocker les préférences d’application dans un magasin de clés/valeurs.
 
-## <a name="get-started"></a>Prise en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -39,6 +39,12 @@ Pour récupérer une valeur à partir des préférences, ou une valeur par défa
 
 ```csharp
 var myValue = Preferences.Get("my_key", "default_value");
+```
+
+Pour vérifier si une _clé_ donnée existe dans les préférences :
+
+```csharp
+bool hasKey = Preferences.HasKey("my_key");
 ```
 
 Pour supprimer la _clé_ des préférences :
@@ -67,21 +73,21 @@ Les types de données suivants sont pris en charge dans **Preferences** :
 - **string**
 - **DateTime**
 
-## <a name="implementation-details"></a>Détails de l’implémentation
+## <a name="implementation-details"></a>Informations d’implémentation
 
 Les valeurs de `DateTime` sont stockées dans un format binaire 64 bits (entier long) à l’aide de deux méthodes définies par la classe `DateTime` : la méthode [`ToBinary`](xref:System.DateTime.ToBinary) sert à encoder la valeur de `DateTime`, alors que la méthode [`FromBinary`](xref:System.DateTime.FromBinary(System.Int64)) sert à décoder la valeur. Consultez la documentation de ces méthodes pour connaître les ajustements qui peuvent être apportés aux valeurs décodées quand un `DateTime` stocké n’est pas une valeur UTC (temps universel coordonné).
 
 ## <a name="platform-implementation-specifics"></a>Caractéristiques de mise en œuvre de la plateforme
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 Toutes les données sont stockées dans les [Préférences partagées](https://developer.android.com/training/data-storage/shared-preferences.html). Si aucun `sharedName` n’est spécifié, les préférences partagées par défaut sont utilisées. Sinon, le nom sert à obtenir des préférences partagées **privées** avec le nom spécifié.
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 [NSUserDefaults](https://docs.microsoft.com/xamarin/ios/app-fundamentals/user-defaults) permet de stocker des valeurs sur les appareils iOS. Si aucun `sharedName` n’est spécifié, `StandardUserDefaults` est utilisé. Sinon, le nom sert à créer un `NSUserDefaults` avec le nom spécifié utilisé pour `NSUserDefaultsType.SuiteName`.
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 [ApplicationDataContainer](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer) permet de stocker les valeurs sur l’appareil. Si aucun `sharedName` n’est spécifié, `LocalSettings` est utilisé. Sinon, le nom sert à créer un conteneur dans `LocalSettings`. 
 
@@ -93,7 +99,7 @@ Toutes les données sont stockées dans les [Préférences partagées](https://d
 
 La désinstallation de l’application entraîne la suppression de toutes les _Préférences_. Il existe une exception à cette règle. Il s’agit du cas où les applications ciblent (et s’exécutent sur) Android 6.0 (niveau d’API 23) ou version ultérieure, et utilisent la [__sauvegarde automatique__](https://developer.android.com/guide/topics/data/autobackup). Cette fonctionnalité est activée par défaut et conserve les données de l’application, notamment les __Préférences partagées__, utilisées par l’API de **Préférences**. Vous pouvez désactiver cette fonctionnalité en suivant la [documentation](https://developer.android.com/guide/topics/data/autobackup) de Google.
 
-## <a name="limitations"></a>Limitations
+## <a name="limitations"></a>Limites
 
 Quand vous stockez une chaîne, cette API permet de stocker de petites quantités de texte.  Les performances risquent d’être médiocres si vous essayez de l’utiliser pour stocker de grandes quantités de texte.
 

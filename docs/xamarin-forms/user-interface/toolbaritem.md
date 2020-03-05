@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 07/29/2019
-ms.openlocfilehash: 0812347e85b0ccb6aa0bbb16649a89bb4d961c9b
-ms.sourcegitcommit: a14edebf00f3e0f8944e59042ca7aa5c42173e30
+ms.openlocfilehash: afdf9029f836ac8e55b2bb338b31f669af946c12
+ms.sourcegitcommit: 6d86aac422d6ce2131930d18ada161d117c8c61b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72780351"
+ms.lasthandoff: 02/24/2020
+ms.locfileid: "78291633"
 ---
 # <a name="xamarinforms-toolbaritem"></a>Xamarin. Forms, ToolbarItem
 
@@ -102,6 +102,12 @@ void OnItemClicked(object sender, EventArgs e)
 
 les objets `ToolbarItem` peuvent également utiliser les propriétés `Command` et `CommandParameter` pour réagir aux entrées d’utilisateur sans gestionnaires d’événements. Pour plus d’informations sur l’interface `ICommand` et la liaison de données MVVM, consultez [comportement de Xamarin. Forms MenuItem MVVM](~/xamarin-forms/user-interface/menuitem.md#define-menuitem-behavior-with-mvvm).
 
+## <a name="enable-or-disable-a-toolbaritem-at-runtime"></a>Activer ou désactiver un ToolbarItem au moment de l’exécution
+
+Pour activer la désactivation d’un `ToolbarItem` au moment de l’exécution, liez sa propriété `Command` à une implémentation de `ICommand` et assurez-vous qu’un délégué `canExecute` active et désactive le `ICommand`, le cas échéant.
+
+Pour plus d’informations, consultez [activer ou désactiver un MenuItem au moment de l’exécution](menuitem.md#enable-or-disable-a-menuitem-at-runtime).
+
 ## <a name="primary-and-secondary-menus"></a>Menus principal et secondaire
 
 L’énumération `ToolbarItemOrder` a des valeurs `Default`, `Primary`et `Secondary`.
@@ -121,4 +127,4 @@ Lorsque la propriété `Order` est définie sur `Secondary`, le comportement var
 
 * [Démos de ToolbarItem](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-toolbaritem/)
 * [Images dans Xamarin. Forms](~/xamarin-forms/user-interface/images.md)
-* [Xamarin. Forms, MenuItem](~/xamarin-forms/user-interface/menuitem.md)
+* [Xamarin.Forms MenuItem](~/xamarin-forms/user-interface/menuitem.md)

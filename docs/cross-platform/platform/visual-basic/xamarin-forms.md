@@ -6,12 +6,12 @@ ms.assetid: da4b4ba9-9205-47dc-8bae-23272ede2c50
 author: davidortinau
 ms.author: daortin
 ms.date: 04/24/2019
-ms.openlocfilehash: e1a540eef2a4d54ead68ae4a9427b0622b668182
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 42be47e74b4b0da60d517a17bb6090c58448b718
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73014550"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78291628"
 ---
 # <a name="xamarinforms-using-visual-basicnet"></a>Xamarin. Forms à l’aide de Visual Basic.NET
 
@@ -121,13 +121,13 @@ Cliquez avec le bouton droit sur le nœud **références** dans les projets Andr
 
 Comme indiqué sur la [page Basic.net visuel portable](~/cross-platform/platform/visual-basic/index.md), Xamarin ne prend pas en charge le langage de Visual Basic. Cela signifie que vous pouvez utiliser Visual Basic pour certaines limitations :
 
-- Les pages XAML ne peuvent pas être incluses dans le projet Visual Basic. le générateur code-behind C#ne peut générer que des. Il est possible d’inclure du code XAML dans une bibliothèque de classes C# portable, référencée et distincte, et d’utiliser la liaison de liaison pour remplir les fichiers XAML via des modèles de Visual Basic (un exemple est inclus dans l' [exemple](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/XamarinFormsVB/XamlPages)).
+- Les pages XAML ne peuvent pas être incluses dans le projet Visual Basic. le générateur code-behind C#ne peut générer que des. Il est possible d’inclure du code XAML dans une bibliothèque de classes C# portable, référencée et distincte, et d’utiliser la liaison de liaison pour remplir les fichiers XAML via des modèles de Visual Basic (un exemple est inclus dans l' [exemple](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/XamarinFormsVB)).
 
 - Les convertisseurs personnalisés ne peuvent pas être écrits en Visual Basic, ils doivent C# être écrits dans les projets de plateforme natifs.
 
 - Les implémentations de service de dépendance ne peuvent pas être écrites dans Visual Basic, C# elles doivent être écrites dans les projets de plateforme natifs.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [XamarinFormsVB (exemple)](https://docs.microsoft.com/samples/xamarin/mobile-samples/visualbasic-xamarinformsvb/)
 - [Développement multiplateforme avec la .NET Framework](https://docs.microsoft.com/dotnet/standard/cross-platform/)

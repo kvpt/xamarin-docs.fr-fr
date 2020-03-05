@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 778b8eeb82ebfb62cfb8c16e14f341c9afb8ff7a
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: f6218977e9ad0d4c396ef127c3c3ca53dc56d7d3
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022253"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "78293056"
 ---
 # <a name="xib-code-generation-in-xamarinios"></a>Génération de code. XIB dans Xamarin. iOS
 
@@ -33,7 +33,7 @@ Les classes personnalisées peuvent être définies dans un fichier **. XIB** à
 
 ## <a name="generating-code"></a>Génération du code
 
-Pour tout fichier **{0}. XIB** avec une action de génération de *page*, si un fichier **{0}. XIB.Designer.cs** existe également dans le projet, Visual Studio pour Mac générera des classes partielles dans le fichier de concepteur pour toutes les classes d’utilisateur qu’il peut trouver dans le fichier **. XIB** , avec les propriétés des prises et des méthodes partielles pour toutes les actions. La génération de code est activée simplement par la présence de ce fichier.
+Pour tout fichier **{0}. XIB** avec une action de génération de *page*, si un fichier **{0}. XIB.Designer.cs** existe également dans le projet, Visual Studio pour Mac génère des classes partielles dans le fichier de concepteur pour toutes les classes d’utilisateur qu’il peut trouver dans le fichier **. XIB** , avec les propriétés des prises et des méthodes partielles pour toutes les actions. La génération de code est activée simplement par la présence de ce fichier.
 
 Le fichier du concepteur est automatiquement mis à jour lorsque le fichier **. XIB** est modifié et que Visual Studio pour Mac réobtient le focus. Le fichier de concepteur ne doit pas être modifié manuellement, car les modifications seront remplacées la prochaine fois que Visual Studio pour Mac met à jour le fichier.
 
@@ -47,7 +47,7 @@ Les classes ne peuvent pas être définies dans plus d’un **. XIB**, ou elles 
 
 ## <a name="non-designer-class-parts"></a>Parties de classe non concepteur
 
-Les classes partielles du concepteur ne sont pas destinées à être utilisées telles quelles. Les prises sont privées et aucune classe de base n’est spécifiée. Il est supposé que chaque classe aura une partie de classe « non-concepteur » correspondante dans un autre fichier, qui définit la classe de base, utilise ou expose les prises et définit des constructeurs qui sont requis pour instancier la classe à partir du code natif lors du chargement de **. XIB** . Les modèles default **. XIB** font cela, mais pour toutes les classes personnalisées supplémentaires que vous définissez dans un **. XIB**, vous devez ajouter manuellement la partie non du concepteur.
+Les classes partielles du concepteur ne sont pas destinées à être utilisées telles quelles. Les prises sont privées et aucune classe de base n’est spécifiée. Il est supposé que chaque classe aura une partie de classe « non-concepteur » correspondante dans un autre fichier, qui définit la classe de base, utilise ou expose les prises et définit des constructeurs qui sont requis pour instancier la classe à partir du code natif lors du chargement de **. XIB**. Les modèles default **. XIB** font cela, mais pour toutes les classes personnalisées supplémentaires que vous définissez dans un **. XIB**, vous devez ajouter manuellement la partie non du concepteur.
 
 Cela est dû à la flexibilité. Par exemple, plusieurs classes CodeBehind peuvent sous-classe une classe abstraite managée commune, qui sous-classe la classe à sous-classée par IB.
 
@@ -81,7 +81,7 @@ Notez que ces méthodes partielles sont créées uniquement C#pour, car CodeDom 
 
 ## <a name="cross-xib-class-usage"></a>Utilisation des classes Cross-XIB
 
-Parfois, les utilisateurs souhaitent faire référence à la même classe à partir de plusieurs fichiers **. XIB** , par exemple avec les contrôleurs d’onglets. Pour ce faire, il suffit de référencer explicitement la définition de classe à partir d’un autre fichier **. XIB** ou de redéfinir le même nom de classe dans le second **. XIB**.
+Parfois, les utilisateurs souhaitent faire référence à la même classe à partir de plusieurs fichiers **. XIB** , par exemple avec les contrôleurs d’onglets. Pour ce faire, vous pouvez faire référence explicitement à la définition de classe à partir d’un autre fichier **. XIB** , ou en redéfinissant le même nom de classe dans le second **. XIB**.
 
 Ce dernier cas peut être problématique en raison de Visual Studio pour Mac traitement des fichiers **. XIB.** Il ne peut pas détecter et fusionner automatiquement les définitions dupliquées. vous risquez donc de vous retrouver avec des conflits d’application de l’attribut Register à plusieurs moments lorsque la même classe partielle est définie dans plusieurs fichiers de concepteur. Les versions récentes de Visual Studio pour Mac tentent de résoudre ce comportement, mais elles ne fonctionnent pas toujours comme prévu. À l’avenir, cela risque de ne pas être pris en charge et, à la place Visual Studio pour Mac rend tous les types définis dans tous les fichiers **. XIB** et le code managé dans le projet directement visibles à partir de tous les fichiers **. XIB** .
 

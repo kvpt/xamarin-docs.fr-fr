@@ -6,12 +6,12 @@ ms.assetid: AE51F523-74F4-4EC0-B531-30B71C4D36DF
 author: davidortinau
 ms.author: daortin
 ms.date: 11/14/2017
-ms.openlocfilehash: d081795ecfcc5d0aa2559b866fcc57076fe8248b
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: f0e2128bca5d2965395647353cd5a95a4030439f
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73007022"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78292355"
 ---
 # <a name="getting-started-with-macos"></a>Prise en main de macOS
 
@@ -40,7 +40,7 @@ public class MyNSView : NSTextView
 }
 ```
 
-Générez le projet. L’assembly résultant sera enregistré sous la forme **~/projects/hello-from-CSharp/hello-from-CSharp/bin/debug/hello-from-CSharp.dll**.
+Créez le projet. L’assembly résultant sera enregistré sous la forme **~/projects/hello-from-CSharp/hello-from-CSharp/bin/debug/hello-from-CSharp.dll**.
 
 ### <a name="bind-the-managed-assembly"></a>Lier l’assembly managé
 
@@ -82,7 +82,7 @@ Ouvrez **ViewController. m**et remplacez le contenu par :
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     MyNSView *view = [[MyNSView alloc] init];
     view.frame = CGRectMake(0, 200, 200, 200);
     [self.view addSubview: view];
@@ -94,5 +94,3 @@ Ouvrez **ViewController. m**et remplacez le contenu par :
 Enfin, exécutez le projet XCode et ce qui suit s’affiche :
 
 ![Bonjour de C# l’exemple s’exécutant dans le simulateur](macos-images/hello-from-csharp-mac.png)
-
-Un exemple plus complet et plus attrayant [est disponible ici](https://github.com/mono/Embeddinator-4000/tree/objc/samples/mac/weather).

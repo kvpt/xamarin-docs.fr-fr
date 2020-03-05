@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: d9d47e750580bb9e4a0f4a2283cbd9e8c6a44c93
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: fd9bced0d2185fd9bd0d18932921c101b2ed207c
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75489087"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78291977"
 ---
 # <a name="additional-ios-9-frameworks-changes"></a>Modifications supplémentaires des frameworks iOS 9
 
@@ -61,7 +61,6 @@ Pour plus d’informations, consultez les documents suivants :
 - [Présentation de CloudKit](~/ios/data-cloud/intro-to-cloudkit.md) : notre introduction à l’utilisation de CloudKit dans une application Xamarin. iOS.
 - [CloudKit démarrage rapide](https://developer.apple.com/library/prerelease/ios/documentation/DataManagement/Conceptual/CloudKitQuickStart/Introduction/Introduction.html#//apple_ref/doc/uid/TP40014987) -présentation d’Apple à CloudKit.
 - [Référence CLOUDKIT js](https://developer.apple.com/library/prerelease/ios/documentation/CloudKitJS/Reference/CloudKitJavaScriptReference/index.html#//apple_ref/doc/uid/TP40015359) -documentation CloudKit JS d’Apple.
-- [Référence des services Web CloudKit](https://developer.apple.com/library/prerelease/ios/documentation/DataManagement/Conceptual/CloutKitWebServicesReference/Introduction/Introduction.html#//apple_ref/doc/uid/TP40015240) -référence d’Apple qui décrit l’interface http à CloudKit.
 - [Catalogue CloudKit : introduction à CloudKit (cacao et JavaScript)](https://developer.apple.com/library/prerelease/ios/samplecode/CloudAtlas/Introduction/Intro.html#//apple_ref/doc/uid/TP40014599) -exemple d’application Apple avec CloudKit et CloudKit js.
 
 > [!IMPORTANT]
@@ -117,7 +116,7 @@ if (NSProcessInfo.ProcessInfo.LowPowerModeEnabled) {
 Apple a inclus les modifications suivantes à l’infrastructure [HealthKit](xref:HealthKit) dans iOS 9 :
 
 - Prise en charge du suivi de suppression et de suppression en bloc des entrées dans la base de données HealthKit. Pour plus d’informations, consultez Référence de la classe [HKDeletedObject](https://developer.apple.com/library/prerelease/ios/documentation/HealthKit/Reference/HKDeletedObject_ClassReference/index.html#//apple_ref/occ/cl/HKDeletedObject), [HKAnchoredObjectQuery](https://developer.apple.com/library/prerelease/ios/documentation/HealthKit/Reference/HKAnchoredObjectQuery_Class/index.html#//apple_ref/occ/cl/HKAnchoredObjectQuery) et [HKHealthStore](https://developer.apple.com/library/prerelease/ios/documentation/HealthKit/Reference/HKHealthStore_Class/index.html#//apple_ref/doc/uid/TP40014708) d’Apple.
-- De nouvelles catégories et caractéristiques de suivi ont été ajoutées à la classe `HKQuantityTypeIdentifier` (par exemple, `UVExposure`) et à la classe `HKCategoryTypeIdentifier` (par exemple, `OvulationTestResult`). Pour plus d’informations, consultez [référence des constantes HealthKit](https://developer.apple.com/library/prerelease/ios/documentation/HealthKit/Reference/HealthKit_Constants/index.html#//apple_ref/doc/uid/TP40014710) d’Apple.
+- De nouvelles catégories et caractéristiques de suivi ont été ajoutées à la classe `HKQuantityTypeIdentifier` (par exemple, `UVExposure`) et à la classe `HKCategoryTypeIdentifier` (par exemple, `OvulationTestResult`). 
 
 Pour plus d’informations sur l’utilisation de HealthKit dans Xamarin. iOS, consultez notre [Introduction à](~/ios/platform/healthkit.md) la documentation de HealthKit.
 
@@ -221,7 +220,7 @@ La nouvelle classe `NSDataAsset` permet à une application Xamarin. iOS d’extr
 
 Les nouvelles classes d’ancre de disposition `NSLayoutAnchor` et `NSLayoutDimension` fonctionnent avec les nouvelles propriétés d’ancrage de la classe [UIView](xref:UIKit.UIView) (comme `LeadingAnchor` et `WidthAnchor`) pour faciliter la mise en page dans iOS 9.
 
-Pour plus d'informations sur l’[utilisation](~/ios/user-interface/storyboards/unified-storyboards.md) des classes de mise en page automatique et de taille dans une application Xamarin.iOS et la [référence NSLayoutAnchor](https://developer.apple.com/library/prerelease/ios/documentation/AppKit/Reference/NSLayoutAnchor_ClassReference/index.html#//apple_ref/occ/cl/NSLayoutAnchor) d’Apple, consultez la [référence NSLayoutDimension](https://developer.apple.com/library/prerelease/ios/documentation/AppKit/Reference/NSLayoutDimension_ClassReference/index.html#//apple_ref/occ/cl/NSLayoutDimension) et pour plus d’informations, consultez la [référence UIView](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/cl/UIView).
+Pour plus d’informations sur l’utilisation des classes de mise en page et de taille dans une application Xamarin. iOS, ainsi que sur la référence [NSLayoutAnchor](https://developer.apple.com/library/prerelease/ios/documentation/AppKit/Reference/NSLayoutAnchor_ClassReference/index.html#//apple_ref/occ/cl/NSLayoutAnchor), [NSLayoutDimension](https://developer.apple.com/library/prerelease/ios/documentation/AppKit/Reference/NSLayoutDimension_ClassReference/index.html#//apple_ref/occ/cl/NSLayoutDimension) et la référence de [UIView](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/cl/UIView) d’Apple, consultez notre introduction à la documentation sur les [storyboards unifiés](~/ios/user-interface/storyboards/unified-storyboards.md) .
 
 ### <a name="new-readable-content-margins"></a>Nouvelles marges de contenu lisibles
 
@@ -259,7 +258,7 @@ Pour corriger cette situation, utilisez les classes disposition automatique et t
 
 Utilisez la nouvelle classe `UITextInputAssistantItem` pour mettre en forme les groupes de boutons de barre dans une _barre de raccourcis_. La barre de raccourcis est une nouvelle zone disponible dans le clavier logiciel pour fournir des raccourcis de saisie.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Exemples iOS 9](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
 - [Introduction à iOS 9](~/ios/platform/introduction-to-ios9/index.md)

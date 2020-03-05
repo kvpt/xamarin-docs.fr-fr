@@ -6,12 +6,12 @@ ms.assetid: AC2626CB-28A7-4808-B2A9-789D67899546
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 5a16ec338d5929a217ee2e4a622bdce4da617e86
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 94bc775366d832e0994b8d3c74a45123ff56c13b
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029805"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78292201"
 ---
 # <a name="using-team-city-with-xamarin"></a>Utilisation de City Team avec Xamarin
 
@@ -39,7 +39,7 @@ Plusieurs étapes sont nécessaires à la configuration de TeamCity :
 
 - **Création d’un projet TeamCity** : une fois les trois étapes précédentes terminées, nous devons créer un projet TeamCity qui contiendra toutes les métadonnées nécessaires pour récupérer le code source, compilez les projets et soumettez les tests à Xamarin test Cloud.
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Spécifications
 
 Une expérience avec [App Center Test](https://docs.microsoft.com/appcenter/test-cloud/) est nécessaire.
 
@@ -61,7 +61,7 @@ L’une des étapes importantes de la configuration d’un serveur de builds con
 3. **Xcode** – Xcode est requis pour compiler et signer des applications iOS.
 4. **Outils en ligne de commande Xcode** : cela est décrit à l’étape 1 de la section Installation du Guide de [mise à jour de Ruby avec rbenv](https://github.com/calabash/calabash-ios/wiki) .
 5. **Signature de l’identité & profils de provisionnement** : importez les certificats et le profil de provisionnement via Xcode. Pour plus d’informations, consultez le Guide d’Apple sur l' [exportation des identités de signature et des profils de provisionnement](https://developer.apple.com/library/ios/recipes/xcode_help-accounts_preferences/articles/export_signing_assets.html) .
-6. **Magasins de clés Android** : copiez les magasins de clés Android nécessaires dans un répertoire auquel l’utilisateur TeamCity a accès, c.-à-d.  `~/Documents/keystores/MyAndroidApp1`.
+6. **Magasins de clés Android** : copiez les magasins de clés Android nécessaires dans un répertoire auquel l’utilisateur TeamCity a accès, c.-à-d. `~/Documents/keystores/MyAndroidApp1`.
 7. **Calabash** : il s’agit d’une étape facultative si votre application a des tests écrits à l’aide de Calabash. Pour plus d’informations, consultez le guide [d’installation de Calabash sur OS X Mavericks](https://github.com/calabash/calabash-ios/wiki) et le Guide de [mise à jour de Ruby avec rbenv](https://github.com/calabash/calabash-ios/wiki) .
 
 Le diagramme suivant illustre tous les composants suivants :
@@ -87,7 +87,7 @@ Le script de génération peut être aussi simple qu’un fichier PowerShell (su
 
 - [**Factice**](https://fsharp.github.io/FAKE/) : il s’agit d’une solution F# DSL dans laquelle il est possible d’utiliser des bibliothèques .NET existantes si nécessaire.
 
-Le langage de script utilisé dépend de vos préférences et de vos exigences. L’exemple [TaskyPro-Calabash](https://github.com/xamarin/test-cloud-samples/tree/master/TaskyPro/TaskyPro-Calabash) contient un exemple d’utilisation de rake comme [script de génération](https://github.com/xamarin/test-cloud-samples/blob/master/TaskyPro/TaskyPro-Calabash/Rakefile).
+Le langage de script utilisé dépend de vos préférences et de vos exigences.
 
 > [!NOTE]
 > Il est possible d’utiliser un système de génération basé sur XML, tel que MSBuild ou NAnt, mais ceux-ci ne disposent pas de l’expressivité et de la maintenabilité d’un langage DSL dédié à la création de logiciels.
@@ -201,13 +201,13 @@ Une fois TeamCity installé et Visual Studio pour Mac pouvez générer votre pro
 
 8. Une fois la génération terminée, examinez le journal de génération et vérifiez s’il existe des problèmes ou des avertissements avec la build qui requièrent votre attention.
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Ce guide a expliqué comment utiliser TeamCity pour générer des applications mobiles Xamarin, puis les envoyer à Test Cloud. Nous avons abordé la création d’un script de génération pour automatiser le processus de génération. Le script de génération s’occupe de la compilation de l’application, de l’envoi à Test Cloud et de l’attente des résultats
 
 Nous avons ensuite abordé la création d’un projet dans TeamCity qui met en file d’attente une build chaque fois qu’un développeur valide le code et appelle le script de compilation.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Préparation des applications Xamarin. Android](/appcenter/test-cloud/preparing-for-upload/xamarin-android-uitest)
 - [Préparation des applications Xamarin. iOS](/appcenter/test-cloud/preparing-for-upload/xamarin-ios-uitest)

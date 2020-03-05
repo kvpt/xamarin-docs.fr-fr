@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/06/2018
-ms.openlocfilehash: d8bb526f8e53ab2005e2e59556597c351d33f87a
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: a26c83565e4cfa64272549e12a35206dff6ec3c0
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031203"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "78291979"
 ---
 # <a name="xamarinios-errors"></a>Erreurs Xamarin. iOS
 
@@ -36,7 +36,7 @@ Une condition d’erreur inattendue s’est produite. Veuillez envoyer un nouvea
 - Un cas de test minimal qui reproduit l’erreur ; les
 - Toutes les informations sur les versions
 
-Le moyen le plus simple d’obtenir des informations de version exactes consiste à utiliser le menu **Visual Studio pour Mac** , **à propos de Visual Studio pour Mac** élément, afficher le bouton **Détails** et copier/coller la version informations (vous pouvez utiliser le bouton **copier les informations** ) .
+Pour obtenir des informations de version exactes, la méthode la plus simple consiste à utiliser le menu **Visual Studio pour Mac** , **à propos de Visual Studio pour Mac** élément, afficher le bouton **Détails** et copier/coller la version informations (vous pouvez utiliser le bouton **copier les informations** ).
 
 <a name="MT0001" />
 
@@ -324,7 +324,7 @@ Aucune action n’a été spécifiée pour mTouch.
 
 ### <a name="mt0054-unable-to-canonicalize-the-path--"></a>MT0054 : impossible de rendre canonique le chemin d’accès'\*' : \*
 
-Il s’agit d’une erreur interne. Si vous voyez cette erreur, veuillez envoyer un nouveau problème sur [GitHub](https://github.com/xamarin/xamarin-macios/issues/new).
+Il s'agit d'une erreur interne. Si vous voyez cette erreur, veuillez envoyer un nouveau problème sur [GitHub](https://github.com/xamarin/xamarin-macios/issues/new).
 
 <a name="MT0055" />
 
@@ -583,7 +583,7 @@ L’assembly mentionné dans le message d’erreur est spécifié plusieurs fois
 
 Les assemblys mentionnés dans le message d’erreur ont des cibles de génération conflictuelles.
 
-Exemple :
+Par exemple :
 
 ```
   --assembly-build-target:Assembly1.dll=framework=MyBinary --assembly-build-target:Assembly2.dll=dynamiclibrary=MyBinary
@@ -597,7 +597,7 @@ Cet exemple tente de créer une bibliothèque dynamique et une infrastructure av
 
 Les assemblys mentionnés dans le message d’erreur sont tous compilés en un seul objet statique. Cela n’est pas autorisé, chaque assembly doit être compilé en un objet statique différent.
 
-Exemple :
+Par exemple :
 
 ```
 --assembly-build-target:Assembly1.dll=staticobject=MyBinary --assembly-build-target:Assembly2.dll=staticobject=MyBinary
@@ -971,14 +971,14 @@ Supprimez le répertoire `NOTICE` du projet.
 
 ### <a name="mt1019-your-application-has-entitlements-not-supported-by-your-current-provisioning-profile-and-could-not-be-installed-on-the-device--please-check-the-ios-device-log-for-more-detailed-information-error-0xe8008016"></a>MT1019 : votre application a des droits non pris en charge par votre profil d’approvisionnement actuel et n’a pas pu être installé sur l’appareil' * '. Consultez le journal de l’appareil iOS pour obtenir des informations plus détaillées (erreur : 0xe8008016).
 
-Cela peut se produire dans les cas suivants :
+Cela peut se produire si :
 
 - Votre application a des droits que le profil de provisionnement actuel ne prend pas en charge.
-  Solutions possibles :
+  Solutions possibles :
   - Spécifiez un autre profil de provisionnement qui prend en charge les droits dont votre application a besoin.
   - Supprimez les droits non pris en charge dans le profil de configuration actuel.
 - L’appareil sur lequel vous essayez d’effectuer le déploiement n’est pas inclus dans le profil de provisionnement que vous utilisez.
-  Solutions possibles :
+  Solutions possibles :
   - Créez une application à partir d’un modèle dans Xcode, sélectionnez le même profil de provisionnement et déployez sur le même appareil. Xcode peut parfois actualiser automatiquement les profils de provisionnement avec de nouveaux appareils (dans d’autres cas, Xcode vous demande quoi faire).
   -Accédez au centre de développement iOS et mettez à jour le profil de provisionnement avec le nouvel appareil, puis téléchargez le profil d’approvisionnement mis à jour sur votre ordinateur.
 
@@ -1010,7 +1010,7 @@ Voici ce que vous pouvez tenter de résoudre :
 
 - Supprimez l’application de l’appareil et réessayez.
 - Déconnectez l’appareil et reconnectez-le.
-- Redémarrez l’appareil.
+- Permet de redémarrer l’appareil.
 - Redémarrez le Mac.
 
 <a name="MT1024" />
@@ -1031,7 +1031,7 @@ Voici ce que vous pouvez tenter de résoudre :
 
 - Supprimez l’application de l’appareil et réessayez.
 - Déconnectez l’appareil et reconnectez-le.
-- Redémarrez l’appareil.
+- Permet de redémarrer l’appareil.
 - Redémarrez le Mac.
 - Synchroniser l’appareil avec iTunes (cette opération supprime tous les rapports d’incidents de l’appareil).
 
@@ -1045,7 +1045,7 @@ Voici ce que vous pouvez tenter de résoudre :
 
 - Supprimez l’application de l’appareil et réessayez.
 - Déconnectez l’appareil et reconnectez-le.
-- Redémarrez l’appareil.
+- Permet de redémarrer l’appareil.
 - Redémarrez le Mac.
 - Synchroniser l’appareil avec iTunes (cette opération supprime tous les rapports d’incidents de l’appareil).
 
@@ -1325,7 +1325,7 @@ Voici ce que vous pouvez tenter de résoudre :
 
 - Supprimez l’application de l’appareil et réessayez.
 - Déconnectez l’appareil et reconnectez-le.
-- Redémarrez l’appareil.
+- Permet de redémarrer l’appareil.
 - Redémarrez le Mac.
 - Synchroniser l’appareil avec iTunes (cette opération supprime tous les rapports d’incidents de l’appareil).
 
@@ -1339,7 +1339,7 @@ Voici ce que vous pouvez tenter de résoudre :
 
 - Supprimez l’application de l’appareil et réessayez.
 - Déconnectez l’appareil et reconnectez-le.
-- Redémarrez l’appareil.
+- Permet de redémarrer l’appareil.
 - Redémarrez le Mac.
 - Synchroniser l’appareil avec iTunes (cette opération supprime tous les rapports d’incidents de l’appareil).
 
@@ -1353,7 +1353,7 @@ Voici ce que vous pouvez tenter de résoudre :
 
 - Supprimez l’application de l’appareil et réessayez.
 - Déconnectez l’appareil et reconnectez-le.
-- Redémarrez l’appareil.
+- Permet de redémarrer l’appareil.
 - Redémarrez le Mac.
 - Synchroniser l’appareil avec iTunes (cette opération supprime tous les rapports d’incidents de l’appareil).
 
@@ -1367,7 +1367,7 @@ Voici ce que vous pouvez tenter de résoudre :
 
 - Supprimez l’application de l’appareil et réessayez.
 - Déconnectez l’appareil et reconnectez-le.
-- Redémarrez l’appareil.
+- Permet de redémarrer l’appareil.
 - Redémarrez le Mac.
 - Synchroniser l’appareil avec iTunes (cette opération supprime tous les rapports d’incidents de l’appareil).
 
@@ -1381,7 +1381,7 @@ Voici ce que vous pouvez tenter de résoudre :
 
 - Supprimez l’application de l’appareil et réessayez.
 - Déconnectez l’appareil et reconnectez-le.
-- Redémarrez l’appareil.
+- Permet de redémarrer l’appareil.
 - Redémarrez le Mac.
 - Synchroniser l’appareil avec iTunes (cette opération supprime tous les rapports d’incidents de l’appareil).
 
@@ -1395,7 +1395,7 @@ Voici ce que vous pouvez tenter de résoudre :
 
 - Supprimez l’application de l’appareil et réessayez.
 - Déconnectez l’appareil et reconnectez-le.
-- Redémarrez l’appareil.
+- Permet de redémarrer l’appareil.
 - Redémarrez le Mac.
 - Synchroniser l’appareil avec iTunes (cette opération supprime tous les rapports d’incidents de l’appareil).
 
@@ -1409,7 +1409,7 @@ Voici ce que vous pouvez tenter de résoudre :
 
 - Supprimez l’application de l’appareil et réessayez.
 - Déconnectez l’appareil et reconnectez-le.
-- Redémarrez l’appareil.
+- Permet de redémarrer l’appareil.
 - Redémarrez le Mac.
 - Synchroniser l’appareil avec iTunes (cette opération supprime tous les rapports d’incidents de l’appareil).
 
@@ -1609,7 +1609,7 @@ Le dernier chiffre `x` sera :
 
 Une erreur inattendue s’est produite lors de la tentative de suppression des ressources utilisateur. L’assembly à l’origine du problème est nommé dans le message d’erreur. Pour résoudre ce problème, l’assembly doit être fourni dans un nouveau problème sur [GitHub](https://github.com/xamarin/xamarin-macios/issues/new) , ainsi qu’un journal de génération complet avec un niveau de détail activé (c’est-à-dire `-v -v -v -v` dans les **arguments mTouch supplémentaires**).
 
-Les ressources utilisateur sont des fichiers inclus dans des assemblys (en tant que ressources) qui doivent être extraits au moment de la génération pour créer l’offre groupée d’applications. Cela concerne :
+Les ressources utilisateur sont des fichiers inclus dans des assemblys (en tant que ressources) qui doivent être extraits au moment de la génération pour créer l’offre groupée d’applications. notamment :
 
 - ressources `__monotouch_content_*` et `__monotouch_pages_*` ; les
 - Bibliothèques natives incorporées dans un assembly de liaison ;
@@ -1709,7 +1709,7 @@ Il est parfois possible de contourner ce problème en désactivant les builds in
 
 <a name="MT3002" />
 
-### <a name="mt3002-aot-restriction-method--must-be-static-since-it-is-decorated-with-monopinvokecallback-see-developerxamarincomguidesiosadvanced_topicslimitationsreverse_callbacksiosinternalslimitationsmdreverse-callbacks"></a>MT3002 : restriction AOA : la méthode' * 'doit être statique, car elle est décorée avec [MonoPInvokeCallback]. Voir [developer.xamarin.com/guides/ios/advanced_topics/limitations/#Reverse_Callbacks](~/ios/internals/limitations.md#reverse-callbacks)
+### <a name="mt3002-aot-restriction-method--must-be-static-since-it-is-decorated-with-monopinvokecallback-see-developerxamarincomguidesiosadvanced_topicslimitationsreverse_callbacks"></a>MT3002 : restriction AOA : la méthode' * 'doit être statique, car elle est décorée avec [MonoPInvokeCallback]. Voir [developer.xamarin.com/guides/ios/advanced_topics/limitations/#Reverse_Callbacks](~/ios/internals/limitations.md#reverse-callbacks)
 
 Ce message d’erreur provient du compilateur AOA.
 
@@ -1789,7 +1789,7 @@ Si vous pensez que Xamarin. iOS doit prendre en charge le type en question, veui
 
 <a name="MT4102" />
 
-### <a name="mt4102-the-registrar-found-an-invalid-type--in-signature-for-method--use--instead"></a>MT4102 : le Bureau d’enregistrement a trouvé un type non valide `*` dans la signature pour la méthode `*`. Utilisez plutôt `*`.
+### <a name="mt4102-the-registrar-found-an-invalid-type--in-signature-for-method--use--instead"></a>MT4102 : le Bureau d’enregistrement a trouvé un type non valide `*` dans la signature pour la méthode `*`. Utilisez `*` à la place.
 
 Cela se produit actuellement uniquement avec un type : System. DateTime. Utilisez à la place l’équivalent objective-C (NSDate).
 
@@ -1855,7 +1855,7 @@ Il s’agit toujours d’un bogue dans Xamarin. iOS. Veuillez envoyer un nouveau
 
 <a name="MT4112" />
 
-### <a name="mt4112-the-registrar-found-an-invalid-type--registering-generic-types-with-objective-c-is-not-supported-and-may-lead-to-random-behavior-andor-crashes-for-backwards-compatibility-with-older-versions-of-xamarinios-it-is-possible-to-ignore-this-error-by-passing---unsupported--enable-generics-in-registrar-as-an-additional-mtouch-argument-in-the-projects-ios-build-options-page-see-developerxamarincomguidesiosadvanced_topicsregistrariosinternalsregistrarmd-for-more-information"></a>MT4112 : le Bureau d’enregistrement a trouvé un type non valide `*`. L’inscription de types génériques avec Objective-C n’est pas prise en charge et peut entraîner un comportement aléatoire et/ou des incidents (pour la compatibilité descendante avec les versions antérieures de Xamarin. iOS, il est possible d’ignorer cette erreur en passant `--unsupported--enable-generics-in-registrar` comme argument mTouch supplémentaire dans Page d’options de build iOS du projet. Pour plus d’informations, consultez [Developer.xamarin.com/guides/iOS/advanced_topics/Registrar](~/ios/internals/registrar.md) .
+### <a name="mt4112-the-registrar-found-an-invalid-type--registering-generic-types-with-objective-c-is-not-supported-and-may-lead-to-random-behavior-andor-crashes-for-backwards-compatibility-with-older-versions-of-xamarinios-it-is-possible-to-ignore-this-error-by-passing---unsupported--enable-generics-in-registrar-as-an-additional-mtouch-argument-in-the-projects-ios-build-options-page-see-developerxamarincomguidesiosadvanced_topicsregistrar-for-more-information"></a>MT4112 : le Bureau d’enregistrement a trouvé un type non valide `*`. L’inscription de types génériques avec Objective-C n’est pas prise en charge et peut entraîner un comportement aléatoire et/ou des pannes (pour la compatibilité descendante avec les versions antérieures de Xamarin. iOS, il est possible d’ignorer cette erreur en passant `--unsupported--enable-generics-in-registrar` comme argument mTouch supplémentaire dans la page Options de génération iOS du projet. Pour plus d’informations, consultez [Developer.xamarin.com/guides/iOS/advanced_topics/Registrar](~/ios/internals/registrar.md) .
 
 <a name="MT4113" />
 
@@ -2239,7 +2239,7 @@ Cela indique généralement un bogue dans Xamarin. iOS. Veuillez envoyer un nouv
 
 Cela se produit lorsque l’éditeur de liens natif ne trouve pas de symbole référencé quelque part. Cela peut se produire pour plusieurs raisons :
 
-- Une liaison tierce requiert une infrastructure, mais la liaison ne le spécifie pas dans son attribut `[LinkWith]`. Elles
+- Une liaison tierce requiert une infrastructure, mais la liaison ne le spécifie pas dans son attribut `[LinkWith]`. Solutions :
   - Si vous êtes l’auteur de la liaison tierce ou si vous avez accès à sa source, modifiez l’attribut `[LinkWith]` de la liaison pour inclure l’infrastructure dont il a besoin :
 
     ```csharp
@@ -2251,7 +2251,7 @@ Cela se produit lorsque l’éditeur de liens natif ne trouve pas de symbole ré
 - Une liaison managée fait référence à des symboles natifs qui n’existent pas dans la bibliothèque native.
     Cela se produit généralement lorsqu’une liaison a existé pendant un certain temps et que le code natif a été modifié pendant ce temps afin qu’une classe Native particulière soit supprimée ou renommée, alors que la liaison n’a pas été mise à jour.
 - Un appel P/Invoke fait référence à un symbole natif qui n’existe pas. À compter de Xamarin. iOS 7,4, une erreur <a href="#MT5214">MT5214</a> est signalée pour ce cas (pour plus d’informations, consultez MT5214).
-- Une liaison/bibliothèque tierce a été créée à l' C++aide de, mais la liaison ne le spécifie pas dans son attribut`[LinkWith]`. C’est généralement relativement facile à reconnaître, car les symboles sont des symboles C++ tronqués (un exemple courant est`__ZNKSt9exception4whatEv`).
+- Une liaison/bibliothèque tierce a été créée à l' C++aide de, mais la liaison ne le spécifie pas dans son attribut `[LinkWith]`. C’est généralement relativement facile à reconnaître, car les symboles sont des symboles C++ tronqués (un exemple courant est `__ZNKSt9exception4whatEv`).
   - Si vous êtes l’auteur de la liaison tierce ou si vous avez accès à sa source, modifiez l’attribut `[LinkWith]` de la liaison pour définir l’indicateur de `IsCxx` :
 
     ```csharp
@@ -2266,7 +2266,7 @@ Cela se produit lorsque l’éditeur de liens natif ne trouve pas de symbole ré
 
 Cela se produit lorsque l’éditeur de liens natif ne peut pas trouver une classe objective-C référencée quelque part. Cela peut se produire pour plusieurs raisons : comme pour [MT5210](#MT5210) et en plus :
 
-- Une liaison tierce liée à un protocole objective-C, mais ne l’a pas annotée avec l’attribut `[Protocol]` dans sa définition d’API. Elles
+- Une liaison tierce liée à un protocole objective-C, mais ne l’a pas annotée avec l’attribut `[Protocol]` dans sa définition d’API. Solutions :
   - Ajoutez l’attribut `[Protocol]` manquant :
 
     ```csharp
@@ -2286,7 +2286,7 @@ Cela se produit lorsque l’éditeur de liens natif rencontre des symboles dupli
 - La même bibliothèque native est incluse deux fois.
 - Deux bibliothèques natives distinctes se produisent pour définir les mêmes symboles.
 - Une bibliothèque Native n’est pas générée correctement et contient le même symbole plusieurs fois.
-  Vous pouvez le vérifier à l’aide de l’ensemble de commandes suivant à partir d’un terminal (remplacez i386 par x86_64/ARMv7/armv7s/arm64 en fonction de l’architecture que vous générez pour) :
+  Vous pouvez le vérifier en utilisant l’ensemble de commandes suivant à partir d’un terminal (remplacez i386 par x86_64/ARMv7/armv7s/arm64 en fonction de l’architecture que vous générez pour) :
 
   ```
   # Native libraries are usually fat libraries, containing binary code for
@@ -2350,7 +2350,7 @@ Cette erreur est signalée uniquement avec [MT5212](#MT5212). Pour plus d’info
 
 ### <a name="mt5214-native-linking-failed-undefined-symbol--this-symbol-was-referenced-the-managed-member--please-verify-that-all-the-necessary-frameworks-have-been-referenced-and-native-libraries-linked"></a>MT5214 : échec de la liaison native, symbole non défini : *. Ce symbole a fait référence au membre managé *. Vérifiez que toutes les infrastructures nécessaires ont été référencées et que les bibliothèques natives sont liées.
 
-Cette erreur est signalée lorsque le code managé contient un P/Invoke pour une méthode native qui n’existe pas. Exemple :
+Cette erreur est signalée lorsque le code managé contient un P/Invoke pour une méthode native qui n’existe pas. Par exemple :
 
 ```csharp
 using System.Runtime.InteropServices;
@@ -2396,7 +2396,7 @@ Il existe plusieurs sources possibles pour ces symboles dynamiques :
 - Références de champs aux emplacements de mémoire dans les bibliothèques liées statiquement à partir des projets de liaison (attributs`[Field]`).
 - Classes objective-C référencées dans des bibliothèques liées de manière statique à partir de projets de liaison (en cas d’utilisation de builds incrémentielles ou lorsque le registre statique n’est pas utilisé).
 
-Solutions possibles :
+Solutions possibles :
 
 - Activez l’éditeur de liens managé (si possible pour tous les assemblys au lieu de uniquement les assemblys SDK). Cela peut supprimer suffisamment de sources pour les symboles dynamiques afin que la ligne de commande de l’éditeur de liens ne dépasse pas la valeur maximale.
 - Réduisez le nombre d’appels P/Invoke, de références de champ et/ou de classes objective-C.
@@ -2502,7 +2502,7 @@ Une erreur de sécurité s’est produite lors de la suppression des symboles de
 
 *Tâche MSBuild : DetectDebugNetworkConfigurationTaskBase*
 
-Étapes de dépannage :
+Procédure de résolution :
 
 - essayez d’exécuter `csharp -e 'System.Net.Dns.GetHostEntry (System.Net.Dns.GetHostName ()).AddressList'` (qui devrait vous fournir une adresse IP et non une erreur évidemment).
 - essayez d’exécuter « ping \`nom d’hôte\`», ce qui peut vous fournir plus d’informations, par exemple : `cannot resolve MyHost.local: Unknown host`
@@ -2776,13 +2776,13 @@ Dans certains cas, il s’agit d’un problème de « réseau local » qui peu
 Où * peut être :
 
 - string
-- array
+- tableau
 - dict
 - bool
-- réels
-- entiers
-- date
-- Données
+- real
+- entier
+- Date
+- data
 
 <a name="MT7046" />
 

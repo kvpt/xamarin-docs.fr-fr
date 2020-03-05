@@ -6,16 +6,16 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/09/2018
-ms.openlocfilehash: 911f56026a1495099e81a542b30b280f26b6a9e1
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: da4884e7f1e3ec1ae8653ea8ec4247fce54a6565
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73025459"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "78292417"
 ---
 # <a name="permissions-in-xamarinandroid"></a>Autorisations dans Xamarin. Android
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d’ensemble
 
 Les applications Android s’exécutent dans leur propre bac à sable (sandbox) et, pour des raisons de sécurité, n’ont pas accès à certaines ressources système ou matériel sur l’appareil. L’utilisateur doit explicitement accorder une autorisation à l’application avant de pouvoir utiliser ces ressources. Par exemple, une application ne peut pas accéder au GPS sur un appareil sans autorisation explicite de l’utilisateur. Android lèvera une `Java.Lang.SecurityException` si une application tente d’accéder à une ressource protégée sans autorisation.
 
@@ -29,7 +29,7 @@ Les autorisations sont déclarées dans **fichier AndroidManifest. xml** par le 
 Les applications Android doivent vérifier au moment de l’exécution pour voir si elles sont autorisées à accéder à une ressource protégée. Si l’application n’a pas d’autorisation, elle doit faire des demandes à l’aide des nouvelles API fournies par l’Android SDK pour que l’utilisateur accorde les autorisations. Les autorisations sont divisées en deux catégories :
 
 - Les **autorisations normales** &ndash; il s’agit d’autorisations qui présentent un faible risque pour la sécurité ou la confidentialité de l’utilisateur. Android 6,0 accorde automatiquement des autorisations normales au moment de l’installation. Consultez la documentation Android pour obtenir une [liste complète des autorisations normales](https://developer.android.com/guide/topics/permissions/normal-permissions.html).
-- Les autorisations **dangereuses** &ndash; contrairement aux autorisations normales, les autorisations dangereuses sont celles qui protègent la sécurité ou la confidentialité de l’utilisateur. Celles-ci doivent être explicitement accordées par l’utilisateur. L’envoi ou la réception d’un message SMS est un exemple d’action nécessitant une autorisation dangereuse.
+- Les autorisations **dangereuses** &ndash; contrairement aux autorisations normales, les autorisations dangereuses sont celles qui protègent la sécurité ou la confidentialité de l’utilisateur. Celles-ci doivent être accordées explicitement par l’utilisateur. L’envoi ou la réception d’un message SMS est un exemple d’action nécessitant une autorisation dangereuse.
 
 > [!IMPORTANT]
 > La catégorie à laquelle une autorisation appartient peut changer au fil du temps.  Il est possible qu’une autorisation qui a été catégorisée comme une autorisation « normale » puisse être élevée dans les futurs niveaux d’API à une autorisation dangereuse.
@@ -40,7 +40,7 @@ Avant de demander une ou plusieurs autorisations, il est recommandé de fournir 
 
 L’intégralité du flux de travail de vérification et de demande des autorisations est appelée vérification des _autorisations au moment_ de l’exécution et peut être résumée dans le diagramme suivant : 
 
-[Organigramme de la vérification des autorisations d'![Runtime](permissions-images/02-permissions-workflow-sml.png)](permissions-images/02-permissions-workflow.png#lightbox)
+[Organigramme de la vérification des autorisations d' ![Runtime](permissions-images/02-permissions-workflow-sml.png)](permissions-images/02-permissions-workflow.png#lightbox)
 
 La bibliothèque de prise en charge Android reportne certaines des nouvelles API pour les autorisations sur les versions antérieures d’Android. Ces API en retard vérifient automatiquement la version d’Android sur l’appareil. il n’est donc pas nécessaire d’effectuer une vérification de niveau d’API à chaque fois.  
 
@@ -51,7 +51,7 @@ Ce document explique comment ajouter des autorisations à une application Xamari
 
 <a name="requirements" />
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Spécifications
 
 Il est fortement recommandé que les projets Xamarin. Android incluent le package NuGet [Xamarin. Android. support. compat](https://www.nuget.org/packages/Xamarin.Android.Support.Compat/) . Ce package rétroporter des API spécifiques d’autorisation à des versions antérieures d’Android, fournissant une interface commune sans avoir à vérifier en permanence la version d’Android sur laquelle l’application s’exécute.
 
@@ -75,7 +75,7 @@ Les autorisations sont ajoutées à **fichier AndroidManifest. xml** avec l’é
 
 <!-- markdownlint-disable MD001 -->
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Il est possible de déclarer les autorisations à l’aide de la prise en charge des outils intégrée à Visual Studio :
 
@@ -91,7 +91,7 @@ Il est possible de déclarer les autorisations à l’aide de la prise en charge
 
     [![exemples d’autorisations d’appareil photo sélectionnées](permissions-images/06-selected-permission-vs-sml.png)](permissions-images/06-selected-permission-vs.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 Il est possible de déclarer les autorisations à l’aide de la prise en charge des outils intégrée à Visual Studio pour Mac :
 
@@ -205,11 +205,11 @@ public override void OnRequestPermissionsResult(int requestCode, string[] permis
 }
 ```  
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Ce guide a expliqué comment ajouter et vérifier les autorisations dans un appareil Android. Les différences dans la façon dont les autorisations fonctionnent entre les anciennes applications Android (niveau d’API < 23) et les nouvelles applications Android (niveau d’API > 22). Il a expliqué comment effectuer des vérifications d’autorisation au moment de l’exécution dans Android 6,0.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Liste des autorisations normales](https://developer.android.com/guide/topics/permissions/normal-permissions.html)
 - [Exemple d’application d’autorisations Runtime](https://github.com/xamarin/monodroid-samples/tree/master/android-m/RuntimePermissions)

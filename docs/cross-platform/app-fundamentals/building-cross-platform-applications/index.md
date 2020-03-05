@@ -6,12 +6,12 @@ ms.assetid: 442FC40A-84DD-A218-0D15-EAD86594B6D7
 author: davidortinau
 ms.author: daortin
 ms.date: 01/28/2016
-ms.openlocfilehash: b3444b962a032ceaeeba36f63ad975b3d80a9f14
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 551e9b1fc6298ddc2cf64e2e9ef60d90f6c1abac
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016926"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78292134"
 ---
 # <a name="building-cross-platform-applications"></a>Création d’applications multiplateformes
 
@@ -19,7 +19,7 @@ Il existe deux options pour partager du code entre des applications mobiles mult
 
 <a name="Sections" />
 
- [Vue d’ensemble](~/cross-platform/app-fundamentals/building-cross-platform-applications/overview.md)
+ [Vue d'ensemble](~/cross-platform/app-fundamentals/building-cross-platform-applications/overview.md)
 
  [Partie 1 : comprendre la plate-forme mobile Xamarin](~/cross-platform/app-fundamentals/building-cross-platform-applications/understanding-the-xamarin-mobile-platform.md)
 
@@ -50,7 +50,7 @@ Il montre les principes fondamentaux de la création d’une application multipl
 
 Lisez l' [étude de cas Tasky](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md).
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cette section présente les outils de développement d’applications de Xamarin et explique comment créer des applications qui ciblent plusieurs plateformes mobiles.
 
@@ -60,11 +60,10 @@ Des exemples sont fournis pour les fonctions d’application courantes (comme le
 
 Enfin, il aborde brièvement les tests et fournit des références à une étude de cas qui met ces principes en action.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Options de partage de code](~/cross-platform/app-fundamentals/code-sharing.md)
 - [Étude de cas : Tasky](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)
 - [Application d’exemple Tasky (GitHub)](https://docs.microsoft.com/samples/xamarin/mobile-samples/taskyportable/)
 - [Développement d’applications mobiles Xamarin : notions de C# base sur les plateformes et les Xamarin. Forms (Amazon)](https://www.amazon.com/Xamarin-Mobile-Application-Development-Cross-Platform/dp/1484202155/)
 - [Développement mobile avec C# Greg-manilles (O’Reilly)](https://shop.oreilly.com/product/0636920024002.do)
-- [Développement professionnel multiplateforme pour appareils mobiles dans C# par Scott Olson, John Hunter, Ben Horgen, Kenny goers (Wrox)](https://www.wrox.com/WileyCDA/WroxTitle/Professional-Cross-Platform-Mobile-Development-in-C-.productCd-1118157702.html)

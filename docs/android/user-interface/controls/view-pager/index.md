@@ -7,24 +7,24 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: 600a94a0ee9eb5bcf06dc19d95cf9e77132a2e81
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: c7718ef7a02365e9ca09f7491804cbadfa0c9a41
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029064"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "78292491"
 ---
 # <a name="viewpager"></a>ViewPager
 
 _ViewPager est un gestionnaire de disposition qui vous permet d’implémenter la navigation Gestural. La navigation Gestural permet à l’utilisateur de balayer vers la gauche et vers la droite pour parcourir les pages de données. Ce guide explique comment implémenter la navigation Gestural avec ViewPager, avec et sans fragments. Elle explique également comment ajouter des indicateurs de page à l’aide de PagerTitleStrip et PagerTabStrip._
 
-## <a name="overview"></a>Overview
+## <a name="overview"></a>Vue d’ensemble
 
 Un scénario courant dans le développement d’applications est la nécessité de fournir aux utilisateurs une navigation Gestural entre les vues frères. Dans cette approche, l’utilisateur glisse vers la gauche ou vers la droite pour accéder aux pages de contenu (par exemple, dans un assistant d’installation ou un diaporama). Vous pouvez créer ces vues balayées à l’aide du widget `ViewPager`, disponible dans la [bibliothèque de prise en charge Android v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/). Le `ViewPager` est un widget de disposition constitué de plusieurs vues enfants où chaque vue enfant constitue une page dans la mise en page : 
 
 [Captures d’écran ![de l’application TreePager avec un exemple de balayage horizontal](images/01-intro-sml.png)](images/01-intro.png#lightbox)
 
-En général, `ViewPager` est utilisé conjointement avec les [fragments](~/android/platform/fragments/index.md); Toutefois, il existe des situations où vous pouvez souhaiter utiliser `ViewPager` sans la complexité supplémentaire de `Fragment`s.
+En général, `ViewPager` est utilisé conjointement avec les [fragments](~/android/platform/fragments/index.md). Toutefois, dans certaines situations, il se peut que vous souhaitiez utiliser des `ViewPager` sans la complexité supplémentaire de `Fragment`s.
 
 `ViewPager` utilise un modèle d’adaptateur pour lui fournir les vues à afficher. L’adaptateur utilisé ici est conceptuellement similaire à celui utilisé par [RecyclerView](~/android/user-interface/layouts/recycler-view/index.md) &ndash; vous fournissez une implémentation de `PagerAdapter` pour générer les pages que l' `ViewPager` affiche à l’utilisateur. Les pages affichées par `ViewPager` peuvent être `View`s ou `Fragment`s. Lorsque `View`s sont affichées, l’adaptateur sous-classe la classe de base d’Android `PagerAdapter`. Si `Fragment`s sont affichées, l’adaptateur sous-classe les `FragmentPagerAdapter`Android. La bibliothèque de prise en charge Android comprend également `FragmentPagerAdapter` (une sous-classe de `PagerAdapter`) pour faciliter les détails de la connexion de `Fragment`s aux données. 
 
@@ -35,7 +35,7 @@ Ce guide présente les deux approches :
 
 - Dans [Viewpager avec des fragments](~/android/user-interface/controls/view-pager/viewpager-and-fragments.md), une application [FlashCardPager](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-flashcardpager) légèrement plus complexe est développée pour montrer comment utiliser `ViewPager` avec `Fragment`s pour créer une application qui présente des problèmes mathématiques sous forme de cartes Flash et répond à une entrée d’utilisateur. 
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>Spécifications
 
 Pour utiliser `ViewPager` dans votre projet d’application, vous devez installer le package v4 de la [bibliothèque de prise en charge Android](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) . Pour plus d’informations sur l’installation des packages NuGet, consultez [procédure pas à pas : inclusion d’un NuGet dans votre projet](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough). 
 

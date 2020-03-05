@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 12/14/2016
-ms.openlocfilehash: f1551607a621ac3960c39d282111065c258ed90e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2d8b48892a5a1106b03778ac30eca4b18f049f4d
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032776"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78292817"
 ---
 # <a name="hello-watchos--walkthrough"></a>Bonjour, Watchos – procédure pas à pas
 
@@ -28,17 +28,17 @@ Vérifiez que les identificateurs de Bundle suivent la Convention \*. watchkitex
 
 Vous devriez pouvoir exécuter votre application Watch maintenant, mais étant donné que le fichier de la table de montage séquentiel dans votre application Watch est vide, vous ne devriez pas être en mesure de le dire.
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 ![](hello-watch-images/projectstructure.png "The Solution Explorer")
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 ![](hello-watch-images/vs-projectstructure.png "The Solution Explorer")
 
 -----
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 Double-cliquez sur interface. Storyboard dans votre application Watch pour démarrer le concepteur iOS Xamarin (si vous êtes sur un Mac, vous pouvez également cliquer avec le bouton droit et **Ouvrir avec > Xcode Interface Builder**)
 
@@ -49,7 +49,7 @@ Double-cliquez sur interface. Storyboard dans votre application Watch pour déma
 
     ![](hello-watch-images/interfacecontrollerattributes.png "Set the Identifier and Title of the Interface Controller to interfaceController and Hi Watch")
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Double-cliquez sur interface. Storyboard dans votre application Watch pour effectuer des modifications à l’aide du concepteur Xamarin iOS dans Visual Studio :
 
@@ -68,11 +68,11 @@ Créez votre interface utilisateur :
 1. Glissez-déplacez un **bouton** et une **étiquette** sur la scène, puis
 1. Définissez le texte et les attributs des contrôles comme indiqué ci-dessous :
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 ![](hello-watch-images/draganddrop.png "Set the text and attributes of the controls as shown")
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 ![](hello-watch-images/vs-draganddrop.png "Set the text and attributes of the controls as shown")
 
@@ -87,7 +87,7 @@ Créez votre interface utilisateur :
 
 ![](hello-watch-images/buttonaction.png "The OnButtonPress Action added to a button")
 
-Une fois que vous avez enregistré la table de montage séquentiel, le **InterfaceController.Designer.cs** est mis à jour avec les noms et les actions des contrôles. Si vous ouvrez ce fichier après qu’il a été mis à jour, vous pouvez voir comment le `RegisterAttribute` correspond au contrôleur et comment les C# contrôles d’interface utilisateur correspondent aux variables d’instance marquées avec le `OutletAttribute` et comment les actions sont mappées aux méthodes partielles marquées avec le `ActionAttribute`:
+Une fois que vous avez enregistré la table de montage séquentiel, le **InterfaceController.Designer.cs** est mis à jour avec les noms et les actions des contrôles. Si vous ouvrez ce fichier après qu’il a été mis à jour, vous pouvez voir comment le `RegisterAttribute` correspond au contrôleur et comment les C# contrôles d’interface utilisateur correspondent aux variables d’instance marquées avec le `OutletAttribute` et comment les actions sont mappées aux méthodes partielles marquées avec l' `ActionAttribute`:
 
 ```csharp
 // WARNING
@@ -153,8 +153,7 @@ Félicitations, vous disposez d’une application de surveillance !
 
 ![](hello-watch-images/running.png "The app running in the Simulator")
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
-- [Prise en main (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchkit-gettingstarted)
-- [Configuration et installation](~/ios/watchos/get-started/installation.md)
+- [Installation et configuration](~/ios/watchos/get-started/installation.md)
 - [Vidéo de la première application Watch](https://blog.xamarin.com/your-first-watch-kit-app/)

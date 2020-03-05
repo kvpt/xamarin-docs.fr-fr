@@ -7,38 +7,38 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 724a79e618321f97257718bf56dd1fdd18f73563
-ms.sourcegitcommit: 191f1f3b13a14e2afadcb95126c5f653722f126f
+ms.openlocfilehash: 9aaecb8c63ff28111097dce81954f523b4c7731b
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/30/2019
-ms.locfileid: "75545605"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78292824"
 ---
 # <a name="lines-and-stroke-caps"></a>Lignes et extrémités de trait
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-_Découvrez comment utiliser SkiaSharp pour dessiner des lignes avec des embouts de trait différents_
+_Découvrez comment utiliser SkiaSharp pour dessiner des lignes avec des épaisseurs de trait différentes_
 
-Dans SkiaSharp, le rendu d’une seule ligne est très différent de rendu d’une série de lignes droites connectées. Même lors du dessin des lignes uniques, toutefois, il est souvent nécessaire de donner les lignes d’un trait particulier. Comme ces lignes deviennent plus large, l’apparence de la fin des lignes devient aussi important. L’apparence de la fin de la ligne est appelé le *extrémité de trait*:
+Dans SkiaSharp, le rendu d’une seule ligne est très différent de rendu d’une série de lignes droites connectées. Même lors du dessin des lignes uniques, toutefois, il est souvent nécessaire de donner les lignes d’un trait particulier. Comme ces lignes deviennent plus large, l’apparence de la fin des lignes devient aussi important. L’apparence de la fin de la ligne est appelée *extrémité du trait*:
 
 ![](lines-images/strokecapsexample.png "The three stroke caps options")
 
-Pour dessiner des lignes uniques, `SKCanvas` définit une simple [ `DrawLine` ](xref:SkiaSharp.SKCanvas.DrawLine(System.Single,System.Single,System.Single,System.Single,SkiaSharp.SKPaint)) méthode dont les arguments indiquent le début et fin des coordonnées de la ligne avec un `SKPaint` objet :
+Pour dessiner des lignes uniques, `SKCanvas` définit une méthode de [`DrawLine`](xref:SkiaSharp.SKCanvas.DrawLine(System.Single,System.Single,System.Single,System.Single,SkiaSharp.SKPaint)) simple dont les arguments indiquent les coordonnées de début et de fin de la ligne avec un objet `SKPaint` :
 
 ```csharp
 canvas.DrawLine (x0, y0, x1, y1, paint);
 ```
 
-Par défaut, le [ `StrokeWidth` ](xref:SkiaSharp.SKPaint.StrokeWidth) propriété de nouvellement instancié `SKPaint` objet est 0, ce qui a le même effet en tant que valeur de 1 lors du rendu d’une ligne d’un pixel d’épaisseur. Cela semble très léger sur les appareils haute résolution tels que les téléphones, vous devez donc probablement définir le `StrokeWidth` d’une valeur supérieure. Mais une fois que vous démarrez le traçage des lignes d’une épaisseur dimensionnable, qui déclenche un autre problème : comment doivent le démarre et les extrémités de ces lignes épaisses être restituées ?
+Par défaut, la propriété [`StrokeWidth`](xref:SkiaSharp.SKPaint.StrokeWidth) d’un objet `SKPaint` récemment instancié est 0, ce qui a le même effet qu’une valeur de 1 pour le rendu d’une ligne d’un pixel dans l’épaisseur. Cela semble très léger sur les appareils haute résolution tels que les téléphones. vous souhaiterez probablement définir la `StrokeWidth` sur une valeur plus élevée. Mais une fois que vous démarrez le traçage des lignes d’une épaisseur dimensionnable, qui déclenche un autre problème : comment doivent le démarre et les extrémités de ces lignes épaisses être restituées ?
 
-L’apparence du démarre et la fin des lignes est appelé un *embout de ligne* ou Skia, un *extrémité de trait*. Le mot « limite » dans ce contexte fait référence à un type de hat &mdash; quelque chose qui se trouve sur la fin de la ligne. Vous définissez le [ `StrokeCap` ](xref:SkiaSharp.SKPaint.StrokeCap) propriété de la `SKPaint` objet à un des membres suivants de la [ `SKStrokeCap` ](xref:SkiaSharp.SKStrokeCap) énumération :
+L’apparence du début et de la fin des lignes est appelée un *embout de ligne* ou, dans skia, une extrémité de *trait*. Dans ce contexte, le mot « Cap » fait référence à un type de chapeau &mdash; un point qui se trouve à la fin de la ligne. Vous définissez la propriété [`StrokeCap`](xref:SkiaSharp.SKPaint.StrokeCap) de l’objet `SKPaint` sur l’un des membres suivants de l’énumération [`SKStrokeCap`](xref:SkiaSharp.SKStrokeCap) :
 
-- `Butt` (la valeur par défaut)
+- `Butt` (valeur par défaut)
 - `Square`
 - `Round`
 
-Ces désinstallations sont illustrées mieux avec un exemple de programme. Le **SkiaSharp lignes et chemins d’accès** section de la [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) programme commence par une page intitulée **embouts de trait** basé sur le [ `StrokeCapsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/StrokeCapsPage.cs) classe. Cette page définit un `PaintSurface` Gestionnaire d’événements qui effectue une itération sur les trois membres de le `SKStrokeCap` énumération, affichant les deux le nom du membre de l’énumération et dessiner une ligne à l’aide de cette extrémité de trait :
+Ces désinstallations sont illustrées mieux avec un exemple de programme. La section **lignes et chemins d’accès SkiaSharp** du programme [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) commence par une page intitulée **traits** d’accès en fonction de la classe [`StrokeCapsPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/StrokeCapsPage.cs) . Cette page définit un gestionnaire d’événements `PaintSurface` qui parcourt les trois membres de l’énumération `SKStrokeCap`, en affichant à la fois le nom du membre de l’énumération et en dessinant une ligne à l’aide de cette extrémité de trait :
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -92,25 +92,25 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Pour chaque membre de la `SKStrokeCap` énumération, le gestionnaire dessine deux lignes, une avec une épaisseur de trait de 50 pixels et une autre ligne positionné en haut d’une épaisseur de trait de deux pixels. Cette deuxième ligne est destinée à illustrer géométrique début et fin de la ligne indépendante de l’épaisseur du trait et une extrémité de trait :
+Pour chaque membre de l’énumération `SKStrokeCap`, le gestionnaire dessine deux lignes, une avec une épaisseur de trait de 50 pixels et une autre ligne positionnée en haut avec une épaisseur de trait de deux pixels. Cette deuxième ligne est destinée à illustrer géométrique début et fin de la ligne indépendante de l’épaisseur du trait et une extrémité de trait :
 
 [![](lines-images/strokecaps-small.png "Triple screenshot of the Stroke Caps page")](lines-images/strokecaps-large.png#lightbox "Triple screenshot of the Stroke Caps page")
 
-Comme vous pouvez le voir, le `Square` et `Round` embouts de trait développer de manière efficace la longueur de la ligne par moitié la largeur de trait au début de la ligne et à nouveau à la fin. Cette extension devient importante lorsqu’il est nécessaire déterminer les dimensions d’un objet rendu graphique.
+Comme vous pouvez le voir, les `Square` et `Round` épaisseur de trait étendent efficacement la longueur de la ligne de la moitié de la largeur du trait au début de la ligne et à nouveau à la fin. Cette extension devient importante lorsqu’il est nécessaire déterminer les dimensions d’un objet rendu graphique.
 
-Le `SKCanvas` classe inclut également une autre méthode pour dessiner plusieurs lignes qui est un peu étrange :
+La classe `SKCanvas` comprend également une autre méthode pour dessiner plusieurs lignes qui sont quelque peu propres :
 
 ```csharp
 DrawPoints (SKPointMode mode, points, paint)
 ```
 
-Le `points` paramètre est un tableau de `SKPoint` valeurs et `mode` est un membre de la [ `SKPointMode` ](xref:SkiaSharp.SKPointMode) énumération, qui a trois membres :
+Le paramètre `points` est un tableau de valeurs `SKPoint` et `mode` est un membre de l’énumération [`SKPointMode`](xref:SkiaSharp.SKPointMode) , qui a trois membres :
 
-- `Points` Pour afficher des points
-- `Lines` Pour vous connecter à chaque paire de points
-- `Polygon` Pour vous connecter à tous les points consécutifs
+- `Points` pour le rendu des points individuels
+- `Lines` pour connecter chaque paire de points
+- `Polygon` pour connecter tous les points consécutifs
 
-Le **plusieurs lignes** page illustre cette méthode. Le [ **MultipleLinesPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/MultipleLinesPage.xaml) fichier instancie deux `Picker` vues qui vous permettent de sélectionner un membre de la `SKPointMode` énumération et un membre de la `SKStrokeCap` énumération :
+La page **lignes multiples** illustre cette méthode. Le fichier [**MultipleLinesPage. Xaml**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/MultipleLinesPage.xaml) instancie deux vues de `Picker` qui vous permettent de sélectionner un membre de l’énumération `SKPointMode` et un membre de l’énumération `SKStrokeCap` :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -173,7 +173,7 @@ Le **plusieurs lignes** page illustre cette méthode. Le [ **MultipleLinesPage.x
 </ContentPage>
 ```
 
-Notez que les déclarations d’espace de noms SkiaSharp sont un peu différentes, car le `SkiaSharp` espace de noms est nécessaire pour référencer les membres de la `SKPointMode` et `SKStrokeCap` énumérations. Le `SelectedIndexChanged` gestionnaire pour les deux `Picker` vues invalide simplement le `SKCanvasView` objet :
+Notez que les déclarations d’espace de noms SkiaSharp sont un peu différentes, car l’espace de noms `SkiaSharp` est nécessaire pour référencer les membres du `SKPointMode` et des énumérations de `SKStrokeCap`. Le gestionnaire de `SelectedIndexChanged` pour les deux affichages `Picker` invalide simplement l’objet `SKCanvasView` :
 
 ```csharp
 void OnPickerSelectedIndexChanged(object sender, EventArgs args)
@@ -185,9 +185,9 @@ void OnPickerSelectedIndexChanged(object sender, EventArgs args)
 }
 ```
 
-Ce gestionnaire doit vérifier l’existence de la `SKCanvasView` , car le Gestionnaire d’événements est le premier objet appelé lorsque le `SelectedIndex` propriété de la `Picker` est définie sur 0 dans le fichier XAML, et qui se produit avant le `SKCanvasView` a été instancié.
+Ce gestionnaire doit vérifier l’existence de l’objet `SKCanvasView`, car le gestionnaire d’événements est appelé en premier lorsque la propriété `SelectedIndex` de l' `Picker` a la valeur 0 dans le fichier XAML, et cela se produit avant l’instanciation de l' `SKCanvasView`.
 
-Le `PaintSurface` gestionnaire obtient les deux valeurs d’énumération à partir de la `Picker` vues :
+Le gestionnaire de `PaintSurface` obtient les deux valeurs d’énumération des vues `Picker` :
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -226,19 +226,19 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Les captures d’écran d’afficher diverses `Picker` sélections :
+Les captures d’écran montrent une variété de `Picker` sélections :
 
 [![](lines-images/multiplelines-small.png "Triple screenshot of the Multiple Lines page")](lines-images/multiplelines-large.png#lightbox "Triple screenshot of the Multiple Lines page")
 
-L’iPhone à gauche montre comment la `SKPointMode.Points` provoque de membre d’énumération `DrawPoints` pour chacun des points de restituer le `SKPoint` tableau sous la forme d’un carré si l’embout de ligne est `Butt` ou `Square`. Cercles sont rendus si l’embout de ligne est `Round`.
+L’iPhone à gauche montre comment le membre de l’énumération `SKPointMode.Points` provoque le rendu par `DrawPoints` de chacun des points du tableau `SKPoint` sous la forme d’un carré si l’extrémité de ligne est `Butt` ou `Square`. Les cercles sont affichés si l’extrémité de ligne est `Round`.
 
 La capture d’écran Android affiche le résultat du `SKPointMode.Lines`. La méthode `DrawPoints` dessine une ligne entre chaque paire de valeurs `SKPoint`, à l’aide de l’extrémité de ligne spécifiée, dans ce cas `Round`.
 
-Quand vous utilisez à la place `SKPointMode.Polygon`, une ligne est dessinée entre les points successifs du tableau, mais si vous regardez très étroitement, vous verrez que ces lignes ne sont pas connectées. Chacune de ces lignes distinctes démarre et se termine par l’embout de ligne spécifié. Si vous sélectionnez le `Round` Cap, les lignes peuvent sembler être connecté, mais elles sont vraiment pas connectées.
+Quand vous utilisez à la place `SKPointMode.Polygon`, une ligne est dessinée entre les points successifs du tableau, mais si vous regardez très étroitement, vous verrez que ces lignes ne sont pas connectées. Chacune de ces lignes distinctes démarre et se termine par l’embout de ligne spécifié. Si vous sélectionnez la `Round` majuscules, les lignes peuvent sembler être connectées, mais elles ne sont pas connectées.
 
 Si les lignes sont connectés ou non connectés est un aspect essentiel de l’utilisation de chemins d’accès de graphiques.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
-- [API de SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
+- [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

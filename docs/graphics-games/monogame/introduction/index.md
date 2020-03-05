@@ -6,12 +6,12 @@ ms.assetid: D781401F-7A96-4098-9645-5F98AEAF7F71
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 1a94a29f0da6f7916eca697a24ad504a0af46b7c
-ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
+ms.openlocfilehash: 8ffb62c8715ff60e9b0ea3b2bc536f3441fb8765
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68978388"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78293054"
 ---
 # <a name="introduction-to-game-development-with-monogame"></a>Présentation du développement de jeux avec monojeu
 
@@ -25,7 +25,7 @@ La première section de cette procédure pas à pas se concentre sur la configur
 
 À la fin de cette procédure pas à pas, nous allons créer un jeu simple où le joueur peut contrôler un personnage animé avec entrée tactile.  Bien qu’il ne s’agisse pas techniquement d’un jeu complet (dans la mesure où il n’a pas de conditions gagnantes ou perdues), il montre de nombreux concepts de développement de jeux et peut servir de base pour de nombreux types de jeux.
 
-Le résultat de cette procédure pas à pas est le suivant:
+Le résultat de cette procédure pas à pas est le suivant :
 
 ![Animation d’un exemple de jeu de caractères à la suite de la souris](images/image1.gif)
 
@@ -37,14 +37,12 @@ Les développeurs familiarisés avec XNA seront déjà familiarisés avec la syn
 
 ## <a name="walkthrough-parts"></a>Parties de procédure pas à pas
 
-- [Partie 1: création d’un projet monogame multiplateforme](~/graphics-games/monogame/introduction/part1.md)
-- [Partie 2: implémentation du WalkingGame](~/graphics-games/monogame/introduction/part2.md)
+- [Partie 1 : création d’un projet monogame multiplateforme](~/graphics-games/monogame/introduction/part1.md)
+- [Partie 2 : implémentation du WalkingGame](~/graphics-games/monogame/introduction/part2.md)
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Projet monogame WalkingGame (exemple)](https://docs.microsoft.com/samples/xamarin/mobile-samples/walkinggamemg/)
-- [Polices XNB iOS](https://github.com/mono/CocosSharp/tree/master/Samples/GameStarterKit/GameStarterKit/Content/fonts)
-- [XNB polices Android](https://github.com/mono/CocosSharp/tree/master/Samples/GameStarterKit/GameStarterKit/Assets/Content/fonts)
 - [Android monojeu sur NuGet](https://www.nuget.org/packages/MonoGame.Framework.Android/)
 - [IOS monogame sur NuGet](https://www.nuget.org/packages/MonoGame.Framework.iOS/)
 - [Documentation sur les API monojeu](http://www.monogame.net/documentation/?page=main)

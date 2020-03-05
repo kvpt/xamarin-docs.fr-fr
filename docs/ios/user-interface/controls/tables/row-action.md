@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/25/2017
-ms.openlocfilehash: 542ae6696bae8fccfa6d5ed9842bce126760da37
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 8efa116a82ba021c2a723dc6ab636f54b6b5af71
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021868"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "78292498"
 ---
 # <a name="working-with-row-actions-in-xamarinios"></a>Utilisation des actions de ligne dans Xamarin. iOS
 
@@ -33,7 +33,7 @@ Trois étapes sont nécessaires pour implémenter des actions de balayage avec `
 
 1. Substituez les méthodes de `GetLeadingSwipeActionsConfiguration` et/ou de `GetTrailingSwipeActionsConfiguration`. Ces méthodes retournent un `UISwipeActionsConfiguration`.
 2. Instanciez le `UISwipeActionsConfiguration` à retourner. Cette classe prend un tableau de `UIContextualAction`.
-3. Créer un `UIContextualAction`.
+3. Créez un `UIContextualAction`.
 
 Celles-ci sont expliquées plus en détail dans les sections suivantes.
 
@@ -83,7 +83,7 @@ Cet extrait de code utilise également la nouvelle propriété `PerformsFirstAct
 
 <a name="create-uicontextualaction" />
 
-### <a name="create-a-uicontextualaction"></a>Créer un `UIContextualAction`
+### <a name="create-a-uicontextualaction"></a>Créez une classe `UIContextualAction`
 
 L’action contextuelle consiste à créer l’action qui sera affichée lorsque l’utilisateur fait glisser une ligne de tableau.
 
@@ -117,7 +117,7 @@ Une fois les actions contextuelles créées, elles peuvent utiliser pour initial
 
 ## <a name="uitableviewrowaction"></a>UITableViewRowAction
 
-Pour définir une ou plusieurs actions de ligne personnalisées pour un `UITableView`, vous devez créer une instance de la classe `UITableViewDelegate` et substituer la méthode `EditActionsForRow`. Exemple :
+Pour définir une ou plusieurs actions de ligne personnalisées pour un `UITableView`, vous devez créer une instance de la classe `UITableViewDelegate` et substituer la méthode `EditActionsForRow`. Par exemple :
 
 ```csharp
 using System;
@@ -161,7 +161,7 @@ namespace BasicTable
 }
 ```
 
-La méthode `UITableViewRowAction.Create` statique est utilisée pour créer un `UITableViewRowAction` qui affichera un bouton **haut** lorsque l’utilisateur fait défiler horizontalement la ligne de la table vers la gauche. Plus tard, une nouvelle instance du `TableDelegate` est créée et attachée au `UITableView`. Exemple :
+La méthode `UITableViewRowAction.Create` statique est utilisée pour créer un `UITableViewRowAction` qui affichera un bouton **haut** lorsque l’utilisateur fait défiler horizontalement la ligne de la table vers la gauche. Plus tard, une nouvelle instance du `TableDelegate` est créée et attachée au `UITableView`. Par exemple :
 
 ```csharp
 TableDelegate tableDelegate;
@@ -179,7 +179,7 @@ Lorsque le code ci-dessus est exécuté et que l’utilisateur fait défiler la 
 
 Si l’utilisateur appuie sur le bouton **AIM** , `Hello World!` est écrit sur la console dans Visual Studio pour Mac ou Visual Studio lorsque l’application est exécutée en mode débogage.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [TableSwipeActions (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/tableswipeactions)
 - [WorkingWithTables (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/workingwithtables)

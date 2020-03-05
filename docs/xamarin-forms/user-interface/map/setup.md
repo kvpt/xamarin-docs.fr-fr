@@ -6,13 +6,13 @@ ms.assetid: 59CD1344-8248-406C-9144-0C8A67141E5B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/06/2019
-ms.openlocfilehash: 038ff27907573c1fe15516f6f4caf26d0892ab9f
-ms.sourcegitcommit: 283810340de5310f63ef7c3e4b266fe9dc2ffcaf
+ms.date: 02/07/2020
+ms.openlocfilehash: c3c4863814949be2e6575e92136ca740452a2f3c
+ms.sourcegitcommit: f43d5ecafd19cbc5cce39201916a83927a34617a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73662340"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78292732"
 ---
 # <a name="xamarinforms-map-initialization-and-configuration"></a>Initialisation et configuration de la carte Xamarin. Forms
 
@@ -58,12 +58,12 @@ L’affichage et l’interaction avec une carte sur iOS ne nécessitent aucune c
 
 - iOS 11 et versions ultérieures
   - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) : pour utiliser des services de localisation quand l’application est en cours d’utilisation
-  - [`NSLocationAlwaysAndWhenInUseUsageDescription`](https://developer.apple.com/documentation/corelocation/choosing_the_authorization_level_for_location_services/requesting_always_authorization?language=objc) : pour utiliser des services de localisation à tout moment
+  - [`NSLocationAlwaysAndWhenInUseUsageDescription`](https://developer.apple.com/documentation/bundleresources/information_property_list/nslocationalwaysandwheninuseusagedescription) : pour utiliser des services de localisation à tout moment
 - iOS 10 et versions antérieures
   - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) : pour utiliser des services de localisation quand l’application est en cours d’utilisation
   - [`NSLocationAlwaysUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18) : pour utiliser des services de localisation à tout moment    
 
-Pour prendre en charge iOS 11 et les versions antérieures, vous pouvez inclure les trois clés suivantes : `NSLocationWhenInUseUsageDescription`, `NSLocationAlwaysAndWhenInUseUsageDescription` et `NSLocationAlwaysUsageDescription`.
+Pour prendre en charge iOS 11 et les versions antérieures, vous pouvez inclure les trois clés suivantes : `NSLocationWhenInUseUsageDescription`, `NSLocationAlwaysAndWhenInUseUsageDescription`et `NSLocationAlwaysUsageDescription`.
 
 La représentation XML de ces clés dans **info. plist** est indiquée ci-dessous. Vous devez mettre à jour les valeurs de `string` pour refléter la manière dont votre application utilise les informations d’emplacement :
 
@@ -105,14 +105,16 @@ Une fois que vous avez obtenu une clé API, elle doit être ajoutée dans l’é
 
 ```xml
 <application ...>
-    <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="PASTE-YOUR-API-KEY-HERE" />
+    <meta-data android:name="com.google.android.geo.API_KEY" android:value="PASTE-YOUR-API-KEY-HERE" />
 </application>
 ```
 
 Cela incorpore la clé API dans le manifeste. Sans clé d’API valide, le contrôle [`Map`](xref:Xamarin.Forms.Maps.Map) affichera une grille vide.
 
 > [!NOTE]
-> Notez que, pour que vos APK accèdent à Google Maps, vous devez inclure les empreintes de l’algorithme SHA-1 et les noms des packages pour chaque magasin de clés (Debug et Release) que vous utilisez pour signer vos APK. Par exemple, si vous utilisez un ordinateur pour le débogage et un autre pour générer le APK de mise en production, vous devez inclure l’empreinte de certificat SHA-1 à partir du magasin de clés de débogage du premier ordinateur et l’empreinte de certificat SHA-1 du magasin de clés de version de deuxième ordinateur. N’oubliez pas également de modifier les informations d’identification de la clé si le **nom du package** de l’application est modifié. Consultez [obtention d’une clé API Google Maps](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md).
+> `com.google.android.geo.API_KEY` est le nom de métadonnées recommandé pour la clé API. À des fins de compatibilité descendante, le nom de métadonnées `com.google.android.maps.v2.API_KEY` peut être utilisé, mais autorise uniquement l’authentification à l’API Android Maps v2.
+
+Pour que votre APK accède à Google Maps, vous devez inclure les empreintes de l’algorithme SHA-1 et les noms des packages pour chaque magasin de clés (Debug et Release) que vous utilisez pour signer vos APK. Par exemple, si vous utilisez un ordinateur pour le débogage et un autre ordinateur pour générer le fichier APK de mise en production, vous devez inclure l’empreinte de certificat SHA-1 à partir du magasin de clés de débogage du premier ordinateur et l’empreinte de certificat SHA-1 à partir du magasin de clés de version de le deuxième ordinateur. N’oubliez pas également de modifier les informations d’identification de la clé si le **nom du package** de l’application est modifié. Consultez [obtention d’une clé API Google Maps](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md).
 
 #### <a name="specify-the-google-play-services-version-number"></a>Spécifier le numéro de version de Google Play services
 
@@ -234,6 +236,9 @@ L’effet global de ce code est que lorsque l’application demande l’emplacem
 ### <a name="universal-windows-platform"></a>Plateforme Windows universelle
 
 Sur UWP, votre application doit être authentifiée pour pouvoir afficher une carte et consommer des services de mappage. Pour authentifier votre application, vous devez spécifier une clé d’authentification Maps. Pour plus d’informations, consultez [demander une clé d’authentification par mappages](/windows/uwp/maps-and-location/authentication-key). Le jeton d’authentification doit ensuite être spécifié dans l’appel de méthode `FormsMaps.Init("AUTHORIZATION_TOKEN")`, pour authentifier l’application avec Bing Maps.
+
+> [!NOTE]
+> Sur UWP, pour utiliser des services de carte tels que le géocodage, vous devez également définir la propriété `MapService.ServiceToken` sur la valeur de la clé d’authentification. Pour ce faire, vous pouvez utiliser la ligne de code suivante : `Windows.Services.Maps.MapService.ServiceToken = "INSERT_AUTH_TOKEN_HERE";`.
 
 En outre, si votre application doit accéder à l’emplacement de l’utilisateur, vous devez activer la fonctionnalité d’emplacement dans le manifeste du package. Cela peut être accompli de la façon suivante :
 

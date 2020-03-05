@@ -1,18 +1,18 @@
 ---
-ms.openlocfilehash: dffa9c202d42cfb12ed67e219b4e3155e4e554d0
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
-ms.translationtype: HT
+ms.openlocfilehash: 0071fcc72844e4816e707c5828464859e09db68c
+ms.sourcegitcommit: 2503da076966d12a8bdbf7af209662b74913a15c
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70751921"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78261616"
 ---
-# <a name="contributing"></a>Contribuer
+# <a name="contributing"></a>Contribution
 
 Nous vous remercions de l’intérêt que vous portez à la documentation Xamarin à travers vos contributions.
 
 Cette page décrit le processus simple de mise à jour de contenu dans la [documentation Xamarin](https://docs.microsoft.com/xamarin).
 
-- [Contrat de licence de contribution (CLA)](LICENSE)
+- [Contrat de licence de contributeur](LICENSE)
 
 ## <a name="process-for-contributing"></a>Processus de contribution
 
@@ -33,7 +33,7 @@ Pour apporter des corrections et des mises à jour mineures, vous pouvez cliquer
 6. Les personnes chargées de la maintenance fusionneront votre demande de tirage une fois que les commentaires auront été appliqués et que votre modification sera correcte. Elle apparaîtra sur docs.microsoft.com peu après.
 
 > [!NOTE]
-> Si votre demande de tirage répond à un problème existant, ajoutez le mot clé `Fixes #Issue_Number` au message de validation ou à la description de la demande de tirage. Le problème pourra ainsi être clôturé automatiquement dès que la demande de tirage aura été fusionnée. Pour plus d’informations, consultez [Closing issues via commit messages](https://help.github.com/articles/closing-issues-via-commit-messages/).
+> Si votre demande de tirage (pull request) répond à un problème existant, ajoutez le mot clé `Fixes #Issue_Number` au message de validation ou à la description de la demande de tirage. Le dossier pourra ainsi être clôturé automatiquement dès que la demande de tirage aura été fusionnée. Pour plus d’informations, consultez [Closing issues via commit messages](https://help.github.com/articles/closing-issues-via-commit-messages/).
 
 ### <a name="big-changes-or-new-content"></a>Changements importants ou nouveau contenu
 
@@ -64,6 +64,10 @@ L’équipe Xamarin examine votre demande de tirage et vous fait savoir (via des
 Les personnes chargées de la maintenance fusionneront alors votre demande de tirage une fois que les commentaires auront été appliqués et que votre modification sera correcte.
 
 Nous envoyons (push) toutes les validations de la branche principale au site en ligne à une certaine fréquence. Vous pourrez voir vos contributions sur https://docs.microsoft.com/xamarin/.
+
+### <a name="contributing-to-international-content"></a>Contribution au contenu international
+
+Les contributions pour le contenu de traduction automatique ne sont actuellement pas acceptées pour le moment. Dans le but d’améliorer la qualité du contenu MT, nous avons effectué une transition vers un moteur neuronal MT. Nous acceptons et encourageons les contributions au contenu de traduction humaine (HT), qui est utilisé pour l’apprentissage du moteur neuronal MT. Ainsi, dans le temps, les contributions au contenu HT améliorent la qualité de la technologie HT et MT. Les rubriques MT comportent une exclusion de responsabilité indiquant qu’une partie de la rubrique peut être MT et que le bouton **modifier** ne s’affiche pas, car elle est désactivée.
 
 ## <a name="dos-and-donts"></a>À faire et à ne pas faire
 

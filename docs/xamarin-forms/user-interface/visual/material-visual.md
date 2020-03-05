@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 11/25/2019
-ms.openlocfilehash: 4a960075ebea0fae4cde8d79bdc38641a0b1dc8a
-ms.sourcegitcommit: 1fdc6215f00863735bf0d2bf0afcaa45b714b453
+ms.openlocfilehash: 81ef3c44d6eb8aaf4dd0ec467e11ef04adb02a76
+ms.sourcegitcommit: 5a6124271a679b8961fa9430bd738fcb18544e92
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74465519"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "78292978"
 ---
 # <a name="xamarinforms-material-visual"></a>Élément visuel Xamarin. Forms
 
@@ -38,7 +38,7 @@ Le visuel matériau prend actuellement en charge les contrôles suivants :
 
 - [`ActivityIndicator`](xref:Xamarin.Forms.ActivityIndicator)
 - [`Button`](xref:Xamarin.Forms.Button)
-- `CheckBox`
+- [`CheckBox`](xref:Xamarin.Forms.CheckBox)
 - [`DatePicker`](xref:Xamarin.Forms.DatePicker)
 - [`Editor`](xref:Xamarin.Forms.Editor)
 - [`Entry`](xref:Xamarin.Forms.Entry)

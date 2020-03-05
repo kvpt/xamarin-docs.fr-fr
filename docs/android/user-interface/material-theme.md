@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: 5e83e34dab407c5be84fc5b4c3c0c445d56907e3
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 809f6241b3a17f63fe3077f896095c303e1dfd2e
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028761"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "78293053"
 ---
 # <a name="material-theme"></a>Thème matériau
 
@@ -36,7 +36,7 @@ Vous pouvez utiliser un thème unique pour une application entière, ou vous pou
 
 Étant donné que le thème matériel est pris en charge uniquement sur Android 5,0 et versions ultérieures, vous ne pouvez pas l’utiliser (ou un thème personnalisé dérivé du thème matériel) pour créer un thème pour votre application et l’exécuter sur des versions antérieures d’Android. Toutefois, vous pouvez configurer votre application pour utiliser le thème de matériau sur les appareils Android 5,0 et revenir en douceur à un thème précédent lorsqu’il s’exécute sur des versions antérieures d’Android (pour plus d’informations, consultez la section [compatibilité](#compatibility) de cet article).
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Spécifications
 
 Les éléments suivants sont requis pour utiliser les nouvelles fonctionnalités de thème de matériel Android 5,0 dans les applications basées sur Xamarin :
 
@@ -70,7 +70,7 @@ L’exemple suivant configure l’application *MyApp* pour utiliser le thème cl
 </application>
 ```
 
-Vous pouvez également définir l’attribut `Theme` de l’application dans **AssemblyInfo.cs** (ou **Properties.cs**). Exemple :
+Vous pouvez également définir l’attribut `Theme` de l’application dans **AssemblyInfo.cs** (ou **Properties.cs**). Par exemple :
 
 ```C#
 [assembly: Application(Theme="@android:style/Theme.Material.Light")]
@@ -199,7 +199,7 @@ Pour appliquer un style à une vue individuelle, procédez comme suit :
 </style>
 ```
 
-- Dans votre disposition, définissez l’attribut `style` pour cette vue afin qu’il corresponde au nom de style personnalisé que vous avez choisi à l’étape précédente. Exemple :
+- Dans votre disposition, définissez l’attribut `style` pour cette vue afin qu’il corresponde au nom de style personnalisé que vous avez choisi à l’étape précédente. Par exemple :
 
 ```xml
 <android.support.v7.widget.CardView
@@ -219,7 +219,7 @@ Dans cet exemple, la `CardView` personnalisée s’affiche avec la couleur d’a
 
 Pour appliquer un style à votre application afin qu’elle utilise le thème de matériau sur Android 5,0 mais repasse automatiquement à un style à compatibilité descendante sur les anciennes versions d’Android, procédez comme suit :
 
-- Définissez un thème personnalisé dans le **fichier Resources/values-v21/styles. xml** qui dérive d’un style de thème matériel. Exemple :
+- Définissez un thème personnalisé dans le **fichier Resources/values-v21/styles. xml** qui dérive d’un style de thème matériel. Par exemple :
 
 ```xml
 <resources>
@@ -229,7 +229,7 @@ Pour appliquer un style à votre application afin qu’elle utilise le thème de
 </resources>
 ```
 
-- Définissez un thème personnalisé dans le **fichier Resources/values/styles. xml** qui dérive d’un thème plus ancien, mais qui utilise le même nom de thème que ci-dessus. Exemple :
+- Définissez un thème personnalisé dans le **fichier Resources/values/styles. xml** qui dérive d’un thème plus ancien, mais qui utilise le même nom de thème que ci-dessus. Par exemple :
 
 ```xml
 <resources>
@@ -240,7 +240,7 @@ Pour appliquer un style à votre application afin qu’elle utilise le thème de
 ```
 
 - Dans **fichier AndroidManifest. xml**, configurez votre application avec le nom du thème personnalisé. 
-    Exemple :
+    Par exemple :
 
 ```xml
 <application android:label="MyApp" 
@@ -260,11 +260,11 @@ Quand votre application s’exécute sur un appareil Android 5,0, elle utilise l
 
 Pour plus d’informations sur la compatibilité des thèmes avec les anciennes versions d’Android, consultez [ressources secondaires](~/android/app-fundamentals/resources-in-android/alternate-resources.md).
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article a présenté le nouveau style d’interface utilisateur de thème de matériau inclus dans Android 5,0 (lollipop). Il a décrit les trois types de thème de matériau intégrés que vous pouvez utiliser pour appliquer un style à votre application, vous avez expliqué comment créer un thème personnalisé pour la personnalisation de votre application et vous avez fourni un exemple de création d’un thème pour une vue individuelle. Enfin, cet article a expliqué comment utiliser le thème de matériau dans votre application tout en conservant la compatibilité descendante avec les versions antérieures d’Android.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [ThemeSwitcher (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android50-themeswitcher)
 - [Présentation du symbole Lollipop](../platform/lollipop.md)

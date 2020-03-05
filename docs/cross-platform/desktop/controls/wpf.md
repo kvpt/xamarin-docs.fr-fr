@@ -5,12 +5,12 @@ description: Ce document compare et contraste WPF avec Xamarin. Forms. Il traite
 author: davidortinau
 ms.author: daortin
 ms.date: 04/26/2017
-ms.openlocfilehash: e87595c121f1117d055d812cb06c81ecba850c12
-ms.sourcegitcommit: 211fed94fb96127a3e158ae1ff5d7eb831a203d8
+ms.openlocfilehash: 9c69449f88f9c237b5075967c89ff7ff3b6fb57a
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75955653"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "78291990"
 ---
 # <a name="wpf-vs-xamarinforms-similarities--differences"></a>WPF et Xamarin. Forms : similarités & différences
 
@@ -74,11 +74,11 @@ Pour obtenir un exemple complet, consultez [propriétés pouvant être liées da
 
 ### <a name="attached-properties"></a>Propriétés jointes
 
-Les propriétés jointes sont un sous-ensemble de la propriété pouvant être liée et fonctionnent de la même façon que dans WPF. La principale différence réside dans le fait que le wrapper de propriété est ommitted dans ce cas et remplacé par un ensemble de méthodes d’extraction/définition statiques sur la classe propriétaire. Pour plus d’informations, consultez [propriétés jointes dans Xamarin. Forms](~/xamarin-forms/xaml/attached-properties.md) .
+Les propriétés jointes sont un sous-ensemble de la propriété pouvant être liée et fonctionnent de la même façon que dans WPF. La principale différence réside dans le fait que le wrapper de propriété est omis dans ce cas et remplacé par un ensemble de méthodes d’extraction/définition statiques sur la classe propriétaire. Pour plus d’informations, consultez [propriétés jointes dans Xamarin. Forms](~/xamarin-forms/xaml/attached-properties.md) .
 
 ### <a name="using-the-binding-engine"></a>Utilisation du moteur de liaison
 
-Le processus d’utilisation du moteur de liaison est le même que dans WPF. Il peut être utilisé dans le code-behind en créant un objet `Binding` lié à un objet source (tout type .NET) et une valeur de propriété facultative (si ommitted, il traite l’objet source comme la propriété elle-même, comme WPF). Vous pouvez ensuite utiliser `SetBinding` sur n’importe quel `BindableObject` pour associer la liaison à un `BindableProperty`.
+Le processus d’utilisation du moteur de liaison est le même que dans WPF. Il peut être utilisé dans le code-behind en créant un objet `Binding` lié à un objet source (tout type .NET) et une valeur de propriété facultative (en cas d’omission, il traite l’objet source comme la propriété elle-même, comme WPF). Vous pouvez ensuite utiliser `SetBinding` sur n’importe quel `BindableObject` pour associer la liaison à un `BindableProperty`.
 
 Vous pouvez également définir la relation de liaison en XAML à l’aide de l' `BindingExtension`. Il a les mêmes valeurs de base que l’extension dans WPF.
 
@@ -171,7 +171,7 @@ Sur les appareils téléphoniques, les différents _écrans_ sont souvent la sol
 |--- |--- |
 |Basée sur la pile (push/pop)|NavigationPage|
 |Maître/détail|MasterDetailPage|
-|Tabulations|TabbedPage|
+|Onglets|TabbedPage|
 |Balayer vers la gauche/droite|CarouselView|
 
 La `NavigationPage` est l’approche la plus courante, et chaque page a une propriété `Navigation` qui peut être utilisée pour pousser ou dépiler des pages sur la pile de navigation. Il s’agit de l’équivalent le plus proche de la `NavigationService` trouvée dans WPF.

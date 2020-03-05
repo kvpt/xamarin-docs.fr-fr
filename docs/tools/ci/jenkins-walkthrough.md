@@ -6,12 +6,12 @@ ms.assetid: 1E6825DF-1254-4FCB-B94D-ADD33D1B5309
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 6d420faf59d940bb111b5ecd326a29083cab012e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 4f91e683b826657a9740de7e0b98137858130042
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029910"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78291984"
 ---
 # <a name="using-jenkins-with-xamarin"></a>Utilisation de Jenkins avec Xamarin
 
@@ -32,7 +32,7 @@ Une fois que Jenkins est configuré et que tous les plug-ins nécessaires ont é
 
 Ce guide explique comment configurer un serveur Jenkins qui couvre chacun de ces points. À la fin de celle-ci, nous devrions avoir une bonne compréhension de la configuration et de la configuration de Jenkins pour créer des APK pour nos projets mobiles Xamarin.
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Spécifications
 
 Le serveur de builds idéal est un ordinateur autonome dédié à l’unique objectif de la création et éventuellement du test de l’application. Un ordinateur dédié garantit que les artefacts qui peuvent être requis pour d’autres rôles (tels que ceux d’un serveur Web) ne contaminent pas la Build. Par exemple, si le serveur de builds joue également le rôle de serveur Web, le serveur Web peut nécessiter une version conflictuelle de la bibliothèque commune. En raison de ce conflit, le serveur Web peut ne pas fonctionner correctement ou Jenkins peut créer des builds qui ne fonctionnent pas lorsqu’elles sont déployées pour les utilisateurs.
 
@@ -142,7 +142,7 @@ Cette section est obligatoire si vous envisagez d’utiliser TFS pour votre cont
 Pour qu’une station de travail macOS puisse interagir avec un serveur TFS, [Team Explorer Everywhere](https://docs.microsoft.com/azure/devops/java/download-eclipse-plug-in/) doit être installé sur la station de travail. Team Explorer Everywhere est un ensemble d’outils de Microsoft qui comprend un client de ligne de commande multiplateforme pour l’accès à TFS. Team Explorer Everywhere peut être téléchargée à partir de Microsoft et installée en trois étapes :
 
 1. Décompressez le fichier d’archive dans un répertoire accessible au compte d’utilisateur. Par exemple, vous pouvez décompresser le fichier vers **~/tee**.
-2. Configurez l’interpréteur de commandes ou le chemin d’accès système pour inclure le dossier qui contient les fichiers qui ont été décompressés à l’étape 1 ci-dessus. Par exemple :
+2. Configurez l’interpréteur de commandes ou le chemin d’accès système pour inclure le dossier qui contient les fichiers qui ont été décompressés à l’étape 1 ci-dessus. Par exemple,
 
     ```
     echo export PATH~/tee/:$PATH' >> ~/.bash_profile
@@ -387,13 +387,13 @@ Une fois que toutes les actions de génération sont en place, il est recommand�
 
 ### <a name="submitting-tests-to-test-cloud"></a>Envoi de tests à Test Cloud
 
-Les tests automatisés peuvent être soumis à Test Cloud à l’aide de commandes shell. Pour plus d’informations sur la configuration d’une série de tests dans Xamarin Test Cloud, consultez ce guide d’utilisation de [Xamarin. UITest](/appcenter/test-cloud/preparing-for-upload/uitest/).
+Les tests automatisés peuvent être soumis à Test Cloud à l’aide de commandes shell. Pour plus d’informations sur la configuration d’une série de tests dans Xamarin Test Cloud, consultez [Preparing Xamarin. Android Apps](/appcenter/test-cloud/preparing-for-upload/xamarin-android-uitest) et [Preparing Xamarin. iOS Apps](/appcenter/test-cloud/preparing-for-upload/xamarin-ios-uitest).
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Dans ce guide, nous avons introduit Jenkins comme serveur de builds sur macOS et l’avons configuré pour compiler et préparer les applications mobiles Xamarin pour la mise en service. Nous avons installé Jenkins sur un ordinateur macOS avec plusieurs plug-ins pour prendre en charge le processus de génération. Nous avons créé et configuré un travail qui extrait le code à partir de TFS ou git, puis il compile ce code dans une application prête à l’emploi. Nous avons également abordé deux façons de planifier le moment où les tâches doivent être exécutées.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Intégration continue](~/tools/ci/index.md)
 - [Test App Center](https://docs.microsoft.com/appcenter/test-cloud/)

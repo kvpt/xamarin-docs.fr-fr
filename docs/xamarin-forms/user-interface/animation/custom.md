@@ -6,62 +6,64 @@ ms.assetid: 03B2E3FC-E720-4D45-B9A0-711081FC1907
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/14/2016
-ms.openlocfilehash: 86fac9dd0c2f9281a0c828ace68fbf77679dce5b
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.date: 02/10/2019
+ms.openlocfilehash: 405d7990b622b890aa3d66bd632662f086441666
+ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70759837"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "78292139"
 ---
 # <a name="custom-animations-in-xamarinforms"></a>Animations personnalisées dans Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-custom)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-custom)
 
-_La classe d’Animation est le bloc de construction de toutes les animations de Xamarin.Forms, avec les méthodes d’extension dans la classe ViewExtensions création d’un ou plusieurs objets d’Animation. Cet article montre comment utiliser la classe d’Animation pour créer et d’annuler des animations, de synchroniser plusieurs animations et créer des animations personnalisées animer des propriétés qui ne sont pas animées par les méthodes d’animation existantes._
+_La classe d’animation est le bloc de construction de toutes les animations Xamarin. Forms, avec les méthodes d’extension de la classe ViewExtensions qui créent un ou plusieurs objets d’animation. Cet article montre comment utiliser la classe d’animation pour créer et annuler des animations, synchroniser plusieurs animations et créer des animations personnalisées qui animent des propriétés qui ne sont pas animées par les méthodes d’animation existantes._
 
-Un nombre de paramètres doit être spécifié lorsque vous créez un `Animation` objet, y compris les valeurs de début et de fin de la propriété animée et un rappel qui modifie la valeur de la propriété. Un `Animation` objet peut également conserver une collection d’animations enfants qui peuvent être exécutés et synchronisé. Pour plus d’informations, consultez [Animations enfants](#child).
+Un certain nombre de paramètres doivent être spécifiés lors de la création d’un objet `Animation`, y compris les valeurs de début et de fin de la propriété animée et un rappel qui modifie la valeur de la propriété. Un objet `Animation` peut également gérer une collection d’animations enfants qui peuvent être exécutées et synchronisées. Pour plus d’informations, consultez [animations enfants](#child).
 
-Exécute une animation créée avec le [ `Animation` ](xref:Xamarin.Forms.Animation) (classe), ce qui peut ou peut ne pas inclure les animations enfants, s’effectue en appelant le [ `Commit` ](xref:Xamarin.Forms.Animation.Commit(Xamarin.Forms.IAnimatable,System.String,System.UInt32,System.UInt32,Xamarin.Forms.Easing,System.Action{System.Double,System.Boolean},System.Func{System.Boolean})) (méthode). Cette méthode spécifie la durée de l’animation, entre autres choses, un rappel qui contrôle s’il faut répéter l’animation.
+L’exécution d’une animation créée avec la classe [`Animation`](xref:Xamarin.Forms.Animation) , qui peut ou non inclure des animations enfants, est obtenue en appelant la méthode [`Commit`](xref:Xamarin.Forms.Animation.Commit(Xamarin.Forms.IAnimatable,System.String,System.UInt32,System.UInt32,Xamarin.Forms.Easing,System.Action{System.Double,System.Boolean},System.Func{System.Boolean})) . Cette méthode spécifie la durée de l’animation, entre autres choses, un rappel qui contrôle s’il faut répéter l’animation.
 
-## <a name="creating-an-animation"></a>Création d’une Animation
+En outre, la classe [`Animation`](xref:Xamarin.Forms.Animation) a une propriété `IsEnabled` qui peut être examinée pour déterminer si les animations ont été désactivées par le système d’exploitation, par exemple lorsque le mode d’économie d’énergie est activé.
 
-Lorsque vous créez un [ `Animation` ](xref:Xamarin.Forms.Animation) de l’objet, en règle générale, un minimum de trois paramètres sont requis, comme illustré dans l’exemple de code suivant :
+## <a name="create-an-animation"></a>Créer une animation
+
+Lorsque vous créez un objet [`Animation`](xref:Xamarin.Forms.Animation) , en général, un minimum de trois paramètres sont requis, comme illustré dans l’exemple de code suivant :
 
 ```csharp
 var animation = new Animation (v => image.Scale = v, 1, 2);
 ```
 
-Ce code définit une animation de la [ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale) propriété d’un [ `Image` ](xref:Xamarin.Forms.Image) instance à partir d’une valeur de 1 à la valeur 2. La valeur animée, qui est dérivée par Xamarin.Forms, est passée au rappel spécifié comme premier argument, où il est utilisé pour modifier la valeur de la `Scale` propriété.
+Ce code définit une animation de la propriété [`Scale`](xref:Xamarin.Forms.VisualElement.Scale) d’une instance [`Image`](xref:Xamarin.Forms.Image) à partir d’une valeur de 1 à une valeur de 2. La valeur animée, qui est dérivée par Xamarin. Forms, est passée au rappel spécifié comme premier argument, où elle est utilisée pour modifier la valeur de la propriété `Scale`.
 
-L’animation est démarrée avec un appel à la [ `Commit` ](xref:Xamarin.Forms.Animation.Commit(Xamarin.Forms.IAnimatable,System.String,System.UInt32,System.UInt32,Xamarin.Forms.Easing,System.Action{System.Double,System.Boolean},System.Func{System.Boolean})) (méthode), comme illustré dans l’exemple de code suivant :
+L’animation est démarrée avec un appel à la méthode [`Commit`](xref:Xamarin.Forms.Animation.Commit(Xamarin.Forms.IAnimatable,System.String,System.UInt32,System.UInt32,Xamarin.Forms.Easing,System.Action{System.Double,System.Boolean},System.Func{System.Boolean})) , comme illustré dans l’exemple de code suivant :
 
 ```csharp
 animation.Commit (this, "SimpleAnimation", 16, 2000, Easing.Linear, (v, c) => image.Scale = 1, () => true);
 ```
 
-Notez que le [ `Commit` ](xref:Xamarin.Forms.Animation.Commit(Xamarin.Forms.IAnimatable,System.String,System.UInt32,System.UInt32,Xamarin.Forms.Easing,System.Action{System.Double,System.Boolean},System.Func{System.Boolean})) méthode ne retourne pas une `Task` objet. Au lieu de cela, les notifications sont fournies par le biais des méthodes de rappel.
+Notez que la méthode [`Commit`](xref:Xamarin.Forms.Animation.Commit(Xamarin.Forms.IAnimatable,System.String,System.UInt32,System.UInt32,Xamarin.Forms.Easing,System.Action{System.Double,System.Boolean},System.Func{System.Boolean})) ne retourne pas d’objet `Task`. Au lieu de cela, les notifications sont fournies par le biais des méthodes de rappel.
 
-Les arguments suivants sont spécifiés dans le `Commit` méthode :
+Les arguments suivants sont spécifiés dans la méthode `Commit` :
 
-- Le premier argument (*propriétaire*) identifie le propriétaire de l’animation. Cela peut être l’élément visuel sur lequel l’animation est appliquée, ou un autre élément visuel, telles que la page.
-- Le deuxième argument (*nom*) identifie l’animation avec un nom. Le nom est combiné avec le propriétaire pour identifier de manière unique l’animation. Cette identification unique peut ensuite être utilisée pour déterminer si l’animation est en cours d’exécution ([`AnimationIsRunning`](xref:Xamarin.Forms.AnimationExtensions.AnimationIsRunning(Xamarin.Forms.IAnimatable,System.String))), ou pour l’annuler ([`AbortAnimation`](xref:Xamarin.Forms.AnimationExtensions.AbortAnimation(Xamarin.Forms.IAnimatable,System.String))).
-- Le troisième argument (*taux*) indique le nombre de millisecondes entre chaque appel à la méthode de rappel définie dans le [ `Animation` ](xref:Xamarin.Forms.Animation) constructeur
-- Le quatrième argument (*longueur*) indique la durée de l’animation, en millisecondes.
-- Le cinquième argument (*d’accélération*) définit la fonction d’accélération à utiliser dans l’animation. Vous pouvez également la fonction d’accélération peut être spécifiée en tant qu’argument à la [ `Animation` ](xref:Xamarin.Forms.Animation) constructeur. Pour plus d’informations sur les fonctions d’accélération, consultez [fonctions d’accélération](~/xamarin-forms/user-interface/animation/easing.md).
-- Le sixième argument (*terminé*) est un rappel qui sera exécuté lorsque l’animation est terminée. Ce rappel accepte deux arguments, avec le premier argument qui indique une valeur finale et le second argument étant un `bool` qui a la valeur `true` si l’animation a été annulée. Vous pouvez également le *terminé* rappel peut être spécifié en tant qu’argument à la [ `Animation` ](xref:Xamarin.Forms.Animation) constructeur. Toutefois, avec une seule animation si *terminé* rappels sont spécifiées dans les deux le `Animation` constructeur et le `Commit` (méthode), uniquement le rappel spécifié dans le `Commit` méthode sera exécutée.
-- Septième argument (*répétez*) est un rappel qui permet l’animation doit être répétée. Elle est appelée à la fin de l’animation et en retournant `true` indique que l’animation doit être répétée.
+- Le premier argument (*owner*) identifie le propriétaire de l’animation. Cela peut être l’élément visuel sur lequel l’animation est appliquée, ou un autre élément visuel, telles que la page.
+- Le deuxième argument (*Name*) identifie l’animation avec un nom. Le nom est combiné avec le propriétaire pour identifier de manière unique l’animation. Cette identification unique peut ensuite être utilisée pour déterminer si l’animation est en cours d’exécution ([`AnimationIsRunning`](xref:Xamarin.Forms.AnimationExtensions.AnimationIsRunning(Xamarin.Forms.IAnimatable,System.String))), ou pour l’annuler ([`AbortAnimation`](xref:Xamarin.Forms.AnimationExtensions.AbortAnimation(Xamarin.Forms.IAnimatable,System.String))).
+- Le troisième argument (*rate*) indique le nombre de millisecondes entre chaque appel à la méthode de rappel définie dans le constructeur [`Animation`](xref:Xamarin.Forms.Animation)
+- Le quatrième argument (*Length*) indique la durée de l’animation, en millisecondes.
+- Le cinquième argument (*accélération*) définit la fonction d’accélération à utiliser dans l’animation. La fonction d’accélération peut également être spécifiée en tant qu’argument pour le constructeur [`Animation`](xref:Xamarin.Forms.Animation) . Pour plus d’informations sur les fonctions d’accélération, consultez [fonctions d’accélération](~/xamarin-forms/user-interface/animation/easing.md).
+- Le sixième argument (*terminé*) est un rappel qui est exécuté lorsque l’animation est terminée. Ce rappel accepte deux arguments, avec le premier argument indiquant une valeur finale, et le deuxième argument étant un `bool` qui a la valeur `true` si l’animation a été annulée. Le rappel *terminé* peut également être spécifié en tant qu’argument au constructeur [`Animation`](xref:Xamarin.Forms.Animation) . Toutefois, avec une seule animation, si les rappels *terminés* sont spécifiés dans le constructeur `Animation` et la méthode `Commit`, seul le rappel spécifié dans la méthode `Commit` sera exécuté.
+- Le septième argument (*REPEAT*) est un rappel qui permet de répéter l’animation. Elle est appelée à la fin de l’animation et retourne `true` indique que l’animation doit être répétée.
 
-L’effet global consiste à créer une animation qui augmente la [ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale) propriété d’un [ `Image` ](xref:Xamarin.Forms.Image) comprise entre 1 et 2, supérieur à 2 secondes (2 000 millisecondes), à l’aide de la [ `Linear` ](xref:Xamarin.Forms.Easing.Linear) fonction d’accélération. Chaque fois que l’animation est terminée, son `Scale` propriété est réinitialisée à 1 et l’animation se répète.
+L’effet global consiste à créer une animation qui augmente la propriété [`Scale`](xref:Xamarin.Forms.VisualElement.Scale) d’une [`Image`](xref:Xamarin.Forms.Image) de 1 à 2, en plus de 2 secondes (2000 millisecondes), à l’aide de la fonction d’accélération [`Linear`](xref:Xamarin.Forms.Easing.Linear) . À chaque fois que l’animation est terminée, sa `Scale` propriété est réinitialisée à 1 et l’animation se répète.
 
 > [!NOTE]
-> Les animations simultanées, qui s’exécutent indépendamment les uns des autres peuvent être construites en créant un `Animation` pour chaque animation de l’objet, puis en appelant le `Commit` méthode sur chaque animation.
+> Les animations simultanées, qui s’exécutent indépendamment les unes des autres, peuvent être construites en créant un objet `Animation` pour chaque animation, puis en appelant la méthode `Commit` sur chaque animation.
 
 <a name="child" />
 
 ### <a name="child-animations"></a>Animations enfants
 
-Le [ `Animation` ](xref:Xamarin.Forms.Animation) classe prend également en charge les animations enfants, ce qui implique la création d’un `Animation` objet quels autres `Animation` objets sont ajoutés. Cela permet une série d’animations doit exécuter et synchronisé. L’exemple de code suivant montre comment créer et exécuter des animations enfants :
+La classe [`Animation`](xref:Xamarin.Forms.Animation) prend également en charge les animations enfants, ce qui implique la création d’un objet `Animation` auquel d’autres objets `Animation` sont ajoutés. Cela permet une série d’animations doit exécuter et synchronisé. L’exemple de code suivant montre comment créer et exécuter des animations enfants :
 
 ```csharp
 var parentAnimation = new Animation ();
@@ -86,21 +88,21 @@ new Animation {
     }.Commit (this, "ChildAnimations", 16, 4000, null, (v, c) => SetIsEnabledButtonState (true, false));
 ```
 
-Dans les deux exemples de code, un parent [ `Animation` ](xref:Xamarin.Forms.Animation) objet est créé, à laquelle d’autres `Animation` ensuite les objets sont ajoutés. Les deux premiers arguments pour le [ `Add` ](xref:Xamarin.Forms.Animation.Add(System.Double,System.Double,Xamarin.Forms.Animation)) méthode spécifier la date de début et de fin de l’animation de l’enfant. Les valeurs d’argument doivent être comprise entre 0 et 1 et représentent la période relative au sein de l’animation parent que l’animation de l’enfant spécifié sera active. Par conséquent, dans cet exemple le `scaleUpAnimation` seront actives pour la première moitié de l’animation, la `scaleDownAnimation` seront actives pour la seconde moitié de l’animation et le `rotateAnimation` sera active pendant toute la durée.
+Dans les deux exemples de code, un objet [`Animation`](xref:Xamarin.Forms.Animation) parent est créé, auquel des objets `Animation` supplémentaires sont ajoutés. Les deux premiers arguments de la méthode [`Add`](xref:Xamarin.Forms.Animation.Add(System.Double,System.Double,Xamarin.Forms.Animation)) spécifient quand commencer et finir l’animation enfant. Les valeurs d’argument doivent être comprise entre 0 et 1 et représentent la période relative au sein de l’animation parent que l’animation de l’enfant spécifié sera active. Par conséquent, dans cet exemple, la `scaleUpAnimation` est active pour la première moitié de l’animation, la `scaleDownAnimation` est active pour la deuxième moitié de l’animation et la `rotateAnimation` est active pendant toute la durée.
 
-L’effet global est que l’animation se produit plus de 4 secondes (4000 millisecondes). Le `scaleUpAnimation` anime le [ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale) propriété à partir de 1 à 2, supérieur à 2 secondes. Le `scaleDownAnimation` puis s’anime le `Scale` propriété à partir de 2 à 1, plus de 2 secondes. Bien que les deux animations de mise à l’échelle sont produisent, le `rotateAnimation` anime le [ `Rotation` ](xref:Xamarin.Forms.VisualElement.Rotation) propriété comprise entre 0 et 360, plus de 4 secondes. Notez que les animations de mise à l’échelle utilisent également des fonctions d’accélération. Le [ `SpringIn` ](xref:Xamarin.Forms.Easing.SpringIn) provoque la fonction d’accélération le [ `Image` ](xref:Xamarin.Forms.Image) initialement réduction avant d’obtenir la plus grande et le [ `SpringOut` ](xref:Xamarin.Forms.Easing.SpringOut) fonction d’accélération provoque le `Image` à devenir plus petit que sa taille réelle vers la fin de l’animation terminée.
+L’effet global est que l’animation se produit plus de 4 secondes (4000 millisecondes). Le `scaleUpAnimation` anime la propriété [`Scale`](xref:Xamarin.Forms.VisualElement.Scale) de 1 à 2, en plus de 2 secondes. Le `scaleDownAnimation` anime ensuite la propriété `Scale` de 2 à 1, en plus de 2 secondes. Tandis que les deux animations d’échelle se produisent, le `rotateAnimation` anime la propriété [`Rotation`](xref:Xamarin.Forms.VisualElement.Rotation) de 0 à 360, en plus de 4 secondes. Notez que les animations de mise à l’échelle utilisent également des fonctions d’accélération. La fonction d’accélération [`SpringIn`](xref:Xamarin.Forms.Easing.SpringIn) entraîne la réduction initiale du [`Image`](xref:Xamarin.Forms.Image) avant son agrandissement, et la fonction d’accélération [`SpringOut`](xref:Xamarin.Forms.Easing.SpringOut) entraîne une diminution de la taille de la `Image` par rapport à sa taille réelle vers la fin de l’animation complète.
 
-Il existe plusieurs différences entre un [ `Animation` ](xref:Xamarin.Forms.Animation) objet qui utilise des animations enfants et l’autre qui ne fait pas :
+Il existe un certain nombre de différences entre un objet [`Animation`](xref:Xamarin.Forms.Animation) qui utilise des animations enfants et un autre qui ne :
 
-- Lorsque vous utilisez des animations enfants, le *terminé* rappel sur une animation enfant indique quand l’enfant aura terminé et le *terminé* rappel passé à la `Commit` méthode indiquant à quel moment le toute l’animation est terminée.
-- Lorsque vous utilisez des animations enfants, retournant `true` à partir de la *répétez* rappel sur le `Commit` méthode n’entraîne pas l’animation se répète, mais l’animation continue de s’exécuter sans les nouvelles valeurs.
-- Lorsque vous incluez une fonction d’accélération dans le `Commit` (méthode) et la fonction d’accélération retourne une valeur supérieure à 1, l’animation va être interrompue. Si la fonction d’accélération retourne une valeur inférieure à 0, la valeur est ancrée à 0. Pour utiliser une fonction d’accélération qui retourne une valeur inférieure à 0 ou supérieure à 1, il doit spécifié dans un des animations enfants, plutôt que dans le `Commit` (méthode).
+- Lors de l’utilisation d’animations enfants, le rappel *terminé* sur une animation enfant indique quand l’enfant est terminé, et le rappel *terminé* passé à la méthode `Commit` indique le moment où l’animation entière est terminée.
+- Lorsque vous utilisez des animations enfants, le retour d' `true` à partir du rappel *REPEAT* sur la méthode `Commit` n’entraîne pas la répétition de l’animation, mais l’animation continue de s’exécuter sans nouvelles valeurs.
+- Lorsque vous incluez une fonction d’accélération dans la méthode `Commit`, et que la fonction d’accélération retourne une valeur supérieure à 1, l’animation sera arrêtée. Si la fonction d’accélération retourne une valeur inférieure à 0, la valeur est ancrée à 0. Pour utiliser une fonction d’accélération qui retourne une valeur inférieure à 0 ou supérieure à 1, elle doit être spécifiée dans l’une des animations enfants, plutôt que dans la méthode `Commit`.
 
-Le [ `Animation` ](xref:Xamarin.Forms.Animation) classe inclut également [ `WithConcurrent` ](xref:Xamarin.Forms.Animation.WithConcurrent(Xamarin.Forms.Animation,System.Double,System.Double)) méthodes qui peuvent être utilisées pour ajouter des animations enfants à un parent `Animation` objet. Toutefois, leur *commencer* et *Terminer* des valeurs d’arguments ne sont pas limitées à 0 et 1, mais seule la partie de l’animation enfant qui correspond à une plage de 0 à 1 sera active. Par exemple, si un `WithConcurrent` appel de méthode définit une animation enfant qui cible un [ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale) propriété à partir de 1 à 6, mais avec *commencer* et *Terminer* valeurs de -2 et 3, le *commencer* valeur -2 correspond à un `Scale` la valeur 1 et le *Terminer* valeur 3 correspond à un `Scale` valeur 6. Étant donné que les valeurs en dehors de la plage de 0 et 1 ne jouent aucun rôle dans une animation, la `Scale` propriété sera uniquement animée de 3 à 6.
+La classe [`Animation`](xref:Xamarin.Forms.Animation) comprend également [`WithConcurrent`](xref:Xamarin.Forms.Animation.WithConcurrent(Xamarin.Forms.Animation,System.Double,System.Double)) méthodes qui peuvent être utilisées pour ajouter des animations enfants à un objet `Animation` parent. Toutefois, les valeurs des arguments *Begin* et *Finish* ne sont pas limitées à 0 à 1, mais seule la partie de l’animation enfant qui correspond à une plage de 0 à 1 est active. Par exemple, si un `WithConcurrent` appel de méthode définit une animation enfant qui cible une [`Scale`](xref:Xamarin.Forms.VisualElement.Scale) propriété de 1 à 6, mais avec les valeurs de *début* et de *fin* de-2 et 3, la valeur de *début* de-2 correspond à une valeur de `Scale` de 1 et la valeur de *fin* 3 correspond à une valeur de `Scale` de 6. Étant donné que les valeurs situées en dehors de la plage 0 et 1 ne lisent aucune partie dans une animation, la propriété `Scale` n’est animée que de 3 à 6.
 
-## <a name="canceling-an-animation"></a>Annulation d’une Animation
+## <a name="cancel-an-animation"></a>Annuler une animation
 
-Une application peut annuler une animation avec un appel à la [ `AbortAnimation` ](xref:Xamarin.Forms.AnimationExtensions.AbortAnimation(Xamarin.Forms.IAnimatable,System.String)) méthode d’extension, comme illustré dans l’exemple de code suivant :
+Une application peut annuler une animation avec un appel à la méthode d’extension [`AbortAnimation`](xref:Xamarin.Forms.AnimationExtensions.AbortAnimation(Xamarin.Forms.IAnimatable,System.String)) , comme illustré dans l’exemple de code suivant :
 
 ```csharp
 this.AbortAnimation ("SimpleAnimation");
@@ -108,9 +110,9 @@ this.AbortAnimation ("SimpleAnimation");
 
 Notez que les animations sont identifiées de manière unique par une combinaison du propriétaire d’animation et le nom de l’animation. Par conséquent, le propriétaire et le nom spécifié lorsque l’animation en cours d’exécution doit être spécifié pour annuler l’animation. Par conséquent, l’exemple de code annule immédiatement l’animation nommée `SimpleAnimation` qui appartient à la page.
 
-## <a name="creating-a-custom-animation"></a>Création d’une Animation personnalisée
+## <a name="create-a-custom-animation"></a>Créer une animation personnalisée
 
-Les exemples présentés ici jusqu'à présent ont montré que les animations qui peut également être effectuées avec les méthodes dans le [ `ViewExtensions` ](xref:Xamarin.Forms.ViewExtensions) classe. Toutefois, l’avantage de la [ `Animation` ](xref:Xamarin.Forms.Animation) classe est qu’il ait accès à la méthode de rappel, qui est exécutée lorsque la valeur animée change. Cela permet au rappel d’implémenter une animation que souhaitée. Par exemple, l’exemple suivant anime le [ `BackgroundColor` ](xref:Xamarin.Forms.VisualElement.BackgroundColor) propriété d’une page en lui affectant [ `Color` ](xref:Xamarin.Forms.Color) valeurs créées par le [ `Color.FromHsla` ](xref:Xamarin.Forms.Color.FromHsla(System.Double,System.Double,System.Double,System.Double))(méthode), avec les valeurs de teinte comprises entre 0 et 1 :
+Jusqu’à présent, les exemples présentés ici ont démontré des animations qui peuvent être obtenues de la même manière avec les méthodes de la classe [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) . Toutefois, l’avantage de la classe [`Animation`](xref:Xamarin.Forms.Animation) est qu’elle a accès à la méthode de rappel, qui est exécutée lorsque la valeur animée change. Cela permet au rappel d’implémenter une animation que souhaitée. Par exemple, l’exemple de code suivant anime la propriété [`BackgroundColor`](xref:Xamarin.Forms.VisualElement.BackgroundColor) d’une page en la définissant sur [`Color`](xref:Xamarin.Forms.Color) valeurs créées par la méthode [`Color.FromHsla`](xref:Xamarin.Forms.Color.FromHsla(System.Double,System.Double,System.Double,System.Double)) , avec des valeurs de teinte comprises entre 0 et 1 :
 
 ```csharp
 new Animation (callback: v => BackgroundColor = Color.FromHsla (v, 1, 0.5),
@@ -120,18 +122,18 @@ new Animation (callback: v => BackgroundColor = Color.FromHsla (v, 1, 0.5),
 
 L’animation qui en résulte fournit l’apparence d’avancer l’arrière-plan de la page via les couleurs de l’arc-en-ciel.
 
-Pour plus d’exemples de création d’animations complexes, y compris une animation de courbe de Bézier, consultez [chapitre 22](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch22-Apr2016.pdf) de [création d’applications mobiles avec Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md).
+Pour obtenir plus d’exemples de création d’animations complexes, y compris une animation de courbe de Bézier, consultez le [Chapitre 22](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch22-Apr2016.pdf) sur la [création d’Mobile Apps avec Xamarin. Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md).
 
-## <a name="creating-a-custom-animation-extension-method"></a>Création d’une méthode d’Extension Animation personnalisée
+## <a name="create-a-custom-animation-extension-method"></a>Créer une méthode d’extension d’animation personnalisée
 
-Les méthodes d’extension dans le [ `ViewExtensions` ](xref:Xamarin.Forms.ViewExtensions) classe animer une propriété à partir de sa valeur actuelle à une valeur spécifiée. Cela rend difficile à créer, par exemple, un `ColorTo` méthode animation qui peut être utilisé pour animer une couleur à partir d’une valeur à un autre, car :
+Les méthodes d’extension de la classe [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) animent une propriété à partir de sa valeur actuelle jusqu’à une valeur spécifiée. Cela complique la création, par exemple, d’une méthode d’animation `ColorTo` qui peut être utilisée pour animer une couleur d’une valeur à une autre, car :
 
-- La seule [ `Color` ](xref:Xamarin.Forms.Color) propriété définie par le [ `VisualElement` ](xref:Xamarin.Forms.VisualElement) classe est [ `BackgroundColor` ](xref:Xamarin.Forms.VisualElement.BackgroundColor), ce qui n’est pas toujours souhaité `Color` propriété Pour animer.
-- Souvent, la valeur actuelle d’un [ `Color` ](xref:Xamarin.Forms.Color) propriété est [ `Color.Default` ](xref:Xamarin.Forms.Color.Default), qui n’est pas une couleur réelle, et qui ne peut pas être utilisé dans les calculs d’interpolation.
+- La seule propriété [`Color`](xref:Xamarin.Forms.Color) définie par la classe [`VisualElement`](xref:Xamarin.Forms.VisualElement) est [`BackgroundColor`](xref:Xamarin.Forms.VisualElement.BackgroundColor), qui n’est pas toujours la propriété `Color` souhaitée à animer.
+- Souvent, la valeur actuelle d’une propriété [`Color`](xref:Xamarin.Forms.Color) est [`Color.Default`](xref:Xamarin.Forms.Color.Default), qui n’est pas une véritable couleur et qui ne peut pas être utilisée dans les calculs d’interpolation.
 
-La solution à ce problème est ne pas avoir le `ColorTo` méthode cibler un particulier [ `Color` ](xref:Xamarin.Forms.Color) propriété. Au lieu de cela, elle peut être écrite avec une méthode de rappel qui transmet l’interpolée `Color` valeur à l’appelant. En outre, la méthode prend le début et fin `Color` arguments.
+La solution à ce problème consiste à ne pas faire en sorte que la méthode `ColorTo` cible une propriété [`Color`](xref:Xamarin.Forms.Color) particulière. Au lieu de cela, elle peut être écrite à l’aide d’une méthode de rappel qui transmet à l’appelant la valeur interpolée `Color`. En outre, la méthode prendra les arguments de début et de fin `Color`.
 
-Le `ColorTo` méthode peut être implémentée comme une méthode d’extension qui utilise le [ `Animate` ](xref:Xamarin.Forms.AnimationExtensions.Animate*) méthode dans le [ `AnimationExtensions` ](xref:Xamarin.Forms.AnimationExtensions) classe afin de fournir ses fonctionnalités. Il s’agit, car le `Animate` méthode peut être utilisée pour cibler des propriétés qui ne sont pas de type `double`, comme illustré dans l’exemple de code suivant :
+La méthode `ColorTo` peut être implémentée en tant que méthode d’extension qui utilise la méthode [`Animate`](xref:Xamarin.Forms.AnimationExtensions.Animate*) dans la classe [`AnimationExtensions`](xref:Xamarin.Forms.AnimationExtensions) pour fournir ses fonctionnalités. Cela est dû au fait que la méthode `Animate` peut être utilisée pour cibler des propriétés qui ne sont pas de type `double`, comme illustré dans l’exemple de code suivant :
 
 ```csharp
 public static class ViewExtensions
@@ -162,9 +164,9 @@ public static class ViewExtensions
 }
 ```
 
-Le [ `Animate` ](xref:Xamarin.Forms.AnimationExtensions.Animate*) méthode requiert un *transformer* argument, qui est une méthode de rappel. L’entrée de ce rappel est toujours un `double` comprises entre 0 et 1. Par conséquent, le `ColorTo` méthode définit sa propre transformation `Func` qui accepte un `double` comprises entre 0 et 1 et qui retourne un [ `Color` ](xref:Xamarin.Forms.Color) valeur correspondant à cette valeur. Le `Color` valeur est calculée par l’interpolation le [ `R` ](xref:Xamarin.Forms.Color.R), [ `G` ](xref:Xamarin.Forms.Color.G), [ `B` ](xref:Xamarin.Forms.Color.B), et [ `A` ](xref:Xamarin.Forms.Color.A) les valeurs des deux fournis `Color` arguments. Le `Color` valeur est ensuite passée à la méthode de rappel pour l’application à une propriété particulière.
+La méthode [`Animate`](xref:Xamarin.Forms.AnimationExtensions.Animate*) nécessite un argument de *transformation* , qui est une méthode de rappel. L’entrée de ce rappel est toujours une `double` comprise entre 0 et 1. Par conséquent, la méthode `ColorTo` définit sa propre `Func` de transformation qui accepte un `double` allant de 0 à 1, et qui retourne une valeur [`Color`](xref:Xamarin.Forms.Color) correspondant à cette valeur. La valeur `Color` est calculée en interpolant les valeurs [`R`](xref:Xamarin.Forms.Color.R), [`G`](xref:Xamarin.Forms.Color.G), [`B`](xref:Xamarin.Forms.Color.B)et [`A`](xref:Xamarin.Forms.Color.A) des deux arguments `Color` fournis. La valeur `Color` est ensuite transmise à la méthode de rappel pour l’application vers une propriété particulière.
 
-Cette approche permet la `ColorTo` méthode pour animer les [ `Color` ](xref:Xamarin.Forms.Color) propriété, comme illustré dans l’exemple de code suivant :
+Cette approche permet à la méthode `ColorTo` d’animer n’importe quelle propriété [`Color`](xref:Xamarin.Forms.Color) , comme illustré dans l’exemple de code suivant :
 
 ```csharp
 await Task.WhenAll(
@@ -174,14 +176,10 @@ await this.ColorTo(Color.FromRgb(0, 0, 0), Color.FromRgb(255, 255, 255), c => Ba
 await boxView.ColorTo(Color.Blue, Color.Red, c => boxView.Color = c, 4000);
 ```
 
-Dans cet exemple de code, le `ColorTo` méthode anime le [ `TextColor` ](xref:Xamarin.Forms.Label.TextColor) et [ `BackgroundColor` ](xref:Xamarin.Forms.VisualElement.BackgroundColor) propriétés d’un [ `Label` ](xref:Xamarin.Forms.Label), le `BackgroundColor`propriété d’une page et le [ `Color` ](xref:Xamarin.Forms.BoxView.Color) propriété d’un [ `BoxView` ](xref:Xamarin.Forms.BoxView).
+Dans cet exemple de code, la méthode `ColorTo` anime les propriétés [`TextColor`](xref:Xamarin.Forms.Label.TextColor) et [`BackgroundColor`](xref:Xamarin.Forms.VisualElement.BackgroundColor) d’un [`Label`](xref:Xamarin.Forms.Label), la propriété `BackgroundColor` d’une page et la propriété [`Color`](xref:Xamarin.Forms.BoxView.Color) d’un [`BoxView`](xref:Xamarin.Forms.BoxView).
 
-## <a name="summary"></a>Récapitulatif
-
-Cet article vous a montré comment utiliser le [ `Animation` ](xref:Xamarin.Forms.Animation) classe pour créer et annuler des animations, synchroniser plusieurs animations et créer des animations personnalisées qui animer des propriétés qui ne sont pas animées par l’animation existante méthodes. Le `Animation` classe est le bloc de construction de toutes les animations de Xamarin.Forms.
-
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Animations personnalisées (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-custom)
-- [Animation](xref:Xamarin.Forms.Animation)
-- [AnimationExtensions](xref:Xamarin.Forms.AnimationExtensions)
+- [API d’animation](xref:Xamarin.Forms.Animation)
+- [API AnimationExtensions](xref:Xamarin.Forms.AnimationExtensions)

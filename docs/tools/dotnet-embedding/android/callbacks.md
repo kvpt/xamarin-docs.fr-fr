@@ -5,12 +5,12 @@ ms.assetid: F3A7A4E6-41FE-4F12-949C-96090815C5D6
 author: davidortinau
 ms.author: daortin
 ms.date: 11/14/2017
-ms.openlocfilehash: f23f155a02422a3d04a0b14b282929ea63d60765
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2d1d5b8985d132e5a5839e3cd23aaec32fc3815a
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73007289"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78291832"
 ---
 # <a name="callbacks-on-android"></a>Rappels sur Android
 
@@ -22,7 +22,7 @@ Nous allons aborder les trois options permettant d’effectuer les rappels qui s
 - Interfaces
 - Méthodes virtuelles
 
-## <a name="abstract-classes"></a>classes abstraites
+## <a name="abstract-classes"></a>Classes abstraites
 
 Il s’agit de l’itinéraire le plus simple pour les rappels. je vous conseille donc d’utiliser `abstract` si vous essayez simplement d’obtenir un rappel fonctionnant sous la forme la plus simple.
 
@@ -291,10 +291,9 @@ Il existe deux façons d’améliorer ces scénarios :
 
 Il y a beaucoup de travail à effectuer ici, mais ces améliorations apportées à l’incorporation .NET sont possibles.
 
-## <a name="further-reading"></a>informations supplémentaires
+## <a name="further-reading"></a>Pour aller plus loin
 
 - [Prise en main sur Android](~/tools/dotnet-embedding/get-started/java/android.md)
 - [Recherche Android préliminaire](~/tools/dotnet-embedding/android/index.md)
 - [Limitations de l’incorporation .NET](~/tools/dotnet-embedding/limitations.md)
-- [Contribution au projet open source](https://github.com/mono/Embeddinator-4000/blob/master/docs/Contributing.md)
 - [Codes d’erreur et descriptions](~/tools/dotnet-embedding/errors.md)

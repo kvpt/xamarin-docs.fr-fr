@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 06/21/2018
-ms.openlocfilehash: 2c1f571efb9ec3fb726912eb1e30496bc51fe26e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 49d1eea60f766f4cb61484a6e441506cf8f046ff
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73026984"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78292892"
 ---
 # <a name="is-it-possible-to-connect-to-android-emulators-running-on-a-mac-from-a-windows-vm"></a>Est-il possible de se connecter à des émulateurs Android exécutés sur un Mac à partir d’une machine virtuelle Windows ?
 
@@ -37,8 +37,7 @@ Pour vous connecter au Émulateur Android s’exécutant sur un Mac à partir d�
 
     Le port impair est celui utilisé pour se connecter à `adb`. Voir aussi [https://developer.android.com/tools/devices/emulator.html#emulatornetworking](https://developer.android.com/tools/devices/emulator.html#emulatornetworking).
 
-4. _Option 1_: utiliser [`nc`](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/nc.1.html)
-    pour transférer les paquets TCP entrants reçus en externe sur le port 5555 (ou tout autre port de votre choix) vers le port impair de l’interface de bouclage (**127.0.0.1 5555** dans cet exemple) et pour transférer les paquets sortants de l’autre façon :
+4. _Option 1_: utilisez `nc` pour transférer les paquets TCP entrants reçus en externe sur le port 5555 (ou tout autre port de votre choix) vers le port impair de l’interface de bouclage (**127.0.0.1 5555** dans cet exemple) et pour transférer les paquets sortants de l’autre façon :
 
     ```bash
     cd /tmp
@@ -48,10 +47,9 @@ Pour vous connecter au Émulateur Android s’exécutant sur un Mac à partir d�
 
     Tant que les commandes `nc` restent en cours d’exécution dans une fenêtre de terminal, les paquets sont transférés comme prévu. Vous pouvez taper le contrôle-C dans la fenêtre de terminal pour quitter les commandes `nc` une fois que vous avez fini d’utiliser l’émulateur.
 
-    (L’option 1 est généralement plus facile que l’option 2, en particulier si les **Préférences système > la sécurité & confidentialité > pare-feu** est activé.) 
+    (L’option 1 est généralement plus facile que l’option 2, en particulier si les **Préférences système > la sécurité & confidentialité > pare-feu** est activé.)
 
-    _Option 2_: utiliser [`pfctl`](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man8/pfctl.8.html)
-    pour rediriger les paquets TCP à partir du port `5555` (ou de tout autre port de votre choix) sur l’interface de [mise en réseau partagée](https://kb.parallels.com/en/4948) vers le port impair de l’interface de bouclage (`127.0.0.1:5555` dans cet exemple) :
+    _Option 2_: utilisez `pfctl` pour rediriger les paquets TCP du port `5555` (ou de tout autre port de votre choix) de l’interface de [mise en réseau partagée](https://kb.parallels.com/en/4948) vers le port impair de l’interface de bouclage (`127.0.0.1:5555` dans cet exemple) :
 
     ```bash
     sed '/rdr-anchor/a rdr pass on vmnet8 inet proto tcp from any to any port 5555 -> 127.0.0.1 port 5555' /etc/pf.conf | sudo pfctl -ef -
@@ -77,7 +75,7 @@ Si vous avez activé _session à distance_ sur le Mac, vous pouvez utiliser `ssh
 
 3. Exécutez `ssh` sur Windows pour configurer le réacheminement de port bidirectionnel entre un port local sur Windows (`localhost:15555` dans cet exemple) et le port d’émulateur impair sur l’interface de bouclage du Mac (`127.0.0.1:5555` dans cet exemple) :
 
-    ```cmd 
+    ```cmd
     C:\> ssh -L localhost:15555:127.0.0.1:5555 mac-username@ip-address-of-the-mac
     ```
 
@@ -103,4 +101,4 @@ Toutefois, les extensions IDE Xamarin. Android ne fournissent pas actuellement u
 Ce document décrit le comportement actuel à compter du 2016 mars. La technique décrite dans ce document ne fait pas partie de la suite de tests stable pour Xamarin. elle pourrait donc s’arrêter à l’avenir.
 
 Si vous remarquez que la technique ne fonctionne plus, ou si vous remarquez d’autres erreurs dans le document, n’hésitez pas à ajouter à la discussion sur le thème de Forum suivant : [http://forums.xamarin.com/discussion/33702/android-emulator-from-host-device-inside-windows-vm](https://forums.xamarin.com/discussion/33702/android-emulator-from-host-device-inside-windows-vm).
-Merci.
+Merci !

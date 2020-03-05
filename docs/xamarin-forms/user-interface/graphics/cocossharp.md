@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/03/2016
-ms.openlocfilehash: d13237f270fe01e2a91b69a60c3109843db713bf
-ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
+ms.openlocfilehash: 8ba9e4b119384db401fc631f58c37a28cd2b8004
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728008"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78292822"
 ---
 # <a name="using-cocossharp-in-xamarinforms"></a>Utilisation de CocosSharp dans Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](h https://github.com/xamarin/xamarin-forms-samples/tree/master/CocosSharpForms)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://github.com/xamarin/xamarin-forms-samples/tree/master/CocosSharpForms)
 
 _CocosSharp peut être utilisé pour ajouter un rendu de forme, d’image et de texte précis à une application pour une visualisation avancée_
 
@@ -24,7 +24,7 @@ _CocosSharp peut être utilisé pour ajouter un rendu de forme, d’image et de 
 
 **Évolution de 2016 : Cocos # dans Xamarin. Forms**
 
-## <a name="overview"></a>Overview
+## <a name="overview"></a>Vue d’ensemble
 
 CocosSharp est une technologie flexible et puissante pour l’affichage de graphiques, de lecture entrée tactile, de lecture de contenu audio et la gestion. Ce guide explique comment ajouter CocosSharp à une application Xamarin.Forms. Il couvre les sujets suivants :
 

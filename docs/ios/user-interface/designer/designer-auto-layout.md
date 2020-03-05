@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: f15c754a47f910f430af3c036ed510cc9e130eac
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 35a8d3aeb00ac73f944712cb31f913f98bd3b6e8
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021811"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78291698"
 ---
 # <a name="auto-layout-with-the-xamarin-designer-for-ios"></a>Disposition automatique avec le Xamarin Designer pour iOS
 
@@ -20,7 +20,7 @@ La disposition automatique (également appelée « disposition adaptative ») 
 
 Dans ce guide, nous allons introduire des contraintes et savoir comment les utiliser dans le concepteur iOS Xamarin. Ce guide ne couvre pas l’utilisation des contraintes par programmation. Pour plus d’informations sur l’utilisation de la disposition automatique par programmation, reportez-vous à la [documentation Apple](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/AutolayoutPG/ProgrammaticallyCreatingConstraints.html).
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Spécifications
 
 Le Xamarin Designer pour iOS est disponible dans Visual Studio pour Mac dans Visual Studio 2017 et versions ultérieures sur Windows.
 
@@ -69,7 +69,7 @@ Le menu contextuel de l’éditeur de contraintes vous permet d’ajouter et de 
 
 Pour modifier des contraintes sur la vue sélectionnée, cliquez sur les points de suspension pour afficher le menu segue : ![contraintes de modification menu segue](designer-auto-layout-images/constraints-popup.png)
 
-Lors de l’ouverture des contraintes menu Segue, il affiche toutes les contraintes prédéfinies sur la vue. Nous pouvons définir toutes les contraintes d’espacement en sélectionnant **tous les côtés** de la zone de liste déroulante dans le coin supérieur droit, puis sélectionner **Effacer tout** pour les supprimer. 
+Lors de l’ouverture des contraintes menu Segue, il affiche toutes les contraintes prédéfinies sur la vue. Nous pouvons définir toutes les contraintes d’espacement en sélectionnant **tous les côtés** de la zone de liste déroulante dans le coin supérieur droit, puis sélectionner **Effacer tout** pour les supprimer.
 
 Le **W** définira la largeur et **H** définira la contrainte de hauteur. Lorsque **vous vérifiez les proportions**, la hauteur et la largeur des vues sont contrôlées sur différentes tailles d’écran, la largeur de la vue est utilisée comme numérateur pour la ration et la hauteur comme dénominateur.
 
@@ -185,7 +185,7 @@ Pour accéder à une contrainte dans le code, vous devez d’abord l’exposer d
 3. Ensuite, attribuez un **nom** à la contrainte sous l’onglet **widget** de l' **Explorateur de propriétés**:
 
     [![](designer-auto-layout-images/modify02.png "The Widget Tab")](designer-auto-layout-images/modify02.png#lightbox)
-4. Enregistrez les modifications apportées.
+4. Enregistrez vos modifications.
 
 Une fois les modifications apportées ci-dessus effectuées, vous pouvez accéder à la contrainte dans le code et modifier ses propriétés. Par exemple, vous pouvez utiliser la commande suivante pour définir la hauteur de la vue attachée sur zéro :
 
@@ -201,7 +201,7 @@ ViewInfoHeight.Constant = 0;
 
 Au lieu de mettre à jour instantanément la vue attachée en réponse à des modifications de contrainte, le moteur de disposition automatique planifie une _passe de disposition différée_ pour un avenir proche. Au cours de cette passe différée, non seulement la contrainte de la vue donnée est mise à jour, mais les contraintes pour chaque vue de la hiérarchie sont recalculées et mises à jour pour s’ajuster à la nouvelle disposition.
 
-À tout moment, vous pouvez planifier votre propre passe de disposition différée en appelant les méthodes `SetNeedsLayout` ou `SetNeedsUpdateConstraints` de la vue parente. 
+À tout moment, vous pouvez planifier votre propre passe de disposition différée en appelant les méthodes `SetNeedsLayout` ou `SetNeedsUpdateConstraints` de la vue parente.
 
 La passe de disposition différée se compose de deux passes uniques dans la hiérarchie d’affichage :
 
@@ -210,7 +210,7 @@ La passe de disposition différée se compose de deux passes uniques dans la hi�
 
 ### <a name="animating-constraint-changes"></a>Animer des modifications de contrainte
 
-En plus de modifier les propriétés de contrainte, vous pouvez utiliser l’animation principale pour animer les modifications apportées aux contraintes d’une vue. Exemple :
+En plus de modifier les propriétés de contrainte, vous pouvez utiliser l’animation principale pour animer les modifications apportées aux contraintes d’une vue. Par exemple :
 
 ```csharp
 UIView.BeginAnimations("OpenInfo");
@@ -224,14 +224,13 @@ UIView.CommitAnimations();
 
 Ici, la clé appelle la méthode `LayoutIfNeeded` de la vue parente dans le bloc d’animation. Cela indique à la vue de dessiner chaque « frame » de l’emplacement animé ou de la modification de la taille. Sans cette ligne, la vue est simplement alignée sur la version finale sans animation.
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Ce guide a introduit la disposition iOS auto (ou « Adaptive ») et le concept de contraintes sous forme de représentations mathématiques des relations entre les éléments sur l’aire de conception. Il a décrit comment activer la disposition automatique dans le concepteur iOS, utiliser la **barre d’outils contraintes**et modifier des contraintes individuellement sur l’aire de conception. Ensuite, il a expliqué comment résoudre trois problèmes courants liés aux contraintes. Enfin, il a montré comment modifier des contraintes dans le code.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Introduction aux storyboards](~/ios/user-interface/storyboards/index.md)
 - [Procédures pas à pas pour les contrôles iOS](~/ios/user-interface/designer/ios-designable-controls-walkthrough.md)
 - [Présentation de Android Designer](~/android/user-interface/android-designer/index.md)
 - [Contraintes de programmation](~/ios/user-interface/programmatic-layout-constraints.md)
-- [Apple-Guide de disposition automatique](https://developer.apple.com/library/ios/documentation/userexperience/conceptual/AutolayoutPG/Introduction/Introduction.html#/apple_ref/doc/uid/TP40010853-CH13-SW1)

@@ -7,26 +7,26 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 8f930e2358562df7e68841b87b6a3df0914805fe
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 5e1019417ff7ac93abfe2396a4acaa76c66d182f
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032304"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78292562"
 ---
 # <a name="subscriptions-and-reporting-in-xamarinios"></a>Abonnements et rapports dans Xamarin. iOS
 
 ## <a name="about-non-renewing-subscriptions"></a>À propos des abonnements qui ne sont pas renouvelés
 
 Les abonnements qui ne sont pas renouvelés sont destinés aux produits qui représentent la vente d’un service avec une restriction de temps (par exemple, un accès d’une semaine à une application de navigation ou un accès limité dans le temps à une archive de données).   
-   
+
 Principales différences entre les abonnements qui ne sont pas renouvelés et d’autres types de produits :
 
-- La définition du produit dans iTunes Connect n’inclut pas le terme. Le code d’application doit être en mesure de déduire la période de validité de l’ID de produit. 
-- Ils peuvent être achetés plusieurs fois (comme un produit consommable). Les applications sont requises pour gérer la durée/l’expiration de l’abonnement et le renouvellement, et empêcher l’utilisateur d’acheter des abonnements qui se chevauchent. 
-- Les achats ne sont pas pris en charge par la fonction de restauration StoreKit. Si l’abonnement doit être disponible sur tous les appareils d’un utilisateur, l’application doit concevoir et implémenter cette fonctionnalité conjointement à un serveur distant. Les applications sont également responsables de la sauvegarde de l’état de l’abonnement lorsqu’un appareil est sauvegardé, puis restauré à partir de la sauvegarde. 
+- La définition du produit dans iTunes Connect n’inclut pas le terme. Le code d’application doit être en mesure de déduire la période de validité de l’ID de produit.
+- Ils peuvent être achetés plusieurs fois (comme un produit consommable). Les applications sont requises pour gérer la durée/l’expiration de l’abonnement et le renouvellement, et empêcher l’utilisateur d’acheter des abonnements qui se chevauchent.
+- Les achats ne sont pas pris en charge par la fonction de restauration StoreKit. Si l’abonnement doit être disponible sur tous les appareils d’un utilisateur, l’application doit concevoir et implémenter cette fonctionnalité conjointement à un serveur distant. Les applications sont également responsables de la sauvegarde de l’état de l’abonnement lorsqu’un appareil est sauvegardé, puis restauré à partir de la sauvegarde.
 - Vue d’ensemble de l’implémentation
-- Les abonnements qui ne sont pas renouvelés doivent normalement être implémentés à l’aide du flux de travail fourni par le serveur et de produits consommables managés. 
+- Les abonnements qui ne sont pas renouvelés doivent normalement être implémentés à l’aide du flux de travail fourni par le serveur et de produits consommables managés.
 
 ## <a name="about-free-subscriptions"></a>À propos des abonnements gratuits
 
@@ -49,7 +49,7 @@ Les abonnements renouvelés automatiquement doivent être implémentés à l’a
 Le secret partagé de l’achat dans l’application doit être utilisé dans la demande JSON lors de la vérification des abonnements renouvelés automatiquement sur votre serveur. Le secret partagé est créé/accessible via iTunes Connect.
 
 Dans la page d’hébergement iTunes Connect, sélectionnez **mes applications**:   
-   
+
  [![](subscriptions-and-reporting-images/image2.png "Select My Apps")](subscriptions-and-reporting-images/image2.png#lightbox)  
 
 Sélectionnez une application, puis cliquez sur l’onglet **achats dans l’application** :
@@ -57,7 +57,7 @@ Sélectionnez une application, puis cliquez sur l’onglet **achats dans l’app
 [![](subscriptions-and-reporting-images/image6.png "Click on the In-App Purchases tab")](subscriptions-and-reporting-images/image6.png#lightbox)
 
 En bas de la page, sélectionnez **afficher ou générer un secret partagé**:
-   
+
  [![](subscriptions-and-reporting-images/image40.png "Select View or generate a shared secret")](subscriptions-and-reporting-images/image40.png#lightbox)
 
  [![](subscriptions-and-reporting-images/image41.png "Generate a shared secret")](subscriptions-and-reporting-images/image41.png#lightbox)   
@@ -98,19 +98,18 @@ L’objet SKPaymentTransaction n’inclut pas le terme d’abonnement : vous de
 
 Pour faciliter le test des abonnements, leurs durées sont compressées lors des tests dans le bac à sable (sandbox). les abonnements d’une semaine sont renouvelés toutes les 3 minutes, les abonnements de 1 an par heure. Les abonnements sont renouvelés automatiquement un maximum de 6 fois lors du test dans le bac à sable (sandbox).
 
-## <a name="reporting"></a>Rapports
+## <a name="reporting"></a>Signalement
 
 iTunes Connect ( [iTunesConnect.Apple.com](https://itunesconnect.apple.com)) fournit les éléments suivants :   
-   
+
  **Ventes et tendances** : affiche les détails des téléchargements d’applications, des mises à jour et des achats dans l’application.   
-   
+
  **Paiements et rapports financiers** : détaillent le revenu obtenu par vos applications, ainsi que la liste des paiements qui vous ont été effectués et de la somme de vos dettes.
 
 Vous trouverez ci-dessous un exemple de rapport sur les ventes et les tendances :   
 
  [![](subscriptions-and-reporting-images/image42.png "An example Sales and Trends report")](subscriptions-and-reporting-images/image42.png#lightbox)   
-   
- Il y a également une [application mobile iOS de l' **ITC Connect**(lien iTunes)](https://itunes.apple.com/us/app/itunes-connect-mobile/id376771144?mt=8).
-les captures d’écran iPhone pour certaines des statistiques disponibles sont indiquées ici :   
-   
+
+ Il y a également une application mobile iOS de la **connexion ITC** . les captures d’écran iPhone pour certaines des statistiques disponibles sont indiquées ici :   
+
  [![](subscriptions-and-reporting-images/image43.png "iPhone screenshots for some of the statistics available")](subscriptions-and-reporting-images/image43.png#lightbox)

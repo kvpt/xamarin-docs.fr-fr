@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2018
-ms.openlocfilehash: 3adabbac3f56747093aa8a3def85869a92d33600
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: ef1a97df5648d0f120b58f6206f18f74a6f50f92
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73010499"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "78292496"
 ---
 # <a name="launch-screens-for-xamarinios-apps"></a>Écrans de lancement pour les applications Xamarin. iOS
 
@@ -28,7 +28,7 @@ Cette brève procédure pas à pas explique comment créer un écran de lancemen
 
 Dans iOS 8 (et versions ultérieures), le développeur peut créer une table de montage séquentiel unifiée spéciale pour fournir l’écran de lancement au lieu d’utiliser une ou plusieurs images de lancement statiques. Lorsque vous créez une table de montage séquentiel de lancement dans le concepteur iOS, utilisez les classes de taille et la disposition automatique pour définir différentes dispositions pour différents environnements d’affichage. En utilisant des classes de taille et une disposition automatique, le développeur peut créer un écran de lancement unique qui s’affiche correctement sur tous les appareils et tous les environnements d’affichage.
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 1. Dans Visual Studio pour Mac, créez un nouveau projet en sélectionnant **fichier > nouvelle solution** , puis en choisissant **application avec affichage unique**: 
 
@@ -89,15 +89,15 @@ Dans iOS 8 (et versions ultérieures), le développeur peut créer une table de 
 
     ![Étiquette avec contraintes de disposition](launch-screens-images/launch11.png)
 
-12. Testez les autres périphériques et orientations pour vérifier que la conception est similaire à celle prévue dans tous les scénarios. Dans les cas où des ajustements doivent être effectués pour un appareil ou une orientation spécifique, utilisez le bouton **modifier les traits** pour ajouter contraintes pour des classes de taille spécifiques :
+12. Testez les autres périphériques et orientations pour vérifier que la conception est similaire à celle prévue dans tous les scénarios. Dans les cas où des ajustements doivent être effectués pour un appareil ou une orientation spécifique, utilisez le bouton **modifier les traits** pour ajouter des contraintes pour des classes de taille spécifiques :
 
     ![Écran de lancement rendu sous la forme d’un iPhone X utilisant l’orientation paysage](launch-screens-images/launch12.png)
 
 13. Enregistrez les modifications apportées à la table de montage séquentiel. Exécutez l’application sur un simulateur ou un appareil, et l’écran de lancement sera visible lors du lancement de l’application.
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. Créer un nouveau projet. Dans Visual Studio, sélectionnez **fichier > nouveau > projet > Visual C# > iPhone & iPad > application iOS (Xamarin)** :
+1. Créez un projet. Dans Visual Studio, sélectionnez **fichier > nouveau > projet > Visual C# > iPhone & iPad > application iOS (Xamarin)** :
 
     ![La fenêtre nouveau projet, avec application iOS (Xamarin) sélectionnée](launch-screens-images/launch01.w157.png)
 
@@ -172,7 +172,7 @@ Dans iOS 8 (et versions ultérieures), le développeur peut créer une table de 
     
     ![Étiquette avec contraintes de disposition](launch-screens-images/launch14-vs.png) 
 
-15. Testez les autres périphériques et orientations pour vérifier que la conception est similaire à celle prévue dans tous les scénarios. Dans les cas où des ajustements doivent être effectués pour un appareil ou une orientation spécifique, utilisez le bouton **modifier les traits** pour ajouter contraintes pour des classes de taille spécifiques :
+15. Testez les autres périphériques et orientations pour vérifier que la conception est similaire à celle prévue dans tous les scénarios. Dans les cas où des ajustements doivent être effectués pour un appareil ou une orientation spécifique, utilisez le bouton **modifier les traits** pour ajouter des contraintes pour des classes de taille spécifiques :
 
     ![Écran de lancement rendu sous la forme d’un iPhone X utilisant l’orientation paysage](launch-screens-images/launch15-vs.png) 
 
@@ -187,7 +187,7 @@ Pour plus d’informations sur la création d’un écran de lancement avec une 
 
 ## <a name="migrating-to-launch-screen-storyboards"></a>Migration vers des storyboards d’écran de lancement
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 Quand vous mettez à jour une application existante pour utiliser des storyboards pour ses écrans de lancement, cliquez avec le bouton droit sur le **nom du projet** dans le **Explorateur de solutions** puis sélectionnez **Ajouter** > **nouveau fichier...** . Sélectionnez **iOS** > **écran de lancement** , puis cliquez sur le bouton **nouveau** :
 
@@ -204,7 +204,7 @@ Pour utiliser le nouvel Storyboard comme écran de lancement, procédez comme su
 
     ![](launch-screens-images/storyboard08.png "Setting the launch screen to the storyboard")
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. Cliquez avec le bouton droit sur le nom du projet dans le **Explorateur de solutions** puis sélectionnez **Ajouter** > **nouveau fichier...** : 
 
@@ -223,7 +223,7 @@ Pour utiliser le nouvel Storyboard comme écran de lancement, procédez comme su
 
 -----
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Écrans de lancement dynamique (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-dynamiclaunchscreen)
 - [Storyboards unifiés](~/ios/user-interface/storyboards/unified-storyboards.md)

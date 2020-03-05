@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 06/06/2017
-ms.openlocfilehash: 11f1d38eb10421d4ecef3e2039688b2d9a6d9e6e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: aab121ed5f811baf38eed48cf891ccdf076eaf44
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73027827"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78292891"
 ---
 # <a name="android-beam"></a>Android Beam
 
@@ -76,8 +76,6 @@ Pour obtenir un exemple de code complet qui utilise le faisceau Android, illustr
 
 [![des exemples de captures d’écran de la démonstration de faisceau Android](android-beam-images/24.png)](android-beam-images/24.png#lightbox)
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Démo de faisceau Android (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/androidbeamdemo)
-- [Présentation du sandwich glacé](https://www.android.com/about/ice-cream-sandwich/)
-- [Plateforme Android 4,0](https://developer.android.com/sdk/android-4.0.html)

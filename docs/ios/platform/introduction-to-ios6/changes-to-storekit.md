@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 1d49be1f4339b658e8202d4091b9a12b45d7b507
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 7cf18934c70acf59213a697ab57b6c5e308e7b2a
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031906"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78291903"
 ---
 # <a name="changes-to-storekit-in-ios-6"></a>Modifications apportées à StoreKit dans iOS 6
 
@@ -25,7 +25,7 @@ Les principales modifications apportées au kit de stockage dans iOS6 sont ces d
 
 Reportez-vous aux guides d' [achat dans l’application pour une](~/ios/platform/in-app-purchasing/index.md) couverture détaillée des API StoreKit.
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Spécifications
 
 Les fonctionnalités du kit de magasin présentées dans ce document requièrent iOS 6 et Xcode 4,5, ainsi que Xamarin. iOS 6,0.
 
@@ -100,14 +100,14 @@ Vous pouvez implémenter une vérification de version pour déterminer le code �
 if (UIDevice.CurrentDevice.CheckSystemVersion (6,0)) {
     // do iOS6+ stuff, using SKStoreProductViewController as shown above
 } else {
-    // don't do stuff requiring iOS 6.0, use the old syntax 
+    // don't do stuff requiring iOS 6.0, use the old syntax
     // (which will take the user out of your app)
     var nsurl = new NSUrl("http://itunes.apple.com/us/app/angry-birds/id343200656?mt=8");
     UIApplication.SharedApplication.OpenUrl (nsurl);
 }
 ```
 
-### <a name="errors"></a>Errors
+### <a name="errors"></a>Erreurs
 
 L’erreur suivante se produit si l’ID Apple que vous utilisez n’est pas valide, ce qui peut prêter à confusion, car cela implique un problème de réseau ou d’authentification d’un certain type.
 
@@ -131,18 +131,18 @@ Pour les applications que vous publiez, il est facile de trouver l' **ID Apple**
 
 ### <a name="search-api"></a>API de recherche
 
-Apple fournit une API de recherche dynamique pour interroger tous les produits dans l’App Store, iTunes et l’iBookstore. Vous trouverez des informations sur l’accès à l’API de recherche dans [ressources associées d’Apple](https://www.apple.com/itunes/affiliates/resources/documentation/itunes-store-web-service-search-api.html), bien que l’API soit exposée à quiconque (pas seulement les filiales inscrites). Le JSON obtenu peut être analysé pour découvrir le `trackId` qui est l’ID Apple à utiliser avec `SKStoreProductViewController`.
+Apple fournit une API de recherche dynamique pour interroger tous les produits dans l’App Store, iTunes et l’iBookstore. Vous trouverez des informations sur l’accès à l’API de recherche dans ressources associées d’Apple, bien que l’API soit exposée à quiconque (pas seulement les filiales inscrites). Le JSON obtenu peut être analysé pour découvrir le `trackId` qui est l’ID Apple à utiliser avec `SKStoreProductViewController`.
 
 Les résultats incluent également d’autres métadonnées, notamment des informations d’affichage et des URL d’illustrations qui peuvent être utilisées pour afficher le produit dans votre application.
 
-Voici quelques exemples :
+Voici quelques exemples :
 
-- **application iBooks** – [https://itunes.apple.com/search?term=ibooks&amp ; entité = Software&amp; Country = US](https://itunes.apple.com/search?term=ibooks&amp;entity=software&amp;country=us)
-- **Point et Kangaroo iBook** – [https://itunes.apple.com/search?term=dot+and+the+kangaroo&amp ; Entity = livre électronique&amp; Country = US](https://itunes.apple.com/search?term=dot+and+the+kangaroo&amp;entity=ebook&amp;country=us)
+- **application iBooks** – [https://itunes.apple.com/search?term=ibooks&amp; entité = Software&amp;Country = US](https://itunes.apple.com/search?term=ibooks&amp;entity=software&amp;country=us)
+- **Point et Kangaroo iBook** – [https://itunes.apple.com/search?term=dot+and+the+kangaroo&amp; Entity = livre électronique&amp;Country = US](https://itunes.apple.com/search?term=dot+and+the+kangaroo&amp;entity=ebook&amp;country=us)
 
 ### <a name="enterprise-partner-feed"></a>Flux des partenaires de l’entreprise
 
-Apple fournit aux partenaires approuvés un vidage complet des données de tous leurs produits, sous la forme de fichiers plats prêts à l’emploi et téléchargeables. Si vous êtes éligible à l’accès au [flux des partenaires](https://www.apple.com/itunes/affiliates/resources/documentation/itunes-enterprise-partner-feed.html)de l’entreprise, l’ID Apple de tout produit se trouve dans ce jeu de données.
+Apple fournit aux partenaires approuvés un vidage complet des données de tous leurs produits, sous la forme de fichiers plats prêts à l’emploi et téléchargeables. Si vous êtes éligible à l’accès au flux des partenaires de l’entreprise, l’ID Apple de tout produit se trouve dans ce jeu de données.
 
 De nombreux utilisateurs du flux des partenaires de l’entreprise sont membres du [programme d’affiliation](https://www.apple.com/itunes/affiliates) qui autorise les commissions à être obtenues sur les ventes de produits. `SKStoreProductViewController` ne prend pas en charge les ID d’affiliés (au moment de l’écriture).
 
@@ -170,8 +170,8 @@ et l’ID Apple est **496963922**.
 Si vos achats dans l’application se composent d’un contenu téléchargeable (par exemple, une documentation ou autre média, art et configuration au niveau du jeu, ou d’autres fichiers volumineux), ces fichiers sont utilisés pour être hébergés sur votre serveur Web et les applications devaient incorporer du code pour les télécharger en toute sécurité après achat. À compter d’iOS 6, Apple hébergera vos fichiers sur leurs serveurs, supprimant ainsi la nécessité d’un serveur distinct. La fonctionnalité n’est disponible que pour les produits non consommables (non consommables ou abonnements). Les avantages de l’utilisation du service d’hébergement d’Apple sont les suivants :
 
 - Économisez l’hébergement & coûts de bande passante.
-- Probablement plus évolutif que n’importe quel hôte serveur que vous utilisez actuellement. 
-- Moins de code à écrire, car vous n’avez pas à créer de traitement côté serveur. 
+- Probablement plus évolutif que n’importe quel hôte serveur que vous utilisez actuellement.
+- Moins de code à écrire, car vous n’avez pas à créer de traitement côté serveur.
 - Le téléchargement en arrière-plan est implémenté pour vous.
 
 Remarque : le test du contenu des achats dans l’application hébergé dans iOS Simulator n’est pas pris en charge. vous devez donc tester avec un appareil réel.
@@ -269,7 +269,8 @@ L' **outil d’archivage Xcode**est le moyen le plus simple pour télécharger d
 
 ![](changes-to-storekit-images/image13.png "Choose Archiven")
 
-Le package de contenu apparaît alors dans l’archive, comme indiqué ci-dessous. Le type d’archive et l’icône affichent cette ligne est une **Archive de contenu d’achat dans l’application**. Cliquez sur **valider...** pour vérifier si le package de contenu présente des erreurs sans réellement effectuer le téléchargement.
+Le package de contenu apparaît alors dans l’archive, comme indiqué ci-dessous.
+Le type d’archive et l’icône affichent cette ligne est une **Archive de contenu d’achat dans l’application**. Cliquez sur **valider...** pour vérifier si le package de contenu présente des erreurs sans réellement effectuer le téléchargement.
 
 [![](changes-to-storekit-images/image14.png "Validate the package")](changes-to-storekit-images/image14.png#lightbox)
 
@@ -469,7 +470,7 @@ public void SaveDownload (SKDownload download)
     // targetfolder will be "/Documents/com.xamarin.storekitdoc.montouchimages/" or something like that
     if (!System.IO.Directory.Exists (targetfolder))
         System.IO.Directory.CreateDirectory (targetfolder);
-    foreach (var file in System.IO.Directory.EnumerateFiles 
+    foreach (var file in System.IO.Directory.EnumerateFiles
              (System.IO.Path.Combine(download.ContentUrl.Path, "Contents"))) { // Contents directory is the default in .PKG files
         var fileName = file.Substring (file.LastIndexOf ("/") + 1);
         var newFilePath = System.IO.Path.Combine(targetfolder, fileName);
@@ -514,17 +515,16 @@ Si le code appelle `FinishTransaction` sur la file d’attente de paiement avant
 
 Les instructions de sauvegarde iCloud d’Apple suggèrent que le contenu non-utilisateur facile à restaurer à partir d’un serveur ne doit *pas* être sauvegardé (car il inutilement d’utiliser le stockage icloud). Pour plus d’informations sur la définition de l’attribut de sauvegarde, consultez la documentation relative au [système de fichiers](~/ios/app-fundamentals/file-system.md) .
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article a introduit deux nouvelles fonctionnalités du kit Store dans iOS6 : l’achat d’iTunes et d’autres contenus à partir de votre application, et l’utilisation du serveur d’Apple pour héberger vos propres achats dans l’application. Cette présentation doit être lue conjointement avec la [documentation de l’achat dans l’application](~/ios/platform/in-app-purchasing/index.md) existante pour une couverture complète de l’implémentation de la fonctionnalité du kit de magasin.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [StoreKit (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/storekit)
 - [Achats dans l’application](~/ios/platform/in-app-purchasing/index.md)
 - [Référence du Framework StoreKit](https://developer.apple.com/library/prerelease/ios/#documentation/StoreKit/Reference/StoreKit_Collection/_index.html)
 - [Référence de la classe SKStoreProductViewController](https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKITunesProductViewController_Ref/SKStoreProductViewController.html)
-- [Référence de l’API recherche iTunes](https://www.apple.com/itunes/affiliates/resources/documentation/itunes-store-web-service-search-api.html)
 - [SKDownload](https://developer.apple.com/library/prerelease/ios/#documentation/StoreKit/Reference/SKDownload_Ref/Introduction/Introduction.html)
 - [SKPaymentQueue](https://developer.apple.com/library/prerelease/ios/documentation/StoreKit/Reference/SKPaymentQueue_Class/Reference/Reference.html#/apple_ref/occ/instm/SKPaymentQueue/cancelDownloads:)
 - [SKProduct](https://developer.apple.com/library/prerelease/ios/documentation/StoreKit/Reference/SKProduct_Reference/Reference/Reference.html#/apple_ref/occ/instp/SKProduct/downloadable)

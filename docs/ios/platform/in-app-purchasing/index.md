@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 1efb8df4bac307d0e73da6bcbf645077cb63c839
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 5aabaadfb1781f9f1622abf5687252b16b327d34
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032353"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78292813"
 ---
 # <a name="in-app-purchasing-in-xamarinios"></a>Achats dans l’application dans Xamarin. iOS
 
@@ -28,11 +28,11 @@ Le fait de fournir des fonctionnalités d’achat dans une application nécessit
 
 Ce document explique comment effectuer toutes ces étapes pour fournir des achats dans l’application à l’aide de Xamarin. iOS.
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Spécifications
 
 Pour prendre en charge l’achat dans l’application, vous devez utiliser Xamarin. iOS 5,0 ou une version ultérieure avec Xcode 7 et versions ultérieures.
 
-## <a name="contents"></a>Contenu
+## <a name="contents"></a>Contents
 
 - [Principes de base et configuration de l’achat dans l’application](~/ios/platform/in-app-purchasing/in-app-purchase-basics-and-configuration.md)
 
@@ -46,7 +46,7 @@ Pour prendre en charge l’achat dans l’application, vous devez utiliser Xamar
 
 - [Abonnements et création de rapports](~/ios/platform/in-app-purchasing/subscriptions-and-reporting.md)
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article a introduit le concept d’achats dans l’application, a expliqué comment configurer votre application pour en tirer parti et présenté des exemples à l’aide de Xamarin. iOS. Il a abordé les sujets suivants :
 
@@ -56,7 +56,7 @@ Cet article a introduit le concept d’achats dans l’application, a expliqué 
 - **Codage de votre application pour l’achat** – exemples de création d’un achat dans l’application dans une application Xamarin. iOS.
 - **Création de rapports** : vue d’ensemble des statistiques disponibles via iTunes Connect.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [InAppPurchaseSample](https://docs.microsoft.com/samples/xamarin/ios-samples/storekit/)
 - [Dans le Guide de programmation de l’achat d’applications](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/StoreKitGuide/Introduction.html)
@@ -65,7 +65,6 @@ Cet article a introduit le concept d’achats dans l’application, a expliqué 
 - [Identificateurs de produit d’achat dans l’application Q & A](https://developer.apple.com/library/ios/#qa/qa1329/_index.html)
 - [Note technique sur l’achat dans l’application](https://developer.apple.com/library/ios/#technotes/tn2259/_index.html)
 - [Votre première soumission App Store](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html)
-- [Centre de ressources de l’App Store](https://developer.apple.com/appstore/index.html)
 - [Conseils pour la soumission à l’App Store](https://developer.apple.com/appstore/resources/submission/tips.html)
 - [Recommandations pour l’évaluation dans l’App Store](https://developer.apple.com/appstore/resources/approval/guidelines.html)
 - [Gestion de vos applications](https://developer.apple.com/appstore/resources/managing/index.html)

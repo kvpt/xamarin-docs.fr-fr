@@ -6,12 +6,12 @@ ms.assetid: 1F4A1BE1-7205-43F4-89D0-6C8672F52598
 author: davidortinau
 ms.author: daortin
 ms.date: 10/11/2017
-ms.openlocfilehash: 2f1fb3706012fa86834986064a366071b644b2dc
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: f60be3f7dc14749f5cd58d5228c17fa85282cd78
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73015951"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78291629"
 ---
 # <a name="objective-sharpie-release-history"></a>Historique des versions objectivie
 
@@ -58,11 +58,9 @@ ms.locfileid: "73015951"
 
 ## <a name="216-march-17-2015"></a>2.1.6 (17 mars, 2015)
 
-[Télécharger v 2.1.6](https://download.xamarin.com/objective-sharpie/ObjectiveSharpie-2.1.6.pkg)
-
 * Liaison d’expression d’opérateur binaire fixe : la partie gauche de l’expression n’a pas été correctement remplacée par la droite (par exemple, `1 << 0` n’a pas été correctement liée en tant que `0 << 1`). Merci à Adam Kemp de noter cela !
 * Correction d’un problème avec `NSInteger` et `NSUInteger` lié en tant que `int` et `uint` au lieu de `nint` et `nuint` sur i386 ; `-DNS_BUILD_32_LIKE_64` est maintenant transmis à Clang pour que l’analyse `objc/NSObjCRuntime.h` fonctionner comme prévu sur i386.
-* L’architecture par défaut des kits de développement logiciel (SDK) Mac OS X (par exemple, `-sdk macosx10.10`) est maintenant x86_64 au lieu de i386. par conséquent, `-arch` peut être omis, sauf si vous souhaitez remplacer la valeur par défaut.
+* L’architecture par défaut des kits de développement logiciel (SDK) Mac OS X (par exemple, `-sdk macosx10.10`) est désormais x86_64 à la place de i386. par conséquent, `-arch` peut être omis, sauf si vous souhaitez remplacer la valeur par défaut.
 
 ## <a name="210-march-15-2015"></a>2.1.0 (15 mars, 2015)
 

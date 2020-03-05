@@ -6,19 +6,19 @@ ms.assetid: 5F0CEC18-5EF6-4A99-9DCF-1A3B57EA157C
 author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: 372a51ba204b3b87d1bb3917b26c0ffb8acfceb6
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 8402a48602dd94578e688faeb038aec69684e7d4
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73015138"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "78291574"
 ---
 # <a name="unified-api-overview"></a>Présentation de API unifiée
 
 Le API unifiée de Xamarin permet de partager du code entre Mac et iOS et de prendre en charge les applications 32 et 64 bits avec le même binaire. La API unifiée est utilisée par défaut dans les nouveaux projets Xamarin. iOS et Xamarin. Mac.
 
 > [!IMPORTANT]
-> Le API classique Xamarin, qui précédait le API unifiée, est déconseillé. 
+> Le API classique Xamarin, qui précédait le API unifiée, est déconseillé.
 >
 > - La dernière version de Xamarin. iOS pour la prise en charge de l’API classique (unitouch. dll) était Xamarin. iOS 9,10.
 > - Xamarin. Mac prend toujours en charge le API classique, mais il n’est plus mis à jour. Étant donné qu’il est déconseillé, les développeurs doivent déplacer leurs applications vers le API unifiée.
@@ -33,7 +33,7 @@ Suivez les instructions pertinentes pour votre plateforme :
 - [Mettre à jour des applications Xamarin.Forms existantes](updating-xamarin-forms-apps.md)
 - [Migrer une liaison vers l’API unifiée](update-binding.md)
 
-## <a name="tips-for-updating-code-to-the-unified-apiupdating-tipsmd"></a>[Conseils pour la mise à jour du code vers l’API unifiée](updating-tips.md)
+## <a name="tips-for-updating-code-to-the-unified-api"></a>[Conseils pour la mise à jour du code vers l’API unifiée](updating-tips.md)
 
 Quelles que soient les applications que vous migrez, consultez [ces conseils](updating-tips.md) pour vous aider à mettre à jour avec succès la API unifiée.
 
@@ -44,7 +44,7 @@ Quelles que soient les applications que vous migrez, consultez [ces conseils](up
 - **API classique :** Limité à 32 bits (uniquement) et exposés dans les assemblys `monotouch.dll` et `XamMac.dll`.
 - **API unifiée :** Prenez en charge le développement 32 et 64 bits avec une seule API disponible dans les assemblys `Xamarin.iOS.dll` et `Xamarin.Mac.dll`.
 
-Cela signifie que pour les développeurs d’entreprise (ne ciblant pas l’App Store), vous pouvez continuer à utiliser les API classiques existantes, car nous allons toujours les conserver à jour, ou vous pouvez effectuer une mise à niveau vers les nouvelles API.
+Cela signifie que pour les développeurs d’entreprise (ne ciblant pas l’App Store), vous pouvez continuer à utiliser les API classiques existantes, car nous allons toujours les maintenir à l’infini, ou vous pouvez effectuer une mise à niveau vers les nouvelles API.
 
 <a name="namespace-changes" />
 
@@ -98,7 +98,7 @@ Les packages NuGet qui ont précédemment pris en charge Xamarin. iOS via le API
 Le API unifiée introduit un nouvel identificateur de plateforme pour les packages compatibles- **Xamarin. iOS10**. Les packages NuGet existants devront être mis à jour pour ajouter la prise en charge de cette plateforme, en générant des API unifiée.
 
 > [!IMPORTANT]
-> Si vous avez une erreur au format _« l’erreur 3 ne peut pas inclure à la fois «MonoTouch. dll » et « Xamarin. iOS. dll » dans le même projet Xamarin. iOS-« Xamarin. iOS. dll » est référencé explicitement, tandis que « unitouch. dll » est référencé par «xxx, version = 0.0.000, culture = neutral, PublicKeyToken = null'»_ après la conversion de votre application en API unifiées, il est généralement nécessaire de disposer d’un composant ou d’un package NuGet dans le projet qui n’a pas été mis à jour vers l’API unifiée. Vous devez supprimer le composant/NuGet existant, effectuer une mise à jour vers une version qui prend en charge les API unifiées et effectuer une génération propre.
+> Si vous avez une erreur au format _« l’erreur 3 ne peut pas inclure à la fois «MonoTouch. dll » et « Xamarin. iOS. dll » dans le même Xamarin. le projet IOS-'Xamarin. iOS. dll’est référencé de manière explicite, tandis que’unitouch. dll’est référencé par’xxx, version = 0.0.000, culture = neutral, PublicKeyToken = null' "_ après la conversion de votre application en API unifiées, cela est généralement dû au fait que le projet n’a pas été mis à jour avec le API unifiée. Vous devez supprimer le composant/NuGet existant, effectuer une mise à jour vers une version qui prend en charge les API unifiées et effectuer une génération propre.
 
 ### <a name="the-road-to-64-bits"></a>La route à 64 bits
 
@@ -134,7 +134,7 @@ if (IntPtr.Size == 4) {
 
 ### <a name="arrays-and-systemcollectionsgeneric"></a>Tableaux et System. Collections. Generic
 
-Étant C# donné que les indexeurs attendent un type de `int`, vous devez convertir explicitement `nint` valeurs en `int` pour accéder aux éléments d’une collection ou d’un tableau. Exemple :
+Étant C# donné que les indexeurs attendent un type de `int`, vous devez convertir explicitement `nint` valeurs en `int` pour accéder aux éléments d’une collection ou d’un tableau. Par exemple :
 
 ```csharp
 public List<string> Names = new List<string>();
@@ -246,7 +246,7 @@ Dans le modèle **classique** , certaines API Async retournent `Task<bool>`. Tou
 
 Dans certains cas, certaines constantes devaient être modifiées de `string` à `NSString`, par exemple `UITableViewCell`
 
-**Classic**
+**Classique**
 
 ```csharp
 public virtual string ReuseIdentifier { get; }
@@ -268,7 +268,7 @@ Le monocontact d’origine n’offrait pas de prise en charge complète des prot
 
 Ces limitations ont été supprimées et nettoyées sur les API unifiées. La plupart des modifications se présentent comme suit :
 
-**Classic**
+**Classique**
 
 ```csharp
 public virtual AVAssetResourceLoaderDelegate Delegate { get; }
@@ -284,7 +284,7 @@ Le préfixe `I` signifie que l’interface **unifiée** expose une interface, au
 
 Il permettait également à certaines API d’être plus précises et faciles à utiliser, par exemple :
 
-**Classic**
+**Classique**
 
 ```csharp
 public virtual void SelectionDidChange (NSObject uiTextInput);
@@ -311,13 +311,8 @@ Impact faible : dans la plupart des cas, cette modification n’affecte pas les
 
 Les modifications supplémentaires à connaître sont répertoriées dans les [conseils pour la mise à jour des applications vers le API unifiée](~/cross-platform/macios/unified/updating-tips.md).
 
-## <a name="sample-code"></a>Exemple de code
 
-Depuis le 31 juillet, nous avons publié des ports des exemples iOS sur cette nouvelle API sur la branche `magic-types`, à l’adresse [Hypertouch-Samples](https://github.com/xamarin/monotouch-samples/commits/magic-types).
-
-Pour Mac, nous vérifions des exemples dans le référentiel [Mac-Samples](https://github.com/xamarin/mac-samples) (qui montre les nouvelles API dans Mavericks/Yosemite) ainsi que des exemples de 32/64 bits dans la branche de types magiques [Mac-Samples](https://github.com/xamarin/monotouch-samples/commits/magic-types).
-
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Mise à jour des applications iOS](updating-ios-apps.md)
 - [Mise à jour des applications Mac](updating-mac-apps.md)

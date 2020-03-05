@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 05/30/2018
-ms.openlocfilehash: d48767ea29c5f610e02fade20ae92c5e085cc9be
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 24c70c2e869f59091a1519af6d1165dbea9cc467
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73026959"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78291572"
 ---
 # <a name="which-android-sdk-packages-should-i-install"></a>Quels packages Android SDK installer ?
 
@@ -28,7 +28,7 @@ Installez les outils les plus récents à partir du dossier Tools du gestionnair
 
 ## <a name="android-platforms"></a>Plateforme (s) Android
 
-Installez la « plateforme SDK » pour les versions Android que vous avez définies au minimum & cible. 
+Installez la « plateforme SDK » pour les versions Android que vous avez définies au minimum & cible.
 
 Exemples :
 
@@ -46,8 +46,5 @@ Vous devez installer les plateformes du kit de développement logiciel pour les 
 
 Ces derniers sont requis uniquement si vous souhaitez utiliser les émulateurs Android prêts à l’emploi de Google. Pour plus d’informations, consultez [configuration de émulateur Android](~/android/get-started/installation/android-emulator/index.md)
 
-## <a name="extras"></a>Suppléments
+## <a name="extras"></a>Extras
 Les Android SDK supplémentaires ne sont généralement pas requis. Toutefois, il est utile de les connaître, car ils peuvent être nécessaires en fonction de votre cas d’utilisation.
-
-## <a name="further-reading"></a>informations supplémentaires
-Le guide suivant présente ces options et décrit plus en détail les différents packages que le gestionnaire du kit de développement logiciel (SDK) est disponible : [Guide d’installation de Android SDK Manager](http://www.themethodology.net/2015/02/android-sdk-manager-setup-for.html?m=1)

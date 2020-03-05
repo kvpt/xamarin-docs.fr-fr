@@ -6,13 +6,13 @@ ms.assetid: 92D7B618-07FA-4343-9D0F-212525E92C39
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/14/2019
-ms.openlocfilehash: ce0e0b63206ab918b5d761be3e619370aec1eec7
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.date: 01/28/2020
+ms.openlocfilehash: 735a572f4aadfc224e545e371525b96f29c9552e
+ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75489750"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "78292572"
 ---
 # <a name="xamarinforms-carouselview-scrolling"></a>Xamarin. Forms CarouselView défilement
 
@@ -132,7 +132,7 @@ Cet exemple de code entraîne le défilement minimal requis pour faire défiler 
 > [!NOTE]
 > Le membre [`ScrollToPosition.MakeVisible`](xref:Xamarin.Forms.ScrollToPosition) est utilisé par défaut, si l’argument `position` n’est pas spécifié lors de l’appel de la méthode `ScrollTo`.
 
-### <a name="start"></a>Début
+### <a name="start"></a>Démarrer
 
 Le membre [`ScrollToPosition.Start`](xref:Xamarin.Forms.ScrollToPosition) indique que l’élément doit défiler jusqu’au début de la vue :
 
@@ -152,7 +152,7 @@ carouselViewView.ScrollTo(monkey, position: ScrollToPosition.Center);
 
 Cet exemple de code entraîne le défilement de l’élément au centre de la vue.
 
-### <a name="end"></a>Fin
+### <a name="end"></a>End
 
 Le membre [`ScrollToPosition.End`](xref:Xamarin.Forms.ScrollToPosition) indique que l’élément doit défiler jusqu’à la fin de la vue :
 
@@ -195,7 +195,7 @@ CarouselView carouselView = new CarouselView
 - [`Always`](xref:Xamarin.Forms.ScrollBarVisibility) indique que les barres de défilement sont visibles, même lorsque le contenu s’ajuste à la vue.
 - [`Never`](xref:Xamarin.Forms.ScrollBarVisibility) indique que les barres de défilement ne sont pas visibles, même si le contenu ne tient pas dans la vue.
 
-## <a name="snap-points"></a>Points d’ancrage
+## <a name="snap-points"></a>Points d’alignement
 
 Lorsqu’un utilisateur effectue un balayage pour lancer un défilement, la position de fin du défilement peut être contrôlée afin que les éléments soient entièrement affichés. Cette fonctionnalité est appelée alignement, car les éléments sont alignés à la position lorsque le défilement s’arrête et sont contrôlés par les propriétés suivantes de la classe [`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout) :
 
@@ -217,6 +217,10 @@ L’énumération [`SnapPointsType`](xref:Xamarin.Forms.SnapPointsType) définit
 
 Par défaut, sur un [`CarouselView`](xref:Xamarin.Forms.CarouselView), la propriété [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType) a la valeur `SnapPointsType.MandatorySingle`, ce qui garantit que le défilement ne fait que faire défiler un élément à la fois.
 
+Les captures d’écran suivantes montrent une [`CarouselView`](xref:Xamarin.Forms.CarouselView) avec alignement désactivé :
+
+[![Capture d’écran d’un CarouselView sans points d’alignement, sur iOS et Android](scrolling-images/snappoints-none.png "CarouselView sans points d’alignement")](scrolling-images/snappoints-none-large.png#lightbox "CarouselView sans points d’alignement")
+
 ### <a name="snap-points-alignment"></a>Alignement des points d’alignement
 
 L’énumération [`SnapPointsAlignment`](xref:Xamarin.Forms.SnapPointsAlignment) définit les membres `Start`, `Center`et `End`.
@@ -224,7 +228,7 @@ L’énumération [`SnapPointsAlignment`](xref:Xamarin.Forms.SnapPointsAlignment
 > [!IMPORTANT]
 > La valeur de la propriété [`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment) est respectée uniquement lorsque la propriété [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType) a la valeur `Mandatory`ou `MandatorySingle`.
 
-#### <a name="start"></a>Début
+#### <a name="start"></a>Démarrer
 
 Le membre de `SnapPointsAlignment.Start` indique que les points d’ancrage sont alignés sur le bord de tête des éléments. L’exemple de code XAML suivant montre comment définir ce membre de l’énumération :
 
@@ -254,7 +258,9 @@ CarouselView carouselView = new CarouselView
 };
 ```
 
-Lorsqu’un utilisateur fait défiler pour lancer un défilement dans un [`CarouselView`](xref:Xamarin.Forms.CarouselView)horizontalement, l’élément de gauche est aligné sur la gauche de la vue.
+Lorsqu’un utilisateur fait défiler pour lancer un défilement dans un [`CarouselView`](xref:Xamarin.Forms.CarouselView)horizontalement, l’élément de gauche est aligné sur la gauche de la vue :
+
+[![Capture d’écran d’un CarouselView avec points d’ancrage de début, sur iOS et Android](scrolling-images/snappoints-start.png "CarouselView avec points d’ancrage de début")](scrolling-images/snappoints-start-large.png#lightbox "CarouselView avec points d’ancrage de début")
 
 #### <a name="center"></a>Center
 
@@ -288,9 +294,11 @@ CarouselView carouselView = new CarouselView
 };
 ```
 
-Lorsqu’un utilisateur fait défiler pour lancer un défilement dans un [`CarouselView`](xref:Xamarin.Forms.CarouselView)horizontalement, l’élément central est aligné sur le centre de la vue.
+Lorsqu’un utilisateur fait défiler pour lancer un défilement dans un [`CarouselView`](xref:Xamarin.Forms.CarouselView)horizontalement, l’élément central est aligné sur le centre de la vue :
 
-#### <a name="end"></a>Fin
+[![Capture d’écran d’un CarouselView avec points d’ancrage centraux, sur iOS et Android](scrolling-images/snappoints-center.png "CarouselView avec points d’ancrage centraux")](scrolling-images/snappoints-center-large.png#lightbox "CarouselView avec points d’ancrage centraux")
+
+#### <a name="end"></a>End
 
 Le membre de `SnapPointsAlignment.End` indique que les points d’ancrage sont alignés sur le bord de fin des éléments. L’exemple de code XAML suivant montre comment définir ce membre de l’énumération :
 
@@ -321,6 +329,8 @@ CarouselView carouselView = new CarouselView
 ```
 
 Lorsqu’un utilisateur fait défiler pour lancer un défilement dans un [`CarouselView`](xref:Xamarin.Forms.CarouselView)horizontalement, l’élément de droite est aligné sur la droite de la vue.
+
+[![Capture d’écran d’un CarouselView avec des points d’ancrage de fin, sur iOS et Android](scrolling-images/snappoints-end.png "CarouselView avec points d’ancrage de fin")](scrolling-images/snappoints-end-large.png#lightbox "CarouselView avec points d’ancrage de fin")
 
 ## <a name="related-links"></a>Liens connexes
 

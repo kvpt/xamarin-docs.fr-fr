@@ -6,16 +6,16 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 09/09/2018
-ms.openlocfilehash: 8f732e05565c420ef28da38c0da0e61ecd595313
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 3bfa3bbde68fab95d729cc8a558d4eb3baf7b4fa
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73025027"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "78292721"
 ---
 # <a name="fonts"></a>Polices
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d’ensemble
 
 À partir du niveau d’API 26, le Android SDK permet de traiter les polices comme des ressources, tout comme une disposition ou un drawables. La [bibliothèque de prise en charge Android 26 NuGet](https://www.nuget.org/packages/Xamarin.Android.Support.Compat/26.1.0.1) rétroporter les nouvelles API de police pour les applications qui ciblent le niveau d’API 14 ou supérieur.
 
@@ -338,11 +338,11 @@ fontHelper.FontDownloaded += (object sender, FontDownloadEventArg e) =>
 fontHelper.DownloadFonts(this); // this is an Android Context instance.
 ```
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Ce guide a présenté les nouvelles API d’Android 8,0 pour prendre en charge les polices et les polices téléchargeables en tant que ressources. Il a expliqué comment incorporer des polices existantes dans un APK et comment les utiliser dans une disposition. Elle a également expliqué comment Android 8,0 prend en charge le téléchargement des polices d’un fournisseur de polices, par programmation ou en déclarant les métadonnées de police dans les fichiers de ressources.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Famille](https://developer.android.com/reference/android/widget/TextView.html#attr_android:fontFamily)
 - [FontConfig](https://developer.android.com/reference/android/text/FontConfig.html)

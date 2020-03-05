@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 01/23/2017
-ms.openlocfilehash: 7aac9a3e2a86f5cdcfa2d6ab27961dd83998bb0f
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: edf5f1c82857930a2647f306195a4c82f4338db6
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73009358"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78291508"
 ---
 # <a name="handling-touch-in-xamarinios-apps"></a>Gestion des fonctions tactiles dans les applications Xamarin. iOS
 
@@ -30,15 +30,14 @@ Toutefois, il peut arriver que vous deviez utiliser le traitement tactile de bas
 
 - [Touch dans iOS](touch-in-ios.md)
 - [Procédure pas à pas : Utilisation de Touch dans iOS](ios-touch-walkthrough.md)
-- [Suivi multipoint](touch-tracking.md)
+- [Suivi tactile multipoint](touch-tracking.md)
 
 Ce guide fait office d’introduction à Touch dans iOS. Pour plus d’informations sur l’utilisation de la fonction tactile 3D et des commentaires haptique dans iOS, qui ont été introduits dans iOS 9 et 10, consultez les guides spécifiques ci-dessous :
 
 - [3D Touch](~/ios/platform/3d-touch.md)
 - [Activation du retour haptique](~/ios/user-interface/ios-ui/haptic-feedback.md)
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
-- [Démarrage tactile iOS (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-touch-start)
 - [iOS Touch final (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-touch-final)
 - [FingerPaint (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-fingerpaint)

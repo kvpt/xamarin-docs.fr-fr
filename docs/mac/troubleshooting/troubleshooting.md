@@ -8,16 +8,16 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 7bb17abf8cdb943780bb3939aae8e461925b6517
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 8714297c4948dbb65c521d6a32bac3e437b40733
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73001606"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78291512"
 ---
 # <a name="xamarinmac-troubleshooting-tips"></a>Conseils de dépannage de Xamarin. Mac
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d’ensemble
 
 Parfois, nous sommes tous bloqués lors de l’utilisation d’un projet, soit sur l’impossibilité d’obtenir une API pour travailler comme je le souhaite, soit pour tenter de contourner un bogue. Notre objectif de Xamarin est de vous permettre de réussir à écrire vos applications mobiles et de bureau, et nous avons fourni des ressources pour vous aider.
 
@@ -68,7 +68,7 @@ Les sections suivantes couvrent les problèmes connus et leurs solutions.
 
 ### <a name="unable-to-connect-to-the-debugger-in-sandboxed-apps"></a>Impossible de se connecter au débogueur dans les applications bac à sable (sandbox)
 
-Le débogueur se connecte aux applications Xamarin. Mac via TCP, ce qui signifie que par défaut, lorsque vous activez le sandboxing, il ne peut pas se connecter à l’application. par conséquent, si vous essayez d’exécuter l’application sans que les autorisations appropriées soient activées, vous recevez un message d’erreur *« Impossible de se connecter au débogueur ».* .
+Le débogueur se connecte aux applications Xamarin. Mac via TCP, ce qui signifie que par défaut, lorsque vous activez le sandboxing, il ne peut pas se connecter à l’application. par conséquent, si vous essayez d’exécuter l’application sans que les autorisations appropriées soient activées, vous recevez une erreur *« Impossible de se connecter au débogueur »* .
 
 [![Modification des droits](troubleshooting-images/debug01.png "Modification des droits")](troubleshooting-images/debug01-large.png#lightbox)
 
@@ -112,13 +112,13 @@ Entrez `Entitlements` pour le nom et cliquez sur le bouton **nouveau** . Si votr
 
 ## <a name="community-support-on-the-forums"></a>Support de la communauté sur les forums
 
-La communauté de développeurs utilisant des produits Xamarin est incroyable et de nombreux visitent nos [Forums Xamarin. Mac](https://forums.xamarin.com/categories/mac) pour partager des expériences et leur expertise. En outre, les ingénieurs Xamarin consultent régulièrement le Forum pour vous aider.
+La communauté de développeurs utilisant des produits Xamarin est incroyable et de nombreux visitent nos [Forums Xamarin. Mac](https://forums.xamarin.com/categories/xamarin-mac) pour partager des expériences et leur expertise. En outre, les ingénieurs Xamarin consultent régulièrement le Forum pour vous aider.
 
 <a name="filing-a-bug"/>
 
 ## <a name="filing-a-bug"></a>Enregistrement d’un bogue
 
-Vos commentaires sont importants pour nous. Si vous rencontrez des problèmes avec Xamarin. Mac :
+Vos commentaires sont très importants pour nous. Si vous rencontrez des problèmes avec Xamarin. Mac :
 
 - Recherchez dans le [dépôt des problèmes](https://github.com/xamarin/xamarin-macios/issues)
 - Avant de devenir des problèmes GitHub, les problèmes Xamarin étaient suivis sur [Bugzilla](https://bugzilla.xamarin.com/describecomponents.cgi). Recherchez-y des problèmes correspondants.

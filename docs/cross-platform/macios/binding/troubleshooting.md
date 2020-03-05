@@ -6,12 +6,12 @@ ms.assetid: 7C65A55C-71FA-46C5-A1B4-955B82559844
 author: davidortinau
 ms.author: daortin
 ms.date: 10/19/2016
-ms.openlocfilehash: fe4b9ade9e6e462c3472a8bb3bb8750ed6cac326
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 8194c369aa0e4f8bb17a1a162354b4f72c6aaa41
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73015890"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78291976"
 ---
 # <a name="binding-troubleshooting"></a>Résolution des problèmes de liaison
 
@@ -42,17 +42,17 @@ Si vous rencontrez un cas où le passage de `null` lève une `ArgumentNullExcept
 
 ## <a name="reporting-bugs"></a>Signalement des bogues
 
-Vos commentaires sont importants pour nous. Si vous rencontrez des problèmes avec Xamarin. Mac :
+Vos commentaires sont très importants pour nous. Si vous rencontrez des problèmes avec Xamarin. Mac :
 
-- Consultez les [forums Xamarin.Mac](https://forums.xamarin.com/categories/mac)
-- Recherchez dans le [dépôt des problèmes](https://github.com/xamarin/xamarin-macios/issues) 
+- Consultez les [forums Xamarin.Mac](https://forums.xamarin.com/categories/xamarin-mac)
+- Recherchez dans le [dépôt des problèmes](https://github.com/xamarin/xamarin-macios/issues)
 - Avant de devenir des problèmes GitHub, les problèmes Xamarin étaient suivis sur [Bugzilla](https://bugzilla.xamarin.com/describecomponents.cgi). Recherchez-y des problèmes correspondants.
 - Si vous ne trouvez pas de problème correspondant, ouvrez un nouveau problème dans le [dépôt de problèmes GitHub](https://github.com/xamarin/xamarin-macios/issues/new).
 
-Les problèmes GitHub sont tous publics. Il n’est pas possible de masquer des commentaires ou des pièces jointes. 
+Les problèmes GitHub sont tous publics. Il n’est pas possible de masquer des commentaires ou des pièces jointes.
 
 Dans la mesure du possible, essayez d’inclure :
 
-- Un exemple simple reproduisant le problème. Si vous pouvez en fournir un, c’est **inestimable**. 
+- Un exemple simple reproduisant le problème. Si vous pouvez en fournir un, c’est **inestimable**.
 - La trace de pile complète du plantage.
 - Le code C# se rapportant au plantage.

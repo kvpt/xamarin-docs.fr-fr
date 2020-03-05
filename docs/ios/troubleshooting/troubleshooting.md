@@ -8,14 +8,14 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/22/2018
-ms.openlocfilehash: 21b1f0c29962b7aeb45a836c976ec2635a39622e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 716999002cf90b50b90f4924adc11555cc43717f
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030880"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78291978"
 ---
-# <a name="troubleshooting-tips-for-xamarinios"></a>Conseils de dépannage pour Xamarin. iOS 
+# <a name="troubleshooting-tips-for-xamarinios"></a>Conseils de dépannage pour Xamarin. iOS
 
 ## <a name="xamarinios-cannot-resolve-systemvaluetuple"></a>Xamarin. iOS ne peut pas résoudre System. ValueTuple
 
@@ -124,11 +124,11 @@ Les fichiers de concepteur sont générés à l’aide des paramètres d’espac
 
 Les paramètres d’espace de noms se trouvent dans la boîte de dialogue Options du projet. L’espace de noms par défaut se trouve dans la section **général-> paramètres principaux** . Si elle est vide, le nom de votre projet est utilisé comme valeur par défaut. Vous trouverez des paramètres d’espace de noms plus avancés dans la section **code source-> les stratégies de nommage .net** .
 
-## <a name="warning-for-actions-the-private-method-foo-is-never-used-cs0169"></a>Avertissement pour les actions : la méthode privée’foo’n’est jamais utilisée. CS0169
+## <a name="warning-for-actions-the-private-method-foo-is-never-used-cs0169"></a>Avertissement pour les actions : la méthode privée’foo’n’est jamais utilisée. (CS0169)
 
 Les actions des fichiers d’interface Builder sont connectées aux widgets par réflexion au moment de l’exécution, ce qui signifie que cet avertissement est attendu.
 
-Vous pouvez utiliser « #pragma warning Disable 0169 » #pragma warning Enable 0169» autour de vos actions si vous souhaitez supprimer cet avertissement uniquement pour ces méthodes, ou ajouter 0169 au champ « ignorer les avertissements » dans les options du compilateur si vous souhaitez le désactiver pour l’ensemble de votre projet (et non pas recommandé).
+Vous pouvez utiliser « #pragma warning Disable 0169 » #pragma warning Enable 0169» autour de vos actions si vous souhaitez supprimer cet avertissement uniquement pour ces méthodes, ou ajouter 0169 au champ « ignorer les avertissements » dans les options du compilateur si vous souhaitez le désactiver pour l’ensemble de votre projet (non recommandé).
 
 ## <a name="mtouch-failed-with-the-following-message-cannot-open-assembly-pathtoyourprojectexe"></a>échec de mTouch avec le message suivant : impossible d’ouvrir l’assembly'/path/to/yourproject.exe'
 
@@ -186,7 +186,7 @@ Stacktrace:
 
 Cela signifie que vous liez une bibliothèque statique compilée avec du code Thumb dans votre projet. Depuis la version 3,1 du kit de développement logiciel (SDK) iPhone (ou une version ultérieure au moment de la rédaction de cet article), Apple a introduit un bogue dans son éditeur de liens lors de la liaison de code non-Thumb (Xamarin. iOS) avec du code Thumb (votre bibliothèque statique). Vous devrez établir un lien avec une version non-Thumb de votre bibliothèque statique pour atténuer ce problème.
 
-## <a name="systemexecutionengineexception-attempting-to-jit-compile-method-wrapper-managed-to-managed-foosystemcollectionsgenericicollection1get_count-"></a>System. ExecutionEngineException : tentative d’une méthode de compilation JIT (wrapper managé à managé) foo [] : System. Collections. Generic. ICollection'1. get_Count ()
+## <a name="systemexecutionengineexception-attempting-to-jit-compile-method-wrapper-managed-to-managed-foosystemcollectionsgenericicollection1get_count-"></a>System. ExecutionEngineException : tentative de compilation de la méthode JIT (wrapper managé à managé) foo [] : System. Collections. Generic. ICollection' 1. get_Count ()
 
 Le suffixe [] indique que vous ou la bibliothèque de classes appelez une méthode sur un tableau par le biais d’une collection générique, telle que IEnumerable < >, ICollection < > ou IList < >. En guise de solution de contournement, vous pouvez forcer explicitement le compilateur AOA à inclure une telle méthode en appelant la méthode vous-même et en vous assurant que ce code est exécuté avant l’appel qui a déclenché l’exception. Dans ce cas, vous pouvez écrire :
 
@@ -208,7 +208,7 @@ Ce problème est très rare et extrêmement difficile à reproduire. il ne peut 
 1. Essayez de répéter l’étape (1) avec la synchronisation de poutre toujours désactivée.
 1. Si l’éditeur se bloque pendant plus de quelques secondes, essayez d’exécuter « killall-QUIT [Visual Studio pour Mac] » dans un terminal pendant qu’il est bloqué. Il peut être difficile de faire en sorte que la commande kill se produise lorsque l’éditeur est bloqué, mais il est essentiel de le faire, car la commande force mono à écrire des traces de pile de tous les threads dans le journal MD, que nous pouvons utiliser pour découvrir l’état des threads pendant que le XS est suspendu.
 
-Attachez les journaux XS, **~/Library/logs/XamarinStudio-{version}/IDE-{timestamp}.log**, **ANDROIDTOOLS-{timestamp}. log**et **Components-{timestamp}. log** (dans les versions antérieures d’XS/MonoDevelop, envoyez-les simplement **~/Library/logs /MonoDevelop-(3.0 | 2.8 | 2.6)/MonoDevelop.log**).
+Attachez les journaux XS, **~/Library/logs/XamarinStudio-{version}/IDE-{timestamp}.log**, **ANDROIDTOOLS-{timestamp}. log**et **Components-{timestamp}. log** (dans les versions antérieures d’XS/MonoDevelop, envoyez simplement **~/Library/logs/MonoDevelop-(3.0 | 2.8 | 2.6)/MonoDevelop.log**).
 
 > [!NOTE]
 > Le problème ci-dessus a été corrigé dans XS 2,2 final * *
@@ -219,7 +219,7 @@ Pour prendre en charge le débogage, les versions Debug contiennent du code supp
 
 À partir de Xamarin. iOS 1,3, les versions de débogage comprenaient la prise en charge du débogage pour chaque composant unique de mono (chaque méthode dans chaque classe des frameworks).  
 
-Avec Xamarin. iOS 1,4, nous allons introduire une méthode plus fine pour le débogage, la valeur par défaut est de fournir uniquement l’instrumentation de débogage pour votre code et vos bibliothèques, et non pas pour tous les [assemblys mono](~/cross-platform/internals/available-assemblies.md) (cela restera possible, mais vous devra choisir de déboguer ces assemblys).
+Avec Xamarin. iOS 1,4, nous allons introduire une méthode plus fine pour le débogage, la valeur par défaut est de fournir uniquement l’instrumentation de débogage pour votre code et vos bibliothèques, et non pas pour tous les [assemblys mono](~/cross-platform/internals/available-assemblies.md) (cela restera possible, mais vous devrez choisir de déboguer ces assemblys).
 
 ## <a name="installation-hangs"></a>Blocages d’installation
 
@@ -287,7 +287,7 @@ Lors du chargement d’une application sur votre appareil, vous pouvez recevoir 
 ## <a name="error-mtouch-failed-with-no-output"></a>Erreur « Échec de mTouch sans sortie »
 
 La version actuelle de Xamarin. iOS et Visual Studio pour Mac échoue lorsque le nom du projet ou le répertoire où la solution ou le projet sont stockés contient des espaces.
-Pour résoudre ce problème :
+Pour résoudre ce problème :
 
 - Assurez-vous que ni votre projet ni le répertoire où il est stocké ne contient un espace.
 - Dans le projet « principaux paramètres », vérifiez que le nom du projet ne contient pas d’espaces.
@@ -368,7 +368,7 @@ Notez également que le menu > **cible du simulateur > iPhone du projet**peut ê
 
 Cela signifie que XCode 4 est installé.   Dans XCode 4, l’outil ibtool a été supprimé, il n’est plus possible de modifier vos fichiers XIB avec un outil autonome.
 
-Si vous souhaitez utiliser Interface Builder, installez la [série Xcode 3](https://connect.apple.com/cgi-bin/WebObjects/MemberSite.woa/wa/getSoftware?bundleID=20792), disponible sur le site Web d’Apple.
+Si vous souhaitez utiliser Interface Builder, installez la série XCode 3, disponible sur le site Web d’Apple.
 
 ## <a name="cant-create-display-binding-for-mime-type-applicationvndapple-interface-builder"></a>« Impossible de créer une liaison d’affichage pour le type MIME : application/vnd. Apple-Interface-Builder »
 
@@ -394,7 +394,7 @@ Si vous obtenez un blocage au moment de l’exécution (SIGSEGV) dans le simulat
 Cela peut se produire lorsque les noms d’application incluent un « . » (point) dans leur nom.
 Cela est interdit en tant que nom d’exécutable dans CFBundleExecutable, même s’il peut fonctionner dans de nombreux autres cas (tels que les appareils).
 
- \* « La valeur ne doit pas inclure d’extension sur le nom ». - [https://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf](https://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf)
+« La valeur ne doit inclure aucune extension sur le nom ».
 
 ## <a name="error-custom-attribute-type-0x43-is-not-supported-when-double-clicking-xib-files"></a>Erreur : « le type d’attribut personnalisé 0x43 n’est pas pris en charge » lorsque vous double-cliquez sur des fichiers. XIB
 

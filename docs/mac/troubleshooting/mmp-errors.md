@@ -8,12 +8,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/27/2018
-ms.openlocfilehash: 32fecaff7f6896c03f3ac094d478fef3338f844d
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b1125ab554bd9c73917c106c7486b742f16e628a
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73025719"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "78292654"
 ---
 # <a name="xamarinmac-error-messages-mmp"></a>Messages d’erreur Xamarin. Mac (MMP)
 
@@ -158,7 +158,7 @@ Xamarin. Mac requiert les fichiers d’en-tête, à partir de la version du kit 
 
 Une autre solution potentielle consiste à activer l’éditeur de liens managé. Cette opération supprime l’API inutilisée, y compris, dans la plupart des cas, la nouvelle API où les fichiers d’en-tête sont manquants (ou incomplets). Toutefois, cela ne fonctionnera pas si votre projet utilise une API qui a été introduite dans un SDK plus récent que celui fourni par Xcode.
 
-Une deuxième solution potentielle, alternative, utilise le Bureau dynamique à la place. Cela entraîne un coût de démarrage en inscrivant dynamiquement les types, mais en supprimant la spécification du fichier d’en-tête. 
+Une deuxième solution potentielle, alternative, utilise le Bureau dynamique à la place. Cela entraîne un coût de démarrage en inscrivant dynamiquement les types, mais en supprimant la spécification du fichier d’en-tête.
 
 Une dernière solution consiste à utiliser une version antérieure de Xamarin. Mac, qui prend en charge le kit de développement logiciel (SDK) dont votre projet a besoin.
 
@@ -210,7 +210,7 @@ L’optimisation spécifiée n’a pas été reconnue.
 
 Le format accepté est `[+|-]optimization-name`, où `optimization-name` est l’une des valeurs indiquées dans le message d’erreur.
 
-Consultez [optimisations de build](https://developer.xamarin.com/guides/cross-platform/macios/build-optimizations) pour obtenir une description complète de chaque optimisation.
+Consultez [optimisations de build](~/cross-platform/macios/optimizations.md) pour obtenir une description complète de chaque optimisation.
 
 <a name="MM0133" />
 
@@ -220,9 +220,9 @@ Consultez [optimisations de build](https://developer.xamarin.com/guides/cross-pl
 
 #### <a name="mm0134-32-bit-applications-should-be-migrated-to-64-bit"></a>MM0134 : les applications 32 bits doivent être migrées vers 64 bits.
 
-Apple a annoncé qu’elle n’autorisera pas les envois de l’App Store macOS des applications 32 bits (à partir du 2018 du 1er janvier). 
+Apple a annoncé qu’elle n’autorisera pas les envois de l’App Store macOS des applications 32 bits (à partir du 2018 du 1er janvier).
 
-En outre, les applications 32 bits ne s’exécutent pas sur la version de macOS après High Sierra « sans compromettre ». 
+En outre, les applications 32 bits ne s’exécutent pas sur la version de macOS après High Sierra « sans compromettre ».
 
 Pour plus d’informations : https://developer.apple.com/news/?id=06282017a
 
@@ -270,7 +270,7 @@ En tant que solution de dernière paille, utilisez une version antérieure de Xa
 
 <a name="MM1406" />
 
-#### <a name="mm1406-target-framework-0-is-invalid-when-targetting-xamarinmac-45-net-framwork"></a>MM1406 : le Framework cible'{0}'n’est pas valide lors du ciblage de Xamarin. Mac 4,5 .NET Framwork.
+#### <a name="mm1406-target-framework-0-is-invalid-when-targeting-xamarinmac-45-net-framwork"></a>MM1406 : le Framework cible'{0}'n’est pas valide lors du ciblage de Xamarin. Mac 4,5 .NET Framwork.
 
 <a name="MM1407" />
 
@@ -570,7 +570,7 @@ Consultez l' [Avertissement mTouch équivalent](~/ios/troubleshooting/mtouch-err
 
 <a name="MM5310" />
 
-#### <a name="mm5310-install_name_tool-failed-with-an-error-code-0-check-build-log-for-details"></a>MM5310 : échec de install_name_tool avec le code d’erreur'{0}'. Pour plus d’informations, consultez le journal de génération.
+#### <a name="mm5310-install_name_tool-failed-with-an-error-code-0-check-build-log-for-details"></a>MM5310 : install_name_tool a échoué avec le code d’erreur «{0}». Pour plus d’informations, consultez le journal de génération.
 
 <a name="MM5311" />
 

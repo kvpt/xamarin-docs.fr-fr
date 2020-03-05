@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 9dd06044ea9c4bf28e785932d316b3222c6cd16b
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 885e5862e517303b4a2556b0b1bd3fa8759bbca6
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73009145"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "78292422"
 ---
 # <a name="touch-events-and-gestures-in-xamarinios"></a>Événements tactiles et mouvements dans Xamarin. iOS
 
@@ -20,7 +20,7 @@ Il est important de comprendre les événements tactiles et les API tactiles dan
 
 ## <a name="enabling-touch"></a>Activation de Touch
 
-Les contrôles de `UIKit` – ceux sous-classées à partir de Uicontrolextensions – sont tellement dépendants de l’interaction de l’utilisateur qu’ils ont des mouvements intégrés à UIKit. par conséquent, il n’est pas nécessaire d’activer Touch. Elle est déjà activée.
+Les contrôles dans `UIKit`, ceux sous-classés à partir de Uicontrolextensions, dépendent de l’interaction de l’utilisateur qu’ils ont des gestes intégrés à UIKit. par conséquent, il n’est pas nécessaire d’activer Touch. Elle est déjà activée.
 
 Toutefois, la plupart des vues de `UIKit` n’ont pas d’option tactile activée par défaut. Il existe deux façons d’activer la fonction tactile sur un contrôle. La première consiste à activer la case à cocher interaction utilisateur activée dans le panneau des propriétés du concepteur iOS, comme illustré dans la capture d’écran suivante :
 

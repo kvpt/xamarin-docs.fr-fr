@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/21/2018
-ms.openlocfilehash: 161da8948f356fef997a411855598bc99d2f49b7
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: d029e679400b9523df8e03d509230849fa0c96c4
+ms.sourcegitcommit: 9ae537efc106f56aeec562773004c6f708704ae9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "69893996"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78292205"
 ---
 # <a name="choose-a-xamarinforms-layout"></a>Choisir une disposition Xamarin. Forms
 
@@ -97,7 +97,7 @@ Le code XAML suivant montre comment créer un [`Grid`](xref:Xamarin.Forms.Grid) 
         <ColumnDefinition />
     </Grid.ColumnDefinitions>    
     <Label Text="Column 0, Row 0"
-           Width="200" />
+           WidthRequest="200" />
     <Label Grid.Column="1"
            Text="Column 1, Row 0" />
     <Label Grid.Row="1"

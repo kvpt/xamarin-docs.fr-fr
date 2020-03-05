@@ -7,26 +7,26 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/04/2019
-ms.openlocfilehash: 47fd6d34a1ef286fa8e1a307ea6033c9c6a9feea
-ms.sourcegitcommit: 211fed94fb96127a3e158ae1ff5d7eb831a203d8
+ms.openlocfilehash: 693dd29e59aee73a206398a8a44cc4f15e385d8d
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75955756"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "78293061"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>Consommation des extensions de balisage XAML
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
 
-Extensions de balisage XAML vous aider à améliorer la puissance et la flexibilité de XAML en autorisant les attributs de l’élément à définir à partir de diverses sources. Plusieurs extensions de balisage XAML font partie de la spécification de XAML 2009. Ceux-ci s’affichent dans les fichiers XAML avec l’usage `x` préfixe d’espace de noms et sont communément par ce préfixe. Cet article aborde les extensions de balisage suivant :
+Extensions de balisage XAML vous aider à améliorer la puissance et la flexibilité de XAML en autorisant les attributs de l’élément à définir à partir de diverses sources. Plusieurs extensions de balisage XAML font partie de la spécification de XAML 2009. Ils s’affichent dans les fichiers XAML avec le préfixe d’espace de noms `x` personnalisé et sont communément désignés par ce préfixe. Cet article aborde les extensions de balisage suivant :
 
-- [`x:Static`](#static) – référencer les propriétés statiques, des champs ou des membres de l’énumération.
-- [`x:Reference`](#reference) – référence nommée d’éléments sur la page.
-- [`x:Type`](#type) – la valeur est un attribut un `System.Type` objet.
-- [`x:Array`](#array) – construire un tableau d’objets d’un type particulier.
-- [`x:Null`](#null) – la valeur est un attribut un `null` valeur.
-- [`OnPlatform`](#onplatform) – personnaliser l’apparence de l’interface utilisateur sur une base par plateforme.
-- [`OnIdiom`](#onidiom) – personnaliser l’apparence de l’interface utilisateur en fonction de l’idiome de l’appareil de l’application est en cours d’exécution.
+- [`x:Static`](#static) : référencer des propriétés statiques, des champs ou des membres d’énumération.
+- [`x:Reference`](#reference) : référencez des éléments nommés sur la page.
+- [`x:Type`](#type) : définissez un attribut sur un objet `System.Type`.
+- [`x:Array`](#array) : construisez un tableau d’objets d’un type particulier.
+- [`x:Null`](#null) : définissez un attribut sur une valeur de `null`.
+- [`OnPlatform`](#onplatform) : personnaliser l’apparence de l’interface utilisateur sur la base de chaque plateforme.
+- [`OnIdiom`](#onidiom) : personnaliser l’apparence de l’interface utilisateur en fonction de l’idiome du périphérique sur lequel l’application s’exécute.
 - [`DataTemplate`](#datatemplate-markup-extension) : convertit un type en [`DataTemplate`](xref:Xamarin.Forms.DataTemplate).
 - [`FontImage`](#fontimage-markup-extension) : Affichez une icône de police dans n’importe quelle vue pouvant afficher une `ImageSource`.
 
@@ -38,15 +38,15 @@ Les extensions de balisage XAML supplémentaires ont toujours été pris en char
 - `TemplateBinding` : effectue une liaison de données à partir d’un modèle de contrôle, comme indiqué dans l’article [**modèles de contrôle Xamarin. Forms**](~/xamarin-forms/app-fundamentals/templates/control-template.md).
 - `RelativeSource` : définit la source de liaison par rapport à la position de la cible de liaison, comme indiqué dans les [liaisons relatives](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md)de l’article.
 
-Le [ `RelativeLayout` ](xref:Xamarin.Forms.RelativeLayout) mise en page utilise l’extension de balisage personnalisée [ `ConstraintExpression` ](xref:Xamarin.Forms.ConstraintExpression). Cette extension de balisage est décrite dans l’article [ **RelativeLayout**](~/xamarin-forms/user-interface/layouts/relative-layout.md).
+La disposition [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) utilise l’extension de balisage personnalisée [`ConstraintExpression`](xref:Xamarin.Forms.ConstraintExpression). Cette extension de balisage est décrite dans l’article [**RelativeLayout**](~/xamarin-forms/user-interface/layouts/relative-layout.md).
 
 <a name="static" />
 
 ## <a name="xstatic-markup-extension"></a>x:Static (extension de balisage)
 
-Le `x:Static` extension de balisage est prise en charge par le [ `StaticExtension` ](xref:Xamarin.Forms.Xaml.StaticExtension) classe. La classe a une propriété unique nommée [ `Member` ](xref:Xamarin.Forms.Xaml.StaticExtension.Member) de type `string` que vous définissez pour le nom d’une constante publique, une propriété statique, champ statique ou membre d’énumération.
+L’extension de balisage `x:Static` est prise en charge par la classe [`StaticExtension`](xref:Xamarin.Forms.Xaml.StaticExtension) . La classe a une propriété unique nommée [`Member`](xref:Xamarin.Forms.Xaml.StaticExtension.Member) de type `string` que vous définissez sur le nom d’une constante publique, d’une propriété statique, d’un champ statique ou d’un membre d’énumération.
 
-Une façon courante d’utiliser `x:Static` doit d’abord définir une classe avec des constantes ou des variables statiques, tels que ce petit `AppConstants` classe dans le [ **MarkupExtensions** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions) programme :
+Une façon courante d’utiliser `x:Static` consiste à définir d’abord une classe avec des constantes ou des variables statiques, telles que cette petite `AppConstants` classe dans le programme [**MarkupExtensions**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions) :
 
 ```csharp
 static class AppConstants
@@ -55,12 +55,12 @@ static class AppConstants
 }
 ```
 
-Le **x : Static démonstration** page montre plusieurs façons d’utiliser le `x:Static` extension de balisage. L’approche la plus abondante instancie le `StaticExtension` classe entre `Label.FontSize` balises d’élément de propriété :
+La page de **démonstration de x :static** montre plusieurs façons d’utiliser l’extension de balisage `x:Static`. L’approche la plus détaillée instancie la classe `StaticExtension` entre `Label.FontSize` balises d’éléments de propriété :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:sys="clr-namespace:System;assembly=netstandard"
              xmlns:local="clr-namespace:MarkupExtensions"
              x:Class="MarkupExtensions.StaticDemoPage"
              Title="x:Static Demo">
@@ -77,7 +77,7 @@ Le **x : Static démonstration** page montre plusieurs façons d’utiliser le 
 </ContentPage>
 ```
 
-L’analyseur XAML permet également la `StaticExtension` classe sera abrégé en tant que `x:Static`:
+L’analyseur XAML permet également à la classe `StaticExtension` d’être abrégée comme `x:Static`:
 
 ```xaml
 <Label Text="Label No. 2">
@@ -87,38 +87,38 @@ L’analyseur XAML permet également la `StaticExtension` classe sera abrégé e
 </Label>
 ```
 
-Cela peut être simplifié encore plus loin, mais la modification introduit une nouvelle syntaxe : il se compose de placer la `StaticExtension` classe et le nouveau membre entre accolades. L’expression résultante est définie directement à la `FontSize` attribut :
+Cela peut encore être simplifié, mais la modification introduit une nouvelle syntaxe : elle consiste à placer la classe `StaticExtension` et le paramètre de membre entre accolades. L’expression résultante est définie directement sur l’attribut `FontSize` :
 
 ```xaml
 <Label Text="Label No. 3"
        FontSize="{x:StaticExtension Member=local:AppConstants.NormalFontSize}" />
 ```
 
-Notez qu’il y *aucune* guillemets entre les accolades. Le `Member` propriété de `StaticExtension` n’est plus un attribut XML. C’est la partie de l’expression pour l’extension de balisage.
+Notez qu’il n’y a *pas* de guillemets à l’intérieur des accolades. La propriété `Member` de `StaticExtension` n’est plus un attribut XML. C’est la partie de l’expression pour l’extension de balisage.
 
-Tout comme vous pouvez abréger `x:StaticExtension` à `x:Static` lorsque vous l’utilisez comme un élément objet, vous pouvez l’abréger également dans l’expression entre accolades :
+Tout comme vous pouvez abréger `x:StaticExtension` pour `x:Static` quand vous l’utilisez en tant qu’élément objet, vous pouvez également l’abréger dans l’expression entre accolades :
 
 ```xaml
 <Label Text="Label No. 4"
        FontSize="{x:Static Member=local:AppConstants.NormalFontSize}" />
 ```
 
-Le `StaticExtension` classe a un `ContentProperty` attribut faisant référence à la propriété `Member`, qui indique que cette propriété en tant que propriété de contenu par défaut de la classe. Pour les extensions de balisage XAML exprimées avec des accolades, vous pouvez éliminer le `Member=` dans le cadre de l’expression :
+La classe `StaticExtension` a un attribut `ContentProperty` référençant la propriété `Member`, qui marque cette propriété comme la propriété de contenu par défaut de la classe. Pour les extensions de balisage XAML exprimées à l’aide d’accolades, vous pouvez éliminer la `Member=` partie de l’expression :
 
 ```xaml
 <Label Text="Label No. 5"
        FontSize="{x:Static local:AppConstants.NormalFontSize}" />
 ```
 
-Voici la forme la plus courante de la `x:Static` extension de balisage.
+Il s’agit de la forme la plus courante de l’extension de balisage `x:Static`.
 
-Le **démonstration statique** page contient deux autres exemples. La balise racine du fichier XAML contient une déclaration d’espace de noms XML pour le .NET `System` espace de noms :
+La page de **démonstration statique** contient deux autres exemples. La balise racine du fichier XAML contient une déclaration d’espace de noms XML pour l’espace de noms .NET `System` :
 
 ```xaml
-xmlns:sys="clr-namespace:System;assembly=mscorlib"
+xmlns:sys="clr-namespace:System;assembly=netstandard"
 ```
 
-Cela permet la `Label` taille de police à définir dans le champ statique `Math.PI`. Qui résulte dans le texte assez modeste, par conséquent, le `Scale` propriété est définie sur `Math.E`:
+Cela permet de définir la taille de police `Label` sur le champ statique `Math.PI`. Cela donne lieu à un texte plutôt petit, donc la propriété `Scale` est définie sur `Math.E`:
 
 ```xaml
 <Label Text="&#x03C0; &#x00D7; E sized text"
@@ -127,7 +127,7 @@ Cela permet la `Label` taille de police à définir dans le champ statique `Math
        HorizontalOptions="Center" />
 ```
 
-Le dernier exemple affiche la `Device.RuntimePlatform` valeur. Le `Environment.NewLine` propriété statique est utilisée pour insérer un caractère de nouvelle ligne entre les deux `Span` objets :
+Le dernier exemple affiche la valeur `Device.RuntimePlatform`. La propriété statique `Environment.NewLine` est utilisée pour insérer un caractère de nouvelle ligne entre les deux objets `Span` :
 
 ```xaml
 <Label HorizontalTextAlignment="Center"
@@ -150,11 +150,11 @@ Voici l’exemple en cours d’exécution :
 
 ## <a name="xreference-markup-extension"></a>x :Reference (extension de balisage)
 
-Le `x:Reference` extension de balisage est prise en charge par le [ `ReferenceExtension` ](xref:Xamarin.Forms.Xaml.ReferenceExtension) classe. La classe a une propriété unique nommée [ `Name` ](xref:Xamarin.Forms.Xaml.ReferenceExtension.Name) de type `string` que vous définissez pour le nom d’un élément dans la page qui a été donné avec un nom de `x:Name`. Cela `Name` propriété est la propriété de contenu de `ReferenceExtension`, de sorte que `Name=` n’est pas requis quand `x:Reference` apparaît entre accolades.
+L’extension de balisage `x:Reference` est prise en charge par la classe [`ReferenceExtension`](xref:Xamarin.Forms.Xaml.ReferenceExtension) . La classe a une propriété unique nommée [`Name`](xref:Xamarin.Forms.Xaml.ReferenceExtension.Name) de type `string` que vous définissez sur le nom d’un élément de la page qui a reçu un nom avec `x:Name`. Cette propriété de `Name` est la propriété de contenu de `ReferenceExtension`, donc `Name=` n’est pas nécessaire quand `x:Reference` apparaît entre accolades.
 
-Le `x:Reference` extension de balisage est utilisée exclusivement avec les liaisons de données, qui sont décrites plus en détail dans l’article [ **une liaison de données**](~/xamarin-forms/app-fundamentals/data-binding/index.md).
+L’extension de balisage `x:Reference` est utilisée exclusivement avec les liaisons de données, qui sont décrites plus en détail dans l’article [**liaison de données**](~/xamarin-forms/app-fundamentals/data-binding/index.md).
 
-Le **x : Reference démonstration** page montre deux utilisations de `x:Reference` avec des liaisons de données, la première où il est utilisé pour définir le `Source` propriété de la `Binding` objet et le second où il est utilisé pour définir le `BindingContext` propriété pour les liaisons de données de deux :
+La page de démonstration de la fonction **x :Reference** montre deux utilisations de `x:Reference` avec des liaisons de données, la première où elle est utilisée pour définir la propriété `Source` de l’objet `Binding`, et la seconde où elle est utilisée pour définir la propriété `BindingContext` pour deux liaisons de données :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -186,7 +186,7 @@ Le **x : Reference démonstration** page montre deux utilisations de `x:Referen
 </ContentPage>
 ```
 
-Les deux `x:Reference` expressions utilisent la version abrégée de le `ReferenceExtension` nom de la classe et d’éliminer le `Name=` dans le cadre de l’expression. Dans le premier exemple, le `x:Reference` extension de balisage est incorporée dans le `Binding` extension de balisage. Notez que le `Source` et `StringFormat` paramètres sont séparés par des virgules. Voici le programme en cours d’exécution :
+Les deux expressions `x:Reference` utilisent la version abrégée du nom de la classe `ReferenceExtension` et éliminent la partie `Name=` de l’expression. Dans le premier exemple, l’extension de balisage `x:Reference` est incorporée dans l’extension de balisage `Binding`. Notez que les paramètres `Source` et `StringFormat` sont séparés par des virgules. Voici le programme en cours d’exécution :
 
 [![Démonstration de la x :Reference](consuming-images/referencedemo-small.png "Démonstration de la x :Reference")](consuming-images/referencedemo-large.png#lightbox "Démonstration de la x :Reference")
 
@@ -194,15 +194,15 @@ Les deux `x:Reference` expressions utilisent la version abrégée de le `Referen
 
 ## <a name="xtype-markup-extension"></a>x:Type (extension de balisage)
 
-Le `x:Type` extension de balisage est l’équivalent XAML du langage c# [ `typeof` ](/dotnet/csharp/language-reference/keywords/typeof/) mot clé. Il est pris en charge par le [ `TypeExtension` ](xref:Xamarin.Forms.Xaml.TypeExtension) (classe), qui définit une propriété nommée [ `TypeName` ](xref:Xamarin.Forms.Xaml.TypeExtension.TypeName) de type `string` dont la valeur est un nom de classe ou structure. Le `x:Type` markup extension retourne le [ `System.Type` ](xref:System.Type) objet de cette classe ou structure. `TypeName` est la propriété de contenu de `TypeExtension`, de sorte que `TypeName=` n’est pas requis quand `x:Type` s’affiche avec des accolades.
+L’extension de balisage `x:Type` est l’équivalent XAML C# du mot clé [`typeof`](/dotnet/csharp/language-reference/keywords/typeof/) . Il est pris en charge par la classe [`TypeExtension`](xref:Xamarin.Forms.Xaml.TypeExtension) , qui définit une propriété nommée [`TypeName`](xref:Xamarin.Forms.Xaml.TypeExtension.TypeName) de type `string` qui a pour valeur un nom de classe ou de structure. L’extension de balisage `x:Type` retourne l’objet [`System.Type`](xref:System.Type) de cette classe ou structure. `TypeName` est la propriété de contenu de `TypeExtension`, donc `TypeName=` n’est pas nécessaire lorsque `x:Type` apparaît avec des accolades.
 
-Dans Xamarin.Forms, il existe plusieurs propriétés qui ont des arguments de type `Type`. Exemples incluent la [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType) propriété de `Style`et le [x : TypeArguments](~/xamarin-forms/xaml/passing-arguments.md#generic_type_arguments) attribut utilisé pour spécifier des arguments dans les classes génériques. Toutefois, l’analyseur XAML effectue le `typeof` opération automatiquement et le `x:Type` extension de balisage n’est pas utilisée dans ces cas.
+Dans Xamarin. Forms, il existe plusieurs propriétés qui ont des arguments de type `Type`. Il peut s’agir, par exemple, de la propriété [`TargetType`](xref:Xamarin.Forms.Style.TargetType) de `Style`et de l’attribut [x :TypeArguments](~/xamarin-forms/xaml/passing-arguments.md#generic_type_arguments) utilisé pour spécifier des arguments dans des classes génériques. Toutefois, l’analyseur XAML effectue automatiquement l’opération de `typeof`, et l’extension de balisage `x:Type` n’est pas utilisée dans ces cas.
 
-Un seul endroit où `x:Type` *est* requis est avec la `x:Array` extension de balisage, ce qui est décrit dans la [section suivante](#array).
+L’extension de balisage `x:Array`, qui est décrite dans la [section suivante](#array), est un emplacement où `x:Type` *est* requis.
 
-Le `x:Type` extension de balisage est également utile lors de la construction d’un menu dans lequel chaque élément de menu correspondant à un objet d’un type particulier. Vous pouvez associer un `Type` avec chaque élément de menu de l’objet et puis instanciez l’objet lorsque l’élément de menu est sélectionné.
+L’extension de balisage `x:Type` est également utile lors de la construction d’un menu où chaque élément de menu correspond à un objet d’un type particulier. Vous pouvez associer un objet `Type` à chaque élément de menu, puis instancier l’objet quand l’élément de menu est sélectionné.
 
-C’est comment le menu de navigation dans `MainPage` dans le **Extensions de balisage** programme fonctionne. Le **MainPage.xaml** fichier contient un `TableView` avec chaque `TextCell` correspondant à une page particulière dans le programme :
+Voici comment fonctionne le menu de navigation dans `MainPage` dans le programme d' **extensions de balisage** . Le fichier **MainPage. Xaml** contient un `TableView` avec chaque `TextCell` correspondant à une page particulière dans le programme :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -241,11 +241,11 @@ C’est comment le menu de navigation dans `MainPage` dans le **Extensions de ba
 </ContentPage>
 ```
 
-Voici la page d’accueil principale **Extensions de balisage**:
+Voici la page principale d’ouverture dans les **extensions de balisage**:
 
 [![Page principale](consuming-images/mainpage-small.png "Page principale")](consuming-images/mainpage-large.png#lightbox "Page principale")
 
-Chaque `CommandParameter` propriété est définie sur une `x:Type` extension de balisage qui fait référence à un des autres pages. Le `Command` propriété est liée à une propriété nommée `NavigateCommand`. Cette propriété est définie dans le `MainPage` fichier code-behind :
+Chaque propriété `CommandParameter` est définie sur une extension de balisage `x:Type` qui fait référence à l’une des autres pages. La propriété `Command` est liée à une propriété nommée `NavigateCommand`. Cette propriété est définie dans le fichier code-behind `MainPage` :
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -267,9 +267,9 @@ public partial class MainPage : ContentPage
 }
 ```
 
-Le `NavigateCommand` propriété est un `Command` objet qui implémente une commande execute avec un argument de type `Type` &mdash; la valeur de `CommandParameter`. Utilise la méthode `Activator.CreateInstance` pour instancier la page, puis accède à ce dernier. Le constructeur se termine en définissant le `BindingContext` de la page à elle-même, ce qui permet la `Binding` sur `Command` fonctionne. Consultez le [ **une liaison de données** ](~/xamarin-forms/app-fundamentals/data-binding/index.md) article et en particulier le [ **Commanding** ](~/xamarin-forms/app-fundamentals/data-binding/commanding.md) article pour plus d’informations sur ce type de code.
+La propriété `NavigateCommand` est un objet `Command` qui implémente une commande Execute avec un argument de type `Type` &mdash; la valeur de `CommandParameter`. La méthode utilise `Activator.CreateInstance` pour instancier la page, puis y accède. Le constructeur conclut en affectant à la `BindingContext` de la page la valeur elle-même, ce qui permet au `Binding` sur `Command` de fonctionner. Pour plus d’informations sur ce type de code, consultez l’article sur la [**liaison de données**](~/xamarin-forms/app-fundamentals/data-binding/index.md) et en particulier l’article sur les [**commandes**](~/xamarin-forms/app-fundamentals/data-binding/commanding.md) .
 
-Le **x : Type démonstration** page utilise une technique similaire pour instancier des éléments de Xamarin.Forms et pour les ajouter à un `StackLayout`. Le fichier XAML est initialement constitué de trois `Button` éléments avec leurs `Command` propriétés définies sur un `Binding` et `CommandParameter` propriétés définies sur les types de trois vues Xamarin.Forms :
+La page de **démonstration x :type** utilise une technique similaire pour instancier des éléments Xamarin. Forms et les ajouter à un `StackLayout`. Le fichier XAML se compose initialement de trois `Button` éléments avec leurs propriétés `Command` définies sur un `Binding` et les propriétés `CommandParameter` définies sur des types de trois vues Xamarin. Forms :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -301,7 +301,7 @@ Le **x : Type démonstration** page utilise une technique similaire pour instan
 </ContentPage>
 ```
 
-Le fichier code-behind définit et initialise le `CreateCommand` propriété :
+Le fichier code-behind définit et initialise la propriété `CreateCommand` :
 
 ```csharp
 public partial class TypeDemoPage : ContentPage
@@ -324,7 +324,7 @@ public partial class TypeDemoPage : ContentPage
 }
 ```
 
-La méthode qui est exécutée quand un `Button` est enfoncé crée une nouvelle instance de l’argument, définit son `VerticalOptions` propriété et l’ajoute à la `StackLayout`. Les trois `Button` éléments partagent ensuite la page avec les vues créées dynamiquement :
+La méthode qui est exécutée quand un `Button` est enfoncé crée une nouvelle instance de l’argument, définit sa propriété `VerticalOptions` et l’ajoute à la `StackLayout`. Les trois éléments `Button` partagent ensuite la page avec des vues créées dynamiquement :
 
 [![Démonstration de x :Type](consuming-images/typedemo-small.png "Démonstration de x :Type")](consuming-images/typedemo-large.png#lightbox "Démonstration de x :Type")
 
@@ -332,14 +332,14 @@ La méthode qui est exécutée quand un `Button` est enfoncé crée une nouvelle
 
 ## <a name="xarray-markup-extension"></a>x:Array (extension de balisage)
 
-Le `x:Array` extension de balisage vous permet de définir un tableau dans le balisage. Il est pris en charge par le [ `ArrayExtension` ](xref:Xamarin.Forms.Xaml.ArrayExtension) (classe), qui définit deux propriétés :
+L’extension de balisage `x:Array` vous permet de définir un tableau dans le balisage. Il est pris en charge par la classe [`ArrayExtension`](xref:Xamarin.Forms.Xaml.ArrayExtension) , qui définit deux propriétés :
 
-- `Type` de type `Type`, ce qui indique le type des éléments dans le tableau.
-- `Items` de type `IList`, qui est une collection des éléments eux-mêmes. Il s’agit de la propriété de contenu `ArrayExtension`.
+- `Type` de type `Type`, qui indique le type des éléments dans le tableau.
+- `Items` de type `IList`, qui est une collection des éléments eux-mêmes. Il s’agit de la propriété de contenu de `ArrayExtension`.
 
-Le `x:Array` extension de balisage lui-même n’apparaît jamais entre accolades. Au lieu de cela, `x:Array` la liste des éléments délimitent des balises de début et de fin. Définir le `Type` propriété un `x:Type` extension de balisage.
+L’extension de balisage `x:Array` elle-même n’apparaît jamais entre accolades. Au lieu de cela, `x:Array` balises de début et de fin délimitent la liste des éléments. Affectez à la propriété `Type` une extension de balisage `x:Type`.
 
-Le **x : Array démonstration** page montre comment utiliser `x:Array` pour ajouter des éléments à un `ListView` en définissant le `ItemsSource` propriété vers un tableau :
+La page de **démonstration x :Array** montre comment utiliser `x:Array` pour ajouter des éléments à un `ListView` en affectant à la propriété `ItemsSource` la valeur d’un tableau :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -381,17 +381,17 @@ Le **x : Array démonstration** page montre comment utiliser `x:Array` pour ajo
 </ContentPage>        
 ```
 
-Le `ViewCell` crée un simple `BoxView` pour chaque entrée de couleur :
+L' `ViewCell` crée une `BoxView` simple pour chaque entrée de couleur :
 
 [![Démo x :Array](consuming-images/arraydemo-small.png "Démo x :Array")](consuming-images/arraydemo-large.png#lightbox "Démo x :Array")
 
-Il existe plusieurs façons de spécifier la personne `Color` éléments de ce tableau. Vous pouvez utiliser un `x:Static` extension de balisage :
+Il existe plusieurs façons de spécifier les éléments de `Color` individuels dans ce tableau. Vous pouvez utiliser une extension de balisage `x:Static` :
 
 ```xaml
 <x:Static Member="Color.Blue" />
 ```
 
-Vous pouvez également utiliser `StaticResource` pour récupérer une couleur à partir d’un dictionnaire de ressources :
+Vous pouvez utiliser `StaticResource` pour récupérer une couleur à partir d’un dictionnaire de ressources :
 
 ```xaml
 <StaticResource Key="myColor" />
@@ -403,17 +403,17 @@ Vers la fin de cet article, vous verrez une extension de balisage XAML personnal
 <local:HslColor H="0.5" S="1.0" L="0.5" />
 ```
 
-Lorsque vous définissez des tableaux de types courants tels que des chaînes ou des nombres, utilisez les balises répertoriées dans le [ **en passant les Arguments de constructeur** ](~/xamarin-forms/xaml/passing-arguments.md#constructor_arguments) article pour délimiter les valeurs.
+Quand vous définissez des tableaux de types communs tels que des chaînes ou des nombres, utilisez les balises listées dans l’article [**passage d’arguments de constructeur**](~/xamarin-forms/xaml/passing-arguments.md#constructor_arguments) pour délimiter les valeurs.
 
 <a name="null" />
 
 ## <a name="xnull-markup-extension"></a>x:Null (extension de balisage)
 
-Le `x:Null` extension de balisage est prise en charge par le [ `NullExtension` ](xref:Xamarin.Forms.Xaml.NullExtension) classe. Il ne possède aucune propriété et est simplement l’équivalent XAML du langage c# [ `null` ](/dotnet/csharp/language-reference/keywords/null/) mot clé.
+L’extension de balisage `x:Null` est prise en charge par la classe [`NullExtension`](xref:Xamarin.Forms.Xaml.NullExtension) . Il n’a pas de propriétés et est simplement l’équivalent XAML C# du mot clé [`null`](/dotnet/csharp/language-reference/keywords/null/) .
 
-Le `x:Null` extension de balisage est rarement nécessaire et rarement utilisée, mais si vous ne trouvez pas une nécessité de ce dernier, vous serez féliciterez de l’avoir elle existe.
+L’extension de balisage `x:Null` est rarement nécessaire et rarement utilisée, mais si vous en avez besoin, vous êtes heureux d’y parvenir.
 
-Le **x : Null démonstration** page illustre un scénario lorsque `x:Null` peut s’avérer utile. Supposons que vous définissez implicite `Style` pour `Label` qui inclut un `Setter` qui définit le `FontFamily` propriété à un nom de famille dépend de la plateforme :
+La page de **démonstration de x :null** illustre un scénario dans lequel `x:Null` peut être pratique. Supposons que vous définissez un `Style` implicite pour `Label` qui comprend un `Setter` qui définit la propriété `FontFamily` sur un nom de famille dépendant de la plateforme :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -452,42 +452,42 @@ Le **x : Null démonstration** page illustre un scénario lorsque `x:Null` peut
 </ContentPage>   
 ```
 
-Puis vous découvrez que pour l’une de la `Label` éléments, vous voulez tous les paramètres de propriété dans le caractère implicite `Style` à l’exception de la `FontFamily`, que vous souhaitez être la valeur par défaut. Vous pouvez définir un autre `Style` pour ce faire, mais une approche plus simple consiste simplement à définir le `FontFamily` propriété de la particulier `Label` à `x:Null`, comme illustré dans le centre de `Label`.
+Ensuite, vous découvrez que pour l’un des éléments de `Label`, vous souhaitez que tous les paramètres de propriété du `Style` implicite, à l’exception de la `FontFamily`, qui doit être la valeur par défaut. Vous pouvez définir un autre `Style` à cet effet, mais une approche plus simple consiste simplement à définir la `FontFamily` propriété du `Label` particulier à `x:Null`, comme illustré dans la `Label`centrale.
 
 Voici le programme en cours d’exécution :
 
 [![Démonstration de x :Null](consuming-images/nulldemo-small.png "Démonstration de x :Null")](consuming-images/nulldemo-large.png#lightbox "Démonstration de x :Null")
 
-Remarquez que quatre de la `Label` éléments ont une police sans serif, mais le centre `Label` a la police sans serif par défaut.
+Notez que quatre des éléments `Label` ont une police serif, mais que le centre `Label` possède la police sans empattement par défaut.
 
 <a name="onplatform" />
 
 ## <a name="onplatform-markup-extension"></a>Extension de balisage OnPlatform
 
-Le `OnPlatform` extension de balisage vous permet de personnaliser l’apparence de l’interface utilisateur sur une base par plateforme. Il fournit les mêmes fonctionnalités que le [ `OnPlatform` ](xref:Xamarin.Forms.OnPlatform`1) et [ `On` ](xref:Xamarin.Forms.On) classes, mais avec une représentation plus concise.
+L’extension de balisage `OnPlatform` vous permet de personnaliser l’apparence de l’interface utilisateur sur la base de chaque plateforme. Il fournit les mêmes fonctionnalités que les classes [`OnPlatform`](xref:Xamarin.Forms.OnPlatform`1) et [`On`](xref:Xamarin.Forms.On) , mais avec une représentation plus concise.
 
-Le `OnPlatform` extension de balisage est prise en charge par le [ `OnPlatformExtension` ](xref:Xamarin.Forms.Xaml.OnPlatformExtension) (classe), qui définit les propriétés suivantes :
+L’extension de balisage `OnPlatform` est prise en charge par la classe [`OnPlatformExtension`](xref:Xamarin.Forms.Xaml.OnPlatformExtension) , qui définit les propriétés suivantes :
 
-- `Default` de type `object`, définissez une valeur par défaut à appliquer aux propriétés qui représentent les plateformes.
-- `Android` de type `object`, que vous définissez une valeur à appliquer sur Android.
-- `GTK` de type `object`, que vous définissez une valeur à appliquer sur les plateformes GTK.
-- `iOS` de type `object`, que vous définissez une valeur à appliquer sur iOS.
-- `macOS` de type `object`, que vous définissez une valeur à appliquer sur macOS.
-- `Tizen` de type `object`, que vous définissez une valeur à appliquer à la plateforme Tizen.
-- `UWP` de type `object`, que vous définissez une valeur à appliquer à la plateforme Windows universelle.
-- `WPF` de type `object`, que vous définissez une valeur à appliquer à la plateforme Windows Presentation Foundation.
-- `Converter` de type `IValueConverter`, que vous définissez pour un `IValueConverter` implémentation.
-- `ConverterParameter` de type `object`, que vous définissez une valeur à passer à la `IValueConverter` implémentation.
+- `Default` de type `object`, que vous affectez à une valeur par défaut à appliquer aux propriétés qui représentent des plateformes.
+- `Android` de type `object`, que vous définissez sur une valeur à appliquer sur Android.
+- `GTK` de type `object`, que vous définissez sur une valeur à appliquer sur les plateformes GTK.
+- `iOS` de type `object`, que vous définissez sur une valeur à appliquer sur iOS.
+- `macOS` de type `object`, que vous définissez sur une valeur à appliquer sur macOS.
+- `Tizen` de type `object`, que vous définissez sur une valeur à appliquer sur la plateforme Tizen.
+- `UWP` de type `object`, que vous définissez sur une valeur à appliquer sur le plateforme Windows universelle.
+- `WPF` de type `object`, que vous affectez à une valeur à appliquer sur la plateforme Windows Presentation Foundation.
+- `Converter` de type `IValueConverter`, que vous définissez sur une implémentation de `IValueConverter`.
+- `ConverterParameter` de type `object`, que vous définissez sur une valeur à passer à l’implémentation de `IValueConverter`.
 
 > [!NOTE]
-> L’analyseur XAML autorise le [ `OnPlatformExtension` ](xref:Xamarin.Forms.Xaml.OnPlatformExtension) classe sera abrégé en tant que `OnPlatform`.
+> L’analyseur XAML permet à la classe [`OnPlatformExtension`](xref:Xamarin.Forms.Xaml.OnPlatformExtension) d’être abrégée en `OnPlatform`.
 
-Le `Default` propriété est la propriété de contenu de `OnPlatformExtension`. Par conséquent, pour les expressions de balisage XAML exprimées avec des accolades, vous pouvez éliminer le `Default=` dans le cadre de l’expression de condition qu’il soit le premier argument. Si la propriété `Default` n’est pas définie, elle prend par défaut la valeur de la propriété [`BindableProperty.DefaultValue`](xref:Xamarin.Forms.BindableProperty.DefaultValue) , à condition que l’extension de balisage cible un [`BindableProperty`](xref:Xamarin.Forms.BindableProperty).
+La propriété de `Default` est la propriété de contenu de `OnPlatformExtension`. Par conséquent, pour les expressions de balisage XAML exprimées à l’aide d’accolades, vous pouvez éliminer la `Default=` partie de l’expression à condition qu’il s’agisse du premier argument. Si la propriété `Default` n’est pas définie, elle prend par défaut la valeur de la propriété [`BindableProperty.DefaultValue`](xref:Xamarin.Forms.BindableProperty.DefaultValue) , à condition que l’extension de balisage cible un [`BindableProperty`](xref:Xamarin.Forms.BindableProperty).
 
 > [!IMPORTANT]
-> L’analyseur XAML attend que les valeurs du type correct seront fournies aux propriétés consomme le `OnPlatform` extension de balisage. Si la conversion de type est nécessaire, le `OnPlatform` extension de balisage tentera d’effectuer cette opération à l’aide des convertisseurs de valeur par défaut fournis par Xamarin.Forms. Toutefois, il existe certaines conversions de type ne peut pas être effectuées par les convertisseurs de valeur par défaut et dans ce cas le `Converter` propriété doit être définie sur une `IValueConverter` implémentation.
+> L’analyseur XAML s’attend à ce que les valeurs du type correct soient fournies aux propriétés utilisant l’extension de balisage `OnPlatform`. Si la conversion de type est nécessaire, l’extension de balisage `OnPlatform` tente de l’exécuter à l’aide des convertisseurs par défaut fournis par Xamarin. Forms. Toutefois, certaines conversions de type ne peuvent pas être effectuées par les convertisseurs par défaut et, dans ce cas, la propriété `Converter` doit être définie sur une implémentation de `IValueConverter`.
 
-Le **OnPlatform démonstration** page montre comment utiliser le `OnPlatform` extension de balisage :
+La page de **démonstration OnPlatform** montre comment utiliser l’extension de balisage `OnPlatform` :
 
 ```xaml
 <BoxView Color="{OnPlatform Yellow, iOS=Red, Android=Green, UWP=Blue}"
@@ -496,7 +496,7 @@ Le **OnPlatform démonstration** page montre comment utiliser le `OnPlatform` ex
          HorizontalOptions="Center" />
 ```
 
-Dans cet exemple, les trois `OnPlatform` expressions utilisent la version abrégée de le `OnPlatformExtension` nom de la classe. Les trois `OnPlatform` ensemble d’extensions de balisage la [ `Color` ](xref:Xamarin.Forms.BoxView.Color), [ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest), et [ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest) propriétés de la [ `BoxView` ](xref:Xamarin.Forms.BoxView) des valeurs différentes sur iOS, Android et UWP. Les extensions de balisage fournissent également des valeurs par défaut pour ces propriétés sur les plateformes qui ne sont pas spécifiés, tout en éliminant le `Default=` dans le cadre de l’expression. Notez que les propriétés d’extension de balisage qui sont définies sont séparées par des virgules.
+Dans cet exemple, les trois expressions `OnPlatform` utilisent la version abrégée du nom de la classe `OnPlatformExtension`. Les trois `OnPlatform` extensions de balisage définissent les propriétés [`Color`](xref:Xamarin.Forms.BoxView.Color), [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest)et [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) de la [`BoxView`](xref:Xamarin.Forms.BoxView) sur des valeurs différentes sur iOS, Android et UWP. Les extensions de balisage fournissent également des valeurs par défaut pour ces propriétés sur les plateformes qui ne sont pas spécifiées, tout en éliminant la `Default=` partie de l’expression. Notez que les propriétés d’extension de balisage qui sont définies sont séparées par des virgules.
 
 Voici le programme en cours d’exécution :
 
@@ -506,26 +506,26 @@ Voici le programme en cours d’exécution :
 
 ## <a name="onidiom-markup-extension"></a>Extension de balisage OnIdiom
 
-L’extension de balisage `OnIdiom` vous permet de personnaliser l’apparence de l’interface utilisateur en fonction de l’idiome du périphérique sur lequel l’application s’exécute. Il est pris en charge par le [ `OnIdiomExtension` ](xref:Xamarin.Forms.Xaml.OnIdiomExtension) (classe), qui définit les propriétés suivantes :
+L’extension de balisage `OnIdiom` vous permet de personnaliser l’apparence de l’interface utilisateur en fonction de l’idiome du périphérique sur lequel l’application s’exécute. Elle est prise en charge par la classe [`OnIdiomExtension`](xref:Xamarin.Forms.Xaml.OnIdiomExtension) , qui définit les propriétés suivantes :
 
-- `Default` de type `object`, définissez une valeur par défaut à appliquer aux propriétés qui représentent des idiomes de l’appareil.
-- `Phone` de type `object`, que vous définissez une valeur à appliquer sur les téléphones.
-- `Tablet` de type `object`, que vous définissez une valeur à appliquer aux tablettes.
-- `Desktop` de type `object`, que vous définissez une valeur à appliquer sur les plateformes de bureau.
-- `TV` de type `object`, que vous définissez une valeur à appliquer sur les plateformes TV.
-- `Watch` de type `object`, que vous définissez une valeur à appliquer sur les plateformes d’espion.
-- `Converter` de type `IValueConverter`, que vous définissez pour un `IValueConverter` implémentation.
-- `ConverterParameter` de type `object`, que vous définissez une valeur à passer à la `IValueConverter` implémentation.
+- `Default` de type `object`, que vous affectez à une valeur par défaut à appliquer aux propriétés qui représentent des idiomes de périphérique.
+- `Phone` de type `object`, que vous définissez sur une valeur à appliquer sur les téléphones.
+- `Tablet` de type `object`, que vous définissez sur une valeur à appliquer sur les tablettes.
+- `Desktop` de type `object`, que vous définissez sur une valeur à appliquer sur les plateformes de bureau.
+- `TV` de type `object`, que vous définissez sur une valeur à appliquer sur les plateformes TV.
+- `Watch` de type `object`, que vous définissez sur une valeur à appliquer sur les plateformes de surveillance.
+- `Converter` de type `IValueConverter`, que vous définissez sur une implémentation de `IValueConverter`.
+- `ConverterParameter` de type `object`, que vous définissez sur une valeur à passer à l’implémentation de `IValueConverter`.
 
 > [!NOTE]
-> L’analyseur XAML autorise le [ `OnIdiomExtension` ](xref:Xamarin.Forms.Xaml.OnIdiomExtension) classe sera abrégé en tant que `OnIdiom`.
+> L’analyseur XAML permet à la classe [`OnIdiomExtension`](xref:Xamarin.Forms.Xaml.OnIdiomExtension) d’être abrégée en `OnIdiom`.
 
-Le `Default` propriété est la propriété de contenu de `OnIdiomExtension`. Par conséquent, pour les expressions de balisage XAML exprimées avec des accolades, vous pouvez éliminer le `Default=` dans le cadre de l’expression de condition qu’il soit le premier argument.
+La propriété de `Default` est la propriété de contenu de `OnIdiomExtension`. Par conséquent, pour les expressions de balisage XAML exprimées à l’aide d’accolades, vous pouvez éliminer la `Default=` partie de l’expression à condition qu’il s’agisse du premier argument.
 
 > [!IMPORTANT]
-> L’analyseur XAML attend que les valeurs du type correct seront fournies aux propriétés consomme le `OnIdiom` extension de balisage. Si la conversion de type est nécessaire, le `OnIdiom` extension de balisage tentera d’effectuer cette opération à l’aide des convertisseurs de valeur par défaut fournis par Xamarin.Forms. Toutefois, il existe certaines conversions de type ne peut pas être effectuées par les convertisseurs de valeur par défaut et dans ce cas le `Converter` propriété doit être définie sur une `IValueConverter` implémentation.
+> L’analyseur XAML s’attend à ce que les valeurs du type correct soient fournies aux propriétés utilisant l’extension de balisage `OnIdiom`. Si la conversion de type est nécessaire, l’extension de balisage `OnIdiom` tente de l’exécuter à l’aide des convertisseurs par défaut fournis par Xamarin. Forms. Toutefois, certaines conversions de type ne peuvent pas être effectuées par les convertisseurs par défaut et, dans ce cas, la propriété `Converter` doit être définie sur une implémentation de `IValueConverter`.
 
-Le **OnIdiom démonstration** page montre comment utiliser le `OnIdiom` extension de balisage :
+La page de **démonstration OnIdiom** montre comment utiliser l’extension de balisage `OnIdiom` :
 
 ```xaml
 <BoxView Color="{OnIdiom Yellow, Phone=Red, Tablet=Green, Desktop=Blue}"
@@ -534,7 +534,7 @@ Le **OnIdiom démonstration** page montre comment utiliser le `OnIdiom` extensio
          HorizontalOptions="Center" />
 ```
 
-Dans cet exemple, les trois `OnIdiom` expressions utilisent la version abrégée de le `OnIdiomExtension` nom de la classe. Les trois `OnIdiom` ensemble d’extensions de balisage la [ `Color` ](xref:Xamarin.Forms.BoxView.Color), [ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest), et [ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest) propriétés de la [ `BoxView` ](xref:Xamarin.Forms.BoxView) des valeurs différentes sur les téléphones, tablettes et idiomes de bureau. Les extensions de balisage fournissent également des valeurs par défaut pour ces propriétés sur les idiomes ne sont pas spécifiés, tout en éliminant le `Default=` dans le cadre de l’expression. Notez que les propriétés d’extension de balisage qui sont définies sont séparées par des virgules.
+Dans cet exemple, les trois expressions `OnIdiom` utilisent la version abrégée du nom de la classe `OnIdiomExtension`. Les trois `OnIdiom` extensions de balisage définissent les propriétés de [`Color`](xref:Xamarin.Forms.BoxView.Color), [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest)et [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) de la [`BoxView`](xref:Xamarin.Forms.BoxView) sur des valeurs différentes sur les idiomes de téléphone, de tablette et de bureau. Les extensions de balisage fournissent également des valeurs par défaut pour ces propriétés sur les idiomes qui ne sont pas spécifiés, tout en éliminant la `Default=` partie de l’expression. Notez que les propriétés d’extension de balisage qui sont définies sont séparées par des virgules.
 
 Voici le programme en cours d’exécution :
 
@@ -542,7 +542,7 @@ Voici le programme en cours d’exécution :
 
 ## <a name="datatemplate-markup-extension"></a>DataTemplate (extension de balisage)
 
-L’extension de balisage `DataTemplate` vous permet de convertir un type en [`DataTemplate`](xref:Xamarin.Forms.DataTemplate). Elle est prise en charge par la classe `DataTemplateExtension`, qui définit une propriété `TypeName`, de type `string`, qui est définie sur le nom du type à convertir en `DataTemplate`. Le `TypeName` propriété est la propriété de contenu de `DataTemplateExtension`. Par conséquent, pour les expressions de balisage XAML exprimées à l’aide d’accolades, vous pouvez éliminer la `TypeName=` partie de l’expression.
+L’extension de balisage `DataTemplate` vous permet de convertir un type en [`DataTemplate`](xref:Xamarin.Forms.DataTemplate). Elle est prise en charge par la classe `DataTemplateExtension`, qui définit une propriété `TypeName`, de type `string`, qui est définie sur le nom du type à convertir en `DataTemplate`. La propriété de `TypeName` est la propriété de contenu de `DataTemplateExtension`. Par conséquent, pour les expressions de balisage XAML exprimées à l’aide d’accolades, vous pouvez éliminer la `TypeName=` partie de l’expression.
 
 > [!NOTE]
 > L’analyseur XAML permet à la classe `DataTemplateExtension` d’être abrégée en `DataTemplate`.
@@ -568,12 +568,12 @@ L’extension de balisage `FontImage` est prise en charge par la classe `FontIma
 - `FontFamily` de type `string`, famille de polices à laquelle appartient l’icône de police.
 - `Glyph` de type `string`, la valeur du caractère Unicode de l’icône de police.
 - `Color` de type [`Color`](xref:Xamarin.Forms.Color), couleur à utiliser lors de l’affichage de l’icône de police.
-- `Size` de type `double`, taille, en unités indépendantes du périphérique, de l’icône de police rendue. La valeur par défaut est 30. En outre, cette propriété peut être définie sur une taille de police nommée.
+- `Size` de type `double`, taille, en unités indépendantes du périphérique, de l’icône de police rendue. La valeur par défaut est 30. En outre, cette propriété peut être définie sur une taille de police nommée.
 
 > [!NOTE]
 > L’analyseur XAML permet à la classe `FontImageExtension` d’être abrégée en `FontImage`.
 
-Le `Glyph` propriété est la propriété de contenu de `FontImageExtension`. Par conséquent, pour les expressions de balisage XAML exprimées avec des accolades, vous pouvez éliminer le `Glyph=` dans le cadre de l’expression de condition qu’il soit le premier argument.
+La propriété de `Glyph` est la propriété de contenu de `FontImageExtension`. Par conséquent, pour les expressions de balisage XAML exprimées à l’aide d’accolades, vous pouvez éliminer la `Glyph=` partie de l’expression à condition qu’il s’agisse du premier argument.
 
 La page de **démonstration FontImage** montre comment utiliser l’extension de balisage `FontImage` :
 
@@ -592,12 +592,12 @@ Pour plus d’informations sur l’affichage des icônes de police en spécifian
 
 ## <a name="define-your-own-markup-extensions"></a>Définir vos propres Extensions de balisage
 
-Si vous avez rencontré un besoin pour une extension de balisage XAML qui n’est pas disponible dans Xamarin.Forms, vous pouvez [créer vos propres](creating.md).
+Si vous avez eu besoin d’une extension de balisage XAML qui n’est pas disponible dans Xamarin. Forms, vous pouvez [créer les vôtres](creating.md).
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Extensions de balisage (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
-- [Chapitre d’extensions de balisage XAML de Xamarin.Forms livre](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)
+- [Chapitre sur les extensions de balisage XAML du livre Xamarin. Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)
 - [Dictionnaires de ressources](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [Styles dynamiques](~/xamarin-forms/user-interface/styles/dynamic.md)
 - [Liaison de données](~/xamarin-forms/app-fundamentals/data-binding/index.md)

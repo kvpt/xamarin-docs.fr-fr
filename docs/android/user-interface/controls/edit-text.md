@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 08/09/2018
-ms.openlocfilehash: 62859e19c533d7b200833996b44a65cb275805c6
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 6180896002d19c51bce47bf53aaecdc11b0cae6e
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029248"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78291760"
 ---
 # <a name="xamarinandroid-edit-text"></a>Xamarin. Android-modifier le texte
 
@@ -44,7 +44,7 @@ Pour gérer l’entrée de texte de l’utilisateur, ajoutez le code suivant à 
 EditText edittext = FindViewById<EditText>(Resource.Id.edittext);
 edittext.KeyPress += (object sender, View.KeyEventArgs e) => {
     e.Handled = false;
-    if (e.Event.Action == KeyEventActions.Down && e.KeyCode == Keycode.Enter) 
+    if (e.Event.Action == KeyEventActions.Down && e.KeyCode == Keycode.Enter)
     {
         Toast.MakeText(this, edittext.Text, ToastLength.Short).Show();
         e.Handled = true;
@@ -64,8 +64,8 @@ Exécutez l’application et entrez du texte dans le champ de texte. Lorsque vou
 
 [![des exemples d’entrée de texte dans EditText](edit-text-images/edit-text-sml.png)](edit-text-images/edit-text.png#lightbox)
 
-*Certaines parties de cette page sont des modifications basées sur le travail créé et* [*partagé par le projet open source Android*](https://code.google.com/policies.html) *et utilisées conformément aux termes décrits dans la licence d'* [*attribution de Creative-2,5*](https://creativecommons.org/licenses/by/2.5/) *. Ce didacticiel est basé sur le didacticiel de* [*formulaire Android*](https://developer.android.com/resources/tutorials/views/hello-formstuff.html) *.*
+*Certaines parties de cette page sont des modifications basées sur le travail créé et partagé par le projet open source Android et utilisées conformément aux termes décrits dans la licence d'* [*attribution de Creative-2,5*](https://creativecommons.org/licenses/by/2.5/) *. Ce didacticiel est basé sur le didacticiel de* [*formulaire Android*](https://developer.android.com/resources/tutorials/views/hello-formstuff.html) *.*
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [EditTextSample](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-edittextsample)

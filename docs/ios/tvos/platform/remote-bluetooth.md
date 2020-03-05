@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 4255891174b639022a45c45c22e0022cd0403f26
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: c0338fce694d61dc19484c56dbc00bb854d0d0d7
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030595"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "78292972"
 ---
 # <a name="siri-remote-and-bluetooth-controllers-for-tvos-in-xamarin"></a>Contrôleurs distants et Bluetooth Siri pour tvOS dans Xamarin
 
@@ -36,14 +36,14 @@ Votre défi en tant que développeur d’applications tvOS est la création d’
 
 Le Siri distant présente les fonctionnalités suivantes et les utilisations attendues dans votre application tvOS :
 
-|Fonction|Utilisation générale de l’application|Utilisation de l’application de jeu|
+|Fonctionnalité|Utilisation générale de l’application|Utilisation de l’application de jeu|
 |---|---|---|
 |**Surface tactile**<br />Faites glisser pour naviguer, puis appuyez sur pour sélectionner et maintenir les menus contextuels.|**TAP/balayer**<br />Navigation dans l’interface utilisateur entre les éléments pouvant être activés.<br /><br />**Cliquez sur**<br />Active l’élément sélectionné (en focus).|**TAP/balayer**<br />Dépend de la conception du jeu et peut être utilisé comme un BMD en appuyant sur les bords.<br /><br />**Cliquez sur**<br />Exécutez la fonction de bouton principal.|
 |**Menu**<br />Appuyez pour revenir à l’écran ou au menu précédent.|Revient à l’écran précédent et quitte l’écran d’accueil Apple TV à partir de l’écran principal de l’application.|Suspendre et reprendre le jeu, revient à l’écran précédent et quitte l’écran d’accueil Apple TV à partir de l’écran principal de l’application.|
-|**Siri/Rechercher**<br />Dans les pays avec Siri, maintenez la touche enfoncée pour le contrôle vocal, dans tous les autres pays, affiche l’écran de recherche.|N/A|N/A|
+|**Siri/Rechercher**<br />Dans les pays avec Siri, maintenez la touche enfoncée pour le contrôle vocal, dans tous les autres pays, affiche l’écran de recherche.|n/a|n/a|
 |**Lecture/pause**<br />Lire et suspendre un support ou fournit une fonction secondaire dans les applications.|Démarre la lecture du média et interrompt/reprend la lecture.|Exécute la fonction de bouton secondaire ou ignore la vidéo d’introduction (si elle existe).|
-|**Accueil**<br />Appuyez sur pour revenir à l’écran d’accueil, double-cliquez pour afficher les applications en cours d’exécution, appuyez sur la touche et maintenez-la enfoncée.|N/A|N/A|
-|**Agrégat**<br />Contrôle le volume de l’équipement audio/vidéo attaché.|N/A|N/A|
+|**Accueil**<br />Appuyez sur pour revenir à l’écran d’accueil, double-cliquez pour afficher les applications en cours d’exécution, appuyez sur la touche et maintenez-la enfoncée.|n/a|n/a|
+|**Volume**<br />Contrôle le volume de l’équipement audio/vidéo attaché.|n/a|n/a|
 
 <a name="Touch-Surface-Gestures" />
 
@@ -51,7 +51,7 @@ Le Siri distant présente les fonctionnalités suivantes et les utilisations att
 
 La surface tactile de la Siri distante est en mesure de détecter une variété de mouvements à un seul doigt auxquels vous pouvez répondre dans votre application Xamarin. tvOS :
 
-|Balayer|Clic|Taper|
+|Balayer|Cliquez sur|Taper|
 |---|---|---|
 |![](remote-bluetooth-images/Gesture01.png)|![](remote-bluetooth-images/Gesture02.png)|![](remote-bluetooth-images/Gesture03.png)|
 |Déplace la sélection (Focus) entre les éléments de l’interface utilisateur à l’écran (vers le haut, vers la gauche, à droite). Le balayage peut être utilisé pour faire défiler rapidement des listes volumineuses de contenu à l’aide de l’inertie.|Active l’élément sélectionné (en focus) ou agit comme le bouton principal dans un jeu. Cliquer et maintenir peut activer des menus contextuels ou des fonctions secondaires.|Appuyer légèrement sur la surface tactile sur les bords agit comme des boutons directionnels sur un BMD, en déplaçant le focus vers le haut, vers le haut, vers la gauche ou vers la droite en fonction de la zone. En fonction de l’application, peut être utilisé pour révéler des contrôles masqués.|
@@ -280,20 +280,20 @@ Les contrôleurs de jeu peuvent être utilisés pour améliorer le jeu et donner
 
 Un contrôleur de jeu présente les fonctionnalités suivantes et les utilisations attendues au sein de votre application tvOS :
 
-|Fonction|Utilisation générale de l’application|Utilisation de l’application de jeu|
+|Fonctionnalité|Utilisation générale de l’application|Utilisation de l’application de jeu|
 |---|---|---|
 |**Pavé D**|Parcourt les éléments d’interface utilisateur (modifie le focus).|Dépend du jeu.|
 |**A**|Active l’élément sélectionné (en focus).|Exécute la fonction de bouton principal et confirme les actions de la boîte de dialogue.|
 |**B**|Revient à l’écran précédent ou quitte l’écran d’accueil si l’écran principal de l’application s’affiche.|Exécute la fonction de bouton secondaire ou retourne à l’écran précédent.|
 |**X**|Démarre la lecture du média ou suspend/reprend la lecture.|Dépend du jeu.|
-|**Y**|N/A|Dépend du jeu.|
+|**O**|n/a|Dépend du jeu.|
 |**Menu**|Revient à l’écran précédent ou quitte l’écran d’accueil si l’écran principal de l’application s’affiche.|Suspendre/reprendre le jeu, revenir à l’écran précédent ou quitter l’écran d’accueil si l’écran principal de l’application s’affiche.|
 |**Bouton gauche de l’épaule**|Navigue vers la gauche.|Dépend du jeu.|
 |**Déclencheur gauche**|Navigue vers la gauche.|Dépend du jeu.|
 |**Bouton de droite**|Navigue vers la droite.|Dépend du jeu.|
 |**Déclencheur droit**|Navigue vers la droite|Dépend du jeu.|
 |**Joystick gauche**|Parcourt les éléments d’interface utilisateur (modifie le focus).|Dépend du jeu.|
-|**Joystick droit**|N/A|Dépend du jeu.|
+|**Joystick droit**|n/a|Dépend du jeu.|
 
 Apple fournit les suggestions suivantes pour l’utilisation des contrôleurs de jeu :
 
@@ -361,11 +361,11 @@ Pour plus d’informations sur l’implémentation de la prise en charge des con
 
 <a name="Summary" />
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article a abordé la nouvelle télécommande Siri fournie avec la TV Apple, les gestes de surface tactile et les boutons distants Siri. Ensuite, il a abordé l’utilisation des mouvements et des storyboards, des gestes et du code et des événements de bas niveau. Enfin, si vous avez abordé l’utilisation des contrôleurs de jeu.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Exemples tvOS](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
 - [tvOS](https://developer.apple.com/tvos/)

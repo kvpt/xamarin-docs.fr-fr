@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 104141d98cecb31cae17f4510f742387be4a3fb7
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 297c7806ce8a880d65c38ef0e4672e41fee5acfe
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73027253"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78291900"
 ---
 # <a name="lollipop-features"></a>Fonctionnalités Lollipop
 
@@ -40,11 +40,11 @@ En plus des améliorations apportées à l’interface utilisateur par le biais 
 
 - Les **nouvelles api** &ndash; Android 5,0 ajoutent de nouvelles API pour la prise en charge de plusieurs réseaux, une connectivité Bluetooth améliorée, une gestion du stockage plus facile et un contrôle plus flexible des lecteurs multimédias et des appareils photo. Une nouvelle fonctionnalité de planification des travaux est disponible pour exécuter des tâches de façon asynchrone à des heures planifiées. Cette fonctionnalité permet d’améliorer la durée de vie de la batterie, par exemple la planification des tâches à effectuer lorsque l’appareil est branché et en cours de chargement.
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Spécifications
 
 Les éléments suivants sont requis pour utiliser les nouvelles fonctionnalités Android 5,0 dans les applications basées sur Xamarin :
 
-- **Xamarin. android** &ndash; Xamarin. Android 4,20 ou version ultérieure doit être installé et configuré à l’aide de Visual Studio ou de Visual Studio pour Mac. 
+- **Xamarin. android** &ndash; Xamarin. Android 4,20 ou version ultérieure doit être installé et configuré à l’aide de Visual Studio ou de Visual Studio pour Mac.
 
 - **Android SDK** &ndash; Android 5,0 (API 21) ou version ultérieure doit être installé via le gestionnaire de Android SDK.
 
@@ -105,7 +105,7 @@ Les notifications ont été considérablement modifiées dans Android 5,0 :
 
 - Les **sons et les vibrations sont gérés différemment** &ndash; les sons et les vibrations des notifications sont désormais gérés par `Notification.Builder` au lieu de `Ringtone`, `MediaPlayer`et `Vibrator`.
 
-- **Nouveau modèle de couleurs** &ndash; en fonction du thème du matériau, les notifications sont rendues avec du texte foncé sur les arrière-plans blancs ou très clairs. En outre, les canaux alpha dans les icônes de notification peuvent être modifiés par Android pour coordonner les jeux de couleurs système. 
+- **Nouveau modèle de couleurs** &ndash; en fonction du thème du matériau, les notifications sont rendues avec du texte foncé sur les arrière-plans blancs ou très clairs. En outre, les canaux alpha dans les icônes de notification peuvent être modifiés par Android pour coordonner les jeux de couleurs système.
 
 - Les notifications de **l’écran** &ndash; notifications peuvent désormais apparaître sur le l’écran d’appareil.
 
@@ -113,7 +113,7 @@ Les notifications ont été considérablement modifiées dans Android 5,0 :
 
 Dans la plupart des cas, le portage de la fonctionnalité de notification d’application existante vers Android 5,0 requiert les étapes suivantes :
 
-1. Convertissez votre code pour utiliser `Notification.Builder` (ou `NotificationsCompat.Builder`) pour créer des notifications. 
+1. Convertissez votre code pour utiliser `Notification.Builder` (ou `NotificationsCompat.Builder`) pour créer des notifications.
 
 2. Vérifiez que vos ressources de notification existantes sont visibles dans le nouveau modèle de couleurs de thème de matériau.
 
@@ -133,7 +133,7 @@ Le nouveau thème de matériel Android 5,0 apporte des modifications de balayage
 
 Android 5,0 vous accueille avec l’écran d’accueil affiché sur la gauche. La capture d’écran centrale est le premier écran de la liste des applications, et la capture d’écran à droite est l’écran **paramètres** . La spécification de la [conception de matériel](https://material.io/guidelines/material-design/introduction.html) de Google explique les règles de conception sous-jacentes derrière le nouveau concept de thème de matériau.
 
-Le thème matériel comprend trois versions intégrées que vous pouvez utiliser dans votre application : le thème `Theme.Material` foncé (par défaut), le thème `Theme.Material.Light` et le thème `Theme.Material.Light.DarkActionBar` : 
+Le thème matériel comprend trois versions intégrées que vous pouvez utiliser dans votre application : le thème `Theme.Material` foncé (par défaut), le thème `Theme.Material.Light` et le thème `Theme.Material.Light.DarkActionBar` :
 
 [![des captures d’écran des thèmes sombres, clairs et DarkActionBar](lollipop-images/three-material-themes-sml.png)](lollipop-images/three-material-themes.png#lightbox)
 
@@ -343,7 +343,7 @@ Le système de notification d’Android 5,0 a été considérablement mis à jou
 
 ![Exemple de notification Android 5,0 non développée](lollipop-images/expanded-notification-contracted.png)
 
-Quand une grande icône s’affiche dans une notification (comme indiqué dans l’exemple ci-dessus), Android 5,0 présente la petite icône sous la forme d’un badge sur la grande icône. 
+Quand une grande icône s’affiche dans une notification (comme indiqué dans l’exemple ci-dessus), Android 5,0 présente la petite icône sous la forme d’un badge sur la grande icône.
 
 Dans Android 5,0, les notifications peuvent également apparaître sur le l’écran d’appareil.
 Par exemple, voici un exemple de capture d’écran d’un l’écran avec une seule notification :
@@ -352,7 +352,8 @@ Par exemple, voici un exemple de capture d’écran d’un l’écran avec une s
 
 Les utilisateurs peuvent double-cliquer sur une notification sur le l’écran pour déverrouiller l’appareil et accéder à l’application à l’origine de cette notification, ou faire glisser pour fermer la notification. Les notifications ont un nouveau paramètre de *visibilité* qui détermine la quantité de contenu pouvant être affichée sur le l’écran. Les utilisateurs peuvent choisir d’autoriser ou non le contenu sensible à être affiché dans les notifications l’écran.
 
-Android 5,0 introduit un nouveau format de présentation de notification de haute priorité appelé *TETE-up*. Les notifications de niveau supérieur s’affichent en haut de l’écran pendant quelques secondes, puis revenez à la nuance de notification en haut de l’écran. Les notifications par tête permettent à l’interface utilisateur du système de placer des informations importantes devant l’utilisateur sans interrompre l’activité en cours. L’exemple suivant illustre une simple notification d’en-tête qui s’affiche au-dessus d’une application :
+Android 5,0 introduit un nouveau format de présentation de notification de haute priorité appelé *TETE-up*. Les notifications de niveau supérieur s’affichent en haut de l’écran pendant quelques secondes, puis revenez à la nuance de notification en haut de l’écran. Les notifications par tête permettent à l’interface utilisateur du système de placer des informations importantes devant l’utilisateur sans interrompre l’activité en cours.
+L’exemple suivant illustre une simple notification d’en-tête qui s’affiche au-dessus d’une application :
 
 [![exemple de notification de tête](lollipop-images/heads-up-notification-sml.png)](lollipop-images/heads-up-notification.png#lightbox)
 
@@ -377,7 +378,7 @@ Pour plus d’informations sur la création et le lancement de notifications ave
 
 Outre les nouvelles fonctionnalités de présentation décrites ci-dessus, Android 5,0 ajoute de nouvelles API qui étendent les fonctionnalités des fonctionnalités de connectivité, de stockage et sans fil existantes. En outre, Android 5,0 comprend de nouvelles API qui prennent en charge une nouvelle fonctionnalité de planificateur de travaux.
 
-### <a name="camera"></a>Appareil photo
+### <a name="camera"></a>Caméra
 
 Android 5,0 fournit plusieurs nouvelles API pour les capacités améliorées de l’appareil photo. Le nouvel espace de noms `Android.Hardware.Camera2` comprend des fonctionnalités permettant d’accéder à des appareils photo individuels connectés à un appareil Android. En outre, `Android.Hardware.Camera2` modélise chaque appareil photo comme un pipeline : il accepte une demande de capture, capture l’image, puis génère le résultat. Cette approche permet aux applications d’effectuer la file d’attente de plusieurs demandes de capture sur un appareil photo.
 
@@ -447,7 +448,7 @@ Android 5,0 introduit une nouvelle API `JobScheduler` qui peut aider les utilisa
 
 Pour plus d’informations sur les nouvelles API de planification des travaux dans Android 5,0, consultez [planification des travaux](https://developer.android.com/preview/api-overview.html#JobScheduler).
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article a fourni une vue d’ensemble des nouvelles fonctionnalités importantes dans Android 5,0 pour les développeurs d’applications Xamarin. Android :
 
@@ -468,9 +469,8 @@ Cet article a fourni une vue d’ensemble des nouvelles fonctionnalités importa
 Si vous débutez avec le développement Xamarin Android, lisez [configuration et installation](~/android/get-started/installation/index.md) pour vous aider à prendre en main Xamarin. Android.
 [Hello, Android](~/android/get-started/hello-android/index.md) est une excellente introduction pour apprendre à créer des projets Android.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Aperçu des développeurs Android L](https://developer.android.com/preview/index.html)
 - [Obtient le Android SDK](https://developer.android.com/sdk/index.html#Other)
 - [Conception de matériau](https://developer.android.com/preview/material/index.html)
-- [Principes de conception de matériau](http://static.googleusercontent.com/media/www.google.com/en/us/design/material-design.pdf)

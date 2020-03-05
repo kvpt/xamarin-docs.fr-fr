@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/08/2017
-ms.openlocfilehash: 7ced28a5ed379b761ffcc9841f5d0e923ec747e7
-ms.sourcegitcommit: 6de849e2feca928ce5d91a3897e7d4049301081c
+ms.openlocfilehash: 528ccd66cc013f83752d93251cb9714115b29819
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75667050"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78292357"
 ---
 # <a name="authentication-and-authorization"></a>Authentification et autorisation
 
@@ -20,7 +20,7 @@ L’authentification est le processus qui consiste à obtenir des informations d
 
 Il existe de nombreuses approches pour intégrer l’authentification et l’autorisation dans une application Xamarin. Forms qui communique avec une application Web ASP.NET MVC, y compris l’utilisation de ASP.NET Core identité, des fournisseurs d’authentification externes tels que Microsoft, Google, Facebook, Twitter et l’intergiciel (middleware) d’authentification. L’application mobile eShopOnContainers effectue l’authentification et l’autorisation avec un microservice d’identité en conteneur qui utilise IdentityServer 4. L’application mobile demande des jetons de sécurité à partir de IdentityServer, soit pour authentifier un utilisateur, soit pour accéder à une ressource. Pour que IdentityServer émette des jetons pour le compte d’un utilisateur, l’utilisateur doit se connecter à IdentityServer. Toutefois, IdentityServer ne fournit pas d’interface utilisateur ou de base de données pour l’authentification. Par conséquent, dans l’application de référence eShopOnContainers, ASP.NET Core identité est utilisée à cette fin.
 
-## <a name="authentication"></a>Authentification
+## <a name="authentication"></a>Authentication
 
 L’authentification est requise lorsqu’une application doit connaître l’identité de l’utilisateur actuel. Le mécanisme principal de ASP.NET Core pour identifier les utilisateurs est le système d’appartenance ASP.NET Core identité, qui stocke les informations utilisateur dans un magasin de données configuré par le développeur. En règle générale, ce magasin de données est un magasin EntityFramework, bien que les magasins personnalisés ou les packages tiers puissent être utilisés pour stocker les informations d’identité dans le stockage Azure, Azure Cosmos DB ou d’autres emplacements.
 
@@ -100,7 +100,7 @@ Après l’appel de la méthode `services.AddIdentityServer`, des API Fluent sup
 > [!TIP]
 > Chargez dynamiquement la configuration IdentityServer 4. Les API de IdentityServer 4 permettent de configurer les IdentityServer à partir d’une liste en mémoire d’objets de configuration. Dans l’application de référence eShopOnContainers, ces collections en mémoire sont codées en dur dans l’application. Toutefois, dans les scénarios de production, ils peuvent être chargés dynamiquement à partir d’un fichier de configuration ou d’une base de données.
 
-Pour plus d’informations sur la configuration de IdentityServer pour utiliser ASP.NET Core identité, consultez [utilisation de ASP.net Core identité](https://identityserver4.readthedocs.io/en/latest/quickstarts/8_aspnet_identity.html) dans la documentation IdentityServer.
+Pour plus d’informations sur la configuration de IdentityServer pour utiliser ASP.NET Core identité, consultez [utilisation de ASP.net Core identité](https://identityserver4.readthedocs.io/en/latest/quickstarts/6_aspnet_identity.html) dans la documentation IdentityServer.
 
 #### <a name="configuring-api-resources"></a>Configuration des ressources API
 
@@ -472,13 +472,13 @@ La propriété `DefaultRequestHeaders` de la classe `HttpClient` expose les en-t
 
 Pour plus d’informations sur la façon dont l’application mobile eShopOnContainers effectue des requêtes Web, consultez [accès aux données distantes](~/xamarin-forms/enterprise-application-patterns/accessing-remote-data.md).
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Il existe de nombreuses approches pour intégrer l’authentification et l’autorisation dans une application Xamarin. Forms qui communique avec une application Web ASP.NET MVC. L’application mobile eShopOnContainers effectue l’authentification et l’autorisation avec un microservice d’identité en conteneur qui utilise IdentityServer 4. IdentityServer est une infrastructure Open source OpenID Connect et OAuth 2,0 pour ASP.NET Core qui s’intègre avec ASP.NET Core identité pour exécuter l’authentification du jeton du porteur.
 
 L’application mobile demande des jetons de sécurité à partir de IdentityServer, soit pour authentifier un utilisateur, soit pour accéder à une ressource. Lors de l’accès à une ressource, un jeton d’accès doit être inclus dans la demande aux API qui nécessitent une autorisation. L’intergiciel (middleware) de IdentityServer valide les jetons d’accès entrants pour s’assurer qu’ils sont envoyés à partir d’un émetteur approuvé et qu’ils sont valides pour être utilisés avec l’API qui les reçoit.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Télécharger le livre électronique (PDF de 2 Mo)](https://aka.ms/xamarinpatternsebook)
 - [eShopOnContainers (GitHub) (exemple)](https://github.com/dotnet-architecture/eShopOnContainers)

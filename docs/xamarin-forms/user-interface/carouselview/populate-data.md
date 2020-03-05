@@ -6,13 +6,13 @@ ms.assetid: 20DB2C57-CE3A-4D91-80DC-73AE361A3CB0
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/17/2019
-ms.openlocfilehash: 7d1183bf0c741b5a7ca02b43c4edb0c640ee1ac2
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.date: 02/27/2019
+ms.openlocfilehash: 154d039e95ccc2de28e09a7162a32a19f8f84656
+ms.sourcegitcommit: 5d22f37dfc358678df52a4d17c57261056a72cb7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75488220"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "78292145"
 ---
 # <a name="xamarinforms-carouselview-data"></a>Données CarouselView Xamarin. Forms
 
@@ -264,29 +264,29 @@ Les indicateurs, qui représentent le nombre d’éléments et la position actue
 
 ```xaml
 <StackLayout>
-    <CarouselView x:Name="carouselView"
-                  ItemsSource="{Binding Monkeys}">
+    <CarouselView ItemsSource="{Binding Monkeys}"
+                  IndicatorView="indicatorView">
         <CarouselView.ItemTemplate>
             <!-- DataTemplate that defines item appearance -->
         </CarouselView.ItemTemplate>
     </CarouselView>
-    <IndicatorView ItemsSourceBy="carouselView"
+    <IndicatorView x:Name="indicatorView"
                    IndicatorColor="LightGray"
                    SelectedIndicatorColor="DarkGray"
                    HorizontalOptions="Center" />
 </StackLayout>
 ```
 
-Dans cet exemple, le `IndicatorView` est rendu sous le `CarouselView`, avec un indicateur pour chaque élément dans le `CarouselView`. La `IndicatorView` est remplie avec des données en affectant à la propriété `ItemsSourceBy` la valeur de l’objet `CarouselView`. Chaque indicateur est un cercle gris clair, tandis que l’indicateur qui représente l’élément actuel dans le `CarouselView` est gris foncé :
+Dans cet exemple, le `IndicatorView` est rendu sous le `CarouselView`, avec un indicateur pour chaque élément dans le `CarouselView`. La `IndicatorView` est remplie avec des données en affectant à la propriété `CarouselView.IndicatorView` la valeur de l’objet `IndicatorView`. Chaque indicateur est un cercle gris clair, tandis que l’indicateur qui représente l’élément actuel dans le `CarouselView` est gris foncé :
 
 [![Capture d’écran d’un CarouselView et d’un IndicatorView, sur iOS et Android](populate-data-images/indicators.png "Cercles IndicatorView")](populate-data-images/indicators-large.png#lightbox "Cercles IndicatorView")
 
 > [!IMPORTANT]
-> La définition de la propriété `ItemsSourceBy` entraîne la liaison de la propriété `IndicatorView.Position` à la propriété `CarouselView.Position` et la propriété `IndicatorView.ItemsSource` à la propriété `CarouselView.ItemsSource`.
+> La définition de la propriété `CarouselView.IndicatorView` entraîne la liaison de la propriété `IndicatorView.Position` à la propriété `CarouselView.Position` et la propriété `IndicatorView.ItemsSource` à la propriété `CarouselView.ItemsSource`.
 
 Pour plus d’informations sur les indicateurs, consultez [Xamarin. Forms IndicatorView](~/xamarin-forms/user-interface/indicatorview.md).
 
-## <a name="pull-to-refresh"></a>Tirer pour actualiser
+## <a name="pull-to-refresh"></a>Extraire pour actualiser
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView) prend en charge la fonctionnalité d’actualisation par extraction via le `RefreshView`, ce qui permet aux données affichées d’être actualisées en extrayant les éléments. Le `RefreshView` est un contrôle conteneur qui fournit des fonctionnalités pull pour actualiser à son enfant, à condition que l’enfant prenne en charge le contenu défilant. Par conséquent, l’extraction vers l’actualisation est implémentée pour une `CarouselView` en la définissant comme enfant d’un `RefreshView`:
 
@@ -381,6 +381,6 @@ void OnCollectionViewRemainingItemsThresholdReached(object sender, EventArgs e)
 - [CarouselView (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 - [Xamarin. Forms IndicatorView](~/xamarin-forms/user-interface/indicatorview.md)
 - [Xamarin. Forms RefreshView](~/xamarin-forms/user-interface/refreshview.md)
-- [Liaison de données Xamarin. Forms](~/xamarin-forms/app-fundamentals/data-binding/index.md)
+- [Liaison de données Xamarin.Forms](~/xamarin-forms/app-fundamentals/data-binding/index.md)
 - [Modèles de données Xamarin. Forms](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
 - [Créer un DataTemplateSelector Xamarin. Forms](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)
