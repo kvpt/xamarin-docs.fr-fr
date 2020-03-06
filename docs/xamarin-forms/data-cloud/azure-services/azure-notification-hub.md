@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 11/27/2019
-ms.openlocfilehash: 8b633481d74810bc4d86d68f8c36d55980092510
-ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
+ms.openlocfilehash: 778f56ec844e2802c1e1bc783824d55218678761
+ms.sourcegitcommit: e9d88587aafc912124b87732d81c3910247ad811
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "78292078"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78337289"
 ---
 # <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-xamarinforms"></a>Envoyer et recevoir des notifications Push avec Azure Notification Hubs et Xamarin. Forms
 
@@ -518,6 +518,7 @@ Azure Notification Hubs vous permet de vérifier que votre application peut rece
 1. Lorsque vous testez qu’une application peut recevoir des notifications push, vous devez utiliser un appareil physique. Les appareils virtuels Android et iOS ne sont peut-être pas configurés correctement pour recevoir des notifications push.
 1. L’exemple d’application Android inscrit son jeton et ses modèles une fois lors de l’émission du jeton Firebase. Lors du test, vous devrez peut-être demander un nouveau jeton et vous réinscrire auprès du Hub de notification Azure. La meilleure façon de le forcer est de nettoyer votre projet, de supprimer les dossiers `bin` et `obj` et de désinstaller l’application de l’appareil avant la reconstruction et le déploiement.
 1. De nombreuses parties du workflow de notification push sont exécutées de façon asynchrone. Cela peut entraîner des points d’arrêt non atteints ou atteints dans un ordre inattendu. Utilisez l’enregistrement de l’appareil ou du débogage pour suivre l’exécution sans interrompre le workflow de l’application. Filtrez le journal des appareils Android à l’aide des `DebugTag` spécifiées dans `Constants`.
+1. Lorsque le débogage est arrêté dans Visual Studio, l’application est fermée de force. Tous les récepteurs de messages ou autres services lancés dans le cadre du processus de débogage sont fermés et ne répondent pas aux événements de message.
 
 ## <a name="create-a-notification-dispatcher"></a>Créer un répartiteur de notifications
 
