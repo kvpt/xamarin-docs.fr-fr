@@ -10,11 +10,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
 ms.openlocfilehash: 5fadd1ba556b15cb92134471f007e41f04fce69e
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
-ms.translationtype: HT
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76724770"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78911924"
 ---
 # <a name="hello-ios--deep-dive"></a>Hello, iOS – Exploration approfondie
 
@@ -83,7 +83,7 @@ Cette section étudie les relations illustrées dans le diagramme suivant :
 
 [![](hello-ios-deepdive-images/image32.png "The Architecture and App Fundamentals relationships are illustrated in this diagram")](hello-ios-deepdive-images/image32.png#lightbox)
 
-### <a name="main-method"></a>Main (méthode)
+### <a name="main-method"></a>Méthode principale
 
 Le point d’entrée principal d’une application iOS est la classe `Application`. La classe `Application` est définie dans le fichier **Main.cs** et contient une méthode `Main` statique. Il crée une instance d’application Xamarin.iOS et passe le nom de la classe de *délégué d’application* qui gère les événements du système d’exploitation. Le code du modèle pour la méthode `Main` statique apparaît ci-dessous :
 
@@ -435,7 +435,7 @@ L’application se déploie sur l’appareil iOS :
 
 ### <a name="generate-custom-icons-and-launch-images"></a>Générer des icônes et des images de lancement personnalisées
 
-Tout le monde ne dispose pas d’un concepteur pour créer des icônes personnalisées et lancer les images dont a besoin une application pour se démarquer des autres. Voici plusieurs méthodes que vous pouvez utiliser pour générer des graphiques d’application personnalisés :
+Tout le monde ne dispose pas d’un concepteur pour créer les icônes personnalisées et les images de lancement dont une application a besoin. Voici plusieurs autres approches de génération d’une illustration d’application personnalisée :
 
 ::: zone pivot="macos"
 
@@ -452,13 +452,13 @@ Tout le monde ne dispose pas d’un concepteur pour créer des icônes personnal
 
 Pour plus d’informations sur les tailles et spécifications des icônes et images de lancement, reportez-vous au [guide d’utilisation des images](~/ios/app-fundamentals/images-icons/index.md).
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
-Félicitations ! Vous avez maintenant une connaissance approfondie des composants des applications Xamarin.iOS, ainsi que des outils nécessaires à leur création.
+Félicitations ! Vous avez maintenant une connaissance approfondie des composants des applications Xamarin.iOS, ainsi que des outils nécessaires à leur création.
 Dans le [didacticiel suivant de la série de mise en route](~/ios/get-started/hello-ios-multiscreen/index.md), vous allez étendre notre application pour gérer plusieurs écrans. Vous allez au fur et à mesure implémenter un contrôleur de navigation, découvrir les enchaînements de Storyboard et faire connaissance avec le modèle MVC (modèle-vue-contrôleur) quand vous étendrez votre application pour gérer plusieurs écrans.
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Hello, iOS (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios)
+- [Bonjour, iOS (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios)
 - [Lignes directrices de l’interface utilisateur iOS](https://developer.apple.com/design/human-interface-guidelines/ios/overview/themes/)
-- [Portail de provisionnement iOS](https://developer.apple.com/account/#/overview)
+- [Portail d’approvisionnement iOS](https://developer.apple.com/account/#/overview)

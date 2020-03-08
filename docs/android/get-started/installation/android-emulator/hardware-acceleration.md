@@ -9,11 +9,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 08/27/2018
 ms.openlocfilehash: a724a21dfffead307ca3d65d5ff134cf2d7c90db
-ms.sourcegitcommit: 24883be72e485e5311dd0eb91f9a22f78eeec11a
-ms.translationtype: HT
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77374034"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78912449"
 ---
 # <a name="hardware-acceleration-for-emulator-performance-hyper-v--haxm"></a>Accélération matérielle pour les performances de l’émulateur (Hyper-V et HAXM)
 
@@ -89,7 +89,7 @@ Pour vérifier que le matériel et les logiciels de votre ordinateur sont compat
 systeminfo
 ```
 
-Si toutes les exigences listées relatives à Hyper-V ont la valeur **Oui**, votre ordinateur peut prendre en charge Hyper-V. Exemple :
+Si toutes les exigences listées relatives à Hyper-V ont la valeur **Oui**, votre ordinateur peut prendre en charge Hyper-V. Par exemple :
 
 [![Exemple de sortie de systeminfo](hardware-acceleration-images/win/02-systeminfo-w158-sml.png)](hardware-acceleration-images/win/02-systeminfo-w158.png#lightbox)
 
@@ -130,7 +130,7 @@ Si votre matériel prend en charge HAXM, vous pouvez vérifier si HAXM est déj�
     sc query intelhaxm
     ```
 
-2. Examinez la sortie pour voir si le processus HAXM est en cours d’exécution. Si tel est le cas, vous devez voir la sortie listant l’état de `intelhaxm` comme étant `RUNNING`. Exemple :
+2. Examinez la sortie pour voir si le processus HAXM est en cours d’exécution. Si tel est le cas, vous devez voir la sortie listant l’état de `intelhaxm` comme étant `RUNNING`. Par exemple :
 
     ![Sortie de la commande sc query quand HAXM est disponible](hardware-acceleration-images/win/05-sc_query-w158.png)
 
@@ -152,7 +152,7 @@ Les paquets d’installation HAXM pour Windows sont disponibles sur la page [Ges
 
 Quand vous créez un appareil virtuel (consultez [Gestion des appareils virtuels avec Android Device Manager](~/android/get-started/installation/android-emulator/device-manager.md)), veillez à sélectionner une image système **x86**. Si vous utilisez une image système ARM, l’appareil virtuel ne sera pas accéléré et fonctionnera lentement.
 
-## <a name="troubleshooting"></a>Résolution des problèmes
+## <a name="troubleshooting"></a>Dépannage
 
 Pour obtenir de l’aide sur la résolution des problèmes d’accélération matérielle, consultez le guide [Résolution des problèmes](~/android/get-started/installation/android-emulator/troubleshooting.md?tabs=vswin#accel-issues-win) de l’émulateur Android.
 
@@ -241,12 +241,12 @@ Les paquets d’installation HAXM pour macOS sont disponibles sur la page [Gesti
 
    [![Fenêtre Intel Hardware Accelerated Execution Manager Setup](hardware-acceleration-images/mac/01-haxm-installer-sml.png)](hardware-acceleration-images/mac/01-haxm-installer.png#lightbox)
 
-## <a name="troubleshooting"></a>Résolution des problèmes
+## <a name="troubleshooting"></a>Dépannage
 
 Pour obtenir de l’aide sur la résolution des problèmes d’accélération matérielle, consultez le guide [Résolution des problèmes](~/android/get-started/installation/android-emulator/troubleshooting.md?tabs=vsmac#accel-issues-mac) de l’émulateur Android.
 
 ::: zone-end
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Exécuter des applications sur l’émulateur Android](https://developer.android.com/studio/run/emulator)

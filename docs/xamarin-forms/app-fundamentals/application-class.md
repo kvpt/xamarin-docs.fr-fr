@@ -9,11 +9,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/19/2016
 ms.openlocfilehash: aaf2086fd8128d68baa401ab646b31bcbc279545
-ms.sourcegitcommit: efbc69acf4ea484d8815311b058114379c9db8a2
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73842969"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78916483"
 ---
 # <a name="xamarinforms-app-class"></a>Classe App Xamarin.Forms
 
@@ -112,7 +112,7 @@ Les données ajoutées au dictionnaire seront disponibles lors du retour de l’
 
 Xamarin.Forms 1.4 comprend une nouvelle méthode pour la classe `Application` (`SavePropertiesAsync()`) qui peut être appelée pour faire persister de manière proactive le dictionnaire `Properties`. Cela vous permet d’enregistrer les propriétés après les mises à jour importantes, plutôt que de risquer qu’elles ne soient pas sérialisées à cause d’un plantage ou parce qu’elles ont été tuées par le système d’exploitation.
 
-Vous trouverez des références sur l’utilisation du dictionnaire `Properties` dans les chapitres [6](https://developer.xamarin.com/r/xamarin-forms/book/chapter06.pdf), [15](https://developer.xamarin.com/r/xamarin-forms/book/chapter15.pdf) et [20 ](https://developer.xamarin.com/r/xamarin-forms/book/chapter20.pdf) de l’ouvrage **Creating Mobile Apps with Xamarin.Forms**, ainsi que dans les [exemples](https://github.com/xamarin/xamarin-forms-book-preview-2) associés.
+Vous trouverez des références sur l’utilisation du dictionnaire `Properties` dans les chapitres **6**, [15](https://developer.xamarin.com/r/xamarin-forms/book/chapter06.pdf) et [20 ](https://developer.xamarin.com/r/xamarin-forms/book/chapter15.pdf) de l’ouvrage [Creating Mobile Apps with Xamarin.Forms](https://developer.xamarin.com/r/xamarin-forms/book/chapter20.pdf), ainsi que dans les [exemples](https://github.com/xamarin/xamarin-forms-book-preview-2) associés.
 
 ## <a name="the-application-class"></a>Classe d’application
 
@@ -223,7 +223,7 @@ Notez que `Forms.Init()` doit être appelé à partir d’**App.xaml.cs** dans l
 
 Pour plus d’informations, consultez l’article [Projets d’installation Windows](~/xamarin-forms/platform/windows/installation/index.md) qui inclut des étapes pour ajouter un projet UWP à une solution Xamarin.Forms existante ne ciblant pas UWP.
 
-## <a name="related-video"></a>Vidéo associée
+## <a name="related-video"></a>Vidéo connexe
 
 > [!Video https://channel9.msdn.com/Series/Xamarin-101/Xamarin-Solution-Architecture-4-of-11/player]
 

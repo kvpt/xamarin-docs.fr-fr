@@ -1,6 +1,6 @@
 ---
 title: Provisionnement manuel pour Xamarin.iOS
-description: Après l’installation de Xamarin.iOS, l’étape suivante dans le développement iOS est de provisionner votre appareil iOS. Ce guide décrit comment configurer des profils et des certificats de développement par le biais du provisionnement manuel.
+description: Après l’installation de Xamarin.iOS, l’étape suivante dans le développement iOS consiste à provisionner votre appareil iOS. Ce guide décrit comment configurer des profils et des certificats de développement par le biais du provisionnement manuel.
 ms.prod: xamarin
 ms.assetid: E26ACC94-F4A5-4FF5-B7D4-BE596745A665
 ms.technology: xamarin-ios
@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 07/15/2017
 ms.openlocfilehash: 945a42485486dbfddfd023a72e88d9127651c71f
-ms.sourcegitcommit: 6f09bc2b760e76a61a854f55d6a87c4f421ac6c8
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75607947"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78911502"
 ---
 # <a name="manual-provisioning-for-xamarinios"></a>Provisionnement manuel pour Xamarin.iOS
 
@@ -73,11 +73,11 @@ Pour générer une identité de signature, effectuez les étapes suivantes :
 
 ### <a name="understanding-certificate-key-pairs"></a>Présentation des paires clé/certificat
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 Le profil de développeur contient des certificats, leurs clés associées et tous les profils de provisionnement associés au compte. Il existe en fait deux versions d’un profil de développeur, une première sur le portail des développeurs et l’autre sur un Mac local. La différence entre les deux est le type de clés qu’elles contiennent : _le profil sur le portail contient toutes les clés publiques associées à vos certificats, tandis que la copie sur votre Mac local contient toutes les clés privées_. Pour que les certificats soient valides, les paires de clés doivent correspondre. Conservez une sauvegarde du profil de développeur sur le Mac local, car en cas de perte des clés privées, tous les certificats et profils de provisionnement doivent être regénérés.
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Le profil de développeur contient des certificats, leurs clés associées et tous les profils de provisionnement associés au compte. Il existe en fait deux versions d’un profil de développeur, une première sur le portail des développeurs et l’autre sur un Mac. La différence entre les deux est le type de clés qu’elles contiennent : _le profil sur le portail contient toutes les clés publiques associées à vos certificats, tandis que la copie sur le Mac contient toutes les clés privées_. Pour que les certificats soient valides, les paires de clés doivent correspondre. Conservez une sauvegarde du profil de développeur sur le Mac de l’hôte de build Xamarin, car en cas de perte des clés privées, tous les certificats et profils de provisionnement doivent être regénérés.
 
@@ -94,7 +94,7 @@ Maintenant que vous avez établi votre identité auprès d’Apple et que vous a
 
 <a name="adddevice" />
 
-## <a name="add-a-device"></a>Ajouter un appareil
+## <a name="add-a-device"></a>Ajout d’un appareil
 
 Lorsque vous créez un profil de provisionnement pour le développement, vous devez indiquer quels appareils peuvent exécuter l’application. Pour ce faire, vous pouvez ajouter jusqu’à 100 appareils par année civile à notre portail des développeurs et depuis ce dernier, vous pouvez sélectionner les appareils à ajouter à un profil de provisionnement particulier. Suivez les étapes ci-dessous sur votre Mac pour ajouter un appareil au portail des développeurs.
 
@@ -143,9 +143,9 @@ Après avoir ajouté l’appareil au portail des développeurs, il est nécessai
 
 Avant de créer un profil de provisionnement, un *ID d’application* doit être créé. Un ID d’application est une chaîne de style DNS inverse qui identifie une application de manière unique. Les étapes ci-dessous montrent comment créer un **ID d’application générique**, utilisable pour générer et installer la plupart des applications. Les **ID d’application explicites** autorisent uniquement l’installation d’une seule application (avec l’ID de bundle correspondant) et servent généralement à certaines fonctionnalités iOS comme Apple Pay et HealthKit. Pour plus d’informations sur la création d’ID d’application explicites, reportez-vous au guide d’[utilisation des fonctionnalités](~/ios/deploy-test/provisioning/capabilities/index.md).
 
-### <a name="app-id"></a>App ID
+### <a name="app-id"></a>ID d'application
 
-1. Dans le [portail des développeurs](https://developer.apple.com/account/overview.action), accédez à la section *Certificats, identificateurs et profils* du centre des développeurs Apple. Sélectionnez **ID d’application** sous **Identificateurs**.
+1. Dans le [portail des développeurs](https://developer.apple.com/account/overview.action), accédez à la section *Certificats, identificateurs et profils* du centre des développeurs Apple. Sélectionnez **App IDs** sous **Identifiers**.
 2. Cliquez sur le bouton **+** et fournissez un **nom** :
 
     [![](manual-provisioning-images/appid05a.png "Provide a Name")](manual-provisioning-images/appid05a.png#lightbox)
@@ -155,7 +155,7 @@ Avant de créer un profil de provisionnement, un *ID d’application* doit être
 
 4. Cliquez sur le bouton **Continuer** et suivez les instructions à l’écran pour créer l’ID d’application.
 
-### <a name="provisioning-profile"></a>Profil de configuration
+### <a name="provisioning-profile"></a>Profil de provisionnement
 
 Une fois que l’ID d’application a été créé, le profil de provisionnement peut être généré. Ce profil de provisionnement indique à *quelle* application (ou quelles applications, s’il s’agit d’un ID d’application générique) il se réfère, *qui* peut l’utiliser (en fonction des certificats de développeur ajoutés) et *quels* appareils peuvent installer l’application.
 
@@ -207,12 +207,12 @@ Les certificats et les profils de provisionnement qui ont été créés dans le 
 
 Les nouveaux certificats ou profils de provisionnement sont alors disponibles dans Visual Studio pour Mac ou Visual Studio et prêts à être utilisés.
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 > [!IMPORTANT]
 > Il peut être nécessaire d’arrêter et de redémarrer Visual Studio pour Mac afin d’afficher des certificats ou des profils nouveaux ou modifiés mis à jour par Xcode.
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 > [!IMPORTANT]
 > Il peut être nécessaire d’arrêter et de redémarrer Visual Studio afin d’afficher des certificats ou des profils nouveaux ou modifiés mis à jour par Xcode.
@@ -229,9 +229,9 @@ Apple propose une sélection de services d’application spéciaux, également a
 
 ## <a name="deploying-to-a-device"></a>Déploiement sur un appareil
 
-À ce stade, le provisionnement doit être terminé et l’application prête à être déployée sur l’appareil. Pour ce faire, effectuez les étapes suivantes :
+À ce stade, le provisionnement doit être terminé et l’application prête à être déployée sur l’appareil. Pour ce faire, procédez comme suit :
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 > [!IMPORTANT]
 > Avant de commencer, veillez à sélectionner **Attribution manuelle** dans **Info.plist**.
@@ -250,7 +250,7 @@ Apple propose une sélection de services d’application spéciaux, également a
 4. Veillez à définir la configuration de build sur **iPhone** / **iPad**, plutôt que sur le simulateur.
 5. Cliquez sur **Exécuter** dans Visual Studio pour Mac et regardez l’application s’exécuter sur l’appareil.
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 > [!IMPORTANT]
 > Avant de commencer, sélectionnez **Provisionnement manuel** dans **Projet > Propriétés de provisionnement...** .
@@ -269,7 +269,7 @@ Apple propose une sélection de services d’application spéciaux, également a
 
 -----
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Ce guide a décrit les étapes requises pour configurer l’environnement de développement nécessaire à Xamarin.iOS. Il a expliqué la façon dont le code d’une application est signé à l’aide d’informations sur le développeur, son équipe, les appareils sur lesquels l’application peut s’exécuter et son ID d’application individuel.
 
@@ -277,5 +277,5 @@ Ce guide a décrit les étapes requises pour configurer l’environnement de dé
 
 - [Provisionnement libre](~/ios/get-started/installation/device-provisioning/free-provisioning.md)
 - [Distribution d’une application](~/ios/deploy-test/app-distribution/index.md)
-- [Résolution des problèmes](~/ios/deploy-test/troubleshooting.md)
+- [Dépannage](~/ios/deploy-test/troubleshooting.md)
 - [Apple - Guide de distribution d’applications](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html)

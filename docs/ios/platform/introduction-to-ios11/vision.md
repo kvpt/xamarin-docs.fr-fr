@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 08/31/2017
 ms.openlocfilehash: b58e7b1fffed3253d9765401d52f16b751db134d
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032070"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78910837"
 ---
 # <a name="vision-framework-in-xamarinios"></a>Framework de vision dans Xamarin. iOS
 
@@ -175,7 +175,7 @@ Affichez la source de l' [exemple](https://docs.microsoft.com/samples/xamarin/io
 
 L’infrastructure de vision comprend des fonctionnalités supplémentaires pour détecter les caractéristiques du visage, telles que les yeux et la bouche. Utilisez le type de `VNDetectFaceLandmarksRequest`, qui renverra `VNFaceObservation` résultats comme à l’étape 3 ci-dessus, mais avec des données de `VNFaceLandmark` supplémentaires.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Rectangles de vision (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionrectangles)
 - [Visages de vision (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionfaces)
