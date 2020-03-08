@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
 ms.openlocfilehash: 3e11b163d16be9711bf09102e3ab8604d98299d7
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75487761"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78910882"
 ---
 # <a name="working-with-the-watchos-parent-application-in-xamarin"></a>Utilisation de l’Application parente dans Xamarin watchOS
 
@@ -20,7 +20,7 @@ Il existe différentes façons de communiquer entre l’application de surveilla
 
 - Les applications de visionneuse peuvent [exécuter du code](#run-code) sur l’application parente sur l’iPhone.
 
-- Espion extensions peut [partagent un emplacement de stockage](#shared-storage) avec l’application iPhone parent.
+- Les extensions Watch peuvent [partager un emplacement de stockage](#shared-storage) avec l’application iPhone parente.
 
 - Utilisez la remise pour transmettre des données d’une notification à l’application Watch, en envoyant l’utilisateur à un contrôleur d’interface spécifique dans l’application.
 
@@ -35,11 +35,11 @@ Ces deux exemples montrent comment utiliser `WCSession` pour exécuter du code e
 
 ## <a name="shared-storage"></a>Stockage partagé
 
-Si vous configurez un [groupe app](~/ios/watchos/app-fundamentals/app-groups.md) puis extensions iOS 8 (y compris les extensions d’espion) peuvent partager des données avec l’application parente.
+Si vous configurez un [groupe d’applications](~/ios/watchos/app-fundamentals/app-groups.md) , les extensions iOS 8 (y compris les extensions espion) peuvent partager des données avec l’application parente.
 
 ### <a name="nsuserdefaults"></a>Valeurs NSUserDefaults
 
-Le code suivant peut être écrit dans l’extension d’application watch et l’application iPhone parent afin qu’ils peuvent référencer un ensemble commun de `NSUserDefaults`:
+Le code suivant peut être écrit à la fois dans l’extension de l’application espion et dans l’application iPhone parente afin qu’il puisse référencer un ensemble commun de `NSUserDefaults`:
 
 ```csharp
 NSUserDefaults shared = new NSUserDefaults(
@@ -70,11 +70,11 @@ Console.WriteLine ("agcpath: " + appGroupContainerPath);
 // use the path to create and update files
 ```
 
-Remarque : si le chemin d’accès est `null` puis vérifiez le [configuration du groupe application](~/ios/watchos/app-fundamentals/app-groups.md) afin de garantir les profils de provisionnement ont été configurés correctement et ont été téléchargés/installé sur l’ordinateur de développement.
+Remarque : si le chemin d’accès est `null` Vérifiez la [configuration du groupe d’applications](~/ios/watchos/app-fundamentals/app-groups.md) pour vous assurer que les profils de configuration ont été correctement configurés et ont été téléchargés/installés sur l’ordinateur de développement.
 
-Pour plus d’informations, consultez le [application groupe fonctionnalités](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md) documentation.
+Pour plus d’informations, consultez la documentation sur les [fonctionnalités du groupe d’applications](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md) .
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
-- [Référence de WKInterfaceController d’Apple](https://developer.apple.com/library/prerelease/ios/documentation/WatchKit/Reference/WKInterfaceController_class/index.html#//apple_ref/occ/clm/WKInterfaceController/openParentApplication:reply:)
-- [Apple partage de données avec votre application de conteneur](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/ExtensionScenarios.html)
+- [Référence WKInterfaceController d’Apple](https://developer.apple.com/library/prerelease/ios/documentation/WatchKit/Reference/WKInterfaceController_class/index.html#//apple_ref/occ/clm/WKInterfaceController/openParentApplication:reply:)
+- [Partager des données avec votre application conteneur](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/ExtensionScenarios.html)

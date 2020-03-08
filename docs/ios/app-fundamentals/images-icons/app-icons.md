@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 05/22/2017
 ms.openlocfilehash: 37695ef93a1005febf12369e7d1defccf6130832
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75488428"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78916538"
 ---
 # <a name="application-icons-in-xamarinios"></a>Icônes d’application dans Xamarin. iOS
 
@@ -54,8 +54,8 @@ Les tailles et résolutions de ressource d’image suivantes seront nécessaires
 
     ||1x|x 2|
     |---|---|---|
-    |Icône d’application|60x60<sup>1</sup>|120x120|
-    |À la une|40x40<sup>2</sup>|80 x 80|
+    |Icône d’application|60 x 60<sup>1</sup>|120x120|
+    |À la une|40 x 40<sup>2</sup>|80x80|
     |Paramètres|-|-|
 
 - **iPhone : iOS 5 & 6**
@@ -64,7 +64,7 @@ Les tailles et résolutions de ressource d’image suivantes seront nécessaires
     |---|---|---|
     |Icône d’application|57 x 57|114x114|
     |À la une|29 x 29|58x58|
-    |Paramètres|29x29<sup>3, 4</sup>|58x58<sup>3, 4</sup>|
+    |Paramètres|29x29<sup>3, 4</sup>|58 x 58<sup>3, 4</sup>|
 
 ### <a name="ipad-icon-sizes"></a>Tailles d’icône iPad
 
@@ -73,15 +73,15 @@ Les tailles et résolutions de ressource d’image suivantes seront nécessaires
     ||2x (iPad Pro)|
     |---|---|
     |Icône d’application|167x167<sup>6</sup>|
-    |À la une|120x120<sup>6</sup>|
-    |Paramètres|58x58<sup>5</sup>|
+    |À la une|120 x 120<sup>6</sup>|
+    |Paramètres|58 x 58<sup>5</sup>|
 
 - **iPad : iOS 7 & 8**
 
     ||1x|x 2|
     |---|---|---|
     |Icône d’application|76 x 76|152 x 152|
-    |À la une|40 x 40|80 x 80|
+    |À la une|40 x 40|80x80|
     |Paramètres|-|-|
 
 - **iPad : iOS 5 & 6**
@@ -90,7 +90,7 @@ Les tailles et résolutions de ressource d’image suivantes seront nécessaires
     |---|---|---|
     |Icône d’application|72 x 72|144x144|
     |À la une|50 x 50|100x100|
-    |Paramètres|29x29<sup>3, 5</sup>|58x58<sup>3, 5</sup>|
+    |Paramètres|29x29<sup>3, 5</sup>|58 x 58<sup>3, 5</sup>|
 
  1. Visual Studio pour Mac et Xcode ne prennent plus en charge le paramétrage de l’image 1x pour iOS 7.
  2. La définition d’une image 1x pour iOS 7 n’est pas prise en charge lors de l’utilisation des catalogues de ressources.
@@ -109,7 +109,7 @@ Pour les icônes, un jeu d’images `AppIcon` spécial peut être ajouté au fic
 
 Pour utiliser un catalogue de composants, procédez comme suit :
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 1. Double-cliquez sur le fichier `Info.plist` dans le **Explorateur de solutions** pour l’ouvrir et le modifier.
 2. Faites défiler jusqu’à la section **icônes iPhone** .
@@ -129,7 +129,7 @@ Pour utiliser un catalogue de composants, procédez comme suit :
 7. Cliquez sur le bouton **ouvrir** pour inclure l’image dans le projet et la définir dans le xcasset.
 8. Répétez cette opération pour toutes les images requises.
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. Double-cliquez sur * * info.  \* * fichier dans le **Explorateur de solutions**:
 
@@ -166,7 +166,7 @@ Si vous utilisez la méthode ad hoc de diffusion de l’application (pour les ut
 
 Pour spécifier les illustrations iTunes, effectuez les tâches suivantes :
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 1. Double-cliquez sur le fichier `Info.plist` dans le **Explorateur de solutions** pour l’ouvrir et le modifier.
 2. Faites défiler jusqu’à la section **illustrations d’iTunes** de l’éditeur : 
@@ -175,7 +175,7 @@ Pour spécifier les illustrations iTunes, effectuez les tâches suivantes :
 3. Pour toute image manquante, cliquez sur la miniature dans l’éditeur, sélectionnez le fichier image correspondant à l’illustration iTunes souhaitée dans la boîte de dialogue Ouvrir un fichier, puis cliquez sur le bouton **OK** .
 4. Répétez cette étape jusqu’à ce que toutes les images nécessaires aient été spécifiées pour l’application.
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. Double-cliquez sur le fichier `Info.plist` dans le **Explorateur de solutions** pour l’ouvrir et le modifier.
 
@@ -187,7 +187,7 @@ Pour spécifier les illustrations iTunes, effectuez les tâches suivantes :
 
 -----
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Utilisation des images (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/workingwithimages)
 - [Hello, iPhone](~/ios/get-started/hello-ios/index.md)

@@ -10,11 +10,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2019
 ms.openlocfilehash: c1d7aa1535fe979df222aaedc6ba2cf3bae0d51c
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
-ms.translationtype: HT
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "71679987"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78911715"
 ---
 # <a name="create-a-single-page-xamarinforms-application"></a>Créer une application Xamarin.Forms monopage
 
@@ -32,7 +32,7 @@ Le guide de démarrage rapide vous explique comment créer une application Xamar
 
 ::: zone pivot="windows"
 
-### <a name="prerequisites"></a>Prérequis
+### <a name="prerequisites"></a>Composants requis
 
 - Installation de Visual Studio 2019 (dernière version) et de la charge de travail **Développement mobile en .NET**.
 - Connaissance de C#.
@@ -144,7 +144,7 @@ Pour plus d’informations sur ces prérequis, consultez [Installation de Xamari
     }
     ```
 
-    Ce code définit un champ `_fileName`, qui référence un fichier nommé `notes.txt` qui stocke les données de notes dans le dossier de données d’application locale pour l’application. Quand le constructeur de page est exécuté, le fichier est lu, s’il existe, et affiché dans l’[`Editor`](xref:Xamarin.Forms.Editor). Quand vous appuyez sur le [`Button`](xref:Xamarin.Forms.Button) **Enregistrer**, le gestionnaire d’événements `OnSaveButtonClicked` s’exécute, ce qui permet d’enregistrer le contenu de `Editor` dans le fichier. Quand vous appuyez sur le `Button` **Supprimer**, le gestionnaire d’événements `OnDeleteButtonClicked` s’exécute, ce qui permet de supprimer le fichier, s’il existe, et de supprimer le texte présent dans `Editor`. Pour plus d’informations sur l’interaction avec l’utilisateur, consultez [Réponse aux interactions de l’utilisateur](deepdive.md#responding-to-user-interaction) dans [Xamarin.Forms - Démarrage rapide en immersion](deepdive.md).
+    Ce code définit un champ `_fileName`, qui référence un fichier nommé `notes.txt` qui stocke les données de notes dans le dossier de données d’application locale pour l’application. Quand le constructeur de page est exécuté, le fichier est lu, s’il existe, et affiché dans l’[`Editor`](xref:Xamarin.Forms.Editor). Quand vous appuyez sur le[ `Button`Enregistrer](xref:Xamarin.Forms.Button), le gestionnaire d’événements `OnSaveButtonClicked` s’exécute, ce qui permet d’enregistrer le contenu de `Editor` dans le fichier. Quand vous appuyez sur leSupprimer`Button`, le gestionnaire d’événements `OnDeleteButtonClicked` s’exécute, ce qui permet de supprimer le fichier, s’il existe, et de supprimer le texte présent dans `Editor`. Pour plus d’informations sur l’interaction avec l’utilisateur, consultez [Réponse aux interactions de l’utilisateur](deepdive.md#responding-to-user-interaction) dans [Xamarin.Forms - Démarrage rapide en immersion](deepdive.md).
 
     Enregistrez les modifications apportées à **MainPage.xaml.cs** en appuyant sur **Ctrl+S** et fermez le fichier.
 
@@ -186,7 +186,7 @@ Pour plus d’informations sur ces prérequis, consultez [Installation de Xamari
 ::: zone-end
 ::: zone pivot="win-vs2017"
 
-### <a name="prerequisites"></a>Prérequis
+### <a name="prerequisites"></a>Composants requis
 
 - Installation de Visual Studio 2017 et de la charge de travail **Développement mobile en .NET**.
 - Connaissance de C#.
@@ -294,7 +294,7 @@ Pour plus d’informations sur ces prérequis, consultez [Installation de Xamari
     }
     ```
 
-    Ce code définit un champ `_fileName`, qui référence un fichier nommé `notes.txt` qui stocke les données de notes dans le dossier de données d’application locale pour l’application. Quand le constructeur de page est exécuté, le fichier est lu, s’il existe, et affiché dans l’[`Editor`](xref:Xamarin.Forms.Editor). Quand vous appuyez sur le [`Button`](xref:Xamarin.Forms.Button) **Enregistrer**, le gestionnaire d’événements `OnSaveButtonClicked` s’exécute, ce qui permet d’enregistrer le contenu de `Editor` dans le fichier. Quand vous appuyez sur le `Button` **Supprimer**, le gestionnaire d’événements `OnDeleteButtonClicked` s’exécute, ce qui permet de supprimer le fichier, s’il existe, et de supprimer le texte présent dans `Editor`. Pour plus d’informations sur l’interaction avec l’utilisateur, consultez [Réponse aux interactions de l’utilisateur](deepdive.md#responding-to-user-interaction) dans [Xamarin.Forms - Démarrage rapide en immersion](deepdive.md).
+    Ce code définit un champ `_fileName`, qui référence un fichier nommé `notes.txt` qui stocke les données de notes dans le dossier de données d’application locale pour l’application. Quand le constructeur de page est exécuté, le fichier est lu, s’il existe, et affiché dans l’[`Editor`](xref:Xamarin.Forms.Editor). Quand vous appuyez sur le[ `Button`Enregistrer](xref:Xamarin.Forms.Button), le gestionnaire d’événements `OnSaveButtonClicked` s’exécute, ce qui permet d’enregistrer le contenu de `Editor` dans le fichier. Quand vous appuyez sur leSupprimer`Button`, le gestionnaire d’événements `OnDeleteButtonClicked` s’exécute, ce qui permet de supprimer le fichier, s’il existe, et de supprimer le texte présent dans `Editor`. Pour plus d’informations sur l’interaction avec l’utilisateur, consultez [Réponse aux interactions de l’utilisateur](deepdive.md#responding-to-user-interaction) dans [Xamarin.Forms - Démarrage rapide en immersion](deepdive.md).
 
     Enregistrez les modifications apportées à **MainPage.xaml.cs** en appuyant sur **Ctrl+S** et fermez le fichier.
 
@@ -336,7 +336,7 @@ Pour plus d’informations sur ces prérequis, consultez [Installation de Xamari
 ::: zone-end
 ::: zone pivot="macos"
 
-### <a name="prerequisites"></a>Prérequis
+### <a name="prerequisites"></a>Composants requis
 
 - Visual Studio pour Mac (dernière version) avec installation de la prise en charge des plateformes iOS et Android.
 - Xcode (dernière version).
@@ -448,7 +448,7 @@ Pour plus d’informations sur ces prérequis, consultez [Installation de Xamari
     }
     ```
 
-    Ce code définit un champ `_fileName`, qui référence un fichier nommé `notes.txt` qui stocke les données de notes dans le dossier de données d’application locale pour l’application. Quand le constructeur de page est exécuté, le fichier est lu, s’il existe, et affiché dans l’[`Editor`](xref:Xamarin.Forms.Editor). Quand vous appuyez sur le [`Button`](xref:Xamarin.Forms.Button) **Enregistrer**, le gestionnaire d’événements `OnSaveButtonClicked` s’exécute, ce qui permet d’enregistrer le contenu de `Editor` dans le fichier. Quand vous appuyez sur le `Button` **Supprimer**, le gestionnaire d’événements `OnDeleteButtonClicked` s’exécute, ce qui permet de supprimer le fichier, s’il existe, et de supprimer le texte présent dans `Editor`. Pour plus d’informations sur l’interaction avec l’utilisateur, consultez [Réponse aux interactions de l’utilisateur](deepdive.md#responding-to-user-interaction) dans [Xamarin.Forms - Démarrage rapide en immersion](deepdive.md).
+    Ce code définit un champ `_fileName`, qui référence un fichier nommé `notes.txt` qui stocke les données de notes dans le dossier de données d’application locale pour l’application. Quand le constructeur de page est exécuté, le fichier est lu, s’il existe, et affiché dans l’[`Editor`](xref:Xamarin.Forms.Editor). Quand vous appuyez sur le[ `Button`Enregistrer](xref:Xamarin.Forms.Button), le gestionnaire d’événements `OnSaveButtonClicked` s’exécute, ce qui permet d’enregistrer le contenu de `Editor` dans le fichier. Quand vous appuyez sur leSupprimer`Button`, le gestionnaire d’événements `OnDeleteButtonClicked` s’exécute, ce qui permet de supprimer le fichier, s’il existe, et de supprimer le texte présent dans `Editor`. Pour plus d’informations sur l’interaction avec l’utilisateur, consultez [Réponse aux interactions de l’utilisateur](deepdive.md#responding-to-user-interaction) dans [Xamarin.Forms - Démarrage rapide en immersion](deepdive.md).
 
     Enregistrez les modifications apportées à **MainPage.xaml.cs** en choisissant **Fichier > Enregistrer** (ou en appuyant sur **&#8984;+S**) et fermez le fichier.
 
@@ -488,9 +488,9 @@ Pour plus d’informations sur ces prérequis, consultez [Installation de Xamari
 
 ::: zone-end
 
-## <a name="next-steps"></a>Étapes suivantes
+## <a name="next-steps"></a>Étapes suivantes :
 
-Dans ce guide de démarrage rapide, vous avez appris à :
+Dans ce démarrage rapide, vous avez appris comment :
 
 - Créer une application Xamarin.Forms multiplateforme
 - Définir l’interface utilisateur d’une page à l’aide du langage XAML (Extensible Application Markup Language)

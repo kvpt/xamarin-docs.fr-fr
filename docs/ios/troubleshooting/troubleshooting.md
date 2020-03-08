@@ -9,11 +9,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 05/22/2018
 ms.openlocfilehash: 716999002cf90b50b90f4924adc11555cc43717f
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "78291978"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78915363"
 ---
 # <a name="troubleshooting-tips-for-xamarinios"></a>Conseils de dépannage pour Xamarin. iOS
 
@@ -309,7 +309,7 @@ Cette paire de paires doit être supprimée, car Visual Studio pour Mac la gère
 
 (Fourni par Ed Anuff)
 
-Procédez comme suit :
+Suivez ces étapes :
 
 - Remplacez la version du kit de développement logiciel (SDK) de la build iPhone par 3,2 ou iTunes Connect pour la refuser lors du chargement, car une application compatible iPad créée à l’aide d’une version du kit de développement logiciel (SDK) est inférieure à 3,2
 - Créez un fichier info. plist personnalisé pour le projet et définissez explicitement MinimumOSVersion sur 3,0.   Cette opération remplace la valeur MinimumOSVersion 3,2 définie par Xamarin. iOS.   Si vous ne le faites pas, l’application ne sera pas en mesure de s’exécuter sur un iPhone.

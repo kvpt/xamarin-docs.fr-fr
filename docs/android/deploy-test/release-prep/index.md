@@ -7,31 +7,31 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2018
 ms.openlocfilehash: 8c21895918e4d4ac9a82804d4b140fbf7bf798fe
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021202"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78911202"
 ---
 # <a name="preparing-an-application-for-release"></a>Préparation d’une application pour la mise en production
 
-Une fois qu’une application a été codée et testée, il est nécessaire de préparer un paquet pour la distribution. La première tâche de préparation de ce paquet consiste à générer l’application pour sa mise en production, ce qui implique principalement de définir quelques attributs d’application.
+Une fois qu’une application a été codée et testée, il est nécessaire de préparer un package pour la distribution. La première tâche de préparation de ce package consiste à générer l’application à mettre en production, ce qui implique principalement de définir différents attributs d’application.
 
 Effectuez les étapes suivantes pour générer l’application à mettre en production :
 
-- **[Spécifier l’icône de l’application](#Specify_the_Application_Icon)**  &ndash; Une icône d’application doit être spécifiée pour chaque application Xamarin.Android. Bien que non nécessaire techniquement, certaines marketplaces, comme Google Play, en exigent une.
+- **[Spécifiez l’icône de l’application](#Specify_the_Application_Icon)** &ndash; chaque application Xamarin. Android doit avoir une icône d’application spécifiée. Bien que non nécessaire techniquement, certaines marketplaces, comme Google Play, en exigent une.
 
-- **[Version de l’application](#Versioning)**  &ndash; Cette étape initialise et met à jour les informations de gestion de versions. Ces informations sont importantes pour les futures mises à jour de l’application et permettent aux utilisateurs de savoir quelle version de l’application est installée.
+- **[Version que l’Application](#Versioning)** &ndash; cette étape implique l’initialisation ou la mise à jour des informations de contrôle de version. Ces informations sont importantes pour les futures mises à jour de l’application et permettent aux utilisateurs de savoir quelle version de l’application est installée.
 
-- **[Réduire l’APK](#shrink_apk)**  &ndash; La taille de l’APK final peut être considérablement réduite en utilisant l’éditeur de liens Xamarin.Android sur le code managé et ProGuard sur le bytecode Java.
+- **[Réduisez le APK](#shrink_apk)** &ndash; la taille du apk final peut être considérablement réduite à l’aide de l’éditeur de liens Xamarin. Android sur le code managé et ProGuard sur le bytecode Java.
 
-- **[Protéger l’application](#protect_app)** &ndash; Empêchez les utilisateurs ou les attaquants de déboguer, falsifier ou rétroconcevoir l’application en désactivant le débogage, en obfusquant le code managé, en ajoutant du code anti-violation et anti-débogage et en utilisant la compilation native.
+- **[Protégez l’application](#protect_app)** &ndash; empêcher les utilisateurs ou les attaquants de déboguer, de falsifier ou de rétroconcevoir l’application en désactivant le débogage, en masquant le code managé, en ajoutant anti-débogage et anti-falsification, et en utilisant la compilation native.
 
-- **[Définir les propriétés de création de package ](#Set_Packaging_Properties)** &ndash; Les propriétés de création de package contrôlent la création du paquet d’application Android (APK). Cette étape optimise l’APK, protège ses ressources et divise si nécessaire le paquet en modules.
+- **[Définir les propriétés de packaging](#Set_Packaging_Properties)** &ndash; les propriétés de Packaging contrôlent la création du package d’application Android (apk). Cette étape optimise l’APK, protège ses ressources et divise si nécessaire le paquet en modules.
 
-- **[Compiler](#Compile)** &ndash; Cette étape compile le code et les ressources pour vérifier que l’application est générée en mode Mise en production.
+- **[Compiler](#Compile)** &ndash; cette étape compile le code et les ressources pour vérifier qu’il est généré en mode release.
 
-- **[Archiver pour publication](#archive)** &ndash; Cette étape génère l’application et la place dans une archive en vue de sa signature et de sa publication.
+- **[Archiver pour la publication](#archive)** &ndash; cette étape génère l’application et la place dans une archive pour la signature et la publication.
 
 Chacune de ces étapes est décrite ci-dessous plus en détail.
 
@@ -43,13 +43,13 @@ Il est fortement recommandé de spécifier une icône d’application pour chaqu
 
 <!-- markdownlint-disable MD001 -->
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Dans Visual Studio 2017 et ultérieur, spécifiez l’icône de l’application via la section **Manifeste Android** des **Propriétés** du projet, comme illustré dans la capture d’écran suivante :
 
 [![Définir l’icône de l’application](images/vs/01-application-icon-sml.png)](images/vs/01-application-icon.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 Dans Visual Studio pour Mac, il est également possible de spécifier l’icône de l’application via la section **Manifeste Android** des **Options du projet**, comme illustré dans la capture d’écran suivante :
 
@@ -71,17 +71,17 @@ Normalement, `using Android.App` est déclaré au niveau de la partie supérieur
 
 La gestion de versions est un élément important de la maintenance et de la distribution des applications Android. Sans gestion de versions, il est difficile de déterminer si une application doit être mise à jour ou comment elle doit l’être. Pour faciliter la gestion de versions, Android reconnaît deux types différents d’informations : 
 
-- **Numéro de version** &ndash; Valeur entière (utilisée en interne par Android et l’application) qui représente la version de l’application. Cette valeur est initialement définie sur 1 dans la plupart des applications et elle est ensuite incrémentée avec chaque nouvelle build. Elle n’a aucun lien avec l’attribut de nom de version (voir plus bas). Les applications et les services de publication ne doivent pas montrer cette valeur aux utilisateurs. Cette valeur est stockée dans le fichier **AndroidManifest.xml** sous la forme `android:versionCode`. 
+- **Numéro de Version** &ndash; une valeur entière (utilisée en interne par Android et l’application) qui représente la version de l’application. Cette valeur est initialement définie sur 1 dans la plupart des applications et elle est ensuite incrémentée avec chaque nouvelle build. Elle n’a aucun lien avec l’attribut de nom de version (voir plus bas). Les applications et les services de publication ne doivent pas montrer cette valeur aux utilisateurs. Cette valeur est stockée dans le fichier **AndroidManifest.xml** sous la forme `android:versionCode`. 
 
-- **Nom de la version** &ndash; Chaîne qui est utilisée uniquement pour communiquer à l’utilisateur la version de l’application (tel qu’elle est installée sur un appareil spécifique). Le nom de la version est destiné à être affiché aux utilisateurs ou dans Google Play. Cette chaîne n’est pas utilisée en interne par Android. Le nom de la version peut être toute valeur de chaîne qui permet à un utilisateur d’identifier la build qui est installée sur son appareil. Cette valeur est stockée dans le fichier **AndroidManifest.xml** sous la forme `android:versionName`. 
+- **Nom** de la version &ndash; une chaîne utilisée uniquement pour communiquer des informations à l’utilisateur sur la version de l’application (installée sur un périphérique spécifique). Le nom de la version est destiné à être affiché aux utilisateurs ou dans Google Play. Cette chaîne n’est pas utilisée en interne par Android. Le nom de la version peut être toute valeur de chaîne qui permet à un utilisateur d’identifier la build qui est installée sur son appareil. Cette valeur est stockée dans le fichier **AndroidManifest.xml** sous la forme `android:versionName`. 
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Dans Visual Studio, ces valeurs peuvent être définies dans la section **Manifeste Android** des **Propriétés** du projet, comme illustré dans la capture d’écran suivante :
 
 [![Définir le numéro de version](images/vs/02-versioning-sml.png)](images/vs/02-versioning.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 Ces valeurs peuvent être définies dans la section **Générer > Application Android** des **Options du projet**, comme illustré dans la capture d’écran suivante :
 
@@ -103,7 +103,7 @@ Le mode Mise en production désactive le runtime partagé et active la liaison a
 
 - Configuration : Assemblys de SDK uniquement &ndash; Xamarin.Android 4.2.5 Taille = 3,0 Mo.
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Définissez les options de l’éditeur de liens via la section **Options Android** des **Propriétés** du projet :
 
@@ -111,14 +111,14 @@ Définissez les options de l’éditeur de liens via la section **Options Androi
 
 Le menu déroulant **Édition des liens** propose les options suivantes pour contrôler l’éditeur de liens :
 
-- **Aucun** &ndash; Cette option désactive l’éditeur de liens ; aucune liaison ne sera effectuée.
+- **Aucun** &ndash; cela désactive l’éditeur de liens ; aucune liaison ne sera effectuée.
 
-- **Assemblys de SDK uniquement** &ndash; Avec cette option, seuls les assemblys [requis par Xamarin.Android](~/cross-platform/internals/available-assemblies.md) seront liés. 
+- Les **assemblys du kit de développement logiciel (SDK) uniquement** &ndash; cela permet de lier uniquement les assemblys [requis par Xamarin. Android](~/cross-platform/internals/available-assemblies.md). 
     Les autres assemblys ne seront pas liés.
 
-- **Assemblys de SDK et assemblys d'utilisateur** &ndash; Avec cette option, tous les assemblys qui sont requis par l’application seront liés, pas seulement ceux qui sont requis par Xamarin.Android.
+- Le **Kit de développement logiciel (SDK) et les assemblys utilisateur** &ndash; cela permet de lier tous les assemblys requis par l’application, et pas seulement ceux qui sont requis par Xamarin. Android.
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 Définissez les options de l’éditeur de liens via l’onglet **Éditeur de liens** de la section **Build Android** des **Options du projet**, comme illustré dans la capture d’écran suivante :
 
@@ -126,11 +126,11 @@ Définissez les options de l’éditeur de liens via l’onglet **Éditeur de li
 
 Les options de contrôle de l’éditeur de liens sont les suivantes :
 
-- **Ne pas lier** &ndash; Cette option désactive l’éditeur de liens ; aucune liaison ne sera effectuée.
+- **Ne pas lier** &ndash; cela désactive l’éditeur de liens ; aucune liaison ne sera effectuée.
 
-- **Lier les assemblys du SDK uniquement** &ndash; Avec cette option, seuls les assemblys [requis par Xamarin.Android](~/cross-platform/internals/available-assemblies.md) seront liés. Les autres assemblys ne seront pas liés.
+- **Lier les assemblys du kit de développement logiciel (SDK) uniquement** &ndash; cela permet de lier uniquement les assemblys [requis par Xamarin. Android](~/cross-platform/internals/available-assemblies.md). Les autres assemblys ne seront pas liés.
 
-- **Lier tous les assemblys** &ndash; Avec cette option, tous les assemblys qui sont requis par l’application seront liés, pas seulement ceux qui sont requis par Xamarin.Android.
+- **Liez tous les assemblys** &ndash; cela permet de lier tous les assemblys requis par l’application, et pas seulement ceux qui sont requis par Xamarin. Android.
 
 -----
 
@@ -144,11 +144,11 @@ ProGuard n’est pas une alternative à l’éditeur de liens Xamarin.Android. L
 
 Si **Activer ProGuard** est activé, Xamarin.Android exécute l’outil ProGuard sur l’APK qui en résulte. Un fichier de configuration ProGuard est généré et utilisé par ProGuard au moment de la génération. Xamarin.Android prend également en charge les actions de génération *ProguardConfiguration* personnalisées. Vous pouvez ajouter un fichier de configuration ProGuard personnalisé à votre projet, cliquer dessus avec le bouton droit et le sélectionner comme action de génération comme illustré dans cet exemple : 
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 [![Action de génération Proguard](images/vs/05-proguard-build-action-sml.png)](images/vs/05-proguard-build-action.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 [![Action de génération Proguard](images/xs/05-proguard-build-action-sml.png)](images/xs/05-proguard-build-action.png#lightbox)
 
@@ -187,7 +187,7 @@ Notez que les builds Debug définissent automatiquement certaines autorisations 
 
 ### <a name="application-protection-with-dotfuscator"></a>Protection des applications avec Dotfuscator
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Même lorsque le [débogage est désactivé](#Disable_Debugging), les pirates peuvent recréer le package d’une application, en ajoutant ou supprimant des options de configuration ou des autorisations. Ils peuvent alors rétroconcevoir, déboguer ou falsifier l’application.
 [Dotfuscator Community Edition (CE)](https://www.preemptive.com/products/dotfuscator/overview) peut être utilisé pour obfusquer le code managé et injecter du code de détection de l’état de sécurité à l’exécution dans une application Xamarin.Android au moment de la génération pour détecter et répondre si l’application s’exécute sur un appareil rooté.
@@ -198,7 +198,7 @@ Pour utiliser Dotfuscator, cliquez sur **Outils > PreEmptive Protection - Dotfu
 Pour configurer Dotfuscator CE, consultez [Utilisation de Dotfuscator Community Edition avec Xamarin](https://www.preemptive.com/obfuscating-xamarin-with-dotfuscator).
 Une fois configuré, Dotfuscator CE protégera automatiquement chaque build créée.
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 Même lorsque le [débogage est désactivé](#Disable_Debugging), les pirates peuvent recréer le package d’une application, en ajoutant ou supprimant des options de configuration ou des autorisations. Ils peuvent alors rétroconcevoir, déboguer ou falsifier l’application.
 Même s’il ne prend pas en charge Visual Studio pour Mac, vous pouvez utiliser [Dotfuscator Community Edition (CE)](https://www.preemptive.com/products/dotfuscator/overview) avec Visual Studio pour obfusquer le code managé et injecter du code de détection de l’état de sécurité à l’exécution dans une application Xamarin.Android au moment de la génération pour détecter et répondre si l’application s’exécute sur un appareil rooté.
@@ -237,13 +237,13 @@ Le _compilateur d’optimisation LLVM_ crée du code compilé plus petit et plus
 
 ## <a name="set-packaging-properties"></a>Définir les propriétés de création de package
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Les propriétés de création de package peuvent être définies dans la section **Options Android** des **Propriétés** du projet, comme illustré dans la capture d’écran suivante :
 
 [![Propriétés de l’empaquetage](images/vs/04-packaging-sml.png)](images/vs/04-packaging.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 Les propriétés de création de package peuvent être définies dans les **Options du projet**, comme illustré dans la capture d’écran suivante :
 
@@ -271,15 +271,15 @@ Pour plus d’informations sur Multi-Dex, consultez [Configurer les applications
 
 <a name="Compile" />
 
-## <a name="compile"></a>Compile
+## <a name="compile"></a>Compiler
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Une fois toutes les étapes ci-dessus terminées, l’application est prête à être compilée. Sélectionnez **Générer > Regénérer la solution** pour vérifier que l’application est correctement générée en mode Mise en production. Notez que cette étape ne produit pas encore un APK.
 
 La création de package et la signature sont abordées plus en détail dans la section [Signature du paquet d’application](~/android/deploy-test/signing/index.md).
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 Une fois que toutes les étapes ci-dessus sont terminées, compilez l’application (sélectionnez **Générer > Générer tout**) pour vérifier qu’elle est correctement générée en mode Mise en production. Notez que cette étape ne produit pas encore un APK.
 
@@ -289,7 +289,7 @@ Une fois que toutes les étapes ci-dessus sont terminées, compilez l’applicat
 
 ## <a name="archive-for-publishing"></a>Archiver pour publication
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Pour commencer le processus de publication, cliquez avec le bouton droit sur le projet dans l’**Explorateur de solutions**, puis sélectionnez l’élément de menu contextuel **Archiver...**  :
 
@@ -319,15 +319,15 @@ Le **Gestionnaire d’archives** est composé d’un volet **Liste des solutions
 
 Le volet **Liste des solutions** affiche toutes les solutions ayant au moins un projet archivé. **Liste des solutions** comprend les sections suivantes :
 
-- **Solution actuelle** &ndash; Affiche la solution actuelle. Notez que cette zone peut être vide s’il n’existe aucune archive pour la solution actuelle.
-- **Toutes les archives** &ndash; Affiche toutes les solutions ayant une archive.
+- &ndash; de la **solution actuelle** affiche la solution actuelle. Notez que cette zone peut être vide s’il n’existe aucune archive pour la solution actuelle.
+- **Toutes les archives** &ndash; affiche toutes les solutions qui ont une archive.
 - Zone de texte **Rechercher** (en haut) &ndash; Filtre les solutions répertoriées dans la liste **Toutes les archives** en fonction de la chaîne de recherche entrée.
 
 Le volet **Liste des archives** affiche la liste de toutes les archives de la solution sélectionnée. **Liste des archives** comprend les sections suivantes :
 
-- **Nom de la solution sélectionnée** &ndash; Affiche le nom de la solution sélectionnée dans le volet **Liste des solutions**. Toutes les informations affichées dans le volet **Liste des archives** font référence à la solution sélectionnée.
-- **Filtre Plateformes** &ndash; Ce champ permet de filtrer les archives par type de plateforme (par exemple, iOS ou Android).
-- **Éléments d’archive** &ndash; Liste des archives de la solution sélectionnée. Chaque élément de cette liste inclut le nom du projet, la date de création et la plateforme. Cette liste peut également afficher des informations supplémentaires telles que la progression de l’archivage ou de la publication d’un élément.
+- **Nom de la solution sélectionnée** &ndash; affiche le nom de la solution sélectionnée dans la **liste solution**. Toutes les informations affichées dans le volet **Liste des archives** font référence à la solution sélectionnée.
+- **Plates-formes de filtre** &ndash; ce champ permet de filtrer les archives par type de plateforme (par exemple, iOS ou Android).
+- **Archiver les éléments** &ndash; liste des Archives de la solution sélectionnée. Chaque élément de cette liste inclut le nom du projet, la date de création et la plateforme. Cette liste peut également afficher des informations supplémentaires telles que la progression de l’archivage ou de la publication d’un élément.
 
 Le **Panneau des détails** affiche des informations supplémentaires sur chaque archive. Il permet également à l’utilisateur de démarrer le workflow de distribution ou d’ouvrir le dossier dans lequel la distribution a été créée. La section **Commentaires de build** permet d’inclure des commentaires de build dans l’archive.
 
@@ -343,11 +343,11 @@ La boîte de dialogue **Canal de distribution** affiche des informations sur l�
 
 Il est possible de choisir l’un des canaux de distribution suivants :
 
-- **Ad-Hoc** &ndash; Enregistre un APK signé sur disque qui peut être chargé de façon indépendante (sideloaded) sur des appareils Android. Poursuivez avec [Signature du paquet d’application](~/android/deploy-test/signing/index.md) pour apprendre à créer une identité de signature Android, à créer un certificat de signature pour les applications Android et à publier une version _ad hoc_ de l’application sur disque. Il s’agit d’un bon moyen de créer un APK de test.
+- La &ndash; **ad hoc** enregistre un apk signé sur un disque qui peut être faisant sur des appareils Android. Poursuivez avec [Signature du paquet d’application](~/android/deploy-test/signing/index.md) pour apprendre à créer une identité de signature Android, à créer un certificat de signature pour les applications Android et à publier une version _ad hoc_ de l’application sur disque. Il s’agit d’un bon moyen de créer un APK de test.
 
-- **Google Play** &ndash; Publie un APK signé sur Google Play. Poursuivez avec [Publication sur Google Play](~/android/deploy-test/publishing/publishing-to-google-play/index.md) pour apprendre comment signer et publier un APK sur Google Play Store.
+- **Google Play** &ndash; publie un apk signé sur Google Play. Poursuivez avec [Publication sur Google Play](~/android/deploy-test/publishing/publishing-to-google-play/index.md) pour apprendre comment signer et publier un APK sur Google Play Store.
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 Pour commencer le processus de publication, sélectionnez **Générer > Archiver pour publication** :
 
@@ -359,21 +359,21 @@ Pour commencer le processus de publication, sélectionnez **Générer > Archive
 
 Dans cet exemple, le **Gestionnaire d’archives** répertorie une seule application archivée, **MyApp**. Notez que le champ de commentaire permet d’enregistrer un bref commentaire avec l’archive. Pour publier une version archivée d’une application Xamarin.Android, sélectionnez l’application dans le **Gestionnaire d’archives**, puis cliquez sur **Signe et distribuer...** , comme illustré ci-dessus. La boîte de dialogue **Signer et distribuer** qui s’affiche propose deux options :
 
-[![Signer et distribuer](images/xs/09-sign-and-distribute-sml.png)](images/xs/09-sign-and-distribute.png#lightbox)
+[![Signer et distribuer...](images/xs/09-sign-and-distribute-sml.png)](images/xs/09-sign-and-distribute.png#lightbox)
 
 Vous pouvez y sélectionner le canal de distribution :
 
-- **Ad-Hoc** &ndash; Enregistre un APK signé sur disque de manière à pouvoir en charger une version test sur des appareils Android. Poursuivez avec [Signature du paquet d’application](~/android/deploy-test/signing/index.md) pour apprendre à créer une identité de signature Android, à créer un certificat de signature pour les applications Android et à publier une version &ldquo;ad hoc&rdquo; de l’application sur disque. Il s’agit d’un bon moyen de créer un APK de test.
+- Le &ndash; **ad hoc** enregistre un apk signé sur le disque afin qu’il puisse être faisant sur des appareils Android. Poursuivez avec [Signature du paquet d’application](~/android/deploy-test/signing/index.md) pour apprendre à créer une identité de signature Android, à créer un certificat de signature pour les applications Android et à publier une version &ldquo;ad hoc&rdquo; de l’application sur disque. Il s’agit d’un bon moyen de créer un APK de test.
 
-- **Google Play** &ndash; Publie un APK signé sur Google Play.
+- **Google Play** &ndash; publie un apk signé sur Google Play.
     Poursuivez avec [Publication sur Google Play](~/android/deploy-test/publishing/publishing-to-google-play/index.md) pour apprendre comment signer et publier un APK sur Google Play Store.
 
 -----
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Appareils multicœurs et Xamarin.Android](~/android/deploy-test/multicore-devices.md)
-- [Architectures d’UC](~/android/app-fundamentals/cpu-architectures.md)
-- [AOA](https://www.mono-project.com/docs/advanced/aot/)
+- [Architectures de processeur](~/android/app-fundamentals/cpu-architectures.md)
+- [AOT](https://www.mono-project.com/docs/advanced/aot/)
 - [Réduire le code et les ressources](https://developer.android.com/tools/help/proguard.html)
 - [Configurer des applications avec plus de 64 000 méthodes](https://developer.android.com/tools/building/multidex.html)

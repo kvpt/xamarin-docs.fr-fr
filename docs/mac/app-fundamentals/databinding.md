@@ -8,17 +8,17 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
 ms.openlocfilehash: 81a1f63078a5f7a2a70f731d1790f85f4283d22f
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030220"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78918961"
 ---
 # <a name="data-binding-and-key-value-coding-in-xamarinmac"></a>Liaison de données et codage de clé-valeur dans Xamarin. Mac
 
 _Cet article aborde l’utilisation du codage clé-valeur et de l’observation clé-valeur pour permettre la liaison de données aux éléments d’interface utilisateur dans les Interface Builder de Xcode._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Overview
 
 Lorsque vous travaillez C# avec et .net dans une application Xamarin. Mac, vous avez accès aux mêmes techniques de codage et de liaison de données que les développeurs qui travaillent en *objective-C* et *Xcode* . Comme Xamarin. Mac s’intègre directement à Xcode, vous pouvez utiliser les _Interface Builder_ de Xcode pour la liaison de données avec des éléments d’interface utilisateur au lieu d’écrire du code.
 
@@ -26,9 +26,9 @@ En utilisant le codage clé-valeur et les techniques de liaison de données dans
 
 [![Exemple d’application en cours d’exécution](databinding-images/intro01.png "Exemple d’application en cours d’exécution")](databinding-images/intro01-large.png#lightbox)
 
-Dans cet article, nous allons aborder les bases de l’utilisation du codage clé-valeur et de la liaison de données dans une application Xamarin. Mac. Nous vous recommandons vivement d’utiliser l’article [Hello, Mac](~/mac/get-started/hello-mac.md) , en particulier la [Présentation de Xcode et Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) et les sections [actions et actions](~/mac/get-started/hello-mac.md#outlets-and-actions) , car il aborde les concepts et les techniques clés que nous allons utiliser dans. Cet article.
+Dans cet article, nous allons aborder les bases de l’utilisation du codage clé-valeur et de la liaison de données dans une application Xamarin. Mac. Nous vous recommandons vivement d’utiliser l’article [Hello, Mac](~/mac/get-started/hello-mac.md) , en particulier la [Présentation de Xcode et Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) et les sections [actions et actions](~/mac/get-started/hello-mac.md#outlets-and-actions) , car il aborde les concepts et les techniques clés que nous allons utiliser dans cet article.
 
-Vous pouvez également jeter un coup d’œil à la section [exposition des C# classes/méthodes à Objective-C](~/mac/internals/how-it-works.md) du document [Internals Xamarin. Mac.](~/mac/internals/how-it-works.md) elle explique également les attributs `Register` et `Export` utilisés pour associer vos C# classes à objective-c. objets et éléments d’interface utilisateur.
+Vous pouvez également jeter un coup d’œil à la section [exposition des C# classes/méthodes à Objective-C](~/mac/internals/how-it-works.md) du document [Internals Xamarin. Mac.](~/mac/internals/how-it-works.md) elle explique également les attributs `Register` et `Export` utilisés pour relier vos C# classes aux objets objective-c et aux éléments d’interface utilisateur.
 
 <a name="What_is_Key-Value_Coding" />
 
@@ -70,7 +70,7 @@ namespace MacDatabinding
 
 Tout d’abord, l’attribut `[Register("PersonModel")]` inscrit la classe et l’expose à Objective-C. Ensuite, la classe doit hériter de `NSObject` (ou d’une sous-classe qui hérite de `NSObject`), cela ajoute plusieurs méthodes de base qui permettent à la classe d’être conforme KVC. Ensuite, l’attribut `[Export("Name")]` expose la propriété `Name` et définit la valeur de clé qui sera utilisée ultérieurement pour accéder à la propriété via les techniques KVC et KVO.
 
-Enfin, pour être en mesure de modifier la valeur de la propriété, l’accesseur doit encapsuler les modifications apportées à sa valeur dans `WillChangeValue` et `DidChangeValue` appels de méthode (en spécifiant la même clé que l’attribut `Export`).  Exemple :
+Enfin, pour être en mesure de modifier la valeur de la propriété, l’accesseur doit encapsuler les modifications apportées à sa valeur dans `WillChangeValue` et `DidChangeValue` appels de méthode (en spécifiant la même clé que l’attribut `Export`).  Par exemple :
 
 ```csharp
 set {
@@ -159,7 +159,7 @@ Affectez à la propriété `Name` la valeur `Jane Doe`.
 
 ### <a name="observing-value-changes"></a>Observation des modifications de valeur
 
-En observant la valeur Key-value (KVO), vous pouvez attacher un observateur à une clé spécifique d’une classe conforme à KVC et recevoir une notification chaque fois que la valeur de cette clé est modifiée (à l’aide de techniques KVC ou C# d’un accès direct à la propriété donnée dans le code). Exemple :
+En observant la valeur Key-value (KVO), vous pouvez attacher un observateur à une clé spécifique d’une classe conforme à KVC et recevoir une notification chaque fois que la valeur de cette clé est modifiée (à l’aide de techniques KVC ou C# d’un accès direct à la propriété donnée dans le code). Par exemple :
 
 ```csharp
 // Watch for the name value changing
@@ -317,7 +317,7 @@ namespace MacDatabinding
 }
 ```
 
-La plupart des fonctionnalités de cette classe étaient traitées dans la section [qu’est-ce que le codage de clé-valeur](#What_is_Key-Value_Coding) ci-dessus. Toutefois, examinons quelques éléments spécifiques et des ajouts apportés pour permettre à cette classe d’agir en tant que modèle de données pour les **contrôleurs de tableau** et les **contrôleurs d’arborescence** (que nous utiliserons ultérieurement pour les vues de l' **arborescence**des liaisons de données, les **vues en mode plan** et **vues de collection**).
+La plupart des fonctionnalités de cette classe étaient traitées dans la section [qu’est-ce que le codage de clé-valeur](#What_is_Key-Value_Coding) ci-dessus. Toutefois, observons quelques éléments spécifiques et quelques ajouts qui ont été effectués pour permettre à cette classe d’agir comme un modèle de données pour les **contrôleurs de tableau** et les **contrôleurs d’arborescence** (que nous utiliserons ultérieurement pour les vues de l' **arborescence**des liaisons de données, les **vues en mode plan** et les **vues de collection**).
 
 Tout d’abord, étant donné qu’un employé peut être responsable, nous avons utilisé une `NSArray` (plus particulièrement `NSMutableArray` pour que les valeurs puissent être modifiées) afin d’autoriser les employés qu’ils ont gérés à être attachés :
 
@@ -334,7 +334,7 @@ public NSArray People {
 Deux points à noter :
 
 1. Nous avons utilisé un `NSMutableArray` au lieu d' C# un tableau ou d’une collection standard, car il s’agit d’une exigence de liaison de données aux contrôles AppKit tels que les **vues de table**, les **vues de plan** et les **Collections**.
-2. Nous avons exposé le tableau des employés en les convertissant à un `NSArray` à des fins de liaison de C# données et nous avons modifié leur nom mis en forme, `People`, en l’équivalent de la liaison de données, `personModelArray` au format **{class_name} tableau** (Notez que le premier caractère a été en minuscules).
+2. Nous avons exposé le tableau des employés en les convertissant à un `NSArray` à des fins de liaison de C# données et nous avons modifié leur nom mis en forme, `People`, en l’équivalent de la liaison de données, `personModelArray` au format **{class_name} tableau** (Notez que le premier caractère a été fait en minuscules).
 
 Ensuite, nous devons ajouter des méthodes publiques de nom spécialement pour prendre en charge les contrôleurs de **groupe** et les **contrôleurs d’arborescence**:
 
@@ -419,7 +419,7 @@ Nous utiliserons le modèle de données `PersonModel` dans le reste de cet artic
 
 Avec notre modèle de données défini, nous allons examiner un exemple simple de liaison de données dans le Interface Builder de Xcode. Par exemple, nous allons ajouter un formulaire à notre application Xamarin. Mac qui peut être utilisé pour modifier la `PersonModel` que nous avons définie ci-dessus. Nous allons ajouter quelques champs de texte et une case à cocher pour afficher et modifier les propriétés de notre modèle.
 
-Tout d’abord, nous allons ajouter un nouveau **contrôleur d’affichage** à notre fichier **main. Storyboard** dans Interface Builder et nommer sa classe `SimpleViewController` :
+Tout d’abord, nous allons ajouter un nouveau **contrôleur d’affichage** à notre fichier **main. Storyboard** dans Interface Builder et nommer sa classe `SimpleViewController`:
 
 [![Ajout d’un nouveau contrôleur d’affichage](databinding-images/simple01.png "Ajout d’un nouveau contrôleur d’affichage")](databinding-images/simple01-large.png#lightbox)
 
@@ -503,7 +503,7 @@ Toutes les modifications apportées par les utilisateurs au formulaire sont ré�
 
 Maintenant que nous avons les principes fondamentaux de la liaison de données, examinons une tâche de liaison de données plus complexe à l’aide d’un _contrôleur de tableau_ et d’une liaison de données à une vue de table. Pour plus d’informations sur l’utilisation des vues de table, consultez notre documentation sur les [vues de tableau](~/mac/user-interface/table-view.md) .
 
-Tout d’abord, nous allons ajouter un nouveau **contrôleur d’affichage** à notre fichier **main. Storyboard** dans Interface Builder et nommer sa classe `TableViewController` :
+Tout d’abord, nous allons ajouter un nouveau **contrôleur d’affichage** à notre fichier **main. Storyboard** dans Interface Builder et nommer sa classe `TableViewController`:
 
 [![Ajout d’un nouveau contrôleur d’affichage](databinding-images/table01.png "Ajout d’un nouveau contrôleur d’affichage")](databinding-images/table01-large.png#lightbox)
 
@@ -582,11 +582,11 @@ Nous devons ajouter un **contrôleur de baie** pour fournir des données liées 
 2. Sélectionnez **contrôleur de groupe** dans la **hiérarchie d’interface** et basculez vers l’inspecteur d' **attribut**:
 
     [![Sélection de l’inspecteur d’attributs](databinding-images/table04.png "Sélection de l’inspecteur d’attributs")](databinding-images/table04-large.png#lightbox)
-3. Entrez `PersonModel` pour le **nom**de la classe, cliquez sur le bouton **plus** et ajoutez trois clés. Nommez-les `Name`, `Occupation` et `isManager` :
+3. Entrez `PersonModel` pour le **nom**de la classe, cliquez sur le bouton **plus** et ajoutez trois clés. Nommez-les `Name`, `Occupation` et `isManager`:
 
     ![Ajout des chemins de clé requis](databinding-images/table05.png "Ajout des chemins de clé requis")
 4. Cela indique au contrôleur de groupe ce qu’il gère un tableau de, ainsi que les propriétés qu’il doit exposer (via des clés).
-5. Basculez vers **l’inspecteur de liaisons** et sous le tableau de **contenu** , sélectionnez **lier à** et contrôleur d' **affichage de table**. Entrez un **chemin d’accès de clé de modèle** `self.personModelArray` :
+5. Basculez vers **l’inspecteur de liaisons** et sous le tableau de **contenu** , sélectionnez **lier à** et contrôleur d' **affichage de table**. Entrez un **chemin d’accès de clé de modèle** `self.personModelArray`:
 
     ![Entrée d’un chemin d’accès de clé](databinding-images/table06.png "Entrée d’un chemin d’accès de clé")
 6. Cela lie le contrôleur de tableau au tableau de `PersonModels` que nous avons exposé sur notre contrôleur d’affichage.
@@ -608,9 +608,9 @@ Nous devons maintenant lier notre vue de table au contrôleur de baie, procédez
     [![Définition du chemin d’accès de la clé de modèle](databinding-images/table10.png "Définition du chemin d’accès de la clé de modèle")](databinding-images/table10-large.png#lightbox)
 6. Enregistrez vos modifications et revenez à Visual Studio pour Mac pour effectuer une synchronisation avec Xcode.
 
-Si nous exécutons l’application, la table est remplie avec le tableau de `PersonModels` :
+Si nous exécutons l’application, la table est remplie avec le tableau de `PersonModels`:
 
-[![Exécution de l’application](databinding-images/table11.png "Exécution de l’application")](databinding-images/table11-large.png#lightbox)
+[![Exécution de l’application](databinding-images/table11.png "Exécution de l'application")](databinding-images/table11-large.png#lightbox)
 
 <a name="Outline_View_Data_Binding" />
 
@@ -618,7 +618,7 @@ Si nous exécutons l’application, la table est remplie avec le tableau de `Per
 
 la liaison de données par rapport à un mode plan est très similaire à la liaison à une vue de table. La principale différence réside dans le fait que nous allons utiliser un **contrôleur d’arborescence** au lieu d’un **contrôleur de tableau** pour fournir les données liées à la vue en mode plan. Pour plus d’informations sur l’utilisation des vues en mode plan, consultez notre documentation sur les [modes plan](~/mac/user-interface/outline-view.md) .
 
-Tout d’abord, nous allons ajouter un nouveau **contrôleur d’affichage** à notre fichier **main. Storyboard** dans Interface Builder et nommer sa classe `OutlineViewController` :
+Tout d’abord, nous allons ajouter un nouveau **contrôleur d’affichage** à notre fichier **main. Storyboard** dans Interface Builder et nommer sa classe `OutlineViewController`:
 
 [![Ajout d’un nouveau contrôleur d’affichage](databinding-images/outline01.png "Ajout d’un nouveau contrôleur d’affichage")](databinding-images/outline01-large.png#lightbox)
 
@@ -700,7 +700,7 @@ Nous devons ajouter un **contrôleur d’arborescence** pour fournir des donnée
 2. Sélectionnez **contrôleur d’arborescence** dans la **hiérarchie d’interface** et basculez vers l’inspecteur d' **attribut**:
 
     [![Sélection de l’inspecteur d’attribut](databinding-images/outline04.png "Sélection de l’inspecteur d’attribut")](databinding-images/outline04-large.png#lightbox)
-3. Entrez `PersonModel` pour le **nom**de la classe, cliquez sur le bouton **plus** et ajoutez trois clés. Nommez-les `Name`, `Occupation` et `isManager` :
+3. Entrez `PersonModel` pour le **nom**de la classe, cliquez sur le bouton **plus** et ajoutez trois clés. Nommez-les `Name`, `Occupation` et `isManager`:
 
     ![Ajout des chemins de clé requis](databinding-images/outline05.png "Ajout des chemins de clé requis")
 4. Cela indique au contrôleur d’arborescence ce qu’il gère un tableau et les propriétés qu’il doit exposer (via des clés).
@@ -708,7 +708,7 @@ Nous devons ajouter un **contrôleur d’arborescence** pour fournir des donnée
 
     ![Définition des chemins d’accès de clé du contrôleur d’arborescence](databinding-images/outline05.png "Définition des chemins d’accès de clé du contrôleur d’arborescence")
 6. Cela indique au contrôleur d’arborescence où trouver les nœuds enfants, le nombre de nœuds enfants et si le nœud actuel possède des nœuds enfants.
-7. Basculez vers **l’inspecteur de liaisons** et, sous le tableau de **contenu** , sélectionnez **lier au** **propriétaire du fichier**. Entrez un **chemin d’accès de clé de modèle** `self.personModelArray` :
+7. Basculez vers **l’inspecteur de liaisons** et, sous le tableau de **contenu** , sélectionnez **lier au** **propriétaire du fichier**. Entrez un **chemin d’accès de clé de modèle** `self.personModelArray`:
 
     ![Modification du chemin d’accès de la clé](databinding-images/outline06.png "Modification du chemin d’accès de la clé")
 8. Cela lie le contrôleur d’arborescence au tableau de `PersonModels` que nous avons exposé sur notre contrôleur d’affichage.
@@ -730,9 +730,9 @@ Nous devons maintenant lier notre mode plan au contrôleur d’arborescence, pro
     [![Saisie du chemin d’accès de la clé de modèle](databinding-images/outline10.png "Saisie du chemin d’accès de la clé de modèle")](databinding-images/outline10-large.png#lightbox)
 6. Enregistrez vos modifications et revenez à Visual Studio pour Mac pour effectuer une synchronisation avec Xcode.
 
-Si nous exécutons l’application, le plan sera rempli avec le tableau de `PersonModels` :
+Si nous exécutons l’application, le plan sera rempli avec le tableau de `PersonModels`:
 
-[![Exécution de l’application](databinding-images/outline11.png "Exécution de l’application")](databinding-images/outline11-large.png#lightbox)
+[![Exécution de l’application](databinding-images/outline11.png "Exécution de l'application")](databinding-images/outline11-large.png#lightbox)
 
 ### <a name="collection-view-data-binding"></a>Liaison de données d’affichage de collection
 
@@ -871,11 +871,11 @@ Il existe généralement quatre causes principales pour les pannes natives penda
 
 ### <a name="decoding-a-crash"></a>Décodage d’un incident
 
-Provoquant un incident natif dans notre liaison de données, nous pouvons vous montrer comment les localiser et les corriger. Dans Interface Builder, nous allons modifier la liaison de la première étiquette dans l’exemple d’affichage de collection de `Name` à `Title` :
+Provoquant un incident natif dans notre liaison de données, nous pouvons vous montrer comment les localiser et les corriger. Dans Interface Builder, nous allons modifier la liaison de la première étiquette dans l’exemple d’affichage de collection de `Name` à `Title`:
 
 [![Modification de la clé de liaison](databinding-images/debug02.png "Modification de la clé de liaison")](databinding-images/debug02-large.png#lightbox)
 
-Nous allons enregistrer la modification, revenir à Visual Studio pour Mac à synchroniser avec Xcode et exécuter notre application. Lorsque la vue de collection s’affiche, l’application se bloque momentanément avec une erreur de `SIGABRT` (comme indiqué dans la sortie de l' **application** dans Visual Studio pour Mac) puisque le `PersonModel` n’expose pas de propriété avec la clé `Title` :
+Nous allons enregistrer la modification, revenir à Visual Studio pour Mac à synchroniser avec Xcode et exécuter notre application. Lorsque la vue de collection s’affiche, l’application se bloque momentanément avec une erreur de `SIGABRT` (comme indiqué dans la sortie de l' **application** dans Visual Studio pour Mac) puisque le `PersonModel` n’expose pas de propriété avec la clé `Title`:
 
 [![Exemple d’erreur de liaison](databinding-images/debug03.png "Exemple d’erreur de liaison")](databinding-images/debug03-large.png#lightbox)
 
@@ -885,11 +885,11 @@ Si nous faisons défiler vers le haut de l’erreur dans la sortie de l' **appli
 
 Cette ligne indique que la clé `Title` n’existe pas sur l’objet auquel nous créons la liaison. Si nous revenons la liaison à `Name` dans Interface Builder, enregistrer, synchroniser, régénérer et exécuter, l’application s’exécutera comme prévu sans problème.
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article a décrit en détail l’utilisation de la liaison de données et du codage clé-valeur dans une application Xamarin. Mac. Tout d’abord, il s’est penché sur l’exposition d’une C# classe à Objective-C à l’aide du codage clé-valeur (KVC) et de l’observation clé-valeur (KVO). Ensuite, il a montré comment utiliser une classe conforme à KVO et lier les données aux éléments d’interface utilisateur du Interface Builder de Xcode. Enfin, elle affichait une liaison de données complexe à l’aide des **contrôleurs de tableau** et des **contrôleurs d’arborescence**.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [MacDatabinding Storyboard (exemple)](https://docs.microsoft.com/samples/xamarin/mac-samples/macdatabinding-storyboard)
 - [MacDatabinding XIB (exemple)](https://docs.microsoft.com/samples/xamarin/mac-samples/macdatabinding-xibs)

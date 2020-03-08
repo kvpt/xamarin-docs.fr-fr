@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/17/2019
 ms.openlocfilehash: 7aef14cbb854d89a2088a450353b943402f76a86
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72697219"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78913389"
 ---
 # <a name="xamarinforms-collectionview-scrolling"></a>Xamarin. Forms CollectionView défilement
 
@@ -20,7 +20,7 @@ ms.locfileid: "72697219"
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView) définit deux méthodes de [`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*) , qui défilent les éléments dans la vue. L’une des surcharges fait défiler l’élément à l’index spécifié dans la vue, tandis que l’autre fait défiler l’élément spécifié dans la vue. Les deux surcharges ont des arguments supplémentaires qui peuvent être spécifiés pour indiquer le groupe auquel appartient l’élément, la position exacte de l’élément après la fin du défilement et s’il faut animer le défilement.
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView) définit un événement [`ScrollToRequested`](xref:Xamarin.Forms.ItemsView.ScrollToRequested) qui est déclenché lorsque l’une des méthodes [`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*) est appelée. L’objet [`ScrollToRequestedEventArgs`](xref:Xamarin.Forms.ScrollToRequestedEventArgs) qui accompagne l’événement `ScrollToRequested` possède de nombreuses propriétés, notamment `IsAnimated`, `Index`, `Item` et `ScrollToPosition`. Ces propriétés sont définies à partir des arguments spécifiés dans les appels de la méthode `ScrollTo`.
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) définit un événement [`ScrollToRequested`](xref:Xamarin.Forms.ItemsView.ScrollToRequested) qui est déclenché lorsque l’une des méthodes [`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*) est appelée. L’objet [`ScrollToRequestedEventArgs`](xref:Xamarin.Forms.ScrollToRequestedEventArgs) qui accompagne l’événement `ScrollToRequested` possède de nombreuses propriétés, notamment `IsAnimated`, `Index`, `Item`et `ScrollToPosition`. Ces propriétés sont définies à partir des arguments spécifiés dans les appels de la méthode `ScrollTo`.
 
 De plus, [`CollectionView`](xref:Xamarin.Forms.CollectionView) définit un événement `Scrolled` déclenché pour indiquer que le défilement s’est produit. L’objet `ItemsViewScrolledEventArgs` qui accompagne l’événement `Scrolled` possède de nombreuses propriétés. Pour plus d’informations, consultez [détecter le défilement](#detect-scrolling).
 
@@ -109,7 +109,7 @@ collectionView.ScrollTo(monkey, group);
 
 ## <a name="disable-scroll-animation"></a>Désactiver l’animation de défilement
 
-Une animation de défilement s’affiche lorsque vous faites défiler un élément dans l’affichage. Toutefois, cette animation peut être désactivée en définissant l’argument `animate` de la méthode `ScrollTo` sur `false` :
+Une animation de défilement s’affiche lorsque vous faites défiler un élément dans l’affichage. Toutefois, cette animation peut être désactivée en définissant l’argument `animate` de la méthode `ScrollTo` sur `false`:
 
 ```csharp
 collectionView.ScrollTo(monkey, animate: false);
@@ -134,7 +134,7 @@ Cet exemple de code entraîne le défilement minimal requis pour faire défiler 
 > [!NOTE]
 > Le membre [`ScrollToPosition.MakeVisible`](xref:Xamarin.Forms.ScrollToPosition) est utilisé par défaut, si l’argument `position` n’est pas spécifié lors de l’appel de la méthode `ScrollTo`.
 
-### <a name="start"></a>Start
+### <a name="start"></a>Démarrer
 
 Le membre [`ScrollToPosition.Start`](xref:Xamarin.Forms.ScrollToPosition) indique que l’élément doit défiler jusqu’au début de la vue :
 
@@ -178,7 +178,7 @@ Cet exemple de code entraîne le défilement de l’élément à la fin de la vu
 - `KeepScrollOffset` maintient le décalage de défilement par rapport au début de la liste lorsque de nouveaux éléments sont ajoutés.
 - `KeepLastItemInView` ajuste le décalage de défilement pour conserver le dernier élément visible lorsque de nouveaux éléments sont ajoutés.
 
-La valeur par défaut de la propriété `ItemsUpdatingScrollMode` est `KeepItemsInView`. Par conséquent, lorsque de nouveaux éléments sont ajoutés à un [`CollectionView`](xref:Xamarin.Forms.CollectionView) le premier élément visible dans la liste reste affiché. Pour vous assurer que les éléments récemment ajoutés sont toujours visibles au bas de la liste, la propriété `ItemsUpdatingScrollMode` doit être définie sur `KeepLastItemInView` :
+La valeur par défaut de la propriété `ItemsUpdatingScrollMode` est `KeepItemsInView`. Par conséquent, lorsque de nouveaux éléments sont ajoutés à un [`CollectionView`](xref:Xamarin.Forms.CollectionView) le premier élément visible dans la liste reste affiché. Pour vous assurer que les éléments récemment ajoutés sont toujours visibles au bas de la liste, la propriété `ItemsUpdatingScrollMode` doit être définie sur `KeepLastItemInView`:
 
 ```xaml
 <CollectionView ItemsUpdatingScrollMode="KeepLastItemInView">
@@ -229,12 +229,12 @@ Par défaut, la propriété [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.Sn
 
 ### <a name="snap-points-alignment"></a>Alignement des points d’alignement
 
-L’énumération [`SnapPointsAlignment`](xref:Xamarin.Forms.SnapPointsAlignment) définit les membres `Start`, `Center` et `End`.
+L’énumération [`SnapPointsAlignment`](xref:Xamarin.Forms.SnapPointsAlignment) définit les membres `Start`, `Center`et `End`.
 
 > [!IMPORTANT]
-> La valeur de la propriété [`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment) est respectée uniquement lorsque la propriété [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType) a la valeur `Mandatory` ou `MandatorySingle`.
+> La valeur de la propriété [`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment) est respectée uniquement lorsque la propriété [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType) a la valeur `Mandatory`ou `MandatorySingle`.
 
-#### <a name="start"></a>Start
+#### <a name="start"></a>Démarrer
 
 Le membre de `SnapPointsAlignment.Start` indique que les points d’ancrage sont alignés sur le bord de tête des éléments.
 

@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/29/2019
 ms.openlocfilehash: 1cfda90360557af1160d421f18807f8b534967a8
-ms.sourcegitcommit: 3ea19e3a51515b30349d03c70a5b3acd7eca7fe7
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73426229"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78912870"
 ---
 # <a name="xamarinforms-map-control"></a>Xamarin. Forms Map Control
 
@@ -20,7 +20,7 @@ ms.locfileid: "73426229"
 
 Le contrôle [`Map`](xref:Xamarin.Forms.Maps.Map) est une vue multiplateforme permettant d’afficher et d’annoter des cartes. Elle utilise le contrôle de carte natif pour chaque plateforme, en fournissant une expérience de cartes rapide et familière aux utilisateurs :
 
-[![Capture d’écran du contrôle de carte, sur iOS et Android](map-images/map-default.png "Contrôle de carte")](map-images/map-default-large.png#lightbox "Contrôle de carte")
+[![Capture d’écran du contrôle de carte, sur iOS et Android](map-images/map-default.png "Commandes de la carte")](map-images/map-default-large.png#lightbox "Commandes de la carte")
 
 La classe [`Map`](xref:Xamarin.Forms.Maps.Map) définit les propriétés suivantes qui contrôlent l’apparence et le comportement de la carte :
 
@@ -106,15 +106,15 @@ Map map = new Map
 
 Les captures d’écran suivantes montrent une [`Map`](xref:Xamarin.Forms.Maps.Map) lorsque la propriété [`MapType`](xref:Xamarin.Forms.Maps.Map.MapType) a la valeur `Street`:
 
-[![Capture d’écran du contrôle de carte avec le type de carte de rue, sur iOS et Android](map-images/maptype-street.png "Contrôle Map avec la rue maptype")](map-images/maptype-street-large.png#lightbox "Map control with the street map type")
+[![Capture d’écran du contrôle de carte avec le type de carte de rue, sur iOS et Android](map-images/maptype-street.png "Contrôle Map avec la rue maptype")](map-images/maptype-street-large.png#lightbox "Contrôle de carte avec le type de carte de rue")
 
 Les captures d’écran suivantes montrent une [`Map`](xref:Xamarin.Forms.Maps.Map) lorsque la propriété [`MapType`](xref:Xamarin.Forms.Maps.Map.MapType) a la valeur `Satellite`:
 
-[![Capture d’écran du contrôle de carte avec le type de carte satellite, sur iOS et Android](map-images/maptype-satellite.png "Contrôle de carte avec le maptype satellite")](map-images/maptype-satellite-large.png#lightbox "Map control with the satellite map type")
+[![Capture d’écran du contrôle de carte avec le type de carte satellite, sur iOS et Android](map-images/maptype-satellite.png "Contrôle de carte avec le maptype satellite")](map-images/maptype-satellite-large.png#lightbox "Mapper le contrôle avec le type de carte satellite")
 
 Les captures d’écran suivantes montrent une [`Map`](xref:Xamarin.Forms.Maps.Map) lorsque la propriété [`MapType`](xref:Xamarin.Forms.Maps.Map.MapType) a la valeur `Hybrid`:
 
-[![Capture d’écran du contrôle de carte avec le type de carte hybride, sur iOS et Android](map-images/maptype-hybrid.png "Contrôle de carte avec le maptype hybride")](map-images/maptype-hybrid-large.png#lightbox "Map control with the hybrid map type")
+[![Capture d’écran du contrôle de carte avec le type de carte hybride, sur iOS et Android](map-images/maptype-hybrid.png "Contrôle de carte avec le maptype hybride")](map-images/maptype-hybrid-large.png#lightbox "Contrôle de carte avec le type de carte hybride")
 
 ## <a name="display-a-specific-location-on-a-map"></a>Afficher un emplacement spécifique sur une carte
 

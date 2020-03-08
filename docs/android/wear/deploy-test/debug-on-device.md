@@ -8,17 +8,17 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
 ms.openlocfilehash: 965ed4e802c05f8450192c0fec17fe31e464c779
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028697"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78916651"
 ---
 # <a name="debug-on-a-wear-device"></a>Déboguer sur un appareil Wear
 
 _Cet article explique comment déboguer une application Xamarin. Android usure sur un appareil d’usure._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d’ensemble
 
 Si vous avez un appareil Android d’usure comme un SmartWatch Android, vous pouvez exécuter l’application sur l’appareil au lieu d’utiliser un émulateur. (Si vous n’êtes pas encore familiarisé avec le processus de déploiement et d’exécution d’applications Android, consultez [Hello, usure](~/android/wear/get-started/hello-wear.md).)
 
@@ -148,6 +148,6 @@ Pour déboguer l’application d’usure avec une application auxiliaire :
 
 4. Exécutez et déboguez l’application usure sur l’appareil.
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article a expliqué comment configurer un appareil Android d’usure pour l’usure du débogage à partir de Visual Studio via Bluetooth et comment déboguer une application d’usure avec une application de téléphone auxiliaire. Elle a également fourni des conseils de débogage courants pour déboguer une application d’usure via Bluetooth.

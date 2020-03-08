@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
 ms.openlocfilehash: 13891100d3571f9e847243172aa974072f46e7fe
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73001825"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78915175"
 ---
 # <a name="unified-storyboards-in-xamarinios"></a>Storyboards unifiés dans Xamarin. iOS
 
@@ -112,18 +112,18 @@ Cette section couvre les types typiques de collections de traits que l’utilisa
 
 Voici une collection de caractéristiques typique que le développeur peut voir sur un iPhone :
 
-|Property|valeur|
+|Propriété|Valeur|
 |--- |--- |
 |`HorizontalSizeClass`|ROM|
-|`VerticalSizeClass`|Normale|
+|`VerticalSizeClass`|Normal|
 |`UserInterfaceIdom`|Phone|
-|`DisplayScale`|2,0|
+|`DisplayScale`|2|
 
 L’ensemble ci-dessus représente une collection de traits complète, car elle contient des valeurs pour toutes ses propriétés de trait.
 
 Il est également possible de disposer d’une collection de caractéristiques qui ne contient pas certaines de ses valeurs (dont Apple fait référence à une valeur *non spécifiée*) :
 
-|Property|valeur|
+|Propriété|Valeur|
 |--- |--- |
 |`HorizontalSizeClass`|ROM|
 |`VerticalSizeClass`|Non spécifié|
@@ -216,9 +216,9 @@ iOS 8 fournit plusieurs rappels que le développeur peut utiliser pour participe
 
 |Phase|Rappel|Description|
 |--- |--- |--- |
-|Installation|<ul><li>`WillTransitionToTraitCollection`</li><li>`TraitCollectionDidChange`</li></ul>|<ul><li>Cette méthode est appelée au début d’une modification de trait avant qu’une collection de traits soit définie sur sa nouvelle valeur.</li><li>La méthode est appelée lorsque la valeur de la collection de traits a changé mais avant qu’une animation ait lieu.</li></ul>|
+|Programme d'installation|<ul><li>`WillTransitionToTraitCollection`</li><li>`TraitCollectionDidChange`</li></ul>|<ul><li>Cette méthode est appelée au début d’une modification de trait avant qu’une collection de traits soit définie sur sa nouvelle valeur.</li><li>La méthode est appelée lorsque la valeur de la collection de traits a changé mais avant qu’une animation ait lieu.</li></ul>|
 |Animation|`WillTransitionToTraitCollection`|Le coordinateur de transition qui est passé à cette méthode a une propriété `AnimateAlongside` qui permet au développeur d’ajouter des animations qui seront exécutées en même temps que les animations par défaut.|
-|Nettoyer|`WillTransitionToTraitCollection`|Fournit une méthode permettant aux développeurs d’inclure leur propre code de nettoyage une fois la transition effectuée.|
+|Nettoyage|`WillTransitionToTraitCollection`|Fournit une méthode permettant aux développeurs d’inclure leur propre code de nettoyage une fois la transition effectuée.|
 
 La méthode `WillTransitionToTraitCollection` est idéale pour animer des contrôleurs d’affichage avec les modifications apportées à la collection de traits. La méthode `WillTransitionToTraitCollection` est disponible uniquement sur les contrôleurs d’affichage (`UIViewController`) et non sur d’autres environnements de caractéristiques, comme `UIViews`.
 
@@ -242,7 +242,7 @@ Dans un contrôleur d’affichage fractionné, le contrôleur d’affichage prin
 
 ### <a name="showing-view-controllers"></a>Affichage des contrôleurs d’affichage
 
-Une autre modification apportée par Apple à iOS 8 est la façon dont le développeur affiche les contrôleurs d’affichage. Dans le passé, si l’application disposait d’un contrôleur d’affichage feuille (tel qu’un contrôleur d’affichage de table), et que le développeur affichait un autre (par exemple, en réponse à l’utilisateur tape sur une cellule), l’application atteindrait la hiérarchie du contrôleur au Contrôleur d’affichage de navigation et appelez la méthode `PushViewController` pour afficher la nouvelle vue.
+Une autre modification apportée par Apple à iOS 8 est la façon dont le développeur affiche les contrôleurs d’affichage. Dans le passé, si l’application disposait d’un contrôleur d’affichage feuille (tel qu’un contrôleur d’affichage de table), et que le développeur affichait un autre (par exemple, en réponse à l’utilisateur qui tape sur une cellule), l’application atteindrait la hiérarchie du contrôleur sur le contrôleur d’affichage de navigation et appellera la méthode `PushViewController` pour afficher la nouvelle vue.
 
 Cela présentait un couplage très étroit entre le contrôleur de navigation et l’environnement dans lequel il s’exécutait. Dans iOS 8, Apple l’a découplée en fournissant deux nouvelles méthodes :
 
@@ -259,7 +259,7 @@ Dans cette section, nous allons voir comment ces méthodes sont réellement impl
 
  [![](unified-storyboards-images/gettargetforaction.png "The new GetTargetForAction method")](unified-storyboards-images/gettargetforaction.png#lightbox)
 
-Cette méthode parcourt la chaîne de hiérarchie jusqu’à ce que le contrôleur d’affichage de conteneur correct soit trouvé. Exemple :
+Cette méthode parcourt la chaîne de hiérarchie jusqu’à ce que le contrôleur d’affichage de conteneur correct soit trouvé. Par exemple :
 
 1. Si une méthode `ShowViewController` est appelée, le premier contrôleur d’affichage de la chaîne qui implémente cette méthode est le contrôleur de navigation. il est donc utilisé comme parent de la nouvelle vue.
 1. Si une méthode `ShowDetailViewController` a été appelée à la place, le contrôleur de vue fractionnée est le premier contrôleur d’affichage à implémenter, donc il est utilisé comme parent.
@@ -294,7 +294,7 @@ Lors de l’exécution de l’application images adaptatives sur un iPhone, lors
 
  [![](unified-storyboards-images/rotation.png "The Split View Controller will display both the master and details view as seen here")](unified-storyboards-images/rotation.png#lightbox)
 
-Pour ce faire, vous devez substituer la méthode `UpdateConstraintsForTraitCollection` du contrôleur d’affichage et ajuster les contraintes en fonction de la valeur du `VerticalSizeClass`. Exemple :
+Pour ce faire, vous devez substituer la méthode `UpdateConstraintsForTraitCollection` du contrôleur d’affichage et ajuster les contraintes en fonction de la valeur du `VerticalSizeClass`. Par exemple :
 
 ```csharp
 public void UpdateConstraintsForTraitCollection (UITraitCollection collection)
@@ -350,7 +350,7 @@ public void UpdateConstraintsForTraitCollection (UITraitCollection collection)
 
 ### <a name="adding-transition-animations"></a>Ajout d’animations de transition
 
-Lorsque le contrôleur du mode fractionné de l’application images adaptatives passe de réduit à développé, les animations sont ajoutées aux animations par défaut en remplaçant la méthode `WillTransitionToTraitCollection` du contrôleur d’affichage. Exemple :
+Lorsque le contrôleur du mode fractionné de l’application images adaptatives passe de réduit à développé, les animations sont ajoutées aux animations par défaut en remplaçant la méthode `WillTransitionToTraitCollection` du contrôleur d’affichage. Par exemple :
 
 ```csharp
 public override void WillTransitionToTraitCollection (UITraitCollection traitCollection, IUIViewControllerTransitionCoordinator coordinator)
@@ -680,7 +680,7 @@ Pour voir une implémentation des storyboards unifiés, consultez l’exemple d�
 
 Le fichier d’écran de lancement s’affiche sous la forme d’un écran de démarrage lorsqu’une application iOS est lancée pour fournir des commentaires à l’utilisateur que l’application est en train de démarrer. Avant iOS 8, le développeur devait inclure plusieurs `Default.png` ressources d’image pour chaque type d’appareil, l’orientation et la résolution d’écran sur lesquels l’application s’exécutait. Par exemple, `Default@2x.png`, `Default-Landscape@2x~ipad.png`, `Default-Portrait@2x~ipad.png`, etc.
 
-En prenant en compte les appareils iPhone 6 et iPhone 6 plus (ainsi que les Apple Watch à venir) avec tous les appareils iPhone et iPad existants, cela représente un grand nombre de tailles, d’orientations et de résolutions variables de `Default.png` ressources d’images d’écran de démarrage qui doivent être créé et géré. En outre, ces fichiers peuvent être très volumineux et « grossir » le bundle d’applications livrable, ce qui augmente le temps nécessaire pour télécharger l’application à partir de l’App Store iTunes (ce qui peut éventuellement empêcher sa remise sur un réseau cellulaire) et l’amélioration de la quantité de stockage requise sur l’appareil de l’utilisateur final.
+La factorisation des nouveaux appareils iPhone 6 et iPhone 6 plus (et de la prochaine Apple Watch) avec tous les appareils iPhone et iPad existants représente un grand nombre de tailles, d’orientations et de résolutions variables de `Default.png` ressources d’images d’écran de démarrage qui doivent être créées et gérées. En outre, ces fichiers peuvent être très volumineux et « grossir » le bundle d’applications livrable, ce qui augmente le temps nécessaire pour télécharger l’application à partir de l’App Store iTunes (ce qui peut éventuellement empêcher sa remise sur un réseau cellulaire) et l’amélioration de la quantité de stockage requise sur l’appareil de l’utilisateur final.
 
 Nouveauté d’iOS 8, le développeur peut créer un seul fichier `.xib` atomique dans Xcode qui utilise des classes de mise en page et de taille automatiques pour créer un *écran de lancement dynamique* qui fonctionnera pour chaque appareil, résolution et orientation. Cela réduit non seulement la quantité de travail requise du développeur pour créer et gérer toutes les ressources d’image requises, mais elle réduit considérablement la taille de l’offre groupée installée de l’application.
 
@@ -695,7 +695,7 @@ Les écrans de lancement dynamiques présentent les limitations et les considér
 
 Avec les instructions ci-dessus à l’esprit, examinons l’ajout d’un écran de lancement dynamique à un projet Xamarin iOS 8 existant.
 
-Effectuez ce qui suit :
+procédez comme suit :
 
 1. Ouvrez **Visual Studio pour Mac** et chargez la **solution** pour ajouter l’écran de lancement dynamique à.
 2. Dans le **Explorateur de solutions**, cliquez avec le bouton droit sur le fichier `MainStoryboard.storyboard` et sélectionnez **ouvrir avec** > **Interface Builder Xcode**:
@@ -713,7 +713,7 @@ Effectuez ce qui suit :
 6. Modifiez la conception de l’écran de lancement en ajoutant des éléments graphiques et en utilisant des contraintes de disposition pour les positionner pour les périphériques, les orientations et les tailles d’écran spécifiés :
 
     [![](unified-storyboards-images/dls05.png "Editing the design of the launch screen")](unified-storyboards-images/dls05.png#lightbox)
-7. Enregistrez les modifications apportées à `LaunchScreen.xib`.
+7. Enregistrez les changements apportés à `LaunchScreen.xib`.
 8. Sélectionnez la **cible applications** et l’onglet **général** :
 
     [![](unified-storyboards-images/dls06.png "Select the Applications Target and the General tab")](unified-storyboards-images/dls06.png#lightbox)
@@ -731,7 +731,7 @@ Effectuez ce qui suit :
 14. Sélectionnez le fichier `LaunchScreen.xib` créé ci-dessus, puis cliquez sur le bouton **ouvrir** :
 
     [![](unified-storyboards-images/dls10.png "Select the LaunchScreen.xib file")](unified-storyboards-images/dls10.png#lightbox)
-15. Générez l'application.
+15. Générez l’application.
 
 ### <a name="testing-the-dynamic-launch-screen"></a>Test de l’écran de lancement dynamique
 
@@ -751,13 +751,13 @@ Pour assurer la compatibilité descendante avec iOS 7, il vous suffit d’inclur
 
 Pour afficher l’implémentation d’un écran de lancement dynamique dans Xamarin, consultez l’exemple d’application d' [écrans de lancement dynamique](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-dynamiclaunchscreen) , iOS 8 joint à ce document.
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article a examiné rapidement les classes de taille et comment elles affectent la disposition des appareils iPhone et iPad. Il a vu comment les caractéristiques, les environnements de trait et les collections de caractéristiques fonctionnent avec les classes de taille pour créer des interfaces unifiées. Il a suivi un bref aperçu des contrôleurs d’affichage adaptatif et de la façon dont ils fonctionnent avec les classes de taille dans des interfaces unifiées. Il a vu comment implémenter des classes de taille et C# des interfaces unifiées entièrement à partir du code à l’intérieur d’une application Xamarin iOS 8.
 
 Enfin, cet article a abordé les principes de base de la création de storyboards unifiées avec le concepteur iOS Xamarin qui fonctionnera sur tous les appareils iOS et créera un écran de lancement dynamique unique qui sera affiché comme écran de démarrage sur chaque appareil iOS 8.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Photos adaptatives (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-adaptivephotos)
 - [Écrans de lancement dynamique (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-dynamiclaunchscreen)

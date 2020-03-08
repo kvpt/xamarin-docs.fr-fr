@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/04/2019
 ms.openlocfilehash: 693dd29e59aee73a206398a8a44cc4f15e385d8d
-ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "78293061"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78911210"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>Consommation des extensions de balisage XAML
 
@@ -568,7 +568,7 @@ L’extension de balisage `FontImage` est prise en charge par la classe `FontIma
 - `FontFamily` de type `string`, famille de polices à laquelle appartient l’icône de police.
 - `Glyph` de type `string`, la valeur du caractère Unicode de l’icône de police.
 - `Color` de type [`Color`](xref:Xamarin.Forms.Color), couleur à utiliser lors de l’affichage de l’icône de police.
-- `Size` de type `double`, taille, en unités indépendantes du périphérique, de l’icône de police rendue. La valeur par défaut est 30. En outre, cette propriété peut être définie sur une taille de police nommée.
+- `Size` de type `double`, taille, en unités indépendantes du périphérique, de l’icône de police rendue. La valeur par défaut est 30. En outre, cette propriété peut être définie sur une taille de police nommée.
 
 > [!NOTE]
 > L’analyseur XAML permet à la classe `FontImageExtension` d’être abrégée en `FontImage`.

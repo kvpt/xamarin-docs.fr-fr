@@ -9,11 +9,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
 ms.openlocfilehash: 3bcfb20d8283f621ac1d32730ee67be2b09efe50
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73023405"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78918075"
 ---
 # <a name="hello-ios-multiscreen--deep-dive"></a>Hello, iOS multiécran - Immersion
 
@@ -52,7 +52,7 @@ Dans certains cas, la partie Model du modèle MVC peut être vide. Par exemple, 
 > [!NOTE]
 > Dans certains documents, la partie Modèle du modèle MVC peut faire référence au backend de toute l’application, pas seulement aux données qui s’affichent dans l’interface utilisateur. Dans ce guide, nous utilisons une interprétation moderne de la partie Model, mais cette distinction n’est pas particulièrement importante.
 
-### <a name="view"></a>Vue
+### <a name="view"></a>Affichage
 
 Un affichage (View) est un composant chargé du rendu de l’interface utilisateur. Dans presque toutes les plateformes qui utilisent le modèle MVC, l’interface utilisateur se compose d’une hiérarchie d’affichages. Un affichage dans le modèle MVC peut être perçu comme une hiérarchie d’affichage avec un affichage unique (appelé affichage racine) en haut de la hiérarchie et autant d’affichages enfants (appelés sous-affichages) en dessous. Dans iOS, la hiérarchie de vues de contenu d’un écran correspond au composant Vue du modèle MVC.
 
@@ -193,7 +193,7 @@ L’application Phoneword a introduit plusieurs concepts qui ne sont pas traité
 - **Contrôleur de vue de tableau** : `CallHistoryController` est un contrôleur de vue de tableau. Un contrôleur de vue de tableau contient une vue de tableau, l’outil de disposition et d’affichage de données le plus courant dans iOS. Les tables dépassent le cadre du présent guide. Pour plus d’informations sur les contrôleurs de vues de tableau, consultez le guide d’[utilisation des tableaux et des cellules](~/ios/user-interface/controls/tables/index.md).
 - **ID de Storyboard** : la définition de l’ID de Storyboard crée une classe de contrôleur de vue en Objective-C, qui contient le code-behind du contrôleur de vue dans le Storyboard. Nous utilisons l’ID de Storyboard pour trouver la classe Objective-C et instancier le contrôleur de vue dans le Storyboard. Pour plus d’informations sur les ID de Storyboard, reportez-vous au guide de [présentation des Storyboards](~/ios/user-interface/storyboards/index.md).
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Félicitations ! Vous avez terminé votre première application iOS multi-écran.
 
@@ -205,4 +205,4 @@ Maintenant, apprenons à générer des applications multiplateforme avec Xamarin
 
 - [Bonjour, iOS (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios)
 - [Lignes directrices de l’interface utilisateur iOS](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html)
-- [Portail de provisionnement iOS](https://developer.apple.com/ios/manage/overview/index.action)
+- [Portail d’approvisionnement iOS](https://developer.apple.com/ios/manage/overview/index.action)

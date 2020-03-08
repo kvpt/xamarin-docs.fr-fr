@@ -9,11 +9,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/06/2018
 ms.openlocfilehash: a26c83565e4cfa64272549e12a35206dff6ec3c0
-ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "78291979"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78911560"
 ---
 # <a name="xamarinios-errors"></a>Erreurs Xamarin. iOS
 
@@ -2239,7 +2239,7 @@ Cela indique généralement un bogue dans Xamarin. iOS. Veuillez envoyer un nouv
 
 Cela se produit lorsque l’éditeur de liens natif ne trouve pas de symbole référencé quelque part. Cela peut se produire pour plusieurs raisons :
 
-- Une liaison tierce requiert une infrastructure, mais la liaison ne le spécifie pas dans son attribut `[LinkWith]`. Solutions :
+- Une liaison tierce requiert une infrastructure, mais la liaison ne le spécifie pas dans son attribut `[LinkWith]`. Solutions :
   - Si vous êtes l’auteur de la liaison tierce ou si vous avez accès à sa source, modifiez l’attribut `[LinkWith]` de la liaison pour inclure l’infrastructure dont il a besoin :
 
     ```csharp
@@ -2266,7 +2266,7 @@ Cela se produit lorsque l’éditeur de liens natif ne trouve pas de symbole ré
 
 Cela se produit lorsque l’éditeur de liens natif ne peut pas trouver une classe objective-C référencée quelque part. Cela peut se produire pour plusieurs raisons : comme pour [MT5210](#MT5210) et en plus :
 
-- Une liaison tierce liée à un protocole objective-C, mais ne l’a pas annotée avec l’attribut `[Protocol]` dans sa définition d’API. Solutions :
+- Une liaison tierce liée à un protocole objective-C, mais ne l’a pas annotée avec l’attribut `[Protocol]` dans sa définition d’API. Solutions :
   - Ajoutez l’attribut `[Protocol]` manquant :
 
     ```csharp
@@ -2775,13 +2775,13 @@ Dans certains cas, il s’agit d’un problème de « réseau local » qui peu
 
 Où * peut être :
 
-- string
-- tableau
+- chaîne
+- array
 - dict
 - bool
 - real
-- entier
-- Date
+- integer
+- date
 - data
 
 <a name="MT7046" />

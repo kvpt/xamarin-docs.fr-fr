@@ -7,11 +7,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/19/2018
 ms.openlocfilehash: 92b08a9cfd725c1114b71fad4f29e6f28cd828b3
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029630"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78914380"
 ---
 # <a name="workbooks-installation-and-requirements"></a>Installation et configuration requise des classeurs
 
@@ -21,13 +21,13 @@ ms.locfileid: "73029630"
 
 <!-- markdownlint-disable MD001 -->
 
-# <a name="windowstabwindows"></a>[Fenêtres](#tab/windows)
+# <a name="windows"></a>[Windows](#tab/windows)
 
 1. Vérifiez la [Configuration requise](#requirements) ci-dessous.
 2. Téléchargez et installez [Xamarin Workbooks pour Windows](https://dl.xamarin.com/interactive/XamarinInteractive.msi).
 3. Commencez à [Parcourir](~/tools/workbooks/workbook.md) les classeurs.
 
-# <a name="macostabmacos"></a>[macOS](#tab/macos)
+# <a name="macos"></a>[macOS](#tab/macos)
 
 1. Vérifiez la [Configuration requise](#requirements) ci-dessous.
 2. Téléchargez et installez [Xamarin Workbooks pour Mac](https://dl.xamarin.com/interactive/XamarinInteractive.pkg).
@@ -35,16 +35,16 @@ ms.locfileid: "73029630"
 
 -----
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Configuration requise
 
-#### <a name="supported-operating-systems"></a>Supported Operating Systems
+#### <a name="supported-operating-systems"></a>Systèmes d’exploitation pris en charge
 
 - **Mac** -OS X 10,11 ou version ultérieure
 - **Windows** -Windows 7 ou version ultérieure (avec Internet Explorer 11 ou version ultérieure et .net 4.6.1 ou version ultérieure)
 
 #### <a name="supported-app-platforms"></a>Plateformes d’application prises en charge
 
-|Plateforme d’application|Prise en charge du système d’exploitation|Notes|
+|Plateforme d’application|Prise en charge du système d’exploitation|Remarques|
 |--- |--- |--- |
 |Mac|Pris en charge uniquement sur Mac|
 |iOS|Pris en charge sur Mac et Windows|Xamarin. iOS 11,0 et Xcode 9,0 ou version ultérieure doivent être installés sur Mac. L’exécution de classeurs iOS sur Windows requiert un hôte de build Mac exécutant tous les éléments ci-dessus, et le [simulateur iOS distant](~/tools/ios-simulator/index.md) installé sur Windows.|
@@ -53,7 +53,7 @@ ms.locfileid: "73029630"
 |Console (.NET Framework)|Pris en charge sur Mac et Windows|
 |Console (.NET Core)|Pris en charge sur Mac et Windows|
 
-## <a name="reporting-bugs"></a>Signalement des bogues
+## <a name="reporting-bugs"></a>Bogues de création de rapports
 
 [Signalez les problèmes sur GitHub][bugs]et incluez toutes les informations suivantes :
 
@@ -61,7 +61,7 @@ ms.locfileid: "73029630"
 
 Toujours joindre les classeurs des fichiers journaux du client :
 
-- Mac : `~/Library/Logs/Xamarin/Workbooks/Xamarin Workbooks {date}.log`
+- Mac : `~/Library/Logs/Xamarin/Workbooks/Xamarin Workbooks {date}.log`
 - Windows : `%LOCALAPPDATA%\Xamarin\Workbooks\logs\Xamarin Workbooks {date}.log`
 
 1.4. x offre également la possibilité de sélectionner le fichier journal dans Finder (macOS) ou Explorer (Windows) directement à partir du menu principal :
@@ -70,7 +70,7 @@ Toujours joindre les classeurs des fichiers journaux du client :
 
 #### <a name="log-paths-for-workbooks-13-and-earlier"></a>Chemins d’accès de journal pour les classeurs 1,3 et versions antérieures :
 
-- Mac : `~/Library/Logs/Xamarin/Inspector/Xamarin Inspector {date}.log`
+- Mac : `~/Library/Logs/Xamarin/Inspector/Xamarin Inspector {date}.log`
 - Windows : `%LOCALAPPDATA%\Xamarin\Inspector\logs\Xamarin Inspector {date}.log`
 
 ### <a name="platform-version-information"></a>Informations sur la version de la plateforme
@@ -97,7 +97,7 @@ Visual Studio
 
 Si vous êtes en mesure de joindre le fichier **. classeurs** ou de créer un lien vers celui-ci, cela peut vous aider à résoudre votre bogue plus rapidement.
 
-### <a name="devices"></a>Appareils
+### <a name="devices"></a>Périphériques
 
 Si vous rencontrez des problèmes de connexion à votre classeur iOS ou Android et que vous avez déjà consulté [notre page de dépannage](~/tools/workbooks/troubleshooting/index.md), nous devrons connaître les éléments suivants :
 
@@ -112,13 +112,13 @@ Si vous rencontrez des problèmes de connexion à votre classeur iOS ou Android 
 
 [bugs]: https://github.com/Microsoft/workbooks/issues/new
 
-## <a name="uninstall"></a>Désinstaller
+## <a name="uninstall"></a>Désinstaller l’interface
 
 ### <a name="windows"></a>Windows
 
 Selon la manière dont vous avez acquis les classeurs, vous devrez peut-être effectuer deux procédures de désinstallation. Vérifiez les deux à la fois pour désinstaller complètement le logiciel.
 
-#### <a name="visual-studio-installer"></a>Programme d’installation de Visual Studio
+#### <a name="visual-studio-installer"></a>Visual Studio Installer
 
 Si vous disposez de Visual Studio 2017, ouvrez **Visual Studio installer**et recherchez dans **les composants individuels** des **Xamarin Workbooks**. Si elle est cochée, décochez-la, puis cliquez sur **modifier** pour désinstaller.
 

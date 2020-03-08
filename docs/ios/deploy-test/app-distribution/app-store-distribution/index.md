@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 08/23/2017
 ms.openlocfilehash: 73c4e992fae1a2d525670604d98f277fe4fde794
-ms.sourcegitcommit: 3e94c6d2b6d6a70c94601e7bf922d62c4a6c7308
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76031423"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78913583"
 ---
 # <a name="app-store-distribution"></a>Distribution dans l’App Store
 
@@ -65,7 +65,7 @@ Vous pouvez sélectionner le même **ID d’application** et les mêmes **appare
 8. Pour finir, **téléchargez** le certificat rempli, puis double-cliquez sur le fichier pour l’installer.
 9. À ce stade, le certificat doit être installé sur la machine, mais vous devrez peut-être [actualiser vos profils](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download) pour vérifier qu’ils sont visibles dans Xcode.
 
-Sinon, il est possible de demander un certificat via la boîte de dialogue Preferences de Xcode. Pour cela, effectuez les étapes suivantes :
+Sinon, il est possible de demander un certificat via la boîte de dialogue Preferences de Xcode. Pour ce faire, procédez comme suit :
 
 1. Sélectionnez votre équipe, puis cliquez sur **gérer les certificats...** :[![](images/selectteam.png "Sélectionner l’équipe et afficher les détails")](images/selectteam.png#lightbox)
 
@@ -83,7 +83,7 @@ Sinon, il est possible de demander un certificat via la boîte de dialogue Prefe
 
 Comme pour tout profil de provisionnement que vous créez, un ID d’application est nécessaire pour identifier l’application que vous distribuez sur l’appareil de l’utilisateur. Si vous ne l’avez pas déjà créé, suivez les étapes ci-dessous pour en créer un :
 
-1. Dans [Apple Developer Center](https://developer.apple.com/account/overview.action), accédez à la section *Certificates, Identifiers & Profiles* (Certificats, identificateurs et profils). Sélectionnez **ID d’application** sous **Identificateurs**.
+1. Dans [Apple Developer Center](https://developer.apple.com/account/overview.action), accédez à la section *Certificates, Identifiers & Profiles* (Certificats, identificateurs et profils). Sélectionnez **App IDs** sous **Identifiers**.
 2. Cliquez sur le bouton **+** , puis indiquez un **Name (Nom)** qui identifie l’application sur le portail.
 3. Le préfixe d’application doit déjà être défini à l’aide de votre ID d’équipe. Il est impossible de le changer. Sélectionnez un ID d’application explicite ou avec des caractères génériques, puis entrez un ID de bundle au format DNS inversé, par exemple :
     - **Explicite** : com.[DomainName].[AppName]
@@ -121,11 +121,11 @@ Une fois que vous avez les composants nécessaires pour créer un profil de dist
 
 7. Cliquez sur le bouton **Generate** pour créer le profil et finaliser le processus.
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
  Vous devrez peut-être quitter Visual Studio pour Mac et obliger Xcode à actualiser sa liste d’identités de signature et de profils de provisionnement disponibles (en suivant les instructions de la section [Demande d’identités de signature](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download)) pour qu’un nouveau profil de distribution soit disponible dans Visual Studio pour Mac.
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
  Vous devrez peut-être quitter Visual Studio et obliger Xcode (sur le Mac de l’hôte de build) à actualiser sa liste d’identités de signature et de profils de provisionnement disponibles (en suivant les instructions de la section [Demande d’identités de signature](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download)) pour qu’un nouveau profil de distribution soit disponible dans Visual Studio.
 
@@ -137,7 +137,7 @@ Une fois que vous avez les composants nécessaires pour créer un profil de dist
 
 Une fois que vous êtes prêt à effectuer une build finale d’une application Xamarin.iOS pour la commercialiser dans l’App Store d’iTunes, sélectionnez le profil de distribution créé ci-dessus.
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
  Dans Visual Studio pour Mac, effectuez les tâches suivantes :
 
@@ -153,9 +153,9 @@ Une fois que vous êtes prêt à effectuer une build finale d’une application 
     ![](images/releasexs03.png "Select the Signing Identity and Distribution Profiles")
 5. Cliquez sur le bouton **OK** pour enregistrer les changements.
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
- Dans Visual Studio, effectuez les tâches suivantes :
+ Dans Visual Studio, procédez comme suit :
 
 1. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le nom du projet, puis sélectionnez **Propriétés** pour l’ouvrir et le modifier.
 2. Sélectionnez **Signature du bundle iOS** et **Mise en production | iPhone** dans la liste déroulante **Configuration** :
@@ -191,19 +191,19 @@ Pour plus d’informations sur la publication d’applications sur l’App Store
 
 <a name="windows" />
 
-## <a name="automatically-copy-app-bundles-back-to-windows"></a>Copier automatiquement les bundles .app dans Windows
+## <a name="automatically-copy-app-bundles-back-to-windows"></a>Copier automatiquement les bundles .app sur Windows
 
 [!include[](~/ios/includes/copy-app-bundle-to-windows.md)]
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article a présenté les composants clés de la préparation d’une application Xamarin.iOS pour sa distribution dans l’App Store.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Configuration d’une application dans iTunes Connect](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)
 - [Publication dans l’App Store](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)
 - [Distribution en interne](~/ios/deploy-test/app-distribution/in-house-distribution.md)
-- [Distribution ad hoc](~/ios/deploy-test/app-distribution/ad-hoc-distribution.md)
+- [Distribution ad hoc](~/ios/deploy-test/app-distribution/ad-hoc-distribution.md)
 - [Fichier iTunesMetadata.plist](~/ios/deploy-test/app-distribution/itunesmetadata.md)
-- [Prise en charge IPA](~/ios/deploy-test/app-distribution/ipa-support.md)
+- [Prise en charge de fichier IPA](~/ios/deploy-test/app-distribution/ipa-support.md)

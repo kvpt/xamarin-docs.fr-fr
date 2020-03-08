@@ -9,21 +9,21 @@ author: maddyleger1
 ms.author: maleger
 ms.date: 02/04/2019
 ms.openlocfilehash: b287d523101bb8ca7faca8ea95ee898ccf9c0bb1
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "68757263"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78918054"
 ---
 # <a name="xaml-previewer-for-xamarinforms"></a>Générateur d’aperçu XAML pour Xamarin. Forms
 
 _Voir vos dispositions Xamarin. Forms rendues à mesure que vous tapez_
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Overview
 
 Le générateur d’aperçu XAML vous montre comment votre page XAML Xamarin. Forms s’affichera sur iOS et Android. Lorsque vous apportez des modifications à votre code XAML, vous les voyez immédiatement en regard de votre code. Le générateur d’aperçu XAML est disponible dans Visual Studio et Visual Studio pour Mac.
 
-## <a name="getting-started"></a>Bien démarrer
+## <a name="getting-started"></a>Prise en main
 
 ::: zone pivot="windows"
 
@@ -52,7 +52,7 @@ Vous pouvez modifier l’écran pour le fractionner verticalement ou horizontale
 
 Le bouton **Aperçu** est affiché dans l’éditeur lorsque vous ouvrez une page XAML. Affichez ou masquez le générateur d’aperçu en appuyant sur les boutons d' **Aperçu** ou de **fractionnement** dans le coin inférieur gauche de toute fenêtre de document XAML :
 
-[le générateur d’aperçu ![Xamarin. Forms est activé avec le bouton d’aperçu ou de fractionnement](xaml-previewer-images/xamlp-list-sml.png)](xaml-previewer-images/xamlp-list.png#lightbox)
+[![le générateur d’aperçu Xamarin. Forms activé avec le bouton d’aperçu ou de fractionnement](xaml-previewer-images/xamlp-list-sml.png)](xaml-previewer-images/xamlp-list.png#lightbox)
 
 > [!NOTE]
 > Dans les versions antérieures de Visual Studio pour Mac, le bouton **Aperçu** était situé en haut à droite de la fenêtre.

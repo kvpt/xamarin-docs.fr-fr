@@ -7,11 +7,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/06/2018
 ms.openlocfilehash: 6841e94ad13357c51e6ccf59e35c659dfb9954aa
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016293"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78914665"
 ---
 # <a name="binding-objective-c-libraries"></a>Liaison des bibliothèques objective-C
 
@@ -32,16 +32,16 @@ Vous pouvez utiliser l’exemple de projet de [liaison iOS](https://github.com/x
 
 <a name="Getting_Started" />
 
-## <a name="getting-started"></a>Bien démarrer
+## <a name="getting-started"></a>Prise en main
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 Le moyen le plus simple de créer une liaison consiste à créer un projet de liaison Xamarin. iOS.
 Pour ce faire, vous pouvez Visual Studio pour Mac en sélectionnant le type de projet, bibliothèque de **> iOS > bibliothèques de liaisons**:
 
 [![](objective-c-libraries-images/00-sml.png "Do this from Visual Studio for Mac by selecting the project type, iOS Library Bindings Library")](objective-c-libraries-images/00.png#lightbox)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Le moyen le plus simple de créer une liaison consiste à créer un projet de liaison Xamarin. iOS.
 Pour ce faire, vous pouvez utiliser Visual Studio sur Windows en sélectionnant le type de projet, **visual C# > iOS > bibliothèques de liaisons (IOS)** :
@@ -169,7 +169,7 @@ Mais étant donné que nous utilisons l’interface comme squelette pour génér
 
 La liaison la plus simple consiste à lier une méthode. Déclarez simplement une méthode dans l’interface avec C# les conventions de nommage et décorez la méthode avec la [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)
 . L’attribut [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) est ce qui lie C# votre nom au nom objective-C dans le runtime Xamarin. iOS. Le paramètre de l' [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) 
-attribut est le nom du sélecteur objective-C. Voici quelques exemples :
+attribut est le nom du sélecteur objective-C. Exemples :
 
 ```csharp
 // A method, that takes no arguments
@@ -479,7 +479,7 @@ interface NSStringDrawingExtensions {
 
 ### <a name="binding-objective-c-argument-lists"></a>Liaison des listes d’arguments objective-C
 
-Objective-C prend en charge les arguments variadiques. Exemple :
+Objective-C prend en charge les arguments variadiques. Par exemple :
 
 ```objc
 - (void) appendWorkers:(XWorker *) firstWorker, ...
@@ -522,7 +522,7 @@ Parfois, vous souhaiterez accéder aux champs publics qui ont été déclarés d
 
 En général, ces champs contiennent des chaînes ou des valeurs entières qui doivent être référencées. Ils sont couramment utilisés comme chaîne représentant une notification spécifique et en tant que clés dans les dictionnaires.
 
-Pour lier un champ, ajoutez une propriété à votre fichier de définition d’interface et décorez la propriété avec l’attribut [`[Field]`](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute) . Cet attribut accepte un paramètre : le nom C du symbole à rechercher. Exemple :
+Pour lier un champ, ajoutez une propriété à votre fichier de définition d’interface et décorez la propriété avec l’attribut [`[Field]`](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute) . Cet attribut accepte un paramètre : le nom C du symbole à rechercher. Par exemple :
 
 ```csharp
 [Field ("NSSomeEventNotification")]
@@ -632,7 +632,7 @@ L’attribut [`[BindAs]`](~/cross-platform/macios/binding/binding-types-referenc
 Vous pouvez décorer des méthodes (sur une valeur de retour), des paramètres et des propriétés avec [`[BindAs]`](~/cross-platform/macios/binding/binding-types-reference.md#BindAsAttribute). La seule restriction est que votre membre **ne doit pas** se trouver à l’intérieur d’un [`[Protocol]`](~/cross-platform/macios/binding/binding-types-reference.md#ProtocolAttribute) 
 ou [`[Model]`](~/cross-platform/macios/binding/binding-types-reference.md#ModelAttribute) interface.
 
-Exemple :
+Par exemple :
 
 ```csharp
 [return: BindAs (typeof (bool?))]
@@ -651,7 +651,7 @@ En interne, nous allons effectuer les conversions de `bool?` <-> `NSNumber` et `
 
 [`[BindAs]`](~/cross-platform/macios/binding/binding-types-reference.md#BindAsAttribute) prend également en charge les tableaux de `NSNumber` `NSValue` et `NSString`(enums).
 
-Exemple :
+Par exemple :
 
 ```csharp
 [BindAs (typeof (CAScroll []))]
@@ -682,7 +682,7 @@ Property (elle peut être publique ou privée).
 
 Cet attribut peut être utilisé sans arguments pour les notifications qui ne contiennent pas de charge utile, ou vous pouvez spécifier un `System.Type` qui référence une autre interface dans la définition de l’API, en général avec le nom se terminant par « EventArgs ». Le générateur transformera l’interface en une classe qui sous-classe `EventArgs` et inclura toutes les propriétés qui y sont listées. L’attribut [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) doit être utilisé dans la classe EventArgs pour répertorier le nom de la clé utilisée pour rechercher le dictionnaire objective-C afin d’extraire la valeur.
 
-Exemple :
+Par exemple :
 
 ```csharp
 interface MyClass {
@@ -779,7 +779,7 @@ interface MyUIViewExtension {
 }
 ```
 
-L’opération ci-dessus crée une `MyUIViewExtension` une classe qui contient la méthode d’extension `MakeBackgroundRed`.  Cela signifie que vous pouvez maintenant appeler « MakeBackgroundRed » sur n’importe quelle sous-classe de `UIView`, ce qui vous donne les mêmes fonctionnalités que celles que vous obtiendriez sur objective-C. Dans d’autres cas, les catégories sont utilisées pour étendre une classe système, mais pour organiser les fonctionnalités, uniquement à des fins de décoration.  Comme ceci :
+L’opération ci-dessus crée une `MyUIViewExtension` une classe qui contient la méthode d’extension `MakeBackgroundRed`.  Cela signifie que vous pouvez maintenant appeler « MakeBackgroundRed » sur n’importe quelle sous-classe de `UIView`, ce qui vous donne les mêmes fonctionnalités que celles que vous obtiendriez sur objective-C. Dans d’autres cas, les catégories sont utilisées pour étendre une classe système, mais pour organiser les fonctionnalités, uniquement à des fins de décoration.  Comme ceci :
 
 ```csharp
 @interface SocialNetworking (Twitter)
@@ -1337,7 +1337,7 @@ Vous devez informer Xamarin. iOS comment lier vos bibliothèques. pour ce faire,
 L’exemple ci-dessus permet de lier `libMyLibrary.a`, `libSystemLibrary.dylib` et la bibliothèque `CFNetwork` Framework à votre exécutable final.
 
 Vous pouvez aussi tirer parti de la [`[LinkWithAttribute]`](~/cross-platform/macios/binding/binding-types-reference.md#LinkWithAttribute)au niveau de l’assembly, que vous pouvez incorporer dans vos fichiers de contrat (tels que `AssemblyInfo.cs`).
-Lorsque vous utilisez la [`[LinkWithAttribute]`](~/cross-platform/macios/binding/binding-types-reference.md#LinkWithAttribute), votre bibliothèque Native doit être disponible au moment où vous effectuez votre liaison, car cette opération incorpore la bibliothèque native à votre application. Exemple :
+Lorsque vous utilisez la [`[LinkWithAttribute]`](~/cross-platform/macios/binding/binding-types-reference.md#LinkWithAttribute), votre bibliothèque Native doit être disponible au moment où vous effectuez votre liaison, car cette opération incorpore la bibliothèque native à votre application. Par exemple :
 
 ```csharp
 // Specify only the library name as a constructor argument and specify everything else with properties:

@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
 ms.openlocfilehash: 4731be58c1fadae0bba6768570ecfd181b071dd2
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031865"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78915726"
 ---
 # <a name="ios-7-user-interface-overview"></a>Vue d’ensemble de l’interface utilisateur iOS 7
 
@@ -201,7 +201,7 @@ Dans notre application, nous voyons que la vue est à nouveau repositionnée, de
 
  [![](ios7-ui-images/good.png "Example with whole image visible")](ios7-ui-images/good.png#lightbox)
 
-Notez que, bien que les effets des API `TopLayoutGuide/BottomLayoutGuide` et `EdgesForExtendedLayout` soient similaires, ils sont destinés à remplir différents objectifs. La modification du paramètre de `EdgesForExtendedLayout` à partir de la valeur par défaut peut corriger les vues tronquées dans les applications conçues pour iOS 6, mais une bonne conception iOS 7 doit honorer l’esthétique du plein écran et fournir une expérience d’affichage plein écran, en se basant sur `TopLayoutGuide` et `BottomLayoutGuide` correctement Placez le contenu destiné à être manipulé dans un endroit confortable pour l’utilisateur.
+Notez que, bien que les effets des API `TopLayoutGuide/BottomLayoutGuide` et `EdgesForExtendedLayout` soient similaires, ils sont destinés à remplir différents objectifs. La modification du paramètre de `EdgesForExtendedLayout` à partir de la valeur par défaut peut corriger les vues tronquées dans les applications conçues pour iOS 6, mais une bonne conception iOS 7 doit honorer l’esthétique du plein écran et fournir une expérience d’affichage plein écran, en se basant sur `TopLayoutGuide` et `BottomLayoutGuide` pour positionner correctement le contenu destiné à être manipulé dans un endroit confortable pour l’utilisateur.
 
 Reportez-vous à [imageviewer](https://docs.microsoft.com/samples/xamarin/ios-samples/ios7-ui-updates/) pour obtenir un exemple fonctionnel.
 
@@ -258,10 +258,10 @@ La couleur de teinte peut également être appliquée aux images lorsque le `Ren
 
 Dans iOS 7, l’utilisateur peut spécifier la taille du texte dans les paramètres système. Avec le type dynamique, la police est ajustée dynamiquement pour paraître correcte quelle que soit la taille. `UIFont.PreferredFontForTextStyle` doit être utilisé pour obtenir une police optimisée pour la taille contrôlée par l’utilisateur.
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article traite des modifications apportées aux éléments d’interface utilisateur dans iOS 7. Il examine plusieurs des modifications apportées aux vues et aux contrôles dans UIKit, en mettant en évidence les modifications visuelles ainsi que les modifications apportées aux API associées. Enfin, il introduit de nouvelles API pour travailler avec du contenu plein écran, la prise en charge des couleurs de teinte et le type dynamique.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [ImageViewer (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios7-ui-updates)

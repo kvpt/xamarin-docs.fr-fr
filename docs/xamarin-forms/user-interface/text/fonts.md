@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/20/2020
 ms.openlocfilehash: 3798e3612547d36905dd62e6314f158958782874
-ms.sourcegitcommit: 5b6d3bddf7148f8bb374de5657bdedc125d72ea7
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78292566"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78911478"
 ---
 # <a name="fonts-in-xamarinforms"></a>Polices dans Xamarin.Forms
 
@@ -259,7 +259,7 @@ Les captures d’écran suivantes illustrent la police personnalisée :
 Les icônes de police peuvent être affichées par les applications Xamarin. Forms en spécifiant les données d’icône de police dans un objet `FontImageSource`. Cette classe, qui dérive de la classe [`ImageSource`](xref:Xamarin.Forms.ImageSource) , a les propriétés suivantes :
 
 - `Glyph` : valeur de caractère Unicode de l’icône de police, spécifiée comme `string`.
-- `Size` : valeur `double` qui indique la taille, en unités indépendantes du périphérique, de l’icône de police rendue. La valeur par défaut est 30. En outre, cette propriété peut être définie sur une taille de police nommée.
+- `Size` : valeur `double` qui indique la taille, en unités indépendantes du périphérique, de l’icône de police rendue. La valeur par défaut est 30. En outre, cette propriété peut être définie sur une taille de police nommée.
 - `FontFamily` : `string` représentant la famille de polices à laquelle appartient l’icône de police.
 - `Color` : valeur facultative [`Color`](xref:Xamarin.Forms.Color) à utiliser lors de l’affichage de l’icône de police.
 

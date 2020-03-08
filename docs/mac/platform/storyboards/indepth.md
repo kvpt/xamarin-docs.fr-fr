@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
 ms.openlocfilehash: 06774d13cf053b661dd0b2d24b7df0c0b767b4db
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73026415"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78918884"
 ---
 # <a name="working-with-storyboards-in-xamarinmac"></a>Utilisation des storyboards dans Xamarin. Mac
 
@@ -82,7 +82,7 @@ Et, par conséquent, ils sont reliés pour recevoir des événements tels que le
 
 <a name="Containment" />
 
-### <a name="containment"></a>Imbrication
+### <a name="containment"></a>Containment
 
 Dans les storyboards, les contrôleurs d’affichage (tels que le contrôleur d’affichage fractionné et le contrôleur d’affichage d’onglets) peuvent désormais implémenter la _relation contenant-contenu_, de sorte qu’ils peuvent « contenir » d’autres contrôleurs de sous-affichage :
 
@@ -354,7 +354,7 @@ Pour obtenir un exemple complexe de l’utilisation des storyboards dans une app
 
 Le code SourceWriter a été entièrement commenté et, le cas échéant, des liens ont être fournis entre les principales technologies ou méthodes et des informations pertinentes dans la documentation des guides Xamarin.Mac.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Hello, Mac](~/mac/get-started/hello-mac.md)
 - [Utilisation de Windows](~/mac/user-interface/window.md)

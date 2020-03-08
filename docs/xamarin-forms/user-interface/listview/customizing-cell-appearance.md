@@ -8,67 +8,67 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/12/2019
 ms.openlocfilehash: ab54b54c9f2f7d6d7748137ea079439b7c3ddfca
-ms.sourcegitcommit: a5ef4497db04dfa016865bc7454b3de6ff088554
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "70998126"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78917003"
 ---
 # <a name="customizing-listview-cell-appearance"></a>Personnaliser l’apparence de cellule de ListView
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-customcells)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-customcells)
 
-La classe Xamarin. [`ListView`](xref:Xamarin.Forms.ListView) Forms est utilisée pour présenter des listes de défilement, qui peuvent être personnalisées par `ViewCell` le biais de l’utilisation d’éléments. Un `ViewCell` élément peut afficher du texte et des images, indiquer un État vrai/faux et recevoir une entrée d’utilisateur.
+La classe Xamarin. Forms [`ListView`](xref:Xamarin.Forms.ListView) est utilisée pour présenter des listes de défilement, qui peuvent être personnalisées par le biais de l’utilisation d’éléments `ViewCell`. Un élément `ViewCell` peut afficher du texte et des images, indiquer un État vrai/faux et recevoir une entrée d’utilisateur.
 
 ## <a name="built-in-cells"></a>Intégrées dans les cellules
 Xamarin. Forms est fourni avec des cellules intégrées qui fonctionnent pour de nombreuses applications :
 
-- [`TextCell`](#textcell)les contrôles sont utilisés pour afficher du texte avec une deuxième ligne facultative pour le texte de détail.
-- [`ImageCell`](#imagecell)les contrôles sont similaires `TextCell`à s, mais incluent une image à gauche du texte.
-- `SwitchCell`les contrôles sont utilisés pour présenter et capturer les États activé/désactivé ou vrai/faux.
-- `EntryCell`les contrôles sont utilisés pour présenter des données texte que l’utilisateur peut modifier.
+- les contrôles [`TextCell`](#textcell) sont utilisés pour afficher du texte avec une deuxième ligne facultative pour le texte de détail.
+- les contrôles [`ImageCell`](#imagecell) sont similaires aux `TextCell`s mais incluent une image à gauche du texte.
+- les contrôles `SwitchCell` sont utilisés pour présenter et capturer les États activé/désactivé ou vrai/faux.
+- les contrôles `EntryCell` sont utilisés pour présenter des données texte que l’utilisateur peut modifier.
 
-Les [`SwitchCell`](~/xamarin-forms/user-interface/tableview.md#switchcell) contrôles [`EntryCell`](~/xamarin-forms/user-interface/tableview.md#entrycell) et sont plus couramment utilisés dans le contexte d’un [`TableView`](~/xamarin-forms/user-interface/tableview.md).
+Les contrôles [`SwitchCell`](~/xamarin-forms/user-interface/tableview.md#switchcell) et [`EntryCell`](~/xamarin-forms/user-interface/tableview.md#entrycell) sont plus couramment utilisés dans le contexte d’un [`TableView`](~/xamarin-forms/user-interface/tableview.md).
 
 ### <a name="textcell"></a>TextCell
 
-[`TextCell`](xref:Xamarin.Forms.TextCell) est une cellule pour afficher du texte, éventuellement avec une deuxième ligne sous forme de texte de détail. La capture d’écran `TextCell` suivante montre des éléments sur iOS et Android :
+[`TextCell`](xref:Xamarin.Forms.TextCell) est une cellule permettant d’afficher du texte, éventuellement avec une deuxième ligne comme texte de détail. La capture d’écran suivante montre `TextCell` éléments sur iOS et Android :
 
-![](customizing-cell-appearance-images/text-cell-default.png "Exemple de TextCell par défaut")
+![](customizing-cell-appearance-images/text-cell-default.png "Default TextCell Example")
 
-TextCells sont rendus sous forme de contrôles natifs à l’exécution, donc les performances sont très bon par rapport à un personnalisé `ViewCell`. Les TextCells sont personnalisables, ce qui vous permet de définir les propriétés suivantes :
+Les TextCells sont rendus en tant que contrôles natifs au moment de l’exécution. par conséquent, les performances sont très bonnes comparées à une `ViewCell`personnalisée. Les TextCells sont personnalisables, ce qui vous permet de définir les propriétés suivantes :
 
-- `Text` &ndash; le texte qui est affiché sur la première ligne, de grande taille de police.
-- `Detail` &ndash; le texte qui s’affiche en dessous de la première ligne, dans une police plus petite.
+- `Text` &ndash; le texte affiché sur la première ligne, en grande police.
+- `Detail` &ndash; le texte affiché sous la première ligne, dans une police plus petite.
 - `TextColor` &ndash; la couleur du texte.
-- `DetailColor` &ndash; la couleur du texte en détail
+- `DetailColor` &ndash; la couleur du texte de détail
 
-La capture d’écran `TextCell` suivante montre les éléments avec des propriétés de couleur personnalisées :
+La capture d’écran suivante montre `TextCell` éléments avec des propriétés de couleur personnalisées :
 
-![](customizing-cell-appearance-images/text-cell-custom.png "Exemple de TextCell personnalisé")
+![](customizing-cell-appearance-images/text-cell-custom.png "Custom TextCell Example")
 
 ### <a name="imagecell"></a>ImageCell
 
-[`ImageCell`](xref:Xamarin.Forms.ImageCell), tels que `TextCell`, peut être utilisé pour l’affichage de texte et des détails secondaires, et il offre des performances exceptionnelles à l’aide de contrôles natifs de chaque plateforme. `ImageCell` diffère `TextCell` car il affiche une image à gauche du texte.
+[`ImageCell`](xref:Xamarin.Forms.ImageCell), comme `TextCell`, peut être utilisé pour afficher du texte et des détails secondaires, et il offre de meilleures performances en utilisant les contrôles natifs de chaque plateforme. `ImageCell` diffère de `TextCell` en ce qu’il affiche une image à gauche du texte.
 
-La capture d’écran `ImageCell` suivante montre des éléments sur iOS et Android : ![« Exemple ImageCell par défaut »](customizing-cell-appearance-images/image-cell-default.png "Exemple de ImageCell par défaut")
+La capture d’écran suivante montre `ImageCell` éléments sur iOS et Android : ![« exemple ImageCell par défaut »](customizing-cell-appearance-images/image-cell-default.png "Exemple de ImageCell par défaut")
 
-`ImageCell` est utile lorsque vous avez besoin afficher une liste de données avec un aspect visuel, telles qu’une liste de contacts ou de films. `ImageCell`les s sont personnalisables, ce qui vous permet de définir les éléments suivants :
+`ImageCell` est utile lorsque vous devez afficher une liste de données avec un aspect visuel, par exemple une liste de contacts ou de films. `ImageCell`s sont personnalisables, ce qui vous permet de définir les éléments suivants :
 
-- `Text` &ndash; le texte qui est affiché sur la première ligne, de grande taille de police
-- `Detail` &ndash; le texte qui s’affiche en dessous de la première ligne, dans une police plus petite
+- `Text` &ndash; le texte affiché sur la première ligne, dans une grande police
+- `Detail` &ndash; le texte affiché sous la première ligne, dans une police plus petite
 - `TextColor` &ndash; la couleur du texte
-- `DetailColor` &ndash; la couleur du texte en détail
+- `DetailColor` &ndash; la couleur du texte de détail
 - `ImageSource` &ndash; l’image à afficher en regard du texte
 
-La capture d’écran `ImageCell` suivante montre les éléments avec des propriétés de couleur personnalisées : ![« Exemple de ImageCell personnalisé »](customizing-cell-appearance-images/image-cell-custom.png "Exemple de ImageCell personnalisé")
+La capture d’écran suivante montre `ImageCell` éléments avec des propriétés de couleur personnalisées : ![« exemple de ImageCell personnalisé »](customizing-cell-appearance-images/image-cell-custom.png "Exemple de ImageCell personnalisé")
 
 ## <a name="custom-cells"></a>Cellules personnalisées
-Les cellules personnalisées vous permettent de créer des dispositions de cellules qui ne sont pas prises en charge par les cellules intégrées. Par exemple, vous souhaiterez présenter une cellule avec deux étiquettes qui ont le même poids. Un `TextCell` serait insuffisant, car le `TextCell` a un nom qui est plus petit. La plupart des personnalisations de cellule ajouter des données en lecture seule supplémentaires (par exemple, des étiquettes supplémentaires, images ou d’autres informations d’affichage).
+Les cellules personnalisées vous permettent de créer des dispositions de cellules qui ne sont pas prises en charge par les cellules intégrées. Par exemple, vous souhaiterez présenter une cellule avec deux étiquettes qui ont le même poids. Une `TextCell` serait insuffisante, car la `TextCell` a une étiquette qui est plus petite. La plupart des personnalisations de cellule ajouter des données en lecture seule supplémentaires (par exemple, des étiquettes supplémentaires, images ou d’autres informations d’affichage).
 
-Toutes les cellules personnalisés doivent dériver de [ `ViewCell` ](xref:Xamarin.Forms.ViewCell), la même classe de base que tous de la cellule intégrée types utilisent.
+Toutes les cellules personnalisées doivent dériver de [`ViewCell`](xref:Xamarin.Forms.ViewCell), la même classe de base que tous les types de cellules intégrés utilisent.
 
-Xamarin. Forms offre un [comportement de mise en cache](~/xamarin-forms/user-interface/listview/performance.md#caching-strategy) sur le `ListView` contrôle, ce qui peut améliorer les performances de défilement pour certains types de cellules personnalisées.
+Xamarin. Forms offre un [comportement de mise en cache](~/xamarin-forms/user-interface/listview/performance.md#caching-strategy) sur le contrôle `ListView` qui peut améliorer les performances de défilement pour certains types de cellules personnalisées.
 
 La capture d’écran suivante montre un exemple de cellule personnalisée :
 
@@ -108,9 +108,9 @@ x:Class="demoListView.ImageCellPage">
 
 Le code XAML fonctionne comme suit :
 
-- La cellule personnalisée est imbriquée dans une `DataTemplate`, ce qui se trouve dans `ListView.ItemTemplate`. Il s’agit du même processus que l’utilisation d’une cellule intégrée.
-- `ViewCell` est le type de la cellule personnalisée. L’enfant de l' `DataTemplate` élément doit être de la classe, ou dériver `ViewCell` de celle-ci.
-- Dans, `ViewCell`la disposition peut être gérée par n’importe quelle disposition Xamarin. Forms. Dans cet exemple, la disposition est gérée `StackLayout`par un, ce qui permet de personnaliser la couleur d’arrière-plan.
+- La cellule personnalisée est imbriquée à l’intérieur d’un `DataTemplate`, à l’intérieur `ListView.ItemTemplate`. Il s’agit du même processus que l’utilisation d’une cellule intégrée.
+- `ViewCell` est le type de la cellule personnalisée. L’enfant de l’élément `DataTemplate` doit être ou dériver de la classe `ViewCell`.
+- À l’intérieur de la `ViewCell`, la disposition peut être gérée par n’importe quelle disposition Xamarin. Forms. Dans cet exemple, la disposition est gérée par un `StackLayout`, ce qui permet de personnaliser la couleur d’arrière-plan.
 
 > [!NOTE]
 > Toute propriété de `StackLayout` pouvant être liée peut être liée à l’intérieur d’une cellule personnalisée. Toutefois, cette fonctionnalité n’est pas affichée dans l’exemple XAML.
@@ -153,7 +153,7 @@ public class CustomCell : ViewCell
     }
 ```
 
-Dans le constructeur de la page, la `ItemTemplate` propriété du ListView est définie `DataTemplate` sur un `CustomCell` avec le type spécifié :
+Dans le constructeur de page, la propriété `ItemTemplate` de ListView est définie sur une `DataTemplate` avec le type de `CustomCell` spécifié :
 
 ```csharp
 public partial class ImageCellPage : ContentPage
@@ -168,7 +168,7 @@ public partial class ImageCellPage : ContentPage
 
 ### <a name="binding-context-changes"></a>Changements de contexte de liaison
 
-Lors de la liaison à un type de cellule personnalisée [ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty) instances, les contrôles d’interface utilisateur affichant le `BindableProperty` valeurs doivent utiliser le [ `OnBindingContextChanged` ](xref:Xamarin.Forms.Cell.OnBindingContextChanged) méthode override pour définir les données à afficher dans chaque cellule, plutôt que le constructeur de cellule, comme illustré dans l’exemple de code suivant :
+Lors de la liaison à des instances de [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) d’un type de cellule personnalisé, les contrôles d’interface utilisateur qui affichent les valeurs `BindableProperty` doivent utiliser la substitution [`OnBindingContextChanged`](xref:Xamarin.Forms.Cell.OnBindingContextChanged) pour définir les données à afficher dans chaque cellule, plutôt que dans le constructeur de cellule, comme illustré dans l’exemple de code suivant :
 
 ```csharp
 public class CustomCell : ViewCell
@@ -215,12 +215,12 @@ public class CustomCell : ViewCell
 }
 ```
 
-Le [ `OnBindingContextChanged` ](xref:Xamarin.Forms.Cell.OnBindingContextChanged) de remplacement sera appelée lorsque le [ `BindingContextChanged` ](xref:Xamarin.Forms.BindableObject.BindingContextChanged) événement est déclenché en réponse à la valeur de la [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) modification de propriété. Par conséquent, lorsque le `BindingContext` change, les contrôles d’interface utilisateur affichant le [ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty) valeurs doivent définir leurs données. Notez que le `BindingContext` doit être vérifiée pour un `null` valeur, comme cela peut être défini par Xamarin.Forms pour le garbage collection, ce qui à son tour entraîne le `OnBindingContextChanged` remplacer appelée.
+La [`OnBindingContextChanged`](xref:Xamarin.Forms.Cell.OnBindingContextChanged) substitution sera appelée lorsque l’événement [`BindingContextChanged`](xref:Xamarin.Forms.BindableObject.BindingContextChanged) se déclenche, en réponse à la valeur de la propriété [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) modifiée. Par conséquent, lorsque l' `BindingContext` change, les contrôles d’interface utilisateur qui affichent les valeurs [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) doivent définir leurs données. Notez que la `BindingContext` doit être vérifiée pour obtenir une valeur de `null`, car cela peut être défini par Xamarin. Forms pour garbage collection, qui à son tour entraînera l’appel de la substitution `OnBindingContextChanged`.
 
-Vous pouvez également lier les contrôles d’interface utilisateur la [ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty) instances pour afficher leurs valeurs, ce qui supprime la nécessité de remplacer le `OnBindingContextChanged` (méthode).
+Les contrôles d’interface utilisateur peuvent également être liés aux instances [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) pour afficher leurs valeurs, ce qui évite d’avoir à substituer la méthode `OnBindingContextChanged`.
 
 > [!NOTE]
-> Lors de la substitution `OnBindingContextChanged`, vérifiez que la classe de base `OnBindingContextChanged` méthode est appelée afin que les délégués inscrits reçoivent le `BindingContextChanged` événement.
+> Lors de la substitution de `OnBindingContextChanged`, assurez-vous que la méthode `OnBindingContextChanged` de la classe de base est appelée afin que les délégués inscrits reçoivent l’événement `BindingContextChanged`.
 
 Dans XAML, le type de cellule personnalisé de liaison aux données peut être obtenue comme indiqué dans l’exemple de code suivant :
 
@@ -234,9 +234,9 @@ Dans XAML, le type de cellule personnalisé de liaison aux données peut être o
 </ListView>
 ```
 
-Cette opération lie les `Name`, `Age`, et `Location` propriétés pouvant être liées dans le `CustomCell` de l’instance, à la `Name`, `Age`, et `Location` propriétés de chaque objet dans la collection sous-jacente.
+Cela lie le `Name`, `Age`et `Location` propriétés pouvant être liées dans l’instance de `CustomCell`, aux propriétés `Name`, `Age`et `Location` de chaque objet de la collection sous-jacente.
 
-La liaison équivalente en C# est illustrée dans l’exemple de code suivant :
+La liaison équivalente en c# est illustrée dans l’exemple de code suivant :
 
 ```csharp
 var customCell = new DataTemplate (typeof(CustomCell));
@@ -251,10 +251,10 @@ var listView = new ListView
 };
 ```
 
-Sur iOS et Android, si le [ `ListView` ](xref:Xamarin.Forms.ListView) est recyclé des éléments et que la cellule personnalisée utilise un convertisseur personnalisé, le convertisseur personnalisé doit implémenter correctement la notification de modification de propriété. Lorsque les cellules sont réutilisées leurs valeurs de propriété change le contexte de liaison est mise à jour à celle d’une cellule disponible, avec `PropertyChanged` événements déclenchés. Pour plus d’informations, consultez [personnalisation d’une ViewCell](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md). Pour plus d’informations sur le recyclage de cellule, consultez [stratégie de mise en cache](~/xamarin-forms/user-interface/listview/performance.md#caching-strategy).
+Sur iOS et Android, si le [`ListView`e](xref:Xamarin.Forms.ListView) des éléments de recyclage et que la cellule personnalisée utilise un convertisseur personnalisé, le convertisseur personnalisé doit implémenter correctement la notification de modification de propriété. Lorsque des cellules sont réutilisées, leurs valeurs de propriété changent lorsque le contexte de liaison est mis à jour avec celui d’une cellule disponible, avec `PropertyChanged` événements déclenchés. Pour plus d’informations, consultez [Personnalisation d’un ViewCell](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md). Pour plus d’informations sur le recyclage des cellules, consultez [stratégie de mise en cache](~/xamarin-forms/user-interface/listview/performance.md#caching-strategy).
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
-- [Intégrées dans les cellules (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-builtincells)
-- [Cellules personnalisés (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-customcells)
-- [Contexte de modifier la liaison (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-bindingcontextchanged)
+- [Cellules intégrées (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-builtincells)
+- [Cellules personnalisées (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-customcells)
+- [Contexte de liaison modifié (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-bindingcontextchanged)
