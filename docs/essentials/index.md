@@ -5,12 +5,12 @@ ms.assetid: 4EDC9897-5FD1-44CA-A26D-2E5AB472C99A
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 02/26/2020
-ms.openlocfilehash: a0d1e397725ca0a60eb68fb0e6b989ee22c3f56a
-ms.sourcegitcommit: 3d39bafe4c56b15cbb695b1f7f02b926e1033f58
+ms.openlocfilehash: 42cdfe6c54354f1616606c9b3a40de78446c5c39
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78155267"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78910728"
 ---
 # <a name="xamarinessentials"></a>Xamarin.Essentials
 
@@ -28,6 +28,7 @@ Les pages suivantes vous guideront pour intégrer les fonctionnalités de Xamari
 
 * [Accéléromètre](accelerometer.md?context=xamarin/xamarin-forms) : obtenir l’accélération de l’appareil autour de trois axes.
 * [Informations sur l’application](app-information.md?context=xamarin/xamarin-forms) : obtenir des informations générales sur l’application.
+* [Thème d’application](app-theme.md?context=xamarin/xamarin-forms) : détectez le thème actuel demandé pour l’application.
 * [Baromètre](barometer.md?context=xamarin/xamarin-forms) : analyser les modifications de la pression sur le baromètre.
 * [Batterie](battery.md?context=xamarin/xamarin-forms) : obtenir le niveau, la source et l’état de la batterie.
 * [Presse-papiers](clipboard.md?context=xamarin/xamarin-forms) : définir ou lire rapidement et facilement du texte dans le Presse-papiers.

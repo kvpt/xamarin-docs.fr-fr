@@ -7,11 +7,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
 ms.openlocfilehash: 5ba451de857444bc5b12b750ae479b62abdb75a3
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016333"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78910774"
 ---
 # <a name="3264-bit-platform-considerations"></a>Considérations sur les plateformes 32 bits et 64 bits
 
@@ -36,7 +36,7 @@ Pour les applications mobiles Xamarin. iOS qui ont été converties en API unifi
 
 <!-- markdownlint-disable MD001 -->
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 1. Dans la **panneau solutions**, double-cliquez sur le projet de l’application pour ouvrir la fenêtre **Options du projet** .
 2. Sélectionnez **Build iOS**.
@@ -49,22 +49,22 @@ Pour les applications mobiles Xamarin. iOS qui ont été converties en API unifi
    [![Définition des architectures prises en charge sur l’une des combinaisons ARM64](Images/Image02.png "Définition des architectures prises en charge sur l’une des combinaisons ARM64")](Images/Image02-large.png#lightbox)
 
 5. Cliquez sur **OK**.
-6. Effectuez une génération propre.
+6. Optez pour une build propre.
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. Dans le **Explorateur de solutions**, cliquez avec le bouton droit sur le projet de l’application, puis sélectionnez **Propriétés**.
 2. Sélectionnez **Build iOS**.
 3. Pour le simulateur iPhone, définissez les **architectures prises en charge** sur **x86\_64** ou **i386 + x86\_64**: 
 
-   [![Définition des architectures prises en charge sur x86_64 ou i386 + x86\_64](Images/VS02.png "Setting Supported architectures to x86_64 or i386 + x86\_64")](Images/VS02-large.png#lightbox)
+   [![Définition des architectures prises en charge pour x86_64 ou i386 + x86\_64](Images/VS02.png "Setting Supported architectures to x86_64 or i386 + x86\_64")](Images/VS02-large.png#lightbox)
 
 4. Pour les appareils physiques, sélectionnez l’une des combinaisons **ARM64** disponibles :
     
    [![Définition des architectures prises en charge sur l’une des combinaisons ARM64](Images/VS01.png "Définition des architectures prises en charge sur l’une des combinaisons ARM64")](Images/VS01-large.png#lightbox)
 
-5. Enregistrez les modifications apportées.
-6. Effectuez une génération propre.
+5. Enregistrez vos modifications.
+6. Optez pour une build propre.
 
 -----
 

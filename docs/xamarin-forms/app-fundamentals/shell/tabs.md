@@ -1,6 +1,6 @@
 ---
 title: Disposition Shell Xamarin.Forms
-description: Le niveau de navigation suivant le menu volant dans une application Shell est la barre d’onglets du bas. Le modèle de navigation pour une application peut également commencer avec des onglets en bas et n’utiliser aucun menu volant. Dans les deux cas, lorsqu’un onglet contient plusieurs pages, il est possible de passer de l’une à l’autre grâce aux onglets du haut.
+description: Après un menu volant, le niveau suivant de la navigation dans une application Shell est la barre d’onglets inférieure. Le modèle de navigation pour une application peut également commencer avec des onglets en bas et n’utiliser aucun menu volant. Dans les deux cas, lorsqu’un onglet contient plusieurs pages, il est possible de passer de l’une à l’autre grâce aux onglets du haut.
 ms.prod: xamarin
 ms.assetid: 318D81DB-E456-4E44-B083-36A27DBD9523
 ms.technology: xamarin-forms
@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/06/2019
 ms.openlocfilehash: 0ffcbe99ef9696c5fde501809bea5ddcc7a793a7
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75489832"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78913396"
 ---
 # <a name="xamarinforms-shell-tabs"></a>Onglets Shell Xamarin.Forms
 
@@ -27,7 +27,7 @@ Le modèle de navigation pour une application peut également commencer avec des
 
 Chaque objet `FlyoutItem` ou `TabBar` peut contenir un ou plusieurs objets `Tab`, où chaque objet `Tab` représente un onglet dans la barre d’onglets du bas. Chaque objet `Tab` peut contenir un ou plusieurs objets `ShellContent`, et chaque objet `ShellContent` affichera un seul [`ContentPage`](xref:Xamarin.Forms.ContentPage). Lorsque plusieurs objets `ShellContent` sont présents dans un objet `Tab`, il est possible de naviguer entre les objets `ContentPage` grâce aux onglets du haut.
 
-Dans chaque objet [`ContentPage`](xref:Xamarin.Forms.ContentPage), des objets `ContentPage` supplémentaires sont accessibles. Pour plus d’informations sur la navigation, voir [Navigation Shell Xamarin.Forms](navigation.md).
+Dans chaque objet [`ContentPage`](xref:Xamarin.Forms.ContentPage), des objets `ContentPage` supplémentaires sont accessibles. Pour plus d’informations sur la navigation, consultez [Navigation dans Xamarin.Forms Shell](navigation.md).
 
 ## <a name="single-page-application"></a>Application monopage
 
@@ -70,7 +70,7 @@ Shell comporte des opérateurs de conversion implicite qui permettent de simplif
 Cette conversion implicite encapsule automatiquement l’objet [`ContentPage`](xref:Xamarin.Forms.ContentPage) dans un objet `ShellContent`, qui est encapsulé dans un objet `Tab`, lui-même encapsulé dans un objet `FlyoutItem`. Un menu volant n’est pas nécessaire dans une application monopage ; par conséquent, la propriété `Shell.FlyoutBehavior` est définie sur `Disabled`.
 
 > [!IMPORTANT]
-> Dans une application Shell, tous les [`ContentPage`](xref:Xamarin.Forms.ContentPage) enfants d’un objet `ShellContent` sont créés au démarrage de l’application. L’ajout d’autres objets `ShellContent` avec cette approche crée des pages supplémentaires au démarrage de l’application, ce qui peut nuire à l’expérience de démarrage. Toutefois, Shell est également capable de créer des pages à la demande en réponse à la navigation. Pour plus d’informations, voir [Chargement efficace des pages](tabs.md#efficient-page-loading).
+> Dans une application Shell, chaque [`ContentPage`](xref:Xamarin.Forms.ContentPage) qui est un enfant d’un objet `ShellContent` est créé au démarrage de l’application. L’ajout d’autres objets `ShellContent` avec cette approche crée des pages supplémentaires au démarrage de l’application, ce qui peut nuire à l’expérience de démarrage. Mais Shell est également capable de créer des pages à la demande, en réponse à la navigation. Pour plus d’informations, voir [Chargement efficace des pages](tabs.md#efficient-page-loading).
 
 ## <a name="bottom-tabs"></a>Onglets du bas
 
@@ -123,9 +123,9 @@ Les opérateurs de conversion implicite de Shell peuvent sinon permettre de supp
 Cette conversion implicite encapsule automatiquement chaque objet [`ContentPage`](xref:Xamarin.Forms.ContentPage) dans un objet `ShellContent`, les deux étant ensuite encapsulés dans un objet `Tab`.
 
 > [!IMPORTANT]
-> Dans une application Shell, tous les [`ContentPage`](xref:Xamarin.Forms.ContentPage) enfants d’un objet `ShellContent` sont créés au démarrage de l’application. L’ajout d’autres objets `ShellContent` avec cette approche crée des pages supplémentaires au démarrage de l’application, ce qui peut nuire à l’expérience de démarrage. Toutefois, Shell est également capable de créer des pages à la demande en réponse à la navigation. Pour plus d’informations, voir [Chargement efficace des pages](tabs.md#efficient-page-loading).
+> Dans une application Shell, chaque [`ContentPage`](xref:Xamarin.Forms.ContentPage) qui est un enfant d’un objet `ShellContent` est créé au démarrage de l’application. L’ajout d’autres objets `ShellContent` avec cette approche crée des pages supplémentaires au démarrage de l’application, ce qui peut nuire à l’expérience de démarrage. Mais Shell est également capable de créer des pages à la demande, en réponse à la navigation. Pour plus d’informations, voir [Chargement efficace des pages](tabs.md#efficient-page-loading).
 
-### <a name="tab-class"></a>Classe Tab
+### <a name="tab-class"></a>Onglet Classe
 
 La classe `Tab` comporte différentes propriétés qui contrôlent l’apparence et le comportement des onglets :
 
@@ -166,7 +166,7 @@ L’enfant de chaque objet `Tab` est un objet `ShellContent`, dont la propriét�
 </Shell>
 ```
 
-Dans chaque objet [`ContentPage`](xref:Xamarin.Forms.ContentPage), des objets `ContentPage` supplémentaires sont accessibles. Pour plus d’informations sur la navigation, voir [Navigation Shell Xamarin.Forms](navigation.md).
+Dans chaque objet [`ContentPage`](xref:Xamarin.Forms.ContentPage), des objets `ContentPage` supplémentaires sont accessibles. Pour plus d’informations sur la navigation, consultez [Navigation dans Xamarin.Forms Shell](navigation.md).
 
 > [!NOTE]
 > Le [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) de chaque objet `ShellContent` est hérité de l’objet `Tab` parent.
@@ -184,7 +184,7 @@ La classe `ShellContent` comporte différentes propriétés qui contrôlent l’
 - `MenuItems`, de type `MenuItemCollection`, représente les éléments de menu à afficher dans le menu volant lorsque ce `ShellContent` est la page présentée.
 - `Title`, de type `string`, représente le titre à afficher dans l’interface utilisateur.
 
-Toutes ces propriétés s’appuient sur des objets [`BindableProperty`](xref:Xamarin.Forms.BindableProperty), ce qui signifie qu’elles peuvent être des cibles de liaisons de données.
+Toutes ces propriétés sont soutenues par des objets [`BindableProperty`](xref:Xamarin.Forms.BindableProperty), ce qui signifie qu’elles peuvent être des cibles de liaisons de données.
 
 ## <a name="bottom-and-top-tabs"></a>Onglets du haut et du bas
 
@@ -293,10 +293,10 @@ L’exemple suivant en montre un qui définit différentes propriétés de coule
 </Style>
 ```
 
-Il est également possible de styliser les onglets avec des feuilles de style en cascade (CSS). Pour plus d’informations, consultez [Propriétés spécifiques de Xamarin.Forms Shell](~/xamarin-forms/user-interface/styles/css/index.md#xamarinforms-shell-specific-properties).
+Il est également possible de styliser les onglets avec des feuilles de style en cascade (CSS). Pour plus d’informations, voir [Propriétés spécifiques Shell Xamarin.Forms](~/xamarin-forms/user-interface/styles/css/index.md#xamarinforms-shell-specific-properties).
 
 ## <a name="related-links"></a>Liens connexes
 
 - [Xaminals (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
-- [Navigation Shell Xamarin.Forms](navigation.md)
+- [Navigation dans Xamarin.Forms Shell](navigation.md)
 - [Propriétés spécifiques du CSS Shell Xamarin.Forms](~/xamarin-forms/user-interface/styles/css/index.md#xamarinforms-shell-specific-properties)
