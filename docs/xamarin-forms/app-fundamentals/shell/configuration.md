@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/29/2020
 ms.openlocfilehash: 411c87c25701521bf27fbb863b02a90f8e523574
-ms.sourcegitcommit: 2b6ef0147b9618dcab1c779523d7b6eeee2dcfd9
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78238559"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78913041"
 ---
 # <a name="xamarinforms-shell-page-configuration"></a>Configuration de la page Shell Xamarin.Forms
 

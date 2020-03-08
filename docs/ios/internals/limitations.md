@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 04/09/2018
 ms.openlocfilehash: 91513936a0223af0e4220154d0fe65ee0a599a4f
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022306"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78911544"
 ---
 # <a name="limitations-of-xamarinios"></a>Limitations de Xamarin. iOS
 
@@ -49,7 +49,7 @@ class Foo<T> : UIView {
 
 ## <a name="no-dynamic-code-generation"></a>Aucune génération de code dynamique
 
-Étant donné que le noyau iOS empêche une application de générer du code dynamiquement, Xamarin. iOS ne prend en charge aucune forme de génération de code dynamique. Elles incluent notamment les suivantes :
+Étant donné que le noyau iOS empêche une application de générer du code dynamiquement, Xamarin. iOS ne prend en charge aucune forme de génération de code dynamique. notamment :
 
 - System. Reflection. Emit n’est pas disponible.
 - Aucune prise en charge de System. Runtime. Remoting.
@@ -60,7 +60,7 @@ class Foo<T> : UIView {
 
 ### <a name="systemreflectionemit"></a>System.Reflection.Emit
 
-L’absence de System. Reflection. L' **émission** signifie qu’aucun code dépendant de la génération du code d’exécution ne fonctionnera. Cela comprend des éléments tels que :
+L’absence de System. Reflection. L' **émission** signifie qu’aucun code dépendant de la génération du code d’exécution ne fonctionnera. Cela inclut des éléments tels que :
 
 - Le Dynamic Language Runtime.
 - Tous les langages reposant sur le Dynamic Language Runtime.
@@ -107,7 +107,7 @@ La pile de communication à distance n’est pas disponible sur Xamarin. iOS.
 
 Les fonctionnalités suivantes ont été désactivées dans le runtime iOS de mono :
 
-- Profiler
+- Profileur
 - Réflexion. Emit
 - Fonctionnalité Reflection. Emit. Save
 - Liaisons COM

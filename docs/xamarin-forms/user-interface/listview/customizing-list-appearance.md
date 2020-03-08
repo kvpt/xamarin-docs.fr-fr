@@ -1,6 +1,6 @@
 ---
 title: Apparence de ListView
-description: Cet article explique comment personnaliser des ListView dans des applications Xamarin. Forms en utilisant des en-têtes, des pieds de page, des groupes et des cellules de hauteur variable.
+description: Cet article explique comment personnaliser les ListViews dans les applications Xamarin.Forms à l’aide des en-têtes, des pieds de page, des groupes et des cellules de hauteur variable.
 ms.prod: xamarin
 ms.assetid: DC8009B0-4371-4D60-885A-5362FC7EE3E5
 ms.technology: xamarin-forms
@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2018
 ms.openlocfilehash: 90b0e0f3802ce766decb802c9406d72b5966360e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032813"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78915338"
 ---
 # <a name="listview-appearance"></a>Apparence de ListView
 
@@ -22,17 +22,17 @@ L' [`ListView`](xref:Xamarin.Forms.ListView) Xamarin. Forms vous permet de perso
 
 ## <a name="grouping"></a>Regroupement
 
-Les jeux de données volumineux peuvent devenir difficiles à manier lorsqu’ils sont présentés dans une liste de défilement continue. L’activation du regroupement peut améliorer l’expérience utilisateur dans ces cas en organisant mieux le contenu et en activant des contrôles spécifiques à la plateforme qui facilitent la navigation dans les données.
+Les jeux de données volumineux peuvent devenir difficiles à manier lorsqu’ils sont présentés dans une liste de défilement continue. L’activation de regroupement peut améliorer l’expérience utilisateur dans ces cas en mieux organiser le contenu et en activant des contrôles spécifiques à la plateforme qui facilitent la navigation des données.
 
 Lorsque le regroupement est activé pour un `ListView`, une ligne d’en-tête est ajoutée pour chaque groupe.
 
 Pour activer le regroupement :
 
-- Créer une liste de listes (une liste de groupes, chaque groupe étant une liste d’éléments).
-- Définissez la `ItemsSource` du `ListView` sur cette liste.
-- Affectez à `IsGroupingEnabled` la valeur true.
+- Créer une liste de listes (une liste de groupes, chaque groupe en cours d’une liste d’éléments).
+- Définissez la `ItemsSource` du `ListView`sur cette liste.
+- Définissez `IsGroupingEnabled` sur True.
 - Définissez [`GroupDisplayBinding`](xref:Xamarin.Forms.ListView.GroupDisplayBinding) pour qu’elle soit liée à la propriété des groupes qui est utilisée comme titre du groupe.
-- Facultatif Définissez [`GroupShortNameBinding`](xref:Xamarin.Forms.ListView.GroupShortNameBinding) pour créer une liaison avec la propriété des groupes qui est utilisée comme nom abrégé du groupe. Le nom abrégé est utilisé pour les listes de raccourcis (colonne du côté droit sur iOS).
+- Facultatif Définissez [`GroupShortNameBinding`](xref:Xamarin.Forms.ListView.GroupShortNameBinding) pour créer une liaison avec la propriété des groupes qui est utilisée comme nom abrégé du groupe. Le nom court est utilisé pour les listes de raccourcis (colonne de droite sur iOS).
 
 Commencez par créer une classe pour les groupes :
 
@@ -54,7 +54,7 @@ public class PageTypeGroup : List<PageModel>
 
 Dans le code ci-dessus, `All` est la liste qui sera donnée à notre ListView comme source de liaison. `Title` et `ShortName` sont les propriétés qui seront utilisées pour les en-têtes de groupe.
 
-À ce niveau, `All` est une liste vide. Ajoutez un constructeur statique pour que la liste soit remplie au début du programme :
+À ce niveau, `All` est une liste vide. Ajoutez un constructeur statique afin que la liste contiendra au lancement du programme :
 
 ```csharp
 static PageTypeGroup()
@@ -79,7 +79,7 @@ static PageTypeGroup()
 
 Dans le code ci-dessus, nous pouvons également appeler `Add` sur des éléments de `Groups`, qui sont des instances de type `PageTypeGroup`. Cette méthode est possible, car `PageTypeGroup` hérite de `List<PageModel>`.
 
-Voici le code XAML permettant d’afficher la liste groupée :
+Voici le XAML pour l’affichage de la liste groupée :
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -107,7 +107,7 @@ Ce code XAML effectue les actions suivantes :
 - Définissez `GroupShortNameBinding` sur la propriété `ShortName` définie dans notre classe de groupe.
 - Définissez `GroupDisplayBinding` sur la propriété `Title` définie dans notre classe de groupe.
 - Affectez la valeur true à `IsGroupingEnabled`
-- Modification du `ItemsSource` de l' `ListView` en liste groupée
+- Modification du `ItemsSource` de l' `ListView`en liste groupée
 
 La capture d’écran suivante montre l’interface utilisateur obtenue :
 
@@ -119,7 +119,7 @@ Si le regroupement a été activé dans la liste, l’en-tête de groupe peut é
 
 À l’instar de la façon dont le `ListView` a un `ItemTemplate` pour définir la manière dont les lignes sont affichées, `ListView` a un `GroupHeaderTemplate`.
 
-Vous trouverez ci-dessous un exemple de personnalisation de l’en-tête de groupe dans XAML :
+Voici un exemple de personnalisation de l’en-tête de groupe dans XAML :
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -156,11 +156,11 @@ Vous trouverez ci-dessous un exemple de personnalisation de l’en-tête de grou
 
 ## <a name="headers-and-footers"></a>En-têtes et pieds de page
 
-Il est possible qu’un ListView présente un en-tête et un pied de page qui défilent avec les éléments de la liste. L’en-tête et le pied de page peuvent être des chaînes de texte ou une disposition plus complexe. Ce comportement est indépendant des [groupes de sections](#grouping).
+Il est possible pour un ListView permet de présenter un en-tête et pied de page que faire défiler les éléments de la liste. L’en-tête et le pied de page peuvent être des chaînes de texte ou une mise en page plus complexe. Ce comportement est indépendant des [groupes de sections](#grouping).
 
 Vous pouvez définir les `Header` et/ou `Footer` sur une valeur de `string`, ou vous pouvez les définir sur une disposition plus complexe. Il existe également des propriétés `HeaderTemplate` et `FooterTemplate` qui vous permettent de créer des dispositions plus complexes pour l’en-tête et le pied de page qui prennent en charge la liaison de données.
 
-Pour créer un en-tête/pied de page de base, il vous suffit de définir les propriétés d’en-tête ou de pied de page sur le texte que vous souhaitez afficher. En code :
+Pour créer un en-tête/pied de page de base, il vous suffit de définir les propriétés d’en-tête ou de pied de page sur le texte que vous souhaitez afficher. Dans le code :
 
 ```csharp
 ListView HeaderList = new ListView()
@@ -170,7 +170,7 @@ ListView HeaderList = new ListView()
 };
 ```
 
-En XAML :
+Dans XAML :
 
 ```xaml
 <ListView x:Name="HeaderList" 
@@ -182,7 +182,7 @@ En XAML :
 
 ![](customizing-list-appearance-images/header-default.png "ListView with Header and Footer")
 
-Pour créer un en-tête et un pied de page personnalisés, définissez les vues d’en-tête et de pied de page :
+Pour créer un en-tête personnalisé et le pied de page, définissez les vues de l’en-tête et pied de page :
 
 ```xaml
 <ListView.Header>
@@ -226,7 +226,7 @@ C# :
 SeparatorDemoListView.SeparatorVisibility = SeparatorVisibility.Default;
 ```
 
-LANGAGE
+XAML :
 
 ```xaml
 <ListView x:Name="SeparatorDemoListView" SeparatorVisibility="Default" />
@@ -234,7 +234,7 @@ LANGAGE
 
 ![](customizing-list-appearance-images/separator-default.png "ListView with Default Row Separators")
 
-None
+Aucune :
 
 C# :
 
@@ -242,7 +242,7 @@ C# :
 SeparatorDemoListView.SeparatorVisibility = SeparatorVisibility.None;
 ```
 
-LANGAGE
+XAML :
 
 ```xaml
 <ListView x:Name="SeparatorDemoListView" SeparatorVisibility="None" />
@@ -258,7 +258,7 @@ C# :
 SeparatorDemoListView.SeparatorColor = Color.Green;
 ```
 
-LANGAGE
+XAML :
 
 ```xaml
 <ListView x:Name="SeparatorDemoListView" SeparatorColor="Green" />
@@ -271,9 +271,9 @@ LANGAGE
 
 ## <a name="row-height"></a>Hauteur de ligne
 
-Toutes les lignes d’un ListView ont la même hauteur par défaut. ListView a deux propriétés qui peuvent être utilisées pour modifier ce comportement :
+Toutes les lignes dans un ListView ont la même hauteur par défaut. ListView a deux propriétés qui peuvent être utilisées pour modifier ce comportement :
 
-- `HasUnevenRows` &ndash; `true` / `false` valeur, les lignes ont des hauteurs variables si la valeur `true` est définie. La valeur par défaut est `false`.
+- `HasUnevenRows` &ndash; `true`/`false` valeur, les lignes ont des hauteurs variables si la valeur `true`est définie. La valeur par défaut est `false`.
 - `RowHeight` &ndash; définit la hauteur de chaque ligne lorsque `HasUnevenRows` est `false`.
 
 Vous pouvez définir la hauteur de toutes les lignes en définissant la propriété `RowHeight` sur l' `ListView`.
@@ -286,7 +286,7 @@ C# :
 RowHeightDemoListView.RowHeight = 100;
 ```
 
-LANGAGE
+XAML :
 
 ```xaml
 <ListView x:Name="RowHeightDemoListView" RowHeight="100" />
@@ -304,7 +304,7 @@ C# :
 RowHeightDemoListView.HasUnevenRows = true;
 ```
 
-LANGAGE
+XAML :
 
 ```xaml
 <ListView x:Name="RowHeightDemoListView" HasUnevenRows="true" />

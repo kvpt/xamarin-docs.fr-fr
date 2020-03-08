@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/14/2017
 ms.openlocfilehash: 9353cffd924688058c1495b9258cc7f0e0ce7b82
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75489204"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78910823"
 ---
 # <a name="introduction-to-ios-8"></a>Introduction à iOS 8
 
@@ -26,7 +26,7 @@ Ce guide présente les nouvelles API pour les développeurs Xamarin. iOS.
 
 Il existe également quelques API qui ont été dépréciées dans iOS 8, qui sont détaillées à la fin de ce document.
 
-## <a name="requirements"></a>Configuration requise pour
+## <a name="requirements"></a>Spécifications
 
 Les éléments suivants sont requis pour créer des applications iOS 8 dans Visual Studio pour Mac :
 
@@ -161,10 +161,10 @@ Avec toutes les améliorations apportées à iOS 8, un certain nombre d’API so
 
 - **[UISearchDisplayController](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UISearchDisplayController_Class/index.html#//apple_ref/occ/cl/UISearchDisplayController)** : ce a été remplacé par UISearchController dans iOS8.
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 Dans cet article, nous avons abordé certaines des nouvelles fonctionnalités introduites par Apple dans iOS 8.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [UIKitEnhancements (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-uikitenhancements)
 - [Présentation des extensions d’application](~/ios/platform/extensions.md)

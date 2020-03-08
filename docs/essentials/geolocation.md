@@ -1,28 +1,28 @@
 ---
-title: 'Xamarin.Essentials: Géolocalisation'
+title: 'Xamarin.Essentials : géolocalisation'
 description: Ce document décrit la classe Geolocation de Xamarin.Essentials, qui fournit des API permettant de récupérer les coordonnées de géolocalisation de l’appareil.
 ms.assetid: 8F66092C-13F0-4FEE-8AA5-901D5F79B357
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 03/13/2019
 ms.openlocfilehash: 2ee4683bce02e95c52235afa823be21b89863208
-ms.sourcegitcommit: 8ecfa339d0f3e7687977bfe4fc96448942690183
-ms.translationtype: HT
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67558669"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78910805"
 ---
-# <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials: Géolocalisation
+# <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials : géolocalisation
 
 La classe **Geolocation** fournit des API permettant de récupérer les coordonnées de géolocalisation de l’appareil.
 
-## <a name="get-started"></a>Prise en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 
 Pour accéder à la fonctionnalité de **géolocalisation**, la configuration suivante spécifique à la plateforme est obligatoire :
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 Les autorisations de localisation approximative et de localisation précise sont obligatoires, et doivent être configurées dans le projet Android. De plus, si votre application cible Android 5.0 (niveau d’API 21) ou une version ultérieure, vous devez déclarer que votre application utilise les fonctionnalités matérielles dans le fichier manifeste. Vous pouvez le faire de plusieurs façons, comme indiqué ci-dessous :
 
@@ -48,9 +48,9 @@ Ouvrez le fichier **AndroidManifest.xml** sous le dossier **Propriétés**, puis
 <uses-feature android:name="android.hardware.location.network" android:required="false" />
 ```
 
-Vous pouvez également cliquer avec le bouton droit sur le projet Android, et ouvrir les propriétés du projet. Sous **Manifeste Android**, recherchez la zone **Autorisations nécessaires**, puis cochez les autorisations **ACCESS_COARSE_LOCATION** et **ACCESS_FINE_LOCATION**. Cela entraîne la mise à jour automatique du fichier **AndroidManifest.xml**.
+Vous pouvez également cliquer avec le bouton droit sur le projet Android, et ouvrir les propriétés du projet. Sous **Manifeste Android**, recherchez la zone **Autorisations nécessaires**, puis cochez les autorisations **ACCESS_COARSE_LOCATION** et **ACCESS_FINE_LOCATION**. Cela met automatiquement à jour le fichier **AndroidManifest.xml**.
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 Le fichier **Info.plist** de votre application doit contenir la clé `NSLocationWhenInUseUsageDescription` pour pouvoir accéder à la localisation de l’appareil.
 
@@ -63,7 +63,7 @@ Ou modifiez le fichier et ajoutez manuellement les éléments suivants et mettez
 <string>Fill in a reason why your app needs access to location.</string>
 ```
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 Vous devez définir l’autorisation `Location` pour l’application. Pour ce faire, ouvrez **Package.appxmanifest**, sélectionnez l’onglet **Fonctionnalités** et cochez **Localisation**.
 
@@ -151,7 +151,7 @@ Le tableau suivant indique la précision en fonction de la plateforme :
 | Plateforme | Distance (en mètres) |
 | --- | --- |
 | Android | 500 |
-| iOS | 3 000 |
+| iOS | 3000 |
 | UWP | 1 000 - 5 000 |
 
 ### <a name="low"></a>Faible
@@ -159,7 +159,7 @@ Le tableau suivant indique la précision en fonction de la plateforme :
 | Plateforme | Distance (en mètres) |
 | --- | --- |
 | Android | 500 |
-| iOS | 1000 |
+| iOS | 1 000 |
 | UWP | 300 - 3 000 |
 
 ### <a name="medium-default"></a>Moyenne (par défaut)
@@ -170,7 +170,7 @@ Le tableau suivant indique la précision en fonction de la plateforme :
 | iOS | 100 |
 | UWP | 30 - 500 |
 
-### <a name="high"></a>Haute
+### <a name="high"></a>Élevé
 
 | Plateforme | Distance (en mètres) |
 | --- | --- |
@@ -178,7 +178,7 @@ Le tableau suivant indique la précision en fonction de la plateforme :
 | iOS | 10 |
 | UWP | <= 10 |
 
-### <a name="best"></a>La meilleure
+### <a name="best"></a>Le meilleur
 
 | Plateforme | Distance (en mètres) |
 | --- | --- |
@@ -208,7 +208,7 @@ if (location != null)
 
 Les classes [`Location`](xref:Xamarin.Essentials.Location) et [`LocationExtensions`](xref:Xamarin.Essentials.LocationExtensions) définissent les méthodes `CalculateDistance` qui vous permettent de calculer la distance entre deux emplacements géographiques. Cette distance calculée ne prend pas en compte les routes et autres chemins. Elle constitue simplement la distance la plus courte entre deux points à la surface de la Terre, également appelée _distance orthodromique_ ou, familièrement, distance « à vol d’oiseau ».
 
-Voici un exemple :
+Voici un exemple :
 
 ```csharp
 Location boston = new Location(42.358056, -71.063611);
