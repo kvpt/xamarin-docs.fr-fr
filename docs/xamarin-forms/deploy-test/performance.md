@@ -1,6 +1,6 @@
 ---
 title: Améliorer les performances des applications Xamarin.Forms
-description: Il existe plusieurs techniques permettant d’accroître les performances des applications Xamarin.Forms. Utilisées conjointement, ces techniques peuvent considérablement réduire la charge de travail d’une UC, ainsi que la quantité de mémoire consommée par une application.
+description: Il existe plusieurs techniques permettant d’accroître les performances des applications Xamarin.Forms. Collectivement, ces techniques peuvent considérablement réduire la charge de travail d’un processeur, de même que la quantité de mémoire consommée par une application.
 ms.prod: xamarin
 ms.assetid: 0be84c56-6698-448d-be5a-b4205f1caa9f
 ms.technology: xamarin-forms
@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/27/2019
 ms.openlocfilehash: 4427d347723284a2f8897612f10857270c9631bf
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75487163"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78913410"
 ---
 # <a name="improve-xamarinforms-app-performance"></a>Améliorer les performances des applications Xamarin.Forms
 
@@ -20,12 +20,12 @@ ms.locfileid: "75487163"
 
 **Evolve 2016 : Optimisation des performances des applications avec Xamarin.Forms**
 
-Le mauvais niveau de performance d’une application se présente de plusieurs façons. L’application semble ne pas répondre, le défilement de l’affichage est ralenti et la durée de vie de la batterie de l’appareil réduite. Toutefois, l’optimisation des performances implique davantage de choses que l’implémentation d’un code efficace. L’expérience utilisateur liée au niveau de performance de l’application doit également être prise en compte. Par exemple, pour contribuer à améliorer l’expérience utilisateur, vous devez vérifier que les opérations s’exécutent sans empêcher l’utilisateur d’effectuer d’autres activités.
+Pour une application, la dégradation des performances peut se traduire de différentes façons. L’application semble ne pas répondre, le défilement de l’affichage est ralenti et la durée de vie de la batterie de l’appareil réduite. Toutefois, l’optimisation des performances implique davantage de choses que l’implémentation d’un code efficace. L’expérience utilisateur liée au niveau de performance de l’application doit également être prise en compte. Par exemple, le fait de garantir que l’exécution de certaines opérations ne va pas empêcher l’utilisateur d’effectuer d’autres activités peut améliorer son expérience de l’application.
 
-De nombreuses techniques permettent d’accroître les performances, notamment celles qui sont visibles, d’applications Xamarin.Forms. Utilisées conjointement, ces techniques peuvent considérablement réduire la charge de travail d’une UC, ainsi que la quantité de mémoire consommée par une application.
+De nombreuses techniques permettent d’accroître les performances, notamment celles qui sont visibles, d’applications Xamarin.Forms. Collectivement, ces techniques peuvent considérablement réduire la charge de travail d’un processeur, de même que la quantité de mémoire consommée par une application.
 
 > [!NOTE]
-> Avant de lire cet article, lisez d’abord [Performances multiplateformes](~/cross-platform/deploy-test/memory-perf-best-practices.md), qui décrit les techniques indépendantes des plateformes permettant améliorer l’utilisation de la mémoire et les performances des applications générées avec la plateforme Xamarin.
+> Avant de lire cet article, lisez d’abord [Niveau de performance multiplateforme](~/cross-platform/deploy-test/memory-perf-best-practices.md), qui décrit les techniques spécifiques indépendantes des plateformes qui permettent d’améliorer l’utilisation de la mémoire et le niveau de performance des applications générées à l’aide de la plateforme Xamarin.
 
 ## <a name="enable-the-xaml-compiler"></a>Activer le compilateur XAML
 
@@ -176,7 +176,7 @@ La réactivité globale de votre application peut être améliorée et les goulo
 - Retourne un objet `Task`, au lieu de retourner un objet `Task` attendu, lorsqu’il n’est pas nécessaire de traiter le résultat d’une opération asynchrone. Cette opération est plus performante en raison de la réduction du basculement de contexte.
 - Utilisez la bibliothèque de flux de données de la bibliothèque parallèle de tâches (TPL) dans des scénarios tels que le traitement des données lorsqu’elles sont disponibles, ou lorsque vous avez plusieurs opérations qui doivent communiquer entre elles de manière asynchrone. Pour plus d’informations, consultez flux de données [(bibliothèque parallèle de tâches)](/dotnet/standard/parallel-programming/dataflow-task-parallel-library).
 
-### <a name="ui"></a>Interface utilisateur du service
+### <a name="ui"></a>UI
 
 - Appelez une version asynchrone d’une API, si elle est disponible. Ainsi, le thread d’interface utilisateur reste non bloqué, ce qui améliore l’expérience utilisateur.
 - Met à jour les éléments d’interface utilisateur avec des données provenant d’opérations asynchrones sur le thread d’interface utilisateur, pour éviter la levée d’exceptions. Toutefois, les mises à jour de la propriété `ListView.ItemsSource` seront automatiquement marshalées vers le thread d’interface utilisateur. Pour plus d’informations sur la façon de déterminer si le code est en cours d’exécution sur le thread d’interface utilisateur, consultez [Xamarin. Essentials : MainThread](~/essentials/main-thread.md?content=xamarin/xamarin-forms).
@@ -336,7 +336,7 @@ Pour plus d’informations sur les renderers personnalisés, consultez [Personna
 - [Performances entre plateformes](~/cross-platform/deploy-test/memory-perf-best-practices.md)
 - [Compilation de XAML](~/xamarin-forms/xaml/xamlc.md)
 - [Liaisons compilées](~/xamarin-forms/app-fundamentals/data-binding/compiled-bindings.md)
-- [Convertisseurs rapides](~/xamarin-forms/internals/fast-renderers.md)
+- [Renderers rapides](~/xamarin-forms/internals/fast-renderers.md)
 - [Compression de la disposition](~/xamarin-forms/user-interface/layouts/layout-compression.md)
 - [Interpréteur de commandes Xamarin.Forms](~/xamarin-forms/app-fundamentals/shell/index.md)
 - [CollectionView Xamarin.Forms](~/xamarin-forms/user-interface/collectionview/index.md)
