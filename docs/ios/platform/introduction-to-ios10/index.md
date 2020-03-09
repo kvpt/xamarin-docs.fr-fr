@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
 ms.openlocfilehash: ce262faf2d79e6a2cc969df582446fdc2ec29bde
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032225"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78910872"
 ---
 # <a name="introduction-to-ios-10"></a>Introduction à iOS 10
 
@@ -28,7 +28,7 @@ Apple a ajouté plusieurs nouvelles API et services dans iOS 10, ainsi que de no
 
 La technologie d’affichage du vrai ton d’Apple utilise le capteur de lumière ambiante d’un appareil iOS pour ajuster dynamiquement la couleur et l’intensité de l’affichage afin qu’elles correspondent aux conditions d’éclairage actuelles. iOS 10 fournit la nouvelle clé [UIWhitePointAdaptivityStyle](https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html#//apple_ref/doc/uid/TP40009252-SW31) qui peut être ajoutée au fichier `Info.plist` de l’application et contrôle la manière dont le ton vrai applique le décalage de couleur standard. 
 
-Les valeurs suivantes sont disponibles :
+Les valeurs suivantes sont disponibles :
 
 - `UIWhitePointAdaptivityStyleStandard` **par défaut** : utilisez l’adaptabilité des points blancs standard.
 - `UIWhitePointAdaptivityStyleReading` : utilisé pour les applications orientées lecture.
@@ -52,7 +52,7 @@ En outre, les extensions d’application de clavier tierces présentent les amé
 - La nouvelle propriété `DocumentInputMode` de la classe `UITextDocumentProxy` peut déterminer la langue d’entrée d’un document et permettre à l’extension de clavier de s’aligner avec cette langue.
 - La nouvelle méthode `HandleInputModeList` permet à l’extension de clavier d’afficher le menu de sélection de clavier du système en réponse à la touche de l’Atlas qui est exploitée.
 
-Pour plus d’informations, consultez notre [Introduction aux extensions](~/ios/platform/extensions.md), [intégration d’applications de message](~/ios/platform/message-app-integration/index.md), [Présentation des suggestions proactives](~/ios/platform/search/proactive-suggestions.md), [Présentation de SiriKit](~/ios/platform/sirikit/index.md), [Présentation des notifications utilisateur](~/ios/platform/user-notifications/index.md) et d' [Apple Guide de programmation](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214)de l’extension d’application.
+Pour plus d’informations, consultez notre [Introduction aux extensions](~/ios/platform/extensions.md), [intégration d’applications de message](~/ios/platform/message-app-integration/index.md), [Présentation des suggestions proactives](~/ios/platform/search/proactive-suggestions.md), [Présentation de SiriKit](~/ios/platform/sirikit/index.md), [Introduction aux notifications utilisateur](~/ios/platform/user-notifications/index.md) et [Guide de programmation d’extension d’application](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214)Apple.
 
 ## <a name="app-search-enhancements"></a>Améliorations de la recherche d’applications
 
@@ -123,7 +123,7 @@ iOS 10 présente de nouvelles façons de conduire des engagements à une applica
 - Le sélecteur d’application
 - L’écran de verrouillage
 - CarPlay
-- Maps
+- Cartes
 - Interactions Siri
 - Suggestions QuickType
 
@@ -168,7 +168,7 @@ Pour en savoir plus, consultez notre guide [de présentation du SiriKit](~/ios/p
 
 iOS 10 comprend une nouvelle API de reconnaissance vocale qui permet à l’application de prendre en charge la reconnaissance vocale continue et de transcrire la parole (des flux audio en direct ou enregistrés) en texte.
 
-Étant donné que la reconnaissance vocale requiert la transmission et le stockage temporaire des données sur les serveurs d’Apple, l’application _doit_ demander à l’utilisateur l’autorisation d’effectuer la reconnaissance en incluant la clé de `NSSpeechRecognitionUsageDescription` dans son fichier de `Info.plist` et en appelant la `SFSpeechRecognizer.RequestAutorization` méthode.
+Étant donné que la reconnaissance vocale requiert la transmission et le stockage temporaire des données sur les serveurs Apple, l’application _doit_ demander à l’utilisateur l’autorisation d’effectuer la reconnaissance en incluant la clé de `NSSpeechRecognitionUsageDescription` dans son fichier `Info.plist` et en appelant la méthode `SFSpeechRecognizer.RequestAutorization`.
 
 Pour en savoir plus, consultez notre guide [de présentation de la reconnaissance vocale](~/ios/platform/speech.md) .
 
@@ -230,6 +230,6 @@ Les API suivantes ont été dépréciées dans iOS 10 :
 
 Consultez la documentation sur les [différences d’API ios 9,3 pour ios 10,0](https://developer.apple.com/library/prerelease/content/releasenotes/General/iOS10APIDiffs/index.html) pour obtenir une liste complète des désapprobations.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Exemples iOS 10](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS10)
