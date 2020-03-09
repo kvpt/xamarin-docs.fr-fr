@@ -7,23 +7,23 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/19/2018
 ms.openlocfilehash: 19c4a15fb2490c7bace4798b0cb8e062b1379a04
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029693"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78917593"
 ---
 # <a name="inspector-installation-and-requirements"></a>Installation et configuration de l’inspecteur
 
 ## <a name="download-and-installation"></a>Téléchargement et installation
 
-# <a name="windowstabwindows"></a>[Fenêtres](#tab/windows)
+# <a name="windows"></a>[Windows](#tab/windows)
 
 1. Téléchargez et installez [Visual Studio Enterprise](https://visualstudio.microsoft.com/vs/) et sélectionnez le **développement mobile avec** la charge de travail .net.
 1. [Connectez-vous](https://docs.microsoft.com/visualstudio/ide/signing-in-to-visual-studio) pour activer votre abonnement Enterprise.
 1. [Inspectez](~/tools/inspector/inspect.md) votre propre application !
 
-# <a name="macostabmacos"></a>[macOS](#tab/macos)
+# <a name="macos"></a>[macOS](#tab/macos)
 
 1. Téléchargez et installez [Visual Studio pour Mac](https://visualstudio.microsoft.com/vs/mac/).
 1. [Connectez-vous](https://docs.microsoft.com/visualstudio/mac/activation) pour activer votre abonnement Enterprise.
@@ -31,9 +31,9 @@ ms.locfileid: "73029693"
 
 -----
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Spécifications
 
-### <a name="supported-operating-systems"></a>Supported Operating Systems
+### <a name="supported-operating-systems"></a>Systèmes d’exploitation pris en charge
 
 - **Mac** -OS X 10,11 ou version ultérieure
 - **Windows** -Windows 7 ou version ultérieure (avec Internet Explorer 11 ou version ultérieure et .net 4.6.1 ou version ultérieure)
@@ -58,7 +58,7 @@ L’inspection des applications en direct est disponible pour les entreprises.
 
 <a name="reporting-bugs" />
 
-## <a name="reporting-bugs"></a>Signalement des bogues
+## <a name="reporting-bugs"></a>Bogues de création de rapports
 
 Les bogues doivent être signalés directement par le biais de Visual Studio :
 
@@ -86,7 +86,7 @@ Attachez toujours les fichiers journaux des clients IDE et Inspector.
 
 Client de l’inspecteur
 
-- Mac : `~/Library/Logs/Xamarin/Inspector/Xamarin Inspector {date}.log`
+- Mac : `~/Library/Logs/Xamarin/Inspector/Xamarin Inspector {date}.log`
 - Windows : `%LOCALAPPDATA%\Xamarin\Inspector\logs\Xamarin Inspector {date}.log`
 
 1.4. x offre également la possibilité de sélectionner le fichier journal dans Finder (macOS) ou Explorer (Windows) directement à partir du menu principal :

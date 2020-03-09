@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
 ms.openlocfilehash: 3c754acc3502d7aa2c47264e734187ffe060c029
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030834"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78915802"
 ---
 # <a name="working-with-tvos-navigation-and-focus-in-xamarin"></a>Utilisation de la navigation tvOS et focus dans Xamarin
 
@@ -48,7 +48,7 @@ Apple suggère de garder à l’esprit les éléments suivants lors de la concep
 - **Fournir une navigation vers l’arrière via le bouton de menu** : pour créer une expérience simple et familière, permettre aux utilisateurs de naviguer vers l’arrière à l’aide du bouton de **menu** distant Siri. Le fait d’appuyer sur le bouton de **menu** doit toujours revenir à l’écran précédent ou revenir au menu principal de l’application. Au niveau supérieur de l’application, appuyez sur le bouton de **menu** pour revenir à l’écran d’accueil Apple TV.
 - **Évitez généralement d’afficher un bouton précédent** -parce que le fait d’appuyer sur le bouton **menu** de la Siri distante parcourt vers l’arrière dans la pile d’écran, évitez d’afficher un contrôle supplémentaire qui duplique ce comportement. Une exception à cette règle concerne l’achat d’écrans ou d’écrans avec des actions destructrices (telles que la suppression de contenu) où un bouton **Annuler** doit également être affiché.
 - **Affichez les grandes collections sur un seul écran, à la place de plusieurs** -la Siri distante a été conçue pour faire passer rapidement et facilement une grande collection de contenu à l’aide de gestes. Si votre application fonctionne avec un grand nombre d’éléments pouvant être activés, envisagez de les conserver sur un seul écran au lieu de les décomposer en plusieurs écrans qui nécessitent davantage de navigation dans la part de l’utilisateur.
-- **Utilisez des contrôles standard pour la navigation** -encore, pour créer une expérience utilisateur simple et familière, dans la mesure du possible, utilisez des contrôles `UIKit` intégrés tels que les contrôles de page, les barres d’onglets, les contrôles segmentés, les vues de table, les vues de collection et les vues fractionnées pour votre navigation de l’application. Étant donné que les utilisateurs sont déjà familiarisés avec ces éléments, ils pourront parcourir votre application de manière intuitive.
+- **Utilisez des contrôles standard pour la navigation** -encore, pour créer une expérience utilisateur simple et familière, dans la mesure du possible, utilisez des contrôles `UIKit` intégrés tels que les contrôles de page, les barres d’onglets, les contrôles segmentés, les vues de table, les vues de collection et les vues fractionnées pour la navigation de votre application. Étant donné que les utilisateurs sont déjà familiarisés avec ces éléments, ils pourront parcourir votre application de manière intuitive.
 - **Privilégier la navigation dans le contenu horizontal** -en raison de la nature du téléviseur Apple, le balayage de gauche à droite sur le Siri à distance est plus naturel qu’en haut et en baisse. Envisagez cette option lors de la conception de mises en page de contenu pour votre application.
 
 <a name="Focus-and-Selection" />
@@ -80,7 +80,7 @@ Apple propose les suggestions suivantes pour l’utilisation du focus et de la s
 
 ### <a name="working-with-focus"></a>Utilisation du focus
 
-Il peut arriver que vous souhaitiez créer un contrôle personnalisé qui peut devenir un élément pouvant être actif. Si c’est le cas, remplacez la propriété `CanBecomeFocused` et retournez `true`, sinon Retournez `false`. Exemple :
+Il peut arriver que vous souhaitiez créer un contrôle personnalisé qui peut devenir un élément pouvant être actif. Si c’est le cas, remplacez la propriété `CanBecomeFocused` et retournez `true`, sinon Retournez `false`. Par exemple :
 
 ```csharp
 public class myView : UIView
@@ -91,7 +91,7 @@ public class myView : UIView
 }
 ```
 
-À tout moment, vous pouvez utiliser la propriété `Focused` d’un contrôle `UIKit` pour voir s’il s’agit de l’élément actuel. Si `true` l’élément d’interface utilisateur a actuellement le focus, sinon, ce n’est pas le cas. Exemple :
+À tout moment, vous pouvez utiliser la propriété `Focused` d’un contrôle `UIKit` pour voir s’il s’agit de l’élément actuel. Si `true` l’élément d’interface utilisateur a actuellement le focus, sinon, ce n’est pas le cas. Par exemple :
 
 ```csharp
 // Is my view in focus?
@@ -101,7 +101,7 @@ if (myView.Focused) {
 }
 ```
 
-Bien que vous ne puissiez pas déplacer directement le focus vers un autre élément d’interface utilisateur à l’aide du code, vous pouvez spécifier l’élément d’interface utilisateur qui reçoit d’abord le focus quand un écran est chargé en affectant à sa propriété `PreferredFocusedView` la valeur `true`. Exemple :
+Bien que vous ne puissiez pas déplacer directement le focus vers un autre élément d’interface utilisateur à l’aide du code, vous pouvez spécifier l’élément d’interface utilisateur qui reçoit d’abord le focus quand un écran est chargé en affectant à sa propriété `PreferredFocusedView` la valeur `true`. Par exemple :
 
 ```csharp
 // Make the play button the starting focus item
@@ -164,7 +164,7 @@ public override void ViewDidLoad ()
 
 Tout d’abord, un nouveau `UIFocusGuide` est créé et ajouté à la collection de guides de disposition de la vue à l’aide de la méthode `AddLayoutGuide`.
 
-Ensuite, les ancres supérieure, gauche, largeur et hauteur du repère de focus sont ajustées par rapport aux boutons **plus d’informations** et d' **achat** pour les placer entre eux. Consultez :
+Ensuite, les ancres supérieure, gauche, largeur et hauteur du repère de focus sont ajustées par rapport aux boutons **plus d’informations** et d' **achat** pour les placer entre eux. Consultez l'article :
 
 [![](navigation-focus-images/guide02.png "Example Focus Guide")](navigation-focus-images/guide02.png#lightbox)
 
@@ -204,7 +204,7 @@ public override void DidUpdateFocus (UIFocusUpdateContext context, UIFocusAnimat
 
 Tout d’abord, ce code est le `NextFocusedView` du `UIFocusUpdateContext` qui a été transmis (`context`). Si cette vue est `null`, aucun traitement n’est nécessaire et la méthode s’est arrêtée.
 
-Ensuite, le `nextFocusableItem` est évalué. S’il correspond aux boutons **plus d’infos** ou **acheter** , le focus est envoyé au bouton opposé à l’aide de la propriété `PreferredFocusedView` du repère de focus. Exemple :
+Ensuite, le `nextFocusableItem` est évalué. S’il correspond aux boutons **plus d’infos** ou **acheter** , le focus est envoyé au bouton opposé à l’aide de la propriété `PreferredFocusedView` du repère de focus. Par exemple :
 
 ```csharp
 // Move from the More Info to Buy button
@@ -222,7 +222,7 @@ FocusGuide.PreferredFocusedView = null;
 
 ### <a name="working-with-focus-in-collections"></a>Utilisation du focus dans les collections
 
-Pour déterminer si un élément individuel peut être actif ou non dans un `UICollectionView` ou un `UITableView`, vous devez remplacer les méthodes de la `UICollectionViewDelegate` ou `UITableViewDelegate` respectivement. Exemple :
+Pour déterminer si un élément individuel peut être actif ou non dans un `UICollectionView` ou un `UITableView`, vous devez remplacer les méthodes de la `UICollectionViewDelegate` ou `UITableViewDelegate` respectivement. Par exemple :
 
 ```csharp
 public class CardHandDelegate : UICollectionViewDelegateFlowLayout
@@ -270,11 +270,11 @@ Si cette propriété a la valeur `true`, la vue d’image obtiendra automatiquem
 
 <a name="Summary" />
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article a abordé le concept de focus et la façon dont il est utilisé pour gérer la navigation dans une interface utilisateur de l’application Xamarin. tvOS. Il examine comment les contrôles de navigation tvOS intégrés utilisent le focus, la mise en surbrillance et la sélection pour assurer la navigation. Ensuite, il a vu comment le focus peut être utilisé avec la parallaxe et les images superposées pour fournir des indices visuels pour l’état de navigation actuel à l’utilisateur final. Enfin, il a examiné l’utilisation du focus, le focus des mises à jour, le focus dans les collections et l’activation de la parallaxe.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Exemples tvOS](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
 - [tvOS](https://developer.apple.com/tvos/)
