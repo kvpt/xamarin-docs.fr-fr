@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 07/23/2018
 ms.openlocfilehash: 1bb0fae73a1e3647cdc0e3266c7b44ac04fcc1ee
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73020427"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78914219"
 ---
 # <a name="file-storage-and-access-with-xamarinandroid"></a>Stockage de fichiers et accès avec Xamarin. Android
 
@@ -64,7 +64,7 @@ Ce document fait référence au répertoire de stockage interne en tant que _sto
 
 Pour optimiser le partage de code, les applications Xamarin. Android (ou les applications Xamarin. Forms ciblant Xamarin. Android) doivent utiliser la méthode [`System.Environment.GetFolderPath()`](xref:System.Environment.GetFolderPath*) . Dans Xamarin. Android, cette méthode retourne une chaîne pour un répertoire qui est le même emplacement que `Android.Content.Context.FilesDir`. Cette méthode prend une énumération, `System.Environment.SpecialFolder`, qui est utilisée pour identifier un jeu de constantes énumérées qui représentent les chemins d’accès des dossiers spéciaux utilisés par le système d’exploitation. Toutes les valeurs de `System.Environment.SpecialFolder` ne sont pas mappées à un répertoire valide sur Xamarin. Android. Le tableau suivant décrit le chemin d’accès qui peut être attendu pour une valeur donnée de `System.Environment.SpecialFolder`:
 
-| System. Environment. SpecialFolder | Chemin d’accès  |
+| System.Environment.SpecialFolder | Chemin d'accès  |
 |----------------------|---|
 | `ApplicationData` | **_Stockage\_interne_/.config** |
 | `Desktop` | **_Stockage\_interne_/Desktop** |
@@ -141,7 +141,7 @@ Les fichiers privés ne s’affichent pas en tant que média partageable. Par ex
 
 Les fichiers publics sont récupérés par `MediaStore`. Répertoires qui ont un nom de fichier de zéro octet **. Nomedias** ne sera pas analysé par `MediaStore`.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 * [Stockage externe](~/android/platform/files/external-storage.md)
 * [Enregistrer des fichiers sur le stockage de l’appareil](https://developer.android.com/training/data-storage/files)

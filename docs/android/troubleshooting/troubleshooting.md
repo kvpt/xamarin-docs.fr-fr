@@ -8,18 +8,18 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/15/2018
 ms.openlocfilehash: 6d83afa47c459633506736b2497a82c444352c90
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75488931"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78912324"
 ---
 # <a name="troubleshooting-tips"></a>Conseils de dépannage
 
 ## <a name="getting-diagnostic-information"></a>Obtention d’informations de diagnostic
 
 Xamarin. Android présente quelques emplacements à examiner pour le suivi de divers bogues.
-Elles incluent notamment :
+Elles incluent notamment les suivantes :
 
 1. Sortie MSBuild de diagnostic.
 2. Journaux de déploiement de l’appareil.
@@ -81,7 +81,7 @@ Xamarin. Android prend en charge les propriétés système suivantes :
 
 - *Debug. mono. Debug*: si une chaîne non vide est, cela équivaut à `*mono-debug*`.
 
-- *Debug.mono.env*: séparées par une barre verticale ' *|* ' liste des variables d’environnement à exporter pendant le démarrage de l’application, *avant* mono a été initialisé. Cela permet de définir des variables d’environnement qui contrôlent la journalisation mono.
+- *Debug. mono. env*: une liste de variables d’environnement séparées par des barres verticales (« *|* ») à exporter au cours du démarrage de l’application, *avant* l’initialisation de mono. Cela permet de définir des variables d’environnement qui contrôlent la journalisation mono.
 
   > [!NOTE]
   > Étant donné que la valeur est « *|* »-séparé, la valeur doit avoir un niveau supplémentaire de guillemets, car la commande \`*shell adb*\` supprimera un ensemble de guillemets.
@@ -209,7 +209,7 @@ Il y a quatre messages de conséquence :
 - Création de références globales faible : il s’agit des lignes qui commencent par *+ w +* .
 - Destruction de référence globale faible : il s’agit de lignes qui commencent par *-w-* .
 
-Dans tous les messages, la valeur *grefc* est le nombre de références globales créées par Xamarin. Android, tandis que la valeur *grefwc* est le nombre de références globales faibles que Xamarin. Android a créées. Le *gérer* ou *obj-handle* valeur est la valeur du handle JNI et le caractère situé après le */* est le type de valeur du handle :   */l* pour référence locale, */G* pour les références globales, et */W* pour les références faibles globales.
+Dans tous les messages, la valeur *grefc* est le nombre de références globales créées par Xamarin. Android, tandis que la valeur *grefwc* est le nombre de références globales faibles que Xamarin. Android a créées. La valeur *handle* ou *obj-handle* est la valeur de handle JNI, et le caractère après' */* 'est le type de valeur de handle : */l* pour référence locale, */g* pour les références globales et */w* pour les références globales faibles.
 
 Dans le cadre du processus GC, les références globales (+ g +) sont converties en références globales faibles (provoquant + w + et-g-), un GC côté Java est lancé, puis la référence mondiale faible est vérifiée pour voir s’il a été collecté. S’il est toujours actif, une nouvelle Gref est créée autour de la référence faible (+ g +,-w-), sinon la référence faible est détruite (-w).
 
@@ -322,7 +322,7 @@ Veillez à utiliser le nom de simulateur correct, c.-à-d. [le nom que vous avez
 
 ## <a name="install_failed_invalid_apk-when-installing-a-package"></a>L’installation de\_a échoué\_\_de APK non valide lors de l’installation d’un package
 
-Les noms de package Android *doit* contiennent un point ( *.* '). Modifiez le nom de votre package de sorte qu’il contienne un point.
+Les noms de packages Android *doivent* contenir un point (' *.* '). Modifiez le nom de votre package de sorte qu’il contienne un point.
 
 - Dans Visual Studio :
   - Cliquez avec le bouton droit sur les propriétés de votre projet >
@@ -526,7 +526,7 @@ E/mono(15202):   at Android.Views.View+IOnTouchListenerAdapter.n_OnTouch_Landroi
 E/mono(15202):   at (wrapper dynamic-method) object:b039cbb0-15e9-4f47-87ce-442060701362 (intptr,intptr,intptr,intptr)
 ```
 
-ou
+or
 
 ```shell
 E/mono    ( 4176): Unhandled Exception:
