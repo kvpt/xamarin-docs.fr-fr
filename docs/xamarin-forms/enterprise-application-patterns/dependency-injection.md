@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/04/2019
 ms.openlocfilehash: 08fb22627ab6b40c94c17d94321ed0bac60beedd
-ms.sourcegitcommit: 9dd0b076ab4ecdbbd1b029d2e0d67d900e1c4494
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73567898"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78915289"
 ---
 # <a name="dependency-injection"></a>Injection de dépendances
 
@@ -163,13 +163,13 @@ La première fois que le type de `LoginViewModel` est résolu, le conteneur cré
 > [!NOTE]
 > Les types inscrits en tant que singletons sont supprimés lorsque le conteneur est supprimé.
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 L’injection de dépendances permet de découpler des types concrets du code qui dépend de ces types. Elle utilise généralement un conteneur qui contient une liste d’inscriptions et de mappages entre les interfaces et les types abstraits, ainsi que les types concrets qui implémentent ou étendent ces types.
 
 TinyIoC est un conteneur léger qui offre des performances supérieures sur les plateformes mobiles par rapport à la majorité des conteneurs connus. Il facilite la création d’applications faiblement couplées et fournit toutes les fonctionnalités couramment utilisées dans les conteneurs d’injection de dépendances, notamment les méthodes d’enregistrement des mappages de types, la résolution des objets, la gestion des durées de vie des objets et l’injection d’objets dépendants dans constructeurs d’objets qu’il résout.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Télécharger le livre électronique (PDF de 2 Mo)](https://aka.ms/xamarinpatternsebook)
 - [eShopOnContainers (GitHub) (exemple)](https://github.com/dotnet-architecture/eShopOnContainers)

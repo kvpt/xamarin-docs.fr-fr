@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/08/2017
 ms.openlocfilehash: 528ccd66cc013f83752d93251cb9714115b29819
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "78292357"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78915240"
 ---
 # <a name="authentication-and-authorization"></a>Authentification et autorisation
 
@@ -20,7 +20,7 @@ L’authentification est le processus qui consiste à obtenir des informations d
 
 Il existe de nombreuses approches pour intégrer l’authentification et l’autorisation dans une application Xamarin. Forms qui communique avec une application Web ASP.NET MVC, y compris l’utilisation de ASP.NET Core identité, des fournisseurs d’authentification externes tels que Microsoft, Google, Facebook, Twitter et l’intergiciel (middleware) d’authentification. L’application mobile eShopOnContainers effectue l’authentification et l’autorisation avec un microservice d’identité en conteneur qui utilise IdentityServer 4. L’application mobile demande des jetons de sécurité à partir de IdentityServer, soit pour authentifier un utilisateur, soit pour accéder à une ressource. Pour que IdentityServer émette des jetons pour le compte d’un utilisateur, l’utilisateur doit se connecter à IdentityServer. Toutefois, IdentityServer ne fournit pas d’interface utilisateur ou de base de données pour l’authentification. Par conséquent, dans l’application de référence eShopOnContainers, ASP.NET Core identité est utilisée à cette fin.
 
-## <a name="authentication"></a>Authentication
+## <a name="authentication"></a>Authentification
 
 L’authentification est requise lorsqu’une application doit connaître l’identité de l’utilisateur actuel. Le mécanisme principal de ASP.NET Core pour identifier les utilisateurs est le système d’appartenance ASP.NET Core identité, qui stocke les informations utilisateur dans un magasin de données configuré par le développeur. En règle générale, ce magasin de données est un magasin EntityFramework, bien que les magasins personnalisés ou les packages tiers puissent être utilisés pour stocker les informations d’identité dans le stockage Azure, Azure Cosmos DB ou d’autres emplacements.
 
