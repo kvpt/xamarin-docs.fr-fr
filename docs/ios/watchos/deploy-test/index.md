@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
 ms.openlocfilehash: b9b4d201e02d60bd6131c8693d9ac6a233e4fe10
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028338"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78918737"
 ---
 # <a name="deploying-and-testing-watchos-apps-with-xamarin"></a>Déploiement et test d’applications Watchos avec Xamarin
 
@@ -104,6 +104,6 @@ Double-cliquez pour modifier le fichier **habilitations. plist** dans ces projet
 
 N’activez **pas** les droits dans le projet d’application Watch. Il n’est pas nécessaire d’activer l’option sur la montre.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Guide d’envoi Apple WatchKit](https://developer.apple.com/app-store/watch/)

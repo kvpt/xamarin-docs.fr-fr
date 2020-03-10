@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
 ms.openlocfilehash: de5728710a408b8e0c7c68dc89c7e6484cbcc3ce
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70760161"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78915243"
 ---
 # <a name="validation-in-enterprise-apps"></a>Validation dans les applications d’entreprise
 
@@ -382,7 +382,7 @@ Quand des données valides sont entrées dans le contrôle [`Entry`](xref:Xamari
 
 **Figure 6-3**: ligne noire indiquant l’absence d’erreur de validation
 
-Le contrôle [`Entry`](xref:Xamarin.Forms.Entry) possède également un [`DataTrigger`](xref:Xamarin.Forms.DataTrigger) ajouté à sa collection [`Triggers`](xref:Xamarin.Forms.VisualElement.Triggers) . L’exemple de code suivant montre l' `DataTrigger` :
+Le contrôle [`Entry`](xref:Xamarin.Forms.Entry) possède également un [`DataTrigger`](xref:Xamarin.Forms.DataTrigger) ajouté à sa collection [`Triggers`](xref:Xamarin.Forms.VisualElement.Triggers) . L’exemple de code suivant montre l' `DataTrigger`:
 
 ```xaml
 <Entry Text="{Binding UserName.Value, Mode=TwoWay}">  
@@ -420,13 +420,13 @@ L’interface utilisateur affiche les messages d’erreur de validation dans les
 
 Chaque [`Label`](xref:Xamarin.Forms.Label) se lie à la propriété `Errors` de l’objet de modèle de vue qui est en cours de validation. La propriété `Errors` est fournie par la classe `ValidatableObject<T>` et est de type `List<string>`. Étant donné que la propriété `Errors` peut contenir plusieurs erreurs de validation, l' `FirstValidationErrorConverter` instance est utilisée pour récupérer la première erreur de la collection en vue de son affichage.
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 L’application mobile eShopOnContainers effectue une validation synchrone côté client des propriétés de modèle de vue et avertit l’utilisateur des erreurs de validation en mettant en surbrillance le contrôle qui contient les données non valides et en affichant les messages d’erreur qui informent l’utilisateur. raison pour laquelle les données ne sont pas valides.
 
-Les propriétés de modèle de vue qui nécessitent une validation sont de type `ValidatableObject<T>`, et chaque `ValidatableObject<T>` instance a des règles de validation ajoutées à sa propriété `Validations`. La validation est appelée à partir du modèle de vue en appelant la méthode `Validate` de l’instance `ValidatableObject<T>`, qui récupère les règles de validation et les exécute sur la propriété de `Value` `ValidatableObject<T>`. Toutes les erreurs de validation sont placées dans la propriété `Errors` du `ValidatableObject<T>`instance et la propriété `IsValid` de l’instance de `ValidatableObject<T>` est mise à jour pour indiquer si la validation a réussi ou échoué.
+Les propriétés de modèle de vue qui nécessitent une validation sont de type `ValidatableObject<T>`, et chaque `ValidatableObject<T>` instance a des règles de validation ajoutées à sa propriété `Validations`. La validation est appelée à partir du modèle de vue en appelant la méthode `Validate` de l’instance `ValidatableObject<T>`, qui récupère les règles de validation et les exécute sur la propriété de `Value` `ValidatableObject<T>`. Toutes les erreurs de validation sont placées dans la propriété `Errors` de l’instance `ValidatableObject<T>`et la propriété `IsValid` de l’instance `ValidatableObject<T>` est mise à jour pour indiquer si la validation a réussi ou échoué.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Télécharger le livre électronique (PDF de 2 Mo)](https://aka.ms/xamarinpatternsebook)
 - [eShopOnContainers (GitHub) (exemple)](https://github.com/dotnet-architecture/eShopOnContainers)

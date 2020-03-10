@@ -8,17 +8,17 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2019
 ms.openlocfilehash: 986045a4be352da0e439de87fdc70e2958b48d36
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75489997"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78910712"
 ---
 # <a name="xamarinforms-tabbedpage"></a>Xamarin. Forms TabbedPage
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-tabbedpagewithnavigationpage)
 
-Le [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) de Xamarin.Forms se compose d’une liste d’onglets et d’une zone de détails plus grande, chaque onglet chargeant du contenu dans la zone de détails. Les captures d’écran suivantes montrent un `TabbedPage` sur iOS et Android :
+Le [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) de Xamarin.Forms se compose d’une liste d’onglets et une zone de détails plus grande, chaque onglet chargeant du contenu dans la zone de détails. Les captures d’écran suivantes montrent un `TabbedPage` sur iOS et Android :
 
 [![Capture d’écran d’un TabbedPage contenant trois onglets, sur iOS et Android](tabbed-page-images/tabbedpage-today.png "TabbedPage avec trois onglets")](tabbed-page-images/tabbedpage-today-large.png#lightbox "TabbedPage avec trois onglets")
 
@@ -44,7 +44,7 @@ Deux approches peuvent être adoptées pour créer un [`TabbedPage`](xref:Xamari
 Avec les deux approches, le [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) affiche chaque page quand l’utilisateur sélectionne chaque onglet.
 
 > [!IMPORTANT]
-> Nous vous recommandons de remplir un [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) uniquement avec des instances de [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) et [`ContentPage`](xref:Xamarin.Forms.ContentPage). Cela vous aidera à garantir une expérience utilisateur cohérente sur toutes les plateformes.
+> Nous vous recommandons de remplir un [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) uniquement avec des instances de [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) et [`ContentPage`](xref:Xamarin.Forms.ContentPage). Cela permet de garantir une expérience utilisateur cohérente sur toutes les plateformes.
 
 En outre, [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) définit les propriétés suivantes :
 
@@ -238,5 +238,5 @@ En sélectionnant un autre onglet, vous affichez l’objet [`ContentPage`](xref:
 - [TabbedPageWithNavigationPage (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-tabbedpagewithnavigationpage)
 - [TabbedPage (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-tabbedpage)
 - [Navigation hiérarchique](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md)
-- [Types de pages](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf)
+- [Variétés de page](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf)
 - [API TabbedPage](xref:Xamarin.Forms.TabbedPage)
