@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/06/2020
-ms.openlocfilehash: 883a6c3edc0c4e0bf6eac92b1766ec18ac114f8c
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.openlocfilehash: bce2b6f29129894ed446100c87b5e92d3572ed2f
+ms.sourcegitcommit: 60d2243809d8e980fca90b9f771e72f8c0e64d71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78911535"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78946270"
 ---
 # <a name="build-process"></a>Processus de génération
 
@@ -231,7 +231,7 @@ Les [propriétés de signature](#Signing_Properties) sont également impliquées
 
   Cette propriété est pertinente uniquement si `$(AndroidPackageFormat)` est défini sur `aab`.
 
-  Ajouté dans Xamarin. Android 10,2.
+  Ajouté dans Xamarin. Android 10,3.
 
   [bundle-config-format]: https://developer.android.com/studio/build/building-cmdline#bundleconfig
 

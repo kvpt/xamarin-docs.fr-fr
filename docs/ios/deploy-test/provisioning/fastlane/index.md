@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
 ms.openlocfilehash: 0af85c1c27d2b329d81cc680a0fc4c075d4a86dd
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028606"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78915393"
 ---
 # <a name="introduction-to-fastlane-for-ios"></a>Présentation de fastlane pour iOS
 
@@ -90,7 +90,7 @@ Pour mettre à jour votre version avec une nouvelle version de fastlane, téléc
 
 [![](images/fastlane-image0a.png "Running the install package")](images/fastlane-image0a.png#lightbox)
 
-## <a name="contents"></a>Contenu
+## <a name="contents"></a>Contents
 
 Cette série de guides présente quelques-uns des outils que fastlane utilise pour signer le code d’une application iOS préalablement à son développement ou sa distribution. Les guides couvrent les outils suivants :
 
@@ -108,7 +108,7 @@ Pour définir les options de signature de code pour une application Xamarin.iOS,
 
 [![](images/fastlane-image11.png "Set the Signing Identity and Provisioning Profile explicitly")](images/fastlane-image11.png#lightbox)
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Documents fastlane](https://fastlane.tools/)
 - [Documents sur la signature de code fastlane](https://docs.fastlane.tools/codesigning/getting-started/)

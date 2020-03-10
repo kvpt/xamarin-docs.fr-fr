@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 09/05/2017
 ms.openlocfilehash: 928936815c89dd74d0ad3775f59ea210702c8857
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032174"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78915734"
 ---
 # <a name="drag-and-drop-in-xamarinios"></a>Glisser-déplacer dans Xamarin. iOS
 
@@ -185,7 +185,7 @@ Ouvrez l’exemple avec une autre application (telle que des notes) et faites gl
 
 ![capture d’écran de l’opération glisser en cours](drag-and-drop-images/01-sml.png)
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Glisser-déplacer les instructions d’interface utilisateur (Apple)](https://developer.apple.com/ios/human-interface-guidelines/interaction/drag-and-drop/)
 - [Exemple de vue de table glisser-déplacer](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddroptableview)

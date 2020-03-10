@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2017
-ms.openlocfilehash: 4ccd22945caa9d81970867e0b037069389538b88
-ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
+ms.openlocfilehash: 67b760a58628950caa33fe9009c5023c8696691c
+ms.sourcegitcommit: 60d2243809d8e980fca90b9f771e72f8c0e64d71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "78292649"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78946330"
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>Procédure pas à pas : liaison d’une bibliothèque objective-C iOS
 
@@ -420,10 +420,13 @@ sdk: watchos2.2      arch: armv7
 Entrez la commande suivante dans l’application Terminal :
 
 ```bash
-sharpie bind --output=InfColorPicker --namespace=InfColorPicker --sdk=[iphone-os] [full-path-to-project]/InfColorPicker/InfColorPicker/*.h
+sharpie bind --output=InfColorPicker --namespace=InfColorPicker --sdk=[iphone-os] -scope [full-path-to-project]/InfColorPicker/InfColorPicker [full-path-to-project]/InfColorPicker/InfColorPicker/*.h
 ```
 
-Où `[full-path-to-project]` est le chemin d’accès complet au répertoire où se trouve le fichier de projet XCode **InfColorPicker** sur notre ordinateur et [iPhone-OS] est le kit de développement logiciel (SDK) iOS que nous avons installé, comme indiqué par la commande `sharpie xcode -sdks`. Notez que dans cet exemple, nous avons passé **\*. h** comme paramètre, qui comprend *tous* les fichiers d’en-tête dans ce répertoire. normalement, vous ne devez pas le faire, mais lisez attentivement les fichiers d’en-tête pour rechercher le fichier **. h** de niveau supérieur qui fait référence à tous les autres fichiers pertinents, et transmettez-le simplement à objective Sharp.
+Où `[full-path-to-project]` est le chemin d’accès complet au répertoire où se trouve le fichier de projet XCode **InfColorPicker** sur notre ordinateur et [iPhone-OS] est le kit de développement logiciel (SDK) iOS que nous avons installé, comme indiqué par la commande `sharpie xcode -sdks`. Notez que dans cet exemple, nous avons passé **\*. h** comme paramètre, qui comprend *tous* les fichiers d’en-tête dans ce répertoire. normalement, vous ne devez pas le faire, mais lisez attentivement les fichiers d’en-tête pour rechercher le fichier **. h** de niveau supérieur qui fait référence à tous les autres fichiers pertinents, et transmettez-le simplement à objective Sharp. 
+
+> [!TIP] 
+> Pour l’argument `-scope`, transmettez le dossier qui contient les en-têtes que vous souhaitez lier. Sans l’argument `-scope`, objective Sharp tente de générer des liaisons pour tous les en-têtes du kit de développement logiciel (SDK) iOS importés, par exemple, `#import <UIKit.h>`, ce qui génère des erreurs lors de la compilation du projet de liaison. Avec le jeu d’arguments `-scope`, objective Sharp ne génère pas de liaisons pour tous les en-têtes en dehors du dossier étendu. 
 
 La [sortie](walkthrough-images/os05.png) suivante sera générée dans le terminal :
 

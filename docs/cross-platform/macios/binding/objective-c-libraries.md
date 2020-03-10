@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/06/2018
 ms.openlocfilehash: 6841e94ad13357c51e6ccf59e35c659dfb9954aa
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: 60d2243809d8e980fca90b9f771e72f8c0e64d71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/07/2020
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "78914665"
 ---
 # <a name="binding-objective-c-libraries"></a>Liaison des bibliothèques objective-C
@@ -288,7 +288,7 @@ La façon dont ce est mappé C# est l’ajout de l’accesseur get et de l’acc
 Ensuite, sur la sous-classe mutable, vous utilisez la [`[Override]`](~/cross-platform/macios/binding/binding-types-reference.md#OverrideAttribute) 
 attribut sur la propriété pour garantir que la propriété substitue réellement le comportement du parent.
 
-Exemple :
+Exemple :
 
 ```csharp
 [BaseType (typeof (NSObject))]
@@ -580,7 +580,7 @@ interface LonelyClass {
 
 Vous pouvez ajouter des `enum` directement dans vos fichiers de liaison pour faciliter leur utilisation dans les définitions d’API, sans utiliser un fichier source différent (qui doit être compilé à la fois dans les liaisons et le projet final).
 
-Exemple :
+Exemple :
 
 ```csharp
 [Native] // needed for enums defined as NSInteger in ObjC
@@ -594,7 +594,7 @@ interface MyType {
 
 Il est également possible de créer vos propres énumérations pour remplacer `NSString` constantes. Dans ce cas, le Générateur créera **automatiquement** les méthodes pour convertir des valeurs enums et des constantes chaîne NSString pour vous.
 
-Exemple :
+Exemple :
 
 ```csharp
 enum NSRunLoopMode {
@@ -882,7 +882,7 @@ Le générateur de liaisons peut transformer une certaine classe de méthodes en
 Vous pouvez utiliser les [`[Async]`](~/cross-platform/macios/binding/binding-types-reference.md#AsyncAttribute) 
 attribut sur les méthodes qui retournent void et dont le dernier argument est un rappel.  Lorsque vous appliquez ce à une méthode, le générateur de liaisons génère une version de cette méthode avec le suffixe `Async`.  Si le rappel n’accepte aucun paramètre, la valeur de retour est un `Task`, si le rappel prend un paramètre, le résultat est un `Task<T>`.  Si le rappel prend plusieurs paramètres, vous devez définir la `ResultType` ou `ResultTypeName` pour spécifier le nom souhaité du type généré qui contiendra toutes les propriétés.
 
-Exemple :
+Exemple :
 
 ```csharp
 [Export ("loadfile:completed:")]
@@ -1197,7 +1197,7 @@ Lorsque vous utilisez l’attribut [`[Export]`](~/cross-platform/macios/binding/
 
 L’exemple ci-dessus marque la valeur comme ayant la sémantique « retain ». Les sémantiques disponibles sont les suivantes :
 
-- Attribuer
+- Assigner
 - Copier
 - Conserver
 

@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
 ms.openlocfilehash: b1b6d07b221f702b54833bd87161d6abbadbd4e8
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030851"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78915787"
 ---
 # <a name="working-with-tvos-icons-and-images-in-xamarin"></a>Utilisation des icônes et des images tvOS dans Xamarin
 
@@ -64,7 +64,7 @@ Pour définir l’image de lancement de votre projet tvOS, procédez comme suit�
 3. Cliquez sur l’entrée **1x Apple TV** , sélectionnez l’image de lancement ou faites éventuellement glisser une nouvelle image à partir du système de fichiers : 
 
     [![](icons-images-images/asset03.png "Select a Launch Image")](icons-images-images/asset03.png#lightbox)
-4. Enregistrez les modifications apportées.
+4. Enregistrez vos modifications.
 
 <a name="Layered-Images" />
 
@@ -175,7 +175,7 @@ Pour définir les icônes d’application requises pour votre projet tvOS, proc�
 5. Cliquez sur l' **entrée 1x Apple TV** et sélectionnez un fichier image.
 6. Répétez les étapes ci-dessus pour les ressources `Front` et `Middle`.
 7. Répétez ensuite les mêmes étapes pour définir la ressource `App Icon - Large`.
-8. Enregistrez les modifications apportées.
+8. Enregistrez vos modifications.
 
 <a name="Top-Shelf-Image" />
 
@@ -213,7 +213,7 @@ Pour définir l’image de l’étagère supérieure requise pour votre projet t
 
     [![](icons-images-images/asset07.png "The Top Shelf Image asset")](icons-images-images/asset07.png#lightbox)
 4. Cliquez sur l' **entrée 1x Apple TV** et sélectionnez un fichier image.
-5. Enregistrez les modifications apportées.
+5. Enregistrez vos modifications.
 
 <a name="Dynamic-Top-Shelf-Content" />
 
@@ -281,17 +281,17 @@ Si votre application Xamarin. tvOS est un jeu et que vous avez inclus Game Cente
 
 ||Icônes de réussite|Illustration du tableau de bord|Graphique classement|
 |---|---|---|---|
-|Taille visible|200x200px|923x150px|N/A|
-|Taille réelle|320x320px|N/A|659x371px|
-|Taille de zone sécurisée|N/A|N/A|618x348px|
-|Taille inactive|N/A|N/A|548x309px|
-|Taille focalisée|N/A|N/A|618x348px|
+|Taille visible|200x200px|923x150px|n/a|
+|Taille réelle|320x320px|n/a|659x371px|
+|Taille de zone sécurisée|n/a|n/a|618x348px|
+|Taille inactive|n/a|n/a|548x309px|
+|Taille focalisée|n/a|n/a|618x348px|
 
 Pour plus d’informations sur l’utilisation de Game Center, consultez le [Guide de programmation](https://developer.apple.com/library/prerelease/tvos/documentation/NetworkingInternet/Conceptual/GameKit_Guide/Introduction/Introduction.html)d’Apple Game Center.
 
 <a name="Working-with-Images" />
 
-## <a name="working-with-images"></a>Utilisation d’images
+## <a name="working-with-images"></a>Utilisation d'images
 
 Étant donné que tvOS 9 est un sous-ensemble d’iOS 9, les mêmes techniques que celles utilisées pour inclure et afficher des images dans une application Xamarin. iOS, fonctionnent également pour une application Xamarin. tvOS. Pour plus d’informations, consultez notre documentation sur [l’affichage d’une image](~/ios/app-fundamentals/images-icons/displaying-an-image.md) .
 
@@ -301,7 +301,7 @@ Pour plus d’informations sur l’utilisation de Game Center, consultez le [Gui
 
 Comme indiqué ci-dessus, toutes les applications tvOS nécessitent une [image de lancement](#Launch-Image)et une [icône d’application](#App-Icons). Cette section décrit la sélection de l’icône de lancement de l’image et de l’application pour votre projet d’application Xamarin. tvOS une fois qu’elles ont été définies dans un catalogue de composants.
 
-Effectuez ce qui suit :
+Effectuez les actions suivantes :
 
 1. Dans la **Explorateur de solutions**, double-cliquez sur le `Info.plist` pour l’ouvrir et le modifier : 
 
@@ -310,15 +310,15 @@ Effectuez ce qui suit :
 
     [![](icons-images-images/info02.png "The Info.Plist Editor")](icons-images-images/info02.png#lightbox)
 3. Ensuite, sélectionnez le catalogue des ressources (configuré ci-dessus dans la section [définition de l’image de lancement](#Setting-the-Launch-Image) ) pour les **images de lancement**.
-4. Enregistrez les modifications apportées.
+4. Enregistrez vos modifications.
 
 <a name="Summary" />
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article a traité tous les types d’images et tailles utilisés dans une application Xamarin. tvOS. Tout d’abord, les images de lancement, les images superposées, les icônes d’application, les images de haut rayon et les images de Game Center. Ensuite, il a abordé l’utilisation des images dans votre application Xamarin. tvOS.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Exemples tvOS](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
 - [tvOS](https://developer.apple.com/tvos/)

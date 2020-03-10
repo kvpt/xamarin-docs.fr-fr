@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
 ms.openlocfilehash: 13891100d3571f9e847243172aa974072f46e7fe
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: 60d2243809d8e980fca90b9f771e72f8c0e64d71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/07/2020
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "78915175"
 ---
 # <a name="unified-storyboards-in-xamarinios"></a>Storyboards unifiés dans Xamarin. iOS
@@ -116,7 +116,7 @@ Voici une collection de caractéristiques typique que le développeur peut voir 
 |--- |--- |
 |`HorizontalSizeClass`|ROM|
 |`VerticalSizeClass`|Normal|
-|`UserInterfaceIdom`|Phone|
+|`UserInterfaceIdom`|Téléphone|
 |`DisplayScale`|2|
 
 L’ensemble ci-dessus représente une collection de traits complète, car elle contient des valeurs pour toutes ses propriétés de trait.
@@ -216,7 +216,7 @@ iOS 8 fournit plusieurs rappels que le développeur peut utiliser pour participe
 
 |Phase|Rappel|Description|
 |--- |--- |--- |
-|Programme d'installation|<ul><li>`WillTransitionToTraitCollection`</li><li>`TraitCollectionDidChange`</li></ul>|<ul><li>Cette méthode est appelée au début d’une modification de trait avant qu’une collection de traits soit définie sur sa nouvelle valeur.</li><li>La méthode est appelée lorsque la valeur de la collection de traits a changé mais avant qu’une animation ait lieu.</li></ul>|
+|Programme d’installation|<ul><li>`WillTransitionToTraitCollection`</li><li>`TraitCollectionDidChange`</li></ul>|<ul><li>Cette méthode est appelée au début d’une modification de trait avant qu’une collection de traits soit définie sur sa nouvelle valeur.</li><li>La méthode est appelée lorsque la valeur de la collection de traits a changé mais avant qu’une animation ait lieu.</li></ul>|
 |Animation|`WillTransitionToTraitCollection`|Le coordinateur de transition qui est passé à cette méthode a une propriété `AnimateAlongside` qui permet au développeur d’ajouter des animations qui seront exécutées en même temps que les animations par défaut.|
 |Nettoyage|`WillTransitionToTraitCollection`|Fournit une méthode permettant aux développeurs d’inclure leur propre code de nettoyage une fois la transition effectuée.|
 
@@ -695,7 +695,7 @@ Les écrans de lancement dynamiques présentent les limitations et les considér
 
 Avec les instructions ci-dessus à l’esprit, examinons l’ajout d’un écran de lancement dynamique à un projet Xamarin iOS 8 existant.
 
-procédez comme suit :
+Effectuez les actions suivantes :
 
 1. Ouvrez **Visual Studio pour Mac** et chargez la **solution** pour ajouter l’écran de lancement dynamique à.
 2. Dans le **Explorateur de solutions**, cliquez avec le bouton droit sur le fichier `MainStoryboard.storyboard` et sélectionnez **ouvrir avec** > **Interface Builder Xcode**:

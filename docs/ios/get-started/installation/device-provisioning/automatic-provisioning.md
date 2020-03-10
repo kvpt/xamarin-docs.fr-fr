@@ -1,64 +1,43 @@
 ---
 title: Provisionnement automatique pour Xamarin.iOS
-description: Après l’installation de Xamarin.iOS, l’étape suivante dans le développement iOS est de provisionner votre appareil iOS. Ce guide décrit l’utilisation de la signature automatique pour demander des certificats et profils de développement.
+description: Après l’installation de Xamarin.iOS, l’étape suivante dans le développement iOS consiste à provisionner votre appareil iOS. Ce guide décrit l’utilisation de la signature automatique pour demander des certificats et profils de développement.
 ms.prod: xamarin
 ms.assetid: 81FCB2ED-687C-40BC-ABF1-FB4303034D01
 ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.custom: video
-ms.date: 01/22/2019
-ms.openlocfilehash: bdc8366e75455755cbb2f533b6707f72e33436e2
-ms.sourcegitcommit: 3ea19e3a51515b30349d03c70a5b3acd7eca7fe7
+ms.date: 03/05/2020
+ms.openlocfilehash: 0947f31700310b7da80dfa412c18585962a337ac
+ms.sourcegitcommit: 60d2243809d8e980fca90b9f771e72f8c0e64d71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73425588"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78946295"
 ---
 # <a name="automatic-provisioning-for-xamarinios"></a>Provisionnement automatique pour Xamarin.iOS
 
-_Une fois Xamarin. iOS installé avec succès, l’étape suivante du développement iOS consiste à approvisionner votre appareil iOS. Ce guide explore l’utilisation de la signature automatique pour demander des profils et des certificats de développement._
+_Une fois Xamarin. iOS installé avec succès, l’étape suivante du développement iOS consiste à approvisionner votre appareil iOS. Ce guide explore l’utilisation de l’approvisionnement automatique pour demander des profils et des certificats de développement._
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Spécifications
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+L’approvisionnement automatique est disponible sur Visual Studio pour Mac, Visual Studio 2019 et Visual Studio 2017 (version 15,7 et ultérieures). 
 
-- Visual Studio pour Mac 7.3 ou version ultérieure
-- Xcode 9 ou supérieure
+Vous devez également avoir un compte de développeur Apple payant pour utiliser cette fonctionnalité. Vous trouverez plus d’informations sur les comptes de développeurs Apple dans le Guide de [provisionnement des appareils](~/ios/get-started/installation/device-provisioning/index.md) .
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+> [!NOTE]
+> Avant de commencer, veillez à accepter d’abord tous les contrats de licence dans le [portail des développeurs Apple](https://developer.apple.com/account/) ou dans l' [App Store Connect](https://appstoreconnect.apple.com/).
 
-- Visual Studio 2019
-- OU Visual Studio 2017 Version 15.7 (ou supérieure)
 
-Vous devez également avoir un appairage avec un hôte de build Mac qui a les éléments suivants :
+## <a name="enable-automatic-provisioning"></a>Activer l’approvisionnement automatique
 
-- Xcode 10 ou version ultérieure
+Avant de démarrer le processus de signature automatique, vous devez vous assurer que vous disposez d’un ID Apple ajouté dans Visual Studio, comme décrit dans le Guide de [gestion des comptes Apple](~/cross-platform/macios/apple-account-management.md) . 
 
------
-
-## <a name="enabling-automatic-signing"></a>Activation de la signature automatique
-
-Avant de commencer le processus de signature automatique, vous devez vérifier qu’un ID Apple est ajouté dans Visual Studio, comme décrit dans le guide de [gestion des comptes Apple](~/cross-platform/macios/apple-account-management.md). Une fois que vous avez ajouté un ID Apple, vous pouvez utiliser toute _équipe_ associée. Ainsi, des certificats, des profils et d’autres ID peuvent être créés par rapport à l’équipe. L’ID d’équipe est également utilisé pour créer un préfixe pour un ID d’application qui sera inclus dans le profil de provisionnement. Apple peut ainsi vérifier que vous êtes bien qui vous prétendez être.
-
-> [!IMPORTANT]
-> Avant de commencer, veillez à vous connecter à [iTunes Connect](https://itunesconnect.apple.com/) ou à [appleid.apple.com](https://appleid.apple.com) pour vérifier que vous avez accepté les dernières stratégies de compte Apple. Si vous y êtes invité, effectuez les étapes requises pour accepter tout nouveau contrat du compte provenant d’Apple. Si vous n’acceptez pas l’accord de confidentialité de mai 2018, l’alerte suivante s’affiche quand vous essayez de provisionner votre appareil :
->
-> ```
-> Unexpected authentication failure. Reason: {
-> "authType" : "sa"
-> }
-> ```
->
-> or
->
-> ```
-> Authentication Service Is Unavailable
-> ```
+Une fois que vous avez ajouté un ID Apple, vous pouvez utiliser toute _équipe_ associée. Ainsi, des certificats, des profils et d’autres ID peuvent être créés par rapport à l’équipe. L’ID d’équipe est également utilisé pour créer un préfixe pour un ID d’application qui sera inclus dans le profil de provisionnement. Apple peut ainsi vérifier que vous êtes bien qui vous prétendez être.
 
 Pour signer automatiquement votre application pour un déploiement sur un appareil iOS, effectuez les opérations suivantes :
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 1. Ouvrez votre projet iOS dans Visual Studio pour Mac.
 
@@ -76,32 +55,29 @@ Pour signer automatiquement votre application pour un déploiement sur un appare
 
     Si la signature automatique échoue, le **bloc de signature automatique** indique la raison de l’erreur.
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. Appairez Visual Studio 2019 avec un Mac comme décrit dans le guide [Appairer avec un Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
+> [!NOTE]
+> Si vous utilisez Visual Studio 2017 ou Visual Studio 2019 (version 16,4 et antérieure), vous devez être [associé à un hôte de build Mac avant de](~/ios/get-started/installation/windows/connecting-to-mac/index.md) continuer.
 
-2. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le nom du projet et sélectionnez **Propriétés**. Ensuite, accédez à l’onglet **Signature du bundle iOS**.
+1. Dans le **Explorateur de solutions**, cliquez avec le bouton droit sur le nom du projet iOS et sélectionnez **Propriétés**. Ensuite, accédez à l’onglet **signature d’offre groupée iOS** :
 
-3. Sélectionnez le schéma **Provisionnement automatique** :
+    ![Capture d’écran de la page de signature de Bundle dans les propriétés iOS.](automatic-provisioning-images/bundle-signing-win.png)
 
-    ![Sélection du schéma Automatique](automatic-provisioning-images/prov4.png)
+2. Sélectionnez le schéma d' **approvisionnement automatique** .
 
-4. Sélectionnez votre équipe dans la zone de liste modifiable **Équipe** pour démarrer le processus de signature automatique.
+3. Sélectionnez votre équipe dans le menu déroulant de l' **équipe** pour démarrer le processus de signature automatique. Visual Studio indique si le processus s’est terminé correctement :
 
-    ![Sélection de l’équipe](automatic-provisioning-images/prov3.png)
-
-5. Le processus de signature automatique démarre. Visual Studio essaie ensuite de générer un ID d’application, un profil de provisionnement et une identité de signature pour utiliser ces artefacts pour la signature. Vous pouvez voir le processus de génération dans la sortie de génération :
-
-    ![Sortie de génération montrant la génération d’artefacts](automatic-provisioning-images/prov5.png)
+    ![Capture d’écran de la page de signature de Bundle mettant en surbrillance le message « l’approvisionnement automatique s’est terminé correctement ».](automatic-provisioning-images/signing-success-win.png)
 
 -----
 
-## <a name="triggering-automatic-provisioning"></a>Déclenchement du provisionnement automatique
+## <a name="run-automatic-provisioning"></a>Exécuter l’approvisionnement automatique
 
-Quand la signature automatique est activée, Visual Studio pour Mac met à jour ces artefacts si nécessaire dans les situations suivantes :
+Lorsque l’approvisionnement automatique est activé, Visual Studio réexécute le processus si nécessaire lorsque l’un des événements suivants se produit :
 
 - Un appareil iOS est branché à votre mac
-  - La vérification de l’inscription de l’appareil sur le portail des développeurs Apple est automatiquement effectuée. Si l’appareil n’est pas inscrit, il est ajouté et un nouveau profil de provisionnement qui le contient est généré.
+  - La vérification de l’inscription de l’appareil sur le portail des développeurs Apple est automatiquement effectuée. Si ce n’est pas le cas, il l’ajoute et génère un nouveau profil de provisionnement qui le contient.
 - L’ID de bundle de votre application est modifié
   - L’ID de l’application est alors mis à jour. Un nouveau profil de provisionnement qui contient cet ID d’application est créé.
 - Une fonctionnalité prise en charge est activée dans le fichier Entitlements.plist.
@@ -110,34 +86,37 @@ Quand la signature automatique est activée, Visual Studio pour Mac met à jour 
 
 ## <a name="wildcard-app-ids"></a>ID d’applications génériques
 
-À partir de Visual Studio pour Mac 7.6, le provisionnement automatique tente de créer et d’utiliser par défaut un ID d’application générique et un profil de provisionnement, au lieu de créer un ID d’application explicite basé sur l’**identificateur de bundle** spécifié dans **Info.plist**. Les ID d’applications génériques réduisent le nombre de profils et d’ID à gérer dans le portail des développeurs Apple.
+Dans Visual Studio pour Mac et Visual Studio 2019 (version 16,5 ou ultérieure), le provisionnement automatique tente par défaut de créer et d’utiliser un ID d’application générique et un profil de provisionnement au lieu d’un ID d’application explicite basé sur l' **identificateur de Bundle** spécifié dans **info. plist**. Les ID d’applications génériques réduisent le nombre de profils et d’ID à gérer dans le portail des développeurs Apple.
 
 Dans certains cas, les droits d’une application nécessitent un ID d’application explicite. Les droits suivants ne prennent pas en charge les ID d’applications génériques :
 
 - App Groups
 - Associated Domains
 - Apple Pay
-- Game Center
+- Centre de jeux
 - HealthKit
 - HomeKit
 - Zone réactive
 - Achat dans l’application
 - Multipath
 - NFC
-- VPN personnel
-- Push Notifications
-- Configuration d’accessoires sans fil
+- Personal VPN
+- Notifications Push
+- Wireless Accessory Configuration
 
-Si votre application utilise l’un de ces droits, Visual Studio pour Mac tente de créer un ID d’application explicite (au lieu d’un ID d’application générique).
+Si votre application utilise l’une de ces habilitations, Visual Studio tente de créer un ID d’application explicite (au lieu d’un caractère générique).
 
-> [!NOTE]
-> Le provisionnement automatique avec des ID d’applications génériques est disponible uniquement dans Visual Studio pour Mac.
+## <a name="troubleshoot"></a>Dépanner 
 
-## <a name="related-links"></a>Liens associés
+- L’approbation d’un nouveau compte de développeur Apple peut prendre plusieurs heures. Vous ne pouvez pas activer l’approvisionnement automatique tant que le compte n’a pas été approuvé.
+- Si le processus d’approvisionnement automatique échoue avec le message d’erreur `Authentication Service Is Unavailable`, connectez-vous à l' [App Store Connect](https://appstoreconnect.apple.com/) ou à [appleid.Apple.com](https://appleid.apple.com) pour vérifier que vous avez accepté les derniers contrats de service.
+- Si vous recevez le message d’erreur `Authentication Error: Xcode 7.3 or later is required to continue developing with your Apple ID.`, assurez-vous que l’équipe sélectionnée a une appartenance active au programme pour développeurs Apple. Pour utiliser un compte de développeur Apple payant, consultez le guide [d’approvisionnement gratuit pour les applications Xamarin. iOS](~/ios/get-started/installation/device-provisioning/free-provisioning.md) .
+
+## <a name="related-links"></a>Liens connexes
 
 - [Provisionnement libre](~/ios/get-started/installation/device-provisioning/free-provisioning.md)
 - [Distribution d’une application](~/ios/deploy-test/app-distribution/index.md)
-- [Résolution des problèmes](~/ios/deploy-test/troubleshooting.md)
+- [Dépannage](~/ios/deploy-test/troubleshooting.md)
 - [Apple - Guide de distribution d’applications](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html)
 
 ## <a name="related-video"></a>Vidéo associée
