@@ -8,27 +8,27 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
 ms.openlocfilehash: 99571e0b62592597bb1fffdc8d3ed8336fe050b2
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73026929"
 ---
 # <a name="how-can-i-manually-install-the-android-support-libraries-required-by-the-xamarinandroidsupport-packages"></a>Comment installer manuellement les bibliothèques de prise en charge Android requises par les packages Xamarin.Android.Support ?
 
 ## <a name="example-steps-for-xamarinandroidsupportv4"></a>Exemples d’étapes pour Xamarin. Android. support. v4 
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Téléchargez le package NuGet Xamarin. Android. support souhaité (par exemple, en l’installant avec le gestionnaire de package NuGet).
 
-Utilisez `ildasm` pour vérifier la version du fichier **android_m2repository. zip** dont le package NuGet a besoin :
+Utilisez `ildasm` pour vérifier la version de **android_m2repository. zip** dont le package NuGet a besoin :
 
 ```cmd
 ildasm /caverbal /text /item:Xamarin.Android.Support.v4 packages\Xamarin.Android.Support.v4.23.4.0.1\lib\MonoAndroid403\Xamarin.Android.Support.v4.dll | findstr SourceUrl
 ```
 
-Exemple de sortie :
+Exemple de sortie :
 
 ```cmd
 property string 'SourceUrl' = string('https://dl-ssl.google.com/android/repository/android_m2repository_r32.zip')
@@ -49,13 +49,13 @@ $url = "https://dl-ssl.google.com/android/repository/android_m2repository_r32.zi
 (([System.Security.Cryptography.MD5]::Create()).ComputeHash([System.Text.Encoding]::UTF8.GetBytes($url)) | %{ $_.ToString("X02") }) -join ""
 ```
 
-Exemple de sortie :
+Exemple de sortie :
 
 ```powershell
 F16A3455987DBAE5783F058F19F7FCDF
 ```
 
-Copiez **android\_m2repository. zip** dans le dossier **% LocalAppData%\\Xamarin\\compresse\\** . Renommez le fichier pour qu’il utilise le hachage MD5 de l’étape précédente de calcul du hachage MD5. Exemple :
+Copiez **android\_m2repository. zip** dans le dossier **% LocalAppData%\\Xamarin\\compresse\\** . Renommez le fichier pour qu’il utilise le hachage MD5 de l’étape précédente de calcul du hachage MD5. Par exemple :
 
 **% LOCALAPPDATA%\\Xamarin\\compresse\\F16A3455987DBAE5783F058F19F7FCDF. zip**
 
@@ -66,7 +66,7 @@ Le numéro de version du sous-répertoire (**23.4.0.0** dans cet exemple) n’es
 ildasm /caverbal /text /item:Xamarin.Android.Support.v4 packages\Xamarin.Android.Support.v4.23.4.0.1\lib\MonoAndroid403\Xamarin.Android.Support.v4.dll | findstr /C:"string 'Version'"
 ```
 
-Exemple de sortie :
+Exemple de sortie :
 
 ```cmd
 property string 'Version' = string('23.4.0.0')}
@@ -74,7 +74,7 @@ property string 'Version' = string('23.4.0.0')}
 property string 'Version' = string('23.4.0.0')}
 ```
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 Téléchargez le package NuGet Xamarin. Android. support souhaité (par exemple, en l’installant avec le gestionnaire de package NuGet).
 
@@ -103,13 +103,13 @@ Pour ce faire, ajustez la variable `url` en fonction des besoins, puis exécutez
 csharp -e 'var url = "https://dl-ssl.google.com/android/repository/android_m2repository_r32.zip"; string.Concat((System.Security.Cryptography.MD5.Create().ComputeHash(System.Text.Encoding.UTF8.GetBytes(url))).Select(b => b.ToString("X02")))'
 ```
 
-Exemple de sortie :
+Exemple de sortie :
 
 ```bash
 F16A3455987DBAE5783F058F19F7FCDF
 ```
 
-Copiez **android\_m2repository. zip** dans le dossier **$Home/.local/share/xamarin/zips/** . Renommez le fichier pour qu’il utilise le hachage MD5 de l’étape précédente de calcul du hachage MD5. Exemple :
+Copiez **android\_m2repository. zip** dans le dossier **$Home/.local/share/xamarin/zips/** . Renommez le fichier pour qu’il utilise le hachage MD5 de l’étape précédente de calcul du hachage MD5. Par exemple :
 
 **$HOME/.local/share/Xamarin/zips/F16A3455987DBAE5783F058F19F7FCDF.zip**
 
@@ -135,4 +135,4 @@ Le numéro de version du sous-répertoire (**23.4.0.0** dans cet exemple) n’es
 
 Ce document décrit le comportement actuel à partir du 2016 août. La technique décrite dans ce document ne fait pas partie de la suite de tests stable pour Xamarin. elle pourrait donc s’arrêter à l’avenir.
 
-Pour obtenir de l’aide, pour nous contacter ou, si le problème persiste même après l’utilisation des informations ci-dessus, consultez [les options de support disponibles pour Xamarin ?](~/cross-platform/troubleshooting/support-options.md) pour plus d’informations sur les options de contact, les suggestions et la façon de signaler un nouveau bogue si nécessaire. .
+Pour obtenir de l’aide, pour nous contacter ou, si le problème persiste même après avoir pris en charge les informations ci-dessus, consultez [les options de support disponibles pour Xamarin ?](~/cross-platform/troubleshooting/support-options.md) pour plus d’informations sur les options de contact, les suggestions, ainsi que la façon de signaler un nouveau bogue si nécessaire.

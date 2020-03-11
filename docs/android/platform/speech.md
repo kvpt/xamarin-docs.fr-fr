@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 04/02/2018
 ms.openlocfilehash: e8c7d1a4fb3537644ed3b7737158a5e50abcdae5
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
-ms.translationtype: HT
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73019765"
 ---
 # <a name="android-speech"></a>Reconnaissance vocale Android
@@ -28,7 +28,7 @@ Google offre au développeur un ensemble complet d’API dans l’espace de noms
 
 Bien que les fonctionnalités de reconnaissance vocale soient compréhensibles, il existe des limitations en fonction du matériel utilisé. Il est peu probable que l’appareil interprète correctement tout ce qui est parlé dans chaque langue disponible.
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Configuration requise
 
 Il n’existe aucune exigence particulière pour ce guide, autre que votre appareil avec un microphone et un orateur.
 
@@ -127,7 +127,7 @@ protected override void OnActivityResult(int requestCode, Result resultVal, Inte
 
 La conversion de texte par synthèse vocale n’est pas tout à fait l’inverse de la reconnaissance vocale au texte et s’appuie sur deux composants clés. un moteur de conversion de texte par synthèse vocale installé sur l’appareil et une langue en cours d’installation.
 
-En grande partie, les appareils Android sont fournis avec le service Google TTS par défaut installé et au moins une langue. Cela est établi lorsque l’appareil est configuré pour la première fois et est basé sur l’emplacement de l’appareil à l’heure (par exemple, un téléphone configuré en Allemagne installe la langue allemande, tandis que l’autre aux États-Unis est l’anglais américain).
+En grande partie, les appareils Android sont fournis avec le service Google TTS par défaut installé et au moins une langue. Cela est établi lorsque l’appareil est configuré pour la première fois et est basé sur l’emplacement de l’appareil à l’heure (par exemple, un téléphone configuré en Allemagne installe la langue allemande, tandis que l’autre en Amérique est l’anglais américain).
 
 ### <a name="step-1---instantiating-texttospeech"></a>Étape 1 : instanciation de TextToSpeech
 
@@ -225,13 +225,13 @@ void TextToSpeech.IOnInitListener.OnInit(OperationResult status)
 }
 ```
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Dans ce guide, nous avons examiné les principes fondamentaux de la conversion de texte en discours et de synthèse vocale en texte, ainsi que les méthodes possibles pour les inclure dans vos propres applications. Bien qu’ils ne couvrent pas tous les cas particuliers, vous devez maintenant avoir une compréhension élémentaire de la façon dont la reconnaissance vocale est interprétée, de la façon d’installer de nouvelles langues et de l’augmentation de la capacité de votre application.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
-- [Xamarin. Forms DependencyService](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice//)
+- [Xamarin.Forms DependencyService](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice//)
 - [Synthèse vocale (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/platformfeatures-texttospeech)
 - [Parole en texte (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/platformfeatures-speechtotext)
 - [Espace de noms Android. Speech](xref:Android.Speech)

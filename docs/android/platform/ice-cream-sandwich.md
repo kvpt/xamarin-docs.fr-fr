@@ -8,17 +8,17 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/09/2018
 ms.openlocfilehash: 4fbbe1bec317e66166d5218ef0ed54247aa4f6dd
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "78291624"
 ---
 # <a name="ice-cream-sandwich-features"></a>Caractéristiques du sandwich glace
 
 _Cet article décrit plusieurs des nouvelles fonctionnalités disponibles pour les développeurs d’applications avec l’API Android 4-Ice Ice. Il couvre plusieurs nouvelles technologies d’interface utilisateur, puis examine une série de nouvelles fonctionnalités offertes par Android 4 pour le partage de données entre les applications et entre les appareils._
 
-## <a name="overview"></a>Vue d’ensemble
+## <a name="overview"></a>Overview
 
 Le système d’exploitation Android version 4,0 (niveau d’API 14) représente un retravail majeur du système d’exploitation Android et inclut un certain nombre de modifications et de mises à niveau importantes, notamment :
 

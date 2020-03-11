@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/02/2018
 ms.openlocfilehash: 9c9b9f5a205a2eef7db9f27e8d09b10ce65a4318
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73027056"
 ---
 # <a name="adjusting-java-memory-parameters-for-the-android-designer"></a>Réglage des paramètres de mémoire Java pour le concepteur Android
@@ -30,7 +30,7 @@ Les noms de propriété suivants correspondent à l' [option de ligne de command
 
 - **AndroidDesignerJavaRendererPermSize** -XX : MaxPermSize
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. Ouvrez votre solution dans Visual Studio.
 
@@ -62,7 +62,7 @@ Les noms de propriété suivants correspondent à l' [option de ligne de command
 
 8. Redémarrez Visual Studio et rouvrez votre solution.
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 1. Ouvrez votre solution dans Visual Studio pour Mac pour vous assurer que le répertoire de la solution contient un fichier `.userprefs`.
 

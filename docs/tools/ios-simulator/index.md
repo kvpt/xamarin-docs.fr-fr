@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 04/26/2019
 ms.openlocfilehash: d5898f9c6ee30eb1f12bf6480b93a609e762e6ea
-ms.sourcegitcommit: ec62e2624295aa502ec35ac782031d61d61c3aaa
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/11/2020
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "75886591"
 ---
 # <a name="remoted-ios-simulator-for-windows"></a>Remoted iOS Simulator pour Windows
@@ -19,7 +19,7 @@ Le simulateur iOS distant pour Windows vous permet de tester vos applications su
 
 [![simulateur iOS exécuté sur Windows](images/hero-sml.png "simulateur iOS exécuté sur Windows")](images/hero.png#lightbox)
 
-## <a name="getting-started"></a>Bien démarrer
+## <a name="getting-started"></a>Prise en main
 
 Le simulateur iOS distant pour Windows est installé automatiquement dans le cadre de Xamarin dans Visual Studio 2019 et Visual Studio 2017. Pour l’utiliser, procédez comme suit :
 
@@ -78,6 +78,6 @@ Si cette option est désactivée, le débogage ouvre le simulateur iOS sur l’h
 Si vous rencontrez des problèmes avec le simulateur iOS distant, vous pouvez afficher les journaux dans les emplacements suivants :
 
 - **Mac** – `~/Library/Logs/Xamarin/Simulator.Server`
-- **Windows** : `%LOCALAPPDATA%\Xamarin\Logs\Xamarin.Simulator`
+- **Windows** – `%LOCALAPPDATA%\Xamarin\Logs\Xamarin.Simulator`
 
 Si vous [Signalez un problème dans Visual Studio, l’attachement de](https://docs.microsoft.com/visualstudio/ide/how-to-report-a-problem-with-visual-studio)ces journaux peut être utile (il existe des options permettant de conserver les téléchargements privés).

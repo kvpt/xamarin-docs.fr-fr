@@ -7,15 +7,15 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/07/2018
 ms.openlocfilehash: 0e8d3748c7ddd337cf2f27f5b272b208e79d503a
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73027505"
 ---
 # <a name="creating-a-fragment"></a>Création d’un fragment
 
-Pour créer un fragment, une classe doit hériter de `Android.App.Fragment`, puis substituer la méthode `OnCreateView`. `OnCreateView` est appelée par l’activité d’hébergement lorsqu’il est temps de placer le fragment à l’écran et retourne une `View`. Un `OnCreateView` classique crée ce `View` en gonflant un fichier de disposition, puis en l’attachant à un conteneur parent. Les caractéristiques du conteneur sont importantes car Android applique les paramètres de disposition du parent à l’interface utilisateur du fragment. L'exemple suivant illustre ce comportement :
+Pour créer un fragment, une classe doit hériter de `Android.App.Fragment`, puis substituer la méthode `OnCreateView`. `OnCreateView` est appelée par l’activité d’hébergement lorsqu’il est temps de placer le fragment à l’écran et retourne une `View`. Un `OnCreateView` classique crée ce `View` en gonflant un fichier de disposition, puis en l’attachant à un conteneur parent. Les caractéristiques du conteneur sont importantes car Android applique les paramètres de disposition du parent à l’interface utilisateur du fragment. L'exemple suivant illustre ce mécanisme :
 
 ```csharp
 public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -95,7 +95,7 @@ Par exemple, les deux extraits de code suivants fonctionnent avec Xamarin. Andro
 <fragment class="com.example.DetailsFragment" android:id="@+id/fragment_content" android:layout_width="match_parent" android:layout_height="match_parent" />
 ```
 
-OR
+\- OU -
 
 ```xml
 <fragment class="Com.Example.DetailsFragment" android:id="@+id/fragment_content" android:layout_width="match_parent" android:layout_height="match_parent" />

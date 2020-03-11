@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
 ms.openlocfilehash: fb1ba92be9527d490b3d34bd4c0e454b0a750837
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73019992"
 ---
 # <a name="marshmallow-features"></a>Fonctionnalités de Marshmallow
@@ -20,7 +20,7 @@ _Cet article vous aide à utiliser Xamarin. Android pour développer des applica
 
 Cet article fournit une présentation des nouvelles fonctionnalités d’Android 6,0 Marshmallow, explique comment préparer Xamarin. Android pour le développement Android Marshmallow et fournit des liens vers des exemples d’applications qui illustrent comment utiliser les nouveaux Marshmallow Android fonctionnalités des applications Xamarin. Android. 
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Overview
 
 [Android 6,0 Marshmallow](https://developer.android.com/about/versions/marshmallow/index.html), est la prochaine version d’Android suivante après Android Lollipop.
 Xamarin. Android prend en charge Android Marshmallow et comprend les éléments suivants :
@@ -29,7 +29,7 @@ Xamarin. Android prend en charge Android Marshmallow et comprend les éléments 
 
 [![des images de héros de tablettes et de téléphones exécutant Marshmallow](marshmallow-images/android-m-hero-sml.png)](marshmallow-images/android-m-hero.png#lightbox)
 
-Bien que la version Marshmallow soit principalement axée sur le « polonais et la qualité », elle offre également de nombreuses nouvelles fonctionnalités intéressantes pour les développeurs Xamarin. Android. Ces fonctions incluent : 
+Bien que la version Marshmallow soit principalement axée sur le « polonais et la qualité », elle offre également de nombreuses nouvelles fonctionnalités intéressantes pour les développeurs Xamarin. Android. Voici quelques fonctionnalités : 
 
 - Les **autorisations d’exécution** &ndash; cette amélioration permettent aux utilisateurs d’approuver les autorisations de sécurité au cas par cas au moment de l’exécution. 
 
@@ -55,7 +55,7 @@ En outre, de nombreuses mises à jour de la bibliothèque Android de base ont é
 
 En outre, de nombreuses mises à jour de la bibliothèque Android de base ont été publiées avec Android Marshmallow. ces mises à jour fournissent de nouvelles fonctionnalités pour Android Marshmallow et les versions antérieures d’Android. Cet article explique comment prendre en main la création d’applications avec Android Marshmallow et fournit une vue d’ensemble des nouvelles fonctionnalités de Android 6,0. 
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Configuration requise
 
 Les éléments suivants sont requis pour utiliser les nouvelles fonctionnalités Android Marshmallow dans les applications basées sur Xamarin : 
 
@@ -69,7 +69,7 @@ Les éléments suivants sont requis pour utiliser les nouvelles fonctionnalités
 
 Vous pouvez continuer à utiliser [JDK 1,7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) si vous développez spécifiquement pour l’API de niveau 23 ou antérieur. 
 
-## <a name="getting-started"></a>Commencer
+## <a name="getting-started"></a>Mise en route
 
 Pour commencer à utiliser Android Marshmallow avec Xamarin. Android, vous devez télécharger et installer les derniers outils et packages du kit de développement logiciel (SDK) avant de pouvoir créer un projet Android Marshmallow : 
 
@@ -248,15 +248,15 @@ En plus des marshmallow Android, Google a annoncé des mises à jour associées 
 
 - [Bibliothèque Android portable](https://www.nuget.org/packages/Xamarin.Android.Wear) &ndash; ce NuGet comprend des liaisons Google Play services. La dernière version de la bibliothèque portable offre de nouvelles fonctionnalités (y compris une navigation plus facile pour les applications personnalisées) à la plateforme d’usure Android. 
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article a présenté Android Marshmallow et a expliqué comment installer et configurer les outils et packages les plus récents pour le développement Xamarin. Android sur Marshmallow. Il offre également une vue d’ensemble des nouvelles fonctionnalités Android Marshmallow pour le développement Xamarin. Android.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Android 6,0 Marshmallow](https://developer.android.com/about/versions/marshmallow/index.html)
 - [Obtient le Android SDK](https://developer.android.com/sdk/index.html#Other)
-- [Présentation des fonctionnalités](https://developer.android.com/preview/api-overview.html)
+- [Vue d'ensemble des fonctionnalités](https://developer.android.com/preview/api-overview.html)
 - [Notes de publication](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/android/xamarin.android_5/xamarin.android_5.1.99/index.md)
 - [RuntimePermissions (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-m-runtimepermissions)
 - [ConfirmCredential (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-m-confirmcredential)

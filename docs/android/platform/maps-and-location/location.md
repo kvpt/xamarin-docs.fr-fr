@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 05/22/2018
 ms.openlocfilehash: e027d41e98c26ef1659c27ab05df3052e19cc670
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73027131"
 ---
 # <a name="location-services-on-android"></a>Services d’emplacement sur Android
@@ -345,7 +345,7 @@ else
 >
 > N’oubliez pas que `GetBestProvider` ne modifie pas le fournisseur de manière dynamique. Au lieu de cela, elle détermine le meilleur fournisseur disponible une fois pendant le cycle de vie de l’activité. Si l’état du fournisseur change après avoir été défini, l’application requiert du code supplémentaire dans les méthodes de `ILocationListener` &ndash; `OnProviderEnabled`, `OnProviderDisabled`et `OnStatusChanged` &ndash; pour gérer toutes les éventualités liées au commutateur du fournisseur.
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Ce guide traite de l’obtention de l’emplacement de l’utilisateur à l’aide du service de localisation Android et du fournisseur de localisation fusible de Google API services de géolocalisation.
 

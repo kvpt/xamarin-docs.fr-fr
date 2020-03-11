@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/22/2018
 ms.openlocfilehash: 21fd8eff64d374e52e64194524a8c096cdf4d90e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73027040"
 ---
 # <a name="what-usb-drivers-do-i-need-to-debug-android-on-windows"></a>Quels pilotes USB sont nécessaires pour déboguer Android sur Windows ?
@@ -22,9 +22,9 @@ Pour déboguer sur un appareil Android lors du développement dans Windows ; vo
 
 D’autres appareils nécessitent des pilotes USB spécifiquement publiés par le fabricant de l’appareil. Certains liens pour les fabricants les plus courants sont inclus dans ce guide : [https://developer.android.com/tools/extras/oem-usb.html](https://developer.android.com/tools/extras/oem-usb.html)
 
-## <a name="alternatives"></a>Alternatives
+## <a name="alternatives"></a>Autres solutions
 
-En fonction du manfacturer, il peut être difficile de détecter le pilote USB exact requis. Certaines alternatives pour tester des applications Android développées dans Windows, notamment l’utilisation d’un émulateur Android ou l’utilisation de services de test externes. Certaines interfaces incluent :
+En fonction du manfacturer, il peut être difficile de détecter le pilote USB exact requis. Certaines alternatives pour tester des applications Android développées dans Windows, notamment l’utilisation d’un émulateur Android ou l’utilisation de services de test externes. entres autres :
 
 - Les services de test-Cloud de [App Center](https://docs.microsoft.com/appcenter/test-cloud/) s’exécutent sur des centaines d’appareils Android réels.
 

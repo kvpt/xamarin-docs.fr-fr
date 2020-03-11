@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 08/21/2018
 ms.openlocfilehash: 043ad02f9ca9148910364ac82917551ee58d72ba
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73027403"
 ---
 # <a name="fragments-walkthrough-ndash-phone"></a>Procédure pas à pas de fragments &ndash; téléphone
@@ -30,11 +30,11 @@ Les classes suivantes vont être créées pour cette application :
 ## <a name="1-create-the-android-project"></a>1. créer le projet Android
 
 Créez un nouveau projet Xamarin. Android appelé **FragmentSample**.
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 [![créer un nouveau projet Xamarin. Android](./walkthrough-images/01-newproject.w157-sml.png)](./walkthrough-images/01-newproject.w157.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 [![de la création d’un projet Xamarin. Android](./walkthrough-images/01-newproject.m742-sml.png)](./walkthrough-images/01-newproject.m742.png#lightbox)
 
@@ -84,11 +84,11 @@ class Shakespeare
 
 Le `PlayQuoteFragment` est un fragment Android qui affiche un guillemet pour une lecture Shakespeare qui a été sélectionnée par l’utilisateur précédemment dans l’application, ce fragment n’utilise pas de fichier de disposition Android. au lieu de cela, il crée dynamiquement son interface utilisateur. Ajoutez une nouvelle classe `Fragment` nommée `PlayQuoteFragment` au projet :
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 [![ajouter une nouvelle C# classe](./walkthrough-images/04-addfragment.w157-sml.png)](./walkthrough-images/02-addclass.w157.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 [![ajouter une nouvelle C# classe](./walkthrough-images/04-addfragment.m742-sml.png)](./walkthrough-images/02-addclass.m742.png#lightbox)
 
@@ -140,11 +140,11 @@ La méthode `OnCreateView` sera appelée par Android lorsqu’il sera temps de r
 
 Les fragments doivent être hébergés dans une activité. cette application nécessite donc une activité qui hébergera les `PlayQuoteFragment`. L’activité ajoutera dynamiquement le fragment à sa disposition au moment de l’exécution. Ajoutez une nouvelle activité à l’application et nommez-la `PlayQuoteActivity`:
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 [![ajouter une activité Android au projet](./walkthrough-images/03-addactivity.w157-sml.png)](./walkthrough-images/03-addactivity.w157.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 [![ajouter une activité Android au projet](./walkthrough-images/03-addactivity.m742-sml.png)](./walkthrough-images/03-addactivity.m742.png#lightbox)
 
@@ -178,11 +178,11 @@ Le `TitlesFragment` sous-classe un fragment spécialisé, connu sous le nom de `
 
 Pour commencer, ajoutez un nouveau fragment au projet et nommez-le **TitlesFragment**:
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 [![ajouter un fragment Android au projet](./walkthrough-images/04-addfragment.w157-sml.png)](./walkthrough-images/04-addfragment.w157.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 [![ajouter un fragment Android au projet](./walkthrough-images/04-addfragment.m742-sml.png)](./walkthrough-images/04-addfragment.m742.png#lightbox)
 

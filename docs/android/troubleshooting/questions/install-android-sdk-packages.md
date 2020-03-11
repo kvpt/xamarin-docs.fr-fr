@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 05/30/2018
 ms.openlocfilehash: 24c70c2e869f59091a1519af6d1165dbea9cc467
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "78291572"
 ---
 # <a name="which-android-sdk-packages-should-i-install"></a>Quels packages Android SDK installer ?
@@ -46,5 +46,5 @@ Vous devez installer les plateformes du kit de développement logiciel pour les 
 
 Ces derniers sont requis uniquement si vous souhaitez utiliser les émulateurs Android prêts à l’emploi de Google. Pour plus d’informations, consultez [configuration de émulateur Android](~/android/get-started/installation/android-emulator/index.md)
 
-## <a name="extras"></a>Extras
+## <a name="extras"></a>Bonus
 Les Android SDK supplémentaires ne sont généralement pas requis. Toutefois, il est utile de les connaître, car ils peuvent être nécessaires en fonction de votre cas d’utilisation.

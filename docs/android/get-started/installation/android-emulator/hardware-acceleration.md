@@ -9,10 +9,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 08/27/2018
 ms.openlocfilehash: a724a21dfffead307ca3d65d5ff134cf2d7c90db
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/07/2020
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "78912449"
 ---
 # <a name="hardware-acceleration-for-emulator-performance-hyper-v--haxm"></a>Accélération matérielle pour les performances de l’émulateur (Hyper-V et HAXM)
@@ -72,7 +72,7 @@ Hyper-V s’exécute sur la plateforme d’hyperviseur Windows. Pour permettre l
 - Dans le BIOS de votre ordinateur, les éléments suivants doivent être activés :
 
   - Technologie de virtualisation (peut avoir une autre appellation selon le fabricant de la carte mère).
-  - Prévention de l’exécution des données matérielle.
+  - Prévention de l’exécution des données appliquée par le matériel.
 
 - Vous devez appliquer à votre ordinateur la mise à jour d’avril 2018 de Windows 10 (build 1803) ou une version ultérieure. Vous pouvez vérifier que votre version de Windows est à jour en effectuant les étapes suivantes :
 
@@ -152,7 +152,7 @@ Les paquets d’installation HAXM pour Windows sont disponibles sur la page [Ges
 
 Quand vous créez un appareil virtuel (consultez [Gestion des appareils virtuels avec Android Device Manager](~/android/get-started/installation/android-emulator/device-manager.md)), veillez à sélectionner une image système **x86**. Si vous utilisez une image système ARM, l’appareil virtuel ne sera pas accéléré et fonctionnera lentement.
 
-## <a name="troubleshooting"></a>Dépannage
+## <a name="troubleshooting"></a>Résolution des problèmes
 
 Pour obtenir de l’aide sur la résolution des problèmes d’accélération matérielle, consultez le guide [Résolution des problèmes](~/android/get-started/installation/android-emulator/troubleshooting.md?tabs=vswin#accel-issues-win) de l’émulateur Android.
 
@@ -241,7 +241,7 @@ Les paquets d’installation HAXM pour macOS sont disponibles sur la page [Gesti
 
    [![Fenêtre Intel Hardware Accelerated Execution Manager Setup](hardware-acceleration-images/mac/01-haxm-installer-sml.png)](hardware-acceleration-images/mac/01-haxm-installer.png#lightbox)
 
-## <a name="troubleshooting"></a>Dépannage
+## <a name="troubleshooting"></a>Résolution des problèmes
 
 Pour obtenir de l’aide sur la résolution des problèmes d’accélération matérielle, consultez le guide [Résolution des problèmes](~/android/get-started/installation/android-emulator/troubleshooting.md?tabs=vsmac#accel-issues-mac) de l’émulateur Android.
 

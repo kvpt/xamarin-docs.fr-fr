@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/12/2017
 ms.openlocfilehash: c32d666da1347b947c55209ed7c7ec31a97a70e0
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73027297"
 ---
 # <a name="providing-backwards-compatibility-with-the-android-support-package"></a>Offre une compatibilité descendante avec le package de support Android
@@ -36,7 +36,7 @@ Une fois ces étapes effectuées, il devient possible d’utiliser des fragments
 
 - **Mettre à jour les espaces de noms** &ndash; les classes qui héritent de `Android.App.Fragment` doivent désormais hériter de `Android.Support.V4.App.Fragment`. Supprimez l’instruction using « `using Android.App;` » en haut du fichier de code source et remplacez-la par « `using Android.Support.V4.App` ». 
 
-- **Utilisez SupportFragmentManager** &ndash; `Android.Support.V4.App.FragmentActivity` expose une propriété `SupportingFragmentManager` qui doit être utilisée pour obtenir une référence au `FragmentManager`. Exemple : 
+- **Utilisez SupportFragmentManager** &ndash; `Android.Support.V4.App.FragmentActivity` expose une propriété `SupportingFragmentManager` qui doit être utilisée pour obtenir une référence au `FragmentManager`. Par exemple : 
 
 ```csharp
 FragmentTransaction fragmentTx = this.SupportingFragmentManager.BeginTransaction();
@@ -47,6 +47,6 @@ fragmentTx.Commit();
 
 Une fois ces modifications en place, il est possible d’exécuter une application basée sur des fragments sur Android 1,6 ou 2. x, ainsi que sur le sandwich de glace et de glace. 
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Bibliothèque de prise en charge Android v4 NuGet](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)

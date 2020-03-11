@@ -6,12 +6,12 @@ ms.assetid: 044FF669-0B81-4186-97A5-148C8B56EE9C
 author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: 5e36a66949c55a85d84cbbb17fa4d276e3af1eee
-ms.sourcegitcommit: acbaedbcb78bb5629d4a32e3b00f11540c93c216
+ms.openlocfilehash: 2dea16633181d6b1120a5f9a90da685df66e5451
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "78292195"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79031013"
 ---
 # <a name="advanced-manual-real-world-example"></a>Exemple réel avancé (manuel)
 
@@ -124,7 +124,10 @@ Done.
 
 Vous remarquerez que nous avons passé un argument `-scope build/Headers` pour objective Sharp. Étant donné que les bibliothèques C et objective-C doivent `#import` ou `#include` d’autres fichiers d’en-tête qui sont des détails d’implémentation de la bibliothèque et non de l’API que vous souhaitez lier, l’argument `-scope` indique à objective d’ignorer toute API qui n’est pas définie dans un fichier quelque part dans le répertoire `-scope`.
 
-Vous trouverez que l’argument `-scope` est souvent facultatif pour les bibliothèques implémentées correctement, mais il n’y a pas de préjudice en le fournissant explicitement.
+Vous trouverez que l’argument `-scope` est souvent facultatif pour les bibliothèques implémentées correctement, mais il n’y a pas de préjudice en le fournissant explicitement. 
+
+> [!TIP]
+> Si les en-têtes de la bibliothèque importent des en-têtes du kit de développement logiciel (SDK) iOS, par exemple `#import <Foundation.h>`, vous devez définir l’étendue. sinon, l’étendue de la création des définitions de liaison pour l’en-tête du kit de développement logiciel (SDK) iOS a été importée, entraînant une énorme liaison qui générera probablement des erreurs lors de la 
 
 En outre, nous avons spécifié `-c -Ibuild/headers`. Tout d’abord, l’argument `-c` indique à objective Sharp d’arrêter l’interprétation des arguments de ligne de commande et de passer tous les arguments suivants _directement au compilateur Clang_. Par conséquent, `-Ibuild/Headers` est un argument du compilateur Clang qui indique à Clang de rechercher les fichiers include sous `build/Headers`, où se trouvent les en-têtes POP. Sans cet argument, Clang ne sait pas où trouver les fichiers que `POP.h` est `#import`. _Presque tous les « problèmes » avec l’utilisation de la précision objective font l’objet_d’un passage à Clang.
 

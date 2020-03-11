@@ -8,18 +8,18 @@ author: davidortinau
 ms.author: daortin
 ms.custom: video
 ms.date: 03/05/2020
-ms.openlocfilehash: 0947f31700310b7da80dfa412c18585962a337ac
-ms.sourcegitcommit: 60d2243809d8e980fca90b9f771e72f8c0e64d71
+ms.openlocfilehash: f0612ca53bc54cf4b15982b7743c64b1997a4455
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/10/2020
-ms.locfileid: "78946295"
+ms.locfileid: "79031078"
 ---
 # <a name="automatic-provisioning-for-xamarinios"></a>Provisionnement automatique pour Xamarin.iOS
 
 _Une fois Xamarin. iOS installé avec succès, l’étape suivante du développement iOS consiste à approvisionner votre appareil iOS. Ce guide explore l’utilisation de l’approvisionnement automatique pour demander des profils et des certificats de développement._
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Configuration requise
 
 L’approvisionnement automatique est disponible sur Visual Studio pour Mac, Visual Studio 2019 et Visual Studio 2017 (version 15,7 et ultérieures). 
 
@@ -101,12 +101,12 @@ Dans certains cas, les droits d’une application nécessitent un ID d’applica
 - Multipath
 - NFC
 - Personal VPN
-- Notifications Push
+- Notifications push
 - Wireless Accessory Configuration
 
 Si votre application utilise l’une de ces habilitations, Visual Studio tente de créer un ID d’application explicite (au lieu d’un caractère générique).
 
-## <a name="troubleshoot"></a>Dépanner 
+## <a name="troubleshoot"></a>Dépannage 
 
 - L’approbation d’un nouveau compte de développeur Apple peut prendre plusieurs heures. Vous ne pouvez pas activer l’approvisionnement automatique tant que le compte n’a pas été approuvé.
 - Si le processus d’approvisionnement automatique échoue avec le message d’erreur `Authentication Service Is Unavailable`, connectez-vous à l' [App Store Connect](https://appstoreconnect.apple.com/) ou à [appleid.Apple.com](https://appleid.apple.com) pour vérifier que vous avez accepté les derniers contrats de service.
@@ -118,9 +118,3 @@ Si votre application utilise l’une de ces habilitations, Visual Studio tente d
 - [Distribution d’une application](~/ios/deploy-test/app-distribution/index.md)
 - [Dépannage](~/ios/deploy-test/troubleshooting.md)
 - [Apple - Guide de distribution d’applications](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html)
-
-## <a name="related-video"></a>Vidéo associée
-
-> [!Video https://channel9.msdn.com/Shows/XamarinShow/Snack-Pack-Simplified-iOS-Provisioning-in-Visual-Studio-with-fastlane/player]
-
-[!include[](~/essentials/includes/xamarin-show-essentials.md)]

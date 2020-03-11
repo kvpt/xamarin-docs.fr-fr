@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/15/2018
 ms.openlocfilehash: 7278fd624bb3147c2e1a1a1a79adde68813a9888
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73020155"
 ---
 # <a name="android-callable-wrappers-for-xamarinandroid"></a>Wrappers Android pouvant être appelés pour Xamarin. Android
@@ -91,7 +91,7 @@ class MyComponentCallbacks : Java.Lang.Object, Android.Content.IComponentCallbac
 }
 ```
 
-## <a name="implementation-details"></a>Détails de l’implémentation
+## <a name="implementation-details"></a>Informations d’implémentation
 
 *Le reste de cette page fournit des détails d’implémentation susceptibles de changer sans préavis* (et est présenté ici uniquement parce que les développeurs seront curieux de savoir ce qui se passe). 
 

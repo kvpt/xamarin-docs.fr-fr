@@ -8,17 +8,17 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
 ms.openlocfilehash: 43061272f3d3486926f38af792ee3b9df0c53670
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73027239"
 ---
 # <a name="kitkat-features"></a>Fonctionnalités de KitKat
 
 _Android 4,4 (KitKat) est chargé avec un multitude de fonctionnalités pour les utilisateurs et les développeurs. Ce guide met en évidence plusieurs de ces fonctionnalités et fournit des exemples de code et des détails d’implémentation pour vous aider à tirer le meilleur parti de KitKat._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Overview
 
 Android 4,4 (niveau d’API 19), également connu sous le nom de « KitKat », a été publié au plus tard le 2013. KitKat offre une variété de nouvelles fonctionnalités et améliorations, notamment :
 
@@ -32,7 +32,7 @@ Android 4,4 (niveau d’API 19), également connu sous le nom de « KitKat »,
 
 Ce guide fournit des conseils pour la migration d’une application Xamarin. Android existante vers KitKat, ainsi qu’une vue d’ensemble de haut niveau de KitKat pour les développeurs Xamarin. Android.
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Configuration requise
 
 Pour développer des applications Xamarin. Android à l’aide de KitKat, *Xamarin. Android 4.11.0* ou version ultérieure et Android 4,4 (niveau d’API 19) sont installés via le gestionnaire de Android SDK, comme illustré dans la capture d’écran suivante :
 
@@ -319,7 +319,7 @@ La capture d’écran ci-dessous montre le thème ci-dessus avec l’État trans
 L’infrastructure d’accès au stockage (SAF) est une nouvelle méthode permettant aux utilisateurs d’interagir avec du contenu stocké, comme des images, des vidéos et des documents. Au lieu de présenter aux utilisateurs une boîte de dialogue permettant de choisir une application pour gérer le contenu, KitKat ouvre une nouvelle interface utilisateur qui permet aux utilisateurs d’accéder à leurs données dans un emplacement d’agrégation. Une fois que le contenu a été choisi, l’utilisateur revient à l’application qui a demandé le contenu, et l’expérience de l’application se poursuit normalement.
 
 Cette modification nécessite deux actions côté développeur : tout d’abord, les applications qui nécessitent du contenu des fournisseurs doivent être mises à jour vers une nouvelle façon de demander du contenu. Deuxièmement, les applications qui écrivent des données dans un `ContentProvider` doivent être modifiées pour utiliser la nouvelle infrastructure. Les deux scénarios dépendent du nouveau [`DocumentsProvider`](xref:Android.Provider.DocumentsProvider)
-API :
+.
 
 #### <a name="documentsprovider"></a>DocumentsProvider
 
@@ -406,7 +406,7 @@ La plupart des appareils fournis avec KitKat téléchargent automatiquement l’
 
 #### <a name="printing-html-content"></a>Imprimer du contenu HTML
 
-KitKat crée automatiquement un [`PrintDocumentAdapter`](xref:Android.Print.PrintDocumentAdapter) pour une vue web avec `WebView.CreatePrintDocumentAdapter`. L’impression de contenu Web est un effort coordonné entre un [`WebViewClient`](xref:Android.Webkit.WebViewClient) qui attend le chargement du contenu HTML et permet à l’activité de faire en sorte que l’option d’impression soit disponible dans le menu options, et l’activité, qui attend que l’utilisateur sélectionne l’option d’impression et que c alls `Print`sur le `PrintManager`. Cette section décrit le programme d’installation de base requis pour imprimer le contenu HTML à l’écran.
+KitKat crée automatiquement un [`PrintDocumentAdapter`](xref:Android.Print.PrintDocumentAdapter) pour une vue web avec `WebView.CreatePrintDocumentAdapter`. L’impression de contenu Web est un effort coordonné entre un [`WebViewClient`](xref:Android.Webkit.WebViewClient) qui attend le chargement du contenu HTML et permet à l’activité de faire en sorte que l’option d’impression soit disponible dans le menu options, et l’activité, qui attend que l’utilisateur sélectionne l’option d’impression et appelle `Print`sur le `PrintManager`. Cette section décrit le programme d’installation de base requis pour imprimer le contenu HTML à l’écran.
 
 Notez que le chargement et l’impression de contenu Web nécessite l’autorisation Internet :
 
@@ -575,7 +575,7 @@ En plus des filtres d’aide, le fichier de ressources XML fournit également un
 La configuration décrite ci-dessus fournit les blocs de construction de base d’une application qui émule une carte NFC. NFC lui-même nécessite plusieurs étapes supplémentaires et des tests supplémentaires pour configurer. Pour plus d’informations sur l’émulation de carte basée sur l’hôte, reportez-vous au [portail de documentation Android](https://developer.android.com/guide/topics/connectivity/nfc/hce.html).
 Pour plus d’informations sur l’utilisation de NFC avec Xamarin, consultez les [exemples XAMARIN NFC](https://github.com/xamarin/monodroid-samples/tree/master/NfcSample).
 
-### <a name="sensors"></a>Sens
+### <a name="sensors"></a>Capteurs
 
 KitKat fournit l’accès aux capteurs de l’appareil par le biais d’un [`SensorManager`](xref:Android.Hardware.SensorManager).
 Le `SensorManager` permet au système d’exploitation de planifier la remise d’informations de capteur à une application par lots, en préservant la durée de vie de la batterie.
@@ -588,7 +588,7 @@ KitKat est également fourni avec deux nouveaux types de capteur pour suivre les
 
 La capture d’écran ci-dessous illustre le compteur de l’étape en action :
 
-[Capture d’écran![de l’application SensorsActivity affichant un compteur d’étapes](kitkat-images/stepcounter.png)](kitkat-images/stepcounter.png#lightbox)
+[Capture d’écran ![de l’application SensorsActivity affichant un compteur d’étapes](kitkat-images/stepcounter.png)](kitkat-images/stepcounter.png#lightbox)
 
 Vous pouvez créer un `SensorManager` en appelant `GetSystemService(SensorService)` et en effectuant un cast du résultat en tant que `SensorManager`. Pour utiliser le compteur Step, appelez `GetDefaultSensor` sur le `SensorManager`. Vous pouvez inscrire le capteur et écouter les modifications apportées au nombre d’étapes à l’aide du [`ISensorEventListener`](xref:Android.Hardware.ISensorEventListener)
 interface, comme illustré par l’exemple de code ci-dessous :
@@ -693,11 +693,11 @@ Outre les modifications décrites ci-dessus, KitKat vous permet d’effectuer le
 
 Pour plus d’informations sur les modifications de l’API ci-dessus, consultez la vue d’ensemble des [API Google Android 4,4](https://developer.android.com/about/versions/android-4.4.html) .
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article a présenté quelques-unes des nouvelles API disponibles dans Android 4,4 (API de niveau 19) et a abordé les meilleures pratiques lors de la transition d’une application vers KitKat. Il a décrit les modifications apportées aux API qui affectent l’expérience utilisateur, y compris l' *infrastructure de transition* et de nouvelles options pour *les thèmes*. Ensuite, il a introduit l' *infrastructure d’accès au stockage* et la classe `DocumentsProvider`, ainsi que les nouvelles API d' *impression*. Il a exploré l' *émulation de carte basée sur l’hôte NFC* et comment travailler avec des *capteurs de faible puissance*, y compris deux nouveaux capteurs pour suivre les étapes de l’utilisateur. Enfin, il a démontré la capture de démonstrations en temps réel des applications avec *l’enregistrement à l’écran*et a fourni une liste détaillée des modifications et ajouts de l’API KitKat.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Exemple KitKat](https://docs.microsoft.com/samples/xamarin/monodroid-samples/kitkat)
 - [API Android 4,4](https://developer.android.com/about/versions/android-4.4.html)

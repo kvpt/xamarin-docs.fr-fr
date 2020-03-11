@@ -9,10 +9,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/21/2018
 ms.openlocfilehash: 4c559a76d7354fd957d065717ef14d91591d1be0
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73019497"
 ---
 # <a name="changes-to-the-android-sdk-tooling"></a>Modifications des outils du kit Android SDK
@@ -66,7 +66,7 @@ Vous pouvez rétrograder votre version de **Android SDK Tools** en installant un
 
 Vous pouvez toujours utiliser l’interface graphique utilisateur d’origine en exécutant le programme **Android** à l’intérieur de votre dossier d' **Outils** à condition que vous soyez sur **Android SDK Tools** version **25.2.5** ou antérieure.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Configuration du kit Android SDK](~/android/get-started/installation/android-sdk.md)
 - [Android Device Manager](~/android/get-started/installation/android-emulator/device-manager.md)

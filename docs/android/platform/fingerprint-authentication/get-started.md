@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 08/17/2018
 ms.openlocfilehash: 746a096f93036e63b29bc917826259f88426cead
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73020279"
 ---
 # <a name="getting-started-with-fingerprint-authentication"></a>Prise en main avec l’authentification par empreinte digitale
@@ -23,13 +23,13 @@ Pour commencer, commençons par aborder la configuration d’un projet Xamarin. 
 
 ## <a name="requesting-permissions-in-the-application-manifest"></a>Demande d’autorisations dans le manifeste de l’application
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Une application Android doit demander l’autorisation `USE_FINGERPRINT` dans le manifeste. La capture d’écran suivante montre comment ajouter cette autorisation à l’application dans Visual Studio :
 
 [![activation de l’utilisation d'\_empreinte digitale dans l’écran du manifeste Android](get-started-images/fingerprint-01-vs.png)](get-started-images/fingerprint-01-vs.png#lightbox) 
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 Une application Android doit demander l’autorisation `USE_FINGERPRINT` dans le manifeste. La capture d’écran suivante montre comment ajouter cette autorisation à l’application dans Visual Studio pour Mac :
 
@@ -107,7 +107,7 @@ La vérification de toutes ces conditions chaque fois que l’application offre 
 
 Pour plus d’informations sur la façon de demander des autorisations dans Android 6,0, consultez le guide Android [demandant des autorisations au moment](https://developer.android.com/training/permissions/requesting.html)de l’exécution.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Contexte](xref:Android.Content.Context)
 - [KeyguardManager](xref:Android.App.KeyguardManager)

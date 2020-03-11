@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2018
 ms.openlocfilehash: 1246eeac63a0ae232396d4c2fd69d8bf516f5e3e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73027004"
 ---
 # <a name="how-do-i-automate-an-android-nunit-test-project"></a>Comment automatiser un projet de test Android NUnit ?
@@ -59,7 +59,7 @@ Les étapes suivantes expliquent ce processus :
 
 2. Implémentez le constructeur `TestInstrumentation` et la méthode `AddTests`. La méthode `AddTests` contrôle les tests qui sont réellement exécutés.
 
-3. Modifiez le fichier `.csproj` pour ajouter **TestInstrumentation.cs**. Exemple :
+3. Modifiez le fichier `.csproj` pour ajouter **TestInstrumentation.cs**. Par exemple :
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>

@@ -8,17 +8,17 @@ author: davidortinau
 ms.author: daortin
 ms.date: 09/25/2017
 ms.openlocfilehash: 04f3720d8684129476c955819390e91330a7800a
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73020656"
 ---
 # <a name="customizing-bindings"></a>Personnalisation des liaisons
 
 _Vous pouvez personnaliser une liaison Xamarin. Android en modifiant les métadonnées qui contrôlent le processus de liaison. Ces modifications manuelles sont souvent nécessaires pour résoudre les erreurs de build et pour mettre en forme l’API résultante afin qu' C#elle soit plus cohérente avec/.net. Ces guides expliquent la structure de ces métadonnées, la façon de modifier les métadonnées et l’utilisation de JavaDoc pour récupérer les noms des paramètres de la méthode._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Overview
 
 Xamarin. Android automatise une grande partie du processus de liaison. Toutefois, dans certains cas, une modification manuelle est nécessaire pour résoudre les problèmes suivants :
 

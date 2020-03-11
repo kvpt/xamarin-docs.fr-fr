@@ -9,17 +9,17 @@ author: davidortinau
 ms.author: daortin
 ms.date: 04/26/2018
 ms.openlocfilehash: b601fc37cc75dcd43c3688de8d302f0a47a06b35
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73027417"
 ---
 # <a name="implementing-fragments---walkthrough"></a>Implémentation de fragments-procédure pas à pas
 
 _Les fragments sont des composants modulaires autonomes qui peuvent aider à gérer la complexité des applications Android qui ciblent des appareils avec une grande variété de tailles d’écran. Cet article explique comment créer et utiliser des fragments lors du développement d’applications Xamarin. Android._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Overview
 
 Dans cette section, vous allez découvrir comment créer et utiliser des fragments dans une application Xamarin. Android. Cette application affiche les titres de plusieurs lectures par William Shakespeare dans une liste. Quand l’utilisateur appuie sur le titre d’une lecture, l’application affiche un guillemet de cette lecture dans une activité distincte :
 
@@ -48,7 +48,7 @@ Cette procédure pas à pas est divisée en deux guides. La [première partie](.
 
 La [deuxième partie de cette procédure pas à pas](./walkthrough-landscape.md) abordera l’ajout d’une disposition alternative (optimisée pour le mode paysage) qui affichera les deux fragments à l’écran. En outre, certaines modifications de code mineures sont apportées au code afin que l’application adapte son comportement au nombre de fragments qui s’affichent simultanément à l’écran.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [FragmentsWalkthrough (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/fragmentswalkthrough)
 - [Vue d’ensemble du concepteur](~/android/user-interface/android-designer/index.md)

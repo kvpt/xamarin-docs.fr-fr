@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
 ms.openlocfilehash: 871058d1c128b37a0f2e77b43587139efb433de1
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "75487774"
 ---
 # <a name="creating-a-cryptoobject"></a>Création d’un CryptoObject
@@ -122,7 +122,7 @@ Une `KeyGenerator` est instanciée à l’aide de la méthode de fabrique `GetIn
 
 Ensuite, une `KeyGenParameterSpec` est créée à l’aide de l' `KeyGenParameterSpec.Builder`. Le `KeyGenParameterSpec.Builder` encapsule les informations suivantes sur la clé qui doit être créée :
 
-- Nom de la clé.
+- Le nom de la clé.
 - La clé doit être valide pour le chiffrement et le déchiffrement.
 - Dans l’exemple de code, le `BLOCK_MODE` est défini sur le _chaînage de blocs de chiffrement_ (`KeyProperties.BlockModeCbc`), ce qui signifie que chaque bloc est XOR avec le bloc précédent (créant des dépendances entre chaque bloc). 
 - Le `CryptoObjectHelper` utilise la norme_PKCS7_( [_Public Key Cryptography standard #7_](https://tools.ietf.org/html/rfc2315) ) pour générer les octets qui détaillent les blocs afin de garantir qu’ils sont tous de la même taille.
@@ -155,14 +155,14 @@ protected void FingerPrintAuthenticationExample()
 
 Maintenant que nous avons vu comment créer un `CryptoObject`, vous pouvez passer à l’utilisation de la `FingerprintManager.AuthenticationCallbacks` pour transférer les résultats du service d’analyseur d’empreintes digitales à une application Android.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Cipher](xref:Javax.Crypto.Cipher)
 - [FingerprintManager.CryptoObject](https://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.CryptoObject.html)
 - [FingerprintManagerCompat.CryptoObject](https://developer.android.com/reference/android/support/v4/hardware/fingerprint/FingerprintManagerCompat.CryptoObject.html)
-- [KeyGenerator](xref:Javax.Crypto.KeyGenerator)
+- [Générateur de régénération](xref:Javax.Crypto.KeyGenerator)
 - [KeyGenParameterSpec](https://developer.android.com/reference/android/security/keystore/KeyGenParameterSpec.html)
-- [KeyGenParameterSpec.Builder](https://developer.android.com/reference/android/security/keystore/KeyGenParameterSpec.Builder.html)
+- [KeyGenParameterSpec. Builder](https://developer.android.com/reference/android/security/keystore/KeyGenParameterSpec.Builder.html)
 - [KeyPermanentlyInvalidatedException](https://developer.android.com/reference/android/security/keystore/KeyPermanentlyInvalidatedException.html)
 - [KeyProperties](https://developer.android.com/reference/android/security/keystore/KeyProperties.html)
 - [AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard)

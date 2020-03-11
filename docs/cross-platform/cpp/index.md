@@ -6,15 +6,15 @@ author: mikeparker104
 ms.author: miparker
 ms.date: 11/07/2019
 ms.openlocfilehash: 42a59570d727657b2f3c23bd9d1f37e1205717d0
-ms.sourcegitcommit: efbc69acf4ea484d8815311b058114379c9db8a2
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73842820"
 ---
 # <a name="use-cc-libraries-with-xamarin"></a>Utiliser C/C++ Libraries avec Xamarin
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Overview
 
 Xamarin permet aux développeurs de créer des applications mobiles natives multiplateformes avec Visual Studio. En général C# , les liaisons sont utilisées pour exposer des composants de plateforme existants aux développeurs. Toutefois, il existe des cas où les applications Xamarin doivent fonctionner avec les codes base existants. Parfois, les équipes n’ont pas le temps, le budget ou les ressources nécessaires pour porter une base de code volumineuse, bien testée et C#hautement optimisée à.
 
@@ -24,7 +24,7 @@ Toutefois, dans certains cas, il y a un désir (ou une exigence) de conserverC++
 
 Ce billet décrit une approche de haut niveau pour ce scénario et vous guide dans un exemple simple.
 
-## <a name="background"></a>Présentation
+## <a name="background"></a>Arrière-plan
 
 C/C++ est considéré comme un langage multiplateforme, mais il est important de veiller à ce que le code source soit effectivement multiplateforme, en utilisant uniquement C/C++ pris en charge par tous les compilateurs cibles et contenant peu ou pas de code spécifique à la plateforme ou au compilateur.
 
@@ -77,7 +77,7 @@ Le référentiel de code source contient une [liste de lectures supplémentaires
 
 Les étapes fournies sont spécifiques à **Visual Studio pour Mac**, mais la structure fonctionne également dans **Visual Studio 2017** .
 
-### <a name="prerequisites"></a>Configuration requise
+### <a name="prerequisites"></a>Composants requis
 
 Pour suivre la procédure, le développeur a besoin des éléments suivants :
 
@@ -189,7 +189,7 @@ Le processus d’ajout des bibliothèques natives à la solution Wrapper varie l
 
 1. **Ctrl + clic** sur le projet **MathFuncs. Android** , puis choisissez **nouveau dossier** dans le menu **Ajouter** attribution de **noms.**
 
-2. Pour chaque **Abi** (interface binaire d’application), appuyez sur **Ctrl + clic** sur le dossier **libs** , puis choisissez **nouveau dossier** dans le menu **Ajouter** , en le nommant après cet **Abi**. Dans ce cas :
+2. Pour chaque **Abi** (interface binaire d’application), appuyez sur **Ctrl + clic** sur le dossier **libs** , puis choisissez **nouveau dossier** dans le menu **Ajouter** , en le nommant après cet **Abi**. Dans ce cas :
 
     - arm64-v8a
     - armeabi-v7a
@@ -480,7 +480,7 @@ Pour que la bibliothèque soit empaquetée et distribuée via NuGet, la solution
 1. **Ctrl + clic** sur la solution **MathFuncs**, puis choisissez **Ajouter un dossier de solution** dans le menu **Ajouter** attribution de nom **SolutionItems**.
 2. **Ctrl + clic** sur le dossier **SolutionItems** , puis choisissez **nouveau fichier...** dans le menu **Ajouter** .
 3. Choisissez **fichier XML vide** dans la fenêtre **nouveau fichier** , nommez-le **MathFuncs. NuSpec** , puis cliquez sur **nouveau**.
-4. Mettez à jour **MathFuncs. NuSpec** avec les métadonnées de package de base à afficher au consommateur **NuGet** . Exemple :
+4. Mettez à jour **MathFuncs. NuSpec** avec les métadonnées de package de base à afficher au consommateur **NuGet** . Par exemple :
 
     ```xml
     <?xml version="1.0"?>
@@ -588,7 +588,7 @@ La forme la plus simple du flux NuGet est un répertoire local :
 
 1. Définissez la **configuration de build** sur **Release**, puis exécutez une génération à l’aide de la **commande + B**.
 2. Ouvrez le **Terminal** et accédez au répertoire contenant le fichier **NuSpec** .
-3. Dans **Terminal**, exécutez la commande du **Pack NuGet** en spécifiant le fichier **NuSpec** , la **version** (par exemple, 1.0.0) et le **outputDirectory** à l’aide du dossier créé à l' [étape précédente](https://docs.microsoft.com/xamarin/cross-platform/cpp/index#creating-a-local-nuget-feed), autrement dit, **local-NuGet-Feed**. Exemple :
+3. Dans **Terminal**, exécutez la commande du **Pack NuGet** en spécifiant le fichier **NuSpec** , la **version** (par exemple, 1.0.0) et le **outputDirectory** à l’aide du dossier créé à l' [étape précédente](https://docs.microsoft.com/xamarin/cross-platform/cpp/index#creating-a-local-nuget-feed), autrement dit, **local-NuGet-Feed**. Par exemple :
 
     ```bash
     nuget pack MathFuncs.nuspec -Version 1.0.0 -OutputDirectory ~/local-nuget-feed
@@ -757,14 +757,14 @@ Désormais, avec une référence au package **MathFuncs** dans chacun des projet
     > [!NOTE]
     > Si vous rencontrez un «*DLLNotFoundException*» lors des tests sur Android ou une erreur de génération sur iOS, veillez à vérifier que l’architecture de l’UC de l’appareil/de l’émulateur/simulateur que vous utilisez est compatible avec le sous-ensemble que nous avons choisi de prendre en charge. 
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article a expliqué comment créer une application Xamarin. Forms qui utilise des bibliothèques natives via un wrapper .NET commun distribué via un package NuGet. L’exemple fourni dans cette procédure pas à pas est intentionnellement très simpliste pour démontrer plus facilement l’approche. Une application réelle devra gérer des complexités telles que la gestion des exceptions, les rappels, le marshaling de types plus complexes et la liaison avec d’autres bibliothèques de dépendances. Un point important à prendre en compte est le processus par lequel C++ l’évolution du code est coordonnée et synchronisée avec les applications du wrapper et du client. Ce processus peut varier selon que l’une ou l’autre de ces préoccupations est la responsabilité d’une seule équipe. Dans les deux cas, l’automatisation est un véritable avantage. Voici quelques ressources qui fournissent des informations supplémentaires sur certains concepts clés, ainsi que les téléchargements correspondants. 
 
 ### <a name="downloads"></a>Téléchargements
 
 - [Outils de ligne de commande NuGet (CLI)](https://docs.microsoft.com/nuget/tools/nuget-exe-cli-reference#macoslinux)
-- [Visual Studio](https://visualstudio.microsoft.com/vs)
+- [Visual Studio](https://visualstudio.microsoft.com/vs)
 
 ### <a name="examples"></a>Exemples
 
@@ -772,6 +772,6 @@ Cet article a expliqué comment créer une application Xamarin. Forms qui utilis
 - [Microsoft pix (C++ et Xamarin)](https://devblogs.microsoft.com/xamarin/microsoft-research-ships-intelligent-apps-with-the-power-of-c-and-ai/)
 - [Port d’exemple San Angeles mono](https://docs.microsoft.com/samples/xamarin/monodroid-samples/sanangeles-ndk/)
 
-### <a name="further-reading"></a>informations supplémentaires
+### <a name="further-reading"></a>Pour aller plus loin
 
 [Articles relatifs au contenu de cette publication](https://github.com/xamcat/mobcat-samples/tree/master/cpp_with_xamarin#wrapping-up)

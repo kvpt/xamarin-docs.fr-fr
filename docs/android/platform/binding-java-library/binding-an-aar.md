@@ -8,17 +8,17 @@ author: davidortinau
 ms.author: daortin
 ms.date: 04/11/2018
 ms.openlocfilehash: 103720c8cb47b1ac4cfe5cfadeb6b18828318ad3
-ms.sourcegitcommit: 5a23c66f81853884480aca666d649a56d68c01cb
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73618546"
 ---
 # <a name="binding-an-aar"></a>Liaison d’un fichier .AAR
 
 _Cette procédure pas à pas fournit des instructions détaillées sur la création d’une bibliothèque de liaisons Java Xamarin. Android à partir d’un Android. Fichier AAR._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Overview
 
 L' *Archive Android (. AAR)* est le format de fichier pour les bibliothèques Android.
 Pièce. Le fichier AAR est un. Archive ZIP qui contient les éléments suivants :
@@ -106,7 +106,7 @@ Avant de commencer à suivre les étapes ci-dessous, téléchargez l’exemple d
 
 ### <a name="using-the-bindings-library"></a>Utilisation de la bibliothèque de liaisons
 
-Pour utiliser ce. DLL dans votre application Xamarin. Android, vous devez d’abord ajouter une référence à la bibliothèque de liaisons. Procédez comme suit :
+Pour utiliser ce. DLL dans votre application Xamarin. Android, vous devez d’abord ajouter une référence à la bibliothèque de liaisons. Utiliser les étapes suivantes :
 
 1. Nous créons cette application dans la même solution que la bibliothèque de liaisons pour simplifier cette procédure pas à pas. (L’application qui utilise la bibliothèque de liaisons peut également résider dans une autre solution.) Créer une application Xamarin. Android : cliquez avec le bouton droit sur la solution et sélectionnez **Ajouter nouveau projet**. Nommez le nouveau projet **BindingTest**:
 
@@ -262,7 +262,7 @@ Pour accéder à une ressource d’image, vous utilisez le nom de la **ressource
 <ImageView android:src="@drawable/image" ... />
 ```
 
-Vous pouvez également accéder aux mises en page des ressources qui résident dans le. AAR. Pour ce faire, vous utilisez le nom **Resource. Layout** pour la disposition compressée à l’intérieur du. AAR. Exemple :
+Vous pouvez également accéder aux mises en page des ressources qui résident dans le. AAR. Pour ce faire, vous utilisez le nom **Resource. Layout** pour la disposition compressée à l’intérieur du. AAR. Par exemple :
 
 ```csharp
 var a = new ArrayAdapter<string>(this, Resource.Layout.row_layout, ...);
@@ -288,14 +288,14 @@ Compilez et exécutez le projet **BindingTest** . L’application démarre et pr
 
 [![BindingTest afficher le nombre de consonnes](binding-an-aar-images/13-count-consonants.png)](binding-an-aar-images/13-count-consonants.png#lightbox)
 
-Félicitations ! Vous avez correctement lié une bibliothèque Java. AAR!
+Félicitations ! Vous avez correctement lié une bibliothèque Java. AAR!
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Dans cette procédure pas à pas, nous avons créé une bibliothèque de liaisons pour un. Fichier AAR, ajout de la bibliothèque de liaisons à une application de test minimale et exécution de l’application pour vérifier C# que notre code peut appeler du code Java résidant dans le. Fichier AAR.
 En outre, nous avons étendu l’application pour accéder et afficher une ressource d’image qui réside dans le. Fichier AAR.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Création d’une bibliothèque de liaisons Java (vidéo)](https://university.xamarin.com/classes#10090)
 - [Liaison d’un fichier .JAR](~/android/platform/binding-java-library/binding-a-jar.md)

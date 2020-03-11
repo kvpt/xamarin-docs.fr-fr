@@ -8,17 +8,17 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
 ms.openlocfilehash: 2ac402bf423c9f3fe136d1ba31622d915d2e2eef
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73027739"
 ---
 # <a name="binding-an-eclipse-library-project"></a>Liaison d’un projet de bibliothèque Eclipse
 
 _Cette procédure pas à pas explique comment utiliser les modèles de projet Xamarin. Android pour lier un projet de bibliothèque Android Eclipse._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Overview
 
 Alors. Les fichiers AAR deviennent de plus en plus la norme pour la distribution de bibliothèque Android. dans certains cas, il est nécessaire de créer une liaison pour un *projet de bibliothèque Android*. Les projets de bibliothèque Android sont des projets Android spéciaux qui contiennent du code partageable et des ressources qui peuvent être référencées par des projets d’application Android. En règle générale, vous créez une liaison à un projet de bibliothèque Android lorsque la bibliothèque est créée dans l’IDE Eclipse.
 Cette procédure pas à pas fournit des exemples de création d’un projet de bibliothèque Android. ZIP à partir de la structure de répertoires d’un projet Eclipse.
@@ -52,6 +52,6 @@ Une fois ces étapes terminées, le projet de liaison Java Xamarin. Android peut
 > [!NOTE]
 > La compilation des projets de bibliothèque Android dans d’autres IDE n’est pas prise en charge pour l’instant. D’autres IDE ne peuvent pas créer la même structure de répertoires ou les mêmes fichiers dans le dossier **bin** que Eclipse. 
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Dans cet article, nous avons parcouru le processus de liaison d’un projet de bibliothèque Android. Nous avons créé le projet de bibliothèque Android dans Eclipse, puis nous avons créé un fichier zip à partir des dossiers **bin** et **res** du projet de bibliothèque Android. Nous avons ensuite utilisé ce fichier zip pour créer un projet de liaison Java Xamarin. Android. 

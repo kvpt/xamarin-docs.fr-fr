@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/23/2016
 ms.openlocfilehash: 61edd0e4b532f18a8fc28502e5bb990703068776
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73027492"
 ---
 # <a name="scanning-for-fingerprints"></a>Analyse des empreintes digitales
@@ -60,7 +60,7 @@ Il peut être nécessaire que l’utilisateur (ou l’application) annule l’an
 
 Maintenant que nous avons vu la méthode `Authenticate`, examinons certains des paramètres les plus importants plus en détail. Tout d’abord, nous allons nous pencher sur les [rappels d’authentification](~/android/platform/fingerprint-authentication/fingerprint-authentication-callbacks.md), qui expliquent comment sous-traiter [FingerprintManager. AuthenticationCallback](https://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.AuthenticationCallback.html), ce qui permet à une application Android de réagir aux résultats fournis par le scanneur d’empreintes digitales.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [CancellationSignal](https://developer.android.com/reference/android/os/CancellationSignal.html)
 - [FingerprintManager. AuthenticationCallback](https://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.AuthenticationCallback.html)

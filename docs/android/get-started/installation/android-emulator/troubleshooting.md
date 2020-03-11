@@ -9,15 +9,15 @@ author: davidortinau
 ms.author: daortin
 ms.date: 08/27/2018
 ms.openlocfilehash: d73c72fa70a22bacf122f5c3957b789914dfd765
-ms.sourcegitcommit: dde593cf9dedf4a056ffef86bcf2fa0640412a4d
-ms.translationtype: HT
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76794826"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78912409"
 ---
 # <a name="android-emulator-troubleshooting"></a>Résolution des problèmes de l’émulateur Android
 
-_Cet article décrit les problèmes et les messages d’avertissement les plus courants qui se produisent durant la configuration et l’exécution de l’émulateur Android. De plus, il décrit les solutions permettant de résoudre ces erreurs, et fournit divers conseils pour vous aider à diagnostiquer les problèmes d’émulateur._
+_Cet article décrit les messages d’avertissement et les problèmes les plus courants qui se produisent lors de la configuration et de l’exécution du Émulateur Android. En outre, il décrit les solutions permettant de résoudre ces erreurs, ainsi que divers conseils de dépannage pour vous aider à diagnostiquer les problèmes de l’émulateur._
 
 ::: zone pivot="windows"
 
@@ -39,7 +39,7 @@ Si vous voyez s’afficher un message d’erreur indiquant l’échec de l’ins
    adb devices
    ```
 
-4. Si l’émulateur est accessible à partir du kit Android SDK, l’émulateur doit apparaître dans la liste des appareils connectés. Exemple :
+4. Si l’émulateur est accessible à partir du kit Android SDK, l’émulateur doit apparaître dans la liste des appareils connectés. Par exemple :
 
    ```shell
    List of devices attached
@@ -70,7 +70,7 @@ Par exemple, cet appareil virtuel inclut Google Play Services et Google Play Sto
 
 <a name="perf-win" />
 
-## <a name="performance-issues"></a>Problèmes de performances
+## <a name="performance-issues"></a>Problèmes de performance
 
 Les problèmes de performances sont généralement causés par l’un des facteurs suivants :
 
@@ -139,7 +139,7 @@ VT feature disabled in BIOS/UEFI
 Pour corriger ce problème, redémarrez le BIOS de l’ordinateur et activez les options suivantes :
 
 - Technologie de virtualisation (peut avoir une autre appellation selon le fabricant de la carte mère).
-- Prévention de l’exécution des données matérielle.
+- Prévention de l’exécution des données appliquée par le matériel.
 
 Si l’accélération matérielle est activée et si le BIOS est configuré de manière appropriée, l’émulateur doit s’exécuter correctement en tirant parti de l’accélération matérielle.
 Toutefois, des problèmes spécifiques à Hyper-V et HAXM peuvent se produire, comme expliqué ci-après.
@@ -375,7 +375,7 @@ Si vous voyez s’afficher un message d’erreur indiquant l’échec de l’ins
    adb devices
    ```
 
-4. Si l’émulateur est accessible à partir du kit Android SDK, l’émulateur doit apparaître dans la liste des appareils connectés. Exemple :
+4. Si l’émulateur est accessible à partir du kit Android SDK, l’émulateur doit apparaître dans la liste des appareils connectés. Par exemple :
 
    ```shell
    List of devices attached
@@ -406,7 +406,7 @@ Par exemple, cet appareil virtuel inclut Google Play Services et Google Play Sto
 
 <a name="perf-mac" />
 
-## <a name="performance-issues"></a>Problèmes de performances
+## <a name="performance-issues"></a>Problèmes de performance
 
 Les problèmes de performances sont généralement causés par l’un des facteurs suivants :
 

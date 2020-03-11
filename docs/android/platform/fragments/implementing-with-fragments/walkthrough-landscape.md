@@ -8,15 +8,15 @@ author: davidortinau
 ms.author: daortin
 ms.date: 04/26/2018
 ms.openlocfilehash: 4d9ef88f39914f8fa5e578577ee9f6977c2bc88e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73020270"
 ---
 # <a name="fragments-walkthrough-ndash-landscape"></a>Procédure pas à pas de fragments &ndash; paysage
 
-La [procédure pas à pas de fragments &ndash; partie 1](./walkthrough.md) montre comment créer et utiliser des fragments dans une application Android qui cible les plus petits écrans sur un téléphone. L’étape suivante de cette procédure pas à pas consiste à modifier l’application pour tirer parti de l’espace horizontal supplémentaire sur la tablette &ndash; il y aura une activité qui sera toujours la liste des lectures (le `TitlesFragment`) et `PlayQuoteFragment` sera ajoutée dynamiquement à l’activité dans r esponse à une sélection effectuée par l’utilisateur :
+La [procédure pas à pas de fragments &ndash; partie 1](./walkthrough.md) montre comment créer et utiliser des fragments dans une application Android qui cible les plus petits écrans sur un téléphone. L’étape suivante de cette procédure pas à pas consiste à modifier l’application pour tirer parti de l’espace horizontal supplémentaire sur la tablette &ndash; il y aura une activité qui sera toujours la liste des lectures (le `TitlesFragment`) et `PlayQuoteFragment` sera ajoutée dynamiquement à l’activité en réponse à une sélection effectuée par l’utilisateur :
 
 [Application ![s’exécutant sur une tablette](./walkthrough-landscape-images/01-tablet-screenshot-sml.png)](./walkthrough-landscape-images/01-tablet-screenshot.png#lightbox)
 
@@ -36,13 +36,13 @@ Les modifications suivantes s’appuient sur le travail effectué dans la [proc�
 
 Lorsque l’activité principale est créée sur un appareil Android, Android détermine la disposition à charger en fonction de l’orientation de l’appareil. Par défaut, Android fournit le fichier de disposition **Resources/layout/activity_main. AXML** . Pour les appareils qui se chargent en mode paysage Android fournissent le fichier de disposition **Resources/layout-Land/activity_main. AXML** . Le guide sur les [ressources Android](/xamarin/android/app-fundamentals/resources-in-android) contient plus de détails sur la façon dont Android décide des fichiers de ressources à charger pour une application.
 
-Créez une autre disposition qui cible l’orientation **paysage** en suivant les étapes décrites dans le guide [autres dispositions](/xamarin/android/user-interface/android-designer/alternative-layout-views) . Vous devez ajouter un nouveau fichier de ressources de disposition au projet, **Resources/layout/activity_main. AXML**:
+Créez une autre disposition qui cible l’orientation **paysage** en suivant les étapes décrites dans le guide [autres dispositions](/xamarin/android/user-interface/android-designer/alternative-layout-views) . Cela doit ajouter un nouveau fichier de ressources de disposition au projet, **Resources/layout/activity_main. AXML**:
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 [![autre disposition dans Explorateur de solutions](./walkthrough-landscape-images/02-alternate-layout.w157-sml.png)](./walkthrough-landscape-images/02-alternate-layout.w157.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 [![autre disposition dans Panneau Solutions](./walkthrough-landscape-images/02-alternate-layout.m743-sml.png)](./walkthrough-landscape-images/02-alternate-layout.m743.png#lightbox)
 

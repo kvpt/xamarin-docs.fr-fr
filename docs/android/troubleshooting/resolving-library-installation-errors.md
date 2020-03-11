@@ -9,17 +9,17 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2018
 ms.openlocfilehash: e99e12aa73374cc8145fad0eb5aad7f3259e0ca2
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "78291505"
 ---
 # <a name="resolving-library-installation-errors"></a>Résolution des erreurs d’installation de la bibliothèque
 
 _Dans certains cas, vous pouvez recevoir des erreurs lors de l’installation des bibliothèques de support Android. Ce guide fournit des solutions de contournement pour certaines erreurs courantes._
 
-## <a name="overview"></a>Vue d’ensemble
+## <a name="overview"></a>Overview
 
 Lors de la génération d’un projet d’application Xamarin. Android, vous pouvez recevoir des erreurs de génération quand Visual Studio ou Visual Studio pour Mac tentent de télécharger et d’installer des bibliothèques de dépendances. La plupart de ces erreurs sont dues à des problèmes de connectivité réseau, à des fichiers endommagés ou à des problèmes de contrôle de version. Ce guide décrit les erreurs d’installation de la bibliothèque de prise en charge la plus courante et fournit les étapes permettant de contourner ces problèmes et de réintégrer le projet d’application.
 

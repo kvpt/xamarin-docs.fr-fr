@@ -9,23 +9,23 @@ author: davidortinau
 ms.author: daortin
 ms.date: 09/07/2018
 ms.openlocfilehash: 0f7499551db7d86d7978b9c3e1f562a2f054c202
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73019531"
 ---
 # <a name="how-do-i-update-the-java-development-kit-jdk-version"></a>Comment mettre à jour la version du kit JDK Java ?
 
 _Cet article explique comment mettre à jour la version du kit de développement Java (JDK) sur Windows et Mac._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Overview
 
 Xamarin. Android utilise le kit de développement Java (JDK) pour s’intégrer au Android SDK pour la création d’applications Android et l’exécution du concepteur Android. Les versions les plus récentes des Android SDK (API 24 et ultérieures) requièrent JDK 8 (1,8). Vous pouvez également installer la version [préliminaire de Microsoft Mobile openjdk](~/android/get-started/installation/openjdk.md). Le OpenJDK Microsoft Mobile va finalement remplacer JDK 8 pour le développement Xamarin. Android.
 
 Pour effectuer une mise à jour vers Microsoft Mobile OpenJDK, consultez la version [préliminaire de Microsoft Mobile openjdk](~/android/get-started/installation/openjdk.md). Pour effectuer une mise à jour vers JDK 8, procédez comme suit :
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. Téléchargez JDK 8 (1,8) à partir du [site Web Oracle](https://www.oracle.com/technetwork/java/javase/downloads/index.html):
 
@@ -45,7 +45,7 @@ Pour effectuer une mise à jour vers Microsoft Mobile OpenJDK, consultez la vers
 
 Veillez à redémarrer Visual Studio après la mise à jour de l’emplacement.
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 1. Téléchargez JDK 8 (1,8) à partir du [site Web Oracle](https://www.oracle.com/technetwork/java/javase/downloads/index.html):
 

@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
 ms.openlocfilehash: 297c7806ce8a880d65c38ef0e4672e41fee5acfe
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "78291900"
 ---
 # <a name="lollipop-features"></a>Fonctionnalités Lollipop
@@ -40,7 +40,7 @@ En plus des améliorations apportées à l’interface utilisateur par le biais 
 
 - Les **nouvelles api** &ndash; Android 5,0 ajoutent de nouvelles API pour la prise en charge de plusieurs réseaux, une connectivité Bluetooth améliorée, une gestion du stockage plus facile et un contrôle plus flexible des lecteurs multimédias et des appareils photo. Une nouvelle fonctionnalité de planification des travaux est disponible pour exécuter des tâches de façon asynchrone à des heures planifiées. Cette fonctionnalité permet d’améliorer la durée de vie de la batterie, par exemple la planification des tâches à effectuer lorsque l’appareil est branché et en cours de chargement.
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Configuration requise
 
 Les éléments suivants sont requis pour utiliser les nouvelles fonctionnalités Android 5,0 dans les applications basées sur Xamarin :
 
@@ -378,7 +378,7 @@ Pour plus d’informations sur la création et le lancement de notifications ave
 
 Outre les nouvelles fonctionnalités de présentation décrites ci-dessus, Android 5,0 ajoute de nouvelles API qui étendent les fonctionnalités des fonctionnalités de connectivité, de stockage et sans fil existantes. En outre, Android 5,0 comprend de nouvelles API qui prennent en charge une nouvelle fonctionnalité de planificateur de travaux.
 
-### <a name="camera"></a>Caméra
+### <a name="camera"></a>Appareil photo
 
 Android 5,0 fournit plusieurs nouvelles API pour les capacités améliorées de l’appareil photo. Le nouvel espace de noms `Android.Hardware.Camera2` comprend des fonctionnalités permettant d’accéder à des appareils photo individuels connectés à un appareil Android. En outre, `Android.Hardware.Camera2` modélise chaque appareil photo comme un pipeline : il accepte une demande de capture, capture l’image, puis génère le résultat. Cette approche permet aux applications d’effectuer la file d’attente de plusieurs demandes de capture sur un appareil photo.
 

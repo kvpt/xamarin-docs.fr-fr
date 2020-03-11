@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/15/2018
 ms.openlocfilehash: 5d243429fe4f61768568a634b205055c1ad94297
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73020248"
 ---
 # <a name="fragments"></a>Fragments
@@ -34,7 +34,7 @@ Par exemple, l’image ci-dessous montre comment une application unique utilise 
 
 Pour aider à coordonner une activité et gérer tous ces fragments, Android a introduit une nouvelle classe appelée *FragmentManager*. Chaque activité possède sa propre instance d’un `FragmentManager` pour l’ajout, la suppression et la recherche de fragments hébergés. Le diagramme suivant illustre la relation entre les fragments et les activités :
 
-[Diagramme de![illustrant les relations entre l’activité, le gestionnaire de fragment et les fragments](images/01.png)](images/01.png#lightbox)
+[Diagramme de ![illustrant les relations entre l’activité, le gestionnaire de fragment et les fragments](images/01.png)](images/01.png#lightbox)
 
 À certains égards, les fragments peuvent être considérés comme des contrôles composites ou comme des mini-activités. Ils regroupent des éléments d’interface utilisateur dans des modules réutilisables qui peuvent ensuite être utilisés indépendamment par les développeurs dans les activités. Un fragment a une hiérarchie d’affichage, comme une activité, mais, contrairement à une activité, il peut être partagé entre les écrans. Les vues diffèrent des fragments dans les fragments qui ont leur propre cycle de vie. les vues ne le font pas.
 
@@ -46,7 +46,7 @@ Ce guide contient une couverture complète de l’utilisation des fragments, not
 - **Gestion des fragments et transactions** : comment manipuler des fragments au moment de l’exécution.
 - **Package de support Android** : comment utiliser les bibliothèques qui permettent l’utilisation de fragments sur des versions antérieures d’Android.
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Configuration requise
 
 Les fragments sont disponibles dans le Android SDK commençant par le niveau d’API 11 (Android 3,0), comme illustré dans la capture d’écran suivante :
 
@@ -58,7 +58,7 @@ Les fragments sont disponibles dans Xamarin. Android 4,0 et versions ultérieure
 
 Il est possible d’utiliser des fragments dans les versions antérieures d’Android en utilisant le package de support Android et Xamarin. Android 4,2 ou une version ultérieure. La procédure à suivre est décrite plus en détail dans les documents de cette section.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Galerie d’abeilles (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/honeycombgallery)
 - [Fragments](https://developer.android.com/guide/topics/fundamentals/fragments.html)

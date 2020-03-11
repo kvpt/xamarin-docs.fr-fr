@@ -8,17 +8,17 @@ author: davidortinau
 ms.author: daortin
 ms.date: 01/18/2017
 ms.openlocfilehash: ecaa02e036c74074b4fa922ea079355b72ff02e2
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73020101"
 ---
 # <a name="java-integration-with-xamarinandroid"></a>Intégration de Java à Xamarin. Android
 
 _L’écosystème Java comprend une collection diversifiée et immense de composants. Un grand nombre de ces composants peuvent être utilisés pour réduire le temps nécessaire au développement d’une application Android. Ce document présente et fournit une vue d’ensemble de la façon dont les développeurs peuvent utiliser ces composants Java existants pour améliorer leur expérience de développement d’applications Xamarin. Android._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Overview
 
 Compte tenu de l’étendue de l’écosystème Java, il est très probable que toutes les fonctionnalités requises pour une application Xamarin. Android aient déjà été codées en Java. Pour cette raison, il est attrayant d’essayer et de réutiliser ces bibliothèques existantes lors de la création d’une application Xamarin. Android.
 
@@ -38,11 +38,11 @@ La deuxième technique, qui utilise JNI, fonctionne à un niveau nettement infé
 
 La troisième technique est radicalement différente des deux précédentes : Portage du code de Java vers C#. Le portage du code d’un langage à un autre peut être un processus très fastidieux, mais il est possible de réduire ce travail à l’aide d’un outil appelé *net*. La netteté est un outil open source qui est un Java-C# to-Converter. 
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Ce document a fourni une vue d’ensemble des différentes façons dont les bibliothèques de Java peuvent être réutilisées dans une application Xamarin. Android. Il a introduit les concepts des liaisons et des wrappers pouvant être appelés et a abordé les options de Portage du code C#Java vers. 
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Architecture](~/android/internals/architecture.md)
 - [Liaison d’une bibliothèque Java](~/android/platform/binding-java-library/index.md)

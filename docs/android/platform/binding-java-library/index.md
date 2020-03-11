@@ -8,17 +8,17 @@ author: davidortinau
 ms.author: daortin
 ms.date: 05/01/2017
 ms.openlocfilehash: d40a23076ec8f405e57ec40de47ec9ad2261d85d
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73027602"
 ---
 # <a name="binding-a-java-library"></a>Liaison d’une bibliothèque Java
 
 _La communauté Android possède de nombreuses bibliothèques Java que vous pouvez utiliser dans votre application. ce guide explique comment incorporer des bibliothèques Java dans votre application Xamarin. Android en créant une bibliothèque de liaisons._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Overview
 
 L’écosystème de bibliothèque tiers pour Android est énorme. Pour cette raison, il est souvent judicieux d’utiliser une bibliothèque Android existante plutôt que d’en créer une nouvelle. Xamarin. Android offre deux façons d’utiliser ces bibliothèques :
 
@@ -103,7 +103,7 @@ La documentation de l’API doit être la Doclet par défaut de Java8, Java7 ou 
 
 Il peut être nécessaire d’inclure une bibliothèque **. so** dans un projet de liaison Xamarin. Android dans le cadre de la liaison d’une bibliothèque Java. Lors de l’exécution du code Java encapsulé, Xamarin. Android ne parvient pas à effectuer l’appel JNI et le message d’erreur _java. lang. UnsatisfiedLinkError : méthode Native introuvable :_ s’affiche dans le logcat pour l’application.
 
-Pour résoudre ce problème, vous devez charger manuellement la bibliothèque **. so** avec un appel à `Java.Lang.JavaSystem.LoadLibrary`. Par exemple, en supposant qu’un projet Xamarin. Android contient une bibliothèque partagée **libpocketsphinx_jni. donc** inclus dans le projet de liaison avec une action de génération **EmbeddedNativeLibrary**, l’extrait de code suivant (exécuté avant l’utilisation de la bibliothèque partagée) chargera la bibliothèque **. so** :
+Pour résoudre ce problème, vous devez charger manuellement la bibliothèque **. so** avec un appel à `Java.Lang.JavaSystem.LoadLibrary`. Par exemple, en supposant qu’un projet Xamarin. Android a une bibliothèque partagée **libpocketsphinx_jni. donc** inclus dans le projet de liaison avec une action de génération **EmbeddedNativeLibrary**, l’extrait de code suivant (exécuté avant d’utiliser la bibliothèque partagée) chargera la bibliothèque **. so** :
 
 ```csharp
 Java.Lang.JavaSystem.LoadLibrary("pocketsphinx_jni");
@@ -137,7 +137,7 @@ Les guides de scénario de liaison suivants peuvent vous aider à lier une bibli
 
 - [Dépannage des liaisons](~/android/platform/binding-java-library/troubleshooting-bindings.md) répertorie les scénarios d’erreur de liaison courants, explique les causes possibles et propose des suggestions pour la résolution de ces erreurs.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Utilisation de JNI](~/android/platform/java-integration/working-with-jni.md)
 - [Métadonnées GAPI](https://www.mono-project.com/docs/gui/gtksharp/gapi/#metadata)

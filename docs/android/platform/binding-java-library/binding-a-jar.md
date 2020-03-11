@@ -8,17 +8,17 @@ author: davidortinau
 ms.author: daortin
 ms.date: 04/11/2018
 ms.openlocfilehash: 59969abae739db1d9035ec31738c39a3912f47ae
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73027777"
 ---
 # <a name="binding-a-jar"></a>Liaison d’un fichier .JAR
 
 _Cette procédure pas à pas fournit des instructions détaillées sur la création d’une bibliothèque de liaisons Java Xamarin. Android à partir d’un Android. Fichier JAR._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Overview
 
 La communauté Android propose de nombreuses bibliothèques Java que vous pouvez utiliser dans votre application. Ces bibliothèques Java sont souvent empaquetées dans. Format JAR (Java Archive), mais vous pouvez empaqueter un. Collez-la dans une *bibliothèque de liaisons Java* afin que ses fonctionnalités soient disponibles pour les applications Xamarin. Android. L’objectif de la bibliothèque de liaisons Java est de rendre les API dans le. Fichier JAR disponible pour C# coder les wrappers de code générés automatiquement.
 
@@ -62,7 +62,7 @@ public class Picasso
 }
 ```
 
-Une fois que nous avons généré une bibliothèque de liaisons pour **Picasso-2. x. x. jar**, nous pouvons appeler C#ces méthodes à partir de. Exemple :
+Une fois que nous avons généré une bibliothèque de liaisons pour **Picasso-2. x. x. jar**, nous pouvons appeler C#ces méthodes à partir de. Par exemple :
 
 ```csharp
 using Com.Squareup.Picasso;
@@ -185,13 +185,13 @@ Compilez et exécutez le projet **BindingTest** . L’application démarre et, a
 
 [Capture d’écran ![de l’exécution de BindingTest](binding-a-jar-images/11-result-sml.png)](binding-a-jar-images/11-result.png#lightbox)
 
-Félicitations ! Vous avez correctement lié une bibliothèque Java. JAR et l’ai utilisé dans votre application Xamarin. Android.
+Félicitations ! Vous avez correctement lié une bibliothèque Java. JAR et l’ai utilisé dans votre application Xamarin. Android.
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Dans cette procédure pas à pas, nous avons créé une bibliothèque de liaisons pour une tierce partie. Fichier JAR, ajout de la bibliothèque de liaisons à une application de test minimale, puis exécution de l’application pour vérifier C# que notre code peut appeler du code Java résidant dans le. Fichier JAR. 
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Création d’une bibliothèque de liaisons Java (vidéo)](https://university.xamarin.com/classes#10090)
 - [Liaison d’une bibliothèque Java](~/android/platform/binding-java-library/index.md)

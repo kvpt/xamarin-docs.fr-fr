@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
 ms.openlocfilehash: 4a4b6ee7a123683a9d5a140c46c0b3542767ffa3
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73027522"
 ---
 # <a name="fingerprint-authentication"></a>Authentification par empreinte digitale
@@ -45,13 +45,13 @@ fingerprintManager.Authenticate(FingerprintManager.CryptoObject crypto,
 
 Ce guide explique comment utiliser les API `FingerprintManager` pour améliorer une application Android avec l’authentification par empreinte digitale. Il explique comment instancier et créer un `CryptoObject` pour sécuriser les résultats à partir du scanneur d’empreintes digitales. Nous allons examiner comment une application doit sous-créer `FingerprintManager.AuthenticationCallback` et répondre aux commentaires du scanneur d’empreintes digitales. Enfin, nous verrons comment inscrire une empreinte digitale sur un appareil ou un émulateur Android et comment utiliser **ADB** pour simuler une analyse d’empreintes digitales.
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Configuration requise
 
 L’authentification par empreinte digitale nécessite Android 6,0 (niveau d’API 23) ou supérieur et un appareil avec un scanneur d’empreintes digitales. 
 
 Une empreinte digitale doit déjà être inscrite auprès de l’appareil pour chaque utilisateur qui doit être authentifié. Cela implique la configuration d’un verrouillage d’écran qui utilise un mot de passe, un code confidentiel, un modèle de balayage ou une reconnaissance faciale. Il est possible de simuler certaines fonctionnalités d’authentification par empreinte digitale dans une Émulateur Android.  Pour plus d’informations sur ces deux rubriques, consultez la section [inscription d’une empreinte digitale](enrolling-fingerprint.md) . 
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Exemple d’application Guide d’empreinte digitale](https://docs.microsoft.com/samples/xamarin/monodroid-samples/fingerprintguide)
 - [Exemple de boîte de dialogue empreinte digitale](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-m-fingerprintdialog)

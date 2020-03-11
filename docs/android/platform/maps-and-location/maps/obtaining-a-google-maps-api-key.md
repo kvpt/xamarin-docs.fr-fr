@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/25/2018
 ms.openlocfilehash: 371876d087c7027d4cfe2d2d9ada8b0dbedb5dd5
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
-ms.translationtype: HT
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "75488970"
 ---
 # <a name="obtaining-a-google-maps-api-key"></a>Obtention d’une clé API Google Maps
@@ -31,7 +31,7 @@ En général, cela signifie que vous devrez déterminer l’empreinte de l’alg
 
 <!-- markdownlint-disable MD001 -->
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Par défaut, le magasin de clés qui est utilisé pour signer les versions Debug d’une application Xamarin. Android se trouve à l’emplacement suivant :
 
@@ -41,7 +41,7 @@ Vous pouvez obtenir des informations sur un magasin de clés en exécutant la co
 
 **C :\\Program Files\\le kit de développement logiciel (Android)\\\\microsoft_dist_openjdk_ [VERSION]\\bin\\keytool. exe**
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 Par défaut, le magasin de clés qui est utilisé pour signer les versions Debug d’une application Xamarin. Android se trouve à l’emplacement suivant :
 
@@ -49,7 +49,7 @@ Par défaut, le magasin de clés qui est utilisé pour signer les versions Debug
 
 Vous pouvez obtenir des informations sur un magasin de clés en exécutant la commande `keytool` du JDK. Cet outil se trouve généralement dans le répertoire bin Java :
 
-**/System/Library/Java/JavaVirtualMachines/[VERSION].jdk/Contents/Home/bin/keytool**
+**/System/Library/Java/JavaVirtualMachines/[VERSION]. JDK/contents/orig/bin/keytool**
 
 -----
 
@@ -63,13 +63,13 @@ keytool -list -v -keystore [STORE FILENAME] -alias [KEY NAME] -storepass [STORE 
 
 Pour la clé de débogage par défaut (qui est automatiquement créée pour le débogage), utilisez la commande suivante :
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 ```cmd
 keytool.exe -list -v -keystore "C:\Users\[USERNAME]\AppData\Local\Xamarin\Mono for Android\debug.keystore" -alias androiddebugkey -storepass android -keypass android
 ```
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 ```bash
 keytool -list -v -keystore /Users/[USERNAME]/.local/share/Xamarin/Mono\ for\ Android/debug.keystore -alias androiddebugkey -storepass android -keypass android
@@ -133,7 +133,7 @@ Une fois le projet d’API de la **console de développement Google** créé, il
 
 1. Dans la page **Maps SDK pour Android** qui s’affiche (après avoir cliqué sur **activer** à l’étape précédente), accédez à l’onglet **informations d’identification** , puis cliquez sur le bouton **créer des informations d’identification** :
 
-   [![message d’informations d’identification du kit de développement logiciel (SDK) Maps pour Android](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs-sml.png)](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs.png#lightbox)
+   [message d’informations d’identification du kit de développement logiciel (SDK) ![Maps pour Android](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs-sml.png)](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs.png#lightbox)
 
 2. Cliquez sur **clé API**:
 
@@ -159,7 +159,7 @@ Une fois le projet d’API de la **console de développement Google** créé, il
 
    [![l’ajout d’une autre empreinte digitale crée un autre certificat SHA-1](obtaining-a-google-maps-api-key-images/11-second-fingerprint-vs-sml.png)](obtaining-a-google-maps-api-key-images/11-second-fingerprint-vs.png#lightbox)
 
-8. Cliquez sur le bouton **Save (Enregistrer)** pour enregistrer vos changements. Ensuite, vous revenez à la liste de vos clés API. Si vous avez d’autres clés API que vous avez créées précédemment, elles sont également répertoriées ici. Dans cet exemple, une seule clé API (créée dans les étapes précédentes) est listée :
+8. Cliquez sur le bouton **Enregistrer** pour enregistrer vos modifications. Ensuite, vous revenez à la liste de vos clés API. Si vous avez d’autres clés API que vous avez créées précédemment, elles sont également répertoriées ici. Dans cet exemple, une seule clé API (créée dans les étapes précédentes) est listée :
 
    [![XamarinMapsDemoKey est affiché dans la liste des clés API](obtaining-a-google-maps-api-key-images/12-list-of-apis-vs-sml.png)](obtaining-a-google-maps-api-key-images/12-list-of-apis-vs.png#lightbox)
 
@@ -192,7 +192,7 @@ Enfin, ajoutez cette clé API au fichier **fichier AndroidManifest. xml** de vot
 </manifest>
 ```
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Console des API Google](https://code.google.com/apis/console/)
 - [Clé de l’API Google Maps](https://developers.google.com/maps/documentation/android/start#the_google_maps_api_key)

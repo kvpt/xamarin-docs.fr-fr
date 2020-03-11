@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/09/2018
 ms.openlocfilehash: b7d69e99327aa3d3e3e1f5e5dbc61697d1fb9b71
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "75489165"
 ---
 # <a name="using-native-libraries"></a>Utilisation de bibliothèques natives
@@ -54,7 +54,7 @@ Pour déboguer du code natif C++ dans votre projet, procédez comme suit :
 
 Les développeurs C++ Visual Studio peuvent voir l’exemple [SanAngeles_NativeDebug](https://docs.microsoft.com/samples/xamarin/monodroid-samples/sanangeles-ndk) pour essayer le débogage C++ à partir de visual studio 2019 ou Visual Studio 2017 avec Xamarin ; Pour plus d’informations, consultez notre [billet de blog](https://blog.xamarin.com/build-and-debug-c-libraries-in-xamarin-android-apps-with-visual-studio-2015/) .
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [SanAngeles_NativeDebug (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/sanangeles-ndk)
 - [Développement d’applications Xamarin Android natives](https://blogs.msdn.microsoft.com/vcblog/2015/02/23/developing-xamarin-android-native-applications/)

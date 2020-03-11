@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/15/2018
 ms.openlocfilehash: 6d83afa47c459633506736b2497a82c444352c90
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/07/2020
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "78912324"
 ---
 # <a name="troubleshooting-tips"></a>Conseils de dépannage
@@ -19,7 +19,7 @@ ms.locfileid: "78912324"
 ## <a name="getting-diagnostic-information"></a>Obtention d’informations de diagnostic
 
 Xamarin. Android présente quelques emplacements à examiner pour le suivi de divers bogues.
-Elles incluent notamment les suivantes :
+notamment :
 
 1. Sortie MSBuild de diagnostic.
 2. Journaux de déploiement de l’appareil.
@@ -36,7 +36,7 @@ Pour activer la sortie MSBuild de diagnostic dans Visual Studio :
 1. Cliquez sur **outils > options...**
 2. Dans l’arborescence de gauche, sélectionnez **projets et Solutions > générer et exécuter**
 3. Dans le volet de droite, définissez la liste déroulante détail de la sortie de génération MSBuild sur diagnostic
-4. Cliquez sur **OK**.
+4. Cliquez sur **OK**
 5. Nettoyez et regénérez votre package.
 6. La sortie de diagnostic est visible dans le panneau sortie.
 
@@ -45,7 +45,7 @@ Pour activer la sortie MSBuild de diagnostic dans Visual Studio pour Mac/OS X :
 1. Cliquez sur **Visual Studio pour Mac > préférences...**
 2. Dans l’arborescence de gauche, sélectionnez **projets > générer**
 3. Dans le volet de droite, définissez la liste déroulante commentaires du journal sur diagnostic
-4. Cliquez sur **OK**.
+4. Cliquez sur **OK**
 5. Redémarrer Visual Studio pour Mac
 6. Nettoyez et regénérez votre package.
 7. La sortie de diagnostic est visible dans le bloc d’erreurs (**affichez > > Erreurs** ) en cliquant sur le bouton sortie de la génération.

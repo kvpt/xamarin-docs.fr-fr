@@ -9,23 +9,23 @@ author: davidortinau
 ms.author: daortin
 ms.date: 08/29/2018
 ms.openlocfilehash: 2ea7c9b9f900bc339d183c2f5b317792ebec5232
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73026834"
 ---
 # <a name="xamarinandroid-and-java-development-kit-9-or-later"></a>Xamarin. Android et Java Development Kit 9 ou version ultérieure
 
 _Cet article explique comment résoudre les erreurs du kit de développement Java (JDK) 9 ou versions ultérieures dans Xamarin. Android._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Overview
 
 Xamarin. Android utilise le kit de développement Java (JDK) pour s’intégrer au Android SDK pour la création d’applications Android et l’exécution du concepteur Android. Les versions les plus récentes des Android SDK (API 24 et ultérieures) requièrent JDK 8 (1,8) ou la version préliminaire de Microsoft Mobile OpenJDK. **Étant donné que les outils de Android SDK disponibles à partir de Google ne sont pas encore compatibles avec JDK 9, Xamarin. Android ne fonctionne pas avec JDK 9 ou version ultérieure.**
 
 ## <a name="jdk-errors"></a>Erreurs JDK
 
-Si vous essayez de générer un projet Xamarin. Android avec une version du JDK ultérieure à JDK 8, vous obtiendrez une erreur explicite indiquant que cette version de JDK n’est pas prise en charge. Exemple :
+Si vous essayez de générer un projet Xamarin. Android avec une version du JDK ultérieure à JDK 8, vous obtiendrez une erreur explicite indiquant que cette version de JDK n’est pas prise en charge. Par exemple :
 
 ```shell
 Building with JDK Version `9.0.4` is not supported. Please install JDK version `1.8.0`. See https://aka.ms/xamarin/jdk9-errors

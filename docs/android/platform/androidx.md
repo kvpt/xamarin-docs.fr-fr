@@ -6,10 +6,10 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 02/20/2020
 ms.openlocfilehash: ad6ea2f68fc01183f7ed42e85094f6be5fb3d9f9
-ms.sourcegitcommit: 2836f2003a5b745b042ee6003a3d6a11b9139e44
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/26/2020
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "78291640"
 ---
 # <a name="androidx-with-xamarin"></a>AndroidX avec Xamarin
@@ -26,7 +26,7 @@ AndroidX comprend les fonctionnalités suivantes :
 
 ![Logo AndroidX](~/android/platform/androidx-images/AndroidXLogo.png)
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Configuration requise
 
 La liste suivante est requise pour utiliser les fonctionnalités AndroidX dans les applications basées sur Xamarin :
 
@@ -35,7 +35,7 @@ La liste suivante est requise pour utiliser les fonctionnalités AndroidX dans l
 - **Kit** de développement Java-le développement Xamarin. Android 10,0 requiert JDK 8. La distribution de Microsoft OpenJDK est automatiquement installée dans le cadre de Visual Studio.
 - **Android SDK** -Android SDK l’API 28 ou une version ultérieure doit être installée via le gestionnaire de Android SDK.
 
-## <a name="get-started"></a>Bien démarrer
+## <a name="get-started"></a>Prise en main
 
 Vous pouvez commencer à utiliser AndroidX en incluant n’importe quel [package NuGet AndroidX](https://www.nuget.org/packages?q=Tags%3A%22AndroidX%22+Authors%3A%22Microsoft%22) à l’intérieur de votre projet Android. En savoir plus sur l’installation et l’utilisation d’un package dans [Visual Studio](https://docs.microsoft.com/nuget/quickstart/install-and-use-a-package-in-visual-studio) ou [Visual Studio pour Mac](https://docs.microsoft.com/nuget/quickstart/install-and-use-a-package-in-visual-studio-mac)
 
@@ -77,7 +77,7 @@ Cliquez avec le bouton droit sur votre projet et **migrez vers AndroidX**.
 2. Si votre application comprend **des dépendances qui n’ont pas été migrées vers l’espace de noms AndroidX**, vous devez utiliser la [bibliothèque de prise en charge Android pour AndroidX le package de migration.](https://www.nuget.org/packages/Xamarin.AndroidX.Migration)
 3. Si votre application **n’inclut pas de dépendances nécessitant une migration d’espace de noms AndroidX**, vous pouvez utiliser les [bibliothèques AndroidX sur NuGet dès aujourd’hui](https://www.nuget.org/packages?q=Tags%3A%22AndroidX%22+Authors%3A%22Microsoft%22).
 
-## <a name="troubleshooting"></a>Dépannage
+## <a name="troubleshooting"></a>Résolution des problèmes
 
 - Certains packages d’architecture dans AndroidX sont en conflit avec les versions de la bibliothèque de prise en charge. Pour résoudre ce problème, vous devez utiliser la version AndroidX de ces packages et supprimer la version de la bibliothèque de prise en charge. Par exemple, si vous référencez `Xamarin.Android.Arch.Work.Runtime` dans votre projet, il sera en conflit avec les types du package d' `AndroidX.Work` que vous venez d’ajouter.
 

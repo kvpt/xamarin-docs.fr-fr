@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 07/23/2018
 ms.openlocfilehash: 96b0d6a00c7825939b1f89ed63e3e5559ca4ef59
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73020483"
 ---
 # <a name="external-storage"></a>Stockage externe
@@ -50,7 +50,7 @@ Ce document fait référence au répertoire de stockage pour les fichiers privé
 
 Le paramètre de `GetExternalFilesDir()` est une chaîne qui spécifie un _répertoire d’application_. Il s’agit d’un répertoire destiné à fournir un emplacement standard pour une organisation logique de fichiers. Les valeurs de chaîne sont disponibles par le biais des constantes de la classe `Android.OS.Environment` :
 
-| `Android.OS.Environment` | Répertoire |
+| `Android.OS.Environment` | Annuaire |
 |-|-|
 | DirectoryAlarms | **/Alarms _\_privé\_stockage externe_** |
 | DirectoryDcim | **/DCIM _\_privé\_stockage externe_** |
@@ -137,13 +137,13 @@ Toutes les applications Android doivent déclarer l’une des deux autorisations
 > [!NOTE]
 > Si l’utilisateur accorde `WRITE_EXTERNAL_STORAGE`, `READ_EXTERNAL_STORAGE` est également accordé implicitement. Il n’est pas nécessaire de demander les deux autorisations dans **fichier AndroidManifest. xml**.
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Les autorisations peuvent également être ajoutées à l’aide de l’onglet **manifeste Android** des propriétés de la **solution**:
 
 ![Explorateur de solutions-autorisations requises pour Visual Studio](./images/required-permissions.w157.png)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 Les autorisations peuvent également être ajoutées à l’aide de l’onglet **manifeste Android** du panneau Propriétés de la **solution**:
 
@@ -169,13 +169,13 @@ $ adb shell pm revoke com.companyname.app android.permission.WRITE_EXTERNAL_STOR
 
 ## <a name="deleting-files"></a>Suppression de fichiers
 
-Toutes les API standard C# peuvent être utilisées pour supprimer un fichier du stockage externe, par exemple [`System.IO.File.Delete`](xref:System.IO.File.Delete*). Il est également possible d’utiliser les API Java au détriment de la portabilité du code. Exemple :
+Toutes les API standard C# peuvent être utilisées pour supprimer un fichier du stockage externe, par exemple [`System.IO.File.Delete`](xref:System.IO.File.Delete*). Il est également possible d’utiliser les API Java au détriment de la portabilité du code. Par exemple :
 
 ```csharp
 System.IO.File.Delete("/storage/emulated/0/Android/data/com.companyname.app/files/count.txt");
 ```
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 * [Exemple de fichiers locaux Xamarin. Android sur **monodroid-Samples**](https://github.com/xamarin/monodroid-samples/tree/master/LocalFiles)
 * [Autorisations dans Xamarin. Android](~/android/app-fundamentals/permissions.md)

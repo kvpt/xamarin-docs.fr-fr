@@ -8,17 +8,17 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/09/2018
 ms.openlocfilehash: 25a5d79084f7caa78eec4011c047bd19a63ef748
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "75487787"
 ---
 # <a name="java-bindings-metadata"></a>Métadonnées de liaisons Java
 
 _C#le code dans Xamarin. Android appelle des bibliothèques Java via des liaisons, qui sont un mécanisme qui soustrait les détails de bas niveau qui sont spécifiés dans JNI (Java Native Interface). Xamarin. Android fournit un outil qui génère ces liaisons. Cet outil permet au développeur de contrôler la façon dont une liaison est créée à l’aide de métadonnées, ce qui permet des procédures telles que la modification des espaces de noms et le changement de nom des membres. Ce document décrit le fonctionnement des métadonnées, résume les attributs pris en charge par les métadonnées et explique comment résoudre les problèmes de liaison en modifiant ces métadonnées._
 
-## <a name="overview"></a>Vue d'ensemble de
+## <a name="overview"></a>Overview
 
 Une **bibliothèque de liaisons Java** Xamarin. Android tente d’automatiser une grande partie du travail nécessaire à la liaison d’une bibliothèque Android existante avec l’aide d’un outil parfois appelé _Générateur de liaisons_. Lors de la liaison d’une bibliothèque Java, Xamarin. Android inspecte les classes Java et génère une liste de tous les packages, types et membres à lier. Cette liste d’API est stockée dans un fichier XML qui se trouve dans **\{répertoire du projet} \obj\Release\api.xml** pour une version **Release** et dans **\{répertoire du projet} \obj\Debug\api.xml** pour une version **Debug** .
 
@@ -269,7 +269,7 @@ Un cas particulier d’utilisation d' `propertyName` implique la situation dans 
 
 Notez que les méthodes setter et getter seront toujours créées par le générateur de liaisons.
 
-### <a name="sender"></a>sender
+### <a name="sender"></a>expéditeur
 
 Spécifie le paramètre d’une méthode qui doit être le paramètre `sender` lorsque la méthode est mappée à un événement. La valeur peut être `true` ou `false`. Par exemple :
 
@@ -332,11 +332,11 @@ Une fois toutes ces modifications en place, vous pouvez utiliser le code suivant
 realReachSettings.MeasurementUnit = SKMeasurementUnit.Second;
 ```
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article a expliqué comment Xamarin. Android utilise des métadonnées pour transformer une définition d’API à partir du format *Google* *AOSP*. Après avoir couvert les modifications possibles à l’aide de *Metadata. xml*, elle a examiné les limitations rencontrées lors du changement de nom des membres et a présenté la liste des attributs XML pris en charge, décrivant le moment où chaque attribut doit être utilisé.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Utilisation de JNI](~/android/platform/java-integration/working-with-jni.md)
 - [Liaison d’une bibliothèque Java](~/android/platform/binding-java-library/index.md)

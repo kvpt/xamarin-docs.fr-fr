@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 09/07/2018
 ms.openlocfilehash: adcfb1457742d343f87a602885566107cf327e2d
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73027149"
 ---
 # <a name="using-the-google-maps-api-in-your-application"></a>Utilisation de l’API Google Maps dans votre application
@@ -171,7 +171,7 @@ Chacun de ces conteneurs expose une propriété `Map` qui retourne une instance 
 
 La capture d’écran suivante est un exemple de `MapFragment`simple :
 
-[Capture d’écran![d’un appareil affichant un fragment Google Map](maps-api-images/image05-sml.png)](maps-api-images/image05.png#lightbox)
+[Capture d’écran ![d’un appareil affichant un fragment Google Map](maps-api-images/image05-sml.png)](maps-api-images/image05.png#lightbox)
 
 À l’instar des autres classes de fragments, il existe deux façons d’ajouter une `MapFragment` à une activité :
 
@@ -239,7 +239,7 @@ Il existe cinq types différents de cartes disponibles à partir de l’API Goog
 
 L’image ci-dessous montre trois des différents types de cartes, de gauche à droite (normal, hybride, terrain) :
 
-[captures d’écran![trois exemples de cartes : normale, hybride et terrain](maps-api-images/map-types-sml.png)](maps-api-images/map-types.png#lightbox)
+[captures d’écran ![trois exemples de cartes : normale, hybride et terrain](maps-api-images/map-types-sml.png)](maps-api-images/map-types.png#lightbox)
 
 La propriété `GoogleMap.MapType` est utilisée pour définir ou modifier le type de carte à afficher. L’extrait de code suivant montre comment afficher une carte satellite.
 
@@ -450,7 +450,7 @@ rectOptions.Add(new LatLng(37.35, -122.0)); // close the polyline - this makes a
 googleMap.AddPolyline(rectOptions);
 ```
 
-##### <a name="circles"></a>Still
+##### <a name="circles"></a>Cercles
 
 Pour créer des cercles, vous devez d’abord instancier un objet [CircleOption](https://developers.google.com/android/reference/com/google/android/gms/maps/model/CircleOptions) qui spécifie le centre et le rayon du cercle, en mètres. Le cercle est dessiné sur la carte en appelant [googlemap. AddCircle](https://developers.google.com/android/reference/com/google/android/gms/maps/GoogleMap.html#addCircle(com.google.android.gms.maps.model.CircleOptions)).
 L’extrait de code suivant montre comment dessiner un cercle :
@@ -562,7 +562,7 @@ private void MapOnInfoWindowClick (object sender, GoogleMap.InfoWindowClickEvent
 
 Rappelez-vous qu’une fenêtre d’informations est une `View` statique qui est rendue sous la forme d’une image sur la carte. Les widgets, tels que les boutons, les cases à cocher ou les affichages de texte placés à l’intérieur de la fenêtre d’informations sont inertes et ne peuvent pas répondre à l’un de leurs événements d’utilisateur intégral.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [SimpleMapDemo](https://github.com/xamarin/monodroid-samples/tree/master/MapsAndLocationDemo_v3/SimpleMapDemo)
 - [Google Play Services](https://developers.google.com/android/guides/overview)

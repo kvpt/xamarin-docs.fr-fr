@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
 ms.openlocfilehash: af90c286d2bb960a9f78547dd15c3d98a69529ae
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "75487826"
 ---
 # <a name="app-linking-in-android"></a>Liaison d’applications dans Android
@@ -36,7 +36,7 @@ Si l’utilisateur n’a pas d’applications installées qui prennent en charge
 
 Ce guide explique comment configurer une application Android 6,0 et comment créer et publier le fichier de liens de ressources numériques pour prendre en charge la liaison d’applications dans Android 6,0.
 
-## <a name="requirements"></a>Configuration requise pour
+## <a name="requirements"></a>Configuration requise
 
 Ce guide requiert Xamarin. Android 6,1 et une application qui cible Android 6,0 (niveau d’API 23) ou version ultérieure.
 
@@ -167,7 +167,7 @@ Deux tests peuvent être effectués pour s’assurer que les filtres d’intenti
         -d "http://<domain1>/recipe/scalloped-potato"
     ```
 
-2. Affichez les stratégies de gestion des liens existantes pour les applications installées sur un appareil donné. La commande suivante permet de vider une liste de stratégies de liaison pour chaque utilisateur sur l’appareil avec les informations suivantes. À l'invite de commandes, tapez la commande suivante :
+2. Affichez les stratégies de gestion des liens existantes pour les applications installées sur un appareil donné. La commande suivante permet de vider une liste de stratégies de liaison pour chaque utilisateur sur l’appareil avec les informations suivantes. À l’invite de commandes, tapez la commande suivante :
 
     ```shell
     $ adb shell dumpsys package domain-preferred-apps
@@ -188,11 +188,11 @@ Deux tests peuvent être effectués pour s’assurer que les filtres d’intenti
     Status: always : 200000002
     ```
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Ce guide a abordé le fonctionnement de la liaison d’application dans Android 6,0. Il a ensuite abordé la configuration d’une application Android 6,0 pour prendre en charge les liens d’application et y répondre. Elle a également expliqué comment tester la liaison d’application dans une application Android.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Recherche de la signature MD5 ou SHA1 de votre magasin de clés](~/android/deploy-test/signing/keystore-signature.md)
 - [AppLinks](https://developers.facebook.com/docs/applinks)

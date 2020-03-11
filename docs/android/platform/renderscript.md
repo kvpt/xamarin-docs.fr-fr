@@ -8,17 +8,17 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/06/2018
 ms.openlocfilehash: 884b69b0cdecf4f979cec314b6440974c5bac97d
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73019794"
 ---
 # <a name="an-introduction-to-renderscript"></a>Présentation de RenderScript
 
 _Ce guide présente RenderScript et explique comment utiliser l’API RenderScript intrinsèque dans une application Xamarin. Android qui cible le niveau d’API 17 ou une version ultérieure._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Overview
 
 RenderScript est une infrastructure de programmation créée par Google dans le but d’améliorer les performances des applications Android qui nécessitent des ressources de calcul étendues. Il s’agit d’une API de niveau faible et hautes performances basée sur [C99](https://en.wikipedia.org/wiki/C99). Étant donné qu’il s’agit d’une API de bas niveau qui s’exécute sur des UC, des GPU ou des DSP, RenderScript est bien adapté aux applications Android qui peuvent avoir besoin d’effectuer les opérations suivantes :
 
@@ -49,7 +49,7 @@ Il existe trois concepts importants pour l’utilisation de Renderscripts dans u
 3. La **mémoire Allouée** &ndash; données sont transmises vers et à partir d’un noyau via une _[allocation](xref:Android.Renderscripts.Allocation)_ . Un noyau peut avoir une seule entrée et/ou une allocation de sortie.
 
 L’espace de noms [Android. Renderscripts](xref:Android.Renderscripts) contient les classes permettant d’interagir avec le runtime RenderScript. En particulier, la classe [`Renderscript`](xref:Android.Renderscripts.RenderScript) gère le cycle de vie et les ressources du moteur RenderScript. L’application Android doit initialiser un ou plusieurs [`Android.Renderscripts.Allocation`](xref:Android.Renderscripts.Allocation)
-objets. Une allocation est une API managée chargée de l’allocation et de l’accès à la mémoire partagée entre l’application Android et le runtime RenderScript. En règle générale, une allocation est créée pour l’entrée, et éventuellement une autre allocation est créée pour contenir la sortie du noyau. Le moteur d’exécution RenderScript et les classes wrapper managées associées gèrent l’accès à la mémoire détenue par les allocations. il n’est donc pas nécessaire qu’un développeur d’applications Android effectue des tâches supplémentaires.
+. Une allocation est une API managée chargée de l’allocation et de l’accès à la mémoire partagée entre l’application Android et le runtime RenderScript. En règle générale, une allocation est créée pour l’entrée, et éventuellement une autre allocation est créée pour contenir la sortie du noyau. Le moteur d’exécution RenderScript et les classes wrapper managées associées gèrent l’accès à la mémoire détenue par les allocations. il n’est donc pas nécessaire qu’un développeur d’applications Android effectue des tâches supplémentaires.
 
 Une allocation contient un ou plusieurs [Android. Renderscripts. Elements](xref:Android.Renderscripts.Element).
 Les éléments sont un type spécialisé qui décrivent les données dans chaque allocation.
@@ -71,7 +71,7 @@ Tous les noyaux RenderScript seront encapsulés par un type qui est un descendan
 
 Parmi ces deux types, seul le `StringIntrinsic` est pris en charge par Xamarin. Android. Ce guide explique comment utiliser des scripts intrinsèques dans une application Xamarin. Android.
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Configuration requise
 
 Ce guide concerne les applications Xamarin. Android qui ciblent le niveau d’API 17 ou une version ultérieure. L’utilisation de _scripts utilisateur_ n’est pas abordée dans ce guide.
 
@@ -149,11 +149,11 @@ blurScript.ForEach(outputAllocation);
 
 Vous souhaiterez peut-être consulter la recette [d’une image avec RenderScript](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/drawing/blur_an_image_with_renderscript) , c’est un exemple complet d’utilisation d’un script intrinsèque dans Xamarin. Android.
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Ce guide a introduit RenderScript et comment l’utiliser dans une application Xamarin. Android. Il a brièvement abordé les RenderScript et la façon dont il fonctionne dans une application Android. Il a décrit certains des composants clés de RenderScript et la différence entre les _scripts utilisateur_ et les _scripts intrinsèques_. Enfin, ce guide a présenté les étapes de l’utilisation d’un script intrinsèque dans une application Xamarin. Android.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Espace de noms Android. Renderscripts](xref:Android.Renderscripts)
 - [Brouiller une image avec RenderScript](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/drawing/blur_an_image_with_renderscript)

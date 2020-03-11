@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
 ms.openlocfilehash: 9e36189c771ed0c91a6030fd0ab615ab9af4dd52
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73026713"
 ---
 # <a name="what-version-of-xamarinandroid-added-lollipop-support"></a>Quelle version de Xamarin.Android ajoutait la prise en charge de Lollipop ?
@@ -26,7 +26,7 @@ Xamarin prend uniquement en charge la version stable actuelle des outils Xamarin
 
 ## <a name="missing-androidjar-for-api-level-21-in-android-l-preview"></a>« Android. jar manquant pour le niveau d’API 21 » dans Android L preview
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Le message d’erreur suivant (ou similaire) peut s’afficher :
 
@@ -47,9 +47,9 @@ Il existe quelques solutions de contournement pour ce problème :
 3. Revenir temporairement à la version préliminaire du niveau d’API Android 21 « L » (1) :
 
     1. Supprimer les **plateformes\\android\\Android-SDK de% LocalAppData%\\\\Android-21** 
-    2. Extrayez [1] dans **C :\\utilisateurs\\&lt;nom d’utilisateur&gt;\\AppData\\les plateformes\\android\\Android-SDK** pour créer un dossier **Android-L** .
+    2. Extrayez [1] dans **C :\\utilisateurs\\&lt;nom d’utilisateur&gt;\\AppData\\les plateformes\\android\\Android-SDK** pour créer un dossier **Android-L** .\\
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 Le message d’erreur suivant (ou similaire) peut s’afficher :
 

@@ -8,15 +8,15 @@ author: davidortinau
 ms.author: daortin
 ms.date: 11/16/2017
 ms.openlocfilehash: 8685be4bb1cc45ff04dc8d9f7d8e64e7b1483b60
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73027022"
 ---
 # <a name="where-can-i-set-my-android-sdk-locations"></a>Où définir les emplacements de mon kit Android SDK ?
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Dans Visual Studio, accédez à **outils > Options > les paramètres Xamarin > Android** pour afficher et définir l’emplacement du Android SDK :
 
@@ -39,13 +39,13 @@ L’emplacement par défaut de chaque chemin d’accès est le suivant :
 Notez que le numéro de version du NDK peut varier. Par exemple, au lieu d' **Android-NDK-R13b**, il peut s’agir d’une version antérieure telle qu' **Android-NDK-r10e**.
 
 Pour définir l’emplacement du Android SDK, entrez le chemin d’accès complet du répertoire de Android SDK dans la zone **emplacement du Android SDK** . Vous pouvez accéder à l’emplacement de Android SDK dans l’Explorateur de fichiers, copier le chemin d’accès à partir de la barre d’adresses et coller ce chemin dans la zone **emplacement du Android SDK** .
-Par exemple, si votre Android SDK emplacement est **C :\\utilisateurs\\nom d’utilisateur\\AppData\\Local\\Android\\SDK**, effacez l’ancien chemin d’accès dans la zone **emplacement du Android SDK** , collez ce chemin , puis cliquez sur **OK**.
+Par exemple, si votre Android SDK emplacement est **C :\\utilisateurs\\nom d’utilisateur\\AppData\\Local\\Android\\SDK**, effacez l’ancien chemin d’accès dans la zone **emplacement du Android SDK** , collez ce chemin d’accès, puis cliquez sur **OK**.
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 Dans Visual Studio pour Mac, accédez à **préférences > projets > emplacements du kit de développement logiciel (SDK) > Android**. Dans la page **Android** , cliquez sur l’onglet **locations** pour afficher et définir l’emplacement du kit de développement logiciel (SDK) :
 
-[onglet exemples d’emplacements de![dans préférences](android-sdk-location-images/mac/01-locations-sml.png)](android-sdk-location-images/mac/01-locations.png#lightbox)
+[onglet exemples d’emplacements de ![dans préférences](android-sdk-location-images/mac/01-locations-sml.png)](android-sdk-location-images/mac/01-locations.png#lightbox)
 
 L’emplacement par défaut de chaque chemin d’accès est le suivant :
 

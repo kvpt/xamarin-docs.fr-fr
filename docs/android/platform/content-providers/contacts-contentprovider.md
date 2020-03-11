@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 01/22/2018
 ms.openlocfilehash: fca57b7af34ae2b28dda9bf20a95183138cbc641
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73020542"
 ---
 # <a name="using-the-contacts-contentprovider"></a>Utilisation du ContentProvider des contacts
@@ -195,6 +195,6 @@ listView.Adapter = adapter;
 
 Reportez-vous aux [ListViews et aux adaptateurs](~/android/user-interface/layouts/list-view/index.md) pour plus d’informations sur l’implémentation de `SimpleCursorAdapter`.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Démonstration ContactsAdapter (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/platformfeatures-contactsadapterdemo)

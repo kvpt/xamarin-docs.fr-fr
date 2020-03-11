@@ -8,17 +8,17 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
 ms.openlocfilehash: 0c273797d7512f062260e49e0f71fdd1132f037b
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "78291973"
 ---
 # <a name="troubleshooting-bindings"></a>Résolution des problèmes de liaisons
 
 _Cet article résume les erreurs de serveur courantes qui peuvent se produire lors de la génération de liaisons, ainsi que les causes possibles et les méthodes suggérées pour les résoudre._
 
-## <a name="overview"></a>Vue d’ensemble
+## <a name="overview"></a>Overview
 
 La liaison d’une bibliothèque Android (un fichier **. AAR** ou **. jar**) est rarement une affaire simple. elle nécessite généralement des efforts supplémentaires pour atténuer les problèmes qui résultent des différences entre Java et .NET.
 Ces problèmes empêchent Xamarin. Android de lier la bibliothèque Android et de se présenter comme des messages d’erreur dans le journal de génération. Ce guide propose des conseils pour résoudre les problèmes, répertorie certains des problèmes/scénarios les plus courants et fournit des solutions possibles pour réussir à lier la bibliothèque Android.

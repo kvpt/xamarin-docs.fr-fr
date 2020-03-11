@@ -8,17 +8,17 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/05/2018
 ms.openlocfilehash: 280fe11f935db0a364f3342b22bb9544cdda1e6d
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73020243"
 ---
 # <a name="firebase-job-dispatcher"></a>Répartiteur de travail Firebase
 
 _Ce guide explique comment planifier le travail en arrière-plan à l’aide de la bibliothèque de répartiteur de tâches Firebase de Google._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Overview
 
 L’une des meilleures façons de conserver une application Android réactive à l’utilisateur consiste à s’assurer que le travail complexe ou à long terme est effectué en arrière-plan. Toutefois, il est important que le travail en arrière-plan n’ait pas d’impact négatif sur l’expérience de l’utilisateur avec l’appareil. 
 
@@ -34,7 +34,7 @@ Android fournit les API suivantes pour faciliter l’exécution des tâches en a
 Il existe deux fonctionnalités clés pour effectuer efficacement des tâches en arrière-plan (parfois appelées _travail en arrière-plan_ ou _travail_) :
 
 1. **Planifier intelligemment le travail** &ndash; il est important que lorsqu’une application travaille en arrière-plan et qu’elle le fasse comme un bon citoyen. Dans l’idéal, l’application ne doit pas demander l’exécution d’un travail. Au lieu de cela, l’application doit spécifier des conditions qui doivent être remplies pour que le travail puisse s’exécuter, puis planifier l’exécution de ce travail lorsque les conditions sont remplies. Cela permet à Android d’effectuer un travail de manière intelligente. Par exemple, les demandes réseau peuvent être exécutées en même temps pour s’exécuter en même temps afin de tirer le meilleur de la surcharge impliquée dans la mise en réseau.
-2. L' **encapsulation du travail** &ndash; le code pour effectuer le travail en arrière-plan doit être encapsulé dans un composant discret qui peut être exécuté indépendamment de l’interface utilisateur et qui sera relativement facile à replanifier en cas d’échec de l’exécution du travail pour certains donc.
+2. L' **encapsulation du travail** &ndash; le code pour effectuer le travail en arrière-plan doit être encapsulé dans un composant discret qui peut être exécuté indépendamment de l’interface utilisateur et sera relativement facile à replanifier si le travail échoue pour une raison quelconque.
 
 Le répartiteur de tâches Firebase est une bibliothèque de Google qui fournit une API Fluent pour simplifier la planification du travail en arrière-plan. Il est destiné à remplacer Google Cloud Manager. Le répartiteur de tâches Firebase se compose des API suivantes :
 
@@ -55,7 +55,7 @@ Pour planifier un travail, l’application instancie un objet `JobDispatcher`. E
 
 Ce guide explique comment ajouter le répartiteur de tâches Firebase à une application Xamarin. Android et comment l’utiliser pour planifier le travail en arrière-plan.
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Configuration requise
 
 Le répartiteur de tâches Firebase nécessite le niveau d’API Android 9 ou une version ultérieure. La bibliothèque de répartiteur de tâches Firebase s’appuie sur certains composants fournis par Google Play Services ; Google Play Services doit être installé sur l’appareil.
 
@@ -244,7 +244,7 @@ Le `Firebase.JobDispatcher.RetryStrategy` est utilisé pour spécifier la durée
 
 Les deux types de stratégies de nouvelle tentative sont identifiés par ces valeurs int :
 
-- `RetryStrategy.RetryPolicyExponential` &ndash; une stratégie d’interruption _exponentielle_ augmente la valeur d’interruption initiale de façon exponentielle après chaque défaillance. La première fois qu’un travail échoue, la bibliothèque attend l’intervalle _initial spécifié avant de replanifier le travail &ndash; exemple 30 secondes. La deuxième fois que la tâche échoue, la bibliothèque attend au moins 60 secondes avant d’essayer d’exécuter la tâche. Après la troisième tentative qui a échoué, la bibliothèque attend 120 secondes, et ainsi de suite. Le `RetryStrategy` par défaut de la bibliothèque de répartiteurs de tâches Firebase est représenté par l’objet `RetryStrategy.DefaultExponential`. Il a une interruption initiale de 30 secondes et une interruption maximale de 3600 secondes.
+- `RetryStrategy.RetryPolicyExponential` &ndash; une stratégie d’interruption _exponentielle_ augmente la valeur d’interruption initiale de façon exponentielle après chaque défaillance. La première fois qu’un travail échoue, la bibliothèque attend la _initial intervalle spécifié avant de replanifier le travail &ndash; exemple 30 secondes. La deuxième fois que la tâche échoue, la bibliothèque attend au moins 60 secondes avant d’essayer d’exécuter la tâche. Après la troisième tentative qui a échoué, la bibliothèque attend 120 secondes, et ainsi de suite. Le `RetryStrategy` par défaut de la bibliothèque de répartiteurs de tâches Firebase est représenté par l’objet `RetryStrategy.DefaultExponential`. Il a une interruption initiale de 30 secondes et une interruption maximale de 3600 secondes.
 - `RetryStrategy.RetryPolicyLinear` &ndash; cette stratégie est une interruption _linéaire_ que la tâche doit être replanifiée pour s’exécuter à des intervalles définis (jusqu’à ce qu’elle aboutisse). L’interruption linéaire est idéale pour le travail qui doit être effectué le plus rapidement possible ou pour les problèmes qui se résolvent rapidement. La bibliothèque de répartiteur de tâches Firebase définit un `RetryStrategy.DefaultLinear` qui a une fenêtre de replanification d’au moins 30 secondes et jusqu’à 3600 secondes.
 
 Il est possible de définir une `RetryStrategy` personnalisée avec la méthode `FirebaseJobDispatcher.NewRetryStrategy`. Il accepte trois paramètres :
@@ -281,11 +281,11 @@ Les deux méthodes retournent une valeur entière :
 - `FirebaseJobDispatcher.CancelResultUnknownError` &ndash; une erreur a empêché l’annulation du travail.
 - `FirebaseJobDispatcher.CancelResult.NoDriverAvailable` &ndash; la `FirebaseJobDispatcher` ne peut pas annuler le travail, car aucun `IDriver` valide n’est disponible.
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Ce guide a expliqué comment utiliser le répartiteur de tâches Firebase pour effectuer intelligemment le travail en arrière-plan. Il a expliqué comment encapsuler le travail à effectuer en tant que `JobService` et comment utiliser le `FirebaseJobDispatcher` pour planifier ce travail, en spécifiant les critères avec un `JobTrigger` et comment les échecs doivent être gérés avec un `RetryStrategy`.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Xamarin. Firebase. JobDispatcher sur NuGet](https://www.nuget.org/packages/Xamarin.Firebase.JobDispatcher)
 - [Firebase-Job-répartiteur sur GitHub](https://github.com/firebase/firebase-jobdispatcher-android)

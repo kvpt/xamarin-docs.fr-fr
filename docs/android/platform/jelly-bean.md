@@ -8,17 +8,17 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
 ms.openlocfilehash: a638ccf7810c737faaeded7fcc98fcf657c85288
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73027211"
 ---
 # <a name="jelly-bean-features"></a>Fonctionnalités de la gelée
 
 _Ce document fournit un aperçu général des nouvelles fonctionnalités pour les développeurs qui ont été introduits dans Android 4,1. Parmi ces fonctionnalités, citons les suivantes : notifications améliorées, mises à jour d’Android Beam pour partager des fichiers volumineux, mises à jour des éléments multimédias, découverte du réseau pair à pair, animations et nouvelles autorisations._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Overview
 
 Android 4,1 (API de niveau 16), également connu sous le nom de « composant Bean gelé », a été publié le 9 juillet 2012. Cet article fournit une présentation générale de certaines des nouvelles fonctionnalités d’Android 4,1 pour les développeurs qui utilisent Xamarin. Android. Certaines de ces nouvelles fonctionnalités introduites sont des améliorations apportées aux animations pour lancer une activité, de nouveaux sons pour un appareil photo et une meilleure prise en charge de la navigation dans la pile d’applications. Il est désormais possible de couper et coller avec des intentions.
 
@@ -28,7 +28,7 @@ Une prise en charge a été ajoutée pour la découverte de service réseau à l
 
 Enfin, plusieurs nouvelles autorisations ont été ajoutées dans Android 4,1.
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Configuration requise
 
 Pour développer des applications Xamarin. Android à l’aide de gelée, vous devez installer Xamarin. Android 4.2.6 ou version ultérieure et Android 4,1 (niveau d’API 16) via le gestionnaire de Android SDK, comme illustré dans la capture d’écran suivante :
 
@@ -174,7 +174,7 @@ La classe `Intent` peut désormais être associée à un objet `ClipData` via la
 
 Un service isolé est un service qui s’exécute sous son propre processus spécial et ne dispose d’aucune autorisation propre. La seule communication avec le service est lors du démarrage du service et de sa liaison via l’API de service. Il est possible de déclarer un service comme isolé en définissant la propriété `IsolatedProcess="true"` dans le `ServiceAttribute` qui orne une classe de service.
 
-### <a name="media"></a>Médias
+### <a name="media"></a>Support
 
 La nouvelle classe `Android.Media.MediaCodec` fournit une API aux codecs multimédias de bas niveau. Les applications peuvent interroger le système pour connaître les codecs de bas niveau disponibles sur l’appareil.
 
@@ -228,13 +228,13 @@ Les nouvelles autorisations suivantes ont été ajoutées :
 
 Une modification importante à noter `READ_EXTERNAL_STORAGE` – actuellement, cette autorisation est accordée automatiquement par Android. Les versions ultérieures d’Android requièrent qu’une application demande cette autorisation avant de lui accorder l’autorisation.
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article a présenté quelques-unes des nouvelles API disponibles dans Android 4,1 (niveau d’API 16). Il a mis en évidence certaines des modifications apportées aux animations et à animer le lancement d’une activité, et a introduit les nouvelles API pour la découverte du réseau d’autres appareils à l’aide de protocoles tels que Bonjour ou UPnP. D’autres modifications apportées à l’API ont également été mises en surbrillance, telles que la possibilité de couper et coller des données via des intentions, la possibilité d’utiliser des services isolés ou des fournisseurs de contenu « instables ».
 
 Cet article s’est ensuite présenté à l’introduction des mises à jour des notifications et a abordé certaines des nouvelles autorisations introduites avec Android 4,1
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Exemple d’animation temporelle (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/platformfeatures-timeanimatorexample)
 - [API Android 4,1](https://developer.android.com/about/versions/android-4.1.html)

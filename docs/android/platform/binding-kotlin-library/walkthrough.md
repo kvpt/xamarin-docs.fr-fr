@@ -8,10 +8,10 @@ author: alexeystrakh
 ms.author: alstrakh
 ms.date: 02/11/2020
 ms.openlocfilehash: cbd7c796cd13aa45dc107bddf06ca44d6adbdf9d
-ms.sourcegitcommit: fec87846fcb262fc8b79774a395908c8c8fc8f5b
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "78291708"
 ---
 # <a name="walkthrough-bind-an-android-kotlin-library"></a>Procédure pas à pas : liaison d’une bibliothèque Kotlin Android
@@ -26,7 +26,7 @@ L’objectif de ce document est de présenter une approche de haut niveau pour t
 
 Kotlin a été publié en février 2016 et était positionné comme alternative au compilateur Java standard dans Android Studio par 2017. Plus tard dans 2019, Google a annoncé que le langage de programmation Kotlin devenait le langage préféré pour les développeurs d’applications Android. L’approche de la liaison de haut niveau est similaire au [processus de liaison des bibliothèques Java normales](https://docs.microsoft.com/xamarin/android/platform/binding-java-library/) , avec quelques étapes importantes spécifiques Kotlin.
 
-## <a name="prerequisites"></a>Conditions préalables requises
+## <a name="prerequisites"></a>Composants requis
 
 Pour réaliser cette procédure pas à pas, vous aurez besoin des éléments suivants :
 

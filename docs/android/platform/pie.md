@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 08/21/2018
 ms.openlocfilehash: 0105b43116df697bc6688becb77298c236dfa601
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73019886"
 ---
 # <a name="android-pie-features"></a>Fonctionnalités du graphique Android
@@ -26,7 +26,7 @@ Cet article est structuré pour vous aider à prendre en main le développement 
 
 Xamarin. Android 9,0 fournit la prise en charge d’Android Pie. Pour plus d’informations sur la prise en charge de Xamarin. Android pour Android Pie, consultez les notes de publication [Android P Developer Preview 3](https://docs.microsoft.com/xamarin/android/release-notes/9/9.0/#android-p-dp1) .
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Configuration requise
 
 La liste suivante est requise pour utiliser les fonctionnalités en secteurs Android dans les applications Xamarin :
 
@@ -39,7 +39,7 @@ La liste suivante est requise pour utiliser les fonctionnalités en secteurs And
 
 - **Android SDK** &ndash; Android SDK l’API 28 ou ultérieure doit être installé via le gestionnaire de Android SDK.
 
-## <a name="getting-started"></a>Bien démarrer
+## <a name="getting-started"></a>Prise en main
 
 Pour commencer à développer des applications en secteurs Android avec Xamarin. Android, vous devez télécharger et installer les derniers outils et packages du kit de développement logiciel (SDK) avant de pouvoir créer votre premier projet Android en secteurs :
 
@@ -164,7 +164,7 @@ L’exemple suivant illustre l’inclusion d’une image dans une notification d
     ```
 
 2. Créez un `Notification.MessagingStyle.Message` qui contient l’image à envoyer, en passant l’image à la nouvelle méthode [notification. MessagingStyle. message. SetData](https://developer.android.com/reference/android/app/Notification.MessagingStyle.Message.html#setData%28java.lang.String,%20android.net.Uri) .
-   Exemple :
+   Par exemple :
 
     ```csharp
     Uri imageUri = Uri.Parse("android.resource://com.xamarin.pminidemo/drawable/example_image");
@@ -173,14 +173,14 @@ L’exemple suivant illustre l’inclusion d’une image dans une notification d
             .SetData("image/", imageUri);
     ```
 
-3. Ajoutez le message à un objet `Notification.MessagingStyle`. Exemple :
+3. Ajoutez le message à un objet `Notification.MessagingStyle`. Par exemple :
 
     ```csharp
     Notification.MessagingStyle style = new Notification.MessagingStyle(fromPerson)
             .AddMessage(message);
     ```
 
-4. Branchez ce style dans le générateur de notifications. Exemple :
+4. Branchez ce style dans le générateur de notifications. Par exemple :
 
     ```csharp
     builder = new Notification.Builder(this, MY_CHANNEL)
@@ -191,7 +191,7 @@ L’exemple suivant illustre l’inclusion d’une image dans une notification d
         .SetChannelId(MY_CHANNEL);
     ```
 
-5. Publiez la notification. Exemple :
+5. Publiez la notification. Par exemple :
 
     ```csharp
     const int notificationId = 1000;
@@ -247,7 +247,7 @@ Pour plus d’informations sur les changements de comportement pour les applicat
 
 [AndroidPMiniDemo](https://github.com/xamarin/monodroid-samples/tree/master/android-p/AndroidPMiniDemo) est un exemple d’application Xamarin. Android pour le secteur Android qui montre comment définir des modes de découpage d’affichage, comment utiliser la nouvelle classe `Person` et comment envoyer une notification incluant une image.
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article a présenté le secteur Android et a expliqué comment installer et configurer les outils et packages les plus récents pour le développement Xamarin. Android avec Android Pie. Il a fourni une vue d’ensemble des fonctionnalités clés disponibles dans Android Pie, avec un exemple de code source pour plusieurs de ces fonctionnalités.
 Elle contient des liens vers des rubriques de documentation sur les API et des développeurs Android qui vous aideront à créer des applications pour Android Pie. Elle a également mis en évidence les modifications de comportement les plus importantes du secteur Android susceptibles d’avoir un impact sur les applications existantes.
