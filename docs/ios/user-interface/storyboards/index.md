@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 13f5c594543934e14295615517e3de01a98a69a5
-ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
+ms.openlocfilehash: 3d9531bbaa38a0a0a9bb42d22c79a63fda75c449
+ms.sourcegitcommit: 926f9a44065b41c7d74794a94bee66b61e903bf2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "78292816"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79134019"
 ---
 # <a name="introduction-to-storyboards-in-xamarinios"></a>Présentation des storyboards dans Xamarin. iOS
 
@@ -187,6 +187,10 @@ La capture d’écran ci-dessous montre deux contrôleurs d’affichage sur notr
     [![](images/add-storyboard2.png "Adding storyboard")](images/add-storyboard2.png#lightbox)
 
 2. Cliquez avec le bouton droit sur le fichier de table de montage séquentiel et sélectionnez **Ouvrir avec > Xcode Interface Builder** pour l’ouvrir dans Xcode.
+
+    *Si vous préférez utiliser Xcode Interface Builder par défaut, vous pouvez le choisir dans les préférences de Visual Studio pour Mac sous **projets > iOS**:*
+
+![](images/set-preferred-designer-tool.png "Selecting the preferred designer tool")
 
 3. Dans Xcode, ouvrez la bibliothèque (via **affichage > afficher la bibliothèque** ou *Maj + Commande + L*) pour afficher une liste d’objets qui peuvent être ajoutés à la table de montage séquentiel. Ajoutez un `Navigation Controller` à la table de montage séquentiel en faisant glisser l’objet de la liste sur le Storyboard. Par défaut, le `Navigation Controller` fournit deux écrans. l’écran à droite est un `TableViewController` que nous allons remplacer par un affichage plus simple. vous pouvez donc le supprimer en cliquant sur la vue et en appuyant sur la touche Suppr.
 
