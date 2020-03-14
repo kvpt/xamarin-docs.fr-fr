@@ -8,17 +8,17 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
 ms.openlocfilehash: 81a1f63078a5f7a2a70f731d1790f85f4283d22f
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78918961"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79304995"
 ---
 # <a name="data-binding-and-key-value-coding-in-xamarinmac"></a>Liaison de données et codage de clé-valeur dans Xamarin. Mac
 
 _Cet article aborde l’utilisation du codage clé-valeur et de l’observation clé-valeur pour permettre la liaison de données aux éléments d’interface utilisateur dans les Interface Builder de Xcode._
 
-## <a name="overview"></a>Overview
+## <a name="overview"></a>Vue d’ensemble
 
 Lorsque vous travaillez C# avec et .net dans une application Xamarin. Mac, vous avez accès aux mêmes techniques de codage et de liaison de données que les développeurs qui travaillent en *objective-C* et *Xcode* . Comme Xamarin. Mac s’intègre directement à Xcode, vous pouvez utiliser les _Interface Builder_ de Xcode pour la liaison de données avec des éléments d’interface utilisateur au lieu d’écrire du code.
 

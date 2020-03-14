@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 08/16/2018
 ms.openlocfilehash: 617c04e2f40af535fb381362a389524d693fad0b
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "78913430"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79303938"
 ---
 # <a name="local-notifications-on-android"></a>Notifications locales sur Android
 

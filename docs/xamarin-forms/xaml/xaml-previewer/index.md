@@ -9,17 +9,17 @@ author: maddyleger1
 ms.author: maleger
 ms.date: 02/04/2019
 ms.openlocfilehash: b287d523101bb8ca7faca8ea95ee898ccf9c0bb1
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78918054"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79305317"
 ---
 # <a name="xaml-previewer-for-xamarinforms"></a>Générateur d’aperçu XAML pour Xamarin. Forms
 
 _Voir vos dispositions Xamarin. Forms rendues à mesure que vous tapez_
 
-## <a name="overview"></a>Overview
+## <a name="overview"></a>Vue d’ensemble
 
 Le générateur d’aperçu XAML vous montre comment votre page XAML Xamarin. Forms s’affichera sur iOS et Android. Lorsque vous apportez des modifications à votre code XAML, vous les voyez immédiatement en regard de votre code. Le générateur d’aperçu XAML est disponible dans Visual Studio et Visual Studio pour Mac.
 
@@ -87,7 +87,7 @@ if (!DesignMode.IsDesignModeEnabled)
 
 Cette propriété est utile si vous initialisez une bibliothèque dans votre constructeur de page dont l’exécution échoue au moment du Design.
 
-## <a name="troubleshooting"></a>Résolution des problèmes
+## <a name="troubleshooting"></a>Dépannage
 
 Si le générateur d’aperçu ne fonctionne pas, vérifiez les problèmes ci-dessous et les [Forums Xamarin](https://forums.xamarin.com/categories/xamarin-forms).
 

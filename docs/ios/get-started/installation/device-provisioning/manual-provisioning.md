@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/06/2020
 ms.openlocfilehash: 04cb1b9303e571b2a10cdfa621dcd312162e2893
-ms.sourcegitcommit: 60d2243809d8e980fca90b9f771e72f8c0e64d71
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "78968272"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79304862"
 ---
 # <a name="manual-provisioning-for-xamarinios"></a>Provisionnement manuel pour Xamarin.iOS
 

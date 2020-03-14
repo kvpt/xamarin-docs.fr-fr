@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
 ms.openlocfilehash: b1b6d07b221f702b54833bd87161d6abbadbd4e8
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78915787"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79304393"
 ---
 # <a name="working-with-tvos-icons-and-images-in-xamarin"></a>Utilisation des icônes et des images tvOS dans Xamarin
 
@@ -291,7 +291,7 @@ Pour plus d’informations sur l’utilisation de Game Center, consultez le [Gui
 
 <a name="Working-with-Images" />
 
-## <a name="working-with-images"></a>Utilisation d'images
+## <a name="working-with-images"></a>Utilisation d’images
 
 Étant donné que tvOS 9 est un sous-ensemble d’iOS 9, les mêmes techniques que celles utilisées pour inclure et afficher des images dans une application Xamarin. iOS, fonctionnent également pour une application Xamarin. tvOS. Pour plus d’informations, consultez notre documentation sur [l’affichage d’une image](~/ios/app-fundamentals/images-icons/displaying-an-image.md) .
 

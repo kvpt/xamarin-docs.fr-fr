@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
 ms.openlocfilehash: dc71da512519cdd7fcc56df1ff987ffbc1354663
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78915299"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79305191"
 ---
 # <a name="containerized-microservices"></a>Microservices conteneurisés
 
@@ -56,7 +56,7 @@ Toutefois, une solution basée sur des microservices présente également des in
 - En production, il existe une complexité opérationnelle dans le déploiement et la gestion d’un système compromis de nombreux services indépendants.
 - La communication directe entre les clients et les microservices peut compliquer la refactorisation des contrats des microservices. Par exemple, dans le temps, la façon dont le système est partitionné en services peut être modifiée. Un service unique peut être fractionné en deux ou plusieurs services, et deux services peuvent être fusionnés. Lorsque les clients communiquent directement avec les microservices, ce travail de refactorisation peut rompre la compatibilité avec les applications clientes.
 
-## <a name="containerization"></a>Conteneurisation
+## <a name="containerization"></a>Mise en conteneur
 
 La mise en conteneur est une approche du développement de logiciels dans laquelle une application et son ensemble de dépendances, ainsi que sa configuration d’environnement abstraite en tant que fichiers manifestes de déploiement, sont regroupés comme une image conteneur, testée en tant qu’unité et déployé sur un système d’exploitation hôte.
 

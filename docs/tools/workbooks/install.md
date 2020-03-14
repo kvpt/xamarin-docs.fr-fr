@@ -7,11 +7,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/19/2018
 ms.openlocfilehash: 92b08a9cfd725c1114b71fad4f29e6f28cd828b3
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78914380"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79305044"
 ---
 # <a name="workbooks-installation-and-requirements"></a>Installation et configuration requise des classeurs
 
@@ -35,7 +35,7 @@ ms.locfileid: "78914380"
 
 -----
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>Spécifications
 
 #### <a name="supported-operating-systems"></a>Systèmes d’exploitation pris en charge
 
@@ -44,7 +44,7 @@ ms.locfileid: "78914380"
 
 #### <a name="supported-app-platforms"></a>Plateformes d’application prises en charge
 
-|Plateforme d’application|Prise en charge du système d’exploitation|Remarques|
+|Plateforme d’application|Prise en charge du système d’exploitation|Notes|
 |--- |--- |--- |
 |Mac|Pris en charge uniquement sur Mac|
 |iOS|Pris en charge sur Mac et Windows|Xamarin. iOS 11,0 et Xcode 9,0 ou version ultérieure doivent être installés sur Mac. L’exécution de classeurs iOS sur Windows requiert un hôte de build Mac exécutant tous les éléments ci-dessus, et le [simulateur iOS distant](~/tools/ios-simulator/index.md) installé sur Windows.|
@@ -97,7 +97,7 @@ Visual Studio
 
 Si vous êtes en mesure de joindre le fichier **. classeurs** ou de créer un lien vers celui-ci, cela peut vous aider à résoudre votre bogue plus rapidement.
 
-### <a name="devices"></a>Périphériques
+### <a name="devices"></a>Appareils
 
 Si vous rencontrez des problèmes de connexion à votre classeur iOS ou Android et que vous avez déjà consulté [notre page de dépannage](~/tools/workbooks/troubleshooting/index.md), nous devrons connaître les éléments suivants :
 

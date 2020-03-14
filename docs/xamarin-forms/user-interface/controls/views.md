@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/14/2020
 ms.openlocfilehash: 09bcb49db7f257a415518b259672ca8e776cdbc4
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78917272"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79304463"
 ---
 # <a name="xamarinforms-views"></a>Vues Xamarin.Forms
 
@@ -181,7 +181,7 @@ Ces deux classes dérivent de la classe [`InputView`](xref:Xamarin.Forms.InputVi
 | [`ActivityIndicator`](xref:Xamarin.Forms.ActivityIndicator) utilise une animation pour montrer que l’application est engagée dans une activité de longue durée sans donner aucune indication de la progression. La propriété [`IsRunning`](xref:Xamarin.Forms.ActivityIndicator.IsRunning) contrôle l’animation.<br /><br />Si la progression de l’activité est connue, utilisez plutôt une [`ProgressBar`](#progressbar) .<br /><br />[Documentation](xref:Xamarin.Forms.ActivityIndicator) sur l’API / [Guide](~/xamarin-forms/user-interface/activityindicator.md) / [exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-activityindicatordemos/) | [![Exemple ActivityIndicator](views-images/ActivityIndicator.png "Exemple ActivityIndicator")](views-images/ActivityIndicator-Large.png#lightbox "Exemple ActivityIndicator")<br />code pour cette page / [page XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ActivityIndicatorDemoPage.xaml) [ C# ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ActivityIndicatorDemoPage.cs) |
 |     |     |
 
-### <a name="progressbar"></a>ProgressBar
+### <a name="progressbar"></a>Barre de progression
 
 |     |     |
 | --- | --- |

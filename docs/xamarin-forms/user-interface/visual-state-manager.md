@@ -9,11 +9,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/21/2020
 ms.openlocfilehash: 0149806f3ab3772bc206cea9540a989d997c817b
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78918309"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79305457"
 ---
 # <a name="xamarinforms-visual-state-manager"></a>Gestionnaire d’état visuel Xamarin. Forms
 

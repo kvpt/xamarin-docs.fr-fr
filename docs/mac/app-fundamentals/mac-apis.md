@@ -8,15 +8,15 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/02/2017
 ms.openlocfilehash: cd427d13bb79fd31e1e814726aaaf61788ae10ec
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78917573"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79304988"
 ---
 # <a name="macos-apis-for-xamarinmac-developers"></a>API macOS pour les développeurs Xamarin. Mac
 
-## <a name="overview"></a>Overview
+## <a name="overview"></a>Vue d’ensemble
 
 Pour la plupart de votre temps, le développement avec Xamarin. Mac vous permet de penser, de lire C# et d’écrire sans trop de préoccupation avec les API objective-C sous-jacentes. Toutefois, vous aurez parfois besoin de lire la documentation de l’API auprès d’Apple, de traduire une réponse de Stack Overflow à une solution pour votre problème ou de la comparer à un exemple existant.
 

@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2016
 ms.openlocfilehash: 80f332e45d6c46ad49543923e85cbb2eceadb378
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "78911276"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79305478"
 ---
 # <a name="passing-arguments-in-xaml"></a>Passage des Arguments dans XAML
 
@@ -20,7 +20,7 @@ ms.locfileid: "78911276"
 
 _Cet article montre comment utiliser les attributs XAML qui peuvent être utilisés pour passer des arguments à des constructeurs non définis par défaut, pour appeler des méthodes de fabrique et pour spécifier le type d’un argument générique._
 
-## <a name="overview"></a>Overview
+## <a name="overview"></a>Vue d’ensemble
 
 Il est souvent nécessaire instancier des objets avec des constructeurs qui nécessitent des arguments, ou en appelant une méthode statique de la création. Cela peut être accompli en XAML à l’aide des attributs `x:Arguments` et `x:FactoryMethod` :
 

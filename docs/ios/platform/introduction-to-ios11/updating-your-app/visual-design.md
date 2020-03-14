@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 09/13/2016
 ms.openlocfilehash: e5a61af4cd8a09df3ffddb74658f646aa8edfa1f
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032080"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79304757"
 ---
 # <a name="visual-design-updates-in-ios-11"></a>Mises à jour de la conception visuelle dans iOS 11
 
@@ -78,7 +78,7 @@ La zone sécurisée est une nouvelle façon de réfléchir à l’espace visible
 
 [![le repère de disposition en haut et en bas de la zone sécurisée](visual-design-images/image10-sml.png)](visual-design-images/image10.png#lightbox)
 
-Avant, si vous avez ajouté une vue et souhaitez qu’elle soit visible dans la zone verte ci-dessus, vous devez la contraindre au _bas_ de la `TopLayoutGuide` et au _haut_ de la `BottomLayoutGuide`. Dans iOS 11, vous devez le limiter au _sommet_ et au _bas_ de la zone sécurisée. Voici un exemple :
+Avant, si vous avez ajouté une vue et souhaitez qu’elle soit visible dans la zone verte ci-dessus, vous devez la contraindre au _bas_ de la `TopLayoutGuide` et au _haut_ de la `BottomLayoutGuide`. Dans iOS 11, vous devez le limiter au _sommet_ et au _bas_ de la zone sécurisée. Exemple :
 
 ```csharp
 var safeGuide = View.SafeAreaLayoutGuide;
@@ -113,7 +113,7 @@ iOS 11 a étendu les fonctionnalités des actions de ligne. `UISwipeActionsConfi
 
 Les vues de table prennent en charge le glisser-déplacer dans iOS 11. Pour plus d’informations, consultez le Guide de [glisser-déplacer](~/ios/platform/introduction-to-ios11/drag-and-drop.md#uitableview) .
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Nouveautés d’iOS 11 (Apple)](https://developer.apple.com/ios/)
 - [Page produit App Store mise à jour (Apple)](https://developer.apple.com/app-store/product-page/)

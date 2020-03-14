@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 08/21/2018
-ms.openlocfilehash: 3ad3661ff50ad7f4be95421de57dc5017392a59f
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.openlocfilehash: 38052eee1b71ace9795f5c16bdf714f9538e353d
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "78291759"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79303474"
 ---
 # <a name="platform-features"></a>Fonctionnalités de la plateforme
 
@@ -41,6 +41,10 @@ Android 3,0 a introduit des fragments, qui montrent comment prendre en charge de
 ## <a name="app-linking"></a>[Liaison d’applications](~/android/platform/app-linking.md)
 
 Ce guide explique comment Android 6,0 prend en charge la _liaison d’applications_, une technique qui permet aux applications mobiles de répondre aux URL sur les sites Web. Il explique comment implémenter la liaison d’application dans une application Android 6,0 et comment configurer un site Web pour accorder des autorisations à l’application mobile afin de gérer des liens d’application pour le domaine.
+
+## <a name="androidx"></a>[AndroidX](~/android/platform/androidx.md)
+
+Cet article fournit un aperçu de l’utilisation de AndroidX dans vos projets Xamarin. Android et fournit des liens vers la documentation qui illustre comment migrer votre application de la bibliothèque de prise en charge Android vers AndroidX.
 
 ## <a name="android-10"></a>[Android 10](~/android/platform/android-10.md)
 

@@ -9,11 +9,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 08/27/2018
 ms.openlocfilehash: d73c72fa70a22bacf122f5c3957b789914dfd765
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "78912409"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79304050"
 ---
 # <a name="android-emulator-troubleshooting"></a>Résolution des problèmes de l’émulateur Android
 
@@ -139,7 +139,7 @@ VT feature disabled in BIOS/UEFI
 Pour corriger ce problème, redémarrez le BIOS de l’ordinateur et activez les options suivantes :
 
 - Technologie de virtualisation (peut avoir une autre appellation selon le fabricant de la carte mère).
-- Prévention de l’exécution des données appliquée par le matériel.
+- Prévention de l’exécution des données matérielle.
 
 Si l’accélération matérielle est activée et si le BIOS est configuré de manière appropriée, l’émulateur doit s’exécuter correctement en tirant parti de l’accélération matérielle.
 Toutefois, des problèmes spécifiques à Hyper-V et HAXM peuvent se produire, comme expliqué ci-après.

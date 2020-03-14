@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/15/2018
 ms.openlocfilehash: 6d83afa47c459633506736b2497a82c444352c90
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "78912324"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79303917"
 ---
 # <a name="troubleshooting-tips"></a>Conseils de dépannage
 
@@ -89,7 +89,7 @@ Xamarin. Android prend en charge les propriétés système suivantes :
   > [!NOTE]
   > Les valeurs de propriété du système Android ne peuvent pas dépasser 92 caractères.
 
-  Exemple :
+  Exemple :
 
   ```
   adb shell setprop debug.mono.env "'MONO_LOG_LEVEL=info|MONO_LOG_MASK=asm'"

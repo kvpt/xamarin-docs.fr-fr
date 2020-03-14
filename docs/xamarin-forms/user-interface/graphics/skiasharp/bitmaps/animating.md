@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/12/2018
 ms.openlocfilehash: 33e17a01d8a13fcdaee27e5857c554a4a232c534
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78917885"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79304043"
 ---
 # <a name="animating-skiasharp-bitmaps"></a>Animer des bitmaps de SkiaSharp
 

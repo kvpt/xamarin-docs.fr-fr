@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 05/22/2017
 ms.openlocfilehash: 37695ef93a1005febf12369e7d1defccf6130832
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78916538"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79304260"
 ---
 # <a name="application-icons-in-xamarinios"></a>Icônes d’application dans Xamarin. iOS
 
@@ -28,13 +28,13 @@ Les rubriques suivantes sont traitées en détail :
 
 De la même façon qu’une application Xamarin. iOS peut utiliser des ressources d’image pour les contrôles d’interface utilisateur et comme icônes de document, les ressources d’image peuvent être utilisées pour fournir des icônes d’application. Les captures d’écran suivantes d’un iPad illustrent les trois utilisations des icônes dans iOS :
 
-- **Icône d’application** : chaque application iOS doit définir une icône d’application. Il s’agit de l’icône sur laquelle l’utilisateur appuie sur l’écran d’accueil iOS pour lancer l’application. En outre, cette icône est utilisée par Game Center, le cas échéant. Exemple : 
+- **Icône d’application** : chaque application iOS doit définir une icône d’application. Il s’agit de l’icône sur laquelle l’utilisateur appuie sur l’écran d’accueil iOS pour lancer l’application. En outre, cette icône est utilisée par Game Center, le cas échéant. Exemple : 
 
     [![](app-icons-images/000.png "Application Icon")](app-icons-images/000-full.png#lightbox)
-- **Icône Spotlight** : chaque fois que l’utilisateur entre le nom d’une application dans une recherche Spotlight, cette icône s’affiche. Exemple : 
+- **Icône Spotlight** : chaque fois que l’utilisateur entre le nom d’une application dans une recherche Spotlight, cette icône s’affiche. Exemple : 
 
     [![](app-icons-images/000a.png "Spotlight Icon")](app-icons-images/000a-full.png#lightbox)
-- **Icône des paramètres** : si l’utilisateur entre l’application **paramètres** sur son appareil iOS, cette icône s’affiche à la fin de la liste des **paramètres** de l’application. Exemple : 
+- **Icône des paramètres** : si l’utilisateur entre l’application **paramètres** sur son appareil iOS, cette icône s’affiche à la fin de la liste des **paramètres** de l’application. Exemple : 
 
     [![](app-icons-images/000b.png "Settings Icon")](app-icons-images/000b-full.png#lightbox)
 

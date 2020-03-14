@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
 ms.openlocfilehash: 3e11b163d16be9711bf09102e3ab8604d98299d7
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78910882"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79304960"
 ---
 # <a name="working-with-the-watchos-parent-application-in-xamarin"></a>Utilisation de l’Application parente dans Xamarin watchOS
 
@@ -57,7 +57,7 @@ var count = shared.IntForKey ("count");
 
 <a name="files" />
 
-### <a name="files"></a>Files
+### <a name="files"></a>Fichiers
 
 L’extension d’application et regardez iOS peut également partager des fichiers à l’aide d’un chemin d’accès de fichier commun.
 

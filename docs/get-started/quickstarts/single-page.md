@@ -10,11 +10,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2019
 ms.openlocfilehash: c1d7aa1535fe979df222aaedc6ba2cf3bae0d51c
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78911715"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79304302"
 ---
 # <a name="create-a-single-page-xamarinforms-application"></a>Créer une application Xamarin.Forms monopage
 
@@ -32,7 +32,7 @@ Le guide de démarrage rapide vous explique comment créer une application Xamar
 
 ::: zone pivot="windows"
 
-### <a name="prerequisites"></a>Composants requis
+### <a name="prerequisites"></a>Conditions préalables requises
 
 - Installation de Visual Studio 2019 (dernière version) et de la charge de travail **Développement mobile en .NET**.
 - Connaissance de C#.
@@ -186,7 +186,7 @@ Pour plus d’informations sur ces prérequis, consultez [Installation de Xamari
 ::: zone-end
 ::: zone pivot="win-vs2017"
 
-### <a name="prerequisites"></a>Composants requis
+### <a name="prerequisites"></a>Conditions préalables requises
 
 - Installation de Visual Studio 2017 et de la charge de travail **Développement mobile en .NET**.
 - Connaissance de C#.
@@ -336,7 +336,7 @@ Pour plus d’informations sur ces prérequis, consultez [Installation de Xamari
 ::: zone-end
 ::: zone pivot="macos"
 
-### <a name="prerequisites"></a>Composants requis
+### <a name="prerequisites"></a>Conditions préalables requises
 
 - Visual Studio pour Mac (dernière version) avec installation de la prise en charge des plateformes iOS et Android.
 - Xcode (dernière version).
@@ -488,7 +488,7 @@ Pour plus d’informations sur ces prérequis, consultez [Installation de Xamari
 
 ::: zone-end
 
-## <a name="next-steps"></a>Étapes suivantes :
+## <a name="next-steps"></a>Étapes suivantes
 
 Dans ce démarrage rapide, vous avez appris comment :
 

@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/17/2019
 ms.openlocfilehash: 7aef14cbb854d89a2088a450353b943402f76a86
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78913389"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79304183"
 ---
 # <a name="xamarinforms-collectionview-scrolling"></a>Xamarin. Forms CollectionView défilement
 
@@ -158,7 +158,7 @@ Cet exemple de code entraîne le défilement de l’élément au centre de la vu
 
 [![Capture d’écran d’une liste verticale CollectionView avec un élément défilé dans l’affichage, sur iOS et Android](scrolling-images/scrolltoposition-center.png "CollectionView liste verticale avec élément défilé")](scrolling-images/scrolltoposition-center-large.png#lightbox "CollectionView liste verticale avec élément défilé")
 
-### <a name="end"></a>Fin
+### <a name="end"></a>End
 
 Le membre [`ScrollToPosition.End`](xref:Xamarin.Forms.ScrollToPosition) indique que l’élément doit défiler jusqu’à la fin de la vue :
 
@@ -302,7 +302,7 @@ Lorsqu’un utilisateur effectue un balayage pour lancer un défilement, l’él
 
 [![Capture d’écran d’une liste verticale CollectionView avec des points d’ancrage centraux, sur iOS et Android](scrolling-images/snappoints-center.png "Liste verticale CollectionView avec points d’ancrage centraux")](scrolling-images/snappoints-center-large.png#lightbox "Liste verticale CollectionView avec points d’ancrage centraux")
 
-#### <a name="end"></a>Fin
+#### <a name="end"></a>End
 
 Le membre de `SnapPointsAlignment.End` indique que les points d’ancrage sont alignés sur le bord de fin des éléments. L’exemple de code XAML suivant montre comment définir ce membre de l’énumération :
 

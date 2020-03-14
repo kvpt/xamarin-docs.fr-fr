@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 06/12/2019
 ms.openlocfilehash: 25ddbea75d0fd6858f848499281da5d5f0b68171
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78911384"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79305324"
 ---
 # <a name="xamarinforms-device-class"></a>Classe de périphérique de Xamarin.Forms
 

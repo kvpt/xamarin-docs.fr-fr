@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/25/2019
 ms.openlocfilehash: c7daad8898d3048f10c9489ee4e2c78f147c6e52
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78914619"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79305541"
 ---
 # <a name="xamarinforms-entry"></a>Entrée de Xamarin.Forms
 
