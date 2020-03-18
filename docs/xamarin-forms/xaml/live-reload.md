@@ -8,21 +8,24 @@ author: pierceboggan
 ms.author: piboggan
 robots: noindex
 ms.date: 10/26/2018
-ms.openlocfilehash: a5a5a9acf47603601461660df689a7a5fa6aee00
-ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
+ms.openlocfilehash: e6c8e7b84ba8e3d0f6e6247798bb9164a3bc994d
+ms.sourcegitcommit: 8df67f0d76ff762b517d27b8d4c217d3a3379a18
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728341"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79423900"
 ---
 # <a name="xamarin-live-reload-preview"></a>Xamarin Live Reload (préversion)
 
 > [!NOTE]
-> La version préliminaire de Xamarin Live reload est terminée et nous souhaitons remercier tout le monde pour vos commentaires et commentaires. Lisez notre feuille de [route](https://docs.microsoft.com/visualstudio/productinfo/vs-roadmap) pour Visual Studio 2019 pour en savoir plus sur les nouvelles fonctionnalités de productivité sur lesquelles nous travaillons pour Xamarin. Forms. Cette extension reste disponible pour Visual Studio 2017, mais ne reçoit pas de mises à jour ultérieures.
+> La version préliminaire de Xamarin Live reload est terminée et nous souhaitons remercier tout le monde pour vos commentaires et commentaires. 
+>
+> Pour modifier votre code XAML pendant que votre application est en cours d’exécution, utilisez le [rechargement à chaud XAML pour Xamarin. Forms](~/xamarin-forms/xaml/hot-reload.md).
+>
 
 Le rechargement Xamarin Live vous permet d' **apporter des modifications à votre code XAML et de voir qu’ils sont reflétés, sans nécessiter une autre compilation et un nouveau déploiement**. Toutes les modifications apportées à votre code XAML seront redéployées lors de l’enregistrement et reflétées sur votre cible de déploiement.
 
-## <a name="requirements"></a>Configuration requise pour
+## <a name="requirements"></a>Spécifications
 
 * [Visual Studio 2017 version 15,7 ou ultérieure](https://visualstudio.microsoft.com/vs/) avec la charge de travail **développement mobile avec .net** .
 * [Xamarin. Forms 3.0.0 ou version ultérieure](https://www.nuget.org/packages/Xamarin.Forms/).
@@ -78,7 +81,7 @@ Compilez et déployez votre application. Une fois l’application déployée, ou
 
 Le rechargement dynamique fonctionne avec les modifications apportées à un fichier XAML. Les modifications C# apportées à ou l’ajout/la suppression de packages NuGet nécessitent une nouvelle build et le déploiement prennent effet.
 
-## <a name="frequently-asked-questions"></a>Questions fréquemment posées 
+## <a name="frequently-asked-questions"></a>Forum Aux Questions (FAQ) 
 ### <a name="is-xamarin-live-reload-available-on-visual-studio-for-mac"></a>Le rechargement dynamique de Xamarin est-il disponible sur Visual Studio pour Mac ? 
 
 Non, la version préliminaire de Xamarin Live Reload n’est disponible que pour Visual Studio 2017.
@@ -105,9 +108,9 @@ Si vous déboguez sur un émulateur Android ou un simulateur iOS, le rechargemen
 
 ### <a name="does-it-require-debugging-the-app"></a>Le débogage de l’application est-il nécessaire ? 
 
-No. En fait, vous pouvez même démarrer toutes les cibles d’application prises en charge (Android, iOS et UWP) sur un nombre quelconque d’appareils ou de simulateurs/émulateurs, et voir toutes les mises à jour en même temps. 
+Non. En fait, vous pouvez même démarrer toutes les cibles d’application prises en charge (Android, iOS et UWP) sur un nombre quelconque d’appareils ou de simulateurs/émulateurs, et voir toutes les mises à jour en même temps. 
 
-## <a name="limitations"></a>Limitations
+## <a name="limitations"></a>Limites
 
 * Seul le rechargement du code XAML est pris en charge.
 * L’état de l’interface utilisateur ne peut pas être maintenu entre les redéploiement, sauf si vous utilisez MVVM.
@@ -121,7 +124,7 @@ No. En fait, vous pouvez même démarrer toutes les cibles d’application prise
 * Les éléments contenant AutomationId peuvent entraîner un échec de rechargement.
 * La modification du code XAML pendant le débogage UWP peut entraîner un blocage du Runtime. Solution de contournement : utilisez **exécuter sans débogage (Ctrl + F5)** au lieu de **Démarrer le débogage (F5)** .
 
-## <a name="troubleshooting"></a>Résolution des problèmes
+## <a name="troubleshooting"></a>Dépannage
 
 ### <a name="error-codes"></a>Codes d’erreur
 
@@ -160,7 +163,7 @@ Si vous disposez d’une version préliminaire plus ancienne et que vous rencont
 1. Supprimez le dossier **C:\Program Files (x86) \Microsoft Visual Studio\Preview\Enterprise\Common7\IDE\Extensions\Xamarin\LiveReload** (Remarque : remplacez « Enterprise » par votre édition installée, et « Preview » par « 2017 » si vous avez installé sur un ordinateur stable et
 2. Ouvrez une **invite de commandes développeur** pour Visual Studio et exécutez `devenv /updateconfiguration`. 
 
-## <a name="tips--tricks"></a>Trucs et astuces
+## <a name="tips--tricks"></a>Conseils & astuces
 
 * Tant que les paramètres de rechargement en direct ne sont pas modifiés (y compris les clés de chiffrement, par exemple si vous désactivez la génération **automatique des clés de chiffrement**) et que vous générez à partir du même ordinateur, vous n’avez pas besoin de créer et de déployer l’application après le déploiement initial, sauf si vous modifiez le code ou les dépendances. Vous pouvez simplement lancer une application précédemment déployée pour qu’elle se connecte au dernier hôte utilisé.
 

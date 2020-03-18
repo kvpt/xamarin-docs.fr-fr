@@ -4,15 +4,15 @@ description: Ce document décrit comment configurer et utiliser Xamarin Hot Rest
 ms.prod: xamarin
 ms.assetid: 6BC62A88-9368-41BB-8494-760F2A4805DB
 ms.technology: xamarin-forms
-author: jimmgarrido
-ms.author: jigarrid
-ms.date: 01/14/2020
-ms.openlocfilehash: 1f87fffe99656cdc0d0bf0f0178413740a20aa75
-ms.sourcegitcommit: e9d88587aafc912124b87732d81c3910247ad811
+author: maddyleger1
+ms.author: maleger
+ms.date: 03/16/2020
+ms.openlocfilehash: cc5efffd4c3646fbff9cdb1ad1a30ec614cb4921
+ms.sourcegitcommit: 8df67f0d76ff762b517d27b8d4c217d3a3379a18
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78337282"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79429565"
 ---
 # <a name="xamarin-hot-restart-preview"></a>Xamarin Hot Restart (préversion)
 
@@ -21,13 +21,13 @@ ms.locfileid: "78337282"
 Xamarin Hot Restart vous permet de tester rapidement les modifications apportées à votre application pendant le développement, notamment les modifications de code multifichiers, les ressources et les références. Il envoie les nouvelles modifications au bundle d’applications existant sur la cible de débogage, ce qui entraîne un cycle de génération et de déploiement beaucoup plus rapide.
 
 > [!IMPORTANT]
-> Xamarin Hot Restart est actuellement disponible dans Visual Studio 2019 version 16.5 Preview et prend en charge les applications iOS avec Xamarin.Forms. La prise en charge de Visual Studio pour Mac et des applications non-Xamarin.Forms est dans la feuille de route.
+> Le redémarrage à chaud Xamarin est actuellement disponible dans Visual Studio 2019 version 16,5 stable et prend en charge les applications iOS à l’aide de Xamarin. Forms. La prise en charge de Visual Studio pour Mac et des applications non-Xamarin.Forms est dans la feuille de route.
 
 ## <a name="requirements"></a>Spécifications
 
-- Visual Studio 2019 version 16,5 Preview 3
+- Visual Studio 2019 version 16,5
 - iTunes (64 bits)
-- Compte de développeur Apple
+- Compte de développeur Apple et inscription du [programme de développement Apple](https://developer.apple.com/programs) payant
 
 
 ## <a name="initial-setup"></a>Configuration initiale
@@ -45,7 +45,7 @@ Xamarin Hot Restart vous permet de tester rapidement les modifications apportée
 
 3. Si iTunes n’est pas installé, cliquez sur **Télécharger iTunes** pour télécharger le programme d’installation. Cliquez sur **Suivant** quand l'installation d’iTunes est terminée.
 
-4. Connectez un appareil iOS à votre ordinateur. Le nom de l’appareil apparaît dans l’Assistant une fois qu’il est détecté. Cliquez sur **Suivant**.
+4. Connectez un appareil iOS à votre ordinateur. Si un appareil est déjà branché, débranchez-le, puis reconnectez-le. Le nom de l’appareil apparaît dans l’Assistant une fois qu’il est détecté. Cliquez sur **Suivant**.
 
 5. Entrez les informations d’identification de votre compte de développeur Apple, puis cliquez sur **Suivant**.
 
@@ -64,15 +64,18 @@ Vous pouvez apporter des modifications à vos fichiers de code pendant le débog
 Vous pouvez également utiliser le symbole de préprocesseur `HOTRESTART` pour empêcher l’exécution de certains codes lors du débogage avec redémarrage à chaud Xamarin.
 
 ## <a name="limitations"></a>Limites
+
 - Seuls les applications iOS générées avec Xamarin.Forms et les appareils iOS sont actuellement pris en charge.
+- Seuls les appareils iOS 64 bits sont pris en charge. Depuis iOS 11, Apple n’autorise plus l’exécution d’applications iOS sur l’architecture 32 bits (appareils antérieurs à iPhone 5 s).
 - Les fichiers Storyboard et XIB ne sont pas pris en charge et l’application peut planter si elle tente de les charger au moment de l’exécution. Utilisez le symbole de préprocesseur `HOTRESTART` pour empêcher l’exécution de ce code.
 - Les infrastructures et bibliothèques iOS statiques ne sont pas prises en charge et vous pouvez voir des erreurs d’exécution ou des blocages si votre application tente de les charger. Utilisez le symbole de préprocesseur `HOTRESTART` pour empêcher l’exécution de ce code. Les bibliothèques iOS dynamiques sont prises en charge.
 - Vous ne pouvez pas utiliser Xamarin Hot Restart pour créer des bundles d’applications en vue d’une publication. Vous aurez toujours d’un ordinateur Mac pour la compilation, la signature et le déploiement complets de votre application en production.
 
 ## <a name="troubleshoot"></a>Dépanner
+
 - L’Assistant d’installation ne détecte pas iTunes si celui-ci n’a pas été installé via le Microsoft Store. Vous devrez d’abord désinstaller cette version, puis télécharger le [programme d’installation à partir d’Apple](https://go.microsoft.com/fwlink/?linkid=2101014).
 - Un problème connu est que l’activation de builds spécifiques à l’appareil empêche l’application d’entrer en mode débogage. Pour contourner ce problème, désactivez cette option sous **Propriétés > Build iOS** et réessayez le débogage. Ceci fera l’objet d’un correctif dans une version future.
 - Si l’application est déjà présente sur l’appareil, la tentative de déploiement avec Hot Restart peut échouer avec une erreur `AMDeviceStartHouseArrestService`. La solution de contournement consiste à désinstaller l’application de l’appareil, puis à la redéployer.
-- L’entrée d’un ID Apple qui ne fait pas partie du programme de développement Apple provoque l’erreur suivante : `Authentication Error. Xcode 7.3 or later is required to continue developing with your Apple ID`. Vous devez disposer d’un compte de développeur Apple valide pour utiliser le redémarrage à chaud Xamarin sur les appareils iOS. 
+- L’entrée d’un ID Apple qui ne fait pas partie du programme de développement Apple peut entraîner l’erreur suivante : `Authentication Error. Xcode 7.3 or later is required to continue developing with your Apple ID`. Vous devez disposer d’un compte de développeur Apple valide pour utiliser le redémarrage à chaud Xamarin sur les appareils iOS. 
 
 Pour signaler d’autres problèmes, utilisez l’outil de commentaires dans [Aide > Envoyer des commentaires > Signaler un problème](/visualstudio/ide/feedback-options?view=vs-2019#report-a-problem).

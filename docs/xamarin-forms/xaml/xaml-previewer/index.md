@@ -7,13 +7,13 @@ ms.assetid: 84769ff1-72fd-4c44-8251-dd6d5bf8c7b2
 ms.technology: xamarin-forms
 author: maddyleger1
 ms.author: maleger
-ms.date: 02/04/2019
-ms.openlocfilehash: b287d523101bb8ca7faca8ea95ee898ccf9c0bb1
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.date: 03/16/2020
+ms.openlocfilehash: 465783c0771b666a276d18f47cf5d3d458d52933
+ms.sourcegitcommit: 8df67f0d76ff762b517d27b8d4c217d3a3379a18
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79305317"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79423926"
 ---
 # <a name="xaml-previewer-for-xamarinforms"></a>Générateur d’aperçu XAML pour Xamarin. Forms
 
@@ -29,11 +29,11 @@ Le générateur d’aperçu XAML vous montre comment votre page XAML Xamarin. Fo
 
 ### <a name="visual-studio-2019"></a>Visual Studio 2019
 
-Vous pouvez ouvrir le générateur d’aperçu XAML en cliquant sur les flèches du volet mode fractionné. Si vous souhaitez modifier le comportement par défaut du mode fractionné, utilisez les **outils > Options > boîte de dialogue Xamarin > Forms du générateur d’aperçu** . Dans cette boîte de dialogue, vous pouvez sélectionner la vue de document par défaut et l’orientation de fractionnement.
+Vous pouvez ouvrir le générateur d’aperçu XAML en cliquant sur les flèches du volet mode fractionné. Si vous souhaitez modifier le comportement par défaut du mode fractionné, utilisez les **options outils > > boîte de dialogue Générateur d’aperçu XAML Xamarin > Xamarin. Forms** . Dans cette boîte de dialogue, vous pouvez sélectionner la vue de document par défaut et l’orientation de fractionnement.
 
 [![Options du générateur d’aperçu Xamarin. Forms dans Visual Studio](xaml-previewer-images/xamlp-options-vs-sm.png "Options du générateur d’aperçu Xamarin. Forms dans Visual Studio")](xaml-previewer-images/xamlp-options-vs-lg.png#lightbox)
 
-Lorsque vous ouvrez un fichier XAML, l’éditeur ouvre l’intégralité ou en regard du générateur d’aperçu, en fonction des paramètres sélectionnés dans **outils > Options > boîte de dialogue Xamarin > Forms du générateur d’aperçu** . Toutefois, le fractionnement peut être modifié pour chaque fichier dans la fenêtre de l’éditeur.
+Lorsque vous ouvrez un fichier XAML, l’éditeur ouvre le fichier de taille complète ou en regard du générateur d’aperçu, en fonction des paramètres sélectionnés dans la boîte de dialogue **outils > Options > Xamarin > Xamarin. Forms (générateur d’aperçu XAML** ). Toutefois, le fractionnement peut être modifié pour chaque fichier dans la fenêtre de l’éditeur.
 
 #### <a name="xaml-preview-controls"></a>Contrôles d’aperçu XAML
 
@@ -44,6 +44,10 @@ Choisissez si vous souhaitez voir votre code, le générateur d’aperçu XAML, 
 Vous pouvez modifier l’écran pour le fractionner verticalement ou horizontalement, ou pour réduire entièrement un volet :
 
 [![Contrôles d’orientation du volet d’aperçu Xamarin. Forms dans Visual Studio](xaml-previewer-images/xamlp-controls-orientation-vs-sm.png "Contrôles d’orientation du volet d’aperçu Xamarin. Forms dans Visual Studio")](xaml-previewer-images/xamlp-controls-orientation-vs-lg.png#lightbox)
+
+#### <a name="enable-or-disable-the-xaml-previewer"></a>Activer ou désactiver le générateur d’aperçu XAML
+
+Vous pouvez désactiver le générateur d’aperçu XAML dans la boîte de dialogue **outils > Options > Xamarin > Xamarin. Forms générateur d’aperçu XAML** en sélectionnant **éditeur XML par défaut** comme **éditeur XAML par défaut**. Cela désactive également la structure du document, le panneau des propriétés et la boîte à outils XAML. Pour réactiver le générateur d’aperçu XAML et les outils, modifiez votre **éditeur XAML par défaut** en **Xamarin. Forms (générateur d’aperçu**).
 
 ::: zone-end
 ::: zone pivot="macos"
@@ -56,6 +60,10 @@ Le bouton **Aperçu** est affiché dans l’éditeur lorsque vous ouvrez une pag
 
 > [!NOTE]
 > Dans les versions antérieures de Visual Studio pour Mac, le bouton **Aperçu** était situé en haut à droite de la fenêtre.
+
+#### <a name="enable-or-disable-the-xaml-previewer"></a>Activer ou désactiver le générateur d’aperçu XAML
+
+Vous pouvez désactiver le générateur d’aperçu XAML dans les **Préférences du > Visual Studio > éditeur de texte >** boîte de dialogue XAML en sélectionnant **éditeur XML par défaut** comme **éditeur XAML par défaut**. Cela désactive également la structure du document, le panneau des propriétés et la boîte à outils XAML. Pour réactiver le générateur d’aperçu XAML et les outils, modifiez votre **éditeur XAML par défaut** en **Xamarin. Forms (générateur d’aperçu**).
 
 ::: zone-end
 
