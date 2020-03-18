@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 01/15/2019
 ms.custom: video
-ms.openlocfilehash: c7d4e4f7ea27e150752b222e3ea4ce2c4256a43a
-ms.sourcegitcommit: 099b06e311a40c00eeea85465ff9b97867a5c5de
+ms.openlocfilehash: e812ab5b85db396ee3cb473f4a659ac188c9212f
+ms.sourcegitcommit: 98fdc3b4a7ef10d5b45167315dbffe94853af71a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78295402"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79497039"
 ---
 # <a name="xamarinessentials-preferences"></a>Xamarin.Essentials : préférences
 
@@ -44,7 +44,7 @@ var myValue = Preferences.Get("my_key", "default_value");
 Pour vérifier si une _clé_ donnée existe dans les préférences :
 
 ```csharp
-bool hasKey = Preferences.HasKey("my_key");
+bool hasKey = Preferences.ContainsKey("my_key");
 ```
 
 Pour supprimer la _clé_ des préférences :
@@ -72,6 +72,15 @@ Les types de données suivants sont pris en charge dans **Preferences** :
 - **long**
 - **string**
 - **DateTime**
+
+## <a name="integrate-with-system-settings"></a>Intégrer avec les paramètres système
+
+Les préférences sont stockées en mode natif, ce qui vous permet d’intégrer vos paramètres dans les paramètres système natifs. Suivez les documetnation et les exemples de la plateforme pour les intégrer à la plateforme :
+
+* Apple : [implémentation d’un bundle de paramètres iOS](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/UserDefaults/Preferences/Preferences.html)
+* [Exemple de préférences application iOS](https://docs.microsoft.com/samples/xamarin/ios-samples/appprefs/)
+* [Paramètres Watchos](https://developer.xamarin.com/guides/ios/watch/working-with/settings/)
+* Android : [prise en main avec les écrans de paramètres](https://developer.android.com/guide/topics/ui/settings.html)
 
 ## <a name="implementation-details"></a>Informations d’implémentation
 
