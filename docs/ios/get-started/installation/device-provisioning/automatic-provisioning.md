@@ -8,22 +8,24 @@ author: davidortinau
 ms.author: daortin
 ms.custom: video
 ms.date: 03/05/2020
-ms.openlocfilehash: f0612ca53bc54cf4b15982b7743c64b1997a4455
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.openlocfilehash: 069c40b74876bea1d3a0c8fca23b3d90c4b91635
+ms.sourcegitcommit: 997f7b6a1a1bc50b98c3ca5bbc75d6875ba2ae9a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79031078"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79510677"
 ---
 # <a name="automatic-provisioning-for-xamarinios"></a>Provisionnement automatique pour Xamarin.iOS
 
 _Une fois Xamarin. iOS installé avec succès, l’étape suivante du développement iOS consiste à approvisionner votre appareil iOS. Ce guide explore l’utilisation de l’approvisionnement automatique pour demander des profils et des certificats de développement._
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>Spécifications
 
 L’approvisionnement automatique est disponible sur Visual Studio pour Mac, Visual Studio 2019 et Visual Studio 2017 (version 15,7 et ultérieures). 
 
-Vous devez également avoir un compte de développeur Apple payant pour utiliser cette fonctionnalité. Vous trouverez plus d’informations sur les comptes de développeurs Apple dans le Guide de [provisionnement des appareils](~/ios/get-started/installation/device-provisioning/index.md) .
+> [!NOTE]
+> Vous devez également avoir un compte de développeur Apple payant pour utiliser cette fonctionnalité. Vous trouverez plus d’informations sur les comptes de développeurs Apple dans le Guide de [provisionnement des appareils](~/ios/get-started/installation/device-provisioning/index.md) .
+> Si vous n’avez pas de compte de développeur Apple payant, consultez le Guide [approvisionnement gratuit pour Xamarin. iOS] (~/iOS/Get-Started/installation/Device-Provisioning/Free-Provisioning.MD).
 
 > [!NOTE]
 > Avant de commencer, veillez à accepter d’abord tous les contrats de licence dans le [portail des développeurs Apple](https://developer.apple.com/account/) ou dans l' [App Store Connect](https://appstoreconnect.apple.com/).
@@ -101,12 +103,12 @@ Dans certains cas, les droits d’une application nécessitent un ID d’applica
 - Multipath
 - NFC
 - Personal VPN
-- Notifications push
+- Notifications Push
 - Wireless Accessory Configuration
 
 Si votre application utilise l’une de ces habilitations, Visual Studio tente de créer un ID d’application explicite (au lieu d’un caractère générique).
 
-## <a name="troubleshoot"></a>Dépannage 
+## <a name="troubleshoot"></a>Dépanner 
 
 - L’approbation d’un nouveau compte de développeur Apple peut prendre plusieurs heures. Vous ne pouvez pas activer l’approvisionnement automatique tant que le compte n’a pas été approuvé.
 - Si le processus d’approvisionnement automatique échoue avec le message d’erreur `Authentication Service Is Unavailable`, connectez-vous à l' [App Store Connect](https://appstoreconnect.apple.com/) ou à [appleid.Apple.com](https://appleid.apple.com) pour vérifier que vous avez accepté les derniers contrats de service.
