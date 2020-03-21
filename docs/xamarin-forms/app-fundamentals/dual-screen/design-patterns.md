@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidortinau
 ms.author: daortin
 ms.date: 02/08/2020
-ms.openlocfilehash: eb4d3d80fa416f7bb94f3137a0925a9a9807cb10
-ms.sourcegitcommit: 524fc148bad17272bda83c50775771daa45bfd7e
-ms.translationtype: HT
+ms.openlocfilehash: d8a57ac8688a0113ef267ea25fb54cbaaf562957
+ms.sourcegitcommit: 6c60914b380ff679bbffd7790edd4d5e18005d0a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77480612"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80070379"
 ---
 # <a name="xamarinforms-dual-screen-design-patterns"></a>Modèles de conception Xamarin.Forms pour appareils double écran
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://github.com/xamarin/xamarin-forms-samples/tree/pre-release/UserInterface/DualScreenDemos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/DualScreenDemos)
 
 Ce guide présente nos modèles de conception recommandés pour les appareils double écran. Il contient également du code et des exemples pour vous aider à créer des interfaces offrant des expériences utilisateur engageantes et pratiques.
 
@@ -270,5 +270,5 @@ Le modèle compagnon montre comment utiliser le deuxième écran pour fournir un
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Exemples pour appareils double écran (GitHub)](https://github.com/xamarin/xamarin-forms-samples/tree/pre-release/UserInterface/DualScreenDemos)
+- [Exemples pour appareils double écran (GitHub)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/DualScreenDemos)
 - [Créer des applications pour appareils double écran](index.md)

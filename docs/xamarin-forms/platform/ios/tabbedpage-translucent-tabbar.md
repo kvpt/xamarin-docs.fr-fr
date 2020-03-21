@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/16/2020
-ms.openlocfilehash: c321884039674d3abb1a4b510ddfe2c062c28211
-ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
+ms.openlocfilehash: 55fda0be2e260c5aa4a34ab2dcc1ac3cac33b92a
+ms.sourcegitcommit: 6c60914b380ff679bbffd7790edd4d5e18005d0a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "78291714"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80070290"
 ---
 # <a name="tabbedpage-translucent-tab-bar-on-ios"></a>Barre d’onglets translucide TabbedPage sur iOS
 
@@ -41,7 +41,7 @@ On<iOS>().SetTranslucencyMode(TranslucencyMode.Opaque);
 La méthode `TabbedPage.On<iOS>` spécifie que ce spécifique à la plateforme s’exécutera uniquement sur iOS. La méthode `TabbedPage.SetTranslucencyMode`, dans l’espace de noms [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) , est utilisée pour définir le mode translucidité de la barre d’onglets sur un [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) en spécifiant l’une des valeurs d’énumération `TranslucencyMode` suivantes :
 
 - `Default`, qui définit la barre d’onglets en mode translucidité par défaut. C’est la valeur par défaut de la propriété `TabbedPage.TranslucencyMode`.
-- `Transparent`, qui définit la barre d’onglets pour qu’elle soit translucide.
+- `Translucent`, qui définit la barre d’onglets pour qu’elle soit translucide.
 - `Opaque`, qui définit la barre d’onglets pour qu’elle soit opaque.
 
 En outre, la méthode `GetTranslucencyMode` peut être utilisée pour récupérer la valeur actuelle de l’énumération `TranslucencyMode` appliquée au [`TabbedPage`](xref:Xamarin.Forms.TabbedPage).

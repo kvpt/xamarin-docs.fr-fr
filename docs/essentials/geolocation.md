@@ -5,12 +5,12 @@ ms.assetid: 8F66092C-13F0-4FEE-8AA5-901D5F79B357
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 03/13/2019
-ms.openlocfilehash: 2ee4683bce02e95c52235afa823be21b89863208
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 840aadcafea88ef08f53e16f535439be0862fee9
+ms.sourcegitcommit: 6c60914b380ff679bbffd7790edd4d5e18005d0a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79304323"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80070358"
 ---
 # <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials : géolocalisation
 
@@ -178,7 +178,7 @@ Le tableau suivant indique la précision en fonction de la plateforme :
 | iOS | 10 |
 | UWP | <= 10 |
 
-### <a name="best"></a>La meilleure
+### <a name="best"></a>Le meilleur
 
 | Plateforme | Distance (en mètres) |
 | --- | --- |
@@ -217,6 +217,24 @@ double miles = Location.CalculateDistance(boston, sanFrancisco, DistanceUnits.Mi
 ```
 
 Le constructeur `Location` a des arguments de latitude et de longitude dans cet ordre. Les valeurs de latitude positives sont au nord de l’équateur, et les valeurs de longitude positives sont à l’est du premier méridien. Utilisez le dernier argument pour `CalculateDistance` afin de spécifier des miles ou des kilomètres. La classe `UnitConverters` définit également les méthodes `KilometersToMiles` et `MilesToKilometers` pour effectuer la conversion entre les deux unités.
+
+## <a name="platform-differences"></a>Différences de plateformes
+
+L’altitude est calculée différemment sur chaque plateforme.
+
+# <a name="android"></a>[Android](#tab/android)
+
+Sur Android, l' [altitude](https://developer.android.com/reference/android/location/Location#getAltitude()), si elle est disponible, est retournée en mètres au-dessus de la référence WGS 84 ellipsoïde. Si cet emplacement n’a pas d’altitude, 0,0 est retourné.
+
+# <a name="ios"></a>[iOS](#tab/ios)
+
+Sur iOS, l' [altitude](https://developer.apple.com/documentation/corelocation/cllocation/1423820-altitude) est mesurée en mètres. Les valeurs positives indiquent des altitudes au-dessus du niveau de la mer, tandis que les valeurs négatives indiquent des altitudes inférieures au niveau de la mer.
+
+# <a name="uwp"></a>[UWP](#tab/uwp)
+
+Sur UWP, l’altitude est retournée en mètres. Pour plus d’informations, consultez la documentation de [AltitudeReferenceSystem](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geopoint.altitudereferencesystem#Windows_Devices_Geolocation_Geopoint_AltitudeReferenceSystem) .
+
+-----
 
 ## <a name="api"></a>API
 
