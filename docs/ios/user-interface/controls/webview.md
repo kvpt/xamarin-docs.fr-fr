@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: a9dce962c35e5f9cfdcd674da9ad71cf8935e7d4
-ms.sourcegitcommit: 6c60914b380ff679bbffd7790edd4d5e18005d0a
+ms.openlocfilehash: 7c469a011a70840cfe94a7f87ed77f03968a3525
+ms.sourcegitcommit: ec112800a76089ab1db66fe24b8bbcc510e067b4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80070317"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80159819"
 ---
 # <a name="web-views-in-xamarinios"></a>Affichages Web dans Xamarin. iOS
 
@@ -146,7 +146,7 @@ Une solution *force* consiste à ajouter `--optimization=force-rejected-types-re
 
 #### <a name="support-for-ios-7x-or-earlier"></a>Prise en charge d’iOS 7. x (ou version antérieure)
 
-`UIWebView` fait partie d’iOS depuis la version 2.0. Les remplacements les plus courants sont `WKWebView` (iOS 8) et `SFSafariViewController` (iOS 9). Si votre application prend toujours en charge les anciennes versions d’iOS, vous devez prendre en compte les options suivantes :
+`UIWebView` fait partie d’iOS depuis v 2.0. Les remplacements les plus courants sont `WKWebView` (iOS 8) et `SFSafariViewController` (iOS 9). Si votre application prend toujours en charge les anciennes versions d’iOS, vous devez prendre en compte les options suivantes :
 
 * Créez iOS 8 votre version cible minimale (décision au moment de la génération).
 * Utilisez uniquement `WKWebView` si l’application s’exécute sur iOS 8 + (une décision d’exécution).

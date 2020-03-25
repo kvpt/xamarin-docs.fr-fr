@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: maddyleger1
 ms.author: maleger
 ms.date: 03/14/2020
-ms.openlocfilehash: 225b7dc7dc639031b3198a8fb9e7fe9fb9d7ee7f
-ms.sourcegitcommit: 8df67f0d76ff762b517d27b8d4c217d3a3379a18
+ms.openlocfilehash: a6cb5a0e3573ebf998bb2f81c08ff63c81678b54
+ms.sourcegitcommit: ec112800a76089ab1db66fe24b8bbcc510e067b4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79423874"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80159806"
 ---
 # <a name="xaml-hot-reload-for-xamarinforms"></a>Rechargement à chaud XAML pour Xamarin. Forms
 
@@ -59,7 +59,7 @@ Le rechargement à chaud XAML prend en charge le débogage simultané dans Visua
 
 ## <a name="known-limitations"></a>Limitations connues
 
-* Les autres cibles Xamarin. Forms, telles que UWP et MacOS, ne sont *pas* encore prises en charge. Vous pouvez suivre la progression de la prise en charge UWP [ici](https://developercommunity.visualstudio.com/idea/661682/xaml-hot-reload-for-xamarinforms-on-uwp.html).
+* Les autres cibles Xamarin. Forms, telles que UWP et macOS, ne sont *pas* encore prises en charge. Vous pouvez suivre la progression de la prise en charge UWP [ici](https://developercommunity.visualstudio.com/idea/661682/xaml-hot-reload-for-xamarinforms-on-uwp.html).
 * Vous ne pouvez pas ajouter, supprimer ou renommer des fichiers ou des packages NuGet au cours d’une session de rechargement à chaud XAML. Si vous ajoutez ou supprimez un fichier ou un package NuGet, régénérez et redéployez votre application pour continuer à utiliser le rechargement à chaud XAML.
 * Configurez votre éditeur de liens pour qu’il **ne** soit ni lié, ni **lié** à la meilleure expérience. Le paramètre du **Kit de développement logiciel (SDK) Link ne fonctionne que** la plupart du temps, mais il peut échouer dans certains cas. Les paramètres de l’éditeur de liens se trouvent dans vos options de génération Android et iOS.
 * Le débogage sur un iPhone physique requiert que l’interpréteur utilise le rechargement à chaud XAML. Pour ce faire, ouvrez les paramètres du projet, sélectionnez l’onglet Build iOS et assurez-vous que **l’option Activer le paramètre interpréteur mono** est activée. Vous devrez peut-être modifier l’option de **plateforme** en haut de la page de propriétés en **iPhone**.

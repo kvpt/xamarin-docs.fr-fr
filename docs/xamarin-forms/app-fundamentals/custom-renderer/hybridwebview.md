@@ -6,13 +6,13 @@ ms.assetid: 58DFFA52-4057-49A8-8682-50A58C7E842C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/03/2019
-ms.openlocfilehash: 46d0b245246d9e93040cd8591dab8ed3a816268d
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.date: 03/23/2020
+ms.openlocfilehash: 712ca4f8f3441e0d3c2aede1b2510b07ca89f829
+ms.sourcegitcommit: d83c6af42ed26947aa7c0ecfce00b9ef60f33319
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75487007"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80247611"
 ---
 # <a name="customizing-a-webview"></a>Personnalisation d’une WebView
 
@@ -20,9 +20,9 @@ ms.locfileid: "75487007"
 
 _Xamarin. Forms `WebView` est une vue qui affiche du contenu Web et HTML dans votre application. Cet article explique comment créer un convertisseur personnalisé qui étend le `WebView` pour permettre C# à du code d’être appelé à partir de JavaScript._
 
-Chaque vue Xamarin.Forms est accompagnée d’un renderer pour chaque plateforme qui crée une instance d’un contrôle natif. Lorsqu’un [`WebView`](xref:Xamarin.Forms.WebView) est rendu par une application Xamarin. Forms sur iOS, la classe `WkWebViewRenderer` est instanciée, qui à son tour instancie un contrôle `WkWebView` natif. Sur la plateforme Android, la classe `WebViewRenderer` instancie un contrôle `WebView` natif. Sur la plateforme Windows universelle (UWP), la classe `WebViewRenderer` instancie un contrôle `WebView` natif. Pour plus d’informations sur le renderer et les classes de contrôle natif auxquels les contrôles Xamarin.Forms sont mappés, consultez [Classes de base de renderer et contrôles natifs](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
+Chaque vue Xamarin.Forms est accompagnée d’un renderer pour chaque plateforme qui crée une instance d’un contrôle natif. Lorsqu’un [`WebView`](xref:Xamarin.Forms.WebView) est rendu par une application Xamarin. Forms sur iOS, la classe `WkWebViewRenderer` est instanciée, qui à son tour instancie un contrôle `WkWebView` natif. Sur la plateforme Android, la classe `WebViewRenderer` instancie un contrôle `WebView` natif. Sur la plateforme Windows universelle (UWP), la classe `WebViewRenderer` instancie un contrôle `WebView` natif. Pour plus d’informations sur le renderer et les classes de contrôle natif auxquels les contrôles Xamarin.Forms sont mappés, consultez [Classes de base et contrôles natifs de renderer](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
 
-Le diagramme suivant illustre la relation entre l’élément [`View`](xref:Xamarin.Forms.View) et les contrôles natifs correspondants qui l’implémentent :
+Le diagramme suivant illustre la relation entre [`View`](xref:Xamarin.Forms.View) et les contrôles natifs correspondants qui l’implémentent :
 
 ![](hybridwebview-images/webview-classes.png "Relationship Between the WebView Class and its Implementing Native Classes")
 
@@ -150,7 +150,7 @@ Le processus de création de la classe de renderer personnalisé est le suivant�
 > [!NOTE]
 > Pour la plupart des éléments Xamarin.Forms, il est facultatif de fournir un renderer personnalisé dans chaque projet de plateforme. Si un renderer personnalisé n’est pas inscrit, le renderer par défaut de la classe de base du contrôle est utilisé. Toutefois, les renderers personnalisés sont nécessaires dans chaque projet de plateforme lors du rendu d’un élément [View](xref:Xamarin.Forms.View).
 
-Le diagramme suivant illustre les responsabilités de chaque projet dans l’exemple d’application ainsi que les relations qu’ils entretiennent les uns avec les autres :
+Le diagramme suivant montre les responsabilités de chaque projet dans l’exemple d’application ainsi que les relations qu’ils entretiennent les uns avec les autres :
 
 ![](hybridwebview-images/solution-structure.png "HybridWebView Custom Renderer Project Responsibilities")
 
@@ -158,7 +158,7 @@ Le `HybridWebView` contrôle personnalisé est rendu par les classes de converti
 
 ![](hybridwebview-images/screenshots.png "HybridWebView on each Platform")
 
-Les classes `WkWebViewRenderer` et `WebViewRenderer` exposent la méthode `OnElementChanged`, qui est appelée lorsque le contrôle personnalisé Xamarin. Forms est créé pour restituer le contrôle Web natif correspondant. Cette méthode prend un paramètre `VisualElementChangedEventArgs` qui contient les propriétés de `OldElement` et de `NewElement`. Ces propriétés représentent respectivement l’élément Xamarin.Forms auquel le renderer *était* attaché et l’élément Xamarin.Forms auquel le renderer *est* attaché. Dans l’exemple d’application, la propriété `OldElement` sera `null` et la propriété `NewElement` contiendra une référence à l’instance `HybridWebView`.
+Les classes `WkWebViewRenderer` et `WebViewRenderer` exposent la méthode `OnElementChanged`, qui est appelée lorsque le contrôle personnalisé Xamarin. Forms est créé pour restituer le contrôle Web natif correspondant. Cette méthode prend un paramètre `VisualElementChangedEventArgs` qui contient les propriétés de `OldElement` et de `NewElement`. Ces propriétés représentent, respectivement, l’élément Xamarin.Forms auquel le renderer *était* attaché et l’élément Xamarin.Forms auquel le renderer *est* attaché. Dans l’exemple d’application, la propriété `OldElement` est `null` et la propriété `NewElement` contient une référence à l’instance `HybridWebView`.
 
 Une version substituée de la méthode `OnElementChanged`, dans chaque classe de convertisseur de plateforme, est l’endroit où effectuer la personnalisation de contrôle Web native. Une référence au contrôle Xamarin. Forms qui est rendu peut être obtenue via la propriété `Element`.
 
@@ -268,6 +268,15 @@ namespace CustomRenderer.iOS
         {
             ((HybridWebView)Element).InvokeAction(message.Body.ToString());
         }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                ((HybridWebView)Element).Cleanup();
+            }
+            base.Dispose(disposing);
+        }        
     }
 }
 ```
@@ -282,8 +291,8 @@ Cette fonctionnalité est obtenue comme suit :
 - Le constructeur de convertisseur appelle la méthode [`WKUserContentController.AddScriptMessageHandler`](xref:WebKit.WKUserContentController.AddScriptMessageHandler(WebKit.IWKScriptMessageHandler,System.String)) pour ajouter un gestionnaire de messages de script nommé `invokeAction` à l’objet [`WKUserContentController`](xref:WebKit.WKUserContentController) , ce qui entraîne la définition de la fonction JavaScript `window.webkit.messageHandlers.invokeAction.postMessage(data)` dans tous les frames de toutes les instances de `WebView` qui utilisent l’objet `WKUserContentController`.
 - Sous réserve que le renderer personnalisé soit attaché à un nouvel élément Xamarin.Forms :
   - La méthode [`WKWebView.LoadRequest`](xref:WebKit.WKWebView.LoadRequest(Foundation.NSUrlRequest)) charge le fichier HTML qui est spécifié par la propriété `HybridWebView.Uri`. Le code spécifie que le fichier est stocké dans le dossier `Content` du projet. Une fois la page web affichée, la fonction JavaScript `invokeCSharpAction` y est injectée.
-- Quand l’élément auquel le renderer est attaché change :
-  - Les ressources sont libérées.
+- Les ressources sont libérées lorsque l’élément auquel le convertisseur est attaché les modifications.
+- L’élément Xamarin. Forms est nettoyé lorsque le convertisseur est supprimé.
 
 > [!NOTE]
 > La classe `WKWebView` est uniquement prise en charge dans iOS versions 8 et ultérieures.
@@ -332,6 +341,15 @@ namespace CustomRenderer.Droid
                 Control.LoadUrl($"file:///android_asset/Content/{((HybridWebView)Element).Uri}");
             }
         }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                ((HybridWebView)Element).Cleanup();
+            }
+            base.Dispose(disposing);
+        }        
     }
 }
 ```
@@ -363,8 +381,8 @@ Une fois que l’utilisateur entre son nom et clique sur l’élément `button` 
   - La méthode [`WebView.AddJavascriptInterface`](xref:Android.Webkit.WebView.AddJavascriptInterface*) injecte une nouvelle instance `JSBridge`, qu’elle nomme `jsBridge`, dans le cadre principal du contexte JavaScript de l’affichage web. Ainsi, les méthodes dans la classe `JSBridge` sont accessibles à partir de JavaScript.
   - La méthode [`WebView.LoadUrl`](xref:Android.Webkit.WebView.LoadUrl*) charge le fichier HTML qui est spécifié par la propriété `HybridWebView.Uri`. Le code spécifie que le fichier est stocké dans le dossier `Content` du projet.
   - Dans la classe `JavascriptWebViewClient`, la fonction JavaScript `invokeCSharpAction` est injectée dans la page web une fois celle-ci chargée.
-- Quand l’élément auquel le renderer est attaché change :
-  - Les ressources sont libérées.
+- Les ressources sont libérées lorsque l’élément auquel le convertisseur est attaché les modifications.
+- L’élément Xamarin. Forms est nettoyé lorsque le convertisseur est supprimé.
 
 Quand la fonction JavaScript `invokeCSharpAction` est exécutée, elle appelle à son tour la méthode `JSBridge.InvokeAction`, comme l’illustre l’exemple de code suivant :
 
@@ -401,7 +419,7 @@ Notez que la classe `JSBridge` conserve une `WeakReference` à la classe `Hybrid
 
 ### <a name="create-the-custom-renderer-on-uwp"></a>Créer le convertisseur personnalisé sur UWP
 
-L’exemple de code suivant illustre le renderer personnalisé pour UWP :
+L’exemple de code suivant illustre le renderer personnalisé pour la plateforme UWP :
 
 ```csharp
 [assembly: ExportRenderer(typeof(HybridWebView), typeof(HybridWebViewRenderer))]
@@ -441,6 +459,15 @@ namespace CustomRenderer.UWP
         {
             ((HybridWebView)Element).InvokeAction(e.Value);
         }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                ((HybridWebView)Element).Cleanup();
+            }
+            base.Dispose(disposing);
+        }        
     }
 }
 ```
@@ -452,8 +479,8 @@ Cette fonctionnalité est obtenue comme suit :
 - Sous réserve que le renderer personnalisé soit attaché à un nouvel élément Xamarin.Forms :
   - Des gestionnaires d’événements pour les événements `NavigationCompleted` et `ScriptNotify` sont inscrits. L’événement `NavigationCompleted` est déclenché quand le contrôle `WebView` natif a terminé de charger le contenu actuel ou si la navigation a échoué. L’événement `ScriptNotify` est déclenché quand le contenu du contrôle `WebView` natif utilise JavaScript pour passer une chaîne à l’application. La page web déclenche l’événement `ScriptNotify` en appelant `window.external.notify` tout en passant un paramètre `string`.
   - La propriété `WebView.Source` est définie sur l’URI du fichier HTML qui est spécifié par la propriété `HybridWebView.Uri`. Le code suppose que le fichier est stocké dans le dossier `Content` du projet. Une fois la page web affichée, l’événement `NavigationCompleted` est déclenché et la méthode `OnWebViewNavigationCompleted` est appelée. La fonction JavaScript `invokeCSharpAction` est ensuite injectée dans la page web avec la méthode `WebView.InvokeScriptAsync`, à condition que la navigation se soit déroulée correctement.
-- Quand l’élément auquel le renderer est attaché change :
-  - Les événements font l’objet d’un désabonnement.
+- L’inscription de l’événement est annulée lorsque l’élément auquel le convertisseur est attaché est modifié.
+- L’élément Xamarin. Forms est nettoyé lorsque le convertisseur est supprimé.
 
 ## <a name="related-links"></a>Liens connexes
 

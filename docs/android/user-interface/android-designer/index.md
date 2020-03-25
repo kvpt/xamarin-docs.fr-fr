@@ -7,18 +7,18 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 07/25/2018
-ms.openlocfilehash: 8793dafe5bc44999cb884621d0c41956674b05e0
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: bd49e498a3d54dea883292dcca42b0b4eaa6b9a2
+ms.sourcegitcommit: d83c6af42ed26947aa7c0ecfce00b9ef60f33319
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029391"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80247572"
 ---
 # <a name="xamarinandroid-designer"></a>Xamarin. Android Designer
 
 _Cet article décrit les fonctionnalités de Xamarin. Android Designer. Elle explique les principes fondamentaux du concepteur, en expliquant comment utiliser le concepteur pour disposer les widgets visuellement et modifier les propriétés. Il montre également comment utiliser le concepteur pour travailler avec des interfaces utilisateur et des ressources dans différentes configurations, telles que des thèmes, des langages et des configurations d’appareil, ainsi que pour concevoir des vues alternatives, telles que le mode paysage et le mode portrait._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d’ensemble
 
 Xamarin. Android prend en charge à la fois un style déclaratif de conception d’interface utilisateur basé sur des fichiers XML, ainsi que la création d’une interface utilisateur par programmation dans le code.
 Lors de l’utilisation de l’approche déclarative, les fichiers XML peuvent être modifiés manuellement ou modifiés visuellement à l’aide de Xamarin. Android Designer. L’utilisation d’un concepteur permet de fournir des commentaires immédiats pendant la création de l’interface utilisateur, accélère le développement et rend le processus de création de l’interface utilisateur moins laborieux.
@@ -47,7 +47,9 @@ Cet article présente les nombreuses fonctionnalités de Xamarin. Android Design
 
  [Fonctionnalités de conception matérielle](~/android/user-interface/android-designer/material-design-features.md)
 
-## <a name="summary"></a>Récapitulatif
+ [Diagnostics de disposition Android](~/android/user-interface/android-designer/diagnostics.md)
+
+## <a name="summary"></a>Résumé
 
 Cet article a décrit l’ensemble des fonctionnalités de Xamarin. Android Designer.
 Il a montré comment prendre en main le concepteur et expliqué ses différentes parties. Il a décrit comment charger une disposition, ainsi que la manière d’ajouter et de modifier des widgets, à l’aide de l' **aire du concepteur** et de la vue **source** . Elle a également expliqué comment utiliser différentes ressources et configurations d’appareil. Enfin, il a examiné comment utiliser le concepteur pour développer des interfaces utilisateur qui sont spécifiquement conçues pour des vues alternatives, telles que le paysage et le portrait, et comment résoudre les conflits qui peuvent se produire entre ces vues.
