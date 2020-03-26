@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2018
-ms.openlocfilehash: 8c21895918e4d4ac9a82804d4b140fbf7bf798fe
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: c9c6816115d89212ea720f027d51af6c990cfe8d
+ms.sourcegitcommit: 7fd88ada5b44a62390fe1a73ef08014e4d236a2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79303924"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80261308"
 ---
 # <a name="preparing-an-application-for-release"></a>Préparation d’une application pour la mise en production
 
@@ -27,7 +27,7 @@ Effectuez les étapes suivantes pour générer l’application à mettre en prod
 
 - **[Protégez l’application](#protect_app)** &ndash; empêcher les utilisateurs ou les attaquants de déboguer, de falsifier ou de rétroconcevoir l’application en désactivant le débogage, en masquant le code managé, en ajoutant anti-débogage et anti-falsification, et en utilisant la compilation native.
 
-- **[Définir les propriétés de packaging](#Set_Packaging_Properties)** &ndash; les propriétés de Packaging contrôlent la création du package d’application Android (apk). Cette étape optimise l’APK, protège ses ressources et divise si nécessaire le paquet en modules.
+- **[Définir les propriétés de packaging](#Set_Packaging_Properties)** &ndash; les propriétés de Packaging contrôlent la création du package d’application Android (apk). Cette étape optimise l’APK, protège ses ressources et divise si nécessaire le paquet en modules. En outre, vous pouvez fournir à vos utilisateurs un bundle d’applications Android qui est optimisé pour leurs appareils.
 
 - **[Compiler](#Compile)** &ndash; cette étape compile le code et les ressources pour vérifier qu’il est généré en mode release.
 
@@ -269,6 +269,16 @@ Il est possible qu’une application n’utilise pas toutes les méthodes de tou
 
 Pour plus d’informations sur Multi-Dex, consultez [Configurer les applications avec plus de 64K méthodes](https://developer.android.com/tools/building/multidex.html).
 
+### <a name="android-app-bundles"></a>Offres groupées d’applications Android
+
+Les offres groupées d’applications diffèrent de fichiers APK, car elles ne peuvent pas être déployées directement sur un appareil. Au lieu de cela, il s’agit d’un format qui est destiné à être téléchargé avec l’ensemble de votre code et de vos ressources compilées. Une fois que vous avez téléchargé votre offre groupée d’applications signées, Google Play disposera de tout ce dont il a besoin pour créer et signer les fichiers APK de votre application et les servir à vos utilisateurs à l’aide de la remise dynamique.
+
+Pour activer la prise en charge des lots d’applications Android, vous devez vous abonner à la valeur `bundle` de la propriété **format de package Android** dans vos options de projet Android. Avant cela, assurez-vous de remplacer votre projet par une configuration de `Release`, car les packages d’applications sont uniquement destinés aux packages de version.
+
+Vous pouvez maintenant générer un bundle d’applications en suivant le [processus d’archivage](#archive). Une offre groupée d’applications est générée pour votre application.
+
+Pour plus d’informations sur les offres groupées d’applications Android, consultez [Bundle Apps App](https://developer.android.com/guide/app-bundle/).
+
 <a name="Compile" />
 
 ## <a name="compile"></a>Compiler
@@ -297,7 +307,7 @@ Pour commencer le processus de publication, cliquez avec le bouton droit sur le 
 
 **Archiver...**  lance le **Gestionnaire d’archives** et commence le processus d’archivage du bundle d’applications, comme illustré dans cette capture d’écran :
 
-[![Gestionnaire d’archives](images/vs/08-archive-manager-sml.png)](images/vs/08-archive-manager.png#lightbox)
+[![Gestionnaire d'archives](images/vs/08-archive-manager-sml.png)](images/vs/08-archive-manager.png#lightbox)
 
 Vous pouvez également créer une archive en cliquant avec le bouton droit sur la solution dans l’**Explorateur de solutions**, puis en sélectionnant **Archiver tout...** , ce qui génère la solution et archive tous les projets Xamarin pouvant générer une archive :
 
