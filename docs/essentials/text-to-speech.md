@@ -1,18 +1,18 @@
 ---
-title: 'Xamarin.Essentials: Synthèse vocale'
+title: 'Xamarin.Essentials : Synthèse vocale'
 description: La classe Synthèse vocale dans Xamarin.Essentials permet à une application d’utiliser les moteurs de synthèse vocale intégrés pour énoncer le texte à partir de l’appareil et également pour interroger les langages disponibles pris en charge par le moteur.
 ms.assetid: AEEF03AE-A047-4DF0-B0E8-CC8D9A7B8351
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
 ms.openlocfilehash: 6d89f70a8b7f6229297f86deb3cb83cf940fa7df
-ms.sourcegitcommit: 4f8dc5298a95d591a59e97cdd347fd82858a1019
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/03/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "66469474"
 ---
-# <a name="xamarinessentials-text-to-speech"></a>Xamarin.Essentials: Synthèse vocale
+# <a name="xamarinessentials-text-to-speech"></a>Xamarin.Essentials : Synthèse vocale
 
 La classe **Synthèse vocale** permet à une application d’utiliser les moteurs de synthèse vocale intégrés pour énoncer le texte à partir de l’appareil et également pour interroger les langages disponibles pris en charge par le moteur.
 
@@ -113,9 +113,9 @@ public async Task SpeakNow()
 
 Les valeurs prises en charge pour ces paramètres sont les suivantes :
 
-| Paramètre | Minimum | Maximum |
+| Paramètre | Minimum | Maximale |
 | --- | :---: | :---: |
-| Tonalité | 0 | 2.0 |
+| Tonalité | 0 | 2 |
 | Volume | 0 | 1.0 |
 
 ### <a name="speech-locales"></a>Paramètres régionaux de la parole
@@ -141,7 +141,7 @@ public async Task SpeakNow()
 }
 ```
 
-## <a name="limitations"></a>Limitations
+## <a name="limitations"></a>Limites
 
 - La file d’attente de l’énoncé n’est pas garantie si elle est appelée sur plusieurs threads.
 - La lecture audio en arrière-plan n’est pas officiellement prise en charge.

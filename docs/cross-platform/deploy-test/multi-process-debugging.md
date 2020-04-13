@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/24/2017
 ms.openlocfilehash: fb96dab2d9979a365964d4993d9c7fc7fee299f5
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73016548"
 ---
 # <a name="multi-process-debugging"></a>Débogage multiprocessus
@@ -19,7 +19,7 @@ Il est très courant que les solutions modernes développées dans Visual Studio
 
 Ce guide aborde certaines des modifications qui ont été apportées à Visual Studio pour Mac en vue de prendre en charge le débogage de plusieurs processus à la fois. Il explique également comment configurer les solutions pour le débogage multiprocessus, et comment joindre le débogueur à des processus existants avec Visual Studio pour Mac.
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Spécifications
 
 Le débogage simultané de plusieurs processus nécessite l’utilisation de Visual Studio pour Mac.
 
@@ -80,7 +80,7 @@ Dans cette capture d’écran, chaque solution a son propre point d’arrêt. Lo
 
 L’exécution pas à pas du code est limitée au thread actif. Par conséquent, Visual Studio pour Mac exécute le code ligne par ligne, pendant que les autres processus sont suspendus.
 
-Si l’on reprend la capture d’écran précédente comme exemple, lorsque la boucle `for` est terminée, Visual Studio pour Mac permet à **FirstProject** de s’exécuter jusqu’à ce qu’il rencontre le point d’arrêt à **ligne 11** dans `MainClass`. Pour chaque commande **Pas à pas principal**, le débogueur avance ligne par ligne dans **FirstProject**, jusqu’à ce que les algorithmes heuristiques internes de Visual Studio pour Mac rebasculent le thread actif vers  **SecondProject**.
+Si l’on reprend la capture d’écran précédente comme exemple, lorsque la boucle `for` est terminée, Visual Studio pour Mac permet à **FirstProject** de s’exécuter jusqu’à ce qu’il rencontre le point d’arrêt à **ligne 11** dans `MainClass`. Pour chaque commande **Pas à pas principal**, le débogueur avance ligne par ligne dans **FirstProject**, jusqu’à ce que les algorithmes heuristiques internes de Visual Studio pour Mac rebasculent le thread actif vers ** SecondProject**.
 
 Si seul un des projets a un point d’arrêt défini, alors seul ce processus sera suspendu. Les autres projets continuent de s’exécuter jusqu’à ce qu’ils soient suspendus par le développeur ou qu’un point d’arrêt soit ajouté.
 
@@ -126,6 +126,6 @@ La configuration de solution **MultipleProjects** s’affiche désormais dans la
 
 Ce guide a abordé le débogage de plusieurs processus dans Visual Studio pour Mac. Il a abordé également certaines des modifications apportées à l’IDE pour permettre le débogage simultané de plusieurs processus, ainsi que les changements de comportement qui découlent de ces modifications.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Notes de mise en production Xamarin Cycle 9](https://releases.xamarin.com/stable-release-cycle-9/)

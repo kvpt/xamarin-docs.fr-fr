@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
 ms.openlocfilehash: dee49d556173ec0b9544820f129eef8a9cce404f
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73021320"
 ---
 # <a name="publishing-independently"></a>Publication indépendante
@@ -33,7 +33,7 @@ Visitez le site [visualstudio.com](https://visualstudio.microsoft.com/xamarin/) 
 
 Par défaut, Android empêche les utilisateurs de télécharger et d’installer des applications à partir d’emplacements autres que Google Play. Pour autoriser l’installation à partir de sources autres que des places de marché, un utilisateur doit activer le paramètre *Sources inconnues* sur un appareil avant d’installer une application. Ce paramètre peut se trouver sous **Paramètres > Sécurité**, comme illustré dans la capture d’écran suivante :
 
-[![Écran Paramètres de sécurité](publishing-independently-images/settings.png)](publishing-independently-images/settings.png#lightbox)
+[![Écran des paramètres de sécurité](publishing-independently-images/settings.png)](publishing-independently-images/settings.png#lightbox)
 
 > [!IMPORTANT]
 > Certains fournisseurs réseau peuvent empêcher l’installation d’applications provenant de sources inconnues, indépendamment de ce paramètre.
@@ -42,7 +42,7 @@ Par défaut, Android empêche les utilisateurs de télécharger et d’installer
 
 Joindre l’APK de mise en production à un e-mail est un moyen simple et rapide de distribuer une application aux utilisateurs. Lorsque l’utilisateur ouvre l’e-mail sur un appareil Android, celui-ci reconnaît la pièce jointe APK et affiche un bouton **Installer**, comme illustré dans l’image suivante :
 
-[![Bouton Installer pour la pièce jointe](publishing-independently-images/publishing-via-email.png)](publishing-independently-images/publishing-via-email.png#lightbox)
+[![Installer le bouton pour la pièce jointe](publishing-independently-images/publishing-via-email.png)](publishing-independently-images/publishing-via-email.png#lightbox)
 
 Certes simple, la distribution par e-mail n’offre qu’une faible protection contre le piratage ou la distribution non autorisée. Elle doit être réservée aux situations dans lesquelles les destinataires de l’application sont peu nombreux et dignes de confiance pour ne pas distribuer l’application.
 
@@ -55,7 +55,7 @@ Il est possible de distribuer une application par un serveur web. L’applicatio
 L’installation manuelle est une troisième option pour installer des applications. Pour installer manuellement une application :
 
 1. **Distribuez une copie de l’APK à l’utilisateur** &ndash; Par exemple, cette copie peut être distribuée sur un CD ou une clé USB.
-1. **(L’utilisateur) installe l’application sur un appareil Android** &ndash; Utiliser l’outil en ligne de commande *Android Debug Bridge* (**adb**). **adb** est un outil en ligne de commande polyvalent qui permet la communication avec une instance d’émulateur ou un appareil Android. Le kit Android SDK inclut **adb** et se trouve dans le répertoire **\<sdk>/platform-tools/** .
+1. **(L’utilisateur) installe l’application sur un appareil Android**  &ndash; Utiliser l’outil en ligne de commande *Android Debug Bridge* (**adb**). **adb** est un outil en ligne de commande polyvalent qui permet la communication avec une instance d’émulateur ou un appareil Android. Le kit Android SDK inclut **adb** et se trouve dans le répertoire **\<sdk>/platform-tools/**.
 
 L’appareil Android doit être connecté par un câble USB à l’ordinateur.
 Les ordinateurs Windows auront peut-être besoin de pilotes USB supplémentaires mis à disposition par le fournisseur du téléphone pour être reconnus par **adb**. Les instructions d’installation de ces pilotes USB supplémentaires ne sont pas abordées dans ce document.

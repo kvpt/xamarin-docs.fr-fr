@@ -8,28 +8,28 @@ author: davidortinau
 ms.author: daortin
 ms.date: 10/16/2019
 ms.openlocfilehash: 76696c094634c90fc0f9d445b932e04f53bc87c7
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73022524"
 ---
 # <a name="xamarinios-installation"></a>Installation de Xamarin.iOS
 
-## <a name="required-components"></a>Composants obligatoires
+## <a name="required-components"></a>Composants requis
 
 Pour générer avec Xamarin.iOS, les composants suivants sont nécessaires :
 
 - la dernière version de Visual Studio
 - Dernière version du kit iOS SDK
 - Dernière version de Xcode
-- version minimale de macOS requise par Xcode
+- la version minimale de macOS requise par Xcode
 
-Pour obtenir des exigences spécifiques en matière de version, consultez les [dernières notes de publication de Xamarin. iOS](/xamarin/ios/release-notes/).
+Pour des exigences de version spécifiques, consultez les [dernières notes de version Xamarin.iOS](/xamarin/ios/release-notes/).
 
 Il est possible de télécharger la dernière version de Xcode à partir du [iOS Developer Center](https://developer.apple.com/devcenter/ios/index.action#downloads) (connexion nécessaire) ou du Mac App Store :
 
-![Capture d’écran de la page de liste de Xcode dans Mac App Store](images/xcode.png "Xcode dans le Mac App Store")
+![Capture d’écran de la page de liste Xcode dans Mac App Store](images/xcode.png "Xcode sur Mac App Store")
 
 ## <a name="mac-installation"></a>Installation sur Mac
 
@@ -43,5 +43,5 @@ Pour obtenir des instructions sur l’installation de Xamarin.iOS sur un ordinat
 
 Une fois que vous avez correctement installé Xamarin.iOS, découvrez comment provisionner votre appareil iOS pour pouvoir développer et tester une application Xamarin.iOS dessus.
 
-- [Configuration de l’appareil pour le développement](device-provisioning/index.md)
+- [Mettre en place un dispositif de développement](device-provisioning/index.md)
 - [Provisionnement libre](~/ios/get-started/installation/device-provisioning/free-provisioning.md)

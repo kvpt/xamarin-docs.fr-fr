@@ -5,12 +5,12 @@ ms.assetid: 4EDC9897-5FD1-44CA-A26D-2E5AB472C99A
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 02/26/2020
-ms.openlocfilehash: 42cdfe6c54354f1616606c9b3a40de78446c5c39
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.openlocfilehash: 1d68203e80e0bc28e7060d5873c122db8c2ff960
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78910728"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "80387203"
 ---
 # <a name="xamarinessentials"></a>Xamarin.Essentials
 
@@ -28,7 +28,7 @@ Les pages suivantes vous guideront pour intégrer les fonctionnalités de Xamari
 
 * [Accéléromètre](accelerometer.md?context=xamarin/xamarin-forms) : obtenir l’accélération de l’appareil autour de trois axes.
 * [Informations sur l’application](app-information.md?context=xamarin/xamarin-forms) : obtenir des informations générales sur l’application.
-* [Thème d’application](app-theme.md?context=xamarin/xamarin-forms) : détectez le thème actuel demandé pour l’application.
+* [Thème de l’application](app-theme.md?context=xamarin/xamarin-forms) - Détecter le thème actuel demandé pour l’application.
 * [Baromètre](barometer.md?context=xamarin/xamarin-forms) : analyser les modifications de la pression sur le baromètre.
 * [Batterie](battery.md?context=xamarin/xamarin-forms) : obtenir le niveau, la source et l’état de la batterie.
 * [Presse-papiers](clipboard.md?context=xamarin/xamarin-forms) : définir ou lire rapidement et facilement du texte dans le Presse-papiers.
@@ -50,7 +50,7 @@ Les pages suivantes vous guideront pour intégrer les fonctionnalités de Xamari
 * [Cartes](maps.md?content=xamarin/xamarin-forms) : ouvrir l’application de mappage à un emplacement spécifique.
 * [Ouvrir le navigateur](open-browser.md?context=xamarin/xamarin-forms) : ouvrir rapidement et facilement un navigateur sur un site web spécifique.
 * [Capteur d’orientation](orientation-sensor.md?context=xamarin/xamarin-forms) : récupérer l’orientation de l’appareil dans un espace tridimensionnel.
-* [Autorisations](permissions.md?context=xamarin/xamarin-forms) : Vérifiez et demandez des autorisations aux utilisateurs.
+* [Autorisations](permissions.md?context=xamarin/xamarin-forms) - Vérifier et demander des autorisations aux utilisateurs.
 * [Numéroteur téléphonique](phone-dialer.md?context=xamarin/xamarin-forms) : ouvrir le Numéroteur téléphonique.
 * [Extensions de plateforme](platform-extensions.md?context=xamarin/xamarin-forms) : méthodes d’assistance pour convertir Rect, Size et Point.
 * [Préférences](preferences.md?context=xamarin/xamarin-forms) : ajouter rapidement et facilement des préférences persistantes.
@@ -61,6 +61,7 @@ Les pages suivantes vous guideront pour intégrer les fonctionnalités de Xamari
 * [Convertisseurs d’unités](unit-converters.md?context=xamarin/xamarin-forms) : méthodes d’assistance pour convertir des unités.
 * [Suivi des versions](version-tracking.md?context=xamarin/xamarin-forms) : effectuer le suivi de la version des applications et des numéros de build.
 * [Vibreur](vibrate.md?context=xamarin/xamarin-forms) : faire vibrer l’appareil.
+* [Authentification Web](web-authenticator.md?context=xamarin/xamarin-forms) - Démarrer les flux d’authentification web et écouter un rappel.
 
 ## <a name="troubleshooting"></a>[Dépannage](troubleshooting.md?context=xamarin/xamarin-forms)
 

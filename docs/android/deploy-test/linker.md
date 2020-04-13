@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/30/2018
 ms.openlocfilehash: 729dede97a9b153738ca72af499d4d1e9d77fae0
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73021443"
 ---
 # <a name="linking-on-android"></a>Liaison sur Android
@@ -26,7 +26,7 @@ Par exemple, [Hello, Android](https://docs.microsoft.com/samples/xamarin/monodro
 
 La liaison produit un package qui est de 30 % de la taille du package d’origine (non lié) dans 1.2.0 et de 18 % du package non lié dans 4.0.1.
 
-## <a name="control"></a>Contrôle
+## <a name="control"></a>Control
 
 La liaison est basée sur *l’analyse statique*. Par conséquent, tout ce qui dépend de l’environnement d’exécution ne sera pas détecté :
 
@@ -50,7 +50,7 @@ public class MyActivity {
 
 ### <a name="linker-behavior"></a>Comportement de l'éditeur de liens
 
-Le principal mécanisme de contrôle de l’éditeur de liens est la liste déroulante **Comportement de l’éditeur de liens** (*Liaison* dans Visual Studio) dans la boîte de dialogue **Options du projet**. Trois options sont disponibles :
+Le principal mécanisme de contrôle de l’éditeur de liens est la liste déroulante **Comportement de l’éditeur de liens** (*Liaison* dans Visual Studio) dans la boîte de dialogue **Options du projet**. Vous disposez de trois options :
 
 1. **Ne pas lier** (*Aucune* dans Visual Studio)
 1. **Lier les assemblys du SDK** (*Uniquement les assemblys du SDK*)
@@ -85,7 +85,7 @@ E/mono    (17755):   at (wrapper dynamic-method) object:95bb4fbe-bef8-4e5b-8e99-
 
 ### <a name="preserving-code"></a>Conservation du code
 
-L’éditeur de liens supprimera parfois du code que vous souhaitez conserver. Exemple :
+L’éditeur de liens supprimera parfois du code que vous souhaitez conserver. Par exemple :
 
 - Vous pouvez obtenir le code que vous appelez dynamiquement via `System.Reflection.MemberInfo.Invoke`.
 
@@ -178,9 +178,9 @@ Il est possible de spécifier qu’un jeu d’assemblys fourni par l’utilisate
 
 ### <a name="linkdescription"></a>LinkDescription
 
-[`@(LinkDescription)`](~/android/deploy-test/building-apps/build-process.md)
-**L’action de génération de build** peut être utilisée sur les fichiers qui peuvent contenir un [Fichier de configuration d’éditeur de liens personnalisé](~/cross-platform/deploy-test/linker.md).
-fichier. Des fichiers de configuration d’éditeur de liens personnalisés peuvent être nécessaires pour conserver les membres `internal` ou `private` qui doivent l’être.
+[`@(LinkDescription)`](~/android/deploy-test/building-apps/build-process.md) 
+ **L’action Build** peut être utilisée sur des fichiers qui peuvent contenir un [fichier de configuration de liaison personnalisé](~/cross-platform/deploy-test/linker.md).
+.edmx. Des fichiers de configuration d’éditeur de liens personnalisés peuvent être nécessaires pour conserver les membres `internal` ou `private` qui doivent l’être.
 
 ### <a name="custom-attributes"></a>Attributs personnalisés
 
@@ -209,5 +209,5 @@ Lorsqu’un assembly est lié, les types d’attributs personnalisés suivants s
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Configuration de l’éditeur de liens personnalisé](~/cross-platform/deploy-test/linker.md)
+- [Configuration De Linker personnalisée](~/cross-platform/deploy-test/linker.md)
 - [Liaison sur iOS](~/ios/deploy-test/linker.md)

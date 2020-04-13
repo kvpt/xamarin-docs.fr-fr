@@ -1,6 +1,6 @@
 ---
 title: Utilisation de TestFlight pour distribuer des applications Xamarin.iOS
-description: TestFlight est un outil racheté par Apple. Il constitue le principal moyen de tester les versions bêta de vos applications Xamarin.iOS. Cet article va vous guider à travers toutes les étapes du processus TestFlight, depuis le chargement de votre application jusqu’à l’utilisation d’iTunes Connect.
+description: TestFlight est un outil racheté par Apple. Il constitue le principal moyen de tester les versions bêta de vos applications Xamarin.iOS. Cet article vous guide à travers toutes les étapes du processus TestFlight, depuis le chargement de votre application jusqu’à l’utilisation d’iTunes Connect.
 ms.prod: xamarin
 ms.assetid: BA880768-2BC8-41E4-B57E-A56F8EED4690
 ms.technology: xamarin-ios
@@ -8,15 +8,15 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
 ms.openlocfilehash: 2f5d04b49658abe9d366e264d8f1a659732a2c33
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "79304204"
 ---
 # <a name="using-testflight-to-distribute-xamarinios-apps"></a>Utilisation de TestFlight pour distribuer des applications Xamarin.iOS
 
-_TestFlight est maintenant détenu par Apple et constitue le principal moyen de tester vos applications Xamarin. iOS. Cet article vous guide tout au long des étapes du processus TestFlight, du téléchargement de votre application à l’utilisation d’iTunes Connect._
+_TestFlight est maintenant détenue par Apple, et est le principal moyen de tester bêta vos applications Xamarin.iOS. Cet article vous guidera à travers toutes les étapes du processus TestFlight - de télécharger votre application, à travailler avec iTunes Connect._
 
 Le bêta testing fait partie intégrante du cycle de développement des logiciels. Il existe de nombreuses applications multiplateformes conçues pour simplifier ce processus, parmi lesquelles [HockeyApp](https://hockeyapp.net/features/), [Applause](https://www.applause.com/mobile-app-testing)et, bien sûr, l’outil de bêta testing natif de Google Play pour les applications Android. Ce document couvre exclusivement l’outil TestFlight d’Apple.
 
@@ -61,7 +61,7 @@ Le workflow suivant décrit les étapes à effectuer pour commencer à utiliser 
 ## <a name="create-an-itunes-connect-record"></a>Créer un enregistrement iTunes Connect
 
 1. Connectez-vous au [portail iTunes Connect](https://itunesconnect.apple.com/) avec vos identifiants développeur Apple.
-2. Sélectionnez **Mes apps** :
+2. Sélectionnez **Mes applications**:
 
     [![](testflight-images/my-apps.png "Select My Apps")](testflight-images/my-apps.png#lightbox)
 
@@ -105,11 +105,11 @@ Tout d’abord, générez votre [distribuable final](~/ios/deploy-test/app-distr
 
 ### <a name="sign-and-distribute-your-app"></a>Signer et distribuer votre application
 
- La création d’une archive ouvre automatiquement la **vue Archives**, dans laquelle sont affichés tous les projets archivés, regroupés par solution. Pour signer votre application et la préparer pour la distribution, sélectionnez **Signer et distribuer...** , comme ci-dessous :
+ La création d’une archive ouvre automatiquement la **vue Archives**, dans laquelle sont affichés tous les projets archivés, regroupés par solution. Pour signer votre application et la préparer pour la distribution, sélectionnez **Signer et distribuer...**, comme ci-dessous :
 
 [![](testflight-images/archive-view.png "Creating an archive will automatically open the Archives View")](testflight-images/archive-view.png#lightbox)
 
- L’Assistant Publication s’ouvre. Sélectionnez le canal de distribution **App Store** pour créer un package, puis ouvrez Application Loader. Dans l’écran Profil de provisionnement, sélectionnez votre identité de signature et le profil de provisionnement, ou resignez avec une autre identité. Vérifiez les détails de votre package, puis cliquez sur **Publier** pour enregistrer votre fichier `.ipa`
+ Cela entraîne l’ouverture de l’Assistant Publication. Sélectionnez le canal de distribution **app Store** pour créer un package et ouvrez chargeur d’applications. Dans l’écran Profil de provisionnement, sélectionnez votre identité de signature et le profil de provisionnement, ou resignez avec une autre identité. Vérifiez les détails de votre package, puis cliquez sur **Publier** pour enregistrer votre fichier `.ipa`
 
 [![](testflight-images/group.png "Select your signing identity and provisioning profile, or re-sign with another identity")](testflight-images/group.png#lightbox)
 
@@ -197,7 +197,7 @@ Les utilisateurs iTunes Connect existants sont affichés dans la liste. Pour les
 
 [![](testflight-images/internal-tester.png "Turn on the Internal Tester switch")](testflight-images/internal-tester.png#lightbox)
 
-Pour ajouter un nouvel utilisateur à la liste, sélectionnez le bouton **+** à côté du texte *Utilisateurs*, puis entrez le prénom, le nom et l’adresse e-mail de l’utilisateur pour créer son compte. L’utilisateur doit confirmer son adresse e-mail pour activer son compte :
+Pour ajouter un utilisateur qui n’est **+** pas sur la liste, sélectionnez le bouton à côté *des utilisateurs,* et fournissez un prénom, un nom de famille et une adresse e-mail pour créer un compte. L’utilisateur doit confirmer son adresse e-mail pour activer son compte :
 
 [![](testflight-images/add-new-user.png "Adding a user")](testflight-images/add-new-user.png#lightbox)
 
@@ -263,7 +263,7 @@ Quand le bêta testing est terminé, vous pouvez soumettre votre application sur
 
 [![](testflight-images/submit-for-review.png "Click the Submit for Review button")](testflight-images/submit-for-review.png#lightbox)
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a montré comment utiliser l’outil de bêta testing TestFlight d’Apple à partir d’iTunes Connect. Il a expliqué comment charger une nouvelle build dans iTunes Connect, et comment inviter des bêta testeurs internes et externes à utiliser notre application.
 

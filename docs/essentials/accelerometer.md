@@ -1,5 +1,5 @@
 ---
-title: 'Xamarin.Essentials: Accéléromètre'
+title: 'Xamarin.Essentials : Accéléromètre'
 description: La classe Accelerometer vous permet de surveiller le capteur de l’accéléromètre de l’appareil, qui indique l’accélération de l’appareil dans un espace tridimensionnel.
 ms.assetid: 97883573-F0D9-4854-AC7C-A654814401C5
 author: jamesmontemagno
@@ -7,13 +7,13 @@ ms.author: jamont
 ms.date: 04/02/2019
 ms.custom: video
 ms.openlocfilehash: dd99d09f227809bf8834eea9749c4d5379abebdb
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70765045"
 ---
-# <a name="xamarinessentials-accelerometer"></a>Xamarin.Essentials: Accéléromètre
+# <a name="xamarinessentials-accelerometer"></a>Xamarin.Essentials : Accéléromètre
 
 La classe **Accelerometer** permet de surveiller le capteur de type accéléromètre de l’appareil, qui indique l’accélération de l’appareil dans un espace en trois dimensions.
 
@@ -78,7 +78,7 @@ Le système de coordonnées est défini par rapport à l’écran du téléphone
 
 L’axe des X est horizontal et pointe vers la droite, l’axe des Y est vertical et pointe vers le haut et l’axe Z pointe vers l’extérieur de la face avant de l’écran. Dans ce système, les coordonnées derrière l’écran ont des valeurs Z négatives.
 
-Exemples :
+Exemples :
 
 - Lorsque l’appareil est à plat sur une table et est poussé par son côté gauche vers la droite, la valeur d’accélération x est un nombre positive.
 

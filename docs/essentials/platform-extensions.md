@@ -6,13 +6,13 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 03/13/2019
 ms.openlocfilehash: 4e43159fb9cae6646be54d8efc24c334bc071477
-ms.sourcegitcommit: fec87846fcb262fc8b79774a395908c8c8fc8f5b
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/21/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "77545148"
 ---
-# <a name="xamarinessentials-platform-extensions"></a>Xamarin.Essentials: Extensions de plateforme
+# <a name="xamarinessentials-platform-extensions"></a>Xamarin.Essentials: Extensions de la plate-forme
 
 Xamarin.Essentials fournit plusieurs méthodes d’extension de plateforme quand vous devez utiliser des types de plateforme comme Rect, Size et Point. Cela signifie que vous pouvez convertir la version `System` de ces types en types spécifiques iOS, Android et UWP. 
 
@@ -30,13 +30,13 @@ using Xamarin.Essentials;
 
 Toutes les extensions de plateforme peuvent uniquement être appelées depuis le projet iOS, Android ou UWP.
 
-## <a name="android-extensions"></a>Extensions Android
+## <a name="android-extensions"></a>Android Extensions
 
-Ces extensions sont accessibles uniquement à partir d’un projet Android.
+Ces extensions ne peuvent être consultées qu’à partir d’un projet Android.
 
-### <a name="application-context--activity"></a>Contexte et activité de l’application
+### <a name="application-context--activity"></a>Contexte d’application & activité
 
-À l’aide des extensions de plateforme de la classe `Platform`, vous pouvez accéder à `Context` ou à `Activity` actif pour l’application en cours d’exécution.
+En utilisant les extensions de la plate-forme dans la `Platform` classe, vous pouvez accéder au courant `Context` ou `Activity` à l’application en cours d’exécution.
 
 ```csharp
 
@@ -46,7 +46,7 @@ var context = Platform.AppContext;
 var activity = Platform.CurrentActivity;
 ```
 
-Si `Activity` est nécessaire, mais que l’application n’a pas été entièrement démarrée, la méthode `WaitForActivityAsync` doit être utilisée.
+S’il y a `Activity` une situation où l’application est `WaitForActivityAsync` nécessaire, mais l’application n’a pas entièrement commencé alors la méthode doit être utilisée.
 
 ```csharp
 var activity = await Platform.WaitForActivityAsync();
@@ -54,7 +54,7 @@ var activity = await Platform.WaitForActivityAsync();
 
 ### <a name="activity-lifecycle"></a>Cycle de vie des activités
 
-Outre l’obtention de l’activité en cours, vous pouvez également vous inscrire aux événements de cycle de vie.
+En plus d’obtenir l’activité actuelle, vous pouvez également vous inscrire à des événements du cycle de vie.
 
 ```csharp
 protected override void OnCreate(Bundle bundle)
@@ -76,35 +76,35 @@ void Platform_ActivityStateChanged(object sender, Xamarin.Essentials.ActivitySta
     Toast.MakeText(this, e.State.ToString(), ToastLength.Short).Show();
 ```
 
-Les états d’activité sont les suivants :
+Les états d’activité sont les suivants :
 
-* Création
+* Date de création
 * Repris
 * Suspendu
 * Détruit
-* SaveInstanceState
+* SaveInstanceState (en)
 * Démarré
 * Arrêté
 
-Pour en savoir plus, consultez la documentation relative au [cycle de vie de l’activité](https://docs.microsoft.com/xamarin/android/app-fundamentals/activity-lifecycle/).
+Lisez la documentation sur le [cycle de vie](https://docs.microsoft.com/xamarin/android/app-fundamentals/activity-lifecycle/) de l’activité pour en savoir plus.
 
 ## <a name="ios-extensions"></a>Extensions iOS
 
-Ces extensions sont accessibles uniquement à partir d’un projet iOS.
+Ces extensions ne peuvent être accessibles qu’à partir d’un projet iOS.
 
 ### <a name="current-uiviewcontroller"></a>Current UIViewController
 
-Accédez au `UIViewController` actuellement visible :
+Accédez à l’actuel visible `UIViewController`:
 
 ```csharp
 var vc = Platform.GetCurrentUIViewController();
 ```
 
-Cette méthode retourne `null` s’il n’est pas possible de détecter un `UIViewController`.
+Cette méthode `null` sera de retour `UIViewController`si elle n’est pas en mesure de détecter un .
 
-## <a name="cross-platform-extensions"></a>Extensions multiplateforme
+## <a name="cross-platform-extensions"></a>Extensions multiplateformes
 
-Ces extensions existent sur toutes les plateformes.
+Ces extensions existent dans toutes les plateformes.
 
 ### <a name="point"></a>Point
 
@@ -118,7 +118,7 @@ var platform = system.ToPlatformPoint();
 var system2 = platform.ToSystemPoint();
 ```
 
-### <a name="size"></a>Size
+### <a name="size"></a>Taille
 
 ```csharp
 var system = new System.Drawing.Size(width, height);

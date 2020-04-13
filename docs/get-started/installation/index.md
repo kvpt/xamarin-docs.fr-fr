@@ -9,10 +9,10 @@ ms.author: crdun
 ms.custom: video
 ms.date: 05/23/2019
 ms.openlocfilehash: cf54d4a6d8cdedc4ddde0beedeaadd361356990a
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "66252318"
 ---
 # <a name="installing-xamarin"></a>Installation de Xamarin
@@ -53,7 +53,7 @@ En plus de cette vidéo, il existe un [guide d’installation pas à pas](/visua
 
 ::: zone-end
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Désinstallation de Xamarin](~/get-started/installation/uninstalling-xamarin.md)
-- [Instructions de configuration du pare-feu Xamarin](firewall.md)
+- [Instructions de configuration de pare-feu Xamarin](firewall.md)

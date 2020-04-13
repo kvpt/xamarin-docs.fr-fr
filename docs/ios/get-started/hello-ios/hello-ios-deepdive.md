@@ -10,10 +10,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
 ms.openlocfilehash: 5fadd1ba556b15cb92134471f007e41f04fce69e
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "79304610"
 ---
 # <a name="hello-ios--deep-dive"></a>Hello, iOS – Exploration approfondie
@@ -28,7 +28,7 @@ Ce guide a pour but de vous aider à développer les compétences et les connais
 
 Visual Studio pour Mac est un environnement de développement intégré (IDE) gratuit et open source qui combine les fonctionnalités de Visual Studio et XCode. Il comprend un concepteur visuel entièrement intégré, un éditeur de texte avec outils de refactorisation, un explorateur d’assembly, l’intégration du code source, et bien plus encore. Ce guide présente certaines fonctionnalités essentielles de Visual Studio pour Mac, mais si vous ne connaissez pas cet outil, consultez la documentation de [Visual Studio pour Mac](https://docs.microsoft.com/visualstudio/mac/).
 
-Tout comme Visual Studio, Visual Studio pour Mac organise le code en *solutions* et en *projets*. Une solution est un conteneur qui peut comprendre un ou plusieurs projets. Un projet peut être une application (par exemple, iOS ou Android), une bibliothèque de prise en charge, une application de test, etc. Dans l’application Phoneword, un nouveau projet iPhone a été ajouté à l’aide du modèle **Application avec vue unique**. La solution initiale se présentait ainsi :
+Visual Studio pour Mac suit la pratique Visual Studio d’organiser le code en *solutions* et *projets*. Une solution est un conteneur qui peut comprendre un ou plusieurs projets. Un projet peut être une application (par exemple, iOS ou Android), une bibliothèque de prise en charge, une application de test, etc. Dans l’application Phoneword, un nouveau projet d’iPhone a été ajouté à l’aide du modèle **d’application Single View.** La solution initiale se présentait ainsi :
 
 ![](hello-ios-deepdive-images/image30.png "A screenshot of the initial solution")
 
@@ -37,9 +37,9 @@ Tout comme Visual Studio, Visual Studio pour Mac organise le code en *solutions*
 
 ## <a name="introduction-to-visual-studio"></a>Introduction à Visual Studio
 
-Visual Studio est un puissant environnement de développement intégré (IDE) édité par Microsoft. Il comprend un concepteur visuel entièrement intégré, un éditeur de texte avec outils de refactorisation, un explorateur d’assembly, l’intégration du code source, et bien plus encore. Ce guide présente certaines fonctionnalités de base de Visual Studio avec Xamarin Tools pour Visual Studio.
+Visual Studio est un environnement IDE puissant, développé par Microsoft. Il comprend un concepteur visuel entièrement intégré, un éditeur de texte avec outils de refactorisation, un explorateur d’assembly, l’intégration du code source, et bien plus encore. Ce guide présente certaines fonctionnalités de base de Visual Studio avec Xamarin Tools pour Visual Studio.
 
-Visual Studio organise le code en solutions et en projets. Une solution est un conteneur qui peut comprendre un ou plusieurs projets. Un projet peut être une application (par exemple, iOS ou Android), une bibliothèque de prise en charge, une application de test, etc. Dans l’application Phoneword, un nouveau projet iPhone a été ajouté à l’aide du modèle **Application avec vue unique**. La solution initiale se présentait ainsi :
+Visual Studio organise le code en solutions et en projets. Une solution est un conteneur qui peut comprendre un ou plusieurs projets. Un projet peut être une application (par exemple, iOS ou Android), une bibliothèque de prise en charge, une application de test, etc. Dans l’application Phoneword, un nouveau projet d’iPhone a été ajouté à l’aide du modèle **d’application Single View.** La solution initiale se présentait ainsi :
 
 ![](hello-ios-deepdive-images/vs-image30.png "A screenshot of the initial solution")
 
@@ -49,31 +49,31 @@ Visual Studio organise le code en solutions et en projets. Une solution est un c
 
 ::: zone pivot="macos"
 
-Dans la partie gauche se trouve le **Panneau Solutions**, qui contient la structure de répertoires et tous les fichiers associés à la solution :
+Sur la gauche est la **solution Pad**, qui contient la structure d’annuaire et tous les fichiers associés à la solution:
 
 ![](hello-ios-deepdive-images/image31.png "The solution Pad, which contains the directory structure and all the files associated with the solution")
 
 ::: zone-end
 ::: zone pivot="windows"
 
-Dans la partie droite se trouve le **volet Solution**, qui contient la structure de répertoires et tous les fichiers associés à la solution :
+A droite se trouve la **solution Pane**, qui contient la structure de l’annuaire et tous les fichiers associés à la solution :
 
 ![](hello-ios-deepdive-images/vs-image31.png "The solution Pane, which contains the directory structure and all the files associated with the solution")
 
 ::: zone-end
 
-Pendant la procédure pas à pas [Hello, iOS](~/ios/get-started/hello-ios/hello-ios-quickstart.md), vous avez créé une solution appelée **Phoneword**, dans laquelle vous avez placé un projet iOS, **Phoneword_iOS**. Les éléments inclus dans le projet sont les suivants :
+Dans le [Hello, iOS](~/ios/get-started/hello-ios/hello-ios-quickstart.md) pas à pas, vous avez créé une solution appelée **Phoneword** et placé un projet iOS - **Phoneword_iOS** - à l’intérieur. Les éléments inclus dans le projet sont les suivants :
 
-- **Références** : Contient les assemblys nécessaires pour générer et exécuter l’application. Développez le répertoire pour voir les références aux assemblys .NET tels que [System](https://docs.microsoft.com/dotnet/api/system), System.Core et [System.Xml](https://docs.microsoft.com/dotnet/api/system.xml), ainsi qu’une référence à l’assembly Xamarin.iOS.
-- **Paquets** : le répertoire de paquets contient des paquets NuGet prêts à l’emploi.
-- **Ressources** : le dossier de ressources stocke les autres médias.
+- **Références** - Contient les assemblages nécessaires pour construire et exécuter l’application. Développez le répertoire pour voir les références aux assemblys .NET tels que [System](https://docs.microsoft.com/dotnet/api/system), System.Core et [System.Xml](https://docs.microsoft.com/dotnet/api/system.xml), ainsi qu’une référence à l’assembly Xamarin.iOS.
+- **Forfaits** - L’annuaire des paquets contient des paquets NuGet prêts à l’emploi.
+- **Ressources** - Le dossier de ressources stocke d’autres médias.
 - **Main.cs** : Ce fichier contient le principal point d’entrée de l’application. Pour démarrer l’application, le nom de la classe d’application principale, `AppDelegate`, est passé.
 - **AppDelegate.cs** : Ce fichier contient la classe d’application principale et sert à créer la fenêtre, générer l’interface utilisateur et écouter les événements du système d’exploitation.
 - **Main.Storyboard** : le Storyboard contient la conception visuelle de l’interface utilisateur de l’application. Les fichiers de Storyboard s’ouvrent dans un éditeur graphique appelé concepteur iOS.
-- **ViewController.cs** : le contrôleur de vue alimente l’écran (vue) qu’un utilisateur voit et touche. Il est responsable de la gestion des interactions entre l’utilisateur et la vue.
-- **ViewController.designer.cs** : le fichier `designer.cs` est un fichier généré automatiquement qui fait le lien entre les contrôles dans la vue et leurs représentations sous forme de code dans le contrôleur de vue. Comme il s’agit d’un fichier interne, l’IDE écrase toutes les modifications manuelles et la plupart du temps, ce fichier peut être ignoré. Pour plus d’informations sur la relation entre le concepteur visuel et le code de stockage, reportez-vous au guide de [présentation du concepteur iOS](~/ios/user-interface/designer/introduction.md).
-- **Info.plist** : le fichier **Info.plist** définit les propriétés d’application comme le nom de l’application, ses icônes, ses images de lancement, etc. Ce fichier est très important. Il est présenté de façon détaillée dans le guide d’[utilisation des listes de propriétés](~/ios/app-fundamentals/property-lists.md).
-- **Entitlements.plist** : la liste des propriétés des droits permet de spécifier les *fonctionnalités* de l’application (également appelées App Store Technologies) comme iCloud, PassKit, etc. Pour plus d’informations sur **Entitlements.plist**, consultez le guide d’[utilisation des listes de propriétés](~/ios/app-fundamentals/property-lists.md). Pour obtenir une présentation générale des droits, reportez-vous au guide de [provisionnement des appareils](~/ios/get-started/installation/device-provisioning/index.md).
+- **ViewController.cs** - Le contrôleur de vue alimente l’écran (Voir) qu’un utilisateur voit et touche. Il est responsable de la gestion des interactions entre l’utilisateur et la vue.
+- **ViewController.designer.cs** - Il `designer.cs` s’agit d’un fichier auto-généré qui sert de colle entre les contrôles dans la vue et leurs représentations de code dans le contrôleur de vue. Comme il s’agit d’un fichier interne, l’IDE écrase toutes les modifications manuelles et la plupart du temps, ce fichier peut être ignoré. Pour plus d’informations sur la relation entre le concepteur visuel et le code de stockage, reportez-vous au guide de [présentation du concepteur iOS](~/ios/user-interface/designer/introduction.md).
+- **Info.plist** : le fichier **Info.plist** définit les propriétés d’application comme le nom de l’application, ses icônes, ses images de lancement, etc. Il s’agit d’un fichier puissant et une introduction approfondie à celui-ci est disponible dans le [guide Working with Property Lists.](~/ios/app-fundamentals/property-lists.md)
+- **Entitlements.plist** - La liste des droits de propriété nous permet de spécifier les *capacités* d’application (également appelées App Store Technologies) telles que iCloud, PassKit, et plus encore. Pour plus d’informations sur **Entitlements.plist**, consultez le guide d’[utilisation des listes de propriétés](~/ios/app-fundamentals/property-lists.md). Pour obtenir une présentation générale des droits, reportez-vous au guide de [provisionnement des appareils](~/ios/get-started/installation/device-provisioning/index.md).
 
 ## <a name="architecture-and-app-fundamentals"></a>Concepts fondamentaux de l’architecture et des applications
 
@@ -136,7 +136,7 @@ Une fois que l’application a défini sa fenêtre, elle peut commencer à charg
 
 ## <a name="user-interface"></a>Interface utilisateur
 
-L’interface utilisateur d’une application iOS est comme une vitrine : l’application obtient généralement une seule fenêtre, mais elle peut y placer autant d’objets que nécessaire, et ces objets et mises en scène peuvent changer selon ce que l’application veut montrer. Les objets dans ce scénario, les éléments que l’utilisateur voit, sont appelés des affichages. Pour générer un seul écran dans une application, les vues sont empilées les unes sur les autres dans une *hiérarchie de vues de contenu*. Cette hiérarchie est gérée par un seul contrôleur de vue. Les applications à plusieurs écrans ont plusieurs hiérarchies de vues de contenu, chacune avec son propre contrôleur de vue. L’application place les vues dans la fenêtre pour créer une hiérarchie de vues de contenu différente selon l’écran sur lequel se trouve l’utilisateur.
+L’interface utilisateur d’une application iOS est comme une vitrine : l’application obtient généralement une seule fenêtre, mais elle peut y placer autant d’objets que nécessaire, et ces objets et mises en scène peuvent changer selon ce que l’application veut montrer. Les objets dans ce scénario, les éléments que l’utilisateur voit, sont appelés des affichages. Pour construire un seul écran dans une application, Les vues sont empilées les unes sur les autres dans une *hiérarchie de vue de contenu,* et la hiérarchie est gérée par un contrôleur de vue unique. Les applications à plusieurs écrans ont plusieurs hiérarchies de vues de contenu, chacune avec son propre contrôleur de vue. L’application place les vues dans la fenêtre pour créer une hiérarchie de vues de contenu différente selon l’écran sur lequel se trouve l’utilisateur.
 
 Cette section analyse l’interface utilisateur en décrivant les affichages, les hiérarchies d’affichage de contenu et le concepteur iOS.
 
@@ -148,11 +148,11 @@ Le concepteur iOS est un outil visuel permettant de générer des interfaces uti
 
 ![](hello-ios-deepdive-images/image33.png "iOS Designer Interface")
 
-Un *Storyboard* est un fichier qui contient les conceptions visuelles des écrans de l’application, ainsi que les transitions et les relations entre les écrans. La représentation d’un écran de l’application dans un Storyboard est appelée _scène_. Chaque scène représente un contrôleur de vue et la pile de vues gérée (hiérarchie de vues de contenu). Quand un projet d’**application avec une seule vue** est créé à partir d’un modèle, Visual Studio pour Mac génère automatiquement un fichier de Storyboard appelé `Main.storyboard`, et le renseigne avec une seule scène, comme l’illustre la capture d’écran ci-dessous :
+Un *Storyboard* est un fichier qui contient les conceptions visuelles des écrans de l’application, ainsi que les transitions et les relations entre les écrans. La représentation d’un écran de l’application dans un Storyboard est appelée _scène_. Chaque scène représente un contrôleur de vue et la pile de vues gérée (hiérarchie de vues de contenu). Lorsqu’un nouveau projet **d’application Single View** est créé à partir d’un modèle, Visual Studio pour Mac génère automatiquement un fichier Storyboard appelé `Main.storyboard` et le remplit d’une seule scène, comme l’illustre la capture d’écran ci-dessous :
 
 ![](hello-ios-deepdive-images/image34.png "Visual Studio for Mac automatically generates a Storyboard file called Main.storyboard and populates it with a single Scene")
 
-La barre noire située au bas de l’écran de Storyboard permet de choisir le contrôleur de vue de la scène. Le contrôleur de vue est une instance de la classe `UIViewController` qui contient le code sur lequel repose la hiérarchie de vues de contenu. Vous pouvez afficher et définir les propriétés de ce contrôleur de vue dans le **Panneau Propriétés**, comme l’illustre la capture d’écran ci-dessous :
+La barre noire située au bas de l’écran de Storyboard permet de choisir le contrôleur de vue de la scène. Le contrôleur de vue est une instance de la classe `UIViewController` qui contient le code sur lequel repose la hiérarchie de vues de contenu. Propriétés sur ce contrôleur de vue peuvent être consultés et réglés à l’intérieur du **tapis de propriétés**, comme illustré par la capture d’écran ci-dessous:
 
 ![](hello-ios-deepdive-images/image35.png "The Properties Pane")
 
@@ -161,11 +161,11 @@ La barre noire située au bas de l’écran de Storyboard permet de choisir le c
 
 ![](hello-ios-deepdive-images/vs-image33.png "iOS Designer Interface")
 
-Un *Storyboard* est un fichier qui contient les conceptions visuelles des écrans de l’application, ainsi que les transitions et les relations entre les écrans. La représentation d’un écran de l’application dans un Storyboard est appelée _scène_. Chaque scène représente un contrôleur de vue et la pile de vues gérée (hiérarchie de vues de contenu). Quand un projet d’**application avec une seule vue** est créé à partir d’un modèle, Visual Studio génère automatiquement un fichier de Storyboard appelé `Main.storyboard`, et le renseigne avec une seule scène, comme l’illustre la capture d’écran ci-dessous :
+Un *Storyboard* est un fichier qui contient les conceptions visuelles des écrans de l’application, ainsi que les transitions et les relations entre les écrans. La représentation d’un écran de l’application dans un Storyboard est appelée _scène_. Chaque scène représente un contrôleur de vue et la pile de vues gérée (hiérarchie de vues de contenu). Lorsqu’un nouveau projet **d’application Single View** est créé à partir `Main.storyboard` d’un modèle, Visual Studio génère automatiquement un fichier Storyboard appelé et le remplit d’une seule scène, comme l’illustre la capture d’écran ci-dessous :
 
 ![](hello-ios-deepdive-images/vs-image34.png "Visual Studio automatically generates a Storyboard file called Main.storyboard and populates it with a single Scene")
 
-La barre située au bas de l’écran de Storyboard permet de choisir le contrôleur de vue de la scène. Le contrôleur de vue est une instance de la classe `UIViewController` qui contient le code sur lequel repose la hiérarchie de vues de contenu. Vous pouvez afficher et définir les propriétés de ce contrôleur de vue dans le **volet Propriétés**, comme l’illustre la capture d’écran ci-dessous :
+La barre située au bas de l’écran de Storyboard permet de choisir le contrôleur de vue de la scène. Le contrôleur de vue est une instance de la classe `UIViewController` qui contient le code sur lequel repose la hiérarchie de vues de contenu. Propriétés sur ce contrôleur de vue peuvent être consultés et réglés à l’intérieur de la **pane Propriétés**, comme illustré par la capture d’écran ci-dessous:
 
 ![](hello-ios-deepdive-images/vs-image35.png "The Properties Pane")
 
@@ -177,9 +177,9 @@ Vous pouvez sélectionner l’_affichage_ en cliquant dans la partie blanche de 
 
  [![](hello-ios-deepdive-images/image37.png "A gray arrow with a flag icon")](hello-ios-deepdive-images/image37.png#lightbox)
 
-La flèche grise représente une transition de Storyboard appelée *Segue* (prononcez « seg-way »). Dans la mesure où ce Segue n’a pas d’origine, il est appelé *Segue sans source*. Un segue sans source pointe vers la première scène dont les vues sont chargées dans la fenêtre de l’application au démarrage de cette dernière. La scène et les vues qu’elle contient sont la première chose que l’utilisateur voit quand l’application se charge.
+La flèche grise représente une transition de storyboard appelée *Segue* (prononcé "seg-way"). Comme cette segue n’a pas d’origine, elle s’appelle une *Segue sans source.* Un segue sans source pointe vers la première scène dont les vues sont chargées dans la fenêtre de l’application au démarrage de cette dernière. La scène et les vues qu’elle contient sont la première chose que l’utilisateur voit quand l’application se charge.
 
-Quand vous générez une interface utilisateur, vous pouvez faire glisser d’autres vues depuis la **boîte à outils** vers la vue principale dans l’aire de conception, comme l’illustre la capture d’écran ci-dessous :
+Lors de la construction d’une interface utilisateur, d’autres vues peuvent être traînés de la boîte à **outils** sur la vue principale sur la surface de conception, comme l’illustre la capture d’écran ci-dessous:
 
 ::: zone pivot="macos"
 
@@ -192,7 +192,7 @@ Quand vous générez une interface utilisateur, vous pouvez faire glisser d’au
 
 ::: zone-end
 
-Ces affichages supplémentaires sont appelés *sous-affichages*. Ensemble, la vue racine et les sous-vues font partie d’une *hiérarchie de vues de contenu* gérée par le `ViewController`. Pour afficher la structure de tous les éléments de la scène, examinez-la dans le panneau **Structure du document** :
+Ces affichages supplémentaires sont appelés *sous-affichages*. Ensemble, la vue de racine et les sous-visions font `ViewController`partie d’une hiérarchie de vue de *contenu* qui est gérée par le . Le contour de tous les éléments de la scène peut être consulté en l’examinant dans le **tapis de contour du document** :
 
 ::: zone pivot="macos"
 
@@ -222,7 +222,7 @@ La section suivante détaille la hiérarchie d’affichage de contenu représent
 
 ## <a name="content-view-hierarchy"></a>Hiérarchie d’affichage de contenu
 
-Une _hiérarchie de vues de contenu_ est une pile de vues et de sous-vues gérée par un seul contrôleur de vue, comme l’illustre le diagramme ci-dessous :
+Une _hiérarchie de vue de contenu_ est une pile de vues et de sous-visions gérées par un contrôleur de vue unique, comme l’illustre le diagramme ci-dessous :
 
  [![](hello-ios-deepdive-images/image41.png "The Content View Hierarchy")](hello-ios-deepdive-images/image41.png#lightbox)
 
@@ -253,28 +253,28 @@ Chaque hiérarchie de vues de contenu a un contrôleur de vue correspondant pour
 
 ::: zone pivot="macos"
 
-Dans un Storyboard, le contrôleur de vue est représenté sous la forme d’une barre en bas de la scène. La sélection du contrôleur de vue fait apparaître ses propriétés dans le **Panneau Propriétés** :
+Dans un Storyboard, le contrôleur de vue est représenté sous la forme d’une barre en bas de la scène. La sélection du contrôleur de vue apporte ses propriétés dans le **Pad propriétés**:
 
 ![](hello-ios-deepdive-images/image44.png "Selecting the view controller brings up its properties in the Properties Pane")
 
-Pour définir une classe de contrôleur de vue personnalisée pour la hiérarchie de vues de contenu représentée par cette scène, vous pouvez modifier la propriété **Classe** dans la section **Identité** du **Panneau Propriétés**. Par exemple, notre application **Phoneword** définit `ViewController` en tant que contrôleur de vue de notre premier écran, comme l’illustre la capture d’écran ci-dessous :
+Une classe de contrôleur de vue personnalisée pour la hiérarchie de vue de contenu représentée par cette scène peut être définie en modifiant la propriété **de classe** dans la section **Identité** du Bloc de **propriétés**. Par exemple, notre application `ViewController` **Phoneword** définit le contrôleur de vue pour notre premier écran, comme l’illustre la capture d’écran ci-dessous:
 
 ![](hello-ios-deepdive-images/image45new.png "The Phoneword application sets the ViewController as the view controller")
 
 ::: zone-end
 ::: zone pivot="windows"
 
-Dans un Storyboard, le contrôleur de vue est représenté sous la forme d’une barre en bas de la scène. La sélection du contrôleur de vue fait apparaître ses propriétés dans le **volet Propriétés** :
+Dans un Storyboard, le contrôleur de vue est représenté sous la forme d’une barre en bas de la scène. La sélection du contrôleur de vue apporte ses propriétés dans le **Panoramique propriétés**:
 
 ![](hello-ios-deepdive-images/vs-image44.png "Selecting the view controller brings up its properties in the Properties Pane")
 
-Pour définir une classe de contrôleur de vue personnalisée pour la hiérarchie de vues de contenu représentée par cette scène, vous pouvez modifier la propriété **Classe** dans la section **Identité** du **volet Propriétés**. Par exemple, notre application **Phoneword** définit `ViewController` en tant que contrôleur de vue de notre premier écran, comme l’illustre la capture d’écran ci-dessous :
+Une classe de contrôleur de vue personnalisée pour la hiérarchie de vue de contenu représentée par cette scène peut être définie en éditant la propriété **de classe** dans la section **Identité** du Panoramique **de propriétés.** Par exemple, notre application `ViewController` **Phoneword** définit le contrôleur de vue pour notre premier écran, comme l’illustre la capture d’écran ci-dessous:
 
 ![](hello-ios-deepdive-images/vs-image45.png "The Phoneword application sets the ViewController as the view controller")
 
 ::: zone-end
 
-Cette opération lie la représentation sous forme de Storyboard du contrôleur de vue à la classe C# `ViewController`. Ouvrez le fichier `ViewController.cs`. Vous pouvez noter que le contrôleur de vue est une *sous-classe* de `UIViewController`, comme l’illustre le code ci-dessous :
+Cette opération lie la représentation sous forme de Storyboard du contrôleur de vue à la classe C# `ViewController`. Ouvrez `ViewController.cs` le contrôleur de vue de `UIViewController`fichier et d’avis est une *sous-classe* de , comme illustré par le code ci-dessous :
 
 ```csharp
 public partial class ViewController : UIViewController
@@ -297,14 +297,14 @@ Le contrôleur de vue est responsable du chargement et du déchargement des hié
 
 Voici les méthodes de cycle de vie de base et leur fonction :
 
-- **ViewDidLoad** : appelée *une seule fois* quand le contrôleur de vue charge sa hiérarchie de vues de contenu en mémoire. Il s’agit de l’endroit idéal pour effectuer la configuration initiale, car c’est là que les sous-affichages sont disponibles pour la première fois dans le code.
-- **ViewWillAppear** : appelée chaque fois qu’une vue du contrôleur de vue est sur le point d’être ajoutée à une hiérarchie de vues de contenu et de s’afficher à l’écran.
-- **ViewWillDisappear** : appelée chaque fois qu’une vue du contrôleur de vue est sur le point d’être supprimée d’une hiérarchie de vues de contenu et de disparaître de l’écran. Cet événement du cycle de vie est utilisé pour le nettoyage et l’enregistrement de l’état.
+- **ViewDidLoad** - Appelé *une fois* la première fois que le contrôleur de vue charge sa hiérarchie de vue de contenu dans la mémoire. Il s’agit de l’endroit idéal pour effectuer la configuration initiale, car c’est là que les sous-affichages sont disponibles pour la première fois dans le code.
+- **ViewWillAppear** - Appelé chaque fois qu’une vue de contrôle est sur le point d’être ajoutée à une hiérarchie de vue de contenu et d’apparaître à l’écran.
+- **AfficherWillDisappear** - Appelé chaque fois que la vue d’un contrôleur de vue est sur le point d’être supprimée d’une hiérarchie de vue de contenu et disparaître de l’écran. Cet événement du cycle de vie est utilisé pour le nettoyage et l’enregistrement de l’état.
 - **ViewDidAppear** et **ViewDidDisappear** : appelées quand un affichage est ajouté ou supprimé de la hiérarchie d’affichage de contenu, respectivement.
 
 Quand du code personnalisé est ajouté à une phase du cycle de vie, l’*implémentation de base* de cette méthode de cycle de vie doit être *substituée*. Pour cela, accédez à la méthode de cycle de vie existante, à laquelle du code est déjà attaché, puis étendez-la avec du code supplémentaire. L’implémentation de base est appelée à partir de la méthode pour veiller à ce que le code d’origine s’exécute avant le nouveau code. Un exemple de ce type d’appel est présenté dans la section suivante.
 
-Pour plus d’informations sur l’utilisation des contrôleurs de vues, consultez le [guide de programmation des contrôleurs de vues pour iOS](https://developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/index.html#//apple_ref/doc/uid/TP40007457-CH2-SW1) d’Apple et les [informations de référence sur UIViewController](https://developer.apple.com/documentation/uikit/uiviewcontroller?language=objc).
+Pour plus d’informations sur le travail avec les contrôleurs de vue, consultez le Guide de programmation du contrôleur de [vue d’Apple pour iOS](https://developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/index.html#//apple_ref/doc/uid/TP40007457-CH2-SW1) et la [référence UIViewController](https://developer.apple.com/documentation/uikit/uiviewcontroller?language=objc).
 
 ### <a name="responding-to-user-interaction"></a>Réponse aux interactions de l’utilisateur
 
@@ -387,7 +387,7 @@ L’application Phoneword a introduit plusieurs concepts qui ne sont pas traité
     }
     ```
 
-- **Afficher une alerte** : quand un utilisateur essaie de passer un appel téléphonique sur un appareil qui ne prend pas en charge les appels (par exemple, le simulateur ou un iPod Touch), une boîte de dialogue d’alerte s’affiche pour l’informer qu’il ne peut pas effectuer l’appel. Le code ci-dessous crée et renseigne un contrôleur d’alerte :
+- Afficher une alerte - **Lorsqu’un** utilisateur tente de placer un appel téléphonique sur un appareil qui ne prend pas en charge les appels - par exemple le simulateur ou un iPod Touch - un dialogue d’alerte est affiché pour faire savoir à l’utilisateur que l’appel téléphonique ne peut pas être placé. Le code ci-dessous crée et renseigne un contrôleur d’alerte :
 
     ```csharp
     if (!UIApplication.SharedApplication.OpenUrl (url)) {
@@ -435,7 +435,7 @@ L’application se déploie sur l’appareil iOS :
 
 ### <a name="generate-custom-icons-and-launch-images"></a>Générer des icônes et des images de lancement personnalisées
 
-Tout le monde ne dispose pas d’un concepteur pour créer les icônes personnalisées et les images de lancement dont une application a besoin. Voici plusieurs autres approches de génération d’une illustration d’application personnalisée :
+Tout le monde n’a pas un concepteur disponible pour créer les icônes personnalisées et lancer des images d’une application doit se démarquer. Voici plusieurs approches alternatives pour générer des illustrations d’applications personnalisées :
 
 ::: zone pivot="macos"
 
@@ -452,13 +452,13 @@ Tout le monde ne dispose pas d’un concepteur pour créer les icônes personnal
 
 Pour plus d’informations sur les tailles et spécifications des icônes et images de lancement, reportez-vous au [guide d’utilisation des images](~/ios/app-fundamentals/images-icons/index.md).
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Félicitations ! Vous avez maintenant une connaissance approfondie des composants des applications Xamarin.iOS, ainsi que des outils nécessaires à leur création.
 Dans le [didacticiel suivant de la série de mise en route](~/ios/get-started/hello-ios-multiscreen/index.md), vous allez étendre notre application pour gérer plusieurs écrans. Vous allez au fur et à mesure implémenter un contrôleur de navigation, découvrir les enchaînements de Storyboard et faire connaissance avec le modèle MVC (modèle-vue-contrôleur) quand vous étendrez votre application pour gérer plusieurs écrans.
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Bonjour, iOS (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios)
-- [Lignes directrices de l’interface utilisateur iOS](https://developer.apple.com/design/human-interface-guidelines/ios/overview/themes/)
+- [Hello, iOS (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios)
+- [Human Interface Guidelines pour iOS](https://developer.apple.com/design/human-interface-guidelines/ios/overview/themes/)
 - [Portail d’approvisionnement iOS](https://developer.apple.com/account/#/overview)

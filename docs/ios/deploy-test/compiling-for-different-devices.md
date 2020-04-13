@@ -8,21 +8,21 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
 ms.openlocfilehash: 1f71179ccafc2daf65e792c4538bf47ea2df1e7d
-ms.sourcegitcommit: 0177e06169da621ed9d5fa0f6118a628e8c92bd2
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/04/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "75663730"
 ---
-# <a name="compiling-for-different-devices-in-xamarinios"></a>Compilation pour différents appareils dans Xamarin. iOS
+# <a name="compiling-for-different-devices-in-xamarinios"></a>Compilation pour différents appareils dans Xamarin.iOS
 
 Les propriétés build de votre fichier exécutable peuvent être configurées à partir de la page de propriétés **Build iOS** du projet, qui se trouve en cliquant avec le bouton de droite sur le nom du projet et en navigant jusqu’à **Options > Build iOS** dans Visual Studio pour Mac, et **Propriétés** dans Visual Studio :
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 [![](compiling-for-different-devices-images/image1.png "The Projects iOS Build properties page")](compiling-for-different-devices-images/image1.png#lightbox) 
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 [![](compiling-for-different-devices-images/image1a.png "The Projects iOS Build properties page")](compiling-for-different-devices-images/image1a.png#lightbox)
 
@@ -30,17 +30,17 @@ Les propriétés build de votre fichier exécutable peuvent être configurées �
 
 Outre les options de configuration disponibles sur l’interface utilisateur, vous pouvez également transmettre votre propre ensemble d’options de lignes de commande à [l’outil Build Xamarin.iOS (mtouch)](~/ios/deploy-test/mtouch.md).
 
-## <a name="sdk-options"></a>Options du SDK
+## <a name="sdk-options"></a>Options SDK
 
 Visual Studio pour Mac vous permet de configurer deux propriétés importantes liées au Kit de développement logiciel : la version du Kit de développement logiciel iOS utilisée pour générer votre logiciel et la Cible de déploiement (ou la version iOS minimale requise).
 
-L’option **Version du Kit de développement logiciel** iOS permet d’utiliser différentes versions d’un Kit de développement logiciel Apple, cela dirige Xamarin.iOS vers les compilateurs, les éditeurs de liens et les bibliothèques, auxquels il doit faire référence au cours de votre build. Cliquez avec le bouton droit sur le projet et choisissez **options**, puis **Build iOS** dans la fenêtre Options :
+L’option **Version du Kit de développement logiciel** iOS permet d’utiliser différentes versions d’un Kit de développement logiciel Apple, cela dirige Xamarin.iOS vers les compilateurs, les éditeurs de liens et les bibliothèques, auxquels il doit faire référence au cours de votre build. Cliquez à droite sur le projet et choisissez **Options**, puis **iOS Construire** dans la fenêtre d’options:
 
-[![choisir la version du kit de développement logiciel (SDK) dans la fenêtre Options](compiling-for-different-devices-images/sdk-version-sml.png)](compiling-for-different-devices-images/sdk-version.png#lightbox)
+[![Choisissez la version SDK sur la fenêtre d’options](compiling-for-different-devices-images/sdk-version-sml.png)](compiling-for-different-devices-images/sdk-version.png#lightbox)
 
-Le paramètre **Cible de déploiement** permet de sélectionner la version minimale requise du système d’exploitation sur lequel votre application s’exécutera. Cette valeur est définie dans le fichier **info. plist** de votre projet. Vous devez sélectionner la version minimale qui a toutes les API dont vous avez besoin pour exécuter votre application.
+Le paramètre **Cible de déploiement** permet de sélectionner la version minimale requise du système d’exploitation sur lequel votre application s’exécutera. Ceci est défini dans le fichier **Info.plist** de votre projet. Vous devez sélectionner la version minimale qui a toutes les API dont vous avez besoin pour exécuter votre application.
 
-[![définir la cible de déploiement dans le fichier info. plist](compiling-for-different-devices-images/deployment-target-sml.png)](compiling-for-different-devices-images/deployment-target.png#lightbox)
+[![Définir l’objectif de déploiement dans le fichier Info.plist](compiling-for-different-devices-images/deployment-target-sml.png)](compiling-for-different-devices-images/deployment-target.png#lightbox)
 
 En général, l’API Xamarin.iOS expose toutes les méthodes disponibles dans la version la plus récente du Kit de développement logiciel, et lorsque cela est nécessaire, nous fournissons des propriétés pratiques qui vous permettent de détecter si la fonctionnalité est disponible lors du runtime (par exemple,`UIDevice.UserInterfaceIdiom` et `UIDevice.IsMultitaskingSupported` fonctionnent toujours sur Xamarin.iOS, tout est exécuté dans les coulisses).
 
@@ -62,7 +62,7 @@ Vous pouvez activer ces moteurs à partir des options Build iOS dans Visual Stud
 
 [![](compiling-for-different-devices-images/image2a.png "Enabling LLVM")](compiling-for-different-devices-images/image2a.png#lightbox)
 
-## <a name="architecture-support"></a>Prise en charge de l’architecture
+## <a name="architecture-support"></a>Soutien à l’architecture
 
 ### <a name="armv6-xamarinios-discontinued-support-for-armv6-with-v810"></a>ARMv6 (prise en charge discontinue de Xamarin.iOS pour ARMv6 avec v8.10)
 
@@ -99,11 +99,11 @@ Si vous ne ciblez que le processeur ARMv7s, le code généré sera légèrement 
 
 Notez que les builds soumis à l’App Store doivent contenir la prise en charge 64 bits, il s’agit d’une exigence définie par [Apple](https://developer.apple.com/news/?id=12172014b). En outre, iOS 11 prend uniquement en charge des applications 64 bits.
 
-### <a name="arm-thumb-2-support"></a>Prise en charge ARM Thumb-2
+### <a name="arm-thumb-2-support"></a>Support ARM Thumb-2
 
 Thumb est un jeu d’instructions plus compact utilisé par les processeurs ARM. En activant la prise en charge Thumb, vous pouvez réduire la taille de votre fichier exécutable, pour un temps d’exécution plus lent. Thumb est pris en charge sur ARMv7 et ARMv7s.
 
-## <a name="conditional-framework-usage"></a>Utilisation de Framework conditionnel
+## <a name="conditional-framework-usage"></a>Utilisation conditionnelle du cadre
 
 Si votre projet souhaite tirer parti de certaines des fonctionnalités des versions iOS les plus récentes, vous devrez peut-être vous appuyer sous certaines conditions sur certaines nouvelles infrastructures. Par exemple, si vous voulez utiliser iAd lors de l’exécution sur iOS 4.0 ou version ultérieure, mais toujours prendre en charge les appareils 3.x. Pour ce faire, vous devez informer Xamarin.iOS que vous devez le lier à l’infrastructure iAd « faiblement ». Les liaisons faibles assurent que l’infrastructure est uniquement chargée sur demande la première fois qu'une classe de l’infrastructure est requise.
 

@@ -8,19 +8,19 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/21/2016
 ms.openlocfilehash: be7a145e93aa4720b38921efc895ca3f3f33edb3
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "68656031"
 ---
 # <a name="adding-a-pinch-gesture-recognizer"></a>Ajout d’un module de reconnaissance des pincements
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-pinchgesture)
+[![Télécharger](~/media/shared/download.png) l’échantillon Télécharger l’échantillon](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-pinchgesture)
 
-_Un pincement est utilisé pour effectuer un zoom interactif, il est implémenté avec la classe PinchGestureRecognizer. Un scénario courant pour le geste de pincement est d’effectuer un zoom interactif d’une image à l’emplacement du pincement. Cette action est accomplie en mettant à l’échelle le contenu de la fenêtre d'affichage, elle est illustrée dans cet article._
+_Le geste de pincement est utilisé pour effectuer un zoom interactif et est implémenté avec la classe PinchGestureRecognizer. Un scénario commun pour le geste de pincement est d’effectuer le zoom interactif d’une image à l’emplacement de pincement. Ceci est accompli en évoluant le contenu du viewport, et est démontré dans cet article._
 
-Pour qu’un élément d’interface utilisateur puisse être zoomé avec un pincement, créez une instance [`PinchGestureRecognizer`](xref:Xamarin.Forms.PinchGestureRecognizer), traitez l’événement [`PinchUpdated`](xref:Xamarin.Forms.PinchGestureRecognizer.PinchUpdated) et ajoutez le nouveau module de reconnaissance de geste à la collection [`GestureRecognizers`](xref:Xamarin.Forms.View.GestureRecognizers) sur l’élément d’interface utilisateur. L'exemple de code suivant montre un `PinchGestureRecognizer` attaché à un élément [`Image`](xref:Xamarin.Forms.Image) :
+Pour rendre un élément d’interface utilisateur zoomable avec le geste de pincement, créez une [`PinchGestureRecognizer`](xref:Xamarin.Forms.PinchGestureRecognizer) instance, gérez l’événement [`PinchUpdated`](xref:Xamarin.Forms.PinchGestureRecognizer.PinchUpdated) et ajoutez le nouveau gestuelle à la [`GestureRecognizers`](xref:Xamarin.Forms.View.GestureRecognizers) collection sur l’élément interface utilisateur. L’exemple de `PinchGestureRecognizer` code suivant [`Image`](xref:Xamarin.Forms.Image) montre un élément attaché à un élément :
 
 ```csharp
 var pinchGesture = new PinchGestureRecognizer();
@@ -72,7 +72,7 @@ public class PinchToZoomContainer : ContentView
 }
 ```
 
-Cette classe peut être encapsulée autour d’un élément d’interface utilisateur pour que le pincement effectue un zoom sur l’élément d’interface utilisateur encapsulé. L’exemple de code XAML suivant montre `PinchToZoomContainer` encapsulant un élément [`Image`](xref:Xamarin.Forms.Image) :
+Cette classe peut être encapsulée autour d’un élément d’interface utilisateur pour que le pincement effectue un zoom sur l’élément d’interface utilisateur encapsulé. L’exemple de code XAML suivant montre l’emballage `PinchToZoomContainer` d’un [`Image`](xref:Xamarin.Forms.Image) élément :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -91,7 +91,7 @@ Cette classe peut être encapsulée autour d’un élément d’interface utilis
 </ContentPage>
 ```
 
-L’exemple de code suivant montre comment `PinchToZoomContainer` encapsule un élément [`Image`](xref:Xamarin.Forms.Image) dans une page C# :
+L’exemple de code `PinchToZoomContainer` suivant [`Image`](xref:Xamarin.Forms.Image) montre comment l’enveloppe un élément dans une page C :
 
 ```csharp
 public class HomePageCS : ContentPage
@@ -110,7 +110,7 @@ public class HomePageCS : ContentPage
 }
 ```
 
-Quand l’élément [`Image`](xref:Xamarin.Forms.Image) reçoit un pincement, l’image affichée fait l’objet d’un zoom avant ou arrière. Le zoom est exécuté par la méthode `PinchZoomContainer.OnPinchUpdated`, ce qui est illustré dans l’exemple de code suivant :
+Lorsque [`Image`](xref:Xamarin.Forms.Image) l’élément reçoit un geste de pincement, l’image affichée sera zoomée ou sortie. Le zoom est `PinchZoomContainer.OnPinchUpdated` effectué par la méthode, qui est indiquée dans l’exemple de code suivant :
 
 ```csharp
 void OnPinchUpdated (object sender, PinchGestureUpdatedEventArgs e)
@@ -160,9 +160,9 @@ void OnPinchUpdated (object sender, PinchGestureUpdatedEventArgs e)
 }
 ```
 
-Cette méthode met à jour le niveau de zoom de l’élément d’interface utilisateur encapsulé, en fonction du geste de pincement de l’utilisateur. Pour cela, vous devez utiliser les valeurs des propriétés [`Scale`](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs.Scale), [`ScaleOrigin`](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs.ScaleOrigin) et [`Status`](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs.Status)de l’instance [`PinchGestureUpdatedEventArgs`](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs) pour calculer le facteur d’échelle à appliquer à l’origine du pincement. L’élément utilisateur encapsulé fait ensuite l’objet d’un zoom à l’origine du pincement en définissant ses propriétés [`TranslationX`](xref:Xamarin.Forms.VisualElement.TranslationX), [`TranslationY`](xref:Xamarin.Forms.VisualElement.TranslationY) et [`Scale`](xref:Xamarin.Forms.VisualElement.Scale) sur les valeurs calculées.
+Cette méthode met à jour le niveau de zoom de l’élément d’interface utilisateur encapsulé, en fonction du geste de pincement de l’utilisateur. Ceci est réalisé en utilisant [`Scale`](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs.Scale) [`ScaleOrigin`](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs.ScaleOrigin) les [`Status`](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs.Status) valeurs [`PinchGestureUpdatedEventArgs`](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs) de l’instance, et les propriétés de l’instance pour calculer le facteur d’échelle à appliquer à l’origine du geste de pincement. L’élément utilisateur enveloppé est ensuite zoomé à l’origine du geste de pincement en définissant son [`TranslationX`](xref:Xamarin.Forms.VisualElement.TranslationX), [`TranslationY`](xref:Xamarin.Forms.VisualElement.TranslationY), et [`Scale`](xref:Xamarin.Forms.VisualElement.Scale) les propriétés aux valeurs calculées.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [PinchGesture (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-pinchgesture)
 - [GestureRecognizer](xref:Xamarin.Forms.GestureRecognizer)

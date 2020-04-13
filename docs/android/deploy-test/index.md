@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 04/25/2018
 ms.openlocfilehash: 4b7d3d19ce8766ccdbfc41163fcad44074e832b8
-ms.sourcegitcommit: ec112800a76089ab1db66fe24b8bbcc510e067b4
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/24/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "80159759"
 ---
 # <a name="deployment-and-testing"></a>Déploiement et tests
@@ -24,7 +24,7 @@ Cet article examine les éléments constitutifs des packages d’application Xam
 
 ## <a name="apply-changes"></a>[Appliquer les modifications](apply-changes.md)
 
-Ce guide couvre la fonctionnalité appliquer les modifications qui vous permet de transmettre des modifications de ressources à votre application en cours d’exécution sans redémarrer votre application.
+Ce guide couvre la fonction Modifier l’application qui vous permet de pousser les modifications de ressources à votre application en cours d’exécution sans redémarrer votre application.
 
 ## <a name="building-apps"></a>[Création d’applications](building-apps/index.md)
 
@@ -38,15 +38,15 @@ Cet article aborde brièvement le démarrage de l’émulateur en ligne de comma
 
 Les guides de cette section vous aident à déboguer votre application à l’aide d’émulateurs Android, d’appareils Android réels et du journal de débogage.
 
-## <a name="setting-the-debuggable-attribute"></a>[Définir l’attribut Debuggable](~/android/deploy-test/debuggable-attribute.md)
+## <a name="setting-the-debuggable-attribute"></a>[Configuration de l’attribut Debuggable](~/android/deploy-test/debuggable-attribute.md)
 
 Cet article explique comment définir l’attribut Debuggable afin que des outils tels que `adb` puissent communiquer avec la Machine virtuelle Java.
 
-## <a name="environment"></a>[Environment](environment.md)
+## <a name="environment"></a>[Environnement](environment.md)
 
 Cet article décrit l’environnement d’exécution de Xamarin.Android et les propriétés système Android qui influencent l’exécution du programme.
 
-## <a name="gdb"></a>[GDB](gdb.md)
+## <a name="gdb"></a>[Gdb](gdb.md)
 
 Cet article explique comment utiliser `gdb` pour déboguer une application Xamarin.Android.
 
@@ -68,12 +68,12 @@ Ce guide explique comment utiliser les outils de profilage pour examiner les per
 
 ## <a name="preparing-an-application-for-release"></a>[Préparation d’une application pour la mise en production](~/android/deploy-test/release-prep/index.md)
 
-Une fois qu’une application a été codée et testée, il est nécessaire de préparer un package pour la distribution. La première tâche de préparation de ce package consiste à générer l’application à mettre en production, ce qui implique principalement de définir différents attributs d’application.
+Une fois qu’une application a été codée et testée, il est nécessaire de préparer un paquet pour la distribution. La première tâche de préparation de ce paquet consiste à générer l’application pour sa mise en production, ce qui implique principalement de définir quelques attributs d’application.
 
 ## <a name="signing-the-android-application-package"></a>[Signature du paquet d’application Android](~/android/deploy-test/signing/index.md)
 
 Découvrez comment créer une identité de signature Android, créer un nouveau certificat de signature pour les applications Android et signer l’application avec le certificat de signature. Cette rubrique explique aussi comment exporter l’application sur disque pour une distribution *ad-hoc*. Le fichier APK ainsi créé peut être chargé de façon indépendante (sideloaded) dans les appareils Android sans passer par un App Store.
 
-## <a name="publishing-an-application"></a>[Publication d’une application](~/android/deploy-test/publishing/index.md)
+## <a name="publishing-an-application"></a>[Publication d'une application](~/android/deploy-test/publishing/index.md)
 
 Cette série d’articles décrit les étapes à suivre pour distribuer publiquement une application créée avec Xamarin.Android. La distribution peut passer par des canaux tels que l’e-mail, un serveur web privé, Google Play ou Amazon Appstore pour Android.

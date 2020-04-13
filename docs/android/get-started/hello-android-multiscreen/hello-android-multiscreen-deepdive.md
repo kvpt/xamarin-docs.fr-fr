@@ -9,15 +9,15 @@ author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
 ms.openlocfilehash: 4acbfe810abefd9a25721ddf59c9f4f197afdf28
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73020979"
 ---
 # <a name="hello-android-multiscreen-deep-dive"></a>Hello, Android multi-écran - En profondeur
 
-_Dans ce guide en deux parties, l’application Phoneword de base (créée dans le guide Hello, Android) est développée pour gérer un deuxième écran. En cours de route, les blocs de construction des applications Android de base sont introduits. Une présentation approfondie de l’architecture Android est incluse pour vous aider à développer une meilleure compréhension de la structure et des fonctionnalités de l’application Android._
+_Dans ce guide en deux parties, l’application Phoneword de base (créée dans le guide Hello, Android) est élargie pour gérer un deuxième écran. En cours de route, les blocs de base de l’application Android sont introduits. Une plongée plus profonde dans l’architecture Android est incluse pour vous aider à développer une meilleure compréhension de la structure et des fonctionnalités d’applications Android._
 
 Dans [Hello, Android multi-écran - Démarrage rapide](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-quickstart.md), vous avez généré et exécuté votre première application Xamarin.Android multi-écran.
 
@@ -29,7 +29,7 @@ Dans [Hello, Android - En profondeur](~/android/get-started/hello-android/hello-
 
 ### <a name="android-application-building-blocks"></a>Modules d’une application Android
 
-Une application Android se compose d’une collection de classes Android spéciales appelées *blocs d’application*, regroupées avec des ressources d’application - images, thèmes, classes d’assistance, etc. Elles sont coordonnées par un fichier XML appelé le *manifeste Android*.
+Une application Android se compose d’une collection de classes Android spéciales *appelées Blocs d’applications* regroupés avec un certain nombre de ressources d’application - images, thèmes, classes d’aide, etc &ndash; sont coordonnés par un fichier XML appelé le manifeste *Android*.
 
 Les blocs d’application constituent l’armature des applications Android, car ils permettent de faire ce qui est normalement impossible de faire avec une classe normale. Les deux plus importants sont _Activités_ et _Services_ :
 
@@ -42,7 +42,7 @@ Une application Android peut ne pas utiliser tous les types de blocs et en utili
 ### <a name="intents"></a>Intentions
 
 Autre concept fondamental des applications Android, l’*intention*.
-Android est conçu autour du *principe des privilèges minimum*. Les applications ont accès uniquement aux blocs dont elles ont besoin pour fonctionner et elles ont un accès limité aux blocs qui composent le système d’exploitation ou les autres applications. De même, les blocs sont *sommairement couplés*. Ils sont conçus pour n’avoir que peu de connaissance des autres blocs et un accès limité à ceux-ci (même les blocs faisant partie de la même application).
+Android est conçu autour du ** principe des privilèges minimum&ndash;. Les applications ont accès uniquement aux blocs dont elles ont besoin pour fonctionner et elles ont un accès limité aux blocs qui composent le système d’exploitation ou les autres applications. De même, les blocs sont ** sommairement couplés&ndash;. Ils sont conçus pour n’avoir que peu de connaissance des autres blocs et un accès limité à ceux-ci (même les blocs faisant partie de la même application).
 
 Pour communiquer, les blocs d’application s’envoient des messages asynchrones appelés *intentions*. Les intentions contiennent des informations sur le bloc de réception et parfois des données. Une intention envoyée depuis un composant d’application déclenche une action dans un autre composant d’application, liant ainsi les deux composants d’application et leur permettant de communiquer. Par l’échange d’intentions, les blocs peuvent coordonner des actions complexes comme lancer l’application appareil-photo pour prendre des photos et les enregistrer, collecter des informations sur l’emplacement ou naviguer d’un écran à un autre.
 
@@ -58,13 +58,13 @@ Les intentions sont utilisées pour naviguer entre les écrans. Il est temps de 
 
 ### <a name="launching-a-second-activity-with-an-intent"></a>Lancement d’une seconde activité avec une intention
 
-Dans l’application Phoneword, une intention a été utilisée pour lancer un second écran (activité). Commencez par créer une intention, en passant le *Contexte* actuel (`this`, faisant référence au **Contexte** actuel) et le type de bloc d’application que vous recherchez (`TranslationHistoryActivity`) :
+Dans l’application Phoneword, une intention a été utilisée pour lancer un second écran (activité). Commencez par créer une intention, en`this`passant dans le *contexte* actuel ( , se référant`TranslationHistoryActivity`au **contexte**actuel ) et le type de bloc d’application que vous recherchez ( )
 
 ```csharp
 Intent intent = new Intent(this, typeof(TranslationHistoryActivity));
 ```
 
-Le **contexte** est une interface vers des informations générales sur l’environnement de l’application. Il informe les nouveaux objets créés de ce qui se passe avec l’application. Si vous envisagez une intention comme un message, vous fournissez le nom du destinataire du message (`TranslationHistoryActivity`) et l’adresse du destinataire (`Context`).
+Le **** contexte&ndash; est une interface vers des informations générales sur l’environnement de l’application. Il informe les nouveaux objets créés de ce qui se passe avec l’application. Si vous envisagez une intention comme un message, vous fournissez le nom du destinataire du message (`TranslationHistoryActivity`) et l’adresse du destinataire (`Context`).
 
 Android fournit une option permettant de joindre des données simples à une intention (les données complexes sont traitées différemment). Dans l’exemple Phoneword, `PutStringArrayExtra` est utilisé pour joindre une liste de numéros de téléphone à l’intention et `StartActivity` est appelé sur le destinataire de l’intention. Le code complet se présente ainsi :
 

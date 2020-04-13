@@ -1,26 +1,26 @@
 ---
-title: 'Xamarin.Essentials: Magnétomètre'
+title: 'Xamarin.Essentials : magnétomètre'
 description: La classe Magnetometer de Xamarin.Essentials vous permet de superviser le capteur magnétométrique de l’appareil, qui indique l’orientation de l’appareil par rapport au champ magnétique terrestre.
 ms.assetid: 64DD0D41-03E2-40DD-9EC8-101CA0ED852B
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
 ms.openlocfilehash: 7682afd26bc09e467c5badbea25c9d478c7bb842
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70226798"
 ---
-# <a name="xamarinessentials-magnetometer"></a>Xamarin.Essentials: Magnétomètre
+# <a name="xamarinessentials-magnetometer"></a>Xamarin.Essentials : magnétomètre
 
-La classe **Magnetometer** vous permet de surveiller le capteur de magnétomètre du périphérique qui indique l’orientation du périphérique par rapport à champ magnétique de la terre.
+La classe **Magnetometer** vous permet de superviser le capteur magnétométrique de l’appareil, qui indique l’orientation de l’appareil par rapport au champ magnétique terrestre.
 
 ## <a name="get-started"></a>Prise en main
 
 [!include[](~/essentials/includes/get-started.md)]
 
-## <a name="using-magnetometer"></a>Utilisation de **Magnetometer**
+## <a name="using-magnetometer"></a>Utilisation du magnétomètre
 
 Ajoutez une référence à Xamarin.Essentials dans votre classe :
 
@@ -28,7 +28,7 @@ Ajoutez une référence à Xamarin.Essentials dans votre classe :
 using Xamarin.Essentials;
 ```
 
-La fonctionnalité de magnétomètre appelle les méthodes `Start` et `Stop` pour écouter les changements relatifs au magnétomètre. Toutes les modifications sont renvoyées par l'événement `ReadingChanged`. Voici un exemple d’utilisation :
+La fonctionnalité de magnétomètre appelle les méthodes `Start` et `Stop` pour écouter les changements relatifs au magnétomètre. Toutes les variations peuvent être écoutées via l’événement `ReadingChanged`. Voici un exemple d’utilisation :
 
 ```csharp
 
@@ -71,7 +71,7 @@ public class MagnetometerTest
 }
 ```
 
-Toutes les données sont retournées dans μT (microteslas).
+Toutes les données sont retournées en T (microteslas).
 
 [!include[](~/essentials/includes/sensor-speed.md)]
 

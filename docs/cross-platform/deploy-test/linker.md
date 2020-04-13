@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
 ms.openlocfilehash: 7d9b7dfc12c27a195e3cb797167690cded348803
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "75488905"
 ---
 # <a name="custom-linker-configuration"></a>Configuration personnalisée de l’éditeur de liens
@@ -60,8 +60,8 @@ La seconde section, pour `My.Own.Assembly.dll`, permet de garantir que le type `
 L’espace de noms `My.Own.Namespace` permet de conserver tous les types qu’il contient.
 Enfin, n’importe quel type dont le nom complet (y compris l’espace de noms) correspond au modèle de caractère générique « My.Other\* » conserve tous ses champs et toutes ses méthodes. Le caractère générique `*` peut être inclus plusieurs fois dans un modèle de « nom complet de type ».
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Liaison sur iOS](~/ios/deploy-test/linker.md)
 - [Liaison sur Android](~/android/deploy-test/linker.md)
-- [GitHub de l’éditeur de liens référentiel avec des exemples](https://github.com/mono/linker)
+- [Linker GitHub repo avec des exemples](https://github.com/mono/linker)

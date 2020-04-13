@@ -10,10 +10,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
 ms.openlocfilehash: 5dcc37730008e6e39b96128bc1368f022daa2d06
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73022993"
 ---
 # <a name="hello-ios--quickstart"></a>Hello.iOS - Démarrage rapide
@@ -22,12 +22,12 @@ Ce guide décrit comment créer une application qui convertit un numéro de tél
 
  [![](hello-ios-quickstart-images/image1.png "The Hello.iOS Quickstart app")](hello-ios-quickstart-images/image1.png#lightbox)
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Spécifications
 
 Le développement iOS avec Xamarin exige :
 
 - Un Mac exécutant macOS High Sierra (10.13) ou version ultérieure.
-- La dernière version de Xcode et du kit iOS SDK installée à partir de l’[App Store](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)
+- Dernière version de Xcode et iOS SDK installée depuis [l’App Store](https://itunes.apple.com/us/app/xcode/id497799835?mt=12) .
 
 ::: zone pivot="macos"
 
@@ -64,11 +64,11 @@ Cette procédure pas à pas décrit comment créer une application nommée Phone
 
     ![](hello-ios-quickstart-images/image3new.png "iOS solution")
 
-2. À partir de la **boîte de dialogue Nouvelle Solution**, choisissez le modèle **iOS > Application > Application avec affichage unique**, en vérifiant que C# est sélectionné. Cliquez sur **Suivant** :
+2. À partir de la **boîte de dialogue Nouvelle Solution**, choisissez le modèle **iOS > Application > Application avec affichage unique**, en vérifiant que C# est sélectionné. Cliquez **sur Next**:
 
     ![](hello-ios-quickstart-images/image4new.png "Choose Single View Application")
 
-3. Configurez l’application. Attribuez-lui le **nom** de `Phoneword_iOS` et conservez les valeurs par défaut des autres champs. Cliquez sur **Suivant** :
+3. Configurez l’application. Attribuez-lui le **nom de ** `Phoneword_iOS` et conservez les valeurs par défaut des autres champs. Cliquez **sur Next**:
 
     ![](hello-ios-quickstart-images/image5new.png "Enter the app name")
 
@@ -99,7 +99,7 @@ Cette procédure pas à pas décrit comment créer une application nommée Phone
 
     ![](hello-ios-quickstart-images/image10.png "Set the label to Enter a Phoneword")
 
-10. Recherchez « champ de texte » dans la boîte à outils et faites glisser un **champ de texte** depuis la **boîte à outils** vers l’aire de conception pour le placer sous l’**étiquette**. Ajustez la largeur jusqu’à ce que le **champ de texte** ait la même largeur que l’**étiquette** :
+10. Recherchez « champ de texte » dans la boîte à outils et faites glisser un **champ de texte** depuis la **boîte à outils** vers l’aire de conception pour le placer sous l’**étiquette**. Ajuster la largeur jusqu’à ce que le **champ de texte** soit de la même largeur que l’étiquette : **Label**
 
     ![](hello-ios-quickstart-images/image12new.png "Make the Text Field the same width as the Label")
 
@@ -107,7 +107,7 @@ Cette procédure pas à pas décrit comment créer une application nommée Phone
 
     ![](hello-ios-quickstart-images/image13new.png "Change the Title property to 1-855-XAMARIN")
 
-12. Faites glisser un **bouton** depuis la **boîte à outils** vers l’aire de conception, puis placez-le sous le **champ de texte**. Ajustez la largeur de sorte que le **bouton** soit aussi large que le **champ de texte** et l’**étiquette** :
+12. Faites glisser un **bouton** depuis la **boîte à outils** vers l’aire de conception, puis placez-le sous le **champ de texte**. Ajuster la largeur de sorte que le **bouton** est aussi large que le **champ de texte** et **l’étiquette**:
 
     ![](hello-ios-quickstart-images/image14new.png "Adjust the width so the Button is as wide as the Text Field and Label")
 
@@ -246,7 +246,7 @@ Cette procédure pas à pas décrit comment créer une application nommée Phone
         };
     ```
 
-22. Enregistrez les modifications, puis générez l’application en choisissant **générer > générer tout** ou en appuyant sur **⌘ + B**.  Si l’application se compile, un message de réussite apparaît en haut de l’IDE :
+22. Enregistrer les modifications, puis construire l’application en choisissant **Build > Construire tout** ou en appuyant sur **B**.  Si l’application est compilé, un message de réussite apparaîtra en haut de l’IDE :
 
     ![](hello-ios-quickstart-images/image21.png "A success message will appear at the top of the IDE")
 
@@ -286,11 +286,11 @@ Cette procédure pas à pas décrit comment créer une application nommée Phone
 
     Créez une solution Xamarin.iOS en sélectionnant **Fichier > Nouveau > Projet... > Visual C# > iPhone et iPad > Application iOS (Xamarin)** :
 
-    ![Sélectionner le type de projet d’application iOS (Xamarin)](hello-ios-quickstart-images/image002.w157.png "Sélectionner le type de projet d’application iOS (Xamarin)")
+    ![Sélectionnez le type de projet iOS App (Xamarin)](hello-ios-quickstart-images/image002.w157.png "Sélectionnez le type de projet iOS App (Xamarin)")
 
     Dans la boîte de dialogue qui s’affiche ensuite, sélectionnez le modèle **Application avec vue unique** et appuyez sur **OK** pour créer le projet :
 
-    ![Sélectionner un modèle de projet affichage simple](hello-ios-quickstart-images/image002-2.w157.png "Sélectionner un modèle de projet affichage simple")
+    ![Sélectionnez le modèle de projet Single View](hello-ios-quickstart-images/image002-2.w157.png "Sélectionnez le modèle de projet Single View")
 
 1. Vérifiez que l’icône Mac Agent Xamarin est verte dans la barre d’outils.
 
@@ -317,7 +317,7 @@ Cette procédure pas à pas décrit comment créer une application nommée Phone
     > [!NOTE]
     > Vous pouvez afficher les **Propriétés** ou la **Boîte à outils** à tout moment en navigant vers le menu **Afficher**.
 
-1. Recherchez « champ de texte » dans la boîte à outils et faites glisser un **champ de texte** depuis la **boîte à outils** vers l’aire de conception pour le placer sous l’**étiquette**. Ajustez la largeur jusqu’à ce que le **champ de texte** ait la même largeur que l’**étiquette** :
+1. Recherchez « champ de texte » dans la boîte à outils et faites glisser un **champ de texte** depuis la **boîte à outils** vers l’aire de conception pour le placer sous l’**étiquette**. Ajuster la largeur jusqu’à ce que le **champ de texte** soit de la même largeur que l’étiquette : **Label**
 
     ![](hello-ios-quickstart-images/vs-image12.png "Adjust the width until the Text Field is the same width as the Label")
 
@@ -325,7 +325,7 @@ Cette procédure pas à pas décrit comment créer une application nommée Phone
 
     ![](hello-ios-quickstart-images/vs-image13.png "Change the Text property to 1-855-XAMARIN")
 
-1. Faites glisser un **bouton** depuis la **boîte à outils** vers l’aire de conception, puis placez-le sous le **champ de texte**. Ajustez la largeur de sorte que le **bouton** soit aussi large que le **champ de texte** et l’**étiquette** :
+1. Faites glisser un **bouton** depuis la **boîte à outils** vers l’aire de conception, puis placez-le sous le **champ de texte**. Ajuster la largeur de sorte que le **bouton** est aussi large que le **champ de texte** et **l’étiquette**:
 
     ![](hello-ios-quickstart-images/vs-image14.png "Adjust the width so the Button is as wide as the Text Field and Label")
 
@@ -468,7 +468,7 @@ Cette procédure pas à pas décrit comment créer une application nommée Phone
     };
     ```
 
-1. Enregistrez les modifications, puis générez l’application en choisissant **générer > générer la solution** ou en appuyant sur **Ctrl + Maj + B**.  Si l’application se compile, un message de réussite s’affiche en bas de l’IDE :
+1. Enregistrer les modifications, puis construire l’application en choisissant **Build > Build Solution** ou en appuyant sur **Ctrl - Shift B**.  Si l’application est compilé, un message de réussite apparaîtra au bas de l’IDE :
 
     ![](hello-ios-quickstart-images/vs-image21.png "A success message will appear at the bottom of the IDE")
 
@@ -492,9 +492,9 @@ Félicitations ! Vous avez terminé votre première application Xamarin.Android
 
 Maintenant, le moment est venu d’examiner de plus près les outils et compétences mentionnées dans ce guide dans la seconde partie intitulée [Hello, iOS - En profondeur](~/ios/get-started/hello-ios/hello-ios-deepdive.md).
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Icônes d’application et images de lancement Xamarin (exemple)](https://github.com/xamarin/ios-samples/blob/master/Hello_iOS/Resources/XamarinAppIconsandLaunchImages.zip?raw=true)
-- [Bonjour, iOS (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios)
-- [Lignes directrices de l’interface utilisateur iOS](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html)
-- [Portail de provisionnement iOS](https://developer.apple.com/ios/manage/overview/index.action)
+- [Hello, iOS (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios)
+- [Human Interface Guidelines pour iOS](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html)
+- [Portail d’approvisionnement iOS](https://developer.apple.com/ios/manage/overview/index.action)

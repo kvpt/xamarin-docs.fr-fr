@@ -1,6 +1,6 @@
 ---
-title: Fonctionnalités Lollipop
-description: Cet article offre une vue d’ensemble des nouvelles fonctionnalités introduites dans Android 5,0 (lollipop). Ces fonctionnalités incluent un nouveau style d’interface utilisateur appelé « thème de matériau », ainsi que de nouvelles fonctionnalités de prise en charge telles que les animations, les ombres de vue et les teintes de dessin. Android 5,0 comprend également des notifications améliorées, deux nouveaux widgets d’interface utilisateur, un nouveau planificateur de travaux et une poignée de nouvelles API pour améliorer le stockage, la mise en réseau, la connectivité et les fonctionnalités multimédias.
+title: Caractéristiques de Lollipop
+description: Cet article fournit un aperçu de haut niveau des nouvelles fonctionnalités introduites dans Android 5.0 (Lollipop). Ces fonctionnalités comprennent un nouveau style d’interface utilisateur appelé Material Theme, ainsi que de nouvelles fonctionnalités de soutien telles que des animations, des ombres de vue et des teintures dessinables. Android 5.0 comprend également des notifications améliorées, deux nouveaux widgets d’interface utilisateur, un nouveau planificateur d’emploi, et une poignée de nouvelles API pour améliorer le stockage, le réseautage, la connectivité et les capacités multimédias.
 ms.prod: xamarin
 ms.assetid: 1CE99CFE-FAAC-49FC-AEDC-1A21FC6E946E
 ms.technology: xamarin-android
@@ -8,449 +8,449 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
 ms.openlocfilehash: 297c7806ce8a880d65c38ef0e4672e41fee5acfe
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "78291900"
 ---
-# <a name="lollipop-features"></a>Fonctionnalités Lollipop
+# <a name="lollipop-features"></a>Caractéristiques de Lollipop
 
-_Cet article offre une vue d’ensemble des nouvelles fonctionnalités introduites dans Android 5,0 (lollipop). Ces fonctionnalités incluent un nouveau style d’interface utilisateur appelé « thème de matériau », ainsi que de nouvelles fonctionnalités de prise en charge telles que les animations, les ombres de vue et les teintes de dessin. Android 5,0 comprend également des notifications améliorées, deux nouveaux widgets d’interface utilisateur, un nouveau planificateur de travaux et une poignée de nouvelles API pour améliorer le stockage, la mise en réseau, la connectivité et les fonctionnalités multimédias._
+_Cet article fournit un aperçu de haut niveau des nouvelles fonctionnalités introduites dans Android 5.0 (Lollipop). Ces fonctionnalités comprennent un nouveau style d’interface utilisateur appelé Material Theme, ainsi que de nouvelles fonctionnalités de soutien telles que des animations, des ombres de vue et des teintures dessinables. Android 5.0 comprend également des notifications améliorées, deux nouveaux widgets d’interface utilisateur, un nouveau planificateur d’emploi, et une poignée de nouvelles API pour améliorer le stockage, le réseautage, la connectivité et les capacités multimédias._
 
-## <a name="lollipop-overview"></a>Vue d’ensemble du Lollipop
+## <a name="lollipop-overview"></a>Aperçu de Lollipop
 
-Android 5,0 (lollipop) introduit un nouveau langage de conception, une *conception de matériau*et, avec le service informatique, qui prend en charge de nouvelles fonctionnalités pour rendre les applications plus faciles et plus intuitives à utiliser. Avec la conception de matériaux, Android 5,0 fournit non seulement des téléphones Android rénové ; Il fournit également un nouvel ensemble de règles de conception pour les tablettes Android, les ordinateurs de bureau, les montres et les téléviseurs intelligents. Ces règles de conception insistent sur la simplicité et le minimum tout en utilisant des attributs tactiles familiers (tels que des signaux de surface et de bord réalistes) pour aider les utilisateurs à comprendre rapidement et intuitivement l’interface.
+Android 5.0 (Lollipop) introduit un nouveau langage de conception, *Material Design*, et avec elle un casting de soutien de nouvelles fonctionnalités pour rendre les applications plus faciles et plus intuitives à utiliser. Avec Material Design, Android 5.0 donne non seulement aux téléphones Android un lifting; il fournit également un nouvel ensemble de règles de conception pour les tablettes Android, ordinateurs de bureau, montres et téléviseurs intelligents. Ces règles de conception mettent l’accent sur la simplicité et le minimalisme tout en utilisant des attributs tactiles familiers (tels que des repères réalistes de surface et de bord) pour aider les utilisateurs à comprendre rapidement et intuitivement l’interface.
 
-Le *thème du matériau* est le incarnation de ces principes de conception d’interface utilisateur dans Android. Cet article commence par couvrir les fonctionnalités de prise en charge du thème de matériau :
+*Material Theme* est l’incarnation de ces principes de conception d’interface utilisateur dans Android. Cet article commence par couvrir les fonctionnalités de support de Material Theme :
 
-- **Les animations &ndash; les** animations de *Commentaires tactiles* , les animations de *transition d’activité* , les animations de transition d’état d' *affichage* et un *effet de révélation*.
+- **Animations** &ndash; *Animations Touch feedback* animations, animations de transition *d’activité,* voir les animations *de transition d’état,* et un effet *révélateur.*
 
-- **Afficher les ombres et l’élévation &ndash; les** vues ont maintenant une propriété `elevation` ;   les vues avec des valeurs de `elevation` supérieures effectuent un cast de plus grandes ombres sur l’arrière-plan.
+- **Afficher les ombres et les vues d’élévation** &ndash; ont maintenant une `elevation` propriété ;   vues avec `elevation` des valeurs plus élevées jettent de plus grandes ombres sur l’arrière-plan.
 
-- Les **fonctionnalités de couleur** &ndash; la coloration pouvant être *dessinée* vous permettent de réutiliser des ressources d’image en modifiant leur couleur, et l' *extraction de couleurs visible* vous permet de créer un thème dynamique de votre application en fonction des couleurs d’une image.
+- **Caractéristiques de** &ndash; *couleur La teinture Drawable* vous permet de réutiliser les ressources d’image en changeant leur couleur, et *l’extraction de couleur proéminente* vous aide à thème dynamiquer votre application basée sur les couleurs d’une image.
 
-De nombreuses fonctionnalités de thème matériel sont déjà intégrées à l’interface utilisateur Android 5,0, tandis que d’autres doivent être explicitement ajoutées aux applications. Par exemple, certains affichages standard (tels que les boutons) incluent déjà les animations de commentaires tactiles, tandis que les applications doivent activer la plupart des ombres de vue.
+De nombreuses fonctionnalités de thème matériel sont déjà intégrées dans l’expérience Android 5.0 interface utilisateur, tandis que d’autres doivent être explicitement ajoutés aux applications. Par exemple, certaines vues standard (comme les boutons) incluent déjà des animations de rétroaction tactile, tandis que les applications doivent activer la plupart des ombres de vue.
 
-En plus des améliorations apportées à l’interface utilisateur par le biais du thème matériel, Android 5,0 intègre également plusieurs nouvelles fonctionnalités qui sont traitées dans cet article :
+En plus des améliorations de l’interface utilisateur apportées par Material Theme, Android 5.0 comprend également plusieurs autres nouvelles fonctionnalités qui sont couvertes dans cet article:
 
-- Les notifications **améliorées** &ndash; notifications dans Android 5,0 ont été mises à jour de façon significative avec une nouvelle apparence, une prise en charge des notifications l’écran et un nouveau format de présentation de notifications de *niveau* supérieur.
+- **Notifications améliorées** &ndash; Notifications dans Android 5.0 ont été considérablement mis à jour avec un nouveau look, la prise en charge des notifications d’écran de verrouillage, et un nouveau format de présentation de notification *Heads-up.*
 
-- Les **nouveaux widgets d’interface utilisateur** &ndash; le nouveau widget `RecyclerView` facilitent l’acheminement des jeux de données volumineux et des informations complexes, tandis que le nouveau widget de `CardView` fournit un format de présentation de type carte simplifié pour l’affichage de texte et d’images.
+- **Widgets UI** &ndash; Le `RecyclerView` nouveau widget permet aux applications de transmettre plus facilement `CardView` de grands ensembles de données et des informations complexes, et le nouveau widget fournit un format de présentation simplifié en forme de carte pour afficher du texte et des images.
 
-- Les **nouvelles api** &ndash; Android 5,0 ajoutent de nouvelles API pour la prise en charge de plusieurs réseaux, une connectivité Bluetooth améliorée, une gestion du stockage plus facile et un contrôle plus flexible des lecteurs multimédias et des appareils photo. Une nouvelle fonctionnalité de planification des travaux est disponible pour exécuter des tâches de façon asynchrone à des heures planifiées. Cette fonctionnalité permet d’améliorer la durée de vie de la batterie, par exemple la planification des tâches à effectuer lorsque l’appareil est branché et en cours de chargement.
+- **Les nouvelles API** &ndash; Android 5.0 ajoutent de nouvelles API pour un soutien réseau multiple, une connectivité Bluetooth améliorée, une gestion de stockage plus facile et un contrôle plus flexible des lecteurs multimédias et des appareils photo. Une nouvelle fonction de planification d’emploi est disponible pour exécuter les tâches asynchronement aux heures prévues. Cette fonctionnalité permet d’améliorer la durée de vie de la batterie en planant, par exemple, les tâches à accomplir lorsque l’appareil est branché et chargé.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>Spécifications
 
-Les éléments suivants sont requis pour utiliser les nouvelles fonctionnalités Android 5,0 dans les applications basées sur Xamarin :
+Ce qui suit est nécessaire pour utiliser les nouvelles fonctionnalités Android 5.0 dans les applications basées sur Xamarin:
 
-- **Xamarin. android** &ndash; Xamarin. Android 4,20 ou version ultérieure doit être installé et configuré à l’aide de Visual Studio ou de Visual Studio pour Mac.
+- **Xamarin.Android** &ndash; Xamarin.Android 4.20 ou plus tard doit être installé et configuré avec Visual Studio ou Visual Studio pour Mac.
 
-- **Android SDK** &ndash; Android 5,0 (API 21) ou version ultérieure doit être installé via le gestionnaire de Android SDK.
+- **Android SDK** &ndash; Android 5.0 (API 21) ou plus tard doit être installé via le gestionnaire Android SDK.
 
-- **Kit de développement Java** &ndash; Xamarin. Android nécessite [JDK 1,8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) ou version ultérieure si vous développez pour l’API de niveau 24 ou supérieur (JDK 1,8 prend également en charge les niveaux d’API antérieurs à 24, y compris les interfaces Lollipop). La version 64 bits de JDK 1,8 est requise si vous utilisez des contrôles personnalisés ou le générateur d’aperçu de formulaires.
+- **Java Developer Kit** &ndash; Xamarin.Android nécessite [JDK 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) ou plus tard si vous développez pour le niveau API 24 ou plus (JDK 1.8 prend également en charge les niveaux d’API plus tôt que 24, y compris Lollipop). La version 64 bits de JDK 1.8 est requise si vous utilisez des contrôles personnalisés ou l’aperçu des formulaires.
 
-Vous pouvez continuer à utiliser [JDK 1,7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) si vous développez spécifiquement pour l’API de niveau 23 ou antérieur.
+Vous pouvez continuer à utiliser [JDK 1.7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) si vous développez spécifiquement pour le niveau API 23 ou plus tôt.
 
-## <a name="setting-up-an-android-50-project"></a>Configuration d’un projet Android 5,0
+## <a name="setting-up-an-android-50-project"></a>Mise en place d’un projet Android 5.0
 
-Pour créer un projet Android 5,0, vous devez installer les derniers outils et packages du kit de développement logiciel (SDK). Procédez comme suit pour configurer un projet Xamarin. Android qui cible Android 5,0 :
+Pour créer un projet Android 5.0, vous devez installer les derniers outils et forfaits SDK. Utilisez les étapes suivantes pour mettre en place un projet Xamarin.Android qui cible Android 5.0:
 
-1. Installez les outils Xamarin. Android et activez votre licence Xamarin. Pour plus d’informations sur l’installation de Xamarin. Android, consultez [installation et installation](~/android/get-started/installation/index.md) .
+1. Installez des outils Xamarin.Android et activez votre licence Xamarin. Voir [Configuration et Installation](~/android/get-started/installation/index.md) pour plus d’informations sur l’installation de Xamarin.Android.
 
-2. Si vous utilisez Visual Studio pour Mac, installez les dernières mises à jour Android 5,0.
+2. Si vous utilisez Visual Studio pour Mac, installez les dernières mises à jour Android 5.0.
 
-3. Démarrez le gestionnaire de Android SDK (dans Visual Studio pour Mac, utilisez **outils &gt; ouvrir Android SDK manager&hellip;** ) et installez Android SDK Tools 23.0.5 ou version ultérieure :
+3. Démarrez le gestionnaire Android SDK (en studio visuel pour Mac, utilisez **Tools &gt; Open Android&hellip;SDK Manager**) et installez Android SDK Tools 23.0.5 ou plus tard :
 
-    [![sélectionnant Android SDK outils dans le gestionnaire de Android SDK](lollipop-images/android-l-tools-sml.png)](lollipop-images/android-l-tools.png#lightbox)
+    [![Sélection d’outils Android SDK dans le gestionnaire Android SDK](lollipop-images/android-l-tools-sml.png)](lollipop-images/android-l-tools.png#lightbox)
 
-   Installez également les derniers packages du kit de développement logiciel (SDK) Android 5,0 (API 21 ou ultérieure) :
+   Aussi, installer les derniers paquets Android 5.0 SDK (API 21 ou plus tard):
 
-    [![installation de packages du kit de développement logiciel (SDK) Android 5,0 dans le gestionnaire de Android SDK](lollipop-images/android-l-sdk-pkgs-sml.png)](lollipop-images/android-l-sdk-pkgs.png#lightbox)
+    [![Installation de forfaits Android 5.0 SDK dans le gestionnaire Android SDK](lollipop-images/android-l-sdk-pkgs-sml.png)](lollipop-images/android-l-sdk-pkgs.png#lightbox)
 
-   Pour plus d’informations sur l’utilisation du gestionnaire de Android SDK, consultez [SDK Manager](https://developer.android.com/tools/help/sdk-manager.html).
+   Pour plus d’informations sur l’utilisation de l’Android SDK Manager, voir [SDK Manager](https://developer.android.com/tools/help/sdk-manager.html).
 
-4. Créez un projet Xamarin. Android. Si vous débutez avec le développement Android avec Xamarin, consultez [Hello, Android](~/android/get-started/hello-android/index.md) pour en savoir plus sur la création de projets Android. Lorsque vous créez un projet Android, veillez à configurer les paramètres de version pour Android 5,0.
-   Dans Visual Studio pour Mac, accédez à **Options du projet &gt; générer &gt; général** et définissez **Framework cible** sur **Android 5,0 (lollipop)** ou version ultérieure :
+4. Créez un nouveau projet Xamarin.Android. Si vous êtes nouveau au développement Android avec Xamarin, voir [Bonjour, Android](~/android/get-started/hello-android/index.md) pour en savoir plus sur la création de projets Android. Lorsque vous créez un projet Android, assurez-vous de configurer les paramètres de la version pour Android 5.0.
+   Dans Visual Studio for Mac, naviguez vers **Project &gt; Options Build &gt; General** et définissez le cadre **cible** sur **Android 5.0 (Lollipop)** ou plus tard :
 
-    ![Définition de la cible Framwework sur Android 5,0 Lollipop](lollipop-images/target-framework.png)
+    ![Définir la cible Framwework sur Android 5.0 Lollipop](lollipop-images/target-framework.png)
 
-   Sous **Options du projet &gt; générer &gt; application Android**, définir la version Android minimale et cible sur **automatique-utiliser la version du Framework cible**:
+   Dans le cadre **de Project Options &gt; Build &gt; Android Application**, définir la version Android minimale et cible à automatique - utiliser la version cadre **cible:**
 
-    ![Définition des versions minimale et cible d’Android sur automatique](lollipop-images/minimum-android-version.png)
+    ![Définir les versions Android minimales et ciblées à l’automatique](lollipop-images/minimum-android-version.png)
 
-5. Configurez un émulateur ou un appareil Android pour tester votre application. Si vous utilisez un émulateur, consultez [émulateur Android du programme d’installation](~/android/get-started/installation/android-emulator/index.md) pour savoir comment configurer un émulateur Android pour une utilisation avec Xamarin Studio ou Visual Studio. Si vous utilisez un appareil Android, consultez [la page Configuration du kit de développement logiciel (SDK) Preview](https://developer.android.com/preview/setup-sdk.html) pour découvrir comment mettre à jour votre appareil pour Android 5,0. Pour configurer votre appareil Android en vue d’exécuter et de déboguer des applications Xamarin. Android, consultez [configurer un appareil pour le développement](~/android/get-started/installation/set-up-device-for-development.md).
+5. Configurez un émulateur ou un appareil Android pour tester votre application. Si vous utilisez un émulateur, consultez [Android Emulator Setup](~/android/get-started/installation/android-emulator/index.md) pour savoir configurer un émulateur Android pour une utilisation avec Xamarin Studio ou Visual Studio. Si vous utilisez un appareil Android, voir [configurer le SDK Preview](https://developer.android.com/preview/setup-sdk.html) pour savoir comment mettre à jour votre appareil pour Android 5.0. Pour configurer votre appareil Android pour l’exécution et le débogage des applications Xamarin.Android, voir [Set Up Device for Development](~/android/get-started/installation/set-up-device-for-development.md).
 
-Remarque : Si vous mettez à jour un projet Android existant ciblant la version préliminaire d’Android L, vous devez mettre à jour le **Framework cible** et la **version Android** avec les valeurs décrites ci-dessus.
+Remarque : Si vous mettez à jour un projet Android existant qui visait l’Aperçu Android L, vous devez mettre à jour le **cadre cible** et la **version Android** des valeurs décrites ci-dessus.
 
-## <a name="important-changes"></a>Modifications importantes
+## <a name="important-changes"></a>Changements importants
 
-Les applications Android précédemment publiées pouvaient être affectées par les modifications apportées à Android 5,0. En particulier, Android 5,0 utilise un nouveau Runtime et un format de notification considérablement modifié.
+Les applications Android publiées précédemment pourraient être affectées par les changements dans Android 5.0. En particulier, Android 5.0 utilise un nouveau temps d’exécution et un format de notification considérablement modifié.
 
-### <a name="android-runtime"></a>Runtime Android
+### <a name="android-runtime"></a>Android Runtime
 
-Android 5,0 utilise le nouveau Runtime Android (ART) comme Runtime par défaut au lieu de Dalvik. ART met en œuvre plusieurs nouvelles fonctionnalités majeures :
+Android 5.0 utilise le nouveau Android Runtime (ART) comme le temps d’exécution par défaut au lieu de Dalvik. ART met en œuvre plusieurs nouveautés majeures :
 
-- La compilation à l' **avance (AOA)** &ndash; AOA peut améliorer les performances des applications en compilant le code de l’application avant que l’application ne soit lancée pour la première fois. Quand une application est installée, l’ART génère un exécutable d’application compilé pour l’appareil cible.
+- La compilation &ndash; AOT à **l’avance (AOT)** peut améliorer les performances de l’application en compilant le code de l’application avant le lancement de l’application. Lorsqu’une application est installée, ART génère une application compilée exécutable pour l’appareil cible.
 
-- **Amélioration des garbage collection (GC)** &ndash; les améliorations du GC dans l’art peuvent également améliorer les performances de l’application. Le garbage collection utilise désormais une seule pause GC au lieu de deux, et les opérations GC simultanées se terminent plus tard.
+- **L’amélioration de la collecte des ordures (GC)** &ndash; des améliorations GC dans ART peut également améliorer les performances de l’application. La collecte des ordures utilise maintenant une pause GC au lieu de deux, et les opérations concurrentes de GC complètent plus rapidement.
 
-- **Amélioration du débogage des applications** &ndash; art fournit davantage de détails de diagnostic pour faciliter l’analyse des exceptions et des rapports d’incidents.
+- **L’amélioration de la multithérapie d’application** &ndash; fournit plus de détails diagnostiques pour aider à analyser les exceptions et les rapports d’accident.
 
-Les applications existantes doivent fonctionner sans modification sous les &ndash; ART, à l’exception des applications qui exploitent les techniques propres au runtime Dalvik précédent, qui peuvent ne pas fonctionner sous ART. Pour plus d’informations sur ces modifications, consultez [vérification du comportement de l’application sur le runtime Android (art)](https://developer.android.com/guide/practices/verifying-apps-art.html).
+Les applications existantes devraient &ndash; fonctionner sans changement dans le cadre de LA MULTI, sauf pour les applications qui exploitent des techniques propres au temps d’exécution dalvik précédent, qui peuvent ne pas fonctionner sous ART. Pour plus d’informations sur ces changements, voir [Vérifier le comportement de l’application sur l’Android Runtime (ART)](https://developer.android.com/guide/practices/verifying-apps-art.html).
 
 ### <a name="notification-changes"></a>Modifications de notification
 
-Les notifications ont été considérablement modifiées dans Android 5,0 :
+Notifications ont changé de manière significative dans Android 5.0:
 
-- Les **sons et les vibrations sont gérés différemment** &ndash; les sons et les vibrations des notifications sont désormais gérés par `Notification.Builder` au lieu de `Ringtone`, `MediaPlayer`et `Vibrator`.
+- **Les sons et les vibrations sont manipulés** &ndash; `Notification.Builder` différemment `Ringtone`Les `MediaPlayer`sons et les vibrations de notification sont maintenant manipulés par au lieu de , , et `Vibrator`.
 
-- **Nouveau modèle de couleurs** &ndash; en fonction du thème du matériau, les notifications sont rendues avec du texte foncé sur les arrière-plans blancs ou très clairs. En outre, les canaux alpha dans les icônes de notification peuvent être modifiés par Android pour coordonner les jeux de couleurs système.
+- **Nouveau schéma de** &ndash; couleurs Conformément au thème matériel, les notifications sont rendues avec du texte foncé sur des arrière-plans blancs ou très légers. En outre, les canaux alpha dans les icônes de notification peuvent être modifiés par Android pour coordonner avec les schémas de couleurs du système.
 
-- Les notifications de **l’écran** &ndash; notifications peuvent désormais apparaître sur le l’écran d’appareil.
+- **Notifications** &ndash; d’écran de verrouillage Les notifications peuvent désormais apparaître sur l’écran de verrouillage de l’appareil.
 
-- **Les notifications d' &ndash; haute** priorité s’affichent désormais dans une petite fenêtre flottante (notification de tête) lorsque l’appareil est déverrouillé et que l’écran est allumé.
+- Les notifications **Heads-up** &ndash; Haute priorité apparaissent maintenant dans une petite fenêtre flottante (notification Heads-up) lorsque l’appareil est déverrouillé et que l’écran est activé.
 
-Dans la plupart des cas, le portage de la fonctionnalité de notification d’application existante vers Android 5,0 requiert les étapes suivantes :
+Dans la plupart des cas, le portage des fonctionnalités de notification d’applications existantes sur Android 5.0 nécessite les étapes suivantes :
 
-1. Convertissez votre code pour utiliser `Notification.Builder` (ou `NotificationsCompat.Builder`) pour créer des notifications.
+1. Convertissez votre `Notification.Builder` code `NotificationsCompat.Builder`pour l’utiliser (ou) pour créer des notifications.
 
-2. Vérifiez que vos ressources de notification existantes sont visibles dans le nouveau modèle de couleurs de thème de matériau.
+2. Vérifiez que vos actifs de notification existants sont visibles dans le nouveau schéma de couleurs material Theme.
 
-3. Déterminez la visibilité de vos notifications lorsqu’elles sont présentées sur le l’écran. Si une notification n’est pas publique, quel contenu doit s’afficher sur le l’écran ?
+3. Décidez de la visibilité que vos notifications devraient avoir lorsqu’elles sont présentées sur l’écran de verrouillage. Si une notification n’est pas publique, quel contenu doit apparaître sur l’écran de verrouillage ?
 
-4. Définissez la catégorie de vos notifications afin qu’elles soient gérées correctement dans le nouveau mode de *dérangement* Android 5,0.
+4. Définissez la catégorie de vos notifications afin qu’elles soient traitées correctement dans le nouveau mode Android 5.0 *Ne pas déranger.*
 
-Si vos notifications présentent des contrôles de transport, affichez l’état de lecture du média, utilisez `RemoteControlClient`ou appelez `ActivityManager.GetRecentTasks`, consultez [modifications de comportement importantes](https://developer.android.com/preview/api-overview.html#Behaviors) pour plus d’informations sur la mise à jour de vos notifications pour Android 5,0.
+Si vos notifications présentent des contrôles de `RemoteControlClient`transport, `ActivityManager.GetRecentTasks`affichent l’état de lecture des médias, utilisez ou appelez, consultez [des changements de comportement importants](https://developer.android.com/preview/api-overview.html#Behaviors) pour plus d’informations sur la mise à jour de vos notifications pour Android 5.0.
 
-Pour plus d’informations sur la création de notifications dans Android, consultez [notifications locales](~/android/app-fundamentals/notifications/local-notifications.md).
+Pour plus d’informations sur la création de notifications dans Android, voir [Notifications locales](~/android/app-fundamentals/notifications/local-notifications.md).
 
 ## <a name="material-theme"></a>Thème matériau
 
-Le nouveau thème de matériel Android 5,0 apporte des modifications de balayage à l’apparence de l’interface utilisateur Android. Les éléments visuels utilisent désormais des surfaces tactiles qui prennent le gras, la typographie et les couleurs brillantes de la conception basée sur l’impression. Les captures d’écran suivantes décrivent des exemples de thèmes de matériau :
+Le nouveau thème de matériel Android 5.0 apporte des changements radicaux à l’apparence et la sensation de l’interface utilisateur Android. Les éléments visuels utilisent maintenant des surfaces tactiles qui prennent sur les graphismes audacieux, la typographie, et les couleurs vives de la conception basée sur l’impression. Des exemples de thème matériel sont représentés dans les captures d’écran suivantes :
 
-[![des captures d’écran de l’écran d’accueil des thèmes de matériau, de l’écran des applications et de la configuration](lollipop-images/android-5-gallery-labeled-sml.png)](lollipop-images/android-5-gallery-labeled.png#lightbox)
+[![Captures d’écran de l’écran d’accueil thème matériel, écran d’apps, et l’écran de réglage](lollipop-images/android-5-gallery-labeled-sml.png)](lollipop-images/android-5-gallery-labeled.png#lightbox)
 
-Android 5,0 vous accueille avec l’écran d’accueil affiché sur la gauche. La capture d’écran centrale est le premier écran de la liste des applications, et la capture d’écran à droite est l’écran **paramètres** . La spécification de la [conception de matériel](https://material.io/guidelines/material-design/introduction.html) de Google explique les règles de conception sous-jacentes derrière le nouveau concept de thème de matériau.
+Android 5.0 vous accueille avec l’écran d’accueil affiché sur la gauche. La capture d’écran centrale est le premier écran de la liste d’applications, et la capture d’écran sur la droite est **l’écran Paramètres.** La spécification [Material Design](https://material.io/guidelines/material-design/introduction.html) de Google explique les règles de conception sous-jacentes derrière le nouveau concept de thème matériel.
 
-Le thème matériel comprend trois versions intégrées que vous pouvez utiliser dans votre application : le thème `Theme.Material` foncé (par défaut), le thème `Theme.Material.Light` et le thème `Theme.Material.Light.DarkActionBar` :
+Material Theme comprend trois saveurs intégrées que vous `Theme.Material` pouvez utiliser dans votre `Theme.Material.Light` application : `Theme.Material.Light.DarkActionBar` le thème sombre (par défaut), le thème et le thème :
 
-[![des captures d’écran des thèmes sombres, clairs et DarkActionBar](lollipop-images/three-material-themes-sml.png)](lollipop-images/three-material-themes.png#lightbox)
+[![Captures d’écran des thèmes Dark, Light et DarkActionBar](lollipop-images/three-material-themes-sml.png)](lollipop-images/three-material-themes.png#lightbox)
 
-Pour plus d’informations sur l’utilisation des fonctionnalités de thème matériel dans les applications Xamarin. Android, consultez [thème matériel](~/android/user-interface/material-theme.md).
+Pour en savoir plus sur l’utilisation des fonctionnalités material Theme dans les applications Xamarin.Android, voir [Material Theme](~/android/user-interface/material-theme.md).
 
 ## <a name="animations"></a>Animations
 
-Android 5,0 fournit des animations de commentaires tactiles, des animations de transition d’activité et des animations de transition d’état d’affichage pour rendre les interfaces d’application plus intuitives à utiliser. En outre, les applications Android 5,0 peuvent utiliser des animations d' *effet de révélation* pour masquer ou afficher les affichages. Vous pouvez utiliser les paramètres de *mouvement courbé* pour configurer le rendu des animations rapides ou lentes.
+Android 5.0 fournit des animations de rétroaction tactile, des animations de transition d’activité, et des animations de transition d’état pour rendre les interfaces d’application plus intuitives à utiliser. En outre, les applications Android 5.0 peuvent utiliser des animations *d’effet révélateur* pour masquer ou révéler des vues. Vous pouvez utiliser des paramètres *de mouvement incurvés* pour configurer la rapidité ou la lenteur des animations.
 
-### <a name="touch-feedback-animations"></a>Animations de commentaires tactiles
+### <a name="touch-feedback-animations"></a>Animations De rétroaction tactile
 
-Les animations de commentaires tactiles fournissent aux utilisateurs des commentaires visuels lorsqu’une vue a été touchée. Par exemple, les boutons affichent désormais un effet d’ondulation lorsqu’ils sont touchés &ndash; il s’agit de l’animation de commentaires tactiles par défaut dans Android 5,0. L’animation ondulation est implémentée par la nouvelle classe `RippleDrawable`. L’effet de l’ondulation peut être configuré pour se terminer aux limites de la vue ou s’étendre au-delà des limites de la vue. Par exemple, la séquence de captures d’écran suivante illustre l’effet de l’ondulation dans un bouton pendant l’animation tactile :
+Les animations de rétroaction tactile fournissent aux utilisateurs une rétroaction visuelle lorsqu’une vue a été touchée. Par exemple, les boutons affichent maintenant &ndash; un effet d’entraînement lorsqu’ils sont touchés, il s’agit de l’animation de rétroaction tactile par défaut dans Android 5.0. L’animation Ripple est `RippleDrawable` mise en œuvre par la nouvelle classe. L’effet d’entraînement peut être configuré pour se terminer aux limites de la vue ou s’étendre au-delà des limites de la vue. Par exemple, la séquence suivante de captures d’écran illustre l’effet d’entraînement d’un bouton lors d’une animation tactile :
 
-![Captures d’écran image par image de l’animation ondulation sur un bouton](lollipop-images/touch-animation.png)
+![Captures d’écran image par image de l’animation ondulée sur un bouton](lollipop-images/touch-animation.png)
 
-Le contact tactile initial avec le bouton se trouve dans la première image sur la gauche, tandis que la séquence restante (de gauche à droite) montre comment l’effet d’ondulation se propage au bord du bouton. Lorsque l’animation ondulation se termine, la vue retrouve son apparence d’origine. L’animation d’ondulation par défaut a lieu en fractions de seconde, mais la longueur de l’animation peut être personnalisée pour une durée plus longue ou plus longue.
+Le contact tactile initial avec le bouton se produit dans la première image sur la gauche, tandis que la séquence restante (de gauche à droite) illustre comment l’effet d’entraînement s’étend sur le bord du bouton. Lorsque l’animation ondulée se termine, la vue revient à son aspect d’origine. L’animation d’ondulation par défaut a lieu en une fraction de seconde, mais la durée de l’animation peut être personnalisée pour des durées plus ou moins longues.
 
-Pour plus d’informations sur les animations de commentaires tactiles dans Android 5,0, consultez [personnaliser les commentaires tactiles](https://developer.android.com/training/material/animations.html#Touch).
+Pour plus d’animations de rétroaction tactiles dans Android 5.0, voir [Customize Touch Feedback](https://developer.android.com/training/material/animations.html#Touch).
 
 ### <a name="activity-transition-animations"></a>Animations de transition d’activité
 
-Les animations de transition d’activité offrent aux utilisateurs un sens de la continuité visuelle lorsqu’une activité passe à une autre. Les applications peuvent spécifier trois types d’animations de transition :
+Les animations de transition d’activité donnent aux utilisateurs un sentiment de continuité visuelle lorsqu’une activité passe à une autre. Les applications peuvent spécifier trois types d’animations de transition :
 
-- **Entrez** une &ndash; de transition lorsqu’une activité entre dans la scène.
+- **Entrez la transition** &ndash; Pour quand une activité entre en scène.
 
-- **Quitter** la &ndash; de transition pour quand une activité quitte la scène.
+- **Transition de sortie** &ndash; Pour quand une activité sort de la scène.
 
-- La **transition d’élément partagé** &ndash; lorsqu’une vue commune à deux activités change au fur et à mesure que la première activité passe à la suivante.
+- &ndash; **Transition d’éléments partagés** Pour quand un point de vue commun à deux activités change au fur et à mesure que la première activité passe à l’autre.
 
-Par exemple, la séquence de captures d’écran suivante illustre une transition d’élément partagé :
+Par exemple, la séquence suivante de captures d’écran illustre une transition d’élément partagé :
 
-[captures d’écran ![frame par frame d’une animation de transition d’élément partagé](lollipop-images/activity-transition-sml.png)](lollipop-images/activity-transition.png#lightbox)
+[![Captures d’écran image par image d’une animation de transition d’élément partagé](lollipop-images/activity-transition-sml.png)](lollipop-images/activity-transition.png#lightbox)
 
-Un élément partagé (une photo d’un Caterpillar) est l’un des nombreux affichages de la première activité ; elle s’agrandit pour devenir la seule vue de la deuxième activité lorsque la première activité passe à la seconde.
+Un élément partagé (une photo d’une chenille) est l’un des nombreux points de vue de la première activité; il s’élargit pour devenir le seul point de vue dans la deuxième activité que la première activité passe à la seconde.
 
-#### <a name="enter-transition-animation-types"></a>Entrer les types d’animation de transition
+#### <a name="enter-transition-animation-types"></a>Entrez les types d’animation de transition
 
-Pour les transitions entre entrées, Android 5,0 fournit trois types d’animation :
+Pour entrer dans les transitions, Android 5.0 propose trois types d’animations :
 
-- **Eclater l’animation** &ndash; agrandit une vue à partir du centre de la scène.
+- **L’animation d’explosion** &ndash; agrandit une vue depuis le centre de la scène.
 
-- L' **animation de diapositives** &ndash; déplace une vue à partir de l’un des bords d’une scène.
+- **L’animation** &ndash; de diapositive déplace une vue à partir de l’un des bords d’une scène.
 
-- L' **animation de fondu** &ndash; atténue une vue dans la scène.
+- **Fade animation** &ndash; Fades une vue dans la scène.
 
 #### <a name="exit-transition-animation-types"></a>Types d’animation de transition de sortie
 
-Pour les transitions de sortie, Android 5,0 fournit trois types d’animation :
+Pour les transitions de sortie, Android 5.0 propose trois types d’animations :
 
-- **Eclater l’animation** &ndash; réduit une vue au centre de la scène.
+- **L’animation d’explosion** &ndash; rétrécit une vue au centre de la scène.
 
-- L' **animation de diapositive** &ndash; déplace une vue vers l’un des bords d’une scène.
+- **L’animation** &ndash; de diapositives déplace une vue sur l’un des bords d’une scène.
 
-- L' **animation de fondu** &ndash; atténue une vue de la scène.
+- **Fade animation** &ndash; Fades une vue hors de la scène.
 
-#### <a name="shared-element-transition-animation-types"></a>Types d’animation de transition d’élément partagé
+#### <a name="shared-element-transition-animation-types"></a>Types d’animation de transition d’éléments partagés
 
-Les transitions d’éléments partagés prennent en charge plusieurs types d’animations, par exemple :
+Les transitions d’éléments partagés prennent en charge plusieurs types d’animations, telles que :
 
-- Modification de la disposition ou des limites d’une vue.
+- Modification de la mise en page ou des limites de clip d’une vue.
 
 - Modification de l’échelle et de la rotation d’une vue.
 
-- Modification de la taille et du type de mise à l’échelle d’une vue.
+- Modification de la taille et du type d’échelle pour une vue.
 
-Pour plus d’informations sur les animations de transition d’activité dans Android 5,0, consultez [personnaliser les transitions d’activité](https://developer.android.com/training/material/animations.html#Transitions).
+Pour en savoir plus sur les animations de transition d’activité dans Android 5.0, voir [Personnaliser les transitions d’activité](https://developer.android.com/training/material/animations.html#Transitions).
 
-### <a name="view-state-transition-animations"></a>Animations de transition d’état d’affichage
+### <a name="view-state-transition-animations"></a>Afficher les animations de transition de l’État
 
-Android 5,0 permet aux animations de s’exécuter lorsque l’état d’une vue change. Vous pouvez animer des transitions d’état d’affichage à l’aide de l’une des techniques suivantes :
+Android 5.0 permet aux animations de s’exécuter lorsque l’état d’une vue change. Vous pouvez animer les transitions d’état en utilisant l’une des techniques suivantes :
 
-- Créer des drawables qui animent les modifications d’état associées à une vue particulière. La nouvelle classe `AnimatedStateListDrawable` vous permet de créer des drawables qui affichent des animations entre les modifications d’état d’affichage.
+- Créez des tirages qui animent les changements d’état associés à une vue particulière. La `AnimatedStateListDrawable` nouvelle classe vous permet de créer des tirages qui affichent des animations entre les changements d’état de vue.
 
-- Définir la fonctionnalité d’animation qui s’exécute lorsque l’état d’une vue change. La nouvelle classe `StateListAnimator` vous permet de définir un animateur qui s’exécute lorsque l’état d’une vue change.
+- Définissez la fonctionnalité d’animation qui s’exécute lorsque l’état d’une vue change. La `StateListAnimator` nouvelle classe vous permet de définir un animateur qui s’exécute lorsque l’état d’une vue change.
 
-Pour plus d’informations sur les animations de transition d’état d’affichage dans Android 5,0, consultez [animer des modifications d’état d’affichage](https://developer.android.com/training/material/animations.html#ViewState).
+Pour en savoir plus sur les animations de transition d’état de vue dans Android 5.0, voir [Animate View State Changes](https://developer.android.com/training/material/animations.html#ViewState).
 
 ### <a name="reveal-effect"></a>Effet de révélation
 
-L' *effet d’affichage* est un cercle de découpage qui modifie RADIUS pour afficher ou masquer une vue. Vous pouvez contrôler cet effet en définissant le rayon initial et le rayon final du cercle de découpage. La séquence de captures d’écran suivante illustre une animation d’effet de révélation à partir du centre de l’écran :
+*L’effet révélateur* est un cercle de coupure qui change de rayon pour révéler ou masquer une vue. Vous pouvez contrôler cet effet en définissant le rayon initial et final du cercle de coupure. La séquence suivante de captures d’écran illustre une animation d’effet révélateur du centre de l’écran :
 
-[captures d’écran ![frame par image de révéler l’animation](lollipop-images/reveal-center-sml.png)](lollipop-images/reveal-center.png#lightbox)
+[![Captures d’écran image par image de l’animation de révélation](lollipop-images/reveal-center-sml.png)](lollipop-images/reveal-center.png#lightbox)
 
-La séquence suivante illustre une animation d’effet d’affichage qui se produit à partir de l’angle inférieur gauche de l’écran :
+La séquence suivante illustre une animation d’effet révélateur qui se déroule à partir du coin inférieur gauche de l’écran :
 
-[captures d’écran ![frame par image de l’animation de découpage](lollipop-images/reveal-left-sml.png)](lollipop-images/reveal-left.png#lightbox)
+[![Captures d’écran cadre par image de l’animation de coupure](lollipop-images/reveal-left-sml.png)](lollipop-images/reveal-left.png#lightbox)
 
-Les animations de révélation peuvent être inversées ; autrement dit, le cercle de découpage peut être réduit pour masquer la vue plutôt que l’agrandir pour la faire apparaître.
+Révéler les animations peuvent être inversées; c’est-à-dire que le cercle de coupure peut rétrécir pour cacher la vue plutôt que d’agrandir pour révéler la vue.
 
-Pour plus d’informations sur l’effet d’affichage Android 5,0 dans, consultez [utiliser l’effet de révélation](https://developer.android.com/training/material/animations.html#Reveal).
+Pour plus d’informations sur l’Effet de révélation Android 5.0, voir [Utilisez l’effet Reveal](https://developer.android.com/training/material/animations.html#Reveal).
 
 ### <a name="curved-motion"></a>Mouvement courbé
 
-Outre ces fonctionnalités d’animation, Android 5,0 fournit également de nouvelles API qui vous permettent de spécifier les courbes de temps et de mouvement des animations. Android 5,0 utilise ces courbes pour interpoler le mouvement temporel et spatial pendant les animations. Trois courbes sont définies dans Android 5,0 :
+En plus de ces fonctionnalités d’animation, Android 5.0 fournit également de nouvelles API qui vous permettent de spécifier les courbes de temps et de mouvement des animations. Android 5.0 utilise ces courbes pour interpoler le mouvement temporel et spatial pendant les animations. Trois courbes sont définies dans Android 5.0:
 
-- La **\_rapide\_\_linéaire dans** &ndash; accélère rapidement et continue d’accélérer jusqu’à la fin de l’animation.
+- **Rapidement\_\_linéaire\_dans** &ndash; Accélérer rapidement et continue à accélérer jusqu’à la fin de l’animation.
 
-- La **\_rapide\_une\_lente dans** &ndash; accélère rapidement et lentement les décélérations vers la fin de l’animation.
+- **Rapide\_\_dans\_** &ndash; Accélère rapidement et lentement décélère vers la fin de l’animation.
 
-- **Linéaire\_out\_une\_lente dans** &ndash; commence par une vélocité de pointe et ralentit lentement jusqu’à la fin de l’animation.
+- **Linéaire\_lentement\_\_dans** &ndash; Begins avec une vitesse maximale et décélère lentement à la fin de l’animation.
 
-Vous pouvez utiliser la nouvelle classe `PathInterpolator` pour spécifier la façon dont l’interpolation de mouvement a lieu. `PathInterpolator` est un interpolateur qui traverse les chemins d’animation en fonction des points de contrôle et des courbes de mouvement spécifiés. Pour plus d’informations sur la spécification des paramètres de mouvement courbé dans Android 5,0, consultez [utiliser un mouvement courbé](https://developer.android.com/training/material/animations.html#CurvedMotion).
+Vous pouvez utiliser `PathInterpolator` la nouvelle classe pour spécifier comment l’interpolation de mouvement a lieu. `PathInterpolator`est un interpolateur qui traverse les chemins d’animation selon les points de contrôle spécifiés et les courbes de mouvement. Pour plus d’informations sur la façon de spécifier les paramètres de mouvement incurvés dans Android 5.0, voir [Use Curved Motion](https://developer.android.com/training/material/animations.html#CurvedMotion).
 
 ## <a name="view-shadows--elevation"></a>Afficher les ombres & l’élévation
 
-Dans Android 5,0, vous pouvez spécifier l' *élévation* d’une vue en définissant une nouvelle propriété de `Z`. Une valeur de `Z` supérieure amène la vue à effectuer un cast d’une ombre plus grande en arrière-plan, ce qui fait apparaître l’affichage en flotter au-dessus de l’arrière-plan. Vous pouvez définir l’élévation initiale d’une vue en configurant son attribut `elevation` dans la disposition.
+Dans Android 5.0, vous pouvez spécifier `Z` *l’élévation* d’une vue en définissant une nouvelle propriété. Une `Z` plus grande valeur provoque la vue de jeter une plus grande ombre sur l’arrière-plan, ce qui rend la vue semblent flotter plus haut au-dessus de l’arrière-plan. Vous pouvez définir l’élévation initiale d’une vue en configurant son `elevation` attribut dans la mise en page.
 
-L’exemple suivant illustre les ombres converties par un contrôle `TextView` vide quand son attribut Elevation a la valeur 2DP, 4DP et 6DP, respectivement :
+L’exemple suivant illustre les ombres `TextView` projetée par un contrôle vide lorsque son attribut d’élévation est réglé à 2dp, 4dp et 6dp, respectivement:
 
-[Captures d’écran ![des ombres de vue plus grandes progessively](lollipop-images/view-shadows-sml.png)](lollipop-images/view-shadows.png#lightbox)
+[![Captures d’écran d’ombres de vue progestativement plus grandes](lollipop-images/view-shadows-sml.png)](lollipop-images/view-shadows.png#lightbox)
 
-Les paramètres d’affichage des ombres peuvent être statiques (comme indiqué ci-dessus). ils peuvent aussi être utilisés dans des animations pour faire apparaître un affichage qui augmente temporairement au-dessus de l’arrière-plan de la vue. Vous pouvez utiliser la classe `ViewPropertyAnimator` pour animer l’élévation d’une vue. L’élévation d’une vue est la somme de sa disposition `elevation` paramètre plus une propriété `translationZ` que vous pouvez définir à l’aide d’un appel de méthode `ViewPropertyAnimator`.
+Afficher les paramètres de l’ombre peut être statique (comme indiqué ci-dessus) ou ils peuvent être utilisés dans les animations pour faire une vue semblent s’élever temporairement au-dessus de l’arrière-plan de la vue. Vous pouvez `ViewPropertyAnimator` utiliser la classe pour animer l’élévation d’une vue. L’élévation d’une vue est `elevation` la `translationZ` somme de son réglage `ViewPropertyAnimator` de mise en page ainsi qu’une propriété que vous pouvez définir à travers un appel de méthode.
 
-Pour plus d’informations sur les ombres de vue dans Android 5,0, consultez [définition d’ombres et de vues de découpage](https://developer.android.com/training/material/shadows-clipping.html).
+Pour en savoir plus sur les ombres vues dans Android 5.0, voir [Defining Shadows et Clipping Views](https://developer.android.com/training/material/shadows-clipping.html).
 
-## <a name="color-features"></a>Fonctionnalités de couleur
+## <a name="color-features"></a>Caractéristiques de couleur
 
-Android 5,0 fournit deux nouvelles fonctionnalités pour la gestion des couleurs dans les applications :
+Android 5.0 fournit deux nouvelles fonctionnalités pour gérer la couleur dans les applications:
 
-- La *coloration dessinable* vous permet de modifier les couleurs des ressources d’image en modifiant un attribut de disposition.
+- *La teinture drawable* vous permet de modifier les couleurs des ressources d’image en modifiant un attribut de mise en page.
 
-- L' *extraction de couleurs visible* vous permet de personnaliser dynamiquement le thème de couleur de votre application pour qu’elle soit coordonnée avec la palette de couleurs d’une image affichée.
+- *L’extraction de couleurs proéminente* vous permet de personnaliser dynamiquement le thème couleur de votre application pour coordonner avec la palette de couleurs d’une image affichée.
 
-### <a name="drawable-tinting"></a>Teinte dessinable
+### <a name="drawable-tinting"></a>Drawable Tinting
 
-Les dispositions Android 5,0 reconnaissent un nouvel attribut de `tint` que vous pouvez utiliser pour définir la couleur de drawables sans avoir à créer plusieurs versions de ces ressources pour afficher des couleurs différentes. Pour utiliser cette fonctionnalité, vous définissez une image bitmap comme masque Alpha et utilisez l’attribut `tint` pour définir la couleur de l’élément multimédia. Cela vous permet de créer des ressources une fois et de les colorer dans votre disposition pour les faire correspondre à votre thème.
+Les mises en page Android 5.0 reconnaissent un nouvel `tint` attribut que vous pouvez utiliser pour définir la couleur des drawables sans avoir à créer plusieurs versions de ces actifs pour afficher différentes couleurs. Pour utiliser cette fonctionnalité, vous définissez un bitmap comme un masque alpha et utilisez l’attribut `tint` pour définir la couleur de l’actif. Cela vous permet de créer des actifs une fois et de les colorer dans votre mise en page pour correspondre à votre thème.
 
-Dans l’exemple suivant, une seule ressource d’image &ndash; un logo blanc avec un &ndash; d’arrière-plan transparent est utilisé pour créer des variations de teinte :
+Dans l’exemple suivant, &ndash; un seul actif d’image d’un logo blanc avec un fond &ndash; transparent est utilisé pour créer des variations de teinte :
 
-![Logo Xamarin blanc avec arrière-plan transparent](lollipop-images/xamarin-logo-white.png)
+![Logo white Xamarin avec fond transparent](lollipop-images/xamarin-logo-white.png)
 
-Ce logo s’affiche au-dessus d’un arrière-plan circulaire bleu, comme indiqué dans les exemples suivants. L’image à gauche correspond à la façon dont le logo apparaît sans paramètre `tint`. Dans l’image centrale, l’attribut `tint` du logo est défini sur un gris foncé. Dans l’image à droite, `tint` est défini sur un gris clair :
+Ce logo est affiché au-dessus d’un fond circulaire bleu comme indiqué dans les exemples suivants. L’image à gauche est la `tint` façon dont le logo apparaît sans réglage. Dans l’image centrale, `tint` l’attribut du logo est réglé sur un gris foncé. Dans l’image de `tint` droite, est réglé à un gris clair:
 
-![Exemples du logo ci-dessus avec des paramètres de teinte différents](lollipop-images/drawable-tinting.png)
+![Exemples du logo ci-dessus avec différents paramètres de teinte](lollipop-images/drawable-tinting.png)
 
-Pour plus d’informations sur les teintes dessinables dans Android 5,0, consultez [teintes dessinables](https://developer.android.com/training/material/drawables.html#DrawableTint).
+Pour en savoir plus sur la teinture drawable dans Android 5.0, voir [Drawable Tinting](https://developer.android.com/training/material/drawables.html#DrawableTint).
 
-### <a name="prominent-color-extraction"></a>Extraction de couleurs visible
+### <a name="prominent-color-extraction"></a>Extraction de couleur proéminente
 
-La nouvelle classe d' `Palette` Android 5,0 vous permet d’extraire des couleurs d’une image afin de les appliquer dynamiquement à une palette de couleurs personnalisée. La classe `Palette` extrait six couleurs d’une image et étiquette ces couleurs en fonction de leurs niveaux relatifs de saturation et de luminosité des couleurs :
+La nouvelle classe Android `Palette` 5.0 vous permet d’extraire des couleurs d’une image afin que vous puissiez dynamiquement les appliquer à une palette de couleurs personnalisée. La `Palette` classe extrait six couleurs d’une image et étiquette ces couleurs en fonction de leurs niveaux relatifs de saturation des couleurs et de luminosité:
 
-- Superbe
+- Dynamique
 
-- Vif foncé
+- Vibrant foncé
 
-- Lumière éclatante
+- Lumière vibrante
 
-- Activé
+- Coupé
 
-- Noir muet
+- Sombre sourd
 
-- Clair muet
+- Lumière tamisée
 
-Par exemple, dans les captures d’écran suivantes, une application d’affichage de photos extrait les couleurs visibles de l’image à l’écran et utilise ces couleurs pour adapter le modèle de couleurs de l’application en fonction de l’image :
+Par exemple, dans les captures d’écran suivantes, une application de visualisation de photos extrait les couleurs proéminentes de l’image sur l’écran et utilise ces couleurs pour adapter le schéma de couleur de l’application pour correspondre à l’image:
 
-[![des captures d’écran des extractions de couleurs de thème vertes, roses et bleues](lollipop-images/prominent-color-extraction-sml.png)](lollipop-images/prominent-color-extraction.png#lightbox)
+[![Captures d’écran des extractions de couleur de thème vert, rose et bleu](lollipop-images/prominent-color-extraction-sml.png)](lollipop-images/prominent-color-extraction.png#lightbox)
 
-Dans les captures d’écran ci-dessus, la barre d’action est définie sur la couleur « vif Light » extraite et l’arrière-plan est défini sur la couleur « vif Dark » extraite. Dans chaque exemple ci-dessus, une ligne de petits carrés de couleur est incluse pour illustrer les couleurs de la palette qui ont été extraites de l’image.
+Dans les captures d’écran ci-dessus, la barre d’action est réglée à la couleur extraite "lumière vibrante" et l’arrière-plan est réglé sur la couleur extraite "vibrante foncée". Dans chaque exemple ci-dessus, une rangée de petits carrés de couleur est inclus pour illustrer les couleurs de palette qui ont été extraites de l’image.
 
-Pour plus d’informations sur l’extraction de couleurs dans Android 5,0, consultez [extraction des couleurs visibles d’une image](https://developer.android.com/training/material/drawables.html#ColorExtract).
+Pour en savoir plus sur l’extraction de couleur dans Android 5.0, voir [Extraire les couleurs proéminentes d’une image](https://developer.android.com/training/material/drawables.html#ColorExtract).
 
-## <a name="new-ui-widgets"></a>Nouveaux widgets d’interface utilisateur
+## <a name="new-ui-widgets"></a>Nouveaux Widgets de l’assurance-chômage
 
-Android 5,0 introduit deux nouveaux widgets d’interface utilisateur :
+Android 5.0 présente deux nouveaux widgets de l’interface utilisateur:
 
-- `RecyclerView` &ndash; un groupe d’affichage qui affiche une liste d’éléments déroulants.
+- `RecyclerView`&ndash; Un groupe de vue qui affiche une liste d’éléments défilementables.
 
-- `CardView` &ndash; une disposition de base avec des angles arrondis.
+- `CardView`&ndash; Une disposition de base avec des coins arrondis.
 
-Les deux widgets incluent une prise en charge intégrée des fonctionnalités de thème matériel ; par exemple, `RecyclerView` utilise des animations pour ajouter et supprimer des vues, et `CardView` utilise afficher les ombres pour que chaque carte apparaisse flotter au-dessus de l’arrière-plan. Des exemples de ces nouveaux widgets sont présentés dans les captures d’écran suivantes :
+Les deux widgets comprennent un support de soutien pour les caractéristiques du thème matériel; par exemple, `RecyclerView` utilise des animations pour `CardView` ajouter et supprimer les vues, et utilise des ombres de vue pour faire chaque carte semble flotter au-dessus de l’arrière-plan. Des exemples de ces nouveaux widgets sont affichés dans les captures d’écran suivantes :
 
-[![captures d’écran des applications générées avec RecyclerView](lollipop-images/recyclerview-cardview-sml.png)](lollipop-images/recyclerview-cardview.png#lightbox)
+[![Captures d’écran d’applications construites avec RecyclerView](lollipop-images/recyclerview-cardview-sml.png)](lollipop-images/recyclerview-cardview.png#lightbox)
 
-La capture d’écran de gauche est un exemple de `RecyclerView` tel qu’il est utilisé dans une application de messagerie, et la capture d’écran sur la droite est un exemple de `CardView` utilisé dans une application de réservation de voyage.
+La capture d’écran sur `RecyclerView` la gauche est un exemple de comme utilisé `CardView` dans une application de messagerie, et la capture d’écran sur la droite est un exemple de comme utilisé dans une application de réservation de voyage.
 
 ### <a name="recyclerview"></a>RecyclerView
 
-`RecyclerView` est semblable à `ListView,`, mais il est mieux adapté aux grands ensembles d’affichages ou de listes contenant des éléments qui changent de manière dynamique. Comme `ListView,` vous spécifiez un adaptateur pour accéder au jeu de données sous-jacent. Toutefois, contrairement à `ListView,` vous utilisez un *Gestionnaire de disposition* pour positionner des éléments dans `RecyclerView`. Le gestionnaire de disposition prend également en charge le recyclage de vue ; Il gère la réutilisation des vues d’éléments qui ne sont plus visibles pour l’utilisateur.
+`RecyclerView`est similaire `ListView,` à, mais il est mieux adapté pour de grands ensembles de vues ou de listes avec des éléments qui changent dynamiquement. Comme `ListView,` si vous spécifiez un adaptateur pour accéder à l’ensemble de données sous-jacent. Cependant, `ListView,` contrairement à vous utilisez un `RecyclerView`gestionnaire de mise en *page* pour positionner les éléments à l’intérieur . Le gestionnaire de la mise en page s’occupe également du recyclage de la vue; il gère la réutilisation des vues d’objets qui ne sont plus visibles par l’utilisateur.
 
-Lorsque vous utilisez un widget `RecyclerView`, vous devez spécifier un `LayoutManager` et un adaptateur. Comme illustré dans cette figure, `LayoutManager` est l’intermédiaire entre l’adaptateur et le `RecyclerView`:
+Lorsque vous `RecyclerView` utilisez un widget, `LayoutManager` vous devez spécifier un adaptateur et un adaptateur. Comme le montre `LayoutManager` ce chiffre, est l’intermédiaire entre l’adaptateur et le `RecyclerView`:
 
-![Diagramme de RecyclerView avec prise en charge de LayoutManager, d’adaptateur et de jeu de données](lollipop-images/recyclerview-diagram.png)
+![Diagramme de RecyclerView avec layoutManager, Adaptateur et Dataset](lollipop-images/recyclerview-diagram.png)
 
-Les captures d’écran suivantes illustrent une `RecyclerView` qui contient 100 éléments (chaque élément se compose d’une `ImageView` et d’un `TextView`) :
+Les captures d’écran suivantes illustrent un `RecyclerView` qui contient `ImageView` 100 éléments (chaque élément se compose d’un et d’un `TextView`):
 
-[![captures d’écran d’une application RecyclerView faisant défiler les images](lollipop-images/recyclerview-scroll-sml.png)](lollipop-images/recyclerview-scroll.png#lightbox)
+[![Captures d’écran d’une application RecyclerView défilant à travers les images](lollipop-images/recyclerview-scroll-sml.png)](lollipop-images/recyclerview-scroll.png#lightbox)
 
-`RecyclerView` gère ce jeu de données volumineux avec facilité &ndash; le défilement du début de la liste jusqu’à la fin de la liste dans cet exemple d’application ne prend que quelques secondes. `RecyclerView` prend également en charge les animations. en fait, les animations permettant d’ajouter et de supprimer des éléments sont activées par défaut. Lorsqu’un élément est ajouté à un `RecyclerView`, il apparaît en fondu comme indiqué dans cette séquence de captures d’écran :
+`RecyclerView`gère cet ensemble de &ndash; données volumineuses avec facilité défilement du début de la liste à la fin de la liste dans cette application d’échantillon ne prend que quelques secondes. `RecyclerView`prend également en charge les animations; en fait, les animations pour l’ajout et la suppression d’éléments sont activées par défaut. Quand un élément est `RecyclerView`ajouté à un , il s’estompe comme indiqué dans cette séquence de captures d’écran:
 
-[capture d’écran ![image par image d’un élément photo en fondu](lollipop-images/recyclerview-animation-sml.png)](lollipop-images/recyclerview-animation.png#lightbox)
+[![Capture d’écran image par image d’un élément photo s’estompe](lollipop-images/recyclerview-animation-sml.png)](lollipop-images/recyclerview-animation.png#lightbox)
 
-Pour plus d' `RecyclerView`, consultez [RecyclerView](~/android/user-interface/layouts/recycler-view/index.md).
+Pour en `RecyclerView`savoir plus sur , voir [RecyclerView](~/android/user-interface/layouts/recycler-view/index.md).
 
 ### <a name="cardview"></a>CardView
 
-`CardView` est une vue simple qui simule une carte flottante avec des angles arrondis. Étant donné que `CardView` a des ombres de vue intégrées, il offre un moyen simple d’ajouter une profondeur visuelle à votre application. Les captures d’écran suivantes montrent trois exemples orientés texte de `CardView`:
+`CardView`est une vue simple qui simule une carte flottante avec des coins arrondis. Parce `CardView` que les ombres de vue intégrées, il vous permet d’ajouter facilement de la profondeur visuelle à votre application. Les captures d’écran suivantes `CardView`montrent trois exemples textuels de :
 
-[![des exemples de captures d’écran d’applications utilisant RecyclerView avec des éléments basés sur CardView](lollipop-images/recyclerview-cardview-sml.png)](lollipop-images/recyclerview-cardview.png#lightbox)
+[![Exemple de captures d’écran d’applications utilisant RecyclerView avec des éléments basés sur CardView](lollipop-images/recyclerview-cardview-sml.png)](lollipop-images/recyclerview-cardview.png#lightbox)
 
-Chacune des cartes de l’exemple ci-dessus contient une `TextView`; la couleur d’arrière-plan est définie via l’attribut `cardBackgroundColor`.
+Chacune des cartes dans l’exemple ci-dessus contient un `TextView`; la couleur de fond `cardBackgroundColor` est définie via l’attribut.
 
-Pour plus d' `CardView`, consultez [CardView](~/android/user-interface/controls/card-view.md).
+Pour en `CardView`savoir plus sur , voir [CardView](~/android/user-interface/controls/card-view.md).
 
 ## <a name="enhanced-notifications"></a>Notifications améliorées
 
-Le système de notification d’Android 5,0 a été considérablement mis à jour avec un nouveau format visuel et de nouvelles fonctionnalités. Les notifications ont une nouvelle apparence dans Android 5,0. Par exemple, les notifications dans Android 5,0 utilisent désormais du texte foncé sur un arrière-plan clair :
+Le système de notification dans Android 5.0 a été considérablement mis à jour avec un nouveau format visuel et de nouvelles fonctionnalités. Notifications ont un nouveau look dans Android 5.0. Par exemple, les notifications dans Android 5.0 utilisent maintenant du texte sombre sur un fond lumineux :
 
-![Exemple de notification Android 5,0 non développée](lollipop-images/expanded-notification-contracted.png)
+![Exemple d’une notification Android 5.0 non élargie](lollipop-images/expanded-notification-contracted.png)
 
-Quand une grande icône s’affiche dans une notification (comme indiqué dans l’exemple ci-dessus), Android 5,0 présente la petite icône sous la forme d’un badge sur la grande icône.
+Lorsqu’une grande icône est affichée dans une notification (comme indiqué dans l’exemple ci-dessus), Android 5.0 présente la petite icône comme un badge sur la grande icône.
 
-Dans Android 5,0, les notifications peuvent également apparaître sur le l’écran d’appareil.
-Par exemple, voici un exemple de capture d’écran d’un l’écran avec une seule notification :
+Dans Android 5.0, les notifications peuvent également apparaître sur l’écran de verrouillage de l’appareil.
+Par exemple, voici un exemple de capture d’écran d’un écran de verrouillage avec une seule notification :
 
-[Capture d’écran ![de la notification apparaissant sur l’écran de verrouillage](lollipop-images/lockscreen-notification-sml.png)](lollipop-images/lockscreen-notification.png#lightbox)
+[![Capture d’écran de la notification apparaissant sur l’écran de verrouillage](lollipop-images/lockscreen-notification-sml.png)](lollipop-images/lockscreen-notification.png#lightbox)
 
-Les utilisateurs peuvent double-cliquer sur une notification sur le l’écran pour déverrouiller l’appareil et accéder à l’application à l’origine de cette notification, ou faire glisser pour fermer la notification. Les notifications ont un nouveau paramètre de *visibilité* qui détermine la quantité de contenu pouvant être affichée sur le l’écran. Les utilisateurs peuvent choisir d’autoriser ou non le contenu sensible à être affiché dans les notifications l’écran.
+Les utilisateurs peuvent appuyer sur une notification sur l’écran de verrouillage pour déverrouiller l’appareil et sauter vers l’application à l’origine de cette notification, ou glisser pour rejeter la notification. Les notifications ont un nouveau *paramètre* de visibilité qui détermine la quantité de contenu qui peut être affichée sur l’écran de verrouillage. Les utilisateurs peuvent choisir d’autoriser ou non l’affiche de contenu sensible dans les notifications d’écran de verrouillage.
 
-Android 5,0 introduit un nouveau format de présentation de notification de haute priorité appelé *TETE-up*. Les notifications de niveau supérieur s’affichent en haut de l’écran pendant quelques secondes, puis revenez à la nuance de notification en haut de l’écran. Les notifications par tête permettent à l’interface utilisateur du système de placer des informations importantes devant l’utilisateur sans interrompre l’activité en cours.
-L’exemple suivant illustre une simple notification d’en-tête qui s’affiche au-dessus d’une application :
+Android 5.0 introduit un nouveau format de présentation de notification haute priorité appelé *Heads-up*. Les notifications tête haute glissent vers le bas du haut de l’écran pendant quelques secondes, puis reculent vers l’ombre de notification en haut de l’écran. Les notifications de tête-à-tête permettent à l’interface utilisateur du système de mettre des informations importantes devant l’utilisateur sans perturber l’activité en cours d’exécution.
+L’exemple suivant illustre une simple notification Heads-up qui s’affiche au-dessus d’une application :
 
-[![exemple de notification de tête](lollipop-images/heads-up-notification-sml.png)](lollipop-images/heads-up-notification.png#lightbox)
+[![Exemple d’une notification heads-up](lollipop-images/heads-up-notification-sml.png)](lollipop-images/heads-up-notification.png#lightbox)
 
-Les notifications par tête sont généralement utilisées pour les événements suivants :
+Les notifications de tête-à-tête sont généralement utilisées pour les événements suivants :
 
-- Nouveau message suivant
+- Un nouveau prochain message
 
 - Un appel téléphonique entrant
 
-- Indication de batterie faible
+- Faible indication de batterie
 
 - Une alarme
 
-Android 5,0 affiche une notification au format en tête uniquement lorsqu’il a un paramètre de priorité élevée ou maximale.
+Android 5.0 affiche une notification dans le format Heads-up seulement quand il a un réglage prioritaire élevé ou max.
 
-Dans Android 5,0, vous pouvez fournir des métadonnées de notification pour aider Android à trier et à afficher des notifications plus intelligemment. Android 5,0 organise les notifications en fonction de la priorité, de la visibilité et de la catégorie.
-Les catégories de notification sont utilisées pour filtrer les notifications qui peuvent être présentées lorsque l’appareil est en mode *ne pas déranger* .
+Dans Android 5.0, vous pouvez fournir des métadonnées de notification pour aider Android à trier et afficher les notifications plus intelligemment. Android 5.0 organise les notifications en fonction de la priorité, de la visibilité et de la catégorie.
+Les catégories de notification sont utilisées pour filtrer les notifications qui peuvent être présentées lorsque l’appareil est en mode *Ne pas déranger.*
 
-Pour plus d’informations sur la création et le lancement de notifications avec les dernières fonctionnalités Android 5,0, consultez [notifications locales](~/android/app-fundamentals/notifications/local-notifications.md).
+Pour obtenir des informations détaillées sur la création et le lancement de notifications avec les dernières fonctionnalités Android 5.0, voir [Notifications locales](~/android/app-fundamentals/notifications/local-notifications.md).
 
 ## <a name="new-apis"></a>Nouvelles API
 
-Outre les nouvelles fonctionnalités de présentation décrites ci-dessus, Android 5,0 ajoute de nouvelles API qui étendent les fonctionnalités des fonctionnalités de connectivité, de stockage et sans fil existantes. En outre, Android 5,0 comprend de nouvelles API qui prennent en charge une nouvelle fonctionnalité de planificateur de travaux.
+En plus des nouvelles fonctionnalités de look-and-feel décrites ci-dessus, Android 5.0 ajoute de nouvelles API qui étendent les capacités des fonctionnalités multimédia, de stockage et de connectivité sans fil existantes. En outre, Android 5.0 comprend de nouvelles API qui fournissent un soutien pour une nouvelle fonction de planificateur d’emploi.
 
-### <a name="camera"></a>Appareil photo
+### <a name="camera"></a>Caméra
 
-Android 5,0 fournit plusieurs nouvelles API pour les capacités améliorées de l’appareil photo. Le nouvel espace de noms `Android.Hardware.Camera2` comprend des fonctionnalités permettant d’accéder à des appareils photo individuels connectés à un appareil Android. En outre, `Android.Hardware.Camera2` modélise chaque appareil photo comme un pipeline : il accepte une demande de capture, capture l’image, puis génère le résultat. Cette approche permet aux applications d’effectuer la file d’attente de plusieurs demandes de capture sur un appareil photo.
+Android 5.0 fournit plusieurs nouvelles API pour des capacités améliorées d’appareil photo. Le `Android.Hardware.Camera2` nouvel espace de nom comprend des fonctionnalités pour accéder à des appareils photo individuels connectés à un appareil Android. En `Android.Hardware.Camera2` outre, les modèles de chaque appareil photo comme un pipeline: il accepte une demande de capture, capture l’image, puis les sorties du résultat. Cette approche permet aux applications de faire la queue de plusieurs demandes de capture vers un appareil photo.
 
-Les API suivantes rendent ces nouvelles fonctionnalités possibles :
+Les API suivantes rendent ces nouvelles fonctionnalités possibles :
 
-- `CameraManager.GetCameraIdList` &ndash; vous aide à accéder par programme à des appareils photo, vous utilisez `CameraManager.OpenCamera` pour vous connecter à un appareil photo spécifique.
+- `CameraManager.GetCameraIdList`&ndash; Vous aide à accéder de manière programmatique aux appareils photo; que `CameraManager.OpenCamera` vous utilisez pour vous connecter à un appareil photo spécifique.
 
-- `CameraCaptureSession` &ndash; capture ou diffuse des images à partir de l’appareil photo. Vous implémentez une interface `CameraCaptureSession.CaptureListener` pour gérer de nouveaux événements de capture d’image.
+- `CameraCaptureSession`&ndash; Capture ou diffuse des images à partir de l’appareil photo. Vous implémentez une `CameraCaptureSession.CaptureListener` interface pour gérer les nouveaux événements de capture d’images.
 
-- `CaptureRequest` &ndash; définit des paramètres de capture.
+- `CaptureRequest`&ndash; Définit les paramètres de capture.
 
-- `CaptureResult` &ndash; fournit les résultats d’une opération de capture d’image.
+- `CaptureResult`&ndash; Fournit les résultats d’une opération de capture d’image.
 
-Pour plus d’informations sur les nouvelles API d’appareil photo dans Android 5,0, consultez [média](https://developer.android.com/about/versions/android-5.0.html#Media).
+Pour en savoir plus sur les nouvelles API appareil photo dans Android 5.0, voir [Médias](https://developer.android.com/about/versions/android-5.0.html#Media).
 
 ### <a name="audio-playback"></a>Lecture audio
 
-Android 5,0 met à jour la classe `AudioTrack` pour une meilleure lecture audio :
+Android 5.0 `AudioTrack` met à jour la classe pour une meilleure lecture audio:
 
-- `ENCODING_PCM_FLOAT` &ndash; configure `AudioTrack` pour accepter les données audio au format à virgule flottante pour une meilleure plage dynamique, une plus grande marge et une meilleure qualité (grâce à une précision accrue). En outre, le format à virgule flottante permet d’éviter le découpage audio.
+- `ENCODING_PCM_FLOAT`&ndash; Configure `AudioTrack` pour accepter les données audio en format de point flottant pour une meilleure plage dynamique, une plus grande marge de manœuvre et une meilleure qualité (grâce à une précision accrue). En outre, le format de point flottant aide à éviter la coupure audio.
 
-- `ByteBuffer` &ndash; vous pouvez désormais fournir des données audio à `AudioTrack` en tant que tableau d’octets.
+- `ByteBuffer`&ndash; Vous pouvez maintenant fournir `AudioTrack` des données audio en tant que tableau d’or.
 
-- `WRITE_NON_BLOCKING` &ndash; cette option simplifie la mise en mémoire tampon et le multithreading pour certaines applications.
+- `WRITE_NON_BLOCKING`&ndash; Cette option simplifie la mise en mémoire tampon et la multilecture pour certaines applications.
 
-Pour plus d’informations sur les améliorations apportées à `AudioTrack` dans Android 5,0, consultez [média](https://developer.android.com/about/versions/android-5.0.html#Media).
+Pour en `AudioTrack` savoir plus sur les améliorations dans Android 5.0, voir [Médias](https://developer.android.com/about/versions/android-5.0.html#Media).
 
-### <a name="media-playback-control"></a>Contrôle de lecture de média
+### <a name="media-playback-control"></a>Contrôle de lecture des médias
 
-Android 5,0 introduit la nouvelle classe `Android.Media.MediaController`, qui remplace `RemoteControlClient`. `Android.Media.MediaController` fournit des API de contrôle de transport simplifiées et offre un contrôle de lecture thread-safe en dehors du contexte de l’interface utilisateur. Les nouvelles API suivantes gèrent le contrôle de transport :
+Android 5.0 introduit `Android.Media.MediaController` la nouvelle classe, qui remplace `RemoteControlClient`. `Android.Media.MediaController`fournit des API simplifiées de contrôle des transports et offre un contrôle sans fil de la lecture en dehors du contexte de l’interface utilisateur. Les nouvelles API suivantes gèrent le contrôle des transports :
 
-- `Android.Media.Session.MediaSession` &ndash; une session de contrôle multimédia qui gère plusieurs contrôleurs. Vous appelez `MediaSession.GetSessionToken` pour demander un jeton que votre application utilise pour interagir avec la session.
+- `Android.Media.Session.MediaSession`&ndash; Une séance de contrôle des médias qui gère plusieurs contrôleurs. Vous `MediaSession.GetSessionToken` appelez pour demander un jeton que votre application utilise pour interagir avec la session.
 
-- `MediaController.TransportControls` &ndash; gère les commandes de transport telles que **Play**, **Stop**et **Skip**.
+- `MediaController.TransportControls`&ndash; Gère les commandes de transport telles que **Play**, **Stop**, et **Skip**.
 
-En outre, vous pouvez utiliser la nouvelle classe `Android.App.Notification.MediaStyle` pour associer une session multimédia à du contenu de notification riche (par exemple, l’extraction et l’indication d’une pochette d’album).
+En outre, vous `Android.App.Notification.MediaStyle` pouvez utiliser la nouvelle classe pour associer une session multimédia avec du contenu de notification riche (comme l’extraction et la diffusion de l’art album).
 
-Pour plus d’informations sur les nouvelles fonctionnalités de contrôle de lecture de média dans Android 5,0, consultez [média](https://developer.android.com/about/versions/android-5.0.html#Media).
+Pour en savoir plus sur les fonctionnalités de contrôle de lecture des nouveaux médias dans Android 5.0, voir [Media](https://developer.android.com/about/versions/android-5.0.html#Media).
 
 ### <a name="storage"></a>Stockage
 
-Android 5,0 met à jour l’infrastructure d’accès au stockage pour faciliter l’utilisation des répertoires et des documents par les applications :
+Android 5.0 met à jour le cadre d’accès au stockage pour faciliter le fonctionnement des applications avec les répertoires et les documents :
 
-- Pour sélectionner une sous-arborescence de répertoires, vous pouvez générer et envoyer un objectif de `Android.Intent.Action.OPEN_DOCUMENT_TREE`. Cette intention amène le système à afficher toutes les instances de fournisseur qui prennent en charge la sélection de sous-arborescences ; l’utilisateur parcourt et sélectionne ensuite un répertoire.
+- Pour sélectionner un sous-arbre d’annuaire, `Android.Intent.Action.OPEN_DOCUMENT_TREE` vous pouvez construire et envoyer une intention. Cette intention amène le système à afficher tous les instances du fournisseur qui prennent en charge la sélection de sous-arbres; l’utilisateur navigue ensuite et sélectionne un répertoire.
 
-- Pour créer et gérer de nouveaux documents ou répertoires n’importe où sous une sous-arborescence, utilisez les nouvelles méthodes `CreateDocument`, `RenameDocument`et `DeleteDocument` de `DocumentsContract`.
+- Pour créer et gérer de nouveaux documents ou répertoires `CreateDocument`n’importe où sous un sous-arbre, vous utilisez le nouveau , `RenameDocument`, et `DeleteDocument` les méthodes de `DocumentsContract`.
 
-- Pour récupérer les chemins d’accès aux répertoires multimédias sur tous les périphériques de stockage partagés, vous devez appeler la nouvelle méthode `Android.Content.Context.GetExternalMediaDirs`.
+- Pour obtenir des chemins vers les annuaires de `Android.Content.Context.GetExternalMediaDirs` médias sur tous les périphériques de stockage partagés, vous appelez la nouvelle méthode.
 
-Pour plus d’informations sur les nouvelles API de stockage dans Android 5,0, consultez [stockage](https://developer.android.com/preview/api-overview.html#Storage).
+Pour en savoir plus sur les nouvelles API de stockage dans Android 5.0, voir [Stockage](https://developer.android.com/preview/api-overview.html#Storage).
 
 ### <a name="wireless--connectivity"></a>Connectivité & sans fil
 
-Android 5,0 ajoute les améliorations d’API suivantes pour la connectivité et les réseaux sans fil :
+Android 5.0 ajoute les améliorations suivantes de l’API pour le sans fil et la connectivité :
 
-- Nouvelles API à *plusieurs réseaux* qui permettent aux applications de rechercher et de sélectionner des réseaux avec des fonctionnalités spécifiques avant d’établir une connexion.
+- De nouvelles API *multi-réseaux* qui permettent aux applications de trouver et de sélectionner des réseaux dotés de capacités spécifiques avant de faire une connexion.
 
-- Fonctionnalité de diffusion Bluetooth qui permet à un appareil Android 5,0 d’agir en tant que périphérique Bluetooth à faible consommation d’énergie.
+- Fonctionnalité de diffusion Bluetooth qui permet à un appareil Android 5.0 d’agir comme un périphérique Bluetooth à faible énergie.
 
-- Améliorations NFC qui facilitent l’utilisation de la fonctionnalité de communication en champ proche pour le partage de données avec d’autres appareils.
+- Améliorations NFC qui facilitent l’utilisation de fonctionnalités de communication en champ proche pour le partage de données avec d’autres appareils.
 
-Pour plus d’informations sur les nouvelles API sans fil et de connectivité dans Android 5,0, consultez [Wireless and Connectivity](https://developer.android.com/preview/api-overview.html#Wireless).
+Pour en savoir plus sur les nouvelles API sans fil et de connectivité dans Android 5.0, voir [Wireless and Connectivity](https://developer.android.com/preview/api-overview.html#Wireless).
 
 ### <a name="job-scheduling"></a>Planification des travaux
 
-Android 5,0 introduit une nouvelle API `JobScheduler` qui peut aider les utilisateurs à réduire la charge de la batterie en planifiant l’exécution de certaines tâches uniquement lorsque l’appareil est branché et en cours de chargement. Cette fonctionnalité du planificateur de tâches peut également être utilisée pour planifier l’exécution d’une tâche lorsque les conditions sont plus adaptées à cette tâche, par exemple le téléchargement d’un fichier volumineux lorsque l’appareil est connecté via un réseau Wi-Fi au lieu d’un réseau limité.
+Android 5.0 introduit `JobScheduler` une nouvelle API qui peut aider les utilisateurs à minimiser la vidange de la batterie en planant certaines tâches pour fonctionner uniquement lorsque l’appareil est branché et chargé. Cette fonction de planificateur d’emploi peut également être utilisée pour la planification d’une tâche à exécuter lorsque les conditions sont plus adaptées à cette tâche, comme le téléchargement d’un grand fichier lorsque l’appareil est connecté sur un réseau Wi-Fi au lieu d’un réseau mesuré.
 
-Pour plus d’informations sur les nouvelles API de planification des travaux dans Android 5,0, consultez [planification des travaux](https://developer.android.com/preview/api-overview.html#JobScheduler).
+Pour en savoir plus sur les nouvelles API de planification d’emploi dans Android 5.0, voir [Scheduling Jobs](https://developer.android.com/preview/api-overview.html#JobScheduler).
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
-Cet article a fourni une vue d’ensemble des nouvelles fonctionnalités importantes dans Android 5,0 pour les développeurs d’applications Xamarin. Android :
+Cet article a fourni un aperçu des nouvelles fonctionnalités importantes dans Android 5.0 pour les développeurs d’applications Xamarin.Android:
 
 - Thème matériau
 
@@ -458,19 +458,19 @@ Cet article a fourni une vue d’ensemble des nouvelles fonctionnalités importa
 
 - Afficher les ombres et l’élévation
 
-- Caractéristiques de couleur, telles que la coloration de dessinable et l’extraction de couleurs visible
+- Caractéristiques de couleur, telles que teinture dessinable et extraction de couleur proéminente
 
-- Les nouveaux widgets `RecyclerView` et `CardView`
+- Le `RecyclerView` nouveau `CardView` et les widgets
 
-- Améliorations des notifications
+- Améliorations de notification
 
-- Nouvelles API pour l’appareil photo, la lecture audio, le contrôle multimédia, le stockage, la connectivité sans fil et la planification des travaux
+- Nouvelles API pour appareil photo, lecture audio, contrôle des médias, stockage, sans fil/connectivité et planification de l’emploi
 
-Si vous débutez avec le développement Xamarin Android, lisez [configuration et installation](~/android/get-started/installation/index.md) pour vous aider à prendre en main Xamarin. Android.
-[Hello, Android](~/android/get-started/hello-android/index.md) est une excellente introduction pour apprendre à créer des projets Android.
+Si vous êtes nouveau au développement Android Xamarin, lisez [Configuration et installation](~/android/get-started/installation/index.md) pour vous aider à démarrer avec Xamarin.Android.
+[Bonjour, Android](~/android/get-started/hello-android/index.md) est une excellente introduction pour apprendre à créer des projets Android.
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Aperçu des développeurs Android L](https://developer.android.com/preview/index.html)
-- [Obtient le Android SDK](https://developer.android.com/sdk/index.html#Other)
-- [Conception de matériau](https://developer.android.com/preview/material/index.html)
+- [Aperçu du développeur Android L](https://developer.android.com/preview/index.html)
+- [Obtenez l’Android SDK](https://developer.android.com/sdk/index.html#Other)
+- [Conception de matériaux](https://developer.android.com/preview/material/index.html)

@@ -7,10 +7,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 08/28/2018
 ms.openlocfilehash: 970985e419c5710699b6bdda49da8b59ef3c6cb6
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "71119257"
 ---
 # <a name="installing-xamarin-in-visual-studio-2019"></a>Installation de Xamarin dans Visual Studio 2019
@@ -53,5 +53,5 @@ Pour plus d’informations, consultez le guide [Installation de Xamarin.Android 
 
 1. [Configuration de Xamarin.Android](~/android/get-started/installation/windows.md#configuration)
 2. [Utilisation de Xamarin Android SDK Manager](~/android/get-started/installation/android-sdk.md?ide=vs)
-3. [Émulateur SDK Android](~/android/get-started/installation/android-emulator/index.md)
-4. [Configuration de l’appareil pour le développement](~/android/get-started/installation/set-up-device-for-development.md)
+3. [Émulateur du kit Android SDK](~/android/get-started/installation/android-emulator/index.md)
+4. [Mettre en place un dispositif de développement](~/android/get-started/installation/set-up-device-for-development.md)

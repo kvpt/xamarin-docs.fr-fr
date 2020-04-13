@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
 ms.openlocfilehash: 712322435614966348fc5c10cabf724870c307e4
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73021295"
 ---
 # <a name="apk-expansion-files"></a>Fichiers d’extension d’APK
@@ -26,8 +26,8 @@ Sur la plupart des appareils, quand une application est installée, les fichiers
 
 Les fichiers d’extension sont traités comme des fichiers *obb (opaque binary blobs)* et leur taille est limitée à 2 Go. Android n’effectue aucun traitement particulier sur ces fichiers après leur téléchargement&ndash; Ils peuvent utiliser tout format approprié pour l’application. Sur le plan conceptuel, l’approche recommandée en matière de fichiers d’extension est la suivante :
 
-- **Extension principale** &ndash; ce fichier est le fichier d’extension principal pour les ressources et les composants qui dépassent la limite de taille de l’APK. Le fichier d’extension principal doit contenir les principaux composants dont une application a besoin et doit rarement être mis à jour.
-- **Extension corrective** &ndash; ce fichier est conçu pour les petites mises à jour du fichier d’extension principal. Ce fichier peut être mis à jour. L’application est responsable d’effectuer les correctifs ou mises à jour nécessaires à partir de ce fichier.
+- **Extension principale **  &ndash; ce fichier est le fichier d’extension principal pour les ressources et les composants qui dépassent la limite de taille de l’APK. Le fichier d’extension principal doit contenir les principaux composants dont une application a besoin et doit rarement être mis à jour.
+- **Extension corrective **  &ndash; ce fichier est conçu pour les petites mises à jour du fichier d’extension principal. Ce fichier peut être mis à jour. L’application est responsable d’effectuer les correctifs ou mises à jour nécessaires à partir de ce fichier.
 
 Les fichiers d’extension doivent être chargés en même temps que l’APK.
 Google Play n’autorise pas le chargement d’un fichier d’extension sur un APK existant ou pour des APK existants à mettre à jour. Si un fichier d’extension doit être mis à jour, un nouvel APK doit être chargé avec le `versionCode` mis à jour.
@@ -57,9 +57,9 @@ Lorsque les fichiers d’extension sont téléchargés, Google Play utilise le s
 
 Les trois composants de ce schéma sont :
 
-- `main` ou `patch` &ndash; spécifie s’il s’agit du fichier d’extension principale ou corrective. Il ne peut y en avoir qu’un seul de chaque.
-- `<expansion-version>` &ndash; entier qui correspond au `versionCode` de l’APK avec lequel le fichier a été associé en premier lieu.
-- `<package-name>` &ndash; il s’agit du nom de paquet Java de l’application.
+- `main`ou `patch` &ndash; Cela spécifie si c’est le fichier principal ou d’extension de patch. Il ne peut y en avoir qu’un seul de chaque.
+- `<expansion-version>`&ndash; Il s’agit d’un `versionCode` integer qui correspond à l’APK que le fichier a été associé pour la première fois.
+- `<package-name>`&ndash; Il s’agit du nom de paquet Java de l’application.
 
 Par exemple, si la version de l’APK est 21 et le nom du paquet est `mono.samples.helloworld`, le fichier d’extension principale est nommé **main.21.mono.samples.helloworld**.
 
@@ -67,13 +67,13 @@ Par exemple, si la version de l’APK est 21 et le nom du paquet est `mono.samp
 
 Lorsqu’une application est installée à partir de Google Play, les fichiers d’extension doivent être téléchargés et enregistrés avec l’APK. Dans certains cas, cela ne se produit pas ou les fichiers d’extension sont supprimés. Pour gérer cette situation, une application doit vérifier si les fichiers d’extension existent, puis les télécharger, si nécessaire. L’organigramme suivant présente le workflow recommandé de ce processus :
 
-[![Organigramme d’extension d’APK](apk-expansion-files-images/apkexpansion.png)](apk-expansion-files-images/apkexpansion.png#lightbox)
+[![Flowchart d’expansion APK](apk-expansion-files-images/apkexpansion.png)](apk-expansion-files-images/apkexpansion.png#lightbox)
 
 Lorsqu’une application démarre, elle doit vérifier que les fichiers d’extension appropriés existent sur l’appareil. Si ce n’est pas le cas, l’application doit faire une demande auprès du service [Application Licensing](https://developer.android.com/google/play/licensing/index.html) de Google Play. Cette vérification est réalisée à l’aide de la *bibliothèque de vérification de licence (License Verification Library, LVL)* et doit être effectuée pour les applications gratuites et les applications sous licence. Cette bibliothèque est principalement utilisée par les applications payantes afin d’appliquer les restrictions de licence. Toutefois, Google a étendu son usage aux bibliothèques d’extension. Les applications gratuites doivent effectuer la vérification LVL, mais peuvent ignorer les restrictions de licence. La demande LVL doit fournir les informations suivantes relatives aux fichiers d’extension requis par l’application : 
 
-- **Taille de fichier** &ndash; la taille de fichier des fichiers d’extension est utilisée dans le cadre de la vérification qui détermine si les fichiers d’extension corrects ont ou non déjà été téléchargés.
-- **Noms de fichiers** &ndash; il s’agit du nom de fichier (sur l’appareil en cours) sous lequel les packs d’extension doivent être enregistrés.
-- **URL de téléchargement** &ndash; URL qui doit être utilisée pour télécharger les packs d’extension. Elle est unique pour chaque téléchargement et expire quelques instants après avoir été fournie.
+- **Taille de fichier **  &ndash; la taille de fichier des fichiers d’extension est utilisée dans le cadre de la vérification qui détermine si les fichiers d’extension corrects ont ou non déjà été téléchargés.
+- **Noms de fichiers **  &ndash; il s’agit du nom de fichier (sur l’appareil en cours) sous lequel les packs d’extension doivent être enregistrés.
+- **URL de téléchargement **  &ndash; URL qui doit être utilisée pour télécharger les packs d’extension. Elle est unique pour chaque téléchargement et expire quelques instants après avoir été fournie.
 
 Une fois la vérification LVL effectuée, l’application doit télécharger les fichiers d’extension, en prenant en compte les points suivants :
 
@@ -83,7 +83,7 @@ Une fois la vérification LVL effectuée, l’application doit télécharger les
 - Pendant le téléchargement en arrière-plan, un indicateur de progression doit être affiché.
 - Les erreurs qui se produisent pendant le téléchargement sont gérées et récupérées.
 
-## <a name="architectural-overview"></a>Vue d'ensemble de l'architecture
+## <a name="architectural-overview"></a>Présentation de l’architecture
 
 Lorsque l’activité principale démarre, elle vérifie que les fichiers d’extension sont téléchargés. Si les fichiers sont téléchargés, leur validité doit être vérifiée.
 
@@ -91,8 +91,8 @@ Si les fichiers d’extension n’ont pas été téléchargées ou si les fichie
 
 Pour faciliter l’intégration des fichiers d’extension dans une application, Google a créé plusieurs bibliothèques dans Java. Ces bibliothèques sont les suivantes :
 
-- **Bibliothèque du téléchargeur** &ndash; il s’agit d’une bibliothèque qui facilite l’intégration des fichiers d’extension dans une application. Cette bibliothèque télécharge les fichiers d’extension dans un service en arrière-plan, affiche les notifications utilisateur, gère les problèmes de connectivité réseau, reprend les téléchargements, etc.
-- **Bibliothèque de vérification de licence** &ndash; bibliothèque utilisée pour passer les appels aux services Application Licensing et les traiter. Elle peut également être utilisée pour vérifier les licences afin de savoir si l’utilisation de l’application est autorisée sur l’appareil.
-- **Bibliothèque de fichiers zip d’extension d’APK (facultatif)**  &ndash; si les fichiers d’extension sont regroupés dans un fichier zip, cette bibliothèque joue le rôle de fournisseur de contenu en permettant à une application de lire les ressources et les composants directement à partir de l’archive zip sans avoir à la décompresser.
+- **Bibliothèque du téléchargeur **  &ndash; il s’agit d’une bibliothèque qui facilite l’intégration des fichiers d’extension dans une application. Cette bibliothèque télécharge les fichiers d’extension dans un service en arrière-plan, affiche les notifications utilisateur, gère les problèmes de connectivité réseau, reprend les téléchargements, etc.
+- **Bibliothèque de vérification de licence **  &ndash; bibliothèque utilisée pour passer les appels aux services Application Licensing et les traiter. Elle peut également être utilisée pour vérifier les licences afin de savoir si l’utilisation de l’application est autorisée sur l’appareil.
+- **Bibliothèque de fichiers zip d’extension d’APK (facultatif) **  &ndash; si les fichiers d’extension sont regroupés dans un fichier zip, cette bibliothèque joue le rôle de fournisseur de contenu en permettant à une application de lire les ressources et les composants directement à partir de l’archive zip sans avoir à la décompresser.
 
 Ces bibliothèques ont été portées vers C# et sont disponibles dans le cadre de la licence Apache 2.0. Pour intégrer rapidement les fichiers d’extension dans une application existante, ces bibliothèques peuvent être ajoutées à une application Xamarin.Android existante. Le code est disponible sur la page [Android.Play.ExpansionLibrary](https://github.com/mattleibow/Android.Play.ExpansionLibrary) de GitHub.

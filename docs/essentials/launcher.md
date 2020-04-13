@@ -6,15 +6,15 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 08/20/2019
 ms.openlocfilehash: 88c1450d28b4c94fe8079b8915503cf5de118644
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "75488515"
 ---
 # <a name="xamarinessentials-launcher"></a>Xamarin.Essentials : Lanceur
 
-La classe **Lanceur** permet à une application d’ouvrir un URI par le système. Elle est souvent utilisée en cas de lien profond avec les schémas d’URI personnalisés d’une autre application. Si vous souhaitez ouvrir le navigateur sur un site web, reportez-vous à l’API **[Navigateur](open-browser.md)** .
+La classe **Lanceur** permet à une application d’ouvrir un URI par le système. Elle est souvent utilisée en cas de lien profond avec les schémas d’URI personnalisés d’une autre application. Si vous souhaitez ouvrir le navigateur sur un site web, reportez-vous à l’API **[Navigateur](open-browser.md)**.
 
 ## <a name="get-started"></a>Prise en main
 
@@ -54,15 +54,15 @@ public class LauncherTest
 }
 ```
 
-### <a name="additional-platform-setup"></a>Configuration de plateforme supplémentaire
+### <a name="additional-platform-setup"></a>Configuration de plate-forme supplémentaire
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
-Aucune configuration supplémentaire.
+Pas de configuration supplémentaire.
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
-Dans iOS 9 et versions ultérieures, Apple applique les schémas qu’une application peut interroger. Pour spécifier les schémas que vous souhaitez utiliser, vous devez spécifier `LSApplicationQueriesSchemes` dans votre fichier de `Info.plist`.
+Dans iOS 9 et plus, Apple applique quels régimes une application peut demander. Pour spécifier les schémas que `LSApplicationQueriesSchemes` vous `Info.plist` souhaitez utiliser, vous devez spécifier dans votre fichier.
 
 ```
 <key>LSApplicationQueriesSchemes</key>
@@ -72,17 +72,17 @@ Dans iOS 9 et versions ultérieures, Apple applique les schémas qu’une applic
 </array>
 ```
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
-Aucune configuration supplémentaire.
+Pas de configuration supplémentaire.
 
 -----
 
-## <a name="files"></a>Files
+## <a name="files"></a>Fichiers
 
 Cette fonctionnalité permet à une application de demander à d’autres applications d’ouvrir et d’afficher un fichier. Xamarin.Essentials détectera automatiquement le type de fichier (MIME) et demandera que le fichier soit ouvert.
 
-Voici un exemple d’écriture de texte sur disque et de demande d’ouverture :
+Voici un échantillon d’écriture de texte sur disque et de demande qu’il soit ouvert:
 
 ```csharp
 var fn = "File.txt";
@@ -97,11 +97,11 @@ await Launcher.OpenAsync(new OpenFileRequest
 
 ## <a name="platform-differences"></a>Différences entre les plateformes
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 La tâche retournée à partir de `CanOpenAsync` se termine immédiatement.
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 Si l’application de destination sur cet appareil n’a jamais été ouverte par `OpenAsync` à partir de votre application auparavant, iOS invite l’utilisateur une fois à autoriser votre application à l’ouvrir.
 
@@ -109,7 +109,7 @@ La tâche retournée à partir de `CanOpenAsync` se termine immédiatement.
 
 Plus d’informations sur l’implémentation d’iOS sont disponibles [ici](xref:UIKit.UIApplication.CanOpenUrl*)
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 Aucune différence entre les plateformes.
 

@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/25/2018
 ms.openlocfilehash: 822f2ae57241cd51f9e9c4eb2b63c75d30867d83
-ms.sourcegitcommit: c83b55f60ece20e9163b3e587130250fdf113a16
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "79190330"
 ---
 # <a name="publishing-xamarinios-apps-to-the-app-store"></a>Publication d’applications Xamarin.iOS sur l’App Store
@@ -54,11 +54,11 @@ Chaque application iOS a un ID d’application unique, qui est associé à un en
 Pour créer un ID d’application et sélectionner tous les droits nécessaires, visitez le [portail des développeurs Apple](https://developer.apple.com/account/) et procédez comme suit :
 
 1. Dans la section **Certificates, Identifiers & Profiles** (Certificats, identificateurs et profils), sélectionnez **Identifiers > App IDs** (Identificateurs -> ID d’application).
-2. Cliquez sur le bouton **+** , puis indiquez un **Name (Nom)** et un **Bundle ID (ID de bundle)** pour la nouvelle application.
+2. Cliquez **+** sur le bouton et fournissez un **identifiant de nom** et de **bundle** pour la nouvelle application.
 3. Faites défiler l’affichage vers le bas de l’écran, puis sélectionnez les **services d’application** nécessaires pour votre application Xamarin.iOS. Les services d’application sont décrits en détail dans le guide [Utilisation des fonctionnalités dans Xamarin.iOS](~/ios/deploy-test/provisioning/capabilities/index.md).
 4. Cliquez sur le bouton **Continue** et suivez les instructions affichées à l’écran pour créer l’ID d’application.
 
-En plus de sélectionner et configurer les services d’application nécessaires quand vous définissez l’ID d’application, vous devez configurer l’ID d’application et les droits dans votre projet Xamarin.iOS en modifiant les fichiers **Info.plist** et  **Entitlements.plist**. Pour plus d’informations, consultez le guide [Utilisation des droits dans Xamarin.iOS](~/ios/deploy-test/provisioning/entitlements.md), qui explique comment créer un fichier **Entitlements.plist** et la signification des différents paramètres de droits qu’il contient.
+En plus de sélectionner et configurer les services d’application nécessaires quand vous définissez l’ID d’application, vous devez configurer l’ID d’application et les droits dans votre projet Xamarin.iOS en modifiant les fichiers **Info.plist** et ** Entitlements.plist**. Pour plus d’informations, consultez le guide [Utilisation des droits dans Xamarin.iOS](~/ios/deploy-test/provisioning/entitlements.md), qui explique comment créer un fichier **Entitlements.plist** et la signification des différents paramètres de droits qu’il contient.
 
 ## <a name="include-an-app-store-icon"></a>Inclure une icône de l’App Store
 
@@ -79,7 +79,7 @@ Pour créer et installer un profil de provisionnement App Store, procédez comme
 
 1. Connectez-vous au [portail des développeurs Apple](https://developer.apple.com/account/).
 2. Dans **Certificates, IDs & Profiles**, sélectionnez **Provisioning Profiles > Distribution**.
-3. Cliquez sur le bouton **+** , sélectionnez **App Store** et cliquez sur **Continue**.
+3. Cliquez **+** sur le bouton, sélectionnez **App Store**et cliquez sur **Continuer**.
 4. Sélectionnez l’**ID d’application** de votre application dans la liste et cliquez sur **Continue**.
 5. Sélectionnez un certificat de signature et cliquez sur **Continue**.
 6. Entrez un **nom de profil** et cliquez sur **Continue** pour générer le profil.
@@ -89,7 +89,7 @@ Pour des instructions détaillées, consultez [Création d’un profil de distri
 
 ## <a name="update-the-release-build-configuration"></a>Mettre à jour la configuration de build Release
 
-Les nouveaux projets Xamarin. iOS configurent automatiquement les _configurations de build_ **Debug** et **Release** . Pour configurer correctement la build **Release**, effectuez ces étapes :
+Les nouveaux projets Xamarin.iOS configurent automatiquement les **configurations de build****Debug et ** _Release_. Pour configurer correctement la build **Release**, effectuez ces étapes :
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
@@ -97,7 +97,7 @@ Les nouveaux projets Xamarin. iOS configurent automatiquement les _configuration
 2. Cliquez avec le bouton droit sur le **Nom du projet** dans le **panneau Solutions**, sélectionnez **Options** et accédez à l’onglet **Build iOS**.
 3. Définissez **Configuration** sur **Release** et **Plateforme** sur **iPhone**.
 4. Pour générer avec un kit SDK iOS spécifique, sélectionnez-le dans la liste **Version du SDK**. Sinon, laissez cette valeur sur **Par défaut**.
-5. L’édition des liens réduit la taille globale de votre application en éliminant le code inutilisé. Dans la plupart des cas, le **comportement de l’éditeur de liens** doit être défini sur la valeur par défaut **Lier les SDK Framework uniquement**. L’utilisation de l’option **ne pas lier** peut entraîner la rejet par Apple de l’application en raison de la présence d’API iOS non publiques dans Xamarin. IOS qui serait lié avec l’option **Link Framework SDK only** . Le **lien All** doit être utilisé avec précaution, car il répartit le code de tous les assemblys dans le projet, y compris les bibliothèques tierces, et peut supprimer le code que la bibliothèque tierce peut utiliser uniquement par réflexion que l’éditeur de liens ne peut pas détecter, car il effectue une analyse statique du code pour déterminer le code de bibliothèque utilisé. Utilisez **Link All** avec précaution, car vous devrez peut-être conserver manuellement certaines classes et/ou méthodes, etc., afin d’éviter les échecs d’exécution dus à un code manquant. Pour plus d’informations, reportez-vous au guide [Édition des liens des applications Xamarin.iOS](~/ios/deploy-test/linker.md).
+5. L’édition des liens réduit la taille globale de votre application en éliminant le code inutilisé. Dans la plupart des cas, **Linker Behavior** doit être réglé sur la valeur par défaut de **Link Framework SDKs seulement**. L’utilisation de **l’option Don’t Link** peut amener Apple à rejeter l’application en raison de la présence d’API iOS non publics dans Xamarin.iOS qui serait lié à **l’option Link Framework SDKs seulement.** **Le lien tous** doit être utilisé avec soin car il dépouillera le code de toutes les assemblées du projet, y compris les bibliothèques de 3e partie, et peut dépouiller le code que la bibliothèque du 3e parti ne peut utiliser que par la réflexion que le lien ne peut pas détecter, car il fait l’analyse statique du code pour déterminer quel code de bibliothèque est utilisé. Utilisez **Link All** avec soin que vous pouvez avoir à préserver manuellement certaines classes et / ou des méthodes, etc, pour éviter les défaillances de temps d’exécution en raison de code manquant. Pour plus d’informations, reportez-vous au guide [Édition des liens des applications Xamarin.iOS](~/ios/deploy-test/linker.md).
 6. Cochez **Optimiser les images PNG** pour réduire encore davantage la taille de votre application.
 7. Vous ne devez _pas_ activer le débogage, car cela grossit inutilement la build.
 8. Pour iOS 11, sélectionnez l’une des architectures d’appareil qui prend en charge **ARM64**. Pour plus d’informations sur la génération d’applications pour les appareils iOS 64 bits, consultez la section **Activation de builds 64 bits d’applications Xamarin.iOS** dans la documentation traitant des [considérations sur les plateformes 32/64 bits](~/cross-platform/macios/32-and-64/index.md).
@@ -106,13 +106,13 @@ Les nouveaux projets Xamarin. iOS configurent automatiquement les _configuration
 
     Après avoir défini les options décrites ci-dessus, vos paramètres de build doivent ressembler à ceci :
 
-    ![paramètres de build iOS](publishing-to-the-app-store-images/build-m157.png "paramètres de build iOS")
+    ![Paramètres de construction iOS](publishing-to-the-app-store-images/build-m157.png "Paramètres de construction iOS")
 
     Examinez également ce guide sur les [systèmes de build d’iOS](~/ios/deploy-test/ios-build-mechanics.md), qui décrit en détail les paramètres de build.
 
-11. Accédez à l’onglet **iOS Bundle Signing** . Si les options ne sont pas modifiables, assurez-vous que l' **approvisionnement manuel** est sélectionné dans le fichier **info. plist** .
+11. Naviguez vers l’onglet **de signature de faisceau d’iOS.** Si les options ici ne sont pas modifiables, assurez-vous que **la provision manuelle** est sélectionnée dans le fichier **Info.plist.**
 12. Assurez-vous que **Configuration** est défini sur **Release** et que **Plateforme** est défini sur **iPhone**.
-13. Définissez **Identité de signature** sur **Distribution (automatique)** .
+13. Définissez **Identité de signature** sur **Distribution (automatique)**.
 14. Pour **Profil de provisionnement**, sélectionnez le profil de provisionnement App Store [créé ci-dessus](#create-and-install-an-app-store-provisioning-profile).
 
     Les options de signature du bundle de votre projet doivent maintenant ressembler à ceci :
@@ -123,11 +123,11 @@ Les nouveaux projets Xamarin. iOS configurent automatiquement les _configuration
 
 # <a name="visual-studio-2019"></a>[Visual Studio 2019](#tab/windows)
 
-1. Assurez-vous que Visual Studio 2019 a été [associé à un hôte de build Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
+1. Assurez-vous que Visual Studio 2019 a été [jumelé à un hôte de construction Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
 2. Cliquez avec le bouton droit sur le **Nom du projet** dans **l’Explorateur de solutions** et sélectionnez **Propriétés**.
 3. Accédez à l’onglet **Build iOS**, puis définissez **Configuration** sur **Release** et **Plateforme** sur **iPhone**.
-4. Pour générer avec un kit SDK iOS spécifique, sélectionnez-le dans la liste **Version du SDK**. Sinon, laissez cette valeur sur **Par défaut**.
-5. L’édition des liens réduit la taille globale de votre application en éliminant le code inutilisé. Dans la plupart des cas, le **comportement de l’éditeur de liens** doit être défini sur la valeur par défaut **Lier les SDK Framework uniquement**. L’utilisation de l’option **ne pas lier** peut entraîner la rejet par Apple de l’application en raison de la présence d’API iOS non publiques dans Xamarin. IOS qui serait lié avec l’option **Link Framework SDK only** . Le **lien All** doit être utilisé avec précaution, car il supprime le code de tous les assemblys du projet, les bibliothèques tierces y compris et peut supprimer le code que la bibliothèque tierce peut utiliser uniquement par réflexion que l’éditeur de liens ne peut pas détecter, car il effectue une analyse statique du code pour déterminer quel est le code de bibliothèque utilisé. Utilisez **Link All** avec précaution, car vous devrez peut-être conserver manuellement certaines classes et/ou méthodes, etc., afin d’éviter les échecs d’exécution dus à un code manquant. Pour plus d’informations, reportez-vous au guide [Édition des liens des applications Xamarin.iOS](~/ios/deploy-test/linker.md).
+4. Pour construire avec un IOS SDK spécifique, sélectionnez-le dans la liste **de version SDK.** Sinon, laissez cette valeur sur **Par défaut**.
+5. L’édition des liens réduit la taille globale de votre application en éliminant le code inutilisé. Dans la plupart des cas, **Linker Behavior** doit être réglé sur la valeur par défaut de **Link Framework SDKs seulement**. L’utilisation de **l’option Don’t Link** peut amener Apple à rejeter l’application en raison de la présence d’API iOS non publics dans Xamarin.iOS qui serait lié à **l’option Link Framework SDKs seulement.** **Link All** doit être utilisé avec soin car il dépouillera le code de toutes les assemblées du projet, inlcuding bibliothèques de tiers, et peut dépouiller le code que la bibliothèque du 3e parti ne peut utiliser que par la réflexion que le lien ne peut pas détecter, car il fait l’analyse statique du code pour déterminer quel code de bibliothèque est utilisé. Utilisez **Link All** avec soin que vous pouvez avoir à préserver manuellement certaines classes et / ou des méthodes, etc, pour éviter les défaillances de temps d’exécution en raison de code manquant. Pour plus d’informations, reportez-vous au guide [Édition des liens des applications Xamarin.iOS](~/ios/deploy-test/linker.md).
 6. Cochez **Optimiser les images PNG** pour réduire encore davantage la taille de votre application.
 7. Vous ne devez pas activer le débogage, car cela grossit la build inutilement.
 8. Pour iOS 11, sélectionnez l’une des architectures d’appareil qui prend en charge **ARM64**. Pour plus d’informations sur la génération d’applications pour les appareils iOS 64 bits, consultez la section **Activation de builds 64 bits d’applications Xamarin.iOS** dans la documentation traitant des [considérations sur les plateformes 32/64 bits](~/cross-platform/macios/32-and-64/index.md).
@@ -136,17 +136,17 @@ Les nouveaux projets Xamarin. iOS configurent automatiquement les _configuration
 
     Après avoir défini les options décrites ci-dessus, vos paramètres de build doivent ressembler à ceci :
 
-    ![paramètres de build iOS](publishing-to-the-app-store-images/build-w157.png "paramètres de build iOS")
+    ![Paramètres de construction iOS](publishing-to-the-app-store-images/build-w157.png "Paramètres de construction iOS")
 
     Examinez également ce guide sur les [systèmes de build d’iOS](~/ios/deploy-test/ios-build-mechanics.md), qui décrit en détail les paramètres de build.
 
-11. Accédez à l’onglet **iOS Bundle Signing (signature d’offre groupée iOS** ). Assurez **-** vous que la **configuration** est définie sur **Release**, que Platform est défini sur **iPhone**et que l' **approvisionnement manuel** est sélectionné.
-12. Définissez **Identité de signature** sur **Distribution (automatique)** .
+11. Naviguez vers l’onglet **de signature de faisceau d’iOS.** Assurez-vous que la **configuration** est définie pour **libérer,** **la plate-forme** est réglée sur **iPhone,** et que **la provision manuelle** est sélectionnée.
+12. Définissez **Identité de signature** sur **Distribution (automatique)**.
 13. Pour **Profil de provisionnement**, sélectionnez le profil de provisionnement App Store [créé ci-dessus](#create-and-install-an-app-store-provisioning-profile).
 
     Les options de signature du bundle de votre projet doivent maintenant ressembler à ceci :
 
-    ![paramètres de signature d’offre groupée iOS](publishing-to-the-app-store-images/bundleSigning-w157.png "paramètres de signature d’offre groupée iOS")
+    ![Paramètres de signature de faisceau iOS](publishing-to-the-app-store-images/bundleSigning-w157.png "Paramètres de signature de faisceau iOS")
 
 14. Enregistrez la configuration de build et fermez-la.
 
@@ -155,8 +155,8 @@ Les nouveaux projets Xamarin. iOS configurent automatiquement les _configuration
 1. Vérifiez que Visual Studio 2017 a été [appairé à un hôte de build Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
 2. Cliquez avec le bouton droit sur le **Nom du projet** dans **l’Explorateur de solutions** et sélectionnez **Propriétés**.
 3. Accédez à l’onglet **Build iOS**, puis définissez **Configuration** sur **Release** et **Plateforme** sur **iPhone**.
-4. Pour générer avec un kit SDK iOS spécifique, sélectionnez-le dans la liste **Version du SDK**. Sinon, laissez cette valeur sur **Par défaut**.
-5. L’édition des liens réduit la taille globale de votre application en éliminant le code inutilisé. Dans la plupart des cas, le **comportement de l’éditeur de liens** doit être défini sur la valeur par défaut **Lier les SDK Framework uniquement**. L’utilisation de l’option **ne pas lier** peut entraîner la rejet par Apple de l’application en raison de la présence d’API iOS non publiques dans Xamarin. IOS qui serait lié avec l’option **Link Framework SDK only** . Le **lien All** doit être utilisé avec précaution, car il supprime le code de tous les assemblys du projet, les bibliothèques tierces y compris et peut supprimer le code que la bibliothèque tierce peut utiliser uniquement par réflexion que l’éditeur de liens ne peut pas détecter, car il effectue une analyse statique du code pour déterminer quel est le code de bibliothèque utilisé. Utilisez **Link All** avec précaution, car vous devrez peut-être conserver manuellement certaines classes et/ou méthodes, etc., afin d’éviter les échecs d’exécution dus à un code manquant. Pour plus d’informations, reportez-vous au guide [Édition des liens des applications Xamarin.iOS](~/ios/deploy-test/linker.md).
+4. Pour construire avec un IOS SDK spécifique, sélectionnez-le dans la liste **de version SDK.** Sinon, laissez cette valeur sur **Par défaut**.
+5. L’édition des liens réduit la taille globale de votre application en éliminant le code inutilisé. Dans la plupart des cas, **Linker Behavior** doit être réglé sur la valeur par défaut de **Link Framework SDKs seulement**. L’utilisation de **l’option Don’t Link** peut amener Apple à rejeter l’application en raison de la présence d’API iOS non publics dans Xamarin.iOS qui serait lié à **l’option Link Framework SDKs seulement.** **Link All** doit être utilisé avec soin car il dépouillera le code de toutes les assemblées du projet, inlcuding bibliothèques de tiers, et peut dépouiller le code que la bibliothèque du 3e parti ne peut utiliser que par la réflexion que le lien ne peut pas détecter, car il fait l’analyse statique du code pour déterminer quel code de bibliothèque est utilisé. Utilisez **Link All** avec soin que vous pouvez avoir à préserver manuellement certaines classes et / ou des méthodes, etc, pour éviter les défaillances de temps d’exécution en raison de code manquant. Pour plus d’informations, reportez-vous au guide [Édition des liens des applications Xamarin.iOS](~/ios/deploy-test/linker.md).
 6. Cochez **Optimiser les images PNG** pour réduire encore davantage la taille de votre application.
 7. Vous ne devez pas activer le débogage, car cela grossit la build inutilement.
 8. Pour iOS 11, sélectionnez l’une des architectures d’appareil qui prend en charge **ARM64**. Pour plus d’informations sur la génération d’applications pour les appareils iOS 64 bits, consultez la section **Activation de builds 64 bits d’applications Xamarin.iOS** dans la documentation traitant des [considérations sur les plateformes 32/64 bits](~/cross-platform/macios/32-and-64/index.md).
@@ -165,28 +165,28 @@ Les nouveaux projets Xamarin. iOS configurent automatiquement les _configuration
 
     Après avoir défini les options décrites ci-dessus, vos paramètres de build doivent ressembler à ceci :
 
-    ![paramètres de build iOS](publishing-to-the-app-store-images/build-w157.png "paramètres de build iOS")
+    ![Paramètres de construction iOS](publishing-to-the-app-store-images/build-w157.png "Paramètres de construction iOS")
 
     Examinez également ce guide sur les [systèmes de build d’iOS](~/ios/deploy-test/ios-build-mechanics.md), qui décrit en détail les paramètres de build.
 
-11. Accédez à l’onglet **iOS Bundle Signing (signature d’offre groupée iOS** ). Assurez **-** vous que la **configuration** est définie sur **Release**, que Platform est défini sur **iPhone**et que l' **approvisionnement manuel** est sélectionné.
-12. Définissez **Identité de signature** sur **Distribution (automatique)** .
+11. Naviguez vers l’onglet **de signature de faisceau d’iOS.** Assurez-vous que la **configuration** est définie pour **libérer,** **la plate-forme** est réglée sur **iPhone,** et que **la provision manuelle** est sélectionnée.
+12. Définissez **Identité de signature** sur **Distribution (automatique)**.
 13. Pour **Profil de provisionnement**, sélectionnez le profil de provisionnement App Store [créé ci-dessus](#create-and-install-an-app-store-provisioning-profile).
 
     Les options de signature du bundle de votre projet doivent maintenant ressembler à ceci :
 
-    ![paramètres de signature d’offre groupée iOS](publishing-to-the-app-store-images/bundleSigning-w157.png "paramètres de signature d’offre groupée iOS")
+    ![Paramètres de signature de faisceau iOS](publishing-to-the-app-store-images/bundleSigning-w157.png "Paramètres de signature de faisceau iOS")
 
 14. Accédez à l’onglet **Options IPA iOS**.
 15. Assurez-vous que **Configuration** est défini sur **Release** et que **Plateforme** est défini sur **iPhone**.
-16. Cochez la case **Générer une archive IPA (iTunes Package Archive)** . Avec ce paramètre, chaque build **Release** (puisque c’est la configuration sélectionnée) génère un fichier .ipa. Ce fichier peut être soumis à Apple pour publication sur l’App Store.
+16. Cochez la case **Générer une archive IPA (iTunes Package Archive)**. Avec ce paramètre, chaque build **Release** (puisque c’est la configuration sélectionnée) génère un fichier .ipa. Ce fichier peut être soumis à Apple pour publication sur l’App Store.
 
     > [!NOTE]
     > **Métadonnées iTunes** et **iTunesArtwork** ne sont pas nécessaires pour les publications de l’App Store. Pour plus d’informations, consultez [le fichier iTunesMetadata.plist dans les applications Xamarin.iOS](~/ios/deploy-test/app-distribution/itunesmetadata.md) et [Itunes Artwork](~/ios/app-fundamentals/images-icons/app-icons.md#itunes-artwork).
 
 17. Pour spécifier un nom de fichier .ipa qui diffère du nom de projet Xamarin.iOS, entrez-le dans le champ **Nom du package**.
 
-    ![paramètres de signature d’offre groupée iOS](publishing-to-the-app-store-images/ipaOptions-w157.png "paramètres de signature d’offre groupée iOS")
+    ![Paramètres de signature de faisceau iOS](publishing-to-the-app-store-images/ipaOptions-w157.png "Paramètres de signature de faisceau iOS")
 
 18. Enregistrez la configuration de build et fermez-la.
 
@@ -206,29 +206,29 @@ Avec vos paramètres de build correctement configurés et iTunes Connect en atte
 
 1. Dans Visual Studio pour Mac, sélectionnez la configuration de build **Release** et un appareil (pas un simulateur) pour lequel effectuer la génération.
 
-    ![Configuration de build et sélection de plateforme](publishing-to-the-app-store-images/chooseConfig-m157.png "Configuration de build et sélection de plateforme")
+    ![Construire la configuration et la sélection de la plate-forme](publishing-to-the-app-store-images/chooseConfig-m157.png "Construire la configuration et la sélection de la plate-forme")
 
 2. Dans le menu **Générer**, sélectionnez **Archiver pour publication**.
-3. Une fois l’archive créée, la vue **Archives** s’affiche. Cliquez sur **Signer et distribuer...**  pour ouvrir l’Assistant de publication.
+3. Une fois les archives créées, la vue **des Archives** sera affichée. Cliquez sur **Signer et distribuer... ** pour ouvrir l’Assistant de publication.
 
-    ![Capture d’écran de l’emplacement du bouton signer et distribuer dans la vue Archives.](publishing-to-the-app-store-images/archives-mac.png "Capture d’écran de l’emplacement du bouton signer et distribuer dans la vue Archives.")
+    ![Capture d’écran de l’emplacement du bouton Signe et Distribution dans la vue Archives.](publishing-to-the-app-store-images/archives-mac.png "Capture d’écran de l’emplacement du bouton Signe et Distribution dans la vue Archives.")
 
     > [!NOTE]
     > Par défaut, la vue **Archives** montre uniquement les archives de la solution ouverte. Pour voir toutes les solutions ayant des archives, cochez la case **Afficher toutes les archives**. Il est judicieux de conserver les anciennes archives afin que les informations de débogage qu’elles contiennent puissent être utilisées pour générer les symboles de débogage des rapports de plantage si nécessaire.
 
 4. Sélectionnez le canal de distribution **App Store**. Cliquez sur **Suivant**.
 
-5. Sélectionnez **charger** comme destination. Cliquez sur **Suivant**.
+5. Sélectionnez **Upload** comme destination. Cliquez sur **Suivant**.
 
 6. Dans la fenêtre **Profil de provisionnement**, sélectionnez votre identité de signature, votre application et votre profil de provisionnement. Cliquez sur **Suivant**.
 
-    ![Capture d’écran de la page de l’Assistant Profil d’approvisionnement montrant une identité de signature, une application et une sélection de profil de provisionnement valides.](publishing-to-the-app-store-images/provProfileSelect-mac.png "Capture d’écran de la page de l’Assistant Profil d’approvisionnement avec une identité de signature, une application et un profil de provisionnement valides sélectionnés.")
+    ![Capture d’écran de la page d’assistant de profil provisionnant montrant une identité de signature valide, une application et une sélection de profils de provisionnement.](publishing-to-the-app-store-images/provProfileSelect-mac.png "Capture d’écran de la page assistante de profil provisionnant avec une identité de signature valide, une application et un profil de provisionnement sélectionnés.")
 
-7. Dans la fenêtre informations de connexion à l' **App Store** , sélectionnez un nom d’utilisateur Apple ID dans le menu et entrez [un mot de passe spécifique à l’application](https://support.apple.com/ht204397). Cliquez sur **Suivant**.
+7. Dans la fenêtre **d’information App Store Connect,** sélectionnez un nom d’utilisateur Apple ID dans le menu et entrez [un mot de passe spécifique à l’application](https://support.apple.com/ht204397). Cliquez sur **Suivant**.
 
-    ![Capture d’écran de la page de l’Assistant informations de connexion de l’App Store avec un nom d’utilisateur Apple ID sélectionné.](publishing-to-the-app-store-images/connectInfo-mac.png "Capture d’écran de la page de l’Assistant informations de connexion de l’App Store avec un nom d’utilisateur Apple ID sélectionné.")
+    ![Capture d’écran de la page de l’assistant d’information App Store Connect montrant un nom d’utilisateur Apple ID sélectionné.](publishing-to-the-app-store-images/connectInfo-mac.png "Capture d’écran de la page de l’assistant d’information App Store Connect montrant un nom d’utilisateur Apple ID sélectionné.")
 
-8. Vérifiez les détails de votre package, puis cliquez sur **publier**. Une fois que vous avez sélectionné un emplacement pour enregistrer le fichier. Loi, l’Assistant charge votre application dans l’App Store Connect.
+8. Vérifiez les détails de votre colis et cliquez sur **Publier**. Après avoir sélectionné un emplacement pour enregistrer le fichier .ipa, l’assistant téléchargera votre application sur App Store Connect.
 
     > [!NOTE]
     > Apple peut rejeter les applications avec **iTunesMetadata.plist** inclus dans le fichier .ipa, ce qui entraîne une erreur comme la suivante :
@@ -240,42 +240,42 @@ Avec vos paramètres de build correctement configurés et iTunes Connect en atte
 # <a name="visual-studio-2019"></a>[Visual Studio 2019](#tab/windows)
 
 > [!NOTE]
-> La publication sur l’App Store est prise en charge dans Visual Studio 2019 version 16,3 ou ultérieure.
+> La publication sur l’App Store est prise en charge dans visual Studio 2019 version 16.3 et plus.
 
-1. Assurez-vous que Visual Studio 2019 est [associé à un hôte de build Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
-2. Sélectionnez **mise en sortie** dans la liste déroulante **configurations de solutions** , puis **iPhone** dans la liste déroulante **plateformes solution** .
+1. Assurez-vous que Visual Studio 2019 est [jumelé à un hôte de construction Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
+2. Sélectionnez **Release** à partir du dropdown **Solution Configurations,** et **iPhone** à partir de la **solution Plates-formes** dropdown.
 
-    ![Capture d’écran de la barre d’outils Visual Studio montrant la configuration de la solution définie à Release, plateforme de solution définie sur iPhone et cible définie sur appareil.](publishing-to-the-app-store-images/chooseConfig-w157.png "Capture d’écran de la barre d’outils Visual Studio montrant la configuration de la solution définie à Release, plateforme de solution définie sur iPhone et cible définie sur appareil.")
+    ![Capture d’écran de la barre d’outils Visual Studio montrant la configuration de la solution définie pour libérer, plate-forme de solution définie sur iPhone, et cible définie à l’appareil.](publishing-to-the-app-store-images/chooseConfig-w157.png "Capture d’écran de la barre d’outils Visual Studio montrant la configuration de la solution définie pour libérer, plate-forme de solution définie sur iPhone, et cible définie à l’appareil.")
 
-3. Dans le menu **générer** , sélectionnez **Archiver...** . Le **Gestionnaire d’archives** s’ouvre et commence la création d’une archive.
+3. Dans le menu **Build,** sélectionnez **Archive...**. Cela ouvrira le **gestionnaire d’archives** et commencera à créer une archive.
 
-4. Une fois l’archive créée, cliquez sur **distribuer...** pour ouvrir l’Assistant Publication.
+4. Une fois l’archive créée, cliquez sur **Distribuer...** pour ouvrir l’assistant de publication.
 
-    ![Capture d’écran de l’emplacement du bouton distribuer dans la vue du gestionnaire d’archives.](publishing-to-the-app-store-images/archives-win.png "Capture d’écran de l’emplacement du bouton distribuer dans la vue du gestionnaire d’archives.")
+    ![Capture d’écran de l’emplacement du bouton de distribution dans la vue du gestionnaire d’archives.](publishing-to-the-app-store-images/archives-win.png "Capture d’écran de l’emplacement du bouton de distribution dans la vue du gestionnaire d’archives.")
 
 5. Sélectionnez le canal de distribution **App Store**.
 
-6. Sélectionnez votre identité de signature et votre profil de provisionnement. Cliquez sur **Télécharger vers le Store**.
+6. Sélectionnez votre identité de signature et votre profil de provisionnement. Cliquez **sur Télécharger en magasin**.
 
-    ![Capture d’écran de l’Assistant Publication montrant une identité de signature et une sélection de profil de provisionnement valides.](publishing-to-the-app-store-images/provProfileSelect-win.png "Capture d’écran de l’Assistant Publication montrant une identité de signature et une sélection de profil de provisionnement valides.")
+    ![Capture d’écran de l’assistant de publication montrant une identité de signature valide et la sélection de profil de provisionnement.](publishing-to-the-app-store-images/provProfileSelect-win.png "Capture d’écran de l’assistant de publication montrant une identité de signature valide et la sélection de profil de provisionnement.")
 
-7. Entrez votre ID Apple et [un mot de passe spécifique à l’application](https://support.apple.com/ht204397). Cliquez sur **OK** pour commencer à charger votre application dans l’App Store Connect.
+7. Entrez votre identifiant Apple et [un mot de passe spécifique à l’application](https://support.apple.com/ht204397). Cliquez **sur OK** pour commencer à télécharger votre application sur App Store Connect.
 
-    ![Capture d’écran de la fenêtre contextuelle pour entrer votre ID Apple et votre mot de passe spécifique à l’application.](publishing-to-the-app-store-images/connectInfo-win.png "Capture d’écran de la fenêtre contextuelle pour entrer votre ID Apple et votre mot de passe spécifique à l’application.")
+    ![Capture d’écran de la fenêtre pop up pour entrer votre identifiant Apple et mot de passe spécifique de l’application.](publishing-to-the-app-store-images/connectInfo-win.png "Capture d’écran de la fenêtre pop up pour entrer votre identifiant Apple et mot de passe spécifique de l’application.")
 
 # <a name="visual-studio-2017"></a>[Visual Studio 2017](#tab/win-vs2017)
 
 > [!NOTE]
-> Visual Studio 2017 ne prend pas en charge le flux de travail de publication complet trouvé dans Visual Studio pour Mac et Visual Studio 2019.
+> Visual Studio 2017 ne prend pas en charge le flux complet d’édition que l’on retrouve dans Visual Studio pour Mac et Visual Studio 2019.
 >
-> Les étapes ci-dessous concernent Xcode 10.
+> Les étapes ci-dessous sont pour Xcode 10.
 >
-> Vous pouvez toujours suivre les étapes ci-dessous pour générer un. Fichier de la Loi, mais pour effectuer un déploiement sur l’App Store à l’aide de Xcode 11 (qui est requis pour la prise en charge d’iOS 13), vous devez [utiliser Visual Studio pour Mac](?tabs=macos#build-and-submit-your-app).
+> Vous pouvez toujours suivre les étapes ci-dessous pour construire un . Fichier IPA, mais pour déployer dans l’App Store en utilisant Xcode 11 (qui est nécessaire pour le support iOS 13) vous devriez [utiliser Visual Studio pour Mac](?tabs=macos#build-and-submit-your-app).
 
 1. Vérifiez que Visual Studio 2017 a été [appairé à un hôte de build Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
 2. Sélectionnez **Release** dans la liste déroulante **Configurations de solutions** de Visual Studio 2017, puis **iPhone** dans la liste déroulante **Plateformes de solutions**.
 
-    ![Configuration de build et sélection de plateforme](publishing-to-the-app-store-images/chooseConfig-w157.png "Configuration de build et sélection de plateforme")
+    ![Construire la configuration et la sélection de la plate-forme](publishing-to-the-app-store-images/chooseConfig-w157.png "Construire la configuration et la sélection de la plate-forme")
 
 3. Créez le projet. Cette opération crée un fichier .ipa.
 
@@ -287,9 +287,9 @@ Avec vos paramètres de build correctement configurés et iTunes Connect en atte
 
     > [!TIP]
     >
-    > Les étapes suivantes ne sont valides que si vous utilisez Xcode 10 et que vous créez pour iOS 12 et versions antérieures.
+    > Les étapes suivantes ne sont valables que si vous utilisez Xcode 10, et la construction pour iOS 12 et plus tôt.
     >
-    > Pour effectuer un déploiement sur l’App Store à l’aide de Xcode 11 (pour iOS 13), vous devez [utiliser Visual Studio pour Mac](?tabs=macos#build-and-submit-your-app) pour générer et charger votre application. Le **chargeur d’application** ne sera pas disponible pour XCode 11.
+    > Pour vous déployer dans l’App Store à l’aide de Xcode 11 (pour iOS 13), vous devez [utiliser Visual Studio pour Mac pour](?tabs=macos#build-and-submit-your-app) construire et télécharger votre application. **Chargeur d’application** ne sera pas disponible pour Xcode 11.
 
 6. Sur l’hôte de build Mac, ouvrez **Application Loader**. Dans Xcode, sélectionnez **Xcode > Open Developer Tool (Ouvrir l’outil de développement) > Application Loader**.
 
@@ -297,18 +297,18 @@ Avec vos paramètres de build correctement configurés et iTunes Connect en atte
     > Pour plus d’informations sur l’outil, consultez la [documentation d’Apple sur Application Loader](https://help.apple.com/itc/apploader/#/apdS673accdb).
 
 7. Connectez-vous à Application Loader (notez que vous devez [créer un mot de passe spécifique à l’application](https://support.apple.com/ht204397) pour votre identifiant Apple).
-8. Sélectionnez **Deliver Your App (Livrer votre application)** , puis cliquez sur le bouton **Choose (Choisir)**  :
+8. Sélectionnez **Deliver Your App (Livrer votre application)**, puis cliquez sur le bouton **Choose (Choisir)**  :
 
-    ![Sélectionner distribuer votre application](publishing-to-the-app-store-images/publishvs01.png "Sélectionner distribuer votre application")
+    ![Sélectionner Livrer votre application](publishing-to-the-app-store-images/publishvs01.png "Sélectionner Livrer votre application")
 
 9. Sélectionnez le fichier .ipa créé ci-dessus et cliquez sur **OK**.
 10. Application Loader valide le fichier :
 
-    ![L’écran de validation](publishing-to-the-app-store-images/publishvs02.png "L’écran de validation")
+    ![Écran de validation](publishing-to-the-app-store-images/publishvs02.png "Écran de validation")
 
 11. Cliquez sur le bouton **Suivant** pour permettre la validation de l’application par l’App Store :
 
-    ![Validation par rapport à l’App Store](publishing-to-the-app-store-images/publishvs03.png "Validation par rapport à l’App Store")
+    ![Validation pour l’App Store](publishing-to-the-app-store-images/publishvs03.png "Validation pour l’App Store")
 
 12. Cliquez sur le bouton **Envoyer** pour envoyer l’application à Apple pour évaluation.
 13. Application Loader vous informe une fois le chargement du fichier réussi.
@@ -326,9 +326,9 @@ Avec vos paramètres de build correctement configurés et iTunes Connect en atte
 
 Pour voir le statut de la soumission de votre application, connectez-vous à iTunes Connect et sélectionnez votre application. Le statut initial doit être **En attente de vérification**, même si vous pouvez lire temporairement **Chargement reçu** pendant son traitement.
 
-![En attente de révision](publishing-to-the-app-store-images/image21.png "En attente de révision")
+![En attente d’un avis](publishing-to-the-app-store-images/image21.png "En attente d’un avis")
 
-## <a name="tips-and-tricks"></a>Astuces et conseils
+## <a name="tips-and-tricks"></a>Conseils et astuces
 
 ### <a name="customize-the-ipa-location"></a>Personnaliser l’emplacement du fichier IPA
 
@@ -381,7 +381,7 @@ msbuild /p:Configuration="Release" /p:Platform="iPhone" /p:IpaPackageDir="$HOME/
 
 Une fois votre build de distribution créée et archivée, vous êtes prêt à soumettre votre application à iTunes Connect.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a décrit comment configurer, générer et soumettre une application iOS pour la publier sur l’App Store.
 

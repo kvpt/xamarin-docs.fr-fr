@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 04/16/2018
 ms.openlocfilehash: c5c819221bc08f1c39bde9b5900c2f9f9889764d
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73022534"
 ---
 # <a name="configuring-visual-studio-for-ios-development"></a>Configuration de Visual Studio pour le développement iOS
@@ -42,7 +42,7 @@ Quand un projet iOS est ouvert dans Visual Studio 2019 ou Visual Studio 2017, 
 
 Si cette barre d’outils n’apparaît pas, ouvrez le menu **Affichage** dans Visual Studio 2019 ou Visual Studio 2017, puis choisissez **Barres d’outils > iOS** :
 
-![Activation de la barre d’outils iOS](config-options-images/ios-toolbar-enable.png "Activation de la barre d’outils iOS")
+![Permettre la barre d’outils iOS](config-options-images/ios-toolbar-enable.png "Permettre la barre d’outils iOS")
 
 ## <a name="solution-platforms-drop-down-menu"></a>Menu déroulant Plateformes solution
 
@@ -54,8 +54,8 @@ Pour vous assurer que ce menu déroulant est visible dans la barre d’outils st
 - Choisissez **Ajouter/supprimer des boutons** 
 - Vérifiez que l’élément **Plateformes solution** est coché :
 
-![Activation du menu déroulant plateformes de solution](config-options-images/solution-platforms-enable.png "Activation du menu déroulant plateformes de solution")
+![Permettre le menu déroulant des plates-formes de solutions](config-options-images/solution-platforms-enable.png "Permettre le menu déroulant des plates-formes de solutions")
 
 Avec un projet iOS ouvert, les barres d’outils **standard** et **iOS** doivent maintenant ressembler à la capture d’écran suivante :
 
-![Barres d’outils standard et iOS](config-options-images/toolbars.png "Barres d’outils standard et iOS")
+![Barres d’outils Standard et iOS](config-options-images/toolbars.png "Barres d’outils Standard et iOS")

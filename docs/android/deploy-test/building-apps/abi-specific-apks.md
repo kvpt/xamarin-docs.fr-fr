@@ -8,23 +8,23 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/15/2018
 ms.openlocfilehash: 0520439b89458b7f73a025cd8d6b2cf8fc41dac0
-ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "76940637"
 ---
 # <a name="building-abi-specific-apks"></a>Création de fichiers APK propres à une interface ABI
 
 _Ce document explique comment générer un fichier APK qui ciblera une interface ABI unique à l’aide de Xamarin.Android._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d’ensemble
 
 Dans certaines situations, il peut être avantageux pour une application d’avoir plusieurs fichiers APK. Chaque fichier APK est signé avec le même magasin de clés et porte le même nom de package, mais est compilé pour une configuration d’appareil ou Android spécifique. Ce n’est pas l’approche recommandée. Il est beaucoup plus simple d’avoir un fichier APK pouvant prendre en charge plusieurs appareils et configurations. Dans certaines situations, la création de plusieurs fichiers APK peut être utile, par exemple :
 
 - **Réduire la taille du fichier APK** : Google Play impose une limite de taille de 100 Mo pour les fichiers APK. La création de fichiers APK spécifiques peut réduire la taille du fichier APK, puisqu’il vous suffit d’indiquer un sous-ensemble des ressources et des ressources pour l’application.
 
-- **Prendre en charge différentes architectures de processeur**  : Si votre application a partagé des bibliothèques pour des processeurs spécifiques, vous ne pouvez distribuer que les bibliothèques partagées pour ce processeur.
+- **Prendre en charge différentes architectures de processeur ** : Si votre application a partagé des bibliothèques pour des processeurs spécifiques, vous ne pouvez distribuer que les bibliothèques partagées pour ce processeur.
 
 Plusieurs fichiers APK peuvent compliquer la distribution – un problème résolu par Google Play. Google Play garantit que le fichier APK correct est remis à un appareil basé sur le code de la version de l’application et sur d’autres métadonnées contenues dans **AndroidManifest.XML**. Pour des détails et restrictions spécifiques sur la façon dont Google Play prend en charge plusieurs fichiers APK pour une application, consultez la [documentation de Google sur la prise en charge de plusieurs fichiers APK](https://developer.android.com/google/play/publishing/multiple-apks.html).
 
@@ -43,9 +43,9 @@ Pour le code de version, Google recommande un algorithme particulier qui utilise
 L’extension de ce modèle de code de version à huit chiffres permet d’inclure des informations sur l’interface ABI dans le code de version, afin de garantir que Google Play distribuera le fichier APK correct à un appareil. La liste suivante explique ce format de code de version à huit chiffres (indexée de gauche à droite) :
 
 - **Index 0** (en rouge dans le diagramme ci-dessous) &ndash; Un nombre entier pour l’interface ABI :
-  - 1 &ndash; `armeabi`
-  - 2 &ndash; `armeabi-v7a`
-  - 6 &ndash; `x86`
+  - 1 &ndash;`armeabi`
+  - 2 &ndash;`armeabi-v7a`
+  - 6 &ndash; Annonces`x86`
 
 - **Index 1 à 2** (en orange dans le diagramme ci-dessous) &ndash; Le niveau d’API minimal pris en charge par l’application.
 
@@ -95,19 +95,19 @@ La meilleure façon de générer le fichier APK par le biais de l’interface AB
 
 la liste suivante explique chaque paramètre de ligne de commande :
 
-- `/t:Package` &ndash; Crée un fichier APK Android signé à l’aide du magasin de clés de débogage
+- `/t:Package`&ndash; Crée un APK Android qui est signé à l’aide du keystore de débogé
 
-- `/p:AndroidSupportedAbis=<TARGET_ABI>` &ndash; Interface ABI à cibler. Cela doit être l’une des interfaces `armeabi`, `armeabi-v7a` ou `x86`.
+- `/p:AndroidSupportedAbis=<TARGET_ABI>`&ndash; C’est l’ABI à cibler. Cela doit être l’une des interfaces `armeabi`, `armeabi-v7a` ou `x86`.
 
-- `/p:IntermediateOutputPath=obj.<TARGET_ABI>/` &ndash; Répertoire qui contiendra les fichiers intermédiaires créés dans le cadre de la build. Si nécessaire, Xamarin.Android créera un répertoire nommé d’après l’interface ABI, par exemple `obj.armeabi-v7a`. Il est recommandé d’utiliser un dossier pour chaque interface ABI, car ceci empêchera des problèmes pouvant entraîner la « fuite » d’une version vers une autre. Notez que cette valeur se termine par un séparateur de répertoire (un `/` dans le cas d’OS X).
+- `/p:IntermediateOutputPath=obj.<TARGET_ABI>/`&ndash; C’est l’annuaire qui tiendra les fichiers intermédiaires qui sont créés dans le cadre de la construction. Si nécessaire, Xamarin.Android créera un répertoire nommé d’après l’interface ABI, par exemple `obj.armeabi-v7a`. Il est recommandé d’utiliser un dossier pour chaque interface ABI, car ceci empêchera des problèmes pouvant entraîner la « fuite » d’une version vers une autre. Notez que cette valeur se termine par un séparateur de répertoire (un `/` dans le cas d’OS X).
 
 - `/p:AndroidManifest` &ndash; Cette propriété spécifie le chemin du fichier **AndroidManifest.XML** qui sera utilisé lors de la build.
 
-- `/p:OutputPath=bin.<TARGET_ABI>` &ndash; Répertoire qui hébergera le fichier APK final. Xamarin.Android créera un répertoire nommé d’après l’interface ABI, par exemple `bin.armeabi-v7a`.
+- `/p:OutputPath=bin.<TARGET_ABI>`&ndash; C’est le répertoire qui abritera l’APK final. Xamarin.Android créera un répertoire nommé d’après l’interface ABI, par exemple `bin.armeabi-v7a`.
 
-- `/p:Configuration=Release` &ndash; Exécuter une build de mise en production du fichier APK. Il n’est pas possible de télécharger des versions de débogage vers Google Play.
+- `/p:Configuration=Release`&ndash; Effectuez une version de l’APK. Il n’est pas possible de télécharger des versions de débogage vers Google Play.
 
-- `<CS_PROJ FILE>` &ndash; Chemin du fichier `.csproj` pour le projet Xamarin.Android.
+- `<CS_PROJ FILE>`&ndash; C’est le `.csproj` chemin vers le fichier pour le projet Xamarin.Android.
 
 ### <a name="sign-and-zipalign-the-apk"></a>Signer le fichier APK et le compresser dans un fichier Zipalign
 
@@ -141,7 +141,7 @@ Le fichier [rakefile](https://github.com/xamarin/monodroid-samples/blob/master/O
 
 1. [Signez le fichier APK](https://github.com/xamarin/monodroid-samples/blob/master/OneABIPerAPK/Rakefile.rb#L66) avec un magasin de clés de production.
 
-1. Compressez le fichier APK dans un fichier [Zipalign](https://github.com/xamarin/monodroid-samples/blob/master/OneABIPerAPK/Rakefile.rb#L67).
+1. [Zipalign](https://github.com/xamarin/monodroid-samples/blob/master/OneABIPerAPK/Rakefile.rb#L67) l’APK.
 
 Pour générer tous les fichiers APK de l’application, exécutez la tâche Rake `build` à partir de la ligne de commande :
 
@@ -154,17 +154,17 @@ $ rake build
 
 une fois la tâche Rake terminée, il y aura trois dossiers `bin` avec le fichier `xamarin.helloworld.apk`. La capture d’écran suivante montre chacun de ces dossiers avec son contenu :
 
-[![Emplacements des dossiers spécifiques à une plateforme contenant xamarin.helloworld.apk](abi-specific-apks-images/image01.png)](abi-specific-apks-images/image01.png#lightbox)
+[![Emplacements des dossiers spécifiques à la plate-forme contenant xamarin.helloworld.apk](abi-specific-apks-images/image01.png)](abi-specific-apks-images/image01.png#lightbox)
 
 > [!NOTE]
-> Le processus de génération décrit dans ce guide peut être implémenté dans un des nombreux systèmes de build différents. Bien que nous n’ayons pas d’exemple prédéfini, ceci devrait également être possible avec [Powershell](https://technet.microsoft.com/scriptcenter/powershell.aspx) / [psake](https://github.com/psake/psake) ou [fictif](https://fsharp.github.io/FAKE/).
+> Le processus de génération décrit dans ce guide peut être implémenté dans un des nombreux systèmes de build différents. Bien que nous n’ayons pas un exemple pré-écrit, il devrait également être possible avec [Powershell](https://technet.microsoft.com/scriptcenter/powershell.aspx) / [psake](https://github.com/psake/psake) ou [Fake](https://fsharp.github.io/FAKE/).
 
 ## <a name="summary"></a>Récapitulatif
 
 Ce guide contient quelques suggestions pour la création de fichiers APK Android qui ciblent une interface ABI spécifique. Il présente également un schéma possible pour la création du `android:versionCodes` qui identifiera l’architecture de processeur à laquelle le fichier APK est destiné. La procédure pas à pas inclut un exemple de projet dont le script de build est généré avec Rake.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [OneABIPerAPK (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/oneabiperapk)
-- [Publication d’une application](~/android/deploy-test/publishing/index.md)
+- [Publication d'une application](~/android/deploy-test/publishing/index.md)
 - [Prise en charge de plusieurs fichiers APK pour Google Play](https://developer.android.com/google/play/publishing/multiple-apks.html)

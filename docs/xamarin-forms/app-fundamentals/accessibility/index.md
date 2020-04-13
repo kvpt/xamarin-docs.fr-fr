@@ -9,10 +9,10 @@ ms.author: dabritch
 ms.date: 05/28/2019
 ms.custom: video
 ms.openlocfilehash: 2aaa61400d3775c4d622b805d24ff0b338017de5
-ms.sourcegitcommit: 4a1520dee7759f8355ea65c8bb3d1bac8ba58122
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "66354040"
 ---
 # <a name="xamarinforms-accessibility"></a>Accessibilité Xamarin.Forms
@@ -35,9 +35,9 @@ Les applications Xamarin.Forms ciblent généralement plusieurs plateformes, ce 
 
 - [**Tests iOS**](~/ios/app-fundamentals/accessibility.md)
 - [**Tests Android**](~/android/app-fundamentals/accessibility.md)
-- [**Windows AccScope (MSDN)** ](https://msdn.microsoft.com/library/windows/desktop/dn433239)
+- [**Windows AccScope (MSDN)**](https://msdn.microsoft.com/library/windows/desktop/dn433239)
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Accessibilité multiplateforme](~/cross-platform/app-fundamentals/accessibility.md)
 - [Propriétés d’automatisation](~/xamarin-forms/app-fundamentals/accessibility/automation-properties.md)

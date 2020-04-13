@@ -1,21 +1,21 @@
 ---
-title: "Xamarin.Essentials: Informations de l'application"
-description: La classe **AppInfo** fournit des informations générales sur votre application. Par exemple, il expose le nom de l’application et la version. Par exemple, il expose le nom et la version de l’application.
+title: 'Xamarin.Essentials : informations sur l’application'
+description: Ce document décrit la classe AppInfo de Xamarin.Essentials, qui fournit des informations sur votre application. Par exemple, il expose le nom et la version de l’application.
 ms.assetid: 15924FCB-19E0-45B2-944E-E94FD7AE12FA
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 01/29/2019
 ms.custom: video
 ms.openlocfilehash: 69d0cb503d329ccfb4c29fb6cc4a589bef97e893
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70756990"
 ---
-# <a name="xamarinessentials-app-information"></a>Xamarin.Essentials: Informations de l'application
+# <a name="xamarinessentials-app-information"></a>Xamarin.Essentials : informations sur l’application
 
-La classe **AppInfo** fournit des informations générales sur votre application.
+La classe **AppInfo** fournit des informations sur votre application.
 
 ## <a name="get-started"></a>Prise en main
 
@@ -29,7 +29,7 @@ Ajoutez une référence à Xamarin.Essentials dans votre classe :
 using Xamarin.Essentials;
 ```
 
-## <a name="obtaining-application-information"></a>Obtenir des informations sur l’application
+## <a name="obtaining-application-information"></a>Obtention d’informations sur l’application :
 
 Les informations suivantes sont exposées via l’API :
 
@@ -47,9 +47,9 @@ var version = AppInfo.VersionString;
 var build = AppInfo.BuildString;
 ```
 
-## <a name="displaying-application-settings"></a>Afficher les paramètres de l'application
+## <a name="displaying-application-settings"></a>Affichage des paramètres de l’application
 
-La classe **AppInfo** peut également afficher la page des paramètres systèmes gérés par le système d’exploitation spécifiquement pour l’application :
+La classe **AppInfo** peut également afficher une page de paramètres gérés par le système d’exploitation pour l’application :
 
 ```csharp
 // Display settings page
@@ -60,32 +60,32 @@ Cette page de paramètres permet à l’utilisateur de changer les autorisations
 
 ## <a name="platform-implementation-specifics"></a>Caractéristiques de mise en œuvre de la plateforme
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 Les informations d’application sont tirées de `AndroidManifest.xml` pour les champs suivants :
 
-- **Build** – `android:versionCode` dans le nœud `manifest`
-- **Name** - `android:label` dans le nœud `application`
-- **PackageName** : `package` dans le nœud `manifest`
-- **VersionString** – `android:versionName` dans le nœud `application`
+- **Construire** `android:versionCode` en `manifest` nœud
+- **Name** -  Nom`android:label` dans `application` le nœud
+- **PackageName** `package` : `manifest` dans le nœud
+- **VersionString** `android:versionName` - `application` dans le nœud
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 Les informations d’application sont tirées de `Info.plist` pour les champs suivants :
 
-- **Build** – `CFBundleVersion`
-- **Name** - `CFBundleDisplayName` si défini, sinon `CFBundleName`
-- **PackageName** : `CFBundleIdentifier`
-- **VersionString** – `CFBundleShortVersionString`
+- **Construire**`CFBundleVersion`
+- **Name** -  Nom`CFBundleDisplayName` si défini, autre`CFBundleName`
+- **PackageName**:`CFBundleIdentifier`
+- **VersionString** -`CFBundleShortVersionString`
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 Les informations d’application sont tirées de `Package.appxmanifest` pour les champs suivants :
 
 - **Build** – Utilise la valeur `Build` de la `Version` sur le nœud `Identity`
-- **Name** - `DisplayName` sur le nœud `Properties`
-- **PackageName** : `Name` sur le nœud `Identity`
-- **VersionString** – `Version` sur le nœud `Identity`
+- **Name** -  Nom`DisplayName` sur `Properties` le nœud
+- **PackageName** `Name` : `Identity` sur le nœud
+- **VersionString** `Version` - `Identity` sur le nœud
 
 --------------
 

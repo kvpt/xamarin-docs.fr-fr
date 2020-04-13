@@ -8,13 +8,13 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/22/2018
 ms.openlocfilehash: 2bc8f82db29ed3c07c67293a83e6874f0cc6acb2
-ms.sourcegitcommit: 5821c9709bf5e06e6126233932f94f9cf3524577
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/31/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "75556520"
 ---
-# <a name="debug-on-the-android-emulator"></a>Déboguer sur le Émulateur Android
+# <a name="debug-on-the-android-emulator"></a>Debug sur l’émulateur Android
 
 _Dans ce guide, vous allez découvrir comment lancer un appareil virtuel dans l’émulateur Android pour déboguer et tester votre application._
 
@@ -22,7 +22,7 @@ L’émulateur Android (installé avec la charge de travail **Développement mob
 
 ## <a name="using-a-pre-configured-virtual-device"></a>Utilisation d’un appareil virtuel préconfiguré
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Visual Studio inclut des appareils virtuels préconfigurés qui s’affichent dans le menu déroulant des appareils. Par exemple, dans la capture d’écran suivante de Visual Studio 2017, plusieurs appareils virtuels préconfigurés sont disponibles :
 
@@ -38,14 +38,14 @@ Visual Studio inclut des appareils virtuels préconfigurés qui s’affichent da
 
 En règle générale, vous sélectionnez l’appareil virtuel **VisualStudio\_android-23\_x86\_phone** pour tester et déboguer une application pour téléphone. Si l’un de ces appareils virtuels préconfigurés répond à vos besoins (autrement dit, correspond au niveau d’API cible de votre application), passez directement à la section [Lancement de l’émulateur](#launching) pour commencer à exécuter votre application dans l’émulateur. (Si vous n’êtes pas encore familiarisé avec les niveaux d’API Android, consultez [Présentation des niveaux d’API Android](~/android/app-fundamentals/android-api-levels.md).)
 
-Si votre projet Xamarin.Android utilise un niveau Framework cible qui n’est pas compatible avec les appareils virtuels disponibles, le menu déroulant liste les appareils virtuels inutilisables sous **Appareils non pris en charge**. Par exemple, dans le projet suivant, le Framework cible est défini sur **Android 7.1 Nougat (API 25)** , qui n’est pas compatible avec les appareils virtuels **Android 6.0** listés dans cet exemple :
+Si votre projet Xamarin.Android utilise un niveau Framework cible qui n’est pas compatible avec les appareils virtuels disponibles, le menu déroulant liste les appareils virtuels inutilisables sous **Appareils non pris en charge**. Par exemple, dans le projet suivant, le Framework cible est défini sur **Android 7.1 Nougat (API 25)**, qui n’est pas compatible avec les appareils virtuels **Android 6.0** listés dans cet exemple :
 
-[![Appareil virtuel incompatible](debug-on-emulator-images/win/02-incompatible-level-sml.png)](debug-on-emulator-images/win/02-incompatible-level.png#lightbox)
+[![Dispositif virtuel incompatible](debug-on-emulator-images/win/02-incompatible-level-sml.png)](debug-on-emulator-images/win/02-incompatible-level.png#lightbox)
 
 Vous pouvez cliquer sur **Modifier la cible Android minimale** pour modifier la version d’Android minimale du projet afin qu’elle corresponde au niveau d’API des appareils virtuels disponibles. Vous pouvez également utiliser [Android Device Manager](~/android/get-started/installation/android-emulator/device-manager.md) pour créer des appareils virtuels qui prennent en charge votre niveau d’API cible.
 Avant de pouvoir configurer les appareils virtuels pour un nouveau niveau d’API, vous devez commencer par installer les images système correspondantes pour ce niveau d’API (consultez [Configuration du kit Android SDK pour Xamarin.Android](~/android/get-started/installation/android-sdk.md)).
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 Visual Studio pour Mac inclut des appareils virtuels préconfigurés qui s’affichent dans le menu déroulant des appareils. Par exemple, dans la capture d’écran suivante, deux appareils virtuels préconfigurés sont disponibles :
 
@@ -69,13 +69,13 @@ Pour modifier des appareils virtuels (ou en créer de nouveaux), vous devez util
 
 En haut de la fenêtre Visual Studio figure un menu déroulant avec lequel vous pouvez sélectionner le mode **Debug** ou **Release**. Si vous choisissez **Debug**, le débogueur est attaché au processus d’application en cours d’exécution dans l’émulateur après le démarrage de l’application. Si vous choisissez **Release**, le débogueur est désactivé (mais vous pouvez toujours exécuter l’application et utiliser des instructions de journal pour le débogage). Après avoir choisi un appareil virtuel dans le menu déroulant des appareils, sélectionnez le mode **Debug** ou **Release**, puis cliquez sur le bouton Lire pour exécuter l’application :
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[![Modes Debug et Mise en production, bouton Lire](debug-on-emulator-images/win/17-debug-release-sml.png)](debug-on-emulator-images/win/17-debug-release.png#lightbox)
+[![Modes Debug et Release, Bouton Jouer](debug-on-emulator-images/win/17-debug-release-sml.png)](debug-on-emulator-images/win/17-debug-release.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
-[![Modes Debug et Mise en production, bouton Lire](debug-on-emulator-images/mac/16-debug-release-sml.png)](debug-on-emulator-images/mac/16-debug-release.png#lightbox)
+[![Modes Debug et Release, Bouton Jouer](debug-on-emulator-images/mac/16-debug-release-sml.png)](debug-on-emulator-images/mac/16-debug-release.png#lightbox)
 
 -----
 
@@ -109,7 +109,7 @@ Les démarrages ultérieurs de l’appareil virtuel sont beaucoup plus rapides, 
 
 ![Chargement de l’état lors du redémarrage](debug-on-emulator-images/loading-state.png)
 
-## <a name="troubleshooting"></a>Résolution des problèmes
+## <a name="troubleshooting"></a>Dépannage
 
 Pour des conseils et des solutions de contournement aux problèmes courants d’émulateur, consultez [Résolution des problèmes d’émulateur Android](~/android/get-started/installation/android-emulator/troubleshooting.md).
 

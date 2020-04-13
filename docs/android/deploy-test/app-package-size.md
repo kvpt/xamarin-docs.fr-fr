@@ -8,17 +8,17 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/05/2018
 ms.openlocfilehash: ff1bc56ab1cf02e9e5354da94bebd0661da34bc5
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73028155"
 ---
 # <a name="application-package-size"></a>Taille des packages d'application
 
 _Cet article examine les éléments constitutifs des packages d’application Xamarin.Android, ainsi que les stratégies associées permettant de les déployer avec efficacité au cours des phases de débogage et de mise en production._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d’ensemble
 
 Xamarin.Android utilise une variété de mécanismes pour réduire la taille des package tout en conservant un débogage et un processus de déploiement de mise en production efficaces. Dans cet article, nous examinons la mise en production de Xamarin.Android et le flux de travail du déploiement de débogage, ainsi que la façon dont la plateforme Xamarin.Android assure la création et la mise en production par nos soins de petits packages d’application.
 
@@ -26,13 +26,13 @@ Xamarin.Android utilise une variété de mécanismes pour réduire la taille des
 
 Pour expédier une application entièrement contenue, le package doit inclure l’application, les bibliothèques associées, le contenu, le runtime Mono et les assemblys de bibliothèque de classes de Base (BCL) requis. Par exemple, si nous prenons le modèle par défaut de « Hello World », le contenu d’une version de package complète ressemble à ceci :
 
-[![Taille du package avant l’éditeur de liens](app-package-size-images/hello-world-package-size-before-linker.png)](app-package-size-images/hello-world-package-size-before-linker.png#lightbox)
+[![Taille du paquet avant linker](app-package-size-images/hello-world-package-size-before-linker.png)](app-package-size-images/hello-world-package-size-before-linker.png#lightbox)
 
 15,8 Mo est une taille de téléchargement supérieure à celle souhaitée. Les bibliothèques BCL sont le problème. En effet, elles incluent mscorlib, System et Mono.Android, qui fournissent un grand nombre des composants nécessaires pour exécuter votre application. Toutefois, elles fournissent également des fonctionnalités que vous n’utilisez peut-être pas dans votre application. Il peut donc être préférable d’exclure ces composants.
 
 Lorsque nous générons une application pour la distribuer, nous exécutons un processus appelé liaison, qui examine l’application et supprime tout code qui n’est pas utilisé directement. Ce processus est similaire à la fonctionnalité fournie par le [nettoyage de la mémoire](~/android/internals/garbage-collection.md) pour la mémoire allouée par tas. Mais, au lieu d’agir sur des objets, la liaison agit sur votre code. Par exemple, il y a un espace de noms entier dans System.dll pour envoyer et recevoir du courrier électronique, mais si votre application n’utilise pas cette fonctionnalité, ce code occupe inutilement de l’espace. Après l’exécution de l’éditeur de liens sur l’application Hello World, notre package ressemble maintenant à ça :
 
-[![Taille du package après l’éditeur de liens](app-package-size-images/hello-world-package-size-after-linker.png)](app-package-size-images/hello-world-package-size-after-linker.png#lightbox)
+[![Taille du paquet après lien](app-package-size-images/hello-world-package-size-after-linker.png)](app-package-size-images/hello-world-package-size-after-linker.png#lightbox)
 
 Nous voyons que cette opération supprime une quantité non négligeable de la bibliothèque BCL qui n’était pas utilisée. Notez que la taille finale de la bibliothèque BCL dépend de ce que l’application utilise réellement. Par exemple, si nous examinons un exemple d’application plus importante appelée ApiDemo, nous pouvons voir que la taille du composant BCL a augmenté, car ApiDemo utilise plus de bibliothèque BCL que Hello World :
 
@@ -48,7 +48,7 @@ Android est relativement lent pour copier et installer un package. Nous voulons 
 
 La première fois que nous déboguons sur un appareil, nous copions deux packages volumineux appelés *Runtime partagé* et *Plateforme partagée*. Runtime partagé contient le Runtime Mono et la bibliothèque BCL, tandis que Plateforme partagée contient des assemblys spécifiques au niveau d’API Android :
 
-[![Taille du package de runtime partagé](app-package-size-images/shared-runtime-package-size.png)](app-package-size-images/shared-runtime-package-size.png#lightbox)
+[![Taille du forfait runtime partagé](app-package-size-images/shared-runtime-package-size.png)](app-package-size-images/shared-runtime-package-size.png#lightbox)
 
 La copie de ces composants essentiels n’est effectuée qu’une fois, car elle prend un certain temps. Elle permet cependant à des applications ultérieures de s’exécuter en mode débogage pour les utiliser. Enfin, nous copions l’application réelle, ce qui est petite et rapide :
 

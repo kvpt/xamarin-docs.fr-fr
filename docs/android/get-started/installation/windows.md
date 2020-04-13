@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/22/2018
 ms.openlocfilehash: 0caea0c31275a7459286c143cc92ca90731dd93b
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "79304113"
 ---
 # <a name="windows-installation"></a>Installation sur un système Windows
@@ -21,7 +21,7 @@ _Ce guide décrit les étapes d’installation de Xamarin.Android pour Visual St
 ## <a name="overview"></a>Vue d’ensemble
 
 Étant donné que Xamarin est désormais inclus gratuitement dans toutes les éditions de Visual Studio et ne nécessite pas de licence supplémentaire, vous pouvez utiliser le programme d’installation de Visual Studio pour télécharger et installer les outils Xamarin.Android
-(Les étapes manuelles d’installation et de gestion des licences requises pour les versions antérieures de Xamarin. Android ne sont plus nécessaires.) Dans ce guide, vous allez apprendre ce qui suit :
+(Les étapes manuelles d’installation et de licence qui étaient nécessaires pour les versions antérieures de Xamarin.Android ne sont plus nécessaires.) Dans ce guide, vous apprendrez ce qui suit :
 
 - Configurer des emplacements personnalisés pour le Java Development Kit, le kit Android SDK et le kit Android NDK
 
@@ -45,7 +45,7 @@ Xamarin.Android utilise le JDK Java et Android SDK pour créer des application
 
 Pour la plupart des utilisateurs, ces emplacements par défaut fonctionnent sans nécessiter de modifications. Toutefois, vous pouvez souhaiter configurer des emplacements personnalisés pour ces outils dans Visual Studio (par exemple, si vous avez installé le JDK Java, Android SDK ou le NDK dans un autre emplacement). Cliquez sur **Modifier** en regard du chemin que vous souhaitez modifier, puis accédez au nouvel emplacement.
 
-Xamarin.Android utilise [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html), qui est nécessaire si vous développez des applications pour le niveau d’API 24 ou des niveaux supérieurs (JDK 8 prend également en charge les niveaux d’API antérieurs au niveau 24). Vous pouvez continuer d’utiliser [JDK 7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) si vous développez des applications spécifiquement pour le niveau d’API 23 ou des niveaux antérieurs.
+Xamarin.Android utilise [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html), qui est nécessaire si vous développez des applications pour le niveau d’API 24 et niveaux supérieurs (JDK 8 prend également en charge les niveaux d’API antérieurs au niveau 24). Vous pouvez continuer d’utiliser [JDK 7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) si vous développez des applications spécifiquement pour le niveau d’API 23 ou des niveaux antérieurs.
 
 > [!IMPORTANT]
 > Xamarin.Android ne prend pas en charge JDK 9.
@@ -55,7 +55,7 @@ Xamarin.Android utilise [JDK 8](https://www.oracle.com/technetwork/java/javase/
 Android utilise plusieurs paramètres de niveau d’API Android pour déterminer la compatibilité de votre application avec les différentes versions Android (pour plus d’informations sur les niveaux d’API Android, consultez [Présentation des niveaux d’API Android](~/android/app-fundamentals/android-api-levels.md)).
 Selon le ou les niveaux d’API Android à cibler, vous devrez peut-être télécharger et installer d’autres composants Android SDK. De plus, vous aurez peut-être à installer les outils facultatifs et les images d’émulateur fournis par Android SDK. Pour cela, utilisez le **Gestionnaire Android SDK**. Lancez le **Gestionnaire Android SDK** en cliquant sur **Outils > Android > Gestionnaire Android SDK** :
 
-[![Comment lancer le Gestionnaire Android SDK](windows-images/08-sdk-manager-sml.png)](windows-images/08-sdk-manager.png#lightbox)
+[![Comment lancer le gestionnaire Android SDK](windows-images/08-sdk-manager-sml.png)](windows-images/08-sdk-manager.png#lightbox)
 
 Par défaut, Visual Studio installe le Gestionnaire Android SDK de Google :
 
@@ -71,9 +71,9 @@ Pour plus d’informations sur l’utilisation du Gestionnaire Android SDK Xamar
 
 L’émulation d’un appareil Android sur un ordinateur implique les composants suivants :
 
-- **Google Émulateur Android** &ndash; il s’agit d’un émulateur basé sur [qemu](https://www.qemu.org/) qui crée un appareil virtualisé s’exécutant sur la station de travail du développeur.
-- **Une image d’émulateur** &ndash; une image de l' _émulateur_ est un modèle ou une spécification du matériel et du système d’exploitation qui est destiné à être virtualisé. Par exemple, une image d’émulateur identifie la configuration matérielle requise d’un appareil Nexus 5X exécutant Android 7.0 avec Google Play Services installé. Une autre image d’émulateur peut être une tablette 10 pouces exécutant Android 6.0.
-- L' **appareil virtuel Android (AVD)** &ndash; un _appareil virtuel Android_ est un appareil Android émulé créé à partir d’une image d’émulateur. Quand vous exécutez et testez des applications Android, Xamarin.Android démarre l’émulateur Android qui démarre un AVD spécifique, installe l’APK, puis exécute l’application.
+- **Google Android Emulator** &ndash; Il s’agit d’un émulateur basé sur [QEMU](https://www.qemu.org/) qui crée un appareil virtualisé fonctionnant sur le poste de travail du développeur.
+- **Une image d’émulateur** &ndash; Une _image d’émulateur_ est un modèle ou une spécification du matériel et du système d’exploitation qui est censé être virtualisé. Par exemple, une image d’émulateur identifie la configuration matérielle requise d’un appareil Nexus 5X exécutant Android 7.0 avec Google Play Services installé. Une autre image d’émulateur peut être une tablette 10 pouces exécutant Android 6.0.
+- **Appareil virtuel Android (AVD)** &ndash; Un _appareil virtuel Android_ est un appareil Android imité créé à partir d’une image d’émulateur. Quand vous exécutez et testez des applications Android, Xamarin.Android démarre l’émulateur Android qui démarre un AVD spécifique, installe l’APK, puis exécute l’application.
 
 Vous pouvez considérablement améliorer les performances en cas de développement sur des ordinateurs x86 en utilisant des images d’émulateur spéciales optimisées pour l’architecture x86 ainsi que l’une des deux technologies de virtualisation :
 
@@ -99,11 +99,11 @@ Maintenant que vous avez installé Xamarin.Android, vous pouvez lancer Visual St
 
 Dans la boîte de dialogue **Nouveau projet**, sélectionnez **Android** sous **Modèles**, puis cliquez sur **Application Android** dans le volet droit. Entrez un nom pour votre application (dans la capture d’écran ci-dessous, l’application se nomme **MyApp**), puis cliquez sur **OK** :
 
-[![Capture d’écran de la boîte de dialogue Nouveau projet - Création d’une application Android vide](windows-images/11-first-app-sml.w157.png)](windows-images/11-first-app.w157.png#lightbox)
+[![Capture d’écran du dialogue new Project, création d’une application Android vierge](windows-images/11-first-app-sml.w157.png)](windows-images/11-first-app.w157.png#lightbox)
 
 Et voilà ! Vous êtes maintenant prêt à utiliser Xamarin.Android pour créer des applications Android !
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Dans cet article, vous avez appris à configurer et à installer la plateforme Xamarin.Android sur un système Windows. Vous avez également vu comment configurer des emplacements d’installation personnalisés pour le JDK Java et Android SDK dans Visual Studio (facultatif), comment lancer le Gestionnaire Android SDK pour installer des composants Android SDK supplémentaires, comment configurer un émulateur et un appareil Android, et comment créer votre première application.
 
@@ -111,10 +111,10 @@ Dans la prochaine étape, vous allez étudier les didacticiels [Hello, Android](
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Téléchargez Visual Studio](https://visualstudio.microsoft.com/vs/)
+- [Télécharger Visual Studio](https://visualstudio.microsoft.com/vs/)
 - [Installation de Visual Studio Tools pour Xamarin](~/get-started/installation/windows.md)
-- [Configuration requise](~/cross-platform/get-started/requirements.md)
+- [Exigences du système](~/cross-platform/get-started/requirements.md)
 - [Configuration du kit Android SDK](~/android/get-started/installation/android-sdk.md)
 - [Configuration de l’émulateur Android](~/android/get-started/installation/android-emulator/index.md)
-- [Configurer un appareil pour le développement](~/android/get-started/installation/set-up-device-for-development.md)
+- [Configuration de l’appareil pour le développement](~/android/get-started/installation/set-up-device-for-development.md)
 - [Exécuter des applications sur l’émulateur Android](https://developer.android.com/studio/run/emulator#Requirements)

@@ -8,21 +8,21 @@ author: davidortinau
 ms.author: daortin
 ms.date: 10/19/2016
 ms.openlocfilehash: 40d849ad403f2f47c00be9d3da7b59fc27ce8002
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "76725491"
 ---
 # <a name="debugging-a-native-crash-in-a-xamarinmac-app"></a>Débogage d’un plantage natif dans une application Xamarin.Mac
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d’ensemble
 
 Des erreurs de programmation peuvent parfois provoquer des plantages dans le runtime Objective-C natif. Contrairement aux exceptions de C#, celles-ci ne pointent pas sur une ligne spécifique de votre code que vous pouvez localiser pour la corriger. Elles peuvent parfois être faciles à trouver et à corriger, mais aussi parfois extrêmement difficiles à localiser.
 
 Passons en revue quelques exemples de plantages natifs réels.
 
-## <a name="example-1-assertion-failure"></a>Exemple 1 : Échec d’assertion
+## <a name="example-1-assertion-failure"></a>Exemple 1 : Échec d’assertion
 
 Voici les quelques premières lignes d’un plantage dans une application de test simple (ces informations se trouvent dans le panneau **Sortie de l’application**) :
 
@@ -61,7 +61,7 @@ public override nfloat GetRowHeight (NSTableView tableView, nint row)
 }
 ```
 
-## <a name="example-2-callback-jumped-into-middle-of-nowhere"></a>Exemple 2 : Un rappel aboutit au milieu de nulle part
+## <a name="example-2-callback-jumped-into-middle-of-nowhere"></a>Exemple 2 : Un rappel aboutit au milieu de nulle part
 
 ```csharp
 Stacktrace:
@@ -134,7 +134,7 @@ Le `NSButton` retourné par `StandardWindowButton()` était nettoyé même si un
 
 Même si ce n’était pas la cause racine de ce problème particulier, des traces de pile comme celle-ci peuvent également être provoquées par des signatures de méthode incorrectes dans les fonctions `[Export]` vers Objective-C. Par exemple, si une méthode attend qu’un paramètre soit `out string` et que vous le tapez en `string`, un plantage peut se produire de la même façon.
 
-## <a name="example-3-callbacks-and-managed-objects"></a>Exemple 3 : Rappels et objets managés
+## <a name="example-3-callbacks-and-managed-objects"></a>Exemple 3 : Rappels et objets gérés
 
 De nombreuses API Cocoa impliquent d’être « rappelées » par la bibliothèque quand un événement se produit, ce qui vous donne l’opportunité de répondre, ou quand des données sont nécessaires pour effectuer une tâche. Même si vous pensez principalement aux modèles **Delegate** et **DataSource**, il existe une multitude d’API qui fonctionnent de cette manière. Par exemple, quand vous remplacez les méthodes d’un `NSView`, puis que vous l’insérez dans l’arborescence d’éléments visuels, vous vous attendez à ce que AppKit vous rappelle quand certains événements se produisent.
 
@@ -179,7 +179,7 @@ new System.Threading.Thread (() =>
 
 Ceci force votre application à exécuter le Garbage Collector toutes les secondes. Réexécutez votre application et essayez de reproduire le bogue. Si elle plante tout de suite, ou de façon cohérente et non aléatoire, vous êtes sur la bonne voie.
 
-### <a name="reporting"></a>Rapports
+### <a name="reporting"></a>Signalement
 
 L’étape suivante consiste à signaler le problème à Xamarin, pour que la liaison puisse être corrigée dans les versions futures. Si vous êtes détenteur d’une licence professionnelle ou d’entreprise, ouvrez un ticket sur
 

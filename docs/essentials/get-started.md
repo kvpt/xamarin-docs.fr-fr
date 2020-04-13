@@ -7,10 +7,10 @@ ms.author: jamont
 ms.custom: video
 ms.date: 07/10/2019
 ms.openlocfilehash: 251c1b8102327093fcb142ca056743f00618f81b
-ms.sourcegitcommit: f43d5ecafd19cbc5cce39201916a83927a34617a
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/02/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "78214971"
 ---
 # <a name="get-started-with-xamarinessentials"></a>Bien démarrer avec Xamarin.Essentials
@@ -19,16 +19,16 @@ Xamarin.Essentials fournit une API inter-plateformes unique qui fonctionne avec 
 
 ## <a name="installation"></a>Installation
 
-Xamarin. Essentials est disponible sous la forme d’un package NuGet et est inclus dans chaque nouveau projet dans Visual Studio. Il peut également être ajouté à tout à l’aide de Visual Studio, en suivant les étapes ci-dessous.
+Xamarin.Essentials est disponible sous forme de forfait NuGet et est inclus dans chaque nouveau projet dans Visual Studio. Il peut également être ajouté à n’importe quel studio visuel existant avec les étapes suivantes.
 
 1. Téléchargez et installez [Visual Studio](https://visualstudio.microsoft.com/) avec [Visual Studio Tools pour Xamarin](~/get-started/installation/index.md).
 
-2. Ouvrez un projet existant ou créez un projet à l’aide du modèle d’application vide sous **Visual Studio C#**  (Android, iPhone et iPad ou inter-plateformes).
+2. Ouvrez un projet existant ou créez un projet à l’aide du modèle d’application vide sous **Visual Studio C# ** (Android, iPhone et iPad ou inter-plateformes).
 
     > [!IMPORTANT]
     > En cas d’ajout à un projet UWP, vérifiez que la build 16299 ou ultérieure est définie dans les propriétés du projet.
 
-3. Ajouter le package NuGet [**Xamarin.Essentials**](https://www.nuget.org/packages/Xamarin.Essentials/) à chaque projet :
+3. Ajoutez le forfait [**Xamarin.Essentials**](https://www.nuget.org/packages/Xamarin.Essentials/) NuGet à chaque projet :
 
     <!--markdownlint-disable MD023 -->
     # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
@@ -37,7 +37,7 @@ Xamarin. Essentials est disponible sous la forme d’un package NuGet et est inc
 
     # <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
-    Dans le volet Explorateur de solutions, cliquez avec le bouton droit sur le nom du projet, puis sélectionnez **ajouter > ajouter des packages NuGet...** . Recherchez **Xamarin. Essentials** et installez le package dans **tous les** projets, y compris les bibliothèques Android, iOS et .NET standard.
+    Dans le panneau Solution Explorer, cliquez à droite sur le nom du projet et sélectionnez **Ajouter > Ajouter des forfaits NuGet...**. Recherchez **Xamarin.Essentials** et installez le paquet dans **TOUS les** projets, y compris les bibliothèques Android, iOS et .NET Standard.
 
     -----
 
@@ -51,9 +51,9 @@ Xamarin. Essentials est disponible sous la forme d’un package NuGet et est inc
 
     # <a name="android"></a>[Android](#tab/android)
 
-    Xamarin.Essentials prend en charge une version minimale d’Android 4.4, correspondant au niveau d’API 19, mais la version Android cible pour la compilation doit être 9.0, correspondant au niveau de l’API 28. (Dans Visual Studio, ces deux versions sont définies dans la boîte de dialogue Propriétés du projet pour le projet Android, sous l’onglet manifeste Android. Dans Visual Studio pour Mac, ils sont définis dans la boîte de dialogue Options du projet pour le projet Android, sous l’onglet application Android.)
+    Xamarin.Essentials prend en charge une version minimale d’Android 4.4, correspondant au niveau d’API 19, mais la version Android cible pour la compilation doit être 9.0, correspondant au niveau de l’API 28. (Dans Visual Studio, ces deux versions sont définies dans le dialogue Project Properties pour le projet Android, dans l’onglet Android Manifest. Dans Visual Studio pour Mac, ils sont placés dans le dialogue Project Options pour le projet Android, dans l’onglet Application Android.)
 
-    Xamarin. Essentials installe la version 28.0.0.3 des bibliothèques Xamarin. Android. support nécessaires. Toutes les autres bibliothèques Xamarin. Android. support requises par votre application doivent également être mises à jour vers la version 28.0.0.3 à l’aide du gestionnaire de package NuGet. Toutes les bibliothèques Xamarin. Android. support utilisées par votre application doivent être identiques et doivent avoir au moins la version 28.0.0.3. Consultez la [page Résolution des problèmes](troubleshooting.md) si vous rencontrez des problèmes d’ajout du package NuGet Xamarin.Essentials ou de mise à jour des packages NuGet dans votre solution.
+    Xamarin.Essentials installe la version 28.0.0.3 des bibliothèques Xamarin.Android.Support dont il a besoin. Toute autre bibliothèque Xamarin.Android.Support dont votre application a besoin doit également être mise à jour à la version 28.0.0.3 à l’aide du gestionnaire de paquets NuGet. Toutes les bibliothèques Xamarin.Android.Support utilisées par votre application doivent être les mêmes, et doivent être au moins la version 28.0.0.3. Consultez la [page Résolution des problèmes](troubleshooting.md) si vous rencontrez des problèmes d’ajout du package NuGet Xamarin.Essentials ou de mise à jour des packages NuGet dans votre solution.
 
     Dans `MainLauncher` pour le projet Android ou n’importe quel `Activity` qui est lancé Xamarin.Essentials doit être initialisé dans la méthode `OnCreate` :
 
@@ -94,7 +94,7 @@ Xamarin. Essentials est disponible sous la forme d’un package NuGet et est inc
 
 ## <a name="other-resources"></a>Autres ressources
 
-Nous recommandons aux développeurs qui découvrent Xamarin de consulter [Bien démarrer avec le développement de Xamarin](~/cross-platform/getting-started/index.md).
+Nous recommandons aux développeurs nouveaux à Xamarin visite [de commencer avec le développement Xamarin](~/cross-platform/getting-started/index.md).
 
 Consultez le [référentiel GitHub Xamarin.Essentials](https://github.com/xamarin/Essentials) pour afficher le code source actuel, ce qui se prépare, des exemples d’exécution et pour cloner le référentiel. Les contributions de la communauté sont les bienvenues !
 

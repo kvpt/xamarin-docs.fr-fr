@@ -8,20 +8,20 @@ author: davidortinau
 ms.author: daortin
 ms.date: 11/10/2017
 ms.openlocfilehash: a5a759ae9f156eec71706d9681fac2a94995848e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73021677"
 ---
 # <a name="xamarinmac-performance"></a>Performances de Xamarin.Mac
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d’ensemble
 
 Les applications Xamarin.Mac sont similaires aux applications Xamarin.iOS, et la plupart des mêmes suggestions relatives aux performances leur sont applicables :
 
-- [Niveau de performance de Xamarin.iOS](~/ios/deploy-test/performance.md)
-- [Niveau de performance multiplateforme](~/cross-platform/deploy-test/memory-perf-best-practices.md)
+- [Performances Xamarin.iOS](~/ios/deploy-test/performance.md)
+- [Performances cross-plateforme](~/cross-platform/deploy-test/memory-perf-best-practices.md)
 
 mais un certain nombre de suggestions spécifiques à macOS peuvent être utiles.
 
@@ -61,7 +61,7 @@ Autant que possible, utilisez [async](~/cross-platform/platform/async.md) et des
 
 Pour les opérations dont l’exécution est longue, utilisez [NSProgressIndicator](https://docs.microsoft.com/samples/xamarin/mac-samples/progressbarexample) ou d’autres options signalées dans les recommandations [HIG (Human Interface Guidelines)](https://developer.apple.com/macos/human-interface-guidelines/indicators/progress-indicators/) d’Apple pour avertir les utilisateurs.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
-- [Niveau de performance multiplateforme](~/cross-platform/deploy-test/memory-perf-best-practices.md)
-- [Niveau de performance de Xamarin.iOS](~/ios/deploy-test/performance.md)
+- [Performances cross-plateforme](~/cross-platform/deploy-test/memory-perf-best-practices.md)
+- [Performances Xamarin.iOS](~/ios/deploy-test/performance.md)

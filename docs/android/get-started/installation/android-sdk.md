@@ -8,17 +8,17 @@ author: davidortinau
 ms.author: daortin
 ms.date: 08/09/2018
 ms.openlocfilehash: 6e80daf2be1b672dc7d0de3e303dfb9261c10472
-ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "76940916"
 ---
 # <a name="setting-up-the-android-sdk-for-xamarinandroid"></a>Configuration du kit Android SDK pour Xamarin.Android
 
 _Visual Studio inclut Android SDK Manager que vous utilisez pour télécharger les outils, les plateformes et d’autres composants du kit Android SDK dont vous avez besoin pour développer des applications Xamarin.Android._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d’ensemble
 
 Ce guide explique comment utiliser Xamarin Android SDK Manager dans Visual Studio pour Mac.
 
@@ -27,7 +27,7 @@ Ce guide explique comment utiliser Xamarin Android SDK Manager dans Visual Studi
 
 Xamarin Android SDK Manager (installé avec la charge de travail du**développement mobile avec .NET**) vous permet de télécharger les derniers composants Android dont vous avez besoin pour développer votre application Xamarin.Android. Il remplace le Gestionnaire du kit SDK autonome de Google, qui a été déprécié.
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 ## <a name="requirements"></a>Spécifications
 
@@ -54,7 +54,7 @@ Le Gestionnaire Xamarin Android SDK requiert également le Kit de développemen
 
 Pour démarrer le Gestionnaire du kit SDK dans Visual Studio, cliquez sur **Outils > Android  > Gestionnaire Android SDK** :
 
-[![Emplacement de l’élément de menu Gestionnaire Android SDK](android-sdk-images/win/02-sdk-manager-menu-item-sml.png)](android-sdk-images/win/02-sdk-manager-menu-item.png#lightbox)
+[![Emplacement de l’élément de menu Android SDK Manager](android-sdk-images/win/02-sdk-manager-menu-item-sml.png)](android-sdk-images/win/02-sdk-manager-menu-item.png#lightbox)
 
 Le Gestionnaire Android SDK s’ouvre dans l’écran **Kits Android SDK et outils**. Cet écran comporte deux onglets &ndash; **Plateformes** et **Outils** :
 
@@ -93,22 +93,22 @@ Cliquez sur **Accepter** si vous acceptez les Conditions générales. En bas de 
 
 ### <a name="platforms-tab"></a>Onglet Plateformes
 
-L’onglet **Plateformes** affiche une liste des versions de kit SDK avec d’autres ressources (comme des images système) pour chaque plateforme :
+**L’onglet Plates-formes** affiche une liste de versions SDK de plate-forme ainsi que d’autres ressources (comme les images système) pour chaque plate-forme :
 
-[![Capture d’écran du volet Plateformes](android-sdk-images/win/08-platforms-pane-sml.png)](android-sdk-images/win/08-platforms-pane.png#lightbox)
+[![Capture d’écran du volet Plates-formes](android-sdk-images/win/08-platforms-pane-sml.png)](android-sdk-images/win/08-platforms-pane.png#lightbox)
 
 Cet écran liste la version Android (comme **Android 8.0**), le nom de code (**Oreo**), le niveau d’API (tel que **26**) et la taille des composants de cette plateforme (comme **1 Go**). Utilisez l’onglet **Plateformes** afin d’installer des composants pour le niveau d’API Android que vous souhaitez cibler. Pour plus d’informations sur les versions Android et les niveaux d’API, consultez [Présentation des niveaux d’API Android](~/android/app-fundamentals/android-api-levels.md).
 
-Quand tous les composants d’une plateforme sont installés, une coche apparaît en regard du nom de la plateforme. Si tous les composants d’une plateforme ne sont pas installés, la case de cette plateforme est noircie. Vous pouvez développer une plateforme pour voir ses composants (et ceux qui sont installés) en cliquant sur le signe **+** à gauche de la plateforme.
-Cliquez sur **-** pour réduire la liste de composants d’une plateforme.
+Quand tous les composants d’une plateforme sont installés, une coche apparaît en regard du nom de la plateforme. Si tous les composants d’une plateforme ne sont pas installés, la case de cette plateforme est noircie. Vous pouvez étendre une plate-forme pour voir ses composants (et **+** quels composants sont installés) en cliquant sur la boîte à gauche de la plate-forme.
+Cliquez **-** pour unxpand la liste des composants pour une plate-forme.
 
 Pour ajouter une autre plateforme au kit SDK, cliquez sur la case en regard de la plateforme jusqu'à ce qu’une coche apparaisse afin d’installer l’ensemble de ses composants, puis cliquez sur **Appliquer les modifications** :
 
-[![Exemple d’ajout des composants Android 7.1 Nougat au kit Android SDK](android-sdk-images/win/09-adding-a-platform-sml.png)](android-sdk-images/win/09-adding-a-platform.png#lightbox)
+[![Exemple d’ajout de composants Android 7.1 Nougat à l’Android SDK](android-sdk-images/win/09-adding-a-platform-sml.png)](android-sdk-images/win/09-adding-a-platform.png#lightbox)
 
 Pour installer uniquement des composants spécifiques, cliquez une fois sur la case en regard de la plateforme. Vous pouvez ensuite sélectionner les composants individuels dont vous avez besoin :
 
-[![Exemple d’ajout de certains composants d’Android 7.1](android-sdk-images/win/10-adding-some-components-sml.png)](android-sdk-images/win/10-adding-some-components.png#lightbox)
+[![Exemple d’ajout de certains composants Android 7.1](android-sdk-images/win/10-adding-some-components-sml.png)](android-sdk-images/win/10-adding-some-components.png#lightbox)
 
 Notez que le nombre de composants à installer s’affiche en regard du bouton **Appliquer les modifications**. Après avoir cliqué sur le bouton **Appliquer les modifications**, l’écran **Acceptation de la licence** s’affiche, comme montré plus tôt.
 Cliquez sur **Accepter** si vous acceptez les Conditions générales. Cette boîte de dialogue peut s’afficher plusieurs fois si plusieurs composants sont installés. En bas de la fenêtre, une barre de progression indique l’avancement du téléchargement et de l’installation. Lorsque le processus de téléchargement et d’installation est terminé (cela peut prendre plusieurs minutes, selon le nombre de composants qui doivent être téléchargés), les composants ajoutés sont marqués avec une coche et répertoriés comme **Installé**.
@@ -117,13 +117,13 @@ Cliquez sur **Accepter** si vous acceptez les Conditions générales. Cette boî
 
 Par défaut, le Gestionnaire Android SDK télécharge les composants et les outils de la plateforme à partir d’un référentiel géré par Microsoft. Si vous avez besoin d’accéder aux plateformes et outils alpha/bêta expérimentaux qui ne sont pas encore disponibles dans le référentiel Microsoft, vous pouvez basculer le Gestionnaire SDK pour que celui-ci utilise le référentiel Google. Pour effectuer ce basculement, cliquez sur l’icône d’engrenage en bas à droite et sélectionnez **Référentiel > Google (non pris en charge)**  :
 
-[![Sélection du référentiel Google](android-sdk-images/win/11-google-repo-w157-sml.png)](android-sdk-images/win/11-google-repo-w157.png#lightbox)
+[![Sélection du référentiel de Google](android-sdk-images/win/11-google-repo-w157-sml.png)](android-sdk-images/win/11-google-repo-w157.png#lightbox)
 
-Lorsque le référentiel Google est sélectionné, des packages supplémentaires peuvent apparaître sous l’onglet **Plateformes**, qui n’étaient pas disponibles précédemment. (Dans la capture d’écran ci-dessus, **Android SDK Platform 28** a été ajouté en basculant vers le référentiel Google.) N’oubliez pas que l’utilisation du référentiel Google n’est pas prise en charge et qu’elle n’est donc pas recommandée pour le développement de tous les jours.
+Lorsque le référentiel Google est sélectionné, des packages supplémentaires peuvent apparaître sous l’onglet **Plateformes**, qui n’étaient pas disponibles précédemment. (Dans la capture d’écran ci-dessus, **Android SDK Platform 28** a été ajouté en passant au référentiel Google.) Gardez à l’esprit que l’utilisation du référentiel Google n’est pas pris en compte et n’est donc pas recommandée pour le développement quotidien.
 
-Pour revenir au référentiel pris en charge de plateformes et d’outils, cliquez sur **Microsoft (recommandé)** . Cette opération restaure la liste des packages et des outils à la sélection par défaut.
+Pour revenir au référentiel pris en charge de plateformes et d’outils, cliquez sur **Microsoft (recommandé)**. Cette opération restaure la liste des packages et des outils à la sélection par défaut.
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 ## <a name="requirements"></a>Spécifications
 
@@ -146,7 +146,7 @@ Le Gestionnaire Xamarin Android SDK requiert également le Kit de développemen
 
 Pour démarrer le Gestionnaire du kit SDK dans Visual Studio pour Mac, cliquez sur **Outils > SDK Manager** :
 
-[![Emplacement de l’élément de menu Gestionnaire Android SDK](android-sdk-images/mac/01-sdk-manager-menu-item-m75-sml.png)](android-sdk-images/mac/01-sdk-manager-menu-item-m75.png#lightbox)
+[![Emplacement de l’élément de menu Android SDK Manager](android-sdk-images/mac/01-sdk-manager-menu-item-m75-sml.png)](android-sdk-images/mac/01-sdk-manager-menu-item-m75.png#lightbox)
 
 Le **Gestionnaire Android SDK** s’ouvre dans la **fenêtre Préférences**, qui contient trois onglets, **Plateformes**, **Outils**et **Emplacements** :
 
@@ -183,9 +183,9 @@ Cliquez sur **Accepter** si vous acceptez les Conditions générales. En bas de 
 
 ### <a name="platforms-tab"></a>Onglet Plateformes
 
-L’onglet **Plateformes** affiche une liste des versions de kit SDK avec d’autres ressources (comme des images système) pour chaque plateforme :
+**L’onglet Plates-formes** affiche une liste de versions SDK de plate-forme ainsi que d’autres ressources (comme les images système) pour chaque plate-forme :
 
-[![Capture d’écran du volet Plateformes](android-sdk-images/mac/06-platforms-tab-m75-sml.png)](android-sdk-images/mac/06-platforms-tab-m75.png#lightbox)
+[![Capture d’écran du volet Plates-formes](android-sdk-images/mac/06-platforms-tab-m75-sml.png)](android-sdk-images/mac/06-platforms-tab-m75.png#lightbox)
 
 Cet écran liste la version Android (comme **Android 8.1**), le nom de code (**Oreo**), le niveau d’API (tel que **27**) et la taille des composants de cette plateforme (comme **1 Go**). Utilisez l’onglet **Plateformes** afin d’installer des composants pour le niveau d’API Android que vous souhaitez cibler. Pour plus d’informations sur les versions Android et les niveaux d’API, consultez [Présentation des niveaux d’API Android](~/android/app-fundamentals/android-api-levels.md).
 
@@ -194,11 +194,11 @@ Cliquez sur la **flèche vers le bas** pour réduire la liste de composants d’
 
 Pour ajouter une autre plateforme au kit SDK, cliquez sur la case en regard de la plateforme jusqu'à ce qu’une coche apparaisse afin d’installer l’ensemble de ses composants, puis cliquez sur **Appliquer les modifications** :
 
-[![Exemple d’ajout de tous les composants d’une plateforme](android-sdk-images/mac/07-install-all-m75-sml.png)](android-sdk-images/mac/07-install-all-m75.png#lightbox)
+[![Exemple d’ajout de tous les composants d’une plate-forme](android-sdk-images/mac/07-install-all-m75-sml.png)](android-sdk-images/mac/07-install-all-m75.png#lightbox)
 
 Pour installer uniquement quelques composants, cliquez une fois sur la case en regard de la plateforme. Vous pouvez ensuite sélectionner les composants individuels dont vous avez besoin :
 
-[![Exemple d’ajout de quelques composants](android-sdk-images/mac/08-individual-components-m75-sml.png)](android-sdk-images/mac/08-individual-components-m75.png#lightbox)
+[![Exemple d’ajout de certains composants](android-sdk-images/mac/08-individual-components-m75-sml.png)](android-sdk-images/mac/08-individual-components-m75.png#lightbox)
 
 Notez que le nombre de composants à installer s’affiche en regard du bouton **Appliquer les modifications**. Après avoir cliqué sur le bouton **Appliquer les modifications**, l’écran **Acceptation de la licence** s’affiche, comme montré plus tôt.
 Cliquez sur **Accepter** si vous acceptez les Conditions générales. Cette boîte de dialogue peut s’afficher plusieurs fois si plusieurs composants sont installés. En bas de la fenêtre, une barre de progression indique l’avancement du téléchargement et de l’installation. Lorsque le processus de téléchargement et d’installation est terminé (cela peut prendre plusieurs minutes, selon le nombre de composants qui doivent être téléchargés), les composants ajoutés sont marqués avec une coche et répertoriés comme **Installé**.
@@ -207,11 +207,11 @@ Cliquez sur **Accepter** si vous acceptez les Conditions générales. Cette boî
 
 Par défaut, le Gestionnaire Android SDK télécharge les composants et les outils de la plateforme à partir d’un référentiel géré par Microsoft. Si vous avez besoin d’accéder aux plateformes et outils alpha/bêta expérimentaux qui ne sont pas encore disponibles dans le référentiel Microsoft, vous pouvez basculer le Gestionnaire SDK pour que celui-ci utilise le référentiel Google. Pour effectuer ce basculement, cliquez sur l’icône d’engrenage en bas à droite et sélectionnez **Référentiel > Google (non pris en charge)**  :
 
-[![Sélection du référentiel Google](android-sdk-images/mac/09-google-repo-m75-sml.png)](android-sdk-images/mac/09-google-repo-m75.png#lightbox)
+[![Sélection du référentiel de Google](android-sdk-images/mac/09-google-repo-m75-sml.png)](android-sdk-images/mac/09-google-repo-m75.png#lightbox)
 
-Lorsque le référentiel Google est sélectionné, des packages supplémentaires peuvent apparaître sous l’onglet **Plateformes**, qui n’étaient pas disponibles précédemment. (Dans la capture d’écran ci-dessus, **Android SDK Platform 28** a été ajouté en basculant vers le référentiel Google.) N’oubliez pas que l’utilisation du référentiel Google n’est pas prise en charge et qu’elle n’est donc pas recommandée pour le développement de tous les jours.
+Lorsque le référentiel Google est sélectionné, des packages supplémentaires peuvent apparaître sous l’onglet **Plateformes**, qui n’étaient pas disponibles précédemment. (Dans la capture d’écran ci-dessus, **Android SDK Platform 28** a été ajouté en passant au référentiel Google.) Gardez à l’esprit que l’utilisation du référentiel Google n’est pas pris en compte et n’est donc pas recommandée pour le développement quotidien.
 
-Pour revenir au référentiel pris en charge de plateformes et d’outils, cliquez sur **Microsoft (recommandé)** . Cette opération restaure la liste des packages et des outils à la sélection par défaut.
+Pour revenir au référentiel pris en charge de plateformes et d’outils, cliquez sur **Microsoft (recommandé)**. Cette opération restaure la liste des packages et des outils à la sélection par défaut.
 
 -----
 
@@ -219,7 +219,7 @@ Pour revenir au référentiel pris en charge de plateformes et d’outils, cliqu
 
 Dans ce guide, vous avez appris à installer et utiliser l’outil Xamarin Android SDK Manager pour Visual Studio et Visual Studio pour Mac.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Présentation des niveaux d’API d’Android](~/android/app-fundamentals/android-api-levels.md)
 - [Modifications des outils Android SDK](~/android/troubleshooting/sdk-cli-tooling-changes.md)

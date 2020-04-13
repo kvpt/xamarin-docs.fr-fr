@@ -8,15 +8,15 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/15/2017
 ms.openlocfilehash: 54fcc3bb683f6ca4515d807da5c3345cf71a2df3
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "79304659"
 ---
 # <a name="apple-pay-capabilities-in-xamarinios"></a>Fonctionnalités Apple Pay dans Xamarin.iOS
 
-_L’ajout de fonctionnalités à une application nécessite souvent une configuration d’approvisionnement supplémentaire. Ce guide explique la configuration requise pour les fonctionnalités de Apple Pay._
+_L’ajout de capacités à une application nécessite souvent une configuration d’approvisionnement supplémentaire. Ce guide explique la configuration nécessaire pour les capacités Apple Pay._
 
 Apple Pay permet aux utilisateurs de payer des marchandises physiques à partir de leur appareil iOS. Cette section décrit comment créer tous les composants nécessaires pour Apple Pay dans le developer center d’Apple.
 
@@ -44,7 +44,7 @@ Un ID de marchand permet à Apple Pay de savoir que vous acceptez les paiements.
 
     ![Détails du nouvel ID de marchand](apple-pay-capabilities-images/image58.png)
 
-4. Vérifiez les informations, puis **inscrivez** votre ID : 
+4. Confirmez les détails et **enregistrez** votre pièce d’identité : 
 
     ![Confirmation de l’ID de marchand](apple-pay-capabilities-images/image59.png)
 
@@ -52,11 +52,11 @@ Un ID de marchand permet à Apple Pay de savoir que vous acceptez les paiements.
 
 ## <a name="create-an-app-id-with-the-apple-pay-capability-that-includes-the-merchant-id"></a>Créer un ID d’application avec la fonctionnalité Apple Pay contenant l’ID de marchand
 
-1. Dans le [developer center](https://developer.apple.com/account/), cliquez sur **App IDs** sous **Identifiers** :
+1. Dans le [Developer Center](https://developer.apple.com/account/) cliquez sur **les identifiants d’application** sous **Identifiers**:
 
     ![Sélectionner l’ID d’application dans le developer center](apple-pay-capabilities-images/image6.png)
 
-2. Sélectionnez le bouton **+** pour ajouter un nouvel ID d’application :
+2. Sélectionnez **+** le bouton pour ajouter un nouvel ID App :
 
     ![Bouton d’ajout d’un nouvel ID d’application](apple-pay-capabilities-images/image27.png)
 
@@ -76,7 +76,7 @@ Un ID de marchand permet à Apple Pay de savoir que vous acceptez les paiements.
 
     ![Modifier l’ID d’application](apple-pay-capabilities-images/image38.png)
 
-7. Faites défiler cette section développée jusqu’en bas et cliquez sur **Edit**.
+7. Faites défiler vers le bas vers le bas de cette section élargie et cliquez sur **Edit**.
 8. Faites défiler la liste pour afficher Apple Pay et cliquez sur le bouton **Edit** :  
 
     ![Détails de la modification de l’ID d’application pour Apple Pay](apple-pay-capabilities-images/image39.png)
@@ -89,7 +89,7 @@ Un ID de marchand permet à Apple Pay de savoir que vous acceptez les paiements.
 
     ![Écran de confirmation](apple-pay-capabilities-images/image41.png)
 
-Cet ID d’application peut maintenant être utilisé pour générer ou regénérer un nouveau profil de provisionnement, comme décrit dans le guide [Utilisation des fonctionnalités](~/ios/deploy-test/provisioning/capabilities/index.md).
+Cet ID App peut maintenant être utilisé pour générer, ou pour recréer, un nouveau profil de provisionnement, tel que décrit dans le guide [Working with Capabilities.](~/ios/deploy-test/provisioning/capabilities/index.md)
 
 <a name="certificate" />
 
@@ -153,7 +153,7 @@ Pour plus d’informations sur l’utilisation d’Apple Pay, consultez le guide
 S’il y a lieu, effectuez les étapes supplémentaires décrites ci-après :
 
 * Utilisez l’espace de noms de framework dans votre application.
-* Ajoutez les droits nécessaires à votre application. Pour obtenir des informations détaillées sur les droits nécessaires et leur ajout, consultez le guide [Utilisation de droits](~/ios/deploy-test/provisioning/entitlements.md).
-* Dans la section  **Signature du bundle iOS** de l’application, vérifiez que le paramètre  **Droits personnalisés** a la valeur **Entitlements.plist**. Ce n’est _pas_ le paramètre par défaut pour les builds de débogage et de simulateur iOS.
+* Ajoutez les droits requis à votre application. Pour obtenir des informations détaillées sur les droits nécessaires et leur ajout, consultez le guide [Utilisation de droits](~/ios/deploy-test/provisioning/entitlements.md).
+* Dans la section  **Signature du bundle iOS** de l’application, vérifiez que le paramètre  **Droits personnalisés** a la valeur **Entitlements.plist**.Ce _n’est pas_ le paramètre par défaut pour Debug et iOS Simulator construit.
 
 Si vous rencontrez des problèmes avec les services d’application, consultez la section [Dépannage](~/ios/deploy-test/provisioning/capabilities/index.md) du guide principal.

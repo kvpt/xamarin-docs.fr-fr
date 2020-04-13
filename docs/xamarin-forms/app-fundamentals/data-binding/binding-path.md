@@ -8,17 +8,17 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
 ms.openlocfilehash: 79d8df3300b302512a7de4140968dbc4c8e79abc
-ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "76940340"
 ---
 # <a name="xamarinforms-binding-path"></a>Liaison de données Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+[![Télécharger](~/media/shared/download.png) l’échantillon Télécharger l’échantillon](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
-Dans tous les exemples précédents de liaison de données, la propriété [`Path`](xref:Xamarin.Forms.Binding.Path) de la classe `Binding` (ou la propriété [`Path`](xref:Xamarin.Forms.Xaml.BindingExtension.Path) de l’extension de balisage `Binding`) a été définie sur une propriété unique. Il est en fait possible de définir `Path` sur une *sous-propriété* (une propriété d’une propriété) ou un membre d’une collection.
+Dans tous les exemples antérieurs de `Binding` liaison de [`Path`](xref:Xamarin.Forms.Xaml.BindingExtension.Path) données, `Binding` la [`Path`](xref:Xamarin.Forms.Binding.Path) propriété de la classe (ou la propriété de l’extension de balisage) a été définie à une seule propriété. Il est en fait possible de définir `Path` sur une *sous-propriété* (une propriété d’une propriété) ou un membre d’une collection.
 
 Par exemple, supposons que votre page contient un `TimePicker` :
 
@@ -103,7 +103,7 @@ La liaison figurant dans le troisième objet `Label` dans les pages **Path Varia
                       StringFormat='The middle day of the week is {0}'}" />
 ```
 
-La source est définie sur la propriété `CultureInfo.CurrentCulture` statique, qui est un objet de type `CultureInfo`. Cette classe définit une propriété nommée `DateTimeFormat` de type [`DateTimeFormatInfo`](xref:System.Globalization.DateTimeFormatInfo) qui contient une collection `DayNames`. L’index sélectionne le quatrième élément.
+La source est définie sur la propriété `CultureInfo.CurrentCulture` statique, qui est un objet de type `CultureInfo`. Cette classe définit une `DateTimeFormat` propriété [`DateTimeFormatInfo`](xref:System.Globalization.DateTimeFormatInfo) nommée `DayNames` de type qui contient une collection. L’index sélectionne le quatrième élément.
 
 Le quatrième objet `Label` fait quelque chose de similaire mais pour la culture associée à la France. La propriété `Source` de la liaison est définie sur l’objet `CultureInfo` avec un constructeur :
 
@@ -142,7 +142,7 @@ Voici le programme en cours d’exécution :
 
 ## <a name="debugging-complex-paths"></a>Débogage de chemins complexes
 
-Les définitions de chemins complexes peuvent être difficiles à construire : Vous devez connaître le type de chaque sous-propriété ou le type des éléments dans la collection pour ajouter correctement la sous-propriété suivante, mais les types eux-mêmes n’apparaissent pas dans le chemin. Une bonne technique consiste à générer le chemin de façon incrémentielle et d’examiner les résultats intermédiaires. Pour ce dernier exemple, vous pouvez commencer sans aucune définition `Path` :
+Les définitions de chemins complexes peuvent être difficiles à construire : vous devez connaître le type de chaque sous-propriété ou le type des éléments dans la collection pour ajouter correctement la sous-propriété suivante, mais les types eux-mêmes n’apparaissent pas dans le chemin. Une bonne technique consiste à générer le chemin de façon incrémentielle et d’examiner les résultats intermédiaires. Pour ce dernier exemple, vous pouvez commencer sans aucune définition `Path` :
 
 ```xaml
 <Label Text="{Binding Source={x:Reference page},
@@ -163,7 +163,7 @@ Lorsque Xamarin.Forms traite le chemin de liaison, il installe un gestionnaire `
 
 Si une propriété dans le chemin de liaison n’implémente pas `INotifyPropertyChanged`, toutes les modifications apportées à cette propriété sont ignorées. Certaines modifications pourraient invalider entièrement le chemin de liaison et vous devriez utiliser cette technique uniquement lorsque la chaîne des propriétés et les sous-propriétés ne deviennent jamais non valides.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
-- [Démos des liaisons de données (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+- [Démonstrations de liaison de données (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 - [Chapitre sur les liaisons de données dans la documentation de Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

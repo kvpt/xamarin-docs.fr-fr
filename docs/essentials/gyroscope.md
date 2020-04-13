@@ -6,11 +6,11 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
 ms.openlocfilehash: 1e19585e238d66568364be7ccdbdb52d22b04066
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52898509"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "61259487"
 ---
 # <a name="xamarinessentials-gyroscope"></a>Xamarin.Essentials : gyroscope
 

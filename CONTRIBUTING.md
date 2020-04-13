@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 0071fcc72844e4816e707c5828464859e09db68c
-ms.sourcegitcommit: 2503da076966d12a8bdbf7af209662b74913a15c
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/04/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "78261616"
 ---
 # <a name="contributing"></a>Contribution
@@ -12,7 +12,7 @@ Nous vous remercions de l’intérêt que vous portez à la documentation Xamari
 
 Cette page décrit le processus simple de mise à jour de contenu dans la [documentation Xamarin](https://docs.microsoft.com/xamarin).
 
-- [Contrat de licence de contributeur](LICENSE)
+- [Contrat de licence de contribution (CLA)](LICENSE)
 
 ## <a name="process-for-contributing"></a>Processus de contribution
 
@@ -43,7 +43,7 @@ Pour des contributions importantes et un nouveau contenu, [ouvrez un problème](
 
 S’il s’agit d’une nouvelle rubrique, vous pouvez utiliser le [fichier de modèle](../contributing-guidelines/template.md) comme point de départ. Il contient les recommandations rédactionnelles et explique aussi les métadonnées nécessaires pour chaque article, comme les informations sur l’auteur.
 
-Ajoutez les images et autres ressources statiques au sous-dossier appelé **\<mypage>-images**. Si vous créez un dossier pour le contenu, ajoutez un dossier images au nouveau dossier.
+Pour les images et autres ressources statiques, ajoutez-les au sous-plieur appelé ** \<mypage>-images**. Si vous créez un dossier pour le contenu, ajoutez un dossier images au nouveau dossier.
 
 #### <a name="example-structure"></a>Exemple de structure
 
@@ -65,9 +65,9 @@ Les personnes chargées de la maintenance fusionneront alors votre demande de ti
 
 Nous envoyons (push) toutes les validations de la branche principale au site en ligne à une certaine fréquence. Vous pourrez voir vos contributions sur https://docs.microsoft.com/xamarin/.
 
-### <a name="contributing-to-international-content"></a>Contribution au contenu international
+### <a name="contributing-to-international-content"></a>Contribuer au contenu international
 
-Les contributions pour le contenu de traduction automatique ne sont actuellement pas acceptées pour le moment. Dans le but d’améliorer la qualité du contenu MT, nous avons effectué une transition vers un moteur neuronal MT. Nous acceptons et encourageons les contributions au contenu de traduction humaine (HT), qui est utilisé pour l’apprentissage du moteur neuronal MT. Ainsi, dans le temps, les contributions au contenu HT améliorent la qualité de la technologie HT et MT. Les rubriques MT comportent une exclusion de responsabilité indiquant qu’une partie de la rubrique peut être MT et que le bouton **modifier** ne s’affiche pas, car elle est désactivée.
+Les contributions pour le contenu traduit par la machine (MT) ne sont actuellement pas acceptées pour l’instant. Dans un effort pour améliorer la qualité du contenu MT, nous avons fait la transition vers un moteur Neural MT. Nous acceptons et encourageons les contributions pour le contenu traduit par l’homme (HT), qui est utilisé pour former le moteur Neural MT. Ainsi, au fil du temps, les contributions au contenu HT amélioreront la qualité de HT et DE MT. Les sujets MT auront un avertissement indiquant qu’une partie du sujet peut être MT, et le bouton **Edit** ne sera pas affiché comme il est désactivé.
 
 ## <a name="dos-and-donts"></a>À faire et à ne pas faire
 

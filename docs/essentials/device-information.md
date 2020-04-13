@@ -6,17 +6,17 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
 ms.openlocfilehash: 1cab4ea8ea3f98def4830e101783db1554efa69c
-ms.sourcegitcommit: 099b06e311a40c00eeea85465ff9b97867a5c5de
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/05/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "78295415"
 ---
 # <a name="xamarinessentials-device-information"></a>Xamarin.Essentials : informations sur l’appareil
 
 La classe **DeviceInfo** fournit des informations sur l’appareil où l’application s’exécute.
 
-## <a name="get-started"></a>Bien démarrer
+## <a name="get-started"></a>Prise en main
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -55,7 +55,7 @@ var deviceType = DeviceInfo.DeviceType;
 
 ## <a name="platforms"></a>Plateformes
 
-[`DeviceInfo.Platform`](xref:Xamarin.Essentials.DeviceInfo.Platform) est mis en corrélation avec une chaîne constante mappée au système d’exploitation. Vous pouvez vérifier les valeurs avec le struct `DevicePlatform` :
+[`DeviceInfo.Platform`](xref:Xamarin.Essentials.DeviceInfo.Platform)corrélise à une chaîne constante qui cartographie le système d’exploitation. Vous pouvez vérifier les valeurs avec le struct `DevicePlatform` :
 
 - **DevicePlatform.iOS** – iOS
 - **DevicePlatform.Android** – Android
@@ -64,7 +64,7 @@ var deviceType = DeviceInfo.DeviceType;
 
 ## <a name="idioms"></a>Idiomes
 
-[`DeviceInfo.Idiom`](xref:Xamarin.Essentials.DeviceInfo.Idiom) est mis en corrélation avec une chaîne constante mappée au type d’appareil sur lequel l’application s’exécute. Vous pouvez vérifier les valeurs avec le struct `DeviceIdiom` :
+[`DeviceInfo.Idiom`](xref:Xamarin.Essentials.DeviceInfo.Idiom)corrèle une chaîne constante sur laquelle les cartes sont alignées sur le type d’appareil sur lequel l’application s’exécute. Vous pouvez vérifier les valeurs avec le struct `DeviceIdiom` :
 
 - **DeviceIdiom.Phone** – Téléphone
 - **DeviceIdiom.Tablet** – Tablette
@@ -81,7 +81,7 @@ var deviceType = DeviceInfo.DeviceType;
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
-iOS n’expose pas d’API permettant aux développeurs d’obtenir le modèle de l’appareil iOS spécifique. Au lieu de cela, un identificateur de matériel est retourné, par exemple _iPhone10, 6,_ qui fait référence à l’iPhone X. Un mappage de ces identificateurs n’est pas fourni par Apple, mais se trouve sur ces derniers (sources non officielles) [le wiki iPhone](https://www.theiphonewiki.com/wiki/Models) et [obtiennent le modèle iOS](https://github.com/dannycabrera/Get-iOS-Model).
+iOS n’expose pas une API pour les développeurs d’obtenir le modèle de l’appareil iOS spécifique. Au lieu de cela un identifiant matériel est retourné comme _l’iPhone10,6_ qui se réfère à l’iPhone X. Une cartographie de ces identificateurs ne sont pas fournis par Apple, mais peut être trouvé sur ces (sources non officielles) [Le Wiki iPhone](https://www.theiphonewiki.com/wiki/Models) et [Get iOS Model](https://github.com/dannycabrera/Get-iOS-Model).
 
 --------------
 

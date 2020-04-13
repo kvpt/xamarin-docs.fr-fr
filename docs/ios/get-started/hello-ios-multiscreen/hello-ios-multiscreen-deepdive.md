@@ -9,10 +9,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
 ms.openlocfilehash: 3bcfb20d8283f621ac1d32730ee67be2b09efe50
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "79304631"
 ---
 # <a name="hello-ios-multiscreen--deep-dive"></a>Hello, iOS multiécran - Immersion
@@ -28,11 +28,11 @@ Dans le tutoriel [Hello, iOS](~/ios/get-started/hello-ios/index.md), nous avons 
 
  [![](hello-ios-multiscreen-deepdive-images/08.png "This diagram illustrates passing data between two screens")](hello-ios-multiscreen-deepdive-images/08.png#lightbox)
 
-Dans notre exemple, les données étaient collectées dans le premier écran, passées du premier contrôleur de vue au second, puis affichées par le second écran. Cette séparation des écrans, contrôleurs de vues et données suit le modèle *MVC (modèle-vue-contrôleur)* . Dans les sections suivantes, nous présentons les avantages de ce modèle, ses composants et la manière dont nous l’utilisons dans notre application Phoneword.
+Dans notre exemple, les données étaient collectées dans le premier écran, passées du premier contrôleur de vue au second, puis affichées par le second écran. Cette séparation des écrans, contrôleurs de vues et données suit le modèle *MVC (modèle-vue-contrôleur)*. Dans les sections suivantes, nous présentons les avantages de ce modèle, ses composants et la manière dont nous l’utilisons dans notre application Phoneword.
 
 ### <a name="benefits-of-the-mvc-pattern"></a>Avantages du modèle MVC
 
-Le modèle MVC (Model-View-Controller) est un *modèle de conception*, autrement dit une solution d’architecture réutilisable à un problème courant ou cas d’usage dans le code. Le modèle MVC est une architecture destinée aux applications dotées d’une *interface graphique utilisateur (GUI)* . Il attribue aux objets dans l’application un des trois rôles suivants : *modèle* (Model) (données ou logique d’application), *affichage* (View) (interface utilisateur) et *contrôleur* (Controller) (code-behind). Le diagramme ci-dessous illustre les relations entre les trois éléments du modèle MVC et l’utilisateur :
+Le modèle MVC (Model-View-Controller) est un *modèle de conception*, autrement dit une solution d’architecture réutilisable à un problème courant ou cas d’usage dans le code. Le modèle MVC est une architecture destinée aux applications dotées d’une *interface graphique utilisateur (GUI)*. Il attribue aux objets dans l’application un des trois rôles suivants : *modèle* (Model) (données ou logique d’application), *affichage* (View) (interface utilisateur) et *contrôleur* (Controller) (code-behind). Le diagramme ci-dessous illustre les relations entre les trois éléments du modèle MVC et l’utilisateur :
 
  [![](hello-ios-multiscreen-deepdive-images/00.png "This diagram illustrates the relationships between the three pieces of the MVC pattern and the user")](hello-ios-multiscreen-deepdive-images/00.png#lightbox)
 
@@ -80,14 +80,14 @@ Le contrôleur de navigation remplit trois fonctions principales :
 
     [![](hello-ios-multiscreen-deepdive-images/03.png "This diagram illustrates 'popping' a card off the stack")](hello-ios-multiscreen-deepdive-images/03.png#lightbox)
 
-- **Il fournit une barre de titre** : la partie supérieure du contrôleur de navigation est appelée *barre de titre*. Elle est chargée d’afficher le titre du contrôleur de vue, comme l’illustre le diagramme ci-dessous :  
+- **Fournit une barre de titre** - La partie supérieure du contrôleur de navigation est appelée la barre de *titre* . Elle est chargée d’afficher le titre du contrôleur de vue, comme l’illustre le diagramme ci-dessous :  
 
     [![](hello-ios-multiscreen-deepdive-images/04.png "The Title Bar is responsible for displaying the view controller title")](hello-ios-multiscreen-deepdive-images/04.png#lightbox)
 
 ### <a name="root-view-controller"></a>Contrôleur de vue racine
 
 Un contrôleur de navigation ne gère pas une hiérarchie de vues de contenu, il n’a donc rien à afficher de lui-même.
-Un contrôleur de navigation est plutôt couplé à un *contrôleur de vue racine* :
+Au lieu de cela, un contrôleur de navigation est jumelé à un *contrôleur de vue Root*:
 
  [![](hello-ios-multiscreen-deepdive-images/05.png "A navigation controller is paired with a Root view controller")](hello-ios-multiscreen-deepdive-images/05.png#lightbox)
 
@@ -97,7 +97,7 @@ Le contrôleur de vue racine représente le premier contrôleur de vue dans la p
 
 ### <a name="additional-navigation-options"></a>Options de navigation supplémentaires
 
-Le contrôleur de navigation est couramment utilisé pour prendre en charge la navigation dans iOS. Toutefois, il ne représente pas la seule option. Un [contrôleur de barre d’onglets](~/ios/user-interface/controls/creating-tabbed-applications.md) peut scinder une application en différentes zones opérationnelles. Un [contrôleur de vue fractionné](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/split_view/use_split_view_to_show_two_controllers) permet de créer des vues maître/détail. La combinaison des contrôleurs de navigation à ces autres paradigmes de navigation fournit de nombreuses manières flexibles de présenter du contenu iOS, et de naviguer dans celui-ci.
+Le contrôleur de navigation est couramment utilisé pour prendre en charge la navigation dans iOS. Toutefois, il ne représente pas la seule option. Par exemple, un [contrôleur de barre d’onglet](~/ios/user-interface/controls/creating-tabbed-applications.md) peut diviser une application en différentes zones fonctionnelles et un [contrôleur de vue Split](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/split_view/use_split_view_to_show_two_controllers) peut être employé pour créer des vues de maître/détail. La combinaison des contrôleurs de navigation à ces autres paradigmes de navigation fournit de nombreuses manières flexibles de présenter du contenu iOS, et de naviguer dans celui-ci.
 
 ## <a name="handling-transitions"></a>Gestion des transitions
 
@@ -193,7 +193,7 @@ L’application Phoneword a introduit plusieurs concepts qui ne sont pas traité
 - **Contrôleur de vue de tableau** : `CallHistoryController` est un contrôleur de vue de tableau. Un contrôleur de vue de tableau contient une vue de tableau, l’outil de disposition et d’affichage de données le plus courant dans iOS. Les tables dépassent le cadre du présent guide. Pour plus d’informations sur les contrôleurs de vues de tableau, consultez le guide d’[utilisation des tableaux et des cellules](~/ios/user-interface/controls/tables/index.md).
 - **ID de Storyboard** : la définition de l’ID de Storyboard crée une classe de contrôleur de vue en Objective-C, qui contient le code-behind du contrôleur de vue dans le Storyboard. Nous utilisons l’ID de Storyboard pour trouver la classe Objective-C et instancier le contrôleur de vue dans le Storyboard. Pour plus d’informations sur les ID de Storyboard, reportez-vous au guide de [présentation des Storyboards](~/ios/user-interface/storyboards/index.md).
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Félicitations ! Vous avez terminé votre première application iOS multi-écran.
 
@@ -203,6 +203,6 @@ Maintenant, apprenons à générer des applications multiplateforme avec Xamarin
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Bonjour, iOS (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios)
-- [Lignes directrices de l’interface utilisateur iOS](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html)
+- [Hello, iOS (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios)
+- [Human Interface Guidelines pour iOS](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html)
 - [Portail d’approvisionnement iOS](https://developer.apple.com/ios/manage/overview/index.action)

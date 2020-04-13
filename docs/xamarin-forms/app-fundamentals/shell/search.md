@@ -8,23 +8,23 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/18/2019
 ms.openlocfilehash: 9bd4fe5f1a35e2a6f36540cbee13838841b36d92
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "75490062"
 ---
 # <a name="xamarinforms-shell-search"></a>Recherche dans Xamarin.Forms Shell
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
+[![Télécharger](~/media/shared/download.png) l’échantillon Télécharger l’échantillon](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
 Xamarin.Forms Shell inclut une fonctionnalité de recherche intégrée, fournie par la classe `SearchHandler`. Une fonction de recherche peut être ajoutée à une page en définissant la propriété jointe `Shell.SearchHandler` sur un objet `SearchHandler` sous-classé. Une zone de recherche est alors ajoutée en haut de la page :
 
-[![Capture d’écran d’un shell SearchHandler, sur iOS et Android](search-images/searchhandler.png "Shell SearchHandler")](search-images/searchhandler-large.png#lightbox "Shell SearchHandler")
+[![Capture d’écran d’un Shell SearchHandler, sur iOS et Android](search-images/searchhandler.png "Shell SearchHandler")](search-images/searchhandler-large.png#lightbox "Shell SearchHandler")
 
 Lorsque vous saisissez une requête dans la zone de recherche, la propriété `Query` est mise à jour et la méthode `OnQueryChanged` est exécutée à chaque mise à jour. Cette méthode peut être substituée pour remplir la zone des suggestions de recherche avec des données :
 
-[![Capture d’écran des résultats de la recherche dans un shell SearchHandler, sur iOS et Android](search-images/search-suggestions.png "Résultats de la recherche dans le shell SearchHandler")](search-images/search-suggestions-large.png#lightbox "Résultats de la recherche dans le shell SearchHandler")
+[![Capture d’écran d’une recherche aboutit à un Shell SearchHandler, sur iOS et Android](search-images/search-suggestions.png "Résultats de recherche Shell SearchHandler")](search-images/search-suggestions-large.png#lightbox "Résultats de recherche Shell SearchHandler")
 
 Ensuite, lorsqu’un résultat est sélectionné dans la zone des suggestions de recherche, la méthode `OnItemSelected` est exécutée. Cette méthode peut être substituée pour réagir de façon appropriée, par exemple, en accédant à une page de détail.
 
@@ -99,19 +99,19 @@ La méthode `MonkeySearchHandler.OnQueryChanged` retourne un `List` des objets `
 
 La propriété `ShowsResults` est définie sur `true`, de sorte que les suggestions de recherche sont affichées lorsque l’utilisateur saisit une requête de recherche :
 
-[![Capture d’écran des résultats de la recherche dans un shell SearchHandler, sur iOS et Android](search-images/search-results.png "Résultats de la recherche dans le shell SearchHandler")](search-images/search-results-large.png#lightbox "Résultats de la recherche dans le shell SearchHandler")
+[![Capture d’écran des résultats de recherche dans un SearchHandler Shell, sur iOS et Android](search-images/search-results.png "Résultats de recherche Shell SearchHandler")](search-images/search-results-large.png#lightbox "Résultats de recherche Shell SearchHandler")
 
 À chaque changement de la requête de recherche, la zone de suggestions est mise à jour :
 
-[![Capture d’écran des résultats de la recherche dans un shell SearchHandler, sur iOS et Android](search-images/search-results-change.png "Résultats de la recherche dans le shell SearchHandler")](search-images/search-results-change-large.png#lightbox "Résultats de la recherche dans le shell SearchHandler")
+[![Capture d’écran des résultats de recherche dans un SearchHandler Shell, sur iOS et Android](search-images/search-results-change.png "Résultats de recherche Shell SearchHandler")](search-images/search-results-change-large.png#lightbox "Résultats de recherche Shell SearchHandler")
 
 Lorsqu’un résultat de recherche est sélectionné, la page `MonkeyDetailPage` s’affiche, et les données relatives au singe sélectionné apparaissent :
 
-[![Capture d’écran des détails du singe, sur iOS et Android](search-images/detailpage.png "Détails du singe")](search-images/detailpage-large.png#lightbox "Détails du singe")
+[![Capture d’écran des détails singe, sur iOS et Android](search-images/detailpage.png "Détails de singe")](search-images/detailpage-large.png#lightbox "Détails de singe")
 
 ## <a name="define-search-results-item-appearance"></a>Définir l’apparence d’un élément des résultats de la recherche
 
-Outre l’affichage des données `string` dans les résultats de la recherche, l’apparence de chaque élément des résultats de la recherche peut être définie en configurant la propriété `SearchHandler.ItemTemplate` sur un [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) :
+En plus `string` d’afficher les données dans les résultats de recherche, `SearchHandler.ItemTemplate` l’apparence [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)de chaque élément de résultat de recherche peut être définie en définissant la propriété à un :
 
 ```xaml
 <ContentPage ...
@@ -168,11 +168,11 @@ Shell.SetSearchHandler(this, new MonkeySearchHandler
 });
 ```
 
-Les éléments spécifiés dans le [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) définissent l’apparence de chaque élément dans la zone des suggestions. Dans cet exemple, la disposition du `DataTemplate` est gérée par un élément [`Grid`](xref:Xamarin.Forms.Grid). L’élément `Grid` contient un objet [`Image`](xref:Xamarin.Forms.Image) ainsi qu’un objet [`Label`](xref:Xamarin.Forms.Label), tous deux liés aux propriétés de chaque objet `Monkey`.
+Les éléments spécifiés dans la [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) définition de l’apparence de chaque élément dans la zone de suggestions. Dans cet exemple, `DataTemplate` la mise [`Grid`](xref:Xamarin.Forms.Grid)en page dans le est géré par un . Le `Grid` contient [`Image`](xref:Xamarin.Forms.Image) un objet, et un [`Label`](xref:Xamarin.Forms.Label) objet, `Monkey` qui se lient aux propriétés de chaque objet.
 
 Les captures d’écran suivantes montrent le résultat de la création d’un modèle pour chaque élément de la zone de suggestions :
 
-[![Capture d’écran des résultats de recherche basés sur un modèle dans un shell SearchHandler, sur iOS et Android](search-images/search-results-template.png "Résultats de recherche basés sur un modèle de Shell SearchHandler")](search-images/search-results-template-large.png#lightbox "Résultats de recherche basés sur un modèle de Shell SearchHandler")
+[![Capture d’écran des résultats de recherche modélés dans un SearchHandler Shell, sur iOS et Android](search-images/search-results-template.png "Shell SearchHandler a modélisateur les résultats de recherche")](search-images/search-results-template-large.png#lightbox "Shell SearchHandler a modélisateur les résultats de recherche")
 
 Pour plus d’informations sur les modèles de données, consultez [Modèles de données Xamarin.Forms](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md).
 
@@ -181,11 +181,11 @@ Pour plus d’informations sur les modèles de données, consultez [Modèles de 
 Lorsqu’un élément `SearchHandler` est ajouté en haut d’une page, par défaut, la zone de recherche est visible et complètement développée. Toutefois, vous pouvez changer ce comportement en définissant la propriété `SearchHandler.SearchBoxVisibility` sur un des membres d’énumération `SearchBoxVisibility` :
 
 - `Hidden` : la zone de recherche n’est pas visible ou accessible.
-- `Collapsible` : la zone de recherche est masquée jusqu’à ce que l’utilisateur effectue une action pour l’afficher. Sur iOS, la zone de recherche est révélée en rebondissant verticalement le contenu de la page et, sur Android, la zone de recherche est affichée en appuyant sur l’icône de point d’interrogation.
+- `Collapsible` : la zone de recherche est masquée jusqu’à ce que l’utilisateur effectue une action pour l’afficher. Sur iOS la boîte de recherche est révélé par verticalement rebondir le contenu de la page, et sur Android la boîte de recherche est révélé en appuyant sur l’icône de point d’interrogation.
 - `Expanded` : la zone de recherche est visible et complètement développée. C’est la valeur par défaut de la propriété `SearchHandler.SearchBoxVisibility`.
 
 > [!IMPORTANT]
-> Sur iOS, une zone de recherche réductible requiert iOS 11 ou une version ultérieure.
+> Sur iOS, une boîte de recherche pliable nécessite iOS 11 ou plus.
 
 L’exemple suivant montre comment masquer la zone de recherche :
 
@@ -214,27 +214,27 @@ La classe `SearchHandler` définit les propriétés suivantes destinées à modi
 
 - `BackgroundColor`, de type `Color` : couleur d’arrière-plan pour le texte de la zone recherche.
 - `CancelButtonColor`, de type `Color` : couleur du bouton Annuler.
-- `CharacterSpacing`, de type `double`, est l’espacement entre les caractères du texte de `SearchHandler`.
+- `CharacterSpacing`, de `double`type , est l’espacement entre les caractères du `SearchHandler` texte.
 - `FontAttributes`, de type `FontAttributes` : indique si le texte de la zone de recherche est en italique ou en gras.
 - `FontFamily`, de type `string` : famille de polices utilisée pour le texte de la zone de recherche.
 - `FontSize`, de type `double` : taille du texte de la zone de recherche.
 - `HorizontalTextAlignment`, de type `TextAlignment` : alignement horizontal du texte de la zone de recherche.
 - `PlaceholderColor`, de type `Color` : couleur pour l’espace réservé du texte de la zone de recherche.
 - `TextColor`, de type `Color` : couleur pour le texte de la zone de recherche.
-- `VerticalTextAlignment`, de type `TextAlignment`, est l’alignement vertical du texte de la zone de recherche.
+- `VerticalTextAlignment`, de `TextAlignment`type , est l’alignement vertical du texte de la boîte de recherche.
 
 ## <a name="searchhandler-keyboard"></a>Clavier SearchHandler
 
-Le clavier qui s’affiche lorsque les utilisateurs interagissent avec un élément `SearchHandler` peut être défini par programmation via la propriété `Keyboard` sur l’une des propriétés suivantes à partir de la classe [`Keyboard`](xref:Xamarin.Forms.Keyboard) :
+Le clavier présenté lorsque les utilisateurs `SearchHandler` interagissent avec un `Keyboard` peut être défini de manière [`Keyboard`](xref:Xamarin.Forms.Keyboard) programmatique via la propriété, à l’une des propriétés suivantes de la classe:
 
-- [`Chat`](xref:Xamarin.Forms.Keyboard.Chat) : utilisé pour envoyer des SMS et place les emojis là où ils sont utiles.
-- [`Default`](xref:Xamarin.Forms.Keyboard.Default) : le raccourci clavier par défaut.
-- [`Email`](xref:Xamarin.Forms.Keyboard.Email) : utilisé lorsque des adresses e-mail sont saisies.
-- [`Numeric`](xref:Xamarin.Forms.Keyboard.Numeric) : utilisé lorsque des nombres sont saisis.
-- [`Plain`](xref:Xamarin.Forms.Keyboard.Plain) : utilisé lorsque du texte est saisi sans que des [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) ne soient spécifiés.
-- [`Telephone`](xref:Xamarin.Forms.Keyboard.Telephone) : utilisé lorsque des numéros de téléphone sont saisis.
-- [`Text`](xref:Xamarin.Forms.Keyboard.Text) : utilisé lorsque du texte est saisi.
-- [`Url`](xref:Xamarin.Forms.Keyboard.Url) : utilisé pour entrer des chemins d’accès de fichier et des URL.
+- [`Chat`](xref:Xamarin.Forms.Keyboard.Chat)- utilisé pour les textos et les endroits où les emojis sont utiles.
+- [`Default`](xref:Xamarin.Forms.Keyboard.Default)le clavier par défaut.
+- [`Email`](xref:Xamarin.Forms.Keyboard.Email)- utilisé lors de la saisie des adresses e-mail.
+- [`Numeric`](xref:Xamarin.Forms.Keyboard.Numeric)- utilisé lors de l’entrée des numéros.
+- [`Plain`](xref:Xamarin.Forms.Keyboard.Plain)- utilisé lors de [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) l’entrée du texte, sans aucun spécifié.
+- [`Telephone`](xref:Xamarin.Forms.Keyboard.Telephone)- utilisé lors de l’entrée des numéros de téléphone.
+- [`Text`](xref:Xamarin.Forms.Keyboard.Text)- utilisé lors de l’entrée du texte.
+- [`Url`](xref:Xamarin.Forms.Keyboard.Url)- utilisé pour entrer des chemins de fichiers & adresses Web.
 
 Cela peut être accompli en XAML de la façon suivante :
 
@@ -248,18 +248,18 @@ Le code C# équivalent est :
 SearchHandler searchHandler = new SearchHandler { Keyboard = Keyboard.Email };
 ```
 
-La classe [`Keyboard`](xref:Xamarin.Forms.Keyboard) dispose également d’une méthode de fabrique [`Create`](xref:Xamarin.Forms.Keyboard.Create*) qui peut être utilisée pour personnaliser un clavier en spécifiant le comportement de mise en majuscules, de vérification orthographique et de suggestion. Les valeurs d’énumération [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) sont spécifiées en tant qu’arguments pour la méthode en retournant un `Keyboard` personnalisé. L’énumération `KeyboardFlags` contient les valeurs suivantes :
+La [`Keyboard`](xref:Xamarin.Forms.Keyboard) classe a [`Create`](xref:Xamarin.Forms.Keyboard.Create*) également une méthode d’usine qui peut être utilisée pour personnaliser un clavier en spécifiant la majuscule, le spellcheck et le comportement de suggestion. [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags)les valeurs d’énumération sont spécifiées comme `Keyboard` arguments à la méthode, avec un rendu personnalisé. L’énumération `KeyboardFlags` contient les valeurs suivantes :
 
-- [`None`](xref:Xamarin.Forms.KeyboardFlags.None) : aucune fonctionnalité n’est ajoutée au clavier.
-- [`CapitalizeSentence`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeSentence) : indique que les premières lettres des premiers mots de chaque phrase saisie sont automatiquement mises en majuscules.
-- [`Spellcheck`](xref:Xamarin.Forms.KeyboardFlags.Spellcheck) : indique que la vérification orthographique sera effectuée sur le texte saisi.
-- [`Suggestions`](xref:Xamarin.Forms.KeyboardFlags.Suggestions) : indique que la saisie semi-automatique des mots sera proposée pour le texte saisi.
-- [`CapitalizeWord`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeWord) : indique que la première lettre de chaque mot est automatiquement mise en majuscules.
-- [`CapitalizeCharacter`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeCharacter) : indique que tous les caractères sont automatiquement mis en majuscules.
-- [`CapitalizeNone`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeNone) : indique qu’aucune lettre n’est mise en majuscules automatiquement.
-- [`All`](xref:Xamarin.Forms.KeyboardFlags.All) : indique que la vérification orthographique, la saisie semi-automatique des mots et la mise en majuscules de la première lettre de la phrase seront appliquées au texte saisi.
+- [`None`](xref:Xamarin.Forms.KeyboardFlags.None)Aucune fonctionnalité n’est ajoutée au clavier.
+- [`CapitalizeSentence`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeSentence)- indique que la première lettre du premier mot de chaque phrase inscrite sera automatiquement capitalisée.
+- [`Spellcheck`](xref:Xamarin.Forms.KeyboardFlags.Spellcheck)indique que le vérification orthographique sera effectué sur le texte entré.
+- [`Suggestions`](xref:Xamarin.Forms.KeyboardFlags.Suggestions)indique que les achèvements de mots seront offerts sur le texte entré.
+- [`CapitalizeWord`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeWord)- indique que la première lettre de chaque mot sera automatiquement capitalisée.
+- [`CapitalizeCharacter`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeCharacter)- indique que chaque personnage sera automatiquement capitalisé.
+- [`CapitalizeNone`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeNone)- indique qu’aucune capitalisation automatique ne se produira.
+- [`All`](xref:Xamarin.Forms.KeyboardFlags.All)- indique que le vérification orthographique, les achèvements de mots et la capitalisation des phrases se produiront sur le texte entré.
 
-L’exemple de code XAML suivant montre comment personnaliser le [`Keyboard`](xref:Xamarin.Forms.Keyboard) par défaut afin de proposer des saisies semi-automatiques et de mettre en majuscules chaque caractère saisi :
+L’exemple de code XAML suivant [`Keyboard`](xref:Xamarin.Forms.Keyboard) montre comment personnaliser la valeur par défaut pour offrir des achèvements de mots et capitaliser chaque personnage entré :
 
 ```xaml
 <SearchHandler Placeholder="Enter search terms">
@@ -286,14 +286,14 @@ La classe `SearchHandler` définit les propriétés suivantes, qui contrôlent s
 
 - `BackgroundColor`, de type `Color` : couleur d’arrière-plan pour le texte de la zone recherche.
 - `CancelButtonColor`, de type `Color` : couleur du bouton Annuler.
-- `ClearIcon`, de type [`ImageSource`](xref:Xamarin.Forms.ImageSource) : icône affichée pour effacer le contenu de la zone de recherche.
+- `ClearIcon`, de [`ImageSource`](xref:Xamarin.Forms.ImageSource)type , l’icône affichée pour effacer le contenu de la boîte de recherche.
 - `ClearIconHelpText`, de type `string` : texte d’aide accessible pour l’icône d’effacement.
 - `ClearIconName`, de type `string` : nom de l’icône d’effacement pour une utilisation avec des lecteurs d’écran.
 - `ClearPlaceholderCommand`, de type `ICommand` : exécutée lorsque vous activez l’option `ClearPlaceholderIcon`.
 - `ClearPlaceholderCommandParameter`, de type `object` : paramètre passé à la commande `ClearPlaceholderCommand`.
 - `ClearPlaceholderEnabled`, de type `bool` : détermine si la commande `ClearPlaceholderCommand` peut être exécutée. La valeur par défaut est `true`.
 - `ClearPlaceholderHelpText`, de type `string` : texte d’aide accessible pour l’icône de l’espace réservé pour l’effacement.
-- `ClearPlaceholderIcon`, de type [`ImageSource`](xref:Xamarin.Forms.ImageSource) : icône d’espace réservé pour l’effacement, affichée lorsque la zone de recherche est vide.
+- `ClearPlaceholderIcon`, de [`ImageSource`](xref:Xamarin.Forms.ImageSource)type, l’icône claire de placeholder affichée lorsque la boîte de recherche est vide.
 - `ClearPlaceholderName`, de type `string` : nom de l’icône de l’espace réservé pour l’effacement, à utiliser avec des lecteurs d’écran.
 - `Command`, de type `ICommand` : exécutée lorsque la requête de recherche est confirmée.
 - `CommandParameter`, de type `object` : paramètre passé à la commande `Command`.
@@ -305,12 +305,12 @@ La classe `SearchHandler` définit les propriétés suivantes, qui contrôlent s
 - `IsFocused`, de type `bool` : indique si un `SearchHandler` dispose actuellement d’un focus d’entrée.
 - `IsSearchEnabled`, de type `bool` : représente l’état activé de la zone de recherche. La valeur par défaut est `true`.
 - `ItemsSource`, de type `IEnumerable` : spécifie la collection d’éléments à afficher dans la zone de suggestion, et dont la valeur par défaut est `null`.
-- `ItemTemplate`, de type [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) : spécifie le modèle à appliquer à chaque élément de la collection d’éléments à afficher dans la zone de suggestion.
+- `ItemTemplate`, de [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)type , spécifie le modèle à appliquer à chaque élément de la collection d’articles à afficher dans la zone de suggestion.
 - `Keyboard`, de type `Keyboard` : clavier pour le `SearchHandler`.
 - `Placeholder`, de type `string` : texte à afficher lorsque la zone de recherche est vide.
 - `PlaceholderColor`, de type `Color` : couleur pour l’espace réservé du texte de la zone de recherche.
 - `Query`, de type `string` : texte saisi par l’utilisateur dans la zone de recherche.
-- `QueryIcon`, de type [`ImageSource`](xref:Xamarin.Forms.ImageSource) : icône utilisée pour indiquer à l’utilisateur que la recherche est disponible.
+- `QueryIcon`, de [`ImageSource`](xref:Xamarin.Forms.ImageSource)type , l’icône utilisée pour indiquer à l’utilisateur que la recherche est disponible.
 - `QueryIconHelpText`, de type `string` : texte d’aide accessible pour l’icône de la requête.
 - `QueryIconName`, de type `string` : nom de l’icône de la requête à utiliser avec des lecteurs d’écran.
 - `SearchBoxVisibility`, de type `SearchBoxVisibility` : visibilité de la zone de recherche. Par défaut, la zone de recherche est visible et complètement développée.
@@ -318,7 +318,7 @@ La classe `SearchHandler` définit les propriétés suivantes, qui contrôlent s
 - `ShowsResults`, de type `bool` : indique si les résultats de la recherche doivent être attendus dans la zone de suggestion, lors de la saisie du texte. La valeur par défaut est `false`.
 - `TextColor`, de type `Color` : couleur pour le texte de la zone de recherche.
 
-Toutes ces propriétés s’appuient sur des objets [`BindableProperty`](xref:Xamarin.Forms.BindableProperty), ce qui signifie qu’elles peuvent être des cibles de liaisons de données.
+Toutes ces propriétés [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) sont sauvegardées par des objets, ce qui signifie que les propriétés peuvent être des cibles de liaisons de données.
 
 En outre, la classe `SearchHandler` fournit les méthodes substituables suivantes :
 
