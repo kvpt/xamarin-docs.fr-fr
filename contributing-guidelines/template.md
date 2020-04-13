@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.assetid: 11111111-2222-3333-4444-555555555555
 ms.prod: xamarin
 ms.openlocfilehash: f26a786f3da909c7d948fe99b4b3a1423352ecbe
-ms.sourcegitcommit: ec62c7f28abc8e121656f1b93146657d90a4cab4
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/21/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "77553562"
 ---
 # <a name="metadata-and-markdown-template"></a>Métadonnées et modèle Markdown
@@ -45,9 +45,9 @@ Quelques remarques importantes :
 - Vous **devez** ajouter un espace entre le signe deux-points (:) et la valeur d’un élément de métadonnées.
 - Si un élément de métadonnées facultatif n’a pas de valeur, supprimez-le (ne le laissez pas vide et n’utilisez pas « na »).
 - Des signes deux-points dans une valeur (par exemple, un titre) interrompent l’analyseur de métadonnées. Dans ce cas, entourez le titre de guillemets doubles (par exemple, `title: "Writing .NET Core console apps: An advanced step-by-step guide"`).
-- **title** : Ce titre s’affiche dans les résultats des moteurs de recherche. Le titre ne doit pas être identique au titre H1 et il doit contenir au maximum 60 caractères.
-- **author**, **manager**, **ms.reviewer** : Le champ d’auteur doit contenir le **nom d’utilisateur GitHub** de l’auteur, et non son alias.  En revanche, les champs « manager » et « ms.reviewer » doivent contenir des alias Microsoft. ms.reviewer spécifie le nom du PM/développeur associé à l’article ou la fonctionnalité.
-- **ms.assetid** : Il s’agit du GUID de l’article utilisé à des fins de suivi interne comme Business Intelligence (BI). Quand vous créez un fichier Markdown, récupérez un GUID sur [https://www.guidgenerator.com](https://www.guidgenerator.com).
+- **title** : ce titre s’affiche dans les résultats des moteurs de recherche. Le titre ne doit pas être identique au titre H1 et il doit contenir au maximum 60 caractères.
+- **author**, **manager**, **ms.reviewer** : le champ d’auteur doit contenir le **nom d’utilisateur GitHub** de l’auteur, et non son alias.  En revanche, les champs « manager » et « ms.reviewer » doivent contenir des alias Microsoft. ms.reviewer spécifie le nom du PM/développeur associé à l’article ou la fonctionnalité.
+- **ms.assetid** : il s’agit du GUID de l’article utilisé à des fins de suivi interne comme Business Intelligence (BI). Lors de la création d’un nouveau [https://www.guidgenerator.com](https://www.guidgenerator.com)fichier Markdown, obtenir un GUID de .
 
 ## <a name="basic-markdown-gfm-and-special-characters"></a>Markdown de base, GFM et caractères spéciaux
 
@@ -66,11 +66,11 @@ Markdown utilise des caractères spéciaux tels que \*, \` et \# pour la mise en
 
 Les noms des fichiers utilisent les règles suivantes :
 
-- Ils contiennent uniquement des lettres minuscules, des chiffres et des traits d’union.
-- Aucun espace ni caractère de ponctuation. Utilisez les traits d’union pour séparer les mots et les nombres dans le nom de fichier.
-- Utilisez des verbes d’actions spécifiques, tels que développer, acheter, générer, dépanner. Pas de substantif.
-- Pas de mot trop court ; évitez un, et, le, en, ou, etc.
-- Le nom doit être au format Markdown et utiliser l’extension de fichier .md.
+- Ils ne doivent contenir que des lettres, des chiffres et des traits d’union.
+- Ils ne doivent pas contenir d’espaces ni de caractères de ponctuation. Utilisez des traits d’union pour séparer les mots et les chiffres compris dans le nom de fichier.
+- Utilisez des verbes d’action spécifiques, tels que « développer », « acheter », « créer », « dépanner », etc. Ils ne doivent pas comprendre de mots se terminant par « -ing ».
+- Ils ne doivent pas comprendre de mots courts (« un », « et », « le », « en », « ou », etc.).
+- Ils doivent être au format Markdown et avoir l’extension de fichier .md.
 - Privilégiez des noms de fichiers courts. Ils font partie de l’URL pour vos articles.
 
 ## <a name="headings"></a>Titres
@@ -84,7 +84,7 @@ Les titres doivent être créés à l’aide du style atx, c’est-à-dire en ut
 
 Il ne **doit** exister qu’un seul titre de premier niveau (H1) dans votre rubrique, qui sera affiché comme titre sur la page.
 
-Si votre titre se termine par un caractère `#`, vous devez ajouter un autre caractère `#` à la fin pour que le titre soit correctement rendu. Par exemple, `# Async Programming in F# #`.
+Si votre titre se termine par un caractère `#`, vous devez ajouter un autre caractère `#` à la fin pour que le titre soit correctement rendu. Par exemple : `# Async Programming in F# #`.
 
 Les titres de second niveau génèrent la table des matières sur la page qui s’affiche dans la section « Dans cet article » en dessous du titre sur la page.
 
@@ -99,33 +99,33 @@ _Italique_ À utiliser pour les fichiers, dossiers, chemins (pour les éléments
 
 **Gras** À utiliser pour les éléments d’interface utilisateur.
 
-## <a name="links"></a>liens
+## <a name="links"></a>Liens
 
 ### <a name="internal-links"></a>Liens internes
 
 Pour établir un lien à un en-tête dans le même fichier Markdown (également appelés liens d’ancrage), vous devrez trouver l’ID de l’en-tête en question. Pour vérifier l’ID, affichez la source de l’article rendu, recherchez l’ID de l’en-tête (par exemple, `id="blockquote"`) et établissez le lien avec # + ID (par exemple, `#blockquote`).
 L’ID est généré automatiquement en fonction du texte d’en-tête. Ainsi, par exemple, étant donné une section unique nommée `## Step 2`, l’ID ressemblerait à `id="step-2"`.
 
-- Exemple : `[Chapter 1](#chapter-1)`
+- Exemple : `[Chapter 1](#chapter-1)`
 
 Pour établir un lien à un fichier Markdown dans le même dépôt, utilisez des [liens relatifs](https://www.w3.org/TR/WD-html40-970917/htmlweb.html#h-5.1.2), dont « .md » à la fin du nom de fichier.
 
-- Exemple : `[Readme file](../readme.md)`
-- Exemple : `[Welcome to .NET](../docs/welcome.md)`
+- Exemple : `[Readme file](../readme.md)`
+- Exemple : `[Welcome to .NET](../docs/welcome.md)`
 
 Pour établir un lien à un en-tête d’un fichier Markdown dans le même dépôt, utilisez la liaison relative + la liaison hashtag.
 
-- Exemple : `[.NET Community](../docs/welcome.md#community)`
+- Exemple : `[.NET Community](../docs/welcome.md#community)`
 
 ### <a name="external-links"></a>Liens externes
 
 Pour établir un lien à un fichier externe, utilisez l’URL complète comme lien.
 
-- Exemple : `[GitHub](http://www.github.com)`
+- Exemple : `[GitHub](http://www.github.com)`
 
 Si une URL apparaît dans un fichier Markdown, elle est transformée en lien interactif.
 
-- Exemple : `http://www.github.com`
+- Exemple : `http://www.github.com`
 
 ### <a name="links-to-apis"></a>Liens vers des API
 
@@ -138,8 +138,8 @@ Vous pouvez utiliser l’une des syntaxes suivantes :
 2. Lien automatique : `<xref:UID>`
 3. Forme abrégée : `@UID`
 
-- Exemple : `@System.String`
-- Exemple : `[String class](xref:System.String)`
+- Exemple : `@System.String`
+- Exemple : `[String class](xref:System.String)`
 
 Pour plus d’informations sur l’utilisation de cette notation, consultez [Utilisation de renvois](https://dotnet.github.io/docfx/tutorial/links_and_cross_references.html#using-cross-reference).
 
@@ -147,17 +147,17 @@ Pour plus d’informations sur l’utilisation de cette notation, consultez [Uti
 
 Quand l’UID contient les caractères spéciaux \` ou \#, la valeur de l’UID doit être encodée au format HTML (%60 et %23 respectivement), comme dans les exemples suivants :
 
-- Exemple : @System.Threading.Tasks.Task\`1 devient `@System.Threading.Tasks.Task%601`
+- Exemple : @System.Threading.Tasks.Task\`1 devient `@System.Threading.Tasks.Task%601`
 - Exemple : @System.Exception.\#ctor devient `@System.Exception.%23ctor`
 
 ## <a name="lists"></a>Listes
 
 ### <a name="ordered-lists"></a>Listes triées
 
-1. This
+1. Cette
 1. Is
 1. An
-1. Ordered
+1. Ordered (Validée)
 1. List
 
 #### <a name="ordered-list-with-an-embedded-list"></a>Liste triée avec une liste incorporée
@@ -165,7 +165,7 @@ Quand l’UID contient les caractères spéciaux \` ou \#, la valeur de l’UID 
 1. Here
 1. comes
 1. an
-1. embedded
+1. affichage incorporé
     1. Miss Scarlett
     1. Professor Plum
 1. ordered
@@ -173,7 +173,7 @@ Quand l’UID contient les caractères spéciaux \` ou \#, la valeur de l’UID 
 
 ### <a name="unordered-lists"></a>Listes non triées
 
-- This
+- Cette
 - is
 - a
 - bulleted
@@ -181,13 +181,13 @@ Quand l’UID contient les caractères spéciaux \` ou \#, la valeur de l’UID 
 
 #### <a name="unordered-list-with-an-embedded-list"></a>Liste non triée avec une liste incorporée
 
-- This
+- Cette
 - bulleted
 - list
   - Mrs. Peacock
   - Mr. Green
 - contains
-- other
+- Autres
     1. Colonel Mustard
     1. Mrs. White
 - lists
@@ -198,10 +198,10 @@ Quand l’UID contient les caractères spéciaux \` ou \#, la valeur de l’UID 
 
 ## <a name="tables"></a>Tables
 
-| Tables        | Sont           | Cool  |
+| Tables        | Sont           | À froid  |
 | ------------- |:-------------:| -----:|
 | col 3 est      | alignée à droite | 1 600 $ |
-| col 2 est      | centrée      |   12 $ |
+| col 2 est      | centrée      |   12 $ |
 | col 1 est la valeur par défaut | alignée à gauche     |    1 $ |
 
 Vous pouvez utiliser un [outil de génération de table Markdown](http://www.tablesgenerator.com/markdown_tables) pour les créer plus facilement.
@@ -230,7 +230,7 @@ namespace HelloWorld
 }
 ```
 
-#### <a name="xml"></a>xml
+#### <a name="xml"></a>Xml
 
 ```xml
 <dict>
@@ -296,7 +296,7 @@ Utilisez des accents graves (&#96;) pour `inline code`. Utilisez le code en lign
 [![alt text for linked image](images/dotnet.png)](https://dot.net)
 ```
 
-## <a name="videos"></a>Vidéos
+## <a name="videos"></a>Videos
 
 ### <a name="channel-9"></a>Channel 9
 
@@ -333,7 +333,7 @@ Il est important d’utiliser les styles d’alerte suivants pour un rendu avec 
 > This is a NOTE
 ```
 
-#### <a name="warning"></a>Warning
+#### <a name="warning"></a>Avertissement
 
 ```
 > [!WARNING]

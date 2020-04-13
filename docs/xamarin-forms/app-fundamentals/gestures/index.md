@@ -8,30 +8,30 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/25/2018
 ms.openlocfilehash: 33968fb935e8b69736ac338bfa0479e4f278e64a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106180"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "61184569"
 ---
 # <a name="xamarinforms-gestures"></a>Mouvements Xamarin.Forms
 
 _Modules de reconnaissance de mouvement Xamarin.Forms pouvant être utilisés pour détecter l’interaction utilisateur avec des vues dans une application Xamarin.Forms._
 
-La classe [`GestureRecognizer`](xref:Xamarin.Forms.GestureRecognizer) Xamarin.Forms prend en charge les appuis, les pincements et les mouvements de balayage sur les instances de [`View`](xref:Xamarin.Forms.View).
+La classe Xamarin.Forms [`GestureRecognizer`](xref:Xamarin.Forms.GestureRecognizer) supporte le robinet, pince, panoramique et balaye les gestes sur [`View`](xref:Xamarin.Forms.View) les instances.
 
-## <a name="adding-a-tap-gesture-recognizertapmd"></a>[Ajout d’un module de reconnaissance des appuis](tap.md)
+## <a name="adding-a-tap-gesture-recognizer"></a>[Ajout d’un module de reconnaissance des appuis](tap.md)
 
-Un appui est utilisé pour la détection des appuis et est reconnu avec la classe [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer).
+Un geste de robinet est utilisé pour [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) la détection du robinet et est reconnu avec la classe.
 
-## <a name="adding-a-pinch-gesture-recognizerpinchmd"></a>[Ajout d’un module de reconnaissance des pincements](pinch.md)
+## <a name="adding-a-pinch-gesture-recognizer"></a>[Ajout d’un module de reconnaissance des pincements](pinch.md)
 
-Un pincement est utilisé pour effectuer un zoom interactif et est reconnu avec la classe [`PinchGestureRecognizer`](xref:Xamarin.Forms.PinchGestureRecognizer).
+Un geste de pincement est utilisé pour [`PinchGestureRecognizer`](xref:Xamarin.Forms.PinchGestureRecognizer) effectuer le zoom interactif et est reconnu avec la classe.
 
-## <a name="adding-a-pan-gesture-recognizerpanmd"></a>[Ajout d’un module de reconnaissance des mouvements panoramiques](pan.md)
+## <a name="adding-a-pan-gesture-recognizer"></a>[Ajout d’un module de reconnaissance des mouvements panoramiques](pan.md)
 
-Un mouvement panoramique est utilisé pour détecter le mouvement des doigts sur l’écran et appliquer ces déplacements au contenu. Il est reconnu avec la classe [`PanGestureRecognizer`](xref:Xamarin.Forms.PanGestureRecognizer).
+Un geste panoramique est utilisé pour détecter le mouvement des doigts autour de l’écran et appliquer ce mouvement au contenu, et est reconnu avec la [`PanGestureRecognizer`](xref:Xamarin.Forms.PanGestureRecognizer) classe.
 
-## <a name="adding-a-swipe-gesture-recognizerswipemd"></a>[Ajout d’un module de reconnaissance des mouvements de balayage](swipe.md)
+## <a name="adding-a-swipe-gesture-recognizer"></a>[Ajout d’un module de reconnaissance des mouvements de balayage](swipe.md)
 
-Un mouvement de balayage se produit quand un doigt est déplacé verticalement ou horizontalement sur l’écran. Il est souvent utilisé pour lancer l’exploration du contenu. Les mouvements de balayage sont reconnus avec la classe [`SwipeGestureRecognizer`](xref:Xamarin.Forms.SwipeGestureRecognizer).
+Un mouvement de balayage se produit quand un doigt est déplacé verticalement ou horizontalement sur l’écran. Il est souvent utilisé pour lancer l’exploration du contenu. Les gestes de [`SwipeGestureRecognizer`](xref:Xamarin.Forms.SwipeGestureRecognizer) balayage sont reconnus avec la classe.

@@ -9,10 +9,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 05/30/2018
 ms.openlocfilehash: ab4e0e79c39d36adcfb29e9659c2c6a924c80470
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73020872"
 ---
 # <a name="editing-android-virtual-device-properties"></a>Modification des propriétés d’appareil virtuel Android
@@ -25,9 +25,9 @@ _Cet article explique comment utiliser Android Device Manager pour modifier les 
 
 **Android Device Manager** prend en charge la modification des propriétés de profil d’un appareil virtuel Android. Les écrans **Nouvel appareil** et **Modifier l’appareil** répertorient les propriétés de l’appareil virtuel dans la première colonne et les valeurs correspondantes de chaque propriété dans la seconde colonne (comme illustré dans cet exemple) : 
 
-[![Exemple d’écran Nouvel appareil](device-properties-images/win/01-new-device-editor-sml.png)](device-properties-images/win/01-new-device-editor.png#lightbox)
+[![Exemple Nouvel écran d’appareil](device-properties-images/win/01-new-device-editor-sml.png)](device-properties-images/win/01-new-device-editor.png#lightbox)
 
-Lorsque vous sélectionnez une propriété, une description détaillée de cette propriété s’affiche à droite. Vous pouvez modifier les *propriétés de profil matériel* et les  *propriétés d’AVD*. Les propriétés de profil matériel (comme `hw.ramSize` et `hw.accelerometer`) décrivent les caractéristiques physiques de l’appareil émulé. Ces caractéristiques comprennent la taille de l’écran, la quantité de mémoire vive disponible et la présence ou non d’un accéléromètre. Les propriétés d’AVD spécifient le fonctionnement de l’AVD lorsqu’il s’exécute. Par exemple, les propriétés d’AVD peuvent être configurées pour spécifier la manière dont l’AVD utilise la carte graphique de votre ordinateur de développement pour le rendu.
+Lorsque vous sélectionnez une propriété, une description détaillée de cette propriété s’affiche à droite. Vous pouvez modifier les *propriétés de profil matériel* et les * propriétés d’AVD*. Les propriétés de profil matériel (comme `hw.ramSize` et `hw.accelerometer`) décrivent les caractéristiques physiques de l’appareil émulé. Ces caractéristiques comprennent la taille de l’écran, la quantité de mémoire vive disponible et la présence ou non d’un accéléromètre. Les propriétés d’AVD spécifient le fonctionnement de l’AVD lorsqu’il s’exécute. Par exemple, les propriétés d’AVD peuvent être configurées pour spécifier la manière dont l’AVD utilise la carte graphique de votre ordinateur de développement pour le rendu.
 
 Vous pouvez modifier les propriétés en suivant les instructions ci-dessous :
 
@@ -50,9 +50,9 @@ Vous pouvez modifier les propriétés en suivant les instructions ci-dessous :
 
 **Android Device Manager** prend en charge la modification des propriétés de profil d’un appareil virtuel Android. Les écrans **Nouvel appareil** et **Modifier l’appareil** répertorient les propriétés de l’appareil virtuel dans la première colonne et les valeurs correspondantes de chaque propriété dans la seconde colonne (comme illustré dans cet exemple) : 
 
-[![Exemple d’écran Nouvel appareil](device-properties-images/mac/01-new-device-editor-sml.png)](device-properties-images/mac/01-new-device-editor.png#lightbox)
+[![Exemple Nouvel écran d’appareil](device-properties-images/mac/01-new-device-editor-sml.png)](device-properties-images/mac/01-new-device-editor.png#lightbox)
 
-Lorsque vous sélectionnez une propriété, une description détaillée de cette propriété s’affiche à droite. Vous pouvez modifier les *propriétés de profil matériel* et les  *propriétés d’AVD*. Les propriétés de profil matériel (comme `hw.ramSize` et `hw.accelerometer`) décrivent les caractéristiques physiques de l’appareil émulé. Ces caractéristiques comprennent la taille de l’écran, la quantité de mémoire vive disponible et la présence ou non d’un accéléromètre. Les propriétés d’AVD spécifient le fonctionnement de l’AVD lorsqu’il s’exécute. Par exemple, les propriétés d’AVD peuvent être configurées pour spécifier la manière dont l’AVD utilise la carte graphique de votre ordinateur de développement pour le rendu.
+Lorsque vous sélectionnez une propriété, une description détaillée de cette propriété s’affiche à droite. Vous pouvez modifier les *propriétés de profil matériel* et les * propriétés d’AVD*. Les propriétés de profil matériel (comme `hw.ramSize` et `hw.accelerometer`) décrivent les caractéristiques physiques de l’appareil émulé. Ces caractéristiques comprennent la taille de l’écran, la quantité de mémoire vive disponible et la présence ou non d’un accéléromètre. Les propriétés d’AVD spécifient le fonctionnement de l’AVD lorsqu’il s’exécute. Par exemple, les propriétés d’AVD peuvent être configurées pour spécifier la manière dont l’AVD utilise la carte graphique de votre ordinateur de développement pour le rendu.
 
 Vous pouvez modifier les propriétés en suivant les instructions ci-dessous :
 

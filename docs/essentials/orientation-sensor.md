@@ -1,23 +1,23 @@
 ---
-title: 'Xamarin.Essentials: OrientationSensor'
+title: 'Xamarin.Essentials : Capteur d’orientation'
 description: La classe Capteur d’orientation vous permet de surveiller l’orientation d’un appareil dans l’espace tridimensionnel.
 ms.assetid: F3091D93-E779-41BA-8696-23D296F2F6F5
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
 ms.openlocfilehash: 5423872da7966bc7e4bb88e278d76b709f114158
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70120716"
 ---
-# <a name="xamarinessentials-orientationsensor"></a>Xamarin.Essentials: OrientationSensor
+# <a name="xamarinessentials-orientationsensor"></a>Xamarin.Essentials : Capteur d’orientation
 
 La classe **Capteur d’orientation** vous permet de surveiller l’orientation d’un appareil dans l’espace tridimensionnel.
 
 > [!NOTE]
-> Cette classe permet de déterminer l’orientation d’un appareil dans un espace en 3D. Si vous avez besoin de déterminer si l’écran de l’appareil vidéo est en mode portrait ou paysage, utilisez la propriété `Orientation` de l’objet `ScreenMetrics` disponible à partir de la classe [`DeviceDisplay`](device-display.md).
+> Cette classe permet de déterminer l’orientation d’un appareil dans un espace en 3D. Si vous devez déterminer si l’affichage vidéo de l’appareil `Orientation` est `ScreenMetrics` en mode [`DeviceDisplay`](device-display.md) portrait ou paysage, utilisez la propriété de l’objet disponible à partir de la classe.
 
 ## <a name="get-started"></a>Prise en main
 
@@ -74,7 +74,7 @@ public class OrientationSensorTest
 }
 ```
 
-Les lectures `OrientationSensor` sont retournées sous la forme d’un [`Quaternion`](xref:System.Numerics.Quaternion) qui décrit l’orientation de l’appareil en fonction de deux systèmes de coordonnées 3D :
+`OrientationSensor`les lectures sont rapportées sous [`Quaternion`](xref:System.Numerics.Quaternion) la forme d’un qui décrit l’orientation de l’appareil en fonction de deux systèmes de coordonnées 3D :
 
 L’appareil (en général, un téléphone ou une tablette) dispose d’un système de coordonnées 3D avec les axes suivants :
 
@@ -96,7 +96,7 @@ Une valeur `Quaternion` est très étroitement liée à la rotation autour d’u
 
 Il s’agit de systèmes de coordonnées droitiers, donc avec le pouce de la main droit pointée dans le sens positif de l’axe de rotation, la courbe des doigts indique la direction de rotation des angles positifs.
 
-Exemples :
+Exemples :
 
 - Lorsque l’appareil se trouve à plat sur une table avec son écran vers le haut, avec le bord supérieur de l’appareil (en mode portrait) pointant vers le nord, les deux systèmes de coordonnées sont alignés. La valeur `Quaternion` représente le quaternion d’identité (0, 0, 0, 1). Toutes les rotations peuvent être analysées par rapport à cette position.
 

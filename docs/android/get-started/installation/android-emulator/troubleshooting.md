@@ -9,15 +9,15 @@ author: davidortinau
 ms.author: daortin
 ms.date: 08/27/2018
 ms.openlocfilehash: d73c72fa70a22bacf122f5c3957b789914dfd765
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "79304050"
 ---
 # <a name="android-emulator-troubleshooting"></a>Résolution des problèmes de l’émulateur Android
 
-_Cet article décrit les messages d’avertissement et les problèmes les plus courants qui se produisent lors de la configuration et de l’exécution du Émulateur Android. En outre, il décrit les solutions permettant de résoudre ces erreurs, ainsi que divers conseils de dépannage pour vous aider à diagnostiquer les problèmes de l’émulateur._
+_Cet article décrit les messages d’avertissement les plus courants et les problèmes qui se produisent lors de la configuration et l’exécution de l’émulateur Android. En outre, il décrit des solutions pour résoudre ces erreurs ainsi que divers conseils de dépannage pour vous aider à diagnostiquer les problèmes d’émulateur._
 
 ::: zone pivot="windows"
 
@@ -31,7 +31,7 @@ Si vous voyez s’afficher un message d’erreur indiquant l’échec de l’ins
 
 1. Lancez l’émulateur à partir d’**Android Device Manager** (sélectionnez votre appareil virtuel et cliquez sur **Démarrer**).
 
-2. Ouvrez une invite de commandes et accédez au dossier d’installation d’**adb**. Si le kit Android SDK est installé à son emplacement par défaut, **adb** se trouve sur **C:\\Program Files (x86)\\Android\\android-sdk\\platform-tools\\adb.exe**. Sinon, modifiez ce chemin pour indiquer l’emplacement du kit Android SDK sur votre ordinateur.
+2. Ouvrez une invite de commande et rendez-vous au dossier où **une bad est** installée. Si le kit Android SDK est installé à son emplacement par défaut, **adb** se trouve sur **C:\\Program Files (x86)\\Android\\android-sdk\\platform-tools\\adb.exe**. Sinon, modifiez ce chemin pour indiquer l’emplacement du kit Android SDK sur votre ordinateur.
 
 3. Tapez la commande suivante :
 
@@ -58,12 +58,12 @@ Si vous voyez s’afficher un message indiquant qu’**une erreur d’accès MMI
 
 Si Google Play Services ou Google Play Store n’est pas installé sur l’appareil virtuel que vous exécutez dans l’émulateur, cela signifie souvent que l’appareil virtuel a été créé sans que ces paquets soient inclus. Quand vous créez un appareil virtuel (consultez [Gestion des appareils virtuels avec Android Device Manager](~/android/get-started/installation/android-emulator/device-manager.md)), veillez à sélectionner l’une des options suivantes, ou les deux :
 
-- **API Google** : inclut Google Play Services dans l’appareil virtuel.
-- **Google Play Store** : inclut Google Play Store dans l’appareil virtuel.
+- **** API Google&ndash; : inclut Google Play Services dans l’appareil virtuel.
+- **** Google Play Store&ndash; : inclut Google Play Store dans l’appareil virtuel.
 
 Par exemple, cet appareil virtuel inclut Google Play Services et Google Play Store :
 
-[![Exemple d’AVD avec Google Play Services et Google Play Store activés](troubleshooting-images/win/00-add-gps-w158-sml.png)](troubleshooting-images/win/00-add-gps-w158.png#lightbox)
+[![Exemple AVD avec Google Play Services et Google Play Store activé](troubleshooting-images/win/00-add-gps-w158-sml.png)](troubleshooting-images/win/00-add-gps-w158.png#lightbox)
 
 > [!NOTE]
 > Les images Google Play Store sont disponibles uniquement pour certains types d’appareil de base tels que Pixel, Pixel 2, Nexus 5 et Nexus 5X.
@@ -90,9 +90,9 @@ Si ce message d’erreur s’affiche, consultez [Problèmes d’accélération m
 
 ### <a name="acceleration-is-enabled-but-the-emulator-runs-too-slowly"></a>L’accélération est activée mais l’émulateur s’exécute trop lentement 
 
-Bien souvent, ce problème se produit si vous n’utilisez pas une image x86 dans votre AVD (appareil virtuel). Quand vous créez un appareil virtuel (consultez [Gestion des appareils virtuels avec Android Device Manager](~/android/get-started/installation/android-emulator/device-manager.md)), veillez à sélectionner une image système x86 :
+Bien souvent, ce problème se produit si vous n’utilisez pas une image x86 dans votre AVD (appareil virtuel). Lorsque vous créez un appareil virtuel (voir [Gérer les périphériques virtuels avec le gestionnaire d’appareils Android),](~/android/get-started/installation/android-emulator/device-manager.md)assurez-vous de sélectionner une image système x86 :
 
-[![Sélection d’une image système x86 pour un appareil virtuel](troubleshooting-images/win/02-x86-virtual-device-w158-sml.png)](troubleshooting-images/win/02-x86-virtual-device-w158.png#lightbox)
+[![Sélection d’une image système x86 pour un appareil virtuel](troubleshooting-images/win/02-x86-virtual-device-w158-sml.png)](troubleshooting-images/win/02-x86-virtual-device-w158.png#lightbox)
 
 <a name="accel-issues-win" />
 
@@ -288,11 +288,11 @@ Si Device Guard est activé, effectuez les étapes suivantes pour le désactiver
 
 3. Dans l’**Éditeur de stratégie de groupe locale**, accédez à **Configuration ordinateur > Modèles d’administration > Système > Device Guard** :
 
-   [![Device Guard dans l’Éditeur de stratégie de groupe locale](troubleshooting-images/win/05-group-policy-editor-sml.png)](troubleshooting-images/win/05-group-policy-editor.png#lightbox)
+   [![Device Guard in Local Group Policy Editor](troubleshooting-images/win/05-group-policy-editor-sml.png)](troubleshooting-images/win/05-group-policy-editor.png#lightbox)
 
 4. Modifiez **Activer la sécurité basée sur la virtualisation** en le passant à **Désactivé** (comme illustré ci-dessus) et quittez l’**Éditeur de stratégie de groupe locale**.
 
-5. Dans la zone de recherche Windows, entrez **cmd**. Cliquez avec le bouton droit sur **Invite de commandes** dans les résultats de la recherche et sélectionnez **Exécuter en tant qu’administrateur**.
+5. Dans la zone de recherche Windows, entrez **cmd**. Lorsque **l’invite de commande** apparaît dans les résultats de recherche, cliquez à droite Sur **l’invite de commande** et **sélectionnez Exécuter en tant qu’administrateur**.
 
 6. Copiez et collez les commandes suivantes dans la fenêtre d’invite de commandes (si lecteur **Z:** est utilisé, choisissez une lettre de lecteur non utilisée) :
 
@@ -367,7 +367,7 @@ Si vous voyez s’afficher un message d’erreur indiquant l’échec de l’ins
 
 1. Lancez l’émulateur à partir d’**Android Device Manager** (sélectionnez votre appareil virtuel et cliquez sur **Démarrer**).
 
-2. Ouvrez une invite de commandes et accédez au dossier d’installation d’**adb**. Si le kit Android SDK est installé à son emplacement par défaut, **adb** se trouve sur **~/Library/Developer/Xamarin/android-sdk-macosx/platform-tools/adb**. Sinon, modifiez ce chemin pour indiquer l’emplacement du kit Android SDK sur votre ordinateur.
+2. Ouvrez une invite de commande et rendez-vous au dossier où **une bad est** installée. Si le kit Android SDK est installé à son emplacement par défaut, **adb** se trouve sur **~/Library/Developer/Xamarin/android-sdk-macosx/platform-tools/adb**. Sinon, modifiez ce chemin pour indiquer l’emplacement du kit Android SDK sur votre ordinateur.
 
 3. Tapez la commande suivante :
 
@@ -394,12 +394,12 @@ Si vous voyez s’afficher le message indiquant qu’**une erreur d’accès MMI
 
 Si Google Play Services ou Google Play Store n’est pas installé sur l’appareil virtuel que vous exécutez dans l’émulateur, cela signifie généralement que l’appareil virtuel a été créé sans que ces paquets soient inclus. Quand vous créez un appareil virtuel (consultez [Gestion des appareils virtuels avec Android Device Manager](~/android/get-started/installation/android-emulator/device-manager.md)), veillez à sélectionner l’une des options suivantes, ou les deux :
 
-- **API Google** : inclut Google Play Services dans l’appareil virtuel.
-- **Google Play Store** : inclut Google Play Store dans l’appareil virtuel.
+- **** API Google&ndash; : inclut Google Play Services dans l’appareil virtuel.
+- **** Google Play Store&ndash; : inclut Google Play Store dans l’appareil virtuel.
 
 Par exemple, cet appareil virtuel inclut Google Play Services et Google Play Store :
 
-[![Exemple d’AVD avec Google Play Services et Google Play Store activés](troubleshooting-images/mac/01-google-play-services-m75-sml.png)](troubleshooting-images/mac/01-google-play-services-m75.png#lightbox)
+[![Exemple AVD avec Google Play Services et Google Play Store activé](troubleshooting-images/mac/01-google-play-services-m75-sml.png)](troubleshooting-images/mac/01-google-play-services-m75.png#lightbox)
 
 > [!NOTE]
 > Les images Google Play Store sont disponibles uniquement pour certains types d’appareil de base tels que Pixel, Pixel 2, Nexus 5 et Nexus 5X.
@@ -424,7 +424,7 @@ Si l’accélération matérielle n’est pas activée, une boîte de dialogue p
 
 Bien souvent, ce problème se produit si vous n’utilisez pas une image x86 dans votre appareil virtuel. Quand vous créez un appareil virtuel (consultez [Gestion des appareils virtuels avec Android Device Manager](~/android/get-started/installation/android-emulator/device-manager.md)), veillez à sélectionner une image système x86 :
 
-[![Sélection d’une image système x86 pour un appareil virtuel](troubleshooting-images/mac/02-x86-virtual-device-m75-sml.png)](troubleshooting-images/mac/02-x86-virtual-device-m75.png#lightbox)
+[![Sélection d’une image système x86 pour un appareil virtuel](troubleshooting-images/mac/02-x86-virtual-device-m75-sml.png)](troubleshooting-images/mac/02-x86-virtual-device-m75.png#lightbox)
 
 <a name="accel-issues-mac" />
 

@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
 ms.openlocfilehash: 9b9db3e6ae081a02d2b2297e70c216015dceade6
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73026545"
 ---
 # <a name="in-house-distribution-for-xamarinios-apps"></a>Distribution interne pour les applications Xamarin.iOS
@@ -53,7 +53,7 @@ Il est important de noter que vous ne pouvez pas renouveler les certificats arri
 
 1. Accédez à la section *Certificates, Identifiers & Profiles* (Certificats, identificateurs et profils) du Member Center du programme Developer d’Apple.
 2. Sous *Certificates*, sélectionnez **Production**.
-3. Cliquez sur le bouton **+** pour créer un certificat.
+3. Cliquez **+** sur le bouton pour créer un nouveau certificat.
 4. Sous le titre *Production*, sélectionnez **In-House and Ad Hoc (Interne et ad hoc)**  :
 
    [![](in-house-distribution-images/createcertmanually01.png "Select In-House and Ad Hoc")](in-house-distribution-images/createcertmanually01.png#lightbox)
@@ -70,7 +70,7 @@ Il est important de noter que vous ne pouvez pas renouveler les certificats arri
 8. Téléchargez le certificat rempli, puis double-cliquez sur le fichier pour l’installer.
 9. À ce stade, votre certificat doit être installé sur la machine, mais vous devrez peut-être actualiser vos profils pour vérifier qu’ils sont visibles dans Xcode.
 
-Sinon, il est possible de demander un certificat via la boîte de dialogue Preferences de Xcode. Pour cela, effectuez les étapes suivantes :
+Sinon, il est possible de demander un certificat via la boîte de dialogue Preferences de Xcode. Pour ce faire, procédez comme suit :
 
 1. Sélectionnez votre équipe, puis cliquez sur *Afficher les détails* :
 
@@ -80,7 +80,7 @@ Sinon, il est possible de demander un certificat via la boîte de dialogue Prefe
 
    [![](in-house-distribution-images/selectcert.png "Create the iOS Distribution Certificate")](in-house-distribution-images/selectcert.png#lightbox)
 
-3. Cliquez ensuite sur le bouton **plus (+)** , puis sélectionnez **iOS App Store (App Store iOS)**  :
+3. Cliquez ensuite sur le bouton **plus (+)**, puis sélectionnez **iOS App Store (App Store iOS)**  :
 
    [![](in-house-distribution-images/selectcert.png "Select iOS App Store")](in-house-distribution-images/selectcert.png#lightbox)
 
@@ -94,19 +94,19 @@ Sinon, il est possible de demander un certificat via la boîte de dialogue Prefe
 
 Comme pour tout profil de provisionnement que vous créez, un ID d’application est nécessaire pour identifier l’application que vous allez distribuer sur l’appareil de l’utilisateur. Si vous ne l’avez pas déjà créé, suivez les étapes ci-dessous pour en créer un :
 
-1. Dans [Apple Developer Center](https://developer.apple.com/account/overview.action), accédez à la section *Certificates, Identifiers & Profiles* (Certificats, identificateurs et profils). Sélectionnez **ID d’application** sous **Identificateurs**.
-2. Cliquez sur le bouton **+** , puis indiquez un **Name (Nom)** qui identifie l’application sur le portail.
+1. Dans [Apple Developer Center](https://developer.apple.com/account/overview.action), accédez à la section *Certificates, Identifiers & Profiles* (Certificats, identificateurs et profils). Sélectionnez **App IDs** sous **Identifiers**.
+2. Cliquez **+** sur le bouton et fournissez un **nom** qui l’identifiera dans le portail.
 3. Le préfixe d’application doit déjà être défini à l’aide de votre ID d’équipe. Il est impossible de le changer. Sélectionnez un ID d’application explicite ou avec des caractères génériques, puis entrez un ID de bundle au format DNS inversé : **Explicite** : com.[DomainName].[AppName] **Avec des caractères génériques** : com.[DomainName].*
 4. Sélectionnez les [services d’application](~/ios/get-started/installation/device-provisioning/index.md#provisioning-for-application-services) nécessaires à votre application.
 5. Cliquez sur le bouton **Continuer** et suivez les instructions à l’écran pour créer l’ID d’application.
 
 Une fois que vous avez les composants nécessaires pour créer un profil de distribution, suivez les étapes ci-dessous pour le créer :
 
-1. Retournez au portail de provisionnement Apple, puis sélectionnez **Provisioning (Provisionnement)**  > **Distribution** :
+1. Retour au portail d’approvisionnement Apple et sélection **de** > **distribution :**
 
    [![](in-house-distribution-images/distribute01.png "Select Provisioning > Distribution")](in-house-distribution-images/distribute01.png#lightbox)
 
-2. Cliquez sur le bouton **+** et sélectionnez le type **Interne** en tant que profil de distribution à créer :
+2. Cliquez **+** sur le bouton et sélectionnez le type de profil de distribution que vous souhaitez créer en tant qu’interne : **In-House**
 
    [![](in-house-distribution-images/distribute02.png "Create an In-House Distribution Profile")](in-house-distribution-images/distribute02.png#lightbox)
 
@@ -124,11 +124,11 @@ Une fois que vous avez les composants nécessaires pour créer un profil de dist
 
 6. Cliquez sur le bouton **Generate** pour créer le profil et finaliser le processus.
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
  Vous devrez peut-être quitter Visual Studio pour Mac et obliger Xcode à actualiser sa liste d’identités de signature et de profils de provisionnement disponibles (en suivant les instructions de la section [Demande d’identités de signature](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download)) pour qu’un nouveau profil de distribution soit disponible dans Visual Studio pour Mac.
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Vous devrez peut-être quitter Visual Studio et obliger Xcode (sur le Mac de l’hôte de build) à actualiser sa liste d’identités de signature et de profils de provisionnement disponibles (en suivant les instructions de la section [Demande d’identités de signature](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download)) pour qu’un nouveau profil de distribution soit disponible dans Visual Studio.
 
@@ -145,7 +145,7 @@ Vous distribuez votre application de manière sécurisée à l’aide de différ
 - Localement via iTunes
 - Serveur MDM
 - Serveur web interne sécurisé
-- Messagerie
+- E-mail
 
 Pour distribuer votre application selon l’une de ces méthodes, vous devez d’abord créer un fichier IPA, comme expliqué dans la section suivante.
 
@@ -159,9 +159,9 @@ Pour plus d’informations sur la création d’un fichier IPA, consultez le gui
 
 Cet article a fourni une brève présentation de la distribution d’applications Xamarin.iOS en interne.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
-- [Distribution sur l’App Store](~/ios/deploy-test/app-distribution/app-store-distribution/index.md)
-- [Distribution ad hoc](~/ios/deploy-test/app-distribution/ad-hoc-distribution.md)
+- [Distribution De l’App Store](~/ios/deploy-test/app-distribution/app-store-distribution/index.md)
+- [Distribution ad hoc](~/ios/deploy-test/app-distribution/ad-hoc-distribution.md)
 - [Fichier iTunesMetadata.plist](~/ios/deploy-test/app-distribution/itunesmetadata.md)
-- [Prise en charge IPA](~/ios/deploy-test/app-distribution/ipa-support.md)
+- [Soutien de l’API](~/ios/deploy-test/app-distribution/ipa-support.md)

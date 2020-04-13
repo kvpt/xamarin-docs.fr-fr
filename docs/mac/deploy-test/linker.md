@@ -8,17 +8,17 @@ author: davidortinau
 ms.author: daortin
 ms.date: 11/10/2017
 ms.openlocfilehash: f4ab94c4eede4a122ac834e075270a375bca0807
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73030007"
 ---
 # <a name="xamarinmac-linker-options"></a>Options de l’éditeur de liens Xamarin.Mac
 
 _La liaison est un puissant outil d’optimisation qui réduit la taille de votre application en supprimant le code inutilisé._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d’ensemble
 
 Selon le [framework cible](~/mac/platform/target-framework.md) qu’utilise votre projet, les options de l’éditeur de liens disponibles peuvent être limitées. En effet, la liaison nécessite la création d’un graphique d’objet de chaque type utilisé par votre application, ce qui est impossible avec Complet (ou Non pris en charge) en raison de System.Configuration.
 
@@ -27,7 +27,7 @@ Quatre options sont disponibles :
 - **Aucune** : désactive toutes les liaisons. Option par défaut dans la configuration Debug de Moderne et dans toutes les configurations de Complet.
 - **Kit de développement logiciel (SDK)** : lie tous les assemblys du SDK, à l’exclusion des assemblys utilisateur. Option par défaut dans la configuration Release de Moderne. Non disponible avec Complet.
 - **Complet** : lie tous les assemblys. Cette option exige que le code utilisateur soit sécurisé pour l’éditeur de liens. Consultez les [remarques](~/ios/deploy-test/linker.md) pour plus d’informations. Non disponible avec Complet.
-- **Plateforme** : lie uniquement Xamarin.Mac.dll. Pour plus d'informations, consultez ce qui suit.
+- **Plateforme** : lie uniquement Xamarin.Mac.dll. Voir les détails ci-dessous.
 
 ## <a name="platform-linking"></a>Liaison de plateforme
 
@@ -49,11 +49,11 @@ Pour modifier la configuration de l’éditeur de liens pour un projet Xamarin.M
 2. Dans l’**Explorateur de solutions**, double-cliquez sur le fichier projet pour ouvrir la boîte de dialogue **Options du projet**.
 3. Dans l’onglet **Build Mac**, sélectionnez le type de **comportement de l’éditeur de liens** adapté aux besoins de votre application :
 
-    ![Choisir le comportement de l’éditeur de liens à utiliser](linker-images/link-behavior.png "Choisir le comportement de l’éditeur de liens à utiliser")
+    ![Choisissez le comportement de liaison à utiliser](linker-images/link-behavior.png "Choisissez le comportement de liaison à utiliser")
 
 4. La liaison de plateforme pour les frameworks cibles Complet sera intégrée dans l’IDE dans une prochaine mise à jour. En attendant, ajoutez `--linkplatform` aux **arguments mmp supplémentaires** à la place.
 5. Cliquez sur le bouton **OK** pour enregistrer vos changements.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Liaison sur iOS](~/ios/deploy-test/linker.md)

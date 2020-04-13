@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
 ms.openlocfilehash: 107b2a970041c70bb021b03dd98f8c91eaea8d34
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70771758"
 ---
 # <a name="playing-a-web-video"></a>Lecture d’une vidéo web
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+[![Télécharger](~/media/shared/download.png) l’échantillon Télécharger l’échantillon](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
 La classe `VideoPlayer` définit une propriété `Source` utilisée pour spécifier la source du fichier vidéo ainsi qu’une propriété `AutoPlay`. `AutoPlay` a la valeur par défaut `true`, ce qui signifie que la lecture de la vidéo doit démarrer automatiquement après la définition de `Source` :
 
@@ -54,7 +54,7 @@ namespace FormsVideoLibrary
 }
 ```
 
-La propriété `Source` est de type `VideoSource`, qui s’inspire de la classe abstraite [`ImageSource`](xref:Xamarin.Forms.ImageSource) Xamarin.Forms et ses trois dérivés [`UriImageSource`](xref:Xamarin.Forms.UriImageSource), [`FileImageSource`](xref:Xamarin.Forms.FileImageSource) et [`StreamImageSource`](xref:Xamarin.Forms.StreamImageSource). Toutefois, aucune option de flux n’est disponible pour le `VideoPlayer`, car iOS et Android ne prennent pas en charge la lecture d’une vidéo à partir d’un flux.
+La `Source` propriété est `VideoSource`de type , qui est modelé d’après la classe [`UriImageSource`](xref:Xamarin.Forms.UriImageSource) [`FileImageSource`](xref:Xamarin.Forms.FileImageSource)abstraite [`StreamImageSource`](xref:Xamarin.Forms.StreamImageSource)Xamarin.Forms, [`ImageSource`](xref:Xamarin.Forms.ImageSource) et ses trois dérivés, , , et . Toutefois, aucune option de flux n’est disponible pour le `VideoPlayer`, car iOS et Android ne prennent pas en charge la lecture d’une vidéo à partir d’un flux.
 
 ## <a name="video-sources"></a>Sources vidéo
 
@@ -225,7 +225,7 @@ namespace FormsVideoLibrary.iOS
 
 Par la suite, quand la propriété `Source` est modifiée, la méthode `OnElementPropertyChanged` est appelée avec une propriété `PropertyName` « Source » et `SetSource` est rappelée.
 
-Pour lire un fichier vidéo dans iOS, un objet de type [`AVAsset`](xref:AVFoundation.AVAsset) est tout d’abord créé pour encapsuler le fichier vidéo et il est utilisé pour créer un [`AVPlayerItem`](xref:AVFoundation.AVPlayerItem) qui est ensuite remis à l’objet `AVPlayer`. Voici comment la méthode `SetSource` gère la propriété `Source` quand elle est de type `UriVideoSource` :
+Pour lire un fichier vidéo dans iOS, un objet de type [`AVAsset`](xref:AVFoundation.AVAsset) est d’abord créé [`AVPlayerItem`](xref:AVFoundation.AVPlayerItem)pour encapsuler le `AVPlayer` fichier vidéo, et qui est utilisé pour créer un , qui est ensuite remis à l’objet. Voici comment la méthode `SetSource` gère la propriété `Source` quand elle est de type `UriVideoSource` :
 
 ```csharp
 namespace FormsVideoLibrary.iOS
@@ -465,7 +465,7 @@ Avec l’implémentation de ces propriétés dans les trois renderers, il est po
 
 La classe `VideoSourceConverter` convertit la chaîne en `UriVideoSource`. Quand vous accédez à la page **Lire une vidéo web**, le chargement de la vidéo commence et la lecture démarre quand une quantité suffisante de données a été téléchargée et mise en mémoire tampon. La vidéo dure environ 10 minutes :
 
-[![Lire une vidéo web](web-videos-images/playwebvideo-small.png "Lire une vidéo web")](web-videos-images/playwebvideo-large.png#lightbox "Lire une vidéo web")
+[![Lire la vidéo Web](web-videos-images/playwebvideo-small.png "Lire la vidéo Web")](web-videos-images/playwebvideo-large.png#lightbox "Lire la vidéo Web")
 
 Sur chacune des plateformes, les contrôles de transport disparaissent s’ils ne sont pas utilisés, mais peuvent être de nouveau affichés en appuyant sur la vidéo.
 
@@ -519,6 +519,6 @@ Pour référencer l’un de ces autres films, vous pouvez remplacer l’URL expl
 
 Vous pouvez également définir la propriété `Source` à partir d’un fichier vidéo dans un `ListView`, comme décrit dans l’article suivant, [Liaison de sources vidéo au lecteur](source-bindings.md).
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Démonstrations de lecteur vidéo (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

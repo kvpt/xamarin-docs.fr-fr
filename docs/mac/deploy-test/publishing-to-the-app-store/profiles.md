@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 04/12/2017
 ms.openlocfilehash: 00d7610bda3d1b7c9f954df64bb6e3af982b1d06
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "76725517"
 ---
 # <a name="provisioning-profiles-for-xamarinmac-apps"></a>Profils de provisionnement pour les applications Xamarin.Mac
@@ -27,7 +27,7 @@ Un profil de provisionnement de développement permet à une application ciblée
 > [!NOTE]
 > Pour pouvoir créer un profil de provisionnement de développement, le développeur doit avoir préalablement créé un certificat de développement Mac. Complétez les informations comme indiqué dans cette capture d’écran pour générer un **profil de provisionnement de développement** pouvant être utilisé pour créer des builds. Un certificat de développement Mac valide doit pouvoir être sélectionné dans la zone **Certificat** et au moins un système doit être inscrit à des fins de test.
 
-Effectuez ce qui suit :
+Effectuez les actions suivantes :
 
 1. Sélectionnez le type de profil de provisionnement à créer, puis cliquez sur le bouton **Continue** :
 
@@ -63,7 +63,7 @@ Un nouveau profil de provisionnement de développement doit être créé pour ch
 
 Les profils de provisionnement de production sont obligatoires pour générer un paquet à envoyer au Mac App Store.
 
-Effectuez ce qui suit :
+Effectuez les actions suivantes :
 
 1. Sélectionnez le type de profil à créer, puis cliquez sur le bouton **Continue** :
 
@@ -92,7 +92,7 @@ Si le développeur change les fonctionnalités utilisées par un ID d’applicat
 ## <a name="related-links"></a>Liens connexes
 
 - [Installation](~//mac/get-started/installation.md)
-- [Exemple Hello, Mac](~//mac/get-started/hello-mac.md)
+- [Bonjour, échantillon De Mac](~//mac/get-started/hello-mac.md)
 - [Distribuer vos applications sur le Mac App Store](https://developer.apple.com/devcenter/mac/checklist/)
 - [Guide sur les outils : Signature du code de votre application](https://developer.apple.com/library/mac/#documentation/ToolsLanguages/Conceptual/OSXWorkflowGuide/CodeSigning/CodeSigning.html)
 - [ID de développeur et GateKeeper](https://developer.apple.com/developer-id/)

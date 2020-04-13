@@ -8,15 +8,15 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/15/2017
 ms.openlocfilehash: f98603c2ffac35362c6697e4806bf4b2daf44710
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73030170"
 ---
 # <a name="app-group-capabilities-in-xamarinios"></a>Fonctionnalités App Group dans Xamarin.iOS
 
-_L’ajout de fonctionnalités à une application nécessite souvent une configuration d’approvisionnement supplémentaire. Ce guide explique la configuration requise pour les fonctionnalités de groupe d’applications._
+_L’ajout de capacités à une application nécessite souvent une configuration d’approvisionnement supplémentaire. Ce guide explique la configuration nécessaire pour les capacités app Group._
 
 Un App Group est un groupe qui permet à différentes applications (ou à une application et ses extensions) d’accéder à un emplacement partagé du stockage de fichiers. Vous pouvez utiliser des App Groups pour les données suivantes, par exemple :
 
@@ -28,7 +28,7 @@ Un App Group est un groupe qui permet à différentes applications (ou à une a
 
 Configurez l’emplacement partagé à l’aide d’un [App Group](https://developer.apple.com/library/content/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/EnablingAppSandbox.html#//apple_ref/doc/uid/TP40011195-CH4-SW19), qui est lui-même configuré dans la section **Certificates, Identifiers & Profiles** du [developer center d’Apple](https://developer.apple.com/account/). Cette valeur doit également être référencée dans le fichier Entitlements.plist de chaque projet.
 
-Le groupe d’applications a un identificateur, qui correspond généralement à l’ID de bundle avec un groupe. céder. Par exemple, l’ID de bundle `com.xamarin.WatchSettings` a pour groupe d’applications  `group.com.xamarin.WatchSettings`.
+Le groupe d’applications a un identificateur, qui correspond généralement à l’ID de bundle avec un groupe.. Par exemple, l’ID de bundle `com.xamarin.WatchSettings` a pour groupe d’applications  `group.com.xamarin.WatchSettings`.
 
 Pour créer un App Group, effectuez les étapes suivantes :
 
@@ -45,7 +45,7 @@ Pour créer un App Group, effectuez les étapes suivantes :
 
 Une fois que vous avez créé l’App Group, configurez les ID d’application pour permettre aux applications de l’utiliser.
 
-procédez comme suit :
+Effectuez les actions suivantes :
 
 1. Accédez au  [Centre des développeurs iOS](https://developer.apple.com/account/) d’Apple, puis connectez-vous à l’aide d’un compte de développeur Apple.
 2. Dans le menu **Program Resources**, sélectionnez **Certificates, Identifiers & Profiles**.
@@ -78,6 +78,6 @@ S’il y a lieu, effectuez les étapes supplémentaires décrites ci-après :
 
 * Utilisez l’espace de noms de framework dans votre application.
 * Ajoutez les droits requis à votre application. Pour obtenir des informations détaillées sur les droits nécessaires et leur ajout, consultez le guide [Utilisation de droits](~/ios/deploy-test/provisioning/entitlements.md).
-* Assurez-vous que, dans la section **Signature du bundle iOS** de l’application, le paramètre **Droits personnalisés** est défini sur **Entitlements.plist**. Ce n’est _pas_ le paramètre par défaut pour les builds de débogage et de simulateur iOS.
+* Assurez-vous que, dans la section **Signature du bundle iOS** de l’application, le paramètre **Droits personnalisés** est défini sur **Entitlements.plist**.Ce _n’est pas_ le paramètre par défaut pour Debug et iOS Simulator construit.
 
 Si vous rencontrez des problèmes avec les services d’application, consultez la section [Dépannage](~/ios/deploy-test/provisioning/capabilities/index.md) du guide principal.

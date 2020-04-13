@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
 ms.openlocfilehash: efe41fa5f25f6257587fd97a2711e9037b94dc6e
-ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/26/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "77636014"
 ---
 # <a name="custom-video-transport-controls"></a>Contrôles de transport vidéo personnalisés
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+[![Télécharger](~/media/shared/download.png) l’échantillon Télécharger l’échantillon](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
 Les contrôles de transport d’un lecteur vidéo incluent les boutons qui effectuent les fonctions **Lecture**, **Pause** et **Arrêt**. Ces boutons sont habituellement identifiés par des icônes familières plutôt que du texte, et les fonctions **Lecture** et **Pause** sont généralement combinées en un seul bouton.
 
@@ -278,9 +278,9 @@ namespace FormsVideoLibrary
 }
 ```
 
-Ceci est similaire à la façon dont le contrôle [`WebView`](xref:Xamarin.Forms.WebView) utilise l’interface [`IWebViewController`](xref:Xamarin.Forms.IWebViewController) pour implémenter les propriétés `CanGoBack` et `CanGoForward`. (Consultez le code source de [`WebView`](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Core/WebView.cs) et ses renderers pour plus d’informations.)
+Ceci est similaire [`WebView`](xref:Xamarin.Forms.WebView) à la [`IWebViewController`](xref:Xamarin.Forms.IWebViewController) façon dont `CanGoBack` `CanGoForward` le contrôle utilise l’interface pour implémenter le et les propriétés. (Voir le code [`WebView`](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Core/WebView.cs) source de et ses rendus pour plus de détails.)
 
-Il est ainsi possible pour une classe externe à `VideoPlayer` de définir la propriété `Status` en référençant l’interface `IVideoPlayerController`. (Vous verrez le code sous peu.) La propriété peut aussi être définie à partir d’autres classes, mais il est peu probable qu’elle ne soit définie par inadvertance. Plus important encore, la propriété `Status` ne peut pas être définie via une liaison de données.
+Il est ainsi possible pour une classe externe à `VideoPlayer` de définir la propriété `Status` en référençant l’interface `IVideoPlayerController`. (Vous verrez le code sous peu.) La propriété peut être définie à partir d’autres classes ainsi, mais il est peu probable d’être fixé par inadvertance. Plus important encore, la propriété `Status` ne peut pas être définie via une liaison de données.
 
 Pour aider les renderers à assurer la mise à jour de cette propriété `Status`, la classe `VideoPlayer` définit un événement `UpdateStatus` qui est déclenché tous les dixièmes de seconde :
 
@@ -360,11 +360,11 @@ namespace FormsVideoLibrary.iOS
 }
 ```
 
-Deux propriétés de `AVPlayer` doivent être accessibles : La propriété [`Status`](xref:AVFoundation.AVPlayer.Status*) de type `AVPlayerStatus` et la propriété [`TimeControlStatus`](xref:AVFoundation.AVPlayer.TimeControlStatus*) de type `AVPlayerTimeControlStatus`. Notez que la propriété `Element` (qui correspond au `VideoPlayer`) doit être castée en `IVideoPlayerController` pour définir la propriété `Status`.
+Deux propriétés de `AVPlayer` doit [`Status`](xref:AVFoundation.AVPlayer.Status*) être consulté: La propriété de type `AVPlayerStatus` et la [`TimeControlStatus`](xref:AVFoundation.AVPlayer.TimeControlStatus*) propriété de type `AVPlayerTimeControlStatus`. Notez que la propriété `Element` (qui correspond au `VideoPlayer`) doit être castée en `IVideoPlayerController` pour définir la propriété `Status`.
 
 ### <a name="the-android-status-setting"></a>Paramètre d’état Android
 
-La propriété [`IsPlaying`](xref:Android.Widget.VideoView.IsPlaying) du `VideoView` Android est une valeur booléenne qui indique uniquement si la vidéo est en cours de lecture ou en pause. Pour déterminer si le `VideoView` ne peut ni lire ni suspendre la vidéo pour l’instant, l’événement `Prepared` de `VideoView` doit être géré. Ces deux gestionnaires sont définis dans la méthode `OnElementChanged` et détachés pendant le remplacement de `Dispose` :
+La [`IsPlaying`](xref:Android.Widget.VideoView.IsPlaying) propriété de `VideoView` l’Android est un Boolean qui indique seulement si la vidéo est en lecture ou en pause. Pour déterminer si le `VideoView` ne peut ni lire ni suspendre la vidéo pour l’instant, l’événement `Prepared` de `VideoView` doit être géré. Ces deux gestionnaires sont définis dans la méthode `OnElementChanged` et détachés pendant le remplacement de `Dispose` :
 
 ```csharp
 namespace FormsVideoLibrary.Droid
@@ -451,7 +451,7 @@ namespace FormsVideoLibrary.Droid
 
 ### <a name="the-uwp-status-setting"></a>Paramètre d’état UWP
 
-Le `VideoPlayerRenderer` UWP utilise l’événement `UpdateStatus`, mais il n’en a pas besoin pour définir la propriété `Status`. Le `MediaElement` définit un événement [`CurrentStateChanged`](xref:Windows.UI.Xaml.Controls.MediaElement.CurrentStateChanged) qui permet au renderer d’être averti quand la propriété [`CurrentState`](xref:Windows.UI.Xaml.Controls.MediaElement.CurrentState*) a été modifiée. La propriété est détachée dans le remplacement de `Dispose` :
+Le `VideoPlayerRenderer` UWP utilise l’événement `UpdateStatus`, mais il n’en a pas besoin pour définir la propriété `Status`. Le `MediaElement` définit [`CurrentStateChanged`](xref:Windows.UI.Xaml.Controls.MediaElement.CurrentStateChanged) un événement qui permet au rendu [`CurrentState`](xref:Windows.UI.Xaml.Controls.MediaElement.CurrentState*) d’être avisé lorsque la propriété a changé. La propriété est détachée dans le remplacement de `Dispose` :
 
 ```csharp
 namespace FormsVideoLibrary.UWP
@@ -489,7 +489,7 @@ namespace FormsVideoLibrary.UWP
 }
 ```
 
-La propriété `CurrentState` est de type [`MediaElementState`](/uwp/api/windows.ui.xaml.media.mediaelementstate) et est facilement mappée dans `VideoStatus` :
+La `CurrentState` propriété est [`MediaElementState`](/uwp/api/windows.ui.xaml.media.mediaelementstate)de type `VideoStatus`, et les cartes facilement dans:
 
 ```csharp
 namespace FormsVideoLibrary.UWP
@@ -522,7 +522,7 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="play-pause-and-stop-buttons"></a>Boutons de lecture, de pause et d’arrêt
 
-L’utilisation de caractères Unicode pour les images **Lecture**, **Pause** et **Arrêt** symboliques est problématique. La section [Divers technique](https://unicode-table.com/en/blocks/miscellaneous-technical/) de la convention Unicode Standard définit trois symboles apparemment appropriés à cet effet. Ces équivalents sont :
+L’utilisation de caractères Unicode pour les images **Lecture**, **Pause** et **Arrêt** symboliques est problématique. La section [Divers technique](https://unicode-table.com/en/blocks/miscellaneous-technical/) de la convention Unicode Standard définit trois symboles apparemment appropriés à cet effet. Ces règles sont les suivantes :
 
 - 0x23F5 (triangle noir moyen pointant vers la droite) ou &#x23F5; pour **Lecture**
 - 0x23F8 (double barre verticale) ou &#x23F8; pour **Pause**
@@ -649,14 +649,14 @@ namespace VideoPlayerDemos
 
 Comme `AutoPlay` a la valeur `false` dans le fichier **CustomTransport.xaml**, vous devez appuyer sur le bouton de **lecture** quand celui-ci est activé pour démarrer la vidéo. Les boutons sont définis afin que les caractères Unicode abordés ci-dessus soient accompagnés de leurs équivalents textuels. Les boutons ont une apparence cohérente sur chaque plateforme lors de la lecture de la vidéo :
 
-[![Lecture de transport personnalisé](custom-transport-images/customtransportplaying-small.png "Lecture de transport personnalisé")](custom-transport-images/customtransportplaying-large.png#lightbox "Lecture de transport personnalisé")
+[![Jeu de transport personnalisé](custom-transport-images/customtransportplaying-small.png "Jeu de transport personnalisé")](custom-transport-images/customtransportplaying-large.png#lightbox "Jeu de transport personnalisé")
 
 Toutefois, sur Android et UWP, le bouton de **lecture** semble très différent quand la vidéo est en pause :
 
-[![Transport personnalisé en pause](custom-transport-images/customtransportpaused-small.png "Transport personnalisé en pause")](custom-transport-images/customtransportpaused-large.png#lightbox "Transport personnalisé en pause")
+[![Transport personnalisé interrompu](custom-transport-images/customtransportpaused-small.png "Transport personnalisé interrompu")](custom-transport-images/customtransportpaused-large.png#lightbox "Transport personnalisé interrompu")
 
 Dans une application de production, vous voudrez probablement utiliser vos propres images bitmap pour les boutons afin d’obtenir une uniformité visuelle.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Démonstrations de lecteur vidéo (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

@@ -8,23 +8,23 @@ author: profexorgeek
 ms.author: jusjohns
 ms.date: 12/27/2019
 ms.openlocfilehash: 3cd7979a3e244866b190c9534c472ea44b9f9c30
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "75502918"
 ---
 # <a name="xamarinforms-samples"></a>Exemples Xamarin.Forms
 
 Exemples d’applications Xamarin.Forms et démonstrations de code pour vous aider à bien démarrer et à comprendre les concepts de Xamarin.Forms.
 
-[Tous les exemples Xamarin. Forms](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
+[Tous les échantillons de Xamarin.Forms](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
 
 :::row:::
     :::column:::
-[![TODO](images/todo.png)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo/)
+[![Todo](images/todo.png)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo/)
 
-### <a name="todo"></a>[TODO](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo/)
+### <a name="todo"></a>[Todo](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo/)
 
 Cet exemple illustre une application de liste Todo où les données sont accessibles et stockées dans une base de données SQLite locale.
     :::column-end:::
@@ -36,7 +36,7 @@ Cet exemple illustre une application de liste Todo où les données sont accessi
 Il s’agit d’un jeu familier repensé. Dix bogues sont masqués dans une grille de mosaïques de 9 x 9. Pour gagner, vous devez trouver et marquer les dix bogues.
     :::column-end:::
     :::column:::
-[![calculatrice NPI](images/rpncalc.png)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/rpncalculator/)
+[![Calculatrice NPI](images/rpncalc.png)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/rpncalculator/)
 
 ### <a name="rpn-calculator"></a>[Calculatrice NPI](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/rpncalculator/)
 
@@ -53,7 +53,7 @@ Une calculatrice en notation polonaise inverse (NPI) permet d’entrer des nombr
 Le programme simule un disque tournant sur lequel vous pouvez peindre par entrée tactile et en déplaçant vos doigts. SpinPaint répond aux entrées tactiles en peignant une ligne sous votre doigt et en dupliquant également celle-ci dans trois images miroir dans les trois autres quadrants du disque.
     :::column-end:::
     :::column:::
-[Exemples XAML ![](images/xaml.png)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples/)
+[![Exemples XAML](images/xaml.png)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples/)
 
 ### <a name="xaml-samples"></a>[Exemples XAML](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples/)
 
@@ -64,10 +64,10 @@ XAML (eXtensible Application Markup Language) : permet aux développeurs de déf
 
 ### <a name="xuzzle"></a>[Xuzzle](https://docs.microsoft.com/samples/xamarin/mobile-samples/liveplayer-xamagonxuzzlelp/)
 
-Ce jeu est une variante du puzzle 14-15 classique que vous pouvez résoudre en déplaçant les vignettes dans le bon ordre.
+Ce jeu est une variation du puzzle classique 14-15 que vous pouvez résoudre en glissant des tuiles dans l’ordre correct.
     :::column-end:::
 :::row-end:::
 
 ## <a name="all-samples"></a>Tous les exemples
 
-Pour obtenir l’ensemble complet d’exemples d’applications Xamarin. Forms et de démonstrations de code, consultez [tous les exemples Xamarin. Forms](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms).
+Pour l’ensemble complet des applications d’échantillons Xamarin.Forms et des démos de code, voir [tous les échantillons Xamarin.Forms](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms).

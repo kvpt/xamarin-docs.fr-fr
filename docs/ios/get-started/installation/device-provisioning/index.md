@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 05/06/2018
 ms.openlocfilehash: bb1ef1e948c796e6b0d91230be3c82c5a8c7d366
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "79304834"
 ---
 # <a name="device-provisioning-for-xamarinios"></a>Provisionnement d’appareil pour Xamarin.iOS
@@ -62,6 +62,6 @@ Apple propose une sélection de services d’application spéciaux, également a
 ## <a name="related-links"></a>Liens connexes
 
 - [Provisionnement libre](~/ios/get-started/installation/device-provisioning/free-provisioning.md)
-- [Distribution d’une application](~/ios/deploy-test/app-distribution/index.md)
+- [Distribution d’applications](~/ios/deploy-test/app-distribution/index.md)
 - [Dépannage](~/ios/deploy-test/troubleshooting.md)
 - [Apple - Guide de distribution d’applications](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html)

@@ -9,26 +9,26 @@ author: davidortinau
 ms.author: daortin
 ms.date: 12/02/2016
 ms.openlocfilehash: 199b9de670e424bdc21a05966cfdd73c7e2cbb42
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73020908"
 ---
 # <a name="hello-android-multiscreen"></a>Hello, Android multi-écran
 
-_Dans ce guide en deux parties, vous développez l’application Phoneword que vous avez créée dans le guide Hello, Android pour gérer un deuxième écran. En cours de route, ce guide présente les blocs de construction des applications Android de base et explore plus en détail l’architecture Android lorsque vous développez une meilleure compréhension de la structure et des fonctionnalités de l’application Android._
+_Dans ce guide en deux parties, vous élargissez l’application Phoneword que vous avez créée dans le guide Hello, Android pour gérer un deuxième écran. En cours de route, ce guide présentera les blocs de base Android Application Building et plongera plus profondément dans l’architecture Android que vous développez une meilleure compréhension de la structure d’application Android et la fonctionnalité._
 
-## <a name="part-1-quickstartandroidget-startedhello-android-multiscreenhello-android-multiscreen-quickstartmd"></a>[Première partie : démarrage rapide](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-quickstart.md)
+## <a name="part-1-quickstart"></a>[Première partie : Guide de démarrage rapide](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-quickstart.md)
 
 Dans la première partie de ce guide, vous allez ajouter un second écran à l’application Phoneword de manière à suivre l’historique des numéros appelés à partir de l’application. L’application finale affichera un second écran contenant l’historique des appels.
 
-## <a name="part-2-deep-diveandroidget-startedhello-android-multiscreenhello-android-multiscreen-deepdivemd"></a>[Seconde partie : expérience approfondie](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-deepdive.md)
+## <a name="part-2-deep-dive"></a>[Seconde partie : En profondeur](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-deepdive.md)
 
 La seconde partie de ce document examine ce que vous avez généré et décrit l’architecture, la navigation et les autres nouveaux concepts Android que vous avez rencontrés en chemin.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
-- [Bien démarrer avec Android](https://developer.android.com/training/index.html)
+- [Démarrage sur Android](https://developer.android.com/training/index.html)
 - [Débogage dans Visual Studio](https://docs.microsoft.com/visualstudio/debugger/)
 - [Recettes Visual Studio pour Mac – Débogage](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging)

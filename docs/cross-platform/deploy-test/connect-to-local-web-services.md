@@ -7,15 +7,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/16/2019
 ms.openlocfilehash: 29261f2ef6366c0dac8ac82e63584366a5cca0b0
-ms.sourcegitcommit: 233aaa1ac3d8f40c09b6daf6d944ea0b4cbee381
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/16/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "74135282"
 ---
 # <a name="connect-to-local-web-services-from-ios-simulators-and-android-emulators"></a>Connexion aux services web locaux à partir de simulateurs iOS et d’émulateurs Android
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest/)
+[![Télécharger](~/media/shared/download.png) l’échantillon Télécharger l’échantillon](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest/)
 
 De nombreuses applications mobiles consomment des services web. Pendant la phase de développement, il est courant de déployer un service web localement et de le consommer à partir d’une application mobile en cours d’exécution dans le simulateur iOS ou l’émulateur Android. Cela évite d’avoir à déployer le service web sur un point de terminaison hébergé et garantit une expérience de débogage simple, car l’application mobile et le web service mobile sont exécutés localement.
 
@@ -27,7 +27,7 @@ Les applications mobiles en cours d’exécution dans le simulateur iOS ou l’�
 Toutefois, un travail supplémentaire est nécessaire pour qu’une application en cours d’exécution dans le simulateur iOS ou l’émulateur Android puisse consommer un service web local exposé via le protocole HTTPS. Pour ce scénario, le processus est le suivant :
 
 1. Créez un certificat de développement auto-signé sur votre ordinateur. Pour plus d’informations, consultez [Créer un certificat de développement](#create-a-development-certificate).
-1. Configurez votre projet pour utiliser la pile réseau `HttpClient` appropriée pour votre version de débogage. Pour plus d’informations, consultez [Configurer votre projet](#configure-your-project).
+1. Configurez votre projet `HttpClient` pour utiliser la pile réseau appropriée pour votre conception de débogé. Pour plus d’informations, consultez [Configurer votre projet](#configure-your-project).
 1. Spécifiez l’adresse de votre ordinateur local. Pour plus d’informations, consultez [Spécifier l’adresse de l’ordinateur local](#specify-the-local-machine-address).
 1. Contournez la vérification de sécurité du certificat de développement local. Pour plus d’informations, consultez [Contourner la vérification de sécurité du certificat](#bypass-the-certificate-security-check).
 
@@ -66,7 +66,7 @@ Toutefois, si une application doit se connecter à un service web sécurisé en 
 
 ### <a name="android"></a>Android
 
-Les applications Xamarin en cours d’exécution sur Android peuvent utiliser la pile réseau gérée `HttpClient`, ou la pile réseau native `AndroidClientHandler`. Par défaut, les projets créés dans nouvelle plateforme Android utilisent la pile réseau `AndroidClientHandler` (pour prendre en charge TLS 1.2) et des API natives pour améliorer les performances et générer un fichier exécutable de plus petite taille. Pour plus d’informations sur les piles réseau Android, voir [pile httpclient et sélecteur d’implémentation SSL/TLS pour Android](~/android/app-fundamentals/http-stack.md).
+Les applications Xamarin en cours d’exécution sur Android peuvent utiliser la pile réseau gérée `HttpClient`, ou la pile réseau native `AndroidClientHandler`. Par défaut, les projets créés dans nouvelle plateforme Android utilisent la pile réseau `AndroidClientHandler` (pour prendre en charge TLS 1.2) et des API natives pour améliorer les performances et générer un fichier exécutable de plus petite taille. Pour plus d’informations sur les piles de réseau Android, voir [httpClient Stack et SSL/TLS Implementation selector pour Android](~/android/app-fundamentals/http-stack.md).
 
 ## <a name="specify-the-local-machine-address"></a>Spécifier l’adresse de l’ordinateur local
 
@@ -87,7 +87,7 @@ Cependant, le routeur virtuel de chaque émulateur gère un espace de réseau sp
 
 ### <a name="xamarinforms-example"></a>Exemple Xamarin.Forms
 
-Dans une application Xamarin.Forms, la classe [`Device`](xref:Xamarin.Forms.Device) peut être utilisée pour détecter la plateforme sur laquelle l’application est en cours d’exécution. Le nom d’hôte approprié, qui permet d’accéder aux services web sécurisés locaux, peut être ainsi défini comme suit :
+Dans une application Xamarin.Forms, la [`Device`](xref:Xamarin.Forms.Device) classe peut être utilisée pour détecter la plate-forme sur laquelle l’application est en cours d’exécution. Le nom d’hôte approprié, qui permet d’accéder aux services web sécurisés locaux, peut être ainsi défini comme suit :
 
 ```csharp
 public static string BaseAddress =
@@ -99,11 +99,11 @@ public static string TodoItemsUrl = $"{BaseAddress}/api/todoitems/";
 
 Toute tentative pour appeler un service web sécurisé local à partir d’une application en cours d’exécution dans le simulateur iOS ou l’émulateur Android entraînera une exception `HttpRequestException`, même si vous utilisez la pile réseau gérée sur chaque plateforme. En effet, le certificat de développement HTTPS local est auto-signé, et les certificats auto-signés ne sont pas approuvés par iOS ou Android.
 
-Par conséquent, il est nécessaire d’ignorer les erreurs SSL lorsqu’une application consomme un service web sécurisé local. Le mécanisme d’accomplissement de cette fonctionnalité est actuellement différent sur iOS et Android.
+Par conséquent, il est nécessaire d’ignorer les erreurs SSL lorsqu’une application consomme un service web sécurisé local. Le mécanisme pour y parvenir est actuellement différent sur iOS et Android.
 
 ### <a name="ios"></a>iOS
 
-Les erreurs SSL peuvent être ignorées sur iOS pour les services Web sécurisés locaux, lors de l’utilisation de la pile réseau gérée, en affectant à la propriété `ServicePointManager.ServerCertificateValidationCallback` la valeur d’un rappel qui ignore le résultat de la vérification de la sécurité du certificat pour le certificat de développement HTTPs local :
+Les erreurs de SSL peuvent être ignorées sur iOS pour les `ServicePointManager.ServerCertificateValidationCallback` services Web sécurisés locaux, lors de l’utilisation de la pile réseau géré, en définissant la propriété à un rappel qui ignore le résultat du chèque de sécurité de certificat pour le certificat de développement local HTTPS:
 
 ```csharp
 #if DEBUG
@@ -116,14 +116,14 @@ Les erreurs SSL peuvent être ignorées sur iOS pour les services Web sécurisé
 #endif
 ```
 
-Dans cet exemple de code, le résultat de la validation du certificat du serveur est retourné lorsque le certificat ayant fait l’objet de la validation n’est pas le certificat `localhost`. Pour obtenir ce certificat, le résultat de la validation est ignoré et la valeur `true` est renvoyée, indiquant que le certificat est valide. Ce code doit être ajouté à la méthode `AppDelegate.FinishedLaunching` sur iOS, avant l’appel de la méthode `LoadApplication(new App())`.
+Dans cet exemple de code, le résultat de la validation du certificat du serveur est retourné lorsque le certificat ayant fait l’objet de la validation n’est pas le certificat `localhost`. Pour obtenir ce certificat, le résultat de la validation est ignoré et la valeur `true` est renvoyée, indiquant que le certificat est valide. Ce code doit être `AppDelegate.FinishedLaunching` ajouté à la méthode `LoadApplication(new App())` sur iOS, avant l’appel de méthode.
 
 > [!NOTE]
-> Les piles réseau natives sur iOS ne sont pas raccordées à l' `ServerCertificateValidationCallback`.
+> Les piles de réseau indigène sur iOS `ServerCertificateValidationCallback`ne s’accrochent pas dans le .
 
 ### <a name="android"></a>Android
 
-Les erreurs SSL peuvent être ignorées sur Android pour les services Web sécurisés locaux, lors de l’utilisation des piles réseau `AndroidClientHandler` managées et natives, en définissant la propriété `ServerCertificateCustomValidationCallback` sur un objet `HttpClientHandler` sur un rappel qui ignore le résultat de la vérification de la sécurité du certificat pour le certificat de développement HTTPs local :
+Les erreurs de SSL peuvent être ignorées sur Android pour `AndroidClientHandler` les services Web `ServerCertificateCustomValidationCallback` sécurisés `HttpClientHandler` locaux, lors de l’utilisation des piles de réseau gérées et natives, en définissant la propriété sur un objet à un rappel qui ignore le résultat du chèque de sécurité de certificat pour le certificat de développement local HTTPS :
 
 ```csharp
 public HttpClientHandler GetInsecureHandler()
@@ -139,11 +139,11 @@ public HttpClientHandler GetInsecureHandler()
 }
 ```
 
-Dans cet exemple de code, le résultat de la validation du certificat du serveur est retourné lorsque le certificat ayant fait l’objet de la validation n’est pas le certificat `localhost`. Pour obtenir ce certificat, le résultat de la validation est ignoré et la valeur `true` est renvoyée, indiquant que le certificat est valide. L’objet `HttpClientHandler` résultant doit être passé en tant qu’argument au constructeur `HttpClient`.
+Dans cet exemple de code, le résultat de la validation du certificat du serveur est retourné lorsque le certificat ayant fait l’objet de la validation n’est pas le certificat `localhost`. Pour obtenir ce certificat, le résultat de la validation est ignoré et la valeur `true` est renvoyée, indiquant que le certificat est valide. L’objet qui en résulte `HttpClientHandler` doit `HttpClient` être transmis comme argument au constructeur.
 
 ## <a name="related-links"></a>Liens connexes
 
 - [TodoREST (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest/)
-- [Activer HTTPS localement](/aspnet/core/getting-started#enable-local-https)
+- [Activez HTTPS locale](/aspnet/core/getting-started#enable-local-https)
 - [HttpClient et sélecteur d’implémentation SSL/TLS pour iOS/macOS](~/cross-platform/macios/http-stack.md)
 - [Pile HttpClient et sélecteur d’implémentation SSL/TLS pour Android](~/android/app-fundamentals/http-stack.md)

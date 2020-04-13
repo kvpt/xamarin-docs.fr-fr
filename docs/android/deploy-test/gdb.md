@@ -7,15 +7,15 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/05/2018
 ms.openlocfilehash: 51ebb8932f4b1ef8f10ba699e59ce53c98a38a50
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73021483"
 ---
 # <a name="gdb"></a>GDB
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d’ensemble
 
 Xamarin.Android 4.10 a introduit la prise en charge partielle de l’utilisation de `gdb` à l’aide de la cible MSBuild `_Gdb`. 
 
@@ -57,7 +57,7 @@ La `_Gdb` cible lancera une activité de lanceur arbitraire déclarée dans votr
 La cible `_Gdb` créera un répertoire `gdb-symbols` où elle copiera le contenu des répertoires `/system/lib` et `$APPDIR/lib` de votre cible.
 
 > [!NOTE]
-> Le contenu du répertoire `gdb-symbols` est lié à la cible Android sur laquelle vous avez déployé et ne sera pas automatiquement remplacé si vous changez la cible. (Considérez ce problème comme un bogue.) Si vous modifiez des appareils cibles Android, vous devrez supprimer manuellement ce répertoire.
+> Le contenu du répertoire `gdb-symbols` est lié à la cible Android sur laquelle vous avez déployé et ne sera pas automatiquement remplacé si vous changez la cible. (Considérez cela comme un bug.) Si vous modifiez les périphériques cibles Android, vous devrez supprimer manuellement cet annuaire.
 
 Pour finir, copiez la commande `gdb` générée et exécutez-la dans votre interpréteur de commandes :
 
@@ -77,7 +77,7 @@ GNU gdb (GDB) 7.3.1-gg2
 
 ## <a name="debug-builds-without-fast-deployment"></a>Versions de débogage sans déploiement rapide
 
-Les versions de débogage *avec déploiement rapide de* fonctionnent en copiant le programme `gdbserver` du NDK d’Android dans le répertoire `.__override__` de déploiement rapide. Lorsque le déploiement rapide est désactivé, il est possible que ce répertoire n’existe pas.
+Les versions de débogage * avec déploiement rapide de * fonctionnent en copiant le programme `gdbserver` du NDK d’Android dans le répertoire `.__override__` de déploiement rapide. Lorsque le déploiement rapide est désactivé, il est possible que ce répertoire n’existe pas.
 
 Il y a deux manières d’y remédier :
 
@@ -112,7 +112,7 @@ Pour inclure `gdbserver` dans votre application :
 
 1. Recherchez `gdbserver` au sein de votre NDK Android (il devrait se trouver dans **$ANDROID\_NDK\_PATH/prebuilt/android-arm/gdbserver/gdbserver**), puis copiez-le dans votre répertoire de projet.
 
-2. Renommez `gdbserver` **libs/armeabi-v7a/libgdbserver.so**.
+2. Renommez `gdbserver`**libs/armeabi-v7a/libgdbserver.so**.
 
 3. Ajoutez **libs/armeabi-v7a/libgdbserver.so** à votre projet avec une **action de génération** de `AndroidNativeLibrary`.
 
@@ -156,7 +156,7 @@ Une ombre au tableau : la cible MSBuild `_Gdb` va tuer toutes les instances d�
 
 <a name="Troubleshooting" />
 
-## <a name="troubleshooting"></a>Résolution des problèmes
+## <a name="troubleshooting"></a>Dépannage
 
 ### <a name="mono_pmip-doesnt-work"></a>`mono_pmip` ne fonctionne pas
 

@@ -7,15 +7,15 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/15/2018
 ms.openlocfilehash: 54fc52c2f2460726fe1c22149d4e7cc0e8a92609
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73028074"
 ---
 # <a name="xamarinandroid-environment"></a>Environnement de Xamarin.Android
 
-## <a name="execution-environment"></a>Environnement d'exécution
+## <a name="execution-environment"></a>Environnement d’exécution
 
 *L’environnement d’exécution* correspond à l’ensemble de variables d’environnement et de propriétés système Android qui influencent l’exécution du programme. Les propriétés système Android peuvent être définies avec la commande `adb shell setprop`, tandis que les variables d’environnement peuvent être définies en définissant la propriété systèm `debug.mono.env`  :
 
@@ -30,7 +30,7 @@ adb shell setprop debug.mono.env "'MONO_LOG_LEVEL=info|MONO_LOG_MASK=asm'"
 
 les propriétés système Android sont définies pour tous les processus sur l’appareil cible.
 
-À partir de Xamarin.Android 4.6, les propriétés système et les variables d’environnement peuvent être définies ou remplacées pour chaque application en ajoutant un *fichier d’environnement* au projet. Un fichier d’environnement est un fichier texte brut au format Unix avec une [ **action de génération** de `AndroidEnvironment` ](~/android/deploy-test/building-apps/build-process.md).
+À partir de Xamarin.Android 4.6, les propriétés système et les variables d’environnement peuvent être définies ou remplacées pour chaque application en ajoutant un *fichier d’environnement* au projet. Un fichier d’environnement est un fichier texte brut au format Unix avec une [**action de génération** de `AndroidEnvironment`](~/android/deploy-test/building-apps/build-process.md).
 Le fichier d’environnement contient des lignes avec le format *key=value*.
 Les commentaires sont des lignes qui commencent par `#`. Les lignes vides sont ignorées.
 
@@ -44,11 +44,11 @@ Xamarin.Android prend en charge la variable `XA_HTTP_CLIENT_HANDLER_TYPE`, qui p
 
 ### `XA_HTTP_CLIENT_HANDLER_TYPE`
 
-Le type qualifié d’assembly qui doit hériter de [HttpMessageHandler](https://docs.microsoft.com/dotnet/api/system.net.http.httpmessagehandler?view=xamarinandroid-7.1) est construit à partir du [ `HttpClient()` constructeur par défaut](https://docs.microsoft.com/dotnet/api/system.net.http.httpclient.-ctor?view=xamarinandroid-7.1#System_Net_Http_HttpClient__ctor).
+Le type qualifié d’assembly qui doit hériter de [HttpMessageHandler](https://docs.microsoft.com/dotnet/api/system.net.http.httpmessagehandler?view=xamarinandroid-7.1) est construit à partir du [`HttpClient()` constructeur par défaut](https://docs.microsoft.com/dotnet/api/system.net.http.httpclient.-ctor?view=xamarinandroid-7.1#System_Net_Http_HttpClient__ctor).
 
 Dans Xamarin.Android 6.1, cette variable d’environnement n’est pas définie par défaut, et [HttpClientHandler](https://docs.microsoft.com/dotnet/api/system.net.http.httpclienthandler?view=xamarinandroid-7.1) sera utilisée.
 
-Vous pouvez également spécifier la valeur `Xamarin.Android.Net.AndroidClientHandler` pour utiliser [`java.net.URLConnection`](xref:Java.Net.URLConnection)
+Alternativement, la `Xamarin.Android.Net.AndroidClientHandler` valeur peut être spécifiée pour utiliser[`java.net.URLConnection`](xref:Java.Net.URLConnection)
 pour l’accès réseau, ce qui *peut* permettre d’employer le protocole TLS 1.2, quand Android le prend en charge.
 
 Ajouté dans Xamarin.Android 6.1.
@@ -95,7 +95,7 @@ Il s’agit d’une chaîne séparée par des virgules (`,`), qui contient l’u
 - `gref` : imprimer les messages de référence globale de JNI.
 - `lref` : imprimer les messages de référence locale de JNI.
   > [!NOTE]
-  > C’est *vraiment* le spam `adb logcat`.
+  > ceci spammera *vraiment*`adb logcat`.
   > Dans Xamarin.Android 5.1, ceci créera également un fichier `.__override__/lrefs.txt`, qui peut être *énorme*.
   > Éviter.
 - `timing` : imprimer des informations de minutage de méthode. Cette opération créera également les fichiers `.__override__/methods.txt` et `.__override__/counters.txt`.
@@ -131,9 +131,9 @@ Cependant, elle permet *parfois* d’effectuer des recherches supplémentaires..
 La propriété système `debug.mono.wref` permet de remplacer le mécanisme à faible référence JNI par défaut détecté. Deux valeurs sont prises en charge :
 
 - `jni` : utilisez les références faibles JNI créées par `JNIEnv::NewWeakGlobalRef()` et détruites par `JNIEnv::DeleteWeakGlobalREf()`.
-- `java`: utilisez les références globales JNI qui référencent des instances de `java.lang.WeakReference`.
+- `java`: Utilisez les références `java.lang.WeakReference` JNI Global qui font référence aux instances.
 
-`java` est utilisé, par défaut, jusqu'à l’API-7 et sur l’API-19 (Kit Kat) où ART est activé. (API-8 a ajouté des références `jni` et ART a *rompu* des références `jni`.)
+`java` est utilisé, par défaut, jusqu'à l’API-7 et sur l’API-19 (Kit Kat) où ART est activé. (API-8 a ajouté des références `jni` et ART a *rompu des références * `jni`.)
 
 Cette propriété système est utile pour tester et pour certaines formes d’examens.
 *En général*, elle ne doit pas être modifiée.
@@ -163,6 +163,6 @@ debug.mono.log=gref
 MONO_LOG_LEVEL=
 ```
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
-- [Sécurité de la couche de transport](~/cross-platform/app-fundamentals/transport-layer-security.md)
+- [Protocole Transport Layer Security (TLS)](~/cross-platform/app-fundamentals/transport-layer-security.md)

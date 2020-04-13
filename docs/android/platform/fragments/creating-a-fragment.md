@@ -7,15 +7,15 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/07/2018
 ms.openlocfilehash: 0e8d3748c7ddd337cf2f27f5b272b208e79d503a
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73027505"
 ---
 # <a name="creating-a-fragment"></a>Création d’un fragment
 
-Pour créer un fragment, une classe doit hériter de `Android.App.Fragment`, puis substituer la méthode `OnCreateView`. `OnCreateView` est appelée par l’activité d’hébergement lorsqu’il est temps de placer le fragment à l’écran et retourne une `View`. Un `OnCreateView` classique crée ce `View` en gonflant un fichier de disposition, puis en l’attachant à un conteneur parent. Les caractéristiques du conteneur sont importantes car Android applique les paramètres de disposition du parent à l’interface utilisateur du fragment. L'exemple suivant illustre ce mécanisme :
+Pour créer un fragment, une `Android.App.Fragment` classe doit `OnCreateView` hériter de la méthode, puis l’emporter. `OnCreateView`sera appelé par l’activité d’hébergement quand il est temps de `View`mettre le fragment sur l’écran, et retournera un . Un `OnCreateView` typique créera ceci `View` en gonflant un fichier de mise en page et puis en l’attachant à un récipient parent. Les caractéristiques du conteneur sont importantes car Android appliquera les paramètres de mise en page du parent à l’interface utilisateur du Fragment. L'exemple suivant illustre ce mécanisme :
 
 ```csharp
 public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -24,24 +24,24 @@ public override View OnCreateView(LayoutInflater inflater, ViewGroup container, 
 }
 ```
 
-Le code ci-dessus gonfle la vue `Resource.Layout.Example_Fragment`et l’ajoute en tant que vue enfant au conteneur `ViewGroup`.
+Le code ci-dessus `Resource.Layout.Example_Fragment`gonflera la vue et `ViewGroup` l’ajoutera comme une vue d’enfant sur le récipient.
 
 > [!NOTE]
-> Les sous-classes de fragments doivent avoir un constructeur sans argument public par défaut.
+> Les sous-classes fragmentes doivent avoir un constructeur public par défaut sans argument.
 
 ## <a name="adding-a-fragment-to-an-activity"></a>Ajout d’un fragment à une activité
 
-Il existe deux façons d’héberger un fragment dans une activité :
+Il y a deux façons d’héberger un fragment à l’intérieur d’une activité :
 
-- Les fragments de &ndash; de **façon déclarative** peuvent être utilisés de façon déclarative dans les fichiers de disposition `.axml` à l’aide de la balise `<Fragment>`.
+- **Declarativement** &ndash; Fragments peuvent être utilisés `.axml` de façon déclarative dans les fichiers de mise en page en utilisant l’étiquette. `<Fragment>`
 
-- Les fragments de &ndash; **par programme** peuvent également être instanciés de manière dynamique à l’aide de l’API de la classe `FragmentManager`.
+- Les fragments **programmatiques** &ndash; peuvent également être instantanés de façon dynamique en utilisant l’API de la `FragmentManager` classe.
 
-L’utilisation par programmation via la classe `FragmentManager` sera abordée plus loin dans ce guide.
+L’utilisation programmatique par l’intermédiaire de la `FragmentManager` classe sera discutée plus tard dans ce guide.
 
-### <a name="using-a-fragment-declaratively"></a>Utilisation d’un fragment de façon déclarative
+### <a name="using-a-fragment-declaratively"></a>Utilisation d’un fragment déclarative
 
-L’ajout d’un fragment à l’intérieur de la disposition requiert l’utilisation de la balise `<fragment>`, puis l’identification du fragment en fournissant l’attribut `class` ou l’attribut `android:name`. L’extrait de code suivant montre comment utiliser l’attribut `class` pour déclarer un `fragment`:
+L’ajout d’un fragment `<fragment>` à l’intérieur de la `class` mise `android:name` en page nécessite l’utilisation de l’étiquette, puis l’identification du fragment en fournissant soit l’attribut ou l’attribut. L’extrait suivant montre comment utiliser `class` l’attribut `fragment`pour déclarer un :
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -51,7 +51,7 @@ L’ajout d’un fragment à l’intérieur de la disposition requiert l’utili
             android:layout_height="fill_parent" />
 ```
 
-Cet extrait de code suivant montre comment déclarer une `fragment` à l’aide de l’attribut `android:name` pour identifier la classe de fragment :
+Cet extrait suivant montre comment déclarer `fragment` un `android:name` en utilisant l’attribut pour identifier la classe Fragment :
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -61,16 +61,16 @@ Cet extrait de code suivant montre comment déclarer une `fragment` à l’aide 
             android:layout_height="fill_parent" />
 ```
 
-Lorsque l’activité est créée, Android instancie chaque fragment spécifié dans le fichier de disposition et insère la vue créée à partir de `OnCreateView` à la place de l’élément `Fragment`.
-Les fragments qui sont ajoutés de façon déclarative à une activité sont statiques et restent sur l’activité jusqu’à ce qu’il soit détruit ; Il n’est pas possible de remplacer ou de supprimer dynamiquement ce fragment pendant la durée de vie de l’activité à laquelle il est attaché.
+Lorsque l’activité est créée, Android instantané chaque fragment spécifié dans le fichier `OnCreateView` de mise `Fragment` en page et insérer la vue qui est créée à partir de la place de l’élément.
+Les fragments qui sont ajoutés de façon déclarative à une activité sont statiques et resteront sur l’activité jusqu’à ce qu’elle soit détruite; il n’est pas possible de remplacer ou d’enlever dynamiquement un tel fragment pendant la durée de vie de l’activité à laquelle il est attaché.
 
-Un identificateur unique doit être assigné à chaque fragment :
+Chaque fragment doit se voir attribuer un identifiant unique :
 
-- **Android : id** &ndash; comme avec d’autres éléments de l’interface utilisateur dans un fichier de disposition, il s’agit d’un ID unique.
+- **android:id** &ndash; Comme avec d’autres éléments d’interface utilisateur dans un fichier de mise en page, il s’agit d’un ID unique.
 
-- **Android : tag** &ndash; cet attribut est une chaîne unique.
+- **android:tag** &ndash; Cet attribut est une chaîne unique.
 
-Si aucune des deux méthodes précédentes n’est utilisée, le fragment supposera l’ID de la vue de conteneur. Dans l’exemple suivant où ni `android:id` ni `android:tag` n’est fourni, Android attribue l’ID `fragment_container` au fragment :
+Si aucune des deux méthodes précédentes n’est utilisée, alors le fragment assumera l’ID de la vue du conteneur. Dans l’exemple `android:id` suivant `android:tag` où ni ni `fragment_container` est fourni, Android attribuera l’ID au Fragment :
 
 ```xml
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -85,71 +85,71 @@ Si aucune des deux méthodes précédentes n’est utilisée, le fragment suppos
 </LinearLayout>
 ```
 
-### <a name="package-name-case"></a>Casse du nom de package
+### <a name="package-name-case"></a>Cas de nom de paquet
 
-Android n’autorise pas les caractères majuscules dans les noms de packages ; une exception est levée lors de la tentative d’augmentation de la vue si un nom de package contient un caractère majuscule. Toutefois, Xamarin. Android est plus indulgent avec et tolère les caractères majuscules dans l’espace de noms.
+Android ne permet pas les caractères majuscules dans les noms de paquets; il jettera une exception en essayant de gonfler la vue si un nom de paquet contient un caractère majuscule. Cependant, Xamarin.Android est plus indulgent, et tolérera les caractères uppercase dans l’espace de nom.
 
-Par exemple, les deux extraits de code suivants fonctionnent avec Xamarin. Android. Toutefois, le second extrait de code provoquera la levée d’une `android.view.InflateException` par une application Android basée sur Java pure.
+Par exemple, les deux extraits suivants fonctionneront avec Xamarin.Android. Cependant, le deuxième extrait provoquera `android.view.InflateException` un être jeté par une application Android basée sur Java pure.
 
 ```xml
 <fragment class="com.example.DetailsFragment" android:id="@+id/fragment_content" android:layout_width="match_parent" android:layout_height="match_parent" />
 ```
 
-\- OU -
+OR
 
 ```xml
 <fragment class="Com.Example.DetailsFragment" android:id="@+id/fragment_content" android:layout_width="match_parent" android:layout_height="match_parent" />
 ```
 
-## <a name="fragment-lifecycle"></a>Cycle de vie des fragments
+## <a name="fragment-lifecycle"></a>Cycle de vie fragmenté
 
-Les fragments ont leur propre cycle de vie qui est quelque peu indépendant de, mais toujours affecté par, le [cycle de vie de l’activité d’hébergement](~/android/app-fundamentals/activity-lifecycle/index.md).
-Par exemple, lorsqu’une activité est suspendue, tous ses fragments associés sont suspendus. Le diagramme suivant présente le cycle de vie du fragment.
+Les fragments ont leur propre cycle de vie qui est quelque peu indépendant, mais toujours affecté par, le [cycle de vie de l’activité d’hébergement](~/android/app-fundamentals/activity-lifecycle/index.md).
+Par exemple, lorsqu’une activité s’arrête, tous ses fragments associés sont mis en pause. Le diagramme suivant décrit le cycle de vie du Fragment.
 
-[diagramme de Flow ![illustrant le cycle de vie des fragments](creating-a-fragment-images/fragment-lifecycle.png)](creating-a-fragment-images/fragment-lifecycle.png#lightbox)
+[![Diagramme de flux illustrant le cycle de vie de Fragment](creating-a-fragment-images/fragment-lifecycle.png)](creating-a-fragment-images/fragment-lifecycle.png#lightbox)
 
 ### <a name="fragment-creation-lifecycle-methods"></a>Méthodes de cycle de vie de création de fragments
 
-La liste ci-dessous montre le déroulement des différents rappels dans le cycle de vie d’un fragment au fur et à mesure de leur création :
+La liste ci-dessous montre le flux des différents rappels dans le cycle de vie d’un fragment tel qu’il est créé :
 
-- **`OnInflate()`** &ndash; appelé lorsque le fragment est créé dans le cadre d’une mise en page de vue. Cela peut être appelé immédiatement après que le fragment soit créé de manière déclarative à partir d’un fichier de disposition XML. Le fragment n’est pas encore associé à son activité, mais l' **activité**, le **Bundle**et le **AttributeSet** de la hiérarchie de vue sont passés comme paramètres. Cette méthode est la meilleure pour l’analyse de **AttributeSet** et pour l’enregistrement des attributs qui peuvent être utilisés ultérieurement par le fragment.
+- **`OnInflate()`**&ndash; Appelé lorsque le Fragment est créé dans le cadre d’une mise en page de vue. Cela peut être appelé immédiatement après le Fragment est créé déclarativement à partir d’un fichier de mise en page XML. Le Fragment n’est pas encore associé à son activité, mais **l’activité**, **bundle**, et **AttributeSet** de la hiérarchie de vue sont passés en tant que paramètres. Cette méthode est mieux utilisée pour analyser **l’AttributSet** et pour enregistrer les attributs qui pourraient être utilisés plus tard par le Fragment.
 
-- **`OnAttach()`** &ndash; appelée une fois que le fragment est associé à l’activité. Il s’agit de la première méthode à exécuter lorsque le fragment est prêt à être utilisé. En général, les fragments ne doivent pas implémenter de constructeur ou substituer le constructeur par défaut. Tous les composants requis pour le fragment doivent être initialisés dans cette méthode.
+- **`OnAttach()`**&ndash; Appelé après le fragment est associé à l’activité. C’est la première méthode à exécuter lorsque le fragment est prêt à être utilisé. En général, Fragments ne doit pas implémenter un constructeur ou remplacer le constructeur par défaut. Tous les composants requis pour le fragment doivent être parasmés dans cette méthode.
 
-- **`OnCreate()`** &ndash; appelée par l’activité pour créer le fragment. Lorsque cette méthode est appelée, la hiérarchie d’affichage de l’activité d’hébergement ne peut pas être complètement instanciée. par conséquent, le fragment ne doit pas reposer sur les parties de la hiérarchie d’affichage de l’activité jusqu’à la fin du cycle de vie du fragment. Par exemple, n’utilisez pas cette méthode pour effectuer des ajustements ou des ajustements de l’interface utilisateur de l’application. Il s’agit de la première heure à laquelle le fragment peut commencer à collecter les données dont il a besoin. Le fragment s’exécutant dans le thread d’interface utilisateur à ce stade, évitez tout traitement long ou effectuez ce traitement sur un thread d’arrière-plan. Cette méthode peut être ignorée si **SetRetainInstance (true)** est appelé.
+- **`OnCreate()`**&ndash; Appelé par l’activité pour créer le fragment. Lorsque cette méthode est appelée, la hiérarchie de vue de l’activité d’hébergement peut ne pas être complètement instantanée, de sorte que le fragment ne doit pas s’appuyer sur une partie de la hiérarchie de vue de l’activité jusqu’à plus tard dans le cycle de vie du Fragment. Par exemple, n’utilisez pas cette méthode pour effectuer des modifications ou des ajustements à l’interface utilisateur de l’application. C’est la première fois que le Fragment peut commencer à recueillir les données dont il a besoin. Le Fragment est en cours d’exécution dans le thread d’interface utilisateur à ce stade, afin d’éviter tout traitement prolongé, ou effectuer ce traitement sur un thread de fond. Cette méthode peut être ignorée si **SetRetainInstance (vrai)** est appelé.
     Cette alternative sera décrite plus en détail ci-dessous.
 
-- **`OnCreateView()`** &ndash; crée la vue pour le fragment.
-    Cette méthode est appelée une fois la méthode **OnCreate ()** de l’activité terminée. À ce stade, il est possible d’interagir en toute sécurité avec la hiérarchie d’affichage de l’activité. Cette méthode doit retourner la vue qui sera utilisée par le fragment.
+- **`OnCreateView()`**&ndash; Crée la vue pour le Fragment.
+    Cette méthode est appelée une fois la méthode **OnCreate()** de l’activité terminée. À ce stade, il est sûr d’interagir avec la hiérarchie de vue de l’activité. Cette méthode devrait retourner la vue qui sera utilisée par le Fragment.
 
-- **`OnActivityCreated()`** &ndash; appelée après **Activity. OnCreate** a été effectué par l’activité d’hébergement.
-    Les dernières modifications apportées à l’interface utilisateur doivent être effectuées pour l’instant.
+- **`OnActivityCreated()`**&ndash; Appelé après **Activity.OnCreate** a été complété par l’activité d’hébergement.
+    Les modifications finales apportées à l’interface utilisateur doivent être effectuées à ce moment-là.
 
-- **`OnStart()`** &ndash; appelée après la reprise de l’activité contenante. Cela rend le fragment visible pour l’utilisateur. Dans de nombreux cas, le fragment contient du code qui serait autrement dans la méthode **OnStart ()** d’une activité.
+- **`OnStart()`**&ndash; Appelé après la reprise de l’activité de confinement. Cela rend le fragment visible à l’utilisateur. Dans de nombreux cas, le Fragment contiendra du code qui serait autrement dans la méthode **OnStart()** d’une activité.
 
-- **`OnResume()`** &ndash; il s’agit de la dernière méthode appelée avant que l’utilisateur puisse interagir avec le fragment. Un exemple du type de code qui doit être exécuté dans cette méthode est l’activation des fonctionnalités d’un appareil avec lequel l’utilisateur peut interagir, par exemple l’appareil photo que l’emplacement héberge les services. Les services tels que ceux-ci peuvent cependant entraîner un drainage excessif de la batterie, et une application doit réduire leur utilisation pour préserver la durée de vie de la batterie.
+- **`OnResume()`**&ndash; C’est la dernière méthode appelée avant que l’utilisateur puisse interagir avec le Fragment. Un exemple du type de code qui devrait être exécuté dans cette méthode serait d’activer les fonctionnalités d’un appareil avec lequel l’utilisateur peut interagir, comme la caméra que les services de localisation. Des services comme ceux-ci peuvent causer un vidage excessif de la batterie, cependant, et une application devrait minimiser leur utilisation pour préserver la durée de vie de la batterie.
 
-### <a name="fragment-destruction-lifecycle-methods"></a>Méthodes de cycle de vie de destruction de fragment
+### <a name="fragment-destruction-lifecycle-methods"></a>Méthodes de cycle de vie de destruction de fragments
 
-La liste suivante explique les méthodes de cycle de vie qui sont appelées comme un fragment est en cours de destruction :
+La liste suivante explique que les méthodes de cycle de vie qui sont appelées comme un fragment est en cours de destruction:
 
-- **`OnPause()`** &ndash; l’utilisateur n’est plus en mesure d’interagir avec le fragment. Cette situation est due au fait qu’une autre opération de fragment modifie ce fragment ou lorsque l’activité d’hébergement est suspendue. Il est possible que l’activité qui héberge ce fragment soit toujours visible, autrement dit, que l’activité active est partiellement transparente ou n’occupe pas le plein écran. Quand cette méthode devient active, il s’agit de la première indication que l’utilisateur quitte le fragment. Le fragment doit enregistrer toutes les modifications.
+- **`OnPause()`**&ndash; L’utilisateur n’est plus en mesure d’interagir avec le Fragment. Cette situation existe parce qu’une autre opération Fragment modifie ce fragment, ou l’activité d’hébergement est interrompue. Il est possible que l’activité hébergeant ce fragment soit encore visible, c’est-à-dire que l’activité mise au point est partiellement transparente ou n’occupe pas le plein écran. Lorsque cette méthode devient active, c’est la première indication que l’utilisateur quitte le Fragment. Le Fragment doit enregistrer tout changement.
 
-- **`OnStop()`** &ndash; le fragment n’est plus visible. L’activité de l’hôte peut être arrêtée ou une opération de fragment est modifiée dans l’activité. Ce rappel a le même objectif que **Activity. OnStop**.
+- **`OnStop()`**&ndash; Le Fragment n’est plus visible. L’activité hôte peut être arrêtée, ou une opération Fragment la modifie dans l’activité. Ce rappel sert le même but que **Activity.OnStop**.
 
-- **`OnDestroyView()`** &ndash; cette méthode est appelée pour nettoyer les ressources associées à la vue. Cette méthode est appelée lorsque la vue associée au fragment a été détruite.
+- **`OnDestroyView()`**&ndash; Cette méthode est appelée à nettoyer les ressources associées à la vue. C’est ce qu’on appelle lorsque la vue associée au Fragment a été détruite.
 
-- **`OnDestroy()`** &ndash; cette méthode est appelée lorsque le fragment n’est plus utilisé. Elle est toujours associée à l’activité, mais le fragment n’est plus fonctionnel. Cette méthode doit libérer toutes les ressources utilisées par le fragment, telles qu’un [**SurfaceView**](xref:Android.Views.SurfaceView) qui peut être utilisé pour un appareil photo. Cette méthode peut être ignorée si **SetRetainInstance (true)** est appelé. Cette alternative sera décrite plus en détail ci-dessous.
+- **`OnDestroy()`**&ndash; Cette méthode est appelée lorsque le Fragment n’est plus utilisé. Il est toujours associé à l’activité, mais le fragment n’est plus fonctionnel. Cette méthode doit libérer toutes les ressources qui sont utilisées par le Fragment, comme un [**SurfaceView**](xref:Android.Views.SurfaceView) qui pourrait être utilisé pour une caméra. Cette méthode peut être ignorée si **SetRetainInstance (vrai)** est appelé. Cette alternative sera décrite plus en détail ci-dessous.
 
-- **`OnDetach()`** &ndash; cette méthode est appelée juste avant que le fragment ne soit plus associé à l’activité. La hiérarchie d’affichage du fragment n’existe plus et toutes les ressources utilisées par le fragment doivent être libérées à ce stade.
+- **`OnDetach()`**&ndash; Cette méthode s’appelle juste avant que le Fragment ne soit plus associé à l’activité. La hiérarchie de vue du Fragment n’existe plus, et toutes les ressources utilisées par le Fragment doivent être libérées à ce stade.
 
 ### <a name="using-setretaininstance"></a>Utilisation de SetRetainInstance
 
-Il est possible pour un fragment de spécifier qu’il ne doit pas être complètement détruit si l’activité est recréée. La classe `Fragment` fournit la méthode `SetRetainInstance` à cet effet. Si `true` est passé à cette méthode, lorsque l’activité est redémarrée, la même instance du fragment sera utilisée. Si cela se produit, toutes les méthodes de rappel sont appelées, à l’exception des `OnCreate` et `OnDestroy` les rappels de cycle de vie. Ce processus est illustré dans le diagramme de cycle de vie illustré ci-dessus (par les lignes en pointillés vertes).
+Il est possible pour un fragment de spécifier qu’il ne doit pas être complètement détruit si l’activité est recréée. La `Fragment` classe fournit `SetRetainInstance` la méthode à cet effet. Si `true` elle est transmise à cette méthode, lorsque l’activité est redémarrée, la même instance du fragment sera utilisée. Si cela se produit, alors toutes les `OnCreate` méthodes `OnDestroy` de rappel seront invoquées, sauf les rappels et le cycle de vie. Ce processus est illustré dans le diagramme du cycle de vie indiqué ci-dessus (par les lignes pointillées vertes).
 
-## <a name="fragment-state-management"></a>Gestion de l’état des fragments
+## <a name="fragment-state-management"></a>Gestion de l’État fragment
 
-Les fragments peuvent enregistrer et restaurer leur état pendant le cycle de vie du fragment à l’aide d’une instance d’un `Bundle`. Le bundle permet à un fragment d’enregistrer des données en tant que paires clé/valeur et est utile pour les données simples qui ne nécessitent pas très de mémoire. Un fragment peut enregistrer son état avec un appel à `OnSaveInstanceState`:
+Les fragments peuvent sauver et restaurer leur état pendant `Bundle`le cycle de vie de Fragment en utilisant un exemple de . Le Bundle permet à un fragment d’enregistrer des données en tant que paires de clés/valeurs et est utile pour des données simples qui ne nécessitent pas beaucoup de mémoire. Un fragment peut sauver son `OnSaveInstanceState`état avec un appel à :
 
 ```csharp
 public override void OnSaveInstanceState(Bundle outState)
@@ -159,8 +159,8 @@ public override void OnSaveInstanceState(Bundle outState)
 }
 ```
 
-Lorsqu’une nouvelle instance d’un fragment est créée, l’état enregistré dans le `Bundle` est mis à la disposition de la nouvelle instance via les méthodes `OnCreate`, `OnCreateView`et `OnActivityCreated` de la nouvelle instance.
-L’exemple suivant montre comment récupérer la valeur `current_choice` à partir de la `Bundle`:
+Lorsqu’une nouvelle instance d’un fragment est `Bundle` créée, l’état enregistré `OnCreate` `OnCreateView`dans `OnActivityCreated` le deviendra disponible pour la nouvelle instance par le , , et les méthodes de la nouvelle instance.
+L’échantillon suivant montre comment `current_choice` récupérer `Bundle`la valeur de la :
 
 ```csharp
 public override void OnActivityCreated(Bundle savedInstanceState)
@@ -173,7 +173,7 @@ public override void OnActivityCreated(Bundle savedInstanceState)
 }
 ```
 
-La substitution de `OnSaveInstanceState` est un mécanisme approprié pour l’enregistrement des données temporaires dans un fragment sur les modifications d’orientation, telles que la valeur `current_choice` dans l’exemple ci-dessus. Toutefois, l’implémentation par défaut de `OnSaveInstanceState` prend en charge l’enregistrement de données temporaires dans l’interface utilisateur pour chaque vue à laquelle un ID est affecté. Par exemple, examinez une application qui a un élément `EditText` défini dans XML comme suit :
+Le dépassement `OnSaveInstanceState` est un mécanisme approprié pour enregistrer les données transitoires `current_choice` dans un fragment entre les changements d’orientation, comme la valeur dans l’exemple ci-dessus. Toutefois, la mise `OnSaveInstanceState` en œuvre par défaut prend soin d’enregistrer des données transitoires dans l’interface utilisateur pour chaque vue qui a une pièce d’identité assignée. Par exemple, regardez une application `EditText` qui a un élément défini dans XML comme suit:
 
 ```xml
 <EditText android:id="@+id/myText"
@@ -181,23 +181,23 @@ La substitution de `OnSaveInstanceState` est un mécanisme approprié pour l’e
         android:layout_height="wrap_content"/>
 ```
 
-Étant donné que le contrôle de `EditText` a un `id` affecté, le fragment enregistre automatiquement les données dans le widget lorsque `OnSaveInstanceState` est appelé.
+Étant `EditText` donné que `id` le contrôle a un assigné, le `OnSaveInstanceState` fragment enregistre automatiquement les données dans le widget lorsqu’il est appelé.
 
-### <a name="bundle-limitations"></a>Limitations de Bundle
+### <a name="bundle-limitations"></a>Limitations de faisceau
 
-Bien que l’utilisation de `OnSaveInstanceState` facilite l’enregistrement de données temporaires, l’utilisation de cette méthode présente certaines limitations :
+Bien `OnSaveInstanceState` que l’utilisation il soit facile d’enregistrer des données transitoires, l’utilisation de cette méthode a quelques limites:
 
-- Si le fragment n’est pas ajouté à la pile de retour, son état n’est pas restauré lorsque l’utilisateur appuie sur le bouton **précédent** .
+- Si le fragment n’est pas ajouté à la pile arrière, alors son état ne sera pas restauré lorsque l’utilisateur appuie sur le bouton **Back.**
 
 - Lorsque le bundle est utilisé pour enregistrer des données, ces données sont sérialisées. Cela peut entraîner des retards de traitement.
 
-## <a name="contributing-to-the-menu"></a>Contribution au menu
+## <a name="contributing-to-the-menu"></a>Contribuer au menu
 
-Les fragments peuvent contribuer aux éléments dans le menu de leur activité d’hébergement.
-Une activité gère d’abord les éléments de menu. Si l’activité n’a pas de gestionnaire, l’événement est passé au fragment, qui le gérera ensuite.
+Les fragments peuvent contribuer à la carte de leur activité d’hébergement.
+Une activité gère d’abord les éléments du menu. Si l’activité n’a pas de gestionnaire, l’événement sera transmis au Fragment, qui s’en occupera ensuite.
 
 Pour ajouter des éléments au menu de l’activité, un fragment doit faire deux choses.
-Tout d’abord, le fragment doit implémenter la méthode `OnCreateOptionsMenu` et placer ses éléments dans le menu, comme indiqué dans le code suivant :
+Tout d’abord, le `OnCreateOptionsMenu` Fragment doit implémenter la méthode et placer ses éléments dans le menu, comme indiqué dans le code suivant :
 
 ```csharp
 public override void OnCreateOptionsMenu(IMenu menu, MenuInflater menuInflater)
@@ -207,7 +207,7 @@ public override void OnCreateOptionsMenu(IMenu menu, MenuInflater menuInflater)
 }
 ```
 
-Le menu dans l’extrait de code précédent est augmenté du code XML suivant, situé dans le fichier `menu_fragment_vehicle_list.xml`:
+Le menu de l’extrait de code précédent est gonflé à partir `menu_fragment_vehicle_list.xml`du XML suivant, situé dans le fichier :
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -218,7 +218,7 @@ Le menu dans l’extrait de code précédent est augmenté du code XML suivant, 
 </menu>
 ```
 
-Ensuite, le fragment doit appeler `SetHasOptionsMenu(true)`. L’appel à cette méthode annonce à Android que le fragment a des éléments de menu pour contribuer au menu d’options. À moins que l’appel à cette méthode ne soit effectué, les éléments de menu du fragment ne sont pas ajoutés au menu d’options de l’activité. Cette opération est généralement effectuée dans la méthode Lifecycle `OnCreate()`, comme illustré dans l’extrait de code suivant :
+Ensuite, le Fragment `SetHasOptionsMenu(true)`doit appeler . L’appel à cette méthode annonce à Android que le Fragment a des éléments de menu pour contribuer au menu d’option. À moins que l’appel à cette méthode ne soit effectué, les éléments du menu du Fragment ne seront pas ajoutés au menu d’option de l’activité. Ceci est généralement fait dans `OnCreate()`la méthode du cycle de vie , comme indiqué dans l’extrait de code suivant:
 
 ```csharp
 public override void OnCreate(Bundle savedState)
@@ -228,6 +228,6 @@ public override void OnCreate(Bundle savedState)
 }
 ```
 
-L’écran suivant montre l’apparence de ce menu :
+L’écran suivant montre à quoi ressemblerait ce menu :
 
-[![exemple de capture d’écran de l’application mes TRIPS affichage des éléments de menu](creating-a-fragment-images/fragment-menu-example.png)](creating-a-fragment-images/fragment-menu-example.png#lightbox)
+[![Exemple de capture d’écran de l’application My Trips affichant les éléments du menu](creating-a-fragment-images/fragment-menu-example.png)](creating-a-fragment-images/fragment-menu-example.png#lightbox)

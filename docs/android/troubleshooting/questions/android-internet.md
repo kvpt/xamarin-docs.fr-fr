@@ -8,25 +8,25 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/09/2018
 ms.openlocfilehash: 5996cfa3c0a18fc186ea862a2b3d7910594e1281
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73027007"
 ---
 # <a name="why-cant-my-android-release-build-connect-to-the-internet"></a>Pourquoi la build de ma version Android ne peut pas se connecter à Internet ?
 
-## <a name="cause"></a>Cause :
+## <a name="cause"></a>Cause
 
-La cause la plus courante de ce problème est que l’autorisation **Internet** est automatiquement incluse dans une version Debug, mais qu’elle doit être définie manuellement pour une version Release. Cela est dû au fait que l’autorisation Internet est utilisée pour permettre à un débogueur de s’attacher au processus, comme décrit [ici](~/android/deploy-test/building-apps/build-process.md)« DebugSymbols ».
+La cause la plus fréquente de ce problème est que l’autorisation **INTERNET** est automatiquement incluse dans une version de débogé, mais doit être réglée manuellement pour une version. C’est parce que l’autorisation d’Internet est utilisée pour permettre à un débbuggeur de s’attacher au processus, tel que décrit pour "DebugSymbols" [ici](~/android/deploy-test/building-apps/build-process.md).
 
-## <a name="fix"></a>Correction
+## <a name="fix"></a>Fix
 
-Pour résoudre le problème, vous pouvez avoir besoin de l’autorisation Internet dans le manifeste Android. Pour ce faire, vous pouvez utiliser l’éditeur de manifeste ou le Sourcecode du manifeste :
+Pour résoudre le problème, vous pouvez exiger la permission d’Internet dans le manifeste Android. Cela peut être fait soit par l’éditeur manifeste ou le code source du manifeste:
 
-- Correction dans l’éditeur : dans votre projet Android, accédez à **Propriétés-> fichier AndroidManifest. xml-> autorisations requises** et cochez **Internet**
+- Correction dans l’éditeur: Dans votre projet Android, aller à **Properties -> AndroidManifest.xml -> autorisations requises** et vérifier **Internet**
 
-- Correction dans Sourcecode : Ouvrez le fichier AndroidManifest dans un éditeur de code source et ajoutez la balise d’autorisation à l’intérieur des balises `<Manifest>` :
+- Fixez-vous dans Sourcecode: Ouvrez l’AndroidManifest dans `<Manifest>` un éditeur source et ajoutez l’étiquette d’autorisation à l’intérieur des balises:
 
     ```xml
     <Manifest>

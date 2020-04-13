@@ -1,5 +1,5 @@
 ---
-title: 'Xamarin.Essentials: Géocodage'
+title: 'Xamarin.Essentials : géocodage'
 description: La classe Geocoding de Xamarin.Essentials fournit des API qui permettent à la fois de géocoder un repère en coordonnées de position, et d’inverser les coordonnées de géocodage en un repère.
 ms.assetid: 3ADC440C-B000-4708-A2CC-296F5160AF90
 author: jamesmontemagno
@@ -7,13 +7,13 @@ ms.author: jamont
 ms.date: 05/28/2019
 ms.custom: video
 ms.openlocfilehash: 157eb3116f09268790036f8983543114e7a58276
-ms.sourcegitcommit: 4a1520dee7759f8355ea65c8bb3d1bac8ba58122
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "66354109"
 ---
-# <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials: Géocodage
+# <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials : géocodage
 
 La classe **Geocoding** fournit des API qui permettent de géocoder un repère en coordonnées de position, et d’inverser les coordonnées de géocodage en un repère.
 
@@ -23,15 +23,15 @@ La classe **Geocoding** fournit des API qui permettent de géocoder un repère e
 
 Pour accéder à la fonctionnalité de **géocodage**, la configuration suivante spécifique à la plateforme est obligatoire.
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 Aucune configuration supplémentaire n’est requise.
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 Aucune configuration supplémentaire n’est requise.
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 Une clé API Bing Maps est nécessaire pour utiliser la fonctionnalité de géocodage. Inscrivez-vous pour obtenir un compte [Bing Maps](https://www.bingmapsportal.com/) gratuit. Sous **Mon compte > Mes clés**, créez une clé, puis indiquez les informations nécessaires en fonction de votre type d’application (qui doit être **Application Windows publique (UWP, 8.x et versions antérieures)** pour les applications UWP).
 
@@ -119,7 +119,7 @@ catch (Exception ex)
 
 ## <a name="distance-between-two-locations"></a>Distance entre deux emplacements
 
-Les classes [`Location`](xref:Xamarin.Essentials.Location) et [`LocationExtensions`](xref:Xamarin.Essentials.LocationExtensions) définissent des méthodes qui permettent de calculer la distance entre deux emplacements. Consultez l’article [**Xamarin.Essentials : Géolocalisation**](geolocation.md#calculate-distance) pour obtenir un exemple.
+Les [`Location`](xref:Xamarin.Essentials.Location) [`LocationExtensions`](xref:Xamarin.Essentials.LocationExtensions) classes et les classes définissent des méthodes pour calculer la distance entre deux emplacements. Pour obtenir un exemple, consultez l’article [**Xamarin.Essentials : géolocalisation**](geolocation.md#calculate-distance).
 
 ## <a name="api"></a>API
 

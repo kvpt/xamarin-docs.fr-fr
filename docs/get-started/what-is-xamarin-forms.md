@@ -7,15 +7,15 @@ author: profexorgeek
 ms.author: jusjohns
 ms.date: 09/18/2019
 ms.openlocfilehash: aaceb6089a5b7e5f0551dafe9ef1fe50d01433d9
-ms.sourcegitcommit: 24883be72e485e5311dd0eb91f9a22f78eeec11a
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/17/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "77374021"
 ---
 # <a name="what-is-xamarinforms"></a>Qu’est-ce que Xamarin.Forms ?
 
-[![Captures d’écran d’un exemple d’application Xamarin.Forms dans iOS et Android](what-is-xamarin-forms-images/xamarin-forms-app-cropped.png)](what-is-xamarin-forms-images/xamarin-forms-app.png#lightbox)
+[![Captures d’écran de l’exemple Xamarin.Forms application dans iOS et Android](what-is-xamarin-forms-images/xamarin-forms-app-cropped.png)](what-is-xamarin-forms-images/xamarin-forms-app.png#lightbox)
 
 Xamarin.Forms est un framework d’interface utilisateur open source. Xamarin.Forms permet aux développeurs de générer des applications Android, iOS et Windows à partir d’une seule base de code partagée.
 
@@ -53,7 +53,7 @@ Xamarin.Essentials est une bibliothèque qui fournit des API multiplateformes po
 - Système de fichiers
 - Accéléromètre
 - Numéroteur téléphonique
-- Conversion de texte par synthèse vocale
+- Synthèse vocale
 - Verrouillage d’écran
 
 Pour plus d’informations, consultez [Xamarin.Essentials](~/essentials/index.md).
@@ -72,7 +72,7 @@ Pour plus d’informations, consultez [Shell Xamarin.Forms](~/xamarin-forms/app-
 
 Xamarin.Forms fournit une API commune qui restitue les contrôles natifs sur les plateformes, mais une plateforme donnée peut avoir des fonctionnalités qui n’existent pas sur d’autres plateformes. Par exemple, la plateforme Android offre des fonctionnalités natives pour le défilement rapide dans un `ListView` alors qu’iOS n’en offre pas. Les spécificités de la plateforme Xamarin.Forms vous permettent d’utiliser des fonctionnalités qui sont uniquement disponibles sur une plateforme spécifique sans créer de renderers ou d’effets personnalisés.
 
-Xamarin.Forms comprend des solutions prédéfinies pour diverses fonctionnalités spécifiques à la plateforme. Pour plus d'informations, voir :
+Xamarin.Forms comprend des solutions prédéfinies pour diverses fonctionnalités spécifiques à la plateforme. Pour plus d'informations, consultez les pages suivantes :
 
 - [Spécificités de la plateforme Xamarin.Forms](~/xamarin-forms/platform/platform-specifics/index.md)
 - [Spécificités de la plateforme Android](~/xamarin-forms/platform/android/index.md)

@@ -1,6 +1,6 @@
 ---
-title: Utilisation de JNI et Xamarin. Android
-description: Xamarin. Android permet d’écrire des applications C# Android avec à la place de Java. Plusieurs assemblys sont fournis avec Xamarin. Android, qui fournissent des liaisons pour les bibliothèques Java, notamment mono. Android. dll et mono. Android. GoogleMaps. dll. Toutefois, les liaisons ne sont pas fournies pour chaque bibliothèque Java possible, et les liaisons fournies peuvent ne pas lier tous les membres et types Java. Pour utiliser des types et des membres de Java indépendants, vous pouvez utiliser le langage JNI (Java Native Interface). Cet article explique comment utiliser JNI pour interagir avec des types et des membres Java à partir d’applications Xamarin. Android.
+title: Travailler avec JNI et Xamarin.Android
+description: Xamarin.Android permet d’écrire des applications Android avec C au lieu de Java. Plusieurs assemblages sont fournis avec Xamarin.Android qui fournissent des liaisons pour les bibliothèques java, y compris Mono.Android.dll et Mono.Android.GoogleMaps.dll. Cependant, les fixations ne sont pas fournies pour toutes les bibliothèques Java possibles, et les fixations qui sont fournies peuvent ne pas lier tous les types de Java et membre. Pour utiliser des types et des membres Java non liés, l’interface native java (JNI) peut être utilisée. Cet article illustre comment utiliser JNI pour interagir avec les types Java et les membres des applications Xamarin.Android.
 ms.prod: xamarin
 ms.assetid: A417DEE9-7B7B-4E35-A79C-284739E3838E
 ms.technology: xamarin-android
@@ -8,63 +8,63 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/09/2018
 ms.openlocfilehash: 0fa717a775ff2f1ace9e248a8afde8d373e8a1f8
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "78292722"
 ---
-# <a name="working-with-jni-and-xamarinandroid"></a>Utilisation de JNI et Xamarin. Android
+# <a name="working-with-jni-and-xamarinandroid"></a>Travailler avec JNI et Xamarin.Android
 
-_Xamarin. Android permet d’écrire des applications C# Android avec à la place de Java. Plusieurs assemblys sont fournis avec Xamarin. Android, qui fournissent des liaisons pour les bibliothèques Java, notamment mono. Android. dll et mono. Android. GoogleMaps. dll. Toutefois, les liaisons ne sont pas fournies pour chaque bibliothèque Java possible, et les liaisons fournies peuvent ne pas lier tous les membres et types Java. Pour utiliser des types et des membres de Java indépendants, vous pouvez utiliser le langage JNI (Java Native Interface). Cet article explique comment utiliser JNI pour interagir avec des types et des membres Java à partir d’applications Xamarin. Android._
+_Xamarin.Android permet d’écrire des applications Android avec C au lieu de Java. Plusieurs assemblages sont fournis avec Xamarin.Android qui fournissent des liaisons pour les bibliothèques java, y compris Mono.Android.dll et Mono.Android.GoogleMaps.dll. Cependant, les fixations ne sont pas fournies pour toutes les bibliothèques Java possibles, et les fixations qui sont fournies peuvent ne pas lier tous les types de Java et membre. Pour utiliser des types et des membres Java non liés, l’interface native java (JNI) peut être utilisée. Cet article illustre comment utiliser JNI pour interagir avec les types Java et les membres des applications Xamarin.Android._
 
-## <a name="overview"></a>Overview
+## <a name="overview"></a>Vue d’ensemble
 
-Il n’est pas toujours nécessaire ou possible de créer un wrapper pouvant être appelé managé (MCW) pour appeler du code Java. Dans de nombreux cas, la fonctionnalité JNI « Inline » est parfaitement acceptable et utile pour une utilisation unique des membres Java indépendants. Il est souvent plus simple d’utiliser JNI pour appeler une méthode unique sur une classe Java que de générer une liaison. jar entière.
+Il n’est pas toujours nécessaire ou possible de créer un emballage callable géré (MCW) pour invoquer le code Java. Dans de nombreux cas, "inline" JNI est parfaitement acceptable et utile pour l’utilisation ponctuelle des membres Java non liés. Il est souvent plus simple d’utiliser JNI pour invoquer une méthode unique sur une classe Java que de générer une liaison .jar entière.
 
-Xamarin. Android fournit l’assembly `Mono.Android.dll`, qui fournit une liaison pour la bibliothèque de `android.jar` d’Android. Les types et les membres absents de `Mono.Android.dll` et les types absents de `android.jar` peuvent être utilisés par les liaisons manuelles. Pour lier des types et des membres Java, vous devez utiliser**JNI**( **Java Native Interface** ) pour rechercher des types, lire et écrire des champs et appeler des méthodes.
+Xamarin.Android fournit `Mono.Android.dll` l’assemblage, qui fournit `android.jar` une reliure pour la bibliothèque d’Android. Les types et `Mono.Android.dll` les membres qui `android.jar` ne sont pas présents à l’intérieur et les types qui ne sont pas présents à l’intérieur peuvent être utilisés en les liant manuellement. Pour lier les types et les membres Java, vous utilisez **l’interface indigène Java** (**JNI**) pour rechercher des types, lire et écrire des champs, et invoquer des méthodes.
 
-L’API JNI dans Xamarin. Android est très similaire à l’API `System.Reflection` dans .NET : elle vous permet de rechercher des types et des membres par nom, de lire et d’écrire des valeurs de champ, d’appeler des méthodes et bien plus encore. Vous pouvez utiliser JNI et l’attribut personnalisé `Android.Runtime.RegisterAttribute` pour déclarer des méthodes virtuelles qui peuvent être liées à la prise en charge de la substitution. Vous pouvez lier des interfaces afin qu’elles puissent être implémentées dans C#.
+L’API JNI dans Xamarin.Android est `System.Reflection` conceptuellement très similaire à l’API en .NET: il vous permet de rechercher des types et des membres par nom, lire et écrire des valeurs de champ, invoquer des méthodes, et plus encore. Vous pouvez utiliser JNI et l’attribut `Android.Runtime.RegisterAttribute` personnalisé pour déclarer les méthodes virtuelles qui peuvent être liées à la prise en charge de la prépondérer. Vous pouvez lier les interfaces afin qu’elles puissent être implémentées en C.
 
-Ce document explique les éléments suivants :
+Ce document explique :
 
-- Comment JNI fait référence aux types.
+- Comment JNI se réfère aux types.
 - Comment rechercher, lire et écrire des champs.
-- Comment rechercher et appeler des méthodes.
-- Comment exposer des méthodes virtuelles pour permettre la substitution à partir du code managé.
-- Comment exposer des interfaces.
+- Comment rechercher et invoquer des méthodes.
+- Comment exposer les méthodes virtuelles pour permettre de passer au code géré.
+- Comment exposer les interfaces.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>Spécifications
 
-JNI, tel qu’exposé par le biais de l' [espace de noms Android. Runtime. JNIEnv](xref:Android.Runtime.JNIEnv), est disponible dans toutes les versions de Xamarin. Android.
-Pour lier des types et des interfaces Java, vous devez utiliser Xamarin. Android 4,0 ou une version ultérieure.
+JNI, tel qu’exposé via [l’android.Runtime.JNIEnv namespace](xref:Android.Runtime.JNIEnv), est disponible dans toutes les versions de Xamarin.Android.
+Pour lier les types et les interfaces Java, vous devez utiliser Xamarin.Android 4.0 ou plus tard.
 
-## <a name="managed-callable-wrappers"></a>Wrappers pouvant être appelés par Managed
+## <a name="managed-callable-wrappers"></a>Emballages Callable gérés
 
-Un **Wrapper Managed Callable** (**MCW**) est une *liaison* pour une classe ou une interface Java qui encapsule l’ensemble des machines JNI afin C# que le code client n’ait pas à se soucier de la complexité sous-jacente de JNI. La plupart des `Mono.Android.dll` se composent de wrappers pouvant être appelés managés.
+Un **wrapper Callable géré** (**MCW**) est une *liaison* pour une classe ou une interface Java qui enveloppe toutes les machines JNI afin que le code client C N’a pas besoin de s’inquiéter de la complexité sous-jacente de JNI. La `Mono.Android.dll` plupart se compose d’emballages callables gérés.
 
-Les wrappers pouvant être appelés par Managed répondent à deux objectifs :
+Les emballages callables gérés servent deux buts :
 
-1. Encapsulez l’utilisation de JNI afin que le code client n’ait pas besoin de connaître la complexité sous-jacente.
-1. Rendre possible les types Java sous-classe et implémenter des interfaces Java.
+1. Encapsulation JNI utiliser de sorte que le code client n’a pas besoin de connaître la complexité sous-jacente.
+1. Permettre de sous-classer les types Java et d’implémenter des interfaces Java.
 
-Le premier objectif est purement à la commodité et à l’encapsulation de la complexité, de sorte que les consommateurs disposent d’un ensemble simple et géré de classes à utiliser. Cela nécessite l’utilisation des différents membres [JNIEnv](xref:Android.Runtime.JNIEnv) , comme décrit plus loin dans cet article. Gardez à l’esprit que les wrappers pouvant être appelés ne sont pas strictement nécessaires &ndash; l’utilisation d’JNI « Inline » est parfaitement acceptable et est utile pour une utilisation unique des membres Java indépendants. La sous-classe et l’implémentation de l’interface requièrent l’utilisation de wrappers pouvant être appelés managés.
+Le premier but est purement pour la commodité et l’encapsulation de la complexité de sorte que les consommateurs ont un ensemble simple et géré de classes à utiliser. Cela nécessite l’utilisation des différents membres [JNIEnv](xref:Android.Runtime.JNIEnv) comme décrit plus tard dans cet article. Gardez à l’esprit que les emballages &ndash; callables gérés ne sont pas strictement nécessaires "en ligne" L’utilisation JNI est parfaitement acceptable et est utile pour l’utilisation ponctuelle des membres Java non liés. La sous-classe et l’implémentation de l’interface nécessitent l’utilisation d’emballages callables gérés.
 
 ## <a name="android-callable-wrappers"></a>Wrappers pouvant être appelés par Android
 
-Les wrappers pouvant être appelés Android (ACW) sont requis chaque fois que le runtime Android (ART) doit appeler du code managé. Ces wrappers sont requis, car il n’existe aucun moyen d’inscrire des classes avec des illustrations au moment de l’exécution.
-(En particulier, la fonction JNI [defineClass](https://docs.oracle.com/javase/6/docs/technotes/guides/jni/spec/functions.html#wp15986) n’est pas prise en charge par le runtime Android. Les wrappers pouvant être appelés par Android comportent le manque de prise en charge de l’inscription du type d’exécution.)
+Les emballages appelants Android (ACW) sont nécessaires chaque fois que l’exécution Android (ART) doit invoquer le code géré; ces emballages sont nécessaires parce qu’il n’y a aucun moyen d’enregistrer des cours avec ART à l’heure de course.
+(Spécifiquement, la fonction [DéfiniClass](https://docs.oracle.com/javase/6/docs/technotes/guides/jni/spec/functions.html#wp15986) JNI n’est pas prise en charge par le temps d’exécution Android. Les emballages callables Android compenserent ainsi l’absence de support d’enregistrement de type runtime.)
 
-Chaque fois que le code Android doit exécuter une méthode virtuelle ou d’interface qui est substituée ou implémentée en code managé, Xamarin. Android doit fournir un proxy Java afin que cette méthode soit distribuée au type managé approprié. Ces types de proxy Java sont du code Java qui ont la même classe de base et la même liste d’interfaces Java que le type managé, implémentant les mêmes constructeurs et déclarant une classe de base et des méthodes d’interface substituées.
+Chaque fois que le code Android a besoin d’exécuter une méthode virtuelle ou d’interface qui est annulée ou implémentée dans le code géré, Xamarin.Android doit fournir un proxy Java afin que cette méthode soit expédiée au type géré approprié. Ces types de proxy Java sont le code Java qui ont la "même" classe de base et la liste d’interface Java comme le type géré, la mise en œuvre des mêmes constructeurs et de déclarer toute classe de base et les méthodes d’interface.
 
-Les wrappers pouvant être appelés par Android sont générés par le programme **monodroid. exe** pendant le [processus de génération](~/android/deploy-test/building-apps/build-process.md)et sont générés pour tous les types qui héritent (directement ou indirectement) de [java. lang. Object](xref:Java.Lang.Object).
+Les emballages callables Android sont générés par le programme **monodroid.exe** pendant le [processus de construction,](~/android/deploy-test/building-apps/build-process.md)et sont générés pour tous les types qui (directement ou indirectement) héritent [java.Lang.Object](xref:Java.Lang.Object).
 
 ### <a name="implementing-interfaces"></a>Implémentation des interfaces
 
-Il peut arriver que vous deviez implémenter une interface Android (par exemple, [Android. Content. IComponentCallbacks](xref:Android.Content.IComponentCallbacks)).
+Il ya des moments où vous pouvez avoir besoin d’implémenter une interface Android, (comme [Android.Content.IComponentCallbacks](xref:Android.Content.IComponentCallbacks)).
 
-Toutes les interfaces et classes Android étendent l’interface [Android. Runtime. IJavaObject.](xref:Android.Runtime.IJavaObject) par conséquent, tous les types Android doivent implémenter `IJavaObject`.
-Xamarin. Android tire parti de ce fait &ndash; il utilise `IJavaObject` pour fournir Android avec un proxy Java (un wrapper Android pouvant être appelé) pour le type managé donné. Étant donné que **monodroid. exe** recherche uniquement les sous-classes `Java.Lang.Object` (qui doivent implémenter `IJavaObject`), le sous-classement `Java.Lang.Object` nous fournit un moyen d’implémenter des interfaces dans du code managé. Par exemple :
+Toutes les classes et interfaces Android prolongent l’interface [Android.Runtime.IJavaObject;](xref:Android.Runtime.IJavaObject) par conséquent, tous `IJavaObject`les types Android doivent implémenter .
+Xamarin.Android profite de &ndash; ce `IJavaObject` fait qu’il utilise pour fournir Android avec un proxy Java (un emballage callable Android) pour le type géré donné. Parce que **monodroid.exe** ne cherche que des `Java.Lang.Object` sous-classes (qui doivent être mises en œuvre), `IJavaObject`la sous-classe `Java.Lang.Object` nous fournit un moyen de mettre en œuvre des interfaces dans le code géré. Par exemple :
 
 ```csharp
 class MyComponentCallbacks : Java.Lang.Object, Android.Content.IComponentCallbacks {
@@ -79,9 +79,9 @@ class MyComponentCallbacks : Java.Lang.Object, Android.Content.IComponentCallbac
 
 ### <a name="implementation-details"></a>Informations d’implémentation
 
-*Le reste de cet article fournit des détails d’implémentation susceptibles de changer sans préavis* (et présenté ici uniquement parce que les développeurs peuvent être curieux de savoir ce qui se passe en coulisses).
+*Le reste de cet article fournit des détails de mise en œuvre sous réserve de changement sans préavis* (et est présenté ici seulement parce que les développeurs peuvent être curieux de savoir ce qui se passe sous le capot).
 
-Par exemple, à partir de C# la source suivante :
+Par exemple, compte tenu de la source suivante :
 
 ```csharp
 using System;
@@ -101,7 +101,7 @@ namespace Mono.Samples.HelloWorld
 }
 ```
 
-Le programme **Android. exe** génère le wrapper Android pouvant être appelé suivant :
+Le programme **mandroid.exe** générera l’Emballage Android Callable suivant:
 
 ```java
 package mono.samples.helloWorld;
@@ -137,110 +137,110 @@ public class HelloAndroid extends android.app.Activity {
 }
 ```
 
-Notez que la classe de base est conservée, et les déclarations de méthode natives sont fournies pour chaque méthode substituée dans le code managé.
+Notez que la classe de base est préservée, et des déclarations de méthode indigène sont fournies pour chaque méthode qui est remplacée dans le code géré.
 
 ### <a name="exportattribute-and-exportfieldattribute"></a>ExportAttribute et ExportFieldAttribute
 
-En règle générale, Xamarin. Android génère automatiquement le code Java qui comprend le ACW ; cette génération est basée sur les noms de la classe et de la méthode lorsqu’une classe dérive d’une classe Java et remplace les méthodes Java existantes. Toutefois, dans certains scénarios, la génération de code n’est pas appropriée, comme indiqué ci-dessous :
+Typiquement, Xamarin.Android génère automatiquement le code Java qui comprend l’ACW; cette génération est basée sur les noms de classe et de méthode lorsqu’une classe dérive d’une classe Java et remplace les méthodes Java existantes. Cependant, dans certains scénarios, la génération de code n’est pas adéquate, comme indiqué ci-dessous:
 
-- Android prend en charge les noms d’action dans les attributs XML de mise en page, par exemple l’attribut XML [Android : OnClick](xref:Android.Views.View.IOnClickListener.OnClick*) . Lorsque cette valeur est spécifiée, l’instance de vue gonflée tente de rechercher la méthode Java.
+- Android prend en charge les noms d’action dans la mise en page des attributs XML, par exemple l’attribut [Android:onClick](xref:Android.Views.View.IOnClickListener.OnClick*) XML. Lorsqu’il est spécifié, l’instance Vue gonflée tente de rechercher la méthode Java.
 
-- L’interface [java. IO. Serializable](https://developer.android.com/reference/java/io/Serializable.html) requiert des méthodes `readObject` et `writeObject`. Étant donné qu’ils ne sont pas membres de cette interface, notre implémentation managée correspondante n’expose pas ces méthodes au code Java.
+- [L’interface java.io.Serializable](https://developer.android.com/reference/java/io/Serializable.html) nécessite et `readObject` `writeObject` des méthodes. Puisqu’ils ne sont pas membres de cette interface, notre implémentation gérée correspondante n’expose pas ces méthodes au code Java.
 
-- L’interface [Android. OS. parcelable](xref:Android.OS.Parcelable) s’attend à ce qu’une classe d’implémentation ait un champ statique `CREATOR` de type `Parcelable.Creator`. Le code Java généré requiert un champ explicite. Dans le cadre de notre scénario standard, il n’existe aucun moyen de générer un champ dans du code Java à partir de code managé.
+- L’interface [android.os.Parcelable](xref:Android.OS.Parcelable) s’attend à ce `CREATOR` qu’une classe d’implémentation doit avoir un champ statique de type `Parcelable.Creator`. Le code Java généré nécessite un champ explicite. Avec notre scénario standard, il n’y a aucun moyen de sortie de champ dans le code Java à partir de code géré.
 
-Étant donné que la génération de code ne fournit pas de solution pour générer des méthodes Java arbitraires avec des noms arbitraires, en commençant par Xamarin. Android 4,2, [ExportAttribute](xref:Java.Interop.ExportAttribute) et [ExportFieldAttribute](xref:Java.Interop.ExportFieldAttribute) ont été introduits pour offrir une solution aux scénarios ci-dessus. Les deux attributs résident dans l’espace de noms `Java.Interop` :
+Parce que la génération de code ne fournit pas une solution pour générer des méthodes java arbitraires avec des noms arbitraires, à commencer par Xamarin.Android 4.2, [l’ExportAttribute](xref:Java.Interop.ExportAttribute) et [ExportFieldAttribute](xref:Java.Interop.ExportFieldAttribute) ont été introduits pour offrir une solution aux scénarios ci-dessus. Les deux attributs `Java.Interop` résident dans l’espace nom:
 
-- `ExportAttribute` &ndash; spécifie un nom de méthode et ses types d’exceptions attendus (pour fournir des « levées » explicites dans Java). Lorsqu’elle est utilisée sur une méthode, la méthode « exporte » une méthode Java qui génère un code de distribution vers l’appel JNI correspondant à la méthode managée. Il peut être utilisé avec `android:onClick` et `java.io.Serializable`.
+- `ExportAttribute`&ndash; spécifie un nom de méthode et ses types d’exception attendus (pour donner explicite "jets" à Java). Lorsqu’elle est utilisée sur une méthode, la méthode « exportera » une méthode Java qui génère un code d’expédition à l’invocation JNI correspondante à la méthode gérée. Cela peut être `android:onClick` `java.io.Serializable`utilisé avec et .
 
-- `ExportFieldAttribute` &ndash; spécifie un nom de champ. Elle réside sur une méthode qui fonctionne comme un initialiseur de champ. Il peut être utilisé avec `android.os.Parcelable`.
+- `ExportFieldAttribute`&ndash; spécifie un nom de terrain. Il réside sur une méthode qui fonctionne comme un initialisateur de champ. Cela peut être `android.os.Parcelable`utilisé avec .
 
-#### <a name="troubleshooting-exportattribute-and-exportfieldattribute"></a>Résolution des problèmes de ExportAttribute et ExportFieldAttribute
+#### <a name="troubleshooting-exportattribute-and-exportfieldattribute"></a>Dépannage ExportAttribute et ExportFieldAttribute
 
-- L’empaquetage échoue en raison de l’absence de **mono. Android. Export. dll** &ndash; si vous avez utilisé `ExportAttribute` ou `ExportFieldAttribute` sur certaines méthodes de votre code ou des bibliothèques dépendantes, vous devez ajouter **mono. Android. Export. dll**. Cet assembly est isolé pour prendre en charge le code de rappel à partir de Java. Il est distinct de **mono. Android. dll** , car il ajoute de la taille supplémentaire à l’application.
+- Emballage échoue en raison de manquer **Mono.Android.Export.dll** &ndash; si vous avez utilisé `ExportAttribute` ou `ExportFieldAttribute` sur certaines méthodes dans votre code ou bibliothèques dépendantes, vous devez ajouter **Mono.Android.Export.dll**. Cet assemblage est isolé pour prendre en charge le code de rappel de Java. Il est séparé de **Mono.Android.dll** car il ajoute une taille supplémentaire à l’application.
 
-- Dans la version Release, `MissingMethodException` se produit pour les méthodes d’exportation &ndash; dans la version Release, `MissingMethodException` se produit pour les méthodes d’exportation. (Ce problème est résolu dans la dernière version de Xamarin. Android.)
+- Dans Release `MissingMethodException` build, se &ndash; produit pour `MissingMethodException` les méthodes d’exportation In Release construire, se produit pour les méthodes d’exportation. (Ce problème est fixé dans la dernière version de Xamarin.Android.)
 
 ### <a name="exportparameterattribute"></a>ExportParameterAttribute
 
-`ExportAttribute` et `ExportFieldAttribute` fournissent des fonctionnalités que le code d’exécution Java peut utiliser. Ce code d’exécution accède au code managé via les méthodes JNI générées pilotées par ces attributs. Par conséquent, il n’existe aucune méthode Java liée à la méthode managée. par conséquent, la méthode Java est générée à partir d’une signature de méthode managée.
+`ExportAttribute`et `ExportFieldAttribute` fournir des fonctionnalités que le code Java run-time peut utiliser. Ce code en temps d’exécution accède au code géré grâce aux méthodes JNI générées par ces attributs. En conséquence, il n’existe aucune méthode Java existante que la méthode gérée lie; par conséquent, la méthode Java est générée à partir d’une signature de méthode gérée.
 
-Toutefois, ce cas n’est pas entièrement déterminant. En particulier, cela est vrai dans certains mappages avancés entre les types managés et les types Java tels que :
+Toutefois, cette affaire n’est pas tout à fait déterminante. Plus particulièrement, cela est vrai dans certaines cartographies avancées entre les types gérés et les types Java tels que:
 
 - InputStream
-- OutputStream
-- XmlPullParser
-- XmlResourceParser
+- OutputStream (en)
+- XmlPullParser XmlPullParser
+- XmlResourceParser XmlResourceParser
 
-Lorsque des types tels que ceux-ci sont nécessaires pour les méthodes exportées, le `ExportParameterAttribute` doit être utilisé pour donner explicitement un type au paramètre ou à la valeur de retour correspondant.
+Lorsque des types comme ceux-ci `ExportParameterAttribute` sont nécessaires pour les méthodes exportées, il doit être utilisé pour donner explicitement le paramètre correspondant ou la valeur de retour un type.
 
-### <a name="annotation-attribute"></a>Attribut annotation
+### <a name="annotation-attribute"></a>Attribut d’annotation
 
-Dans Xamarin. Android 4,2, nous avons converti `IAnnotation` types d’implémentation en attributs (System. Attribute) et ajouté la prise en charge de la génération d’annotations dans les wrappers Java.
+Dans Xamarin.Android 4.2, `IAnnotation` nous avons converti les types de implémentation en attributs (System.Attribute), et ajouté un support pour la génération d’annotation dans les emballages Java.
 
-Cela signifie les changements directionnels suivants :
+Cela signifie les changements directionnels suivants :
 
-- Le générateur de liaisons génère des `Java.Lang.DeprecatedAttribute` à partir d' `java.Lang.Deprecated` (alors qu’il doit être `[Obsolete]` en code managé).
+- Le générateur de `Java.Lang.DeprecatedAttribute` `java.Lang.Deprecated` liaison génère à `[Obsolete]` partir (alors qu’il doit être dans le code géré).
 
-- Cela ne signifie pas que la classe de `Java.Lang.Deprecated` existante disparaîtra. Ces objets basés sur Java peuvent toujours être utilisés comme objets Java habituels (si cette utilisation existe). Il y aura des classes `Deprecated` et `DeprecatedAttribute`.
+- Cela ne signifie `Java.Lang.Deprecated` pas que la classe existante disparaîtra. Ces objets basés à Java pourraient encore être utilisés comme des objets Java habituels (si une telle utilisation existe). Il y `Deprecated` `DeprecatedAttribute` aura et des cours.
 
-- La classe `Java.Lang.DeprecatedAttribute` est marquée comme `[Annotation]`. Lorsqu’il existe un attribut personnalisé hérité de cet attribut `[Annotation]`, la tâche MSBuild génère une annotation Java pour cet attribut personnalisé (@Deprecated) dans le wrapper ACW (Android Callable Wrapper).
+- La `Java.Lang.DeprecatedAttribute` classe est `[Annotation]` marquée comme . Lorsqu’il y a un attribut `[Annotation]` personnalisé hérité de cet attribut, la tâche de msbuild générera une annotation Java pour cet attribut personnalisé (@Deprecated) dans l’emballage Callable Android (ACW).
 
-- Les annotations peuvent être générées sur des classes, des méthodes et des champs exportés (qui est une méthode dans du code managé).
+- Des annotations peuvent être générées sur les classes, les méthodes et les champs exportés (qui est une méthode dans le code géré).
 
-Si la classe conteneur (la classe annotée elle-même, ou la classe qui contient les membres annotés) n’est pas inscrite, la source de la classe Java entière n’est pas entièrement générée, y compris les annotations. Pour les méthodes, vous pouvez spécifier le `ExportAttribute` pour obtenir la méthode générée explicitement et annotée. En outre, il ne s’agit pas d’une fonctionnalité permettant de « générer » une définition de classe d’annotation Java. En d’autres termes, si vous définissez un attribut managé personnalisé pour une certaine annotation, vous devez ajouter une autre bibliothèque. jar qui contient la classe d’annotation Java correspondante. L’ajout d’un fichier source Java qui définit le type d’annotation n’est pas suffisant. Le compilateur Java ne fonctionne pas de la même façon que la méthode **apt**.
+Si la classe contenante (la classe annotée elle-même, ou la classe qui contient les membres annotés) n’est pas enregistrée, toute la source de la classe Java n’est pas générée du tout, y compris les annotations. Pour les méthodes, `ExportAttribute` vous pouvez spécifier la méthode explicitement générée et annotée. En outre, il n’est pas une fonctionnalité pour "générer" une définition de classe d’annotation Java. En d’autres termes, si vous définissez un attribut géré personnalisé pour une certaine annotation, vous devrez ajouter une autre bibliothèque .jar qui contient la classe d’annotation Java correspondante. L’ajout d’un fichier source Java qui définit le type d’annotation n’est pas suffisant. Le compilateur Java ne fonctionne pas de la même manière que **le sens**.
 
-En outre, les limitations suivantes s’appliquent :
+En outre, les limitations suivantes s’appliquent :
 
-- Ce processus de conversion ne prend pas en compte `@Target` annotation sur le type d’annotation jusqu’à présent.
+- Ce processus de `@Target` conversion ne tient pas compte de l’annotation sur le type d’annotation jusqu’à présent.
 
-- Les attributs sur une propriété ne fonctionnent pas. Utilisez des attributs pour l’accesseur Get ou la méthode setter de propriété à la place.
+- Les attributs sur une propriété ne fonctionnent pas. Utilisez des attributs pour getter de propriété ou setter à la place.
 
 ## <a name="class-binding"></a>Liaison de classe
 
-La liaison d’une classe signifie l’écriture d’un wrapper pouvant être appelé managé pour simplifier l’appel du type Java sous-jacent.
+Lier une classe signifie écrire un emballage callable géré pour simplifier l’invocation du type Java sous-jacent.
 
-La liaison de méthodes virtuelles et abstraites pour C# permettre la substitution de requiert Xamarin. Android 4,0. Toutefois, toute version de Xamarin. Android peut lier des méthodes non virtuelles, des méthodes statiques ou des méthodes virtuelles sans prendre en charge les remplacements.
+Lier les méthodes virtuelles et abstraites pour permettre le remplacement de C exige Xamarin.Android 4.0. Cependant, toute version de Xamarin.Android peut lier les méthodes non virtuelles, les méthodes statiques ou les méthodes virtuelles sans remplacer.
 
-Une liaison contient généralement les éléments suivants :
+Une liaison contient généralement les éléments suivants :
 
-- [Handle JNI vers le type Java qui est lié](#_Looking_up_Java_Types).
+- Une [poignée JNI au type Java étant lié](#_Looking_up_Java_Types).
 
-- [ID de champ et propriétés JNI pour chaque champ lié](#_Instance_Fields).
+- [JNI field IDs et propriétés pour chaque champ lié](#_Instance_Fields).
 
-- [ID et méthodes de méthode JNI pour chaque méthode liée](#_Instance_Methods).
+- [JNI méthode IDs et méthodes pour chaque méthode liée](#_Instance_Methods).
 
-- Si la sous-classe est requise, le type doit avoir un attribut personnalisé [RegisterAttribute](xref:Android.Runtime.RegisterAttribute) sur la déclaration de type avec [RegisterAttribute. DoNotGenerateAcw](xref:Android.Runtime.RegisterAttribute.DoNotGenerateAcw) défini sur `true`.
+- Si une sous-classe est nécessaire, le type doit avoir un attribut personnalisé [RegisterAttribute](xref:Android.Runtime.RegisterAttribute) sur la déclaration `true`de type avec [RegisterAttribute.DoNotGenerateAcw](xref:Android.Runtime.RegisterAttribute.DoNotGenerateAcw) réglé à .
 
-### <a name="declaring-type-handle"></a>Déclaration de type DECLARATION
+### <a name="declaring-type-handle"></a>Déclarer la poignée de type
 
-Les méthodes de recherche de champ et de méthode requièrent une référence d’objet qui fait référence à leur type déclarant. Par Convention, il est conservé dans un champ `class_ref` :
+Les méthodes de recherche sur le terrain et la méthode exigent une référence d’objet se référant à leur type de déclaration. Par convention, cela se `class_ref` tient dans un domaine :
 
 ```csharp
 static IntPtr class_ref = JNIEnv.FindClass(CLASS);
 ```
 
-Pour plus d’informations sur le jeton `CLASS`, consultez la section [références de type JNI](#_JNI_Type_References) .
+Consultez la section Références de type `CLASS` [JNI](#_JNI_Type_References) pour plus de détails sur le jeton.
 
 ### <a name="binding-fields"></a>Champs de liaison
 
-Les champs Java sont exposés C# en tant que propriétés, par exemple le champ Java [java.lang.System.in](https://developer.android.com/reference/java/lang/System.html#in) est C# lié en tant que propriété [java.lang.JavaSystem.in](xref:Java.Lang.JavaSystem.In).
-En outre, dans la mesure où JNI fait la distinction entre les champs statiques et les champs d’instance, différentes méthodes sont utilisées lors de l’implémentation des propriétés.
+Les champs de Java sont exposés comme propriétés C, par exemple le champ Java [java.lang.System.in](https://developer.android.com/reference/java/lang/System.html#in) est lié que la propriété C [Java.Lang.JavaSystem.In](xref:Java.Lang.JavaSystem.In).
+En outre, puisque JNI fait la distinction entre les champs statiques et les champs d’instance, différentes méthodes sont utilisées lors de la mise en œuvre des propriétés.
 
-La liaison de champ implique trois ensembles de méthodes :
+La liaison de champ comporte trois ensembles de méthodes :
 
-1. Méthode d' *ID de champ d’extraction* . La méthode *obtenir l’ID de champ* est chargée de retourner un handle de champ qui sera utilisé par les méthodes d' *extraction* de valeur de champ et de valeur de champ d' *ensemble* . Pour obtenir l’ID de champ, vous devez connaître le type de déclaration, le nom du champ et la [signature de type JNI](#JNI_Type_Signatures) du champ.
+1. La méthode *d’identification de champ.* La méthode *d’identification sur le terrain* est responsable du retour d’une poignée de champ que la *valeur du champ et* les méthodes de valeur de *champ définies* utiliseront. L’obtention de l’id de champ nécessite de connaître le type de déclaration, le nom du champ et la signature de [type JNI](#JNI_Type_Signatures) du champ.
 
-1. Méthodes d' *extraction de valeur de champ* . Ces méthodes requièrent le handle de champ et sont responsables de la lecture de la valeur du champ à partir de Java.
-    La méthode à utiliser dépend du type du champ.
+1. Les méthodes *de valeur de champ d’obtenir.* Ces méthodes nécessitent la poignée de champ et sont responsables de la lecture de la valeur du champ de Java.
+    La méthode d’utilisation dépend du type de champ.
 
-1. Méthodes *set de valeur de champ* . Ces méthodes requièrent le handle de champ et sont responsables de l’écriture de la valeur du champ dans Java. La méthode à utiliser dépend du type du champ.
+1. Les méthodes *de valeur de champ défini.* Ces méthodes nécessitent la poignée de champ et sont responsables de l’écriture de la valeur du champ au sein de Java. La méthode d’utilisation dépend du type de champ.
 
-Les [champs statiques](#_Static_Fields) utilisent les méthodes [JNIEnv. GetStaticFieldID](xref:Android.Runtime.JNIEnv.GetStaticMethodID*), `JNIEnv.GetStatic*Field`et [JNIEnv. SetStaticField](xref:Android.Runtime.JNIEnv.SetStaticField*) .
+[Les champs statiques](#_Static_Fields) utilisent les méthodes [JNIEnv.GetStaticFieldID](xref:Android.Runtime.JNIEnv.GetStaticMethodID*), `JNIEnv.GetStatic*Field`et [JNIEnv.SetStaticField.](xref:Android.Runtime.JNIEnv.SetStaticField*)
 
- Les [champs d’instance](#_Instance_Fields) utilisent les méthodes [JNIEnv. GetFieldID](xref:Android.Runtime.JNIEnv.GetFieldID*), `JNIEnv.Get*Field`et [JNIEnv. SetField](xref:Android.Runtime.JNIEnv.SetField*) .
+ [Les champs d’instance](#_Instance_Fields) utilisent les méthodes `JNIEnv.Get*Field` [JNIEnv.GetFieldID](xref:Android.Runtime.JNIEnv.GetFieldID*), et [JNIEnv.SetField.](xref:Android.Runtime.JNIEnv.SetField*)
 
-Par exemple, la `JavaSystem.In` de propriétés statiques peut être implémentée comme suit :
+Par exemple, la `JavaSystem.In` propriété statique peut être mise en œuvre sous la forme de :
 
 ```csharp
 static IntPtr in_jfieldID;
@@ -255,33 +255,33 @@ public static System.IO.Stream In
 }
 ```
 
-Remarque : nous utilisons [InputStreamInvoker. FromJniHandle](xref:Android.Runtime.InputStreamInvoker.FromJniHandle*) pour convertir la référence JNI en instance `System.IO.Stream`, et nous utilisons `JniHandleOwnership.TransferLocalRef`, car [JNIEnv. GetStaticObjectField](xref:Android.Runtime.JNIEnv.GetStaticObjectField*) retourne une référence locale.
+Remarque : Nous utilisons [InputStreamInvoker.FromJniHandle](xref:Android.Runtime.InputStreamInvoker.FromJniHandle*) pour convertir la `System.IO.Stream` référence JNI en `JniHandleOwnership.TransferLocalRef` une instance, et nous utilisons parce que [JNIEnv.GetStaticObjectField](xref:Android.Runtime.JNIEnv.GetStaticObjectField*) renvoie une référence locale.
 
-La plupart des types [Android. Runtime](xref:Android.Runtime) ont des méthodes `FromJniHandle` qui convertissent une référence JNI dans le type souhaité.
+Beaucoup de types [Android.Runtime](xref:Android.Runtime) ont des `FromJniHandle` méthodes qui convertiront une référence JNI dans le type désiré.
 
-### <a name="method-binding"></a>Liaison de méthode
+### <a name="method-binding"></a>Méthode de liaison
 
-Les méthodes Java sont exposées C# en tant que C# méthodes et en tant que propriétés. Par exemple, la méthode Java Java [. lang. Runtime. runFinalizersOnExit](https://developer.android.com/reference/java/lang/Runtime.html#runFinalizersOnExit(boolean)) est liée en tant que méthode [java. lang. Runtime. runFinalizersOnExit](xref:Java.Lang.Runtime.RunFinalizersOnExit*) , et la méthode [java. lang. Object. GetClass](https://developer.android.com/reference/java/lang/Object.html#getClass) est liée en tant que propriété [java. lang. Object. Class](xref:Java.Lang.Object.Class) .
+Les méthodes Java sont exposées comme des méthodes de C et comme propriétés C. Par exemple, la méthode Java [java.lang.Runtime.runFinalizersOnExit](https://developer.android.com/reference/java/lang/Runtime.html#runFinalizersOnExit(boolean)) méthode est liée comme la méthode [Java.Lang.Runtime.RunFinalizersOnExit,](xref:Java.Lang.Runtime.RunFinalizersOnExit*) et la méthode [java.lang.Object.getClass](https://developer.android.com/reference/java/lang/Object.html#getClass) est liée comme la propriété [Java.Lang.Object.Class.](xref:Java.Lang.Object.Class)
 
-L’appel de méthode est un processus en deux étapes :
+L’invocation de la méthode est un processus en deux étapes :
 
-1. *ID de méthode d’extraction* pour la méthode à appeler. La méthode *obtenir l’ID de méthode* est chargée de retourner un handle de méthode qui sera utilisé par les méthodes d’appel de méthode. Pour obtenir l’ID de méthode, vous devez connaître le type de déclaration, le nom de la méthode et la [signature de type JNI](#JNI_Type_Signatures) de la méthode.
+1. La *méthode d’identification pour* la méthode à invoquer. La méthode *d’identification de méthode d’identification* est responsable du retour d’une poignée de méthode que les méthodes d’invocation de méthode utiliseront. L’obtention de la méthode id nécessite de connaître le type de déclaration, le nom de la méthode, et la signature de [type JNI](#JNI_Type_Signatures) de la méthode.
 
 1. Appelez la méthode.
 
-Tout comme avec les champs, les méthodes à utiliser pour récupérer l’ID de méthode et appeler la méthode diffèrent entre les méthodes statiques et les méthodes d’instance.
+Tout comme avec les champs, les méthodes à utiliser pour obtenir la méthode id et invoquer la méthode diffèrent entre les méthodes statiques et les méthodes d’instance.
 
-Les [méthodes statiques](#_Static_Methods_1) utilisent [JNIEnv. GetStaticMethodID ()](xref:Android.Runtime.JNIEnv.GetStaticMethodID*) pour Rechercher l’ID de méthode et utiliser la famille de méthodes `JNIEnv.CallStatic*Method` pour l’appel.
+[Les méthodes statiques](#_Static_Methods_1) utilisent [JNIEnv.GetStaticMethodID()](xref:Android.Runtime.JNIEnv.GetStaticMethodID*) pour rechercher `JNIEnv.CallStatic*Method` la méthode id, et utiliser la famille des méthodes pour l’invocation.
 
-Les [méthodes d’instance](#_Instance_Methods) utilisent [JNIEnv. GetMethodID](xref:Android.Runtime.JNIEnv.GetMethodID*) pour Rechercher l’ID de méthode et utiliser les familles `JNIEnv.Call*Method` et `JNIEnv.CallNonvirtual*Method` des méthodes pour l’appel.
+[Les méthodes d’instance](#_Instance_Methods) utilisent [JNIEnv.GetMethodID](xref:Android.Runtime.JNIEnv.GetMethodID*) pour `JNIEnv.Call*Method` rechercher `JNIEnv.CallNonvirtual*Method` la méthode id, et utiliser le et les familles de méthodes pour l’invocation.
 
-La liaison de méthode est potentiellement plus qu’un simple appel de méthode. La liaison de méthode comprend également l’autorisation d’une méthode à substituer (pour les méthodes abstraites et non finales) ou implémentée (pour les méthodes d’interface). La section [prise en charge de l’héritage, des interfaces](#_Supporting_Inheritance,_Interfaces_1) couvre les complexités de la prise en charge des méthodes virtuelles et des méthodes d’interface.
+La liaison de méthode est potentiellement plus qu’une simple invocation de méthode. La liaison de méthode inclut également permettre de laisser une méthode être remplacée (pour des méthodes abstraites et non finales) ou implémentée (pour les méthodes d’interface). La section [Héritage support, Interfaces](#_Supporting_Inheritance,_Interfaces_1) couvre les complexités du soutien des méthodes virtuelles et des méthodes d’interface.
 
 <a name="_Static_Methods_1" />
 
 #### <a name="static-methods"></a>Méthodes statiques
 
-La liaison d’une méthode statique implique l’utilisation de `JNIEnv.GetStaticMethodID` pour obtenir un handle de méthode, puis à l’aide de la méthode `JNIEnv.CallStatic*Method` appropriée, selon le type de retour de la méthode. Voici un exemple de liaison pour la méthode [Runtime. GetRuntime](https://developer.android.com/reference/java/lang/Runtime.html#getRuntime()) :
+La liaison d’une méthode statique consiste à `JNIEnv.GetStaticMethodID` `JNIEnv.CallStatic*Method` utiliser pour obtenir une poignée de méthode, puis en utilisant la méthode appropriée, selon le type de retour de la méthode. Ce qui suit est un exemple d’une liaison pour la méthode [Runtime.getRuntime](https://developer.android.com/reference/java/lang/Runtime.html#getRuntime()) :
 
 ```csharp
 static IntPtr id_getRuntime;
@@ -299,12 +299,12 @@ public static Java.Lang.Runtime GetRuntime ()
 }
 ```
 
-Notez que nous stockons le descripteur de méthode dans un champ statique, `id_getRuntime`. Il s’agit d’une optimisation des performances, afin que le handle de la méthode n’ait pas besoin d’être recherché à chaque appel. Il n’est pas nécessaire de mettre en cache le descripteur de méthode de cette façon. Une fois le handle de méthode obtenu, [JNIEnv. CallStaticObjectMethod](xref:Android.Runtime.JNIEnv.CallStaticObjectMethod*) est utilisé pour appeler la méthode. `JNIEnv.CallStaticObjectMethod` retourne un `IntPtr` qui contient le descripteur de l’instance java retournée.
-[Java. lang. Object. GetObject&lt;t&gt;(IntPtr, JniHandleOwnership)](xref:Java.Lang.Object.GetObject*) est utilisé pour convertir le handle Java en instance d’objet fortement typée.
+Notez que nous stockons la `id_getRuntime`poignée de méthode dans un champ statique, . Il s’agit d’une optimisation des performances, de sorte que la poignée de la méthode n’a pas besoin d’être recherché sur chaque invocation. Il n’est pas nécessaire de mettre en cache la poignée de la méthode de cette façon. Une fois la poignée de méthode obtenue, [JNIEnv.CallStaticObjectMethod](xref:Android.Runtime.JNIEnv.CallStaticObjectMethod*) est utilisé pour invoquer la méthode. `JNIEnv.CallStaticObjectMethod`retourne `IntPtr` un qui contient la poignée de l’instance Java retournée.
+[Java.Lang.Object.GetObject&lt;&gt;T (IntPtr, JniHandleOwnership)](xref:Java.Lang.Object.GetObject*) est utilisé pour convertir la poignée Java en une instance d’objet fortement tapée.
 
-#### <a name="non-virtual-instance-method-binding"></a>Liaison de méthode d’instance non virtuelle
+#### <a name="non-virtual-instance-method-binding"></a>Méthode d’instance non virtuelle Contraignante
 
-La liaison d’une méthode d’instance `final`, ou d’une méthode d’instance qui ne requiert pas de substitution, implique l’utilisation de `JNIEnv.GetMethodID` pour obtenir un handle de méthode, puis l’utilisation de la méthode `JNIEnv.Call*Method` appropriée, selon le type de retour de la méthode. Voici un exemple de liaison pour la propriété `Object.Class` :
+Lier `final` une méthode d’instance, ou une méthode d’instance qui ne nécessite pas de dépassement, implique d’utiliser `JNIEnv.GetMethodID` pour obtenir une poignée de méthode, puis d’utiliser la méthode appropriée, `JNIEnv.Call*Method` selon le type de retour de la méthode. Voici un exemple de liaison `Object.Class` pour le bien :
 
 ```csharp
 static IntPtr id_getClass;
@@ -319,13 +319,13 @@ public Java.Lang.Class Class {
 }
 ```
 
-Notez que nous stockons le descripteur de méthode dans un champ statique, `id_getClass`.
-Il s’agit d’une optimisation des performances, afin que le handle de la méthode n’ait pas besoin d’être recherché à chaque appel. Il n’est pas nécessaire de mettre en cache le descripteur de méthode de cette façon. Une fois le handle de méthode obtenu, [JNIEnv. CallStaticObjectMethod](xref:Android.Runtime.JNIEnv.CallStaticObjectMethod*) est utilisé pour appeler la méthode. `JNIEnv.CallStaticObjectMethod` retourne un `IntPtr` qui contient le descripteur de l’instance java retournée.
-[Java. lang. Object. GetObject&lt;t&gt;(IntPtr, JniHandleOwnership)](xref:Java.Lang.Object.GetObject*) est utilisé pour convertir le handle Java en instance d’objet fortement typée.
+Notez que nous stockons la `id_getClass`poignée de méthode dans un champ statique, .
+Il s’agit d’une optimisation des performances, de sorte que la poignée de la méthode n’a pas besoin d’être recherché sur chaque invocation. Il n’est pas nécessaire de mettre en cache la poignée de la méthode de cette façon. Une fois la poignée de méthode obtenue, [JNIEnv.CallStaticObjectMethod](xref:Android.Runtime.JNIEnv.CallStaticObjectMethod*) est utilisé pour invoquer la méthode. `JNIEnv.CallStaticObjectMethod`retourne `IntPtr` un qui contient la poignée de l’instance Java retournée.
+[Java.Lang.Object.GetObject&lt;&gt;T (IntPtr, JniHandleOwnership)](xref:Java.Lang.Object.GetObject*) est utilisé pour convertir la poignée Java en une instance d’objet fortement tapée.
 
-### <a name="binding-constructors"></a>Constructeurs de liaison
+### <a name="binding-constructors"></a>Constructeurs contraignants
 
-Les constructeurs sont des méthodes Java avec le nom `"<init>"`. Tout comme avec les méthodes d’instance Java, `JNIEnv.GetMethodID` permet de rechercher le handle du constructeur. Contrairement aux méthodes Java, les méthodes [JNIEnv. NewObject](xref:Android.Runtime.JNIEnv.NewObject*) sont utilisées pour appeler le handle de méthode de constructeur. La valeur de retour de `JNIEnv.NewObject` est une référence locale JNI :
+Les constructeurs sont des `"<init>"`méthodes Java avec le nom . Tout comme avec les `JNIEnv.GetMethodID` méthodes d’instance Java, est utilisé pour rechercher la poignée constructeur. Contrairement aux méthodes Java, les méthodes [JNIEnv.NewObject](xref:Android.Runtime.JNIEnv.NewObject*) sont utilisées pour invoquer la poignée de méthode constructeur. La valeur `JNIEnv.NewObject` de retour est une référence locale JNI:
 
 ```csharp
 int value = 42;
@@ -335,28 +335,28 @@ IntPtr lrefInstance = JNIEnv.NewObject (class_ref, id_ctor_I, new JValue (value)
 // Dispose of lrefInstance, class_ref…
 ```
 
-Normalement, une liaison de classe sous-classe [java. lang. Object](xref:Java.Lang.Object).
-Lors du sous-classement `Java.Lang.Object`, une sémantique supplémentaire entre en lecture : une instance de `Java.Lang.Object` gère une référence globale à une instance Java via la propriété `Java.Lang.Object.Handle`.
+Normalement, une reliure de classe sous-classe [Java.Lang.Object](xref:Java.Lang.Object).
+Lors de `Java.Lang.Object`la sous-classification , une sémantique supplémentaire entre en jeu: une `Java.Lang.Object` instance maintient une référence globale à une instance Java à travers la `Java.Lang.Object.Handle` propriété.
 
-1. Le constructeur par défaut `Java.Lang.Object` alloue une instance java.
+1. Le `Java.Lang.Object` constructeur par défaut attribuera une instance Java.
 
-1. Si le type a un `RegisterAttribute` et que `RegisterAttribute.DoNotGenerateAcw` est `true`, une instance du type `RegisterAttribute.Name` est créée à l’aide de son constructeur par défaut.
+1. Si le type `RegisterAttribute` a `RegisterAttribute.DoNotGenerateAcw` `true` un , et `RegisterAttribute.Name` est , puis une instance du type est créé par son constructeur par défaut.
 
-1. Dans le cas contraire, le wrapper ACW ( [Android Callable Wrapper](~/android/platform/java-integration/android-callable-wrappers.md) ) correspondant à `this.GetType` est instancié par le biais de son constructeur par défaut. Les wrappers Android pouvant être appelés sont générés au cours de la création du package pour chaque sous-classe `Java.Lang.Object` pour laquelle `RegisterAttribute.DoNotGenerateAcw` n’est pas défini sur `true`.
+1. Dans le cas contraire, l’Android [Callable Wrapper](~/android/platform/java-integration/android-callable-wrappers.md) (ACW) correspondant à `this.GetType` est instantanée par son constructeur par défaut. Android Callable Wrappers sont générés `Java.Lang.Object` lors de `RegisterAttribute.DoNotGenerateAcw` la création `true`de paquets pour chaque sous-classe pour laquelle n’est pas réglé à .
 
-Pour les types qui ne sont pas des liaisons de classe, il s’agit de la sémantique C# attendue : l’instanciation d’une instance de `Mono.Samples.HelloWorld.HelloAndroid` doit construire une instance de `mono.samples.helloworld.HelloAndroid` Java qui est un wrapper Android pouvant être appelé.
+Pour les types qui ne sont pas des fixations de `Mono.Samples.HelloWorld.HelloAndroid` classe, c’est `mono.samples.helloworld.HelloAndroid` la sémantique attendue: l’instantané d’une instance C devrait construire une instance Java qui est un généré Android Callable Wrapper.
 
-Pour les liaisons de classe, il peut s’agir du comportement correct si le type Java contient un constructeur par défaut et/ou qu’aucun autre constructeur ne doit être appelé. Dans le cas contraire, un constructeur doit être fourni pour effectuer les actions suivantes :
+Pour les fixations de classe, cela peut être le comportement correct si le type Java contient un constructeur par défaut et / ou aucun autre constructeur doit être invoqué. Dans le cas contraire, un constructeur doit être fourni qui effectue les actions suivantes :
 
-1. Appel de [java. lang. Object (IntPtr, JniHandleOwnership)](xref:Java.Lang.Object#ctor*) au lieu du constructeur par défaut `Java.Lang.Object`. Cela est nécessaire pour éviter de créer une nouvelle instance java.
+1. Invoquant le [Java.Lang.Object (IntPtr, JniHandleOwnership)](xref:Java.Lang.Object#ctor*) `Java.Lang.Object` au lieu du constructeur par défaut. Ceci est nécessaire pour éviter de créer une nouvelle instance Java.
 
-1. Vérifiez la valeur de [java. lang. Object. handle](xref:Java.Lang.Object.Handle) avant de créer des instances Java. La propriété `Object.Handle` a une valeur autre que `IntPtr.Zero` si un wrapper Android pouvant être appelé a été construit en code Java et que la liaison de classe est construite pour contenir l’instance du wrapper Android pouvant être appelé. Par exemple, quand Android crée une instance `mono.samples.helloworld.HelloAndroid`, le wrapper Android pouvant être appelé est créé en premier, et le constructeur de `HelloAndroid` Java crée une instance du type de `Mono.Samples.HelloWorld.HelloAndroid` correspondant, avec la propriété `Object.Handle` définie sur l’instance java avant l’exécution du constructeur.
+1. Vérifiez la valeur de [Java.Lang.Object.Handle](xref:Java.Lang.Object.Handle) avant de créer des instances Java. La `Object.Handle` propriété aura une `IntPtr.Zero` valeur autre que si un Emballage Android Callable a été construit dans le code Java, et la liaison de classe est en cours de construction pour contenir l’instance créée Android Callable Wrapper. Par exemple, lorsque `mono.samples.helloworld.HelloAndroid` Android crée une instance, l’Emballage Android Callable sera créé en premier, et le constructeur Java `HelloAndroid` va créer une instance du type correspondant, `Mono.Samples.HelloWorld.HelloAndroid` avec la `Object.Handle` propriété étant réglée à l’instance Java avant l’exécution du constructeur.
 
-1. Si le type d’exécution actuel n’est pas le même que le type déclarant, une instance du wrapper Android pouvant être appelé doit être créée et utilisez [Object. SetHandle](xref:Java.Lang.Object.SetHandle*) pour stocker le handle retourné par [JNIEnv. CreateInstance](xref:Android.Runtime.JNIEnv.CreateInstance*).
+1. Si le type actuel de temps d’exécution n’est pas le même que le type de déclaration, alors une instance de l’emballage Android Callable correspondant doit être créé, et utiliser [Object.SetHandle](xref:Java.Lang.Object.SetHandle*) pour stocker la poignée retournée par [JNIEnv.CreateInstance](xref:Android.Runtime.JNIEnv.CreateInstance*).
 
-1. Si le type d’exécution actuel est le même que le type déclarant, appelez le constructeur Java et utilisez [Object. SetHandle](xref:Java.Lang.Object.SetHandle*) pour stocker le handle retourné par `JNIEnv.NewInstance`.
+1. Si le type actuel de temps d’exécution est le même que le type de déclaration, puis `JNIEnv.NewInstance` invoquer le constructeur Java et utiliser [Object.SetHandle](xref:Java.Lang.Object.SetHandle*) pour stocker la poignée retournée par .
 
-Par exemple, considérez le constructeur [java. lang. Integer (int)](https://developer.android.com/reference/java/lang/Integer.html#Integer(int)) . Ceci est lié comme suit :
+Par exemple, considérez le [constructeur java.lang.Integer (int).](https://developer.android.com/reference/java/lang/Integer.html#Integer(int)) Ceci est lié comme:
 
 ```csharp
 // Cache the constructor's method handle for later use
@@ -393,19 +393,19 @@ public Integer (int value)
 }
 ```
 
-Les méthodes [JNIEnv. CreateInstance](xref:Android.Runtime.JNIEnv.CreateInstance*) sont des assistances pour effectuer une `JNIEnv.FindClass`, `JNIEnv.GetMethodID`, `JNIEnv.NewObject`et `JNIEnv.DeleteGlobalReference` sur la valeur retournée par `JNIEnv.FindClass`. Pour plus d'informations, consultez la section suivante.
+Les méthodes [JNIEnv.CreateInstance](xref:Android.Runtime.JNIEnv.CreateInstance*) sont des `JNIEnv.FindClass` `JNIEnv.GetMethodID`aides `JNIEnv.NewObject`pour `JNIEnv.DeleteGlobalReference` effectuer un `JNIEnv.FindClass`, , , et sur la valeur retournée de . Pour plus d'informations, consultez la section suivante.
 
 <a name="_Supporting_Inheritance,_Interfaces_1" />
 
-### <a name="supporting-inheritance-interfaces"></a>Prise en charge de l’héritage, interfaces
+### <a name="supporting-inheritance-interfaces"></a>Soutenir l’héritage, interfaces
 
-La sous-classement d’un type Java ou l’implémentation d’une interface Java nécessite la génération de [wrappers pouvant être appelés Android](~/android/platform/java-integration/android-callable-wrappers.md) (ACWs) générés pour chaque sous-classe `Java.Lang.Object` pendant le processus d’empaquetage. La génération de ACW est contrôlée par le biais de l’attribut personnalisé [Android. Runtime. RegisterAttribute](xref:Android.Runtime.RegisterAttribute) .
+La sous-classification d’un type Java ou la mise en œuvre d’une interface `Java.Lang.Object` Java nécessite la génération d’emballages [Callables Android](~/android/platform/java-integration/android-callable-wrappers.md) (ACW) qui sont générés pour chaque sous-classe pendant le processus d’emballage. La génération ACW est contrôlée par l’attribut personnalisé [Android.Runtime.RegisterAttribute.](xref:Android.Runtime.RegisterAttribute)
 
-Pour C# les types, le `[Register]` constructeur d’attribut personnalisé requiert un argument : la [référence de type simplifié JNI](#_Simplified_Type_References_1) pour le type Java correspondant. Cela permet de fournir des noms différents entre C#Java et.
+Pour les types `[Register]` C, le constructeur d’attributs personnalisé nécessite un argument : la [référence de type simplifié JNI](#_Simplified_Type_References_1) pour le type Java correspondant. Cela permet de fournir des noms différents entre Java et C.
 
-Avant Xamarin. Android 4,0, l’attribut personnalisé `[Register]` n’était pas disponible pour les types Java existants « alias ». Cela est dû au fait que le processus de génération ACW génère des ACWs pour chaque sous-classe `Java.Lang.Object` rencontrée.
+Avant Xamarin.Android 4.0, `[Register]` l’attribut personnalisé n’était pas disponible pour "alias" types Java existants. C’est parce que le processus de génération `Java.Lang.Object` ACW générerait des ACF pour chaque sous-classe rencontrée.
 
-Xamarin. Android 4,0 a introduit la propriété [RegisterAttribute. DoNotGenerateAcw](xref:Android.Runtime.RegisterAttribute.DoNotGenerateAcw) . Cette propriété indique au processus de génération ACW d' *Ignorer* le type annoté, en autorisant la déclaration de nouveaux wrappers pouvant être appelés, qui n’entraînent pas la génération de ACWs au moment de la création du package. Cela permet de lier des types Java existants. Par exemple, considérez la classe Java simple suivante, `Adder`, qui contient une méthode, `add`, qui ajoute aux entiers et retourne le résultat :
+Xamarin.Android 4.0 a présenté la propriété [RegisterAttribute.DoNotGenerateAcw.](xref:Android.Runtime.RegisterAttribute.DoNotGenerateAcw) Cette propriété demande au processus de génération ACW de *sauter* le type annoté, permettant la déclaration de nouveaux emballages callables gérés qui n’entraîneront pas la production d’ACW au moment de la création de l’emballage. Cela permet de lier les types Java existants. Par exemple, considérez la `Adder`classe Java simple `add`suivante, , qui contient une méthode, , qui ajoute auxintégrés et retourne le résultat:
 
 ```java
 package mono.android.test;
@@ -416,7 +416,7 @@ public class Adder {
 }
 ```
 
-Le type de `Adder` peut être lié comme suit :
+Le `Adder` type pourrait être lié comme:
 
 ```csharp
 [Register ("mono/android/test/Adder", DoNotGenerateAcw=true)]
@@ -436,25 +436,25 @@ partial class ManagedAdder : Adder {
 }
 ```
 
-Ici, le type C# de `Adder` *alias* le type Java `Adder`. L’attribut `[Register]` est utilisé pour spécifier le nom JNI du type Java `mono.android.test.Adder`, et la propriété `DoNotGenerateAcw` est utilisée pour inhiber la génération de ACW. Cela entraînera la génération d’un ACW pour le type de `ManagedAdder`, qui sous-classe correctement le type de `mono.android.test.Adder`. Si la propriété `RegisterAttribute.DoNotGenerateAcw` n’a pas été utilisée, le processus de génération Xamarin. Android aurait généré un nouveau `mono.android.test.Adder` type Java. Cela entraînerait des erreurs de compilation, car le type de `mono.android.test.Adder` serait présent deux fois, dans deux fichiers distincts.
+Ici, `Adder` le type C `Adder` alias *le* type Java. L’attribut `[Register]` est utilisé pour spécifier le nom JNI du `mono.android.test.Adder` type Java, et la propriété est utilisée pour inhiber la `DoNotGenerateAcw` génération ACW. Cela se traduira par la génération `ManagedAdder` d’un ACW pour `mono.android.test.Adder` le type, qui sous-classe correctement le type. Si `RegisterAttribute.DoNotGenerateAcw` la propriété n’avait pas été utilisée, alors le processus `mono.android.test.Adder` de construction Xamarin.Android aurait généré un nouveau type Java. Cela entraînerait des erreurs `mono.android.test.Adder` de compilation, car le type serait présent deux fois, dans deux fichiers distincts.
 
-### <a name="binding-virtual-methods"></a>Liaison de méthodes virtuelles
+### <a name="binding-virtual-methods"></a>Méthodes virtuelles contraignantes
 
-`ManagedAdder` sous-classe le type de `Adder` Java, mais il n’est pas particulièrement C# intéressant : le type de `Adder` ne définit aucune méthode virtuelle, donc `ManagedAdder` ne peut pas remplacer quoi que ce soit.
+`ManagedAdder`sous-classe le `Adder` type Java, mais il n’est `Adder` pas particulièrement intéressant: le `ManagedAdder` type C ne définit pas les méthodes virtuelles, donc ne peut pas remplacer quoi que ce soit.
 
-La liaison de `virtual` méthodes pour permettre le remplacement par des sous-classes nécessite plusieurs éléments qui doivent être exécutés dans les deux catégories suivantes :
+Les `virtual` méthodes contraignantes pour permettre la suppression par des sous-classes exigent plusieurs choses qui doivent être faites qui entrent dans les deux catégories suivantes :
 
-1. **Liaison de méthode**
+1. **Méthode de liaison**
 
-1. **Inscription de méthode**
+1. **Enregistrement de la méthode**
 
-#### <a name="method-binding"></a>Liaison de méthode
+#### <a name="method-binding"></a>Méthode de liaison
 
-Une liaison de méthode nécessite l’ajout de deux membres de support C# à la définition de `Adder` : `ThresholdType`et `ThresholdClass`.
+Une méthode contraignante nécessite l’ajout de `Adder` deux `ThresholdType`membres `ThresholdClass`de soutien à la définition de CMD : , et .
 
 ##### <a name="thresholdtype"></a>ThresholdType
 
-La propriété `ThresholdType` retourne le type actuel de la liaison :
+La `ThresholdType` propriété retourne le type actuel de lier :
 
 ```csharp
 partial class Adder {
@@ -466,11 +466,11 @@ partial class Adder {
 }
 ```
 
-`ThresholdType` est utilisé dans la liaison de méthode pour déterminer quand il doit effectuer une distribution de méthode virtuelle ou non virtuelle. Elle doit toujours retourner une instance de `System.Type` qui correspond au C# type déclarant.
+`ThresholdType`est utilisé dans la méthode de liaison pour déterminer quand il doit effectuer l’expédition virtuelle vs méthode non virtuelle. Il doit toujours `System.Type` renvoyer une instance qui correspond au type déclarant C.
 
-##### <a name="thresholdclass"></a>ThresholdClass
+##### <a name="thresholdclass"></a>SeuilClass
 
-La propriété `ThresholdClass` retourne la référence de classe JNI pour le type lié :
+La `ThresholdClass` propriété renvoie la référence de classe JNI pour le type lié :
 
 ```csharp
 partial class Adder {
@@ -482,11 +482,11 @@ partial class Adder {
 }
 ```
 
-`ThresholdClass` est utilisé dans la liaison de méthode lors de l’appel de méthodes non virtuelles.
+`ThresholdClass`est utilisé dans la méthode de liaison lors de l’invocation de méthodes non virtuelles.
 
-#### <a name="binding-implementation"></a>Implémentation de liaison
+#### <a name="binding-implementation"></a>Mise en œuvre contraignante
 
-L’implémentation de la liaison de méthode est responsable de l’appel de la méthode Java par le Runtime. Il contient également une déclaration d’attribut personnalisé `[Register]` qui fait partie de l’inscription de la méthode et qui sera abordée dans la section relative à l’inscription de la méthode :
+La méthode de mise en œuvre contraignante est responsable de l’invocation en temps d’exécution de la méthode Java. Il contient `[Register]` également une déclaration d’attribut personnalisé qui fait partie de l’enregistrement de la méthode, et sera discuté dans la section d’enregistrement de la méthode :
 
 ```csharp
 [Register ("add", "(II)I", "GetAddHandler")]
@@ -501,15 +501,15 @@ L’implémentation de la liaison de méthode est responsable de l’appel de la
 }
 ```
 
-Le champ `id_add` contient l’ID de méthode de la méthode Java à appeler. La valeur `id_add` est obtenue à partir de `JNIEnv.GetMethodID`, qui requiert la classe de déclaration (`class_ref`), le nom de la méthode Java (`"add"`) et la signature JNI de la méthode (`"(II)I"`).
+Le `id_add` champ contient la méthode ID pour la méthode Java à invoquer. La `id_add` valeur est `JNIEnv.GetMethodID`obtenue à partir de`class_ref`, qui nécessite`"add"`la classe déclarante ( ),`"(II)I"`le nom de méthode Java ( ), et la signature JNI de la méthode ( ).
 
-Une fois l’ID de méthode obtenu, `GetType` est comparé à `ThresholdType` pour déterminer si une distribution virtuelle ou non virtuelle est requise. La distribution virtuelle est requise lorsque `GetType` correspond `ThresholdType`, car `Handle` peut faire référence à une sous-classe allouée par Java qui remplace la méthode.
+Une fois l’ID `GetType` de méthode `ThresholdType` obtenu, est comparé pour déterminer si la répartition virtuelle ou non virtuelle est nécessaire. L’expédition virtuelle `GetType` `ThresholdType`est `Handle` nécessaire lorsque les correspondances, comme peut se référer à une sous-classe java-alloué qui l’emporte sur la méthode.
 
-Lorsque `GetType` ne correspond pas à `ThresholdType`, `Adder` a été sous-classée (par exemple, par `ManagedAdder`), et l’implémentation de `Adder.Add` sera appelée uniquement si la sous-classe a appelé `base.Add`. Il s’agit du cas de dispatch non virtuel, où `ThresholdClass` entre. `ThresholdClass` spécifie la classe Java qui fournira l’implémentation de la méthode à appeler.
+Quand `GetType` ne correspond `ThresholdType` `Adder` pas, a été sous-classé `ManagedAdder`(par `Adder.Add` exemple par), et la mise en `base.Add`œuvre ne sera invoquée que si la sous-classe invoquée . Il s’agit de l’affaire `ThresholdClass` de répartition non virtuelle, qui est là où vient. `ThresholdClass`précise quelle classe Java fournira la mise en œuvre de la méthode à invoquer.
 
-#### <a name="method-registration"></a>Inscription de méthode
+#### <a name="method-registration"></a>Enregistrement de la méthode
 
-Supposons que nous ayons une définition de `ManagedAdder` mise à jour qui remplace la méthode `Adder.Add` :
+Supposons que `ManagedAdder` nous avons une `Adder.Add` définition mise à jour qui l’emporte sur la méthode:
 
 ```csharp
 partial class ManagedAdder : Adder {
@@ -519,22 +519,22 @@ partial class ManagedAdder : Adder {
 }
 ```
 
-Souvenez-vous que `Adder.Add` avait un attribut personnalisé `[Register]` :
+Rappel `Adder.Add` qui `[Register]` avait un attribut personnalisé:
 
 ```csharp
 [Register ("add", "(II)I", "GetAddHandler")]
 ```
 
-Le constructeur d’attribut personnalisé `[Register]` accepte trois valeurs :
+Le `[Register]` constructeur d’attributs personnalisé accepte trois valeurs :
 
-1. Nom de la méthode Java, `"add"` dans ce cas.
+1. Le nom de la `"add"` méthode Java, dans ce cas.
 
 1. La signature de type JNI de la méthode, `"(II)I"` dans ce cas.
 
-1. La *méthode de connecteur* , `GetAddHandler` dans ce cas.
-    Les méthodes de connecteur seront abordées ultérieurement.
+1. La méthode de `GetAddHandler` *connecteur* , dans ce cas.
+    Les méthodes de connecteur seront discutées plus tard.
 
-Les deux premiers paramètres permettent au processus de génération ACW de générer une déclaration de méthode pour substituer la méthode. Le ACW résultant contient une partie du code suivant :
+Les deux premiers paramètres permettent au processus de génération ACW de générer une déclaration de méthode pour passer outre à la méthode. L’ACW qui en résulterait contiendrait une partie du code suivant :
 
 ```csharp
 public class ManagedAdder extends mono.android.test.Adder {
@@ -553,21 +553,21 @@ public class ManagedAdder extends mono.android.test.Adder {
 }
 ```
 
-Notez qu’une méthode `@Override` est déclarée, qui délègue à une méthode préfixée par `n_`du même nom. Cela garantit que lorsque le code Java appelle `ManagedAdder.add`, `ManagedAdder.n_add` sera appelé, ce qui permettra l’exécution de la méthode C# de substitution `ManagedAdder.Add`.
+Notez `@Override` qu’une méthode est déclarée, qui délègue une `n_`méthode préfixée du même nom. Cela garantit que lorsque `ManagedAdder.add`le `ManagedAdder.n_add` code Java invoque, sera invoqué, `ManagedAdder.Add` ce qui permettra l’exécution de la méthode C.
 
-C’est la question la plus importante : Comment est-il `ManagedAdder.n_add` raccordé à `ManagedAdder.Add`?
+Ainsi, la question la `ManagedAdder.n_add` plus importante `ManagedAdder.Add`: comment est-il branché ?
 
-Les méthodes de `native` Java sont inscrites auprès du runtime Java (Runtime Android) via la [fonction JNI RegisterNatives](https://docs.oracle.com/javase/1.5.0/docs/guide/jni/spec/functions.html#wp17734).
-`RegisterNatives` prend un tableau de structures contenant le nom de la méthode Java, la signature de type JNI et un pointeur de fonction à appeler qui suit la [Convention d’appel JNI](https://docs.oracle.com/javase/1.5.0/docs/guide/jni/spec/design.html#wp715).
-Le pointeur de fonction doit être une fonction qui prend deux arguments de pointeur suivis par les paramètres de méthode. La méthode Java `ManagedAdder.n_add` doit être implémentée par le biais d’une fonction qui a le prototype C suivant :
+Les `native` méthodes Java sont enregistrées avec le temps d’exécution Java (l’Android) à travers la [fonction JNI RegisterNatives](https://docs.oracle.com/javase/1.5.0/docs/guide/jni/spec/functions.html#wp17734).
+`RegisterNatives`prend un tableau de structures contenant le nom de la méthode Java, la signature de type JNI, et un pointeur de fonction à invoquer qui suit [convention d’appel JNI](https://docs.oracle.com/javase/1.5.0/docs/guide/jni/spec/design.html#wp715).
+Le pointeur de fonction doit être une fonction qui prend deux arguments de pointeur suivis par les paramètres de la méthode. La `ManagedAdder.n_add` méthode Java doit être implémentée par le biais d’une fonction qui a le prototype C suivant:
 
 ```csharp
 int FunctionName(JNIEnv *env, jobject this, int a, int b)
 ```
 
-Xamarin. Android n’expose pas de méthode `RegisterNatives`. Au lieu de cela, les ACW et MCW fournissent ensemble les informations nécessaires pour appeler `RegisterNatives`: ACW contient le nom de la méthode et la signature de type JNI, la seule chose qui manque est un pointeur de fonction pour se raccorder.
+Xamarin.Android n’expose `RegisterNatives` pas une méthode. Au lieu de cela, l’ACW et `RegisterNatives`le MCW fournissent ensemble les informations nécessaires pour invoquer : l’ACW contient le nom de la méthode et la signature de type JNI, la seule chose qui manque est un pointeur de fonction à brancher.
 
-C’est là qu’intervient la *méthode du connecteur* . Le troisième `[Register]` paramètre d’attribut personnalisé est le nom d’une méthode définie dans le type inscrit ou une classe de base du type inscrit qui n’accepte aucun paramètre et retourne une `System.Delegate`. La `System.Delegate` retournée se réfère à son tour à une méthode qui a la signature de fonction JNI correcte. Enfin, le délégué retourné par la méthode de connecteur *doit* être associé à une racine afin que le garbage collector ne le collecte pas, car le délégué est fourni à Java.
+C’est là que la *méthode du connecteur* entre en vigueur. Le `[Register]` troisième paramètre d’attribut personnalisé est le nom d’une méthode définie dans le type `System.Delegate`enregistré ou une classe de base du type enregistré qui n’accepte aucun paramètre et renvoie un . Le `System.Delegate` retour se réfère à une méthode qui a la signature de fonction JNI correcte. Enfin, le délégué que la méthode de connexion retourne *doit* être enracinée de sorte que le GC ne le recueille pas, comme le délégué est fourni à Java.
 
 ```csharp
 #pragma warning disable 0169
@@ -590,17 +590,17 @@ static int n_Add (IntPtr jnienv, IntPtr lrefThis, int a, int b)
 #pragma warning restore 0169
 ```
 
-La méthode `GetAddHandler` crée un `Func<IntPtr, IntPtr, int, int,
-int>` délégué qui fait référence à la méthode `n_Add`, puis appelle [JNINativeWrapper. CreateDelegate](xref:Android.Runtime.JNINativeWrapper.CreateDelegate*).
-`JNINativeWrapper.CreateDelegate` encapsule la méthode fournie dans un bloc try/catch, afin que toutes les exceptions non gérées soient gérées et entraîne le déclenchement de l’événement [AndroidEvent. UnhandledExceptionRaiser](xref:Android.Runtime.AndroidEnvironment.UnhandledExceptionRaiser) . Le délégué obtenu est stocké dans la variable `cb_add` statique afin que le GC ne libère pas le délégué.
+La `GetAddHandler` méthode `Func<IntPtr, IntPtr, int, int,
+int>` crée un délégué `n_Add` qui se réfère à la méthode, puis invoque [JNINativeWrapper.CreateDelegate](xref:Android.Runtime.JNINativeWrapper.CreateDelegate*).
+`JNINativeWrapper.CreateDelegate`enveloppe la méthode fournie dans un bloc d’essai/capture, de sorte que toutes les exceptions non gérées sont manipulées et se traduira par l’augmentation de [l’événement AndroidEvent.UnhandledExceptionRaiser.](xref:Android.Runtime.AndroidEnvironment.UnhandledExceptionRaiser) Le délégué qui en `cb_add` résulte est stocké dans la variable statique de sorte que le GC ne libérera pas le délégué.
 
-Enfin, la méthode `n_Add` est chargée de marshaler les paramètres JNI vers les types managés correspondants, puis de déléguer l’appel de la méthode.
+Enfin, `n_Add` la méthode est responsable de l’enchôtage des paramètres de l’INI aux types gérés correspondants, puis de déléguer l’appel de méthode.
 
-Remarque : utilisez toujours `JniHandleOwnership.DoNotTransfer` lors de l’obtention d’un MCW via une instance java. Leur traitement en tant que référence locale (et par conséquent l’appel de `JNIEnv.DeleteLocalRef`) rompt les transitions de pile managées et gérées par Java&gt;&gt;.
+Remarque : `JniHandleOwnership.DoNotTransfer` Utilisez toujours lors de l’obtention d’un MCW sur une instance Java. Les traiter comme une référence `JNIEnv.DeleteLocalRef`locale (et&gt; donc&gt; appeler ) brisera géré - Java - transitions de pile gérée.
 
 ### <a name="complete-adder-binding"></a>Liaison Adder complète
 
-La liaison managée complète pour le type de `mono.android.tests.Adder` est :
+La liaison gérée `mono.android.tests.Adder` complète pour le type est :
 
 ```csharp
 [Register ("mono/android/test/Adder", DoNotGenerateAcw=true)]
@@ -659,27 +659,27 @@ public class Adder : Java.Lang.Object {
 
 ### <a name="restrictions"></a>Restrictions
 
-Lors de l’écriture d’un type qui répond aux critères suivants :
+Lors de l’écriture d’un type qui correspond aux critères suivants :
 
-1. Sous-classes `Java.Lang.Object`
+1. Sous-classes`Java.Lang.Object`
 
-1. A un attribut personnalisé `[Register]`
+1. A `[Register]` un attribut personnalisé
 
 1. `RegisterAttribute.DoNotGenerateAcw` est `true`
 
-Ensuite, pour l’interaction GC, le type ne *doit pas* avoir de champs pouvant faire référence à une sous-classe `Java.Lang.Object` ou `Java.Lang.Object` au moment de l’exécution. Par exemple, les champs de type `System.Object` et n’importe quel type d’interface ne sont pas autorisés. Les types qui ne peuvent pas faire référence à des instances `Java.Lang.Object` sont autorisés, comme `System.String` et `List<int>`. Cette restriction consiste à empêcher la collection d’objets prématurée par le GC.
+Ensuite, pour l’interaction GC le type ne `Java.Lang.Object` `Java.Lang.Object` *doit pas* avoir de champs qui peuvent se référer à une ou sous-classe au moment de l’exécution. Par exemple, les `System.Object` champs de type et tout type d’interface ne sont pas autorisés. Les types qui `Java.Lang.Object` ne peuvent pas `System.String` se `List<int>`référer à des cas sont autorisés, tels que et . Cette restriction vise à empêcher la collecte prématurée d’objets par le GC.
 
-Si le type doit contenir un champ d’instance qui peut faire référence à une instance de `Java.Lang.Object`, le type de champ doit être `System.WeakReference` ou `GCHandle`.
+Si le type doit contenir un champ `Java.Lang.Object` d’instance qui peut `System.WeakReference` `GCHandle`se référer à une instance, alors le type de champ doit être ou .
 
-## <a name="binding-abstract-methods"></a>Liaison de méthodes abstraites
+## <a name="binding-abstract-methods"></a>Méthodes abstraites contraignantes
 
-La liaison de méthodes `abstract` est largement identique à la liaison de méthodes virtuelles. Il n’existe que deux différences :
+Les `abstract` méthodes de liaison sont en grande partie identiques aux méthodes virtuelles contraignantes. Il n’y a que deux différences :
 
-1. La méthode abstraite est abstraite. Il conserve toujours l’attribut `[Register]` et l’inscription de méthode associée, la liaison de méthode est simplement déplacée vers le type `Invoker`.
+1. La méthode abstraite est abstraite. Il conserve toujours `[Register]` l’attribut et l’enregistrement de méthode `Invoker` associé, la liaison de méthode est juste déplacé au type.
 
-1. Un type de `Invoker` non `abstract` est créé, qui sous-classe le type abstrait. Le type de `Invoker` doit substituer toutes les méthodes abstraites déclarées dans la classe de base, et l’implémentation substituée est l’implémentation de liaison de méthode, bien que le cas de dispatch non virtuel puisse être ignoré.
+1. Un non-type `abstract` `Invoker` est créé qui sous-classe le type abstrait. Le `Invoker` type doit l’emporter sur toutes les méthodes abstraites déclarées dans la classe de base, et la mise en œuvre annulée est la mise en œuvre de liaison de méthode, bien que le cas de répartition non virtuel puisse être ignoré.
 
-Par exemple, supposons que la méthode `mono.android.test.Adder.add` ci-dessus était `abstract`. La C# liaison changerait afin que les `Adder.Add` étaient abstraits, et un nouveau type de `AdderInvoker` serait défini, ce qui implémentait `Adder.Add`:
+Par exemple, supposons `mono.android.test.Adder.add` que `abstract`la méthode ci-dessus étaient . La liaison Cmd changerait de sorte `Adder.Add` `AdderInvoker` qu’elle soit `Adder.Add`abstraite, et un nouveau type serait défini qui implémentait :
 
 ```csharp
 partial class Adder {
@@ -706,11 +706,11 @@ partial class AdderInvoker : Adder {
 }
 ```
 
-Le type de `Invoker` est nécessaire uniquement lors de l’obtention de références JNI à des instances créées par Java.
+Le `Invoker` type n’est nécessaire que lors de l’obtention de références JNI à des instances créées par Java.
 
-## <a name="binding-interfaces"></a>Interfaces de liaison
+## <a name="binding-interfaces"></a>Interfaces contraignantes
 
-Le concept des interfaces de liaison est similaire à celui des classes de liaison contenant des méthodes virtuelles, mais la plupart des spécificités diffèrent de manière subtile (et non discrète). Considérons la [déclaration d’interface Java](https://github.com/xamarin/monodroid-samples/blob/master/SanityTests/Adder.java#L14)suivante :
+Les interfaces de liaison sont conceptuellement similaires aux classes de liaison contenant des méthodes virtuelles, mais beaucoup de détails diffèrent de manière subtile (et pas si subtile). Considérez la [déclaration d’interface Java](https://github.com/xamarin/monodroid-samples/blob/master/SanityTests/Adder.java#L14)suivante :
 
 ```csharp
 public interface Progress {
@@ -718,28 +718,28 @@ public interface Progress {
 }
 ```
 
-Les liaisons d’interface comportent deux C# parties : la définition d’interface et une définition d’appelant pour l’interface.
+Les liaisons d’interface ont deux parties : la définition de l’interface C et une définition Invoker pour l’interface.
 
 ### <a name="interface-definition"></a>Définition d'interface
 
-La C# définition de l’interface doit respecter les exigences suivantes :
+La définition de l’interface CMD doit répondre aux exigences suivantes :
 
-- La définition de l’interface doit avoir un `[Register]` attribut personnalisé.
+- La définition de `[Register]` l’interface doit avoir un attribut personnalisé.
 
-- La définition de l’interface doit étendre le `IJavaObject interface`.
-    Dans le cas contraire, vous empêchez ACWs d’hériter de l’interface java.
+- La définition de `IJavaObject interface`l’interface doit étendre le .
+    Si vous ne le faites pas, les ACW n’hériteront pas de l’interface Java.
 
-- Chaque méthode d’interface doit contenir un attribut `[Register]` spécifiant le nom de la méthode Java correspondante, la signature JNI et la méthode de connecteur.
+- Chaque méthode d’interface doit contenir un `[Register]` attribut spécifiant le nom correspondant de la méthode Java, la signature JNI et la méthode du connecteur.
 
-- La méthode de connecteur doit également spécifier le type sur lequel la méthode de connecteur peut se trouver.
+- La méthode du connecteur doit également spécifier le type sur lequel la méthode du connecteur peut être localisée.
 
-Lors de la liaison des méthodes `abstract` et `virtual`, la méthode de connecteur est recherchée dans la hiérarchie d’héritage du type en cours d’enregistrement. Comme les interfaces ne peuvent pas contenir de corps, cela ne fonctionne pas, c’est pourquoi un type doit être spécifié pour indiquer l’emplacement de la méthode de connecteur. Le type est spécifié dans la chaîne de méthode de connecteur, après un signe deux-points `':'`, et doit être le nom de type qualifié d’assembly du type contenant le demandeur.
+Lorsque `abstract` la `virtual` liaison et les méthodes, la méthode de connecteur serait recherchée dans la hiérarchie de l’héritage du type enregistré. Les interfaces ne peuvent pas avoir de méthodes contenant des corps, de sorte que cela ne fonctionne pas, donc l’exigence qu’un type soit spécifié indiquant où la méthode de connecteur est situé. Le type est spécifié dans la chaîne `':'`de méthode de connecteur, après un côlon, et doit être le nom de type qualifié d’assemblage du type contenant l’invocateur.
 
-Les déclarations de méthode d’interface sont une traduction de la méthode Java correspondante utilisant des types *compatibles* . Pour les types intégrés Java, les types compatibles sont les C# types correspondants, par exemple `int` Java C# est `int`. Pour les types référence, le type compatible est un type qui peut fournir un handle JNI du type Java approprié.
+Les déclarations de méthode d’interface sont une traduction de la méthode Java correspondante en utilisant des types *compatibles.* Pour les types de Java builtin, les types compatibles `int` sont les `int`types C correspondants, par exemple Java est C . Pour les types de référence, le type compatible est un type qui peut fournir une poignée JNI du type Java approprié.
 
-Les membres d’interface ne sont pas appelés directement par l’appel de &ndash; Java. ils seront mis en suite par le biais du type d’appelant &ndash; et une certaine flexibilité est donc autorisée.
+Les membres de l’interface ne &ndash; seront pas directement invoqués par &ndash; l’invocation Java sera négocié par le type Invoker afin une certaine quantité de flexibilité est autorisée.
 
-L’interface de progression Java peut être [déclarée dans C# en tant que](https://github.com/xamarin/monodroid-samples/blob/master/SanityTests/ManagedAdder.cs#L83):
+L’interface Java Progress peut être [déclarée dans C ' comme](https://github.com/xamarin/monodroid-samples/blob/master/SanityTests/ManagedAdder.cs#L83):
 
 ```csharp
 [Register ("mono/android/test/Adder$Progress", DoNotGenerateAcw=true)]
@@ -750,14 +750,14 @@ public interface IAdderProgress : IJavaObject {
 }
 ```
 
-Notez dans la liste ci-dessus que nous allons mapper le paramètre de `int[]` Java à un [&gt;&lt;int JavaArray ](xref:Android.Runtime.JavaArray`1).
-Cela n’est pas nécessaire : nous aurions pu les lier C# à un `int[]`, à un `IList<int>`, ou à une autre valeur. Quel que soit le type choisi, le `Invoker` doit être en mesure de le traduire en un type de `int[]` Java pour l’appel.
+Remarquez dans ce qui `int[]` précède que nous cartographions le paramètre Java à une [auberge&lt;&gt;JavaArray](xref:Android.Runtime.JavaArray`1).
+Ce n’est pas nécessaire: nous aurions `int[]`pu le `IList<int>`lier à un C , ou un , ou quelque chose d’autre entièrement. Quel que soit `Invoker` le type choisi, les besoins `int[]` doivent être en mesure de le traduire en un type Java pour l’invocation.
 
-### <a name="invoker-definition"></a>Définition de l’appelant
+### <a name="invoker-definition"></a>Définition de l’invocateur
 
-La définition de type `Invoker` doit hériter `Java.Lang.Object`, implémenter l’interface appropriée et fournir toutes les méthodes de connexion référencées dans la définition d’interface. Il existe une autre suggestion qui diffère d’une liaison de classe : les ID de champ et de méthode `class_ref` doivent être des membres d’instance, et non des membres statiques.
+La `Invoker` définition de `Java.Lang.Object`type doit hériter, implémenter l’interface appropriée et fournir toutes les méthodes de connexion référencées dans la définition de l’interface. Il y a une autre suggestion qui `class_ref` diffère d’une obligation de classe : les DIU sur le terrain et la méthode devraient être des membres d’instance, et non des membres statiques.
 
-La raison pour laquelle les membres d’instance préfèrent être en fonction du comportement `JNIEnv.GetMethodID` dans le runtime Android. (Il peut également s’agir du comportement de Java ; il n’a pas été testé.) `JNIEnv.GetMethodID` retourne la valeur null lors de la recherche d’une méthode qui provient d’une interface implémentée et non de l’interface déclarée. Prenons l’exemple de l’interface Java [. util. SortedMap&lt;k, v&gt;](https://developer.android.com/reference/java/util/SortedMap.html) , qui implémente l’interface [java. util. map&lt;k, v&gt;](https://developer.android.com/reference/java/util/Map.html) . Map fournit une méthode [claire](https://developer.android.com/reference/java/util/Map.html#clear()) , donc une définition de `Invoker` apparemment raisonnable pour SortedMap serait :
+La raison de préférer les membres `JNIEnv.GetMethodID` d’instance a à voir avec le comportement dans le runtime Android. (Cela peut être le comportement Java ainsi; il n’a pas été testé.) `JNIEnv.GetMethodID` retourne nul lorsque vous cherchez une méthode qui provient d’une interface implémentée et non de l’interface déclarée. Considérez l’interface [java.util.SortedMap&lt;K, V&gt; ](https://developer.android.com/reference/java/util/SortedMap.html) Java, qui implémente [l’interface java.util.Map,&lt;V.&gt; ](https://developer.android.com/reference/java/util/Map.html) La carte fournit une méthode [claire,](https://developer.android.com/reference/java/util/Map.html#clear()) donc une définition apparemment raisonnable `Invoker` pour TriedMap serait:
 
 ```csharp
 // Fails at runtime. DO NOT FOLLOW
@@ -774,15 +774,15 @@ partial class ISortedMapInvoker : Java.Lang.Object, ISortedMap {
 }
 ```
 
-L’exemple ci-dessus échoue, car `JNIEnv.GetMethodID` retourne `null` lors de la recherche de la méthode `Map.clear` via l’instance de la classe `SortedMap`.
+Ce qui précède `JNIEnv.GetMethodID` échouera parce qu’il reviendra `null` en regardant la `Map.clear` méthode à travers l’instance de `SortedMap` classe.
 
-Il existe deux solutions à ce qui suit : effectuer le suivi de l’interface à partir de laquelle chaque méthode provient, avoir une `class_ref` pour chaque interface ou conserver tout comme membres d’instance et effectuer la recherche de méthode sur le type de classe le plus dérivé, et non sur le type d’interface. Ce dernier s’effectue dans **mono. Android. dll**.
+Il existe deux solutions à cela: suivre quelle interface `class_ref` chaque méthode vient, et ont un pour chaque interface, ou tout garder en tant que membres d’instance et effectuer le lookup méthode sur le type de classe le plus dérivé, pas le type d’interface. Ce dernier est fait en **Mono.Android.dll**.
 
-La définition de l’appelant comprend six sections : le constructeur, la méthode `Dispose`, les membres `ThresholdType` et `ThresholdClass`, la méthode `GetObject`, l’implémentation de la méthode d’interface et l’implémentation de la méthode de connecteur.
+La définition Invoker comporte six sections `Dispose` : le `ThresholdType` `ThresholdClass` constructeur, `GetObject` la méthode, la méthode et les membres, la méthode, la mise en œuvre de la méthode d’interface et la mise en œuvre de la méthode de connecteur.
 
 #### <a name="constructor"></a>Constructeur
 
-Le constructeur doit rechercher la classe Runtime de l’instance appelée et stocker la classe Runtime dans le champ `class_ref` de l’instance :
+Le constructeur doit rechercher la classe de temps d’exécution de l’instance `class_ref` en cours d’invoquage et stocker la classe de temps d’exécution dans le domaine de l’instance:
 
 ```csharp
 partial class IAdderProgressInvoker {
@@ -797,11 +797,11 @@ partial class IAdderProgressInvoker {
 }
 ```
 
-Remarque : la propriété `Handle` doit être utilisée dans le corps du constructeur, et non dans le paramètre `handle`, comme sur Android v 4.0, le paramètre `handle` peut être non valide après la fin de l’exécution du constructeur de base.
+Remarque : `Handle` La propriété doit être utilisée dans `handle` le corps du constructeur, et `handle` non dans le paramètre, comme sur Android v4.0 le paramètre peut être invalide après que le constructeur de base a terminé l’exécution.
 
 #### <a name="dispose-method"></a>Dispose, méthode
 
-La méthode `Dispose` doit libérer la référence globale allouée dans le constructeur :
+La `Dispose` méthode doit libérer la référence globale allouée dans le constructeur :
 
 ```csharp
 partial class IAdderProgressInvoker {
@@ -817,7 +817,7 @@ partial class IAdderProgressInvoker {
 
 #### <a name="thresholdtype-and-thresholdclass"></a>ThresholdType et ThresholdClass
 
-Les membres `ThresholdType` et `ThresholdClass` sont identiques à ce qui se trouve dans une liaison de classe :
+Les `ThresholdType` `ThresholdClass` membres et les membres sont identiques à ce que l’on trouve dans une classe de liaison :
 
 ```csharp
 partial class IAdderProgressInvoker {
@@ -836,7 +836,7 @@ partial class IAdderProgressInvoker {
 
 #### <a name="getobject-method"></a>GetObject, méthode
 
-Une méthode `GetObject` statique est requise pour prendre en charge les [Extensions. JavaCast&lt;t&gt;()](xref:Android.Runtime.Extensions.JavaCast*):
+Une `GetObject` méthode statique est nécessaire pour prendre en charge [Extensions.JavaCast&lt;&gt;T ()](xref:Android.Runtime.Extensions.JavaCast*):
 
 ```csharp
 partial class IAdderProgressInvoker {
@@ -849,7 +849,7 @@ partial class IAdderProgressInvoker {
 
 #### <a name="interface-methods"></a>Méthodes d'interface
 
-Chaque méthode de l’interface doit avoir une implémentation, qui appelle la méthode Java correspondante via JNI :
+Chaque méthode de l’interface doit avoir une implémentation, qui invoque la méthode Java correspondante par le biais de JNI:
 
 ```csharp
 partial class IAdderProgressInvoker {
@@ -865,7 +865,7 @@ partial class IAdderProgressInvoker {
 
 #### <a name="connector-methods"></a>Méthodes de connecteur
 
-Les méthodes de connecteur et l’infrastructure de prise en charge sont responsables du marshaling C# des paramètres JNI vers les types appropriés. Le paramètre de `int[]` Java sera transmis en tant que `jintArray`JNI, qui est un `IntPtr` C#dans. Le `IntPtr` doit être marshalé en `JavaArray<int>` afin de prendre en charge l’appel de C# l’interface :
+Les méthodes de connecteur et l’infrastructure de soutien sont responsables de l’enchrage des paramètres de l’INM aux types Cmd appropriés. Le `int[]` paramètre Java sera adopté `jintArray`en tant `IntPtr` que JNI , qui est un dans C . Le `IntPtr` doit être mis `JavaArray<int>` en œillé à un afin de soutenir l’invocation de l’interface C:
 
 ```csharp
 partial class IAdderProgressInvoker {
@@ -887,17 +887,17 @@ partial class IAdderProgressInvoker {
 }
 ```
 
-Si `int[]` est préférable à `JavaList<int>`, [JNIEnv. GetArray ()](xref:Android.Runtime.JNIEnv.GetArray*) peut être utilisé à la place :
+Si `int[]` on `JavaList<int>`préfère, alors [JNIEnv.GetArray()](xref:Android.Runtime.JNIEnv.GetArray*) pourrait être utilisé à la place:
 
 ```csharp
 int[] _values = (int[]) JNIEnv.GetArray(values, JniHandleOwnership.DoNotTransfer, typeof (int));
 ```
 
-Notez, toutefois, que `JNIEnv.GetArray` copie l’ensemble du tableau entre les machines virtuelles. par conséquent, pour les grands tableaux, cela peut entraîner beaucoup de sollicitation du GC.
+Notez, cependant, que `JNIEnv.GetArray` les copies de l’ensemble du tableau entre les VM, donc pour les grands tableaux cela pourrait entraîner beaucoup de pression GC ajouté.
 
-### <a name="complete-invoker-definition"></a>Définition complète de l’appelant
+### <a name="complete-invoker-definition"></a>Définition complète de l’invocateur
 
-[Définition complète du IAdderProgressInvoker](https://github.com/xamarin/monodroid-samples/blob/master/SanityTests/ManagedAdder.cs#L88):
+La [définition complète de IAdderProgressInvoker](https://github.com/xamarin/monodroid-samples/blob/master/SanityTests/ManagedAdder.cs#L88):
 
 ```csharp
 class IAdderProgressInvoker : Java.Lang.Object, IAdderProgress {
@@ -969,25 +969,25 @@ new JValue (currentSum));
 
 ## <a name="jni-object-references"></a>Références d’objets JNI
 
-De nombreuses méthodes JNIEnv retournent des *références d’objets* *JNI* , qui sont similaires à `GCHandle`s. JNI fournit trois types différents de références d’objets : les références locales, les références globales et les références globales faibles. Les trois sont représentés en tant que `System.IntPtr`, *mais* (selon la section types de fonction JNI) les `IntPtr`s retournés par les méthodes `JNIEnv` ne sont pas toutes des références. Par exemple, [JNIEnv. GetMethodID](xref:Android.Runtime.JNIEnv.GetMethodID*) retourne un `IntPtr`, mais il ne retourne pas de référence d’objet, il retourne une `jmethodID`. Pour plus d’informations, consultez la [documentation relative à la fonction JNI](https://docs.oracle.com/javase/1.5.0/docs/guide/jni/spec/functions.html) .
+Beaucoup de méthodes JNIEnv retourner *références*objet `GCHandle` *JNI* , qui sont similaires à s. JNI fournit trois types différents de références d’objets : les références locales, les références globales et les références mondiales faibles. Tous les trois `System.IntPtr`sont représentés comme , *mais* (selon `IntPtr`la section `JNIEnv` JNI Function Types) tous les revenus des méthodes ne sont pas des références. Par exemple, [JNIEnv.GetMethodID](xref:Android.Runtime.JNIEnv.GetMethodID*) retourne un `IntPtr`, mais il ne retourne `jmethodID`pas une référence d’objet, il retourne un . Consultez la [documentation de la fonction JNI](https://docs.oracle.com/javase/1.5.0/docs/guide/jni/spec/functions.html) pour plus de détails.
 
 Les références locales sont créées par *la plupart des* méthodes de création de références.
-Android n’autorise qu’un nombre limité de références locales à un moment donné, généralement 512. Les références locales peuvent être supprimées via [JNIEnv. DeleteLocalRef](xref:Android.Runtime.JNIEnv.DeleteLocalRef*).
-Contrairement à JNI, toutes les méthodes JNIEnv de référence qui retournent des références d’objet retournent des références locales ; [JNIEnv. FindClass](xref:Android.Runtime.JNIEnv.FindClass*) retourne une référence *globale* . Il est fortement recommandé de supprimer les références locales aussi rapidement que possible, en créant éventuellement un [objet Java. lang. Object](xref:Java.Lang.Object) autour de l’objet et en spécifiant `JniHandleOwnership.TransferLocalRef` au constructeur [java. lang. Object (handle IntPtr, JniHandleOwnership Transfer)](xref:Java.Lang.Object#ctor*) .
+Android ne permet qu’à un nombre limité de références locales d’exister à un moment donné, généralement 512. Les références locales peuvent être supprimées via [JNIEnv.DeleteLocalRef](xref:Android.Runtime.JNIEnv.DeleteLocalRef*).
+Contrairement à JNI, toutes les méthodes de référence JNIEnv qui renvoient les références d’objet renvoient des références locales ; [JNIEnv.FindClass](xref:Android.Runtime.JNIEnv.FindClass*) renvoie une référence *mondiale.* Il est fortement recommandé de supprimer les références locales aussi rapidement que vous le pouvez, `JniHandleOwnership.TransferLocalRef` éventuellement en construisant un [Java.Lang.Object](xref:Java.Lang.Object) autour de l’objet et en spécifiant à la [Java.Lang.Object (poignée IntPtr, transfert JniHandleOwnership)](xref:Java.Lang.Object#ctor*) constructeur.
 
-Les références globales sont créées par [JNIEnv. NewGlobalRef](xref:Android.Runtime.JNIEnv.NewGlobalRef*) et [JNIEnv. FindClass](xref:Android.Runtime.JNIEnv.FindClass*).
-Ils peuvent être détruits avec [JNIEnv. DeleteGlobalRef](xref:Android.Runtime.JNIEnv.DeleteGlobalRef*).
-Les émulateurs ont une limite de 2 000 références globales en suspens, tandis que les périphériques matériels ont une limite d’environ 52 000 références globales.
+Des références globales sont créées par [JNIEnv.NewGlobalRef](xref:Android.Runtime.JNIEnv.NewGlobalRef*) et [JNIEnv.FindClass](xref:Android.Runtime.JNIEnv.FindClass*).
+Ils peuvent être détruits avec [JNIEnv.DeleteGlobalRef](xref:Android.Runtime.JNIEnv.DeleteGlobalRef*).
+Les émulateurs ont une limite de 2 000 références mondiales exceptionnelles, tandis que les appareils matériels ont une limite d’environ 52 000 références mondiales.
 
-Les références globales faibles sont uniquement disponibles sur Android v 2.2 (Froyo) et versions ultérieures. Des références globales faibles peuvent être supprimées avec [JNIEnv. DeleteWeakGlobalRef](xref:Android.Runtime.JNIEnv.DeleteWeakGlobalRef*).
+Les références mondiales faibles ne sont disponibles que sur Android v2.2 (Froyo) et plus tard. Les références mondiales faibles peuvent être supprimées avec [JNIEnv.DeleteWeakGlobalRef](xref:Android.Runtime.JNIEnv.DeleteWeakGlobalRef*).
 
-### <a name="dealing-with-jni-local-references"></a>Gestion des références locales JNI
+### <a name="dealing-with-jni-local-references"></a>Traiter avec les références locales de la JNI
 
-Les méthodes [JNIEnv. GetObjectField](xref:Android.Runtime.JNIEnv.GetObjectField*), [JNIEnv. GetStaticObjectField](xref:Android.Runtime.JNIEnv.GetStaticObjectField*), [JNIEnv. CallObjectMethod](xref:Android.Runtime.JNIEnv.CallObjectMethod*), [JNIEnv. CallNonvirtualObjectMethod](xref:Android.Runtime.JNIEnv.CallNonvirtualObjectMethod*) et [JNIEnv. CallStaticObjectMethod](xref:Android.Runtime.JNIEnv.CallStaticObjectMethod*) retournent un `IntPtr` qui contient une référence locale JNI à un objet Java, ou `IntPtr.Zero` si Java a retourné `null`. En raison du nombre limité de références locales qui peuvent être en suspens (512 entrées), il est souhaitable de s’assurer que les références sont supprimées en temps voulu. Il existe trois façons de traiter les références locales : en les supprimant explicitement, en créant une instance de `Java.Lang.Object` pour les stocker, et en utilisant `Java.Lang.Object.GetObject<T>()` pour créer un wrapper managé pouvant être appelé autour d’elles.
+Le [JNIEnv.GetObjectField](xref:Android.Runtime.JNIEnv.GetObjectField*), [JNIEnv.GetStaticObjectField](xref:Android.Runtime.JNIEnv.GetStaticObjectField*), [JNIEnv.CallObjectMethod](xref:Android.Runtime.JNIEnv.CallObjectMethod*), [JNIEnv.CallNonvirtualObjectMethod](xref:Android.Runtime.JNIEnv.CallNonvirtualObjectMethod*) et [JNIEnv.CallStaticObjectMethod](xref:Android.Runtime.JNIEnv.CallStaticObjectMethod*) méthodes retourner un `IntPtr` `IntPtr.Zero` qui contient `null`une référence locale JNI à un objet Java, ou si Java retourné . En raison du nombre limité de références locales qui peuvent être en suspens à la fois (512 entrées), il est souhaitable de s’assurer que les références sont supprimées en temps opportun. Il y a trois façons de traiter les références locales `Java.Lang.Object` : les supprimer `Java.Lang.Object.GetObject<T>()` explicitement, créer une instance pour les tenir et utiliser pour créer un emballage callable géré autour d’eux.
 
-### <a name="explicitly-deleting-local-references"></a>Suppression explicite de références locales
+### <a name="explicitly-deleting-local-references"></a>Suppression explicite des références locales
 
-[JNIEnv. DeleteLocalRef](xref:Android.Runtime.JNIEnv.DeleteLocalRef*) est utilisé pour supprimer les références locales. Une fois la référence locale supprimée, elle ne peut plus être utilisée. vous devez donc veiller à ce que `JNIEnv.DeleteLocalRef` soit la dernière chose effectuée avec la référence locale.
+[JNIEnv.DeleteLocalRef](xref:Android.Runtime.JNIEnv.DeleteLocalRef*) est utilisé pour supprimer les références locales. Une fois que la référence locale a été supprimée, elle ne `JNIEnv.DeleteLocalRef` peut plus être utilisée, il faut donc veiller à ce que ce soit la dernière chose faite avec la référence locale.
 
 ```csharp
 IntPtr lref = JNIEnv.CallObjectMethod(instance, methodID);
@@ -999,25 +999,25 @@ finally {
 }
 ```
 
-### <a name="wrapping-with-javalangobject"></a>Encapsulation avec Java. lang. Object
+### <a name="wrapping-with-javalangobject"></a>Emballage avec Java.Lang.Object
 
-`Java.Lang.Object` fournit un constructeur [java. lang. Object (handle IntPtr, JniHandleOwnership Transfer)](xref:Java.Lang.Object#ctor*) qui peut être utilisé pour encapsuler une référence JNI de sortie. Le paramètre [JniHandleOwnership](xref:Android.Runtime.JniHandleOwnership) détermine la façon dont le paramètre `IntPtr` doit être traité :
+`Java.Lang.Object`fournit un [constructeur Java.Lang.Object (IntPtr handle, JniHandleOwnership transfer)](xref:Java.Lang.Object#ctor*) qui peut être utilisé pour envelopper une référence JNI sortante. Le paramètre [JniHandleOwnership](xref:Android.Runtime.JniHandleOwnership) `IntPtr` détermine comment le paramètre doit être traité :
 
-- [JniHandleOwnership. DoNotTransfer](xref:Android.Runtime.JniHandleOwnership.DoNotTransfer) &ndash; l’instance de `Java.Lang.Object` créée crée une nouvelle référence globale à partir du paramètre `handle` et `handle` est inchangée.
-    L’appelant est chargé de libérer `handle`, si nécessaire.
+- [JniHandleOwnership.DoNotTransfer](xref:Android.Runtime.JniHandleOwnership.DoNotTransfer) &ndash; L’instance créée `Java.Lang.Object` créera une `handle` nouvelle `handle` référence globale à partir du paramètre, et est inchangée.
+    L’appelant est responsable `handle` de la libération, si nécessaire.
 
-- [JniHandleOwnership. TransferLocalRef](xref:Android.Runtime.JniHandleOwnership.TransferLocalRef) &ndash; l’instance de `Java.Lang.Object` créée crée une nouvelle référence globale à partir du paramètre `handle` et `handle` est supprimée avec [JNIEnv. DeleteLocalRef](xref:Android.Runtime.JNIEnv.DeleteLocalRef*) . L’appelant ne doit pas libérer `handle` et ne doit pas utiliser `handle` une fois l’exécution du constructeur terminée.
+- [JniHandleOwnership.TransferLocalRef](xref:Android.Runtime.JniHandleOwnership.TransferLocalRef) &ndash; `Java.Lang.Object` L’instance créée créera une `handle` nouvelle `handle` référence globale à partir du paramètre, et est supprimée avec [JNIEnv.DeleteLocalRef](xref:Android.Runtime.JNIEnv.DeleteLocalRef*) . L’appelant ne `handle` doit pas libérer, et ne doit pas utiliser `handle` après que le constructeur termine l’exécution.
 
-- [JniHandleOwnership. TransferGlobalRef](xref:Android.Runtime.JniHandleOwnership.TransferLocalRef) &ndash; l’instance `Java.Lang.Object` créée prend possession du paramètre `handle`. L’appelant ne doit pas libérer `handle`.
+- [JniHandleOwnership.TransferGlobalRef](xref:Android.Runtime.JniHandleOwnership.TransferLocalRef) &ndash; L’instance créée `Java.Lang.Object` prendra `handle` en charge la propriété du paramètre. L’appelant ne `handle` doit pas être libre.
 
-Étant donné que les méthodes d’appel de la méthode JNI retournent des références locales, `JniHandleOwnership.TransferLocalRef` serait normalement utilisé :
+Puisque les méthodes d’invocation de `JniHandleOwnership.TransferLocalRef` méthode JNI renvoient les arbitres locaux, seraient normalement utilisés :
 
 ```csharp
 IntPtr lref = JNIEnv.CallObjectMethod(instance, methodID);
 var value = new Java.Lang.Object (lref, JniHandleOwnership.TransferLocalRef);
 ```
 
-La référence globale créée ne sera pas libérée tant que l’instance de `Java.Lang.Object` n’est pas récupérée par le garbage collector. Si vous pouvez le faire, la suppression de l’instance libère la référence globale, ce qui accélère les garbage Collections :
+La référence globale créée ne `Java.Lang.Object` sera pas libérée tant que l’instance n’aura pas été recueillie. Si vous le pouvez, l’élimination de l’instance libérera la référence globale, accélérant les collectes d’ordures :
 
 ```csharp
 IntPtr lref = JNIEnv.CallObjectMethod(instance, methodID);
@@ -1026,23 +1026,23 @@ using (var value = new Java.Lang.Object (lref, JniHandleOwnership.TransferLocalR
 }
 ```
 
-### <a name="using-javalangobjectgetobjectlttgt"></a>Utilisation de Java. lang. Object. GetObject&lt;T&gt;()
+### <a name="using-javalangobjectgetobjectlttgt"></a>Utilisation de Java.Lang.Object.GetObject&lt;T&gt;()
 
-`Java.Lang.Object` fournit une méthode [java. lang. Object. GetObject&lt;t&gt;(handle IntPtr, JniHandleOwnership Transfer)](xref:Java.Lang.Object.GetObject*) qui peut être utilisée pour créer un wrapper managé pouvant être appelé du type spécifié.
+`Java.Lang.Object`fournit une méthode [Java.Lang.Object.GetObject&lt;T&gt;(poignée IntPtr, transfert de JniHandleOwnership)](xref:Java.Lang.Object.GetObject*) qui peut être utilisée pour créer un emballage callable géré du type spécifié.
 
-Le type `T` doit respecter les exigences suivantes :
+Le `T` type doit répondre aux exigences suivantes :
 
-1. `T` doit être un type référence.
+1. `T`doit être un type de référence.
 
 1. `T` doit implémenter l'interface `IJavaObject`.
 
-1. Si `T` n’est pas une classe ou une interface abstraite, `T` devez fournir un constructeur avec les types de paramètres `(IntPtr,
-    JniHandleOwnership)`.
+1. S’il `T` ne s’agit `T` pas d’une classe ou `(IntPtr,
+    JniHandleOwnership)` d’une interface abstraite, il doit alors fournir un constructeur avec les types de paramètres .
 
-1. Si `T` est une classe abstraite ou une interface, un *demandeur* *doit* être disponible pour `T`. Un demandeur est un type non abstrait qui hérite `T` ou implémente `T` et qui porte le même nom que `T` avec un suffixe de l’appelant. Par exemple, si T est l’interface `Java.Lang.IRunnable`, le type `Java.Lang.IRunnableInvoker` doit exister et doit contenir le constructeur `(IntPtr,
-    JniHandleOwnership)` requis.
+1. `T` S’il s’agit d’une classe abstraite `T` ou d’une interface, il *doit* y avoir un *invocateur* disponible pour . Un invocateur est un type `T` non abstrait `T` qui hérite ou `T` met en œuvre, et a le même nom qu’avec un suffixe Invoker. Par exemple, si T `Java.Lang.IRunnable` est l’interface, alors le type `Java.Lang.IRunnableInvoker` doit exister et doit contenir le constructeur requis. `(IntPtr,
+    JniHandleOwnership)`
 
-Étant donné que les méthodes d’appel de la méthode JNI retournent des références locales, `JniHandleOwnership.TransferLocalRef` serait normalement utilisé :
+Puisque les méthodes d’invocation de `JniHandleOwnership.TransferLocalRef` méthode JNI renvoient les arbitres locaux, seraient normalement utilisés :
 
 ```csharp
 IntPtr lrefString = JNIEnv.CallObjectMethod(instance, methodID);
@@ -1051,159 +1051,159 @@ Java.Lang.String value = Java.Lang.Object.GetObject<Java.Lang.String>( lrefStrin
 
 <a name="_Looking_up_Java_Types" />
 
-## <a name="looking-up-java-types"></a>Recherche de types Java
+## <a name="looking-up-java-types"></a>Rechercher des types java
 
-Pour rechercher un champ ou une méthode dans JNI, vous devez d’abord Rechercher le type déclarant pour le champ ou la méthode. La méthode [Android. Runtime. JNIEnv. FindClass (String)](xref:Android.Runtime.JNIEnv.FindClass*)) est utilisée pour rechercher des types Java. Le paramètre de chaîne est la *référence de type simplifiée* ou la *référence de type complète* pour le type Java. Consultez la [section Références de type JNI](#_JNI_Type_References) pour plus d’informations sur les références de type simplifiées et complètes.
+Pour rechercher un champ ou une méthode dans JNI, le type de déclaration pour le champ ou la méthode doit être consulté en premier. La méthode [Android.Runtime.JNIEnv.FindClass(string)](xref:Android.Runtime.JNIEnv.FindClass*)) est utilisée pour rechercher les types Java. Le paramètre de chaîne est la *référence de type simplifiée* ou la *référence de type complet* pour le type Java. Consultez la [section Références de type JNI](#_JNI_Type_References) pour plus de détails sur les références simplifiées et complètes.
 
-Remarque : contrairement à chaque autre méthode `JNIEnv` qui retourne des instances d’objet, `FindClass` retourne une référence globale, et non une référence locale.
+Remarque : Contrairement `JNIEnv` à toutes les `FindClass` autres méthodes qui renvoient les instances d’objets, renvoie une référence globale, et non une référence locale.
 
 <a name="_Instance_Fields" />
 
 ## <a name="instance-fields"></a>Champs d’instance
 
-Les champs sont manipulés à l’aide d' *ID de champ*. Les ID de champ sont obtenus via [JNIEnv. GetFieldID](xref:Android.Runtime.JNIEnv.GetFieldID*), qui requiert la classe dans laquelle le champ est défini, le nom du champ et la [signature de type JNI](#JNI_Type_Signatures) du champ.
+Les champs sont manipulés par *des pièces d’Œd de champ*. Les cartes d’ID de champ sont obtenues via [JNIEnv.GetFieldID](xref:Android.Runtime.JNIEnv.GetFieldID*), qui exige la classe dans laquelle le champ est défini, le nom du champ et la signature de [type JNI](#JNI_Type_Signatures) du champ.
 
-Les ID de champ n’ont pas besoin d’être libérés et sont valides tant que le type Java correspondant est chargé. (Android ne prend pas en charge actuellement le déchargement de classe.)
+Les Œd de champ n’ont pas besoin d’être libérées et sont valides tant que le type Java correspondant est chargé. (Android ne prend actuellement pas en charge le déchargement de classe.)
 
-Il existe deux ensembles de méthodes pour manipuler des champs d’instance : un pour la lecture des champs d’instance et un pour l’écriture de champs d’instance. Tous les ensembles de méthodes requièrent un ID de champ pour lire ou écrire la valeur du champ.
+Il existe deux ensembles de méthodes pour manipuler les champs d’instance : l’un pour la lecture des champs d’instance et l’autre pour l’écriture des champs d’instance. Tous les ensembles de méthodes nécessitent une pièce d’identité sur le terrain pour lire ou écrire la valeur du champ.
 
-### <a name="reading-instance-field-values"></a>Lecture des valeurs de champ d’instance
+### <a name="reading-instance-field-values"></a>Lecture des valeurs de terrain d’instance
 
-L’ensemble de méthodes permettant de lire les valeurs des champs d’instance suit le modèle d’affectation de noms :
+L’ensemble de méthodes de lecture des valeurs de champ d’instance suit le modèle de nommage :
 
 ```csharp
 * JNIEnv.Get*Field(IntPtr instance, IntPtr fieldID);
 ```
 
-où `*` est le type du champ :
+où `*` est le type de champ:
 
-- [JNIEnv. GetObjectField](xref:Android.Runtime.JNIEnv.GetObjectField*) &ndash; lire la valeur de n’importe quel champ d’instance qui n’est pas un type Builtin, comme `java.lang.Object`, les tableaux et les types d’interfaces. La valeur retournée est une référence locale JNI.
+- [JNIEnv.GetObjectField](xref:Android.Runtime.JNIEnv.GetObjectField*) &ndash; Lisez la valeur de n’importe quel champ d’instance qui n’est pas un type builtin, tels que `java.lang.Object` , les tableaux, et les types d’interface. La valeur retournée est une référence locale JNI.
 
-- [JNIEnv. GetBooleanField](xref:Android.Runtime.JNIEnv.GetBooleanField*) &ndash; lire la valeur des champs d’instance `bool`.
+- [JNIEnv.GetBooleanField](xref:Android.Runtime.JNIEnv.GetBooleanField*) &ndash; Lisez la `bool` valeur des champs d’instance.
 
-- [JNIEnv. GetByteField](xref:Android.Runtime.JNIEnv.GetByteField*) &ndash; lire la valeur des champs d’instance `sbyte`.
+- [JNIEnv.GetByteField](xref:Android.Runtime.JNIEnv.GetByteField*) &ndash; Lisez la `sbyte` valeur des champs d’instance.
 
-- [JNIEnv. GetCharField](xref:Android.Runtime.JNIEnv.GetCharField*) &ndash; lire la valeur des champs d’instance `char`.
+- [JNIEnv.GetCharField](xref:Android.Runtime.JNIEnv.GetCharField*) &ndash; Lisez la `char` valeur des champs d’instance.
 
-- [JNIEnv. GetShortField](xref:Android.Runtime.JNIEnv.GetShortField*) &ndash; lire la valeur des champs d’instance `short`.
+- [JNIEnv.GetShortField](xref:Android.Runtime.JNIEnv.GetShortField*) &ndash; Lisez la `short` valeur des champs d’instance.
 
-- [JNIEnv. GetIntField](xref:Android.Runtime.JNIEnv.GetIntField*) &ndash; lire la valeur des champs d’instance `int`.
+- [JNIEnv.GetIntField](xref:Android.Runtime.JNIEnv.GetIntField*) &ndash; Lisez la `int` valeur des champs d’instance.
 
-- [JNIEnv. GetLongField](xref:Android.Runtime.JNIEnv.GetLongField*) &ndash; lire la valeur des champs d’instance `long`.
+- [JNIEnv.GetLongField](xref:Android.Runtime.JNIEnv.GetLongField*) &ndash; Lisez la `long` valeur des champs d’instance.
 
-- [JNIEnv. GetFloatField](xref:Android.Runtime.JNIEnv.GetFloatField*) &ndash; lire la valeur des champs d’instance `float`.
+- [JNIEnv.GetFloatField](xref:Android.Runtime.JNIEnv.GetFloatField*) &ndash; Lisez la `float` valeur des champs d’instance.
 
-- [JNIEnv. GetDoubleField](xref:Android.Runtime.JNIEnv.GetDoubleField*) &ndash; lire la valeur des champs d’instance `double`.
+- [JNIEnv.GetDoubleField](xref:Android.Runtime.JNIEnv.GetDoubleField*) &ndash; Lisez la `double` valeur des champs d’instance.
 
-### <a name="writing-instance-field-values"></a>Écriture de valeurs de champ d’instance
+### <a name="writing-instance-field-values"></a>Rédaction des valeurs de terrain d’instance
 
-L’ensemble de méthodes permettant d’écrire des valeurs de champ d’instance suit le modèle d’affectation de noms :
+L’ensemble de méthodes d’écriture des valeurs de champ d’instance suit le modèle de nommage :
 
 ```csharp
 JNIEnv.SetField(IntPtr instance, IntPtr fieldID, Type value);
 ```
 
-où *type* est le type du champ :
+*où le type* est le type de champ:
 
-- [JNIEnv. SetField](xref:Android.Runtime.JNIEnv.SetField*)) &ndash; écrire la valeur d’un champ qui n’est pas un type Builtin, comme `java.lang.Object`, les tableaux et les types d’interfaces. La valeur `IntPtr` peut être une référence locale JNI, une référence globale JNI, une référence globale JNI faible, ou `IntPtr.Zero` (pour `null`).
+- [JNIEnv.SetField](xref:Android.Runtime.JNIEnv.SetField*) &ndash; ) Écrivez la valeur de n’importe quel `java.lang.Object` champ qui n’est pas un type builtin, tel que , les tableaux, et les types d’interface. La `IntPtr` valeur peut être une référence locale JNI, référence mondiale `IntPtr.Zero` JNI, JNI faible référence mondiale, ou (pour `null` ).
 
-- [JNIEnv. SetField](xref:Android.Runtime.JNIEnv.SetField*)) &ndash; écrire la valeur des champs d’instance `bool`.
+- [JNIEnv.SetField](xref:Android.Runtime.JNIEnv.SetField*) &ndash; ) Écrivez `bool` la valeur des champs d’instance.
 
-- [JNIEnv. SetField](xref:Android.Runtime.JNIEnv.SetField*)) &ndash; écrire la valeur des champs d’instance `sbyte`.
+- [JNIEnv.SetField](xref:Android.Runtime.JNIEnv.SetField*) &ndash; ) Écrivez `sbyte` la valeur des champs d’instance.
 
-- [JNIEnv. SetField](xref:Android.Runtime.JNIEnv.SetField*)) &ndash; écrire la valeur des champs d’instance `char`.
+- [JNIEnv.SetField](xref:Android.Runtime.JNIEnv.SetField*) &ndash; ) Écrivez `char` la valeur des champs d’instance.
 
-- [JNIEnv. SetField](xref:Android.Runtime.JNIEnv.SetField*)) &ndash; écrire la valeur des champs d’instance `short`.
+- [JNIEnv.SetField](xref:Android.Runtime.JNIEnv.SetField*) &ndash; ) Écrivez `short` la valeur des champs d’instance.
 
-- [JNIEnv. SetField](xref:Android.Runtime.JNIEnv.SetField*)) &ndash; écrire la valeur des champs d’instance `int`.
+- [JNIEnv.SetField](xref:Android.Runtime.JNIEnv.SetField*) &ndash; ) Écrivez `int` la valeur des champs d’instance.
 
-- [JNIEnv. SetField](xref:Android.Runtime.JNIEnv.SetField*)) &ndash; écrire la valeur des champs d’instance `long`.
+- [JNIEnv.SetField](xref:Android.Runtime.JNIEnv.SetField*) &ndash; ) Écrivez `long` la valeur des champs d’instance.
 
-- [JNIEnv. SetField](xref:Android.Runtime.JNIEnv.SetField*)) &ndash; écrire la valeur des champs d’instance `float`.
+- [JNIEnv.SetField](xref:Android.Runtime.JNIEnv.SetField*) &ndash; ) Écrivez `float` la valeur des champs d’instance.
 
-- [JNIEnv. SetField](xref:Android.Runtime.JNIEnv.SetField*)) &ndash; écrire la valeur des champs d’instance `double`.
+- [JNIEnv.SetField](xref:Android.Runtime.JNIEnv.SetField*) &ndash; ) Écrivez `double` la valeur des champs d’instance.
 
 <a name="_Static_Fields" />
 
 ## <a name="static-fields"></a>Champs statiques
 
-Les champs statiques sont manipulés à l’aide d' *ID de champ*. Les ID de champ sont obtenus via [JNIEnv. GetStaticFieldID](xref:Android.Runtime.JNIEnv.GetStaticFieldID*), qui requiert la classe dans laquelle le champ est défini, le nom du champ et la [signature de type JNI](#JNI_Type_Signatures) du champ.
+Les champs statiques sont manipulés par *des pièces d’IED de champ.* Les cartes d’ID de champ sont obtenues via [JNIEnv.GetStaticFieldID](xref:Android.Runtime.JNIEnv.GetStaticFieldID*), qui exige la classe dans laquelle le champ est défini, le nom du champ et la signature de [type JNI](#JNI_Type_Signatures) du champ.
 
-Les ID de champ n’ont pas besoin d’être libérés et sont valides tant que le type Java correspondant est chargé. (Android ne prend pas en charge actuellement le déchargement de classe.)
+Les Œd de champ n’ont pas besoin d’être libérées et sont valides tant que le type Java correspondant est chargé. (Android ne prend actuellement pas en charge le déchargement de classe.)
 
-Il existe deux ensembles de méthodes pour manipuler des champs statiques : un pour la lecture des champs d’instance et un pour l’écriture de champs d’instance. Tous les ensembles de méthodes requièrent un ID de champ pour lire ou écrire la valeur du champ.
+Il existe deux ensembles de méthodes pour manipuler les champs statiques : l’un pour la lecture des champs d’instance et l’autre pour l’écriture des champs d’instance. Tous les ensembles de méthodes nécessitent une pièce d’identité sur le terrain pour lire ou écrire la valeur du champ.
 
-### <a name="reading-static-field-values"></a>Lecture des valeurs de champs statiques
+### <a name="reading-static-field-values"></a>Lecture des valeurs statiques de champ
 
-L’ensemble de méthodes permettant de lire les valeurs des champs statiques suit le modèle d’affectation de noms :
+L’ensemble de méthodes de lecture des valeurs statiques de champ suit le modèle de nommage :
 
 ```csharp
 * JNIEnv.GetStatic*Field(IntPtr class, IntPtr fieldID);
 ```
 
-où `*` est le type du champ :
+où `*` est le type de champ:
 
-- [JNIEnv. GetStaticObjectField](xref:Android.Runtime.JNIEnv.GetStaticObjectField*) &ndash; lire la valeur d’un champ statique qui n’est pas un type Builtin, comme `java.lang.Object`, les tableaux et les types d’interfaces. La valeur retournée est une référence locale JNI.
+- [JNIEnv.GetStaticObjectField](xref:Android.Runtime.JNIEnv.GetStaticObjectField*) &ndash; Lisez la valeur de tout champ statique qui n’est pas un type builtin, tels que `java.lang.Object` , les tableaux, et les types d’interface. La valeur retournée est une référence locale JNI.
 
-- [JNIEnv. GetStaticBooleanField](xref:Android.Runtime.JNIEnv.GetStaticBooleanField*) &ndash; lire la valeur des champs statiques `bool`.
+- [JNIEnv.GetStaticBooleanField](xref:Android.Runtime.JNIEnv.GetStaticBooleanField*) &ndash; Lisez la `bool` valeur des champs statiques.
 
-- [JNIEnv. GetStaticByteField](xref:Android.Runtime.JNIEnv.GetStaticByteField*) &ndash; lire la valeur des champs statiques `sbyte`.
+- [JNIEnv.GetStaticByteField](xref:Android.Runtime.JNIEnv.GetStaticByteField*) &ndash; Lisez la `sbyte` valeur des champs statiques.
 
-- [JNIEnv. GetStaticCharField](xref:Android.Runtime.JNIEnv.GetStaticCharField*) &ndash; lire la valeur des champs statiques `char`.
+- [JNIEnv.GetStaticCharField](xref:Android.Runtime.JNIEnv.GetStaticCharField*) &ndash; Lisez la `char` valeur des champs statiques.
 
-- [JNIEnv. GetStaticShortField](xref:Android.Runtime.JNIEnv.GetStaticShortField*) &ndash; lire la valeur des champs statiques `short`.
+- [JNIEnv.GetStaticShortField](xref:Android.Runtime.JNIEnv.GetStaticShortField*) &ndash; Lisez la `short` valeur des champs statiques.
 
-- [JNIEnv. GetStaticLongField](xref:Android.Runtime.JNIEnv.GetStaticLongField*) &ndash; lire la valeur des champs statiques `long`.
+- [JNIEnv.GetStaticLongField](xref:Android.Runtime.JNIEnv.GetStaticLongField*) &ndash; Lisez la `long` valeur des champs statiques.
 
-- [JNIEnv. GetStaticFloatField](xref:Android.Runtime.JNIEnv.GetStaticFloatField*) &ndash; lire la valeur des champs statiques `float`.
+- [JNIEnv.GetStaticFloatField](xref:Android.Runtime.JNIEnv.GetStaticFloatField*) &ndash; Lisez la `float` valeur des champs statiques.
 
-- [JNIEnv. GetStaticDoubleField](xref:Android.Runtime.JNIEnv.GetStaticDoubleField*) &ndash; lire la valeur des champs statiques `double`.
+- [JNIEnv.GetStaticDoubleField](xref:Android.Runtime.JNIEnv.GetStaticDoubleField*) &ndash; Lisez la `double` valeur des champs statiques.
 
-### <a name="writing-static-field-values"></a>Écriture de valeurs de champ statiques
+### <a name="writing-static-field-values"></a>Rédaction de valeurs de terrain statiques
 
-L’ensemble de méthodes permettant d’écrire des valeurs de champs statiques suit le modèle d’affectation de noms :
+L’ensemble de méthodes d’écriture des valeurs statiques de champ suit le modèle de nommage :
 
 ```csharp
 JNIEnv.SetStaticField(IntPtr class, IntPtr fieldID, Type value);
 ```
 
-où *type* est le type du champ :
+*où le type* est le type de champ:
 
-- [JNIEnv. SetStaticField](xref:Android.Runtime.JNIEnv.SetStaticField*)) &ndash; écrire la valeur d’un champ statique qui n’est pas un type Builtin, comme des `java.lang.Object`, des tableaux et des types d’interfaces. La valeur `IntPtr` peut être une référence locale JNI, une référence globale JNI, une référence globale JNI faible, ou `IntPtr.Zero` (pour `null`).
+- [JNIEnv.SetStaticField](xref:Android.Runtime.JNIEnv.SetStaticField*) &ndash; ) Écrivez la valeur de tout champ statique qui `java.lang.Object` n’est pas un type builtin, tels que , les tableaux, et les types d’interface. La `IntPtr` valeur peut être une référence locale JNI, référence mondiale `IntPtr.Zero` JNI, JNI faible référence mondiale, ou (pour `null` ).
 
-- [JNIEnv. SetStaticField](xref:Android.Runtime.JNIEnv.SetStaticField*)) &ndash; écrire la valeur des champs statiques `bool`.
+- [JNIEnv.SetStaticField](xref:Android.Runtime.JNIEnv.SetStaticField*) &ndash; ) Écrivez `bool` la valeur des champs statiques.
 
-- [JNIEnv. SetStaticField](xref:Android.Runtime.JNIEnv.SetStaticField*)) &ndash; écrire la valeur des champs statiques `sbyte`.
+- [JNIEnv.SetStaticField](xref:Android.Runtime.JNIEnv.SetStaticField*) &ndash; ) Écrivez `sbyte` la valeur des champs statiques.
 
-- [JNIEnv. SetStaticField](xref:Android.Runtime.JNIEnv.SetStaticField*)) &ndash; écrire la valeur des champs statiques `char`.
+- [JNIEnv.SetStaticField](xref:Android.Runtime.JNIEnv.SetStaticField*) &ndash; ) Écrivez `char` la valeur des champs statiques.
 
-- [JNIEnv. SetStaticField](xref:Android.Runtime.JNIEnv.SetStaticField*)) &ndash; écrire la valeur des champs statiques `short`.
+- [JNIEnv.SetStaticField](xref:Android.Runtime.JNIEnv.SetStaticField*) &ndash; ) Écrivez `short` la valeur des champs statiques.
 
-- [JNIEnv. SetStaticField](xref:Android.Runtime.JNIEnv.SetStaticField*)) &ndash; écrire la valeur des champs statiques `int`.
+- [JNIEnv.SetStaticField](xref:Android.Runtime.JNIEnv.SetStaticField*) &ndash; ) Écrivez `int` la valeur des champs statiques.
 
-- [JNIEnv. SetStaticField](xref:Android.Runtime.JNIEnv.SetStaticField*)) &ndash; écrire la valeur des champs statiques `long`.
+- [JNIEnv.SetStaticField](xref:Android.Runtime.JNIEnv.SetStaticField*) &ndash; ) Écrivez `long` la valeur des champs statiques.
 
-- [JNIEnv. SetStaticField](xref:Android.Runtime.JNIEnv.SetStaticField*)) &ndash; écrire la valeur des champs statiques `float`.
+- [JNIEnv.SetStaticField](xref:Android.Runtime.JNIEnv.SetStaticField*) &ndash; ) Écrivez `float` la valeur des champs statiques.
 
-- [JNIEnv. SetStaticField](xref:Android.Runtime.JNIEnv.SetStaticField*)) &ndash; écrire la valeur des champs statiques `double`.
+- [JNIEnv.SetStaticField](xref:Android.Runtime.JNIEnv.SetStaticField*) &ndash; ) Écrivez `double` la valeur des champs statiques.
 
 <a name="_Instance_Methods" />
 
 ## <a name="instance-methods"></a>Méthodes d’instance
 
-Les méthodes d’instance sont appelées par le biais d' *ID de méthode*. Les ID de méthode sont obtenus via [JNIEnv. GetMethodID](xref:Android.Runtime.JNIEnv.GetMethodID*), qui requiert le type dans lequel la méthode est définie, le nom de la méthode et la [signature de type JNI](#JNI_Type_Signatures) de la méthode.
+Les méthodes d’instance sont invoquées par *des Œd de méthode*. Les cartes d’ID de méthode sont obtenues via [JNIEnv.GetMethodID](xref:Android.Runtime.JNIEnv.GetMethodID*), qui exige le type dans lequel la méthode est définie, le nom de la méthode, et la signature de [type JNI](#JNI_Type_Signatures) de la méthode.
 
-Les ID de méthode n’ont pas besoin d’être libérés et sont valides tant que le type Java correspondant est chargé. (Android ne prend pas en charge actuellement le déchargement de classe.)
+Les adresses d’ID de méthode n’ont pas besoin d’être libérées et sont valides tant que le type Java correspondant est chargé. (Android ne prend actuellement pas en charge le déchargement de classe.)
 
-Il existe deux ensembles de méthodes pour appeler des méthodes : une pour appeler des méthodes virtuellement et une pour appeler des méthodes non virtuellement. Les deux ensembles de méthodes requièrent un ID de méthode pour appeler la méthode, et l’appel non virtuel requiert également que vous spécifiiez l’implémentation de classe qui doit être appelée.
+Il existe deux ensembles de méthodes pour invoquer des méthodes : l’une pour invoquer virtuellement les méthodes, et l’autre pour invoquer des méthodes non virtuelles. Les deux ensembles de méthodes nécessitent une pièce d’identité de méthode pour invoquer la méthode, et l’invocation non virtuelle exige également que vous spécifiiez quelle implémentation de classe doit être invoquée.
 
-Les méthodes d’interface peuvent uniquement être recherchées dans le type déclarant ; les méthodes provenant d’interfaces étendues/héritées ne peuvent pas être recherchées. Pour plus d’informations, consultez la section interfaces de liaison/implémentation de l’appelant ultérieures.
+Les méthodes d’interface ne peuvent être consultées que dans le type déclarant; méthodes qui proviennent d’interfaces étendues/héritées ne peuvent pas être recherchées. Voir la section Interfaces contraignantes / Invocateur ultérieure pour plus de détails.
 
-Toute méthode déclarée dans la classe ou une classe de base ou une interface implémentée peut être recherchée.
+Toute méthode déclarée dans la classe ou n’importe quelle classe de base ou interface mise en œuvre peut être recherchée.
 
-### <a name="virtual-method-invocation"></a>Appel de méthode virtuelle
+### <a name="virtual-method-invocation"></a>Invocation de méthode virtuelle
 
-L’ensemble de méthodes pour l’appel de méthodes est virtuellement conforme au modèle d’affectation de noms :
+L’ensemble de méthodes d’invocation des méthodes suit pratiquement le modèle de nommage :
 
 ```csharp
 * JNIEnv.Call*Method( IntPtr instance, IntPtr methodID, params JValue[] args );
@@ -1211,59 +1211,59 @@ L’ensemble de méthodes pour l’appel de méthodes est virtuellement conforme
 
 où `*` est le type de retour de la méthode.
 
-- [JNIEnv. CallObjectMethod](xref:Android.Runtime.JNIEnv.CallObjectMethod*) &ndash; appeler une méthode qui retourne un type non Builtin, tel que `java.lang.Object`, des tableaux et des interfaces. La valeur retournée est une référence locale JNI.
+- [JNIEnv.CallObjectMethod](xref:Android.Runtime.JNIEnv.CallObjectMethod*) &ndash; Invoquez une méthode qui renvoie `java.lang.Object` un type non-builtin, tel que , les tableaux et les interfaces. La valeur retournée est une référence locale JNI.
 
-- [JNIEnv. CallBooleanMethod](xref:Android.Runtime.JNIEnv.CallBooleanMethod*) &ndash; appeler une méthode qui retourne une valeur `bool`.
+- [JNIEnv.CallBooleanMethod](xref:Android.Runtime.JNIEnv.CallBooleanMethod*) &ndash; Invoquez `bool` une méthode qui retourne une valeur.
 
-- [JNIEnv. CallByteMethod](xref:Android.Runtime.JNIEnv.CallByteMethod*) &ndash; appeler une méthode qui retourne une valeur `sbyte`.
+- [JNIEnv.CallByteMethod](xref:Android.Runtime.JNIEnv.CallByteMethod*) &ndash; Invoquez `sbyte` une méthode qui retourne une valeur.
 
-- [JNIEnv. CallCharMethod](xref:Android.Runtime.JNIEnv.CallCharMethod*) &ndash; appeler une méthode qui retourne une valeur `char`.
+- [JNIEnv.CallCharMethod](xref:Android.Runtime.JNIEnv.CallCharMethod*) &ndash; Invoquez `char` une méthode qui retourne une valeur.
 
-- [JNIEnv. CallShortMethod](xref:Android.Runtime.JNIEnv.CallShortMethod*) &ndash; appeler une méthode qui retourne une valeur `short`.
+- [JNIEnv.CallShortMethod](xref:Android.Runtime.JNIEnv.CallShortMethod*) &ndash; Invoquez `short` une méthode qui retourne une valeur.
 
-- [JNIEnv. CallLongMethod](xref:Android.Runtime.JNIEnv.CallLongMethod*) &ndash; appeler une méthode qui retourne une valeur `long`.
+- [JNIEnv.CallLongMethod](xref:Android.Runtime.JNIEnv.CallLongMethod*) &ndash; Invoquez `long` une méthode qui retourne une valeur.
 
-- [JNIEnv. CallFloatMethod](xref:Android.Runtime.JNIEnv.CallFloatMethod*) &ndash; appeler une méthode qui retourne une valeur `float`.
+- [JNIEnv.CallFloatMethod](xref:Android.Runtime.JNIEnv.CallFloatMethod*) &ndash; Invoquez `float` une méthode qui retourne une valeur.
 
-- [JNIEnv. CallDoubleMethod](xref:Android.Runtime.JNIEnv.CallDoubleMethod*) &ndash; appeler une méthode qui retourne une valeur `double`.
+- [JNIEnv.CallDoubleMethod](xref:Android.Runtime.JNIEnv.CallDoubleMethod*) &ndash; Invoquez `double` une méthode qui retourne une valeur.
 
-### <a name="non-virtual-method-invocation"></a>Appel de méthode non virtuelle
+### <a name="non-virtual-method-invocation"></a>Invocation de méthode non virtuelle
 
-L’ensemble de méthodes pour appeler des méthodes non virtuellement suit le modèle d’affectation de noms :
+L’ensemble de méthodes d’invocation des méthodes suit non virtuellement le modèle de nommage :
 
 ```csharp
 * JNIEnv.CallNonvirtual*Method( IntPtr instance, IntPtr class, IntPtr methodID, params JValue[] args );
 ```
 
-où `*` est le type de retour de la méthode. L’appel de méthode non virtuelle est généralement utilisé pour appeler la méthode de base d’une méthode virtuelle.
+où `*` est le type de retour de la méthode. L’invocation de méthode non virtuelle est habituellement utilisée pour invoquer la méthode de base d’une méthode virtuelle.
 
-- [JNIEnv. CallNonvirtualObjectMethod](xref:Android.Runtime.JNIEnv.CallNonvirtualObjectMethod*) &ndash; n’appelle pas virtuellement une méthode qui retourne un type non Builtin, tel que `java.lang.Object`, des tableaux et des interfaces. La valeur retournée est une référence locale JNI.
+- [JNIEnv.CallNonvirtualObjectMethod](xref:Android.Runtime.JNIEnv.CallNonvirtualObjectMethod*) &ndash; Non-virtuellement invoquer une méthode qui renvoie un type non-builtin, tels que `java.lang.Object` , les tableaux, et les interfaces. La valeur retournée est une référence locale JNI.
 
-- [JNIEnv. CallNonvirtualBooleanMethod](xref:Android.Runtime.JNIEnv.CallNonvirtualBooleanMethod*) &ndash; n’appelle pas virtuellement une méthode qui retourne une valeur `bool`.
+- [JNIEnv.CallNonvirtualBooleanMethod](xref:Android.Runtime.JNIEnv.CallNonvirtualBooleanMethod*) &ndash; Non-virtually invoque `bool` une méthode qui retourne une valeur.
 
-- [JNIEnv. CallNonvirtualByteMethod](xref:Android.Runtime.JNIEnv.CallNonvirtualByteMethod*) &ndash; n’appelle pas virtuellement une méthode qui retourne une valeur `sbyte`.
+- [JNIEnv.CallNonvirtualByteMethod](xref:Android.Runtime.JNIEnv.CallNonvirtualByteMethod*) &ndash; Non-virtuellement invoquer `sbyte` une méthode qui retourne une valeur.
 
-- [JNIEnv. CallNonvirtualCharMethod](xref:Android.Runtime.JNIEnv.CallNonvirtualCharMethod*) &ndash; n’appelle pas virtuellement une méthode qui retourne une valeur `char`.
+- [JNIEnv.CallNonvirtualCharMethod](xref:Android.Runtime.JNIEnv.CallNonvirtualCharMethod*) &ndash; Non-virtuellement invoquer `char` une méthode qui retourne une valeur.
 
-- [JNIEnv. CallNonvirtualShortMethod](xref:Android.Runtime.JNIEnv.CallNonvirtualShortMethod*) &ndash; n’appelle pas virtuellement une méthode qui retourne une valeur `short`.
+- [JNIEnv.CallNonvirtualShortMethod](xref:Android.Runtime.JNIEnv.CallNonvirtualShortMethod*) &ndash; Non-virtually invoque `short` une méthode qui retourne une valeur.
 
-- [JNIEnv. CallNonvirtualLongMethod](xref:Android.Runtime.JNIEnv.CallNonvirtualLongMethod*) &ndash; n’appelle pas virtuellement une méthode qui retourne une valeur `long`.
+- [JNIEnv.CallNonvirtualLongMethod](xref:Android.Runtime.JNIEnv.CallNonvirtualLongMethod*) &ndash; Non-virtuellement invoquer `long` une méthode qui retourne une valeur.
 
-- [JNIEnv. CallNonvirtualFloatMethod](xref:Android.Runtime.JNIEnv.CallNonvirtualFloatMethod*) &ndash; n’appelle pas virtuellement une méthode qui retourne une valeur `float`.
+- [JNIEnv.CallNonvirtualFloatMethod](xref:Android.Runtime.JNIEnv.CallNonvirtualFloatMethod*) &ndash; Non-virtuellement invoquer `float` une méthode qui retourne une valeur.
 
-- [JNIEnv. CallNonvirtualDoubleMethod](xref:Android.Runtime.JNIEnv.CallNonvirtualDoubleMethod*) &ndash; n’appelle pas virtuellement une méthode qui retourne une valeur `double`.
+- [JNIEnv.CallNonvirtualDoubleMethod](xref:Android.Runtime.JNIEnv.CallNonvirtualDoubleMethod*) &ndash; Non-virtuellement invoquer `double` une méthode qui retourne une valeur.
 
 <a name="_Static_Methods" />
 
 ## <a name="static-methods"></a>Méthodes statiques
 
-Les méthodes statiques sont appelées par le biais d' *ID de méthode*. Les ID de méthode sont obtenus via [JNIEnv. GetStaticMethodID](xref:Android.Runtime.JNIEnv.GetStaticMethodID*), qui requiert le type dans lequel la méthode est définie, le nom de la méthode et la [signature de type JNI](#JNI_Type_Signatures) de la méthode.
+Les méthodes statiques sont invoquées par *des Œd de méthode*. Les cartes d’ID de méthode sont obtenues via [JNIEnv.GetStaticMethodID](xref:Android.Runtime.JNIEnv.GetStaticMethodID*), qui exige le type dans lequel la méthode est définie, le nom de la méthode, et la signature de [type JNI](#JNI_Type_Signatures) de la méthode.
 
-Les ID de méthode n’ont pas besoin d’être libérés et sont valides tant que le type Java correspondant est chargé. (Android ne prend pas en charge actuellement le déchargement de classe.)
+Les adresses d’ID de méthode n’ont pas besoin d’être libérées et sont valides tant que le type Java correspondant est chargé. (Android ne prend actuellement pas en charge le déchargement de classe.)
 
-### <a name="static-method-invocation"></a>Appel de méthode statique
+### <a name="static-method-invocation"></a>Invocation statique de méthode
 
-L’ensemble de méthodes pour l’appel de méthodes est virtuellement conforme au modèle d’affectation de noms :
+L’ensemble de méthodes d’invocation des méthodes suit pratiquement le modèle de nommage :
 
 ```csharp
 * JNIEnv.CallStatic*Method( IntPtr class, IntPtr methodID, params JValue[] args );
@@ -1271,89 +1271,89 @@ L’ensemble de méthodes pour l’appel de méthodes est virtuellement conforme
 
 où `*` est le type de retour de la méthode.
 
-- [JNIEnv. CallStaticObjectMethod](xref:Android.Runtime.JNIEnv.CallStaticObjectMethod*) &ndash; appeler une méthode statique qui retourne un type non Builtin, tel que `java.lang.Object`, des tableaux et des interfaces. La valeur retournée est une référence locale JNI.
+- [JNIEnv.CallStaticObjectMethod](xref:Android.Runtime.JNIEnv.CallStaticObjectMethod*) &ndash; Invoquez une méthode statique qui renvoie un type non-builtin, tel que `java.lang.Object` , les tableaux et les interfaces. La valeur retournée est une référence locale JNI.
 
-- [JNIEnv. CallStaticBooleanMethod](xref:Android.Runtime.JNIEnv.CallStaticBooleanMethod*) &ndash; appeler une méthode statique qui retourne une valeur `bool`.
+- [JNIEnv.CallStaticBooleanMethod](xref:Android.Runtime.JNIEnv.CallStaticBooleanMethod*) &ndash; Invoquez une `bool` méthode statique qui retourne une valeur.
 
-- [JNIEnv. CallStaticByteMethod](xref:Android.Runtime.JNIEnv.CallStaticByteMethod*) &ndash; appeler une méthode statique qui retourne une valeur `sbyte`.
+- [JNIEnv.CallStaticByteMethod](xref:Android.Runtime.JNIEnv.CallStaticByteMethod*) &ndash; Invoquez une `sbyte` méthode statique qui retourne une valeur.
 
-- [JNIEnv. CallStaticCharMethod](xref:Android.Runtime.JNIEnv.CallStaticCharMethod*) &ndash; appeler une méthode statique qui retourne une valeur `char`.
+- [JNIEnv.CallStaticCharMethod](xref:Android.Runtime.JNIEnv.CallStaticCharMethod*) &ndash; Invoquez une `char` méthode statique qui retourne une valeur.
 
-- [JNIEnv. CallStaticShortMethod](xref:Android.Runtime.JNIEnv.CallStaticShortMethod*) &ndash; appeler une méthode statique qui retourne une valeur `short`.
+- [JNIEnv.CallStaticShortMethod](xref:Android.Runtime.JNIEnv.CallStaticShortMethod*) &ndash; Invoquez une `short` méthode statique qui retourne une valeur.
 
-- [JNIEnv. CallStaticLongMethod](xref:Android.Runtime.JNIEnv.CallLongMethod*) &ndash; appeler une méthode statique qui retourne une valeur `long`.
+- [JNIEnv.CallStaticLongMethod](xref:Android.Runtime.JNIEnv.CallLongMethod*) &ndash; Invoquez une `long` méthode statique qui retourne une valeur.
 
-- [JNIEnv. CallStaticFloatMethod](xref:Android.Runtime.JNIEnv.CallStaticFloatMethod*) &ndash; appeler une méthode statique qui retourne une valeur `float`.
+- [JNIEnv.CallStaticFloatMethod](xref:Android.Runtime.JNIEnv.CallStaticFloatMethod*) &ndash; Invoquez une `float` méthode statique qui retourne une valeur.
 
-- [JNIEnv. CallStaticDoubleMethod](xref:Android.Runtime.JNIEnv.CallStaticDoubleMethod*) &ndash; appeler une méthode statique qui retourne une valeur `double`.
+- [JNIEnv.CallStaticDoubleMethod](xref:Android.Runtime.JNIEnv.CallStaticDoubleMethod*) &ndash; Invoquez une `double` méthode statique qui retourne une valeur.
 
 <a name="JNI_Type_Signatures" />
 
-## <a name="jni-type-signatures"></a>Signatures de type JNI
+## <a name="jni-type-signatures"></a>JNI Type Signatures
 
-Les [signatures de type JNI](https://docs.oracle.com/javase/1.5.0/docs/guide/jni/spec/types.html#wp16432) sont des [références de type JNI](#_JNI_Type_References) (bien que des références de type non simplifiées), à l’exception des méthodes. Avec les méthodes, la signature de type JNI est une parenthèse ouvrante `'('`, suivie des références de type pour tous les types de paramètres concaténés ensemble (sans virgules de séparation ou autres éléments), suivis d’une parenthèse fermante `')'`, suivi de la référence de type JNI du type de retour de la méthode.
+[Les signatures de type JNI](https://docs.oracle.com/javase/1.5.0/docs/guide/jni/spec/types.html#wp16432) sont [des références de type JNI](#_JNI_Type_References) (mais pas des références de type simplifiées), à l’exception des méthodes. Avec des méthodes, la signature de type `'('`JNI est une parenthèse ouverte , suivie par les références de type pour tous les types `')'`de paramètres concatenated ensemble (sans virgule de séparation ou quoi que ce soit d’autre), suivie d’une parenthèse de clôture , suivie par la référence de type JNI du type de retour de méthode.
 
-Par exemple, en fonction de la méthode Java :
+Par exemple, compte tenu de la méthode Java :
 
 ```java
 long f(int n, String s, int[] array);
 ```
 
-La signature de type JNI serait la suivante :
+La signature de type JNI serait :
 
 ```csharp
 (ILjava/lang/String;[I)J
 ```
 
-En général, il est *fortement* recommandé d’utiliser la commande `javap` pour déterminer les signatures JNI. Par exemple, la signature de type JNI de la méthode [java. lang. Thread. State. valueOf (String)](https://developer.android.com/reference/java/lang/Thread.State.html#valueOf(java.lang.String)) est « (Ljava/lang/String ;) Ljava/lang/thread $ State ; », alors que la signature de type JNI de la méthode [java. lang. Thread. State. Values](https://developer.android.com/reference/java/lang/Thread.State.html#values) est « () [Ljava/lang/thread $ State ; ». Regardez les points-virgules de fin ; celles- *ci font* partie de la signature de type JNI.
+En général, *strongly* il est fortement `javap` recommandé d’utiliser la commande pour déterminer les signatures de JNI. Par exemple, la signature de type JNI de la méthode [java.lang.Thread.State.valueOf(String)](https://developer.android.com/reference/java/lang/Thread.State.html#valueOf(java.lang.String)) est " (Ljava/lang/String;)Ljava/lang/Thread$State;", tandis que la signature de type JNI de la méthode [java.lang.Thread.State.values](https://developer.android.com/reference/java/lang/Thread.State.html#values) est "()[Ljava/lang/Thread$State;". Méfiez-vous des semi-colons de fuite; *ceux-ci font* partie de la signature de type JNI.
 
 <a name="_JNI_Type_References" />
 
 ## <a name="jni-type-references"></a>Références de type JNI
 
-Les références de type JNI diffèrent des références de type Java. Vous ne pouvez pas utiliser de noms de types Java complets, comme `java.lang.String` avec JNI, vous devez plutôt utiliser les variantes JNI `"java/lang/String"` ou `"Ljava/lang/String;"`, selon le contexte. Pour plus d’informations, voir ci-dessous.
-Il existe quatre types de références de type JNI :
+Les références de type JNI sont différentes des références de type Java. Vous ne pouvez pas utiliser `java.lang.String` des noms de type Java entièrement qualifiés `"java/lang/String"` `"Ljava/lang/String;"`comme avec JNI, vous devez plutôt utiliser les variations JNI ou, selon le contexte; voir ci-dessous pour plus de détails.
+Il existe quatre types de références de type JNI :
 
 - **intégré**
-- **faciliter**
+- **Simplifié**
 - **type**
-- **array**
+- **tableau**
 
 ### <a name="built-in-type-references"></a>Références de type intégrées
 
-Les références de type intégrées sont un caractère unique, utilisé pour référencer des types valeur intégrés. Le mappage est le suivant :
+Les références de type intégré sont un caractère unique, utilisé pour référencer les types de valeur intégrés. La cartographie est la suivante:
 
-- `"B"` pour `sbyte`.
-- `"S"` pour `short`.
-- `"I"` pour `int`.
-- `"J"` pour `long`.
-- `"F"` pour `float`.
-- `"D"` pour `double`.
-- `"C"` pour `char`.
-- `"Z"` pour `bool`.
-- `"V"` pour les types de retour de méthode `void`.
+- `"B"`pour `sbyte` .
+- `"S"`pour `short` .
+- `"I"`pour `int` .
+- `"J"`pour `long` .
+- `"F"`pour `float` .
+- `"D"`pour `double` .
+- `"C"`pour `char` .
+- `"Z"`pour `bool` .
+- `"V"`pour `void` les types de retour de méthode.
 
 <a name="_Simplified_Type_References_1" />
 
 ### <a name="simplified-type-references"></a>Références de type simplifiées
 
-Les références de type simplifiées ne peuvent être utilisées que dans [JNIEnv. FindClass (String)](xref:Android.Runtime.JNIEnv.FindClass*)).
-Il existe deux façons de dériver une référence de type simplifiée :
+Les références de type simplifié ne peuvent être utilisées que dans [JNIEnv.FindClass(string)](xref:Android.Runtime.JNIEnv.FindClass*)).
+Il y a deux façons d’obtenir une référence simplifiée :
 
-1. À partir d’un nom Java complet, remplacez chaque `'.'` dans le nom du package et avant le nom du type par `'/'`, et chaque `'.'` dans un nom de type avec `'$'`.
+1. D’un nom Java entièrement `'.'` qualifié, remplacer chaque dans le `'/'` nom `'.'` du paquet et `'$'` avant le nom de type avec , et chaque dans un nom de type avec .
 
-1. Lire la sortie de `'unzip -l android.jar | grep JavaName'`.
+1. Lire la `'unzip -l android.jar | grep JavaName'` sortie de .
 
-L’une ou l’autre des deux entraînera le mappage du type Java [java. lang. Thread. State](https://developer.android.com/reference/java/lang/Thread.State.html) à la référence de type simplifiée `java/lang/Thread$State`.
+L’un ou l’autre des deux se traduira par le type Java `java/lang/Thread$State` [java.lang.Thread.State](https://developer.android.com/reference/java/lang/Thread.State.html) étant cartographié à la référence de type simplifié .
 
 ### <a name="type-references"></a>Références de type
 
-Une référence de type est une référence de type intégré ou une référence de type simplifiée avec un préfixe `'L'` et un suffixe `';'`. Pour le type Java Java [. lang. String](https://developer.android.com/reference/java/lang/String.html), la référence de type simplifiée est `"java/lang/String"`, tandis que la référence de type est `"Ljava/lang/String;"`.
+Une référence type est une référence de type intégré `'L'` ou une `';'` référence de type simplifiée avec un préfixe et un suffixe. Pour le type Java [java.lang.String](https://developer.android.com/reference/java/lang/String.html), `"java/lang/String"`la référence de `"Ljava/lang/String;"`type simplifié est, tandis que la référence de type est .
 
-Les références de type sont utilisées avec les références de type tableau et les signatures JNI.
+Les références de type sont utilisées avec des références de type Array et avec des signatures JNI.
 
-Pour obtenir une référence de type, une autre méthode consiste à lire la sortie de `'javap -s -classpath android.jar fully.qualified.Java.Name'`.
-Selon le type impliqué, vous pouvez utiliser une déclaration de constructeur ou un type de retour de méthode pour déterminer le nom JNI. Par exemple :
+Une autre façon d’obtenir une référence `'javap -s -classpath android.jar fully.qualified.Java.Name'`type est en lisant la sortie de .
+Selon le type en cause, vous pouvez utiliser une déclaration de constructeur ou un type de retour de méthode pour déterminer le nom de LNI. Par exemple :
 
 ```shell
 $ javap -classpath android.jar -s java.lang.Thread.State
@@ -1383,37 +1383,37 @@ static {};
 }
 ```
 
-`Thread.State` est un type d’énumération Java, nous pouvons donc utiliser la signature de la méthode `valueOf` pour déterminer que la référence de type est Ljava/lang/thread $ State ;.
+`Thread.State`est un type Java enum, de sorte `valueOf` que nous pouvons utiliser la signature de la méthode pour déterminer que la référence de type est Ljava /lang/Thread$State;.
 
-### <a name="array-type-references"></a>Références de type tableau
+### <a name="array-type-references"></a>Références de type Array
 
-Les références de type tableau ne sont `'['` précédées d’une référence de type JNI.
-Impossible d’utiliser des références de type simplifiées lors de la spécification de tableaux.
+Les références `'['` de type array sont préfixées à une référence de type JNI.
+Les références de type simplifié ne peuvent pas être utilisées lors de la spécifier des tableaux.
 
-Par exemple, `int[]` est `"[I"`, `int[][]` est `"[[I"`et `java.lang.Object[]` est `"[Ljava/lang/Object;"`.
+`int[]` Par exemple, `"[I"` `int[][]` est `"[[I"`, `java.lang.Object[]` `"[Ljava/lang/Object;"`est , et est .
 
-## <a name="java-generics-and-type-erasure"></a>Génériques Java et effacement de type
+## <a name="java-generics-and-type-erasure"></a>Java Génériques et Effacement de type
 
-La *plupart* du temps, comme vu par JNI, les génériques Java *n’existent pas*.
-Il y a quelques « rides », mais ces rides sont dans la manière dont Java interagit avec les génériques, et non avec la manière dont JNI recherche et appelle les membres génériques.
+*La plupart* du temps, comme on le voit à travers JNI, les génériques Java *n’existent pas*.
+Il ya quelques «rides», mais ces rides sont dans la façon dont Java interagit avec les génériques, pas avec la façon dont JNI lève les yeux et invoque les membres génériques.
 
-Il n’existe aucune différence entre un type ou un membre générique et un type ou un membre non générique lors de l’interaction via JNI. Par exemple, le type générique [java. lang. Class&lt;t&gt;](https://developer.android.com/reference/java/lang/Class.html) est également le type générique « brut » `java.lang.Class`, les deux ayant la même référence de type simplifiée, `"java/lang/Class"`.
+Il n’y a aucune différence entre un type ou un membre générique et un type ou un membre non générique lors de l’interaction par l’intermédiaire de l’INM. Par exemple, le type générique [&lt;java.lang.Class T&gt; ](https://developer.android.com/reference/java/lang/Class.html) est également le type `java.lang.Class`générique "brut", qui ont tous deux la même référence de type simplifié, `"java/lang/Class"`.
 
-## <a name="java-native-interface-support"></a>Prise en charge de l’interface native Java
+## <a name="java-native-interface-support"></a>Support d’interface indigène java
 
-[Android. Runtime. JNIEnv](xref:Android.Runtime.JNIEnv) est un wrapper managé pour l’interface native JAVE (JNI). Les fonctions JNI sont déclarées dans la spécification de l' [interface native Java](https://download.oracle.com/javase/1.5.0/docs/guide/jni/spec/functions.html), bien que les méthodes aient été modifiées pour supprimer le paramètre `JNIEnv*` explicite et que `IntPtr` soit utilisé à la place de `jobject`, `jclass`, `jmethodID`, etc. Par exemple, considérez la [fonction JNI NewObject](https://download.oracle.com/javase/1.5.0/docs/guide/jni/spec/functions.html#wp4517):
+[Android.Runtime.JNIEnv](xref:Android.Runtime.JNIEnv) est géré wrapper pour l’interface native Jave (JNI). Fonctions JNI sont déclarés dans la [spécification d’interface indigène](https://download.oracle.com/javase/1.5.0/docs/guide/jni/spec/functions.html)Java `JNIEnv*` , `IntPtr` bien que les méthodes ont été modifiées pour supprimer le paramètre explicite et est utilisé au lieu de `jobject`, , `jclass`, `jmethodID`etc. Par exemple, considérez la [fonction JNI NewObject](https://download.oracle.com/javase/1.5.0/docs/guide/jni/spec/functions.html#wp4517):
 
 ```csharp
 jobject NewObjectA(JNIEnv *env, jclass clazz, jmethodID methodID, jvalue *args);
 ```
 
-Cela est exposé en tant que méthode [JNIEnv. NewObject](xref:Android.Runtime.JNIEnv.NewObject*) :
+Ceci est exposé comme la méthode [JNIEnv.NewObject:](xref:Android.Runtime.JNIEnv.NewObject*)
 
 ```csharp
 public static IntPtr NewObject(IntPtr clazz, IntPtr jmethod, params JValue[] parms);
 ```
 
-La conversion entre les deux appels est relativement simple. Dans C, vous auriez :
+La traduction entre les deux appels est assez simple. En C, vous auriez :
 
 ```c
 jobject CreateMapActivity(JNIEnv *env)
@@ -1426,7 +1426,7 @@ jobject CreateMapActivity(JNIEnv *env)
 }
 ```
 
-L' C# équivalent serait :
+L’équivalent C serait :
 
 ```csharp
 IntPtr CreateMapActivity()
@@ -1439,7 +1439,7 @@ IntPtr CreateMapActivity()
 }
 ```
 
-Une fois que vous avez une instance d’objet Java conservée dans un IntPtr, vous souhaiterez probablement effectuer une opération avec celle-ci. Vous pouvez utiliser des méthodes JNIEnv telles que [JNIEnv. CallVoidMethod ()](xref:Android.Runtime.JNIEnv.CallVoidMethod*) , mais s’il existe déjà un wrapper analogique C# , vous souhaiterez créer un wrapper sur la référence JNI. Pour ce faire, vous pouvez utiliser la méthode d’extension [JavaCast\<t >](xref:Android.Runtime.Extensions.JavaCast*) :
+Une fois que vous avez une instance Java Object tenue dans un IntPtr, vous aurez probablement envie de faire quelque chose avec elle. Vous pouvez utiliser des méthodes JNIEnv telles que [JNIEnv.CallVoidMethod()](xref:Android.Runtime.JNIEnv.CallVoidMethod*) pour le faire, mais s’il y a déjà un emballage analogique C’alors vous voudrez construire un emballage sur la référence JNI. Vous pouvez le faire par le biais de la méthode [d’extension\<Extensions.JavaCast T>:](xref:Android.Runtime.Extensions.JavaCast*)
 
 ```csharp
 IntPtr lrefActivity = CreateMapActivity();
@@ -1449,7 +1449,7 @@ Activity mapActivity = new Java.Lang.Object(lrefActivity, JniHandleOwnership.Tra
     .JavaCast<Activity>();
 ```
 
-Vous pouvez également utiliser la méthode [java. lang. Object. GetObject\<t >](xref:Java.Lang.Object.GetObject*) :
+Vous pouvez également utiliser la méthode [Java.Lang.Object.GetObject\<T>](xref:Java.Lang.Object.GetObject*) :
 
 ```csharp
 IntPtr lrefActivity = CreateMapActivity();
@@ -1458,13 +1458,13 @@ IntPtr lrefActivity = CreateMapActivity();
 Activity mapActivity = Java.Lang.Object.GetObject<Activity>(lrefActivity, JniHandleOwnership.TransferLocalRef);
 ```
 
-En outre, toutes les fonctions JNI ont été modifiées en supprimant le paramètre `JNIEnv*` présent dans chaque fonction JNI.
+En outre, toutes les fonctions JNI ont `JNIEnv*` été modifiées en supprimant le paramètre présent dans chaque fonction JNI.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
-La gestion directe d’JNI est une expérience terrible qui devrait être évitée à tous les coûts. Malheureusement, il n’est pas toujours inévitable. Nous espérons que ce guide vous fournira de l’aide lorsque vous rencontrerez des cas en liaison mono avec mono pour Android.
+Traiter directement avec JNI est une expérience terrible qui doit être évitée à tout prix. Malheureusement, ce n’est pas toujours évitable; espérons que ce guide fournira une certaine assistance lorsque vous frappez les cas de Java non liés avec Mono pour Android.
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Spécification de l’interface native Java](https://docs.oracle.com/javase/1.5.0/docs/guide/jni/spec/jniTOC.html)
-- [Fonctions d’interface native Java](https://download.oracle.com/javase/1.5.0/docs/guide/jni/spec/functions.html)
+- [Spécifications d’interface native de Java](https://docs.oracle.com/javase/1.5.0/docs/guide/jni/spec/jniTOC.html)
+- [Fonctions d’interface native de Java](https://download.oracle.com/javase/1.5.0/docs/guide/jni/spec/functions.html)

@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
 ms.openlocfilehash: 92bf7934b1ad4f6d959fc458f536cf3b3426df51
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73026370"
 ---
 # <a name="ios-build-mechanics"></a>Mécanismes de génération d’iOS
@@ -26,26 +26,26 @@ Les vitesses de génération Xamarin peuvent également être affectées par div
 
 ## <a name="timing-apps"></a>Minutage des applications
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 Pour activer la sortie MSBuild de diagnostic dans Visual Studio pour Mac :
 
 1. Cliquez sur **Visual Studio pour Mac > Préférences...**
 2. Dans l’arborescence à gauche, sélectionnez **Projets > Générer**
-3. Dans le volet de droite, définissez la liste déroulante commentaires du journal sur **diagnostic**:[![](ios-build-mechanics-images/image2.png "Définition du niveau de détail du journal")](ios-build-mechanics-images/image2.png#lightbox)
-4. Cliquez sur **OK**.
+3. Dans le panneau de droite, définissez le dépôt de verbosité de log à **Diagnostic**:[![](ios-build-mechanics-images/image2.png "Définition du niveau de détail du journal")](ios-build-mechanics-images/image2.png#lightbox)
+4. Cliquez sur **OK**
 5. Redémarrer Visual Studio pour Mac
 6. Nettoyer et regénérer votre package
 7. Afficher la sortie de diagnostic dans le Panneau Erreurs (Afficher > Panneaux > Erreurs) en cliquant sur le bouton Sortie de génération
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Pour activer la sortie MSBuild de diagnostic dans Visual Studio :
 
 1. Cliquez sur **Outils > Options...**
 2. Dans l’arborescence à gauche, sélectionnez **Projets et solutions > Générer et exécuter**
-3. Dans le volet de droite, définissez la *liste déroulante détail de la sortie de génération MSBuild* sur **diagnostic**:[![](ios-build-mechanics-images/image2-vs.png "Définition du niveau de détail de la sortie de génération MSBuild")](ios-build-mechanics-images/image2-vs.png#lightbox)
-4. Cliquez sur **OK**.
+3. Dans le panneau de droite, définissez le *MSBuild construire la verbosité de sortie* de sortie de baisse à **diagnostic**:[![](ios-build-mechanics-images/image2-vs.png "Définition du niveau de détail de la sortie de génération MSBuild")](ios-build-mechanics-images/image2-vs.png#lightbox)
+4. Cliquez sur **OK**
 5. Nettoyez et regénérez votre package.
 6. La sortie de diagnostic est visible dans le panneau Sortie.
 
@@ -67,7 +67,7 @@ Total time: 1554 ms
 
 Les outils Xamarin fonctionnent techniquement sur n’importe quel Mac pouvant exécuter OS X 10.10 Yosemite ou version ultérieure. Toutefois, les expériences de développement et les durées de génération peuvent être gênées par les performances du Mac.
 
-À l’état déconnecté, Visual Studio pour Windows exécute uniquement la phase de compilation C#. Il n’essaie pas d’effectuer de liaison ou de compilation AOT, d’empaqueter l’application dans un bundle _.app_ , ou de signer le bundle d’applications. (La C# phase de compilation est rarement un goulot d’étranglement au niveau des performances.) Essayez d’identifier dans le pipeline où la build ralentit en générant directement sur l’hôte de build Mac dans Visual Studio pour Mac.
+Dans l’état déconnecté, Visual Studio sur Windows n’effectue que la phase de compilation C et ne tente pas d’effectuer la liaison ou la compilation AOT, emballe l’application dans un _.app_ Bundle, ou signez le paquet d’application. (La phase de compilation C est rarement un goulot d’étranglement de performance.) Tentative de déterminer où dans le pipeline la construction ralentit en construisant directement sur l’hôte mac construire dans Visual Studio pour Mac.
 
 En outre, la connexion réseau entre l’ordinateur Windows et l’hôte de build Mac constitue l’un des emplacements les plus courants à l’origine de la lenteur. Cela peut être dû à un obstacle physique sur le réseau, à l’utilisation d’une connexion sans fil ou au fait de devoir passer par un ordinateur saturé (par exemple, un service Mac dans le cloud).
 
@@ -109,7 +109,7 @@ Il existe plusieurs configurations de build fournies lors du déploiement d’ap
 
 - Débogage
   - Il s’agit de la configuration principale qui doit être utilisée lorsqu’une application est en cours de développement et elle doit, par conséquent, être aussi rapide que possible.
-- Version finale
+- Libérer
   - Les builds de mise en production sont celles qui sont envoyées à vos utilisateurs et il est donc essentiel de se concentrer sur les performances. Lorsque vous utilisez la configuration Mise en production, vous souhaiterez peut-être utiliser le compilateur d’optimisation LLVM et optimiser les fichiers PNG.
 
 Il est également important de comprendre la relation entre la génération et le déploiement. La durée de déploiement dépend de la taille de l’application. Une application plus volumineuse prend plus de temps à déployer. En réduisant la taille de l’application, vous pouvez réduire la durée de déploiement.
@@ -121,7 +121,7 @@ La réduction de la taille de l’application peut aussi réduire la durée de l
 
 ### <a name="tips"></a>Conseils
 
-- Génération : 
+- Build : 
   - La génération d’une architecture unique (par exemple, ARM64) est plus rapide qu’une architecture FAT binaire (par exemple, ARMv7 + ARM64)
   - Évitez d’optimiser les fichiers PNG lors du débogage
   - Envisagez de lier tous les assemblys. Optimisez chaque assembly. 
@@ -165,7 +165,7 @@ Lorsque vous utilisez l’éditeur de liens, considérez les points suivants :
   - Toutefois, si vous choisissez **Tout lier** l’application peut se bloquer, en particulier si des composants externes sont utilisés. Ceci est dû au fait que certains composants utilisent la Réflexion sur certains types.
   - La réflexion et l’analyse statique ne fonctionnent pas ensemble. 
 
-Les outils peuvent être réglés pour conserver les choses à l’intérieur de l’application à l’aide de l’attribut [`[Preserve]` ](~/ios/deploy-test/linker.md). 
+Les outils peuvent être chargés de garder les choses à l’intérieur de l’application en utilisant [ `[Preserve]` l’attribut](~/ios/deploy-test/linker.md). 
 
 Si vous n’avez pas accès au code source, ou s’il est généré par un outil et que vous ne souhaitez pas le modifier, il peut toujours être lié via la création d’un fichier XML qui décrit tous les types et membres devant être conservés. Vous pouvez ensuite ajouter l’indicateur `--xml={file.name}.xml` à vos options de projet, qui a traité le code exactement comme si vous utilisiez des attributs.
 
@@ -192,7 +192,7 @@ Il est également possible de lier partiellement des applications, pour aider à
   - Cela permet à l’éditeur de liens natif d’éliminer le code natif de la bibliothèque avec laquelle vous effectuez la liaison. 
   - Notez que la recherche dynamique de symboles ne fonctionne pas avec ceci. 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Ce guide a exploré comment minuter une application iOS et les options à prendre en compte qui sont dépendantes de la configuration et des options de la génération du projet. 
 
@@ -278,6 +278,6 @@ L3 Cache: 4 MB
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Billet de blog](https://blog.xamarin.com/xamarin-ios-build-improvements/)
+- [Blog](https://blog.xamarin.com/xamarin-ios-build-improvements/)
 - [Liaison sur iOS](~/ios/deploy-test/linker.md)
-- [Configuration de l’éditeur de liens personnalisé](~/cross-platform/deploy-test/linker.md)
+- [Configuration De Linker personnalisée](~/cross-platform/deploy-test/linker.md)

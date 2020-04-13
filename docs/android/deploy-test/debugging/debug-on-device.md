@@ -8,13 +8,13 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
 ms.openlocfilehash: 3ca524e451a7a4eb838805c839b33c4b9dd6bddd
-ms.sourcegitcommit: 5821c9709bf5e06e6126233932f94f9cf3524577
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/31/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "75556533"
 ---
-# <a name="debug-on-an-android-device"></a>Déboguer sur un appareil Android
+# <a name="debug-on-an-android-device"></a>Debug sur un appareil Android
 
 _Cet article explique comment déboguer une application Xamarin.Android sur un appareil Android physique._
 
@@ -24,7 +24,7 @@ Il est possible de déboguer une application Xamarin.Android sur un appareil And
 
 Une fois qu’un appareil est connecté à votre ordinateur, le débogage d’une application Xamarin.Android est réalisé de la même façon que pour tout autre produit Xamarin ou application .NET. Vérifiez que la configuration **Debug** et l’appareil externe sont sélectionnés dans l’IDE. Les symboles de débogage nécessaires seront ainsi disponibles et l’IDE pourra se connecter à l’application en cours d’exécution : 
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 ![Configuration Debug sélectionnée](debug-on-device-images/image1-vs.png)
 
@@ -36,7 +36,7 @@ Une fois l’appareil sélectionné, Xamarin.Android se connecte à celui-ci, d�
 
 ![Point d’arrêt atteint](debug-on-device-images/image3-vs.png)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 ![Configuration Debug sélectionnée](debug-on-device-images/image1-xs.png)
 
@@ -54,7 +54,7 @@ Une fois l’appareil sélectionné, Xamarin.Android se connecte à celui-ci, d�
 
 Dans ce document, vous avez appris à déboguer une application Xamarin.Android en définissant un point d’arrêt et en sélectionnant l’appareil cible.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
-- [Configuration de l’appareil pour le développement](~/android/get-started/installation/set-up-device-for-development.md)
-- [Définir l’attribut Debuggable](~/android/deploy-test/debuggable-attribute.md)
+- [Mettre en place un dispositif de développement](~/android/get-started/installation/set-up-device-for-development.md)
+- [Configuration de l’attribut Debuggable](~/android/deploy-test/debuggable-attribute.md)

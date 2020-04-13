@@ -7,70 +7,70 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
 ms.openlocfilehash: e61be6f0189eb825c15fd75764a16706e588ebc9
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73020518"
 ---
 # <a name="how-content-providers-work"></a>Fonctionnement des fournisseurs de contenu
 
-Deux classes sont impliquées dans une interaction `ContentProvider` :
+Il y a deux `ContentProvider` classes impliquées dans une interaction :
 
-- **ContentProvider** &ndash; implémente une API qui expose un jeu de données de manière standard. Les principales méthodes sont interroger, insérer, mettre à jour et supprimer.
+- **ContentProvider** &ndash; implémente une API qui expose un ensemble de données de manière standard. Les principales méthodes sont La requête, l’insertion, la mise à jour et la suppression.
 
-- **ContentResolver** &ndash; un proxy statique qui communique avec un `ContentProvider` pour accéder à ses données, soit à partir de la même application, soit à partir d’une autre application.
+- **ContentResolver** &ndash; Un proxy statique qui `ContentProvider` communique avec un pour accéder à ses données, soit à partir de la même application ou d’une autre application.
 
-Un fournisseur de contenu est normalement associé à une base de données SQLite, mais l’API signifie que la consommation de code n’a pas besoin de savoir quoi que ce soit sur le SQL sous-jacent. Les requêtes sont effectuées via un URI à l’aide de constantes pour référencer les noms de colonnes (afin de réduire les dépendances sur la structure de données sous-jacente), et une `ICursor` est retournée pour le code de consommation à itérer.
+Un fournisseur de contenu est normalement soutenu par une base de données SQLite, mais l’API signifie que la consommation de code n’a pas besoin de savoir quoi que ce soit sur le SQL sous-jacent. Les requêtes sont effectuées via un Uri en utilisant des constantes pour référencer `ICursor` les noms de colonnes (pour réduire les dépendances sur la structure de données sous-jacente), et un est retourné pour le code de consommation à itérer plus.
 
-## <a name="consuming-a-contentprovider"></a>Consommation d’un ContentProvider
+## <a name="consuming-a-contentprovider"></a>Consommer un contentProvider
 
-`ContentProviders` exposer leurs fonctionnalités par le biais d’un URI inscrit dans le **fichier AndroidManifest. xml** de l’application qui publie les données. Il existe une Convention dans laquelle l’URI et les colonnes de données exposées doivent être disponibles en tant que constantes pour faciliter la liaison avec les données. Les `ContentProviders` intégrés d’Android offrent des classes pratiques avec des constantes qui référencent la structure de données dans l’espace de noms [`Android.Providers`](xref:Android.Provider) .
+`ContentProviders`exposer leur fonctionnalité à travers un Uri qui est enregistré dans **l’AndroidManifest.xml** de l’application qui publie les données. Il existe une convention où l’Uri et les colonnes de données qui sont exposées devraient être disponibles en constantes pour faciliter l’enregistrement des données. Android intégré `ContentProviders` tous fournir des classes de commodité avec des [`Android.Providers`](xref:Android.Provider) constantes qui font référence à la structure de données dans l’espace de nom.
 
 ### <a name="built-in-providers"></a>Fournisseurs intégrés
 
-Android offre un accès à un large éventail de données système et utilisateur à l’aide de `ContentProviders`:
+Android offre l’accès à un large `ContentProviders`éventail de données système et utilisateur en utilisant :
 
-- *Navigateur* &ndash; les signets et l’historique du navigateur (nécessite des autorisations `READ_HISTORY_BOOKMARKS` et/ou `WRITE_HISTORY_BOOKMARKS`).
+- *Signets de navigateur* &ndash; et historique `READ_HISTORY_BOOKMARKS` du `WRITE_HISTORY_BOOKMARKS`navigateur (nécessite la permission et/ou ).
 
 - *CallLog* &ndash; appels récents effectués ou reçus avec l’appareil.
 
-- Les *contacts* &ndash; des informations détaillées à partir de la liste de contacts de l’utilisateur, notamment des personnes, des téléphones, des photos & des groupes.
+- *Communiquez avec* &ndash; des informations détaillées de la liste de contacts de l’utilisateur, y compris des personnes, des téléphones, des photos & des groupes.
 
-- *MediaStore* &ndash; contenu de l’appareil de l’utilisateur : audio (albums, artistes, genres, playlists), images (y compris les miniatures) & vidéo.
+- *Contenu MediaStore* &ndash; de l’appareil de l’utilisateur : audio (albums, artistes, genres, playlists), images (y compris vignettes) & vidéo.
 
-- *Paramètres* &ndash; paramètres et préférences des appareils à l’ensemble du système.
+- *Paramètres des* &ndash; paramètres et préférences de l’appareil à l’échelle du système.
 
-- *UserDictionary* &ndash; contenu du dictionnaire défini par l’utilisateur utilisé pour l’entrée de texte prédictive.
+- *Contenu utilisateurDictionnaire* &ndash; du dictionnaire défini par l’utilisateur utilisé pour l’entrée de texte prédictive.
 
-- *Messagerie vocale* &ndash; historique des messages vocaux.
+- *Histoire vocale* &ndash; des messages vocaux.
 
-## <a name="classes-overview"></a>Vue d’ensemble des classes
+## <a name="classes-overview"></a>Aperçu des classes
 
-Les classes principales utilisées lors de l’utilisation d’un `ContentProvider` sont indiquées ici :
+Les classes primaires utilisées `ContentProvider` lors du travail avec un sont montrés ici:
 
-[![diagramme de classes de l’application de fournisseur de contenu et utilisation des interactions d’application](how-it-works-images/classdiagram1.png)](how-it-works-images/classdiagram1.png#lightbox)
+[![Diagramme de classe de l’application de fournisseur de contenu et des interactions d’application de consommation](how-it-works-images/classdiagram1.png)](how-it-works-images/classdiagram1.png#lightbox)
 
-Dans ce diagramme, le `ContentProvider` implémente des requêtes et inscrit des URI que d’autres applications utilisent pour localiser des données. Le `ContentResolver` agit comme un « proxy » pour les `ContentProvider` (méthodes de requête, d’insertion, de mise à jour et de suppression). Le `SQLiteOpenHelper` contient des données utilisées par le `ContentProvider`, mais il n’est pas directement exposé aux applications consommatrices.
-Le `CursorAdapter` passe le curseur retourné par l' `ContentResolver` à afficher dans un `ListView`. Le `UriMatcher` est une classe d’assistance qui analyse les URI lors du traitement des requêtes.
+Dans ce diagramme, les `ContentProvider` impléments interrogent et enregistre URI que d’autres applications utilisent pour localiser les données. Le `ContentResolver` agit comme un «proxy» pour les `ContentProvider` méthodes (Requête, Insert, Update, et Supprimer). Les `SQLiteOpenHelper` données contiennent `ContentProvider`des données utilisées par le , mais il n’est pas directement exposé à la consommation d’applications.
+Les `CursorAdapter` passes du curseur `ContentResolver` retourné par `ListView`le pour afficher dans un . Il `UriMatcher` s’agit d’une classe d’aide qui analyse les URI lors du traitement des requêtes.
 
-L’objectif de chaque classe est décrit ci-dessous :
+Le but de chaque classe est décrit ci-dessous :
 
-- **ContentProvider** &ndash; implémenter les méthodes de cette classe abstraite pour exposer les données. L’API est mise à la disposition d’autres classes et applications via l’attribut URI qui est ajouté à la définition de classe.
+- **ContentProvider** &ndash; Implémentez les méthodes de cette classe abstraite pour exposer les données. L’API est mise à la disposition d’autres classes et applications via l’attribut Uri qui est ajouté à la définition de classe.
 
-- **SQLiteOpenHelper** &ndash; aide à implémenter le magasin de banques de SQLite qui est exposé par le `ContentProvider`.
+- **SQLiteOpenHelper** &ndash; aide à mettre en œuvre `ContentProvider`la datastore SQLite qui est exposée par le .
 
-- **UriMatcher** &ndash; utilisez `UriMatcher` dans votre implémentation de `ContentProvider` pour faciliter la gestion des URI utilisés pour interroger le contenu.
+- **UriMatcher** &ndash; `UriMatcher` Utilisez `ContentProvider` dans votre implémentation pour aider à gérer Uris qui sont utilisés pour interroger le contenu.
 
-- **ContentResolver** &ndash; le code de consommation utilise une `ContentResolver` pour accéder à une instance de `ContentProvider`. Les deux classes s’occupent ensemble des problèmes de communication entre processus, ce qui permet de partager facilement les données entre les applications. La consommation de code ne crée jamais une classe `ContentProvider` explicite ; au lieu de cela, les données sont accessibles en créant un curseur basé sur un URI exposé par l’application `ContentProvider`.
+- **ContentResolver** &ndash; Le code `ContentResolver` de `ContentProvider` consommation utilise un pour accéder à une instance. Ensemble, les deux classes s’occupent des problèmes de communication interprofessionnels, permettant de partager facilement les données entre les applications. Consommer du code `ContentProvider` ne crée jamais une version explicite de la classe; au lieu de cela, les données sont accessibles en créant `ContentProvider` un curseur basé sur un Uri exposé par l’application.
 
-- **CursorAdapter** &ndash; utiliser `CursorAdapter` ou `SimpleCursorAdapter` pour afficher les données accessibles via un `ContentProvider`.
+- **CursorAdapter** &ndash; `CursorAdapter` Utilisation `SimpleCursorAdapter` ou pour afficher `ContentProvider`les données consultées via un .
 
-L’API `ContentProvider` permet aux consommateurs d’effectuer diverses opérations sur les données, telles que :
+L’API `ContentProvider` permet aux consommateurs d’effectuer une variété d’opérations sur les données, telles que :
 
-- Interroger des données pour retourner des listes ou des enregistrements individuels.
-- Modifiez des enregistrements individuels.
+- Requête des données pour retourner les listes ou les enregistrements individuels.
+- Modifier les enregistrements individuels.
 - Ajoutez de nouveaux enregistrements.
-- Supprimer des enregistrements.
+- Supprimer les enregistrements.
 
-Ce document contient un exemple qui utilise un `ContentProvider`fourni par le système, ainsi qu’un exemple simple en lecture seule qui implémente un `ContentProvider`personnalisé.
+Ce document contient un exemple qui `ContentProvider`utilise un système fourni, ainsi qu’un `ContentProvider`exemple simple de lecture seulement qui implémente une coutume .

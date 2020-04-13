@@ -1,18 +1,18 @@
 ---
-title: 'Xamarin.Essentials: Vibration'
+title: 'Xamarin.Essentials : vibration'
 description: Ce document décrit la classe Vibration de Xamarin.Essentials, qui vous permet de démarrer et d’arrêter la fonctionnalité de vibration pendant la durée souhaitée.
 ms.assetid: 7E8B24C4-2625-4DAE-A129-383542D34F1E
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
 ms.openlocfilehash: 2e4cf713f9ad7478c0d8e288fd3beff4b5015ef5
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70120114"
 ---
-# <a name="xamarinessentials-vibration"></a>Xamarin.Essentials: Vibration
+# <a name="xamarinessentials-vibration"></a>Xamarin.Essentials : vibration
 
 La classe **Vibration** vous permet de démarrer et d’arrêter la fonctionnalité de vibration pendant la durée souhaitée.
 
@@ -22,7 +22,7 @@ La classe **Vibration** vous permet de démarrer et d’arrêter la fonctionnali
 
 Pour accéder à la fonctionnalité de **vibration**, la configuration suivante spécifique à la plateforme est obligatoire.
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 L’autorisation Vibrate est obligatoire, et doit être configurée dans le projet Android. Vous pouvez l’ajouter des façons suivantes :
 
@@ -34,7 +34,7 @@ Ouvrez le fichier **AssemblyInfo.cs** sous le dossier **Propriétés** et ajoute
 
 OU mettez à jour le manifeste Android :
 
-Ouvrez le fichier **AndroidManifest.xml** sous le dossier **Propriétés** et ajoutez ce qui suit dans le nœud du **manifeste**.
+Ouvrez le fichier **AndroidManifest.xml** sous le dossier **Properties** et ajoutez ce qui suit à l’intérieur du nœud **manifeste.**
 
 ```xml
 <uses-permission android:name="android.permission.VIBRATE" />
@@ -42,11 +42,11 @@ Ouvrez le fichier **AndroidManifest.xml** sous le dossier **Propriétés** et aj
 
 Vous pouvez également cliquer avec le bouton droit sur le projet Android, et ouvrir les propriétés du projet. Sous **Manifeste Android**, recherchez la zone **Autorisations nécessaires**, puis cochez l’autorisation **VIBRATE**. Cela entraîne la mise à jour automatique du fichier **AndroidManifest.xml**.
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 Aucune configuration supplémentaire n’est requise.
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 Aucune différence entre les plateformes.
 
@@ -101,17 +101,17 @@ catch (Exception ex)
 
 ## <a name="platform-differences"></a>Différences entre les plateformes
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 Aucune différence entre les plateformes.
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 - Vibre uniquement quand l’appareil est configuré pour vibrer en cas de sonnerie.
 - Vibre toujours pendant 500 millisecondes.
 - Impossible d’annuler la vibration.
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 Aucune différence entre les plateformes.
 

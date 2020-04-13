@@ -9,10 +9,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/19/2016
 ms.openlocfilehash: aaf2086fd8128d68baa401ab646b31bcbc279545
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "79305023"
 ---
 # <a name="xamarinforms-app-class"></a>Classe App Xamarin.Forms
@@ -20,10 +20,10 @@ ms.locfileid: "79305023"
 La classe de base `Application` offre les fonctionnalités suivantes, qui sont exposées dans la sous-classe `App` par défaut de votre sous-projet :
 
 * Une propriété `MainPage`,dans laquelle définir la page initiale de l’application.
-* Un [dictionnaire `Properties`](#Properties_Dictionary) persistant où stocker des valeurs simples lors des changements d’état de cycle de vie.
+* Un [ `Properties` dictionnaire](#Properties_Dictionary) persistant pour stocker des valeurs simples à travers les changements d’état du cycle de vie.
 * Une propriété `Current` qui contient une référence à l’objet d’application actuel.
 
-Elle expose également les [méthodes de cycle de vie](~/xamarin-forms/app-fundamentals/app-lifecycle.md) comme `OnStart`, `OnSleep` et `OnResume`, ainsi que les événements de navigation modale.
+Il expose également les méthodes `OnStart` `OnSleep`de `OnResume` [cycle de vie](~/xamarin-forms/app-fundamentals/app-lifecycle.md) telles que , , et ainsi que les événements de navigation modale.
 
 Selon le modèle que vous avez choisi, la classe `App` peut être définie de deux manières :
 
@@ -54,7 +54,7 @@ public partial class App : Application
 }
 ```
 
-En plus de définir la propriété [`MainPage`](xref:Xamarin.Forms.Application.MainPage), le code-behind doit également appeler la méthode `InitializeComponent` pour charger et analyser le XAML associé.
+En plus de [`MainPage`](xref:Xamarin.Forms.Application.MainPage) définir la propriété, le `InitializeComponent` code-derrière doit également appeler la méthode pour charger et analyser le XAML associé.
 
 ## <a name="mainpage-property"></a>Propriété MainPage
 
@@ -112,7 +112,7 @@ Les données ajoutées au dictionnaire seront disponibles lors du retour de l’
 
 Xamarin.Forms 1.4 comprend une nouvelle méthode pour la classe `Application` (`SavePropertiesAsync()`) qui peut être appelée pour faire persister de manière proactive le dictionnaire `Properties`. Cela vous permet d’enregistrer les propriétés après les mises à jour importantes, plutôt que de risquer qu’elles ne soient pas sérialisées à cause d’un plantage ou parce qu’elles ont été tuées par le système d’exploitation.
 
-Vous trouverez des références sur l’utilisation du dictionnaire `Properties` dans les chapitres **6**, [15](https://developer.xamarin.com/r/xamarin-forms/book/chapter06.pdf) et [20 ](https://developer.xamarin.com/r/xamarin-forms/book/chapter15.pdf) de l’ouvrage [Creating Mobile Apps with Xamarin.Forms](https://developer.xamarin.com/r/xamarin-forms/book/chapter20.pdf), ainsi que dans les [exemples](https://github.com/xamarin/xamarin-forms-book-preview-2) associés.
+Vous trouverez des références sur l’utilisation du dictionnaire `Properties` dans les chapitres [6](https://developer.xamarin.com/r/xamarin-forms/book/chapter06.pdf), [15](https://developer.xamarin.com/r/xamarin-forms/book/chapter15.pdf) et [20 ](https://developer.xamarin.com/r/xamarin-forms/book/chapter20.pdf) de l’ouvrage **Creating Mobile Apps with Xamarin.Forms**, ainsi que dans les [exemples](https://github.com/xamarin/xamarin-forms-book-preview-2) associés.
 
 ## <a name="the-application-class"></a>Classe d’application
 

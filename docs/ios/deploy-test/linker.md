@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/24/2017
 ms.openlocfilehash: 284705973f9c0ec606572170f7e927ed4745ddd1
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73030227"
 ---
 # <a name="linking-xamarinios-apps"></a>Liaison d’applications Xamarin.iOS
@@ -26,19 +26,19 @@ L’éditeur de liens utilise l’analyse statique pour déterminer les différe
 
 ## <a name="linker-behavior"></a>Comportement de l'éditeur de liens
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 Le processus de liaison peut être personnalisé via le menu déroulant du comportement de l’éditeur de liens dans **Options du projet**. Pour accéder à ce processus, double-cliquez sur le projet iOS et accédez à **Build iOS > Options de l’éditeur de liens**, comme illustré ci-dessous :
 
 [![](linker-images/image1.png "Linker Options")](linker-images/image1.png#lightbox)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Le processus de liaison peut être personnalisé via le menu déroulant du comportement de l’éditeur de liens dans **Propriétés du projet** dans Visual Studio.
 
-Effectuez ce qui suit :
+Effectuez les actions suivantes :
 
-1. Cliquez avec le bouton de droite sur le **Nom du projet** dans **l’Explorateur de solutions** et sélectionnez **Propriétés** :
+1. Cliquez à droite sur le nom du **projet** dans **l’explorer de solution** et sélectionnez **propriétés**:
 
     ![](linker-images/linking01w.png "Right-click on the Project Name in the Solution Explorer and select Properties")
 2. Dans les **Propriétés du projet**, sélectionnez **Build IOS** :
@@ -128,7 +128,7 @@ Si vous souhaitez que l’éditeur de liens ignore plusieurs assemblys, incluez 
 --linkskip=NameOfFirstAssembly --linkskip=NameOfSecondAssembly
 ```
 
-Aucune interface utilisateur n’utilise cette option, mais elle peut être fournie dans la boîte de dialogue Options de projet Visual Studio pour Mac ou le volet Propriétés de projet Visual Studio, dans le champ de texte **Arguments mtouch supplémentaires**. (Par ex. *--linkskip=mscorlib* ne lie pas mscorlib.dll, mais lie d’autres assemblys dans la solution).
+Aucune interface utilisateur n’utilise cette option, mais elle peut être fournie dans la boîte de dialogue Options de projet Visual Studio pour Mac ou le volet Propriétés de projet Visual Studio, dans le champ de texte **Arguments mtouch supplémentaires**. (Par exemple, *--linkskip=mscorlib* ne lie pas mscorlib.dll, mais lie d’autres assemblys dans la solution).
 
 <a name="Disabling_Link_Away" />
 
@@ -138,7 +138,7 @@ L’éditeur de liens supprimera le code qui ne sera très probablement pas util
 
 Cela correspond à l’option *-nolinkaway* lors de l’utilisation de l’outil de ligne de commande mtouch.
 
-Aucune interface utilisateur n’utilise cette option, mais elle peut être fournie dans la boîte de dialogue Options de projet Visual Studio pour Mac ou le volet Propriétés de projet Visual Studio, dans le champ de texte **Arguments mtouch supplémentaires**. (Par ex. *--nolinkaway* ne supprime pas le code supplémentaire (environ 100 Ko).
+Aucune interface utilisateur n’utilise cette option, mais elle peut être fournie dans la boîte de dialogue Options de projet Visual Studio pour Mac ou le volet Propriétés de projet Visual Studio, dans le champ de texte **Arguments mtouch supplémentaires**. (Par exemple, *--nolinkaway* ne supprime pas le code supplémentaire (environ 100 Ko).
 
 ### <a name="marking-your-assembly-as-linker-ready"></a>Marquage de votre assembly comme prêt pour l’éditeur de liens
 
@@ -146,7 +146,7 @@ Les utilisateurs peuvent sélectionner d’uniquement lier les assemblys du Kit 
 
 Cela se produit en général car ils ne souhaitent pas ajouter manuellement des attributs `[Preserve]` à leur code.  L’effet secondaire est que les bibliothèques tierces ne seront pas liées, il s’agit là en général d’une bonne valeur par défaut, car il n’est pas possible de savoir si une bibliothèque tierce est conviviale ou pas à l’éditeur de liens.
 
-Si vous avez une bibliothèque dans votre projet ou si vous êtes un développeur de bibliothèques réutilisables et souhaitez que l’éditeur de liens traite votre assembly comme pouvant être lié, il vous suffit d’ajouter l’attribut de niveau d’assembly[`LinkerSafe`](xref:Foundation.LinkerSafeAttribute), comme suit :
+Si vous avez une bibliothèque dans votre projet, ou si vous êtes un développeur de bibliothèques réutilisables et que vous [`LinkerSafe`](xref:Foundation.LinkerSafeAttribute)voulez que le linker traite votre assemblage comme liant, tout ce que vous avez à faire est d’ajouter l’attribut de niveau d’assemblage, comme ceci:
 
 ```csharp
 [assembly:LinkerSafe]
@@ -165,8 +165,8 @@ class LinkerSafeAttribute : System.Attribute {}
 
 Suivez les [instructions pour la création d’un fichier de configuration de l’éditeur de liens](~/cross-platform/deploy-test/linker.md).
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
-- [Configuration personnalisée de l’éditeur de liens](~/cross-platform/deploy-test/linker.md)
+- [Configuration De Linker personnalisée](~/cross-platform/deploy-test/linker.md)
 - [Liaison sur Mac](~/mac/deploy-test/linker.md)
 - [Liaison sur Android](~/android/deploy-test/linker.md)

@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
 ms.openlocfilehash: 08ddf282c8839a6283b90c0736c0b4259bd01469
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73028444"
 ---
 # <a name="unit-testing-xamarinios-apps"></a>Tests unitaires d’applications Xamarin.iOS
@@ -112,7 +112,7 @@ Test Runner affiche les tests qui sont enregistrés et vous permet de sélection
 
 Vous pouvez exécuter les fixtures de test de votre choix en les sélectionnant dans les vues imbriquées, ou exécuter tous les tests en sélectionnant le bouton « Exécuter tout ». Si vous exécutez le test par défaut, celui-ci est censé inclure un test réussi, un test échoué et un test ignoré. Voici à quoi ressemble le rapport. Vous pouvez accéder directement aux détails des tests ayant échoué pour déterminer la cause de l’échec :
 
-[![](touch.unit-images/05-sml.png "Exemple de rapport")](touch.unit-images/05.png#lightbox)[![](touch.unit-images/06-sml.png "Exemple de rapport")](touch.unit-images/06.png#lightbox)[![](touch.unit-images/07-sml.png "Exemple de rapport")](touch.unit-images/07.png#lightbox)
+[![](touch.unit-images/05-sml.png "Un rapport d’échantillon")](touch.unit-images/05.png#lightbox) [![](touch.unit-images/06-sml.png "Un rapport d’échantillon")](touch.unit-images/06.png#lightbox) [![](touch.unit-images/07-sml.png "Un rapport d’échantillon")](touch.unit-images/07.png#lightbox)
 
 Vous pouvez également examiner les tests en cours d’exécution et leur état actuel dans la fenêtre Sortie de l’application dans votre environnement IDE.
 

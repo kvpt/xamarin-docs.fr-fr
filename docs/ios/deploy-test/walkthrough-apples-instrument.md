@@ -8,15 +8,15 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
 ms.openlocfilehash: 41254fb6aac176cd796fba851478b31f774553d2
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73023456"
 ---
 # <a name="walkthrough---using-apples-instruments-tool"></a>Procédure pas à pas : Utilisation de l’outil Instruments d’Apple
 
-_Cet article explique comment utiliser l’outil instruments d’Apple pour diagnostiquer les problèmes de mémoire dans une application iOS générée avec Xamarin. Il montre comment lancer des instruments, prendre des instantanés de tas et analyser la croissance de la mémoire. Il montre également comment utiliser instruments pour afficher et identifier les lignes de code exactes qui provoquent le problème de mémoire._
+_Cet article passe par la façon d’utiliser l’outil Instruments d’Apple pour diagnostiquer les problèmes de mémoire dans une application iOS construite avec Xamarin. Il montre comment lancer des instruments, prendre des instantanés de tas et analyser la croissance de la mémoire. Il montre également comment utiliser des instruments pour afficher et identifier les lignes exactes de code qui causent le problème de mémoire._
 
 Cette page montre comment utiliser l’**outil Instruments dans Xcode** pour diagnostiquer un problème de mémoire dans une application iOS.
 Commencez par télécharger l’[exemple MemoryDemo](https://docs.microsoft.com/samples/xamarin/ios-samples/profiling-memorydemo) et ouvrez la solution **before** dans Visual Studio pour Mac.
@@ -48,7 +48,7 @@ Commencez par télécharger l’[exemple MemoryDemo](https://docs.microsoft.com/
 12. Développez le nœud **Generation** avec la plus grande valeur **Growth** et triez les valeurs **Growth** par ordre décroissant.
 13. Dans le volet **Inspector**, passez à la vue **Extended Detail** (la « E ») pour afficher la trace de pile sous **Stack Trace**.
 
-14. Notez que le nœud **&lt;non-object>** affiche une croissance excessive de la mémoire. Cliquez sur la flèche à côté de ce nœud pour afficher plus de détails. Cliquez avec le bouton droit dans la trace de pile pour ajouter l’**emplacement source** dans le volet :
+14. Remarquez que le ** &lt;nœud de>non-objet** montre une croissance excessive de la mémoire. Cliquez sur la flèche à côté de ce nœud pour afficher plus de détails. Cliquez avec le bouton droit dans la trace de pile pour ajouter l’**emplacement source** dans le volet :
 
     ![](walkthrough-apples-instrument-images/03-mem-growth.png "Add Source Location to the pane")
 
@@ -95,7 +95,7 @@ Cet article vous a montré comment utiliser Instruments pour diagnostiquer les p
 Il vous a expliqué comment lancer Instruments à partir de Visual Studio pour Mac, charger le modèle d’allocation de mémoire et identifier les problèmes de mémoire.
 Enfin, l’application a été réexaminée pour vérifier que le problème a bien été corrigé.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
-- [Échantillon MemoryDemo](https://docs.microsoft.com/samples/xamarin/ios-samples/profiling-memorydemo)
+- [Exemple MemoryDemo](https://docs.microsoft.com/samples/xamarin/ios-samples/profiling-memorydemo)
 - [Garbage collection Xamarin.iOS (billet de blog)](https://c-sharx.net/2015-04-27-xamarin-ios-the-garbage-collector-and-me/)

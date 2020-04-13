@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/05/2017
 ms.openlocfilehash: 2a0f9d063b319c0f412f6e8f47a59f0f994678ae
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73026285"
 ---
 # <a name="using-mtouch-to-bundle-xamarinios-apps"></a>Utilisation de mtouch pour grouper des applications Xamarin.iOS
@@ -39,9 +39,9 @@ export PATH=$PATH:/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/bin
 ```
 
 > [!WARNING]
-> Pour utiliser `mtouch`, ne comptez pas sur l’existence de **/Developer/MonoTouch/usr/bin**, un lien symbolique qui pointe vers **/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/bin**. Ce lien symbolique existe uniquement pour maintenir la compatibilité avec les anciennes mises en production MonoTouch qui n’étaient pas installées dans **/Library/Frameworks/...**  et il peut disparaître dans une mise en production ultérieure.
+> Pour utiliser `mtouch`, ne comptez pas sur l’existence de **/Developer/MonoTouch/usr/bin**, un lien symbolique qui pointe vers **/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/bin**. Ce lien symbolique existe uniquement pour maintenir la compatibilité avec les anciennes mises en production MonoTouch qui n’étaient pas installées dans **/Library/Frameworks/... ** et il peut disparaître dans une mise en production ultérieure.
 
-## <a name="building"></a>Génération en cours
+## <a name="building"></a>Génération
 
 La commande `mtouch` peut compiler votre code de trois façons différentes :
 
@@ -116,7 +116,7 @@ Si l’indicateur `--sdkroot` n’est pas défini, il s’affiche par défaut su
 
 Ces étapes sont généralement effectuées par Visual Studio pour Mac.
 
-## <a name="reference"></a>Reference
+## <a name="reference"></a>Informations de référence
 
 Consultez la page du manuel [mtouch(1)](http://docs.go-mono.com/?link=man%3amtouch(1)) pour plus d’informations sur les autres options de ligne de commande.
 

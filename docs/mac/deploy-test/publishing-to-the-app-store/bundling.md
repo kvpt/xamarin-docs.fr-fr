@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
 ms.openlocfilehash: f4d38bb66a34257c1e0a27c5fbbfe16f59743e83
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "76725504"
 ---
 # <a name="bundling-for-the-mac-app-store"></a>Regroupement pour le Mac App Store
@@ -25,13 +25,13 @@ Cette section décrit les concepts de base de la génération d’une applicatio
 
 Définissez la **Configuration** sur **Release** avant de mettre à jour les options de signature du code et de packaging. Le développeur doit s’assurer qu’il utilise l’**identité** de sa société et le profil de provisionnement que nous avons créé ci-dessus lors de la signature de l’application en vue de sa mise en production dans l’App Store.
 
-[![Modification des options de signature du code](bundling-images/sign.png)](bundling-images/sign-large.png#lightbox)
+[![Modifier les options de signature de code](bundling-images/sign.png)](bundling-images/sign-large.png#lightbox)
 
 Vérifiez que l’option permettant de créer un paquet d’installation a été cochée dans les paramètres **Build Mac** :
 
 [![Modification des options de build](bundling-images/build.png "Modification des options de build")](bundling-images/build-large.png#lightbox)
 
-## <a name="build"></a>Générer
+## <a name="build"></a>Build
 
 Avant d’effectuer la génération, vérifiez que la configuration **Release** a été sélectionnée. Quand le développeur génère l’application, il est invité _deux fois_ (à utiliser les certificats de l’application et du programme d’installation) :
 
@@ -45,6 +45,6 @@ Une fois l’application générée, le développeur peut cliquer avec le bouton
 ## <a name="related-links"></a>Liens connexes
 
 - [Installation](/visualstudio/mac/installation/)
-- [Exemple Hello, Mac](~/mac/get-started/hello-mac.md)
+- [Bonjour, échantillon De Mac](~/mac/get-started/hello-mac.md)
 - [Distribuer vos applications sur le Mac App Store](https://developer.apple.com/devcenter/mac/checklist/)
 - [ID de développeur et GateKeeper](https://developer.apple.com/developer-id/)

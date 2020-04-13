@@ -8,94 +8,94 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/22/2018
 ms.openlocfilehash: 72e0a2adc79796b3df7b6fb4eca62448f1a1a7a4
-ms.sourcegitcommit: 997f7b6a1a1bc50b98c3ca5bbc75d6875ba2ae9a
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/18/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "79510729"
 ---
 # <a name="set-up-device-for-development"></a>Configurer un appareil pour le développement
 
 _Cet article explique comment configurer un appareil Android et le connecter à un ordinateur en vue de l’utiliser pour exécuter et déboguer des applications Xamarin.Android._
 
-Après avoir effectué des tests sur un émulateur Android, vous voudrez voir comment vos applications s’exécutent sur un appareil Android. Vous devez activer le débogage et connecter l’appareil à l’ordinateur.
+Après avoir effectué des tests sur un émulateur Android, vous voudrez voir comment vos applications s’exécutent sur un appareil Android. Vous devrez activer le débogage et connecter l’appareil à l’ordinateur.
 
 Chacune de ces étapes est abordée plus en détail dans les sections ci-dessous.
 
 ## <a name="enable-debugging-on-the-device"></a>Activer le débogage sur l’appareil
 
-Pour pouvoir tester une application Android, vous devez activer un appareil pour le débogage. Les options de développeur sur Android ont été masquées par défaut depuis la version 4,2, et leur activation peut varier en fonction de la version d’Android.
+Un appareil doit être activé pour débogage afin de tester une application Android. Les options de développeur sur Android ont été cachées par défaut depuis la version 4.2, et leur permettant peut varier en fonction de la version Android.
 
-### <a name="android-90"></a>Android 9.0 +
+### <a name="android-90"></a>Android 9.0
 
-Pour Android 9,0 et versions ultérieures, le débogage est activé en procédant comme suit :
+Pour Android 9.0 et plus, le débogage est activé en suivant ces étapes :
 
 1. Accédez à l’écran **Paramètres**.
 2. Sélectionnez **à propos de téléphone** .
-3. Appuyez sur **numéro de build** 7 fois jusqu’à ce que **vous soyez maintenant développeur !** est visible.
+3. Appuyez sur **Build Number** 7 fois jusqu’à ce que **vous soyez maintenant un développeur!** est visible.
 
-### <a name="android-80-and-android-81"></a>Android 8,0 et Android 8,1
+### <a name="android-80-and-android-81"></a>Android 8.0 et Android 8.1
 
-1. Accédez à l’écran **paramètres** .
-2. Sélectionnez **système**.
-3. Sélectionner **à propos du téléphone**
-4. Appuyez sur **numéro de build** 7 fois jusqu’à ce que **vous soyez maintenant développeur !** est visible.
+1. Accédez à l’écran **Paramètres.**
+2. Sélectionnez **le système**.
+3. **Sélectionnez-vous au sujet du téléphone**
+4. Appuyez sur **Build Number** 7 fois jusqu’à ce que **vous soyez maintenant un développeur!** est visible.
 
-### <a name="android-71-and-lower"></a>Android 7,1 et versions antérieures
+### <a name="android-71-and-lower"></a>Android 7.1 et plus bas
 
-1. Accédez à l’écran **paramètres** .
+1. Accédez à l’écran **Paramètres.**
 2. Sélectionnez **à propos de téléphone**.
-3. Appuyez sur **numéro de build** 7 fois jusqu’à ce que **vous soyez maintenant développeur !** est visible.
+3. Appuyez sur **Build Number** 7 fois jusqu’à ce que **vous soyez maintenant un développeur!** est visible.
 
-[![écran des options de développeur sur Android 9,0](set-up-device-for-development-images/build-version-sml.png)](set-up-device-for-development-images/build-version.png#lightbox)
+[![Écran d’options de développeur sur Android 9.0](set-up-device-for-development-images/build-version-sml.png)](set-up-device-for-development-images/build-version.png#lightbox)
 
 ### <a name="verify-that-usb-debugging-is-enabled"></a>Vérifier que le débogage USB est activé
 
-Après avoir activé le mode développeur sur votre appareil, vous devez vous assurer que le débogage USB est activé sur l’appareil. Cela varie également en fonction de la version d’Android.
+Après avoir activé le mode développeur sur votre appareil, vous devez vous assurer que le débogage USB est activé sur l’appareil. Cela varie également en fonction de la version Android.
 
-### <a name="android-90"></a>Android 9.0 +
+### <a name="android-90"></a>Android 9.0
 
-Accédez à **paramètres > système > avancé > options du développeur** et activez le **débogage USB**.
+Naviguez vers **Paramètres > Système > Advanced > Developer Options** et activez LE **débogage USB**.
 
-### <a name="android-80-and-android-81"></a>Android 8,0 et Android 8,1
+### <a name="android-80-and-android-81"></a>Android 8.0 et Android 8.1
 
-Accédez à **paramètres > les options de développeur système >** et activez le **débogage USB**.
+Naviguez vers **Paramètres > Système > Les options de développeur** et activez LE **débogage USB**.
 
-### <a name="android-71-and-lower"></a>Android 7,1 et versions antérieures
+### <a name="android-71-and-lower"></a>Android 7.1 et plus bas
 
-Accédez à **paramètres > options de développement** et activez le **débogage USB**.
+Naviguez vers **Paramètres > Options de développeur** et activez USB **Debugging**.
 
 Une fois que l’onglet **Options développeurs**s’affiche sous **Paramètres > Système**, ouvrez-le pour afficher les paramètres développeurs :
 
-[![écran des options de développeur sur Android 9,0](set-up-device-for-development-images/usb-debugging-sml.png)](set-up-device-for-development-images/usb-debugging.png#lightbox)
+[![Écran d’options de développeur sur Android 9.0](set-up-device-for-development-images/usb-debugging-sml.png)](set-up-device-for-development-images/usb-debugging.png#lightbox)
 
 C’est là que vous pouvez activer des options développeurs, telles que le débogage USB ou le mode Rester activé.
 
-## <a name="connect-the-device-to-the-computer"></a>Connecter l’appareil à l’ordinateur
+## <a name="connect-the-device-to-the-computer"></a>Connectez l’appareil à l’ordinateur
 
-La dernière étape consiste à connecter l’appareil à l’ordinateur. La méthode la plus simple et la plus fiable consiste à le faire sur USB.
+La dernière étape consiste à connecter l’appareil à l’ordinateur. Le moyen le plus simple et le plus fiable est de le faire sur USB.
 
-Vous recevrez une invite pour faire confiance à l’ordinateur sur votre appareil si vous ne l’avez pas utilisé pour le débogage. Vous pouvez également cocher la case **toujours autoriser à partir de cet ordinateur** pour empêcher l’exécution de cette invite chaque fois que vous connectez l’appareil.
+Vous recevrez une invite à faire confiance à l’ordinateur sur votre appareil si vous ne l’avez pas utilisé pour débogage avant. Vous pouvez également vérifier **Toujours permettre à partir de cet ordinateur** pour éviter d’exiger cette invite chaque fois que vous connectez l’appareil.
 
 ![](set-up-device-for-development-images/trust-computer-for-usb-debugging.png "Google USB")
 
-## <a name="alternate-connection-via-wifi"></a>Autre connexion via WiFi
+## <a name="alternate-connection-via-wifi"></a>Connexion alternative via Wifi
 
-Il est possible de connecter un appareil Android à un ordinateur sans utiliser de câble USB, par le biais du Wi-Fi. Cette technique nécessite plus d’efforts, mais elle peut être utile lorsque l’appareil est trop éloigné de l’ordinateur pour rester connecté en permanence via un câble. 
+Il est possible de connecter un appareil Android à un ordinateur sans utiliser un câble USB, via WiFi. Cette technique nécessite plus d’effort, mais pourrait être utile lorsque l’appareil est trop loin de l’ordinateur pour rester constamment branché via le câble. 
 
 ### <a name="connecting-over-wifi"></a>Connexion via le Wi-Fi
 
-Par défaut, [Android Debug Bridge](https://developer.android.com/tools/help/adb.html) (*ADB*) est configuré pour communiquer avec les appareils Android via une connexion USB. Il est possible de le reconfigurer pour qu’il utilise le protocole TCP/IP au lieu d’une connexion USB. Pour ce faire, l’appareil et l’ordinateur doivent utiliser le même réseau Wi-Fi. Pour configurer votre environnement pour déboguer sur WiFi, effectuez les étapes suivantes à partir de la ligne de commande :
+Par défaut, [Android Debug Bridge](https://developer.android.com/tools/help/adb.html) (*ADB*) est configuré pour communiquer avec les appareils Android via une connexion USB. Il est possible de le reconfigurer pour qu’il utilise le protocole TCP/IP au lieu d’une connexion USB. Pour ce faire, l’appareil et l’ordinateur doivent utiliser le même réseau Wi-Fi. Pour configurer votre environnement pour déboiller sur WiFi complètez les étapes suivantes de la ligne de commande :
 
-1. Déterminez l’adresse IP de votre appareil Android. Pour déterminer l’adresse IP, vous pouvez consulter les **paramètres > réseau & internet > Wi-Fi**, puis appuyer sur le réseau Wi-Fi auquel l’appareil est connecté, puis appuyer sur **avancé**. Cela ouvre une liste déroulante contenant des informations sur la connexion réseau, comme dans la capture d’écran ci-dessous :
+1. Déterminez l’adresse IP de votre appareil Android. Une façon de découvrir l’adresse IP est de regarder sous **Paramètres > Réseau & Internet > Wi-Fi**, puis appuyez sur le réseau WiFi à laquelle l’appareil est connecté, puis appuyez sur **Advanced**. Cela ouvrira un dropdown montrant des informations sur la connexion réseau, similaire à ce qui est vu dans la capture d’écran ci-dessous:
 
-    [![l’adresse IP](set-up-device-for-development-images/ip-settings-sml.png)](set-up-device-for-development-images/ip-settings.png#lightbox)
+    [![Adresse IP](set-up-device-for-development-images/ip-settings-sml.png)](set-up-device-for-development-images/ip-settings.png#lightbox)
 
     Dans certaines versions Android, l’adresse IP est indiquée ailleurs, sous **Paramètres > À propos du téléphone > État**.
 
 2. Connectez votre appareil Android à votre ordinateur avec un câble USB.
 
-3. Ensuite, redémarrez ADB pour qu’il utilise le protocole TCP sur le port 5555. Dans une fenêtre d'invite de commande, tapez la commande suivante :
+3. Ensuite, redémarrez ADB pour qu’il utilise le protocole TCP sur le port 5555. Dans l’invite de commandes, tapez la commande suivante :
 
     ```command
     adb tcpip 5555
@@ -113,13 +113,13 @@ Par défaut, [Android Debug Bridge](https://developer.android.com/tools/help/adb
 
     Une fois cette commande terminée, l’appareil Android est connecté à l’ordinateur via WiFi.
 
-    Lorsque vous avez terminé le débogage via WiFi, il est possible de réinitialiser ADB en mode USB à l’aide de la commande suivante :
+    Lorsque vous avez fini de débogage via WiFi, il est possible de réinitialiser ADB en mode USB avec la commande suivante :
     
     ```command
     adb usb
     ```
     
-    Il est possible de demander à ADB de répertorier les périphériques qui sont connectés à l’ordinateur. Quelle que soit la façon dont les appareils sont connectés, vous pouvez exécuter la commande suivante à l’invite de commandes, pour voir tous les appareils connectés :
+    Il est possible de demander à la BAD d’énumérer les appareils connectés à l’ordinateur. Quelle que soit la façon dont les appareils sont connectés, vous pouvez exécuter la commande suivante à l’invite de commandes, pour voir tous les appareils connectés :
     
     ```command
     adb devices
@@ -127,11 +127,11 @@ Par défaut, [Android Debug Bridge](https://developer.android.com/tools/help/adb
 
 ## <a name="troubleshooting"></a>Dépannage
 
-Dans certains cas, vous pouvez constater que votre appareil ne peut pas se connecter à l’ordinateur. Dans ce cas, vous souhaiterez peut-être vérifier que les pilotes USB sont installés.
+Dans certains cas, vous pouvez constater que votre appareil ne peut pas se connecter à l’ordinateur. Dans ce cas, vous pouvez vérifier que les pilotes USB sont installés.
 
 ## <a name="install-usb-drivers"></a>Installer les pilotes USB
 
-Cette étape n’est pas nécessaire pour macOS. Connectez simplement l’appareil au Mac à l’aide d’un câble USB.
+Cette étape n’est pas nécessaire pour macOS; il suffit de connecter l’appareil au Mac avec un câble USB.
 
 D’autres pilotes seront peut-être nécessaires pour que l’ordinateur Windows puisse reconnaître l’appareil Android connecté par un câble USB.
 
@@ -151,7 +151,7 @@ Pour installer le paquet **Google USB Driver**, démarrez le Gestionnaire Androi
 
 ![](set-up-device-for-development-images/google-usb-driver.png "Google USB driver selected")
 
-Cochez la case **pilote USB Google** , puis cliquez sur le bouton **appliquer les modifications** .
+Vérifiez la boîte **Google USB Driver** et cliquez sur le bouton Modifier **l’application.**
 Les fichiers du pilote sont téléchargés à l’emplacement suivant :
 
 `[Android SDK install path]\extras\google\usb\_driver`
@@ -182,7 +182,7 @@ Pour installer les pilotes sur Windows 7 :
 
 8. Cliquez sur **Suivant** pour installer le pilote.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Vous venez de voir comment configurer un appareil Android pour le développement, en activant le débogage sur celui-ci. Vous avez également vu comment connecter l’appareil à un ordinateur à l’aide d’une connexion USB ou Wi-Fi.
 

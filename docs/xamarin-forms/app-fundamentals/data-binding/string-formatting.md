@@ -8,23 +8,23 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
 ms.openlocfilehash: bdd28e1ce6d36a0a025ac43a709af2e38a313526
-ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "76940380"
 ---
 # <a name="xamarinforms-string-formatting"></a>Formatage de chaîne dans Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+[![Télécharger](~/media/shared/download.png) l’échantillon Télécharger l’échantillon](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 Il est parfois pratique d’utiliser des liaisons de données pour afficher la représentation de chaîne d’un objet ou d’une valeur. Par exemple, vous souhaiterez peut-être utiliser un objet `Label` pour afficher la valeur actuelle d’un élément `Slider`. Dans cette liaison de données, l’élément `Slider` est la source, et la cible est la propriété `Text` de l’objet `Label`.
 
-Lors de l’affichage de chaînes dans le code, l’outil le plus puissant est la méthode statique [`String.Format`](xref:System.String.Format(System.String,System.Object)). La chaîne de formatage inclut des codes de formatage spécifiques à différents types d’objets, et vous pouvez inclure un autre texte avec les valeurs en cours de formatage. Pour plus d’informations sur le formatage de chaîne, consultez [Mettre en forme des types dans .NET](/dotnet/standard/base-types/formatting-types/).
+Lors de l’affichage des chaînes dans [`String.Format`](xref:System.String.Format(System.String,System.Object)) le code, l’outil le plus puissant est la méthode statique. La chaîne de formatage inclut des codes de formatage spécifiques à différents types d’objets, et vous pouvez inclure un autre texte avec les valeurs en cours de formatage. Pour plus d’informations sur le formatage de chaîne, consultez [Mettre en forme des types dans .NET](/dotnet/standard/base-types/formatting-types/).
 
 ## <a name="the-stringformat-property"></a>Propriété StringFormat
 
-Cette fonctionnalité est reportée dans les liaisons de données : Vous définissez la propriété [`StringFormat`](xref:Xamarin.Forms.BindingBase.StringFormat) de `Binding` (ou la propriété [`StringFormat`](xref:Xamarin.Forms.Xaml.BindingExtension.StringFormat) de l’extension de balisage `Binding`) sur une chaîne de formatage standard avec un espace réservé :
+Cette installation est reportée dans des liaisons `Binding` de données [`StringFormat`](xref:Xamarin.Forms.Xaml.BindingExtension.StringFormat) : `Binding` vous définissez la [`StringFormat`](xref:Xamarin.Forms.BindingBase.StringFormat) propriété (ou la propriété de l’extension de balisage) à une chaîne de formatage .NET standard avec un propriétaire de place :
 
 ```xaml
 <Slider x:Name="slider" />
@@ -176,15 +176,15 @@ Cette approche est illustrée dans l’exemple **Better Color Selector** (Meille
 
 Il existe désormais trois paires d’éléments `Slider` et `Label` qui sont liés à la même propriété source de l’objet `HslColorViewModel`. La seule différence est que l’objet `Label` a une propriété `StringFormat` pour afficher chaque valeur `Slider`.
 
-[![Better Color Selector](string-formatting-images/bettercolorselector-small.png "Better Color Selector (Meilleur sélecteur de couleur)")](string-formatting-images/bettercolorselector-large.png#lightbox "Better Color Selector (Meilleur sélecteur de couleur)") (Meilleur sélecteur de couleur)
+[![Better Color Selector (Meilleur sélecteur de couleur)](string-formatting-images/bettercolorselector-small.png "Better Color Selector (Meilleur sélecteur de couleur)")](string-formatting-images/bettercolorselector-large.png#lightbox "Better Color Selector (Meilleur sélecteur de couleur)")
 
 Vous vous demandez peut-être comment afficher les valeurs RVB (rouge, vert, bleu) au format hexadécimal à deux chiffres traditionnel. Ces valeurs entières ne sont pas directement disponibles à partir de la structure `Color`. Une solution consisterait à calculer les valeurs entières des composantes de couleur dans le ViewModel et à les exposer en tant que propriétés. Vous pourriez alors les formater à l’aide de la spécification de formatage `X2`.
 
-Une autre approche est plus générale : Vous pouvez écrire un *convertisseur de valeurs de liaison* comme indiqué dans le prochain article, [**Convertisseurs de valeurs de liaison**](converters.md).
+Une autre approche est plus générale : vous pouvez écrire un *convertisseur de valeurs de liaison* comme indiqué dans le prochain article, [**Convertisseurs de valeurs de liaison**](converters.md).
 
 Le prochain article, toutefois, explore le [**chemin de liaison**](binding-path.md) plus en détail et montre comment vous pouvez l’utiliser pour référencer des sous-propriétés et des éléments dans des collections.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
-- [Démos des liaisons de données (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+- [Démonstrations de liaison de données (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 - [Chapitre sur les liaisons de données dans la documentation de Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

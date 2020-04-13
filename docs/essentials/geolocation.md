@@ -6,17 +6,17 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 03/13/2019
 ms.openlocfilehash: 840aadcafea88ef08f53e16f535439be0862fee9
-ms.sourcegitcommit: 6c60914b380ff679bbffd7790edd4d5e18005d0a
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "80070358"
 ---
 # <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials : géolocalisation
 
 La classe **Geolocation** fournit des API permettant de récupérer les coordonnées de géolocalisation de l’appareil.
 
-## <a name="get-started"></a>Bien démarrer
+## <a name="get-started"></a>Prise en main
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -24,9 +24,9 @@ Pour accéder à la fonctionnalité de **géolocalisation**, la configuration su
 
 # <a name="android"></a>[Android](#tab/android)
 
-Les autorisations de localisation approximative et de localisation précise sont obligatoires, et doivent être configurées dans le projet Android. De plus, si votre application cible Android 5.0 (niveau d’API 21) ou une version ultérieure, vous devez déclarer que votre application utilise les fonctionnalités matérielles dans le fichier manifeste. Vous pouvez le faire de plusieurs façons, comme indiqué ci-dessous :
+Les autorisations de localisation approximative et de localisation précise sont obligatoires, et doivent être configurées dans le projet Android. De plus, si votre application cible Android 5.0 (niveau d’API 21) ou une version ultérieure, vous devez déclarer que votre application utilise les fonctionnalités matérielles dans le fichier manifeste. Vous pouvez l’ajouter des façons suivantes :
 
-Ouvrez le fichier **AssemblyInfo.cs** sous le dossier **Propriétés**, puis ajoutez :
+Ouvrez le fichier **AssemblyInfo.cs** sous le dossier **Propriétés** et ajoutez :
 
 ```csharp
 [assembly: UsesPermission(Android.Manifest.Permission.AccessCoarseLocation)]
@@ -48,7 +48,7 @@ Ouvrez le fichier **AndroidManifest.xml** sous le dossier **Propriétés**, puis
 <uses-feature android:name="android.hardware.location.network" android:required="false" />
 ```
 
-Vous pouvez également cliquer avec le bouton droit sur le projet Android, et ouvrir les propriétés du projet. Sous **Manifeste Android**, recherchez la zone **Autorisations nécessaires**, puis cochez les autorisations **ACCESS_COARSE_LOCATION** et **ACCESS_FINE_LOCATION**. Cela met automatiquement à jour le fichier **AndroidManifest.xml**.
+Vous pouvez également cliquer avec le bouton droit sur le projet Android, et ouvrir les propriétés du projet. Sous **Manifeste Android**, recherchez la zone **Autorisations nécessaires**, puis cochez les autorisations **ACCESS_COARSE_LOCATION** et **ACCESS_FINE_LOCATION**. Cela entraîne la mise à jour automatique du fichier **AndroidManifest.xml**.
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
@@ -178,7 +178,7 @@ Le tableau suivant indique la précision en fonction de la plateforme :
 | iOS | 10 |
 | UWP | <= 10 |
 
-### <a name="best"></a>Le meilleur
+### <a name="best"></a>La meilleure
 
 | Plateforme | Distance (en mètres) |
 | --- | --- |
@@ -189,7 +189,7 @@ Le tableau suivant indique la précision en fonction de la plateforme :
 <a name="calculate-distance" />
 
 ## <a name="detecting-mock-locations"></a>Détection des emplacements fictifs
-Certains appareils peuvent retourner un emplacement fictif du fournisseur ou par une application qui fournit des emplacements fictifs. Vous pouvez le détecter à l’aide de `IsFromMockProvider` sur tout [`Location`](xref:Xamarin.Essentials.Location).
+Certains appareils peuvent retourner un emplacement fictif du fournisseur ou par une application qui fournit des emplacements fictifs. Vous pouvez détecter cela `IsFromMockProvider` en [`Location`](xref:Xamarin.Essentials.Location)utilisant le sur n’importe quel .
 
 ```csharp
 var request = new GeolocationRequest(GeolocationAccuracy.Medium);
@@ -206,7 +206,7 @@ if (location != null)
 
 ## <a name="distance-between-two-locations"></a>Distance entre deux emplacements
 
-Les classes [`Location`](xref:Xamarin.Essentials.Location) et [`LocationExtensions`](xref:Xamarin.Essentials.LocationExtensions) définissent les méthodes `CalculateDistance` qui vous permettent de calculer la distance entre deux emplacements géographiques. Cette distance calculée ne prend pas en compte les routes et autres chemins. Elle constitue simplement la distance la plus courte entre deux points à la surface de la Terre, également appelée _distance orthodromique_ ou, familièrement, distance « à vol d’oiseau ».
+Les [`Location`](xref:Xamarin.Essentials.Location) [`LocationExtensions`](xref:Xamarin.Essentials.LocationExtensions) classes `CalculateDistance` et les classes définissent des méthodes qui vous permettent de calculer la distance entre deux emplacements géographiques. Cette distance calculée ne prend pas en compte les routes et autres chemins. Elle constitue simplement la distance la plus courte entre deux points à la surface de la Terre, également appelée _distance orthodromique_ ou, familièrement, distance « à vol d’oiseau ».
 
 Voici un exemple :
 
@@ -218,21 +218,21 @@ double miles = Location.CalculateDistance(boston, sanFrancisco, DistanceUnits.Mi
 
 Le constructeur `Location` a des arguments de latitude et de longitude dans cet ordre. Les valeurs de latitude positives sont au nord de l’équateur, et les valeurs de longitude positives sont à l’est du premier méridien. Utilisez le dernier argument pour `CalculateDistance` afin de spécifier des miles ou des kilomètres. La classe `UnitConverters` définit également les méthodes `KilometersToMiles` et `MilesToKilometers` pour effectuer la conversion entre les deux unités.
 
-## <a name="platform-differences"></a>Différences de plateformes
+## <a name="platform-differences"></a>Différences entre les plateformes
 
-L’altitude est calculée différemment sur chaque plateforme.
+L’altitude est calculée différemment sur chaque plate-forme.
 
 # <a name="android"></a>[Android](#tab/android)
 
-Sur Android, l' [altitude](https://developer.android.com/reference/android/location/Location#getAltitude()), si elle est disponible, est retournée en mètres au-dessus de la référence WGS 84 ellipsoïde. Si cet emplacement n’a pas d’altitude, 0,0 est retourné.
+Sur Android, [l’altitude,](https://developer.android.com/reference/android/location/Location#getAltitude())si disponible, est retourné en mètres au-dessus de l’ellipsoïde de référence WGS 84. Si cet emplacement n’a pas d’altitude, alors 0,0 est retourné.
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
-Sur iOS, l' [altitude](https://developer.apple.com/documentation/corelocation/cllocation/1423820-altitude) est mesurée en mètres. Les valeurs positives indiquent des altitudes au-dessus du niveau de la mer, tandis que les valeurs négatives indiquent des altitudes inférieures au niveau de la mer.
+Sur iOS, [l’altitude](https://developer.apple.com/documentation/corelocation/cllocation/1423820-altitude) est mesurée en mètres. Les valeurs positives indiquent des altitudes au-dessus du niveau de la mer, tandis que les valeurs négatives indiquent des altitudes sous le niveau de la mer.
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
 
-Sur UWP, l’altitude est retournée en mètres. Pour plus d’informations, consultez la documentation de [AltitudeReferenceSystem](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geopoint.altitudereferencesystem#Windows_Devices_Geolocation_Geopoint_AltitudeReferenceSystem) .
+Sur UWP, l’altitude est retournée en mètres. Consultez la documentation [AltitudeReferenceSystem](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geopoint.altitudereferencesystem#Windows_Devices_Geolocation_Geopoint_AltitudeReferenceSystem) pour plus d’informations.
 
 -----
 

@@ -1,5 +1,5 @@
 ---
-title: Performances multiplateformes
+title: Niveau de performance multiplateforme
 description: Ce document décrit différentes techniques que vous pouvez utiliser pour améliorer les performances d’une application mobile. Il traite du profileur, de la ressource IDisposable, des références faibles, du récupérateur de mémoire SGen, des techniques de réduction de taille et bien plus encore.
 ms.prod: xamarin
 ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
@@ -7,15 +7,15 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/24/2017
 ms.openlocfilehash: d0b195b90bb57b6d0717c0fb06d0202857851fe7
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73016528"
 ---
-# <a name="cross-platform-performance"></a>Performances multiplateformes
+# <a name="cross-platform-performance"></a>Niveau de performance multiplateforme
 
-Pour une application, la dégradation des performances peut se traduire de différentes façons. L’application semble ne pas répondre, le défilement de l’affichage est ralenti et la durée de vie de la batterie de l’appareil réduite. Toutefois, l’optimisation des performances implique davantage de choses que l’implémentation d’un code efficace. L’expérience utilisateur liée au niveau de performance de l’application doit également être prise en compte. Par exemple, le fait de garantir que l’exécution de certaines opérations ne va pas empêcher l’utilisateur d’effectuer d’autres activités peut améliorer son expérience de l’application.
+Le mauvais niveau de performance d’une application se présente de plusieurs façons. L’application semble ne pas répondre, le défilement de l’affichage est ralenti et la durée de vie de la batterie de l’appareil réduite. Toutefois, l’optimisation des performances implique davantage de choses que l’implémentation d’un code efficace. L’expérience utilisateur liée au niveau de performance de l’application doit également être prise en compte. Par exemple, pour contribuer à améliorer l’expérience utilisateur, vous devez vérifier que les opérations s’exécutent sans empêcher l’utilisateur d’effectuer d’autres activités.
 
 <a name="profiler" />
 
@@ -337,7 +337,7 @@ Pour en savoir plus, lisez ce billet de blog : [How To Keep Your Android App Si
 
 ## <a name="optimize-image-resources"></a>Optimiser les ressources d’images
 
-Les images font partie des ressources les plus coûteuses qui sont utilisées par les applications, et sont souvent capturées en haute résolution. Même si cela permet d’avoir des images nettes et riches en détails, les applications qui affichent ce type d’images nécessitent généralement une plus grande utilisation du processeur pour décoder les images, et davantage de mémoire pour stocker les images décodées. Le décodage d’une image haute résolution dans la mémoire peut être vu comme un gaspillage de ressources lorsque l’on sait que l’image va être réduite pour son affichage dans l’application. Au lieu de cela, vous pouvez réduire l’utilisation du processeur et l’encombrement de la mémoire en créant plusieurs résolutions pour les images stockées qui s’approchent des tailles d’affichage prévues. Par exemple, une image qui doit s’afficher dans une liste aura probablement besoin d’une résolution inférieure à celle d’une image devant s’afficher en plein écran. En outre, les versions réduites des images haute résolution peuvent être chargées afin d’être affichées de manière efficace, avec une incidence minimale sur la mémoire. Pour plus d’informations, consultez [Charger des bitmaps volumineux de manière efficace](https://github.com/xamarin/recipes/tree/master/Recipes/android/resources/general/load_large_bitmaps_efficiently).
+Les images font partie des ressources les plus coûteuses qui sont utilisées par les applications et sont souvent capturées en haute résolution. Même si cela permet d’avoir des images nettes et riches en détails, les applications qui affichent ce type d’images nécessitent généralement une plus grande utilisation du processeur pour décoder les images, et davantage de mémoire pour stocker les images décodées. Le décodage d’une image haute résolution dans la mémoire peut être vu comme un gaspillage de ressources lorsque l’on sait que l’image va être réduite pour son affichage dans l’application. Au lieu de cela, vous pouvez réduire l’utilisation du processeur et l’encombrement de la mémoire en créant plusieurs résolutions pour les images stockées qui s’approchent des tailles d’affichage prévues. Par exemple, une image qui doit s’afficher dans une liste aura probablement besoin d’une résolution inférieure à celle d’une image devant s’afficher en plein écran. En outre, les versions réduites des images haute résolution peuvent être chargées afin d’être affichées de manière efficace, avec une incidence minimale sur la mémoire. Pour plus d’informations, consultez [Charger des bitmaps volumineux de manière efficace](https://github.com/xamarin/recipes/tree/master/Recipes/android/resources/general/load_large_bitmaps_efficiently).
 
 Quelle que soit la résolution des images, l’affichage de ressources d’images peut augmenter considérablement l’encombrement mémoire de l’application. Par conséquent, elles ne doivent être créées que si elles sont nécessaires, et doivent être libérées dès que l’application n’en a plus besoin.
 
@@ -367,13 +367,13 @@ Les données récupérées à partir du service web doivent être mises en cache
 
 ## <a name="summary"></a>Récapitulatif
 
-Cet article a abordé les techniques qui permettent d’accroître les performances des applications conçues sur la plateforme Xamarin. Collectivement, ces techniques peuvent considérablement réduire la charge de travail d’un processeur, de même que la quantité de mémoire consommée par une application.
+Cet article a abordé les techniques qui permettent d’accroître les performances des applications conçues sur la plateforme Xamarin. Utilisées conjointement, ces techniques peuvent considérablement réduire la charge de travail d’une UC, ainsi que la quantité de mémoire consommée par une application.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Performances des applications Xamarin.iOS](~/ios/deploy-test/performance.md)
 - [Performances de Xamarin.Android](~/android/deploy-test/performance.md)
 - [Introduction de Xamarin Profiler](~/tools/profiler/index.md)
-- [Niveau de performance de Xamarin.Forms](~/xamarin-forms/deploy-test/performance.md)
-- [Vue d’ensemble de la prise en charge asynchrone](~/cross-platform/platform/async.md)
+- [Xamarin.Forms Performance](~/xamarin-forms/deploy-test/performance.md)
+- [Aperçu du support Async](~/cross-platform/platform/async.md)
 - [IDisposable](xref:System.IDisposable)

@@ -1,18 +1,18 @@
 ---
-title: 'Xamarin.Essentials: Résolution des problèmes'
+title: 'Xamarin.Essentials : résolution des problèmes'
 description: Ce document explique comment résoudre les problèmes rencontrés lors d’un développement avec la bibliothèque Xamarin.Essentials.
 ms.assetid: 2E474FAF-F841-4E3C-B815-F7ABD8EE3361
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 01/06/2020
 ms.openlocfilehash: 2bd537a782b7090207b09ca02c5dfe5c4422a9ad
-ms.sourcegitcommit: fec87846fcb262fc8b79774a395908c8c8fc8f5b
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/21/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "77545142"
 ---
-# <a name="xamarinessentials-troubleshooting"></a>Xamarin.Essentials: Résolution des problèmes
+# <a name="xamarinessentials-troubleshooting"></a>Xamarin.Essentials : résolution des problèmes
 
 ## <a name="error-version-conflict-detected-for-xamarinandroidsupportcompat"></a>Erreur : Conflit de version détecté pour Xamarin.Android.Support.Compat
 
@@ -26,7 +26,7 @@ NU1107: Version conflict detected for Xamarin.Android.Support.Compat. Reference 
 
 Le problème se rapporte à des dépendances incompatibles pour les deux packages NuGet. Pour résoudre ce problème, vous pouvez ajouter manuellement une version spécifique de la dépendance (dans ce cas **Xamarin.Android.Support.Compat**) capable de prendre en charge les deux.
 
-Pour ce faire, ajoutez manuellement le package NuGet qui est la source du conflit et utilisez la liste **Version** pour sélectionner une version spécifique. Actuellement, la version 28.0.0.3 du package NuGet Xamarin.Android.Support.Compat & Xamarin.Android.Support.Core.Util résout cette erreur.
+Pour ce faire, ajoutez manuellement le package NuGet qui est la source du conflit et utilisez la liste **Version** pour sélectionner une version spécifique. Actuellement version 28.0.0.3 du Xamarin.Android.Support.Compat & Xamarin.Android.Support.Core.Util NuGet résoudra cette erreur.
 
 Reportez-vous à [ce billet de blog](https://redth.codes/how-to-fix-the-dreaded-version-conflict-nuget-error-in-your-xamarin-android-projects/) pour plus d’informations et une vidéo sur la façon de résoudre le problème.
 

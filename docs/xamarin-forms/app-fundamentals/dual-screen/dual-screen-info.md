@@ -1,5 +1,5 @@
 ---
-title: Fonctionnalités de l’appareil à deux écrans Xamarin. Forms
+title: Xamarin.Forms capacités de dispositif à double écran
 description: Ce guide explique comment utiliser la classe DualScreenInfo de Xamarin.Forms pour optimiser l’expérience de votre application sur des appareils double écran comme Surface Duo et Surface Neo.
 ms.prod: xamarin
 ms.assetid: dd5eb074-f4cb-4ab4-b47d-76f862ac7cfa
@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidortinau
 ms.author: daortin
 ms.date: 02/08/2020
-ms.openlocfilehash: 8dda1960fceaf7738c44d58b10149b8c20fa543f
-ms.sourcegitcommit: 5b6d3bddf7148f8bb374de5657bdedc125d72ea7
+ms.openlocfilehash: 3393f8f4468b58289443af3d2eea558cca4588d2
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78160598"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "80628258"
 ---
-# <a name="xamarinforms-dual-screen-device-capabilities"></a>Fonctionnalités de l’appareil à deux écrans Xamarin. Forms
+# <a name="xamarinforms-dual-screen-device-capabilities"></a>Xamarin.Forms capacités de dispositif à double écran
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/DualScreenDemos)
+[![Télécharger](~/media/shared/download.png) l’échantillon Télécharger l’échantillon](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
 
 La classe `DualScreenInfo` vous permet de déterminer le volet où se trouve votre vue, sa taille, la position de l’appareil, l’angle de la charnière, etc.
 
@@ -214,4 +214,4 @@ La capture d’écran suivante montre la disposition résultante :
 
 ## <a name="related-links"></a>Liens connexes
 
-- [DualScreen (sample)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/DualScreenDemos)
+- [DualScreen (sample)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)

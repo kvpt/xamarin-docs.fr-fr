@@ -8,19 +8,19 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/21/2016
 ms.openlocfilehash: 73e312a1af56091a7e579d3fcbcea810ee0efb1e
-ms.sourcegitcommit: 266e75fa6893d3732e4e2c0c8e79c62be2804468
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "68820967"
 ---
 # <a name="adding-a-pan-gesture-recognizer"></a>Ajout d’un module de reconnaissance des mouvements panoramiques
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-pangesture)
+[![Télécharger](~/media/shared/download.png) l’échantillon Télécharger l’échantillon](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-pangesture)
 
-_Le mouvement panoramique est utilisé pour détecter le mouvement des doigts sur l’écran et l’appliquer au contenu. Il est implémenté avec la classe `PanGestureRecognizer`. Un scénario courant du mouvement panoramique est l’exécution d’un panoramique horizontal et vertical d’une image pour que tout le contenu de l’image soit visible quand il est affiché dans une fenêtre d’affichage plus petite que les dimensions de l’image. Cette action est accomplie en déplaçant l’image dans la fenêtre d’affichage, elle est illustrée dans cet article._
+_Le geste de casserole est employé pour détecter le mouvement des doigts autour de `PanGestureRecognizer` l’écran et appliquer ce mouvement au contenu, et est implémenté avec la classe. Un scénario commun pour le geste de pan est de panoramique horizontalement et verticalement une image, de sorte que tout le contenu de l’image peut être visualisé quand il est affiché dans un viewport plus petit que les dimensions d’image. Ceci est accompli en déplaçant l’image dans le viewport, et est démontré dans cet article._
 
-Pour qu’un élément d’interface utilisateur puisse être déplacé avec un mouvement panoramique, créez une instance [`PanGestureRecognizer`](xref:Xamarin.Forms.PanGestureRecognizer), traitez l’événement [`PanUpdated`](xref:Xamarin.Forms.PanGestureRecognizer.PanUpdated) et ajoutez le nouveau module de reconnaissance de geste à la collection [`GestureRecognizers`](xref:Xamarin.Forms.View.GestureRecognizers) sur l’élément d’interface utilisateur. L'exemple de code suivant montre un `PanGestureRecognizer` attaché à un élément [`Image`](xref:Xamarin.Forms.Image) :
+Pour rendre un élément d’interface utilisateur évoluable avec le geste de pan, créez une [`PanGestureRecognizer`](xref:Xamarin.Forms.PanGestureRecognizer) instance, gérez l’événement [`PanUpdated`](xref:Xamarin.Forms.PanGestureRecognizer.PanUpdated) et ajoutez le nouveau gestateur à la [`GestureRecognizers`](xref:Xamarin.Forms.View.GestureRecognizers) collection sur l’élément d’interface utilisateur. L’exemple de `PanGestureRecognizer` code suivant [`Image`](xref:Xamarin.Forms.Image) montre un élément attaché à un élément :
 
 ```csharp
 var panGesture = new PanGestureRecognizer();
@@ -74,7 +74,7 @@ public class PanContainer : ContentView
 }
 ```
 
-Cette classe peut être encapsulée autour d’un élément d’interface utilisateur pour que le geste effectue un panoramique de l’élément d’interface utilisateur encapsulé. L’exemple de code XAML suivant montre l’encapsulage `PanContainer` d’un élément [`Image`](xref:Xamarin.Forms.Image) :
+Cette classe peut être encapsulée autour d’un élément d’interface utilisateur pour que le geste effectue un panoramique de l’élément d’interface utilisateur encapsulé. L’exemple de code XAML suivant montre l’emballage `PanContainer` d’un [`Image`](xref:Xamarin.Forms.Image) élément :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -91,7 +91,7 @@ Cette classe peut être encapsulée autour d’un élément d’interface utilis
 </ContentPage>
 ```
 
-L’exemple de code suivant montre comment `PanContainer` encapsule un élément [`Image`](xref:Xamarin.Forms.Image) dans une page C# :
+L’exemple de code `PanContainer` suivant [`Image`](xref:Xamarin.Forms.Image) montre comment l’enveloppe un élément dans une page C :
 
 ```csharp
 public class HomePageCS : ContentPage
@@ -114,9 +114,9 @@ public class HomePageCS : ContentPage
 }
 ```
 
-Dans les deux exemples, les propriétés [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) et [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) sont définies sur les valeurs de largeur et de hauteur de l’image affichée.
+Dans les deux [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) exemples, les propriétés et les propriétés sont définies à la largeur et aux valeurs de hauteur de l’image affichée.
 
-Quand l’élément [`Image`](xref:Xamarin.Forms.Image) reçoit un mouvement panoramique, l’image affichée fait l’objet d’un panoramique. Le panoramique est exécuté par la méthode `PanContainer.OnPanUpdated`, ce qui est illustré dans l’exemple de code suivant :
+Lorsque [`Image`](xref:Xamarin.Forms.Image) l’élément reçoit un geste pan, l’image affichée sera en panne. Le panoramique est exécuté par la méthode `PanContainer.OnPanUpdated`, ce qui est illustré dans l’exemple de code suivant :
 
 ```csharp
 void OnPanUpdated (object sender, PanUpdatedEventArgs e)
@@ -139,14 +139,14 @@ void OnPanUpdated (object sender, PanUpdatedEventArgs e)
 }
 ```
 
-Cette méthode met à jour le contenu visible de l’élément d’interface utilisateur encapsulé, en fonction du mouvement panoramique de l’utilisateur. Pour cela, vous devez utiliser les valeurs des propriétés [`TotalX`](xref:Xamarin.Forms.PanUpdatedEventArgs.TotalX) et [`TotalY`](xref:Xamarin.Forms.PanUpdatedEventArgs.TotalY) de l’instance [`PanUpdatedEventArgs`](xref:Xamarin.Forms.PanUpdatedEventArgs) pour calculer la direction et la distance du panoramique. Les propriétés `App.ScreenWidth` et `App.ScreenHeight` fournissent la hauteur et la largeur de la fenêtre d’affichage, et sont définies sur les valeurs de largeur et hauteur de l’écran de l’appareil par les projets respectifs propres à la plateforme. L’élément utilisateur encapsulé fait ensuite l’objet d’un panoramique en définissant ses propriétés [`TranslationX`](xref:Xamarin.Forms.VisualElement.TranslationX) et [`TranslationY`](xref:Xamarin.Forms.VisualElement.TranslationY) sur les valeurs calculées.
+Cette méthode met à jour le contenu visible de l’élément d’interface utilisateur encapsulé, en fonction du mouvement panoramique de l’utilisateur. Ceci est réalisé en utilisant [`TotalX`](xref:Xamarin.Forms.PanUpdatedEventArgs.TotalX) [`TotalY`](xref:Xamarin.Forms.PanUpdatedEventArgs.TotalY) les valeurs [`PanUpdatedEventArgs`](xref:Xamarin.Forms.PanUpdatedEventArgs) de l’instance et les propriétés de l’instance pour calculer la direction et la distance de la casserole. Les propriétés `App.ScreenWidth` et `App.ScreenHeight` fournissent la hauteur et la largeur de la fenêtre d’affichage, et sont définies sur les valeurs de largeur et hauteur de l’écran de l’appareil par les projets respectifs propres à la plateforme. L’élément utilisateur enveloppé est ensuite [`TranslationX`](xref:Xamarin.Forms.VisualElement.TranslationX) [`TranslationY`](xref:Xamarin.Forms.VisualElement.TranslationY) en panne en définissant son et ses propriétés aux valeurs calculées.
 
-Quand vous effectuez un panoramique d’un élément qui n’occupe pas tout l’écran, la hauteur et la largeur de la fenêtre d’affichage peuvent être obtenues à partir des propriétés [`Height`](xref:Xamarin.Forms.VisualElement.Height) et [`Width`](xref:Xamarin.Forms.VisualElement.Width) de l’élément.
+Lorsque le contenu panoramique dans un élément qui n’occupe pas le plein écran, la hauteur [`Height`](xref:Xamarin.Forms.VisualElement.Height) [`Width`](xref:Xamarin.Forms.VisualElement.Width) et la largeur du port de vue peuvent être obtenues à partir de l’élément et les propriétés.
 
 > [!NOTE]
 > L’affichage d’images haute résolution peut augmenter considérablement l’empreinte mémoire d’une application. Par conséquent, elles doivent être créées seulement si elles sont nécessaires et doivent être libérées dès que l’application n’en a plus besoin. Pour plus d’informations, consultez [Optimiser les ressources d’images](~/xamarin-forms/deploy-test/performance.md#optimize-image-resources).
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [PanGesture (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-pangesture)
 - [GestureRecognizer](xref:Xamarin.Forms.GestureRecognizer)

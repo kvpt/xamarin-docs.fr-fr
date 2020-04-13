@@ -8,23 +8,23 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
 ms.openlocfilehash: d0acd44561b220507aafda7af05cd2862f6c9009
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73021701"
 ---
 # <a name="application-icon-for-xamarinmac-apps"></a>Icône d’application pour les applications Xamarin.Mac
 
 _Cet article traite de la création des images nécessaires à l’icône d’une application Xamarin.Mac, de leur regroupement dans un fichier .icns et de l’ajout de l’icône dans le projet Xamarin.Mac._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d’ensemble
 
 Quand un développeur utilise C# et .NET dans une application Xamarin.Mac, il a accès aux mêmes outils d’image et d’icône qu’un développeur travaillant en *Objective-C* et en *Xcode*.
 
 Une icône de qualité doit véhiculer l’objectif principal d’une application Xamarin.Mac et suggérer l’expérience que l’utilisateur doit attendre lors de cette dernière. Cet article couvre toutes les étapes nécessaires pour créer les ressources d’image nécessaires pour une icône, en empaquetant ces ressources dans un fichier `AppIcon.appiconset` et en utilisant ce fichier dans une application Xamarin.Mac.
 
-![L’éditeur AppIcon. appiconset](app-icon-images/intro01.png "L’éditeur AppIcon. appiconset")
+![L’éditeur AppIcon.appiconset](app-icon-images/intro01.png "L’éditeur AppIcon.appiconset")
 
 ## <a name="application-icon"></a>Icône d'application
 
@@ -50,10 +50,10 @@ Lisez les sections [Galerie d’icônes d’application](https://developer.apple
 
 Comme toute autre ressource d’image que le développeur va utiliser dans une application Xamarin.Mac, l’icône de l’application doit être fournie à la fois dans une version de résolution standard et de résolution Retina. Là encore, comme toute autre image, utilisez un format `@2x` quand vous nommez les fichiers d’icône :
 
-- **Résolution standard**  - _NomImage_ **.** _nomfichier-extension_ (Exemple : **icon_512x512.png**)
-- **Haute résolution**  - _NomImage_ **@2x.** _nomfichier-extension_ (Exemple : **icon_512x512@2x.png** )
+- **ImageName Standard-Resolution**  - _ImageName_**.** _fichiername-extension_ (Exemple: **icon_512x512.png**)
+- **ImageName**  - _haute_résolution .**@2x** _fichier nom-extension_ (Exemple: **icon_512x512@2x.png**)
 
-Par exemple, pour fournir la version 512 x 512 de l’icône de l’application, le fichier serait nommé **icon_512x512.png** et **icon_512x512@2x.png** .
+Par exemple, pour fournir la version 512 x 512 de l’icône de l’application, le fichier serait nommé **icon_512x512.png** et **icon_512x512@2x.png**.
 
 Pour vérifier que l’icône s’affiche parfaitement dans tous les emplacements où les utilisateurs la voient, fournissez les ressources dans les tailles répertoriées ci-dessous :
 
@@ -76,21 +76,21 @@ Pour plus d’informations, consultez la documentation [Fournir les versions hau
 
 Quand l’icône est conçue et enregistrée avec les tailles de fichier et noms obligatoires, Visual Studio pour Mac permet de l’affecter facilement aux ressources d’image pour qu’elle soit utilisée dans Xamarin.Mac.
 
-Effectuez ce qui suit :
+Effectuez les actions suivantes :
 
 1. Dans le **Panneau Solutions**, ouvrez **Assets.xcassets** > **AppIcons.appiconset** : 
 
-    ![Modification de AppIcon. appiconset](app-icon-images/intro01.png "Modification de AppIcon. appiconset")
+    ![Montage de l’AppIcon.appiconset](app-icon-images/intro01.png "Montage de l’AppIcon.appiconset")
 2. Pour chaque taille d’icône exigée, cliquez sur l’icône, puis sélectionnez le fichier image correspondant créé ci-dessus : 
 
     [![Sélection d’une image d’icône](app-icon-images/intro02.png "Sélection d’une image d’icône")](app-icon-images/intro02-large.png#lightbox)
-3. Enregistrez les modifications apportées.
+3. Enregistrez vos modifications.
 
 ## <a name="using-the-icon"></a>Utilisation de l’icône
 
 Une fois le fichier `AppIcon.appiconset` généré, il doit être affecté au projet Xamarin.Mac dans Visual Studio pour Mac.
 
-Effectuez ce qui suit :
+Effectuez les actions suivantes :
 
 1. Double-cliquez sur le fichier **Info.plist** dans le **Panneau Solutions** pour ouvrir les **Options du projet**.
 2. Dans la section **Cible d’application Mac OS X**, cliquez sur **Icônes d’application** pour sélectionner le fichier `AppIcon.appiconset` : 
@@ -100,17 +100,17 @@ Effectuez ce qui suit :
 
 Quand l’application est exécutée, la nouvelle icône s’affiche dans la station d’accueil :
 
-![Exemple d’icône d’application dans la station d’accueil macOS](app-icon-images/icon04.png "Exemple d’icône d’application dans la station d’accueil macOS")
+![Un exemple d’icône d’application dans le dock macOS](app-icon-images/icon04.png "Un exemple d’icône d’application dans le dock macOS")
 
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a examiné en détail l’utilisation des images nécessaires pour créer une icône d’application macOS, l’empaquetage d’une icône et l’inclusion d’une icône dans un projet Xamarin.Mac.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [MacImages (exemple)](https://docs.microsoft.com/samples/xamarin/mac-samples/macimages)
 - [Hello, Mac](~/mac/get-started/hello-mac.md)
-- [Utilisation d’images](~/mac/app-fundamentals/image.md)
+- [Travailler avec Images](~/mac/app-fundamentals/image.md)
 - [Human Interface Guidelines pour macOS - Icons and Images](https://developer.apple.com/macos/human-interface-guidelines/icons-and-images/image-size-and-resolution/)
 - [À propos de la haute résolution pour OS X](https://developer.apple.com/library/content/documentation/GraphicsAnimation/Conceptual/HighResolutionOSX/Introduction/Introduction.html)
 - [Générateur d’icônes](https://itunes.apple.com/us/app/icns-builder/id554660130?mt=12)

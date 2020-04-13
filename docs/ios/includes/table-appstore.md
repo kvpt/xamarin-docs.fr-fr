@@ -1,20 +1,20 @@
 ---
 ms.openlocfilehash: 8cd3861093d4548c5252150cb3c74921c6217b25
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70775846"
 ---
 |ID du genre|Nom du genre|
 |---|---|
-|6000|Bureau|
+|6000|Business|
 |6001|Météo|
-|6002|Utilitaires|
+|6002|Services|
 |6003|Déplacements|
 |6004|Sports|
 |6005|Réseaux sociaux|
-|6006|Référence|
+|6006|Informations de référence|
 |6007|Productivité|
 |6008|Photo et vidéo|
 |6009|Actualités|
@@ -25,7 +25,7 @@ ms.locfileid: "70775846"
 |6014|Jeux|
 |6015|Finances|
 |6016|Divertissement|
-|6017|Éducation|
+|6017|Formation|
 |6018|Livres|
 |6020|Médecine|
 |6021|Newsstand|
@@ -36,10 +36,10 @@ Sous-genres de jeux (6014) :
 |ID du genre|Nom du genre|
 |---|---|
 |7001|Action|
-|7002|Aventure|
+|7002|Adventure|
 |7003|Arcade|
-|7004|Tableau|
-|7005|Cartes|
+|7004|Board|
+|7005|Card|
 |7006|Casino|
 |7007|Dés|
 |7008|Éducatif|
@@ -64,7 +64,7 @@ Sous-genres de kiosques à journaux (6021) :
 |13003|Maison et jardin|
 |13004|Nature et plein air|
 |13005|Sports et loisirs|
-|13006|Automobile|
+|13006|Industrie automobile|
 |13007|Art et photographie|
 |13008|Mariages et mariées|
 |13009|Affaires et investissements|

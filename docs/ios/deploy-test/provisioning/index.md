@@ -1,6 +1,6 @@
 ---
 title: Signature de code et provisionnement pour les applications Xamarin.iOS
-description: Ce document contient des liens vers des guides décrivant l’approvisionnement des appareils, l’utilisation des fonctionnalités, l’utilisation des droits et le fichier info. plist.
+description: Ce document fait l’lien avec des guides qui décrivent la fourniture d’appareils, le travail avec les capacités, le travail avec les droits et le fichier Info.plist.
 ms.prod: xamarin
 ms.assetid: 92B35AB1-7AB7-3D3B-DB31-CC971E0B43AE
 ms.technology: xamarin-ios
@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 01/18/2017
 ms.openlocfilehash: 3f228441ff7be93b5b84f11e73b8410370c29406
-ms.sourcegitcommit: 60d2243809d8e980fca90b9f771e72f8c0e64d71
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "78946287"
 ---
 # <a name="code-signing-and-provisioning-for-xamarinios-apps"></a>Signature de code et provisionnement pour les applications Xamarin.iOS

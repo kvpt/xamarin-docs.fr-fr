@@ -7,13 +7,13 @@ ms.author: jamont
 ms.date: 04/02/2019
 ms.custom: video
 ms.openlocfilehash: c0875534d88ea5b66b3072c35b9d38894fe98934
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58870025"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "61354569"
 ---
-# <a name="xamarinessentials-map"></a>Xamarin.Essentials: Carte
+# <a name="xamarinessentials-map"></a>Xamarin.Essentials : Carte
 
 La classe **Map** permet à une application d’ouvrir l’application de cartes installée à un emplacement spécifique.
 
@@ -72,7 +72,7 @@ public class MapTest
 
 ## <a name="extension-methods"></a>Méthodes d’extension
 
-Si vous avez déjà une référence à un emplacement `Location` ou à un repère `Placemark`, vous pouvez utiliser la méthode d’extension intégrée `OpenMapAsync` avec le paramètre facultatif `MapLaunchOptions`:
+Si vous avez déjà une référence à un `Location` ou `Placemark`, vous pouvez utiliser la méthode d’extension intégrée `OpenMapAsync` avec `MapLaunchOptions` facultatif :
 
 ```csharp
 public class MapTest
@@ -103,15 +103,15 @@ public class MapTest
 
 ## <a name="platform-differences"></a>Différences entre les plateformes
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 - `NavigationMode` prend en charge Bicycling (vélo), Driving (voiture) et Walking (marche).
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 - `NavigationMode` prend en charge Bicycling (vélo), Transit et Walking (marche).
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 - `NavigationMode` prend en charge Bicycling (vélo), Transit et Walking (marche).
 
@@ -119,15 +119,15 @@ public class MapTest
 
 ## <a name="platform-implementation-specifics"></a>Caractéristiques de mise en œuvre de la plateforme
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 Android utilise le schéma d’URI `geo:` pour lancer l’application Cartes sur l’appareil. L’utilisateur peut être invité à sélectionner à partir d’une application existante qui prend en charge ce schéma d’URI.  Xamarin.Essentials est testé avec Google Maps, qui prend en charge ce schéma.
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 Aucun détail d’implémentation spécifique à la plateforme.
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 Aucun détail d’implémentation spécifique à la plateforme.
 

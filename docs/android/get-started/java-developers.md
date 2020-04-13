@@ -8,17 +8,17 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/13/2018
 ms.openlocfilehash: b9c6694ea49607b839a3658e5cc8bac5fb529c85
-ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "75728055"
 ---
 # <a name="xamarin-for-java-developers"></a>Xamarin pour les développeurs Java
 
-_Si vous êtes un développeur Java, vous avez la possibilité de tirer parti de vos compétences et de votre code existant sur la plateforme Xamarin tout en bénéficiant des avantages de C#la réutilisation de code de. Vous constaterez que C# la syntaxe est très similaire à la syntaxe Java, et que les deux langages fournissent des fonctionnalités très similaires. En outre, vous découvrirez des fonctionnalités propres C# à qui faciliteront votre développement._
+_Si vous êtes un développeur Java, vous êtes en bonne voie de tirer parti de vos compétences et de votre code existant sur la plate-forme Xamarin tout en réutilisant les avantages de la réutilisation du code de C. Vous constaterez que la syntaxe C est très similaire à la syntaxe Java, et que les deux langues fournissent des caractéristiques très similaires. De plus, vous découvrirez des fonctionnalités uniques à CMD qui vous faciliteront la vie de développement._
 
-## <a name="overview"></a>Vue d'ensemble de
+## <a name="overview"></a>Vue d’ensemble
 
 Cet article constitue une introduction à la programmation C# pour les développeurs Java, qui met principalement l’accent sur les fonctionnalités du langage C# que vous rencontrerez en développant des applications Xamarin.Android. En outre, cet article explique en quoi ces fonctionnalités diffèrent de leurs équivalents Java et C#, et présente des fonctionnalités importantes (pertinentes pour Xamarin.Android) qui ne sont pas disponibles dans Java. Des liens vers des références supplémentaires sont inclus. Vous pouvez donc utiliser cet article comme point de départ pour approfondir vos connaissances sur C# et .NET.
 
@@ -34,7 +34,7 @@ Vous trouverez de nombreuses caractéristiques clés de Java dans C# :
 
 - Génériques
 
-- Garbage collection
+- Nettoyage de la mémoire
 
 - Compilation du runtime
 
@@ -44,7 +44,7 @@ Dans les deux langages, les objets sont créés sur le tas en utilisant le mot-c
 
 Toutefois, il existe de nombreuses différences entre les Java et C#. Par exemple :
 
-- Java (tel qu’il est utilisé sur Android) ne prend pas en charge les variablesC# locales implicitement typées (prend en charge le mot clé `var`).
+- Java (tel qu’il est utilisé sur Android) ne prend `var` pas en charge les variables locales de type implicite (C’prend en charge le mot clé).
 
 - En Java, vous pouvez passer des paramètres uniquement par valeur, tandis qu’en C#, vous pouvez passer des références ou des valeurs. (C# fournit les mots-clés `ref` et `out` pour le passage de paramètres par référencent ; il n’existe pas d’équivalent en Java).
 
@@ -62,43 +62,43 @@ Toutefois, il existe de nombreuses différences entre les Java et C#. Par exempl
 
 Bien entendu, il existe de nombreuses différences supplémentaires entre C# et Java qui ne peuvent être traitées dans cet article. En outre, Java et C# continuent à évoluer (par exemple, Java 8, ce qui n’est pas encore dans la chaîne d’outils Android, prend en charge les expressions lambda de style C#), aussi ces différences évoluent au fil du temps. Les principales différences actuellement rencontrées par les développeurs Java qui découvrent Xamarin.Android sont décrites ici.
 
-- [Passer du développement Java à C#](#fundamentals) présente les différences fondamentales entre C# et Java.
+- [Passer de Java à C Développement](#fundamentals) fournit une introduction aux différences fondamentales entre C et Java.
 
-- [Fonctionnalités programmation orientée objet](#oopfeatures) présente les différences de programmation orientée objet les plus importantes entre les deux langages.
+- [Les caractéristiques de programmation orientées objet](#oopfeatures) décrivent les différences de fonctionnalités les plus importantes orientées objet entre les deux langues.
 
-- [Différences de mots clés](#keywords) fournit un tableau des équivalents utile, les mots clés propres à C# et des liens vers les définitions des mots clés C#.
+- [Keyword Differences](#keywords) fournit un tableau d’équivalents mots clés utiles, de mots clés C-seulement et de liens vers les définitions de mots clés C.
 
 C# propose plusieurs fonctionnalités essentielles dans Xamarin.Android qui ne sont pas actuellement disponibles pour les développeurs Java sur Android. Ces fonctionnalités peuvent vous aider à mieux écrire votre code, en moins de temps :
 
-- Les [propriétés](#properties) &ndash; C#avec le système de propriétés de, vous pouvez accéder aux variables de membre en toute sécurité et directement sans avoir à écrire des méthodes setter et getter.
+- [Propriétés](#properties) &ndash; Avec le système de propriété de C, vous pouvez accéder aux variables des membres en toute sécurité et directement sans avoir à écrire des méthodes de setter et d’obtenir.
 
-- Les [expressions lambda](#lambdas) &ndash; C# dans vous pouvez utiliser des méthodes anonymes (également appelées *lambdas*) pour exprimer vos fonctionnalités de façon plus succincte et plus efficace. Vous pouvez éviter d’avoir à écrire des objets à usage unique, et passer l’état local à une méthode sans avoir à ajouter des paramètres.
+- [Expressions lambda](#lambdas) &ndash; En C#, vous pouvez utiliser des méthodes anonymes (également appelées *expressions lambda*) pour exprimer vos fonctionnalités plus succinctement et plus efficacement. Vous pouvez éviter d’avoir à écrire des objets à usage unique, et passer l’état local à une méthode sans avoir à ajouter des paramètres.
 
-- La [gestion des événements](#events) &ndash; C# fournit une prise en charge au niveau du langage pour la *programmation pilotée*par les événements, où un objet peut s’inscrire pour être averti lorsqu’un événement d’intérêt se produit. Le mot-clé `event` définit un mécanisme de diffusion multidiffusion, qu’une classe d’éditeur peut utiliser pour notifier les abonnés aux événements.
+- [Gestion des événements](#events) &ndash; C# fournit la prise en charge, au niveau du langage, de la *programmation pilotée par les événements*, qui permet d’enregistrer un objet pour qu’il reçoive des notifications quand un événement d’intérêt se produit. Le mot-clé `event` définit un mécanisme de diffusion multidiffusion, qu’une classe d’éditeur peut utiliser pour notifier les abonnés aux événements.
 
-- La [programmation asynchrone](#async) &ndash; les fonctionnalités de programmation C# asynchrone de (`async`/`await`) assurer la réactivité des applications.
+- `async`/`await`Programmation &ndash; [asynchrone](#async) Les fonctionnalités de programmation asynchrones de CMD ( ) gardent les applications réactives.
     La prise en charge au niveau du langage de cette fonctionnalité rend la programmation asynchrone facile à implémenter et moins sujette aux erreurs.
 
 Enfin, Xamarin vous permet de [tirer parti des ressources Java existantes](#interop) via une technologie appelée *liaison*. Vous pouvez appeler votre code, vos infrastructures et vos bibliothèques Java dans C# en utilisant les générateurs de liaison automatiques de Xamarin. Pour ce faire, vous créez simplement une bibliothèque statique dans Java et l’exposez à C# via une liaison.
 
 > [!NOTE]
-> La programmation Android utilise une version spécifique du langage Java qui prend en charge toutes les fonctionnalités Java 7 [et un sous-ensemble de Java 8](https://developer.android.com/studio/write/java8-support.html).
+> La programmation Android utilise une version spécifique de la langue Java qui prend en charge toutes les fonctionnalités Java 7 [et un sous-ensemble de Java 8](https://developer.android.com/studio/write/java8-support.html).
 >
-> Certaines fonctionnalités mentionnées sur cette page (par exemple, le mot clé C#`var` dans) sont disponibles dans les versions plus récentes de Java (par exemple, [`var` dans Java 10](https://developer.oracle.com/java/jdk-10-local-variable-type-inference.html)), mais elles ne sont toujours pas disponibles pour les développeurs Android.
+> Certaines fonctionnalités mentionnées sur `var` cette page (comme le mot clé dans C) sont disponibles dans les versions plus nouvelles de Java (par exemple [ `var` dans Java 10](https://developer.oracle.com/java/jdk-10-local-variable-type-inference.html)), mais ne sont toujours pas disponibles pour les développeurs Android.
 
 <a name="fundamentals" />
 
-## <a name="going-from-java-to-c-development"></a>Passage de Java à C# développement
+## <a name="going-from-java-to-c-development"></a>Passer de Java au développement C
 
 Les sections suivantes décrivent les principales différences de prise en main entre les langages C# et Java ; une section ultérieure décrit les différences de programmation orientée objet entre ces langages.
 
-### <a name="libraries-vs-assemblies"></a>Bibliothèques et assemblys
+### <a name="libraries-vs-assemblies"></a>Bibliothèques vs assemblées
 
 Java empaquète généralement les classes connexes dans des fichiers **.jar**. En C# et en .NET, toutefois, les parties réutilisables de code précompilé sont empaquetées dans des *assemblys*, qui sont généralement fournis sous forme de fichiers *.dll*. Un assembly est une unité de déploiement pour le code C#/.NET, et chaque assembly est généralement associé à un projet C#. Les assemblys contiennent le code intermédiaire (IL) qui est compilé juste-à-temps lors de l’exécution.
 
 Pour plus d’informations sur les assemblys, consultez la rubrique [Assemblys et le Global Assembly Cache](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/assemblies-gac/).
 
-### <a name="packages-vs-namespaces"></a>Packages et espaces de noms
+### <a name="packages-vs-namespaces"></a>Forfaits vs espaces nominaux
 
 C# utilise le mot-clé `namespace` pour grouper les types associés ensemble ; Cela s’apparente au mot-clé `package` de Java. En règle générale, une application Xamarin.Android réside dans un espace de noms créé pour cette application. Par exemple, le code C# suivant déclare le wrapper d’espace de noms `WeatherApp` pour une application météorologique :
 
@@ -108,7 +108,7 @@ namespace WeatherApp
     ...
 ```
 
-### <a name="importing-types"></a>Importation de types
+### <a name="importing-types"></a>Types d’importation
 
 Lorsque vous utilisez des types définis dans des espaces de noms externes, vous importez ces types avec une instruction `using` (qui est très similaire à l’instruction `import` de Java). En Java, vous pouvez importer un seul type avec une instruction comme suit :
 
@@ -157,7 +157,7 @@ Notez qu’il existe certaines limitations de prise en charge des classes géné
 
 <a name="oopfeatures" />
 
-## <a name="object-oriented-programming-features"></a>Fonctionnalités de programmation orientée objet
+## <a name="object-oriented-programming-features"></a>Caractéristiques de programmation orientées objet
 
 Java et C# utilisent des idiomes de programmation orientée objet très similaires :
 
@@ -209,7 +209,7 @@ public class SensorsActivity : Activity, ISensorEventListener
 
 Dans cet exemple, `SensorsActivity` hérite de `Activity` et implémente les fonctionnalités déclarées dans l’interface `ISensorEventListener`. Notez que la liste des interfaces doit se trouver après la classe de base (ou vous aurez une erreur de compilation). Par convention, les noms d’interface C# se finissent par une majuscule « I » ; Il est ainsi possible de déterminer les classes qui sont des interfaces sans nécessiter de mot-clé `implements`.
 
-Lorsque vous souhaitez empêcher une classe d’être sous-classée dans C#, vous devez précéder le nom de la classe `sealed` &ndash; en Java, vous faites précéder le nom de la classe de `final`.
+Lorsque vous voulez empêcher une classe d’être encore sous-classé en `sealed` &ndash; C, vous précèdez `final`le nom de classe avec à Java, vous précèdez le nom de classe avec .
 
 Pour plus d’informations sur les définitions de classe C#, consultez les rubriques [Classes](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/classes) et [Héritage](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/inheritance).
 
@@ -229,13 +229,13 @@ rulerView.DrawingCacheEnabled = true;
 
 Dans cet exemple, les valeurs de largeur et de hauteur sont lues à partir de l’objet `rulerView` en accédant à ses propriétés `MeasuredWidth` et `MeasuredHeight`. Lorsque ces propriétés sont lues, les valeurs de leurs champs associés (mais masqués) sont extraites en arrière-plan et retournées à l’appelant. L’objet `rulerView` peut stocker des valeurs de largeur et de hauteur dans une unité de mesure (par exemple, en pixels) et convertir ces valeurs à la volée en une autre unité de mesure (par exemple, en millimètres) lorsque les propriétés `MeasuredWidth` et `MeasuredHeight` sont accessibles.
 
-L’objet `rulerView` possède également une propriété appelée `DrawingCacheEnabled` &ndash; l’exemple de code définit cette propriété sur `true` pour activer le cache de dessin dans `rulerView`. En arrière-plan, un champ masqué associé est mis à jour avec la nouvelle valeur et d’autres aspects de l’état `rulerView` sont éventuellement modifiés. Par exemple, lorsque `DrawingCacheEnabled` est défini sur `false`, `rulerView` peut également supprimer toutes les informations de cache de dessin déjà accumulées dans l’objet.
+L’objet `rulerView` a également `DrawingCacheEnabled` &ndash; une propriété appelée `true` le code d’exemple définit cette propriété pour permettre le cache de dessin dans `rulerView`. En arrière-plan, un champ masqué associé est mis à jour avec la nouvelle valeur et d’autres aspects de l’état `rulerView` sont éventuellement modifiés. Par exemple, lorsque `DrawingCacheEnabled` est défini sur `false`, `rulerView` peut également supprimer toutes les informations de cache de dessin déjà accumulées dans l’objet.
 
 L’accès aux propriétés peut être en lecture/écriture, en lecture seule ou en écriture seule. En outre, vous pouvez utiliser des modificateurs d’accès différents pour lire et écrire. Par exemple, vous pouvez définir une propriété qui a un accès en lecture public mais un accès en écriture privé.
 
 Pour plus d’informations sur les propriétés C#, consultez la rubrique [Propriétés](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/properties).
 
-### <a name="calling-base-class-methods"></a>Appel des méthodes de la classe de base
+### <a name="calling-base-class-methods"></a>Appeler les méthodes de classe de base
 
 Pour appeler un constructeur de classe de base en C#, vous utilisez un signe deux-points (`:`) suivi du mot-clé `base` et d’une liste d’initialiseurs ; cet appel de constructeur `base` est placé immédiatement après la liste de paramètres du constructeur dérivé. Le constructeur de classe de base est appelé sur entrée pour le constructeur dérivé ; le compilateur insère l’appel au constructeur de base au début du corps de la méthode. Le fragment de code suivant illustre un constructeur de base appelé à partir d’un constructeur dérivé dans une application Xamarin.Android :
 
@@ -268,17 +268,17 @@ public class MainActivity : Activity
 
 Dans ce cas, la méthode `OnCreate` définie par la classe dérivée (`MainActivity`) appelle la méthode `OnCreate` de la classe de base (`Activity`).
 
-### <a name="access-modifiers"></a>Modificateurs d’accès
+### <a name="access-modifiers"></a>Modifier d’accès
 
 Java et C# prennent en charge les modificateurs d’accès `public`, `private` et `protected`. Toutefois, C# prend en charge deux modificateurs d’accès supplémentaires :
 
-- **`internal`** &ndash; le membre de classe est accessible uniquement dans l’assembly actuel.
+- **`internal`**&ndash; Le membre de la classe n’est accessible qu’au sein de l’assemblée actuelle.
 
-- **`protected internal`** &ndash; le membre de classe est accessible dans l’assembly de définition, la classe de définition et les classes dérivées (les classes dérivées à l’intérieur et à l’extérieur de l’assembly ont accès).
+- **`protected internal`**&ndash; Le membre de la classe est accessible dans l’assemblage définissant, la classe déterminante et les classes dérivées (les classes dérivées à l’intérieur et à l’extérieur de l’assemblage ont accès).
 
 Pour plus d’informations sur les modificateurs d’accès C#, consultez la rubrique [Modificateurs d’accès](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/access-modifiers).
 
-### <a name="virtual-and-override-methods"></a>Méthodes virtuelles et override
+### <a name="virtual-and-override-methods"></a>Méthodes virtuelles et de remplacement
 
 Java et C# prennent en charge *le polymorphisme*, la possibilité de traiter les objets connexes de la même manière. Dans les deux langages, vous pouvez utiliser une référence de classe de base pour faire référence à un objet de classe dérivée, et les méthodes d’une classe dérivée peuvent substituer les méthodes de ses classes de base. Les deux langages ont le concept de méthode *virtuelle*, une méthode dans une classe de base qui est conçue pour être remplacée par une méthode dans une classe dérivée.
 Comme Java, C# prend en charge les classes et méthodes `abstract`.
@@ -319,7 +319,7 @@ button.Click += (sender, args) => {
 };
 ```
 
-Dans cet exemple, le code d’expression lambda (le code entre les accolades) incrémente un nombre de clics et met à jour le texte `button` pour afficher le nombre de clics. Cette expression lambda est inscrite avec l’objet `button` comme un gestionnaire d’événements à appeler lorsque l’utilisateur clique sur le bouton. (Les gestionnaires d’événements sont expliqués plus en détail ci-dessous.) Dans cet exemple simple, les paramètres `sender` et `args` ne sont pas utilisés par le code d’expression lambda, mais ils sont requis dans l’expression lambda pour respecter les exigences de signature de méthode pour l’inscription des événements. Dans la pratique, le compilateur C# convertit l’expression lambda en une méthode anonyme qui est appelée chaque fois que des événements de clic de bouton se produisent.
+Dans cet exemple, le code d’expression lambda (le code entre les accolades) incrémente un nombre de clics et met à jour le texte `button` pour afficher le nombre de clics. Cette expression lambda est inscrite avec l’objet `button` comme un gestionnaire d’événements à appeler lorsque l’utilisateur clique sur le bouton. (Les gestionnaires d’événements sont expliqués plus en détail ci-dessous.) Dans cet exemple `sender` simple, le code d’expression lambda et `args` les paramètres ne sont pas utilisés par le code d’expression lambda, mais ils sont tenus dans l’expression lambda de répondre aux exigences de signature de la méthode pour l’enregistrement de l’événement. Dans la pratique, le compilateur C# convertit l’expression lambda en une méthode anonyme qui est appelée chaque fois que des événements de clic de bouton se produisent.
 
 Pour plus d’informations sur C# et les expressions lambda, consultez la rubrique [Expressions lambda](https://docs.microsoft.com/dotnet/csharp/programming-guide/statements-expressions-operators/lambda-expressions).
 
@@ -424,45 +424,45 @@ Plusieurs mots-clés de langage utilisés en Java sont également utilisés en C
 |`package`|[namespace](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/namespace)|Déclare une portée pour un ensemble d’objets liés.|
 |`T...`|[params T](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/params)|Spécifie un paramètre de méthode qui accepte un nombre variable d’arguments.|
 |`super`|[base](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/base)|Sert à accéder aux membres de la classe parent à partir d’une classe dérivée.|
-|`synchronized`|[lock](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/lock-statement)|Encapsule une section critique du code avec acquisition et libération de verrou.|
+|`synchronized`|[Verrouillage](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/lock-statement)|Encapsule une section critique du code avec acquisition et libération de verrou.|
 
-En outre, il existe de nombreux mots clés qui C# sont uniques à et qui n’ont pas de contrepartie dans le Java utilisé sur Android. Le code Xamarin.Android utilise souvent les mots-clés C# suivants (cette table est utile comme référence lors de la lecture de [l’exemple de code](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Android) Xamarin.Android) :
+En outre, il ya beaucoup de mots clés qui sont uniques à C et n’ont pas de contrepartie dans le Java utilisé sur Android. Le code Xamarin.Android utilise souvent les mots-clés C# suivants (cette table est utile comme référence lors de la lecture de [l’exemple de code](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Android) Xamarin.Android) :
 
 |C#|Description|
 |---|---|
-|[as](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/as)|Effectue des conversions entre des types référence compatibles ou des types nullable.|
+|[Comme](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/as)|Effectue des conversions entre des types référence compatibles ou des types nullable.|
 |[async](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/async)|Spécifie qu’une méthode ou une expression lambda est asynchrone.|
-|[await](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/await)|Suspend l’exécution d’une méthode jusqu'à ce qu’une tâche se termine.|
+|[Attendent](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/await)|Suspend l’exécution d’une méthode jusqu'à ce qu’une tâche se termine.|
 |[byte](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/byte)|Type entier 8 bits non signé.|
-|[delegate](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/delegate)|Utilisé pour encapsuler une méthode ou une méthode anonyme.|
+|[Délégué](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/delegate)|Utilisé pour encapsuler une méthode ou une méthode anonyme.|
 |[enum](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/enum)|Déclare une énumération, un ensemble de constantes nommées.|
 |[event](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/event)|Déclare un événement dans une classe d’éditeur.|
-|[fixed](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/fixed-statement)|Empêche une variable d’être réadressée.|
+|[Fixe](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/fixed-statement)|Empêche une variable d’être réadressée.|
 |`get`|Définit une méthode d’accesseur qui récupère la valeur d’une propriété.|
 |[in](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/in-generic-modifier)|Permet à un paramètre d’accepter un type moins dérivé dans une interface générique.|
-|[object](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/object)|Alias du type Object de .NET Framework.|
+|[Objet](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/object)|Alias du type Object de .NET Framework.|
 |[out](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/out)|Déclaration de modificateur de paramètre ou de paramètre de type générique.|
 |[override](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/override)|Étend ou modifie l’implémentation d’un membre hérité.|
-|[partial](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/partial-method)|Déclare une définition qui doit être fractionnée en plusieurs fichiers ou fractionne une définition de méthode à partir de son implémentation.|
+|[Partielle](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/partial-method)|Déclare une définition qui doit être fractionnée en plusieurs fichiers ou fractionne une définition de méthode à partir de son implémentation.|
 |[readonly](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/readonly)|Déclare qu’un membre de classe ne peut être assigné au moment de la déclaration ou par le constructeur de classe.|
 |[ref](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/ref)|Entraîne le passage d'un argument par référence, et non par valeur.|
-|[set](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/set)|Définit une méthode d’accesseur qui définit la valeur d’une propriété.|
+|[Ensemble](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/set)|Définit une méthode d’accesseur qui définit la valeur d’une propriété.|
 |[string](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/string)|Alias du type String de .NET Framework.|
 |[struct](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/struct)|Un type valeur qui encapsule un groupe de variables liées.|
 |[typeof](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/typeof)|Obtient le type d’un objet.|
-|[var](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/var)|Définit une variable locale implicitement typée.|
-|[valeur](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/value)|Fait référence à la valeur que le code client souhaite affecter à une propriété.|
+|[Var](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/var)|Définit une variable locale implicitement typée.|
+|[value](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/value)|Fait référence à la valeur que le code client souhaite affecter à une propriété.|
 |[virtual](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/virtual)|Autorise la substitution d'une méthode dans une classe dérivée.|
 
 <a name="interop" />
 
-## <a name="interoperating-with-existing-java-code"></a>Interopérabilité avec le code Java existant
+## <a name="interoperating-with-existing-java-code"></a>Interopération avec le code java existant
 
 Si vous disposez de fonctionnalités Java existantes que vous ne souhaitez pas convertir en C#, vous pouvez réutiliser vos bibliothèques Java existantes dans les applications Xamarin.Android via deux techniques :
 
-- **Créer une bibliothèque de liaisons Java** &ndash; à l’aide de cette approche, vous utilisez les C# outils Xamarin pour générer des wrappers autour des types Java. Ces wrappers sont appelés *liaisons*. Par conséquent, votre application Xamarin.Android peut utiliser votre fichier *.jar* en appelant ces wrappers.
+- **Créer une bibliothèque de liaison Java** &ndash; Pour cette approche, vous utilisez des outils Xamarin pour générer des wrappers C# autour de types Java. Ces wrappers sont appelés *liaisons*. Par conséquent, votre application Xamarin.Android peut utiliser votre fichier *.jar* en appelant ces wrappers.
 
-- **Java Native interface** &ndash; Java *Native Interface* (JNI) est une infrastructure qui permet aux C# applications d’appeler ou d’être appelées par du code Java.
+- **Java Native Interface** &ndash; L’interface *native java* (JNI) est un cadre qui permet aux applications C’d’appeler ou d’être appelées par le code Java.
 
 Pour plus d’informations sur ces techniques, consultez [Présentation de l’intégration Java](~/android/platform/java-integration/index.md).
 
@@ -481,6 +481,6 @@ Cet article propose une introduction à l’environnement de programmation C# Xa
 ## <a name="related-links"></a>Liens connexes
 
 - [Présentation de l’intégration Java](~/android/platform/java-integration/index.md)
-- [Guide de programmation C#](https://docs.microsoft.com/dotnet/csharp/programming-guide/)
-- [Référence C#](https://docs.microsoft.com/dotnet/csharp/language-reference/index)
+- [Guide de programmation CMD](https://docs.microsoft.com/dotnet/csharp/programming-guide/)
+- [Référence C](https://docs.microsoft.com/dotnet/csharp/language-reference/index)
 - [Passage à C# et .NET Framework pour les développeurs Java](https://www.microsoft.com/download/details.aspx?id=6073)

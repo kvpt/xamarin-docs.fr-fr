@@ -8,19 +8,19 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
 ms.openlocfilehash: 05ad12de77e8895a23cd364b90abfbfb567ac573
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70771619"
 ---
-# <a name="xamarinforms-binding-value-converters"></a>Convertisseurs de valeurs de liaison Xamarin.Forms
+# <a name="xamarinforms-binding-value-converters"></a>Convertisseurs de valeur de liaison Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+[![Télécharger](~/media/shared/download.png) l’échantillon Télécharger l’échantillon](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 Les liaisons de données transfèrent généralement des données d’une propriété source vers une propriété cible et, dans certains cas, de la propriété cible vers la propriété source. Ce transfert est direct lorsque les propriétés source et cible sont du même type, ou quand un type peut être converti vers l’autre type via une conversion implicite. Lorsque ce n’est pas le cas, une conversion de type doit avoir lieu.
 
-Dans l’article [**Formatage de chaîne**](string-formatting.md), vous avez vu comment utiliser la propriété `StringFormat` d’une liaison de données pour convertir n’importe quel type en chaîne. Pour les autres types de conversions, vous devez écrire du code spécialisé dans une classe qui implémente l’interface [`IValueConverter`](xref:Xamarin.Forms.IValueConverter). (La plateforme Windows universelle contient une classe similaire nommée [`IValueConverter`](/uwp/api/Windows.UI.Xaml.Data.IValueConverter/) dans l’espace de noms `Windows.UI.Xaml.Data`, mais ce `IValueConverter` figure dans l’espace de noms `Xamarin.Forms`.) Les classes qui implémentent `IValueConverter` sont appelées *convertisseurs de valeur*, mais elles sont également souvent appelées *convertisseurs de liaison* ou *convertisseurs de valeur de liaison*.
+Dans l’article [**Formatage de chaîne**](string-formatting.md), vous avez vu comment utiliser la propriété `StringFormat` d’une liaison de données pour convertir n’importe quel type en chaîne. Pour d’autres types de conversions, vous devez écrire du [`IValueConverter`](xref:Xamarin.Forms.IValueConverter) code spécialisé dans une classe qui implémente l’interface. (La plate-forme Windows universelle [`IValueConverter`](/uwp/api/Windows.UI.Xaml.Data.IValueConverter/) contient `Windows.UI.Xaml.Data` une classe `IValueConverter` similaire nommée `Xamarin.Forms` dans l’espace de nom, mais c’est dans l’espace de nom.) Les classes `IValueConverter` qui mettent en œuvre sont *appelées convertisseurs de valeur,* mais elles sont aussi souvent *appelées convertisseurs de valeur contraignantes* ou *convertisseurs de valeur contraignants.*
 
 ## <a name="the-ivalueconverter-interface"></a>Interface IValueConverter
 
@@ -43,11 +43,11 @@ public class IntToBoolConverter : IValueConverter
 }
 ```
 
-Vous définissez une instance de cette classe sur la propriété [`Converter`](xref:Xamarin.Forms.Binding.Converter) de la classe `Binding` ou sur la propriété [`Converter`](xref:Xamarin.Forms.Xaml.BindingExtension.Converter) de l’extension de balisage `Binding`. Cette classe devient partie intégrante de la liaison de données.
+Vous définissez un exemple [`Converter`](xref:Xamarin.Forms.Binding.Converter) de cette `Binding` classe à [`Converter`](xref:Xamarin.Forms.Xaml.BindingExtension.Converter) la `Binding` propriété de la classe ou à la propriété de l’extension de balisage. Cette classe devient partie intégrante de la liaison de données.
 
 La méthode `Convert` est appelée lorsque les données sont transférées de la source vers la cible dans des liaisons `OneWay` ou `TwoWay`. Le paramètre `value` correspond à l’objet ou la valeur de la source de liaison de données. La méthode doit retourner une valeur du type de la cible de liaison de données. La méthode illustrée ici caste le paramètre `value` en `int` puis le compare à 0 pour une valeur renvoyée `bool`.
 
-La méthode `ConvertBack` est appelée lorsque les données sont transférées de la cible vers la source dans des liaisons `TwoWay` ou `OneWayToSource`. `ConvertBack` effectue la conversion inverse : Il suppose que le paramètre `value` est un `bool` issu de la cible et le convertit en une valeur renvoyée `int` pour la source.
+La méthode `ConvertBack` est appelée lorsque les données sont transférées de la cible vers la source dans des liaisons `TwoWay` ou `OneWayToSource`. `ConvertBack` effectue la conversion inverse : il suppose que le paramètre `value` est un `bool` issu de la cible et le convertit en une valeur renvoyée `int` pour la source.
 
 Si la liaison de données inclut également un paramètre `StringFormat`, le convertisseur de valeurs est appelé avant que le résultat soit formaté en tant que chaîne.
 
@@ -97,7 +97,7 @@ Si un convertisseur de valeurs est utilisé dans plusieurs pages de votre applic
 
 La page **Enable Buttons** (Activer les boutons) illustre un besoin commun quand un `Button` effectue une opération basée sur du texte que l’utilisateur tape dans une vue `Entry`. Si rien n’a été saisi dans `Entry`, l’élément `Button` doit être désactivé. Chaque élément `Button` contient une liaison de données sur sa propriété `IsEnabled`. La source de liaison de données est la propriété `Length` de la propriété `Text` de l’élément `Entry` correspondant. Si cette propriété `Length` n’est pas égale à 0, le convertisseur de valeurs retourne `true` et le `Button` est activé :
 
-[![Enable Buttons](converters-images/enablebuttons-small.png "Enable Buttons")](converters-images/enablebuttons-large.png#lightbox "Enable Buttons")
+[![Activer les boutons](converters-images/enablebuttons-small.png "Activer les boutons")](converters-images/enablebuttons-large.png#lightbox "Activer les boutons")
 
 Notez que la propriété `Text` dans chaque `Entry` est initialisée en tant que chaîne vide. La propriété `Text` est `null` par défaut et la liaison de données ne fonctionne pas dans ce cas.
 
@@ -132,7 +132,7 @@ public class BoolToObjectConverter<T> : IValueConverter
 }
 ```
 
-La page **Switch Indicators** (Indicateurs de commutateur) montre comment l’utiliser pour afficher la valeur d’une vue `Switch`. Bien qu’il soit courant d’instancier des convertisseurs de valeur comme des ressources dans un dictionnaire de ressources, cette page montre une alternative : Chaque convertisseur de valeurs est instancié entre des balises d’élément de propriété `Binding.Converter`. `x:TypeArguments` indique l’argument générique, et `TrueObject` et `FalseObject` sont tous les deux définis sur des objets de ce type :
+La page **Switch Indicators** (Indicateurs de commutateur) montre comment l’utiliser pour afficher la valeur d’une vue `Switch`. Bien qu’il soit courant d’instancier des convertisseurs de valeur comme des ressources dans un dictionnaire de ressources, cette page montre une alternative : chaque convertisseur de valeurs est instancié entre des balises d’élément de propriété `Binding.Converter`. `x:TypeArguments` indique l’argument générique, et `TrueObject` et `FalseObject` sont tous les deux définis sur des objets de ce type :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -238,13 +238,13 @@ La page **Switch Indicators** (Indicateurs de commutateur) montre comment l’ut
 
 Dans la dernière des trois paires de `Switch` et `Label`, l’argument générique a la valeur `Style` et des objets `Style` entiers sont fournis pour les valeurs de `TrueObject` et `FalseObject`. Ceux-ci remplacent le style implicite pour `Label`, défini dans le dictionnaire de ressources, afin que les propriétés figurant dans ce style soient explicitement affectées à l’objet `Label`. Lors de l’activation/la désactivation de `Switch`, l’objet `Label` correspondant reflète la modification :
 
-[![Switch Indicators](converters-images/switchindicators-small.png "Switch Indicators")](converters-images/switchindicators-large.png#lightbox "Switch Indicators")
+[![Indicateurs de commutation](converters-images/switchindicators-small.png "Indicateurs de commutation")](converters-images/switchindicators-large.png#lightbox "Indicateurs de commutation")
 
-Il est également possible d’utiliser [`Triggers`](~/xamarin-forms/app-fundamentals/triggers.md) pour implémenter des modifications similaires dans l’interface utilisateur sur la base d’autres vues.
+Il est également possible [`Triggers`](~/xamarin-forms/app-fundamentals/triggers.md) d’utiliser pour implémenter des modifications similaires dans l’interface utilisateur basée sur d’autres vues.
 
 ## <a name="binding-converter-parameters"></a>Paramètres des convertisseurs de liaison
 
-La classe `Binding` définit une propriété [`ConverterParameter`](xref:Xamarin.Forms.Binding.ConverterParameter) et l’extension de balisage `Binding` définit également une propriété [`ConverterParameter`](xref:Xamarin.Forms.Xaml.BindingExtension.ConverterParameter). Si cette propriété est définie, la valeur est transmise aux méthodes `Convert` et `ConvertBack` en tant qu’argument `parameter`. Même si l’instance du convertisseur de valeurs est partagée entre plusieurs liaisons de données, l’élément `ConverterParameter` peut être différent pour effectuer des conversions quelque peu différentes.
+La `Binding` classe définit [`ConverterParameter`](xref:Xamarin.Forms.Binding.ConverterParameter) une propriété, et l’extension de `Binding` balisage définit également une [`ConverterParameter`](xref:Xamarin.Forms.Xaml.BindingExtension.ConverterParameter) propriété. Si cette propriété est définie, la valeur est transmise aux méthodes `Convert` et `ConvertBack` en tant qu’argument `parameter`. Même si l’instance du convertisseur de valeurs est partagée entre plusieurs liaisons de données, l’élément `ConverterParameter` peut être différent pour effectuer des conversions quelque peu différentes.
 
 L’utilisation de `ConverterParameter` est illustrée avec un programme de sélection de couleur. Dans ce cas, l’élément `RgbColorViewModel` a trois propriétés de type `double` nommées `Red`, `Green` et `Blue`, qu’il utilise pour construire une valeur `Color` :
 
@@ -462,9 +462,9 @@ Les valeurs des propriétés `Red` et `Green` sont affichées avec une extension
 
 Voici le résultat :
 
-[![RGB Color Selector](converters-images/rgbcolorselector-small.png "RGB Color Selector")](converters-images/rgbcolorselector-large.png#lightbox "RGB Color Selector")
+[![Sélecteur de couleurs RGB](converters-images/rgbcolorselector-small.png "Sélecteur de couleurs RGB")](converters-images/rgbcolorselector-large.png#lightbox "Sélecteur de couleurs RGB")
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
-- [Démos des liaisons de données (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+- [Démonstrations de liaison de données (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 - [Chapitre sur les liaisons de données dans la documentation de Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

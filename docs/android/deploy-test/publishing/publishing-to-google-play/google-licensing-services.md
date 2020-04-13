@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 12/20/2017
 ms.openlocfilehash: 4cc7f3b36c43d9c9bb611b7d669f8304aab05820
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73021264"
 ---
 # <a name="google-licensing-services"></a>Services Google Licensing
@@ -26,7 +26,7 @@ Google Licensing est sécurisé dans le sens où chaque réponse est signée à 
 
 Une application ayant implémenté Google Licensing fait une demande à un service hébergé par l’application Google Play sur l’appareil. Google Play envoie ensuite cette demande sur le serveur Google Licensing, qui répond en indiquant l’état de la licence : 
 
-[![Diagramme du workflow du serveur de licences](google-licensing-services-images/gp-licensing-service-overview.png)](google-licensing-services-images/gp-licensing-service-overview.png#lightbox)
+[![Diagramme de flux de travail de serveur de licence](google-licensing-services-images/gp-licensing-service-overview.png)](google-licensing-services-images/gp-licensing-service-overview.png#lightbox)
 
 Le diagramme ci-dessus illustre ce workflow : 
 
@@ -36,7 +36,7 @@ Le diagramme ci-dessus illustre ce workflow :
 
 Le service Google Licensing est également un composant essentiel des fichiers d’extension d’APK (qui sont décrits plus loin dans ce document). Les fichiers d’extension d’APK utilisent les services Google Licensing pour obtenir l’URL des fichiers d’extension qui seront téléchargés.
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Spécifications
 
 Les applications qui ne sont pas achetées via Google Play ne bénéficient d’aucun avantage des services Google Licensing. Même si Google Play n’est pas installé sur un appareil, les applications qui utilisent les services de gestion des licences continuent de fonctionner normalement sur cet appareil.
 

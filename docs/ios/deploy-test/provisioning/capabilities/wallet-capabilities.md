@@ -8,15 +8,15 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/15/2017
 ms.openlocfilehash: 658184203c81079af9b4946c4da18dfb98381b0f
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73028552"
 ---
 # <a name="wallet-capabilities-in-xamarinios"></a>Fonctionnalités Wallet dans Xamarin.iOS
 
-_L’ajout de fonctionnalités à une application nécessite souvent une configuration d’approvisionnement supplémentaire. Ce guide explique la configuration requise pour les fonctionnalités de Wallet._
+_L’ajout de capacités à une application nécessite souvent une configuration d’approvisionnement supplémentaire. Ce guide explique la configuration nécessaire pour les capacités Portefeuille._
 
 Wallet est une application qui stocke et affiche les codes-barres et autres contenus permettant aux utilisateurs de présenter leurs billets, cartes d’embarquement et coupons directement à partir de leur appareil. Ces informations sont stockées dans un _passe_. Par exemple, une carte d’embarquement ou un billet constitue chacun un passe. 
 
@@ -28,7 +28,7 @@ Les développeurs peuvent utiliser Wallet de diverses façons :
 
 * Les applications Conduit sont des applications qui ne manipulent pas de passes directement. Leur interaction avec les passes consiste principalement à les recevoir et à permettre à l’utilisateur de les ajouter au Wallet. Ces applications n’ont pas besoin de provisionnement ou droits particuliers, mais elles utilisent certaines méthodes du framework PassKit.
 
-## <a name="developer-center"></a>Developer Center
+## <a name="developer-center"></a>Centre de développement
 
 Pour créer un profil de provisionnement pour une utilisation avec Wallet, effectuez les étapes suivantes :
 
@@ -37,7 +37,7 @@ Pour créer un profil de provisionnement pour une utilisation avec Wallet, effec
     
     ![Sélection de l’ID d’application](wallet-capabilities-images/image17.png)
 
-3. Cliquez sur l’icône **+** dans le coin supérieur droit de la page.
+3. Cliquez **+** sur l’icône en haut à droite de la page.
 4. Inscrivez un nouvel ID d’application en lui attribuant un **nom** et un identificateur de bundle. (Notez que cet identificateur de bundle doit correspondre à l’ID de bundle défini dans votre projet) :
    
     ![Ajouter les détails de l’ID d’application](wallet-capabilities-images/image18.png)
@@ -63,7 +63,7 @@ Pour plus d’informations sur l’utilisation de Wallet, consultez le guide sui
 S’il y a lieu, effectuez les étapes supplémentaires décrites ci-après :
 
 * Utilisez l’espace de noms de framework dans votre application.
-* Ajoutez les droits nécessaires à votre application. Pour obtenir des informations détaillées sur les droits nécessaires et leur ajout, consultez le guide [Utilisation de droits](~/ios/deploy-test/provisioning/entitlements.md).
+* Ajoutez les droits requis à votre application. Pour obtenir des informations détaillées sur les droits nécessaires et leur ajout, consultez le guide [Utilisation de droits](~/ios/deploy-test/provisioning/entitlements.md).
 * Assurez-vous que, dans la section **Signature du bundle iOS** de l’application, le paramètre **Droits personnalisés** est défini sur **Entitlements.plist**. Ce n’est _pas_ le paramètre par défaut pour les builds Debug et iOS Simulator.
 
 Si vous rencontrez des problèmes avec les services d’application, consultez la section [Dépannage](~/ios/deploy-test/provisioning/capabilities/index.md) du guide principal.

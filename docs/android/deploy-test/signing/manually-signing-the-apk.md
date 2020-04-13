@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
 ms.openlocfilehash: 2d84d149b2eb4194de35fabc69cf44af99c04d25
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "76724124"
 ---
 # <a name="manually-signing-the-apk"></a>Signature manuelle de l’APK
@@ -118,14 +118,14 @@ Lorsque cette commande est exécutée, **apksigner** vous demande le mot de pass
 Consultez la [documentation de Google](https://developer.android.com/studio/command-line/apksigner.html) pour plus d’informations sur l’utilisation de l’outil **apksigner**.
 
 > [!NOTE]
-> D’après [problème 62696222 signalé dans Google Issue Tracker](https://issuetracker.google.com/issues/62696222), **apksigner** est absent du kit Android SDK. La solution consiste à installer les outils de génération du kit Android SDK v25.0.3 et d’utiliser cette version de l’outil **apksigner**.  
+>  D’après [problème 62696222 signalé dans Google Issue Tracker](https://issuetracker.google.com/issues/62696222), **apksigner** est absent du kit Android SDK. La solution consiste à installer les outils de génération du kit Android SDK v25.0.3 et d’utiliser cette version de l’outil **apksigner**.  
 
 <a name="Sign_the_APK_with_jarsigner" />
 
 ### <a name="sign-the-apk-with-jarsigner"></a>Signer l’APK avec jarsigner
 
 > [!WARNING]
-> Cette section s’applique uniquement s’il est nécessaire de signer l’APK avec l’utilitaire **jarsigner**. Les développeurs sont encouragés à utiliser **apksigner** pour signer l’APK.
+>  Cette section s’applique uniquement s’il est nécessaire de signer l’APK avec l’utilitaire **jarsigner**. Les développeurs sont encouragés à utiliser **apksigner** pour signer l’APK.
 
 Cette technique implique la signature du fichier APK à l’aide de la commande **[jarsigner](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/jarsigner.html)** du SDK Java.  L’outil **jarsigner** est fourni par le SDK Java.
 
@@ -136,9 +136,9 @@ $ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore xample.keysto
 ```
 
 > [!NOTE]
-> Lorsque vous utilisez **jarsigner**, il est important de _commencer par_ signer l’APK, puis d’utiliser **zipalign**.  
+>  Lorsque vous utilisez **jarsigner**, il est important de _commencer_ par signer l’APK, puis d’utiliser **zipalign**.  
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Signature d’application](https://source.android.com/security/apksigning/)
 - [jarsigner](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/jarsigner.html)

@@ -9,32 +9,32 @@ ms.author: daortin
 ms.custom: video
 ms.date: 01/22/2019
 ms.openlocfilehash: b0eb471bd41bb38d62ced38ed66cfa0dfee37bbf
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73023421"
 ---
 # <a name="wireless-deployment-for-xamarinios-and-tvos-apps"></a>Déploiement sans fil pour les applications Xamarin.iOS et tvOS
 
-Une part importante du workflow du développeur consiste au déploiement sur un appareil. Xcode 9 a introduit une option de déploiement sur un appareil iOS ou sur Apple TV via un réseau, ce qui évite d’avoir à raccorder les appareils pour pouvoir déployer et déboguer une application. Cette fonctionnalité a été introduite dans les versions Visual Studio pour Mac 7.4 et Visual Studio 15.6.
+Une part importante du workflow du développeur consiste au déploiement sur un appareil. Xcode 9 a introduit une option de déploiement sur un appareil iOS ou Apple TV via un réseau, ce qui évite d’avoir à raccorder les appareils à chaque fois que vous désirez déployer et déboguer votre application. Cette fonctionnalité a été introduite dans les versions Visual Studio pour Mac 7.4 et Visual Studio 15.6.
 
 Ce guide détaille comment coupler et déployer sur un appareil sur le réseau.
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Spécifications
 
 La fonctionnalité de déploiement sans fil est disponible à la fois dans Visual Studio pour Mac et dans Visual Studio.
 
 Pour utiliser le déploiement sans fil, vous devez disposer des éléments suivants :
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 - macOS 10.12.4
 - La dernière version de Visual Studio pour Mac
 - Xcode 9.0 ou version ultérieure
 - Un appareil avec iOS 11.0 ou tvOS 11.0 et version ultérieure
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 - La dernière version de Visual Studio
 - Un appareil avec iOS 11.0 ou tvOS 11.0 et version ultérieure
@@ -71,7 +71,7 @@ Le processus de couplage suivant ne doit se produire qu’une seule fois par app
 
 4. Sélectionnez l’Apple TV dans la zone **découvert** dans Xcode et entrez le code de vérification affiché sur l’écran de l’Apple TV.
 
-5. Cliquez sur le bouton **Connecter**. Une fois le couplage réussi, une icône de connexion réseau s’affiche en regard de l’Apple TV.
+5. Cliquez sur le bouton **Connexion**. Une fois le couplage réussi, une icône de connexion réseau s’affiche en regard de l’Apple TV.
 
 ## <a name="deploy-to-a-device"></a>Déployer l’application sur un appareil
 
@@ -89,7 +89,7 @@ Pour déployer sur un appareil iOS ou tvOS, procédez comme suit :
 
 Le débogage sans fil est automatiquement activé après le déploiement sans fil, afin de pouvoir utiliser les points d’arrêt précédemment définis et continuer le débogage du workflow comme d’habitude.
 
-## <a name="troubleshooting"></a>Résolution des problèmes
+## <a name="troubleshooting"></a>Dépannage
 
 1. Assurez-vous toujours que votre appareil iOS ou Apple TV sont connectés au même réseau que votre Mac.
 
@@ -103,7 +103,7 @@ Le débogage sans fil est automatiquement activé après le déploiement sans fi
 
 4. Si vous rencontrez des problèmes liés à cette fonction qui ne peut pas être résolue par les étapes précédentes, veuillez soumettre un problème dans [Communauté de développeurs](https://developercommunity.visualstudio.com/spaces/41/index.html).
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Coupler un appareil sans fil avec Xcode](https://help.apple.com/xcode/mac/9.0/index.html?localePath=en.lproj#/devbc48d1bad)
 

@@ -8,32 +8,32 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
 ms.openlocfilehash: 1fe2611e26d357d910cc85800355b42d11e1104b
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "72697185"
 ---
 # <a name="highlighting-a-circular-area-on-a-map"></a>Mise en surbrillance d’une zone circulaire sur une carte
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-map-circle)
+[![Télécharger](~/media/shared/download.png) l’échantillon Télécharger l’échantillon](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-map-circle)
 
 _Cet article explique comment ajouter une superposition circulaire à une carte afin de mettre en surbrillance une zone circulaire de la carte._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d’ensemble
 
 Une superposition est une forme graphique posée sur une carte. Les superpositions prennent en charge le tracé de contenu graphique qui s’ajuste à la carte quand celle-ci est zoomée. Les captures d’écran suivantes montrent le résultat de l’ajout d’une superposition circulaire sur une carte :
 
 ![](circle-map-overlay-images/screenshots.png)
 
-Quand un contrôle [`Map`](xref:Xamarin.Forms.Maps.Map) est restitué par une application Xamarin.Forms, dans iOS, la classe `MapRenderer` est instanciée, entraînant à son tour l’instanciation d’un contrôle `MKMapView` natif. Sur la plateforme Android, la classe `MapRenderer` instancie un contrôle `MapView` natif. Sur la plateforme Windows universelle (UWP), la classe `MapRenderer` instancie un `MapControl` natif. Il est possible de tirer profit du processus de rendu pour implémenter des personnalisations de carte spécifiques à la plateforme en créant un renderer personnalisé pour un `Map` sur chaque plateforme. Le processus pour y parvenir est le suivant :
+Lorsqu’un [`Map`](xref:Xamarin.Forms.Maps.Map) contrôle est rendu par une application Xamarin.Forms, dans iOS la `MapRenderer` classe est `MKMapView` instantanée, ce qui à son tour instantané un contrôle indigène. Sur la plateforme Android, la classe `MapRenderer` instancie un contrôle `MapView` natif. Sur la plateforme Windows universelle (UWP), la classe `MapRenderer` instancie un `MapControl` natif. Il est possible de tirer profit du processus de rendu pour implémenter des personnalisations de carte spécifiques à la plateforme en créant un renderer personnalisé pour un `Map` sur chaque plateforme. Le processus pour y parvenir est le suivant :
 
 1. [Créez](#Creating_the_Custom_Map) une carte personnalisée Xamarin.Forms.
 1. [Consommez](#Consuming_the_Custom_Map) la carte personnalisée à partir de Xamarin.Forms.
 1. [Personnalisez](#Customizing_the_Map) la carte en créant un renderer personnalisé pour la carte sur chaque plateforme.
 
 > [!NOTE]
-> [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps) doit être initialisé et configuré avant utilisation. Pour plus d’informations, consultez [`Maps Control`](~/xamarin-forms/user-interface/map/index.md).
+> [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps)doivent être paralés et configurés avant utilisation. Pour plus d’informations, voir[`Maps Control`](~/xamarin-forms/user-interface/map/index.md)
 
 Pour plus d’informations sur la personnalisation d’une carte à l’aide d’un renderer personnalisé, consultez [Personnalisation d’une épingle de carte](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md).
 
@@ -51,7 +51,7 @@ public class CustomCircle
 }
 ```
 
-Ensuite, créez une sous-classe de la classe [ `Map` ](xref:Xamarin.Forms.Maps.Map), qui ajoute une propriété de type `CustomCircle` :
+Ensuite, créez une sous-classe de la [`Map`](xref:Xamarin.Forms.Maps.Map) classe, qui ajoute une propriété de type `CustomCircle`:
 
 ```csharp
 public class CustomMap : Map
@@ -122,7 +122,7 @@ public partial class MapPage : ContentPage
 }
 ```
 
-Cette initialisation ajoute les instances [`Pin`](xref:Xamarin.Forms.Maps.Pin) et `CustomCircle` à la carte personnalisée et positionne la vue de la carte avec la méthode [`MoveToRegion`](xref:Xamarin.Forms.Maps.Map.MoveToRegion*), laquelle change la position et le niveau de zoom de la carte en créant un [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) à partir d’une [`Position`](xref:Xamarin.Forms.Maps.Position) et d’une [`Distance`](xref:Xamarin.Forms.Maps.Distance).
+Cette initialisation [`Pin`](xref:Xamarin.Forms.Maps.Pin) `CustomCircle` ajoute et les instances à la carte personnalisée, et positionne la vue de la [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) carte [`Position`](xref:Xamarin.Forms.Maps.Position) avec [`Distance`](xref:Xamarin.Forms.Maps.Distance)la [`MoveToRegion`](xref:Xamarin.Forms.Maps.Map.MoveToRegion*) méthode, qui modifie le niveau de position et de zoom de la carte en créant un à partir d’un et un .
 
 <a name="Customizing_the_Map" />
 
@@ -249,7 +249,7 @@ namespace MapOverlay.Droid
 }
 ```
 
-La méthode `OnElementChanged` récupère les données de cercle personnalisées, à condition que le convertisseur personnalisé soit attaché à un nouvel élément Xamarin. Forms. Une fois que l’instance `GoogleMap` est disponible, la méthode `OnMapReady` est appelée, où le cercle est créé en instanciant un objet `CircleOptions` qui spécifie le centre du cercle et le rayon du cercle en mètres. Le cercle est ensuite ajouté à la carte en appelant la méthode `NativeMap.AddCircle`.
+La `OnElementChanged` méthode récupère les données personnalisées du cercle, à condition que le rendu personnalisé soit attaché à un nouvel élément Xamarin.Forms. Une fois que l’instance `GoogleMap` est disponible, la méthode `OnMapReady` est appelée, où le cercle est créé en instanciant un objet `CircleOptions` qui spécifie le centre du cercle et le rayon du cercle en mètres. Le cercle est ensuite ajouté à la carte en appelant la méthode `NativeMap.AddCircle`.
 
 #### <a name="creating-the-custom-renderer-on-the-universal-windows-platform"></a>Création du renderer personnalisé sur la plateforme Windows universelle
 
@@ -302,7 +302,7 @@ Cette méthode procède aux opérations suivantes, sous réserve que le renderer
 - La position et le rayon du cercle sont récupérés dans la propriété `CustomMap.Circle` et passés à la méthode `GenerateCircleCoordinates`, qui génère les coordonnées de latitude et de longitude du périmètre du cercle. Le code de cette méthode d’assistance est indiqué ci-dessous.
 - Les coordonnées du périmètre du cercle sont converties en `List` de coordonnées `BasicGeoposition`.
 - Le cercle est créé en instanciant un objet `MapPolygon`. La classe `MapPolygon` est utilisée pour afficher une forme multipoint sur la carte en définissant sa propriété `Path` sur un objet `Geopath` qui contient les coordonnées de la forme.
-- Le polygone est rendu sur la carte en l’ajoutant à la collection `MapControl.MapElements`.
+- Le cercle est rendu sur la carte en l’ajoutant à la collection `MapControl.MapElements`.
 
 ```
 List<Position> GenerateCircleCoordinates(Position position, double radius)
@@ -330,7 +330,7 @@ List<Position> GenerateCircleCoordinates(Position position, double radius)
 
 Cet article a expliqué comment ajouter une superposition circulaire à une carte afin de mettre en surbrillance une zone circulaire de la carte.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Superposition circulaire sur une carte (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-map-circle)
 - [Personnalisation d’une épingle de carte](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md)

@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
 ms.openlocfilehash: 12633b728240c2f90d0265fe7b9efb65ea49bf1f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "68650646"
 ---
 # <a name="custom-video-positioning"></a>Positionnement vidéo personnalisé
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+[![Télécharger](~/media/shared/download.png) l’échantillon Télécharger l’échantillon](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
 Les contrôles de transport implémentés par chaque plateforme incluent une barre de position. Cette barre ressemble à un curseur ou une barre de défilement et indique la position actuelle de la vidéo au sein de sa durée totale. En outre, l’utilisateur peut avancer ou reculer la barre de position vers une nouvelle position dans la vidéo.
 
@@ -172,9 +172,9 @@ namespace FormsVideoLibrary
 
 L’accesseur `get` retourne la position actuelle de la vidéo en cours de lecture, mais l’accesseur `set` vise à répondre à la manipulation de la barre de position par l’utilisateur en avançant ou en reculant la position de la vidéo.
 
-Dans iOS et Android, la propriété qui obtient la position actuelle a uniquement un accesseur `get` et une méthode `Seek` est disponible pour effectuer cette deuxième tâche. En y réfléchissant, une méthode `Seek` distincte semble être une approche plus pratique qu’une seule propriété `Position`. Une seule propriété `Position` présente un problème inhérent : Lors de la lecture de la vidéo, la propriété `Position` doit être mise à jour en permanence afin de refléter la nouvelle position. Toutefois, vous ne voulez pas que la plupart des modifications apportées à la propriété `Position` entraîne le déplacement du lecteur vidéo vers une nouvelle position dans la vidéo. Si cela se produit, le lecteur vidéo répond en cherchant la dernière valeur de la propriété `Position` et la vidéo n’avance pas.
+Dans iOS et Android, la propriété qui obtient la position actuelle a uniquement un accesseur `get` et une méthode `Seek` est disponible pour effectuer cette deuxième tâche. En y réfléchissant, une méthode `Seek` distincte semble être une approche plus pratique qu’une seule propriété `Position`. Une seule propriété `Position` présente un problème inhérent : lors de la lecture de la vidéo, la propriété `Position` doit être mise à jour en permanence afin de refléter la nouvelle position. Toutefois, vous ne voulez pas que la plupart des modifications apportées à la propriété `Position` entraîne le déplacement du lecteur vidéo vers une nouvelle position dans la vidéo. Si cela se produit, le lecteur vidéo répond en cherchant la dernière valeur de la propriété `Position` et la vidéo n’avance pas.
 
-Malgré les difficultés d’implémentation d’une propriété `Position` avec les accesseurs `set` et `get`, cette approche a été choisie, car elle est cohérente avec la plateforme Windows universelle `MediaElement` et présente un avantage important avec la liaison de données : La propriété `Position` de `VideoPlayer` peut être liée au curseur qui est utilisé pour afficher la position et effectuer une recherche d’une nouvelle position. Toutefois, quelques précautions sont nécessaires lors de l’implémentation de cette propriété `Position` afin d’éviter les boucles de rétroaction.
+Malgré les difficultés d’implémentation d’une propriété `Position` avec les accesseurs `set` et `get`, cette approche a été choisie, car elle est cohérente avec le `MediaElement` UWP et elle présente un avantage majeur avec la liaison de données : la propriété `Position` du `VideoPlayer` peut être liée au curseur qui est utilisé à la fois pour afficher la position et pour chercher une nouvelle position. Toutefois, quelques précautions sont nécessaires lors de l’implémentation de cette propriété `Position` afin d’éviter les boucles de rétroaction.
 
 ### <a name="setting-and-getting-ios-position"></a>Définition et obtention de la position iOS
 
@@ -399,7 +399,7 @@ namespace FormsVideoLibrary
 
 Le gestionnaire de modification de propriété pour la propriété `Duration` définit la propriété `Maximum` du `Slider` sous-jacent sur la propriété `TotalSeconds` de la valeur `TimeSpan`. De même, le gestionnaire de modification de propriété pour `Position` définit la propriété `Value` du `Slider`. De cette façon, le `Slider` sous-jacent effectue le suivi de la position du `PositionSlider`.
 
-Le `PositionSlider` est mis à jour à partir du `Slider` sous-jacent dans une seule instance : Quand l’utilisateur manipule le `Slider` pour indiquer que la vidéo doit être avancée ou inversée vers une nouvelle position. Cela est détecté dans le gestionnaire `PropertyChanged` dans le constructeur du `PositionSlider`. Le gestionnaire recherche un changement dans la propriété `Value` et, si elle est différente de la propriété `Position`, la propriété `Position` est définie à partir de la propriété `Value`.
+Le `PositionSlider` est mis à jour à partir du `Slider` sous-jacent dans une seule instance : quand l’utilisateur manipule le `Slider` pour indiquer que la vidéo doit être avancée ou inversée vers une nouvelle position. Cela est détecté dans le gestionnaire `PropertyChanged` dans le constructeur du `PositionSlider`. Le gestionnaire recherche un changement dans la propriété `Value` et, si elle est différente de la propriété `Position`, la propriété `Position` est définie à partir de la propriété `Value`.
 
 En théorie, l’instruction `if` interne peut être écrite comme suit :
 
@@ -414,7 +414,7 @@ Toutefois, l’implémentation Android de `Slider` n’a que 1 000 étapes dis
 
 ## <a name="using-the-positionslider"></a>Utilisation de PositionSlider
 
-La documentation pour le [`MediaElement`](/uwp/api/Windows.UI.Xaml.Controls.MediaElement/) UWP fournit un avertissement concernant la liaison à la propriété `Position`, car elle est fréquemment mise à jour. La documentation recommande d’utiliser une minuterie (Timer) pour interroger la propriété `Position`.
+La documentation pour [`MediaElement`](/uwp/api/Windows.UI.Xaml.Controls.MediaElement/) l’UWP `Position` met en garde au sujet de la liaison à la propriété parce que la propriété met fréquemment à jour. La documentation recommande d’utiliser une minuterie (Timer) pour interroger la propriété `Position`.
 
 Il s’agit d’un conseil judicieux, mais les trois classes `VideoPlayerRenderer` utilisent déjà indirectement une minuterie pour mettre à jour la propriété `Position`. La propriété `Position` est modifiée dans un gestionnaire pour l’événement `UpdateStatus`, qui est déclenché uniquement 10 fois par seconde.
 
@@ -479,6 +479,6 @@ Les premiers points de suspension (···) masquent l’élément `ActivityIndic
 
 Ainsi se termine la discussion sur le `VideoPlayer`.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Démonstrations de lecteur vidéo (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

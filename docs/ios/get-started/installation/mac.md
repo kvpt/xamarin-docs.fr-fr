@@ -8,18 +8,18 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
 ms.openlocfilehash: 4c7ace8f2f1080126d019ed30a647ced98cbde56
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73022505"
 ---
 # <a name="installing-and-configuring-xamarinios-on-a-mac"></a>Installation et configuration de Xamarin.iOS sur un Mac
 
 > [!NOTE]
-> Ce contenu a été déplacé vers les guides d’installation de Visual Studio pour Mac sur [docs.microsoft.com](https://docs.microsoft.com/visualstudio/mac/installation).
+>  Ce contenu a été déplacé vers les guides d’installation de Visual Studio pour Mac sur [docs.microsoft.com](https://docs.microsoft.com/visualstudio/mac/installation).
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Introduction au développement mobile](~/cross-platform/get-started/introduction-to-mobile-development.md)
 - [Hello, iPhone](~/ios/get-started/hello-ios/index.md)

@@ -8,17 +8,17 @@ author: vyedin
 ms.author: vyedin
 ms.date: 07/22/2018
 ms.openlocfilehash: a24edbc10d529878092b474df7f186d14049d5e0
-ms.sourcegitcommit: f8e22a3b0642179bf44a312e9a2fac0fbad8683c
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57239111"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "60955086"
 ---
 # <a name="microsofts-mobile-openjdk-distribution"></a>Distribution OpenJDK mobile de Microsoft
 
-_Ce guide décrit les étapes permettant de passer à une distribution interne d’OpenJDK. Cette distribution est destinée au développement mobile._
+_Ce guide décrit les étapes pour passer à une distribution interne d’OpenJDK. Cette distribution est destinée au développement mobile._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d’ensemble
 
 À partir de Visual Studio 15.9 et Visual Studio pour Mac 7.7, Visual Studio Tools pour Xamarin est passé du kit JDK d’Oracle à une **version légère d’OpenJDK, destinée uniquement au développement Android**. Il s’agit d’une migration obligatoire parce qu’Oracle met fin au support de la distribution commerciale de JDK 8 en 2019 et que JDK 8 est une dépendance requise pour tout développement Android.
 
@@ -40,7 +40,7 @@ La distribution d’OpenJDK mobile est installée automatiquement si vous sélec
 
 Sur Mac, OpenJDK mobile est installé pour vous dans le cadre de la charge de travail Android des nouvelles installations. Pour les utilisateurs de Visual Studio pour Mac, vous devez l’installer dans le cadre de la mise à jour. L’IDE vous invite à passer au nouveau JDK et l’applique au prochain redémarrage.
 
-## <a name="troubleshooting"></a>Résolution des problèmes
+## <a name="troubleshooting"></a>Dépannage
 
 Si vous rencontrez des problèmes avec le programme d’installation sur Mac ou Windows, vous pouvez effectuer les étapes suivantes d’une installation manuelle :
 

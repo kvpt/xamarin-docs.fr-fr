@@ -7,10 +7,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 01/22/2020
 ms.openlocfilehash: 4c9096edddeb00070aaabc3e93b283f2d55c1bfa
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "79304316"
 ---
 # <a name="uninstall-xamarin-from-visual-studio"></a>Désinstaller Xamarin de Visual Studio
@@ -29,7 +29,7 @@ Pour désinstaller Xamarin de Visual Studio 2019 et Visual Studio 2017, utilis
 
     [![](uninstalling-xamarin-images/vs2017-02-sml.png "Press the modify button")](uninstalling-xamarin-images/vs2017-02.png#lightbox)
 
-3. Sous l’onglet **Charges de travail**, décochez l’option  **Développement mobile en .NET** (dans la section **Mobile et jeux**).
+3. Sous l’onglet **Charges de travail**, décochez l’option ** Développement mobile en .NET** (dans la section **Mobile et jeux**).
 
     [![](uninstalling-xamarin-images/vs2017-03-sml.png "Uncheck the Mobile Development workload")](uninstalling-xamarin-images/vs2017-03.png#lightbox)
 
@@ -39,7 +39,7 @@ Pour désinstaller Xamarin de Visual Studio 2019 et Visual Studio 2017, utilis
 
     [![](uninstalling-xamarin-images/vs2017-04-sml.png "Press the Modify button")](uninstalling-xamarin-images/vs2017-04.png#lightbox)
 
-Pour supprimer les composants Xamarin un à un (par exemple, Profiler ou Workbooks), accédez à l’onglet **Composants individuels** à l’étape 3, puis décochez les composants de votre choix :
+Les composants Xamarin individuels (tels que le Profileur ou les cahiers de travail) peuvent être désinstallés en passant à **l’onglet composants individuels** à l’étape 3, et en décochant des composants spécifiques :
 
 [![](uninstalling-xamarin-images/vs2017-components-sml.png "Uninstall individual components")](uninstalling-xamarin-images/vs2017-components.png#lightbox)
 

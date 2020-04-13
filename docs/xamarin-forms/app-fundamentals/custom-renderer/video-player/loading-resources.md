@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
 ms.openlocfilehash: 4573d58f80b9c168f5d0a8a3f72beb64c29b1703
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70771838"
 ---
 # <a name="loading-application-resource-videos"></a>Chargement de vidéos de ressource d’application
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+[![Télécharger](~/media/shared/download.png) l’échantillon Télécharger l’échantillon](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
 Les renderers personnalisés pour l’affichage `VideoPlayer` sont capables de lire des fichiers vidéo qui ont été incorporés dans les projets de plateforme individuels en tant que ressources d’application. Toutefois, la version actuelle de `VideoPlayer` ne peut pas accéder aux ressources incorporées dans une bibliothèque .NET Standard.
 
@@ -177,10 +177,10 @@ Si la ressource iOS est stockée dans le dossier **Resources** et si la ressourc
 
 Voici cette page en cours d’exécution :
 
-[![Lire la ressource vidéo](loading-resources-images/playvideoresource-small.png "Lire la ressource vidéo")](loading-resources-images/playvideoresource-large.png#lightbox "Lire la ressource vidéo")
+[![Lire Video Resource](loading-resources-images/playvideoresource-small.png "Lire Video Resource")](loading-resources-images/playvideoresource-large.png#lightbox "Lire Video Resource")
 
 Vous avez maintenant vu comment [charger des vidéos à partir d’un URI web](web-videos.md) et comment lire des ressources incorporées. En outre, vous pouvez [charger des vidéos à partir de la vidéothèque de l’appareil](accessing-library.md).
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Démonstrations de lecteur vidéo (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

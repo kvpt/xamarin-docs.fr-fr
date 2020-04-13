@@ -10,10 +10,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 05/23/2019
 ms.openlocfilehash: fd2fcf6ebe11df27444f2ecc1d89955debf56cb4
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "75502798"
 ---
 # <a name="build-your-first-xamarinforms-app"></a>Générer votre première application Xamarin.Forms
@@ -26,21 +26,21 @@ _Regardez cette vidéo et suivez la procédure indiquée pour créer votre premi
 
 ## <a name="step-by-step-instructions-for-windows"></a>Instructions pas à pas pour Windows
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
+[![Télécharger](~/media/shared/download.png) l’échantillon Télécharger l’échantillon](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
 
 Suivez ces étapes, ainsi que la vidéo ci-dessus :
 
 1. Choisissez **Fichier > Nouveau > Projet**, ou appuyez sur le bouton **Créer un projet** :
 
-    [![Créer un projet](images/win-2019/01-sml.png)](images/win-2019/01.png#lightbox)
+    [![Création d'un projet](images/win-2019/01-sml.png)](images/win-2019/01.png#lightbox)
 
 2. Recherchez « Xamarin », ou choisissez **Mobile** dans le menu **Type de projet**. Sélectionnez le type de projet **Application mobile (Xamarin.Forms)**  :
 
-    [![Filtrer les projets Xamarin](images/win-2019/02-sml.png)](images/win-2019/02.png#lightbox)
+    [![Filtre pour les projets Xamarin](images/win-2019/02-sml.png)](images/win-2019/02.png#lightbox)
 
 3. Choisissez un nom de projet. L’exemple utilise « AwesomeApp » :
 
-    [![Choisir un nom de projet](images/win-2019/03-sml.png)](images/win-2019/03.png#lightbox)
+    [![Choisissez un nom de projet](images/win-2019/03-sml.png)](images/win-2019/03.png#lightbox)
 
 4. Cliquez sur le type de projet **Vide**, puis vérifiez qu’**Android** et **iOS** sont sélectionnés :
 
@@ -54,7 +54,7 @@ Suivez ces étapes, ainsi que la vidéo ci-dessus :
 
 7. Dans l’écran de création de l’émulateur, utilisez les paramètres par défaut, puis cliquez sur le bouton **Créer** :
 
-    [![Écran de création de l’Émulateur Android](images/win-2019/create-emulator-sml.png)](images/win-2019/create-emulator.png#lightbox)
+    [![Écran de création d’émulateur Android](images/win-2019/create-emulator-sml.png)](images/win-2019/create-emulator.png#lightbox)
 
 8. La création d’un émulateur vous ramène à la fenêtre du Gestionnaire d’appareils. Cliquez sur le bouton **Démarrer** pour lancer le nouvel émulateur :
 
@@ -111,7 +111,7 @@ Cette vidéo décrit le processus de génération et de test d’une application
 
 ## <a name="step-by-step-instructions-for-windows"></a>Instructions pas à pas pour Windows
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
+[![Télécharger](~/media/shared/download.png) l’échantillon Télécharger l’échantillon](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
 
 Suivez ces étapes, ainsi que la vidéo ci-dessus :
 
@@ -158,13 +158,13 @@ Suivez ces étapes, ainsi que la vidéo ci-dessus :
 
 ## <a name="step-by-step-instructions-for-mac"></a>Instructions pas à pas pour Mac
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
+[![Télécharger](~/media/shared/download.png) l’échantillon Télécharger l’échantillon](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
 
 Suivez ces étapes, ainsi que la vidéo ci-dessus :
 
 1. Choisissez **Fichier > Nouvelle solution**, ou appuyez sur le bouton **Nouveau projet**, puis sélectionnez **Multiplateforme > Application > Application Forms vide** :
 
-    [![Application Forms vide](images/01-sml.png)](images/01.png#lightbox)
+    [![Application blank Forms](images/01-sml.png)](images/01.png#lightbox)
 
 2. Vérifiez qu’**Android** et **iOS** sont sélectionnés, ainsi que le partage de code **.NET Standard** :
 

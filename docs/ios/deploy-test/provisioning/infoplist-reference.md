@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 01/18/2017
 ms.openlocfilehash: d94a647583539ac6af603a9074e1966c1c41d587
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73028459"
 ---
 # <a name="infoplist-reference-for-xamarinios"></a>Informations de référence sur le fichier Info.plist pour Xamarin.iOS
@@ -49,7 +49,7 @@ NSBluetoothPeripheralUsageDescription
 
 NSMicrophoneUsageDescription 
 
-## <a name="camera"></a>Appareil photo 
+## <a name="camera"></a>Caméra 
     
 NSCameraUsageDescription 
 
@@ -67,6 +67,6 @@ UIBackgroundModes
 
 NSHomeKitUsageDescription 
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
-- [Guide de référence Apple.](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html#//apple_ref/doc/uid/TP40009252-SW10)
+- [Guide de référence Apple](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html#//apple_ref/doc/uid/TP40009252-SW10)

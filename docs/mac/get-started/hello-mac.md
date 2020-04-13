@@ -9,15 +9,15 @@ author: davidortinau
 ms.author: daortin
 ms.date: 09/02/2018
 ms.openlocfilehash: b56275ef903aa7def239a2e19980f52d83e6194f
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "75489737"
 ---
 # <a name="hello-mac-walkthrough"></a>Hello, Mac – Procédure pas à pas
 
-Xamarin.Mac permet le développement d’applications Mac entièrement natives en C# et .NET à l’aide des mêmes API macOS que celles utilisées lors du développement en *Objective-C* ou *Swift*. Comme Xamarin.Mac est directement intégré à Xcode, le développeur peut utiliser _Interface Builder_ de Xcode pour créer les interfaces utilisateur d’une application (ou éventuellement pour les créer directement en code C#).
+Xamarin.Mac permet le développement d’applications Mac entièrement natives en C# et .NET à l’aide des mêmes API macOS que celles utilisées lors du développement en *Objective-C* ou *Swift*. Étant donné que Xamarin.Mac s’intègre directement à Xcode, le développeur peut utiliser le _constructeur d’interfaces_ de Xcode pour créer les interfaces utilisateur d’une application (ou les créer directement dans le code C).
 
 De plus, étant donné que les applications Xamarin.Mac sont écrites en C# et .NET, le code peut être partagé avec les applications mobiles Xamarin.iOS et Xamarin.Android, tout en proposant une expérience native sur chaque plateforme.
 
@@ -33,12 +33,12 @@ Les concepts suivants sont abordés :
 - **Outlets et actions** : comment utiliser les outlets et actions pour relier des contrôles dans l’interface utilisateur.
 - **Déploiement/tests** : comment exécuter et tester une application Xamarin.Mac.
 
-## <a name="requirements"></a>Configuration requise pour
+## <a name="requirements"></a>Spécifications
 
 Le développement d’applications Xamarin.Mac nécessite :
 
 - Un ordinateur Mac exécutant macOS High Sierra (10.13) ou une version ultérieure.
-- [Xcode 10 ou version ultérieure](https://itunes.apple.com/us/app/xcode/id497799835?mt=12).
+- [Xcode 10 ou plus](https://itunes.apple.com/us/app/xcode/id497799835?mt=12).
 - La dernière version de [Xamarin.Mac et Visual Studio pour Mac](https://docs.microsoft.com/visualstudio/mac/installation/).
 
 Pour exécuter une application générée avec Xamarin.Mac, vous aurez besoin des éléments suivants :
@@ -53,7 +53,7 @@ Pour exécuter une application générée avec Xamarin.Mac, vous aurez besoin de
 
 Comme indiqué ci-dessus, ce guide passe en revue les étapes pour créer une application Mac appelée `Hello_Mac` qui ajoute un seul bouton et une étiquette à la fenêtre principale. Quand vous cliquez sur le bouton, l’étiquette affiche le nombre de clics effectués.
 
-Pour commencer, effectuez les étapes suivantes :
+Pour commencer, suivez les étapes ci-dessous :
 
 1. Démarrez Visual Studio pour Mac :
 
@@ -63,7 +63,7 @@ Pour commencer, effectuez les étapes suivantes :
 
     [![](hello-mac-images/setup02-sml.png "Selecting a Cocoa App")](hello-mac-images/setup02.png#lightbox)
 
-3. Entrez `Hello_Mac` pour **Nom de l’application** et gardez toutes les autres valeurs par défaut. Cliquez sur**Suivant** :
+3. Entrez `Hello_Mac` pour **Nom de l’application** et gardez toutes les autres valeurs par défaut. Cliquez **sur Next**:
 
     [![](hello-mac-images/setup03-sml.png "Setting the name of the app")](hello-mac-images/setup03.png#lightbox)
 
@@ -77,7 +77,7 @@ Visual Studio pour Mac crée l’application Xamarin.Mac et affiche les fichiers
 
 [![](hello-mac-images/project01-sml.png "The new solution default view")](hello-mac-images/project01.png#lightbox)
 
-Visual Studio pour Mac utilise la même structure **Solution** et **Projet** que Visual Studio 2019. Une solution est un conteneur qui peut contenir un ou plusieurs projets. les projets peuvent inclure des applications, des bibliothèques de prise en charge, des applications de test, etc. Le **fichier > nouveau** modèle de projet crée automatiquement une solution et un projet d’application.
+Visual Studio pour Mac utilise la même structure **Solution** et **Projet** que Visual Studio 2019. Une solution est un conteneur qui peut contenir un ou plusieurs projets; peuvent inclure des applications, des bibliothèques de soutien, des applications de test, etc. Le **modèle De file > Nouveau Projet** crée automatiquement une solution et un projet d’application.
 
 ## <a name="anatomy-of-a-xamarinmac-application"></a>Structure d’une application Xamarin.Mac
 
@@ -269,7 +269,7 @@ Les sections suivantes décrivent la fonction de chacune de ces fonctionnalités
 
 Lors de l’ouverture d’un fichier **.storyboard** pour modification dans Xcode, Visual Studio pour Mac crée un *fichier projet Xcode* en arrière-plan pour communiquer les modifications entre lui-même et Xcode. Par la suite, quand le développeur revient à Visual Studio pour Mac à partir de Xcode, toutes les modifications apportées à ce projet sont synchronisées avec le projet Xamarin.Mac par Visual Studio pour Mac.
 
-La section **Navigation dans le projet** permet au développeur de naviguer entre tous les fichiers qui constituent ce projet Xcode _shim_. En règle générale, il est uniquement intéressé par les fichiers `.storyboard` de cette liste tels que `Main.storyboard`.
+La section **Navigation de projet** permet au développeur de naviguer entre tous les fichiers qui composent ce projet _shim_ Xcode. En règle générale, il est uniquement intéressé par les fichiers `.storyboard` de cette liste tels que `Main.storyboard`.
 
 ### <a name="interface-hierarchy"></a>Hiérarchie des interfaces
 
@@ -277,7 +277,7 @@ La section **Hiérarchie des interfaces** permet au développeur d’accéder fa
 
 ### <a name="interface-editor"></a>Éditeur d’interface
 
-La section de l' **éditeur d’interface** fournit la surface sur laquelle l’interface utilisateur est graphiquement présentée. Faites glisser les éléments de la section **bibliothèque** de la section **Propriétés & utilitaires** pour créer la conception. Comme les éléments d’interface utilisateur (vues) sont ajoutés à l’aire de conception, ils sont ajoutés à la section **Hiérarchie des interfaces** dans l’ordre où ils apparaissent dans l’**Éditeur d’interface**.
+La section **Interface Editor** fournit la surface sur laquelle l’interface utilisateur est disposée graphiquement. Faites glisser des éléments de la section **Bibliothèque** de la section **Propriétés & Services publics** pour créer la conception. Comme les éléments d’interface utilisateur (vues) sont ajoutés à l’aire de conception, ils sont ajoutés à la section **Hiérarchie des interfaces** dans l’ordre où ils apparaissent dans l’**Éditeur d’interface**.
 
 ### <a name="properties--utilities"></a>Propriétés et utilitaires
 
@@ -348,7 +348,7 @@ Suivez ces étapes pour utiliser Interface Builder :
 
 10. Cliquez sur le bouton **Add 4 Constraints** (Ajouter 4 contraintes) pour ajouter les contraintes et fermer l’éditeur.
 
-11. Sélectionnez l’étiquette, puis cliquez à nouveau sur l’icône **Éditeur de contraintes** :
+11. Sélectionnez l’étiquette et cliquez à nouveau sur l’icône **Constraints Editor** :
 
     [![](hello-mac-images/xcode14.png "Adding constraints to the label")](hello-mac-images/xcode14.png#lightbox)
 
@@ -387,7 +387,7 @@ Ce fichier stub `.h` reflète le fichier `ViewController.designer.cs` ajouté au
 
 Une fois quelques notions de base acquises sur les **outlets** et **actions**, créez un **outlet** pour exposer l’étiquette créée à notre code C#.
 
-procédez comme suit :
+Effectuez les actions suivantes :
 
 1. Dans Xcode, dans le coin supérieur tout à droite de l’écran, cliquez sur le bouton **Double Circle** (Cercle double) pour ouvrir l’**Assistant Editor** (Éditeur d’Assistant) :
 
@@ -425,7 +425,7 @@ procédez comme suit :
 
 Ensuite, exposez le bouton au code C#. Tout comme l’étiquette ci-dessus, le développeur peut associer le bouton à un **outlet**. Étant donné que nous voulons uniquement répondre au bouton sur lequel le clic est effectué, utilisez une **action** à la place.
 
-procédez comme suit :
+Effectuez les actions suivantes :
 
 1. Vérifiez que Xcode est encore dans l’**Éditeur d’Assistant** et que le fichier **ViewController.h** est visible dans l’**Éditeur de code**.
 
@@ -450,7 +450,7 @@ procédez comme suit :
 Avec l’interface utilisateur reliée et exposée au code C#, revenez à Visual Studio pour Mac et laissez-le synchroniser les modifications effectuées dans Xcode et Interface Builder.
 
 > [!NOTE]
-> La création de l’interface utilisateur ainsi que celle des **outlets** et des **actions** a probablement pris beaucoup de temps pour cette première application et peut sembler représenter un travail considérable, mais un grand nombre de nouveaux concepts ont été introduits et beaucoup de temps a été passé à étudier de nouveaux éléments. Après avoir utilisé Interface Builder pendant un certain temps, cette interface ainsi que l’ensemble des **outlets** et **actions** peuvent être créés en seulement une ou deux minutes.
+> Il a probablement fallu beaucoup de temps pour créer l’interface utilisateur et **les points de vente** et **actions** pour cette première application, et il peut sembler beaucoup de travail, mais beaucoup de nouveaux concepts ont été introduits et beaucoup de temps a été consacré à couvrir de nouveaux terrains. Après avoir utilisé Interface Builder pendant un certain temps, cette interface ainsi que l’ensemble des **outlets** et **actions** peuvent être créés en seulement une ou deux minutes.
 
 ### <a name="synchronizing-changes-with-xcode"></a>Synchronisation des modifications avec Xcode
 
@@ -486,7 +486,7 @@ Normalement, le développeur ne devra jamais ouvrir **ViewController.designer.cs
 
 ## <a name="writing-the-code"></a>Écriture du code
 
-Une fois l’interface utilisateur créée et ses éléments exposés au code par le biais des **outlets** et **actions**, nous sommes enfin prêts à écrire le code pour lancer le programme.
+Avec l’interface utilisateur créée et ses éléments d’interface utilisateur exposés au code via **Outlets** and **Actions**, nous sommes enfin prêts à écrire le code pour donner vie au programme.
 
 Pour cet exemple d’application, à chaque clic sur le premier bouton, l’étiquette est actualisée pour afficher le nombre de clics effectués. Pour ce faire, ouvrez le fichier `ViewController.cs` pour modification en double-cliquant dessus dans l’**Explorateur de solutions** :
 
@@ -528,7 +528,7 @@ partial void ClickedButton (Foundation.NSObject sender) {
 
 Ce code est associé à l’**action** créée dans Xcode et Interface Builder, et est appelé chaque fois que l’utilisateur clique sur le bouton.
 
-## <a name="testing-the-application"></a>Test de l'application
+## <a name="testing-the-application"></a>Test de l’application
 
 Il est temps de générer et d’exécuter l’application pour vérifier qu’elle s’exécute comme prévu. Le développeur peut la générer et l’exécuter en une seule étape, ou il peut la générer sans l’exécuter.
 
@@ -543,7 +543,7 @@ Le développeur peut sélectionner le type de génération à partir du **Sélec
 
 ## <a name="building-the-application"></a>Génération de l'application
 
-Dans le cas de cet exemple, comme nous voulons simplement une version Debug, vérifiez que l’option **Debug** est sélectionnée. Générez d’abord l’application en appuyant sur **⌘+B** ou, à partir du menu **Générer** , choisissez **Générer tout**.
+Dans le cas de cet exemple, comme nous voulons simplement une version Debug, vérifiez que l’option **Debug** est sélectionnée. Générez d’abord l’application en appuyant sur **⌘+B** ou, à partir du menu **Générer **, choisissez **Générer tout**.
 
 Si aucune erreur ne s’affiche, un message **La génération a réussi** apparaît dans la barre d’état Visual Studio pour Mac. Si des erreurs s’affichent, passez en revue le projet et vérifiez que les étapes décrites ci-dessus ont été correctement suivies. Commencez par confirmer que le code (à la fois dans Xcode et dans Visual Studio pour Mac) correspond au code dans le didacticiel.
 
@@ -551,7 +551,7 @@ Si aucune erreur ne s’affiche, un message **La génération a réussi** appara
 
 Il existe trois façons d’exécuter l’application :
 
-- Appuyez sur **⌘+Entrée**.
+- Appuyez **sur l’entrée.**
 - Dans le menu **Exécuter**, choisissez **Déboguer**.
 - Cliquez sur le bouton **Play** (Lire) dans la barre d’outils Visual Studio pour Mac (juste au-dessus de l’**Explorateur de solutions**).
 
@@ -589,7 +589,7 @@ Le code SourceWriter a été entièrement commenté et, le cas échéant, des li
 
 Cet article a couvert les principes de base d’une application Xamarin.Mac standard. Il a abordé la création d’une application dans Visual Studio pour Mac, la conception de l’interface utilisateur dans Xcode et Interface Builder, l’exposition des éléments d’interface utilisateur au code C# à l’aide des **outlets** et **actions**, l’ajout de code pour utiliser les éléments d’interface utilisateur et, enfin, la génération et le test d’une application Xamarin.Mac.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Hello, Mac (exemple)](https://docs.microsoft.com/samples/xamarin/mac-samples/hello-mac)
 - [Human Interface Guidelines pour macOS](https://developer.apple.com/design/human-interface-guidelines/macos/overview/themes/)

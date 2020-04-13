@@ -7,23 +7,23 @@ author: davidortinau
 ms.author: daortin
 ms.date: 04/25/2017
 ms.openlocfilehash: c07032d63032eb59cc67712bc2419f74319ea107
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73016513"
 ---
 # <a name="performance-and-security"></a>Performances et sécurité
 
-## <a name="cross-platform-performancememory-perf-best-practicesmd"></a>[Performances entre plateformes](memory-perf-best-practices.md)
+## <a name="cross-platform-performance"></a>[Niveau de performance multiplateforme](memory-perf-best-practices.md)
 
-De nombreuses techniques permettent d’accroître les performances des applications créées sur la plateforme Xamarin. Collectivement, ces techniques peuvent considérablement réduire la charge de travail d’un processeur, de même que la quantité de mémoire consommée par une application.
+De nombreuses techniques permettent d’accroître les performances des applications créées sur la plateforme Xamarin. Utilisées conjointement, ces techniques peuvent considérablement réduire la charge de travail d’une UC, ainsi que la quantité de mémoire consommée par une application.
 
 - [Performances Android](~/android/deploy-test/performance.md?context=xamarin/cross-platform)
-- [Performances iOS](~/ios/deploy-test/performance.md?context=xamarin/cross-platform)
-- [Performances Mac](~/mac/deploy-test/performance.md?context=xamarin/cross-platform)
+- [Performance iOS](~/ios/deploy-test/performance.md?context=xamarin/cross-platform)
+- [Mac Performance](~/mac/deploy-test/performance.md?context=xamarin/cross-platform)
 
-## <a name="transport-layer-security-tlscross-platformapp-fundamentalstransport-layer-securitymd"></a>[Transport Layer Security (TLS)](~/cross-platform/app-fundamentals/transport-layer-security.md)
+## <a name="transport-layer-security-tls"></a>[TLS (Transport Layer Security)](~/cross-platform/app-fundamentals/transport-layer-security.md)
 
 Vérifiez que vos applications utilisent les paramètres de sécurité recommandés, tels que TLS 1.2.
 

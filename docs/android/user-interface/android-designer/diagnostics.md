@@ -1,48 +1,48 @@
 ---
-title: Diagnostics de disposition Android
-description: Explique les diagnostics de mise en page Android et la prise en main
+title: Diagnostics de mise en page Android
+description: Explique les diagnostics de mise en page Android et comment commencer
 ms.prod: xamarin
 ms.assetid: BD252EA7-7E69-4DB4-96AB-D52CC0510C8F
 ms.technology: xamarin-android
 author: decriptor
 ms.author: stepsha
 ms.date: 03/24/2020
-ms.openlocfilehash: 5c29a1a80d8c1f599f0bbc750d22d8334ddb3494
-ms.sourcegitcommit: d83c6af42ed26947aa7c0ecfce00b9ef60f33319
+ms.openlocfilehash: 746f74e68fa4816f1f7979980af9506dc0173542
+ms.sourcegitcommit: 765b69ed451a0f48625ea597c3f39de95f3ae693
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80247740"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80987580"
 ---
-# <a name="android-layout-diagnostics"></a>Diagnostics de disposition Android
+# <a name="android-layout-diagnostics"></a>Diagnostics de mise en page Android
 
-Les diagnostics de disposition Android sont conçus pour aider à améliorer la qualité des fichiers de disposition Android en mettant en évidence les problèmes de qualité courants et les optimisations utiles. Cette fonctionnalité est disponible à la fois pour Visual Studio 16,5 + et Visual Studio pour Mac 8.5 +.
+Les diagnostics de mise en page Android sont conçus pour aider à améliorer la qualité des fichiers de mise en page Android en mettant en évidence des problèmes de qualité communs et des optimisations utiles. Cette fonctionnalité est disponible pour Visual Studio 16.5 et Visual Studio pour Mac 8.5 .
 
-Un ensemble d’analyseurs par défaut est fourni pour un large éventail de problèmes et peut être personnalisé pour couvrir les besoins spécifiques d’un projet. Les analyseurs sont faiblement basés sur le système d’inversion Android.
+Un ensemble d’analyseurs par défaut est fourni pour un large éventail de problèmes et chacun peut être personnalisé pour couvrir les besoins spécifiques d’un projet. Les analyseurs sont vaguement basés sur le système de linting Android.
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-## <a name="enable-android-layout-diagnostics-on-visual-studio-2019"></a>Activer les diagnostics de disposition Android sur Visual Studio 2019
+## <a name="enable-android-layout-diagnostics-on-visual-studio-2019"></a>Activez les diagnostics de mise en page Android sur Visual Studio 2019
 
-Assurez-vous que le paramètre de diagnostic disposition, **activer les diagnostics de disposition**, est activé. Pour accéder à cette page d’options, choisissez **outils** > **options**, puis choisissez **éditeur de texte** > **Android XML** > **avancé**:
+Assurez-vous que le réglage des diagnostics de mise en page, Activez les **diagnostics de mise en page,** est activé. Pour accéder à cette page d’options, choisissez **Tools** > **Options**, puis choisissez Text **Editor** > **Android XML** > **Advanced**:
 
-![Boîte de dialogue Options illustrant l’activation de l’option Diagnostics](diagnostics-images/AndroidDiagnosticsEnableOption.png)
+![Dialogue d’options montrant comment activer l’option de diagnostic](diagnostics-images/AndroidDiagnosticsEnableOption.png)
 
-Une fois activé, l’éditeur de disposition Android affiche des problèmes :
+Une fois activé, l’éditeur de mise en page Android affichera les problèmes :
 
-![Diagnostics Android activés sur Visual Studio 2019](diagnostics-images/AndroidDiagnosticsEnabled.png)
+![Diagnostic Android activé sur Visual Studio 2019](diagnostics-images/AndroidDiagnosticsEnabled.png)
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
-## <a name="enable-android-layout-diagnostics-on-visual-studio-for-mac"></a>Activer les diagnostics de disposition Android sur Visual Studio pour Mac
+## <a name="enable-android-layout-diagnostics-on-visual-studio-for-mac"></a>Activez les diagnostics de mise en page Android sur Visual Studio pour Mac
 
-Assurez-vous que le paramètre de diagnostic disposition, **activer les diagnostics de disposition**, est activé. Pour accéder à cette page d’options, choisissez **Visual Studio** > **Préférences...** , puis choisissez **éditeur de texte** > **Android XML**:
+Assurez-vous que le réglage des diagnostics de mise en page, Activez les **diagnostics de mise en page,** est activé. Pour accéder à cette page d’options, choisissez **Visual Studio** > **Preferences...**, puis choisissez **Text Editor** > **Android XML**:
 
-![Boîte de dialogue Préférences illustrant l’activation de l’option Diagnostics](diagnostics-images/AndroidDiagnosticsEnableOptionVSmac.png)
+![Dialogue de préférences montrant comment activer l’option de diagnostic](diagnostics-images/AndroidDiagnosticsEnableOptionVSmac.png)
 
-Une fois activé, l’éditeur de disposition Android affiche des problèmes :
+Une fois activé, l’éditeur de mise en page Android affichera les problèmes :
 
-![Diagnostics Android activés sur Visual Studio pour Mac](diagnostics-images/AndroidDiagnosticsEnabledVSmac.png)
+![Diagnostic Android activé sur Visual Studio pour Mac](diagnostics-images/AndroidDiagnosticsEnabledVSmac.png)
 
 -----
 
@@ -52,16 +52,16 @@ Les sections suivantes décrivent les fonctionnalités disponibles dans les diag
 
 ### <a name="analyzers"></a>Analyseurs
 
-Les analyseurs sont utilisés pour aider à détecter les problèmes dans les fichiers de disposition. Certains permettent de réduire les valeurs codées en dur, d’améliorer les performances et de marquer les erreurs.
+Les analyseurs sont utilisés pour aider à détecter les problèmes dans les fichiers de mise en page, réduire les valeurs codées en dur, améliorer les performances et signaler les erreurs. Pour une liste d’analyseurs, voir [analyseurs diagnostiques de concepteur d’Android](diagnostic-analyzers.md)
 
-### <a name="diagnostic-configuration"></a>Configuration de diagnostic
+### <a name="diagnostic-configuration"></a>Configuration diagnostique
 
-Les analyseurs peuvent être configurés à l’aide d’un fichier XML, ce qui vous permet de modifier le niveau de gravité par défaut, d’ignorer certains fichiers et de transmettre des variables.
+Les analyseurs peuvent être configurés à l’aide d’un fichier XML, ce qui vous permet de modifier le niveau de gravité par défaut, d’ignorer certains fichiers et de passer dans les variables.
 
-Vous pouvez utiliser un fichier de base de référence si vous disposez d’un ensemble de configurations que vous souhaitez partager entre plusieurs applications Android. Pour utiliser cette fonctionnalité, créez un nouveau fichier de configuration et ajoutez `-baseline` au nom de fichier. Les configurations de base sont appliquées en premier, puis les fichiers de configuration restants.
+Vous pouvez utiliser un fichier de base si vous avez un ensemble de configurations que vous souhaitez partager sur plusieurs applications Android. Pour utiliser cette fonctionnalité, créez un `-baseline` nouveau fichier de configuration et appendez le nom du fichier. Les configurations de base sont appliquées d’abord, puis les fichiers de configuration restants.
 
 > [!TIP]
-> Cela peut être utile si vous souhaitez ignorer un ensemble de problèmes sur une application Android nouvelle ou existante.
+> Cela peut être utile si vous voulez ignorer un ensemble de problèmes sur une application Android nouvelle ou existante.
 
 Le format est le suivant :
 
@@ -85,7 +85,7 @@ Le format est le suivant :
 ```
 
 > [!NOTE]
-> Actuellement, les seules variables sont `MAX_VIEW_COUNT` (par défaut : 80) et `MAX_DEPTH` (valeur par défaut : 10) pour `TooManyViews` et `TooDeepLayout` respectivement.
+> Actuellement, les `MAX_VIEW_COUNT` seules variables sont (par `MAX_DEPTH` défaut: 80) `TooManyViews` `TooDeepLayout` et (par défaut: 10) pour et respectivement.
 
 Les niveaux de gravité des alertes sont :
 
@@ -97,49 +97,49 @@ Les niveaux de gravité des alertes sont :
 
 ### <a name="add-a-configuration-file"></a>Ajouter un fichier de configuration
 
-Créez un nouveau fichier XML à la racine d’un projet d’application Android. Le nom du fichier n’est pas important, mais cet exemple utilise `AndroidLayoutDiagnostics.xml`:
+Créez un nouveau fichier XML à la racine d’un projet d’application Android. Le nom du fichier n’est pas `AndroidLayoutDiagnostics.xml`important, mais cet exemple utilise :
 
 ![Ajouter un nouvel élément](diagnostics-images/AndroidDiagnosticsNewFileDialog.png)
 
-Une fois le nouveau fichier XML ajouté, il doit apparaître dans l’arborescence de projet de l’application Android :
+Une fois le nouveau fichier XML ajouté, il doit apparaître dans l’arbre du projet d’application Android :
 
-![Arborescence de projet d’application Android](diagnostics-images/AndroidDiagnosticsFileAddToTree.png)
+![Arbre de projet d’application Android](diagnostics-images/AndroidDiagnosticsFileAddToTree.png)
 
-Assurez-vous que l’action de génération est définie sur **AndroidResourceAnalysisConfig** dans le panneau Propriétés.
-Le moyen le plus simple d’extraire le panneau des propriétés du nouveau fichier consiste à cliquer avec le bouton droit sur le fichier et à sélectionner Propriétés. Une fois le panneau Propriétés affiché, vous devez remplacer l' **action de génération** par **AndroidResourceAnalysisConfig**:
+Assurez-vous que l’action de construction est définie à **AndroidResourceAnalysisConfig** dans le panneau de propriétés.
+La façon la plus simple de tirer vers le haut du panneau de propriété pour le nouveau fichier est de cliquer à droite sur le fichier et sélectionner les propriétés. Une fois que le panneau de propriétés est montré, vous devez changer **l’action de construction** en **AndroidResourceAnalysisConfig**:
 
-![Définir l’action de génération dans les propriétés de l’élément](diagnostics-images/AndroidDiagnosticsSetBuildAction.png)
+![Définir l’action de construction dans les propriétés d’objets](diagnostics-images/AndroidDiagnosticsSetBuildAction.png)
 
-Maintenant que vous avez un fichier XML vide, vous devez ajouter l’élément racine `<configuration>`. À ce stade, vous pouvez ajuster le comportement par défaut de tous les problèmes pris en charge.
-Si vous souhaitez vous assurer que les chaînes codées en dur sont traitées comme des erreurs, ajoutez :
+Maintenant que vous avez un fichier XML `<configuration>` vierge, vous devez ajouter l’élément racine. À ce stade, vous pouvez ajuster le comportement par défaut de tous les problèmes pris en charge.
+Si vous voulez vous assurer que les chaînes codées en dur sont traitées comme des erreurs ajoutent :
 
 ```xml
 <issue="HardcodedText" severity="error">
 </issue>
 ```
 
-![Fichier de configuration des diagnostics](diagnostics-images/AndroidDiagnosticsConfigurationFileExample.png)
+![Fichier de configuration de diagnostic](diagnostics-images/AndroidDiagnosticsConfigurationFileExample.png)
 
-Maintenant que le texte codé en dur est considéré comme une erreur, il est désormais marqué d’un tilde rouge dans l’éditeur de disposition :
+Maintenant que le texte codé dur est considéré comme une erreur, il est maintenant signalé avec un gribouillis rouge dans l’éditeur de mise en page:
 
-![Disposition à l’aide de la configuration des diagnostics](diagnostics-images/AndroidDiagnosticsUsingConfiguration.png)
+![Mise en page à l’aide de La configuration des diagnostics](diagnostics-images/AndroidDiagnosticsUsingConfiguration.png)
 
 > [!NOTE]
-> Pour que les modifications apportées au nouveau fichier de configuration prennent effet, tous les fichiers de disposition actuellement ouverts doivent être rouverts.
+> Pour que toute nouvelle modification de fichier de configuration entre en vigueur, tous les fichiers de mise en page actuellement ouverts doivent être rouverts.
 >
 
 ## <a name="troubleshooting"></a>Dépannage
 
-Voici quelques problèmes courants possibles.
+Voici quelques problèmes communs possibles.
 
 - Assurez-vous qu’il n’y a pas d’erreur de format XML.
-- L’action de génération est correctement définie sur **AndroidResourceAnalysisConfig**.
+- L’action de construction est réglée correctement sur **AndroidResourceAnalysisConfig**.
 
 ## <a name="known-issues"></a>Problèmes connus
 
-- Le bloc d’erreurs n’est pas rempli tant que le fichier n’a pas été modifié la première fois.
+- Le bloc d’erreur n’est pas peuplé jusqu’à ce que le fichier soit changé la première fois.
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Contrôles Android Lint](http://tools.android.com/tips/lint-checks)
-- [Améliorez votre code avec des contrôles Lint](https://developer.android.com/studio/write/lint)
+- [Vérifications Android Lint](http://tools.android.com/tips/lint-checks)
+- [Améliorez votre code avec des vérifications de peluche](https://developer.android.com/studio/write/lint)

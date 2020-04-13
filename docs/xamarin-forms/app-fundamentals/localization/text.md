@@ -1,6 +1,6 @@
 ---
-title: Localisation de chaînes et d’images dans Xamarin. Forms
-description: Les applications Xamarin. Forms peuvent être localisées à l’aide de fichiers de ressources .NET.
+title: Localisation des cordes et de l’image dans Xamarin.Forms
+description: Les applications Xamarin.Forms peuvent être localisées à l’aide de fichiers ressources .NET.
 zone_pivot_groups: platform
 ms.prod: xamarin
 ms.assetid: 852B4ED3-2D2D-48A5-A759-A6591F6A1509
@@ -9,75 +9,75 @@ author: profexorgeek
 ms.author: jusjohns
 ms.date: 11/01/2019
 ms.openlocfilehash: bf99873d88a69a715cdf7969ad94afd66372b5e3
-ms.sourcegitcommit: 233aaa1ac3d8f40c09b6daf6d944ea0b4cbee381
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/16/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "74135330"
 ---
-# <a name="xamarinforms-string-and-image-localization"></a>Localisation de la chaîne et de l’image Xamarin. Forms
+# <a name="xamarinforms-string-and-image-localization"></a>Localisation des cordes et des images Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingresxlocalization)
+[![Télécharger](~/media/shared/download.png) l’échantillon Télécharger l’échantillon](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingresxlocalization)
 
-La localisation est le processus d’adaptation d’une application pour répondre à la langue ou aux exigences culturelles spécifiques d’un marché cible. Pour effectuer la localisation, le texte et les images d’une application devront peut-être être traduites dans plusieurs langues. Une application localisée affiche automatiquement le texte traduit en fonction des paramètres de culture de l’appareil mobile :
+La localisation est le processus d’adaptation d’une application pour répondre aux exigences linguistiques ou culturelles spécifiques d’un marché cible. Pour parvenir à la localisation, le texte et les images d’une application peuvent devoir être traduits en plusieurs langues. Une application localisée affiche automatiquement le texte traduit en fonction des paramètres de culture de l’appareil mobile :
 
 ![Captures d’écran de l’application de localisation sur iOS et Android](text-images/localizationdemo-screenshots.png)
 
-Le .NET Framework comprend un mécanisme intégré pour la localisation d’applications à l’aide de [fichiers de ressources resx](https://docs.microsoft.com/dotnet/framework/resources/creating-resource-files-for-desktop-apps). Un fichier de ressources stocke du texte et d’autres contenus sous forme de paires nom/valeur qui permettent à l’application de récupérer du contenu pour une clé fournie. Les fichiers de ressources permettent de séparer le contenu localisé du code d’application.
+Le cadre .NET comprend un mécanisme intégré pour la localisation des applications à l’aide [de fichiers de ressources Resx](https://docs.microsoft.com/dotnet/framework/resources/creating-resource-files-for-desktop-apps). Un fichier de ressources stocke le texte et d’autres contenus comme paires de noms/valeurs qui permettent à l’application de récupérer du contenu pour une clé fournie. Les fichiers de ressources permettent de séparer le contenu localisé du code d’application.
 
-L’utilisation de fichiers de ressources pour localiser des applications Xamarin. Forms vous oblige à effectuer les étapes suivantes :
+L’utilisation de fichiers de ressources pour localiser les applications Xamarin.Forms vous oblige à effectuer les étapes suivantes :
 
-1. [Créer des fichiers resx](#create-resx-files) contenant du texte traduit.
-1. [Spécifiez la culture par défaut](#specify-the-default-culture) dans le projet partagé.
-1. [Localisez le texte dans Xamarin. Forms](#localize-text-in-xamarinforms).
-1. [Localisez les images](#localize-images) en fonction des paramètres de culture pour chaque plateforme.
-1. [Localisez le nom de l’application](#localize-the-application-name) sur chaque plateforme.
-1. [Testez la localisation](#test-localization) sur chaque plateforme.
+1. [Créez des fichiers Resx](#create-resx-files) contenant du texte traduit.
+1. [Spécifier la culture par défaut](#specify-the-default-culture) dans le projet partagé.
+1. [Localiser le texte dans Xamarin.Forms](#localize-text-in-xamarinforms).
+1. [Localiser les images](#localize-images) en fonction des paramètres de culture de chaque plate-forme.
+1. [Localiser le nom de l’application](#localize-the-application-name) sur chaque plate-forme.
+1. [Testez la localisation](#test-localization) sur chaque plate-forme.
 
-## <a name="create-resx-files"></a>Créer des fichiers resx
+## <a name="create-resx-files"></a>Créer des fichiers Resx
 
-Les fichiers de ressources sont des fichiers XML avec une extension **. resx** qui sont compilés en fichiers de ressources binaires (. Resources) pendant le processus de génération. Visual Studio 2019 génère une classe qui fournit une API utilisée pour récupérer des ressources. Une application localisée contient généralement un fichier de ressources par défaut avec toutes les chaînes utilisées dans l’application, ainsi que des fichiers de ressources pour chaque langue prise en charge. L’exemple d’application possède un dossier **resx** dans le projet partagé qui contient les fichiers de ressources, et son fichier de ressources par défaut appelé **AppResources. resx**.
+Les fichiers de ressources sont des fichiers XML avec une extension **.resx** qui sont compilés dans les fichiers de ressources binaires (.ressources) pendant le processus de construction. Visual Studio 2019 génère une classe qui fournit une API utilisée pour récupérer des ressources. Une application localisée contient généralement un fichier de ressources par défaut avec toutes les chaînes utilisées dans l’application, ainsi que des fichiers de ressources pour chaque langue prise en charge. L’application d’échantillon a un dossier **Resx** dans le projet partagé qui contient les fichiers de ressources, et son fichier de ressources par défaut appelé **AppResources.resx**.
 
-Les fichiers de ressources contiennent les informations suivantes pour chaque élément :
+Les fichiers de ressources contiennent les informations suivantes pour chaque élément :
 
-- **Nom** spécifie la clé utilisée pour accéder au texte dans le code.
-- La **valeur** spécifie le texte traduit.
-- **Comment** est un champ facultatif qui contient des informations supplémentaires.
+- **Le nom** spécifie la clé utilisée pour accéder au texte dans le code.
+- **La valeur** spécifie le texte traduit.
+- **Le commentaire** est un champ facultatif contenant des informations supplémentaires.
 
 ::: zone pivot="windows"
 
-Un fichier de ressources est ajouté avec la boîte de dialogue **Ajouter un nouvel élément** dans Visual Studio 2019 :
+Un fichier de ressources est ajouté avec le dialogue **Add New Item** dans Visual Studio 2019 :
 
 ![Ajouter une nouvelle ressource dans Visual Studio 2019](text-images/pc-add-resource-file.png)
 
-Une fois le fichier ajouté, des lignes peuvent être ajoutées pour chaque ressource de texte :
+Une fois le fichier ajouté, des lignes peuvent être ajoutées pour chaque ressource de texte :
 
-![Spécifier des ressources de texte par défaut dans un fichier. resx](text-images/pc-default-strings.png)
+![Spécifier les ressources textuelles par défaut dans un fichier .resx](text-images/pc-default-strings.png)
 
-Le paramètre de liste déroulante de **modificateur d’accès** détermine la façon dont Visual Studio génère la classe utilisée pour accéder aux ressources. L’affectation de la valeur **public** ou **Internal** au modificateur d’accès entraîne la génération d’une classe générée avec le niveau d’accessibilité spécifié. Le fait de définir le modificateur d’accès sur **aucune génération de code** ne génère pas de fichier de classe. Le fichier de ressources par défaut doit être configuré pour générer un fichier de classe, ce qui entraîne l’ajout d’un fichier avec l’extension **. Designer.cs** au projet.
+Le paramètre De baisse **Access Modère** détermine comment Visual Studio génère la classe utilisée pour accéder aux ressources. Définir le modificateur d’accès au **public** ou **à l’interne** dans une classe générée avec le niveau d’accessibilité spécifié. La définition de la génération de code Access **Modérez sans code** ne génère pas de fichier de classe. Le fichier de ressources par défaut doit être configuré pour générer un fichier de classe, ce qui entraîne l’ajout d’un fichier avec l’extension **.designer.cs** au projet.
 
-Une fois le fichier de ressources par défaut créé, des fichiers supplémentaires peuvent être créés pour chaque culture prise en charge par l’application. Chaque fichier de ressources supplémentaire doit inclure la culture de traduction dans le nom de fichier et doit avoir le **modificateur d’accès** défini sur **aucune génération de code**. 
+Une fois le fichier de ressources par défaut créé, des fichiers supplémentaires peuvent être créés pour chaque culture que l’application prend en charge. Chaque fichier de ressources supplémentaire devrait inclure la culture de traduction dans le nom de fichier et devrait avoir le **modificateur d’accès** réglé à **aucune génération de code**. 
 
-Lors de l’exécution, l’application tente de résoudre une demande de ressource par ordre de spécificité. Par exemple, si la culture de l’appareil est **en-US** , l’application recherche des fichiers de ressources dans cet ordre :
+Au moment de l’exécution, l’application tente de résoudre une demande de ressources par ordre de spécificité. Par exemple, si la culture de l’appareil est **en-US** l’application recherche des fichiers de ressources dans cet ordre :
 
-1. AppResources. en-US. resx
-1. AppResources. fr. resx
-1. AppResources. resx (par défaut)
+1. AppResources.fr-US.resx
+1. AppResources.fr.resx
+1. AppResources.resx (par défaut)
 
-La capture d’écran suivante montre un fichier de traduction en espagnol nommé **AppResources.es.cs**:
+La capture d’écran suivante montre un fichier de traduction espagnol nommé **AppResources.es.cs**:
 
-![Spécifier des ressources de texte par défaut dans un fichier. resx](text-images/pc-spanish-strings.png)
+![Spécifier les ressources textuelles par défaut dans un fichier .resx](text-images/pc-spanish-strings.png)
 
-Le fichier de traduction utilise les mêmes valeurs de **nom** que celles spécifiées dans le fichier par défaut, mais contient les chaînes de langue espagnole dans la colonne **valeur** . En outre, le **modificateur d’accès** est défini sur **aucune génération de code**.
+Le fichier de traduction utilise les mêmes valeurs **nominatives** spécifiées dans le fichier par défaut, mais contient des chaînes en espagnol dans la colonne **De** valeur. En outre, le **modificateur d’accès** est réglé à **aucune génération de code**.
 
 ::: zone-end
 ::: zone pivot="macos"
 
-Un fichier de ressources est ajouté avec la boîte de dialogue **Ajouter un nouveau fichier** dans Visual Studio 2019 pour Mac :
+Un fichier de ressources est ajouté avec le dialogue **Add New File** dans Visual Studio 2019 pour Mac :
 
-![Ajouter une nouvelle ressource dans Visual Studio 2019 pour Mac](text-images/mac-add-resource-file.png)
+![Ajouter une nouvelle ressource en studio visuel 2019 pour Mac](text-images/mac-add-resource-file.png)
 
-Une fois qu’un fichier de ressources par défaut a été créé, vous pouvez ajouter du texte en créant `data` éléments dans l’élément `root` dans le fichier de ressources :
+Une fois qu’un fichier de ressources par `data` défaut `root` a été créé, le texte peut être ajouté en créant des éléments dans l’élément du fichier de ressources :
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -95,21 +95,21 @@ Une fois qu’un fichier de ressources par défaut a été créé, vous pouvez a
 </root>
 ```
 
-Vous pouvez créer un fichier de classe **. Designer.cs** en définissant une propriété d' **outil personnalisée** dans les options de fichier de ressources :
+Un fichier de classe **.designer.cs** peut être créé en définissant une propriété **Custom Tool** dans les options de fichiers de ressources :
 
 ![Outil personnalisé spécifié dans les propriétés d’un fichier de ressources](text-images/mac-resx-properties.png)
 
-La définition de l' **outil personnalisé** sur **PublicResXFileCodeGenerator** entraîne la génération d’une classe générée avec un accès `public`. Si vous définissez l' **outil personnalisé** sur **InternalResXFileCodeGenerator** , vous obtenez une classe générée avec un accès `internal`. Une valeur d' **outil personnalisé** vide ne génère pas de classe. Le nom de la classe générée correspondra au nom du fichier de ressources. Par exemple, le fichier **AppResources. resx** entraînera la création d’une classe `AppResources` dans un fichier appelé **AppResources.Designer.cs**.
+La définition de l’outil **personnalisé** à **PublicResXFileCodeGenerator** donnera lieu à une classe générée avec `public` accès. La configuration de l’outil **personnalisé** à **InternalResXFileCodeGenerator** donnera lieu à une classe générée avec `internal` accès. Une valeur **d’outil personnalisé** vide ne générera pas de classe. Le nom de classe généré correspondra au nom du fichier de ressources. Par exemple, le fichier **AppResources.resx** entraînera `AppResources` la création d’une classe dans un fichier appelé **AppResources.designer.cs**.
 
-Des fichiers de ressources supplémentaires peuvent être créés pour chaque culture prise en charge. Chaque fichier de langage doit inclure la culture de traduction dans le nom de fichier afin qu’un fichier ciblant **es-MX** soit nommé **AppResources.es-MX. resx**.
+Des fichiers de ressources supplémentaires peuvent être créés pour chaque culture prise en charge. Chaque fichier linguistique doit inclure la culture de traduction dans le nom de fichier afin qu’un fichier ciblant **es-MX** soit nommé **AppResources.es-MX.resx**.
 
-Lors de l’exécution, l’application tente de résoudre une demande de ressource par ordre de spécificité. Par exemple, si la culture de l’appareil est **en-US** , l’application recherche des fichiers de ressources dans cet ordre :
+Au moment de l’exécution, l’application tente de résoudre une demande de ressources par ordre de spécificité. Par exemple, si la culture de l’appareil est **en-US** l’application recherche des fichiers de ressources dans cet ordre :
 
-1. AppResources. en-US. resx
-1. AppResources. fr. resx
-1. AppResources. resx (par défaut)
+1. AppResources.fr-US.resx
+1. AppResources.fr.resx
+1. AppResources.resx (par défaut)
 
-Les fichiers de traduction de langue doivent avoir les mêmes valeurs de **nom** que le fichier par défaut. Le code XML suivant montre le fichier de traduction espagnol nommé **AppResources. es. resx**:
+Les fichiers de traduction linguistique doivent avoir les mêmes valeurs **nomin** lesquelles spécifiés que le fichier par défaut. Le XML suivant montre le fichier de traduction espagnol nommé **AppResources.es.resx**:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -131,7 +131,7 @@ Les fichiers de traduction de langue doivent avoir les mêmes valeurs de **nom**
 
 ## <a name="specify-the-default-culture"></a>Spécifier la culture par défaut
 
-Pour que les fichiers de ressources fonctionnent correctement, l’application doit avoir une `NeutralResourcesLanguage` spécifiée. Dans le projet partagé, le fichier **AssemblyInfo.cs** doit être personnalisé pour spécifier la culture par défaut. Le code suivant montre comment définir la `NeutralResourcesLanguage` sur en **-US** dans le fichier **AssemblyInfo.cs** :
+Pour que les fichiers de ressources `NeutralResourcesLanguage` fonctionnent correctement, l’application doit avoir une spécifiée. Dans le projet partagé, le **fichier AssemblyInfo.cs** doit être personnalisé pour spécifier la culture par défaut. Le code suivant montre `NeutralResourcesLanguage` comment définir le à **en-US** dans le fichier **AssemblyInfo.cs:**
 
 ```csharp
 using System.Resources;
@@ -140,21 +140,21 @@ using System.Resources;
 ```
 
 > [!WARNING]
-> Si vous ne spécifiez pas l’attribut `NeutralResourcesLanguage`, la classe `ResourceManager` retourne `null` valeurs pour toutes les cultures sans fichier de ressources spécifique. Lorsque la culture par défaut est spécifiée, le `ResourceManager` retourne les résultats du fichier resx par défaut pour les cultures non prises en charge. Par conséquent, il est recommandé de toujours spécifier le `NeutralResourcesLanguage` afin que le texte soit affiché pour les cultures non prises en charge.
+> Si vous ne `NeutralResourcesLanguage` spécifiez pas l’attribut, la `ResourceManager` classe renvoie des `null` valeurs pour toutes les cultures sans fichier de ressources spécifique. Lorsque la culture par `ResourceManager` défaut est spécifiée, les retours résultent du fichier Resx par défaut pour les cultures non supportées. Par conséquent, il est recommandé `NeutralResourcesLanguage` que vous spécifiiez toujours le de sorte que le texte est affiché pour les cultures non-assistées.
 
-Une fois qu’un fichier de ressources par défaut a été créé et que la culture par défaut a été spécifiée dans le fichier **AssemblyInfo.cs** , l’application peut récupérer des chaînes localisées au moment de l’exécution.
+Une fois qu’un fichier de ressources par défaut a été créé et que la culture par défaut spécifiée dans le fichier **AssemblyInfo.cs,** l’application peut récupérer des chaînes localisées au moment de l’exécution.
 
-Pour plus d’informations sur les fichiers de ressources, consultez [créer des fichiers de ressources pour les applications .net](https://docs.microsoft.com/dotnet/framework/resources/creating-resource-files-for-desktop-apps).
+Pour plus d’informations sur les fichiers de ressources, voir [Créer des fichiers de ressources pour les applications .NET](https://docs.microsoft.com/dotnet/framework/resources/creating-resource-files-for-desktop-apps).
 
-## <a name="localize-text-in-xamarinforms"></a>Localiser du texte dans Xamarin. Forms
+## <a name="localize-text-in-xamarinforms"></a>Localiser le texte dans Xamarin.Forms
 
-Le texte est localisé dans Xamarin. Forms à l’aide de la classe `AppResources` générée. Cette classe est nommée en fonction du nom de fichier de ressources par défaut. Étant donné que l’exemple de fichier de ressources de projet est nommé **AppResources.cs**, Visual Studio génère une classe correspondante appelée `AppResources`. Les propriétés statiques sont générées dans la classe `AppResources` pour chaque ligne du fichier de ressources. Les propriétés statiques suivantes sont générées dans la classe `AppResources` de l’exemple d’application :
+Le texte est localisé dans Xamarin.Forms à l’aide de la classe générée. `AppResources` Cette catégorie est nommée en fonction du nom de fichier de ressources par défaut. Étant donné que le fichier de ressources du projet d’échantillon est nommé **AppResources.cs,** Visual Studio génère une classe correspondante appelée `AppResources`. Les propriétés statiques sont générées dans la `AppResources` classe pour chaque rangée dans le fichier de ressources. Les propriétés statiques suivantes sont `AppResources` générées dans la classe de l’application de l’échantillon :
 
 - AddButton
 - NotesLabel
 - NotesPlaceholder
 
-L’accès à ces valeurs en tant que propriétés [x :static](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md#the-xstatic-markup-extension) autorise l’affichage du texte localisé en XAML :
+L’accès à ces valeurs sous le titre [x:Static](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md#the-xstatic-markup-extension) properties permet d’afficher du texte localisé dans XAML :
 
 ```xaml
 <ContentPage ...
@@ -165,7 +165,7 @@ L’accès à ces valeurs en tant que propriétés [x :static](~/xamarin-forms/
 </ContentPage>
 ```
 
-Le texte localisé peut également être récupéré dans le code :
+Le texte localisé peut également être récupéré dans le code :
 
 ```csharp
 public LocalizedCodePage()
@@ -199,46 +199,46 @@ public LocalizedCodePage()
 }
 ```
 
-Les propriétés de la classe `AppResources` utilisent la valeur actuelle de la `System.Globalization.CultureInfo.CurrentUICulture` pour déterminer le fichier de ressources de culture à partir duquel récupérer les valeurs.
+Les propriétés `AppResources` de la classe `System.Globalization.CultureInfo.CurrentUICulture` utilisent la valeur actuelle du fichier de ressources culturelles pour récupérer les valeurs.
 
-## <a name="localize-images"></a>Localiser des images
+## <a name="localize-images"></a>Localiser les images
 
-En plus de stocker du texte, les fichiers resx peuvent stocker des images et des données binaires. Toutefois, les périphériques mobiles ont une plage de tailles et densités d’écran, et chaque plateforme mobile possède des fonctionnalités permettant d’afficher des images dépendantes de la densité. Par conséquent, la fonctionnalité de localisation d’image de plateforme doit être utilisée au lieu de stocker des images dans des fichiers de ressources.
+En plus de stocker du texte, les fichiers Resx sont capables de stocker plus que du texte, ils peuvent également stocker des images et des données binaires. Cependant, les appareils mobiles ont une gamme de tailles d’écran et de densités et chaque plate-forme mobile a des fonctionnalités pour afficher des images dépendantes de la densité. Par conséquent, la fonctionnalité de localisation d’image de plate-forme devrait être utilisée au lieu de stocker des images dans des fichiers de ressources.
 
-### <a name="localize-images-on-android"></a>Localiser des images sur Android
+### <a name="localize-images-on-android"></a>Localiser les images sur Android
 
-Sur Android, les drawables localisés (images) sont stockés à l’aide d’une convention d’affectation de noms pour les dossiers dans le répertoire **Resources** . Les dossiers sont nommés **dessinables** avec un suffixe pour la langue cible. Par exemple, le dossier Espagnol-langue est nommé **Drawable-es**.
+Sur Android, les tirages localisés (images) sont stockés à l’aide d’une convention de nommage pour les dossiers dans le répertoire **Resources.** Les dossiers sont nommés **dessinables** avec un suffixe pour la langue cible. Par exemple, le dossier en espagnol est nommé **drawable-es**.
 
-Lorsqu’un code de paramètres régionaux à quatre lettres est requis, Android requiert un **r** supplémentaire à la suite du tiret. Par exemple, le dossier Mexique locale (es-MX) doit être nommé **Drawable-es-rMX**. Les noms de fichiers image dans chaque dossier de paramètres régionaux doivent être identiques :
+Lorsqu’un code local de quatre lettres est nécessaire, Android nécessite un **r** supplémentaire suivant le tableau de bord. Par exemple, le dossier local du Mexique (es-MX) doit être nommé **drawable-es-rMX**. Les noms de fichiers d’image dans chaque dossier local doivent être identiques :
 
 ![Images localisées dans le projet Android](text-images/pc-android-images.png)
 
-Pour plus d’informations, consultez la page relative à la [localisation Android](~/android/app-fundamentals/localization.md).
+Pour plus d’informations, voir [Localisation Android](~/android/app-fundamentals/localization.md).
 
-### <a name="localize-images-on-ios"></a>Localiser des images sur iOS
+### <a name="localize-images-on-ios"></a>Localiser les images sur iOS
 
-Sur iOS, les images localisées sont stockées à l’aide d’une convention d’affectation de noms pour les dossiers dans le répertoire **Resources** . Le dossier par défaut est nommé **base. lproj**. Les dossiers spécifiques à une langue sont nommés avec le nom de langue ou de paramètres régionaux, suivi de **. lproj**. Par exemple, le dossier Espagnol-langue est nommé **es. lproj**.
+Sur iOS, les images localisées sont stockées à l’aide d’une convention de nommage pour les dossiers dans le répertoire **Ressources.** Le dossier par défaut est nommé **Base.lproj**. Les dossiers spécifiques à la langue sont nommés avec la langue ou le nom local, suivi de **.lproj**. Par exemple, le dossier de langue espagnole est nommé **es.lproj**.
 
-Les codes locaux à quatre lettres fonctionnent comme les codes de langue à deux lettres. Par exemple, le dossier Mexique locale (es-MX) doit être nommé **es-MX. lproj**. Les noms de fichiers image dans chaque dossier de paramètres régionaux doivent être identiques :
+Les codes locaux de quatre lettres fonctionnent comme des codes linguistiques à deux lettres. Par exemple, le dossier local du Mexique (es-MX) doit être nommé **es-MX.lproj**. Les noms de fichiers d’image dans chaque dossier local doivent être identiques :
 
 ![Images localisées dans le projet iOS](text-images/pc-ios-images.png)
 
 > [!NOTE]
-> iOS prend en charge la création d’un catalogue d’actifs localisé au lieu de l’utilisation de la structure de dossiers. lproj. Toutefois, ceux-ci doivent être créés et gérés dans Xcode.
+> iOS prend en charge la création d’un catalogue d’actifs localisé au lieu d’utiliser la structure de dossier .lproj. Cependant, ceux-ci doivent être créés et gérés dans Xcode.
 
-Pour plus d’informations, consultez la page [localisation iOS](~/ios/app-fundamentals/localization/index.md).
+Pour plus d’informations, voir [localisation iOS](~/ios/app-fundamentals/localization/index.md).
 
-### <a name="localize-images-on-uwp"></a>Localiser des images sur UWP
+### <a name="localize-images-on-uwp"></a>Localiser les images sur UWP
 
-Sur UWP, les images localisées sont stockées à l’aide d’une convention d’affectation de noms pour les dossiers dans le répertoire **Assets/images** . Les dossiers sont nommés avec la langue ou les paramètres régionaux. Par exemple, le dossier Espagnol-langue est nommé **es** et le dossier des paramètres régionaux du Mexique doit être nommé **es-MX**. Les noms de fichiers image dans chaque dossier de paramètres régionaux doivent être identiques :
+Sur UWP, les images localisées sont stockées à l’aide d’une convention de nommage pour les dossiers dans le répertoire **Assets/Images.** Les dossiers sont nommés avec la langue ou le lieu. Par exemple, le dossier de langue espagnole est nommé **es** et le dossier local du Mexique doit être nommé **es-MX**. Les noms de fichiers d’image dans chaque dossier local doivent être identiques :
 
 ![Images localisées dans le projet UWP](text-images/pc-uwp-images.png)
 
 Pour plus d’informations, consultez [Localisation UWP](/windows/uwp/design/globalizing/globalizing-portal/).
 
-### <a name="consume-localized-images"></a>Utiliser des images localisées
+### <a name="consume-localized-images"></a>Consommer des images localisées
 
-Étant donné que chaque plateforme stocke des images avec une structure de fichiers unique, le code XAML utilise la classe `OnPlatform` pour définir la propriété `ImageSource` en fonction de la plateforme actuelle :
+Étant donné que chaque plate-forme stocke des `OnPlatform` images avec `ImageSource` une structure de fichier unique, le XAML utilise la classe pour définir la propriété en fonction de la plate-forme actuelle :
 
 ```xaml
 <Image>
@@ -252,9 +252,9 @@ Pour plus d’informations, consultez [Localisation UWP](/windows/uwp/design/glo
 ```
 
 > [!NOTE]
-> L’extension de balisage `OnPlatform` offre un moyen plus concis de spécifier des valeurs spécifiques à la plateforme. Pour plus d’informations, consultez [OnPlatform Markup Extension](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform-markup-extension).
+> L’extension `OnPlatform` de balisage offre un moyen plus concis de spécifier des valeurs spécifiques à la plate-forme. Pour plus d’informations, voir [l’extension de balisage OnPlatform](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform-markup-extension).
 
-La source de l’image peut être définie en fonction de la propriété `Device.RuntimePlatform` dans le code :
+La source d’image peut `Device.RuntimePlatform` être définie en fonction de la propriété dans le code:
 
 ```csharp
 string imgSrc = Device.RuntimePlatform == Device.UWP ? "Assets/Images/flag.png" : "flag.png";
@@ -267,19 +267,19 @@ Image flag = new Image
 
 ## <a name="localize-the-application-name"></a>Localiser le nom de l’application
 
-Le nom de l’application est spécifié par plateforme et n’utilise pas les fichiers de ressources resx. Pour localiser le nom de l’application sur Android, consultez [localiser le nom de l’application sur Android](~/android/app-fundamentals/localization.md#stringsxml-file-format). Pour localiser le nom de l’application sur iOS, consultez [localiser le nom de l’application sur iOS](~/ios/app-fundamentals/localization/index.md#app-name). Pour localiser le nom de l’application sur UWP, consultez [localiser des chaînes dans le manifeste du package UWP](https://docs.microsoft.com/windows/uwp/app-resources/localize-strings-ui-manifest).
+Le nom de l’application est spécifié par plate-forme et n’utilise pas de fichiers de ressources Resx. Pour localiser le nom de l’application sur Android, voir [le nom de l’application Localize sur Android](~/android/app-fundamentals/localization.md#stringsxml-file-format). Pour localiser le nom de l’application sur iOS, consultez [le nom de l’application Localize sur iOS](~/ios/app-fundamentals/localization/index.md#app-name). Pour localiser le nom de l’application sur UWP, voir [les chaînes De localisation dans le manifeste du paquet UWP](https://docs.microsoft.com/windows/uwp/app-resources/localize-strings-ui-manifest).
 
-## <a name="test-localization"></a>Localisation des tests
+## <a name="test-localization"></a>Localisation d’essai
 
-Il est préférable de tester la localisation en modifiant la langue de votre appareil. Il est possible de définir la valeur de `System.Globalization.CultureInfo.CurrentUICulture` dans le code, mais le comportement est incohérent sur les plateformes, ce qui n’est pas recommandé pour les tests.
+Tester la localisation est préférable de changer la langue de votre appareil. Il est possible de `System.Globalization.CultureInfo.CurrentUICulture` définir la valeur du code, mais le comportement est incohérent sur toutes les plates-formes de sorte que ce n’est pas recommandé pour les tests.
 
-Sur iOS, dans l’application paramètres, vous pouvez définir la langue de chaque application, spécifiquement, sans modifier la langue de votre appareil.
+Sur iOS, dans l’application paramètres, vous pouvez définir la langue de chaque application spécifiquement sans changer la langue de votre appareil.
 
-Sur Android, les paramètres de langue sont détectés et mis en cache au démarrage de l’application. Si vous modifiez des langues, vous devrez peut-être quitter et redémarrer l’application pour voir les modifications appliquées.
+Sur Android, les paramètres de la langue sont détectés et mis en cache lorsque l’application démarre. Si vous changez de langue, vous devrez peut-être quitter et redémarrer l’application pour voir les modifications appliquées.
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Exemple de projet de localisation](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingresxlocalization)
+- [Projet d’échantillon de localisation](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingresxlocalization)
 - [Créer des fichiers de ressources pour les applications .NET](https://docs.microsoft.com/dotnet/framework/resources/creating-resource-files-for-desktop-apps)
 - [Localisation multiplateforme](~/cross-platform/app-fundamentals/localization.md)
 - [Utilisation de la classe CultureInfo (MSDN)](https://docs.microsoft.com/dotnet/api/system.globalization.cultureinfo)

@@ -8,17 +8,17 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/18/2018
 ms.openlocfilehash: 12c6229c1922f0bd4a4d25ca796bcb46141a326c
-ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/11/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "77131138"
 ---
 # <a name="automation-properties-in-xamarinforms"></a>Propriétés d’automatisation dans Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-accessibility)
+[![Télécharger](~/media/shared/download.png) l’échantillon Télécharger l’échantillon](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-accessibility)
 
-_Xamarin.Forms permet de définir des valeurs d’accessibilité sur les éléments d’interface utilisateur à l’aide de propriétés jointes à partir de la classe AutomationProperties, qui à leur tour définissent des valeurs natives d’accessibilité. Cet article explique comment utiliser la classe AutomationProperties pour permettre à un lecteur d’écran d’énoncer les éléments figurant dans la page._
+_Xamarin.Forms permet de définir des valeurs d’accessibilité sur les éléments d’interface utilisateur en utilisant les propriétés jointes de la classe AutomationProperties, qui à leur tour définissez les valeurs d’accessibilité natives. Cet article explique comment utiliser la classe AutomationProperties, afin qu’un lecteur d’écran puisse parler des éléments de la page._
 
 Xamarin.Forms permet de définir des propriétés d’automatisation sur les éléments d’interface utilisateur via les propriétés jointes suivantes :
 
@@ -30,7 +30,7 @@ Xamarin.Forms permet de définir des propriétés d’automatisation sur les él
 Ces propriétés jointes définissent des valeurs natives d’accessibilité pour permettre à un lecteur d’écran d’énoncer l’élément. Pour plus d’informations sur les propriétés jointes, consultez [Propriétés jointes](~/xamarin-forms/xaml/attached-properties.md).
 
 > [!IMPORTANT]
-> L’utilisation des propriétés jointes `AutomationProperties` peut avoir un impact sur l’exécution des tests de l’interface utilisateur dans Android. Les propriétés [`AutomationId`](xref:Xamarin.Forms.Element.AutomationId), `AutomationProperties.Name` et `AutomationProperties.HelpText` définissent la propriété native `ContentDescription`, avec les valeurs de propriété `AutomationProperties.Name` et `AutomationProperties.HelpText` qui sont prioritaires sur la valeur `AutomationId` (si `AutomationProperties.Name` et `AutomationProperties.HelpText` sont tous deux définis, les valeurs sont concaténées). Cela signifie que tous les tests recherchant `AutomationId` échouent si `AutomationProperties.Name` ou `AutomationProperties.HelpText` sont également définis sur l’élément. Dans ce scénario, les tests d’interface utilisateur doivent être modifiés pour rechercher la valeur de `AutomationProperties.Name` ou de `AutomationProperties.HelpText`, ou une concaténation des deux.
+> L’utilisation des propriétés jointes `AutomationProperties` peut avoir un impact sur l’exécution des tests de l’interface utilisateur dans Android. Le [`AutomationId`](xref:Xamarin.Forms.Element.AutomationId) `AutomationProperties.Name` , `AutomationProperties.HelpText` et les propriétés seront à la fois définir la propriété indigène, `ContentDescription` avec la `AutomationProperties.Name` valeur et `AutomationProperties.HelpText` la propriété prenant le pas sur la `AutomationId` valeur (si les deux `AutomationProperties.Name` et `AutomationProperties.HelpText` sont fixés, les valeurs seront concédées). Cela signifie que tous les tests recherchant `AutomationId` échouent si `AutomationProperties.Name` ou `AutomationProperties.HelpText` sont également définis sur l’élément. Dans ce scénario, les tests d’interface utilisateur doivent être modifiés pour rechercher la valeur de `AutomationProperties.Name` ou de `AutomationProperties.HelpText`, ou une concaténation des deux.
 
 Chaque plateforme dispose d’un lecteur d’écran différent pour effectuer la narration des valeurs d’accessibilité :
 
@@ -66,7 +66,7 @@ AutomationProperties.SetIsInAccessibleTree(entry, true);
 ```
 
 > [!NOTE]
-> Notez que la méthode [`SetValue`](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object)) peut également être utilisée pour définir la propriété jointe `AutomationProperties.IsInAccessibleTree` – `entry.SetValue(AutomationProperties.IsInAccessibleTreeProperty, true);`
+> Notez [`SetValue`](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object)) que la méthode peut `AutomationProperties.IsInAccessibleTree` également être utilisée pour définir la propriété ci-jointe...`entry.SetValue(AutomationProperties.IsInAccessibleTreeProperty, true);`
 
 <a name="name" />
 
@@ -88,7 +88,7 @@ AutomationProperties.SetName(activityIndicator, "Progress indicator");
 ```
 
 > [!NOTE]
-> Notez que la méthode [`SetValue`](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object)) peut également être utilisée pour définir la propriété jointe `AutomationProperties.Name` – `activityIndicator.SetValue(AutomationProperties.NameProperty, "Progress indicator");`
+> Notez [`SetValue`](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object)) que la méthode peut `AutomationProperties.Name` également être utilisée pour définir la propriété ci-jointe...`activityIndicator.SetValue(AutomationProperties.NameProperty, "Progress indicator");`
 
 <a name="helptext" />
 
@@ -111,15 +111,15 @@ AutomationProperties.SetHelpText(button, "Tap to toggle the activity indicator")
 ```
 
 > [!NOTE]
-> Notez que la méthode [`SetValue`](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object)) peut également être utilisée pour définir la propriété jointe `AutomationProperties.HelpText` – `button.SetValue(AutomationProperties.HelpTextProperty, "Tap to toggle the activity indicator");`
+> Notez [`SetValue`](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object)) que la méthode peut `AutomationProperties.HelpText` également être utilisée pour définir la propriété ci-jointe...`button.SetValue(AutomationProperties.HelpTextProperty, "Tap to toggle the activity indicator");`
 
-Sur certaines plateformes, pour modifier des contrôles tels qu’un objet [`Entry`](xref:Xamarin.Forms.Entry), la propriété `HelpText` peut parfois être omise et remplacée par un texte d’espace réservé. Par exemple, « Entrez ici votre nom » est un bon candidat pour la propriété [`Entry.Placeholder`](xref:Xamarin.Forms.InputView.Placeholder) qui place le texte dans le contrôle avant que l’utilisateur l’entre réellement.
+Sur certaines plates-formes, pour [`Entry`](xref:Xamarin.Forms.Entry)modifier `HelpText` les contrôles tels qu’un , la propriété peut parfois être omise et remplacée par du texte de placeholder. Par exemple, "Entrez votre nom ici" [`Entry.Placeholder`](xref:Xamarin.Forms.InputView.Placeholder) est un bon candidat pour la propriété qui place le texte dans le contrôle avant l’entrée réelle de l’utilisateur.
 
 <a name="labeledby" />
 
 ## <a name="automationpropertieslabeledby"></a>AutomationProperties.LabeledBy
 
-La propriété jointe `AutomationProperties.LabeledBy` permet à un autre élément de définir des informations d’accessibilité pour l’élément actuel. Par exemple, un [`Label`](xref:Xamarin.Forms.Label) en regard d’un objet [`Entry`](xref:Xamarin.Forms.Entry) peut être utilisé pour décrire ce que l’objet `Entry` représente. Cela peut être accompli en XAML de la façon suivante :
+La propriété jointe `AutomationProperties.LabeledBy` permet à un autre élément de définir des informations d’accessibilité pour l’élément actuel. Par exemple, [`Label`](xref:Xamarin.Forms.Label) un [`Entry`](xref:Xamarin.Forms.Entry) à côté d’un `Entry` peut être utilisé pour décrire ce que le représente. Cela peut être accompli en XAML de la façon suivante :
 
 ```xaml
 <Label x:Name="label" Text="Enter your name: " />
@@ -137,7 +137,7 @@ AutomationProperties.SetLabeledBy(entry, nameLabel);
 ```
 
 > [!NOTE]
-> Notez que la méthode [`SetValue`](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object)) peut également être utilisée pour définir la propriété jointe `AutomationProperties.IsInAccessibleTree` – `entry.SetValue(AutomationProperties.LabeledByProperty, nameLabel);`
+> Notez [`SetValue`](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object)) que la méthode peut `AutomationProperties.IsInAccessibleTree` également être utilisée pour définir la propriété ci-jointe...`entry.SetValue(AutomationProperties.LabeledByProperty, nameLabel);`
 
 ## <a name="accessibility-intricacies"></a>Subtilités de l’accessibilité
 
@@ -145,13 +145,13 @@ Les sections suivantes décrivent les subtilités de la définition des valeurs 
 
 ### <a name="navigationpage"></a>NavigationPage
 
-Sur Android, pour définir le texte que les lecteurs d’écran liront pour la flèche Retour dans la barre d’action d’une [`NavigationPage`](xref:Xamarin.Forms.NavigationPage), définissez les propriétés `AutomationProperties.Name` et `AutomationProperties.HelpText` dans une [`Page`](xref:Xamarin.Forms.Page). Toutefois, notez que cette opération n’a aucun effet sur les boutons Retour du système d’exploitation.
+Sur Android, pour définir le texte que les lecteurs d’écran lira pour la flèche arrière dans la barre d’action dans un [`NavigationPage`](xref:Xamarin.Forms.NavigationPage), définir le et `AutomationProperties.Name` `AutomationProperties.HelpText` les propriétés sur un [`Page`](xref:Xamarin.Forms.Page). Toutefois, notez que cette opération n’a aucun effet sur les boutons Retour du système d’exploitation.
 
 ### <a name="masterdetailpage"></a>MasterDetailPage
 
-Sur iOS et la plateforme Windows universelle (UWP), pour définir le texte que les lecteurs d’écran liront pour le bouton bascule d’une [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage), définissez les propriétés `AutomationProperties.Name` et `AutomationProperties.HelpText` dans la `MasterDetailPage` ou la propriété `IconImageSource` dans la page `Master`.
+Sur iOS et la plate-forme Windows universelle (UWP), pour définir le [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage)texte que `AutomationProperties.Name`les `AutomationProperties.HelpText` lecteurs `MasterDetailPage`d’écran `IconImageSource` lira pour le bouton de bascule sur un , soit définir le , et les propriétés sur le , ou sur la propriété de la `Master` page.
 
-Sur Android, pour définir le texte que les lecteurs d’écran liront pour le bouton bascule dans une [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage), ajoutez des ressources de chaîne au projet Android :
+Sur Android, pour définir le texte que les lecteurs [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage)d’écran lira pour le bouton de bascule sur un , ajouter des ressources de chaîne au projet Android:
 
 ```xml
 <resources>
@@ -170,13 +170,13 @@ master.IconImageSource.AutomationId = "btnMDPAutomationID";
 
 ### <a name="toolbaritem"></a>ToolbarItem
 
-Sur iOS, Android et UWP, les lecteurs d’écran liront la valeur de propriété `Text` des instances [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem), à condition que les valeurs `AutomationProperties.Name` ou `AutomationProperties.HelpText` ne soient pas définies.
+Sur iOS, Android et UWP, les `Text` lecteurs [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) d’écran `AutomationProperties.Name` `AutomationProperties.HelpText` liront la valeur de propriété des instances, à condition que cela ou les valeurs ne soient pas définies.
 
 Sur iOS et UWP, la valeur de propriété `AutomationProperties.Name` remplacera la valeur de propriété `Text` lue par le lecteur d’écran.
 
 Sur Android, les valeurs de propriété `AutomationProperties.Name` et/ou `AutomationProperties.HelpText` remplaceront complètement les valeurs de propriété `Text` à la fois visibles et lues par les lecteurs d’écran. Notez qu’il s’agit d’une limitation des API inférieures à 26.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Propriétés jointes](~/xamarin-forms/xaml/attached-properties.md)
 - [Accessibilité (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-accessibility)

@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 07/16/2018
 ms.openlocfilehash: 951b019a4a0bf503629b6ac63853bd5b1c818bce
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73022758"
 ---
 # <a name="free-provisioning-for-xamarinios-apps"></a>Provisionnement gratuit pour les applications Xamarin.iOS
@@ -27,7 +27,7 @@ Pour utiliser le provisionnement gratuit et déployer une application sur un app
 > [!IMPORTANT]
 > Le [provisionnement automatique](~/ios/get-started/installation/device-provisioning/automatic-provisioning.md) permet à Visual Studio pour Mac ou Visual Studio 2019 de configurer automatiquement un appareil pour permettre aux développeurs d’effectuer des tests. Toutefois, le provisionnement automatique n’est pas compatible avec le provisionnement gratuit. Pour pouvoir utiliser le provisionnement automatique, vous devez avoir un compte payant du programme Developer d’Apple.
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Spécifications
 
 Pour déployer vos applications Xamarin.iOS sur un appareil à l’aide du provisionnement gratuit :
 
@@ -49,7 +49,7 @@ Suivez les étapes ci-dessous pour tester votre application Xamarin.iOS à l’a
 2. Ouvrez Xcode et accédez à **Xcode > Préférences**.
 3. Sous **comptes**, utilisez le bouton **+** pour ajouter votre ID Apple existant. Celui-ci doit ressembler à la capture d’écran suivante :
 
-    ![Préférences de Xcode-comptes](free-provisioning-images/launchapp1.png "Préférences de Xcode-comptes")
+    ![Préférences Xcode - Comptes](free-provisioning-images/launchapp1.png "Préférences Xcode - Comptes")
 
 4. Fermez les préférences Xcode.
 5. Branchez l’appareil iOS sur lequel vous souhaitez déployer votre application.
@@ -60,12 +60,12 @@ Suivez les étapes ci-dessous pour tester votre application Xamarin.iOS à l’a
 
 8. Une fois le projet créé, choisissez un schéma de build Xcode qui cible votre appareil iOS (plutôt qu’un simulateur).
 
-    ![Sélectionner un schéma de génération Xcode](free-provisioning-images/xcodescheme.png "Sélectionner un schéma de génération Xcode")
+    ![Sélectionnez un système de construction Xcode](free-provisioning-images/xcodescheme.png "Sélectionnez un système de construction Xcode")
 
 9. Ouvrez les paramètres de projet de votre application en sélectionnant son nœud de niveau supérieur dans **Navigation dans le projet** au sein de Xcode.
 10. Sous **Général > Identité**, vérifiez que l’**identificateur de bundle** _correspond exactement_ à l’identificateur de bundle de votre application Xamarin.iOS.
 
-    ![Définir un identificateur de Bundle](free-provisioning-images/launchapp5.png "Définir un identificateur de Bundle")
+    ![Définir un identificateur de faisceau](free-provisioning-images/launchapp5.png "Définir un identificateur de faisceau")
 
     > [!IMPORTANT]
     > Xcode va créer uniquement un profil de provisionnement pour un ID d’application explicite. Celui-ci doit être identique à l’ID d’application de votre application Xamarin.iOS.
@@ -87,18 +87,18 @@ Suivez les étapes ci-dessous pour tester votre application Xamarin.iOS à l’a
 
 ### <a name="deploy-your-xamarinios-app"></a>Déployer votre application Xamarin.iOS
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 1. Connectez votre appareil iOS à l’hôte de build Mac via une connexion USB ou [sans fil](~/ios/deploy-test/wireless-deployment.md).
 2. Dans le **Panneau Solutions** de Visual Studio pour Mac, double-cliquez sur **Info.plist**.
 3. Dans **Signature**, sélectionnez **Provisionnement manuel**.
-4. Cliquez sur **Signature du bundle iOS** disproportionnée.
+4. Cliquez sur **Signature du bundle iOS** .
 5. Pour **Configuration**, sélectionnez **Debug**.
 6. Pour **Plateforme**, sélectionnez **iPhone**.
 7. Sélectionnez l’**identité de signature** créée par Xcode.
 8. Sélectionnez le **Profil de provisionnement** créé par Xcode.
 
-    ![Définir l’identité de signature et le profil de provisionnement](free-provisioning-images/launchapp8.png "Définir l’identité de signature et le profil de provisionnement")
+    ![Sélectionner l’identité de signature et le profil de provisionnement](free-provisioning-images/launchapp8.png "Sélectionner l’identité de signature et le profil de provisionnement")
 
     > [!TIP]
     > Si vous ne voyez pas votre identité de signature ou le profil de provisionnement approprié, vous devrez éventuellement redémarrer Visual Studio pour Mac.
@@ -106,7 +106,7 @@ Suivez les étapes ci-dessous pour tester votre application Xamarin.iOS à l’a
 9. Cliquez sur **OK** pour enregistrer et fermer les **Options de projet**.
 10. Sélectionnez votre appareil iOS, et exécutez l’application.
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. Vérifiez que Visual Studio 2019 ou Visual Studio 2017 a été [appairé à un hôte de build Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
 2. Connectez votre appareil iOS à l’hôte de build Mac via une connexion USB ou [sans fil](~/ios/deploy-test/wireless-deployment.md).
@@ -118,7 +118,7 @@ Suivez les étapes ci-dessous pour tester votre application Xamarin.iOS à l’a
 8. Sélectionnez l’**identité de signature** créée par Xcode.
 9. Sélectionnez le **Profil de provisionnement** créé par Xcode.
     
-    ![Définir l’identité de signature et le profil de provisionnement](free-provisioning-images/setprofile-w157.png "Définir l’identité de signature et le profil de provisionnement")
+    ![Sélectionner l’identité de signature et le profil de provisionnement](free-provisioning-images/setprofile-w157.png "Sélectionner l’identité de signature et le profil de provisionnement")
 
     > [!TIP]
     > Xcode a créé cette identité de signature et ce profil de provisionnement, puis les a stockés sur votre hôte de build Mac. Ils sont accessibles à Visual Studio 2019 ou Visual Studio 2017, car ils ont été [appairés](~/ios/get-started/installation/windows/connecting-to-mac/index.md) à l’hôte de build Mac. S’ils ne sont pas listés, vous devrez peut-être redémarrer Visual Studio 2019 ou Visual Studio 2017.
@@ -128,7 +128,7 @@ Suivez les étapes ci-dessous pour tester votre application Xamarin.iOS à l’a
 
 -----
 
-## <a name="limitations"></a>Limitations
+## <a name="limitations"></a>Limites
 
 Apple a imposé un certain nombre de limitations qui définissent quand et comment utiliser le provisionnement gratuit pour exécuter votre application sur un appareil iOS. Ainsi, vous pouvez uniquement effectuer un déploiement sur *votre* appareil :
 
@@ -143,5 +143,5 @@ Ce guide a exploré les avantages et les limites de l’utilisation du provision
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Provisionnement des appareils](~/ios/get-started/installation/device-provisioning/index.md)
+- [Approvisionnement des appareils](~/ios/get-started/installation/device-provisioning/index.md)
 - [Provisionnement des services d’application](~/ios/get-started/installation/device-provisioning/index.md#provisioning-for-application-services)

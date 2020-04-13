@@ -1,49 +1,49 @@
 ---
-title: Détecter le mode sombre dans les applications Xamarin. Forms
-description: Le mode Dark peut être pris en charge dans n’importe quelle application Xamarin. Forms à l’aide d’une combinaison de ResourceDictionaries, DynamicResources et de la plateforme.
+title: Détecter le mode sombre dans les applications Xamarin.Forms
+description: Le mode foncé peut être pris en charge dans n’importe quelle application Xamarin.Forms à l’aide d’une combinaison de ResourceDictionaries, DynamicResources et connaissances de la plate-forme.
 ms.prod: xamarin
 ms.assetid: D10506DD-BAA0-437F-A4AD-882D16E7B60D
 ms.technology: xamarin-forms
 author: davidortinau
 ms.author: daortin
 ms.date: 03/13/2020
-ms.openlocfilehash: 104237155797ca90c52ad385e8349480f9666c4c
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 7fe1a98e6a497a5791f26df2fc96d41781b71ef6
+ms.sourcegitcommit: b93754b220fca3d6e3d131341e3cfbe233d10f84
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79303500"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80628310"
 ---
-# <a name="detect-dark-mode-in-xamarinforms-applications"></a>Détecter le mode sombre dans les applications Xamarin. Forms
+# <a name="detect-dark-mode-in-xamarinforms-applications"></a>Détecter le mode sombre dans les applications Xamarin.Forms
 
-Les applications Xamarin. Forms peuvent répondre aux modifications de thème du système d’exploitation à l’aide de la même stratégie qui vous permet de [les](theming.md)prendre en charge. La principale différence réside dans le déclenchement de la modification du thème. Le mode Dark fait référence à un ensemble plus large de préférences d’apparence qui peuvent être définies au niveau du système d’exploitation, et quelles applications doivent respecter et répondre immédiatement à.
+Les applications Xamarin.Forms peuvent répondre aux changements de thème du système d’exploitation en utilisant la même stratégie qui vous permet de prendre en charge [le thème.](theming.md) La principale différence réside dans la façon dont le changement de thème est déclenché. Le mode foncé désigne un ensemble plus large de préférences d’apparence qui peuvent être définies au niveau du système d’exploitation et auxquelles les applications sont censées respecter et y répondre immédiatement.
 
-La configuration minimale requise pour l’utilisation du mode Dark dans vos applications Xamarin. Forms est la suivante :
+Les exigences minimales pour l’utilisation du mode sombre dans vos applications Xamarin.Forms sont les :
 
-- iOS 13 ou version ultérieure.
-- Android 9 ou version ultérieure (Android 9 prend en charge les modes d’apparence que vous pouvez interroger).
-- Android 10 ou version ultérieure (Android 10 avertit les applications des modifications du mode).
-- UWP v 10.0.10240.0 ou version ultérieure.
-- Xamarin. Forms (n’importe quelle version).
+- iOS 13 ou plus.
+- Android 9 ou plus (Android 9 prend en charge les modes d’apparence que vous pouvez interroger).
+- Android 10 ou plus (Android 10 informe les applications de modifications de mode).
+- UWP v10.0.10240.0 ou plus.
+- Xamarin.Forms (n’importe quelle version).
 
-Le processus de prise en charge des modes d’apparence, y compris clair et sombre, est le suivant :
+Le processus de support des modes d’apparence, y compris la lumière et l’obscurité, est le suivant :
 
-1. Définissez les ressources partagées par l’ensemble de votre application dans un [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary).
-2. Définissez un thème de dictionnaire de ressources pour chaque mode d’apparence qui fournit des remplacements spécifiques à chaque style que vous souhaitez modifier.
-3. Définissez le thème mode d’apparence par défaut dans le fichier **app. Xaml** de votre application.
-4. Attribuez un style à votre application à l’aide de l’extension de balisage `DynamicResource` où vous souhaitez que les styles réagissent lorsque les modes d’apparence changent.
-5. Ajoutez du code pour écouter les modifications apportées au thème du système d’exploitation et charger le thème correspondant de votre application.
+1. Définissez les ressources partagées [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)par l’ensemble de votre application dans un .
+2. Définissez un thème de dictionnaire de ressources pour chaque mode d’apparence qui fournit des remplacements spécifiques à chaque modèle que vous souhaitez changer.
+3. Définissez le thème du mode d’apparence par défaut dans le fichier **App.xaml** de votre application.
+4. Stylez votre `DynamicResource` application en utilisant l’extension de balisage où vous voulez que les styles réagissent lorsque les modes d’apparence changent.
+5. Ajoutez du code pour écouter les changements de thème OS et chargez le thème correspondant de votre application.
 
-Les captures d’écran suivantes montrent les pages à thème, en mode Light et Dark :
+Les captures d’écran suivantes montrent des pages thématiques, pour le mode lumière et sombre :
 
-[![Capture d’écran de la page principale d’une application à thème, sur iOS et android](theming-images/main-page-both-themes.png "Page principale de l’application à thème")](theming-images/main-page-both-themes-large.png#lightbox "Page principale de l’application à thème")
-[ ![capture d’écran de la page de détails d’une application à thème, sur iOS et Android](theming-images/detail-page-both-themes.png "Page de détails de l’application à thème")](theming-images/detail-page-both-themes-large.png#lightbox "Page de détails de l’application à thème")
+[![Capture d’écran de la page principale d’une application thématique, sur iOS et Android](theming-images/main-page-both-themes.png "Page principale de l’application thématique")](theming-images/main-page-both-themes-large.png#lightbox "Page principale de l’application thématique")
+[![Capture d’écran de la page de détail d’une application thématique, sur iOS et Android](theming-images/detail-page-both-themes.png "Page de détail de l’application thématique")](theming-images/detail-page-both-themes-large.png#lightbox "Page de détail de l’application thématique")
 
-## <a name="define-themes"></a>Définir des thèmes
+## <a name="define-themes"></a>Définir les thèmes
 
-Suivez le [Guide](theming.md) pour obtenir des détails pas à pas sur la création de thèmes sombres et légers. 
+Suivez le [guide thématique](theming.md) pour les détails étape par étape sur la création de thèmes sombres et légers.
 
-Vous pouvez facilement définir un nouveau thème pour votre application à l’emplacement approprié de votre code de plateforme. Pour charger un nouveau thème, il vous suffit de remplacer le dictionnaire de ressources actuel de l’application par un dictionnaire de ressources à thème de votre choix :
+Vous pouvez facilement définir un nouveau thème pour votre application à l’emplacement approprié de votre code de plate-forme. Pour charger un nouveau thème, il suffit de remplacer le dictionnaire de ressources actuel de l’application par un dictionnaire de ressources thématiques de votre choix :
 
 ```csharp
 App.Current.Resources = new YourDarkTheme();
@@ -51,7 +51,7 @@ App.Current.Resources = new YourDarkTheme();
 
 ## <a name="detect-and-apply-theme"></a>Détecter et appliquer le thème
 
-La détection du thème en cours d’exécution peut être effectuée à l’aide de la fonctionnalité [`RequestedTheme`](~/essentials/app-theme.md) de [Xamarin. Essentials](~/essentials/index.md) (version 1.4.0 ou ultérieure). Vous pouvez ensuite créer une méthode d’assistance dans une nouvelle classe ou dans la classe `App` pour configurer le thème :
+La détection du thème en cours [`RequestedTheme`](~/essentials/app-theme.md) d’exécution peut être obtenue en utilisant la fonctionnalité de [Xamarin.Essentials](~/essentials/index.md) (version 1.4.0 ou plus récente). Vous pouvez ensuite créer une méthode d’aide `App` dans une nouvelle classe ou dans la classe pour configurer le thème :
 
 ```csharp
 public partial class App : Application
@@ -60,37 +60,37 @@ public partial class App : Application
     {
         if (AppInfo.RequestedTheme == AppTheme.Dark)
         {
-            // change to light theme
-            // e.g. App.Current.Resources = new YourLightTheme();
+            // Change to dark theme
+            // e.g. App.Current.Resources = new YourDarkTheme();
         }
         else
         {
-            // change to dark theme
-            // e.g. App.Current.Resources = new YourDarkTheme();
+            // Change to light theme
+            // e.g. App.Current.Resources = new YourLightTheme();
         }
     }
 }
 ```
 
-## <a name="react-to-appearance-mode-changes"></a>Réagir aux modifications du mode d’apparence
+## <a name="react-to-appearance-mode-changes"></a>Réagir aux changements de mode d’apparence
 
-Le mode d’apparence sur un appareil peut changer pour diverses raisons, en fonction de la façon dont l’utilisateur a configuré ses préférences, notamment le choix explicite d’un mode, l’heure de la journée ou des facteurs environnementaux tels que le faible éclairage. Vous devez ajouter du code de plateforme pour vous assurer que votre application peut réagir à ces modifications, et les sections suivantes abordent ce sujet plus en détail.
+Le mode d’apparence d’un appareil peut changer pour une variété de raisons en fonction de la façon dont l’utilisateur a configuré ses préférences, y compris le choix explicite d’un mode, l’heure de la journée ou des facteurs environnementaux tels que la faible luminosité. Vous devrez ajouter du code de plate-forme pour vous assurer que votre application peut réagir à ces modifications, et les sections suivantes en discutent plus en détail.
 
 ### <a name="android"></a>Android
 
-Pour prendre en charge le mode Dark dans votre application, vous devez mettre à jour le thème de votre application, qui se trouve dans `Resources/values/styles.xml`, afin d’hériter d’un thème `DayNight` :
+Pour prendre en charge le mode sombre de votre application, `Resources/values/styles.xml`vous devez mettre `DayNight` à jour le thème de votre application, qui peut être trouvé dans , pour hériter d’un thème:
 
 ```xml
 <style name="MainTheme.Base" parent="Theme.AppCompat.DayNight">
 ```
 
-Si vous avez effectué une mise à niveau vers les [composants matériels](https://www.nuget.org/packages/Xamarin.Google.Android.Material/) de AndroidX (1.1.0-RC2) ou plus récent, vous pouvez utiliser :
+Si vous avez mis à niveau vers [les composants matériels](https://www.nuget.org/packages/Xamarin.Google.Android.Material/) d’AndroidX (1.1.0-rc2) ou plus récent, vous pouvez utiliser :
 
 ```xml
 <style name="MainTheme.Base" parent="Theme.MaterialComponents.DayNight">
 ```
 
-Dans le fichier **MainActivity.cs** de votre application, ajoutez le champ `ConfigChanges.UiMode` à la propriété `ConfigurationChanges` dans l’attribut `Activity`, afin que votre application soit informée des modifications du mode interface utilisateur :
+Dans le fichier **MainActivity.cs** de votre application, ajoutez le `ConfigChanges.UiMode` champ à la `ConfigurationChanges` propriété dans l’attribut, `Activity` de sorte que votre application sera notifiée des modifications du mode d’interface utilisateur :
 
 ```csharp
 [Activity(
@@ -98,7 +98,7 @@ Dans le fichier **MainActivity.cs** de votre application, ajoutez le champ `Conf
     ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode)]
 ```
 
-Dans le même fichier **MainActivity.cs** , remplacez la méthode `OnConfigurationChanged` :
+Dans le même **fichier MainActivity.cs,** remplacez la `OnConfigurationChanged` méthode :
 
 ```csharp
 public override void OnConfigurationChanged(Configuration newConfig)
@@ -110,7 +110,7 @@ public override void OnConfigurationChanged(Configuration newConfig)
 
 ### <a name="ios"></a>iOS
 
-Sur iOS, les modifications du mode apparence sont notifiées sur le UIViewController, qui est le `ContentPage`dans Xamarin. Forms. Pour substituer cette méthode, créez un convertisseur personnalisé dans votre projet iOS nommé `PageRenderer.cs`:
+Sur iOS, les changements de mode d’apparence sont notifiés sur l’UIViewController, qui dans Xamarin.Forms est le `ContentPage`. Afin de remplacer cette méthode, créez un rendu personnalisé `PageRenderer.cs`dans votre projet iOS appelé :
 
 ```csharp
 using System;
@@ -152,11 +152,11 @@ namespace YourApp.iOS.Renderers
 }
 ```
 
-La substitution de la méthode `TraitCollectionDidChange` vous permet d’agir sur une `UserInterfaceStyle` modification.
+La suppression `TraitCollectionDidChange` de la méthode vous `UserInterfaceStyle` permet d’agir sur un changement.
 
 ### <a name="uwp"></a>UWP
 
-Sur UWP, ajoutez le code suivant au fichier **MainPage.Xaml.cs** de votre application :
+Sur UWP, ajoutez le code suivant au fichier **MainPage.xaml.cs** de votre application :
 
 ```csharp
 public sealed partial class MainPage
@@ -185,7 +185,7 @@ public sealed partial class MainPage
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Thèmes (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-theming/)
+- [Thème (échantillon)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-theming/)
 - [Dictionnaires de ressources](~/xamarin-forms/xaml/resource-dictionaries.md)
-- [Styles dynamiques dans Xamarin. Forms](~/xamarin-forms/user-interface/styles/xaml/dynamic.md)
+- [Styles dynamiques dans Xamarin.Forms](~/xamarin-forms/user-interface/styles/xaml/dynamic.md)
 - [Styler des applications Xamarin.Forms avec des styles XAML](~/xamarin-forms/user-interface/styles/xaml/index.md)

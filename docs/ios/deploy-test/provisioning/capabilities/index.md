@@ -8,22 +8,22 @@ author: davidortinau
 ms.author: daortin
 ms.date: 05/06/2018
 ms.openlocfilehash: 6250dfa24361601c2b9929d80fec3cc7a18cab2d
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73028564"
 ---
 # <a name="working-with-capabilities-in-xamarinios"></a>Utilisation des fonctionnalités dans Xamarin.iOS
 
-_L’ajout de fonctionnalités à une application nécessite souvent une configuration d’approvisionnement supplémentaire. Ce guide explique la configuration requise pour toutes les fonctionnalités de._
+_L’ajout de capacités à une application nécessite souvent une configuration d’approvisionnement supplémentaire. Ce guide explique la configuration nécessaire à toutes les fonctionnalités._
 
 Apple fournit aux développeurs diverses _fonctionnalités_, souvent appelées _services d’application_, qui leur permettent de proposer des applications iOS plus complètes et dotées de capacités étendues. Les développeurs peuvent mieux intégrer les fonctionnalités de la plateforme à leurs applications, par exemple, des transactions monétaires lancées à partir de l’application, des services d’appareil supplémentaires comme Siri, et bien plus encore.
 Ces fonctionnalités sont compatibles avec les projets Xamarin.iOS. Voici la liste complète des services :
 
 - App Groups
 - Associated Domains
-- Data Protection
+- Protection des données
 - Game Center
 - HealthKit
 - HomeKit
@@ -36,7 +36,7 @@ Ces fonctionnalités sont compatibles avec les projets Xamarin.iOS. Voici la lis
 - Push Notification
 - VPN personnel
 - Siri
-- Maps
+- Cartes
 - Background Modes
 - Keychain Sharing
 - Extensions réseau
@@ -72,7 +72,7 @@ Cette section décrit comment utiliser le provisionnement automatique de Visual 
 
 ## <a name="using-the-ide"></a>Utilisation de l'IDE
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 Les fonctionnalités sont ajoutées au fichier **Entitlements.plist** dans Visual Studio pour Mac. Pour ajouter des fonctionnalités, utilisez les étapes suivantes :
 
@@ -80,7 +80,7 @@ Les fonctionnalités sont ajoutées au fichier **Entitlements.plist** dans Visua
 
     ![Option Activer la signature automatique](images/manage-signing.png)
 
-2. Ouvrez le fichier **Entitlements.plist** et sélectionnez la fonctionnalité que vous souhaitez ajouter :
+2. Ouvrez le fichier **Entitlements.plist** et sélectionnez la capacité que vous souhaitez ajouter :
 
     ![Ajouter des fonctionnalités au fichier entitlements.plist](images/image17.png)
 
@@ -92,7 +92,7 @@ Les fonctionnalités sont ajoutées au fichier **Entitlements.plist** dans Visua
 
     ![Ajouter des fonctionnalités au fichier entitlements.plist](images/image18.png)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Les fonctionnalités sont ajoutées à **Entitlements.plist**. Pour ajouter des fonctionnalités dans Visual Studio 2019, effectuez les étapes suivantes :
 
@@ -104,7 +104,7 @@ Les fonctionnalités sont ajoutées à **Entitlements.plist**. Pour ajouter des 
 
     ![Option Activer la signature automatique](images/manage-signing-vs.png)
 
-4. Ouvrez le fichier **Entitlements.plist** et sélectionnez la fonctionnalité à ajouter. Enregistrez le fichier.
+4. Ouvrez le fichier **Entitlements.plist** et sélectionnez la fonctionnalité à ajouter. Enregistrez le fichier .
 
     L’enregistrement du fichier **Entitlement.plist** a deux actions :
 
@@ -130,7 +130,7 @@ Pour accéder au developer center, vous devez effectuer deux étapes : créer 
 
     ![Sélection de l’ID d’application dans le developer center](images/image6.png)
 
-4. Appuyez sur le bouton **+** dans le coin supérieur droit pour créer un ID d’application.
+4. Appuyez **+** sur le bouton dans le coin supérieur droit pour créer un nouvel ID App.
 5. Entrez une description de l’ID d’application, sélectionnez Explicit App ID et entrez un ID de bundle au format `com.domain.appname`. Cet ID de bundle doit correspondre à l’ID de bundle défini dans votre projet :
 
     ![Ajout des détails de l’ID d’application](images/image7.png)
@@ -150,13 +150,13 @@ Pour accéder au developer center, vous devez effectuer deux étapes : créer 
 
 ### <a name="creating-a-provisioning-profile"></a>Création d’un profil de provisionnement
 
-Maintenant, créez un profil de provisionnement qui contient cet ID d’application. Suivez les étapes ci-dessous :
+Maintenant, créez un profil de provisionnement qui contient cet ID d’application. Pour ce faire, procédez comme suit :
 
 1. Dans le developer center d’Apple, accédez à **Provisioning Profiles > All** :
 
     ![Section Provisioning Profiles](images/image10.png)
 
-2. Appuyez sur le bouton **+** dans le coin supérieur droit pour créer un profil de provisionnement.
+2. Appuyez **+** sur le bouton dans le coin supérieur droit pour créer un nouveau profil de provisionnement.
 3. Sélectionnez le type de profil de provisionnement souhaité, puis cliquez sur **Continue** :
 
     ![Sélection du profil de provisionnement](images/image11.png)
@@ -195,7 +195,7 @@ Maintenant, créez un profil de provisionnement qui contient cet ID d’applicat
 Une fois que vous avez ajouté une fonctionnalité côté serveur, il vous reste quelques étapes à effectuer pour permettre à votre application d’utiliser la fonctionnalité. S’il y a lieu, effectuez les étapes supplémentaires décrites ci-après :
 
 - Utilisez l’espace de noms de framework dans votre application.
-- Ajoutez les droits nécessaires à votre application. Pour obtenir des informations détaillées sur les droits requis et leur ajout, consultez le guide [Utilisation de droits](~/ios/deploy-test/provisioning/entitlements.md).
+- Ajoutez les droits requis à votre application. Pour obtenir des informations détaillées sur les droits requis et leur ajout, consultez le guide [Utilisation de droits](~/ios/deploy-test/provisioning/entitlements.md).
 
 <a name="troubleshooting" />
 

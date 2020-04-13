@@ -1,6 +1,6 @@
 ---
 title: Présentation des renderers personnalisés
-description: Cet article présente les renderers personnalisés et décrit leur processus de création.
+description: Cet article présente les convertisseurs personnalisés et décrit leur processus de création.
 ms.prod: xamarin
 ms.assetid: 264314BE-1C5C-4727-A14E-F6F98151CDBD
 ms.technology: xamarin-forms
@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/19/2016
 ms.openlocfilehash: ad2868a82f662f45066a6111a1dd3bd2aacad671
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70771876"
 ---
 # <a name="introduction-to-custom-renderers"></a>Présentation des renderers personnalisés
 
-_Les convertisseurs personnalisés fournissent une approche puissante pour personnaliser l’apparence et le comportement des contrôles Xamarin. Forms. Ils peuvent être utilisés pour des modifications de style réduites ou une personnalisation sophistiquée de la disposition et du comportement des plateformes. Cet article fournit une introduction aux convertisseurs personnalisés et décrit le processus de création d’un convertisseur personnalisé._
+_Les rendus personnalisés offrent une approche puissante pour personnaliser l’apparence et le comportement des commandes Xamarin.Forms. Ils peuvent être utilisés pour de petits changements de style ou une mise en page sophistiquée spécifique à la plate-forme et la personnalisation du comportement. Cet article fournit une introduction aux rendus personnalisés, et décrit le processus pour créer un rendu personnalisé._
 
 Les [pages, dispositions et contrôles](~/xamarin-forms/user-interface/controls/index.md) Xamarin.Forms présentent une API commune pour décrire des interfaces utilisateur mobiles multiplateformes. Chaque page, disposition et contrôle est restitué différemment sur chaque plateforme avec une classe `Renderer` qui crée à son tour un contrôle natif (correspondant à la représentation de Xamarin.Forms), le dispose sur l’écran et ajoute le comportement spécifié dans le code partagé.
 
@@ -73,7 +73,7 @@ Le processus de création d’une classe de renderer personnalisé est le suivan
 
 Les rubriques de cette série fournissent des démonstrations et des explications de ce processus pour différents éléments Xamarin.Forms.
 
-## <a name="troubleshooting"></a>Résolution des problèmes
+## <a name="troubleshooting"></a>Dépannage
 
 Si un contrôle personnalisé est contenu dans un projet de bibliothèque .NET Standard ajouté à la solution (autrement dit, pas la bibliothèque .NET Standard créée par le modèle de projet d’application Xamarin.Forms dans Visual Studio pour Mac/Visual Studio), une exception peut se produire dans iOS lors d’une tentative d’accès au contrôle personnalisé. Si ce problème se produit, vous pouvez le résoudre en créant une référence au contrôle personnalisé à partir de la classe `AppDelegate` :
 
@@ -91,8 +91,8 @@ Une référence au type `ClassInPCL` est alors créée, indiquant son caractère
 
 ## <a name="summary"></a>Récapitulatif
 
-Dans cet article, nous avons examiné les renderers personnalisés et décrit leur processus de création. Les renderers personnalisés fournissent une approche puissante pour personnaliser l’apparence et le comportement des contrôles Xamarin.Forms. Ils peuvent être utilisés aussi bien pour les petits changements de style que pour la personnalisation sophistiquée de la disposition et du comportement d’une plateforme.
+Dans cet article, nous avons examiné les renderers personnalisés et décrit leur processus de création. Les convertisseurs personnalisés fournissent une approche puissante pour personnaliser l’apparence et le comportement des contrôles Xamarin.Forms. Ils peuvent être utilisés aussi bien pour les petits changements de style que pour la personnalisation de la disposition sophistiquée d’une plateforme et du comportement.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Effets](~/xamarin-forms/app-fundamentals/effects/index.md)

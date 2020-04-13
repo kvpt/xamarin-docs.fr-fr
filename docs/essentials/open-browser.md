@@ -1,27 +1,27 @@
 ---
 title: 'Xamarin.Essentials : Ouvrir le navigateur'
-description: La classe Browser dans Xamarin.Essentials permet à une application d’ouvrir un lien web dans le navigateur préféré du système optimisé ou le navigateur externe.
+description: La classe Navigateur dans Xamarin.Essentials permet à une application d’ouvrir un lien web dans le navigateur préféré du système optimisé ou le navigateur externe.
 ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 04/02/2019
 ms.custom: video
 ms.openlocfilehash: fe8730ba6bc664269d79c550fb4e0abef7767fe0
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70765010"
 ---
-# <a name="xamarinessentials-browser"></a>Xamarin.Essentials: Visiteur
+# <a name="xamarinessentials-browser"></a>Xamarin.Essentials : Navigateur
 
-La classe **Browser** permet à une application d’ouvrir un lien web dans le navigateur préféré du système optimisé ou le navigateur externe.
+La classe **Navigateur** permet à une application d’ouvrir un lien web dans le navigateur préféré du système optimisé ou le navigateur externe.
 
 ## <a name="get-started"></a>Prise en main
 
 [!include[](~/essentials/includes/get-started.md)]
 
-## <a name="using-browser"></a>Utilisation de Browser
+## <a name="using-browser"></a>Utilisation de Navigateur
 
 Ajoutez une référence à Xamarin.Essentials dans votre classe :
 
@@ -29,7 +29,7 @@ Ajoutez une référence à Xamarin.Essentials dans votre classe :
 using Xamarin.Essentials;
 ```
 
-La fonctionnalité Browser fonctionne en appelant la méthode `OpenAsync` avec `Uri` et `BrowserLaunchMode`.
+La fonctionnalité Navigateur fonctionne en appelant la méthode `OpenAsync` avec `Uri` et `BrowserLaunchMode`.
 
 ```csharp
 
@@ -62,9 +62,9 @@ await Browser.OpenAsync(uri, new BrowserLaunchOptions
 
 ![Options du navigateur](images/browser-options.png)
 
-## <a name="platform-implementation-specifics"></a>Implémentations spécifiques par plateforme
+## <a name="platform-implementation-specifics"></a>Caractéristiques de mise en œuvre de la plateforme
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 Le Mode de lancement détermine la façon dont le navigateur est lancé :
 
@@ -72,21 +72,21 @@ Le Mode de lancement détermine la façon dont le navigateur est lancé :
 
 L’utilisation de [Onglets Chrome personnalisés](https://developer.chrome.com/multidevice/android/customtabs) sera tentée pour charger l’URI et conserver la sensibilisation à la navigation.
 
-## <a name="external"></a>Ressource externe
+## <a name="external"></a>Externe
 
 Un `Intent` sera utilisé pour demander l’ouverture de l’URI via le navigateur normal du système.
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 ## <a name="system-preferred"></a>Système par défaut
 
 [SFSafariViewController](xref:SafariServices.SFSafariViewController) est utilisé pour charger l’URI et conserver la sensibilisation à la navigation.
 
-## <a name="external"></a>Ressource externe
+## <a name="external"></a>Externe
 
-La méthode standard `OpenUrl` de l'application principale est utilisée pour lancer le navigateur par défaut en dehors de l'application.
+`OpenUrl` standard sur l’application principale est utilisé pour lancer le navigateur par défaut en dehors de l’application.
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 Le navigateur par défaut de l’utilisateur sera toujours exécuté, quel que soit `BrowserLaunchMode`.
 
@@ -94,7 +94,7 @@ Le navigateur par défaut de l’utilisateur sera toujours exécuté, quel que s
 
 ## <a name="api"></a>API
 
-- [Code source de Browser](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Browser)
+- [Code source de Navigateur](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Browser)
 - [Documentation de l’API Browser](xref:Xamarin.Essentials.Browser)
 
 ## <a name="related-video"></a>Vidéo associée

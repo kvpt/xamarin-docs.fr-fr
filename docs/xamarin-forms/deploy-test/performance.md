@@ -1,6 +1,6 @@
 ---
 title: Améliorer les performances des applications Xamarin.Forms
-description: Il existe plusieurs techniques permettant d’accroître les performances des applications Xamarin.Forms. Collectivement, ces techniques peuvent considérablement réduire la charge de travail d’un processeur, de même que la quantité de mémoire consommée par une application.
+description: Il existe plusieurs techniques permettant d’accroître les performances des applications Xamarin.Forms. Utilisées conjointement, ces techniques peuvent considérablement réduire la charge de travail d’une UC, ainsi que la quantité de mémoire consommée par une application.
 ms.prod: xamarin
 ms.assetid: 0be84c56-6698-448d-be5a-b4205f1caa9f
 ms.technology: xamarin-forms
@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/27/2019
 ms.openlocfilehash: 4427d347723284a2f8897612f10857270c9631bf
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "79305212"
 ---
 # <a name="improve-xamarinforms-app-performance"></a>Améliorer les performances des applications Xamarin.Forms
@@ -20,12 +20,12 @@ ms.locfileid: "79305212"
 
 **Evolve 2016 : Optimisation des performances des applications avec Xamarin.Forms**
 
-Pour une application, la dégradation des performances peut se traduire de différentes façons. L’application semble ne pas répondre, le défilement de l’affichage est ralenti et la durée de vie de la batterie de l’appareil réduite. Toutefois, l’optimisation des performances implique davantage de choses que l’implémentation d’un code efficace. L’expérience utilisateur liée au niveau de performance de l’application doit également être prise en compte. Par exemple, le fait de garantir que l’exécution de certaines opérations ne va pas empêcher l’utilisateur d’effectuer d’autres activités peut améliorer son expérience de l’application.
+Le mauvais niveau de performance d’une application se présente de plusieurs façons. L’application semble ne pas répondre, le défilement de l’affichage est ralenti et la durée de vie de la batterie de l’appareil réduite. Toutefois, l’optimisation des performances implique davantage de choses que l’implémentation d’un code efficace. L’expérience utilisateur liée au niveau de performance de l’application doit également être prise en compte. Par exemple, pour contribuer à améliorer l’expérience utilisateur, vous devez vérifier que les opérations s’exécutent sans empêcher l’utilisateur d’effectuer d’autres activités.
 
-De nombreuses techniques permettent d’accroître les performances, notamment celles qui sont visibles, d’applications Xamarin.Forms. Collectivement, ces techniques peuvent considérablement réduire la charge de travail d’un processeur, de même que la quantité de mémoire consommée par une application.
+De nombreuses techniques permettent d’accroître les performances, notamment celles qui sont visibles, d’applications Xamarin.Forms. Utilisées conjointement, ces techniques peuvent considérablement réduire la charge de travail d’une UC, ainsi que la quantité de mémoire consommée par une application.
 
 > [!NOTE]
-> Avant de lire cet article, lisez d’abord [Niveau de performance multiplateforme](~/cross-platform/deploy-test/memory-perf-best-practices.md), qui décrit les techniques spécifiques indépendantes des plateformes qui permettent d’améliorer l’utilisation de la mémoire et le niveau de performance des applications générées à l’aide de la plateforme Xamarin.
+>  Avant de lire cet article, vous devez lire [Performances entre plateformes](~/cross-platform/deploy-test/memory-perf-best-practices.md), qui décrit des techniques non spécifiques aux plateformes pour améliorer l’utilisation de la mémoire et les performances des applications générées à l’aide de la plateforme Xamarin.
 
 ## <a name="enable-the-xaml-compiler"></a>Activer le compilateur XAML
 
@@ -43,7 +43,7 @@ Les liaisons compilées améliorent les performances de liaison de données dans
 
 ## <a name="reduce-unnecessary-bindings"></a>Réduire les liaisons inutiles
 
-N’utilisez pas de liaisons pour le contenu qui peut être aisément défini de manière statique. Il n’existe aucun avantage à lier des données qui n’ont pas besoin de l’être, car les liaisons ne sont pas rentables. Par exemple, la définition de `Button.Text = "Accept"` a moins de surcharge que la liaison [`Button.Text`](xref:Xamarin.Forms.Button.Text) à une propriété de `string` ViewModel avec la valeur « Accept ».
+N’utilisez pas de liaisons pour le contenu qui peut être aisément défini de manière statique. Il n’existe aucun avantage à lier des données qui n’ont pas besoin de l’être, car les liaisons ne sont pas rentables. Par exemple, `Button.Text = "Accept"` le paramètre [`Button.Text`](xref:Xamarin.Forms.Button.Text) comporte moins de `string` frais généraux que de lier à une propriété viewmodel avec valeur « Accepter ».
 
 ## <a name="use-fast-renderers"></a>Utiliser des renderers rapides
 
@@ -63,7 +63,7 @@ La compression des dispositions supprime les dispositions spécifiées de l’ar
 
 ## <a name="choose-the-correct-layout"></a>Choisir la disposition correcte
 
-Une disposition qui est capable d’afficher plusieurs enfants, mais qui n’en a qu’un seul, est inutile. Par exemple, l’exemple de code suivant montre un élément [`StackLayout`](xref:Xamarin.Forms.StackLayout) avec un seul enfant :
+Une disposition qui est capable d’afficher plusieurs enfants, mais qui n’en a qu’un seul, est inutile. Par exemple, l’exemple [`StackLayout`](xref:Xamarin.Forms.StackLayout) de code suivant montre un avec un seul enfant :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -75,7 +75,7 @@ Une disposition qui est capable d’afficher plusieurs enfants, mais qui n’en 
 </ContentPage>
 ```
 
-Cela est inutile et l’élément [`StackLayout`](xref:Xamarin.Forms.StackLayout) doit être supprimé, comme indiqué dans l’exemple de code suivant :
+Il s’agit [`StackLayout`](xref:Xamarin.Forms.StackLayout) d’un gaspillage et l’élément doit être supprimé, comme le montre l’exemple de code suivant :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -85,7 +85,7 @@ Cela est inutile et l’élément [`StackLayout`](xref:Xamarin.Forms.StackLayout
 </ContentPage>
 ```
 
-En outre, n’essayez pas de reproduire l’apparence d’une disposition spécifique à l’aide de combinaisons d’autres dispositions, car cela aboutirait à des calculs de dispositions inutiles. Par exemple, n’essayez pas de reproduire une disposition [`Grid`](xref:Xamarin.Forms.Grid) à l’aide d’une combinaison d’instances de [`StackLayout`](xref:Xamarin.Forms.StackLayout). L’exemple de code ci-dessous illustre cette mauvaise pratique :
+En outre, n’essayez pas de reproduire l’apparence d’une disposition spécifique à l’aide de combinaisons d’autres dispositions, car cela aboutirait à des calculs de dispositions inutiles. Par exemple, n’essayez pas [`Grid`](xref:Xamarin.Forms.Grid) de reproduire une [`StackLayout`](xref:Xamarin.Forms.StackLayout) mise en page en utilisant une combinaison d’instances. L’exemple de code ci-dessous illustre cette mauvaise pratique :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -113,7 +113,7 @@ En outre, n’essayez pas de reproduire l’apparence d’une disposition spéci
 </ContentPage>
 ```
 
-Cela ne sert à rien, car des calculs de dispositions inutiles sont effectués. Au lieu de cela, vous pouvez obtenir la disposition souhaitée à l’aide d’un élément [`Grid`](xref:Xamarin.Forms.Grid), comme illustré dans l’exemple de code suivant :
+Cela ne sert à rien, car des calculs de dispositions inutiles sont effectués. Au lieu de cela, la [`Grid`](xref:Xamarin.Forms.Grid)mise en page souhaitée peut être mieux réalisée en utilisant un , comme indiqué dans l’exemple de code suivant:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -147,51 +147,51 @@ Cela ne sert à rien, car des calculs de dispositions inutiles sont effectués. 
 
 Pour obtenir les meilleures performances de disposition possibles, suivez ces instructions :
 
-- Réduisez la profondeur des hiérarchies de dispositions en spécifiant les valeurs de propriété [`Margin`](xref:Xamarin.Forms.View.Margin), ce qui permet de créer des dispositions avec moins de retours à la ligne. Pour plus d’informations, consultez [Marges et remplissage](~/xamarin-forms/user-interface/layouts/margin-and-padding.md).
-- Quand vous utilisez un élément [`Grid`](xref:Xamarin.Forms.Grid), essayez de vous assurer que le moins de lignes et de colonnes possible sont définies sur une taille [`Auto`](xref:Xamarin.Forms.GridLength.Auto). Pour chaque ligne ou colonne dimensionnée automatiquement, le moteur de disposition effectue des calculs de dispositions supplémentaires. Utilisez plutôt des lignes et colonnes de taille fixe si possible. Vous pouvez également définir des lignes et des colonnes pour occuper un montant proportionnel d’espace avec la valeur d’énumération [`GridUnitType.Star`](xref:Xamarin.Forms.GridUnitType.Star), à condition que l’arborescence parente respecte ces instructions de disposition.
-- Ne définissez pas les propriétés [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) et [`HorizontalOptions`](xref:Xamarin.Forms.View.VerticalOptions) d’une disposition, sauf si cela est obligatoire. Les valeurs par défaut de [`LayoutOptions.Fill`](xref:Xamarin.Forms.LayoutOptions.Fill) et [`LayoutOptions.FillAndExpand`](xref:Xamarin.Forms.LayoutOptions.FillAndExpand) permettent la meilleure optimisation de la disposition. La modification de ces propriétés a un coût et consomme de la mémoire, même en leur affectant les valeurs par défaut.
-- Évitez d’utiliser un élément [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) autant que possible. Le processeur aurait considérablement plus de travail à effectuer.
-- Quand vous utilisez un élément [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout), évitez d’utiliser la propriété [`AbsoluteLayout.AutoSize`](xref:Xamarin.Forms.AbsoluteLayout.AutoSize) autant que possible.
-- Quand vous utilisez un élément [`StackLayout`](xref:Xamarin.Forms.StackLayout), vérifiez qu’un seul enfant est défini sur [`LayoutOptions.Expands`](xref:Xamarin.Forms.LayoutOptions.Expands). Cette propriété permet de garantir que l’enfant spécifié occupe le plus grand espace que l’élément `StackLayout` peut lui donner, et il est inutile d’effectuer ces calculs plusieurs fois.
-- Évitez d’appeler une des méthodes de la classe [`Layout`](xref:Xamarin.Forms.Layout), car elles entraînent l’exécution de calculs de dispositions coûteux. Au lieu de cela, il est probable que vous puissiez obtenir le comportement de disposition souhaité en définissant les propriétés [`TranslationX`](xref:Xamarin.Forms.VisualElement.TranslationX) et [`TranslationY`](xref:Xamarin.Forms.VisualElement.TranslationY). Vous pouvez également sous-classer la classe [`Layout<View>`](xref:Xamarin.Forms.Layout`1) pour obtenir le comportement de disposition souhaité.
-- Ne mettez à jour aucune instance de [`Label`](xref:Xamarin.Forms.Label) plus fréquemment que nécessaire, car la modification de la taille de l’étiquette peut entraîner le recalcul de l’intégralité de la disposition de l’écran.
-- Ne définissez pas la propriété [`Label.VerticalTextAlignment`](xref:Xamarin.Forms.Label.VerticalTextAlignment), sauf si cela est obligatoire.
-- Affectez à l’élément [`LineBreakMode`](xref:Xamarin.Forms.Label.LineBreakMode) des instances de [`Label`](xref:Xamarin.Forms.Label) la valeur [`NoWrap`](xref:Xamarin.Forms.LineBreakMode.NoWrap) autant que possible.
+- Réduisez la profondeur des hiérarchies [`Margin`](xref:Xamarin.Forms.View.Margin) d’aménagement en spécifiant les valeurs des propriétés, permettant la création d’aménagements avec moins de vues d’emballage. Pour plus d’informations, consultez [Marges et remplissage](~/xamarin-forms/user-interface/layouts/margin-and-padding.md).
+- Lors de [`Grid`](xref:Xamarin.Forms.Grid)l’utilisation d’un , essayez de vous [`Auto`](xref:Xamarin.Forms.GridLength.Auto) assurer que le moins de lignes et de colonnes que possible sont mis à la taille. Pour chaque ligne ou colonne dimensionnée automatiquement, le moteur de disposition effectue des calculs de dispositions supplémentaires. Utilisez plutôt des lignes et colonnes de taille fixe si possible. Alternativement, définir des lignes et des colonnes [`GridUnitType.Star`](xref:Xamarin.Forms.GridUnitType.Star) pour occuper une quantité proportionnelle d’espace avec la valeur de recensement, à condition que l’arbre parent respecte ces lignes directrices d’aménagement.
+- Ne définissez [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) pas [`HorizontalOptions`](xref:Xamarin.Forms.View.VerticalOptions) les propriétés et les propriétés d’une mise en page à moins que nécessaire. Les valeurs [`LayoutOptions.Fill`](xref:Xamarin.Forms.LayoutOptions.Fill) par [`LayoutOptions.FillAndExpand`](xref:Xamarin.Forms.LayoutOptions.FillAndExpand) défaut de et de permettre la meilleure optimisation de la mise en page. La modification de ces propriétés a un coût et consomme de la mémoire, même en leur affectant les valeurs par défaut.
+- Évitez d’utiliser un [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) chaque fois que c’est possible. Le processeur aurait considérablement plus de travail à effectuer.
+- Lors de [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout)l’utilisation [`AbsoluteLayout.AutoSize`](xref:Xamarin.Forms.AbsoluteLayout.AutoSize) d’un , éviter d’utiliser la propriété chaque fois que possible.
+- Lors de [`StackLayout`](xref:Xamarin.Forms.StackLayout)l’utilisation d’un [`LayoutOptions.Expands`](xref:Xamarin.Forms.LayoutOptions.Expands), assurez-vous qu’un seul enfant est réglé à . Cette propriété permet de garantir que l’enfant spécifié occupe le plus grand espace que l’élément `StackLayout` peut lui donner, et il est inutile d’effectuer ces calculs plusieurs fois.
+- Évitez d’appeler l’une des méthodes de la [`Layout`](xref:Xamarin.Forms.Layout) classe, car elles entraînent des calculs de mise en page coûteux. Au lieu de cela, il est probable que le [`TranslationX`](xref:Xamarin.Forms.VisualElement.TranslationX) [`TranslationY`](xref:Xamarin.Forms.VisualElement.TranslationY) comportement de mise en page souhaité peut être obtenu en définissant le et les propriétés. Alternativement, sous-classez la [`Layout<View>`](xref:Xamarin.Forms.Layout`1) classe pour atteindre le comportement de mise en page désiré.
+- Ne mettez pas [`Label`](xref:Xamarin.Forms.Label) à jour les instances plus fréquemment que nécessaire, car le changement de taille de l’étiquette peut entraîner la recalcul de la mise en page de l’écran entier.
+- Ne définissez [`Label.VerticalTextAlignment`](xref:Xamarin.Forms.Label.VerticalTextAlignment) pas la propriété sauf si nécessaire.
+- Définissez [`LineBreakMode`](xref:Xamarin.Forms.Label.LineBreakMode) les [`Label`](xref:Xamarin.Forms.Label) cas [`NoWrap`](xref:Xamarin.Forms.LineBreakMode.NoWrap) dans la mesure du possible.
 
 ## <a name="use-asynchronous-programming"></a>Utiliser la programmation asynchrone
 
-La réactivité globale de votre application peut être améliorée et les goulots d’étranglement des performances sont souvent évités, à l’aide de la programmation asynchrone. Dans .NET, le [modèle asynchrone basé sur les tâches (TAP)](/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap) est le modèle de conception recommandé pour les opérations asynchrones. Toutefois, l’utilisation incorrecte d’un TAP peut entraîner des applications non exécutées. Par conséquent, les instructions suivantes doivent être suivies lors de l’utilisation du TAP.
+La réactivité globale de votre application peut être améliorée, et les goulots d’étranglement de performance souvent évités, en utilisant la programmation asynchrone. Dans .NET, le [modèle asynchrone basé sur les tâches (TAP)](/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap) est le modèle de conception recommandé pour les opérations asynchrones. Cependant, une utilisation incorrecte du TAP peut entraîner des applications non performantes. Par conséquent, les lignes directrices suivantes doivent être suivies lors de l’utilisation du TAP.
 
 ### <a name="fundamentals"></a>Notions de base
 
-- Comprendre le cycle de vie de la tâche, qui est représenté par l’énumération `TaskStatus`. Pour plus d’informations, consultez [la signification de TaskStatus et état de la](https://devblogs.microsoft.com/pfxteam/the-meaning-of-taskstatus/) [tâche](/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap#task-status).
-- Utilisez la méthode `Task.WhenAll` pour attendre de façon asynchrone que plusieurs opérations asynchrones se terminent, plutôt qu’individuellement `await` une série d’opérations asynchrones. Pour plus d’informations, consultez [Task. WhenAll](/dotnet/standard/asynchronous-programming-patterns/consuming-the-task-based-asynchronous-pattern#taskwhenall).
-- Utilisez la méthode `Task.WhenAny` pour attendre de façon asynchrone l’achèvement de l’une des multiples opérations asynchrones. Pour plus d’informations, consultez [Task. WhenAny](/dotnet/standard/asynchronous-programming-patterns/consuming-the-task-based-asynchronous-pattern#taskwhenall).
-- Utilisez la méthode `Task.Delay` pour produire un objet `Task` qui se termine après l’heure spécifiée. Cela est utile pour des scénarios tels que l’interrogation de données et le retardement de la gestion des entrées d’utilisateur pendant une durée prédéterminée. Pour plus d’informations, consultez [Task. Delay](/dotnet/standard/asynchronous-programming-patterns/consuming-the-task-based-asynchronous-pattern#taskdelay).
-- Exécutez des opérations intensives de processeur synchrones sur le pool de threads avec la méthode `Task.Run`. Cette méthode est un raccourci pour la méthode `TaskFactory.StartNew`, avec les arguments optimaux définis. Pour plus d’informations, consultez [Task. Run](/dotnet/standard/asynchronous-programming-patterns/consuming-the-task-based-asynchronous-pattern#taskrun).
-- Évitez d’essayer de créer des constructeurs asynchrones. Utilisez plutôt des événements de cycle de vie ou une logique d’initialisation distincte pour `await` correctement toute initialisation. Pour plus d’informations, consultez [constructeurs Async](https://blog.stephencleary.com/2013/01/async-oop-2-constructors.html) sur blog.stephencleary.com.
-- Utilisez le modèle de tâche paresseux pour éviter d’attendre que les opérations asynchrones se terminent au démarrage de l’application. Pour plus d’informations, consultez [AsyncLazy](https://devblogs.microsoft.com/pfxteam/asynclazyt/).
-- Créez un wrapper de tâche pour les opérations asynchrones existantes, qui n’utilisent pas le TAP, en créant des objets `TaskCompletionSource<T>`. Ces objets bénéficient des avantages de la programmabilité `Task` et vous permettent de contrôler la durée de vie et l’achèvement des `Task`associés. Pour plus d’informations, consultez [la nature de TaskCompletionSource](https://devblogs.microsoft.com/pfxteam/the-nature-of-taskcompletionsourcetresult/).
+- Comprendre le cycle de vie des `TaskStatus` tâches, qui est représenté par l’énumération. Pour plus d’informations, voir [La signification de TaskStatus](https://devblogs.microsoft.com/pfxteam/the-meaning-of-taskstatus/) et [le statut de tâche](/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap#task-status).
+- Utilisez `Task.WhenAll` la méthode pour attendre asynchronement pour plusieurs opérations asynchrones pour finir, plutôt que individuellement `await` une série d’opérations asynchrones. Pour plus d’informations, voir [Task.WhenAll](/dotnet/standard/asynchronous-programming-patterns/consuming-the-task-based-asynchronous-pattern#taskwhenall).
+- Utilisez `Task.WhenAny` la méthode pour attendre asynchronement l’une des opérations asynchrones multiples pour finir. Pour plus d’informations, voir [Task.WhenAny](/dotnet/standard/asynchronous-programming-patterns/consuming-the-task-based-asynchronous-pattern#taskwhenall).
+- Utilisez `Task.Delay` la méthode `Task` pour produire un objet qui se termine après le temps spécifié. Ceci est utile pour des scénarios tels que le sondage pour les données, et le report de la manipulation des entrées des utilisateurs pour une période prédéterminée. Pour plus d’informations, voir [Task.Delay](/dotnet/standard/asynchronous-programming-patterns/consuming-the-task-based-asynchronous-pattern#taskdelay).
+- Exécutez des opérations de processeur synchrones `Task.Run` intensives sur le pool de threads avec la méthode. Cette méthode est un `TaskFactory.StartNew` raccourci pour la méthode, avec les arguments les plus optimaux ensemble. Pour plus d’informations, voir [Task.Run](/dotnet/standard/asynchronous-programming-patterns/consuming-the-task-based-asynchronous-pattern#taskrun).
+- Évitez d’essayer de créer des constructeurs asynchrones. Utilisez plutôt des événements du cycle de `await` vie ou une logique d’initialisation distincte pour correctement toute initialisation. Pour plus d’informations, voir [Async Constructors](https://blog.stephencleary.com/2013/01/async-oop-2-constructors.html) sur blog.stephencleary.com.
+- Utilisez le modèle de tâche paresseux pour éviter d’attendre que les opérations asynchrones se terminent pendant le démarrage de l’application. Pour plus d’informations, voir [AsyncLazy](https://devblogs.microsoft.com/pfxteam/asynclazyt/).
+- Créez un emballage de tâches pour les opérations asynchrones existantes, qui n’utilisent pas le TAP, en créant des `TaskCompletionSource<T>` objets. Ces objets bénéficient `Task` des avantages de la programmabilité, et vous `Task`permettent de contrôler la durée de vie et l’achèvement de la . Pour plus d’informations, voir [La nature de TaskCompletionSource](https://devblogs.microsoft.com/pfxteam/the-nature-of-taskcompletionsourcetresult/).
  
-- Retourne un objet `Task`, au lieu de retourner un objet `Task` attendu, lorsqu’il n’est pas nécessaire de traiter le résultat d’une opération asynchrone. Cette opération est plus performante en raison de la réduction du basculement de contexte.
-- Utilisez la bibliothèque de flux de données de la bibliothèque parallèle de tâches (TPL) dans des scénarios tels que le traitement des données lorsqu’elles sont disponibles, ou lorsque vous avez plusieurs opérations qui doivent communiquer entre elles de manière asynchrone. Pour plus d’informations, consultez flux de données [(bibliothèque parallèle de tâches)](/dotnet/standard/parallel-programming/dataflow-task-parallel-library).
+- Retournez `Task` un objet, au `Task` lieu de retourner un objet attendu, lorsqu’il n’est pas nécessaire de traiter le résultat d’une opération asynchrone. Ceci est plus performant en raison de moins de commutation de contexte étant effectuée.
+- Utilisez la bibliothèque de flux de données De la Bibliothèque parallèle de travail (TPL) dans des scénarios tels que le traitement des données dès qu’elles sont disponibles, ou lorsque vous avez plusieurs opérations qui doivent communiquer les unes avec les autres de façon asynchrone. Pour plus d’informations, voir [Dataflow (Task Parallel Library)](/dotnet/standard/parallel-programming/dataflow-task-parallel-library).
 
 ### <a name="ui"></a>UI
 
 - Appelez une version asynchrone d’une API, si elle est disponible. Ainsi, le thread d’interface utilisateur reste non bloqué, ce qui améliore l’expérience utilisateur.
-- Met à jour les éléments d’interface utilisateur avec des données provenant d’opérations asynchrones sur le thread d’interface utilisateur, pour éviter la levée d’exceptions. Toutefois, les mises à jour de la propriété `ListView.ItemsSource` seront automatiquement marshalées vers le thread d’interface utilisateur. Pour plus d’informations sur la façon de déterminer si le code est en cours d’exécution sur le thread d’interface utilisateur, consultez [Xamarin. Essentials : MainThread](~/essentials/main-thread.md?content=xamarin/xamarin-forms).
+- Mettre à jour les éléments de l’interface utilisateur avec les données des opérations asynchrones sur le thread d’interface utilisateur, afin d’éviter que des exceptions ne soient lancées. Cependant, les `ListView.ItemsSource` mises à jour de la propriété seront automatiquement marshaled au fil d’interface utilisateur. Pour plus d’informations sur la détermination si le code est en cours d’exécution sur le thread d’interface utilisateur, voir [Xamarin.Essentials: MainThread](~/essentials/main-thread.md?content=xamarin/xamarin-forms).
 
     > [!IMPORTANT]
-    > Toutes les propriétés de contrôle mises à jour via la liaison de données sont automatiquement marshalées vers le thread d’interface utilisateur.
+    > Toutes les propriétés de contrôle mises à jour via la liaison de données seront automatiquement intégrées au thread d’interface utilisateur.
 
 ### <a name="error-handling"></a>Gestion des erreurs
 
-- En savoir plus sur la gestion asynchrone des exceptions. Les exceptions non gérées levées par le code qui s’exécute de façon asynchrone sont propagées vers le thread appelant, sauf dans certains scénarios. Pour plus d’informations, consultez [gestion des exceptions (bibliothèque parallèle de tâches)](/dotnet/standard/parallel-programming/exception-handling-task-parallel-library).
-- Évitez de créer des méthodes `async void` et créez plutôt des méthodes `async Task`. Ils facilitent la gestion des erreurs, la composabilité et la testabilité. L’exception à cette règle est un gestionnaire d’événements asynchrones, qui doit retourner `void`. Pour plus d’informations, consultez [Évitez Async void](/archive/msdn-magazine/2013/march/async-await-best-practices-in-asynchronous-programming#avoid-async-void).
-- Ne mélangez pas le code bloquant et le code asynchrone en appelant les méthodes `Task.Wait`, `Task.Result`ou `GetAwaiter().GetResult`, car elles peuvent entraîner un interblocage. Toutefois, si cette instruction ne doit pas être respectée, l’approche recommandée consiste à appeler la méthode `GetAwaiter().GetResult`, car elle conserve les exceptions de tâche. Pour plus d’informations, consultez [Async All the mode](/archive/msdn-magazine/2013/march/async-await-best-practices-in-asynchronous-programming#async-all-the-way) and [Task Exception Handling in .net 4,5](https://devblogs.microsoft.com/pfxteam/task-exception-handling-in-net-4-5/).
-- Utilisez la méthode `ConfigureAwait` dans la mesure du possible pour créer du code sans contexte. Le code sans contexte offre de meilleures performances pour les applications mobiles et constitue une technique utile pour éviter les interblocages lors de l’utilisation d’une base de code partiellement asynchrone. Pour plus d’informations, consultez [configure Context](/archive/msdn-magazine/2013/march/async-await-best-practices-in-asynchronous-programming#configure-context).
-- Utilisez des *tâches de continuation* pour des fonctionnalités telles que la gestion des exceptions levées par l’opération asynchrone précédente et l’annulation d’une continuation avant son démarrage ou pendant son exécution. Pour plus d’informations, consultez [chaînage de tâches à l’aide de tâches continues](/dotnet/standard/parallel-programming/chaining-tasks-by-using-continuation-tasks).
-- Utilisez une implémentation de `ICommand` asynchrone lorsque les opérations asynchrones sont appelées à partir de la `ICommand`. Cela garantit que toutes les exceptions dans la logique de commande asynchrone peuvent être gérées. Pour plus d’informations, consultez [programmation asynchrone : modèles pour les applications MVVM asynchrones : commandes](/archive/msdn-magazine/2014/april/async-programming-patterns-for-asynchronous-mvvm-applications-commands).
+- Renseignez-vous sur la manipulation d’exception asynchrone. Les exceptions non manipulées qui sont jetées par le code qui fonctionne asynchronement sont propagés de nouveau au fil d’appel, sauf dans certains scénarios. Pour plus d’informations, voir [Traitement d’exception (Task Parallel Library)](/dotnet/standard/parallel-programming/exception-handling-task-parallel-library).
+- Évitez `async void` de créer des `async Task` méthodes, et plutôt de créer des méthodes. Ceux-ci permettent une manipulation d’erreur, une composition et une testabilité plus faciles. L’exception à cette ligne directrice est asynchrone `void`gestionnaires d’événements, qui doivent revenir . Pour plus d’informations, voir [Éviter Async Void](/archive/msdn-magazine/2013/march/async-await-best-practices-in-asynchronous-programming#avoid-async-void).
+- Ne mélangez pas le blocage et le `Task.Wait`code `Task.Result`asynchrone en appelant le , , ou `GetAwaiter().GetResult` des méthodes, car ils peuvent entraîner une impasse se produisant. Toutefois, si cette directive doit être violée, l’approche privilégiée est d’appeler la `GetAwaiter().GetResult` méthode parce qu’elle préserve les exceptions de tâche. Pour plus d’informations, voir [Async All the Way](/archive/msdn-magazine/2013/march/async-await-best-practices-in-asynchronous-programming#async-all-the-way) and [Task Exception Handling in .NET 4.5](https://devblogs.microsoft.com/pfxteam/task-exception-handling-in-net-4-5/).
+- Utilisez `ConfigureAwait` la méthode dans la mesure du possible, pour créer un code sans contexte. Le code sans contexte a de meilleures performances pour les applications mobiles et est une technique utile pour éviter l’impasse lorsque vous travaillez avec une base de code partiellement asynchrone. Pour plus d’informations, voir [Configure Context](/archive/msdn-magazine/2013/march/async-await-best-practices-in-asynchronous-programming#configure-context).
+- Utilisez *des tâches de continuation* pour des fonctionnalités telles que la manipulation d’exceptions jetées par l’opération asynchrone précédente, et l’annulation d’une continuation avant qu’elle ne commence ou pendant qu’elle est en cours d’exécution. Pour plus d’informations, voir [Tâches d’enchaînement en utilisant des tâches continues](/dotnet/standard/parallel-programming/chaining-tasks-by-using-continuation-tasks).
+- Utilisez une `ICommand` implémentation asynchrone lorsque des opérations `ICommand`asynchrones sont invoquées à partir de la . Cela garantit que toutes les exceptions dans la logique de commande asynchrone peuvent être traitées. Pour plus d’informations, voir [Async Programming: Patterns for Asynchronous MVVM Applications: Commands](/archive/msdn-magazine/2014/april/async-programming-patterns-for-asynchronous-mvvm-applications-commands).
 
 ## <a name="choose-a-dependency-injection-container-carefully"></a>Choisir un conteneur d’injection de dépendances avec précaution
 
@@ -201,35 +201,35 @@ En guise d’alternative, l’injection de dépendances peut être rendue plus p
 
 ## <a name="create-shell-applications"></a>Créer des applications d’interpréteur de commandes
 
-Les applications d’interpréteur de commandes Xamarin.Forms fournissent une expérience de navigation robuste, basée sur des menus volants et des onglets. Si l’expérience utilisateur de votre application peut être implémentée avec l’interpréteur de commandes, il est préférable de le faire. Les applications d’interpréteur de commandes permettent d’éviter une mauvaise expérience de démarrage, car les pages sont créées à la demande en réponse à la navigation plutôt qu’au démarrage de l’application, ce qui est le cas avec les applications qui utilisent un [« TabbedPage »](xref:Xamarin.Forms.TabbedPage). Pour plus d’informations, consultez [Interpréteur de commandes Xamarin.Forms](~/xamarin-forms/app-fundamentals/shell/index.md).
+Les applications d’interpréteur de commandes Xamarin.Forms fournissent une expérience de navigation robuste, basée sur des menus volants et des onglets. Si l’expérience utilisateur de votre application peut être implémentée avec l’interpréteur de commandes, il est préférable de le faire. Les applications d’interpréteur de commandes permettent d’éviter une mauvaise expérience de démarrage, car les pages sont créées à la demande en réponse à la navigation plutôt qu’au démarrage de l’application, ce qui est le cas avec les applications qui utilisent un [« TabbedPage »](xref:Xamarin.Forms.TabbedPage). Pour plus d’informations, voir [Xamarin.Forms Shell](~/xamarin-forms/app-fundamentals/shell/index.md).
 
 ## <a name="use-collectionview-instead-of-listview"></a>Utiliser CollectionView au lieu de ListView
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView) est une vue de présentation de listes de données à l’aide de différentes spécifications de disposition. Il offre une alternative plus flexible et plus performante à [`ListView`](xref:Xamarin.Forms.ListView). Pour plus d’informations, consultez [CollectionView Xamarin.Forms](~/xamarin-forms/user-interface/collectionview/index.md).
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)est une vue pour présenter des listes de données en utilisant différentes spécifications de mise en page. Il offre une alternative plus [`ListView`](xref:Xamarin.Forms.ListView)flexible, et performante à . Pour plus d’informations, consultez [CollectionView Xamarin.Forms](~/xamarin-forms/user-interface/collectionview/index.md).
 
 ## <a name="optimize-listview-performance"></a>Optimiser les performances de ListView
 
-Lorsque vous utilisez [`ListView`](xref:Xamarin.Forms.ListView), un certain nombre d’expériences utilisateur doit être optimisé :
+Lors [`ListView`](xref:Xamarin.Forms.ListView)de l’utilisation , il ya un certain nombre d’expériences utilisateur qui doivent être optimisés:
 
 - **Initialisation** : intervalle de temps qui commence quand le contrôle est créé et se termine quand les éléments sont affichés à l’écran.
 - **Défilement** : possibilité de faire défiler la liste et de vérifier que l’interface utilisateur est synchrone avec les entrées tactiles.
 - **Interaction** pour l’ajout, la suppression et la sélection d’éléments.
 
-Le contrôle [`ListView`](xref:Xamarin.Forms.ListView) requiert une application pour fournir des modèles de données et de cellules. Cette opération aura un impact important sur les performances du contrôle. Pour plus d’informations, consultez [Performances de ListView](~/xamarin-forms/user-interface/listview/performance.md).
+Le [`ListView`](xref:Xamarin.Forms.ListView) contrôle nécessite une application pour fournir des données et des modèles cellulaires. Cette opération aura un impact important sur les performances du contrôle. Pour plus d’informations, consultez [Performances de ListView](~/xamarin-forms/user-interface/listview/performance.md).
 
 ## <a name="optimize-image-resources"></a>Optimiser les ressources d’images
 
-L’affichage de ressources d’images peut augmenter considérablement l’encombrement mémoire d’une application. Par conséquent, elles ne doivent être créées que si elles sont nécessaires, et doivent être libérées dès que l’application n’en a plus besoin. Par exemple, si une application affiche une image en lisant les données à partir d’un flux, vérifiez que ce flux est créé uniquement si nécessaire et qu’il est libéré quand il ne l’est plus. Pour cela, créez le flux quand la page est créée ou que l’événement [`Page.Appearing`](xref:Xamarin.Forms.Page.Appearing) se déclenche, puis supprimez-le quand l’événement [`Page.Disappearing`](xref:Xamarin.Forms.Page.Disappearing) se déclenche.
+L’affichage de ressources d’images peut augmenter considérablement l’encombrement mémoire d’une application. Par conséquent, elles ne doivent être créées que si elles sont nécessaires, et doivent être libérées dès que l’application n’en a plus besoin. Par exemple, si une application affiche une image en lisant les données à partir d’un flux, vérifiez que ce flux est créé uniquement si nécessaire et qu’il est libéré quand il ne l’est plus. Ceci peut être réalisé en créant le flux lorsque [`Page.Appearing`](xref:Xamarin.Forms.Page.Appearing) la page est créée, ou [`Page.Disappearing`](xref:Xamarin.Forms.Page.Disappearing) lorsque l’événement s’allume, puis en se débarrassant du flux lorsque l’événement s’allume.
 
-Quand vous téléchargez une image à afficher avec la méthode [`ImageSource.FromUri`](xref:Xamarin.Forms.ImageSource.FromUri(System.Uri)), mettez en cache l’image téléchargée en vérifiant que la propriété [`UriImageSource.CachingEnabled`](xref:Xamarin.Forms.UriImageSource.CachingEnabled) a la valeur `true`. Pour plus d’informations, consultez [Utilisation des images](~/xamarin-forms/user-interface/images.md).
+Lors du téléchargement d’une [`ImageSource.FromUri`](xref:Xamarin.Forms.ImageSource.FromUri(System.Uri)) image pour l’affichage avec [`UriImageSource.CachingEnabled`](xref:Xamarin.Forms.UriImageSource.CachingEnabled) la méthode, cachez l’image téléchargée en s’assurant que la propriété est définie à `true`. Pour plus d’informations, consultez [Utilisation des images](~/xamarin-forms/user-interface/images.md).
 
 Pour plus d’informations, consultez [Optimiser les ressources d’images](~/cross-platform/deploy-test/memory-perf-best-practices.md#optimizeimages).
 
 ## <a name="reduce-the-visual-tree-size"></a>Réduire la taille de l’arborescence d’éléments visuels
 
-La réduction du nombre d’éléments dans une page accélère l’affichage de la page. Pour ce faire, il existe deux techniques principales. La première consiste à masquer les éléments qui ne sont pas visibles. La propriété [`IsVisible`](xref:Xamarin.Forms.VisualElement.IsVisible) de chaque élément détermine si l’élément doit faire partie de l’arborescence d’éléments visuels ou pas. Par conséquent, si un élément n’est pas visible parce qu’il est masqué par d’autres éléments, supprimez l’élément ou affectez à sa propriété `IsVisible` la valeur `false`.
+La réduction du nombre d’éléments dans une page accélère l’affichage de la page. Pour ce faire, il existe deux techniques principales. La première consiste à masquer les éléments qui ne sont pas visibles. La [`IsVisible`](xref:Xamarin.Forms.VisualElement.IsVisible) propriété de chaque élément détermine si l’élément doit faire partie de l’arbre visuel ou non. Par conséquent, si un élément n’est pas visible parce qu’il est masqué par d’autres éléments, supprimez l’élément ou affectez à sa propriété `IsVisible` la valeur `false`.
 
-La seconde technique consiste à supprimer les éléments inutiles. Par exemple, l’exemple de code suivant illustre une mise en page contenant plusieurs objets [`Label`](xref:Xamarin.Forms.Label) :
+La seconde technique consiste à supprimer les éléments inutiles. Par exemple, l’exemple de code [`Label`](xref:Xamarin.Forms.Label) suivant affiche une mise en page contenant plusieurs objets :
 
 ```xaml
 <StackLayout>
@@ -333,14 +333,14 @@ Pour plus d’informations sur les renderers personnalisés, consultez [Personna
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Performances entre plateformes](~/cross-platform/deploy-test/memory-perf-best-practices.md)
+- [Niveau de performance multiplateforme](~/cross-platform/deploy-test/memory-perf-best-practices.md)
 - [Compilation de XAML](~/xamarin-forms/xaml/xamlc.md)
 - [Liaisons compilées](~/xamarin-forms/app-fundamentals/data-binding/compiled-bindings.md)
 - [Renderers rapides](~/xamarin-forms/internals/fast-renderers.md)
-- [Compression de la disposition](~/xamarin-forms/user-interface/layouts/layout-compression.md)
+- [Compression de mise en page](~/xamarin-forms/user-interface/layouts/layout-compression.md)
 - [Interpréteur de commandes Xamarin.Forms](~/xamarin-forms/app-fundamentals/shell/index.md)
 - [CollectionView Xamarin.Forms](~/xamarin-forms/user-interface/collectionview/index.md)
 - [Performances de ListView](~/xamarin-forms/user-interface/listview/performance.md)
-- [Optimiser les ressources d’images](~/cross-platform/deploy-test/memory-perf-best-practices.md#optimizeimages)
+- [Optimiser les ressources en images](~/cross-platform/deploy-test/memory-perf-best-practices.md#optimizeimages)
 - [Styles XAML](~/xamarin-forms/user-interface/styles/xaml/index.md)
 - [Personnaliser les contrôles sur chaque plateforme](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)

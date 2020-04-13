@@ -1,19 +1,19 @@
 ---
-title: 'Xamarin.Essentials: Batterie'
-description: La classe batterie vous permet d'obtenir et de surveiller les informations sur la batterie de l’appareil.
+title: 'Xamarin.Essentials : batterie'
+description: Ce document décrit la classe Battery de Xamarin.Essentials, qui vous permet d’accéder aux informations sur la batterie de l’appareil et de superviser les changements.
 ms.assetid: 47EB26D8-8C62-477B-A13C-6977F74E6E43
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 01/22/2019
 ms.custom: video
 ms.openlocfilehash: cba17707f9129feecc618c9a7c2f144ad40f0168
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70756922"
 ---
-# <a name="xamarinessentials-battery"></a>Xamarin.Essentials: Batterie
+# <a name="xamarinessentials-battery"></a>Xamarin.Essentials : batterie
 
 La classe **Battery** vous permet de vérifier les informations de batterie de l’appareil et de superviser les changements. Elle fournit aussi des informations sur l’état d’économie d’énergie de l’appareil, qui indique si l’appareil s’exécute dans un mode de basse consommation. Les applications doivent de préférence éviter le traitement en arrière-plan lorsque l’économie d’énergie de l’appareil est activée.
 
@@ -23,37 +23,37 @@ La classe **Battery** vous permet de vérifier les informations de batterie de l
 
 Pour accéder à la fonctionnalité de **batterie**, la configuration suivante spécifique à la plateforme est obligatoire.
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
-L'autorisation `Battery` est obligatoire et doit être configurée dans le projet Android. Elle peut être ajoutée comme suit :
+L’autorisation `Battery` est obligatoire, et doit être configurée dans le projet Android. Vous pouvez l’ajouter des façons suivantes :
 
-Ouvrez le fichier **AssemblyInfo.cs** dans le dossier **Properties** et ajoutez :
+Ouvrez le fichier **AssemblyInfo.cs** sous le dossier **Propriétés** et ajoutez :
 
 ```csharp
 [assembly: UsesPermission(Android.Manifest.Permission.BatteryStats)]
 ```
 
-Ou mettez à jour le manifeste Android :
+OU mettez à jour le manifeste Android :
 
-Ouvrez le fichier **AndroidManifest.xml** dans le dossier **Properties** et ajoutez le code suivant dans le nœud **Manifest**.
+Ouvrez le fichier **AndroidManifest.xml** sous le dossier **Properties** et ajoutez ce qui suit à l’intérieur du nœud **manifeste.**
 
 ```xml
 <uses-permission android:name="android.permission.BATTERY_STATS" />
 ```
 
-Vous pouvez également cliquer avec le bouton droit sur le projet Android, et ouvrir les propriétés du projet. Sous **Manifeste Android**, repérez la zone "**Autorisations requises :** " et cochez l'autorisation **Batterie**. Cela met automatiquement à jour le fichier **AndroidManifest.xml**.
+Vous pouvez également cliquer avec le bouton droit sur le projet Android, et ouvrir les propriétés du projet. Sous **Manifeste Android**, recherchez la zone **Autorisations nécessaires**, puis cochez l’autorisation **Battery**. Cela entraîne la mise à jour automatique du fichier **AndroidManifest.xml**.
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 Aucune configuration supplémentaire n’est requise.
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 Aucune configuration supplémentaire n’est requise.
 
 -----
 
-## <a name="using-battery"></a>Utilisation de **Battery**
+## <a name="using-battery"></a>Utilisation de la batterie
 
 Ajoutez une référence à Xamarin.Essentials dans votre classe :
 
@@ -61,7 +61,7 @@ Ajoutez une référence à Xamarin.Essentials dans votre classe :
 using Xamarin.Essentials;
 ```
 
-Vérifiez les informations actuelles de la batterie :
+Examinez les informations actuelles relatives à la batterie :
 
 ```csharp
 var level = Battery.ChargeLevel; // returns 0.0 to 1.0 or 1.0 when on AC or no battery.
@@ -164,16 +164,16 @@ Si l’état d’économie d’énergie devient `On`, l’application doit arrê
 
 ## <a name="platform-differences"></a>Différences entre les plateformes
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
-Aucune spécificité pour cette plateforme.
+Aucune différence entre les plateformes.
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
-- L'appareil doit être en cours d'utilisation pour tester les API. 
+- Vous devez utiliser l’appareil pour tester les API. 
 - Seul `AC` ou `Battery` est retourné pour `PowerSource`.
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 - Seul `AC` ou `Battery` est retourné pour `PowerSource`.
 

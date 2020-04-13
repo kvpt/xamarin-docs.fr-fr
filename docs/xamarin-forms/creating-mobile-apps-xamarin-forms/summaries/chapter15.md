@@ -1,6 +1,6 @@
 ---
 title: Résumé du chapitre 15. L’interface interactive
-description: 'Création d’applications mobiles avec Xamarin.Forms : résumé du chapitre 15. L’interface interactive'
+description: 'Création d’applications mobiles avec Xamarin.Forms: Résumé du chapitre 15. L’interface interactive'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F54E86F4-1CDA-474E-9B09-242060C2C13D
@@ -8,157 +8,157 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
 ms.openlocfilehash: 5f96d2f4b619bbb10bb58e9b1b5dc7007c1ce888
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "78291906"
 ---
 # <a name="summary-of-chapter-15-the-interactive-interface"></a>Résumé du chapitre 15. L’interface interactive
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15)
+[![Télécharger](~/media/shared/download.png) l’échantillon Télécharger l’échantillon](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15)
 
-Ce chapitre explore huit `View` dérivés qui permettent l’interaction avec l’utilisateur.
+Ce chapitre explore `View` huit dérivés qui permettent l’interaction avec l’utilisateur.
 
-## <a name="view-overview"></a>Vue d’ensemble de la vue
+## <a name="view-overview"></a>Afficher la vue d’ensemble
 
-Xamarin. Forms contient 20 classes instanciables qui dérivent de `View` mais pas `Layout`. Six d'entre eux ont été traités dans les chapitres précédents :
+Xamarin.Forms contient 20 classes instantanées `View` qui `Layout`dérivent de mais pas . Six d’entre eux ont été couverts dans des chapitres précédents :
 
 - `Label`: [ **Chapitre 2. Anatomie d’une application**](chapter02.md)
-- `BoxView`: [ **chapitre 3. Défilement de la pile**](chapter03.md)
-- `Button`: [ **chapitre 6. Clics de bouton**](chapter06.md)
-- `Image`: [ **chapitre 13. Images bitmap**](chapter13.md)
-- `ActivityIndicator`: [ **chapitre 13. Images bitmap**](chapter13.md)
-- `ProgressBar`: [ **chapitre 14. AbsoluteLayout**](chapter14.md)
+- `BoxView`: [ **Chapitre 3. Faire défiler la pile**](chapter03.md)
+- `Button`: [ **Chapitre 6. Clics sur les boutons**](chapter06.md)
+- `Image`: [ **Chapitre 13. Bitmaps Bitmaps**](chapter13.md)
+- `ActivityIndicator`: [ **Chapitre 13. Bitmaps Bitmaps**](chapter13.md)
+- `ProgressBar`: [ **Chapitre 14. AbsoluteLayout (en)**](chapter14.md)
 
-Les huit vues dans ce chapitre autoriser efficacement l’utilisateur d’interagir avec les types de données de base .NET :
+Les huit vues de ce chapitre permettent effectivement à l’utilisateur d’interagir avec les types de données .NET de base :
 
 |Type de données|Les vues|
 |--- |--- |
 |`Double`|[`Slider`](xref:Xamarin.Forms.Slider), [`Stepper`](xref:Xamarin.Forms.Stepper)|
 |`Boolean`|[`Switch`](xref:Xamarin.Forms.Switch)|
-|`String`|[`Entry`](xref:Xamarin.Forms.Entry), [`Editor`](xref:Xamarin.Forms.Editor) [`SearchBar`](xref:Xamarin.Forms.SearchBar)|
+|`String`|[`Entry`](xref:Xamarin.Forms.Entry), [`Editor`](xref:Xamarin.Forms.Editor), [`SearchBar`](xref:Xamarin.Forms.SearchBar)|
 |`DateTime`|[`DatePicker`](xref:Xamarin.Forms.DatePicker), [`TimePicker`](xref:Xamarin.Forms.TimePicker)|
 
-Vous pouvez considérer de ces vues en tant que représentations interactives visuelles des types de données sous-jacente. Ce concept est abordé plus en revue dans le chapitre suivant, [**chapitre 16. Liaison de données**](chapter16.md).
+Vous pouvez considérer ces vues comme des représentations interactives visuelles des types de données sous-jacents. Ce concept est exploré davantage dans le chapitre [**suivant, chapitre 16. Liaison de données**](chapter16.md).
 
-Les vues de six restants sont traités dans les chapitres suivants :
+Les six autres points de vue sont abordés dans les chapitres suivants :
 
-- `WebView`: [ **chapitre 16. Liaison de données**](chapter16.md)
-- `Picker`: [ **chapitre 19. Vues de collection**](chapter19.md)
-- `ListView`: [ **chapitre 19. Vues de collection**](chapter19.md)
-- `TableView`: [ **chapitre 19. Vues de collection**](chapter19.md)
-- `Map`: [ **chapitre 28. Emplacement et mappages**](chapter28.md)
-- `OpenGLView`: non couverts dans ce livre (et aucune prise en charge des plateformes Windows)
+- `WebView`: [ **Chapitre 16. Liaison de données**](chapter16.md)
+- `Picker`: [ **Chapitre 19. Vues de collection**](chapter19.md)
+- `ListView`: [ **Chapitre 19. Vues de collection**](chapter19.md)
+- `TableView`: [ **Chapitre 19. Vues de collection**](chapter19.md)
+- `Map`: [ **Chapitre 28. Emplacement et cartes**](chapter28.md)
+- `OpenGLView`: Non couvert dans ce livre (et pas de support pour les plates-formes Windows)
 
-## <a name="slider-and-stepper"></a>Curseur et l’exécution pas à pas
+## <a name="slider-and-stepper"></a>Curseur et stepper
 
-[`Slider`](xref:Xamarin.Forms.Slider) et [`Stepper`](xref:Xamarin.Forms.Stepper) permettent à l’utilisateur de choisir une valeur numérique à partir d’une plage. Le `Slider` est une plage continue, tandis que le `Stepper` implique des valeurs discrètes.
+Les [`Slider`](xref:Xamarin.Forms.Slider) [`Stepper`](xref:Xamarin.Forms.Stepper) deux et permettent à l’utilisateur de choisir une valeur numérique à partir d’une gamme. Il `Slider` s’agit d’une gamme continue tandis que l’implique `Stepper` des valeurs discrètes.
 
-### <a name="slider-basics"></a>Principes de base de curseur
+### <a name="slider-basics"></a>Bases de curseur
 
-La [`Slider`](xref:Xamarin.Forms.Slider) est une barre horizontale qui représente une plage de valeurs comprises entre un minimum à gauche et un maximum à droite. Il définit trois propriétés publiques :
+Il [`Slider`](xref:Xamarin.Forms.Slider) s’agit d’une barre horizontale représentant une gamme de valeurs d’un minimum à gauche à un maximum sur la droite. Il définit trois biens publics :
 
-- [`Value`](xref:Xamarin.Forms.Slider.Value) de type `double`, valeur par défaut 0
-- [`Minimum`](xref:Xamarin.Forms.Slider.Minimum) de type `double`, valeur par défaut 0
-- [`Maximum`](xref:Xamarin.Forms.Slider.Maximum) de type `double`, valeur par défaut de 1
+- [`Value`](xref:Xamarin.Forms.Slider.Value)`double`type, valeur par défaut de 0
+- [`Minimum`](xref:Xamarin.Forms.Slider.Minimum)`double`type, valeur par défaut de 0
+- [`Maximum`](xref:Xamarin.Forms.Slider.Maximum)`double`type, valeur par défaut de 1
 
-Les propriétés pouvant être liées qui assortir ces propriétés de vous assurer qu’elles sont cohérentes :
+Les propriétés liantes qui soutiennent ces propriétés garantissent qu’elles sont cohérentes :
 
-- Pour les trois propriétés, la méthode [`coerceValue`](xref:Xamarin.Forms.BindableProperty.CoerceValueDelegate) spécifiée pour la propriété pouvant être liée garantit que `Value` se trouve entre `Minimum` et `Maximum`.
-- La méthode [`validateValue`](xref:Xamarin.Forms.BindableProperty.ValidateValueDelegate) sur `MinimumProperty` retourne `false` si `Minimum` est définie sur une valeur supérieure ou égale à `Maximum`, et similaire pour `MaximumProperty`. Le renvoi d' `false` à partir de la méthode `validateValue` entraîne le déclenchement d’un `ArgumentException`.
+- Pour les trois [`coerceValue`](xref:Xamarin.Forms.BindableProperty.CoerceValueDelegate) propriétés, la méthode spécifiée `Value` pour `Minimum` `Maximum`la propriété liant assure qu’il est entre et .
+- La [`validateValue`](xref:Xamarin.Forms.BindableProperty.ValidateValueDelegate) méthode `MinimumProperty` `false` sur `Minimum` les rendements si est réglé `Maximum`à une `MaximumProperty`valeur supérieure ou égale à , et similaire pour . Le `false` retour `validateValue` de `ArgumentException` la méthode provoque une augmentation.
 
-`Slider` déclenche l’événement [`ValueChanged`](xref:Xamarin.Forms.Slider.ValueChanged) avec un argument [`ValueChangedEventArgs`](xref:Xamarin.Forms.ValueChangedEventArgs) lorsque la propriété `Value` change, soit par programmation, soit lorsque l’utilisateur manipule le `Slider`.
+`Slider`déclenche [`ValueChanged`](xref:Xamarin.Forms.Slider.ValueChanged) l’événement [`ValueChangedEventArgs`](xref:Xamarin.Forms.ValueChangedEventArgs) avec `Value` un argument lorsque la propriété change, soit `Slider`programmatiquement ou lorsque l’utilisateur manipule le .
 
-L’exemple [**SliderDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/SliderDemo) illustre l’utilisation simple de l' `Slider`.
+[**L’échantillon SliderDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/SliderDemo) démontre la `Slider`simple utilisation de la .
 
 ### <a name="common-pitfalls"></a>Pièges courants
 
-À la fois dans le code et dans XAML, les propriétés `Minimum` et `Maximum` sont définies dans l’ordre que vous spécifiez. Veillez à initialiser ces propriétés afin que `Maximum` soit toujours supérieur à `Minimum`. Dans le cas contraire, une exception est levée.
+Tant dans le code que `Minimum` dans `Maximum` XAML, les propriétés et les propriétés sont définies dans l’ordre que vous spécifiez. Assurez-vous d’initialiser `Maximum` ces propriétés `Minimum`de sorte que c’est toujours plus grand que . Dans le cas contraire, une exception est levée.
 
-L’initialisation des propriétés de `Slider` peut entraîner la modification de la propriété `Value` et l’événement `ValueChanged` à déclencher. Vous devez vous assurer que le gestionnaire d’événements `Slider` n’accède pas à des vues qui n’ont pas encore été créées pendant l’initialisation de la page.
+L’initialisation des `Slider` `Value` propriétés peut `ValueChanged` entraîner le changement de propriété et le feu de l’événement. Vous devez vous `Slider` assurer que le gestionnaire d’événements n’a pas accès aux vues qui n’ont pas encore été créées lors de l’initialisation de la page.
 
-L’événement `ValueChanged` ne se déclenche pas pendant l’initialisation d' `Slider` à moins que la propriété `Value` ne change. Vous pouvez appeler le gestionnaire de `ValueChanged` directement à partir du code.
+L’événement `ValueChanged` ne tire `Slider` pas pendant `Value` l’initialisation à moins que la propriété change. Vous pouvez `ValueChanged` appeler le gestionnaire directement à partir du code.
 
-### <a name="slider-color-selection"></a>Sélection de couleur de curseur
+### <a name="slider-color-selection"></a>Sélection de couleurs slider
 
-Le programme [**RgbSliders**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/RgbSliders) contient trois éléments `Slider` qui vous permettent de sélectionner de manière interactive une couleur en spécifiant ses valeurs RVB :
+Le programme [**RgbSliders**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/RgbSliders) contient trois `Slider` éléments qui vous permettent de sélectionner interactivement une couleur en spécifiant ses valeurs RGB :
 
-[![Capture d’écran triple des curseurs R G B](images/ch15fg03-small.png "Curseurs RGB")](images/ch15fg03-large.png#lightbox "Curseurs RGB")
+[![Triple capture d’écran des curseurs R G B](images/ch15fg03-small.png "RGB Sliders")](images/ch15fg03-large.png#lightbox "RGB Sliders")
 
-L’exemple [**TextFade**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/TextFade) utilise deux éléments `Slider` pour déplacer deux éléments `Label` sur un `AbsoluteLayout` et les faire disparaître l’un à l’autre.
+[**L’échantillon TextFade**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/TextFade) utilise `Slider` deux `Label` éléments `AbsoluteLayout` pour déplacer deux éléments à travers un et s’estomper l’un dans l’autre.
 
-### <a name="the-stepper-difference"></a>La différence de l’exécution pas à pas
+### <a name="the-stepper-difference"></a>La différence Stepper
 
-Le [`Stepper`](xref:Xamarin.Forms.Stepper) définit les mêmes propriétés et événements que `Slider` mais la propriété `Maximum` est initialisée à 100 et `Stepper` définit une quatrième propriété :
+Le [`Stepper`](xref:Xamarin.Forms.Stepper) définit les mêmes propriétés et événements que, `Slider` mais la `Maximum` propriété est initialisée à 100 et `Stepper` définit une quatrième propriété:
 
-- [`Increment`](xref:Xamarin.Forms.Stepper.Increment) de type `double`, initialisé à 1
+- [`Increment`](xref:Xamarin.Forms.Stepper.Increment)de `double`type , parasécé à 1
 
-Visuellement, le `Stepper` se compose de deux boutons libellés **&ndash;** et **+** . Si vous appuyez sur **&ndash;** , vous réduisez `Value` en `Increment` au minimum `Minimum`. Si vous appuyez sur **+** , `Value` `Increment` à un maximum de `Maximum`.
+Visuellement, `Stepper` le se compose de **&ndash;** **+** deux boutons étiquetés et . Presser **&ndash;** `Value` diminue `Increment` d’au `Minimum`moins. **+** Presser `Value` `Increment` augmente jusqu’à un maximum de `Maximum`.
 
-Cela est illustré par l’exemple [**StepperDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/StepperDemo) .
+Ceci est démontré par l’échantillon [**StepperDemo.**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/StepperDemo)
 
-## <a name="switch-and-checkbox"></a>Commutateur et la case à cocher
+## <a name="switch-and-checkbox"></a>Commutateur et CheckBox
 
-Le [`Switch`](xref:Xamarin.Forms.Switch) permet à l’utilisateur de spécifier une valeur booléenne.
+L’utilisateur [`Switch`](xref:Xamarin.Forms.Switch) permet de spécifier une valeur Boolean.
 
-### <a name="switch-basics"></a>Principes fondamentaux de commutateur
+### <a name="switch-basics"></a>Changer de base
 
-Visuellement, le `Switch` se compose d’un bouton bascule qui peut être désactivé et activé. La classe définit une propriété :
+Visuellement, `Switch` le se compose d’un bascule qui peut être éteint et allumé. La classe définit une propriété :
 
-- [`IsToggled`](xref:Xamarin.Forms.Switch.IsToggled) de type `bool`
+- [`IsToggled`](xref:Xamarin.Forms.Switch.IsToggled)de type`bool`
 
-`Switch` définit un événement :
+`Switch`définit un événement :
 
-- [`Toggled`](xref:Xamarin.Forms.Switch.Toggled) accompagné d’un objet [`ToggledEventArgs`](xref:Xamarin.Forms.ToggledEventArgs) , déclenché lorsque la propriété `IsToggled` change.
+- [`Toggled`](xref:Xamarin.Forms.Switch.Toggled)accompagné d’un [`ToggledEventArgs`](xref:Xamarin.Forms.ToggledEventArgs) objet, `IsToggled` tiré lorsque la propriété change.
 
-Le programme [**SwitchDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/SwitchDemo) illustre le `Switch`.
+Le programme [**SwitchDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/SwitchDemo) `Switch`démontre le .
 
-### <a name="a-traditional-checkbox"></a>Une case à cocher traditionnel
+### <a name="a-traditional-checkbox"></a>Une boîte à contrôle traditionnelle
 
-Certains développeurs préfèrent un `CheckBox` plus traditionnel à la `Switch`. La bibliothèque [**Xamarin. FormsBook. Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) contient une classe `CheckBox` qui dérive de `ContentView`. `CheckBox` est implémenté par les fichiers [CheckBox. Xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/CheckBox.xaml) et [CheckBox.Xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/CheckBox.xaml.cs) . `CheckBox` définit trois propriétés (`Text`, `FontSize`et `IsChecked`) et un événement `CheckedChanged`.
+Certains développeurs pourraient préférer `CheckBox` un `Switch`plus traditionnel à la . La bibliothèque [**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) contient une `CheckBox` `ContentView`classe qui dérive de . `CheckBox`est implémenté par les fichiers [CheckBox.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/CheckBox.xaml) et [CheckBox.xaml.cs.](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/CheckBox.xaml.cs) `CheckBox`définit trois`Text`propriétés `FontSize`( `IsChecked`, `CheckedChanged` , et ) et un événement.
 
-L’exemple [**CheckBoxDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/CheckBoxDemo) illustre cette `CheckBox`.
+[**L’échantillon CheckBoxDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/CheckBoxDemo) `CheckBox`le démontre .
 
-## <a name="typing-text"></a>Saisie de texte
+## <a name="typing-text"></a>Texte de frappe
 
-Xamarin.Forms définit trois vues qui permettent l’utilisateur d’entrer et de modifier le texte :
+Xamarin.Forms définit trois vues qui permettent à l’utilisateur d’entrer et d’éditer du texte :
 
-- [`Entry`](xref:Xamarin.Forms.Entry) pour une seule ligne de texte
-- [`Editor`](xref:Xamarin.Forms.Editor) pour plusieurs lignes de texte
-- [`SearchBar`](xref:Xamarin.Forms.SearchBar) pour une seule ligne de texte à des fins de recherche.
+- [`Entry`](xref:Xamarin.Forms.Entry)pour une seule ligne de texte
+- [`Editor`](xref:Xamarin.Forms.Editor)pour plusieurs lignes de texte
+- [`SearchBar`](xref:Xamarin.Forms.SearchBar)pour une seule ligne de texte à des fins de recherche.
 
-`Entry` et `Editor` dérivent de [`InputView`](xref:Xamarin.Forms.InputView), qui dérive de `View`. `SearchBar` dérive directement de `View`.
+`Entry`et `Editor` dérivent de [`InputView`](xref:Xamarin.Forms.InputView), `View`qui dérive de . `SearchBar`dérive directement `View`de .
 
-### <a name="keyboard-and-focus"></a>Clavier et le focus
+### <a name="keyboard-and-focus"></a>Clavier et mise au point
 
-Sur les téléphones et les tablettes sans claviers physiques, les éléments `Entry`, `Editor`et `SearchBar` provoquent tous un clavier virtuel. La présence de ce clavier sur l’écran concerne le focus d’entrée. Les propriétés [`IsVisible`](xref:Xamarin.Forms.VisualElement.IsVisible) et [`IsEnabled`](xref:Xamarin.Forms.VisualElement.IsEnabled) de la vue doivent être définies sur `true` pour obtenir le focus d’entrée.
+Sur les téléphones et les `Entry`tablettes sans claviers physiques, le , `Editor`, et `SearchBar` les éléments font tous apparaître un clavier virtuel. La présence de ce clavier à l’écran est liée à la mise au point des entrées. Une vue doit [`IsVisible`](xref:Xamarin.Forms.VisualElement.IsVisible) avoir [`IsEnabled`](xref:Xamarin.Forms.VisualElement.IsEnabled) à `true` la fois son et les propriétés définies pour obtenir l’accent sur l’entrée.
 
-Deux méthodes, une propriété en lecture seule et deux événements sont impliqués avec focus d’entrée. Ils sont tous définis par `VisualElement`:
+Deux méthodes, une propriété de lecture seulement, et deux événements sont impliqués dans l’accent sur les commentaires. Tous sont définis par `VisualElement`:
 
-- La méthode [`Focus`](xref:Xamarin.Forms.VisualElement.Focus) tente de définir le focus d’entrée sur un élément et retourne `true` en cas de réussite
-- La méthode [`Unfocus`](xref:Xamarin.Forms.VisualElement.Unfocus) supprime le focus d’entrée d’un élément
-- La propriété en lecture seule [`IsFocused`](xref:Xamarin.Forms.VisualElement.IsFocused) indique si l’élément a le focus d’entrée
-- L’événement [`Focused`](xref:Xamarin.Forms.VisualElement.Focused) indique quand un élément obtient le focus d’entrée
-- L’événement [`Unfocused`](xref:Xamarin.Forms.VisualElement.Unfocused) indique lorsqu’un élément perd le focus d’entrée
+- La [`Focus`](xref:Xamarin.Forms.VisualElement.Focus) méthode tente de mettre l’accent sur l’entrée à un élément et les retours `true` en cas de succès
+- La [`Unfocus`](xref:Xamarin.Forms.VisualElement.Unfocus) méthode supprime la mise au point des entrées d’un élément
+- La [`IsFocused`](xref:Xamarin.Forms.VisualElement.IsFocused) propriété de lecture seulement indique si l’élément a une orientation d’entrée
+- L’événement [`Focused`](xref:Xamarin.Forms.VisualElement.Focused) indique quand un élément obtient la mise au point des entrées
+- L’événement [`Unfocused`](xref:Xamarin.Forms.VisualElement.Unfocused) indique quand un élément perd la mise au point d’entrée
 
-### <a name="choosing-the-keyboard"></a>Choix du clavier
+### <a name="choosing-the-keyboard"></a>Choisir le clavier
 
-La classe [`InputView`](xref:Xamarin.Forms.InputView) à partir de laquelle dérivent `Entry` et `Editor` définissent une seule propriété :
+La [`InputView`](xref:Xamarin.Forms.InputView) classe `Entry` à `Editor` partir de laquelle et dérive définit une seule propriété:
 
-- [`Keyboard`](xref:Xamarin.Forms.InputView.Keyboard) de type [`Keyboard`](xref:Xamarin.Forms.Keyboard)
+- [`Keyboard`](xref:Xamarin.Forms.InputView.Keyboard)de type[`Keyboard`](xref:Xamarin.Forms.Keyboard)
 
-Indique le type de clavier qui s’affiche. Certains claviers sont optimisés pour des URI ou des nombres.
+Cela indique le type de clavier qui s’affiche. Certains claviers sont optimisés pour les URI ou les nombres.
 
-La classe `Keyboard` permet de définir un clavier avec une méthode [`Keyboard.Create`](xref:Xamarin.Forms.Keyboard.Create(Xamarin.Forms.KeyboardFlags)) statique avec un argument de type [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags), une énumération avec les indicateurs binaires suivants :
+La `Keyboard` classe permet de définir [`Keyboard.Create`](xref:Xamarin.Forms.Keyboard.Create(Xamarin.Forms.KeyboardFlags)) un clavier avec [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags)une méthode statique avec un argument de type, un recensement avec les drapeaux bit suivants:
 
-- `None` défini sur 0
-- [`CapitalizeSentence`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeSentence) défini sur 1
-- [`Spellcheck`](xref:Xamarin.Forms.KeyboardFlags.Spellcheck) défini sur 2
-- [`Suggestions`](xref:Xamarin.Forms.KeyboardFlags.Suggestions) défini sur 4
-- [`All`](xref:Xamarin.Forms.KeyboardFlags.All) défini sur \xFFFFFFFF
+- `None`réglé à 0
+- [`CapitalizeSentence`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeSentence)réglé à 1
+- [`Spellcheck`](xref:Xamarin.Forms.KeyboardFlags.Spellcheck)réglé à 2
+- [`Suggestions`](xref:Xamarin.Forms.KeyboardFlags.Suggestions)réglé à 4
+- [`All`](xref:Xamarin.Forms.KeyboardFlags.All)set à 'xFFFFFFFFFF
 
-Lorsque vous utilisez la [`Editor`](xref:Xamarin.Forms.Editor) multiligne lorsqu’un paragraphe ou plus de texte est attendu, l’appel de `Keyboard.Create` est une bonne approche de la sélection d’un clavier. Pour les [`Entry`](xref:Xamarin.Forms.Entry)à une seule ligne, les propriétés en lecture seule statiques suivantes de `Keyboard` sont utiles :
+Lorsque vous utilisez [`Editor`](xref:Xamarin.Forms.Editor) le multiligne lorsqu’un `Keyboard.Create` paragraphe ou plus de texte est attendu, l’appel est une bonne approche pour sélectionner un clavier. Pour la seule [`Entry`](xref:Xamarin.Forms.Entry)ligne, les propriétés `Keyboard` statiques suivantes sont utiles :
 
 - [`Default`](xref:Xamarin.Forms.Keyboard.Default)
 - [`Text`](xref:Xamarin.Forms.Keyboard.Text)
@@ -166,84 +166,84 @@ Lorsque vous utilisez la [`Editor`](xref:Xamarin.Forms.Editor) multiligne lorsqu
 - [`Url`](xref:Xamarin.Forms.Keyboard.Url)
 - [`Email`](xref:Xamarin.Forms.Keyboard.Email)
 - [`Telephone`](xref:Xamarin.Forms.Keyboard.Telephone)
-- [`Numeric`](xref:Xamarin.Forms.Keyboard.Numeric) pour les nombres positifs avec ou sans virgule décimale.
+- [`Numeric`](xref:Xamarin.Forms.Keyboard.Numeric)pour les chiffres positifs avec ou sans décimale.
 
-Le [`KeyboardTypeConverter`](xref:Xamarin.Forms.KeyboardTypeConverter) permet de spécifier ces propriétés en XAML, comme le montre le programme [**EntryKeyboards**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/EntryKeyboards) .
+Le [`KeyboardTypeConverter`](xref:Xamarin.Forms.KeyboardTypeConverter) permet de spécifier ces propriétés dans XAML comme démontré par le programme [**EntryKeyboards.**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/EntryKeyboards)
 
-### <a name="entry-properties-and-events"></a>Événements et propriétés de l’entrée
+### <a name="entry-properties-and-events"></a>Propriétés et événements d’entrée
 
-Le [`Entry`](xref:Xamarin.Forms.Entry) à une seule ligne définit les propriétés suivantes :
+La seule [`Entry`](xref:Xamarin.Forms.Entry) ligne définit les propriétés suivantes :
 
-- [`Text`](xref:Xamarin.Forms.InputView.Text) de type `string`, le texte qui apparaît dans le `Entry`
-- [`TextColor`](xref:Xamarin.Forms.InputView.TextColor) de type `Color`
-- [`FontFamily`](xref:Xamarin.Forms.Entry.FontFamily) de type `string`
-- [`FontSize`](xref:Xamarin.Forms.Entry.FontSize) de type `double`
-- [`FontAttributes`](xref:Xamarin.Forms.Entry.FontAttributes) de type `FontAttributes`
-- [`IsPassword`](xref:Xamarin.Forms.Entry.IsPassword) de type `bool`, qui entraîne le masquage des caractères
-- [`Placeholder`](xref:Xamarin.Forms.InputView.Placeholder) de type `string`, pour le texte en couleur dimly qui apparaît dans le `Entry` avant que tout soit tapé
-- [`PlaceholderColor`](xref:Xamarin.Forms.InputView.PlaceholderColor) de type `Color`
+- [`Text`](xref:Xamarin.Forms.InputView.Text)de `string`type, le texte qui apparaît dans le`Entry`
+- [`TextColor`](xref:Xamarin.Forms.InputView.TextColor)de type`Color`
+- [`FontFamily`](xref:Xamarin.Forms.Entry.FontFamily)de type`string`
+- [`FontSize`](xref:Xamarin.Forms.Entry.FontSize)de type`double`
+- [`FontAttributes`](xref:Xamarin.Forms.Entry.FontAttributes)de type`FontAttributes`
+- [`IsPassword`](xref:Xamarin.Forms.Entry.IsPassword)de `bool`type , ce qui provoque des caractères à masquer
+- [`Placeholder`](xref:Xamarin.Forms.InputView.Placeholder)de `string`type , pour le texte `Entry` faiblement coloré qui apparaît dans le avant quoi que ce soit est tapé
+- [`PlaceholderColor`](xref:Xamarin.Forms.InputView.PlaceholderColor)de type`Color`
 
-Le `Entry` définit également deux événements :
+Le `Entry` définit également deux événements :
 
-- [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) avec un objet [`TextChangedEventArgs`](xref:Xamarin.Forms.TextChangedEventArgs) , déclenché chaque fois que la propriété `Text` change
-- [`Completed`](xref:Xamarin.Forms.Entry.Completed), déclenché lorsque l’utilisateur a terminé et que le clavier est fermé. L’utilisateur indique l’achèvement de manière spécifique à la plateforme
+- [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged)avec [`TextChangedEventArgs`](xref:Xamarin.Forms.TextChangedEventArgs) un objet, `Text` tiré chaque fois que la propriété change
+- [`Completed`](xref:Xamarin.Forms.Entry.Completed), tiré lorsque l’utilisateur est fini et le clavier est rejeté. L’utilisateur indique l’achèvement d’une manière spécifique à la plate-forme
 
-L’exemple [**QuadraticEquations**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/QuadaticEquations) illustre ces deux événements.
+[**L’échantillon QuadraticEquations**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/QuadaticEquations) démontre ces deux événements.
 
 ### <a name="the-editor-difference"></a>La différence de l’éditeur
 
-L' [`Editor`](xref:Xamarin.Forms.Editor) multiligne définit les mêmes propriétés de `Text` et de `Font` que `Entry`, mais pas les autres propriétés. `Editor` définit également les deux mêmes propriétés que `Entry`.
+La [`Editor`](xref:Xamarin.Forms.Editor) multiline définit `Text` les `Font` mêmes `Entry` propriétés que les autres propriétés, mais pas les autres. `Editor`définit également les deux `Entry`mêmes propriétés que .
 
-[**JustNotes**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/JustNotes) est un programme prenant en charge les notes de forme libre qui enregistre et restaure le contenu du `Editor`.
+[**JustNotes**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/JustNotes) est un programme de prise de notes gratuit qui `Editor`permet d’économiser et de restaurer le contenu de la .
 
 ### <a name="the-searchbar"></a>Le SearchBar
 
-Le [`SearchBar`](xref:Xamarin.Forms.SearchBar) ne dérive pas de `InputView`, donc il n’a pas de propriété `Keyboard`. Mais il possède toutes les propriétés `Text`, `Font`et `Placeholder` que `Entry` définit. En outre, `SearchBar` définit trois propriétés supplémentaires :
+Le [`SearchBar`](xref:Xamarin.Forms.SearchBar) ne dérive `InputView`pas de , `Keyboard` de sorte qu’il n’a pas de propriété. Mais il a `Text`tous `Font`les `Placeholder` , `Entry` , et les propriétés qui définit. En outre, `SearchBar` définit trois propriétés supplémentaires :
 
-- [`CancelButtonColor`](xref:Xamarin.Forms.SearchBar.CancelButtonColor) de type `Color`
-- [`SearchCommand`](xref:Xamarin.Forms.SearchBar.SearchCommand) de type [`ICommand`](xref:System.Windows.Input.ICommand) à utiliser avec les liaisons de données et MVVM
-- [`SearchCommandParameter`](xref:Xamarin.Forms.SearchBar.SearchCommandParameter) de type `Object`, à utiliser avec `SearchCommand`
+- [`CancelButtonColor`](xref:Xamarin.Forms.SearchBar.CancelButtonColor)de type`Color`
+- [`SearchCommand`](xref:Xamarin.Forms.SearchBar.SearchCommand)type [`ICommand`](xref:System.Windows.Input.ICommand) pour une utilisation avec des liaisons de données et MVVM
+- [`SearchCommandParameter`](xref:Xamarin.Forms.SearchBar.SearchCommandParameter)de `Object`type , pour une utilisation avec`SearchCommand`
 
-La plateforme spécifique Annuler bouton efface le texte. Le `SearchBar` possède également un bouton de recherche spécifique à la plateforme. La pression sur l’un de ces boutons déclenche l’un des deux événements que `SearchBar` définit :
+Le bouton d’annulation spécifique à la plate-forme efface le texte. Le `SearchBar` dispose également d’un bouton de recherche spécifique à la plate-forme. Appuyer sur l’un ou l’autre `SearchBar` de ces boutons soulève l’un des deux événements qui définit:
 
-- [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) accompagné d’un objet [`TextChangedEventArgs`](xref:Xamarin.Forms.TextChangedEventArgs)
+- [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged)accompagné d’un [`TextChangedEventArgs`](xref:Xamarin.Forms.TextChangedEventArgs) objet
 - [`SearchButtonPressed`](xref:Xamarin.Forms.SearchBar.SearchButtonPressed)
 
-L’exemple [**SearchBarDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/SearchBarDemo) illustre l' `SearchBar`.
+[**L’échantillon SearchBarDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/SearchBarDemo) `SearchBar`démontre le .
 
-## <a name="date-and-time-selection"></a>Sélection de date et d’heure
+## <a name="date-and-time-selection"></a>Sélection des dates et de l’heure
 
-Les vues [`DatePicker`](xref:Xamarin.Forms.DatePicker) et [`TimePicker`](xref:Xamarin.Forms.TimePicker) implémentent des contrôles spécifiques à la plateforme qui permettent à l’utilisateur de spécifier une date ou une heure.
+Les [`DatePicker`](xref:Xamarin.Forms.DatePicker) [`TimePicker`](xref:Xamarin.Forms.TimePicker) contrôles spécifiques à la plate-forme et les vues implémentent les contrôles spécifiques à la plate-forme qui permettent à l’utilisateur de spécifier une date ou une heure.
 
-### <a name="the-datepicker"></a>DatePicker
+### <a name="the-datepicker"></a>Le DatePicker
 
-[`DatePicker`](xref:Xamarin.Forms.DatePicker) définit quatre propriétés :
+[`DatePicker`](xref:Xamarin.Forms.DatePicker)définit quatre propriétés :
 
-- [`MinimumDate`](xref:Xamarin.Forms.DatePicker.MinimumDate) de type `DateTime`, initialisée au 1er janvier 1900
-- [`MaximumDate`](xref:Xamarin.Forms.DatePicker.MaximumDate) de type `DateTime`, initialisée au 31 décembre 2100
-- [`Date`](xref:Xamarin.Forms.DatePicker.Date) de type `DateTime`, initialisé à `DateTime.Today`
-- [`Format`](xref:Xamarin.Forms.DatePicker.Format) de type `string`, la chaîne de mise en forme .net initialisée à « d », le modèle de date abrégée, ce qui donne un affichage de date comme « 7/20/1969 » aux États-Unis.
+- [`MinimumDate`](xref:Xamarin.Forms.DatePicker.MinimumDate)de `DateTime`type , parasécé au 1er janvier 1900
+- [`MaximumDate`](xref:Xamarin.Forms.DatePicker.MaximumDate)de `DateTime`type , parasécé au 31 décembre 2100
+- [`Date`](xref:Xamarin.Forms.DatePicker.Date)de `DateTime`type, parasés pour`DateTime.Today`
+- [`Format`](xref:Xamarin.Forms.DatePicker.Format)de `string`type , la chaîne de formatage .NET parasitée à "d", le modèle de date courte, résultant en un affichage de date comme "7/20/1969" aux États-Unis.
 
-Vous pouvez définir les propriétés de `DateTime` en XAML en exprimant les propriétés en tant qu’éléments de propriété et en utilisant le format de date abrégée de culture (« 7/20/1969 »).   
+Vous pouvez `DateTime` définir les propriétés dans XAML en exprimant les propriétés comme éléments de propriété et en utilisant le format de la culture-invariante à court terme ("7/20/1969").   
 
-L’exemple [**DaysBetweenDates**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/DaysBetweenDates) calcule le nombre de jours entre deux dates sélectionnées par l’utilisateur.
+[**L’échantillon DaysBetweenDates**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/DaysBetweenDates) calcule le nombre de jours entre deux dates sélectionnées par l’utilisateur.
 
-### <a name="the-timepicker-or-is-it-a-timespanpicker"></a>Le TimePicker (ou s’agit-il d’un TimeSpanPicker ?)
+### <a name="the-timepicker-or-is-it-a-timespanpicker"></a>Le TimePicker (ou est-ce un TimeSpanPicker?)
 
-[`TimePicker`](xref:Xamarin.Forms.TimePicker) définit deux propriétés et aucun événement :
+[`TimePicker`](xref:Xamarin.Forms.TimePicker)définit deux propriétés et aucun événement :
 
-- [`Time`](xref:Xamarin.Forms.TimePicker.Time) est de type `TimeSpan` plutôt que `DateTime`, ce qui indique le temps écoulé depuis minuit
-- [`Format`](xref:Xamarin.Forms.TimePicker.Format) de type `string`, la chaîne de mise en forme .net initialisée sur « t », le modèle d’heure abrégée, ce qui donne un affichage de temps comme « 1:45 PM » aux États-Unis.
+- [`Time`](xref:Xamarin.Forms.TimePicker.Time)est de `TimeSpan` type `DateTime`plutôt que , indiquant l’heure écoulée depuis minuit
+- [`Format`](xref:Xamarin.Forms.TimePicker.Format)de `string`type , la chaîne de formatage .NET initialisé à "t", le modèle de temps court, résultant en un affichage de temps comme "1:45 PM" aux États-Unis.
 
-Le programme [**SetTimer**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/SetTimer) montre comment utiliser le `TimePicker` pour spécifier une heure pour une minuterie. Le programme ne fonctionne que si vous le conservez au premier plan.
+Le programme [**SetTimer**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/SetTimer) montre comment `TimePicker` utiliser le pour spécifier un temps pour une minuterie. Le programme ne fonctionne que si vous le gardez au premier plan.
 
-**SetTimer** illustre également l’utilisation de la méthode [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert(System.String,System.String,System.String)) de `Page` pour afficher une boîte de message d’alerte.
+**SetTimer** démontre également [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert(System.String,System.String,System.String)) l’utilisation de la méthode d’affichage d’une `Page` boîte d’alerte.
 
 ## <a name="related-links"></a>Liens connexes
 
 - [Chapitre 15 texte intégral (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch15-Apr2016.pdf)
-- [Chapitre 15 exemples](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15)
-- [Slider](~/xamarin-forms/user-interface/slider.md)
+- [Échantillons du chapitre 15](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15)
+- [Curseur](~/xamarin-forms/user-interface/slider.md)
 - [Entrée](~/xamarin-forms/user-interface/text/entry.md)
 - [Éditeur](~/xamarin-forms/user-interface/text/editor.md)
 - [DatePicker](~/xamarin-forms/user-interface/datepicker.md)

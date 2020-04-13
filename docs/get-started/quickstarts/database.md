@@ -10,15 +10,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2019
 ms.openlocfilehash: 2cd4726566e73aece5d0deef90ad1feedefaa2d8
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "71249677"
 ---
 # <a name="store-data-in-a-local-sqlitenet-database"></a>Stocker des données dans une base de données SQLite.NET locale
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-database/)
+[![Télécharger](~/media/shared/download.png) l’échantillon Télécharger l’échantillon](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-database/)
 
 Dans ce guide de démarrage rapide, vous allez apprendre à :
 
@@ -50,8 +50,8 @@ Vous devez suivre correctement le [précédent guide de démarrage rapide](multi
 
     > [!NOTE]
     > Il existe plusieurs packages NuGet portant des noms similaires. Le package correct possède ces attributs :
-    > - **Author(s) :** Frank A. Krueger
-    > - **ID**  sqlite-net-pcl
+    > - **Auteur(s) :** Frank A. Krueger
+    > - **ID ** sqlite-net-pcl
     > - **Lien NuGet :** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)  
     >
     > Ne vous fiez pas au nom du package. Vous devez utiliser ce package NuGet dans les projets .NET Standard.
@@ -214,7 +214,7 @@ Vous devez suivre correctement le [précédent guide de démarrage rapide](multi
     }
     ```    
 
-    Ce code remplit [`ListView`](xref:Xamarin.Forms.ListView) avec toutes les notes stockées dans la base de données.
+    Ce code remplit [`ListView`](xref:Xamarin.Forms.ListView) les notes stockées dans la base de données.
 
     Enregistrez les changements apportés à **NotesPage.xaml.cs** en appuyant sur **Ctrl+S**, puis fermez le fichier.
 
@@ -240,7 +240,7 @@ Vous devez suivre correctement le [précédent guide de démarrage rapide](multi
       }
       ```    
 
-      `NoteEntryPage` stocke une instance de `Note`, qui représente une seule note, dans le [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) de la page. Quand le gestionnaire d’événements `OnSaveButtonClicked` s’exécute, l’instance de `Note` est enregistrée dans la base de données, et l’application revient à la page précédente. Quand le gestionnaire d’événements `OnDeleteButtonClicked` s’exécute, l’instance de `Note` est supprimée de la base de données, et l’application revient à la page précédente.
+      Les `NoteEntryPage` magasins `Note` une instance, qui représente [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) une seule note, dans la page. Quand le gestionnaire d’événements `OnSaveButtonClicked` s’exécute, l’instance de `Note` est enregistrée dans la base de données, et l’application revient à la page précédente. Quand le gestionnaire d’événements `OnDeleteButtonClicked` s’exécute, l’instance de `Note` est supprimée de la base de données, et l’application revient à la page précédente.
 
       Enregistrez les changements apportés à **NoteEntryPage.xaml.cs** en appuyant sur **Ctrl+S**, puis fermez le fichier.
 
@@ -267,8 +267,8 @@ Vous devez suivre correctement le [précédent guide de démarrage rapide](multi
 
     > [!NOTE]
     > Il existe plusieurs packages NuGet portant des noms similaires. Le package correct possède ces attributs :
-    > - **Author :** Frank A. Krueger
-    > - **ID**  sqlite-net-pcl
+    > - **Auteur:** Frank A. Krueger
+    > - **ID ** sqlite-net-pcl
     > - **Lien NuGet :** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)  
     >
     > Ne vous fiez pas au nom du package. Vous devez utiliser ce package NuGet dans les projets .NET Standard.
@@ -431,7 +431,7 @@ Vous devez suivre correctement le [précédent guide de démarrage rapide](multi
     }
     ```    
 
-    Ce code remplit [`ListView`](xref:Xamarin.Forms.ListView) avec toutes les notes stockées dans la base de données.
+    Ce code remplit [`ListView`](xref:Xamarin.Forms.ListView) les notes stockées dans la base de données.
 
     Enregistrez les changements apportés à **NotesPage.xaml.cs** en choisissant **Fichier > Enregistrer** (ou en appuyant sur **&#8984;+S**), puis fermez le fichier.
 
@@ -457,7 +457,7 @@ Vous devez suivre correctement le [précédent guide de démarrage rapide](multi
       }
       ```    
 
-      `NoteEntryPage` stocke une instance de `Note`, qui représente une seule note, dans le [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) de la page. Quand le gestionnaire d’événements `OnSaveButtonClicked` s’exécute, l’instance de `Note` est enregistrée dans la base de données, et l’application revient à la page précédente. Quand le gestionnaire d’événements `OnDeleteButtonClicked` s’exécute, l’instance de `Note` est supprimée de la base de données, et l’application revient à la page précédente.
+      Les `NoteEntryPage` magasins `Note` une instance, qui représente [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) une seule note, dans la page. Quand le gestionnaire d’événements `OnSaveButtonClicked` s’exécute, l’instance de `Note` est enregistrée dans la base de données, et l’application revient à la page précédente. Quand le gestionnaire d’événements `OnDeleteButtonClicked` s’exécute, l’instance de `Note` est supprimée de la base de données, et l’application revient à la page précédente.
 
       Enregistrez les changements apportés à **NoteEntryPage.xaml.cs** en choisissant **Fichier > Enregistrer** (ou en appuyant sur **&#8984;+S**), puis fermez le fichier.
 
@@ -471,7 +471,7 @@ Vous devez suivre correctement le [précédent guide de démarrage rapide](multi
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Dans ce guide de démarrage rapide, vous avez appris à :
+Dans ce démarrage rapide, vous avez appris comment :
 
 - Utilisez le Gestionnaire de package NuGet pour ajouter un paquet NuGet à un projet.
 - Stockez les données localement dans une base de données SQLite.NET.
@@ -479,7 +479,7 @@ Dans ce guide de démarrage rapide, vous avez appris à :
 Pour appliquer des styles à l’application à l’aide de styles XAML, passez au prochain guide de démarrage rapide.
 
 > [!div class="nextstepaction"]
-> [Next](styling.md)
+> [Suivant](styling.md)
 
 ## <a name="related-links"></a>Liens connexes
 
