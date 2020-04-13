@@ -1,147 +1,147 @@
 ---
-title: Authentifier les utilisateurs avec une base de données de documents Azure Cosmos DB et Xamarin. Forms
-description: Cet article explique comment combiner de contrôle d’accès avec les collections partitionnées Azure Cosmos DB, afin qu’un utilisateur peut accéder uniquement à leurs propres documents dans une application Xamarin.Forms.
+title: Authentifier les utilisateurs avec une base de données de documents Azure Cosmos DB et Xamarin.Forms
+description: Cet article explique comment combiner le contrôle d’accès avec les collections partitionnées Azure Cosmos DB, afin qu’un utilisateur ne puisse accéder à ses propres documents que dans une application Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: 11ED4A4C-0F05-40B2-AB06-5A0F2188EF3D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: 64209f905ba07f7efc7368b8f054dfc3ae606af2
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: 6e79e647d64103b6d257de7233f488899bcaff40
+ms.sourcegitcommit: 2a8eb8bce427e72d4e7edd06ce432e19f17dcdd7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75489984"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80388601"
 ---
-# <a name="authenticate-users-with-an-azure-cosmos-db-document-database-and-xamarinforms"></a>Authentifier les utilisateurs avec une base de données de documents Azure Cosmos DB et Xamarin. Forms
+# <a name="authenticate-users-with-an-azure-cosmos-db-document-database-and-xamarinforms"></a>Authentifier les utilisateurs avec une base de données de documents Azure Cosmos DB et Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-tododocumentdbauth)
+[![Télécharger](~/media/shared/download.png) l’échantillon Télécharger l’échantillon](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-tododocumentdbauth)
 
-_Azure Cosmos DB les bases de données de documents prennent en charge les collections partitionnées, qui peuvent s’étendre sur plusieurs serveurs et partitions, tout en prenant en charge un stockage et un débit illimités. Cet article explique comment combiner le contrôle d’accès avec des collections partitionnées, afin qu’un utilisateur puisse accéder à ses propres documents uniquement dans une application Xamarin. Forms._
+_Les bases de données de documents Azure Cosmos DB prennent en charge les collections partitionnées, qui peuvent s’étendre sur plusieurs serveurs et partitions, tout en soutenant le stockage et le débit illimités. Cet article explique comment combiner le contrôle d’accès avec les collections partitionnées, de sorte qu’un utilisateur ne peut accéder à ses propres documents que dans une application Xamarin.Forms._
 
-## <a name="overview"></a>Vue d'ensemble de
+## <a name="overview"></a>Vue d’ensemble
 
-Une clé de partition doit être spécifiée lors de la création d’une collection partitionnée, et les documents avec la même clé de partition sont stockés dans la même partition. Par conséquent, spécification de l’identité de l’utilisateur comme clé de partition entraîne une collection partitionnée qui stocke uniquement des documents pour cet utilisateur. Cela garantit également que la base de données de document Azure Cosmos DB sera mise à l’échelle en tant que le nombre d’utilisateurs et augmenter les éléments.
+Une clé de partition doit être spécifiée lors de la création d’une collection partitionnée, et les documents avec la même clé de partition seront stockés dans la même partition. Par conséquent, la spécifier l’identité de l’utilisateur comme clé de partition entraînera une collection partitionnée qui ne stockera que des documents pour cet utilisateur. Cela garantit également que la base de données de documents Azure Cosmos DB sera à l’échelle à mesure que le nombre d’utilisateurs et d’éléments augmentera.
 
-L’accès doit être accordé à n’importe quelle collection, et le modèle de contrôle d’accès API SQL définit deux types de construction d’accès :
+L’accès doit être accordé à toute collection, et le modèle de contrôle d’accès À l’API SQL définit deux types de constructions d’accès :
 
-- **Clés principales** activer l’accès administratif complet à toutes les ressources au sein d’un compte Cosmos DB et sont créés lorsqu’un compte Cosmos DB est créé.
-- **Les jetons de ressource** capturent la relation entre l’utilisateur d’une base de données et l’autorisation de l’utilisateur dispose d’une ressource de Cosmos DB spécifique, tel qu’une collection ou un document.
+- **Les clés maîtresses** permettent un accès administratif complet à toutes les ressources d’un compte Cosmos DB, et sont créées lors de la création d’un compte Cosmos DB.
+- **Les jetons de ressources** saisissent la relation entre l’utilisateur d’une base de données et l’autorisation de l’utilisateur pour une ressource Spécifique Cosmos DB, comme une collection ou un document.
 
-Exposition d’une clé principale, le risque d’utilisation malveillante ou négligente un compte Cosmos DB s’ouvre. Toutefois, les jetons de ressource Azure Cosmos DB fournissent un mécanisme sécurisé pour autorisant les clients à lire, écrire et supprimer des ressources spécifiques dans un compte Azure Cosmos DB en fonction des autorisations accordées.
+L’exposition d’une clé principale ouvre un compte Cosmos DB à la possibilité d’une utilisation malveillante ou négligente. Cependant, les jetons de ressources Azure Cosmos DB fournissent un mécanisme sûr permettant aux clients de lire, d’écrire et de supprimer des ressources spécifiques dans un compte Azure Cosmos DB selon les autorisations accordées.
 
-Une approche courante à la demande, génération et l’envoi des jetons de ressource à une application mobile consiste à utiliser un répartiteur de jetons de ressource. Le diagramme suivant montre une vue d’ensemble de la façon dont l’exemple d’application utilise un répartiteur de jetons de ressource pour gérer l’accès aux données de base de données de document :
+Une approche typique pour demander, générer et fournir des jetons de ressources à une application mobile est d’utiliser un courtier en jetons de ressources. Le diagramme suivant montre un aperçu de haut niveau de la façon dont l’application de l’échantillon utilise un courtier en jetons de ressources pour gérer l’accès aux données de base de données de documents :
 
 ![](azure-cosmosdb-auth-images/documentdb-authentication.png "Document Database Authentication Process")
 
-Le répartiteur de jetons de ressource est un service API Web de niveau intermédiaire, hébergé dans Azure App Service, qui possède la clé principale du compte Cosmos DB. L’exemple d’application utilise le répartiteur de jetons de ressource pour gérer l’accès aux données de base de données de document comme suit :
+Le courtier en jetons de ressources est un service d’API Web de niveau intermédiaire, hébergé dans Azure App Service, qui possède la clé principale du compte Cosmos DB. L’application d’échantillon utilise le courtier en jetons de ressources pour gérer l’accès aux données de base de données de documents comme suit :
 
-1. Lors de la connexion, l’application Xamarin.Forms contacte Azure App Service pour lancer un flux d’authentification.
-1. Azure App Service effectue un flux d’authentification OAuth avec Facebook. Une fois le flux d’authentification terminée, l’application Xamarin.Forms reçoit un jeton d’accès.
-1. L’application Xamarin.Forms utilise le jeton d’accès pour demander un jeton de ressource du répartiteur de jetons de ressource.
-1. Le répartiteur de jetons de ressource utilise le jeton d’accès pour demander l’identité de l’utilisateur à partir de Facebook. Identité de l’utilisateur est ensuite utilisée pour demander un jeton de ressource à partir de Cosmos DB, qui est utilisé pour accorder l’accès en lecture/écriture à la collection partitionnée de l’utilisateur authentifié.
-1. L’application Xamarin.Forms utilise le jeton de ressource pour accéder directement aux ressources Cosmos DB avec les autorisations définies par le jeton de ressource.
+1. Sur la connexion, l’application Xamarin.Forms contacte Azure App Service pour initier un flux d’authentification.
+1. Azure App Service effectue un flux d’authentification OAuth avec Facebook. Une fois le flux d’authentification terminé, l’application Xamarin.Forms reçoit un jeton d’accès.
+1. L’application Xamarin.Forms utilise le jeton d’accès pour demander un jeton de ressource auprès du courtier en jetons de ressources.
+1. Le courtier en jetons de ressources utilise le jeton d’accès pour demander l’identité de l’utilisateur à partir de Facebook. L’identité de l’utilisateur est ensuite utilisée pour demander un jeton de ressources de Cosmos DB, qui est utilisé pour accorder l’accès à la lecture / écrire à la collection partitionnée de l’utilisateur authentifié.
+1. L’application Xamarin.Forms utilise le jeton de ressources pour accéder directement aux ressources Cosmos DB avec les autorisations définies par le jeton de ressource.
 
 > [!NOTE]
-> Lorsque le jeton de ressource expire, demandes de base de données de document suivants reçoit une exception non autorisée 401. À ce stade, les applications Xamarin.Forms doivent rétablir l’identité et de demander un nouveau jeton de ressource.
+> Lorsque le jeton de ressource expirera, les demandes subséquentes de base de données de documents recevront une exception non autorisée de 401. À ce stade, les applications Xamarin.Forms devraient rétablir l’identité et demander un nouveau jeton de ressource.
 
-Pour plus d’informations sur le partitionnement Cosmos DB, consultez [la partition et mise à l’échelle dans Azure Cosmos DB](/azure/cosmos-db/partition-data/). Pour plus d’informations sur le contrôle d’accès Cosmos DB, consultez [sécurisation de l’accès aux données Cosmos DB](/azure/cosmos-db/secure-access-to-data/) et [contrôle d’accès dans l’API SQL](/rest/api/documentdb/access-control-on-documentdb-resources/).
+Pour plus d’informations sur le partitionnage Cosmos DB, voir [Comment cloisonner et évoluer en Azure Cosmos DB](/azure/cosmos-db/partition-data/). Pour plus d’informations sur le contrôle d’accès Cosmos DB, voir [Sécurisation de l’accès aux données Cosmos DB](/azure/cosmos-db/secure-access-to-data/) et [le contrôle d’accès dans l’API SQL](/rest/api/documentdb/access-control-on-documentdb-resources/).
 
-## <a name="setup"></a>Programme d'installation
+## <a name="setup"></a>Programme d’installation
 
-Le processus permettant d’intégrer le répartiteur de jetons de ressource à une application Xamarin.Forms est comme suit :
+Le processus d’intégration du courtier en jetons de ressources dans une demande Xamarin.Forms est le suivant :
 
-1. Créez un compte Cosmos DB qui utilise le contrôle d’accès. Pour plus d’informations, consultez [Cosmos DB Configuration](#cosmosdb_configuration).
-1. Créez un Service d’application Azure pour héberger le répartiteur de jetons de ressource. Pour plus d’informations, consultez [Configuration d’Azure App Service](#app_service_configuration).
-1. Créer une application Facebook pour effectuer l’authentification. Pour plus d’informations, consultez [Configuration de l’application Facebook](#facebook_configuration).
-1. Configurer le Service d’application Azure pour effectuer une authentification simple avec Facebook. Pour plus d’informations, consultez [Configuration d’Azure App Service d’authentification](#app_service_authentication_configuration).
-1. Configurer l’exemple d’application Xamarin.Forms pour communiquer avec Azure App Service et Cosmos DB. Pour plus d’informations, consultez [Configuration de l’Application Xamarin.Forms](#forms_application_configuration).
+1. Créez un compte Cosmos DB qui utilisera le contrôle d’accès. Pour plus d’informations, voir [Cosmos DB Configuration](#cosmosdb_configuration).
+1. Créez un service d’application Azure pour héberger le courtier en jetons de ressources. Pour plus d’informations, voir [Azure App Service Configuration](#app_service_configuration).
+1. Créez une application Facebook pour effectuer l’authentification. Pour plus d’informations, voir [Facebook App Configuration](#facebook_configuration).
+1. Configurez le service d’application Azure pour effectuer une authentification facile avec Facebook. Pour plus d’informations, voir [Azure App Service Authentication Configuration](#app_service_authentication_configuration).
+1. Configurez l’application d’échantillon Xamarin.Forms pour communiquer avec Azure App Service et Cosmos DB. Pour plus d’informations, voir [Xamarin.Forms Configuration d’application](#forms_application_configuration).
 
 > [!NOTE]
 > Si vous n’avez pas [d’abonnement Azure](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing), créez un [compte gratuit](https://aka.ms/azfree-docs-mobileapps) avant de commencer.
 
 <a name="cosmosdb_configuration" />
 
-### <a name="azure-cosmos-db-configuration"></a>Configuration d’Azure Cosmos DB
+### <a name="azure-cosmos-db-configuration"></a>Azure Cosmos DB Configuration
 
-Le processus de création d’un compte Cosmos DB qui utilise le contrôle d’accès est la suivante :
+Le processus de création d’un compte Cosmos DB qui utilisera le contrôle d’accès est le suivant :
 
-1. Créez un compte Cosmos DB. Pour plus d’informations, consultez [créer un compte Azure Cosmos DB](/azure/cosmos-db/sql-api-dotnetcore-get-started#step-1-create-an-azure-cosmos-db-account).
-1. Dans le compte Cosmos DB, créez une nouvelle collection appelée `UserItems`, en spécifiant une clé de partition de `/userid`.
+1. Créez un compte Cosmos DB. Pour plus d’informations, voir [Créer un compte Azure Cosmos DB](/azure/cosmos-db/sql-api-dotnetcore-get-started#step-1-create-an-azure-cosmos-db-account).
+1. Dans le compte Cosmos DB, `UserItems`créez une nouvelle collection `/userid`nommée , spécifiant une clé de partition de .
 
 <a name="app_service_configuration" />
 
-### <a name="azure-app-service-configuration"></a>Configuration d’Azure App Service
+### <a name="azure-app-service-configuration"></a>Configuration de service d’application Azure
 
-Le processus pour l’hébergement de la ressource token broker dans Azure App Service est la suivante :
+Le processus d’hébergement du courtier en jetons de ressources dans Azure App Service est le suivant :
 
-1. Dans le portail Azure, créez une nouvelle application web app Service. Pour plus d’informations, consultez [créer une application web dans un environnement App Service](/azure/app-service-web/app-service-web-how-to-create-a-web-app-in-an-ase/).
-1. Dans le portail Azure, ouvrez le panneau de paramètres d’application pour l’application web et ajoutez les paramètres suivants :
-    - `accountUrl` – la valeur doit être l’URL du compte Cosmos DB à partir du panneau clés du compte Cosmos DB.
-    - `accountKey` – la valeur doit être la clé principale Cosmos DB (principale ou secondaire) à partir du panneau clés du compte Cosmos DB.
-    - `databaseId` – la valeur doit être le nom de la base de données Cosmos DB.
-    - `collectionId` – la valeur doit être le nom de la collection Cosmos DB (dans ce cas, `UserItems`).
-    - `hostUrl` – la valeur doit être l’URL de l’application web à partir du Panneau de vue d’ensemble du compte de Service de l’application.
+1. Dans le portail Azure, créez une nouvelle application Web App Service. Pour plus d’informations, voir [Créer une application web dans un environnement de service d’application](/azure/app-service-web/app-service-web-how-to-create-a-web-app-in-an-ase/).
+1. Dans le portail Azure, ouvrez la lame Paramètres d’application pour l’application web et ajoutez les paramètres suivants :
+    - `accountUrl`La valeur devrait être l’URL du compte Cosmos DB de la lame Keys du compte Cosmos DB.
+    - `accountKey`La valeur devrait être la clé principale Cosmos DB (primaire ou secondaire) de la lame Keys du compte Cosmos DB.
+    - `databaseId`La valeur devrait être le nom de la base de données Cosmos DB.
+    - `collectionId`- la valeur devrait être le nom de la collection `UserItems`Cosmos DB (dans ce cas, ).
+    - `hostUrl`La valeur doit être l’URL de l’application web à partir de la lame d’aperçu du compte App Service.
 
-    La capture d’écran suivante illustre cette configuration :
+    La capture d’écran suivante démontre cette configuration :
 
     [![](azure-cosmosdb-auth-images/azure-web-app-settings.png "App Service Web App Settings")](azure-cosmosdb-auth-images/azure-web-app-settings-large.png#lightbox "App Service Web App Settings")
 
-1. Publiez la solution de service Broker pour les jetons de ressource à l’application web Azure App Service.
+1. Publiez la solution de courtier en jetons de ressources à l’application Web Azure App Service.
 
 <a name="facebook_configuration" />
 
 ### <a name="facebook-app-configuration"></a>Configuration de l’application Facebook
 
-Le processus de création d’une application Facebook pour exécuter l’authentification est comme suit :
+Le processus de création d’une application Facebook pour effectuer l’authentification est le suivant :
 
-1. Créer une application Facebook. Pour plus d’informations, consultez [inscrire et configurer une application](https://developers.facebook.com/docs/apps/register) sur le Centre pour développeurs Facebook.
-1. Ajouter le produit de la connexion Facebook à l’application. Pour plus d’informations, consultez [ajouter un compte de connexion Facebook à votre application ou site Web](https://developers.facebook.com/docs/facebook-login) sur le Centre pour développeurs Facebook.
-1. Configurez une connexion Facebook comme suit :
-   - Activer la connexion de Client OAuth.
-   - Activer la connexion de OAuth Web.
-   - Définir l’URI à l’URI de l’application web app Service, de redirection OAuth valides avec `/.auth/login/facebook/callback` ajouté.
+1. Créez une application Facebook. Pour plus d’informations, consultez [Register and Configurer an App](https://developers.facebook.com/docs/apps/register) sur le Facebook Developer Center.
+1. Ajoutez le produit Facebook Login à l’application. Pour plus d’informations, voir [Ajouter Facebook Login à votre application ou site Web](https://developers.facebook.com/docs/facebook-login) sur le Centre de développeurs Facebook.
+1. Configurez Facebook Login comme suit :
+   - Activez le client OAuth Login.
+   - Activez Web OAuth Login.
+   - Réglez la redirection valide D’URI vers l’URI de l’app Web App Service, avec `/.auth/login/facebook/callback` joint.
 
-  La capture d’écran suivante illustre cette configuration :
+  La capture d’écran suivante démontre cette configuration :
 
   ![](azure-cosmosdb-auth-images/facebook-oauth-settings.png "Facebook Login OAuth Settings")
 
-Pour plus d’informations, consultez [inscrire votre application avec Facebook](/azure/app-service-mobile/app-service-mobile-how-to-configure-facebook-authentication#a-nameregister-aregister-your-application-with-facebook).
+Pour plus d’informations, consultez [Votre application auprès de Facebook](/azure/app-service-mobile/app-service-mobile-how-to-configure-facebook-authentication#a-nameregister-aregister-your-application-with-facebook).
 
 <a name="app_service_authentication_configuration" />
 
-### <a name="azure-app-service-authentication-configuration"></a>Configuration de l’authentification Azure App Service
+### <a name="azure-app-service-authentication-configuration"></a>Configuration d’authentification du service d’application Azure
 
-Le processus de configuration de l’authentification simple d’App Service est la suivante :
+Le processus de configuration app Service authentification facile est le suivant:
 
-1. Dans le portail Azure, accédez à l’application web app Service.
-1. Dans le portail Azure, ouvrez l’authentification / panneau autorisation et d’effectuer la configuration suivante :
-    - L’authentification App Service doit être activée.
-    - L’action à entreprendre lorsqu’une demande n’est pas authentifiée doit être définie sur **connexion avec Facebook**.
+1. Dans le portail Azure, naviguez vers l’application Web App Service.
+1. Dans le portail Azure, ouvrez la lame d’authentification/ autorisation et effectuez la configuration suivante :
+    - L’authentification du service d’application doit être activée.
+    - L’action à prendre lorsqu’une demande n’est pas authentifiée doit être définie pour **vous connecter à Facebook**.
 
-    La capture d’écran suivante illustre cette configuration :
+    La capture d’écran suivante démontre cette configuration :
 
     [![](azure-cosmosdb-auth-images/app-service-authentication-settings.png "App Service Web App Authentication Settings")](azure-cosmosdb-auth-images/app-service-authentication-settings-large.png#lightbox "App Service Web App Authentication Settings")
 
-L’application web app Service doit également être configuré pour communiquer avec l’application Facebook pour activer le flux d’authentification. Cela est possible en sélectionnant le fournisseur d’identité Facebook et en entrant le **ID d’application** et **Secret d’application** valeurs à partir des paramètres d’application Facebook sur le Centre pour développeurs Facebook. Pour plus d’informations, consultez [Facebook ajouter des informations à votre application](/azure/app-service-mobile/app-service-mobile-how-to-configure-facebook-authentication#a-namesecrets-aadd-facebook-information-to-your-application).
+L’application Web App Service doit également être configurée pour communiquer avec l’application Facebook pour activer le flux d’authentification. Cela peut être accompli en sélectionnant le fournisseur d’identité Facebook, et en entrant les valeurs **App ID** et **App Secret** à partir des paramètres de l’application Facebook sur le Centre de développement Facebook. Pour plus d’informations, voir [Ajouter des informations Facebook à votre application](/azure/app-service-mobile/app-service-mobile-how-to-configure-facebook-authentication#a-namesecrets-aadd-facebook-information-to-your-application).
 
 <a name="forms_application_configuration" />
 
-### <a name="xamarinforms-application-configuration"></a>Configuration de l’Application Xamarin.Forms
+### <a name="xamarinforms-application-configuration"></a>Configuration d’application Xamarin.Forms
 
-Le processus de configuration de l’exemple d’application Xamarin.Forms est comme suit :
+Le processus de configuration de la demande d’échantillon Xamarin.Forms est le suivant :
 
 1. Ouvrez la solution Xamarin.Forms.
-1. Ouvrez `Constants.cs` et mettre à jour les valeurs des constantes suivantes :
-    - `EndpointUri` – la valeur doit être l’URL du compte Cosmos DB à partir du panneau clés du compte Cosmos DB.
-    - `DatabaseName` – la valeur doit être le nom de la base de données de document.
-    - `CollectionName` – la valeur doit être le nom de la collection de base de données de document (dans ce cas, `UserItems`).
-    - `ResourceTokenBrokerUrl` – la valeur doit être l’URL de l’application de web de répartition des jetons de ressource à partir du Panneau de vue d’ensemble du compte de Service de l’application.
+1. Ouvrez `Constants.cs` et mettez à jour les valeurs des constantes suivantes :
+    - `EndpointUri`La valeur devrait être l’URL du compte Cosmos DB de la lame Keys du compte Cosmos DB.
+    - `DatabaseName`La valeur doit être le nom de la base de données de documents.
+    - `CollectionName`la valeur devrait être le nom de la collecte `UserItems`de base de données de documents (dans ce cas, ).
+    - `ResourceTokenBrokerUrl`La valeur devrait être l’URL de l’application Web de courtier en jetons de ressources de la lame d’aperçu du compte App Service.
 
-## <a name="initiating-login"></a>Lancement de connexion
+## <a name="initiating-login"></a>Initier la connexion
 
-L’exemple d’application lance le processus de connexion à l’aide de Xamarin.Auth pour rediriger un navigateur vers une URL de fournisseur d’identité, comme illustré dans l’exemple de code suivant :
+L’application d’échantillon initie le processus de connexion en redirigeant un navigateur vers une URL de fournisseur d’identité, comme le démontre le code d’exemple suivant :
 
 ```csharp
 var auth = new Xamarin.Auth.WebRedirectAuthenticator(
@@ -149,17 +149,15 @@ var auth = new Xamarin.Auth.WebRedirectAuthenticator(
   new Uri(Constants.ResourceTokenBrokerUrl + "/.auth/login/done"));
 ```
 
-Cela entraîne un flux d’authentification OAuth devant être initialisée entre Azure App Service et Facebook, qui affiche la page de connexion Facebook :
+Cela provoque un flux d’authentification OAuth à initier entre Azure App Service et Facebook, qui affiche la page de connexion Facebook:
 
 ![](azure-cosmosdb-auth-images/login.png "Facebook Login")
 
-La connexion peut être annulée en appuyant sur la **Annuler** bouton sur iOS ou en appuyant sur la **retour** bouton sur Android, auquel cas l’utilisateur reste non authentifiée et l’interface utilisateur du fournisseur identité est supprimé de l’écran.
+La connexion peut être annulée en appuyant sur le bouton **Annuler** sur iOS ou en appuyant sur le bouton **Back** sur Android, auquel cas l’utilisateur reste non authentique et l’interface utilisateur du fournisseur d’identité est supprimée de l’écran.
 
-Pour plus d’informations sur Xamarin.Auth, consultez [authentification des utilisateurs avec un fournisseur d’identité](~/xamarin-forms/data-cloud/authentication/oauth.md).
+## <a name="obtaining-a-resource-token"></a>Obtenir un jeton de ressource
 
-## <a name="obtaining-a-resource-token"></a>Obtention d’un jeton de ressource
-
-Après l’authentification réussie, le `WebRedirectAuthenticator.Completed` se déclenche des événements. L’exemple de code suivant illustre la gestion de cet événement :
+Après une authentification réussie, l’événement s’enflamme. `WebRedirectAuthenticator.Completed` L’exemple de code suivant démontre la gestion de cet événement :
 
 ```csharp
 auth.Completed += async (sender, e) =>
@@ -190,14 +188,14 @@ auth.Completed += async (sender, e) =>
 };
 ```
 
-Le résultat d’une authentification réussie est un jeton d’accès, qui est disponible `AuthenticatorCompletedEventArgs.Account` propriété. Le jeton d’accès est extraites et utilisé dans une demande GET auprès de la ressource token broker `resourcetoken` API.
+Le résultat d’une authentification réussie est `AuthenticatorCompletedEventArgs.Account` un jeton d’accès, qui est la propriété disponible. Le jeton d’accès est extrait et utilisé dans une `resourcetoken` demande GET à l’API du courtier en jetons de ressources.
 
-Le `resourcetoken` API utilise le jeton d’accès pour demander l’identité de l’utilisateur à partir de Facebook, qui à son tour, est utilisé pour demander un jeton de ressource à partir de Cosmos DB. Si un document d’autorisation valide existe déjà pour l’utilisateur dans la base de données de document, il est récupéré et un document JSON contenant le jeton de ressource est retourné à l’application Xamarin.Forms. Si un document d’autorisation valide n’existe pas pour l’utilisateur, un utilisateur et l’autorisation est créé dans la base de données de document et le jeton de ressource est extraite à partir du document d’autorisation et retourné à l’application Xamarin.Forms dans un document JSON.
+L’API `resourcetoken` utilise le jeton d’accès pour demander l’identité de l’utilisateur à partir de Facebook, qui à son tour est utilisé pour demander un jeton de ressource de Cosmos DB. Si un document d’autorisation valide existe déjà pour l’utilisateur dans la base de données de documents, il est récupéré et un document JSON contenant le jeton de ressource est retourné à l’application Xamarin.Forms. Si un document d’autorisation valide n’existe pas pour l’utilisateur, un utilisateur et une autorisation sont créés dans la base de données de documents, et le jeton de ressource est extrait du document d’autorisation et retourné à l’application Xamarin.Forms dans un document JSON.
 
 > [!NOTE]
-> Un utilisateur de base de données de document est une ressource associée à une base de données de document, et chaque base de données peut contenir zéro ou plusieurs utilisateurs. Une autorisation de base de données de document est une ressource associée à un utilisateur de base de données de document, et chaque utilisateur peut contenir zéro ou plusieurs autorisations. Une ressource d’autorisation donne accès à un jeton de sécurité nécessitant l’utilisateur lorsque vous tentez d’accéder à une ressource telle qu’un document.
+> Un utilisateur de base de données de documents est une ressource associée à une base de données de documents, et chaque base de données peut contenir zéro ou plus d’utilisateurs. Une autorisation de base de données de documents est une ressource associée à un utilisateur de base de données de documents, et chaque utilisateur peut contenir zéro ou plus d’autorisations. Une ressource d’autorisation donne accès à un jeton de sécurité dont l’utilisateur a besoin lorsqu’il tente d’accéder à une ressource telle qu’un document.
 
-Si le `resourcetoken` API se termine avec succès, il enverra un code d’état HTTP 200 (OK) dans la réponse, ainsi que d’un document JSON contenant le jeton de ressource. Les données JSON suivantes affiche un message de réponse correcte classique :
+Si `resourcetoken` l’API se termine avec succès, elle enverra le code d’état HTTP 200 (OK) dans la réponse, ainsi qu’un document JSON contenant le jeton de ressource. Les données suivantes de JSON montrent un message de réponse typique réussi :
 
 ```csharp
 {
@@ -208,11 +206,11 @@ Si le `resourcetoken` API se termine avec succès, il enverra un code d’état 
 }
 ```
 
-Le gestionnaire d’événements `WebRedirectAuthenticator.Completed` lit la réponse de l’API `resourcetoken` et extrait le jeton de ressource et l’ID utilisateur. Le jeton de ressource est ensuite passé comme argument au constructeur `DocumentClient`, qui encapsule le point de terminaison, les informations d’identification et la stratégie de connexion utilisées pour accéder à Cosmos DB et est utilisé pour configurer et exécuter des demandes sur Cosmos DB. Le jeton de ressource est envoyé avec chaque demande directement accéder à une ressource et indique que l’accès en lecture/écriture à la collection partitionnée de l’utilisateur authentifié est accordé.
+Le `WebRedirectAuthenticator.Completed` gestionnaire de l’événement lit la réponse de l’API `resourcetoken` et extrait le jeton de ressource et l’identifiant de l’utilisateur. Le jeton de ressource est ensuite `DocumentClient` passé comme argument au constructeur, qui résume le point de terminaison, les informations d’identification et la stratégie de connexion utilisée pour accéder à Cosmos DB, et est utilisé pour configurer et exécuter des demandes contre Cosmos DB. Le jeton de ressource est envoyé à chaque demande pour accéder directement à une ressource, et indique que l’accès à la collection partitionnée des utilisateurs authentifiés est accordé.
 
-## <a name="retrieving-documents"></a>Récupération de Documents
+## <a name="retrieving-documents"></a>Récupération des documents
 
-Récupération de documents qui appartiennent uniquement à l’utilisateur authentifié peut être obtenue en créant une requête de document qui inclut l’id d’utilisateur comme clé de partition, est illustrée dans l’exemple de code suivant :
+La récupération des documents qui n’appartiennent qu’à l’utilisateur authentifié peut être obtenue en créant une requête de document qui inclut l’id de l’utilisateur comme clé de partition, et est démontrée dans l’exemple de code suivant :
 
 ```csharp
 var query = client.CreateDocumentQuery<TodoItem>(collectionLink,
@@ -229,31 +227,31 @@ while (query.HasMoreResults)
 }
 ```
 
-La requête de façon asynchrone récupère tous les documents appartenant à l’utilisateur authentifié, à partir de la collection spécifiée et les place dans un `List<TodoItem>` collection pour l’affichage.
+La requête récupère asynchronement tous les documents appartenant à l’utilisateur authentifié, de la collection spécifiée, et les place dans une `List<TodoItem>` collection pour l’affichage.
 
-Le `CreateDocumentQuery<T>` méthode spécifie un `Uri` argument qui représente la collection doit être interrogée pour les documents, et un `FeedOptions` objet. Le `FeedOptions` objet spécifie qu’un nombre illimité d’éléments peut être retourné par la requête et l’id d’utilisateur comme clé de partition. Cela garantit que seuls les documents dans la collection partitionnée de l’utilisateur sont retournés dans le résultat.
+La `CreateDocumentQuery<T>` méthode spécifie un `Uri` argument qui représente la collection `FeedOptions` qui doit être demandée pour les documents, et un objet. L’objet `FeedOptions` spécifie qu’un nombre illimité d’éléments peut être retourné par la requête, et l’id de l’utilisateur comme une clé de partition. Cela garantit que seuls les documents de la collection partitionnée de l’utilisateur sont retournés dans le résultat.
 
 > [!NOTE]
-> Notez que les documents d’autorisation, qui sont créés par l’intermédiaire de jeton de ressource, sont stockés dans la même collection de documents en tant que les documents créés par l’application Xamarin.Forms. Par conséquent, la requête de document contient un `Where` clause qui applique un prédicat de filtrage à la requête par rapport à la collection de documents. Cette clause permet de s’assurer que les documents d’autorisation ne sont pas retournées à partir de la collection de documents.
+> Notez que les documents d’autorisation, qui sont créés par le courtier en jetons de ressources, sont stockés dans la même collection de documents que les documents créés par la demande Xamarin.Forms. Par conséquent, la requête `Where` en document contient une clause qui applique un filtrage prédicant à la requête contre la collecte de documents. Cette clause garantit que les documents d’autorisation ne sont pas retournés de la collection de documents.
 
-Pour plus d’informations sur la récupération des documents à partir d’une collection de documents, consultez [Documents de la Collection de récupération de Document](~/xamarin-forms/data-cloud/azure-services/azure-cosmosdb.md#document_query).
+Pour plus d’informations sur la récupération des documents provenant d’une collection de documents, voir [Retrieving Documents Collection Documents](~/xamarin-forms/data-cloud/azure-services/azure-cosmosdb.md#document_query).
 
-## <a name="inserting-documents"></a>Insertion de Documents
+## <a name="inserting-documents"></a>Insertion de documents
 
-Avant l’insertion d’un document dans une collection de documents, le `TodoItem.UserId` propriété doit être mis à jour avec la valeur utilisée comme clé de partition, comme illustré dans l’exemple de code suivant :
+Avant d’insérer un document `TodoItem.UserId` dans une collection de documents, la propriété doit être mise à jour avec la valeur utilisée comme clé de partition, comme le démontre l’exemple de code suivant :
 
 ```csharp
 item.UserId = UserId;
 await client.CreateDocumentAsync(collectionLink, item);
 ```
 
-Cela garantit que le document est inséré dans la collection partitionnée de l’utilisateur.
+Cela garantit que le document sera inséré dans la collection partitionnée de l’utilisateur.
 
-Pour plus d’informations sur l’insertion d’un document dans une collection de documents, consultez [insertion d’un Document dans une Collection de documents](~/xamarin-forms/data-cloud/azure-services/azure-cosmosdb.md#inserting_document).
+Pour plus d’informations sur l’insertion d’un document dans une collection de documents, voir [Insérer un document dans une collection de documents](~/xamarin-forms/data-cloud/azure-services/azure-cosmosdb.md#inserting_document).
 
-## <a name="deleting-documents"></a>Suppression de Documents
+## <a name="deleting-documents"></a>Suppression des documents
 
-La valeur de clé de partition doit être spécifiée lors de la suppression d’un document à partir d’une collection partitionnée, comme illustré dans l’exemple de code suivant :
+La valeur de la clé de partition doit être spécifiée lors de la suppression d’un document d’une collection partitionnée, comme le démontre l’exemple de code suivant :
 
 ```csharp
 await client.DeleteDocumentAsync(UriFactory.CreateDocumentUri(Constants.DatabaseName, Constants.CollectionName, id),
@@ -263,20 +261,20 @@ await client.DeleteDocumentAsync(UriFactory.CreateDocumentUri(Constants.Database
                  });
 ```
 
-Cela garantit que Cosmos DB sache qui partitionnée collection à supprimer le document à partir de.
+Cela garantit que Cosmos DB sait de quelle collection cloisonnée supprimer le document.
 
-Pour plus d’informations sur la suppression d’un document à partir d’une collection de documents, consultez [suppression d’un Document à partir d’une Collection de documents](~/xamarin-forms/data-cloud/azure-services/azure-cosmosdb.md#deleting_document).
+Pour plus d’informations sur la suppression d’un document à partir d’une collection de documents, voir [Supprimer un document à partir d’une collection de documents](~/xamarin-forms/data-cloud/azure-services/azure-cosmosdb.md#deleting_document).
 
 ## <a name="summary"></a>Récapitulatif
 
-Cet article a expliqué comment combiner de contrôle d’accès avec les collections partitionnées, afin qu’un utilisateur peut accéder uniquement à leurs propres documents de base de données de document dans une application Xamarin.Forms. Spécification de l’identité de l’utilisateur comme clé de partition garantit qu’une collection partitionnée peut stocker uniquement des documents pour cet utilisateur.
+Cet article expliquait comment combiner le contrôle d’accès avec les collections partitionnées, de sorte qu’un utilisateur ne peut accéder à ses propres documents de base de données documentaires que dans une application Xamarin.Forms. Spécifier l’identité de l’utilisateur en tant que clé de partition garantit qu’une collection cloisonnée ne peut stocker que des documents pour cet utilisateur.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
-- [TODO Azure Cosmos DB Auth (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-tododocumentdbauth)
+- [Todo Azure Cosmos DB Auth (échantillon)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-tododocumentdbauth)
 - [Consommation d’une base de données de documents Azure Cosmos DB](~/xamarin-forms/data-cloud/azure-services/azure-cosmosdb.md)
-- [Sécurisation de l’accès aux données Azure Cosmos DB](/azure/cosmos-db/secure-access-to-data/)
+- [Sécurisation de l’accès aux données d’Azure Cosmos DB](/azure/cosmos-db/secure-access-to-data/)
 - [Contrôle d’accès dans l’API SQL](/rest/api/documentdb/access-control-on-documentdb-resources/).
-- [Guide de partitionnement et mise à l’échelle dans Azure Cosmos DB](/azure/cosmos-db/partition-data/)
-- [Bibliothèque cliente Azure Cosmos DB](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core)
+- [Guide de partitionnement et de mise à l’échelle dans Azure Cosmos DB](/azure/cosmos-db/partition-data/)
+- [Bibliothèque client Azure Cosmos DB](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core)
 - [API Azure Cosmos DB](https://msdn.microsoft.com/library/azure/dn948556.aspx)
