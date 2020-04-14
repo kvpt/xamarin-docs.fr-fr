@@ -18,7 +18,7 @@
       href: navigation.md
     - name: Validation
       href: validation.md
-    - name: Gestion des configurations
+    - name: Gestion de la configuration
       href: configuration-management.md
     - name: Microservices conteneurisés
       href: containerized-microservices.md
@@ -26,5 +26,5 @@
       href: authentication-and-authorization.md
     - name: Accès aux données distantes
       href: accessing-remote-data.md
-    - name: Test unitaire
+    - name: Tests unitaires
       href: unit-testing.md

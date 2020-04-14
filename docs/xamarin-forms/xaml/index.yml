@@ -11,25 +11,25 @@ metadata:
   ms.author: dabritch
   ms.date: 12/27/2019
   ms.openlocfilehash: 5f01b3ecf914d6c7c5c36378511c0fd7e30c952c
-  ms.sourcegitcommit: ff0dd66d6d00257ac1695aa7ac46940ff7d3bd93
+  ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
   ms.translationtype: HT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 01/06/2020
+  ms.lasthandoff: 04/09/2020
   ms.locfileid: "75679686"
 landingContent:
-- title: Prise en main
+- title: Bien démarrer
   linkLists:
   - linkListType: concept
     links:
-    - text: Principes de base
+    - text: Concepts de base
       url: xaml-basics/index.md
-    - text: Contrôles
+    - text: Commandes
       url: xaml-controls.md
     - text: Compilation
       url: xamlc.md
     - text: Extensions de balisage
       url: markup-extensions/index.md
-- title: Outillage
+- title: Outils
   linkLists:
   - linkListType: concept
     links:

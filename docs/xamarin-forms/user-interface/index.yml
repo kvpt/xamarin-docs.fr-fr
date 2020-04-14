@@ -11,23 +11,23 @@ metadata:
   ms.author: dabritch
   ms.date: 12/30/2019
   ms.openlocfilehash: bbe7fd52581cd77ed7e7d910dd16264641c15abf
-  ms.sourcegitcommit: 524fc148bad17272bda83c50775771daa45bfd7e
+  ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
   ms.translationtype: HT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 02/20/2020
+  ms.lasthandoff: 04/09/2020
   ms.locfileid: "77480594"
 landingContent:
 - title: Informations de référence sur les contrôles
   linkLists:
   - linkListType: concept
     links:
-    - text: Vue d'ensemble
+    - text: Vue d’ensemble
       url: controls/index.md
     - text: Pages
       url: controls/pages.md
-    - text: Dispositions
+    - text: Mises en forme
       url: controls/layouts.md
-    - text: Affichages
+    - text: Les vues
       url: controls/views.md
     - text: Cellules
       url: controls/cells.md
@@ -43,13 +43,13 @@ landingContent:
       url: boxview.md
     - text: Image
       url: images.md
-    - text: Etiquette
+    - text: Étiquette
       url: text/label.md
-    - text: Carte
+    - text: Mappage
       url: map/index.md
     - text: MediaElement
       url: mediaelement.md
-    - text: WebView
+    - text: Vue web
       url: webview.md
 - title: Affichages lançant des commandes
   linkLists:
@@ -77,7 +77,7 @@ landingContent:
       url: slider.md
     - text: Exécution pas à pas
       url: stepper.md
-    - text: Basculer
+    - text: Commutateur
       url: switch.md
     - text: Sélecteur d'heure
       url: timepicker.md
@@ -139,13 +139,13 @@ landingContent:
       url: splashscreen.md
     - text: Styles
       url: styles/index.md
-    - text: Création de thèmes
+    - text: Thèmes
       url: theming/index.md
     - text: Élément visuel
       url: visual/index.md
     - text: Gestionnaire d’état visuel
       url: visual-state-manager.md
-- title: Dispositions
+- title: Mises en forme
   linkLists:
   - linkListType: concept
     links:

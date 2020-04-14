@@ -1,12 +1,12 @@
 ---
-ms.openlocfilehash: 5a464196c08220158432219d96bf82578789d8e5
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.openlocfilehash: a7c2aa15521b89e4930746dc5421ce67fa26b2b9
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "67559993"
 ---
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. Dans **MainPage.xaml**, modifiez la déclaration [`StackLayout`](xref:Xamarin.Forms.StackLayout) pour en aligner les éléments enfants à l’horizontale plutôt qu’à la verticale :
 
@@ -27,7 +27,7 @@ ms.locfileid: "67559993"
 
     Notez que les instances [`Label`](xref:Xamarin.Forms.Label) dans le [`StackLayout`](xref:Xamarin.Forms.StackLayout) sont maintenant alignées horizontalement, au lieu de verticalement.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio pour Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/vsmac)
 
 1. Dans **MainPage.xaml**, modifiez la déclaration [`StackLayout`](xref:Xamarin.Forms.StackLayout) pour en aligner les éléments enfants à l’horizontale plutôt qu’à la verticale :
 
@@ -47,8 +47,3 @@ ms.locfileid: "67559993"
     [![Capture d’écran de vues enfants orientées horizontalement dans une disposition de pile, sur iOS et Android](../images/orientation.png "Disposition de pile contenant des instances d’étiquettes orientées horizontalement")](../images/orientation-large.png#lightbox "Disposition de pile contenant des instances d’étiquettes orientées horizontalement")
 
     Notez que les instances [`Label`](xref:Xamarin.Forms.Label) dans le [`StackLayout`](xref:Xamarin.Forms.StackLayout) sont maintenant alignées horizontalement, au lieu de verticalement.
-
------
-
-> [!div class="nextstepaction"]
-> [J’ai rencontré un problème](https://github.com/MicrosoftDocs/xamarin-docs/issues/new?title=StackLayout+Tutorial+Step+2+Feedback&template=tutorial_template.md)

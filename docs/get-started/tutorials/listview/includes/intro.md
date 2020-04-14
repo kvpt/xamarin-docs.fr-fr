@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 552251490665b673e02eb58c50c643daed9c1aed
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "71107226"
 ---
 Avant de tenter ce didacticiel, vous devez avoir suivi les guides et didacticiels suivants :
@@ -14,7 +14,7 @@ Avant de tenter ce didacticiel, vous devez avoir suivi les guides et didacticiel
 - Didacticiel [Label](~/get-started/tutorials/label/index.yml).
 - Didacticiel [Image](~/get-started/tutorials/image/index.yml).
 
-Dans ce didacticiel, vous apprendrez à :
+Dans ce tutoriel, vous allez apprendre à :
 
 > [!div class="checklist"]
 >

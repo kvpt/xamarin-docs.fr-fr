@@ -1,12 +1,12 @@
 ---
 ms.openlocfilehash: d87289e481b69592b68627d053e937856d3d6067
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "61375386"
 ---
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. Dans **MainPage.xaml**, modifiez la déclaration [`Grid`](xref:Xamarin.Forms.Grid) pour définir des colonnes et des lignes, et pour y placer du contenu :
 
@@ -48,7 +48,7 @@ ms.locfileid: "61375386"
 
     [![Capture d’écran d’une grille dont le contenu est réparti entre plusieurs colonnes et lignes, sur iOS et Android](../images/columns-rows.png "Grille comprenant du contenu s’étendant sur plusieurs colonnes et lignes")](../images/columns-rows-large.png#lightbox "Grille comprenant du contenu s’étendant sur plusieurs colonnes et lignes")
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio pour Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/vsmac)
 
 1. Dans **MainPage.xaml**, modifiez la déclaration [`Grid`](xref:Xamarin.Forms.Grid) pour définir des colonnes et des lignes, et pour y placer du contenu :
 

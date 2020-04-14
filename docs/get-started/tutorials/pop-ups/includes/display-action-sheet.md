@@ -1,15 +1,15 @@
 ---
 ms.openlocfilehash: 87eb021e6cc571a9a5522697cde2aa11ee991308
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "66193830"
 ---
 
 Xamarin.Forms dispose d’une fenêtre contextuelle modale (une feuille d’action) servant à guider les utilisateurs dans une tâche. Dans cet exercice, vous utiliserez la méthode [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*) à partir de la classe [`Page`](xref:Xamarin.Forms.Page) afin d’afficher une feuille d’action guidant les utilisateurs dans une tâche.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. Dans **MainPage.xaml**, ajoutez une nouvelle déclaration [`Button`](xref:Xamarin.Forms.Button) qui affiche une feuille d’action :
 
@@ -43,7 +43,7 @@ Xamarin.Forms dispose d’une fenêtre contextuelle modale (une feuille d’acti
 
     Pour plus d’informations sur l’affichage des feuilles d’action, voir [Guider les utilisateurs dans les tâches](~/xamarin-forms/user-interface/pop-ups.md#guide-users-through-tasks) dans le guide [Afficher les fenêtres contextuelles](~/xamarin-forms/user-interface/pop-ups.md).
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio pour Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/vsmac)
 
 1. Dans **MainPage.xaml**, ajoutez une nouvelle déclaration [`Button`](xref:Xamarin.Forms.Button) qui affiche une feuille d’action :
 

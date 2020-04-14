@@ -2,7 +2,7 @@
   href: index.yml
   expanded: true
   items:
-    - name: Bien démarrer
+    - name: Découvrir
       href: get-started/index.md
       expanded: true
       items:
@@ -70,7 +70,7 @@
         - name: Introduction à macOS Mojave
           href: platform/introduction-to-macos-mojave/index.md
           items:
-            - name: Prise en main
+            - name: Mise en route
               href: platform/introduction-to-macos-mojave/get-started.md
         - name: Introduction à macOS High Sierra
           href: platform/introduction-to-macos-high-sierra/index.md
@@ -81,7 +81,7 @@
               href: platform/introduction-to-macos-sierra/modern-cocoa-apps.md
             - name: Autres modifications du framework macOS Sierra
               href: platform/introduction-to-macos-sierra/additional-framework-changes.md
-            - name: Résolution des problèmes
+            - name: Dépannage
               href: platform/introduction-to-macos-sierra/troubleshooting.md
         - name: Liaison de bibliothèques Mac
           href: platform/binding.md
@@ -132,7 +132,7 @@
         - name: API unifiée
           href: ~/cross-platform/macios/unified/index.md?context=xamarin/mac
           items:
-            - name: Vue d'ensemble
+            - name: Vue d’ensemble
               href: ~/cross-platform/macios/unified/overview.md?context=xamarin/mac
             - name: Mettre à jour des applications existantes
               href: ~/cross-platform/macios/unified/updating-apps.md?context=xamarin/mac
@@ -149,7 +149,7 @@
         - name: Liaison Objective-C
           href: ~/cross-platform/macios/binding/index.md?context=xamarin/mac
           items:
-            - name: Vue d'ensemble
+            - name: Vue d’ensemble
               href: ~/cross-platform/macios/binding/overview.md?context=xamarin/mac
             - name: Liaison de bibliothèques Objective-C
               href: ~/cross-platform/macios/binding/objective-c-libraries.md?context=xamarin/mac
@@ -158,7 +158,7 @@
             - name: Objective Sharpie
               href: ~/cross-platform/macios/binding/objective-sharpie/index.md?context=xamarin/mac
               items:
-                - name: Prise en main
+                - name: Mise en route
                   href: ~/cross-platform/macios/binding/objective-sharpie/get-started.md?context=xamarin/mac
                 - name: Outils et commandes
                   href: ~/cross-platform/macios/binding/objective-sharpie/tools.md?context=xamarin/mac
@@ -182,7 +182,7 @@
                       href: ~/cross-platform/macios/binding/objective-sharpie/examples/advanced.md?context=xamarin/mac
                 - name: Historique des versions
                   href: ~/cross-platform/macios/binding/objective-sharpie/releases.md?context=xamarin/mac
-            - name: Résolution des problèmes
+            - name: Dépannage
               href: ~/cross-platform/macios/binding/troubleshooting.md?context=xamarin/mac
         - name: Références natives
           href: ~/cross-platform/macios/native-references.md?context=xamarin/mac
@@ -214,7 +214,7 @@
           href: internals/frameworks.md
         - name: Inscription
           href: internals/registrar.md
-    - name: Résolution des problèmes
+    - name: Dépannage
       href: troubleshooting/index.md
       items:
         - name: Conseils de dépannage

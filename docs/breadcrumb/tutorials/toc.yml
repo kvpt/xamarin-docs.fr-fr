@@ -10,10 +10,10 @@
           tocHref: /xamarin/xamarin-forms/
           topicHref: /xamarin/xamarin-forms/
           items:
-            - name: Bien démarrer
+            - name: Découvrir
               tocHref: /xamarin/get-started/
               topicHref: /xamarin/get-started/
               items:
-                - name: Didacticiels
+                - name: Tutoriels
                   tocHref: /xamarin/get-started/tutorials/
                   topicHref: /xamarin/get-started/tutorials/

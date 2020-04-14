@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 85404d5aceb525a77c98bf2d86ebc4b464f5796f
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "71107223"
 ---
 Avant de tenter ce didacticiel, vous devez avoir suivi les guides et didacticiels suivants :
@@ -11,7 +11,7 @@ Avant de tenter ce didacticiel, vous devez avoir suivi les guides et didacticiel
 - Guide de démarrage rapide [Générer votre première application Xamarin.Forms](~/get-started/first-app/index.md).
 - Didacticiel [StackLayout](~/get-started/tutorials/stacklayout/index.yml).
 
-Dans ce didacticiel, vous apprendrez à :
+Dans ce tutoriel, vous allez apprendre à :
 
 > [!div class="checklist"]
 >

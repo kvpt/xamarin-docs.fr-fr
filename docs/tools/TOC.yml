@@ -26,25 +26,25 @@
           href: live-player/install.md
         - name: Application Xamarin Live Player
           href: live-player/player.md
-        - name: Résolution des problèmes
+        - name: Dépannage
           href: live-player/troubleshooting.md
-    - name: Profiler
+    - name: Profileur
       href: profiler/index.md
       items:
-        - name: Résolution des problèmes
+        - name: Dépannage
           href: profiler/troubleshooting.md
         - name: Notes de publication
           href: /xamarin/tools/profiler/release-notes/
-    - name: Classeurs
+    - name: Workbooks
       href: workbooks/index.md
       items:
         - name: Installation et configuration requise
           href: workbooks/install.md
-        - name: Workbooks interactifs
+        - name: Classeurs interactifs
           href: workbooks/workbook.md
         - name: Raccourcis clavier de l’éditeur
           href: workbooks/keybindings.md
-        - name: Résolution des problèmes
+        - name: Dépannage
           href: workbooks/troubleshooting/index.md
           items:
             - name: Problèmes généraux connus et solutions de contournement
@@ -54,7 +54,7 @@
         - name: Kit SDK d’intégration
           href: workbooks/sdk/index.md
           items:
-            - name: Vue d'ensemble de l'architecture
+            - name: Présentation de l'architecture
               href: workbooks/sdk/architecture.md
             - name: Rubriques liées à l’intégration avancée
               href: workbooks/sdk/integrations.md
@@ -69,7 +69,7 @@
     - name: Incorporation .NET
       href: dotnet-embedding/index.md
       items:
-        - name: Prise en main
+        - name: Mise en route
           href: dotnet-embedding/get-started/index.md
           items:
             - name: Installation
@@ -96,11 +96,11 @@
         - name: Objective-C
           href: dotnet-embedding/objective-c/index.md
           items:
-            - name: Meilleures pratiques
+            - name: Bonnes pratiques
               href: dotnet-embedding/objective-c/best-practices.md
             - name: Plateformes
               href: dotnet-embedding/objective-c/platforms.md
-        - name: Limitations
+        - name: Limites
           href: dotnet-embedding/limitations.md
         - name: Notes de publication
           href: /xamarin/tools/dotnet-embedding/release-notes/

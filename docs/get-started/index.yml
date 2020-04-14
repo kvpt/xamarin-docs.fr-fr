@@ -11,13 +11,13 @@ metadata:
   ms.author: dabritch
   ms.date: 12/23/2019
   ms.openlocfilehash: 672bf80503c85ac4bdaa903c647144be3819635d
-  ms.sourcegitcommit: a3b7e016fb25584dbf57bae89b64a9f98031e7c9
+  ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
   ms.translationtype: HT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 01/23/2020
+  ms.lasthandoff: 04/09/2020
   ms.locfileid: "76550079"
 landingContent:
-- title: Prise en main
+- title: Bien démarrer
   linkLists:
   - linkListType: overview
     links:
@@ -53,7 +53,7 @@ landingContent:
     links:
     - text: StackLayout
       url: tutorials/stacklayout/index.yml
-    - text: Etiquette
+    - text: Étiquette
       url: tutorials/label/index.yml
     - text: Bouton
       url: tutorials/button/index.yml
@@ -73,11 +73,11 @@ landingContent:
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: Cycle de vie d’application
+    - text: Cycle de vie de l'application
       url: tutorials/app-lifecycle/index.yml
     - text: Base de données locale
       url: tutorials/local-database/index.yml
-    - text: Services web
+    - text: SERVICES WEB
       url: tutorials/web-service/index.yml
 - title: En savoir plus sur Xamarin
   linkLists:

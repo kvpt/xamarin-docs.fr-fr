@@ -1,12 +1,12 @@
 ---
 ms.openlocfilehash: fe7e11f37f303c2ec1f5bc58e98953449694191c
-ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/11/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "77135041"
 ---
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 Pour suivre ce didacticiel, vous devez disposer de Visual Studio 2019 (dernière version) sur lequel est installée la charge de travail **Développement mobile en .NET**. Vous aurez également besoin d’un Mac couplé pour générer l’application du didacticiel sur iOS. Pour plus d’informations sur l’installation de la plateforme Xamarin, consultez [Installation de Xamarin](~/get-started/installation/index.md). Pour plus d’informations sur la connexion de Visual Studio 2019 à un hôte de build Mac, consultez l’article [Appairer avec un Mac pour le développement Xamarin.iOS](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
 
@@ -31,7 +31,7 @@ Pour suivre ce didacticiel, vous devez disposer de Visual Studio 2019 (dernière
     </ContentPage>
     ```
 
-    Ce code définit de manière déclarative l’interface utilisateur de la page, qui comprend un élément [`Editor`](xref:Xamarin.Forms.Editor) dans [`StackLayout`](xref:Xamarin.Forms.StackLayout). La propriété [`Editor.Placeholder`](xref:Xamarin.Forms.InputView.Placeholder) spécifie le texte d’espace réservé qui apparaît lorsque l’élément `Editor` s’affiche pour la première fois. Par ailleurs, la propriété [`HeightRequest`](xref:Xamarin.Forms.VisualElement) spécifie la hauteur de l’élément `Editor` en unités indépendantes de l’appareil.
+    Ce code définit de manière déclarative l’interface utilisateur de la page, qui comprend un élément [`Editor`](xref:Xamarin.Forms.Editor) dans [`StackLayout`](xref:Xamarin.Forms.StackLayout). La propriété [`Editor.Placeholder`](xref:Xamarin.Forms.InputView.Placeholder) spécifie le texte d’espace réservé qui apparaît lorsque `Editor` s’affiche pour la première fois. Par ailleurs, la propriété [`HeightRequest`](xref:Xamarin.Forms.VisualElement) spécifie la hauteur de l’élément `Editor` en unités indépendantes de l’appareil.
 
 1. Dans la barre d’outils Visual Studio, appuyez sur le bouton **Démarrer** (le bouton triangulaire qui ressemble à un bouton de lecture) pour lancer l’application à l’intérieur du simulateur iOS distant ou de l’émulateur Android de votre choix :
 
@@ -40,7 +40,7 @@ Pour suivre ce didacticiel, vous devez disposer de Visual Studio 2019 (dernière
     > [!NOTE]
     > Android indique la hauteur de l’élément [`Editor`](xref:Xamarin.Forms.Editor), mais ce n’est pas le cas d’iOS.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio pour Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/vsmac)
 
 Pour suivre ce didacticiel, vous devez disposer de Visual Studio pour Mac (dernière version) avec une prise en charge des plateformes iOS et Android. Vous aurez également besoin de Xcode (dernière version). Pour plus d’informations sur l’installation de la plateforme Xamarin, consultez [Installation de Xamarin](~/get-started/installation/index.md).
 
@@ -65,7 +65,7 @@ Pour suivre ce didacticiel, vous devez disposer de Visual Studio pour Mac (derni
     </ContentPage>
     ```
 
-    Ce code définit de manière déclarative l’interface utilisateur de la page, qui comprend un élément [`Editor`](xref:Xamarin.Forms.Editor) dans [`StackLayout`](xref:Xamarin.Forms.StackLayout). La propriété [`Editor.Placeholder`](xref:Xamarin.Forms.InputView.Placeholder) spécifie le texte d’espace réservé qui apparaît lorsque l’élément `Editor` s’affiche pour la première fois. Par ailleurs, la propriété [`HeightRequest`](xref:Xamarin.Forms.VisualElement) spécifie la hauteur de l’élément `Editor` en unités indépendantes de l’appareil.
+    Ce code définit de manière déclarative l’interface utilisateur de la page, qui comprend un élément [`Editor`](xref:Xamarin.Forms.Editor) dans [`StackLayout`](xref:Xamarin.Forms.StackLayout). La propriété [`Editor.Placeholder`](xref:Xamarin.Forms.InputView.Placeholder) spécifie le texte d’espace réservé qui apparaît lorsque `Editor` s’affiche pour la première fois. Par ailleurs, la propriété [`HeightRequest`](xref:Xamarin.Forms.VisualElement) spécifie la hauteur de l’élément `Editor` en unités indépendantes de l’appareil.
 
 1. Dans la barre d’outils Visual Studio pour Mac, appuyez sur le bouton **Démarrer** (le bouton triangulaire qui ressemble à un bouton de lecture) pour lancer l’application dans le simulateur iOS ou dans l’émulateur Android de votre choix :
 

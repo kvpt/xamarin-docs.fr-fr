@@ -11,13 +11,13 @@ metadata:
   ms.author: dabritch
   ms.date: 01/27/2020
   ms.openlocfilehash: 394812b5150f7bbea46dff476bd2f896083b9a74
-  ms.sourcegitcommit: 24883be72e485e5311dd0eb91f9a22f78eeec11a
+  ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
   ms.translationtype: HT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 02/17/2020
+  ms.lasthandoff: 04/09/2020
   ms.locfileid: "77374082"
 landingContent:
-- title: Prise en main
+- title: Bien démarrer
   linkLists:
   - linkListType: concept
     links:
@@ -53,7 +53,7 @@ landingContent:
       url: ~/android/app-fundamentals/permissions.md
     - text: Entrées tactiles et mouvements
       url: ~/android/app-fundamentals/touch/index.md
-    - text: Afficher plus >
+    - text: En savoir plus >
       url: ~/android/app-fundamentals/index.md
 - title: Interface utilisateur
   linkLists:
@@ -63,15 +63,15 @@ landingContent:
       url: ~/android/user-interface/android-designer/index.md
     - text: Thème matériau
       url: ~/android/user-interface/material-theme.md
-    - text: Profil utilisateur
+    - text: User Profile
       url: ~/android/user-interface/user-profile.md
     - text: Écran de démarrage
       url: ~/android/user-interface/splash-screen.md
-    - text: Dispositions
+    - text: Mises en forme
       url: ~/android/user-interface/layouts/index.md
-    - text: Contrôles
+    - text: Commandes
       url: ~/android/user-interface/controls/index.md
-- title: Fonctionnalités de la plateforme
+- title: Fonctionnalités de la plate-forme
   linkLists:
   - linkListType: concept
     links:
@@ -93,19 +93,19 @@ landingContent:
       url: ~/android/platform/android-job-scheduler.md
     - text: Cartes et localisation
       url: ~/android/platform/maps-and-location/index.md
-    - text: Afficher plus >
+    - text: En savoir plus >
       url: ~/android/platform/index.md
 - title: Xamarin.Essentials
   linkLists:
   - linkListType: concept
     links:
-    - text: À propos de
+    - text: À propos
       url: ~/essentials/index.md?context=xamarin/android
-    - text: Prise en main
+    - text: Bien démarrer
       url: ~/essentials/get-started.md?context=xamarin/android
     - text: Prise en charge des plateformes et des fonctionnalités
       url: ~/essentials/platform-feature-support.md?context=xamarin/android
-    - text: Résolution des problèmes
+    - text: Dépannage
       url: ~/essentials/troubleshooting.md?context=xamarin/android
     - text: Notes de publication
       url: https://docs.microsoft.com/xamarin/essentials/release-notes/
@@ -145,7 +145,7 @@ landingContent:
       url: ~/android/deploy-test/signing/index.md
     - text: Publier une application
       url: ~/android/deploy-test/publishing/index.md
-    - text: Afficher plus >
+    - text: En savoir plus >
       url: ~/android/deploy-test/index.md
 - title: Éléments internes et concepts avancés
   linkLists:
@@ -157,19 +157,19 @@ landingContent:
       url: ~/cross-platform/internals/available-assemblies.md?context=xamarin/android
     - text: Conception d’API
       url: ~/android/internals/api-design.md
-    - text: Garbage collection
+    - text: Nettoyage de la mémoire
       url: ~/android/internals/garbage-collection.md
-    - text: Limitations
+    - text: Limites
       url: ~/android/internals/limitations.md
 - title: Android Wear
   linkLists:
   - linkListType: concept
     links:
-    - text: Prise en main
+    - text: Bien démarrer
       url: ~/android/wear/get-started/index.md
     - text: Interface utilisateur
       url: ~/android/wear/user-interface/index.md
-    - text: Fonctionnalités de la plateforme
+    - text: Fonctionnalités de la plate-forme
       url: ~/android/wear/platform/index.md
     - text: Tailles d’écran
       url: ~/android/wear/screen-sizes.md

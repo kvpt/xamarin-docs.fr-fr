@@ -1,12 +1,12 @@
 ---
-ms.openlocfilehash: 80688c0796a112bcb444a15cd96a6b176b8c16e0
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.openlocfilehash: b2e1f11579e8647593e20e7d56936e8e75661e78
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "72715233"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80634716"
 ---
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 Pour suivre ce didacticiel, vous devez disposer de Visual Studio 2019 (dernière version) sur lequel est installée la charge de travail **Développement mobile en .NET**. Vous aurez également besoin d’un Mac couplé pour générer l’application du didacticiel sur iOS. Pour plus d’informations sur l’installation de la plateforme Xamarin, consultez [Installation de Xamarin](~/get-started/installation/index.md). Pour plus d’informations sur la connexion de Visual Studio 2019 à un hôte de build Mac, consultez l’article [Appairer avec un Mac pour le développement Xamarin.iOS](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
 
@@ -32,10 +32,10 @@ Pour suivre ce didacticiel, vous devez disposer de Visual Studio 2019 (dernière
     </ContentPage>
     ```
 
-    Ce code définit de manière déclarative l’interface utilisateur de la page, qui comprend trois instances [`Label`](xref:Xamarin.Forms.Label) dans un [`StackLayout`](xref:Xamarin.Forms.StackLayout). [`StackLayout`](xref:Xamarin.Forms.StackLayout) positionne ses affichages enfants (les instances `Label`) sur une seule ligne, laquelle est orientée verticalement par défaut. En outre, la propriété [`Margin`](xref:Xamarin.Forms.View.Margin) indique la position de rendu de `StackLayout` dans [`ContentPage`](xref:Xamarin.Forms.ContentPage).
+    Ce code définit de manière déclarative l’interface utilisateur de la page, qui comprend trois instances [`Label`](xref:Xamarin.Forms.Label) dans un [`StackLayout`](xref:Xamarin.Forms.StackLayout). [`StackLayout`](xref:Xamarin.Forms.StackLayout) positionne ses affichages enfants (les instances `Label`) sur une seule ligne, laquelle est orientée verticalement par défaut. En outre, la propriété [`Margin`](xref:Xamarin.Forms.View.Margin) indique la position de rendu de l’élément `StackLayout` dans [`ContentPage`](xref:Xamarin.Forms.ContentPage).
 
     > [!NOTE]
-    > Outre la propriété [`Margin`](xref:Xamarin.Forms.View.Margin), les propriétés [`Padding`](xref:Xamarin.Forms.Layout.Padding) et [`Spacing`](xref:Xamarin.Forms.StackLayout.Spacing) peuvent également être définies sur [`StackLayout`](xref:Xamarin.Forms.StackLayout). La valeur de propriété [`Padding`](xref:Xamarin.Forms.Layout.Padding) spécifie la distance entre les affichages dans `StackLayout`et la valeur de propriété [`Spacing`](xref:Xamarin.Forms.StackLayout.Spacing) spécifie la quantité d’espace entre chaque élément enfant dans `StackLayout`. Pour plus d’informations, consultez [Marge et remplissage](~/xamarin-forms/user-interface/layouts/margin-and-padding.md).
+    > Outre la propriété [`Margin`](xref:Xamarin.Forms.View.Margin), les propriétés [`Padding`](xref:Xamarin.Forms.Layout.Padding) et [`Spacing`](xref:Xamarin.Forms.StackLayout.Spacing) peuvent également être définies sur [`StackLayout`](xref:Xamarin.Forms.StackLayout). La valeur de propriété [`Padding`](xref:Xamarin.Forms.Layout.Padding) spécifie la distance entre les affichages dans `StackLayout`et la valeur de propriété [`Spacing`](xref:Xamarin.Forms.StackLayout.Spacing) spécifie la quantité d’espace entre chaque élément enfant dans `StackLayout`. Pour plus d’informations, consultez la page [Marge et remplissage](~/xamarin-forms/user-interface/layouts/margin-and-padding.md).
 
 1. Dans la barre d’outils Visual Studio, appuyez sur le bouton **Démarrer** (le bouton triangulaire qui ressemble à un bouton de lecture) pour lancer l’application à l’intérieur du simulateur iOS distant ou de l’émulateur Android de votre choix :
 
@@ -43,7 +43,7 @@ Pour suivre ce didacticiel, vous devez disposer de Visual Studio 2019 (dernière
 
     Pour plus d’informations sur [`StackLayout`](xref:Xamarin.Forms.StackLayout), consultez [Xamarin.Forms StackLayout](~/xamarin-forms/user-interface/layouts/stack-layout.md).
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio pour Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/vsmac)
 
 Pour suivre ce didacticiel, vous devez disposer de Visual Studio pour Mac (dernière version) avec une prise en charge des plateformes iOS et Android. Vous aurez également besoin de Xcode (dernière version). Pour plus d’informations sur l’installation de la plateforme Xamarin, consultez [Installation de Xamarin](~/get-started/installation/index.md).
 
@@ -69,7 +69,7 @@ Pour suivre ce didacticiel, vous devez disposer de Visual Studio pour Mac (derni
     </ContentPage>
     ```
 
-    Ce code définit de manière déclarative l’interface utilisateur de la page, qui comprend trois instances [`Label`](xref:Xamarin.Forms.Label) dans un [`StackLayout`](xref:Xamarin.Forms.StackLayout). [`StackLayout`](xref:Xamarin.Forms.StackLayout) positionne ses affichages enfants (les instances `Label`) sur une seule ligne, laquelle est orientée verticalement par défaut. En outre, la propriété [`Margin`](xref:Xamarin.Forms.View.Margin) indique la position de rendu de `StackLayout` dans [`ContentPage`](xref:Xamarin.Forms.ContentPage).
+    Ce code définit de manière déclarative l’interface utilisateur de la page, qui comprend trois instances [`Label`](xref:Xamarin.Forms.Label) dans un [`StackLayout`](xref:Xamarin.Forms.StackLayout). [`StackLayout`](xref:Xamarin.Forms.StackLayout) positionne ses affichages enfants (les instances `Label`) sur une seule ligne, laquelle est orientée verticalement par défaut. En outre, la propriété [`Margin`](xref:Xamarin.Forms.View.Margin) indique la position de rendu de l’élément `StackLayout` dans [`ContentPage`](xref:Xamarin.Forms.ContentPage).
 
     > [!NOTE]
     > Outre la propriété [`Margin`](xref:Xamarin.Forms.View.Margin), les propriétés [`Padding`](xref:Xamarin.Forms.Layout.Padding) et [`Spacing`](xref:Xamarin.Forms.StackLayout.Spacing) peuvent également être définies sur [`StackLayout`](xref:Xamarin.Forms.StackLayout). La valeur de propriété [`Padding`](xref:Xamarin.Forms.Layout.Padding) spécifie la distance entre les affichages dans `StackLayout`et la valeur de propriété [`Spacing`](xref:Xamarin.Forms.StackLayout.Spacing) spécifie la quantité d’espace entre chaque élément enfant dans `StackLayout`. Pour plus d’informations, consultez la page [Marge et remplissage](~/xamarin-forms/user-interface/layouts/margin-and-padding.md).
@@ -79,8 +79,3 @@ Pour suivre ce didacticiel, vous devez disposer de Visual Studio pour Mac (derni
     [![Capture d’écran de vues enfants dans une StackLayout, sur iOS et Android](../images/create-stacklayout.png "StackLayout contenant des instances d’étiquette")](../images/create-stacklayout-large.png#lightbox "StackLayout contenant des instances d’étiquette")
 
     Pour plus d’informations sur [`StackLayout`](xref:Xamarin.Forms.StackLayout), consultez [Xamarin.Forms StackLayout](~/xamarin-forms/user-interface/layouts/stack-layout.md).
-
------
-
-> [!div class="nextstepaction"]
-> [J’ai rencontré un problème](https://github.com/MicrosoftDocs/xamarin-docs/issues/new?title=StackLayout+Tutorial+Step+1+Feedback&template=tutorial_template.md)

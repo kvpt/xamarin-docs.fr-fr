@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 5d9d5e4eb757d6afd1c13cb4851edd23feaa6e65
-ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/11/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "77135136"
 ---
 La sous-classe [`Application`](xref:Xamarin.Forms.Application) dispose d’un dictionnaire statique [`Properties`](xref:Xamarin.Forms.Application.Properties) qui peut être utilisé pour stocker des données tout au long des changements d’état du cycle de vie. Ce dictionnaire utilise une clé `string` et stocke une valeur `object`. Le dictionnaire est automatiquement enregistré sur l’appareil et il est rempli à nouveau lorsque l’application est redémarrée.
@@ -13,7 +13,7 @@ La sous-classe [`Application`](xref:Xamarin.Forms.Application) dispose d’un di
 
 Dans cet exercice, vous modifierez l’application pour conserver le texte d’un élément [`Entry`](xref:Xamarin.Forms.Entry) lors de la mise en arrière-plan et restaurer le texte vers l’élément `Entry` lorsque l’application est redémarrée.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. Dans l’**Explorateur de solutions**, dans le projet **AppLifecycleTutorial**, développez **MainPage.xaml**, puis double-cliquez sur **MainPage.xaml.cs** pour l’ouvrir. Ensuite, dans **App.xaml.cs**, supprimez tout le code du modèle et remplacez-le par le code suivant :
 
@@ -117,7 +117,7 @@ Dans cet exercice, vous modifierez l’application pour conserver le texte d’u
 
     Pour plus d’informations sur la conservation des données dans le dictionnaire de propriétés, consultez la page [Dictionnaire de propriétés](~/xamarin-forms/app-fundamentals/application-class.md#properties-dictionary) dans le guide [Classe App Xamarin.Forms](~/xamarin-forms/app-fundamentals/application-class.md).
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio pour Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/vsmac)
 
 1. Dans **Panneau Solutions**, dans le projet **AppLifecycleTutorial**, développez **MainPage.xaml**, puis double-cliquez sur **MainPage.xaml.cs** pour l’ouvrir. Ensuite, dans **App.xaml.cs**, supprimez tout le code du modèle et remplacez-le par le code suivant :
 

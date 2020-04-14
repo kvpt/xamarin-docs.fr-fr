@@ -11,19 +11,19 @@ metadata:
   ms.author: dabritch
   ms.date: 12/30/2019
   ms.openlocfilehash: f02b2744dab2700bc1ac680b134e42000d5d21ff
-  ms.sourcegitcommit: 524fc148bad17272bda83c50775771daa45bfd7e
+  ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
   ms.translationtype: HT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 02/20/2020
+  ms.lasthandoff: 04/09/2020
   ms.locfileid: "77480477"
 landingContent:
-- title: Concepts principaux
+- title: Principaux concepts
   linkLists:
   - linkListType: concept
     links:
     - text: Classe d’application
       url: application-class.md
-    - text: Cycle de vie d’application
+    - text: Cycle de vie de l'application
       url: app-lifecycle.md
     - text: Liaison de données
       url: data-binding/index.md
@@ -45,13 +45,13 @@ landingContent:
   linkLists:
   - linkListType: concept
     links:
-    - text: comportements
+    - text: Comportements
       url: behaviors/index.md
     - text: Renderers personnalisés
       url: custom-renderer/index.md
     - text: DependencyService
       url: dependency-service/index.md
-    - text: Effects (Effets)
+    - text: Effets
       url: effects/index.md
 - title: Parachever votre application
   linkLists:

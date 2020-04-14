@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 93ee0681adcc63fe05b4be88ff67f0aeee3e03ca
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "61384491"
 ---
 Vous pouvez ajouter des fichiers d’image à des projets de plateforme et les référencer à partir d’un code partagé Xamarin.Forms. Cette méthode de distribution d’images est indispensable dans le cas d’images spécifiques à la plateforme, par exemple si vous utilisez différentes résolutions sur différentes plateformes ou des conceptions qui présentent quelques variations mineures.
@@ -16,7 +16,7 @@ Dans cet exercice, vous allez modifier la solution **ImageTutorial** pour affich
 > [!IMPORTANT]
 > Pour utiliser une seule image sur l’ensemble des plateformes, *le même nom de fichier doit être utilisé sur toutes les plateformes*. Il doit s’agir d’un nom de ressource Android valide (autrement dit, seuls les lettres minuscules, les chiffres, le trait de soulignement et le point sont autorisés).
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. Dans **l’Explorateur de solutions**, à l’intérieur du projet **ImageTutorial.iOS**, développez **Catalogues de composants** et double-cliquez sur **Composants** pour l’ouvrir. Sous l’onglet **Assets.xcassets**, cliquez sur le bouton **Plus** et sélectionnez **Ajouter un ensemble d’images** :
 
@@ -62,7 +62,7 @@ Dans cet exercice, vous allez modifier la solution **ImageTutorial** pour affich
 
     Pour plus d’informations sur les images locales, consultez la rubrique [Images locales](~/xamarin-forms/user-interface/images.md#local-images) du guide [Images dans Xamarin.Forms](~/xamarin-forms/user-interface/images.md).
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio pour Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/vsmac)
 
 1. Dans **Panneau Solutions**, à l’intérieur du projet **ImageTutorial.iOS**, double-cliquez sur le fichier **Assets.xcassets** pour l’ouvrir. Puis, dans **Liste des biens**, cliquez avec le bouton droit et sélectionnez **Nouveau jeu d’images** :
 

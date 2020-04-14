@@ -1,14 +1,14 @@
 ---
 ms.openlocfilehash: 90f3f9ff5ed29a1ae2c93e355fc15bc6550d78dd
-ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/11/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "77135096"
 ---
 Dans cet exercice, vous créerez une interface utilisateur pour consommer la classe `RestService`, qui à son tour récupère les données de l’API web [OpenWeatherMap](https://openweathermap.org/).
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. Dans **l’Explorateur de solutions**, dans le projet **WebServiceTutorial**, double-cliquez sur **MainPage.xaml** pour l’ouvrir. Puis, dans **MainPage.xaml**, supprimez tout le code du modèle et remplacez-le par le code suivant :
 
@@ -128,7 +128,7 @@ Dans cet exercice, vous créerez une interface utilisateur pour consommer la cla
     > [!IMPORTANT]
     > Vous devez définir votre clé API OpenWeatherMap personnelle comme valeur de la constante `OpenWeatherMapAPIKey` dans la classe `Constants`.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio pour Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/vsmac)
 
 1. Dans **Panneau Solutions**, dans le projet **WebServiceTutorial**, double-cliquez sur **MainPage.xaml** pour l’ouvrir. Puis, dans **MainPage.xaml**, supprimez tout le code du modèle et remplacez-le par le code suivant :
 
@@ -191,7 +191,7 @@ Dans cet exercice, vous créerez une interface utilisateur pour consommer la cla
 
     En outre, l’élément [`Entry`](xref:Xamarin.Forms.Entry) dispose d’un nom spécifié avec l’attribut `x:Name`. Ainsi, le fichier code-behind peut accéder à l’objet en utilisant le nom affecté.
 
-    Pour plus d’informations sur l’utilisation des services web basés sur REST dans Xamarin.Forms, consultez [Utiliser un service web RESTful (guide)](~/xamarin-forms/data-cloud/web-services/rest.md).
+    Pour plus d’informations sur l’utilisation de services web basés sur REST dans Xamarin.Forms, consultez [Utiliser un service web RESTful (guide)](~/xamarin-forms/data-cloud/web-services/rest.md).
 
 1. Dans **Panneau Solutions**, dans le projet **WebServiceTutorial**, développez **MainPage.xaml**, puis double-cliquez sur **MainPage.xaml.cs** pour l’ouvrir. Ensuite, dans **MainPage.xaml.cs**, supprimez tout le code du modèle et remplacez-le par le code suivant :
 

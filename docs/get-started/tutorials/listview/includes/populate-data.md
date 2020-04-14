@@ -1,16 +1,16 @@
 ---
 ms.openlocfilehash: e03d0ada982cbf1d2954f4b677accc7ce7da793e
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "69541461"
 ---
 L’élément [`ListView`](xref:Xamarin.Forms.ListView) est renseigné avec les données à l’aide de la propriété [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource), de type `IEnumerable`. L’étape précédente a permis de remplir l’élément `ListView` dans XAML avec un tableau de chaînes. Toutefois, en général un élément `ListView` est renseigné à l’aide de données issues d’une collection, définie par code-behind, qui implémente `IEnumerable`.
 
 Dans cet exercice, vous modifierez le projet **ListViewTutorial** pour remplir l’élément [`ListView`](xref:Xamarin.Forms.ListView) avec des données issues d’une collection d’objets stockés dans un élément `List`.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. Dans **l’Explorateur de solutions**, dans le projet **ListViewTutorial**, ajoutez une classe nommée `Monkey` qui contient le code suivant :
 
@@ -191,7 +191,7 @@ Dans cet exercice, vous modifierez le projet **ListViewTutorial** pour remplir l
 
     L’élément [`ListView`](xref:Xamarin.Forms.ListView) affiche la propriété `Name` pour chaque élément `Monkey` de la collection `Monkeys`. En effet, par défaut, l’élément `ListView` appelle la méthode `ToString` lors de l’affichage des objets à partir d’une collection (qui a été remplacée dans la classe `Monkey` pour retourner la valeur de propriété `Name`).
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio pour Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/vsmac)
 
 1. Dans **Panneau Solutions**, dans le projet **ListViewTutorial**, ajoutez une classe nommée `Monkey` qui contient le code suivant :
 

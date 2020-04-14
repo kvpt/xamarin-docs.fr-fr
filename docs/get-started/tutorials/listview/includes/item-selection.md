@@ -1,12 +1,12 @@
 ---
 ms.openlocfilehash: 2185fa243d2bccea046be5c91a2b1e9ed365edfe
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "74062879"
 ---
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. Dans **MainPage.xaml**, modifiez la déclaration [`ListView`](xref:Xamarin.Forms.ListView) pour qu’elle définisse les gestionnaires pour les événements [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected) et [`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped) :
 
@@ -45,7 +45,7 @@ ms.locfileid: "74062879"
 
     Pour plus d’informations sur la sélection d’éléments par un clic ou par une pression, consultez la rubrique [Sélection par clic ou par pression](~/xamarin-forms/user-interface/listview/interactivity.md#selection-and-taps) dans le guide [Interactivité de ListView](~/xamarin-forms/user-interface/listview/interactivity.md).
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio pour Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/vsmac)
 
 1. Dans **MainPage.xaml**, modifiez la déclaration [`ListView`](xref:Xamarin.Forms.ListView) pour qu’elle définisse les gestionnaires pour les événements [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected) et [`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped) :
 
@@ -57,7 +57,7 @@ ms.locfileid: "74062879"
 
     Ce code définit l’événement [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected) sur un gestionnaire d’événements nommé `OnListViewItemSelected` et l’événement [`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped) sur un gestionnaire d’événements nommé `OnListViewItemTapped`. Les deux gestionnaires d’événements seront créés à l’étape suivante.
 
-1. Dans le **Panneau Solutions**, dans le projet **ListViewTutorial**, développez **MainPage.xaml**, puis double-cliquez sur **MainPage.xaml.cs** pour l’ouvrir. Puis, dans **MainPage.xaml.cs**, ajoutez les gestionnaires d’événements `OnListViewItemSelected` et `OnListViewItemTapped` à la classe :
+1. Dans **Panneau Solutions**, dans le projet **ListViewTutorial**, développez **MainPage.xaml**, puis double-cliquez sur **MainPage.xaml.cs** pour l’ouvrir. Puis, dans **MainPage.xaml.cs**, ajoutez les gestionnaires d’événements `OnListViewItemSelected` et `OnListViewItemTapped` à la classe :
 
     ```csharp
     void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs e)

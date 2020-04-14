@@ -1,14 +1,14 @@
 ---
 ms.openlocfilehash: caee3eeda90a560f032c17657072ae5ba5023a69
-ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/11/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "77135162"
 ---
 Dans cet exercice, vous allez créer une interface utilisateur pour utiliser les classes d’accès aux données créées précédemment.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. Dans **l’Explorateur de solutions**, dans le projet **LocalDatabaseTutorial**, double-cliquez sur **MainPage.xaml** pour l’ouvrir. Puis, dans **MainPage.xaml**, supprimez tout le code du modèle et remplacez-le par le code suivant :
 
@@ -68,7 +68,7 @@ Dans cet exercice, vous allez créer une interface utilisateur pour utiliser les
     La méthode `OnAppearing` remplit [`ListView`](xref:Xamarin.Forms.ListView) avec toutes les données stockées dans la base de données. La méthode `OnButtonClicked`, qui s’exécute après avoir appuyé sur [`Button`](xref:Xamarin.Forms.Button), enregistre les données saisies dans la base de données avant d’effacer les deux instances [`Entry`](xref:Xamarin.Forms.Entry) et d’actualiser les données dans `ListView`.
 
     > [!NOTE]
-    > Le remplacement de la méthode `OnAppearing` est exécuté une fois que [`ContentPage`](xref:Xamarin.Forms.ContentPage) est mis en page, mais juste avant qu’il soit visible. Il représente donc un emplacement idéal pour définir le contenu des affichages Xamarin.Forms.
+    > Le remplacement de la méthode `OnAppearing` est exécuté une fois que [`ContentPage`](xref:Xamarin.Forms.ContentPage) est mis en page, juste avant qu’il soit visible. Il représente donc un emplacement idéal pour définir le contenu des affichages Xamarin.Forms.
 
 1. Dans la barre d’outils Visual Studio, appuyez sur le bouton **Démarrer** (le bouton triangulaire qui ressemble à un bouton de lecture) pour lancer l’application à l’intérieur du simulateur iOS distant ou de l’émulateur Android de votre choix.
 
@@ -78,7 +78,7 @@ Dans cet exercice, vous allez créer une interface utilisateur pour utiliser les
 
     Pour plus d’informations sur les bases de données locales dans Xamarin.Forms, consultez [Bases de données locales Xamarin.Forms (guide)](~/xamarin-forms/data-cloud/data/databases.md)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio pour Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/vsmac)
 
 1. Dans **Panneau Solutions**, dans le projet **LocalDatabaseTutorial**, double-cliquez sur **MainPage.xaml** pour l’ouvrir. Puis, dans **MainPage.xaml**, supprimez tout le code du modèle et remplacez-le par le code suivant :
 
@@ -138,7 +138,7 @@ Dans cet exercice, vous allez créer une interface utilisateur pour utiliser les
     La méthode `OnAppearing` remplit [`ListView`](xref:Xamarin.Forms.ListView) avec toutes les données stockées dans la base de données. La méthode `OnButtonClicked`, qui s’exécute après avoir appuyé sur [`Button`](xref:Xamarin.Forms.Button), enregistre les données saisies dans la base de données avant d’effacer les deux instances [`Entry`](xref:Xamarin.Forms.Entry) et d’actualiser les données dans `ListView`.
 
     > [!NOTE]
-    > Le remplacement de la méthode `OnAppearing` est exécuté une fois que [`ContentPage`](xref:Xamarin.Forms.ContentPage) est mis en page, mais juste avant qu’il soit visible. Il représente donc un emplacement idéal pour définir le contenu des affichages Xamarin.Forms.
+    > Le remplacement de la méthode `OnAppearing` est exécuté une fois que [`ContentPage`](xref:Xamarin.Forms.ContentPage) est mis en page, juste avant qu’il soit visible. Il représente donc un emplacement idéal pour définir le contenu des affichages Xamarin.Forms.
 
 1. Dans la barre d’outils Visual Studio pour Mac, appuyez sur le bouton **Démarrer** (le bouton triangulaire qui ressemble à un bouton de lecture) pour lancer l’application dans le simulateur iOS ou dans l’émulateur Android de votre choix.
 

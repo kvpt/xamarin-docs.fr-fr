@@ -1,12 +1,12 @@
 ---
 ms.openlocfilehash: deb3516cc134a8b2eecba8460931003de8bb312f
-ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/11/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "77135127"
 ---
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. Dans **MainPage.xaml**, modifiez la déclaration [`Entry`](xref:Xamarin.Forms.Entry) pour qu’elle définisse un gestionnaire pour les événements [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) et [`Completed`](xref:Xamarin.Forms.Entry.Completed) :
 
@@ -48,7 +48,7 @@ ms.locfileid: "77135127"
 
     Pour plus d’informations sur les événements [`Entry`](xref:Xamarin.Forms.Entry), consultez la rubrique [Événements et interactivité](~/xamarin-forms/user-interface/text/entry.md#events-and-interactivity) du guide [Entrée de Xamarin.Forms](~/xamarin-forms/user-interface/text/entry.md).
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio pour Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/vsmac)
 
 1. Dans **MainPage.xaml**, modifiez la déclaration [`Entry`](xref:Xamarin.Forms.Entry) pour qu’elle définisse un gestionnaire pour les événements [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) et [`Completed`](xref:Xamarin.Forms.Entry.Completed) :
 

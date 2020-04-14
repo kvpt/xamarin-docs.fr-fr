@@ -1,9 +1,9 @@
 ---
-ms.openlocfilehash: f87367ce7bc7e364147d087cdd126efaa6bf910c
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.openlocfilehash: d6dbc82e56959399c2befb6a12f0a2cf3793ee5b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "67559994"
 ---
 La taille et la position des affichages enfants dans [`StackLayout`](xref:Xamarin.Forms.StackLayout) varient selon les valeurs des propriétés [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) et [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) des affichages enfants et selon les valeurs des propriétés [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) et [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions).
@@ -13,7 +13,7 @@ Les propriétés [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions
 - **Alignement** : les préférences d’alignement de l’affichage enfant, qui déterminent sa position et da taille au sein dans sa mise en page parente.
 - **Extension** : indique si l’affichage enfant doit utiliser un espace supplémentaire, s’il est disponible (utilisé uniquement par [`StackLayout`](xref:Xamarin.Forms.StackLayout)).
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. Dans **MainPage.xaml**, modifiez la déclaration [`StackLayout`](xref:Xamarin.Forms.StackLayout) pour définir les options d’alignement et d’extension pour chaque [`Label`](xref:Xamarin.Forms.Label) :
 
@@ -69,7 +69,7 @@ Les propriétés [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions
 
     Pour plus d’informations sur l’alignement et l’extension, consultez [Options de mise en page dans Xamarin.Forms](~/xamarin-forms/user-interface/layouts/layout-options.md).
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio pour Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/vsmac)
 
 1. Dans **MainPage.xaml**, modifiez la déclaration [`StackLayout`](xref:Xamarin.Forms.StackLayout) pour définir les options d’alignement et d’extension pour chaque [`Label`](xref:Xamarin.Forms.Label) :
 
@@ -124,8 +124,3 @@ Les propriétés [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions
     > Lorsque tout l’espace de [`StackLayout`](xref:Xamarin.Forms.StackLayout) est utilisé, les préférences d’extension n’ont aucun effet.
 
     Pour plus d’informations sur l’alignement et l’extension, consultez [Options de mise en page dans Xamarin.Forms](~/xamarin-forms/user-interface/layouts/layout-options.md).
-
------
-
-> [!div class="nextstepaction"]
-> [J’ai rencontré un problème](https://github.com/MicrosoftDocs/xamarin-docs/issues/new?title=StackLayout+Tutorial+Step+3+Feedback&template=tutorial_template.md)
