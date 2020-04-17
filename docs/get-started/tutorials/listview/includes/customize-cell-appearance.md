@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 3c88b71cea834f5e6ef20d43332904c052c6e3a6
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 04d2a244482c92a615c3eec2130cec1df8aaaf1f
+ms.sourcegitcommit: 89b3e383a37db5b940f0c63bbfe9cb806dc7d5d1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "61037504"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389945"
 ---
 [`ListView`](xref:Xamarin.Forms.ListView) était auparavant rempli avec des données à l’aide d’un mécanisme de liaison de données. Cependant, malgré la liaison de données à une collection, où chaque objet de la collection définissait plusieurs éléments de données, un seul élément de données était affiché par objet (la propriété `Name` de l’objet `Monkey`).
 
@@ -12,7 +12,7 @@ Dans cet exercice, vous allez modifier le projet **ListViewTutorial** pour que [
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
-1. Dans **MainPage.xaml**, modifiez la déclaration [`ListView`](xref:Xamarin.Forms.Image) pour personnaliser l’apparence de chaque ligne :
+1. Dans **MainPage.xaml**, modifiez la déclaration [`ListView`](xref:Xamarin.Forms.ListView) pour personnaliser l’apparence de chaque ligne :
 
     ```xaml
     <ListView ItemsSource="{Binding Monkeys}"
@@ -62,7 +62,7 @@ Dans cet exercice, vous allez modifier le projet **ListViewTutorial** pour que [
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/vsmac)
 
-1. Dans **MainPage.xaml**, modifiez la déclaration [`ListView`](xref:Xamarin.Forms.Image) pour personnaliser l’apparence de chaque ligne :
+1. Dans **MainPage.xaml**, modifiez la déclaration [`ListView`](xref:Xamarin.Forms.ListView) pour personnaliser l’apparence de chaque ligne :
 
     ```xaml
     <ListView ItemsSource="{Binding Monkeys}"

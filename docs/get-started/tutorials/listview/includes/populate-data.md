@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: e03d0ada982cbf1d2954f4b677accc7ce7da793e
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: c1eeece93d5da3092f1bd46c82c98e2304d25139
+ms.sourcegitcommit: 89b3e383a37db5b940f0c63bbfe9cb806dc7d5d1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "69541461"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389984"
 ---
 L’élément [`ListView`](xref:Xamarin.Forms.ListView) est renseigné avec les données à l’aide de la propriété [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource), de type `IEnumerable`. L’étape précédente a permis de remplir l’élément `ListView` dans XAML avec un tableau de chaînes. Toutefois, en général un élément `ListView` est renseigné à l’aide de données issues d’une collection, définie par code-behind, qui implémente `IEnumerable`.
 
@@ -177,7 +177,7 @@ Dans cet exercice, vous modifierez le projet **ListViewTutorial** pour remplir l
     > [!IMPORTANT]
     > La propriété [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) est héritée via l’arborescence d’éléments visuels. Par conséquent, comme elle a été définie sur l’objet [`ContentPage`](xref:Xamarin.Forms.ContentPage), les objets enfants de l’élément `ContentPage` héritent de sa valeur, y compris de [`ListView`](xref:Xamarin.Forms.ListView).
 
-1. Dans **MainPage.xaml**, modifiez la déclaration [`ListView`](xref:Xamarin.Forms.Image) pour définir la propriété [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) sur la collection `Monkeys` :
+1. Dans **MainPage.xaml**, modifiez la déclaration [`ListView`](xref:Xamarin.Forms.ListView) pour définir la propriété [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) sur la collection `Monkeys` :
 
     ```xaml
     <ListView ItemsSource="{Binding Monkeys}" />
@@ -358,7 +358,7 @@ Dans cet exercice, vous modifierez le projet **ListViewTutorial** pour remplir l
     > [!IMPORTANT]
     > La propriété [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) est héritée via l’arborescence d’éléments visuels. Par conséquent, comme elle a été définie sur l’objet [`ContentPage`](xref:Xamarin.Forms.ContentPage), les objets enfants de l’élément `ContentPage` héritent de sa valeur, y compris de [`ListView`](xref:Xamarin.Forms.ListView).
 
-1. Dans **MainPage.xaml**, modifiez la déclaration [`ListView`](xref:Xamarin.Forms.Image) pour définir la propriété [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) sur la collection `Monkeys` :
+1. Dans **MainPage.xaml**, modifiez la déclaration [`ListView`](xref:Xamarin.Forms.ListView) pour définir la propriété [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) sur la collection `Monkeys` :
 
     ```xaml
     <ListView ItemsSource="{Binding Monkeys}" />
