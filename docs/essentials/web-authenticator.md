@@ -5,18 +5,18 @@ ms.assetid: 3D95371E-5D59-440E-8D31-F3C04E493DC1
 author: redth
 ms.author: jodick
 ms.date: 03/26/2020
-ms.openlocfilehash: 82c136e1de7d2aa7f2d7f132b8ee1639ee44aba4
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: b090ea8491afccb7078de8333a44a4888819a46a
+ms.sourcegitcommit: ddd2cb3a102df339bb269380cb2c0617dbb1acb7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "80638158"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81688260"
 ---
 # <a name="xamarinessentials-web-authenticator"></a>Xamarin.Essentials: Électronique
 
 La classe **WebAuthenticator** vous permet d’initier des flux basés sur le navigateur qui écoutent un rappel à une URL spécifique enregistrée à l’application.
 
-## <a name="overview"></a>Vue d’ensemble
+## <a name="overview"></a>Vue d'ensemble
 
 De nombreuses applications nécessitent l’ajout d’authentification utilisateur, ce qui signifie souvent permettre à vos utilisateurs de se connecter à leurs comptes Microsoft, Facebook, Google et maintenant Apple Sign In.
 
@@ -33,7 +33,7 @@ La meilleure pratique ici est d’utiliser un backend web comme couche moyenne e
 > [!IMPORTANT]
 > Nous recommandons fortement de ne pas utiliser d’anciennes bibliothèques d’authentification mobile uniquement et des modèles qui ne tirent pas parti d’un backend web dans le flux d’authentification en raison de leur manque inhérent de sécurité pour stocker les secrets des clients.
 
-## <a name="get-started"></a>Prise en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -163,7 +163,7 @@ if (scheme.Equals("Apple")
     && DeviceInfo.Version.Major >= 13)
 {
     // Use Native Apple Sign In API's
-    r = await AppleSignInAuthenticator AuthenticateAsync();
+    r = await AppleSignInAuthenticator.AuthenticateAsync();
 }
 else
 {
@@ -179,6 +179,7 @@ var accessToken = r?.AccessToken;
 
 > [!TIP]
 > Pour les appareils non-iOS 13, cela démarrera le flux d’authentification web, qui peut également être utilisé pour activer Apple Sign In sur vos appareils Android et UWP.
+> Vous pouvez vous connecter à votre compte iCloud sur votre simulateur iOS pour tester Apple Sign In.
 
 -----
 
