@@ -5,12 +5,12 @@ ms.assetid: B3342772-FB88-4B7F-BC15-8BC78EED749E
 author: JonDouglas
 ms.author: jodou
 ms.date: 09/17/2019
-ms.openlocfilehash: c19c9e5bd279824ea2d3e4e9f88857388f786a2c
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: b26d99c131e9759da3077a767476de38712bcb18
+ms.sourcegitcommit: a9280318bf7bb69e4e5744ee739e76a9cba36b28
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73612271"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82047571"
 ---
 # <a name="android-10-with-xamarin"></a>Android 10 avec Xamarin
 
@@ -33,7 +33,7 @@ La liste suivante est nécessaire pour utiliser les fonctionnalités Android 10 
 - **Java Developer Kit** - Xamarin.Android 10.0 développement nécessite JDK 8. La distribution de Microsoft de l’OpenJDK est automatiquement installée dans le cadre de Visual Studio.
 - **Android SDK** - Android SDK API 29 doit être installé via le gestionnaire Android SDK.
 
-## <a name="get-started"></a>Prise en main
+## <a name="get-started"></a>Bien démarrer
 
 Pour commencer à développer des applications Android 10 avec Xamarin.Android, vous devez télécharger et installer les derniers outils et forfaits SDK avant de pouvoir créer votre premier projet Android 10 :
 
@@ -78,7 +78,7 @@ Lorsque vous créez un projet Android, vous devez configurer les paramètres de 
 
 ### <a name="configure-a-device-or-emulator"></a>Configurer un appareil ou un émulateur
 
-Si vous utilisez un appareil physique tel qu’un Pixel, vous pouvez `System`  >  `System update`  >  télécharger la mise à jour Android 10 en allant dans les `Check for update` paramètres de votre téléphone. Si vous préférez clignoter votre appareil, veuillez consulter les instructions sur le clignotement d’une [image d’usine](https://developers.google.com/android/images) ou [d’une image OTA](https://developers.google.com/android/ota) à votre appareil.
+Si vous utilisez un appareil physique tel qu’un Pixel, vous pouvez télécharger la mise à jour Android 10 en allant à la mise à jour système > Système > Vérifiez la mise à jour dans les paramètres de votre téléphone. Si vous préférez clignoter votre appareil, veuillez consulter les instructions sur le clignotement d’une [image d’usine](https://developers.google.com/android/images) ou [d’une image OTA](https://developers.google.com/android/ota) à votre appareil.
 
 Si vous utilisez un émulateur, créez un appareil virtuel pour le niveau 29 de l’API et sélectionnez une image à base de x86. Pour plus d’informations sur l’utilisation du gestionnaire d’appareils Android pour créer et gérer des appareils virtuels, voir [Gérer les périphériques virtuels avec le gestionnaire d’appareils Android.](https://docs.microsoft.com/xamarin/android/get-started/installation/android-emulator/device-manager) Pour plus d’informations sur l’utilisation de l’émulateur Android pour les tests et le débogage, voir [Debugging sur l’émulateur Android.](https://docs.microsoft.com/xamarin/android/deploy-test/debugging/debug-on-emulator)
 
@@ -124,7 +124,7 @@ Lorsque la version Android cible est réglée au niveau 29 de l’API, il existe
 - [Les autorisations pour les `USE_FULL_SCREEN_INTENT`intentions à écran complet doivent demander ](https://developer.android.com/about/versions/10/behavior-changes-10#full-screen-intents).
 - [Prise en charge des pliables](https://developer.android.com/about/versions/10/behavior-changes-10#foldables).
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article a introduit Android 10 et expliqué comment installer et configurer les derniers outils et paquets pour le développement Xamarin.Android avec Android 10. Il a fourni un aperçu des principales fonctionnalités disponibles dans Android 10. Il comprenait des liens vers la documentation API et des sujets de développeur Android pour vous aider à démarrer dans la création d’applications pour Android 10. Il a également mis en évidence les changements de comportement Android 10 les plus importants qui pourraient avoir un impact sur les applications existantes.
 

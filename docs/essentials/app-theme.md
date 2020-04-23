@@ -5,18 +5,18 @@ ms.assetid: F6F6D496-A8A9-4B9A-AF1A-370D937E5073
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 01/06/2020
-ms.openlocfilehash: e31cae6ff639dbe261599a7cf78ae31fc09318b3
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: f322855f26d7a57acc06e97e0c97ab201c3fa586
+ms.sourcegitcommit: a9280318bf7bb69e4e5744ee739e76a9cba36b28
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79190317"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82047398"
 ---
 # <a name="xamarinessentials-app-theme"></a>Xamarin.Essentials: Thème de l’application
 
 L’API **demandée** fait [`AppInfo`](app-information.md) partie de la classe et fournit des informations sur le thème demandé pour votre application en cours d’exécution par le système.
 
-## <a name="get-started"></a>Prise en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -62,7 +62,7 @@ Non spécifié sera toujours retourné sur les versions d’iOS de plus de 13.0
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
 
-Par défaut, votre application s’exécute à l’aide du thème défini par l’utilisateur dans les paramètres Windows **(Paramètres > Personnalisation > Couleurs > Choisissez votre mode application par défaut**). Vous pouvez définir la propriété RequestedTheme de l’application pour remplacer l’utilisateur par défaut et spécifier quel thème est utilisé.
+Les applications UWP respecteront votre paramètre dans l’application UWP sous **RequestedTheme**. S’il est réglé sur un thème spécifique, Xamarin.Essentials retournera toujours ce paramètre. Pour utiliser le thème dynamique de l’OS supprimer ce nœud de votre application, puis lorsque votre application est exécutée, il retournera le thème défini par l’utilisateur dans les paramètres Windows **(Paramètres > Personnalisation > Couleurs > Choisissez votre mode application par défaut**).
 
 Vous pouvez en savoir plus sur la [documentation thématique demandée par UWP](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.requestedtheme).
 
