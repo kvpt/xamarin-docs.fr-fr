@@ -7,39 +7,39 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/29/2019
-ms.openlocfilehash: 013e126b76de08442327707cd0502f207826dad8
-ms.sourcegitcommit: 3ea19e3a51515b30349d03c70a5b3acd7eca7fe7
+ms.openlocfilehash: ffd8f7cc31707d09bb3442c180a867d31afcef0f
+ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73425600"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82517491"
 ---
 # <a name="xamarinforms-map"></a>Carte Xamarin. Forms
 
-## <a name="initialization-and-configurationsetupmd"></a>[Initialisation et configuration](setup.md)
+## <a name="initialization-and-configuration"></a>[Initialisation et configuration](setup.md)
 
 Le package NuGet [Xamarin. Forms. Maps](https://www.nuget.org/packages/Xamarin.Forms.Maps/) est requis pour utiliser la fonctionnalité Maps dans une application. En outre, l’accès à l’emplacement de l’utilisateur nécessite des autorisations d’emplacement pour être accordé à l’application.
 
-## <a name="map-controlmapmd"></a>[Map Control](map.md)
+## <a name="map-control"></a>[Map Control](map.md)
 
-Le contrôle [`Map`](xref:Xamarin.Forms.Maps.Map) est une vue multiplateforme permettant d’afficher et d’annoter des cartes. Il utilise le contrôle de carte natif pour chaque plateforme, en fournissant une expérience de cartes rapide et familière aux utilisateurs.
+Le [`Map`](xref:Xamarin.Forms.Maps.Map) contrôle est une vue multiplateforme permettant d’afficher et d’annoter des cartes. Il utilise le contrôle de carte natif pour chaque plateforme, en fournissant une expérience de cartes rapide et familière aux utilisateurs.
 
-## <a name="position-and-distanceposition-distancemd"></a>[Position et distance](position-distance.md)
+## <a name="position-and-distance"></a>[Position et distance](position-distance.md)
 
-Le struct [`Position`](xref:Xamarin.Forms.Maps.Position) est généralement utilisé lors du positionnement d’un mappage et de ses codes confidentiels, et du struct [`Distance`](xref:Xamarin.Forms.Maps.Distance) qui peut éventuellement être utilisé lors du positionnement d’un mappage.
+Le [`Position`](xref:Xamarin.Forms.Maps.Position) struct est généralement utilisé lors du positionnement d’un mappage et de ses codes [`Distance`](xref:Xamarin.Forms.Maps.Distance) confidentiels, et du struct qui peut éventuellement être utilisé lors du positionnement d’un mappage.
 
-## <a name="pinspinsmd"></a>[Épingles](pins.md)
+## <a name="pins"></a>[Broches](pins.md)
 
-Le contrôle [`Map`](xref:Xamarin.Forms.Maps.Map) permet aux emplacements d’être marqués avec des objets [`Pin`](xref:Xamarin.Forms.Maps.Pin) . Une `Pin` est un marqueur de carte qui ouvre une fenêtre d’informations lorsqu’elle est exploitée.
+Le [`Map`](xref:Xamarin.Forms.Maps.Map) contrôle permet aux emplacements d’être marqués [`Pin`](xref:Xamarin.Forms.Maps.Pin) avec des objets. Un `Pin` est un marqueur de carte qui ouvre une fenêtre d’informations lorsqu’il est appuyé.
 
-## <a name="polygons-and-polylinespolygonsmd"></a>[Polygones et polylignes](polygons.md)
+## <a name="polygons-polylines-and-circles"></a>[Polygones, polylignes et cercles](polygons.md)
 
-les éléments `Polygon` et `Polyline` vous permettent de mettre en surbrillance des zones spécifiques sur une carte. Une `Polygon` est une forme entièrement incluse qui peut avoir un trait et une couleur de remplissage. Une `Polyline` est une ligne qui ne délimite pas complètement une zone.
+`Polygon`les `Polyline`éléments, `Circle` et vous permettent de mettre en surbrillance des zones spécifiques sur une carte. Un `Polygon` est une forme entièrement incluse qui peut avoir un trait et une couleur de remplissage. Un `Polyline` est une ligne qui ne délimite pas complètement une zone. `Circle` Met en surbrillance une zone circulaire de la carte.
 
-## <a name="geocodinggeocodermd"></a>[Géocodage](geocoder.md)
+## <a name="geocoding"></a>[Géocodage](geocoder.md)
 
-La classe [`Geocoder`](xref:Xamarin.Forms.Maps.Geocoder) convertit entre des adresses de chaîne et des coordonnées de latitude et de longitude stockées dans des objets [`Position`](xref:Xamarin.Forms.Maps.Position) .
+La [`Geocoder`](xref:Xamarin.Forms.Maps.Geocoder) classe effectue une conversion entre des adresses de chaîne et des coordonnées de latitude et [`Position`](xref:Xamarin.Forms.Maps.Position) de longitude stockées dans des objets.
 
-## <a name="launch-the-native-map-appnative-map-appmd"></a>[Lancer l’application Map Native](native-map-app.md)
+## <a name="launch-the-native-map-app"></a>[Lancer l’application Map Native](native-map-app.md)
 
-L’application Map native sur chaque plateforme peut être lancée à partir d’une application Xamarin. Forms par la classe Xamarin. Essentials `Launcher`.
+L’application Map native sur chaque plateforme peut être lancée à partir d’une application Xamarin. Forms par la `Launcher` classe Xamarin. Essentials.

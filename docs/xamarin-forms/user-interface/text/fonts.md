@@ -1,36 +1,36 @@
 ---
-title: Fonts dans Xamarin.Forms
-description: Cet article explique comment spécifier les informations de police sur les contrôles qui affichent le texte dans les applications Xamarin.Forms.
+title: Polices dans Xamarin. Forms
+description: Cet article explique comment spécifier des informations de police sur les contrôles qui affichent du texte dans les applications Xamarin. Forms.
 ms.prod: xamarin
 ms.assetid: 49DD2249-C575-41AE-AE06-08F890FD6031
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2020
-ms.openlocfilehash: ca4d3b242fcc73bb73e8d6ab1f817eefcc2ade4d
-ms.sourcegitcommit: 89b3e383a37db5b940f0c63bbfe9cb806dc7d5d1
+ms.openlocfilehash: 160cbbfa99114d74fa5fdaa5f92b8397ea7d3367
+ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "81388804"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82516478"
 ---
-# <a name="fonts-in-xamarinforms"></a>Fonts dans Xamarin.Forms
+# <a name="fonts-in-xamarinforms"></a>Polices dans Xamarin. Forms
 
-[![Télécharger](~/media/shared/download.png) l’échantillon Télécharger l’échantillon](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfonts)
+[![Télécharger l'](~/media/shared/download.png) exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfonts)
 
-Cet article décrit comment Xamarin.Forms vous permet de spécifier les attributs de police (y compris le poids et la taille) sur les contrôles qui affichent le texte. Les informations de police peuvent être [spécifiées dans le code](#Setting_Font_in_Code) ou [spécifiées dans XAML](#Setting_Font_in_Xaml). Il est également possible d’utiliser une [police personnalisée](#use-a-custom-font), et [afficher des icônes de police](#display-font-icons).
+Cet article explique comment Xamarin. Forms vous permet de spécifier des attributs de police (y compris le poids et la taille) sur les contrôles qui affichent du texte. Les informations de police peuvent être [spécifiées dans le code](#Setting_Font_in_Code) ou [spécifiées en XAML](#Setting_Font_in_Xaml). Il est également possible d’utiliser une [police personnalisée](#use-a-custom-font)et d' [afficher les icônes de police](#display-font-icons).
 
 <a name="Setting_Font_in_Code" />
 
 ## <a name="set-the-font-in-code"></a>Définir la police dans le code
 
-Utilisez les trois propriétés liées à la police de tous les contrôles qui affichent le texte :
+Utilisez les trois propriétés de police de tous les contrôles qui affichent du texte :
 
-- **FontFamily** &ndash; `string` le nom de police.
-- **FontSize** &ndash; la taille `double`de la police comme un .
-- **FontAttribute** &ndash; une chaîne spécifiant des **Bold** informations de `FontAttributes` style comme *Italic* et Bold (en utilisant le recensement dans C).
+- **FontFamily** &ndash; nom `string` de la police.
+- **FontSize** &ndash; la taille de police en tant `double`que.
+- **FontAttributes** &ndash; chaîne spécifiant des informations de style comme *Italic* et **Bold** ( `FontAttributes` à l’aide de l’énumération en C#).
 
-Ce code montre comment créer une étiquette et spécifier la taille et le poids de la police pour afficher :
+Ce code montre comment créer une étiquette et spécifier la taille de police et le poids à afficher :
 
 ```csharp
 var about = new Label
@@ -45,35 +45,35 @@ var about = new Label
 
 ### <a name="font-size"></a>Taille de la police
 
-La `FontSize` propriété peut être réglée à une double valeur, par exemple :
+La `FontSize` propriété peut être définie sur une valeur double, par exemple :
 
 ```csharp
 label.FontSize = 24;
 ```
 
-La valeur de taille est mesurée en unités indépendantes de l’appareil. Pour plus d’informations, voir [Unités de mesure](~/xamarin-forms/user-interface/controls/common-properties.md#units-of-measurement).
+La valeur de taille est mesurée en unités indépendantes du périphérique. Pour plus d’informations, consultez [unités de mesure](~/xamarin-forms/user-interface/controls/common-properties.md#units-of-measurement).
 
-Xamarin.Forms définit également les [`NamedSize`](xref:Xamarin.Forms.NamedSize) champs dans le recensement qui représentent des tailles spécifiques de police. Pour plus d’informations sur les tailles de police nommées, voir [les tailles de police nommées](#named-font-sizes).
+Xamarin. Forms définit également les champs [`NamedSize`](xref:Xamarin.Forms.NamedSize) de l’énumération qui représentent des tailles de police spécifiques. Pour plus d’informations sur les tailles de police nommées, consultez [tailles de police nommées](#named-font-sizes).
 
 <a name="FontAttributes" />
 
 ### <a name="font-attributes"></a>Attributs de police
 
-Des styles de police tels que **gras** `FontAttributes` et *italiques* peuvent être placés sur la propriété. Les valeurs suivantes sont actuellement prises en charge :
+Les styles de police tels que **gras** et *italique* peuvent être définis `FontAttributes` sur la propriété. Les valeurs suivantes sont actuellement prises en charge :
 
 - **Aucun**
-- **Gras**
+- **Format**
 - **Italique**
 
-L’énumération `FontAttribute` peut être utilisée comme suit (vous `OR` pouvez spécifier un attribut unique ou eux ensemble):
+L' `FontAttribute` énumération peut être utilisée comme suit (vous pouvez spécifier un seul attribut `OR` ou les deux) :
 
 ```csharp
 label.FontAttributes = FontAttributes.Bold | FontAttributes.Italic;
 ```
 
-### <a name="set-font-info-per-platform"></a>Définissez des informations de police par plate-forme
+### <a name="set-font-info-per-platform"></a>Définir les informations de police par plateforme
 
-Alternativement, `Device.RuntimePlatform` la propriété peut être utilisée pour définir différents noms de police sur chaque plate-forme, comme démontré dans ce code:
+La `Device.RuntimePlatform` propriété peut également être utilisée pour définir différents noms de polices sur chaque plateforme, comme illustré dans ce code :
 
 ```csharp
 label.FontFamily = Device.RuntimePlatform == Device.iOS ? "MarkerFelt-Thin" :
@@ -82,20 +82,20 @@ label.FontSize = Device.RuntimePlatform == Device.iOS ? 24 :
    Device.RuntimePlatform == Device.Android ? Device.GetNamedSize(NamedSize.Medium, label) : Device.GetNamedSize(NamedSize.Large, label);
 ```
 
-Une bonne source d’informations de police pour iOS est [iosfonts.com](http://iosfonts.com).
+[Iosfonts.com](http://iosfonts.com)est une bonne source d’informations sur les polices pour iOS.
 
 <a name="Setting_Font_in_Xaml" />
 
-## <a name="set-the-font-in-xaml"></a>Réglez la police dans XAML
+## <a name="set-the-font-in-xaml"></a>Définir la police en XAML
 
-Xamarin.Forms contrôle que le `FontSize` texte d’affichage ont tous une propriété qui peut être définie dans XAML. La façon la plus simple de définir la police dans XAML est d’utiliser les valeurs d’énumération de taille nommées, comme le montre cet exemple :
+Les contrôles Xamarin. Forms qui affichent du `FontSize` texte ont tous une propriété qui peut être définie en XAML. La façon la plus simple de définir la police en XAML consiste à utiliser les valeurs d’énumération de taille nommée, comme indiqué dans cet exemple :
 
 ```xaml
 <Label Text="Login" FontSize="Large"/>
 <Label Text="Instructions" FontSize="Small"/>
 ```
 
-Il y a un convertisseur `FontSize` intégré pour la propriété qui permet à tous les paramètres de police d’être exprimés comme une valeur de chaîne dans XAML. En outre, `FontAttributes` la propriété peut être utilisée pour spécifier les attributs de police :
+Il existe un convertisseur intégré pour la propriété qui `FontSize` permet d’exprimer tous les paramètres de police sous la forme d’une valeur de chaîne en XAML. En outre, la `FontAttributes` propriété peut être utilisée pour spécifier les attributs de police :
 
 ```xaml
 <Label Text="Italics are supported" FontAttributes="Italic" />
@@ -103,7 +103,7 @@ Il y a un convertisseur `FontSize` intégré pour la propriété qui permet à t
 <Label Text="Use size 72" FontSize="72" />
 ```
 
-La [`Device.RuntimePlatform`](~/xamarin-forms/platform/device.md#providing-platform-specific-values) propriété peut également être utilisée dans XAML pour rendre une police différente sur chaque plate-forme. L’exemple ci-dessous utilise différentes polices sur chaque plate-forme :
+La [`Device.RuntimePlatform`](~/xamarin-forms/platform/device.md#provide-platform-specific-values) propriété peut également être utilisée en XAML pour restituer une police différente sur chaque plateforme. L’exemple ci-dessous utilise des polices différentes sur chaque plateforme :
 
 ```xaml
 <Label Text="Hello Forms with XAML">
@@ -119,14 +119,14 @@ La [`Device.RuntimePlatform`](~/xamarin-forms/platform/device.md#providing-platf
 
 ## <a name="named-font-sizes"></a>Tailles de police nommées
 
-Xamarin.Forms définit les [`NamedSize`](xref:Xamarin.Forms.NamedSize) champs dans le recensement qui représentent des tailles spécifiques de police. Le tableau suivant `NamedSize` montre les membres, et leurs tailles par défaut sur iOS, Android, et la plate-forme Windows universelle (UWP):
+Xamarin. Forms définit les champs [`NamedSize`](xref:Xamarin.Forms.NamedSize) de l’énumération qui représentent des tailles de police spécifiques. Le tableau suivant présente les `NamedSize` membres et leurs tailles par défaut sur iOS, Android et le plateforme Windows universelle (UWP) :
 
 | Membre | iOS | Android | UWP |
 | --- | --- | --- | --- |
 | `Default` | 16 | 14 | 14 |
-| `Micro` | 11 | 10 | 15.667 |
-| `Small` | 13 | 14 | 18.667 |
-| `Medium` | 16 | 17 | 22.667 |
+| `Micro` | 11 | 10 | 15,667 |
+| `Small` | 13 | 14 | 18,667 |
+| `Medium` | 16 | 17 | 22,667 |
 | `Large` | 20 | 22 | 32 |
 | `Body` | 17 | 16 | 14 |
 | `Header` | 17 | 96 | 46 |
@@ -134,28 +134,28 @@ Xamarin.Forms définit les [`NamedSize`](xref:Xamarin.Forms.NamedSize) champs da
 | `Subtitle` | 22 | 16 | 20 |
 | `Caption` | 12 | 12 | 12 |
 
-Les valeurs de taille sont mesurées en unités indépendantes des appareils. Pour plus d’informations, voir [Unités de mesure](~/xamarin-forms/user-interface/controls/common-properties.md#units-of-measurement).
+Les valeurs de taille sont mesurées en unités indépendantes du périphérique. Pour plus d’informations, consultez [unités de mesure](~/xamarin-forms/user-interface/controls/common-properties.md#units-of-measurement).
 
-Les tailles de police nommées peuvent être définies à la fois par XAML et le code. En outre, `Device.GetNamedSize` la méthode peut `double` être appelée pour retourner un qui représente la taille de police nommée:
+Les tailles de police nommées peuvent être définies à l’aide de XAML et de code. En outre, la `Device.GetNamedSize` méthode peut être appelée pour retourner un `double` qui représente la taille de police nommée :
 
 ```csharp
 label.FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label));
 ```
 
 > [!NOTE]
-> Sur iOS et Android, les tailles de police nommées seront autoscale basées sur les options d’accessibilité du système d’exploitation. Ce comportement peut être désactivé sur iOS avec une plate-forme spécifique. Pour plus d’informations, voir [Accessibilité Mise à l’échelle pour les tailles de fontes nommées sur iOS](~/xamarin-forms/platform/ios/named-font-size-scaling.md).
+> Sur iOS et Android, les tailles de police nommées seront mises à l’échelle automatiquement en fonction des options d’accessibilité du système d’exploitation. Ce comportement peut être désactivé sur iOS avec un spécifique à la plateforme. Pour plus d’informations, consultez [mise à l’échelle de l’accessibilité pour les tailles de police nommées sur iOS](~/xamarin-forms/platform/ios/named-font-size-scaling.md).
 
-## <a name="use-a-custom-font"></a>Utilisez une police personnalisée
+## <a name="use-a-custom-font"></a>Utiliser une police personnalisée
 
-Les polices personnalisées peuvent être ajoutées à votre projet partagé Xamarin.Forms et consommées par des projets de plate-forme sans aucun travail supplémentaire. Pour ce faire, procédez comme suit :
+Des polices personnalisées peuvent être ajoutées à votre projet partagé Xamarin. Forms et utilisées par des projets de plateforme sans aucun travail supplémentaire. Pour ce faire, procédez comme suit :
 
-1. Ajoutez la police à votre projet partagé Xamarin.Forms en tant que ressource intégrée (**Build Action: EmbeddedResource**).
-1. Enregistrez le fichier de police auprès de l’assemblage, `ExportFont` dans un fichier tel que **AssemblyInfo.cs,** en utilisant l’attribut. Un alias optionnel peut également être spécifié.
+1. Ajoutez la police à votre projet partagé Xamarin. Forms en tant que ressource incorporée (**action de génération : EmbeddedResource**).
+1. Enregistrez le fichier de polices avec l’assembly, dans un fichier tel que **AssemblyInfo.cs**, `ExportFont` à l’aide de l’attribut. Un alias facultatif peut également être spécifié.
 
 > [!IMPORTANT]
-> Les polices embarquées nécessitent l’utilisation de Xamarin.Forms 4.5.0.530 ou plus.
+> Les polices incorporées requièrent l’utilisation de Xamarin. Forms 4.5.0.530 ou version ultérieure.
 
-L’exemple suivant montre que la police Homard-Régulière est enregistrée auprès de l’assemblage, ainsi qu’un alias :
+L’exemple suivant illustre la police régulière de la homard inscrite avec l’assembly, ainsi qu’un alias :
 
 ```csharp
 using Xamarin.Forms;
@@ -164,9 +164,9 @@ using Xamarin.Forms;
 ```
 
 > [!NOTE]
-> La police peut résider dans n’importe quel dossier du projet partagé, sans avoir à spécifier le nom du dossier lors de l’enregistrement de la police avec l’assemblage.
+> La police peut résider dans n’importe quel dossier du projet partagé, sans qu’il soit nécessaire de spécifier le nom du dossier lors de l’inscription de la police avec l’assembly.
 
-La police peut ensuite être consommée sur chaque plate-forme en faisant référence à son nom, sans l’extension du fichier :
+La police peut ensuite être consommée sur chaque plateforme en référençant son nom, sans l’extension de fichier :
 
 ```xaml
 <!-- Use font name -->
@@ -174,7 +174,7 @@ La police peut ensuite être consommée sur chaque plate-forme en faisant réfé
        FontFamily="Lobster-Regular" />
 ```
 
-Alternativement, il peut être consommé sur chaque plate-forme en faisant référence à son alias :
+Il peut également être consommé sur chaque plateforme en référençant son alias :
 
 ```xaml
 <!-- Use font alias -->
@@ -200,28 +200,28 @@ Label label2 = new Label
 };
 ```
 
-Les captures d’écran suivantes montrent la police personnalisée :
+Les captures d’écran suivantes illustrent la police personnalisée :
 
-[![Police personnalisée sur iOS et Android](fonts-images/custom-sml.png "Personnalisé Polices Exemple")](fonts-images/custom.png#lightbox "Personnalisé Polices Exemple")
+[![Police personnalisée sur iOS et Android](fonts-images/custom-sml.png "Exemple de polices personnalisées")](fonts-images/custom.png#lightbox "Exemple de polices personnalisées")
 
 > [!IMPORTANT]
-> Sur Windows, le nom du fichier de police et le nom de police peuvent être différents. Pour découvrir le nom de police sur Windows, cliquez à droite sur le fichier .ttf et **sélectionnez Aperçu**. Le nom de la police peut alors être déterminé à partir de la fenêtre d’aperçu.
+> Sur Windows, le nom du fichier de police et le nom de la police peuvent être différents. Pour découvrir le nom de police sur Windows, cliquez avec le bouton droit sur le fichier. ttf, puis sélectionnez **Aperçu**. Le nom de la police peut ensuite être déterminé à partir de la fenêtre d’aperçu.
 
 ## <a name="display-font-icons"></a>Afficher les icônes de police
 
-Les icônes de police peuvent être affichées par les applications `FontImageSource` Xamarin.Forms en spécifiant les données de l’icône de police dans un objet. Cette classe, qui dérive [`ImageSource`](xref:Xamarin.Forms.ImageSource) de la classe, a les propriétés suivantes:
+Les icônes de police peuvent être affichées par les applications Xamarin. Forms en spécifiant les `FontImageSource` données d’icône de police dans un objet. Cette classe, qui dérive de la [`ImageSource`](xref:Xamarin.Forms.ImageSource) classe, a les propriétés suivantes :
 
-- `Glyph`la valeur de caractère unicode de l’icône de police, spécifiée comme un `string`.
-- `Size`une `double` valeur qui indique la taille, dans les unités indépendantes de l’appareil, de l’icône de police rendue. La valeur par défaut est 30. En outre, cette propriété peut être réglée à une taille de police nommée.
-- `FontFamily`- `string` une représentation de la famille de police à laquelle appartient l’icône de police.
-- `Color`une valeur [`Color`](xref:Xamarin.Forms.Color) facultative à utiliser lors de l’affichage de l’icône de police.
+- `Glyph`: valeur de caractère Unicode de l’icône de police, spécifiée comme `string`.
+- `Size`: `double` valeur qui indique la taille, en unités indépendantes du périphérique, de l’icône de police rendue. La valeur par défaut est 30. En outre, cette propriété peut être définie sur une taille de police nommée.
+- `FontFamily`: `string` représentant la famille de polices à laquelle l’icône de police appartient.
+- `Color`: valeur facultative [`Color`](xref:Xamarin.Forms.Color) à utiliser lors de l’affichage de l’icône de police.
 
-Ces données sont utilisées pour créer un PNG, qui peut `ImageSource`être affiché par n’importe quelle vue qui peut afficher un . Cette approche permet aux icônes de police, telles que les emojis, d’être affichées par plusieurs [`Label`](xref:Xamarin.Forms.Label)vues, plutôt que de limiter l’affichage de l’icône de police à un seul texte présentant la vue, comme un .
+Ces données sont utilisées pour créer un PNG, qui peut être affiché par n’importe quelle vue pouvant afficher `ImageSource`un. Cette approche permet d’afficher des icônes de police, telles que des emoji, par le biais de plusieurs vues, au lieu de limiter l’affichage des icônes de police à un seul [`Label`](xref:Xamarin.Forms.Label)affichage de texte, tel qu’un.
 
 > [!IMPORTANT]
-> Les icônes de police ne peuvent actuellement être spécifiées que par leur représentation de caractère unicode.
+> Les icônes de police ne peuvent être spécifiées que par leur représentation de caractère Unicode.
 
-L’exemple XAML suivant a une seule [`Image`](xref:Xamarin.Forms.Image) icône de police affichée par une vue :
+L’exemple XAML suivant a une icône de police unique qui est affichée [`Image`](xref:Xamarin.Forms.Image) par une vue :
 
 ```xaml
 <Image BackgroundColor="#D1D1D1">
@@ -233,7 +233,7 @@ L’exemple XAML suivant a une seule [`Image`](xref:Xamarin.Forms.Image) icône 
 </Image>
 ```
 
-Ce code affiche une icône XBox, de la [`Image`](xref:Xamarin.Forms.Image) famille de polices Ionicons, dans une vue. Notez que si le caractère `\uf30c`unicode pour cette icône est , `&#xf30c;`il doit être échappé dans XAML et devient donc . Le code C# équivalent est :
+Ce code affiche une icône XBox, à partir de la famille de polices Ionicons [`Image`](xref:Xamarin.Forms.Image) , dans une vue. Notez que, si le caractère Unicode de cette icône `\uf30c`est, il doit être placé dans une séquence d’échappement en `&#xf30c;`XAML et devient donc. Le code C# équivalent est :
 
 ```csharp
 Image image = new Image { BackgroundColor = Color.FromHex("#D1D1D1") };
@@ -245,13 +245,13 @@ image.Source = new FontImageSource
 };
 ```
 
-Les captures d’écran suivantes, tirées de l’échantillon [Bindable Layouts,](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-bindablelayouts) montrent plusieurs icônes de police affichées par une mise en page liant :
+Les captures d’écran suivantes de l’exemple de [dispositions pouvant être liées](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-bindablelayouts) affichent plusieurs icônes de police affichées par une disposition pouvant être liée :
 
 ![Capture d’écran des icônes de police affichées, sur iOS et Android](fonts-images/font-image-source.png "Icônes de police affichées dans une vue d’image")
 
 ## <a name="related-links"></a>Liens connexes
 
 - [FontsSample](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfonts)
-- [Texte (échantillon)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
-- [Mises en page liant (échantillon)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-bindablelayouts)
-- [Mises en page liants](~/xamarin-forms/user-interface/layouts/bindable-layouts.md)
+- [Texte (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
+- [Dispositions pouvant être liées (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-bindablelayouts)
+- [Dispositions pouvant être liées](~/xamarin-forms/user-interface/layouts/bindable-layouts.md)

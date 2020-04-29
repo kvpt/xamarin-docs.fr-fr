@@ -6,19 +6,19 @@ ms.assetid: 60460F57-63C6-4916-BBB5-A870F1DF53D7
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/21/2020
-ms.openlocfilehash: bf9c06dae0df7da1cc69a85d8436376494039959
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.date: 04/17/2020
+ms.openlocfilehash: b4eeb776cafa131f13eb70aca5bd20df6eafa07f
+ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79305128"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82516726"
 ---
 # <a name="xamarinforms-triggers"></a>Déclencheurs Xamarin.Forms
 
-[![Télécharger](~/media/shared/download.png) l’échantillon Télécharger l’échantillon](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithtriggers)
+[![Télécharger l'](~/media/shared/download.png) exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithtriggers)
 
-Les déclencheurs vous permettent d’exprimer des actions de manière déclarative en XAML. Les actions en question modifient l’apparence des contrôles en fonction des événements ou des modifications apportées aux propriétés. En outre, les déclencheurs de l’État, qui [`VisualState`](xref:Xamarin.Forms.VisualState) sont un groupe spécialisé de déclencheurs, définissent quand un doit être appliqué.
+Les déclencheurs vous permettent d’exprimer des actions de manière déclarative en XAML. Les actions en question modifient l’apparence des contrôles en fonction des événements ou des modifications apportées aux propriétés. En outre, les déclencheurs d’État, qui sont un groupe spécialisé de déclencheurs, définissent quand un [`VisualState`](xref:Xamarin.Forms.VisualState) doit être appliqué.
 
 Vous pouvez affecter directement un déclencheur à un contrôle, ou vous pouvez l’ajouter à un dictionnaire de ressources de niveau page ou de niveau application afin de l’appliquer à plusieurs contrôles.
 
@@ -51,9 +51,9 @@ Les parties importantes de la déclaration d’un déclencheur sont :
 
 - **EnterActions et ExitActions** (non montrés ici) : sont écrits en code et peuvent être utilisés en plus des éléments `Setter` (ou à leur place). Ils sont [décrits ci-dessous](#enteractions-and-exitactions).
 
-### <a name="applying-a-trigger-using-a-style"></a>Appliquer un déclencheur à l’aide d’un style
+### <a name="applying-a-trigger-using-a-style"></a>Application d’un déclencheur à l’aide d’un style
 
-Les déclencheurs peuvent également être ajoutés à une déclaration `Style` dans le `ResourceDictionary` d’un contrôle, d’une page ou d’une d’application. Cet exemple déclare un style implicite (c’est-à-dire qu’aucun n’est `Key` réglé) ce qui signifie qu’il s’appliquera à tous les `Entry` contrôles de la page.
+Les déclencheurs peuvent également être ajoutés à une déclaration `Style` dans le `ResourceDictionary` d’un contrôle, d’une page ou d’une d’application. Cet exemple déclare un style implicite (c’est-à-dire qu’aucun `Key` n’est défini), ce qui signifie qu’il `Entry` s’applique à tous les contrôles de la page.
 
 ```xaml
 <ContentPage.Resources>
@@ -103,7 +103,7 @@ qui est celle utilisée pour référencer les propriétés d’un autre contrôl
 > [!TIP]
 > Lorsque vous évaluez `Path=Text.Length`, fournissez toujours une valeur par défaut pour la propriété cible (par exemple, `Text=""`), car sinon, sa valeur sera `null` et le déclencheur ne fonctionnera pas comme prévu.
 
-En plus de `Setter`spécifier s, vous pouvez également fournir [ `EnterActions` et `ExitActions` ](#enteractions-and-exitactions).
+En plus de spécifier `Setter` [ `EnterActions` des s, `ExitActions` ](#enteractions-and-exitactions)vous pouvez également fournir et.
 
 ## <a name="event-triggers"></a>Déclencheurs d’événement
 
@@ -157,7 +157,7 @@ Soyez prudent lorsque vous partagez des déclencheurs dans un `ResourceDictionar
 
 Notez que les déclencheurs d’événements ne prennent pas en charge `EnterActions` et  qui sont `ExitActions`    [décrits plus bas](#enteractions-and-exitactions).
 
-## <a name="multi-triggers"></a>Déclencheurs multi
+## <a name="multi-triggers"></a>Déclencheurs multiples
 
 Un `MultiTrigger` est similaire à un `Trigger` ou à un `DataTrigger`, à ceci près qu’il peut avoir plusieurs conditions. Toutes les conditions doivent être remplies avant que les `Setter` ne soient déclenchés.
 
@@ -260,10 +260,10 @@ Dans la partie inférieure de l’écran, le bouton **Login** (Connexion) reste 
 
 Une autre façon d’implémenter des modifications lorsqu’un déclencheur est activé est d’ajouter des collections `EnterActions` et `ExitActions`, et de spécifier des implémentations `TriggerAction<T>`.
 
-La [`EnterActions`](xref:Xamarin.Forms.TriggerBase.EnterActions) collection est utilisée `IList` [`TriggerAction`](xref:Xamarin.Forms.TriggerAction) pour définir un des objets qui seront invoqués lorsque la condition de déclenchement est remplie. La [`ExitActions`](xref:Xamarin.Forms.TriggerBase.ExitActions) collection est utilisée `IList` `TriggerAction` pour définir un des objets qui seront invoqués après que la condition de déclenchement n’est plus remplie.
+La [`EnterActions`](xref:Xamarin.Forms.TriggerBase.EnterActions) collection est utilisée pour définir un `IList` des [`TriggerAction`](xref:Xamarin.Forms.TriggerAction) objets qui seront appelés lorsque la condition de déclenchement sera remplie. La [`ExitActions`](xref:Xamarin.Forms.TriggerBase.ExitActions) collection est utilisée pour définir un `IList` des `TriggerAction` objets qui seront appelés une fois que la condition de déclencheur n’est plus remplie.
 
 > [!NOTE]
-> Les [`TriggerAction`](xref:Xamarin.Forms.TriggerAction) objets définis `ExitActions` dans le [`EventTrigger`](xref:Xamarin.Forms.EventTrigger) et les `EnterActions` collections sont ignorés par la classe.    
+> Les [`TriggerAction`](xref:Xamarin.Forms.TriggerAction) objets définis dans les `EnterActions` collections `ExitActions` et sont ignorés par [`EventTrigger`](xref:Xamarin.Forms.EventTrigger) la classe.    
 
 Vous pouvez fournir *à la fois* `EnterActions` et `ExitActions` ainsi que des `Setter` dans un déclencheur. Sachez toutefois que les `Setter` sont appelés immédiatement (ils n’attendent pas la fin de `EnterAction` ou de `ExitAction`). Vous pouvez également tout effectuer dans le code sans utiliser de `Setter`.
 
@@ -314,39 +314,39 @@ public class FadeTriggerAction : TriggerAction<VisualElement>
 }
 ```
 
-## <a name="state-triggers"></a>Déclencheurs de l’État
+## <a name="state-triggers"></a>Déclencheurs d’État
 
-Les déclencheurs de l’État ont été introduits dans Xamarin.Forms 4.5, [`VisualState`](xref:Xamarin.Forms.VisualState) et sont un groupe spécialisé de déclencheurs qui définissent les conditions dans lesquelles un doit être appliqué. Cependant, ils sont actuellement expérimentaux et ne peuvent être utilisés qu’en ajoutant la ligne de code suivante à votre fichier *App.xaml.cs* :
+Les déclencheurs d’État ont été introduits dans Xamarin. Forms 4,5 et sont un groupe spécialisé de déclencheurs qui définissent [`VisualState`](xref:Xamarin.Forms.VisualState) les conditions dans lesquelles un doit être appliqué. Toutefois, ils sont actuellement expérimentaux et ne peuvent être utilisés qu’en ajoutant la ligne de code suivante à votre fichier *app.Xaml.cs* :
 
 ```csharp
 Device.SetFlags(new string[]{ "StateTriggers_Experimental" });
 ```
 
-Les déclencheurs d’état sont ajoutés à la [`StateTriggers`](xref:Xamarin.Forms.VisualState.StateTriggers) collection d’un [`VisualState`](xref:Xamarin.Forms.VisualState). Cette collection peut contenir un déclencheur d’état unique, ou plusieurs déclencheurs d’état. A [`VisualState`](xref:Xamarin.Forms.VisualState) sera appliqué lorsque les déclencheurs d’état de la collection sont actifs.
+Les déclencheurs d’État sont ajoutés [`StateTriggers`](xref:Xamarin.Forms.VisualState.StateTriggers) à la collection [`VisualState`](xref:Xamarin.Forms.VisualState)d’un. Cette collection peut contenir un seul déclencheur d’État ou plusieurs déclencheurs d’État. [`VisualState`](xref:Xamarin.Forms.VisualState) Est appliqué lorsque tous les déclencheurs d’état de la collection sont actifs.
 
-Lors de l’utilisation des déclencheurs d’état pour contrôler les états visuels, [`VisualState`](xref:Xamarin.Forms.VisualState)Xamarin.Forms utilise les règles de préséance suivantes pour déterminer quel déclencheur (et correspondant) sera actif :
+Lorsque vous utilisez des déclencheurs d’État pour contrôler les États visuels, Xamarin. Forms utilise les règles de précédence suivantes pour [`VisualState`](xref:Xamarin.Forms.VisualState)déterminer le déclencheur (et correspondant) à activer :
 
-1. Tout déclencheur qui [`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase)dérive de .
-1. Un [`AdaptiveTrigger`](xref:Xamarin.Forms.AdaptiveTrigger) activé en [`MinWindowWidth`](xref:Xamarin.Forms.AdaptiveTrigger.MinWindowWidth) raison de la condition étant remplie.
-1. Un [`AdaptiveTrigger`](xref:Xamarin.Forms.AdaptiveTrigger) activé en [`MinWindowHeight`](xref:Xamarin.Forms.AdaptiveTrigger.MinWindowHeight) raison de la condition étant remplie.
+1. Tout déclencheur qui dérive [`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase)de.
+1. [`AdaptiveTrigger`](xref:Xamarin.Forms.AdaptiveTrigger) Activé en raison de la [`MinWindowWidth`](xref:Xamarin.Forms.AdaptiveTrigger.MinWindowWidth) satisfaction de la condition.
+1. [`AdaptiveTrigger`](xref:Xamarin.Forms.AdaptiveTrigger) Activé en raison de la [`MinWindowHeight`](xref:Xamarin.Forms.AdaptiveTrigger.MinWindowHeight) satisfaction de la condition.
 
-Si plusieurs déclencheurs sont simultanément actifs (par exemple, deux déclencheurs personnalisés), le premier déclencheur déclaré dans la balisage prime.
+Si plusieurs déclencheurs sont actifs simultanément (par exemple, deux déclencheurs personnalisés), le premier déclencheur déclaré dans le balisage est prioritaire.
 
 > [!NOTE]
-> Les déclencheurs d’état [`Style`](xref:Xamarin.Forms.Style)peuvent être réglés dans un, ou directement sur des éléments.
+> Les déclencheurs d’État peuvent être définis [`Style`](xref:Xamarin.Forms.Style)dans un, ou directement sur des éléments.
 
-Pour plus d’informations sur les états visuels, voir [Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md).
+Pour plus d’informations sur les États visuels, consultez [Xamarin. Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md).
 
-### <a name="state-trigger"></a>Déclencheur de l’État
+### <a name="state-trigger"></a>Déclencheur d’État
 
-La [`StateTrigger`](xref:Xamarin.Forms.StateTrigger) classe, qui dérive [`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase) de la [`IsActive`](xref:Xamarin.Forms.StateTrigger.IsActive) classe, a une propriété liant. Un `StateTrigger` déclenche [`VisualState`](xref:Xamarin.Forms.VisualState) un changement `IsActive` lorsque la propriété change de valeur.
+La [`StateTrigger`](xref:Xamarin.Forms.StateTrigger) classe, qui dérive de la [`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase) classe, a une [`IsActive`](xref:Xamarin.Forms.StateTrigger.IsActive) propriété pouvant être liée. Un `StateTrigger` déclenche une [`VisualState`](xref:Xamarin.Forms.VisualState) modification lorsque la `IsActive` propriété change de valeur.
 
-La [`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase) classe, qui est la classe de base [`IsActive`](xref:Xamarin.Forms.StateTriggerBase.IsActive) pour [`IsActiveChanged`](xref:Xamarin.Forms.StateTriggerBase.IsActiveChanged) tous les déclencheurs de l’État, a une propriété et un événement. Cet événement s’déclenche chaque fois qu’un [`VisualState`](xref:Xamarin.Forms.VisualState) changement se produit.
+La [`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase) classe, qui est la classe de base pour tous les déclencheurs d’état [`IsActive`](xref:Xamarin.Forms.StateTriggerBase.IsActive) , a une [`IsActiveChanged`](xref:Xamarin.Forms.StateTriggerBase.IsActiveChanged) propriété et un événement. Cet événement se déclenche chaque [`VisualState`](xref:Xamarin.Forms.VisualState) fois qu’une modification se produit. En outre, la `StateTriggerBase` classe a des méthodes `OnAttached` substituables et `OnDetached` .
 
 > [!IMPORTANT]
-> La [`StateTrigger.IsActive`](xref:Xamarin.Forms.StateTrigger.IsActive) propriété liant cache [`StateTriggerBase.IsActive`](xref:Xamarin.Forms.StateTriggerBase.IsActive) la propriété héritée.
+> La [`StateTrigger.IsActive`](xref:Xamarin.Forms.StateTrigger.IsActive) propriété pouvant être liée masque la propriété [`StateTriggerBase.IsActive`](xref:Xamarin.Forms.StateTriggerBase.IsActive) héritée.
 
-L’exemple XAML [`Style`](xref:Xamarin.Forms.Style) suivant [`StateTrigger`](xref:Xamarin.Forms.StateTrigger) montre un qui inclut des objets :
+L’exemple de code XAML suivant [`Style`](xref:Xamarin.Forms.Style) montre un [`StateTrigger`](xref:Xamarin.Forms.StateTrigger) qui comprend des objets :
 
 ```xaml
 <Style TargetType="Grid">
@@ -379,9 +379,9 @@ L’exemple XAML [`Style`](xref:Xamarin.Forms.Style) suivant [`StateTrigger`](xr
 </Style>
 ```
 
-Dans cet exemple, [`Style`](xref:Xamarin.Forms.Style) [`Grid`](xref:Xamarin.Forms.Grid) les cibles implicites s’opposent. Lorsque `IsToggled` la propriété de `true`l’objet lié `Grid` est, la couleur de fond de la est réglée au noir. Lorsque `IsToggled` la propriété de `false`l’objet lié devient , un [`VisualState`](xref:Xamarin.Forms.VisualState) `Grid` changement est déclenché, et la couleur de fond de la devient blanche.
+Dans cet exemple, les objets [`Style`](xref:Xamarin.Forms.Style) cibles [`Grid`](xref:Xamarin.Forms.Grid) implicites. Lorsque la `IsToggled` propriété de l’objet lié est `true`, la couleur d’arrière- `Grid` plan du est définie sur noir. Lorsque la `IsToggled` propriété de l’objet lié devient `false`, une [`VisualState`](xref:Xamarin.Forms.VisualState) modification est déclenchée et la couleur d’arrière-plan `Grid` du devient blanche.
 
-En outre, chaque [`VisualState`](xref:Xamarin.Forms.VisualState) fois qu’un changement se produit, l’événement [`IsActiveChanged`](xref:Xamarin.Forms.StateTriggerBase.IsActiveChanged) pour le `VisualState` est tiré. Chacun `VisualState` enregistre un gestionnaire d’événements pour cet événement :
+En outre, chaque fois qu' [`VisualState`](xref:Xamarin.Forms.VisualState) une modification se produit [`IsActiveChanged`](xref:Xamarin.Forms.StateTriggerBase.IsActiveChanged) , l’événement `VisualState` pour est déclenché. Chaque `VisualState` inscrit un gestionnaire d’événements pour cet événement :
 
 ```csharp
 void OnCheckedStateIsActiveChanged(object sender, EventArgs e)
@@ -397,7 +397,7 @@ void OnUncheckedStateIsActiveChanged(object sender, EventArgs e)
 }
 ```
 
-Dans cet exemple, lorsqu’un gestionnaire de l’événement [`IsActiveChanged`](xref:Xamarin.Forms.StateTriggerBase.IsActiveChanged) [`VisualState`](xref:Xamarin.Forms.VisualState) est congédié, le gestionnaire sort si le gestionnaire est actif ou non. Par exemple, les messages suivants sont la sortie `Checked` vers la `Unchecked` fenêtre de la console lors du passage de l’état visuel à l’état visuel :
+Dans cet exemple, lorsqu’un gestionnaire pour l' [`IsActiveChanged`](xref:Xamarin.Forms.StateTriggerBase.IsActiveChanged) événement est déclenché, le gestionnaire indique si le [`VisualState`](xref:Xamarin.Forms.VisualState) est actif ou non. Par exemple, les messages suivants sont générés dans la fenêtre de console lors du `Checked` passage de l’état `Unchecked` visuel à l’état visuel :
 
 ```
 Checked state active: False
@@ -405,19 +405,19 @@ Unchecked state active: True
 ```
 
 > [!NOTE]
-> Les déclencheurs d’état personnalisés peuvent [`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase) être créés en provenant de la classe.
+> Les déclencheurs d’état personnalisé peuvent être créés en dérivant de [`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase) la classe et en substituant `OnAttached` les `OnDetached` méthodes et pour effectuer les inscriptions et le nettoyage requis.
 
 ### <a name="adaptive-trigger"></a>Déclencheur adaptatif
 
-Un [`AdaptiveTrigger`](xref:Xamarin.Forms.AdaptiveTrigger) déclenche [`VisualState`](xref:Xamarin.Forms.VisualState) un changement lorsque la fenêtre est une hauteur ou une largeur spécifiée. Ce déclencheur a deux propriétés liantes :
+Un [`AdaptiveTrigger`](xref:Xamarin.Forms.AdaptiveTrigger) déclenche une [`VisualState`](xref:Xamarin.Forms.VisualState) modification quand la fenêtre est une hauteur ou une largeur spécifiée. Ce déclencheur a deux propriétés pouvant être liées :
 
-- [`MinWindowHeight`](xref:Xamarin.Forms.AdaptiveTrigger.MinWindowHeight), du `double`type , ce qui indique [`VisualState`](xref:Xamarin.Forms.VisualState) la hauteur minimale de la fenêtre à laquelle le doit être appliqué.
-- [`MinWindowWidth`](xref:Xamarin.Forms.AdaptiveTrigger.MinWindowHeight), du `double`type , ce qui indique [`VisualState`](xref:Xamarin.Forms.VisualState) la largeur minimale de la fenêtre à laquelle le doit être appliqué.
+- [`MinWindowHeight`](xref:Xamarin.Forms.AdaptiveTrigger.MinWindowHeight), de type `double`, qui indique la hauteur de fenêtre minimale à laquelle [`VisualState`](xref:Xamarin.Forms.VisualState) le doit être appliqué.
+- [`MinWindowWidth`](xref:Xamarin.Forms.AdaptiveTrigger.MinWindowHeight), de type `double`, qui indique la largeur de fenêtre minimale à laquelle [`VisualState`](xref:Xamarin.Forms.VisualState) le doit être appliqué.
 
 > [!NOTE]
-> Le [`AdaptiveTrigger`](xref:Xamarin.Forms.AdaptiveTrigger) dérive de [`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase) la classe et peut donc [`IsActiveChanged`](xref:Xamarin.Forms.StateTriggerBase.IsActiveChanged) joindre un gestionnaire d’événements à l’événement.
+> Le [`AdaptiveTrigger`](xref:Xamarin.Forms.AdaptiveTrigger) dérive de la [`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase) classe et peut donc attacher un gestionnaire d’événements à [`IsActiveChanged`](xref:Xamarin.Forms.StateTriggerBase.IsActiveChanged) l’événement.
 
-L’exemple XAML [`Style`](xref:Xamarin.Forms.Style) suivant [`AdaptiveTrigger`](xref:Xamarin.Forms.AdaptiveTrigger) montre un qui inclut des objets :
+L’exemple de code XAML suivant [`Style`](xref:Xamarin.Forms.Style) montre un [`AdaptiveTrigger`](xref:Xamarin.Forms.AdaptiveTrigger) qui comprend des objets :
 
 ```xaml
 <Style TargetType="StackLayout">
@@ -448,31 +448,31 @@ L’exemple XAML [`Style`](xref:Xamarin.Forms.Style) suivant [`AdaptiveTrigger`]
 </Style>
 ```
 
-Dans cet exemple, [`Style`](xref:Xamarin.Forms.Style) [`StackLayout`](xref:Xamarin.Forms.StackLayout) les cibles implicites s’opposent. Lorsque la largeur de la fenêtre se situe entre `StackLayout` 0 et `Style` 800 unités indépendantes de l’appareil, les objets auxquels l’appareil est appliqué auront une orientation verticale. Lorsque la largeur de la fenêtre est >800 [`VisualState`](xref:Xamarin.Forms.VisualState) unités indépendantes de `StackLayout` l’appareil, le changement est déclenché, et l’orientation change à l’horizontale :
+Dans cet exemple, les objets [`Style`](xref:Xamarin.Forms.Style) cibles [`StackLayout`](xref:Xamarin.Forms.StackLayout) implicites. Lorsque la largeur de la fenêtre est comprise entre 0 et 800 `StackLayout` unités indépendantes du périphérique `Style` , les objets auxquels le est appliqué auront une orientation verticale. Lorsque la largeur de la fenêtre est >= 800 unités indépendantes du périphérique [`VisualState`](xref:Xamarin.Forms.VisualState) , la modification est déclenchée et `StackLayout` l’orientation passe à horizontal :
 
-![Vertical StackLayout VisualState](triggers-images/adaptivetrigger-vertical.png "AdaptiveTrigger exemple")
-![Horizontal StackLayout VisualState VisualState](triggers-images/adaptivetrigger-horizontal.png "AdaptiveTrigger exemple")
+![StackLayout vertical VisualState](triggers-images/adaptivetrigger-vertical.png "Exemple AdaptiveTrigger")
+![StackLayout horizontal VisualState](triggers-images/adaptivetrigger-horizontal.png "Exemple AdaptiveTrigger")
 
-Les [`MinWindowHeight`](xref:Xamarin.Forms.AdaptiveTrigger.MinWindowHeight) [`MinWindowWidth`](xref:Xamarin.Forms.AdaptiveTrigger.MinWindowHeight) propriétés et les propriétés peuvent être utilisées indépendamment ou en conjonction les unes avec les autres. Le XAML suivant montre un exemple de réglage des deux propriétés:
+Les [`MinWindowHeight`](xref:Xamarin.Forms.AdaptiveTrigger.MinWindowHeight) propriétés [`MinWindowWidth`](xref:Xamarin.Forms.AdaptiveTrigger.MinWindowHeight) et peuvent être utilisées indépendamment ou conjointement. Le code XAML suivant montre un exemple de définition des deux propriétés :
 
 ```xaml
 <AdaptiveTrigger MinWindowWidth="800"
                  MinWindowHeight="1200"/>
 ```
 
-Dans cet exemple, l’indique [`AdaptiveTrigger`](xref:Xamarin.Forms.AdaptiveTrigger) que le correspondant [`VisualState`](xref:Xamarin.Forms.VisualState) sera appliqué lorsque la largeur actuelle de la fenêtre est >800 unités indépendantes de l’appareil et que la hauteur actuelle de la fenêtre est >unités indépendantes de l’appareil.
+Dans cet exemple, le [`AdaptiveTrigger`](xref:Xamarin.Forms.AdaptiveTrigger) indique que le correspondant [`VisualState`](xref:Xamarin.Forms.VisualState) sera appliqué lorsque la largeur de fenêtre active est >= 800 unités indépendantes du périphérique et que la hauteur de la fenêtre actuelle est >= 1200 unités indépendantes du périphérique.
 
-### <a name="compare-state-trigger"></a>Comparer le déclencheur de l’état
+### <a name="compare-state-trigger"></a>Déclencheur d’état de comparaison
 
-Le [`CompareStateTrigger`](xref:Xamarin.Forms.CompareStateTrigger) déclenche [`VisualState`](xref:Xamarin.Forms.VisualState) une modification lorsqu’une propriété est égale à une valeur spécifique. Ce déclencheur a deux propriétés liantes :
+Le [`CompareStateTrigger`](xref:Xamarin.Forms.CompareStateTrigger) déclenche une [`VisualState`](xref:Xamarin.Forms.VisualState) modification quand une propriété est égale à une valeur spécifique. Ce déclencheur a deux propriétés pouvant être liées :
 
-- [`Property`](xref:Xamarin.Forms.CompareStateTrigger.Property), de `object`type , ce qui indique que la propriété est comparée par le déclencheur.
-- [`Value`](xref:Xamarin.Forms.CompareStateTrigger.Value), du `object`type , ce qui [`VisualState`](xref:Xamarin.Forms.VisualState) indique la valeur à laquelle le doit être appliqué.
+- [`Property`](xref:Xamarin.Forms.CompareStateTrigger.Property), de type `object`, qui indique la propriété comparée par le déclencheur.
+- [`Value`](xref:Xamarin.Forms.CompareStateTrigger.Value), de type `object`, qui indique la valeur à laquelle le [`VisualState`](xref:Xamarin.Forms.VisualState) doit être appliqué.
 
 > [!NOTE]
-> Le [`CompareStateTrigger`](xref:Xamarin.Forms.CompareStateTrigger) dérive de [`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase) la classe et peut donc [`IsActiveChanged`](xref:Xamarin.Forms.StateTriggerBase.IsActiveChanged) joindre un gestionnaire d’événements à l’événement.
+> Le [`CompareStateTrigger`](xref:Xamarin.Forms.CompareStateTrigger) dérive de la [`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase) classe et peut donc attacher un gestionnaire d’événements à [`IsActiveChanged`](xref:Xamarin.Forms.StateTriggerBase.IsActiveChanged) l’événement.
 
-L’exemple XAML [`Style`](xref:Xamarin.Forms.Style) suivant [`CompareStateTrigger`](xref:Xamarin.Forms.CompareStateTrigger) montre un qui inclut des objets :
+L’exemple de code XAML suivant [`Style`](xref:Xamarin.Forms.Style) montre un [`CompareStateTrigger`](xref:Xamarin.Forms.CompareStateTrigger) qui comprend des objets :
 
 ```xaml
 <Style TargetType="Grid">
@@ -520,21 +520,21 @@ L’exemple XAML [`Style`](xref:Xamarin.Forms.Style) suivant [`CompareStateTrigg
 </Grid>
 ```
 
-Dans cet exemple, [`Style`](xref:Xamarin.Forms.Style) [`Grid`](xref:Xamarin.Forms.Grid) les cibles implicites s’opposent. Lorsque [`IsChecked`](xref:Xamarin.Forms.CheckBox.IsChecked) la propriété [`CheckBox`](xref:Xamarin.Forms.CheckBox) `false`de l’est `Grid` , la couleur de fond de la est réglée au blanc. Lorsque `CheckBox.IsChecked` la `true`propriété [`VisualState`](xref:Xamarin.Forms.VisualState) devient , un changement est `Grid` déclenché, et la couleur de fond de la devient noire:
+Dans cet exemple, les objets [`Style`](xref:Xamarin.Forms.Style) cibles [`Grid`](xref:Xamarin.Forms.Grid) implicites. Lorsque la [`IsChecked`](xref:Xamarin.Forms.CheckBox.IsChecked) propriété du [`CheckBox`](xref:Xamarin.Forms.CheckBox) est `false`, la couleur d’arrière-plan `Grid` de est définie sur blanc. Lorsque la `CheckBox.IsChecked` propriété prend `true`la forme [`VisualState`](xref:Xamarin.Forms.VisualState) , une modification est déclenchée et la couleur d’arrière `Grid` -plan de l’devient noire :
 
-[![Capture d’écran d’un changement d’état visuel déclenché, sur iOS et Android](triggers-images/comparestatetrigger-unchecked.png "Comparez l’exemple deStateTrigger")](triggers-images/comparestatetrigger-unchecked-large.png#lightbox "Comparez l’exemple deStateTrigger")
-[![Capture d’écran d’un changement d’état visuel déclenché, sur iOS et Android](triggers-images/comparestatetrigger-checked.png "Comparez l’exemple deStateTrigger")](triggers-images/comparestatetrigger-unchecked-large.png#lightbox "Comparez l’exemple deStateTrigger")
+[![Capture d’écran d’une modification d’état visuel déclenchée, sur iOS et Android](triggers-images/comparestatetrigger-unchecked.png "Exemple CompareStateTrigger")](triggers-images/comparestatetrigger-unchecked-large.png#lightbox "Exemple CompareStateTrigger")
+[![capture d’écran d’un changement d’état visuel déclenché, sur iOS et Android](triggers-images/comparestatetrigger-checked.png "Exemple CompareStateTrigger")](triggers-images/comparestatetrigger-unchecked-large.png#lightbox "Exemple CompareStateTrigger")
 
-### <a name="device-state-trigger"></a>Déclencheur de l’état de l’appareil
+### <a name="device-state-trigger"></a>Déclencheur d’état de l’appareil
 
-Les [`DeviceStateTrigger`](xref:Xamarin.Forms.DeviceStateTrigger) déclencheurs [`VisualState`](xref:Xamarin.Forms.VisualState) d’un changement basé sur la plate-forme de l’appareil de l’application est en cours d’exécution sur. Ce déclencheur a une propriété liant unique :
+[`DeviceStateTrigger`](xref:Xamarin.Forms.DeviceStateTrigger) Déclenche une [`VisualState`](xref:Xamarin.Forms.VisualState) modification en fonction de la plateforme d’appareil sur laquelle l’application s’exécute. Ce déclencheur a une propriété pouvant être liée unique :
 
-- [`Device`](xref:Xamarin.Forms.DeviceStateTrigger.Device), du `string`type , qui indique [`VisualState`](xref:Xamarin.Forms.VisualState) la plate-forme de l’appareil sur laquelle le doit être appliqué.
+- [`Device`](xref:Xamarin.Forms.DeviceStateTrigger.Device), de type `string`, qui indique la plateforme d’appareil sur laquelle [`VisualState`](xref:Xamarin.Forms.VisualState) le doit être appliqué.
 
 > [!NOTE]
-> Le [`DeviceStateTrigger`](xref:Xamarin.Forms.DeviceStateTrigger) dérive de [`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase) la classe et peut donc [`IsActiveChanged`](xref:Xamarin.Forms.StateTriggerBase.IsActiveChanged) joindre un gestionnaire d’événements à l’événement.
+> Le [`DeviceStateTrigger`](xref:Xamarin.Forms.DeviceStateTrigger) dérive de la [`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase) classe et peut donc attacher un gestionnaire d’événements à [`IsActiveChanged`](xref:Xamarin.Forms.StateTriggerBase.IsActiveChanged) l’événement.
 
-L’exemple XAML [`Style`](xref:Xamarin.Forms.Style) suivant `DeviceStateTrigger` montre un qui inclut des objets :
+L’exemple de code XAML suivant [`Style`](xref:Xamarin.Forms.Style) montre un `DeviceStateTrigger` qui comprend des objets :
 
 ```xaml
 <Style x:Key="DeviceStateTriggerPageStyle"
@@ -575,20 +575,20 @@ L’exemple XAML [`Style`](xref:Xamarin.Forms.Style) suivant `DeviceStateTrigger
 </Style>
 ```
 
-Dans cet exemple, [`Style`](xref:Xamarin.Forms.Style) [`ContentPage`](xref:Xamarin.Forms.ContentPage) les objets cibles explicites. `ContentPage`objets qui consomment le style définir leur couleur de fond à l’argent sur iOS, à bleu pâle sur Android, et à l’aigue-marine sur UWP. Les captures d’écran suivantes montrent les pages résultantes sur iOS et Android :
+Dans cet exemple, les objets [`Style`](xref:Xamarin.Forms.Style) cibles [`ContentPage`](xref:Xamarin.Forms.ContentPage) explicites. `ContentPage`les objets qui consomment le style ont la couleur d’arrière-plan Silver sur iOS sur iOS, le bleu pâle sur Android et vert eau marine sur UWP. Les captures d’écran suivantes montrent les pages obtenues sur iOS et Android :
 
-[![Capture d’écran d’un changement d’état visuel déclenché, sur iOS et Android](triggers-images/devicestatetrigger.png "Exemple de DeviceStateTrigger")](triggers-images/devicestatetrigger-large.png#lightbox "Exemple de DeviceStateTrigger")
+[![Capture d’écran d’un changement d’état visuel déclenché, sur iOS et Android](triggers-images/devicestatetrigger.png "Exemple DeviceStateTrigger")](triggers-images/devicestatetrigger-large.png#lightbox "Exemple DeviceStateTrigger")
 
-### <a name="orientation-state-trigger"></a>Déclencheur de l’état d’orientation
+### <a name="orientation-state-trigger"></a>Déclencheur d’état d’orientation
 
-Le [`OrientationStateTrigger`](xref:Xamarin.Forms.OrientationStateTrigger) déclenche [`VisualState`](xref:Xamarin.Forms.VisualState) un changement lorsque l’orientation de l’appareil change. Ce déclencheur a une propriété liant unique :
+Le [`OrientationStateTrigger`](xref:Xamarin.Forms.OrientationStateTrigger) déclenche une [`VisualState`](xref:Xamarin.Forms.VisualState) modification lorsque l’orientation de l’appareil change. Ce déclencheur a une propriété pouvant être liée unique :
 
-- [`Orientation`](xref:Xamarin.Forms.OrientationStateTrigger.Orientation), du [`DeviceOrientation`](xref:Xamarin.Forms.Internals.DeviceOrientation)type , ce qui [`VisualState`](xref:Xamarin.Forms.VisualState) indique l’orientation à laquelle le doit être appliqué.
+- [`Orientation`](xref:Xamarin.Forms.OrientationStateTrigger.Orientation), de type [`DeviceOrientation`](xref:Xamarin.Forms.Internals.DeviceOrientation), qui indique l’orientation à laquelle le [`VisualState`](xref:Xamarin.Forms.VisualState) doit être appliqué.
 
 > [!NOTE]
-> Le [`OrientationStateTrigger`](xref:Xamarin.Forms.OrientationStateTrigger) dérive de [`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase) la classe et peut donc [`IsActiveChanged`](xref:Xamarin.Forms.StateTriggerBase.IsActiveChanged) joindre un gestionnaire d’événements à l’événement.
+> Le [`OrientationStateTrigger`](xref:Xamarin.Forms.OrientationStateTrigger) dérive de la [`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase) classe et peut donc attacher un gestionnaire d’événements à [`IsActiveChanged`](xref:Xamarin.Forms.StateTriggerBase.IsActiveChanged) l’événement.
 
-L’exemple XAML [`Style`](xref:Xamarin.Forms.Style) suivant `OrientationStateTrigger` montre un qui inclut des objets :
+L’exemple de code XAML suivant [`Style`](xref:Xamarin.Forms.Style) montre un `OrientationStateTrigger` qui comprend des objets :
 
 ```xaml
 <Style x:Key="OrientationStateTriggerPageStyle"
@@ -620,10 +620,10 @@ L’exemple XAML [`Style`](xref:Xamarin.Forms.Style) suivant `OrientationStateTr
 </Style>
 ```
 
-Dans cet exemple, [`Style`](xref:Xamarin.Forms.Style) [`ContentPage`](xref:Xamarin.Forms.ContentPage) les objets cibles explicites. `ContentPage`les objets qui consomment le modèle placent leur couleur de fond à l’argent lorsque l’orientation est portrait, et placent leur couleur de fond au blanc lorsque l’orientation est le paysage.
+Dans cet exemple, les objets [`Style`](xref:Xamarin.Forms.Style) cibles [`ContentPage`](xref:Xamarin.Forms.ContentPage) explicites. `ContentPage`les objets qui consomment le style attribuent à leur couleur d’arrière-plan la valeur Silver lorsque l’orientation est portrait, et la couleur d’arrière-plan est blanche lorsque l’orientation est paysage.
 
 ## <a name="related-links"></a>Liens connexes
 
 - [Exemples de déclencheurs](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithtriggers)
-- [Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)
-- [Xamarin.Forms Déclencher API](xref:Xamarin.Forms.TriggerAction`1)
+- [Gestionnaire d’état visuel Xamarin. Forms](~/xamarin-forms/user-interface/visual-state-manager.md)
+- [API déclencheur Xamarin. Forms](xref:Xamarin.Forms.TriggerAction`1)

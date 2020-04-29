@@ -6,23 +6,23 @@ ms.assetid: 46AB0D5E-0025-4A8A-9D00-3E66C3D0BA2E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 01/17/2020
-ms.openlocfilehash: c71153cdaa94a7983b89968abc828011a648f2b1
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.date: 03/10/2020
+ms.openlocfilehash: 87348d5821c2c9e2e46a777f212bd5f69d1a54d0
+ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79305555"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82517581"
 ---
 # <a name="display-pop-ups"></a>Afficher les fenêtres contextuelles
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-pop-ups)
+[![Télécharger l'](~/media/shared/download.png) exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-pop-ups)
 
-L’affichage d’une alerte, la demande d’un utilisateur ou l’affichage d’une invite est une tâche courante de l’interface utilisateur. Xamarin. Forms a trois méthodes sur la classe [`Page`](xref:Xamarin.Forms.Page) pour interagir avec l’utilisateur via une fenêtre contextuelle : [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*), [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*)et `DisplayPromptAsync`. Elles sont affichées avec les contrôles natifs appropriés sur chaque plateforme.
+L’affichage d’une alerte, la demande d’un utilisateur ou l’affichage d’une invite est une tâche courante de l’interface utilisateur. Xamarin. Forms a trois méthodes sur [`Page`](xref:Xamarin.Forms.Page) la classe pour interagir avec l’utilisateur via une fenêtre contextuelle : [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*), [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*)et. `DisplayPromptAsync` Elles sont affichées avec les contrôles natifs appropriés sur chaque plateforme.
 
 ## <a name="display-an-alert"></a>Afficher une alerte
 
-Toutes les plateformes prises en charge par Xamarin.Forms ont une fenêtre contextuelle modale pour alerter l’utilisateur ou lui poser des questions simples. Pour afficher ces alertes dans Xamarin.Forms, utilisez la méthode [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*) sur n’importe quelle [`Page`](xref:Xamarin.Forms.Page). La ligne de code suivante présente un message simple à l’utilisateur :
+Toutes les plateformes prises en charge par Xamarin.Forms ont une fenêtre contextuelle modale pour alerter l’utilisateur ou lui poser des questions simples. Pour afficher ces alertes dans Xamarin. Forms, utilisez [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*) la méthode sur [`Page`](xref:Xamarin.Forms.Page)any. La ligne de code suivante présente un message simple à l’utilisateur :
 
 ```csharp
 await DisplayAlert ("Alert", "You have been alerted", "OK");
@@ -32,7 +32,7 @@ await DisplayAlert ("Alert", "You have been alerted", "OK");
 
 Cet exemple ne recueille aucune information de l’utilisateur. L’alerte s’affiche de façon modale, et une fois qu’elle est fermée l’utilisateur continue à interagir avec l’application.
 
-Vous pouvez également utiliser la méthode [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*) pour capturer la réponse d’un utilisateur en présentant deux boutons et en retournant une valeur `boolean`. Pour obtenir une réponse à partir d’une alerte, fournissez du texte pour les deux boutons et attendez (`await`) la méthode. Une fois que l’utilisateur a sélectionné l’une des options, la réponse est retournée à votre code. Notez les mots clés `async` et `await` dans l’exemple de code ci-dessous :
+La [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*) méthode peut également être utilisée pour capturer la réponse d’un utilisateur en présentant deux boutons et en `boolean`retournant un. Pour obtenir une réponse à partir d’une alerte, fournissez du texte pour les deux boutons et attendez (`await`) la méthode. Une fois que l’utilisateur a sélectionné l’une des options, la réponse est retournée à votre code. Notez les mots clés `async` et `await` dans l’exemple de code ci-dessous :
 
 ```csharp
 async void OnAlertYesNoClicked (object sender, EventArgs e)
@@ -46,9 +46,9 @@ async void OnAlertYesNoClicked (object sender, EventArgs e)
 
 ## <a name="guide-users-through-tasks"></a>Guider les utilisateurs à travers les tâches
 
-[UIActionSheet](https://developer.apple.com/library/ios/documentation/uikit/reference/uiactionsheet_class/Reference/Reference.html) est un élément d’interface utilisateur courant dans iOS. La méthode [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*) Xamarin.Forms vous permet d’inclure ce contrôle dans les applications multiplateformes et d’afficher des alternatives natives dans Android et UWP.
+[UIActionSheet](https://developer.apple.com/library/ios/documentation/uikit/reference/uiactionsheet_class/Reference/Reference.html) est un élément d’interface utilisateur courant dans iOS. La méthode Xamarin. [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*) Forms vous permet d’inclure ce contrôle dans des applications multiplateformes, ce qui rend les alternatives natives dans Android et UWP.
 
-Pour afficher une feuille d’action, `await` [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*) dans n’importe quel [`Page`](xref:Xamarin.Forms.Page), en passant les étiquettes de bouton et de message en tant que chaînes. La méthode retourne l’étiquette de chaîne du bouton sur lequel l’utilisateur a cliqué. Voici un exemple simple :
+Pour afficher une feuille d’action, attendez (`await` [) `DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*) dans n’importe quelle [`Page`](xref:Xamarin.Forms.Page), en passant les étiquettes de message et de bouton sous forme de chaînes. La méthode retourne l’étiquette de chaîne du bouton sur lequel l’utilisateur a cliqué. Voici un exemple simple :
 
 ```csharp
 async void OnActionSheetSimpleClicked (object sender, EventArgs e)
@@ -74,7 +74,7 @@ async void OnActionSheetCancelDeleteClicked (object sender, EventArgs e)
 
 ## <a name="display-a-prompt"></a>Afficher une invite
 
-Pour afficher une invite, appelez l' `DisplayPromptAsync` dans n’importe quel [`Page`](xref:Xamarin.Forms.Page), en passant un titre et un message en tant qu' `string` arguments :
+Pour afficher une invite, appelez `DisplayPromptAsync` dans Any [`Page`](xref:Xamarin.Forms.Page), en passant un titre et un message `string` comme arguments :
 
 ```csharp
 string result = await DisplayPromptAsync("Question 1", "What's your name?");
@@ -84,18 +84,18 @@ L’invite s’affiche de façon modale :
 
 [![Capture d’écran d’une invite modale, sur iOS et Android](pop-ups-images/simple-prompt.png "Invite modale")](pop-ups-images/simple-prompt-large.png#lightbox "Invite modale")
 
-Si vous avez cliqué sur le bouton OK, la réponse entrée est retournée en tant que `string`. Si vous avez cliqué sur le bouton Annuler, `null` est retourné.
+Si vous avez cliqué sur le bouton OK, la réponse entrée est retournée en tant que `string`. Si vous avez cliqué sur le bouton `null` annuler, est retourné.
 
-La liste d’arguments complète pour la méthode `DisplayPromptAsync` est :
+La liste complète des arguments pour `DisplayPromptAsync` la méthode est la suivante :
 
-- `title`, de type `string`, est le titre à afficher dans l’invite.
-- `message`, de type `string`, est le message à afficher dans l’invite.
+- `title`, de type `string`, est le titre à afficher dans l’invite de commandes.
+- `message`, de type `string`, est le message à afficher dans l’invite de commandes.
 - `accept`, de type `string`, est le texte du bouton accepter. Il s’agit d’un argument facultatif, dont la valeur par défaut est OK.
 - `cancel`, de type `string`, est le texte du bouton Annuler. Il s’agit d’un argument facultatif, dont la valeur par défaut est Cancel.
-- `placeholder`, de type `string`, est le texte d’espace réservé à afficher dans l’invite. Il s’agit d’un argument facultatif, dont la valeur par défaut est `null`.
+- `placeholder`, de type `string`, est le texte d’espace réservé à afficher dans l’invite de commandes. Il s’agit d’un argument facultatif, dont la `null`valeur par défaut est.
 - `maxLength`, de type `int`, est la longueur maximale de la réponse de l’utilisateur. Il s’agit d’un argument facultatif, dont la valeur par défaut est-1.
-- `keyboard`, de type `Keyboard`, est le type de clavier à utiliser pour la réponse de l’utilisateur. Il s’agit d’un argument facultatif, dont la valeur par défaut est `Keyboard.Default`.
-- `initialValue`, de type `string`, est une réponse prédéfinie qui s’affiche et qui peut être modifiée. Il s’agit d’un argument facultatif, dont la valeur par défaut est un `string`vide.
+- `keyboard`, de type `Keyboard`, est le type de clavier à utiliser pour la réponse de l’utilisateur. Il s’agit d’un argument facultatif, dont la `Keyboard.Default`valeur par défaut est.
+- `initialValue`, de type `string`, est une réponse prédéfinie qui s’affiche et qui peut être modifiée. Il s’agit d’un argument facultatif, dont la valeur par `string`défaut est un vide.
 
 L’exemple suivant illustre la définition de certains des arguments facultatifs :
 
@@ -106,9 +106,6 @@ string result = await DisplayPromptAsync("Question 2", "What's 5 + 5?", initialV
 Ce code affiche une réponse prédéfinie de 10, limite le nombre de caractères pouvant être entrés à 2, et affiche le clavier numérique pour les entrées utilisateur :
 
 [![Capture d’écran d’une invite modale, sur iOS et Android](pop-ups-images/keyboard-prompt.png "Invite modale")](pop-ups-images/keyboard-prompt-large.png#lightbox "Invite modale")
-
-> [!NOTE]
-> La méthode `DisplayPromptAsync` est actuellement implémentée uniquement sur iOS et Android.
 
 ## <a name="related-links"></a>Liens connexes
 
