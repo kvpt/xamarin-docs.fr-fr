@@ -10,22 +10,24 @@ metadata:
   author: davidbritch
   ms.author: dabritch
   ms.date: 02/28/2020
-  ms.openlocfilehash: 6b5f722f757f2fa7c579f11eb4ddb4b3efa78148
-  ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+  ms.openlocfilehash: d7ba9e39405614069f2f490dca54f878e9623c28
+  ms.sourcegitcommit: 154a3e7aec775327565bb54eda1a610976af1d6f
   ms.translationtype: HT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 04/09/2020
-  ms.locfileid: "78160537"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82624694"
 landingContent:
 - title: Nouveautés
   linkLists:
   - linkListType: whats-new
     links:
+    - text: Avril 2020
+      url: 2020-04.md
     - text: Février 2020
       url: 2020-02.md
     - text: Décembre 2019
       url: 2019-12.md
-    - text: 2 octobre 2019
+    - text: Octobre 2019
       url: 2019-10.md
     - text: Août 2019
       url: 2019-08.md
