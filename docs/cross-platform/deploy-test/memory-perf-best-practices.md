@@ -6,12 +6,12 @@ ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
 author: davidortinau
 ms.author: daortin
 ms.date: 03/24/2017
-ms.openlocfilehash: d0b195b90bb57b6d0717c0fb06d0202857851fe7
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: f99b64b67f4f1cabf3a5884fabb1301e5ee39eee
+ms.sourcegitcommit: 06043f6a5628a7326ac6690eb62ead8e4780f4a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73016528"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82738793"
 ---
 # <a name="cross-platform-performance"></a>Niveau de performance multiplateforme
 
@@ -265,6 +265,8 @@ SGen utilise l’un des trois segments de mémoire pour allouer de l’espace au
 
 L’un des avantages de SGen est que le temps qu’il prend pour effectuer un nettoyage mineur de la mémoire est proportionnel au nombre de nouveaux objets actifs qui ont été créés depuis le dernier nettoyage mineur de la mémoire. Cela permet de réduire l’impact du nettoyage de la mémoire sur les performances d’une application, car les nettoyages mineurs seront moins longs que les nettoyages majeurs. Les nettoyages majeurs de la mémoire continueront d’être effectués, mais moins fréquemment.
 
+Le récupérateur de mémoire SGen est le garbage collector par défaut dans Xamarin. iOS 9.2.1 et supérieur. par conséquent, il sera utilisé automatiquement. Notez que la possibilité de modifier le garbage collector a été supprimée des versions plus récentes de Visual Studio. Pour plus d’informations, consultez [nouveau système de comptage de références](~/ios/internals/newrefcount.md).
+
 ### <a name="reducing-pressure-on-the-garbage-collector"></a>Réduction de la pression sur le récupérateur de mémoire
 
 Lorsque SGen démarre une opération de nettoyage de la mémoire, il arrête les threads de l’application pendant la récupération de la mémoire. Lorsque la mémoire est récupérée, l’exécution de l’application peut être brièvement suspendue ou son interface utilisateur peut être perturbée. Le degré de perceptibilité de cette suspension dépend de deux facteurs :
@@ -365,7 +367,7 @@ Il est recommandé d’utiliser des objets de transfert de données lorsque vous
 
 Les données récupérées à partir du service web doivent être mises en cache localement. Les données mises en cache doivent être utilisées au lieu d’être récupérées de manière répétée à partir du service web. Toutefois, si vous choisissez cette méthode, vous devez implémenter une stratégie de mise en cache adaptée pour mettre à jour les données dans le cache local lorsque celles-ci sont modifiées dans le service web.
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article a abordé les techniques qui permettent d’accroître les performances des applications conçues sur la plateforme Xamarin. Utilisées conjointement, ces techniques peuvent considérablement réduire la charge de travail d’une UC, ainsi que la quantité de mémoire consommée par une application.
 
@@ -374,6 +376,6 @@ Cet article a abordé les techniques qui permettent d’accroître les performan
 - [Performances des applications Xamarin.iOS](~/ios/deploy-test/performance.md)
 - [Performances de Xamarin.Android](~/android/deploy-test/performance.md)
 - [Introduction de Xamarin Profiler](~/tools/profiler/index.md)
-- [Xamarin.Forms Performance](~/xamarin-forms/deploy-test/performance.md)
-- [Aperçu du support Async](~/cross-platform/platform/async.md)
+- [Performances de Xamarin. Forms](~/xamarin-forms/deploy-test/performance.md)
+- [Vue d’ensemble de la prise en charge Async](~/cross-platform/platform/async.md)
 - [IDisposable](xref:System.IDisposable)
