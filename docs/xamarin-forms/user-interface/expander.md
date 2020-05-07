@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/15/2020
-ms.openlocfilehash: f47dc08d11a97598966ba7af620cfc81e5fe284f
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+ms.openlocfilehash: b1e573a6070a637ef2fdfa65bb0fc1375522fc3c
+ms.sourcegitcommit: 443ecd9146fe2a7bbb9b5ab6d33c835876efcf1f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82532624"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82852492"
 ---
 # <a name="xamarinforms-expander"></a>Expander Xamarin. Forms
 
@@ -26,6 +26,8 @@ Les captures d’écran suivantes `Expander` montrent un dans ses États réduit
 
 > [!IMPORTANT]
 > `Expander`est actuellement expérimental et ne peut être utilisé qu’en `Expander_Experimental` définissant l’indicateur. Pour plus d’informations, consultez la page [indicateurs expérimentaux](~/xamarin-forms/internals/experimental-flags.md).
+>
+> En outre, le `Expander` contrôle est entièrement implémenté dans l' `Xamarin.Forms` espace de noms. Par conséquent, il est disponible sur toutes les plateformes prises en charge par Xamarin. Forms.
 
 Le `Expander` contrôle définit les propriétés suivantes :
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/22/2020
-ms.openlocfilehash: cd5ee471385761cad9f99c4b78103b9773415ddb
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+ms.openlocfilehash: 5e5c50a9195ceb2716e3ca5306b72654fedc46e8
+ms.sourcegitcommit: 443ecd9146fe2a7bbb9b5ab6d33c835876efcf1f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82517082"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82852473"
 ---
 # <a name="xamarinforms-shell-flyout"></a>Menu volant Shell Xamarin.Forms
 
@@ -480,7 +480,13 @@ La classe `Shell` comporte une propriété nommée `CurrentItem`, de type `Flyou
 
 Ce code définit l’objet `ShellContent` nommé `aboutItem` comme la propriété `CurrentItem`, ce qui provoque son affichage. Dans cet exemple, une conversion implicite est utilisée pour encapsuler l’objet `ShellContent` dans un objet `Tab`, qui est encapsulé dans un objet `FlyoutItem`.
 
-Le code C# équivalent est :
+Le code C# équivalent, étant donné `ShellContent` un objet `aboutItem`nommé, est le suivant :
+
+```csharp
+CurrentItem = aboutItem;
+```
+
+Dans cet exemple, la `CurrentItem` propriété est définie dans la `Shell` classe sous-classée. La `CurrentItem` propriété peut également être définie dans n’importe quelle classe via la `Shell.Current` propriété statique :
 
 ```csharp
 Shell.Current.CurrentItem = aboutItem;

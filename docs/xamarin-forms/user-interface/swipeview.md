@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/26/2020
-ms.openlocfilehash: da6dbe63b7151ef0f9a1defca66fbb3abb25ad1d
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+ms.openlocfilehash: 992e4dd1a2b2a1d1a4f0b76dadf4704241486415
+ms.sourcegitcommit: 520ea9d52266f745d2c09642bac21f64a56f8c31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82517553"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82859109"
 ---
 # <a name="xamarinforms-swipeview"></a>Xamarin. Forms SwipeView
 
@@ -330,10 +330,10 @@ Dans cet exemple, le `SwipeItemView` comprend un [`StackLayout`](xref:Xamarin.Fo
 
 La `Open` méthode requiert un `OpenSwipeItem` argument pour spécifier la direction à partir `SwipeView` de laquelle le sera ouvert. L' `OpenSwipeItem` énumération a quatre membres :
 
-- `LeftItems`, qui indique que le `SwipeView` sera ouvert à partir de la gauche, pour révéler les éléments de balayage dans `LeftItems` la collection.
-- `TopItems`, qui indique que le `SwipeView` sera ouvert à partir du haut, pour révéler les éléments de balayage dans la `TopItems` collection.
-- `RightItems`, qui indique que le `SwipeView` sera ouvert à partir de la droite pour afficher les éléments de balayage dans la `RightItems` collection.
-- `BottomItems`, qui indique que le `SwipeView` sera ouvert à partir du bas, pour afficher les éléments de balayage dans la `BottomItems` collection.
+- `LeftItems`, qui indique que le `SwipeView` sera ouvert à partir de la gauche, pour afficher les éléments de balayage `LeftItems` dans la collection.
+- `TopItems`, qui indique que le `SwipeView` sera ouvert à partir du haut, pour afficher les éléments de balayage dans `TopItems` la collection.
+- `RightItems`, qui indique que le `SwipeView` sera ouvert à partir de la droite pour afficher les éléments de balayage dans `RightItems` la collection.
+- `BottomItems`, qui indique que le `SwipeView` sera ouvert à partir du bas pour afficher les éléments de balayage dans la `BottomItems` collection.
 
 À partir `SwipeView` d' `swipeView`un nommé, l’exemple suivant montre comment ouvrir `SwipeView` un pour afficher les éléments de balayage `LeftItems` dans la collection :
 

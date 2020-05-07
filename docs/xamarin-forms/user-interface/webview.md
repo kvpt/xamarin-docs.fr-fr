@@ -6,13 +6,13 @@ ms.assetid: E44F5D0F-DB8E-46C7-8789-114F1652A6C5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/11/2020
-ms.openlocfilehash: 7a2671c47a6d2fceaf2b444cfa8988b4bb8c249c
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+ms.date: 05/06/2020
+ms.openlocfilehash: 31b705a51e405285cc5eaae391dd0794bfacfd9c
+ms.sourcegitcommit: 443ecd9146fe2a7bbb9b5ab6d33c835876efcf1f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82517257"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82852487"
 ---
 # <a name="xamarinforms-webview"></a>Xamarin. Forms, vue d’ensemble
 
@@ -174,7 +174,7 @@ Les implémentations de l’interface pour chaque plateforme doivent ensuite êt
 
 Sur iOS, le contenu Web doit se trouver dans le répertoire racine ou le répertoire de **ressources** du projet à l’aide de l’action de génération *BundleResource*, comme illustré ci-dessous :
 
-# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 ![Fichiers locaux sur iOS](webview-images/ios-vs.png)
 
@@ -204,7 +204,7 @@ namespace WorkingWithWebview.iOS
 
 Sur Android, placez les images HTML, CSS et dans le dossier composants avec l’action de génération *AndroidAsset* , comme illustré ci-dessous :
 
-# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 ![Fichiers locaux sur Android](webview-images/android-vs.png)
 
@@ -427,7 +427,7 @@ Pour `WebView` que fonctionne, vous devez vous assurer que les autorisations son
 - **Android** &ndash; requiert `INTERNET` uniquement l’affichage du contenu à partir du réseau. Le contenu local ne requiert pas d’autorisations spéciales.
 - **iOS** &ndash; ne requiert pas d’autorisations spéciales.
 
-## <a name="layout"></a>Mise en page
+## <a name="layout"></a>Disposition
 
 Contrairement à la plupart des autres vues Xamarin `WebView` . Forms, exige que `HeightRequest` et `WidthRequest` soient spécifiés lorsqu’ils sont contenus dans StackLayout ou RelativeLayout. Si vous ne parvenez pas à spécifier ces `WebView` propriétés, le n’est pas restitué.
 
@@ -554,13 +554,15 @@ Une version préliminaire de l’éditeur de liens est disponible pour résoudre
 
 Les conditions préalables à ce fonctionnement sont les suivantes :
 
-- Les versions préliminaires **Xamarin. Forms 4,5 ou ultérieures** &ndash; de Xamarin. Forms 4,5 peuvent être utilisées.
-- **Xamarin. iOS 13.10.0.17 ou version ultérieure** &ndash; Vérifiez votre version de Xamarin. iOS [dans Visual Studio](~/cross-platform/troubleshooting/questions/version-logs.md#version-information). Cette version de Xamarin. iOS est incluse avec Visual Studio pour Mac 8.4.1 et Visual Studio 16.4.3.
-- Les ** `UIWebView` références** à &ndash; votre code ne doivent pas contenir de références `UIWebView` à ou à des classes qui utilisent `UIWebView`.
+- **Xamarin. forms 4,5 ou version ultérieure**. Xamarin. Forms 4,6, ou une version ultérieure, est requis si votre application utilise un élément visuel Material.
+- **Xamarin. iOS 13.10.0.17 ou version ultérieure**. Vérifiez votre version de Xamarin. iOS [dans Visual Studio](~/cross-platform/troubleshooting/questions/version-logs.md#version-information). Cette version de Xamarin. iOS est incluse avec Visual Studio pour Mac 8.4.1 et Visual Studio 16.4.3.
+- **Supprimez les `UIWebView`références à **. Votre code ne doit pas contenir de références `UIWebView` à ou à des classes qui utilisent `UIWebView`.
 
-### <a name="configure-the-linker-preview"></a>Configurer la version préliminaire de l’éditeur de liens
+Pour plus d’informations sur la détection et `UIWebView` la suppression de références, consultez [dépréciation de UIWebView](~/ios/user-interface/controls/webview.md#uiwebview-deprecation).
 
-# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
+### <a name="configure-the-linker"></a>Configurer l’éditeur de liens
+
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Pour supprimer `UIWebView` des références, procédez comme suit pour l’éditeur de liens :
 
@@ -575,7 +577,7 @@ Vous pouvez voir la fenêtre avec le nouvel indicateur en place dans cette captu
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
-Suivez ces étapes pour que l’éditeur de liens `UIWebView` supprime les références
+Pour supprimer `UIWebView` des références, procédez comme suit pour l’éditeur de liens :
 
 1. **Ouvrez Options** &ndash; de projet iOS cliquez avec le bouton droit sur votre projet iOS, puis choisissez **options**.
 1. **Accédez à la section** &ndash; Build iOS, puis sélectionnez la section **Build iOS** .
@@ -594,3 +596,4 @@ Désormais, lorsque vous créez une nouvelle build (version Release) et l’envo
 
 - [Utilisation de WebView (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithwebview)
 - [WebView (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-webview)
+- [Désapprobation UIWebView](~/ios/user-interface/controls/webview.md#uiwebview-deprecation)
