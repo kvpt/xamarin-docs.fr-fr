@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 04/02/2019
 ms.custom: video
-ms.openlocfilehash: 26c4c2487bf2ec32ade3ceef9db73b4809053fec
-ms.sourcegitcommit: 154a3e7aec775327565bb54eda1a610976af1d6f
+ms.openlocfilehash: 715b9872642dfa8d5426c2967c62e82643def34d
+ms.sourcegitcommit: 9ca07644710e5919c7bc684c1ce144471611d5df
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82624720"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82974478"
 ---
 # <a name="xamarinessentials-browser"></a>Xamarin.Essentials : Navigateur
 
@@ -70,7 +70,7 @@ Le Mode de lancement détermine la façon dont le navigateur est lancé :
 
 ## <a name="system-preferred"></a>Système par défaut
 
-L’utilisation de [Onglets Chrome personnalisés](https://developer.chrome.com/multidevice/android/customtabs) sera tentée pour charger l’URI et conserver la sensibilisation à la navigation.
+Les [onglets personnalisés](https://developer.chrome.com/multidevice/android/customtabs) vont tenter d’être utilisés pour charger l’URI et garder conscience de la navigation.
 
 ## <a name="external"></a>Externe
 
