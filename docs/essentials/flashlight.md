@@ -3,20 +3,21 @@ title: 'Xamarin.Essentials : lampe de poche'
 description: Ce document décrit la classe Flashlight de Xamarin.Essentials, qui permet d’activer ou de désactiver le flash de l’appareil photo de l’appareil pour transformer celui-ci en lampe de poche.
 ms.assetid: 06A03553-D212-43A2-9E6E-C2D2D93EB136
 author: jamesmontemagno
+ms.custom: video
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: b94ba73b334ac68b256ca840956f987a4ef670ce
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 1a8601860afaf033c9bdb62c187fe228d2e83435
+ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "61075577"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83149956"
 ---
 # <a name="xamarinessentials-flashlight"></a>Xamarin.Essentials : lampe de poche
 
 La classe **Flashlight** permet d’activer ou de désactiver le flash de l’appareil photo de l’appareil pour transformer celui-ci en lampe de poche.
 
-## <a name="get-started"></a>Prise en main
+## <a name="get-started"></a>Prendre en main
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -35,7 +36,7 @@ Ouvrez le fichier **AssemblyInfo.cs** sous le dossier **Propriétés** et ajoute
 
 OU mettez à jour le manifeste Android :
 
-Ouvrez le fichier **AndroidManifest.xml** sous le dossier **Properties** et ajoutez ce qui suit à l’intérieur du nœud **manifeste.**
+Ouvrez le fichier **fichier AndroidManifest. xml** dans le dossier **Propriétés** et ajoutez le code suivant dans le nœud **manifeste** .
 
 ```xml
 <uses-permission android:name="android.permission.FLASHLIGHT" />
@@ -50,6 +51,8 @@ Si vous ajoutez ces autorisations, [Google Play va filtrer automatiquement les a
 [assembly: UsesFeature("android.hardware.camera", Required = false)]
 [assembly: UsesFeature("android.hardware.camera.autofocus", Required = false)]
 ```
+
+[!include[](~/essentials/includes/android-permissions.md)]
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
@@ -122,3 +125,9 @@ Une texture de surface d’appareil photo est créée pour activer ou désactive
 
 - [Code source Flashlight](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Flashlight)
 - [Documentation sur l’API Flashlight](xref:Xamarin.Essentials.Flashlight)
+
+## <a name="related-video"></a>Vidéo associée
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Flashlight-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

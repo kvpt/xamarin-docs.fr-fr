@@ -3,20 +3,21 @@ title: 'Xamarin.Essentials : e-mail'
 description: La classe Email de Xamarin.Essentials permet à une application d’ouvrir l’application de messagerie par défaut en utilisant des informations spécifiques, notamment l’objet, le corps et les destinataires (À, CC, CCI).
 ms.assetid: 5FBB6FF0-0E7B-4C29-8F06-91642AF12629
 author: jamesmontemagno
+ms.custom: video
 ms.author: jamont
 ms.date: 08/20/2019
-ms.openlocfilehash: cccbe5f539e2807e749433623e938438e67965e8
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 77fcadf3ec58a38acac5eca14b43d937414a4a60
+ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70060093"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83150094"
 ---
 # <a name="xamarinessentials-email"></a>Xamarin.Essentials : e-mail
 
 La classe **Email** permet à une application d’ouvrir l’application de messagerie par défaut en utilisant des informations spécifiques, notamment l’objet, le corps et les destinataires (À, CC, CCI).
 
-## <a name="get-started"></a>Prise en main
+## <a name="get-started"></a>Prendre en main
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -64,7 +65,7 @@ public class EmailTest
 
 ## <a name="file-attachments"></a>Pièces jointes
 
-Cette fonctionnalité permet à une application d’envoyer des fichiers par e-mail dans des clients de messagerie sur l’appareil. Xamarin.Essentials détectera automatiquement le type de fichier (MIME) et demandera que le fichier soit ajouté en tant que pièce jointe. Chaque client de messagerie est différent et susceptible de ne prendre en charge que certaines extensions de fichiers spécifiques, voire aucune.
+Cette fonctionnalité permet à une application d’envoyer par courrier électronique des fichiers à des clients de messagerie sur l’appareil. Xamarin.Essentials détectera automatiquement le type de fichier (MIME) et demandera que le fichier soit ajouté en tant que pièce jointe. Chaque client de messagerie est différent et peut uniquement prendre en charge des extensions de fichier spécifiques, ou rien du tout.
 
 Voici un exemple d’écriture de texte sur le disque et d’ajout en tant que pièce jointe à un e-mail :
 
@@ -106,3 +107,9 @@ Tous les clients de messagerie ne prennent pas en charge l’envoi de pièces jo
 
 - [Code source de la fonctionnalité d’e-mail](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Email)
 - [Documentation sur l’API Email](xref:Xamarin.Essentials.Email)
+
+## <a name="related-video"></a>Vidéo associée
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Email-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

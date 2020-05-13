@@ -4,21 +4,24 @@ description: Ce document décrit la classe d’autorisations dans Xamarin. Essen
 ms.assetid: 34062D84-3E55-4AF7-A688-8551068B1E57
 author: jamesmontemagno
 ms.author: jamont
+ms.custom: video
 ms.date: 01/06/2020
-ms.openlocfilehash: 3d61267ae78a4b84907a2bcf6e944eb286b113dd
-ms.sourcegitcommit: 8b94b2af2ac69e4a60e210ddc764f4d276c8d88d
+ms.openlocfilehash: fbce02300363c3ec68c35c11afb25342f06f4be1
+ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82605444"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83150070"
 ---
 # <a name="xamarinessentials-permissions"></a>Xamarin. Essentials : autorisations
 
 La classe d' **autorisations** offre la possibilité de vérifier et de demander des autorisations d’exécution.
 
-## <a name="get-started"></a>Bien démarrer
+## <a name="get-started"></a>Prendre en main
 
 [!include[](~/essentials/includes/get-started.md)]
+
+[!include[](~/essentials/includes/android-permissions.md)]
 
 ## <a name="using-permissions"></a>Utilisation des autorisations
 
@@ -38,23 +41,23 @@ var status = await Permissions.CheckStatusAsync<Permissions.LocationWhenInUse>()
 
 Une `PermissionException` exception est levée si l’autorisation requise n’est pas déclarée.
 
-Il est préférable de vérifier l’état de l’autorisation avant de la demander. Chaque système d’exploitation retourne un état différent par défaut si l’utilisateur n’a jamais été invité à le faire. iOS retourne `Unknown`, tandis que `Denied`d’autres retournent.
+Il est préférable de vérifier l’état de l’autorisation avant de la demander. Chaque système d’exploitation retourne un état différent par défaut si l’utilisateur n’a jamais été invité à le faire. iOS retourne `Unknown` , tandis que d’autres retournent `Denied` .
 
 ## <a name="requesting-permissions"></a>Demande d'autorisations
 
-Pour demander une autorisation aux utilisateurs, utilisez la `RequestAsync` méthode avec l’autorisation spécifique à demander. Si l’utilisateur a précédemment accordé une autorisation et qu’il ne l’a pas révoquée, `Granted` cette méthode retourne immediatelly et n’affiche pas de dialogue. 
+Pour demander une autorisation aux utilisateurs, utilisez la `RequestAsync` méthode avec l’autorisation spécifique à demander. Si l’utilisateur a précédemment accordé une autorisation et n’a pas été révoqué, cette méthode est immédiatement retournée `Granted` et n’affiche pas de boîte de dialogue.
 
 ```csharp
 var status = await Permissions.RequestAsync<Permissions.LocationWhenInUse>();
 ```
 
-Une `PermissionException` exception est levée si l’autorisation requise n’est pas déclarée. 
+Une `PermissionException` exception est levée si l’autorisation requise n’est pas déclarée.
 
-Notez que sur certaines plateformes, une demande d’autorisation ne peut être activée qu’une seule fois. Les invites supplémentaires doivent être gérées par le développeur pour vérifier si une valeur d' `Denied` État est à l’État et demander à l’utilisateur de l’activer manuellement.
+Notez que sur certaines plateformes, une demande d’autorisation ne peut être activée qu’une seule fois. Les invites supplémentaires doivent être gérées par le développeur pour vérifier si une autorisation est dans l' `Denied` État et demander à l’utilisateur de l’activer manuellement.
 
 ## <a name="permission-status"></a>État de l’autorisation
 
-Lors de `CheckStatusAsync` l' `RequestAsync` utilisation `PermissionStatus` de ou de, un est retourné et utilisé pour déterminer les étapes suivantes.
+Lorsque `CheckStatusAsync` vous utilisez ou `RequestAsync` un `PermissionStatus` est retourné et peut être utilisé pour déterminer les étapes suivantes :
 
 * Inconnu-l’autorisation est dans un état inconnu
 * Refusé-l’utilisateur a refusé la demande d’autorisation
@@ -64,7 +67,7 @@ Lors de `CheckStatusAsync` l' `RequestAsync` utilisation `PermissionStatus` de o
 
 ## <a name="available-permissions"></a>Autorisations disponibles
 
-Xamarin. Essentials tente d’extraire autant d’autorisations que possible, mais chaque système d’exploitation possède un ensemble d’autorisations d’exécution différent. En outre, il existe des différences en ce qui concerne la possibilité de fournir une seule API pour certaines autorisations. Voici un guide des autorisations actuellement disponibles :
+Xamarin. Essentials tente d’extraire autant d’autorisations que possible. Toutefois, chaque système d’exploitation possède un ensemble d’autorisations d’exécution différent. En outre, il existe des différences lors de la fourniture d’une seule API pour certaines autorisations. Voici un guide des autorisations actuellement disponibles :
 
 Guide des icônes :
 
@@ -72,7 +75,7 @@ Guide des icônes :
 * ![Non pris en charge](~/media/shared/no.png "Non pris en charge ou obligatoire") -non pris en charge/requis
 
 | Autorisation | Android | iOS | UWP | watchOS | tvOS | Tizen |
-| --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: 
+| --- | :---: | :---: | :---: | :---: | :---: | :---: | :---:
 | CalendarRead   | ![Android pris en charge](~/media/shared/yes.png "Android pris en charge") | ![iOS pris en charge](~/media/shared/yes.png "iOS pris en charge") | ![UWP non pris en charge](~/media/shared/no.png "UWP non pris en charge") | ![Watchos pris en charge](~/media/shared/yes.png "Watchos pris en charge") | ![tvOS non pris en charge](~/media/shared/no.png "tvOS non pris en charge") | ![Tizen non pris en charge](~/media/shared/no.png "Tizen non pris en charge") |
 | CalendarWrite | ![Android pris en charge](~/media/shared/yes.png "Android pris en charge") | ![iOS pris en charge](~/media/shared/yes.png "iOS pris en charge") | ![UWP non pris en charge](~/media/shared/no.png "UWP non pris en charge") | ![Watchos pris en charge](~/media/shared/yes.png "Watchos pris en charge") | ![tvOS non pris en charge](~/media/shared/no.png "tvOS non pris en charge") | ![Tizen non pris en charge](~/media/shared/no.png "Tizen non pris en charge") |
 | Appareil photo | ![Android pris en charge](~/media/shared/yes.png "Android pris en charge") | ![iOS pris en charge](~/media/shared/yes.png "iOS pris en charge") | ![UWP non pris en charge](~/media/shared/no.png "UWP non pris en charge") | ![Watchos non pris en charge](~/media/shared/no.png "Watchos non pris en charge") | ![tvOS non pris en charge](~/media/shared/no.png "tvOS non pris en charge") | ![Tizen pris en charge](~/media/shared/yes.png "Tizen pris en charge") |
@@ -92,7 +95,7 @@ Guide des icônes :
 | StorageRead | ![Android pris en charge](~/media/shared/yes.png "Android pris en charge") | ![iOS non pris en charge](~/media/shared/no.png "iOS non pris en charge") | ![UWP non pris en charge](~/media/shared/no.png "UWP non pris en charge") | ![Watchos non pris en charge](~/media/shared/no.png "Watchos non pris en charge") | ![tvOS non pris en charge](~/media/shared/no.png "tvOS non pris en charge") | ![Tizen non pris en charge](~/media/shared/no.png "Tizen non pris en charge") |
 | StorageWrite | ![Android pris en charge](~/media/shared/yes.png "Android pris en charge") | ![iOS non pris en charge](~/media/shared/no.png "iOS non pris en charge") | ![UWP non pris en charge](~/media/shared/no.png "UWP non pris en charge") | ![Watchos non pris en charge](~/media/shared/no.png "Watchos non pris en charge") | ![tvOS non pris en charge](~/media/shared/no.png "tvOS non pris en charge") | ![Tizen non pris en charge](~/media/shared/no.png "Tizen non pris en charge") |
 
-Si une autorisation est marquée comme ![non prise en charge](~/media/shared/no.png "non pris en charge") , elle `Granted` retourne toujours quand elle est activée ou demandée.
+Si une autorisation est marquée comme ![non prise en charge](~/media/shared/no.png "non pris en charge") , elle retourne toujours quand elle est `Granted` activée ou demandée.
 
 ## <a name="general-usage"></a>Utilisation générale
 Voici un modèle d’utilisation générale pour la gestion des autorisations.
@@ -142,7 +145,7 @@ public async Task<PermissionStatus> CheckAndRequestPermissionAsync<T>(T permissi
 
 ## <a name="extending-permissions"></a>Extension des autorisations
 
-L’API des autorisations a été créée pour être flexible et extensible pour les applications qui nécessitent une validation ou des autorisations supplémentaires qui ne sont pas incluses dans Xamarin. Essentials. Créez une nouvelle classe qui hérite de `BasePermission` et implémentez les méthodes abstraites requises. Alors 
+L’API des autorisations a été créée pour être flexible et extensible pour les applications qui nécessitent une validation ou des autorisations supplémentaires qui ne sont pas incluses dans Xamarin. Essentials. Créez une nouvelle classe qui hérite de `BasePermission` et implémentez les méthodes abstraites requises. Alors
 
 ```csharp
 public class MyPermission : BasePermission
@@ -167,7 +170,35 @@ public class MyPermission : BasePermission
 }
 ```
 
-Lors de l’implémentation d’une autorisation sur une plateforme `BasePlatformPermission` spécifique, la classe peut être héritée de. Cela fournit des méthodes d’assistance de plateforme supplémentaires pour vérifier automatiquement les déclarations.
+Lors de l’implémentation d’une autorisation sur une plateforme spécifique, la `BasePlatformPermission` classe peut être héritée de. Cela fournit des méthodes d’assistance de plateforme supplémentaires pour vérifier automatiquement les déclarations. Cela peut être utile lors de la création d’autorisations personnalisées pour effectuer un regroupement. Par exemple, vous pouvez demander l’accès en lecture et en écriture au stockage sur Android en utilisant l’autorisation personnalisée suivante.
+
+Créez une nouvelle autorisation dans votre projet auquel vous appelez des autorisations.
+
+```csharp
+public partial class ReadWriteStoragePermission  : Xamarin.Essentials.Permissions.BasePlatformPermission
+{
+
+}
+```
+
+Dans votre projet Android, étendez l’autorisation avec les autorisations que vous souhaitez demander.
+
+```csharp
+public partial class ReadWriteStoragePermission : Xamarin.Essentials.Permissions.BasePlatformPermission
+{
+    public override (string androidPermission, bool isRuntime)[] RequiredPermissions => new List<(string androidPermission, bool isRuntime)>
+    {
+        (Android.Manifest.Permission.ReadExternalStorage, true),
+        (Android.Manifest.Permission.WriteExternalStorage, true)
+    }.ToArray();
+}
+```
+
+Vous pouvez ensuite appeler votre nouvelle autorisation à partir de la logique partagée.
+
+```csharp
+await Permissions.RequestAsync<ReadWriteStoragePermission>();
+```
 
 ## <a name="platform-implementation-specifics"></a>Caractéristiques de mise en œuvre de la plateforme
 
@@ -179,7 +210,7 @@ Pour plus d’informations sur les autorisations, consultez la documentation [de
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
-Les autorisations doivent avoir une chaîne correspondante dans `Info.plist` le fichier. Une fois qu’une autorisation est demandée et refusée, une fenêtre contextuelle ne s’affiche plus si vous demandez l’autorisation une deuxième fois. Vous devez inviter votre utilisateur à ajuster manuellement le paramètre dans l’écran Paramètres des applications dans iOS.
+Les autorisations doivent avoir une chaîne correspondante dans le `Info.plist` fichier. Une fois qu’une autorisation est demandée et refusée, une fenêtre contextuelle ne s’affiche plus si vous demandez l’autorisation une deuxième fois. Vous devez inviter votre utilisateur à ajuster manuellement le paramètre dans l’écran Paramètres des applications dans iOS.
 
 Pour plus d’informations, consultez la documentation sur les [fonctionnalités de sécurité et de confidentialité iOS](https://docs.microsoft.com/xamarin/ios/app-fundamentals/security-privacy) .
 
@@ -196,3 +227,9 @@ Pour plus d’informations, consultez la documentation sur la [déclaration des 
 - [Code source des autorisations](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Permissions)
 - [Documentation sur les API des autorisations](xref:Xamarin.Essentials.Permissions)
 
+
+## <a name="related-video"></a>Vidéo associée
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Permissions-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

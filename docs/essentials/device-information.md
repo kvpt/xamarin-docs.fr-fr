@@ -3,20 +3,21 @@ title: 'Xamarin.Essentials : informations sur l’appareil'
 description: Ce document décrit la classe DeviceInfo de Xamarin.Essentials, qui fournit des informations sur l’appareil où l’application s’exécute.
 ms.assetid: A1AC5373-926A-4FB6-8D7D-4B87EB8EB522
 author: jamesmontemagno
+ms.custom: video
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: 1cab4ea8ea3f98def4830e101783db1554efa69c
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 1790e950dfccddcca84adf97bcff64f905ee59f6
+ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "78295415"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83150091"
 ---
 # <a name="xamarinessentials-device-information"></a>Xamarin.Essentials : informations sur l’appareil
 
 La classe **DeviceInfo** fournit des informations sur l’appareil où l’application s’exécute.
 
-## <a name="get-started"></a>Prise en main
+## <a name="get-started"></a>Prendre en main
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -55,7 +56,7 @@ var deviceType = DeviceInfo.DeviceType;
 
 ## <a name="platforms"></a>Plateformes
 
-[`DeviceInfo.Platform`](xref:Xamarin.Essentials.DeviceInfo.Platform)corrélise à une chaîne constante qui cartographie le système d’exploitation. Vous pouvez vérifier les valeurs avec le struct `DevicePlatform` :
+[`DeviceInfo.Platform`](xref:Xamarin.Essentials.DeviceInfo.Platform)met en corrélation une chaîne constante qui est mappée au système d’exploitation. Vous pouvez vérifier les valeurs avec le struct `DevicePlatform` :
 
 - **DevicePlatform.iOS** – iOS
 - **DevicePlatform.Android** – Android
@@ -64,7 +65,7 @@ var deviceType = DeviceInfo.DeviceType;
 
 ## <a name="idioms"></a>Idiomes
 
-[`DeviceInfo.Idiom`](xref:Xamarin.Essentials.DeviceInfo.Idiom)corrèle une chaîne constante sur laquelle les cartes sont alignées sur le type d’appareil sur lequel l’application s’exécute. Vous pouvez vérifier les valeurs avec le struct `DeviceIdiom` :
+[`DeviceInfo.Idiom`](xref:Xamarin.Essentials.DeviceInfo.Idiom)met en corrélation une chaîne constante qui correspond au type d’appareil sur lequel l’application s’exécute. Vous pouvez vérifier les valeurs avec le struct `DeviceIdiom` :
 
 - **DeviceIdiom.Phone** – Téléphone
 - **DeviceIdiom.Tablet** – Tablette
@@ -81,7 +82,7 @@ var deviceType = DeviceInfo.DeviceType;
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
-iOS n’expose pas une API pour les développeurs d’obtenir le modèle de l’appareil iOS spécifique. Au lieu de cela un identifiant matériel est retourné comme _l’iPhone10,6_ qui se réfère à l’iPhone X. Une cartographie de ces identificateurs ne sont pas fournis par Apple, mais peut être trouvé sur ces (sources non officielles) [Le Wiki iPhone](https://www.theiphonewiki.com/wiki/Models) et [Get iOS Model](https://github.com/dannycabrera/Get-iOS-Model).
+iOS n’expose pas d’API permettant aux développeurs d’obtenir le modèle de l’appareil iOS spécifique. Au lieu de cela, un identificateur de matériel est retourné, par exemple _iPhone10, 6,_ qui fait référence à l’iPhone X. Un mappage de ces identificateurs n’est pas fourni par Apple, mais se trouve sur ces derniers (sources non officielles) [le wiki iPhone](https://www.theiphonewiki.com/wiki/Models) et [obtiennent le modèle iOS](https://github.com/dannycabrera/Get-iOS-Model).
 
 --------------
 
@@ -89,3 +90,9 @@ iOS n’expose pas une API pour les développeurs d’obtenir le modèle de l’
 
 - [Code source de DeviceInfo](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/DeviceInfo)
 - [Documentation sur l’API de DeviceInfo](xref:Xamarin.Essentials.DeviceInfo)
+
+## <a name="related-video"></a>Vidéo associée
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Device-Information-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

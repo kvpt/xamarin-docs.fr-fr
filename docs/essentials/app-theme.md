@@ -3,20 +3,21 @@ title: 'Xamarin. Essentials : thème de l’application'
 description: Ce document décrit l’API de thème d’application demandée dans Xamarin. Essentials, qui fournit des informations sur le style de thème demandé pour l’application en cours d’exécution.
 ms.assetid: F6F6D496-A8A9-4B9A-AF1A-370D937E5073
 author: jamesmontemagno
+ms.custom: video
 ms.author: jamont
 ms.date: 01/06/2020
-ms.openlocfilehash: e27f43ae17fcdaf7bb40b75907a7595c5c20988b
-ms.sourcegitcommit: 9c517f2c5af21aab0775f91286f42e919ff52292
+ms.openlocfilehash: 84c246eb60f4ee561bbf2bcfee6eb587ce601a4a
+ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82619873"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83150151"
 ---
 # <a name="xamarinessentials-app-theme"></a>Xamarin. Essentials : thème de l’application
 
 L’API **RequestedTheme** fait partie de la [`AppInfo`](app-information.md) classe et fournit des informations sur le thème qui est demandé pour votre application en cours d’exécution par le système.
 
-## <a name="get-started"></a>Bien démarrer
+## <a name="get-started"></a>Prendre en main
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -62,7 +63,7 @@ Unspecified sera toujours renvoyé sur les versions d’iOS antérieures à 13,0
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
 
-L' `RequestedTheme` appel de doit être appelé sur le thread d’interface utilisateur ou une exception sera levée.
+`RequestedTheme`L’appel de doit être appelé sur le thread d’interface utilisateur ou une exception sera levée.
 
 Les applications UWP respectent votre paramètre dans le format UWP App. XAML sous **RequestedTheme**. S’il est défini sur un thème spécifique, Xamarin. Essentials renverra toujours ce paramètre. Pour utiliser le thème dynamique du système d’exploitation, supprimez ce nœud de votre application, puis, lorsque votre application est exécutée, elle retourne le thème défini par l’utilisateur dans paramètres Windows (**paramètres > personnalisation > couleurs > Choisissez votre mode d’application par défaut**).
 
@@ -74,3 +75,9 @@ Pour plus d’informations, consultez la [documentation relative au thème UWP](
 
 - [Code source d’AppInfo](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/AppInfo)
 - [Documentation sur l’API d’AppInfo](xref:Xamarin.Essentials.AppInfo)
+
+## <a name="related-video"></a>Vidéo associée
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Theme-Detection-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

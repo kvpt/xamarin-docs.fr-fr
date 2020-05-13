@@ -3,20 +3,21 @@ title: 'Xamarin.Essentials : Lanceur Inter-app'
 description: La classe Lanceur dans Xamarin.Essentials permet à une application d’ouvrir un URI par le système.
 ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
 author: jamesmontemagno
+ms.custom: video
 ms.author: jamont
 ms.date: 08/20/2019
-ms.openlocfilehash: 88c1450d28b4c94fe8079b8915503cf5de118644
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: f84d3bf379562c8ddd96a32dfb9f15b03b0a6827
+ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75488515"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83149785"
 ---
 # <a name="xamarinessentials-launcher"></a>Xamarin.Essentials : Lanceur
 
 La classe **Lanceur** permet à une application d’ouvrir un URI par le système. Elle est souvent utilisée en cas de lien profond avec les schémas d’URI personnalisés d’une autre application. Si vous souhaitez ouvrir le navigateur sur un site web, reportez-vous à l’API **[Navigateur](open-browser.md)**.
 
-## <a name="get-started"></a>Prise en main
+## <a name="get-started"></a>Prendre en main
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -54,15 +55,15 @@ public class LauncherTest
 }
 ```
 
-### <a name="additional-platform-setup"></a>Configuration de plate-forme supplémentaire
+### <a name="additional-platform-setup"></a>Configuration de plateforme supplémentaire
 
 # <a name="android"></a>[Android](#tab/android)
 
-Pas de configuration supplémentaire.
+Aucune configuration supplémentaire.
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
-Dans iOS 9 et plus, Apple applique quels régimes une application peut demander. Pour spécifier les schémas que `LSApplicationQueriesSchemes` vous `Info.plist` souhaitez utiliser, vous devez spécifier dans votre fichier.
+Dans iOS 9 et versions ultérieures, Apple applique les schémas qu’une application peut interroger. Pour spécifier les schémas que vous souhaitez utiliser, vous devez spécifier `LSApplicationQueriesSchemes` dans votre `Info.plist` fichier.
 
 ```
 <key>LSApplicationQueriesSchemes</key>
@@ -74,7 +75,7 @@ Dans iOS 9 et plus, Apple applique quels régimes une application peut demander.
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
 
-Pas de configuration supplémentaire.
+Aucune configuration supplémentaire.
 
 -----
 
@@ -82,7 +83,7 @@ Pas de configuration supplémentaire.
 
 Cette fonctionnalité permet à une application de demander à d’autres applications d’ouvrir et d’afficher un fichier. Xamarin.Essentials détectera automatiquement le type de fichier (MIME) et demandera que le fichier soit ouvert.
 
-Voici un échantillon d’écriture de texte sur disque et de demande qu’il soit ouvert:
+Voici un exemple d’écriture de texte sur disque et de demande d’ouverture :
 
 ```csharp
 var fn = "File.txt";
@@ -119,3 +120,9 @@ Aucune différence entre les plateformes.
 
 - [Code source de Lanceur](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Launcher)
 - [Documentation de l’API Lanceur](xref:Xamarin.Essentials.Launcher)
+
+## <a name="related-video"></a>Vidéo associée
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Launcher-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]
