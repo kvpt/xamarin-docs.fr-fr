@@ -1,12 +1,12 @@
 ---
-ms.openlocfilehash: c826ee87c006b05322af8c9312bdf3120df8b357
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: fa88f6e7844899926a194e9d0cdd455a497c2b31
+ms.sourcegitcommit: bc0c1740aa0708459729c0e671ab3ff7de3e2eee
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "61375361"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83435459"
 ---
-# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. Dans **MainPage.xaml**, modifiez la déclaration [`Grid`](xref:Xamarin.Forms.Grid) pour définir des colonnes et des lignes, et pour y placer du contenu sur toutes ces colonnes et lignes :
 
@@ -29,13 +29,13 @@ ms.locfileid: "61375361"
     </Grid>
     ```
 
-    Ce code définit des colonnes et lignes pour [`Grid`](xref:Xamarin.Forms.Grid)et positionne les instances [`Label`](xref:Xamarin.Forms.Label) dans des colonnes et des lignes spécifiques. La première `Label` définit la propriété jointe [`ColumnSpan`](xref:Xamarin.Forms.Grid.ColumnSpanProperty) afin que son texte s’étende sur plusieurs colonnes. La propriété `ColumnSpan` est définie sur 2, qui représente le nombre de colonnes qu’occupera `Label`. La deuxième `Label` définit la propriété jointe [`RowSpan`](xref:Xamarin.Forms.Grid.RowSpanProperty) afin que son texte s’étende sur plusieurs lignes. La propriété `RowSpan` est définie sur 2, qui représente le nombre de lignes qu’occupera `Label`.
+    Ce code définit des colonnes et des lignes pour [`Grid`](xref:Xamarin.Forms.Grid) et positionne les instances [`Label`](xref:Xamarin.Forms.Label) dans des colonnes et des lignes spécifiques. La première `Label` définit la propriété jointe [`ColumnSpan`](xref:Xamarin.Forms.Grid.ColumnSpanProperty) afin que son texte s’étende sur plusieurs colonnes. La propriété `ColumnSpan` est définie sur 2, qui représente le nombre de colonnes qu’occupera `Label`. La deuxième `Label` définit la propriété jointe [`RowSpan`](xref:Xamarin.Forms.Grid.RowSpanProperty) afin que son texte s’étende sur plusieurs lignes. La propriété `RowSpan` est définie sur 2, qui représente le nombre de lignes qu’occupera `Label`.
 
 1. Dans la barre d’outils Visual Studio, appuyez sur le bouton **Démarrer** (le bouton triangulaire qui ressemble à un bouton de lecture) pour lancer l’application à l’intérieur du simulateur iOS distant ou de l’émulateur Android de votre choix :
 
     [![Capture d’écran d’une grille dont le contenu s’étend sur plusieurs colonnes et lignes, sur iOS et Android](../images/span-columns-rows.png "Grille comprenant du contenu s’étendant sur plusieurs colonnes et lignes")](../images/span-columns-rows-large.png#lightbox "Grille comprenant du contenu s’étendant sur plusieurs colonnes et lignes")
 
-    Pour plus d’informations sur l’extension de contenu sur plusieurs colonnes et des lignes, consultez la rubrique [Étendues](~/xamarin-forms/user-interface/layouts/grid.md#spans) dans le guide [Xamarin.Forms Grid](~/xamarin-forms/user-interface/layouts/grid.md).
+    Pour plus d’informations sur l’extension de contenu sur plusieurs colonnes et des lignes, consultez [Lignes et colonnes](~/xamarin-forms/user-interface/layouts/grid.md#rows-and-columns) dans le guide [Xamarin.Forms Grid](~/xamarin-forms/user-interface/layouts/grid.md).
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/vsmac)
 
@@ -60,10 +60,10 @@ ms.locfileid: "61375361"
     </Grid>
     ```
 
-    Ce code définit des colonnes et lignes pour [`Grid`](xref:Xamarin.Forms.Grid)et positionne les instances [`Label`](xref:Xamarin.Forms.Label) dans des colonnes et des lignes spécifiques. La première `Label` définit la propriété jointe [`ColumnSpan`](xref:Xamarin.Forms.Grid.ColumnSpanProperty) afin que son texte s’étende sur plusieurs colonnes. La propriété `ColumnSpan` est définie sur 2, qui représente le nombre de colonnes qu’occupera `Label`. La deuxième `Label` définit la propriété jointe [`RowSpan`](xref:Xamarin.Forms.Grid.RowSpanProperty) afin que son texte s’étende sur plusieurs lignes. La propriété `RowSpan` est définie sur 2, qui représente le nombre de lignes qu’occupera `Label`.
+    Ce code définit des colonnes et des lignes pour [`Grid`](xref:Xamarin.Forms.Grid) et positionne les instances [`Label`](xref:Xamarin.Forms.Label) dans des colonnes et des lignes spécifiques. La première `Label` définit la propriété jointe [`ColumnSpan`](xref:Xamarin.Forms.Grid.ColumnSpanProperty) afin que son texte s’étende sur plusieurs colonnes. La propriété `ColumnSpan` est définie sur 2, qui représente le nombre de colonnes qu’occupera `Label`. La deuxième `Label` définit la propriété jointe [`RowSpan`](xref:Xamarin.Forms.Grid.RowSpanProperty) afin que son texte s’étende sur plusieurs lignes. La propriété `RowSpan` est définie sur 2, qui représente le nombre de lignes qu’occupera `Label`.
 
 1. Dans la barre d’outils Visual Studio pour Mac, appuyez sur le bouton **Démarrer** (le bouton triangulaire qui ressemble à un bouton de lecture) pour lancer l’application dans le simulateur iOS ou dans l’émulateur Android de votre choix :
 
     [![Capture d’écran d’une grille dont le contenu s’étend sur plusieurs colonnes et lignes, sur iOS et Android](../images/span-columns-rows.png "Grille comprenant du contenu s’étendant sur plusieurs colonnes et lignes")](../images/span-columns-rows-large.png#lightbox "Grille comprenant du contenu s’étendant sur plusieurs colonnes et lignes")
 
-    Pour plus d’informations sur l’extension de contenu sur plusieurs colonnes et des lignes, consultez la rubrique [Étendues](~/xamarin-forms/user-interface/layouts/grid.md#spans) dans le guide [Xamarin.Forms Grid](~/xamarin-forms/user-interface/layouts/grid.md).
+    Pour plus d’informations sur l’extension de contenu sur plusieurs colonnes et des lignes, consultez [Lignes et colonnes](~/xamarin-forms/user-interface/layouts/grid.md#rows-and-columns) dans le guide [Xamarin.Forms Grid](~/xamarin-forms/user-interface/layouts/grid.md).
