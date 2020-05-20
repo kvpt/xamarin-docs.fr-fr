@@ -6,18 +6,18 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 04/02/2019
 ms.custom: video
-ms.openlocfilehash: f8e5a31b855158e1f801354c66f3d3d255eca559
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 41d9efa66318f4c3f5315351d3c1f51b4e503521
+ms.sourcegitcommit: 44c44ad60c5c880a39006493aedd2d7aa834a27e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75488489"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "83550898"
 ---
 # <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials : SecureStorage
 
 La classe **SecureStorage** permet de stocker en toute sécurité des paires clé/valeur simples.
 
-## <a name="get-started"></a>Prise en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -133,11 +133,11 @@ SecureStorage.RemoveAll();
 
 Le [magasin de clés Android](https://developer.android.com/training/articles/keystore.html) est utilisé pour stocker la clé de chiffrement permettant de chiffrer la valeur avant de l’enregistrer dans les [Préférences partagées](https://developer.android.com/training/data-storage/shared-preferences.html) avec le nom de fichier **[VOTRE-ID-DE-PACKAGE-D-APPLICATION].xamarinessentials**.  La clé (qui n’est pas une clé de chiffrement, mais la _clé_ de la _valeur_) utilisée dans le fichier de préférences partagées est un _hachage MD5_ de la clé transmise aux API`SecureStorage`.
 
-## <a name="api-level-23-and-higher"></a>Niveau d’API 23 et plus
+**Niveau d’API 23 et plus**
 
 Dans les niveaux d’API récents, une clé **AES** est récupérée auprès du magasin de clés Android et utilisée avec un chiffrement **AES/GCM/NoPadding** permettant de chiffrer la valeur avant de la stocker dans le fichier de préférences partagées.
 
-## <a name="api-level-22-and-lower"></a>Niveau d’API 22 et moins
+**Niveau d’API 22 et moins**
 
 Dans les anciens niveaux d’API, le magasin de clés Android ne prend en charge que le stockage de clés **RSA**, utilisées avec un chiffrement **ECB/RSA/PKCS1Padding** pour chiffrer une clé **AES** (générée au hasard à l’exécution) et stockées dans le fichier de préférences partagées sous la clé _SecureStorageKey_, si elle n’a pas déjà été générée.
 
@@ -155,7 +155,7 @@ Dans certains cas, les données KeyChain sont synchronisées avec iCloud, et il 
 
 Ces valeurs chiffrées sont stockées dans `ApplicationData.Current.LocalSettings`, à l’intérieur d’un conteneur, avec le nom **[VOTRE-ID-D-APPLICATION].xamarinessentials**.
 
-**SecureStorage** utilise l’API [Préférences](preferences.md) et suit la persistance des données décrite dans la documentation [Préférences](preferences.md#persistence). Il utilise `LocalSettings` également qui a une restriction que le nom de chaque paramètre peut être 255 caractères en longueur au plus. Chaque réglage peut être jusqu’à 8K octets de taille et chaque réglage composite peut être jusqu’à 64K octets de taille.
+**SecureStorage** utilise l’API [Préférences](preferences.md) et suit la persistance des données décrite dans la documentation [Préférences](preferences.md#persistence). Elle utilise également `LocalSettings` qui a une restriction selon laquelle le nom de chaque paramètre peut comporter 255 caractères au maximum. Chaque paramètre peut avoir une taille maximale de 8 Ko et chaque paramètre composite peut comporter jusqu’à 64 Ko d’octets.
 
 -----
 

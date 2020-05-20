@@ -1,29 +1,29 @@
 ---
 title: Style de présentation de page modal sur iOS
-description: Les spécificités des plateformes vous permettent d’utiliser des fonctionnalités uniquement disponibles sur une plateforme spécifique, sans implémenter de convertisseurs ou d’effets personnalisés. Cet article explique comment utiliser le paramètre spécifique à la plateforme iOS définit le style de présentation d’une page modale.
+description: Les spécificités des plateformes vous permettent d’utiliser des fonctionnalités uniquement disponibles sur une plateforme spécifique, sans implémenter de convertisseurs ou d’effets personnalisés. Cet article explique comment utiliser le propre à la plateforme iOS qui définit le style de présentation d’une page modale.
 ms.prod: xamarin
 ms.assetid: C791F7CF-330A-44BA-987A-4CFCCBB9278B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/02/2020
-ms.openlocfilehash: 5078b280499929e0e2e3691539cf1927b4c79fe7
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+ms.openlocfilehash: 19175a6d97afb9d2d985d8a1bf8e1ce4c0179242
+ms.sourcegitcommit: 87035b654434c22ca1b0d70ee8d2496dcb63b365
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82517541"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "83546504"
 ---
 # <a name="modal-page-presentation-style-on-ios"></a>Style de présentation de page modal sur iOS
 
-[![Télécharger l'](~/media/shared/download.png) exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-Ce spécifique à la plateforme iOS est utilisé pour définir le style de présentation d’une page modale. Il est consommé en XAML en affectant `Page.ModalPresentationStyle` à la propriété pouvant être `UIModalPresentationStyle` liée la valeur d’énumération :
+Ce spécifique à la plateforme iOS est utilisé pour définir le style de présentation d’une page modale et peut également être utilisé pour afficher les pages modales qui ont des arrière-plans transparents. Il est consommé en XAML en affectant `Page.ModalPresentationStyle` à la propriété pouvant être liée la `UIModalPresentationStyle` valeur d’énumération :
 
 ```xaml
 <ContentPage ...
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
-             ios:Page.ModalPresentationStyle="FormSheet">
+             ios:Page.ModalPresentationStyle="OverFullScreen">
     ...
 </ContentPage>
 ```
@@ -39,23 +39,23 @@ public class iOSModalFormSheetPageCS : ContentPage
 {
     public iOSModalFormSheetPageCS()
     {
-        On<iOS>().SetModalPresentationStyle(UIModalPresentationStyle.FormSheet);
+        On<iOS>().SetModalPresentationStyle(UIModalPresentationStyle.OverFullScreen);
         ...
     }
 }
 ```
 
-La `Page.On<iOS>` méthode spécifie que ce spécifique à la plateforme s’exécutera uniquement sur iOS. La `Page.SetModalPresentationStyle` méthode, dans l' [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) espace de noms, est utilisée pour définir le style de présentation [`Page`](xref:Xamarin.Forms.Page) modale sur un en spécifiant l’une des valeurs d’énumération suivantes `UIModalPresentationStyle` :
+La `Page.On<iOS>` méthode spécifie que ce spécifique à la plateforme s’exécutera uniquement sur iOS. La `Page.SetModalPresentationStyle` méthode, dans l' [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) espace de noms, est utilisée pour définir le style de présentation modale sur un [`Page`](xref:Xamarin.Forms.Page) en spécifiant l’une des `UIModalPresentationStyle` valeurs d’énumération suivantes :
 
 - `FullScreen`, qui définit le style de présentation modal pour englober la totalité de l’écran. Par défaut, les pages modales sont affichées à l’aide de ce style de présentation.
 - `FormSheet`, qui définit le style de présentation modal à centrer sur une valeur inférieure à l’écran.
-- `Automatic`, qui définit le style de présentation modal à la valeur par défaut choisie par le système. Pour la plupart des contrôleurs d' `UIKit` affichage `UIModalPresentationStyle.PageSheet`, mappe ce à, mais certains contrôleurs de vue système peuvent le mapper à un style différent.
+- `Automatic`, qui définit le style de présentation modal à la valeur par défaut choisie par le système. Pour la plupart des contrôleurs d’affichage, `UIKit` mappe ce à `UIModalPresentationStyle.PageSheet` , mais certains contrôleurs de vue système peuvent le mapper à un style différent.
 - `OverFullScreen`, qui définit le style de présentation modale pour couvrir l’écran.
 - `PageSheet`, qui définit le style de présentation modale pour couvrir le contenu sous-jacent.
 
-En outre, la `GetModalPresentationStyle` méthode peut être utilisée pour récupérer la valeur actuelle de l' `UIModalPresentationStyle` énumération appliquée au [`Page`](xref:Xamarin.Forms.Page).
+En outre, la `GetModalPresentationStyle` méthode peut être utilisée pour récupérer la valeur actuelle de l' `UIModalPresentationStyle` énumération appliquée au [`Page`](xref:Xamarin.Forms.Page) .
 
-Le résultat est que le style de présentation modal sur [`Page`](xref:Xamarin.Forms.Page) un peut être défini :
+Le résultat est que le style de présentation modal sur un [`Page`](xref:Xamarin.Forms.Page) peut être défini :
 
 [![](page-presentation-style-images/modal-presentation-style-small.png "Modal Presentation Styles")](page-presentation-style-images/modal-presentation-style-large.png#lightbox "Modal Presentation Styles")
 

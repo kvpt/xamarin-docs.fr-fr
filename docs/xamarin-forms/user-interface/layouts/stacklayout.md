@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/11/2020
-ms.openlocfilehash: 56da2b137475ef258d780fba0a7cdec3c91323b8
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
+ms.openlocfilehash: 2535a92814181c5039256ea1e42b06419ed427aa
+ms.sourcegitcommit: bc0c1740aa0708459729c0e671ab3ff7de3e2eee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83152221"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83426031"
 ---
 # <a name="xamarinforms-stacklayout"></a>Xamarin. Forms StackLayout
 
@@ -240,12 +240,12 @@ Dans cet exemple, les préférences d’alignement sont définies sur les [`Labe
 
 [![Capture d’écran d’un StackLayout avec des options d’alignement définies](stacklayout-images/alignment.png "StackLayout avec options d’alignement")](stacklayout-images/alignment-large.png#lightbox "StackLayout avec options d’alignement")
 
-A [`StackLayout`](xref:Xamarin.Forms.StackLayout) respecte uniquement les préférences d’alignement sur les vues enfants qui se trouvent dans la direction opposée à l' `StackLayout` orientation. Par conséquent, les [`Label`](xref:Xamarin.Forms.Label) vues enfants de l’orientation verticale `StackLayout` définissent leurs [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) Propriétés sur l’un des champs d’alignement :
+Un [`StackLayout`](xref:Xamarin.Forms.StackLayout) respecte uniquement les préférences d’alignement sur les vues enfants qui se trouvent dans la direction opposée à l’orientation `StackLayout`. Par conséquent, les vues enfants [`Label`](xref:Xamarin.Forms.Label) dans `StackLayout` orienté verticalement définissent leurs propriétés [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) sur l’un des champs d’alignement :
 
 - [`Start`](xref:Xamarin.Forms.LayoutOptions.Start), qui positionne [`Label`](xref:Xamarin.Forms.Label) sur le côté gauche du [`StackLayout`](xref:Xamarin.Forms.StackLayout) .
-- [`Center`](xref:Xamarin.Forms.LayoutOptions.Center), qui centre le [`Label`](xref:Xamarin.Forms.Label) dans le [`StackLayout`](xref:Xamarin.Forms.StackLayout) .
+- [`Center`](xref:Xamarin.Forms.LayoutOptions.Center), qui centre [`Label`](xref:Xamarin.Forms.Label) dans [`StackLayout`](xref:Xamarin.Forms.StackLayout).
 - [`End`](xref:Xamarin.Forms.LayoutOptions.End), qui positionne le [`Label`](xref:Xamarin.Forms.Label) sur le côté droit du [`StackLayout`](xref:Xamarin.Forms.StackLayout) .
-- [`Fill`](xref:Xamarin.Forms.LayoutOptions.Fill), qui garantit que le [`Label`](xref:Xamarin.Forms.Label) remplit la largeur de [`StackLayout`](xref:Xamarin.Forms.StackLayout) .
+- [`Fill`](xref:Xamarin.Forms.LayoutOptions.Fill), qui garantit que [`Label`](xref:Xamarin.Forms.Label) remplit la largeur de [`StackLayout`](xref:Xamarin.Forms.StackLayout).
 
 Le code C# équivalent est :
 
@@ -310,7 +310,7 @@ Dans cet exemple, les préférences de développement sont définies sur les [`L
 
 [![Capture d’écran d’un StackLayout avec les options d’expansion définies](stacklayout-images/expansion.png "StackLayout avec options d’expansion")](stacklayout-images/expansion-large.png#lightbox "StackLayout avec options d’expansion")
 
-Un [`StackLayout`](xref:Xamarin.Forms.StackLayout) peut uniquement développer des vues enfants dans le sens de son orientation. Par conséquent, le orienté verticale `StackLayout` peut développer des [`Label`](xref:Xamarin.Forms.Label) vues enfants qui définissent leurs [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) Propriétés sur l’un des champs d’expansion. Cela signifie que, pour l’alignement vertical, chaque `Label` occupe la même quantité d’espace dans `StackLayout`. Toutefois, seule la dernière `Label` , qui définit sa [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) propriété sur [`FillAndExpand`](xref:Xamarin.Forms.LayoutOptions.FillAndExpand) a une taille différente.
+Un [`StackLayout`](xref:Xamarin.Forms.StackLayout) peut uniquement développer les vues enfants dans le sens de son orientation. Par conséquent, le `StackLayout` orienté verticalement peut développer les vues enfants [`Label`](xref:Xamarin.Forms.Label) qui définissent leurs propriétés [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) sur l’un des champs d’extension. Cela signifie que, pour l’alignement vertical, chaque `Label` occupe la même quantité d’espace dans `StackLayout`. En revanche, seule la dernière instance `Label`, qui définit sa propriété [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) sur [`FillAndExpand`](xref:Xamarin.Forms.LayoutOptions.FillAndExpand) a une taille différente.
 
 > [!TIP]
 > Lorsque vous utilisez une [`StackLayout`](xref:Xamarin.Forms.StackLayout) , assurez-vous qu’une seule vue enfant a la valeur [`LayoutOptions.Expands`](xref:Xamarin.Forms.LayoutOptions.Expands) . Cette propriété permet de garantir que l’enfant spécifié occupe le plus grand espace que l’élément `StackLayout` peut lui donner, et il est inutile d’effectuer ces calculs plusieurs fois.
@@ -341,7 +341,7 @@ public ExpansionPageCS()
 ```
 
 > [!IMPORTANT]
-> Lorsque tout l’espace d’un [`StackLayout`](xref:Xamarin.Forms.StackLayout) est utilisé, les préférences de développement n’ont aucun effet.
+> Lorsque tout l’espace de [`StackLayout`](xref:Xamarin.Forms.StackLayout) est utilisé, les préférences d’extension n’ont aucun effet.
 
 Pour plus d’informations sur l’alignement et l’extension, consultez [Options de mise en page dans Xamarin.Forms](layout-options.md).
 
@@ -398,7 +398,7 @@ Dans cet exemple, le parent [`StackLayout`](xref:Xamarin.Forms.StackLayout) cont
 [![Capture d’écran des objets StackLayout imbriqués](stacklayout-images/combined.png "StackLayouts imbriqués")](stacklayout-images/combined-large.png#lightbox "StackLayouts imbriqués")
 
 > [!IMPORTANT]
-> L’imbrication d’un trop grand nombre d' `StackLayout` objets peut entraîner une page non performante, en raison de la quantité de calculs de disposition requise. Pour plus d’informations, consultez [choisir la disposition correcte](~/xamarin-forms/deploy-test/performance.md#choose-the-correct-layout).
+> Plus vous imbriquez des [`StackLayout`](xref:Xamarin.Forms.StackLayout) objets et d’autres dispositions, plus les dispositions imbriquées auront un impact sur les performances. Pour plus d’informations, consultez [choisir la disposition correcte](~/xamarin-forms/deploy-test/performance.md#choose-the-correct-layout).
 
 Le code C# équivalent est :
 

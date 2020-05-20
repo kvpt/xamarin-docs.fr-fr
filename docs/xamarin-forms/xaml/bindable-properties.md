@@ -1,80 +1,80 @@
 ---
 title: Propriétés pouvant être liées par Xamarin. Forms
-description: Cet article fournit une introduction aux propriétés pouvant être liées et montre comment créer et de les consommer.
+description: Cet article fournit une introduction aux propriétés pouvant être liées et montre comment les créer et les utiliser.
 ms.prod: xamarin
 ms.assetid: 1EE869D8-6FE1-45CA-A0AD-26EC7D032AD7
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/16/2020
-ms.openlocfilehash: 56583aa0df676ae55e1b283f1a8e151b69a13d28
-ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
+ms.openlocfilehash: 4151ac6f8cd9d860251ce1f27c7b342e0caa465c
+ms.sourcegitcommit: bc0c1740aa0708459729c0e671ab3ff7de3e2eee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "78291767"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83425775"
 ---
 # <a name="xamarinforms-bindable-properties"></a>Propriétés pouvant être liées par Xamarin. Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior)
 
-Les propriétés pouvant être liées étendent la fonctionnalité de propriété CLR en sauvegardant une propriété avec un type de [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) , au lieu de sauvegarder une propriété avec un champ. L’objectif de propriétés pouvant être liées est de fournir un système de propriétés qui prend en charge la liaison de données, les styles, modèles, et les valeurs définies via des relations parent-enfant. En outre, les propriétés pouvant être liées peuvent fournir des valeurs par défaut, validation des valeurs de propriété et les rappels qui surveillent les modifications apportées aux propriétés.
+Les propriétés pouvant être liées étendent la fonctionnalité de propriété CLR en sauvegardant une propriété avec un [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) type, au lieu de sauvegarder une propriété avec un champ. L’objectif des propriétés pouvant être liées est de fournir un système de propriétés qui prend en charge la liaison de données, les styles, les modèles et les valeurs définis par le biais de relations parent-enfant. En outre, les propriétés pouvant être liées peuvent fournir des valeurs par défaut, la validation des valeurs de propriété et les rappels qui surveillent les modifications de propriété.
 
-Propriétés doivent être implémentées en tant que propriétés pouvant être liées pour prendre en charge un ou plusieurs des fonctionnalités suivantes :
+Les propriétés doivent être implémentées en tant que propriétés pouvant être liées afin de prendre en charge une ou plusieurs des fonctionnalités suivantes :
 
 - Agissant comme une propriété *cible* valide pour la liaison de données.
 - Définition de la propriété à l’aide d’un [style](~/xamarin-forms/user-interface/styles/index.md).
 - En fournissant une valeur de propriété par défaut qui est différente de la valeur par défaut pour le type de la propriété.
 - Validation de la valeur de la propriété.
-- Surveillance des modifications de propriété.
+- Analyse des modifications des propriétés.
 
-[`Label.Text`](xref:Xamarin.Forms.Label.Text), [`Button.BorderRadius`](xref:Xamarin.Forms.Button.BorderRadius)et [`StackLayout.Orientation`](xref:Xamarin.Forms.StackLayout.Orientation)sont des exemples de propriétés pouvant être liées par Xamarin. Forms. Chaque propriété pouvant être liée a une propriété `public static readonly` correspondante de type [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) qui est exposée sur la même classe et qui est l’identificateur de la propriété pouvant être liée. Par exemple, l’identificateur de propriété pouvant être lié correspondant à la propriété `Label.Text` est [`Label.TextProperty`](xref:Xamarin.Forms.Label.TextProperty).
+Exemples de propriétés pouvant être liées par Xamarin. Forms : [`Label.Text`](xref:Xamarin.Forms.Label.Text) , [`Button.BorderRadius`](xref:Xamarin.Forms.Button.BorderRadius) et [`StackLayout.Orientation`](xref:Xamarin.Forms.StackLayout.Orientation) . Chaque propriété pouvant être liée possède un `public static readonly` champ de type correspondant [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) qui est exposé sur la même classe et qui est l’identificateur de la propriété pouvant être liée. Par exemple, l’identificateur de propriété pouvant être lié correspondant à la `Label.Text` propriété est [`Label.TextProperty`](xref:Xamarin.Forms.Label.TextProperty) .
 
 ## <a name="create-a-bindable-property"></a>Créer une propriété pouvant être liée
 
-Le processus de création d’une propriété pouvant être liée est comme suit :
+Le processus de création d’une propriété pouvant être liée est le suivant :
 
-1. Créez une instance [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) avec l’une des surcharges de méthode [`BindableProperty.Create`](xref:Xamarin.Forms.BindableProperty.Create*) .
-1. Définissez les accesseurs de propriété pour l’instance [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) .
+1. Créez une [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) instance de avec l’une des [`BindableProperty.Create`](xref:Xamarin.Forms.BindableProperty.Create*) surcharges de méthode.
+1. Définissez les accesseurs de propriété pour l' [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) instance.
 
-Toutes les instances de [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) doivent être créées sur le thread d’interface utilisateur. Cela signifie que seul le code qui s’exécute sur le thread d’interface utilisateur peut obtenir ou définir la valeur d’une propriété pouvant être liée. Toutefois, les instances `BindableProperty` sont accessibles à partir d’autres threads en marshalant vers le thread d’interface utilisateur avec la méthode [`Device.BeginInvokeOnMainThread`](xref:Xamarin.Forms.Device.BeginInvokeOnMainThread(System.Action)) .
+Toutes les [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) instances doivent être créées sur le thread d’interface utilisateur. Cela signifie que seul le code qui s’exécute sur le thread d’interface utilisateur peut obtenir ou définir la valeur d’une propriété pouvant être liée. Toutefois, `BindableProperty` les instances sont accessibles à partir d’autres threads en marshalant vers le thread d’interface utilisateur avec la [`Device.BeginInvokeOnMainThread`](xref:Xamarin.Forms.Device.BeginInvokeOnMainThread(System.Action)) méthode.
 
 ### <a name="create-a-property"></a>Créer une propriété
 
-Pour créer une instance `BindableProperty`, la classe conteneur doit dériver de la classe [`BindableObject`](xref:Xamarin.Forms.BindableObject) . Toutefois, la classe `BindableObject` est élevée dans la hiérarchie de classes, donc la majorité des classes utilisées pour les fonctionnalités de l’interface utilisateur prennent en charge les propriétés pouvant être liées.
+Pour créer une `BindableProperty` instance, la classe conteneur doit dériver de la [`BindableObject`](xref:Xamarin.Forms.BindableObject) classe. Toutefois, la `BindableObject` classe est élevée dans la hiérarchie de classes, donc la majorité des classes utilisées pour les fonctionnalités de l’interface utilisateur prennent en charge les propriétés pouvant être liées.
 
-Une propriété pouvant être liée peut être créée en déclarant une propriété `public static readonly` de type [`BindableProperty`](xref:Xamarin.Forms.BindableProperty). La propriété pouvant être liée doit être définie sur la valeur retournée de l’une des surcharges de la méthode [`BindableProperty.Create`](xref:Xamarin.Forms.BindableProperty.Create(System.String,System.Type,System.Type,System.Object,Xamarin.Forms.BindingMode,Xamarin.Forms.BindableProperty.ValidateValueDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangedDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangingDelegate,Xamarin.Forms.BindableProperty.CoerceValueDelegate,Xamarin.Forms.BindableProperty.CreateDefaultValueDelegate)) . La déclaration doit se trouver dans le corps d' [`BindableObject`](xref:Xamarin.Forms.BindableObject) classe dérivée, mais en dehors de toutes les définitions de membre.
+Une propriété pouvant être liée peut être créée en déclarant une `public static readonly` propriété de type [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) . La valeur retournée de l’une des surcharges de la méthode doit être affectée à la propriété pouvant être liée [`BindableProperty.Create`](xref:Xamarin.Forms.BindableProperty.Create(System.String,System.Type,System.Type,System.Object,Xamarin.Forms.BindingMode,Xamarin.Forms.BindableProperty.ValidateValueDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangedDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangingDelegate,Xamarin.Forms.BindableProperty.CoerceValueDelegate,Xamarin.Forms.BindableProperty.CreateDefaultValueDelegate)) . La déclaration doit se trouver dans le corps de la [`BindableObject`](xref:Xamarin.Forms.BindableObject) classe dérivée, mais en dehors de toutes les définitions de membre.
 
-Au minimum, un identificateur doit être spécifié lors de la création d’un [`BindableProperty`](xref:Xamarin.Forms.BindableProperty), avec les paramètres suivants :
+Au minimum, un identificateur doit être spécifié lors de la création d’un [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) , avec les paramètres suivants :
 
-- Nom de l' [`BindableProperty`](xref:Xamarin.Forms.BindableProperty).
+- Nom du [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) .
 - Type de la propriété.
-- Le type de l’objet propriétaire.
-- Valeur par défaut de la propriété. Cela garantit que la propriété retourne toujours une valeur par défaut particulier lorsqu’il n’est pas définie, et il peut être différent de la valeur par défaut pour le type de la propriété. La valeur par défaut est restaurée lorsque la méthode [`ClearValue`](xref:Xamarin.Forms.BindableObject.ClearValue(Xamarin.Forms.BindableProperty)) est appelée sur la propriété pouvant être liée.
+- Type de l’objet propriétaire.
+- Valeur par défaut de la propriété. Cela garantit que la propriété retourne toujours une valeur par défaut particulière lorsqu’elle est non définie et qu’elle peut être différente de la valeur par défaut pour le type de la propriété. La valeur par défaut est restaurée lorsque la [`ClearValue`](xref:Xamarin.Forms.BindableObject.ClearValue(Xamarin.Forms.BindableProperty)) méthode est appelée sur la propriété pouvant être liée.
 
-Le code suivant montre un exemple d’une propriété pouvant être liée, avec un identificateur et les valeurs pour les quatre paramètres obligatoires :
+Le code suivant illustre un exemple de propriété pouvant être liée, avec un identificateur et des valeurs pour les quatre paramètres requis :
 
 ```csharp
 public static readonly BindableProperty EventNameProperty =
   BindableProperty.Create ("EventName", typeof(string), typeof(EventToCommandBehavior), null);
 ```
 
-Cela crée une instance [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) nommée `EventName`, de type `string`. La propriété appartient à la classe `EventToCommandBehavior` et a une valeur par défaut de `null`. La Convention d’affectation de noms pour les propriétés pouvant être liées est que l’identificateur de propriété pouvant être lié doit correspondre au nom de propriété spécifié dans la méthode `Create`, avec « propriété » ajoutée. Par conséquent, dans l’exemple ci-dessus, l’identificateur de propriété pouvant être lié est `EventNameProperty`.
+Cela crée une [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) instance nommée `EventName` , de type `string` . La propriété appartient à la `EventToCommandBehavior` classe et a une valeur par défaut de `null` . La Convention d’affectation de noms pour les propriétés pouvant être liées est que l’identificateur de propriété pouvant être lié doit correspondre au nom de propriété spécifié dans la `Create` méthode, avec « propriété » ajoutée. Par conséquent, dans l’exemple ci-dessus, l’identificateur de propriété pouvant être lié est `EventNameProperty` .
 
-Si vous le souhaitez, lors de la création d’une instance de [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) , vous pouvez spécifier les paramètres suivants :
+Si vous le souhaitez, lors de la création d’une [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) instance, vous pouvez spécifier les paramètres suivants :
 
-- Mode de liaison. Cela est utilisé pour spécifier la direction dans laquelle seront propager les modifications de valeur de propriété. Dans le mode de liaison par défaut, les modifications sont propagées de la *source* à la *cible*.
-- Un délégué de validation qui sera appelé lorsque la valeur de propriété est définie. Pour plus d’informations, consultez [rappels de validation](#validation-callbacks).
-- Un délégué de modification de propriété qui sera appelé lorsque la valeur de propriété a changé. Pour plus d’informations, consultez [détecter les modifications de propriété](#detect-property-changes).
-- Une propriété de modification de délégué qui sera appelé lorsque la valeur de propriété est modifiée. Ce délégué a la même signature que le délégué de modification de propriété.
-- Un délégué de valeur forcée qui sera appelé lorsque la valeur de propriété a changé. Pour plus d’informations, consultez [forçage des rappels de valeur](#coerce-value-callbacks).
-- `Func` utilisé pour initialiser une valeur de propriété par défaut. Pour plus d’informations, consultez [créer une valeur par défaut avec un Func](#create-a-default-value-with-a-func).
+- Mode de liaison. Utilisé pour spécifier la direction dans laquelle les modifications de valeur de propriété sont propagées. Dans le mode de liaison par défaut, les modifications sont propagées de la *source* à la *cible*.
+- Délégué de validation qui sera appelé lorsque la valeur de propriété est définie. Pour plus d’informations, consultez [rappels de validation](#validation-callbacks).
+- Délégué de propriété modifié qui sera appelé lorsque la valeur de propriété a été modifiée. Pour plus d’informations, consultez [détecter les modifications de propriété](#detect-property-changes).
+- Délégué de modification de propriété qui sera appelé lorsque la valeur de propriété sera modifiée. Ce délégué a la même signature que le délégué property changed.
+- Délégué de valeur forcée qui sera appelé lorsque la valeur de propriété a été modifiée. Pour plus d’informations, consultez [forçage des rappels de valeur](#coerce-value-callbacks).
+- `Func`Utilisé pour initialiser une valeur de propriété par défaut. Pour plus d’informations, consultez [créer une valeur par défaut avec un Func](#create-a-default-value-with-a-func).
 
 ### <a name="create-accessors"></a>Créer des accesseurs
 
-Les accesseurs de propriété sont requis pour utiliser la syntaxe de la propriété pour accéder à une propriété pouvant être liée. L’accesseur `Get` doit retourner la valeur contenue dans la propriété pouvant être liée correspondante. Pour ce faire, appelez la méthode [`GetValue`](xref:Xamarin.Forms.BindableObject.GetValue(Xamarin.Forms.BindableProperty)) , en passant l’identificateur de propriété pouvant être lié sur lequel obtenir la valeur, puis effectuez un cast du résultat vers le type requis. L’accesseur `Set` doit définir la valeur de la propriété pouvant être liée correspondante. Pour ce faire, vous pouvez appeler la méthode [`SetValue`](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object)) , en passant l’identificateur de propriété pouvant être lié sur lequel définir la valeur, et la valeur à définir.
+Les accesseurs de propriété sont requis pour utiliser la syntaxe de propriété pour accéder à une propriété pouvant être liée. L' `Get` accesseur doit retourner la valeur contenue dans la propriété pouvant être liée correspondante. Pour ce faire, appelez la [`GetValue`](xref:Xamarin.Forms.BindableObject.GetValue(Xamarin.Forms.BindableProperty)) méthode, en passant l’identificateur de propriété pouvant être lié sur lequel obtenir la valeur, puis effectuez un cast du résultat vers le type requis. L' `Set` accesseur doit définir la valeur de la propriété pouvant être liée correspondante. Pour cela, vous devez appeler la [`SetValue`](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object)) méthode, en passant l’identificateur de propriété pouvant être lié sur lequel définir la valeur, et la valeur à définir.
 
-L’exemple de code suivant montre des accesseurs pour la propriété `EventName` pouvant être liée :
+L’exemple de code suivant montre des accesseurs pour la `EventName` propriété pouvant être liée :
 
 ```csharp
 public string EventName
@@ -86,9 +86,9 @@ public string EventName
 
 ## <a name="consume-a-bindable-property"></a>Utiliser une propriété pouvant être liée
 
-Une fois qu’une propriété peut être liée a été créée, il peut être consommé à partir de XAML ou de code. Dans XAML, cela est accompli en déclarant un espace de noms avec un préfixe, avec la déclaration d’espace de noms indiquant l’espace de noms CLR et éventuellement, un nom d’assembly. Pour plus d’informations, consultez [espaces de noms XAML](~/xamarin-forms/xaml/namespaces.md).
+Une fois qu’une propriété pouvant être liée a été créée, elle peut être consommée à partir du code XAML ou. En XAML, cela est obtenu en déclarant un espace de noms avec un préfixe, avec la déclaration d’espace de noms qui indique le nom de l’espace de noms CLR et, éventuellement, un nom d’assembly. Pour plus d’informations, consultez [espaces de noms XAML](~/xamarin-forms/xaml/namespaces.md).
 
-L’exemple de code suivant montre un espace de noms XAML pour un type personnalisé qui contient une propriété pouvant être liée, ce qui est définie dans le même assembly que le code d’application qui référence le type personnalisé :
+L’exemple de code suivant montre un espace de noms XAML pour un type personnalisé qui contient une propriété pouvant être liée, qui est définie dans le même assembly que le code d’application qui référence le type personnalisé :
 
 ```xaml
 <ContentPage ... xmlns:local="clr-namespace:EventToCommandBehavior" ...>
@@ -119,13 +119,13 @@ listView.Behaviors.Add (new EventToCommandBehavior
 
 ## <a name="advanced-scenarios"></a>Scénarios avancés
 
-Lors de la création d’une instance de [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) , il existe un certain nombre de paramètres facultatifs qui peuvent être définis pour activer les scénarios avancés de propriétés pouvant être liées. Cette section explore ces scénarios.
+Lors de la création d’une [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) instance, il existe un certain nombre de paramètres facultatifs qui peuvent être définis pour activer les scénarios de propriété avancés pouvant être liés. Cette section explore ces scénarios.
 
 ### <a name="detect-property-changes"></a>Détecter les modifications de propriété
 
-Une méthode de rappel de modification de propriété `static` peut être inscrite avec une propriété pouvant être liée en spécifiant le paramètre `propertyChanged` pour la méthode [`BindableProperty.Create`](xref:Xamarin.Forms.BindableProperty.Create(System.String,System.Type,System.Type,System.Object,Xamarin.Forms.BindingMode,Xamarin.Forms.BindableProperty.ValidateValueDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangedDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangingDelegate,Xamarin.Forms.BindableProperty.CoerceValueDelegate,Xamarin.Forms.BindableProperty.CreateDefaultValueDelegate)) . La méthode de rappel spécifiée sera être appelée lorsque la valeur de la propriété peut être liée change.
+Une `static` méthode de rappel de propriété modifiée peut être inscrite avec une propriété pouvant être liée en spécifiant le `propertyChanged` paramètre de la [`BindableProperty.Create`](xref:Xamarin.Forms.BindableProperty.Create(System.String,System.Type,System.Type,System.Object,Xamarin.Forms.BindingMode,Xamarin.Forms.BindableProperty.ValidateValueDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangedDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangingDelegate,Xamarin.Forms.BindableProperty.CoerceValueDelegate,Xamarin.Forms.BindableProperty.CreateDefaultValueDelegate)) méthode. La méthode de rappel spécifiée sera appelée lorsque la valeur de la propriété pouvant être liée sera modifiée.
 
-L’exemple de code suivant montre comment la propriété pouvant être liée `EventName` inscrit la méthode `OnEventNameChanged` en tant que méthode de rappel de modification de propriété :
+L’exemple de code suivant montre comment la `EventName` propriété pouvant être liée enregistre la `OnEventNameChanged` méthode en tant que méthode de rappel de modification de propriété :
 
 ```csharp
 public static readonly BindableProperty EventNameProperty =
@@ -139,13 +139,13 @@ static void OnEventNameChanged (BindableObject bindable, object oldValue, object
 }
 ```
 
-Dans la méthode de rappel de modification de propriété, le paramètre [`BindableObject`](xref:Xamarin.Forms.BindableObject) est utilisé pour désigner l’instance de la classe propriétaire qui a signalé une modification, et les valeurs des deux paramètres de `object` représentent les anciennes et nouvelles valeurs de la propriété pouvant être liée.
+Dans la méthode de rappel de modification de propriété, le [`BindableObject`](xref:Xamarin.Forms.BindableObject) paramètre est utilisé pour désigner l’instance de la classe propriétaire qui a signalé une modification, et les valeurs des deux `object` paramètres représentent les anciennes et nouvelles valeurs de la propriété pouvant être liée.
 
 ### <a name="validation-callbacks"></a>Rappels de validation
 
-Une `static` méthode de rappel de validation peut être inscrite avec une propriété pouvant être liée en spécifiant le paramètre `validateValue` pour la méthode [`BindableProperty.Create`](xref:Xamarin.Forms.BindableProperty.Create(System.String,System.Type,System.Type,System.Object,Xamarin.Forms.BindingMode,Xamarin.Forms.BindableProperty.ValidateValueDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangedDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangingDelegate,Xamarin.Forms.BindableProperty.CoerceValueDelegate,Xamarin.Forms.BindableProperty.CreateDefaultValueDelegate)) . La méthode de rappel spécifiée sera être appelée lorsque la valeur de la propriété peut être liée.
+Une `static` méthode de rappel de validation peut être inscrite avec une propriété pouvant être liée en spécifiant le `validateValue` paramètre de la [`BindableProperty.Create`](xref:Xamarin.Forms.BindableProperty.Create(System.String,System.Type,System.Type,System.Object,Xamarin.Forms.BindingMode,Xamarin.Forms.BindableProperty.ValidateValueDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangedDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangingDelegate,Xamarin.Forms.BindableProperty.CoerceValueDelegate,Xamarin.Forms.BindableProperty.CreateDefaultValueDelegate)) méthode. La méthode de rappel spécifiée sera appelée lorsque la valeur de la propriété pouvant être liée est définie.
 
-L’exemple de code suivant montre comment la propriété pouvant être liée `Angle` inscrit la méthode `IsValidValue` en tant que méthode de rappel de validation :
+L’exemple de code suivant montre comment la `Angle` propriété pouvant être liée enregistre la `IsValidValue` méthode comme une méthode de rappel de validation :
 
 ```csharp
 public static readonly BindableProperty AngleProperty =
@@ -160,18 +160,18 @@ static bool IsValidValue (BindableObject view, object value)
 }
 ```
 
-Les rappels de validation sont fournis avec une valeur et doivent retourner `true` si la valeur est valide pour la propriété, sinon `false`. Une exception est levée si un rappel de validation retourne `false`, qui doit être gérée par le développeur. Une utilisation typique d’une méthode de rappel de validation est restriction des valeurs d’entiers ou valeurs doubles lorsque la valeur de la propriété peut être liée. Par exemple, la méthode `IsValidValue` vérifie que la valeur de la propriété est une `double` dans la plage comprise entre 0 et 360.
+Les rappels de validation sont fournis avec une valeur et doivent retourner `true` si la valeur est valide pour la propriété ; sinon, `false` . Une exception est levée si un rappel de validation est retourné `false` , ce qui doit être géré par le développeur. Une utilisation classique d’une méthode de rappel de validation consiste à contraindre les valeurs des entiers ou des valeurs de type double lorsque la propriété pouvant être liée est définie. Par exemple, la `IsValidValue` méthode vérifie que la valeur de la propriété est `double` comprise entre 0 et 360.
 
 ### <a name="coerce-value-callbacks"></a>Forcer les rappels de valeur
 
-Une méthode de rappel de valeur de forçage de `static` peut être inscrite avec une propriété pouvant être liée en spécifiant le paramètre `coerceValue` pour la méthode [`BindableProperty.Create`](xref:Xamarin.Forms.BindableProperty.Create(System.String,System.Type,System.Type,System.Object,Xamarin.Forms.BindingMode,Xamarin.Forms.BindableProperty.ValidateValueDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangedDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangingDelegate,Xamarin.Forms.BindableProperty.CoerceValueDelegate,Xamarin.Forms.BindableProperty.CreateDefaultValueDelegate)) . La méthode de rappel spécifiée sera être appelée lorsque la valeur de la propriété peut être liée change.
+Une `static` méthode de rappel de valeur forcée peut être inscrite avec une propriété pouvant être liée en spécifiant le `coerceValue` paramètre de la [`BindableProperty.Create`](xref:Xamarin.Forms.BindableProperty.Create(System.String,System.Type,System.Type,System.Object,Xamarin.Forms.BindingMode,Xamarin.Forms.BindableProperty.ValidateValueDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangedDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangingDelegate,Xamarin.Forms.BindableProperty.CoerceValueDelegate,Xamarin.Forms.BindableProperty.CreateDefaultValueDelegate)) méthode. La méthode de rappel spécifiée sera appelée lorsque la valeur de la propriété pouvant être liée sera modifiée.
 
 > [!IMPORTANT]
-> Le type de `BindableObject` a une méthode `CoerceValue` qui peut être appelée pour forcer une réévaluation de la valeur de son argument `BindableProperty`, en appelant son rappel de valeur forcée.
+> Le `BindableObject` type a une `CoerceValue` méthode qui peut être appelée pour forcer une réévaluation de la valeur de son `BindableProperty` argument, en appelant son rappel de valeur forcée.
 
-Forcer des rappels sont utilisés pour forcer une réévaluation d’une propriété pouvant être liée lorsque la valeur de la propriété change de valeur. Par exemple, un rappel de forçage de valeur peut être utilisé pour vous assurer que la valeur d’une propriété pouvant être liée n’est pas supérieure à la valeur d’une autre propriété pouvant être liée.
+Les rappels de valeur forcée sont utilisés pour forcer une réévaluation d’une propriété pouvant être liée lorsque la valeur de la propriété change. Par exemple, un rappel de valeur forcée peut être utilisé pour s’assurer que la valeur d’une propriété pouvant être liée n’est pas supérieure à la valeur d’une autre propriété pouvant être liée.
 
-L’exemple de code suivant montre comment la propriété pouvant être liée `Angle` inscrit la méthode `CoerceAngle` en tant que méthode de rappel de valeur forcée :
+L’exemple de code suivant montre comment la `Angle` propriété pouvant être liée inscrit la `CoerceAngle` méthode en tant que méthode de rappel de valeur forcée :
 
 ```csharp
 public static readonly BindableProperty AngleProperty = BindableProperty.Create (
@@ -198,7 +198,7 @@ static void ForceCoerceValue(BindableObject bindable, object oldValue, object ne
 }
 ```
 
-La méthode `CoerceAngle` vérifie la valeur de la propriété `MaximumAngle` et, si la valeur de la propriété `Angle` est supérieure, elle convertit la valeur en valeur de la propriété `MaximumAngle`. En outre, lorsque la propriété `MaximumAngle` change le rappel de la valeur forcée est appelé sur la propriété `Angle` en appelant la méthode `CoerceValue`.
+La `CoerceAngle` méthode vérifie la valeur de la `MaximumAngle` propriété, et si la `Angle` valeur de propriété est supérieure à, elle convertit la valeur en `MaximumAngle` valeur de propriété. En outre, lorsque la `MaximumAngle` propriété change, le rappel de la valeur forcée est appelé sur la `Angle` propriété en appelant la `CoerceValue` méthode.
 
 ### <a name="create-a-default-value-with-a-func"></a>Créer une valeur par défaut avec un Func
 
@@ -210,7 +210,7 @@ public static readonly BindableProperty SizeProperty =
   defaultValueCreator: bindable => Device.GetNamedSize (NamedSize.Large, (Label)bindable));
 ```
 
-Le paramètre `defaultValueCreator` a la valeur d’une `Func` qui appelle la méthode [`Device.GetNamedSize`](xref:Xamarin.Forms.Device.GetNamedSize(Xamarin.Forms.NamedSize,System.Type)) pour retourner une `double` qui représente la taille nommée de la police utilisée sur un [`Label`](xref:Xamarin.Forms.Label) sur la plateforme native.
+Le `defaultValueCreator` paramètre est défini sur un `Func` qui appelle la [`Device.GetNamedSize`](xref:Xamarin.Forms.Device.GetNamedSize(Xamarin.Forms.NamedSize,System.Type)) méthode pour retourner un `double` qui représente la taille nommée pour la police utilisée sur une [`Label`](xref:Xamarin.Forms.Label) sur la plateforme native.
 
 ## <a name="related-links"></a>Liens connexes
 
