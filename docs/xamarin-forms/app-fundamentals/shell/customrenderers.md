@@ -1,22 +1,14 @@
 ---
-title: Renderers Xamarin.Forms Shell personnalisés
-description: Les applications Xamarin.Forms Shell sont hautement personnalisables via les propriétés et méthodes qui exposent les différentes classes Shell. Toutefois, il est également possible de créer un renderer Shell personnalisé lorsque des personnalisations plus sophistiquées spécifiques à une plateforme sont requises.
-ms.prod: xamarin
-ms.assetid: 3B1A6AE8-1D1E-4C34-B9AB-48F4444FEF32
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 05/06/2019
-ms.openlocfilehash: ecb68d662c64b65346ffd04f0d3d3cd525533151
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "66178033"
----
-# <a name="xamarinforms-shell-custom-renderers"></a>Renderers Xamarin.Forms Shell personnalisés
+titre : « Xamarin.Forms Description des convertisseurs personnalisés de l’interpréteur de commandes » : les Xamarin.Forms applications Shell sont hautement personnalisables via les propriétés et les méthodes exposées par les différentes classes de Shell. Toutefois, il est également possible de créer un convertisseur personnalisé Shell quand des personnalisations spécifiques à une plateforme plus sophistiquées sont requises.
+ms. Prod : ms. AssetID : ms. Technology : Auteur : ms. Author : ms. Date : No-Loc :
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
 
-Un des avantages des applications Xamarin.Forms Shell est la capacité de personnaliser leur apparence et leur comportement via les propriétés et méthodes qui exposent les différentes classes Shell. Toutefois, il est également possible de créer un renderer Shell personnalisé lorsque des personnalisations plus sophistiquées spécifiques à une plateforme sont requises. Comme avec d’autres renderers personnalisés, un renderer Shell personnalisé peut être ajouté à un projet de plateforme unique afin de personnaliser son apparence et son comportement, tout en autorisant le comportement par défaut sur l’autre plate-forme ; ou un renderer Shell différent peut être ajouté à chaque projet de plateforme pour personnaliser son apparence et son comportement à la fois sur iOS et Android.
+---
+
+# <a name="xamarinforms-shell-custom-renderers"></a>Xamarin.FormsConvertisseurs personnalisés de l’interpréteur de commandes
+
+L’un des avantages des Xamarin.Forms applications Shell est que leur apparence et leur comportement sont hautement personnalisables par le biais des propriétés et des méthodes exposées par les différentes classes de Shell. Toutefois, il est également possible de créer un renderer Shell personnalisé lorsque des personnalisations plus sophistiquées spécifiques à une plateforme sont requises. Comme avec d’autres renderers personnalisés, un renderer Shell personnalisé peut être ajouté à un projet de plateforme unique afin de personnaliser son apparence et son comportement, tout en autorisant le comportement par défaut sur l’autre plate-forme ; ou un renderer Shell différent peut être ajouté à chaque projet de plateforme pour personnaliser son apparence et son comportement à la fois sur iOS et Android.
 
 Les applications Shell sont rendues à l’aide de la classe `ShellRenderer` sur iOS et Android. Sur iOS, la classe `ShellRenderer` figure dans l’espace de noms `Xamarin.Forms.Platform.iOS`. Sur Android, la classe `ShellRenderer` figure dans l’espace de noms `Xamarin.Forms.Platform.Android`.
 
@@ -32,7 +24,7 @@ Le processus de création d’une classe de renderer personnalisée Shell est le
 
 1. Créez une sous-classe de la classe `ShellRenderer`.
 1. Remplacez les méthodes requises pour effectuer la personnalisation nécessaire.
-1. Ajoutez un élément `ExportRendererAttribute` à la sous-classe `ShellRenderer` pour indiquer qu’elle est utilisée pour le rendu de l’application Shell. Cet attribut est utilisé pour inscrire le renderer personnalisé auprès de Xamarin.Forms.
+1. Ajoutez un élément `ExportRendererAttribute` à la sous-classe `ShellRenderer` pour indiquer qu’elle est utilisée pour le rendu de l’application Shell. Cet attribut est utilisé pour inscrire le convertisseur personnalisé avec Xamarin.Forms .
 
 > [!NOTE]
 > Cet attribut est facultatif pour fournir un renderer personnalisé Shell dans chaque projet de plateforme. Si aucun renderer personnalisé n’est inscrit, la valeur de classe par défaut `ShellRenderer` sera utilisée.
@@ -134,4 +126,4 @@ La classe `MyShellToolbarAppearanceTracker` remplace la méthode `SetAppearance`
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Renderers Xamarin.Forms personnalisés](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)
+- [Xamarin.FormsConvertisseurs personnalisés](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)

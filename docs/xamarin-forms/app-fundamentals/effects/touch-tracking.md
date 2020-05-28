@@ -1,28 +1,31 @@
 ---
-title: Appel d’événements à partir d’effets
-description: Un effet peut définir et appeler un événement, en signalant des changements dans la vue native sous-jacente. Cet article explique comment implémenter le suivi de l’interaction tactile multipoint de bas niveau et comment générer des événements qui indiquent une activité tactile.
-ms.prod: xamarin
-ms.assetid: 6A724681-55EB-45B8-9EED-7E412AB19DD2
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 12/14/2018
-ms.openlocfilehash: cf5a97bca7c827101db951a440863839539c7e48
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 892bffa4027a1a61d6c22cc26d1556fb007432d8
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76725258"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136979"
 ---
 # <a name="invoking-events-from-effects"></a>Appel d’événements à partir d’effets
 
-[![Télécharger](~/media/shared/download.png) l’échantillon Télécharger l’échantillon](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/)
 
-_Un effet peut définir et invoquer un événement, signalant des changements dans la vue autochtone sous-jacente. Cet article montre comment implémenter le suivi multi-touch de bas niveau des doigts, et comment générer des événements qui signalent l’activité tactile._
+_Un effet peut définir et appeler un événement, en signalant les modifications apportées à la vue Native sous-jacente. Cet article explique comment implémenter le suivi des doigts multipoint de bas niveau et comment générer des événements qui signalent une activité tactile._
 
 L’effet décrit dans cet article fournit l’accès aux événements tactiles de bas niveau. Ces événements de bas niveau ne sont pas disponibles via les classes `GestureRecognizer` existantes, mais ils sont très importants pour certains types d’applications. Par exemple, une application de peinture tactile a besoin de suivre les doigts individuels au fil de leur déplacement sur l’écran. Un clavier musical doit détecter les appuis et les relâchements sur les touches individuelles, mais aussi un doigt glissant d’une touche à l’autre dans un glissando.
 
-Un effet est idéal pour le suivi de l’interaction tactile multipoint, car il peut être attaché à n’importe quel élément de Xamarin.Forms.
+Un effet est idéal pour le suivi des doigts multipoint, car il peut être attaché à n’importe quel Xamarin.Forms élément.
 
 ## <a name="platform-touch-events"></a>Événements tactiles des plateformes
 
@@ -115,7 +118,7 @@ public class TouchActionEventArgs : EventArgs
 
 Une application peut utiliser la propriété `Id` pour suivre des doigts individuels. Notez la propriété `IsInContact`. Cette propriété est toujours `true` pour les événements `Pressed` et `false` pour les événements `Released`. Elle est également toujours `true` pour les événements `Moved` sur iOS et Android. La propriété `IsInContact` peut être `false` pour les événements `Moved` sur la plateforme Windows universelle quand le programme est en cours d’exécution sur le poste de travail et que le pointeur de la souris se déplace sans qu’un bouton soit enfoncé.
 
-Vous pouvez utiliser la classe `TouchEffect` dans vos propres applications, en incluant le fichier dans le projet de bibliothèque .NET Standard de la solution et en ajoutant une instance de la collection `Effects` de n’importe quel élément de Xamarin.Forms. Attachez un gestionnaire à l’événement `TouchAction` pour obtenir les événements tactiles.
+Vous pouvez utiliser la `TouchEffect` classe dans vos propres applications en incluant le fichier dans le projet de bibliothèque .NET standard de la solution, et en ajoutant une instance à la `Effects` collection d’un Xamarin.Forms élément. Attachez un gestionnaire à l’événement `TouchAction` pour obtenir les événements tactiles.
 
 Pour utiliser `TouchEffect` dans votre propre application, vous avez également besoin des implémentations de plateforme incluses dans la solution **TouchTrackingEffectDemos**.
 
@@ -457,7 +460,7 @@ Vous pouvez déplacer plusieurs éléments `BoxView` simultanément en utilisant
 
 ### <a name="subclassing-the-view"></a>Sous-classement de la vue
 
-Il est souvent plus facile pour un élément de Xamarin.Forms de gérer ses propres événements tactiles. La page **Draggable BoxView Dragging** fonctionne comme la page **BoxView Dragging**, mais les éléments que l’utilisateur fait glisser sont des instances d’une classe [`DraggableBoxView`](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffect/TouchTrackingEffect/TouchTrackingEffect/DraggableBoxView.cs) qui dérive de `BoxView` :
+Il est souvent plus facile pour un Xamarin.Forms élément de gérer ses propres événements tactiles. La page **Draggable BoxView Dragging** fonctionne comme la page **BoxView Dragging**, mais les éléments que l’utilisateur fait glisser sont des instances d’une classe [`DraggableBoxView`](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffect/TouchTrackingEffect/TouchTrackingEffect/DraggableBoxView.cs) qui dérive de `BoxView` :
 
 ```csharp
 class DraggableBoxView : BoxView
@@ -512,13 +515,13 @@ Le constructeur crée et attache l’élément `TouchEffect` et définit la prop
 
 ### <a name="integrating-with-skiasharp"></a>Intégration à SkiaSharp
 
-Les deux démonstrations suivantes nécessitent des graphiques, et elles utilisent pour cela SkiaSharp. Si vous le souhaitez, avant d’examiner ces exemples, vous pouvez consulter des informations sur l’[utilisation de SkiaSharp dans Xamarin.Forms](~/xamarin-forms/user-interface/graphics/skiasharp/index.md). Les deux premiers articles (« SkiaSharp Drawing Basics » et « SkiaSharp Lines and Paths ») couvrent tout ce dont vous avez besoin ici.
+Les deux démonstrations suivantes nécessitent des graphiques, et elles utilisent pour cela SkiaSharp. Vous souhaiterez peut-être en savoir plus sur [l’utilisation de SkiaSharp dans avant d' Xamarin.Forms ](~/xamarin-forms/user-interface/graphics/skiasharp/index.md) étudier ces exemples. Les deux premiers articles (« SkiaSharp Drawing Basics » et « SkiaSharp Lines and Paths ») couvrent tout ce dont vous avez besoin ici.
 
 La page **Ellipse Drawing** vous permet de dessiner une ellipse en faisant glisser votre doigt sur l’écran. Selon la façon dont vous déplacez votre doigt, vous pouvez dessiner l’ellipse en partant du coin supérieur gauche vers le coin inférieur droit, ou en partant de n’importe quel autre coin vers le coin opposé. L’ellipse est dessinée avec une couleur et une opacité aléatoires.
 
 [![](touch-tracking-images/ellipsedrawing-small.png "Triple screenshot of the Ellipse Drawing page")](touch-tracking-images/ellipsedrawing-large.png#lightbox "Triple screenshot of the Ellipse Drawing page")
 
-Si vous touchez ensuite une des ellipses, vous pouvez la faire glisser vers un autre emplacement. Ceci nécessite une technique appelée « test d’atteinte » (hit-testing), qui implique la recherche de l’objet graphique à un point donné. Les ellipses de SkiaSharp ne sont pas des éléments de Xamarin.Forms : ils n’effectuent donc pas leur propre traitement de `TouchEffect`. Le `TouchEffect` doit s’appliquer à tout l’objet `SKCanvasView`.
+Si vous touchez ensuite une des ellipses, vous pouvez la faire glisser vers un autre emplacement. Ceci nécessite une technique appelée « test d’atteinte » (hit-testing), qui implique la recherche de l’objet graphique à un point donné. Les ellipses SkiaSharp ne sont pas des Xamarin.Forms éléments. elles ne peuvent donc pas effectuer leur propre `TouchEffect` traitement. Le `TouchEffect` doit s’appliquer à tout l’objet `SKCanvasView`.
 
 Le fichier [EllipseDrawPage.xaml](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffect/TouchTrackingEffect/TouchTrackingEffect/EllipseDrawingPage.xaml) instancie la `SKCanvasView` dans une `Grid` avec une seule cellule. L’objet `TouchEffect` est attaché à cette `Grid` :
 
@@ -800,7 +803,7 @@ Les différents éléments `WhiteKey` et `BlackKey` sont organisés dans le [fic
 
 Si vous balayez avec votre doigt sur les touches, vous voyez grâce à de légères modifications de couleur que les événements tactiles sont transférés d’une touche à une autre.
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article a montré comment appeler des événements dans un effet, et comment écrire et utiliser un effet qui implémente un traitement de l’interaction tactile multipoint de bas niveau.
 

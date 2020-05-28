@@ -1,34 +1,37 @@
 ---
-title: Intégration de texte et de graphisme
-description: Cet article explique comment déterminer la taille de la chaîne de texte rendue pour intégrer les applications Xamarin.Forms de texte avec des graphiques de SkiaSharp et illustre ceci avec l’exemple de code.
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: A0B5AC82-7736-4AD8-AA16-FE43E18D203C
-author: davidbritch
-ms.author: dabritch
-ms.date: 03/10/2017
-ms.openlocfilehash: d23b4dbb97f4f98ff0361bb056e394bb7cbd941a
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: ''
+description: Cet article explique comment déterminer la taille de la chaîne de texte rendue pour intégrer du texte à des graphiques SkiaSharp dans des Xamarin.Forms applications et illustre cela avec un exemple de code.
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: ee97ee2aae11e4e54a0d25e80ffd7bce301fa2f3
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645643"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137681"
 ---
 # <a name="integrating-text-and-graphics"></a>Intégration de texte et de graphisme
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-_Découvrez comment déterminer la taille de la chaîne de texte rendue à intégrer le texte avec des graphiques de SkiaSharp_
+_Voir comment déterminer la taille de la chaîne de texte rendue pour intégrer du texte à des graphiques SkiaSharp_
 
-Cet article montre comment mesurer le texte, mettre à l’échelle le texte à une taille particulière et intégrer le texte avec les autres graphiques :
+Cet article montre comment mesurer du texte, mettre à l’échelle le texte à une taille particulière et intégrer du texte à d’autres graphiques :
 
-![](text-images/textandgraphicsexample.png "Texte encadré par des rectangles")
+![](text-images/textandgraphicsexample.png "Text surrounded by rectangles")
 
-Cette image inclut également un rectangle arrondi. Le SkiaSharp `Canvas` classe inclut [ `DrawRect` ](xref:SkiaSharp.SKCanvas.DrawRect*) méthodes pour dessiner un rectangle et [ `DrawRoundRect` ](xref:SkiaSharp.SKCanvas.DrawRoundRect*) méthodes pour dessiner un rectangle avec des angles arrondis. Ces méthodes permettent le rectangle doit être défini comme un `SKRect` valeur ou par d’autres moyens.
+Cette image comprend également un rectangle arrondi. La `Canvas` classe SkiaSharp comprend des [`DrawRect`](xref:SkiaSharp.SKCanvas.DrawRect*) méthodes permettant de dessiner un rectangle et des [`DrawRoundRect`](xref:SkiaSharp.SKCanvas.DrawRoundRect*) méthodes pour dessiner un rectangle avec des angles arrondis. Ces méthodes permettent de définir le rectangle comme une `SKRect` valeur ou d’autres façons.
 
-Le **texte encadré** page centres une courte chaîne de texte sur la page et les entoure avec un frame composé d’une paire de rectangles à coins arrondis. Le [ `FramedTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/FramedTextPage.cs) classe montre comment procéder.
+La page de **texte encadrée** centre une chaîne de texte brève sur la page et l’entoure d’un cadre composé d’une paire de rectangles arrondis. La [`FramedTextPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/FramedTextPage.cs) classe montre comment effectuer cette opération.
 
-Dans SkiaSharp, vous utilisez la `SKPaint` classe pour définir les attributs de texte et de police, mais vous pouvez également l’utiliser pour obtenir la taille de rendu de texte. Début de ce qui suit `PaintSurface` Gestionnaire d’événements appelle deux différents `MeasureText` méthodes. La première [ `MeasureText` ](xref:SkiaSharp.SKPaint.MeasureText(System.String)) appel a une simple `string` argument et retourne la largeur en pixels du texte basée sur les attributs de police actuelle. Le programme calcule ensuite une nouvelle `TextSize` propriété de la `SKPaint` objet basé sur cette largeur restituée, actuel `TextSize` propriété et la largeur de la zone d’affichage. Ce calcul est destiné à définir `TextSize` afin que la chaîne de texte pour être rendue à 90 % de la largeur de l’écran :
+Dans SkiaSharp, vous utilisez la `SKPaint` classe pour définir des attributs de texte et de police, mais vous pouvez également l’utiliser pour obtenir la taille rendue du texte. Le début du gestionnaire d' `PaintSurface` événements suivant appelle deux `MeasureText` méthodes différentes. Le premier [`MeasureText`](xref:SkiaSharp.SKPaint.MeasureText(System.String)) appel a un `string` argument simple et retourne la largeur en pixels du texte en fonction des attributs de police actuels. Le programme calcule ensuite une nouvelle `TextSize` propriété de l' `SKPaint` objet en fonction de cette largeur rendue, de la `TextSize` propriété actuelle et de la largeur de la zone d’affichage. Ce calcul est destiné à être défini de `TextSize` sorte que la chaîne de texte soit rendue à 90% de la largeur de l’écran :
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -58,18 +61,18 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-La seconde [ `MeasureText` ](xref:SkiaSharp.SKPaint.MeasureText(System.String,SkiaSharp.SKRect@)) appel a un `SKRect` argument, afin qu’il obtient la largeur et la hauteur du texte rendu. Le `Height` propriété de ce `SKRect` valeur dépend de la présence de lettres majuscules, des jambages supérieurs et hampes inférieures dans la chaîne de texte. Différents `Height` valeurs sont indiquées pour le texte chaînes « mom », « cat » et « dog », par exemple.
+Le deuxième [`MeasureText`](xref:SkiaSharp.SKPaint.MeasureText(System.String,SkiaSharp.SKRect@)) appel a un `SKRect` argument, donc il obtient à la fois une largeur et une hauteur du texte rendu. La `Height` propriété de cette `SKRect` valeur dépend de la présence de majuscules, de hampes ascendantes et de descendants dans la chaîne de texte. `Height`Des valeurs différentes sont indiquées pour les chaînes de texte « MOM », « Cat » et « Dog », par exemple.
 
-Le `Left` et `Top` propriétés de la `SKRect` structure indiquent les coordonnées du coin supérieur gauche du texte rendu si le texte est affiché par un `DrawText` appeler avec les positions X et Y de 0. Par exemple, lorsque ce programme est en cours d’exécution sur un simulateur iPhone 7, `TextSize` reçoit la valeur 90.6254 à la suite le calcul suivant le premier appel à `MeasureText`. Le `SKRect` valeur obtenue à partir de la deuxième appel à `MeasureText` a les valeurs de propriété suivantes :
+Les `Left` `Top` Propriétés et de la `SKRect` structure indiquent les coordonnées de l’angle supérieur gauche du texte rendu si le texte est affiché par un `DrawText` appel avec des positions X et Y égales à 0. Par exemple, quand ce programme s’exécute sur un simulateur iPhone 7, `TextSize` la valeur 90,6254 est affectée en tant que résultat du calcul suivant le premier appel à `MeasureText` . La `SKRect` valeur obtenue à partir du deuxième appel à `MeasureText` a les valeurs de propriétés suivantes :
 
-- `Left` = 6
+- `Left`= 6
 - `Top` = &ndash;68
-- `Width` = 664.8214
-- `Height` = 88 ;
+- `Width`= 664,8214
+- `Height`= 88 ;
 
-N’oubliez pas que les coordonnées X et Y vous passer à la `DrawText` méthode spécifier le côté gauche du texte à la ligne de base. Le `Top` valeur indique que le texte s’étend des 68 pixels au-dessus de cette ligne de base (en soustrayant 68 informatique à partir de 88) 20 pixels sous la ligne de base. Le `Left` valeur 6 indique que le texte commence six pixels vers la droite de la valeur de X dans le `DrawText` appeler. Ainsi, pour l’espacement normal. Si vous souhaitez afficher le texte correctement dans le coin supérieur gauche de l’affichage, passer les valeurs négatives de ces `Left` et `Top` valeurs comme les coordonnées X et Y de `DrawText`, dans cet exemple, &ndash;6 et 68.
+Gardez à l’esprit que les coordonnées X et Y que vous transmettez à la `DrawText` méthode spécifient le côté gauche du texte au niveau de la ligne de base. La `Top` valeur indique que le texte étend 68 pixels au-dessus de cette ligne de base et (en le soustrayant 68 de 88) de 20 pixels sous la ligne de base. La `Left` valeur 6 indique que le texte commence six pixels à droite de la valeur X dans l' `DrawText` appel. Cela permet un espacement entre les caractères standard. Si vous souhaitez afficher le texte dans l’angle supérieur gauche de l’affichage, transmettez les valeurs négatives de ces `Left` `Top` valeurs et comme les coordonnées X et Y de `DrawText` , dans cet exemple, &ndash; 6 et 68.
 
-Le `SKRect` structure définit plusieurs propriétés pratiques et des méthodes, dont certaines sont utilisées dans le reste de la `PaintSurface` gestionnaire. Le `MidX` et `MidY` valeurs indiquent les coordonnées du centre du rectangle. (Dans l’exemple iPhone 7, ces valeurs sont 338.4107 et &ndash;24.) Le code suivant utilise ces valeurs pour le calcul le plus simple de coordonnées pour centrer le texte sur l’affichage :
+La `SKRect` structure définit plusieurs propriétés et méthodes pratiques, dont certaines sont utilisées dans le reste du `PaintSurface` Gestionnaire. Les `MidX` `MidY` valeurs et indiquent les coordonnées du centre du rectangle. (Dans l’exemple iPhone 7, ces valeurs sont 338,4107 et &ndash; 24.) Le code suivant utilise ces valeurs pour le calcul le plus facile de coordonnées pour centrer le texte à l’écran :
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -85,14 +88,14 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Le `SKImageInfo` structure d’informations sur définit également un [ `Rect` ](xref:SkiaSharp.SKImageInfo.Rect) propriété de type `SKRect`, de sorte que vous pouvez également calculer `xText` et `yText` comme suit :
+La `SKImageInfo` structure info définit également une [`Rect`](xref:SkiaSharp.SKImageInfo.Rect) propriété de type `SKRect` , ce qui vous permet également de calculer `xText` et de `yText` procéder comme suit :
 
 ```csharp
 float xText = info.Rect.MidX - textBounds.MidX;
 float yText = info.Rect.MidY - textBounds.MidY;
 ```
 
-Le `PaintSurface` gestionnaire se termine par deux appels à `DrawRoundRect`, qui nécessitent des arguments de `SKRect`. Cela `SKRect` valeur est basée sur le `SKRect` valeur obtenue à partir de la `MeasureText` (méthode), mais il ne peut pas être le même. Tout d’abord, il doit être un peu plus grands afin que le rectangle à coins arrondis ne dessine sur les bords du texte. Deuxièmement, il doit être décalés dans l’espace afin que le `Left` et `Top` valeurs correspondent au coin supérieur gauche où le rectangle doit être positionné. Ces deux tâches sont réalisées par le [ `Offset` ](xref:SkiaSharp.SKRect.Offset*) et [ `Inflate` ](xref:SkiaSharp.SKRect.Inflate*) méthodes définies par `SKRect`:
+Le `PaintSurface` Gestionnaire se termine par deux appels à `DrawRoundRect` , qui requièrent tous deux des arguments de `SKRect` . Cette `SKRect` valeur est basée sur la `SKRect` valeur obtenue à partir de la `MeasureText` méthode, mais elle ne peut pas être identique. Tout d’abord, il doit être un peu plus grand afin que le rectangle arrondi ne dessine pas sur les bords du texte. Ensuite, il doit être déplacé dans l’espace afin que les `Left` valeurs et `Top` correspondent au coin supérieur gauche où le rectangle doit être positionné. Ces deux tâches sont effectuées par les [`Offset`](xref:SkiaSharp.SKRect.Offset*) [`Inflate`](xref:SkiaSharp.SKRect.Inflate*) méthodes et définies par `SKRect` :
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -121,19 +124,19 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Ensuite, le reste de la méthode est simple. Il crée un autre `SKPaint` objet pour les bordures et les appels `DrawRoundRect` à deux reprises. Le deuxième appel utilise un rectangle gonflé par un autre 10 pixels. Le premier appel spécifie un rayon de l’angle de 20 pixels. Le second possède un rayon de 30 pixels, afin qu’ils semblent être parallèles :
+Après cela, le reste de la méthode est simple. Elle crée un autre `SKPaint` objet pour les bordures et appelle `DrawRoundRect` deux fois. Le deuxième appel utilise un rectangle gonflé par 10 pixels sur deux. Le premier appel spécifie un rayon de l’angle de 20 pixels. Le second a un rayon d’angle de 30 pixels, donc ils semblent être parallèles :
 
- [![](text-images/framedtext-small.png "Capture d’écran triple de la page de texte encadré")](text-images/framedtext-large.png#lightbox "Triple capture d’écran de la page de texte encadré")
+ [![](text-images/framedtext-small.png "Triple screenshot of the Framed Text page")](text-images/framedtext-large.png#lightbox "Triple screenshot of the Framed Text page")
 
-Vous pouvez activer votre téléphone ou un simulateur sur le côté pour afficher le texte et augmenter la taille de trame.
+Vous pouvez faire pivoter votre téléphone ou votre simulateur pour voir la taille du texte et de l’image augmenter.
 
-Si vous avez besoin uniquement du texte sur l’écran de centrer, vous pouvez le faire environ sans le texte de la mesure. Au lieu de cela, définissez la [ `TextAlign` ](xref:SkiaSharp.SKPaint.TextAlign) propriété du `SKPaint` pour le membre d’énumération [ `SKTextAlign.Center` ](xref:SkiaSharp.SKTextAlign). La coordonnée X que vous spécifiez dans le `DrawText` (méthode), puis indique où est positionné au centre horizontal du texte. Si vous passez le milieu de l’écran pour le `DrawText` (méthode), le texte est centré horizontalement et *presque* centré verticalement, car la ligne de base est centré verticalement.
+Si vous devez uniquement centrer du texte à l’écran, vous pouvez le faire approximativement sans mesurer le texte. Au lieu de cela, affectez [`TextAlign`](xref:SkiaSharp.SKPaint.TextAlign) à la propriété de `SKPaint` la valeur du membre de l’énumération [`SKTextAlign.Center`](xref:SkiaSharp.SKTextAlign) . La coordonnée X que vous spécifiez dans la `DrawText` méthode indique ensuite où le centre horizontal du texte est positionné. Si vous transmettez le milieu de l’écran à la `DrawText` méthode, le texte est centré horizontalement et *presque* verticalement, car la ligne de base est centrée verticalement.
 
-Texte peut être traité beaucoup comme tout autre objet graphique. Une option simple est d’afficher le plan des caractères du texte :
+Le texte peut être traité de la même façon que n’importe quel autre objet graphique. Une option simple consiste à afficher le contour des caractères de texte :
 
-[![](text-images/outlinedtext-small.png "Le triple de capture d’écran de la page du texte avec contour")](text-images/outlinedtext-large.png#lightbox "Triple screenshot of the Outlined Text page")
+[![](text-images/outlinedtext-small.png "Triple screen shot of the Outlined Text page")](text-images/outlinedtext-large.png#lightbox "Triple screenshot of the Outlined Text page")
 
-Cela s’effectue simplement en modifiant la normale `Style` propriété de la `SKPaint` objet à partir de sa valeur par défaut `SKPaintStyle.Fill` à `SKPaintStyle.Stroke`et en spécifiant une largeur de trait. Le `PaintSurface` Gestionnaire de la **du texte avec contour** page montre comment procéder :
+Pour ce faire, il suffit de remplacer la valeur `Style` par défaut de la propriété normal de l' `SKPaint` objet par, en `SKPaintStyle.Fill` `SKPaintStyle.Stroke` spécifiant une largeur de trait. Le `PaintSurface` Gestionnaire de la page de **texte avec contour** montre comment procéder :
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -172,9 +175,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Un autre objet graphique courant est l’image bitmap. C’est un vaste sujet présentée en détail dans la section [ **SkiaSharp Bitmaps**](../bitmaps/index.md), mais le prochain article, [ **principes fondamentaux de la Bitmap dans SkiaSharp**](bitmaps.md), Fournit une présentation plus directe.
+Un autre objet graphique courant est l’image bitmap. C’est une grande rubrique traitée en détail dans la section [**SkiaSharp bitmaps**](../bitmaps/index.md), mais l’article suivant, les [**concepts de base de la bitmap dans SkiaSharp**](bitmaps.md), fournit une introduction plus rapide.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
-- [API de SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
+- [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

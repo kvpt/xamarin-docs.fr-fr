@@ -1,30 +1,33 @@
 ---
-title: Exemples Xamarin.Forms
-description: Exemples d’applications Xamarin.Forms et démonstrations de code pour vous aider à bien démarrer et à comprendre les concepts de Xamarin.Forms.
-ms.prod: xamarin
-ms.assetid: AB986E8E-E831-4E0A-9F1D-6C3D88F35E9C
-ms.technology: xamarin-forms
-author: profexorgeek
-ms.author: jusjohns
-ms.date: 12/27/2019
-ms.openlocfilehash: 3cd7979a3e244866b190c9534c472ea44b9f9c30
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: Xamarin.FormsExtraits
+description: Xamarin.Formsexemples d’applications et de démonstrations de code pour vous aider à prendre en main et à comprendre les concepts de Xamarin.Forms .
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 896b5880b92cecc7bd9eb360306d902ff0f876c5
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75502918"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135939"
 ---
-# <a name="xamarinforms-samples"></a>Exemples Xamarin.Forms
+# <a name="xamarinforms-samples"></a>Xamarin.FormsExtraits
 
-Exemples d’applications Xamarin.Forms et démonstrations de code pour vous aider à bien démarrer et à comprendre les concepts de Xamarin.Forms.
+Xamarin.Formsexemples d’applications et de démonstrations de code pour vous aider à prendre en main et à comprendre les concepts de Xamarin.Forms .
 
-[Tous les échantillons de Xamarin.Forms](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
+[Tous les Xamarin.Forms exemples](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
 
 :::row:::
     :::column:::
-[![Todo](images/todo.png)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo/)
+[![TODO](images/todo.png)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo/)
 
-### <a name="todo"></a>[Todo](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo/)
+### <a name="todo"></a>[TODO](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo/)
 
 Cet exemple illustre une application de liste Todo où les données sont accessibles et stockées dans une base de données SQLite locale.
     :::column-end:::
@@ -57,17 +60,17 @@ Le programme simule un disque tournant sur lequel vous pouvez peindre par entré
 
 ### <a name="xaml-samples"></a>[Exemples XAML](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples/)
 
-XAML (eXtensible Application Markup Language) : permet aux développeurs de définir des interfaces utilisateur dans les applications Xamarin.Forms à l’aide d’un balisage au lieu de code.
+XAML (eXtensible Application Markup Language) permet aux développeurs de définir des interfaces utilisateur dans des Xamarin.Forms applications à l’aide du balisage plutôt que du code.
     :::column-end:::
         :::column:::
 [![Xuzzle](images/xuzzle.png)](https://docs.microsoft.com/samples/xamarin/mobile-samples/liveplayer-xamagonxuzzlelp/)
 
 ### <a name="xuzzle"></a>[Xuzzle](https://docs.microsoft.com/samples/xamarin/mobile-samples/liveplayer-xamagonxuzzlelp/)
 
-Ce jeu est une variation du puzzle classique 14-15 que vous pouvez résoudre en glissant des tuiles dans l’ordre correct.
+Ce jeu est une variante du puzzle 14-15 classique que vous pouvez résoudre en déplaçant les vignettes dans le bon ordre.
     :::column-end:::
 :::row-end:::
 
 ## <a name="all-samples"></a>Tous les exemples
 
-Pour l’ensemble complet des applications d’échantillons Xamarin.Forms et des démos de code, voir [tous les échantillons Xamarin.Forms](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms).
+Pour obtenir l’ensemble complet d' Xamarin.Forms exemples d’applications et de démonstrations de code, consultez [tous les Xamarin.Forms exemples](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms).

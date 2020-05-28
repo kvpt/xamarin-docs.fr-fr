@@ -1,28 +1,20 @@
 ---
-title: Sélection d’une photo dans la bibliothèque d’images
-description: Cet article explique comment utiliser la classe DependencyService de Xamarin.Forms pour sélectionner une photo dans la bibliothèque d’images du téléphone.
-ms.prod: xamarin
-ms.assetid: 4F51B0E7-6A63-403C-B488-500CCBCE75DD
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 03/06/2017
-ms.openlocfilehash: 6669dbaff3cfb5b929261352b8db046b35ec5b4f
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76020701"
+titre : Description : « cet article explique comment utiliser la Xamarin.Forms classe DependencyService pour choisir une photo dans la bibliothèque d’images du téléphone. »
+ms. Prod : ms. AssetID : ms. Technology : Auteur : ms. Author : ms. Date : No-Loc :
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
 ---
+
 # <a name="picking-a-photo-from-the-picture-library"></a>Sélection d’une photo dans la bibliothèque d’images
 
-[![Télécharger](~/media/shared/download.png) l’échantillon Télécharger l’échantillon](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/)
 
-Cet article vous montre comment créer une application qui permet à l’utilisateur de sélectionner une photo dans la bibliothèque d’images du téléphone. Étant donné que Xamarin.Forms n’inclut pas [`DependencyService`](xref:Xamarin.Forms.DependencyService) cette fonctionnalité, il est nécessaire d’utiliser pour accéder aux API indigènes sur chaque plate-forme.
+Cet article vous montre comment créer une application qui permet à l’utilisateur de sélectionner une photo dans la bibliothèque d’images du téléphone. Étant donné que Xamarin.Forms n’inclut pas cette fonctionnalité, il est nécessaire d’utiliser [`DependencyService`](xref:Xamarin.Forms.DependencyService) pour accéder aux API natives sur chaque plateforme.
 
 ## <a name="creating-the-interface"></a>Création de l’interface
 
-Tout d’abord, créez une interface dans le code partagé qui expose la fonctionnalité que vous souhaitez implémenter. Dans le cas d’une application de sélection de photo, une seule méthode est requise. Ceci est défini [`IPhotoPickerService`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceDemos/Services/IPhotoPickerService.cs) dans l’interface de la bibliothèque .NET Standard du code de l’échantillon :
+Tout d’abord, créez une interface dans le code partagé qui expose la fonctionnalité que vous souhaitez implémenter. Dans le cas d’une application de sélection de photo, une seule méthode est requise. Cela est défini dans l' [`IPhotoPickerService`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceDemos/Services/IPhotoPickerService.cs) interface de la bibliothèque de .NET standard de l’exemple de code :
 
 ```csharp
 namespace DependencyServiceDemos
@@ -40,9 +32,9 @@ Cette interface est implémentée dans chaque plateforme à l’aide de code sp�
 
 ## <a name="ios-implementation"></a>Implémentation iOS
 
-La mise en `IPhotoPickerService` œuvre [`UIImagePickerController`](xref:UIKit.UIImagePickerController) iOS de l’interface utilise le décrit dans le Choisir une photo de la recette de la Galerie et [le code de l’échantillon](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery). [**Choose a Photo from the Gallery**](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery)
+L’implémentation iOS de l' `IPhotoPickerService` interface utilise la [`UIImagePickerController`](xref:UIKit.UIImagePickerController) , comme décrit dans la recette [**de la Galerie**](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery) et l’exemple de [code](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery).
 
-La mise en œuvre d’iOS est contenue dans la [`PhotoPickerService`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceDemos.iOS/Services/PhotoPickerService.cs) classe dans le projet iOS du code d’échantillon. Pour que cette classe soit visible par le manager `DependencyService`, la classe doit être identifiée par un attribut [`assembly`] de type `Dependency`, être publique et implémenter de manière explicite l’interface `IPhotoPickerService` :
+L’implémentation iOS est contenue dans la [`PhotoPickerService`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceDemos.iOS/Services/PhotoPickerService.cs) classe du projet iOS de l’exemple de code. Pour que cette classe soit visible par le manager `DependencyService`, la classe doit être identifiée par un attribut [`assembly`] de type `Dependency`, être publique et implémenter de manière explicite l’interface `IPhotoPickerService` :
 
 ```csharp
 [assembly: Dependency (typeof (PhotoPickerService))]
@@ -83,9 +75,9 @@ namespace DependencyServiceDemos.iOS
 
 La méthode `GetImageStreamAsync` crée un `UIImagePickerController` et l’initialise pour sélectionner des images dans la photothèque. Deux gestionnaires d’événements sont nécessaires : l’un est utilisé quand l’utilisateur sélectionne une photo et l’autre quand l’utilisateur annule l’affichage de la photothèque. `PresentModalViewController` affiche ensuite la photothèque à l’utilisateur.
 
-À ce stade, la méthode `GetImageStreamAsync` doit retourner un objet `Task<Stream>` au code qui l’appelle. Cette tâche est exécutée uniquement quand l’utilisateur a fini d’interagir avec la photothèque et que l’un des gestionnaires d’événements est appelé. Pour des situations [`TaskCompletionSource`](https://msdn.microsoft.com/library/dd449174(v=vs.110).aspx) comme celle-ci, la classe est essentielle. La classe fournit un objet `Task` du type générique approprié à retourner de la méthode `GetImageStreamAsync`, et la classe peut être signalée ultérieurement à la fin de la tâche.
+À ce stade, la méthode `GetImageStreamAsync` doit retourner un objet `Task<Stream>` au code qui l’appelle. Cette tâche est exécutée uniquement quand l’utilisateur a fini d’interagir avec la photothèque et que l’un des gestionnaires d’événements est appelé. Pour les cas de ce type, la [`TaskCompletionSource`](https://msdn.microsoft.com/library/dd449174(v=vs.110).aspx) classe est essentielle. La classe fournit un objet `Task` du type générique approprié à retourner de la méthode `GetImageStreamAsync`, et la classe peut être signalée ultérieurement à la fin de la tâche.
 
-Le gestionnaire d’événements `FinishedPickingMedia` est appelé quand l’utilisateur a sélectionné une image. Toutefois, le gestionnaire fournit un objet `UIImage` et `Task` doit retourner un objet `Stream` .NET. Ceci est fait en `UIImage` deux étapes: L’objet est d’abord converti en `NSData` un fichier `NSData` PNG ou JPEG `Stream` en mémoire stocké dans un objet, puis l’objet est converti en un objet .NET. Un appel à la méthode `SetResult` de l’objet `TaskCompletionSource` exécute la tâche en fournissant l’objet `Stream` :
+Le gestionnaire d’événements `FinishedPickingMedia` est appelé quand l’utilisateur a sélectionné une image. Toutefois, le gestionnaire fournit un objet `UIImage` et `Task` doit retourner un objet `Stream` .NET. Cette opération s’effectue en deux étapes : l' `UIImage` objet est d’abord converti en un fichier PNG en mémoire ou JPEG stocké dans un `NSData` objet, puis l' `NSData` objet est converti en `Stream` objet .net. Un appel à la méthode `SetResult` de l’objet `TaskCompletionSource` exécute la tâche en fournissant l’objet `Stream` :
 
 ```csharp
 namespace DependencyServiceDemos.iOS
@@ -151,7 +143,7 @@ Une application iOS doit être autorisée par l’utilisateur à accéder à la 
 
 ## <a name="android-implementation"></a>Implémentation Android
 
-L’implémentation Android utilise la technique décrite dans la recette [**Sélectionner une image**](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image) et l’[exemple de code](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image). Toutefois, la méthode appelée quand l’utilisateur a sélectionné une image dans la bibliothèque d’images est une substitution de `OnActivityResult` dans une classe dérivée de `Activity`. Pour cette raison, [`MainActivity`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceDemos.Android/MainActivity.cs) la classe normale dans le projet Android a été complétée par `OnActivityResult` un champ, une propriété, et un remplacement de la méthode:
+L’implémentation Android utilise la technique décrite dans la recette [**Sélectionner une image**](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image) et l’[exemple de code](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image). Toutefois, la méthode appelée quand l’utilisateur a sélectionné une image dans la bibliothèque d’images est une substitution de `OnActivityResult` dans une classe dérivée de `Activity`. Pour cette raison, la [`MainActivity`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceDemos.Android/MainActivity.cs) classe normale dans le projet Android a été complétée par un champ, une propriété et une substitution de la `OnActivityResult` méthode :
 
 ```csharp
 public class MainActivity : FormsAppCompatActivity
@@ -194,7 +186,7 @@ public class MainActivity : FormsAppCompatActivity
 
 La substitution de `OnActivityResult` spécifie le fichier de l’image sélectionnée à l’aide d’un objet `Uri` Android, mais cet objet peut être converti en objet `Stream` .NET en appelant la méthode `OpenInputStream` de l’objet `ContentResolver` qui a été obtenu à partir de la propriété `ContentResolver` de l’activité.
 
-Comme l’implémentation iOS, l’implémentation Android utilise un objet `TaskCompletionSource` pour signaler la fin de la tâche. Cet objet `TaskCompletionSource` est défini en tant que propriété publique dans la classe `MainActivity`. Cela permet à la propriété [`PhotoPickerService`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceDemos.Android/Services/PhotoPickerService.cs) d’être référencé dans la classe dans le projet Android. Voici la classe avec la méthode `GetImageStreamAsync` :
+Comme l’implémentation iOS, l’implémentation Android utilise un objet `TaskCompletionSource` pour signaler la fin de la tâche. Cet objet `TaskCompletionSource` est défini en tant que propriété publique dans la classe `MainActivity`. Cela permet à la propriété d’être référencée dans la [`PhotoPickerService`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceDemos.Android/Services/PhotoPickerService.cs) classe du projet Android. Voici la classe avec la méthode `GetImageStreamAsync` :
 
 ```csharp
 [assembly: Dependency(typeof(PhotoPickerService))]
@@ -228,7 +220,7 @@ Cette méthode accède à la classe `MainActivity` à plusieurs fins : pour la 
 
 ## <a name="uwp-implementation"></a>Implémentation UWP
 
-Contrairement aux implémentations iOS et Android, l’implémentation du sélecteur de photo pour la plateforme Windows universelle n’utilise pas la classe `TaskCompletionSource`. La [`PhotoPickerService`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceDemos.UWP/Services/PhotoPickerService.cs) classe [`FileOpenPicker`](/uwp/api/Windows.Storage.Pickers.FileOpenPicker/) utilise la classe pour accéder à la photothèque. Étant donné que la méthode `PickSingleFileAsync` de `FileOpenPicker` est elle-même asynchrone, la méthode `GetImageStreamAsync` peut simplement utiliser `await` avec cette méthode (et d’autres méthodes asynchrones) et retourner un objet `Stream` :
+Contrairement aux implémentations iOS et Android, l’implémentation du sélecteur de photo pour la plateforme Windows universelle n’utilise pas la classe `TaskCompletionSource`. La [`PhotoPickerService`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceDemos.UWP/Services/PhotoPickerService.cs) classe utilise la [`FileOpenPicker`](/uwp/api/Windows.Storage.Pickers.FileOpenPicker/) classe pour accéder à la bibliothèque de photos. Étant donné que la méthode `PickSingleFileAsync` de `FileOpenPicker` est elle-même asynchrone, la méthode `GetImageStreamAsync` peut simplement utiliser `await` avec cette méthode (et d’autres méthodes asynchrones) et retourner un objet `Stream` :
 
 ```csharp
 [assembly: Dependency(typeof(PhotoPickerService))]
@@ -268,7 +260,7 @@ namespace DependencyServiceDemos.UWP
 
 Maintenant que l’interface a été implémentée pour chaque plateforme, le code partagé dans la bibliothèque .NET Standard peut l’utiliser.
 
-L’interface utilisateur [`Button`](xref:Xamarin.Forms.Button) comprend un qui peut être cliqué pour choisir une photo:
+L’interface utilisateur comprend un [`Button`](xref:Xamarin.Forms.Button) sur lequel vous pouvez cliquer pour choisir une photo :
 
 ```xaml
 <Button Text="Pick Photo"

@@ -1,22 +1,25 @@
 ---
-title: Positionnement vidéo personnalisé
-description: Cet article explique comment implémenter une barre de position personnalisée dans application de lecteur vidéo à l’aide de Xamarin.Forms.
-ms.prod: xamarin
-ms.assetid: 6D792264-30FF-46F7-8C1B-2FEF9D277DF4
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 02/12/2018
-ms.openlocfilehash: 12633b728240c2f90d0265fe7b9efb65ea49bf1f
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: Cet article explique comment implémenter une barre de position personnalisée dans une application de lecteur vidéo à l’aide de Xamarin.Forms .
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 97d32a03ee10e2f3b0a7442d1d70dab9236059b4
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "68650646"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135081"
 ---
 # <a name="custom-video-positioning"></a>Positionnement vidéo personnalisé
 
-[![Télécharger](~/media/shared/download.png) l’échantillon Télécharger l’échantillon](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
 Les contrôles de transport implémentés par chaque plateforme incluent une barre de position. Cette barre ressemble à un curseur ou une barre de défilement et indique la position actuelle de la vidéo au sein de sa durée totale. En outre, l’utilisateur peut avancer ou reculer la barre de position vers une nouvelle position dans la vidéo.
 
@@ -342,7 +345,7 @@ La méthode `SetTimeToEnd` est appelée à partir des gestionnaires de modificat
 
 ## <a name="a-custom-slider-for-video"></a>Curseur personnalisé pour la vidéo
 
-Il est possible d’écrire un contrôle personnalisé pour une barre de position ou pour utiliser le `Slider` Xamarin.Forms ou une classe qui dérive de `Slider`, telle que la classe `PositionSlider` suivante. La classe définit deux nouvelles propriétés nommées `Duration` et `Position` de type `TimeSpan` qui sont destinées à être liées aux données des deux propriétés portant le même nom dans `VideoPlayer`. Notez que le mode de liaison par défaut de la propriété `Position` est la liaison bidirectionnelle :
+Il est possible d’écrire un contrôle personnalisé pour une barre de positionnement, ou d’utiliser Xamarin.Forms `Slider` ou une classe qui dérive de `Slider` , telle que la `PositionSlider` classe suivante. La classe définit deux nouvelles propriétés nommées `Duration` et `Position` de type `TimeSpan` qui sont destinées à être liées aux données des deux propriétés portant le même nom dans `VideoPlayer`. Notez que le mode de liaison par défaut de la propriété `Position` est la liaison bidirectionnelle :
 
 ```csharp
 namespace FormsVideoLibrary
@@ -414,7 +417,7 @@ Toutefois, l’implémentation Android de `Slider` n’a que 1 000 étapes dis
 
 ## <a name="using-the-positionslider"></a>Utilisation de PositionSlider
 
-La documentation pour [`MediaElement`](/uwp/api/Windows.UI.Xaml.Controls.MediaElement/) l’UWP `Position` met en garde au sujet de la liaison à la propriété parce que la propriété met fréquemment à jour. La documentation recommande d’utiliser une minuterie (Timer) pour interroger la propriété `Position`.
+La documentation de la série UWP [`MediaElement`](/uwp/api/Windows.UI.Xaml.Controls.MediaElement/) vous avertit de la liaison à la `Position` propriété, car la propriété est fréquemment mise à jour. La documentation recommande d’utiliser une minuterie (Timer) pour interroger la propriété `Position`.
 
 Il s’agit d’un conseil judicieux, mais les trois classes `VideoPlayerRenderer` utilisent déjà indirectement une minuterie pour mettre à jour la propriété `Position`. La propriété `Position` est modifiée dans un gestionnaire pour l’événement `UpdateStatus`, qui est déclenché uniquement 10 fois par seconde.
 

@@ -1,33 +1,36 @@
 ---
-title: Authentifier les utilisateurs avec Azure Active Directory B2C
-description: Azure Active Directory B2C fournit la gestion des identités dans le Cloud pour les applications mobiles et Web destinées aux consommateurs. Cet article explique comment utiliser Azure Active Directory B2C pour intégrer la gestion des identités dans une application mobile à l’aide de la bibliothèque d’authentification Microsoft.
-ms.prod: xamarin
-ms.assetid: B0A5DB65-0585-4A00-B908-22CCC286E6B6
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 12/04/2019
-ms.openlocfilehash: 946cf65f7d83722fd388bed555b9d3f35c487708
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 64529b81a375ee5a8cc8a96ec557c03401e60495
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75489815"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84130570"
 ---
 # <a name="authenticate-users-with-azure-active-directory-b2c"></a>Authentifier les utilisateurs avec Azure Active Directory B2C
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azureadb2cauth)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azureadb2cauth)
 
 _Azure Active Directory B2C fournit la gestion des identités dans le Cloud pour les applications mobiles et Web destinées aux consommateurs. Cet article explique comment utiliser Azure Active Directory B2C pour intégrer la gestion des identités dans une application mobile à l’aide de la bibliothèque d’authentification Microsoft._
 
-## <a name="overview"></a>Vue d'ensemble de
+## <a name="overview"></a>Vue d'ensemble
 
 Azure Active Directory B2C (ADB2C) est un service de gestion des identités pour les applications accessibles aux consommateurs. Il permet aux utilisateurs de se connecter à votre application à l’aide de leurs comptes sociaux existants ou d’informations d’identification personnalisées telles que l’e-mail, le nom d’utilisateur et le mot de passe. Les comptes d’identification personnalisés sont appelés comptes _locaux_ .
 
-Le processus pour intégrer le service de gestion d’identité Azure Active Directory B2C dans une application mobile est comme suit :
+Le processus d’intégration du service de gestion des identités Azure Active Directory B2C dans une application mobile est le suivant :
 
-1. Créer un locataire Azure Active Directory B2C.
-1. Inscrire votre application mobile avec le locataire Azure Active Directory B2C.
+1. Créez un locataire Azure Active Directory B2C.
+1. Inscrivez votre application mobile auprès du locataire Azure Active Directory B2C.
 1. Créer des stratégies pour l’inscription et la connexion, ainsi que des flux utilisateur avec mot de passe oublié.
 1. Utilisez la bibliothèque d’authentification Microsoft (MSAL) pour démarrer un flux de travail d’authentification avec votre locataire Azure Active Directory B2C.
 
@@ -42,11 +45,11 @@ La bibliothèque d’authentification Microsoft prend en charge plusieurs archit
 
 Pour exécuter l’exemple de projet, vous devez créer un locataire Azure Active Directory B2C. Pour plus d’informations, consultez [créer un locataire Azure Active Directory B2C dans le portail Azure](/azure/active-directory-b2c/active-directory-b2c-get-started/).
 
-Une fois que vous avez créé un locataire, vous aurez besoin du **nom du locataire** et de l' **ID de locataire** pour configurer l’application mobile. L’ID et le nom du locataire sont définis par le domaine généré lors de la création de l’URL de votre locataire. Si votre URL de locataire générée est `https://contoso20190410tenant.onmicrosoft.com/` l' **ID de locataire** est `contoso20190410tenant.onmicrosoft.com` et le nom du **locataire** est `contoso20190410tenant`. Recherchez le domaine du locataire dans le Portail Azure en cliquant sur le **filtre de répertoire et d’abonnement** dans le menu supérieur. La capture d’écran suivante montre le bouton de filtre d’annuaire et d’abonnement Azure et le domaine du locataire :
+Une fois que vous avez créé un locataire, vous aurez besoin du **nom du locataire** et de l' **ID de locataire** pour configurer l’application mobile. L’ID et le nom du locataire sont définis par le domaine généré lors de la création de l’URL de votre locataire. Si votre URL de locataire générée est `https://contoso20190410tenant.onmicrosoft.com/` l' **ID de locataire** est et que `contoso20190410tenant.onmicrosoft.com` le **nom du locataire** est `contoso20190410tenant` . Recherchez le domaine du locataire dans le Portail Azure en cliquant sur le **filtre de répertoire et d’abonnement** dans le menu supérieur. La capture d’écran suivante montre le bouton de filtre d’annuaire et d’abonnement Azure et le domaine du locataire :
 
-[![nom du locataire dans l’affichage du filtre d’abonnement et de l’annuaire Azure](azure-ad-b2c-images/azure-tenant-name-cropped.png)](azure-ad-b2c-images/azure-tenant-name.png#lightbox)
+[![Nom du locataire dans l’affichage de filtre d’abonnement et d’annuaire Azure](azure-ad-b2c-images/azure-tenant-name-cropped.png)](azure-ad-b2c-images/azure-tenant-name.png#lightbox)
 
-Dans l’exemple de projet, modifiez le fichier **constants.cs** pour définir les champs `tenantName` et `tenantId`. Le code suivant montre comment ces valeurs doivent être définies si votre domaine de locataire est `https://contoso20190410tenant.onmicrosoft.com/`, remplacez ces valeurs par les valeurs de votre portail :
+Dans l’exemple de projet, modifiez le fichier **constants.cs** pour définir `tenantName` les `tenantId` champs et. Le code suivant montre comment ces valeurs doivent être définies si votre domaine de locataire est `https://contoso20190410tenant.onmicrosoft.com/` , remplacez ces valeurs par les valeurs de votre portail :
 
 ```csharp
 public static class Constants
@@ -59,17 +62,17 @@ public static class Constants
 
 ## <a name="register-your-mobile-application-with-azure-active-directory-b2c"></a>Inscrire votre application mobile avec Azure Active Directory B2C
 
-Une application mobile doit être inscrite auprès du locataire pour pouvoir se connecter et authentifier les utilisateurs. Le processus d’inscription affecte un **ID d’application** unique à l’application, et une **URL de redirection** qui redirige les réponses vers l’application après l’authentification. Pour plus d’informations, consultez [Azure Active Directory B2C : inscription de votre application](/azure/active-directory-b2c/active-directory-b2c-app-registration/). Vous devez connaître l’ID d' **application** affecté à votre application, qui est indiqué après le nom de l’application dans la vue Propriétés. La capture d’écran suivante indique où trouver l’ID d’application :
+Une application mobile doit être inscrite auprès du locataire pour pouvoir se connecter et authentifier les utilisateurs. Le processus d’inscription affecte un **ID d’application** unique à l’application, et une **URL de redirection** qui redirige les réponses vers l’application après l’authentification. Pour plus d’informations, consultez [Azure Active Directory B2C : inscrire votre application](/azure/active-directory-b2c/active-directory-b2c-app-registration/). Vous devez connaître l’ID d' **application** affecté à votre application, qui est indiqué après le nom de l’application dans la vue Propriétés. La capture d’écran suivante indique où trouver l’ID d’application :
 
 [![ID d’application dans l’affichage des propriétés de l’application Azure](azure-ad-b2c-images/azure-application-id-cropped.png)](azure-ad-b2c-images/azure-application-id.png#lightbox)
 
-La bibliothèque d’authentification Microsoft s’attend à ce que l' **URL de redirection** de votre application soit votre **ID d’application** préfixé avec le texte « MSAL », suivi d’un point de terminaison appelé « auth ». Si votre ID d’application est « 1234abcd », l’URL complète doit être `msal1234abcd://auth`. Assurez-vous que votre application a activé le paramètre **Native Client** et créez un **URI de redirection personnalisé** à l’aide de votre ID d’application, comme indiqué dans la capture d’écran suivante :
+La bibliothèque d’authentification Microsoft s’attend à ce que l' **URL de redirection** de votre application soit votre **ID d’application** préfixé avec le texte « MSAL », suivi d’un point de terminaison appelé « auth ». Si votre ID d’application est « 1234abcd », l’URL complète doit être `msal1234abcd://auth` . Assurez-vous que votre application a activé le paramètre **Native Client** et créez un **URI de redirection personnalisé** à l’aide de votre ID d’application, comme indiqué dans la capture d’écran suivante :
 
 ![URI de redirection personnalisée dans l’affichage des propriétés de l’application Azure](azure-ad-b2c-images/azure-redirect-uri.png)
 
 L’URL sera utilisée ultérieurement dans Android **fichier ApplicationManifest. xml** et iOS **info. plist**.
 
-Dans l’exemple de projet, modifiez le fichier **constants.cs** pour définir le champ `clientId` sur votre **ID d’application**. Le code suivant montre comment cette valeur doit être définie si votre ID d’application est `1234abcd`:
+Dans l’exemple de projet, modifiez le fichier **constants.cs** pour définir le `clientId` champ sur votre **ID d’application**. Le code suivant montre comment cette valeur doit être définie si votre ID d’application est `1234abcd` :
 
 ```csharp
 public static class Constants
@@ -89,7 +92,7 @@ Une fois que vous avez terminé la configuration de la stratégie, vous devez di
 
 ![Deux stratégies configurées dans la vue des flux d’utilisateurs Azure (stratégies)](azure-ad-b2c-images/azure-application-policies.png)
 
-Dans l’exemple de projet, modifiez le fichier **constants.cs** pour définir les champs `policySignin` et `policyPassword` afin de refléter les noms que vous avez choisis lors de la configuration de la stratégie :
+Dans l’exemple de projet, modifiez le fichier **constants.cs** pour définir `policySignin` les `policyPassword` champs et afin de refléter les noms que vous avez choisis lors de la configuration de la stratégie :
 
 ```csharp
 public static class Constants
@@ -105,9 +108,9 @@ public static class Constants
 
 ## <a name="use-the-microsoft-authentication-library-msal-for-authentication"></a>Utiliser la bibliothèque d’authentification Microsoft (MSAL) pour l’authentification
 
-Le package NuGet de la bibliothèque d’authentification Microsoft (MSAL) doit être ajouté au projet partagé, .NET Standard et aux projets de plateforme dans une solution Xamarin. Forms. MSAL comprend une classe `PublicClientApplicationBuilder` qui construit un objet adhérant à l’interface `IPublicClientApplication`. MSAL utilise des clauses de `With` pour fournir des paramètres supplémentaires au constructeur et aux méthodes d’authentification.
+Le package NuGet de la bibliothèque d’authentification Microsoft (MSAL) doit être ajouté au projet partagé, .NET Standard et aux projets de plateforme d’une Xamarin.Forms solution. MSAL comprend une `PublicClientApplicationBuilder` classe qui construit un objet adhérant à l' `IPublicClientApplication` interface. MSAL utilise `With` des clauses pour fournir des paramètres supplémentaires au constructeur et aux méthodes d’authentification.
 
-Dans l’exemple de projet, le code-behind pour **app. Xaml** définit des propriétés statiques nommées `AuthenticationClient` et `UIParent`, et instancie l’objet `AuthenticationClient` dans le constructeur. La clause `WithIosKeychainSecurityGroup` fournit un nom de groupe de sécurité pour les applications iOS. La clause `WithB2CAuthority` fournit l' **autorité**par défaut, ou stratégie, qui sera utilisée pour authentifier les utilisateurs. La clause `WithRedirectUri` indique à l’instance Azure Notification Hubs l’URI de redirection à utiliser si plusieurs URI sont spécifiés. L’exemple suivant montre comment instancier le `PublicClientApplication`:
+Dans l’exemple de projet, le code-behind pour **app. Xaml** définit des propriétés statiques nommées `AuthenticationClient` et `UIParent` , et instancie l' `AuthenticationClient` objet dans le constructeur. La `WithIosKeychainSecurityGroup` clause fournit un nom de groupe de sécurité pour les applications iOS. La `WithB2CAuthority` clause fournit l' **autorité**par défaut, ou stratégie, qui sera utilisée pour authentifier les utilisateurs. La `WithRedirectUri` clause indique à l’instance Azure notification hubs l’URI de redirection à utiliser si plusieurs URI sont spécifiés. L’exemple suivant montre comment instancier le `PublicClientApplication` :
 
 ```csharp
 public partial class App : Application
@@ -133,9 +136,9 @@ public partial class App : Application
 ```
 
 > [!NOTE]
-> Si votre instance Azure Notification Hubs n’a qu’un seul URI de redirection défini, l’instance `AuthenticationClient` peut fonctionner sans spécifier l’URI de redirection avec la clause `WithRedirectUri`. Toutefois, vous devez toujours spécifier cette valeur au cas où votre configuration Azure se développe pour prendre en charge d’autres clients ou méthodes d’authentification.
+> Si votre instance Azure Notification Hubs n’a qu’un seul URI de redirection défini, l' `AuthenticationClient` instance peut fonctionner sans spécifier l’URI de redirection avec la `WithRedirectUri` clause. Toutefois, vous devez toujours spécifier cette valeur au cas où votre configuration Azure se développe pour prendre en charge d’autres clients ou méthodes d’authentification.
 
-Le gestionnaire d’événements `OnAppearing` dans le code-behind **LoginPage.Xaml.cs** appelle `AcquireTokenSilentAsync` pour actualiser le jeton d’authentification pour les utilisateurs qui se sont connectés auparavant. Le processus d’authentification effectue une redirection vers le `LogoutPage` en cas de réussite et ne fait rien en cas d’échec. L’exemple suivant montre le processus de réauthentification en mode silencieux dans `OnAppearing`:
+Le `OnAppearing` Gestionnaire d’événements du code **LoginPage.Xaml.cs** derrière appelle `AcquireTokenSilentAsync` pour actualiser le jeton d’authentification pour les utilisateurs qui se sont connectés auparavant. Le processus d’authentification effectue une redirection vers le `LogoutPage` si l’opération réussit et ne fait rien en cas d’échec. L’exemple suivant illustre le processus de réauthentification en mode silencieux dans `OnAppearing` :
 
 ```csharp
 public partial class LoginPage : ContentPage
@@ -166,7 +169,7 @@ public partial class LoginPage : ContentPage
 }
 ```
 
-Le gestionnaire d’événements `OnLoginButtonClicked` (déclenché lorsque l’utilisateur clique sur le bouton de connexion) appelle `AcquireTokenAsync`. La bibliothèque MSAL ouvre automatiquement le navigateur de l’appareil mobile et accède à la page de connexion. L’URL de connexion, appelée **autorité**, est une combinaison du nom du client et des stratégies définies dans le fichier **constants.cs** . Si l’utilisateur choisit l’option mot de passe oublié, il est renvoyé à l’application avec une exception, ce qui lance l’expérience oubliée de mot de passe. L’exemple suivant illustre le processus d’authentification :
+Le `OnLoginButtonClicked` Gestionnaire d’événements (déclenché lorsque l’utilisateur clique sur le bouton de connexion) appelle `AcquireTokenAsync` . La bibliothèque MSAL ouvre automatiquement le navigateur de l’appareil mobile et accède à la page de connexion. L’URL de connexion, appelée **autorité**, est une combinaison du nom du client et des stratégies définies dans le fichier **constants.cs** . Si l’utilisateur choisit l’option mot de passe oublié, il est renvoyé à l’application avec une exception, ce qui lance l’expérience oubliée de mot de passe. L’exemple suivant illustre le processus d’authentification :
 
 ```csharp
 public partial class LoginPage : ContentPage
@@ -204,7 +207,7 @@ public partial class LoginPage : ContentPage
 }
 ```
 
-La méthode `OnForgotPassword` est semblable au processus de connexion, mais elle implémente une stratégie personnalisée. `OnForgotPassword` utilise une surcharge différente de `AcquireTokenAsync`, qui vous permet de fournir une **autorité**spécifique. L’exemple suivant montre comment fournir une **autorité** personnalisée lors de l’acquisition d’un jeton :
+La `OnForgotPassword` méthode est similaire au processus de connexion, mais elle implémente une stratégie personnalisée. `OnForgotPassword`utilise une surcharge différente de `AcquireTokenAsync` , qui vous permet de fournir une **autorité**spécifique. L’exemple suivant montre comment fournir une **autorité** personnalisée lors de l’acquisition d’un jeton :
 
 ```csharp
 public partial class LoginPage : ContentPage
@@ -230,7 +233,7 @@ public partial class LoginPage : ContentPage
 }
 ```
 
-Le dernier élément d’authentification est le processus de déconnexion. La méthode `OnLogoutButtonClicked` est appelée quand l’utilisateur appuie sur le bouton de déconnexion. Il parcourt tous les comptes et s’assure que leurs jetons ont été invalidés. L’exemple ci-dessous illustre l’implémentation de la déconnexion :
+Le dernier élément d’authentification est le processus de déconnexion. La `OnLogoutButtonClicked` méthode est appelée lorsque l’utilisateur appuie sur le bouton de déconnexion. Il parcourt tous les comptes et s’assure que leurs jetons ont été invalidés. L’exemple ci-dessous illustre l’implémentation de la déconnexion :
 
 ```csharp
 public partial class LogoutPage : ContentPage
@@ -261,7 +264,7 @@ MSAL requiert également des habilitations de trousseau sur iOS, inscrites dans 
 
 ![« Définition des droits d’application sur iOS »](azure-ad-b2c-images/entitlements-ios.png)
 
-Azure Active Directory B2C issue de la demande d’autorisation, il redirige vers l’URL de redirection inscrits. Le schéma d’URL personnalisé entraîne le lancement par iOS de l’application mobile et la transmission de l’URL en tant que paramètre de lancement, où elle est traitée par le `OpenUrl` remplacement de la classe `AppDelegate` de l’application, et retourne le contrôle de l’expérience à MSAL. L’implémentation de `OpenUrl` est présentée dans l’exemple de code suivant :
+Lorsque Azure Active Directory B2C termine la demande d’autorisation, il effectue une redirection vers l’URL de redirection inscrite. Le schéma d’URL personnalisé permet à iOS de lancer l’application mobile et de transmettre l’URL en tant que paramètre de lancement, où elle est traitée par la `OpenUrl` substitution de la classe de l’application `AppDelegate` et retourne le contrôle de l’expérience à MSAL. L' `OpenUrl` implémentation est illustrée dans l’exemple de code suivant :
 
 ```csharp
 using Microsoft.Identity.Client;
@@ -281,7 +284,7 @@ namespace TodoAzure.iOS
 }
 ```
 
-### <a name="android"></a>Android
+### <a name="android"></a>Téléphone
 
 Sur Android, le schéma d’URL personnalisé qui a été enregistré avec Azure Active Directory B2C doit être inscrit dans **fichier AndroidManifest. xml**. MSAL s’attend à ce que le schéma d’URL adhère à un modèle spécifique, décrit précédemment dans [inscrire votre application mobile avec Azure Active Directory B2C](~/xamarin-forms/data-cloud/authentication/azure-ad-b2c.md#register-your-mobile-application-with-azure-active-directory-b2c). L’exemple suivant montre le schéma d’URL personnalisé dans **fichier AndroidManifest. xml**.
 
@@ -304,7 +307,7 @@ Sur Android, le schéma d’URL personnalisé qui a été enregistré avec Azure
 </manifest>
 ```
 
-La classe `MainActivity` doit être modifiée pour fournir l’objet `UIParent` à l’application pendant l’appel de `OnCreate`. Lorsque Azure Active Directory B2C termine la demande d’autorisation, il effectue une redirection vers le schéma d’URL enregistré à partir du **fichier fichier AndroidManifest. xml**. Le schéma d’URI inscrit entraîne l’appel par Android de la méthode `OnActivityResult` avec l’URL en tant que paramètre Launch, où elle est traitée par la méthode `SetAuthenticationContinuationEventArgs`.
+La `MainActivity` classe doit être modifiée pour fournir l' `UIParent` objet à l’application pendant l' `OnCreate` appel. Lorsque Azure Active Directory B2C termine la demande d’autorisation, il effectue une redirection vers le schéma d’URL enregistré à partir du **fichier fichier AndroidManifest. xml**. Le schéma d’URI inscrit entraîne l’appel de la méthode par Android `OnActivityResult` avec l’URL en tant que paramètre de lancement, où elle est traitée par la `SetAuthenticationContinuationEventArgs` méthode.
 
 ```csharp
 public class MainActivity : FormsAppCompatActivity
@@ -339,9 +342,9 @@ Exécutez l’application sur un appareil virtuel ou physique. Appuyez sur le bo
 
 ![« Écran de connexion Azure ADB2C sur Android et iOS »](azure-ad-b2c-images/login.png)
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [AzureADB2CAuth (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azureadb2cauth)
 - [Azure Active Directory B2C](/azure/active-directory-b2c/)
-- [Bibliothèque d’authentification Microsoft](https://www.nuget.org/packages/Microsoft.Identity.Client)
+- [Microsoft Authentication Library](https://www.nuget.org/packages/Microsoft.Identity.Client)
 - [Documentation de la bibliothèque d’authentification Microsoft](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki)

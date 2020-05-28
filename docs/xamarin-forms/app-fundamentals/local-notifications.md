@@ -1,36 +1,39 @@
 ---
-title: Xamarin.Forms notifications locales
-description: Cet article explique comment envoyer et recevoir des notifications locales dans Xamarin.Forms.
-ms.prod: xamarin
-ms.assetid: 60460F57-63C6-4916-BBB5-A870F1DF53D7
-ms.technology: xamarin-forms
-author: profexorgeek
-ms.author: jusjohns
-ms.date: 10/10/2019
-ms.openlocfilehash: ef2ef004378212fac593179d7aa38b3688fa82c3
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: Xamarin.Formsnotifications locales
+description: Cet article explique comment envoyer et recevoir des notifications locales dans Xamarin.Forms .
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 40e040f216ddda40931273f4e7f5614964862fe8
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "72371570"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137590"
 ---
-# <a name="local-notifications-in-xamarinforms"></a>Notifications locales dans Xamarin.Forms
+# <a name="local-notifications-in-xamarinforms"></a>Notifications locales dansXamarin.Forms
 
-[![Télécharger](~/media/shared/download.png) l’échantillon Télécharger l’échantillon](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/local-notifications)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/local-notifications)
 
-Les notifications locales sont des alertes envoyées par des applications installées sur un appareil mobile. Les notifications locales sont souvent utilisées pour des fonctionnalités telles que :
+Les notifications locales sont des alertes envoyées par les applications installées sur un appareil mobile. Les notifications locales sont souvent utilisées pour des fonctionnalités telles que :
 
 - Événements de calendrier
 - Rappels
 - Déclencheurs basés sur l’emplacement
 
-Chaque plate-forme gère différemment la création, l’affichage et la consommation de notifications locales. Cet article explique comment créer une abstraction multiplateforme pour envoyer et recevoir des notifications locales avec Xamarin.Forms.
+Chaque plateforme gère la création, l’affichage et la consommation des notifications locales différemment. Cet article explique comment créer une abstraction multiplateforme pour envoyer et recevoir des notifications locales avec Xamarin.Forms .
 
 [![Application de notifications locales sur iOS et Android](local-notifications-images/local-notifications-msg-cropped.png)](local-notifications-images/local-notifications-msg.png#lightbox)
 
 ## <a name="create-a-cross-platform-interface"></a>Créer une interface multiplateforme
 
-L’application Xamarin.Forms doit créer et consommer des notifications sans se soucier des implémentations de la plate-forme sous-jacente. L’interface suivante `INotificationManager` est implémentée dans la bibliothèque de code partagée et définit une API multiplateforme que l’application peut utiliser pour interagir avec les notifications :
+L' Xamarin.Forms application doit créer et consommer des notifications sans se préoccuper des implémentations de la plateforme sous-jacente. L' `INotificationManager` interface suivante est implémentée dans la bibliothèque de code partagée et définit une API multiplateforme que l’application peut utiliser pour interagir avec les notifications :
 
 ```csharp
 public interface INotificationManager
@@ -45,11 +48,11 @@ public interface INotificationManager
 }
 ```
 
-Cette interface sera mise en œuvre dans chaque projet de plate-forme. L’événement `NotificationReceived` permet à l’application de traiter les notifications entrantes. La `Initialize` méthode doit effectuer toute logique de plate-forme native nécessaire pour préparer le système de notification. La `ScheduleNotification` méthode doit envoyer une notification. La `ReceiveNotification` méthode doit être appelée par la plate-forme sous-jacente lorsqu’un message est reçu.
+Cette interface sera implémentée dans chaque projet de plateforme. L' `NotificationReceived` événement permet à l’application de gérer les notifications entrantes. La `Initialize` méthode doit exécuter toute logique de plateforme Native nécessaire pour préparer le système de notification. La `ScheduleNotification` méthode doit envoyer une notification. La `ReceiveNotification` méthode doit être appelée par la plateforme sous-jacente lors de la réception d’un message.
 
-## <a name="consume-the-interface-in-xamarinforms"></a>Consommer l’interface dans Xamarin.Forms
+## <a name="consume-the-interface-in-xamarinforms"></a>Utiliser l’interface dansXamarin.Forms
 
-Une fois qu’une interface a été créée, elle peut être consommée dans le projet partagé Xamarin.Forms, même si les implémentations de la plate-forme n’ont pas encore été créées. L’application échantillon `ContentPage` contient un appelé **MainPage.xaml** avec le contenu suivant:
+Une fois qu’une interface a été créée, elle peut être consommée dans le projet partagé, Xamarin.Forms même si les implémentations de plateforme n’ont pas encore été créées. L’exemple d’application contient un `ContentPage` appelé **MainPage. Xaml** avec le contenu suivant :
 
 ```xaml
 <StackLayout Margin="0,35,0,0"
@@ -65,9 +68,9 @@ Une fois qu’une interface a été créée, elle peut être consommée dans le 
 </StackLayout>
 ```
 
-La mise `Label` en page contient un `Button` élément avec des instructions pour l’utilisateur et un qui doit planifier une notification lorsqu’il est exploité.
+La disposition contient un `Label` élément avec des instructions pour l’utilisateur et un `Button` qui doit planifier une notification lorsqu’il est appuyé.
 
-Le `MainPage` code de classe sous-tend l’envoi et la réception des notifications :
+La `MainPage` classe code-behind gère l’envoi et la réception des notifications :
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -109,17 +112,17 @@ public partial class MainPage : ContentPage
 }
 ```
 
-Le `MainPage` constructeur de classe utilise le `DependencyService` Xamarin.Forms pour `INotificationManager`récupérer une instance spécifique à la plate-forme de la . La `OnScheduleClicked` méthode `INotificationManager` utilise l’instance pour planifier une nouvelle notification. La `ShowNotification` méthode est appelée à partir `NotificationReceived` du gestionnaire d’événements attaché à l’événement, et insérera un nouveau `Label` dans la page lorsque l’événement est invoqué.
+Le `MainPage` constructeur de classe utilise Xamarin.Forms `DependencyService` pour récupérer une instance spécifique à la plateforme de `INotificationManager` . La `OnScheduleClicked` méthode utilise l' `INotificationManager` instance pour planifier une nouvelle notification. La `ShowNotification` méthode est appelée à partir du gestionnaire d’événements attaché à l' `NotificationReceived` événement et insère un nouveau `Label` dans la page lorsque l’événement est appelé.
 
-Pour plus d’informations sur `DependencyService`les Xamarin.Forms , voir [Xamarin.Forms DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/introduction.md).
+Pour plus d’informations sur le Xamarin.Forms `DependencyService` , consultez [ Xamarin.Forms DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/introduction.md).
 
 ## <a name="create-the-android-interface-implementation"></a>Créer l’implémentation de l’interface Android
 
-Pour que l’application Xamarin.Forms envoie et reçoive des `INotificationManager` notifications sur Android, l’application doit fournir une implémentation de l’interface.
+Pour que l' Xamarin.Forms application envoie et reçoit des notifications sur Android, l’application doit fournir une implémentation de l' `INotificationManager` interface.
 
 ### <a name="create-the-androidnotificationmanager-class"></a>Créer la classe AndroidNotificationManager
 
-La `AndroidNotificationManager` classe implémente l’interface `INotificationManager` :
+La `AndroidNotificationManager` classe implémente l' `INotificationManager` interface :
 
 ```csharp
 using Android.Support.V4.App;
@@ -209,16 +212,16 @@ namespace LocalNotifications.Droid
 }
 ```
 
-L’attribut `assembly` ci-dessus de `INotificationManager` l’espace `DependencyService`de nom enregistre l’implémentation d’interface avec le .
+L' `assembly` attribut situé au-dessus de l’espace de noms inscrit l' `INotificationManager` implémentation de l’interface avec `DependencyService` .
 
-Android permet aux applications de définir plusieurs canaux pour les notifications. La `Initialize` méthode crée un canal de base que l’application d’échantillon utilise pour envoyer des notifications. La `ScheduleNotification` méthode définit la logique spécifique à la plate-forme nécessaire pour créer et envoyer une notification. Enfin, `ReceiveNotification` la méthode est appelée par le système d’exploitation Android lorsqu’un message est reçu, et invoque le gestionnaire de l’événement.
+Android permet aux applications de définir plusieurs canaux pour les notifications. La `Initialize` méthode crée un canal de base utilisé par l’exemple d’application pour envoyer des notifications. La `ScheduleNotification` méthode définit la logique propre à la plateforme requise pour créer et envoyer une notification. Enfin, la `ReceiveNotification` méthode est appelée par le système d’exploitation Android lorsqu’un message est reçu et appelle le gestionnaire d’événements.
 
 > [!NOTE]
-> La `Application` classe est définie `Xamarin.Forms` `Android.App` dans les espaces et les espaces de noms de sorte que l’alias `AndroidApp` est défini dans les `using` déclarations pour différencier les deux.
+> La `Application` classe est définie à la fois dans les `Xamarin.Forms` `Android.App` espaces de noms et, de sorte que l' `AndroidApp` alias est défini dans les `using` instructions pour différencier les deux.
 
 ### <a name="handle-incoming-notifications-on-android"></a>Gérer les notifications entrantes sur Android
 
-La `MainActivity` classe doit détecter les notifications entrantes et en aviser l’instance. `AndroidNotificationManager` L’attribut `Activity` `MainActivity` sur la `LaunchMode` classe `LaunchMode.SingleTop`doit spécifier une valeur de :
+La `MainActivity` classe doit détecter les notifications entrantes et notifier l' `AndroidNotificationManager` instance. L' `Activity` attribut sur la `MainActivity` classe doit spécifier la `LaunchMode` valeur `LaunchMode.SingleTop` :
 
 ```csharp
 [Activity(
@@ -230,9 +233,9 @@ La `MainActivity` classe doit détecter les notifications entrantes et en aviser
     }
 ```
 
-Le `SingleTop` mode empêche plusieurs `Activity` cas d’un d’être commencé pendant que l’application est au premier plan. Cela `LaunchMode` peut ne pas convenir aux applications qui lancent plusieurs activités dans des scénarios de notification plus complexes. Pour plus `LaunchMode` d’informations sur les valeurs de recensement, voir [Android Activity LaunchMode](https://developer.android.com/guide/topics/manifest/activity-element#lmode).
+Le `SingleTop` mode empêche le démarrage de plusieurs instances d’un `Activity` pendant que l’application est au premier plan. Cela `LaunchMode` peut ne pas convenir aux applications qui lancent plusieurs activités dans des scénarios de notification plus complexes. Pour plus d’informations sur les `LaunchMode` valeurs d’énumération, voir [Android Activity LaunchMode](https://developer.android.com/guide/topics/manifest/activity-element#lmode).
 
-Dans `MainActivity` la classe est modifiée pour recevoir les notifications entrantes:
+Dans, la `MainActivity` classe est modifiée pour recevoir les notifications entrantes :
 
 ```csharp
 protected override void OnCreate(Bundle savedInstanceState)
@@ -260,20 +263,20 @@ void CreateNotificationFromIntent(Intent intent)
 }
 ```
 
-La `CreateNotificationFromIntent` méthode extrait les `intent` données de notification `AndroidNotificationManager` de `ReceiveNotification` l’argument et les fournit à l’utilisation de la méthode. La `CreateNotificationFromIntent` méthode est appelée `OnCreate` à `OnNewIntent` la fois de la méthode et de la méthode :
+La `CreateNotificationFromIntent` méthode extrait les données de notification de l' `intent` argument et les fournit au `AndroidNotificationManager` à l’aide de la `ReceiveNotification` méthode. La `CreateNotificationFromIntent` méthode est appelée à partir de la `OnCreate` méthode et de la `OnNewIntent` méthode :
 
-- Lorsque l’application est commencée `Intent` par des données `OnCreate` de notification, les données seront transmises à la méthode.
-- Si l’application est déjà au `Intent` premier plan, les `OnNewIntent` données seront transmises à la méthode.
+- Lorsque l’application est démarrée par les données de notification, les `Intent` données sont transmises à la `OnCreate` méthode.
+- Si l’application est déjà au premier plan, les `Intent` données sont passées à la `OnNewIntent` méthode.
 
-Android offre de nombreuses options avancées pour les notifications. Pour plus d’informations, voir [Notifications in Xamarin.Android](~/android/app-fundamentals/notifications/index.md).
+Android offre de nombreuses options avancées pour les notifications. Pour plus d’informations, consultez [notifications dans Xamarin. Android](~/android/app-fundamentals/notifications/index.md).
 
 ## <a name="create-the-ios-interface-implementation"></a>Créer l’implémentation de l’interface iOS
 
-Pour que la demande Xamarin.Forms envoie et reçoive des notifications sur iOS, l’application doit fournir une mise en œuvre de la `INotificationManager`.
+Pour que l' Xamarin.Forms application envoie et reçoit des notifications sur iOS, l’application doit fournir une implémentation du `INotificationManager` .
 
 ### <a name="create-the-iosnotificationmanager-class"></a>Créer la classe iOSNotificationManager
 
-La `iOSNotificationManager` classe implémente l’interface `INotificationManager` :
+La `iOSNotificationManager` classe implémente l' `INotificationManager` interface :
 
 ```csharp
 [assembly: Dependency(typeof(LocalNotifications.iOS.iOSNotificationManager))]
@@ -343,13 +346,13 @@ namespace LocalNotifications.iOS
 }
 ```
 
-L’attribut `assembly` ci-dessus de `INotificationManager` l’espace `DependencyService`de nom enregistre l’implémentation d’interface avec le .
+L' `assembly` attribut situé au-dessus de l’espace de noms inscrit l' `INotificationManager` implémentation de l’interface avec `DependencyService` .
 
-Sur iOS, vous devez demander la permission d’utiliser des notifications avant de tenter de planifier une notification. La `Initialize` méthode demande l’autorisation d’utiliser des notifications locales. La `ScheduleNotification` méthode définit la logique requise pour créer et envoyer une notification. Enfin, `ReceiveNotification` la méthode sera appelée par iOS lorsqu’un message est reçu et invoque le gestionnaire de l’événement.
+Sur iOS, vous devez demander l’autorisation d’utiliser les notifications avant de tenter de planifier une notification. La `Initialize` méthode demande l’autorisation d’utiliser des notifications locales. La `ScheduleNotification` méthode définit la logique requise pour créer et envoyer une notification. Enfin, la `ReceiveNotification` méthode est appelée par IOS lors de la réception d’un message et appelle le gestionnaire d’événements.
 
 ### <a name="handle-incoming-notifications-on-ios"></a>Gérer les notifications entrantes sur iOS
 
-Sur iOS, vous devez créer un `UNUserNotificationCenterDelegate` délégué qui sous-classe pour gérer les messages entrants. L’exemple d’application définit une `iOSNotificationReceiver` classe :
+Sur iOS, vous devez créer un délégué qui sous-classe `UNUserNotificationCenterDelegate` pour gérer les messages entrants. L’exemple d’application définit une `iOSNotificationReceiver` classe :
 
 ```csharp
 public class iOSNotificationReceiver : UNUserNotificationCenterDelegate
@@ -365,9 +368,9 @@ public class iOSNotificationReceiver : UNUserNotificationCenterDelegate
 }
 ```
 
-Cette classe `DependencyService` utilise le pour `iOSNotificationManager` obtenir une instance de `ReceiveNotification` la classe et fournit des données de notification entrantes à la méthode.
+Cette classe utilise `DependencyService` pour recevoir une instance de la `iOSNotificationManager` classe et fournit des données de notification entrante à la `ReceiveNotification` méthode.
 
-La `AppDelegate` classe doit spécifier le délégué personnalisé lors du démarrage de l’application. La `AppDelegate` classe doit `iOSNotificationReceiver` spécifier un objet en tant que délégué lors du démarrage de l’application. `UNUserNotificationCenter` Cela se `FinishedLaunching` produit dans la méthode:
+La `AppDelegate` classe doit spécifier le délégué personnalisé au démarrage de l’application. La `AppDelegate` classe doit spécifier un `iOSNotificationReceiver` objet en tant que `UNUserNotificationCenter` délégué au démarrage de l’application. Cela se produit dans la `FinishedLaunching` méthode :
 
 ```csharp
 public override bool FinishedLaunching(UIApplication app, NSDictionary options)
@@ -381,23 +384,23 @@ public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 }
 ```
 
-iOS offre de nombreuses options avancées pour les notifications. Pour plus d’informations, voir [Notifications in Xamarin.iOS](~/ios/platform/user-notifications/index.md).
+iOS offre de nombreuses options avancées pour les notifications. Pour plus d’informations, consultez [notifications dans Xamarin. iOS](~/ios/platform/user-notifications/index.md).
 
 ## <a name="test-the-application"></a>Test de l’application
 
-Une fois que les projets `INotificationManager` de plate-forme contiennent une implémentation enregistrée de l’interface, l’application peut être testée sur les deux plates-formes. Exécutez l’application et cliquez sur le bouton **Notification horaire** pour créer une notification.
+Une fois que les projets de plateforme contiennent une implémentation inscrite de l' `INotificationManager` interface, l’application peut être testée sur les deux plateformes. Exécutez l’application et cliquez sur le bouton **planifier la notification** pour créer une notification.
 
-Sur Android, la notification apparaîtra dans la zone de notification. Lorsque la notification est mise sur écoute, l’application reçoit la notification et affiche un message sous le bouton **Notification de l’annexe** :
+Sur Android, la notification s’affichera dans la zone de notification. Lorsque la notification est frappée, l’application reçoit la notification et affiche un message sous le bouton **planifier la notification** :
 
 ![Notifications locales sur Android](local-notifications-images/local-notifications-android.png)
 
-Sur iOS, les notifications entrantes sont automatiquement reçues par l’application sans nécessiter l’entrée de l’utilisateur. L’application reçoit la notification et affiche un message sous le bouton **Notification de l’annexe** :
+Sur iOS, les notifications entrantes sont automatiquement reçues par l’application sans intervention de l’utilisateur. L’application reçoit la notification et affiche un message sous le bouton **planifier la notification** :
 
 ![Notifications locales sur iOS](local-notifications-images/local-notifications-ios.png)
 
 ## <a name="related-links"></a>Liens connexes
 
 - [Exemple de projet](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/local-notifications)
-- [Notifications dans Xamarin.Android](~/android/app-fundamentals/notifications/index.md)
-- [Notifications dans Xamarin.iOS](~/ios/platform/user-notifications/index.md)
-- [Xamarin.Forms Dependency.Service](~/xamarin-forms/app-fundamentals/dependency-service/introduction.md)
+- [Notifications dans Xamarin. Android](~/android/app-fundamentals/notifications/index.md)
+- [Notifications dans Xamarin. iOS](~/ios/platform/user-notifications/index.md)
+- [Xamarin.FormsDependency. service](~/xamarin-forms/app-fundamentals/dependency-service/introduction.md)

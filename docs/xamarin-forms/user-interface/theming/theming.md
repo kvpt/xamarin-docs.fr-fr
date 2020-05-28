@@ -1,26 +1,29 @@
 ---
-title: Thème d’une application Xamarin. Forms
-description: Ils peuvent être implémentés dans les applications Xamarin. Forms en créant un ResourceDictionary pour chaque thème, puis en chargeant les ressources avec l’extension de balisage DynamicResource.
-ms.prod: xamarin
-ms.assetId: B7B17F66-4E37-4B50-9A57-351B62BE4FED
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/07/2019
-ms.openlocfilehash: 2f751549bdbd54b920a99b04d0068ab726600336
-ms.sourcegitcommit: bc0c1740aa0708459729c0e671ab3ff7de3e2eee
+title: Thème d’une Xamarin.Forms application
+description: Ils peuvent être implémentés dans les Xamarin.Forms applications en créant un ResourceDictionary pour chaque thème, puis en chargeant les ressources avec l’extension de balisage DynamicResource.
+ms.prod: ''
+ms.assetId: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 3341ada6c5605917eeec79aac96e38cb99b40fc4
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83425791"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138201"
 ---
-# <a name="theme-a-xamarinforms-application"></a>Thème d’une application Xamarin. Forms
+# <a name="theme-a-xamarinforms-application"></a>Thème d’une Xamarin.Forms application
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-theming/)
 
-Les applications Xamarin. Forms peuvent répondre de manière dynamique aux modifications de style au moment de l’exécution à l’aide de l' `DynamicResource` extension de balisage. Cette extension de balisage est similaire à l' `StaticResource` extension de balisage, dans le sens où les deux utilisent une clé de dictionnaire pour extraire une valeur d’un [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) . Toutefois, si l' `StaticResource` extension de balisage effectue une recherche dans un dictionnaire unique, l' `DynamicResource` extension de balisage maintient un lien vers la clé du dictionnaire. Par conséquent, si la valeur associée à la clé est remplacée, la modification est appliquée à [`VisualElement`](xref:Xamarin.Forms.VisualElement) . Cela permet d’implémenter les thèmes d’exécution dans les applications Xamarin. Forms.
+Xamarin.Formsles applications peuvent répondre de manière dynamique aux modifications de style au moment de l’exécution à l’aide de l' `DynamicResource` extension de balisage. Cette extension de balisage est similaire à l' `StaticResource` extension de balisage, dans le sens où les deux utilisent une clé de dictionnaire pour extraire une valeur d’un [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) . Toutefois, si l' `StaticResource` extension de balisage effectue une recherche dans un dictionnaire unique, l' `DynamicResource` extension de balisage maintient un lien vers la clé du dictionnaire. Par conséquent, si la valeur associée à la clé est remplacée, la modification est appliquée à [`VisualElement`](xref:Xamarin.Forms.VisualElement) . Cela permet d’implémenter les thèmes d’exécution dans les Xamarin.Forms applications.
 
-Le processus d’implémentation du runtime dans une application Xamarin. Forms se présente comme suit :
+Le processus d’implémentation du runtime dans une Xamarin.Forms application est le suivant :
 
 1. Définissez les ressources pour chaque thème dans un [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) .
 1. Consommez les ressources de thème dans l’application, à l’aide de l' `DynamicResource` extension de balisage.
@@ -182,7 +185,7 @@ Ces styles sont ensuite consommés par les pages :
 
 Quand une ressource de thème est consommée directement, elle doit être consommée avec l' `DynamicResource` extension de balisage. Toutefois, lorsqu’un style qui utilise l' `DynamicResource` extension de balisage est consommé, il doit être consommé avec l' `StaticResource` extension de balisage.
 
-Pour plus d’informations sur les styles, consultez application d’un [style aux applications Xamarin. Forms à l’aide de styles XAML](~/xamarin-forms/user-interface/styles/xaml/index.md). Pour plus d’informations sur l' `DynamicResource` extension de balisage, consultez [styles dynamiques dans Xamarin. Forms](~/xamarin-forms/user-interface/styles/xaml/dynamic.md).
+Pour plus d’informations sur les styles, consultez application d’un [style aux Xamarin.Forms applications à l’aide de styles XAML](~/xamarin-forms/user-interface/styles/xaml/index.md). Pour plus d’informations sur l' `DynamicResource` extension de balisage, consultez [styles dynamiques dans Xamarin.Forms ](~/xamarin-forms/user-interface/styles/xaml/dynamic.md).
 
 ## <a name="load-a-theme-at-runtime"></a>Charger un thème au moment de l’exécution
 
@@ -225,5 +228,5 @@ void OnPickerSelectionChanged(object sender, EventArgs e)
 - [Thèmes (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-theming/)
 - [Répondre aux modifications du thème du système](system-theme-changes.md)
 - [Dictionnaires de ressources](~/xamarin-forms/xaml/resource-dictionaries.md)
-- [Styles dynamiques dans Xamarin. Forms](~/xamarin-forms/user-interface/styles/xaml/dynamic.md)
-- [Styler des applications Xamarin.Forms avec des styles XAML](~/xamarin-forms/user-interface/styles/xaml/index.md)
+- [Styles dynamiques dansXamarin.Forms](~/xamarin-forms/user-interface/styles/xaml/dynamic.md)
+- [Styliser des Xamarin.Forms applications à l’aide de styles XAML](~/xamarin-forms/user-interface/styles/xaml/index.md)

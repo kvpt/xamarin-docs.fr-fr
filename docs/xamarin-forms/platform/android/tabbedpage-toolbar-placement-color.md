@@ -1,27 +1,30 @@
 ---
-title: Couleur et positionnement de la barre d’outils TabbedPage sur Android
-description: Les spécificités des plateformes vous permettent d’utiliser des fonctionnalités uniquement disponibles sur une plateforme spécifique, sans implémenter de convertisseurs ou d’effets personnalisés. Cet article explique comment utiliser le spécifique à la plateforme Android qui définit la position et la couleur de la barre d’outils sur un TabbedPage.
-ms.prod: xamarin
-ms.assetid: A5C68D6A-9A5F-42EE-845D-1E5B0CB1544E
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/10/2018
-ms.openlocfilehash: b95b73759d44631da0525fce16218b8a87ca0507
-ms.sourcegitcommit: efbc69acf4ea484d8815311b058114379c9db8a2
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f5a2be4bd61056a42593fc45e1abdd3679795bc0
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73842844"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139982"
 ---
 # <a name="tabbedpage-toolbar-placement-and-color-on-android"></a>Couleur et positionnement de la barre d’outils TabbedPage sur Android
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 > [!IMPORTANT]
-> Les caractéristiques spécifiques à la plateforme qui définissent la couleur de la barre d’outils sur un [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) sont désormais obsolètes et ont été remplacées par les propriétés [`SelectedTabColor`](xref:Xamarin.Forms.TabbedPage.SelectedTabColor) et [`UnselectedTabColor`](xref:Xamarin.Forms.TabbedPage.UnselectedTabColor) . Pour plus d’informations, consultez [créer un TabbedPage](~/xamarin-forms/app-fundamentals/navigation/tabbed-page.md#create-a-tabbedpage).
+> Les caractéristiques spécifiques à la plateforme qui définissent la couleur de la barre d’outils d’un [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) sont désormais obsolètes et ont été remplacées par les [`SelectedTabColor`](xref:Xamarin.Forms.TabbedPage.SelectedTabColor) [`UnselectedTabColor`](xref:Xamarin.Forms.TabbedPage.UnselectedTabColor) Propriétés et. Pour plus d’informations, consultez [créer un TabbedPage](~/xamarin-forms/app-fundamentals/navigation/tabbed-page.md#create-a-tabbedpage).
 
-Ces caractéristiques spécifiques à la plateforme sont utilisées pour définir l’emplacement et la couleur de la barre d’outils sur un [`TabbedPage`](xref:Xamarin.Forms.TabbedPage). Elles sont consommées en XAML en affectant à la propriété jointe [`TabbedPage.ToolbarPlacement`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.ToolbarPlacementProperty) la valeur de l’énumération [`ToolbarPlacement`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ToolbarPlacement) , et les propriétés jointes [`TabbedPage.BarItemColor`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.BarItemColorProperty) et [`TabbedPage.BarSelectedItemColor`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.BarSelectedItemColorProperty) à un [`Color`](xref:Xamarin.Forms.Color):
+Ces caractéristiques spécifiques à la plateforme sont utilisées pour définir l’emplacement et la couleur de la barre d’outils sur un [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) . Elles sont consommées en XAML en affectant [`TabbedPage.ToolbarPlacement`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.ToolbarPlacementProperty) à la propriété jointe une valeur de l' [`ToolbarPlacement`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ToolbarPlacement) énumération, et aux [`TabbedPage.BarItemColor`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.BarItemColorProperty) [`TabbedPage.BarSelectedItemColor`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.BarSelectedItemColorProperty) propriétés jointes et à [`Color`](xref:Xamarin.Forms.Color) :
 
 ```xaml
 <TabbedPage ...
@@ -33,7 +36,7 @@ Ces caractéristiques spécifiques à la plateforme sont utilisées pour défini
 </TabbedPage>
 ```
 
-Elles peuvent également être consommées à l' C# aide de l’API Fluent :
+Elles peuvent également être consommées à partir de C# à l’aide de l’API Fluent :
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -45,18 +48,18 @@ On<Android>().SetToolbarPlacement(ToolbarPlacement.Bottom)
              .SetBarSelectedItemColor(Color.Red);
 ```
 
-La méthode `TabbedPage.On<Android>` spécifie que ces spécificités de la plateforme s’exécuteront uniquement sur Android. La méthode [`TabbedPage.SetToolbarPlacement`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.SetToolbarPlacement(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.TabbedPage},Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ToolbarPlacement)) , dans l’espace de noms [`Xamarin.Forms.PlatformConfiguration.AndroidSpecific`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) , est utilisée pour définir l’emplacement de la barre d’outils sur un [`TabbedPage`](xref:Xamarin.Forms.TabbedPage), avec l’énumération [`ToolbarPlacement`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ToolbarPlacement) fournissant les valeurs suivantes :
+La `TabbedPage.On<Android>` méthode spécifie que ces caractéristiques spécifiques à la plateforme s’exécuteront uniquement sur Android. [ `TabbedPage.SetToolbarPlacement` ] (XREF : Xamarin.Forms . PlatformConfiguration. AndroidSpecific. TabbedPage. SetToolbarPlacement ( Xamarin.Forms . IPlatformElementConfiguration { Xamarin.Forms . PlatformConfiguration. Android, Xamarin.Forms . TabbedPage}, Xamarin.Forms . PlatformConfiguration. AndroidSpecific. ToolbarPlacement)), dans l' [`Xamarin.Forms.PlatformConfiguration.AndroidSpecific`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) espace de noms, est utilisé pour définir l’emplacement de la barre d’outils sur un [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) , avec l' [`ToolbarPlacement`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ToolbarPlacement) énumération fournissant les valeurs suivantes :
 
-- [`Default`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ToolbarPlacement.Default) : indique que la barre d’outils est placée à l’emplacement par défaut sur la page. Il s’agit du haut de la page sur les téléphones et du bas de la page sur les autres idiomes d’appareils.
-- [`Top`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ToolbarPlacement.Top) : indique que la barre d’outils est placée en haut de la page.
-- [`Bottom`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ToolbarPlacement.Bottom) : indique que la barre d’outils est placée en bas de la page.
+- [`Default`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ToolbarPlacement.Default): indique que la barre d’outils est placée à l’emplacement par défaut sur la page. Il s’agit du haut de la page sur les téléphones et du bas de la page sur les autres idiomes d’appareils.
+- [`Top`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ToolbarPlacement.Top): indique que la barre d’outils est placée en haut de la page.
+- [`Bottom`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ToolbarPlacement.Bottom): indique que la barre d’outils est placée en bas de la page.
 
-En outre, les méthodes [`TabbedPage.SetBarItemColor`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.SetBarItemColor(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.TabbedPage},Xamarin.Forms.Color)) et [`TabbedPage.SetBarSelectedItemColor`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.SetBarSelectedItemColor(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.TabbedPage},Xamarin.Forms.Color)) sont utilisées pour définir respectivement la couleur des éléments de barre d’outils et des éléments de barre d’outils sélectionnés.
+En outre, le [ `TabbedPage.SetBarItemColor` ] (XREF : Xamarin.Forms . PlatformConfiguration. AndroidSpecific. TabbedPage. SetBarItemColor ( Xamarin.Forms . IPlatformElementConfiguration { Xamarin.Forms . PlatformConfiguration. Android, Xamarin.Forms . TabbedPage}, Xamarin.Forms . Color)) et [ `TabbedPage.SetBarSelectedItemColor` ] (XREF : Xamarin.Forms . PlatformConfiguration. AndroidSpecific. TabbedPage. SetBarSelectedItemColor ( Xamarin.Forms . IPlatformElementConfiguration { Xamarin.Forms . PlatformConfiguration. Android, Xamarin.Forms . TabbedPage}, Xamarin.Forms . Color)) sont utilisées pour définir la couleur des éléments de barre d’outils et des éléments de barre d’outils sélectionnés, respectivement.
 
 > [!NOTE]
-> Les méthodes [`GetToolbarPlacement`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.GetToolbarPlacement(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.TabbedPage})), [`GetBarItemColor`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.GetBarItemColor(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.TabbedPage}))et [`GetBarSelectedItemColor`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.GetBarSelectedItemColor(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.TabbedPage})) peuvent être utilisées pour récupérer le positionnement et la couleur de la barre d’outils [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) .
+> [ `GetToolbarPlacement` ] (XREF : Xamarin.Forms . PlatformConfiguration. AndroidSpecific. TabbedPage. GetToolbarPlacement ( Xamarin.Forms . IPlatformElementConfiguration { Xamarin.Forms . PlatformConfiguration. Android, Xamarin.Forms . TabbedPage})), [ `GetBarItemColor` ] (XREF : Xamarin.Forms . PlatformConfiguration. AndroidSpecific. TabbedPage. GetBarItemColor ( Xamarin.Forms . IPlatformElementConfiguration { Xamarin.Forms . PlatformConfiguration. Android, Xamarin.Forms . TabbedPage})) et [ `GetBarSelectedItemColor` ] (XREF : Xamarin.Forms . PlatformConfiguration. AndroidSpecific. TabbedPage. GetBarSelectedItemColor ( Xamarin.Forms . IPlatformElementConfiguration { Xamarin.Forms . PlatformConfiguration. Android, Xamarin.Forms . TabbedPage})), vous pouvez utiliser les méthodes pour récupérer le positionnement et la couleur de la [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) barre d’outils.
 
-Le résultat est que le positionnement de la barre d’outils, la couleur des éléments de la barre d’outils et la couleur de l’élément de barre d’outils sélectionné peuvent être définis sur un [`TabbedPage`](xref:Xamarin.Forms.TabbedPage):
+Le résultat est que le positionnement de la barre d’outils, la couleur des éléments de la barre d’outils et la couleur de l’élément de barre d’outils sélectionné peuvent être définis sur un [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) :
 
 ![](tabbedpage-toolbar-placement-color-images/tabbedpage-toolbar-placement.png)
 

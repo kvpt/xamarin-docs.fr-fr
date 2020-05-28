@@ -1,24 +1,27 @@
 ---
-title: Présentation de Xamarin.Forms Shell
-description: Xamarin.Forms Shell fournit les fonctionnalités fondamentales nécessaires à la plupart des applications, y compris une expérience utilisateur de navigation commune, un schéma de navigation basée sur des URI et un gestionnaire de recherche intégré.
-ms.prod: xamarin
-ms.assetid: 4604DCB5-83DA-458A-8B02-6508A740BE0E
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 09/20/2019
-ms.openlocfilehash: cb2ae3afe9db86d4db603d499ef0e75e7cbbf552
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: Xamarin.FormsPrésentation de l’interpréteur de commandes
+description: Xamarin.FormsL’interpréteur de commandes fournit les fonctionnalités fondamentales nécessaires à la plupart des applications, notamment une expérience utilisateur de navigation commune, un schéma de navigation basé sur les URI et un gestionnaire de recherche intégré.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 29a99161ff2ef2d71b6c803db994522bfe80ed03
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76940399"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138734"
 ---
-# <a name="xamarinforms-shell-introduction"></a>Présentation de Xamarin.Forms Shell
+# <a name="xamarinforms-shell-introduction"></a>Xamarin.FormsPrésentation de l’interpréteur de commandes
 
-[![Télécharger](~/media/shared/download.png) l’échantillon Télécharger l’échantillon](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
-Xamarin.Forms Shell réduit la complexité du développement d’applications mobiles en fournissant les fonctionnalités fondamentales nécessaires à la plupart des applications mobiles, y compris :
+Xamarin.FormsL’interpréteur de commandes réduit la complexité du développement d’applications mobiles en fournissant les fonctionnalités fondamentales nécessaires à la plupart des applications mobiles, notamment :
 
 - Un emplacement unique pour décrire la hiérarchie visuelle d’une application.
 - Une expérience utilisateur de navigation commune.
@@ -32,13 +35,13 @@ En outre, les applications Shell bénéficient d’une vitesse de rendu accrue e
 
 ## <a name="platform-support"></a>Plateforme prise en charge
 
-Xamarin.Forms Shell est entièrement disponible sur iOS et Android, mais seulement partiellement disponible sur la plateforme Windows universelle (UWP). En outre, Shell est actuellement expérimental sur UWP et ne peut être utilisé qu’en ajoutant la ligne de code suivante à la classe `App` du projet UWP, avant d’appeler `Forms.Init` :
+Xamarin.FormsL’interpréteur de commandes est entièrement disponible sur iOS et Android, mais uniquement partiellement disponible sur le plateforme Windows universelle (UWP). En outre, Shell est actuellement expérimental sur UWP et ne peut être utilisé qu’en ajoutant la ligne de code suivante à la classe `App` du projet UWP, avant d’appeler `Forms.Init` :
 
 ```csharp
 global::Xamarin.Forms.Forms.SetFlags("Shell_UWP_Experimental");
 ```
 
-Pour savoir comment ajouter un projet UWP à une solution Xamarin.Forms, consultez [Configurer des projets Windows](~/xamarin-forms/platform/windows/installation/index.md).
+Pour plus d’informations sur l’ajout d’un projet UWP à une Xamarin.Forms solution, consultez [configurer des projets Windows](~/xamarin-forms/platform/windows/installation/index.md).
 
 ## <a name="shell-navigation-experience"></a>Expérience de navigation Shell
 
@@ -53,11 +56,11 @@ La sélection d’un élément de menu volant permet de sélectionner et d’aff
 > [!NOTE]
 > Lorsque le menu volant n’est pas ouvert, la barre d’onglets du bas représente le niveau supérieur de navigation dans l’application.
 
-Chaque onglet [`ContentPage`](xref:Xamarin.Forms.ContentPage)affiche un . Toutefois, si un onglet inférieur contient plusieurs pages, les pages sont accessibles via la barre d’onglets supérieure :
+Chaque onglet affiche un [`ContentPage`](xref:Xamarin.Forms.ContentPage) . Toutefois, si un onglet inférieur contient plusieurs pages, les pages sont accessibles via la barre d’onglets supérieure :
 
 [![Capture d’écran des onglets du haut Shell, sur iOS et Android](introduction-images/cats.png "Onglets du haut Shell")](introduction-images/cats-large.png#lightbox "Onglets du haut Shell")
 
-Dans chaque onglet, des objets supplémentaires [`ContentPage`](xref:Xamarin.Forms.ContentPage) peuvent être navigués vers :
+Dans chaque onglet, [`ContentPage`](xref:Xamarin.Forms.ContentPage) vous pouvez accéder à des objets supplémentaires :
 
 [![Capture d’écran de la navigation entre les pages Shell, sur iOS et Android](introduction-images/cat-details.png "Navigation dans l’application Shell")](introduction-images/cat-details-large.png#lightbox "Navigation dans l’application Shell")
 

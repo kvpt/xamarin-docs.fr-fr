@@ -1,24 +1,27 @@
 ---
-title: Xamarin.Forms capacités de dispositif à double écran
-description: Ce guide explique comment utiliser la classe DualScreenInfo de Xamarin.Forms pour optimiser l’expérience de votre application sur des appareils double écran comme Surface Duo et Surface Neo.
-ms.prod: xamarin
-ms.assetid: dd5eb074-f4cb-4ab4-b47d-76f862ac7cfa
-ms.technology: xamarin-forms
-author: davidortinau
-ms.author: daortin
-ms.date: 02/08/2020
-ms.openlocfilehash: 3393f8f4468b58289443af3d2eea558cca4588d2
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: Xamarin.Formsfonctionnalités de l’appareil à deux écrans
+description: Ce guide explique comment utiliser la Xamarin.Forms classe DualScreenInfo pour optimiser votre expérience d’application pour les appareils à deux écrans tels que surface Duo et surface Neo.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 59575823a9ec29847a60209e846ba244e51ca0c0
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "80628258"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138929"
 ---
-# <a name="xamarinforms-dual-screen-device-capabilities"></a>Xamarin.Forms capacités de dispositif à double écran
+# <a name="xamarinforms-dual-screen-device-capabilities"></a>Xamarin.Formsfonctionnalités de l’appareil à deux écrans
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![Télécharger](~/media/shared/download.png) l’échantillon Télécharger l’échantillon](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
 
 La classe `DualScreenInfo` vous permet de déterminer le volet où se trouve votre vue, sa taille, la position de l’appareil, l’angle de la charnière, etc.
 

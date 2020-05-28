@@ -1,21 +1,14 @@
 ---
-title: 'Xamarin.Essentials: Détecter Shake'
-description: La classe Accelerometer dans Xamarin.Essentials vous permet de détecter un mouvement de secousse de l’appareil.
-ms.assetid: 07513D32-120F-4F12-8757-A47802A8027B
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 05/28/2019
-ms.custom: video
-ms.openlocfilehash: d2aef2c32b3fe2815f1176779a8c28ae8d421ed1
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "67832595"
----
-# <a name="xamarinessentials-detect-shake"></a>Xamarin.Essentials: Détecter Shake
+titre : ' ' Xamarin.Essentials : détecter le tremblement' 'Description : 'la classe accéléromètre dans Xamarin.Essentials vous permet de détecter un mouvement de tremblement de l’appareil. '
+ms. AssetID : Auteur : ms. Author : ms. Date : ms. Custom : No-Loc :
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
 
-La classe **[Accéléromètre](accelerometer.md)** vous permet de surveiller le capteur d’accéléromètre de l’appareil, ce qui indique l’accélération de l’appareil dans l’espace tridimensionnel. De plus, elle vous permet d’enregistrer des événements quand l’utilisateur secoue l’appareil.
+---
+
+# <a name="xamarinessentials-detect-shake"></a>Xamarin.Essentials: Détecter le tremblement
+
+La classe **[accéléromètre](accelerometer.md)** vous permet de surveiller le capteur d’accéléromètre de l’appareil, qui indique l’accélération de l’appareil dans un espace tridimensionnel. De plus, elle vous permet d’enregistrer des événements quand l’utilisateur secoue l’appareil.
 
 ## <a name="get-started"></a>Prise en main
 

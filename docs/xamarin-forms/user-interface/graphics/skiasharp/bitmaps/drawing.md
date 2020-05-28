@@ -1,51 +1,54 @@
 ---
-title: Création et le dessin sur des images bitmap SkiaSharp
-description: Découvrez comment créer des bitmaps de SkiaSharp et dessinez sur ces bitmaps en créant un canevas basé sur ces derniers.
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: 79BD3266-D457-4E50-BDDF-33450035FA0F
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/17/2018
-ms.openlocfilehash: 1e2b50a260ed5f5bbbbfc3c4ba55a33075262f25
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+title: ''
+description: ''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 593d6a8b30d5ed0e143d1c013849d2bef571f6dc
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228103"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84140294"
 ---
-# <a name="creating-and-drawing-on-skiasharp-bitmaps"></a>Création et le dessin sur des images bitmap SkiaSharp
+# <a name="creating-and-drawing-on-skiasharp-bitmaps"></a>Création et dessin sur des bitmaps SkiaSharp
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-Vous avez vu comment une application peut charger des bitmaps à partir du Web, à partir des ressources d’application et à partir de la bibliothèque de photos de l’utilisateur. Il est également possible de créer de nouvelles images bitmaps au sein de votre application. L’approche la plus simple implique l’un des constructeurs de [ `SKBitmap` ](xref:SkiaSharp.SKBitmap.%23ctor(System.Int32,System.Int32,System.Boolean)):
+Vous avez vu comment une application peut charger des bitmaps à partir du Web, à partir de ressources d’application et de la bibliothèque de photos de l’utilisateur. Il est également possible de créer des bitmaps dans votre application. L’approche la plus simple implique l’un des constructeurs de [`SKBitmap`](xref:SkiaSharp.SKBitmap.%23ctor(System.Int32,System.Int32,System.Boolean)) :
 
 ```csharp
 SKBitmap bitmap = new SKBitmap(width, height);
 ```
 
-Le `width` et `height` paramètres sont des entiers et spécifiez les dimensions en pixels de la bitmap. Ce constructeur crée un bitmap de couleur avec quatre octets par pixel : un octet pour le rouge, vert, bleu et les composants alpha (opacité).
+Les `width` `height` paramètres et sont des entiers et spécifient les dimensions en pixels de l’image bitmap. Ce constructeur crée une image bitmap de couleur entière avec quatre octets par pixel : un octet pour chaque composant rouge, vert, bleu et alpha (opacité).
 
-Une fois que vous avez créé une nouvelle image bitmap, vous devez obtenir quelque chose sur la surface de l’image bitmap. Vous le faites généralement de deux manières :
+Une fois que vous avez créé une nouvelle image bitmap, vous devez obtenir une information sur la surface de l’image bitmap. Vous procédez généralement de l’une des deux manières suivantes :
 
-- Dessiner sur l’image bitmap à l’aide de la norme `Canvas` méthodes de dessin.
-- Accéder directement les bits de pixel.
+- Dessinez sur l’image bitmap à l’aide des `Canvas` méthodes de dessin standard.
+- Accédez directement aux bits de pixel.
 
 Cet article illustre la première approche :
 
-![Exemple de dessin](drawing-images/DrawingSample.png "exemple de dessin")
+![Exemple de dessin](drawing-images/DrawingSample.png "Exemple de dessin")
 
-La deuxième approche est décrite dans l’article [ **l’accès à des Pixels de Bitmap SkiaSharp**](pixel-bits.md).
+La deuxième approche est décrite dans l’article [**accès aux pixels de la bitmap SkiaSharp**](pixel-bits.md).
 
-## <a name="drawing-on-the-bitmap"></a>Dessiner sur l’image bitmap
+## <a name="drawing-on-the-bitmap"></a>Dessin sur la bitmap
 
-Dessin sur la surface d’une image bitmap est identique à dessiner sur un écran vidéo. Pour dessiner sur un écran vidéo, vous obtenez un `SKCanvas` de l’objet à partir de la `PaintSurface` arguments d’événement. Pour dessiner sur une image bitmap, vous créez un `SKCanvas` à l’aide de l’objet le [ `SKCanvas` ](xref:SkiaSharp.SKCanvas.%23ctor(SkiaSharp.SKBitmap)) constructeur :
+Le dessin sur la surface d’une image bitmap est identique au dessin sur un affichage vidéo. Pour dessiner sur un affichage vidéo, vous obtenez un `SKCanvas` objet à partir des `PaintSurface` arguments d’événement. Pour dessiner sur une image bitmap, vous créez un `SKCanvas` objet à l’aide du [`SKCanvas`](xref:SkiaSharp.SKCanvas.%23ctor(SkiaSharp.SKBitmap)) constructeur :
 
 ```csharp
 SKCanvas canvas = new SKCanvas(bitmap);
 ```
 
-Lorsque vous avez terminé de dessiner sur l’image bitmap, vous pouvez vous débarrasser du `SKCanvas` objet. Pour cette raison, le `SKCanvas` est généralement appelé un `using` instruction :
+Lorsque vous avez terminé de dessiner sur la bitmap, vous pouvez supprimer l' `SKCanvas` objet. Pour cette raison, le `SKCanvas` constructeur est généralement appelé dans une `using` instruction :
 
 ```csharp
 using (SKCanvas canvas = new SKCanvas(bitmap))
@@ -54,13 +57,13 @@ using (SKCanvas canvas = new SKCanvas(bitmap))
 }
 ```
 
-L’image bitmap peut ensuite être affichée. Ultérieurement, le programme peut créer un nouveau `SKCanvas` objet selon que même bitmap et dessiner dessus davantage.
+La bitmap peut ensuite être affichée. À un moment ultérieur, le programme peut créer un nouvel `SKCanvas` objet basé sur ce même bitmap et en dessiner d’autres.
 
-Le **Hello Bitmap** page dans le **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** application écrit le texte « Hello, Bitmap ! » sur une image bitmap et affiche alors cette bitmap plusieurs fois.
+La page **image bitmap Hello** de l’application **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** écrit le texte « Hello, bitmap ! » sur une image bitmap, puis affiche cette bitmap plusieurs fois.
 
-Le constructeur de la `HelloBitmapPage` commence par créer un `SKPaint` objet pour afficher du texte. Il détermine les dimensions d’une chaîne de texte et crée une image bitmap avec ces dimensions. Il crée ensuite un `SKCanvas` objet basé sur cette bitmap, appels `Clear`, puis appelle `DrawText`. Il est toujours judicieux d’appeler `Clear` avec une nouvelle image bitmap, car une image bitmap nouvellement créée peut contenir des données aléatoires.
+Le constructeur du `HelloBitmapPage` commence par créer un `SKPaint` objet pour afficher du texte. Il détermine les dimensions d’une chaîne de texte et crée une image bitmap avec ces dimensions. Il crée ensuite un `SKCanvas` objet en fonction de cette image bitmap, appelle `Clear` , puis appelle `DrawText` . Il est toujours judicieux d’appeler `Clear` avec une nouvelle bitmap, car une bitmap nouvellement créée peut contenir des données aléatoires.
 
-Le constructeur conclut en créant un `SKCanvasView` objet pour afficher l’image bitmap :
+Le constructeur conclut en créant un `SKCanvasView` objet pour afficher la bitmap :
 
 ```csharp
 public partial class HelloBitmapPage : ContentPage
@@ -111,95 +114,95 @@ public partial class HelloBitmapPage : ContentPage
 }
 ```
 
-Le `PaintSurface` Gestionnaire restitue l’image bitmap plusieurs fois en lignes et colonnes de l’affichage. Notez que le `Clear` méthode dans le `PaintSurface` gestionnaire a un argument de `SKColors.Aqua`, quelles couleurs d’arrière-plan de la surface d’affichage :
+Le `PaintSurface` Gestionnaire restitue la bitmap plusieurs fois dans les lignes et les colonnes de l’affichage. Notez que la `Clear` méthode dans le `PaintSurface` gestionnaire a un argument de `SKColors.Aqua` , qui colore l’arrière-plan de la surface d’affichage :
 
-[![Hello, Bitmap ! ](drawing-images/HelloBitmap.png "Hello, Bitmap !")](drawing-images/HelloBitmap-Large.png#lightbox)
+[![Bonjour, bitmap !](drawing-images/HelloBitmap.png "Bonjour, bitmap !")](drawing-images/HelloBitmap-Large.png#lightbox)
 
-L’apparence de l’arrière-plan cyan révèle que la bitmap est transparente à l’exception du texte.
+L’apparence de l’arrière-plan cyan révèle que la bitmap est transparente, à l’exception du texte.
 
-## <a name="clearing-and-transparency"></a>Compensation et transparence
+## <a name="clearing-and-transparency"></a>Effacement et transparence
 
-L’affichage de la **Hello Bitmap** page montre que le programme créé est transparent à l’exception du texte noir. C’est pourquoi la couleur cyan de la surface d’affichage transparaît.
+L’affichage de la page de la **bitmap Hello** montre que la bitmap créée par le programme est transparente, à l’exception du texte noir. C’est la raison pour laquelle la couleur cyan de la surface d’affichage s’affiche.
 
-La documentation des `Clear` méthodes de `SKCanvas` les décrit avec l’instruction: «Remplace tous les pixels dans le clip actuel du canevas». L’utilisation du mot «remplace» révèle une caractéristique importante de ces méthodes: Toutes les méthodes de dessin `SKCanvas` de ajoutent des éléments à la surface d’affichage existante. Le `Clear` méthodes _remplacer_ ce qui existe déjà.
+La documentation des `Clear` méthodes de les `SKCanvas` décrit avec l’instruction : « remplace tous les pixels dans le clip actuel du canevas ». L’utilisation du mot « remplace » révèle une caractéristique importante de ces méthodes : toutes les méthodes de dessin de `SKCanvas` Ajouter un élément à la surface d’affichage existante. Les `Clear` méthodes _remplacent_ ce qui existe déjà.
 
-`Clear` Il existe dans deux versions différentes :
+`Clear`existe dans deux versions différentes :
 
-- Le [ `Clear` ](xref:SkiaSharp.SKCanvas.Clear(SkiaSharp.SKColor)) méthode avec un `SKColor` paramètre remplace les pixels de la surface d’affichage avec pixels de cette couleur.
+- La [`Clear`](xref:SkiaSharp.SKCanvas.Clear(SkiaSharp.SKColor)) méthode avec un `SKColor` paramètre remplace les pixels de la surface d’affichage par des pixels de cette couleur.
 
-- Le [ `Clear` ](xref:SkiaSharp.SKCanvas.Clear) méthode sans paramètres remplace les pixels avec la [ `SKColors.Empty` ](xref:SkiaSharp.SKColors.Empty) couleur, qui est une couleur dans lequel tous les composants (rouge, vert, bleu et alpha) sont définies à zéro. Cette couleur est parfois appelée « noir transparent ».
+- La [`Clear`](xref:SkiaSharp.SKCanvas.Clear) méthode sans paramètre remplace les pixels par la [`SKColors.Empty`](xref:SkiaSharp.SKColors.Empty) couleur, qui est une couleur dans laquelle tous les composants (rouge, vert, bleu et alpha) sont définis sur zéro. Cette couleur est parfois appelée « noir transparent ».
 
-Appel de `Clear` sans arguments sur une nouvelle image bitmap initialise l’image bitmap entière pour être entièrement transparent. Quoi que ce soit par la suite dessinée sur la bitmap sera généralement opaques ou partiellement opaques.
+`Clear`L’appel de sans arguments sur une nouvelle bitmap initialise la totalité de la bitmap en toute transparence. Tout ce qui est ensuite dessiné sur la bitmap est généralement opaque ou partiellement opaque.
 
-Voici ce que vous pouvez essayer: Dans la page de l' **image bitmap Hello** , remplacez la `Clear` `bitmapCanvas` méthode appliquée au par celui-ci:
+Voici ce que vous pouvez essayer : dans la page de la **bitmap Hello** , remplacez la `Clear` méthode appliquée à l’par celle-ci `bitmapCanvas` :
 
 ```csharp
 bitmapCanvas.Clear(new SKColor(255, 0, 0, 128));
 ```
 
-L’ordre de la `SKColor` paramètres du constructeur est rouge, vert, bleu et alpha, où chaque valeur peut être comprise entre 0 et 255. N’oubliez pas qu’une valeur alpha de 0 est transparente, tandis qu’une valeur alpha de 255 est opaque.
+L’ordre des `SKColor` paramètres du constructeur est rouge, vert, bleu et alpha, où chaque valeur peut être comprise entre 0 et 255. N’oubliez pas qu’une valeur alpha de 0 est transparente, tandis qu’une valeur alpha de 255 est opaque.
 
-La valeur (255, 0, 0, 128) efface les pixels du bitmap sur rouge pixels avec une opacité de 50 %. Cela signifie que l’arrière-plan de la bitmap est semi-transparent. Arrière-plan rouge semi transparente de l’image bitmap associe l’arrière-plan cyan de la surface d’affichage pour créer un fond gris.
+La valeur (255, 0, 0, 128) efface les pixels de la bitmap en pixels rouges avec une opacité de 50%. Cela signifie que l’arrière-plan de la bitmap est semi-transparent. L’arrière-plan rouge semi-transparent de l’image bitmap est combiné avec l’arrière-plan cyan de la surface d’affichage pour créer un arrière-plan gris.
 
-Essayez de définir la couleur du texte en noir transparent en plaçant l’assignation suivante dans le `SKPaint` initialiseur :
+Essayez de définir la couleur du texte sur transparent Black en plaçant l’assignation suivante dans l' `SKPaint` initialiseur :
 
 ```csharp
 Color = new SKColor(0, 0, 0, 0)
 ```
 
-Vous pourriez penser que ce texte transparent créerait des zones entièrement transparentes de l’image bitmap par le biais duquel vous verriez l’arrière-plan cyan de la surface d’affichage. Mais qui sont est pas le cas. Le texte est dessiné en haut de ce qui est déjà sur l’image bitmap. Le texte transparent seront pas visible de tout.
+Vous pensez peut-être que ce texte transparent créera des zones entièrement transparentes de la bitmap dans laquelle vous auriez pu voir l’arrière-plan cyan de la surface d’affichage. Mais ce n’est pas le cas. Le texte est dessiné sur ce qui se trouve déjà sur l’image bitmap. Le texte transparent n’est pas visible du tout.
 
-Ne `Draw` méthode rend jamais une bitmap plus transparent. Uniquement `Clear` pour ce faire.
+Aucune `Draw` méthode ne rend jamais une bitmap plus transparente. `Clear`Cela est possible uniquement.
 
-## <a name="bitmap-color-types"></a>Types de couleurs de bitmap
+## <a name="bitmap-color-types"></a>Types de couleurs bitmap
 
-La plus simple `SKBitmap` constructeur vous permet de spécifier un entier pixel largeur et hauteur de la bitmap. Autres `SKBitmap` constructeurs sont plus complexes. Ces constructeurs nécessitent des arguments de deux types d’énumération : [ `SKColorType` ](xref:SkiaSharp.SKColorType) et [ `SKAlphaType` ](xref:SkiaSharp.SKAlphaType). Autres constructeurs utilisent la [ `SKImageInfo` ](xref:SkiaSharp.SKImageInfo) structure qui consolide ces données.
+Le constructeur le plus simple `SKBitmap` vous permet de spécifier une largeur et une hauteur en pixels entières pour l’image bitmap. Les autres `SKBitmap` constructeurs sont plus complexes. Ces constructeurs requièrent des arguments de deux types d’énumération : [`SKColorType`](xref:SkiaSharp.SKColorType) et [`SKAlphaType`](xref:SkiaSharp.SKAlphaType) . D’autres constructeurs utilisent la [`SKImageInfo`](xref:SkiaSharp.SKImageInfo) structure, qui consolide ces informations.
 
-Le `SKColorType` énumération a 9 membres. Chacun de ces membres décrit une façon particulière de stocker les pixels du bitmap :
-
-- `Unknown`
-- `Alpha8` &mdash; chaque pixel est de 8 bits, représentant une valeur alpha allant de complètement transparent à complètement opaque
-- `Rgb565` &mdash; chaque pixel est 16 bits, 5 bits pour le rouge et bleu et 6 pour le vert
-- `Argb4444` &mdash; chaque pixel est 16 bits, 4 pour alpha, rouge, vert et bleu
-- `Rgba8888` &mdash; chaque pixel est 32 bits, 8 pour le rouge, vert, bleu et alpha
-- `Bgra8888` &mdash; chaque pixel est 32 bits, 8 pour bleu, vert, rouge et alpha
-- `Index8` &mdash; chaque pixel est de 8 bits et représente un index dans un [`SKColorTable`](xref:SkiaSharp.SKColorTable)
-- `Gray8` &mdash; chaque pixel est de 8 bits représentant une nuance de gris du noir sur blanc
-- `RgbaF16` &mdash; chaque pixel est 64 bits, avec rouge, vert, bleu et alpha dans un format à virgule flottante 16 bits
-
-Les deux formats où chaque pixel est 32 pixels (4 octets) sont souvent appelés _en couleurs_ formats. La plupart de la date des autres formats à partir d’une heure lorsque vidéo affiche eux-mêmes n’étaient pas capables de couleurs. Les images bitmap de couleur limité ont été adaptées à ces écrans et autorisés bitmaps occuper moins d’espace en mémoire.
-
-De nos jours, les programmeurs presque toujours utilisent des images bitmap en couleurs et nul besoin avec d’autres formats. L’exception est le `RgbaF16` format, ce qui permet la résolution de couleurs supérieure que même les formats de couleur. Toutefois, ce format est utilisé à des usages spécialisés, tels qu’imagerie médicale et ne rend pas beaucoup de sens lorsqu’il est utilisé avec les écrans en couleurs standard.
-
-Cette série d’articles lui-même à limitera le `SKBitmap` utilisés par défaut quand aucun des formats de couleur `SKColorType` membre est spécifié. Ce format par défaut est basé sur la plateforme sous-jacente. Pour les plateformes prises en charge par Xamarin.Forms, le type de couleur par défaut est :
-
-- `Rgba8888` pour iOS et Android
-- `Bgra8888` pour la plateforme Windows universelle
-
-La seule différence est l’ordre de 4 octets dans la mémoire, et uniquement, cela devient un problème lorsque vous accédez directement aux bits de pixel. Cela ne deviennent importante jusqu'à ce que vous arriviez à l’article [ **l’accès à des Pixels de Bitmap SkiaSharp**](pixel-bits.md).
-
-Le `SKAlphaType` énumération a quatre membres :
+L' `SKColorType` énumération a 9 membres. Chacun de ces membres décrit un moyen particulier de stocker les pixels de l’image bitmap :
 
 - `Unknown`
-- `Opaque` &mdash; la bitmap ne possède pas de transparence
-- `Premul` &mdash; composants de couleur sont préalablement multipliés par le composant alpha
-- `Unpremul` &mdash; composants de couleur ne sont pas préalablement multipliés par le composant alpha
+- `Alpha8`&mdash;chaque pixel est de 8 bits, ce qui représente une valeur alpha de complètement transparent à entièrement opaque.
+- `Rgb565`&mdash;chaque pixel est de 16 bits, 5 bits pour le rouge et le bleu, et 6 pour le vert
+- `Argb4444`&mdash;chaque pixel est 16 bits, 4 pour alpha, rouge, vert et bleu.
+- `Rgba8888`&mdash;chaque pixel est 32 bits, 8 pour les rouge, vert, bleu et alpha.
+- `Bgra8888`&mdash;chaque pixel est 32 bits, 8 pour le bleu, le vert, le rouge et l’alpha.
+- `Index8`&mdash;chaque pixel est de 8 bits et représente un index dans un[`SKColorTable`](xref:SkiaSharp.SKColorTable)
+- `Gray8`&mdash;chaque pixel est de 8 bits représentant une ombre grise du noir au blanc
+- `RgbaF16`&mdash;chaque pixel est 64 bits, avec rouge, vert, bleu et alpha dans un format à virgule flottante 16 bits.
 
-Voici un pixel de bitmap de rouge de 4 octets avec une transparence de 50 % avec les octets indiqué rouge de l’ordre, vert, bleu, alpha :
+Les deux formats dans lesquels chaque pixel est de 32 pixels (4 octets) sont souvent appelés des formats _de couleur complète_ . La plupart des autres formats date à partir d’une heure où les vidéos s’affichent elles-mêmes ne sont pas en couleur complète. Les bitmaps de couleur limitée étaient appropriées pour ces affichages et les bitmaps autorisées à occuper moins d’espace en mémoire.
+
+Ces jours-ci, les programmeurs utilisent presque toujours des bitmaps de couleur entière et ne sont pas dérangés avec d’autres formats. L’exception est le `RgbaF16` format, qui permet une résolution de couleur supérieure à celle des formats de couleur complète. Toutefois, ce format est utilisé à des fins spécifiques, telles que l’imagerie médicale, et n’est pas très utile en cas d’utilisation avec des affichages couleur standard.
+
+Cette série d’articles se limite aux formats de `SKBitmap` couleurs utilisés par défaut quand aucun `SKColorType` membre n’est spécifié. Ce format par défaut est basé sur la plateforme sous-jacente. Pour les plateformes prises en charge par Xamarin.Forms , le type de couleur par défaut est :
+
+- `Rgba8888`pour iOS et Android
+- `Bgra8888`pour la série UWP
+
+La seule différence est l’ordre des 4 octets dans la mémoire, ce qui devient un problème uniquement lorsque vous accédez directement aux bits de pixel. Cela ne devient pas important tant que vous n’accédez pas à l’article sur l' [**accès aux pixels de la bitmap SkiaSharp**](pixel-bits.md).
+
+L' `SKAlphaType` énumération a quatre membres :
+
+- `Unknown`
+- `Opaque`&mdash;la bitmap n’a aucune transparence
+- `Premul`&mdash;les composants de couleur sont prémultipliés par le composant alpha.
+- `Unpremul`&mdash;les composants de couleur ne sont pas prémultipliés par le composant alpha
+
+Voici un pixel de bitmap rouge de 4 octets avec une transparence de 50%, avec les octets affichés dans l’ordre rouge, vert, bleu, alpha :
 
 0xFF 0x00 0x00 0x80
 
-Lorsqu’une image bitmap qui contient des pixels semi-transparents est rendue sur une surface d’affichage, les composants de couleur de chaque pixel de bitmap doivent être multipliés par la valeur alpha de ce pixel, et les composants de couleur du pixel correspondant de la surface d’affichage doivent être multipliés. par 255 moins la valeur alpha. Les deux pixels peuvent être combinés. L’image bitmap peut être rendue plus rapidement si les composants de couleur dans les pixels du bitmap ont déjà été pre-multipliée par la valeur alpha. Ce même pixel rouge est stocké comme suit dans un format prémultiplié :
+Lorsqu’une image bitmap contenant des pixels semi-transparents est rendue sur une surface d’affichage, les composants de couleur de chaque pixel de la bitmap doivent être multipliés par la valeur alpha de ce pixel, et les composants de couleur du pixel correspondant de la surface d’affichage doivent être multipliés par 255 moins la valeur alpha. Les deux pixels peuvent ensuite être combinés. La bitmap peut être rendue plus rapide si les composants de couleur des pixels de la bitmap ont déjà été prémulitpliedés par la valeur alpha. Ce même pixel rouge serait stocké comme ceci dans un format pré-multiplié :
 
 0x80 0x00 0x00 0x80
 
-Cette amélioration des performances est la raison pour laquelle `SkiaSharp` bitmaps par défaut sont créés avec un `Premul` format. Mais là encore, il devient nécessaire de savoir ce que lorsque vous y accéder et manipuler des bits de pixel.
+Cette amélioration des performances est la raison pour laquelle `SkiaSharp` les bitmaps par défaut sont créées avec un `Premul` format. Là encore, il devient nécessaire de le connaître uniquement lorsque vous accédez et manipulez des bits de pixel.
 
-## <a name="drawing-on-existing-bitmaps"></a>Dessin sur bitmaps existants
+## <a name="drawing-on-existing-bitmaps"></a>Dessin sur des bitmaps existantes
 
-Il n’est pas nécessaire de créer une nouvelle image bitmap pour dessiner dessus. Vous pouvez également dessiner sur une bitmap existante.
+Il n’est pas nécessaire de créer une image bitmap à dessiner dessus. Vous pouvez également dessiner sur une image bitmap existante.
 
-Le **Monkey Moustache** page utilise son constructeur pour charger le **MonkeyFace.png** image. Il crée ensuite un `SKCanvas` objet basé sur cette bitmap et utilise `SKPaint` et `SKPath` objets pour dessiner une moustache dessus :
+La page **singe moustache** utilise son constructeur pour charger l’image **MonkeyFace. png** . Il crée ensuite un `SKCanvas` objet en fonction de cette image bitmap, et utilise `SKPaint` les `SKPath` objets et pour dessiner un moustache sur celui-ci :
 
 ```csharp
 public partial class MonkeyMoustachePage : ContentPage
@@ -254,27 +257,27 @@ public partial class MonkeyMoustachePage : ContentPage
 }
 ```
 
-Le constructeur conclut en créant un `SKCanvasView` dont `PaintSurface` gestionnaire affiche simplement le résultat :
+Le constructeur conclut en créant un `SKCanvasView` dont `PaintSurface` le gestionnaire affiche simplement le résultat :
 
-[![Certain nombre de manipulations Moustache](drawing-images/MonkeyMoustache.png "Moustache certain nombre de manipulations")](drawing-images/MonkeyMoustache-Large.png#lightbox)
+[![Singe moustache](drawing-images/MonkeyMoustache.png "Singe moustache")](drawing-images/MonkeyMoustache-Large.png#lightbox)
 
-## <a name="copying-and-modifying-bitmaps"></a>Copie et la modification des bitmaps
+## <a name="copying-and-modifying-bitmaps"></a>Copie et modification des bitmaps
 
-Les méthodes de `SKCanvas` inclure de bitmap que vous pouvez utiliser pour dessiner sur `DrawBitmap`. Cela signifie que vous pouvez dessiner une bitmap sur un autre, généralement de la modification d’une certaine façon.
+Les méthodes de `SKCanvas` que vous pouvez utiliser pour dessiner sur une bitmap incluent `DrawBitmap` . Cela signifie que vous pouvez dessiner une image bitmap sur une autre, généralement en la modifiant de quelque manière que ce soit.
 
-La façon la plus polyvalente pour modifier une image bitmap est via l’accès aux bits de pixel, un sujet traité dans l’article  **[pixels de bitmap de l’accès à un SkiaSharp](pixel-bits.md)** . Mais il existe plusieurs autres techniques pour modifier les bitmaps qui ne nécessitent pas l’accès aux bits de pixel.
+La façon la plus polyvalente de modifier une bitmap consiste à accéder aux bits de pixel réels, un sujet abordé dans l’article **[accès aux pixels de la bitmap SkiaSharp](pixel-bits.md)**. Toutefois, il existe de nombreuses autres techniques permettant de modifier les bitmaps qui ne nécessitent pas l’accès aux bits de pixel.
 
-La bitmap suivante incluse avec le **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** application est 360 pixels de large et 480 pixels en hauteur :
+La bitmap suivante incluse avec l’application **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** est 360 pixels de largeur et 480 pixels en hauteur :
 
-![Mountain Climbers](drawing-images/MountainClimbers.jpg "Mountain Climbers")
+![Alpiners](drawing-images/MountainClimbers.jpg "Alpiners")
 
-Supposons que vous n’avez pas reçu l’autorisation à partir de la monkey sur la gauche pour publier cette photo. Une solution consiste à masquer la face de le monkey à l’aide d’une technique appelée _pixelization_. Les pixels de la face sont remplacées par les blocs de couleur afin que vous ne pouvez pas apporter les fonctionnalités. Les blocs de couleur sont généralement dérivées de l’image d’origine en faisant la moyenne les couleurs des pixels correspondant à ces blocs. Mais vous n’avez pas besoin effectuer cette moyenne vous-même. Cela se produit automatiquement lorsque vous copiez une image bitmap dans une dimension de pixel plus petits.
+Supposez que vous n’avez pas reçu l’autorisation du singe sur la gauche pour publier cette photographie. Une solution consiste à obscurcir le visage du singe à l’aide d’une technique appelée « _pixelisation_». Les pixels de la face sont remplacés par des blocs de couleur, de sorte que vous ne pouvez pas créer les fonctionnalités. Les blocs de couleur sont généralement dérivés de l’image d’origine en calculant la moyenne des couleurs des pixels correspondant à ces blocs. Mais vous n’avez pas besoin d’effectuer cette moyenne vous-même. Cela se produit automatiquement lorsque vous copiez une image bitmap dans une dimension de pixels plus petite.
 
-Les visages de la gauche monkey occupent environ une zone carrée 72 pixels avec un angle supérieur gauche au niveau du point (112, 238). Nous allons remplacer cette zone carrée 72 pixels avec un tableau 9 x 9 de briques, chacun d’eux est 8 par 8 pixels carrés.
+Le visage du singe gauche occupe approximativement une zone carrée de 72 pixels avec un angle supérieur gauche au point (112, 238). Remplaçons cette zone carrée de 72 pixels par un tableau de 9 par 9 de blocs colorés, chacun d’entre eux étant de 8 x 8 pixels carrés.
 
-Le **Image Pixelize** page se charge dans cette bitmap et crée d’abord une minuscule 9 pixels carrée image bitmap appelée `faceBitmap`. Il s’agit d’une destination pour la copie simplement les visages de la monkey. Le rectangle de destination est simplement 9-pixels carrés, mais le rectangle source est 72-pixels carrés. Chaque bloc de 8 par 8 de pixels sources est consolidées jusqu'à un pixel en faisant la moyenne les couleurs.
+La page de pixels de l' **image** se charge dans cette bitmap et crée d’abord une petite bitmap carrée de 9 pixels appelée `faceBitmap` . Il s’agit d’une destination pour copier uniquement le visage du singe. Le rectangle de destination correspond à un carré de 9 pixels, mais le rectangle source est un carré de 72 pixels. Chaque bloc de pixels source 8 par 8 est consolidé en un seul pixel en calculant la moyenne des couleurs.
 
-L’étape suivante consiste à copier l’image bitmap d’origine dans un nouveau bitmap de la même taille appelé `pixelizedBitmap`. La petite `faceBitmap` est ensuite copié en cela avec un rectangle de destination carré 72 pixels afin que chaque pixel de `faceBitmap` est développée à 8 fois sa taille :
+L’étape suivante consiste à copier l’image bitmap d’origine dans une nouvelle image bitmap de la même taille appelée `pixelizedBitmap` . Le minuscule `faceBitmap` est ensuite copié en plus de celui-ci avec un rectangle de destination carré de 72 pixels, de sorte que chaque pixel de `faceBitmap` est étendu à 8 fois sa taille :
 
 ```csharp
 public class PixelizedImagePage : ContentPage
@@ -336,15 +339,15 @@ public class PixelizedImagePage : ContentPage
 
 Le constructeur conclut en créant un `SKCanvasView` pour afficher le résultat :
 
-[![Image de pixelize](drawing-images/PixelizeImage.png "Pixelize d’Image")](drawing-images/PixelizeImage-Large.png#lightbox)
+[![Image de pixellisation](drawing-images/PixelizeImage.png "Image de pixellisation")](drawing-images/PixelizeImage-Large.png#lightbox)
 
 <a name="rotating-bitmaps" />
 
-## <a name="rotating-bitmaps"></a>La rotation des bitmaps
+## <a name="rotating-bitmaps"></a>Rotation des bitmaps
 
-Une autre tâche courante fait tourner les bitmaps. Cela est particulièrement utile lors de la récupération des bitmaps à partir d’une bibliothèque de photos iPhone ou iPad. À moins que l’appareil a été maintenu dans une orientation particulière lorsque la photo a été effectuée, l’image est susceptible d’être envers ou sur le côté.
+Une autre tâche courante est la rotation des bitmaps. Cela s’avère particulièrement utile lors de la récupération de bitmaps à partir d’une bibliothèque de photos iPhone ou iPad. À moins que l’appareil ne soit maintenu dans une orientation particulière lorsque la photo a été prise, l’image est susceptible d’être renversée ou latéralement.
 
-Activation d’une image bitmap envers nécessite la création d’une autre image bitmap la même taille que le premier, puis en définissant une transformation pour faire pivoter de 180 degrés lors de la copie de la première à la seconde. Dans tous les exemples dans cette section, `bitmap` est le `SKBitmap` objet dont vous avez besoin pour effectuer la rotation :
+L’activation d’une image bitmap à l’envers nécessite la création d’une autre bitmap de la même taille que la première, puis la définition d’une transformation pour faire pivoter de 180 degrés lors de la copie du premier vers le second. Dans tous les exemples de cette section, `bitmap` est l' `SKBitmap` objet que vous devez faire pivoter :
 
 ```csharp
 SKBitmap rotatedBitmap = new SKBitmap(bitmap.Width, bitmap.Height);
@@ -357,7 +360,7 @@ using (SKCanvas canvas = new SKCanvas(rotatedBitmap))
 }
 ```
 
-Lors de la rotation de 90 degrés, vous devez créer une image bitmap qui a une taille différente que celle d’origine en échangeant la hauteur et largeur. Par exemple, si la bitmap d’origine est 1200 pixels de large et 800 pixels de haut, la bitmap pivoté est 800 pixels de large et 1200 pixels de large. Définir translation et rotation afin que la bitmap est la rotation autour de son coin supérieur gauche et alors déplacée dans la vue. (N’oubliez pas que le `Translate` et `RotateDegrees` méthodes sont appelées dans l’ordre inverse de la manière qu’elles sont appliquées.) Voici le code pour faire pivoter de 90 degrés dans le sens horaire :
+En cas de rotation de 90 degrés, vous devez créer une image bitmap d’une taille différente de celle de l’original en remplaçant la hauteur et la largeur. Par exemple, si la bitmap d’origine est 1200 pixels de large et 800 pixels de haut, le bitmap pivoté est de 800 pixels de large et de 1200 pixels de large. Définissez la translation et la rotation de sorte que l’image bitmap pivote autour de son coin supérieur gauche, puis déplacée dans la vue. (Gardez à l’esprit que `Translate` les `RotateDegrees` méthodes et sont appelées dans l’ordre inverse de la façon dont elles sont appliquées.) Voici le code permettant de tourner de 90 degrés dans le sens des aiguilles d’une montre :
 
 ```csharp
 SKBitmap rotatedBitmap = new SKBitmap(bitmap.Height, bitmap.Width);
@@ -371,7 +374,7 @@ using (SKCanvas canvas = new SKCanvas(rotatedBitmap))
 }
 ```
 
-Et Voici une fonction similaire pour la rotation de 90 degrés vers la gauche :
+Et voici une fonction similaire pour faire pivoter le compteur de 90 degrés dans le sens inverse des aiguilles d’une montre :
 
 ```csharp
 SKBitmap rotatedBitmap = new SKBitmap(bitmap.Height, bitmap.Width);
@@ -385,11 +388,11 @@ using (SKCanvas canvas = new SKCanvas(rotatedBitmap))
 }
 ```
 
-Ces deux méthodes sont utilisées dans le **Photo Puzzle** pages décrit dans l’article [ **rognage de Bitmaps de SkiaSharp**](cropping.md#tile-division).
+Ces deux méthodes sont utilisées dans les pages de **Puzzle photo** décrites dans l’article [**découpage de bitmaps SkiaSharp**](cropping.md#tile-division).
 
-Un programme qui permet à l’utilisateur faire pivoter une image bitmap en incréments de 90 degrés doit uniquement implémenter une fonction pour faire pivoter de 90 degrés. L’utilisateur peut ensuite faire pivoter dans n’importe quel incrément de 90 degrés par l’exécution répétée de cette fonction.
+Un programme qui permet à l’utilisateur de faire pivoter une image bitmap par incréments de 90 degrés n’a besoin d’implémenter qu’une seule fonction pour la rotation de 90 degrés. L’utilisateur peut alors faire pivoter à l’aide d’un incrément de 90 degrés en répétant l’exécution de cette fonction.
 
-Un programme peut également faire pivoter une image bitmap par n’importe quel volume. Une approche simple consiste à modifier la fonction qui fait pivoter de 180 degrés en remplaçant 180 par généralisée `angle` variable :
+Un programme peut également faire pivoter une image bitmap d’une quantité quelconque. Une approche simple consiste à modifier la fonction qui pivote de 180 degrés en remplaçant 180 par une variable généralisée `angle` :
 
 ```csharp
 SKBitmap rotatedBitmap = new SKBitmap(bitmap.Width, bitmap.Height);
@@ -402,9 +405,9 @@ using (SKCanvas canvas = new SKCanvas(rotatedBitmap))
 }
 ```
 
-Toutefois, en règle générale, cette logique sera rogner les angles de l’image bitmap pivotée. Une meilleure approche consiste à calculer la taille de la bitmap pivotée à l’aide de trigonométrie à inclure ces angles.
+Toutefois, dans le cas général, cette logique rogne les angles de l’image bitmap pivotée. Une meilleure approche consiste à calculer la taille de l’image bitmap pivotée à l’aide de trigonométrique pour inclure ces angles.
 
-Cette trigonométrie est indiqué dans le **Bitmap Rotator** page. Le fichier XAML instancie un `SKCanvasView` et un `Slider` qui peuvent être comprises entre 0 et 360 degrés avec un `Label` indiquant la valeur actuelle :
+Cette trigonométrie est indiquée dans la page **rotation du bitmap** . Le fichier XAML instancie un `SKCanvasView` et un `Slider` qui peut être compris entre 0 et 360 degrés avec un qui `Label` indique la valeur actuelle :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -431,7 +434,7 @@ Cette trigonométrie est indiqué dans le **Bitmap Rotator** page. Le fichier XA
 </ContentPage>
 ```
 
-Le fichier code-behind charge une ressource bitmap et l’enregistre sous la forme d’un champ en lecture seule statique nommé `originalBitmap`. La bitmap affichée dans le `PaintSurface` gestionnaire est `rotatedBitmap`, qui est initialement défini sur `originalBitmap`:
+Le fichier code-behind charge une ressource bitmap et l’enregistre sous la forme d’un champ statique en lecture seule nommé `originalBitmap` . La bitmap affichée dans le `PaintSurface` gestionnaire est `rotatedBitmap` , qui a initialement la valeur `originalBitmap` :
 
 ```csharp
 public partial class BitmapRotatorPage : ContentPage
@@ -484,19 +487,19 @@ public partial class BitmapRotatorPage : ContentPage
 }
 ```
 
-Le `ValueChanged` Gestionnaire de la `Slider` effectue les opérations qui créent un nouveau `rotatedBitmap` selon l’angle de rotation. La nouvelle largeur et la hauteur sont basées sur absolute values de sinus et le cosinus de la largeur d’origine et la hauteur. Les transformations utilisées pour dessiner la bitmap d’origine sur l’image bitmap pivotée déplacement le centre de bitmap d’origine à l’origine, la faire pivoter le nombre de degrés spécifié puis ensuite traduire ce centre vers le centre de l’image bitmap pivotée. (Le `Translate` et `RotateDegrees` méthodes sont appelées dans l’ordre inverse à la manière dont ils sont appliqués.)
+Le `ValueChanged` Gestionnaire du `Slider` effectue les opérations qui créent un nouveau `rotatedBitmap` en fonction de l’angle de rotation. La nouvelle largeur et la hauteur sont basées sur des valeurs absolues de sinus et de cosinus des largeurs et hauteurs d’origine. Les transformations utilisées pour dessiner l’image bitmap d’origine sur l’image bitmap pivotée déplacent le centre de la bitmap d’origine dans l’origine, le font pivoter du nombre de degrés spécifié, puis traduisent ce centre au centre de l’image bitmap pivotée. (Les `Translate` `RotateDegrees` méthodes et sont appelées dans l’ordre inverse par rapport à la façon dont elles sont appliquées.)
 
-Remarquez l’utilisation de la `Clear` méthode pour rendre l’arrière-plan de `rotatedBitmap` un rose clair. Il s’agit uniquement pour illustrer la taille de `rotatedBitmap` sur l’affichage :
+Notez l’utilisation de la `Clear` méthode pour rendre l’arrière-plan d' `rotatedBitmap` un rose clair. Il s’agit uniquement d’illustrer la taille de `rotatedBitmap` sur l’affichage :
 
-[![Bitmap Rotator](drawing-images/BitmapRotator.png "Bitmap Rotator")](drawing-images/BitmapRotator-Large.png#lightbox)
+[![Rotateur bitmap](drawing-images/BitmapRotator.png "Rotateur bitmap")](drawing-images/BitmapRotator-Large.png#lightbox)
 
-La bitmap pivotée est suffisamment grande pour inclure la bitmap entière d’origine, mais pas plus important.
+Le bitmap pivoté est suffisamment grand pour inclure l’intégralité de la bitmap d’origine, mais pas plus grand.
 
-## <a name="flipping-bitmaps"></a>Retournement de bitmaps
+## <a name="flipping-bitmaps"></a>Retourner des bitmaps
 
-Une autre opération communément exécutée sur des images bitmap est appelée _retournement_. Conceptuellement, la bitmap est pivotée en trois dimensions autour d’un axe vertical ou l’axe horizontal via le centre de l’image bitmap. Retournement vertical crée une image miroir.
+Une autre opération couramment effectuée sur les bitmaps est appelée _retournement_. D’un point de vue conceptuel, la bitmap est pivotée en trois dimensions autour d’un axe vertical ou d’un axe horizontal au centre de l’image bitmap. Le retournement vertical crée une image miroir.
 
-Le **le Flipper Bitmap** page dans le **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** application montre ces processus. Le fichier XAML contient un `SKCanvasView` et deux boutons de retournement verticalement et horizontalement :
+La page du **flipper bitmap** de l’application **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** illustre ces processus. Le fichier XAML contient un `SKCanvasView` et deux boutons pour le basculement vertical et horizontal :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -532,7 +535,7 @@ Le **le Flipper Bitmap** page dans le **[SkiaSharpFormsDemos](https://docs.micro
 </ContentPage>
 ```
 
-Le fichier code-behind implémente ces deux opérations dans le `Clicked` gestionnaires pour les boutons :
+Le fichier code-behind implémente ces deux opérations dans les `Clicked` gestionnaires pour les boutons :
 
 ```csharp
 public partial class BitmapFlipperPage : ContentPage
@@ -588,15 +591,15 @@ public partial class BitmapFlipperPage : ContentPage
 }
 ```
 
-Le retournement vertical est accompli par une transformation de mise à l’échelle avec un facteur d’échelle horizontale de &ndash;1. Le centre de mise à l’échelle est au centre vertical de l’image bitmap. Le retournement horizontal est une transformation de mise à l’échelle avec un facteur d’échelle verticale de &ndash;1.
+Le retournement vertical est effectué par une transformation de mise à l’échelle avec un facteur d’échelle horizontale de &ndash; 1. Le centre de mise à l’échelle est le centre vertical de l’image bitmap. Le retournement horizontal est une transformation de mise à l’échelle avec un facteur d’échelle verticale de &ndash; 1.
 
-Comme vous pouvez le voir à partir de la mise en inversé de chemise de la monkey, retournement n’est pas identique à la rotation. Mais, comme illustré dans la capture d’écran UWP sur la droite, retourner à la fois horizontalement et verticalement est identique à la rotation de 180 degrés :
+Comme vous pouvez le voir à partir de la lettre inversée sur la chemise du singe, le retournement n’est pas identique à la rotation. Mais comme le montre la capture d’écran UWP sur la droite, le fait de retourner à la fois horizontalement et verticalement est identique à la rotation de 180 degrés :
 
-[![Bitmap le Flipper](drawing-images/BitmapFlipper.png "Bitmap le Flipper")](drawing-images/BitmapFlipper-Large.png#lightbox)
+[![Flipper bitmap](drawing-images/BitmapFlipper.png "Flipper bitmap")](drawing-images/BitmapFlipper-Large.png#lightbox)
 
-Une autre tâche courante qui peut être gérée à l’aide des techniques similaires est rogner une image bitmap à un sous-ensemble rectangulaire. Cette opération est décrite dans l’article suivant [ **rognage de Bitmaps de SkiaSharp**](cropping.md).
+Une autre tâche courante qui peut être gérée à l’aide de techniques similaires consiste à découper une image bitmap en un sous-ensemble rectangulaire. Cela est décrit dans l’article suivant, [**découpage des bitmaps SkiaSharp**](cropping.md).
 
 ## <a name="related-links"></a>Liens connexes
 
-- [API de SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
+- [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

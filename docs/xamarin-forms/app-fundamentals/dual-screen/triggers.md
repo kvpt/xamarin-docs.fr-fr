@@ -1,40 +1,43 @@
 ---
-title: Xamarin.Forms double écran déclencheurs
-description: Cet article explique comment utiliser Xamarin.Forms déclencheurs à double écran pour répondre aux changements d’interface utilisateur avec XAML.
-ms.prod: xamarin
-ms.assetid: 2181715D-3995-4E71-9A21-6B892F0B3B59
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 02/28/2020
-ms.openlocfilehash: 0cce23973c90c89ce90e40651a2646d5f1bdd2c0
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: Xamarin.Formsdéclencheurs à deux écrans
+description: Cet article explique comment utiliser Xamarin.Forms les déclencheurs à deux écrans pour répondre aux modifications de l’interface utilisateur avec XAML.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: df10327b2ac12d2b119f1ab558d7f27e8c319507
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "78165537"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84131194"
 ---
-# <a name="xamarinforms-dual-screen-triggers"></a>Xamarin.Forms double écran déclencheurs
+# <a name="xamarinforms-dual-screen-triggers"></a>Xamarin.Formsdéclencheurs à deux écrans
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-L’espace [`Xamarin.Forms.DualScreen`](xref:Xamarin.Forms.DualScreen) nom comprend deux déclencheurs d’état :
+L' [`Xamarin.Forms.DualScreen`](xref:Xamarin.Forms.DualScreen) espace de noms comprend deux déclencheurs d’État :
 
-- [`SpanModeStateTrigger`](xref:Xamarin.Forms.DualScreen.SpanModeStateTrigger)déclenche une [`VisualState`](xref:Xamarin.Forms.VisualState) modification lorsque le mode de vue de la mise en page ci-jointe change.
-- `WindowSpanModeStateTrigger`déclenche un [`VisualState`](xref:Xamarin.Forms.VisualState) changement lorsque le mode de vue de la fenêtre change.
+- [`SpanModeStateTrigger`](xref:Xamarin.Forms.DualScreen.SpanModeStateTrigger)déclenche une [`VisualState`](xref:Xamarin.Forms.VisualState) modification lorsque le mode d’affichage de la disposition attachée change.
+- `WindowSpanModeStateTrigger`déclenche une [`VisualState`](xref:Xamarin.Forms.VisualState) modification lorsque le mode d’affichage de la fenêtre change.
 
-Pour plus d’informations sur les déclencheurs de l’État, voir [déclencheurs de l’État](~/xamarin-forms/app-fundamentals/triggers.md#state-triggers).
+Pour plus d’informations sur les déclencheurs d’État, consultez [déclencheurs d’État](~/xamarin-forms/app-fundamentals/triggers.md#state-triggers).
 
-## <a name="span-mode-state-trigger"></a>Déclencheur d’état de mode d’envergure
+## <a name="span-mode-state-trigger"></a>Déclencheur d’État en mode span
 
-Un [`SpanModeStateTrigger`](xref:Xamarin.Forms.DualScreen.SpanModeStateTrigger) déclenche [`VisualState`](xref:Xamarin.Forms.VisualState) une modification lorsque le mode de portée de la mise en page ci-jointe change. Ce déclencheur a une propriété liant unique :
+Un [`SpanModeStateTrigger`](xref:Xamarin.Forms.DualScreen.SpanModeStateTrigger) déclenche une [`VisualState`](xref:Xamarin.Forms.VisualState) modification lorsque le mode span de la disposition attachée change. Ce déclencheur a une propriété pouvant être liée unique :
 
-- [`SpanMode`](xref:Xamarin.Forms.DualScreen.SpanModeStateTrigger.SpanMode), du [`TwoPaneViewMode`](xref:Xamarin.Forms.DualScreen.SpanModeStateTrigger.SpanMode)type , qui indique [`VisualState`](xref:Xamarin.Forms.VisualState) le mode de travée auquel le doit être appliqué.
+- [`SpanMode`](xref:Xamarin.Forms.DualScreen.SpanModeStateTrigger.SpanMode), de type [`TwoPaneViewMode`](xref:Xamarin.Forms.DualScreen.SpanModeStateTrigger.SpanMode) , qui indique le mode d’étendue auquel le [`VisualState`](xref:Xamarin.Forms.VisualState) doit être appliqué.
 
 > [!NOTE]
-> Le [`SpanModeStateTrigger`](xref:Xamarin.Forms.DualScreen.SpanModeStateTrigger) dérive de [`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase) la classe et peut donc [`IsActiveChanged`](xref:Xamarin.Forms.StateTriggerBase.IsActiveChanged) joindre un gestionnaire d’événements à l’événement.
+> Le [`SpanModeStateTrigger`](xref:Xamarin.Forms.DualScreen.SpanModeStateTrigger) dérive de la [`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase) classe et peut donc attacher un gestionnaire d’événements à l' [`IsActiveChanged`](xref:Xamarin.Forms.StateTriggerBase.IsActiveChanged) événement.
 
-L’exemple XAML [`Grid`](xref:Xamarin.Forms.Grid) suivant `SpanModeStateTrigger` montre un qui inclut des objets :
+L’exemple de code XAML suivant montre un [`Grid`](xref:Xamarin.Forms.Grid) qui comprend des `SpanModeStateTrigger` objets :
 
 ```xaml
 <Grid>
@@ -70,18 +73,18 @@ L’exemple XAML [`Grid`](xref:Xamarin.Forms.Grid) suivant `SpanModeStateTrigger
 </Grid>
 ```
 
-Dans cet exemple, les états [`Grid`](xref:Xamarin.Forms.Grid) visuels sont fixés sur un objet. La couleur de `Grid` fond de l’est vert quand un seul volet est montré, est rouge lorsque les vitres sont montrées côte à côte, et est pourpre lorsque les vitres sont montrées en bas.
+Dans cet exemple, les États visuels sont définis sur un [`Grid`](xref:Xamarin.Forms.Grid) objet. La couleur d’arrière-plan du `Grid` est verte lorsqu’un seul volet est affiché, est rouge lorsque les volets sont affichés côte à côte et est violet lorsque les volets sont affichés en haut à gauche.
 
-## <a name="window-span-mode-state-trigger"></a>Déclencheur d’état de mode d’épagneul de fenêtre
+## <a name="window-span-mode-state-trigger"></a>Déclencheur d’État du mode de l’étendue de la fenêtre
 
-Un `WindowSpanModeStateTrigger` déclenche [`VisualState`](xref:Xamarin.Forms.VisualState) un changement lorsque le mode d’envergure de la fenêtre change. Ce déclencheur a une propriété liant unique :
+Un `WindowSpanModeStateTrigger` déclenche une [`VisualState`](xref:Xamarin.Forms.VisualState) modification lorsque le mode span de la fenêtre change. Ce déclencheur a une propriété pouvant être liée unique :
 
-- [`SpanMode`](xref:Xamarin.Forms.DualScreen.SpanModeStateTrigger.SpanMode), du [`TwoPaneViewMode`](xref:Xamarin.Forms.DualScreen.SpanModeStateTrigger.SpanMode)type , qui indique [`VisualState`](xref:Xamarin.Forms.VisualState) le mode de travée auquel le doit être appliqué.
+- [`SpanMode`](xref:Xamarin.Forms.DualScreen.SpanModeStateTrigger.SpanMode), de type [`TwoPaneViewMode`](xref:Xamarin.Forms.DualScreen.SpanModeStateTrigger.SpanMode) , qui indique le mode d’étendue auquel le [`VisualState`](xref:Xamarin.Forms.VisualState) doit être appliqué.
 
 > [!NOTE]
-> Le `WindowSpanModeStateTrigger` dérive de [`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase) la classe et peut donc [`IsActiveChanged`](xref:Xamarin.Forms.StateTriggerBase.IsActiveChanged) joindre un gestionnaire d’événements à l’événement.
+> Le `WindowSpanModeStateTrigger` dérive de la [`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase) classe et peut donc attacher un gestionnaire d’événements à l' [`IsActiveChanged`](xref:Xamarin.Forms.StateTriggerBase.IsActiveChanged) événement.
 
-L’exemple XAML [`Grid`](xref:Xamarin.Forms.Grid) suivant `WindowSpanModeStateTrigger` montre un qui inclut des objets :
+L’exemple de code XAML suivant montre un [`Grid`](xref:Xamarin.Forms.Grid) qui comprend des `WindowSpanModeStateTrigger` objets :
 
 ```xaml
 <Grid>
@@ -117,9 +120,9 @@ L’exemple XAML [`Grid`](xref:Xamarin.Forms.Grid) suivant `WindowSpanModeStateT
 </Grid>    
 ```
 
-Dans cet exemple, les états [`Grid`](xref:Xamarin.Forms.Grid) visuels sont fixés sur un objet. La couleur de `Grid` fond de la est rouge quand un seul volet est montré, est vert lorsque les vitres sont montrées côte à côte, et est jaune lorsque les vitres sont montrées en bas.
+Dans cet exemple, les États visuels sont définis sur un [`Grid`](xref:Xamarin.Forms.Grid) objet. La couleur d’arrière-plan du `Grid` est rouge lorsqu’un seul volet est affiché, est vert lorsque les volets sont affichés côte à côte et est jaune lorsque les volets sont affichés en haut à gauche.
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Déclencheurs Xamarin.Forms](~/xamarin-forms/app-fundamentals/triggers.md)
-- [Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)
+- [Xamarin.FormsDéclencheurs](~/xamarin-forms/app-fundamentals/triggers.md)
+- [Xamarin.FormsGestionnaire d’état visuel](~/xamarin-forms/user-interface/visual-state-manager.md)

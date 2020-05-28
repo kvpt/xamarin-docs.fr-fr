@@ -1,31 +1,34 @@
 ---
-title: Valeurs de repli pour les liaisons Xamarin.Forms
-description: Cet article explique comment renforcer des liaisons en définissant des valeurs de repli qui seront utilisées si une liaison échoue.
-ms.prod: xamarin
-ms.assetid: 637ACD9D-3E5D-4014-86DE-A77D1FEF238A
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/16/2018
-ms.openlocfilehash: 67fd8070ae36bdc1a90b8a33b25f13369d8d995d
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: Xamarin.FormsLiaison de secours
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f3aadef1960618731c3749507233933b8bf7630e
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "68650209"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84133458"
 ---
-# <a name="xamarinforms-binding-fallbacks"></a>Valeurs de repli pour les liaisons Xamarin.Forms
+# <a name="xamarinforms-binding-fallbacks"></a>Xamarin.FormsLiaison de secours
 
-[![Télécharger](~/media/shared/download.png) l’échantillon Télécharger l’échantillon](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
-Une liaison de données échoue parfois car la source de la liaison ne peut pas être résolue ou parce que la liaison réussit mais retourne une valeur `null`. De tels scénarios peuvent être gérés avec des convertisseurs de valeurs ou du code supplémentaire, mais il est possible de renforcer les liaisons de données en définissant des valeurs de repli à utiliser si le processus de liaison échoue. Ceci peut être accompli [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) en définissant le et les propriétés dans une expression contraignante. Étant donné que [`BindingBase`](xref:Xamarin.Forms.BindingBase) ces propriétés résident dans la classe, elles peuvent `Binding` être utilisées avec des fixations, des fixations compilées et avec l’extension de balisage.
+Une liaison de données échoue parfois car la source de la liaison ne peut pas être résolue ou parce que la liaison réussit mais retourne une valeur `null`. De tels scénarios peuvent être gérés avec des convertisseurs de valeurs ou du code supplémentaire, mais il est possible de renforcer les liaisons de données en définissant des valeurs de repli à utiliser si le processus de liaison échoue. Pour ce faire, vous devez définir [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) les [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) Propriétés et dans une expression de liaison. Étant donné que ces propriétés résident dans la [`BindingBase`](xref:Xamarin.Forms.BindingBase) classe, elles peuvent être utilisées avec des liaisons, des liaisons compilées et l' `Binding` extension de balisage.
 
 > [!NOTE]
-> L’utilisation [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) de la et des propriétés dans une expression contraignante est facultative.
+> L’utilisation des [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) Propriétés et dans une expression de liaison est facultative.
 
 ## <a name="defining-a-fallback-value"></a>Définition d’une valeur de repli
 
-La [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) propriété permet de définir une valeur de repli qui sera utilisée lorsque la *source* de liaison ne pourra pas être résolue. Un scénario courant pour définir cette propriété est lors d’une liaison à des propriétés de source qui n’existent peut-être pas sur tous les objets d’une collection liée de types hétérogènes.
+La [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) propriété permet de définir une valeur de secours qui sera utilisée lorsque la *source* de liaison ne peut pas être résolue. Un scénario courant pour définir cette propriété est lors d’une liaison à des propriétés de source qui n’existent peut-être pas sur tous les objets d’une collection liée de types hétérogènes.
 
 La page **MonkeyDetail** illustre la définition de la propriété [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) :
 
@@ -34,9 +37,9 @@ La page **MonkeyDetail** illustre la définition de la propriété [`FallbackVal
        ... />   
 ```
 
-La liaison [`Label`](xref:Xamarin.Forms.Label) sur le [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) définit une valeur qui sera fixée sur la cible si la source de liaison ne peut pas être résolue. Par conséquent, la valeur définie par la propriété `FallbackValue` s’affiche si la propriété `Population` n’existe pas sur l’objet lié. Notez qu’ici la valeur de propriété `FallbackValue` est délimitée par des guillemets simples (apostrophes).
+La liaison sur le [`Label`](xref:Xamarin.Forms.Label) définit une [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) valeur qui sera définie sur la cible si la source de liaison ne peut pas être résolue. Par conséquent, la valeur définie par la propriété `FallbackValue` s’affiche si la propriété `Population` n’existe pas sur l’objet lié. Notez qu’ici la valeur de propriété `FallbackValue` est délimitée par des guillemets simples (apostrophes).
 
-Plutôt que [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) de définir la valeur des propriétés en [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)ligne, il est recommandé de les définir comme des ressources dans un . L’avantage de cette approche est que ces valeurs sont définies une seule fois dans un emplacement unique et sont plus facilement localisables. Les ressources peuvent ensuite être récupérées à l’aide de l’extension de balisage `StaticResource` :
+Plutôt que de définir [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) des valeurs de propriété en ligne, il est recommandé de les définir en tant que ressources dans un [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) . L’avantage de cette approche est que ces valeurs sont définies une seule fois dans un emplacement unique et sont plus facilement localisables. Les ressources peuvent ensuite être récupérées à l’aide de l’extension de balisage `StaticResource` :
 
 ```xaml
 <Label Text="{Binding Population, FallbackValue={StaticResource populationUnknown}}"
@@ -50,14 +53,14 @@ Voici le programme en cours d’exécution :
 
 ![Liaison FallbackValue](binding-fallbacks-images/bindingunavailable-detail-cropped.png "Liaison FallbackValue")
 
-Lorsque `FallbackValue` la propriété n’est pas définie dans une expression contraignante et [`BindableProperty.DefaultValue`](xref:Xamarin.Forms.BindableProperty.DefaultValue) que le chemin de liaison ou une partie du chemin n’est pas résolu, est fixé sur la cible. Toutefois, lorsque la propriété `FallbackValue` est définie et que le chemin de liaison ou une partie de ce chemin n’est pas résolu(e), la valeur de la propriété `FallbackValue` est définie sur la cible. Par conséquent, dans la page **MonkeyDetail**, le [`Label`](xref:Xamarin.Forms.Label) affiche « Population size unknown » (Taille de la population inconnue), car l’objet lié n’a pas de propriété `Population`.
+Lorsque la `FallbackValue` propriété n’est pas définie dans une expression de liaison et que le chemin de liaison ou une partie du chemin d’accès n’est pas résolu, [`BindableProperty.DefaultValue`](xref:Xamarin.Forms.BindableProperty.DefaultValue) est défini sur la cible. Toutefois, lorsque la propriété `FallbackValue` est définie et que le chemin de liaison ou une partie de ce chemin n’est pas résolu(e), la valeur de la propriété `FallbackValue` est définie sur la cible. Par conséquent, dans la page **MonkeyDetail**, le [`Label`](xref:Xamarin.Forms.Label) affiche « Population size unknown » (Taille de la population inconnue), car l’objet lié n’a pas de propriété `Population`.
 
 > [!IMPORTANT]
-> Un convertisseur de valeur défini n’est [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) pas exécuté dans une expression contraignante lorsque la propriété est définie.
+> Un convertisseur de valeurs défini n’est pas exécuté dans une expression de liaison lorsque la [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) propriété est définie.
 
 ## <a name="defining-a-null-replacement-value"></a>Définition d’une valeur de remplacement de null
 
-La [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) propriété permet de définir une valeur de remplacement qui sera utilisée `null`lorsque la *source* de liaison est résolue, mais la valeur est . Un scénario courant pour définir cette propriété est lors d’une liaison à des propriétés de source qui peuvent être `null` dans une collection liée.
+La [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) propriété permet de définir une valeur de remplacement qui sera utilisée lorsque la *source* de liaison sera résolue, mais la valeur est `null` . Un scénario courant pour définir cette propriété est lors d’une liaison à des propriétés de source qui peuvent être `null` dans une collection liée.
 
 La page **Monkeys** illustre la définition de la propriété [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) :
 
@@ -81,9 +84,9 @@ La page **Monkeys** illustre la définition de la propriété [`TargetNullValue`
 </ListView>
 ```
 
-Les fixations [`Image`](xref:Xamarin.Forms.Image) sur [`Label`](xref:Xamarin.Forms.Label) les [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) valeurs et les deux définissent `null`qui seront appliquées si la trajectoire contraignante revient . Par conséquent, les valeurs définies par les propriétés `TargetNullValue` seront affichées pour tous les objets dans la collection où les propriétés `ImageUrl` et `Location` ne sont pas définies. Notez qu’ici les valeurs de propriété `TargetNullValue` sont délimitées par des guillemets simples (apostrophes).
+Les liaisons sur le [`Image`](xref:Xamarin.Forms.Image) et [`Label`](xref:Xamarin.Forms.Label) définissent les deux [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) valeurs qui seront appliquées si le chemin de liaison retourne `null` . Par conséquent, les valeurs définies par les propriétés `TargetNullValue` seront affichées pour tous les objets dans la collection où les propriétés `ImageUrl` et `Location` ne sont pas définies. Notez qu’ici les valeurs de propriété `TargetNullValue` sont délimitées par des guillemets simples (apostrophes).
 
-Plutôt que [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) de définir la valeur des propriétés en [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)ligne, il est recommandé de les définir comme des ressources dans un . L’avantage de cette approche est que ces valeurs sont définies une seule fois dans un emplacement unique et sont plus facilement localisables. Les ressources peuvent ensuite être récupérées à l’aide de l’extension de balisage `StaticResource` :
+Plutôt que de définir [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) des valeurs de propriété en ligne, il est recommandé de les définir en tant que ressources dans un [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) . L’avantage de cette approche est que ces valeurs sont définies une seule fois dans un emplacement unique et sont plus facilement localisables. Les ressources peuvent ensuite être récupérées à l’aide de l’extension de balisage `StaticResource` :
 
 ```xaml
 <Image Source="{Binding ImageUrl, TargetNullValue={StaticResource fallbackImageUrl}}"

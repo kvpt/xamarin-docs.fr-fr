@@ -1,66 +1,69 @@
 ---
-title: Xamarin.Forms TabbedPage
-description: Le TabbedPage de Xamarin.Forms se compose d’une liste d’onglets et d’une zone de détails plus grande, chaque onglet chargeant du contenu dans la zone de détails. Cet article montre comment utiliser un TabbedPage pour parcourir une collection de pages.
-ms.prod: xamarin
-ms.assetid: C946057F-C77C-412D-82A0-DAF475A24EF5
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 11/07/2019
-ms.openlocfilehash: 986045a4be352da0e439de87fdc70e2958b48d36
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: Xamarin.FormsTabbedPage
+description: Le Xamarin.Forms TabbedPage se compose d’une liste d’onglets et d’une zone de détails plus grande, chaque onglet chargeant du contenu dans la zone de détails. Cet article montre comment utiliser un TabbedPage pour parcourir une collection de pages.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 38389867ba52e63d8310e3b59d7838f58e8cf488
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79305086"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137512"
 ---
-# <a name="xamarinforms-tabbedpage"></a>Xamarin.Forms TabbedPage
+# <a name="xamarinforms-tabbedpage"></a>Xamarin.FormsTabbedPage
 
-[![Télécharger](~/media/shared/download.png) l’échantillon Télécharger l’échantillon](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-tabbedpagewithnavigationpage)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-tabbedpagewithnavigationpage)
 
-Le Xamarin.Forms [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) se compose d’une liste d’onglets et d’une zone de détail plus grande, avec chaque onglet de chargement du contenu dans la zone de détail. Les captures d’écran suivantes montrent un `TabbedPage` sur iOS et Android:
+Le Xamarin.Forms [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) se compose d’une liste d’onglets et d’une zone de détails plus grande, chaque onglet chargeant du contenu dans la zone de détails. Les captures d’écran suivantes montrent une `TabbedPage` sur iOS et Android :
 
 [![Capture d’écran d’un TabbedPage contenant trois onglets, sur iOS et Android](tabbed-page-images/tabbedpage-today.png "TabbedPage avec trois onglets")](tabbed-page-images/tabbedpage-today-large.png#lightbox "TabbedPage avec trois onglets")
 
-Sur iOS, la liste des onglets apparaît au bas de l’écran et la zone de détails apparaît au-dessus. Chaque onglet se compose d’un titre et d’une icône, qui doit être un fichier PNG avec un canal alpha. Dans l’orientation du portrait, les icônes de barre d’onglet apparaissent au-dessus des titres d’onglet. Dans l’orientation paysagère, les icônes et les titres apparaissent côte à côte. En outre, une barre d’onglet régulière ou compacte peut être affichée, selon l’appareil et l’orientation. S’il y a plus de cinq onglets, un onglet **Plus** s’affiche et permet d’accéder aux onglets supplémentaires. Pour plus d’informations sur les exigences de l’icône, voir [Tab Bar Icon Size](https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/custom-icons#tab-bar-icon-size) sur developer.apple.com.
+Sur iOS, la liste des onglets apparaît au bas de l’écran et la zone de détails apparaît au-dessus. Chaque onglet est constitué d’un titre et d’une icône, qui doit être un fichier PNG avec un canal alpha. En orientation portrait, les icônes de la barre d’onglets apparaissent au-dessus des titres des onglets. Dans l’orientation paysage, les icônes et les titres s’affichent côte à côte. En outre, une barre d’onglets standard ou compacte peut s’afficher, en fonction de l’appareil et de l’orientation. S’il y a plus de cinq onglets, un onglet **Plus** s’affiche et permet d’accéder aux onglets supplémentaires. Pour plus d’informations sur les conditions requises pour les icônes, consultez taille de l' [icône de barre d’onglets](https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/custom-icons#tab-bar-icon-size) sur Developer.Apple.com.
 
 > [!TIP]
-> Le `TabbedRenderer` pour iOS a `GetIcon` une méthode primordiale qui peut être utilisé pour charger des icônes d’onglet à partir d’une source spécifiée. Cette substitution permet d’utiliser des images SVG en tant qu’icônes sur un `TabbedPage`. Vous pouvez aussi fournir des versions sélectionnées et désélectionnées d’une icône.
+> Le `TabbedRenderer` pour iOS a une méthode substituable `GetIcon` qui peut être utilisée pour charger les icônes de tabulation à partir d’une source spécifiée. Cette substitution permet d’utiliser des images SVG en tant qu’icônes sur un `TabbedPage`. Vous pouvez aussi fournir des versions sélectionnées et désélectionnées d’une icône.
 
-Sur Android, la liste des onglets apparaît en haut de l’écran, et la zone de détail est ci-dessous. Chaque onglet se compose d’un titre et d’une icône, qui doit être un fichier PNG avec un canal alpha. Cependant, les onglets peuvent être déplacés vers le bas de l’écran avec une plate-forme spécifique. S’il y a plus de cinq onglets, et que la liste d’onglets se trouve au bas de l’écran, un onglet *Plus* apparaîtra qui peut être utilisé pour accéder aux onglets supplémentaires. Pour plus d’informations sur les exigences de l’icône, voir [Onglets](https://material.io/components/tabs/#) sur material.io et [prendre en charge différentes densités de pixels](https://developer.android.com/training/multiscreen/screendensities) sur developer.android.com. Pour plus d’informations sur le déplacement des onglets vers le bas de l’écran, voir [Réglage TabbedPage Toolbar Placement et couleur](~/xamarin-forms/platform/android/tabbedpage-toolbar-placement-color.md).
+Sur Android, la liste des onglets apparaît en haut de l’écran et la zone de détails est affichée en dessous. Chaque onglet est constitué d’un titre et d’une icône, qui doit être un fichier PNG avec un canal alpha. Toutefois, les onglets peuvent être déplacés vers le bas de l’écran avec un spécifique à la plateforme. S’il y a plus de cinq onglets et que la liste d’onglets se trouve au bas de l’écran, un onglet *plus* s’affiche et peut être utilisé pour accéder aux onglets supplémentaires. Pour plus d’informations sur les exigences relatives aux icônes, consultez les [onglets](https://material.io/components/tabs/#) sur Material.IO et la [prise en charge de différentes densités de pixels](https://developer.android.com/training/multiscreen/screendensities) sur Developer.Android.com. Pour plus d’informations sur le déplacement des onglets vers le bas de l’écran, consultez Définition de la couleur et de l’emplacement de la [barre d’outils TabbedPage](~/xamarin-forms/platform/android/tabbedpage-toolbar-placement-color.md).
 
 > [!TIP]
-> Le `TabbedPageRenderer` pour Android AppCompat a `GetIconDrawable` une méthode primordiale qui peut être `Drawable`utilisé pour charger des icônes onglet à partir d’une coutume . Cette substitution rend possible l’utilisation d’images SVG comme icônes sur un `TabbedPage`, et fonctionne à la fois avec les barres d’onglets supérieures et inférieures. En guise d’alternative, vous pouvez utiliser la méthode `SetTabIcon` substituable pour charger des icônes d’onglets à partir d’un `Drawable` personnalisé pour les barres d’onglets supérieures.
+> Le `TabbedPageRenderer` pour Android AppCompat a une méthode substituable `GetIconDrawable` qui peut être utilisée pour charger des icônes d’onglet à partir d’un personnalisé `Drawable` . Cette substitution rend possible l’utilisation d’images SVG comme icônes sur un `TabbedPage`, et fonctionne à la fois avec les barres d’onglets supérieures et inférieures. En guise d’alternative, vous pouvez utiliser la méthode `SetTabIcon` substituable pour charger des icônes d’onglets à partir d’un `Drawable` personnalisé pour les barres d’onglets supérieures.
 
-Sur la plate-forme Windows Universelle (UWP), la liste des onglets apparaît en haut de l’écran, et la zone de détails est ci-dessous. Chaque onglet se compose d’un titre. Cependant, des icônes peuvent être ajoutées à chaque onglet avec une plate-forme spécifique. Pour plus d’informations, voir [Icônes TabbedPage sur Windows](~/xamarin-forms/platform/windows/tabbedpage-icons.md).
+Sur la plateforme Windows universelle (UWP), la liste des onglets s’affiche en haut de l’écran et la zone de détails est indiquée ci-dessous. Chaque onglet est constitué d’un titre. Toutefois, les icônes peuvent être ajoutées à chaque onglet avec un spécifique à la plateforme. Pour plus d’informations, consultez [TabbedPage icons on Windows](~/xamarin-forms/platform/windows/tabbedpage-icons.md).
 
 ## <a name="create-a-tabbedpage"></a>Créer un TabbedPage
 
-Deux approches peuvent être [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)utilisées pour créer un :
+Vous pouvez utiliser deux approches pour créer un [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) :
 
-- Peuplez [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) le avec une [`Page`](xref:Xamarin.Forms.Page) collection d’objets [`ContentPage`](xref:Xamarin.Forms.ContentPage) pour enfants, comme une collection d’objets. Pour plus d’informations, voir [Populate a TabbedPage avec une collection de pages](#populate-a-tabbedpage-with-a-page-collection).
-- Affecter une collection à la propriété [`ItemsSource`](xref:Xamarin.Forms.MultiPage`1.ItemsSource) et affecter un [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) à la propriété [`ItemTemplate`](xref:Xamarin.Forms.MultiPage`1.ItemTemplate) afin de retourner des pages pour les objets dans la collection. Pour plus d’informations, voir [Populate a TabbedPage avec un modèle](#populate-a-tabbedpage-with-a-template).
+- Remplir [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) avec une collection d’objets enfants [`Page`](xref:Xamarin.Forms.Page) , tels qu’une collection d' [`ContentPage`](xref:Xamarin.Forms.ContentPage) objets. Pour plus d’informations, consultez [remplir un TabbedPage avec une collection de pages](#populate-a-tabbedpage-with-a-page-collection).
+- Affecter une collection à la propriété [`ItemsSource`](xref:Xamarin.Forms.MultiPage`1.ItemsSource) et affecter un [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) à la propriété [`ItemTemplate`](xref:Xamarin.Forms.MultiPage`1.ItemTemplate) afin de retourner des pages pour les objets dans la collection. Pour plus d’informations, consultez [remplir un TabbedPage avec un modèle](#populate-a-tabbedpage-with-a-template).
 
-Avec les deux [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) approches, l’affichera chaque page au fur et à mesure que l’utilisateur sélectionnera chaque onglet.
+Avec les deux approches, le [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) affiche chaque page à mesure que l’utilisateur sélectionne chaque onglet.
 
 > [!IMPORTANT]
-> Il est recommandé [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) qu’un devrait [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) [`ContentPage`](xref:Xamarin.Forms.ContentPage) être peuplé avec et les instances seulement. Cela vous aidera à garantir une expérience utilisateur cohérente sur toutes les plateformes.
+> Il est recommandé de [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) remplir [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) uniquement les [`ContentPage`](xref:Xamarin.Forms.ContentPage) instances et. Cela vous aidera à garantir une expérience utilisateur cohérente sur toutes les plateformes.
 
-En outre, [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) définit les propriétés suivantes :
+En outre, [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) définit les propriétés suivantes :
 
-- [`BarBackgroundColor`](xref:Xamarin.Forms.TabbedPage.BarBackgroundColor), de [`Color`](xref:Xamarin.Forms.Color)type , la couleur de fond de la barre d’onglet.
-- [`BarTextColor`](xref:Xamarin.Forms.TabbedPage.BarTextColor), de [`Color`](xref:Xamarin.Forms.Color)type , la couleur du texte sur la barre d’onglet.
-- [`SelectedTabColor`](xref:Xamarin.Forms.TabbedPage.SelectedTabColor), de [`Color`](xref:Xamarin.Forms.Color)type , la couleur de l’onglet quand il est sélectionné.
-- [`UnselectedTabColor`](xref:Xamarin.Forms.TabbedPage.UnselectedTabColor), de [`Color`](xref:Xamarin.Forms.Color)type , la couleur de l’onglet quand il n’est pas sélectionné.
+- [`BarBackgroundColor`](xref:Xamarin.Forms.TabbedPage.BarBackgroundColor), de type [`Color`](xref:Xamarin.Forms.Color) , la couleur d’arrière-plan de la barre d’onglets.
+- [`BarTextColor`](xref:Xamarin.Forms.TabbedPage.BarTextColor), de type [`Color`](xref:Xamarin.Forms.Color) , la couleur du texte dans la barre d’onglets.
+- [`SelectedTabColor`](xref:Xamarin.Forms.TabbedPage.SelectedTabColor), de type [`Color`](xref:Xamarin.Forms.Color) , la couleur de l’onglet lorsqu’il est sélectionné.
+- [`UnselectedTabColor`](xref:Xamarin.Forms.TabbedPage.UnselectedTabColor), de type [`Color`](xref:Xamarin.Forms.Color) , la couleur de l’onglet lorsqu’il est désélectionné.
 
-Toutes ces propriétés [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) sont sauvegardées par des objets, ce qui signifie qu’elles peuvent être stylées, et les propriétés peuvent être la cible de liaisons de données.
+Toutes ces propriétés sont sauvegardées par des [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) objets, ce qui signifie qu’elles peuvent être stylisées et que les propriétés peuvent être les cibles des liaisons de données.
 
 > [!WARNING]
-> Dans [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)un [`Page`](xref:Xamarin.Forms.Page) , chaque objet `TabbedPage` est créé lorsque l’est construit. Cela peut conduire à une mauvaise `TabbedPage` expérience utilisateur, en particulier si la page racine de l’application. Cependant, Xamarin.Forms Shell permet de créer des pages accessibles via une barre d’onglets à la demande, en réponse à la navigation. Pour plus d’informations, voir [Xamarin.Forms Shell](~/xamarin-forms/app-fundamentals/shell/index.md).
+> Dans un [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) , chaque [`Page`](xref:Xamarin.Forms.Page) objet est créé lors de la `TabbedPage` construction de. Cela peut entraîner une mauvaise expérience utilisateur, en particulier si `TabbedPage` est la page racine de l’application. Toutefois, Xamarin.Forms l’interpréteur de commandes permet de créer des pages accessibles par le biais d’une barre d’onglets à la demande, en réponse à la navigation. Pour plus d’informations, consultez [ Xamarin.Forms Shell](~/xamarin-forms/app-fundamentals/shell/index.md).
 
-## <a name="populate-a-tabbedpage-with-a-page-collection"></a>Peuplez un TabbedPage avec une collection Page
+## <a name="populate-a-tabbedpage-with-a-page-collection"></a>Remplir un TabbedPage avec une collection de pages
 
-A [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) peut être peuplé d’une collection d’objets pour enfants, [`Page`](xref:Xamarin.Forms.Page) comme une collection d’objets. [`ContentPage`](xref:Xamarin.Forms.ContentPage) Ceci est réalisé `Page` en ajoutant [`TabbedPage.Children`](xref:Xamarin.Forms.MultiPage`1.Children*) les objets à la collection. Ceci est accompli dans XAML comme suit :
+Un [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) peut être rempli avec une collection d' [`Page`](xref:Xamarin.Forms.Page) objets enfants, tels qu’une collection d' [`ContentPage`](xref:Xamarin.Forms.ContentPage) objets. Pour ce faire, il suffit d’ajouter les `Page` objets à la [`TabbedPage.Children`](xref:Xamarin.Forms.MultiPage`1.Children*) collection. Cela s’effectue en XAML comme suit :
 
 ```xaml
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -77,7 +80,7 @@ A [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) peut être peuplé d’une colle
 ```
 
 > [!NOTE]
-> La [`Children`](xref:Xamarin.Forms.MultiPage`1.Children*) propriété [`MultiPage<T>`](xref:Xamarin.Forms.MultiPage`1) de la [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) classe, dont `ContentProperty` provient-on, est la de `MultiPage<T>`. Par conséquent, dans XAML, il n’est pas nécessaire d’attribuer explicitement les [`Page`](xref:Xamarin.Forms.Page) objets à la `Children` propriété.
+> La [`Children`](xref:Xamarin.Forms.MultiPage`1.Children*) propriété de la [`MultiPage<T>`](xref:Xamarin.Forms.MultiPage`1) classe, à partir de laquelle [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) dérive, est le `ContentProperty` de `MultiPage<T>` . Par conséquent, dans XAML, il n’est pas nécessaire d’assigner explicitement les [`Page`](xref:Xamarin.Forms.Page) objets à la `Children` propriété.
 
 Le code C# équivalent est :
 
@@ -96,38 +99,38 @@ public class MainPageCS : TabbedPage
 }
 ```
 
-Dans cet exemple, le [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) est [`Page`](xref:Xamarin.Forms.ContentPage) peuplé de deux objets. Le premier enfant [`ContentPage`](xref:Xamarin.Forms.ContentPage) est un objet, [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) et `ContentPage` le deuxième enfant est un objet contenant.
+Dans cet exemple, le [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) est rempli avec deux [`Page`](xref:Xamarin.Forms.ContentPage) objets. Le premier enfant est un [`ContentPage`](xref:Xamarin.Forms.ContentPage) objet, et le deuxième enfant est un [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) qui contient un `ContentPage` objet.
 
-Les captures d’écran suivantes montrent un [`ContentPage`](xref:Xamarin.Forms.ContentPage) objet dans un [`TabbedPage`](xref:Xamarin.Forms.TabbedPage):
+Les captures d’écran suivantes montrent un [`ContentPage`](xref:Xamarin.Forms.ContentPage) objet dans un [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) :
 
 [![Capture d’écran d’un TabbedPage contenant trois onglets, sur iOS et Android](tabbed-page-images/tabbedpage-today.png "TabbedPage avec trois onglets")](tabbed-page-images/tabbedpage-today-large.png#lightbox "TabbedPage avec trois onglets")
 
-La sélection d’un autre onglet affiche l’objet [`ContentPage`](xref:Xamarin.Forms.ContentPage) qui représente l’onglet :
+Si vous sélectionnez un autre onglet [`ContentPage`](xref:Xamarin.Forms.ContentPage) , l’objet qui représente l’onglet s’affiche :
 
-[![Capture d’écran d’un TabbedPage contenant des onglets, sur iOS et Android](tabbed-page-images/tabbedpage-week.png "TabbedPage avec des onglets")](tabbed-page-images/tabbedpage-week-large.png#lightbox "TabbedPage avec des onglets")
+[![Capture d’écran d’un TabbedPage contenant des onglets, sur iOS et Android](tabbed-page-images/tabbedpage-week.png "TabbedPage avec onglets")](tabbed-page-images/tabbedpage-week-large.png#lightbox "TabbedPage avec onglets")
 
-Sur l’onglet [`ContentPage`](xref:Xamarin.Forms.ContentPage) **Annexe,** l’objet est enveloppé dans un [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) objet.
+Sous l’onglet **calendrier** , l' [`ContentPage`](xref:Xamarin.Forms.ContentPage) objet est encapsulé dans un [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) objet.
 
 > [!WARNING]
-> Alors [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) qu’un peut [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)être placé dans un `TabbedPage` , `NavigationPage`il n’est pas recommandé de placer un dans un . En effet, sur iOS, un `UITabBarController` agit toujours en tant que wrapper pour le `UINavigationController`. Pour plus d’informations, consultez [Combined View Controller Interfaces](https://developer.apple.com/library/ios/documentation/WindowsViews/Conceptual/ViewControllerCatalog/Chapters/CombiningViewControllers.html) (Interfaces de contrôleurs de vue combinés) dans la bibliothèque du développeur iOS.
+> Alors qu’un [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) peut être placé dans un [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) , il n’est pas recommandé de placer un `TabbedPage` dans un `NavigationPage` . En effet, sur iOS, un `UITabBarController` agit toujours en tant que wrapper pour le `UINavigationController`. Pour plus d’informations, consultez [Combined View Controller Interfaces](https://developer.apple.com/library/ios/documentation/WindowsViews/Conceptual/ViewControllerCatalog/Chapters/CombiningViewControllers.html) (Interfaces de contrôleurs de vue combinés) dans la bibliothèque du développeur iOS.
 
-## <a name="navigate-within-a-tab"></a>Naviguez dans un onglet
+## <a name="navigate-within-a-tab"></a>Naviguer dans un onglet
 
-La navigation peut être effectuée dans [`ContentPage`](xref:Xamarin.Forms.ContentPage) un onglet, [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) à condition que l’objet soit enveloppé dans un objet. Ceci est accompli en [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*) invoquant [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) la méthode [`ContentPage`](xref:Xamarin.Forms.ContentPage) sur la propriété de l’objet :
+La navigation peut être effectuée dans un onglet, à condition que l' [`ContentPage`](xref:Xamarin.Forms.ContentPage) objet soit encapsulé dans un [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) objet. Pour ce faire, appelez la [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*) méthode sur la [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) propriété de l' [`ContentPage`](xref:Xamarin.Forms.ContentPage) objet :
 
 ```csharp
 await Navigation.PushAsync (new UpcomingAppointmentsPage ());
 ```
 
-La page à naviguer est spécifiée [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*) comme argument à la méthode. Dans cet exemple, la `UpcomingAppointmentsPage` page est poussée sur la pile de navigation, où elle devient la page active :
+La page cible de la navigation est spécifiée comme argument de la [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*) méthode. Dans cet exemple, la `UpcomingAppointmentsPage` page fait l’objet d’un push dans la pile de navigation, où elle devient la page active :
 
-[![Capture d’écran de la navigation dans un onglet, sur iOS et Android](tabbed-page-images/tabbedpage-upcoming.png "Navigation TabbedPage dans un onglet")](tabbed-page-images/tabbedpage-upcoming-large.png#lightbox "Navigation TabbedPage dans un onglet")
+[![Capture d’écran de navigation au sein d’un onglet, sur iOS et Android](tabbed-page-images/tabbedpage-upcoming.png "Navigation TabbedPage dans un onglet")](tabbed-page-images/tabbedpage-upcoming-large.png#lightbox "Navigation TabbedPage dans un onglet")
 
-Pour plus d’informations [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) sur la navigation d’exécution en utilisant la classe, voir [Navigation hiérarchique](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md).
+Pour plus d’informations sur l’exécution de la navigation à l’aide de la [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) classe, consultez [navigation hiérarchique](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md).
 
-## <a name="populate-a-tabbedpage-with-a-template"></a>Peuplez un TabbedPage avec un modèle
+## <a name="populate-a-tabbedpage-with-a-template"></a>Remplir un TabbedPage à l’aide d’un modèle
 
-A [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) peut être peuplé de pages en assignant [`ItemsSource`](xref:Xamarin.Forms.MultiPage`1.ItemsSource) une collection de [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) données [`ItemTemplate`](xref:Xamarin.Forms.MultiPage`1.ItemTemplate) à la propriété, [`Page`](xref:Xamarin.Forms.Page) et en assignant un à la propriété qui modèle les données comme des objets. Ceci est accompli dans XAML comme suit :
+Une [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) peut être remplie avec des pages en assignant une collection de données à la [`ItemsSource`](xref:Xamarin.Forms.MultiPage`1.ItemsSource) propriété et en assignant un [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) à la [`ItemTemplate`](xref:Xamarin.Forms.MultiPage`1.ItemTemplate) propriété qui modèle les données sous forme d' [`Page`](xref:Xamarin.Forms.Page) objets. Cela s’effectue en XAML comme suit :
 
 ```xaml
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -227,11 +230,11 @@ public class TabbedPageDemoPageCS : TabbedPage
 }
 ```
 
-Dans cet exemple, chaque [`ContentPage`](xref:Xamarin.Forms.ContentPage) onglet se [`Image`](xref:Xamarin.Forms.Image) [`Label`](xref:Xamarin.Forms.Label) compose d’un objet qui utilise et des objets pour afficher des données pour l’onglet :
+Dans cet exemple, chaque onglet se compose d’un [`ContentPage`](xref:Xamarin.Forms.ContentPage) objet qui utilise les [`Image`](xref:Xamarin.Forms.Image) [`Label`](xref:Xamarin.Forms.Label) objets et pour afficher les données de l’onglet :
 
-[![Capture d’écran d’un TabbedPage modélé, sur iOS et Android](tabbed-page-images/tabbedpage-template.png "Templated TabbedPage")](tabbed-page-images/tabbedpage-template-large.png#lightbox "Templated TabbedPage")
+[![Capture d’écran d’un TabbedPage basé sur un modèle, sur iOS et Android](tabbed-page-images/tabbedpage-template.png "TabbedPage basé sur un modèle")](tabbed-page-images/tabbedpage-template-large.png#lightbox "TabbedPage basé sur un modèle")
 
-La sélection d’un autre onglet affiche l’objet [`ContentPage`](xref:Xamarin.Forms.ContentPage) qui représente l’onglet.
+En sélectionnant un autre onglet, vous affichez l' [`ContentPage`](xref:Xamarin.Forms.ContentPage) objet qui représente l’onglet.
 
 ## <a name="related-links"></a>Liens connexes
 
@@ -239,4 +242,4 @@ La sélection d’un autre onglet affiche l’objet [`ContentPage`](xref:Xamarin
 - [TabbedPage (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-tabbedpage)
 - [Navigation hiérarchique](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md)
 - [Types de pages](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf)
-- [TabbedPage API](xref:Xamarin.Forms.TabbedPage)
+- [API TabbedPage](xref:Xamarin.Forms.TabbedPage)

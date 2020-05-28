@@ -1,37 +1,40 @@
 ---
-title: Mouvements Xamarin.Forms
-description: Ce guide explique comment les modules de reconnaissance de mouvement Xamarin.Forms peuvent être utilisés pour détecter l’interaction utilisateur avec des vues dans une application Xamarin.Forms.
-ms.prod: xamarin
-ms.assetid: 0E197A51-2304-4C09-A710-C7FF24A89F15
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/25/2018
-ms.openlocfilehash: 33968fb935e8b69736ac338bfa0479e4f278e64a
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: Xamarin.Formsmouvements
+description: Ce guide explique comment Xamarin.Forms les détecteurs de mouvement peuvent être utilisés pour détecter l’interaction de l’utilisateur avec les vues dans une Xamarin.Forms application.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5e1e93f74ab8ef6d63213a8fbdc7ec45a794cf55
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "61184569"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137875"
 ---
-# <a name="xamarinforms-gestures"></a>Mouvements Xamarin.Forms
+# <a name="xamarinforms-gestures"></a>Xamarin.Formsmouvements
 
-_Modules de reconnaissance de mouvement Xamarin.Forms pouvant être utilisés pour détecter l’interaction utilisateur avec des vues dans une application Xamarin.Forms._
+_Les détecteurs de mouvement peuvent être utilisés pour détecter l’interaction de l’utilisateur avec des vues dans une Xamarin.Forms application._
 
-La classe Xamarin.Forms [`GestureRecognizer`](xref:Xamarin.Forms.GestureRecognizer) supporte le robinet, pince, panoramique et balaye les gestes sur [`View`](xref:Xamarin.Forms.View) les instances.
+La Xamarin.Forms [`GestureRecognizer`](xref:Xamarin.Forms.GestureRecognizer) classe prend en charge les gestes de type Tap, pincement, panoramique et balayage sur les [`View`](xref:Xamarin.Forms.View) instances.
 
 ## <a name="adding-a-tap-gesture-recognizer"></a>[Ajout d’un module de reconnaissance des appuis](tap.md)
 
-Un geste de robinet est utilisé pour [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) la détection du robinet et est reconnu avec la classe.
+Un mouvement TAP est utilisé pour la détection de TAP et est reconnu avec la [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) classe.
 
 ## <a name="adding-a-pinch-gesture-recognizer"></a>[Ajout d’un module de reconnaissance des pincements](pinch.md)
 
-Un geste de pincement est utilisé pour [`PinchGestureRecognizer`](xref:Xamarin.Forms.PinchGestureRecognizer) effectuer le zoom interactif et est reconnu avec la classe.
+Un mouvement de pincement est utilisé pour effectuer un zoom interactif et est reconnu avec la [`PinchGestureRecognizer`](xref:Xamarin.Forms.PinchGestureRecognizer) classe.
 
 ## <a name="adding-a-pan-gesture-recognizer"></a>[Ajout d’un module de reconnaissance des mouvements panoramiques](pan.md)
 
-Un geste panoramique est utilisé pour détecter le mouvement des doigts autour de l’écran et appliquer ce mouvement au contenu, et est reconnu avec la [`PanGestureRecognizer`](xref:Xamarin.Forms.PanGestureRecognizer) classe.
+Un mouvement panoramique est utilisé pour détecter le mouvement des doigts à l’écran et pour appliquer ce mouvement au contenu, et est reconnu avec la [`PanGestureRecognizer`](xref:Xamarin.Forms.PanGestureRecognizer) classe.
 
 ## <a name="adding-a-swipe-gesture-recognizer"></a>[Ajout d’un module de reconnaissance des mouvements de balayage](swipe.md)
 
-Un mouvement de balayage se produit quand un doigt est déplacé verticalement ou horizontalement sur l’écran. Il est souvent utilisé pour lancer l’exploration du contenu. Les gestes de [`SwipeGestureRecognizer`](xref:Xamarin.Forms.SwipeGestureRecognizer) balayage sont reconnus avec la classe.
+Un mouvement de balayage se produit quand un doigt est déplacé verticalement ou horizontalement sur l’écran. Il est souvent utilisé pour lancer l’exploration du contenu. Les mouvements de balayage sont reconnus avec la [`SwipeGestureRecognizer`](xref:Xamarin.Forms.SwipeGestureRecognizer) classe.

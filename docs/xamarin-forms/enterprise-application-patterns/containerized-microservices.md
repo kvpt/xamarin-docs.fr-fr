@@ -1,18 +1,21 @@
 ---
-title: Microservices conteneurisés
-description: Ce chapitre explique comment utiliser les microservices et les conteneurs pour créer des applications Cloud modernes, évolutives et fiables.
-ms.prod: xamarin
-ms.assetid: 5872ad92-04e0-4f1a-9691-79d5602f5683
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/07/2017
-ms.openlocfilehash: dc71da512519cdd7fcc56df1ff987ffbc1354663
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a05090c18039f9d3a7f9376285ce2863e0482903
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79305191"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139254"
 ---
 # <a name="containerized-microservices"></a>Microservices conteneurisés
 
@@ -58,7 +61,7 @@ Toutefois, une solution basée sur des microservices présente également des in
 
 ## <a name="containerization"></a>Mise en conteneur
 
-La mise en conteneur est une approche du développement de logiciels dans laquelle une application et son ensemble de dépendances, ainsi que sa configuration d’environnement abstraite en tant que fichiers manifestes de déploiement, sont regroupés comme une image conteneur, testée en tant qu’unité et déployé sur un système d’exploitation hôte.
+La mise en conteneur est une approche du développement de logiciels dans laquelle une application et son ensemble de dépendances, ainsi que sa configuration d’environnement abstraite en tant que fichiers manifestes de déploiement, sont regroupés comme une image conteneur, testée en tant qu’unité et déployés sur un système d’exploitation hôte.
 
 Un conteneur est un environnement d’exploitation portable, contrôlé par les ressources et isolé, dans lequel une application peut s’exécuter sans toucher aux ressources d’autres conteneurs ou à l’hôte. Par conséquent, un conteneur se présente et agit comme un ordinateur physique nouvellement installé ou un ordinateur virtuel.
 
@@ -146,7 +149,7 @@ Pour plus d’informations sur l’implémentation du bus d’événements, cons
 
 ## <a name="summary"></a>Résumé
 
-Les microservices offrent une approche du développement et du déploiement d’applications adaptées aux exigences en termes d’agilité, de mise à l’échelle et de fiabilité des applications Cloud modernes. L’un des principaux avantages des microservices est qu’ils peuvent être mis à l’échelle de manière indépendante, ce qui signifie qu’il est possible de mettre à l’échelle une zone fonctionnelle spécifique nécessitant davantage de puissance de traitement ou de bande passante réseau pour prendre en charge la demande, sans mettre à l’échelle les zones de l’application qui n’a pas de demande accrue.
+Les microservices offrent une approche du développement et du déploiement d’applications adaptées aux exigences en termes d’agilité, de mise à l’échelle et de fiabilité des applications Cloud modernes. L’un des principaux avantages des microservices est qu’ils peuvent être mis à l’échelle de manière indépendante, ce qui signifie qu’il est possible de mettre à l’échelle une zone fonctionnelle spécifique nécessitant davantage de puissance de traitement ou de bande passante réseau pour prendre en charge la demande, sans mettre à l’échelle les zones de l’application qui ne subissent pas une demande accrue.
 
 Un conteneur est un environnement d’exploitation portable, contrôlé par les ressources et isolé, dans lequel une application peut s’exécuter sans toucher aux ressources d’autres conteneurs ou à l’hôte. Les entreprises adoptent de plus en plus de conteneurs lors de l’implémentation d’applications basées sur des microservices, et l’arrimeur est devenu l’implémentation de conteneur standard adoptée par la plupart des plateformes logicielles et des fournisseurs de Cloud.
 

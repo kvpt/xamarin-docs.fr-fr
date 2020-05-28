@@ -1,48 +1,51 @@
 ---
-title: Polylignes et équations paramétriques
-description: Cet article explique comment à SkiaSharp utiliser pour restituer une ligne que vous pouvez définir avec des équations paramétriques et illustre ceci avec l’exemple de code.
-ms.prod: xamarin
-ms.assetid: 85AEBB33-E954-4364-A6E1-808FAB197BEE
-ms.technology: xamarin-skiasharp
-author: davidbritch
-ms.author: dabritch
-ms.date: 03/10/2017
-ms.openlocfilehash: f635e6e20a4cec9b8cc735bc733b678263cd024a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b435e99180791b64e0a8ad975527fb3cb5316b7d
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70759176"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84140216"
 ---
 # <a name="polylines-and-parametric-equations"></a>Polylignes et équations paramétriques
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-_Permet d’afficher n’importe quelle ligne que vous pouvez définir avec des équations paramétriques SkiaSharp_
+_Utilisez SkiaSharp pour afficher une ligne que vous pouvez définir avec des équations paramétriques_
 
-Dans le [ **SkiaSharp courbes et chemins d’accès** ](../curves/index.md) section de ce guide, vous verrez les différentes méthodes qui [ `SKPath` ](xref:SkiaSharp.SKPath) définit pour afficher certains types de courbes. Toutefois, il est parfois nécessaire de dessiner un type de courbe n’est pas directement pris en charge par `SKPath`. Dans ce cas, vous pouvez utiliser une polyligne (il s’agit d’une collection de lignes connectées) pour dessiner une courbe que vous pouvez définir mathématiquement. Si vous modifiez les lignes suffisamment petit et nombreux révèle suffisante, le résultat doit ressembler à une courbe. Cette spirale est réellement 3 600 lignes peu :
+Dans la section [**courbes et chemins d’accès SkiaSharp**](../curves/index.md) de ce guide, vous verrez les différentes méthodes qui [`SKPath`](xref:SkiaSharp.SKPath) définissent le rendu de certains types de courbes. Toutefois, il est parfois nécessaire de dessiner un type de courbe qui n’est pas directement prise en charge par `SKPath` . Dans ce cas, vous pouvez utiliser une polyligne (une collection de lignes connectées) pour dessiner une courbe que vous pouvez définir de façon mathématique. Si vous rendez les lignes suffisamment petites et suffisamment nombreuses, le résultat doit ressembler à une courbe. Cette spirale est en fait 3 600 peu de lignes :
 
-![](polylines-images/spiralexample.png "Une spirale")
+![](polylines-images/spiralexample.png "A spiral")
 
-En général, il est préférable de définir une courbe en termes d’une paire d’équations paramétriques. Il s’agit des équations de coordonnées X et Y qui dépendent d’une troisième variable, parfois appelée `t` pour le moment. Par exemple, les équations paramétriques suivantes définissent un cercle avec un rayon de 1 centré au point (0, 0) pour *t* comprise entre 0 et 1 :
+En général, il est préférable de définir une courbe en termes de paire d’équations paramétrées. Voici des équations pour les coordonnées X et Y qui dépendent d’une troisième variable, parfois appelée `t` pour l’heure. Par exemple, les équations paramétriques suivantes définissent un cercle avec un rayon de 1 centré au point (0,0) pour *t* de 0 à 1 :
 
 `x = cos(2πt)`
 
 `y = sin(2πt)`
 
- Si vous souhaitez un rayon supérieures à 1, vous pouvez simplement multiplier les valeurs de sinus et le cosinus par ce rayon et si vous avez besoin atteindre le centre d’un autre emplacement, ajoutez ces valeurs :
+ Si vous souhaitez un rayon supérieur à 1, vous pouvez simplement multiplier les valeurs sinus et cosinus par ce rayon, et si vous devez déplacer le centre vers un autre emplacement, ajoutez ces valeurs :
 
 `x = xCenter + radius·cos(2πt)`
 
 `y = yCenter + radius·sin(2πt)`
 
-Pour une ellipse avec parallèle axes horizontal et vertical, deux rayons sont impliqués :
+Pour une ellipse avec les axes parallèles à l’horizontale et à la verticale, deux rayons sont impliqués :
 
 `x = xCenter + xRadius·cos(2πt)`
 
 `y = yCenter + yRadius·sin(2πt)`
 
-Vous pouvez ensuite placer le code de SkiaSharp équivalent dans une boucle qui calcule les différents points et ajoute celles pour un chemin d’accès. Le code de SkiaSharp suivant crée un `SKPath` objet pour une ellipse qui remplit la surface d’affichage. La boucle parcourt les 360 degrés directement. Le centre est la moitié de la largeur et hauteur de la surface d’affichage, et sont donc les rayons des deux :
+Vous pouvez ensuite placer le code SkiaSharp équivalent dans une boucle qui calcule les différents points et les ajoute à un chemin d’accès. Le code SkiaSharp suivant crée un `SKPath` objet pour une ellipse qui remplit la surface d’affichage. La boucle parcourt les 360 degrés directement. Le centre correspond à la moitié de la largeur et de la hauteur de la surface d’affichage, et les deux rayons sont les suivants :
 
 ```csharp
 SKPath path = new SKPath();
@@ -65,11 +68,11 @@ for (float angle = 0; angle < 360; angle += 1)
 path.Close();
 ```
 
-Cela entraîne une ellipse définie par des lignes peu 360. Lorsqu’il est restitué, il apparaît sans heurts.
+Il en résulte une ellipse définie par 360 peu de lignes. Lorsqu’il est rendu, il s’affiche en douceur.
 
-Bien sûr, vous n’avez pas besoin créer une ellipse à l’aide d’une polyligne car `SKPath` inclut un `AddOval` méthode qui le fait pour vous. Mais vous pouvez dessiner un objet visuel n’est pas fourni par `SKPath`.
+Bien entendu, vous n’avez pas besoin de créer une ellipse à l’aide d’une polyligne, car `SKPath` comprend une `AddOval` méthode qui le fait pour vous. Mais vous souhaiterez peut-être dessiner un objet visuel qui n’est pas fourni par `SKPath` .
 
-Le **Archimède spirale** page de code est autrement similaire au code ellipse, mais avec une différence essentielle. Il effectue une boucle autour du cercle 360 degrés 10 fois, ajuster en permanence le rayon :
+La page en **spirale ARCHIMEDEAN** a du code similaire au code de l’ellipse, mais avec une différence cruciale. Il effectue une boucle autour des 360 degrés du cercle 10 fois, en ajustant en permanence le rayon :
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -115,13 +118,13 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Le résultat est également appelé un *spirale arithmétique* , car le décalage entre chaque boucle est constante :
+Le résultat est également appelé une *spirale arithmétique* , car le décalage entre chaque boucle est constant :
 
-[![](polylines-images/archimedeanspiral-small.png "Capture d’écran triple de la page Archimède spirale")](polylines-images/archimedeanspiral-large.png#lightbox "Triple capture d’écran de la page Archimède spirale")
+[![](polylines-images/archimedeanspiral-small.png "Triple screenshot of the Archimedean Spiral page")](polylines-images/archimedeanspiral-large.png#lightbox "Triple screenshot of the Archimedean Spiral page")
 
-Notez que le `SKPath` est créé dans un `using` bloc. Cela `SKPath` consomme plus de mémoire que le `SKPath` objets dans les programmes précédents, ce qui suggère qu’un `using` bloc est la plus approprié supprimer les ressources non managées.
+Notez que le `SKPath` est créé dans un `using` bloc. Cela `SKPath` consomme plus de mémoire que les `SKPath` objets des programmes précédents, ce qui suggère qu’un `using` bloc est plus approprié pour supprimer toutes les ressources non managées.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
-- [API de SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
+- [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

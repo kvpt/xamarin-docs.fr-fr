@@ -1,28 +1,31 @@
 ---
-title: Géocodage des plans Xamarin. Forms
-description: Cet article explique comment géocoder et inverser les données de la carte géocode à l’aide de la classe de géocodeur Xamarin. Forms. Maps.
-ms.prod: xamarin
-ms.assetid: DE7DB31A-8921-4614-8B49-DAEF1E7B03B3
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 10/22/2019
-ms.openlocfilehash: 6df7a2e0056cd2d448206b56e1e9d2600b342b3b
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+title: Xamarin.FormsGéocodage de la carte
+description: Cet article explique comment géocoder et inverser les données de la carte géocode à l’aide du Xamarin.Forms . Classe de géocodeur Maps.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: fe099235857f6bd0531539e3aa84e41bf59b50ba
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75490257"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139865"
 ---
-# <a name="xamarinforms-map-geocoding"></a>Géocodage des plans Xamarin. Forms
+# <a name="xamarinforms-map-geocoding"></a>Xamarin.FormsGéocodage de la carte
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
-L’espace de noms [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps) fournit une classe [`Geocoder`](xref:Xamarin.Forms.Maps.Geocoder) , qui effectue une conversion entre des adresses de chaîne et des coordonnées de latitude et de longitude stockées dans des objets [`Position`](xref:Xamarin.Forms.Maps.Position) . Pour plus d’informations sur le struct [`Position`](xref:Xamarin.Forms.Maps.Position) , consultez la section [mapper la position et distance](position-distance.md).
+L' [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps) espace de noms fournit une [`Geocoder`](xref:Xamarin.Forms.Maps.Geocoder) classe, qui effectue une conversion entre des adresses de chaîne et des coordonnées de latitude et de longitude stockées dans des [`Position`](xref:Xamarin.Forms.Maps.Position) objets. Pour plus d’informations sur la [`Position`](xref:Xamarin.Forms.Maps.Position) structure, consultez [mapper la position et distance](position-distance.md).
 
 ## <a name="geocode-an-address"></a>Géocoder une adresse
 
-Une adresse postale peut être géocodée en coordonnées de latitude et de longitude en créant une [`Geocoder`](xref:Xamarin.Forms.Maps.Geocoder) instance et en appelant la méthode [`GetPositionsForAddressAsync`](xref:Xamarin.Forms.Maps.Geocoder.GetPositionsForAddressAsync*) sur l’instance `Geocoder` :
+Une adresse postale peut être géocodée en coordonnées de latitude et de longitude en créant une [`Geocoder`](xref:Xamarin.Forms.Maps.Geocoder) instance et en appelant la [`GetPositionsForAddressAsync`](xref:Xamarin.Forms.Maps.Geocoder.GetPositionsForAddressAsync*) méthode sur l' `Geocoder` instance :
 
 ```csharp
 using Xamarin.Forms.Maps;
@@ -34,11 +37,11 @@ Position position = approximateLocations.FirstOrDefault();
 string coordinates = $"{position.Latitude}, {position.Longitude}";
 ```
 
-La méthode [`GetPositionsForAddressAsync`](xref:Xamarin.Forms.Maps.Geocoder.GetPositionsForAddressAsync*) accepte un argument `string` qui représente l’adresse et retourne de manière asynchrone une collection d’objets [`Position`](xref:Xamarin.Forms.Maps.Position) qui peuvent représenter l’adresse.
+La [`GetPositionsForAddressAsync`](xref:Xamarin.Forms.Maps.Geocoder.GetPositionsForAddressAsync*) méthode prend un `string` argument qui représente l’adresse et retourne de manière asynchrone une collection d' [`Position`](xref:Xamarin.Forms.Maps.Position) objets qui pourraient représenter l’adresse.
 
 ## <a name="reverse-geocode-an-address"></a>Inverser géocoder une adresse
 
-Les coordonnées de latitude et de longitude peuvent être inversées géocodées en une adresse postale en créant une [`Geocoder`](xref:Xamarin.Forms.Maps.Geocoder) instance et en appelant la méthode [`GetAddressesForPositionAsync`](xref:Xamarin.Forms.Maps.Geocoder.GetAddressesForPositionAsync*) sur l’instance `Geocoder` :
+Les coordonnées de latitude et de longitude peuvent être inversées géocodées en une adresse postale en créant une [`Geocoder`](xref:Xamarin.Forms.Maps.Geocoder) instance et en appelant la [`GetAddressesForPositionAsync`](xref:Xamarin.Forms.Maps.Geocoder.GetAddressesForPositionAsync*) méthode sur l' `Geocoder` instance :
 
 ```csharp
 using Xamarin.Forms.Maps;
@@ -50,10 +53,10 @@ IEnumerable<string> possibleAddresses = await geoCoder.GetAddressesForPositionAs
 string address = possibleAddresses.FirstOrDefault();
 ```
 
-La méthode [`GetAddressesForPositionAsync`](xref:Xamarin.Forms.Maps.Geocoder.GetAddressesForPositionAsync*) accepte un argument [`Position`](xref:Xamarin.Forms.Maps.Position) composé de coordonnées de latitude et de longitude, et retourne de manière asynchrone une collection de chaînes qui représentent les adresses à proximité de la position.
+La [`GetAddressesForPositionAsync`](xref:Xamarin.Forms.Maps.Geocoder.GetAddressesForPositionAsync*) méthode prend un [`Position`](xref:Xamarin.Forms.Maps.Position) argument composé de coordonnées de latitude et de longitude, et retourne de manière asynchrone une collection de chaînes qui représentent les adresses à proximité de la position.
 
 ## <a name="related-links"></a>Liens connexes
 
 - [Exemple Maps](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
-- [Position et distance de la carte Xamarin. Forms](position-distance.md)
+- [Xamarin.FormsPosition et distance de la carte](position-distance.md)
 - [API géocoder](xref:Xamarin.Forms.Maps.Geocoder)

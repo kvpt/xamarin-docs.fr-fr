@@ -1,22 +1,25 @@
 ---
-title: Passage de paramètres à un effet
-description: Les paramètres d’effet peuvent être définis par les propriétés, ce qui permet de réutiliser l’effet. Les paramètres peuvent ensuite être passés à l’effet en spécifiant des valeurs pour chaque propriété lors de l’instanciation de l’effet.
-ms.prod: xamarin
-ms.assetid: F6429859-6EF7-48BE-A0CB-8F42B8A75215
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/06/2016
-ms.openlocfilehash: f7d8c8f7d3a3778afdae64039a9614c02c261156
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 42d3943b00fc2ae5385343f946d9d96743e955cd
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70771421"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138838"
 ---
 # <a name="passing-parameters-to-an-effect"></a>Passage de paramètres à un effet
 
-_Les paramètres d’effet peuvent être définis par les propriétés, ce qui permet de réutiliser l’effet. Les paramètres peuvent ensuite être transmis à l’effet en spécifiant des valeurs pour chaque propriété lors de l’instantanéise de l’effet._
+_Les paramètres Effects peuvent être définis par des propriétés, ce qui permet de réutiliser l’effet. Les paramètres peuvent ensuite être passés à l’effet en spécifiant des valeurs pour chaque propriété lors de l’instanciation de l’effet._
 
 ## <a name="passing-effect-parameters-as-common-language-runtime-properties"></a>[Passer des paramètres d’effet en tant que propriétés CLR (Common Language Runtime)](clr-properties.md)
 

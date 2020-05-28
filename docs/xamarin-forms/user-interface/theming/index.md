@@ -1,24 +1,27 @@
 ---
-title: Ajout d’un thème à une application Xamarin.Forms
-description: Les applications Xamarin. Forms prennent en charge les thèmes en créant un ResourceDictionary pour chaque thème, puis en chargeant les ressources avec l’extension de balisage DynamicResource.
-ms.prod: xamarin
-ms.assetId: BF92AEDD-EF23-4D08-A972-B089066E75F9
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/22/2020
-ms.openlocfilehash: 5988437b40ac875b8b59f9af0f25d4b5c60ded97
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+title: Thèmes d’une Xamarin.Forms application
+description: Xamarin.Formsles applications les prennent en charge en créant un ResourceDictionary pour chaque thème, puis en chargeant les ressources avec l’extension de balisage DynamicResource.
+ms.prod: ''
+ms.assetId: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 80660ae7d3af0fe5948a5ae4ffdb35d2f9c2a40f
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82517131"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136134"
 ---
-# <a name="theming-a-xamarinforms-application"></a>Thèmes d’une application Xamarin. Forms
+# <a name="theming-a-xamarinforms-application"></a>Thèmes d’une Xamarin.Forms application
 
 ## <a name="theme-an-application"></a>[Thème d’une application](theming.md)
 
-Ils peuvent être implémentés dans les applications Xamarin. Forms en [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) créant un pour chaque thème, puis en chargeant les ressources `DynamicResource` avec l’extension de balisage.
+Ils peuvent être implémentés dans les Xamarin.Forms applications en créant un [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) pour chaque thème, puis en chargeant les ressources avec l' `DynamicResource` extension de balisage.
 
 ## <a name="respond-to-system-theme-changes"></a>[Répondre aux modifications du thème du système](system-theme-changes.md)
 

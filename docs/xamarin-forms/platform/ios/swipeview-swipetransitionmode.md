@@ -1,24 +1,27 @@
 ---
-title: Mode de transition par balayage SwipeView sur iOS
-description: Caractéristiques de la plateforme vous autorisons à utiliser les fonctionnalités qui est disponible uniquement sur une plateforme spécifique, sans avoir à implémenter des convertisseurs personnalisés ou des effets. Cet article explique comment utiliser le spécifique à la plateforme iOS qui contrôle la transition utilisée lors de l’ouverture d’un SwipeView.
-ms.prod: xamarin
-ms.assetid: C667F24C-BAD8-47E0-9285-D3546BEF703B
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 12/11/2019
-ms.openlocfilehash: d5ba92d008cf3431bce2c197aca45c894eb3d5c7
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 4b2030461025c1cd647595a1ecc22c5589e99fef
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75490324"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137044"
 ---
 # <a name="swipeview-swipe-transition-mode-on-ios"></a>Mode de transition par balayage SwipeView sur iOS
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-Ce spécifique à la plateforme iOS contrôle la transition utilisée lors de l’ouverture d’un `SwipeView`. Il est consommé en XAML en affectant à la `SwipeView.SwipeTransitionMode` propriété pouvant être liée la valeur de l’énumération `SwipeTransitionMode` :
+Ce spécifique à la plateforme iOS contrôle la transition utilisée lors de l’ouverture d’un `SwipeView` . Il est consommé en XAML en affectant `SwipeView.SwipeTransitionMode` à la propriété pouvant être liée la valeur de l' `SwipeTransitionMode` énumération :
 
 ```xaml
 <ContentPage ...
@@ -39,7 +42,7 @@ Ce spécifique à la plateforme iOS contrôle la transition utilisée lors de l�
 </ContentPage>
 ```
 
-Vous pouvez également, il peut être consommé à partir de c# à l’aide de l’API fluent :
+Elle peut également être utilisée à partir de C# à l’aide de l’API Fluent :
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -51,14 +54,14 @@ swipeView.On<iOS>().SetSwipeTransitionMode(SwipeTransitionMode.Drag);
 // ...
 ```
 
-Le `SwipeView.On<iOS>` méthode spécifie que cette plateforme spécifique s’exécute uniquement sur iOS. La méthode `SwipeView.SetSwipeTransitionMode`, dans l’espace de noms [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) , est utilisée pour contrôler la transition utilisée lors de l’ouverture d’un `SwipeView`. L’énumération `SwipeTransitionMode` fournit deux valeurs possibles :
+La `SwipeView.On<iOS>` méthode spécifie que ce spécifique à la plateforme s’exécutera uniquement sur iOS. La `SwipeView.SetSwipeTransitionMode` méthode, dans l' [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) espace de noms, est utilisée pour contrôler la transition utilisée lors de l’ouverture d’un `SwipeView` . L' `SwipeTransitionMode` énumération fournit deux valeurs possibles :
 
-- `Reveal` indique que les éléments de balayage seront révélés à mesure que le contenu de la `SwipeView` est reglissé et qu’il s’agit de la valeur par défaut de la propriété `SwipeView.SwipeTransitionMode`.
-- `Drag` indique que les éléments de balayage seront déplacés dans la vue au fur et à mesure que le contenu `SwipeView` est déplacé.
+- `Reveal`indique que les éléments de balayage seront révélés à mesure que le `SwipeView` contenu est balayé et qu’il s’agit de la valeur par défaut de la `SwipeView.SwipeTransitionMode` propriété.
+- `Drag`indique que les éléments de balayage sont glissés dans l’affichage à mesure que le `SwipeView` contenu est déplacé.
 
-En outre, la méthode `SwipeView.GetSwipeTransitionMode` peut être utilisée pour retourner le `SwipeTransitionMode` appliqué au `SwipeView`.
+En outre, la `SwipeView.GetSwipeTransitionMode` méthode peut être utilisée pour retourner le `SwipeTransitionMode` appliqué au `SwipeView` .
 
-Le résultat est qu’une valeur de `SwipeTransitionMode` spécifiée est appliquée au `SwipeView`, qui contrôle la transition utilisée lors de l’ouverture de la `SwipeView`:
+Le résultat est qu’une `SwipeTransitionMode` valeur spécifiée est appliquée au `SwipeView` , qui contrôle la transition utilisée lors de l’ouverture de `SwipeView` :
 
 [![Capture d’écran de SwipeView SwipeTransitionModes, sur iOS](swipeview-swipetransitionmode-images/swipetransitionmode.png "SwipeTransitionModes sur iOS")](swipeview-swipetransitionmode-images/swipetransitionmode-large.png#lightbox "SwipeTransitionModes sur iOS")
 

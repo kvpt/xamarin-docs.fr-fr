@@ -1,18 +1,21 @@
 ---
-title: Passer des paramètres d’effet en tant que propriétés jointes
-description: Les propriétés jointes permettent de définir des paramètres d’effet qui répondent aux changements apportés aux propriétés au moment de l’exécution. Cet article décrit comment utiliser des propriétés jointes pour passer des paramètres à un effet et comment changer un paramètre au moment de l’exécution.
-ms.prod: xamarin
-ms.assetid: DFCDCB9F-17DD-4117-BD53-B4FB206BB387
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/05/2016
-ms.openlocfilehash: cc33bc7eef68e5d6cb0a1b717da5e9d9f49338b2
-ms.sourcegitcommit: 05ba8ffb8b34ec881b89e442323f3edd8de18f2e
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: cf03d0c32d80d7a1821e323acdc84a351413efec
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "83546022"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138877"
 ---
 # <a name="passing-effect-parameters-as-attached-properties"></a>Passer des paramètres d’effet en tant que propriétés jointes
 

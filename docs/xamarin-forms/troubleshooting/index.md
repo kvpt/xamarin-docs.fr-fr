@@ -1,27 +1,30 @@
 ---
-title: Résolution des problèmes
-description: Conditions d’erreur courantes et comment les résoudre
-ms.topic: troubleshooting
-ms.prod: xamarin
-ms.assetid: 63291951-7375-4CBF-BCC3-2E4AD157A2C8
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/25/2017
-ms.openlocfilehash: b38e33e05b0bb9d40582611857671d6617023b35
-ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
+title: ''
+description: ''
+ms.topic: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 237dfd637d5456636afd19ea0175cb388773d273
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728315"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135913"
 ---
-# <a name="troubleshooting"></a>Résolution des problèmes
+# <a name="troubleshooting"></a>Dépannage
 
 _Conditions d’erreur courantes et comment les résoudre_
 
-## <a name="error-unable-to-find-a-version-of-xamarinforms-compatible-with"></a>Erreur : « impossible de trouver une version de Xamarin. Forms compatible avec... »
+## <a name="error-unable-to-find-a-version-of-xamarinforms-compatible-with"></a>Erreur : « impossible de trouver une version de Xamarin.Forms compatible avec... »
 
-Les erreurs suivantes peuvent apparaître dans la fenêtre de la **console du package** lors de la mise à jour de tous les packages NuGet dans une solution Xamarin. Forms ou dans un projet d’application Android Xamarin. Forms :
+Les erreurs suivantes peuvent apparaître dans la fenêtre de la **console du package** lors de la mise à jour de tous les packages NuGet dans une Xamarin.Forms solution ou dans un Xamarin.Forms projet d’application Android :
 
 ```csharp
 Attempting to resolve dependency 'Xamarin.Android.Support.v7.AppCompat (= 23.3.0.0)'.
@@ -34,25 +37,25 @@ Unable to find a version of 'Xamarin.Forms' that is compatible with 'Xamarin.And
 
 ### <a name="what-causes-this-error"></a>Quelle est la cause de cette erreur ?
 
-Visual Studio pour Mac (ou Visual Studio) peut indiquer que des mises à jour sont disponibles pour le package NuGet Xamarin. Forms *et toutes ses dépendances*. Dans Xamarin Studio, le nœud **packages** de la solution peut se présenter comme suit (les numéros de version peuvent être différents) :
+Visual Studio pour Mac (ou Visual Studio) peut indiquer que des mises à jour sont disponibles pour le Xamarin.Forms package NuGet *et toutes ses dépendances*. Dans Xamarin Studio, le nœud **packages** de la solution peut se présenter comme suit (les numéros de version peuvent être différents) :
 
 ![](images/updates-available.png "Android Project Packages Folder")
 
 Cette erreur peut se produire si vous tentez de mettre à jour _tous_ les packages.
 
-En effet, avec les projets Android définis sur une version cible/compilation d’Android 6,0 (API 23) ou en dessous, Xamarin. Forms a une dépendance matérielle sur des versions *spécifiques* des packages de prise en charge Android. Bien que les versions mises à jour de ces packages puissent être disponibles, Xamarin. Forms n’est pas nécessairement compatible avec eux.
+Cela est dû au fait que les projets Android définis sur une version cible/compilation d’Android 6,0 (API 23) ou ci-dessous Xamarin.Forms ont une dépendance matérielle sur des versions *spécifiques* des packages de prise en charge Android. Bien que les versions mises à jour de ces packages soient disponibles, elles ne Xamarin.Forms sont pas nécessairement compatibles avec elles.
 
-Dans ce cas, vous devez mettre à jour _uniquement_ le package **Xamarin. Forms** , car cela garantit que les dépendances sont conservées sur les versions compatibles. Les autres packages que vous avez ajoutés à votre projet peuvent également être mis à jour individuellement, à condition qu’ils n’entraînent pas la mise à jour des packages de support Android.
+Dans ce cas, vous devez mettre à jour _uniquement_ le **Xamarin.Forms** package, car cela garantit que les dépendances sont conservées sur les versions compatibles. Les autres packages que vous avez ajoutés à votre projet peuvent également être mis à jour individuellement, à condition qu’ils n’entraînent pas la mise à jour des packages de support Android.
 
 > [!NOTE]
-> Si vous utilisez Xamarin. Forms 2.3.4 ou une version ultérieure **et** que la version cible/compilation de votre projet Android est définie sur Android 7,0 (API 24) ou une version ultérieure, les dépendances matérielles mentionnées ci-dessus ne s’appliquent plus et vous pouvez mettre à jour les packages de prise en charge indépendamment du package Xamarin. Forms.
+> Si vous utilisez Xamarin.Forms 2.3.4 ou une version ultérieure **et** que la version cible/compilation de votre projet Android est définie sur Android 7,0 (API 24) ou une version ultérieure, les dépendances matérielles mentionnées ci-dessus ne s’appliquent plus et vous pouvez mettre à jour les packages de prise en charge indépendamment du Xamarin.Forms Package.
 
-### <a name="fix-remove-all-packages-and-re-add-xamarinforms"></a>Corriger : supprimer tous les packages et rajouter Xamarin. Forms
+### <a name="fix-remove-all-packages-and-re-add-xamarinforms"></a>Corriger : supprimer tous les packages et rajouterXamarin.Forms
 
 Si les packages **Xamarin. Android. support** ont été mis à jour vers des versions incompatibles, la solution la plus simple consiste à :
 
 1. Supprimez manuellement tous les packages NuGet dans le projet Android, puis
-2. Ajoutez de nouveau le package **Xamarin. Forms** .
+2. Ajoutez de nouveau le **Xamarin.Forms** Package.
 
 Cela permet de télécharger automatiquement les versions *appropriées* des autres packages.
 

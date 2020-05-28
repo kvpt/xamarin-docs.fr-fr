@@ -1,28 +1,31 @@
 ---
-title: Liaison de données Xamarin.Forms
-description: La liaison de données est la technique qui permet de lier les propriétés de deux objets afin que les changements d’une propriété soient automatiquement répercutés sur l’autre propriété. La liaison de données fait partie intégrante de l’architecture d’application modèle-vue-vue modèle (MVVM).
-ms.prod: xamarin
-ms.assetid: 938E85C8-521D-43B9-92CB-D591A06D98A6
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 03/23/2020
-ms.openlocfilehash: 9e3e602eda0d2fa78dd25905a2b6ccf3ce5a744d
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: Xamarin.FormsLiaison de données
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 4b99877342ddbaf9ad5606ec5dc284818fcfeffd
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "80247598"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139696"
 ---
-# <a name="xamarinforms-data-binding"></a>Liaison de données Xamarin.Forms
+# <a name="xamarinforms-data-binding"></a>Xamarin.FormsLiaison de données
 
-[![Télécharger](~/media/shared/download.png) l’échantillon Télécharger l’échantillon](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
-_La liaison de données est la technique de lier les propriétés de deux objets de sorte que les changements dans une propriété sont automatiquement reflétés dans l’autre propriété. La liaison de données fait partie intégrante de l’architecture d’application Model-View-ViewModel (MVVM)._
+_La liaison de données est la technique de liaison des propriétés de deux objets afin que les modifications apportées à une propriété soient répercutées automatiquement dans l’autre propriété. La liaison de données fait partie intégrante de l’architecture d’application MVVM (Model-View-ViewModel)._
 
 ## <a name="the-data-linking-problem"></a>Problème de la liaison de données
 
-Une application Xamarin.Forms se compose d’une ou plusieurs pages, chacune contenant généralement plusieurs objets d’interface utilisateur appelés *vues*. Une des principales tâches du programme est de synchroniser ces vues, et d’effectuer le suivi des différentes valeurs ou sélections qu’elles représentent. Souvent, les vues représentent les valeurs d’une source de données sous-jacente et elles sont manipulées par l’utilisateur pour changer ces données. Quand la vue change, les données sous-jacentes doivent refléter ce changement et, inversement, quand les données sous-jacentes changent, le changement doit être reflété dans la vue.
+Une Xamarin.Forms application se compose d’une ou plusieurs pages, chacune contenant généralement plusieurs objets d’interface utilisateur appelés *vues*. Une des principales tâches du programme est de synchroniser ces vues, et d’effectuer le suivi des différentes valeurs ou sélections qu’elles représentent. Souvent, les vues représentent les valeurs d’une source de données sous-jacente et elles sont manipulées par l’utilisateur pour changer ces données. Quand la vue change, les données sous-jacentes doivent refléter ce changement et, inversement, quand les données sous-jacentes changent, le changement doit être reflété dans la vue.
 
 Pour gérer correctement cette tâche, le programme doit être averti des changements des vues ou des données sous-jacentes. La solution courante est de définir des événements qui indiquent quand un changement se produit. Vous pouvez installer un gestionnaire d’événements auquel sont signalés ces changements. Il répond en transférant les données d’un objet à un autre. Toutefois, plusieurs vues impliquent plusieurs gestionnaires d’événements et, par extension, beaucoup de code.
 
@@ -35,7 +38,7 @@ Un des deux objets impliqués dans une liaison de données est presque toujours 
 - Un autre `View` dérivé, généralement dans la même page.
 - Un objet dans un fichier de code.
 
-Dans les programmes de démonstration comme ceux de l’exemple [**DataBindingDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos), les liaisons de données entre deux `View` dérivées sont souvent montrées pour plus de clarté et de simplicité. Toutefois, les mêmes principes peuvent être appliqués aux liaisons de données entre un `View` et d’autres objets. Lorsqu’une application est conçue à l’aide de l’architecture Model-View-ViewModel (MVVM), la classe avec des données sous-jacentes est souvent appelée modèle de view.
+Dans les programmes de démonstration comme ceux de l’exemple [**DataBindingDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos), les liaisons de données entre deux `View` dérivées sont souvent montrées pour plus de clarté et de simplicité. Toutefois, les mêmes principes peuvent être appliqués aux liaisons de données entre un `View` et d’autres objets. Quand une application est créée à l’aide de l’architecture MVVM (Model-View-ViewModel), la classe avec les données sous-jacentes est souvent appelée ViewModel.
 
 Les liaisons de données sont décrites dans la série d’articles suivante :
 
@@ -47,7 +50,7 @@ Découvrez la différence entre la cible et la source d’une liaison de donnée
 
 Découvrez comment le mode de liaison peut contrôler le flux de données entre les deux objets.
 
-## <a name="string-formatting"></a>[String Formatting](string-formatting.md) (Formatage de chaîne)
+## <a name="string-formatting"></a>[Formatage de chaîne](string-formatting.md)
 
 Utilisez une liaison de données pour mettre en forme et afficher les objets sous forme de chaînes.
 
@@ -61,7 +64,7 @@ Utilisez des convertisseurs de valeur de liaison pour modifier les valeurs dans 
 
 ## <a name="relative-bindings"></a>[Liaisons relatives](relative-bindings.md)
 
-Utiliser des liaisons relatives pour définir la source de liaison par rapport à la position de l’objectif de liaison.
+Utilisez des liaisons relatives pour définir la source de liaison par rapport à la position de la cible de liaison.
 
 ## <a name="binding-fallbacks"></a>[Valeurs de repli pour les liaisons](binding-fallbacks.md)
 
@@ -78,5 +81,5 @@ Utilisez des liaisons compilées pour améliorer les performances de liaison de 
 ## <a name="related-links"></a>Liens connexes
 
 - [Démonstrations de liaison de données (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
-- [Chapitre sur les liaisons de données dans la documentation de Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
-- [XAML Markup Extensions](~/xamarin-forms/xaml/markup-extensions/index.md)
+- [Chapitre sur la liaison de données à partir de Xamarin.Forms Book](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
+- [Extensions de balisage XAML](~/xamarin-forms/xaml/markup-extensions/index.md)

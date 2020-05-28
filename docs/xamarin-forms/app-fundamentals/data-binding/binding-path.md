@@ -1,24 +1,27 @@
 ---
-title: Liaison de données Xamarin.Forms
-description: Cet article explique comment utiliser les liaisons de données Xamarin.Forms pour accéder aux sous-propriétés et aux membres de la collection avec la propriété Path de la classe Binding.
-ms.prod: xamarin
-ms.assetid: 3CF721A5-E157-468B-AD3A-DA0A45E58E8D
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/05/2018
-ms.openlocfilehash: 79d8df3300b302512a7de4140968dbc4c8e79abc
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: Xamarin.FormsChemin de liaison
+description: Cet article explique comment utiliser Xamarin.Forms des liaisons de données pour accéder aux sous-propriétés et aux membres de collection avec la propriété Path de la classe Binding.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0657f39d0584405ea1a6d7611ac789488817770f
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76940340"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139738"
 ---
-# <a name="xamarinforms-binding-path"></a>Liaison de données Xamarin.Forms
+# <a name="xamarinforms-binding-path"></a>Xamarin.FormsChemin de liaison
 
-[![Télécharger](~/media/shared/download.png) l’échantillon Télécharger l’échantillon](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
-Dans tous les exemples antérieurs de `Binding` liaison de [`Path`](xref:Xamarin.Forms.Xaml.BindingExtension.Path) données, `Binding` la [`Path`](xref:Xamarin.Forms.Binding.Path) propriété de la classe (ou la propriété de l’extension de balisage) a été définie à une seule propriété. Il est en fait possible de définir `Path` sur une *sous-propriété* (une propriété d’une propriété) ou un membre d’une collection.
+Dans tous les exemples de liaison de données précédents, la [`Path`](xref:Xamarin.Forms.Binding.Path) propriété de la `Binding` classe (ou [`Path`](xref:Xamarin.Forms.Xaml.BindingExtension.Path) de la propriété de l' `Binding` extension de balisage) a été définie sur une seule propriété. Il est en fait possible de définir `Path` sur une *sous-propriété* (une propriété d’une propriété) ou un membre d’une collection.
 
 Par exemple, supposons que votre page contient un `TimePicker` :
 
@@ -103,7 +106,7 @@ La liaison figurant dans le troisième objet `Label` dans les pages **Path Varia
                       StringFormat='The middle day of the week is {0}'}" />
 ```
 
-La source est définie sur la propriété `CultureInfo.CurrentCulture` statique, qui est un objet de type `CultureInfo`. Cette classe définit une `DateTimeFormat` propriété [`DateTimeFormatInfo`](xref:System.Globalization.DateTimeFormatInfo) nommée `DayNames` de type qui contient une collection. L’index sélectionne le quatrième élément.
+La source est définie sur la propriété `CultureInfo.CurrentCulture` statique, qui est un objet de type `CultureInfo`. Cette classe définit une propriété nommée `DateTimeFormat` de type [`DateTimeFormatInfo`](xref:System.Globalization.DateTimeFormatInfo) qui contient une `DayNames` collection. L’index sélectionne le quatrième élément.
 
 Le quatrième objet `Label` fait quelque chose de similaire mais pour la culture associée à la France. La propriété `Source` de la liaison est définie sur l’objet `CultureInfo` avec un constructeur :
 
@@ -157,13 +160,13 @@ Ceci affiche le type de la source de la liaison, ou `DataBindingDemos.PathVariat
                       StringFormat='{0}'}" />
 ```
 
-Le type de la propriété `Content` est désormais révélé comme `Xamarin.Forms.StackLayout`. Ajoutez la propriété `Children` à `Path` et le type est `Xamarin.Forms.ElementCollection'1[Xamarin.Forms.View]`, qui est une classe interne à Xamarin.Forms, mais de toute évidence un type de collection. Ajoutez un index à ceci et le type est `Xamarin.Forms.Label`. Continuez de cette façon.
+Le type de la propriété `Content` est désormais révélé comme `Xamarin.Forms.StackLayout`. Ajoutez la `Children` propriété à `Path` et le type est `Xamarin.Forms.ElementCollection'1[Xamarin.Forms.View]` , qui est une classe interne à Xamarin.Forms , mais qui est évidemment un type de collection. Ajoutez un index à ceci et le type est `Xamarin.Forms.Label`. Continuez de cette façon.
 
-Lorsque Xamarin.Forms traite le chemin de liaison, il installe un gestionnaire `PropertyChanged` sur n’importe quel objet dans le chemin qui implémente l’interface `INotifyPropertyChanged`. Par exemple, la liaison finale réagit à une modification dans le premier objet `Label`, car la propriété `Text` change.
+Comme Xamarin.Forms traite le chemin de liaison, il installe un `PropertyChanged` Gestionnaire sur tout objet du chemin d’accès qui implémente l' `INotifyPropertyChanged` interface. Par exemple, la liaison finale réagit à une modification dans le premier objet `Label`, car la propriété `Text` change.
 
 Si une propriété dans le chemin de liaison n’implémente pas `INotifyPropertyChanged`, toutes les modifications apportées à cette propriété sont ignorées. Certaines modifications pourraient invalider entièrement le chemin de liaison et vous devriez utiliser cette technique uniquement lorsque la chaîne des propriétés et les sous-propriétés ne deviennent jamais non valides.
 
 ## <a name="related-links"></a>Liens connexes
 
 - [Démonstrations de liaison de données (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
-- [Chapitre sur les liaisons de données dans la documentation de Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
+- [Chapitre sur la liaison de données à partir de Xamarin.Forms Book](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

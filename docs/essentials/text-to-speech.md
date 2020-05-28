@@ -1,23 +1,16 @@
 ---
-title: 'Xamarin.Essentials : Synthèse vocale'
-description: La classe Synthèse vocale dans Xamarin.Essentials permet à une application d’utiliser les moteurs de synthèse vocale intégrés pour énoncer le texte à partir de l’appareil et également pour interroger les langages disponibles pris en charge par le moteur.
-ms.assetid: AEEF03AE-A047-4DF0-B0E8-CC8D9A7B8351
-author: jamesmontemagno
-ms.custom: video
-ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: abe591d67ea749de4ae9a2f8dadf4df07712691a
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83149723"
+titre : ' ' Xamarin.Essentials : conversion de texte en parole' 'Description : 'la classe TextToSpeech dans Xamarin.Essentials permet à une application d’utiliser les moteurs de conversion de texte en parole intégrés pour parler du texte de l’appareil et pour interroger les langues disponibles que le moteur peut prendre en charge. '
+ms. AssetID : Auteur : ms. Custom : ms. Author : ms. Date : No-Loc :
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
 ---
-# <a name="xamarinessentials-text-to-speech"></a>Xamarin.Essentials : Synthèse vocale
+
+# <a name="xamarinessentials-text-to-speech"></a>Xamarin.Essentials: Conversion de texte par synthèse vocale
 
 La classe **Synthèse vocale** permet à une application d’utiliser les moteurs de synthèse vocale intégrés pour énoncer le texte à partir de l’appareil et également pour interroger les langages disponibles pris en charge par le moteur.
 
-## <a name="get-started"></a>Prendre en main
+## <a name="get-started"></a>Prise en main
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -121,7 +114,7 @@ Les valeurs prises en charge pour ces paramètres sont les suivantes :
 
 ### <a name="speech-locales"></a>Paramètres régionaux de la parole
 
-Chaque plateforme prend en charge des paramètres régionaux différents, pour énoncer du texte dans différentes langues et avec différents accents. Les plateformes ont des codes différents et des façons variées de spécifier les paramètres régionaux, c’est pourquoi Xamarin.Essentials fournit une classe `Locale` inter-plateformes et un moyen de les interroger avec `GetLocalesAsync`.
+Chaque plateforme prend en charge des paramètres régionaux différents, pour énoncer du texte dans différentes langues et avec différents accents. Les plateformes ont des codes et des méthodes différents pour spécifier les paramètres régionaux, c’est pourquoi Xamarin.Essentials fournit une `Locale` classe multiplateforme et un moyen de les interroger `GetLocalesAsync` .
 
 ```csharp
 public async Task SpeakNow()

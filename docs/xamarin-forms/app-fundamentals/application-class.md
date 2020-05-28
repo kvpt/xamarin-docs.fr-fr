@@ -1,29 +1,32 @@
 ---
-title: Classe App Xamarin.Forms
-description: Cet article décrit les fonctionnalités de la classe App par défaut, qui inclut une propriété à définir sur la page initiale de l’application, ainsi qu’un dictionnaire persistant pour stocker des valeurs simples lors des changements d’état de cycle de vie.
-ms.prod: xamarin
-ms.assetid: 421F8294-1944-46A4-8459-D2BD5AAABC9D
-ms.technology: xamarin-forms
-ms.custom: video
-author: davidbritch
-ms.author: dabritch
-ms.date: 02/19/2016
-ms.openlocfilehash: aaf2086fd8128d68baa401ab646b31bcbc279545
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: Xamarin.FormsClasse d’application
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+ms.custom: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 2f4b568809f949d813de86ae88cbe621cfa3161c
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79305023"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84129686"
 ---
-# <a name="xamarinforms-app-class"></a>Classe App Xamarin.Forms
+# <a name="xamarinforms-app-class"></a>Xamarin.FormsClasse d’application
 
 La classe de base `Application` offre les fonctionnalités suivantes, qui sont exposées dans la sous-classe `App` par défaut de votre sous-projet :
 
 * Une propriété `MainPage`,dans laquelle définir la page initiale de l’application.
-* Un [ `Properties` dictionnaire](#Properties_Dictionary) persistant pour stocker des valeurs simples à travers les changements d’état du cycle de vie.
+* [ `Properties` Dictionnaire](#Properties_Dictionary) persistant pour stocker des valeurs simples entre les modifications de l’état du cycle de vie.
 * Une propriété `Current` qui contient une référence à l’objet d’application actuel.
 
-Il expose également les méthodes `OnStart` `OnSleep`de `OnResume` [cycle de vie](~/xamarin-forms/app-fundamentals/app-lifecycle.md) telles que , , et ainsi que les événements de navigation modale.
+Il expose également des [méthodes de cycle de vie](~/xamarin-forms/app-fundamentals/app-lifecycle.md) telles que, et, ainsi que des événements de `OnStart` `OnSleep` `OnResume` navigation modaux.
 
 Selon le modèle que vous avez choisi, la classe `App` peut être définie de deux manières :
 
@@ -54,7 +57,7 @@ public partial class App : Application
 }
 ```
 
-En plus de [`MainPage`](xref:Xamarin.Forms.Application.MainPage) définir la propriété, le `InitializeComponent` code-derrière doit également appeler la méthode pour charger et analyser le XAML associé.
+Outre la définition de la [`MainPage`](xref:Xamarin.Forms.Application.MainPage) propriété, le code-behind doit également appeler la `InitializeComponent` méthode pour charger et analyser le XAML associé.
 
 ## <a name="mainpage-property"></a>Propriété MainPage
 
@@ -78,7 +81,7 @@ public class App : Xamarin.Forms.Application
 
 ## <a name="properties-dictionary"></a>Dictionnaire de propriétés
 
-La sous-classe `Application` comprend un dictionnaire `Properties` statique qui peut être utilisé pour stocker des données, en particulier pour une utilisation dans les méthodes `OnStart`, `OnSleep` et `OnResume`. Vous pouvez y accéder à partir de n’importe quel emplacement de votre code Xamarin.Forms, à l’aide `Application.Current.Properties`.
+La sous-classe `Application` comprend un dictionnaire `Properties` statique qui peut être utilisé pour stocker des données, en particulier pour une utilisation dans les méthodes `OnStart`, `OnSleep` et `OnResume`. Vous pouvez y accéder à n’importe quel endroit de votre Xamarin.Forms code à l’aide de `Application.Current.Properties` .
 
 Le dictionnaire `Properties` utilise une clé `string` et stocke une valeur `object`.
 
@@ -110,9 +113,9 @@ Pour éviter toute erreur inattendue, vérifiez toujours la présence de la clé
 Le dictionnaire `Properties` est automatiquement enregistré sur l’appareil.
 Les données ajoutées au dictionnaire seront disponibles lors du retour de l’application de l’arrière-plan ou après son redémarrage.
 
-Xamarin.Forms 1.4 comprend une nouvelle méthode pour la classe `Application` (`SavePropertiesAsync()`) qui peut être appelée pour faire persister de manière proactive le dictionnaire `Properties`. Cela vous permet d’enregistrer les propriétés après les mises à jour importantes, plutôt que de risquer qu’elles ne soient pas sérialisées à cause d’un plantage ou parce qu’elles ont été tuées par le système d’exploitation.
+Xamarin.Forms1,4 a introduit une méthode supplémentaire sur la `Application` classe, `SavePropertiesAsync()` qui peut être appelée pour rendre le dictionnaire persistant de manière proactive `Properties` . Cela vous permet d’enregistrer les propriétés après les mises à jour importantes, plutôt que de risquer qu’elles ne soient pas sérialisées à cause d’un plantage ou parce qu’elles ont été tuées par le système d’exploitation.
 
-Vous trouverez des références sur l’utilisation du dictionnaire `Properties` dans les chapitres [6](https://developer.xamarin.com/r/xamarin-forms/book/chapter06.pdf), [15](https://developer.xamarin.com/r/xamarin-forms/book/chapter15.pdf) et [20 ](https://developer.xamarin.com/r/xamarin-forms/book/chapter20.pdf) de l’ouvrage **Creating Mobile Apps with Xamarin.Forms**, ainsi que dans les [exemples](https://github.com/xamarin/xamarin-forms-book-preview-2) associés.
+Vous pouvez trouver des références à l’utilisation du `Properties` dictionnaire dans la **Mobile Apps Xamarin.Forms Creating with** Book Chapters [6](https://developer.xamarin.com/r/xamarin-forms/book/chapter06.pdf), [15](https://developer.xamarin.com/r/xamarin-forms/book/chapter15.pdf)et [20](https://developer.xamarin.com/r/xamarin-forms/book/chapter20.pdf)et dans les [exemples](https://github.com/xamarin/xamarin-forms-book-preview-2)associés.
 
 ## <a name="the-application-class"></a>Classe d’application
 
@@ -147,7 +150,7 @@ public class App : Xamarin.Forms.Application
 ```
 
 Cette classe est ensuite instanciée dans chaque projet spécifique à la plateforme, puis passée à la méthode `LoadApplication`, où le `MainPage` est chargé et affiché à l’utilisateur.
-Le code adapté à chaque plateforme est indiqué dans les sections suivantes. Les derniers modèles de solutions Xamarin.Forms contiennent déjà tout ce code, qui a été préconfiguré pour votre application.
+Le code adapté à chaque plateforme est indiqué dans les sections suivantes. Les Xamarin.Forms modèles de solution les plus récents contiennent déjà tout ce code, préconfiguré pour votre application.
 
 ### <a name="ios-project"></a>Projet iOS
 
@@ -205,7 +208,7 @@ La page principale du projet UWP doit hériter de `WindowsPage` :
 </forms:WindowsPage>
 ```
 
-La construction de code-behind C# doit appeler `LoadApplication` pour créer une instance de votre `App` Xamarin.Forms. Notez qu’il est recommandé d’utiliser explicitement l’espace de noms d’application pour qualifier le `App`, car les applications UWP ont également leur propre classe `App` qui n’est pas relative à Xamarin.Forms.
+La construction de code-behind C# doit appeler `LoadApplication` pour créer une instance de votre Xamarin.Forms `App` . Notez qu’il est recommandé d’utiliser explicitement l’espace de noms de l’application pour qualifier le `App` , car les applications UWP ont également leur propre `App` classe non liée à Xamarin.Forms .
 
 ```csharp
 public sealed partial class MainPage
@@ -221,7 +224,7 @@ public sealed partial class MainPage
 
 Notez que `Forms.Init()` doit être appelé à partir d’**App.xaml.cs** dans le projet UWP.
 
-Pour plus d’informations, consultez l’article [Projets d’installation Windows](~/xamarin-forms/platform/windows/installation/index.md) qui inclut des étapes pour ajouter un projet UWP à une solution Xamarin.Forms existante ne ciblant pas UWP.
+Pour plus d’informations, consultez [configurer des projets Windows](~/xamarin-forms/platform/windows/installation/index.md), qui comprend les étapes permettant d’ajouter un projet UWP à une Xamarin.Forms solution existante qui ne cible pas UWP.
 
 ## <a name="related-video"></a>Vidéo connexe
 

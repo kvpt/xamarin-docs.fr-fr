@@ -1,22 +1,25 @@
 ---
-title: Migration de AndroidX dans Xamarin. Forms
-description: Cet article explique pourquoi AndroidX existe et comment migrer vers AndroidX dans votre application Xamarin. Forms.
-ms.prod: xamarin
-ms.assetid: 98884003-E65A-4EB4-842D-66CFE27344A4
-ms.technology: xamarin-forms
-author: profexorgeek
-ms.author: jusjohns
-ms.date: 01/22/2020
-ms.openlocfilehash: 13fb802dec326cdb82bac8825ca84343ef85b13e
-ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
+title: Migration de AndroidX dansXamarin.Forms
+description: Cet article explique pourquoi AndroidX existe et comment migrer vers AndroidX dans votre Xamarin.Forms application.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c2df309a8a12a05a4b492bb66977aa2411142850
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "78292214"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138266"
 ---
-# <a name="androidx-migration-in-xamarinforms"></a>Migration de AndroidX dans Xamarin. Forms
+# <a name="androidx-migration-in-xamarinforms"></a>Migration de AndroidX dansXamarin.Forms
 
-AndroidX remplace la bibliothèque de prise en charge Android. Cet article explique pourquoi AndroidX existe, comment il affecte Xamarin. Forms et comment migrer votre application pour utiliser les bibliothèques AndroidX.
+AndroidX remplace la bibliothèque de prise en charge Android. Cet article explique pourquoi AndroidX existe, comment il affecte Xamarin.Forms et comment migrer votre application pour utiliser les bibliothèques AndroidX.
 
 ## <a name="history-of-androidx"></a>Historique de AndroidX
 
@@ -24,8 +27,8 @@ La bibliothèque de prise en charge Android a été créée pour fournir des fon
 
 Si la bibliothèque de support était à l’origine un fichier binaire unique, elle a évolué et est devenue une suite de bibliothèques, qui sont presque essentielles pour le développement d’applications modernes. Voici quelques-unes des fonctionnalités couramment utilisées à partir de la bibliothèque de prise en charge :
 
-- Classe de prise en charge `Fragment`.
-- `RecyclerView`, utilisé pour la gestion de longues listes.
+- `Fragment`Classe de prise en charge.
+- `RecyclerView`, Utilisé pour gérer des listes longues.
 - Prise en charge Multidex pour les applications avec plus de 65 536 méthodes.
 - Classe `ActivityCompat`.
 
@@ -33,16 +36,16 @@ AndroidX est un remplacement de la bibliothèque de prise en charge, qui n’est
 
 Google a créé un processus de migration appelé Jetifier avec AndroidX. Le Jetifier inspecte le bytecode jar pendant le processus de génération et remappe les références de la bibliothèque de prise en charge, à la fois dans le code de l’application et dans les dépendances, à leur équivalent AndroidX.
 
-Dans une application Xamarin. Forms, comme dans une application Java Android, les dépendances jar doivent être migrées vers AndroidX. Toutefois, les liaisons Xamarin doivent également être migrées pour pointer vers les fichiers jar sous-jacents appropriés. Xamarin. Forms a ajouté la prise en charge de la migration automatique AndroidX dans la version 4,5.
+Dans une Xamarin.Forms application, tout comme dans une application Java Android, les dépendances jar doivent être migrées vers AndroidX. Toutefois, les liaisons Xamarin doivent également être migrées pour pointer vers les fichiers jar sous-jacents appropriés. Xamarin.Formsajout de la prise en charge de la migration automatique de AndroidX dans la version 4,5.
 
 Pour plus d’informations sur AndroidX, consultez [vue d’ensemble d’AndroidX](https://developer.android.com/jetpack/androidx) sur Developer.Android.com.
 
-## <a name="automatic-migration-in-xamarinforms"></a>Migration automatique dans Xamarin. Forms
+## <a name="automatic-migration-in-xamarinforms"></a>Migration automatique dansXamarin.Forms
 
-Pour migrer automatiquement vers AndroidX, un projet Xamarin. Forms doit :
+Pour migrer automatiquement vers AndroidX, un Xamarin.Forms projet doit :
 
 - Ciblez la version 29 ou ultérieure de l’API Android.
-- Utilisez Xamarin. Forms version 4,5 ou ultérieure.
+- Utilisez la Xamarin.Forms version 4,5 ou une version ultérieure.
 
 Une fois que vous avez confirmé ces paramètres dans votre projet, générez l’application Android dans Visual Studio 2019. Pendant le processus de génération, le langage intermédiaire (IL, Intermediate Language) est inspecté et les dépendances de bibliothèque et les liaisons sont échangées avec les dépendances de AndroidX. Si votre application a toutes les dépendances AndroidX requises pour la génération, vous ne remarquerez aucune différence dans le processus de génération.
 
@@ -64,7 +67,7 @@ You can also copy and paste the following snippit into your .csproj file:
  <PackageReference Include="Xamarin.AndroidX.Legacy.Support.V4" Version="1.0.0-rc1" />
 ```
 
-Les packages NuGet manquants peuvent être installés par le biais du gestionnaire de package NuGet dans Visual Studio, ou installés en modifiant votre fichier Android. csproj pour inclure les éléments XML `PackageReference`s listés dans l’erreur.
+Les packages NuGet manquants peuvent être installés par le biais du gestionnaire de package NuGet dans Visual Studio, ou installés en modifiant votre fichier Android. csproj pour inclure les `PackageReference` éléments XML listés dans l’erreur.
 
 Une fois les packages manquants résolus, la reconstruction du projet charge les packages manquants et votre projet est compilé à l’aide des dépendances AndroidX au lieu de prendre en charge les dépendances de bibliothèque.
 
