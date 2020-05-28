@@ -1,24 +1,27 @@
 ---
-title: Stocker des données dans une base de données SQLite.NET locale
-description: Cet article explique comment stocker des données dans une base de données SQLite.NET locale.
-zone_pivot_groups: platform
-ms.topic: quickstart
-ms.prod: xamarin
-ms.assetid: 5BF901BD-FDE8-4B74-B4AB-418E81745A3B
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/01/2019
-ms.openlocfilehash: 2cd4726566e73aece5d0deef90ad1feedefaa2d8
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+zone_pivot_groups: ''
+ms.topic: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 2864c7edabde18faec06c2c42042168d3e6c9671
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "71249677"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139800"
 ---
 # <a name="store-data-in-a-local-sqlitenet-database"></a>Stocker des données dans une base de données SQLite.NET locale
 
-[![Télécharger](~/media/shared/download.png) l’échantillon Télécharger l’échantillon](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-database/)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-database/)
 
 Dans ce guide de démarrage rapide, vous allez apprendre à :
 
@@ -50,7 +53,7 @@ Vous devez suivre correctement le [précédent guide de démarrage rapide](multi
 
     > [!NOTE]
     > Il existe plusieurs packages NuGet portant des noms similaires. Le package correct possède ces attributs :
-    > - **Auteur(s) :** Frank A. Krueger
+    > - **Auteur (s) :** Frank A. Krueger
     > - **ID ** sqlite-net-pcl
     > - **Lien NuGet :** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)  
     >
@@ -214,7 +217,7 @@ Vous devez suivre correctement le [précédent guide de démarrage rapide](multi
     }
     ```    
 
-    Ce code remplit [`ListView`](xref:Xamarin.Forms.ListView) les notes stockées dans la base de données.
+    Ce code remplit la [`ListView`](xref:Xamarin.Forms.ListView) avec toutes les notes stockées dans la base de données.
 
     Enregistrez les changements apportés à **NotesPage.xaml.cs** en appuyant sur **Ctrl+S**, puis fermez le fichier.
 
@@ -240,7 +243,7 @@ Vous devez suivre correctement le [précédent guide de démarrage rapide](multi
       }
       ```    
 
-      Les `NoteEntryPage` magasins `Note` une instance, qui représente [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) une seule note, dans la page. Quand le gestionnaire d’événements `OnSaveButtonClicked` s’exécute, l’instance de `Note` est enregistrée dans la base de données, et l’application revient à la page précédente. Quand le gestionnaire d’événements `OnDeleteButtonClicked` s’exécute, l’instance de `Note` est supprimée de la base de données, et l’application revient à la page précédente.
+      `NoteEntryPage`Stocke une `Note` instance, qui représente une seule note dans le [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) de la page. Quand le gestionnaire d’événements `OnSaveButtonClicked` s’exécute, l’instance de `Note` est enregistrée dans la base de données, et l’application revient à la page précédente. Quand le gestionnaire d’événements `OnDeleteButtonClicked` s’exécute, l’instance de `Note` est supprimée de la base de données, et l’application revient à la page précédente.
 
       Enregistrez les changements apportés à **NoteEntryPage.xaml.cs** en appuyant sur **Ctrl+S**, puis fermez le fichier.
 
@@ -267,7 +270,7 @@ Vous devez suivre correctement le [précédent guide de démarrage rapide](multi
 
     > [!NOTE]
     > Il existe plusieurs packages NuGet portant des noms similaires. Le package correct possède ces attributs :
-    > - **Auteur:** Frank A. Krueger
+    > - **Auteur :** Frank A. Krueger
     > - **ID ** sqlite-net-pcl
     > - **Lien NuGet :** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)  
     >
@@ -431,7 +434,7 @@ Vous devez suivre correctement le [précédent guide de démarrage rapide](multi
     }
     ```    
 
-    Ce code remplit [`ListView`](xref:Xamarin.Forms.ListView) les notes stockées dans la base de données.
+    Ce code remplit la [`ListView`](xref:Xamarin.Forms.ListView) avec toutes les notes stockées dans la base de données.
 
     Enregistrez les changements apportés à **NotesPage.xaml.cs** en choisissant **Fichier > Enregistrer** (ou en appuyant sur **&#8984;+S**), puis fermez le fichier.
 
@@ -457,7 +460,7 @@ Vous devez suivre correctement le [précédent guide de démarrage rapide](multi
       }
       ```    
 
-      Les `NoteEntryPage` magasins `Note` une instance, qui représente [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) une seule note, dans la page. Quand le gestionnaire d’événements `OnSaveButtonClicked` s’exécute, l’instance de `Note` est enregistrée dans la base de données, et l’application revient à la page précédente. Quand le gestionnaire d’événements `OnDeleteButtonClicked` s’exécute, l’instance de `Note` est supprimée de la base de données, et l’application revient à la page précédente.
+      `NoteEntryPage`Stocke une `Note` instance, qui représente une seule note dans le [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) de la page. Quand le gestionnaire d’événements `OnSaveButtonClicked` s’exécute, l’instance de `Note` est enregistrée dans la base de données, et l’application revient à la page précédente. Quand le gestionnaire d’événements `OnDeleteButtonClicked` s’exécute, l’instance de `Note` est supprimée de la base de données, et l’application revient à la page précédente.
 
       Enregistrez les changements apportés à **NoteEntryPage.xaml.cs** en choisissant **Fichier > Enregistrer** (ou en appuyant sur **&#8984;+S**), puis fermez le fichier.
 
@@ -484,4 +487,4 @@ Pour appliquer des styles à l’application à l’aide de styles XAML, passez 
 ## <a name="related-links"></a>Liens connexes
 
 - [Notes (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-database/)
-- [Xamarin.Forms - Démarrage rapide en immersion](deepdive.md)
+- [Xamarin.FormsPrésentation approfondie des Démarrages rapides](deepdive.md)

@@ -1,37 +1,40 @@
 ---
-title: Balisage C# Xamarin. Forms
-description: Le balisage C# est un ensemble de méthodes et de classes d’assistance Fluent qui permet de simplifier le processus de création d’interfaces utilisateur Xamarin. Forms déclaratives en C#.
-ms.prod: xamarin
-ms.assetid: D41B9DCD-5C34-4C2F-B177-FC082AB2E9E0
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 05/15/2020
-ms.openlocfilehash: 4fa8397dafbbdd836f88193081720b4960f1ce5d
-ms.sourcegitcommit: bc0c1740aa0708459729c0e671ab3ff7de3e2eee
+title: Xamarin.FormsBalisage C#
+description: Le balisage C# est un ensemble de méthodes et de classes d’assistance Fluent pour simplifier le processus de création d' Xamarin.Forms interfaces utilisateur déclaratives en C#.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 939727d3dd8d419cdc020d33d3e7241dcedb8158
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83425804"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137746"
 ---
-# <a name="xamarinforms-c-markup"></a>Balisage C# Xamarin. Forms
+# <a name="xamarinforms-c-markup"></a>Xamarin.FormsBalisage C#
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-csharpmarkupdemos/)
 
-Le balisage C# est un ensemble de méthodes et de classes d’assistance Fluent qui permet de simplifier le processus de création d’interfaces utilisateur Xamarin. Forms déclaratives en C#. L’API Fluent fournie par le balisage C# est disponible dans l' `Xamarin.Forms.Markup` espace de noms.
+Le balisage C# est un ensemble de méthodes et de classes d’assistance Fluent pour simplifier le processus de création d' Xamarin.Forms interfaces utilisateur déclaratives en C#. L’API Fluent fournie par le balisage C# est disponible dans l' `Xamarin.Forms.Markup` espace de noms.
 
 Tout comme avec XAML, le balisage C# permet une séparation nette entre le balisage de l’interface utilisateur et la logique d’interface utilisateur. Cela est possible en séparant le balisage de l’interface utilisateur et la logique d’interface utilisateur en fichiers de classe partielle distincts. Par exemple, pour une page de connexion, le balisage de l’interface utilisateur se trouve dans un fichier nommé *LoginPage.cs*, tandis que la logique de l’interface utilisateur se trouve dans un fichier nommé *LoginPage.Logic.cs*.
 
-Le balisage C# est disponible à partir de Xamarin. Forms 4,6. Toutefois, il est actuellement expérimental et ne peut être utilisé qu’en ajoutant la ligne de code suivante à votre fichier *app.cs* :
+Le balisage C# est disponible à partir de Xamarin.Forms 4,6. Toutefois, il est actuellement expérimental et ne peut être utilisé qu’en ajoutant la ligne de code suivante à votre fichier *app.cs* :
 
 ```csharp
 Device.SetFlags(new string[]{ "Markup_Experimental" });
 ```
 
 > [!NOTE]
-> Le balisage C# est disponible sur toutes les plateformes prises en charge par Xamarin. Forms.
+> Le balisage C# est disponible sur toutes les plateformes prises en charge par Xamarin.Forms .
 
 ## <a name="basic-example"></a>Exemple de base
 
@@ -89,7 +92,7 @@ Cet exemple est identique à l’exemple précédent, mais l’API Fluent du bal
 
 ## <a name="data-binding"></a>Liaison de données
 
-Le balisage C# comprend une `Bind` méthode d’extension, ainsi que des surcharges, qui crée une liaison de données entre une propriété de vue pouvant être liée et une propriété spécifiée. La `Bind` méthode connaît la propriété pouvant être liée par défaut pour la majorité des contrôles inclus dans Xamarin. Forms. Par conséquent, il n’est généralement pas nécessaire de spécifier la propriété cible lors de l’utilisation de cette méthode. Toutefois, vous pouvez également inscrire la propriété pouvant être liée par défaut pour des contrôles supplémentaires :
+Le balisage C# comprend une `Bind` méthode d’extension, ainsi que des surcharges, qui crée une liaison de données entre une propriété de vue pouvant être liée et une propriété spécifiée. La `Bind` méthode connaît la propriété pouvant être liée par défaut pour la majorité des contrôles inclus dans Xamarin.Forms . Par conséquent, il n’est généralement pas nécessaire de spécifier la propriété cible lors de l’utilisation de cette méthode. Toutefois, vous pouvez également inscrire la propriété pouvant être liée par défaut pour des contrôles supplémentaires :
 
 ```csharp
 using Xamarin.Forms.Markup;
@@ -228,7 +231,7 @@ new Label { Text = "Tap Me" }
 
 Étant donné qu’un module de reconnaissance de mouvement est un `BindableObject` , vous pouvez utiliser les `Bind` `BindCommand` méthodes d’extension et lorsque vous l’initialisez. Vous pouvez également initialiser des types de module de reconnaissance de mouvement personnalisés avec la `Gesture<TGestureElement, TGestureRecognizer>` méthode d’extension.
 
-## <a name="layout"></a>Layout
+## <a name="layout"></a>Disposition
 
 Le balisage C# comprend une série de méthodes d’extension de disposition qui prennent en charge le positionnement des vues dans les dispositions et le contenu dans les vues :
 
@@ -354,7 +357,7 @@ new Grid
 }
 ```
 
-## <a name="fonts"></a>Polices
+## <a name="fonts"></a>Fonts
 
 Les contrôles de la liste suivante peuvent appeler les `FontSize` `Bold` méthodes d’extension,, `Italic` et `Font` pour définir l’apparence du texte affiché par le contrôle :
 

@@ -1,17 +1,20 @@
 ---
-title: Instructions de configuration du pare-feu Xamarin
-description: Ce document fournit une liste d’hôtes qui doivent être autorisés dans votre pare-feu pour permettre à Xamarin de fonctionner dans un environnement d’entreprise.
-ms.prod: xamarin
-ms.assetid: 658f699b-8cca-48f7-ae54-fa956384b6d6
-author: conceptdev
-ms.author: crdun
-ms.date: 07/17/2019
-ms.openlocfilehash: 2b52dfd55194ec076f28f8c33e758a39d14f5943
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 71b2754d19d00b7bf4860acd96bfb7ad8dec4ce5
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70291329"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84132989"
 ---
 # <a name="xamarin-firewall-configuration-instructions"></a>Instructions de configuration du pare-feu Xamarin
 
@@ -35,13 +38,13 @@ Les adresses connues suivantes doivent être ajoutées à la liste pour que les 
 
 Si vous utilisez un ordinateur Mac et rencontrez des problèmes d’installation avec Xamarin.Android, vérifiez que Mac OS est en mesure de télécharger Java.
 
-### <a name="nuget-including-xamarinforms"></a>NuGet (notamment Xamarin.Forms)
+### <a name="nuget-including-xamarinforms"></a>NuGet (y compris Xamarin.Forms )
 
-Les adresses suivantes doivent être ajoutées pour permettre l’accès à NuGet (Xamarin.Forms est empaqueté au format NuGet) :
+Les adresses suivantes doivent être ajoutées pour accéder à NuGet ( Xamarin.Forms est empaqueté en tant que NuGet) :
 
 - www.nuget.org (pour accéder à NuGet)
 - globalcdn.nuget.org (téléchargements NuGet)
-- dl-ssl.google.com (composants Google pour Android et Xamarin.Forms)
+- dl-ssl.google.com (composants Google pour Android et Xamarin.Forms )
 
 ### <a name="software-updates"></a>Mises à jour logicielles
 

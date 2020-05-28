@@ -1,24 +1,27 @@
 ---
-title: Xamarin. Forms StackLayout
-description: Un StackLayout organise les vues enfants dans une pile unidimensionnelle, horizontalement ou verticalement.
-ms.prod: xamarin
-ms.assetid: 6A91EA70-268C-462C-AAAF-F8DA011403F8
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 05/11/2020
-ms.openlocfilehash: 2535a92814181c5039256ea1e42b06419ed427aa
-ms.sourcegitcommit: bc0c1740aa0708459729c0e671ab3ff7de3e2eee
+title: Xamarin.FormsStackLayout
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f624674cc6d4ba1bdc34a42fb52fb63ff8a7135a
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83426031"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137967"
 ---
-# <a name="xamarinforms-stacklayout"></a>Xamarin. Forms StackLayout
+# <a name="xamarinforms-stacklayout"></a>Xamarin.FormsStackLayout
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-stacklayoutdemos)
 
-[![Xamarin. Forms StackLayout](stacklayout-images/layouts.png "Xamarin. Forms StackLayout")](stacklayout-images/layouts-large.png#lightbox "Xamarin. Forms StackLayout")
+[![Xamarin.FormsStackLayout](stacklayout-images/layouts.png "[! Opérationnel. NO-LOC (Xamarin. Forms)] StackLayout")](stacklayout-images/layouts-large.png#lightbox "[! Opérationnel. NO-LOC (Xamarin. Forms)] StackLayout")
 
 [`StackLayout`](xref:Xamarin.Forms.StackLayout)Organise les vues enfants dans une pile unidimensionnelle, horizontalement ou verticalement. Par défaut, un `StackLayout` est orienté verticalement. En outre, un `StackLayout` peut être utilisé comme une disposition parente qui contient d’autres dispositions enfants.
 
@@ -343,7 +346,7 @@ public ExpansionPageCS()
 > [!IMPORTANT]
 > Lorsque tout l’espace de [`StackLayout`](xref:Xamarin.Forms.StackLayout) est utilisé, les préférences d’extension n’ont aucun effet.
 
-Pour plus d’informations sur l’alignement et l’extension, consultez [Options de mise en page dans Xamarin.Forms](layout-options.md).
+Pour plus d’informations sur l’alignement et l’expansion, consultez [options de disposition dans Xamarin.Forms ](layout-options.md).
 
 ## <a name="nested-stacklayout-objects"></a>Objets StackLayout imbriqués
 
@@ -469,6 +472,6 @@ public class CombinedStackLayoutPageCS : ContentPage
 ## <a name="related-links"></a>Liens connexes
 
 - [Démonstrations StackLayout (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-stacklayoutdemos)
-- [Options de disposition dans Xamarin. Forms](layout-options.md)
-- [Choisir une disposition Xamarin. Forms](choose-layout.md)
-- [Améliorer les performances des applications Xamarin.Forms](~/xamarin-forms/deploy-test/performance.md)
+- [Options de disposition dansXamarin.Forms](layout-options.md)
+- [Choisir une Xamarin.Forms disposition](choose-layout.md)
+- [Améliorer les Xamarin.Forms performances des applications](~/xamarin-forms/deploy-test/performance.md)

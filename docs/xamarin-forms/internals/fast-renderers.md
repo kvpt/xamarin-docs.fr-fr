@@ -1,56 +1,59 @@
 ---
-title: Convertisseurs rapide de Xamarin.Forms
-description: Cet article présente des renderers rapides qui réduisent l’inflation et les coûts de rendu d’un contrôle Xamarin.Forms sur Android en aplanissant la hiérarchie des contrôles natifs obtenue.
-ms.prod: xamarin
-ms.assetid: 097f87f2-d891-4f3c-be02-fb7d195a481a
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 05/09/2019
-ms.openlocfilehash: 861d9e3f898dcd61015d9aca27ae66c3fe72d1a9
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+title: Xamarin.FormsConvertisseurs rapides
+description: Cet article présente les convertisseurs rapides, qui réduisent les coûts d’inflation et de rendu d’un Xamarin.Forms contrôle sur Android en aplatint la hiérarchie des contrôles natifs résultante.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 3f25f4c2da5b2a426673b49045b5d2d05b0c6ac4
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65970722"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139072"
 ---
-# <a name="xamarinforms-fast-renderers"></a>Convertisseurs rapide de Xamarin.Forms
+# <a name="xamarinforms-fast-renderers"></a>Xamarin.FormsConvertisseurs rapides
 
-En règle générale, la plupart des convertisseurs de contrôle d’origine sur Android se composent de deux vues :
+Traditionnellement, la plupart des convertisseurs de contrôle d’origine sur Android sont composés de deux vues :
 
-- Contrôle natif, tel qu’un `Button` ou `TextView`.
-- Un conteneur `ViewGroup` qui gère le travail de mise en page, de gestion des mouvements ou autres tâches.
+- Contrôle natif, tel que `Button` ou `TextView` .
+- Conteneur `ViewGroup` qui gère une partie du travail de disposition, la gestion des mouvements et d’autres tâches.
 
-Toutefois, cette approche présente une implication de performances dans la mesure où deux vues sont créées pour chaque contrôle logique, ce qui entraîne une arborescence visuelle plus complexe qui nécessite davantage de mémoire et bien plus encore pour effectuer le rendu à l’écran de traitement.
+Toutefois, cette approche a une implication sur les performances dans le fait que deux vues sont créées pour chaque contrôle logique, ce qui aboutit à une arborescence d’éléments visuels plus complexe qui nécessite plus de mémoire et un plus grand traitement à afficher à l’écran.
 
-Renderers rapides réduisent l’inflation et les coûts de rendu d’un contrôle Xamarin.Forms dans une vue unique. Par conséquent, au lieu de créer des deux vues et les ajouter à l’arborescence de la vue, seul l’un est créé. Cela améliore les performances en créant moins d’objets, ce qui implique une arborescence de vue moins complexe, et moins l’utilisation de la mémoire (ce qui entraîne également moins pauses du garbage collection).
+Les convertisseurs rapides réduisent les coûts d’inflation et de rendu d’un Xamarin.Forms contrôle en une seule vue. Par conséquent, au lieu de créer deux vues et de les ajouter à l’arborescence d’affichage, une seule est créée. Cela améliore les performances en créant moins d’objets, ce qui signifie à son tour une arborescence d’affichage moins complexe et une utilisation moins importante de la mémoire (ce qui entraîne également moins d’interruptions de garbage collection).
 
-Renderers rapides sont disponibles pour les contrôles suivants dans Xamarin.Forms sur Android :
+Les convertisseurs rapides sont disponibles pour les contrôles suivants dans Xamarin.Forms sur Android :
 
 - [`Button`](xref:Xamarin.Forms.Button)
 - [`Image`](xref:Xamarin.Forms.Image)
 - [`Label`](xref:Xamarin.Forms.Label)
 - [`Frame`](xref:Xamarin.Forms.Frame)
 
-Fonctionnellement, ces convertisseurs rapides ne sont pas différentes pour les convertisseurs hérités. À partir de Xamarin.Forms 4.0 et versions ultérieures, toutes les applications ciblant `FormsAppCompatActivity` utilisera ces convertisseurs rapides par défaut. Convertisseurs pour tous les nouveaux contrôles, y compris [ `ImageButton` ](xref:Xamarin.Forms.ImageButton) et [ `CollectionView` ](xref:Xamarin.Forms.CollectionView), utilisez l’approche de convertisseur rapide.
+Fonctionnellement, ces convertisseurs rapides ne sont pas différents des convertisseurs hérités. À partir de Xamarin.Forms 4,0, toutes les applications `FormsAppCompatActivity` qui ciblent utiliseront ces convertisseurs rapides par défaut. Les convertisseurs pour tous les nouveaux contrôles, y compris [`ImageButton`](xref:Xamarin.Forms.ImageButton) et [`CollectionView`](xref:Xamarin.Forms.CollectionView) , utilisent l’approche de rendu rapide.
 
-Améliorations des performances lors de l’utilisation des renderers rapides varient pour chaque application, en fonction de la complexité de la mise en page. Par exemple, les améliorations des performances de x2 sont possibles lors du défilement d’un [ `ListView` ](xref:Xamarin.Forms.ListView) contenant des milliers de lignes de données, où les cellules de chaque ligne sont constitués de contrôles qui utilisent des renderers rapides, ce qui entraîne des visiblement défilement plus lisse.
+Les améliorations des performances lorsque vous utilisez des convertisseurs rapides varient pour chaque application, en fonction de la complexité de la disposition. Par exemple, les améliorations des performances de x2 sont possibles lorsque vous faites défiler un [`ListView`](xref:Xamarin.Forms.ListView) contenant des milliers de lignes de données, où les cellules de chaque ligne sont constituées de contrôles qui utilisent des convertisseurs rapides, ce qui entraîne un défilement visible.
 
 > [!NOTE]
-> Renderers personnalisés peuvent être créés pour des renderers rapides à l’aide de la même approche que celles utilisées pour les convertisseurs hérités. Pour plus d’informations, consultez [Renderers personnalisés](~/xamarin-forms/app-fundamentals/custom-renderer/index.md).
+> Les convertisseurs personnalisés peuvent être créés pour les convertisseurs rapides à l’aide de la même approche que celle utilisée pour les convertisseurs hérités. Pour plus d’informations, consultez [Renderers personnalisés](~/xamarin-forms/app-fundamentals/custom-renderer/index.md).
 
 ## <a name="backwards-compatibility"></a>Compatibilité descendante
 
-Renderers rapides peuvent être remplacées par les approches suivantes :
+Les convertisseurs rapides peuvent être remplacés par les approches suivantes :
 
-1. Activer les convertisseurs hérités en ajoutant la ligne suivante de code à votre `MainActivity` classe avant d’appeler `Forms.Init`:
+1. Pour activer les convertisseurs hérités, ajoutez la ligne de code suivante à votre `MainActivity` classe avant d’appeler `Forms.Init` :
 
     ```csharp
     Forms.SetFlags("UseLegacyRenderers");
     ```
 
-1. À l’aide des convertisseurs personnalisés qui ciblent les convertisseurs hérités. Les renderers personnalisés existants continueront à fonctionner avec les convertisseurs hérités.
-1. En spécifiant un autre `View.Visual`, tel que `Material`, qui utilise différents convertisseurs. Pour plus d’informations sur Visual de matériau, consultez [Xamarin.Forms matériau Visual](~/xamarin-forms/user-interface/visual/material-visual.md).
+1. À l’aide de convertisseurs personnalisés ciblant les convertisseurs hérités. Tous les convertisseurs personnalisés existants continuent de fonctionner avec les convertisseurs hérités.
+1. En spécifiant un différent `View.Visual` , tel que `Material` , qui utilise différents convertisseurs. Pour plus d’informations sur l’élément visuel Material, consultez [ Xamarin.Forms élément visuel](~/xamarin-forms/user-interface/visual/material-visual.md).
 
 ## <a name="related-links"></a>Liens connexes
 

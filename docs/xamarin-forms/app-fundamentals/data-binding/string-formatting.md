@@ -1,30 +1,33 @@
 ---
-title: Formatage de chaîne dans Xamarin.Forms
-description: Cet article explique comment utiliser les liaisons de données Xamarin.Forms pour formater et afficher des objets sous forme de chaînes. Pour cela, vous devez définir le StringFormat de la liaison sur une chaîne de formatage .NET standard avec un espace réservé.
-ms.prod: xamarin
-ms.assetid: 978C85B7-CB58-4483-A131-21B381A865E0
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/05/2018
-ms.openlocfilehash: bdd28e1ce6d36a0a025ac43a709af2e38a313526
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: Xamarin.FormsMise en forme de chaîne
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d08a89d5394a227e3cee76603e4e97d2cf9495e0
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76940380"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135757"
 ---
-# <a name="xamarinforms-string-formatting"></a>Formatage de chaîne dans Xamarin.Forms
+# <a name="xamarinforms-string-formatting"></a>Xamarin.FormsMise en forme de chaîne
 
-[![Télécharger](~/media/shared/download.png) l’échantillon Télécharger l’échantillon](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 Il est parfois pratique d’utiliser des liaisons de données pour afficher la représentation de chaîne d’un objet ou d’une valeur. Par exemple, vous souhaiterez peut-être utiliser un objet `Label` pour afficher la valeur actuelle d’un élément `Slider`. Dans cette liaison de données, l’élément `Slider` est la source, et la cible est la propriété `Text` de l’objet `Label`.
 
-Lors de l’affichage des chaînes dans [`String.Format`](xref:System.String.Format(System.String,System.Object)) le code, l’outil le plus puissant est la méthode statique. La chaîne de formatage inclut des codes de formatage spécifiques à différents types d’objets, et vous pouvez inclure un autre texte avec les valeurs en cours de formatage. Pour plus d’informations sur le formatage de chaîne, consultez [Mettre en forme des types dans .NET](/dotnet/standard/base-types/formatting-types/).
+Lorsque vous affichez des chaînes dans le code, l’outil le plus puissant est la [`String.Format`](xref:System.String.Format(System.String,System.Object)) méthode statique. La chaîne de formatage inclut des codes de formatage spécifiques à différents types d’objets, et vous pouvez inclure un autre texte avec les valeurs en cours de formatage. Pour plus d’informations sur le formatage de chaîne, consultez [Mettre en forme des types dans .NET](/dotnet/standard/base-types/formatting-types/).
 
 ## <a name="the-stringformat-property"></a>Propriété StringFormat
 
-Cette installation est reportée dans des liaisons `Binding` de données [`StringFormat`](xref:Xamarin.Forms.Xaml.BindingExtension.StringFormat) : `Binding` vous définissez la [`StringFormat`](xref:Xamarin.Forms.BindingBase.StringFormat) propriété (ou la propriété de l’extension de balisage) à une chaîne de formatage .NET standard avec un propriétaire de place :
+Cette fonctionnalité est reportée dans les liaisons de données : vous définissez la [`StringFormat`](xref:Xamarin.Forms.BindingBase.StringFormat) propriété de `Binding` (ou la [`StringFormat`](xref:Xamarin.Forms.Xaml.BindingExtension.StringFormat) propriété de l' `Binding` extension de balisage) sur une chaîne de mise en forme .NET standard avec un espace réservé :
 
 ```xaml
 <Slider x:Name="slider" />
@@ -123,7 +126,7 @@ La dernière section définit le `BindingContext` sur la valeur de `Math.PI` et 
 
 Voici le programme en cours d’exécution :
 
-[![String Formatting](string-formatting-images/stringformatting-small.png "Formatage de chaîne")](string-formatting-images/stringformatting-large.png#lightbox "Formatage de chaîne") (Formatage de chaîne)
+[![Formatage de chaîne](string-formatting-images/stringformatting-small.png "Formatage de chaîne")](string-formatting-images/stringformatting-large.png#lightbox "Formatage de chaîne")
 
 ## <a name="viewmodels-and-string-formatting"></a>Objets ViewModel et formatage de chaîne
 
@@ -187,4 +190,4 @@ Le prochain article, toutefois, explore le [**chemin de liaison**](binding-path.
 ## <a name="related-links"></a>Liens connexes
 
 - [Démonstrations de liaison de données (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
-- [Chapitre sur les liaisons de données dans la documentation de Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
+- [Chapitre sur la liaison de données à partir de Xamarin.Forms Book](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

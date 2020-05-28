@@ -1,48 +1,51 @@
 ---
-title: Mosaïque de bitmap SkiaSharp
-description: Vignette d’une zone à l’aide de bitmaps répétées horizontalement et verticalement.
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: 9ED14E07-4DC8-4B03-8A33-772838BF51EA
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/23/2018
-ms.openlocfilehash: f019b6e031774d7bcdf593015394d0c73c96949b
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+title: ''
+description: ''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 6a28dd20eb8978334365ac217df1241e5288fd28
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70198646"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137421"
 ---
-# <a name="skiasharp-bitmap-tiling"></a>Mosaïque de bitmap SkiaSharp
+# <a name="skiasharp-bitmap-tiling"></a>Mosaïque de bitmaps SkiaSharp
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/catclock)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/catclock)
 
-Comme vous l’avez vu dans les deux précédents articles, le [ `SKShader` ](xref:SkiaSharp.SKShader) classe peut créer des dégradés linéaires ou circulaires. Cet article se concentre sur la `SKShader` objet qui utilise une image bitmap à la vignette d’une zone. L’image bitmap peut être répété horizontalement et verticalement, soit dans son orientation d’origine ou vous pouvez également cliquer retournée horizontalement et verticalement. La symétrie permet d’éviter les discontinuités entre les vignettes :
+Comme vous l’avez vu dans les deux articles précédents, la [`SKShader`](xref:SkiaSharp.SKShader) classe peut créer des dégradés linéaires ou circulaires. Cet article se concentre sur l' `SKShader` objet qui utilise une image bitmap pour juxtaposer une zone. L’image bitmap peut être répétée horizontalement et verticalement, soit à l’aide de son orientation d’origine, soit à tour de point horizontalement et verticalement. Le retournement évite les discontinuités entre les vignettes :
 
-![Exemple de mosaïque bitmap](bitmap-tiling-images/BitmapTilingSample.png "exemple de disposition en mosaïque de Bitmap")
+![Exemple de mosaïque de bitmap](bitmap-tiling-images/BitmapTilingSample.png "Exemple de mosaïque de bitmap")
 
-Statiques [ `SKShader.CreateBitmap` ](xref:SkiaSharp.SKShader.CreateBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKShaderTileMode,SkiaSharp.SKShaderTileMode)) méthode qui crée ce nuanceur a un `SKBitmap` paramètre et deux membres de la [ `SKShaderTileMode` ](xref:SkiaSharp.SKShaderTileMode) énumération :
+La [`SKShader.CreateBitmap`](xref:SkiaSharp.SKShader.CreateBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKShaderTileMode,SkiaSharp.SKShaderTileMode)) méthode statique qui crée ce nuanceur a un `SKBitmap` paramètre et deux membres de l' [`SKShaderTileMode`](xref:SkiaSharp.SKShaderTileMode) énumération :
 
 ```csharp
 public static SKShader CreateBitmap (SKBitmap src, SKShaderTileMode tmx, SKShaderTileMode tmy)
 ```
 
-Les deux paramètres indiquent les modes utilisés pour la disposition en mosaïque horizontale et verticale en mosaïque. Il s’agit du même `SKShaderTileMode` énumération est également utilisée avec les méthodes de dégradé.
+Les deux paramètres indiquent les modes utilisés pour la mosaïque horizontale et la mosaïque verticale. Il s’agit de la même `SKShaderTileMode` énumération qui est également utilisée avec les méthodes de dégradé.
 
-Un [ `CreateBitmap` ](xref:SkiaSharp.SKShader.CreateBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKShaderTileMode,SkiaSharp.SKShaderTileMode,SkiaSharp.SKMatrix)) surcharge inclut un `SKMatrix` argument pour effectuer une transformation sur les images en mosaïque :
+Une [`CreateBitmap`](xref:SkiaSharp.SKShader.CreateBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKShaderTileMode,SkiaSharp.SKShaderTileMode,SkiaSharp.SKMatrix)) surcharge comprend un `SKMatrix` argument pour effectuer une transformation sur les bitmaps en mosaïque :
 
 ```csharp
 public static SKShader CreateBitmap (SKBitmap src, SKShaderTileMode tmx, SKShaderTileMode tmy, SKMatrix localMatrix)
 ```
 
-Cet article contient plusieurs exemples d’utilisation de cette matrice de transformation des images bitmap en mosaïque.
+Cet article contient plusieurs exemples d’utilisation de cette transformation de matrice avec des bitmaps en mosaïque.
 
-## <a name="exploring-the-tile-modes"></a>Explorer les modes de mosaïque
+## <a name="exploring-the-tile-modes"></a>Exploration des modes de vignette
 
-Le premier programme dans le **Bitmap mosaïque** section de la **nuanceurs et autres effets** page de la [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) exemple montre les effets des deux `SKShaderTileMode` arguments. Le **Modes de retournement de vignette de Bitmap** XAML fichier instancie un `SKCanvasView` et deux `Picker` des affichages qui vous permet de sélectionner un `SKShaderTilerMode` valeur pour la mosaïque horizontale et verticale. Notez qu’un tableau de la `SKShaderTileMode` membres est défini dans la `Resources` section :
+Le premier programme de la section **mosaïque d’images** de la page **nuanciers et autres effets** de l’exemple [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) illustre les effets des deux `SKShaderTileMode` arguments. Le fichier XAML de **mode de basculement de vignette de bitmap** instancie un `SKCanvasView` et deux `Picker` vues qui vous permettent de sélectionner une `SKShaderTilerMode` valeur pour la mosaïque horizontale et verticale. Notez qu’un tableau des `SKShaderTileMode` membres est défini dans la `Resources` section :
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -85,7 +88,7 @@ Le premier programme dans le **Bitmap mosaïque** section de la **nuanceurs et a
 </ContentPage>
 ```
 
-Le constructeur du fichier code-behind se charge dans la ressource bitmap qui montre un monkey assis. Il rogne tout d’abord l’image en utilisant le [ `ExtractSubset` ](xref:SkiaSharp.SKBitmap.ExtractSubset(SkiaSharp.SKBitmap,SkiaSharp.SKRectI)) méthode de `SKBitmap` afin que la tête et les pieds sont touchent les bords de l’image bitmap. Le constructeur utilise ensuite le [ `Resize` ](xref:SkiaSharp.SKBitmap.Resize(SkiaSharp.SKImageInfo,SkiaSharp.SKBitmapResizeMethod)) méthode pour créer une autre image bitmap de la moitié. Ces modifications facilitent la bitmap est un peu plus adapté à la disposition en mosaïque :
+Le constructeur du fichier code-behind charge dans la ressource bitmap qui montre un singe assis. Il commence par rogner l’image à l’aide [`ExtractSubset`](xref:SkiaSharp.SKBitmap.ExtractSubset(SkiaSharp.SKBitmap,SkiaSharp.SKRectI)) de la méthode de `SKBitmap` sorte que les têtes et les pieds touchent les bords de l’image bitmap. Le constructeur utilise ensuite la [`Resize`](xref:SkiaSharp.SKBitmap.Resize(SkiaSharp.SKImageInfo,SkiaSharp.SKBitmapResizeMethod)) méthode pour créer une autre image bitmap de la moitié de la taille. Ces modifications rendent la bitmap un peu plus adaptée à la mosaïque :
 
 ```csharp
 public partial class BitmapTileFlipModesPage : ContentPage
@@ -141,21 +144,21 @@ public partial class BitmapTileFlipModesPage : ContentPage
 }
 ```
 
-Le `PaintSurface` gestionnaire obtient le `SKShaderTileMode` paramètres provenant des deux `Picker` des vues et crée un `SKShader` objet basé sur l’image bitmap et ces deux valeurs. Ce nuanceur est utilisé pour remplir la zone de dessin :
+Le `PaintSurface` Gestionnaire obtient les `SKShaderTileMode` paramètres à partir des deux `Picker` vues et crée un `SKShader` objet basé sur la bitmap et ces deux valeurs. Ce nuanceur est utilisé pour remplir la zone de dessin :
 
-[![Bitmap des Modes de retournement de vignette](bitmap-tiling-images/BitmapTileFlipModes.png "Bitmap des Modes de retournement de vignette")](bitmap-tiling-images/BitmapTileFlipModes-Large.png#lightbox)
+[![Modes de basculement de vignette de bitmap](bitmap-tiling-images/BitmapTileFlipModes.png "Modes de basculement de vignette de bitmap")](bitmap-tiling-images/BitmapTileFlipModes-Large.png#lightbox)
 
-L’écran iOS à gauche montre l’effet des valeurs par défaut de `SKShaderTileMode.Clamp`. L’image bitmap se trouve dans le coin supérieur gauche. Sous l’image bitmap, la ligne inférieure de pixels est répétée vers le bas. À droite de l’image bitmap, la colonne la plus à droite de pixels est répétée sur l’ensemble. Le reste de la zone de dessin est de couleur par pixel Marron foncé dans le coin inférieur droit de la bitmap. Il devrait être évident que le `Clamp` option n’est presque jamais utilisée avec la mosaïque bitmap !
+L’écran iOS à gauche montre l’effet des valeurs par défaut de `SKShaderTileMode.Clamp` . La bitmap se trouve dans le coin supérieur gauche. En dessous de l’image bitmap, la ligne inférieure des pixels est répétée jusqu’à la fin. À droite de l’image bitmap, la colonne la plus à droite des pixels est répétée dans son intégralité. Le reste du canevas est coloré par le pixel Dark Brown dans le coin inférieur droit de la bitmap. Il doit être évident que l' `Clamp` option n’est presque jamais utilisée avec la mosaïque d’images.
 
-L’écran Android dans le centre montre le résultat de `SKShaderTileMode.Repeat` pour les deux arguments. La vignette est répétée horizontalement et verticalement. L’écran de plateforme Windows universelle affiche `SKShaderTileMode.Mirror`. Les vignettes sont répétées, mais également retournées horizontalement et verticalement. L’avantage de cette option est qu’il n’y a aucune discontinuités entre les vignettes.
+L’écran Android du centre affiche le résultat de `SKShaderTileMode.Repeat` pour les deux arguments. La vignette est répétée horizontalement et verticalement. L’écran plateforme Windows universelle s’affiche `SKShaderTileMode.Mirror` . Les vignettes sont répétées, mais peuvent être retournées horizontalement et verticalement. L’avantage de cette option est qu’il n’y a aucune discontinuité entre les vignettes.
 
-N’oubliez pas que vous pouvez utiliser différentes options pour la répétition horizontale et verticale. Vous pouvez spécifier `SKShaderTileMode.Mirror` comme deuxième argument à `CreateBitmap` mais `SKShaderTileMode.Repeat` comme troisième argument. Sur chaque ligne, les singes toujours alternez entre l’image normale et l’image miroir, mais aucune les singes sont envers.
+Gardez à l’esprit que vous pouvez utiliser différentes options pour la répétition horizontale et verticale. Vous pouvez spécifier `SKShaderTileMode.Mirror` comme deuxième argument de, `CreateBitmap` mais `SKShaderTileMode.Repeat` comme troisième argument. Sur chaque ligne, les singes alternent toujours entre l’image normale et l’image miroir, mais aucun des singes n’est à l’envers.
 
-## <a name="patterned-backgrounds"></a>Arrière-plans à motifs
+## <a name="patterned-backgrounds"></a>Arrière-plans à motif
 
-Mosaïque de l’image bitmap est couramment utilisée pour créer un arrière-plan répété à partir d’une bitmap relativement faible. L’exemple classique est un mur de brique.
+La mosaïque bitmap est couramment utilisée pour créer un arrière-plan à motif à partir d’une image bitmap relativement petite. L’exemple classique est un mur de briques.
 
-Le **algorithmique mur de brique** page crée une petite image bitmap qui ressemble à une brique entière et les deux moitiés d’une brique séparés par traditionnels. Étant donné que cette brique est utilisée dans l’exemple suivant, il a créé par un constructeur statique et rendues publiques avec une propriété statique :
+La page du **mur de briques algorithmiques** crée une petite bitmap qui ressemble à une brique entière et deux moitiés d’une brique, séparées par un mortier. Étant donné que cette brique est également utilisée dans l’exemple suivant, elle est créée par un constructeur statique et rendue publique avec une propriété statique :
 
 ```csharp
 public class AlgorithmicBrickWallPage : ContentPage
@@ -206,11 +209,11 @@ public class AlgorithmicBrickWallPage : ContentPage
 }
 ```
 
-La bitmap résultante est de 70 pixels de large et 60 pixels de haut :
+La bitmap résultante est 70 pixels de large et 60 pixels de haut :
 
-![Vignette de mur de brique algorithmique](bitmap-tiling-images/AlgorithmicBrickWallTile.png "vignette de mur de brique algorithmique")
+![Vignette du mur de briques algorithmiques](bitmap-tiling-images/AlgorithmicBrickWallTile.png "Vignette du mur de briques algorithmiques")
 
-Le reste de la **algorithmique mur de brique** page crée une `SKShader` objet que cette image est répétée horizontalement et verticalement :
+Le reste de la page du **mur de briques algorithmiques** crée un `SKShader` objet qui répète cette image horizontalement et verticalement :
 
 ```csharp
 public class AlgorithmicBrickWallPage : ContentPage
@@ -249,13 +252,13 @@ public class AlgorithmicBrickWallPage : ContentPage
 
 Voici le résultat :
 
-[![Mur de brique algorithmique](bitmap-tiling-images/AlgorithmicBrickWall.png "mur de brique algorithmique")](bitmap-tiling-images/AlgorithmicBrickWall-Large.png#lightbox)
+[![Mur de briques algorithmiques](bitmap-tiling-images/AlgorithmicBrickWall.png "Mur de briques algorithmiques")](bitmap-tiling-images/AlgorithmicBrickWall-Large.png#lightbox)
 
-Vous préférerez peut-être quelque chose d’un peu plus réaliste. Dans ce cas, vous pouvez prendre une photo d’un mur de brique réelle et rogner puis. Cette image bitmap est de 300 pixels de large et 150 pixels en hauteur :
+Vous préférerez peut-être un peu plus réaliste. Dans ce cas, vous pouvez prendre une photo d’un mur de briques réel, puis la rogner. Cette image bitmap est de 300 pixels de large et de 150 pixels de haut :
 
-![Vignette de mur de brique](bitmap-tiling-images/BrickWallTile.jpg "vignette de mur de brique")
+![Vignette de mur de briques](bitmap-tiling-images/BrickWallTile.jpg "Vignette de mur de briques")
 
-Cette image bitmap est utilisée dans le **photographique mur de brique** page :
+Cette image bitmap est utilisée dans la page du **mur de briques photographique** :
 
 ```csharp
 public class PhotographicBrickWallPage : ContentPage
@@ -294,17 +297,17 @@ public class PhotographicBrickWallPage : ContentPage
 }
 ```
 
-Notez que le `SKShaderTileMode` arguments à `CreateBitmap` sont tous deux `Mirror`. Cette option est généralement nécessaire lorsque vous utilisez des vignettes créées à partir d’images du monde réel. Mise en miroir les vignettes évite les discontinuités :
+Notez que les `SKShaderTileMode` arguments de `CreateBitmap` sont tous les deux `Mirror` . Cette option est généralement nécessaire lorsque vous utilisez des vignettes créées à partir d’images réelles. La mise en miroir des vignettes évite les discontinuités :
 
-[![Mur de brique photographique](bitmap-tiling-images/PhotographicBrickWall.png "mur de brique photographique")](bitmap-tiling-images/PhotographicBrickWall-Large.png#lightbox)
+[![Mur de briques photographique](bitmap-tiling-images/PhotographicBrickWall.png "Mur de briques photographique")](bitmap-tiling-images/PhotographicBrickWall-Large.png#lightbox)
 
-Un travail est nécessaire pour obtenir une image bitmap appropriée de la vignette. Celle-ci ne fonctionne pas très bien, car la brique plus sombre faire ressortir trop importante. Il s’affiche régulièrement dans les images répétées, révélant le fait que ce mur de brique a été construit à partir d’une bitmap plus petits.
+Un travail est nécessaire pour obtenir une image bitmap appropriée pour la vignette. Celui-ci ne fonctionne pas très bien, car la brique plus sombre est trop importante. Il apparaît régulièrement dans les images répétées, révélant le fait que ce mur de briques a été construit à partir d’une image bitmap plus petite.
 
-Le **Media** dossier de la [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) exemple inclut également cette image d’un mur de pierres :
+Le dossier **Media** de l’exemple [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) comprend également cette image d’un mur en pierre :
 
-![Pierre mur vignette](bitmap-tiling-images/StoneWallTile.jpg "Pierre mur de vignette")
+![Vignette de mur de Pierre](bitmap-tiling-images/StoneWallTile.jpg "Vignette de mur de Pierre")
 
-Toutefois, la bitmap d’origine est un peu trop volumineuse pour une vignette. Il peut être redimensionné, mais la `SKShader.CreateBitmap` méthode pouvez également redimensionner la vignette en appliquant une transformation à celui-ci. Cette option est illustrée dans le **mur de Pierre** page :
+Toutefois, le bitmap d’origine est un peu trop grand pour une vignette. Elle peut être redimensionnée, mais la `SKShader.CreateBitmap` méthode peut également redimensionner la vignette en lui appliquant une transformation. Cette option est illustrée dans la page du **mur en pierre** :
 
 ```csharp
 public class StoneWallPage : ContentPage
@@ -347,42 +350,42 @@ public class StoneWallPage : ContentPage
 }
 ```
 
-Un `SKMatrix` valeur est créée pour mettre à l’échelle de l’image à la moitié de sa taille d’origine :
+Une `SKMatrix` valeur est créée pour mettre à l’échelle l’image à la moitié de sa taille d’origine :
 
-[![Pierre mur](bitmap-tiling-images/StoneWall.png "Pierre mur")](bitmap-tiling-images/StoneWall-Large.png#lightbox)
+[![Mur en pierre](bitmap-tiling-images/StoneWall.png "Mur en pierre")](bitmap-tiling-images/StoneWall-Large.png#lightbox)
 
-La transformation fonctionne sur la bitmap d’origine utilisée dans le `CreateBitmap` méthode ? Ou il transforme le tableau résultant des vignettes ? 
+La transformation opère-t-elle sur la bitmap d’origine utilisée dans la `CreateBitmap` méthode ? Ou est-ce qu’elle transforme le tableau de vignettes résultant ? 
 
-Un moyen facile de répondre à cette question consiste à inclure une rotation dans le cadre de la transformation :
+Un moyen simple de répondre à cette question consiste à inclure une rotation dans le cadre de la transformation :
 
 ```csharp
 SKMatrix matrix = SKMatrix.MakeScale(0.5f, 0.5f);
 SKMatrix.PostConcat(ref matrix, SKMatrix.MakeRotationDegrees(15));
 ```
 
-Si la transformation est appliquée à la vignette individuelle, puis chaque image répétée de la vignette doit pivoter et le résultat contient parfois des discontinuités nombreux. Mais il est évident à partir de cette capture d’écran que le tableau composite des vignettes est transformé :
+Si la transformation est appliquée à la vignette individuelle, chaque image répétée de la vignette doit être pivotée, et le résultat contient de nombreuses discontinuités. Mais il est évident de cette capture d’écran que le tableau composite des vignettes est transformé :
 
-[![Pierre mur paysage](bitmap-tiling-images/StoneWallRotated.png "Pierre mur paysage")](bitmap-tiling-images/StoneWallRotated-Large.png#lightbox)
+[![Mur en pierres paysage](bitmap-tiling-images/StoneWallRotated.png "Mur en pierres paysage")](bitmap-tiling-images/StoneWallRotated-Large.png#lightbox)
 
-Dans la section [ **vignette alignement**](#tile-alignment), vous verrez un exemple appliqué au nuanceur de transformation de translation.
+Dans la section [**alignement**](#tile-alignment)de la mosaïque, vous verrez un exemple de transformation de traduction appliquée au nuanceur.
 
-La version autonome [ **Cat horloge** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/catclock) exemple (ne fait pas partie de **SkiaSharpFormsDemos**) simule un arrière-plan grain de bois à l’aide de la mosaïque de bitmap basée sur cette image bitmap de 240 pixels carrée :
+L’exemple d' [**horloge Cat**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/catclock) autonome (qui ne fait pas partie de **SkiaSharpFormsDemos**) simule un arrière-plan de grain de bois à l’aide d’une mosaïque de bitmap basée sur cette image bitmap carrée de 240 pixels :
 
-![Grain de bois](bitmap-tiling-images/WoodGrain.png "Grain de bois")
+![Grain grain](bitmap-tiling-images/WoodGrain.png "Grain grain")
 
-Il s’agit d’une photo d’un plancher bois. Le `SKShaderTileMode.Mirror` option permet de faire apparaître comme une plus grande zone du bois :
+Il s’agit d’une photographie d’un plancher en bois. L' `SKShaderTileMode.Mirror` option lui permet d’apparaître en tant que plus grande surface de bois :
 
-[![CAT horloge](bitmap-tiling-images/CatClock.png "Cat horloge")](bitmap-tiling-images/CatClock-Large.png#lightbox)
+[![Horloge CAT](bitmap-tiling-images/CatClock.png "Horloge CAT")](bitmap-tiling-images/CatClock-Large.png#lightbox)
 
-## <a name="tile-alignment"></a>Alignement de la vignette
+## <a name="tile-alignment"></a>Alignement des mosaïques
 
-Tous les exemples présentés jusqu'à présent ont utilisé le nuanceur créé par `SKShader.CreateBitmap` pour couvrir la totalité du canevas. Dans la plupart des cas, vous allez utiliser la mosaïque bitmap permettant de remplir des zones plus petites ou (plus rarement) pour remplir l’intérieur des lignes épaisses. Voici la vignette de mur de briques photo utilisée pour un rectangle plus petit :
+Tous les exemples présentés jusqu’à présent ont utilisé le nuanceur créé par `SKShader.CreateBitmap` pour couvrir la zone de dessin entière. Dans la plupart des cas, vous utiliserez la mosaïque de bitmaps pour déposer des zones plus petites ou (plus rarement) pour remplir l’intérieur des lignes épaisses. Voici la vignette brique briques-Wall utilisée pour un rectangle plus petit :
 
-[![Vignette alignement](bitmap-tiling-images/TileAlignment.png "vignette alignement")](bitmap-tiling-images/TileAlignment-Large.png#lightbox)
+[![Alignement des mosaïques](bitmap-tiling-images/TileAlignment.png "Alignement des mosaïques")](bitmap-tiling-images/TileAlignment-Large.png#lightbox)
 
-Cela peut se présenter correctement, ou peut-être pas. Peut-être que vous êtes dérangé que la mosaïque ne commence pas par une brique complète dans le coin supérieur gauche du rectangle. C’est parce que les nuanceurs sont alignés sur le canevas et pas l’objet de graphique qui ils orner.
+Cela peut vous sembler très bien, ou peut-être pas. Vous êtes peut-être dérangé que le modèle de mosaïque ne commence pas par une brique pleine dans le coin supérieur gauche du rectangle. Cela est dû au fait que les nuanceurs sont alignés avec le canevas et non l’objet graphique qu’ils ornent.
 
-La solution est simple. Créer un `SKMatrix` valeur basée sur une transformation de traduction. La transformation déplace le motif en mosaïque au point où vous souhaitez le coin supérieur gauche de la vignette à être alignée. Cette approche est illustrée dans le **vignette alignement** page, qui a créé l’image des vignettes non alignés ci-dessus :
+Le correctif est simple. Créer une `SKMatrix` valeur basée sur une transformation de traduction. La transformation décale efficacement le modèle en mosaïque jusqu’au point où vous souhaitez aligner l’angle supérieur gauche de la vignette. Cette approche est illustrée dans la page **alignement des vignettes** , qui a créé l’image des vignettes non alignées indiquées ci-dessus :
 
 ```csharp
 public class TileAlignmentPage : ContentPage
@@ -450,11 +453,11 @@ public class TileAlignmentPage : ContentPage
 }
 ```
 
-Le **vignette alignement** page inclut un `TapGestureRecognizer`. Appuyez ou cliquez sur l’écran et les commutateurs de programme pour le `SKShader.CreateBitmap` méthode avec un `SKMatrix` argument. Cette transformation décale le modèle afin que l’angle supérieur gauche contient une brique complète :
+La page alignement de la **mosaïque** comprend un `TapGestureRecognizer` . Appuyez ou cliquez sur l’écran, et le programme bascule vers la `SKShader.CreateBitmap` méthode avec un `SKMatrix` argument. Cette transformation décale le modèle de sorte que l’angle supérieur gauche contienne une brique pleine :
 
-[![Vignette alignement appuyé sur](bitmap-tiling-images/TileAlignmentTapped.png "vignette alignement activé par un clic")](bitmap-tiling-images/TileAlignmentTapped-Large.png#lightbox)
+[![Alignement des vignettes taraudé](bitmap-tiling-images/TileAlignmentTapped.png "Alignement des vignettes taraudé")](bitmap-tiling-images/TileAlignmentTapped-Large.png#lightbox)
 
-Vous pouvez également utiliser cette technique pour vous assurer que le modèle de bitmap en mosaïque est centré dans la zone il peint. Dans le **vignettes centré** page, le `PaintSurface` Gestionnaire calcule d’abord coordonnées comme s’il va afficher l’image bitmap unique dans le centre de la zone de dessin. Il utilise ensuite ces coordonnées pour créer une transformation de traduction pour `SKShader.CreateBitmap`. Cette transformation décale le modèle entier afin qu’une vignette est centrée :
+Vous pouvez également utiliser cette technique pour vous assurer que le modèle de bitmap en mosaïque est centré dans la zone qu’il peint. Dans la page des **vignettes centrées** , le `PaintSurface` Gestionnaire calcule d’abord les coordonnées comme s’il s’agissait d’afficher l’image bitmap unique au centre de la zone de dessin. Il utilise ensuite ces coordonnées pour créer une transformation de traduction pour `SKShader.CreateBitmap` . Cette transformation décale l’intégralité du modèle afin qu’une vignette soit centrée :
 
 ```csharp
 public class CenteredTilesPage : ContentPage
@@ -502,35 +505,35 @@ public class CenteredTilesPage : ContentPage
 }
 ```
 
-Le `PaintSurface` Gestionnaire conclut en dessinant un cercle dans le centre de la zone de dessin. Bien sûr, une des vignettes est exactement dans le centre du cercle, et les autres sont organisés dans un modèle symétrique :
+Le `PaintSurface` Gestionnaire se termine en dessinant un cercle au centre de la zone de dessin. Bien sûr, l’une des vignettes est exactement au centre du cercle et les autres sont organisées selon un modèle symétrique :
 
-[![Centré vignettes](bitmap-tiling-images/CenteredTiles.png "centré vignettes")](bitmap-tiling-images/CenteredTiles-Large.png#lightbox)
+[![Vignettes centrées](bitmap-tiling-images/CenteredTiles.png "Vignettes centrées")](bitmap-tiling-images/CenteredTiles-Large.png#lightbox)
 
-Une autre approche centrage est en fait un peu plus facile. Plutôt que de construire une transformation de traduction qui place une vignette dans le centre, vous pouvez centrer un coin du modèle en mosaïque. Dans le `SKMatrix.MakeTranslation` appeler, utilisez les arguments pour le centre de la zone de dessin :
+Une autre approche de centrage est en fait un peu plus simple. Au lieu de construire une transformation translate qui place une vignette au centre, vous pouvez centrer un angle du modèle en mosaïque. Dans l' `SKMatrix.MakeTranslation` appel, utilisez des arguments pour le centre de la zone de dessin :
 
 ```csharp
 SKMatrix matrix = SKMatrix.MakeTranslation(info.Rect.MidX, info.Rect.MidY);
 ```
 
-Le modèle est toujours centrée et symétriques, mais aucune vignette ne se trouve au centre :
+Le modèle est toujours centré et symétrique, mais aucune vignette n’est au centre :
 
-[![Centré vignettes autre](bitmap-tiling-images/CenteredTilesAlternate.png "centré vignettes de remplacement")](bitmap-tiling-images/CenteredTilesAlternate-Large.png#lightbox)
+[![Autres vignettes centrées](bitmap-tiling-images/CenteredTilesAlternate.png "Autres vignettes centrées")](bitmap-tiling-images/CenteredTilesAlternate-Large.png#lightbox)
 
-## <a name="simplification-through-rotation"></a>Simplification de rotation
+## <a name="simplification-through-rotation"></a>Simplification de la rotation
 
-Parfois, à l’aide d’une transformation de rotation dans le `SKShader.CreateBitmap` méthode peut simplifier la vignette de l’image bitmap. Cela devient évident lorsque vous tentez de définir une vignette pour une frontière de sécurité de liaison de chaîne. Le **ChainLinkTile.cs** fichier crée la vignette indiquée ici (avec un arrière-plan rose pour des raisons de clarté) :
+Parfois, l’utilisation d’une transformation de rotation dans la `SKShader.CreateBitmap` méthode peut simplifier la vignette bitmap. Cela devient évident lorsque vous tentez de définir une vignette pour une clôture de liaison de chaîne. Le fichier **ChainLinkTile.cs** crée la vignette illustrée ici (avec un arrière-plan rose à des fins de clarté) :
 
-![Vignette de chaîne par lien physique](bitmap-tiling-images/HardChainLinkTile.png "vignette de chaîne par lien physique")
+![Vignette de liaison de chaîne matérielle](bitmap-tiling-images/HardChainLinkTile.png "Vignette de liaison de chaîne matérielle")
 
-La vignette doit inclure deux liens, afin que le code divise la vignette en quatre quadrants. L’angle supérieur gauche et inférieur droit quadrants sont les mêmes, mais elles ne sont pas terminées. Les fils ont peu crans qui doivent être gérés avec certains dessin supplémentaires dans l’angle supérieur droit et inférieur gauche quadrants. Le fichier qui effectue tout ce travail est 174 lignes longues.
+La vignette doit inclure deux liens, de sorte que le code divise la vignette en quatre quadrants. Les quadrants supérieur gauche et inférieur droit sont identiques, mais ils ne sont pas complets. Les câbles ont quelques crans qui doivent être traités avec un dessin supplémentaire dans les quadrants supérieur droit et inférieur gauche. Le fichier qui effectue tout ce travail est 174 lignes.
 
-Il s’avère beaucoup plus facile à créer cette vignette :
+Il s’avère beaucoup plus facile de créer cette vignette :
 
-![Vignette de liaison de chaîne plus facile](bitmap-tiling-images/EasierChainLinkTile.png "vignette de liaison de chaîne plus facile")
+![Vignette de liaison de chaîne plus facile](bitmap-tiling-images/EasierChainLinkTile.png "Vignette de liaison de chaîne plus facile")
 
-Si le nuanceur de vignette de l’image bitmap est pivotée de 90 degrés, les éléments visuels sont presque identiques.
+Si le nuanceur de vignettes bitmap est pivoté de 90 degrés, les visuels sont quasiment identiques.
 
-Le code pour créer la vignette plus facile de lien de la chaîne fait partie de la **chaîne-lien vignette** page. Le constructeur détermine une taille de la mosaïque en fonction du type de périphérique que le programme est en cours d’exécution, puis appelle `CreateChainLinkTile`, qui dessine sur l’image bitmap à l’aide des lignes, des chemins d’accès et des nuanceurs de dégradé :
+Le code permettant de créer la vignette de liaison de chaîne plus facile fait partie de la page de **vignette de liaison de chaîne** . Le constructeur détermine une taille de vignette en fonction du type d’appareil sur lequel le programme s’exécute, puis appelle `CreateChainLinkTile` , qui dessine sur le bitmap à l’aide de lignes, de chemins d’accès et de nuanceurs de dégradé :
 
 ```csharp
 public class ChainLinkFencePage : ContentPage
@@ -618,7 +621,7 @@ public class ChainLinkFencePage : ContentPage
 }
 ```
 
-À l’exception des fils, la vignette est transparente, ce qui signifie que vous pouvez l’afficher sur autre chose. Le programme se charge dans une des ressources bitmap, affiche ce qu’il remplisse la zone de dessin, puis dessine le nuanceur en haut :
+À l’exception des câbles, la vignette est transparente, ce qui signifie que vous pouvez l’afficher au-dessus d’un autre élément. Le programme se charge dans l’une des ressources bitmap, l’affiche pour remplir le canevas, puis dessine le nuanceur en haut :
 
 ```csharp
 public class ChainLinkFencePage : ContentPage
@@ -650,17 +653,17 @@ public class ChainLinkFencePage : ContentPage
 }
 ```
 
-Notez que le nuanceur est pivoté de 45 degrés ; il est orienté comme une barrière de chaîne-lien réel :
+Notez que le nuanceur est pivoté de 45 degrés de manière à ce qu’il soit orienté comme une barrière de liaison de chaîne réelle :
 
-[![Délimitation de chaîne-lien](bitmap-tiling-images/ChainLinkFence.png "délimitation de chaîne-lien")](bitmap-tiling-images/ChainLinkFence-Large.png#lightbox)
+[![Limite de liaison de chaîne](bitmap-tiling-images/ChainLinkFence.png "Limite de liaison de chaîne")](bitmap-tiling-images/ChainLinkFence-Large.png#lightbox)
 
-## <a name="animating-bitmap-tiles"></a>Animation vignettes de bitmap
+## <a name="animating-bitmap-tiles"></a>Animer des vignettes de bitmap
 
-Vous pouvez animer un modèle de mosaïque de bitmap entière en animant la matrice de transformation. Vous pouvez choisir le modèle pour déplacer horizontalement ou verticalement, ou les deux. Que faire en créant une transformation de traduction basée sur les coordonnées de décalage.
+Vous pouvez animer l’intégralité d’un modèle de mosaïque bitmap en animant la transformation de matrice. Peut-être souhaitez-vous que le modèle se déplace horizontalement ou verticalement, ou les deux à la fois. Pour ce faire, vous pouvez créer une transformation de traduction basée sur les coordonnées de décalage.
 
-Il est également possible de dessiner sur un petit bitmap, ou à manipuler des bits de pixel de la bitmap à une fréquence de 60 fois par seconde. Ce bitmap peut ensuite être utilisé pour mosaïque et le motif en mosaïque entière peut sembler être animée. 
+Il est également possible de dessiner sur une petite image bitmap ou de manipuler les bits de pixel de la bitmap au taux de 60 fois par seconde. Cette bitmap peut ensuite être utilisée pour la mosaïque, et l’ensemble du modèle en mosaïque peut paraître animé. 
 
-Le **vignette de Bitmap animées** page illustre cette approche. Une image bitmap est instanciée en tant que champ soit 64-pixels carrés. Le constructeur appelle `DrawBitmap` pour lui donner une apparence initiale. Si le `angle` champ est égal à zéro (comme c’est lorsque la méthode est appelée tout d’abord), puis la bitmap contient deux lignes dépassés un X. Les lignes sont apportées suffisamment long pour atteindre toujours sur le bord de l’image bitmap, quel que soit le `angle` valeur : 
+La page de vignette de la **bitmap animée** illustre cette approche. Une image bitmap est instanciée en tant que champ pour atteindre un carré de 64 pixels. Le constructeur appelle `DrawBitmap` pour lui attribuer une apparence initiale. Si le `angle` champ est égal à zéro (comme c’est le cas lorsque la méthode est appelée pour la première fois), le bitmap contient deux lignes croisées comme un X. Les lignes sont suffisamment longues pour atteindre toujours le bord de l’image bitmap, quelle que soit la `angle` valeur : 
 
 ```csharp
 public class AnimatedBitmapTilePage : ContentPage
@@ -705,7 +708,7 @@ public class AnimatedBitmapTilePage : ContentPage
 }
 ```
 
-La surcharge de l’animation se produit dans le `OnAppearing` et `OnDisappearing` remplace. Le `OnTimerTick` méthode anime le `angle` une valeur de 0 degré à 360 degrés toutes les 10 secondes pour faire pivoter la figure X dans l’image bitmap :
+La surcharge d’animation se produit dans les `OnAppearing` `OnDisappearing` substitutions et. La `OnTimerTick` méthode anime la `angle` valeur de 0 degré à 360 degrés toutes les 10 secondes pour faire pivoter la figure X dans l’image bitmap :
 
 ```csharp
 public class AnimatedBitmapTilePage : ContentPage
@@ -746,9 +749,9 @@ public class AnimatedBitmapTilePage : ContentPage
 }
 ```
 
-En raison de la symétrie de la figure X, il est identique à la rotation de la `angle` valeur comprise entre 0 degrés et 90 degrés chaque 2,5 secondes.
+En raison de la symétrie de la figure X, cela revient à faire pivoter la `angle` valeur de 0 degré à 90 degrés toutes les 2,5 secondes.
 
-Le `PaintSurface` gestionnaire crée un nuanceur à partir de l’image bitmap et utilise l’objet de peinture pour la totalité du canevas de couleur :
+Le `PaintSurface` Gestionnaire crée un nuanceur à partir de l’image bitmap et utilise l’objet Paint pour colorer l’intégralité du canevas :
 
 ```csharp
 public class AnimatedBitmapTilePage : ContentPage
@@ -773,12 +776,12 @@ public class AnimatedBitmapTilePage : ContentPage
 }
 ```
 
-Le `SKShaderTileMode.Mirror` options garantissent que les branches de X dans chaque bitmap joindre avec un X dans les bitmaps adjacentes pour créer un motif animé globale qui semble beaucoup plus complexe que l’animation simple suggère :
+Les `SKShaderTileMode.Mirror` options permettent de s’assurer que les bras de la Croix (x) de chaque bitmap avec le x dans les bitmaps adjacentes pour créer un modèle animé global qui semble bien plus complexe que l’animation simple suggérerait :
 
-[![Animée Bitmap vignette](bitmap-tiling-images/AnimatedBitmapTile.png "animée de vignette de Bitmap")](bitmap-tiling-images/AnimatedBitmapTile-Large.png#lightbox)
+[![Vignette image animée](bitmap-tiling-images/AnimatedBitmapTile.png "Vignette image animée")](bitmap-tiling-images/AnimatedBitmapTile-Large.png#lightbox)
 
 ## <a name="related-links"></a>Liens connexes
 
-- [API de SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
+- [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 - [CatClock (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/catclock)

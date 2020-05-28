@@ -1,18 +1,11 @@
 ---
-title: 'Xamarin.Essentials : gyroscope'
-description: La classe Gyroscope de Xamarin.Essentials vous permet de superviser le capteur gyroscopique de l’appareil, qui mesure la rotation autour des trois axes principaux de l’appareil.
-ms.assetid: DA4F968A-D988-41F5-8745-1BEE693660A1
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: 1e19585e238d66568364be7ccdbdb52d22b04066
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "61259487"
+titre : « » Xamarin.Essentials : gyroscope « » Description : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
 ---
-# <a name="xamarinessentials-gyroscope"></a>Xamarin.Essentials : gyroscope
+
+# <a name="xamarinessentials-gyroscope"></a>Xamarin.Essentials: Gyroscope
 
 La classe **Gyroscope** vous permet de superviser le capteur gyroscopique de l’appareil, qui mesure la rotation autour des trois axes principaux de l’appareil.
 

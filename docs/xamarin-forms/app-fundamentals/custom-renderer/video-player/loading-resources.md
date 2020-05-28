@@ -1,22 +1,25 @@
 ---
-title: Chargement de vidéos de ressource d’application
-description: Cet article explique comment charger des vidéos stockées comme ressources d’application dans une application de lecteur vidéo à l’aide de Xamarin.Forms.
-ms.prod: xamarin
-ms.assetid: F75BD540-9354-4C17-A119-57F3DEC66D54
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 02/12/2018
-ms.openlocfilehash: 4573d58f80b9c168f5d0a8a3f72beb64c29b1703
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: Cet article explique comment charger des vidéos stockées en tant que ressources d’application dans une application de lecteur vidéo à l’aide de Xamarin.Forms .
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 472c6c2a7c5a084520aee6b8ae160d9329c3f593
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70771838"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84133761"
 ---
 # <a name="loading-application-resource-videos"></a>Chargement de vidéos de ressource d’application
 
-[![Télécharger](~/media/shared/download.png) l’échantillon Télécharger l’échantillon](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
 Les renderers personnalisés pour l’affichage `VideoPlayer` sont capables de lire des fichiers vidéo qui ont été incorporés dans les projets de plateforme individuels en tant que ressources d’application. Toutefois, la version actuelle de `VideoPlayer` ne peut pas accéder aux ressources incorporées dans une bibliothèque .NET Standard.
 
@@ -177,7 +180,7 @@ Si la ressource iOS est stockée dans le dossier **Resources** et si la ressourc
 
 Voici cette page en cours d’exécution :
 
-[![Lire Video Resource](loading-resources-images/playvideoresource-small.png "Lire Video Resource")](loading-resources-images/playvideoresource-large.png#lightbox "Lire Video Resource")
+[![Lire la ressource vidéo](loading-resources-images/playvideoresource-small.png "Lire la ressource vidéo")](loading-resources-images/playvideoresource-large.png#lightbox "Lire la ressource vidéo")
 
 Vous avez maintenant vu comment [charger des vidéos à partir d’un URI web](web-videos.md) et comment lire des ressources incorporées. En outre, vous pouvez [charger des vidéos à partir de la vidéothèque de l’appareil](accessing-library.md).
 

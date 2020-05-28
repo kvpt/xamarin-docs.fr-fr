@@ -1,25 +1,28 @@
 ---
-title: Liaisons de base Xamarin.Forms
-description: Cet article explique comment utiliser une liaison de données Xamarin.Forms, qui lie une paire de propriétés entre deux objets, dont au moins un est généralement un objet d’interface utilisateur. Ces deux objets sont appelés la cible et la source.
-ms.prod: xamarin
-ms.assetid: 96553DF7-12EA-4FB2-AE85-3D1D59382B40
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/22/2019
-ms.custom: video
-ms.openlocfilehash: 2227e2bd47a5b4960d28be67bac7947a4fb57a93
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: Xamarin.FormsLiaisons de base
+description: Cet article explique comment utiliser la Xamarin.Forms liaison de données, qui lie une paire de propriétés entre deux objets, au moins un objet d’interface utilisateur. Ces deux objets sont appelés la cible et la source.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.custom: ''
+ms.openlocfilehash: c0c6bc6e1005997548952aedc09cd83a451e7caa
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79305037"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84133534"
 ---
-# <a name="xamarinforms-basic-bindings"></a>Liaisons de base Xamarin.Forms
+# <a name="xamarinforms-basic-bindings"></a>Xamarin.FormsLiaisons de base
 
-[![Télécharger](~/media/shared/download.png) l’échantillon Télécharger l’échantillon](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
-Une liaison de données Xamarin.Forms lie une paire de propriétés entre deux objets, dont au moins un est généralement un objet d’interface utilisateur. Ces deux objets sont appelés la *cible* et la *source* :
+Une Xamarin.Forms liaison de données lie une paire de propriétés entre deux objets, au moins l’un d’eux est généralement un objet d’interface utilisateur. Ces deux objets sont appelés la *cible* et la *source* :
 
 - La *cible* est l’objet (et la propriété) sur lequel la liaison de données est définie.
 - La *source* est l’objet (et la propriété) référencé par la liaison de données.
@@ -53,14 +56,14 @@ L’élément `Slider` est défini pour une plage de 0 à 360. L’objectif de
 
 Sans liaisons de données, vous devez définir l’événement `ValueChanged` de l’élément `Slider` sur un gestionnaire d’événements qui accède à la propriété `Value` de l’élément `Slider` et définit cette valeur sur la propriété `Rotation` de l’objet `Label`. La liaison de données automatise ce travail ; le gestionnaire d’événements et le code qu’il contient ne sont plus nécessaires.
 
-Vous pouvez définir une liaison sur une instance [`BindableObject`](xref:Xamarin.Forms.BindableObject)de `Element`n’importe quelle classe qui dérive de , qui comprend , `VisualElement`, `View`, et `View` les dérivés.  La liaison est toujours définie sur l’objet cible. La liaison fait référence à l’objet source. Pour définir la liaison de données, utilisez les deux membres suivants de la classe cible :
+Vous pouvez définir une liaison sur une instance de toute classe qui dérive de [`BindableObject`](xref:Xamarin.Forms.BindableObject) , y compris `Element` les `VisualElement` dérivés,, `View` et `View` .  La liaison est toujours définie sur l’objet cible. La liaison fait référence à l’objet source. Pour définir la liaison de données, utilisez les deux membres suivants de la classe cible :
 
 - La [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) propriété spécifie l’objet source.
-- La [`SetBinding`](xref:Xamarin.Forms.BindableObject.SetBinding(Xamarin.Forms.BindableProperty,Xamarin.Forms.BindingBase)) méthode spécifie la propriété cible et la propriété source.
+- [ `SetBinding` ] (XREF : Xamarin.Forms . BindableObject. SetBinding ( Xamarin.Forms . BindableProperty, Xamarin.Forms . BindingBase)) spécifie la propriété cible et la propriété source.
 
 Dans cet exemple, l’objet `Label` est la cible de la liaison et l’élément `Slider` en est la source. Des modifications dans l’élément `Slider` source affectent la rotation de l’objet `Label` cible. Les données circulent de la source vers la cible.
 
-La `SetBinding` méthode `BindableObject` définie par a [`BindingBase`](xref:Xamarin.Forms.BindingBase) un [`Binding`](xref:Xamarin.Forms.Binding) argument de type à `SetBinding` partir duquel [`BindableObjectExtensions`](xref:Xamarin.Forms.BindableObjectExtensions) la classe dérive, mais il existe d’autres méthodes définies par la classe. Le fichier code-behind dans l’exemple **Basic Code Binding** utilise une méthode d’extension [`SetBinding`](xref:Xamarin.Forms.BindableObjectExtensions.SetBinding*) plus simple à partir de cette classe.
+La `SetBinding` méthode définie par `BindableObject` a un argument de type [`BindingBase`](xref:Xamarin.Forms.BindingBase) dont la [`Binding`](xref:Xamarin.Forms.Binding) classe est dérivée, mais il existe d’autres `SetBinding` méthodes définies par la [`BindableObjectExtensions`](xref:Xamarin.Forms.BindableObjectExtensions) classe. Le fichier code-behind dans l’exemple **Basic Code Binding** utilise une méthode d’extension [`SetBinding`](xref:Xamarin.Forms.BindableObjectExtensions.SetBinding*) plus simple à partir de cette classe.
 
 ```csharp
 public partial class BasicCodeBindingPage : ContentPage
@@ -97,7 +100,7 @@ Toutefois, inclure le nom de classe permet de se rappeler de l’objet cible.
 
 Lorsque vous manipulez l’objet `Slider`, l’objet `Label` pivote en conséquence :
 
-[![Obligation de code de base](basic-bindings-images/basiccodebinding-small.png "Obligation de code de base")](basic-bindings-images/basiccodebinding-large.png#lightbox "Obligation de code de base")
+[![Liaison de code de base](basic-bindings-images/basiccodebinding-small.png "Liaison de code de base")](basic-bindings-images/basiccodebinding-large.png#lightbox "Liaison de code de base")
 
 La page **Basic Xaml Binding** (Liaison Xaml de base) est identique à la page **Basic Code Binding**, si ce n’est qu’elle définit la liaison de données entière en XAML :
 
@@ -126,7 +129,7 @@ Comme dans le code, la liaison de données est définie sur l’objet cible, qui
 - L’extension de balisage `x:Reference` est nécessaire pour référencer l’objet source, qui est l’objet `Slider` nommé `slider`.
 - L’extension de balisage `Binding` lie la propriété `Rotation` de l’objet `Label` à la propriété `Value` de l’élément `Slider`.
 
-Pour plus d’informations sur les extensions de balisage XAML, consultez l’article [Extensions de balisage XAML](~/xamarin-forms/xaml/markup-extensions/index.md). L’extension `x:Reference` de balisage est soutenue par la [`ReferenceExtension`](xref:Xamarin.Forms.Xaml.ReferenceExtension) classe; `Binding` est soutenu [`BindingExtension`](xref:Xamarin.Forms.Xaml.BindingExtension) par la classe. Comme l’indiquent les préfixes d’espace de noms XML, `x:Reference` fait partie de la spécification XAML 2009, tandis que `Binding` fait partie de Xamarin.Forms. Notez qu’aucun guillemet n’apparaît entre les accolades.
+Pour plus d’informations sur les extensions de balisage XAML, consultez l’article [Extensions de balisage XAML](~/xamarin-forms/xaml/markup-extensions/index.md). L' `x:Reference` extension de balisage est prise en charge par la [`ReferenceExtension`](xref:Xamarin.Forms.Xaml.ReferenceExtension) classe ; `Binding` est pris en charge par la [`BindingExtension`](xref:Xamarin.Forms.Xaml.BindingExtension) classe. À mesure que les préfixes d’espaces de noms XML indiquent, `x:Reference` fait partie de la spécification XAML 2009, tandis que `Binding` fait partie de Xamarin.Forms . Notez qu’aucun guillemet n’apparaît entre les accolades.
 
 Il est facile d’oublier l’extension de balisage `x:Reference` lors de la définition de `BindingContext`. Il est courant de définir par inadvertance la propriété directement sur le nom de la source de la liaison, comme suit :
 
@@ -136,7 +139,7 @@ BindingContext="slider"
 
 Mais ce n'est pas correct. Ce balisage définit la propriété `BindingContext` sur un objet `string` dont les caractères forment le mot « slider ».
 
-Notez que la propriété [`Path`](xref:Xamarin.Forms.Xaml.BindingExtension.Path) source `BindingExtension`est spécifiée avec [`Path`](xref:Xamarin.Forms.Binding.Path) la [`Binding`](xref:Xamarin.Forms.Binding) propriété de , qui correspond à la propriété de la classe.
+Notez que la propriété source est spécifiée avec la [`Path`](xref:Xamarin.Forms.Xaml.BindingExtension.Path) propriété de `BindingExtension` , qui correspond à la [`Path`](xref:Xamarin.Forms.Binding.Path) propriété de la [`Binding`](xref:Xamarin.Forms.Binding) classe.
 
 Le balisage affiché dans la page **Basic XAML Binding** peut être simplifié : les extensions de balisage XAML telles que `x:Reference` et `Binding` peuvent avoir des attributs de *propriété de contenu* définis, ce qui signifie pour des extensions de balisage XAML que le nom de propriété n’a pas besoin d’apparaître. La propriété `Name` est la propriété de contenu de `x:Reference` et la propriété `Path` est la propriété de contenu de `Binding`, ce qui signifie que vous pouvez les éliminer des expressions :
 
@@ -175,7 +178,7 @@ Cela est illustré dans l’exemple **Alternative Code Binding** (Liaison de cod
 </ContentPage>
 ```
 
-Le fichier de code-derrière [`SetBinding`](xref:Xamarin.Forms.BindableObject.SetBinding(Xamarin.Forms.BindableProperty,Xamarin.Forms.BindingBase)) définit la `BindableObject`liaison avec la méthode définie par . L’argument est un [constructeur](xref:Xamarin.Forms.Binding.%23ctor(System.String,Xamarin.Forms.BindingMode,Xamarin.Forms.IValueConverter,System.Object,System.String,System.Object)) pour la classe [`Binding`](xref:Xamarin.Forms.Binding) :
+Le fichier code-behind définit la liaison avec le [ `SetBinding` ] (XREF : Xamarin.Forms . BindableObject. SetBinding ( Xamarin.Forms . BindableProperty, Xamarin.Forms . BindingBase)) définie par `BindableObject` . L’argument est un [constructeur] (XREF : Xamarin.Forms . Liaison .% 23ctor (System. String, Xamarin.Forms . BindingMode, Xamarin.Forms . IValueConverter, System. Object, System. String, System. Object) pour la [`Binding`](xref:Xamarin.Forms.Binding) classe :
 
 ```csharp
 public partial class AlternativeCodeBindingPage : ContentPage
@@ -193,16 +196,16 @@ Le constructeur `Binding` possède 6 paramètres, si bien que le paramètre `so
 
 L’exécution de ce programme peut être quelque peu surprenante :
 
-[![Liaison de code alternatif](basic-bindings-images/alternativecodebinding-small.png "Liaison de code alternatif")](basic-bindings-images/alternativecodebinding-large.png#lightbox "Liaison de code alternatif")
+[![Autre liaison de code](basic-bindings-images/alternativecodebinding-small.png "Autre liaison de code")](basic-bindings-images/alternativecodebinding-large.png#lightbox "Autre liaison de code")
 
 L’écran iOS de gauche montre à quoi ressemble l’écran lorsque la page apparaît initialement. Où est l’objet `Label` ?
 
-Le problème est que l’élément `Slider` a une valeur initiale de 0. Par conséquent, la propriété `Scale` de l’objet `Label` est également définie sur 0, ce qui remplace sa valeur par défaut 1. Il en résulte que l’objet `Label` est initialement invisible. Comme le montre la capture d’écran Android, vous pouvez manipuler le `Slider` pour faire apparaître `Label` à nouveau, mais sa disparition initiale est déconcertante.
+Le problème est que l’élément `Slider` a une valeur initiale de 0. Par conséquent, la propriété `Scale` de l’objet `Label` est également définie sur 0, ce qui remplace sa valeur par défaut 1. Il en résulte que l’objet `Label` est initialement invisible. Comme le montre la capture d’écran Android, vous pouvez manipuler le `Slider` pour que le `Label` s’affiche à nouveau, mais sa disparition initiale est la déconcertation.
 
 Vous découvrirez dans le [prochain article](binding-mode.md) comment éviter ce problème en initialisant l’élément `Slider` à partir de la valeur par défaut de la propriété `Scale`.
 
 > [!NOTE]
-> La [`VisualElement`](xref:Xamarin.Forms.VisualElement) classe définit [`ScaleX`](xref:Xamarin.Forms.VisualElement.ScaleX) [`ScaleY`](xref:Xamarin.Forms.VisualElement.ScaleY) également et les `VisualElement` propriétés, qui peuvent évoluer différemment dans les directions horizontales et verticales.
+> La [`VisualElement`](xref:Xamarin.Forms.VisualElement) classe définit également [`ScaleX`](xref:Xamarin.Forms.VisualElement.ScaleX) les [`ScaleY`](xref:Xamarin.Forms.VisualElement.ScaleY) Propriétés et, qui peuvent être mises à l’échelle `VisualElement` différemment dans les directions horizontale et verticale.
 
 La page **Alternative XAML Binding** (Liaison XAML alternative) illustre une liaison équivalente entièrement en XAML :
 
@@ -332,7 +335,7 @@ Dans le [prochain article](binding-mode.md), vous verrez comment le *mode de lia
 ## <a name="related-links"></a>Liens connexes
 
 - [Démonstrations de liaison de données (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
-- [Chapitre sur les liaisons de données dans la documentation de Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
+- [Chapitre sur la liaison de données à partir de Xamarin.Forms Book](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
 
 ## <a name="related-video"></a>Vidéo associée
 

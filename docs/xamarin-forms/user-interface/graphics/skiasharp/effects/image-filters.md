@@ -1,34 +1,37 @@
 ---
-title: Filtres d’image SkiaSharp
-description: Découvrez comment utiliser le filtre d’image pour créer un flou et supprimer des ombres.
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: 173E7B22-AEC8-4F12-B657-1C0CEE01AD63
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/27/2018
-ms.openlocfilehash: f93f0462d476daaaa551833391b1be1865795476
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+title: ''
+description: ''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: eedbca080fce9f3001a7b1e2358845fd63c6121b
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770534"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136342"
 ---
 # <a name="skiasharp-image-filters"></a>Filtres d’image SkiaSharp
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-Les filtres d’image sont des effets qui fonctionnent sur tous les bits de couleur des pixels qui composent une image. Ils sont plus polyvalents que les filtres de masque, qui fonctionnent uniquement sur le canal alpha comme décrit dans l’article [ **filtres de masque de SkiaSharp**](mask-filters.md). Pour utiliser un filtre d’image, définissez la [ `ImageFilter` ](xref:SkiaSharp.SKPaint.ImageFilter) propriété du `SKPaint` à un objet de type [ `SKImageFilter` ](xref:SkiaSharp.SKImageFilter) que vous avez créé en appelant une des méthodes statiques de la classe.
+Les filtres d’images sont des effets qui fonctionnent sur tous les bits de couleur des pixels qui composent une image. Ils sont plus polyvalents que les filtres de masque, qui fonctionnent uniquement sur le canal alpha comme décrit dans l’article [**filtres de masque SkiaSharp**](mask-filters.md). Pour utiliser un filtre d’image, affectez à la propriété de la valeur d' [`ImageFilter`](xref:SkiaSharp.SKPaint.ImageFilter) `SKPaint` un objet de type [`SKImageFilter`](xref:SkiaSharp.SKImageFilter) que vous avez créé en appelant l’une des méthodes statiques de la classe.
 
-La meilleure façon de vous familiariser avec les filtres de masque est en expérimentant de ces méthodes statiques. Vous pouvez utiliser un filtre de masque de flou d’une image bitmap entière :
+La meilleure façon de se familiariser avec les filtres de masque consiste à expérimenter ces méthodes statiques. Vous pouvez utiliser un filtre de masque pour brouiller l’intégralité d’une image bitmap :
 
-![Exemple de flou](image-filters-images/ImageFilterExample.png "flou exemple")
+![Exemple de flou](image-filters-images/ImageFilterExample.png "Exemple de flou")
 
-Cet article montre également à l’aide d’un filtre d’image pour créer un dépôt clichés instantanés et de relief et de la gravure des effets.
+Cet article montre également comment utiliser un filtre d’image pour créer une ombre portée et pour les effets de relief et de gravure.
 
 ## <a name="blurring-vector-graphics-and-bitmaps"></a>Flou des graphiques vectoriels et des bitmaps
 
-L’effet de flou créé par [`SKImageFilter.CreateBlur`](xref:SkiaSharp.SKImageFilter.CreateBlur*) la méthode statique présente un avantage significatif par rapport aux méthodes de [`SKMaskFilter`](xref:SkiaSharp.SKMaskFilter) flou de la classe : Le filtre d’image peut rendre floue l’intégralité d’une bitmap. La méthode a la syntaxe suivante :
+L’effet de flou créé par la [`SKImageFilter.CreateBlur`](xref:SkiaSharp.SKImageFilter.CreateBlur*) méthode statique présente un avantage significatif par rapport aux méthodes de flou de la [`SKMaskFilter`](xref:SkiaSharp.SKMaskFilter) classe : le filtre d’image peut rendre floue l’intégralité d’une bitmap. La méthode a la syntaxe suivante :
 
 ```csharp
 public static SkiaSharp.SKImageFilter CreateBlur (float sigmaX, float sigmaY,
@@ -36,9 +39,9 @@ public static SkiaSharp.SKImageFilter CreateBlur (float sigmaX, float sigmaY,
                                                   SKImageFilter.CropRect cropRect = null);
 ```
 
-La méthode a deux valeurs sigma &mdash; la première pour l’étendue de flou dans la direction horizontale et le second pour la direction verticale. Vous pouvez en cascade les filtres d’image en spécifiant un autre filtre d’image comme troisième argument facultatif. Un rectangle de rognage peut également être spécifié.
+La méthode a deux valeurs Sigma &mdash; la première pour l’étendue floue dans la direction horizontale et la seconde pour la direction verticale. Vous pouvez monter en cascade des filtres d’images en spécifiant un autre filtre d’image comme troisième argument facultatif. Un rectangle de rognage peut également être spécifié.
 
-Le **Image flou expérimenter** page dans le [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) inclut deux `Slider` vues qui vous permettent de faire des essais avec différents niveaux de flou de paramètre :
+La page **expérience d’image floue** dans le [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) comprend deux `Slider` vues qui vous permettent d’expérimenter la définition de différents niveaux de flou :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -75,7 +78,7 @@ Le **Image flou expérimenter** page dans le [ **SkiaSharpFormsDemos** ](https:/
 </ContentPage>
 ```
 
-Le fichier code-behind utilise les deux `Slider` valeurs appeler `SKImageFilter.CreateBlur` pour le `SKPaint` objet utilisé pour afficher du texte et une image bitmap :
+Le fichier code-behind utilise les deux `Slider` valeurs pour appeler `SKImageFilter.CreateBlur` pour l' `SKPaint` objet utilisé pour afficher à la fois le texte et une bitmap :
 
 ```csharp
 public partial class ImageBlurExperimentPage : ContentPage
@@ -135,15 +138,15 @@ public partial class ImageBlurExperimentPage : ContentPage
 }
 ```
 
-Les trois captures d’écran affichent les différents paramètres pour le `sigmaX` et `sigmaY` paramètres :
+Les trois captures d’écran affichent différents paramètres pour les `sigmaX` `sigmaY` paramètres et :
 
-[![Expérience de flou de l’image](image-filters-images/ImageBlurExperiment.png "expérience de flou de l’Image")](image-filters-images/ImageBlurExperiment-Large.png#lightbox)
+[![Expérience d’image floue](image-filters-images/ImageBlurExperiment.png "Expérience d’image floue")](image-filters-images/ImageBlurExperiment-Large.png#lightbox)
 
-Pour garantir la cohérence entre les différentes tailles d’affichage et les résolutions de l’effet de flou, définissez `sigmaX` et `sigmaY` aux valeurs qui soient proportionnelles à la taille en pixels de rendu de l’image appliquée à l’effet de flou.
+Pour garantir la cohérence du flou parmi les différentes tailles et résolutions d’affichage, définissez `sigmaX` et `sigmaY` sur des valeurs proportionnelles à la taille de pixel rendue de l’image à laquelle le flou est appliqué.
 
 ## <a name="drop-shadow"></a>Ombre portée
 
-Le [ `SKImageFilter.CreateDropShadow` ](xref:SkiaSharp.SKImageFilter.CreateDropShadow*) méthode statique crée une `SKImageFilter` objet pour une ombre portée :
+La [`SKImageFilter.CreateDropShadow`](xref:SkiaSharp.SKImageFilter.CreateDropShadow*) méthode statique crée un `SKImageFilter` objet pour une ombre portée :
 
 ```csharp
 public static SKImageFilter CreateDropShadow (float dx, float dy,
@@ -154,17 +157,17 @@ public static SKImageFilter CreateDropShadow (float dx, float dy,
                                               SKImageFilter.CropRect cropRect = null);
 ```
 
-Cet objet de la valeur la `ImageFilter` propriété d’un `SKPaint` objet et tout ce que vous dessinez avec cet objet a une ombre derrière lui.
+Définissez cet objet sur la `ImageFilter` propriété d’un `SKPaint` objet, et tout ce que vous dessinez avec cet objet aura une ombre portée derrière.
 
-Le `dx` et `dy` paramètres indiquent les décalages horizontales et verticales de l’ombre en pixels à partir de l’objet graphique. La convention dans les graphiques 2D est de supposer une source de lumière provenant de la partie supérieure gauche, ce qui implique que ces deux arguments doivent être positives pour positionner l’ombre en dessous et à droite de l’objet graphique.
+Les `dx` `dy` paramètres et indiquent les décalages horizontal et vertical, en pixels, par rapport à l’objet graphique. La Convention dans les graphiques 2D consiste à supposer qu’une source de lumière provient du coin supérieur gauche, ce qui signifie que ces deux arguments doivent être positifs pour positionner l’ombre ci-dessous et à droite de l’objet graphique.
 
-Le `sigmaX` et `sigmaY` paramètres sont estompent facteurs pour l’ombre portée.
+Les `sigmaX` `sigmaY` paramètres et sont des facteurs d’atténuation pour l’ombre portée.
 
-Le `color` paramètre est la couleur de l’ombre. Cela `SKColor` valeur peut inclure la transparence. Une des possibilités est la valeur de couleur `SKColors.Black.WithAlpha(0x80)` pour assombrir toute couleur d’arrière-plan.
+Le `color` paramètre est la couleur de l’ombre portée. Cette `SKColor` valeur peut inclure la transparence. L’une des possibilités est la valeur `SKColors.Black.WithAlpha(0x80)` de couleur pour assombrir n’importe quel arrière-plan de couleur.
 
 Les deux derniers paramètres sont facultatifs.
 
-Le **expérimenter de clichés instantanés Drop** programme vous permet de vous faire des essais avec des valeurs de `dx`, `dy`, `sigmaX`, et `sigmaY` pour afficher une chaîne de texte avec une ombre portée. Le fichier XAML instancie quatre `Slider` vues pour définir ces valeurs :
+Le programme d' **expérimentation fantôme** vous permet d’expérimenter les valeurs de `dx` , `dy` , `sigmaX` et `sigmaY` d’afficher une chaîne de texte avec une ombre portée. Le fichier XAML instancie quatre `Slider` vues pour définir ces valeurs :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -224,7 +227,7 @@ Le **expérimenter de clichés instantanés Drop** programme vous permet de vous
 </ContentPage>
 ```
 
-Le fichier code-behind utilise ces valeurs pour créer une ombre rouge sur une chaîne de texte en bleu :
+Le fichier code-behind utilise ces valeurs pour créer une ombre rouge sur une chaîne de texte bleue :
 
 ```csharp
 public partial class DropShadowExperimentPage : ContentPage
@@ -283,13 +286,13 @@ public partial class DropShadowExperimentPage : ContentPage
 
 Voici le programme en cours d’exécution :
 
-[![Supprimer l’expérience de clichés instantanés](image-filters-images/DropShadowExperiment.png "supprimer l’expérience de clichés instantanés")](image-filters-images/DropShadowExperiment-Large.png#lightbox)
+[![Expérience fantôme](image-filters-images/DropShadowExperiment.png "Expérience fantôme")](image-filters-images/DropShadowExperiment-Large.png#lightbox)
 
-Les valeurs de décalage négatif dans la capture d’écran de la plateforme Windows universelle à l’extrême droite provoquent l’ombre à apparaissent au-dessus et à gauche du texte. Cela suggère une source de lumière dans le coin inférieur droit, ce qui n’est pas la convention pour les graphiques de l’ordinateur. Mais il ne semble incorrect de quelque façon, peut-être parce que l’ombre est également très floue et semble plus fins esthétiques que la plupart des ombres.
+Les valeurs de décalage négatives dans la capture d’écran plateforme Windows universelle à l’extrême droite font apparaître l’ombre au-dessus et à gauche du texte. Cela suggère une source de lumière dans le coin inférieur droit, qui n’est pas la Convention pour les graphiques informatiques. Mais cela ne semble pas être erroné, peut-être parce que l’ombre est également rendue très floue et semble plus décoratif que la plupart des ombres portées.
 
 ## <a name="lighting-effects"></a>Effets d’éclairage
 
-Le `SKImageFilter` classe définit six méthodes qui ont des noms similaires et des paramètres, répertoriés par ordre croissant de complexité :
+La `SKImageFilter` classe définit six méthodes qui ont des noms et des paramètres similaires, répertoriés ici par ordre de complexité croissante :
 
 - [`CreateDistantLitDiffuse`](xref:SkiaSharp.SKImageFilter.CreateDistantLitDiffuse*)
 - [`CreateDistantLitSpecular`](xref:SkiaSharp.SKImageFilter.CreateDistantLitSpecular*)
@@ -298,13 +301,13 @@ Le `SKImageFilter` classe définit six méthodes qui ont des noms similaires et 
 - [`CreateSpotLitDiffuse`](xref:SkiaSharp.SKImageFilter.CreateSpotLitDiffuse*)
 - [`CreateSpotLitSpecular`](xref:SkiaSharp.SKImageFilter.CreateSpotLitSpecular*)
 
-Ces méthodes créent des filtres d’image qui simulent l’effet de différents types de lumière sur les surfaces en trois dimensions. Le filtre d’image résultante éclaire les objets à deux dimensions comme si elles existaient dans l’espace 3D, ce qui peut entraîner ces objets s’affiche avec élévation de privilèges ou en retrait, ou avec la mise en surbrillance spéculaire.
+Ces méthodes créent des filtres d’image qui imitent l’effet de différents types de lumière sur des surfaces en trois dimensions. Le filtre d’images qui en résulte éclaire les objets à deux dimensions comme s’ils existaient dans l’espace 3D, ce qui peut entraîner l’affichage de ces objets avec élévation de privilèges ou mise en surbrillance, ou avec une mise en surbrillance spéculaire.
 
-Le `Distant` claires méthodes supposent que la lumière provient d’une distance lointain. Pour les besoins d’éclairage d’objets, la lumière est supposée à un point dans une direction cohérente dans l’espace 3D, comme le soleil sur une petite zone de la terre. Le `Point` méthodes claires imitent une ampoule positionnée dans l’espace 3D qui émet de la lumière dans toutes les directions. Le `Spot` light a une position et une direction, comme une torche.
+Les `Distant` méthodes légères supposent que la lumière vient d’une distance éloignée. Dans le cadre de l’éclairage des objets, la lumière est supposée pointer dans une direction cohérente dans l’espace 3D, à l’instar du soleil sur une petite zone de la terre. Les `Point` méthodes légères imitent une ampoule placée dans l’espace 3D qui émet de la lumière dans toutes les directions. La `Spot` lumière a à la fois une position et une direction, en grande partie comme une torche.
 
-Sens dans l’espace 3D et les emplacements sont spécifiés avec des valeurs de la [ `SKPoint3` ](xref:SkiaSharp.SKPoint3) structure, ce qui revient à `SKPoint` mais avec trois propriétés nommées `X`, `Y`, et `Z`.
+Les emplacements et les directions dans l’espace 3D sont spécifiés avec les valeurs de la [`SKPoint3`](xref:SkiaSharp.SKPoint3) structure, ce qui est similaire à, `SKPoint` mais avec trois propriétés nommées `X` , `Y` et `Z` .
 
-Le nombre et la complexité des paramètres à ces méthodes compliquent l’expérimentation avec eux. Pour vous aider à démarrer, le **expérimenter de lumière distante** page vous permet de vous faire des essais avec des paramètres pour le `CreateDistantLightDiffuse` méthode :
+Le nombre et la complexité des paramètres de ces méthodes rendent l’expérimentation difficile. Pour vous aider à démarrer, la page d' **expérimentation légère distante** vous permet d’expérimenter les paramètres de la `CreateDistantLightDiffuse` méthode :
 
 ```csharp
 public static SKImageFilter CreateDistantLitDiffuse (SKPoint3 direction,
@@ -317,7 +320,7 @@ public static SKImageFilter CreateDistantLitDiffuse (SKPoint3 direction,
 
 La page n’utilise pas les deux derniers paramètres facultatifs.
 
-Trois `Slider` vues dans le XAML de fichiers permettent de sélectionner le `Z` coordonnée de la `SKPoint3` valeur, le `surfaceScale` paramètre et le `kd` paramètre, qui est défini dans la documentation de l’API en tant que la constante « éclairage diffus » :
+Trois `Slider` vues du fichier XAML vous permettent de sélectionner la `Z` coordonnée de la `SKPoint3` valeur, le `surfaceScale` paramètre et le `kd` paramètre, qui est défini dans la documentation de l’API comme « constante d’éclairage diffuse » :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -368,7 +371,7 @@ Trois `Slider` vues dans le XAML de fichiers permettent de sélectionner le `Z` 
 </ContentPage>
 ```
 
-Le fichier code-behind obtient ces trois valeurs et les utilise pour créer un filtre d’image pour afficher une chaîne de texte :
+Le fichier code-behind obtient ces trois valeurs et les utilise pour créer un filtre d’images pour afficher une chaîne de texte :
 
 ```csharp
 public partial class DistantLightExperimentPage : ContentPage
@@ -426,21 +429,21 @@ public partial class DistantLightExperimentPage : ContentPage
 }
 ```
 
-Le premier argument de `SKImageFilter.CreateDistantLitDiffuse` est la direction de la lumière. Positif X et Y coordonnées indiquent que la lumière est pointe vers la droite et vers le bas. Point de coordonnées Z positif dans l’écran. Le fichier XAML vous permet de sélectionner des valeurs Z négatives, mais ce n’est que pour vous permettre de voir ce qui se passe : Conceptuellement, les coordonnées Z négatives provoquent le pointage de la lumière hors de l’écran. Pour tout autres puis petites valeurs négatives, l’effet d’éclairage cesse de fonctionner.
+Le premier argument de `SKImageFilter.CreateDistantLitDiffuse` est la direction de la lumière. Les coordonnées X et Y positives indiquent que la lumière est pointée vers la droite et vers le dessous. Les coordonnées Z positives pointent sur l’écran. Le fichier XAML vous permet de sélectionner des valeurs Z négatives, mais cela ne vous permet de voir ce qui se passe : de manière conceptuelle, les coordonnées Z négatives provoquent le pointage de la lumière hors de l’écran. Pour tout autre valeur négative, l’effet d’éclairage cesse de fonctionner.
 
-Le `surfaceScale` argument peut varier de -1 à 1. (Les valeurs supérieures ou inférieures n’ont aucun effet.) Il s’agit des valeurs relatives de l’axe Z qui indiquent le déplacement de l’objet de graphique (dans ce cas, il s’agit de la chaîne de texte) à partir de la surface de la zone de dessin. Utilisez les valeurs négatives pour déclencher la chaîne de texte au-dessus de la surface de dessin et les valeurs positives à appuyer sur dans la zone de dessin.
+L' `surfaceScale` argument peut être compris entre-1 et 1. (Les valeurs les plus élevées ou les plus basses n’ont pas d’effet supplémentaire.) Il s’agit de valeurs relatives dans l’axe Z qui indiquent le déplacement de l’objet graphique (dans ce cas, la chaîne de texte) à partir de la surface de canevas. Utilisez des valeurs négatives pour élever la chaîne de texte au-dessus de la surface du canevas, et les valeurs positives pour la faire glisser dans le canevas.
 
-Le `lightConstant` valeur doit être positive. (Le programme permet les valeurs négatives afin de voir qu’ils provoquent l’effet cesser de fonctionner.) Les valeurs plus élevés, plus intense clair.
+La `lightConstant` valeur doit être positive. (Le programme autorise des valeurs négatives afin que vous puissiez constater qu’elles entraînent l’arrêt du travail de l’effet.) Des valeurs plus élevées provoquent une lumière plus intense.
 
-Ces facteurs peuvent être équilibrées pour obtenir un en relief effet lorsque `surfaceScale` est un nombre négatif (comme avec iOS et Android captures d’écran) et une empreinte effet lorsque `surfaceScale` est un nombre positif, comme avec la capture d’écran UWP à droite :
+Ces facteurs peuvent être équilibrés pour obtenir un effet de relief lorsque `surfaceScale` est négatif (comme avec les captures d’écran iOS et Android) et un effet d’empreinte lorsque `surfaceScale` est positif, comme dans la capture d’écran UWP située à droite :
 
-[![Expérience de lumière distante](image-filters-images/DistantLightExperiment.png "expérience de lumière distante")](image-filters-images/DistantLightExperiment-Large.png#lightbox)
+[![Expérience de lumière distante](image-filters-images/DistantLightExperiment.png "Expérience de lumière distante")](image-filters-images/DistantLightExperiment-Large.png#lightbox)
 
-La capture d’écran Android a une valeur Z égale à 0, ce qui signifie que la lumière pointe uniquement vers le bas et vers la droite. L’arrière-plan n’est pas allumé et la surface de la chaîne de texte n’est pas éclairée soit. La lumière affecte uniquement le bord du texte pour un effet très subtil.
+La capture d’écran Android a une valeur Z égale à 0, ce qui signifie que la lumière pointe uniquement vers le haut et vers la droite. L’arrière-plan n’est pas éclairé et la surface de la chaîne de texte n’est pas éclairée. La lumière affecte uniquement le bord du texte pour un effet très subtil.
 
-Une autre approche du texte en relief et d’empreinte a été illustrée dans l’article [transformation de traduction](../transforms/translate.md): La chaîne de texte s’affiche deux fois avec différentes couleurs qui sont légèrement décalées les unes des autres.
+Une autre approche du texte en relief et d’empreinte a été illustrée dans l’article [transformation de traduction](../transforms/translate.md): la chaîne de texte est affichée deux fois avec des couleurs différentes qui sont légèrement décalées les unes des autres.
 
 ## <a name="related-links"></a>Liens connexes
 
-- [API de SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
+- [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

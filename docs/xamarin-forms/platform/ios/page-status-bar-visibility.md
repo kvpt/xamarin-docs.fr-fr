@@ -1,24 +1,27 @@
 ---
-title: Visibilité de la barre d’état de la page sur iOS
-description: Caractéristiques de la plateforme vous autorisons à utiliser les fonctionnalités qui est disponible uniquement sur une plateforme spécifique, sans avoir à implémenter des convertisseurs personnalisés ou des effets. Cet article explique comment utiliser le spécifique à la plateforme iOS qui définit la visibilité de la barre d’État sur une page.
-ms.prod: xamarin
-ms.assetid: D8BB7C24-A27F-4758-8557-6A81F909ABD9
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 10/24/2018
-ms.openlocfilehash: a187efa9310fa150ddc884d8b42da5ccb9ecee11
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 69594924f26afff133d8f211199cac44e66254d9
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655845"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84128022"
 ---
 # <a name="page-status-bar-visibility-on-ios"></a>Visibilité de la barre d’état de la page sur iOS
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-Ce spécifique à la plateforme IOS est utilisé pour définir la visibilité de la barre d’état [`Page`](xref:Xamarin.Forms.Page)sur un et permet de contrôler l’entrée ou la `Page`sortie de la barre d’État. Elle est consommée dans XAML en définissant le `Page.PrefersStatusBarHidden` propriété attachée à une valeur de la `StatusBarHiddenMode` énumération et éventuellement le `Page.PreferredStatusBarUpdateAnimation` propriété attachée à une valeur de la `UIStatusBarAnimation` énumération :
+Ce spécifique à la plateforme iOS est utilisé pour définir la visibilité de la barre d’État sur un [`Page`](xref:Xamarin.Forms.Page) et permet de contrôler l’entrée ou la sortie de la barre d’état `Page` . Il est consommé en XAML en affectant `Page.PrefersStatusBarHidden` à la propriété jointe une valeur de l' `StatusBarHiddenMode` énumération, et éventuellement `Page.PreferredStatusBarUpdateAnimation` à la propriété jointe la valeur de l' `UIStatusBarAnimation` énumération :
 
 ```xaml
 <ContentPage ...
@@ -29,7 +32,7 @@ Ce spécifique à la plateforme IOS est utilisé pour définir la visibilité de
 </ContentPage>
 ```
 
-Vous pouvez également, il peut être consommé à partir de C# à l’aide de l’API fluent :
+Elle peut également être utilisée à partir de C# à l’aide de l’API Fluent :
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -40,16 +43,16 @@ On<iOS>().SetPrefersStatusBarHidden(StatusBarHiddenMode.True)
          .SetPreferredStatusBarUpdateAnimation(UIStatusBarAnimation.Fade);
 ```
 
-Le `Page.On<iOS>` méthode spécifie que cette plateforme spécifique s’exécute uniquement sur iOS. Le `Page.SetPrefersStatusBarHidden` (méthode), dans le `Xamarin.Forms.PlatformConfiguration.iOSSpecific` espace de noms, est utilisé pour définir la visibilité de la barre d’état sur un [ `Page` ](xref:Xamarin.Forms.Page) en spécifiant une de le `StatusBarHiddenMode` valeurs d’énumération : `Default`, `True` , ou `False`. Le `StatusBarHiddenMode.True` et `StatusBarHiddenMode.False` valeurs définir la visibilité de barre d’état, quel que soit l’orientation de l’appareil et le `StatusBarHiddenMode.Default` valeur masque la barre d’état dans un environnement compact verticalement.
+La `Page.On<iOS>` méthode spécifie que ce spécifique à la plateforme s’exécutera uniquement sur iOS. La `Page.SetPrefersStatusBarHidden` méthode, dans l' `Xamarin.Forms.PlatformConfiguration.iOSSpecific` espace de noms, est utilisée pour définir la visibilité de la barre d’État sur un [`Page`](xref:Xamarin.Forms.Page) en spécifiant l’une des `StatusBarHiddenMode` valeurs d’énumération : `Default` , `True` ou `False` . Les `StatusBarHiddenMode.True` `StatusBarHiddenMode.False` valeurs et définissent la visibilité de la barre d’État, quelle que soit l’orientation de l’appareil, et la `StatusBarHiddenMode.Default` valeur masque la barre d’État dans un environnement compact.
 
-Le résultat est que la visibilité de la barre d’état sur un [ `Page` ](xref:Xamarin.Forms.Page) peuvent être définies :
+Le résultat est que la visibilité de la barre d’État sur un [`Page`](xref:Xamarin.Forms.Page) peut être définie :
 
-![](page-status-bar-visibility-images/hide-status-bar.png "Barre d’état visibilité spécifiques à la plateforme")
+![](page-status-bar-visibility-images/hide-status-bar.png "Status Bar Visibility Platform-Specific")
 
 > [!NOTE]
-> Sur un [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage), spécifié `StatusBarHiddenMode` valeur d’énumération mettra met également à jour la barre d’état sur toutes les pages de l’enfant. Sur tous les autres [ `Page` ](xref:Xamarin.Forms.Page)-types dérivés, spécifiés `StatusBarHiddenMode` valeur d’énumération met à jour uniquement la barre d’état sur la page actuelle.
+> Sur un [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) , la `StatusBarHiddenMode` valeur d’énumération spécifiée met également à jour la barre d’État sur toutes les pages enfants. Sur tous les autres [`Page`](xref:Xamarin.Forms.Page) types dérivés de, la `StatusBarHiddenMode` valeur d’énumération spécifiée met uniquement à jour la barre d’État sur la page actuelle.
 
-Le `Page.SetPreferredStatusBarUpdateAnimation` méthode est utilisée pour définir la façon dont la barre d’état entre ou quitte le [ `Page` ](xref:Xamarin.Forms.Page) en spécifiant une de le `UIStatusBarAnimation` valeurs d’énumération : `None`, `Fade`, ou `Slide`. Si le `Fade` ou `Slide` valeur d’énumération est spécifiée, une seconde 0,25 animation s’exécute comme la barre d’état entre ou quitte le `Page`.
+La `Page.SetPreferredStatusBarUpdateAnimation` méthode est utilisée pour définir le mode d’entrée ou de sortie de la barre d’état [`Page`](xref:Xamarin.Forms.Page) en spécifiant l’une des `UIStatusBarAnimation` valeurs d’énumération : `None` , `Fade` ou `Slide` . Si la `Fade` `Slide` valeur d’énumération ou est spécifiée, une animation de 0,25 secondes s’exécute lorsque la barre d’État entre dans ou quitte le `Page` .
 
 ## <a name="related-links"></a>Liens connexes
 

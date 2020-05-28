@@ -1,50 +1,53 @@
 ---
-title: Xamarin. Forms IndicatorView
-description: Le IndicatorView est un contrôle qui affiche des indicateurs qui représentent le nombre d’éléments et la position actuelle dans un CarouselView.
-ms.prod: xamarin
-ms.assetId: BBCC223B-4B02-46B7-80BB-EE0E86A67CE2
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 02/27/2020
-ms.openlocfilehash: e76cf6e766a95994fa2862deb9eb73928f4769a2
-ms.sourcegitcommit: 5d22f37dfc358678df52a4d17c57261056a72cb7
+title: Xamarin.FormsIndicatorView
+description: ''
+ms.prod: ''
+ms.assetId: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a6bf11fd80dd5226ae26dd392e80f784a9b296bf
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "78293066"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84131981"
 ---
-# <a name="xamarinforms-indicatorview"></a>Xamarin. Forms IndicatorView
+# <a name="xamarinforms-indicatorview"></a>Xamarin.FormsIndicatorView
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-indicatorviewdemos/)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-indicatorviewdemos/)
 
-Le `IndicatorView` est un contrôle qui affiche des indicateurs qui représentent le nombre d’éléments et la position actuelle dans un `CarouselView`:
+Le `IndicatorView` est un contrôle qui affiche des indicateurs qui représentent le nombre d’éléments, et la position actuelle, dans un `CarouselView` :
 
 [![Capture d’écran d’un CarouselView et d’un IndicatorView, sur iOS et Android](indicatorview-images/circles.png "Cercles IndicatorView")](indicatorview-images/circles-large.png#lightbox "Cercles IndicatorView")
 
-`IndicatorView` est disponible dans Xamarin. Forms 4,4 sur les plateformes iOS et Android, et dans 4,5, sur le plateforme Windows universelle. Toutefois, il est actuellement expérimental et ne peut être utilisé qu’en ajoutant la ligne de code suivante à votre classe `AppDelegate` sur iOS, ou à votre classe `MainActivity` sur Android, avant d’appeler `Forms.Init`:
+`IndicatorView`est disponible dans Xamarin.Forms 4,4 sur les plateformes iOS et Android, et dans 4,5, sur le plateforme Windows universelle. Toutefois, il est actuellement expérimental et ne peut être utilisé qu’en ajoutant la ligne de code suivante à votre `AppDelegate` classe sur iOS, ou à votre `MainActivity` classe sur Android, avant d’appeler `Forms.Init` :
 
 ```csharp
 Forms.SetFlags("IndicatorView_Experimental");
 ```
 
-`IndicatorView` définit les propriétés suivantes :
+`IndicatorView` définit les propriétés suivantes :
 
-- `Count`, de type `int`, le nombre d’indicateurs.
-- `HideSingle`, de type `bool`, indique si l’indicateur doit être masqué lorsqu’il n’en existe qu’un seul. La valeur par défaut est `true`.
-- `IndicatorColor`, de type `Color`, la couleur des indicateurs.
-- `IndicatorSize`, de type `double`, taille des indicateurs. La valeur par défaut est 6,0.
-- `IndicatorLayout`, de type `Layout<View>`, définit la classe de disposition utilisée pour restituer le `IndicatorView`. Cette propriété est définie par Xamarin. Forms et n’a généralement pas besoin d’être définie par les développeurs.
-- `IndicatorTemplate`, de type `DataTemplate`, le modèle qui définit l’apparence de chaque indicateur.
-- `IndicatorsShape`, de type `IndicatorShape`, forme de chaque indicateur.
-- `ItemsSource`, de type `IEnumerable`, la collection pour laquelle les indicateurs sont affichés. Cette propriété est définie automatiquement lorsque la propriété `CarouselView.IndicatorView` est définie.
-- `MaximumVisible`, de type `int`, le nombre maximal d’indicateurs visibles. La valeur par défaut est `int.MaxValue`.
-- `Position`, de type `int`, l’index d’indicateur actuellement sélectionné. Cette propriété utilise une liaison de `TwoWay`. Cette propriété est définie automatiquement lorsque la propriété `CarouselView.IndicatorView` est définie.
-- `SelectedIndicatorColor`, de type `Color`, la couleur de l’indicateur qui représente l’élément actuel dans le `CarouselView`.
+- `Count`, de type `int` , le nombre d’indicateurs.
+- `HideSingle`, de type `bool` , indique si l’indicateur doit être masqué lorsqu’il n’en existe qu’un seul. La valeur par défaut est `true`.
+- `IndicatorColor`, de type `Color` , la couleur des indicateurs.
+- `IndicatorSize`, de type `double` , la taille des indicateurs. La valeur par défaut est 6,0.
+- `IndicatorLayout`, de type `Layout<View>` , définit la classe de disposition utilisée pour restituer le `IndicatorView` . Cette propriété est définie par Xamarin.Forms et n’a généralement pas besoin d’être définie par les développeurs.
+- `IndicatorTemplate`, de type `DataTemplate` , le modèle qui définit l’apparence de chaque indicateur.
+- `IndicatorsShape`, de type `IndicatorShape` , la forme de chaque indicateur.
+- `ItemsSource`, de type `IEnumerable` , la collection pour laquelle les indicateurs seront affichés. Cette propriété est définie automatiquement lorsque la `CarouselView.IndicatorView` propriété est définie.
+- `MaximumVisible`, de type `int` , le nombre maximal d’indicateurs visibles. La valeur par défaut est `int.MaxValue`.
+- `Position`, de type `int` , l’index d’indicateur actuellement sélectionné. Cette propriété utilise une `TwoWay` liaison. Cette propriété est définie automatiquement lorsque la `CarouselView.IndicatorView` propriété est définie.
+- `SelectedIndicatorColor`, de type `Color` , la couleur de l’indicateur qui représente l’élément actuel dans `CarouselView` .
 
-Ces propriétés sont soulignes par [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) objets, ce qui signifie qu’elles peuvent être des cibles de liaisons de données et un style.
+Ces propriétés sont sauvegardées par des [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) objets, ce qui signifie qu’elles peuvent être des cibles de liaisons de données et être stylisées.
 
 ## <a name="create-an-indicatorview"></a>Créer un IndicatorView
 
@@ -65,19 +68,19 @@ L’exemple suivant montre comment instancier un `IndicatorView` en XAML :
 </StackLayout>
 ```
 
-Dans cet exemple, le `IndicatorView` est rendu sous le `CarouselView`, avec un indicateur pour chaque élément dans le `CarouselView`. La `IndicatorView` est remplie avec des données en affectant à la propriété `CarouselView.IndicatorView` la valeur de l’objet `IndicatorView`. Chaque indicateur est un cercle gris clair, tandis que l’indicateur qui représente l’élément actuel dans le `CarouselView` est gris foncé.
+Dans cet exemple, le `IndicatorView` est rendu sous le `CarouselView` , avec un indicateur pour chaque élément dans `CarouselView` . Le `IndicatorView` est rempli avec les données en affectant `CarouselView.IndicatorView` à la propriété l' `IndicatorView` objet. Chaque indicateur est un cercle gris clair, tandis que l’indicateur qui représente l’élément actuel dans la `CarouselView` est gris foncé.
 
 > [!IMPORTANT]
-> La définition de la propriété `CarouselView.IndicatorView` entraîne la liaison de la propriété `IndicatorView.Position` à la propriété `CarouselView.Position` et la propriété `IndicatorView.ItemsSource` à la propriété `CarouselView.ItemsSource`.
+> La définition de la propriété entraîne la liaison de la propriété `CarouselView.IndicatorView` `IndicatorView.Position` à la propriété `CarouselView.Position` et la `IndicatorView.ItemsSource` liaison de la propriété à la `CarouselView.ItemsSource` propriété.
 
 ## <a name="change-indicator-shape"></a>Modifier la forme d’indicateur
 
-La classe `IndicatorView` a une propriété `IndicatorsShape`, qui détermine la forme des indicateurs. Cette propriété peut être définie sur l’un des membres de l’énumération `IndicatorShape` :
+La `IndicatorView` classe a une `IndicatorsShape` propriété, qui détermine la forme des indicateurs. Cette propriété peut être définie sur l’un des `IndicatorShape` membres de l’énumération :
 
-- `Circle` spécifie que les formes d’indicateur seront circulaires. C’est la valeur par défaut de la propriété `IndicatorView.IndicatorsShape`.
-- `Square` indique que les formes d’indicateur seront carrées.
+- `Circle`Spécifie que les formes d’indicateur seront circulaires. C’est la valeur par défaut de la propriété `IndicatorView.IndicatorsShape`.
+- `Square`indique que les formes d’indicateur seront carrées.
 
-L’exemple suivant montre une `IndicatorView` configurée pour utiliser des indicateurs carrés :
+L’exemple suivant montre un `IndicatorView` configuré pour utiliser des indicateurs carrés :
 
 ```xaml
 <IndicatorView x:Name="indicatorView"
@@ -88,9 +91,9 @@ L’exemple suivant montre une `IndicatorView` configurée pour utiliser des ind
 
 ## <a name="change-indicator-size"></a>Modifier la taille de l’indicateur
 
-La classe `IndicatorView` a une propriété `IndicatorSize`, de type `double`, qui détermine la taille des indicateurs dans les unités indépendantes du périphérique. La valeur par défaut de cette propriété est 6,0.
+La `IndicatorView` classe a une `IndicatorSize` propriété, de type `double` , qui détermine la taille des indicateurs dans les unités indépendantes du périphérique. La valeur par défaut de cette propriété est 6,0.
 
-L’exemple suivant montre une `IndicatorView` configurée pour afficher des indicateurs plus grands :
+L’exemple suivant montre un `IndicatorView` configuré pour afficher des indicateurs plus grands :
 
 ```xaml
 <IndicatorView x:Name="indicatorView"
@@ -99,9 +102,9 @@ L’exemple suivant montre une `IndicatorView` configurée pour afficher des ind
 
 ## <a name="limit-the-number-of-indicators-displayed"></a>Limiter le nombre d’indicateurs affichés
 
-La classe `IndicatorView` a une propriété `MaximumVisible`, de type `int`, qui détermine le nombre maximal d’indicateurs visibles.
+La `IndicatorView` classe a une `MaximumVisible` propriété, de type `int` , qui détermine le nombre maximal d’indicateurs visibles.
 
-L’exemple suivant montre une `IndicatorView` configurée pour afficher un maximum de six indicateurs :
+L’exemple suivant montre un `IndicatorView` configuré pour afficher un maximum de six indicateurs :
 
 ```xaml
 <IndicatorView x:Name="indicatorView"
@@ -110,7 +113,7 @@ L’exemple suivant montre une `IndicatorView` configurée pour afficher un maxi
 
 ## <a name="define-indicator-appearance"></a>Définir l’apparence de l’indicateur
 
-L’apparence de chaque indicateur peut être définie en affectant à la propriété `IndicatorView.IndicatorTemplate` la valeur d’un [`DataTemplate`](xref:Xamarin.Forms.DataTemplate):
+L’apparence de chaque indicateur peut être définie en affectant `IndicatorView.IndicatorTemplate` à la propriété la valeur [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) :
 
 ```xaml
 <StackLayout>
@@ -133,13 +136,13 @@ L’apparence de chaque indicateur peut être définie en affectant à la propri
 </StackLayout>
 ```
 
-Les éléments spécifiés dans le [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) définissent l’apparence de chaque indicateur. Dans cet exemple, chaque indicateur est un [`Image`](xref:Xamarin.Forms.Image) qui affiche une icône de police à l’aide de l’extension de balisage `FontImage`.
+Les éléments spécifiés dans [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) définissent l’apparence de chaque indicateur. Dans cet exemple, chaque indicateur est un [`Image`](xref:Xamarin.Forms.Image) qui affiche une icône de police à l’aide de l' `FontImage` extension de balisage.
 
 Les captures d’écran suivantes montrent les indicateurs affichés à l’aide d’une icône de police :
 
 [![Capture d’écran d’un IndicatorView basé sur un modèle, sur iOS et Android](indicatorview-images/templated.png "IndicatorView basé sur un modèle")](indicatorview-images/templated-large.png#lightbox "IndicatorView basé sur un modèle")
 
-Pour plus d’informations sur l’extension de balisage `FontImage`, consultez [FontImage Markup Extension](~/xamarin-forms/xaml/markup-extensions/consuming.md#fontimage-markup-extension).
+Pour plus d’informations sur l' `FontImage` extension de balisage, consultez [FontImage Markup Extension](~/xamarin-forms/xaml/markup-extensions/consuming.md#fontimage-markup-extension).
 
 ## <a name="related-links"></a>Liens connexes
 

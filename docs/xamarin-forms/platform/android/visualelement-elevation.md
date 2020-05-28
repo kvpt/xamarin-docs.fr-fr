@@ -1,24 +1,27 @@
 ---
-title: Élévation VisualElement sur Android
-description: Caractéristiques de la plateforme vous autorisons à utiliser les fonctionnalités qui est disponible uniquement sur une plateforme spécifique, sans avoir à implémenter des convertisseurs personnalisés ou des effets. Cet article explique comment utiliser le spécifique à la plateforme Android qui contrôle l’élévation de VisualElements sur les applications qui ciblent l’API 21 ou une version ultérieure.
-ms.prod: xamarin
-ms.assetid: 5BFD6175-2BBD-41CD-B8F9-521B4750B708
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/10/2018
-ms.openlocfilehash: 243e351f29b056a6d4a567b8e39240a87f37aec2
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 48060356014dc7600518b5de555ad3f346c50c35
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651888"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84128542"
 ---
 # <a name="visualelement-elevation-on-android"></a>Élévation VisualElement sur Android
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-Ce spécifique à la plateforme Android est utilisé pour contrôler l’élévation, ou ordre de plan, des éléments visuels sur les applications qui ciblent l’API 21 ou une version ultérieure. L’élévation d’un élément visuel détermine son ordre de dessin, avec des éléments visuels avec des valeurs Z supérieures OCCLUSION des éléments visuels avec les valeurs Z inférieure. Elle est consommée dans XAML en définissant le `VisualElement.Elevation` propriété jointe un `boolean` valeur :
+Ce spécifique à la plateforme Android est utilisé pour contrôler l’élévation, ou ordre de plan, des éléments visuels sur les applications qui ciblent l’API 21 ou une version ultérieure. L’élévation d’un élément visuel détermine son ordre de dessin, avec des éléments visuels avec des valeurs Z plus élevées obturant des éléments visuels avec des valeurs Z inférieures. Il est consommé en XAML en affectant `VisualElement.Elevation` une valeur à la propriété jointe `boolean` :
 
 ```xaml
 <ContentPage ...
@@ -37,7 +40,7 @@ Ce spécifique à la plateforme Android est utilisé pour contrôler l’éléva
 </ContentPage>
 ```
 
-Vous pouvez également, il peut être consommé à partir de C# à l’aide de l’API fluent :
+Elle peut également être utilisée à partir de C# à l’aide de l’API Fluent :
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -79,9 +82,9 @@ public class AndroidElevationPageCS : ContentPage
 }
 ```
 
-Le `Button.On<Android>` méthode spécifie que cette plateforme spécifique s’exécute uniquement sur Android. Le `VisualElement.SetElevation` (méthode), dans le [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) espace de noms, est utilisé pour définir l’élévation de l’élément visuel en un type nullable `float`. En outre, le `VisualElement.GetElevation` méthode peut être utilisée pour récupérer la valeur de l’élévation d’un élément visuel.
+La `Button.On<Android>` méthode spécifie que ce spécifique à la plateforme s’exécutera uniquement sur Android. La `VisualElement.SetElevation` méthode, dans l' [`Xamarin.Forms.PlatformConfiguration.AndroidSpecific`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) espace de noms, est utilisée pour affecter une valeur null à l’élévation de l’élément visuel `float` . En outre, la `VisualElement.GetElevation` méthode peut être utilisée pour récupérer la valeur d’élévation d’un élément visuel.
 
-Le résultat est que l’élévation d’éléments visuels peut être contrôlée afin que les éléments visuels avec les valeurs Z supérieures occlude des éléments visuels avec les valeurs Z inférieure. Par conséquent, dans cet exemple le deuxième [ `Button` ](xref:Xamarin.Forms.Button) est affiché au-dessus de la [ `BoxView` ](xref:Xamarin.Forms.BoxView) , car il a une valeur d’élévation plus élevée :
+Le résultat est que l’élévation d’éléments visuels peut être contrôlée afin que les éléments visuels avec des valeurs Z supérieures occultait les éléments visuels avec des valeurs Z inférieures. Par conséquent, dans cet exemple, le deuxième [`Button`](xref:Xamarin.Forms.Button) est rendu au-dessus de [`BoxView`](xref:Xamarin.Forms.BoxView) , car il a une valeur d’élévation supérieure :
 
 ![](visualelement-elevation-images/elevation.png)
 

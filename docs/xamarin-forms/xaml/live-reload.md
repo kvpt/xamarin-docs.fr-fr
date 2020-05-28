@@ -1,36 +1,39 @@
 ---
-title: Xamarin Live Reload (préversion)
-description: Consultez les modifications apportées à votre XAML en direct, sans nécessiter d’autre compilation et déploiement.
-ms.prod: xamarin
-ms.assetid: 4917273d-32f9-401a-a52c-5cfb53a2170d
-ms.technology: xamarin-forms
-author: pierceboggan
-ms.author: piboggan
-robots: noindex
-ms.date: 10/26/2018
-ms.openlocfilehash: e6c8e7b84ba8e3d0f6e6247798bb9164a3bc994d
-ms.sourcegitcommit: 8df67f0d76ff762b517d27b8d4c217d3a3379a18
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+robots: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b67594e2675c774512f3bf64f2e91ef10dbff444
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79423900"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84134210"
 ---
 # <a name="xamarin-live-reload-preview"></a>Xamarin Live Reload (préversion)
 
 > [!NOTE]
 > La version préliminaire de Xamarin Live reload est terminée et nous souhaitons remercier tout le monde pour vos commentaires et commentaires. 
 >
-> Pour modifier votre code XAML pendant que votre application est en cours d’exécution, utilisez le [rechargement à chaud XAML pour Xamarin. Forms](~/xamarin-forms/xaml/hot-reload.md).
+> Pour modifier votre code XAML pendant que votre application est en cours d’exécution, utilisez le [rechargement à chaud XAML pour Xamarin.Forms ](~/xamarin-forms/xaml/hot-reload.md).
 >
 
 Le rechargement Xamarin Live vous permet d' **apporter des modifications à votre code XAML et de voir qu’ils sont reflétés, sans nécessiter une autre compilation et un nouveau déploiement**. Toutes les modifications apportées à votre code XAML seront redéployées lors de l’enregistrement et reflétées sur votre cible de déploiement.
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Conditions requises
 
 * [Visual Studio 2017 version 15,7 ou ultérieure](https://visualstudio.microsoft.com/vs/) avec la charge de travail **développement mobile avec .net** .
-* [Xamarin. Forms 3.0.0 ou version ultérieure](https://www.nuget.org/packages/Xamarin.Forms/).
+* [ Xamarin.Forms 3.0.0 ou version ultérieure](https://www.nuget.org/packages/Xamarin.Forms/).
 
-## <a name="getting-started"></a>Mise en route
+## <a name="getting-started"></a>Prise en main
 ### <a name="1-install-xamarin-live-reload-from-the-visual-studio-marketplace"></a>1. Installez Xamarin Live Reload à partir du Visual Studio Marketplace
 
 Le rechargement Xamarin Live est distribué via le Visual Studio Marketplace. Pour installer l’extension, accédez à la [page Xamarin Live reload sur le](https://marketplace.visualstudio.com/items?itemName=Xamarin.XamarinLiveReload) site Web Visual Studio Marketplace, puis cliquez sur **Télécharger**.
@@ -45,7 +48,7 @@ Vous pouvez également effectuer une recherche dans l’onglet **en ligne** de l
 
 L’ajout de rechargement dynamique à des applications mobiles existantes peut être effectué en trois étapes :
 
-1. Assurez-vous que tous les projets sont mis à jour pour utiliser [Xamarin. Forms 3.0.0 ou supérieur](https://www.nuget.org/packages/Xamarin.Forms/) ou supérieur.
+1. Assurez-vous que tous les projets sont mis à jour pour utiliser [ Xamarin.Forms 3.0.0 ou version](https://www.nuget.org/packages/Xamarin.Forms/) supérieure ou supérieure.
 
 2. Ajoutez le package NuGet **Xamarin. LiveReload** :
 
@@ -53,9 +56,9 @@ L’ajout de rechargement dynamique à des applications mobiles existantes peut 
     
     b. **Projets partagés** : Installez le NuGet **Xamarin. LiveReload** dans tous les projets de plateforme (comme Android, iOS, UWP, etc.). Vérifiez que la **source du package** est définie sur **All**.
 
-    [![ajouter Xamarin Live Reload NuGet avec le gestionnaire de package NuGet](images/addlivereloadnuget.w157-sml.png)](images/addlivereloadnuget.w157.png#lightbox)
+    [![Ajouter Xamarin Live Reload NuGet avec le gestionnaire de package NuGet](images/addlivereloadnuget.w157-sml.png)](images/addlivereloadnuget.w157.png#lightbox)
 
-3. Ajoutez `LiveReload.Init();` au constructeur dans la classe `Application`, comme indiqué dans l’extrait de code suivant :
+3. Ajoutez `LiveReload.Init();` au constructeur dans la `Application` classe, comme indiqué dans l’extrait de code suivant :
 
 ```csharp
 public partial class App : Application
@@ -79,7 +82,7 @@ Compilez et déployez votre application. Une fois l’application déployée, ou
 
 > [!Video https://www.youtube.com/embed/-5WJZpeXlC8]
 
-Le rechargement dynamique fonctionne avec les modifications apportées à un fichier XAML. Les modifications C# apportées à ou l’ajout/la suppression de packages NuGet nécessitent une nouvelle build et le déploiement prennent effet.
+Le rechargement dynamique fonctionne avec les modifications apportées à un fichier XAML. Les modifications apportées à C# ou l’ajout/la suppression de packages NuGet requièrent une nouvelle build et le déploiement pour prendre effet.
 
 ## <a name="frequently-asked-questions"></a>Forum Aux Questions (FAQ) 
 ### <a name="is-xamarin-live-reload-available-on-visual-studio-for-mac"></a>Le rechargement dynamique de Xamarin est-il disponible sur Visual Studio pour Mac ? 
@@ -92,11 +95,11 @@ Non, la version préliminaire de Xamarin Live Reload n’est disponible que pour
 
 ### <a name="what-changes-does-live-reload-redeploy"></a>Quelles modifications le rechargement en direct recharge-t-il ? 
 
-Le rechargement dynamique applique uniquement les modifications apportées à XAML ou CSS. Si vous apportez des modifications à C# un fichier, une recompilation est nécessaire. 
+Le rechargement dynamique applique uniquement les modifications apportées à XAML ou CSS. Si vous apportez des modifications à un fichier C#, une recompilation est nécessaire. 
 
 ### <a name="what-platforms-are-supported"></a>Quelles sont les plateformes prises en charge ? 
 
-Le rechargement en direct fonctionne sur toutes les plateformes prises en charge par Xamarin. Forms, notamment Android, iOS et UWP.
+Le rechargement en direct fonctionne sur toutes les plateformes prises en charge par Xamarin.Forms , y compris Android, iOS et UWP.
 
 ### <a name="does-this-work-on-emulators-simulators-and-physical-devices"></a>Cela fonctionne-t-il sur les émulateurs, les simulateurs et les appareils physiques ? 
 
@@ -110,7 +113,7 @@ Si vous déboguez sur un émulateur Android ou un simulateur iOS, le rechargemen
 
 Non. En fait, vous pouvez même démarrer toutes les cibles d’application prises en charge (Android, iOS et UWP) sur un nombre quelconque d’appareils ou de simulateurs/émulateurs, et voir toutes les mises à jour en même temps. 
 
-## <a name="limitations"></a>Limites
+## <a name="limitations"></a>Limitations
 
 * Seul le rechargement du code XAML est pris en charge.
 * L’état de l’interface utilisateur ne peut pas être maintenu entre les redéploiement, sauf si vous utilisez MVVM.
@@ -122,9 +125,9 @@ Non. En fait, vous pouvez même démarrer toutes les cibles d’application pris
 * Rechargement des ressources au niveau de l’application (par exemple, **app. Xaml** ou des dictionnaires de ressources partagées), la navigation dans l’application est réinitialisée. 
 * Le rechargement de ContentView nécessite actuellement le rechargement de la page conteneur.
 * Les éléments contenant AutomationId peuvent entraîner un échec de rechargement.
-* La modification du code XAML pendant le débogage UWP peut entraîner un blocage du Runtime. Solution de contournement : utilisez **exécuter sans débogage (Ctrl + F5)** au lieu de **Démarrer le débogage (F5)** .
+* La modification du code XAML pendant le débogage UWP peut entraîner un blocage du Runtime. Solution de contournement : utilisez **exécuter sans débogage (Ctrl + F5)** au lieu de **Démarrer le débogage (F5)**.
 
-## <a name="troubleshooting"></a>Dépannage
+## <a name="troubleshooting"></a>Résolution des problèmes
 
 ### <a name="error-codes"></a>Codes d’erreur
 
@@ -142,11 +145,11 @@ Non. En fait, vous pouvez même démarrer toutes les cibles d’application pris
 
 * *Exception lors du chargement des assemblys : System. IO. FileNotFoundException : impossible de charger l’assembly’Xamarin. live. Reload, version = 0.3.27.0, culture = neutral, PublicKeyToken = '.*
 
-  Le projet hôte doit utiliser `PackageReference` au lieu de `packages.config`
+  Le projet hôte doit utiliser `PackageReference` au lieu de`packages.config`
 
 ### <a name="app-doesnt-connect"></a>L’application ne se connecte pas
 
-Lorsque l’application est générée, les informations à partir des **outils > Options > Xamarin > rechargement en direct** (nom d’hôte, port et clés de chiffrement) sont incorporées dans l’application. ainsi, lorsque `LiveReload.Init()` s’exécute, aucune association ou configuration n’est nécessaire pour que la connexion aboutisse.
+Lorsque l’application est générée, les informations des **outils > Options > Xamarin > rechargement en direct** (nom d’hôte, port et clés de chiffrement) sont incorporées dans l’application, de sorte que lors de l' `LiveReload.Init()` exécution, aucune association ou configuration n’est nécessaire pour que la connexion aboutisse.
 
 En dehors des problèmes de mise en réseau normaux (pare-feu, périphérique sur un autre réseau), la raison principale pour laquelle l’application peut ne pas se connecter à l’IDE est que sa configuration diffère de celle de Visual Studio. Cela peut se produire dans les cas suivants :
 
@@ -161,7 +164,7 @@ Ces cas sont tous résolus par la génération et le déploiement de l’applica
 Si vous disposez d’une version préliminaire plus ancienne et que vous rencontrez des problèmes pour la désinstaller, procédez comme suit :
 
 1. Supprimez le dossier **C:\Program Files (x86) \Microsoft Visual Studio\Preview\Enterprise\Common7\IDE\Extensions\Xamarin\LiveReload** (Remarque : remplacez « Enterprise » par votre édition installée, et « Preview » par « 2017 » si vous avez installé sur un ordinateur stable et
-2. Ouvrez une **invite de commandes développeur** pour Visual Studio et exécutez `devenv /updateconfiguration`. 
+2. Ouvrez une **invite de commandes développeur** pour Visual Studio et exécutez `devenv /updateconfiguration` . 
 
 ## <a name="tips--tricks"></a>Conseils & astuces
 
@@ -173,9 +176,9 @@ Si vous disposez d’une version préliminaire plus ancienne et que vous rencont
 
 ## <a name="live-reload-server"></a>Serveur de rechargement dynamique
 
-Dans les scénarios où une connexion de l’application en cours d’exécution à votre ordinateur (comme indiqué à l’aide de `localhost` ou `127.0.0.1` dans **outils > Options > Xamarin > le rechargement en direct**) n’est pas possible (par exemple, les pare-feu, les différents réseaux), vous pouvez configurer un serveur distant à la place, à la fois l’IDE et l’application conect.
+Dans les scénarios où une connexion de l’application en cours d’exécution à votre ordinateur (comme indiqué à l’aide de `localhost` ou `127.0.0.1` dans les **outils > Options > Xamarin > rechargement dynamique**) n’est pas possible (par exemple, les pare-feu, les différents réseaux), vous pouvez configurer un serveur distant à la place, à la fois l’IDE et l’application conect.
 
-Le rechargement en direct utilise le [protocole MQTT](https://mqtt.org/) standard pour échanger des messages et peut donc communiquer avec des [serveurs tiers](https://github.com/mqtt/mqtt.github.io/wiki/servers). Il existe même des [serveurs publics](https://github.com/mqtt/mqtt.github.io/wiki/public_brokers) (également appelés « *courtiers*») que vous pouvez utiliser. Le rechargement dynamique a été testé avec `broker.hivemq.com` et les noms d’hôtes `iot.eclipse.org`, ainsi que les services fournis par [www.cloudmqtt.com](https://www.cloudmqtt.com) et [www.cloudamqp.com](https://www.cloudamqp.com). Vous pouvez également déployer votre propre serveur MQTT dans le Cloud, par exemple [HiveMQ sur Azure](https://www.hivemq.com/blog/hivemq-on-windows-azure-mqtt-microsoft-cloud).
+Le rechargement en direct utilise le [protocole MQTT](https://mqtt.org/) standard pour échanger des messages et peut donc communiquer avec des [serveurs tiers](https://github.com/mqtt/mqtt.github.io/wiki/servers). Il existe même des [serveurs publics](https://github.com/mqtt/mqtt.github.io/wiki/public_brokers) (également appelés « *courtiers*») que vous pouvez utiliser. Le rechargement dynamique a été testé avec les `broker.hivemq.com` `iot.eclipse.org` noms d’hôte et, ainsi que les services fournis par [www.cloudmqtt.com](https://www.cloudmqtt.com) et [www.cloudamqp.com](https://www.cloudamqp.com). Vous pouvez également déployer votre propre serveur MQTT dans le Cloud, par exemple [HiveMQ sur Azure](https://www.hivemq.com/blog/hivemq-on-windows-azure-mqtt-microsoft-cloud).
 
 Vous pouvez configurer n’importe quel port, mais il est courant d’utiliser le port 1883 par défaut pour les serveurs distants. Les messages de rechargement en direct utilisent un chiffrement symétrique AES de bout en bout, de sorte qu’il est possible de se connecter aux serveurs distants. Par défaut, la clé de chiffrement et le vecteur d’initialisation (IV) sont tous deux régénérés sur chaque session Visual Studio.
 
@@ -184,7 +187,7 @@ Le moyen le plus simple consiste probablement à installer le serveur [mosquitto
 1. Créer une nouvelle machine virtuelle Ubuntu Server dans le portail Azure
 2. Ajouter une nouvelle règle de port d’entrée pour 1883 (port MQTT par défaut) dans l’onglet mise en réseau
 3. Ouvrir le [Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview) (mode bash)
-4. Tapez `ssh [USERNAME]@[PUBLIC_IP]` à l’aide du nom d’utilisateur que vous avez choisi dans 1) et de l’adresse IP publique indiquée dans la page vue d’ensemble de votre machine virtuelle
-5. Exécutez `sudo apt-get install mosquitto`, en entrant le mot de passe que vous avez choisi dans 1)
+4. Tapez en `ssh [USERNAME]@[PUBLIC_IP]` utilisant le nom d’utilisateur que vous avez choisi dans 1) et l’adresse IP publique indiquée dans la page vue d’ensemble de votre machine virtuelle
+5. Exécutez `sudo apt-get install mosquitto` , en entrant le mot de passe que vous avez choisi dans 1)
 
 Vous pouvez maintenant utiliser cette adresse IP pour vous connecter à votre propre serveur MQTT.

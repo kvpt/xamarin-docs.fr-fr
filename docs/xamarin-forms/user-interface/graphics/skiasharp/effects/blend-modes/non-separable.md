@@ -1,57 +1,174 @@
 ---
-title: Les modes de fusion non séparables
-description: Utiliser les modes de fusion non séparables de modifier la teinte, saturation ou luminosité.
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: 97FA2730-87C0-4914-8C9F-C64A02CF9EEF
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/23/2018
-ms.openlocfilehash: 9054539b08da89c0f7d8a93150866fb1b41e63f1
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: ''
+description: ''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 52be7641ac3b2983f537e11bccd76f2a5b52574d
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68642783"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84130180"
 ---
-# <a name="the-non-separable-blend-modes"></a>Les modes de fusion non séparables
+# <a name="the-non-separable-blend-modes"></a>Modes de fusion non séparables
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-Comme vous l’avez vu dans l’article [ **SkiaSharp séparable blend modes**](separable.md), les modes de blend séparables effectuer des opérations sur les canaux rouges, vert et bleus séparément. Les modes de fusion non séparables ne peuvent pas. En opérant sur les niveaux de teinte, Saturation et de luminosité de couleur, les modes de fusion non séparables peuvent modifier les couleurs de façons intéressantes :
+Comme vous l’avez vu dans l’article [**SkiaSharp séparable Blend modes**](separable.md), les modes de fusion séparable effectuent des opérations sur les canaux rouge, vert et bleu séparément. Les modes de fusion non séparables ne le font pas. En opérant sur les niveaux de couleur teinte, saturation et luminosité, les modes de fusion non séparables peuvent altérer les couleurs de manière intéressante :
 
-![Exemple non séparables](non-separable-images/NonSeparableSample.png "exemple Non séparables")
+![Exemple non séparable](non-separable-images/NonSeparableSample.png "Exemple non séparable")
 
-## <a name="the-hue-saturation-luminosity-model"></a>Le modèle de Teinte-Saturation-Luminosité
+## <a name="the-hue-saturation-luminosity-model"></a>Modèle de teinte-saturation-luminosité
 
-Pour comprendre les modes de fusion non séparables, il est nécessaire traiter les pixels de la source et de destination comme des couleurs dans le modèle de Teinte-Saturation-Luminosité. (La luminosité est également appelée luminosité.)
+Pour comprendre les modes de fusion non séparables, il est nécessaire de traiter les pixels de destination et source en tant que couleurs dans le modèle de teinte-saturation-luminosité. (La luminosité est également appelée clarté.)
 
-Le modèle de couleurs TSL a été abordé dans l’article [ **l’intégration avec Xamarin.Forms** ](../../basics/integration.md) et un exemple de programme dans cet article permet de l’expérimentation avec les couleurs TSL. Vous pouvez créer un `SKColor` valeur à l’aide des valeurs de teinte, Saturation et de luminosité avec la ligne statique [ `SKColor.FromHsl` ](xref:SkiaSharp.SKColor.FromHsl*) (méthode).
+Le modèle TSL Color a été abordé dans l’article [**intégration Xamarin.Forms de à**](../../basics/integration.md) et un exemple de programme de cet article permet d’expérimenter les couleurs TSL. Vous pouvez créer une `SKColor` valeur à l’aide des valeurs de teinte, de saturation et de luminosité avec la [`SKColor.FromHsl`](xref:SkiaSharp.SKColor.FromHsl*) méthode statique.
 
-La teinte représente la longueur d’onde dominante de la couleur. Les valeurs de teinte sont comprises entre 0 et 360 et défilent vers l’additif et les primaires de soustraction: Le rouge est la valeur 0, le jaune est 60, le vert est 120, le cyan est 180, le bleu est 240, le magenta est 300 et le cycle revient au rouge à 360.
+La teinte représente la longueur d’onde dominante de la couleur. Les valeurs de teinte sont comprises entre 0 et 360 et traversent les primaires additive et soustrait : le rouge est la valeur 0, le jaune est 60, le vert est 120, le cyan est 180, le bleu est 240, le magenta est 300 et le cycle revient au rouge à 360.
 
-S’il n’existe aucune couleur dominante &mdash; , par exemple, la couleur est blanc ou noir ou un dégradé de gris &mdash; ensuite la teinte est non définie et généralement la valeur 0. 
+S’il n’existe pas de couleur dominante &mdash; , par exemple, la couleur est du blanc ou du noir ou un ombrage gris, &mdash; la teinte est non définie et est généralement définie sur 0. 
 
-Les valeurs de Saturation peuvent être comprise entre 0 et 100 et indiquer la pureté de la couleur. Une valeur de Saturation de 100 est la couleur plus pure tandis que les valeurs inférieures à 100 provoque la couleur à devenir plus grayish. Une valeur de Saturation de 0 entraîne une nuance de gris.
+Les valeurs de saturation peuvent être comprises entre 0 et 100 et indiquent la pureté de la couleur. Une valeur de saturation de 100 est la couleur la plus pure, tandis que les valeurs inférieures à 100 provoquent une coloration plus grise. Une valeur de saturation de 0 donne un ombrage de gris.
 
-La valeur de luminosité (ou luminosité) indique la couleur de la luminosité est. Une valeur de luminosité de 0 est le noire indépendamment des autres paramètres. De même, une valeur de luminosité de 100 est blanche. 
+La valeur de luminosité (ou de luminosité) indique la luminosité de la couleur. Une valeur de luminosité de 0 est noire, quels que soient les autres paramètres. De même, une valeur de luminosité de 100 est blanche. 
 
-La valeur TSL (0, 100, 50) est la valeur RVB (FF, 00, 00), qui est rouge pure. La valeur TSL (180, 100, 50) est la valeur RVB (00, FF, FF), cyan pur. Comme la Saturation est réduite, le composant de couleur dominante est réduit et les autres composants sont augmentées. À un niveau de Saturation de 0, tous les composants sont identiques et la couleur est une nuance de gris. Diminuer la luminosité pour accéder à noir ; Augmentez la luminosité pour accéder au blanc.
+La valeur TSL (0, 100, 50) est la valeur RVB (FF, 00, 00), qui est le rouge pur. La valeur TSL (180, 100, 50) est la valeur RVB (00, FF, FF), cyan pur. À mesure que la saturation est réduite, le composant de couleur dominant diminue et les autres composants sont augmentés. Avec un niveau de saturation de 0, tous les composants sont identiques et la couleur est une ombre grise. Réduisez la luminosité pour atteindre le noir ; Augmentez la luminosité pour atteindre le blanc.
 
-## <a name="the-blend-modes-in-detail"></a>Les modes de fusion en détail
+## <a name="the-blend-modes-in-detail"></a>Modes de fusion en détail
 
-Comme les autres modes de fusion, les quatre modes de lissage non séparables impliquent une destination (c'est-à-dire le plus souvent une image bitmap) et une source, qui est souvent une couleur unique ou un dégradé. Les modes de blend combinent les valeurs de teinte, Saturation et de luminosité à partir de la source et de la destination :
+À l’instar des autres modes de fusion, les quatre modes de fusion non séparables impliquent une destination (qui est souvent une image bitmap) et une source, qui est souvent une couleur unique ou un dégradé. Les modes de fusion combinent les valeurs de teinte, de saturation et de luminosité à partir de la destination et de la source :
 
-| Mode de fusion   | Composants à partir de la source | Composants de destination |
-| ------------ | ---------------------- | --------------------------- |
-| `Hue`        | Teinte                    | Saturation et luminosité   |
-| `Saturation` | Saturation             | Teinte et la luminosité          |
-| `Color`      | Teinte et la Saturation     | Luminosité                  | 
-| `Luminosity` | Luminosité             | Teinte et la Saturation          | 
+| Mode de fusion   | Composants de la source | Composants de la destination |
+| ---
+titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
 
-Consultez le W3C [ **composition et fusion de niveau 1** ](https://www.w3.org/TR/compositing-1/) spécification pour les algorithmes.
+-
+titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
 
-Le **Non séparables Modes Blend** page contient un `Picker` pour sélectionner l’une de ces modes et trois blend `Slider` vues pour sélectionner une couleur TSL :
+-
+titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+------ | titre de la--- : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+----------- | titre de la--- : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-------------- | | `Hue`        | Teinte | Saturation et luminosité | | `Saturation` | Saturation | Teinte et luminosité | | `Color`      | Teinte et saturation | Luminosité | | `Luminosity` | Luminosité | Teinte et saturation | 
+
+Consultez la spécification W3C sur la [**composition et le niveau de fusion 1**](https://www.w3.org/TR/compositing-1/) pour les algorithmes.
+
+La page **modes de fusion non séparables** contient un `Picker` pour sélectionner l’un de ces modes de fondu et trois `Slider` vues pour sélectionner une couleur TSL :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -111,9 +228,9 @@ Le **Non séparables Modes Blend** page contient un `Picker` pour sélectionner 
 </ContentPage>
 ```
 
-Pour économiser de l’espace, les trois `Slider` vues ne sont pas identifiées dans l’interface utilisateur du programme. Vous aurez besoin de se rappeler que l’ordre est teinte, Saturation et luminosité. Deux `Label` vues au bas de la page affichent les valeurs de couleur RVB et TSL.
+Pour économiser de l’espace, les trois `Slider` vues ne sont pas identifiées dans l’interface utilisateur du programme. Vous devez vous souvenir que la commande est teinte, saturation et luminosité. Deux `Label` affichages au bas de la page affichent les valeurs de couleur TSL et RVB.
 
-Le fichier code-behind charge une des ressources bitmap, qui affiche aussi grand que possible sur le canevas et couvre ensuite la zone de dessin avec un rectangle. La couleur du rectangle est basée sur les trois `Slider` vues et le mode de fusion est celui sélectionné dans le `Picker`:
+Le fichier code-behind charge l’une des ressources bitmap, l’affiche aussi grand que possible sur le canevas, puis couvre le canevas avec un rectangle. La couleur du rectangle est basée sur les trois `Slider` vues et le mode de fusion est celui sélectionné dans le `Picker` :
 
 ```csharp
 public partial class NonSeparableBlendModesPage : ContentPage
@@ -176,51 +293,51 @@ public partial class NonSeparableBlendModesPage : ContentPage
 }
 ```
 
-Notez que le programme n’affiche pas la valeur de la couleur TSL comme déterminé par les curseurs de trois. Au lieu de cela, il crée une valeur de couleur à partir de ces curseurs et utilise ensuite le [ `ToHsl` ](xref:SkiaSharp.SKColor.ToHsl*) méthode pour obtenir les valeurs de teinte, Saturation et de luminosité. Il s’agit, car le `FromHsl` méthode convertit une couleur TSL une couleur RVB, qui est stockée en interne dans le `SKColor` structure. Le `ToHsl` méthode convertit RVB TSL, mais le résultat ne sera pas toujours la valeur d’origine. 
+Notez que le programme n’affiche pas la valeur de couleur TSL sélectionnée par les trois curseurs. Au lieu de cela, il crée une valeur de couleur à partir de ces curseurs, puis utilise la [`ToHsl`](xref:SkiaSharp.SKColor.ToHsl*) méthode pour obtenir les valeurs de teinte, de saturation et de luminosité. Cela est dû au fait que la `FromHsl` méthode convertit une couleur TSL en couleur RVB, qui est stockée en interne dans la `SKColor` structure. La `ToHsl` méthode convertit de RVB en TSL, mais le résultat n’est pas toujours la valeur d’origine. 
 
-Par exemple, `FromHsl` convertit la valeur TSL (180, 50, 0) pour la couleur RGB (0, 0, 0), car le `Luminosity` est égal à zéro. Le `ToHsl` méthode convertit la couleur RGB (0, 0, 0) à la couleur TSL (0, 0, 0), car les valeurs de teinte et la Saturation ne soient pas pertinentes. Lorsque vous utilisez ce programme, il est préférable que vous voyez la représentation sous forme de la couleur TSL qui utilise le programme au lieu de celui que vous avez spécifié avec les curseurs.
+Par exemple, `FromHsl` convertit la valeur TSL (180, 50, 0) en couleur RVB (0, 0, 0), car `Luminosity` est égal à zéro. La `ToHsl` méthode convertit la couleur RVB (0, 0, 0) en couleur TSL (0, 0, 0), car les valeurs de teinte et de saturation ne sont pas pertinentes. Lors de l’utilisation de ce programme, il est préférable de voir la représentation de la couleur TSL que le programme utilise au lieu de celle que vous avez spécifiée avec les curseurs.
 
-Le `SKBlendModes.Hue` mode de fusion utilise le niveau de la teinte de la source de tout en conservant les niveaux de Saturation et de luminosité de la destination. Lorsque vous testez ce mode blend, les curseurs de saturation et de luminosité doivent être définies sur un élément autre que 0 ou 100, car dans ce cas, la teinte n'est pas définie de manière unique.
+Le `SKBlendModes.Hue` mode de fusion utilise le niveau de teinte de la source tout en conservant les niveaux de saturation et de luminosité de la destination. Lorsque vous testez ce mode de fondu, les curseurs de saturation et de luminosité doivent être définis sur une valeur autre que 0 ou 100, car dans ce cas, la teinte n’est pas définie de manière unique.
 
-[![Modes de fusion non séparables - Hue](non-separable-images/NonSeparableBlendModes-Hue.png "Modes Non séparables Blend - Hue")](non-separable-images/NonSeparableBlendModes-Hue-Large.png#lightbox)
+[![Modes de fusion non séparables-nuance](non-separable-images/NonSeparableBlendModes-Hue.png "Modes de fusion non séparables-nuance")](non-separable-images/NonSeparableBlendModes-Hue-Large.png#lightbox)
 
-Lorsque vous utilisez positionnez le curseur sur 0 (comme avec la capture d’écran d’iOS à gauche), tout devient tirent. Mais cela ne signifie pas que l’image est entièrement absent de vert et bleu. Évidemment, il existe des nuances de gris toujours présents dans le résultat. Par exemple, la couleur RVB (40, 40, C0) est équivalente à la couleur TSL (240, 50, 50). La teinte est bleu, mais la valeur de saturation de 50 indique qu’il existe également des composants rouges et vertes. Si la teinte est définie à 0 avec `SKBlendModes.Hue`, la couleur TSL est (0, 50, 50), qui est la couleur RVB (C0, 40, 40). Il existe toujours bleues et vertes de composants, mais maintenant le composant dominant est rouge.
+Lorsque vous utilisez la fonction définir le curseur sur 0 (comme avec la capture d’écran iOS à gauche), tout devient rougeâtre. Mais cela ne signifie pas que l’image est entièrement absente du vert et du bleu. Évidemment, les nuances de gris sont toujours présentes dans le résultat. Par exemple, la couleur RVB (40, 40, C0) est équivalente à la couleur TSL (240, 50, 50). La teinte est bleue, mais la valeur de saturation de 50 indique qu’il y a également des composants rouge et vert. Si la teinte est définie sur 0 avec `SKBlendModes.Hue` , la couleur TSL est (0, 50, 50), qui est la couleur RVB (C0, 40, 40). Il existe toujours des composants bleus et verts, mais le composant dominant est désormais rouge.
 
-Le `SKBlendModes.Saturation` blend mode combine le niveau de Saturation de la source avec la teinte et la luminosité de la destination. Comme la teinte, Saturation n’est pas bien définie, si la luminosité est 0 ou 100. En théorie, n’importe quel paramètre de luminosité entre ces deux extrêmes devrait fonctionner. Toutefois, le paramètre de luminosité semble affectent le résultat plus qu’elle ne devrait. Définissez la luminosité à 50, et vous pouvez voir comment vous pouvez définir le niveau de Saturation de l’image :
+Le `SKBlendModes.Saturation` mode de fusion associe le niveau de saturation de la source à la teinte et à la luminosité de la destination. À l’instar de la teinte, la saturation n’est pas bien définie si la luminosité est 0 ou 100. En théorie, tout paramètre de luminosité entre ces deux extrêmes doit fonctionner. Toutefois, le paramètre de luminosité semble affecter le résultat plus qu’il ne le devrait. Définissez la luminosité sur 50, et vous pouvez voir comment vous pouvez définir le niveau de saturation de l’image :
 
-[![Modes de fusion non séparables - Saturation](non-separable-images/NonSeparableBlendModes-Saturation.png "Modes Non séparables Blend - Saturation")](non-separable-images/NonSeparableBlendModes-Saturation-Large.png#lightbox)
+[![Modes de fusion non séparables-saturation](non-separable-images/NonSeparableBlendModes-Saturation.png "Modes de fusion non séparables-saturation")](non-separable-images/NonSeparableBlendModes-Saturation-Large.png#lightbox)
 
-Vous pouvez utiliser ce mode blend pour augmenter la Saturation d’une image ennuyeux de couleur, ou vous pouvez réduire la Saturation à zéro (comme dans la capture d’écran d’iOS à gauche) pour une image résultante, composée de nuances de gris uniquement.
+Vous pouvez utiliser ce mode de fondu pour augmenter la saturation des couleurs d’une image terne, ou vous pouvez réduire la saturation à zéro (comme dans la capture d’écran iOS à gauche) pour une image résultante composée uniquement de nuances de gris.
 
-Le `SKBlendModes.Color` blend mode conserve la luminosité de la destination, mais utilise la teinte et la Saturation de la source. Là encore, cela implique que tout paramètre du curseur de la luminosité quelque part entre les extrêmes doit fonctionner. 
+Le `SKBlendModes.Color` mode de fusion conserve la luminosité de la destination, mais utilise la teinte et la saturation de la source. Là encore, cela implique que tout paramètre du curseur Luminosité situé entre les extrêmes devrait fonctionner. 
 
-[![Modes de fusion non séparables - couleur](non-separable-images/NonSeparableBlendModes-Color.png "Modes Non séparables Blend - couleur")](non-separable-images/NonSeparableBlendModes-Color-Large.png#lightbox)
+[![Modes de fusion non séparables-couleur](non-separable-images/NonSeparableBlendModes-Color.png "Modes de fusion non séparables-couleur")](non-separable-images/NonSeparableBlendModes-Color-Large.png#lightbox)
 
-Vous verrez bientôt une application de ce mode blend.
+Vous verrez bientôt une application de ce mode de fondu.
 
-Enfin, le `SKBlendModes.Luminosity` mode de fusion est l’opposé de `SKBlendModes.Color`. Il conserve la teinte et la Saturation de la destination, mais utilise la luminosité de la source. Le `Luminosity` mode de fusion est le plus mystérieux du lot: Les curseurs teinte et saturation affectent l’image, mais même avec une luminosité moyenne, l’image n’est pas distincte:
+Enfin, le `SKBlendModes.Luminosity` mode de fusion est l’opposé de `SKBlendModes.Color` . Elle conserve la teinte et la saturation de la destination, mais utilise la luminosité de la source. Le `Luminosity` mode de fusion est le plus mystérieux du lot : les curseurs teinte et saturation affectent l’image, mais même avec une luminosité moyenne, l’image n’est pas distincte :
 
-[![Modes de fusion non séparables - luminosité](non-separable-images/NonSeparableBlendModes-Luminosity.png "Modes Non séparables Blend - luminosité")](non-separable-images/NonSeparableBlendModes-Luminosity-Large.png#lightbox)
+[![Modes de fusion non séparables-luminosité](non-separable-images/NonSeparableBlendModes-Luminosity.png "Modes de fusion non séparables-luminosité")](non-separable-images/NonSeparableBlendModes-Luminosity-Large.png#lightbox)
 
-En théorie, augmentant ou en diminuant la luminosité d’une image doit rendre plus clair ou sombre. Chose intéressante, la [exemple luminosité dans le Skia **SkBlendMode référence** ](https://skia.org/user/api/SkBlendMode_Reference#Luminosity) est assez semblable.
+En théorie, l’augmentation ou la diminution de la luminosité d’une image doit le rendre plus clair ou plus sombre. Il est intéressant de le faire, l' [exemple de luminosité de la **référence SkBlendMode** skia](https://skia.org/user/api/SkBlendMode_Reference#Luminosity) est assez similaire.
 
-Il n’est généralement pas le cas où vous souhaitez utiliser un des modes non séparables blend avec une source qui se compose d’une seule couleur à appliquer à l’image entière de destination. L’effet est simplement trop grand. Vous souhaitez limiter l’effet à une partie de l’image. Dans ce cas, la source va intégrer probablement la transparence, ou peut-être la source sera limitée à un graphique plus petit.
+En règle générale, il est préférable d’utiliser l’un des modes de fusion non séparables avec une source constituée d’une seule couleur appliquée à l’image de destination entière. L’effet est tout simplement trop grand. Vous souhaiterez limiter l’effet à une partie de l’image. Dans ce cas, la source incorporera probablement transparancy, ou peut-être la source sera-t-elle limitée à un graphique plus petit.
 
-## <a name="a-matte-for-a-separable-mode"></a>Un cache pour un mode séparable
+## <a name="a-matte-for-a-separable-mode"></a>Cache pour un mode séparable
 
-Voici les bitmaps inclus en tant que ressource dans le [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) exemple. Le nom de fichier est **Banana.jpg**:
+Voici l’une des bitmaps incluses comme ressource dans l’exemple [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) . Le nom de fichier est **Banana. jpg**:
 
-![Banana Monkey](non-separable-images/Banana.jpg "Banana Monkey")
+![Singe de la banane](non-separable-images/Banana.jpg "Singe de la banane")
 
-Il est possible de créer un cache qui englobe simplement le banana. Il s’agit également d’une ressource dans le [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) exemple. Le nom de fichier est **BananaMatte.png**:
+Il est possible de créer un cache qui englobe uniquement la banane. Il s’agit également d’une ressource dans l’exemple [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) . Le nom de fichier est **BananaMatte. png**:
 
-![Cache de banana](non-separable-images/BananaMatte.png "Banana cache")
+![Cache de bananes](non-separable-images/BananaMatte.png "Cache de bananes")
 
-À part la forme banana noir, le reste de l’image bitmap est transparent.
+Outre la forme noir, le reste de la bitmap est transparent.
 
-Le **Banana bleu** page utilise ce cache pour modifier la teinte et la Saturation banane qui maintient le monkey, mais modifier rien d’autre dans l’image. 
+La page de **banane bleue** utilise ce cache pour modifier la teinte et la saturation de la banane que le singe détient, mais pour ne rien faire d’autre dans l’image. 
 
-Dans l’exemple suivant `BlueBananaPage` (classe), le **Banana.jpg** bitmap est chargée en tant que champ. Les charges de constructeur le **BananaMatte.png** bitmap en tant que le `matteBitmap` objet, mais il ne conserve pas au-delà du constructeur de cet objet. Au lieu de cela, une image bitmap tiers nommé `blueBananaBitmap` est créé. Le `matteBitmap` est dessinée sur `blueBananaBitmap` suivie d’une `SKPaint` avec son `Color` bleu et son `BlendMode` défini sur `SKBlendMode.SrcIn`. Le `blueBananaBitmap` restent en grande partie transparent, mais avec une image de bleu pure solide la banane :
+Dans la `BlueBananaPage` classe suivante, la bitmap **Banana. jpg** est chargée en tant que champ. Le constructeur charge l’image bitmap **BananaMatte. png** en tant qu' `matteBitmap` objet, mais ne conserve pas cet objet au-delà du constructeur. Au lieu de cela, une troisième bitmap nommée `blueBananaBitmap` est créée. `matteBitmap`Est dessiné sur `blueBananaBitmap` suivi d’un `SKPaint` avec son `Color` défini sur bleu et son `BlendMode` défini sur `SKBlendMode.SrcIn` . Le `blueBananaBitmap` reste surtout transparent, mais avec une image bleue pure solide de la banane :
 
 ```csharp
 public class BlueBananaPage : ContentPage
@@ -283,13 +400,13 @@ public class BlueBananaPage : ContentPage
 }
 ```
 
-Le `PaintSurface` gestionnaire dessine l’image bitmap avec le monkey contenant le banana. Ce code est suivi par l’affichage de `blueBananaBitmap` avec `SKBlendMode.Color`. Sur la surface de la banane, teinte et la Saturation de chaque pixel est remplacé par le bleu solid, qui correspond à une valeur de teinte de 240 et une valeur de saturation de 100. La luminosité, cependant, reste le même, ce qui signifie que le banana continue à avoir une texture réaliste en dépit de sa nouvelle couleur :
+Le `PaintSurface` Gestionnaire dessine l’image bitmap avec le singe contenant la banane. Ce code est suivi de l’affichage de `blueBananaBitmap` avec `SKBlendMode.Color` . Sur la surface de la banane, la teinte et la saturation de chaque pixel sont remplacées par le bleu fixe, qui correspond à une valeur de teinte de 240 et une valeur de saturation de 100. Toutefois, la luminosité reste la même, ce qui signifie que la banane continue à avoir une texture réaliste malgré sa nouvelle couleur :
 
-[![Bleu Banana](non-separable-images/BlueBanana.png "bleu Banana")](non-separable-images/BlueBanana-Large.png#lightbox)
+[![Banane bleue](non-separable-images/BlueBanana.png "Banane bleue")](non-separable-images/BlueBanana-Large.png#lightbox)
 
-Essayez de modifier le mode de fusion à `SKBlendMode.Saturation`. Le banana reste jaune, mais il est un jaune plus intense. Dans une application réelle, cela peut être un effet plus souhaitable que l’activation de la banana bleu.
+Essayez de changer le mode de fusion en `SKBlendMode.Saturation` . La banane reste jaune, mais il s’agit d’un jaune plus intense. Dans une application réelle, cela peut être un effet plus souhaitable que le virage du bleu de banane.
 
 ## <a name="related-links"></a>Liens connexes
 
-- [API de SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
+- [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

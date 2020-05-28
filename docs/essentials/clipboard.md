@@ -1,19 +1,12 @@
 ---
-title: 'Xamarin.Essentials : Presse-papiers'
-description: Ce document décrit la classe Clipboard de Xamarin.Essentials, qui vous permet de copier et de coller du texte dans le Presse-papiers système entre les applications.
-ms.assetid: C52AE99A-0FB3-425D-9106-3DA5777FEFA0
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 01/06/2020
-ms.custom: video
-ms.openlocfilehash: 0b5eaf3feb608a352f8f9c97bdddac55c89d4f94
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "77545183"
+titre : ' ' Xamarin.Essentials : presse-papiers' 'Description : 'ce document décrit la classe Clipboard dans Xamarin.Essentials , qui vous permet de copier et coller du texte dans le presse-papiers du système entre les applications.
+ms. AssetID : Auteur : ms. Author : ms. Date : ms. Custom : No-Loc :
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
 ---
-# <a name="xamarinessentials-clipboard"></a>Xamarin.Essentials : Presse-papiers
+
+# <a name="xamarinessentials-clipboard"></a>Xamarin.Essentials: Presse-papiers
 
 La classe **Clipboard** vous permet de copier et de coller du texte dans le Presse-papiers système entre les applications.
 
@@ -47,7 +40,7 @@ Pour lire du texte à partir du **Presse-papiers** :
 var text = await Clipboard.GetTextAsync();
 ```
 
-Chaque fois que le contenu du presse-papiers a changé, un événement est déclenché :
+Chaque fois que le contenu du presse-papiers a changé, un événement est déclenché :
 
 ```csharp
 public class ClipboardTest

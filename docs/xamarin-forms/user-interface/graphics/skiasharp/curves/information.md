@@ -1,38 +1,41 @@
 ---
-title: Informations et énumération de tracés
-description: Cet article explique comment obtenir des informations sur les chemins d’accès SkiaSharp et énumérer le contenu et illustre ceci avec l’exemple de code.
-ms.prod: xamarin
-ms.assetid: 8E8C5C6A-F324-4155-8652-7A77D231B3E5
-ms.technology: xamarin-skiasharp
-author: davidbritch
-ms.author: dabritch
-ms.date: 09/12/2017
-ms.openlocfilehash: 6f4f4e6253c14d86e2057f13d6232a07a83b4d26
-ms.sourcegitcommit: ae5557c5024d4b7bd52b2f33cb96114ce2b8e086
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 931b8d0946f1af5e697e581a04c0feefb31ba2d3
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "78291765"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84131922"
 ---
 # <a name="path-information-and-enumeration"></a>Informations et énumération de tracés
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Obtenir des informations sur les chemins et énumérer le contenu_
 
-La classe [`SKPath`](xref:SkiaSharp.SKPath) définit plusieurs propriétés et méthodes qui vous permettent d’obtenir des informations sur le chemin d’accès. Les propriétés [`Bounds`](xref:SkiaSharp.SKPath.Bounds) et [`TightBounds`](xref:SkiaSharp.SKPath.TightBounds) (et les méthodes associées) obtiennent les dimensions métriques d’un chemin d’accès. La méthode [`Contains`](xref:SkiaSharp.SKPath.Contains(System.Single,System.Single)) vous permet de déterminer si un point particulier se trouve dans un chemin d’accès.
+La [`SKPath`](xref:SkiaSharp.SKPath) classe définit plusieurs propriétés et méthodes qui vous permettent d’obtenir des informations sur le chemin d’accès. Les [`Bounds`](xref:SkiaSharp.SKPath.Bounds) [`TightBounds`](xref:SkiaSharp.SKPath.TightBounds) Propriétés et (et les méthodes associées) obtiennent les dimensions métriques d’un chemin d’accès. La [`Contains`](xref:SkiaSharp.SKPath.Contains(System.Single,System.Single)) méthode vous permet de déterminer si un point particulier se trouve dans un chemin d’accès.
 
-Il est parfois utile de déterminer la longueur totale de toutes les lignes et courbes qui forment un chemin d’accès. Le calcul de cette longueur n’est pas une tâche algorithmique, de sorte qu’une classe entière nommée [`PathMeasure`](xref:SkiaSharp.SKPathMeasure) lui est consacrée.
+Il est parfois utile de déterminer la longueur totale de toutes les lignes et courbes qui composent un tracé. Le calcul de cette longueur n’est pas une tâche algorithmique, de sorte qu’une classe entière nommée [`PathMeasure`](xref:SkiaSharp.SKPathMeasure) lui est consacrée.
 
-Il est parfois utile d’obtenir les opérations de dessin et la points qui composent un chemin d’accès. Dans un premier temps, cette fonctionnalité peut sembler inutile : Si votre programme a créé le chemin d’accès, le programme sait déjà le contenu. Toutefois, vous avez vu que les chemins d’accès peuvent également être créés par des [effets de tracés](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) et en convertissant des [chaînes de texte en chemins d'](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md)accès. Vous pouvez également obtenir les dessin opérations et les points qui composent ces chemins d’accès. Il est possible d’appliquer une transformation algorithmique à tous les points, par exemple, pour placer le texte autour d’un hémisphère :
+Il est également parfois utile d’obtenir toutes les opérations de dessin et les points qui composent un chemin d’accès. Dans un premier temps, cette fonctionnalité peut paraître inutile : Si votre programme a créé le chemin d’accès, le programme connaît déjà le contenu. Toutefois, vous avez vu que les chemins d’accès peuvent également être créés par des [effets de tracés](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) et en convertissant des [chaînes de texte en chemins d'](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md)accès. Vous pouvez également obtenir toutes les opérations de dessin et les points qui composent ces chemins d’accès. L’une des possibilités consiste à appliquer une transformation algorithmique à tous les points, par exemple pour habiller le texte autour d’un hémisphère :
 
 ![](information-images/pathenumerationsample.png "Text wrapped on a hemisphere")
 
-## <a name="getting-the-path-length"></a>En obtenant la longueur de chemin d’accès
+## <a name="getting-the-path-length"></a>Obtention de la longueur du chemin
 
-Dans les [**chemins d’accès et le texte**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md) de l’article, vous avez vu comment utiliser la méthode [`DrawTextOnPath`](xref:SkiaSharp.SKCanvas.DrawTextOnPath(System.String,SkiaSharp.SKPath,System.Single,System.Single,SkiaSharp.SKPaint)) pour dessiner une chaîne de texte dont la ligne de base suit le cours d’un tracé. Mais que se passe-t-il si vous souhaitez la taille du texte de manière à s’ajuster avec précision le chemin d’accès ? Il est facile de dessiner du texte autour d’un cercle, car la circonférence d’un cercle est simple à calculer. Mais la circonférence d’une ellipse ou la longueur d’une courbe de Bézier n’est pas si simple.
+Dans les [**chemins d’accès et le texte**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md) de l’article, vous avez vu comment utiliser la [`DrawTextOnPath`](xref:SkiaSharp.SKCanvas.DrawTextOnPath(System.String,SkiaSharp.SKPath,System.Single,System.Single,SkiaSharp.SKPaint)) méthode pour dessiner une chaîne de texte dont la ligne de base suit le cours d’un tracé. Mais que se passe-t-il si vous souhaitez dimensionner le texte de façon à ce qu’il corresponde précisément au chemin ? Le dessin de texte autour d’un cercle est simple, car la circonférence d’un cercle est simple à calculer. Mais la circonférence d’une ellipse ou la longueur d’une courbe de Bézier n’est pas si simple.
 
-La classe [`SKPathMeasure`](xref:SkiaSharp.SKPathMeasure) peut vous aider. Le [constructeur](xref:SkiaSharp.SKPathMeasure.%23ctor(SkiaSharp.SKPath,System.Boolean,System.Single)) accepte un argument `SKPath`, et la propriété [`Length`](xref:SkiaSharp.SKPathMeasure.Length) révèle sa longueur.
+La [`SKPathMeasure`](xref:SkiaSharp.SKPathMeasure) classe peut vous aider. Le [constructeur](xref:SkiaSharp.SKPathMeasure.%23ctor(SkiaSharp.SKPath,System.Boolean,System.Single)) accepte un `SKPath` argument et la [`Length`](xref:SkiaSharp.SKPathMeasure.Length) propriété révèle sa longueur.
 
 Cette classe est illustrée dans l’exemple de **longueur de chemin d’accès** , qui est basé sur la page de **courbe de Bézier** . Le fichier [**PathLengthPage. Xaml**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathLengthPage.xaml) dérive de `InteractivePage` et comprend une interface tactile :
 
@@ -55,7 +58,7 @@ Cette classe est illustrée dans l’exemple de **longueur de chemin d’accès*
 </local:InteractivePage>
 ```
 
-Le fichier code-behind [**PathLengthPage.Xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathLengthPage.xaml.cs) vous permet de déplacer quatre points tactiles pour définir les points de terminaison et les points de contrôle d’une courbe de Bézier cubique. Trois champs définissent une chaîne de texte, un objet `SKPaint` et une largeur calculée du texte :
+Le fichier code-behind [**PathLengthPage.Xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathLengthPage.xaml.cs) vous permet de déplacer quatre points tactiles pour définir les points de terminaison et les points de contrôle d’une courbe de Bézier cubique. Trois champs définissent une chaîne de texte, un `SKPaint` objet et une largeur calculée du texte :
 
 ```csharp
 public partial class PathLengthPage : InteractivePage
@@ -74,9 +77,9 @@ public partial class PathLengthPage : InteractivePage
 }
 ```
 
-Le champ `baseTextWidth` est la largeur du texte en fonction d’un paramètre `TextSize` de 10.
+Le `baseTextWidth` champ est la largeur du texte en fonction d’un `TextSize` paramètre de 10.
 
-Le gestionnaire de `PaintSurface` dessine la courbe de Bézier, puis redimensionne le texte en fonction de la longueur maximale :
+Le `PaintSurface` Gestionnaire dessine la courbe de Bézier, puis redimensionne le texte en fonction de la longueur maximale :
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -110,15 +113,15 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-La propriété `Length` de l’objet `SKPathMeasure` nouvellement créé obtient la longueur du chemin d’accès. La longueur du chemin d’accès est divisée par la valeur `baseTextWidth` (qui est la largeur du texte en fonction d’une taille de texte de 10), puis multipliée par la taille du texte de base de 10. Le résultat est une nouvelle taille de texte pour l’affichage du texte le long de ce chemin d’accès :
+La `Length` propriété de l’objet nouvellement créé `SKPathMeasure` obtient la longueur du chemin d’accès. La longueur du chemin d’accès est divisée par la `baseTextWidth` valeur (qui est la largeur du texte en fonction d’une taille de texte de 10), puis multipliée par la taille du texte de base de 10. Le résultat est une nouvelle taille de texte pour l’affichage du texte le long de ce chemin d’accès :
 
 [![](information-images/pathlength-small.png "Triple screenshot of the Path Length page")](information-images/pathlength-large.png#lightbox "Triple screenshot of the Path Length page")
 
-Plus la courbe de Bézier est plus ou moins longtemps, vous pouvez voir la taille du texte changent.
+Lorsque la courbe de Bézier est plus longue ou plus petite, vous pouvez voir la modification de la taille du texte.
 
-## <a name="traversing-the-path"></a>Parcourir le chemin d’accès
+## <a name="traversing-the-path"></a>Parcours du chemin
 
-`SKPathMeasure` pouvez faire plus que mesurer simplement la longueur du chemin d’accès. Pour toute valeur comprise entre zéro et la longueur du chemin d’accès, un objet `SKPathMeasure` peut obtenir la position sur le tracé et la tangente à la courbe path à ce stade. La tangente est disponible sous forme de vecteur sous la forme d’un objet `SKPoint` ou sous forme de rotation encapsulée dans un objet `SKMatrix`. Voici les méthodes de `SKPathMeasure` qui obtiennent ces informations de manière variée et flexible :
+`SKPathMeasure`peut faire plus que mesurer simplement la longueur du chemin d’accès. Pour toute valeur comprise entre zéro et la longueur du chemin d’accès, un `SKPathMeasure` objet peut obtenir la position sur le tracé et la tangente à la courbe du tracé à ce stade. La tangente est disponible en tant que vecteur sous la forme d’un `SKPoint` objet, ou en tant que rotation encapsulée dans un `SKMatrix` objet. Voici les méthodes permettant d' `SKPathMeasure` obtenir ces informations de manière variée et flexible :
 
 ```csharp
 Boolean GetPosition (Single distance, out SKPoint position)
@@ -130,7 +133,7 @@ Boolean GetPositionAndTangent (Single distance, out SKPoint position, out SKPoin
 Boolean GetMatrix (Single distance, out SKMatrix matrix, SKPathMeasureMatrixFlags flag)
 ```
 
-Les membres de l’énumération [`SKPathMeasureMatrixFlags`](xref:SkiaSharp.SKPathMeasureMatrixFlags) sont :
+Les membres de l' [`SKPathMeasureMatrixFlags`](xref:SkiaSharp.SKPathMeasureMatrixFlags) énumération sont :
 
 - `GetPosition`
 - `GetTangent`
@@ -140,7 +143,7 @@ La page à **demi-tube Unicycle** anime un chiffre en forme de bâton sur un uni
 
 [![](information-images/unicyclehalfpipe-small.png "Triple screenshot of the Unicycle Half-Pipe page")](information-images/unicyclehalfpipe-large.png#lightbox "Triple screenshot of the Unicycle Half-Pipe page")
 
-L’objet `SKPaint` utilisé pour le détourage du demi-canal et du Unicycle est défini en tant que champ dans la classe `UnicycleHalfPipePage`. Également défini est l’objet `SKPath` pour Unicycle :
+L' `SKPaint` objet utilisé pour le détourage du demi-canal et du Unicycle est défini en tant que champ dans la `UnicycleHalfPipePage` classe. Également défini est l' `SKPath` objet pour le Unicycle :
 
 ```csharp
 public class UnicycleHalfPipePage : ContentPage
@@ -165,7 +168,7 @@ public class UnicycleHalfPipePage : ContentPage
 }
 ```
 
-La classe contient les substitutions standard des méthodes `OnAppearing` et `OnDisappearing` pour l’animation. Le gestionnaire de `PaintSurface` crée le chemin d’accès pour le demi-canal, puis le dessine. Un objet `SKPathMeasure` est ensuite créé sur la base de ce chemin d’accès :
+La classe contient les substitutions standard des `OnAppearing` `OnDisappearing` méthodes et pour l’animation. Le `PaintSurface` Gestionnaire crée le chemin d’accès pour le demi-canal, puis le dessine. Un `SKPathMeasure` objet est ensuite créé sur la base de ce chemin d’accès :
 
 ```csharp
 public class UnicycleHalfPipePage : ContentPage
@@ -211,15 +214,15 @@ public class UnicycleHalfPipePage : ContentPage
 }
 ```
 
-Le gestionnaire de `PaintSurface` calcule une valeur de `t` qui va de 0 à 1 toutes les cinq secondes. Il utilise ensuite la fonction `Math.Cos` pour le convertir en une valeur de `t` qui est comprise entre 0 et 1 et de retour à 0, où 0 correspond au Unicycle au début en haut à gauche, tandis que 1 correspond au Unicycle en haut à droite. La fonction cosinus provoque la vitesse à être plus lente en haut du canal et le plus rapide en bas.
+Le `PaintSurface` Gestionnaire calcule une valeur de `t` qui va de 0 à 1 toutes les cinq secondes. Il utilise ensuite la `Math.Cos` fonction pour convertir celui-ci en une valeur de qui est comprise `t` entre 0 et 1, puis de nouveau à 0, où 0 correspond au Unicycle au début en haut à gauche, tandis que 1 correspond au Unicycle en haut à droite. La fonction cosinus fait que la vitesse est la plus lente en haut du canal et la plus rapide en bas.
 
-Notez que cette valeur de `t` doit être multipliée par la longueur du chemin d’accès pour le premier argument de `GetMatrix`. La matrice est ensuite appliquée à l’objet `SKCanvas` pour dessiner le chemin Unicycle.
+Notez que cette valeur de `t` doit être multipliée par la longueur du chemin d’accès pour le premier argument de `GetMatrix` . La matrice est ensuite appliquée à l' `SKCanvas` objet pour dessiner le chemin d’accès Unicycle.
 
-## <a name="enumerating-the-path"></a>Le chemin d’accès de l’énumération des
+## <a name="enumerating-the-path"></a>Énumération du chemin d’accès
 
-Deux classes incorporées de `SKPath` vous permettent d’énumérer le contenu d’un chemin d’accès. Ces classes sont [`SKPath.Iterator`](xref:SkiaSharp.SKPath.Iterator) et [`SKPath.RawIterator`](xref:SkiaSharp.SKPath.RawIterator). Les deux classes sont très similaires, mais `SKPath.Iterator` peuvent éliminer des éléments dans le chemin d’accès avec une longueur nulle, ou se rapprocher d’une longueur nulle. Le `RawIterator` est utilisé dans l’exemple ci-dessous.
+Deux classes incorporées de `SKPath` vous permettent d’énumérer le contenu d’un chemin d’accès. Ces classes sont [`SKPath.Iterator`](xref:SkiaSharp.SKPath.Iterator) et [`SKPath.RawIterator`](xref:SkiaSharp.SKPath.RawIterator) . Les deux classes sont très similaires, mais elles `SKPath.Iterator` peuvent éliminer les éléments du chemin d’accès avec une longueur nulle, ou se rapprocher d’une longueur nulle. Le `RawIterator` est utilisé dans l’exemple ci-dessous.
 
-Vous pouvez obtenir un objet de type `SKPath.RawIterator` en appelant la méthode [`CreateRawIterator`](xref:SkiaSharp.SKPath.CreateRawIterator) de `SKPath`. L’énumération via le chemin d’accès s’effectue en appelant à plusieurs reprises la méthode [`Next`](xref:SkiaSharp.SKPath.RawIterator.Next*) . Transmettez-le à un tableau de quatre valeurs `SKPoint` :
+Vous pouvez obtenir un objet de type `SKPath.RawIterator` en appelant la [`CreateRawIterator`](xref:SkiaSharp.SKPath.CreateRawIterator) méthode de `SKPath` . L’énumération via le chemin d’accès s’effectue en appelant à plusieurs reprises la [`Next`](xref:SkiaSharp.SKPath.RawIterator.Next*) méthode. Transmettez-lui un tableau de quatre `SKPoint` valeurs :
 
 ```csharp
 SKPoint[] points = new SKPoint[4];
@@ -227,35 +230,35 @@ SKPoint[] points = new SKPoint[4];
 SKPathVerb pathVerb = rawIterator.Next(points);
 ```
 
-La méthode `Next` retourne un membre du type énumération [`SKPathVerb`](xref:SkiaSharp.SKPathVerb) . Ces valeurs indiquent la commande de dessin spécifique dans le chemin d’accès. Le nombre de points valides inséré dans le tableau dépend de ce verbe :
+La `Next` méthode retourne un membre du [`SKPathVerb`](xref:SkiaSharp.SKPathVerb) type énumération. Ces valeurs indiquent la commande de dessin particulière dans le tracé. Le nombre de points valides insérés dans le tableau dépend de ce verbe :
 
-- `Move` avec un point unique
-- `Line` avec deux points
-- `Cubic` avec quatre points
-- `Quad` avec trois points
-- `Conic` avec trois points (et également appeler la méthode [`ConicWeight`](xref:SkiaSharp.SKPath.RawIterator.ConicWeight*) pour le poids)
-- `Close` avec un point
+- `Move`avec un point unique
+- `Line`avec deux points
+- `Cubic`avec quatre points
+- `Quad`avec trois points
+- `Conic`avec trois points (et également appeler la [`ConicWeight`](xref:SkiaSharp.SKPath.RawIterator.ConicWeight*) méthode pour le poids)
+- `Close`avec un point
 - `Done`
 
-Le verbe de `Done` indique que l’énumération de chemin est terminée.
+Le `Done` verbe indique que l’énumération du chemin d’accès est terminée.
 
-Notez qu’il n’y a pas de verbes de `Arc`. Cela indique que tous les arcs sont convertis en courbes de Bézier lors de l’ajout pour le chemin d’accès.
+Notez qu’il n’y a pas de `Arc` verbes. Cela indique que tous les arcs sont convertis en courbes de Bézier lorsqu’ils sont ajoutés au tracé.
 
-Certaines des informations contenues dans le tableau `SKPoint` sont redondantes. Par exemple, si un verbe `Move` est suivi d’un verbe `Line`, le premier des deux points qui accompagnent le `Line` est le même que le point de `Move`. Dans la pratique, cette redondance est très utile. Lorsque vous recevez un verbe de `Cubic`, il est accompagné des quatre points qui définissent la courbe de Bézier cubique. Vous n’avez pas besoin de conserver la position actuelle, établie par le verbe précédent.
+Certaines des informations contenues dans le `SKPoint` tableau sont redondantes. Par exemple, si un verbe `Move` est suivi d’un `Line` verbe, le premier des deux points qui accompagnent `Line` est le même que le `Move` point. Dans la pratique, cette redondance est très utile. Lorsque vous recevez un `Cubic` verbe, il est accompagné des quatre points qui définissent la courbe de Bézier cubique. Vous n’avez pas besoin de conserver la position actuelle établie par le verbe précédent.
 
-Toutefois, le verbe problématique est `Close`. Cette commande dessine une ligne droite à partir de la position actuelle jusqu’au début du contour établi précédemment par la commande `Move`. Dans l’idéal, le verbe `Close` doit fournir ces deux points plutôt qu’un seul point. Ce qui est pire, c’est que le point accompagnant le verbe `Close` est toujours (0,0). Lorsque vous énumérez un chemin d’accès, vous devrez probablement conserver le point de `Move` et la position actuelle.
+Toutefois, le verbe problématique est `Close` . Cette commande dessine une ligne droite à partir de la position actuelle jusqu’au début du contour établi précédemment par la `Move` commande. Dans l’idéal, le `Close` verbe doit fournir ces deux points plutôt qu’un seul point. Ce qui est pire, c’est que le point accompagnant le `Close` verbe est toujours (0,0). Lorsque vous énumérez un chemin d’accès, vous devrez probablement conserver le `Move` point et la position actuelle.
 
-## <a name="enumerating-flattening-and-malforming"></a>L’énumération, mise à plat et Malforming
+## <a name="enumerating-flattening-and-malforming"></a>Énumération, mise à plat et Malforming
 
-Il est parfois souhaitable d’appliquer une algorithmique transformer un chemin d’accès au malform d’une certaine façon :
+Il est parfois préférable d’appliquer une transformation algorithmique à un chemin d’accès pour l’malform d’une certaine manière :
 
 ![](information-images/pathenumerationsample.png "Text wrapped on a hemisphere")
 
-La plupart de ces lettres sont constitués de lignes droites, mais ces lignes droites ont apparemment été détournés en courbes. Comment est-ce possible ?
+La plupart de ces lettres se composent de lignes droites, mais ces lignes droites sont apparemment tordues en courbes. Comment est-ce possible ?
 
-La clé est que les lignes droites d’origine sont répartis en une série de lignes droites plus petits. Ces droites individuelles plus petites peuvent ensuite être manipulées de différentes façons pour former une courbe.
+La clé est que les lignes droites d’origine sont divisées en une série de lignes droites plus petites. Ces lignes droites plus petites peuvent ensuite être manipulées de différentes façons pour former une courbe.
 
-Pour faciliter ce processus, l’exemple [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) contient une classe [`PathExtensions`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathExtensions.cs) statique avec une méthode `Interpolate` qui décompose une ligne droite en plusieurs lignes courtes qui ne représentent qu’une seule unité de longueur. En outre, la classe contient plusieurs méthodes qui convertissent les trois types de courbes de Bézier en une série de petits traits qui se rapprochent de la courbe. (Les formules paramétriques ont été présentées dans l’article [**trois types de courbes de Bézier**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/beziers.md).) Ce processus est appelé _aplatissement_ de la courbe :
+Pour faciliter ce processus, l’exemple [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) contient une classe statique [`PathExtensions`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathExtensions.cs) avec une `Interpolate` méthode qui décompose une ligne droite en plusieurs lignes courtes qui n’ont qu’une seule unité de longueur. En outre, la classe contient plusieurs méthodes qui convertissent les trois types de courbes de Bézier en une série de petites lignes droites qui se rapprochent de la courbe. (Les formules paramétriques ont été présentées dans l’article [**trois types de courbes de Bézier**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/beziers.md).) Ce processus est appelé _aplatissement_ de la courbe :
 
 ```csharp
 static class PathExtensions
@@ -341,9 +344,9 @@ static class PathExtensions
 }
 ```
 
-Toutes ces méthodes sont référencées à partir de la méthode d’extension `CloneWithTransform` également incluses dans cette classe et illustrées ci-dessous. Cette méthode clone un chemin d’accès en énumérant les commandes de chemin d’accès et en créant un nouveau chemin d’accès en fonction des données. Toutefois, le nouveau chemin d’accès se compose uniquement d' `MoveTo` et d’appels de `LineTo`. Toutes les lignes droites et courbes sont réduites à une série de lignes minuscules.
+Toutes ces méthodes sont référencées à partir de la méthode d’extension `CloneWithTransform` incluse également dans cette classe et illustrées ci-dessous. Cette méthode Clone un chemin d’accès en énumérant les commandes de chemin d’accès et en construisant un nouveau chemin d’accès basé sur les données. Toutefois, le nouveau chemin d’accès se compose uniquement des `MoveTo` `LineTo` appels et. Toutes les courbes et les lignes droites sont réduites à une série de lignes minuscules.
 
-Lors de l’appel de `CloneWithTransform`, vous transmettez à la méthode un `Func<SKPoint, SKPoint>`, qui est une fonction avec un paramètre `SKPaint` qui retourne une valeur `SKPoint`. Cette fonction est appelée pour chaque point d’appliquer une transformation algorithmique personnalisée :
+Lors de `CloneWithTransform` l’appel de, vous transmettez à la méthode a `Func<SKPoint, SKPoint>` , qui est une fonction avec un `SKPaint` paramètre qui retourne une `SKPoint` valeur. Cette fonction est appelée pour chaque point pour appliquer une transformation algorithmique personnalisée :
 
 ```csharp
 static class PathExtensions
@@ -432,15 +435,15 @@ static class PathExtensions
 }
 ```
 
-Étant donné que le chemin d’accès cloné est réduite à des lignes droites minuscules, la fonction de transformation a la possibilité de conversion de lignes droites en courbes.
+Étant donné que le chemin cloné est réduit à des lignes droites minuscules, la fonction Transform a la possibilité de convertir des lignes droites en courbes.
 
-Notez que la méthode conserve le premier point de chaque contour dans la variable appelée `firstPoint` et la position actuelle après chaque commande de dessin dans la variable `lastPoint`. Ces variables sont nécessaires pour construire la ligne de fermeture finale lorsqu’un verbe de `Close` est rencontré.
+Notez que la méthode conserve le premier point de chaque contour dans la variable appelée `firstPoint` et la position actuelle après chaque commande de dessin dans la variable `lastPoint` . Ces variables sont nécessaires pour construire la ligne de fermeture finale lorsqu’un `Close` verbe est rencontré.
 
 L’exemple **GlobularText** utilise cette méthode d’extension pour habiller en apparence le texte autour d’un hémisphère dans un effet 3D :
 
 [![](information-images/globulartext-small.png "Triple screenshot of the Globular Text page")](information-images/globulartext-large.png#lightbox "Triple screenshot of the Globular Text page")
 
-Le constructeur de classe [`GlobularTextPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/GlobularTextPage.cs) effectue cette transformation. Il crée un objet `SKPaint` pour le texte, puis obtient un objet `SKPath` à partir de la méthode `GetTextPath`. Il s’agit du chemin d’accès passé à la méthode d’extension `CloneWithTransform`, ainsi qu’à une fonction de transformation :
+Le [`GlobularTextPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/GlobularTextPage.cs) constructeur de classe effectue cette transformation. Il crée un `SKPaint` objet pour le texte, puis obtient un `SKPath` objet à partir de la `GetTextPath` méthode. Il s’agit du chemin d’accès passé à la `CloneWithTransform` méthode d’extension avec une fonction de transformation :
 
 ```csharp
 public class GlobularTextPage : ContentPage
@@ -487,9 +490,9 @@ public class GlobularTextPage : ContentPage
 }
 ```
 
-La fonction Transform calcule d’abord deux valeurs nommées `longitude` et `latitude` qui vont de – π/2 en haut et à gauche du texte, à π/2 à droite et en bas du texte. La plage de ces valeurs n’est pas satisfaisante visuellement, afin qu’ils sont réduits en multipliant par la valeur 0,75. (Essayez le code sans ces ajustements. Le texte devient trop obscur aux pôles Nord et sud et trop étroit en face des côtés.) Ces coordonnées sphériques tridimensionnelles sont converties en `x` à deux dimensions et `y` coordonnées par formules standard.
+La fonction Transform calcule d’abord deux valeurs nommées `longitude` et `latitude` qui sont comprises entre-π/2 en haut et à gauche du texte, et π/2 à droite et en bas du texte. La plage de ces valeurs n’est pas satisfaisante visuellement, donc elles sont réduites en multipliant par 0,75. (Essayez le code sans ces réglages. Le texte devient trop obscur aux pôles Nord et sud et trop étroit en face des côtés.) Ces coordonnées sphériques tridimensionnelles sont converties en deux dimensions `x` et `y` coordonnées par des formules standard.
 
-Le nouveau chemin d’accès est stocké en tant que champ. Le gestionnaire de `PaintSurface` doit ensuite simplement centrer et mettre à l’échelle le chemin d’accès pour l’afficher à l’écran :
+Le nouveau chemin d’accès est stocké en tant que champ. Le `PaintSurface` gestionnaire doit ensuite simplement centrer et mettre à l’échelle le chemin d’accès pour l’afficher à l’écran :
 
 ```csharp
 public class GlobularTextPage : ContentPage

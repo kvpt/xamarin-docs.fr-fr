@@ -1,24 +1,27 @@
 ---
-title: Guide de disposition en zone sécurisée sur iOS
-description: Caractéristiques de la plateforme vous autorisons à utiliser les fonctionnalités qui est disponible uniquement sur une plateforme spécifique, sans avoir à implémenter des convertisseurs personnalisés ou des effets. Cet article explique comment utiliser le propre à la plateforme iOS, qui garantit que le contenu de la page est placé sur une zone de l’écran qui est sécurisée pour tous les appareils qui utilisent iOS 11 et versions ultérieures.
-ms.prod: xamarin
-ms.assetid: 2B6789C1-39B4-4C16-ADE1-3ED3378EAC63
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 10/24/2018
-ms.openlocfilehash: c6a2ec5a4d1466b7118e6cc7b03cc5518b27e2fb
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5ca30481fbc0e5631ff75000c688dd805793e670
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644544"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84128054"
 ---
 # <a name="safe-area-layout-guide-on-ios"></a>Guide de disposition en zone sécurisée sur iOS
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-Ce spécifique à la plateforme iOS est utilisé pour s’assurer que le contenu de la page est positionné sur une zone de l’écran qui est sécurisée pour tous les appareils qui utilisent iOS 11 et versions ultérieures. Plus précisément, il vous aidera à vous assurer que le contenu n’est pas découpé par les angles arrondis d’appareil, l’indicateur d’accueil ou le boîtier de capteur sur un iPhone X. Elle est consommée dans XAML en définissant le `Page.UseSafeArea` propriété jointe un `boolean` valeur :
+Ce spécifique à la plateforme iOS est utilisé pour s’assurer que le contenu de la page est positionné sur une zone de l’écran qui est sécurisée pour tous les appareils qui utilisent iOS 11 et versions ultérieures. Plus précisément, il permet de s’assurer que le contenu n’est pas coupé par des angles de périphérique arrondis, l’indicateur de début ou le boîtier du capteur sur un iPhone X. Il est consommé en XAML en affectant `Page.UseSafeArea` une valeur à la propriété jointe `boolean` :
 
 ```xaml
 <ContentPage ...
@@ -31,7 +34,7 @@ Ce spécifique à la plateforme iOS est utilisé pour s’assurer que le contenu
 </ContentPage>
 ```
 
-Vous pouvez également, il peut être consommé à partir de C# à l’aide de l’API fluent :
+Elle peut également être utilisée à partir de C# à l’aide de l’API Fluent :
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -41,16 +44,16 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 On<iOS>().SetUseSafeArea(true);
 ```
 
-Le `Page.On<iOS>` méthode spécifie que cette plateforme spécifique s’exécute uniquement sur iOS. Le `Page.SetUseSafeArea` (méthode), dans le [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) contrôle l’espace de noms, si le repère de disposition de zone protégée est activée.
+La `Page.On<iOS>` méthode spécifie que ce spécifique à la plateforme s’exécutera uniquement sur iOS. La `Page.SetUseSafeArea` méthode, dans l' [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) espace de noms, détermine si le repère de disposition de zone sécurisée est activé.
 
-Le résultat est que le contenu de la page peut être positionné sur une zone de l’écran qui est sécurisé pour tous les iPhone :
+Le résultat est que le contenu de la page peut être positionné sur une zone de l’écran qui est sûre pour tous les iPhone :
 
-[![](page-safe-area-images/safe-area-layout.png "Repère de disposition de zone protégée")](page-safe-area-images/safe-area-layout-large.png#lightbox "repère de disposition de zone protégée")
+[![](page-safe-area-images/safe-area-layout.png "Safe Area Layout Guide")](page-safe-area-images/safe-area-layout-large.png#lightbox "Safe Area Layout Guide")
 
 > [!NOTE]
-> La zone protégée définie par Apple est utilisée dans Xamarin.Forms pour définir le [ `Page.Padding` ](xref:Xamarin.Forms.Page.Padding) propriété et remplacent toutes les valeurs précédentes de cette propriété qui ont été définis.
+> La zone sécurisée définie par Apple est utilisée dans Xamarin.Forms pour définir la [`Page.Padding`](xref:Xamarin.Forms.Page.Padding) propriété et remplace toutes les valeurs précédentes de cette propriété qui ont été définies.
 
-La zone protégée peut être personnalisée en récupérant sa [ `Thickness` ](xref:Xamarin.Forms.Thickness) valeur avec le `Page.SafeAreaInsets` méthode à partir de la [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) espace de noms. Il peut ensuite être modifié en tant que nécessaire et réaffecté à la `Padding` propriété dans le constructeur de page ou [ `OnAppearing` ](xref:Xamarin.Forms.Page.OnAppearing) remplacer :
+La zone sécurisée peut être personnalisée en extrayant sa [`Thickness`](xref:Xamarin.Forms.Thickness) valeur avec la `Page.SafeAreaInsets` méthode de l' [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) espace de noms. Elle peut ensuite être modifiée en fonction des besoins et être réaffectée à la `Padding` propriété dans le constructeur de page ou la [`OnAppearing`](xref:Xamarin.Forms.Page.OnAppearing) substitution :
 
 ```csharp
 protected override void OnAppearing()

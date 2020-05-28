@@ -1,24 +1,27 @@
 ---
-title: VisualElement premier répondeur sur iOS
-description: Caractéristiques de la plateforme vous autorisons à utiliser les fonctionnalités qui est disponible uniquement sur une plateforme spécifique, sans avoir à implémenter des convertisseurs personnalisés ou des effets. Cet article explique comment utiliser le spécifique à la plateforme iOS qui permet à un objet VisualElement de devenir le premier répondeur aux événements tactiles.
-ms.prod: xamarin
-ms.assetid: 3A77BA02-B87A-44EC-AC51-9D3130EF314C
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/15/2020
-ms.openlocfilehash: be6c233b63d172d2fcacb1cea7f5e9aeeb7faed1
-ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d8bd539c2bb0e8963afae3392b6f8e99d79af9af
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "78292512"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136966"
 ---
 # <a name="visualelement-first-responder-on-ios"></a>VisualElement premier répondeur sur iOS
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-Ce spécifique à la plateforme iOS permet à un objet [`VisualElement`](xref:Xamarin.Forms.VisualElement) de devenir le premier répondeur aux événements tactiles, plutôt que la page contenant l’élément. Il est consommé en XAML en affectant à la propriété `VisualElement.CanBecomeFirstResponder` pouvant être liée la valeur `true`:
+Ce spécifique à la plateforme iOS permet à un [`VisualElement`](xref:Xamarin.Forms.VisualElement) objet de devenir le premier répondeur aux événements tactiles, plutôt qu’à la page contenant l’élément. Il est consommé en XAML en affectant `VisualElement.CanBecomeFirstResponder` à la propriété pouvant être liée la valeur `true` :
 
 ```xaml
 <ContentPage ...
@@ -31,7 +34,7 @@ Ce spécifique à la plateforme iOS permet à un objet [`VisualElement`](xref:Xa
 </ContentPage>
 ```
 
-Vous pouvez également, il peut être consommé à partir de c# à l’aide de l’API fluent :
+Elle peut également être utilisée à partir de C# à l’aide de l’API Fluent :
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -43,9 +46,9 @@ Button button = new Button { Text = "OK" };
 button.On<iOS>().SetCanBecomeFirstResponder(true);
 ```
 
-La méthode `VisualElement.On<iOS>` spécifie que ce spécifique à la plateforme s’exécutera uniquement sur iOS. La méthode `VisualElement.SetCanBecomeFirstResponder`, dans l’espace de noms [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) , est utilisée pour définir le `VisualElement` pour qu’il devienne le premier répondeur pour les événements tactiles. En outre, la méthode `VisualElement.CanBecomeFirstResponder` peut être utilisée pour retourner si le `VisualElement` est le premier répondeur aux événements tactiles.
+La `VisualElement.On<iOS>` méthode spécifie que ce spécifique à la plateforme s’exécutera uniquement sur iOS. La `VisualElement.SetCanBecomeFirstResponder` méthode, dans l' [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) espace de noms, est utilisée pour définir le `VisualElement` pour qu’il devienne le premier répondeur pour les événements tactiles. En outre, la `VisualElement.CanBecomeFirstResponder` méthode peut être utilisée pour retourner si le `VisualElement` est le premier répondeur aux événements tactiles.
 
-Le résultat est qu’une [`VisualElement`](xref:Xamarin.Forms.VisualElement) peut devenir le premier répondeur pour les événements tactiles, plutôt que la page contenant l’élément. Cela permet des scénarios tels que les applications de conversation qui n’ignorent pas un clavier quand un [`Button`](xref:Xamarin.Forms.Button) est frappé.
+Le résultat est qu’un [`VisualElement`](xref:Xamarin.Forms.VisualElement) peut devenir le premier répondeur pour les événements tactiles, plutôt que la page contenant l’élément. Cela permet des scénarios tels que les applications de conversation qui n’ignorent pas un clavier quand un [`Button`](xref:Xamarin.Forms.Button) est frappé.
 
 ## <a name="related-links"></a>Liens connexes
 

@@ -1,24 +1,27 @@
 ---
-title: SkiaSharp le bruit et la composition
-description: Générez des nuanceurs de bruit Perl et associez-les à d’autres nuanceurs.
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: 90C2D00A-2876-43EA-A836-538C3318CF93
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/23/2018
-ms.openlocfilehash: c1e500936b89f2ec8dc17279a7ed878dc7f5cbb3
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+title: ''
+description: ''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 45ec48c0b7b58e26fa47d7343e96bb49591cb339
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029436"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84127762"
 ---
 # <a name="skiasharp-noise-and-composing"></a>SkiaSharp le bruit et la composition
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-Les graphiques vectoriels simples ont tendance à paraître innaturels. Les lignes droites, les courbes lissées et les couleurs unies ne sont pas similaires aux imperfections des objets réels. En travaillant sur les graphiques générés par ordinateur pour le film _Tron_1982, le chercheur en informatique Ken Perl a commencé à développer des algorithmes qui utilisaient des processus aléatoires pour obtenir des textures plus réalistes. Dans 1997, Ken Perl a remporté un prix d’Académie pour la réalisation technique. Son travail est connu sous le nom de « Perl » et est pris en charge dans SkiaSharp. Voici un exemple :
+Les graphiques vectoriels simples ont tendance à paraître innaturels. Les lignes droites, les courbes lissées et les couleurs unies ne sont pas similaires aux imperfections des objets réels. En travaillant sur les graphiques générés par ordinateur pour le film _Tron_1982, le chercheur en informatique Ken Perl a commencé à développer des algorithmes qui utilisaient des processus aléatoires pour obtenir des textures plus réalistes. Dans 1997, Ken Perl a remporté un prix d’Académie pour la réalisation technique. Son travail est connu sous le nom de « Perl » et est pris en charge dans SkiaSharp. Voici un exemple :
 
 ![Exemple de bruit perl](noise-images/NoiseSample.png "Exemple de bruit perl")
 
@@ -28,7 +31,7 @@ La prise en charge du bruit perl dans skia est basée sur une spécification W3C
 
 ## <a name="exploring-perlin-noise"></a>Exploration du bruit perl
 
-La classe [`SKShader`](xref:SkiaSharp.SKShader) définit deux méthodes statiques différentes pour générer le bruit perl : [`CreatePerlinNoiseFractalNoise`](xref:SkiaSharp.SKShader.CreatePerlinNoiseFractalNoise*) et [`CreatePerlinNoiseTurbulence`](xref:SkiaSharp.SKShader.CreatePerlinNoiseTurbulence*). Les paramètres sont identiques :
+La [`SKShader`](xref:SkiaSharp.SKShader) classe définit deux méthodes statiques différentes pour générer le bruit perl : [`CreatePerlinNoiseFractalNoise`](xref:SkiaSharp.SKShader.CreatePerlinNoiseFractalNoise*) et [`CreatePerlinNoiseTurbulence`](xref:SkiaSharp.SKShader.CreatePerlinNoiseTurbulence*) . Les paramètres sont identiques :
 
 ```csharp
 public static SkiaSharp CreatePerlinNoiseFractalNoise (float baseFrequencyX, float baseFrequencyY, int numOctaves, float seed);
@@ -36,15 +39,15 @@ public static SkiaSharp CreatePerlinNoiseFractalNoise (float baseFrequencyX, flo
 public static SkiaSharp.SKShader CreatePerlinNoiseTurbulence (float baseFrequencyX, float baseFrequencyY, int numOctaves, float seed);
 ```
 
-Les deux méthodes existent également dans les versions surchargées avec un paramètre de `SKPointI` supplémentaire. La section Présentation de la [**mosaïque de Perl**](#tiling-perlin-noise) décrit ces surcharges.
+Les deux méthodes existent également dans les versions surchargées avec un `SKPointI` paramètre supplémentaire. La section Présentation de la [**mosaïque de Perl**](#tiling-perlin-noise) décrit ces surcharges.
 
 Les deux `baseFrequency` arguments sont des valeurs positives définies dans la documentation SkiaSharp comme allant de 0 à 1, mais elles peuvent également être définies sur des valeurs plus élevées. Plus la valeur est élevée, plus la modification de l’image aléatoire est importante dans les directions horizontale et verticale.
 
-La valeur `numOctaves` est un entier égal ou supérieur à 1. Il se réfère à un facteur d’itération dans les algorithmes. Chaque octave supplémentaire apporte un effet qui correspond à la moitié de l’octave précédente, de sorte que l’effet diminue avec des valeurs d’octave supérieures.
+La `numOctaves` valeur est un entier égal ou supérieur à 1. Il se réfère à un facteur d’itération dans les algorithmes. Chaque octave supplémentaire apporte un effet qui correspond à la moitié de l’octave précédente, de sorte que l’effet diminue avec des valeurs d’octave supérieures.
 
-Le paramètre `seed` est le point de départ du générateur de nombres aléatoires. Bien qu’elle soit spécifiée comme valeur à virgule flottante, la fraction est tronquée avant d’être utilisée, et 0 est le même que 1.
+Le `seed` paramètre est le point de départ pour le générateur de nombres aléatoires. Bien qu’elle soit spécifiée comme valeur à virgule flottante, la fraction est tronquée avant d’être utilisée, et 0 est le même que 1.
 
-La page de **bruit perl** dans l’exemple [ **SkiaSharpFormsDemos**)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) vous permet d’expérimenter différentes valeurs des arguments `baseFrequency` et `numOctaves`. Voici le fichier XAML :
+La page de **bruit perl** dans l’exemple [ **SkiaSharpFormsDemos**)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) vous permet de faire des essais avec différentes valeurs des `baseFrequency` `numOctaves` arguments et. Voici le fichier XAML :
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -92,7 +95,7 @@ La page de **bruit perl** dans l’exemple [ **SkiaSharpFormsDemos**)](https://d
 </ContentPage>
 ```
 
-Il utilise deux vues de `Slider` pour les deux arguments `baseFrequency`. Pour étendre la plage des valeurs inférieures, les curseurs sont logarithmiques. Le fichier code-behind calcule les arguments des méthodes `SKShader`à partir des puissances des valeurs de `Slider`. Les vues `Label` affichent les valeurs calculées :
+Il utilise deux `Slider` vues pour les deux `baseFrequency` arguments. Pour étendre la plage des valeurs inférieures, les curseurs sont logarithmiques. Le fichier code-behind calcule les arguments des `SKShader` méthodes à partir des puissances des `Slider` valeurs. Les `Label` vues affichent les valeurs calculées :
 
 ```csharp
 float baseFreqX = (float)Math.Pow(10, baseFrequencyXSlider.Value - 4);
@@ -102,7 +105,7 @@ float baseFreqY = (float)Math.Pow(10, baseFrequencyYSlider.Value - 4);
 baseFrequencyYText.Text = String.Format("Base Frequency Y = {0:F4}", baseFreqY);
 ```
 
-Une `Slider` valeur de 1 correspond à 0,001, une valeur de `Slider` OS 2 correspond à 0,01, une valeur de `Slider` de 3 correspond à 0,1 et une valeur de `Slider` de 4 correspond à 1.
+Une `Slider` valeur de 1 correspond à 0,001, une `Slider` valeur OS 2 correspond à 0,01, une valeur `Slider` de 3 correspond à 0,1 et une `Slider` valeur de 4 correspond à 1.
 
 Voici le fichier code-behind qui comprend ce code :
 
@@ -171,13 +174,13 @@ Voici le programme s’exécutant sur des appareils iOS, Android et plateforme W
 
 Les mêmes arguments produisent toujours le même modèle qui commence à l’angle supérieur gauche. Cette cohérence est évidente lorsque vous ajustez la largeur et la hauteur de la fenêtre UWP. Lorsque Windows 10 redessine l’écran, le motif dans la moitié supérieure du canevas reste le même.
 
-Le modèle de bruit intègre différents degrés de transparence. La transparence devient évidente si vous définissez une couleur dans l’appel `canvas.Clear()`. Cette couleur est visible dans le modèle. Vous verrez également cet effet dans la section [**combinaison de plusieurs nuanceurs**](#combining-multiple-shaders).
+Le modèle de bruit intègre différents degrés de transparence. La transparence devient évidente si vous définissez une couleur dans l' `canvas.Clear()` appel. Cette couleur est visible dans le modèle. Vous verrez également cet effet dans la section [**combinaison de plusieurs nuanceurs**](#combining-multiple-shaders).
 
 Ces modèles de bruit Perl sont rarement utilisés par eux-mêmes. Souvent, ils sont soumis à des modes de fusion et des filtres de couleur décrits dans des articles ultérieurs.
 
 ## <a name="tiling-perlin-noise"></a>Mosaïque du bruit perl
 
-Les deux méthodes de `SKShader` statiques pour créer un bruit perl existent également dans les versions de surcharge. Les surcharges [`CreatePerlinNoiseFractalNoise`](xref:SkiaSharp.SKShader.CreatePerlinNoiseFractalNoise(System.Single,System.Single,System.Int32,System.Single,SkiaSharp.SKPointI)) et [`CreatePerlinNoiseTurbulence`](xref:SkiaSharp.SKShader.CreatePerlinNoiseFractalNoise(System.Single,System.Single,System.Int32,System.Single,SkiaSharp.SKPointI)) ont un paramètre de `SKPointI` supplémentaire :
+Les deux méthodes statiques `SKShader` pour créer un bruit perl existent également dans les versions de surcharge. Les [`CreatePerlinNoiseFractalNoise`](xref:SkiaSharp.SKShader.CreatePerlinNoiseFractalNoise(System.Single,System.Single,System.Int32,System.Single,SkiaSharp.SKPointI)) [`CreatePerlinNoiseTurbulence`](xref:SkiaSharp.SKShader.CreatePerlinNoiseFractalNoise(System.Single,System.Single,System.Int32,System.Single,SkiaSharp.SKPointI)) surcharges et ont un `SKPointI` paramètre supplémentaire :
 
 ```csharp
 public static SKShader CreatePerlinNoiseFractalNoise (float baseFrequencyX, float baseFrequencyY, int numOctaves, float seed, SKPointI tileSize);
@@ -185,9 +188,9 @@ public static SKShader CreatePerlinNoiseFractalNoise (float baseFrequencyX, floa
 public static SKShader CreatePerlinNoiseTurbulence (float baseFrequencyX, float baseFrequencyY, int numOctaves, float seed, SKPointI tileSize);
 ```
 
-La structure [`SKPointI`](xref:SkiaSharp.SKPointI) est la version entière de la structure de [`SKPoint`](xref:SkiaSharp.SKPoint) familière. `SKPointI` définit les propriétés de `X` et de `Y` de type `int` plutôt que `float`.
+La [`SKPointI`](xref:SkiaSharp.SKPointI) structure est la version entière de la [`SKPoint`](xref:SkiaSharp.SKPoint) structure familière. `SKPointI`définit `X` les `Y` Propriétés et de type `int` plutôt que `float` .
 
-Ces méthodes créent un modèle répétitif de la taille spécifiée. Dans chaque vignette, le bord droit est le même que le bord gauche, et le bord supérieur est le même que le bord inférieur. Cette caractéristique est illustrée dans la page de **bruit perl en mosaïque** . Le fichier XAML est similaire à l’exemple précédent, mais il n’a qu’une vue `Stepper` pour modifier l’argument `seed` :
+Ces méthodes créent un modèle répétitif de la taille spécifiée. Dans chaque vignette, le bord droit est le même que le bord gauche, et le bord supérieur est le même que le bord inférieur. Cette caractéristique est illustrée dans la page de **bruit perl en mosaïque** . Le fichier XAML est similaire à l’exemple précédent, mais il n’a qu’une `Stepper` vue permettant de modifier l' `seed` argument :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -219,7 +222,7 @@ Ces méthodes créent un modèle répétitif de la taille spécifiée. Dans chaq
 </ContentPage>
 ```
 
-Le fichier code-behind définit une constante pour la taille de la vignette. Le gestionnaire de `PaintSurface` crée une image bitmap de cette taille et une `SKCanvas` pour le dessin dans cette bitmap. La méthode `SKShader.CreatePerlinNoiseTurbulence` crée un nuanceur avec cette taille de mosaïque. Ce nuanceur est dessiné sur l’image bitmap :
+Le fichier code-behind définit une constante pour la taille de la vignette. Le `PaintSurface` Gestionnaire crée une image bitmap de cette taille et un `SKCanvas` pour dessiner dans cette bitmap. La `SKShader.CreatePerlinNoiseTurbulence` méthode crée un nuanceur avec cette taille de mosaïque. Ce nuanceur est dessiné sur l’image bitmap :
 
 ```csharp
 public partial class TiledPerlinNoisePage : ContentPage
@@ -289,7 +292,7 @@ public partial class TiledPerlinNoisePage : ContentPage
 }
 ```
 
-Une fois la bitmap créée, un autre objet `SKPaint` est utilisé pour créer un modèle bitmap en mosaïque en appelant `SKShader.CreateBitmap`. Notez les deux arguments de `SKShaderTileMode.Repeat`:
+Une fois la bitmap créée, un autre `SKPaint` objet est utilisé pour créer un modèle de bitmap en mosaïque en appelant `SKShader.CreateBitmap` . Notez les deux arguments `SKShaderTileMode.Repeat` suivants :
 
 ```csharp
 paint.Shader = SKShader.CreateBitmap(bitmap,
@@ -299,7 +302,7 @@ paint.Shader = SKShader.CreateBitmap(bitmap,
 
 Ce nuanceur est utilisé pour couvrir le canevas. Enfin, un autre `SKPaint` objet est utilisé pour rayer un rectangle qui indique la taille de la bitmap d’origine.
 
-Seul le paramètre `seed` peut être sélectionné à partir de l’interface utilisateur. Si le même modèle de `seed` est utilisé sur chaque plateforme, ils affichent le même modèle. Différentes valeurs de `seed` produisent des modèles différents :
+Seul le `seed` paramètre peut être sélectionné à partir de l’interface utilisateur. Si le même `seed` modèle est utilisé sur chaque plateforme, ils affichent le même modèle. `seed`Des valeurs différentes produisent des modèles différents :
 
 [![Bruit perl en mosaïque](noise-images/TiledPerlinNoise.png "Bruit perl en mosaïque")](noise-images/TiledPerlinNoise-Large.png#lightbox)
 
@@ -307,9 +310,9 @@ Le motif carré de 200 pixels dans le coin supérieur gauche se déforment de fa
 
 ## <a name="combining-multiple-shaders"></a>Combinaison de plusieurs nuanceurs
 
-La classe `SKShader` comprend une méthode [`CreateColor`](xref:SkiaSharp.SKShader.CreateColor*) qui crée un nuanceur avec une couleur unie spécifiée. Ce nuanceur n’est pas très utile en soi, car vous pouvez simplement définir cette couleur sur la propriété `Color` de l’objet `SKPaint` et définir la propriété `Shader` sur la valeur null.
+La `SKShader` classe comprend une [`CreateColor`](xref:SkiaSharp.SKShader.CreateColor*) méthode qui crée un nuanceur avec une couleur unie spécifiée. Ce nuanceur n’est pas très utile en soi, car vous pouvez simplement définir cette couleur sur la `Color` propriété de l' `SKPaint` objet et définir la `Shader` propriété sur la valeur null.
 
-Cette `CreateColor` méthode devient utile dans une autre méthode que `SKShader` définit. Cette méthode est [`CreateCompose`](xref:SkiaSharp.SKShader.CreateCompose(SkiaSharp.SKShader,SkiaSharp.SKShader)), qui combine deux nuanceurs. Voici la syntaxe :
+Cette `CreateColor` méthode devient utile dans une autre méthode qui `SKShader` définit. Cette méthode est [`CreateCompose`](xref:SkiaSharp.SKShader.CreateCompose(SkiaSharp.SKShader,SkiaSharp.SKShader)) , qui combine deux nuanceurs. Voici la syntaxe :
 
 ```csharp
 public static SKShader CreateCompose (SKShader dstShader, SKShader srcShader);
@@ -319,7 +322,7 @@ Le `srcShader` (nuanceur source) est effectivement dessiné par-dessus le `dstSh
 
 Un nuanceur de bruit perl contient une transparence. Si ce nuanceur est la source, le nuanceur de destination s’affiche à travers les zones transparentes.
 
-La page de **bruit perl composée** contient un fichier XAML quasiment identique à la première page de **bruit perl** . Le fichier code-behind est également similaire. Toutefois, la page de bruit d’origine de **perl** définit la propriété `Shader` de `SKPaint` sur le nuanceur retourné à partir des méthodes statiques `CreatePerlinNoiseFractalNoise` et `CreatePerlinNoiseTurbulence`. Cette page de **bruit perl composée** appelle `CreateCompose` pour un nuanceur combiné. La destination est un nuanceur bleu fixe créé à l’aide de `CreateColor`. La source est un nuanceur de bruit perl :
+La page de **bruit perl composée** contient un fichier XAML quasiment identique à la première page de **bruit perl** . Le fichier code-behind est également similaire. Toutefois, la page de bruit d’origine de **perl** définit la `Shader` propriété de `SKPaint` sur le nuanceur retourné par les `CreatePerlinNoiseFractalNoise` méthodes et statiques `CreatePerlinNoiseTurbulence` . Cette page de **bruit perl composée** appelle `CreateCompose` un nuanceur combiné. La destination est un nuanceur bleu fixe créé à l’aide de `CreateColor` . La source est un nuanceur de bruit perl :
 
 ```csharp
 public partial class ComposedPerlinNoisePage : ContentPage
@@ -388,13 +391,13 @@ Le nuanceur bruit fractal se trouve en haut ; le nuanceur de turbulences se tro
 
 Notez la quantité de bleu que ces nuanceurs sont celles affichées par la page de **bruit perl** . La différence illustre la quantité de transparence dans les nuanceurs de bruit.
 
-Il y a également une surcharge de la méthode [`CreateCompose`](xref:SkiaSharp.SKShader.CreateCompose(SkiaSharp.SKShader,SkiaSharp.SKShader,SkiaSharp.SKBlendMode)) :
+Il y a également une surcharge de la [`CreateCompose`](xref:SkiaSharp.SKShader.CreateCompose(SkiaSharp.SKShader,SkiaSharp.SKShader,SkiaSharp.SKBlendMode)) méthode :
 
 ```csharp
 public static SKShader CreateCompose (SKShader dstShader, SKShader srcShader, SKBlendMode blendMode);
 ```
 
-Le dernier paramètre est un membre de l’énumération `SKBlendMode`, une énumération avec 29 membres qui est décrite dans la série d’articles suivante sur la [**composition de SkiaSharp et les modes de fusion**](../blend-modes/index.md).
+Le dernier paramètre est un membre de l' `SKBlendMode` énumération, une énumération avec 29 membres, abordée dans la série d’articles suivante sur la [**composition de SkiaSharp et les modes de fusion**](../blend-modes/index.md).
 
 ## <a name="related-links"></a>Liens connexes
 

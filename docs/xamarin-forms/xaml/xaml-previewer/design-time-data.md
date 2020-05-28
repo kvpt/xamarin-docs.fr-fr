@@ -1,18 +1,21 @@
 ---
-title: Utiliser des données au moment du design avec le générateur d’aperçu XAML
-description: Cet article explique comment utiliser les données au moment du design pour afficher des dispositions lourdes en données dans le générateur d’aperçu XAML sans exécuter votre application.
-ms.prod: xamarin
-ms.assetid: 0F608019-5951-4BE6-80E0-9EEE1733D642
-ms.technology: xamarin-forms
-author: maddyleger1
-ms.author: maleger
-ms.date: 03/27/2019
-ms.openlocfilehash: 47171c3853fa8f5eb572971e119d51733cb53a40
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 182256fd572a370a7b322898b1e24ade12e971fd
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72303243"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84127353"
 ---
 # <a name="use-design-time-data-with-the-xaml-previewer"></a>Utiliser des données au moment du design avec le générateur d’aperçu XAML
 
@@ -38,9 +41,9 @@ Par exemple, vous pouvez ajouter du texte à une étiquette qui est généraleme
 
 [![Données au moment de la conception avec du texte dans une étiquette](xaml-previewer-images/designtimedata-label-sm.png "Données au moment de la conception avec texte d’une étiquette")](xaml-previewer-images/designtimedata-label-lg.png#lightbox)
 
-Dans cet exemple, sans `d:Text`, le générateur d’aperçu XAML n’affichera rien pour l’étiquette. Au lieu de cela, il affiche « Name ! » où l’étiquette aura des données réelles au moment de l’exécution.
+Dans cet exemple, sans `d:Text` , le générateur d’aperçu XAML n’affichera rien pour l’étiquette. Au lieu de cela, il affiche « Name ! » où l’étiquette aura des données réelles au moment de l’exécution.
 
-Vous pouvez utiliser `d:` avec n’importe quel attribut pour un contrôle Xamarin. Forms, comme les couleurs, les tailles de police et l’espacement. Vous pouvez même l’ajouter au contrôle lui-même :
+Vous pouvez utiliser `d:` avec n’importe quel attribut pour un Xamarin.Forms contrôle, comme les couleurs, les tailles de police et l’espacement. Vous pouvez même l’ajouter au contrôle lui-même :
 
 ```xaml
 <d:Button Text="Design Time Button" />
@@ -86,9 +89,9 @@ Les ListViews sont un moyen couramment utilisé pour afficher des données dans 
 
 [![Données au moment de la conception avec un ListView](xaml-previewer-images/designtimedata-itemssource-sm.png "Données au moment de la conception avec un ListView")](xaml-previewer-images/designtimedata-itemssource-lg.png#lightbox)
 
-Cet exemple affiche une liste de trois TextCells dans le générateur d’aperçu XAML. Vous pouvez remplacer `x:String` par un modèle de données existant dans votre projet.
+Cet exemple affiche une liste de trois TextCells dans le générateur d’aperçu XAML. Vous pouvez passer `x:String` à un modèle de données existant dans votre projet.
 
-Vous pouvez également créer un tableau d’objets de données. Par exemple, les propriétés publiques d’un objet de données `Monkey` peuvent être construites en tant que données au moment de la conception :
+Vous pouvez également créer un tableau d’objets de données. Par exemple, les propriétés publiques d’un `Monkey` objet de données peuvent être construites en tant que données au moment de la conception :
 
 ```csharp
 namespace Monkeys.Models
@@ -135,9 +138,9 @@ Si vous ne souhaitez pas ajouter de données au moment de la conception à des c
 
 ## <a name="troubleshooting"></a>Résolution des problèmes
 
-### <a name="requirements"></a>spécifications
+### <a name="requirements"></a>Conditions requises
 
-Les données au moment de la conception requièrent une version minimale de Xamarin. Forms 3,6.
+Les données au moment de la conception requièrent une version minimale de Xamarin.Forms 3,6.
 
 ### <a name="intellisense-shows-squiggly-lines-under-my-design-time-data"></a>IntelliSense affiche des lignes ondulées sous mes données au moment de la conception
 

@@ -1,22 +1,25 @@
 ---
-title: Lecture d’une vidéo web
-description: Cet article explique comment lire des vidéos web dans une application de lecteur vidéo à l’aide de Xamarin.Forms.
-ms.prod: xamarin
-ms.assetid: 75781A10-865D-4BA8-8D6B-E3DA012922BC
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 02/12/2018
-ms.openlocfilehash: 107b2a970041c70bb021b03dd98f8c91eaea8d34
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: Cet article explique comment lire des vidéos Web dans une application de lecteur vidéo à l’aide de Xamarin.Forms .
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b4269b768d6dd9a0eadbbe557f701f8a43b74c99
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70771758"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84133677"
 ---
 # <a name="playing-a-web-video"></a>Lecture d’une vidéo web
 
-[![Télécharger](~/media/shared/download.png) l’échantillon Télécharger l’échantillon](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
 La classe `VideoPlayer` définit une propriété `Source` utilisée pour spécifier la source du fichier vidéo ainsi qu’une propriété `AutoPlay`. `AutoPlay` a la valeur par défaut `true`, ce qui signifie que la lecture de la vidéo doit démarrer automatiquement après la définition de `Source` :
 
@@ -54,7 +57,7 @@ namespace FormsVideoLibrary
 }
 ```
 
-La `Source` propriété est `VideoSource`de type , qui est modelé d’après la classe [`UriImageSource`](xref:Xamarin.Forms.UriImageSource) [`FileImageSource`](xref:Xamarin.Forms.FileImageSource)abstraite [`StreamImageSource`](xref:Xamarin.Forms.StreamImageSource)Xamarin.Forms, [`ImageSource`](xref:Xamarin.Forms.ImageSource) et ses trois dérivés, , , et . Toutefois, aucune option de flux n’est disponible pour le `VideoPlayer`, car iOS et Android ne prennent pas en charge la lecture d’une vidéo à partir d’un flux.
+La `Source` propriété est de type `VideoSource` , qui est modèle après la Xamarin.Forms [`ImageSource`](xref:Xamarin.Forms.ImageSource) classe abstraite, et ses trois dérivés, [`UriImageSource`](xref:Xamarin.Forms.UriImageSource) , [`FileImageSource`](xref:Xamarin.Forms.FileImageSource) et [`StreamImageSource`](xref:Xamarin.Forms.StreamImageSource) . Toutefois, aucune option de flux n’est disponible pour le `VideoPlayer`, car iOS et Android ne prennent pas en charge la lecture d’une vidéo à partir d’un flux.
 
 ## <a name="video-sources"></a>Sources vidéo
 
@@ -190,7 +193,7 @@ Toute autre logique impliquant des sources vidéo est implémentée dans les ren
 
 ### <a name="the-ios-video-source"></a>Source vidéo iOS
 
-Deux sections du `VideoPlayerRenderer` sont impliquées dans la définition de la source vidéo du lecteur vidéo. Quand Xamarin.Forms crée d’abord un objet de type `VideoPlayer`, la méthode `OnElementChanged` est appelée avec la propriété `NewElement` de l’objet d’arguments définie sur ce `VideoPlayer`. La méthode `OnElementChanged` appelle `SetSource` :
+Deux sections du `VideoPlayerRenderer` sont impliquées dans la définition de la source vidéo du lecteur vidéo. Lorsque Xamarin.Forms crée d’abord un objet de type `VideoPlayer` , la `OnElementChanged` méthode est appelée avec la `NewElement` propriété de l’objet arguments défini sur ce `VideoPlayer` . La méthode `OnElementChanged` appelle `SetSource` :
 
 ```csharp
 namespace FormsVideoLibrary.iOS
@@ -225,7 +228,7 @@ namespace FormsVideoLibrary.iOS
 
 Par la suite, quand la propriété `Source` est modifiée, la méthode `OnElementPropertyChanged` est appelée avec une propriété `PropertyName` « Source » et `SetSource` est rappelée.
 
-Pour lire un fichier vidéo dans iOS, un objet de type [`AVAsset`](xref:AVFoundation.AVAsset) est d’abord créé [`AVPlayerItem`](xref:AVFoundation.AVPlayerItem)pour encapsuler le `AVPlayer` fichier vidéo, et qui est utilisé pour créer un , qui est ensuite remis à l’objet. Voici comment la méthode `SetSource` gère la propriété `Source` quand elle est de type `UriVideoSource` :
+Pour lire un fichier vidéo dans iOS, un objet de type [`AVAsset`](xref:AVFoundation.AVAsset) est d’abord créé pour encapsuler le fichier vidéo et utilisé pour créer un [`AVPlayerItem`](xref:AVFoundation.AVPlayerItem) , qui est ensuite transmis à l' `AVPlayer` objet. Voici comment la méthode `SetSource` gère la propriété `Source` quand elle est de type `UriVideoSource` :
 
 ```csharp
 namespace FormsVideoLibrary.iOS
@@ -465,7 +468,7 @@ Avec l’implémentation de ces propriétés dans les trois renderers, il est po
 
 La classe `VideoSourceConverter` convertit la chaîne en `UriVideoSource`. Quand vous accédez à la page **Lire une vidéo web**, le chargement de la vidéo commence et la lecture démarre quand une quantité suffisante de données a été téléchargée et mise en mémoire tampon. La vidéo dure environ 10 minutes :
 
-[![Lire la vidéo Web](web-videos-images/playwebvideo-small.png "Lire la vidéo Web")](web-videos-images/playwebvideo-large.png#lightbox "Lire la vidéo Web")
+[![Lire une vidéo Web](web-videos-images/playwebvideo-small.png "Lire une vidéo Web")](web-videos-images/playwebvideo-large.png#lightbox "Lire une vidéo Web")
 
 Sur chacune des plateformes, les contrôles de transport disparaissent s’ils ne sont pas utilisés, mais peuvent être de nouveau affichés en appuyant sur la vidéo.
 

@@ -1,54 +1,57 @@
 ---
-title: Chemins d’accès et du texte dans SkiaSharp
-description: Cet article explore l’intersection des chemins d’accès SkiaSharp et du texte et illustre ceci avec l’exemple de code.
-ms.prod: xamarin
-ms.assetid: C14C07F6-4A84-4A8C-BDB4-CD61FBF0F79B
-ms.technology: xamarin-skiasharp
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/01/2017
-ms.openlocfilehash: d38391f3fd0f02dda8bfd92fce650c557bda0153
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b0cbb7d26a2aea02a3255fc75947c20a3d803b86
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645212"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84131896"
 ---
-# <a name="paths-and-text-in-skiasharp"></a>Chemins d’accès et du texte dans SkiaSharp
+# <a name="paths-and-text-in-skiasharp"></a>Chemins et texte dans SkiaSharp
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-_Explorez l’intersection des chemins d’accès et du texte_
+_Explorer l’intersection des chemins et du texte_
 
-Dans les systèmes graphiques modernes, les polices de texte sont des collections de contours de caractère, généralement définis par des courbes de Bézier quadratiques. Par conséquent, de nombreux systèmes graphiques modernes incluent une fonctionnalité permettant de convertir les caractères de texte en un chemin d’accès de graphiques.
+Dans les systèmes graphiques modernes, les polices de texte sont des collections de contours de caractère, généralement définies par des courbes de Bézier quadratiques. Par conséquent, de nombreux systèmes graphiques modernes incluent une fonctionnalité permettant de convertir des caractères de texte en tracé graphique.
 
-Vous avez déjà vu que vous pouvez tracer des contours des caractères de texte mais aussi les remplir. Cela vous permet d’afficher ces contours de caractère avec une largeur de trait particulier et même un effet de chemin d’accès comme décrit dans la [ **effets de tracé** ](effects.md) article. Mais il est également possible de convertir une chaîne de caractères en une `SKPath` objet. Cela signifie que les contours du texte peuvent être utilisés pour le découpage avec plusieurs techniques qui ont été décrites dans le [ **détourage avec chemins d’accès et régions** ](clipping.md) article.
+Vous avez déjà vu que vous pouvez rayer les contours des caractères de texte et les remplir. Cela vous permet d’afficher ces contours de caractères avec une largeur de trait particulière et même un effet de tracé comme décrit dans l’article [**effets de tracés**](effects.md) . Toutefois, il est également possible de convertir une chaîne de caractères en un `SKPath` objet. Cela signifie que les contours de texte peuvent être utilisés pour le découpage avec les techniques décrites dans l’article [**découpage avec les chemins d’accès et les régions**](clipping.md) .
 
-Outre l’utilisation d’un effet de chemin d’accès pour tracer un contour de caractère, vous pouvez également créer des effets de chemin d’accès qui sont basées sur un chemin d’accès qui est dérivé d’une chaîne de caractères, et vous pouvez même combiner les deux effets :
+Outre l’utilisation d’un effet de tracé pour rayer un contour de caractères, vous pouvez également créer des effets de tracés basés sur un chemin d’accès dérivé d’une chaîne de caractères, et vous pouvez même combiner les deux effets :
 
-![](text-paths-images/pathsandtextsample.png "Effet de texte")
+![](text-paths-images/pathsandtextsample.png "Text Path Effect")
 
-Dans l’article précédent sur [ **les effets de chemin d’accès**](effects.md), vous avez vu comment le [ `GetFillPath` ](xref:SkiaSharp.SKPaint.GetFillPath(SkiaSharp.SKPath,SkiaSharp.SKPath,SkiaSharp.SKRect,System.Single)) méthode de `SKPaint` peuvent obtenir une description d’un chemin de tracé. Vous pouvez également utiliser cette méthode avec les chemins d’accès dérivés de contours de caractère.
+Dans l’article précédent sur les [**effets de tracé**](effects.md), vous avez vu comment la [`GetFillPath`](xref:SkiaSharp.SKPaint.GetFillPath(SkiaSharp.SKPath,SkiaSharp.SKPath,SkiaSharp.SKRect,System.Single)) méthode de `SKPaint` peut obtenir un contour d’un tracé rayé. Vous pouvez également utiliser cette méthode avec les chemins dérivés des contours de caractère.
 
-Enfin, cet article présente une autre intersection de chemins d’accès et de texte: La [`DrawTextOnPath`](xref:SkiaSharp.SKCanvas.DrawTextOnPath(System.String,SkiaSharp.SKPath,System.Single,System.Single,SkiaSharp.SKPaint)) méthode de `SKCanvas` vous permet d’afficher une chaîne de texte afin que la ligne de base du texte suive un tracé courbé.
+Enfin, cet article présente une autre intersection de chemins et de texte : la [`DrawTextOnPath`](xref:SkiaSharp.SKCanvas.DrawTextOnPath(System.String,SkiaSharp.SKPath,System.Single,System.Single,SkiaSharp.SKPaint)) méthode de `SKCanvas` vous permet d’afficher une chaîne de texte afin que la ligne de base du texte suive un tracé courbé.
 
-## <a name="text-to-path-conversion"></a>Texte à la Conversion de chemin d’accès
+## <a name="text-to-path-conversion"></a>Conversion de texte en tracé
 
-Le [ `GetTextPath` ](xref:SkiaSharp.SKPaint.GetTextPath(System.String,System.Single,System.Single)) méthode de `SKPaint` convertit une chaîne de caractères en une `SKPath` objet :
+La [`GetTextPath`](xref:SkiaSharp.SKPaint.GetTextPath(System.String,System.Single,System.Single)) méthode de `SKPaint` convertit une chaîne de caractères en `SKPath` objet :
 
 ```csharp
 public SKPath GetTextPath (String text, Single x, Single y)
 ```
 
-Le `x` et `y` arguments indiquent le point de départ de la ligne de base du côté gauche du texte. Ils jouent le même rôle ici en tant que le `DrawText` méthode de `SKCanvas`. Dans le chemin d’accès, la ligne de base du côté gauche du texte aura les coordonnées (x, y).
+Les `x` `y` arguments et indiquent le point de départ de la ligne de base du côté gauche du texte. Ils jouent le même rôle que dans la `DrawText` méthode de `SKCanvas` . Dans le chemin d’accès, la ligne de base du côté gauche du texte aura les coordonnées (x, y).
 
-Le `GetTextPath` méthode est excessif si vous souhaitez simplement remplir ou entourer le chemin d’accès résultant. Vecteur normal `DrawText` méthode vous permet de faire. Le `GetTextPath` méthode est plus utile pour d’autres tâches impliquant des chemins d’accès.
+La `GetTextPath` méthode est excessive si vous souhaitez simplement remplir ou rayer le chemin d’accès résultant. La `DrawText` méthode normale vous permet de le faire. La `GetTextPath` méthode est plus utile pour d’autres tâches impliquant des chemins d’accès.
 
-Une de ces tâches est le découpage. Le **découpage texte** page crée un tracé de détourage basé sur les contours des caractères du mot « CODE ». Ce chemin d’accès est étendu selon la taille de la page pour découper une image bitmap qui contient une image de la **texte découpage** code source :
+L’une de ces tâches est le découpage. La page de **texte de découpage** crée un tracé de détourage en fonction des contours de caractère du mot « code ». Ce chemin d’accès est étiré sur la taille de la page pour découper une bitmap qui contient une image du code source du **texte de découpage** :
 
-[![](text-paths-images/clippingtext-small.png "Capture d’écran triple de la page de texte de découpage")](text-paths-images/clippingtext-large.png#lightbox "Triple capture d’écran de la page de texte de découpage")
+[![](text-paths-images/clippingtext-small.png "Triple screenshot of the Clipping Text page")](text-paths-images/clippingtext-large.png#lightbox "Triple screenshot of the Clipping Text page")
 
-Le [ `ClippingTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ClippingTextPage.cs) constructeur de classe de charge de la bitmap qui est stockée sous la forme d’une ressource incorporée dans le **Media** dossier de la solution :
+Le [`ClippingTextPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ClippingTextPage.cs) constructeur de classe charge l’image bitmap qui est stockée en tant que ressource incorporée dans le dossier **Media** de la solution :
 
 ```csharp
 public class ClippingTextPage : ContentPage
@@ -75,9 +78,9 @@ public class ClippingTextPage : ContentPage
 }
 ```
 
-Le `PaintSurface` gestionnaire commence par créer un `SKPaint` objet adapté au texte. Le `Typeface` propriété est définie, ainsi que les `TextSize`, bien que pour cette application particulière le `TextSize` propriété est purement arbitraire. Notez également est aucun `Style` paramètre.
+Le `PaintSurface` Gestionnaire commence par créer un `SKPaint` objet approprié pour le texte. La `Typeface` propriété est définie et `TextSize` , bien que pour cette application particulière, la `TextSize` propriété est purement arbitraire. Notez également qu’il n’y a aucun `Style` paramètre.
 
-Le `TextSize` et `Style` les paramètres de propriété ne sont pas nécessaires, car cela `SKPaint` objet est utilisé uniquement pour le `GetTextPath` appeler à l’aide de la chaîne de texte « CODE ». Le Gestionnaire de mesure puis la résultante `SKPath` de l’objet et applique trois transformations pour centrer et mettre à l’échelle à la taille de la page. Le chemin d’accès peut être défini comme le tracé de détourage :
+Les `TextSize` paramètres de propriété et ne `Style` sont pas nécessaires, car cet `SKPaint` objet est utilisé uniquement pour l' `GetTextPath` appel à l’aide de la chaîne de texte « Code ». Le gestionnaire mesure ensuite l' `SKPath` objet résultant et applique trois transformations pour le centrer et l’adapter à la taille de la page. Le chemin d’accès peut ensuite être défini en tant que chemin d’accès de détourage :
 
 ```csharp
 public class ClippingTextPage : ContentPage
@@ -122,13 +125,13 @@ public class ClippingTextPage : ContentPage
 }
 ```
 
-Une fois que le tracé de détourage est défini, l’image bitmap peut être affichée, et il est découpée selon les contours des caractères. Remarquez l’utilisation de la [ `AspectFill` ](xref:SkiaSharp.SKRect.AspectFill(SkiaSharp.SKSize)) méthode de `SKRect` qui calcule un rectangle pour remplir la page tout en conservant les proportions.
+Une fois le tracé de détourage défini, l’image bitmap peut être affichée et elle est découpée en contours de caractère. Notez l’utilisation de la [`AspectFill`](xref:SkiaSharp.SKRect.AspectFill(SkiaSharp.SKSize)) méthode de `SKRect` qui calcule un rectangle pour remplir la page tout en préservant les proportions.
 
-Le **effet de texte** page convertit un caractère unique pour un chemin d’accès pour créer un effet de chemin d’accès 1D. Un peinture objet avec cet effet de chemin d’accès est ensuite utilisé pour tracer le contour d’une version supérieure de ce même caractère :
+La page **effet de tracé de texte** convertit un caractère perluète unique en tracé pour créer un effet de tracé 1D. Un objet Paint avec cet effet de tracé est ensuite utilisé pour rayer le contour d’une version plus grande de ce même caractère :
 
-[![](text-paths-images/textpatheffect-small.png "Capture d’écran triple de la page de l’effet de chemin d’accès de texte")](text-paths-images/textpatheffect-large.png#lightbox "Triple capture d’écran de la page de l’effet de chemin d’accès de texte")
+[![](text-paths-images/textpatheffect-small.png "Triple screenshot of the Text Path Effect page")](text-paths-images/textpatheffect-large.png#lightbox "Triple screenshot of the Text Path Effect page")
 
-Quantité de travail dans le [ `TextPathEffectPath` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TextPathEffectPage.cs) classe se produit dans les champs et le constructeur. Les deux `SKPaint` objets définis en tant que champs sont utilisés à deux fins différentes: Le premier (nommé `textPathPaint`) est utilisé pour convertir l’esperluette avec un `TextSize` de 50 en chemin d’accès pour l’effet 1D Path. Le second (`textPaint`) est utilisé pour afficher la version la plus grande de l’esperluette avec effet de ce chemin d’accès. Pour cette raison, le `Style` de cette deuxième peinture objet est défini sur `Stroke`, mais le `StrokeWidth` propriété n’est pas définie, car cette propriété n’est pas nécessaire lors de l’utilisation d’un effet 1D :
+Une grande partie du travail de la [`TextPathEffectPath`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TextPathEffectPage.cs) classe se produit dans les champs et le constructeur. Les deux `SKPaint` objets définis en tant que champs sont utilisés à deux fins différentes : le premier (nommé `textPathPaint` ) est utilisé pour convertir l’esperluette avec un `TextSize` de 50 en chemin d’accès pour l’effet 1D Path. Le deuxième ( `textPaint` ) est utilisé pour afficher la plus grande version de l’esperluette avec cet effet de tracé. Pour cette raison, le `Style` de ce second objet Paint a la valeur `Stroke` , mais la `StrokeWidth` propriété n’est pas définie, car cette propriété n’est pas nécessaire lors de l’utilisation d’un effet 1D Path :
 
 ```csharp
 public class TextPathEffectPage : ContentPage
@@ -173,9 +176,9 @@ public class TextPathEffectPage : ContentPage
 }
 ```
 
-Le constructeur utilise d’abord la `textPathPaint` objet pour mesurer l’esperluette avec un `TextSize` de 50. Les valeurs négatives des coordonnées du centre du rectangle sont ensuite transmis à la `GetTextPath` méthode pour convertir le texte à un chemin d’accès. Le chemin d’accès résultant a le (0, 0) point dans le centre du caractère, ce qui est idéal pour un effet 1D.
+Le constructeur utilise d’abord l' `textPathPaint` objet pour mesurer la esperluette avec un `TextSize` de 50. Les négatifs des coordonnées du centre de ce rectangle sont ensuite passés à la `GetTextPath` méthode pour convertir le texte en tracé. Le chemin d’accès résultant a le point (0,0) au centre du caractère, ce qui est idéal pour un effet de tracé 1D.
 
-Vous pouvez penser que le `SKPathEffect` objet créé à la fin du constructeur peut être définie sur le `PathEffect` propriété de `textPaint` plutôt qu’enregistré en tant que champ. Mais ce n’est pas désactivé out fonctionne très bien, car il déformée les résultats de la `MeasureText` appeler dans le `PaintSurface` gestionnaire :
+Vous pouvez penser que l' `SKPathEffect` objet créé à la fin du constructeur peut être défini sur la `PathEffect` propriété de `textPaint` plutôt que sur enregistré en tant que champ. Mais cela ne fonctionne pas très bien parce qu’il a faussé les résultats de l' `MeasureText` appel dans le `PaintSurface` Gestionnaire :
 
 ```csharp
 public class TextPathEffectPage : ContentPage
@@ -207,17 +210,17 @@ public class TextPathEffectPage : ContentPage
 }
 ```
 
-Que `MeasureText` appel est utilisé pour centrer le caractère sur la page. Pour éviter les problèmes, le `PathEffect` propriété est définie sur l’objet paint après que le texte a été mesuré, mais avant son affichage.
+Cet `MeasureText` appel est utilisé pour centrer le caractère sur la page. Pour éviter les problèmes, la `PathEffect` propriété est définie sur l’objet Paint une fois que le texte a été mesuré mais avant son affichage.
 
 ## <a name="outlines-of-character-outlines"></a>Contours des contours de caractère
 
-Normalement le [ `GetFillPath` ](xref:SkiaSharp.SKPaint.GetFillPath(SkiaSharp.SKPath,SkiaSharp.SKPath,SkiaSharp.SKRect,System.Single)) méthode `SKPaint` convertit un chemin d’accès à un autre en appliquant des propriétés de la peinture, plus particulièrement la largeur et le chemin d’accès effet de contour. Lorsqu’il est utilisé sans effets de chemin d’accès, `GetFillPath` crée en réalité un chemin d’accès qui décrit un autre chemin d’accès. Cela est illustré dans le **appuyez sur contour, le chemin d’accès** page dans le [ **effets de tracé** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) article.
+Normalement [`GetFillPath`](xref:SkiaSharp.SKPaint.GetFillPath(SkiaSharp.SKPath,SkiaSharp.SKPath,SkiaSharp.SKRect,System.Single)) , la méthode de `SKPaint` convertit un chemin d’accès à un autre en appliquant des propriétés de peinture, notamment la largeur du trait et l’effet du tracé. En cas d’utilisation sans effet de tracé, `GetFillPath` crée un tracé qui contourne un autre chemin d’accès. Cela a été démontré en appuyant sur la page du **chemin** dans l’article sur les [**effets de chemin**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) .
 
-Vous pouvez également appeler `GetFillPath` sur le chemin d’accès retourné à partir de `GetTextPath` mais dans un premier temps vous ne serez pas tout à fait certain quoi cela ressemble.
+Vous pouvez également appeler `GetFillPath` sur le chemin d’accès retourné à partir de `GetTextPath` , mais dans un premier temps, vous n’êtes peut-être pas entièrement sûr de ce à quoi cela ressemble.
 
-Le **contours de caractère contour** page illustre cette technique. Tout le code approprié est dans le `PaintSurface` Gestionnaire de la [ `CharacterOutlineOutlinesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CharacterOutlineOutlinesPage.cs) classe.
+La page des **contours de contour de caractères** illustre la technique. Tout le code pertinent se trouve dans le `PaintSurface` Gestionnaire de la [`CharacterOutlineOutlinesPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CharacterOutlineOutlinesPage.cs) classe.
 
-Le constructeur commence par créer un `SKPaint` objet nommé `textPaint` avec un `TextSize` propriété basée sur la taille de la page. Il est converti en un chemin d’accès à l’aide de la `GetTextPath` (méthode). Les arguments de coordonnées à `GetTextPath` center efficacement le chemin d’accès à l’écran :
+Le constructeur commence par créer un `SKPaint` objet nommé `textPaint` avec une `TextSize` propriété en fonction de la taille de la page. Elle est convertie en un chemin d’accès à l’aide de la `GetTextPath` méthode. Les arguments de coordonnée pour `GetTextPath` centrer efficacement le tracé à l’écran :
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -269,27 +272,27 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Le `PaintSurface` gestionnaire crée ensuite un nouveau chemin d’accès nommé `outlinePath`. Cela devient le chemin d’accès de destination dans l’appel à `GetFillPath`. Le `StrokeWidth` propriété des 25 causes `outlinePath` pour décrire le contour d’un chemin d’accès de 25 pixels de large traçant les caractères de texte. Ce chemin d’accès est ensuite affichée en rouge avec une largeur de trait de 5 :
+Le `PaintSurface` Gestionnaire crée alors un nouveau chemin d’accès nommé `outlinePath` . Cela devient le chemin d’accès de destination dans l’appel à `GetFillPath` . La `StrokeWidth` propriété de 25 provoque `outlinePath` la description de la structure d’un chemin d’accès à 25 pixels, en traçant les caractères de texte. Ce chemin d’accès est ensuite affiché en rouge avec une largeur de trait de 5 :
 
-[![](text-paths-images/characteroutlineoutlines-small.png "Capture d’écran triple de la page des contours de caractère contour")](text-paths-images/characteroutlineoutlines-large.png#lightbox "Triple capture d’écran de la page des contours de contour de caractère")
+[![](text-paths-images/characteroutlineoutlines-small.png "Triple screenshot of the Character Outline Outlines page")](text-paths-images/characteroutlineoutlines-large.png#lightbox "Triple screenshot of the Character Outline Outlines page")
 
-Examinez attentivement et vous verrez des chevauchements et où la structure du chemin d’accès permet à un angle aigu. Il s’agit d’artefacts normales de ce processus.
+Examinez attentivement et vous verrez des chevauchements où la structure du tracé fait un angle aigu. Il s’agit d’artefacts normaux de ce processus.
 
-## <a name="text-along-a-path"></a>Texte sur un tracé
+## <a name="text-along-a-path"></a>Texte le long d’un tracé
 
-Texte s’affiche normalement sur une ligne de base horizontale. Texte peut être pivoté pour exécuter verticalement ou en diagonale, mais la ligne de base est toujours une ligne droite.
+Le texte est normalement affiché sur une ligne de base horizontale. Le texte peut être pivoté pour s’exécuter verticalement ou en diagonale, mais la ligne de base est toujours une ligne droite.
 
-Il est parfois, cependant, lorsque vous souhaitez que le texte à exécuter une courbe. C’est l’objectif de la [ `DrawTextOnPath` ](xref:SkiaSharp.SKCanvas.DrawTextOnPath(System.String,SkiaSharp.SKPath,System.Single,System.Single,SkiaSharp.SKPaint)) méthode de `SKCanvas`:
+Il existe cependant des cas où vous souhaitez que le texte s’exécute le long d’une courbe. C’est l’objectif de la [`DrawTextOnPath`](xref:SkiaSharp.SKCanvas.DrawTextOnPath(System.String,SkiaSharp.SKPath,System.Single,System.Single,SkiaSharp.SKPaint)) méthode de `SKCanvas` :
 
 ```csharp
 public Void DrawTextOnPath (String text, SKPath path, Single hOffset, Single vOffset, SKPaint paint)
 ```
 
-Le texte spécifié dans le premier argument est effectué pour s’exécuter sur le chemin spécifié comme deuxième argument. Vous pouvez commencer le texte à un offset à partir du début du chemin d’accès avec le `hOffset` argument. Normalement, le chemin d’accès forme la ligne de base du texte: Les jambages de texte sont situés d’un côté du chemin d’accès et les descendants du texte sont sur l’autre. Mais vous pouvez décaler la ligne de base du chemin d’accès avec le `vOffset` argument.
+Le texte spécifié dans le premier argument est effectué pour s’exécuter le long du chemin d’accès spécifié comme deuxième argument. Vous pouvez commencer le texte à un offset à partir du début du chemin d’accès avec l' `hOffset` argument. Normalement, le chemin d’accès forme la ligne de base du texte : les hampes ascendantes du texte se trouvent sur un côté du chemin et les descendants du texte sont sur l’autre. Toutefois, vous pouvez décaler la ligne de base du texte à partir du chemin d’accès avec l' `vOffset` argument.
 
-Cette méthode n’a aucune fonctionnalité de fournir des conseils sur la configuration de la `TextSize` propriété du `SKPaint` pour rendre le texte dimensionné parfaitement pour exécuter depuis le début du chemin d’accès à la fin. Parfois, vous vous rendiez compte cette taille de texte sur votre propre. Parfois, vous devez utiliser les fonctions de chemin d’accès de la mesure à décrire dans l’article suivant sur [ **les informations de chemin et énumération**](information.md).
+Cette méthode n’a pas de fonctionnalité pour fournir des conseils sur la définition `TextSize` de la propriété de `SKPaint` afin que le texte soit parfaitement dimensionné pour s’exécuter à partir du début du chemin d’accès jusqu’à la fin. Parfois, vous pouvez déterminer la taille du texte. Dans d’autres cas, vous devrez utiliser les fonctions de mesure du chemin d’accès pour les décrire dans le prochain article sur les [**informations de chemin d’accès et l’énumération**](information.md).
 
-Le **texte circulaire** programme encapsule le texte autour d’un cercle. Il est facile de déterminer la circonférence d’un cercle, il est facile de la taille du texte afin de correspondre exactement. Le `PaintSurface` Gestionnaire de la [ `CircularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CircularTextPage.cs) classe calcule un rayon d’un cercle en fonction de la taille de la page. Cercle devient `circularPath`:
+Le programme de **texte circulaire** renvoie le texte autour d’un cercle. Il est facile de déterminer la circonférence d’un cercle. il est donc facile de dimensionner le texte pour qu’il s’ajuste exactement. Le `PaintSurface` Gestionnaire de la [`CircularTextPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CircularTextPage.cs) classe calcule le rayon d’un cercle en fonction de la taille de la page. Ce cercle devient `circularPath` :
 
 ```csharp
 public class CircularTextPage : ContentPage
@@ -322,13 +325,13 @@ public class CircularTextPage : ContentPage
 }
 ```
 
-Le `TextSize` propriété du `textPaint` est ensuite ajustée afin que la largeur du texte correspond à la circonférence du cercle :
+La `TextSize` propriété de `textPaint` est ensuite ajustée de sorte que la largeur du texte corresponde à la circonférence du cercle :
 
-[![](text-paths-images/circulartext-small.png "Capture d’écran triple de la page de texte circulaire")](text-paths-images/circulartext-large.png#lightbox "Triple capture d’écran de la page de texte circulaire")
+[![](text-paths-images/circulartext-small.png "Triple screenshot of the Circular Text page")](text-paths-images/circulartext-large.png#lightbox "Triple screenshot of the Circular Text page")
 
-Le texte lui-même a été choisi comme étant un peu circulaire: Le mot «Circle» est à la fois le sujet de la phrase et l’objet d’une phrase de préposition.
+Le texte lui-même a été choisi comme étant un peu circulaire : le mot « Circle » est à la fois le sujet de la phrase et l’objet d’une phrase de préposition.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
-- [API de SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
+- [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

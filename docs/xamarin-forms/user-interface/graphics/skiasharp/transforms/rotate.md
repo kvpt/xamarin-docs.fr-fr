@@ -1,30 +1,33 @@
 ---
-title: La transformation de rotation
-description: Cet article explore les effets et des animations possibles avec la transformation de rotation de SkiaSharp et illustre ceci avec l’exemple de code.
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: CBB3CD72-4377-4EA3-A768-0C4228229FC2
-author: davidbritch
-ms.author: dabritch
-ms.date: 03/23/2017
-ms.openlocfilehash: 1ec5c5fb1a81873d88a59eefba7652a86fc1ba4e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: ''
+description: ''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 520c4c3b61049bf17c2c964523714db196da6839
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657214"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84132182"
 ---
 # <a name="the-rotate-transform"></a>La transformation de rotation
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-_Explorez les effets et les animations possibles avec la transformation de rotation de SkiaSharp_
+_Explorez les effets et les animations possibles avec la transformation de rotation SkiaSharp_
 
-Avec la transformation de rotation des objets graphiques SkiaSharp affranchir de la contrainte d’alignement avec les axes horizontales et verticales :
+Avec la transformation de rotation, les objets graphiques SkiaSharp sautent la contrainte d’alignement avec les axes horizontal et vertical :
 
-![](rotate-images/rotateexample.png "Texte pivoté autour d’un centre")
+![](rotate-images/rotateexample.png "Text rotated around a center")
 
-Pour faire pivoter un objet de graphique autour du point (0, 0), SkiaSharp prend en charge à la fois un [ `RotateDegrees` ](xref:SkiaSharp.SKCanvas.RotateDegrees(System.Single)) (méthode) et un [ `RotateRadians` ](xref:SkiaSharp.SKCanvas.RotateRadians(System.Single)) méthode :
+Pour faire pivoter un objet graphique autour du point (0, 0), SkiaSharp prend en charge à la fois une [`RotateDegrees`](xref:SkiaSharp.SKCanvas.RotateDegrees(System.Single)) méthode et une [`RotateRadians`](xref:SkiaSharp.SKCanvas.RotateRadians(System.Single)) méthode :
 
 ```csharp
 public void RotateDegrees (Single degrees)
@@ -32,17 +35,17 @@ public void RotateDegrees (Single degrees)
 public Void RotateRadians (Single radians)
 ```
 
-Un cercle de 360 degrés est identique à twoπ radians, il est facile d’effectuer une conversion entre les deux unités. Utilisez selon ce qui est pratique. Toutes les fonctions trigonométriques dans .NET [ `Math` ](xref:System.Math) classe les unités de radians.
+Un cercle de 360 degrés est identique à twoπ radians, c’est pourquoi il est facile de procéder à une conversion entre les deux unités. Utilisez celui qui est le plus pratique. Toutes les fonctions trigonométriques de la [`Math`](xref:System.Math) classe .NET utilisent des unités de radians.
 
-La rotation est dans le sens horaire permettant d’accroître les angles. (Bien que la rotation sur le système de coordonnées cartésiennes est le sens antihoraire par convention, une rotation est cohérente avec les coordonnées Y augmentant en panne, comme dans SkiaSharp.) Négatif angles et des angles supérieurs à 360 degrés sont autorisés.
+La rotation est dans le sens horaire pour l’importance des angles. (Bien que la rotation sur le système de coordonnées cartésien soit le sens dans le sens inverse des aiguilles d’une montre, la rotation dans le sens des aiguilles d’une montre est cohérente avec les coordonnées Y qui s’accroissent dans SkiaSharp. Les angles négatifs et les angles supérieurs à 360 degrés sont autorisés.
 
-Les formules de transformation de rotation sont plus complexes que celles pour translater et de mise à l’échelle. Pour un angle de α, les formules de transformation sont :
+Les formules de transformation pour la rotation sont plus complexes que celles pour la translation et l’échelle. Pour un angle de α, les formules de transformation sont les suivantes :
 
-x' = x•cos(α) – y•sin(α)   
+x' = x • cos (α) – y • Sin (α)   
 
-y' = x•sin(α) + y•cos(α)
+y' = x • Sin (α) + y • cos (α)
 
-Le **pivoter base** page montre le `RotateDegrees` (méthode). Le [ **BasicRotate.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BasicRotatePage.xaml.cs) fichier affiche du texte avec sa ligne de base centrée sur la page et la faire pivoter selon un `Slider` avec une plage de – 360 et 360. Voici la partie pertinente de la `PaintSurface` gestionnaire :
+La page de **rotation de base** illustre la `RotateDegrees` méthode. Le fichier [**BasicRotate.Xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BasicRotatePage.xaml.cs) affiche du texte avec sa ligne de base centrée sur la page et le fait pivoter en fonction d’un `Slider` avec une plage de – 360 à 360. Voici la partie pertinente du `PaintSurface` Gestionnaire :
 
 ```csharp
 using (SKPaint textPaint = new SKPaint
@@ -58,11 +61,11 @@ using (SKPaint textPaint = new SKPaint
 }
 ```
 
-Étant donné que la rotation est centrée autour de l’angle supérieur gauche du canevas, pour la plupart des angles défini dans ce programme, le texte est pivoté hors de l’écran :
+Étant donné que la rotation est centrée autour de l’angle supérieur gauche de la zone de dessin, pour la plupart des angles définis dans ce programme, le texte est pivoté hors de l’écran :
 
-[![](rotate-images/basicrotate-small.png "Triple capture d’écran de la page de base pivoter")](rotate-images/basicrotate-large.png#lightbox "Triple capture d’écran de la page de faire pivoter de base")
+[![](rotate-images/basicrotate-small.png "Triple screenshot of the Basic Rotate page")](rotate-images/basicrotate-large.png#lightbox "Triple screenshot of the Basic Rotate page")
 
-Très souvent, vous souhaiterez faire pivoter un objet centrée autour d’un point de pivot spécifiée à l’aide de ces versions de la [ `RotateDegrees` ](xref:SkiaSharp.SKCanvas.RotateDegrees(System.Single,System.Single,System.Single)) et [ `RotateRadians` ](xref:SkiaSharp.SKCanvas.RotateRadians(System.Single,System.Single,System.Single)) méthodes :
+Très souvent, vous souhaiterez faire pivoter un point centré autour d’un point pivot spécifié à l’aide de ces versions des [`RotateDegrees`](xref:SkiaSharp.SKCanvas.RotateDegrees(System.Single,System.Single,System.Single)) [`RotateRadians`](xref:SkiaSharp.SKCanvas.RotateRadians(System.Single,System.Single,System.Single)) méthodes et :
 
 ```csharp
 public void RotateDegrees (Single degrees, Single px, Single py)
@@ -70,7 +73,7 @@ public void RotateDegrees (Single degrees, Single px, Single py)
 public void RotateRadians (Single radians, Single px, Single py)
 ```
 
-Le **centré faire pivoter** page est comparable le **faire pivoter de base** , à ceci près que la version développée de la `RotateDegrees` est utilisée pour définir le centre de rotation au même point utilisé pour positionner le texte :
+La page de **rotation centrée** est identique à la **rotation de base** , sauf que la version développée de `RotateDegrees` est utilisée pour définir le centre de rotation sur le même point utilisé pour positionner le texte :
 
 ```csharp
 using (SKPaint textPaint = new SKPaint
@@ -86,17 +89,17 @@ using (SKPaint textPaint = new SKPaint
 }
 ```
 
-Désormais, le texte pivote autour du point utilisé pour positionner le texte, qui est au centre horizontal de la ligne de base du texte :
+À présent, le texte pivote autour du point utilisé pour positionner le texte, qui est le centre horizontal de la ligne de base du texte :
 
-[![](rotate-images/centeredrotate-small.png "Capture d’écran triple de la page centrée faire pivoter")](rotate-images/centeredrotate-large.png#lightbox "Triple capture d’écran de la page centrée faire pivoter")
+[![](rotate-images/centeredrotate-small.png "Triple screenshot of the Centered Rotate page")](rotate-images/centeredrotate-large.png#lightbox "Triple screenshot of the Centered Rotate page")
 
-Comme avec la version centrée de la `Scale` (méthode), la version centrée de la `RotateDegrees` appel est un raccourci. Voici la méthode :
+Comme avec la version centrée de la `Scale` méthode, la version centrée de l' `RotateDegrees` appel est un raccourci. Voici la méthode :
 
 ```csharp
 RotateDegrees (degrees, px, py);
 ```
 
-Cet appel est équivalent à la suivante :
+Cet appel équivaut à ce qui suit :
 
 ```csharp
 canvas.Translate(px, py);
@@ -104,14 +107,14 @@ canvas.RotateDegrees(degrees);
 canvas.Translate(-px, -py);
 ```
 
-Vous découvrirez que vous pouvez parfois combiner `Translate` appelle avec `Rotate` appels. Par exemple, voici le `RotateDegrees` et `DrawText` appelle le **centré pivoter** page ;
+Vous découvrirez que vous pouvez parfois combiner `Translate` des appels avec des `Rotate` appels. Par exemple, Voici les `RotateDegrees` appels et `DrawText` dans la page de **rotation centrée** ;
 
 ```csharp
 canvas.RotateDegrees((float)rotateSlider.Value, info.Width / 2, info.Height / 2);
 canvas.DrawText(Title, info.Width / 2, info.Height / 2, textPaint);
 ```
 
-Le `RotateDegrees` appel équivaut à deux `Translate` appels et non-centré `RotateDegrees`:
+L' `RotateDegrees` appel équivaut à deux `Translate` appels et à un non centré `RotateDegrees` :
 
 ```csharp
 canvas.Translate(info.Width / 2, info.Height / 2);
@@ -120,7 +123,7 @@ canvas.Translate(-info.Width / 2, -info.Height / 2);
 canvas.DrawText(Title, info.Width / 2, info.Height / 2, textPaint);
 ```
 
-Le `DrawText` appel pour afficher le texte à un emplacement particulier est équivalent à un `Translate` appeler pour cet emplacement suivi `DrawText` au point (0, 0) :
+L' `DrawText` appel pour afficher du texte à un emplacement particulier est équivalent à un `Translate` appel de cet emplacement suivi par `DrawText` au point (0,0) :
 
 ```csharp
 canvas.Translate(info.Width / 2, info.Height / 2);
@@ -130,7 +133,7 @@ canvas.Translate(info.Width / 2, info.Height / 2);
 canvas.DrawText(Title, 0, 0, textPaint);
 ```
 
-Les deux consécutifs `Translate` appels annulent :
+Les deux appels consécutifs sont `Translate` annulés :
 
 ```csharp
 canvas.Translate(info.Width / 2, info.Height / 2);
@@ -138,13 +141,13 @@ canvas.RotateDegrees((float)rotateSlider.Value);
 canvas.DrawText(Title, 0, 0, textPaint);
 ```
 
-Conceptuellement, les deux transformations sont appliquées dans l’ordre inverse du comment ils apparaissent dans le code. Le `DrawText` appel affiche le texte dans le coin supérieur gauche de la zone de dessin. Le `RotateDegrees` appel fait pivoter le texte par rapport à l’angle supérieur gauche. Le `Translate` appel déplace le texte au centre de la zone de dessin.
+Conceptuellement, les deux transformations sont appliquées dans l’ordre inverse à la manière dont elles apparaissent dans le code. L' `DrawText` appel affiche le texte dans l’angle supérieur gauche de la zone de dessin. L' `RotateDegrees` appel fait pivoter ce texte par rapport à l’angle supérieur gauche. L' `Translate` appel déplace alors le texte au centre de la zone de dessin.
 
-Il existe généralement plusieurs façons de combiner une rotation et une translation. Le **texte pivoté** page crée l’affichage suivant :
+Il existe généralement plusieurs façons de combiner la rotation et la translation. La page de **texte pivoté** crée l’affichage suivant :
 
-[![](rotate-images/rotatedtext-small.png "Capture d’écran triple de la page de texte pivoté")](rotate-images/rotatedtext-large.png#lightbox "Triple capture d’écran de la page de texte pivoté")
+[![](rotate-images/rotatedtext-small.png "Triple screenshot of the Rotated Text page")](rotate-images/rotatedtext-large.png#lightbox "Triple screenshot of the Rotated Text page")
 
-Voici le `PaintSurface` Gestionnaire de la [ `RotatedTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/RotatedTextPage.cs) classe :
+Voici le `PaintSurface` Gestionnaire de la [`RotatedTextPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/RotatedTextPage.cs) classe :
 
 ```csharp
 static readonly string text = "    ROTATE";
@@ -182,9 +185,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ```
 
-Le `xCenter` et `yCenter` valeurs indiquent au centre de la zone de dessin. Le `yText` valeur est un peu de décalage à partir de là. Cette valeur est la coordonnée Y nécessaire pour positionner le texte afin qu’il soit véritablement verticalement centré sur la page. Le `for` boucle définit ensuite une rotation basée sur le centre de la zone de dessin. La rotation est en incréments de 30 degrés. Le texte est dessiné à l’aide de la `yText` valeur. Le nombre de valeurs vides avant le mot « pivoter » dans la `text` valeur a été déterminée de manière empirique pour établir la connexion entre ces chaînes de texte de 12 à semble être un dodecagon.
+Les `xCenter` `yCenter` valeurs et indiquent le centre du canevas. La `yText` valeur est un petit décalage par rapport à ce. Cette valeur est la coordonnée Y nécessaire pour positionner le texte afin qu’il soit véritablement centré sur la page. La `for` boucle définit ensuite une rotation en fonction du centre de la zone de dessin. La rotation est par incréments de 30 degrés. Le texte est dessiné à l’aide de la `yText` valeur. Le nombre d’espaces avant le mot « ROTATE » dans la `text` valeur a été déterminé de façon empirique pour que la connexion entre ces 12 chaînes de texte semble être un dodecagon.
 
-La première consiste à simplifier ce code à incrémenter l’angle de rotation de 30 degrés à chaque fois que la boucle après le `DrawText` appeler. Cela élimine la nécessité pour les appels à `Save` et `Restore`. Notez que le `degrees` variable n’est plus utilisée dans le corps de la `for` bloc :
+L’une des méthodes permettant de simplifier ce code consiste à incrémenter l’angle de rotation de 30 degrés à chaque fois par la boucle après l' `DrawText` appel. Cela élimine la nécessité d’appeler `Save` et `Restore` . Notez que la `degrees` variable n’est plus utilisée dans le corps du `for` bloc :
 
 ```csharp
 for (int degrees = 0; degrees < 360; degrees += 30)
@@ -195,7 +198,7 @@ for (int degrees = 0; degrees < 360; degrees += 30)
 
 ```
 
-Il est également possible d’utiliser la forme simple de `RotateDegrees` en faisant précéder la boucle avec un appel à `Translate` pour tout déplacer vers le centre de la zone de dessin :
+Il est également possible d’utiliser la forme simple de `RotateDegrees` en faisant précéder la boucle d’un appel à `Translate` pour déplacer tout vers le centre de la zone de dessin :
 
 ```csharp
 float yText = -textBounds.Height / 2 - textBounds.Top;
@@ -209,15 +212,15 @@ for (int degrees = 0; degrees < 360; degrees += 30)
 }
 ```
 
-Modifié `yText` calcul n’incorpore plus `yCenter`. Maintenant le `DrawText` appel Centre le texte verticalement en haut de la zone de dessin.
+Le `yText` calcul modifié n’est plus incorporé `yCenter` . À présent `DrawText` , l’appel Centre le texte verticalement en haut du canevas.
 
-Étant donné que les transformations sont appliquées sur le plan conceptuel opposé à la façon dont ils apparaissent dans le code, il est souvent possible de transformations pour commencer plus globales, suivies de plusieurs transformations locales. Cela est souvent le moyen le plus simple de combiner une rotation et une translation.
+Étant donné que les transformations sont appliquées de manière conceptuelle, contrairement à la façon dont elles apparaissent dans le code, il est souvent possible de commencer par des transformations globales supplémentaires, suivies de plus de transformations locales. Il s’agit souvent du moyen le plus simple pour combiner la rotation et la traduction.
 
-Par exemple, supposons que vous souhaitez dessiner un objet graphique qui pivote autour de son centre comme une planète pivote sur son axe. Mais vous souhaitez également cet objet tournent autour du centre de l’écran comme une planète tournant autour du soleil.
+Supposons, par exemple, que vous souhaitiez dessiner un objet graphique qui pivote autour de son centre, comme une planète tournant sur son axe. Mais vous souhaitez également que cet objet tourne autour du centre de l’écran, comme une planète qui tourne autour du soleil.
 
-Vous pouvez le faire en plaçant l’objet dans le coin supérieur gauche de la zone de dessin et l’utilisation d’une animation pour faire pivoter autour de cet angle. Ensuite, déplacer l’objet horizontalement comme un orbital radius. Appliquer maintenant une deuxième rotation animée, également autour de l’origine. Cela rend l’objet tournent autour de l’angle. Traduire maintenant au centre de la zone de dessin.
+Pour ce faire, vous pouvez positionner l’objet dans l’angle supérieur gauche de la zone de dessin, puis utiliser une animation pour la faire pivoter autour de cet angle. Ensuite, Traduisez l’objet horizontalement comme un rayon orbital. Appliquez à présent une deuxième rotation animée, également autour de l’origine. Ainsi, l’objet tourne autour de l’angle. À présent, Traduisez au centre de la zone de dessin.
 
-Voici le `PaintSurface` gestionnaire qui contient ces transformer des appels dans l’ordre inverse :
+Voici le `PaintSurface` gestionnaire qui contient ces appels de transformation dans l’ordre inverse :
 
 ```csharp
 float revolveDegrees, rotateDegrees;
@@ -255,7 +258,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Le `revolveDegrees` et `rotateDegrees` champs sont animées. Ce programme utilise une technique d’animation différentes selon le Xamarin.Forms [ `Animation` ](xref:Xamarin.Forms.Animation) classe. (Cette classe est décrite dans [chapitre 22 *création d’applications mobiles avec Xamarin.Forms*](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch22-Apr2016.pdf)) le `OnAppearing` remplacement crée deux `Animation` objets avec les méthodes de rappel, puis appelle `Commit` dessus pour une durée de l’animation :
+Les `revolveDegrees` `rotateDegrees` champs et sont animés. Ce programme utilise une autre technique d’animation basée sur la Xamarin.Forms [`Animation`](xref:Xamarin.Forms.Animation) classe. (Cette classe est décrite dans le [Chapitre 22 de la rubrique *création d’Mobile Apps Xamarin.Forms avec * ](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch22-Apr2016.pdf)) la `OnAppearing` substitution crée deux `Animation` objets avec des méthodes de rappel, puis appelle `Commit` sur ceux-ci pour une durée d’animation :
 
 ```csharp
 protected override void OnAppearing()
@@ -273,7 +276,7 @@ protected override void OnAppearing()
 }
 ```
 
-La première `Animation` objet anime `revolveDegrees` de degrés de 0 à 360 degrés de plus de 10 secondes. Anime la deuxième identité `rotateDegrees` de degrés de 0 à 360 degrés le chaque 1 seconde et également invalide la surface pour générer un autre appel à la `PaintSurface` gestionnaire. Le `OnDisappearing` remplacement annule ces deux animations :
+Le premier `Animation` objet s’anime `revolveDegrees` de 0 degrés à 360 degrés sur 10 secondes. La seconde effectue une animation `rotateDegrees` de 0 degré à 360 degrés toutes les 1 seconde et invalide également la surface pour générer un autre appel au `PaintSurface` Gestionnaire. Le `OnDisappearing` remplacement annule ces deux animations :
 
 ```csharp
 protected override void OnDisappearing()
@@ -284,9 +287,9 @@ protected override void OnDisappearing()
 }
 ```
 
-Le **horloge analogique horrible** programme (appelée ainsi car une horloge analogique plus attrayante sera décrite dans un prochain article) utilise la rotation pour dessiner les marques minute et l’heure de l’horloge et faire tourner les aiguilles. Le programme Dessine l’horloge à l’aide d’un système de coordonnées arbitraire basé sur un cercle est centré au point (0, 0) avec un rayon de 100. Il utilise la traduction et la mise à l’échelle pour le développer ou le centre du cercle sur la page.
+Le programme d' **horloge analogique** de petite ampleur (appelé, car une horloge analogique plus attrayante est décrite dans un article ultérieur) utilise la rotation pour dessiner les points de minute et d’heure de l’horloge et pour faire pivoter les mains. Le programme dessine l’horloge à l’aide d’un système de coordonnées arbitraire basé sur un cercle centré au point (0,0) avec un rayon de 100. Elle utilise la translation et la mise à l’échelle pour développer et centrer ce cercle sur la page.
 
-Le `Translate` et `Scale` appels s’appliquent globalement à l’horloge, donc des logiquement les premières à être appelée après l’initialisation de la `SKPaint` objets :
+Les `Translate` `Scale` appels et s’appliquent globalement à l’horloge, donc ceux-ci sont les premiers à être appelés après l’initialisation des `SKPaint` objets :
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -315,7 +318,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Il existe 60 marques de deux tailles différentes qui doivent être dessinés en permanence dans un cercle. Le `DrawCircle` appel dessine cercle au point (0, -90), qui, par rapport au centre de l’horloge, correspond à 12:00. Le `RotateDegrees` appel incrémente l’angle de rotation en degrés 6 après chaque graduation. Le `angle` variable est utilisée uniquement pour déterminer si un grand cercle ou un petit cercle est dessiné :
+Il y a 60 marques de deux tailles différentes qui doivent être dessinées dans un cercle autour de l’horloge. L' `DrawCircle` appel dessine ce cercle au point (0, – 90), qui est relatif au centre de l’horloge correspond à 12:00. L' `RotateDegrees` appel incrémente l’angle de rotation de 6 degrés après chaque graduation. La `angle` variable est utilisée uniquement pour déterminer si un grand cercle ou un petit cercle est dessiné :
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -332,7 +335,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Enfin, le `PaintSurface` gestionnaire obtient l’heure actuelle et calcule les degrés de rotation de l’heure, la minute et la deuxième mains. Chaque aiguille est dessiné dans la position 12:00 afin que l’angle de rotation est relatif qui :
+Enfin, le `PaintSurface` Gestionnaire obtient l’heure actuelle et calcule les degrés de rotation pour les heures, les minutes et les secondes. Chaque main est dessinée dans la position 12:00 afin que l’angle de rotation soit relatif à ce qui suit :
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -364,13 +367,13 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-L’horloge est certainement fonctionnelle même si les mains sont plutôt brutes :
+L’horloge est certainement fonctionnelle bien que les mains soient plutôt brutes :
 
-[![](rotate-images/uglyanalogclock-small.png "Le triple de la capture d’écran de la page de texte de l’horloge analogique horrible")](rotate-images/uglyanalogclock-large.png#lightbox "Triple screenshot of the Ugly Analog page")
+[![](rotate-images/uglyanalogclock-small.png "Triple screenshot of the Ugly Analog Clock Text page")](rotate-images/uglyanalogclock-large.png#lightbox "Triple screenshot of the Ugly Analog page")
 
-Pour une horloge plus attrayante, consultez l’article [ **les données de chemin SVG dans SkiaSharp**](../curves/path-data.md).
+Pour obtenir une horloge plus attrayante, consultez l’article [**données du chemin d’accès SVG dans SkiaSharp**](../curves/path-data.md).
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
-- [API de SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
+- [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

@@ -1,65 +1,68 @@
 ---
-title: Extensions de balisage XAML
-description: L’article explique comment utiliser les extensions de balisage XAML de Xamarin.Forms pour étendre la puissance et la flexibilité de XAML en autorisant les attributs de l’élément à définir à partir de sources autres que des chaînes de texte littéral.
-ms.prod: xamarin
-ms.assetid: EB06C8B7-3FD5-47B7-A09C-A13063BD110F
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/05/2018
-ms.openlocfilehash: 40a50ecf93c8b77577e8e74df2e134b0ce3f80b6
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+title: ''
+description: L’article explique comment utiliser les Xamarin.Forms extensions de balisage XAML pour étendre la puissance et la flexibilité du XAML en permettant de définir des attributs d’élément à partir de sources autres que des chaînes de texte littéral.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 568cffc335f28b1a47f3278ad061d851ebef84b6
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70767536"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84130388"
 ---
 # <a name="xaml-markup-extensions"></a>Extensions de balisage XAML
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
 
-Extensions de balisage XAML vous aider à étendre la puissance et la flexibilité de XAML en autorisant les attributs de l’élément à définir à partir de sources autres que des chaînes de texte littéral.
+Les extensions de balisage XAML permettent d’étendre la puissance et la flexibilité du code XAML en permettant de définir des attributs d’élément à partir de sources autres que des chaînes de texte littéral.
 
-Par exemple, normalement vous définissez le `Color` propriété de `BoxView` comme suit :
+Par exemple, normalement, vous définissez la `Color` propriété de la `BoxView` façon suivante :
 
 ```xaml
 <BoxView Color="Blue" />
 ```
 
-Ou bien, vous pouvez la définir sur une valeur de couleur RVB hexadécimale :
+Vous pouvez le définir sur une valeur de couleur RVB hexadécimale :
 
 ```xaml
 <BoxView Color="#FF0080" />
 ```
 
-Dans les deux cas, la chaîne de texte la valeur est la `Color` attribut est converti en un `Color` valeur par le [ `ColorTypeConverter` ](xref:Xamarin.Forms.ColorTypeConverter) classe.
+Dans les deux cas, la chaîne de texte définie sur l' `Color` attribut est convertie en `Color` valeur par la [`ColorTypeConverter`](xref:Xamarin.Forms.ColorTypeConverter) classe.
 
-Vous préférerez peut-être à la place définir le `Color` attribut à partir d’une valeur stockée dans un dictionnaire de ressources, ou à partir de la valeur d’une propriété statique d’une classe que vous avez créée ou à partir d’une propriété de type `Color` d’un autre élément dans la page, ou il est construit à partir de Séparez les valeurs de teinte, saturation et de luminosité.
+Vous préférerez peut-être plutôt définir l' `Color` attribut à partir d’une valeur stockée dans un dictionnaire de ressources, ou à partir de la valeur d’une propriété statique d’une classe que vous avez créée, ou d’une propriété de type `Color` d’un autre élément de la page, ou construite à partir de valeurs de teinte, de saturation et de luminosité distinctes.
 
-Toutes ces options sont possibles à l’aide des extensions de balisage XAML. Mais ne laissez pas l’expression « extensions de balisage » vous effrayant : Les extensions de balisage XAML ne sont *pas* des extensions à XML. Même avec les extensions de balisage XAML, XAML est toujours XML juridique.
+Toutes ces options sont possibles à l’aide d’extensions de balisage XAML. Mais ne laissez pas l’expression « extensions de balisage » vous effrayer : les extensions de balisage XAML ne sont *pas* des extensions à XML. Même avec les extensions de balisage XAML, XAML est toujours un XML légal.
 
-Une extension de balisage est simplement un moyen différent pour exprimer un attribut d’un élément. Extensions de balisage XAML sont généralement identifiables par un paramètre d’attribut qui est placé entre accolades :
+Une extension de balisage est simplement une autre façon d’exprimer un attribut d’un élément. Les extensions de balisage XAML sont généralement identifiables par un paramètre d’attribut qui est placé entre accolades :
 
 ```xaml
 <BoxView Color="{StaticResource themeColor}" />
 ```
 
-N’importe quel paramètre d’attribut entre accolades est *toujours* une extension de balisage XAML. Toutefois, comme vous le verrez, les extensions de balisage XAML peuvent également être référencées sans l’utilisation d’accolades.
+Tout paramètre d’attribut entre accolades est *toujours* une extension de balisage XAML. Toutefois, comme vous le verrez, les extensions de balisage XAML peuvent également être référencées sans l’utilisation d’accolades.
 
 Cet article est divisé en deux parties :
 
-## <a name="consuming-xaml-markup-extensionsconsumingmd"></a>[Consommation des extensions de balisage XAML](consuming.md)  
+## <a name="consuming-xaml-markup-extensions"></a>[Consommation des extensions de balisage XAML](consuming.md)  
 
-Utilisez les extensions de balisage XAML définies dans Xamarin.Forms.
+Utilisez les extensions de balisage XAML définies dans Xamarin.Forms .
 
-## <a name="creating-xaml-markup-extensionscreatingmd"></a>[Création d’extensions de balisage XAML](creating.md)
+## <a name="creating-xaml-markup-extensions"></a>[Création d’extensions de balisage XAML](creating.md)
 
-Écrire vos propres extensions de balisage XAML personnalisées.
+Écrivez vos propres extensions de balisage XAML personnalisées.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Extensions de balisage (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
-- [Chapitre d’extensions de balisage XAML de Xamarin.Forms livre](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)
+- [Chapitre sur les extensions de balisage XAML du Xamarin.Forms livre](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)
 - [Dictionnaires de ressources](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [Styles dynamiques](~/xamarin-forms/user-interface/styles/dynamic.md)
 - [Liaison de données](~/xamarin-forms/app-fundamentals/data-binding/index.md)

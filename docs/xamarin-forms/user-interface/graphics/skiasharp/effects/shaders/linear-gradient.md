@@ -1,43 +1,46 @@
 ---
-title: Dégradé linéaire SkiaSharp
-description: Découvrez comment tracer des lignes d’ou remplir des zones avec des dégradés composé d’un mélange graduel de deux couleurs.
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: 20A2A8C4-FEB7-478D-BF57-C92E26117B6A
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/23/2018
-ms.openlocfilehash: 290e533e54b2ee150b94d9fb6b0f5119324f9cf0
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+title: ''
+description: ''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 43aa429046c1b0f72a1cbe6a5b921da9b8907a49
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79305408"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84132221"
 ---
 # <a name="the-skiasharp-linear-gradient"></a>Dégradé linéaire SkiaSharp
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-La classe [`SKPaint`](xref:SkiaSharp.SKPaint) définit une propriété [`Color`](xref:SkiaSharp.SKPaint.Color) utilisée pour rayer des lignes ou des zones de remplissage avec une couleur unie. Vous pouvez également tracer des lignes ou des zones de remplissage avec des _dégradés_, qui sont des fusions progressives de couleurs :
+La [`SKPaint`](xref:SkiaSharp.SKPaint) classe définit une [`Color`](xref:SkiaSharp.SKPaint.Color) propriété utilisée pour rayer des lignes ou des zones de remplissage avec une couleur unie. Vous pouvez également tracer des lignes ou des zones de remplissage avec des _dégradés_, qui sont des fusions progressives de couleurs :
 
 ![Exemple de dégradé linéaire](linear-gradient-images/LinearGradientSample.png "Exemple de dégradé linéaire")
 
-Le type de dégradé le plus basique est un dégradé _linéaire_ . Le mélange des couleurs se produit sur une ligne (appelée _ligne de dégradé_) d’un point à un autre. Les lignes qui sont perpendiculaires à la ligne de dégradé ont la même couleur. Vous créez un dégradé linéaire à l’aide de l’une des deux méthodes de [`SKShader.CreateLinearGradient`](xref:SkiaSharp.SKShader.CreateLinearGradient*) statiques. La différence entre les deux surcharges est qu’une comprend une matrice de transformation et l’autre n’est pas le cas. 
+Le type de dégradé le plus basique est un dégradé _linéaire_ . Le mélange des couleurs se produit sur une ligne (appelée _ligne de dégradé_) d’un point à un autre. Les lignes qui sont perpendiculaires à la ligne de dégradé ont la même couleur. Vous créez un dégradé linéaire à l’aide de l’une des deux méthodes statiques [`SKShader.CreateLinearGradient`](xref:SkiaSharp.SKShader.CreateLinearGradient*) . La différence entre les deux surcharges est que l’une comprend une transformation de matrice et l’autre pas. 
 
-Ces méthodes retournent un objet de type [`SKShader`](xref:SkiaSharp.SKShader) que vous affectez à la propriété [`Shader`](xref:SkiaSharp.SKPaint.Shader) de `SKPaint`. Si la propriété `Shader` est non null, elle remplace la propriété `Color`. Toute ligne rayée ou toute zone remplie à l’aide de cet objet `SKPaint` est basée sur le dégradé plutôt que sur la couleur unie.
+Ces méthodes retournent un objet de type [`SKShader`](xref:SkiaSharp.SKShader) que vous affectez à la [`Shader`](xref:SkiaSharp.SKPaint.Shader) propriété de `SKPaint` . Si la `Shader` propriété est non null, elle se substitue à la `Color` propriété. Toute ligne rayée ou toute zone remplie à l’aide `SKPaint` de cet objet est basée sur le dégradé plutôt que sur la couleur unie.
 
 > [!NOTE]
-> La propriété `Shader` est ignorée lorsque vous incluez un objet `SKPaint` dans un appel de `DrawBitmap`. Vous pouvez utiliser la propriété `Color` de `SKPaint` pour définir un niveau de transparence pour l’affichage d’une bitmap (comme décrit dans l’article [affichage des bitmaps SkiaSharp](../../bitmaps/displaying.md#displaying-in-pixel-dimensions)), mais vous ne pouvez pas utiliser la propriété `Shader` pour afficher une bitmap avec une transparence de dégradé. D’autres techniques sont disponibles pour afficher des bitmaps avec des transparences dégradées : celles-ci sont décrites dans les articles [SkiaSharp dégradés circulaires](circular-gradients.md#radial-gradients-for-masking) et [SkiaSharp modes de composition et de fusion](../blend-modes/porter-duff.md#gradient-transparency-and-transitions).
+> La `Shader` propriété est ignorée lorsque vous incluez un `SKPaint` objet dans un `DrawBitmap` appel. Vous pouvez utiliser la `Color` propriété de `SKPaint` pour définir un niveau de transparence pour l’affichage d’une image bitmap (comme décrit dans l’article [affichage des bitmaps SkiaSharp](../../bitmaps/displaying.md#displaying-in-pixel-dimensions)), mais vous ne pouvez pas utiliser la `Shader` propriété pour afficher une bitmap avec une transparence de dégradé. D’autres techniques sont disponibles pour afficher des bitmaps avec des transparences dégradées : celles-ci sont décrites dans les articles [SkiaSharp dégradés circulaires](circular-gradients.md#radial-gradients-for-masking) et [SkiaSharp modes de composition et de fusion](../blend-modes/porter-duff.md#gradient-transparency-and-transitions).
 
-## <a name="corner-to-corner-gradients"></a>Coin à dégradés
+## <a name="corner-to-corner-gradients"></a>Dégradés d’angle à coin
 
-Souvent un dégradé linéaire s’étend à partir d’un coin d’un rectangle à un autre. Si le point de départ est le coin supérieur gauche du rectangle, le dégradé peut étendre :
+Souvent, un dégradé linéaire s’étend d’un angle d’un rectangle à un autre. Si le point de départ est l’angle supérieur gauche du rectangle, le dégradé peut s’étendre :
 
-- verticalement vers le bas à gauche
-- horizontalement à l’angle supérieur droit
-- en diagonale vers le bas à droite
+- verticalement vers l’angle inférieur gauche
+- horizontalement vers l’angle supérieur droit
+- en diagonale jusqu’au coin inférieur droit
 
-Le dégradé linéaire Diagonal est illustré dans la première page de la section **nuanciers SkiaSharp et autres effets** de l’exemple [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) . La page de **dégradé d’angle à angle** crée un `SKCanvasView` dans son constructeur. Le gestionnaire de `PaintSurface` crée un objet `SKPaint` dans une instruction `using`, puis définit un rectangle carré de 300 pixels centré dans la zone de dessin :
+Le dégradé linéaire Diagonal est illustré dans la première page de la section **nuanciers SkiaSharp et autres effets** de l’exemple [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) . La page de **dégradé d’angle à angle** crée un `SKCanvasView` dans son constructeur. Le `PaintSurface` Gestionnaire crée un `SKPaint` objet dans une `using` instruction, puis définit un rectangle carré de 300 pixels centré dans la zone de dessin :
 
 ```csharp
 public class CornerToCornerGradientPage : ContentPage
@@ -84,33 +87,33 @@ public class CornerToCornerGradientPage : ContentPage
 }
 ```
 
-Le `SKShader` valeur de retour de la méthode statique `SKShader.CreateLinearGradient` est assignée à la propriété `Shader` de `SKPaint`. Les cinq arguments sont les suivantes :
+La `Shader` valeur de `SKPaint` `SKShader` retour de la méthode statique est assignée à la propriété de `SKShader.CreateLinearGradient` . Les cinq arguments sont les suivants :
 
-- Le point de départ du dégradé, définies ici pour l’angle supérieur gauche du rectangle
-- Le point de terminaison du dégradé, la valeur est ici le coin inférieur droit du rectangle
-- Un tableau de deux ou plusieurs couleurs qui contribuent au dégradé
-- Tableau de valeurs `float` indiquant la position relative des couleurs dans la ligne de dégradé
-- Membre de l’énumération [`SKShaderTileMode`](xref:SkiaSharp.SKShaderTileMode) indiquant comment le dégradé se comporte au-delà des extrémités de la ligne de dégradé
+- Point de départ du dégradé, défini ici dans l’angle supérieur gauche du rectangle
+- Point de terminaison du dégradé, défini ici dans le coin inférieur droit du rectangle
+- Tableau d’au moins deux couleurs qui contribuent au dégradé
+- Tableau de `float` valeurs indiquant la position relative des couleurs dans la ligne de dégradé
+- Membre de l' [`SKShaderTileMode`](xref:SkiaSharp.SKShaderTileMode) énumération qui indique comment le dégradé se comporte au-delà des extrémités de la ligne de dégradé
 
-Une fois l’objet gradient créé, la méthode `DrawRect` dessine le rectangle carré de 300 pixels à l’aide de l’objet `SKPaint` qui comprend le nuanceur. Ici, il s’exécute sur iOS, Android et la plateforme universelle Windows (UWP) :
+Une fois l’objet gradient créé, la `DrawRect` méthode dessine le rectangle carré de 300 pixels à l’aide de l' `SKPaint` objet qui comprend le nuanceur. Ici, il s’exécute sur iOS, Android et le plateforme Windows universelle (UWP) :
 
 [![Dégradé de coin à angle](linear-gradient-images/CornerToCornerGradient.png "Dégradé de coin à angle")](linear-gradient-images/CornerToCornerGradient-Large.png#lightbox)
 
-La ligne de dégradé est définie par les deux points spécifiés en tant que les deux premiers arguments. Notez que ces points sont relatifs à la _zone de dessin_ et _non_ à l’objet graphique affiché avec le dégradé. La ligne de dégradé, la couleur passe progressivement du rouge en haut à gauche en bleu en bas à droite. N’importe quelle ligne perpendiculaire à la ligne de dégradé a une couleur constante.
+La ligne de dégradé est définie par les deux points spécifiés comme les deux premiers arguments. Notez que ces points sont relatifs à la _zone de dessin_ et _non_ à l’objet graphique affiché avec le dégradé. Le long de la ligne de dégradé, la couleur passe graduellement du rouge au coin supérieur gauche au bleu en bas à droite. Toute ligne perpendiculaire à la ligne de dégradé a une couleur constante.
 
-Le tableau de valeurs `float` spécifié comme quatrième argument a une correspondance un-à-un avec le tableau de couleurs. Les valeurs indiquent la position relative le long de la ligne de dégradé où ces couleurs se produisent. Ici, 0 signifie que `Red` se produit au début de la ligne de dégradé, et 1 signifie que `Blue` se trouve à la fin de la ligne. Les nombres doivent être croissant et doivent se trouver dans la plage de 0 à 1. Si elles ne sont pas dans cette plage, ils seront ajustés pour être dans cette plage.
+Le tableau de `float` valeurs spécifié comme quatrième argument a une correspondance un-à-un avec le tableau de couleurs. Les valeurs indiquent la position relative le long de la ligne de dégradé où ces couleurs se produisent. Ici, le 0 signifie que `Red` se trouve au début de la ligne de dégradé et 1 signifie que `Blue` se trouve à la fin de la ligne. Les nombres doivent être croissants et doivent être compris dans la plage de 0 à 1. Si elles ne sont pas comprises dans cette plage, elles sont ajustées pour être comprises dans cette plage.
 
-Les deux valeurs dans le tableau peuvent indiquer une valeur autre que 0 et 1. Procédez comme suit :
+Les deux valeurs du tableau peuvent être définies sur une valeur autre que 0 et 1. Procédez comme suit :
 
 ```csharp
 new float[] { 0.25f, 0.75f }
 ```
 
-Le tout premier trimestre de la ligne de dégradé est maintenant rouge pure et le dernier trimestre est bleu pur. La combinaison de rouge et bleu est limitée à la partie centrale de la ligne de dégradé.
+À présent, l’ensemble du premier trimestre de la ligne de dégradé est en rouge pur et le dernier trimestre est en bleu pur. La combinaison du rouge et du bleu est limitée à la moitié centrale de la ligne de dégradé.
 
-En règle générale, vous voudrez espace ces valeurs de position tout aussi allant de 0 à 1. Si tel est le cas, vous pouvez simplement fournir `null` comme quatrième argument à `CreateLinearGradient`.
+En règle générale, il est préférable d’espacer ces valeurs de position de 0 à 1. Si tel est le cas, vous pouvez simplement fournir `null` comme quatrième argument à `CreateLinearGradient` .
 
-Bien que ce dégradé est défini entre deux angles du rectangle 300 pixels carré, il n’est pas limité au remplissage de ce rectangle. La page de **dégradé d’angle à angle** comprend du code supplémentaire qui répond aux pressions ou clics de souris sur la page. Le champ `drawBackground` est basculé entre `true` et `false` à chaque pression. Si la valeur est `true`, le gestionnaire de `PaintSurface` utilise le même objet `SKPaint` pour remplir l’intégralité du canevas, puis dessine un rectangle noir indiquant le plus petit rectangle : 
+Bien que ce dégradé soit défini entre deux angles du rectangle carré de 300 pixels, il n’est pas limité au remplissage de ce rectangle. La page de **dégradé d’angle à angle** comprend du code supplémentaire qui répond aux pressions ou clics de souris sur la page. Le `drawBackground` champ est basculé entre `true` et `false` avec chaque TAP. Si la valeur est `true` , le `PaintSurface` gestionnaire utilise le même `SKPaint` objet pour remplir l’intégralité du canevas, puis dessine un rectangle noir indiquant le plus petit rectangle : 
 
 ```csharp
 public class CornerToCornerGradientPage : ContentPage
@@ -155,15 +158,15 @@ Voici ce que vous verrez après avoir appuyé sur l’écran :
 
 [![Dégradé de coin à angle plein](linear-gradient-images/CornerToCornerGradientFull.png "Dégradé de coin à angle plein")](linear-gradient-images/CornerToCornerGradientFull-Large.png#lightbox)
 
-Notez que le dégradé se répète dans le même modèle au-delà de points définissant la ligne de dégradé. Cette répétition se produit parce que le dernier argument de `CreateLinearGradient` est `SKShaderTileMode.Repeat`. (Vous verrez les autres options sous peu.)
+Notez que le dégradé se répète dans le même modèle au-delà des points définissant la ligne de dégradé. Cette répétition se produit parce que le dernier argument de `CreateLinearGradient` est `SKShaderTileMode.Repeat` . (Vous verrez les autres options sous peu.)
 
-Notez également que les points que vous utilisez pour spécifier la ligne de dégradé ne sont pas uniques. Les lignes qui sont perpendiculaires à la ligne de dégradé ont la même couleur, il y a un nombre infini de dégradé lignes que vous pouvez spécifier pour le même effet. Par exemple, lors du remplissage d’un rectangle avec un dégradé horizontal, vous pouvez spécifier les angles supérieur gauche et le coin supérieur droit, ou les angles inférieur gauche et inférieur droit ou les deux points même avec et parallèlement à ces lignes.
+Notez également que les points que vous utilisez pour spécifier la ligne de dégradé ne sont pas uniques. Les lignes qui sont perpendiculaires à la ligne de dégradé ont la même couleur, de sorte qu’il existe un nombre infini de lignes de dégradé que vous pouvez spécifier pour le même effet. Par exemple, lors du remplissage d’un rectangle avec un dégradé horizontal, vous pouvez spécifier les angles supérieur à gauche et supérieur droit, ou les angles inférieur gauche et inférieur droit, ou encore deux points avec et parallèles à ces lignes.
 
-## <a name="interactively-experiment"></a>Tester de manière interactive
+## <a name="interactively-experiment"></a>Expérimentez de manière interactive
 
-Vous pouvez faire des essais interactifs avec des dégradés linéaires avec la page **dégradé linéaire interactif** . Cette page utilise la classe `InteractivePage` présentée dans l’article [**trois façons de dessiner un arc**](../../curves/arcs.md). `InteractivePage` gère les événements [`TouchEffect`](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md) pour gérer une collection d’objets `TouchPoint` que vous pouvez déplacer avec vos doigts ou la souris.
+Vous pouvez faire des essais interactifs avec des dégradés linéaires avec la page **dégradé linéaire interactif** . Cette page utilise la `InteractivePage` classe présentée dans l’article [**trois façons de dessiner un arc**](../../curves/arcs.md). `InteractivePage` gère les [`TouchEffect`](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md) événements pour maintenir une collection d' `TouchPoint` objets que vous pouvez déplacer avec vos doigts ou la souris.
 
-Le fichier XAML joint le `TouchEffect` à un parent du `SKCanvasView` et comprend également un `Picker` qui vous permet de sélectionner l’un des trois membres de l’énumération [`SKShaderTileMode`](xref:SkiaSharp.SKShaderTileMode) :
+Le fichier XAML attache `TouchEffect` à un parent du `SKCanvasView` et comprend également un `Picker` qui vous permet de sélectionner l’un des trois membres de l' [`SKShaderTileMode`](xref:SkiaSharp.SKShaderTileMode) énumération :
 
 ```xaml
 <local:InteractivePage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -211,7 +214,7 @@ Le fichier XAML joint le `TouchEffect` à un parent du `SKCanvasView` et compren
 </local:InteractivePage>
 ```
 
-Le constructeur du fichier code-behind crée deux objets `TouchPoint` pour les points de début et de fin du dégradé linéaire. Le gestionnaire de `PaintSurface` définit un tableau de trois couleurs (pour un dégradé du rouge au vert bleu) et obtient le `SKShaderTileMode` actuel à partir du `Picker`:
+Le constructeur du fichier code-behind crée deux `TouchPoint` objets pour les points de début et de fin du dégradé linéaire. Le `PaintSurface` Gestionnaire définit un tableau de trois couleurs (pour un dégradé du rouge au vert bleu) et obtient le actuel `SKShaderTileMode` à partir du `Picker` :
 
 ```csharp
 public partial class InteractiveLinearGradientPage : InteractivePage
@@ -266,9 +269,9 @@ public partial class InteractiveLinearGradientPage : InteractivePage
 }
 ```
 
-Le gestionnaire de `PaintSurface` crée l’objet `SKShader` à partir de toutes ces informations et l’utilise pour colorer la zone de dessin entière. Le tableau des valeurs de `float` est défini sur `null`. Sinon, pour tout aussi espace trois couleurs, vous devez définir ce paramètre dans un tableau avec les valeurs 0, 0,5 et 1.
+Le `PaintSurface` Gestionnaire crée l' `SKShader` objet à partir de toutes ces informations et l’utilise pour colorer la totalité du canevas. Le tableau de `float` valeurs a la valeur `null` . Dans le cas contraire, pour espacer uniformément trois couleurs, vous devez définir ce paramètre sur un tableau avec les valeurs 0, 0,5 et 1.
 
-La majeure partie du gestionnaire de `PaintSurface` est consacrée à l’affichage de plusieurs objets : les points tactiles comme cercles de contour, la ligne de dégradé et les lignes perpendiculaires aux lignes de dégradé aux points de contact :
+La majeure partie du `PaintSurface` gestionnaire est consacrée à l’affichage de plusieurs objets : les points tactiles en tant que cercles, la ligne de dégradé et les lignes perpendiculaires aux lignes de dégradé aux points tactiles :
 
 ```csharp
 public partial class InteractiveLinearGradientPage : InteractivePage
@@ -322,23 +325,23 @@ public partial class InteractiveLinearGradientPage : InteractivePage
 }
 ```
 
-La ligne de dégradé qui relie les deux touchpoints est facile à dessiner, mais les lignes perpendiculaires nécessitent plus de travail. La ligne de dégradé est convertie en un vecteur, normalisée pour avoir une longueur d’une unité et ensuite pivoter de 90 degrés. Ce vecteur reçoit une longueur de 200 pixels. Il est utilisé pour dessiner les quatre lignes qui relient les points tactiles soit perpendiculaire à la ligne de dégradé.
+La ligne de dégradé reliant les deux décloisonnent est facile à dessiner, mais les lignes perpendiculaires nécessitent davantage de travail. La ligne de dégradé est convertie en vecteur, normalisée pour avoir une longueur d’une unité, puis pivotée par 90 degrés. Une longueur de 200 pixels est alors affectée à ce vecteur. Il est utilisé pour dessiner quatre lignes qui s’étendent à partir des points tactiles pour être perpendiculaires à la ligne de dégradé.
 
-Les lignes perpendiculaires coïncident avec le début et la fin du dégradé. Ce qui se passe au-delà de ces lignes dépend du paramètre de l’énumération `SKShaderTileMode` :
+Les lignes perpendiculaires coïncident avec le début et la fin du dégradé. Ce qui se passe au-delà de ces lignes dépend de la valeur de l' `SKShaderTileMode` énumération :
 
 [![Dégradé linéaire interactif](linear-gradient-images/InteractiveLinearGradient.png "Dégradé linéaire interactif")](linear-gradient-images/InteractiveLinearGradient-Large.png#lightbox)
 
-Les trois captures d’écran montrent les résultats des trois différentes valeurs de [`SKShaderTileMode`](xref:SkiaSharp.SKShaderTileMode). La capture d’écran iOS affiche `SKShaderTileMode.Clamp`, qui étend simplement les couleurs sur la bordure du dégradé. L’option `SKShaderTileMode.Repeat` de la capture d’écran Android montre comment le modèle de dégradé est répété. L’option `SKShaderTileMode.Mirror` de la capture d’écran UWP répète également le modèle, mais le modèle est inversé à chaque fois, ce qui n’entraîne aucune discontinuité de la couleur.
+Les trois captures d’écran affichent les résultats des trois valeurs différentes de [`SKShaderTileMode`](xref:SkiaSharp.SKShaderTileMode) . La capture d’écran iOS affiche `SKShaderTileMode.Clamp` , qui étend simplement les couleurs sur la bordure du dégradé. L' `SKShaderTileMode.Repeat` option dans la capture d’écran Android montre comment le modèle de dégradé est répété. L' `SKShaderTileMode.Mirror` option de la capture d’écran UWP répète également le modèle, mais le modèle est inversé à chaque fois, ce qui n’entraîne aucune discontinuité de la couleur.
 
-## <a name="gradients-on-gradients"></a>Dégradés sur des dégradés
+## <a name="gradients-on-gradients"></a>Dégradés sur les dégradés
 
-La classe `SKShader` ne définit aucune propriété ou méthode publique, à l’exception de `Dispose`. Les objets `SKShader` qui ont été créés par ses méthodes statiques sont donc immuables. Même si vous utilisez le même dégradé pour deux objets différents, il est probable que vous souhaitez varier légèrement en fonction du dégradé. Pour ce faire, vous devez créer un nouvel objet `SKShader`.
+La `SKShader` classe ne définit aucune propriété ou méthode publique à l’exception de `Dispose` . Les `SKShader` objets créés par ses méthodes statiques sont donc immuables. Même si vous utilisez le même dégradé pour deux objets différents, il est probable que vous souhaitiez faire varier légèrement le dégradé. Pour ce faire, vous devez créer un nouvel `SKShader` objet.
 
 La page de **texte dégradé** affiche du texte et un arrière-plan qui sont tous deux colorés avec des dégradés similaires :
 
 [![Texte dégradé](linear-gradient-images/GradientText.png "Texte dégradé")](linear-gradient-images/GradientText-Large.png#lightbox)
 
-Les seules différences dans les dégradés sont le début et points de terminaison. Du dégradé utilisé pour l’affichage de texte est basé sur deux points sur les angles du rectangle englobant pour le texte. Pour l’arrière-plan, les deux points sont basés sur la totalité du canevas. Voici le code :
+Les seules différences dans les dégradés sont les points de départ et de fin. Le dégradé utilisé pour afficher le texte est basé sur deux points sur les angles du rectangle englobant du texte. Pour l’arrière-plan, les deux points sont basés sur la zone de dessin entière. Voici le code :
 
 ```csharp
 public class GradientTextPage : ContentPage
@@ -409,25 +412,25 @@ public class GradientTextPage : ContentPage
 }
 ```
 
-La propriété `Shader` de l’objet `SKPaint` est définie en premier pour afficher un dégradé afin de couvrir l’arrière-plan. Les points de dégradé sont définis sur les angles supérieur gauche et inférieur droit de la zone de dessin.
+La `Shader` propriété de l' `SKPaint` objet est définie en premier pour afficher un dégradé pour couvrir l’arrière-plan. Les points de dégradé sont définis sur les angles supérieur gauche et inférieur droit de la zone de dessin.
 
-Le code définit la propriété `TextSize` de l’objet `SKPaint` afin que le texte s’affiche à 90% de la largeur de la zone de dessin. Les limites de texte sont utilisées pour calculer `xText` et `yText` valeurs à passer à la méthode `DrawText` pour centrer le texte.
+Le code définit la `TextSize` propriété de l' `SKPaint` objet de sorte que le texte s’affiche à 90% de la largeur de la zone de dessin. Les limites de texte sont utilisées pour calculer `xText` les `yText` valeurs et à passer à la `DrawText` méthode pour centrer le texte.
 
-Toutefois, les points de dégradé pour le deuxième `CreateLinearGradient` appel doivent faire référence au coin supérieur gauche et inférieur droit du texte par rapport au canevas lorsqu’il est affiché. Pour ce faire, vous devez déplacer le rectangle `textBounds` des mêmes `xText` et `yText` valeurs :
+Toutefois, les points de dégradé pour le deuxième `CreateLinearGradient` appel doivent faire référence aux angles supérieur gauche et inférieur droit du texte par rapport au canevas lorsqu’il est affiché. Pour ce faire, vous devez déplacer le `textBounds` rectangle en utilisant les mêmes `xText` `yText` valeurs et :
 
 ```csharp
 textBounds.Offset(xText, yText);
 ```
 
-Les angles supérieur gauche et inférieur droit du rectangle peuvent maintenant être utilisés pour définir le démarrage et les points de terminaison du dégradé.
+À présent, les angles supérieur gauche et inférieur droit du rectangle peuvent être utilisés pour définir les points de début et de fin du dégradé.
 
-## <a name="animating-a-gradient"></a>Animer un dégradé
+## <a name="animating-a-gradient"></a>Animation d’un dégradé
 
-Il existe plusieurs façons d’animer un dégradé. Une approche consiste à animer le début et points de terminaison. La page d' **animation de dégradé** déplace les deux points autour d’un cercle centré sur la zone de dessin. Le rayon de ce cercle est la moitié de la largeur ou hauteur de la zone de dessin, plus petite étant retenue. Les points de début et de fin sont opposés l’un de l’autre sur ce cercle et le dégradé passe du blanc au noir avec un mode de vignette `Mirror` :
+Il existe plusieurs façons d’animer un dégradé. Une approche consiste à animer les points de départ et de fin. La page d' **animation de dégradé** déplace les deux points autour d’un cercle centré sur la zone de dessin. Le rayon de ce cercle est la moitié de la largeur ou de la hauteur de la zone de dessin, la valeur la plus petite étant retenue. Les points de début et de fin sont opposés l’un de l’autre sur ce cercle et le dégradé passe du blanc au noir avec un `Mirror` mode mosaïque :
 
 [![Dégradé, animation](linear-gradient-images/GradientAnimation.png "Dégradé, animation")](linear-gradient-images/GradientAnimation-Large.png#lightbox)
 
-Le constructeur crée le `SKCanvasView`. Les méthodes `OnAppearing` et `OnDisappearing` gèrent la logique d’animation :
+Le constructeur crée le `SKCanvasView` . Les `OnAppearing` `OnDisappearing` méthodes et gèrent la logique d’animation :
 
 ```csharp
 public class GradientAnimationPage : ContentPage
@@ -475,9 +478,9 @@ public class GradientAnimationPage : ContentPage
 }
 ```
 
-La méthode `OnTimerTick` calcule une valeur `angle` animée de 0 à 2π toutes les 3 secondes. 
+La `OnTimerTick` méthode calcule une `angle` valeur animée de 0 à 2π toutes les 3 secondes. 
 
-Voici une façon de calculer les deux points de dégradé. Une valeur `SKPoint` nommée `vector` est calculée pour s’étendre du centre du canevas jusqu’à un point sur le rayon du cercle. La direction de ce vecteur est basée sur les valeurs de sinus et le cosinus de l’angle. Les deux points de dégradé opposés sont ensuite calculées : un point est calculé en soustrayant ce vecteur à partir du point center et autre point est calculée en ajoutant le vecteur vers le point central :
+Voici un moyen de calculer les deux points de dégradé. Une `SKPoint` valeur nommée `vector` est calculée pour s’étendre du centre du canevas jusqu’à un point sur le rayon du cercle. La direction de ce vecteur est basée sur les valeurs sinus et cosinus de l’angle. Les deux points de dégradé opposés sont ensuite calculés : un point est calculé en soustrayant ce vecteur du point central, et un autre point est calculé en ajoutant le vecteur au point central :
 
 ```csharp
 public class GradientAnimationPage : ContentPage
@@ -511,7 +514,7 @@ public class GradientAnimationPage : ContentPage
 }
 ```
 
-Une approche un peu différente nécessite moins de code. Cette approche utilise la méthode de surcharge [`SKShader.CreateLinearGradient`](xref:SkiaSharp.SKShader.CreateLinearGradient(SkiaSharp.SKPoint,SkiaSharp.SKPoint,SkiaSharp.SKColor[],System.Single[],SkiaSharp.SKShaderTileMode,SkiaSharp.SKMatrix)) avec une transformation de matrice comme dernier argument. Cette approche est la version de l’exemple [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) :
+Une approche quelque peu différente requiert moins de code. Cette approche utilise la méthode de [`SKShader.CreateLinearGradient`](xref:SkiaSharp.SKShader.CreateLinearGradient(SkiaSharp.SKPoint,SkiaSharp.SKPoint,SkiaSharp.SKColor[],System.Single[],SkiaSharp.SKShaderTileMode,SkiaSharp.SKMatrix)) surcharge avec une transformation de matrice comme dernier argument. Cette approche est la version de l’exemple [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) :
 
 ```csharp
 public class GradientAnimationPage : ContentPage
@@ -542,13 +545,13 @@ public class GradientAnimationPage : ContentPage
 }
 ```
 
-Si la largeur de la zone de dessin est inférieure à la hauteur, les deux points de dégradé sont définis sur (0, 0) et (`info.Width`, 0). La transformation de rotation transmise comme dernier argument à `CreateLinearGradient` fait pivoter ces deux points au centre de l’écran.
+Si la largeur de la zone de dessin est inférieure à la hauteur, les deux points de dégradé sont définis sur (0, 0) et ( `info.Width` 0). La transformation de rotation a passé comme dernier argument pour `CreateLinearGradient` faire pivoter efficacement ces deux points autour du centre de l’écran.
 
-Notez que si l’angle est 0, il n’existe aucune rotation, et les deux points de dégradé sont les angles supérieur gauche et le coin supérieur droit de la zone de dessin. Ces points ne sont pas les mêmes points de dégradé calculés comme indiqué dans l’appel de `CreateLinearGradient` précédent. Toutefois, ces points sont _parallèles_ à la ligne de dégradé horizontale qui coupe le centre du canevas, et elles produisent un dégradé identique.
+Notez que si l’angle est égal à 0, il n’y a pas de rotation et les deux points de dégradé sont les angles supérieur gauche et supérieur droit de la zone de dessin. Ces points ne sont pas les mêmes points de dégradé calculés comme indiqué dans l' `CreateLinearGradient` appel précédent. Toutefois, ces points sont _parallèles_ à la ligne de dégradé horizontale qui coupe le centre du canevas, et elles produisent un dégradé identique.
 
 **Dégradé arc-en-ciel**
 
-La page **dégradé arc** -en-ciel dessine un arc-ciel du coin supérieur gauche de la zone de dessin vers le coin inférieur droit. Mais ce dégradé arc-en-ciel n’est pas comme un véritable arc-en-ciel. Il est directement plutôt que les courbes, mais il est basé sur huit couleurs TSL (teinte-saturation-luminosité) qui sont déterminés en parcourant les valeurs de teinte comprise entre 0 et 360 :
+La page **dégradé arc** -en-ciel dessine un arc-ciel du coin supérieur gauche de la zone de dessin vers le coin inférieur droit. Mais ce dégradé arc-en-ciel ne ressemble pas à un arc-en-ciel réel. C’est juste plutôt qu’courbé, mais elle est basée sur huit couleurs TSL (teinte-saturation-luminosité) qui sont déterminées par le cycle des valeurs de teinte de 0 à 360 :
 
 ```csharp
 SKColor[] colors = new SKColor[8];
@@ -559,7 +562,7 @@ for (int i = 0; i < colors.Length; i++)
 }
 ```
 
-Ce code fait partie du gestionnaire de `PaintSurface` présenté ci-dessous. Le gestionnaire commence en créant un chemin d’accès qui définit un polygone six côtés qui s’étend à partir de l’angle supérieur gauche de la zone de dessin à l’angle inférieur droit :
+Ce code fait partie du `PaintSurface` gestionnaire indiqué ci-dessous. Le gestionnaire commence par créer un chemin d’accès qui définit un polygone à six côtés qui s’étend de l’angle supérieur gauche de la zone de dessin vers le coin inférieur droit :
 
 ```csharp
 public class RainbowGradientPage : ContentPage
@@ -617,13 +620,13 @@ public class RainbowGradientPage : ContentPage
 }
 ```
 
-Les deux points de dégradé de la méthode `CreateLinearGradient` sont basés sur deux des points qui définissent ce chemin d’accès : les deux points sont proches de l’angle supérieur gauche. La première est sur le bord supérieur de la zone de dessin et la seconde sur le bord gauche de la zone de dessin. Voici le résultat :
+Les deux points de dégradé dans la `CreateLinearGradient` méthode sont basés sur deux des points qui définissent ce chemin d’accès : les deux points sont proches de l’angle supérieur gauche. Le premier se trouve sur le bord supérieur de la zone de dessin et le second sur le bord gauche du canevas. Voici le résultat :
 
 [![Dégradé arc-ciel défectueux](linear-gradient-images/RainbowGradientFaulty.png "Dégradé arc-ciel défectueux")](linear-gradient-images/RainbowGradientFaulty-Large.png#lightbox)
 
-Il s’agit d’une image intéressante, mais il n’est pas tout à fait l’intention. Le problème est que lorsque vous créez un dégradé linéaire, les lignes de constante de couleur sont perpendiculaires à la ligne de dégradé. La ligne de dégradé est basée sur les points où la figure touche les côtés supérieure et gauche, et cette ligne est généralement pas perpendiculaire sur les bords de la figure qui étendent vers la bas à droite. Cette approche fonctionnerait uniquement si la zone de dessin ont été carré.
+Il s’agit d’une image intéressante, mais ce n’est pas tout à fait le but. Le problème est que, lors de la création d’un dégradé linéaire, les lignes de couleur constante sont perpendiculaires à la ligne de dégradé. La ligne de dégradé est basée sur les points où la figure touche les côtés supérieur et gauche, et cette ligne n’est généralement pas perpendiculaire aux bords de la figure qui s’étend vers le coin inférieur droit. Cette approche fonctionne uniquement si la zone de dessin était carrée.
 
-Pour créer un dégradé arc-en-ciel appropriée, la ligne de dégradé doit être perpendiculaire à la périphérie de l’arc-en-ciel. C’est un calcul plus complexe. Un vecteur qui est parallèle au côté long de la figure doit être défini. Le vecteur est pivotée de 90 degrés afin qu’il soit perpendiculaire à ce côté. Elle est ensuite allongée pour être la largeur de la figure en multipliant par `rainbowWidth`. Les deux points de dégradé sont calculés sur un point sur le côté de la figure, et qui pointent ainsi que le vecteur. Voici le code qui apparaît dans la page **dégradé arc** -en-ciel de l’exemple [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) :
+Pour créer un dégradé arc-en-ciel correct, la ligne de dégradé doit être perpendiculaire au bord de l’arc-en-ciel. Il s’agit d’un calcul plus complexe. Un vecteur doit être défini parallèlement au côté long de la figure. Le vecteur pivote de 90 degrés afin qu’il soit perpendiculaire à ce côté. Elle est ensuite allongée pour être la largeur de la figure en multipliant par `rainbowWidth` . Les deux points de dégradé sont calculés en fonction d’un point situé sur le côté de la figure, et de ce point plus le vecteur. Voici le code qui apparaît dans la page **dégradé arc** -en-ciel de l’exemple [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) :
 
 ```csharp
 public class RainbowGradientPage : ContentPage
@@ -672,15 +675,15 @@ public class RainbowGradientPage : ContentPage
 }
 ```
 
-Désormais les couleurs de l’arc-en-ciel sont alignés sur la figure :
+Les couleurs des arc-en-ciel sont maintenant alignées sur la figure suivante :
 
 [![Dégradé arc-en-ciel](linear-gradient-images/RainbowGradient.png "Dégradé arc-en-ciel")](linear-gradient-images/RainbowGradient-Large.png#lightbox)
 
 **Couleurs infinies**
 
-Un dégradé arc-en-ciel est également utilisé dans la page **couleurs infinies** . Cette page dessine un signe infini à l’aide d’un objet Path décrit dans l’article [**trois types de courbes de Bézier**](../../curves/beziers.md#bezier-curve-approximation-to-circular-arcs). L’image est ensuite colorée avec un dégradé d’arc-en-ciel animée balaye en permanence sur l’image.
+Un dégradé arc-en-ciel est également utilisé dans la page **couleurs infinies** . Cette page dessine un signe infini à l’aide d’un objet Path décrit dans l’article [**trois types de courbes de Bézier**](../../curves/beziers.md#bezier-curve-approximation-to-circular-arcs). L’image est ensuite colorée avec un dégradé arc-en-ciel qui balaye en continu l’ensemble de l’image.
 
-Le constructeur crée l’objet `SKPath` décrivant le signe infini. Une fois le chemin d’accès est créée, le constructeur peut également obtenir les limites rectangulaires de chemin d’accès. Il calcule ensuite une valeur appelée `gradientCycleLength`. Si un dégradé est basé sur les angles supérieur gauche et inférieur droit du rectangle de `pathBounds`, cette `gradientCycleLength` valeur est la largeur totale du dégradé du motif :
+Le constructeur crée l' `SKPath` objet décrivant le signe infini. Une fois le chemin d’accès créé, le constructeur peut également obtenir les limites rectangulaires du chemin d’accès. Il calcule ensuite une valeur appelée `gradientCycleLength` . Si un dégradé est basé sur les angles supérieur gauche et inférieur droit du `pathBounds` Rectangle, cette `gradientCycleLength` valeur correspond à la largeur horizontale totale du motif de dégradé :
 
 ```csharp
 public class InfinityColorsPage : ContentPage
@@ -733,9 +736,9 @@ public class InfinityColorsPage : ContentPage
 }
 ```
 
-Le constructeur crée également le tableau `colors` pour l’arc-en-ciel et l’objet `SKCanvasView`.
+Le constructeur crée également le `colors` tableau pour l’arc-en-ciel et l' `SKCanvasView` objet.
 
-Les remplacements des méthodes `OnAppearing` et `OnDisappearing` effectuent la surcharge de l’animation. La méthode `OnTimerTick` anime le champ `offset` de 0 à `gradientCycleLength` toutes les deux secondes :
+Les substitutions des `OnAppearing` méthodes et `OnDisappearing` effectuent la surcharge de l’animation. La `OnTimerTick` méthode anime le `offset` champ de 0 à `gradientCycleLength` toutes les deux secondes :
 
 ```csharp
 public class InfinityColorsPage : ContentPage
@@ -777,9 +780,9 @@ public class InfinityColorsPage : ContentPage
 }
 ```
 
-Enfin, le gestionnaire de `PaintSurface` restitue le signe infini. Étant donné que le chemin d’accès contient des coordonnées négatives et positives entourant un point central de (0,0), une `Translate` transformation sur le canevas est utilisée pour la déplacer vers le centre. La transformation de traduction est suivie d’une transformation de `Scale` qui applique un facteur d’échelle qui rend le signe infini le plus grand possible tout en restant dans 95% de la largeur et de la hauteur de la zone de dessin. 
+Enfin, le `PaintSurface` Gestionnaire restitue le signe infini. Étant donné que le chemin d’accès contient des coordonnées négatives et positives entourant un point central de (0,0), une `Translate` transformation sur le canevas est utilisée pour le déplacer vers le centre. La transformation de traduction est suivie d’une `Scale` transformation qui applique un facteur d’échelle qui rend le signe infini le plus grand possible tout en restant dans 95% de la largeur et de la hauteur de la zone de dessin. 
 
-Notez que la constante `STROKE_WIDTH` est ajoutée à la largeur et à la hauteur du rectangle englobant du tracé. Le chemin d’accès sera être tracé avec une ligne de cette largeur, donc la taille de la taille de rendu de l’infini est augmentée par ce demi-chasse sur les quatre côtés :
+Notez que la `STROKE_WIDTH` constante est ajoutée à la largeur et à la hauteur du rectangle englobant du tracé. Le tracé est rayé d’une ligne de cette largeur, de sorte que la taille de la taille de l’infini rendu est augmentée de la moitié de cette largeur sur les quatre côtés :
 
 ```csharp
 public class InfinityColorsPage : ContentPage
@@ -818,25 +821,25 @@ public class InfinityColorsPage : ContentPage
 }
 ```
 
-Examinez les points passés comme les deux premiers arguments de `SKShader.CreateLinearGradient`. Ces points sont basés sur le chemin d’accès d’origine rectangle englobant. Le premier point est (&ndash;250, &ndash;100) et le second est (250, 100). Interne à SkiaSharp, ces points sont soumis à la transformation en cours de la zone de dessin donc ils s’intègrent correctement avec le signe de l’infini affichée.
+Examinez les points passés comme les deux premiers arguments de `SKShader.CreateLinearGradient` . Ces points sont basés sur le rectangle englobant du chemin d’origine. Le premier point est ( &ndash; 250, &ndash; 100) et le second est (250, 100). En interne à SkiaSharp, ces points sont soumis à la transformation de canevas active afin qu’ils s’alignent correctement avec le signe infini affiché.
 
-Si vous n’avez pas le dernier argument de `CreateLinearGradient`, vous verrez un dégradé arc-en-ciel qui s’étend de l’angle supérieur gauche du signe infini vers le coin inférieur droit. (En fait, le dégradé s’étend à partir du coin supérieur gauche à l’angle inférieur droit du rectangle englobant. Le signe infini rendu est supérieur au rectangle englobant par la moitié de la valeur `STROKE_WIDTH` sur tous les côtés. Étant donné que le dégradé est rouge au début et à la fin, et que le dégradé est créé avec `SKShaderTileMode.Repeat`, la différence n’est pas perceptible.)
+Sans le dernier argument de `CreateLinearGradient` , vous devriez voir un dégradé arc-en-ciel qui s’étend de l’angle supérieur gauche du signe infini vers le coin inférieur droit. (En fait, le dégradé s’étend de l’angle supérieur gauche à l’angle inférieur droit du rectangle englobant. Le signe infini rendu est supérieur au rectangle englobant par la moitié de la `STROKE_WIDTH` valeur de tous les côtés. Étant donné que le dégradé est rouge au début et à la fin, et que le dégradé est créé avec `SKShaderTileMode.Repeat` , la différence n’est pas perceptible.)
 
-Avec le dernier argument de `CreateLinearGradient`, le modèle de dégradé balaye en continu l’ensemble de l’image :
+Avec le dernier argument de `CreateLinearGradient` , le modèle de dégradé balaye en continu l’ensemble de l’image :
 
 [![Couleurs infinies](linear-gradient-images/InfinityColors.png "Couleurs infinies")](linear-gradient-images/InfinityColors-Large.png#lightbox)
 
-## <a name="transparency-and-gradients"></a>La transparence et des dégradés
+## <a name="transparency-and-gradients"></a>Transparence et dégradés
 
-Les couleurs qui contribuent à un dégradé peuvent incorporer la transparence. Au lieu d’un dégradé fondu d’une couleur à l’autre, le dégradé peut disparaisse en fondu une couleur transparent. 
+Les couleurs qui contribuent à un dégradé peuvent incorporer la transparence. Au lieu d’un dégradé qui apparaît en fondu d’une couleur à l’autre, le dégradé peut s’estomper d’une couleur à une couleur transparente. 
 
-Vous pouvez utiliser cette technique pour certains effets intéressants. Un des exemples classiques montre un objet graphique avec ses réflexion :
+Vous pouvez utiliser cette technique pour certains effets intéressants. L’un des exemples classiques illustre un objet graphique avec sa réflexion :
 
 [![Dégradé de réflexion](linear-gradient-images/ReflectionGradient.png "Dégradé de réflexion")](linear-gradient-images/ReflectionGradient-Large.png#lightbox)
 
-Le texte est envers est coloré avec un dégradé est transparent à complètement transparent en bas en haut à 50 %. Ces niveaux de transparence est associés à des valeurs alpha de 0 x 80 et 0.
+Le texte à l’envers est coloré avec un dégradé de 50% transparent en haut pour être entièrement transparent en bas. Ces niveaux de transparence sont associés aux valeurs alpha 0x80 et 0.
 
-Le gestionnaire de `PaintSurface` dans la page **dégradé de réflexion** met à l’échelle la taille du texte à 90% de la largeur du canevas. Il calcule ensuite les valeurs `xText` et `yText` pour positionner le texte afin qu’il soit centré horizontalement, mais sur une ligne de base correspondant au centre vertical de la page :
+Le `PaintSurface` Gestionnaire de la page **dégradé de réflexion** met à l’échelle la taille du texte à 90% de la largeur du canevas. Il calcule ensuite `xText` `yText` les valeurs et pour positionner le texte afin qu’il soit centré horizontalement, mais se trouvant sur une ligne de base correspondant au centre vertical de la page :
 
 ```csharp
 public class ReflectionGradientPage : ContentPage
@@ -904,15 +907,15 @@ public class ReflectionGradientPage : ContentPage
 }
 ```
 
-Ces valeurs `xText` et `yText` sont identiques à celles utilisées pour afficher le texte réfléchi dans l’appel de `DrawText` en bas du gestionnaire de `PaintSurface`. Toutefois, juste avant ce code, vous verrez un appel à la méthode `Scale` de `SKCanvas`. Cette méthode de `Scale` est mise à l’échelle horizontalement de 1 (ce qui ne fait rien) mais verticalement en &ndash;1, ce qui fait tourner tout ce qui est à l’envers. Le centre de rotation est défini sur le point (0, `yText`), où `yText` est le centre vertical du canevas, calculé à l’origine comme `info.Height` divisé par 2.
+Ces `xText` `yText` valeurs et sont les mêmes que celles utilisées pour afficher le texte réfléchi dans l' `DrawText` appel en bas du `PaintSurface` Gestionnaire. Toutefois, juste avant ce code, vous verrez un appel à la `Scale` méthode de `SKCanvas` . Cette `Scale` méthode est mise à l’échelle horizontalement de 1 (ce qui n’a aucun effet) mais verticalement de &ndash; 1, ce qui fait tourner tout ce qui est à l’envers. Le centre de rotation est défini sur le point (0, `yText` ), où `yText` est le centre vertical du canevas, calculé à l’origine comme `info.Height` divisé par 2.
 
-N’oubliez pas que Skia utilise le dégradé pour colorer des objets graphiques avant les transformations de la zone de dessin. Une fois le texte non réfléchi dessiné, le rectangle de `textBounds` est décalé de manière à ce qu’il corresponde au texte affiché :
+Gardez à l’esprit que skia utilise le dégradé pour colorier des objets graphiques avant les transformations de canevas. Une fois le texte non réfléchi dessiné, le `textBounds` rectangle est décalé de manière à ce qu’il corresponde au texte affiché :
 
 ```csharp
 textBounds.Offset(xText, yText);
 ```
 
-L’appel de `CreateLinearGradient` définit un dégradé à partir du haut de ce rectangle en bas. Le dégradé est issu d’un bleu complètement transparent (`paint.Color.WithAlpha(0)`) à un bleu transparent de 50% (`paint.Color.WithAlpha(0x80)`). La transformation de la zone de dessin inverse le texte envers, afin que le bleu transparent de 50 % commence à la ligne de base et devienne transparent en haut du texte.
+L' `CreateLinearGradient` appel définit un dégradé à partir du haut de ce rectangle en bas. Le dégradé est issu d’un bleu complètement transparent ( `paint.Color.WithAlpha(0)` ) à un bleu transparent de 50% ( `paint.Color.WithAlpha(0x80)` ). La transformation de canevas retourne le texte à l’envers, donc la couleur bleue transparente de 50% commence au niveau de la ligne de base et devient transparente en haut du texte.
 
 ## <a name="related-links"></a>Liens connexes
 

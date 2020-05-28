@@ -1,24 +1,27 @@
 ---
-title: NavigationPage bar translucidité sur iOS
-description: Caractéristiques de la plateforme vous autorisons à utiliser les fonctionnalités qui est disponible uniquement sur une plateforme spécifique, sans avoir à implémenter des convertisseurs personnalisés ou des effets. Cet article explique comment utiliser le spécifique à la plateforme iOS qui modifie la transparence de la barre de navigation dans un NavigationPage.
-ms.prod: xamarin
-ms.assetid: 1150941B-56DB-4781-BE36-A4C4F9F2C500
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 10/24/2018
-ms.openlocfilehash: 6a8d1c0a4130e7f5b909e963fce23c87597a688c
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: be7e95df0ac247c5cd97c1715e4af67b48275180
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652131"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84128113"
 ---
 # <a name="navigationpage-bar-translucency-on-ios"></a>NavigationPage bar translucidité sur iOS
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-Ce spécifique à la plateforme IOS est utilisé pour modifier la transparence de la barre de navigation [`NavigationPage`](xref:Xamarin.Forms.NavigationPage)sur un et est consommé en XAML en affectant une `boolean` valeur à la [`NavigationPage.IsNavigationBarTranslucent`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.IsNavigationBarTranslucentProperty) propriété jointe:
+Ce spécifique à la plateforme iOS est utilisé pour modifier la transparence de la barre de navigation sur un [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) et est consommé en XAML en affectant [`NavigationPage.IsNavigationBarTranslucent`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.IsNavigationBarTranslucentProperty) une valeur à la propriété jointe `boolean` :
 
 ```xaml
 <NavigationPage ...
@@ -29,7 +32,7 @@ Ce spécifique à la plateforme IOS est utilisé pour modifier la transparence d
 </NavigationPage>
 ```
 
-Vous pouvez également, il peut être consommé à partir de C# à l’aide de l’API fluent :
+Elle peut également être utilisée à partir de C# à l’aide de l’API Fluent :
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -40,7 +43,7 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 (App.Current.MainPage as Xamarin.Forms.NavigationPage).On<iOS>().EnableTranslucentNavigationBar();
 ```
 
-Le `NavigationPage.On<iOS>` méthode spécifie que cette plateforme spécifique s’exécute uniquement sur iOS. Le [ `NavigationPage.EnableTranslucentNavigationBar` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.EnableTranslucentNavigationBar(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage})) (méthode), dans le [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) espace de noms, est utilisé pour rendre la barre de navigation translucide. En outre, le [ `NavigationPage` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage) classe dans le `Xamarin.Forms.PlatformConfiguration.iOSSpecific` espace de noms a également un [ `DisableTranslucentNavigationBar` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.DisableTranslucentNavigationBar(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage})) méthode qui rétablit l’état par défaut, la barre de navigation et un [ `SetIsNavigationBarTranslucent` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.SetIsNavigationBarTranslucent(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage},System.Boolean)) méthode qui peut être utilisé pour activer/désactiver la transparence de barre de navigation en appelant le [ `IsNavigationBarTranslucent` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.IsNavigationBarTranslucent(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage})) méthode :
+La `NavigationPage.On<iOS>` méthode spécifie que ce spécifique à la plateforme s’exécutera uniquement sur iOS. [ `NavigationPage.EnableTranslucentNavigationBar` ] (XREF : Xamarin.Forms . PlatformConfiguration. iOSSpecific. NavigationPage. EnableTranslucentNavigationBar ( Xamarin.Forms . IPlatformElementConfiguration { Xamarin.Forms . PlatformConfiguration. iOS, Xamarin.Forms . NavigationPage})), dans l' [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) espace de noms, est utilisé pour rendre la barre de navigation translucide. En outre, la [`NavigationPage`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage) classe de l' `Xamarin.Forms.PlatformConfiguration.iOSSpecific` espace de noms possède également un [ `DisableTranslucentNavigationBar` ] (XREF : Xamarin.Forms . PlatformConfiguration. iOSSpecific. NavigationPage. DisableTranslucentNavigationBar ( Xamarin.Forms . IPlatformElementConfiguration { Xamarin.Forms . PlatformConfiguration. iOS, Xamarin.Forms . NavigationPage})) qui restaure la barre de navigation à son état par défaut et un [ `SetIsNavigationBarTranslucent` ] (XREF : Xamarin.Forms . PlatformConfiguration. iOSSpecific. NavigationPage. SetIsNavigationBarTranslucent ( Xamarin.Forms . IPlatformElementConfiguration { Xamarin.Forms . PlatformConfiguration. iOS, Xamarin.Forms . NavigationPage}, System. Boolean)) qui peut être utilisée pour activer ou désactiver la transparence de la barre de navigation en appelant la méthode [ `IsNavigationBarTranslucent` ] (XREF : Xamarin.Forms . PlatformConfiguration. iOSSpecific. NavigationPage. IsNavigationBarTranslucent ( Xamarin.Forms . IPlatformElementConfiguration { Xamarin.Forms . PlatformConfiguration. iOS, Xamarin.Forms . NavigationPage}))) :
 
 ```csharp
 (App.Current.MainPage as Xamarin.Forms.NavigationPage)
@@ -50,7 +53,7 @@ Le `NavigationPage.On<iOS>` méthode spécifie que cette plateforme spécifique 
 
 Le résultat est que la transparence de la barre de navigation peut être modifiée :
 
-![](navigation-bar-translucent-images/translucent-navigation-bar.png "Barre de Navigation translucide spécifiques à la plateforme")
+![](navigation-bar-translucent-images/translucent-navigation-bar.png "Translucent Navigation Bar Platform-Specific")
 
 ## <a name="related-links"></a>Liens connexes
 

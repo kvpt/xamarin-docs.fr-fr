@@ -1,29 +1,32 @@
 ---
-title: Référence des contrôles DataPages
-description: Cet article présente les contrôles qui sont disponibles dans le package NuGet Xamarin. Forms DataPages.
-ms.prod: xamarin
-ms.assetid: 891615D0-E8BD-4ACC-A7F0-4C3725FBCC31
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 12/01/2017
-ms.openlocfilehash: 359a9f27e9a9e7bc04d5a1ab938391fe5c2cd2ee
-ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
+title: ''
+description: Cet article présente les contrôles qui sont disponibles dans le Xamarin.Forms package NuGet de DataPages.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 093ef4b9b3ae7bde25da276330894bcf4e399145
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728029"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84134444"
 ---
 # <a name="datapages-controls-reference"></a>Référence des contrôles DataPages
 
 ![](~/media/shared/preview.png "This API is currently in preview")
 
 > [!IMPORTANT]
-> DataPages requiert une référence de thème Xamarin. Forms à restituer. Cela implique d’installer le package NuGet [Xamarin. Forms. Theme. base](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/) dans votre projet, suivi des packages NuGet [Xamarin. Forms. Theme. Light](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/) ou [Xamarin. Forms. Theme. Dark](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/) .
+> DataPages requiert une Xamarin.Forms référence de thème à restituer. Cela implique l’installation de [ Xamarin.Forms . Package. base](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/) NuGet dans votre projet, suivi de l’un ou l’autre [ Xamarin.Forms . Theme. Light](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/) ou [ Xamarin.Forms . Packages NuGet Theme. Dark](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/) .
 
-Xamarin. Forms, NuGet NuGet, comprend un certain nombre de contrôles qui peuvent tirer parti de la liaison de la source de données.
+Le Xamarin.Forms NuGet de DataPages comprend un certain nombre de contrôles qui peuvent tirer parti de la liaison de la source de données.
 
-Pour utiliser ces contrôles en XAML, assurez-vous que l’espace de noms a été inclus, par exemple, dans la déclaration `xmlns:pages` ci-dessous :
+Pour utiliser ces contrôles en XAML, assurez-vous que l’espace de noms a été inclus, par exemple, dans la `xmlns:pages` déclaration ci-dessous :
 
 ```xaml
 <ContentPage
@@ -33,7 +36,7 @@ Pour utiliser ces contrôles en XAML, assurez-vous que l’espace de noms a ét�
     x:Class="DataPagesDemo.Detail">
 ```
 
-Les exemples ci-dessous incluent des références `DynamicResource` qui doivent exister dans le dictionnaire de ressources du projet pour fonctionner. Il existe également un exemple de création d’un [contrôle personnalisé](#custom)
+Les exemples ci-dessous incluent des `DynamicResource` références qui doivent exister dans le dictionnaire de ressources du projet pour fonctionner. Il existe également un exemple de création d’un [contrôle personnalisé](#custom)
 
 ## <a name="built-in-controls"></a>Contrôles intégrés
 
@@ -44,12 +47,12 @@ Les exemples ci-dessous incluent des références `DynamicResource` qui doivent 
 
 ### <a name="heroimage"></a>HeroImage
 
-Le contrôle `HeroImage` possède quatre propriétés :
+Le `HeroImage` contrôle a quatre propriétés :
 
 * Texte
-* Detail
+* Détails
 * ImageSource
-* Ecran
+* Aspect
 
 ```xaml
 <pages:HeroImage
@@ -61,25 +64,25 @@ Le contrôle `HeroImage` possède quatre propriétés :
 
 **Android**
 
-![](controls-images/heroimage-light-android.png "Contrôle HeroImage sur Android")![](controls-images/heroimage-dark-android.png "Contrôle HeroImage sur Android")
+![](controls-images/heroimage-light-android.png "Contrôle HeroImage sur Android") ![](controls-images/heroimage-dark-android.png "Contrôle HeroImage sur Android")
 
 **iOS**
 
-![](controls-images/heroimage-light-ios.png "Contrôle HeroImage sur iOS")![](controls-images/heroimage-dark-ios.png "Contrôle HeroImage sur iOS")
+![](controls-images/heroimage-light-ios.png "Contrôle HeroImage sur iOS") ![](controls-images/heroimage-dark-ios.png "Contrôle HeroImage sur iOS")
 
 <a name="listitem" />
 
 ### <a name="listitem"></a>ListItem
 
-La disposition du contrôle de `ListItem` est semblable aux lignes de liste ou de table iOS et Android natives. Toutefois, il peut également être utilisé comme affichage normal. Dans l’exemple de code ci-dessous, il est affiché dans un `StackLayout`, mais il peut également être utilisé dans les contrôles de liste scolling liés aux données.
+La `ListItem` disposition du contrôle est similaire aux lignes de liste ou de table iOS et Android natives. Toutefois, il peut également être utilisé comme affichage normal. Dans l’exemple de code ci-dessous, il est affiché dans un `StackLayout` , mais il peut également être utilisé dans les contrôles de liste scolling liés aux données.
 
 Il existe cinq propriétés :
 
 * Titre
-* Detail
+* Détails
 * ImageSource
 * PlaceholdImageSource
-* Ecran
+* Aspect
 
 ```xaml
 <StackLayout Spacing="0">
@@ -91,27 +94,27 @@ Il existe cinq propriétés :
     />
 ```
 
-Ces captures d’écran montrent les `ListItem` sur les plateformes iOS et Android à l’aide des thèmes clairs et foncés :
+Ces captures d’écran montrent les `ListItem` plateformes sur iOS et Android à l’aide des thèmes clairs et foncés :
 
 **Android**
 
-![](controls-images/listitem-light-android.png "Contrôle ListItem sur Android")![](controls-images/listitem-dark-android.png "Contrôle ListItem sur Android")
+![](controls-images/listitem-light-android.png "Contrôle ListItem sur Android") ![](controls-images/listitem-dark-android.png "Contrôle ListItem sur Android")
 
 **iOS**
 
-![](controls-images/listitem-light-ios.png "Contrôle ListItem sur iOS")![](controls-images/listitem-dark-ios.png "Contrôle ListItem sur iOS")
+![](controls-images/listitem-light-ios.png "Contrôle ListItem sur iOS") ![](controls-images/listitem-dark-ios.png "Contrôle ListItem sur iOS")
 
 ## <a name="custom-control-example"></a>Exemple de contrôle personnalisé
 
-L’objectif de ce contrôle de `CardView` personnalisé est de ressembler à la valeur de l’Android Native CardView.
+L’objectif de ce `CardView` contrôle personnalisé est de ressembler à un CardView Android natif.
 
 Elle contient trois propriétés :
 
 * Texte
-* Detail
+* Détails
 * ImageSource
 
-L’objectif est un contrôle personnalisé qui ressemble au code ci-dessous (Notez qu’un `xmlns:local` personnalisé est requis qui référence l’assembly actuel) :
+L’objectif est un contrôle personnalisé qui ressemble au code ci-dessous (Notez qu’un personnalisé `xmlns:local` est requis qui référence l’assembly actuel) :
 
 ```xaml
 <local:CardView
@@ -125,11 +128,11 @@ Elle doit ressembler aux captures d’écran ci-dessous à l’aide de couleurs 
 
 **Android**
 
-![](controls-images/cardview-light-android.png "Contrôle personnalisé CardView sur Android")![](controls-images/cardview-dark-android.png "Contrôle personnalisé CardView sur Android")
+![](controls-images/cardview-light-android.png "Contrôle personnalisé CardView sur Android") ![](controls-images/cardview-dark-android.png "Contrôle personnalisé CardView sur Android")
 
 **iOS**
 
-![](controls-images/cardview-light-ios.png "Contrôle personnalisé CardView sur iOS")![](controls-images/cardview-dark-ios.png "Contrôle personnalisé CardView sur iOS")
+![](controls-images/cardview-light-ios.png "Contrôle personnalisé CardView sur iOS") ![](controls-images/cardview-dark-ios.png "Contrôle personnalisé CardView sur iOS")
 
 <a name="custom" />
 
@@ -147,7 +150,7 @@ Elle doit ressembler aux captures d’écran ci-dessous à l’aide de couleurs 
 
 #### <a name="1-dataview-subclass"></a>1. sous-classe DataView
 
-La C# sous-classe de `DataView` définit les propriétés pouvant être liées pour le contrôle.
+La sous-classe C# de `DataView` définit les propriétés pouvant être liées pour le contrôle.
 
 ```csharp
 public class CardView : DataView
@@ -189,9 +192,9 @@ public class CardView : DataView
 
 #### <a name="2-define-font-layout-and-margins"></a>2. définir la police, la disposition et les marges
 
-Le concepteur de contrôles va déterminer ces valeurs dans le cadre de la conception de l’interface utilisateur pour le contrôle personnalisé. Lorsque des spécifications spécifiques à la plateforme sont requises, l’élément `OnPlatform` est utilisé.
+Le concepteur de contrôles va déterminer ces valeurs dans le cadre de la conception de l’interface utilisateur pour le contrôle personnalisé. Lorsque des spécifications spécifiques à la plateforme sont requises, l' `OnPlatform` élément est utilisé.
 
-Notez que certaines valeurs font référence à `StaticResource`s – elles seront définies à l' [étape 5](#5).
+Notez que certaines valeurs font référence à `StaticResource` s. celles-ci seront définies à l' [étape 5](#5).
 
 ```xml
 <!-- CARDVIEW FONT SIZES -->
@@ -355,7 +358,7 @@ La conception visuelle du contrôle personnalisé est déclarée explicitement d
 
 #### <a name="6-set-the-controltemplate-for-the-cardview-class"></a>6. définir le ControlTemplate pour la classe CardView
 
-Enfin, assurez C# -vous que la classe créée à l' [étape 1](#1) utilise le modèle de contrôle défini à l' [étape 4](#4) à l’aide d’un `Style` élément `Setter`
+Enfin, assurez-vous que la classe C# créée à l' [étape 1](#1) utilise le modèle de contrôle défini à l' [étape 4](#4) à l’aide d’un `Style` `Setter` élément.
 
 ```xml
 <Style TargetType="local:CardView">
@@ -369,7 +372,7 @@ Enfin, assurez C# -vous que la classe créée à l' [étape 1](#1) utilise le mo
 
 #### <a name="7-add-the-control-to-a-page"></a>7. ajouter le contrôle à une page
 
-Le contrôle `CardView` peut désormais être ajouté à une page. L’exemple ci-dessous montre qu’il est hébergé dans une `StackLayout`:
+Le `CardView` contrôle peut désormais être ajouté à une page. L’exemple ci-dessous montre qu’il est hébergé dans un `StackLayout` :
 
 ```xaml
 <StackLayout Spacing="0">
