@@ -1,48 +1,51 @@
 ---
-title: La transformation d’inclinaison
-description: Cet article explique comment la transformation d’inclinaison peut créer des objets graphiques inclinées dans SkiaSharp et illustre ceci avec l’exemple de code.
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: FDD16186-E3B7-4FF6-9BC2-8A2974BFF616
-author: davidbritch
-ms.author: dabritch
-ms.date: 03/20/2017
-ms.openlocfilehash: c3d7e6e0c0e3230c11e2e96baa9efa57ac988c83
-ms.sourcegitcommit: 191f1f3b13a14e2afadcb95126c5f653722f126f
+title: ''
+description: ''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 207b16f062a5c2137ac5fc3c21775d2486fda57d
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/30/2019
-ms.locfileid: "75545662"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135861"
 ---
 # <a name="the-skew-transform"></a>La transformation d’inclinaison
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-_Découvrez comment la transformation d’inclinaison peut créer des objets graphiques inclinées dans SkiaSharp_
+_Voir comment la transformation d’inclinaison peut créer des objets graphiques inclinés dans SkiaSharp_
 
-Dans SkiaSharp, la transformation d’inclinaison montre comment faire pivoter des objets graphiques, tels que l’ombre dans cette image :
+Dans SkiaSharp, la transformation d’inclinaison incline les objets graphiques, tels que l’ombre dans cette image :
 
 ![](skew-images/skewexample.png "An example of skewing from the Skew Shadow Text program")
 
-Le décalage transforme un rectangle en un parallélogramme, mais une ellipse décalée est toujours une ellipse.
+L’inclinaison transforme un rectangle en parallélogramme, mais une ellipse inclinée est toujours une ellipse.
 
-Bien que Xamarin.Forms définit des propriétés pour la traduction, la mise à l’échelle et les rotations, il n’existe aucune propriété correspondante, dans Xamarin.Forms de skew.
+Bien que Xamarin.Forms définit les propriétés de translation, de mise à l’échelle et de rotations, il n’y a aucune propriété correspondante dans Xamarin.Forms pour skew.
 
-Le [ `Skew` ](xref:SkiaSharp.SKCanvas.Skew(System.Single,System.Single)) méthode `SKCanvas` accepte deux arguments pour le décalage horizontal et vertical d’inclinaison :
+La [`Skew`](xref:SkiaSharp.SKCanvas.Skew(System.Single,System.Single)) méthode de `SKCanvas` accepte deux arguments pour l’inclinaison horizontale et l’inclinaison verticale :
 
 ```csharp
 public void Skew (Single xSkew, Single ySkew)
 ```
 
-Une seconde [ `Skew` ](xref:SkiaSharp.SKCanvas.Skew(SkiaSharp.SKPoint)) méthode combine ces arguments dans un seul `SKPoint` valeur :
+Une deuxième [`Skew`](xref:SkiaSharp.SKCanvas.Skew(SkiaSharp.SKPoint)) méthode combine ces arguments dans une `SKPoint` valeur unique :
 
 ```csharp
 public void Skew (SKPoint skew)
 ```
 
-Toutefois, il est peu probable que vous allez utiliser une de ces deux méthodes de manière isolée.
+Toutefois, il est peu probable que vous utilisiez l’une de ces deux méthodes de manière isolée.
 
-Le **incliner faire des essais** page permet de vous faire des essais avec décalage des valeurs comprises entre -10 et 10. Une chaîne de texte est positionnée dans le coin supérieur gauche de la page, avec un décalage valeurs obtenues à partir de deux `Slider` éléments. Voici le `PaintSurface` gestionnaire dans le [ `SkewExperimentPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SkewExperimentPage.xaml.cs) classe :
+La page de l' **expérience skew** vous permet d’expérimenter les valeurs d’inclinaison comprises entre-10 et 10. Une chaîne de texte est positionnée dans l’angle supérieur gauche de la page, avec des valeurs d’inclinaison obtenues à partir de deux `Slider` éléments. Voici le `PaintSurface` Gestionnaire de la [`SkewExperimentPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SkewExperimentPage.xaml.cs) classe :
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -70,27 +73,27 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Valeurs de la `xSkew` argument shift bas du texte pour les valeurs positives droite ou gauche pour les valeurs négatives. Valeurs de `ySkew` décalage vers la droite du texte vers le bas pour les valeurs positives ou pour les valeurs négatives :
+Les valeurs de l' `xSkew` argument décalent le bas du texte vers la droite pour les valeurs positives ou vers la gauche pour les valeurs négatives. Valeurs de `ySkew` décalage vers la droite du texte pour les valeurs positives ou vers le haut pour les valeurs négatives :
 
 [![](skew-images/skewexperiment-small.png "Triple screenshot of the Skew Experiment page")](skew-images/skewexperiment-large.png#lightbox "Triple screenshot of the Skew Experiment page")
 
-Si la valeur `xSkew` est la valeur négative de la valeur de `ySkew`, le résultat est une rotation, mais également un peu mis à l’échelle.
+Si la `xSkew` valeur est la valeur négative de la `ySkew` valeur, le résultat est une rotation, mais également un peu mis à l’échelle.
 
 Les formules de transformation sont les suivantes :
 
-x' = x + xSkew mise en y
+x' = x + xSkew · y
 
-y' = ySkew du x + y
+y' = ySkew · x + y
 
-Par exemple, pour un nombre positif `xSkew` valeur transformée `x'` valeur augmente en tant que `y` augmente. C’est ce qui provoque l’inclinaison.
+Par exemple, pour une `xSkew` valeur positive, la valeur transformée `x'` augmente au fur et à mesure que `y` augmente. C’est ce qui est à l’origine de l’inclinaison.
 
-Si un pixels de triangle 200 large et 100 pixels de haut est positionné à son angle supérieur gauche au niveau du point (0, 0) et est rendu avec un `xSkew` valeur de 1.5, les résultats du parallélogramme suivants :
+Si un triangle de 200 pixels de large et de 100 pixels de haut est positionné avec son angle supérieur gauche au point (0,0) et s’il est rendu avec la `xSkew` valeur 1,5, les résultats du parallélogramme suivant sont les suivants :
 
 ![](skew-images/skeweffect.png "The effect of the skew transform on a rectangle")
 
-Les coordonnées du bord inférieur ont `y` valeurs de 100, donc il est décalés 150 pixels vers la droite.
+Les coordonnées du bord inférieur ont `y` des valeurs de 100, donc elles sont décalées de 150 pixels vers la droite.
 
-Pour les valeurs non nulles de `xSkew` ou `ySkew`, seul le point (0, 0) reste le même. Ce point peut être considéré comme le centre de l’inclinaison. Si vous avez besoin au centre de l’inclinaison pour être autre chose (qui est généralement le cas), il existe aucune `Skew` méthode qui fournit à qui. Vous devrez combiner explicitement `Translate` appelle avec le `Skew` appeler. Pour centrer la déformation à `px` et `py`, effectuez les appels suivants :
+Pour les valeurs non null de `xSkew` ou `ySkew` , seul le point (0, 0) reste le même. Ce point peut être considéré comme le centre de l’inclinaison. Si vous avez besoin que le centre d’inclinaison soit autre chose (ce qui est généralement le cas), aucune méthode ne le `Skew` fournit. Vous devez combiner explicitement `Translate` les appels avec l' `Skew` appel. Pour centrer l’inclinaison à l’adresse `px` et `py` , effectuez les appels suivants :
 
 ```csharp
 canvas.Translate(px, py);
@@ -98,21 +101,21 @@ canvas.Skew(xSkew, ySkew);
 canvas.Translate(-px, -py);
 ```
 
-Les formules de la transformation composite sont :
+Les formules de transformation composite sont les suivantes :
 
-x' = x + xSkew mise en (py y –)
+x' = x + xSkew · (y – PY)
 
-y' = ySkew du (x – px) + y
+y' = ySkew · (x – PX) + y
 
-Si `ySkew` est égal à zéro, puis le `px` valeur n’est pas utilisée. La valeur n’est pas pertinente et même pour `ySkew` et `py`.
+Si `ySkew` est égal à zéro, la `px` valeur n’est pas utilisée. La valeur n’est pas pertinente, et de la même façon pour `ySkew` et `py` .
 
-Vous vous sentirez plus à l’aise en spécifiant un décalage comme un angle d’inclinaison, telles que l’angle α dans ce diagramme :
+Vous pouvez vous sentir plus à l’aise avec la spécification de l’inclinaison comme un angle d’inclinaison, tel que l’angle α dans ce diagramme :
 
 ![](skew-images/skewangleeffect.png "The effect of the skew transform on a rectangle with a skewing angle indicated")
 
-Le rapport entre le passage de 150 pixels à la verticale de 100 pixels est la tangente de cet angle, dans cet exemple et de 56,3 degrés.
+Le rapport entre le décalage de 150 pixels et le décalage vertical de 100 pixels est la tangente de cet angle, dans cet exemple 56,3 degrés.
 
-Le fichier XAML de la **expérience de Angle d’inclinaison** page est similaire à la **Angle d’inclinaison** page, sauf que le `Slider` éléments comprise entre – 90 degrés et 90 degrés. Le [ `SkewAngleExperiment` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SkewAngleExperimentPage.xaml.cs) fichier code-behind Centre le texte sur la page et utilise `Translate` pour définir un centre de l’inclinaison au centre de la page. Short `SkewDegrees` méthode en bas du code convertit les angles pour incliner des valeurs :
+Le fichier XAML de la page **expérimentation d’angle d’inclinaison** est similaire à la page angle d' **inclinaison** , à ceci près que les `Slider` éléments vont de – 90 degrés à 90 degrés. Le [`SkewAngleExperiment`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SkewAngleExperimentPage.xaml.cs) fichier code-behind centre le texte sur la page et utilise `Translate` pour définir un centre d’inclinaison au centre de la page. Une `SkewDegrees` méthode Short en bas du code convertit des angles en valeurs d’inclinaison :
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -153,11 +156,11 @@ void SkewDegrees(SKCanvas canvas, double xDegrees, double yDegrees)
 }
 ```
 
-L’approche un angle positifs ou négatifs de 90 degrés, la tangente est l’infini proche, mais les angles jusqu'à environ 80 degrés ou ainsi sont utilisables :
+Comme angle s’approche de 90 degrés positifs ou négatifs, la tangente est proche de l’infini, mais les angles d’environ 80 degrés sont utilisables :
 
 [![](skew-images/skewangleexperiment-small.png "Triple screenshot of the Skew Angle Experiment page")](skew-images/skewangleexperiment-large.png#lightbox "Triple screenshot of the Skew Angle Experiment page")
 
-Une inclinaison horizontale négatif petite peut simuler oblique ou en italique du texte, comme le **texte Oblique** montre de page. Le [ `ObliqueTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ObliqueTextPage.cs) classe montre comment procéder :
+Une petite inclinaison horizontale négative peut imiter le texte en gras ou en italique, comme le montre la page de **texte oblique** . La [`ObliqueTextPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ObliqueTextPage.cs) classe montre comment effectuer cette opération :
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -189,11 +192,11 @@ void SkewDegrees(SKCanvas canvas, double xDegrees, double yDegrees)
 }
 ```
 
-Le `TextAlign` propriété du `SKPaint` est défini sur `Center`. Sans les transformations, le `DrawText` appeler avec les coordonnées de (0, 0) positionner le texte au centre horizontal de la ligne de base dans l’angle supérieur gauche. Le `SkewDegrees` incline le texte horizontalement 20 degrés par rapport à la ligne de base. Le `Translate` appel déplace au centre horizontal de la ligne de base du texte au centre de la zone de dessin :
+La `TextAlign` propriété de `SKPaint` a la valeur `Center` . Sans transformations, l' `DrawText` appel avec des coordonnées de (0,0) positionnerait le texte avec le centre horizontal de la ligne de base dans l’angle supérieur gauche. Le `SkewDegrees` incline le texte horizontalement de 20 degrés par rapport à la ligne de base. L' `Translate` appel déplace le centre horizontal de la ligne de base du texte au centre de la zone de dessin :
 
 [![](skew-images/obliquetext-small.png "Triple screenshot of the Oblique Text page")](skew-images/obliquetext-large.png#lightbox "Triple screenshot of the Oblique Text page")
 
-Le **incliner le texte ombré** page montre comment utiliser une combinaison d’une échelle de décalage et verticale de 45 degrés pour rendre une ombre du texte qui fait pivoter en dehors du texte. Voici la partie pertinente de la `PaintSurface` gestionnaire :
+La page de **texte ombre inclinée** montre comment utiliser une combinaison d’une inclinaison à 45 degrés et d’une échelle verticale pour créer une ombre de texte qui s’éloigne du texte. Voici la partie pertinente du `PaintSurface` Gestionnaire :
 
 ```csharp
 using (SKPaint textPaint = new SKPaint())
@@ -222,22 +225,22 @@ using (SKPaint textPaint = new SKPaint())
 }
 ```
 
-L’ombre est affiché en premier, puis le texte :
+L’ombre s’affiche en premier, puis le texte :
 
 [![](skew-images/skewshadowtext1-small.png "Triple screenshot of the Skew Shadow Text page")](skew-images/skewshadowtext1-large.png#lightbox "Triple screenshot of the Skew Shadow Text page")
 
-Coordonnée verticale est passé à la `DrawText` méthode indique la position du texte par rapport à la ligne de base. Qui est la coordonnée verticale même utilisée pour le centre de l’inclinaison. Cette technique ne fonctionne pas si la chaîne de texte contient hampes inférieures. Par exemple, le mot « étrange » de « Fantôme » et Voici le résultat :
+La coordonnée verticale passée à la `DrawText` méthode indique la position du texte par rapport à la ligne de base. Il s’agit de la même coordonnée verticale que celle utilisée pour le centre d’inclinaison. Cette technique ne fonctionne pas si la chaîne de texte contient des descendants. Par exemple, remplacez le mot « excentrique » par « Shadow » et voici le résultat :
 
 [![](skew-images/skewshadowtext2-small.png "Triple screenshot of the Skew Shadow Text page with an alternative word with descenders")](skew-images/skewshadowtext2-large.png#lightbox "Triple screenshot of the Skew Shadow Text page with an alternative word with descenders")
 
-Les clichés instantanés et le texte sont toujours alignées sur la ligne de base, mais l’effet est bien incorrect. Pour corriger ce problème, vous devez obtenir les limites de texte :
+L’ombre et le texte sont toujours alignés au niveau de la ligne de base, mais l’effet semble incorrect. Pour résoudre ce problème, vous devez obtenir les limites du texte :
 
 ```csharp
 SKRect textBounds = new SKRect();
 textPaint.MeasureText(text, ref textBounds);
 ```
 
-Le `Translate` appels doivent être ajustés par la hauteur de la hampe inférieure :
+Les `Translate` appels doivent être ajustés par la hauteur des descendants :
 
 ```csharp
 canvas.Translate(xText, yText + textBounds.Bottom);
@@ -246,11 +249,11 @@ canvas.Scale(1, 3);
 canvas.Translate(-xText, -yText - textBounds.Bottom);
 ```
 
-L’ombre s’étend maintenant en bas de ces descendants :
+Désormais, l’ombre s’étend du bas de ces descendants :
 
 [![](skew-images/skewshadowtext3-small.png "Triple screenshot of the Skew Shadow Text page with adjustments for descenders")](skew-images/skewshadowtext3-large.png#lightbox "Triple screenshot of the Skew Shadow Text page with adjustments for descenders")
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
-- [API de SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
+- [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

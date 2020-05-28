@@ -1,24 +1,27 @@
 ---
-title: Grille Xamarin. Forms
-description: La grille Xamarin. Forms est une mise en page qui organise ses enfants en lignes et colonnes de cellules.
-ms.prod: xamarin
-ms.assetid: 762B1802-D185-494C-B643-74EED55882FE
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 05/15/2020
-ms.openlocfilehash: 4f1d9d0f2d597018b9832d918bbec3f0b2594773
-ms.sourcegitcommit: bc0c1740aa0708459729c0e671ab3ff7de3e2eee
+title: Xamarin.FormsBoutons
+description: La Xamarin.Forms grille est une disposition qui organise ses enfants en lignes et colonnes de cellules.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c4e63d6c1701d9eb247ecb7c52188e5dbc045934
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83425945"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138071"
 ---
-# <a name="xamarinforms-grid"></a>Grille Xamarin. Forms
+# <a name="xamarinforms-grid"></a>Xamarin.FormsBoutons
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-griddemos)
 
-[![Grille Xamarin. Forms](grid-images/layouts.png "Grille Xamarin. Forms")](grid-images/layouts-large.png#lightbox "Grille Xamarin. Forms")
+[![Xamarin.FormsBoutons](grid-images/layouts.png "[! Opérationnel. NON-LOC (Xamarin. Forms)] grille")](grid-images/layouts-large.png#lightbox "[! Opérationnel. NON-LOC (Xamarin. Forms)] grille")
 
 [`Grid`](xref:Xamarin.Forms.Grid)Est une disposition qui organise ses enfants en lignes et en colonnes, qui peuvent avoir des tailles proportionnelles ou absolues. Par défaut, un `Grid` contient une ligne et une colonne. En outre, un `Grid` peut être utilisé comme une disposition parente qui contient d’autres dispositions enfants.
 
@@ -735,6 +738,6 @@ public class ColorSlidersGridPageCS : ContentPage
 ## <a name="related-links"></a>Liens connexes
 
 - [Démonstrations de grille (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-griddemos)
-- [Options de disposition dans Xamarin. Forms](layout-options.md)
-- [Choisir une disposition Xamarin. Forms](choose-layout.md)
-- [Améliorer les performances des applications Xamarin.Forms](~/xamarin-forms/deploy-test/performance.md)
+- [Options de disposition dansXamarin.Forms](layout-options.md)
+- [Choisir une Xamarin.Forms disposition](choose-layout.md)
+- [Améliorer les Xamarin.Forms performances des applications](~/xamarin-forms/deploy-test/performance.md)

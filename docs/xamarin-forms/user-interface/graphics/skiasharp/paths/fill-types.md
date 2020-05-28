@@ -1,41 +1,44 @@
 ---
-title: Types de remplissage des tracés
-description: Cet article examine les différents effets possibles avec les types de remplissage de chemin d’accès SkiaSharp et illustre ceci avec l’exemple de code.
-ms.prod: xamarin
-ms.assetid: 57103A7A-49A2-46AE-894C-7C2664682644
-ms.technology: xamarin-skiasharp
-author: davidbritch
-ms.author: dabritch
-ms.date: 03/10/2017
-ms.openlocfilehash: 98081ed1a9aef1260150671d4fd026dd64c20b62
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c8c54f3d3815e418d2f71960dc7733711cb40ae2
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "78291987"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139046"
 ---
 # <a name="the-path-fill-types"></a>Types de remplissage des tracés
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Découvrez les différents effets possibles avec les types de remplissage de chemin SkiaSharp_
 
-Deux profils dans un chemin d’accès peuvent se chevaucher, et les lignes qui composent un contour unique peuvent se chevaucher. Toute zone délimitée peut potentiellement être remplie, mais vous souhaiterez peut-être pas remplir toutes les zones fermées. Voici un exemple :
+Deux contournements dans un chemin d’accès peuvent se chevaucher, et les lignes qui composent un contour unique peuvent se chevaucher. Toute zone fermée peut éventuellement être remplie, mais vous ne souhaitez peut-être pas remplir toutes les zones délimitées. Voici un exemple :
 
 ![](fill-types-images/filltypeexample.png "Five-pointed star partially filles")
 
-Vous contrôlez un peu cela. L’algorithme de remplissage est régi par la propriété [`SKFillType`](xref:SkiaSharp.SKPath.FillType) de `SKPath`, que vous définissez sur un membre de l’énumération [`SKPathFillType`](xref:SkiaSharp.SKPathFillType) :
+Vous avez un peu de contrôle sur ce point. L’algorithme de remplissage est régi par la [`SKFillType`](xref:SkiaSharp.SKPath.FillType) propriété de `SKPath` , que vous affectez à un membre de l' [`SKPathFillType`](xref:SkiaSharp.SKPathFillType) énumération :
 
 - `Winding`, la valeur par défaut
 - `EvenOdd`
 - `InverseWinding`
 - `InverseEvenOdd`
 
-Les algorithmes enroulement et pair-impair déterminent si n’importe quelle zone délimitée est remplie ou pas remplie avec une ligne hypothétique dessinée à partir de cette zone à l’infini. Cette ligne traverse un ou plusieurs lignes de limite qui composent le chemin d’accès. Avec le mode enroulement, si le nombre de lignes de limite dessiné d’équilibre d’une seule direction le nombre de lignes dessinées dans l’autre sens, puis la zone n’est pas remplie. Sinon, la zone est remplie. L’algorithme pair-impair remplit une zone si le nombre de lignes de la limite est impair.
+Les algorithmes de bobinage et impair déterminent si une zone fermée est remplie ou n’est pas remplie en fonction d’une ligne hypothétique dessinée de cette zone vers l’infini. Cette ligne croise une ou plusieurs lignes de limite qui composent le tracé. Avec le mode enroulement, si le nombre de lignes limites dessinées dans un sens est équilibré sur le nombre de lignes dessinées dans l’autre sens, la zone n’est pas remplie. Dans le cas contraire, la zone est remplie. L’algorithme pair-impair remplit une zone si le nombre de lignes limites est impair.
 
-Avec plusieurs chemins de routine, l’algorithme enroulement remplit souvent toutes les zones délimités d’un chemin d’accès. Généralement, l’algorithme pair-impair produit des résultats plus intéressants.
+Avec de nombreux chemins d’accès de routine, l’algorithme d’enroulement remplit souvent toutes les zones délimitées d’un chemin d’accès. L’algorithme pair-impair produit généralement des résultats plus intéressants.
 
-L’exemple classique est une étoile à cinq branches, comme illustré dans la page **étoile à cinq branches** . Le fichier [**FivePointedStarPage. Xaml**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/FivePointedStarPage.xaml) instancie deux vues de `Picker` pour sélectionner le type de remplissage du tracé et si le chemin d’accès est rayé ou rempli, et dans quel ordre :
+L’exemple classique est une étoile à cinq branches, comme illustré dans la page **étoile à cinq branches** . Le fichier [**FivePointedStarPage. Xaml**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/FivePointedStarPage.xaml) instancie deux `Picker` vues pour sélectionner le type de remplissage Path et indique si le tracé est rayé ou rempli, et dans quel ordre :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -102,7 +105,7 @@ L’exemple classique est une étoile à cinq branches, comme illustré dans la 
 </ContentPage>
 ```
 
-Le fichier code-behind utilise les deux valeurs `Picker` pour dessiner une étoile à cinq branches :
+Le fichier code-behind utilise les deux `Picker` valeurs pour dessiner une étoile à cinq branches :
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -168,18 +171,18 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Normalement, le type de remplissage du chemin d’accès doit affecter uniquement les remplissages et non les traits, mais les deux modes d' `Inverse` affectent les remplissages et les traits. Pour les remplissages, les deux types de `Inverse` remplissent les zones de manière opposée afin que la zone en dehors de l’étoile soit remplie. Pour les traits, les deux types de `Inverse` colorent tout sauf le trait. À l’aide de ces types de remplissage inverse peut produire des effets impairs, comme le montre la capture d’écran iOS :
+Normalement, le type de remplissage du chemin d’accès doit affecter uniquement les remplissages et non les traits, mais les deux `Inverse` modes affectent les remplissages et les traits. Pour les remplissages, les deux `Inverse` types remplissent les zones de manière opposée afin que la zone en dehors de l’étoile soit remplie. Pour les traits, les deux `Inverse` types colorent tout sauf le trait. L’utilisation de ces types de remplissage inverse peut produire des effets impairs, comme le montre la capture d’écran iOS :
 
 [![](fill-types-images/fivepointedstar-small.png "Triple screenshot of the Five-Pointed Star page")](fill-types-images/fivepointedstar-large.png#lightbox "Triple screenshot of the Five-Pointed Star page")
 
 La capture d’écran Android affiche les effets pair-impair et d’enroulement classiques, mais l’ordre du trait et du remplissage affecte également les résultats.
 
-L’algorithme enroulement est dépendante de la direction que les lignes sont dessinées. Généralement lorsque vous créez un chemin d’accès, vous pouvez contrôler cette direction en tant que vous spécifiez que les lignes sont dessinées à partir d’un point vers un autre. Toutefois, la classe `SKPath` définit également des méthodes comme `AddRect` et `AddCircle` qui dessinent des contours entiers. Pour contrôler la façon dont ces objets sont dessinés, les méthodes incluent un paramètre de type [`SKPathDirection`](xref:SkiaSharp.SKPathDirection), qui a deux membres :
+L’algorithme d’enroulement dépend de la direction dans laquelle les lignes sont dessinées. En règle générale, lorsque vous créez un tracé, vous pouvez contrôler cette direction en spécifiant que les lignes sont dessinées d’un point à un autre. Toutefois, la `SKPath` classe définit également des méthodes telles que `AddRect` et `AddCircle` qui dessinent des contours entiers. Pour contrôler la façon dont ces objets sont dessinés, les méthodes incluent un paramètre de type [`SKPathDirection`](xref:SkiaSharp.SKPathDirection) , qui a deux membres :
 
 - `Clockwise`
 - `CounterClockwise`
 
-Les méthodes de `SKPath` qui incluent un paramètre `SKPathDirection` lui attribuent la valeur par défaut `Clockwise`.
+Les méthodes de `SKPath` qui incluent un `SKPathDirection` paramètre lui attribuent la valeur par défaut `Clockwise` .
 
 La page cercles qui se **chevauchent** crée un tracé avec quatre cercles qui se chevauchent avec un type de remplissage de tracé pair-impair :
 

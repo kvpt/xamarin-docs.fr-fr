@@ -1,24 +1,27 @@
 ---
-title: Mises à jour du contrôle de thread principal sur iOS
-description: Caractéristiques de la plateforme vous autorisons à utiliser les fonctionnalités qui est disponible uniquement sur une plateforme spécifique, sans avoir à implémenter des convertisseurs personnalisés ou des effets. Cet article explique comment utiliser le spécifique à la plateforme iOS qui permet d’effectuer le contrôle de disposition et de rendu des mises à jour sur le thread principal.
-ms.prod: xamarin
-ms.assetid: 945E711D-9BD2-4BF9-9FB3-CBE0D5B25A49
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 10/24/2018
-ms.openlocfilehash: d55ef4a97d5d4f320bf152ba05c86aff82eb2f1e
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 005e8216b887b694b33916179ca276cf8091e006
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70200115"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135978"
 ---
 # <a name="main-thread-control-updates-on-ios"></a>Mises à jour du contrôle de thread principal sur iOS
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-Ce spécifique à la plateforme iOS permet l’exécution des mises à jour de la disposition du contrôle et du rendu sur le thread principal, au lieu d’être exécuté sur un thread d’arrière-plan. Il doit être rarement nécessaire, mais dans certains cas peut empêcher les blocages. Son consommées dans XAML en définissant le `Application.HandleControlUpdatesOnMainThread` propriété pouvant être liée `true`:
+Ce spécifique à la plateforme iOS permet l’exécution des mises à jour de la disposition du contrôle et du rendu sur le thread principal, au lieu d’être exécuté sur un thread d’arrière-plan. Elle doit être rarement nécessaire, mais dans certains cas peut empêcher des blocages. Son consommé en XAML en affectant `Application.HandleControlUpdatesOnMainThread` à la propriété pouvant être liée la valeur `true` :
 
 ```xaml
 <Application ...
@@ -28,7 +31,7 @@ Ce spécifique à la plateforme iOS permet l’exécution des mises à jour de l
 </Application>
 ```
 
-Vous pouvez également, il peut être consommé à partir de C# à l’aide de l’API fluent :
+Elle peut également être utilisée à partir de C# à l’aide de l’API Fluent :
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -38,7 +41,7 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 Xamarin.Forms.Application.Current.On<iOS>().SetHandleControlUpdatesOnMainThread(true);
 ```
 
-Le `Application.On<iOS>` méthode spécifie que cette plateforme spécifique s’exécute uniquement sur iOS. Le `Application.SetHandleControlUpdatesOnMainThread` (méthode), dans le [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) espace de noms, est utilisé pour contrôler si la disposition des contrôles et le rendu des mises à jour sont effectuées sur le thread principal, au lieu d’en cours d’exécution sur un thread d’arrière-plan. En outre, le `Application.GetHandleControlUpdatesOnMainThread` méthode peut être utilisée pour retourner si la disposition des contrôles et le rendu des mises à jour sont effectuées sur le thread principal.
+La `Application.On<iOS>` méthode spécifie que ce spécifique à la plateforme s’exécutera uniquement sur iOS. La `Application.SetHandleControlUpdatesOnMainThread` méthode, dans l' [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) espace de noms, est utilisée pour contrôler si la disposition des contrôles et les mises à jour de rendu sont effectuées sur le thread principal, au lieu d’être exécutées sur un thread d’arrière-plan. En outre, la `Application.GetHandleControlUpdatesOnMainThread` méthode peut être utilisée pour retourner si la disposition du contrôle et les mises à jour du rendu sont exécutées sur le thread principal.
 
 ## <a name="related-links"></a>Liens connexes
 

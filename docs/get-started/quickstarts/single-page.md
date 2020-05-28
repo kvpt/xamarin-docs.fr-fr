@@ -1,32 +1,35 @@
 ---
-title: Créer une application Xamarin.Forms tenant sur une seule page
-description: Cet article explique comment créer une application Xamarin.Forms multiplateforme monopage, qui vous permet d’entrer une note et de la conserver dans le stockage de l’appareil.
-zone_pivot_groups: platform-dev16
-ms.topic: quickstart
-ms.prod: xamarin
-ms.assetid: E8CF05B1-54B9-428B-8518-D068837BD61E
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/01/2019
-ms.openlocfilehash: c1d7aa1535fe979df222aaedc6ba2cf3bae0d51c
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: Créer une application à page unique Xamarin.Forms
+description: Cet article explique comment créer une application multiplateforme à une seule page Xamarin.Forms , ce qui vous permet d’entrer une note et de la conserver dans le stockage de l’appareil.
+zone_pivot_groups: ''
+ms.topic: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b9a3017fc8188d3669b64d95c968b2d0a5325358
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79304302"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136069"
 ---
-# <a name="create-a-single-page-xamarinforms-application"></a>Créer une application Xamarin.Forms monopage
+# <a name="create-a-single-page-xamarinforms-application"></a>Créer une application à page unique Xamarin.Forms
 
-[![Télécharger](~/media/shared/download.png) l’échantillon Télécharger l’échantillon](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-singlepage/)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-singlepage/)
 
 Dans ce guide de démarrage rapide, vous allez apprendre à :
 
-- Créer une application Xamarin.Forms multiplateforme
+- Créer une Xamarin.Forms application multiplateforme.
 - Définir l’interface utilisateur d’une page à l’aide du langage XAML (Extensible Application Markup Language)
 - Interagir avec des éléments d’interface utilisateur XAML à partir du code
 
-Le guide de démarrage rapide vous explique comment créer une application Xamarin.Forms multiplateforme, qui permet d’entrer une note et de la conserver dans le stockage de l’appareil. L’application finale est indiquée ci-dessous :
+Le Guide de démarrage rapide vous guide dans la création d’une Xamarin.Forms application multiplateforme, qui vous permet d’entrer une note et de la conserver dans le stockage de l’appareil. L’application finale est indiquée ci-dessous :
 
 [![](single-page-images/screenshots-sml.png "Notes Application")](single-page-images/screenshots.png#lightbox "Notes Application")
 
@@ -46,7 +49,7 @@ Pour plus d’informations sur ces prérequis, consultez [Installation de Xamari
 
     ![](single-page-images/vs/new-solution-2019.png "New Project")
 
-2. Dans la fenêtre **Créer un projet**, sélectionnez **Mobile** dans la liste déroulante **Type de projet**, sélectionnez le modèle **Application mobile (Xamarin.Forms)**, puis cliquez sur le bouton **Suivant** :
+2. Dans la fenêtre **créer un nouveau projet** , sélectionnez **mobile** dans la liste déroulante **type de projet** , sélectionnez le modèle **application mobile ( Xamarin.Forms )** , puis cliquez sur le bouton **suivant** :
 
     ![](single-page-images/vs/new-project-2019.png "Cross-Platform Project Templates")
 
@@ -61,13 +64,13 @@ Pour plus d’informations sur ces prérequis, consultez [Installation de Xamari
 
     ![](single-page-images/vs/new-app-2019.png "New Cross-Platform App")
 
-    Pour plus d’informations sur la bibliothèque .NET Standard créée, consultez la rubrique [Anatomie d’une application Xamarin.Forms](deepdive.md#anatomy-of-a-xamarinforms-application) dans l’article [Immersion dans Xamarin.Forms - démarrage rapide](deepdive.md).
+    Pour plus d’informations sur la bibliothèque de .NET Standard qui est créée, consultez [anatomie d’une Xamarin.Forms application](deepdive.md#anatomy-of-a-xamarinforms-application) dans la présentation [ Xamarin.Forms approfondie des Démarrages rapides](deepdive.md).
 
 5. Dans l’**Explorateur de solutions**, dans le projet **Notes**, double-cliquez sur **MainPage.xaml** pour l’ouvrir :
 
     ![](single-page-images/vs/open-mainpage-xaml-2019.png "Open MainPage.xaml")
 
-6. Dans **MainPage.xaml**, supprimez tout le code de modèle et remplacez-le par le code suivant :
+6. Dans **MainPage. Xaml**, supprimez tout le code du modèle et remplacez-le par le code suivant :
 
     ```xaml
     <?xml version="1.0" encoding="utf-8"?>
@@ -96,7 +99,7 @@ Pour plus d’informations sur ces prérequis, consultez [Installation de Xamari
     </ContentPage>
     ```
 
-    Ce code définit de manière déclarative l’interface utilisateur [`Label`](xref:Xamarin.Forms.Label) de la [`Editor`](xref:Xamarin.Forms.Editor) page, qui consiste [`Button`](xref:Xamarin.Forms.Button) en un texte d’affichage, un pour l’entrée de texte, et deux instances qui dirigent l’application pour enregistrer ou supprimer un fichier. Les `Button` deux instances sont horizontalement [`Grid`](xref:Xamarin.Forms.Grid)énoncées `Label` `Editor`dans `Grid` un , avec le [`StackLayout`](xref:Xamarin.Forms.StackLayout), , et d’être verticalement disposé dans un . Pour plus d’informations sur la création de l’interface utilisateur, consultez [Interface utilisateur](deepdive.md#user-interface) dans [Xamarin.Forms - Démarrage rapide en immersion](deepdive.md).
+    Ce code définit de manière déclarative l’interface utilisateur de la page, qui se compose d’un [`Label`](xref:Xamarin.Forms.Label) pour afficher du texte, d’une [`Editor`](xref:Xamarin.Forms.Editor) entrée de texte et de deux [`Button`](xref:Xamarin.Forms.Button) instances qui indiquent à l’application d’enregistrer ou de supprimer un fichier. Les deux `Button` instances sont disposées horizontalement dans un [`Grid`](xref:Xamarin.Forms.Grid) , avec `Label` , `Editor` , et `Grid` disposées verticalement dans un [`StackLayout`](xref:Xamarin.Forms.StackLayout) . Pour plus d’informations sur la création de l’interface utilisateur, consultez [interface utilisateur](deepdive.md#user-interface) dans la présentation [ Xamarin.Forms approfondie des Démarrages rapides](deepdive.md).
 
     Enregistrez les modifications apportées à **MainPage.xaml** en appuyant sur **Ctrl+S** et fermez le fichier.
 
@@ -104,7 +107,7 @@ Pour plus d’informations sur ces prérequis, consultez [Installation de Xamari
 
     ![](single-page-images/vs/open-mainpage-codebehind-2019.png "Open MainPage.xaml.cs")
 
-8. Dans **MainPage.xaml.cs**, supprimez tout le code de modèle et remplacez-le par le code suivant :
+8. Dans **MainPage.Xaml.cs**, supprimez tout le code du modèle et remplacez-le par le code suivant :
 
     ```csharp
     using System;
@@ -144,7 +147,7 @@ Pour plus d’informations sur ces prérequis, consultez [Installation de Xamari
     }
     ```
 
-    Ce code définit un champ `_fileName`, qui référence un fichier nommé `notes.txt` qui stocke les données de notes dans le dossier de données d’application locale pour l’application. Lorsque le constructeur de pages est exécuté, le fichier est lu, s’il existe, et affiché dans le [`Editor`](xref:Xamarin.Forms.Editor). Lorsque **l’enregistrement** [`Button`](xref:Xamarin.Forms.Button) `OnSaveButtonClicked` est pressé, le gestionnaire d’événements `Editor` est exécuté, ce qui enregistre le contenu du fichier. Lorsque le **Delete** `Button` `OnDeleteButtonClicked` est pressé, le gestionnaire d’événement est exécuté, ce qui supprime le `Editor`fichier, à condition qu’il existe, et supprime tout texte de la . Pour plus d’informations sur l’interaction avec l’utilisateur, consultez [Réponse aux interactions de l’utilisateur](deepdive.md#responding-to-user-interaction) dans [Xamarin.Forms - Démarrage rapide en immersion](deepdive.md).
+    Ce code définit un champ `_fileName`, qui référence un fichier nommé `notes.txt` qui stocke les données de notes dans le dossier de données d’application locale pour l’application. Lors de l’exécution du constructeur de page, le fichier est lu, s’il existe, et affiché dans le [`Editor`](xref:Xamarin.Forms.Editor) . Lorsque l' **enregistrement** [`Button`](xref:Xamarin.Forms.Button) est activé `OnSaveButtonClicked` , le gestionnaire d’événements est exécuté, ce qui permet d’enregistrer le contenu du `Editor` dans le fichier. Lorsque la **suppression** `Button` est activée, le `OnDeleteButtonClicked` Gestionnaire d’événements est exécuté, ce qui supprime le fichier, à condition qu’il existe, et supprime tout texte de `Editor` . Pour plus d’informations sur l’interaction avec l’utilisateur, consultez [réponse à l’interaction](deepdive.md#responding-to-user-interaction) de l’utilisateur dans la présentation [ Xamarin.Forms approfondie des Démarrages rapides](deepdive.md).
 
     Enregistrez les modifications apportées à **MainPage.xaml.cs** en appuyant sur **Ctrl+S** et fermez le fichier.
 
@@ -164,10 +167,10 @@ Pour plus d’informations sur ces prérequis, consultez [Installation de Xamari
 
     Entrez une note et appuyez sur le bouton **Enregistrer**.
 
-    Pour plus d’informations sur le lancement de l’application sur chaque plateforme, consultez [Lancement de l’application sur chaque plateforme](deepdive.md#launching-the-application-on-each-platform) dans [Xamarin.Forms - Démarrage rapide en immersion](deepdive.md).
+    Pour plus d’informations sur la façon dont l’application est lancée sur chaque plateforme, consultez [lancement de l’application sur chaque plateforme](deepdive.md#launching-the-application-on-each-platform) dans le [ Xamarin.Forms didacticiel de démarrage rapide](deepdive.md).
 
     > [!NOTE]
-    > Vous ne devez exécuter les étapes suivantes que si vous avez un [Mac couplé](~/ios/get-started/installation/windows/connecting-to-mac/index.md) qui répond à la configuration système requise pour le développement Xamarin.Forms.
+    > Les étapes suivantes doivent être effectuées uniquement si vous disposez d’un [Mac couplé](~/ios/get-started/installation/windows/connecting-to-mac/index.md) qui répond à la configuration système requise pour le Xamarin.Forms développement.
 
 3. Dans la barre d’outils Visual Studio, cliquez avec le bouton droit sur le projet **Notes.iOS**, puis sélectionnez **Définir comme projet de démarrage**.
 
@@ -181,7 +184,7 @@ Pour plus d’informations sur ces prérequis, consultez [Installation de Xamari
 
     Entrez une note et appuyez sur le bouton **Enregistrer**.
 
-    Pour plus d’informations sur le lancement de l’application sur chaque plateforme, consultez [Lancement de l’application sur chaque plateforme](deepdive.md#launching-the-application-on-each-platform) dans [Xamarin.Forms - Démarrage rapide en immersion](deepdive.md).
+    Pour plus d’informations sur la façon dont l’application est lancée sur chaque plateforme, consultez [lancement de l’application sur chaque plateforme](deepdive.md#launching-the-application-on-each-platform) dans le [ Xamarin.Forms didacticiel de démarrage rapide](deepdive.md).
 
 ::: zone-end
 ::: zone pivot="win-vs2017"
@@ -200,7 +203,7 @@ Pour plus d’informations sur ces prérequis, consultez [Installation de Xamari
 
     ![](single-page-images/vs/new-solution.png "New Project")
 
-2. Dans la boîte de dialogue **Nouveau projet**, cliquez sur **Multiplateforme**, sélectionnez le modèle **Application mobile (Xamarin.Forms)**, définissez le Nom **Notes**, choisissez l’emplacement du projet et cliquez sur le bouton **OK** :
+2. Dans la boîte de dialogue **nouveau projet** , cliquez sur **multiplateforme**, sélectionnez le modèle **application mobile ( Xamarin.Forms )** , définissez le nom sur **Notes**, choisissez un emplacement approprié pour le projet et cliquez sur le bouton **OK** :
 
     ![](single-page-images/vs/new-project.png "Cross-Platform Project Templates")
 
@@ -211,13 +214,13 @@ Pour plus d’informations sur ces prérequis, consultez [Installation de Xamari
 
     ![](single-page-images/vs/new-app.png "New Cross-Platform App")
 
-    Pour plus d’informations sur la bibliothèque .NET Standard créée, consultez la rubrique [Anatomie d’une application Xamarin.Forms](deepdive.md#anatomy-of-a-xamarinforms-application) dans l’article [Immersion dans Xamarin.Forms - démarrage rapide](deepdive.md).
+    Pour plus d’informations sur la bibliothèque de .NET Standard qui est créée, consultez [anatomie d’une Xamarin.Forms application](deepdive.md#anatomy-of-a-xamarinforms-application) dans la présentation [ Xamarin.Forms approfondie des Démarrages rapides](deepdive.md).
 
 4. Dans l’**Explorateur de solutions**, dans le projet **Notes**, double-cliquez sur **MainPage.xaml** pour l’ouvrir :
 
     ![](single-page-images/vs/open-mainpage-xaml.png "Open MainPage.xaml")
 
-5. Dans **MainPage.xaml**, supprimez tout le code de modèle et remplacez-le par le code suivant :
+5. Dans **MainPage. Xaml**, supprimez tout le code du modèle et remplacez-le par le code suivant :
 
     ```xaml
     <?xml version="1.0" encoding="utf-8"?>
@@ -246,7 +249,7 @@ Pour plus d’informations sur ces prérequis, consultez [Installation de Xamari
     </ContentPage>
     ```
 
-    Ce code définit de manière déclarative l’interface utilisateur [`Label`](xref:Xamarin.Forms.Label) de la [`Editor`](xref:Xamarin.Forms.Editor) page, qui consiste [`Button`](xref:Xamarin.Forms.Button) en un texte d’affichage, un pour l’entrée de texte, et deux instances qui dirigent l’application pour enregistrer ou supprimer un fichier. Les `Button` deux instances sont horizontalement [`Grid`](xref:Xamarin.Forms.Grid)énoncées `Label` `Editor`dans `Grid` un , avec le [`StackLayout`](xref:Xamarin.Forms.StackLayout), , et d’être verticalement disposé dans un . Pour plus d’informations sur la création de l’interface utilisateur, consultez [Interface utilisateur](deepdive.md#user-interface) dans [Xamarin.Forms - Démarrage rapide en immersion](deepdive.md).
+    Ce code définit de manière déclarative l’interface utilisateur de la page, qui se compose d’un [`Label`](xref:Xamarin.Forms.Label) pour afficher du texte, d’une [`Editor`](xref:Xamarin.Forms.Editor) entrée de texte et de deux [`Button`](xref:Xamarin.Forms.Button) instances qui indiquent à l’application d’enregistrer ou de supprimer un fichier. Les deux `Button` instances sont disposées horizontalement dans un [`Grid`](xref:Xamarin.Forms.Grid) , avec `Label` , `Editor` , et `Grid` disposées verticalement dans un [`StackLayout`](xref:Xamarin.Forms.StackLayout) . Pour plus d’informations sur la création de l’interface utilisateur, consultez [interface utilisateur](deepdive.md#user-interface) dans la présentation [ Xamarin.Forms approfondie des Démarrages rapides](deepdive.md).
 
     Enregistrez les modifications apportées à **MainPage.xaml** en appuyant sur **Ctrl+S** et fermez le fichier.
 
@@ -254,7 +257,7 @@ Pour plus d’informations sur ces prérequis, consultez [Installation de Xamari
 
     ![](single-page-images/vs/open-mainpage-codebehind.png "Open MainPage.xaml.cs")
 
-7. Dans **MainPage.xaml.cs**, supprimez tout le code de modèle et remplacez-le par le code suivant :
+7. Dans **MainPage.Xaml.cs**, supprimez tout le code du modèle et remplacez-le par le code suivant :
 
     ```csharp
     using System;
@@ -294,7 +297,7 @@ Pour plus d’informations sur ces prérequis, consultez [Installation de Xamari
     }
     ```
 
-    Ce code définit un champ `_fileName`, qui référence un fichier nommé `notes.txt` qui stocke les données de notes dans le dossier de données d’application locale pour l’application. Lorsque le constructeur de pages est exécuté, le fichier est lu, s’il existe, et affiché dans le [`Editor`](xref:Xamarin.Forms.Editor). Lorsque **l’enregistrement** [`Button`](xref:Xamarin.Forms.Button) `OnSaveButtonClicked` est pressé, le gestionnaire d’événements `Editor` est exécuté, ce qui enregistre le contenu du fichier. Lorsque le **Delete** `Button` `OnDeleteButtonClicked` est pressé, le gestionnaire d’événement est exécuté, ce qui supprime le `Editor`fichier, à condition qu’il existe, et supprime tout texte de la . Pour plus d’informations sur l’interaction avec l’utilisateur, consultez [Réponse aux interactions de l’utilisateur](deepdive.md#responding-to-user-interaction) dans [Xamarin.Forms - Démarrage rapide en immersion](deepdive.md).
+    Ce code définit un champ `_fileName`, qui référence un fichier nommé `notes.txt` qui stocke les données de notes dans le dossier de données d’application locale pour l’application. Lors de l’exécution du constructeur de page, le fichier est lu, s’il existe, et affiché dans le [`Editor`](xref:Xamarin.Forms.Editor) . Lorsque l' **enregistrement** [`Button`](xref:Xamarin.Forms.Button) est activé `OnSaveButtonClicked` , le gestionnaire d’événements est exécuté, ce qui permet d’enregistrer le contenu du `Editor` dans le fichier. Lorsque la **suppression** `Button` est activée, le `OnDeleteButtonClicked` Gestionnaire d’événements est exécuté, ce qui supprime le fichier, à condition qu’il existe, et supprime tout texte de `Editor` . Pour plus d’informations sur l’interaction avec l’utilisateur, consultez [réponse à l’interaction](deepdive.md#responding-to-user-interaction) de l’utilisateur dans la présentation [ Xamarin.Forms approfondie des Démarrages rapides](deepdive.md).
 
     Enregistrez les modifications apportées à **MainPage.xaml.cs** en appuyant sur **Ctrl+S** et fermez le fichier.
 
@@ -314,10 +317,10 @@ Pour plus d’informations sur ces prérequis, consultez [Installation de Xamari
 
     Entrez une note et appuyez sur le bouton **Enregistrer**.
 
-    Pour plus d’informations sur le lancement de l’application sur chaque plateforme, consultez [Lancement de l’application sur chaque plateforme](deepdive.md#launching-the-application-on-each-platform) dans [Xamarin.Forms - Démarrage rapide en immersion](deepdive.md).
+    Pour plus d’informations sur la façon dont l’application est lancée sur chaque plateforme, consultez [lancement de l’application sur chaque plateforme](deepdive.md#launching-the-application-on-each-platform) dans le [ Xamarin.Forms didacticiel de démarrage rapide](deepdive.md).
 
     > [!NOTE]
-    > Vous ne devez exécuter les étapes suivantes que si vous avez un [Mac couplé](~/ios/get-started/installation/windows/connecting-to-mac/index.md) qui répond à la configuration système requise pour le développement Xamarin.Forms.
+    > Les étapes suivantes doivent être effectuées uniquement si vous disposez d’un [Mac couplé](~/ios/get-started/installation/windows/connecting-to-mac/index.md) qui répond à la configuration système requise pour le Xamarin.Forms développement.
 
 3. Dans la barre d’outils Visual Studio, cliquez avec le bouton droit sur le projet **Notes.iOS**, puis sélectionnez **Définir comme projet de démarrage**.
 
@@ -331,7 +334,7 @@ Pour plus d’informations sur ces prérequis, consultez [Installation de Xamari
 
     Entrez une note et appuyez sur le bouton **Enregistrer**.
 
-    Pour plus d’informations sur le lancement de l’application sur chaque plateforme, consultez [Lancement de l’application sur chaque plateforme](deepdive.md#launching-the-application-on-each-platform) dans [Xamarin.Forms - Démarrage rapide en immersion](deepdive.md).
+    Pour plus d’informations sur la façon dont l’application est lancée sur chaque plateforme, consultez [lancement de l’application sur chaque plateforme](deepdive.md#launching-the-application-on-each-platform) dans le [ Xamarin.Forms didacticiel de démarrage rapide](deepdive.md).
 
 ::: zone-end
 ::: zone pivot="macos"
@@ -365,13 +368,13 @@ Pour plus d’informations sur ces prérequis, consultez [Installation de Xamari
     > [!IMPORTANT]
     > Pour les extraits C# et XAML de ce guide de démarrage rapide, la solution et le projet doivent se nommer **Notes**. L’utilisation d’un autre nom entraîne des erreurs de build quand vous copiez le code à partir de ce guide de démarrage rapide dans le projet.
 
-    Pour plus d’informations sur la bibliothèque .NET Standard créée, consultez la rubrique [Anatomie d’une application Xamarin.Forms](deepdive.md#anatomy-of-a-xamarinforms-application) dans l’article [Immersion dans Xamarin.Forms - démarrage rapide](deepdive.md).
+    Pour plus d’informations sur la bibliothèque de .NET Standard qui est créée, consultez [anatomie d’une Xamarin.Forms application](deepdive.md#anatomy-of-a-xamarinforms-application) dans la présentation [ Xamarin.Forms approfondie des Démarrages rapides](deepdive.md).
 
 5. Dans le **Panneau Solutions**, dans le projet **Notes**, double-cliquez sur **MainPage.xaml** pour l’ouvrir :
 
     ![](single-page-images/vsmac/mainpage-xaml.png "MainPage.xaml")
 
-6. Dans **MainPage.xaml**, supprimez tout le code de modèle et remplacez-le par le code suivant :
+6. Dans **MainPage. Xaml**, supprimez tout le code du modèle et remplacez-le par le code suivant :
 
     ```xaml
     <?xml version="1.0" encoding="utf-8"?>
@@ -400,7 +403,7 @@ Pour plus d’informations sur ces prérequis, consultez [Installation de Xamari
     </ContentPage>
     ```
 
-    Ce code définit de manière déclarative l’interface utilisateur [`Label`](xref:Xamarin.Forms.Label) de la [`Editor`](xref:Xamarin.Forms.Editor) page, qui consiste [`Button`](xref:Xamarin.Forms.Button) en un texte d’affichage, un pour l’entrée de texte, et deux instances qui dirigent l’application pour enregistrer ou supprimer un fichier. Les `Button` deux instances sont horizontalement [`Grid`](xref:Xamarin.Forms.Grid)énoncées `Label` `Editor`dans `Grid` un , avec le [`StackLayout`](xref:Xamarin.Forms.StackLayout), , et d’être verticalement disposé dans un . Pour plus d’informations sur la création de l’interface utilisateur, consultez [Interface utilisateur](deepdive.md#user-interface) dans [Xamarin.Forms - Démarrage rapide en immersion](deepdive.md).
+    Ce code définit de manière déclarative l’interface utilisateur de la page, qui se compose d’un [`Label`](xref:Xamarin.Forms.Label) pour afficher du texte, d’une [`Editor`](xref:Xamarin.Forms.Editor) entrée de texte et de deux [`Button`](xref:Xamarin.Forms.Button) instances qui indiquent à l’application d’enregistrer ou de supprimer un fichier. Les deux `Button` instances sont disposées horizontalement dans un [`Grid`](xref:Xamarin.Forms.Grid) , avec `Label` , `Editor` , et `Grid` disposées verticalement dans un [`StackLayout`](xref:Xamarin.Forms.StackLayout) . Pour plus d’informations sur la création de l’interface utilisateur, consultez [interface utilisateur](deepdive.md#user-interface) dans la présentation [ Xamarin.Forms approfondie des Démarrages rapides](deepdive.md).
 
     Enregistrez les modifications apportées à **MainPage.xaml** en choisissant **Fichier > Enregistrer** (ou en appuyant sur **&#8984;+S**) et fermez le fichier.
 
@@ -408,7 +411,7 @@ Pour plus d’informations sur ces prérequis, consultez [Installation de Xamari
 
     ![](single-page-images/vsmac/mainpage-xaml-cs.png "MainPage.xaml.cs")
 
-8. Dans **MainPage.xaml.cs**, supprimez tout le code de modèle et remplacez-le par le code suivant :
+8. Dans **MainPage.Xaml.cs**, supprimez tout le code du modèle et remplacez-le par le code suivant :
 
     ```csharp
     using System;
@@ -448,7 +451,7 @@ Pour plus d’informations sur ces prérequis, consultez [Installation de Xamari
     }
     ```
 
-    Ce code définit un champ `_fileName`, qui référence un fichier nommé `notes.txt` qui stocke les données de notes dans le dossier de données d’application locale pour l’application. Lorsque le constructeur de pages est exécuté, le fichier est lu, s’il existe, et affiché dans le [`Editor`](xref:Xamarin.Forms.Editor). Lorsque **l’enregistrement** [`Button`](xref:Xamarin.Forms.Button) `OnSaveButtonClicked` est pressé, le gestionnaire d’événements `Editor` est exécuté, ce qui enregistre le contenu du fichier. Lorsque le **Delete** `Button` `OnDeleteButtonClicked` est pressé, le gestionnaire d’événement est exécuté, ce qui supprime le `Editor`fichier, à condition qu’il existe, et supprime tout texte de la . Pour plus d’informations sur l’interaction avec l’utilisateur, consultez [Réponse aux interactions de l’utilisateur](deepdive.md#responding-to-user-interaction) dans [Xamarin.Forms - Démarrage rapide en immersion](deepdive.md).
+    Ce code définit un champ `_fileName`, qui référence un fichier nommé `notes.txt` qui stocke les données de notes dans le dossier de données d’application locale pour l’application. Lors de l’exécution du constructeur de page, le fichier est lu, s’il existe, et affiché dans le [`Editor`](xref:Xamarin.Forms.Editor) . Lorsque l' **enregistrement** [`Button`](xref:Xamarin.Forms.Button) est activé `OnSaveButtonClicked` , le gestionnaire d’événements est exécuté, ce qui permet d’enregistrer le contenu du `Editor` dans le fichier. Lorsque la **suppression** `Button` est activée, le `OnDeleteButtonClicked` Gestionnaire d’événements est exécuté, ce qui supprime le fichier, à condition qu’il existe, et supprime tout texte de `Editor` . Pour plus d’informations sur l’interaction avec l’utilisateur, consultez [réponse à l’interaction](deepdive.md#responding-to-user-interaction) de l’utilisateur dans la présentation [ Xamarin.Forms approfondie des Démarrages rapides](deepdive.md).
 
     Enregistrez les modifications apportées à **MainPage.xaml.cs** en choisissant **Fichier > Enregistrer** (ou en appuyant sur **&#8984;+S**) et fermez le fichier.
 
@@ -472,7 +475,7 @@ Pour plus d’informations sur ces prérequis, consultez [Installation de Xamari
 
     Entrez une note et appuyez sur le bouton **Enregistrer**.
 
-    Pour plus d’informations sur le lancement de l’application sur chaque plateforme, consultez [Lancement de l’application sur chaque plateforme](deepdive.md#launching-the-application-on-each-platform) dans [Xamarin.Forms - Démarrage rapide en immersion](deepdive.md).
+    Pour plus d’informations sur la façon dont l’application est lancée sur chaque plateforme, consultez [lancement de l’application sur chaque plateforme](deepdive.md#launching-the-application-on-each-platform) dans le [ Xamarin.Forms didacticiel de démarrage rapide](deepdive.md).
 
 4. Dans le **Panneau Solutions**, sélectionnez le projet **Notes.Droid**, cliquez avec le bouton droit, puis sélectionnez **Définir en tant que projet de démarrage** :
 
@@ -484,7 +487,7 @@ Pour plus d’informations sur ces prérequis, consultez [Installation de Xamari
 
     Entrez une note et appuyez sur le bouton **Enregistrer**.
 
-    Pour plus d’informations sur le lancement de l’application sur chaque plateforme, consultez [Lancement de l’application sur chaque plateforme](deepdive.md#launching-the-application-on-each-platform) dans [Xamarin.Forms - Démarrage rapide en immersion](deepdive.md).
+    Pour plus d’informations sur la façon dont l’application est lancée sur chaque plateforme, consultez [lancement de l’application sur chaque plateforme](deepdive.md#launching-the-application-on-each-platform) dans le [ Xamarin.Forms didacticiel de démarrage rapide](deepdive.md).
 
 ::: zone-end
 
@@ -492,7 +495,7 @@ Pour plus d’informations sur ces prérequis, consultez [Installation de Xamari
 
 Dans ce démarrage rapide, vous avez appris comment :
 
-- Créer une application Xamarin.Forms multiplateforme
+- Créer une Xamarin.Forms application multiplateforme.
 - Définir l’interface utilisateur d’une page à l’aide du langage XAML (Extensible Application Markup Language)
 - Interagir avec des éléments d’interface utilisateur XAML à partir du code
 
@@ -504,4 +507,4 @@ Pour transformer cette application monopage en application multipage, passez au 
 ## <a name="related-links"></a>Liens connexes
 
 - [Notes (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-singlepage/)
-- [Xamarin.Forms - Démarrage rapide en immersion](deepdive.md)
+- [Xamarin.FormsPrésentation approfondie des Démarrages rapides](deepdive.md)

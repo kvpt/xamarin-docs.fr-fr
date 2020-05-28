@@ -1,42 +1,45 @@
 ---
-title: Partie 4. Principes fondamentaux de liaison de données
-description: Liaisons de données permettent les propriétés de deux objets à lier afin qu’une modification dans une provoque une modification dans l’autre.
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
-author: davidbritch
-ms.author: dabritch
-ms.date: 10/25/2017
-ms.openlocfilehash: 7b34e7658ad38f80cffa22d99eea42901a905a38
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+title: ''
+description: ''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 08be571d3ba69891a56c08efd556a999e51431c8
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70767618"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139852"
 ---
-# <a name="part-4-data-binding-basics"></a>Partie 4. Principes fondamentaux de liaison de données
+# <a name="part-4-data-binding-basics"></a>Partie 4. Notions de base sur la liaison de données
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
-_Liaisons de données permettent les propriétés de deux objets à lier afin qu’une modification dans une provoque une modification dans l’autre. Il s’agit d’un outil très précieux, et tandis que les liaisons de données peuvent être définis entièrement en code, XAML fournit des raccourcis et convivialité. Par conséquent, les extensions de balisage plus importantes dans Xamarin.Forms sont lié._
+_Les liaisons de données permettent de lier les propriétés de deux objets afin qu’une modification dans l’un provoque une modification dans l’autre. Il s’agit d’un outil très utile, tandis que les liaisons de données peuvent être définies entièrement dans le code, XAML fournit des raccourcis et une commodité. Par conséquent, l’une des extensions de balisage les plus importantes dans Xamarin.Forms est la liaison._
 
 ## <a name="data-bindings"></a>Liaisons de données
 
-Liaisons de données connectent des propriétés de deux objets, appelés le *source* et *cible*. Dans le code, deux étapes sont requises : La propriété de l’objet cible doit être définie sur l’objet source et la `SetBinding` méthode (souvent utilisée conjointement avec la `Binding` classe) doit être appelée sur l’objet cible pour lier une propriété de cet objet à une propriété de la source. `BindingContext` dessin.
+Les liaisons de données connectent les propriétés de deux objets, appelés la *source* et la *cible*. Dans le code, deux étapes sont requises : la `BindingContext` propriété de l’objet cible doit être définie sur l’objet source, et la `SetBinding` méthode (souvent utilisée conjointement avec la `Binding` classe) doit être appelée sur l’objet cible pour lier une propriété de cet objet à une propriété de l’objet source.
 
-La propriété cible doit être une propriété pouvant être liée, ce qui signifie que l’objet cible doit dériver de `BindableObject`. La documentation en ligne de Xamarin.Forms indique quelles propriétés sont des propriétés pouvant être liées. Une propriété de `Label` comme `Text` est associé à la propriété peut être liée `TextProperty`.
+La propriété cible doit être une propriété pouvant être liée, ce qui signifie que l’objet cible doit dériver de `BindableObject` . La documentation en ligne Xamarin.Forms indique les propriétés pouvant être liées. Une propriété de `Label` telle que `Text` est associée à la propriété pouvant être liée `TextProperty` .
 
-Dans le balisage, vous devez également effectuer les mêmes étapes qui sont requises dans le code, à ceci près que le `Binding` remplace l’extension de balisage de la `SetBinding` appeler et `Binding` classe.
+Dans le balisage, vous devez également effectuer les deux mêmes étapes que celles requises dans le code, sauf que l' `Binding` extension de balisage prend la place de l' `SetBinding` appel et de la `Binding` classe.
 
-Toutefois, lorsque vous définissez des liaisons de données dans XAML, il existe plusieurs méthodes pour définir le `BindingContext` de l’objet cible. Parfois, il est défini à partir du fichier code-behind, parfois l’utilisation d’un `StaticResource` ou `x:Static` extension de balisage et parfois en tant que le contenu de `BindingContext` balises d’élément de propriété.
+Toutefois, lorsque vous définissez des liaisons de données en XAML, il existe plusieurs façons de définir le `BindingContext` de l’objet cible. Elle est parfois définie à partir du fichier code-behind, parfois à l’aide d’une `StaticResource` `x:Static` extension de balisage ou, et parfois en tant que contenu de `BindingContext` balises d’éléments de propriété.
 
-Liaisons sont plus souvent utilisées pour se connecter les éléments visuels d’un programme avec un modèle de données sous-jacent, généralement dans une réalisation de l’architecture des applications MVVM (Model-View-ViewModel), comme indiqué dans [partie 5. Liaisons de données à MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md), mais d’autres scénarios sont possibles.
+Les liaisons sont utilisées le plus souvent pour connecter les éléments visuels d’un programme à un modèle de données sous-jacent, généralement dans une réalisation de l’architecture d’application MVVM (Model-View-ViewModel), comme indiqué dans la [partie 5. Des liaisons de données à MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md), mais d’autres scénarios sont possibles.
 
-## <a name="view-to-view-bindings"></a>Pour consulter les liaisons
+## <a name="view-to-view-bindings"></a>Liaisons de vue à vue
 
-Vous pouvez définir des liaisons de données pour lier les propriétés des deux vues dans la même page. Dans ce cas, vous définissez le `BindingContext` de l’objet cible en utilisant le `x:Reference` extension de balisage.
+Vous pouvez définir des liaisons de données pour lier les propriétés de deux affichages sur la même page. Dans ce cas, vous définissez le `BindingContext` de l’objet cible à l’aide de l' `x:Reference` extension de balisage.
 
-Ici est un fichier XAML qui contient un `Slider` et deux `Label` vues, un d'entre eux est pivoté par le `Slider` valeur et une autre qui affiche le `Slider` valeur :
+Voici un fichier XAML qui contient un `Slider` et deux `Label` vues, dont l’une est pivotée par la `Slider` valeur et une autre qui affiche la `Slider` valeur :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -67,9 +70,9 @@ Ici est un fichier XAML qui contient un `Slider` et deux `Label` vues, un d'entr
 </ContentPage>
 ```
 
-Le `Slider` contient un `x:Name` attribut qui est référencé par les deux `Label` vues à l’aide de la `x:Reference` extension de balisage.
+Le `Slider` contient un `x:Name` attribut qui est référencé par les deux `Label` vues à l’aide de l' `x:Reference` extension de balisage.
 
-Le `x:Reference` extension de liaison définit une propriété nommée `Name` pour définir le nom de l’élément référencé, dans ce cas `slider`. Toutefois, le `ReferenceExtension` classe qui définit le `x:Reference` extension de balisage définit également un `ContentProperty` attribut `Name`, ce qui signifie qu’il n’est pas explicitement requis. Juste pour diverses, la première `x:Reference` inclut « nom = « mais pas la seconde :
+L' `x:Reference` extension de liaison définit une propriété nommée `Name` pour définir sur le nom de l’élément référencé, dans ce cas `slider` . Toutefois, la `ReferenceExtension` classe qui définit l' `x:Reference` extension de balisage définit également un `ContentProperty` attribut pour, ce qui `Name` signifie qu’elle n’est pas explicitement requise. Pour la variété, la première `x:Reference` comprend « Name = », mais pas la seconde :
 
 ```xaml
 BindingContext="{x:Reference Name=slider}"
@@ -77,7 +80,7 @@ BindingContext="{x:Reference Name=slider}"
 BindingContext="{x:Reference slider}"
 ```
 
-Le `Binding` extension de balisage elle-même peut avoir plusieurs propriétés, comme le `BindingBase` et `Binding` classe. Le `ContentProperty` pour `Binding` est `Path`, mais le « chemin d’accès = « partie de l’extension de balisage peut être omis si le chemin d’accès est le premier élément dans le `Binding` extension de balisage. Le premier exemple a « chemin d’accès = « mais le deuxième exemple omet :
+L' `Binding` extension de balisage elle-même peut avoir plusieurs propriétés, tout comme la `BindingBase` `Binding` classe et. `ContentProperty`Pour `Binding` est `Path` , mais la partie « Path = » de l’extension de balisage peut être omise si le chemin d’accès est le premier élément de l’extension de `Binding` balisage. Le premier exemple a « Path = », mais le deuxième exemple l’omet :
 
 ```xaml
 Rotation="{Binding Path=Value}"
@@ -85,16 +88,16 @@ Rotation="{Binding Path=Value}"
 Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 ```
 
-Les propriétés peuvent tous être sur une seule ligne ou divisée en plusieurs lignes :
+Les propriétés peuvent toutes être sur une seule ligne ou être séparées en plusieurs lignes :
 
 ```xaml
 Text="{Binding Value,
                StringFormat='The angle is {0:F0} degrees'}"
 ```
 
-Faire tout ce qui est pratique.
+Faites tout ce qui est pratique.
 
-Notez que le `StringFormat` propriété dans la seconde `Binding` extension de balisage. Dans Xamarin.Forms, les liaisons n’effectuent pas de conversion de type implicite, et si vous avez besoin afficher un objet autre qu’une chaîne sous forme de chaîne vous devez fournir un convertisseur de type ou utiliser `StringFormat`. Dans les coulisses, la méthode statique `String.Format` méthode est utilisée pour implémenter `StringFormat`. Qui est potentiellement un problème, car les spécifications de mise en forme .NET impliquent des accolades, qui sont également utilisés pour délimiter des extensions de balisage. Cette opération crée un risque de confusion de l’analyseur XAML. Pour éviter cela, placez la chaîne de mise en forme entière entre guillemets simples :
+Notez la `StringFormat` propriété dans la deuxième `Binding` extension de balisage. Dans Xamarin.Forms , les liaisons n’effectuent pas de conversions de types implicites, et si vous devez afficher un objet non-chaîne en tant que chaîne, vous devez fournir un convertisseur de type ou utiliser `StringFormat` . En arrière-plan, la `String.Format` méthode statique est utilisée pour implémenter `StringFormat` . Il s’agit probablement d’un problème, car les spécifications de mise en forme .NET impliquent des accolades, qui sont également utilisées pour délimiter des extensions de balisage. Cela crée un risque de déroutant de l’analyseur XAML. Pour éviter cela, placez l’intégralité de la chaîne de mise en forme entre des guillemets simples :
 
 ```xaml
 Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
@@ -104,21 +107,21 @@ Voici le programme en cours d’exécution :
 
 [![Liaisons de vue à vue](data-binding-basics-images/sliderbinding.png)](data-binding-basics-images/sliderbinding-large.png#lightbox)
 
-## <a name="the-binding-mode"></a>Le Mode de liaison
+## <a name="the-binding-mode"></a>Mode de liaison
 
-Une vue unique peut avoir des liaisons de données sur plusieurs de ses propriétés. Toutefois, chaque vue peut avoir un seul `BindingContext`, de sorte que plusieurs liaisons de données sur cette vue doivent toutes référencer des propriétés du même objet.
+Une vue unique peut avoir des liaisons de données sur plusieurs de ses propriétés. Toutefois, chaque vue ne peut avoir qu’une seule `BindingContext` , de sorte que plusieurs liaisons de données sur cette vue doivent toutes les propriétés de référence du même objet.
 
-La solution à ces informations et autres problèmes implique le `Mode` propriété, qui est définie à un membre de la `BindingMode` énumération :
+La solution à ce problème et à d’autres problèmes implique la `Mode` propriété, qui est définie sur un membre de l' `BindingMode` énumération :
 
 - `Default`
-- `OneWay` — les valeurs sont transférés de la source à la cible
-- `OneWayToSource` — les valeurs sont transférés de la cible à la source
-- `TwoWay` — les valeurs sont transférés les deux sens entre source et cible
-- `OneTime`— les données passent de la source à la cible, mais `BindingContext` uniquement lorsque les modifications
+- `OneWay`: les valeurs sont transférées de la source à la cible
+- `OneWayToSource`: les valeurs sont transférées de la cible à la source.
+- `TwoWay`: les valeurs sont transférées dans les deux sens entre la source et la cible
+- `OneTime`— les données passent de la source à la cible, mais uniquement lorsque les `BindingContext` modifications
 
-Le programme suivant montre une utilisation courante de la `OneWayToSource` et `TwoWay` modes de liaison. Quatre `Slider` vues sont destinées au contrôle de la `Scale`, `Rotate`, `RotateX`, et `RotateY` propriétés d’un `Label`. Dans un premier temps, il semble que si ces quatre propriétés de la `Label` doit être des cibles de liaison de données, car chacun est définie un `Slider`. Toutefois, le `BindingContext` de `Label` peut être qu’un seul objet, et il existe quatre curseurs différents.
+Le programme suivant illustre une utilisation courante des `OneWayToSource` modes de `TwoWay` liaison et. Quatre `Slider` vues sont conçues pour contrôler les `Scale` `Rotate` Propriétés,, `RotateX` et `RotateY` d’un `Label` . Au début, il semblerait que ces quatre propriétés du `Label` doivent être des cibles de liaison de données, car chacune est définie par un `Slider` . Toutefois, le `BindingContext` de ne `Label` peut être qu’un seul objet et il y a quatre curseurs différents.
 
-Pour cette raison, toutes les liaisons sont définies de manière apparemment en arrière : Le `BindingContext` de chacun des quatre curseurs a la `Label`valeur, et les liaisons sont définies sur les `Value` propriétés des curseurs. À l’aide de la `OneWayToSource` et `TwoWay` modes, ces `Value` propriétés peuvent définir les propriétés de la source, qui sont le `Scale`, `Rotate`, `RotateX`, et `RotateY` propriétés de la `Label`:
+Pour cette raison, toutes les liaisons sont définies de manière apparemment en arrière : le `BindingContext` de chacun des quatre curseurs a la valeur `Label` , et les liaisons sont définies sur les `Value` Propriétés des curseurs. En utilisant les `OneWayToSource` `TwoWay` modes et, ces `Value` propriétés peuvent définir les propriétés de la source, qui sont les `Scale` Propriétés,, `Rotate` `RotateX` et `RotateY` de l’entité `Label` :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -197,28 +200,28 @@ Pour cette raison, toutes les liaisons sont définies de manière apparemment en
 </ContentPage>
 ```
 
-Les liaisons sur trois de la `Slider` vues sont `OneWayToSource`, ce qui signifie qui les `Slider` valeur provoque une modification dans la propriété de son `BindingContext`, qui est la `Label` nommé `label`. Ces trois `Slider` vues entraînent des modifications à la `Rotate`, `RotateX`, et `RotateY` propriétés de la `Label`.
+Les liaisons sur trois des `Slider` vues sont `OneWayToSource` , ce qui signifie que la `Slider` valeur entraîne une modification de la propriété de son `BindingContext` , qui est le `Label` nommé `label` . Ces trois `Slider` vues entraînent des modifications apportées aux `Rotate` `RotateX` Propriétés, et `RotateY` de `Label` .
 
-Toutefois, la liaison pour le `Scale` propriété est `TwoWay`. Il s’agit, car le `Scale` propriété a la valeur par défaut 1 et à l’aide un `TwoWay` liaison provoque la `Slider` initiale valeur à définir à 1 au lieu de 0. Si cette liaison ont été `OneWayToSource`, le `Scale` propriété est initialement définie sur 0 à partir de la `Slider` valeur par défaut. Le `Label` ne serait pas visible, et qui peut entraîner une certaine confusion pour l’utilisateur.
+Toutefois, la liaison de la `Scale` propriété est `TwoWay` . Cela est dû au fait que la `Scale` propriété a une valeur par défaut de 1 et que l’utilisation d’une `TwoWay` liaison entraîne la définition de la `Slider` valeur initiale à 1 plutôt que 0. Si cette liaison était `OneWayToSource` , la `Scale` valeur par défaut de la propriété serait définie sur 0 `Slider` . Le `Label` n’est pas visible et peut entraîner une certaine confusion pour l’utilisateur.
 
  [![Liaisons vers l’arrière](data-binding-basics-images/slidertransforms.png)](data-binding-basics-images/slidertransforms-large.png#lightbox)
 
  > [!NOTE]
- > Le [ `VisualElement` ](xref:Xamarin.Forms.VisualElement) classe a également [ `ScaleX` ](xref:Xamarin.Forms.VisualElement.ScaleX) et [ `ScaleY` ](xref:Xamarin.Forms.VisualElement.ScaleY) propriétés, laquelle mettre à l’échelle le `VisualElement` sur les axes x et y respectivement.
+ > La [`VisualElement`](xref:Xamarin.Forms.VisualElement) classe possède également [`ScaleX`](xref:Xamarin.Forms.VisualElement.ScaleX) les [`ScaleY`](xref:Xamarin.Forms.VisualElement.ScaleY) Propriétés et, qui regroupent `VisualElement` respectivement les axes x et y.
 
-## <a name="bindings-and-collections"></a>Liaisons et des Collections
+## <a name="bindings-and-collections"></a>Liaisons et collections
 
-Rien n’illustre la puissance des liaisons XAML et données mieux qu’un basé sur un modèle `ListView`.
+Rien n’illustre la puissance du XAML et des liaisons de données mieux qu’un modèle `ListView` .
 
-`ListView` définit un `ItemsSource` propriété de type `IEnumerable`, et il affiche les éléments dans cette collection. Ces éléments peuvent être des objets de tout type. Par défaut, `ListView` utilise le `ToString` (méthode) de chaque élément pour afficher cet élément. Parfois, il s’agit simplement ce que vous voulez, mais dans de nombreux cas, `ToString` retourne uniquement le nom de classe qualifié complet de l’objet.
+`ListView`définit une `ItemsSource` propriété de type `IEnumerable` et affiche les éléments de cette collection. Ces éléments peuvent être des objets de n’importe quel type. Par défaut, `ListView` utilise la `ToString` méthode de chaque élément pour afficher cet élément. Parfois, c’est exactement ce que vous voulez, mais dans de nombreux cas, `ToString` retourne uniquement le nom de classe complet de l’objet.
 
-Toutefois, les éléments dans le `ListView` collection peut être affichée comme vous le souhaitez à l’aide d’un *modèle*, qui implique une classe qui dérive de `Cell`. Le modèle est dupliqué pour chaque élément dans le `ListView`, et les liaisons de données qui ont été définis sur le modèle sont transférés vers les clones individuels.
+Toutefois, les éléments de la `ListView` collection peuvent être affichés comme vous le souhaitez par le biais de l’utilisation d’un *modèle*, qui implique une classe qui dérive de `Cell` . Le modèle est cloné pour chaque élément du `ListView` , et les liaisons de données qui ont été définies sur le modèle sont transférées vers les clones individuels.
 
-Très souvent, vous souhaiterez créer une cellule personnalisée pour ces éléments à l’aide de la `ViewCell` classe. Ce processus est quelque peu compliquée dans le code, mais il devient très simple dans XAML.
+Très souvent, vous souhaiterez créer une cellule personnalisée pour ces éléments à l’aide de la `ViewCell` classe. Ce processus est quelque peu confus dans le code, mais dans XAML, il devient très simple.
 
-Le XamlSamples projet comporte une classe appelée `NamedColor`. Chaque `NamedColor` objet a `Name` et `FriendlyName` propriétés de type `string`et un `Color` propriété de type `Color`. En outre, `NamedColor` a 141 en lecture seule les champs statiques de type `Color` correspondant aux couleurs définies dans le Xamarin.Forms `Color` classe. Un constructeur statique crée une `IEnumerable<NamedColor>` collection qui contient `NamedColor` objets correspondant à ces champs statiques et l’assigne à son statique public `All` propriété.
+Le projet XamlSamples contient une classe appelée `NamedColor` . Chaque `NamedColor` objet possède `Name` `FriendlyName` des propriétés et de type `string` , et une `Color` propriété de type `Color` . En outre, `NamedColor` contient 141 champs en lecture seule statiques de type `Color` correspondant aux couleurs définies dans la Xamarin.Forms `Color` classe. Un constructeur statique crée une `IEnumerable<NamedColor>` collection qui contient `NamedColor` des objets correspondant à ces champs statiques et l’assigne à sa propriété statique publique `All` .
 
-Définition de la méthode statique `NamedColor.All` propriété le `ItemsSource` d’un `ListView` est facile à l’aide de la `x:Static` extension de balisage :
+L’affectation de la valeur `NamedColor.All` à la propriété statique `ItemsSource` de `ListView` est simple à l’aide de l' `x:Static` extension de balisage :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -232,13 +235,13 @@ Définition de la méthode statique `NamedColor.All` propriété le `ItemsSource
 </ContentPage>
 ```
 
-L’affichage résultant établit que les éléments sont véritablement de type `XamlSamples.NamedColor`:
+L’affichage résultant établit que les éléments sont véritablement de type `XamlSamples.NamedColor` :
 
 [![Liaison à une collection](data-binding-basics-images/listview1.png)](data-binding-basics-images/listview1-large.png#lightbox)
 
-Il n’est pas beaucoup plus d’informations, mais le `ListView` est permettant le défilement et sélectionnable.
+Il ne s’agit pas d’une grande quantité d’informations, mais il est possible de `ListView` faire défiler et de sélectionner.
 
-Pour définir un modèle pour les éléments, vous souhaitez répartir le `ItemTemplate` propriété comme un élément de propriété et affectez-lui un `DataTemplate`, qui référence puis un `ViewCell`. Pour le `View` propriété de la `ViewCell` vous pouvez définir une disposition d’une ou plusieurs vues pour afficher chaque élément. Voici un exemple simple :
+Pour définir un modèle pour les éléments, vous pouvez décomposer la `ItemTemplate` propriété en tant qu’élément de propriété et lui affecter une valeur `DataTemplate` , qui fait référence à un `ViewCell` . À la `View` propriété du `ViewCell` , vous pouvez définir une disposition d’un ou plusieurs affichages pour afficher chaque élément. Voici un exemple simple :
 
 ```xaml
 <ListView ItemsSource="{x:Static local:NamedColor.All}">
@@ -255,13 +258,13 @@ Pour définir un modèle pour les éléments, vous souhaitez répartir le `ItemT
 ```
 
 > [!NOTE]
-> La source de liaison pour les cellules, et les enfants de cellules `ListView.ItemsSource` , est la collection.
+> La source de liaison pour les cellules, et les enfants de cellules, est la `ListView.ItemsSource` collection.
 
-Le `Label` élément est défini sur le `View` propriété de la `ViewCell`. (Le `ViewCell.View` balises ne sont pas nécessaires, car le `View` propriété est la propriété de contenu de `ViewCell`.) Ce balisage affiche le `FriendlyName` propriété de chaque `NamedColor` objet :
+L' `Label` élément a la valeur `View` de la propriété de `ViewCell` . (Les `ViewCell.View` balises ne sont pas nécessaires, car la `View` propriété est la propriété de contenu de `ViewCell` .) Ce balisage affiche la `FriendlyName` propriété de chaque `NamedColor` objet :
 
 [![Liaison à une collection avec un DataTemplate](data-binding-basics-images/listview2.png)](data-binding-basics-images/listview2-large.png#lightbox)
 
-Beaucoup mieux. Tout ce qui est nécessaire est maintenant embellir le modèle d’élément avec plus d’informations et la couleur réelle. Pour prendre en charge ce modèle, certaines valeurs et les objets ont été définis dans le dictionnaire de ressources de la page :
+Beaucoup mieux. À présent, il vous suffit d’embellir le modèle d’élément avec plus d’informations et la couleur réelle. Pour prendre en charge ce modèle, certaines valeurs et certains objets ont été définis dans le dictionnaire de ressources de la page :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -333,13 +336,13 @@ Beaucoup mieux. Tout ce qui est nécessaire est maintenant embellir le modèle d
 </ContentPage>
 ```
 
-Remarquez l’utilisation de `OnPlatform` pour définir la taille d’un `BoxView` et la hauteur de la `ListView` lignes. Bien que les valeurs pour toutes les plateformes sont identiques, le balisage peut être facilement adapté pour les autres valeurs d’affiner l’affichage.
+Notez l’utilisation de `OnPlatform` pour définir la taille d’un `BoxView` et la hauteur des `ListView` lignes. Bien que les valeurs de toutes les plateformes soient identiques, le balisage peut facilement être adapté à d’autres valeurs pour affiner l’affichage.
 
 ## <a name="binding-value-converters"></a>Convertisseurs de valeur de liaison
 
-Le précédent **ListView démonstration** les fichiers XAML affiche l’individu `R`, `G`, et `B` propriétés de la Xamarin.Forms `Color` structure. Ces propriétés sont de type `double` et comprise entre 0 et 1. Si vous souhaitez afficher les valeurs hexadécimales, vous ne pouvez pas simplement utiliser `StringFormat` avec une spécification de mise en forme « X2 ». Cela fonctionne uniquement pour les entiers et en outre, le `double` valeurs doivent être multipliés par 255.
+Le précédent fichier XAML de **démonstration ListView** affiche les `R` propriétés individuelles, `G` et `B` de la Xamarin.Forms `Color` structure. Ces propriétés sont de type `double` et sont comprises entre 0 et 1. Si vous souhaitez afficher les valeurs hexadécimales, vous ne pouvez pas simplement utiliser `StringFormat` avec une spécification de mise en forme « x2 ». Qui ne fonctionne que pour les entiers et en plus, les `double` valeurs doivent être multipliées par 255.
 
-Ce petit problème a été résolu avec une *convertisseur de valeurs*, également appelé un *convertisseur de liaisons*. Il s’agit d’une classe qui implémente le `IValueConverter` interface, ce qui signifie qu’il existe deux méthodes nommées `Convert` et `ConvertBack`. Le `Convert` méthode est appelée lorsqu’une valeur est transférée à partir de la source vers la cible ; la `ConvertBack` méthode est appelée pour les transferts à partir de la cible à la source dans `OneWayToSource` ou `TwoWay` liaisons :
+Ce petit problème a été résolu avec un *convertisseur de valeur*, également appelé convertisseur de *liaison*. Il s’agit d’une classe qui implémente l' `IValueConverter` interface, ce qui signifie qu’elle a deux méthodes nommées `Convert` et `ConvertBack` . La `Convert` méthode est appelée lorsqu’une valeur est transférée de la source à la cible ; la `ConvertBack` méthode est appelée pour les transferts de la cible vers la source dans les `OneWayToSource` `TwoWay` liaisons ou :
 
 ```csharp
 using System;
@@ -375,17 +378,17 @@ namespace XamlSamples
 }
 ```
 
-Le `ConvertBack` méthode ne joue aucun rôle dans ce programme, car les liaisons sont uniquement unidirectionnels à partir de la source vers cible.
+La `ConvertBack` méthode ne joue pas de rôle dans ce programme, car les liaisons ne sont qu’une seule façon de la source à la cible.
 
-Une liaison fait référence à un convertisseur de liaison avec le `Converter` propriété. Un convertisseur de liaison peut également accepter un paramètre spécifié avec le `ConverterParameter` propriété. Pour certains polyvalence, voici comment le multiplicateur est spécifié. Le convertisseur de liaison vérifie le paramètre de convertisseur pour valide `double` valeur.
+Une liaison fait référence à un convertisseur de liaison avec la `Converter` propriété. Un convertisseur de liaison peut également accepter un paramètre spécifié avec la `ConverterParameter` propriété. Pour une certaine polyvalence, il s’agit de la façon dont le multiplicateur est spécifié. Le convertisseur de liaison vérifie si le paramètre de convertisseur a une `double` valeur valide.
 
-Le convertisseur est instancié dans le dictionnaire de ressources afin qu’il peut être partagé entre plusieurs liaisons :
+Le convertisseur est instancié dans le dictionnaire de ressources afin de pouvoir être partagé entre plusieurs liaisons :
 
 ```xaml
 <local:DoubleToIntConverter x:Key="intConverter" />
 ```
 
-Liaisons de données de trois faire référence à cette instance unique. Notez que le `Binding` extension de balisage contient incorporé `StaticResource` extension de balisage :
+Trois liaisons de données référencent cette instance unique. Notez que l' `Binding` extension de balisage contient une `StaticResource` extension de balisage incorporée :
 
 ```xaml
 <Label Text="{Binding Color.R,
@@ -398,18 +401,18 @@ Voici le résultat :
 
 [![Liaison à une collection avec un DataTemplate et des convertisseurs](data-binding-basics-images/listview3.png)](data-binding-basics-images/listview3-large.png#lightbox)
 
-Le `ListView` est assez sophistiqué dans le traitement des modifications pouvant intervenir dynamiquement dans les données sous-jacentes, mais uniquement si vous effectuer certaines étapes. Si la collection d’éléments est affecté à la `ItemsSource` propriété du `ListView` modifications pendant l’exécution, qui est, si les éléments peuvent être ajoutés à ou supprimés de la collection : utiliser un `ObservableCollection` classe pour ces éléments. `ObservableCollection` implémente le `INotifyCollectionChanged` interface, et `ListView` installe un gestionnaire pour le `CollectionChanged` événement.
+Le `ListView` est assez sophistiqué pour gérer les modifications qui peuvent se produire dynamiquement dans les données sous-jacentes, mais uniquement si vous effectuez certaines étapes. Si la collection d’éléments assignée à la `ItemsSource` propriété des `ListView` modifications au moment de l’exécution (autrement dit, si des éléments peuvent être ajoutés ou supprimés de la collection), utilisez une `ObservableCollection` classe pour ces éléments. `ObservableCollection`implémente l' `INotifyCollectionChanged` interface et `ListView` installe un gestionnaire pour l' `CollectionChanged` événement.
 
-Si les propriétés des éléments eux-mêmes changent pendant l’exécution, les éléments dans la collection doivent implémenter le `INotifyPropertyChanged` interface et signaux des modifications aux valeurs de propriété à l’aide de la `PropertyChanged` événement. Cela est illustré dans la partie suivante de cette série, [partie 5. À partir de la liaison de données à MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md).
+Si les propriétés des éléments eux-mêmes sont modifiées pendant l’exécution, les éléments de la collection doivent implémenter l' `INotifyPropertyChanged` interface et les modifications de signal apportées aux valeurs de propriété à l’aide de l' `PropertyChanged` événement. Cela est illustré dans la partie suivante de cette série, [partie 5. De la liaison de données à MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md).
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
-Liaisons de données fournissent un mécanisme puissant pour la liaison des propriétés entre deux objets dans une page, ou entre des objets visuels et des données sous-jacentes. Mais lorsque l’application commence à fonctionner avec des sources de données, un modèle d’application populaires architecture commence à émerger comme un paradigme utile. Cela est couvert dans [partie 5. Liaisons de données à MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md).
+Les liaisons de données fournissent un mécanisme puissant pour lier les propriétés entre deux objets dans une page, ou entre des objets visuels et des données sous-jacentes. Toutefois, lorsque l’application commence à travailler avec des sources de données, un modèle architectural d’application populaire commence à émerger comme un paradigme utile. Ce sujet est abordé dans la [partie 5. Des liaisons de données à MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md).
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
-- [Partie 1. Bien démarrer avec XAML (exemple)](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
+- [Partie 1. Prise en main avec XAML (exemple)](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
 - [Partie 2. Syntaxe XAML essentielle (exemple)](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
 - [Partie 3. Extensions de balisage XAML (exemple)](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-- [Partie 5. À partir de la liaison de données à MVVM (exemple)](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)
+- [Partie 5. De la liaison de données à MVVM (exemple)](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)

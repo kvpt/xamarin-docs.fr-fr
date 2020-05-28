@@ -1,23 +1,15 @@
 ---
-title: 'Xamarin.Essentials : Capteur d’orientation'
-description: La classe Capteur d’orientation vous permet de surveiller l’orientation d’un appareil dans l’espace tridimensionnel.
-ms.assetid: F3091D93-E779-41BA-8696-23D296F2F6F5
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: 5423872da7966bc7e4bb88e278d76b709f114158
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70120716"
+titre : « » Xamarin.Essentials : OrientationSensor « » Description : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
 ---
-# <a name="xamarinessentials-orientationsensor"></a>Xamarin.Essentials : Capteur d’orientation
+# <a name="xamarinessentials-orientationsensor"></a>Xamarin.Essentials: OrientationSensor
 
 La classe **Capteur d’orientation** vous permet de surveiller l’orientation d’un appareil dans l’espace tridimensionnel.
 
 > [!NOTE]
-> Cette classe permet de déterminer l’orientation d’un appareil dans un espace en 3D. Si vous devez déterminer si l’affichage vidéo de l’appareil `Orientation` est `ScreenMetrics` en mode [`DeviceDisplay`](device-display.md) portrait ou paysage, utilisez la propriété de l’objet disponible à partir de la classe.
+> Cette classe permet de déterminer l’orientation d’un appareil dans un espace en 3D. Si vous devez déterminer si l’affichage vidéo de l’appareil est en mode portrait ou paysage, utilisez la `Orientation` propriété de l' `ScreenMetrics` objet disponible à partir de la [`DeviceDisplay`](device-display.md) classe.
 
 ## <a name="get-started"></a>Prise en main
 
@@ -74,7 +66,7 @@ public class OrientationSensorTest
 }
 ```
 
-`OrientationSensor`les lectures sont rapportées sous [`Quaternion`](xref:System.Numerics.Quaternion) la forme d’un qui décrit l’orientation de l’appareil en fonction de deux systèmes de coordonnées 3D :
+`OrientationSensor`les lectures sont reportées sous la forme d’un [`Quaternion`](xref:System.Numerics.Quaternion) qui décrit l’orientation de l’appareil en fonction de deux systèmes de coordonnées 3D :
 
 L’appareil (en général, un téléphone ou une tablette) dispose d’un système de coordonnées 3D avec les axes suivants :
 

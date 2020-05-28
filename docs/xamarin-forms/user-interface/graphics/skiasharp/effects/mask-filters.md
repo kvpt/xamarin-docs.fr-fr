@@ -1,49 +1,52 @@
 ---
-title: Filtres de masque de SkiaSharp
-description: Découvrez comment utiliser le filtre de masque pour créer un flou et autres effets alphabétiques.
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: 940422A1-8BC0-4039-8AD7-26C61320F858
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/27/2018
-ms.openlocfilehash: 36a8b5c32261d4f508c82feea1e6127574db6a20
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+title: ''
+description: ''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 10192e93d2e20f9aa58ca95dd81c07f560193905
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70198246"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136407"
 ---
-# <a name="skiasharp-mask-filters"></a>Filtres de masque de SkiaSharp
+# <a name="skiasharp-mask-filters"></a>Filtres de masque SkiaSharp
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-Masquage des filtres sont des effets qui manipulent la géométrie et le canal alpha des objets graphiques. Pour utiliser un filtre de masque, définissez la [ `MaskFilter` ](xref:SkiaSharp.SKPaint.MaskFilter) propriété de `SKPaint` à un objet de type [ `SKMaskFilter` ](xref:SkiaSharp.SKMaskFilter) que vous avez créé en appelant une de le `SKMaskFilter` des méthodes statiques.
+Les filtres de masque sont des effets qui manipulent la géométrie et le canal alpha des objets graphiques. Pour utiliser un filtre de masque, affectez à la propriété de la valeur d' [`MaskFilter`](xref:SkiaSharp.SKPaint.MaskFilter) `SKPaint` un objet de type [`SKMaskFilter`](xref:SkiaSharp.SKMaskFilter) que vous avez créé en appelant l’une des `SKMaskFilter` méthodes statiques.
 
-La meilleure façon de vous familiariser avec les filtres de masque est en expérimentant de ces méthodes statiques. Le filtre de masque plus utiles crée un effet de flou :
+La meilleure façon de se familiariser avec les filtres de masque consiste à expérimenter ces méthodes statiques. Le filtre de masque le plus utile crée un flou :
 
-![Exemple de flou](mask-filters-images/MaskFilterExample.png "flou exemple")
+![Exemple de flou](mask-filters-images/MaskFilterExample.png "Exemple de flou")
 
-C’est la seule fonctionnalité de filtre de masque décrite dans cet article. L’article suivant sur [ **filtres d’image SkiaSharp** ](image-filters.md) décrit également un effet de flou, vous préférerez peut-être à celui-ci. 
+Il s’agit de la seule fonctionnalité de filtre de masque décrite dans cet article. L’article suivant sur les [**filtres d’images SkiaSharp**](image-filters.md) décrit également un effet de flou que vous pouvez préférer à celui-ci. 
 
-La méthode statique [ `SKMaskFilter.CreateBlur` ](xref:SkiaSharp.SKMaskFilter.CreateBlur(SkiaSharp.SKBlurStyle,System.Single)) méthode présente la syntaxe suivante :
+La [`SKMaskFilter.CreateBlur`](xref:SkiaSharp.SKMaskFilter.CreateBlur(SkiaSharp.SKBlurStyle,System.Single)) méthode statique a la syntaxe suivante :
 
 ```csharp
 public static SKMaskFilter CreateBlur (SKBlurStyle blurStyle, float sigma);
 ```
 
-Surcharges autorise la spécification des indicateurs pour l’algorithme utilisé pour créer l’effet de flou et un rectangle afin d’éviter le flou dans des domaines qui seront couverts par d’autres objets graphiques.
+Les surcharges permettent de spécifier des indicateurs pour l’algorithme utilisé pour créer le flou, et un rectangle pour éviter les flous dans les zones qui seront couvertes par d’autres objets graphiques.
 
-[`SKBlurStyle`](xref:SkiaSharp.SKBlurStyle) est une énumération avec les membres suivants :
+[`SKBlurStyle`](xref:SkiaSharp.SKBlurStyle)est une énumération avec les membres suivants :
 
 - `Normal`
 - `Solid`
 - `Outer`
 - `Inner`
 
-Les effets de ces styles sont affichés dans les exemples ci-dessous. Le `sigma` paramètre spécifie l’étendue de l’effet de flou. Dans les versions antérieures de Skia, l’étendue de l’effet de flou était indiqué avec une valeur de rayon. Si une valeur de rayon est préférable pour votre application, il est une variable statique [ `SKMaskFilter.ConvertRadiusToSigma` ](xref:SkiaSharp.SKMaskFilter.ConvertRadiusToSigma*) méthode qui peut être converti à partir d’un à l’autre. La méthode multiplie le rayon par 0.57735 et ajoute 0,5.
+Les effets de ces styles sont présentés dans les exemples ci-dessous. Le `sigma` paramètre spécifie l’étendue du flou. Dans les versions antérieures de skia, l’étendue du flou était indiquée par une valeur de rayon. Si une valeur RADIUS est préférable pour votre application, il existe une méthode statique [`SKMaskFilter.ConvertRadiusToSigma`](xref:SkiaSharp.SKMaskFilter.ConvertRadiusToSigma*) qui peut effectuer une conversion de l’une à l’autre. La méthode multiplie le rayon par 0,57735 et ajoute 0,5.
 
-Le **Masque flou expérimenter** page dans le [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) exemple vous permet de faire des essais avec les styles de flou et les valeurs de sigma. Le fichier XAML instancie un `Picker` avec les quatre `SKBlurStyle` membres de l’énumération et une `Slider` pour spécifier la valeur sigma :
+La page de l' **expérience masquer le masque** de l’exemple [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) vous permet d’expérimenter les styles de flou et les valeurs Sigma. Le fichier XAML instancie un `Picker` avec les quatre `SKBlurStyle` membres de l’énumération et un `Slider` pour la spécification de la valeur Sigma :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -89,7 +92,7 @@ Le **Masque flou expérimenter** page dans le [ **SkiaSharpFormsDemos** ](https:
 </ContentPage>
 ```
 
-Le fichier code-behind utilise ces valeurs pour créer un `SKMaskFilter` objet et définissez-le sur le `MaskFilter` propriété d’un `SKPaint` objet. Cela `SKPaint` objet est utilisé pour dessiner une chaîne de texte et une image bitmap :
+Le fichier code-behind utilise ces valeurs pour créer un `SKMaskFilter` objet et le définir sur la `MaskFilter` propriété d’un `SKPaint` objet. Cet `SKPaint` objet est utilisé pour dessiner une chaîne de texte et une image bitmap :
 
 ```csharp
 public partial class MaskBlurExperimentPage : ContentPage
@@ -157,40 +160,40 @@ public partial class MaskBlurExperimentPage : ContentPage
 }
 ```
 
-Voici le programme en cours d’exécution sur iOS, Android et la plateforme Windows universelle (UWP) avec le `Normal` style et en augmentant le flou `sigma` niveaux :
+Voici le programme en cours d’exécution sur iOS, Android et le plateforme Windows universelle (UWP) avec le `Normal` style de flou et les `sigma` niveaux plus élevés :
 
-[![Masquer l’expérience flou - Normal](mask-filters-images/MaskBlurExperiment-Normal.png "Masque flou expérience - Normal")](mask-filters-images/MaskBlurExperiment-Normal-Large.png#lightbox)
+[![Expérience de masque flou-normal](mask-filters-images/MaskBlurExperiment-Normal.png "Expérience de masque flou-normal")](mask-filters-images/MaskBlurExperiment-Normal-Large.png#lightbox)
 
-Vous remarquerez que seuls les bords de l’image bitmap sont affectés par l’effet de flou. Le `SKMaskFilter` classe n’est pas l’effet correct à utiliser si vous souhaitez une image bitmap entière de flou. Pour ce faire, vous devrez utiliser le [ `SKImageFilter` ](xref:SkiaSharp.SKImageFilter) classe, comme indiqué dans l’article suivant sur [ **filtres d’image SkiaSharp**](image-filters.md).
+Vous remarquerez que seuls les bords de la bitmap sont affectés par le flou. La `SKMaskFilter` classe n’est pas l’effet correct à utiliser si vous souhaitez brouiller une image bitmap entière. Pour cela, vous souhaiterez utiliser la [`SKImageFilter`](xref:SkiaSharp.SKImageFilter) classe, comme décrit dans l’article suivant sur les [**filtres d’image SkiaSharp**](image-filters.md).
 
-Le texte est plus floue avec des valeurs croissantes de la `sigma` argument. Tester avec ce programme, vous remarquerez que pour un particulier `sigma` valeur, le flou est plus extrême sur le bureau Windows 10. Cette différence se produit parce que la densité en pixels est plus faible sur un écran de bureau que sur les appareils mobiles, et par conséquent, la hauteur en pixels est inférieure. Le `sigma` valeur est proportionnelle à une mesure flou, en pixels, c’est le cas pour une donnée `sigma` valeur, l’effet est plus extrême sur les écrans basse résolution. Dans une application de production, vous vous souhaitez probablement calculer un `sigma` valeur est proportionnelle à la taille du graphique. 
+Le texte est plus flou avec les valeurs d’incrément de l' `sigma` argument. Dans l’expérimentation de ce programme, vous remarquerez que pour une `sigma` valeur particulière, le flou est plus extrême sur le bureau Windows 10. Cette différence est due au fait que la densité de pixels est plus faible sur un moniteur d’ordinateur de bureau que sur les périphériques mobiles. par conséquent, la hauteur du texte en pixels est inférieure. La `sigma` valeur est proportionnelle à une étendue de flou en pixels. par conséquent, pour une `sigma` valeur donnée, l’effet est plus extrême sur les affichages de résolution inférieure. Dans une application de production, vous souhaiterez probablement calculer une `sigma` valeur proportionnelle à la taille du graphique. 
 
-Essayez plusieurs valeurs avant de choisir un niveau de flou qui correspond le mieux pour votre application. Par exemple, dans le **Masque flou expérience** page, essayez de définir `sigma` comme suit :
+Essayez plusieurs valeurs avant de régler sur un niveau de flou qui ressemble le mieux à votre application. Par exemple, dans la page de l' **expérience masquer le masque** , essayez de définir `sigma` comme suit :
 
 ```csharp
 sigma = paint.TextSize / 18;
 paint.MaskFilter = SKMaskFilter.CreateBlur(blurStyle, sigma);
 ```
 
-Maintenant le `Slider` n’a aucun effet, mais le degré de flou est cohérent entre les plateformes :
+À présent `Slider` , le n’a aucun effet, mais le degré de flou est cohérent entre les plateformes :
 
-[![Masquer l’expérience flou - cohérente](mask-filters-images/MaskBlurExperiment-Consistent.png "Masque flou expérience - cohérent")](mask-filters-images/MaskBlurExperiment-Consistent-Large.png#lightbox)
+[![Expérience de masque flou-cohérence](mask-filters-images/MaskBlurExperiment-Consistent.png "Expérience de masque flou-cohérence")](mask-filters-images/MaskBlurExperiment-Consistent-Large.png#lightbox)
 
-Les captures d’écran jusqu'à présent ont montré flou créé avec le `SKBlurStyle.Normal` membre d’énumération. Les captures d’écran suivantes montrent les effets de la `Solid`, `Outer`, et `Inner` flou styles :
+Toutes les captures d’écran jusqu’à présent ont montré un flou créé avec le membre de l' `SKBlurStyle.Normal` énumération. Les captures d’écran suivantes montrent les effets `Solid` des `Outer` styles de `Inner` flou, et :
 
-[![Masquer l’expérience de flou](mask-filters-images/MaskBlurExperiment.png "masquer l’expérience de flou")](mask-filters-images/MaskBlurExperiment-Large.png#lightbox)
+[![Expérience de masque flou](mask-filters-images/MaskBlurExperiment.png "Expérience de masque flou")](mask-filters-images/MaskBlurExperiment-Large.png#lightbox)
 
-La capture d’écran iOS `Solid` présente le style: Les caractères de texte sont toujours présents sous forme de traits noirs pleins et le flou est ajouté à l’extérieur de ces caractères de texte. 
+La capture d’écran iOS présente le `Solid` style : les caractères de texte sont toujours présents sous forme de traits noirs pleins et le flou est ajouté à l’extérieur de ces caractères de texte. 
 
-La capture d’écran Android au milieu montre `Outer` le style: Les traits de caractère eux-mêmes sont éliminés (comme c’est le cas de la bitmap) et le flou entoure l’espace vide où les caractères de texte sont apparus. 
+La capture d’écran Android au milieu montre le `Outer` style : les traits de caractère eux-mêmes sont éliminés (comme c’est le cas de la bitmap) et le flou entoure l’espace vide où les caractères de texte sont apparus. 
 
-La capture d’écran UWP de droite montre le `Inner` style. L’effet de flou est limitée à la zone normalement occupée par les caractères de texte.
+La capture d’écran UWP sur la droite montre le `Inner` style. Le flou est limité à la zone occupée normalement par les caractères de texte.
 
-Le [ **dégradé linéaire SkiaSharp** ](shaders/linear-gradient.md#transparency-and-gradients) article décrit un **réflexion dégradé** programme qui a utilisé un dégradé linéaire et une transformation pour imiter une réflexion d’une chaîne de texte :
+L’article [**gradient linéaire SkiaSharp**](shaders/linear-gradient.md#transparency-and-gradients) décrit un programme de **gradient de réflexion** qui utilisait un dégradé linéaire et une transformation pour imiter la réflexion d’une chaîne de texte :
 
-[![Dégradé de réflexion](shaders/linear-gradient-images/ReflectionGradient.png "dégradé de réflexion")](shaders/linear-gradient-images/ReflectionGradient-Large.png#lightbox)
+[![Dégradé de réflexion](shaders/linear-gradient-images/ReflectionGradient.png "Dégradé de réflexion")](shaders/linear-gradient-images/ReflectionGradient-Large.png#lightbox)
 
-Le **réflexion floues** page ajoute une instruction unique à ce code :
+La page **réflexion floue** ajoute une instruction unique à ce code :
 
 ```csharp
 public class BlurryReflectionPage : ContentPage
@@ -261,17 +264,17 @@ public class BlurryReflectionPage : ContentPage
 }
 ```
 
-La nouvelle instruction ajoute un filtre de flou pour le texte réfléchi est basé sur la taille du texte :
+La nouvelle instruction ajoute un filtre de flou pour le texte réfléchi qui est basé sur la taille du texte :
 
 ```csharp
 paint.MaskFilter = SKMaskFilter.CreateBlur(SKBlurStyle.Normal, paint.TextSize / 36);
 ```
 
-Ce filtre de flou provoque la réflexion pour paraître beaucoup plus réalistes :
+Ce filtre de flou rend la réflexion plus réaliste :
 
-[![Réflexion floue](mask-filters-images/BlurryReflection.png "réflexion floue")](mask-filters-images/BlurryReflection-Large.png#lightbox)
+[![Réflexion floue](mask-filters-images/BlurryReflection.png "Réflexion floue")](mask-filters-images/BlurryReflection-Large.png#lightbox)
 
 ## <a name="related-links"></a>Liens connexes
 
-- [API de SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
+- [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

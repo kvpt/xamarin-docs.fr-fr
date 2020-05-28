@@ -1,24 +1,27 @@
 ---
-title: Navigation dans Xamarin.Forms Shell
-description: Les applications Xamarin.Forms Shell peuvent profiter de l’expérience de navigation basée sur URI, qui autorise la navigation vers n’importe quelle page dans l’application, sans avoir à suivre une hiérarchie de navigation définie.
-ms.prod: xamarin
-ms.assetid: 57079D89-D1CB-48BD-9FEE-539CEC29EABB
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/02/2020
-ms.openlocfilehash: a40a2dc01c37773539089287d561f4c52ef7f6de
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+title: Xamarin.FormsNavigation dans le shell
+description: Xamarin.FormsLes applications de l’interpréteur de commandes peuvent utiliser une expérience de navigation basée sur un URI qui permet de naviguer vers n’importe quelle page de l’application, sans avoir à suivre une hiérarchie de navigation définie.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e67d49f300a8a98ec5685c33abf98f5b2ded08ed
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82516518"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84132390"
 ---
-# <a name="xamarinforms-shell-navigation"></a>Navigation dans Xamarin.Forms Shell
+# <a name="xamarinforms-shell-navigation"></a>Xamarin.FormsNavigation dans le shell
 
-[![Télécharger l'](~/media/shared/download.png) exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
-Xamarin.Forms Shell inclut une expérience de navigation basée sur URI qui utilise des itinéraires pour accéder à n’importe quelle page dans l’application, sans avoir à suivre une hiérarchie de navigation définie. De plus, l’utilisateur peut revenir en arrière sans avoir à visiter toutes les pages de la pile de navigation.
+Xamarin.FormsL’interpréteur de commandes comprend une expérience de navigation basée sur les URI qui utilise des itinéraires pour accéder à n’importe quelle page de l’application, sans devoir suivre une hiérarchie de navigation définie. De plus, l’utilisateur peut revenir en arrière sans avoir à visiter toutes les pages de la pile de navigation.
 
 `Shell` définit les propriétés de navigation associées suivantes :
 
@@ -27,12 +30,12 @@ Xamarin.Forms Shell inclut une expérience de navigation basée sur URI qui util
 - `CurrentState`, de type `ShellNavigationState` : l’état actuel de la navigation de l’élément `Shell`.
 - `Current`, de type `Shell` : un alias converti pour `Application.Current.MainPage`.
 
-Les `BackButtonBehavior`propriétés `CurrentItem`, et `CurrentState` sont sauvegardées par [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) des objets, ce qui signifie que ces propriétés peuvent être des cibles de liaisons de données.
+Les `BackButtonBehavior` `CurrentItem` Propriétés, et `CurrentState` sont sauvegardées par des [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) objets, ce qui signifie que ces propriétés peuvent être des cibles de liaisons de données.
 
 La navigation est effectuée en appelant la méthode `GoToAsync` à partir de la classe `Shell`. Juste avant la navigation, un événement `Navigating` est déclenché, puis un événement `Navigated` est déclenché à la fin de la navigation.
 
 > [!NOTE]
-> La navigation peut toujours être effectuée dans une application Xamarin.Forms Shell à l’aide de la propriété [Navigation](xref:Xamarin.Forms.NavigableElement.Navigation). Pour plus d’informations, consultez [Navigation hiérarchique](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md).
+> La navigation peut toujours être effectuée dans une Xamarin.Forms application Shell à l’aide de la propriété de [navigation](xref:Xamarin.Forms.NavigableElement.Navigation) . Pour plus d’informations, consultez [Navigation hiérarchique](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md).
 
 ## <a name="routes"></a>Itinéraires
 
@@ -176,7 +179,7 @@ Lorsque la page inscrite pour l’itinéraire `monkeys` s’affiche, l’accès 
 
 ### <a name="backwards-navigation"></a>Navigation vers l’arrière
 
-La navigation vers l’arrière peut être effectuée en spécifiant « .. » comme argument de `GotoAsync` la méthode :
+La navigation vers l’arrière peut être effectuée en spécifiant « .. » comme argument de la `GotoAsync` méthode :
 
 ```csharp
 await Shell.Current.GoToAsync("..");
@@ -208,7 +211,7 @@ Dans cet exemple, l’effet global consiste à parcourir deux fois en arrière, 
 
 Les formats d’itinéraires suivants ne sont pas valides :
 
-| Format | Explication |
+| Mettre en forme | Explication |
 | --- | --- |
 | *route* ou /*route* | Les itinéraires dans la hiérarchie visuelle ne peuvent pas être transmis en mode push à la pile de navigation. |
 | //*page* ou ///*page* | Actuellement, les itinéraires globaux ne peuvent pas représenter la seule page de la pile de navigation. Par conséquent, l’acheminement absolu pour les itinéraires globaux n’est pas pris en charge. |
@@ -302,9 +305,9 @@ async void OnCollectionViewSelectionChanged(object sender, SelectionChangedEvent
 }
 ```
 
-Cet exemple de code récupère l’éléphant actuellement sélectionné dans le [`CollectionView`](xref:Xamarin.Forms.CollectionView)et navigue vers l' `elephantdetails` itinéraire, en passant `elephantName` en tant que paramètre de requête. Notez que les paramètres de requête seront encodés au format URL pour la navigation, donc « Indian Elephant » deviendra « Indian%20Elephant ».
+Cet exemple de code récupère l’éléphant actuellement sélectionné dans le [`CollectionView`](xref:Xamarin.Forms.CollectionView) et navigue vers l' `elephantdetails` itinéraire, en passant `elephantName` en tant que paramètre de requête. Notez que les paramètres de requête seront encodés au format URL pour la navigation, donc « Indian Elephant » deviendra « Indian%20Elephant ».
 
-Pour recevoir des données, la classe qui représente la page vers laquelle la navigation est effectuée ou la classe de la [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)page doit être décorée avec `QueryPropertyAttribute` un pour chaque paramètre de requête :
+Pour recevoir des données, la classe qui représente la page vers laquelle la navigation est effectuée ou la classe de la page [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) doit être décorée avec un `QueryPropertyAttribute` pour chaque paramètre de requête :
 
 ```csharp
 [QueryProperty("Name", "name")]
@@ -321,7 +324,7 @@ public partial class ElephantDetailPage : ContentPage
 }
 ```
 
-Le premier argument de la `QueryPropertyAttribute` propriété spécifie le nom de la propriété qui recevra les données, avec le deuxième argument qui spécifie l’ID du paramètre de requête. Par conséquent, `QueryPropertyAttribute` dans l’exemple ci-dessus, `Name` spécifie que la propriété recevra les `name` données passées dans le paramètre de requête `GoToAsync` à partir de l’URI dans l’appel de méthode. La `Name` propriété, Then URL, décode la valeur du paramètre de requête et l’utilise pour [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) définir le de la page sur l’objet qui sera affiché.
+Le premier argument de la `QueryPropertyAttribute` propriété spécifie le nom de la propriété qui recevra les données, avec le deuxième argument qui spécifie l’ID du paramètre de requête. Par conséquent, `QueryPropertyAttribute` dans l’exemple ci-dessus, spécifie que la `Name` propriété recevra les données passées dans le `name` paramètre de requête à partir de l’URI dans l' `GoToAsync` appel de méthode. La `Name` propriété, Then URL, décode la valeur du paramètre de requête et l’utilise pour définir le [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) de la page sur l’objet qui sera affiché.
 
 > [!NOTE]
 > Une classe peut être configurée avec plusieurs objets `QueryPropertyAttribute`.
@@ -332,11 +335,11 @@ La classe `BackButtonBehavior` définit les propriétés suivantes, qui contrôl
 
 - `Command`, de type `ICommand` : exécuté lorsque l’utilisateur appuie sur le bouton Précédent.
 - `CommandParameter`, de type `object` : paramètre passé à la commande `Command`.
-- `IconOverride`, de type [`ImageSource`](xref:Xamarin.Forms.ImageSource), l’icône utilisée pour le bouton précédent.
+- `IconOverride`, de type [`ImageSource`](xref:Xamarin.Forms.ImageSource) , l’icône utilisée pour le bouton précédent.
 - `IsEnabled`, de type `boolean` : indique si le bouton Précédent est activé. La valeur par défaut est `true`.
 - `TextOverride`, de type `string` : texte utilisé pour le bouton Précédent.
 
-Toutes ces propriétés sont sauvegardées par [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) des objets, ce qui signifie que les propriétés peuvent être des cibles de liaisons de données.
+Toutes ces propriétés sont sauvegardées par des [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) objets, ce qui signifie que les propriétés peuvent être des cibles de liaisons de données.
 
 La classe `BackButtonBehavior` peut être consommée en définissant la propriété `Shell.BackButtonBehavior` jointe à un objet `BackButtonBehavior` :
 

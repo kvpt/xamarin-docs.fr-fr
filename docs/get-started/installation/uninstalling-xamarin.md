@@ -1,17 +1,20 @@
 ---
-title: Désinstaller Xamarin
-description: Ce document explique comment désinstaller Xamarin de Visual Studio sur Windows.
-ms.prod: xamarin
-ms.assetid: b83a85ec-842a-444c-8f82-c2464eda099b
-author: conceptdev
-ms.author: crdun
-ms.date: 01/22/2020
-ms.openlocfilehash: 4c9096edddeb00070aaabc3e93b283f2d55c1bfa
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 3e194e92e6e9b9067e40928bf9766e987bfe472c
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79304316"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136368"
 ---
 # <a name="uninstall-xamarin-from-visual-studio"></a>Désinstaller Xamarin de Visual Studio
 
@@ -39,7 +42,7 @@ Pour désinstaller Xamarin de Visual Studio 2019 et Visual Studio 2017, utilis
 
     [![](uninstalling-xamarin-images/vs2017-04-sml.png "Press the Modify button")](uninstalling-xamarin-images/vs2017-04.png#lightbox)
 
-Les composants Xamarin individuels (tels que le Profileur ou les cahiers de travail) peuvent être désinstallés en passant à **l’onglet composants individuels** à l’étape 3, et en décochant des composants spécifiques :
+Les composants Xamarin individuels (tels que le profileur ou les classeurs) peuvent être désinstallés en basculant vers l’onglet **composants individuels** à l’étape 3 et en dévérifiant des composants spécifiques :
 
 [![](uninstalling-xamarin-images/vs2017-components-sml.png "Uninstall individual components")](uninstalling-xamarin-images/vs2017-components.png#lightbox)
 

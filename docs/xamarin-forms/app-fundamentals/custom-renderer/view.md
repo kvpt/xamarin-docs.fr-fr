@@ -1,35 +1,38 @@
 ---
-title: Implémentation d’une vue
-description: Cet article explique comment créer un renderer personnalisé pour un contrôle personnalisé Xamarin.Forms qui est utilisé afin d’afficher un flux vidéo d’aperçu à partir de la caméra de l’appareil.
-ms.prod: xamarin
-ms.assetid: 915E25E7-4A6B-4F34-B7B4-07D5F4B240F2
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 05/10/2018
-ms.openlocfilehash: c93feb9527892b7b4c60c9d213361d19d3bc4b93
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e565a2bcddf292d37bc3dd07a8edbbabec709d8a
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70771725"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84133560"
 ---
 # <a name="implementing-a-view"></a>Implémentation d’une vue
 
-[![Télécharger](~/media/shared/download.png) l’échantillon Télécharger l’échantillon](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-view)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-view)
 
-_Les commandes personnalisées d’interface utilisateur de Xamarin.Forms doivent dériver de la classe View, qui est utilisée pour placer des mises en page et des contrôles sur l’écran. Cet article montre comment créer un rendu personnalisé pour un contrôle personnalisé Xamarin.Forms qui est utilisé pour afficher un flux vidéo de prévisualisation à partir de la caméra de l’appareil._
+_Les contrôles d’interface utilisateur personnalisés Xamarin. Forms doivent dériver de la classe d’affichage, qui est utilisée pour placer des mises en page et des contrôles à l’écran. Cet article explique comment créer un convertisseur personnalisé pour un Xamarin.Forms contrôle personnalisé utilisé pour afficher un flux vidéo de préversion à partir de l’appareil photo de l’appareil._
 
-Chaque vue Xamarin.Forms est accompagnée d’un renderer pour chaque plateforme qui crée une instance d’un contrôle natif. Lorsqu’une [`View`](xref:Xamarin.Forms.View) application Xamarin.Forms est rendue par `ViewRenderer` une application Xamarin.Forms dans iOS, la classe est instantanée, ce qui instantanément un contrôle natif. `UIView` Sur la plateforme Android, la classe `ViewRenderer` instancie un contrôle `View` natif. Sur la plateforme Windows universelle (UWP), la classe `ViewRenderer` instancie un contrôle `FrameworkElement` natif. Pour plus d’informations sur le renderer et les classes de contrôle natif auxquels les contrôles Xamarin.Forms sont mappés, consultez [Classes de base de renderer et contrôles natifs](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
+Chaque Xamarin.Forms vue possède un convertisseur associé pour chaque plateforme qui crée une instance d’un contrôle natif. Lorsqu’un [`View`](xref:Xamarin.Forms.View) est rendu par une Xamarin.Forms application dans iOS, la `ViewRenderer` classe est instanciée, qui à son tour instancie un `UIView` contrôle natif. Sur la plateforme Android, la classe `ViewRenderer` instancie un contrôle `View` natif. Sur la plateforme Windows universelle (UWP), la classe `ViewRenderer` instancie un contrôle `FrameworkElement` natif. Pour plus d’informations sur le convertisseur et les classes de contrôle natifs sur lesquelles les Xamarin.Forms contrôles sont mappés, consultez [classes de base de convertisseur et contrôles natifs](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
 
-Le diagramme suivant illustre la [`View`](xref:Xamarin.Forms.View) relation entre les contrôles natifs correspondants qui la mettent en œuvre :
+Le diagramme suivant illustre la relation entre le [`View`](xref:Xamarin.Forms.View) et les contrôles natifs correspondants qui l’implémentent :
 
 ![](view-images/view-classes.png "Relationship Between the View Class and its Implementing Native Classes")
 
-Le processus de rendu peut être utilisé pour implémenter des [`View`](xref:Xamarin.Forms.View) personnalisations spécifiques à la plate-forme en créant un rendu personnalisé pour une sur chaque plate-forme. Le processus pour y parvenir est le suivant :
+Le processus de rendu peut être utilisé pour implémenter des personnalisations spécifiques à la plateforme en créant un convertisseur personnalisé pour un [`View`](xref:Xamarin.Forms.View) sur chaque plateforme. Le processus pour y parvenir est le suivant :
 
-1. [Créez](#Creating_the_Custom_Control) un contrôle personnalisé Xamarin.Forms.
-1. [Consommez](#Consuming_the_Custom_Control) le contrôle personnalisé à partir de Xamarin.Forms.
+1. [Créer](#Creating_the_Custom_Control) un Xamarin.Forms contrôle personnalisé.
+1. [Utilise](#Consuming_the_Custom_Control) le contrôle personnalisé à partir de Xamarin.Forms .
 1. [Créez](#Creating_the_Custom_Renderer_on_each_Platform) le renderer personnalisé pour le contrôle sur chaque plateforme.
 
 Chaque élément va maintenant être abordé tour à tour, afin d’implémenter un renderer `CameraPreview` qui affiche un flux vidéo d’aperçu à partir de la caméra de l’appareil. Le fait d’appuyer sur le flux vidéo l’arrête et le démarre.
@@ -38,7 +41,7 @@ Chaque élément va maintenant être abordé tour à tour, afin d’implémenter
 
 ## <a name="creating-the-custom-control"></a>Création du contrôle personnalisé
 
-Un contrôle personnalisé peut être créé [`View`](xref:Xamarin.Forms.View) en sous-classant la classe, comme le montre l’exemple de code suivant :
+Un contrôle personnalisé peut être créé en sous-classant la [`View`](xref:Xamarin.Forms.View) classe, comme indiqué dans l’exemple de code suivant :
 
 ```csharp
 public class CameraPreview : View
@@ -113,11 +116,11 @@ Un renderer personnalisé peut maintenant être ajouté à chaque projet d’app
 Le processus de création de la classe de renderer personnalisé est le suivant :
 
 1. Créez une sous-classe de la classe `ViewRenderer<T1,T2>` qui restitue le contrôle personnalisé. Le premier argument de type doit être le contrôle personnalisé auquel le renderer est destiné ; dans le cas présent, `CameraPreview`. Le deuxième argument de type doit être le contrôle natif qui implémentera le contrôle personnalisé.
-1. Remplacez la méthode `OnElementChanged` qui restitue le contrôle personnalisé et écrivez une logique pour le personnaliser. Cette méthode est appelée lors de la création du contrôle Xamarin.Forms correspondant.
-1. Ajoutez un attribut `ExportRenderer` à la classe de renderer personnalisé afin de spécifier qu’il sera utilisé pour restituer le contrôle personnalisé Xamarin.Forms. Cet attribut est utilisé pour inscrire le renderer personnalisé auprès de Xamarin.Forms.
+1. Remplacez la méthode `OnElementChanged` qui restitue le contrôle personnalisé et écrivez une logique pour le personnaliser. Cette méthode est appelée lorsque le Xamarin.Forms contrôle correspondant est créé.
+1. Ajoutez un `ExportRenderer` attribut à la classe de convertisseur personnalisée pour spécifier qu’il sera utilisé pour restituer le Xamarin.Forms contrôle personnalisé. Cet attribut est utilisé pour inscrire le convertisseur personnalisé avec Xamarin.Forms .
 
 > [!NOTE]
-> Pour la plupart des éléments Xamarin.Forms, il est facultatif de fournir un renderer personnalisé dans chaque projet de plateforme. Si un renderer personnalisé n’est pas inscrit, le renderer par défaut de la classe de base du contrôle est utilisé. Toutefois, les renderers personnalisés sont nécessaires dans chaque projet de plateforme lors du rendu d’un élément [View](xref:Xamarin.Forms.View).
+> Pour la plupart des Xamarin.Forms éléments, il est facultatif de fournir un convertisseur personnalisé dans chaque projet de plateforme. Si un renderer personnalisé n’est pas inscrit, le renderer par défaut de la classe de base du contrôle est utilisé. Toutefois, les renderers personnalisés sont nécessaires dans chaque projet de plateforme lors du rendu d’un élément [View](xref:Xamarin.Forms.View).
 
 Le diagramme suivant illustre les responsabilités de chaque projet dans l’exemple d’application ainsi que les relations qu’ils entretiennent les uns avec les autres :
 
@@ -127,9 +130,9 @@ Le contrôle personnalisé `CameraPreview` est restitué par des classes de rend
 
 ![](view-images/screenshots.png "CameraPreview on each Platform")
 
-La classe `ViewRenderer` expose la méthode `OnElementChanged`, qui est appelée quand le contrôle personnalisé Xamarin.Forms est créé pour restituer le contrôle natif correspondant. Cette méthode prend un paramètre `ElementChangedEventArgs` qui contient les propriétés `OldElement` et `NewElement`. Ces propriétés représentent respectivement l’élément Xamarin.Forms auquel le renderer *était* attaché et l’élément Xamarin.Forms auquel le renderer *est* attaché. Dans l’exemple d’application, la propriété `OldElement` sera `null` et la propriété `NewElement` contiendra une référence à l’instance `CameraPreview`.
+La `ViewRenderer` classe expose la `OnElementChanged` méthode, qui est appelée lorsque le Xamarin.Forms contrôle personnalisé est créé pour restituer le contrôle natif correspondant. Cette méthode prend un paramètre `ElementChangedEventArgs` qui contient les propriétés `OldElement` et `NewElement`. Ces propriétés représentent l' Xamarin.Forms élément auquel le convertisseur *a été* attaché, et l' Xamarin.Forms élément auquel le convertisseur *est* attaché, respectivement. Dans l’exemple d’application, la propriété `OldElement` sera `null` et la propriété `NewElement` contiendra une référence à l’instance `CameraPreview`.
 
-Une version substituée de la méthode `OnElementChanged`, dans chaque classe de renderer spécifique à la plateforme, est l’emplacement où effectuer l’instanciation et la personnalisation du contrôle natif. La méthode `SetNativeControl` doit être utilisée pour instancier le contrôle natif, et cette méthode affecte également la référence de contrôle à la propriété `Control`. De plus, une référence au contrôle Xamarin.Forms en cours de restitution peut être obtenue par le biais de la propriété `Element`.
+Une version substituée de la méthode `OnElementChanged`, dans chaque classe de renderer spécifique à la plateforme, est l’emplacement où effectuer l’instanciation et la personnalisation du contrôle natif. La méthode `SetNativeControl` doit être utilisée pour instancier le contrôle natif, et cette méthode affecte également la référence de contrôle à la propriété `Control`. En outre, une référence au Xamarin.Forms contrôle rendu peut être obtenue via la `Element` propriété.
 
 Dans certains cas, la méthode `OnElementChanged` peut être appelée plusieurs fois. Ainsi, pour éviter les fuites de mémoire, vous devez être vigilant au moment de l’instanciation d’un nouveau contrôle natif. L’approche à utiliser lors de l’instanciation d’un nouveau contrôle natif dans un renderer personnalisé est indiquée dans l’exemple de code suivant :
 
@@ -152,12 +155,12 @@ protected override void OnElementChanged (ElementChangedEventArgs<NativeListView
 }
 ```
 
-Un nouveau contrôle natif doit uniquement être instancié une seule fois, quand la propriété `Control` a la valeur `null`. Par ailleurs, vous devez uniquement créer et configurer le contrôle et vous abonner aux gestionnaires d’événements quand le renderer personnalisé est attaché à un nouvel élément Xamarin.Forms. De même, vous devez vous désabonner de tous les gestionnaires d’événements auxquels vous vous êtes abonné uniquement quand l’élément auquel le renderer est attaché change. Le choix de cette approche permet de créer un renderer personnalisé performant qui ne subit pas de fuites de mémoire.
+Un nouveau contrôle natif doit uniquement être instancié une seule fois, quand la propriété `Control` a la valeur `null`. En outre, le contrôle doit uniquement être créé, configuré et les gestionnaires d’événements auxquels il est abonné lorsque le convertisseur personnalisé est attaché à un nouvel Xamarin.Forms élément. De même, vous devez vous désabonner de tous les gestionnaires d’événements auxquels vous vous êtes abonné uniquement quand l’élément auquel le renderer est attaché change. Le choix de cette approche permet de créer un renderer personnalisé performant qui ne subit pas de fuites de mémoire.
 
 > [!IMPORTANT]
 > La méthode `SetNativeControl` doit uniquement être appelée si `e.NewElement` n’est pas `null`.
 
-Chaque classe de renderer personnalisé est décorée avec un attribut `ExportRenderer` qui inscrit le renderer auprès de Xamarin.Forms. L’attribut accepte deux paramètres : le nom de type du contrôle personnalisé Xamarin.Forms en cours de restitution et le nom de type du renderer personnalisé. Le préfixe `assembly` de l’attribut spécifie que l’attribut s’applique à la totalité de l’assembly.
+Chaque classe de convertisseur personnalisé est décorée avec un `ExportRenderer` attribut qui inscrit le convertisseur auprès de Xamarin.Forms . L’attribut accepte deux paramètres : le nom de type du Xamarin.Forms contrôle personnalisé rendu et le nom de type du convertisseur personnalisé. Le préfixe `assembly` de l’attribut spécifie que l’attribut s’applique à la totalité de l’assembly.
 
 Les sections suivantes décrivent l’implémentation de chaque classe de renderer personnalisé spécifique à la plateforme.
 
@@ -206,7 +209,7 @@ namespace CustomRenderer.iOS
 }
 ```
 
-Sous réserve que la propriété `Control` ait la valeur `null`, la méthode `SetNativeControl` est appelée pour instancier un nouveau contrôle `UICameraPreview` et lui affecter une référence à la propriété `Control`. Le contrôle `UICameraPreview` est un contrôle personnalisé spécifique à la plateforme qui utilise les API `AVCapture` pour fournir le flux de l’aperçu de la caméra. Il expose un événement `Tapped` qui est géré par la méthode `OnCameraPreviewTapped` pour arrêter et démarrer l’aperçu vidéo quand l’utilisateur appuie dessus. L’utilisateur s’abonne à l’événement `Tapped` quand le renderer personnalisé est associé à un nouvel élément Xamarin.Forms et s’en désabonne uniquement quand l’élément auquel le renderer est attaché change.
+Sous réserve que la propriété `Control` ait la valeur `null`, la méthode `SetNativeControl` est appelée pour instancier un nouveau contrôle `UICameraPreview` et lui affecter une référence à la propriété `Control`. Le contrôle `UICameraPreview` est un contrôle personnalisé spécifique à la plateforme qui utilise les API `AVCapture` pour fournir le flux de l’aperçu de la caméra. Il expose un événement `Tapped` qui est géré par la méthode `OnCameraPreviewTapped` pour arrêter et démarrer l’aperçu vidéo quand l’utilisateur appuie dessus. L' `Tapped` événement est abonné à lorsque le convertisseur personnalisé est attaché à un nouvel Xamarin.Forms élément, et n’est pas abonné uniquement lorsque l’élément auquel le convertisseur est attaché est associé aux modifications.
 
 ### <a name="creating-the-custom-renderer-on-android"></a>Création du renderer personnalisé sur Android
 
@@ -265,7 +268,7 @@ namespace CustomRenderer.Droid
 }
 ```
 
-Sous réserve que la propriété `Control` ait la valeur `null`, la méthode `SetNativeControl` est appelée pour instancier un nouveau contrôle `CameraPreview` et affecter une référence à ce dernier à la propriété `Control`. Le contrôle `CameraPreview` est un contrôle personnalisé spécifique à la plateforme qui utilise l’API `Camera` afin de fournir le flux d’aperçu de la caméra. Le contrôle `CameraPreview` est ensuite configuré, sous réserve que le renderer personnalisé soit attaché à un nouvel élément Xamarin.Forms. Cette configuration implique la création d’un objet `Camera` natif pour accéder à une caméra matérielle particulière et l’inscription d’un gestionnaire d’événements pour traiter l’événement `Click`. À son tour, ce gestionnaire arrête et démarre l’aperçu vidéo quand l’utilisateur appuie dessus. L’utilisateur se désabonne de l’événement `Click` si l’élément Xamarin.Forms auquel le renderer est attaché change.
+Sous réserve que la propriété `Control` ait la valeur `null`, la méthode `SetNativeControl` est appelée pour instancier un nouveau contrôle `CameraPreview` et affecter une référence à ce dernier à la propriété `Control`. Le contrôle `CameraPreview` est un contrôle personnalisé spécifique à la plateforme qui utilise l’API `Camera` afin de fournir le flux d’aperçu de la caméra. Le `CameraPreview` contrôle est ensuite configuré, à condition que le convertisseur personnalisé soit attaché à un nouvel Xamarin.Forms élément. Cette configuration implique la création d’un objet `Camera` natif pour accéder à une caméra matérielle particulière et l’inscription d’un gestionnaire d’événements pour traiter l’événement `Click`. À son tour, ce gestionnaire arrête et démarre l’aperçu vidéo quand l’utilisateur appuie dessus. L' `Click` événement est désabonné de si l' Xamarin.Forms élément auquel le convertisseur est attaché change.
 
 ### <a name="creating-the-custom-renderer-on-uwp"></a>Création du renderer personnalisé sur UWP
 
@@ -323,14 +326,14 @@ namespace CustomRenderer.UWP
 }
 ```
 
-Sous réserve que la propriété `Control` ait la valeur `null`, un nouveau `CaptureElement` est instancié et la méthode `SetupCamera` est appelée, entraînant l’utilisation de l’API `MediaCapture` afin de fournir le flux d’aperçu à partir de la caméra. La méthode `SetNativeControl` est ensuite appelée pour affecter une référence à l’instance `CaptureElement` à la propriété `Control`. Le contrôle `CaptureElement` expose un événement `Tapped` qui est géré par la méthode `OnCameraPreviewTapped` pour arrêter et démarrer l’aperçu vidéo quand l’utilisateur appuie dessus. L’utilisateur s’abonne à l’événement `Tapped` quand le renderer personnalisé est associé à un nouvel élément Xamarin.Forms et s’en désabonne uniquement quand l’élément auquel le renderer est attaché change.
+Sous réserve que la propriété `Control` ait la valeur `null`, un nouveau `CaptureElement` est instancié et la méthode `SetupCamera` est appelée, entraînant l’utilisation de l’API `MediaCapture` afin de fournir le flux d’aperçu à partir de la caméra. La méthode `SetNativeControl` est ensuite appelée pour affecter une référence à l’instance `CaptureElement` à la propriété `Control`. Le contrôle `CaptureElement` expose un événement `Tapped` qui est géré par la méthode `OnCameraPreviewTapped` pour arrêter et démarrer l’aperçu vidéo quand l’utilisateur appuie dessus. L' `Tapped` événement est abonné à lorsque le convertisseur personnalisé est attaché à un nouvel Xamarin.Forms élément, et n’est pas abonné uniquement lorsque l’élément auquel le convertisseur est attaché est associé aux modifications.
 
 > [!NOTE]
 > Il est important d’arrêter et de supprimer les objets qui fournissent un accès à la caméra dans une application UWP. Si vous ne le faites pas, il peut se produire une interférence avec d’autres applications qui tentent d’accéder à la caméra de l’appareil. Pour plus d’informations, consultez [Afficher l’aperçu de la caméra](/windows/uwp/audio-video-camera/simple-camera-preview-access/).
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
-Cet article a montré comment créer un renderer personnalisé pour un contrôle personnalisé Xamarin.Forms qui est utilisé afin d’afficher un aperçu de flux vidéo à partir de la caméra de l’appareil. Les commandes personnalisées d’interface utilisateur [`View`](xref:Xamarin.Forms.View) de Xamarin.Forms doivent dériver de la classe, qui est utilisée pour placer des mises en page et des contrôles sur l’écran.
+Cet article a montré comment créer un convertisseur personnalisé pour un Xamarin.Forms contrôle personnalisé utilisé pour afficher un flux vidéo de préversion à partir de l’appareil photo de l’appareil. Xamarin.Formsles contrôles d’interface utilisateur personnalisés doivent dériver de la [`View`](xref:Xamarin.Forms.View) classe, qui est utilisée pour placer des dispositions et des contrôles à l’écran.
 
 ## <a name="related-links"></a>Liens connexes
 

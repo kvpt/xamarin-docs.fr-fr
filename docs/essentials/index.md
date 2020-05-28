@@ -1,34 +1,37 @@
 ---
 title: Xamarin.Essentials
-description: Ce document contient des liens vers les documentations concernant Xamarin.Essentials. Xamarin.Essentials rassemble les API natives en une API multiplateforme unique pour les applications mobiles.
-ms.assetid: 4EDC9897-5FD1-44CA-A26D-2E5AB472C99A
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 02/26/2020
-ms.openlocfilehash: 1d68203e80e0bc28e7060d5873c122db8c2ff960
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+description: Ce document contient des liens vers les différents guides qui décrivent Xamarin.Essentials , qui fournit aux développeurs des API multiplateforme pour leurs applications mobiles.
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 27421ecc8b089321cd2331829d87365f3cf37a65
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "80387203"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139462"
 ---
-# <a name="xamarinessentials"></a>Xamarin.Essentials
+# Xamarin.Essentials
 
-Xamarin.Essentials fournit aux développeurs des API inter-plateformes pour leurs applications mobiles.
+Xamarin.Essentialsfournit aux développeurs des API multiplateforme pour leurs applications mobiles.
 
-Android, iOS et UWP offrent des API de plateforme et de système d’exploitation unique auxquelles les développeurs ont accès dans C# en tirant parti de Xamarin. Xamarin.Essentials fournit une API inter-plateformes unique qui fonctionne avec n’importe quelle application Xamarin.Forms, Android, iOS ou UWP qui est accessible à partir du code partagé, quel que soit le mode de création de l’interface utilisateur.
+Android, iOS et UWP offrent des API de plateforme et de système d’exploitation unique auxquelles les développeurs ont accès dans C# en tirant parti de Xamarin. Xamarin.Essentialsfournit une API multiplateforme unique qui fonctionne avec n’importe quelle Xamarin.Forms application Android, iOS ou UWP accessible à partir de code partagé, quelle que soit la façon dont l’interface utilisateur est créée.
 
-## <a name="get-started-with-xamarinessentials"></a>[Bien démarrer avec Xamarin.Essentials](get-started.md?context=xamarin/xamarin-forms)
+## <a name="get-started-with-xamarinessentialsget-startedmdcontextxamarinxamarin-forms"></a>[Prise en main deXamarin.Essentials](get-started.md?context=xamarin/xamarin-forms)
 
-Suivez le [guide de démarrage](get-started.md) pour installer le paquet NuGet **Xamarin.Essentials** dans votre application Xamarin.Forms, Android, iOS ou les projets UWP.
+Suivez le [Guide de mise](get-started.md) en route pour installer le **Xamarin.Essentials** package NuGet dans vos projets existants ou nouveaux Xamarin.Forms , Android, iOS ou UWP.
 
 ## <a name="feature-guides"></a>Guides des fonctionnalités
 
-Les pages suivantes vous guideront pour intégrer les fonctionnalités de Xamarin.Essentials dans vos applications :
+Suivez les guides pour intégrer ces Xamarin.Essentials fonctionnalités dans vos applications :
 
 * [Accéléromètre](accelerometer.md?context=xamarin/xamarin-forms) : obtenir l’accélération de l’appareil autour de trois axes.
 * [Informations sur l’application](app-information.md?context=xamarin/xamarin-forms) : obtenir des informations générales sur l’application.
-* [Thème de l’application](app-theme.md?context=xamarin/xamarin-forms) - Détecter le thème actuel demandé pour l’application.
+* [Thème d’application](app-theme.md?context=xamarin/xamarin-forms) : détectez le thème actuel demandé pour l’application.
 * [Baromètre](barometer.md?context=xamarin/xamarin-forms) : analyser les modifications de la pression sur le baromètre.
 * [Batterie](battery.md?context=xamarin/xamarin-forms) : obtenir le niveau, la source et l’état de la batterie.
 * [Presse-papiers](clipboard.md?context=xamarin/xamarin-forms) : définir ou lire rapidement et facilement du texte dans le Presse-papiers.
@@ -50,7 +53,7 @@ Les pages suivantes vous guideront pour intégrer les fonctionnalités de Xamari
 * [Cartes](maps.md?content=xamarin/xamarin-forms) : ouvrir l’application de mappage à un emplacement spécifique.
 * [Ouvrir le navigateur](open-browser.md?context=xamarin/xamarin-forms) : ouvrir rapidement et facilement un navigateur sur un site web spécifique.
 * [Capteur d’orientation](orientation-sensor.md?context=xamarin/xamarin-forms) : récupérer l’orientation de l’appareil dans un espace tridimensionnel.
-* [Autorisations](permissions.md?context=xamarin/xamarin-forms) - Vérifier et demander des autorisations aux utilisateurs.
+* [Autorisations](permissions.md?context=xamarin/xamarin-forms) : Vérifiez et demandez des autorisations aux utilisateurs.
 * [Numéroteur téléphonique](phone-dialer.md?context=xamarin/xamarin-forms) : ouvrir le Numéroteur téléphonique.
 * [Extensions de plateforme](platform-extensions.md?context=xamarin/xamarin-forms) : méthodes d’assistance pour convertir Rect, Size et Point.
 * [Préférences](preferences.md?context=xamarin/xamarin-forms) : ajouter rapidement et facilement des préférences persistantes.
@@ -61,16 +64,16 @@ Les pages suivantes vous guideront pour intégrer les fonctionnalités de Xamari
 * [Convertisseurs d’unités](unit-converters.md?context=xamarin/xamarin-forms) : méthodes d’assistance pour convertir des unités.
 * [Suivi des versions](version-tracking.md?context=xamarin/xamarin-forms) : effectuer le suivi de la version des applications et des numéros de build.
 * [Vibreur](vibrate.md?context=xamarin/xamarin-forms) : faire vibrer l’appareil.
-* [Authentification Web](web-authenticator.md?context=xamarin/xamarin-forms) - Démarrer les flux d’authentification web et écouter un rappel.
+* [Web Authenticator](web-authenticator.md?context=xamarin/xamarin-forms) -démarrer des flux d’authentification Web et écouter un rappel.
 
-## <a name="troubleshooting"></a>[Dépannage](troubleshooting.md?context=xamarin/xamarin-forms)
+## <a name="troubleshooting"></a>[Résolution des problèmes](troubleshooting.md?context=xamarin/xamarin-forms)
 
 Trouvez de l’aide si vous rencontrez des problèmes.
 
 ## <a name="release-notes"></a>[Notes de publication](https://docs.microsoft.com/xamarin/essentials/release-notes/)
 
-Consultez les notes de publication complètes pour chaque version de Xamarin.Essentials.
+Recherchez des notes de publication complètes pour chaque version de Xamarin.Essentials .
 
-## <a name="api-documentation"></a>[Documentation de l’API](xref:Xamarin.Essentials)
+## <a name="api-documentation"></a>[Documentation sur les API](xref:Xamarin.Essentials)
 
-Parcourez la documentation de l’API pour découvrir toutes les fonctionnalités de Xamarin.Essentials.
+Parcourez la documentation de l’API pour chaque fonctionnalité de Xamarin.Essentials .

@@ -1,32 +1,35 @@
 ---
-title: Hiérarchie des classes des contrôles Xamarin. Forms
-description: Les développeurs doivent être familiarisés avec la hiérarchie de types utilisée pour créer l’interface utilisateur d’une application Xamarin. Forms.
-ms.prod: xamarin
-ms.assetid: C89E6B98-464D-4BBE-BF11-13A5FCBBF420
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/07/2020
-ms.openlocfilehash: 7c55ed3082a031352a8eefb8ef579060a9dd6404
-ms.sourcegitcommit: 4899cf4aaa73aa56c48f7ee2339c0af8112e1feb
+title: Xamarin.FormsHiérarchie des classes de contrôles
+description: Les développeurs doivent être familiarisés avec la hiérarchie de types utilisée pour créer l’interface utilisateur d’une Xamarin.Forms application.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0087e2bb81c7c9204a782519a9eeb9891adc297a
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75717294"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138635"
 ---
-# <a name="xamarinforms-controls-class-hierarchy"></a>Hiérarchie des classes des contrôles Xamarin. Forms
+# <a name="xamarinforms-controls-class-hierarchy"></a>Xamarin.FormsHiérarchie des classes de contrôles
 
-Xamarin. Forms est constitué de centaines de types, sur plusieurs espaces de noms. Les développeurs doivent être plus familiarisés avec la hiérarchie de types utilisée pour créer l’interface utilisateur d’une application Xamarin. Forms, qui réside dans l’espace de noms `Xamarin.Forms`.
+Xamarin.Formsest constitué de centaines de types, sur plusieurs espaces de noms. Les développeurs doivent être plus familiarisés avec la hiérarchie de types utilisée pour créer l’interface utilisateur d’une Xamarin.Forms application, qui réside dans l' `Xamarin.Forms` espace de noms.
 
-Ces types peuvent être divisés en pages, dispositions, vues et cellules. Une page Xamarin. Forms occupe généralement la totalité de l’écran, et tous les types de pages dérivent de la classe [`Page`](xref:Xamarin.Forms.Page) . Les pages contiennent généralement une disposition, et tous les types de disposition dérivent de la classe [`Layout`](xref:Xamarin.Forms.Layout) . Une disposition contient généralement des vues et éventuellement d’autres dispositions, et tous les types d’affichages dérivent finalement de la classe [`View`](xref:Xamarin.Forms.View) . Enfin, les cellules sont des contrôles spécialisés qui sont utilisés dans l’affichage des données dans les contrôles [`TableView`](xref:Xamarin.Forms.TableView) et [`ListView`](xref:Xamarin.Forms.ListView) . Les pages, les dispositions, les vues et les cellules sont toutes dérivées de la classe [`Element`](xref:Xamarin.Forms.Element) .
+Ces types peuvent être divisés en pages, dispositions, vues et cellules. Une Xamarin.Forms page occupe généralement la totalité de l’écran, et tous les types de pages dérivent de la [`Page`](xref:Xamarin.Forms.Page) classe. Les pages contiennent généralement une disposition, et tous les types de disposition dérivent de la [`Layout`](xref:Xamarin.Forms.Layout) classe. Une disposition contient généralement des vues et éventuellement d’autres dispositions, et tous les types d’affichages dérivent finalement de la [`View`](xref:Xamarin.Forms.View) classe. Enfin, les cellules sont des contrôles spécialisés qui sont utilisés dans les données d’affichage des [`TableView`](xref:Xamarin.Forms.TableView) [`ListView`](xref:Xamarin.Forms.ListView) contrôles et. Les pages, les dispositions, les vues et les cellules sont finalement dérivés de la [`Element`](xref:Xamarin.Forms.Element) classe.
 
-Le diagramme de classes suivant illustre la hiérarchie des types généralement utilisés pour créer une interface utilisateur dans Xamarin. Forms :
+Le diagramme de classes suivant illustre la hiérarchie des types généralement utilisés pour créer une interface utilisateur dans Xamarin.Forms :
 
-[![Diagramme de classes des contrôles Xamarin. Forms](class-hierarchy-images/class-diagram.png "Diagramme de classes des contrôles Xamarin. Forms")](class-hierarchy-images/class-diagram-large.png#lightbox "Diagramme de classes des contrôles Xamarin. Forms")
+[![Xamarin.FormsDiagramme de classes de contrôles](class-hierarchy-images/class-diagram.png "[! Opérationnel. NO-LOC (Xamarin. Forms)] diagrammes de classes de contrôles")](class-hierarchy-images/class-diagram-large.png#lightbox "[! Opérationnel. NO-LOC (Xamarin. Forms)] diagrammes de classes de contrôles")
 
 > [!NOTE]
 > Une version haute résolution du diagramme de classes peut être téléchargée à partir d' [ici](class-hierarchy-images/class-diagram-high-resolution.png). Toutefois, Notez que le diagramme n’affiche qu’un seul type d’interpréteur de commandes.
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Référence des contrôles Xamarin. Forms](~/xamarin-forms/user-interface/controls/index.md)
+- [Xamarin.FormsRéférence des contrôles](~/xamarin-forms/user-interface/controls/index.md)

@@ -1,66 +1,69 @@
 ---
-title: Curseur de Xamarin.Forms
-description: Le curseur de Xamarin.Forms est une barre horizontale qui peut être manipulée par l’utilisateur de sélectionner une valeur double à partir d’une plage continue. Cet article explique comment utiliser la classe de curseur pour sélectionner une valeur à partir d’une plage de valeurs continues.
-ms.prod: xamarin
-ms.assetid: 36B1C645-26E0-4874-B6B6-BDBF77662878
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 02/27/2019
-ms.openlocfilehash: ddb25a1f01f91b627fc0c370f7f21e2a797b72cb
-ms.sourcegitcommit: 191f1f3b13a14e2afadcb95126c5f653722f126f
+title: Xamarin.FormsCurseur
+description: Le Xamarin.Forms curseur est une barre horizontale qui peut être manipulée par l’utilisateur pour sélectionner une valeur double dans une plage continue. Cet article explique comment utiliser la classe Slider pour sélectionner une valeur dans une plage de valeurs continues.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1cde999e6781f019b6abceee82caf259e1e5a710
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/30/2019
-ms.locfileid: "75545580"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84140151"
 ---
-# <a name="xamarinforms-slider"></a>Curseur de Xamarin.Forms
+# <a name="xamarinforms-slider"></a>Xamarin.FormsCurseur
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)
 
-_Utilisez un curseur de sélection à partir d’une plage de valeurs continues._
+_Utilisez un curseur pour la sélection à partir d’une plage de valeurs continues._
 
-Xamarin.Forms [ `Slider` ](xref:Xamarin.Forms.Slider) est une barre horizontale qui peut être manipulée par l’utilisateur de sélectionner un `double` valeur à partir d’une plage continue.
+Xamarin.Forms [`Slider`](xref:Xamarin.Forms.Slider) Est une barre horizontale qui peut être manipulée par l’utilisateur pour sélectionner une `double` valeur dans une plage continue.
 
-Le `Slider` définit trois propriétés de type `double`:
+`Slider`Définit trois propriétés de type `double` :
 
-- [`Minimum`](xref:Xamarin.Forms.Slider.Minimum) est la valeur minimale de la plage, avec une valeur par défaut 0.
-- [`Maximum`](xref:Xamarin.Forms.Slider.Maximum) est la valeur maximale de la plage, avec une valeur par défaut de 1.
-- [`Value`](xref:Xamarin.Forms.Slider.Value) est la valeur du curseur, qui peut être comprise entre `Minimum` et `Maximum` et a la valeur par défaut 0.
+- [`Minimum`](xref:Xamarin.Forms.Slider.Minimum)est le minimum de la plage, avec 0 comme valeur par défaut.
+- [`Maximum`](xref:Xamarin.Forms.Slider.Maximum)correspond au maximum de la plage, avec 1 comme valeur par défaut.
+- [`Value`](xref:Xamarin.Forms.Slider.Value)est la valeur du curseur, qui peut être comprise entre `Minimum` et `Maximum` et a une valeur par défaut de 0.
 
-Tous les trois propriétés sont soutenues par `BindableProperty` objets. Le `Value` propriété a un mode de liaison par défaut de `BindingMode.TwoWay`, ce qui signifie qu’il est approprié comme source de liaison dans une application qui utilise le [Model-View-ViewModel (MVVM)](~/xamarin-forms/enterprise-application-patterns/mvvm.md) architecture.
-
-> [!WARNING]
-> En interne, le `Slider` garantit que `Minimum` est inférieure à `Maximum`. Si `Minimum` ou `Maximum` sont déjà définies afin que `Minimum` est non inférieur à `Maximum`, une exception est levée. Consultez le [ **précautions** ](#precautions) section ci-dessous pour plus d’informations sur la configuration de la `Minimum` et `Maximum` propriétés.
-
-Le `Slider` force le `Value` propriété afin qu’il soit entre `Minimum` et `Maximum`, inclusif. Si le `Minimum` propriété est définie sur une valeur supérieure à la `Value` propriété, le `Slider` définit le `Value` propriété `Minimum`. De même, si `Maximum` est défini sur une valeur inférieure à `Value`, puis `Slider` définit le `Value` propriété `Maximum`.
-
-`Slider` définit un [ `ValueChanged` ](xref:Xamarin.Forms.Slider.ValueChanged) événement est déclenché quand le `Value` modifications, soit par le biais de manipulation d’utilisateur le `Slider` ou lorsque le programme définit le `Value` propriété directement. Un `ValueChanged` événement est également déclenché quand le `Value` propriété est convertie comme décrit dans le paragraphe précédent.
-
-Le [ `ValueChangedEventArgs` ](xref:Xamarin.Forms.ValueChangedEventArgs) objet qui accompagne le `ValueChanged` événement a deux propriétés, tous deux de type `double`: [ `OldValue` ](xref:Xamarin.Forms.ValueChangedEventArgs.OldValue) et [ `NewValue` ](xref:Xamarin.Forms.ValueChangedEventArgs.NewValue). Au moment où l’événement est déclenché, la valeur de `NewValue` est identique à la `Value` propriété de la `Slider` objet.
-
-`Slider` définit également les événements `DragStarted` et `DragCompleted`, qui sont déclenchés au début et à la fin de l’action glisser. Contrairement à l’événement [`ValueChanged`](xref:Xamarin.Forms.Slider.ValueChanged) , les événements `DragStarted` et `DragCompleted` sont déclenchés uniquement via la manipulation par l’utilisateur de l' `Slider`. Lorsque l’événement `DragStarted` se déclenche, le `DragStartedCommand`, de type `ICommand`, est exécuté. De même, lorsque l’événement `DragCompleted` se déclenche, le `DragCompletedCommand`, de type `ICommand`, est exécuté.
+Les trois propriétés sont sauvegardées par des `BindableProperty` objets. La `Value` propriété a un mode de liaison par défaut de, ce qui `BindingMode.TwoWay` signifie qu’elle est appropriée comme source de liaison dans une application qui utilise l’architecture [MVVM (Model-View-ViewModel)](~/xamarin-forms/enterprise-application-patterns/mvvm.md) .
 
 > [!WARNING]
-> N’utilisez pas les options de disposition horizontale sans contrainte de `Center`, `Start`, ou `End` avec `Slider`. Sur Android et UWP, le `Slider` est réduite à une barre de longueur nulle et sur iOS, la barre est très court. Conservez la valeur par défaut `HorizontalOptions` paramètre `Fill`et n’utilisez pas une largeur de `Auto` lors du placement de `Slider` dans un `Grid` mise en page.
+> En interne, la `Slider` s’assure que `Minimum` est inférieur à `Maximum` . Si `Minimum` ou `Maximum` sont toujours définis de sorte que `Minimum` n’est pas inférieur à `Maximum` , une exception est levée. Pour plus d’informations sur la définition des propriétés et, consultez la section [**précautions**](#precautions) ci-dessous `Minimum` `Maximum` .
 
-Le `Slider` définit également plusieurs propriétés qui affectent son apparence :
+Le `Slider` force la `Value` propriété afin qu’elle soit comprise entre `Minimum` et `Maximum` , inclus. Si la `Minimum` propriété est définie sur une valeur supérieure à la `Value` propriété, la `Slider` propriété affecte la valeur `Value` à la propriété `Minimum` . De même, si `Maximum` a une valeur inférieure à `Value` , `Slider` affecte à la propriété la valeur `Value` `Maximum` .
 
-- [`MinimumTrackColor`](xref:Xamarin.Forms.Slider.MinimumTrackColorProperty) est la barre de couleur sur le côté gauche du curseur de défilement.
-- [`MaximumTrackColor`](xref:Xamarin.Forms.Slider.MaximumTrackColorProperty) est la barre de couleur située à droite du curseur de défilement.
-- [`ThumbColor`](xref:Xamarin.Forms.Slider.ThumbColorProperty) est la couleur du curseur de défilement.
-- [`ThumbImageSource`](xref:Xamarin.Forms.Slider.ThumbImageSourceProperty) est l’image à utiliser pour le thumb, de type [ `ImageSource` ](xref:Xamarin.Forms.ImageSource).
+`Slider`définit un [`ValueChanged`](xref:Xamarin.Forms.Slider.ValueChanged) événement qui est déclenché lorsque `Value` change, soit par manipulation de l’utilisateur du `Slider` ou lorsque le programme définit la `Value` propriété directement. Un `ValueChanged` événement est également déclenché lorsque la `Value` propriété est forcée, comme décrit dans le paragraphe précédent.
+
+L' [`ValueChangedEventArgs`](xref:Xamarin.Forms.ValueChangedEventArgs) objet qui accompagne l' `ValueChanged` événement a deux propriétés, de type `double` : [`OldValue`](xref:Xamarin.Forms.ValueChangedEventArgs.OldValue) et [`NewValue`](xref:Xamarin.Forms.ValueChangedEventArgs.NewValue) . Au moment où l’événement est déclenché, la valeur de `NewValue` est identique à la `Value` propriété de l' `Slider` objet.
+
+`Slider`définit également `DragStarted` les `DragCompleted` événements et, qui sont déclenchés au début et à la fin de l’action glisser. Contrairement [`ValueChanged`](xref:Xamarin.Forms.Slider.ValueChanged) à l’événement, `DragStarted` les `DragCompleted` événements et sont déclenchés uniquement via la manipulation de l’utilisateur de `Slider` . Lorsque l' `DragStarted` événement se déclenche, le `DragStartedCommand` , de type `ICommand` , est exécuté. De même, lorsque l' `DragCompleted` événement se déclenche, le `DragCompletedCommand` , de type `ICommand` , est exécuté.
+
+> [!WARNING]
+> N’utilisez pas les options de disposition horizontale sans contrainte de `Center` , `Start` ou `End` avec `Slider` . Sur Android et UWP, le `Slider` réduit à une barre de zéro longueur et, sur iOS, la barre est très brève. Conservez le `HorizontalOptions` paramètre par défaut `Fill` et n’utilisez pas une largeur `Auto` pour la `Slider` mise en `Grid` page.
+
+`Slider`Définit également plusieurs propriétés qui affectent son apparence :
+
+- [`MinimumTrackColor`](xref:Xamarin.Forms.Slider.MinimumTrackColorProperty)couleur de la barre située à gauche du curseur.
+- [`MaximumTrackColor`](xref:Xamarin.Forms.Slider.MaximumTrackColorProperty)couleur de la barre située à droite du curseur.
+- [`ThumbColor`](xref:Xamarin.Forms.Slider.ThumbColorProperty)est la couleur de curseur.
+- [`ThumbImageSource`](xref:Xamarin.Forms.Slider.ThumbImageSourceProperty)image à utiliser pour le curseur de type [`ImageSource`](xref:Xamarin.Forms.ImageSource) .
 
 > [!NOTE]
-> Le `ThumbColor` et `ThumbImageSource` propriétés s’excluent mutuellement. Si les deux propriétés sont définies, le `ThumbImageSource` propriété est prioritaire.
+> Les `ThumbColor` Propriétés et s’excluent `ThumbImageSource` mutuellement. Si les deux propriétés sont définies, la `ThumbImageSource` propriété est prioritaire.
 
-## <a name="basic-slider-code-and-markup"></a>Balisage et code de curseur de base
+## <a name="basic-slider-code-and-markup"></a>Code et balisage de base du curseur
 
-Le [ **SliderDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos) exemple commence par trois pages qui sont fonctionnellement identiques, mais sont implémentées de différentes façons. La première page utilise uniquement du code c#, la deuxième utilise XAML avec un gestionnaire d’événements dans le code et le troisième est possible d’éviter le Gestionnaire d’événements à l’aide de la liaison de données dans le fichier XAML.
+L’exemple [**SliderDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos) commence par trois pages fonctionnellement identiques, mais elles sont implémentées de différentes façons. La première page utilise uniquement du code C#, la seconde utilise XAML avec un gestionnaire d’événements dans le code, et la troisième est en mesure d’éviter le gestionnaire d’événements à l’aide de la liaison de données dans le fichier XAML.
 
 ### <a name="creating-a-slider-in-code"></a>Création d’un curseur dans le code
 
-Le **base Code curseur** page dans le [ **SliderDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos) exemple montre comment créer un `Slider` et deux `Label` objets dans le code :
+La page de **codes du curseur de base** dans l’exemple [**SliderDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos) montre comment créer un `Slider` et deux `Label` objets dans le code :
 
 ```csharp
 public class BasicSliderCodePage : ContentPage
@@ -107,17 +110,17 @@ public class BasicSliderCodePage : ContentPage
 }
 ```
 
-Le `Slider` est initialisé pour avoir un `Maximum` propriété 360. Le `ValueChanged` Gestionnaire de la `Slider` utilise le `Value` propriété de la `slider` objet à définir le `Rotation` propriété du premier `Label` et utilise le `String.Format` méthode avec le `NewValue` propriété de la arguments d’événement pour définir le `Text` propriété du deuxième `Label`. Ces deux approches pour obtenir la valeur actuelle de la `Slider` sont interchangeables.
+`Slider`Est initialisé pour avoir une `Maximum` propriété de 360. Le `ValueChanged` Gestionnaire du `Slider` utilise la `Value` propriété de l' `slider` objet pour définir la `Rotation` propriété du premier `Label` et utilise la `String.Format` méthode avec la `NewValue` propriété des arguments d’événement pour définir la `Text` propriété du deuxième `Label` . Ces deux approches pour obtenir la valeur actuelle de `Slider` sont interchangeables.
 
 Voici le programme en cours d’exécution sur les appareils iOS et Android :
 
 [![Code Slider de base](slider-images/BasicSliderCode.png "Code Slider de base")](slider-images/BasicSliderCode-Large.png#lightbox)
 
-La seconde `Label` affiche le texte « (non initialisé) » jusqu'à ce que le `Slider` est manipulé, ce qui entraîne le premier `ValueChanged` événement à déclencher. Notez que le nombre de décimales affichées est différent pour chaque plateforme. Ces différences portent sur les implémentations de plateforme de la `Slider` et sont décrits plus loin dans cet article dans la section [différences d’implémentation de plateforme](#implementations).
+Le deuxième `Label` affiche le texte « (non initialisé) » jusqu’à ce que le `Slider` soit manipulé, ce qui entraîne le déclenchement du premier `ValueChanged` événement. Notez que le nombre de décimales affichées est différent pour chaque plateforme. Ces différences sont liées aux implémentations de plateforme du `Slider` et sont abordées plus loin dans cet article dans la section [différences d’implémentation](#implementations)de la plateforme.
 
-### <a name="creating-a-slider-in-xaml"></a>Création d’un curseur dans XAML
+### <a name="creating-a-slider-in-xaml"></a>Création d’un curseur en XAML
 
-Le **base XAML de curseur** page est fonctionnellement identique **base Code curseur** mais implémentée principalement dans XAML :
+La page **XAML de base du curseur** est fonctionnellement identique au **Code de curseur de base** , mais implémentée principalement en XAML :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -143,7 +146,7 @@ Le **base XAML de curseur** page est fonctionnellement identique **base Code cur
 </ContentPage>
 ```
 
-Le fichier code-behind contient le gestionnaire pour le `ValueChanged` événement :
+Le fichier code-behind contient le gestionnaire de l' `ValueChanged` événement :
 
 ```csharp
 public partial class BasicSliderXamlPage : ContentPage
@@ -162,21 +165,21 @@ public partial class BasicSliderXamlPage : ContentPage
 }
 ```
 
-Il est également possible pour le Gestionnaire d’événements obtenir le `Slider` qui déclenche l’événement via le `sender` argument. Le `Value` propriété contient la valeur actuelle :
+Il est également possible que le gestionnaire d’événements obtienne le `Slider` qui déclenche l’événement à l’aide de l' `sender` argument. La `Value` propriété contient la valeur actuelle :
 
 ```csharp
 double value = ((Slider)sender).Value;
 ```
 
-Si le `Slider` objet ont été donnés un nom dans le fichier XAML avec un `x:Name` attribut (par exemple, « curseur »), puis le Gestionnaire d’événements peut référencer cet objet directement :
+Si `Slider` un nom est attribué à l’objet dans le fichier XAML avec un `x:Name` attribut (par exemple, « Slider »), le gestionnaire d’événements peut référencer directement cet objet :
 
 ```csharp
 double value = slider.Value;
 ```
 
-### <a name="data-binding-the-slider"></a>Le curseur de liaison de données
+### <a name="data-binding-the-slider"></a>Liaison de données du curseur
 
-Le **des liaisons de curseur base** page montre comment écrire un programme presque équivalent qui élimine le `Value` Gestionnaire d’événements à l’aide de [une liaison de données](~/xamarin-forms/app-fundamentals/data-binding/index.md):
+La page des **liaisons de curseur de base** montre comment écrire un programme quasiment équivalent qui élimine le `Value` Gestionnaire d’événements à l’aide de la liaison de [données](~/xamarin-forms/app-fundamentals/data-binding/index.md):
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -205,13 +208,13 @@ Le **des liaisons de curseur base** page montre comment écrire un programme pre
 </ContentPage>
 ```
 
-Le `Rotation` propriété du premier `Label` est lié à la `Value` propriété de la `Slider`, comme est le `Text` propriété du deuxième `Label` avec un `StringFormat` spécification. Le **des liaisons de curseur base** page fonctions un peu différemment dans les deux pages précédentes : lorsque la page s’affiche tout d’abord, le second `Label` affiche la chaîne de texte avec la valeur. Il s’agit d’un avantage de l’utilisation de la liaison de données. Pour afficher un texte sans liaison de données, vous devez initialiser spécifiquement le `Text` propriété de la `Label` ou simuler le déclenchement de le `ValueChanged` événement en appelant le Gestionnaire d’événements à partir du constructeur de classe.
+La `Rotation` propriété du premier `Label` est liée à la `Value` propriété de `Slider` , tout comme la `Text` propriété de la seconde `Label` avec une `StringFormat` spécification. La page des **liaisons de curseur de base** fonctionne un peu différemment des deux pages précédentes : lorsque la page s’affiche pour la première fois, la deuxième `Label` affiche la chaîne de texte avec la valeur. Il s’agit d’un avantage de l’utilisation de la liaison de données. Pour afficher du texte sans liaison de données, vous devez initialiser spécifiquement la `Text` propriété de `Label` ou simuler un déclenchement de l' `ValueChanged` événement en appelant le gestionnaire d’événements à partir du constructeur de classe.
 
 <a name="precautions" />
 
 ## <a name="precautions"></a>Précautions
 
-La valeur de la `Minimum` propriété doit toujours être inférieure à la valeur de la `Maximum` propriété. Le code suivant extrait de code entraîne la `Slider` pour lever une exception :
+La valeur de la `Minimum` propriété doit toujours être inférieure à la valeur de la `Maximum` propriété. L’extrait de code suivant provoque la `Slider` levée d’une exception par le.
 
 ```csharp
 // Throws an exception!
@@ -222,7 +225,7 @@ Slider slider = new Slider
 };
 ```
 
-Le compilateur c# génère du code qui définit ces deux propriétés dans la séquence, et à quel moment le `Minimum` propriété est définie sur 10, il est supérieur à la valeur par défaut `Maximum` la valeur 1. Vous pouvez éviter l’exception dans ce cas en définissant le `Maximum` propriété premier :
+Le compilateur C# génère du code qui définit ces deux propriétés en séquence et, lorsque la `Minimum` propriété a la valeur 10, elle est supérieure à la `Maximum` valeur par défaut 1. Dans ce cas, vous pouvez éviter l’exception en définissant la `Maximum` propriété en premier :
 
 ```csharp
 Slider slider = new Slider
@@ -232,23 +235,23 @@ Slider slider = new Slider
 };
 ```
 
-Paramètre `Maximum` à 20 n’est pas un problème, car il est supérieur à la valeur par défaut `Minimum` la valeur 0. Lorsque `Minimum` est défini, la valeur est inférieure à la `Maximum` valeur de 20.
+Le paramétrage `Maximum` de la valeur 20 n’est pas un problème, car il est supérieur à la valeur par défaut `Minimum` 0. Lorsque `Minimum` est défini, la valeur est inférieure à la `Maximum` valeur 20.
 
-Le même problème se produit dans XAML. Définir les propriétés dans un ordre qui garantit que `Maximum` est toujours supérieure à `Minimum`:
+Le même problème existe dans XAML. Définissez les propriétés dans un ordre qui garantit que `Maximum` est toujours supérieur à `Minimum` :
 
 ```xaml
 <Slider Maximum="20"
         Minimum="10" ... />
 ```
 
-Vous pouvez définir le `Minimum` et `Maximum` des valeurs pour les nombres négatifs, mais uniquement dans un ordre dans lequel `Minimum` est toujours inférieure à `Maximum`:
+Vous pouvez définir les `Minimum` `Maximum` valeurs et sur des nombres négatifs, mais uniquement dans un ordre où `Minimum` est toujours inférieur à `Maximum` :
 
 ```xaml
 <Slider Minimum="-20"
         Maximum="-10" ... />
 ```
 
-Le `Value` propriété est toujours supérieure ou égale à la `Minimum` valeur et inférieure ou égale à `Maximum`. Si `Value` est défini sur une valeur en dehors de cette plage, la valeur sera être convertie pour être comprises entre, mais aucune exception n’est levée. Par exemple, ce code vous sera *pas* lever une exception :
+La `Value` propriété est toujours supérieure ou égale à la `Minimum` valeur et inférieure ou égale à `Maximum` . Si `Value` est défini sur une valeur en dehors de cette plage, la valeur sera forcée à se trouver dans la plage, mais aucune exception n’est levée. Par exemple, ce code ne lève *pas* d’exception :
 
 ```csharp
 Slider slider = new Slider
@@ -257,7 +260,7 @@ Slider slider = new Slider
 };
 ```
 
-Au lieu de cela, le `Value` propriété est convertie en la `Maximum` la valeur 1.
+Au lieu de cela, la `Value` propriété est forcée à la `Maximum` valeur 1.
 
 Voici un extrait de code ci-dessus :
 
@@ -269,9 +272,9 @@ Slider slider = new Slider
 };
 ```
 
-Lorsque `Minimum` a la valeur 10, puis `Value` est également défini sur 10.
+Lorsque `Minimum` a la valeur 10, `Value` est également défini sur 10.
 
-Si un `ValueChanged` Gestionnaire d’événements a été attaché au moment qui le `Value` propriété est forcée sur autre chose que sa valeur par défaut de 0, puis un `ValueChanged` événement est déclenché. Voici un extrait du XAML :
+Si un `ValueChanged` Gestionnaire d’événements a été attaché au moment où la `Value` propriété est forcée à une valeur autre que sa valeur par défaut 0, un `ValueChanged` événement est déclenché. Voici un extrait de code XAML :
 
 ```xaml
 <Slider ValueChanged="OnSliderValueChanged"
@@ -279,35 +282,35 @@ Si un `ValueChanged` Gestionnaire d’événements a été attaché au moment qu
         Minimum="10" />
 ```
 
-Lorsque `Minimum` est définie sur 10, `Value` est également défini sur 10 et le `ValueChanged` événement est déclenché. Cela peut se produire avant que le reste de la page a été construit, et le gestionnaire peut tenter de référencer d’autres éléments sur la page qui n’ont pas encore été créées. Vous souhaiterez peut-être ajouter du code pour le `ValueChanged` gestionnaire vérifie pour `null` les valeurs des autres éléments sur la page. Ou, vous pouvez définir le `ValueChanged` Gestionnaire d’événements après le `Slider` valeurs ont été initialisés.
+Lorsque `Minimum` a la valeur 10, `Value` est également défini sur 10 et l' `ValueChanged` événement est déclenché. Cela peut se produire avant la construction du reste de la page, et le gestionnaire peut tenter de faire référence à d’autres éléments de la page qui n’ont pas encore été créés. Vous souhaiterez peut-être ajouter du code au `ValueChanged` gestionnaire qui vérifie les `null` valeurs d’autres éléments sur la page. Ou bien, vous pouvez définir le `ValueChanged` Gestionnaire d’événements une fois que les `Slider` valeurs ont été initialisées.
 
 <a name="implementations" />
 
 ## <a name="platform-implementation-differences"></a>Différences d’implémentation de plateforme
 
-Les captures d’écran illustrés précédemment affichent la valeur de la `Slider` avec un nombre différent de la virgule décimale. Ceci est lié à la manière dont le `Slider` est implémentée sur les plateformes Android et UWP.
+Les captures d’écran indiquées précédemment affichent la valeur de `Slider` avec un nombre différent de points décimaux. Cela concerne la façon dont le `Slider` est implémenté sur les plateformes Android et UWP.
 
-### <a name="the-android-implementation"></a>L’implémentation Android
+### <a name="the-android-implementation"></a>Implémentation Android
 
-L’implémentation Android de `Slider` repose sur Android [ `SeekBar` ](xref:Android.Widget.SeekBar) et définit toujours la [ `Max` ](xref:Android.Widget.ProgressBar.Max) propriété la valeur 1000. Cela signifie que le `Slider` sur Android a des valeurs discrètes uniquement 1 001. Si vous définissez la `Slider` pour avoir un `Minimum` de 0 et un `Maximum` de 5000, puis en tant que le `Slider` est manipulé, le `Value` propriété a les valeurs 0, 5, 10, 15 et ainsi de suite.
+L’implémentation Android de `Slider` est basée sur Android [`SeekBar`](xref:Android.Widget.SeekBar) et affecte toujours la valeur [`Max`](xref:Android.Widget.ProgressBar.Max) 1000 à la propriété. Cela signifie que le `Slider` sur Android a seulement 1 001 valeurs discrètes. Si vous affectez `Slider` à la valeur `Minimum` 0 et un `Maximum` de 5000, alors que `Slider` est manipulé, la `Value` propriété a les valeurs 0, 5, 10, 15, et ainsi de suite.
 
-### <a name="the-uwp-implementation"></a>L’implémentation UWP
+### <a name="the-uwp-implementation"></a>Implémentation UWP
 
-L’implémentation UWP de `Slider` repose sur la plateforme Windows universelle [ `Slider` ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.slider) contrôle. Le `StepFrequency` propriété de la plateforme Windows universelle `Slider` est défini sur la différence entre la `Maximum` et `Minimum` propriétés divisé par 10, mais pas supérieure à 1.
+L’implémentation UWP de `Slider` est basée sur le [`Slider`](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.slider) contrôle UWP. La `StepFrequency` propriété du UWP `Slider` est définie sur la différence des `Maximum` `Minimum` Propriétés et divisées par 10, mais pas supérieure à 1.
 
-Par exemple, pour la plage par défaut de 0 à 1, le `StepFrequency` propriété a la valeur 0.1. Comme le `Slider` est manipulé, le `Value` propriété est limitée à 0, 0.1, 0.2, 0.3, 0,4, 0,5, 0.6, 0,7, 0,8, 0,9 et 1.0. (Cela est évident dans la dernière page de l’exemple [**SliderDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos) .) Lorsque la différence entre les propriétés `Maximum` et `Minimum` est supérieure ou égale à 10, `StepFrequency` a la valeur 1 et la propriété `Value` a des valeurs intégrales.
+Par exemple, pour la plage par défaut de 0 à 1, la `StepFrequency` propriété est définie sur 0,1. Lorsque `Slider` est manipulé, la `Value` propriété est limitée à 0, 0,1, 0,2, 0,3, 0,4, 0,5, 0,6, 0,7, 0,8, 0,9 et 1,0. (Cela est évident dans la dernière page de l’exemple [**SliderDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos) .) Lorsque la différence entre les `Maximum` `Minimum` Propriétés et est supérieure ou égale à 10, `StepFrequency` a la valeur 1 et la `Value` propriété a des valeurs intégrales.
 
 ### <a name="the-stepslider-solution"></a>La solution StepSlider
 
-Un `StepSlider` plus polyvalent est abordé dans le [chapitre 27. Les convertisseurs personnalisés](https://xamarin.azureedge.net/developer/xamarin-forms-book/XamarinFormsBook-Ch27-Apr2016.pdf) du livre *créent des Mobile Apps avec Xamarin. Forms*. Le `StepSlider` est similaire à `Slider` mais ajoute un `Steps` propriété pour spécifier le nombre de valeurs comprises entre `Minimum` et `Maximum`.
+Un plus polyvalent `StepSlider` est abordé dans le [chapitre 27. Les convertisseurs personnalisés](https://xamarin.azureedge.net/developer/xamarin-forms-book/XamarinFormsBook-Ch27-Apr2016.pdf) du livre *qui créent des Xamarin.Forms Mobile Apps avec *. `StepSlider`Est semblable à `Slider` mais ajoute une `Steps` propriété pour spécifier le nombre de valeurs entre `Minimum` et `Maximum` .
 
-## <a name="sliders-for-color-selection"></a>Curseurs de sélection de couleur
+## <a name="sliders-for-color-selection"></a>Curseurs pour la sélection des couleurs
 
-La dernière des deux pages dans le [ **SliderDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos) exemple utilisent tous deux trois `Slider` instances pour la sélection de couleur. La première page gère toutes les interactions dans le fichier code-behind, tandis que la deuxième page montre comment utiliser la liaison de données avec un ViewModel.
+Les deux dernières pages de l’exemple [**SliderDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos) utilisent toutes les deux `Slider` des trois instances pour la sélection de couleurs. La première page gère toutes les interactions dans le fichier code-behind, tandis que la deuxième page montre comment utiliser la liaison de données avec un ViewModel.
 
 ### <a name="handling-sliders-in-the-code-behind-file"></a>Gestion des curseurs dans le fichier code-behind
 
-Le **curseurs de couleur RVB** page instancie un `BoxView` pour afficher une couleur, trois `Slider` instances pour sélectionner les composants rouges, vert et bleus de la couleur et trois `Label` éléments d’affichage de ces couleur valeurs :
+La page **curseurs de couleur RVB** instancie un `BoxView` pour afficher une couleur, trois `Slider` instances pour sélectionner les composants rouge, vert et bleu de la couleur et trois `Label` éléments pour afficher ces valeurs de couleur :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -349,7 +352,7 @@ Le **curseurs de couleur RVB** page instancie un `BoxView` pour afficher une cou
 </ContentPage>
 ```
 
-Un `Style` donne les trois `Slider` éléments une plage de 0 à 255. Le `Slider` éléments partagent le même `ValueChanged` gestionnaire, qui est implémentée dans le fichier code-behind :
+Un `Style` donne aux trois `Slider` éléments une plage comprise entre 0 et 255. Les `Slider` éléments partagent le même `ValueChanged` Gestionnaire, qui est implémenté dans le fichier code-behind :
 
 ```csharp
 public partial class RgbColorSlidersPage : ContentPage
@@ -381,13 +384,13 @@ public partial class RgbColorSlidersPage : ContentPage
 }
 ```
 
-Les premiers jeux de section la `Text` propriété d’un de la `Label` instances pour une courte chaîne de texte indiquant la valeur de la `Slider` au format hexadécimal. Ensuite, les trois `Slider` instances sont accessibles pour créer un `Color` valeur à partir des composants RVB :
+La première section définit la `Text` propriété de l’une des `Label` instances sur une chaîne de texte brève indiquant la valeur de l' `Slider` hexadécimal. Ensuite, les trois `Slider` instances sont accessibles pour créer une `Color` valeur à partir des composants RGB :
 
 [![Curseurs de couleur RVB](slider-images/RgbColorSliders.png "Curseurs de couleur RVB")](slider-images/RgbColorSliders-Large.png#lightbox)
 
-### <a name="binding-the-slider-to-a-viewmodel"></a>Le curseur de la liaison à un ViewModel
+### <a name="binding-the-slider-to-a-viewmodel"></a>Liaison du curseur à un ViewModel
 
-Le **curseurs de couleurs TSL** page montre comment utiliser un ViewModel pour effectuer les calculs utilisés pour créer un `Color` valeur à partir des valeurs de teinte, saturation et de luminosité. Comme tous les ViewModels, le `HSLColorViewModel` la classe implémente le `INotifyPropertyChanged` interface et déclenche une `PropertyChanged` événement chaque fois qu’une des propriétés change :
+La page **curseurs de couleurs TSL** montre comment utiliser un ViewModel pour effectuer les calculs utilisés pour créer une `Color` valeur à partir des valeurs de teinte, de saturation et de luminosité. Comme tous les ViewModels, la `HSLColorViewModel` classe implémente l' `INotifyPropertyChanged` interface et déclenche un `PropertyChanged` événement chaque fois qu’une des propriétés change :
 
 ```csharp
 public class HslColorViewModel : INotifyPropertyChanged
@@ -462,9 +465,9 @@ public class HslColorViewModel : INotifyPropertyChanged
 }
 ```
 
-ViewModels et `INotifyPropertyChanged` interface sont décrites dans l’article [une liaison de données](~/xamarin-forms/app-fundamentals/data-binding/index.md).
+ViewModels et l' `INotifyPropertyChanged` interface sont abordés dans l’article [liaison de données](~/xamarin-forms/app-fundamentals/data-binding/index.md).
 
-Le **HslColorSlidersPage.xaml** fichier instancie le `HslColorViewModel` et lui affecte la valeur de la page `BindingContext` propriété. Ainsi, tous les éléments dans le fichier XAML pour lier aux propriétés dans le ViewModel :
+Le fichier **HslColorSlidersPage. Xaml** instancie le `HslColorViewModel` et le définit sur la propriété de la page `BindingContext` . Cela permet à tous les éléments du fichier XAML d’être liés aux propriétés dans le ViewModel :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -501,13 +504,13 @@ Le **HslColorSlidersPage.xaml** fichier instancie le `HslColorViewModel` et lui 
 </ContentPage>
 ```
 
-Comme le `Slider` éléments sont manipulées, le `BoxView` et `Label` éléments sont mis à jour à partir du ViewModel :
+À mesure que les `Slider` éléments sont manipulés, les `BoxView` `Label` éléments et sont mis à jour à partir du ViewModel :
 
 [![Curseurs de couleurs TSL](slider-images/HslColorSliders.png "Curseurs de couleurs TSL")](slider-images/HslColorSliders-Large.png#lightbox)
 
-Le `StringFormat` composant de la `Binding` extension de balisage est définie pour un format de « F2 » pour afficher deux décimales. (La mise en forme des chaînes dans les liaisons de données est décrite dans l’article [mise en forme de chaîne](~/xamarin-forms/app-fundamentals/data-binding/string-formatting.md).) Toutefois, la version UWP du programme est limitée aux valeurs 0, 0,1, 0,2,... 0,9 et 1,0. Il s’agit d’une conséquence directe de l’implémentation de la plateforme Windows universelle `Slider` comme décrit ci-dessus dans la section [différences d’implémentation de plateforme](#implementations).
+Le `StringFormat` composant de l' `Binding` extension de balisage est défini pour un format « F2 » afin d’afficher deux décimales. (La mise en forme des chaînes dans les liaisons de données est décrite dans l’article [mise en forme de chaîne](~/xamarin-forms/app-fundamentals/data-binding/string-formatting.md).) Toutefois, la version UWP du programme est limitée aux valeurs 0, 0,1, 0,2,... 0,9 et 1,0. Il s’agit d’un résultat direct de l’implémentation de la série UWP `Slider` , comme décrit ci-dessus dans la section différences de l’implémentation de la [plateforme](#implementations).
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
-- [Exemple de démonstrations de curseur](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)
-- [Curseur API](xref:Xamarin.Forms.Slider)
+- [Exemples de démonstrations Slider](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)
+- [API Slider](xref:Xamarin.Forms.Slider)

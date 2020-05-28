@@ -1,205 +1,209 @@
 ---
-title: Résumé du chapitre 22. Animation
-description: 'Création d’applications mobiles avec Xamarin.Forms: Résumé du chapitre 22. Animation'
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: 47C2B9AB-E688-4412-8AF5-9F633B3DA695
-author: davidbritch
-ms.author: dabritch
-ms.date: 11/07/2017
-ms.openlocfilehash: 935be5bd6696600644463eb4ec26410b546f42a0
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 22. Animation''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 2a8a089c210a3fe2f48dbe32bf8cda6179af2a78
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70770993"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136628"
 ---
 # <a name="summary-of-chapter-22-animation"></a>Résumé du chapitre 22. Animation
 
-[![Télécharger](~/media/shared/download.png) l’échantillon Télécharger l’échantillon](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22)
 
-Vous avez vu que vous pouvez créer vos propres animations en `Task.Delay`utilisant le minuteur Xamarin.Forms ou , mais il est généralement plus facile en utilisant les installations d’animation fournies par Xamarin.Forms. Trois classes mettent en œuvre ces animations :
+Vous avez vu que vous pouvez créer vos propres animations à l’aide du Xamarin.Forms minuteur ou `Task.Delay` , mais il est généralement plus facile d’utiliser les fonctionnalités d’animation fournies par Xamarin.Forms . Trois classes implémentent les animations suivantes :
 
 - [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions), l’approche de haut niveau
-- [`Animation`](xref:Xamarin.Forms.Animation), plus polyvalent mais plus difficile
-- [`AnimationExtension`](xref:Xamarin.Forms.AnimationExtensions), l’approche la plus polyvalente et la plus basse
+- [`Animation`](xref:Xamarin.Forms.Animation)plus polyvalent, mais plus difficile
+- [`AnimationExtension`](xref:Xamarin.Forms.AnimationExtensions), l’approche la plus polyvalente et de niveau le plus bas
 
-En général, les animations ciblent les propriétés qui sont soutenues par des propriétés liantes. Ce n’est pas une exigence, mais ce sont les seules propriétés qui réagissent dynamiquement aux changements.
+En général, les animations ciblent les propriétés qui sont sauvegardées par des propriétés pouvant être liées. Ce n’est pas une exigence, mais il s’agit des seules propriétés qui réagissent de manière dynamique aux modifications.
 
-Il n’y a pas d’interface XAML pour ces animations, mais vous pouvez intégrer des animations dans XAML en utilisant des techniques discutées dans [**le chapitre 23. Déclencheurs et comportements**](chapter23.md).
+Il n’existe pas d’interface XAML pour ces animations, mais vous pouvez intégrer des animations dans XAML à l’aide de techniques présentées dans le [**chapitre 23. Déclencheurs et comportements**](chapter23.md).
 
-## <a name="exploring-basic-animations"></a>Explorer les animations de base
+## <a name="exploring-basic-animations"></a>Exploration des animations de base
 
-Les fonctions d’animation de [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) base sont des méthodes d’extension trouvées dans la classe. Ces méthodes s’appliquent à `VisualElement`tout objet qui dérive de . Les animations les plus simples ciblent les propriétés de transformation discutées en [`Chapter 21. Transforms`](chapter21.md).
+Les fonctions d’animation de base sont des méthodes d’extension trouvées dans la [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) classe. Ces méthodes s’appliquent à tout objet qui dérive de `VisualElement` . Les animations les plus simples ciblent les propriétés transformations décrites dans [`Chapter 21. Transforms`](chapter21.md) .
 
-[**L’AnimationTryout**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/AnimationTryout) montre `Clicked` comment le `Button` gestionnaire d’événements pour un peut appeler la [`RotateTo`](xref:Xamarin.Forms.ViewExtensions.RotateTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing)) méthode d’extension pour faire tourner le bouton dans un cercle.
+Le [**AnimationTryout**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/AnimationTryout) montre comment le `Clicked` Gestionnaire d’événements pour un `Button` peut appeler le [ `RotateTo` ] (XREF : Xamarin.Forms . ViewExtensions. RotateTo ( Xamarin.Forms . VisualElement, System. double, System. UInt32, Xamarin.Forms . Accélération)) pour faire pivoter le bouton dans un cercle.
 
-La `RotateTo` méthode `Rotation` change la `Button` propriété de la 0 à 360 au cours d’un quart de seconde (par défaut). Si `Button` le est exploité à nouveau, cependant, il ne fait rien parce que la `Rotation` propriété est déjà 360 degrés.
+La `RotateTo` méthode modifie la `Rotation` propriété de la `Button` valeur de 0 à 360 au cours d’un quart de seconde (par défaut). `Button`Toutefois, si le est à nouveau utilisé, il ne fait rien, car la `Rotation` propriété est déjà de 360 degrés.
 
-### <a name="setting-the-animation-duration"></a>Définir la durée de l’animation
+### <a name="setting-the-animation-duration"></a>Définition de la durée de l’animation
 
-Le deuxième `RotateTo` argument à est une durée en millisecondes. Si réglé à une grande `Button` valeur, en appuyant sur le lors d’une animation commence une nouvelle animation à partir de l’angle actuel.
+Le deuxième argument de `RotateTo` est une durée en millisecondes. S’il est défini sur une valeur élevée, le fait de cliquer sur le `Button` pendant une animation démarre une nouvelle animation en commençant à l’angle actuel.
 
 ### <a name="relative-animations"></a>Animations relatives
 
-La `RelRotateTo` méthode effectue une rotation relative en ajoutant une valeur spécifiée à la valeur existante. Cette méthode `Button` permet d’être exploité plusieurs fois, `Rotation` et chaque fois augmente la propriété de 360 degrés.
+La `RelRotateTo` méthode effectue une rotation relative en ajoutant une valeur spécifiée à la valeur existante. Cette méthode permet `Button` à d’être exploitée plusieurs fois, et chaque fois augmente la `Rotation` propriété de 360 degrés.
 
 ### <a name="awaiting-animations"></a>En attente d’animations
 
-Toutes les méthodes `ViewExtensions` `Task<bool>` d’animation en retour des objets. Cela signifie que vous pouvez définir une série `ContinueWith` d’animations séquentielles à l’aide ou `await`. La `bool` valeur de `false` retour d’achèvement `true` est si l’animation terminée sans interruption ou si elle a été annulée par la [`CancelAnimation`](xref:Xamarin.Forms.ViewExtensions.CancelAnimations(Xamarin.Forms.VisualElement)) méthode, qui annule toutes les animations initiées par l’autre méthode qui `ViewExtensions` sont définies sur le même élément.
+Toutes les méthodes d’animation dans `ViewExtensions` retournent des `Task<bool>` objets. Cela signifie que vous pouvez définir une série d’animations séquentielles à l’aide `ContinueWith` de ou de `await` . La `bool` valeur de retour de fin est `false` si l’animation s’est terminée sans interruption ou `true` si elle a été annulée par le [ `CancelAnimation` ] (XREF : Xamarin.Forms . ViewExtensions. CancelAnimations ( Xamarin.Forms . VisualElement)), qui annule toutes les animations initiées par l’autre méthode dans `ViewExtensions` qui sont définies sur le même élément.
 
 ### <a name="composite-animations"></a>Animations composites
 
-Vous pouvez mélanger des animations attendues et non attendues pour créer des animations composites. Ce sont les `ViewExtensions` animations `TranslationX`dans `TranslationY`cette `Scale` cible de la , , et transformer les propriétés:
+Vous pouvez mélanger des animations await et non attendues pour créer des animations composites. Voici les animations `ViewExtensions` qui ciblent les `TranslationX` Propriétés de `TranslationY` transformation, et `Scale` :
 
-- [`TranslateTo`](xref:Xamarin.Forms.ViewExtensions.TranslateTo(Xamarin.Forms.VisualElement,System.Double,System.Double,System.UInt32,Xamarin.Forms.Easing))
-- [`ScaleTo`](xref:Xamarin.Forms.ViewExtensions.ScaleTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing))
-- [`RelScaleTo`](xref:Xamarin.Forms.ViewExtensions.RelScaleTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing))
+- [ `TranslateTo` ] (XREF : Xamarin.Forms . ViewExtensions. TranslateTo ( Xamarin.Forms . VisualElement, System. double, System. double, System. UInt32, Xamarin.Forms . Accélération))
+- [ `ScaleTo` ] (XREF : Xamarin.Forms . ViewExtensions. ScaleTo ( Xamarin.Forms . VisualElement, System. double, System. UInt32, Xamarin.Forms . Accélération))
+- [ `RelScaleTo` ] (XREF : Xamarin.Forms . ViewExtensions. RelScaleTo ( Xamarin.Forms . VisualElement, System. double, System. UInt32, Xamarin.Forms . Accélération))
 
-Remarquez `TranslateTo` qui affecte `TranslationX` `TranslationY` potentiellement à la fois les propriétés et les propriétés.
+Notez que `TranslateTo` potentiellement affecte à la fois les `TranslationX` `TranslationY` Propriétés et.
 
-### <a name="taskwhenall-and-taskwhenany"></a>Task.WhenAll et Task.WhenAny
+### <a name="taskwhenall-and-taskwhenany"></a>Task. WhenAll et Task. WhenAny
 
-Il est également possible de [`Task.WhenAll`](xref:System.Threading.Tasks.Task.WhenAll*)gérer des animations simultanées à [`Task.WhenAny`](xref:System.Threading.Tasks.Task.WhenAny*)l’aide , qui signale lorsque plusieurs tâches ont toutes conclu, et , qui signale lorsque la première de plusieurs tâches a pris fin.
+Il est également possible de gérer des animations simultanées à l’aide de [`Task.WhenAll`](xref:System.Threading.Tasks.Task.WhenAll*) , qui signale quand plusieurs tâches sont terminées, et [`Task.WhenAny`](xref:System.Threading.Tasks.Task.WhenAny*) , qui signale quand la première des nombreuses tâches est terminée.
 
-### <a name="rotation-and-anchors"></a>Rotation et ancres
+### <a name="rotation-and-anchors"></a>Rotation et ancrages
 
-Lorsque vous `ScaleTo` `RelScaleTo`appelez `RotateTo`le `RelRotateTo` , , , [`AnchorX`](xref:Xamarin.Forms.VisualElement.AnchorX) [`AnchorY`](xref:Xamarin.Forms.VisualElement.AnchorY) et les méthodes, vous pouvez définir le et les propriétés pour indiquer le centre de mise à l’échelle et la rotation.
+Lors de l’appel des `ScaleTo` méthodes,, `RelScaleTo` `RotateTo` et `RelRotateTo` , vous pouvez définir [`AnchorX`](xref:Xamarin.Forms.VisualElement.AnchorX) les [`AnchorY`](xref:Xamarin.Forms.VisualElement.AnchorY) Propriétés et pour indiquer le centre de la mise à l’échelle et de la rotation.
 
-Le [**CircleButton**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/CircleButton) démontre cette technique `Button` en tournant autour du centre de la page.
+Le [**CircleButton**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/CircleButton) illustre cette technique en tournant un `Button` autour du centre de la page.
 
 ### <a name="easing-functions"></a>Fonctions d’accélération
 
-En général, les animations sont linéaires à partir d’une valeur de départ à une valeur de fin. L’assouplissement des fonctions peut entraîner une accélération ou un ralentissement des animations au cours de leur cours. Le dernier argument facultatif pour [`Easing`](xref:Xamarin.Forms.Easing)les méthodes d’animation est de type , `Easing`une classe qui définit 11 domaines statiques de type :
+En général, les animations sont linéaires d’une valeur de début à une valeur de fin. Les fonctions d’accélération peuvent entraîner une accélération ou un ralentissement des animations au cours de leur cours. Le dernier argument facultatif des méthodes d’animation est de type [`Easing`](xref:Xamarin.Forms.Easing) , une classe qui définit 11 champs statiques en lecture seule de type `Easing` :
 
-- [`Linear`](xref:Xamarin.Forms.Easing.Linear), par défaut
-- [`SinIn`](xref:Xamarin.Forms.Easing.SinIn), [`SinOut`](xref:Xamarin.Forms.Easing.SinOut)et[`SinInOut`](xref:Xamarin.Forms.Easing.SinInOut)
-- [`CubicIn`](xref:Xamarin.Forms.Easing.CubicIn), [`CubicOut`](xref:Xamarin.Forms.Easing.CubicOut)et[`CubicInOut`](xref:Xamarin.Forms.Easing.CubicInOut)
-- [`BounceIn`](xref:Xamarin.Forms.Easing.BounceIn)Et[`BounceOut`](xref:Xamarin.Forms.Easing.BounceOut)
-- [`SpringIn`](xref:Xamarin.Forms.Easing.SpringIn)Et[`SpringOut`](xref:Xamarin.Forms.Easing.SpringOut)
+- [`Linear`](xref:Xamarin.Forms.Easing.Linear), la valeur par défaut
+- [`SinIn`](xref:Xamarin.Forms.Easing.SinIn), [`SinOut`](xref:Xamarin.Forms.Easing.SinOut) et[`SinInOut`](xref:Xamarin.Forms.Easing.SinInOut)
+- [`CubicIn`](xref:Xamarin.Forms.Easing.CubicIn), [`CubicOut`](xref:Xamarin.Forms.Easing.CubicOut) et[`CubicInOut`](xref:Xamarin.Forms.Easing.CubicInOut)
+- [`BounceIn`](xref:Xamarin.Forms.Easing.BounceIn)les[`BounceOut`](xref:Xamarin.Forms.Easing.BounceOut)
+- [`SpringIn`](xref:Xamarin.Forms.Easing.SpringIn)les[`SpringOut`](xref:Xamarin.Forms.Easing.SpringOut)
 
-Le `In` suffixe indique que l’effet est `Out` au début de `InOut` l’animation, signifie à la fin, et signifie que c’est au début et à la fin de l’animation.
+Le `In` suffixe indique que l’effet se trouve au début de l’animation, `Out` signifie à la fin et `InOut` signifie qu’il est au début et à la fin de l’animation.
 
-[**L’échantillon BounceButton**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/BounceButton) démontre l’utilisation de fonctions d’assouplissement.
+L’exemple [**BounceButton**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/BounceButton) illustre l’utilisation de fonctions d’accélération.
 
-### <a name="your-own-easing-functions"></a>Vos propres fonctions d’assouplissement
+### <a name="your-own-easing-functions"></a>Vos propres fonctions d’accélération
 
-Vous pouvez également définir vos propres [`Func<double, double>`](xref:System.Func`2) fonctions d’assouplissement en passant un au [ `Easing` constructeur](xref:Xamarin.Forms.Easing.%23ctor(System.Func{System.Double,System.Double})). `Easing`définit également une conversion `Func<double, double>` `Easing`implicite de . L’argument de la fonction d’assouplissement est toujours de l’ordre de 0 à 1 que l’animation procède linéairement du début à la fin. La fonction retourne *habituellement* une valeur dans la gamme de 0 à 1, mais pourrait `SpringIn` être `SpringOut` brièvement négative ou supérieure à 1 (comme c’est le cas avec le et les fonctions) ou pourrait enfreindre les règles si vous savez ce que vous faites.
+Vous pouvez également définir vos propres fonctions d’accélération en passant un [`Func<double, double>`](xref:System.Func`2) au [ `Easing` constructeur](xref:Xamarin.Forms.Easing.%23ctor(System.Func{System.Double,System.Double})). `Easing`définit également une conversion implicite de `Func<double, double>` en `Easing` . L’argument de la fonction d’accélération est toujours compris entre 0 et 1, car l’animation se poursuit de façon linéaire du début à la fin. La fonction retourne *généralement* une valeur comprise entre 0 et 1, mais elle peut être brièvement négative ou supérieure à 1 (comme c’est le cas avec les `SpringIn` `SpringOut` fonctions et) ou peut arrêter les règles si vous savez ce que vous faites.
 
-[**L’échantillon De MalasyScale**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/UneasyScale) démontre une fonction d’assouplissement personnalisé, et [**CustomCubicEase**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/CustomCubicEase) en démontre une autre.
+L’exemple [**UneasyScale**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/UneasyScale) illustre une fonction d’accélération personnalisée, et [**CustomCubicEase**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/CustomCubicEase) en illustre une autre.
 
-[**L’échantillon SwingButton**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/SwingButton) démontre également une fonction d’assouplissement `AnchorX` personnalisé, ainsi qu’une technique de modification de la et `AnchorY` des propriétés dans une séquence d’animations de rotation.
+L’exemple [**SwingButton**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/SwingButton) illustre également une fonction d’accélération personnalisée, ainsi qu’une technique permettant de modifier les `AnchorX` `AnchorY` Propriétés et dans une séquence d’animations de rotation.
 
-La bibliothèque [**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) dispose d’une [`JiggleButton`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/JiggleButton.cs) classe qui utilise une fonction d’assouplissement personnalisé pour agiter un bouton lorsqu’elle est cliqué. [**L’échantillon JiggleButtonDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/JiggleButtonDemo) le démontre.
+La bibliothèque [**Xamarin. FormsBook. Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) a une [`JiggleButton`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/JiggleButton.cs) classe qui utilise une fonction d’accélération personnalisée pour agiter un bouton quand l’utilisateur clique dessus. L’exemple [**JiggleButtonDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/JiggleButtonDemo) le montre.
 
 ### <a name="entrance-animations"></a>Animations d’entrée
 
-Un type populaire d’animation se produit lorsqu’une page apparaît pour la première fois. Une telle animation peut [`OnAppearing`](xref:Xamarin.Forms.Page.OnAppearing) être commencée dans la dérogation de la page. Pour ces animations, il est préférable de configurer le XAML pour la façon dont vous voulez que la page *apparaisse après* l’animation, puis d’initialiser et d’animer la mise en page à partir du code.
+Un type d’animation courant se produit lorsqu’une page s’affiche pour la première fois. Une telle animation peut être démarrée dans la [`OnAppearing`](xref:Xamarin.Forms.Page.OnAppearing) substitution de la page. Pour ces animations, il est préférable de configurer le code XAML pour la façon dont vous souhaitez que la page apparaisse *après* l’animation, puis d’initialiser et d’animer la disposition à partir du code.
 
-[**L’échantillon FadingEntrance**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/FadingEntrance) utilise la [`FadeTo`](xref:Xamarin.Forms.ViewExtensions.FadeTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing)) méthode d’extension pour s’estomper dans le contenu de la page.
+L’exemple [**FadingEntrance**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/FadingEntrance) utilise la [ `FadeTo` ] (XREF : Xamarin.Forms . ViewExtensions. FadeTo ( Xamarin.Forms . VisualElement, System. double, System. UInt32, Xamarin.Forms . Accélération)) pour effectuer un fondu dans le contenu de la page.
 
-[**L’échantillon SlidingEntrance**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/SlidingEntrance) utilise la [`TranslateTo`](xref:Xamarin.Forms.ViewExtensions.TranslateTo(Xamarin.Forms.VisualElement,System.Double,System.Double,System.UInt32,Xamarin.Forms.Easing)) méthode d’extension pour glisser dans le contenu de la page sur les côtés.
+L’exemple [**SlidingEntrance**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/SlidingEntrance) utilise la [ `TranslateTo` ] (XREF : Xamarin.Forms . ViewExtensions. TranslateTo ( Xamarin.Forms . VisualElement, System. double, System. double, System. UInt32, Xamarin.Forms . Accélération)) pour faire glisser le contenu de la page à partir des côtés.
 
-[**L’échantillon SwingingEntrance**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/SwingingEntrance) utilise la [`RotateYTo`](xref:Xamarin.Forms.ViewExtensions.RotateYTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing)) méthode `RotationY` d’extension pour animer la propriété. Une [`RotateXTo`](xref:Xamarin.Forms.ViewExtensions.RotateXTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing)) méthode est également disponible.
+L’exemple [**SwingingEntrance**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/SwingingEntrance) utilise la [ `RotateYTo` ] (XREF : Xamarin.Forms . ViewExtensions. RotateYTo ( Xamarin.Forms . VisualElement, System. double, System. UInt32, Xamarin.Forms . Accélération)) pour animer la `RotationY` propriété. A [ `RotateXTo` ] (XREF : Xamarin.Forms . ViewExtensions. RotateXTo ( Xamarin.Forms . VisualElement, System. double, System. UInt32, Xamarin.Forms . Accélération)) est également disponible.
 
-### <a name="forever-animations"></a>Animations pour toujours
+### <a name="forever-animations"></a>Animations à l’infini
 
-À l’autre extrême, les animations « pour toujours » s’exécutent jusqu’à ce que le programme soit terminé. Ceux-ci sont généralement destinés à des fins de démonstration.
+À l’autre extrême, les animations « toujours » s’exécutent jusqu’à la fin du programme. Ils sont généralement destinés à des fins de démonstration.
 
-[**L’échantillon FadingTextAnimation**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/FadingTextAnimation) utilise l’animation [`FadeTo`](xref:Xamarin.Forms.ViewExtensions.FadeTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing)) pour effacer deux morceaux de texte dans et hors.
+L’exemple [**FadingTextAnimation**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/FadingTextAnimation) utilise [ `FadeTo` ] (XREF : Xamarin.Forms . ViewExtensions. FadeTo ( Xamarin.Forms . VisualElement, System. double, System. UInt32, Xamarin.Forms . Accélération)) pour estomper deux parties de texte.
 
-[**PalindromeAnimation**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/PalindromeAnimation) affiche un palindrome, puis tourne séquentiellement les lettres individuelles de 180 degrés afin qu’ils soient tous à l’envers. Ensuite, la chaîne entière est retournée à 180 degrés pour lire la même chose que la corde d’origine.
+[**PalindromeAnimation**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/PalindromeAnimation) affiche un palindrome, puis fait pivoter séquentiellement les lettres individuelles de 180 degrés afin qu’elles soient toutes à l’envers. Ensuite, la chaîne entière est retournée de 180 degrés pour lire le même que la chaîne d’origine.
 
-[**L’échantillon CopterAnimation**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/CopterAnimation) fait `BoxView` pivoter un hélicoptère simple tout en le tournant autour du centre de l’écran.
+L’exemple [**CopterAnimation**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/CopterAnimation) fait pivoter un `BoxView` hélicoptère simple tout en le faisant tourner au centre de l’écran.
 
-[**RotatingSpokes**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/RotatingSpokes) tourne `BoxView` les rayons autour du centre de l’écran, puis tourne chacun se parlait pour créer des modèles intéressants:
+[**RotatingSpokes**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/RotatingSpokes) `BoxView` fait tourner les rayons au centre de l’écran, puis fait pivoter chaque rayon pour créer des modèles intéressants :
 
-[![Triple capture d’écran de Rotating Spokes](images/ch22fg21-small.png "Rayons rotatifs")](images/ch22fg21-large.png#lightbox "Rayons rotatifs")
+[![Capture d’écran triple des rayons rotatifs](images/ch22fg21-small.png "Rotation des rayons")](images/ch22fg21-large.png#lightbox "Rotation des rayons")
 
-Toutefois, l’augmentation `Rotation` progressive des biens d’un élément pourrait ne pas fonctionner à long terme, comme le démontre l’échantillon [**RotationBreakdown.**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/RotationBreakdown)
+Toutefois, l’extension progressive `Rotation` de la propriété d’un élément peut ne pas fonctionner à long terme, comme le montre l’exemple [**RotationBreakdown**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/RotationBreakdown) .
 
-[**L’échantillon SpinningImage**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/SpinningImage) [`RotateTo`](xref:Xamarin.Forms.ViewExtensions.RotateTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing))utilise, [`RotateXTo`](xref:Xamarin.Forms.ViewExtensions.RotateXTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing)), et [`RotateYTo`](xref:Xamarin.Forms.ViewExtensions.RotateYTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing)) pour faire croire qu’un bitmap tourne dans l’espace 3D.
+L’exemple [**SpinningImage**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/SpinningImage) utilise [ `RotateTo` ] (XREF : Xamarin.Forms . ViewExtensions. RotateTo ( Xamarin.Forms . VisualElement, System. double, System. UInt32, Xamarin.Forms . Accélération)), [ `RotateXTo` ] (XREF : Xamarin.Forms . ViewExtensions. RotateXTo ( Xamarin.Forms . VisualElement, System. double, System. UInt32, Xamarin.Forms . Accélération)) et [ `RotateYTo` ] (XREF : Xamarin.Forms . ViewExtensions. RotateYTo ( Xamarin.Forms . VisualElement, System. double, System. UInt32, Xamarin.Forms . Accélération)) pour faire croire qu’une image bitmap est en rotation dans l’espace 3D.
 
-### <a name="animating-the-bounds-property"></a>Animer la propriété des limites
+### <a name="animating-the-bounds-property"></a>Animer la propriété Bounds
 
-La seule méthode `ViewExtensions` d’extension [`LayoutTo`](xref:Xamarin.Forms.ViewExtensions.LayoutTo(Xamarin.Forms.VisualElement,Xamarin.Forms.Rectangle,System.UInt32,Xamarin.Forms.Easing))dans pas encore démontré est [`Bounds`](xref:Xamarin.Forms.VisualElement.Bounds) , qui [`Layout`](xref:Xamarin.Forms.VisualElement.Layout(Xamarin.Forms.Rectangle)) anime effectivement la propriété de lecture seulement en appelant la méthode. Cette méthode est normalement `Layout` appelée par les dérivés comme il sera discuté dans [**le chapitre 26. CustomLayouts**](chapter26.md).
+La seule méthode d’extension de `ViewExtensions` n’est pas encore démontrée est [ `LayoutTo` ] (XREF : Xamarin.Forms . ViewExtensions. LayoutTo ( Xamarin.Forms . VisualElement, Xamarin.Forms . Rectangle, System. UInt32, Xamarin.Forms . Accélération)), qui anime efficacement la propriété en lecture seule [`Bounds`](xref:Xamarin.Forms.VisualElement.Bounds) en appelant le [ `Layout` ] (XREF : Xamarin.Forms . VisualElement. Layout ( Xamarin.Forms . Rectangle)). Cette méthode est normalement appelée par `Layout` les dérivés comme indiqué dans le [**chapitre 26. CustomLayouts**](chapter26.md).
 
-La `LayoutTo` méthode doit être limitée à des fins spéciales. Le programme [**BouncingBox**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/BouncingBox) l’utilise pour `BoxView` compresser et étendre un pendant qu’il rebondit sur les côtés d’une page.
+La `LayoutTo` méthode doit être limitée à des fins spéciales. Le programme [**BouncingBox**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/BouncingBox) l’utilise pour compresser et développer un `BoxView` lorsqu’il rebondit sur les côtés d’une page.
 
-[**L’échantillon XamagonXuzzle**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/XamagonXuzzle) utilise `LayoutTo` pour déplacer les tuiles dans une mise en œuvre du puzzle classique 15-16 qui affiche une image brouillée plutôt que des tuiles numérotées:
+L’exemple [**XamagonXuzzle**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/XamagonXuzzle) utilise `LayoutTo` pour déplacer des vignettes dans une implémentation du puzzle 15-16 classique qui affiche une image brouillée plutôt que des vignettes numérotées :
 
-[![Triple capture d’écran de Xamarin Xuzzle](images/ch22fg26-small.png "Jeu de Xuzzle Puzzle")](images/ch22fg26-large.png#lightbox "Jeu de Xuzzle Puzzle")
+[![Capture d’écran triple de Xamarin Xuzzle](images/ch22fg26-small.png "Jeu de puzzle Xuzzle")](images/ch22fg26-large.png#lightbox "Jeu de puzzle Xuzzle")
 
-### <a name="your-own-awaitable-animations"></a>Vos propres animations en attente
+### <a name="your-own-awaitable-animations"></a>Vos propres animations await
 
-[**L’échantillon TryAwaitableAnimation**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/TryAwaitableAnimation) crée une animation en attente. La classe cruciale qui `Task` peut retourner un objet de la [`TaskCompletionSource`](xref:System.Threading.Tasks.TaskCompletionSource`1)méthode et le signal lorsque l’animation est terminée est .
+L’exemple [**TryAwaitableAnimation**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/TryAwaitableAnimation) crée une animation pouvant être attendue. La classe essentielle qui peut retourner un `Task` objet à partir de la méthode et signal lorsque l’animation est terminée est [`TaskCompletionSource`](xref:System.Threading.Tasks.TaskCompletionSource`1) .
 
 ## <a name="deeper-into-animations"></a>Plus profondément dans les animations
 
-Le système d’animation Xamarin.Forms peut être un peu déroutant. En plus `Easing` de la classe, le `ViewExtensions` `Animation`système `AnimationExtension` d’animation comprend le , , et les classes.
+Le Xamarin.Forms système d’animation peut être un peu confus. En plus de la `Easing` classe, le système d’animation comprend `ViewExtensions` les `Animation` classes, et `AnimationExtension` .
 
-### <a name="viewextensions-class"></a>VueExtensions classe
+### <a name="viewextensions-class"></a>ViewExtensions, classe
 
-Vous avez déjà [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions)vu . Il définit neuf méthodes `Task<bool>` [`CancelAnimations`](xref:Xamarin.Forms.ViewExtensions.CancelAnimations(Xamarin.Forms.VisualElement))qui reviennent et . Sept des neuf méthodes ciblent les propriétés de transformation. Les deux [`FadeTo`](xref:Xamarin.Forms.ViewExtensions.FadeTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing))autres sont [`Opacity`](xref:Xamarin.Forms.VisualElement.Opacity) , qui [`LayoutTo`](xref:Xamarin.Forms.ViewExtensions.LayoutTo(Xamarin.Forms.VisualElement,Xamarin.Forms.Rectangle,System.UInt32,Xamarin.Forms.Easing))cible la [`Layout`](xref:Xamarin.Forms.VisualElement.Layout(Xamarin.Forms.Rectangle)) propriété, et , qui appelle la méthode.
+Vous avez déjà vu [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) . Il définit neuf méthodes qui retournent `Task<bool>` et [ `CancelAnimations` ] (XREF : Xamarin.Forms . ViewExtensions. CancelAnimations ( Xamarin.Forms . VisualElement)). Sept des neuf méthodes ciblent les propriétés de transformation. Les deux autres sont [ `FadeTo` ] (XREF : Xamarin.Forms . ViewExtensions. FadeTo ( Xamarin.Forms . VisualElement, System. double, System. UInt32, Xamarin.Forms . Accélération)), qui cible la [`Opacity`](xref:Xamarin.Forms.VisualElement.Opacity) propriété, et [ `LayoutTo` ] (XREF : Xamarin.Forms . ViewExtensions. LayoutTo ( Xamarin.Forms . VisualElement, Xamarin.Forms . Rectangle, System. UInt32, Xamarin.Forms . Accélération)), qui appelle la [ `Layout` ] (XREF : Xamarin.Forms . VisualElement. Layout ( Xamarin.Forms . Rectangle)).
 
-### <a name="animation-class"></a>Cours d’animation
+### <a name="animation-class"></a>Classe d’animation
 
-La [`Animation`](xref:Xamarin.Forms.AnimationExtensions) classe dispose [d’un constructeur](xref:Xamarin.Forms.Animation.%23ctor(System.Action{System.Double},System.Double,System.Double,Xamarin.Forms.Easing,System.Action)) avec cinq arguments pour définir les méthodes de rappel et de finition, et les paramètres de l’animation.
+La [`Animation`](xref:Xamarin.Forms.AnimationExtensions) classe a un [constructeur] (XREF : Xamarin.Forms . Animation .% 23ctor (System. Action {System. double}, System. double, System. double, Xamarin.Forms . Accélération, System. action)) avec cinq arguments pour définir les méthodes de rappel et de fin, ainsi que les paramètres de l’animation.
 
-Des animations pour [`Add`](xref:Xamarin.Forms.Animation.Add(System.Double,System.Double,Xamarin.Forms.Animation))enfants [`Insert`](xref:Xamarin.Forms.Animation.Insert(System.Double,System.Double,Xamarin.Forms.Animation)) [`WithConcurrent`](xref:Xamarin.Forms.Animation.WithConcurrent(Xamarin.Forms.Animation,System.Double,System.Double))peuvent être ajoutées avec , , , et la surcharge de [`WithConcurrent`](xref:Xamarin.Forms.Animation.WithConcurrent(System.Action{System.Double},System.Double,System.Double,Xamarin.Forms.Easing,System.Double,System.Double)).
+Les animations enfants peuvent être ajoutées avec [ `Add` ] (XREF : Xamarin.Forms . Animation. Add (System. double, System. double, Xamarin.Forms . Animation)), [ `Insert` ] (XREF : Xamarin.Forms . Animation. Insert (System. double, System. double, Xamarin.Forms . Animation)), [ `WithConcurrent` ] (XREF : Xamarin.Forms . Animation. WithConcurrent ( Xamarin.Forms . Animation, System. double, System. double)) et surcharge de [ `WithConcurrent` ] (XREF : Xamarin.Forms . Animation. WithConcurrent (System. Action {System. double}, System. double, System. double, Xamarin.Forms . Accélération, System. double, System. double).
 
-L’objet d’animation est alors [`Commit`](xref:Xamarin.Forms.Animation.Commit(Xamarin.Forms.IAnimatable,System.String,System.UInt32,System.UInt32,Xamarin.Forms.Easing,System.Action{System.Double,System.Boolean},System.Func{System.Boolean})) commencé par un appel à la méthode.
+L’objet d’animation est ensuite démarré avec un appel à [ `Commit` ] (XREF : Xamarin.Forms . Animation. Commit ( Xamarin.Forms . IAnimatable, System. String, System. UInt32, System. UInt32, Xamarin.Forms . Méthode d’accélération, System. Action {System. double, System. Boolean}, System. Func {System. Boolean})).
 
-### <a name="animationextensions-class"></a>Classe AnimationExtensions
+### <a name="animationextensions-class"></a>AnimationExtensions, classe
 
-La [`AnimationExtensions`](xref:Xamarin.Forms.AnimationExtensions) classe contient principalement des méthodes d’extension. Il existe plusieurs versions d’une `Animate` méthode et la méthode générique [`Animate`](xref:Xamarin.Forms.AnimationExtensions.Animate*) est si polyvalente que c’est vraiment la seule fonction d’animation dont vous avez besoin.
+La [`AnimationExtensions`](xref:Xamarin.Forms.AnimationExtensions) classe contient principalement des méthodes d’extension. Il existe plusieurs versions d’une `Animate` méthode et la [`Animate`](xref:Xamarin.Forms.AnimationExtensions.Animate*) méthode générique est tellement polyvalente qu’il s’agit vraiment de la seule fonction d’animation dont vous avez besoin.
 
-## <a name="working-with-the-animation-class"></a>Travailler avec la classe Animation
+## <a name="working-with-the-animation-class"></a>Utilisation de la classe animation
 
-[**L’échantillon ConcurrentAnimations**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/ConcurrentAnimations) [`Animation`](xref:Xamarin.Forms.Animation) démontre la classe avec plusieurs animations différentes.
+L’exemple [**ConcurrentAnimations**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/ConcurrentAnimations) illustre la [`Animation`](xref:Xamarin.Forms.Animation) classe avec plusieurs animations différentes.
 
-### <a name="child-animations"></a>Animations pour enfants
+### <a name="child-animations"></a>Animations enfants
 
-[**L’échantillon De ConcurrentAnimations**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/ConcurrentAnimations) présente également des animations pour [`Add`](xref:Xamarin.Forms.Animation.Add(System.Double,System.Double,Xamarin.Forms.Animation)) enfants, qui utilisent les méthodes et [`Insert`](xref:Xamarin.Forms.Animation.Insert(System.Double,System.Double,Xamarin.Forms.Animation)) les méthodes (très similaires).
+L’exemple [**ConcurrentAnimations**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/ConcurrentAnimations) illustre également les animations enfants, qui utilisent le (très similaire) [ `Add` ] (XREF : Xamarin.Forms . Animation. Add (System. double, System. double, Xamarin.Forms . Animation)) et [ `Insert` ] (XREF : Xamarin.Forms . Animation. Insert (System. double, System. double, Xamarin.Forms . Animation)).
 
 ### <a name="beyond-the-high-level-animation-methods"></a>Au-delà des méthodes d’animation de haut niveau
 
-[**L’échantillon De ConcurrentAnimations**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/ConcurrentAnimations) montre également comment effectuer des animations qui vont au-delà des propriétés visées par les `ViewExtensions` méthodes. Dans un exemple, une série de périodes s’allonge; dans un autre `BackgroundColor` exemple, une propriété est animée.
+L’exemple [**ConcurrentAnimations**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/ConcurrentAnimations) montre également comment exécuter des animations qui dépassent les propriétés ciblées par les `ViewExtensions` méthodes. Dans un exemple, une série de périodes est plus longue ; dans un autre exemple, une `BackgroundColor` propriété est animée.
 
-### <a name="more-of-your-own-awaitable-methods"></a>Plus de vos propres méthodes en attente
+### <a name="more-of-your-own-awaitable-methods"></a>Plus de vos propres méthodes await
 
-La [`TranslateTo`](xref:Xamarin.Forms.ViewExtensions.TranslateTo(Xamarin.Forms.VisualElement,System.Double,System.Double,System.UInt32,Xamarin.Forms.Easing)) méthode `ViewExtensions` de ne fonctionne [`Easing.SpringOut`](xref:Xamarin.Forms.Easing.SpringOut) pas avec la fonction. Il s’arrête lorsque la sortie d’assouplissement dépasse 1.
+[ `TranslateTo` ] (XREF : Xamarin.Forms . ViewExtensions. TranslateTo ( Xamarin.Forms . VisualElement, System. double, System. double, System. UInt32, Xamarin.Forms . Accélération)) `ViewExtensions` ne fonctionne pas avec la [`Easing.SpringOut`](xref:Xamarin.Forms.Easing.SpringOut) fonction. Elle s’arrête lorsque la sortie d’accélération est supérieure à 1.
 
-La bibliothèque [**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) contient [`MoreViewExtensions`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs) une classe avec [`TranslateXTo`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L12) [`TranslateYTo`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L49) et des méthodes d’extension qui n’ont pas ce problème, ainsi que [`CancelTranslateXTo`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L44) des [`CancelTranslateYTo`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L71) méthodes pour annuler ces animations.
+La bibliothèque [**Xamarin. FormsBook. Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) contient une [`MoreViewExtensions`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs) classe avec [`TranslateXTo`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L12) des [`TranslateYTo`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L49) méthodes d’extension et qui n’ont pas ce problème, ainsi que les [`CancelTranslateXTo`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L44) [`CancelTranslateYTo`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L71) méthodes et pour annuler ces animations.
 
-Le [**SpringSlidingEntrance**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/SpringSlidingEntrance) démontre `TranslateXTo` la méthode.
+Le [**SpringSlidingEntrance**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/SpringSlidingEntrance) illustre la `TranslateXTo` méthode.
 
-La `MoreExtensions` classe contient [`TranslateXYTo`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L76) également une méthode d’extension [`CancelTranslateXYTo`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L113) qui combine la traduction X et Y, et une méthode.
+La `MoreExtensions` classe contient également une [`TranslateXYTo`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L76) méthode d’extension qui combine les traductions X et Y, et une [`CancelTranslateXYTo`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L113) méthode.
 
-### <a name="implementing-a-bezier-animation"></a>Mise en œuvre d’une animation Bézier
+### <a name="implementing-a-bezier-animation"></a>Implémentation d’une animation Bézier
 
-Il est également possible de développer une animation qui déplace un élément le long du chemin d’un éclat de Bézier. La bibliothèque [**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) contient une [`BezierSpline`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/BezierSpline.cs) structure qui encapsule [`BezierTangent`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/BezierTangent.cs) un éclat de Bézier et un recensement pour contrôler l’orientation.
+Il est également possible de développer une animation qui déplace un élément le long du tracé d’une spline de Bézier. La bibliothèque [**Xamarin. FormsBook. Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) contient une [`BezierSpline`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/BezierSpline.cs) structure qui encapsule une spline de Bézier et une [`BezierTangent`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/BezierTangent.cs) énumération pour contrôler l’orientation.
 
-La [`MoreViewExtensions`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs) classe [`BezierPathTo`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L118) contient une [`CancelBezierPathTo`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L161) méthode d’extension et une méthode.
+La [`MoreViewExtensions`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs) classe contient une [`BezierPathTo`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L118) méthode d’extension et une [`CancelBezierPathTo`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L161) méthode.
 
-[**L’échantillon de BezierLoop**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/BezierLoop) montre l’animation d’un élément le long d’un chemin Beizer.
+L’exemple [**BezierLoop**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/BezierLoop) montre comment animer un élément le long d’un chemin d’accès Beizer.
 
-## <a name="working-with-animationextensions"></a>Travailler avec AnimationExtensions
+## <a name="working-with-animationextensions"></a>Utilisation de AnimationExtensions
 
-Un type d’animation manquant dans la collection standard est une animation couleur. Le problème est qu’il n’y `Color` a pas de bonne façon d’interpoler entre deux valeurs. Il est possible d’interpoler les valeurs RGB individuelles, mais tout aussi valable est interpolant les valeurs HSL.
+Un type d’animation manquant dans la collection standard est une animation de couleur. Le problème est qu’il n’existe aucun moyen d’interpoler entre deux `Color` valeurs. Il est possible d’interpoler les valeurs RVB individuelles, mais le plus simple est d’interpoler les valeurs TSL.
 
-Pour cette [`MoreViewExtensions`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs) raison, la classe de la bibliothèque [**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) contient deux `Color` méthodes d’animation: [`RgbColorAnimation`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L166) et [`HslColorAnimation`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L188). (Il existe également deux [`CancelRgbColorAnimation`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L183) [`CancelHslColorAnimation`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L206)méthodes d’annulation: et ).
+Pour cette raison, la [`MoreViewExtensions`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs) classe de la bibliothèque [**Xamarin. FormsBook. Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) contient deux `Color` méthodes d’animation : [`RgbColorAnimation`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L166) et [`HslColorAnimation`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L188) . (Il existe également deux méthodes d’annulation : [`CancelRgbColorAnimation`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L183) et [`CancelHslColorAnimation`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L206) ).
 
-Les deux méthodes [`ColorAnimation`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L211)font usage de , qui [`Animate`](xref:Xamarin.Forms.AnimationExtensions.Animate*) effectue [`AnimationExtensions`](xref:Xamarin.Forms.AnimationExtensions)l’animation en appelant la méthode générique étendue dans .
+Les deux méthodes utilisent [`ColorAnimation`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L211) , qui exécute l’animation en appelant la méthode générique étendue [`Animate`](xref:Xamarin.Forms.AnimationExtensions.Animate*) dans [`AnimationExtensions`](xref:Xamarin.Forms.AnimationExtensions) .
 
-[**L’échantillon ColorAnimations**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/ColorAnimations) démontre l’utilisation de ces deux types d’animations couleur.
+L’exemple [**ColorAnimations**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/ColorAnimations) illustre l’utilisation de ces deux types d’animations de couleurs.
 
-## <a name="structuring-your-animations"></a>Structurer vos animations
+## <a name="structuring-your-animations"></a>Structuration de vos animations
 
-Il est parfois utile d’exprimer des animations dans XAML et de les utiliser en collaboration avec MVVM. Ceci est couvert dans le chapitre suivant, [**Chapitre 23. Déclencheurs et comportements**](chapter23.md).
+Il est parfois utile d’exprimer des animations en XAML et de les utiliser conjointement avec MVVM. Ce sujet est abordé dans le chapitre [**23 suivant. Déclencheurs et comportements**](chapter23.md).
 
 ## <a name="related-links"></a>Liens connexes
 
 - [Chapitre 22 texte intégral (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch22-Apr2016.pdf)
-- [Échantillons du chapitre 22](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22)
+- [Exemples du chapitre 22](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22)
 - [Animation](~/xamarin-forms/user-interface/animation/index.md)

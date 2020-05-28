@@ -1,20 +1,20 @@
 ---
-title: Envoyer et recevoir des notifications Push avec Azure Notification Hubs et Xamarin. Forms
-description: Cet article explique comment utiliser Azure Notification Hubs pour envoyer des notifications push multiplateforme à des applications Xamarin. Forms.
-ms.prod: xamarin
-ms.assetid: 07D13195-3A0D-4C95-ACF0-143A9084973C
-ms.technology: xamarin-forms
-author: profexorgeek
-ms.author: jusjohns
-ms.date: 11/27/2019
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
 no-loc:
 - Firebase
-ms.openlocfilehash: 88926fe2c132ac03a07a7a2e18ee64b61fde43ad
-ms.sourcegitcommit: bc0c1740aa0708459729c0e671ab3ff7de3e2eee
+ms.openlocfilehash: 6b91884124f6c6dac366e30b8437a5f6e06ee162
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83425855"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84133326"
 ---
 # <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-xamarinforms"></a>Envoyer et recevoir des notifications Push avec Azure Notification Hubs et Xamarin. Forms
 
@@ -362,7 +362,7 @@ Le processus de configuration de l’application iOS pour recevoir des notificat
 
 1. Configurez l' **identificateur de Bundle** dans le `Info.plist` fichier pour qu’il corresponde à la valeur utilisée dans le profil de provisionnement.
 1. Ajoutez l’option **activer les notifications push** au `Entitlements.plist` fichier.
-1. Ajoutez le package NuGet `Xamarin.Azure.NotificationHubs.iOS` à votre projet.
+1. Ajoutez le `Xamarin.Azure.NotificationHubs.iOS` package NuGet à votre projet.
 1. [Inscrivez-vous](#register-for-notifications-with-apns) aux notifications avec APNs.
 1. [Inscrire](#register-with-azure-notification-hub-and-subscribe-to-tags) l’application auprès d’Azure notification Hub et s’abonner à des balises.
 1. [Ajouter](#add-apns-notifications-to-xamarinforms-ui) APNS les notifications à l’interface utilisateur Xamarin. Forms.

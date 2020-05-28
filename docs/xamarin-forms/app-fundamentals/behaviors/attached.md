@@ -1,39 +1,42 @@
 ---
-title: Comportements attachés
-description: Les comportements attachés sont des classes avec une ou plusieurs propriétés attachées. Cet article montre comment créer et utiliser des comportements attachés.
-ms.prod: xamarin
-ms.assetid: ECEE6AEC-44FA-4AF7-BAD0-88C6EE48422E
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/06/2016
-ms.openlocfilehash: 7d16eef4fe5422fb5cf3c039c66d1b0f113727fd
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 08b1c738dc87bb9373436a3fd96486eb15341112
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "77131118"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139423"
 ---
 # <a name="attached-behaviors"></a>Comportements attachés
 
-[![Télécharger](~/media/shared/download.png) l’échantillon Télécharger l’échantillon](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-attachednumericvalidationbehavior)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-attachednumericvalidationbehavior)
 
-_Les comportements attachés sont des classes statiques avec une ou plusieurs propriétés attachées. Cet article montre comment créer et consommer des comportements attachés._
+_Les comportements attachés sont des classes statiques avec une ou plusieurs propriétés jointes. Cet article montre comment créer et consommer des comportements attachés._
 
-## <a name="overview"></a>Vue d’ensemble
+## <a name="overview"></a>Vue d'ensemble
 
 Les propriétés attachées constituent un type particulier de propriété liable. Elles sont définies dans une seule classe, mais attachées à d’autres objets. En XAML, elles sont reconnaissables car elles sont représentées sous forme d’attributs contenant un nom de classe et un nom de propriété séparés par un point.
 
 Une propriété attachée peut définir un délégué `propertyChanged` qui est exécuté quand la valeur de la propriété change, par exemple quand la propriété est définie sur un contrôle. Lorsque le délégué `propertyChanged` s’exécute, il est passé comme référence au contrôle sur lequel il est actuellement attaché, tout comme les paramètres qui contiennent les valeurs anciennes et nouvelles de la propriété. Vous pouvez utiliser ce délégué pour ajouter de nouvelles fonctionnalités au contrôle auquel la propriété est attachée en manipulant la référence qui y est passée, comme suit :
 
-1. Le `propertyChanged` délégué jette la référence de contrôle, qui est reçue comme un [`BindableObject`](xref:Xamarin.Forms.BindableObject), au type de contrôle que le comportement est conçu pour améliorer.
+1. Le `propertyChanged` délégué convertit la référence de contrôle, qui est reçue en tant que [`BindableObject`](xref:Xamarin.Forms.BindableObject) , vers le type de contrôle que le comportement est conçu pour améliorer.
 1. Le délégué `propertyChanged` modifie les propriétés du contrôle, appelle les méthodes du contrôle ou inscrit les gestionnaires d’événements aux événements exposés par le contrôle, pour implémenter la fonctionnalité clé du comportement.
 
-Le problème avec les comportements attachés est qu’ils sont définis dans une classe `static` avec des méthodes et des propriétés `static`. Il est donc difficile de créer des comportements attachés qui ont un état. De plus, les comportements Xamarin.Forms ont remplacé les comportements attachés comme approche préférée pour construire des comportements. Pour plus d’informations sur les comportements Xamarin.Forms, consultez [Comportements Xamarin.Forms](~/xamarin-forms/app-fundamentals/behaviors/creating.md) et [Comportements réutilisables](~/xamarin-forms/app-fundamentals/behaviors/reusable/index.md).
+Le problème avec les comportements attachés est qu’ils sont définis dans une classe `static` avec des méthodes et des propriétés `static`. Il est donc difficile de créer des comportements attachés qui ont un état. De plus, Xamarin.Forms les comportements ont remplacé les comportements attachés comme approche préférée de la construction de comportement. Pour plus d’informations sur les Xamarin.Forms comportements, [ Xamarin.Forms ](~/xamarin-forms/app-fundamentals/behaviors/creating.md) consultez comportements et [comportements réutilisables](~/xamarin-forms/app-fundamentals/behaviors/reusable/index.md).
 
 ## <a name="creating-an-attached-behavior"></a>Création d’un comportement attaché
 
-L’application d’échantillon démontre un `NumericValidationBehavior`, qui met [`Entry`](xref:Xamarin.Forms.Entry) en évidence la valeur saisie `double`par l’utilisateur dans un contrôle en rouge, si ce n’est pas un . Le comportement est illustré dans l’exemple de code suivant :
+L’exemple d’application illustre un `NumericValidationBehavior` , qui met en surbrillance la valeur entrée par l’utilisateur dans un [`Entry`](xref:Xamarin.Forms.Entry) contrôle en rouge, s’il ne s’agit pas d’un `double` . Le comportement est illustré dans l’exemple de code suivant :
 
 ```csharp
 public static class NumericValidationBehavior
@@ -80,11 +83,11 @@ public static class NumericValidationBehavior
 }
 ```
 
-La classe `NumericValidationBehavior` contient une propriété attachée nommée `AttachBehavior` avec une méthode getter ou setter `static`, qui contrôle l’ajout ou la suppression du comportement dans le contrôle auquel il est attaché. Cette propriété jointe inscrit la méthode `OnAttachBehaviorChanged` qui est exécutée au changement de la valeur de la propriété. Cette méthode enregistre ou dé-enregistre un [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) gestionnaire d’événements pour `AttachBehavior` l’événement, en fonction de la valeur de la propriété ci-jointe. La fonctionnalité de base du comportement `OnEntryTextChanged` est fournie par la méthode, [`Entry`](xref:Xamarin.Forms.Entry) qui analyse la `TextColor` valeur saisie dans le par `double`l’utilisateur, et définit la propriété au rouge si la valeur n’est pas un .
+La classe `NumericValidationBehavior` contient une propriété attachée nommée `AttachBehavior` avec une méthode getter ou setter `static`, qui contrôle l’ajout ou la suppression du comportement dans le contrôle auquel il est attaché. Cette propriété jointe inscrit la méthode `OnAttachBehaviorChanged` qui est exécutée au changement de la valeur de la propriété. Cette méthode enregistre ou annule l’inscription d’un gestionnaire d’événements pour l' [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) événement, en fonction de la valeur de la `AttachBehavior` propriété jointe. La fonctionnalité principale du comportement est fournie par la `OnEntryTextChanged` méthode, qui analyse la valeur entrée dans le [`Entry`](xref:Xamarin.Forms.Entry) par l’utilisateur et définit la `TextColor` propriété sur rouge si la valeur n’est pas `double` .
 
 ## <a name="consuming-an-attached-behavior"></a>Consommation d’un comportement attaché
 
-La `NumericValidationBehavior` classe peut être consommée en ajoutant la `AttachBehavior` propriété ci-jointe à un [`Entry`](xref:Xamarin.Forms.Entry) contrôle, comme le démontre l’exemple de code XAML suivant :
+La `NumericValidationBehavior` classe peut être consommée en ajoutant la `AttachBehavior` propriété jointe à un [`Entry`](xref:Xamarin.Forms.Entry) contrôle, comme illustré dans l’exemple de code XAML suivant :
 
 ```xaml
 <ContentPage ... xmlns:local="clr-namespace:WorkingWithBehaviors;assembly=WorkingWithBehaviors" ...>
@@ -94,7 +97,7 @@ La `NumericValidationBehavior` classe peut être consommée en ajoutant la `Atta
 </ContentPage>
 ```
 
-L’équivalent [`Entry`](xref:Xamarin.Forms.Entry) dans le C est indiqué dans l’exemple de code suivant :
+L’équivalent [`Entry`](xref:Xamarin.Forms.Entry) en C# est illustré dans l’exemple de code suivant :
 
 ```csharp
 var entry = new Entry { Placeholder = "Enter a System.Double" };
@@ -116,16 +119,16 @@ Vous pouvez supprimer la classe `NumericValidationBehavior` d’un contrôle en 
 <Entry Placeholder="Enter a System.Double" local:NumericValidationBehavior.AttachBehavior="false" />
 ```
 
-L’équivalent [`Entry`](xref:Xamarin.Forms.Entry) dans le C est indiqué dans l’exemple de code suivant :
+L’équivalent [`Entry`](xref:Xamarin.Forms.Entry) en C# est illustré dans l’exemple de code suivant :
 
 ```csharp
 var entry = new Entry { Placeholder = "Enter a System.Double" };
 NumericValidationBehavior.SetAttachBehavior (entry, false);
 ```
 
-Lors de l’exécution, la méthode `OnAttachBehaviorChanged` est exécutée quand la valeur de la propriété attachée `AttachBehavior` est définie sur `false`. La `OnAttachBehaviorChanged` méthode va ensuite désenregistrer [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) le gestionnaire de l’événement pour l’événement, en veillant à ce que le comportement n’est pas exécuté que l’utilisateur interagit avec le contrôle.
+Lors de l’exécution, la méthode `OnAttachBehaviorChanged` est exécutée quand la valeur de la propriété attachée `AttachBehavior` est définie sur `false`. La `OnAttachBehaviorChanged` méthode annule ensuite l’inscription du gestionnaire d’événements pour l’événement, ce qui permet de s' [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) assurer que le comportement n’est pas exécuté lorsque l’utilisateur interagit avec le contrôle.
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article a montré comment créer et consommer des comportements attachés. Les comportements attachés sont des classes `static` avec une ou plusieurs propriétés attachées.
 

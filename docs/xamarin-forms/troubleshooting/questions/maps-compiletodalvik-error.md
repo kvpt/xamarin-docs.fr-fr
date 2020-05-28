@@ -1,22 +1,25 @@
 ---
-title: Pourquoi mon projet Android Xamarin. Forms. Maps échoue-t-il avec COMPILETODALVIK erreur inattendue de niveau supérieur ?
-ms.topic: troubleshooting
-ms.prod: xamarin
-ms.assetid: C0251EB1-F509-47AD-98D6-846AF46425E5
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/25/2017
-ms.openlocfilehash: 2872cc7b54e26d07b388f08d650048e8d3861930
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+title: Pourquoi My Xamarin.Forms . Le projet Android Maps échoue avec COMPILETODALVIK erreur de niveau supérieur inattendue ?
+ms.topic: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e29535e71cb77b05da41c043c6fd932ae4f5ce95
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70759970"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135848"
 ---
-# <a name="why-does-my-xamarinformsmaps-android-project-fail-with-compiletodalvik-unexpected-top-level-error"></a>Pourquoi mon projet Android Xamarin. Forms. Maps échoue-t-il avec COMPILETODALVIK erreur inattendue de niveau supérieur ?
+# <a name="why-does-my-xamarinformsmaps-android-project-fail-with-compiletodalvik-unexpected-top-level-error"></a>Pourquoi My Xamarin.Forms . Le projet Android Maps échoue avec COMPILETODALVIK erreur de niveau supérieur inattendue ?
 
-Cette erreur peut se produire dans le bloc d’erreurs de Visual Studio pour Mac ou dans la fenêtre sortie de la génération de Visual Studio. dans les projets Android utilisant Xamarin. Forms. Maps.
+Cette erreur peut se produire dans le bloc d’erreurs de Visual Studio pour Mac ou dans la fenêtre sortie de la génération de Visual Studio. dans les projets Android utilisant Xamarin.Forms . Mount.
 
 Cela est généralement résolu en accroissant la taille du tas Java pour votre projet Xamarin. Android. Pour augmenter la taille du tas, procédez comme suit :
 

@@ -1,26 +1,29 @@
 ---
-title: Ajout d’un module de reconnaissance des appuis
-description: Cet article explique comment utiliser le geste d’appui pour la détection des appuis dans une application Xamarin.Forms. La détection des appuis est implémentée avec la classe TapGestureRecognizer.
-ms.prod: xamarin
-ms.assetid: 1D150BAF-4157-49BC-90A0-153323B8EBCF
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/21/2016
-ms.openlocfilehash: 95f25dbce55e2b960f604b6e304ffb6e8ed775e0
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: Cet article explique comment utiliser le geste TAP pour la détection de TAP dans une Xamarin.Forms application. La détection des appuis est implémentée avec la classe TapGestureRecognizer.
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0470419dd5070424c362dec8d4b1978507985783
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70771335"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137616"
 ---
 # <a name="adding-a-tap-gesture-recognizer"></a>Ajout d’un module de reconnaissance des appuis
 
-[![Télécharger](~/media/shared/download.png) l’échantillon Télécharger l’échantillon](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-tapgesture)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-tapgesture)
 
 _Le geste d’appui est utilisé pour la détection des appuis, il est implémentée avec la classe TapGestureRecognizer._
 
-Pour rendre un élément d’interface utilisateur cliquable avec le geste de robinet, créez une [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) instance, gérez l’événement [`Tapped`](xref:Xamarin.Forms.TapGestureRecognizer.Tapped) et ajoutez le nouveau gestuelle à la [`GestureRecognizers`](xref:Xamarin.Forms.View.GestureRecognizers) collection sur l’élément interface utilisateur. L’exemple de `TapGestureRecognizer` code suivant [`Image`](xref:Xamarin.Forms.Image) montre un élément attaché à un élément :
+Pour créer un élément d’interface utilisateur avec le mouvement TAP, créez une [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) instance, gérez l' [`Tapped`](xref:Xamarin.Forms.TapGestureRecognizer.Tapped) événement et ajoutez le nouveau module de reconnaissance de mouvement à la [`GestureRecognizers`](xref:Xamarin.Forms.View.GestureRecognizers) collection sur l’élément d’interface utilisateur. L’exemple de code suivant montre un `TapGestureRecognizer` attaché à un [`Image`](xref:Xamarin.Forms.Image) élément :
 
 ```csharp
 var tapGestureRecognizer = new TapGestureRecognizer();
@@ -30,19 +33,19 @@ tapGestureRecognizer.Tapped += (s, e) => {
 image.GestureRecognizers.Add(tapGestureRecognizer);
 ```
 
-Par défaut, l’image répond aux appuis uniques. Réglez la [`NumberOfTapsRequired`](xref:Xamarin.Forms.TapGestureRecognizer.NumberOfTapsRequired) propriété pour attendre un double-tap (ou plus de robinets si nécessaire).
+Par défaut, l’image répond aux appuis uniques. Définissez la [`NumberOfTapsRequired`](xref:Xamarin.Forms.TapGestureRecognizer.NumberOfTapsRequired) propriété pour qu’elle attende un double-clic (ou plusieurs taraudions si nécessaire).
 
 ```csharp
 tapGestureRecognizer.NumberOfTapsRequired = 2; // double-tap
 ```
 
-Lorsqu’il [`NumberOfTapsRequired`](xref:Xamarin.Forms.TapGestureRecognizer.NumberOfTapsRequired) est réglé au-dessus d’un, le gestionnaire d’événements ne sera exécuté que si les robinets se produisent dans un délai défini (cette période n’est pas configurable). Si les appuis suivants (le deuxième ou les autres) ne se produisent pas dans cette période, ils sont effectivement ignorés et le « nombre d’appuis » redémarre.
+Lorsque [`NumberOfTapsRequired`](xref:Xamarin.Forms.TapGestureRecognizer.NumberOfTapsRequired) est défini au-dessus d’un, le gestionnaire d’événements est exécuté uniquement si les clics se produisent dans un laps de temps défini (cette période n’est pas configurable). Si les appuis suivants (le deuxième ou les autres) ne se produisent pas dans cette période, ils sont effectivement ignorés et le « nombre d’appuis » redémarre.
 
 <a name="Using_Xaml" />
 
 ## <a name="using-xaml"></a>Utilisation de Xaml
 
-Vous pouvez ajouter un module de reconnaissance de geste à un contrôle en Xaml à l’aide des propriétés jointes. La syntaxe [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) pour ajouter une image est montrée ci-dessous (dans ce cas définissant un double *événement de robinet)* :
+Vous pouvez ajouter un module de reconnaissance de geste à un contrôle en Xaml à l’aide des propriétés jointes. La syntaxe permettant d’ajouter un [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) à une image est indiquée ci-dessous (dans ce cas, la définition d’un événement *double tap* ) :
 
 ```xaml
 <Image Source="tapped.jpg">
@@ -72,7 +75,7 @@ void OnTapGestureRecognizerTapped(object sender, EventArgs args)
 
 ## <a name="using-icommand"></a>Utilisation de ICommand
 
-Les applications qui utilisent modèle-vue-vue modèle (MVVM) se servent généralement d’`ICommand` plutôt que des gestionnaires d’événements. La [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) boîte `ICommand` peut facilement prendre en charge soit en définissant la liaison dans le code:
+Les applications qui utilisent modèle-vue-vue modèle (MVVM) se servent généralement d’`ICommand` plutôt que des gestionnaires d’événements. [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer)Peut facilement être pris en charge `ICommand` en définissant la liaison dans le code :
 
 ```csharp
 var tapGestureRecognizer = new TapGestureRecognizer();
