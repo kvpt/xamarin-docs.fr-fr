@@ -9,12 +9,15 @@ metadata:
   author: davidbritch
   ms.author: dabritch
   ms.date: 11/06/2019
-  ms.openlocfilehash: 929ed310d69de3f67426cc400e7175e2c6f58fe6
-  ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+  no-loc:
+  - Xamarin.Forms
+  - Xamarin.Essentials
+  ms.openlocfilehash: 05429940463d2ab309fe1ce0bc012f9290bfc73b
+  ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
   ms.translationtype: HT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 04/09/2020
-  ms.locfileid: "77144627"
+  ms.lasthandoff: 05/28/2020
+  ms.locfileid: "84138695"
 highlightedContent:
   items:
   - title: Qu’est-ce que Xamarin.Forms ?
@@ -30,10 +33,10 @@ highlightedContent:
     itemType: learn
     url: https://docs.microsoft.com/learn/browse/?roles=developer&products=xamarin
 productDirectory:
-  title: Bien démarrer
+  title: Prise en main
   summary: Découvrir comment créer des applications Android et iOS multiplateformes en C# et .NET dans Visual Studio sur Windows et macOS.
   items:
-  - title: Bien démarrer
+  - title: Prise en main
     imageSrc: https://docs.microsoft.com//media/common/i_get-started.svg
     links:
     - url: ~/get-started/installation/index.md
@@ -96,7 +99,7 @@ conceptualContent:
       itemType: concept
     footerLink:
       url: ~/xamarin-forms/app-fundamentals/index.yml
-      text: En savoir plus
+      text: Afficher plus
   - title: Interface utilisateur
     links:
     - text: CollectionView
@@ -113,7 +116,7 @@ conceptualContent:
       itemType: concept
     footerLink:
       url: ~/xamarin-forms/user-interface/index.yml
-      text: En savoir plus
+      text: Afficher plus
   - title: Xamarin.Forms XAML
     links:
     - text: Notions de base XAML
@@ -130,7 +133,7 @@ conceptualContent:
       itemType: concept
     footerLink:
       url: ~/xamarin-forms/xaml/index.yml
-      text: En savoir plus
+      text: Afficher plus
   - title: Fonctionnalités de la plateforme
     links:
     - text: Spécificités de la plateforme Android
@@ -147,16 +150,16 @@ conceptualContent:
       itemType: concept
     footerLink:
       url: ~/xamarin-forms/platform/index.yml
-      text: En savoir plus
+      text: Afficher plus
   - title: Xamarin.Essentials
     links:
-    - text: Découvrir
+    - text: Bien démarrer
       url: ~/essentials/get-started.md
       itemType: get-started
     - text: Prise en charge de plateforme
       url: ~/essentials/platform-feature-support.md
       itemType: get-started
-    - text: Dépannage
+    - text: Résolution des problèmes
       url: ~/essentials/troubleshooting.md
       itemType: overview
     - text: Espace de noms Xamarin.Essentials
@@ -164,7 +167,7 @@ conceptualContent:
       itemType: reference
     footerLink:
       url: ~/essentials/index.md?context=xamarin/xamarin-forms
-      text: En savoir plus
+      text: Afficher plus
   - title: Données et Azure Cloud Services
     links:
     - text: Gestion de fichiers
@@ -181,7 +184,7 @@ conceptualContent:
       itemType: concept
     footerLink:
       url: ~/xamarin-forms/data-cloud/index.yml
-      text: En savoir plus
+      text: Afficher plus
   - title: Déploiement et tests
     links:
     - text: Automatiser les tests avec Visual Studio App Center
@@ -198,7 +201,7 @@ conceptualContent:
       itemType: concept
     footerLink:
       url: ~/xamarin-forms/deploy-test/index.yml
-      text: En savoir plus
+      text: Afficher plus
   - title: Concepts avancés et éléments internes
     links:
     - text: Hiérarchie de classes des contrôles
@@ -215,7 +218,7 @@ conceptualContent:
       itemType: concept
     footerLink:
       url: ~/xamarin-forms/internals/index.md
-      text: En savoir plus
+      text: Afficher plus
 additionalContent:
   sections:
   - title: Livres

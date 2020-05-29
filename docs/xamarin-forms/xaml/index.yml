@@ -10,26 +10,29 @@ metadata:
   author: davidbritch
   ms.author: dabritch
   ms.date: 12/27/2019
-  ms.openlocfilehash: 5f01b3ecf914d6c7c5c36378511c0fd7e30c952c
-  ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+  no-loc:
+  - Xamarin.Forms
+  - Xamarin.Essentials
+  ms.openlocfilehash: 6e40cb17a6ea852d5bc5e3ae31b0983773105d5a
+  ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
   ms.translationtype: HT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 04/09/2020
-  ms.locfileid: "75679686"
+  ms.lasthandoff: 05/28/2020
+  ms.locfileid: "84138383"
 landingContent:
-- title: Bien démarrer
+- title: Prise en main
   linkLists:
   - linkListType: concept
     links:
-    - text: Concepts de base
+    - text: Principes de base
       url: xaml-basics/index.md
-    - text: Commandes
+    - text: Contrôles
       url: xaml-controls.md
     - text: Compilation
       url: xamlc.md
     - text: Extensions de balisage
       url: markup-extensions/index.md
-- title: Outils
+- title: Outillage
   linkLists:
   - linkListType: concept
     links:
@@ -61,6 +64,8 @@ landingContent:
       url: resource-dictionaries.md
     - text: Passage d’arguments
       url: passing-arguments.md
+    - text: Génériques
+      url: generics.md
     - text: Modificateurs de champ
       url: field-modifiers.md
     - text: Charger XAML lors de l’exécution

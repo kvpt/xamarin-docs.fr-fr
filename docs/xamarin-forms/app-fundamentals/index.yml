@@ -10,20 +10,23 @@ metadata:
   author: davidbritch
   ms.author: dabritch
   ms.date: 12/30/2019
-  ms.openlocfilehash: f02b2744dab2700bc1ac680b134e42000d5d21ff
-  ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+  no-loc:
+  - Xamarin.Forms
+  - Xamarin.Essentials
+  ms.openlocfilehash: 692974defc7307e63692f2b6497903fae569d0d6
+  ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
   ms.translationtype: HT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 04/09/2020
-  ms.locfileid: "77480477"
+  ms.lasthandoff: 05/28/2020
+  ms.locfileid: "84137577"
 landingContent:
-- title: Principaux concepts
+- title: Concepts principaux
   linkLists:
   - linkListType: concept
     links:
     - text: Classe d’application
       url: application-class.md
-    - text: Cycle de vie de l'application
+    - text: Cycle de vie d’application
       url: app-lifecycle.md
     - text: Liaison de données
       url: data-binding/index.md
@@ -45,13 +48,13 @@ landingContent:
   linkLists:
   - linkListType: concept
     links:
-    - text: Comportements
+    - text: comportements
       url: behaviors/index.md
     - text: Renderers personnalisés
       url: custom-renderer/index.md
     - text: DependencyService
       url: dependency-service/index.md
-    - text: Effets
+    - text: Effects (Effets)
       url: effects/index.md
 - title: Parachever votre application
   linkLists:

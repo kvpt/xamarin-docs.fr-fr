@@ -10,12 +10,15 @@ metadata:
   author: davidbritch
   ms.author: dabritch
   ms.date: 12/27/2019
-  ms.openlocfilehash: 5eb567466b13b8baaa731bc1b37197336fac99bd
-  ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+  no-loc:
+  - Xamarin.Forms
+  - Xamarin.Essentials
+  ms.openlocfilehash: eed87cca333da2459e3a03f1bc2da6e10e32c9fd
+  ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
   ms.translationtype: HT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 04/09/2020
-  ms.locfileid: "75680261"
+  ms.lasthandoff: 05/28/2020
+  ms.locfileid: "84127009"
 landingContent:
 - title: Stockage de données locales
   linkLists:
@@ -55,7 +58,7 @@ landingContent:
       url: azure-cognitive-services/text-translation.md
     - text: Reconnaissance des émotions
       url: azure-cognitive-services/emotion-recognition.md
-- title: SERVICES WEB
+- title: Services web
   linkLists:
   - linkListType: concept
     links:
@@ -67,7 +70,7 @@ landingContent:
       url: web-services/wcf.md
     - text: REST
       url: web-services/rest.md
-- title: Authentication
+- title: Authentification
   linkLists:
   - linkListType: concept
     links:
