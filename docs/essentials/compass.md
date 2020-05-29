@@ -1,23 +1,13 @@
 ---
-title: 'Xamarin.Essentials : boussole'
-description: Ce document décrit la classe Compass de Xamarin.Essentials, qui vous permet de superviser le cap du nord magnétique de l’appareil.
-ms.assetid: BF85B0C3-C686-43D9-811A-07DCAF8CDD86
-author: jamesmontemagno
-ms.custom: video
-ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: 54ce725a319e0222179945ece558338c8a152653
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83150126"
+titre : « Xamarin.Essentials : Compass » Description : « ce document décrit la classe Compass dans Xamarin.Essentials , qui vous permet de surveiller l’en-tête de nord magnétique de l’appareil. »
+ms. AssetID : BF85B0C3-C686-43D9-811A-07DCAF8CDD86 Author : jamesmontemagno ms. Custom : vidéo ms. Author : Jamont ms. Date : 11/04/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
-# <a name="xamarinessentials-compass"></a>Xamarin.Essentials : boussole
+
+# <a name="xamarinessentials-compass"></a>Xamarin.Essentials: Compass
 
 La classe **Compass** vous permet de superviser le cap du nord magnétique de l’appareil.
 
-## <a name="get-started"></a>Prendre en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 

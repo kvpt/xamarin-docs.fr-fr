@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsBases de données locales
-description: Xamarin.Formsprend en charge les applications pilotées par base de données à l’aide du moteur de base de données SQLite, qui permet de charger et d’enregistrer des objets en code partagé. Cet article décrit comment Xamarin.Forms les applications peuvent lire et écrire des données dans une base de données SQLite locale à l’aide de sqlite.net.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 04d813baae5796da68ea27389df33738af5cde3e
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84130999"
+title : " Xamarin.Forms base de données locale" Description : " Xamarin.Forms prend en charge les applications pilotées par base de données à l’aide du moteur de base de données SQLite, qui permet de charger et d’enregistrer des objets dans du code partagé. Cet article décrit comment Xamarin.Forms les applications peuvent lire et écrire des données dans une base de données SQLite locale à l’aide de sqlite.net.
+ms. Prod : xamarin ms. AssetID : F687B24B-7DF0-4F8E-A21A-A9BB507480EB ms. Technology : xamarin-Forms Author : profexorgeek ms. Author : jusjohns ms. Date : 12/05/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-local-databases"></a>Xamarin.FormsBases de données locales
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)
@@ -39,7 +25,7 @@ Utilisez le gestionnaire de package NuGet pour rechercher **SQLite-net-PCL** et 
 
 Il existe plusieurs packages NuGet portant des noms similaires. Le package correct possède ces attributs :
 
-- **Créé par :** Frank A. Krueger
+- **Créé par :** Frank A. Krueger (praeclarum)
 - **ID :** SQLite-net-PCL
 - **Lien NuGet :** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 

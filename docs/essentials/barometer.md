@@ -1,22 +1,13 @@
 ---
-title: 'Xamarin.Essentials : Baromètre'
-description: La classe Baromètre dans Xamarin.Essentials vous permet d’analyser le capteur du baromètre de l’appareil, qui mesure la pression.
-ms.assetid: DA4F968A-D988-41F5-8745-1BEE693660A1
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: 5a496fc06732be1cf104cfbaffa8ff4b68c8f564
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "69976435"
+titre : « Xamarin.Essentials : baromètre » Description : « la classe baromètre dans vous Xamarin.Essentials permet de surveiller le capteur baromètre de l’appareil, qui mesure la pression ».
+ms. AssetID : DA4F968A-D988-41F5-8745-1BEE693660A1 auteur : jamesmontemagno ms. Author : Jamont ms. Date : 11/04/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
-# <a name="xamarinessentials-barometer"></a>Xamarin.Essentials : Baromètre
+
+# <a name="xamarinessentials-barometer"></a>Xamarin.Essentials: Baromètre
 
 La classe **Baromètre** vous permet d’analyser le capteur du baromètre de l’appareil, qui mesure la pression.
 
-## <a name="get-started"></a>Prise en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 

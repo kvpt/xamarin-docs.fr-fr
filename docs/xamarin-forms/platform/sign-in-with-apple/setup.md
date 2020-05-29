@@ -1,20 +1,9 @@
 ---
-title: Étapes de configuration-se connecter avec Apple pour Xamarin. Forms
-description: La connexion avec l’installation Apple diffère selon les différentes plateformes ciblées par votre application mobile.
-ms.prod: xamarin
-ms.assetid: 8F712802-395B-469B-B5BE-C927AD1A8391
-ms.technology: xamarin-forms
-author: davidortinau
-ms.author: daortin
-ms.date: 09/10/2019
-ms.openlocfilehash: c1f75f4872d787e261ab6bbac3624e31538c6ff0
-ms.sourcegitcommit: 09bc69d7119a04684c9e804c5cb113b8b1bb7dfc
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71206529"
+titre : « étapes du programme d’installation-Connectez-vous avec Apple pour Xamarin.Forms «Description : » la connexion avec l’installation d’Apple diffère selon les différentes plateformes ciblées par votre application mobile.»
+ms. Prod : xamarin ms. AssetID : 8F712802-395B-469B-B5BE-C927AD1A8391 ms. Technology : xamarin-Forms Author : davidortinau ms. Author : daortin ms. Date : 09/10/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
-# <a name="setup-sign-in-with-apple-for-xamarinforms"></a>Configurer la connexion avec Apple pour Xamarin. Forms
+
+# <a name="setup-sign-in-with-apple-for-xamarinforms"></a>Configurer la connexion avec Apple pourXamarin.Forms
 
 Ce guide couvre la série d’étapes nécessaires à la configuration de vos applications multiplateformes pour prendre en main la connexion avec Apple. Tandis que la configuration Apple est directe dans le portail des développeurs Apple, des étapes supplémentaires sont nécessaires pour créer une relation sécurisée entre votre Android et Apple. 
 
@@ -33,14 +22,14 @@ Ajoutez votre domaine, puis cliquez sur **inscrire**.
 ![formulaire inscrire un domaine](sign-in-images/readme-signin-domain-more.png)
 
 > [!NOTE]
-> Si vous voyez une erreur indiquant que votre domaine n’est pas compatible avec SPF, vous devez ajouter un enregistrement TXT DNS de SPF à votre domaine et attendre qu’il se propage avant de continuer : Le TXT SPF peut se présenter comme suit :`v=spf1 a a:myapp.com -all`
+> Si vous voyez une erreur indiquant que votre domaine n’est pas compatible avec SPF, vous devez ajouter un enregistrement TXT DNS de SPF à votre domaine et attendre qu’il se propage avant de continuer : le TXT SPF peut ressembler à ceci :`v=spf1 a a:myapp.com -all`
 
 Ensuite, vous devez vérifier la propriété du domaine en cliquant sur **Télécharger** pour récupérer le `apple-developer-domain-association.txt` fichier, puis le télécharger dans le `.well-known` dossier du site Web de votre domaine.
 
-Une fois `.well-known/apple-developer-domain-association.txt` le fichier téléchargé et accessible, vous pouvez cliquer sur **vérifier** pour que Apple vérifie la propriété de votre domaine.
+Une fois le `.well-known/apple-developer-domain-association.txt` fichier téléchargé et accessible, vous pouvez cliquer sur **vérifier** pour que Apple vérifie la propriété de votre domaine.
 
 > [!NOTE]
-> Apple vérifie la propriété avec `https://`. Vérifiez que vous avez configuré SSL et que le fichier est accessible par le biais d’une URL sécurisée.
+> Apple vérifie la propriété avec `https://` . Vérifiez que vous avez configuré SSL et que le fichier est accessible par le biais d’une URL sécurisée.
 
 Ce processus s’est terminé correctement avant de continuer.
 
@@ -62,7 +51,7 @@ Dans la section [identificateurs](https://developer.apple.com/account/resources/
 
 ![Créer un ID de service](sign-in-images/readme-serviceid-create.png)
 
-Donnez une description à votre ID de services et un identificateur.  Cet identificateur sera votre `ServerId`.  Veillez à activer la **connexion avec Apple**.
+Donnez une description à votre ID de services et un identificateur.  Cet identificateur sera votre `ServerId` .  Veillez à activer la **connexion avec Apple**.
 
 Avant de continuer, cliquez sur **configurer** en regard de l’option _se connecter avec Apple_ que vous avez activée.
 
@@ -70,10 +59,10 @@ Dans le panneau de configuration, vérifiez que l' **ID d’application principa
 
 Ensuite, choisissez le **domaine Web** que vous avez configuré précédemment.
 
-Enfin, ajoutez une ou plusieurs **URL de retour**.  Si `redirect_uri` vous utilisez ultérieurement, vous devez l’inscrire exactement comme vous l’utilisez.  Veillez à inclure le `http://` ou `https://` dans l’URL lorsque vous l’entrez.
+Enfin, ajoutez une ou plusieurs **URL de retour**.  `redirect_uri`Si vous utilisez ultérieurement, vous devez l’inscrire exactement comme vous l’utilisez.  Veillez à inclure le `http://` ou `https://` dans l’URL lorsque vous l’entrez.
 
 > [!NOTE]
-> À des fins de test, vous `127.0.0.1` ne `localhost`pouvez pas utiliser ou, mais vous pouvez utiliser `local.test`d’autres domaines tels que.  Si vous choisissez cette solution, vous pouvez modifier le `hosts` fichier de votre ordinateur pour résoudre ce domaine fictif en adresse IP locale.
+> À des fins de test, vous ne pouvez pas utiliser `127.0.0.1` ou `localhost` , mais vous pouvez utiliser d’autres domaines tels que `local.test` .  Si vous choisissez cette solution, vous pouvez modifier le fichier de votre ordinateur `hosts` pour résoudre ce domaine fictif en adresse IP locale.
 
 ![Configurer votre connexion Apple](sign-in-images/readme-serviceid-configure.png)
 
@@ -99,7 +88,7 @@ Ensuite, vous n’aurez qu’une seule chance de télécharger la clé que vous 
 
 Prenez également note de votre **ID de clé** à cette étape. Ce sera utilisé pour votre `KeyId` version ultérieure.
 
-Vous aurez téléchargé un fichier `.p8` de clé.  Vous pouvez ouvrir ce fichier dans le bloc-notes ou VSCode pour afficher le contenu du texte.  Ils doivent ressembler à ceci :
+Vous aurez téléchargé un `.p8` fichier de clé.  Vous pouvez ouvrir ce fichier dans le bloc-notes ou VSCode pour afficher le contenu du texte.  Ils doivent ressembler à ceci :
 
 ```
 -----BEGIN PRIVATE KEY-----
@@ -110,11 +99,11 @@ DHF5Svq0
 -----END PRIVATE KEY-----
 ```
 
-Nommez cette `P8FileContents` clé et conservez-la en lieu sûr. Vous allez l’utiliser lors de l’intégration de ce service dans votre application mobile.
+Nommez cette clé `P8FileContents` et conservez-la en lieu sûr. Vous allez l’utiliser lors de l’intégration de ce service dans votre application mobile.
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
-Cet article décrit les étapes nécessaires à la configuration de la connexion avec Apple pour une utilisation dans vos applications Xamarin. Forms.
+Cet article décrit les étapes nécessaires à la configuration de la connexion avec Apple pour une utilisation dans vos Xamarin.Forms applications.
 
 ## <a name="related-links"></a>Liens connexes
 

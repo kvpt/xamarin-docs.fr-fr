@@ -1,23 +1,7 @@
 ---
-title: ''
-description: ''
-Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 4. Scrolling the stack''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 9890ecdf286ee33d7af28fd20847788b063df8f5
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136888"
+titre : «Résumé du chapitre 4. Défilement de la pile « Description : » création de Mobile Apps avec Xamarin.Forms : Résumé du chapitre 4. Défilement de la pile «ms. Prod : xamarin ms. Technology : xamarin-Forms ms. AssetID : 7A39FD4F-15AD-4F94-960E-9FEEB63FFD44 auteur : davidbritch ms. Author : dabritch ms. Date : 07/19/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="summary-of-chapter-4-scrolling-the-stack"></a>Résumé du chapitre 4. Défilement de la pile
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04)
@@ -121,5 +105,5 @@ L’exemple **BlackCat** montre également comment définir des ressources de pr
 - [Exemples du chapitre 4](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04)
 - [Exemples de chapitre 4 F #](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/FS)
 - [StackLayout](~/xamarin-forms/user-interface/layouts/stacklayout.md)
-- [ScrollView](~/xamarin-forms/user-interface/layouts/scroll-view.md)
+- [ScrollView](~/xamarin-forms/user-interface/layouts/scrollview.md)
 - [BoxView](~/xamarin-forms/user-interface/boxview.md)

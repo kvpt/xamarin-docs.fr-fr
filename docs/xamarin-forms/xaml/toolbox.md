@@ -1,50 +1,38 @@
 ---
-title: Modifier le XAML de Xamarin.Forms à l’aide de la boîte à outils
-description: La boîte à outils XAML contient toutes les mises en page intégrés et les contrôles, qui peuvent être déplacés directement dans un fichier XAML ouvert.
-ms.prod: xamarin
-ms.assetid: 513D1247-8AD0-4611-8660-1D277CD369E1
-ms.technology: xamarin-forms
-author: conceptdev
-ms.author: crdun
-ms.date: 08/29/2018
-ms.openlocfilehash: 4e5f306d45cccaa34df2a3472e9d36f8b0badcd7
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61173861"
+title : "modifier le Xamarin.Forms code XAML à l’aide de la boîte à outils" Description : "la boîte à outils XAML contient toutes les dispositions et les contrôles intégrés, qui peuvent être déplacés directement dans un fichier XAML ouvert."
+ms. Prod : xamarin ms. AssetID : 513D1247-8AD0-4611-8660-1D277CD369E1 ms. Technology : xamarin-Forms Author : conceptdev ms. Author : crdun ms. Date : 08/29/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
-# <a name="xamarinforms-xaml-toolbox"></a>Boîte à outils XAML de Xamarin.Forms
+# <a name="xamarinforms-xaml-toolbox"></a>Xamarin.FormsBoîte à outils XAML
 
-Visual Studio 2017 version 15.8 et Visual Studio pour Mac 7.6 disposent maintenant d’une boîte à outils sont disponible lorsque vous modifiez les fichiers XAML de Xamarin.Forms. La boîte à outils contient tous les contrôles Xamarin.Forms intégrés et les dispositions, ce qui peuvent être déplacées dans l’éditeur XAML.
+Visual Studio 2017 version 15,8 et Visual Studio pour Mac 7,6 disposent désormais d’une boîte à outils disponible lors de la modification de Xamarin.Forms fichiers XAML. La boîte à outils contient tous les Xamarin.Forms contrôles et mises en page intégrés, que vous pouvez faire glisser dans l’éditeur XAML.
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-Dans Visual Studio 2017, ouvrez un fichier XAML de Xamarin.Forms pour le modifier. La boîte à outils peut être affichée en appuyant sur **Ctrl + W, X** sur le clavier, ou en choisissant le **Affichage > boîte à outils** élément de menu.
+Dans Visual Studio 2017, ouvrez un Xamarin.Forms fichier XAML pour le modifier. La boîte à outils peut être affichée en appuyant sur **CTRL + W, X** sur le clavier ou en choisissant l’élément de menu **Afficher > boîte à outils** .
 
-![Vue - menu de boîte à outils](toolbox-images/win-view-menu.png)
+![Menu Affichage-boîte à outils](toolbox-images/win-view-menu.png)
 
-La boîte à outils peut être masqué ou ancrée comme les autres volets dans Visual Studio 2017, en utilisant les icônes dans l’angle supérieur droit ou le menu contextuel. La boîte à outils XAML de Xamarin.Forms a des options d’affichage personnalisé qui peuvent être modifiées en cliquant sur chaque section. Activer/désactiver le **mode liste** option pour basculer entre la liste et les affichages compacts :
+La boîte à outils peut être masquée et ancrée comme d’autres volets dans Visual Studio 2017, en utilisant les icônes en haut à droite ou le menu contextuel. La Xamarin.Forms boîte à outils XAML a des options d’affichage personnalisées qui peuvent être modifiées en cliquant avec le bouton droit sur chaque section. Activez/désactivez l’option **mode liste** pour basculer entre les affichages liste et compact :
 
-[![Affichage de liste de boîte à outils](toolbox-images/win-full-display-sml.png)](toolbox-images/win-full-display.png#lightbox) ![boîte à outils compact affichage](toolbox-images/win-compact-display.png)
+Affichage de la [ ![ liste boîte à outils](toolbox-images/win-full-display-sml.png)](toolbox-images/win-full-display.png#lightbox) ![ Affichage compact de la boîte à outils](toolbox-images/win-compact-display.png)
 
-Lorsqu’un fichier XAML de Xamarin.Forms est ouvert pour modification, faites glisser n’importe quel contrôle ou une disposition à partir de la boîte à outils dans le fichier, puis tirer parti d’Intellisense pour personnaliser l’interface utilisateur.
+Quand un Xamarin.Forms fichier XAML est ouvert pour modification, faites glisser un contrôle ou une disposition de la boîte à outils vers le fichier, puis tirez parti d’IntelliSense pour personnaliser l’interface utilisateur.
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
-Dans Visual Studio pour Mac, choisissez le **Afficher > panneaux > boîte à outils** élément de menu pour afficher la boîte à outils :
+Dans Visual Studio pour Mac, choisissez l’élément de menu **afficher les > pad > boîte à outils** pour afficher la boîte à outils :
 
-![Afficher le menu de la boîte à outils - panneaux-](toolbox-images/mac-view-menu.png)
+![Menu Affichage-pavés de la boîte à outils](toolbox-images/mac-view-menu.png)
 
-La boîte à outils peut être masqué et épinglé, comme d’autres panneaux dans Visual Studio pour Mac, en utilisant les icônes dans l’angle supérieur droit de la zone. La boîte à outils XAML de Xamarin.Forms a des options d’affichage personnalisé qui peuvent être modifiées avec les boutons en regard de la zone de recherche :
+La boîte à outils peut être masquée et épinglée comme les autres blocs dans Visual Studio pour Mac, à l’aide des icônes en haut à droite du bloc. La Xamarin.Forms boîte à outils XAML a des options d’affichage personnalisées qui peuvent être modifiées à l’aide des boutons situés à côté de la zone de recherche :
 
 - Afficher les catégories
 - Utiliser l’affichage compact
 
 Les options complètes et compactes sont présentées ci-dessous :
 
-[![Affichage complet de boîte à outils](toolbox-images/mac-full-display-sml.png)](toolbox-images/mac-full-display.png#lightbox) ![boîte à outils compact affichage](toolbox-images/mac-compact-display.png)
+Affichage complet de la [ ![ boîte à outils](toolbox-images/mac-full-display-sml.png)](toolbox-images/mac-full-display.png#lightbox) ![ Affichage compact de la boîte à outils](toolbox-images/mac-compact-display.png)
 
-Lorsqu’un fichier XAML de Xamarin.Forms est ouvert pour modification, faites glisser n’importe quel contrôle ou une disposition à partir de la boîte à outils dans le fichier, puis tirer parti d’Intellisense pour personnaliser l’interface utilisateur.
+Quand un Xamarin.Forms fichier XAML est ouvert pour modification, faites glisser un contrôle ou une disposition de la boîte à outils vers le fichier, puis tirez parti d’IntelliSense pour personnaliser l’interface utilisateur.
 
 -----

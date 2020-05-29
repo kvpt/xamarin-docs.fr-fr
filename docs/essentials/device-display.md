@@ -1,23 +1,13 @@
 ---
-title: 'Xamarin.Essentials : informations sur l’affichage de l’appareil'
-description: Ce document décrit la classe DeviceDisplay de Xamarin.Essentials, qui fournit les métriques d’écran de l’appareil sur lequel l’application s’exécute.
-ms.assetid: 2821C908-C613-490D-8E8C-1BD3269FCEEA
-author: jamesmontemagno
-ms.custom: video
-ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: 1d72458fa32db58d0c5da278dbb424aa2b1714d1
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83150110"
+title : " Xamarin.Essentials : informations d’affichage de l’appareil" Description : "ce document décrit la classe DeviceDisplay dans Xamarin.Essentials , qui fournit des mesures d’écran pour l’appareil sur lequel l’application s’exécute."
+ms. AssetID : 2821C908-C613-490D-8E8C-1BD3269FCEEA Author : jamesmontemagno ms. Custom : vidéo ms. Author : Jamont ms. Date : 11/04/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
-# <a name="xamarinessentials-device-display-information"></a>Xamarin.Essentials : informations sur l’affichage de l’appareil
+
+# <a name="xamarinessentials-device-display-information"></a>Xamarin.Essentials: Informations d’affichage de l’appareil
 
 La classe **DeviceDisplay** fournit des informations sur les métriques d’écran de l’appareil où s’exécute l’application et peut demander d’empêcher l’écran de se mettre en veille quand l’application est en cours d’exécution.
 
-## <a name="get-started"></a>Prendre en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 

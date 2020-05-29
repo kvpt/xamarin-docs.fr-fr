@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 12582c567a439cf4e0236724bd373c3508f18748
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139353"
+titre : « introduction au développement d’applications d’entreprise » Description : « ce chapitre fournit une introduction au développement d’applications d’entreprise et présente l’application mobile eShopOnContainers ».
+ms. Prod : xamarin ms. AssetID : cbce0659-FA03-447A-86ec-140438143230 ms. Technology : xamarin-Forms auteur : davidbritch ms. Author : dabritch ms. Date : 08/07/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="introduction-to-enterprise-app-development"></a>Présentation du développement d’applications d’entreprise
 
 Quelle que soit la plateforme, les développeurs d’applications d’entreprise sont confrontés à plusieurs défis :
@@ -37,7 +23,7 @@ Une solution efficace pour relever ces défis consiste à partitionner une appli
 - Il encourage la réutilisation et une séparation nette des préoccupations entre les fonctions horizontales de l’application, telles que l’authentification et l’accès aux données, ainsi que les fonctionnalités verticales, telles que les fonctionnalités métier spécifiques aux applications. Cela permet de gérer plus facilement les dépendances et les interactions entre les composants de l’application.
 - Il permet de conserver une séparation des rôles en permettant à différentes personnes ou équipes de se concentrer sur une tâche ou une fonctionnalité spécifique, en fonction de leur expertise. En particulier, il fournit une séparation plus propre entre l’interface utilisateur et la logique métier de l’application.
 
-Toutefois, il existe de nombreux problèmes qui doivent être résolus lors du partitionnement d’une application en composants discrets et faiblement couplés. Il s’agit des tables suivantes :
+Toutefois, il existe de nombreux problèmes qui doivent être résolus lors du partitionnement d’une application en composants discrets et faiblement couplés. notamment :
 
 - Déterminer comment fournir une séparation nette des problèmes entre les contrôles d’interface utilisateur et leur logique. L’une des décisions les plus importantes lors de la création d’une Xamarin.Forms application d’entreprise est de déterminer si la logique métier doit être placée dans les fichiers code-behind, ou de créer une séparation claire des préoccupations entre les contrôles d’interface utilisateur et leur logique, afin de rendre l’application plus gérable et testable. Pour plus d’informations, consultez [Model-View-ViewModel](~/xamarin-forms/enterprise-application-patterns/mvvm.md).
 - Détermination de l’utilisation ou non d’un conteneur d’injection de dépendances. Les conteneurs d’injection de dépendances réduisent le couplage des dépendances entre les objets en fournissant une fonctionnalité permettant de construire des instances de classes avec leurs dépendances injectées, et de gérer leur durée de vie en fonction de la configuration du conteneur. Pour plus d’informations, consultez [injection de dépendances](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md).
@@ -107,14 +93,14 @@ L’application mobile eShopOnContainers exerce les Xamarin.Forms fonctionnalit�
 - Styles
 - Animations
 - Commandes
-- Comportements
+- comportements
 - Déclencheurs
-- Effets
+- Effects (Effets)
 - Renderers personnalisés
 - MessagingCenter
 - Contrôles personnalisés
 
-Pour plus d’informations sur cette fonctionnalité, consultez la [ Xamarin.Forms documentation](~/xamarin-forms/index.yml)et [création d’Mobile Apps Xamarin.Forms avec ](https://aka.ms/xamebook).
+Pour plus d’informations sur cette fonctionnalité, consultez la [ Xamarin.Forms documentation](~/xamarin-forms/index.yml)et [création d’Mobile Apps Xamarin.Forms avec ](https://aka.ms/xamformsebook).
 
 En outre, des tests unitaires sont fournis pour certaines des classes de l’application mobile eShopOnContainers.
 
@@ -142,10 +128,10 @@ Le projet PCL eShopOnContainers. Core contient les dossiers suivants :
 |Dossier|Description|
 |--- |--- |
 |Animations|Contient des classes qui permettent aux animations d’être consommées en XAML.|
-|Comportements|Contient les comportements exposés aux classes d’affichage.|
+|comportements|Contient les comportements exposés aux classes d’affichage.|
 |Contrôles|Contient des contrôles personnalisés utilisés par l’application.|
 |Convertisseurs|Contient des convertisseurs de valeurs qui appliquent une logique personnalisée à une liaison.|
-|Effets|Contient la `EntryLineColorEffect` classe, qui est utilisée pour modifier la couleur de bordure de `Entry` contrôles spécifiques.|
+|Effects (Effets)|Contient la `EntryLineColorEffect` classe, qui est utilisée pour modifier la couleur de bordure de `Entry` contrôles spécifiques.|
 |Exceptions|Contient le personnalisé `ServiceAuthenticationException` .|
 |Extensions|Contient des méthodes d’extension pour les `VisualElement` `IEnumerable` classes et.|
 |Programmes d’assistance|Contient des classes d’assistance pour l’application.|

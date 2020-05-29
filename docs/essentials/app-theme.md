@@ -1,23 +1,13 @@
 ---
-title: 'Xamarin. Essentials : thème de l’application'
-description: Ce document décrit l’API de thème d’application demandée dans Xamarin. Essentials, qui fournit des informations sur le style de thème demandé pour l’application en cours d’exécution.
-ms.assetid: F6F6D496-A8A9-4B9A-AF1A-370D937E5073
-author: jamesmontemagno
-ms.custom: video
-ms.author: jamont
-ms.date: 01/06/2020
-ms.openlocfilehash: 84c246eb60f4ee561bbf2bcfee6eb587ce601a4a
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83150151"
+titre : « Xamarin.Essentials : thème d’application » Description : « ce document décrit l’API de thème d’application demandée dans Xamarin.Essentials , qui fournit des informations sur le style de thème demandé pour l’application en cours d’exécution ».
+ms. AssetID : F6F6D496-A8A9-4B9A-AF1A-370D937E5073 Author : jamesmontemagno ms. Custom : vidéo ms. Author : Jamont ms. Date : 01/06/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
-# <a name="xamarinessentials-app-theme"></a>Xamarin. Essentials : thème de l’application
+
+# <a name="xamarinessentials-app-theme"></a>Xamarin.Essentials: Thème d’application
 
 L’API **RequestedTheme** fait partie de la [`AppInfo`](app-information.md) classe et fournit des informations sur le thème qui est demandé pour votre application en cours d’exécution par le système.
 
-## <a name="get-started"></a>Prendre en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -58,14 +48,14 @@ Pour plus d’informations, consultez la [documentation Android](https://develop
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
-Unspecified sera toujours renvoyé sur les versions d’iOS antérieures à 13,0 
+Unspecified sera toujours renvoyé sur les versions d’iOS antérieures à 13,0
 
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
 
 `RequestedTheme`L’appel de doit être appelé sur le thread d’interface utilisateur ou une exception sera levée.
 
-Les applications UWP respectent votre paramètre dans le format UWP App. XAML sous **RequestedTheme**. S’il est défini sur un thème spécifique, Xamarin. Essentials renverra toujours ce paramètre. Pour utiliser le thème dynamique du système d’exploitation, supprimez ce nœud de votre application, puis, lorsque votre application est exécutée, elle retourne le thème défini par l’utilisateur dans paramètres Windows (**paramètres > personnalisation > couleurs > Choisissez votre mode d’application par défaut**).
+Les applications UWP respectent votre paramètre dans le format UWP App. XAML sous **RequestedTheme**. S’il est défini sur un thème spécifique, Xamarin.Essentials retourne toujours ce paramètre. Pour utiliser le thème dynamique du système d’exploitation, supprimez ce nœud de votre application, puis, lorsque votre application est exécutée, elle retourne le thème défini par l’utilisateur dans paramètres Windows (**paramètres > personnalisation > couleurs > Choisissez votre mode d’application par défaut**).
 
 Pour plus d’informations, consultez la [documentation relative au thème UWP](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.requestedtheme).
 

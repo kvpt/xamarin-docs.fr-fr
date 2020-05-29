@@ -1,32 +1,21 @@
 ---
-title: Images dans Xamarin. Forms
-description: Les images peuvent être partagées entre les plateformes avec Xamarin. Forms, elles peuvent être chargées spécifiquement pour chaque plateforme, ou elles peuvent être téléchargées pour l’affichage.
-ms.prod: xamarin
-ms.assetid: C025AB53-05CC-49BA-9815-75D6DF9E40B7
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 12/04/2019
-ms.openlocfilehash: dc7a678e106cc4065eab1ae9023bdc4875a93f9b
-ms.sourcegitcommit: 1fb87ff74560d4d7c89f80018cc010c07646461c
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82139068"
+title : « image in Xamarin.Forms » Description : les images peuvent être partagées entre les plateformes avec Xamarin.Forms , elles peuvent être chargées spécifiquement pour chaque plateforme, ou elles peuvent être téléchargées pour l’affichage.»
+ms. Prod : xamarin ms. AssetID : C025AB53-05CC-49BA-9815-75D6DF9E40B7 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 12/04/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
-# <a name="images-in-xamarinforms"></a>Images dans Xamarin. Forms
 
-[![Télécharger l'](~/media/shared/download.png) exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithimages)
+# <a name="images-in-xamarinforms"></a>Images dansXamarin.Forms
 
-_Les images peuvent être partagées entre les plateformes avec Xamarin. Forms, elles peuvent être chargées spécifiquement pour chaque plateforme, ou elles peuvent être téléchargées pour l’affichage._
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithimages)
 
-Les images sont un élément essentiel de la navigation, de la convivialité et de la personnalisation des applications. Les applications Xamarin. Forms doivent être en mesure de partager des images sur toutes les plateformes, mais elles peuvent également afficher des images différentes sur chaque plateforme.
+_Les images peuvent être partagées entre les plateformes avec Xamarin.Forms , elles peuvent être chargées spécifiquement pour chaque plateforme, ou elles peuvent être téléchargées pour l’affichage._
+
+Les images sont un élément essentiel de la navigation, de la convivialité et de la personnalisation des applications. Xamarin.Formsles applications doivent être en mesure de partager des images sur toutes les plateformes, mais elles peuvent également afficher des images différentes sur chaque plateforme.
 
 Les images spécifiques à la plateforme sont également requises pour les icônes et les écrans de démarrage. celles-ci doivent être configurées sur la base de chaque plateforme.
 
 ## <a name="display-images"></a>Afficher les images
 
-Xamarin. Forms utilise [`Image`](xref:Xamarin.Forms.Image) la vue pour afficher des images sur une page. Il a deux propriétés importantes :
+Xamarin.Formsutilise la [`Image`](xref:Xamarin.Forms.Image) vue pour afficher des images sur une page. Il a deux propriétés importantes :
 
 - [`Source`](xref:Xamarin.Forms.Image.Source)- [`ImageSource`](xref:Xamarin.Forms.ImageSource) Instance, fichier, Uri ou ressource, qui définit l’image à afficher.
 - [`Aspect`](xref:Xamarin.Forms.Image.Aspect): Dimensionnement de l’image dans les limites dans lesquelles elle est affichée (étirer, rogner ou bandes).
@@ -44,11 +33,11 @@ La [`Aspect`](xref:Xamarin.Forms.Image.Aspect) propriété détermine la façon 
 - [`AspectFill`](xref:Xamarin.Forms.Aspect.AspectFill)-Découpe l’image pour qu’elle remplisse la zone d’affichage tout en préservant l’aspect (c’est-à-dire aucune distorsion).
 - [`AspectFit`](xref:Xamarin.Forms.Aspect.AspectFit)-Cadres l’image (si nécessaire) pour que la totalité de l’image s’ajuste à la zone d’affichage, avec un espace ajouté au haut/bas ou sur les côtés, selon que l’image est grande ou en hauteur.
 
-Les images peuvent être chargées à partir d’un [fichier local](#local-images), d’une [ressource incorporée](#embedded-images), [téléchargées](#download-images)ou chargées à partir d’un flux. En outre, les icônes de police peuvent être affichées [`Image`](xref:Xamarin.Forms.Image) par la vue en spécifiant les données d' `FontImageSource` icône de police dans un objet. Pour plus d’informations, consultez [afficher les icônes de police](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons) dans le guide des [polices](~/xamarin-forms/user-interface/text/fonts.md) .
+Les images peuvent être chargées à partir d’un [fichier local](#local-images), d’une [ressource incorporée](#embedded-images), [téléchargées](#download-images)ou chargées à partir d’un flux. En outre, les icônes de police peuvent être affichées par la [`Image`](xref:Xamarin.Forms.Image) vue en spécifiant les données d’icône de police dans un `FontImageSource` objet. Pour plus d’informations, consultez [afficher les icônes de police](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons) dans le guide des [polices](~/xamarin-forms/user-interface/text/fonts.md) .
 
 ## <a name="local-images"></a>Images locales
 
-Des fichiers image peuvent être ajoutés à chaque projet d’application et référencés à partir du code partagé Xamarin. Forms. Cette méthode de distribution d’images est indispensable dans le cas d’images spécifiques à la plateforme, par exemple si vous utilisez différentes résolutions sur différentes plateformes ou des conceptions qui présentent quelques variations mineures.
+Des fichiers image peuvent être ajoutés à chaque projet d’application et référencés à partir du Xamarin.Forms code partagé. Cette méthode de distribution d’images est indispensable dans le cas d’images spécifiques à la plateforme, par exemple si vous utilisez différentes résolutions sur différentes plateformes ou des conceptions qui présentent quelques variations mineures.
 
 Pour utiliser une seule image pour l’ensemble des applications, *le même nom de fichier doit être utilisé sur chaque plateforme*et doit être un nom de ressource Android valide (par ex., seules les lettres minuscules, les chiffres, le trait de soulignement et le point sont autorisés).
 
@@ -88,30 +77,30 @@ image.Source = Device.RuntimePlatform == Device.Android
 
 ### <a name="native-resolutions-retina-and-high-dpi"></a>Résolutions natives (retine et haute résolution)
 
-iOS, Android et UWP incluent la prise en charge de différentes résolutions d’image, où le système d’exploitation choisit l’image appropriée au moment de l’exécution en fonction des capacités de l’appareil. Xamarin. Forms utilise les API des plateformes natives pour le chargement des images locales. il prend donc automatiquement en charge les autres résolutions si les fichiers sont correctement nommés et localisés dans le projet.
+iOS, Android et UWP incluent la prise en charge de différentes résolutions d’image, où le système d’exploitation choisit l’image appropriée au moment de l’exécution en fonction des capacités de l’appareil. Xamarin.Formsutilise les API des plateformes natives pour le chargement des images locales. il prend donc automatiquement en charge les autres résolutions si les fichiers sont correctement nommés et localisés dans le projet.
 
 La meilleure façon de gérer des images depuis iOS 9 consiste à faire glisser des images pour chaque résolution requise pour l’ensemble d’images du catalogue de ressources approprié. Pour plus d’informations, consultez [Ajout d’images à un ensemble d’images du catalogue de composants](~/ios/app-fundamentals/images-icons/displaying-an-image.md).
 
-Avant iOS 9, les versions de retine de l’image pouvaient être placées dans le dossier **Resources** -deux et trois fois **@2x** la **@3x** résolution avec un suffixe ou sur le nom de fichier avant l’extension de fichier (par exemple, **myimage@2x.png**). Toutefois, cette méthode d’utilisation des images dans une application iOS a été dépréciée par Apple. Pour plus d’informations, consultez [tailles et noms d’images](~/ios/app-fundamentals/images-icons/displaying-an-image.md).
+Avant iOS 9, les versions de retine de l’image pouvaient être placées dans le dossier **Resources** -deux et trois fois la résolution avec un **@2x** **@3x** suffixe ou sur le nom de fichier avant l’extension de fichier (par exemple, **myimage@2x.png**). Toutefois, cette méthode d’utilisation des images dans une application iOS a été dépréciée par Apple. Pour plus d’informations, consultez [tailles et noms d’images](~/ios/app-fundamentals/images-icons/displaying-an-image.md).
 
 Les images de résolution alternative Android doivent être placées dans des [répertoires spécialement nommés](https://developer.android.com/guide/practices/screens_support.html) dans le projet Android, comme illustré dans la capture d’écran suivante :
 
 [![Emplacement d’image à résolution multiple Android](images-images/xs-highdpisolution-sml.png)](images-images/xs-highdpisolution.png#lightbox)
 
-Les noms de fichiers image UWP [peuvent être suivis d’un `.scale-xxx` suffixe avant l’extension de fichier](https://docs.microsoft.com/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast), où `xxx` est le pourcentage de mise à l’échelle appliqué à la ressource, par exemple **myImage. Scale-200. png**. Les images peuvent ensuite être référencées dans le code ou XAML sans le modificateur d’échelle, par exemple, simplement **myImage. png**. La plateforme sélectionnera l’échelle de ressources appropriée la plus proche en fonction de la résolution actuelle de l’affichage.
+Les noms de fichiers image UWP [peuvent être suivis d’un suffixe `.scale-xxx` avant l’extension de fichier](https://docs.microsoft.com/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast), où `xxx` est le pourcentage de mise à l’échelle appliqué à la ressource, par exemple **myImage. Scale-200. png**. Les images peuvent ensuite être référencées dans le code ou XAML sans le modificateur d’échelle, par exemple, simplement **myImage. png**. La plateforme sélectionnera l’échelle de ressources appropriée la plus proche en fonction de la résolution actuelle de l’affichage.
 
 ### <a name="additional-controls-that-display-images"></a>Contrôles supplémentaires qui affichent des images
 
 Certains contrôles ont des propriétés qui affichent une image, par exemple :
 
-- [`Button`](xref:Xamarin.Forms.Button)a une [`ImageSource`](xref:Xamarin.Forms.Button.ImageSource) propriété qui peut être définie sur une image bitmap à afficher sur le `Button`. Pour plus d’informations, consultez [utilisation de bitmaps avec des boutons](~/xamarin-forms/user-interface/button.md#using-bitmaps-with-buttons).
-- [`ImageButton`](xref:Xamarin.Forms.Button)a une [`Source`](xref:Xamarin.Forms.ImageButton.Source) propriété qui peut être définie sur l’image à afficher dans le `ImageButton`. Pour plus d’informations, consultez [définition de la source de l’image](~/xamarin-forms/user-interface/imagebutton.md#setting-the-image-source).
+- [`Button`](xref:Xamarin.Forms.Button)a une [`ImageSource`](xref:Xamarin.Forms.Button.ImageSource) propriété qui peut être définie sur une image bitmap à afficher sur le `Button` . Pour plus d’informations, consultez [utilisation de bitmaps avec des boutons](~/xamarin-forms/user-interface/button.md#using-bitmaps-with-buttons).
+- [`ImageButton`](xref:Xamarin.Forms.Button)a une [`Source`](xref:Xamarin.Forms.ImageButton.Source) propriété qui peut être définie sur l’image à afficher dans le `ImageButton` . Pour plus d’informations, consultez [définition de la source de l’image](~/xamarin-forms/user-interface/imagebutton.md#setting-the-image-source).
 - [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem)a une [`IconImageSource`](xref:Xamarin.Forms.MenuItem.IconImageSource) propriété qui peut être définie sur une image qui est chargée à partir d’un fichier, d’une ressource incorporée, d’un URI ou d’un flux.
 - [`ImageCell`](xref:Xamarin.Forms.ImageCell)a une [`ImageSource`](xref:Xamarin.Forms.ImageCell.ImageSource) propriété qui peut être définie sur une image récupérée à partir d’un fichier, d’une ressource incorporée, d’un URI ou d’un flux.
-- [`Page`](xref:Xamarin.Forms.Page). Tout type de page qui dérive `Page` de [`IconImageSource`](xref:Xamarin.Forms.Page.IconImageSource) possède [`BackgroundImageSource`](xref:Xamarin.Forms.Page.BackgroundImageSource) les propriétés et, qui peuvent être affectées à un fichier, à une ressource incorporée, à un URI ou à un flux. Dans certaines circonstances, par exemple quand un [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) affiche un [`ContentPage`](xref:Xamarin.Forms.ContentPage), l’icône s’affiche si elle est prise en charge par la plateforme.
+- [`Page`](xref:Xamarin.Forms.Page). Tout type de page qui dérive de `Page` possède les [`IconImageSource`](xref:Xamarin.Forms.Page.IconImageSource) [`BackgroundImageSource`](xref:Xamarin.Forms.Page.BackgroundImageSource) Propriétés et, qui peuvent être affectées à un fichier, à une ressource incorporée, à un URI ou à un flux. Dans certaines circonstances, par exemple quand un [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) affiche un [`ContentPage`](xref:Xamarin.Forms.ContentPage) , l’icône s’affiche si elle est prise en charge par la plateforme.
 
   > [!IMPORTANT]
-  > Sur iOS, la [`Page.IconImageSource`](xref:Xamarin.Forms.Page.IconImageSource) propriété ne peut pas être remplie à partir d’une image dans un jeu d’images du catalogue de composants. Au lieu de cela, chargez `Page.IconImageSource` les images d’icône pour la propriété à partir d’un fichier, d’une ressource incorporée, d’un URI ou d’un flux.
+  > Sur iOS, la [`Page.IconImageSource`](xref:Xamarin.Forms.Page.IconImageSource) propriété ne peut pas être remplie à partir d’une image dans un jeu d’images du catalogue de composants. Au lieu de cela, chargez les images d’icône pour la `Page.IconImageSource` propriété à partir d’un fichier, d’une ressource incorporée, d’un URI ou d’un flux.
 
 ## <a name="embedded-images"></a>Images incorporées
 
@@ -121,7 +110,7 @@ Pour incorporer une image dans un projet, cliquez avec le bouton droit pour ajou
 
 <!-- markdownlint-disable MD001 -->
 
-# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 [![Définir l’action de génération sur la ressource incorporée](images-images/vs-buildaction-sml.png)](images-images/vs-buildaction.png#lightbox)
 
@@ -146,7 +135,7 @@ Cet ID peut être modifié dans le panneau **Propriétés** , mais pour ces exem
 
 Si vous placez des images incorporées dans des dossiers de votre projet, les noms de dossiers sont également séparés par des points (.) dans l’ID de ressource. Le déplacement de l’image **Beach. jpg** dans un dossier appelé **myImages** entraînerait l’ID de ressource **WorkingWithImages. myImages. Beach. jpg**
 
-Le code permettant de charger une image incorporée transmet simplement l' **ID** de [`ImageSource.FromResource`](xref:Xamarin.Forms.ImageSource.FromResource*) ressource à la méthode comme indiqué ci-dessous :
+Le code permettant de charger une image incorporée transmet simplement l' **ID de ressource** à la [`ImageSource.FromResource`](xref:Xamarin.Forms.ImageSource.FromResource*) méthode comme indiqué ci-dessous :
 
 ```csharp
 var embeddedImage = new Image {
@@ -157,9 +146,9 @@ var embeddedImage = new Image {
 ```
 
 > [!NOTE]
-> Pour prendre en charge l’affichage d’images incorporées en mode release sur le plateforme Windows universelle, il est nécessaire `ImageSource.FromResource` d’utiliser la surcharge de qui spécifie l’assembly source dans lequel Rechercher l’image.
+> Pour prendre en charge l’affichage d’images incorporées en mode release sur le plateforme Windows universelle, il est nécessaire d’utiliser la surcharge de `ImageSource.FromResource` qui spécifie l’assembly source dans lequel Rechercher l’image.
 
-Actuellement, il n’existe pas de conversion implicite pour les identificateurs de ressource. Au lieu de cela, [`ImageSource.FromResource`](xref:Xamarin.Forms.ImageSource.FromResource*) vous `new ResourceImageSource()` devez utiliser ou pour charger des images incorporées.
+Actuellement, il n’existe pas de conversion implicite pour les identificateurs de ressource. Au lieu de cela, vous devez utiliser [`ImageSource.FromResource`](xref:Xamarin.Forms.ImageSource.FromResource*) ou `new ResourceImageSource()` pour charger des images incorporées.
 
 Les captures d’écran suivantes montrent le résultat de l’affichage d’une image incorporée sur chaque plateforme :
 
@@ -167,7 +156,7 @@ Les captures d’écran suivantes montrent le résultat de l’affichage d’une
 
 ### <a name="xaml"></a>XAML
 
-Étant donné qu’il n’existe aucun convertisseur de type `string` intégré `ResourceImageSource`de à, ces types d’images ne peuvent pas être chargés en mode natif par XAML. Au lieu de cela, il est possible d’écrire une extension de balisage XAML personnalisée simple pour charger des images à l’aide d’un **ID de ressource** spécifié en XAML :
+Étant donné qu’il n’existe aucun convertisseur de type intégré de `string` à `ResourceImageSource` , ces types d’images ne peuvent pas être chargés en mode natif par XAML. Au lieu de cela, il est possible d’écrire une extension de balisage XAML personnalisée simple pour charger des images à l’aide d’un **ID de ressource** spécifié en XAML :
 
 ```csharp
 [ContentProperty (nameof(Source))]
@@ -191,9 +180,9 @@ public class ImageResourceExtension : IMarkupExtension
 ```
 
 > [!NOTE]
-> Pour prendre en charge l’affichage d’images incorporées en mode release sur le plateforme Windows universelle, il est nécessaire `ImageSource.FromResource` d’utiliser la surcharge de qui spécifie l’assembly source dans lequel Rechercher l’image.
+> Pour prendre en charge l’affichage d’images incorporées en mode release sur le plateforme Windows universelle, il est nécessaire d’utiliser la surcharge de `ImageSource.FromResource` qui spécifie l’assembly source dans lequel Rechercher l’image.
 
-Pour utiliser cette extension, ajoutez un `xmlns` personnalisé au code XAML, en utilisant l’espace de noms et les valeurs d’assembly corrects pour le projet. La source de l’image peut ensuite être définie à l' `{local:ImageResource WorkingWithImages.beach.jpg}`aide de la syntaxe suivante :. Un exemple de code XAML complet est illustré ci-dessous :
+Pour utiliser cette extension, ajoutez un personnalisé `xmlns` au code XAML, en utilisant l’espace de noms et les valeurs d’assembly corrects pour le projet. La source de l’image peut ensuite être définie à l’aide de la syntaxe suivante : `{local:ImageResource WorkingWithImages.beach.jpg}` . Un exemple de code XAML complet est illustré ci-dessous :
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -228,9 +217,9 @@ foreach (var res in assembly.GetManifestResourceNames())
 
 #### <a name="images-embedded-in-other-projects"></a>Images incorporées dans d’autres projets
 
-Par défaut, la `ImageSource.FromResource` méthode recherche uniquement les images dans le même assembly que le code appelant `ImageSource.FromResource` la méthode. À l’aide du code de débogage ci-dessus, vous pouvez déterminer les assemblys `typeof()` qui contiennent une `Type` ressource spécifique en remplaçant l’instruction par une instruction connue comme étant dans chaque assembly.
+Par défaut, la `ImageSource.FromResource` méthode recherche uniquement les images dans le même assembly que le code appelant la `ImageSource.FromResource` méthode. À l’aide du code de débogage ci-dessus, vous pouvez déterminer les assemblys qui contiennent une ressource spécifique en remplaçant l' `typeof()` instruction par une instruction `Type` connue comme étant dans chaque assembly.
 
-Toutefois, l’assembly source faisant l’objet de la recherche d’une image incorporée peut être `ImageSource.FromResource` spécifié en tant qu’argument de la méthode :
+Toutefois, l’assembly source faisant l’objet de la recherche d’une image incorporée peut être spécifié en tant qu’argument de la `ImageSource.FromResource` méthode :
 
 ```csharp
 var imageSource = ImageSource.FromResource("filename.png",
@@ -263,7 +252,7 @@ var webImage = new Image {
      ) };
 ```
 
-La [`ImageSource.FromUri`](xref:Xamarin.Forms.ImageSource.FromUri(System.Uri)) méthode requiert un `Uri` objet et retourne un nouveau [`UriImageSource`](xref:Xamarin.Forms.UriImageSource) qui lit à partir de `Uri`.
+La [`ImageSource.FromUri`](xref:Xamarin.Forms.ImageSource.FromUri(System.Uri)) méthode requiert un `Uri` objet et retourne un nouveau [`UriImageSource`](xref:Xamarin.Forms.UriImageSource) qui lit à partir de `Uri` .
 
 Il y a également une conversion implicite pour les chaînes d’URI, l’exemple suivant fonctionne également :
 
@@ -277,9 +266,9 @@ Les captures d’écran suivantes montrent le résultat de l’affichage d’une
 
 ### <a name="downloaded-image-caching"></a>Mise en cache des images téléchargées
 
-Prend [`UriImageSource`](xref:Xamarin.Forms.UriImageSource) également en charge la mise en cache des images téléchargées, configurées par le biais des propriétés suivantes :
+[`UriImageSource`](xref:Xamarin.Forms.UriImageSource)Prend également en charge la mise en cache des images téléchargées, configurées par le biais des propriétés suivantes :
 
-- [`CachingEnabled`](xref:Xamarin.Forms.UriImageSource.CachingEnabled): Indique si la mise en`true` cache est activée (par défaut).
+- [`CachingEnabled`](xref:Xamarin.Forms.UriImageSource.CachingEnabled): Indique si la mise en cache est activée ( `true` par défaut).
 - [`CacheValidity`](xref:Xamarin.Forms.UriImageSource.CacheValidity)-Un `TimeSpan` qui définit la durée pendant laquelle l’image sera stockée localement.
 
 La mise en cache est activée par défaut et stocke l’image localement pendant 24 heures. Pour désactiver la mise en cache d’une image particulière, instanciez la source de l’image comme suit :
@@ -303,18 +292,18 @@ Grâce à la mise en cache intégrée, il est très facile de prendre en charge 
 
 ## <a name="animated-gifs"></a>Images GIF animées
 
-Xamarin. Forms comprend la prise en charge de l’affichage de petits GIF animés. Pour ce faire, définissez la [`Image.Source`](xref:Xamarin.Forms.Image.Source) propriété sur un fichier GIF animé :
+Xamarin.Formsprend en charge l’affichage de petits GIF animés. Pour ce faire, définissez la [`Image.Source`](xref:Xamarin.Forms.Image.Source) propriété sur un fichier GIF animé :
 
 ```xaml
 <Image Source="demo.gif" />
 ```
 
 > [!IMPORTANT]
-> Tandis que la prise en charge GIF animée dans Xamarin. Forms comprend la possibilité de télécharger des fichiers, elle ne prend pas en charge la mise en cache ou la diffusion en continu de fichiers GIF animés.
+> Alors que la prise en charge GIF animée dans Xamarin.Forms offre la possibilité de télécharger des fichiers, elle ne prend pas en charge la mise en cache ou la diffusion en continu de fichiers GIF animés.
 
-Par défaut, lorsqu’un fichier GIF animé est chargé, il n’est pas lu. Cela est dû au `IsAnimationPlaying` fait que la propriété, qui contrôle si un gif animé est en train de `false`s’exécuter ou s’arrête, a une valeur par défaut. Cette propriété, de type `bool`, est stockée par un [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) objet, ce qui signifie qu’il peut s’agir de la cible d’une liaison de données et d’un style.
+Par défaut, lorsqu’un fichier GIF animé est chargé, il n’est pas lu. Cela est dû au fait que la `IsAnimationPlaying` propriété, qui contrôle si un gif animé est en train de s’exécuter ou s’arrête, a une valeur par défaut `false` . Cette propriété, de type `bool` , est stockée par un [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) objet, ce qui signifie qu’il peut s’agir de la cible d’une liaison de données et d’un style.
 
-Par conséquent, lorsqu’un GIF animé est chargé, il n’est pas lu `IsAnimationPlaying` tant que la propriété `true`n’a pas la valeur. La lecture peut ensuite être arrêtée en `IsAnimationPlaying` affectant `false`à la propriété la valeur. Notez que cette propriété n’a aucun effet lors de l’affichage d’une source d’image non GIF.
+Par conséquent, lorsqu’un GIF animé est chargé, il n’est pas lu tant que la `IsAnimationPlaying` propriété n’a pas la valeur `true` . La lecture peut ensuite être arrêtée en affectant à la propriété la valeur `IsAnimationPlaying` `false` . Notez que cette propriété n’a aucun effet lors de l’affichage d’une source d’image non GIF.
 
 > [!NOTE]
 > Sur Android, la prise en charge GIF animée nécessite que votre application utilise des convertisseurs rapides et ne fonctionnera pas si vous avez opté pour l’utilisation des convertisseurs hérités.
@@ -322,15 +311,15 @@ Par conséquent, lorsqu’un GIF animé est chargé, il n’est pas lu `IsAnimat
 
 ## <a name="icons-and-splash-screens"></a>Icônes et écrans de démarrage
 
-Bien qu’il ne soit [`Image`](xref:Xamarin.Forms.Image) pas lié à la vue, les icônes d’application et les écrans de démarrage sont également une utilisation importante des images dans les projets Xamarin. Forms.
+Bien qu’il ne soit pas lié à la [`Image`](xref:Xamarin.Forms.Image) vue, les icônes d’application et les écrans de démarrage sont également une utilisation importante des images dans les Xamarin.Forms projets.
 
-La définition des icônes et des écrans de démarrage pour les applications Xamarin. Forms s’effectue dans chacun des projets d’application. Cela implique la génération d’images de taille correcte pour iOS, Android et UWP. Ces images doivent être nommées et situées selon les exigences de chaque plateforme.
+La définition des icônes et des écrans de démarrage pour les Xamarin.Forms applications s’effectue dans chacun des projets d’application. Cela implique la génération d’images de taille correcte pour iOS, Android et UWP. Ces images doivent être nommées et situées selon les exigences de chaque plateforme.
 
 ## <a name="icons"></a>Icônes
 
 Pour plus d’informations sur la création de ces ressources d’application, consultez les instructions [iOS Working with images](~/ios/app-fundamentals/images-icons/index.md), [Google iconographie](https://developer.android.com/design/style/iconography.html)et UWP pour les éléments multimédias de [vignettes et d’icônes](/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets/) .
 
-En outre, les icônes de police peuvent être affichées [`Image`](xref:Xamarin.Forms.Image) par la vue en spécifiant les données d' `FontImageSource` icône de police dans un objet. Pour plus d’informations, consultez [afficher les icônes de police](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons) dans le guide des [polices](~/xamarin-forms/user-interface/text/fonts.md) .
+En outre, les icônes de police peuvent être affichées par la [`Image`](xref:Xamarin.Forms.Image) vue en spécifiant les données d’icône de police dans un `FontImageSource` objet. Pour plus d’informations, consultez [afficher les icônes de police](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons) dans le guide des [polices](~/xamarin-forms/user-interface/text/fonts.md) .
 
 ## <a name="splash-screens"></a>Écrans de démarrage
 

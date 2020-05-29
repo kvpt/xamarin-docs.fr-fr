@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsDispositions
-description: Xamarin.FormsLes dispositions sont utilisées pour composer des contrôles d’interface utilisateur dans des structures visuelles. Cet article répertorie les dispositions incluses dans Xamarin.Forms .
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: c39bf29feceaf598ac8fd38e6af3d227b6deddc0
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137304"
+titre : « Xamarin.Forms dispositions » Description : Xamarin.Forms les dispositions sont utilisées pour composer des contrôles d’interface utilisateur dans des structures visuelles. Cet article répertorie les mises en page incluses dans Xamarin.Forms .
+ms. Prod : xamarin ms. AssetID : F4180997-BA21-453A-9958-D1E2940DF050 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 05/21/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-layouts"></a>Xamarin.FormsDispositions
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
@@ -44,7 +30,7 @@ Ces classes dérivent de [`Layout`](xref:Xamarin.Forms.Layout) , qui définit le
 
 <a named="frame" />
 
-### <a name="frame"></a>Trame
+### <a name="frame"></a>Frame
 
 |     |     |
 | --- | --- |
@@ -57,7 +43,7 @@ Ces classes dérivent de [`Layout`](xref:Xamarin.Forms.Layout) , qui définit le
 
 |     |     |
 | --- | --- |
-| [`ScrollView`](xref:Xamarin.Forms.ScrollView)peut faire défiler son contenu. Affectez [`Content`](xref:Xamarin.Forms.ScrollView.Content) à la propriété une vue ou une disposition trop grande pour tenir sur l’écran. (Le contenu d’un `ScrollView` est très souvent un [`StackLayout`](#stackLayout) .) Définissez la [`Orientation`](xref:Xamarin.Forms.ScrollView.Orientation) propriété pour indiquer si le défilement doit être vertical, horizontal ou les deux.<br /><br />Documentation sur les [API](xref:Xamarin.Forms.ScrollView)  /  [Guide](~/xamarin-forms/user-interface/layouts/scroll-view.md)  /  [Exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout) | [![Exemple ScrollView](layouts-images/ScrollView.png "Exemple ScrollView")](layouts-images/ScrollView-Large.png#lightbox "Exemple ScrollView")<br />[Code C# pour cette page](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ScrollViewDemoPage.cs)  /  [Page XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ScrollViewDemoPage.xaml) |
+| [`ScrollView`](xref:Xamarin.Forms.ScrollView)peut faire défiler son contenu. Affectez [`Content`](xref:Xamarin.Forms.ScrollView.Content) à la propriété une vue ou une disposition trop grande pour tenir sur l’écran. (Le contenu d’un `ScrollView` est très souvent un [`StackLayout`](#stackLayout) .) Définissez la [`Orientation`](xref:Xamarin.Forms.ScrollView.Orientation) propriété pour indiquer si le défilement doit être vertical, horizontal ou les deux.<br /><br />Documentation sur les [API](xref:Xamarin.Forms.ScrollView)  /  [Guide](~/xamarin-forms/user-interface/layouts/scrollview.md)  /  [Exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout) | [![Exemple ScrollView](layouts-images/ScrollView.png "Exemple ScrollView")](layouts-images/ScrollView-Large.png#lightbox "Exemple ScrollView")<br />[Code C# pour cette page](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ScrollViewDemoPage.cs)  /  [Page XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ScrollViewDemoPage.xaml) |
 |     |     |
 
 ### <a name="templatedview"></a>TemplatedView

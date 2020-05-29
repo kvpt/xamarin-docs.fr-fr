@@ -1,23 +1,13 @@
 ---
-title: 'Xamarin.Essentials : Lanceur Inter-app'
-description: La classe Lanceur dans Xamarin.Essentials permet à une application d’ouvrir un URI par le système.
-ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
-author: jamesmontemagno
-ms.custom: video
-ms.author: jamont
-ms.date: 08/20/2019
-ms.openlocfilehash: f84d3bf379562c8ddd96a32dfb9f15b03b0a6827
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83149785"
+title : « Xamarin.Essentials Launcher » Description : « la classe du lanceur dans Xamarin.Essentials permet à une application d’ouvrir un URI par le système ».
+ms. AssetID : BABF40CC-8BEE-43FD-BE12-6301DF27DD33 Author : jamesmontemagno ms. Custom : vidéo ms. Author : Jamont ms. Date : 08/20/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
-# <a name="xamarinessentials-launcher"></a>Xamarin.Essentials : Lanceur
+
+# <a name="xamarinessentials-launcher"></a>Xamarin.Essentials: Lanceur
 
 La classe **Lanceur** permet à une application d’ouvrir un URI par le système. Elle est souvent utilisée en cas de lien profond avec les schémas d’URI personnalisés d’une autre application. Si vous souhaitez ouvrir le navigateur sur un site web, reportez-vous à l’API **[Navigateur](open-browser.md)**.
 
-## <a name="get-started"></a>Prendre en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -79,9 +69,9 @@ Aucune configuration supplémentaire.
 
 -----
 
-## <a name="files"></a>Fichiers
+## <a name="files"></a>Files
 
-Cette fonctionnalité permet à une application de demander à d’autres applications d’ouvrir et d’afficher un fichier. Xamarin.Essentials détectera automatiquement le type de fichier (MIME) et demandera que le fichier soit ouvert.
+Cette fonctionnalité permet à une application de demander à d’autres applications d’ouvrir et d’afficher un fichier. Xamarin.Essentialsdétecte automatiquement le type de fichier (MIME) et demande l’ouverture du fichier.
 
 Voici un exemple d’écriture de texte sur disque et de demande d’ouverture :
 

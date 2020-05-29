@@ -1,23 +1,13 @@
 ---
-title: Carte Xamarin.Essentials
-description: La classe Map dans Xamarin.Essentials permet à une application d’ouvrir l’application de cartes installée à un emplacement spécifique.
-ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 05/26/2020
-ms.custom: video
-ms.openlocfilehash: 16f4a69e2d9216bb2e03fbcb663403d198b42c98
-ms.sourcegitcommit: 6a6cbb62bcf149f9515ee8868679a8a07ce17956
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83862714"
+titre : « Xamarin.Essentials Map » Description : « la classe Map dans Xamarin.Essentials permet à une application d’ouvrir l’application Map installée à un emplacement ou à un placemark spécifique ».
+ms. AssetID : BABF40CC-8BEE-43FD-BE12-6301DF27DD33 auteur : jamesmontemagno ms. Author : Jamont ms. Date : 05/26/2020 ms. Custom : Video No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
-# <a name="xamarinessentials-map"></a>Xamarin.Essentials : Carte
+
+# <a name="xamarinessentials-map"></a>Xamarin.Essentials: Mappage
 
 La classe **Map** permet à une application d’ouvrir l’application de cartes installée à un emplacement spécifique.
 
-## <a name="get-started"></a>Prendre en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -142,7 +132,7 @@ public class MapTest
 
 # <a name="android"></a>[Android](#tab/android)
 
-Android utilise le schéma d’URI `geo:` pour lancer l’application Cartes sur l’appareil. L’utilisateur peut être invité à sélectionner à partir d’une application existante qui prend en charge ce schéma d’URI.  Xamarin.Essentials est testé avec Google Maps, qui prend en charge ce schéma.
+Android utilise le schéma d’URI `geo:` pour lancer l’application Cartes sur l’appareil. L’utilisateur peut être invité à sélectionner à partir d’une application existante qui prend en charge ce schéma d’URI.  Xamarin.Essentialsest testé avec Google Maps, qui prend en charge ce schéma.
 
 # <a name="ios"></a>[iOS](#tab/ios)
 

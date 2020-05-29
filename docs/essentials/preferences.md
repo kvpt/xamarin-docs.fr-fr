@@ -1,23 +1,13 @@
 ---
-title: 'Xamarin.Essentials : préférences'
-description: Ce document décrit la classe Preferences de Xamarin.Essentials, qui enregistre les préférences de l’application dans un magasin de clés/valeurs. Il explique comment utiliser la classe et les types de données pouvant être stockés.
-ms.assetid: AA81BCBD-79BA-448F-942B-BA4415CA50FF
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 01/15/2019
-ms.custom: video
-ms.openlocfilehash: e812ab5b85db396ee3cb473f4a659ac188c9212f
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79497039"
+titre : « Xamarin.Essentials : Preferences » Description : «ce document décrit la classe de préférences dans Xamarin.Essentials , qui enregistre les préférences de l’application dans un magasin de clés/valeurs. Il explique comment utiliser la classe et les types de données qui peuvent être stockés.»
+ms. AssetID : AA81BCBD-79BA-448F-942B-BA4415CA50FF auteur : jamesmontemagno ms. Author : Jamont ms. Date : 01/15/2019 ms. Custom : Video No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
-# <a name="xamarinessentials-preferences"></a>Xamarin.Essentials : préférences
+
+# <a name="xamarinessentials-preferences"></a>Xamarin.Essentials: Préférences
 
 La classe **Preferences** permet de stocker les préférences d’application dans un magasin de clés/valeurs.
 
-## <a name="get-started"></a>Prise en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -41,7 +31,7 @@ Pour récupérer une valeur à partir des préférences, ou une valeur par défa
 var myValue = Preferences.Get("my_key", "default_value");
 ```
 
-Pour vérifier si une _clé_ donnée existe dans les préférences :
+Pour vérifier si une _clé_ donnée existe dans les préférences :
 
 ```csharp
 bool hasKey = Preferences.ContainsKey("my_key");
@@ -68,23 +58,23 @@ Les types de données suivants sont pris en charge dans **Preferences** :
 - **bool**
 - **double**
 - **int**
-- **Flotteur**
-- **Long**
+- **float**
+- **long**
 - **string**
 - **DateTime**
 
-## <a name="integrate-with-system-settings"></a>Intégrer aux paramètres du système
+## <a name="integrate-with-system-settings"></a>Intégrer avec les paramètres système
 
-Les préférences sont stockent natif, ce qui vous permet d’intégrer vos paramètres dans les paramètres du système natif. Suivez la documetnation de la plate-forme et des échantillons pour vous intégrer à la plate-forme :
+Les préférences sont stockées en mode natif, ce qui vous permet d’intégrer vos paramètres dans les paramètres système natifs. Suivez les documetnation et les exemples de la plateforme pour les intégrer à la plateforme :
 
-* Apple : [Mise en œuvre d’un pack de paramètres iOS](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/UserDefaults/Preferences/Preferences.html)
-* [Échantillon de préférences iOS Applicaton](https://docs.microsoft.com/samples/xamarin/ios-samples/appprefs/)
-* [paramètres watchOS](https://developer.xamarin.com/guides/ios/watch/working-with/settings/)
-* Android: [Démarrer avec des écrans paramètres](https://developer.android.com/guide/topics/ui/settings.html)
+* Apple : [implémentation d’un bundle de paramètres iOS](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/UserDefaults/Preferences/Preferences.html)
+* [Exemple de préférences application iOS](https://docs.microsoft.com/samples/xamarin/ios-samples/appprefs/)
+* [Paramètres Watchos](https://developer.xamarin.com/guides/ios/watch/working-with/settings/)
+* Android : [prise en main avec les écrans de paramètres](https://developer.android.com/guide/topics/ui/settings.html)
 
 ## <a name="implementation-details"></a>Informations d’implémentation
 
-Les `DateTime` valeurs sont stockées dans un format binaire 64 bits (long integer) à l’aide de `DateTime` deux méthodes définies par la classe : [`ToBinary`](xref:System.DateTime.ToBinary) la méthode est utilisée pour coder la `DateTime` valeur, et la [`FromBinary`](xref:System.DateTime.FromBinary(System.Int64)) méthode décode la valeur. Consultez la documentation de ces méthodes pour connaître les ajustements qui peuvent être apportés aux valeurs décodées quand un `DateTime` stocké n’est pas une valeur UTC (temps universel coordonné).
+Les valeurs de `DateTime` sont stockées dans un format binaire 64 bits (entier long) à l’aide de deux méthodes définies par la `DateTime` classe : la [`ToBinary`](xref:System.DateTime.ToBinary) méthode est utilisée pour `DateTime` encoder la valeur, et la [`FromBinary`](xref:System.DateTime.FromBinary(System.Int64)) méthode décode la valeur. Consultez la documentation de ces méthodes pour connaître les ajustements qui peuvent être apportés aux valeurs décodées quand un `DateTime` stocké n’est pas une valeur UTC (temps universel coordonné).
 
 ## <a name="platform-implementation-specifics"></a>Caractéristiques de mise en œuvre de la plateforme
 
@@ -98,9 +88,9 @@ Toutes les données sont stockées dans les [Préférences partagées](https://d
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
 
-[ApplicationDataContainer](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer) permet de stocker les valeurs sur l’appareil. Si aucun `sharedName` n’est spécifié, `LocalSettings` est utilisé. Sinon, le nom sert à créer un conteneur dans `LocalSettings`. 
+[ApplicationDataContainer](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer) permet de stocker les valeurs sur l’appareil. Si aucun `sharedName` n’est spécifié, `LocalSettings` est utilisé. Sinon, le nom sert à créer un conteneur dans `LocalSettings`.
 
-`LocalSettings`a également la restriction suivante que le nom de chaque paramètre peut être 255 caractères en longueur au plus. Chaque réglage peut être jusqu’à 8K octets de taille et chaque réglage composite peut être jusqu’à 64K octets de taille.
+`LocalSettings`présente également la restriction suivante : le nom de chaque paramètre peut avoir une longueur de 255 caractères au maximum. Chaque paramètre peut avoir une taille maximale de 8 Ko et chaque paramètre composite peut comporter jusqu’à 64 Ko d’octets.
 
 --------------
 
@@ -108,7 +98,7 @@ Toutes les données sont stockées dans les [Préférences partagées](https://d
 
 La désinstallation de l’application entraîne la suppression de toutes les _Préférences_. Il existe une exception à cette règle. Il s’agit du cas où les applications ciblent (et s’exécutent sur) Android 6.0 (niveau d’API 23) ou version ultérieure, et utilisent la [__sauvegarde automatique__](https://developer.android.com/guide/topics/data/autobackup). Cette fonctionnalité est activée par défaut et conserve les données de l’application, notamment les __Préférences partagées__, utilisées par l’API de **Préférences**. Vous pouvez désactiver cette fonctionnalité en suivant la [documentation](https://developer.android.com/guide/topics/data/autobackup) de Google.
 
-## <a name="limitations"></a>Limites
+## <a name="limitations"></a>Limitations
 
 Quand vous stockez une chaîne, cette API permet de stocker de petites quantités de texte.  Les performances risquent d’être médiocres si vous essayez de l’utiliser pour stocker de grandes quantités de texte.
 

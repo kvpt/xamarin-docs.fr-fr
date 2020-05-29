@@ -1,22 +1,8 @@
 ---
-title: ''
-description: Chaque Xamarin.Forms contrôle a un convertisseur associé pour chaque plateforme qui crée une instance d’un contrôle natif. Cet article répertorie les classes de convertisseur et de contrôle natif qui implémentent chaque Xamarin.Forms page, disposition, vue et cellule.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a56f05f8ff4eb8ece43a9f4f38a669cfdc85c4be
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135185"
+title : "Description classes de base de convertisseur et contrôles natifs" Description : "chaque Xamarin.Forms contrôle a un convertisseur associé pour chaque plateforme qui crée une instance d’un contrôle natif. Cet article répertorie les classes de convertisseur et de contrôle natif qui implémentent chaque Xamarin.Forms page, disposition, vue et cellule.
+ms. Prod : xamarin ms. AssetID : A8909AE3-ED0E-4D24-BF96-B49E732E3B93 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 04/17/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="renderer-base-classes-and-native-controls"></a>Classes de base de renderer et contrôles natifs
 
 _Chaque Xamarin.Forms contrôle a un convertisseur associé pour chaque plateforme qui crée une instance d’un contrôle natif. Cet article répertorie les classes de convertisseur et de contrôle natif qui implémentent chaque Xamarin.Forms page, disposition, vue et cellule._
@@ -26,7 +12,10 @@ _Chaque Xamarin.Forms contrôle a un convertisseur associé pour chaque platefor
 - **iOS** – Xamarin.Forms . Platform. iOS
 - **Android** – Xamarin.Forms . Platform. Android
 - **Android (AppCompat)** : Xamarin.Forms . Platform. Android. AppCompat
+- **Android (FastRenderers)**  -  Xamarin.Forms . Platform. Android. FastRenderers
 - **Plateforme Windows universelle (UWP)** : Xamarin.Forms . Platform. UWP
+
+Pour plus d’informations sur les convertisseurs rapides, consultez les [ Xamarin.Forms convertisseurs rapides](~/xamarin-forms/internals/fast-renderers.md).
 
 La classe `MapRenderer` se trouve dans les espaces de noms suivants :
 
@@ -54,18 +43,18 @@ Le tableau suivant répertorie les classes de convertisseur et de contrôle nati
 
 Le tableau suivant répertorie les classes de convertisseur et de contrôle natif qui implémentent chaque type de Xamarin.Forms [disposition](~/xamarin-forms/user-interface/controls/layouts.md) :
 
-|Disposition|Renderer|iOS|Android|UWP|
+|Layout|Renderer|iOS|Android|Android (AppCompat)|UWP|
 |--- |--- |--- |--- |--- |
-|[`ContentPresenter`](xref:Xamarin.Forms.ContentPresenter)|ViewRenderer|UIView|Affichage|FrameworkElement|
-|[`ContentView`](xref:Xamarin.Forms.ContentView)|ViewRenderer|UIView|Affichage|FrameworkElement|
-|[`FlexLayout`](xref:Xamarin.Forms.FlexLayout)|ViewRenderer|UIView|Affichage|FrameworkElement|
-|[`Frame`](xref:Xamarin.Forms.Frame)|FrameRenderer|UIView|ViewGroup|Bordure|
-|[`ScrollView`](xref:Xamarin.Forms.ScrollView)|ScrollViewRenderer|UIScrollView|ScrollView|ScrollViewer|
-|[`TemplatedView`](xref:Xamarin.Forms.TemplatedView)|ViewRenderer|UIView|Affichage|FrameworkElement|
-|[`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout)|ViewRenderer|UIView|Affichage|FrameworkElement|
-|[`Grid`](xref:Xamarin.Forms.Grid)|ViewRenderer|UIView|Affichage|FrameworkElement|
-|[`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout)|ViewRenderer|UIView|Affichage|FrameworkElement|
-|[`StackLayout`](xref:Xamarin.Forms.StackLayout)|ViewRenderer|UIView|Affichage|FrameworkElement|
+|[`ContentPresenter`](xref:Xamarin.Forms.ContentPresenter)|ViewRenderer|UIView|Affichage|Affichage|FrameworkElement|
+|[`ContentView`](xref:Xamarin.Forms.ContentView)|ViewRenderer|UIView|Affichage|Affichage|FrameworkElement|
+|[`FlexLayout`](xref:Xamarin.Forms.FlexLayout)|ViewRenderer|UIView|Affichage|Affichage|FrameworkElement|
+|[`Frame`](xref:Xamarin.Forms.Frame)|FrameRenderer|UIView|ViewGroup|CardView|Bordure|
+|[`ScrollView`](xref:Xamarin.Forms.ScrollView)|ScrollViewRenderer|UIScrollView|ScrollView|ScrollView|ScrollViewer|
+|[`TemplatedView`](xref:Xamarin.Forms.TemplatedView)|ViewRenderer|UIView|Affichage|Affichage|FrameworkElement|
+|[`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout)|ViewRenderer|UIView|Affichage|Affichage|FrameworkElement|
+|[`Grid`](xref:Xamarin.Forms.Grid)|ViewRenderer|UIView|Affichage|Affichage|FrameworkElement|
+|[`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout)|ViewRenderer|UIView|Affichage|Affichage|FrameworkElement|
+|[`StackLayout`](xref:Xamarin.Forms.StackLayout)|ViewRenderer|UIView|Affichage|Affichage|FrameworkElement|
 
 ## <a name="views"></a>Les vues
 
@@ -73,7 +62,7 @@ Le tableau suivant répertorie les classes de convertisseur et de contrôle nati
 
 |Les vues|Renderer|iOS|Android|Android (AppCompat)|UWP|
 |--- |--- |--- |--- |--- |--- |
-|[`ActivityIndicator`](xref:Xamarin.Forms.ActivityIndicator)|ActivityIndicatorRenderer|UIActivityIndicator|ProgressBar||ProgressBar|
+|[`ActivityIndicator`](xref:Xamarin.Forms.ActivityIndicator)|ActivityIndicatorRenderer|UIActivityIndicator|Barre de progression||Barre de progression|
 |[`BoxView`](xref:Xamarin.Forms.BoxView)|BoxRenderer (iOS et Android), BoxViewRenderer (UWP)|UIView|ViewGroup||Rectangle|
 |[`Button`](xref:Xamarin.Forms.Button)|ButtonRenderer|UIButton|Bouton|AppCompatButton|Bouton|
 |[`CarouselView`](xref:Xamarin.Forms.CarouselView)|CarouselViewRenderer|UICollectionView||RecyclerView|ListViewBase|
@@ -91,7 +80,7 @@ Le tableau suivant répertorie les classes de convertisseur et de contrôle nati
 |[`MediaElement`](xref:Xamarin.Forms.MediaElement)|MediaElementRenderer|UIView||VideoView|MediaElement|
 |[`Picker`](xref:Xamarin.Forms.Picker)|PickerRenderer|UITextField|EditText|EditText|Liste déroulante|
 |`RadioButton`|RadioButtonRenderer|UIButton||AppCompatRadioButton|RadioButton|
-|[`ProgressBar`](xref:Xamarin.Forms.ProgressBar)|ProgressBarRenderer|UIProgressView|ProgressBar||ProgressBar|
+|[`ProgressBar`](xref:Xamarin.Forms.ProgressBar)|ProgressBarRenderer|UIProgressView|Barre de progression||Barre de progression|
 |[`RefreshView`](xref:Xamarin.Forms.RefreshView)|RefreshViewRenderer|UIView||SwipeRefreshLayout|RefreshContainer|
 |[`SearchBar`](xref:Xamarin.Forms.SearchBar)|SearchBarRenderer|UISearchBar|SearchView||AutoSuggestBox|
 |[`Slider`](xref:Xamarin.Forms.Slider)|SliderRenderer|UISlider|SeekBar||Curseur|
@@ -117,6 +106,7 @@ Le tableau suivant répertorie les classes de convertisseur et de contrôle nati
 |[`ImageCell`](xref:Xamarin.Forms.ImageCell)|ImageCellRenderer|UITableViewCell avec un UIImage|LinearLayout avec deux TextViews et un ImageView|DataTemplate avec un Grid contenant un Image et deux TextBlocks|
 |[`ViewCell`](xref:Xamarin.Forms.ViewCell)|[ViewCellRenderer](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md)|UITableViewCell|Affichage|DataTemplate avec un ContentPresenter|
 
-## <a name="summary"></a>Résumé
+## <a name="related-links"></a>Liens connexes
 
-Cet article répertorie les classes de convertisseur et de contrôle natif qui implémentent chaque Xamarin.Forms page, disposition, vue et cellule. Chaque Xamarin.Forms contrôle a un convertisseur associé pour chaque plateforme qui crée une instance d’un contrôle natif.
+- [Xamarin.FormsConvertisseurs rapides](~/xamarin-forms/internals/fast-renderers.md)
+- [Xamarin.FormsConvertisseurs personnalisés de l’interpréteur de commandes](~/xamarin-forms/app-fundamentals/shell/customrenderers.md)

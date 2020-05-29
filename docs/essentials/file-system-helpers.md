@@ -1,23 +1,13 @@
 ---
-title: 'Xamarin.Essentials : composants d’assistance de système de fichiers'
-description: La classe FileSystem de Xamarin.Essentials contient une série de composants d’assistance qui permettent de rechercher les répertoires de cache et de données de l’application, ainsi que d’ouvrir des fichiers contenus dans le paquet d’application.
-ms.assetid: B3EC2DE0-EFC0-410C-AF71-7410AE84CF84
-author: jamesmontemagno
-ms.custom: video
-ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: e42cb3764e993ecd6063aab6f38b1cdf5e870a58
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83150001"
+title : " Xamarin.Essentials : File System Helpers" Description : "la classe FileSystem dans Xamarin.Essentials contient une série d’applications d’assistance pour rechercher les répertoires de cache et de données de l’application, ainsi que les fichiers ouverts dans le package d’application."
+ms. AssetID : B3EC2DE0-EFC0-410C-AF71-7410AE84CF84 Author : jamesmontemagno ms. Custom : vidéo ms. Author : Jamont ms. Date : 11/04/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
-# <a name="xamarinessentials-file-system-helpers"></a>Xamarin.Essentials : composants d’assistance de système de fichiers
+
+# <a name="xamarinessentials-file-system-helpers"></a>Xamarin.Essentials: Applications auxiliaires du système de fichiers
 
 La classe **FileSystem** contient une série de composants d’assistance qui permettent de rechercher les répertoires de cache et de données de l’application, ainsi que d’ouvrir des fichiers contenus dans le paquet d’application.
 
-## <a name="get-started"></a>Prendre en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 

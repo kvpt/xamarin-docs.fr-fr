@@ -1,23 +1,13 @@
 ---
-title: 'Xamarin.Essentials : Partager'
-description: La classe Share de Xamarin.Essentials permet à une application de partager des données comme du texte et des liens web avec d’autres applications sur l’appareil.
-ms.assetid: B7B01D55-0129-4C87-B515-89F8F4E94665
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 01/06/2020
-ms.custom: video
-ms.openlocfilehash: f964967dce0dbb7e49d52a7f865b0fe8a9957bbe
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "77545204"
+title : " Xamarin.Essentials : Share" Description : "la classe share dans Xamarin.Essentials permet à une application de partager des données telles que du texte et des liens Web vers d’autres applications sur l’appareil."
+ms. AssetID : B7B01D55-0129-4C87-B515-89F8F4E94665 auteur : jamesmontemagno ms. Author : Jamont ms. Date : 01/06/2020 ms. Custom : Video No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
-# <a name="xamarinessentials-share"></a>Xamarin.Essentials : Partager
+
+# <a name="xamarinessentials-share"></a>Xamarin.Essentials: Partager
 
 La classe **Share** permet à une application de partager des données comme du texte et des liens web avec d’autres applications sur l’appareil.
 
-## <a name="get-started"></a>Prise en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -59,9 +49,9 @@ L’interface utilisateur de partage avec une application externe s’affiche qu
 
 ![Partager](images/share.png)
 
-## <a name="files"></a>Fichiers
+## <a name="files"></a>Files
 
-Cette fonctionnalité permet à une application de partager des fichiers avec d’autres applications sur l’appareil. Xamarin.Essentials détectera automatiquement le type de fichier (MIME) et demandera un partage. Chaque plateforme peut prendre uniquement en charge certaines extensions de fichiers spécifiques.
+Cette fonctionnalité permet à une application de partager des fichiers avec d’autres applications sur l’appareil. Xamarin.Essentialsdétecte automatiquement le type de fichier (MIME) et demande un partage. Chaque plateforme peut prendre uniquement en charge certaines extensions de fichiers spécifiques.
 
 Voici un exemple d’écriture de texte sur le disque et de partage avec d’autres applications :
 
@@ -77,9 +67,9 @@ await Share.RequestAsync(new ShareFileRequest
 });
 ```
 
-## <a name="presentation-location"></a>Emplacement de présentation
+## <a name="presentation-location"></a>Emplacement de la présentation
 
-Lorsque vous demandez une part sur iPadOS, vous avez la possibilité de présenter dans un pop over control. Vous pouvez spécifier l’emplacement à l’aide de la `PresentationSourceBounds` propriété :
+Lors de la demande d’un partage sur iPados, vous avez la possibilité d’être présent dans un contrôle Pop-out. Vous pouvez spécifier l’emplacement à l’aide de la `PresentationSourceBounds` propriété :
 
 ```csharp
 await Share.RequestAsync(new ShareFileRequest

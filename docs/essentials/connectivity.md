@@ -1,23 +1,13 @@
 ---
-title: 'Xamarin.Essentials : Connectivité'
-description: La classe Connectivité dans Xamarin.Essentials vous permet de surveiller les modifications des conditions réseau de l’appareil, l’accès au réseau actuel et le mode de connexion actuel.
-ms.assetid: E1B1F152-B1D5-4227-965E-C0AEBF528F49
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 01/08/2019
-ms.custom: video
-ms.openlocfilehash: c70510f7b47f93c6119532b6a1c06f6c2e9e56ea
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "67855757"
+title : " Xamarin.Essentials : Connectivity" Description : "la classe de connectivité de vous Xamarin.Essentials permet de surveiller les modifications apportées aux conditions réseau de l’appareil, de vérifier l’accès au réseau actuel et de savoir comment il est actuellement connecté.
+ms. AssetID : E1B1F152-B1D5-4227-965E-C0AEBF528F49 auteur : jamesmontemagno ms. Author : Jamont ms. Date : 01/08/2019 ms. Custom : Video No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
-# <a name="xamarinessentials-connectivity"></a>Xamarin.Essentials : Connectivité
+
+# <a name="xamarinessentials-connectivity"></a>Xamarin.Essentials: Connectivité
 
 La classe **Connectivité** vous permet de surveiller les modifications des conditions réseau de l’appareil, l’accès au réseau actuel et le mode de connexion actuel.
 
-## <a name="get-started"></a>Prise en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -35,7 +25,7 @@ Ouvrez le fichier **AssemblyInfo.cs** sous le dossier **Propriétés** et ajoute
 
 OU mettez à jour le manifeste Android :
 
-Ouvrez le fichier **AndroidManifest.xml** sous le dossier **Properties** et ajoutez ce qui suit à l’intérieur du nœud **manifeste.**
+Ouvrez le fichier **fichier AndroidManifest. xml** dans le dossier **Propriétés** et ajoutez le code suivant dans le nœud **manifeste** .
 
 ```xml
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -109,7 +99,7 @@ public class ConnectivityTest
 }
 ```
 
-## <a name="limitations"></a>Limites
+## <a name="limitations"></a>Limitations
 
 Il est important de noter qu’il est possible que `Internet` soit signalé par `NetworkAccess` mais l’accès complet sur le web n’est pas disponible. En raison du fonctionnement de la connectivité sur chaque plateforme, seul le fait qu’une connexion est disponible peut être garanti. Par exemple, l’appareil peut être connecté à un réseau Wi-Fi, mais le routeur est déconnecté d’Internet. Dans cet exemple, Internet peut être signalé, mais une connexion active n’est pas disponible.
 

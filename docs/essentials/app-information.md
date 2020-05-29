@@ -1,23 +1,13 @@
 ---
-title: 'Xamarin.Essentials : informations sur l’application'
-description: Ce document décrit la classe AppInfo de Xamarin.Essentials, qui fournit des informations sur votre application. Par exemple, il expose le nom et la version de l’application.
-ms.assetid: 15924FCB-19E0-45B2-944E-E94FD7AE12FA
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 01/29/2019
-ms.custom: video
-ms.openlocfilehash: 69d0cb503d329ccfb4c29fb6cc4a589bef97e893
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70756990"
+title : " Xamarin.Essentials : informations sur l’application" Description : "ce document décrit la classe AppInfo dans Xamarin.Essentials , qui fournit des informations sur votre application. Par exemple, il expose le nom et la version de l’application.»
+ms. AssetID : 15924FCB-19E0-45B2-944E-E94FD7AE12FA auteur : jamesmontemagno ms. Author : Jamont ms. Date : 01/29/2019 ms. Custom : Video No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
-# <a name="xamarinessentials-app-information"></a>Xamarin.Essentials : informations sur l’application
+
+# <a name="xamarinessentials-app-information"></a>Xamarin.Essentials: Informations sur l’application
 
 La classe **AppInfo** fournit des informations sur votre application.
 
-## <a name="get-started"></a>Prise en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -64,28 +54,28 @@ Cette page de paramètres permet à l’utilisateur de changer les autorisations
 
 Les informations d’application sont tirées de `AndroidManifest.xml` pour les champs suivants :
 
-- **Construire** `android:versionCode` en `manifest` nœud
-- **Name** -  Nom`android:label` dans `application` le nœud
-- **PackageName** `package` : `manifest` dans le nœud
-- **VersionString** `android:versionName` - `application` dans le nœud
+- **Build** : `android:versionCode` dans le `manifest` nœud
+- **Name**  -  Nom `android:label` dans le `application` nœud
+- **PackageName**: `package` dans le `manifest` nœud
+- **VersionString** – `android:versionName` dans le `application` nœud
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
 Les informations d’application sont tirées de `Info.plist` pour les champs suivants :
 
-- **Construire**`CFBundleVersion`
-- **Name** -  Nom`CFBundleDisplayName` si défini, autre`CFBundleName`
+- **Build** :`CFBundleVersion`
+- **Name**  -  Nom `CFBundleDisplayName` s’il est défini, sinon`CFBundleName`
 - **PackageName**:`CFBundleIdentifier`
-- **VersionString** -`CFBundleShortVersionString`
+- **VersionString** –`CFBundleShortVersionString`
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
 
 Les informations d’application sont tirées de `Package.appxmanifest` pour les champs suivants :
 
 - **Build** – Utilise la valeur `Build` de la `Version` sur le nœud `Identity`
-- **Name** -  Nom`DisplayName` sur `Properties` le nœud
-- **PackageName** `Name` : `Identity` sur le nœud
-- **VersionString** `Version` - `Identity` sur le nœud
+- **Name**  -  Nom `DisplayName` sur le `Properties` nœud
+- **PackageName**: `Name` sur le `Identity` nœud
+- **VersionString** – `Version` sur le `Identity` nœud
 
 --------------
 

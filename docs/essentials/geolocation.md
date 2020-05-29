@@ -1,23 +1,13 @@
 ---
-title: 'Xamarin.Essentials : géolocalisation'
-description: Ce document décrit la classe Geolocation de Xamarin.Essentials, qui fournit des API permettant de récupérer les coordonnées de géolocalisation de l’appareil.
-ms.assetid: 8F66092C-13F0-4FEE-8AA5-901D5F79B357
-author: jamesmontemagno
-ms.custom: video
-ms.author: jamont
-ms.date: 03/13/2019
-ms.openlocfilehash: 99b439e70038d27ed8bffcf20b908c52a10ede82
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83149744"
+title : " Xamarin.Essentials : géolocalisation" Description : "ce document décrit la classe de géolocalisation dans Xamarin.Essentials , qui fournit des API pour récupérer les coordonnées de géolocalisation actuelles de l’appareil."
+ms. AssetID : 8F66092C-13F0-4FEE-8AA5-901D5F79B357 Author : jamesmontemagno ms. Custom : vidéo ms. Author : Jamont ms. Date : 03/13/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
-# <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials : géolocalisation
+
+# <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials: Géolocalisation
 
 La classe **Geolocation** fournit des API permettant de récupérer les coordonnées de géolocalisation de l’appareil.
 
-## <a name="get-started"></a>Prendre en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -112,7 +102,7 @@ catch (Exception ex)
 }
 ```
 
-L’altitude n’est pas toujours disponible. Dans ce cas, la propriété `Altitude` peut avoir une valeur `null` ou égale à zéro. Si l’altitude est disponible, la valeur est exprimée en mètres au-dessus du niveau de la mer. 
+L’altitude n’est pas toujours disponible. Dans ce cas, la propriété `Altitude` peut avoir une valeur `null` ou égale à zéro. Si l’altitude est disponible, la valeur est exprimée en mètres au-dessus du niveau de la mer.
 
 Pour interroger les coordonnées relatives à la [localisation](xref:Xamarin.Essentials.Location) de l’appareil actuel, vous pouvez utiliser `GetLocationAsync`. Il est préférable de passer un `GeolocationRequest` et un `CancellationToken` complets, car il peut s’écouler un certain temps avant d’obtenir la localisation de l’appareil.
 
@@ -151,7 +141,7 @@ Le tableau suivant indique la précision en fonction de la plateforme :
 
 ### <a name="lowest"></a>Minimale
 
-| Plate-forme | Distance (en mètres) |
+| Plateforme | Distance (en mètres) |
 | --- | --- |
 | Android | 500 |
 | iOS | 3000 |
@@ -159,7 +149,7 @@ Le tableau suivant indique la précision en fonction de la plateforme :
 
 ### <a name="low"></a>Faible
 
-| Plate-forme | Distance (en mètres) |
+| Plateforme | Distance (en mètres) |
 | --- | --- |
 | Android | 500 |
 | iOS | 1 000 |
@@ -167,15 +157,15 @@ Le tableau suivant indique la précision en fonction de la plateforme :
 
 ### <a name="medium-default"></a>Moyenne (par défaut)
 
-| Plate-forme | Distance (en mètres) |
+| Plateforme | Distance (en mètres) |
 | --- | --- |
 | Android | 100 - 500 |
 | iOS | 100 |
 | UWP | 30 - 500 |
 
-### <a name="high"></a>Importante
+### <a name="high"></a>Élevé
 
-| Plate-forme | Distance (en mètres) |
+| Plateforme | Distance (en mètres) |
 | --- | --- |
 | Android | 0 - 100 |
 | iOS | 10 |
@@ -183,7 +173,7 @@ Le tableau suivant indique la précision en fonction de la plateforme :
 
 ### <a name="best"></a>La meilleure
 
-| Plate-forme | Distance (en mètres) |
+| Plateforme | Distance (en mètres) |
 | --- | --- |
 | Android | 0 - 100 |
 | iOS | ~0 |

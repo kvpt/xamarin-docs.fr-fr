@@ -1,19 +1,9 @@
 ---
-title: 'Xamarin.Essentials : Ouvrir le navigateur'
-description: La classe Navigateur dans Xamarin.Essentials permet à une application d’ouvrir un lien web dans le navigateur préféré du système optimisé ou le navigateur externe.
-ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 04/02/2019
-ms.custom: video
-ms.openlocfilehash: 715b9872642dfa8d5426c2967c62e82643def34d
-ms.sourcegitcommit: 9ca07644710e5919c7bc684c1ce144471611d5df
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82974478"
+titre : « Xamarin.Essentials ouvrir le navigateur » Description : « la classe browser dans Xamarin.Essentials permet à une application d’ouvrir un lien Web dans le navigateur préféré du système optimisé ou dans le navigateur externe. »
+ms. AssetID : BABF40CC-8BEE-43FD-BE12-6301DF27DD33 auteur : jamesmontemagno ms. Author : Jamont ms. Date : 04/02/2019 ms. Custom : Video No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
-# <a name="xamarinessentials-browser"></a>Xamarin.Essentials : Navigateur
+
+# <a name="xamarinessentials-browser"></a>Xamarin.Essentials: Navigateur
 
 La classe **Navigateur** permet à une application d’ouvrir un lien web dans le navigateur préféré du système optimisé ou le navigateur externe.
 
@@ -46,7 +36,7 @@ Cette méthode retourne des résultats une fois que le navigateur a été _lanc�
 
 ## <a name="customization"></a>Personnalisation
 
-Lorsque vous utilisez le navigateur préféré du système, plusieurs options de personnalisation sont disponibles pour iOS et Android. Celles-ci incluent un `TitleMode` (Android uniquement) et des options de couleur par défaut pour les `Toolbar` (iOS et Android) et `Controls` (iOS uniquement) qui s’affichent. 
+Lorsque vous utilisez le navigateur préféré du système, plusieurs options de personnalisation sont disponibles pour iOS et Android. Celles-ci incluent un `TitleMode` (Android uniquement) et des options de couleur par défaut pour les `Toolbar` (iOS et Android) et `Controls` (iOS uniquement) qui s’affichent.
 
 Ces options sont spécifiées à l’aide de `BrowserLaunchOptions` lors de l’appel à `OpenAsync`.
 

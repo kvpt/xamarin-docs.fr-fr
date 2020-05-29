@@ -1,23 +1,13 @@
 ---
-title: 'Xamarin.Essentials : informations sur l’appareil'
-description: Ce document décrit la classe DeviceInfo de Xamarin.Essentials, qui fournit des informations sur l’appareil où l’application s’exécute.
-ms.assetid: A1AC5373-926A-4FB6-8D7D-4B87EB8EB522
-author: jamesmontemagno
-ms.custom: video
-ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: 1790e950dfccddcca84adf97bcff64f905ee59f6
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83150091"
+titre : « Xamarin.Essentials : informations sur l’appareil » Description : « ce document décrit la classe DeviceInfo dans Xamarin.Essentials , qui fournit des informations sur l’appareil sur lequel l’application s’exécute. »
+ms. AssetID : A1AC5373-926A-4FB6-8D7D-4B87EB8EB522 Author : jamesmontemagno ms. Custom : vidéo ms. Author : Jamont ms. Date : 11/04/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
-# <a name="xamarinessentials-device-information"></a>Xamarin.Essentials : informations sur l’appareil
+
+# <a name="xamarinessentials-device-information"></a>Xamarin.Essentials: Informations sur l’appareil
 
 La classe **DeviceInfo** fournit des informations sur l’appareil où l’application s’exécute.
 
-## <a name="get-started"></a>Prendre en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 

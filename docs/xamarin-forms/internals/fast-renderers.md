@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsConvertisseurs rapides
-description: Cet article présente les convertisseurs rapides, qui réduisent les coûts d’inflation et de rendu d’un Xamarin.Forms contrôle sur Android en aplatint la hiérarchie des contrôles natifs résultante.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 3f25f4c2da5b2a426673b49045b5d2d05b0c6ac4
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139072"
+titre : « Xamarin.Forms rendu rapide » Description : « cet article présente des convertisseurs rapides qui réduisent les coûts d’inflation et de rendu d’un Xamarin.Forms contrôle sur Android en aplatit la hiérarchie des contrôles natifs résultants ».
+ms. Prod : xamarin ms. AssetID : 097f87f2-d891-4f3c-BE02-fb7d195a481a ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 05/28/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-fast-renderers"></a>Xamarin.FormsConvertisseurs rapides
 
 Traditionnellement, la plupart des convertisseurs de contrôle d’origine sur Android sont composés de deux vues :
@@ -31,9 +17,10 @@ Les convertisseurs rapides réduisent les coûts d’inflation et de rendu d’u
 Les convertisseurs rapides sont disponibles pour les contrôles suivants dans Xamarin.Forms sur Android :
 
 - [`Button`](xref:Xamarin.Forms.Button)
+- [`Frame`](xref:Xamarin.Forms.Frame)
 - [`Image`](xref:Xamarin.Forms.Image)
 - [`Label`](xref:Xamarin.Forms.Label)
-- [`Frame`](xref:Xamarin.Forms.Frame)
+- [`MediaElement`](xref:Xamarin.Forms.MediaElement)
 
 Fonctionnellement, ces convertisseurs rapides ne sont pas différents des convertisseurs hérités. À partir de Xamarin.Forms 4,0, toutes les applications `FormsAppCompatActivity` qui ciblent utiliseront ces convertisseurs rapides par défaut. Les convertisseurs pour tous les nouveaux contrôles, y compris [`ImageButton`](xref:Xamarin.Forms.ImageButton) et [`CollectionView`](xref:Xamarin.Forms.CollectionView) , utilisent l’approche de rendu rapide.
 
@@ -57,4 +44,4 @@ Les convertisseurs rapides peuvent être remplacés par les approches suivantes�
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Renderers personnalisés](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)
+- [Convertisseurs personnalisés](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)

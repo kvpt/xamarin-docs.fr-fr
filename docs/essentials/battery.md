@@ -1,23 +1,13 @@
 ---
-title: 'Xamarin.Essentials : batterie'
-description: Ce document décrit la classe Battery de Xamarin.Essentials, qui vous permet d’accéder aux informations sur la batterie de l’appareil et de superviser les changements.
-ms.assetid: 47EB26D8-8C62-477B-A13C-6977F74E6E43
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 01/22/2019
-ms.custom: video
-ms.openlocfilehash: cba17707f9129feecc618c9a7c2f144ad40f0168
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70756922"
+titre : « Xamarin.Essentials : Battery » Description : « ce document décrit la classe de batterie dans Xamarin.Essentials , qui vous permet de vérifier les informations sur la batterie de l’appareil et de surveiller les modifications ».
+ms. AssetID : 47EB26D8-8C62-477B-A13C-6977F74E6E43 auteur : jamesmontemagno ms. Author : Jamont ms. Date : 01/22/2019 ms. Custom : Video No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
-# <a name="xamarinessentials-battery"></a>Xamarin.Essentials : batterie
+
+# <a name="xamarinessentials-battery"></a>Xamarin.Essentials: Batterie
 
 La classe **Battery** vous permet de vérifier les informations de batterie de l’appareil et de superviser les changements. Elle fournit aussi des informations sur l’état d’économie d’énergie de l’appareil, qui indique si l’appareil s’exécute dans un mode de basse consommation. Les applications doivent de préférence éviter le traitement en arrière-plan lorsque l’économie d’énergie de l’appareil est activée.
 
-## <a name="get-started"></a>Prise en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -35,7 +25,7 @@ Ouvrez le fichier **AssemblyInfo.cs** sous le dossier **Propriétés** et ajoute
 
 OU mettez à jour le manifeste Android :
 
-Ouvrez le fichier **AndroidManifest.xml** sous le dossier **Properties** et ajoutez ce qui suit à l’intérieur du nœud **manifeste.**
+Ouvrez le fichier **fichier AndroidManifest. xml** dans le dossier **Propriétés** et ajoutez le code suivant dans le nœud **manifeste** .
 
 ```xml
 <uses-permission android:name="android.permission.BATTERY_STATS" />
@@ -170,7 +160,7 @@ Aucune différence entre les plateformes.
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
-- Vous devez utiliser l’appareil pour tester les API. 
+- Vous devez utiliser l’appareil pour tester les API.
 - Seul `AC` ou `Battery` est retourné pour `PowerSource`.
 
 # <a name="uwp"></a>[UWP](#tab/uwp)

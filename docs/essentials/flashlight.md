@@ -1,23 +1,13 @@
 ---
-title: 'Xamarin.Essentials : lampe de poche'
-description: Ce document décrit la classe Flashlight de Xamarin.Essentials, qui permet d’activer ou de désactiver le flash de l’appareil photo de l’appareil pour transformer celui-ci en lampe de poche.
-ms.assetid: 06A03553-D212-43A2-9E6E-C2D2D93EB136
-author: jamesmontemagno
-ms.custom: video
-ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: 1a8601860afaf033c9bdb62c187fe228d2e83435
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83149956"
+titre : « Xamarin.Essentials : torchure » Description : « ce document décrit la classe de torche dans Xamarin.Essentials , qui a la possibilité d’allumer ou de sortir le flash de l’appareil photo de l’appareil pour la transformer en torche. »
+ms. AssetID : 06A03553-D212-43A2-9E6E-C2D2D93EB136 Author : jamesmontemagno ms. Custom : vidéo ms. Author : Jamont ms. Date : 11/04/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
-# <a name="xamarinessentials-flashlight"></a>Xamarin.Essentials : lampe de poche
+
+# <a name="xamarinessentials-flashlight"></a>Xamarin.Essentials: Torche
 
 La classe **Flashlight** permet d’activer ou de désactiver le flash de l’appareil photo de l’appareil pour transformer celui-ci en lampe de poche.
 
-## <a name="get-started"></a>Prendre en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -109,7 +99,7 @@ Avec les nouveaux niveaux d’API, le [mode Torche](https://developer.android.co
 
 #### <a name="api-level-22-and-lower"></a>Niveau d’API 22 et moins
 
-Une texture de surface d’appareil photo est créée pour activer ou désactiver le `FlashMode` de l’unité d’appareil photo. 
+Une texture de surface d’appareil photo est créée pour activer ou désactiver le `FlashMode` de l’unité d’appareil photo.
 
 ### <a name="ios"></a>[iOS](#tab/ios)
 

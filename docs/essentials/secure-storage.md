@@ -1,19 +1,9 @@
 ---
-title: 'Xamarin.Essentials : SecureStorage'
-description: Ce document décrit la classe SecureStorage de Xamarin.Essentials qui permet de stocker en toute sécurité des paires clé/valeur simples. Il explique comment utiliser la classe et expose les caractéristiques de mise en œuvre de la plateforme et ses limitations.
-ms.assetid: 78856C0D-76BB-406E-A880-D5A3987B7D64
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 04/02/2019
-ms.custom: video
-ms.openlocfilehash: 41d9efa66318f4c3f5315351d3c1f51b4e503521
-ms.sourcegitcommit: 44c44ad60c5c880a39006493aedd2d7aa834a27e
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "83550898"
+title : " Xamarin.Essentials : stockage sécurisé" Description : "ce document décrit la classe SecureStorage dans Xamarin.Essentials , qui permet de stocker en toute sécurité des paires clé/valeur simples. Il explique comment utiliser la classe, les spécificités de l’implémentation de la plateforme et les limitations.»
+ms. AssetID : 78856C0D-76BB-406E-A880-D5A3987B7D64 auteur : jamesmontemagno ms. Author : Jamont ms. Date : 04/02/2019 ms. Custom : Video No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
-# <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials : SecureStorage
+
+# <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials: Stockage sécurisé
 
 La classe **SecureStorage** permet de stocker en toute sécurité des paires clé/valeur simples.
 
@@ -26,7 +16,7 @@ Pour accéder à la fonctionnalité **SecureStorage**, la configuration requise 
 # <a name="android"></a>[Android](#tab/android)
 
 > [!TIP]
-> La [sauvegarde automatique pour les applications](https://developer.android.com/guide/topics/data/autobackup) est une fonctionnalité d’Android 6.0 (niveau d’API 23) et des versions ultérieures qui sauvegarde les données d’application de l’utilisateur (préférences partagées, fichiers situés dans le stockage interne de l’application et autres fichiers spécifiques). Les données sont restaurées quand l’application est réinstallée ou installée sur un nouvel appareil. Ceci peut avoir une incidence sur `SecureStorage`, qui utilise les préférences de partage sauvegardées et non déchiffrables lors de la restauration. Xamarin.Essentials gère automatiquement ce cas de figure en supprimant la clé, qui peut ainsi être réinitialisée, mais vous pouvez aller encore plus loin en désactivant la sauvegarde automatique.
+> La [sauvegarde automatique pour les applications](https://developer.android.com/guide/topics/data/autobackup) est une fonctionnalité d’Android 6.0 (niveau d’API 23) et des versions ultérieures qui sauvegarde les données d’application de l’utilisateur (préférences partagées, fichiers situés dans le stockage interne de l’application et autres fichiers spécifiques). Les données sont restaurées quand l’application est réinstallée ou installée sur un nouvel appareil. Ceci peut avoir une incidence sur `SecureStorage`, qui utilise les préférences de partage sauvegardées et non déchiffrables lors de la restauration. Xamarin.Essentialsgère automatiquement ce cas en supprimant la clé afin qu’elle puisse être réinitialisée, mais vous pouvez effectuer une étape supplémentaire en désactivant la sauvegarde automatique.
 
 ### <a name="enable-or-disable-backup"></a>Activer ou désactiver la sauvegarde
 Vous pouvez choisir de désactiver la sauvegarde automatique pour la totalité de votre application en définissant le paramètre `android:allowBackup` sur false dans le fichier `AndroidManifest.xml`. Cette approche n’est recommandée que si vous envisagez de restaurer les données d’une autre façon.
@@ -63,7 +53,7 @@ Il est possible de configurer la sauvegarde automatique de façon à ce que la s
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
-Si le travail de développement s’effectue sur le **simulateur iOS**, activez le droit **Keychain** et ajoutez un groupe d’accès au trousseau pour l’identificateur de bundle de l’application. 
+Si le travail de développement s’effectue sur le **simulateur iOS**, activez le droit **Keychain** et ajoutez un groupe d’accès au trousseau pour l’identificateur de bundle de l’application.
 
 Ouvrez **Entitlements.plist** dans le projet iOS, repérez le droit **Keychain** et activez-le. L’identificateur de l’application est automatiquement ajouté comme groupe.
 
@@ -159,9 +149,9 @@ Ces valeurs chiffrées sont stockées dans `ApplicationData.Current.LocalSetting
 
 -----
 
-## <a name="limitations"></a>Limites
+## <a name="limitations"></a>Limitations
 
-Cette API est destinée à stocker de petites quantités de texte.  Les performances risquent d’être lentes si vous essayez de l’utiliser pour stocker de grandes quantités de texte. 
+Cette API est destinée à stocker de petites quantités de texte.  Les performances risquent d’être lentes si vous essayez de l’utiliser pour stocker de grandes quantités de texte.
 
 ## <a name="api"></a>API
 

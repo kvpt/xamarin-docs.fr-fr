@@ -1,23 +1,13 @@
 ---
-title: 'Xamarin.Essentials : géocodage'
-description: La classe Geocoding de Xamarin.Essentials fournit des API qui permettent à la fois de géocoder un repère en coordonnées de position, et d’inverser les coordonnées de géocodage en un repère.
-ms.assetid: 3ADC440C-B000-4708-A2CC-296F5160AF90
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 05/28/2019
-ms.custom: video
-ms.openlocfilehash: 157eb3116f09268790036f8983543114e7a58276
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "66354109"
+titre : « Xamarin.Essentials : géocodage » Description : « la classe de géocodage dans Xamarin.Essentials fournit des API pour géocoder un placemark en coordonnées de position et des coordonnées géocode inversées en placemark ».
+ms. AssetID : 3ADC440C-B000-4708-A2CC-296F5160AF90 auteur : jamesmontemagno ms. Author : Jamont ms. Date : 05/28/2019 ms. Custom : Video No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
-# <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials : géocodage
+
+# <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials: Géocodage
 
 La classe **Geocoding** fournit des API qui permettent de géocoder un repère en coordonnées de position, et d’inverser les coordonnées de géocodage en un repère.
 
-## <a name="get-started"></a>Prise en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -119,7 +109,7 @@ catch (Exception ex)
 
 ## <a name="distance-between-two-locations"></a>Distance entre deux emplacements
 
-Les [`Location`](xref:Xamarin.Essentials.Location) [`LocationExtensions`](xref:Xamarin.Essentials.LocationExtensions) classes et les classes définissent des méthodes pour calculer la distance entre deux emplacements. Pour obtenir un exemple, consultez l’article [**Xamarin.Essentials : géolocalisation**](geolocation.md#calculate-distance).
+Les [`Location`](xref:Xamarin.Essentials.Location) [`LocationExtensions`](xref:Xamarin.Essentials.LocationExtensions) classes et définissent des méthodes pour calculer la distance entre deux emplacements. Pour obtenir un exemple, consultez l’article [** Xamarin.Essentials : géolocalisation**](geolocation.md#calculate-distance) .
 
 ## <a name="api"></a>API
 

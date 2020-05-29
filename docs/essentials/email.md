@@ -1,23 +1,13 @@
 ---
-title: 'Xamarin.Essentials : e-mail'
-description: La classe Email de Xamarin.Essentials permet à une application d’ouvrir l’application de messagerie par défaut en utilisant des informations spécifiques, notamment l’objet, le corps et les destinataires (À, CC, CCI).
-ms.assetid: 5FBB6FF0-0E7B-4C29-8F06-91642AF12629
-author: jamesmontemagno
-ms.custom: video
-ms.author: jamont
-ms.date: 08/20/2019
-ms.openlocfilehash: 77fcadf3ec58a38acac5eca14b43d937414a4a60
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83150094"
+titre : « Xamarin.Essentials : email » Description : « la classe de messagerie dans Xamarin.Essentials permet à une application d’ouvrir l’application de messagerie par défaut avec les informations spécifiées, notamment Subject, corps et Recipients (à, CC, CCI) ».
+ms. AssetID : 5FBB6FF0-0E7B-4C29-8F06-91642AF12629 Author : jamesmontemagno ms. Custom : vidéo ms. Author : Jamont ms. Date : 08/20/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
-# <a name="xamarinessentials-email"></a>Xamarin.Essentials : e-mail
+
+# <a name="xamarinessentials-email"></a>Xamarin.Essentials: E-mail
 
 La classe **Email** permet à une application d’ouvrir l’application de messagerie par défaut en utilisant des informations spécifiques, notamment l’objet, le corps et les destinataires (À, CC, CCI).
 
-## <a name="get-started"></a>Prendre en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -65,7 +55,7 @@ public class EmailTest
 
 ## <a name="file-attachments"></a>Pièces jointes
 
-Cette fonctionnalité permet à une application d’envoyer par courrier électronique des fichiers à des clients de messagerie sur l’appareil. Xamarin.Essentials détectera automatiquement le type de fichier (MIME) et demandera que le fichier soit ajouté en tant que pièce jointe. Chaque client de messagerie est différent et peut uniquement prendre en charge des extensions de fichier spécifiques, ou rien du tout.
+Cette fonctionnalité permet à une application d’envoyer par courrier électronique des fichiers à des clients de messagerie sur l’appareil. Xamarin.Essentialsdétecte automatiquement le type de fichier (MIME) et demande le fichier à ajouter en tant que pièce jointe. Chaque client de messagerie est différent et peut uniquement prendre en charge des extensions de fichier spécifiques, ou rien du tout.
 
 Voici un exemple d’écriture de texte sur le disque et d’ajout en tant que pièce jointe à un e-mail :
 

@@ -1,22 +1,9 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.custom: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a9a25cff30b9dfbed44e60faeae2f577d07940fc
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139215"
+titre : « qu’est-ce que Xamarin ? »
+Description : « cet article présente la plateforme Xamarin et les bibliothèques associées ».
+ms. Prod : xamarin ms. AssetID : 33C83E13-F3E5-17B4-6512-207F3D3C5AB6 ms. Custom : Video Author : profexorgeek ms. Author : jusjohns ms. Date : 05/28/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="what-is-xamarin"></a>Qu’est-ce que Xamarin ?
 
 [![Captures d’écran de l’exemple d’application Xamarin dans iOS et Android](what-is-xamarin-images/xamarin-app-cropped.png)](what-is-xamarin-images/xamarin-app.png#lightbox)
@@ -43,7 +30,7 @@ Xamarin s’adresse aux développeurs qui ont les objectifs suivants :
 
 Le diagramme montre l’architecture globale d’une application Xamarin multiplateforme. Xamarin vous permet de créer une IU native sur chaque plateforme et d’écrire une logique métier en C#, qui est partagée entre les plateformes. Dans la plupart des cas, 80 % du code d’application peut être partagé à l’aide de Xamarin.
 
-Xamarin s’appuie sur **Mono**, une version open source du .NET Framework basée sur les standards ECMA de .NET. Mono existe depuis presque aussi longtemps que le .NET Framework. Il s’exécute sur la plupart des plateformes, notamment Linux, Unix, FreeBSD et macOS. L’environnement d’exécution de Mono gère automatiquement les tâches telles que l’allocation de mémoire, le garbage collection et l’interopérabilité des plateformes sous-jacentes.
+Xamarin repose sur .NET, qui gère automatiquement les tâches telles que l’allocation de mémoire, les garbage collection et l’interopérabilité avec les plateformes sous-jacentes.
 
 Pour plus d’informations sur l’architecture spécifique à la plateforme, consultez [Xamarin.Android](#xamarinandroid) et [Xamarin.iOS](#xamarinios).
 
@@ -89,17 +76,17 @@ Pour plus d’informations, consultez [Xamarin.Essentials](~/essentials/index.md
 
 ### Xamarin.Forms
 
-Xamarin.Formsest une infrastructure d’interface utilisateur Open source. Xamarin.Formspermet aux développeurs de créer des applications iOS, Android et Windows à partir d’un même code base partagé. Xamarin.Formspermet aux développeurs de créer des interfaces utilisateur en XAML avec code-behind en C#. Ces interfaces utilisateur sont affichées en tant que contrôles natifs performants sur chaque plateforme. Voici quelques exemples de fonctionnalités fournies par Xamarin.Forms :
+Xamarin.Formsest une infrastructure d’interface utilisateur Open source. Xamarin.Formspermet aux développeurs de générer des applications Xamarin. iOS, Xamarin. Android et Windows à partir d’un code base partagé unique. Xamarin.Formspermet aux développeurs de créer des interfaces utilisateur en XAML avec code-behind en C#. Ces interfaces utilisateur sont affichées en tant que contrôles natifs performants sur chaque plateforme. Voici quelques exemples de fonctionnalités fournies par Xamarin.Forms :
 
 - Langage d’interface utilisateur XAML
 - Liaison de données
 - Mouvements
-- Effets
+- Effects (Effets)
 - Styles
 
 Pour plus d’informations, consultez [Xamarin.Forms](~/xamarin-forms/index.yml).
 
-## <a name="get-started"></a>Prise en main
+## <a name="get-started"></a>Bien démarrer
 
 Les guides suivants vont vous aider à générer votre première application à l’aide de Xamarin :
 

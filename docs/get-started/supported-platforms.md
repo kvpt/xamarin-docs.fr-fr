@@ -1,44 +1,33 @@
 ---
-title: Plateformes prises en charge par Xamarin.Forms
-description: Configuration requise pour la plateforme et le développement pour Xamarin.Forms.
-ms.prod: xamarin
-ms.assetid: eecaf6a5-567c-49b2-ac83-2a195596c5bf
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/22/2020
-ms.openlocfilehash: 5751983bf4a818e8ee91af98b0c05658efaca8b2
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79304274"
+titre : « Xamarin.Forms plateformes prises en charge » Description : « plateforme et développement configuration requise pour » Xamarin.Forms .
+ms. Prod : xamarin ms. AssetID : eecaf6a5-567c-49B2-AC83-2a195596c5bf ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 01/22/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
-# <a name="xamarinforms-supported-platforms"></a>Plateformes prises en charge par Xamarin.Forms
 
-Les applications Xamarin.Forms peuvent être écrites pour les systèmes d’exploitation suivants :
+# <a name="xamarinforms-supported-platforms"></a>Xamarin.FormsPlateformes prises en charge
+
+Xamarin.Formsles applications peuvent être écrites pour les systèmes d’exploitation suivants :
 
 - iOS 9 ou ultérieur.
 - Android 4.4 (API 19) ou ultérieur ([plus d’informations](#android-platform-support)). Toutefois, Android 5.0 (API 21) est recommandé comme API minimale. Cela garantit une compatibilité complète avec toutes les bibliothèques de prise en charge Android, tout en ciblant toujours la majorité des appareils Android.
 - Plateforme Windows universelle Windows 10
 
-Les applications Xamarin.Forms pour iOS, Android et la plateforme Windows universelle (UWP) peuvent être générées dans Visual Studio. Toutefois, un Mac en réseau est nécessaire pour le développement iOS avec la dernière version de Xcode et la version minimale de macOS spécifiée par Apple. Pour plus d’informations, consultez [Configuration requise de Windows](~/cross-platform/get-started/requirements.md#windows-requirements).
+Xamarin.Formsles applications pour iOS, Android et le plateforme Windows universelle (UWP) peuvent être créées dans Visual Studio. Toutefois, un Mac en réseau est nécessaire pour le développement iOS avec la dernière version de Xcode et la version minimale de macOS spécifiée par Apple. Pour plus d’informations, consultez [Configuration requise de Windows](~/cross-platform/get-started/requirements.md#windows-requirements).
 
-Les applications Xamarin.Forms pour iOS et Android peuvent être générées dans Visual Studio pour Mac. Pour plus d’informations, consultez [Configuration requise de macOS](~/cross-platform/get-started/requirements.md#macos-requirements).
+Xamarin.Formsvous pouvez créer des applications pour iOS et Android dans Visual Studio pour Mac. Pour plus d’informations, consultez [Configuration requise de macOS](~/cross-platform/get-started/requirements.md#macos-requirements).
 
 > [!NOTE]
-> Le développement d’applications avec Xamarin.Forms demande de connaître [.NET Standard](~/cross-platform/app-fundamentals/net-standard.md).
+> Le développement d’applications à l’aide Xamarin.Forms de nécessite une connaissance [.NET standard](~/cross-platform/app-fundamentals/net-standard.md).
 
 ## <a name="additional-platform-support"></a>Prise en charge de plateforme supplémentaire
 
-Xamarin.Forms prend en charge d’autres plateformes, en plus d’iOS, Android et Windows :
+Xamarin.Formsprend en charge des plateformes supplémentaires autres que iOS, Android et Windows :
 
 - Samsung Tizen
-- macOS
+- macOS 10,13 ou version ultérieure
 - GTK#
 - WPF
 
-L’état de ces plateformes est disponible sur le [wiki de prise en charge des plateformes Xamarin.Forms de GitHub](https://github.com/xamarin/Xamarin.Forms/wiki/Platform-Support).
+L’état de ces plateformes est disponible sur le [ Xamarin.Forms wiki de prise en charge de la plateforme GitHub](https://github.com/xamarin/Xamarin.Forms/wiki/Platform-Support).
 
 ## <a name="android-platform-support"></a>Prise en charge des plateformes Android
 
@@ -66,7 +55,7 @@ De plus, la version cible/de compilation pour les projets Android **doit** avoir
 
 ## <a name="deprecated-platforms"></a>Plateformes dépréciées
 
-Ces plateformes ne sont pas prises en charge si vous utilisez Xamarin.Forms 3.0 ou ultérieur :
+Ces plateformes ne sont pas prises en charge lors de l’utilisation Xamarin.Forms de 3,0 ou plus récente :
 
 - *Windows 8.1 / Windows Phone 8.1 WinRT*
 - *Windows Phone 8 Silverlight*
