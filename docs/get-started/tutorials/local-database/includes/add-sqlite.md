@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 8ad5ca60a074cbdc6ff91134cc9c1276ed653b91
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: c174a52e413db255c0d6cfedf22b89be85f03f75
+ms.sourcegitcommit: 2105091f2eeb7844b19ae94708a6ab07e3e79bce
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "67277223"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84200330"
 ---
 # <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
@@ -27,9 +27,9 @@ Pour suivre ce didacticiel, vous devez disposer de Visual Studio 2019 (dernière
 
     > [!NOTE]
     > Il existe plusieurs packages NuGet portant des noms similaires. Le package correct possède ces attributs :
-    > - **Author(s) :** Frank A. Krueger
-    > - **ID**  sqlite-net-pcl
-    > - **Lien NuGet :** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)  
+    > - **Créé par :** Frank A. Krueger (praeclarum)
+    > - **ID :** sqlite-net-pcl
+    > - **Lien NuGet :** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
     >
     > Ne vous fiez pas au nom du package. Vous devez utiliser ce package NuGet dans les projets .NET Standard.
 
