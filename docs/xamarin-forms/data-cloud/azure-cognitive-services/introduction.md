@@ -23,7 +23,7 @@ ms.locfileid: "84129712"
 
 _Microsoft Cognitive Services sont un ensemble d’API, de kits de développement logiciel (SDK) et de services accessibles aux développeurs pour rendre leurs applications plus intelligentes en ajoutant des fonctionnalités telles que la reconnaissance faciale, la reconnaissance vocale et la compréhension de la langue. Cet article fournit une présentation de l’exemple d’application qui montre comment appeler certaines des API Microsoft cognitive service._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d’ensemble
 
 L’exemple qui l’accompagne est une application de liste de tâches qui fournit les fonctionnalités suivantes :
 
@@ -66,7 +66,7 @@ Le projet de code partagé pour l’exemple d’application se compose de cinq d
 |Référentiels|Contient l' `ITodoItemRepository` interface et la `TodoItemRepository` classe utilisées pour effectuer des opérations de base de données.|
 |Services|Contient les interfaces et les classes utilisées pour accéder à différentes API Microsoft cognitive service, ainsi que les interfaces utilisées par la `DependencyService` classe pour localiser les classes qui implémentent les interfaces dans les projets de plateforme.|
 |Utils|Contient la `Timer` classe, qui est utilisée par la `AuthenticationService` classe pour renouveler un jeton d’accès JWT toutes les 9 minutes.|
-|Les vues|Contient les pages de l’application.|
+|Affichages|Contient les pages de l’application.|
 
 Le projet de code partagé contient également des fichiers importants :
 
