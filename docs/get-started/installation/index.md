@@ -1,22 +1,6 @@
 ---
-title: ''
-description: ''
-zone_pivot_groups: ''
-ms.prod: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.custom: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 928a8f9ca1792fa79f3c5995959e6407c23649f4
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84133053"
+titre : « installation de Xamarin » Description : « cette section fournit une vue d’ensemble des pratiques d’installation et de configuration qui peuvent être utilisées pour configurer avec Xamarin sur Visual Studio ».
+zone_pivot_groups : Platform-dev16 ms. Prod : xamarin ms. AssetID : 0f813a14-2f0c-415d-8667-4563f3dc06e8 auteur : conceptdev ms. Author : crdun ms. Custom : Video ms. Date : 05/23/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
 # <a name="installing-xamarin"></a>Installation de Xamarin
 
