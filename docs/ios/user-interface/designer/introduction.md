@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 01/31/2018
-ms.openlocfilehash: 6b02a0f8476cf47ca6df279653095fe0845b36c9
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: e5cbbc10f189abb6d0d0b2ef99b50ae53d1103c2
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79304701"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84572284"
 ---
 # <a name="ios-designer-basics"></a>notions de base du concepteur iOS
 
@@ -26,7 +26,7 @@ Le concepteur iOS est disponible dans Visual Studio pour Mac et Visual Studio 20
 
 Ce guide suppose que vous connaissez le contenu abordé dans les guides de [prise en main](~/ios/get-started/index.md).
 
-<a name="how-it-works" />
+<a name="how-it-works"></a>
 
 ## <a name="how-the-ios-designer-works"></a>Fonctionnement du concepteur iOS
 
@@ -34,7 +34,7 @@ Cette section décrit comment le concepteur iOS facilite la création d’une in
 
 Le concepteur iOS permet aux développeurs de concevoir visuellement l’interface utilisateur d’une application. Comme indiqué dans le guide [Présentation des storyboards](~/ios/user-interface/storyboards/index.md) , un Storyboard décrit les écrans (contrôleurs d’affichage) qui composent une application, les éléments d’interface (vues) placés sur ces contrôleurs d’affichage et le déroulement global de navigation de l’application. 
 
-Un contrôleur d’affichage se compose de deux parties : une représentation visuelle dans le concepteur iOS C# et une classe associée :
+Un contrôleur d’affichage se compose de deux parties : une représentation visuelle dans le concepteur iOS et une classe C# associée :
 
 <!-- markdownlint-disable MD001 -->
 
@@ -84,21 +84,21 @@ Maintenant que le bouton a un nom, il est accessible dans le code. Mais comment 
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
-Dans le **panneau solutions**, la navigation jusqu’à **ViewController.cs** et le fait de cliquer sur l’indicateur de divulgation révèle que la définition de la classe de `ViewController` du contrôleur d’affichage s’étend sur deux fichiers, chacun contenant une définition de [classe partielle](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) :
+Dans l' **panneau solutions**, la navigation jusqu’à **ViewController.cs** et en cliquant sur l’indicateur de divulgation révèle que la définition de classe du contrôleur d’affichage s' `ViewController` étend sur deux fichiers, chacun contenant une définition de [classe partielle](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) :
 
 [![Les deux fichiers qui composent la classe ViewController : ViewController.cs et ViewController.designer.cs](introduction-images/5-twoviewcontrollerfiles-vsmac.png "Les deux fichiers qui composent la classe ViewController : ViewController.cs et ViewController.designer.cs")](introduction-images/5-twoviewcontrollerfiles-vsmac-large.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-Dans le **Explorateur de solutions**, la navigation jusqu’à **ViewController.cs** et le fait de cliquer sur l’indicateur de divulgation révèle que la définition de la classe de `ViewController` du contrôleur d’affichage s’étend sur deux fichiers, chacun contenant une définition de [classe partielle](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) :
+Dans l' **Explorateur de solutions**, la navigation jusqu’à **ViewController.cs** et en cliquant sur l’indicateur de divulgation révèle que la définition de classe du contrôleur d’affichage s' `ViewController` étend sur deux fichiers, chacun contenant une définition de [classe partielle](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) :
 
 [![Les deux fichiers qui composent la classe ViewController : ViewController.cs et ViewController.designer.cs](introduction-images/5-twoviewcontrollerfiles-vs.png "Les deux fichiers qui composent la classe ViewController : ViewController.cs et ViewController.designer.cs")](introduction-images/5-twoviewcontrollerfiles-vs-large.png#lightbox)
 
 -----
 
-- **ViewController.cs** doit être rempli avec du code personnalisé lié à la classe `ViewController`. Dans ce fichier, la classe `ViewController` peut répondre à différentes méthodes de cycle de vie des contrôleurs d’affichage iOS, personnaliser l’interface utilisateur et répondre aux entrées d’utilisateur, telles que les clics de bouton.
+- **ViewController.cs** doit être rempli avec un code personnalisé associé à la `ViewController` classe. Dans ce fichier, la `ViewController` classe peut répondre à différentes méthodes de cycle de vie du contrôleur d’affichage iOS, personnaliser l’interface utilisateur et répondre aux entrées de l’utilisateur, telles que les clics de bouton.
 
-- **ViewController.Designer.cs** est un fichier généré, créé par le concepteur IOS pour mapper l’interface créée visuellement au code. Étant donné que les modifications apportées à ce fichier seront remplacées, elles ne doivent pas être modifiées. Dans ce fichier, les déclarations de propriété permettent au code de la classe `ViewController` d’accéder, par **nom**, aux contrôles configurés dans le concepteur iOS. L’ouverture de **ViewController.Designer.cs** affiche le code suivant :
+- **ViewController.Designer.cs** est un fichier généré, créé par le concepteur IOS pour mapper l’interface créée visuellement au code. Étant donné que les modifications apportées à ce fichier seront remplacées, elles ne doivent pas être modifiées. Dans ce fichier, les déclarations de propriété permettent au code de la `ViewController` classe d’accéder, par **nom**, aux contrôles configurés dans le concepteur iOS. L’ouverture de **ViewController.Designer.cs** affiche le code suivant :
 
 ```csharp
 namespace Designer
@@ -121,9 +121,9 @@ namespace Designer
 }
 ```
 
-La déclaration de propriété `SubmitButton` connecte l’intégralité de la classe `ViewController`, pas seulement le fichier **ViewController.Designer.cs** , au bouton défini dans la table de montage séquentiel. Étant donné que **ViewController.cs** définit une partie de la classe `ViewController`, il a accès à `SubmitButton`.
+La `SubmitButton` déclaration de propriété connecte la `ViewController` classe entière, pas seulement le fichier **ViewController.Designer.cs** , au bouton défini dans la table de montage séquentiel. Étant donné que **ViewController.cs** définit une partie de la `ViewController` classe, il a accès à `SubmitButton` .
 
-La capture d’écran suivante montre que IntelliSense reconnaît désormais la référence `SubmitButton` dans **ViewController.cs**:
+La capture d’écran suivante montre que IntelliSense reconnaît désormais la `SubmitButton` référence dans **ViewController.cs**:
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
@@ -159,7 +159,7 @@ La plupart des projets Xamarin. iOS créés avec Visual Studio incluent une tabl
 
 -----
 
-<a name="iOS_Designer_features"/>
+<a name="iOS_Designer_features"></a>
 
 ### <a name="ios-designer-features"></a>fonctionnalités du concepteur iOS
 
@@ -300,8 +300,8 @@ Notez que la sélection d’un appareil et d’une orientation modifie uniquemen
 
 Lorsque les [classes de taille](~/ios/user-interface/storyboards/unified-storyboards.md#size-classes) sont [activées](~/ios/user-interface/storyboards/unified-storyboards.md#enabling-size-classes), le bouton **modifier les traits** s’affiche dans la barre d’outils inférieure développée.  En cliquant sur le bouton **modifier les traits** , vous affichez les options de création d’une variante d’interface en fonction de la classe de taille représentée par l’appareil et l’orientation sélectionnés. Voici quelques exemples :
 
-- Si **iPhone se** / **portrait**, est sélectionné, menu segue fournit des options permettant de créer une variation d’interface pour la classe compact Width, taille normale. 
-- Si **iPad Pro 9,7 «**  / **paysage** / le mode **plein écran** est sélectionné, menu segue fournit des options pour créer une variation d’interface pour la classe de taille normale standard.
+- Si **iPhone se**  /  **portrait**, est sélectionné, menu segue fournit des options pour créer une variation d’interface pour la classe compact Width, normal height. 
+- Si **iPad Pro 9,7 "**  /  **mode**  /  **plein écran** est sélectionné, menu segue fournit des options pour créer une variation d’interface pour la largeur normale, classe de taille normale.
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
@@ -406,19 +406,19 @@ De nombreuses propriétés de la **fenêtre Propriétés** n’affichent aucune 
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
-Pour spécifier des gestionnaires d’événements personnalisés pour différents événements, utilisez l’onglet **événements** de la **panneau Propriétés**. Par exemple, dans la capture d’écran ci-dessous, une méthode `HandleClick` gère l’événement d' **effleurement** du bouton :
+Pour spécifier des gestionnaires d’événements personnalisés pour différents événements, utilisez l’onglet **événements** de la **panneau Propriétés**. Par exemple, dans la capture d’écran ci-dessous, une `HandleClick` méthode gère l’événement d' **effleurement** du bouton :
 
 [![Le Panneau Propriétés, avec un gestionnaire d’événements défini pour un bouton](introduction-images/19-buttonpropertiespadevents-vsmac.png "Le Panneau Propriétés, avec un gestionnaire d’événements défini pour un bouton")](introduction-images/19-buttonpropertiespadevents-vsmac-large.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-Pour spécifier des gestionnaires d’événements personnalisés pour différents événements, utilisez l’onglet **événements** de la **fenêtre Propriétés**. Par exemple, dans la capture d’écran ci-dessous, une méthode `HandleClick` gère l’événement d' **effleurement** du bouton :
+Pour spécifier des gestionnaires d’événements personnalisés pour différents événements, utilisez l’onglet **événements** de la **fenêtre Propriétés**. Par exemple, dans la capture d’écran ci-dessous, une `HandleClick` méthode gère l’événement d' **effleurement** du bouton :
 
 [![Fenêtre Propriétés, avec un gestionnaire d’événements défini pour un bouton](introduction-images/19-buttonpropertieswindowevents-vs.png "Fenêtre Propriétés, avec un gestionnaire d’événements défini pour un bouton")](introduction-images/19-buttonpropertieswindowevents-vs-large.png#lightbox)
 
 -----
 
-Une fois qu’un gestionnaire d’événements a été spécifié, une méthode du même nom doit être ajoutée à la classe de contrôleur d’affichage correspondante. Dans le cas contraire, une exception `unrecognized selector` se produit lorsque le bouton est frappé :
+Une fois qu’un gestionnaire d’événements a été spécifié, une méthode du même nom doit être ajoutée à la classe de contrôleur d’affichage correspondante. Dans le cas contraire, une `unrecognized selector` exception se produit lorsque le bouton est frappé :
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 

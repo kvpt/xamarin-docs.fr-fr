@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: b9b4d201e02d60bd6131c8693d9ac6a233e4fe10
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 4e2ff46174d9dbb9171a470c389ffe301f6d0d60
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79304918"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84569645"
 ---
 # <a name="deploying-and-testing-watchos-apps-with-xamarin"></a>Déploiement et test d’applications Watchos avec Xamarin
 
@@ -36,7 +36,7 @@ Que vous déployiez sur un espion de test ou que vous téléchargeiez sur l’Ap
   - [Déployez sur un Apple Watch à des fins de test](~/ios/watchos/deploy-test/device.md), ou
   - [Téléchargez vers l’App Store](~/ios/watchos/deploy-test/appstore.md).
 
-<a name="App_IDs"/>
+<a name="App_IDs"></a>
 
 ## <a name="app-ids"></a>ID d’application
 
@@ -60,13 +60,13 @@ Vous devrez créer un profil de provisionnement de distribution pour chaque ID d
 
 ### <a name="wildcard-app-id"></a>ID d’application générique
 
-Vous pouvez également créer un **ID d’application** générique qui correspond à l’ensemble des trois projets, par exemple `com.xamarin.*`.
+Vous pouvez également créer un **ID d’application** générique qui correspond aux trois projets, tels que `com.xamarin.*` .
 
 Notez que certaines fonctionnalités ne peuvent pas être utilisées avec un ID d’application générique (par exemple, les notifications push). Si votre application nécessite ces fonctionnalités, vous devez créer des ID d’application explicites.
 
 Pour la distribution, il vous suffit de créer un profil de provisionnement de distribution pour l’ID d’application générique.
 
-<a name="App_Groups" />
+<a name="App_Groups"></a>
 
 ## <a name="app-groups"></a>App Groups
 
@@ -78,7 +78,7 @@ Vous pouvez utiliser un groupe d’applications pour partager des données entre
 
 ### <a name="certificates-identifiers--profiles"></a>Certificats, identificateurs & profils
 
-Pour utiliser un groupe d’applications, créez une entrée dans l’écran **groupes d’applications** . Dans l’exemple ci-dessous, le nom du groupe est identique à celui du DNS inversé couramment utilisé pour les ID d’application, mais avec le préfixe `group.` (ce qui est requis) :
+Pour utiliser un groupe d’applications, créez une entrée dans l’écran **groupes d’applications** . Dans l’exemple ci-dessous, le nom du groupe est identique à celui de DNS inversé couramment utilisé pour les ID d’application, mais avec le `group.` préfixe (qui est requis) :
 
 ![Identificateur](images/appgroups-new-sml.png)
 

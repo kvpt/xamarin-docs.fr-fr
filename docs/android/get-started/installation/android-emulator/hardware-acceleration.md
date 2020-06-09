@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: jondouglas
 ms.author: jodou
 ms.date: 02/13/2020
-ms.openlocfilehash: faab613d88a7f59d1095021d2b21faf9223ae33b
-ms.sourcegitcommit: 3fb407841dbe46b8b23573f08591228b7c0e2726
+ms.openlocfilehash: a776dbb2ecfaf0942d79c2b403c13f98cdc7c2e2
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81488908"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571972"
 ---
 # <a name="hardware-acceleration-for-emulator-performance-hyper-v--haxm"></a>Accélération matérielle pour les performances de l’émulateur (Hyper-V et HAXM)
 
@@ -51,9 +51,9 @@ Pour une expérience optimale sur Windows, il est recommandé d’utiliser WHPX 
 > [!IMPORTANT]
 > Vous ne pouvez pas exécuter un émulateur accéléré par machine virtuelle dans une autre machine virtuelle telle qu’une machine virtuelle hébergée par VirtualBox, VMWare ou Docker. Vous devez exécuter l’émulateur Android [directement sur votre matériel système](https://developer.android.com/studio/run/emulator-acceleration.html#extensions).
 
-Pour plus d’informations sur le lancement et le débogage avec l’émulateur Android, voir [Debugging sur l’émulateur Android](~/android/deploy-test/debugging/debug-on-emulator.md).
+Pour plus d’informations sur le lancement et le débogage avec l’émulateur Android, consultez [débogage sur le émulateur Android](~/android/deploy-test/debugging/debug-on-emulator.md).
 
-<a name="hyper-v-win" />
+<a name="hyper-v-win"></a>
 
 ## <a name="accelerating-with-hyper-v"></a>Accélération avec Hyper-V
 
@@ -78,7 +78,7 @@ Hyper-V s’exécute sur la plateforme d’hyperviseur Windows. Pour permettre l
 
   1. Dans la zone de recherche Windows, entrez **À propos de**.
   2. Sélectionnez **À propos de votre PC** dans les résultats de recherche.
-  3. Faites défiler vers le bas dans le **dialogue About** à la section **spécifications Windows.**
+  3. Faites défiler la boîte de dialogue à **propos** de vers la section **spécifications Windows** .
   4. Vérifiez que vous disposez au moins de la **version** 1803 :
 
       [![Spécifications Windows](hardware-acceleration-images/win/01-about-windows-w10-sml.png)](hardware-acceleration-images/win/01-about-windows-w10.png#lightbox)
@@ -91,7 +91,7 @@ systeminfo
 
 Si toutes les exigences listées relatives à Hyper-V ont la valeur **Oui**, votre ordinateur peut prendre en charge Hyper-V. Par exemple :
 
-[![Exemple de sortie systeminfo](hardware-acceleration-images/win/02-systeminfo-w158-sml.png)](hardware-acceleration-images/win/02-systeminfo-w158.png#lightbox)
+[![Exemple de sortie SystemInfo](hardware-acceleration-images/win/02-systeminfo-w158-sml.png)](hardware-acceleration-images/win/02-systeminfo-w158.png#lightbox)
 
 ### <a name="enabling-hyper-v-acceleration"></a>Activation de l’accélération avec Hyper-V
 
@@ -99,7 +99,7 @@ Si votre ordinateur répond aux critères ci-dessus, effectuez les étapes suiva
 
 1. Entrez **fonctionnalités Windows** dans la zone de recherche Windows, puis sélectionnez **Activer ou désactiver les fonctionnalités Windows** dans les résultats de la recherche. Dans la boîte de dialogue **Fonctionnalités Windows**, activez **Hyper-V** et la **plateforme d’hyperviseur Windows** :
 
-    [![Permettant la plate-forme Hyper-V et Windows Hypervisor](hardware-acceleration-images/win/03-hyper-v-settings-w158-sml.png)](hardware-acceleration-images/win/03-hyper-v-settings-w158.png#lightbox)
+    [![Activation de la plateforme Hyper-V et de l’hyperviseur Windows](hardware-acceleration-images/win/03-hyper-v-settings-w158-sml.png)](hardware-acceleration-images/win/03-hyper-v-settings-w158.png#lightbox)
 
    Une fois que vous avez apporté ces changements, redémarrez l’ordinateur.
    
@@ -111,7 +111,7 @@ Si votre ordinateur répond aux critères ci-dessus, effectuez les étapes suiva
 
 3. **Installez le package de l’émulateur Android 27.2.7 ou ultérieur**. Pour installer ce package, accédez à **Outils > Android > Android SDK Manager** dans Visual Studio. Sélectionnez l’onglet **Outils** et vérifiez que la version de l’émulateur Android correspond au moins à la version 27.2.7. Vérifiez également que la version d’Android SDK Tools est 26.1.1 ou ultérieure :
 
-    [![Dialogue Android SDKs and Tools](hardware-acceleration-images/win/04-sdk-manager-w158-sml.png)](hardware-acceleration-images/win/04-sdk-manager-w158.png#lightbox)
+    [![Boîte de dialogue Outils et SDK Android](hardware-acceleration-images/win/04-sdk-manager-w158-sml.png)](hardware-acceleration-images/win/04-sdk-manager-w158.png#lightbox)
 
 Quand vous créez un appareil virtuel (consultez [Gestion des appareils virtuels avec Android Device Manager](~/android/get-started/installation/android-emulator/device-manager.md)), veillez à sélectionner une image système **x86**. Si vous utilisez une image système ARM, l’appareil virtuel ne sera pas accéléré et fonctionnera lentement.
 
@@ -138,7 +138,7 @@ Si votre matériel prend en charge HAXM, vous pouvez vérifier si HAXM est déj�
 
 Si votre ordinateur peut prendre en charge HAXM mais que ce dernier n’est pas installé, suivez les étapes de la prochaine section pour installer HAXM.
 
-<a name="install-haxm-win" />
+<a name="install-haxm-win"></a>
 
 ### <a name="installing-haxm"></a>Installation d’HAXM
 
@@ -179,9 +179,9 @@ Il est recommandé d’utiliser le framework Hypervisor pour accélérer l’ém
 >
 > Vous ne pouvez pas exécuter un émulateur accéléré par une machine virtuelle dans une autre machine virtuelle, par exemple une machine virtuelle hébergée par VirtualBox, VMWare ou Docker. Vous devez exécuter l’émulateur Android [directement sur votre matériel système](https://developer.android.com/studio/run/emulator-acceleration.html#extensions).
 
-Pour plus d’informations sur le lancement et le débogage avec l’émulateur Android, voir [Debugging sur l’émulateur Android](~/android/deploy-test/debugging/debug-on-emulator.md).
+Pour plus d’informations sur le lancement et le débogage avec l’émulateur Android, consultez [débogage sur le émulateur Android](~/android/deploy-test/debugging/debug-on-emulator.md).
 
-<a name="hypervisor" />
+<a name="hypervisor"></a>
 
 ## <a name="accelerating-with-the-hypervisor-framework"></a>Accélération avec le framework Hypervisor
 
@@ -195,7 +195,7 @@ Si votre Mac répond à ces critères, l’émulateur Android utilise automatiqu
 
 Si le framework Hypervisor n’est pas pris en charge par votre Mac, vous pouvez utiliser HAXM pour accélérer l’émulateur Android (décrit ci-après).
 
-<a name="haxm-mac" />
+<a name="haxm-mac"></a>
 
 ## <a name="accelerating-with-haxm"></a>Accélération avec HAXM
 
@@ -229,7 +229,7 @@ Vous pouvez vérifier si HAXM est déjà installé en effectuant les étapes sui
 
 Si HAXM n’est pas installé, effectuez les étapes de la section suivante pour l’installer.
 
-<a name="install-haxm-mac" />
+<a name="install-haxm-mac"></a>
 
 ### <a name="installing-haxm"></a>Installation d’HAXM
 

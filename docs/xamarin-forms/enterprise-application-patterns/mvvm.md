@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: d2e335535b508a6cd5e2f497e2c681152a7e5cda
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84130947"
+title : "modèle-vue-ViewModel modèle" Description : "ce chapitre explique comment l’application mobile eShopOnContainers utilise le modèle MVVM pour séparer proprement la logique métier et de présentation de l’application de son interface utilisateur.
+ms. Prod : xamarin ms. AssetID : dd8c1813-df44-4947-BCEE-1a1ff2334b87 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 08/07/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="the-model-view-viewmodel-pattern"></a>Modèle Model-View-ViewModel
 
 L' Xamarin.Forms expérience du développeur implique généralement la création d’une interface utilisateur en XAML, puis l’ajout du code-behind qui fonctionne sur l’interface utilisateur. À mesure que les applications sont modifiées et qu’elles augmentent la taille et la portée, des problèmes de maintenance complexes peuvent survenir. Ces problèmes incluent le couplage étroit entre les contrôles de l’interface utilisateur et la logique métier, ce qui augmente le coût des modifications apportées à l’interface utilisateur et la difficulté du test unitaire de ce code.
@@ -124,8 +110,6 @@ La construction de programmation et l’assignation du modèle de vue dans le co
 ### <a name="creating-a-view-defined-as-a-data-template"></a>Création d’une vue définie en tant que modèle de données
 
 Une vue peut être définie en tant que modèle de données et associée à un type de modèle de vue. Les modèles de données peuvent être définis en tant que ressources, ou ils peuvent être définis inline dans le contrôle qui affichera le modèle de vue. Le contenu du contrôle est l’instance de modèle de vue et le modèle de données est utilisé pour le représenter visuellement. Cette technique est un exemple de situation dans laquelle le modèle de vue est instancié en premier, suivi de la création de la vue.
-
-<a name="automatically_creating_a_view_model_with_a_view_model_locator" />
 
 ### <a name="automatically-creating-a-view-model-with-a-view-model-locator"></a>Création automatique d’un modèle de vue avec un localisateur de modèle de vue
 
@@ -279,13 +263,11 @@ L’exemple de code suivant montre comment un [`Grid`](xref:Xamarin.Forms.Grid) 
 
 Un paramètre de commande peut également être défini éventuellement à l’aide de la [`CommandParameter`](xref:Xamarin.Forms.TapGestureRecognizer.CommandParameter) propriété. Le type de l’argument attendu est spécifié dans les `Execute` `CanExecute` méthodes cibles et. L’objet appellera [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) automatiquement la commande cible lorsque l’utilisateur interagit avec le contrôle attaché. Le paramètre de commande, s’il est fourni, est passé comme argument au délégué de la commande `Execute` .
 
-<a name="implementing_behaviors" />
-
 ### <a name="implementing-behaviors"></a>Implémentation des comportements
 
 Les comportements permettent d’ajouter des fonctionnalités aux contrôles d’interface utilisateur sans avoir à les sous-classer. En effet, vous implémentez les fonctionnalités dans une classe de comportement et les attachez au contrôle comme si elles en faisaient partie. Les comportements vous permettent d’implémenter du code que vous devriez normalement écrire comme code-behind, car il interagit directement avec l’API du contrôle, de telle sorte qu’il peut être attaché de manière concise au contrôle et empaqueté pour une réutilisation sur plusieurs vues ou applications. Dans le contexte de MVVM, les comportements sont une approche utile pour connecter des contrôles à des commandes.
 
-Un comportement attaché à un contrôle par le biais de propriétés jointes est connu sous le nom de *comportement attaché*. Le comportement peut ensuite utiliser l’API exposée de l’élément auquel il est attaché pour ajouter des fonctionnalités à ce contrôle, ou à d’autres contrôles, dans l’arborescence d’éléments visuels de la vue. L’application mobile eShopOnContainers contient la `LineColorBehavior` classe, qui est un comportement attaché. Pour plus d’informations sur ce comportement, consultez [affichage des erreurs de validation](~/xamarin-forms/enterprise-application-patterns/validation.md#displaying_validation_errors).
+Un comportement attaché à un contrôle par le biais de propriétés jointes est connu sous le nom de *comportement attaché*. Le comportement peut ensuite utiliser l’API exposée de l’élément auquel il est attaché pour ajouter des fonctionnalités à ce contrôle, ou à d’autres contrôles, dans l’arborescence d’éléments visuels de la vue. L’application mobile eShopOnContainers contient la `LineColorBehavior` classe, qui est un comportement attaché. Pour plus d’informations sur ce comportement, consultez [affichage des erreurs de validation](~/xamarin-forms/enterprise-application-patterns/validation.md#displaying-validation-errors).
 
 Un Xamarin.Forms comportement est une classe qui dérive de la [`Behavior`](xref:Xamarin.Forms.Behavior) [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) classe ou, où `T` est le type du contrôle auquel le comportement doit s’appliquer. Ces classes fournissent `OnAttachedTo` des `OnDetachingFrom` méthodes et, qui doivent être substituées pour fournir une logique qui sera exécutée lorsque le comportement est attaché et détaché des contrôles.
 

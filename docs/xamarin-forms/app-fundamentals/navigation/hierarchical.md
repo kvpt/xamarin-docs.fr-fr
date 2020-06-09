@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 92774cffdfed7412bdb4d44993dc221993ad56c8
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137865"
+title : "Description de la navigation hiérarchique" : "cet article montre comment utiliser la classe NavigationPage pour effectuer la navigation dans une pile de dernières pages LIFO (dernier entré, premier sorti)."
+ms. Prod : xamarin ms. AssetID : C8A5EEFF-5A3B-4163-838A-147EE3939FAA ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 03/10/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="hierarchical-navigation"></a>Navigation hiérarchique
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-hierarchical)
@@ -32,8 +18,6 @@ Pour revenir à la page précédente, l’application dépile la page actuelle, 
 ![](hierarchical-images/popping.png "Popping a Page from the Navigation Stack")
 
 Les méthodes de navigation sont exposées par la [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) propriété sur tous les [`Page`](xref:Xamarin.Forms.Page) types dérivés. Ces méthodes permettent d’envoyer des pages dans la pile de navigation, de retirer des pages de la pile de navigation, et d’effectuer des manipulations de la pile.
-
-<a name="Performing_Navigation" />
 
 ## <a name="performing-navigation"></a>Navigation
 
@@ -154,8 +138,6 @@ async void OnRootPageButtonClicked (object sender, EventArgs e)
 
 Si vous affectez au paramètre `boolean` la valeur `false`, l’animation de transition de page est désactivée. En revanche, si vous affectez au paramètre la valeur `true` l’animation de transition de page est activée, à condition qu’elle soit prise en charge par la plateforme sous-jacente. Toutefois, les méthodes d’envoi et de dépilation qui n’ont pas ce paramètre activent l’animation par défaut.
 
-<a name="Passing_Data_when_Navigating" />
-
 ## <a name="passing-data-when-navigating"></a>Passage des données durant la navigation
 
 Il est parfois nécessaire pour une page de transmettre des données à une autre page lors de la navigation. Pour ce faire, deux techniques permettent de passer des données via un constructeur de page et de définir les données de la nouvelle page [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) . Nous allons maintenant examiner chacune de ces techniques.
@@ -275,8 +257,6 @@ Les données sont ensuite affichées sur la page par une série de [`Label`](xre
 
 Pour plus d’informations sur la liaison de données, consultez [Notions de base de la liaison de données](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md).
 
-<a name="Manipulating_the_Navigation_Stack" />
-
 ## <a name="manipulating-the-navigation-stack"></a>Manipulation de la pile de navigation
 
 La [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) propriété expose une [`NavigationStack`](xref:Xamarin.Forms.INavigation.NavigationStack) propriété à partir de laquelle les pages de la pile de navigation peuvent être obtenues. Tout en Xamarin.Forms préservant l’accès à la pile de navigation, la `Navigation` propriété fournit les [`InsertPageBefore`](xref:Xamarin.Forms.INavigation.InsertPageBefore*) [`RemovePage`](xref:Xamarin.Forms.INavigation.RemovePage*) méthodes et pour manipuler la pile en insérant des pages ou en les supprimant.
@@ -354,7 +334,7 @@ En guise d’alternative, une barre de navigation étendue peut être suggérée
 > [!NOTE]
 > Les [`BackButtonTitle`](xref:Xamarin.Forms.NavigationPage.BackButtonTitleProperty) Propriétés,, [`Title`](xref:Xamarin.Forms.Page.Title) [`TitleIcon`](xref:Xamarin.Forms.NavigationPage.TitleIconProperty) et [`TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) peuvent toutes définir des valeurs qui occupent de l’espace dans la barre de navigation. Bien que la taille de la barre de navigation varie en fonction de la plateforme et de la taille de l’écran, la définition de toutes ces propriétés provoquera des conflits en raison de l’espace limité disponible. Au lieu d’essayer d’utiliser une combinaison de ces propriétés, vous obtiendrez peut-être plus facilement la conception de barre de navigation souhaitée en définissant uniquement la propriété `TitleView`.
 
-### <a name="limitations"></a>Limitations
+### <a name="limitations"></a>Limites
 
 Il existe un certain nombre de limitations à connaître lorsque vous affichez un [`View`](xref:Xamarin.Forms.View) dans la barre de navigation d’un [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) :
 

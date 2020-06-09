@@ -7,20 +7,20 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2017
-ms.openlocfilehash: 2b8fede37354fd8a899a14c0710bf46e5a82b86a
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 007d835b71c16a51cf5f6aca3c9fe1edd5be0034
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73026202"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84572388"
 ---
 # <a name="storyboards-in-xamarinmac-quick-start"></a>Storyboards dans Xamarin. Mac – Démarrage rapide
 
-En guise d’introduction rapide à l’utilisation des storyboards pour définir l’interface utilisateur d’une application Xamarin. Mac, commençons un nouveau projet Xamarin. Mac. Sélectionnez **Mac** > **Application** > **Application Cocoa** et cliquez sur le bouton **Suivant** :
+En guise d’introduction rapide à l’utilisation des storyboards pour définir l’interface utilisateur d’une application Xamarin. Mac, commençons un nouveau projet Xamarin. Mac. Sélectionnez **Mac**  >  **App**  >  l'**application de cacao** de l’application Mac, puis cliquez sur le bouton **suivant** :
 
 [![](quickstart-images/qs01.png "Adding a new Cocoa App")](quickstart-images/qs01.png#lightbox)
 
-Utilisez le **nom** de l’application `MacStoryboard`, puis cliquez sur le bouton **suivant** :
+Utilisez le **nom** de l’application `MacStoryboard` et cliquez sur le bouton **suivant** :
 
 [![](quickstart-images/qs02.png "Setting the App Name")](quickstart-images/qs02.png#lightbox)
 
@@ -28,7 +28,7 @@ Utilisez le nom de **projet** et le nom de **solution** par défaut, puis clique
 
 [![](quickstart-images/qs03.png "The project and solution names")](quickstart-images/qs03.png#lightbox)
 
-Dans la **Explorateur de solutions**, double-cliquez sur le fichier `Main.storyboard` pour l’ouvrir et le modifier dans le Interface Builder de Xcode :
+Dans la **Explorateur de solutions**, double-cliquez sur le fichier pour l' `Main.storyboard` ouvrir et le modifier dans l’interface Builder de Xcode :
 
 [![](quickstart-images/qs04.png "Editing the storyboard in Xcode")](quickstart-images/qs04.png#lightbox)
 
@@ -60,7 +60,7 @@ Si nous revenons à Visual Studio pour Mac et exécutons le projet, vous remarqu
 
 [![](quickstart-images/qs10.png "An example of the app running")](quickstart-images/qs10.png#lightbox)
 
-Étant donné que nous allons utiliser le côté droit de l’affichage fractionné comme zone d’inspecteur, nous voulons qu’il ait une taille inférieure et l’autorise à être réduit. Revenez à Xcode et modifiez l’affichage du côté droit en le sélectionnant dans la Aire de conception et en cliquant sur l' **inspecteur de taille**. À partir de là, entrez une **largeur** de `250`:
+Étant donné que nous allons utiliser le côté droit de l’affichage fractionné comme zone d’inspecteur, nous voulons qu’il ait une taille inférieure et l’autorise à être réduit. Revenez à Xcode et modifiez l’affichage du côté droit en le sélectionnant dans la Aire de conception et en cliquant sur l' **inspecteur de taille**. À partir de là, entrez une **largeur** de `250` :
 
 [![](quickstart-images/qs11.png "Setting the width")](quickstart-images/qs11.png#lightbox)
 
@@ -72,7 +72,7 @@ Si nous revenons à Visual Studio pour Mac et exécutons le projet maintenant, v
 
 [![](quickstart-images/qs13.png "An example of the app running")](quickstart-images/qs13.png#lightbox)
 
-<a name="Defining-a-Presentation-Segue" />
+<a name="Defining-a-Presentation-Segue"></a>
 
 ## <a name="defining-a-presentation-segue"></a>Définition d’un segue de présentation
 
@@ -94,7 +94,7 @@ Si nous revenons à Visual Studio pour Mac, exécutez l’application et cliquez
 
 [![](quickstart-images/qs17.png "An example of the segue running")](quickstart-images/qs17.png#lightbox)
 
-<a name="Creating-App-Preferences" />
+<a name="Creating-App-Preferences"></a>
 
 ## <a name="creating-app-preferences"></a>Création des préférences de l’application
 
@@ -120,7 +120,7 @@ Si nous enregistrons nos modifications, revenez à Visual Studio pour Mac, exéc
 
 [![](quickstart-images/qs22.png "An example of the segue running")](quickstart-images/qs22.png#lightbox)
 
-Vous remarquerez peut-être que cela ne ressemble pas à une fenêtre de boîte de dialogue Préférences d’application macOS standard. Pour résoudre ce problème, incluez deux fichiers image dans le dossier `Resources` de l’application Xamarin. Mac dans le **Explorateur de solutions** et revenez à l’interface Builder de Xcode.
+Vous remarquerez peut-être que cela ne ressemble pas à une fenêtre de boîte de dialogue Préférences d’application macOS standard. Pour résoudre ce problème, incluez deux fichiers image dans le dossier de l’application Xamarin. Mac `Resources` dans le **Explorateur de solutions** et revenez au Interface Builder de Xcode.
 
 Sélectionnez le contrôleur d’affichage d’onglets et changez son **style** en **barre d’outils**: 
 
@@ -136,7 +136,7 @@ Si nous enregistrons nos modifications, revenons à Visual Studio pour Mac, exé
 
 Pour plus d’informations, consultez notre documentation [sur l’utilisation des images](~/mac/app-fundamentals/image.md), des [menus](~/mac/user-interface/menu.md), des [fenêtres](~/mac/user-interface/window.md) et des [boîtes de dialogue](~/mac/user-interface/dialog.md) .
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Hello, Mac](~/mac/get-started/hello-mac.md)
 - [Utilisation de Windows](~/mac/user-interface/window.md)

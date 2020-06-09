@@ -6,12 +6,12 @@ ms.assetid: 81174493-02D3-4FF5-AD57-04F3288A7F94
 author: davidortinau
 ms.author: daortin
 ms.date: 06/19/2018
-ms.openlocfilehash: 19c4a15fb2490c7bace4798b0cb8e062b1379a04
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 39e7a6c86a2d4ab4231a29c0e1014de702af01ac
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79305065"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573415"
 ---
 # <a name="inspector-installation-and-requirements"></a>Installation et configuration de l’inspecteur
 
@@ -23,7 +23,7 @@ ms.locfileid: "79305065"
 1. [Connectez-vous](https://docs.microsoft.com/visualstudio/ide/signing-in-to-visual-studio) pour activer votre abonnement Enterprise.
 1. [Inspectez](~/tools/inspector/inspect.md) votre propre application !
 
-# <a name="macos"></a>[macOS](#tab/macos)
+# <a name="macos"></a>[MacOS](#tab/macos)
 
 1. Téléchargez et installez [Visual Studio pour Mac](https://visualstudio.microsoft.com/vs/mac/).
 1. [Connectez-vous](https://docs.microsoft.com/visualstudio/mac/activation) pour activer votre abonnement Enterprise.
@@ -33,7 +33,7 @@ ms.locfileid: "79305065"
 
 ## <a name="requirements"></a>Spécifications
 
-### <a name="supported-operating-systems"></a>Systèmes d’exploitation pris en charge
+### <a name="supported-operating-systems"></a>Systèmes d'exploitation pris en charge
 
 - **Mac** -OS X 10,11 ou version ultérieure
 - **Windows** -Windows 7 ou version ultérieure (avec Internet Explorer 11 ou version ultérieure et .net 4.6.1 ou version ultérieure)
@@ -45,7 +45,7 @@ ms.locfileid: "79305065"
 
 L’inspection des applications en direct est disponible pour les entreprises.
 
-<a name="supported-platforms" />
+<a name="supported-platforms"></a>
 
 ### <a name="supported-app-platforms"></a>Plateformes d’application prises en charge
 
@@ -53,16 +53,16 @@ L’inspection des applications en direct est disponible pour les entreprises.
 |--- |--- |--- |
 |Mac|Uniquement pris en charge dans Visual Studio pour Mac|
 |iOS|Pris en charge dans Visual Studio 2017 et Visual Studio pour Mac| Le comportement de l’éditeur de liens doit être défini sur **ne pas lier** (sous options du projet de **génération iOS** ) |
-|Android|Pris en charge dans Visual Studio 2017 et Visual Studio pour Mac|Vous devez cibler Android > = 4.0.3, avec **fastdev** activé.<br />Doit utiliser des émulateurs Google, Visual Studio ou Xamarin Android. Les émulateurs Android 7 ne peuvent pas autoriser l’inspection pour l’instant.|
+|Android|Pris en charge dans Visual Studio 2017 et Visual Studio pour Mac|Vous devez cibler Android >= 4.0.3, avec **fastdev** activé.<br />Doit utiliser des émulateurs Google, Visual Studio ou Xamarin Android. Les émulateurs Android 7 ne peuvent pas autoriser l’inspection pour l’instant.|
 |WPF|Pris en charge uniquement dans Visual Studio 2017|
 
-<a name="reporting-bugs" />
+<a name="reporting-bugs"></a>
 
 ## <a name="reporting-bugs"></a>Bogues de création de rapports
 
 Les bogues doivent être signalés directement par le biais de Visual Studio :
 
-- **Aide > Envoyer des commentaires > signaler un problème**
+- **Aide > envoyer des commentaires > signaler un problème**
 
 Veuillez inclure toutes les informations suivantes :
 
@@ -72,7 +72,7 @@ Ces informations sont essentielles.
 
 Visual Studio pour Mac
 
-- **Visual Studio > à propos de Visual Studio > Afficher les détails > copier les informations**
+- **Visual Studio > à propos de Visual Studio > afficher les détails > copier les informations**
 - Coller dans le rapport de bogue
 
 Visual Studio
@@ -91,7 +91,7 @@ Client de l’inspecteur
 
 1.4. x offre également la possibilité de sélectionner le fichier journal dans Finder (macOS) ou Explorer (Windows) directement à partir du menu principal :
 
-- **Aide > Afficher le fichier journal**
+- **Aide > afficher le fichier journal**
 
 Visual Studio pour Mac
 

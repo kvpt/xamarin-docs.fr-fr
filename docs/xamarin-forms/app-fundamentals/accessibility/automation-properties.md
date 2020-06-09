@@ -1,22 +1,8 @@
 ---
-title: ''
-description: Cet article explique comment utiliser la classe AutomationProperties dans une Xamarin.Forms application, afin qu’un lecteur d’écran puisse parler des éléments de la page.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: ad6d315ccc5be0a7709164d40685c842b61b90b4
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84129959"
+titre : « propriétés Automation » Description : « cet article explique comment utiliser la classe AutomationProperties dans une Xamarin.Forms application, afin qu’un lecteur d’écran puisse parler des éléments sur la page ».
+ms. Prod : xamarin ms. AssetID : c0bb6893-fd26-47e7-88e5-3c333c9f786c ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 12/18/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="automation-properties-in-xamarinforms"></a>Propriétés Automation dansXamarin.Forms
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-accessibility)
@@ -25,10 +11,10 @@ _Xamarin. Forms permet de définir des valeurs d’accessibilité sur les élém
 
 Xamarin.Formspermet de définir les propriétés d’automatisation sur les éléments de l’interface utilisateur via les propriétés jointes suivantes :
 
-- `AutomationProperties.IsInAccessibleTree` – indique si l’élément est disponible pour une application accessible. Pour plus d’informations, consultez [AutomationProperties.IsInAccessibleTree](#isinaccessibletree).
-- `AutomationProperties.Name` – brève description de l’élément qui sert d’identificateur prononçable pour l’élément. Pour plus d’informations, consultez [AutomationProperties.Name](#name).
-- `AutomationProperties.HelpText` – description plus longue de l’élément, qui peut être considérée comme un texte d’info-bulle associé à l’élément. Pour plus d’informations, consultez [AutomationProperties.HelpText](#helptext).
-- `AutomationProperties.LabeledBy` – permet à un autre élément de définir des informations d’accessibilité pour l’élément actuel. Pour plus d’informations, consultez [AutomationProperties.LabeledBy](#labeledby).
+- `AutomationProperties.IsInAccessibleTree` – indique si l’élément est disponible pour une application accessible. Pour plus d’informations, consultez [AutomationProperties.IsInAccessibleTree](#automationpropertiesisinaccessibletree).
+- `AutomationProperties.Name` – brève description de l’élément qui sert d’identificateur prononçable pour l’élément. Pour plus d’informations, consultez [AutomationProperties.Name](#automationpropertiesname).
+- `AutomationProperties.HelpText` – description plus longue de l’élément, qui peut être considérée comme un texte d’info-bulle associé à l’élément. Pour plus d’informations, consultez [AutomationProperties.HelpText](#automationpropertieshelptext).
+- `AutomationProperties.LabeledBy` – permet à un autre élément de définir des informations d’accessibilité pour l’élément actuel. Pour plus d’informations, consultez [AutomationProperties.LabeledBy](#automationpropertieslabeledby).
 
 Ces propriétés jointes définissent des valeurs natives d’accessibilité pour permettre à un lecteur d’écran d’énoncer l’élément. Pour plus d’informations sur les propriétés jointes, consultez [Propriétés jointes](~/xamarin-forms/xaml/attached-properties.md).
 
@@ -51,8 +37,6 @@ Les lecteurs d’écran lisent également des valeurs d’accessibilité différ
 
 En outre, le Narrateur accorde la priorité à `AutomationProperties.Name`, à `AutomationProperties.LabeledBy` puis à `AutomationProperties.HelpText`. Dans Android, TalkBack peut combiner les valeurs `AutomationProperties.Name` et `AutomationProperties.HelpText`. Par conséquent, il est recommandé de réaliser des tests d’accessibilité complets sur chaque plateforme pour garantir une expérience optimale.
 
-<a name="isinaccessibletree" />
-
 ## <a name="automationpropertiesisinaccessibletree"></a>AutomationProperties.IsInAccessibleTree
 
 La propriété jointe `AutomationProperties.IsInAccessibleTree` est un `boolean` qui détermine si l’élément est accessible et par conséquent visible aux lecteurs d’écran. Elle doit être définie sur `true` pour utiliser les autres propriétés jointes d’accessibilité. Cela peut être accompli en XAML de la façon suivante :
@@ -70,8 +54,6 @@ AutomationProperties.SetIsInAccessibleTree(entry, true);
 
 > [!NOTE]
 > Notez que [ `SetValue` ] (XREF : Xamarin.Forms . BindableObject. SetValue ( Xamarin.Forms . La méthode BindableProperty, System. Object)) peut également être utilisée pour définir la `AutomationProperties.IsInAccessibleTree` propriété jointe :`entry.SetValue(AutomationProperties.IsInAccessibleTreeProperty, true);`
-
-<a name="name" />
 
 ## <a name="automationpropertiesname"></a>AutomationProperties.Name
 
@@ -92,8 +74,6 @@ AutomationProperties.SetName(activityIndicator, "Progress indicator");
 
 > [!NOTE]
 > Notez que [ `SetValue` ] (XREF : Xamarin.Forms . BindableObject. SetValue ( Xamarin.Forms . La méthode BindableProperty, System. Object)) peut également être utilisée pour définir la `AutomationProperties.Name` propriété jointe :`activityIndicator.SetValue(AutomationProperties.NameProperty, "Progress indicator");`
-
-<a name="helptext" />
 
 ## <a name="automationpropertieshelptext"></a>AutomationProperties.HelpText
 
@@ -117,8 +97,6 @@ AutomationProperties.SetHelpText(button, "Tap to toggle the activity indicator")
 > Notez que [ `SetValue` ] (XREF : Xamarin.Forms . BindableObject. SetValue ( Xamarin.Forms . La méthode BindableProperty, System. Object)) peut également être utilisée pour définir la `AutomationProperties.HelpText` propriété jointe :`button.SetValue(AutomationProperties.HelpTextProperty, "Tap to toggle the activity indicator");`
 
 Sur certaines plateformes, pour les contrôles d’édition tels qu’un [`Entry`](xref:Xamarin.Forms.Entry) , la `HelpText` propriété peut parfois être omise et remplacée par un texte d’espace réservé. Par exemple, « entrez votre nom ici » est un bon candidat pour la [`Entry.Placeholder`](xref:Xamarin.Forms.InputView.Placeholder) propriété qui place le texte dans le contrôle avant l’entrée réelle de l’utilisateur.
-
-<a name="labeledby" />
 
 ## <a name="automationpropertieslabeledby"></a>AutomationProperties.LabeledBy
 

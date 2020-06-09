@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: b27a8d65ebaca6009d8310931b9dac3a4d7e12f3
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 395ac62cd4db62c02863e352ed5643958348dcff
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73026146"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574388"
 ---
 # <a name="introduction-to-storyboards-in-xamarinmac"></a>Présentation des storyboards dans Xamarin. Mac
 
@@ -24,13 +24,13 @@ Les storyboards vous permettent de développer une interface utilisateur pour vo
 
 Cet article fournit une introduction à l’utilisation des storyboards pour définir une interface utilisateur de l’application Xamarin. Mac.
 
-<a name="What-are-Storyboards" />
+<a name="What-are-Storyboards"></a>
 
 ## <a name="what-are-storyboards"></a>Que sont les storyboards ?
 
 En utilisant des storyboards, toute l’interface utilisateur d’une application Xamarin. Mac peut être définie dans un emplacement unique avec l’ensemble de la navigation entre ses éléments individuels et les interfaces utilisateur. Les storyboards pour Xamarin. Mac, fonctionnent de manière très similaire aux storyboards pour Xamarin. iOS. Toutefois, ils contiennent un ensemble différent de _types segue_ en raison des différents idiomes d’interface.
 
-<a name="Working-with-Scenes" />
+<a name="Working-with-Scenes"></a>
 
 ### <a name="working-with-scenes"></a>Utilisation des scènes
 
@@ -44,7 +44,7 @@ Chaque scène représente une vue donnée et une paire de contrôleurs d’affic
 
 La chose la plus importante à noter est que chaque segue représente le workflow d’une forme de données entre l’élément donné de l’interface utilisateur de l’application.
 
-<a name="Working-with-View-Controllers" />
+<a name="Working-with-View-Controllers"></a>
 
 ### <a name="working-with-view-controllers"></a>Utilisation des contrôleurs d’affichage
 
@@ -54,13 +54,13 @@ Les contrôleurs d’affichage définissent les relations entre une vue donnée 
 
 De cette façon, chaque contrôleur d’affichage est un jumelage autonome et réutilisable de la représentation visuelle des informations (vue) et de la logique de présentation et de contrôle de ces informations.
 
-Dans une scène donnée, vous pouvez effectuer toutes les opérations qui seraient normalement gérées par des fichiers de `.xib` individuel : 
+Dans une scène donnée, vous pouvez effectuer toutes les opérations qui auraient normalement été traitées par des fichiers individuels `.xib` : 
 
 - Placez des sous-vues et des contrôles (tels que des boutons et des zones de texte).
 - Définissez les positions des éléments et les contraintes de disposition automatique.
 - Actions et débouchés de mise en réseau pour exposer des éléments d’interface utilisateur au code.
 
-<a name="Working-with-Segues" />
+<a name="Working-with-Segues"></a>
 
 ### <a name="working-with-segues"></a>Utilisation de SEGUES
 
@@ -70,9 +70,9 @@ Dans macOS, la plupart des applications ont tendance à regrouper leurs vues dan
 
 En raison de l’banlieusards de Mac pour la relation contenant-contenu, il existe des situations où les _SEGUES de présentation_ sont utilisés, tels que les fenêtres modales, les vues de feuille et les popovers.
 
-Lorsque vous utilisez la SEGUES de présentation, vous pouvez remplacer la méthode `PrepareForSegue` du contrôleur d’affichage parent pour la présentation pour initialiser et les variables et fournir toutes les données au contrôleur d’affichage présenté.
+Lorsque vous utilisez la SEGUES de présentation, vous pouvez remplacer la `PrepareForSegue` méthode du contrôleur d’affichage parent pour la présentation pour initialiser et les variables et fournir toutes les données au contrôleur d’affichage en cours de présentation.
 
-<a name="Design-and-Run-Times" />
+<a name="Design-and-Run-Times"></a>
 
 ### <a name="design-and-run-times"></a>Temps de conception et d’exécution
 
@@ -86,19 +86,19 @@ Au moment de la conception (lors de la disposition de l’interface utilisateur 
 
 En définissant chaque élément de cette manière, il permet le chargement différé de chaque élément uniquement si nécessaire pendant l’exécution. Dans macOS, l’ensemble du processus a été conçu pour permettre au développeur de créer des interfaces utilisateur complexes et flexibles qui nécessitent un minimum de code de sauvegarde pour les faire fonctionner, tout en étant aussi efficaces que possible avec les ressources système.
 
-<a name="Storyboard-Quick-Start" />
+<a name="Storyboard-Quick-Start"></a>
 
 ## <a name="storyboard-quick-start"></a>Démarrage rapide de la table de montage séquentiel
 
 Dans le Guide de Démarrage rapide de la [table de montage séquentiel](~/mac/platform/storyboards/quickstart.md) , nous allons créer une simple application Xamarin. Mac qui présente les concepts clés de l’utilisation des storyboards pour créer une interface utilisateur. L’exemple d’application se compose d’une vue Spilt contenant une _zone de contenu_ et d’une zone d' _inspecteur_ . elle présente une fenêtre de boîte de dialogue de préférences simple. Nous allons utiliser SEGUES pour lier tous les éléments de l’interface utilisateur.
 
-<a name="Working-with-Storyboards" />
+<a name="Working-with-Storyboards"></a>
 
 ## <a name="working-with-storyboards"></a>Utilisation de storyboards
 
 Cette section décrit en détail l' [utilisation des storyboards](~/mac/platform/storyboards/indepth.md) dans une application Xamarin. Mac. Nous examinons en détail les scènes et la façon dont elles se composent de contrôleurs d’affichage et d’une vue. Ensuite, nous allons examiner comment les scènes sont liées à SEGUES. Enfin, nous examinerons l’utilisation des types de Segue personnalisés. 
 
-<a name="Complex-Storyboard-Example" />
+<a name="Complex-Storyboard-Example"></a>
 
 ## <a name="complex-storyboard-example"></a>Exemple de Storyboard complexe
 
@@ -106,13 +106,13 @@ Pour obtenir un exemple d’utilisation complexe des storyboards dans une applic
 
 Le code SourceWriter a été entièrement commenté et, le cas échéant, des liens ont être fournis entre les principales technologies ou méthodes et des informations pertinentes dans la documentation des guides Xamarin.Mac.
 
-<a name="Summary" />
+<a name="Summary"></a>
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article a fait un aperçu rapide de l’utilisation des storyboards dans une application Xamarin. Mac. Nous avons vu comment créer une nouvelle application à l’aide de storyboards et comment définir une interface utilisateur. Nous avons également vu comment naviguer entre les différentes fenêtres et les États d’affichage à l’aide de SEGUES.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Hello, Mac (exemple)](https://docs.microsoft.com/samples/xamarin/mac-samples/hello-mac)
 - [Hello, Mac](~/mac/get-started/hello-mac.md)

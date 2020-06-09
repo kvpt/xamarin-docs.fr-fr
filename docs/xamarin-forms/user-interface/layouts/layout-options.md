@@ -1,29 +1,15 @@
 ---
-title: Options de disposition dansXamarin.Forms
-description: Chaque Xamarin.Forms vue a des propriétés HorizontalOptions et VerticalOptions, de type LayoutOptions. Cet article explique l’effet de chaque valeur LayoutOptions sur l’alignement et l’expansion d’une vue.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 17f4e76f9bef71352cabddfba9397e95bcdd24d3
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138027"
+title : "options de disposition dans Xamarin.Forms " Description : "chaque Xamarin.Forms vue a des propriétés HorizontalOptions et VerticalOptions, de type LayoutOptions. Cet article explique l’effet de chaque valeur LayoutOptions sur l’alignement et l’expansion d’une vue.
+ms. Prod : xamarin ms. AssetID : 7CAB5631-5153-4DEF-8AD7-C6011CE44307 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 02/10/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="layout-options-in-xamarinforms"></a>Options de disposition dansXamarin.Forms
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layoutoptions)
 
 _Chaque Xamarin.Forms vue a des propriétés HorizontalOptions et VerticalOptions, de type LayoutOptions. Cet article explique l’effet de chaque valeur LayoutOptions sur l’alignement et l’expansion d’une vue._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d’ensemble
 
 La [`LayoutOptions`](xref:Xamarin.Forms.LayoutOptions) structure encapsule deux préférences de disposition :
 
@@ -52,8 +38,6 @@ Les `StartAndExpand` valeurs,, `CenterAndExpand` `EndAndExpand` et `FillAndExpan
 
 > [!NOTE]
 > La valeur par défaut des propriétés [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) et [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) d’une vue est [`LayoutOptions.Fill`](xref:Xamarin.Forms.LayoutOptions.Fill).
-
-<a name="alignment" />
 
 ## <a name="alignment"></a>Alignement
 
@@ -98,9 +82,7 @@ Le code donne la mise en page illustrée dans les captures d’écran suivantes�
 
 [![](layout-options-images/alignment.png "Alignment Layout Options")](layout-options-images/alignment-large.png#lightbox "Alignment Layout Options")
 
-<a name="expansion" />
-
-## <a name="expansion"></a>Agrandissement
+## <a name="expansion"></a>Expansion
 
 L’expansion contrôle si une vue occupera plus d’espace, si elle est disponible, dans un [`StackLayout`](xref:Xamarin.Forms.StackLayout) . Si le `StackLayout` contient un espace inutilisé (c’est-à-dire qu’il `StackLayout` est plus grand que la taille combinée de tous ses enfants), l’espace inutilisé est partagé de manière égale par toutes les vues enfants qui demandent une expansion en affectant [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) à leurs propriétés ou un [`LayoutOptions`](xref:Xamarin.Forms.LayoutOptions) champ qui utilise le `AndExpand` suffixe. Notez que lorsque tout l’espace du `StackLayout` est utilisé, les options d’expansion n’ont aucun effet.
 

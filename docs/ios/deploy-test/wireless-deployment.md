@@ -8,12 +8,12 @@ author: davidortinau
 ms.author: daortin
 ms.custom: video
 ms.date: 01/22/2019
-ms.openlocfilehash: b0eb471bd41bb38d62ced38ed66cfa0dfee37bbf
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 58a7b6af2b21d2ca2106f78b833ff846c9daa7ac
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73023421"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84572609"
 ---
 # <a name="wireless-deployment-for-xamarinios-and-tvos-apps"></a>Déploiement sans fil pour les applications Xamarin.iOS et tvOS
 
@@ -53,7 +53,7 @@ Pour déployer et déboguer sans fil sur votre appareil, vous devez coupler votr
 
 Le processus de couplage suivant ne doit se produire qu’une seule fois par appareil. Xcode conserve les paramètres de connexion.
 
-<a name="pair" />
+<a name="pair"></a>
 
 ### <a name="pairing-an-ios-device-with-xcode"></a>Couplage d’un appareil iOS à Xcode
 
@@ -71,7 +71,7 @@ Le processus de couplage suivant ne doit se produire qu’une seule fois par app
 
 4. Sélectionnez l’Apple TV dans la zone **découvert** dans Xcode et entrez le code de vérification affiché sur l’écran de l’Apple TV.
 
-5. Cliquez sur le bouton **Connexion**. Une fois le couplage réussi, une icône de connexion réseau s’affiche en regard de l’Apple TV.
+5. Cliquez sur le bouton **Connecter**. Une fois le couplage réussi, une icône de connexion réseau s’affiche en regard de l’Apple TV.
 
 ## <a name="deploy-to-a-device"></a>Déployer l’application sur un appareil
 

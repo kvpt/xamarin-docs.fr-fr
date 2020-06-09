@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 08/31/2017
-ms.openlocfilehash: b58e7b1fffed3253d9765401d52f16b751db134d
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 89a21eec369691e5c6e1ec8ce2430d679b6b309d
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79304750"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84572141"
 ---
 # <a name="vision-framework-in-xamarinios"></a>Framework de vision dans Xamarin. iOS
 
@@ -31,7 +31,7 @@ L’infrastructure de vision ajoute un certain nombre de nouvelles fonctionnalit
 
 La détection des rectangles et les Détection de visage sont décrits plus en détail ci-dessous.
 
-<a name="rectangles" />
+<a name="rectangles"></a>
 
 ## <a name="rectangle-detection"></a>Détection de rectangles
 
@@ -39,9 +39,9 @@ L' [exemple VisionRects](https://docs.microsoft.com/samples/xamarin/ios-samples/
 
 ### <a name="1-initialize-the-vision-request"></a>1. initialiser la demande de vision
 
-Dans `ViewDidLoad`, créez un `VNDetectRectanglesRequest` qui fait référence à la méthode `HandleRectangles` qui sera appelée à la fin de chaque requête :
+Dans `ViewDidLoad` , créez un `VNDetectRectanglesRequest` qui fait référence `HandleRectangles` à la méthode qui sera appelée à la fin de chaque requête :
 
-La propriété `MaximumObservations` doit également être définie. dans le cas contraire, sa valeur par défaut est 1 et un seul résultat est retourné.
+La `MaximumObservations` propriété doit également être définie. dans le cas contraire, sa valeur par défaut est 1 et un seul résultat est retourné.
 
 ```csharp
 RectangleRequest = new VNDetectRectanglesRequest(HandleRectangles);
@@ -60,11 +60,11 @@ DispatchQueue.DefaultGlobalQueue.DispatchAsync(()=>{
 });
 ```
 
-Ce gestionnaire passe le `ciImage` à l’infrastructure de vision `VNDetectRectanglesRequest` qui a été créé à l’étape 1.
+Ce gestionnaire transmet `ciImage` à l’infrastructure de vision `VNDetectRectanglesRequest` créée à l’étape 1.
 
 ### <a name="3-handle-the-results-of-vision-processing"></a>3. gérer les résultats du traitement de la vision
 
-Une fois la détection de rectangle terminée, l’infrastructure exécute la méthode `HandleRectangles`, un résumé qui est affiché ci-dessous :
+Une fois la détection de rectangle terminée, l’infrastructure exécute la `HandleRectangles` méthode, dont un résumé est affiché ci-dessous :
 
 ```csharp
 private void HandleRectangles(VNRequest request, NSError error){
@@ -88,7 +88,7 @@ private void HandleRectangles(VNRequest request, NSError error){
 
 ### <a name="4-display-the-results"></a>4. afficher les résultats
 
-La méthode `OverlayRectangles` dans l’exemple **VisionRectangles** comporte trois fonctions :
+La `OverlayRectangles` méthode de l’exemple **VisionRectangles** a trois fonctions :
 
 - Rendu de l’image source,
 - Dessin d’un rectangle pour indiquer l’emplacement où chacun a été détecté, et
@@ -102,7 +102,7 @@ Affichez la source de l' [exemple](https://docs.microsoft.com/samples/xamarin/io
 
 La détection de rectangle est souvent simplement la première étape d’une chaîne d’opérations, comme avec [cet exemple CoreMLVision](~/ios/platform/introduction-to-ios11/coreml.md#coremlvision), où les rectangles sont passés à un modèle CoreML pour analyser des chiffres manuscrits.
 
-<a name="faces" />
+<a name="faces"></a>
 
 ## <a name="face-detection"></a>Détection de visage
 
@@ -110,7 +110,7 @@ L' [exemple VisionFaces](https://docs.microsoft.com/samples/xamarin/ios-samples/
 
 ### <a name="1-initialize-the-vision-request"></a>1. initialiser la demande de vision
 
-Dans `ViewDidLoad`, créez un `VNDetectFaceRectanglesRequest` qui fait référence à la méthode `HandleRectangles` qui sera appelée à la fin de chaque demande.
+Dans `ViewDidLoad` , créez un `VNDetectFaceRectanglesRequest` qui fait référence `HandleRectangles` à la méthode qui sera appelée à la fin de chaque demande.
 
 ```csharp
 FaceRectangleRequest = new VNDetectFaceRectanglesRequest(HandleRectangles);
@@ -128,11 +128,11 @@ DispatchQueue.DefaultGlobalQueue.DispatchAsync(()=>{
 });
 ```
 
-Ce gestionnaire passe le `ciImage` à l’infrastructure de vision `VNDetectFaceRectanglesRequest` qui a été créé à l’étape 1.
+Ce gestionnaire transmet `ciImage` à l’infrastructure de vision `VNDetectFaceRectanglesRequest` créée à l’étape 1.
 
 ### <a name="3-handle-the-results-of-vision-processing"></a>3. gérer les résultats du traitement de la vision
 
-Une fois la détection de visage terminée, le gestionnaire exécute la méthode `HandleRectangles` qui effectue la gestion des erreurs et affiche les limites des visages détectés, puis appelle la `OverlayRectangles` pour dessiner des rectangles englobants sur l’image d’origine :
+Une fois la détection de visage terminée, le gestionnaire exécute la `HandleRectangles` méthode qui effectue la gestion des erreurs et affiche les limites des visages détectés, puis appelle `OverlayRectangles` pour dessiner des rectangles englobants sur l’image d’origine :
 
 ```csharp
 private void HandleRectangles(VNRequest request, NSError error){
@@ -161,7 +161,7 @@ private void HandleRectangles(VNRequest request, NSError error){
 
 ### <a name="4-display-the-results"></a>4. afficher les résultats
 
-La méthode `OverlayRectangles` dans l’exemple **VisionFaces** comporte trois fonctions :
+La `OverlayRectangles` méthode de l’exemple **VisionFaces** a trois fonctions :
 
 - Rendu de l’image source,
 - Dessin d’un rectangle pour chaque visage détecté, et
@@ -173,7 +173,7 @@ Affichez la source de l' [exemple](https://docs.microsoft.com/samples/xamarin/io
 
 ### <a name="5-further-processing"></a>5. traitement supplémentaire
 
-L’infrastructure de vision comprend des fonctionnalités supplémentaires pour détecter les caractéristiques du visage, telles que les yeux et la bouche. Utilisez le type de `VNDetectFaceLandmarksRequest`, qui renverra `VNFaceObservation` résultats comme à l’étape 3 ci-dessus, mais avec des données de `VNFaceLandmark` supplémentaires.
+L’infrastructure de vision comprend des fonctionnalités supplémentaires pour détecter les caractéristiques du visage, telles que les yeux et la bouche. Utilisez le `VNDetectFaceLandmarksRequest` type, qui retournera les `VNFaceObservation` résultats à l’étape 3 ci-dessus, mais avec des `VNFaceLandmark` données supplémentaires.
 
 ## <a name="related-links"></a>Liens connexes
 

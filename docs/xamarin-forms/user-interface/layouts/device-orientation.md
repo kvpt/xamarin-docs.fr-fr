@@ -9,8 +9,6 @@ ms. Prod : xamarin ms. AssetID : 11A1D327-2DF3-4F3B-810D-6C95B71D27B2 ms. Tech
 
 Il est important de prendre en compte la façon dont votre application est utilisée et comment l’orientation paysage peut être incorporée pour améliorer l’expérience utilisateur. Les dispositions individuelles peuvent être conçues pour prendre en charge plusieurs orientations et utiliser au mieux l’espace disponible. Au niveau de l’application, la rotation peut être désactivée ou activée.
 
-<a name="Controlling_Orientation" />
-
 ## <a name="controlling-orientation"></a>Contrôler l’orientation
 
 Lorsque Xamarin.Forms vous utilisez, la méthode prise en charge pour contrôler l’orientation de l’appareil consiste à utiliser les paramètres de chaque projet individuel.
@@ -74,8 +72,6 @@ Notez que les API Android natives fournissent un grand contrôle sur la façon d
 
 Sur la plateforme Windows universelle (UWP), les orientations prises en charge sont définies dans le fichier **Package. appxmanifest** . L’ouverture du manifeste affichera un panneau de configuration dans lequel les orientations prises en charge peuvent être sélectionnées.
 
-<a name="Reacting_to_Changes_in_Orientation" />
-
 ## <a name="reacting-to-changes-in-orientation"></a>Réagir aux changements d’orientation
 
 Xamarin.Formsn’offre pas d’événements natifs pour avertir votre application des modifications d’orientation dans le code partagé. Toutefois, [Xamarin.Essentials](~/essentials/index.md) contient une `DeviceDisplay` classe [] qui fournit des notifications de changements d’orientation.
@@ -120,8 +116,6 @@ et paysage :
 ![](device-orientation-images/calculator-landscape.png "Calculator Application in Landscape")
 
 Notez que les applications tirent parti de l’espace disponible en ajoutant plus de fonctionnalités en mode paysage.
-
-<a name="Responsive_Layout" />
 
 ## <a name="responsive-layout"></a>Disposition réactive
 

@@ -7,23 +7,23 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 08/30/2017
-ms.openlocfilehash: 0094a496ce99addb08648431d993bd4afddca2f4
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 51b28ec05af91dea21b1291956de30c549b1868e
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032248"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571673"
 ---
 # <a name="introduction-to-arkit-in-xamarinios"></a>Présentation de ARKit dans Xamarin. iOS
 
 _Réalité augmentée pour iOS 11_
 
-ARKit permet un large éventail d’applications et de jeux de réalité augmentés. Cette section couvre les rubriques suivantes :
+ARKit permet un large éventail d’applications et de jeux de réalité augmentés. Cette section couvre les sujets suivants :
 
 - [Prise en main avec ARKit](#gettingstarted)
 - [Utilisation de ARKit avec UrhoSharp](urhosharp.md)
 
-<a name="gettingstarted" />
+<a name="gettingstarted"></a>
 
 ## <a name="getting-started-with-arkit"></a>Prise en main avec ARKit
 
@@ -39,7 +39,7 @@ Les ressources doivent être ajoutées au projet avec l’action de génération
 
 ### <a name="2-configure-the-view"></a>2. configurer la vue
 
-Dans la méthode `ViewDidLoad` du contrôleur d’affichage, chargez la ressource de scène et définissez la propriété `Scene` sur la vue :
+Dans la méthode du contrôleur d’affichage `ViewDidLoad` , chargez la ressource de scène et définissez la `Scene` propriété sur la vue :
 
 ```csharp
 ARSCNView SceneView = (View as ARSCNView);
@@ -66,7 +66,7 @@ public class SessionDelegate : ARSessionDelegate
 }
 ```
 
-Assignez le délégué dans la méthode `ViewDidLoad` :
+Assignez le délégué dans dans la `ViewDidLoad` méthode :
 
 ```csharp
 // Track changes to the session
@@ -75,7 +75,7 @@ SceneView.Session.Delegate = new SessionDelegate();
 
 ### <a name="4-position-the-3d-model-in-the-world"></a>4. Positionner le modèle 3D dans le monde
 
-Dans `ViewWillAppear`, le code suivant établit une session ARKit et définit la position du modèle 3D dans l’espace relatif à l’appareil photo de l’appareil :
+Dans `ViewWillAppear` , le code suivant établit une session ARKit et définit la position du modèle 3D dans l’espace relatif à l’appareil photo de l’appareil :
 
 ```csharp
 // Create a session configuration
@@ -97,19 +97,19 @@ Chaque fois que l’application est exécutée ou reprise, le modèle 3D est pos
 
 ### <a name="5-pause-the-augmented-reality-session"></a>5. suspendre la session de réalité augmentée
 
-Il est recommandé de suspendre la session ARKit quand le contrôleur d’affichage n’est pas visible (dans la méthode `ViewWillDisappear` :
+Il est recommandé de suspendre la session ARKit quand le contrôleur d’affichage n’est pas visible (dans la `ViewWillDisappear` méthode :
 
 ```csharp
 SceneView.Session.Pause();
 ```
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
-Le code ci-dessus génère une application ARKit simple. Des exemples plus complexes s’attendent à ce que le contrôleur d’affichage hébergeant la session de réalité augmentée pour implémenter `IARSCNViewDelegate`, et que des méthodes supplémentaires soient implémentées.
+Le code ci-dessus génère une application ARKit simple. Des exemples plus complexes s’attendent à ce que le contrôleur d’affichage hébergeant la session de réalité augmentée à implémenter `IARSCNViewDelegate` et que des méthodes supplémentaires soient implémentées.
 
 ARKit fournit un grand nombre de fonctionnalités plus sophistiquées, telles que le suivi des surfaces et l’interaction avec l’utilisateur. Pour obtenir un exemple de combinaison de suivi ARKit avec UrhoSharp, consultez la [démonstration UrhoSharp](urhosharp.md) .
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Réalité augmentée (Apple)](https://developer.apple.com/arkit/)
 - [Utilisation de ARKit avec UrhoSharp](urhosharp.md)

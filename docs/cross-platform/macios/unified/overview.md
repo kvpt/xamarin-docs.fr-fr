@@ -6,12 +6,12 @@ ms.assetid: 5F0CEC18-5EF6-4A99-9DCF-1A3B57EA157C
 author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: 8402a48602dd94578e688faeb038aec69684e7d4
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: e683170b048be5ab5cc39fa8560c82916ead5d50
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79304337"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84570932"
 ---
 # <a name="unified-api-overview"></a>Présentation de API unifiée
 
@@ -41,12 +41,12 @@ Quelles que soient les applications que vous migrez, consultez [ces conseils](up
 
 À partir de ce point, nos API seront exposées de deux manières :
 
-- **API classique :** Limité à 32 bits (uniquement) et exposés dans les assemblys `monotouch.dll` et `XamMac.dll`.
-- **API unifiée :** Prenez en charge le développement 32 et 64 bits avec une seule API disponible dans les assemblys `Xamarin.iOS.dll` et `Xamarin.Mac.dll`.
+- **API classique :** Limité à 32 bits (uniquement) et exposés dans les `monotouch.dll` assemblys et `XamMac.dll` .
+- **API unifiée :** Prenez en charge le développement 32 et 64 bits avec une seule API disponible dans les `Xamarin.iOS.dll` `Xamarin.Mac.dll` assemblys et.
 
 Cela signifie que pour les développeurs d’entreprise (ne ciblant pas l’App Store), vous pouvez continuer à utiliser les API classiques existantes, car nous allons toujours les maintenir à l’infini, ou vous pouvez effectuer une mise à niveau vers les nouvelles API.
 
-<a name="namespace-changes" />
+<a name="namespace-changes"></a>
 
 ## <a name="namespace-changes"></a>Modifications des espaces de noms
 
@@ -56,7 +56,7 @@ Nous supprimons le préfixe « unitouch » de notre produit iOS et « MonoMac
 
 Il est ainsi plus simple de partager du code entre les plateformes Mac et iOS sans avoir recours à la compilation conditionnelle et réduira le bruit en haut de vos fichiers de code source.
 
-- **API classique :** Les espaces de noms utilisent `MonoTouch.` ou `MonoMac.` préfixe.
+- **API classique :** Les espaces de noms utilisent `MonoTouch.` ou `MonoMac.` prefix.
 - **API unifiée :** Aucun préfixe d’espace de noms
 
 ## <a name="runtime-defaults"></a>Valeurs par défaut du Runtime
@@ -67,7 +67,7 @@ Cela résout un certain nombre de problèmes que les développeurs ont rencontr�
 
 Notez qu’il est possible d’activer un nouveau refcount même pour le API classique, mais la valeur par défaut est conservatrice et ne nécessite pas que les utilisateurs effectuent des modifications. Avec la API unifiée, nous avons pris la possibilité de modifier la valeur par défaut et de fournir aux développeurs toutes les améliorations en même temps qu’ils refactorisaient et testent à nouveau leur code.
 
-## <a name="api-changes"></a>Modifications de l’API
+## <a name="api-changes"></a>Modifications d’API
 
 Le API unifiée supprime les méthodes déconseillées et il existe quelques cas où il y avait des fautes de frappe dans les noms d’API lorsqu’ils étaient liés aux espaces de noms monotactiles et MonoMac d’origine dans les API classiques. Ces instances ont été corrigées dans les nouvelles API unifiées et devront être mises à jour dans vos applications de composant, iOS et Mac. Voici la liste des éléments les plus courants que vous pouvez rencontrer :
 
@@ -84,7 +84,7 @@ Pour obtenir une liste complète des modifications apportées lors du passage du
 
 ## <a name="updating-to-unified"></a>Mise à jour vers Unified
 
-Plusieurs API obsolètes/cassées/déconseillées dans **Classic** ne sont pas disponibles dans l’API **unifiée** . Il peut être plus facile de corriger les avertissements `CS0616` avant de commencer la mise à niveau (manuelle ou automatique) puisque le message d’attribut `[Obsolete]` (une partie de l’avertissement) vous guide vers l’API appropriée.
+Plusieurs API obsolètes/cassées/déconseillées dans **Classic** ne sont pas disponibles dans l’API **unifiée** . Il peut être plus facile de corriger les `CS0616` avertissements avant de commencer la mise à niveau (manuelle ou automatisée) puisque vous aurez le `[Obsolete]` message d’attribut (une partie de l’avertissement) pour vous guider vers l’API appropriée.
 
 Notez que nous publions une [*différence*](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/ios/api_changes/classic-vs-unified-8.6.0/index.md) entre les modifications de l’API unifiée vs classiques qui peuvent être utilisées avant ou après les mises à jour de votre projet. La résolution continue des appels obsolètes dans Classic est souvent un économiseur de temps (moins de recherches dans la documentation).
 
@@ -104,17 +104,17 @@ Le API unifiée introduit un nouvel identificateur de plateforme pour les packag
 
 Pour plus d’informations sur la prise en charge des applications 32 et 64 bits et des informations sur les frameworks, voir considérations sur la [plateforme 32 et 64 bits](~/cross-platform/macios/32-and-64/index.md).
 
- <a name="new-data-types" />
+ <a name="new-data-types"></a>
 
 #### <a name="new-data-types"></a>Nouveaux types de données
 
 Au cœur de la différence, les API Mac et iOS utilisent des types de données spécifiques à l’architecture qui sont toujours 32 bits sur les plateformes 32 bits et 64 bits sur les plateformes 64 bits.
 
-Par exemple, Objective-C mappe le type de données `NSInteger` à `int32_t` sur des systèmes bits 32 et à `int64_t` sur des systèmes bits 64.
+Par exemple, Objective-C mappe le `NSInteger` type de données `int32_t` sur sur les systèmes bits 32 et sur les `int64_t` systèmes 64 bits.
 
-Pour correspondre à ce comportement, sur notre API unifiée, nous remplaçons les utilisations précédentes de `int` (qui, dans .NET, sont définies comme toujours `System.Int32`) à un nouveau type de données : `System.nint`.  Vous pouvez considérer « n » comme « native », donc le type d’entier natif de la plateforme.
+Pour correspondre à ce comportement, sur notre API unifiée, nous remplaçons les utilisations précédentes de `int` (qui dans .net est définie comme toujours `System.Int32` ) à un nouveau type de données : `System.nint` .  Vous pouvez considérer « n » comme « native », donc le type d’entier natif de la plateforme.
 
-Nous introduisons `nint`, `nuint` et `nfloat` et fournissons des types de données basés sur eux, le cas échéant.
+Nous introduisons `nint` `nuint` et `nfloat` fournissons également des types de données qui s’appuient sur eux, le cas échéant.
 
 Pour en savoir plus sur ces modifications de types de données, consultez le document [types natifs](~/cross-platform/macios/nativetypes.md) .
 
@@ -130,11 +130,11 @@ if (IntPtr.Size == 4) {
 }
 ```
 
-<a name="deprecated-apis" />
+<a name="deprecated-apis"></a>
 
 ### <a name="arrays-and-systemcollectionsgeneric"></a>Tableaux et System. Collections. Generic
 
-Étant C# donné que les indexeurs attendent un type de `int`, vous devez convertir explicitement `nint` valeurs en `int` pour accéder aux éléments d’une collection ou d’un tableau. Par exemple :
+Étant donné que les indexeurs C# attendent un type de `int` , vous devrez effectuer un cast explicite des `nint` valeurs vers `int` pour accéder aux éléments d’une collection ou d’un tableau. Par exemple :
 
 ```csharp
 public List<string> Names = new List<string>();
@@ -146,7 +146,7 @@ public string GetName(nint index) {
 
 ```
 
-Ce comportement est attendu, car le cast de `int` en `nint` est perdu sur 64 bits, aucune conversion implicite n’est effectuée.
+Ce comportement est attendu, car le cast de `int` en `nint` est perdu sur 64 bit, une conversion implicite n’est pas effectuée.
 
 ### <a name="converting-datetime-to-nsdate"></a>Conversion de DateTime en NSDate
 
@@ -174,27 +174,27 @@ public static NSDate DateTimeToNSDate(this DateTime date)
 
 ```
 
-<a name="deprecated-typos" />
+<a name="deprecated-typos"></a>
 
 ### <a name="deprecated-apis-and-typos"></a>API déconseillées et fautes de frappe
 
-À l’intérieur de l’API classique Xamarin. iOS (MonoTouch. dll), l’attribut `[Obsolete]` a été utilisé de deux manières différentes :
+Dans l’API classique Xamarin. iOS, l' `[Obsolete]` attribut a été utilisé de deux manières différentes :
 
 - **API iOS déconseillée :** C’est le cas lorsqu’Apple vous indique d’arrêter d’utiliser une API, car elle est remplacée par une version plus récente. Le API classique est toujours parfait et souvent requis (si vous prenez en charge l’ancienne version d’iOS).
- Ces API (et l’attribut `[Obsolete]`) sont incluses dans les nouveaux assemblys Xamarin. iOS.
+ Ces API (et l' `[Obsolete]` attribut) sont incluses dans les nouveaux assemblys Xamarin. iOS.
 - **API incorrecte** Certaines API avaient des fautes de frappe sur leurs noms.
 
 Pour les assemblys d’origine (MonoTouch. dll et XamMac. dll), nous avons conservé l’ancien code disponible pour la compatibilité, mais ils ont été supprimés de la API unifiée assemblys (Xamarin. iOS. dll et Xamarin. Mac).
 
-<a name="NSObject_ctor" />
+<a name="NSObject_ctor"></a>
 
 ### <a name="nsobject-subclasses-ctorintptr"></a>NSObject sous-classes. ctor (IntPtr)
 
-Chaque sous-classe `NSObject` a un constructeur qui accepte une `IntPtr`. C’est ainsi que nous pouvons instancier une nouvelle instance gérée à partir d’un handle ObjC natif.
+Chaque `NSObject` sous-classe a un constructeur qui accepte un `IntPtr` . C’est ainsi que nous pouvons instancier une nouvelle instance gérée à partir d’un handle ObjC natif.
 
-Dans le modèle classique, il s’agissait d’un constructeur `public`. Toutefois, il était facile d’utiliser cette fonctionnalité dans le code utilisateur, par exemple la création de plusieurs instances gérées pour une instance ObjC unique *ou* la création d’une instance gérée qui n’aurait pas l’état managé attendu (pour les sous-classes).
+Dans le modèle classique, il s’agissait d’un `public` constructeur. Toutefois, il était facile d’utiliser cette fonctionnalité dans le code utilisateur, par exemple la création de plusieurs instances gérées pour une instance ObjC unique *ou* la création d’une instance gérée qui n’aurait pas l’état managé attendu (pour les sous-classes).
 
-Pour éviter ces types de problèmes, les constructeurs `IntPtr` sont désormais `protected` dans l’API **unifiée** , à utiliser uniquement pour la sous-classe. Cela permet de s’assurer que l’API correcte/sécurisée est utilisée pour créer une instance gérée à partir de handles, c.-à-d.
+Pour éviter ces types de problèmes `IntPtr` , les constructeurs sont désormais `protected` dans une API **unifiée** , à utiliser uniquement pour la sous-classe. Cela permet de s’assurer que l’API correcte/sécurisée est utilisée pour créer une instance gérée à partir de handles, c.-à-d.
 
 ```csharp
 var label = Runtime.GetNSObject<UILabel> (handle);
@@ -202,13 +202,13 @@ var label = Runtime.GetNSObject<UILabel> (handle);
 
 Cette API retourne une instance gérée existante (si elle existe déjà) ou en crée une (si nécessaire). Il est déjà disponible dans les API classiques et unifiées.
 
-Notez que le `.ctor(NSObjectFlag)` est désormais également `protected`, mais celui-ci était rarement utilisé en dehors de la sous-classe.
+Notez que le `.ctor(NSObjectFlag)` est maintenant également, `protected` mais il était rarement utilisé en dehors de la sous-classe.
 
-<a name="NSAction" />
+<a name="NSAction"></a>
 
 ### <a name="nsaction-replaced-with-action"></a>NSAction remplacé par action
 
-Avec les API unifiées, `NSAction` a été supprimé en faveur du `Action`.NET standard. Il s’agit d’une amélioration importante, car `Action` est un type .NET courant, tandis que `NSAction` était spécifique à Xamarin. iOS. Ils font tous les deux exactement la même chose, mais ils ont des types distincts et incompatibles et ont entraîné l’écriture d’un plus grand nombre de code pour obtenir le même résultat.
+Avec les API unifiées, `NSAction` a été supprimé en faveur de .NET standard `Action` . Il s’agit d’une amélioration importante, car `Action` est un type .net courant, alors que `NSAction` était spécifique à Xamarin. iOS. Ils font tous les deux exactement la même chose, mais ils ont des types distincts et incompatibles et ont entraîné l’écriture d’un plus grand nombre de code pour obtenir le même résultat.
 
 Par exemple, si votre application Xamarin existante incluait le code suivant :
 
@@ -224,27 +224,27 @@ Il peut désormais être remplacé par une expression lambda simple :
 UITapGestureRecognizer singleTap = new UITapGestureRecognizer (() => ShowDropDownAnimated(tblDataView));
 ```
 
-Auparavant, il s’agit d’une erreur du compilateur, car une `Action` ne peut pas être assignée à `NSAction`, mais dans la mesure où `UITapGestureRecognizer` prend maintenant un `Action` au lieu d’un `NSAction` il est valide dans les API unifiées.
+Auparavant, il s’agit d’une erreur du compilateur, car une `Action` ne peut pas être assignée à `NSAction` , mais depuis que `UITapGestureRecognizer` prend maintenant un `Action` au lieu d’un, `NSAction` il est valide dans les API unifiées.
 
-### <a name="custom-delegates-replaced-with-actiont"></a>Délégués personnalisés remplacés par l’action\<T >
+### <a name="custom-delegates-replaced-with-actiont"></a>Délégués personnalisés remplacés par l’action\<T>
 
-Dans **Unified** some simple (par exemple, un paramètre), les délégués .net ont été remplacés par `Action<T>`. Par exemple,
+Dans **Unified** some simple (par exemple, un paramètre), les délégués .net ont été remplacés par `Action<T>` . Par exemple,
 
 ```csharp
 public delegate void NSNotificationHandler (NSNotification notification);
 ```
 
-peut maintenant être utilisé comme `Action<NSNotification>`. Cela favorise la réutilisation du code et réduit la duplication du code à la fois dans Xamarin. iOS et vos propres applications.
+peut maintenant être utilisé en tant que `Action<NSNotification>` . Cela favorise la réutilisation du code et réduit la duplication du code à la fois dans Xamarin. iOS et vos propres applications.
 
-### <a name="taskbool-replaced-with-taskbooleannserror"></a>La tâche\<bool > remplacée par Task < Boolean, NSError > >
+### <a name="taskbool-replaced-with-taskbooleannserror"></a>Tâche \<bool> remplacée par task<Boolean, NSError>>
 
-Dans le modèle **classique** , certaines API Async retournent `Task<bool>`. Toutefois, certaines d’entre elles où doivent être utilisées lorsqu’un `NSError` faisait partie de la signature, c’est-à-dire que le `bool` était déjà `true` et que vous deviez intercepter une exception pour récupérer le `NSError`.
+En mode **classique** , certaines API Async retournent `Task<bool>` . Toutefois, certaines d’entre elles doivent être utilisées quand un `NSError` faisait partie de la signature, c.-à-d. `bool` que a déjà été `true` et que vous deviez intercepter une exception pour récupérer `NSError` .
 
-Étant donné que certaines erreurs sont très courantes et que la valeur de retour n’est pas utile, ce modèle a été modifié dans **Unified** pour retourner un `Task<Tuple<Boolean,NSError>>`. Cela vous permet de vérifier à la fois la réussite et toute erreur qui peut s’être produite pendant l’appel asynchrone.
+Étant donné que certaines erreurs sont très courantes et que la valeur de retour n’est pas utile, ce modèle a été modifié dans **Unified** pour retourner un `Task<Tuple<Boolean,NSError>>` . Cela vous permet de vérifier à la fois la réussite et toute erreur qui peut s’être produite pendant l’appel asynchrone.
 
 ### <a name="nsstring-vs-string"></a>Chaîne NSString et chaîne
 
-Dans certains cas, certaines constantes devaient être modifiées de `string` à `NSString`, par exemple `UITableViewCell`
+Dans certains cas, certaines constantes devaient être modifiées de `string` en `NSString` , par exemple`UITableViewCell`
 
 **Classique**
 
@@ -258,13 +258,13 @@ public virtual string ReuseIdentifier { get; }
 public virtual NSString ReuseIdentifier { get; }
 ```
 
-En général, nous préférons le type de `System.String` .NET. Toutefois, malgré les instructions Apple, certaines API natives sont en comparant des pointeurs constants (pas la chaîne elle-même) et cela ne fonctionne que lorsque nous exposez les constantes comme `NSString`.
+En général, nous préférons le `System.String` type .net. Toutefois, malgré les instructions Apple, certaines API natives sont en comparant des pointeurs constants (pas la chaîne elle-même) et cela ne fonctionne que lorsque nous exposez les constantes comme `NSString` .
 
- <a name="protocols" />
+ <a name="protocols"></a>
 
 ### <a name="objective-c-protocols"></a>Protocoles objective-C
 
-Le monocontact d’origine n’offrait pas de prise en charge complète des protocoles ObjC et certaines API non optimales ont été ajoutées pour prendre en charge le scénario le plus courant. Cette limitation n’existe plus, mais, pour des raisons de compatibilité descendante, plusieurs API sont conservées dans `monotouch.dll` et `XamMac.dll`.
+Le monocontact d’origine n’offrait pas de prise en charge complète des protocoles ObjC et certaines API non optimales ont été ajoutées pour prendre en charge le scénario le plus courant. Cette limitation n’existe plus, mais, pour des raisons de compatibilité descendante, plusieurs API sont conservées à l’intérieur `monotouch.dll` et `XamMac.dll` .
 
 Ces limitations ont été supprimées et nettoyées sur les API unifiées. La plupart des modifications se présentent comme suit :
 
@@ -280,7 +280,7 @@ public virtual AVAssetResourceLoaderDelegate Delegate { get; }
 public virtual IAVAssetResourceLoaderDelegate Delegate { get; }
 ```
 
-Le préfixe `I` signifie que l’interface **unifiée** expose une interface, au lieu d’un type spécifique, pour le protocole objc. Cela facilite les cas où vous ne souhaitez pas sous-classer le type spécifique fourni par Xamarin. iOS.
+Le `I` préfixe signifie que la méthode **Unified** expose une interface, au lieu d’un type spécifique, pour le protocole objc. Cela facilite les cas où vous ne souhaitez pas sous-classer le type spécifique fourni par Xamarin. iOS.
 
 Il permettait également à certaines API d’être plus précises et faciles à utiliser, par exemple :
 
@@ -300,10 +300,10 @@ De telles API sont désormais plus faciles à nous, sans référence à la docum
 
 #### <a name="nscoding-protocol"></a>Protocole NSCoding
 
-Notre liaison d’origine incluait un. ctor (NSCoder) pour chaque type, même s’il ne prenait pas en charge le protocole `NSCoding`.  Une méthode `Encode(NSCoder)` unique était présente dans la `NSObject` pour encoder l’objet.
+Notre liaison d’origine incluait un. ctor (NSCoder) pour chaque type, même s’il ne prenait pas en charge le `NSCoding` protocole.  Une `Encode(NSCoder)` méthode unique était présente dans le `NSObject` pour encoder l’objet.
 Toutefois, cette méthode fonctionne uniquement si l’instance est conforme au protocole NSCoding.
 
-Sur le API unifiée nous avons résolu ce problème.  Les nouveaux assemblys auront uniquement la `.ctor(NSCoder)` si le type est conforme à `NSCoding`. De même, ces types disposent désormais d’une méthode `Encode(NSCoder)` qui est conforme à l’interface `INSCoding`.
+Sur le API unifiée nous avons résolu ce problème.  Les nouveaux assemblys auront uniquement la `.ctor(NSCoder)` valeur si le type est conforme à `NSCoding` . De même, ces types disposent désormais d’une `Encode(NSCoder)` méthode qui est conforme à l' `INSCoding` interface.
 
 Impact faible : dans la plupart des cas, cette modification n’affecte pas les applications pour lesquelles les constructeurs anciens et supprimés n’ont pas pu être utilisés.
 

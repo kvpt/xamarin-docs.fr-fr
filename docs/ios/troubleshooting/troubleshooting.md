@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/22/2018
-ms.openlocfilehash: 716999002cf90b50b90f4924adc11555cc43717f
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 6368c3a4b128c06687b23b965b308ad6a788188b
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79304736"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574485"
 ---
 # <a name="troubleshooting-tips-for-xamarinios"></a>Conseils de dépannage pour Xamarin. iOS
 
@@ -45,7 +45,7 @@ Vous utilisez peut-être un encodage qui n’est pas ajouté par défaut. Consul
 
 Le membre a probablement été supprimé par l’éditeur de liens et, par conséquent, il n’existe pas dans l’assembly au moment de l’exécution.  Il existe plusieurs solutions à ce qui suit :
 
-- Ajoutez l’attribut [`[Preserve]`](http://www.go-mono.com/docs/index.aspx?link=T:MonoTouch.Foundation.PreserveAttribute) au membre.  Cela empêchera l’éditeur de liens de le supprimer.
+- Ajoutez l' [`[Preserve]`](http://www.go-mono.com/docs/index.aspx?link=T:MonoTouch.Foundation.PreserveAttribute) attribut au membre.  Cela empêchera l’éditeur de liens de le supprimer.
 - Quand vous appelez [**mTouch**](http://www.go-mono.com/docs/index.aspx?link=man:mtouch%281%29), utilisez les options **-nolink** ou **-linksdkonly** :
   - **-nolink** désactive toutes les liaisons.
   - **-linksdkonly** lie uniquement les assemblys fournis par Xamarin. iOS, tels que **Xamarin. iOS. dll**, tout en conservant tous les types dans les assemblys créés par l’utilisateur (IE. vos projets d’application).
@@ -72,7 +72,7 @@ TypeName XXXX {
 }
 ```
 
-La définition ci-dessus est générée automatiquement par Visual Studio pour Mac pour tous les fichiers XIB que vous ajoutez à Visual Studio pour Mac dans le fichier `NAME_OF_YOUR_XIB_FILE.designer.xib.cs`.
+La définition ci-dessus est générée automatiquement par Visual Studio pour Mac pour tous les fichiers XIB que vous ajoutez à Visual Studio pour Mac dans le `NAME_OF_YOUR_XIB_FILE.designer.xib.cs` fichier.
 
 En outre, les types contenant le code ci-dessus doivent être une sous-classe de [NSObject](xref:Foundation.NSObject).  Si le type conteneur se trouve dans un espace de noms, il doit également avoir un attribut [[register]](xref:Foundation.RegisterAttribute) qui fournit un nom de type sans espace de noms (comme interface Builder ne prend pas en charge les espaces de noms dans les types) :
 
@@ -88,7 +88,7 @@ namespace Samples.GLPaint {
 
 ## <a name="unknown-class-xxxx-in-interface-builder-file"></a>Classe inconnue XXXX dans le fichier Interface Builder
 
-Cette erreur est générée si vous définissez une classe dans vos fichiers de générateur d’interface, mais que vous ne fournissez pas l’implémentation C# réelle de celle-ci dans votre code.
+Cette erreur est générée si vous définissez une classe dans vos fichiers de générateur d’interface, mais que vous ne fournissez pas l’implémentation réelle de celle-ci dans votre code C#.
 
 Vous devez ajouter du code tel que celui-ci :
 
@@ -110,21 +110,21 @@ Pour résoudre ce problème, ajoutez la ligne de code suivante à la classe foo.
 public Bar (IntPtr handle) : base (handle) { }
 ```
 
-## <a name="type-foo--does-not-contain-a-definition-for-getnativefield-and-no-extension-method-getnativefield-of-type-foo-could-be-found"></a>Le type {foo} ne contient pas de définition pour `GetNativeField` et aucune méthode d’extension `GetNativeField` de type {foo} n’a été trouvée
+## <a name="type-foo--does-not-contain-a-definition-for-getnativefield-and-no-extension-method-getnativefield-of-type-foo-could-be-found"></a>Le type {foo} ne contient pas de définition pour `GetNativeField` et aucune méthode `GetNativeField` d’extension de type {foo} n’a été trouvée
 
 Si vous recevez cette erreur dans les fichiers générés par le concepteur (*. xib.designer.cs), cela signifie l’un des deux éléments suivants :
 
  **1) la classe partielle ou la classe de base est manquante**
 
-Les classes partielles générées par le concepteur doivent avoir des classes partielles correspondantes dans le code utilisateur qui héritent d’une sous-classe de `NSObject`, souvent `UIViewController`. Vérifiez que vous disposez d’une telle classe pour le type qui donne l’erreur.
+Les classes partielles générées par le concepteur doivent avoir des classes partielles correspondantes dans le code utilisateur qui héritent de certaines sous-classes de `NSObject` , souvent `UIViewController` . Vérifiez que vous disposez d’une telle classe pour le type qui donne l’erreur.
 
  **2) les espaces de noms par défaut ont été modifiés**
 
 Les fichiers de concepteur sont générés à l’aide des paramètres d’espace de noms par défaut de votre projet. Si vous avez modifié ces paramètres ou renommé le projet, les classes partielles générées peuvent ne plus figurer dans le même espace de noms que leurs équivalents de code utilisateur.
 
-Les paramètres d’espace de noms se trouvent dans la boîte de dialogue Options du projet. L’espace de noms par défaut se trouve dans la section **général-> paramètres principaux** . Si elle est vide, le nom de votre projet est utilisé comme valeur par défaut. Vous trouverez des paramètres d’espace de noms plus avancés dans la section **code source-> les stratégies de nommage .net** .
+Les paramètres d’espace de noms se trouvent dans la boîte de dialogue Options du projet. L’espace de noms par défaut se trouve dans la section **général->paramètres principaux** . Si elle est vide, le nom de votre projet est utilisé comme valeur par défaut. Vous trouverez des paramètres d’espace de noms plus avancés dans la section **code source-> les stratégies de nommage .net** .
 
-## <a name="warning-for-actions-the-private-method-foo-is-never-used-cs0169"></a>Avertissement pour les actions : la méthode privée’foo’n’est jamais utilisée. (CS0169)
+## <a name="warning-for-actions-the-private-method-foo-is-never-used-cs0169"></a>Avertissement pour les actions : la méthode privée’foo’n’est jamais utilisée. CS0169
 
 Les actions des fichiers d’interface Builder sont connectées aux widgets par réflexion au moment de l’exécution, ce qui signifie que cet avertissement est attendu.
 
@@ -142,11 +142,11 @@ Cela se produit lorsque vous effectuez toutes les opérations suivantes :
 1. Utiliser Mac OS X Leopard (10,5)
 1. Exécutez votre application dans le simulateur.
 
-Le problème est que mono sélectionne le système d’exploitation OS X `libsqlite3.dylib`, et non le fichier de `libsqlite3.dylib` du Iphonesimulator dans. Votre application fonctionnera sur l’appareil, mais ce n' *est* pas votre simulateur.
+Le problème est que mono sélectionne le système d’exploitation X `libsqlite3.dylib` , et non le fichier de iphonesimulator dans `libsqlite3.dylib` . Votre application fonctionnera sur l’appareil, mais ce n' *est* pas votre simulateur.
 
 ## <a name="deploy-to-device-fails-with-systemexception-amdeviceinstallapplication-returned-3892346901"></a>Le déploiement sur l’appareil échoue avec System. exception : AMDeviceInstallApplication a retourné 3892346901
 
-Cette erreur signifie que la configuration de la signature de code de votre certificat/ID de lot ne correspond pas au profil d’approvisionnement installé sur votre appareil.  Vérifiez que vous avez sélectionné le certificat approprié dans options du projet-> signature de l’offre groupée et l’ID d’ensemble correct spécifié dans options du projet-> application iPhone
+Cette erreur signifie que la configuration de la signature de code de votre certificat/ID de lot ne correspond pas au profil d’approvisionnement installé sur votre appareil.  Vérifiez que vous avez sélectionné le certificat approprié dans options du projet->signature de l’offre groupée et l’ID d’ensemble correct spécifié dans options du projet->application iPhone
 
 ## <a name="code-completion-is-not-working-in-visual-studio-for-mac"></a>La saisie semi-automatique du code ne fonctionne pas dans Visual Studio pour Mac
 
@@ -188,7 +188,7 @@ Cela signifie que vous liez une bibliothèque statique compilée avec du code Th
 
 ## <a name="systemexecutionengineexception-attempting-to-jit-compile-method-wrapper-managed-to-managed-foosystemcollectionsgenericicollection1get_count-"></a>System. ExecutionEngineException : tentative de compilation de la méthode JIT (wrapper managé à managé) foo [] : System. Collections. Generic. ICollection' 1. get_Count ()
 
-Le suffixe [] indique que vous ou la bibliothèque de classes appelez une méthode sur un tableau par le biais d’une collection générique, telle que IEnumerable < >, ICollection < > ou IList < >. En guise de solution de contournement, vous pouvez forcer explicitement le compilateur AOA à inclure une telle méthode en appelant la méthode vous-même et en vous assurant que ce code est exécuté avant l’appel qui a déclenché l’exception. Dans ce cas, vous pouvez écrire :
+Le suffixe [] indique que vous ou la bibliothèque de classes appelez une méthode sur un tableau par le biais d’une collection générique, telle que IEnumerable<>, ICollection<> ou IList<>. En guise de solution de contournement, vous pouvez forcer explicitement le compilateur AOA à inclure une telle méthode en appelant la méthode vous-même et en vous assurant que ce code est exécuté avant l’appel qui a déclenché l’exception. Dans ce cas, vous pouvez écrire :
 
 ```csharp
 Foo [] array = null;
@@ -227,7 +227,7 @@ Les programmes d’installation mono et Xamarin. iOS se bloquent si le simulateu
 
 Veillez à quitter le simulateur iPhone, puis recommencez l’installation.
 
-<a name="trampolines" />
+<a name="trampolines"></a>
 
 ## <a name="ran-out-of-trampolines-of-type-0"></a>Trampolines de type 0 insuffisant
 
@@ -353,16 +353,16 @@ Pour résoudre ce problème, vous devez conserver une référence à « actionS
 
 Le programme d’installation de iPhone SDK 4,0 installe 2 SDK, le kit de développement logiciel (SDK) 3,2, pour la création d’applications iPad uniquement et le kit de développement logiciel (SDK) 4,0, utilisé pour générer iPhone et des applications universelles. Il installe également un simulateur 3,2, qui simule uniquement un iPad et un simulateur 4,0 qui simule iPhone ou iPhone 4. Tous les anciens SDK et simulateurs sont supprimés.
 
-Visual Studio pour Mac options de génération de projet iPhone incluent un paramètre pour la version du kit de développement logiciel (SDK) qui sera utilisé dans la génération de votre application. Ce paramètre se trouve dans **Options du projet-> Build-> iPhone Build**.
+Visual Studio pour Mac options de génération de projet iPhone incluent un paramètre pour la version du kit de développement logiciel (SDK) qui sera utilisé dans la génération de votre application. Ce paramètre se trouve dans **Options du projet->Build->iPhone Build**.
 
 Les nouveaux projets dans Visual Studio pour Mac utilisent le kit de développement logiciel (SDK) installé le plus ancien comme paramètre du kit de développement logiciel (SDK) par défaut, et si le kit de développement logiciel (SDK) spécifié n’existe pas, Visual Studio pour Mac utilise le plus proche qu’il peut trouver pour générer votre application. Cela a été fait afin que les projets ne nécessitent pas toujours le dernier Kit de développement logiciel (SDK). Toutefois, cela entraîne actuellement l’utilisation du kit de développement logiciel (SDK) 3,2, ce qui entraîne l’utilisation du simulateur iPad.
 
-Pour résoudre ce problème à l’aide du kit de développement logiciel (SDK) 4,0, accédez à **Project options-> Build-> iPhone build**> et remplacez la valeur du kit de développement logiciel par « 4,0 » à l’aide de la zone de liste déroulante. Vous devez effectuer cette opération pour chaque combinaison de configuration et de plateforme, accessible à l’aide des listes déroulantes en haut du panneau.
+Pour résoudre ce problème à l’aide du kit de développement logiciel (SDK) 4,0, accédez à **Project options->Build->iPhone build**> et remplacez la valeur du kit de développement logiciel par « 4,0 » à l’aide de la zone de liste déroulante. Vous devez effectuer cette opération pour chaque combinaison de configuration et de plateforme, accessible à l’aide des listes déroulantes en haut du panneau.
 
 La version du kit de développement logiciel (SDK) ne doit pas être confondue avec le paramètre « version minimale du système d’exploitation ».
-Cette valeur ne doit pas nécessairement correspondre à la valeur de la version du kit de développement logiciel (SDK). elle affecte la version minimale du système d’exploitation sur lequel votre application sera installée, qui peut être antérieure à celle du kit de développement logiciel (SDK), tant que vous utilisez uniquement des API qui existent dans l’ancien système d’exploitation, ou que vous protégez l’utilisation des nouvelles ques. Vous devez la définir sur la version du système d’exploitation la plus ancienne sur laquelle vous testez votre application.
+Cette valeur ne doit pas nécessairement correspondre à la valeur de la version du kit de développement logiciel (SDK). elle affecte la version minimale du système d’exploitation sur lequel votre application sera installée, qui peut être plus ancienne que le kit de développement logiciel (SDK), tant que vous utilisez uniquement des API qui existent dans l’ancien système d’exploitation, ou Protégez l’utilisation des nouvelles fonctionnalités à l’aide Vous devez la définir sur la version du système d’exploitation la plus ancienne sur laquelle vous testez votre application.
 
-Notez également que le menu > **cible du simulateur > iPhone du projet**peut être utilisé pour sélectionner le simulateur qui est utilisé par défaut lors de l’exécution/du débogage d’un projet. En outre, le **> exécuter avec**> menu peut être utilisé pour choisir un simulateur spécifique avec lequel exécuter
+Notez également que le menu> **cible du simulateur >iPhone du projet** peut être utilisé pour sélectionner le simulateur qui est utilisé par défaut lors de l’exécution/du débogage d’un projet. En outre, le **>exécuter avec**> menu peut être utilisé pour choisir un simulateur spécifique avec lequel exécuter
 
 ## <a name="ibtool-returns-error-133"></a>ibtool retourne l’erreur 133
 
@@ -400,7 +400,7 @@ Cela est interdit en tant que nom d’exécutable dans CFBundleExecutable, même
 
 Cela est dû à la tentative d’ouverture des fichiers. XIB lorsque les variables d’environnement ne sont pas définies correctement. Cela ne doit pas se produire avec l’utilisation normale de Visual Studio pour Mac/Xamarin. iOS, et la réouverture Visual Studio pour Mac à partir de/applications doit résoudre le problème.
 
-Lorsque vous tentez de mettre à jour le logiciel et que ce message d’erreur s’affiche, envoyez un courrier électronique *support@xamarin.com*
+Lorsque vous tentez de mettre à jour le logiciel et que ce message d’erreur s’affiche, envoyez-nous un e-mail*support@xamarin.com*
 
 ## <a name="application-runs-on-simulator-but-fails-on-device"></a>L’application s’exécute sur le simulateur mais échoue sur l’appareil
 
@@ -410,6 +410,6 @@ Pour vérifier l’action de génération, cliquez avec le bouton droit sur le f
 
 ## <a name="systemnotsupportedexception-no-data-is-available-for-encoding-437"></a>System. NotSupportedException : aucune donnée n’est disponible pour l’encodage 437
 
-Lorsque vous incluez des bibliothèques tierces dans votre application Xamarin. iOS, vous pouvez obtenir une erreur au format « System. NotSupportedException : aucune donnée n’est disponible pour l’encodage 437 » lors de la tentative de compilation et d’exécution de l’application. Par exemple, les bibliothèques, telles que `Ionic.Zip.ZipFile`, peuvent lever cette exception pendant l’opération.
+Lorsque vous incluez des bibliothèques tierces dans votre application Xamarin. iOS, vous pouvez obtenir une erreur au format « System. NotSupportedException : aucune donnée n’est disponible pour l’encodage 437 » lors de la tentative de compilation et d’exécution de l’application. Par exemple, les bibliothèques, telles que `Ionic.Zip.ZipFile` , peuvent lever cette exception pendant l’opération.
 
-Cela peut être résolu en ouvrant les options du projet Xamarin. iOS, en accédant à **iOS Build** > **internationalisation** et en vérifiant l’internationalisation de l' **Ouest** .
+Cela peut être résolu en ouvrant les options du projet Xamarin. iOS, en accédant à **iOS Build**  >  **internationalisation** et en vérifiant l’internationalisation de l' **Ouest** .

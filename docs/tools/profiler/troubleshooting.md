@@ -6,12 +6,12 @@ ms.assetid: 0060E9D1-C003-4E4C-ADE8-B406978FE891
 author: davidortinau
 ms.author: daortin
 ms.date: 10/27/2017
-ms.openlocfilehash: 915f7df80e3ae29ab3c598ea95fabbc054e916dd
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 5b4b4bdf85ec79a46a4e4c06504eb8b9b85af329
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73019211"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84566955"
 ---
 # <a name="xamarin-profiler-troubleshooting"></a>Résolution des problèmes de Xamarin Profiler
 
@@ -25,21 +25,21 @@ L’équipe Xamarin peut faciliter le suivi des problèmes si vous nous fourniss
 
 ### <a name="getting-log-outputs"></a>Obtention des sorties de journal
 
-Les journaux Mac sont enregistrés dans `~/Library/Logs/Xamarin.Profiler/Profiler.<date>.log`.
+Sur les journaux Mac sont enregistrés dans `~/Library/Logs/Xamarin.Profiler/Profiler.<date>.log` .
 
-Sur Windows, ceux-ci sont enregistrés dans `%appdata%Local//Xamarin/Log/Xamarin.Profiler/Profiler.<date>.log` veuillez inclure le dernier journal chaque fois que vous soumettez un problème.
+Sur Windows, ceux-ci sont enregistrés pour `%appdata%Local//Xamarin/Log/Xamarin.Profiler/Profiler.<date>.log` inclure le dernier journal chaque fois que vous soumettez un problème.
 
 Nous ajoutons de la journalisation au fur et à mesure. cette sortie devrait donc croître et devenir plus utile dans le temps.
 
-<a name="gen_mlpd" />
+<a name="gen_mlpd"></a>
 
 ### <a name="generating-mlpd-files"></a>Génération de fichiers. MLPD
 
 Un fichier **. MLPD** est la sortie compressée du profileur de Runtime mono. L’interface utilisateur graphique Xamarin Profiler lit les données à partir d’un **. MLPD** et les affiche pour l’utilisateur. les fichiers **. MLPD** sont des outils de débogage utiles pour Xamarin, car ils aident nos ingénieurs à diagnostiquer les problèmes que le profileur peut avoir avec vos données.
 
-Le **. MLPD** pour la session active est automatiquement enregistré dans le répertoire `/tmp` de votre Mac et peut être identifié par l’horodateur. Si vous activez la journalisation, la première sortie correspond au chemin d’accès au fichier **. MLPD** . Le fichier **. MLPD** est normalement enregistré dans le répertoire à partir de ~/var/Folders...
+Le **. MLPD** pour la session active est automatiquement enregistré dans le répertoire de votre Mac `/tmp` et peut être identifié par l’horodateur. Si vous activez la journalisation, la première sortie correspond au chemin d’accès au fichier **. MLPD** . Le fichier **. MLPD** est normalement enregistré dans le répertoire à partir de ~/var/Folders...
 
-Vous pouvez également enregistrer le fichier **. MLPD** pour une session active en choisissant **fichier > Enregistrer sous...** dans le menu du profileur :
+Vous pouvez également enregistrer le fichier **. MLPD** pour une session active en choisissant **fichier > enregistrer sous...** dans le menu du profileur :
 
 **Visual Studio pour Mac**:
 
@@ -51,7 +51,7 @@ Vous pouvez également enregistrer le fichier **. MLPD** pour une session active
 
 Il est important de noter que **. MLPD** contient un grand nombre d’informations et que la taille du fichier est importante.
 
-## <a name="troubleshooting"></a>Résolution des problèmes
+## <a name="troubleshooting"></a>Dépannage
 
 La liste ci-dessous présente les pièges courants, les solutions de contournement et les trucs et astuces pour l’utilisation du profileur.
 
@@ -79,7 +79,7 @@ En règle générale, il est impossible de lancer le simulateur/émulateur. Essa
 
 #### <a name="to-watch-a-specific-thread"></a>Pour surveiller un thread spécifique
 
-Si vous avez un thread que vous souhaitez surveiller spécifiquement, il est idéal de nommer le thread au tout début de sa création pour obtenir `ThreadName` au lieu de `0x0`. Par exemple, pour définir le nom du thread comme `UI`, vous pouvez utiliser le code suivant :
+Si vous avez un thread que vous souhaitez surveiller spécifiquement, il est idéal de nommer le thread au tout début de sa création pour obtenir à la `ThreadName` place de `0x0` . Par exemple, pour définir le nom du thread en tant que `UI` , vous pouvez utiliser le code suivant :
 
 ```csharp
 RunOnUiThread (() => {
@@ -87,7 +87,7 @@ RunOnUiThread (() => {
 });
 ```
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Procédure pas à pas : utilisation de l’Xamarin Profiler](~/tools/profiler/index.md)
 - [Meilleures pratiques en matière de performances et de mémoire](~/cross-platform/deploy-test/memory-perf-best-practices.md)

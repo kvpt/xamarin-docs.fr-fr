@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2018
-ms.openlocfilehash: 5f0b72772a386aa71d4ceec25b88546930b06f4f
-ms.sourcegitcommit: 51006a4eed7bf99b563df6fc1cea9074d0218448
+ms.openlocfilehash: 2676565a62b4b9d4414e9a69737b287bcc992c0b
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "82166337"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84572011"
 ---
 # <a name="preparing-an-application-for-release"></a>Préparation d’une application pour la mise en production
 
@@ -35,7 +35,7 @@ Effectuez les étapes suivantes pour générer l’application à mettre en prod
 
 Chacune de ces étapes est décrite ci-dessous plus en détail.
 
-<a name="Specify_the_Application_Icon" />
+<a name="Specify_the_Application_Icon"></a>
 
 ## <a name="specify-the-application-icon"></a>Spécifier l’icône de l'application
 
@@ -43,7 +43,7 @@ Il est fortement recommandé de spécifier une icône d’application pour chaqu
 
 <!-- markdownlint-disable MD001 -->
 
-# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Dans Visual Studio 2017 et ultérieur, spécifiez l’icône de l’application via la section **Manifeste Android** des **Propriétés** du projet, comme illustré dans la capture d’écran suivante :
 
@@ -65,7 +65,7 @@ Dans ces exemples, `@drawable/icon` fait référence à un fichier d’icône qu
 
 Normalement, `using Android.App` est déclaré au niveau de la partie supérieure de **AssemblyInfo.cs** (l’espace de noms de l’attribut `Application` est `Android.App`) ; toutefois, vous devrez peut-être ajouter cette instruction `using` si elle n’est pas déjà présente.
 
-<a name="Versioning" />
+<a name="Versioning"></a>
 
 ## <a name="version-the-application"></a>Définir la version de l'application
 
@@ -75,7 +75,7 @@ La gestion de versions est un élément important de la maintenance et de la dis
 
 - **Nom de la version** &ndash; Chaîne qui est utilisée uniquement pour communiquer à l’utilisateur la version de l’application (tel qu’elle est installée sur un appareil spécifique). Le nom de la version est destiné à être affiché aux utilisateurs ou dans Google Play. Cette chaîne n’est pas utilisée en interne par Android. Le nom de la version peut être toute valeur de chaîne qui permet à un utilisateur d’identifier la build qui est installée sur son appareil. Cette valeur est stockée dans le fichier **AndroidManifest.xml** sous la forme `android:versionName`. 
 
-# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Dans Visual Studio, ces valeurs peuvent être définies dans la section **Manifeste Android** des **Propriétés** du projet, comme illustré dans la capture d’écran suivante :
 
@@ -89,7 +89,7 @@ Ces valeurs peuvent être définies dans la section **Générer > Application A
 
 -----
 
-<a name="shrink_apk" />
+<a name="shrink_apk"></a>
 
 ## <a name="shrink-the-apk"></a>Réduire l’APK
 
@@ -103,7 +103,7 @@ Le mode Mise en production désactive le runtime partagé et active la liaison a
 
 - Configuration : Assemblys de SDK uniquement &ndash; Xamarin.Android 4.2.5 Taille = 3,0 Mo.
 
-# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Définissez les options de l’éditeur de liens via la section **Options Android** des **Propriétés** du projet :
 
@@ -144,7 +144,7 @@ ProGuard n’est pas une alternative à l’éditeur de liens Xamarin.Android. L
 
 Si **Activer ProGuard** est activé, Xamarin.Android exécute l’outil ProGuard sur l’APK qui en résulte. Un fichier de configuration ProGuard est généré et utilisé par ProGuard au moment de la génération. Xamarin.Android prend également en charge les actions de génération *ProguardConfiguration* personnalisées. Vous pouvez ajouter un fichier de configuration ProGuard personnalisé à votre projet, cliquer dessus avec le bouton droit et le sélectionner comme action de génération comme illustré dans cet exemple : 
 
-# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 [![Action de génération ProGuard](images/vs/05-proguard-build-action-sml.png)](images/vs/05-proguard-build-action.png#lightbox)
 
@@ -158,11 +158,11 @@ ProGuard est désactivé par défaut. L’option **Activer ProGuard** est dispon
 
 Pour plus d’informations sur l’utilisation de l’outil ProGuard, consultez [ProGuard](~/android/deploy-test/release-prep/proguard.md).
 
-<a name="protect_app" />
+<a name="protect_app"></a>
 
 ## <a name="protect-the-application"></a>Protéger l'application
 
-<a name="Disable_Debugging" />
+<a name="Disable_Debugging"></a>
 
 ### <a name="disable-debugging"></a>Désactiver le débogage
 
@@ -183,11 +183,11 @@ Le manifeste Android contient l’attribut `android:debuggable`, qui contrôle s
 
 Notez que les builds Debug définissent automatiquement certaines autorisations pour faciliter le débogage (comme **Internet** et **ReadExternalStorage**). Toutefois, les builds Debug n’utilisent que les autorisations que vous configurez explicitement. Si vous découvrez qu’en basculant vers la build de mise en production votre application perd une autorisation qui était disponible dans la build Debug, vérifiez que vous avez explicitement activé cette autorisation dans la liste **Autorisations nécessaires**, comme décrit dans [Autorisations](~/android/app-fundamentals/permissions.md). 
 
-<a name="dotfuscator" id="dotfuscator" />
+<a name="dotfuscator" id="dotfuscator"></a>
 
 ### <a name="application-protection-with-dotfuscator"></a>Protection des applications avec Dotfuscator
 
-# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Même lorsque le [débogage est désactivé](#Disable_Debugging), les pirates peuvent repackager une application, en ajoutant ou supprimant des options de configuration ou des autorisations. Ils peuvent alors rétroconcevoir, déboguer ou falsifier l’application.
 [Dotfuscator Community Edition (CE)](https://www.preemptive.com/products/dotfuscator/overview) peut être utilisé pour obfusquer le code managé et injecter du code de détection de l’état de sécurité à l’exécution dans une application Xamarin.Android au moment de la génération pour détecter et répondre si l’application s’exécute sur un appareil rooté.
@@ -208,17 +208,17 @@ Une fois configuré, Dotfuscator CE protégera automatiquement chaque build cré
 
 -----
 
-<a name="bundle" />
+<a name="bundle"></a>
 
 ### <a name="bundle-assemblies-into-native-code"></a>Regrouper les assemblys dans du code natif
 
-Lorsque cette option est activée, les assemblys sont regroupés dans une bibliothèque partagée native. Cela permet de compresser les assemblys, en `.apk` autorisant des fichiers plus petits. La compression d’assembly confère également une forme *minimale* d’obscurcissement ; ce brouillage ne doit pas être basé sur.
+Lorsque cette option est activée, les assemblys sont regroupés dans une bibliothèque partagée native. Cela permet de compresser les assemblys, en autorisant des fichiers plus petits `.apk` . La compression d’assembly confère également une forme *minimale* d’obscurcissement ; ce brouillage ne doit pas être basé sur.
 
 Cette option requiert une licence Entreprise et est disponible uniquement lorsque l’option **Utiliser Fast Deployment** est désactivée. **Regrouper les assemblys dans le code natif** est désactivé par défaut.
 
 Notez que l’option **Regrouper les assemblys dans le code natif** ne signifie *pas* que les assemblys sont compilés en code natif. Il n’est pas possible d’utiliser la [**compilation AOA**](#aot) pour compiler des assemblys en code natif.
 
-<a name="aot" />
+<a name="aot"></a>
 
 ### <a name="aot-compilation"></a>Compilation AOT
 
@@ -233,11 +233,11 @@ Le _compilateur d’optimisation LLVM_ crée du code compilé plus petit et plus
 > [!NOTE]
 > L’option **Compilateur d’optimisation LLVM** requiert une licence Entreprise.  
 
-<a name="Set_Packaging_Properties" />
+<a name="Set_Packaging_Properties"></a>
 
 ## <a name="set-packaging-properties"></a>Définir les propriétés de création de package
 
-# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Les propriétés de création de package peuvent être définies dans la section **Options Android** des **Propriétés** du projet, comme illustré dans la capture d’écran suivante :
 
@@ -273,17 +273,17 @@ Pour plus d’informations sur Multi-Dex, consultez [Configurer les applications
 
 Les offres groupées d’applications diffèrent de fichiers APK, car elles ne peuvent pas être déployées directement sur un appareil. Au lieu de cela, il s’agit d’un format qui est destiné à être téléchargé avec l’ensemble de votre code et de vos ressources compilées. Une fois que vous avez téléchargé votre offre groupée d’applications signées, Google Play disposera de tout ce dont il a besoin pour créer et signer les fichiers APK de votre application et les servir à vos utilisateurs à l’aide de la remise dynamique.
 
-Pour activer la prise en charge des lots d’applications Android, vous devez vous abonner à `bundle` la valeur de la propriété **format de package Android** dans vos options de projet Android. Avant de procéder à cette opération, assurez-vous de `Release` remplacer votre projet par une configuration, car les packages d’applications sont uniquement destinés aux packages de version.
+Pour activer la prise en charge des lots d’applications Android, vous devez vous abonner à la `bundle` valeur de la propriété **format de package Android** dans vos options de projet Android. Avant de procéder à cette opération, assurez-vous de remplacer votre projet par une `Release` configuration, car les packages d’applications sont uniquement destinés aux packages de version.
 
 Vous pouvez maintenant générer un bundle d’applications en suivant le [processus d’archivage](#archive). Une offre groupée d’applications est générée pour votre application.
 
 Pour plus d’informations sur les offres groupées d’applications Android, consultez [Bundle Apps App](https://developer.android.com/guide/app-bundle/).
 
-<a name="Compile" />
+<a name="Compile"></a>
 
 ## <a name="compile"></a>Compiler
 
-# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Une fois toutes les étapes ci-dessus terminées, l’application est prête à être compilée. Sélectionnez **Générer > Regénérer la solution** pour vérifier que l’application est correctement générée en mode Mise en production. Notez que cette étape ne produit pas encore un APK.
 
@@ -295,11 +295,11 @@ Une fois que toutes les étapes ci-dessus sont terminées, compilez l’applicat
 
 -----
 
-<a name="archive" />
+<a name="archive"></a>
 
 ## <a name="archive-for-publishing"></a>Archiver pour publication
 
-# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Pour commencer le processus de publication, cliquez avec le bouton droit sur le projet dans l’**Explorateur de solutions**, puis sélectionnez l’élément de menu contextuel **Archiver... ** :
 

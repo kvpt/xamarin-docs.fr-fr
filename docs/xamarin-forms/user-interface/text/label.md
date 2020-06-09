@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsNoms
-description: Cet article explique comment utiliser la Xamarin.Forms classe label pour afficher du texte sur une ou plusieurs lignes dans des applications.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 46ea0afd3df0490837eb00b837158a26c1e4e479
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136160"
+titre : « Xamarin.Forms étiquette » Description : « cet article explique comment utiliser la Xamarin.Forms classe label pour afficher du texte sur une ou plusieurs lignes dans des applications. »
+ms. Prod : xamarin ms. AssetID : 02E6C553-5670-49A0-8EE9-5153ED21EA91 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 04/09/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-label"></a>Xamarin.FormsNoms
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
@@ -54,7 +40,7 @@ Les captures d’écran suivantes montrent les `TextDecorations` membres de l’
 ![Étiquettes avec décorations de texte](label-images/label-textdecorations.png)
 
 > [!NOTE]
-> Les décorations de texte peuvent également être appliquées aux [`Span`](xref:Xamarin.Forms.Span) instances. Pour plus d’informations sur la `Span` classe, consultez [texte mis en forme](#Formatted_Text).
+> Les décorations de texte peuvent également être appliquées aux [`Span`](xref:Xamarin.Forms.Span) instances. Pour plus d’informations sur la `Span` classe, consultez [texte mis en forme](#formatted-text).
 
 ## <a name="character-spacing"></a>Espacement des caractères
 
@@ -147,8 +133,6 @@ Pour plus d’informations sur les couleurs, consultez [couleurs](~/xamarin-form
 
 Pour plus d’informations sur la spécification des polices sur un `Label` , consultez [polices](~/xamarin-forms/user-interface/text/fonts.md).
 
-<a name="Truncation_and_Wrapping" />
-
 ## <a name="truncation-and-wrapping"></a>Troncation et encapsulation
 
 Les étiquettes peuvent être définies pour gérer du texte qui ne peut pas tenir sur une ligne de plusieurs façons, exposées par la `LineBreakMode` propriété. [`LineBreakMode`](xref:Xamarin.Forms.LineBreakMode)est une énumération avec les valeurs suivantes :
@@ -235,8 +219,6 @@ Les captures d’écran suivantes montrent un [`Label`](xref:Xamarin.Forms.Label
 
 > [!IMPORTANT]
 > L’affichage du HTML dans un [`Label`](xref:Xamarin.Forms.Label) est limité aux balises HTML prises en charge par la plateforme sous-jacente.
-
-<a name="Formatted_Text" />
 
 ## <a name="formatted-text"></a>Texte mis en forme
 

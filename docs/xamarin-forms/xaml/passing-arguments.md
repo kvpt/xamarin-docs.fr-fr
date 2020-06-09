@@ -1,38 +1,22 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: f314f3145b3573184cb8cdf7370394c975c66859
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84127073"
+titre : « passage des arguments en XAML » Description : « cet article montre comment utiliser les attributs XAML qui peuvent être utilisés pour passer des arguments à des constructeurs non définis par défaut, pour appeler des méthodes de fabrique et pour spécifier le type d’un argument générique. »
+ms. Prod : xamarin ms. AssetID : 8F3B267F-499E-4D79-9193-FCA99F199519 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 10/25/2016 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="passing-arguments-in-xaml"></a>Passage d’arguments en XAML
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-passingconstructorarguments)
 
 _Cet article montre comment utiliser les attributs XAML qui peuvent être utilisés pour passer des arguments à des constructeurs non définis par défaut, pour appeler des méthodes de fabrique et pour spécifier le type d’un argument générique._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d’ensemble
 
 Il est souvent nécessaire d’instancier des objets avec des constructeurs qui requièrent des arguments, ou en appelant une méthode de création statique. Cela peut être effectué en XAML à l’aide `x:Arguments` des `x:FactoryMethod` attributs et :
 
-- L' `x:Arguments` attribut est utilisé pour spécifier des arguments de constructeur pour un constructeur non défini par défaut, ou pour une déclaration d’objet de méthode de fabrique. Pour plus d’informations, consultez [passage des arguments de constructeur](#constructor_arguments).
-- L' `x:FactoryMethod` attribut est utilisé pour spécifier une méthode de fabrique qui peut être utilisée pour initialiser un objet. Pour plus d’informations, consultez [appel des méthodes de fabrique](#factory_methods).
+- L' `x:Arguments` attribut est utilisé pour spécifier des arguments de constructeur pour un constructeur non défini par défaut, ou pour une déclaration d’objet de méthode de fabrique. Pour plus d’informations, consultez [passage des arguments de constructeur](#passing-constructor-arguments).
+- L' `x:FactoryMethod` attribut est utilisé pour spécifier une méthode de fabrique qui peut être utilisée pour initialiser un objet. Pour plus d’informations, consultez [appel des méthodes de fabrique](#calling-factory-methods).
 
-En outre, l' `x:TypeArguments` attribut peut être utilisé pour spécifier les arguments de type générique pour le constructeur d’un type générique. Pour plus d’informations, consultez [spécification d’un argument de type générique](#generic_type_arguments).
-
-<a name="constructor_arguments" />
+En outre, l' `x:TypeArguments` attribut peut être utilisé pour spécifier les arguments de type générique pour le constructeur d’un type générique. Pour plus d’informations, consultez [spécification d’un argument de type générique](#specifying-a-generic-type-argument).
 
 ## <a name="passing-constructor-arguments"></a>Passer des arguments de constructeur
 
@@ -96,8 +80,6 @@ Les captures d’écran suivantes montrent le résultat de l’appel de chaque [
 
 ![BoxView. Color spécifié avec x :Arguments](passing-arguments-images/passing-arguments.png)
 
-<a name="factory_methods" />
-
 ## <a name="calling-factory-methods"></a>Appel des méthodes de fabrique
 
 Les méthodes de fabrique peuvent être appelées en XAML en spécifiant le nom de la méthode à l’aide de l' `x:FactoryMethod` attribut et de ses arguments à l’aide de l' `x:Arguments` attribut. Une méthode de fabrique est une `public static` méthode qui retourne des objets ou des valeurs du même type que la classe ou la structure qui définit les méthodes.
@@ -145,8 +127,6 @@ Le nombre d’éléments dans la `x:Arguments` balise, ainsi que les types de ce
 Les captures d’écran suivantes montrent le résultat de l’appel de chaque [`Color`](xref:Xamarin.Forms.Color) méthode de fabrique avec les valeurs d’argument spécifiées :
 
 ![BoxView. Color spécifié avec x :FactoryMethod et x :Arguments](passing-arguments-images/factory-methods.png)
-
-<a name="generic_type_arguments" />
 
 ## <a name="specifying-a-generic-type-argument"></a>Spécification d’un argument de type générique
 

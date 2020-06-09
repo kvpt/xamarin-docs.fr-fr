@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/24/2017
-ms.openlocfilehash: 284705973f9c0ec606572170f7e927ed4745ddd1
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 263c48c5006ba0060756e1050497c38dfb7c8eae
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73030227"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84567773"
 ---
 # <a name="linking-xamarinios-apps"></a>Liaison d’applications Xamarin.iOS
 
@@ -22,7 +22,7 @@ L’éditeur de liens utilise l’analyse statique pour déterminer les différe
 
 Étant donné que l’éditeur de liens est un outil statique, il ne peut pas marquer les types et les méthodes d’inclusion appelés par la réflexion ou instanciés de manière dynamique. Il existe plusieurs options pour contourner cette limitation.
 
-<a name="Linker_Behavior" />
+<a name="Linker_Behavior"></a>
 
 ## <a name="linker-behavior"></a>Comportement de l'éditeur de liens
 
@@ -38,7 +38,7 @@ Le processus de liaison peut être personnalisé via le menu déroulant du compo
 
 Effectuez les actions suivantes :
 
-1. Cliquez à droite sur le nom du **projet** dans **l’explorer de solution** et sélectionnez **propriétés**:
+1. Cliquez avec le bouton droit sur le **nom du projet** dans la **Explorateur de solutions** et sélectionnez **Propriétés**:
 
     ![](linker-images/linking01w.png "Right-click on the Project Name in the Solution Explorer and select Properties")
 2. Dans les **Propriétés du projet**, sélectionnez **Build IOS** :
@@ -56,7 +56,7 @@ La désactivation de la liaison permet de garantir qu’aucun assembly n’est m
 
 Cela correspond à l’option *-nolink* durant l’utilisation de l’outil en ligne de commande mtouch.
 
-<a name="Link_SDK_assemblies_only" />
+<a name="Link_SDK_assemblies_only"></a>
 
 ### <a name="link-sdk-assemblies-only"></a>Lier les assemblys du Kit de développement logiciel uniquement
 
@@ -66,7 +66,7 @@ Il s’agit de l’option la plus simple, car elle ne nécessite pas de modifica
 
 Cela correspond à l’option *-linksdk* lors de l’utilisation de l’outil de ligne de commande mtouch.
 
-<a name="Link_all_assemblies" />
+<a name="Link_all_assemblies"></a>
 
 ### <a name="link-all-assemblies"></a>Lier tous les assemblys
 
@@ -74,13 +74,13 @@ Lors de la liaison de tous les éléments, l’éditeur de liens peut utiliser l
 
 Cela correspond à l’option *-linkall* lors de l’utilisation de l’outil de ligne de commande **mtouch**.
 
-<a name="Controlling_the_Linker" />
+<a name="Controlling_the_Linker"></a>
 
 ## <a name="controlling-the-linker"></a>Contrôle de l’éditeur de liens
 
 Lorsque vous utilisez l’éditeur de liens il peut parfois supprimer le code appelé dynamiquement, même indirectement. Pour couvrir ces cas, l’éditeur de liens fournit quelques fonctionnalités et options pour vous permettre un meilleur contrôle sur ses actions.
 
-<a name="Preserving_Code" />
+<a name="Preserving_Code"></a>
 
 ### <a name="preserving-code"></a>Conservation du code
 
@@ -108,7 +108,7 @@ public sealed class PreserveAttribute : System.Attribute {
 
 Le nom d’espace défini n’a pas beaucoup d’importance, l’éditeur de liens recherche cet attribut par nom de type.
 
- <a name="Skipping_Assemblies" />
+ <a name="Skipping_Assemblies"></a>
 
 ### <a name="skipping-assemblies"></a>Ignorer des assemblys
 
@@ -130,7 +130,7 @@ Si vous souhaitez que l’éditeur de liens ignore plusieurs assemblys, incluez 
 
 Aucune interface utilisateur n’utilise cette option, mais elle peut être fournie dans la boîte de dialogue Options de projet Visual Studio pour Mac ou le volet Propriétés de projet Visual Studio, dans le champ de texte **Arguments mtouch supplémentaires**. (Par exemple, *--linkskip=mscorlib* ne lie pas mscorlib.dll, mais lie d’autres assemblys dans la solution).
 
-<a name="Disabling_Link_Away" />
+<a name="Disabling_Link_Away"></a>
 
 ### <a name="disabling-link-away"></a>Désactivation de « Écarter »
 
@@ -146,7 +146,7 @@ Les utilisateurs peuvent sélectionner d’uniquement lier les assemblys du Kit 
 
 Cela se produit en général car ils ne souhaitent pas ajouter manuellement des attributs `[Preserve]` à leur code.  L’effet secondaire est que les bibliothèques tierces ne seront pas liées, il s’agit là en général d’une bonne valeur par défaut, car il n’est pas possible de savoir si une bibliothèque tierce est conviviale ou pas à l’éditeur de liens.
 
-Si vous avez une bibliothèque dans votre projet, ou si vous êtes un développeur de bibliothèques réutilisables et que vous [`LinkerSafe`](xref:Foundation.LinkerSafeAttribute)voulez que le linker traite votre assemblage comme liant, tout ce que vous avez à faire est d’ajouter l’attribut de niveau d’assemblage, comme ceci:
+Si vous avez une bibliothèque dans votre projet, ou si vous êtes un développeur de bibliothèques réutilisables et que vous souhaitez que l’éditeur de liens traite votre assembly comme pouvant être lié, il vous suffit d’ajouter l’attribut de niveau assembly [`LinkerSafe`](xref:Foundation.LinkerSafeAttribute) , comme suit :
 
 ```csharp
 [assembly:LinkerSafe]
@@ -167,6 +167,6 @@ Suivez les [instructions pour la création d’un fichier de configuration de l�
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Configuration De Linker personnalisée](~/cross-platform/deploy-test/linker.md)
+- [Configuration de l’éditeur de liens personnalisé](~/cross-platform/deploy-test/linker.md)
 - [Liaison sur Mac](~/mac/deploy-test/linker.md)
 - [Liaison sur Android](~/android/deploy-test/linker.md)

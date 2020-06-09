@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/18/2016
-ms.openlocfilehash: 31cae6d6770b4c8fc4ff722e67f4ddce8ffdd7c6
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2259566fc6342a40a8c0a94bacd1c146b6509d52
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73011304"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574156"
 ---
 # <a name="accessibility-on-ios"></a>Accessibilité sur iOS
 
@@ -21,9 +21,9 @@ Reportez-vous aux pages d’accessibilité [Android Accessibility](~/android/app
 
 ## <a name="describing-ui-elements"></a>Description des éléments d’interface utilisateur
 
-iOS fournit les propriétés `AccessibilityLabel` et `AccessibilityHint` permettant aux développeurs d’ajouter du texte descriptif qui peut être utilisé par le lecteur d’écran VoiceOver pour rendre les contrôles plus accessibles. Les contrôles peuvent également être marqués avec une ou plusieurs caractéristiques qui fournissent un contexte supplémentaire dans les modes accessibles.
+iOS fournit aux `AccessibilityLabel` développeurs les propriétés et pour `AccessibilityHint` Ajouter du texte descriptif qui peut être utilisé par le lecteur d’écran VoiceOver pour rendre les contrôles plus accessibles. Les contrôles peuvent également être marqués avec une ou plusieurs caractéristiques qui fournissent un contexte supplémentaire dans les modes accessibles.
 
-Certains contrôles peuvent ne pas avoir besoin d’être accessibles (par exemple, une étiquette sur une entrée de texte ou une image qui est purement décorative). le `IsAccessibilityElement` est fourni pour désactiver l’accessibilité dans ces cas-là.
+Certains contrôles peuvent ne pas avoir besoin d’être accessibles (par exemple, une étiquette sur une entrée de texte ou une image qui est purement décorative) `IsAccessibilityElement` . le est fourni pour désactiver l’accessibilité dans ces cas-là.
 
 **Concepteur d’interface utilisateur**
 
@@ -44,15 +44,15 @@ displayOnlyText.AccessibilityTraits = UIAccessibilityTrait.Header | UIAccessibil
 
 ### <a name="what-is-accessibilityidentifier"></a>Qu’est-ce que AccessibilityIdentifier ?
 
-Le `AccessibilityIdentifier` est utilisé pour définir une clé unique qui peut être utilisée pour faire référence à des éléments de l’interface utilisateur via l’API UIAutomation.
+`AccessibilityIdentifier`Est utilisé pour définir une clé unique qui peut être utilisée pour faire référence à des éléments de l’interface utilisateur via l’API uiautomation.
 
 La valeur de `AccessibilityIdentifier` n’est jamais parlée ou présentée à l’utilisateur.
 
-<a name="postnotification" />
+<a name="postnotification"></a>
 
 ## <a name="postnotification"></a>PostNotification
 
-La méthode `UIAccessibility.PostNotification` permet aux événements d’être déclenchés à l’utilisateur en dehors de l’interaction directe (par exemple, lorsqu’ils interagissent avec un contrôle spécifique).
+La `UIAccessibility.PostNotification` méthode permet aux événements d’être déclenchés à l’utilisateur en dehors de l’interaction directe (par exemple, lorsqu’ils interagissent avec un contrôle spécifique).
 
 ### <a name="announcement"></a>Annonce
 
@@ -66,7 +66,7 @@ UIAccessibility.PostNotification (
 
 ### <a name="layoutchanged"></a>LayoutChanged
 
-L’annonce de `LayoutChanged` est utilisée lorsque la disposition de l’écran :
+L' `LayoutChanged` annonce est utilisée lorsque la disposition de l’écran :
 
 ```csharp
 UIAccessibility.PostNotification (
@@ -80,7 +80,7 @@ Les propriétés d’accessibilité telles que l’étiquette et l’indicateur 
 
 **Fichier mainstoryboard. Strings**
 
-Si l’interface utilisateur est présentée dans une table de montage séquentiel, vous pouvez fournir des traductions pour les propriétés d’accessibilité de la même façon que les autres propriétés. Dans l’exemple ci-dessous, un `UITextField` a un **ID de localisation** de `Pqa-aa-ury` et deux propriétés d’accessibilité définies en espagnol :
+Si l’interface utilisateur est présentée dans une table de montage séquentiel, vous pouvez fournir des traductions pour les propriétés d’accessibilité de la même façon que les autres propriétés. Dans l’exemple ci-dessous, un `UITextField` a un **ID de localisation** de `Pqa-aa-ury` et deux propriétés d’accessibilité sont définies en espagnol :
 
 ```csharp
 /* Accessibility */
@@ -100,7 +100,7 @@ Vous pouvez également ajouter les traductions au fichier **localisable. Strings
 "Provide more information" = "escriba más información";
 ```
 
-Ces traductions peuvent être utilisées dans C# via la méthode `LocalizedString` :
+Ces traductions peuvent être utilisées en C# par le biais de la `LocalizedString` méthode :
 
 ```csharp
 notesText.AccessibilityLabel = NSBundle.MainBundle.LocalizedString ("Notes", "");
@@ -109,7 +109,7 @@ notesText.AccessibilityHint = NSBundle.MainBundle.LocalizedString ("Provide more
 
 Reportez-vous au [Guide de localisation iOS](~/ios/app-fundamentals/localization/index.md) pour plus d’informations sur la localisation du contenu.
 
-<a name="testing" />
+<a name="testing"></a>
 
 ## <a name="testing-accessibility"></a>Test d’accessibilité
 
@@ -134,7 +134,7 @@ Voici un exemple de sortie lorsqu’une ligne de la vue table est sélectionnée
 
 Lorsque l’inspecteur est visible, utilisez l’icône « X » en haut à gauche pour afficher et masquer temporairement la superposition et activer/désactiver les paramètres d’accessibilité.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Accessibilité multiplateforme](~/cross-platform/app-fundamentals/accessibility.md)
 - [Accessibilité iOS (Apple)](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Accessibility_on_iPhone/Accessibility_on_iPhone.html)

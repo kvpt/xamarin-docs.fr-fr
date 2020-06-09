@@ -6,12 +6,12 @@ ms.assetid: B73675D2-09A3-14C1-E41E-20352B819B53
 author: davidortinau
 ms.author: daortin
 ms.date: 08/06/2018
-ms.openlocfilehash: 78b849434a087cf7951fe36345688251885ea00b
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 5edfd8216892eb28a2b1ad14d3ccee1668b21a43
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016900"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571218"
 ---
 # <a name="sharing-code-overview"></a>Vue d’ensemble du partage de code
 
@@ -20,8 +20,8 @@ _Ce document compare les différentes méthodes de partage de code entre les pro
 Il existe trois méthodes pour partager du code entre des applications multiplateformes :
 
 - [**Bibliothèques de .NET standard**](#Net_Standard) : les projets .NET standard peuvent implémenter du code à partager entre plusieurs plateformes et peuvent accéder à un grand nombre d’API .net (selon la version). .NET Standard 1,0-1,6 implémentent progressivement des ensembles d’API plus volumineux, tandis que .NET Standard 2,0 offre la meilleure couverture de la BCL .NET (y compris les API .NET disponibles dans les applications Xamarin).
-- [**Projets partagés**](#Shared_Projects) : utilisez le type de projet de ressource partagé pour organiser votre code source, et utilisez `#if` directives de compilateur nécessaires pour gérer les exigences spécifiques à la plateforme.
-- [**Bibliothèques de classes portables**](#Portable_Class_Libraries) (obsolètes) : les bibliothèques de classes portables (classes portables) peuvent cibler plusieurs plateformes avec une surface d’API commune et utiliser des interfaces pour fournir des fonctionnalités spécifiques à la plateforme. Les classes portables sont déconseillés dans les dernières versions de Visual Studio &ndash; utilisez à la place .NET Standard.
+- [**Projets partagés**](#Shared_Projects) : utilisez le type de projet ressource partagée pour organiser votre code source, et utilisez les `#if` directives de compilateur nécessaires pour gérer les exigences spécifiques à la plateforme.
+- [**Bibliothèques de classes portables**](#Portable_Class_Libraries) (obsolètes) : les bibliothèques de classes portables (classes portables) peuvent cibler plusieurs plateformes avec une surface d’API commune et utiliser des interfaces pour fournir des fonctionnalités spécifiques à la plateforme. Les classes portables sont déconseillés dans les dernières versions de Visual Studio utilisent à la &ndash; place .NET standard.
 
 L’objectif d’une stratégie de partage de code est de prendre en charge l’architecture illustrée dans ce diagramme, où un seul code base peut être utilisé par plusieurs plateformes.
 
@@ -29,7 +29,7 @@ L’objectif d’une stratégie de partage de code est de prendre en charge l’
 
 Cet article compare les méthodes disponibles pour vous aider à choisir le type de projet adapté à vos applications.
 
-<a name="Net_Standard" />
+<a name="Net_Standard"></a>
 
 ## <a name="net-standard-libraries"></a>Bibliothèques .NET Standard
 
@@ -45,19 +45,19 @@ Les bibliothèques de [.NET standard](~/cross-platform/app-fundamentals/net-stan
 
 ### <a name="disadvantages"></a>Inconvénients
 
-- Impossible d’utiliser des directives de compilateur comme `#if __IOS__`.
+- Impossible d’utiliser des directives de compilateur comme `#if __IOS__` .
 
-### <a name="remarks"></a>Notes
+### <a name="remarks"></a>Remarks
 
 .NET Standard est [semblable à la bibliothèque PCL](https://docs.microsoft.com/dotnet/standard/net-standard#comparison-to-portable-class-libraries), mais avec un modèle plus simple pour la prise en charge des plateformes et un plus grand nombre de classes de la BCL.
 
-<a name="Shared_Projects" />
+<a name="Shared_Projects"></a>
 
 ## <a name="shared-projects"></a>Projets partagés
 
 Les [projets partagés](~/cross-platform/app-fundamentals/shared-projects.md) contiennent des fichiers de code et des ressources qui sont incluses dans tout projet qui les référence. Les projets de partage ne produisent pas leur propre sortie compilée.
 
-Cette capture d’écran montre un fichier solution contenant trois projets d’application (pour Android, iOS et Windows), avec un projet **partagé** qui C# contient des fichiers de code source courants :
+Cette capture d’écran montre un fichier solution contenant trois projets d’application (pour Android, iOS et Windows), avec un projet **partagé** qui contient des fichiers de code source C# courants :
 
 ![Solution de projet partagé](code-sharing-images/sharedsolution.png "Solution de projet partagé")
 
@@ -76,26 +76,26 @@ Un exemple de solution contient les dossiers et projets suivants (les noms de pr
 - Projet d’application **AppiOS** – Xamarin. iOS.
 - **AppWindows** – projet d’application Windows.
 
-Ainsi, les trois projets d’application partagent le même code source (les C# fichiers partagés). Toutes les modifications apportées au code partagé sont partagées entre les trois projets.
+Ainsi, les trois projets d’application partagent le même code source (les fichiers C# dans Shared). Toutes les modifications apportées au code partagé sont partagées entre les trois projets.
 
 ### <a name="benefits"></a>Avantages
 
 - Vous permet de partager du code entre plusieurs projets.
-- Le code partagé peut être une branche basée sur la plateforme à l’aide de directives de compilateur (par exemple, à l’aide de `#if __ANDROID__`, comme indiqué dans le document [Building Cross Platform applications](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md) ).
-- Les projets d’application peuvent inclure des références spécifiques à la plateforme que le code partagé peut utiliser (comme l’utilisation de `Community.CsharpSqlite.WP7` dans l’exemple Tasky pour Windows Phone).
+- Le code partagé peut être une branche basée sur la plateforme à l’aide de directives de compilateur (par exemple, à l’aide de `#if __ANDROID__` , comme indiqué dans le document [Building Cross Platform applications](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md) (en anglais).
+- Les projets d’application peuvent inclure des références spécifiques à la plateforme que le code partagé peut utiliser (comme l’utilisation `Community.CsharpSqlite.WP7` de dans l’exemple Tasky pour Windows Phone).
 
 ### <a name="disadvantages"></a>Inconvénients
 
 - Les refactorisations qui affectent le code à l’intérieur des directives du compilateur « inactive » ne mettent pas à jour le code à l’intérieur de ces directives.
 - Contrairement à la plupart des autres types de projets, un projet partagé n’a pas d’assembly de « sortie ». Pendant la compilation, les fichiers sont traités comme faisant partie du projet de référence et compilés dans cet assembly. Si vous souhaitez partager votre code en tant qu’assembly, .NET Standard ou les bibliothèques de classes portables constituent une meilleure solution.
 
-<a name="Shared_Remarks" />
+<a name="Shared_Remarks"></a>
 
-### <a name="remarks"></a>Notes
+### <a name="remarks"></a>Remarks
 
 Une bonne solution pour les développeurs d’applications qui écrivent du code destiné uniquement au partage dans leur application (et non distribuant à d’autres développeurs).
 
-<a name="Portable_Class_Libraries" />
+<a name="Portable_Class_Libraries"></a>
 
 ## <a name="portable-class-libraries"></a>Bibliothèques de classes portables
 
@@ -117,11 +117,11 @@ Les bibliothèques de classes portables sont [présentées en détail ici](~/cro
 - Impossible d’utiliser les directives du compilateur.
 - Seul un sous-ensemble du .NET Framework peut être utilisé, déterminé par le profil sélectionné (pour plus d’informations, consultez [Introduction à PCL](~/cross-platform/app-fundamentals/pcl.md) ).
 
-### <a name="remarks"></a>Notes
+### <a name="remarks"></a>Remarks
 
 Le modèle PCL est considéré comme déconseillé dans les dernières versions de Visual Studio.
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 La stratégie de partage de code que vous choisissez sera pilotée par les plateformes que vous ciblez. Choisissez une méthode qui convient le mieux à votre projet.
 

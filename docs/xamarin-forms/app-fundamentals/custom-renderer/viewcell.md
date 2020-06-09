@@ -1,9 +1,6 @@
 ---
-title : Description : «un Xamarin.Forms ViewCell est une cellule qui peut être ajoutée à un ListView ou un TableView, qui contient une vue définie par le développeur. Cet article montre comment créer un convertisseur personnalisé pour un ViewCell qui est hébergé à l’intérieur d’un Xamarin.Forms contrôle ListView.
-ms. Prod : ms. AssetID : ms. Technology : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title : « personnalisation d’un ViewCell » Description : «un Xamarin.Forms ViewCell est une cellule qui peut être ajoutée à un ListView ou un TableView, qui contient une vue définie par le développeur. Cet article montre comment créer un convertisseur personnalisé pour un ViewCell qui est hébergé à l’intérieur d’un Xamarin.Forms contrôle ListView.
+ms. Prod : xamarin ms. AssetID : 61F378C9-6DEF-436B-ACC3-2324B25D404E ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 12/07/2016 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
 
 # <a name="customizing-a-viewcell"></a>Personnalisation d’une ViewCell
@@ -20,13 +17,11 @@ Le diagramme suivant illustre la relation entre le [`ViewCell`](xref:Xamarin.For
 
 Le processus de rendu peut être utilisé pour implémenter des personnalisations spécifiques à la plateforme en créant un convertisseur personnalisé pour un [`ViewCell`](xref:Xamarin.Forms.ViewCell) sur chaque plateforme. Le processus pour y parvenir est le suivant :
 
-1. [Créez](#Creating_the_Custom_Cell) une Xamarin.Forms cellule personnalisée.
-1. [Utilise](#Consuming_the_Custom_Cell) la cellule personnalisée de Xamarin.Forms .
-1. [Créez](#Creating_the_Custom_Renderer_on_each_Platform) le renderer personnalisé pour la cellule sur chaque plateforme.
+1. [Créez](#creating-the-custom-cell) une Xamarin.Forms cellule personnalisée.
+1. [Utilise](#consuming-the-custom-cell) la cellule personnalisée de Xamarin.Forms .
+1. [Créez](#creating-the-custom-renderer-on-each-platform) le renderer personnalisé pour la cellule sur chaque plateforme.
 
 Chaque élément sera maintenant abordé à son tour, pour implémenter un `NativeCell` convertisseur qui tire parti d’une disposition spécifique à la plateforme pour chaque cellule hébergée à l’intérieur d’un Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) contrôle. Cela empêche les Xamarin.Forms calculs de disposition d’être appelés de façon répétée pendant le `ListView` défilement.
-
-<a name="Creating_the_Custom_Cell" />
 
 ## <a name="creating-the-custom-cell"></a>Création de la cellule personnalisée
 
@@ -62,8 +57,6 @@ public class NativeCell : ViewCell
 ```
 
 La classe `NativeCell` est créée dans le projet de bibliothèque .NET Standard et définit l’API pour la cellule personnalisée. La cellule personnalisée expose les propriétés `Name`, `Category` et `ImageFilename` qui peuvent être affichées par le biais de la liaison de données. Pour plus d’informations sur la liaison de données, consultez [Notions de base de la liaison de données](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md).
-
-<a name="Consuming_the_Custom_Cell" />
 
 ## <a name="consuming-the-custom-cell"></a>Consommation de la cellule personnalisée
 
@@ -143,8 +136,6 @@ Un Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) contrôle est utilis�
 Chaque ligne dans la liste contient trois éléments de données : un nom, une catégorie et un nom de fichier image. La disposition de chaque ligne de la liste est définie par le `DataTemplate` référencé par le biais de la [`ListView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1.ItemTemplate) propriété pouvant être liée. Le `DataTemplate` définit que chaque ligne de données dans la liste est un `NativeCell` qui affiche ses propriétés `Name`, `Category` et `ImageFilename` par le biais de la liaison de données. Pour plus d’informations sur le contrôle `ListView`, consultez [ListView](~/xamarin-forms/user-interface/listview/index.md).
 
 Un renderer personnalisé peut maintenant être ajouté à chaque projet d’application afin de personnaliser la disposition spécifique à la plateforme pour chaque cellule.
-
-<a name="Creating_the_Custom_Renderer_on_each_Platform" />
 
 ## <a name="creating-the-custom-renderer-on-each-platform"></a>Création du renderer personnalisé sur chaque plateforme
 

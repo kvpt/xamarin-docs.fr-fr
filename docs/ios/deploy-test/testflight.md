@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 2f5d04b49658abe9d366e264d8f1a659732a2c33
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 86b887b7aa913572d5fb6093fe682cd2933b282e
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79304204"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573181"
 ---
 # <a name="using-testflight-to-distribute-xamarinios-apps"></a>Utilisation de TestFlight pour distribuer des applications Xamarin.iOS
 
-_TestFlight est maintenant détenue par Apple, et est le principal moyen de tester bêta vos applications Xamarin.iOS. Cet article vous guidera à travers toutes les étapes du processus TestFlight - de télécharger votre application, à travailler avec iTunes Connect._
+_TestFlight est maintenant détenu par Apple et constitue le principal moyen de tester vos applications Xamarin. iOS. Cet article vous guide tout au long des étapes du processus TestFlight, du téléchargement de votre application à l’utilisation d’iTunes Connect._
 
 Le bêta testing fait partie intégrante du cycle de développement des logiciels. Il existe de nombreuses applications multiplateformes conçues pour simplifier ce processus, parmi lesquelles [HockeyApp](https://hockeyapp.net/features/), [Applause](https://www.applause.com/mobile-app-testing)et, bien sûr, l’outil de bêta testing natif de Google Play pour les applications Android. Ce document couvre exclusivement l’outil TestFlight d’Apple.
 
@@ -61,7 +61,7 @@ Le workflow suivant décrit les étapes à effectuer pour commencer à utiliser 
 ## <a name="create-an-itunes-connect-record"></a>Créer un enregistrement iTunes Connect
 
 1. Connectez-vous au [portail iTunes Connect](https://itunesconnect.apple.com/) avec vos identifiants développeur Apple.
-2. Sélectionnez **Mes applications**:
+2. Sélectionnez **mes applications**:
 
     [![](testflight-images/my-apps.png "Select My Apps")](testflight-images/my-apps.png#lightbox)
 
@@ -109,7 +109,7 @@ Tout d’abord, générez votre [distribuable final](~/ios/deploy-test/app-distr
 
 [![](testflight-images/archive-view.png "Creating an archive will automatically open the Archives View")](testflight-images/archive-view.png#lightbox)
 
- Cela entraîne l’ouverture de l’Assistant Publication. Sélectionnez le canal de distribution **app Store** pour créer un package et ouvrez chargeur d’applications. Dans l’écran Profil de provisionnement, sélectionnez votre identité de signature et le profil de provisionnement, ou resignez avec une autre identité. Vérifiez les détails de votre package, puis cliquez sur **Publier** pour enregistrer votre fichier `.ipa`
+ Cela entraîne l’ouverture de l’Assistant Publication. Sélectionnez le canal de distribution **App Store** pour créer un package, puis ouvrez application Loader. Dans l’écran Profil de provisionnement, sélectionnez votre identité de signature et le profil de provisionnement, ou resignez avec une autre identité. Vérifiez les détails de votre package, puis cliquez sur **Publier** pour enregistrer votre fichier `.ipa`
 
 [![](testflight-images/group.png "Select your signing identity and provisioning profile, or re-sign with another identity")](testflight-images/group.png#lightbox)
 
@@ -165,7 +165,7 @@ Sous **Test Information**, entrez les informations relatives à votre applicatio
 
 Notez que ces métadonnées **ne sont pas** obligatoires pour les testeurs internes, mais qu’elles le **sont** pour les testeurs externes.
 
-<a name="beta-testing" />
+<a name="beta-testing"></a>
 
 ### <a name="enable-beta-testing"></a>Activer le bêta testing
 
@@ -197,7 +197,7 @@ Les utilisateurs iTunes Connect existants sont affichés dans la liste. Pour les
 
 [![](testflight-images/internal-tester.png "Turn on the Internal Tester switch")](testflight-images/internal-tester.png#lightbox)
 
-Pour ajouter un utilisateur qui n’est **+** pas sur la liste, sélectionnez le bouton à côté *des utilisateurs,* et fournissez un prénom, un nom de famille et une adresse e-mail pour créer un compte. L’utilisateur doit confirmer son adresse e-mail pour activer son compte :
+Pour ajouter un utilisateur qui ne figure pas dans la liste, sélectionnez le **+** bouton en regard de *utilisateurs*, puis indiquez un prénom, un nom et une adresse de messagerie pour créer un compte. L’utilisateur doit confirmer son adresse e-mail pour activer son compte :
 
 [![](testflight-images/add-new-user.png "Adding a user")](testflight-images/add-new-user.png#lightbox)
 
@@ -263,13 +263,13 @@ Quand le bêta testing est terminé, vous pouvez soumettre votre application sur
 
 [![](testflight-images/submit-for-review.png "Click the Submit for Review button")](testflight-images/submit-for-review.png#lightbox)
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article a montré comment utiliser l’outil de bêta testing TestFlight d’Apple à partir d’iTunes Connect. Il a expliqué comment charger une nouvelle build dans iTunes Connect, et comment inviter des bêta testeurs internes et externes à utiliser notre application.
 
 ## <a name="related-links"></a>Liens connexes
 
 - [Création d’un enregistrement iTunes Connect](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md#creating)
-- [Publication dans l’App Store](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)
+- [Publication sur l’App Store](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)
 - [Provisionnement d’une application pour sa distribution via l’App Store](~/ios/deploy-test/app-distribution/app-store-distribution/index.md#provisioning)
 - [Utilisation de l’outil TestFlight (bêta) d’Apple](https://developer.apple.com/library/ios/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Chapters/BetaTestingTheApp.html#//apple_ref/doc/uid/TP40011225-CH35-SW2)

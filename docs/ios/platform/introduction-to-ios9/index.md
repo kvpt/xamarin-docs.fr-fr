@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 531e04c3dbc9bd695087204ceae88d2f0f5df012
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: de4b6e8b95eed33e7fb38baf51a0da73cef313c0
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75488944"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574130"
 ---
 # <a name="introduction-to-ios-9"></a>Introduction à iOS 9
 
@@ -42,7 +42,7 @@ Dans la mesure où ATS est activé par défaut dans les applications conçues po
 
 Pour en savoir plus sur ATS, consultez notre guide de [sécurité App transport](~/ios/app-fundamentals/ats.md) .
 
-<a name="multitasking" />
+<a name="multitasking"></a>
 
 ## <a name="multitasking-for-ipad"></a>Multitâche pour iPad
 
@@ -109,7 +109,7 @@ Pour plus d’informations, consultez notre [Introduction à HomeKit](~/ios/plat
 
 ## <a name="handoff-framework-changes"></a>Modifications de l’infrastructure de transfert
 
-La remise (également appelée continuité) a été introduite par Apple dans iOS 8 et OS X Yosemite (10,10) pour que l’utilisateur démarre une activité sur l’un de ses appareils (iOS ou Mac) et continue cette même activité sur un autre de ses appareils (identifiés par le iClou de l’utilisateur). Compte d).
+La remise (également appelée continuité) a été introduite par Apple dans iOS 8 et OS X Yosemite (10,10) pour que l’utilisateur démarre une activité sur l’un de ses appareils (iOS ou Mac) et continue cette même activité sur un autre de ses appareils (identifiés par le compte iCloud de l’utilisateur).
 
 Le transfert a été étendu dans iOS 9 pour prendre également en charge les nouvelles fonctionnalités de recherche améliorées. Pour plus d’informations, consultez notre documentation sur les [améliorations apportées](~/ios/platform/search/index.md) à la recherche. Pour plus d’informations sur l’utilisation de la remise, consultez notre introduction à la documentation relative [au transfert](~/ios/platform/handoff.md) .
 
@@ -137,9 +137,9 @@ Dans iOS 9, Apple a amélioré le trousseau pour fournir un nouveau type de clé
 
 - Nouvelle contrainte Touch ID qui invalide les éléments de trousseau lorsque la base de données d’empreintes digitales est modifiée.
 - Nouvelles contraintes qui permettent de créer des entrées de liste Access Control avec Touch ID ou code secret uniquement.
-- Nouveau contexte d’authentification qui vous permet d’appeler l’authentification séparément des appels de `SecItem`.
+- Nouveau contexte d’authentification qui vous permet d’appeler l’authentification séparément des `SecItem` appels.
 - Access Control entropie de liste (à l’aide de l’option de mot de passe d’application) pour le chiffrement d’élément de trousseau fourni par l’application.
-- Prise en charge de la génération et de l’utilisation de clés à l’intérieur de l’enclave sécurisée (via l’attribut `kSecAttrTokenIDSecureEnclave`).
+- Prise en charge de la génération et de l’utilisation de clés à l’intérieur de l’enclave sécurisée (via l' `kSecAttrTokenIDSecureEnclave` attribut).
 
 Pour plus d’informations, consultez [id tactile et ID facial dans Xamarin. iOS](~/ios/platform/touch-id-face-id.md).
 
@@ -177,8 +177,8 @@ Pour plus d’informations, consultez notre documentation [supplémentaire sur l
 Apple a déconseillé les API et fonctions suivantes dans iOS 9 :
 
 - **Carnet d’adresses & interface utilisateur du carnet d’adresses** -ces API ont été remplacées par les infrastructures d’interface utilisateur de contact et de contact. Pour plus d’informations, consultez la documentation de [l’interface utilisateur contacts et contacts](~/ios/platform/contacts.md) .
-- **CBCentralManager** : les méthodes `RetrievePeripherals` et `RetrieveConnectedPeripherals` de la classe `CBCentralManager` ont été supprimées dans iOS 9. L’appel de ces méthodes entraîne le blocage d’une application lors de l’appariement d’un accessoire ou du lancement de l’application.
-- **FetchAllChanges** : l' `FetchAllChanges` de la classe `CKFetchRecordChangesOperation` a été amortie et sera supprimée dans iOS 9.
+- **CBCentralManager** -les `RetrievePeripherals` `RetrieveConnectedPeripherals` méthodes et de la `CBCentralManager` classe ont été supprimées dans iOS 9. L’appel de ces méthodes entraîne le blocage d’une application lors de l’appariement d’un accessoire ou du lancement de l’application.
+- **FetchAllChanges** : la `FetchAllChanges` de la `CKFetchRecordChangesOperation` classe a été amortie et sera supprimée dans iOS 9.
 - **Lecteur multimédia** : l’infrastructure de lecteur multimédia est dépréciée dans iOS 9. Utilisez des API AVKit ou AV Foundation à la place.
 
 Pour obtenir la liste complète des désapprobations d’API spécifiques, consultez la documentation relative aux [différences d’API iOS 9,0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/iOS90APIDiffs/index.html#//apple_ref/doc/uid/TP40016222) d’Apple.
@@ -191,7 +191,7 @@ Nous disposons de quelques [exemples spécifiques à IOS 9](https://docs.microso
 - [CollectionView](https://github.com/xamarin/monotouch-samples/tree/master/ios9/CollectionView)
 - [MetalPerformanceShadersHelloWorld](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-metalperformanceshadershelloworld)
 - [MusicMotion](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-musicmotion)
-- [PhotoProgress](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-photoprogress)
+- [Photoprogression](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-photoprogress)
 - [SegueCatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-seguecatalog)
 - [StackView](https://github.com/xamarin/monotouch-samples/tree/master/ios9/StackView)
 - [StickyCorners](https://github.com/xamarin/monotouch-samples/tree/master/ios9/StickyCorners)
@@ -201,7 +201,7 @@ Consultez également les parties iOS de ces exemples (compléments Mac OS X vers
 - [AgentsCatalog](https://github.com/xamarin/mac-ios-samples/tree/master/AgentsCatalog)
 - [MetalKitEssentials](https://github.com/xamarin/mac-ios-samples/tree/master/MetalKitEssentials)
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Exemples iOS 9](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
 - [Présentation de l’interface tactile 3D](~/ios/platform/3d-touch.md)
@@ -214,8 +214,8 @@ Consultez également les parties iOS de ces exemples (compléments Mac OS X vers
 - [Améliorations des jeux](~/ios/platform/gaming/index.md)
 - [Présentation de HomeKit](~/ios/platform/homekit.md)
 - [Présentation du transfert](~/ios/platform/handoff.md)
-- [Modifications supplémentaires apportées à l’infrastructure iOS 9](~/ios/platform/introduction-to-ios9/additional-framework-changes.md)
-- [Résolution des problèmes](~/ios/platform/introduction-to-ios9/troubleshooting.md)
+- [Autres changements apportés au framework iOS 9](~/ios/platform/introduction-to-ios9/additional-framework-changes.md)
+- [Dépannage](~/ios/platform/introduction-to-ios9/troubleshooting.md)
 - [iOS 9 pour les développeurs](https://developer.apple.com/ios/pre-release/)
 - [Nouveautés d’iOS 9,0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
 - [Mise à jour de vos applications Xamarin. iOS vers iOS9 (vidéo)](https://university.xamarin.com/lightninglectures/Updating-your-XamariniOS-apps-to-iOS9)

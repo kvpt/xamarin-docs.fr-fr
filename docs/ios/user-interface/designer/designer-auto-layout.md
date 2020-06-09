@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 35a8d3aeb00ac73f944712cb31f913f98bd3b6e8
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 5aa3baa6aba76483866911d905687be6c3a5ae4e
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79304694"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84569827"
 ---
 # <a name="auto-layout-with-the-xamarin-designer-for-ios"></a>Disposition automatique avec le Xamarin Designer pour iOS
 
@@ -30,7 +30,7 @@ Ce guide suppose que vous connaissez les composants du concepteur à partir du G
 
 Une contrainte est une représentation mathématique de la relation entre deux éléments à l’écran. Le fait de représenter la position d’un élément d’interface utilisateur en tant que relation mathématique résout plusieurs problèmes associés au codage en dur de l’emplacement d’un élément d’interface utilisateur. Par exemple, si nous devions placer un bouton 20px à partir du bas de l’écran en mode portrait, la position du bouton serait en dehors de l’écran en mode paysage. Pour éviter cela, nous pouvons définir une contrainte qui place le bord inférieur du bouton 20px à partir du bas de la vue. La position du bord du bouton est alors calculée en tant que *bouton. Bottom = View. Bottom-20px*, ce qui placerait le bouton 20px à partir du bas de la vue en mode portrait et paysage. La possibilité de calculer le positionnement en fonction d’une relation mathématique est de savoir ce qui rend les contraintes utiles dans la conception de l’interface utilisateur.
 
-Quand nous définissons une contrainte, nous créons un objet `NSLayoutConstraint` qui prend comme arguments les objets à contraindre et les propriétés, ou *attributs*, sur lesquelles la contrainte agira. Dans le concepteur iOS, les attributs incluent des bords tels que les bords *gauche*, *droit*, *supérieur*et *inférieur* d’un élément. Elles incluent également des attributs de taille, tels que la *hauteur* et la *largeur*, et l’emplacement du point central *, centerus et* *CenterY*. Par exemple, lorsque nous ajoutons une contrainte sur la position de la limite gauche de deux boutons, le concepteur génère le code suivant sous les couvertures :
+Quand nous définissons une contrainte, nous créons un `NSLayoutConstraint` objet qui prend comme arguments les objets à contraindre et les propriétés, ou *attributs*, sur lesquelles la contrainte agira. Dans le concepteur iOS, les attributs incluent des bords tels que les bords *gauche*, *droit*, *supérieur*et *inférieur* d’un élément. Elles incluent également des attributs de taille, tels que la *hauteur* et la *largeur*, et l’emplacement du point central *, centerus et* *CenterY*. Par exemple, lorsque nous ajoutons une contrainte sur la position de la limite gauche de deux boutons, le concepteur génère le code suivant sous les couvertures :
 
 ```csharp
 View.AddConstraint (NSLayoutConstraint.Create (Button1, NSLayoutAttribute.Left, NSLayoutRelation.Equal, Button2, NSLayoutAttribute.Left, 1, 10));
@@ -67,7 +67,7 @@ La barre d’outils contraintes a été mise à jour et se compose maintenant de
 
 Le menu contextuel de l’éditeur de contraintes vous permet d’ajouter et de mettre à jour plusieurs contraintes à la fois pour une vue Select. Nous pouvons créer plusieurs contraintes d’espacement, de proportions et d’alignement, telles que l’alignement d’une vue sur les bords gauches de deux vues.
 
-Pour modifier des contraintes sur la vue sélectionnée, cliquez sur les points de suspension pour afficher le menu segue : ![contraintes de modification menu segue](designer-auto-layout-images/constraints-popup.png)
+Pour modifier des contraintes sur la vue sélectionnée, cliquez sur les points de suspension pour afficher menu segue : ![ contraintes modification menu segue](designer-auto-layout-images/constraints-popup.png)
 
 Lors de l’ouverture des contraintes menu Segue, il affiche toutes les contraintes prédéfinies sur la vue. Nous pouvons définir toutes les contraintes d’espacement en sélectionnant **tous les côtés** de la zone de liste déroulante dans le coin supérieur droit, puis sélectionner **Effacer tout** pour les supprimer.
 
@@ -170,7 +170,7 @@ Pour résoudre les erreurs de non-placement de l’image, sélectionnez le bouto
 
 Cela permet d’ajuster automatiquement le frame d’élément pour qu’il corresponde aux positions définies par les contrôles.
 
-<a name="modifying-in-code" />
+<a name="modifying-in-code"></a>
 
 ## <a name="modifying-constraints-in-code"></a>Modification des contraintes dans le code
 
@@ -201,12 +201,12 @@ ViewInfoHeight.Constant = 0;
 
 Au lieu de mettre à jour instantanément la vue attachée en réponse à des modifications de contrainte, le moteur de disposition automatique planifie une _passe de disposition différée_ pour un avenir proche. Au cours de cette passe différée, non seulement la contrainte de la vue donnée est mise à jour, mais les contraintes pour chaque vue de la hiérarchie sont recalculées et mises à jour pour s’ajuster à la nouvelle disposition.
 
-À tout moment, vous pouvez planifier votre propre passe de disposition différée en appelant les méthodes `SetNeedsLayout` ou `SetNeedsUpdateConstraints` de la vue parente.
+À tout moment, vous pouvez planifier votre propre passe de disposition différée en appelant `SetNeedsLayout` les `SetNeedsUpdateConstraints` méthodes ou de la vue parent.
 
 La passe de disposition différée se compose de deux passes uniques dans la hiérarchie d’affichage :
 
-- **Le test de mise à jour réussit** , le moteur de disposition automatique traverse la hiérarchie d’affichage et appelle la méthode `UpdateViewConstraints` sur tous les contrôleurs d’affichage et la méthode `UpdateConstraints` sur toutes les vues.
-- À nouveau, le **moteur de disposition** automatique parcourt la hiérarchie d’affichage, mais cette fois, il appelle la méthode `ViewWillLayoutSubviews` sur tous les contrôleurs d’affichage et la méthode `LayoutSubviews` sur toutes les vues. La méthode `LayoutSubviews` met à jour la propriété `Frame` de chaque sous-affichage avec le rectangle calculé par le moteur de disposition automatique.
+- **Le test de mise à jour réussit** , le moteur de disposition automatique traverse la hiérarchie d’affichage et appelle la `UpdateViewConstraints` méthode sur tous les contrôleurs d’affichage et la `UpdateConstraints` méthode sur toutes les vues.
+- À nouveau, le **moteur de disposition** automatique parcourt la hiérarchie d’affichage, mais cette fois appelle la `ViewWillLayoutSubviews` méthode sur tous les contrôleurs d’affichage et la `LayoutSubviews` méthode sur toutes les vues. La `LayoutSubviews` méthode met à jour la `Frame` propriété de chaque sous-affichage avec le rectangle calculé par le moteur de disposition automatique.
 
 ### <a name="animating-constraint-changes"></a>Animer des modifications de contrainte
 
@@ -222,7 +222,7 @@ View.LayoutIfNeeded();
 UIView.CommitAnimations();
 ```
 
-Ici, la clé appelle la méthode `LayoutIfNeeded` de la vue parente dans le bloc d’animation. Cela indique à la vue de dessiner chaque « frame » de l’emplacement animé ou de la modification de la taille. Sans cette ligne, la vue est simplement alignée sur la version finale sans animation.
+Ici, la clé appelle la `LayoutIfNeeded` méthode de la vue parente dans le bloc d’animation. Cela indique à la vue de dessiner chaque « frame » de l’emplacement animé ou de la modification de la taille. Sans cette ligne, la vue est simplement alignée sur la version finale sans animation.
 
 ## <a name="summary"></a>Résumé
 

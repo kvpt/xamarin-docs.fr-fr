@@ -7,12 +7,12 @@ ms.assetid: 9E6C986F-3FBA-4599-8367-FB0C565C0ADE
 author: davidortinau
 ms.author: daortin
 ms.date: 04/18/2018
-ms.openlocfilehash: 4a5aa13a197e885b074b07eae3594abd4992ee71
-ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
+ms.openlocfilehash: f81df8ac253e53b16c3ab09bf80d66a7b6324854
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728250"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571517"
 ---
 # <a name="updating-component-references-to-nuget"></a>Mise à jour des références de composants à NuGet
 
@@ -29,7 +29,7 @@ Une liste de plug- [ins et de bibliothèques](https://github.com/xamarin/Xamarin
 
 La version 15,6 de Visual Studio et de la version 7,4 de Visual Studio pour Mac ne prend plus en charge les composants de votre projet. 
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Si vous chargez un projet dans Visual Studio, la boîte de dialogue suivante s’affiche, expliquant que vous devez supprimer manuellement les composants de votre projet :
 
@@ -41,7 +41,7 @@ Pour supprimer un composant de votre projet :
 
 2. Cliquez à nouveau avec le bouton droit sur le projet déchargé, puis sélectionnez **modifier {Your-Project-Name}. csproj**.
 
-3. Recherchez dans le fichier toutes les références à `XamarinComponentReference`. Elle doit se présenter comme suit :
+3. Recherchez dans le fichier toutes les références à `XamarinComponentReference` . Elle doit ressembler à l’exemple suivant :
 
     ```xml
     <ItemGroup>
@@ -60,13 +60,13 @@ Pour supprimer un composant de votre projet :
     </ItemGroup>
     ```
 
-4. Supprimez les références à `XamarinComponentReference` et enregistrez le fichier. Dans l’exemple ci-dessus, il est possible de supprimer l’intégralité du `ItemGroup`.
+4. Supprimez les références à `XamarinComponentReference` et enregistrez le fichier. Dans l’exemple ci-dessus, il est possible de supprimer la totalité de l’ensemble `ItemGroup` .
 
 5. Une fois le fichier enregistré, cliquez avec le bouton droit sur le nom du projet, puis sélectionnez **recharger le projet**.
 
 6. Répétez les étapes ci-dessus pour chaque projet de votre solution.
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 Si vous chargez un projet dans Visual Studio pour Mac, la boîte de dialogue suivante s’affiche, expliquant que vous devez supprimer manuellement les composants de votre projet :
 
@@ -74,9 +74,9 @@ Si vous chargez un projet dans Visual Studio pour Mac, la boîte de dialogue sui
 
 Pour supprimer un composant de votre projet :
 
-1. Ouvrez le fichier. csproj. Pour ce faire, cliquez avec le bouton droit sur le nom du projet, puis sélectionnez **outils > modifier le fichier**.
+1. Ouvrez le fichier .csproj. Pour ce faire, cliquez avec le bouton droit sur le nom du projet, puis sélectionnez **outils > modifier le fichier**.
 
-2. Recherchez dans le fichier toutes les références à `XamarinComponentReference`. Elle doit se présenter comme suit :
+2. Recherchez dans le fichier toutes les références à `XamarinComponentReference` . Elle doit ressembler à l’exemple suivant :
 
     ```xml
     <ItemGroup>
@@ -95,7 +95,7 @@ Pour supprimer un composant de votre projet :
     </ItemGroup>
     ```
 
-3. Supprimez les références à `XamarinComponentReference` et enregistrez le fichier. Dans l’exemple ci-dessus, il est possible de supprimer tout le `ItemGroup`
+3. Supprimez les références à `XamarinComponentReference` et enregistrez le fichier. Dans l’exemple ci-dessus, il est possible de supprimer entièrement la`ItemGroup`
 
 4. Répétez les étapes ci-dessus pour chaque projet de votre solution.
 
@@ -113,7 +113,7 @@ Les sections suivantes expliquent comment mettre à jour les solutions Xamarin e
 La plupart des composants appartiennent à l’une des catégories ci-dessus.
 Si vous utilisez un composant qui ne semble pas avoir un package NuGet équivalent, lisez la section [composants sans chemin de migration NuGet](#require-update) ci-dessous.
 
-<a name="contain" />
+<a name="contain"></a>
 
 ## <a name="components-that-contain-nuget-packages"></a>Composants qui contiennent des packages NuGet
 
@@ -141,7 +141,7 @@ Le package NuGet restera listé dans le nœud **packages** et votre application 
 
 ![Mettre à jour le package NuGet](component-nuget-images/nuget-update-sml.png)
 
-<a name="replace" />
+<a name="replace"></a>
 
 ## <a name="components-with-nuget-replacements"></a>Composants avec remplacements NuGet
 
@@ -159,8 +159,8 @@ Pour confirmer l’existence d’un package NuGet de remplacement, recherchez [N
 
 Par exemple, vous pouvez trouver le package **SQLite-net-PCL** populaire en recherchant :
 
-- [`sqlite-net-pcl`](https://www.nuget.org/packages?q=sqlite-net-pcl) : nom du produit.
-- [`praeclarum`](https://www.nuget.org/packages?q=praeclarum) : profil de l’auteur.
+- [`sqlite-net-pcl`](https://www.nuget.org/packages?q=sqlite-net-pcl): nom du produit.
+- [`praeclarum`](https://www.nuget.org/packages?q=praeclarum): profil de l’auteur.
 
 ### <a name="updating-the-solution"></a>Mise à jour de la solution
 
@@ -176,7 +176,7 @@ Cette opération supprime le composant et toutes les références. Cela entraîn
 
 #### <a name="add-the-nuget-package"></a>Ajouter le package NuGet
 
-1. Cliquez avec le bouton droit sur le nœud **packages** et choisissez **Ajouter des packages...** .
+1. Cliquez avec le bouton droit sur le nœud **packages** et choisissez **Ajouter des packages...**.
 2. Recherchez le remplacement NuGet par son nom ou son auteur :
 
     ![](component-nuget-images/nuget-search-sml.png)
@@ -186,7 +186,7 @@ Cette opération supprime le composant et toutes les références. Cela entraîn
 Le package NuGet sera ajouté à votre projet, ainsi que toutes les dépendances.
 Cela devrait résoudre la Build. Si la génération continue d’échouer, examinez chaque erreur pour voir s’il existe des différences d’API entre le composant et le package NuGet.
 
-<a name="require-update" />
+<a name="require-update"></a>
 
 ## <a name="components-without-a-nuget-migration-path"></a>Composants sans chemin de migration NuGet
 
@@ -201,7 +201,7 @@ Cela signifie que si vous ouvrez la solution sur un nouvel ordinateur, le compos
 
 De nombreux fournisseurs de composants travaillent toujours sur la migration vers NuGet, tandis que d’autres (y compris les produits disponibles dans le commerce) peuvent rechercher d’autres options de remise.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Liste des plug-ins et des bibliothèques Xamarin populaires](https://github.com/xamarin/XamarinComponents/blob/master/README.md)
 - [Installer et utiliser un package NuGet (Windows)](https://docs.microsoft.com/nuget/quickstart/use-a-package)

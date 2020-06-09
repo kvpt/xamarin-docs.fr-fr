@@ -7,24 +7,24 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/06/2018
-ms.openlocfilehash: 6250dfa24361601c2b9929d80fec3cc7a18cab2d
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: bff3b2a7c1e273c7a03ae341dd663ebc722791eb
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73028564"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571738"
 ---
 # <a name="working-with-capabilities-in-xamarinios"></a>Utilisation des fonctionnalités dans Xamarin.iOS
 
-_L’ajout de capacités à une application nécessite souvent une configuration d’approvisionnement supplémentaire. Ce guide explique la configuration nécessaire à toutes les fonctionnalités._
+_L’ajout de fonctionnalités à une application nécessite souvent une configuration d’approvisionnement supplémentaire. Ce guide explique la configuration requise pour toutes les fonctionnalités de._
 
 Apple fournit aux développeurs diverses _fonctionnalités_, souvent appelées _services d’application_, qui leur permettent de proposer des applications iOS plus complètes et dotées de capacités étendues. Les développeurs peuvent mieux intégrer les fonctionnalités de la plateforme à leurs applications, par exemple, des transactions monétaires lancées à partir de l’application, des services d’appareil supplémentaires comme Siri, et bien plus encore.
 Ces fonctionnalités sont compatibles avec les projets Xamarin.iOS. Voici la liste complète des services :
 
 - App Groups
 - Associated Domains
-- Protection des données
-- Game Center
+- Data Protection
+- Centre de jeux
 - HealthKit
 - HomeKit
 - Configuration d’accessoires sans fil
@@ -80,7 +80,7 @@ Les fonctionnalités sont ajoutées au fichier **Entitlements.plist** dans Visua
 
     ![Option Activer la signature automatique](images/manage-signing.png)
 
-2. Ouvrez le fichier **Entitlements.plist** et sélectionnez la capacité que vous souhaitez ajouter :
+2. Ouvrez le fichier **Entitlements. plist** et sélectionnez la capacité que vous souhaitez ajouter :
 
     ![Ajouter des fonctionnalités au fichier entitlements.plist](images/image17.png)
 
@@ -113,7 +113,7 @@ Les fonctionnalités sont ajoutées à **Entitlements.plist**. Pour ajouter des 
 
 -----
 
-<a name="devcenter" />
+<a name="devcenter"></a>
 
 ## <a name="using-the-developer-center"></a>Utilisation du Developer Center
 
@@ -130,7 +130,7 @@ Pour accéder au developer center, vous devez effectuer deux étapes : créer 
 
     ![Sélection de l’ID d’application dans le developer center](images/image6.png)
 
-4. Appuyez **+** sur le bouton dans le coin supérieur droit pour créer un nouvel ID App.
+4. Appuyez sur le **+** bouton dans le coin supérieur droit pour créer un nouvel ID d’application.
 5. Entrez une description de l’ID d’application, sélectionnez Explicit App ID et entrez un ID de bundle au format `com.domain.appname`. Cet ID de bundle doit correspondre à l’ID de bundle défini dans votre projet :
 
     ![Ajout des détails de l’ID d’application](images/image7.png)
@@ -146,17 +146,17 @@ Pour accéder au developer center, vous devez effectuer deux étapes : créer 
 
 9. Cliquez sur **Register**, puis sur **Done**. Le nouvel ID d’application s’affiche normalement dans la liste des ID d’application iOS.
 
-<a name="provisioningprofile" />
+<a name="provisioningprofile"></a>
 
 ### <a name="creating-a-provisioning-profile"></a>Création d’un profil de provisionnement
 
-Maintenant, créez un profil de provisionnement qui contient cet ID d’application. Pour ce faire, procédez comme suit :
+Maintenant, créez un profil de provisionnement qui contient cet ID d’application. Effectuez les étapes ci-dessous :
 
 1. Dans le developer center d’Apple, accédez à **Provisioning Profiles > All** :
 
     ![Section Provisioning Profiles](images/image10.png)
 
-2. Appuyez **+** sur le bouton dans le coin supérieur droit pour créer un nouveau profil de provisionnement.
+2. Appuyez sur le **+** bouton dans le coin supérieur droit pour créer un profil de provisionnement.
 3. Sélectionnez le type de profil de provisionnement souhaité, puis cliquez sur **Continue** :
 
     ![Sélection du profil de provisionnement](images/image11.png)
@@ -188,7 +188,7 @@ Maintenant, créez un profil de provisionnement qui contient cet ID d’applicat
 > [!IMPORTANT]
 > Vous devrez peut-être aussi définir des clés de droit dans le fichier Entitlement.plist et des clés de confidentialité dans le fichier Info.plist. Pour plus d’informations sur ces droits, consultez le guide [Utilisation de droits](~/ios/deploy-test/provisioning/entitlements.md).
 
-<a name="nextsteps" />
+<a name="nextsteps"></a>
 
 ## <a name="next-steps"></a>Étapes suivantes
 
@@ -197,7 +197,7 @@ Une fois que vous avez ajouté une fonctionnalité côté serveur, il vous reste
 - Utilisez l’espace de noms de framework dans votre application.
 - Ajoutez les droits requis à votre application. Pour obtenir des informations détaillées sur les droits requis et leur ajout, consultez le guide [Utilisation de droits](~/ios/deploy-test/provisioning/entitlements.md).
 
-<a name="troubleshooting" />
+<a name="troubleshooting"></a>
 
 ## <a name="troubleshooting-capabilities"></a>Dépannage
 
@@ -210,8 +210,8 @@ La liste ci-dessous décrit quelques-uns des problèmes les plus courants suscep
 - Assurez-vous que les clés de confidentialité appropriées sont définies dans le fichier Info.plist
 - Assurez-vous que, dans la section **Signature du bundle iOS** de l’application, le paramètre **Droits personnalisés** est défini sur **Entitlements.plist**. Ce n’est _pas_ le paramètre par défaut pour les builds Debug et iOS Simulator.
 
-<a name="summary" />
+<a name="summary"></a>
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Ce guide a présenté les différentes fonctionnalités, ou _services d’application_, puis a expliqué comment les activer dans Visual Studio et dans le developer center d’Apple. Il a également détaillé comment configurer des services plus complexes tels que les services Wallet, iCloud, Apple Pay et App Groups. Enfin, il a indiqué les étapes suivantes à effectuer pour la configuration ainsi que des options de dépannage simples.

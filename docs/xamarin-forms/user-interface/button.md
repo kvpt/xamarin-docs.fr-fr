@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsBouton
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: f7309794768c01d4978aa369cd1950d4986938db
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137460"
+titre : « Xamarin.Forms Button » Description : « le bouton répond à un TAP ou à un clic qui indique à une application d’effectuer une tâche particulière ».
+ms. Prod : xamarin ms. AssetID : 62CAEB63-0800-44F4-9B8C-EE632138C2F5 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 12/04/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-button"></a>Xamarin.FormsBouton
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)
@@ -414,8 +400,6 @@ Le résultat est que le `Label` pivote uniquement lorsqu’un doigt est en conta
 
 Ce type de comportement a des applications pour les jeux : un doigt détenu sur un `Button` peut faire passer un objet à l’écran dans une direction particulière.
 
-<a name="button-appearance" />
-
 ## <a name="button-appearance"></a>Apparence du bouton
 
 `Button`Hérite ou définit plusieurs propriétés qui affectent son apparence :
@@ -433,7 +417,7 @@ Ce type de comportement a des applications pour les jeux : un doigt détenu sur
 > [!NOTE]
 > La `Button` classe possède également [`Margin`](xref:Xamarin.Forms.View.Margin) des [`Padding`](xref:Xamarin.Forms.Button.Padding) Propriétés et qui contrôlent le comportement de disposition de `Button` . Pour plus d’informations, consultez la page [Marge et remplissage](~/xamarin-forms/user-interface/layouts/margin-and-padding.md).
 
-Les effets de six de ces propriétés ( `FontFamily` à l’exception de et `FontAttributes` ) sont illustrés dans la page **apparence du bouton** . Une autre propriété, [`Image`](xref:Xamarin.Forms.Button.ImageSource) , est décrite dans la section [**utilisation de bitmaps avec le bouton**](#image-button).
+Les effets de six de ces propriétés ( `FontFamily` à l’exception de et `FontAttributes` ) sont illustrés dans la page **apparence du bouton** . Une autre propriété, [`Image`](xref:Xamarin.Forms.Button.ImageSource) , est décrite dans la section [**utilisation de bitmaps avec le bouton**](#using-bitmaps-with-buttons).
 
 Toutes les vues et liaisons de données dans la page **apparence du bouton** sont définies dans le fichier XAML :
 
@@ -747,8 +731,6 @@ public partial class ToggleButtonDemoPage : ContentPage
 Voici le programme en cours d’exécution sur iOS, Android et UWP :
 
 [![Démo bouton bascule](button-images/ToggleButtonDemo.png "Démo bouton bascule")](button-images/ToggleButtonDemo-Large.png#lightbox)
-
-<a name="image-button" />
 
 ## <a name="using-bitmaps-with-buttons"></a>Utilisation de bitmaps avec des boutons
 

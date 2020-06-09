@@ -7,20 +7,20 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 01ab48f68656dcabdf2a6cfc286dfcd8850454f8
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 68c0fb9e034f432c619bc188553996bd7bacdee8
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030762"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573688"
 ---
 # <a name="configure-your-tvos-app-in-itunes-connect"></a>Configurer votre application tvOS dans iTunes Connect
 
 _Cet article fournit un guide supplémentaire sur l’iOS configurer votre application dans iTunes Connect pour les configurations spécifiques à tvOS._
 
-Outre les configurations et les paramètres que vous devrez effectuer en suivant le guide iOS [configurer votre application dans iTunes Connect](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md) , ce document couvre les configurations spécifiques qui seront nécessaires pour libérer une application Xamarin. tvOS dans l’application Apple TV. Magasin.
+Outre les configurations et les paramètres que vous devrez effectuer en suivant le guide iOS [configurer votre application dans iTunes Connect](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md) , ce document couvre les configurations spécifiques qui seront nécessaires pour libérer une application Xamarin. tvOS dans le magasin d’applications Apple TV.
 
-<a name="Adding-a-tvOS-Release-Version" />
+<a name="Adding-a-tvOS-Release-Version"></a>
 
 ## <a name="adding-a-tvos-release-version"></a>Ajout d’une version finale de tvOS
 
@@ -44,7 +44,7 @@ Les écrans d’informations spécifiques à tvOS sont ensuite disponibles pour 
 
 [![](itunes-connect-images/connect02.png "The tvOS specific information screen")](itunes-connect-images/connect02.png#lightbox)
 
-<a name="tvOS-Version-Information" />
+<a name="tvOS-Version-Information"></a>
 
 ## <a name="tvos-version-information"></a>Informations sur la version de tvOS
 
@@ -64,7 +64,7 @@ Une fois que vous avez entré les informations requises, cliquez sur le bouton *
 
 [![](itunes-connect-images/connect04.png "tvOS Version Information ready for submission")](itunes-connect-images/connect04.png#lightbox)
 
-<a name="Submitting-for-Review" />
+<a name="Submitting-for-Review"></a>
 
 ## <a name="preparing-to-submit-for-review"></a>Préparation de l’envoi en vue de la révision
 
@@ -72,13 +72,13 @@ Quand vous êtes enfin prêt à envoyer votre application Xamarin. tvOS à Apple
 
 [![](itunes-connect-images/connect05.png "Submit for Review")](itunes-connect-images/connect05.png#lightbox)
 
-<a name="Summary" />
+<a name="Summary"></a>
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article donne une vue d’ensemble du paramètre spécifique tvOS requis dans iTunes Connect pour libérer une application tvOS dans le magasin d’applications Apple TV.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Exemples tvOS](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
 - [tvOS](https://developer.apple.com/tvos/)

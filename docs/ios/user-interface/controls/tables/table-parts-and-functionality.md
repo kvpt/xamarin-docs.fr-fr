@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 0e8014263d417cef39147b440ed3b38155f226bb
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: bf023543d3159f5d5baf7f7036a576b8a746cf9e
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021851"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84572128"
 ---
 # <a name="table-parts-and-functionality-in-xamarinios"></a>Parties et fonctionnalités de table dans Xamarin. iOS
 
@@ -21,7 +21,7 @@ Un UITableView peut avoir un style « groupé » ou « clair », et se compo
 - [En-tête de section](#Section_Header)
 - [Cellules](#Cells) (ou lignes, si vous préférez)
 - [Pied de page de la section](#Section_Footer)
-- [Index](#Index)
+- [Évaluer](#Index)
 - [Mode édition](#Edit_Features) (comprend’balayer pour supprimer’et faire glisser les poignées pour modifier l’ordre des lignes) 
 
 Ces captures d’écran montrent comment les lignes, les en-têtes, les pieds de page, les contrôles d’édition et l’index sont affichés.
@@ -30,32 +30,32 @@ Ces captures d’écran montrent comment les lignes, les en-têtes, les pieds de
 
 Ces éléments sont décrits plus en détail ci-dessous :
 
-<a name="Section_Header" />
+<a name="Section_Header"></a>
 
 ## <a name="section-header"></a>En-tête de section
 
 Les cellules peuvent éventuellement être regroupées en sections, étiquetées avec un en-tête personnalisé et/ou étiquetées avec un pied de page. L’en-tête peut être défini avec une valeur de chaîne ou une vue personnalisée peut être fournie pour autoriser une disposition ou un style différent.
 
-<a name="Cells" />
+<a name="Cells"></a>
 
 ## <a name="cells"></a>Cellules
 
 Les cellules sont l’élément d’interface utilisateur principal d’une table. En cas d’implémentation correcte, les cellules sont réutilisées pour l’efficacité de la mémoire. Il existe quatre styles de cellule intégrés, et vous pouvez créer vos propres cellules personnalisées (dans le code ou dans le concepteur lorsque vous utilisez des storyboards).
 
-<a name="Section_Footer"/>
+<a name="Section_Footer"></a>
 
 ## <a name="section-footer"></a>Pied de page de la section
 
 Le pied de page de la section facultative peut être défini avec une valeur de chaîne, ou une vue personnalisée peut être fournie pour autoriser une disposition ou un style différent. Les en-têtes et pieds de page de section peuvent être définis indépendamment.
 
-<a name="Index" />
+<a name="Index"></a>
 
 ## <a name="index"></a>Index
 
 L’index apparaît sous la forme d’une bande de caractères vers le bas du bord droit de la table.
 Le fait de toucher ou de faire glisser sur l’index accélère le défilement jusqu’à cette partie de la table. Un index est facultatif, mais il est recommandé de parcourir les longues listes. Un index n’est généralement pas utilisé avec le style groupé.
 
-<a name="Edit_Features" />
+<a name="Edit_Features"></a>
 
 ## <a name="editing-mode"></a>Mode édition
 
@@ -77,7 +77,7 @@ Les classes principales utilisées pour afficher les vues de table sont indiqué
 L’objectif de chaque classe est décrit ci-dessous :
 
 - **UITableView** : vue qui contient une collection de cellules à l’intérieur d’un conteneur de défilement. La vue table utilise généralement l’écran entier dans une application iPhone, mais peut exister dans le cadre d’une vue plus large sur l’iPad (ou apparaître dans un menu Segue). 
-- **UITableViewCell** : vue qui représente une seule cellule (ou ligne) dans une vue de table. Il existe quatre types de cellules intégrés et il est possible de créer des cellules personnalisées dans C# ou avec le concepteur iOS. 
+- **UITableViewCell** : vue qui représente une seule cellule (ou ligne) dans une vue de table. Il existe quatre types de cellules intégrés et il est possible de créer des cellules personnalisées en C# ou avec le concepteur iOS. 
 - **UITableViewSource** – Xamarin. iOS : classe abstraite exclusive qui fournit toutes les méthodes requises pour afficher une table, notamment le nombre de lignes, retournant un affichage de cellule pour chaque ligne, gérer la sélection de lignes et de nombreuses autres fonctionnalités facultatives. Vous *devez* la sous-classer pour obtenir un UITableView opérationnel. 
 - **NSIndexPath** – contient des propriétés de ligne et de section qui identifient de façon unique la position d’une cellule dans une table. 
 - **UITableViewController** : UIViewController prêt à l’emploi qui a un UITableView codé en dur comme vue et accessible via la propriété TableView. 
@@ -90,6 +90,6 @@ UITableViewSource remplace les deux classes suivantes, qui sont toujours disponi
 
 Dans ce document, les exemples utilisent tous UITableViewSource et ignorent ces deux classes. Ils sont mentionnés ici, car tous les exemples objective-C trouvés dans la documentation d’Apple les référencent. il est donc utile de comprendre ce qu’ils font (et que vous pouvez utiliser UITableViewSource à la place de Xamarin. iOS).
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [WorkingWithTables (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/workingwithtables)

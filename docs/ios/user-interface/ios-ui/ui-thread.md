@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: ee7ab7c5d0503cffd2c12a493f314f191d912e92
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 584b398deafd233fdbe6b24189a2047ae712fdcf
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73002836"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573519"
 ---
 # <a name="working-with-the-ui-thread-in-xamarinios"></a>Utilisation du thread d’interface utilisateur dans Xamarin. iOS
 
@@ -32,17 +32,17 @@ InvokeOnMainThread ( () => {
 });
 ```
 
-La méthode `InvokeOnMainThread` est définie sur `NSObject` et peut donc être appelée à partir de méthodes définies sur tout objet UIKit (tel qu’un contrôle View ou View Controller).
+La `InvokeOnMainThread` méthode est définie sur de `NSObject` sorte qu’elle peut être appelée à partir de méthodes définies sur tout objet UIKit (tel qu’un contrôle View ou View Controller).
 
 Lors du débogage des applications Xamarin. iOS, une erreur est levée si votre code tente d’accéder à un contrôle d’interface utilisateur à partir du mauvais thread. Cela vous permet d’identifier et de résoudre ces problèmes avec la méthode InvokeOnMainThread. Cela se produit uniquement lors du débogage et ne génère pas d’erreur dans les versions release. Le message d’erreur s’affiche comme suit :
 
  ![](ui-thread-images/image10.png "UI Thread Execution")
 
- <a name="Background_Thread_Example" />
+ <a name="Background_Thread_Example"></a>
 
 ## <a name="background-thread-example"></a>Exemple de thread d’arrière-plan
 
-Voici un exemple qui tente d’accéder à un contrôle d’interface utilisateur (un `UILabel`) à partir d’un thread d’arrière-plan à l’aide d’un thread simple :
+Voici un exemple qui tente d’accéder à un contrôle d’interface utilisateur (a `UILabel` ) à partir d’un thread d’arrière-plan à l’aide d’un thread simple :
 
 ```csharp
 new System.Threading.Thread(new System.Threading.ThreadStart(() => {
@@ -50,7 +50,7 @@ new System.Threading.Thread(new System.Threading.ThreadStart(() => {
 })).Start();
 ```
 
-Ce code lèvera la `UIKitThreadAccessException` lors du débogage. Pour résoudre le problème (et vérifier que le contrôle d’interface utilisateur n’est accessible qu’à partir du thread d’interface utilisateur principal), encapsulez tout code qui référence des contrôles d’interface utilisateur à l’intérieur d’une expression `InvokeOnMainThread` comme suit :
+Ce code lèvera le `UIKitThreadAccessException` en cours de débogage. Pour résoudre le problème (et vérifier que le contrôle d’interface utilisateur n’est accessible qu’à partir du thread d’interface utilisateur principal), encapsulez tout code qui référence des contrôles d’interface utilisateur à l’intérieur d’une `InvokeOnMainThread` expression comme suit :
 
 ```csharp
 new System.Threading.Thread(new System.Threading.ThreadStart(() => {
@@ -62,13 +62,13 @@ new System.Threading.Thread(new System.Threading.ThreadStart(() => {
 
 Vous n’aurez pas besoin de l’utiliser pour le reste des exemples de ce document, mais il s’agit d’un concept important à retenir lorsque votre application effectue des demandes réseau, utilise le centre de notifications ou d’autres méthodes qui requièrent un gestionnaire d’achèvement qui s’exécutera sur un autre thread.
 
- <a name="Async_Await_Example" />
+ <a name="Async_Await_Example"></a>
 
 ## <a name="asyncawait-example"></a>Exemple Async/await
 
-Lors de l' C# utilisation des 5 mots clés Async/await`InvokeOnMainThread`n’est pas nécessaire, car lorsqu’une tâche attendue se termine, la méthode continue sur le thread appelant.
+L’utilisation de mots clés Async/await C# 5 `InvokeOnMainThread` n’est pas obligatoire, car lorsqu’une tâche attendue se termine, la méthode continue sur le thread appelant.
 
-Cet exemple de code (qui attend un appel de la méthode Delay, uniquement à des fins de démonstration) illustre une méthode Async qui est appelée sur le thread d’interface utilisateur (il s’agit d’un gestionnaire TouchUpInside). Étant donné que la méthode conteneur est appelée sur le thread d’interface utilisateur, les opérations d’interface utilisateur telles que la définition du texte sur une `UILabel` ou l’indication d’une `UIAlertView` peuvent être appelées sans risque après la fin des opérations asynchrones sur les threads d’arrière-plan.
+Cet exemple de code (qui attend un appel de la méthode Delay, uniquement à des fins de démonstration) illustre une méthode Async qui est appelée sur le thread d’interface utilisateur (il s’agit d’un gestionnaire TouchUpInside). Étant donné que la méthode conteneur est appelée sur le thread d’interface utilisateur, les opérations d’interface utilisateur telles que la définition du texte sur un `UILabel` ou l’indication d’un `UIAlertView` peuvent être appelées en toute sécurité une fois les opérations asynchrones terminées sur les threads d’arrière-plan
 
 ```csharp
 async partial void button2_TouchUpInside (UIButton sender)
@@ -89,9 +89,9 @@ async partial void button2_TouchUpInside (UIButton sender)
 }
 ```
 
-Si une méthode Async est appelée à partir d’un thread d’arrière-plan (et non le thread d’interface utilisateur principal), `InvokeOnMainThread` est toujours requis.
+Si une méthode Async est appelée à partir d’un thread d’arrière-plan (et non le thread d’interface utilisateur principal), elle est `InvokeOnMainThread` toujours requise.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Contrôles (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/controls)
-- [Thread](~/ios/app-fundamentals/threading.md)
+- [Threads](~/ios/app-fundamentals/threading.md)

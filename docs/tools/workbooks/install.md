@@ -6,16 +6,16 @@ ms.assetid: 9D4E10E8-A288-4C6C-9475-02969198C119
 author: davidortinau
 ms.author: daortin
 ms.date: 06/19/2018
-ms.openlocfilehash: 92b08a9cfd725c1114b71fad4f29e6f28cd828b3
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: a044169f86b46abff4158011e99320c528180ffc
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79305044"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573883"
 ---
 # <a name="workbooks-installation-and-requirements"></a>Installation et configuration requise des classeurs
 
-<a name="install" />
+<a name="install"></a>
 
 ## <a name="download-and-install"></a>Télécharger et installer
 
@@ -27,7 +27,7 @@ ms.locfileid: "79305044"
 2. Téléchargez et installez [Xamarin Workbooks pour Windows](https://dl.xamarin.com/interactive/XamarinInteractive.msi).
 3. Commencez à [Parcourir](~/tools/workbooks/workbook.md) les classeurs.
 
-# <a name="macos"></a>[macOS](#tab/macos)
+# <a name="macos"></a>[MacOS](#tab/macos)
 
 1. Vérifiez la [Configuration requise](#requirements) ci-dessous.
 2. Téléchargez et installez [Xamarin Workbooks pour Mac](https://dl.xamarin.com/interactive/XamarinInteractive.pkg).
@@ -37,7 +37,7 @@ ms.locfileid: "79305044"
 
 ## <a name="requirements"></a>Spécifications
 
-#### <a name="supported-operating-systems"></a>Systèmes d’exploitation pris en charge
+#### <a name="supported-operating-systems"></a>Systèmes d'exploitation pris en charge
 
 - **Mac** -OS X 10,11 ou version ultérieure
 - **Windows** -Windows 7 ou version ultérieure (avec Internet Explorer 11 ou version ultérieure et .net 4.6.1 ou version ultérieure)
@@ -48,7 +48,7 @@ ms.locfileid: "79305044"
 |--- |--- |--- |
 |Mac|Pris en charge uniquement sur Mac|
 |iOS|Pris en charge sur Mac et Windows|Xamarin. iOS 11,0 et Xcode 9,0 ou version ultérieure doivent être installés sur Mac. L’exécution de classeurs iOS sur Windows requiert un hôte de build Mac exécutant tous les éléments ci-dessus, et le [simulateur iOS distant](~/tools/ios-simulator/index.md) installé sur Windows.|
-|Android|Pris en charge sur Mac et Windows|Nécessite l’utilisation de Google, de Visual Studio ou de l’émulateur Xamarin Android, avec un appareil virtuel > = 5,0|
+|Android|Pris en charge sur Mac et Windows|Nécessite l’utilisation de Google, de Visual Studio ou de l’émulateur Xamarin Android, avec un appareil virtuel >= 5,0|
 |WPF|Pris en charge uniquement sur Windows|
 |Console (.NET Framework)|Pris en charge sur Mac et Windows|
 |Console (.NET Core)|Pris en charge sur Mac et Windows|
@@ -66,7 +66,7 @@ Toujours joindre les classeurs des fichiers journaux du client :
 
 1.4. x offre également la possibilité de sélectionner le fichier journal dans Finder (macOS) ou Explorer (Windows) directement à partir du menu principal :
 
-- **Aide > Afficher le fichier journal**
+- **Aide > afficher le fichier journal**
 
 #### <a name="log-paths-for-workbooks-13-and-earlier"></a>Chemins d’accès de journal pour les classeurs 1,3 et versions antérieures :
 
@@ -85,7 +85,7 @@ Dans le menu principal de classeurs :
 
 Visual Studio pour Mac
 
-- **Visual Studio > à propos de Visual Studio > Afficher les détails > copier les informations**
+- **Visual Studio > à propos de Visual Studio > afficher les détails > copier les informations**
 - Coller dans le rapport de bogue
 
 Visual Studio
@@ -118,7 +118,7 @@ Si vous rencontrez des problèmes de connexion à votre classeur iOS ou Android 
 
 Selon la manière dont vous avez acquis les classeurs, vous devrez peut-être effectuer deux procédures de désinstallation. Vérifiez les deux à la fois pour désinstaller complètement le logiciel.
 
-#### <a name="visual-studio-installer"></a>Visual Studio Installer
+#### <a name="visual-studio-installer"></a>Programme d’installation de Visual Studio
 
 Si vous disposez de Visual Studio 2017, ouvrez **Visual Studio installer**et recherchez dans **les composants individuels** des **Xamarin Workbooks**. Si elle est cochée, décochez-la, puis cliquez sur **modifier** pour désinstaller.
 
@@ -132,7 +132,7 @@ Si vous avez installé des classeurs avec un programme d’installation téléch
 
 **Vous devez toujours suivre la procédure de la Visual Studio Installer pour vous assurer que les classeurs ne sont pas réinstallés à votre insu.**
 
-<a name="uninstall-macos" />
+<a name="uninstall-macos"></a>
 
 ### <a name="macos"></a>macOS
 
@@ -144,7 +144,7 @@ sudo /Library/Frameworks/Xamarin.Interactive.framework/Versions/Current/uninstal
 
 Le programme de désinstallation va détailler les fichiers et les répertoires qu’il va supprimer et demander confirmation avant de continuer.
 
-Transmettez l’argument `-help` au script `uninstall` pour des scénarios plus avancés.
+Transmettez l' `-help` argument au `uninstall` script pour des scénarios plus avancés.
 
 Pour les versions antérieures, vous devez supprimer manuellement les éléments suivants :
 
@@ -155,11 +155,11 @@ Pour les versions antérieures, vous devez supprimer manuellement les éléments
 
 ## <a name="downgrading"></a>Rétrogradation
 
-Identificateur de Bundle pour les **classeurs/applications/Xamarin. l’application** a été modifiée de `com.xamarin.Inspector` à `com.xamarin.Workbooks` dans la version 1,4, car les classeurs et les inspecteurs sont maintenant entièrement répartis.
+Identificateur de Bundle pour les **classeurs/applications/Xamarin. l’application** a été remplacée par `com.xamarin.Inspector` `com.xamarin.Workbooks` dans la version 1,4, car les classeurs et Inspector sont maintenant entièrement fractionnés.
 
 En raison d’un bogue dans les programmes d’installation plus anciens, il n’est pas possible de rétrograder 1,4 ou des versions plus récentes à l’aide des programmes d’installation 1.3.2 ou antérieurs.
 
 Pour passer à une version antérieure de 1,4 ou ultérieure à 1.3.2 ou une version antérieure :
 
 1. [Désinstaller manuellement des classeurs & Inspector](#uninstall-macos)
-2. Exécutez le programme d’installation de `.pkg` 1.3.2 ou une version antérieure
+2. Exécutez le programme d’installation 1.3.2 ou une version antérieure `.pkg`

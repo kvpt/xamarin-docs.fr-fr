@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/13/2016
-ms.openlocfilehash: 356509fb6f588b96a2a1224879675bbad36f8524
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2aee2a8dc37d6a1a73569322a97cdd0aebfbfa1c
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032133"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574208"
 ---
 # <a name="app-store-changes-in-ios-11"></a>Modifications de l’App Store dans iOS 11
 
@@ -50,7 +50,7 @@ Pour que vos achats dans l’application soient disponibles pour la promotion, o
 
 ![Section promotion de l’App Store dans iTunes Connect](app-store-changes-images/image4.png)
 
-Vous devez également ajouter la méthode `ShouldAddStorePayment` au protocole `SKPaymentTransactionObserver` dans votre application.
+Vous devez également ajouter la `ShouldAddStorePayment` méthode au `SKPaymentTransactionObserver` protocole dans votre application.
 
 Pour plus d’informations sur les promotions relatives aux achats dans l’application, consultez la page [promotion des achats dans l’application](https://developer.apple.com/app-store/promoting-in-app-purchases/) d’Apple.
 
@@ -84,7 +84,7 @@ Voici quelques éléments à prendre en compte lors de la réponse aux utilisate
 
 Pour plus d’informations, consultez la page [réponse à des avis](https://developer.apple.com/app-store/responding-to-reviews/) d’Apple.
 
-<a name="Phased_Release"/>
+<a name="Phased_Release"></a>
 
 ## <a name="phased-release"></a>Version échelonnée
 
@@ -96,7 +96,7 @@ Les mises en production échelonnées sont activées dans iTunes Connect. Clique
 
 Votre mise à jour est disponible immédiatement au téléchargement dans l’onglet mises à jour de l’App Store. Les mises en production échelonnées sont uniquement disponibles pour les utilisateurs qui ont sélectionné les téléchargements automatiques.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Nouveautés d’iOS 11 (Apple)](https://developer.apple.com/ios/)
 - [Page produit App Store mise à jour (Apple)](https://developer.apple.com/app-store/product-page/)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 63a5ed357a903700ea89d858bcde9798ddf97942
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 65a89afb3f301fd88ac4819bb8c3658a2be5e29d
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76724618"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573194"
 ---
 # <a name="the-itunesmetadataplist-file-in-xamarinios-apps"></a>Fichier iTunesMetadata.plist dans les applications Xamarin.iOS
 
@@ -22,7 +22,7 @@ Quand un développeur crée une application iOS dans iTunes Connect (qu’elle s
 
 Pour fournir les informations manquantes d’une distribution ad hoc, vous pouvez créer un fichier `iTunesMetadata.plist` facultatif et l’inclure dans le fichier IPA des applications. Ce fichier plist est un fichier XML ayant un format spécial (pour plus d’informations, consultez le [Guide de programmation des listes de propriétés](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/PropertyLists/Introduction/Introduction.html) d’Apple), qui contient des paires clé/valeur définissant les informations relatives à une application iOS donnée.
 
-<a name="iTunesMetadata_contents" />
+<a name="iTunesMetadata_contents"></a>
 
 ## <a name="the-itunesmetadataplist-contents"></a>Contenu d’iTunesMetadata.plist
 
@@ -280,7 +280,7 @@ Les clés suivantes sont incluses dans tous les fichiers `iTunesMetadata.plist` 
 <integer>16843008</integer>
 ```
 
-<a name="iTunesMetadata_creating" />
+<a name="iTunesMetadata_creating"></a>
 
 ## <a name="creating-an-itunesmetadataplist-file"></a>Création d’un fichier iTunesMetadata.plist
 
@@ -298,14 +298,14 @@ Les clés suivantes sont incluses dans tous les fichiers `iTunesMetadata.plist` 
 Effectuez les actions suivantes :
 
 1. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le fichier projet Xamarin.iOS, puis sélectionnez **Ajouter** > **Nouveau fichier...**
-2. Du nouveau dialogue de fichier, sélectionnez la**liste des biens** **iOS** > :
+2. Dans la boîte de dialogue nouveau fichier **iOS**, sélectionnez  >  **liste de propriétés**iOS :
 
     ![](itunesmetadata-images/image01.png "Select iOS Property List")
 3. Entrez `iTunesMetadata` comme **Nom**, puis cliquez sur le bouton **Nouveau**.
 4. Dans l’**Explorateur de solutions**, double-cliquez sur le fichier `iTunesMetadata.plist` pour l’ouvrir et le modifier :
 
     ![](itunesmetadata-images/image02.png "The iTunesMetadata.plist editor")
-5. Cliquez sur **+** le vert pour `UIRequiredDeviceCapabilities` créer une nouvelle entrée et entrez comme nom clé:
+5. Cliquez sur le vert **+** pour créer une entrée et entrez `UIRequiredDeviceCapabilities` comme nom de clé :
 
     ![](itunesmetadata-images/image03.png "Create a new entry and enter UIRequiredDeviceCapabilities as the key name")
 6. Cliquez sur le type valeur **Chaîne**, puis sélectionnez **Dictionnaire** dans la liste déroulante :
@@ -354,16 +354,16 @@ Effectuez les actions suivantes :
 
 Plus tard, vous devez sélectionner ce fichier `iTunesMetadata.plist` quand vous vous préparez à créer votre fichier IPA dans l’IDE.
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article a présenté le fichier `iTunesMetadata.plist`, qui permet d’informer iTunes sur une application iOS faisant l’objet d’une distribution ad hoc. Il a décrit les clés standard du fichier plist. Il a ensuite expliqué comment créer et tenir à jour ce fichier dans Visual Studio et Visual Studio pour Mac.
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Distribution De l’App Store](~/ios/deploy-test/app-distribution/app-store-distribution/index.md)
-- [Configurer une application dans iTunes Connect](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)
-- [Publication dans l’App Store](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)
+- [Distribution de l’App Store](~/ios/deploy-test/app-distribution/app-store-distribution/index.md)
+- [Configuration d’une application dans iTunes Connect](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)
+- [Publication sur l’App Store](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)
 - [Distribution en interne](~/ios/deploy-test/app-distribution/in-house-distribution.md)
 - [Distribution ad hoc](~/ios/deploy-test/app-distribution/ad-hoc-distribution.md)
-- [Soutien de l’API](~/ios/deploy-test/app-distribution/ipa-support.md)
+- [Support de la Loi](~/ios/deploy-test/app-distribution/ipa-support.md)
 - [Dépannage](~/ios/deploy-test/troubleshooting.md)

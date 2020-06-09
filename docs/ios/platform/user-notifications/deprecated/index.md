@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 10/07/2016
-ms.openlocfilehash: de9a46587a5d1de6f12dd54122b27e53694cdeb8
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: a97885518c0646d2d8315b5da5eb12c71d693cf6
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031393"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574078"
 ---
 # <a name="deprecated-notification-technologies-in-xamarinios"></a>Technologies de notification déconseillées dans Xamarin. iOS
 
@@ -23,24 +23,24 @@ Cette section montre comment implémenter des notifications push et locales dans
 
 ## <a name="sections"></a>Sections
 
-<a name="Local Notifications In iOS" />
+<a name="Local Notifications In iOS"></a>
 
-## <a name="local-notifications-in-ioslocal-notifications-in-iosmd"></a>[Notifications locales dans iOS](local-notifications-in-ios.md)
+## <a name="local-notifications-in-ios"></a>[Notifications locales dans iOS](local-notifications-in-ios.md)
 
 Cette section explique comment implémenter des notifications locales dans Xamarin. iOS. Il explique les différents éléments d’interface utilisateur d’une notification iOS et discute des API impliquées dans la création et l’affichage d’une notification.
 
-<a name="Local Notifications Walkthrough" />
+<a name="Local Notifications Walkthrough"></a>
 
-## <a name="walkthrough---using-local-notifications-in-xamarinioslocal-notifications-in-ios-walkthroughmd"></a>[Procédure pas à pas : utilisation des notifications locales dans Xamarin.iOS](local-notifications-in-ios-walkthrough.md)
+## <a name="walkthrough---using-local-notifications-in-xamarinios"></a>[Procédure pas à pas : utilisation de notifications locales dans Xamarin. iOS](local-notifications-in-ios-walkthrough.md)
 
 Dans cette section, nous allons découvrir comment utiliser des notifications locales dans une application Xamarin. iOS. Il illustre les principes de base de la création et de la publication d’une notification qui contiendra une alerte lorsqu’elle sera reçue par l’application.
 
-<a name="Remote Notifications In iOS" />
+<a name="Remote Notifications In iOS"></a>
 
-## <a name="remote-notifications-in-iosremote-notifications-in-iosmd"></a>[Notifications distantes dans iOS](remote-notifications-in-ios.md)
+## <a name="remote-notifications-in-ios"></a>[Notifications distantes dans iOS](remote-notifications-in-ios.md)
 
 Cette section couvre les notifications push dans iOS. Il présente le service de passerelle de notifications push Apple (APNS) et le rôle qu’il joue pour la publication des notifications sur les applications iOS. Il explique comment créer les certificats de sécurité nécessaires pour activer les notifications push et les aborder. Enfin, cette section présente certaines des tâches de maintenance que les serveurs d’applications doivent effectuer pour effectuer le suivi des appareils mobiles clients.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Notifications (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/notifications)

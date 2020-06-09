@@ -6,12 +6,12 @@ ms.assetid: F7126340-04B2-4A10-B14D-394E23527C1A
 author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: 5ba451de857444bc5b12b750ae479b62abdb75a3
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: d2c00410581a35e67807f512b5b6fb6d5349ad0f
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79304582"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571049"
 ---
 # <a name="3264-bit-platform-considerations"></a>Considérations sur les plateformes 32 bits et 64 bits
 
@@ -21,11 +21,11 @@ Depuis iOS 11, les applications 32 bits ne sont plus lancées, et [toutes les so
 
 Depuis le 2018 janvier, [les nouvelles applications soumises au Mac App Store doivent prendre en charge 64 bits](https://developer.apple.com/news/?id=06282017a), et les applications existantes doivent être mises à jour avant le 2018 juin.
 
-Le API classique de Xamarin (`XamMac.dll` et `monotouch.dll`) prenait uniquement en charge les applications 32 bits. Toutefois, les nouvelles applications Xamarin. iOS et Xamarin. Mac utilisent le [API unifiée](~/cross-platform/macios/unified/index.md) (`Xamarin.iOS` et `Xamarin.Mac`) par défaut, et peuvent donc cibler à la fois 32 et 64 bits, si nécessaire.
+Les API classique ( `XamMac.dll` et) de Xamarin `monotouch.dll` ne prenait en charge que les applications 32 bits. Toutefois, les nouvelles applications Xamarin. iOS et Xamarin. Mac utilisent le [API unifiée](~/cross-platform/macios/unified/index.md) ( `Xamarin.iOS` et `Xamarin.Mac` ) par défaut, et peuvent donc cibler à la fois 32 et 64 bits, si nécessaire.
 
 ## <a name="ios"></a>iOS
 
-<a name="enable-64" />
+<a name="enable-64"></a>
 
 ### <a name="enabling-64-bit-builds-of-xamarinios-apps"></a>Activation des versions 64 bits des applications Xamarin. iOS
 
@@ -40,9 +40,9 @@ Pour les applications mobiles Xamarin. iOS qui ont été converties en API unifi
 
 1. Dans la **panneau solutions**, double-cliquez sur le projet de l’application pour ouvrir la fenêtre **Options du projet** .
 2. Sélectionnez **Build iOS**.
-3. Pour le simulateur iPhone, dans la liste déroulante **architectures prises en charge** , sélectionnez **x86\_64** ou **i386 + x86\_64**:
+3. Pour le simulateur iPhone, dans la liste déroulante **architectures prises en charge** , sélectionnez **x86 \_ 64** ou **i386 + x86 \_ 64**:
 
-   [![Définition des architectures prises en charge sur x86\_64 ou i386 + x86\_64](Images/Image01.png "Setting Supported architectures to x86\_64 or i386 + x86\_64")](Images/Image01-large.png#lightbox) 
+   [![Définition des architectures prises en charge sur x86 \_ 64 ou i386 + x86 \_ 64](Images/Image01.png "Setting Supported architectures to x86\_64 or i386 + x86\_64")](Images/Image01-large.png#lightbox) 
 
 4. Pour les appareils physiques, sélectionnez l’une des combinaisons **ARM64** disponibles :
 
@@ -55,9 +55,9 @@ Pour les applications mobiles Xamarin. iOS qui ont été converties en API unifi
 
 1. Dans le **Explorateur de solutions**, cliquez avec le bouton droit sur le projet de l’application, puis sélectionnez **Propriétés**.
 2. Sélectionnez **Build iOS**.
-3. Pour le simulateur iPhone, définissez les **architectures prises en charge** sur **x86\_64** ou **i386 + x86\_64**: 
+3. Pour le simulateur iPhone, définissez les **architectures prises en charge** sur **x86 \_ 64** ou **i386 + x86 \_ 64**: 
 
-   [![Définition des architectures prises en charge pour x86_64 ou i386 + x86\_64](Images/VS02.png "Setting Supported architectures to x86_64 or i386 + x86\_64")](Images/VS02-large.png#lightbox)
+   [![Définition des architectures prises en charge pour x86_64 ou i386 + x86 \_ 64](Images/VS02.png "Setting Supported architectures to x86_64 or i386 + x86\_64")](Images/VS02-large.png#lightbox)
 
 4. Pour les appareils physiques, sélectionnez l’une des combinaisons **ARM64** disponibles :
     
@@ -90,7 +90,7 @@ Le ciblage des architectures 32 bits et 64 bits augmentera considérablement la 
 
 La plupart des ordinateurs Mac modernes prennent en charge les applications 32 bits et 64 bits.   MacOS 10,6 (Snow Leopard) était le dernier système d’exploitation à s’exécuter sur les systèmes 32 bits.   La plupart des Mac publiées depuis 2010 prennent en charge les deux systèmes.
 
-Contrairement à iOS, un grand nombre des nouveaux frameworks introduits dans les versions récentes de macOS sont pris en charge uniquement en mode 64 bits (CloudKit, EventKit, GameController, LocalAuthentication, MediaLibrary, MultipeerConnectivity, NotificationCenter, GLKit, SpriteKit, social, et MapKit, entre autres).
+Contrairement à iOS, un grand nombre des nouvelles infrastructures introduites dans les versions récentes de macOS sont uniquement prises en charge en mode 64 bits (CloudKit, EventKit, GameController, LocalAuthentication, MediaLibrary, MultipeerConnectivity, NotificationCenter, GLKit, SpriteKit, social et MapKit, entre autres).
 
 Les API unifiée permettent aux développeurs de choisir le genre d’applications qu’ils souhaitent produire : 32 bits ou 64 bits.
 

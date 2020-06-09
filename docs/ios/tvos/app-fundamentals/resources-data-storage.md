@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: d84752afd5579216272895f750522a8f38ece34a
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 8619fa73a4dbaabe1e161c634b6a794b701d5135
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030806"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84570856"
 ---
 # <a name="tvos-resources-and-data-storage-in-xamarin"></a>Ressources tvOS et stockage des données dans Xamarin
 
 _Cet article traite de l’utilisation des ressources et du stockage de données persistant dans une application Xamarin. tvOS._
 
-<a name="tvOS-Resource-Limitations" />
+<a name="tvOS-Resource-Limitations"></a>
 
 ## <a name="tvos-resource-limitations"></a>Limitations des ressources tvOS
 
@@ -26,7 +26,7 @@ Contrairement aux appareils iOS, le nouveau Apple TV offre un stockage local et 
 
 En outre, tvOS limite la taille d’une application Apple TV à 200 Mo. Si votre application nécessite des ressources qui dépassent cette taille, elles doivent être empaquetées et chargées à l’aide [de ressources à la demande](#On-Demand-Resources) (jusqu’à 2 Go supplémentaires). Compte tenu de ces limitations, il est essentiel que vous Timez correctement le téléchargement de ressources supplémentaires pour offrir la meilleure expérience aux utilisateurs de votre application. Pour plus d’informations, consultez [le guide des ressources à la demande](https://developer.apple.com/library/prerelease/tvos/documentation/FileManagement/Conceptual/On_Demand_Resources_Guide/index.html#//apple_ref/doc/uid/TP40015083)d’Apple.
 
-<a name="Non-Persistent-Downloads" />
+<a name="Non-Persistent-Downloads"></a>
 
 ## <a name="non-persistent-downloads"></a>Téléchargements non persistants
 
@@ -37,13 +37,13 @@ Par conséquent, votre application ne peut pas compter sur la disponibilité du 
 > [!IMPORTANT]
 > Si vous avez la possibilité de télécharger d’autres ressources et ressources en fonction des besoins, Apple vous avertit de l’utilisation de tout l’espace dans le cache de votre application, car cela peut entraîner des résultats imprévisibles.
 
-<a name="Managing-Resources" />
+<a name="Managing-Resources"></a>
 
 ## <a name="managing-resources"></a>Gestion des ressources
 
 Comme indiqué ci-dessus, en raison du stockage limité et non persistant des informations disponibles pour les applications tvOS, ces restrictions nécessitent une planification minutieuse pour créer une expérience utilisateur remarquable pour votre application Xamarin. tvOS.
 
-<a name="iCloud-Data-Storage" />
+<a name="iCloud-Data-Storage"></a>
 
 ### <a name="icloud-data-storage"></a>Stockage de données iCloud
 
@@ -57,7 +57,7 @@ Par conséquent, votre application Xamarin. tvOS doit stocker toutes les donnée
 > [!IMPORTANT]
 > Apple [fournit des outils](https://developer.apple.com/support/allowing-users-to-manage-data/) pour aider les développeurs à gérer correctement le Règlement général sur la protection des données (RGPD) de l’Union européenne.
 
-<a name="On-Demand-Resources" />
+<a name="On-Demand-Resources"></a>
 
 ### <a name="on-demand-resources"></a>Ressources à la demande
 
@@ -72,13 +72,13 @@ Vous utilisez Xcode pour créer des regroupements de contenu associé (par exemp
 > [!IMPORTANT]
 > Veillez à prendre le bon équilibre entre le nombre de fois où l’application doit télécharger des ressources à la demande et la taille des téléchargements individuels. L’utilisateur peut devenir frustré avec votre application si le jeu est interrompu constamment pour télécharger un nouveau contenu ou si un téléchargement unique prend trop de temps.
 
-<a name="Summary" />
+<a name="Summary"></a>
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article a abordé les limites de taille, de ressources et de stockage des données placées sur une application Xamarin. tvOS par le système tvOS. Il a présenté des options pour contourner ces limitations et suggestions afin de créer une expérience utilisateur exceptionnelle pour votre application.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Exemples tvOS](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
 - [tvOS](https://developer.apple.com/tvos/)
