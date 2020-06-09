@@ -9,16 +9,16 @@ author: davidortinau
 ms.author: daortin
 ms.custom: video
 ms.date: 01/22/2019
-ms.openlocfilehash: 64e637648b03dff81468f2d7ad072c7acc50868b
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: fd1361f00bf10089f7a9dead5a5adaa1e7c29727
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73021151"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571582"
 ---
 # <a name="managing-virtual-devices-with-the-android-device-manager"></a>Gestion des appareils virtuels avec Android Device Manager
 
-_Cet article explique comment utiliser le gestionnaire d’appareils Android pour créer et configurer des appareils virtuels Android (AVD) qui émulent les appareils Android physiques. Vous pouvez utiliser ces appareils virtuels pour exécuter et tester votre application sans avoir à compter sur un appareil physique._
+_Cet article explique comment utiliser l’Android Device Manager pour créer et configurer des appareils virtuels Android (AVD) qui émulent des appareils Android physiques. Vous pouvez utiliser ces appareils virtuels pour exécuter et tester votre application sans avoir à vous fier à un appareil physique._
 
 Après avoir vérifié que l’accélération matérielle était activée (comme décrit dans [Accélération matérielle de l’émulateur Android](~/android/get-started/installation/android-emulator/hardware-acceleration.md)), l’étape suivante consiste à utiliser _Android Device Manager_ (également appelé _Xamarin Android Device Manager_) afin de créer des appareils virtuels que vous pouvez utiliser pour tester et déboguer votre application.
 
@@ -28,7 +28,7 @@ Après avoir vérifié que l’accélération matérielle était activée (comme
 
 Cet article explique comment utiliser Android Device Manager pour créer, dupliquer, personnaliser et lancer des appareils virtuels Android.
 
-[![Capture d’écran du gestionnaire d’appareils Android dans l’onglet Appareils](device-manager-images/win/01-devices-dialog-sml.png)](device-manager-images/win/01-devices-dialog.png#lightbox)
+[![Capture d’écran de l’Android Device Manager sous l’onglet appareils](device-manager-images/win/01-devices-dialog-sml.png)](device-manager-images/win/01-devices-dialog.png#lightbox)
 
 Vous utilisez Android Device Manager pour créer et configurer des _appareils virtuels Android_ (AVD) que vous exécutez dans l’[émulateur Android](~/android/deploy-test/debugging/debug-on-emulator.md).
 Chaque AVD est une configuration d’émulateur qui simule un appareil Android physique. Vous pouvez ainsi exécuter et tester votre application dans diverses configurations qui simulent différents appareils Android physiques.
@@ -47,20 +47,20 @@ Pour utiliser Android Device Manager, vous devez disposer des éléments suivant
   Veillez à installer le kit Android SDK à son emplacement par défaut, s’il ne l’est pas déjà : **C:\\Program Files (x86)\\Android\\android-sdk**.
 
 - Les paquets suivants doivent être installés (via [Android SDK Manager](~/android/get-started/installation/android-sdk.md)) : 
-  - **Android SDK Tools version 26.1.1** ou plus tard
+  - **Android SDK Tools version 26.1.1** ou ultérieure
   - **Android SDK Platform-Tools {27.0.1}** ou ultérieur
   - **Android SDK Build-Tools 27.0.3** ou ultérieur 
   - **Émulateur Android 27.2.7** ou version ultérieure. 
 
   Ces paquets doivent être affichés avec l’état **Installé**, comme illustré dans la capture d’écran suivante :
 
-  [![Installation d’outils Android SDK](device-manager-images/win/02-sdk-tools-sml.png)](device-manager-images/win/02-sdk-tools.png#lightbox)
+  [![Installation de Android SDK Tools](device-manager-images/win/02-sdk-tools-sml.png)](device-manager-images/win/02-sdk-tools.png#lightbox)
 
 ## <a name="launching-the-device-manager"></a>Lancement du Gestionnaire d’appareils
 
 Lancez Android Device Manager à partir du menu **Outils** en cliquant sur **Outils > Android > Android Device Manager** :
 
-[![Lancement du gestionnaire de l’appareil à partir du menu Tools](device-manager-images/win/03-tools-menu-sml.png)](device-manager-images/win/03-tools-menu.png#lightbox)
+[![Lancement du gestionnaire de périphériques à partir du menu outils](device-manager-images/win/03-tools-menu-sml.png)](device-manager-images/win/03-tools-menu.png#lightbox)
 
 Si la boîte de dialogue d’erreur suivante est présentée au lancement, consultez la section [Résolution des problèmes](#troubleshooting) pour obtenir des instructions de contournement :
 
@@ -74,31 +74,31 @@ Lorsque vous lancez pour la première fois le Gestionnaire d’appareils Android
 
 Quand vous sélectionnez un appareil dans la liste, le bouton **Démarrer** apparaît à droite. Vous pouvez cliquer sur le bouton **Démarrer** pour lancer l’émulateur avec cet appareil virtuel :
 
-[![Bouton de démarrage pour une image d’appareil](device-manager-images/win/06-start-button-sml.png)](device-manager-images/win/06-start-button.png#lightbox)
+[![Bouton Démarrer pour une image d’appareil](device-manager-images/win/06-start-button-sml.png)](device-manager-images/win/06-start-button.png#lightbox)
 
 Une fois que l’émulateur a démarré avec l’appareil virtuel sélectionné, le bouton **Démarrer** se transforme en bouton **Arrêter** que vous pouvez utiliser pour arrêter l’émulateur :
 
-[![Bouton d’arrêt pour l’appareil en marche](device-manager-images/win/07-stop-button-sml.png)](device-manager-images/win/07-stop-button.png#lightbox)
+[![Bouton arrêter pour l’appareil en cours d’exécution](device-manager-images/win/07-stop-button-sml.png)](device-manager-images/win/07-stop-button.png#lightbox)
 
 ### <a name="new-device"></a>Nouvel appareil
 
 Pour créer un nouvel appareil, cliquez sur le bouton **Nouveau** (situé en haut à droite de l’écran) :
 
-[![Nouveau bouton pour la création d’un nouvel appareil](device-manager-images/win/08-new-button-sml.png)](device-manager-images/win/08-new-button.png#lightbox)
+[![Bouton nouveau pour la création d’un nouvel appareil](device-manager-images/win/08-new-button-sml.png)](device-manager-images/win/08-new-button.png#lightbox)
 
 Lorsque vous cliquez sur **Nouveau**, l’écran **Nouvel appareil** s’affiche :
 
-[![Nouvel écran d’appareil du gestionnaire de l’appareil](device-manager-images/win/09-new-device-editor-sml.png)](device-manager-images/win/09-new-device-editor.png#lightbox)
+[![Écran nouveau périphérique de l’Device Manager](device-manager-images/win/09-new-device-editor-sml.png)](device-manager-images/win/09-new-device-editor.png#lightbox)
 
 Pour configurer un nouvel appareil dans l’écran **Nouvel appareil**, effectuez les étapes suivantes :
 
 1. Donnez un nouveau nom à l’appareil. Dans l’exemple suivant, le nouvel appareil se nomme **Pixel_API_27** :
 
-   [![Nommer le nouvel appareil](device-manager-images/win/10-device-name-sml.png)](device-manager-images/win/10-device-name.png#lightbox)
+   [![Attribution d’un nom au nouvel appareil](device-manager-images/win/10-device-name-sml.png)](device-manager-images/win/10-device-name.png#lightbox)
 
 2. Sélectionnez un appareil physique à émuler en cliquant sur le menu déroulant **Appareil de base** :
 
-   [![Sélection de l’appareil physique à imiter](device-manager-images/win/11-device-menu-sml.png)](device-manager-images/win/11-device-menu.png#lightbox)
+   [![Sélection de l’appareil physique à émuler](device-manager-images/win/11-device-menu-sml.png)](device-manager-images/win/11-device-menu.png#lightbox)
 
 3. Sélectionnez un type de processeur pour cet appareil virtuel en cliquant sur le menu déroulant **Processeur**. Si vous sélectionnez **x86**, vous obtenez les meilleures performances, car cela permet à l’émulateur de tirer parti de l’[accélération matérielle](~/android/get-started/installation/android-emulator/hardware-acceleration.md).
    L’option **x86_64** utilise également l’accélération matérielle, mais son exécution est légèrement plus lente que celle de **x86** (**x86_64** sert normalement à tester des applications 64 bits) :
@@ -123,63 +123,63 @@ Pour configurer un nouvel appareil dans l’écran **Nouvel appareil**, effectue
 
 7. Ajoutez toute propriété supplémentaire que vous avez besoin de définir explicitement. L’écran **Nouvel appareil** liste uniquement les propriétés modifiées le plus souvent. Vous pouvez toutefois cliquer sur le menu déroulant **Ajouter une propriété** (en bas) pour ajouter des propriétés supplémentaires :
 
-   [![Ajouter le menu De traction de propriété](device-manager-images/win/16-add-property-menu-sml.png)](device-manager-images/win/16-add-property-menu.png#lightbox)
+   [![Menu déroulant Ajouter une propriété](device-manager-images/win/16-add-property-menu-sml.png)](device-manager-images/win/16-add-property-menu.png#lightbox)
 
     Vous pouvez également définir une propriété personnalisée en sélectionnant **Personnaliser** en haut de la liste des propriétés.
 
 8. Cliquez sur le bouton **Créer** (dans l’angle inférieur droit) pour créer le nouvel appareil :
 
-   [![Créer un bouton](device-manager-images/win/17-create-button-sml.png)](device-manager-images/win/17-create-button.png#lightbox)
+   [![Bouton Créer](device-manager-images/win/17-create-button-sml.png)](device-manager-images/win/17-create-button.png#lightbox)
 
-9. Un écran **Acceptation de la licence** est susceptible de s’afficher. Cliquez sur **Accept** si vous acceptez les conditions de licence :
+9. Un écran **Acceptation de la licence** est susceptible de s’afficher. Cliquez sur **accepter** si vous acceptez les termes du contrat de licence :
 
-   [![Écran d’acceptation de licence](device-manager-images/win/18-license-acceptance-sml.png)](device-manager-images/win/18-license-acceptance.png#lightbox)
+   [![Écran acceptation de la licence](device-manager-images/win/18-license-acceptance-sml.png)](device-manager-images/win/18-license-acceptance.png#lightbox)
 
 10. Android Device Manager ajoute le nouvel appareil à la liste des appareils virtuels installés et affiche un indicateur de progression **Création en cours** pendant la création de l’appareil :
 
-    [![Indicateur de progrès de la création](device-manager-images/win/19-creating-the-device-sml.png)](device-manager-images/win/19-creating-the-device.png#lightbox)
+    [![Indicateur de progression de la création](device-manager-images/win/19-creating-the-device-sml.png)](device-manager-images/win/19-creating-the-device.png#lightbox)
 
 11. Lorsque le processus de création est terminé, le nouvel appareil apparaît dans la liste des appareils virtuels installés avec un bouton **Démarrer**, prêt à être lancé :
 
-    [![Appareil nouvellement créé prêt à être lancé](device-manager-images/win/20-created-device-sml.png)](device-manager-images/win/20-created-device.png#lightbox)
+    [![Appareil nouvellement créé prêt pour le lancement](device-manager-images/win/20-created-device-sml.png)](device-manager-images/win/20-created-device.png#lightbox)
 
 ### <a name="edit-device"></a>Modifier l’appareil
 
 Pour modifier un appareil virtuel existant, sélectionnez-le, puis cliquez sur le bouton **Modifier** (situé dans le coin supérieur droit de l’écran) :
 
-[![Modifier le bouton pour modifier un appareil](device-manager-images/win/21-edit-button-sml.png)](device-manager-images/win/21-edit-button.png#lightbox)
+[![Bouton modifier pour modifier un appareil](device-manager-images/win/21-edit-button-sml.png)](device-manager-images/win/21-edit-button.png#lightbox)
 
 Le fait de cliquer sur le bouton **Modifier** lance l’Éditeur d’appareil pour l’appareil virtuel sélectionné :
 
-[![Écran de l’éditeur d’appareils](device-manager-images/win/22-device-editor-sml.png)](device-manager-images/win/22-device-editor.png#lightbox)
+[![Écran de l’éditeur de l’appareil](device-manager-images/win/22-device-editor-sml.png)](device-manager-images/win/22-device-editor.png#lightbox)
 
 L’écran **Éditeur d’appareil** liste les propriétés de l’appareil virtuel dans la colonne **Propriété**, ainsi que les valeurs correspondantes de chaque propriété dans la colonne **Valeur**. Lorsque vous sélectionnez une propriété, une description détaillée de cette propriété s’affiche à droite.
 
 Pour changer une propriété, modifiez sa valeur dans la colonne **Valeur**.
 Par exemple, dans la capture d’écran suivante, la propriété `hw.lcd.density` passe de **480** à **240** :
 
-[![Exemple d’édition d’appareils](device-manager-images/win/23-device-editing-sml.png)](device-manager-images/win/23-device-editing.png#lightbox)
+[![Exemple de modification d’appareil](device-manager-images/win/23-device-editing-sml.png)](device-manager-images/win/23-device-editing.png#lightbox)
 
 Après avoir apporté les modifications de configuration nécessaires, cliquez sur le bouton **Enregistrer**.
 Pour plus d’informations sur la modification des propriétés des appareils virtuels, consultez [Modification des propriétés d’appareil virtuel Android](~/android/get-started/installation/android-emulator/device-properties.md).
 
 ### <a name="additional-options"></a>Options supplémentaires
 
-D’autres options pour travailler avec les&hellip;appareils sont disponibles à partir du menu Options **supplémentaires** () tirer vers le bas dans le coin supérieur droit:
+Des options supplémentaires pour l’utilisation des appareils sont disponibles dans le menu déroulant **options supplémentaires** ( &hellip; ) dans le coin supérieur droit :
 
-[![Emplacement du menu d’options supplémentaires](device-manager-images/win/24-overflow-menu-sml.png)](device-manager-images/win/24-overflow-menu.png#lightbox)
+[![Emplacement du menu options supplémentaires](device-manager-images/win/24-overflow-menu-sml.png)](device-manager-images/win/24-overflow-menu.png#lightbox)
 
 Le menu Options supplémentaires contient les éléments suivants :
 
 - **Dupliquer et modifier** &ndash; Duplique l’appareil sélectionné et l’ouvre dans l’écran **Nouvel appareil** avec un nom unique différent. Par exemple, si vous sélectionnez **Pixel_API_27** et si vous cliquez sur **Dupliquer et modifier**, un compteur est ajouté au nom :
 
-  [![Écran en double et en édition](device-manager-images/win/25-dupe-and-edit-sml.png)](device-manager-images/win/25-dupe-and-edit.png#lightbox)
+  [![Dupliquer et modifier l’écran](device-manager-images/win/25-dupe-and-edit-sml.png)](device-manager-images/win/25-dupe-and-edit.png#lightbox)
 
 - **Révéler dans l’Explorateur** &ndash; Ouvre une fenêtre de l’Explorateur Windows dans le dossier contenant les fichiers de l’appareil virtuel. Par exemple, si vous sélectionnez **Pixel_API_27** et si vous cliquez sur **Révéler dans l’Explorateur**, une fenêtre similaire à l’exemple suivant s’affiche :
 
-  [![Résultats de cliquer Reveal in Explorer](device-manager-images/win/26-reveal-in-explorer-sml.png)](device-manager-images/win/26-reveal-in-explorer.png#lightbox)
+  [![Résultats de l’option afficher dans l’Explorateur](device-manager-images/win/26-reveal-in-explorer-sml.png)](device-manager-images/win/26-reveal-in-explorer.png#lightbox)
 
-- **Réinitialisation aux paramètres d’usine** &ndash; Réinitialise l’appareil aux paramètres par défaut, en effaçant toutes les modifications apportées par l’utilisateur à l’état interne de l’appareil pendant son exécution (l’instantané [Quick Boot](~/android/deploy-test/debugging/debug-on-emulator.md#quick-boot), s’il existe, est également effacé). Cette modification n’altère pas les modifications que vous apportez à l’appareil virtuel lors de la création et de la modification. Une boîte de dialogue rappelant que la réinitialisation ne peut pas être annulée s’affiche. Cliquez sur **Factory Reset** pour confirmer la réinitialisation :
+- **Réinitialisation aux paramètres d’usine** &ndash; Réinitialise l’appareil aux paramètres par défaut, en effaçant toutes les modifications apportées par l’utilisateur à l’état interne de l’appareil pendant son exécution (l’instantané [Quick Boot](~/android/deploy-test/debugging/debug-on-emulator.md#quick-boot), s’il existe, est également effacé). Cette modification n’altère pas les modifications que vous apportez à l’appareil virtuel lors de la création et de la modification. Une boîte de dialogue rappelant que la réinitialisation ne peut pas être annulée s’affiche. Cliquez sur **réinitialisation aux paramètres d’usine** pour confirmer la réinitialisation :
 
   ![Boîte de dialogue de réinitialisation aux paramètres d’usine](device-manager-images/win/27-factory-reset.png)
 
@@ -194,7 +194,7 @@ Le menu Options supplémentaires contient les éléments suivants :
 
 Cet article explique comment utiliser Android Device Manager pour créer, dupliquer, personnaliser et lancer des appareils virtuels Android.
 
-[![Capture d’écran du gestionnaire d’appareils Android dans l’onglet Appareils](device-manager-images/mac/01-devices-dialog-sml.png)](device-manager-images/mac/01-devices-dialog.png#lightbox)
+[![Capture d’écran de l’Android Device Manager sous l’onglet appareils](device-manager-images/mac/01-devices-dialog-sml.png)](device-manager-images/mac/01-devices-dialog.png#lightbox)
 
 > [!NOTE]
 > Ce guide s’applique uniquement à Visual Studio pour Mac.
@@ -218,13 +218,13 @@ Pour utiliser Android Device Manager, vous devez disposer des éléments suivant
 
   Ces paquets doivent être affichés avec l’état **Installé**, comme illustré dans la capture d’écran suivante :
 
-  [![Installation d’outils Android SDK](device-manager-images/mac/02-sdk-tools-sml.png)](device-manager-images/mac/02-sdk-tools.png#lightbox)
+  [![Installation de Android SDK Tools](device-manager-images/mac/02-sdk-tools-sml.png)](device-manager-images/mac/02-sdk-tools.png#lightbox)
 
 ## <a name="launching-the-device-manager"></a>Lancement du Gestionnaire d’appareils
 
 Lancez Android Device Manager en cliquant sur **Outils > Device Manager** :
 
-[![Lancement du gestionnaire de l’appareil à partir du menu Tools](device-manager-images/mac/03-tools-menu-sml.png)](device-manager-images/mac/03-tools-menu.png#lightbox)
+[![Lancement du gestionnaire de périphériques à partir du menu outils](device-manager-images/mac/03-tools-menu-sml.png)](device-manager-images/mac/03-tools-menu.png#lightbox)
 
 Si la boîte de dialogue d’erreur suivante est présentée au lancement, consultez la section [Résolution des problèmes](#troubleshooting) pour obtenir des instructions de contournement :
 
@@ -242,7 +242,7 @@ Quand vous sélectionnez un appareil dans la liste, le bouton **Lecture** appara
 
 Une fois que l’émulateur a démarré avec l’appareil virtuel sélectionné, le bouton **Lire** se transforme en bouton **Arrêter** que vous pouvez utiliser pour arrêter l’émulateur :
 
-[![Bouton d’arrêt pour l’appareil en marche](device-manager-images/mac/07-stop-button-sml.png)](device-manager-images/mac/07-stop-button.png#lightbox)
+[![Bouton arrêter pour l’appareil en cours d’exécution](device-manager-images/mac/07-stop-button-sml.png)](device-manager-images/mac/07-stop-button.png#lightbox)
 
 Quand vous arrêtez l’émulateur, une invite peut éventuellement s’afficher en vous demandant si vous souhaitez enregistrer l’état actuel pour le prochain démarrage rapide :
 
@@ -254,21 +254,21 @@ L’enregistrement de l’état actuel va accélérer le démarrage de l’émul
 
 Pour créer un appareil, cliquez sur le bouton **Nouvel appareil** (situé en haut à gauche de l’écran) :
 
-[![Nouveau bouton pour la création d’un nouvel appareil](device-manager-images/mac/09-new-button-sml.png)](device-manager-images/mac/09-new-button.png#lightbox)
+[![Bouton nouveau pour la création d’un nouvel appareil](device-manager-images/mac/09-new-button-sml.png)](device-manager-images/mac/09-new-button.png#lightbox)
 
 Lorsque vous cliquez sur **Nouvel appareil**, l’écran **Nouvel appareil** s’affiche :
 
-[![Nouvel écran d’appareil du gestionnaire de l’appareil](device-manager-images/mac/10-new-device-editor-sml.png)](device-manager-images/mac/10-new-device-editor.png#lightbox)
+[![Écran nouveau périphérique de l’Device Manager](device-manager-images/mac/10-new-device-editor-sml.png)](device-manager-images/mac/10-new-device-editor.png#lightbox)
 
 Pour configurer un nouvel appareil dans l’écran **Nouvel appareil**, effectuez les étapes suivantes :
 
 1. Donnez un nouveau nom à l’appareil. Dans l’exemple suivant, le nouvel appareil se nomme **Pixel_API_27** :
 
-   [![Nommer le nouvel appareil](device-manager-images/mac/11-device-name-m76-sml.png)](device-manager-images/mac/11-device-name-m76.png#lightbox)
+   [![Attribution d’un nom au nouvel appareil](device-manager-images/mac/11-device-name-m76-sml.png)](device-manager-images/mac/11-device-name-m76.png#lightbox)
 
 2. Sélectionnez un appareil physique à émuler en cliquant sur le menu déroulant **Appareil de base** :
 
-   [![Sélection de l’appareil physique à imiter](device-manager-images/mac/12-device-menu-m76-sml.png)](device-manager-images/mac/12-device-menu-m76.png#lightbox)
+   [![Sélection de l’appareil physique à émuler](device-manager-images/mac/12-device-menu-m76-sml.png)](device-manager-images/mac/12-device-menu-m76.png#lightbox)
 
 3. Sélectionnez un type de processeur pour cet appareil virtuel en cliquant sur le menu déroulant **Processeur**. Si vous sélectionnez **x86**, vous obtenez les meilleures performances, car cela permet à l’émulateur de tirer parti de l’[accélération matérielle](~/android/get-started/installation/android-emulator/hardware-acceleration.md).
    L’option **x86_64** utilise également l’accélération matérielle, mais son exécution est légèrement plus lente que celle de **x86** (**x86_64** sert normalement à tester des applications 64 bits) :
@@ -293,7 +293,7 @@ Pour configurer un nouvel appareil dans l’écran **Nouvel appareil**, effectue
 
 7. Ajoutez toute propriété supplémentaire que vous avez besoin de définir explicitement. L’écran **Nouvel appareil** liste uniquement les propriétés modifiées le plus souvent. Vous pouvez toutefois cliquer sur le menu déroulant **Ajouter une propriété** (en bas) pour ajouter des propriétés supplémentaires :
 
-   [![Ajouter le menu De traction de propriété](device-manager-images/mac/17-add-property-menu-m76-sml.png)](device-manager-images/mac/17-add-property-menu-m76.png#lightbox)
+   [![Menu déroulant Ajouter une propriété](device-manager-images/mac/17-add-property-menu-m76-sml.png)](device-manager-images/mac/17-add-property-menu-m76.png#lightbox)
 
    Vous pouvez également définir une propriété personnalisée en cliquant sur **Personnaliser** en haut de cette liste des propriétés.
 
@@ -303,28 +303,28 @@ Pour configurer un nouvel appareil dans l’écran **Nouvel appareil**, effectue
 
 9. Android Device Manager ajoute le nouvel appareil à la liste des appareils virtuels installés et affiche un indicateur de progression **Création en cours** pendant la création de l’appareil :
 
-   [![Indicateur de progrès de la création](device-manager-images/mac/19-creating-the-device-m76-sml.png)](device-manager-images/mac/19-creating-the-device-m76.png#lightbox)
+   [![Indicateur de progression de la création](device-manager-images/mac/19-creating-the-device-m76-sml.png)](device-manager-images/mac/19-creating-the-device-m76.png#lightbox)
 
 10. Lorsque le processus de création est terminé, le nouvel appareil apparaît dans la liste des appareils virtuels installés avec un bouton **Démarrer**, prêt à être lancé :
 
-    [![Appareil nouvellement créé prêt à être lancé](device-manager-images/mac/20-created-device-m76-sml.png)](device-manager-images/mac/20-created-device-m76.png#lightbox)
+    [![Appareil nouvellement créé prêt pour le lancement](device-manager-images/mac/20-created-device-m76-sml.png)](device-manager-images/mac/20-created-device-m76.png#lightbox)
 
 ### <a name="edit-device"></a>Modifier l’appareil
 
 Pour modifier un appareil virtuel existant, sélectionnez le menu déroulant **Options supplémentaires** (icône d’engrenage) et sélectionnez **Modifier** :
 
-[![Modifier la sélection de menu pour modifier un nouvel appareil](device-manager-images/mac/21-edit-button-m76-sml.png)](device-manager-images/mac/21-edit-button-m76.png#lightbox)
+[![Sélection du menu Edition pour la modification d’un nouvel appareil](device-manager-images/mac/21-edit-button-m76-sml.png)](device-manager-images/mac/21-edit-button-m76.png#lightbox)
 
 Le fait de cliquer sur le bouton **Modifier** lance l’Éditeur d’appareil pour l’appareil virtuel sélectionné :
 
-[![Écran de l’éditeur d’appareils](device-manager-images/mac/22-device-editor-sml.png)](device-manager-images/mac/22-device-editor.png#lightbox)
+[![Écran de l’éditeur de l’appareil](device-manager-images/mac/22-device-editor-sml.png)](device-manager-images/mac/22-device-editor.png#lightbox)
 
 L’écran **Éditeur d’appareil** liste les propriétés de l’appareil virtuel dans la colonne **Propriété**, ainsi que les valeurs correspondantes de chaque propriété dans la colonne **Valeur**. Lorsque vous sélectionnez une propriété, une description détaillée de cette propriété s’affiche à droite.
 
 Pour changer une propriété, modifiez sa valeur dans la colonne **Valeur**.
 Par exemple, dans la capture d’écran suivante, la propriété `hw.lcd.density` passe de **480** à **240** :
 
-[![Exemple d’édition d’appareils](device-manager-images/mac/23-device-editing-sml.png)](device-manager-images/mac/23-device-editing.png#lightbox)
+[![Exemple de modification d’appareil](device-manager-images/mac/23-device-editing-sml.png)](device-manager-images/mac/23-device-editing.png#lightbox)
 
 Après avoir apporté les modifications de configuration nécessaires, cliquez sur le bouton **Enregistrer**.
 Pour plus d’informations sur la modification des propriétés des appareils virtuels, consultez [Modification des propriétés d’appareil virtuel Android](~/android/get-started/installation/android-emulator/device-properties.md).
@@ -333,7 +333,7 @@ Pour plus d’informations sur la modification des propriétés des appareils vi
 
 Des options supplémentaires pour travailler avec un appareil sont disponibles dans le menu déroulant situé à gauche du bouton **Lire** :
 
-[![Emplacement du menu d’options supplémentaires](device-manager-images/mac/24-overflow-menu-sml.png)](device-manager-images/mac/24-overflow-menu.png#lightbox)
+[![Emplacement du menu options supplémentaires](device-manager-images/mac/24-overflow-menu-sml.png)](device-manager-images/mac/24-overflow-menu.png#lightbox)
 
 Le menu Options supplémentaires contient les éléments suivants :
 
@@ -341,11 +341,11 @@ Le menu Options supplémentaires contient les éléments suivants :
 
 - **Dupliquer et modifier** &ndash; Duplique l’appareil sélectionné et l’ouvre dans l’écran **Nouvel appareil** avec un nom unique différent. Par exemple, si vous sélectionnez **Pixel 2 API 28** et si vous cliquez sur **Dupliquer et modifier**, un compteur est ajouté au nom :
 
-  [![Écran en double et en édition](device-manager-images/mac/25-dupe-and-edit-sml.png)](device-manager-images/mac/25-dupe-and-edit.png#lightbox)
+  [![Dupliquer et modifier l’écran](device-manager-images/mac/25-dupe-and-edit-sml.png)](device-manager-images/mac/25-dupe-and-edit.png#lightbox)
 
 - **Révéler dans l’Explorateur** &ndash; Ouvre une fenêtre Finder macOS dans le dossier contenant les fichiers de l’appareil virtuel. Par exemple, si vous sélectionnez **Pixel 2 API 28** et si vous cliquez sur **Afficher dans le Finder**, une fenêtre similaire à l’exemple suivant s’affiche :
 
-  [![Résultats de cliquer Reveal in Finder](device-manager-images/mac/26-reveal-in-finder-sml.png)](device-manager-images/mac/26-reveal-in-finder.png#lightbox)
+  [![Résultats du clic sur Afficher dans le Finder](device-manager-images/mac/26-reveal-in-finder-sml.png)](device-manager-images/mac/26-reveal-in-finder.png#lightbox)
 
 - **Réinitialisation aux paramètres d’usine** &ndash; Réinitialise l’appareil aux paramètres par défaut, en effaçant toutes les modifications apportées par l’utilisateur à l’état interne de l’appareil pendant son exécution (l’instantané [Quick Boot](~/android/deploy-test/debugging/debug-on-emulator.md#quick-boot), s’il existe, est également effacé). Cette modification n’altère pas les modifications que vous apportez à l’appareil virtuel lors de la création et de la modification. Une boîte de dialogue rappelant que la réinitialisation ne peut pas être annulée s’affiche. Cliquez sur **Réinitialisation aux paramètres d’usine** pour confirmer la réinitialisation.
 
@@ -357,7 +357,7 @@ Le menu Options supplémentaires contient les éléments suivants :
 
 -----
 
-<a name="troubleshooting" />
+<a name="troubleshooting"></a>
 
 ## <a name="troubleshooting"></a>Dépannage
 
@@ -371,7 +371,7 @@ Les sections suivantes expliquent comment diagnostiquer et résoudre les problè
 
 En règle générale, le kit Android SDK est installé à l’emplacement suivant :
 
-**C:\\Fichiers de programme\\(x86) Android\\android-sdk**
+**C : \\ Program Files (x86) Android Android \\ \\ -SDK**
 
 Si le SDK n’est pas installé à cet emplacement, cette erreur peut s’afficher quand vous lancez Android Device Manager :
 
@@ -385,7 +385,7 @@ Pour contourner ce problème, effectuez les étapes suivantes :
 
 2. Double-cliquez pour ouvrir l’un des fichiers journaux et recherchez le **chemin du fichier config**. Par exemple :
 
-   [![Voie de fichier Config dans le fichier de journal](device-manager-images/win/31-config-file-path-sml.png)](device-manager-images/win/31-config-file-path.png#lightbox)
+   [![Chemin du fichier de configuration dans le fichier journal](device-manager-images/win/31-config-file-path-sml.png)](device-manager-images/win/31-config-file-path.png#lightbox)
 
 3. Accédez à cet emplacement et double-cliquez sur **user.config** pour l’ouvrir.
 
@@ -457,7 +457,7 @@ Pour éviter ce problème,
 
 4. Supprimer le fichier **snapshot.pb** :
 
-   [![Emplacement du fichier snapshot.pb](device-manager-images/mac/30-delete-snapshot-sml.png)](device-manager-images/mac/30-delete-snapshot.png#lightbox)
+   [![Emplacement du fichier Snapshot. PB](device-manager-images/mac/30-delete-snapshot-sml.png)](device-manager-images/mac/30-delete-snapshot.png#lightbox)
 
 5. Redémarrez l'AVD.
 
@@ -481,7 +481,7 @@ Si vous rencontrez un problème avec Android Device Manager qui ne peut pas êtr
 
 ::: zone-end
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Ce guide vous a présenté Android Device Manager, disponible dans Visual Studio Tools pour Xamarin et Visual Studio pour Mac. Les fonctionnalités essentielles vous ont été expliquées, comme le démarrage et l’arrêt de l’émulateur Android, la sélection d’un appareil virtuel Android (AVD) à exécuter, la création de nouveaux appareils virtuels et la manière de modifier un appareil virtuel. Ce guide a expliqué comment modifier les propriétés matérielles du profil pour une personnalisation plus poussée et a fourni des conseils de dépannage pour les problèmes courants.
 

@@ -7,20 +7,20 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 07/11/2017
-ms.openlocfilehash: 04d33d986d76daf29fc7392206c62f77d34dd969
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 0957220ace9facee590a76953de6dd52be438582
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022018"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84570841"
 ---
 # <a name="labels-in-xamarinios"></a>Étiquettes dans Xamarin. iOS
 
-Le contrôle `UILabel` est utilisé pour afficher du texte en lecture seule et multiligne.
+Le `UILabel` contrôle est utilisé pour afficher du texte en lecture seule et multiligne.
 
 ## <a name="implementing-a-label"></a>Implémentation d’une étiquette
 
-Une nouvelle étiquette est créée en instanciant une [`UILabel`](xref:UIKit.UILabel):
+Une nouvelle étiquette est créée en instanciant un [`UILabel`](xref:UIKit.UILabel) :
 
 ```csharp
 UILabel label = new UILabel();
@@ -50,7 +50,7 @@ Les propriétés suivantes peuvent être ajustées dans le panneau Propriétés�
 
 Pour plus d’informations sur l’utilisation des sauts de ligne dans iOS, reportez-vous à la recette de [troncation et de retour automatique](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/labels/uilabel-truncate-wrap-text) à la ligne.
 
-<a name="Formatting_Text_and_Label"/>
+<a name="Formatting_Text_and_Label"></a>
 
 ## <a name="formatting-text-and-label"></a>Mise en forme du texte et de l’étiquette
 
@@ -74,9 +74,9 @@ label.AttributedText = new NSAttributedString(
             );
 ```
 
-Pour plus d’informations sur le style du texte à l’aide de `NSAttributedString` consultez la recette du [style de texte](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/text_field/style_text) .
+Pour plus d’informations sur le style du texte à l’aide de `NSAttributedString` , consultez la recette du [style de texte](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/text_field/style_text) .
 
-Par défaut, les `Enabled` ont la valeur true, mais il est possible de la définir sur Disabled pour indiquer à l’utilisateur qu’un contrôle spécifique est désactivé :
+Par défaut, les étiquettes ont la valeur `Enabled` true, mais il est possible de lui affecter la valeur Disabled pour indiquer à l’utilisateur qu’un contrôle spécifique est désactivé :
 
 ```csharp
 label.Enabled = false;

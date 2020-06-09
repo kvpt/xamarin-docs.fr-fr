@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 32beda28cb4db961abcbe74c26d38c70c8188a45
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139228"
+titre : « injection de dépendances » : « ce chapitre explique comment l’application mobile eShopOnContainers utilise l’injection de dépendances pour découpler des types concrets du code qui dépend de ces types ».
+ms. Prod : xamarin ms. AssetID : a150f2d1-06F8-4aed-ab4e-7a847d69f103 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 11/04/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="dependency-injection"></a>Injection de dépendances
 
 En général, un constructeur de classe est appelé lors de l’instanciation d’un objet, et toutes les valeurs requises par l’objet sont passées en tant qu’arguments au constructeur. Il s’agit d’un exemple d’injection de dépendances, et spécifiquement appelé *injection de constructeur*. Les dépendances requises par l’objet sont injectées dans le constructeur.
@@ -24,8 +10,6 @@ En général, un constructeur de classe est appelé lors de l’instanciation d�
 En spécifiant des dépendances comme types d’interfaces, l’injection de dépendances permet de découpler les types concrets du code qui dépend de ces types. Elle utilise généralement un conteneur qui contient une liste d’inscriptions et de mappages entre les interfaces et les types abstraits, ainsi que les types concrets qui implémentent ou étendent ces types.
 
 Il existe également d’autres types d’injection de dépendances, tels que l' *injection d’accesseur Set de propriété*et l' *injection d’appel de méthode*, mais ils sont moins fréquents. Par conséquent, ce chapitre se concentre uniquement sur l’exécution de l’injection de constructeur avec un conteneur d’injection de dépendance.
-
-<a name="introduction_to_dependency_injection" />
 
 ## <a name="introduction-to-dependency-injection"></a>Présentation de l’injection de dépendances
 
@@ -118,8 +102,6 @@ _container.Register<ProfileViewModel>();
 
 Par défaut, chaque inscription de classe concrète est configurée en tant que multi-instance afin que chaque objet dépendant reçoive une nouvelle instance. Par conséquent, lorsque le `ProfileViewModel` est résolu, une nouvelle instance est créée et le conteneur injecte ses dépendances requises.
 
-<a name="resolution" />
-
 ## <a name="resolution"></a>Résolution
 
 Une fois qu’un type est inscrit, il peut être résolu ou injecté en tant que dépendance. Lorsqu’un type est résolu et que le conteneur doit créer une nouvelle instance, il injecte toutes les dépendances dans l’instance.
@@ -136,7 +118,7 @@ L’exemple de code suivant montre comment le `RequestProvider` type qui a été
 var requestProvider = _container.Resolve<IRequestProvider>();
 ```
 
-Dans cet exemple, TinyIoC est invité à résoudre le type concret pour le `IRequestProvider` type, ainsi que toutes les dépendances. En général, la `Resolve` méthode est appelée lorsqu’une instance d’un type spécifique est requise. Pour plus d’informations sur le contrôle de la durée de vie des objets résolus, consultez [gestion de la durée de vie des objets résolus](#managing_the_lifetime_of_resolved_objects).
+Dans cet exemple, TinyIoC est invité à résoudre le type concret pour le `IRequestProvider` type, ainsi que toutes les dépendances. En général, la `Resolve` méthode est appelée lorsqu’une instance d’un type spécifique est requise. Pour plus d’informations sur le contrôle de la durée de vie des objets résolus, consultez [gestion de la durée de vie des objets résolus](#managing-the-lifetime-of-resolved-objects).
 
 L’exemple de code suivant montre comment l’application mobile eShopOnContainers instancie les types de modèle de vue et leurs dépendances :
 
@@ -144,12 +126,10 @@ L’exemple de code suivant montre comment l’application mobile eShopOnContain
 var viewModel = _container.Resolve(viewModelType);
 ```
 
-Dans cet exemple, TinyIoC est invité à résoudre le type de modèle de vue pour un modèle de vue demandé, et le conteneur résout également toutes les dépendances. Lors de la résolution du `ProfileViewModel` type, les dépendances à résoudre sont un `ISettingsService` objet et un `IOrderService` objet. Étant donné que les inscriptions d’interface ont été utilisées lors de l’inscription des `SettingsService` `OrderService` classes et, TinyIoC retourne des instances singleton pour les `SettingsService` classes et, `OrderService` puis les passe au constructeur de la `ProfileViewModel` classe. Pour plus d’informations sur la façon dont l’application mobile eShopOnContainers construit les modèles de vue et les associe aux vues, consultez [création automatique d’un modèle de vue avec un localisateur de modèle de vue](~/xamarin-forms/enterprise-application-patterns/mvvm.md#automatically_creating_a_view_model_with_a_view_model_locator).
+Dans cet exemple, TinyIoC est invité à résoudre le type de modèle de vue pour un modèle de vue demandé, et le conteneur résout également toutes les dépendances. Lors de la résolution du `ProfileViewModel` type, les dépendances à résoudre sont un `ISettingsService` objet et un `IOrderService` objet. Étant donné que les inscriptions d’interface ont été utilisées lors de l’inscription des `SettingsService` `OrderService` classes et, TinyIoC retourne des instances singleton pour les `SettingsService` classes et, `OrderService` puis les passe au constructeur de la `ProfileViewModel` classe. Pour plus d’informations sur la façon dont l’application mobile eShopOnContainers construit les modèles de vue et les associe aux vues, consultez [création automatique d’un modèle de vue avec un localisateur de modèle de vue](~/xamarin-forms/enterprise-application-patterns/mvvm.md#automatically-creating-a-view-model-with-a-view-model-locator).
 
 > [!NOTE]
 > L’inscription et la résolution des types avec un conteneur ont un coût en termes de performances en raison de l’utilisation par le conteneur de la réflexion pour créer chaque type, et plus particulièrement si les dépendances sont reconstruites pour chaque navigation entre les pages de l’application. S’il existe de nombreuses dépendances ou des dépendances profondes, le coût de création peut augmenter de manière significative.
-
-<a name="managing_the_lifetime_of_resolved_objects" />
 
 ## <a name="managing-the-lifetime-of-resolved-objects"></a>Gestion de la durée de vie des objets résolus
 

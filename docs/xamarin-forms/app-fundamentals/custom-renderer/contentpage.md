@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 50e28291d72550264e3806c0911f59a57c6d8bf0
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136329"
+title : « personnalisation d’un ContentPage » Description : «un ContentPage est un élément visuel qui affiche une vue unique et occupe la plupart de l’écran. Cet article montre comment créer un convertisseur personnalisé pour la page ContentPage, ce qui permet aux développeurs de remplacer le rendu natif par défaut par leur propre personnalisation propre à la plateforme.
+ms. Prod : xamarin ms. AssetID : A4E61D93-73D9-4668-8D1C-DB6FC2491822 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 11/29/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="customizing-a-contentpage"></a>Personnalisation d’un ContentPage
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-contentpage)
@@ -31,13 +17,11 @@ Le diagramme suivant illustre la relation entre le [`ContentPage`](xref:Xamarin.
 
 Le processus de rendu peut être utilisé pour implémenter des personnalisations spécifiques à la plateforme en créant un convertisseur personnalisé pour un [`ContentPage`](xref:Xamarin.Forms.ContentPage) sur chaque plateforme. Le processus pour y parvenir est le suivant :
 
-1. [Créer](#Creating_the_Xamarin.Forms_Page) une Xamarin.Forms page.
-1. [Utiliser](#Consuming_the_Xamarin.Forms_Page) la page à partir de Xamarin.Forms .
-1. [Créez](#Creating_the_Page_Renderer_on_each_Platform) le renderer personnalisé pour la page sur chaque plateforme.
+1. [Créer](#creating-the-xamarinforms-page) une Xamarin.Forms page.
+1. [Utiliser](#consuming-the-xamarinforms-page) la page à partir de Xamarin.Forms .
+1. [Créez](#creating-the-page-renderer-on-each-platform) le renderer personnalisé pour la page sur chaque plateforme.
 
 Nous allons à présent présenter chaque élément à tour de rôle pour implémenter un `CameraPage` qui fournit un flux vidéo en temps réel et qui permet de capturer une photo.
-
-<a name="Creating_the_Xamarin.Forms_Page" />
 
 ## <a name="creating-the-xamarinforms-page"></a>Création de la Xamarin.Forms page
 
@@ -78,8 +62,6 @@ public class CameraPageCS : ContentPage
 
 Une instance de `CameraPage` est utilisée pour afficher le flux vidéo en temps réel sur chaque plateforme. La personnalisation du contrôle étant effectuée dans le renderer personnalisé, aucune implémentation supplémentaire n’est nécessaire dans la classe `CameraPage`.
 
-<a name="Consuming_the_Xamarin.Forms_Page" />
-
 ## <a name="consuming-the-xamarinforms-page"></a>Utilisation de la Xamarin.Forms page
 
 La vide `CameraPage` doit être affichée par l' Xamarin.Forms application. Cela se produit quand un bouton est actionné dans l’instance `MainPage`, entraînant à son tour l’exécution de la méthode `OnTakePhotoButtonClicked`, comme le montre l’exemple de code suivant :
@@ -92,8 +74,6 @@ async void OnTakePhotoButtonClicked (object sender, EventArgs e)
 ```
 
 Ce code accède simplement à `CameraPage`, sur lequel les renderers personnalisés personnalisent l’apparence de la page sur chaque plateforme.
-
-<a name="Creating_the_Page_Renderer_on_each_Platform" />
 
 ## <a name="creating-the-page-renderer-on-each-platform"></a>Création du renderer de page sur chaque plateforme
 

@@ -1,29 +1,15 @@
 ---
-title: Xamarin.FormsPage maître-détail
-description: 'Le Xamarin.Forms MasterDetailPage est une page qui gère deux pages d’informations associées : une page maître qui présente des éléments et une page de détails qui présente des détails sur les éléments de la page maître. Cet article explique comment utiliser MasterDetailPage et comment naviguer entre ses pages d’informations.'
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 89b1dedcb6219a32332641550018405abd4b6870
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137811"
+titre : « Xamarin.Forms page maître/détail » : « Xamarin.Forms MasterDetailPage est une page qui gère deux pages d’informations associées : une page maître qui présente des éléments et une page de détails qui présente des détails sur les éléments de la page maître. Cet article explique comment utiliser un MasterDetailPage et naviguer entre ses pages d’informations.
+ms. Prod : xamarin ms. AssetID : 119945E3-58B8-4630-A3D2-8B561529D53B ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 12/01/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-master-detail-page"></a>Xamarin.FormsPage maître-détail
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-masterdetailpage)
 
 _Le Xamarin.Forms MasterDetailPage est une page qui gère deux pages d’informations associées : une page maître qui présente des éléments et une page de détails qui présente des détails sur les éléments de la page maître. Cet article explique comment utiliser un MasterDetailPage et naviguer entre ses pages d’informations._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d’ensemble
 
 Une page maître affiche généralement une liste d’éléments, comme indiqué dans les captures d’écran suivantes :
 
@@ -51,11 +37,11 @@ Le comportement de l’expérience de navigation entre les pages maîtres et les
 
 - Sur iOS, la page de détail *glisse* vers la droite tandis que la page maître glisse à partir de la gauche. La partie gauche de la page de détail est toujours visible.
 - Sur Android, les pages de détail et les pages maîtres se *superposent*.
-- Sur UWP, la page maître glisse à gauche de la page de détails, à condition que la [`MasterBehavior`](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior) propriété ait la valeur `Popover` . Pour plus d’informations, consultez [Contrôle du comportement d’affichage de la page de détail](#Controlling_the_Detail_Page_Display_Behavior).
+- Sur UWP, la page maître glisse à gauche de la page de détails, à condition que la [`MasterBehavior`](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior) propriété ait la valeur `Popover` . Pour plus d’informations, consultez [Contrôle du comportement d’affichage de la page de détail](#controlling-the-detail-page-display-behavior).
 
 Un comportement similaire se produit en mode paysage, à la différence que la page maître sur iOS et Android a une largeur similaire à celle de la page maître en mode portrait. Ainsi, une plus grande partie de la page de détail est visible.
 
-Pour plus d’informations sur le contrôle du comportement de la navigation, consultez [Contrôle du comportement d’affichage de la page de détail](#Controlling_the_Detail_Page_Display_Behavior).
+Pour plus d’informations sur le contrôle du comportement de la navigation, consultez [Contrôle du comportement d’affichage de la page de détail](#controlling-the-detail-page-display-behavior).
 
 ## <a name="creating-a-masterdetailpage"></a>Création d’un MasterDetailPage
 
@@ -249,8 +235,6 @@ La méthode `OnItemSelected` effectue les actions suivantes :
 Les captures d’écran suivantes montrent la page de détail `ContactPage`, qui s’affiche une fois qu’elle a été sélectionnée dans la page maître :
 
 ![](master-detail-page-images/detailpage.png "Detail Page Example")
-
-<a name="Controlling_the_Detail_Page_Display_Behavior" />
 
 ### <a name="controlling-the-detail-page-display-behavior"></a>Contrôle du comportement d’affichage de la page de détail
 

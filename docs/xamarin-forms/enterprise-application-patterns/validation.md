@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 4a9af91e2d48ba7ef7fdcdb4f8472e0aaafb7854
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138708"
+titre : « validation dans les applications d’entreprise » Description : «ce chapitre explique comment l’application mobile eShopOnContainers effectue la validation des entrées utilisateur. Cela comprend la spécification des règles de validation, le déclenchement de la validation et l’affichage des erreurs de validation.»
+ms. Prod : xamarin ms. AssetID : 56e4f0fc-48D9-4033-91EC-173bb46a5e4d ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 08/07/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="validation-in-enterprise-apps"></a>Validation dans les applications d’entreprise
 
 Toute application qui accepte les entrées d’utilisateurs doit s’assurer que l’entrée est valide. Une application peut, par exemple, Rechercher des entrées qui contiennent uniquement des caractères dans une plage particulière, qui est d’une certaine longueur ou qui correspond à un format particulier. Sans validation, un utilisateur peut fournir des données qui provoquent l’échec de l’application. La validation applique des règles d’entreprise et empêche une personne malveillante d’injecter des données malveillantes.
@@ -209,9 +195,7 @@ La validation peut également être déclenchée chaque fois qu’une propriét�
 
 Le [`Entry`](xref:Xamarin.Forms.Entry) contrôle est lié à la `UserName.Value` propriété de l' `ValidatableObject<T>` instance et `Behaviors` une instance est ajoutée à la collection du contrôle `EventToCommandBehavior` . Ce comportement exécute le `ValidateUserNameCommand` en réponse au déclenchement de l' `TextChanged` événement [] sur le `Entry` , qui est déclenché lorsque le texte du est `Entry` modifié. Le `ValidateUserNameCommand` délégué exécute ensuite la `ValidateUserName` méthode, qui exécute la `Validate` méthode sur l' `ValidatableObject<T>` instance de. Par conséquent, chaque fois que l’utilisateur entre un caractère dans le `Entry` contrôle pour le nom d’utilisateur, la validation des données entrées est effectuée.
 
-Pour plus d’informations sur les comportements, consultez [implémentation de comportements](~/xamarin-forms/enterprise-application-patterns/mvvm.md#implementing_behaviors).
-
-<a name="displaying_validation_errors" />
+Pour plus d’informations sur les comportements, consultez [implémentation de comportements](~/xamarin-forms/enterprise-application-patterns/mvvm.md#implementing-behaviors).
 
 ## <a name="displaying-validation-errors"></a>Affichage des erreurs de validation
 
@@ -286,7 +270,7 @@ public static class LineColorBehavior
 }
 ```
 
-Les paramètres de cette méthode fournissent l’instance du contrôle auquel le comportement est attaché, ainsi que les anciennes et nouvelles valeurs de la `ApplyLineColor` propriété jointe. La `EntryLineColorEffect` classe est ajoutée à la collection du contrôle [`Effects`](xref:Xamarin.Forms.Element.Effects) si la `ApplyLineColor` propriété jointe est `true` , sinon elle est supprimée de la `Effects` collection du contrôle. Pour plus d’informations sur les comportements, consultez [implémentation de comportements](~/xamarin-forms/enterprise-application-patterns/mvvm.md#implementing_behaviors).
+Les paramètres de cette méthode fournissent l’instance du contrôle auquel le comportement est attaché, ainsi que les anciennes et nouvelles valeurs de la `ApplyLineColor` propriété jointe. La `EntryLineColorEffect` classe est ajoutée à la collection du contrôle [`Effects`](xref:Xamarin.Forms.Element.Effects) si la `ApplyLineColor` propriété jointe est `true` , sinon elle est supprimée de la `Effects` collection du contrôle. Pour plus d’informations sur les comportements, consultez [implémentation de comportements](~/xamarin-forms/enterprise-application-patterns/mvvm.md#implementing-behaviors).
 
 La `EntryLineColorEffect` sous-classe la [`RoutingEffect`](xref:Xamarin.Forms.RoutingEffect) classe et est illustrée dans l’exemple de code suivant :
 

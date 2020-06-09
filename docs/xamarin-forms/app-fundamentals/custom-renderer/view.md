@@ -1,21 +1,6 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: e565a2bcddf292d37bc3dd07a8edbbabec709d8a
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84133560"
+titre : « implémentation d’une vue » : cet article explique comment créer un convertisseur personnalisé pour un Xamarin.Forms contrôle personnalisé utilisé pour afficher un flux vidéo en préversion à partir de l’appareil photo de l’appareil.»
+ms. Prod : xamarin ms. AssetID : 915E25E7-4A6B-4F34-B7B4-07D5F4B240F2 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 05/10/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
 # <a name="implementing-a-view"></a>Implémentation d’une vue
 
@@ -31,13 +16,11 @@ Le diagramme suivant illustre la relation entre le [`View`](xref:Xamarin.Forms.V
 
 Le processus de rendu peut être utilisé pour implémenter des personnalisations spécifiques à la plateforme en créant un convertisseur personnalisé pour un [`View`](xref:Xamarin.Forms.View) sur chaque plateforme. Le processus pour y parvenir est le suivant :
 
-1. [Créer](#Creating_the_Custom_Control) un Xamarin.Forms contrôle personnalisé.
-1. [Utilise](#Consuming_the_Custom_Control) le contrôle personnalisé à partir de Xamarin.Forms .
-1. [Créez](#Creating_the_Custom_Renderer_on_each_Platform) le renderer personnalisé pour le contrôle sur chaque plateforme.
+1. [Créer](#creating-the-custom-control) un Xamarin.Forms contrôle personnalisé.
+1. [Utilise](#consuming-the-custom-control) le contrôle personnalisé à partir de Xamarin.Forms .
+1. [Créez](#creating-the-custom-renderer-on-each-platform) le renderer personnalisé pour le contrôle sur chaque plateforme.
 
 Chaque élément va maintenant être abordé tour à tour, afin d’implémenter un renderer `CameraPreview` qui affiche un flux vidéo d’aperçu à partir de la caméra de l’appareil. Le fait d’appuyer sur le flux vidéo l’arrête et le démarre.
-
-<a name="Creating_the_Custom_Control" />
 
 ## <a name="creating-the-custom-control"></a>Création du contrôle personnalisé
 
@@ -60,8 +43,6 @@ public class CameraPreview : View
 ```
 
 Le contrôle personnalisé `CameraPreview` est créé dans le projet de bibliothèque .NET Standard et définit l’API pour le contrôle. Le contrôle personnalisé expose une propriété `Camera` qui est utilisée pour contrôler si le flux vidéo doit être affiché à partir de la caméra avant ou arrière de l’appareil. Si aucune valeur n’est spécifiée pour la propriété `Camera` lors de la création du contrôle, la caméra arrière est spécifiée par défaut.
-
-<a name="Consuming_the_Custom_Control" />
 
 ## <a name="consuming-the-custom-control"></a>Consommation du contrôle personnalisé
 
@@ -108,8 +89,6 @@ public class MainPageCS : ContentPage
 Une instance du contrôle personnalisé `CameraPreview` est utilisée pour afficher le flux vidéo d’aperçu à partir de la caméra de l’appareil. Indépendamment de la spécification éventuelle d’une valeur pour la propriété `Camera`, la personnalisation du contrôle est effectuée dans le renderer personnalisé.
 
 Un renderer personnalisé peut maintenant être ajouté à chaque projet d’application pour créer des contrôles d’aperçu de la caméra spécifiques à la plateforme.
-
-<a name="Creating_the_Custom_Renderer_on_each_Platform" />
 
 ## <a name="creating-the-custom-renderer-on-each-platform"></a>Création du renderer personnalisé sur chaque plateforme
 

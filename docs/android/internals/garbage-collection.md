@@ -1,19 +1,19 @@
 ---
-title: Garbage Collection
+title: Garbage collection
 ms.prod: xamarin
 ms.assetid: 298139E2-194F-4A58-BC2D-1D22231066C4
 ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/15/2018
-ms.openlocfilehash: da00eef7c08f7025239d15e60e6ec42416a36089
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: f8a64a68be042268860889357e46b42612795635
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75487839"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84567955"
 ---
-# <a name="garbage-collection"></a>Garbage Collection
+# <a name="garbage-collection"></a>Garbage collection
 
 Xamarin. Android utilise le [garbage collector générationnel simple](https://www.mono-project.com/docs/advanced/garbage-collector/sgen/)de mono. Il s’agit d’un garbage collector de marque et de balayage avec deux générations et un *espace d’objet volumineux*, avec deux genres de collections : 
 
@@ -36,7 +36,7 @@ Il existe trois catégories de types d’objets.
 
 - **Objets Java**: types Java présents dans la machine virtuelle du runtime Android, mais non exposés à la machine virtuelle mono. Ces informations sont ennuyeuses et ne sont pas abordées plus en détail. Celles-ci sont collectées normalement par la machine virtuelle du runtime Android. 
 
-- **Objets homologues**: types qui implémentent [IJavaObject](xref:Android.Runtime.IJavaObject) , par exemple, toutes les sous-classes [java. lang. Object](xref:Java.Lang.Object) et [java. lang. Throwable](xref:Java.Lang.Throwable) . Les instances de ces types ont deux « moitiés » un *pair géré* et un *pair natif*. L’homologue managé est une instance de C# la classe. L’homologue natif est une instance d’une classe Java au sein de la machine virtuelle du C# Runtime Android, et la propriété [IJavaObject. handle](xref:Android.Runtime.IJavaObject.Handle) contient une référence globale JNI à l’homologue natif. 
+- **Objets homologues**: types qui implémentent [IJavaObject](xref:Android.Runtime.IJavaObject) , par exemple, toutes les sous-classes [java. lang. Object](xref:Java.Lang.Object) et [java. lang. Throwable](xref:Java.Lang.Throwable) . Les instances de ces types ont deux « moitiés » un *pair géré* et un *pair natif*. L’homologue managé est une instance de la classe C#. L’homologue natif est une instance d’une classe Java au sein de la machine virtuelle du runtime Android, et la propriété C# [IJavaObject. handle](xref:Android.Runtime.IJavaObject.Handle) contient une référence globale JNI à l’homologue natif. 
 
 Il existe deux types d’homologues natifs :
 
@@ -57,15 +57,15 @@ Les regroupements mono sont là où le plaisir se produit. Les objets managés s
 
 2. Un GC de machine virtuelle du runtime Android est appelé. Toute instance de pair Native peut être collectée. 
 
-3. Les références globales universelles JNI créées dans (1) sont vérifiées. Si la référence faible a été collectée, l’objet homologue est collecté. Si la référence faible n’a *pas* été collectée, la référence faible est remplacée par une référence globale JNI et l’objet homologue n’est pas collecté. Remarque : sur l’API 14 +, cela signifie que la valeur retournée par `IJavaObject.Handle` peut changer après un GC. 
+3. Les références globales universelles JNI créées dans (1) sont vérifiées. Si la référence faible a été collectée, l’objet homologue est collecté. Si la référence faible n’a *pas* été collectée, la référence faible est remplacée par une référence globale JNI et l’objet homologue n’est pas collecté. Remarque : sur l’API 14 +, cela signifie que la valeur retournée par `IJavaObject.Handle` peut changer après un gc. 
 
-Le résultat final de tout cela est qu’une instance d’un objet homologue est active tant qu’elle est référencée par du code managé (par exemple, stockée dans une variable `static`) ou référencée par du code Java. En outre, la durée de vie des homologues natifs sera étendue au-delà de ce qu’ils seraient autrement en cours, car l’homologue natif ne sera pas collecté tant que l’homologue natif et l’homologue géré ne seront pas collectés.
+Le résultat final de tout cela est qu’une instance d’un objet homologue est active tant qu’elle est référencée par du code managé (par exemple, stockée dans une `static` variable) ou référencée par du code Java. En outre, la durée de vie des homologues natifs sera étendue au-delà de ce qu’ils seraient autrement en cours, car l’homologue natif ne sera pas collecté tant que l’homologue natif et l’homologue géré ne seront pas collectés.
 
 ## <a name="object-cycles"></a>Cycles d’objets
 
 Les objets homologues sont logiquement présents dans le runtime Android et les machines virtuelles mono. Par exemple, une instance d’homologue gérée [Android. app. Activity](xref:Android.App.Activity) aura une instance java [Android. app. Activity](https://developer.android.com/reference/android/app/Activity.html) Framework homologue correspondante. Tous les objets qui héritent de [java. lang. Object](xref:Java.Lang.Object) peuvent être supposés avoir des représentations dans les deux machines virtuelles. 
 
-Tous les objets qui ont une représentation dans les deux machines virtuelles auront des durées de vie étendues par rapport aux objets qui sont présents uniquement dans une seule machine virtuelle (par exemple, un [`System.Collections.Generic.List<int>`](xref:System.Collections.Generic.List%601)). Appel de [gc. Collect](xref:System.GC.Collect) ne collecte pas nécessairement ces objets, car le GC Xamarin. Android doit s’assurer que l’objet n’est pas référencé par l’une ou l’autre machine virtuelle avant de le collecter. 
+Tous les objets qui ont une représentation dans les deux machines virtuelles auront des durées de vie qui sont étendues par rapport aux objets qui sont présents uniquement dans une seule machine virtuelle (par exemple, [`System.Collections.Generic.List<int>`](xref:System.Collections.Generic.List%601) ). Appel de [gc. Collect](xref:System.GC.Collect) ne collecte pas nécessairement ces objets, car le GC Xamarin. Android doit s’assurer que l’objet n’est pas référencé par l’une ou l’autre machine virtuelle avant de le collecter. 
 
 Pour raccourcir la durée de vie des objets, [java. lang. Object. Dispose ()](xref:Java.Lang.Object.Dispose) doit être appelé. Cela permet de « rompre » manuellement la connexion sur l’objet entre les deux machines virtuelles en libérant la référence globale, ce qui permet de collecter plus rapidement les objets. 
 
@@ -93,32 +93,32 @@ Le pont GC fonctionne pendant une garbage collection mono et détermine les obje
 
 3. Vérifiez quels objets sont vraiment morts. 
 
-Ce processus complexe permet aux sous-classes de `Java.Lang.Object` de référencer librement n’importe quel objet. elle supprime toutes les restrictions sur lesquelles les objets Java peuvent être C#liés. En raison de cette complexité, le processus de pont peut être très onéreux et peut provoquer des pauses perceptibles dans une application. Si l’application rencontre des pauses significatives, il est utile d’examiner l’une des trois implémentations de pont GC suivantes : 
+Ce processus complexe permet aux sous-classes de de `Java.Lang.Object` faire référence librement à tous les objets. elle supprime toutes les restrictions sur lesquelles les objets Java peuvent être liés à C#. En raison de cette complexité, le processus de pont peut être très onéreux et peut provoquer des pauses perceptibles dans une application. Si l’application rencontre des pauses significatives, il est utile d’examiner l’une des trois implémentations de pont GC suivantes : 
 
 - **Tarjan** : conception entièrement nouvelle du pont gc basée sur l' [algorithme de Robert Tarjan et propagation de référence vers l’arrière](https://en.wikipedia.org/wiki/Tarjan's_strongly_connected_components_algorithm).
     Il offre des performances optimales dans le cadre de nos charges de travail simulées, mais il possède également la plus grande part de code expérimental. 
 
 - **Nouvelle** : révision majeure du code d’origine, correction de deux instances de comportement quadratique, mais maintien de l’algorithme principal (basé sur l' [algorithme de Kosaraju](https://en.wikipedia.org/wiki/Kosaraju's_algorithm) pour la recherche de composants fortement connectés). 
 
-- **Old** : implémentation d’origine (considérée comme la plus stable des trois). Il s’agit de la passerelle qu’une application doit utiliser si les pauses `GC_BRIDGE` sont acceptables. 
+- **Old** : implémentation d’origine (considérée comme la plus stable des trois). Il s’agit de la passerelle qu’une application doit utiliser si les `GC_BRIDGE` pauses sont acceptables. 
 
 La seule façon de déterminer quel pont GC fonctionne le mieux est d’expérimenter une application et d’analyser la sortie. Il existe deux façons de collecter les données à des fins d’évaluation : 
 
-- **Activez** la journalisation-activer la journalisation (comme décrit dans la section [configuration](~/android/internals/garbage-collection.md) ) pour chaque option de pont GC, puis capturez et comparez les sorties de journal de chaque paramètre. Inspectez les messages `GC` pour chaque option. en particulier, les messages de `GC_BRIDGE`. Les interruptions jusqu’à 150 m pour les applications non interactives sont tolérables, mais les pauses au-dessus de 60 ms pour les applications très interactives (comme les jeux) posent problème. 
+- **Activez** la journalisation-activer la journalisation (comme décrit dans la section [configuration](~/android/internals/garbage-collection.md) ) pour chaque option de pont GC, puis capturez et comparez les sorties de journal de chaque paramètre. Inspectez les `GC` messages pour chaque option, en particulier les `GC_BRIDGE` messages. Les interruptions jusqu’à 150 m pour les applications non interactives sont tolérables, mais les pauses au-dessus de 60 ms pour les applications très interactives (comme les jeux) posent problème. 
 
 - **Activer la gestion** des ponts : la gestion des ponts affiche le coût moyen des objets pointés par chaque objet impliqué dans le processus de pont. Le tri de ces informations par taille fournira des indications sur ce qui détient le plus grand nombre d’objets supplémentaires. 
 
 Le paramètre par défaut est **Tarjan**. Si vous trouvez une régression, il peut s’avérer nécessaire d’affecter la valeur **ancien**à cette option. Vous pouvez également choisir d’utiliser l' **ancienne** option la plus stable si **Tarjan** ne produit pas d’amélioration des performances.
 
-Pour spécifier l’option de `GC_BRIDGE` qu’une application doit utiliser, transmettez `bridge-implementation=old`, `bridge-implementation=new` ou `bridge-implementation=tarjan` à la variable d’environnement `MONO_GC_PARAMS`. Pour ce faire, ajoutez un nouveau fichier à votre projet avec une **action de génération** de `AndroidEnvironment`. Par exemple : 
+Pour spécifier `GC_BRIDGE` l’option qu’une application doit utiliser, transmettez `bridge-implementation=old` `bridge-implementation=new` ou `bridge-implementation=tarjan` à la `MONO_GC_PARAMS` variable d’environnement. Pour ce faire, ajoutez un nouveau fichier à votre projet avec une **action** de génération `AndroidEnvironment` . Par exemple : 
 
 ```shell
 MONO_GC_PARAMS=bridge-implementation=tarjan
 ```
 
-Pour plus d’informations, consultez [Configuration](#configuration).
+Pour plus d’informations, consultez [configuration](#configuration).
 
-<a name="Helping_the_GC" />
+<a name="Helping_the_GC"></a>
 
 ## <a name="helping-the-gc"></a>Aider le GC
 
@@ -129,23 +129,23 @@ Il existe plusieurs façons d’aider le GC à réduire l’utilisation de la m�
 Le GC a une vue incomplète du processus et peut ne pas s’exécuter lorsque la mémoire est faible, car le GC ne sait pas que la mémoire est faible. 
 
 Par exemple, une instance d’un type [java. lang. Object](xref:Java.Lang.Object) ou d’un type dérivé a une taille d’au moins 20 octets (susceptible d’être modifiée sans préavis, etc.). 
-Les [wrappers pouvant être appelés](~/android/internals/architecture.md) n’ajoutent pas de membres d’instance supplémentaires. par conséquent, lorsque vous avez une instance [Android. Graphics. Bitmap](xref:Android.Graphics.Bitmap) qui fait référence à un blob de 10 Mo de mémoire, le GC Xamarin. Android ne sait pas que &ndash; le GC verra un objet de 20 octets et ne pourra pas déterminer s’il est lié à des objets alloués par le runtime Android qui 
+Les [wrappers pouvant être appelés](~/android/internals/architecture.md) n’ajoutent pas de membres d’instance supplémentaires. par conséquent, lorsque vous disposez d’une instance [Android. Graphics. Bitmap](xref:Android.Graphics.Bitmap) qui fait référence à un objet blob de 10 Mo, le GC Xamarin. Android ne sait pas que &ndash; le GC verra un objet de 20 octets et ne pourra pas déterminer s’il est lié à des objets alloués par le runtime Android qui 
 
 Il est souvent nécessaire d’aider le garbage collector. Malheureusement, *gc. AddMemoryPressure ()* et *gc. RemoveMemoryPressure ()* n’étant pas pris en charge, si vous *savez* que vous venez de libérer un grand graphique d’objets alloués par Java, vous devrez peut-être appeler manuellement [gc. Collect ()](xref:System.GC.Collect) pour inviter un GC à libérer la mémoire côté Java, ou vous pouvez supprimer explicitement des sous-classes *java. lang. Object* , en rompant le mappage entre le wrapper managé et l’instance java. Par exemple, consultez le [bogue 1084](https://bugzilla.xamarin.com/show_bug.cgi?id=1084#c6). 
 
 > [!NOTE]
-> Vous devez être *extrêmement* vigilant lors de la suppression de `Java.Lang.Object` instances de sous-classe.
+> Vous devez être *extrêmement* vigilant lorsque vous supprimez des `Java.Lang.Object` instances de sous-classes.
 
-Pour réduire le risque d’altération de la mémoire, respectez les consignes suivantes lors de l’appel de `Dispose()`.
+Pour réduire le risque d’altération de la mémoire, respectez les consignes suivantes lors de l’appel de `Dispose()` .
 
 #### <a name="sharing-between-multiple-threads"></a>Partage entre plusieurs threads
 
-Si l’instance *Java ou Managed* instance peut être partagée entre plusieurs threads, *elle ne doit pas être `Dispose()`d*, **jamais**. Par exemple, [`Typeface.Create()`](xref:Android.Graphics.Typeface.Create*) 
-peut retourner une *instance mise en cache*. Si plusieurs threads fournissent les mêmes arguments, ils obtiendront la *même* instance. Par conséquent, `Dispose()`Ing de l’instance de `Typeface` à partir d’un thread peut invalider d’autres threads, ce qui peut entraîner la `ArgumentException`de `JNIEnv.CallVoidMethod()` (entre autres), car l’instance a été supprimée d’un autre thread. 
+Si l’instance *Java ou Managed* instance peut être partagée entre plusieurs threads, elle ne doit **jamais** *être `Dispose()` d*. Par exemple,[`Typeface.Create()`](xref:Android.Graphics.Typeface.Create*) 
+peut retourner une *instance mise en cache*. Si plusieurs threads fournissent les mêmes arguments, ils obtiendront la *même* instance. Par conséquent, `Dispose()` la Ing de l' `Typeface` instance d’un thread peut invalider d’autres threads, ce qui peut entraîner des `ArgumentException` s à partir de `JNIEnv.CallVoidMethod()` (entre autres), car l’instance a été supprimée d’un autre thread. 
 
 #### <a name="disposing-bound-java-types"></a>Suppression de types Java liés
 
-Si l’instance est de type Java lié, l’instance peut être supprimée *tant que* l’instance n’est pas réutilisée à partir du code managé *et* que l’instance Java ne peut pas être partagée entre les threads (voir la discussion précédente `Typeface.Create()`). (Il peut être difficile d’effectuer cette détermination.) La prochaine fois que l’instance java entre du code managé, un *nouveau* Wrapper sera créé pour celle-ci. 
+Si l’instance est de type Java lié, l’instance peut être supprimée *tant que* l’instance n’est pas réutilisée à partir du code managé *et* que l’instance Java ne peut pas être partagée entre les threads (voir la `Typeface.Create()` discussion précédente). (Il peut être difficile d’effectuer cette détermination.) La prochaine fois que l’instance java entre du code managé, un *nouveau* Wrapper sera créé pour celle-ci. 
 
 Cela s’avère souvent utile lorsqu’il s’agit d’Drawables et d’autres instances à ressources lourdes :
 
@@ -154,11 +154,11 @@ using (var d = Drawable.CreateFromPath ("path/to/filename"))
     imageView.SetImageDrawable (d);
 ```
 
-L’opération ci-dessus est sécurisée, car l’homologue que [Drawing. CreateFromPath ()](xref:Android.Graphics.Drawables.Drawable.CreateFromPath*) retourne fait référence à un homologue d’infrastructure, et *non* à un homologue d’utilisateur. Le `Dispose()` appel à la fin du bloc de `using` rompt la relation entre les instances [de dessin et de](xref:Android.Graphics.Drawables.Drawable) cadre [dessinées](https://developer.android.com/reference/android/graphics/drawable/Drawable.html) gérées, ce qui permet de collecter l’instance java dès que le runtime Android en a besoin. Cela *ne serait pas* sûr si l’instance de pair faisait appel à un homologue d’utilisateur ; ici, nous utilisons des informations « externes » pour *savoir* que le `Drawable` ne peut pas faire référence à un homologue d’utilisateur, et par conséquent, l’appel `Dispose()` est sécurisé. 
+L’opération ci-dessus est sécurisée, car l’homologue que [Drawing. CreateFromPath ()](xref:Android.Graphics.Drawables.Drawable.CreateFromPath*) retourne fait référence à un homologue d’infrastructure, et *non* à un homologue d’utilisateur. L' `Dispose()` appel à la fin du `using` bloc rompt la relation entre les instances de [dessin](xref:Android.Graphics.Drawables.Drawable) pouvant être [dessinées](https://developer.android.com/reference/android/graphics/drawable/Drawable.html) et le Framework, ce qui permet de collecter l’instance java dès que le runtime Android en a besoin. Cela *ne serait pas* sûr si l’instance de pair faisait appel à un homologue d’utilisateur ; ici, nous utilisons des informations « externes » pour *savoir* que `Drawable` ne peut pas faire référence à un homologue d’utilisateur et, par conséquent, l' `Dispose()` appel est sécurisé. 
 
 #### <a name="disposing-other-types"></a>Suppression d’autres types 
 
-Si l’instance fait référence à un type qui n’est pas une liaison d’un type Java (par exemple, un `Activity`personnalisé), **n’appelez pas** `Dispose()` à moins que vous ne *sachiez* qu’aucun code Java n’appellera des méthodes substituées sur cette instance. Dans le cas contraire, les [`NotSupportedException`s](~/android/internals/architecture.md#Premature_Dispose_Calls). 
+Si l’instance fait référence à un type qui n’est pas une liaison d’un type Java (tel qu’un personnalisé `Activity` ), **n’appelez pas** , `Dispose()` sauf si vous *savez* qu’aucun code Java n’appellera des méthodes substituées sur cette instance. Si ce n’est pas le [ `NotSupportedException` cas, le résultat est.](~/android/internals/architecture.md#Premature_Dispose_Calls) 
 
 Par exemple, si vous avez un écouteur de clic personnalisé :
 
@@ -187,9 +187,9 @@ Parameter name: jobject
 at Android.Runtime.JNIEnv.CallVoidMethod
 ```
 
-Cette situation se produit souvent lorsque la première suppression d’un objet entraîne la création d’une valeur NULL par un membre, puis une nouvelle tentative d’accès sur ce membre null entraîne la levée d’une exception. Plus précisément, la `Handle` de l’objet (qui lie une instance gérée à son instance Java sous-jacente) est invalidée lors de la première suppression, mais le code managé tente toujours d’accéder à cette instance Java sous-jacente, même si elle n’est plus disponible (voir les [wrappers pouvant être appelés](~/android/internals/architecture.md#Managed_Callable_Wrappers) par des instances managées et les instances managées). 
+Cette situation se produit souvent lorsque la première suppression d’un objet entraîne la création d’une valeur NULL par un membre, puis une nouvelle tentative d’accès sur ce membre null entraîne la levée d’une exception. Plus précisément, la valeur de l’objet `Handle` (qui lie une instance gérée à son instance Java sous-jacente) est invalidée lors de la première suppression, mais le code managé tente toujours d’accéder à cette instance Java sous [Managed Callable Wrappers](~/android/internals/architecture.md#Managed_Callable_Wrappers) -jacente même si elle n’est plus disponible (pour plus d’informations sur le mappage entre les instances Java et les instances managées). 
 
-Pour éviter cette exception, il est judicieux de vérifier explicitement dans votre méthode de `Dispose` que le mappage entre l’instance gérée et l’instance Java sous-jacente est toujours valide. autrement dit, vérifiez si la `Handle` de l’objet est null (`IntPtr.Zero`) avant d’accéder à ses membres. Par exemple, la méthode `Dispose` suivante accède à un objet `childViews` : 
+Pour éviter cette exception, il est judicieux de vérifier explicitement dans votre `Dispose` méthode que le mappage entre l’instance gérée et l’instance Java sous-jacente est toujours valide ; autrement dit, vérifiez si la valeur de l’objet `Handle` est null ( `IntPtr.Zero` ) avant d’accéder à ses membres. Par exemple, la `Dispose` méthode suivante accède à un `childViews` objet : 
 
 ```csharp
 class MyClass : Java.Lang.Object, ISomeInterface 
@@ -205,7 +205,7 @@ class MyClass : Java.Lang.Object, ISomeInterface
 }
 ```
 
-Si une passe de suppression initiale provoque une `Handle`non valide pour `childViews`, l’accès à la boucle d' `for` lèvera une `ArgumentException`. En ajoutant une vérification de `Handle` null explicite avant la première `childViews` l’accès, la méthode `Dispose` suivante empêche l’exception de se produire : 
+Si une étape de suppression initiale provoque `childViews` un non valide `Handle` , l' `for` accès à la boucle lèvera une `ArgumentException` . Si vous ajoutez une `Handle` vérification de valeur null explicite avant le premier `childViews` accès, la `Dispose` méthode suivante empêche l’exception de se produire : 
 
 ```csharp
 class MyClass : Java.Lang.Object, ISomeInterface 
@@ -228,7 +228,7 @@ class MyClass : Java.Lang.Object, ISomeInterface
 
 ### <a name="reduce-referenced-instances"></a>Réduire les instances référencées
 
-Chaque fois qu’une instance d’un type ou d’une sous-classe `Java.Lang.Object` est analysée pendant le garbage collector, le *graphique d’objets* entier auquel l’instance fait référence doit également être analysé. Le graphique d’objet est le jeu d’instances d’objet auquel fait référence l’instance racine, *ainsi* que tout ce qui est référencé par ce que fait l’instance racine, de manière récursive. 
+Chaque fois qu’une instance d’un `Java.Lang.Object` type ou d’une sous-classe est analysée pendant le GC, le *graphique d’objets* entier auquel l’instance fait référence doit également être analysé. Le graphique d’objet est le jeu d’instances d’objet auquel fait référence l’instance racine, *ainsi* que tout ce qui est référencé par ce que fait l’instance racine, de manière récursive. 
 
 Considérons la classe suivante :
 
@@ -248,7 +248,7 @@ class BadActivity : Activity {
 }
 ```
 
-Lorsque `BadActivity` est construit, le graphique d’objets contient 10004 instances (1x `BadActivity`, 1x `strings`, 1x `string[]` détenues par `strings`, instances de chaîne 10000x), qui doivent *toutes* être analysées chaque fois que l’instance `BadActivity` est analysée. 
+Lorsque `BadActivity` est construit, le graphique d’objets contient 10004 instances (1x `BadActivity` , 1x `strings` , 1x `string[]` détenues par `strings` , instances de chaîne 10000x), qui doivent *toutes* être analysées chaque fois que l' `BadActivity` instance est analysée. 
 
 Cela peut avoir un impact négatif sur vos heures de collecte, entraînant une augmentation des temps de pause GC. 
 
@@ -309,7 +309,7 @@ Si votre application a un « cycle de travail » dans lequel la même chose es
 
 ## <a name="major-collections"></a>Collections principales
 
-Les collections majeures peuvent être effectuées manuellement en appelant [gc. Collect ()](xref:System.GC.Collect) ou `GC.Collect(GC.MaxGeneration)`. 
+Les collections majeures peuvent être effectuées manuellement en appelant [gc. Collect ()](xref:System.GC.Collect) ou `GC.Collect(GC.MaxGeneration)` . 
 
 Elles doivent être exécutées rarement et peuvent avoir une durée de pause d’une seconde sur un appareil de style Android lors de la collecte d’un segment de mémoire de 512 Mo. 
 
@@ -325,22 +325,22 @@ Pour suivre le moment où les références globales sont créées et détruites,
 
 ## <a name="configuration"></a>Configuration
 
-Le garbage collector Xamarin. Android peut être configuré en définissant la variable d’environnement `MONO_GC_PARAMS`. Les variables d’environnement peuvent être définies avec une action de génération [AndroidEnvironment](~/android/deploy-test/environment.md).
+Le garbage collector Xamarin. Android peut être configuré en définissant la `MONO_GC_PARAMS` variable d’environnement. Les variables d’environnement peuvent être définies avec une action de génération [AndroidEnvironment](~/android/deploy-test/environment.md).
 
-La variable d’environnement `MONO_GC_PARAMS` est une liste séparée par des virgules des paramètres suivants : 
+La `MONO_GC_PARAMS` variable d’environnement est une liste séparée par des virgules des paramètres suivants : 
 
-- `nursery-size` = *taille* : définit la taille de la pépinière. La taille est spécifiée en octets et doit être une puissance de deux. Les suffixes `k`, `m` et `g` peuvent être utilisés pour spécifier les kilo-octets, méga-et-gigaoctets, respectivement. La pépinière est la première génération (de deux). Une plus grande pépinière accélérera généralement le programme, mais utilisera évidemment plus de mémoire. Taille de la pépinière par défaut de 512 Ko. 
+- `nursery-size` = *taille* : définit la taille de la pépinière. La taille est spécifiée en octets et doit être une puissance de deux. Les suffixes `k` `m` et `g` peuvent être utilisés pour spécifier les kilo-octets, Mega-et-gigaoctets, respectivement. La pépinière est la première génération (de deux). Une plus grande pépinière accélérera généralement le programme, mais utilisera évidemment plus de mémoire. Taille de la pépinière par défaut de 512 Ko. 
 
-- *taille* de la  = `soft-heap-limit`: la consommation maximale de mémoire gérée cible pour l’application. Lorsque l’utilisation de la mémoire est inférieure à la valeur spécifiée, le GC est optimisé pour le temps d’exécution (moins de collections). 
+- `soft-heap-limit` = *taille* : la consommation maximale de mémoire managée cible pour l’application. Lorsque l’utilisation de la mémoire est inférieure à la valeur spécifiée, le GC est optimisé pour le temps d’exécution (moins de collections). 
     Au-delà de cette limite, le GC est optimisé pour l’utilisation de la mémoire (autres collections). 
 
 - `evacuation-threshold` = *seuil* : définit le seuil d’évacuation en pourcentage. La valeur doit être un entier compris entre 0 et 100. La valeur par défaut est 66. Si la phase de balayage de la collection constate que l’occupation d’un type de bloc de segment de mémoire spécifique est inférieure à ce pourcentage, il effectue une collection de copie pour ce type de bloc dans la prochaine collection principale, ce qui restaure l’occupation à une valeur proche de 100%. La valeur 0 désactive l’évacuation. 
 
-- implémentation de `bridge-implementation` = *Bridge* : cette opération définit l’option de pont GC pour résoudre les problèmes de performances du catalogue global. Il existe trois valeurs possibles : *Old* , *New* , *Tarjan*.
+- `bridge-implementation` = *implémentation de pont* : cette opération définit l’option de pont GC pour résoudre les problèmes de performances du catalogue global. Il existe trois valeurs possibles : *Old* , *New* , *Tarjan*.
 
-- `bridge-require-precise-merge`: le pont Tarjan contient une optimisation qui peut, dans de rares occasions, entraîner la collecte d’un objet GC après la première tentative de garbage collection. L’inclusion de cette option désactive cette optimisation, ce qui rend les GC plus prévisibles, mais potentiellement plus lents.
+- `bridge-require-precise-merge`: Le pont Tarjan contient une optimisation qui peut, dans de rares occasions, entraîner la collecte d’un objet GC après la première tentative de garbage collection. L’inclusion de cette option désactive cette optimisation, ce qui rend les GC plus prévisibles, mais potentiellement plus lents.
 
-Par exemple, pour configurer le GC pour qu’il ait une limite de taille de segment de mémoire de 128 Mo, ajoutez un nouveau fichier à votre projet avec une **action de génération** de `AndroidEnvironment` avec le contenu : 
+Par exemple, pour configurer le GC pour qu’il ait une limite de taille de segment de mémoire de 128 Mo, ajoutez un nouveau fichier à votre projet avec une **action de génération** `AndroidEnvironment` avec le contenu : 
 
 ```shell
 MONO_GC_PARAMS=soft-heap-limit=128m

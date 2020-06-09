@@ -1,22 +1,9 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Firebase
-ms.openlocfilehash: 6b91884124f6c6dac366e30b8437a5f6e06ee162
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84133326"
+titre : « envoyer et recevoir des notifications Push avec Azure Notification Hubs et Xamarin.Forms «Description : » cet article explique comment utiliser azure notification hubs pour envoyer des notifications push interplateformes à des Xamarin.Forms applications.»
+ms. Prod : xamarin ms. AssetID : 07D13195-3A0D-4C95-ACF0-143A9084973C ms. Technology : xamarin-Forms Author : profexorgeek ms. Author : jusjohns ms. Date : 11/27/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials , Firebase ]
 ---
-# <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-xamarinforms"></a>Envoyer et recevoir des notifications Push avec Azure Notification Hubs et Xamarin. Forms
+
+# <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-xamarinforms"></a>Envoyer et recevoir des notifications Push avec Azure Notification Hubs etXamarin.Forms
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurenotificationhub/)
 
@@ -26,7 +13,7 @@ Intégrez Azure Notification Hubs dans Mobile Apps en procédant comme suit :
 
 1. [Configurez des notification services push et Azure notification Hub](#set-up-push-notification-services-and-azure-notification-hub).
 1. [Comprendre comment utiliser des modèles et des balises](#register-templates-and-tags-with-the-azure-notification-hub).
-1. [Créer une application Xamarin. Forms multiplateforme](#xamarinforms-application-functionality).
+1. [Créer une Xamarin.Forms application multiplateforme](#xamarinforms-application-functionality).
 1. [Configurez le projet Android natif pour les notifications push](#configure-the-android-application-for-notifications).
 1. [Configurez le projet iOS natif pour les notifications push](#configure-ios-for-notifications).
 1. [Tester les notifications à l’aide d’Azure notification Hub](#test-notifications-in-the-azure-portal).
@@ -37,7 +24,7 @@ Intégrez Azure Notification Hubs dans Mobile Apps en procédant comme suit :
 
 ## <a name="set-up-push-notification-services-and-azure-notification-hub"></a>Configurer des Notification Services push et Azure notification Hub
 
-L’intégration d’Azure Notification Hubs avec une application mobile Xamarin. Forms est similaire à l’intégration d’Azure Notification Hubs à une application native Xamarin. Configurez une Firebase application Cloud Messaging (FCM) en suivant les Firebase étapes de la console dans [notifications push vers Xamarin. Android à l’aide d’Azure notification hubs](/azure/notification-hubs/xamarin-notification-hubs-push-notifications-android-gcm#create-a-firebase-project-and-enable-firebase-cloud-messaging). Effectuez les étapes suivantes à l’aide du didacticiel Xamarin. Android :
+L’intégration d’Azure Notification Hubs avec une application Xamarin.Forms mobile est semblable à l’intégration d’azure notification hubs avec une application native Xamarin. Configurez une Firebase application Cloud Messaging (FCM) en suivant les Firebase étapes de la console dans [notifications push vers Xamarin. Android à l’aide d’Azure notification hubs](/azure/notification-hubs/xamarin-notification-hubs-push-notifications-android-gcm#create-a-firebase-project-and-enable-firebase-cloud-messaging). Effectuez les étapes suivantes à l’aide du didacticiel Xamarin. Android :
 
 1. Définissez un nom de package Android, tel que `com.xamarin.notifysample` , qui est utilisé dans l’exemple.
 1. Téléchargez `google-services.json` à partir de la Firebase console. Vous ajouterez ce fichier à votre application Android dans une prochaine étape.
@@ -75,9 +62,9 @@ Pour recevoir des messages, chaque application native doit effectuer les étapes
 
 Ces étapes sont décrites en détail pour chaque plateforme dans les sections [configurer l’application Android pour les notifications](#configure-the-android-application-for-notifications) et [configurer IOS pour les notifications](#configure-ios-for-notifications) .
 
-## <a name="xamarinforms-application-functionality"></a>Fonctionnalités de l’application Xamarin. Forms
+## <a name="xamarinforms-application-functionality"></a>Xamarin.Formsfonctionnalités de l’application
 
-L’exemple d’application Xamarin. Forms affiche la liste des messages de notification push. Cela est accompli avec la `AddMessage` méthode, qui ajoute le message de notification push spécifié à l’interface utilisateur. Cette méthode empêche également les messages en double d’être ajoutés à l’interface utilisateur et s’exécute sur le thread principal afin qu’il puisse être appelé à partir de n’importe quel thread. Le code suivant montre la méthode `AddMessage` :
+L’exemple Xamarin.Forms d’application affiche la liste des messages de notification push. Cela est accompli avec la `AddMessage` méthode, qui ajoute le message de notification push spécifié à l’interface utilisateur. Cette méthode empêche également les messages en double d’être ajoutés à l’interface utilisateur et s’exécute sur le thread principal afin qu’il puisse être appelé à partir de n’importe quel thread. Le code suivant montre la méthode `AddMessage` :
 
 ```csharp
 public void AddMessage(string message)
@@ -138,7 +125,7 @@ Procédez comme suit pour configurer l’application Android afin de recevoir et
 1. Copiez le `google-services.json` fichier que vous avez téléchargé lors de l’installation de FCM dans le projet et définissez l’action de génération sur `GoogleServicesJson` .
 1. [Configurer](#configure-android-manifest) `AndroidManifest.xml` pour communiquer avec Firebase .
 1. [Remplacer](#override-firebasemessagingservice-to-handle-messages) `FirebaseMessagingService` pour gérer les messages.
-1. [Ajoutez](#add-incoming-notifications-to-the-xamarinforms-ui) des notifications entrantes à l’interface utilisateur Xamarin. Forms.
+1. [Ajoutez](#add-incoming-notifications-to-the-xamarinforms-ui) des notifications entrantes à Xamarin.Forms l’interface utilisateur.
 
 > [!NOTE]
 > L' `GoogleServicesJson` action de génération fait partie du `Xamarin.GooglePlayServices.Base` package NuGet. Visual Studio 2019 définit les actions de génération disponibles au démarrage. Si vous ne voyez pas `GoogleServicesJson` comme action de génération, redémarrez Visual Studio 2019 après avoir installé les packages NuGet.
@@ -279,7 +266,7 @@ La notification locale et l' `Intent` exemple nécessitent que l’utilisateur a
 > [!NOTE]
 > L’application Android recevra uniquement les notifications push si elle s’exécute en arrière-plan ou au premier plan. Pour recevoir des notifications push lorsque le principal `Activity` n’est pas en cours d’exécution, vous devez implémenter un service qui dépasse le cadre de cet exemple. Pour plus d’informations, consultez [création de services Android](/xamarin/android/app-fundamentals/services/) .
 
-### <a name="add-incoming-notifications-to-the-xamarinforms-ui"></a>Ajouter des notifications entrantes à l’interface utilisateur Xamarin. Forms
+### <a name="add-incoming-notifications-to-the-xamarinforms-ui"></a>Ajouter des notifications entrantes à l' Xamarin.Forms interface utilisateur
 
 La `MainActivity` classe doit obtenir l’autorisation de gérer les notifications et de gérer les données des messages entrants. Le code suivant illustre l’implémentation complète de `MainActivity` :
 
@@ -365,7 +352,7 @@ Le processus de configuration de l’application iOS pour recevoir des notificat
 1. Ajoutez le `Xamarin.Azure.NotificationHubs.iOS` package NuGet à votre projet.
 1. [Inscrivez-vous](#register-for-notifications-with-apns) aux notifications avec APNs.
 1. [Inscrire](#register-with-azure-notification-hub-and-subscribe-to-tags) l’application auprès d’Azure notification Hub et s’abonner à des balises.
-1. [Ajouter](#add-apns-notifications-to-xamarinforms-ui) APNS les notifications à l’interface utilisateur Xamarin. Forms.
+1. [Ajouter](#add-apns-notifications-to-xamarinforms-ui) APNS les notifications à Xamarin.Forms l’interface utilisateur.
 
 La capture d’écran suivante montre l’option **activer les notifications push** sélectionnée dans le `Entitlements.plist` fichier dans Visual Studio :
 
@@ -471,9 +458,9 @@ public override void RegisteredForRemoteNotifications(UIApplication application,
 > [!NOTE]
 > L’inscription à des notifications distantes peut échouer dans des situations telles qu’aucune connexion réseau. Vous pouvez choisir de substituer la `FailedToRegisterForRemoveNotifications` méthode pour gérer l’échec de l’inscription.
 
-### <a name="add-apns-notifications-to-xamarinforms-ui"></a>Ajouter des notifications APNS à l’interface utilisateur de Xamarin. Forms
+### <a name="add-apns-notifications-to-xamarinforms-ui"></a>Ajouter des notifications APNS à Xamarin.Forms l’interface utilisateur
 
-Quand un appareil reçoit une notification à distance, iOS appelle la `ReceivedRemoteNotification` méthode. Le JSON de message entrant est converti en un `NSDictionary` objet, et la `ProcessNotification` méthode extrait des valeurs du dictionnaire et les envoie à l’instance Xamarin. Forms `MainPage` . La `ReceivedRemoteNotifications` méthode est substituée pour appeler `ProcessNotification` comme indiqué dans le code suivant :
+Quand un appareil reçoit une notification à distance, iOS appelle la `ReceivedRemoteNotification` méthode. Le JSON de message entrant est converti en un `NSDictionary` objet, et la `ProcessNotification` méthode extrait des valeurs du dictionnaire et les envoie à l' Xamarin.Forms `MainPage` instance. La `ReceivedRemoteNotifications` méthode est substituée pour appeler `ProcessNotification` comme indiqué dans le code suivant :
 
 ```csharp
 public override void ReceivedRemoteNotification(UIApplication application, NSDictionary userInfo)

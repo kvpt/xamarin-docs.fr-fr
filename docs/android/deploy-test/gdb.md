@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/05/2018
-ms.openlocfilehash: 51ebb8932f4b1ef8f10ba699e59ce53c98a38a50
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 85516800b2fcc410a9eba3abd0c12fd040cee3da
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73021483"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571946"
 ---
 # <a name="gdb"></a>GDB
 
@@ -30,7 +30,7 @@ Il y a trois manières d’utiliser `gdb` :
 
 En cas de problème, veuillez consulter la section [Dépannage](#Troubleshooting).
 
-<a name="Debug_Builds_with_Fast_Deployment" />
+<a name="Debug_Builds_with_Fast_Deployment"></a>
 
 ### <a name="debug-builds-with-fast-deployment"></a>Versions de débogage avec déploiement rapide
 
@@ -57,7 +57,7 @@ La `_Gdb` cible lancera une activité de lanceur arbitraire déclarée dans votr
 La cible `_Gdb` créera un répertoire `gdb-symbols` où elle copiera le contenu des répertoires `/system/lib` et `$APPDIR/lib` de votre cible.
 
 > [!NOTE]
-> Le contenu du répertoire `gdb-symbols` est lié à la cible Android sur laquelle vous avez déployé et ne sera pas automatiquement remplacé si vous changez la cible. (Considérez cela comme un bug.) Si vous modifiez les périphériques cibles Android, vous devrez supprimer manuellement cet annuaire.
+> Le contenu du répertoire `gdb-symbols` est lié à la cible Android sur laquelle vous avez déployé et ne sera pas automatiquement remplacé si vous changez la cible. (Considérez ce problème comme un bogue.) Si vous modifiez des appareils cibles Android, vous devrez supprimer manuellement ce répertoire.
 
 Pour finir, copiez la commande `gdb` générée et exécutez-la dans votre interpréteur de commandes :
 
@@ -73,7 +73,7 @@ GNU gdb (GDB) 7.3.1-gg2
 (gdb) c
 ```
 
-<a name="Debug_Builds_without_Fast_Deployment" />
+<a name="Debug_Builds_without_Fast_Deployment"></a>
 
 ## <a name="debug-builds-without-fast-deployment"></a>Versions de débogage sans déploiement rapide
 
@@ -132,7 +132,7 @@ GNU gdb (GDB) 7.3.1-gg2
 (gdb) c
 ```
 
-<a name="Release_Builds" />
+<a name="Release_Builds"></a>
 
 ## <a name="release-builds"></a>Versions release
 
@@ -154,7 +154,7 @@ Un `gdbserver` accessible peut être fourni en se référant à la section [Vers
 
 Une ombre au tableau : la cible MSBuild `_Gdb` va tuer toutes les instances d’application préalablement exécutées. Ceci ne fonctionnera pas sur les cibles v4.0 préalables à Android.
 
-<a name="Troubleshooting" />
+<a name="Troubleshooting"></a>
 
 ## <a name="troubleshooting"></a>Dépannage
 

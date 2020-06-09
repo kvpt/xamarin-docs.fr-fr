@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/15/2017
-ms.openlocfilehash: c8c1a5d284e5faaffae33a724c461b6fd74cf39b
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 1932bc8bf5362a284ed62aa241170264826baa9e
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73028575"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84567552"
 ---
 # <a name="icloud-capabilities-in-xamarinios"></a>Fonctionnalités iCloud dans Xamarin.iOS
 
-_L’ajout de capacités à une application nécessite souvent une configuration d’approvisionnement supplémentaire. Ce guide explique la configuration nécessaire pour les capacités iCloud._
+_L’ajout de fonctionnalités à une application nécessite souvent une configuration d’approvisionnement supplémentaire. Ce guide explique la configuration requise pour les fonctionnalités de iCloud._
 
 iCloud offre aux utilisateurs d’appareil iOS un moyen simple et pratique de stocker leur contenu et de le partager entre plusieurs appareils. Avec iCloud, les développeurs peuvent fournir quatre types de stockage différents aux utilisateurs : le stockage Key-value iCloud, le stockage UIDocument, CoreData et l’utilisation directe de CloudKit pour le stockage des fichiers et répertoires. Pour plus d’informations, consultez le guide [Présentation d’iCloud](~/ios/data-cloud/introduction-to-icloud.md).
 
@@ -25,7 +25,7 @@ L’ajout d’iCloud à une application est un peu plus difficile que d’autres
 > [!IMPORTANT]
 > Apple [fournit des outils](https://developer.apple.com/support/allowing-users-to-manage-data/) pour aider les développeurs à gérer correctement le Règlement général sur la protection des données (RGPD) de l’Union européenne.
 
-<a name="icloud-developer-center" />
+<a name="icloud-developer-center"></a>
 
 ## <a name="developer-center"></a>Centre de développement
 
@@ -59,11 +59,11 @@ Pour créer un ID d’application et lui ajouter un conteneur, effectuez les ét
     
     ![Section Identifiers dans le developer center](icloud-capabilities-images/image26.png)
 
-2. Sélectionnez **+** le bouton pour ajouter un nouvel ID App : 
+2. Sélectionnez le **+** bouton pour ajouter un nouvel ID d’application : 
     
     ![Bouton d’ajout d’un nouvel ID d’application](icloud-capabilities-images/image27.png)
 
-3. Entrez un **nom** pour l’ID app et donnez-lui un **IDENTIFIANT d’application explicite**:
+3. Entrez un **nom** pour l’ID d’application et donnez-lui un **ID d’application explicite**:
     
     ![Entrer les détails du nouvel ID d’application](icloud-capabilities-images/image28.png)
 
@@ -93,7 +93,7 @@ Pour créer un ID d’application et lui ajouter un conteneur, effectuez les ét
 
 10. Confirmez les attributions de conteneur, puis appuyez sur **Assign**.
 
-Cet ID App peut maintenant être utilisé pour générer, ou pour recréer, un nouveau profil de provisionnement, tel que décrit dans le guide [Working with Capabilities.](~/ios/deploy-test/provisioning/capabilities/index.md) 
+Cet ID d’application peut maintenant être utilisé pour générer ou regénérer un nouveau profil de provisionnement, comme décrit dans le guide [utilisation des fonctionnalités](~/ios/deploy-test/provisioning/capabilities/index.md) . 
 
 Pour plus d’informations sur l’utilisation d’iCloud, consultez les guides suivants :
 
@@ -107,6 +107,6 @@ S’il y a lieu, effectuez les étapes supplémentaires décrites ci-après :
 
 * Utilisez l’espace de noms de framework dans votre application.
 * Ajoutez les droits requis à votre application. Pour obtenir des informations détaillées sur les droits nécessaires et leur ajout, consultez le guide [Utilisation de droits](~/ios/deploy-test/provisioning/entitlements.md).
-* Dans la section  **Signature du bundle iOS** de l’application, vérifiez que le paramètre  **Droits personnalisés** a la valeur **Entitlements.plist**.Ce _n’est pas_ le paramètre par défaut pour Debug et iOS Simulator construit.
+* Dans la section  **Signature du bundle iOS** de l’application, vérifiez que le paramètre  **Droits personnalisés** a la valeur **Entitlements.plist**.Il ne s’agit _pas_   du paramètre par défaut pour les builds Debug et iOS Simulator.
 
 Si vous rencontrez des problèmes avec les services d’application, consultez la section [Dépannage](~/ios/deploy-test/provisioning/capabilities/index.md) du guide principal.

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2018
-ms.openlocfilehash: ef1a97df5648d0f120b58f6206f18f74a6f50f92
-ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
+ms.openlocfilehash: a2f15c8385b7df7afc3f04e033a085cb00bc9005
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "78292496"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573857"
 ---
 # <a name="launch-screens-for-xamarinios-apps"></a>Écrans de lancement pour les applications Xamarin. iOS
 
@@ -22,7 +22,7 @@ Avant iOS 8, la création d’un écran de lancement pour une application iOS n�
 
 Cette brève procédure pas à pas explique comment créer un écran de lancement avec une table de montage séquentiel fournie par défaut dans un nouveau projet ou avec un Storyboard ajouté manuellement à un projet existant. Il montre ensuite comment utiliser le concepteur iOS pour ajouter une vue d’image et une étiquette à la table de montage séquentiel, pour définir des contraintes sur ces vues et pour vérifier que la table de montage séquentiel semble correcte pour différents appareils et orientations.
 
-<a name="storyboard" />
+<a name="storyboard"></a>
 
 ## <a name="managing-launch-screens-with-storyboards"></a>Gestion des écrans de lancement avec les storyboards
 
@@ -97,7 +97,7 @@ Dans iOS 8 (et versions ultérieures), le développeur peut créer une table de 
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. Créez un projet. Dans Visual Studio, sélectionnez **fichier > nouveau > projet > Visual C# > iPhone & iPad > application iOS (Xamarin)** :
+1. Créez un projet. Dans Visual Studio, sélectionnez **fichier > nouveau > projet > Visual C# > iPhone & iPad > application iOS (Xamarin)**:
 
     ![La fenêtre nouveau projet, avec application iOS (Xamarin) sélectionnée](launch-screens-images/launch01.w157.png)
 
@@ -189,24 +189,24 @@ Pour plus d’informations sur la création d’un écran de lancement avec une 
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
-Quand vous mettez à jour une application existante pour utiliser des storyboards pour ses écrans de lancement, cliquez avec le bouton droit sur le **nom du projet** dans le **Explorateur de solutions** puis sélectionnez **Ajouter** > **nouveau fichier...** . Sélectionnez **iOS** > **écran de lancement** , puis cliquez sur le bouton **nouveau** :
+Quand vous mettez à jour une application existante pour utiliser des storyboards pour ses écrans de lancement, cliquez avec le bouton droit sur le **nom du projet** dans le **Explorateur de solutions** puis sélectionnez **Ajouter**  >  **un nouveau fichier...**. Sélectionnez **iOS**  >  **écran de lancement** iOS, puis cliquez sur le bouton **nouveau** :
 
 ![](launch-screens-images/storyboard02.png "Select an iOS Launch Screen")
 
-Ensuite, double-cliquez sur le fichier `Info.plist` dans le **Explorateur de solutions** pour l’ouvrir et le modifier. Sous **écran de lancement**, sélectionnez le nouveau fichier de Storyboard créé ci-dessus.
+Ensuite, double-cliquez sur le `Info.plist` fichier dans le **Explorateur de solutions** pour l’ouvrir et le modifier. Sous **écran de lancement**, sélectionnez le nouveau fichier de Storyboard créé ci-dessus.
 
 ![](launch-screens-images/storyboard09.png "Select the new Storyboard file created above")
 
 Pour utiliser le nouvel Storyboard comme écran de lancement, procédez comme suit :
 
-1. Double-cliquez sur le fichier `Info.plist` dans le **Explorateur de solutions** pour l’ouvrir et le modifier.
+1. Double-cliquez sur le `Info.plist` fichier dans le **Explorateur de solutions** pour l’ouvrir et le modifier.
 2. Faites défiler jusqu’à la section **images de lancement universel** de l’éditeur, ouvrez la liste déroulante **lancer l’écran** et sélectionnez le nom de la table de montage séquentiel créée ci-dessus : 
 
     ![](launch-screens-images/storyboard08.png "Setting the launch screen to the storyboard")
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. Cliquez avec le bouton droit sur le nom du projet dans le **Explorateur de solutions** puis sélectionnez **Ajouter** > **nouveau fichier...** : 
+1. Cliquez avec le bouton droit sur le nom du projet dans le **Explorateur de solutions** puis sélectionnez **Ajouter**  >  **un nouveau fichier...**: 
 
     ![](launch-screens-images/image012.png "Add new file")
 2. Entrez un nom pour l’écran de lancement, puis cliquez sur le bouton **Ajouter** : 
@@ -216,7 +216,7 @@ Pour utiliser le nouvel Storyboard comme écran de lancement, procédez comme su
 4. Assurez-vous que la **classe Size** a la valeur **any** , et **que la vue** est **générique**: 
 
     ![](launch-screens-images/image016.png "Ensure that the Size Class is set to any:any and the View As is Generic")
-5. Assembly l’écran de lancement à partir de classes de taille, d’éléments d’interface utilisateur simples (tels que `UIImageView`) et d’images que vous avez inclus dans l’offre groupée de l’application : 
+5. Assembly l’écran de lancement à partir de classes de taille, d’éléments d’interface utilisateur simples (tels que `UIImageView` ) et d’images que vous avez inclus dans l’offre groupée de l’application : 
 
     ![](launch-screens-images/image017.png "Assembly the launch screen in the iOS Designer")
 6. Enregistrez les modifications apportées à la table de montage séquentiel.

@@ -1,29 +1,13 @@
 ---
-title: Polices dansXamarin.Forms
-description: Cet article explique comment spécifier des informations de police sur les contrôles qui affichent du texte dans les Xamarin.Forms applications.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 3201340c8056fb1a7e36240eb329df14bd960ca3
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136212"
+title : « Fonts in Xamarin.Forms » Description :» cet article explique comment spécifier des informations de police sur des contrôles qui affichent du texte dans des Xamarin.Forms applications.
+ms. Prod : xamarin ms. AssetID : 49DD2249-C575-41AE-AE06-08F890FD6031 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 04/01/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="fonts-in-xamarinforms"></a>Polices dansXamarin.Forms
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfonts)
 
-Cet article décrit comment Xamarin.Forms vous permet de spécifier les attributs de police (y compris le poids et la taille) des contrôles qui affichent du texte. Les informations de police peuvent être [spécifiées dans le code](#Setting_Font_in_Code) ou [spécifiées en XAML](#Setting_Font_in_Xaml). Il est également possible d’utiliser une [police personnalisée](#use-a-custom-font)et d' [afficher les icônes de police](#display-font-icons).
-
-<a name="Setting_Font_in_Code" />
+Cet article décrit comment Xamarin.Forms vous permet de spécifier les attributs de police (y compris le poids et la taille) des contrôles qui affichent du texte. Les informations de police peuvent être [spécifiées dans le code](#set-the-font-in-code) ou [spécifiées en XAML](#set-the-font-in-xaml). Il est également possible d’utiliser une [police personnalisée](#use-a-custom-font)et d' [afficher les icônes de police](#display-font-icons).
 
 ## <a name="set-the-font-in-code"></a>Définir la police dans le code
 
@@ -44,8 +28,6 @@ var about = new Label
 };
 ```
 
-<a name="FontSize" />
-
 ### <a name="font-size"></a>Taille de police
 
 La `FontSize` propriété peut être définie sur une valeur double, par exemple :
@@ -57,8 +39,6 @@ label.FontSize = 24;
 La valeur de taille est mesurée en unités indépendantes du périphérique. Pour plus d’informations, consultez [unités de mesure](~/xamarin-forms/user-interface/controls/common-properties.md#units-of-measurement).
 
 Xamarin.Formsdéfinit également les champs de l' [`NamedSize`](xref:Xamarin.Forms.NamedSize) énumération qui représentent des tailles de police spécifiques. Pour plus d’informations sur les tailles de police nommées, consultez [tailles de police nommées](#named-font-sizes).
-
-<a name="FontAttributes" />
 
 ### <a name="font-attributes"></a>Attributs de police
 
@@ -86,8 +66,6 @@ label.FontSize = Device.RuntimePlatform == Device.iOS ? 24 :
 ```
 
 [Iosfonts.com](http://iosfonts.com)est une bonne source d’informations sur les polices pour iOS.
-
-<a name="Setting_Font_in_Xaml" />
 
 ## <a name="set-the-font-in-xaml"></a>Définir la police en XAML
 
@@ -257,4 +235,4 @@ Les captures d’écran suivantes de l’exemple de [dispositions pouvant être 
 - [FontsSample](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfonts)
 - [Texte (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 - [Dispositions pouvant être liées (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-bindablelayouts)
-- [Dispositions pouvant être liées](~/xamarin-forms/user-interface/layouts/bindable-layouts.md)
+- [Dispositions liables](~/xamarin-forms/user-interface/layouts/bindable-layouts.md)

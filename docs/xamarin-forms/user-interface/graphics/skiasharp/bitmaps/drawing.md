@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 593d6a8b30d5ed0e143d1c013849d2bef571f6dc
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84140294"
+titre : « création et dessin sur les bitmaps SkiaSharp » Description : « Découvrez comment créer des bitmaps SkiaSharp, puis dessiner sur ces bitmaps en créant une zone de dessin basée sur ces bitmaps ».
+ms. Prod : xamarin ms. Technology : xamarin-skiasharp ms. AssetID : 79BD3266-D457-4E50-BDDF-33450035FA0F auteur : davidbritch ms. Author : dabritch ms. Date : 07/17/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="creating-and-drawing-on-skiasharp-bitmaps"></a>Création et dessin sur des bitmaps SkiaSharp
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -341,8 +327,6 @@ Le constructeur conclut en créant un `SKCanvasView` pour afficher le résultat�
 
 [![Image de pixellisation](drawing-images/PixelizeImage.png "Image de pixellisation")](drawing-images/PixelizeImage-Large.png#lightbox)
 
-<a name="rotating-bitmaps" />
-
 ## <a name="rotating-bitmaps"></a>Rotation des bitmaps
 
 Une autre tâche courante est la rotation des bitmaps. Cela s’avère particulièrement utile lors de la récupération de bitmaps à partir d’une bibliothèque de photos iPhone ou iPad. À moins que l’appareil ne soit maintenu dans une orientation particulière lorsque la photo a été prise, l’image est susceptible d’être renversée ou latéralement.
@@ -388,7 +372,7 @@ using (SKCanvas canvas = new SKCanvas(rotatedBitmap))
 }
 ```
 
-Ces deux méthodes sont utilisées dans les pages de **Puzzle photo** décrites dans l’article [**découpage de bitmaps SkiaSharp**](cropping.md#tile-division).
+Ces deux méthodes sont utilisées dans les pages de **Puzzle photo** décrites dans l’article [**découpage de bitmaps SkiaSharp**](cropping.md#cropping-skiasharp-bitmaps).
 
 Un programme qui permet à l’utilisateur de faire pivoter une image bitmap par incréments de 90 degrés n’a besoin d’implémenter qu’une seule fonction pour la rotation de 90 degrés. L’utilisateur peut alors faire pivoter à l’aide d’un incrément de 90 degrés en répétant l’exécution de cette fonction.
 

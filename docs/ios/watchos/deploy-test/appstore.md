@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: a622684461bfe2e4a57b910288ee1f9afb54c694
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.openlocfilehash: f42c4a6dd2f4408d7b0ccf65e60851ebd29b76f6
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "78292499"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574538"
 ---
 # <a name="deploying-watchos-apps-to-the-app-store"></a>Déploiement d’applications Watchos sur l’App Store
 
@@ -21,7 +21,7 @@ ms.locfileid: "78292499"
 
 - Vérifiez que vous disposez des éléments suivants :
   - [**Profils de provisionnement de distribution**](#provisioning) créés pour vos projets.
-  - La **cible de déploiement** (`MinimumOSVersion`) pour l’application parent iOS définie à **8,2** ou une version antérieure (8,3 n’est pas prise en charge).
+  - La **cible de déploiement** ( `MinimumOSVersion` ) de l’application parent iOS définie à **8,2** ou une version antérieure (8,3 n’est pas prise en charge).
 
 - Dans [**iTunes Connect**](#iTunes_Connect):
 
@@ -43,7 +43,7 @@ ms.locfileid: "78292499"
 
 Lisez les conseils spécifiques relatifs à ces éléments ci-dessous. Si vous rencontrez des problèmes, consultez la section [résolution des](#troubleshooting) problèmes.
 
-<a name="provisioning" />
+<a name="provisioning"></a>
 
 ## <a name="distribution-provisioning-profiles"></a>Profils de provisionnement de distribution
 
@@ -63,14 +63,14 @@ La liste **profil de provisionnement** affiche tous les profils correspondants. 
 
 ![](appstore-images/options-selectprofile-sml.png "The iOS Bundle Signing dialog")
 
-<a name="iTunes_Connect"/>
+<a name="iTunes_Connect"></a>
 
 ## <a name="itunes-connect"></a>iTunes Connect
 
 Suivez la [Présentation de la distribution d’applications](~/ios/deploy-test/app-distribution/index.md), en particulier :
 
 - [Configuration d’une application dans iTunes Connect](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)
-- [Publication dans l’App Store](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)
+- [Publication sur l’App Store](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)
 
 Quand vous configurez l’application dans iTunes Connect, n’oubliez pas d’ajouter l’icône de visionneuse et les captures d’écran :
 
@@ -82,7 +82,7 @@ Au moins une capture d’écran est requise, jusqu’à cinq peut être envoyée
 Ils doivent être 312x390 pixels et démontrer votre application Watch en action.
 Vous pouvez utiliser le simulateur Watch 42mm Watch pour prendre des captures d’écran à cette taille.
 
-<a name="xamarin_studio" />
+<a name="xamarin_studio"></a>
 
 ## <a name="visual-studio-for-mac"></a>Visual Studio pour Mac
 
@@ -102,7 +102,7 @@ Vous pouvez également choisir l’élément de menu **afficher > les archives..
 
   ![](appstore-images/xs-archives-sml.png "The Archives view")
 
-<a name="xcode" />
+<a name="xcode"></a>
 
 ## <a name="xcode"></a>Xcode
 
@@ -175,7 +175,7 @@ is missing icon with name pattern '*44x44@2x.png' (Home Screen 42mm).
 Vérifiez que vous disposez de la dernière version de Visual Studio pour Mac, et que votre **AppIcon. appiconset** contient un ensemble complet d’images. Si vous continuez à voir cette erreur, consultez la source du **contenu. JSON** pour confirmer qu’elle contient une entrée pour toutes les images requises. Une fois que vous avez vérifié que vous utilisez la dernière version de Xamarin, supprimez et recréez l' **AppIcon. appiconset**.
 
 > [!IMPORTANT]
-> Il existe un bogue connu dans la prise en charge de l’icône de surveillance de Visual Studio pour Mac : elle attend une image de pixel 88x88 pour l’image **29x29@3x** (qui doit être 87x87 pixels).
+> Il existe un bogue connu dans la prise en charge de l’icône de surveillance de Visual Studio pour Mac : elle attend une image de pixel 88x88 pour l' **29x29@3x** image (qui doit être 87x87 pixels).
 
 Vous ne pouvez pas résoudre ce problème dans Visual Studio pour Mac : modifiez la ressource d’image dans Xcode ou modifiez manuellement le fichier **Contents. JSON** .
 

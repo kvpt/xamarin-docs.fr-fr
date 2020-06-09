@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsChemin de liaison
-description: Cet article explique comment utiliser Xamarin.Forms des liaisons de données pour accéder aux sous-propriétés et aux membres de collection avec la propriété Path de la classe Binding.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 0657f39d0584405ea1a6d7611ac789488817770f
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139738"
+titre : « Xamarin.Forms chemin de liaison » Description : « cet article explique comment utiliser Xamarin.Forms les liaisons de données pour accéder aux sous-propriétés et aux membres de collection avec la propriété Path de la classe Binding. »
+ms. Prod : xamarin ms. AssetID : 3CF721A5-E157-468B-AD3A-DA0A45E58E8D ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 01/05/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-binding-path"></a>Xamarin.FormsChemin de liaison
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
@@ -127,7 +113,7 @@ Le quatrième objet `Label` fait quelque chose de similaire mais pour la culture
 </Label>
 ```
 
-Consultez [Transmission des arguments de constructeur](~/xamarin-forms/xaml/passing-arguments.md#constructor_arguments) pour plus d’informations sur la spécification des arguments de constructeur en XAML.
+Consultez [Transmission des arguments de constructeur](~/xamarin-forms/xaml/passing-arguments.md#passing-constructor-arguments) pour plus d’informations sur la spécification des arguments de constructeur en XAML.
 
 Enfin, le dernier exemple est similaire au second, à ceci près qu’il fait référence à l’un des enfants de `StackLayout` :
 

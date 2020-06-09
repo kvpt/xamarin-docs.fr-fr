@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a05090c18039f9d3a7f9376285ce2863e0482903
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139254"
+titre : « microservices en conteneur » Description : « ce chapitre explique comment utiliser les microservices et les conteneurs pour créer des applications Cloud modernes, évolutives et fiables. »
+ms. Prod : xamarin ms. AssetID : 5872ad92-04e0-4F1A-9691-79d5602f5683 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 08/07/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="containerized-microservices"></a>Microservices conteneurisés
 
 Le développement d’applications client-serveur a donné lieu à la création d’applications à plusieurs niveaux qui utilisent des technologies spécifiques dans chaque niveau. Ces applications sont souvent appelées des applications *monolithiques* et sont empaquetées sur le matériel avant les pics de charge. Le principal inconvénient de cette approche de développement est le couplage étroit entre les composants au sein de chaque niveau, que les composants individuels ne peuvent pas être facilement mis à l’échelle et le coût des tests. Une mise à jour simple peut avoir des effets imprévus sur le reste du niveau, et par conséquent, une modification apportée à un composant d’application nécessite de retester et de redéployer son niveau entier.
@@ -93,11 +79,9 @@ L’application de référence eShopOnContainers utilise Dockr pour héberger qu
 
 L’architecture des services principaux dans l’application de référence est décomposée en plusieurs sous-systèmes autonomes sous la forme de microservices et de conteneurs de collaboration. Chaque microservice fournit une seule zone de fonctionnalités : un service d’identité, un service de catalogue, un service de tri et un service de panier.
 
-Chaque microservice possède sa propre base de données, ce qui lui permet d’être entièrement découplé des autres microservices. Si nécessaire, la cohérence entre les bases de données de différents microservices est obtenue à l’aide d’événements au niveau de l’application. Pour plus d’informations, consultez [communication entre les microservices](#communication_between_microservices).
+Chaque microservice possède sa propre base de données, ce qui lui permet d’être entièrement découplé des autres microservices. Si nécessaire, la cohérence entre les bases de données de différents microservices est obtenue à l’aide d’événements au niveau de l’application. Pour plus d’informations, consultez [communication entre les microservices](#communication-between-microservices).
 
 Pour plus d’informations sur l’application de référence, consultez [microservices .net : architecture pour les applications .net en conteneur](https://aka.ms/microservicesebook).
-
-<a name="communication_between_client_and_microservices" />
 
 ## <a name="communication-between-client-and-microservices"></a>Communication entre le client et les microservices
 
@@ -111,8 +95,6 @@ Avec la communication directe entre les clients et les microservices, l’applic
 
 > [!TIP]
 > Envisagez d’utiliser la communication de la passerelle API. La communication directe entre les clients et les microservices peut présenter des inconvénients lors de la création d’une application basée sur des microservices complexes et de grande envergure, mais elle est plus que suffisante pour une petite application. Lors de la conception d’une application basée sur un microservice de grande taille avec des dizaines de microservices, envisagez d’utiliser la communication de la passerelle API. Pour plus d’informations, consultez [microservices .net : architecture pour les applications .net en conteneur](https://aka.ms/microservicesebook).
-
-<a name="communication_between_microservices" />
 
 ## <a name="communication-between-microservices"></a>Communication entre microservices
 

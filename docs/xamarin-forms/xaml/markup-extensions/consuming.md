@@ -1,35 +1,21 @@
 ---
-title: ''
-description: Cet article explique comment utiliser Xamarin.Forms les extensions de balisage XAML pour améliorer la puissance et la flexibilité du XAML en permettant de définir des attributs d’élément à partir de diverses sources.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 7cd3a9d275919240fcaa7315d5043854df5529bb
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84127313"
+title : "utilisation des extensions de balisage XAML" Description : "cet article explique comment utiliser Xamarin.Forms les extensions de balisage XAML pour améliorer la puissance et la flexibilité du XAML en permettant de définir des attributs d’élément à partir de diverses sources.»
+ms. Prod : xamarin ms. AssetID : CE686893-609C-4EC3-9225-6C68D2A9F79C ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 04/21/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="consuming-xaml-markup-extensions"></a>Consommation des extensions de balisage XAML
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
 
 Les extensions de balisage XAML aident à améliorer la puissance et la flexibilité du XAML en permettant de définir des attributs d’élément à partir de diverses sources. Plusieurs extensions de balisage XAML font partie de la spécification XAML 2009. Ils s’affichent dans les fichiers XAML avec le `x` préfixe d’espace de noms personnalisé, et sont communément désignés par ce préfixe. Cet article aborde les extensions de balisage suivantes :
 
-- [`x:Static`](#static): référencez des propriétés statiques, des champs ou des membres d’énumération.
-- [`x:Reference`](#reference): référence des éléments nommés sur la page.
-- [`x:Type`](#type): définissez un attribut sur un `System.Type` objet.
-- [`x:Array`](#array): construisez un tableau d’objets d’un type particulier.
-- [`x:Null`](#null): affectez une valeur à un attribut `null` .
-- [`OnPlatform`](#onplatform): personnaliser l’apparence de l’interface utilisateur sur la base de chaque plateforme.
-- [`OnIdiom`](#onidiom): personnalisez l’apparence de l’interface utilisateur en fonction de l’idiome du périphérique sur lequel l’application s’exécute.
+- [`x:Static`](#xstatic-markup-extension): référencez des propriétés statiques, des champs ou des membres d’énumération.
+- [`x:Reference`](#xreference-markup-extension): référence des éléments nommés sur la page.
+- [`x:Type`](#xtype-markup-extension): définissez un attribut sur un `System.Type` objet.
+- [`x:Array`](#xarray-markup-extension): construisez un tableau d’objets d’un type particulier.
+- [`x:Null`](#xnull-markup-extension): affectez une valeur à un attribut `null` .
+- [`OnPlatform`](#onplatform-markup-extension): personnaliser l’apparence de l’interface utilisateur sur la base de chaque plateforme.
+- [`OnIdiom`](#onidiom-markup-extension): personnalisez l’apparence de l’interface utilisateur en fonction de l’idiome du périphérique sur lequel l’application s’exécute.
 - [`DataTemplate`](#datatemplate-markup-extension): convertit un type en [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) .
 - [`FontImage`](#fontimage-markup-extension): affiche une icône de police dans n’importe quelle vue pouvant afficher un `ImageSource` .
 - [`OnAppTheme`](#onapptheme-markup-extension): utilise une ressource basée sur le thème système actuel.
@@ -43,8 +29,6 @@ Des extensions de balisage XAML supplémentaires ont été prises en charge par 
 - `RelativeSource`-définit la source de liaison par rapport à la position de la cible de liaison, comme indiqué dans l’article [liaisons relatives](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md).
 
 La [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) disposition utilise l’extension de balisage personnalisée [`ConstraintExpression`](xref:Xamarin.Forms.ConstraintExpression) . Cette extension de balisage est décrite dans l’article [**RelativeLayout**](~/xamarin-forms/user-interface/layouts/relative-layout.md).
-
-<a name="static" />
 
 ## <a name="xstatic-markup-extension"></a>x:Static (extension de balisage)
 
@@ -150,8 +134,6 @@ Voici l’exemple en cours d’exécution :
 
 [![Démonstration de x :Static](consuming-images/staticdemo-small.png "Démonstration de x :Static")](consuming-images/staticdemo-large.png#lightbox "Démonstration de x :Static")
 
-<a name="reference" />
-
 ## <a name="xreference-markup-extension"></a>x :Reference (extension de balisage)
 
 L' `x:Reference` extension de balisage est prise en charge par la [`ReferenceExtension`](xref:Xamarin.Forms.Xaml.ReferenceExtension) classe. La classe a une propriété unique nommée [`Name`](xref:Xamarin.Forms.Xaml.ReferenceExtension.Name) de type `string` que vous définissez sur le nom d’un élément de la page auquel un nom a été attribué `x:Name` . Cette `Name` propriété est la propriété de contenu de `ReferenceExtension` , ce qui `Name=` n’est pas obligatoire lorsque `x:Reference` s’affiche entre accolades.
@@ -194,15 +176,13 @@ Les deux `x:Reference` expressions utilisent la version abrégée du `ReferenceE
 
 [![Démonstration de la x :Reference](consuming-images/referencedemo-small.png "Démonstration de la x :Reference")](consuming-images/referencedemo-large.png#lightbox "Démonstration de la x :Reference")
 
-<a name="type" />
-
 ## <a name="xtype-markup-extension"></a>x:Type (extension de balisage)
 
 L' `x:Type` extension de balisage est l’équivalent XAML du [`typeof`](/dotnet/csharp/language-reference/keywords/typeof/) mot clé C#. Elle est prise en charge par la [`TypeExtension`](xref:Xamarin.Forms.Xaml.TypeExtension) classe, qui définit une propriété nommée [`TypeName`](xref:Xamarin.Forms.Xaml.TypeExtension.TypeName) de type `string` qui a pour valeur un nom de classe ou de structure. L' `x:Type` extension de balisage retourne l' [`System.Type`](xref:System.Type) objet de cette classe ou structure. `TypeName`est la propriété de contenu de `TypeExtension` , ce qui `TypeName=` n’est pas obligatoire lorsque `x:Type` s’affiche entre accolades.
 
-Dans Xamarin.Forms , il existe plusieurs propriétés qui ont des arguments de type `Type` . Il peut s’agir, par exemple [`TargetType`](xref:Xamarin.Forms.Style.TargetType) , de la propriété de `Style` et de l’attribut [x :TypeArguments](~/xamarin-forms/xaml/passing-arguments.md#generic_type_arguments) utilisé pour spécifier des arguments dans des classes génériques. Toutefois, l’analyseur XAML effectue l' `typeof` opération automatiquement et l' `x:Type` extension de balisage n’est pas utilisée dans ces cas.
+Dans Xamarin.Forms , il existe plusieurs propriétés qui ont des arguments de type `Type` . Il peut s’agir, par exemple [`TargetType`](xref:Xamarin.Forms.Style.TargetType) , de la propriété de `Style` et de l’attribut [x :TypeArguments](~/xamarin-forms/xaml/passing-arguments.md#specifying-a-generic-type-argument) utilisé pour spécifier des arguments dans des classes génériques. Toutefois, l’analyseur XAML effectue l' `typeof` opération automatiquement et l' `x:Type` extension de balisage n’est pas utilisée dans ces cas.
 
-L’extension de `x:Type` *is* `x:Array` balisage, qui est décrite dans la [section suivante](#array), est un emplacement requis.
+L’extension de `x:Type` *is* `x:Array` balisage, qui est décrite dans la [section suivante](#xarray-markup-extension), est un emplacement requis.
 
 L' `x:Type` extension de balisage est également utile lors de la construction d’un menu où chaque élément de menu correspond à un objet d’un type particulier. Vous pouvez associer un `Type` objet à chaque élément de menu, puis instancier l’objet quand l’élément de menu est sélectionné.
 
@@ -332,8 +312,6 @@ La méthode qui est exécutée quand un `Button` est enfoncé crée une nouvelle
 
 [![Démonstration de x :Type](consuming-images/typedemo-small.png "Démonstration de x :Type")](consuming-images/typedemo-large.png#lightbox "Démonstration de x :Type")
 
-<a name="array" />
-
 ## <a name="xarray-markup-extension"></a>x:Array (extension de balisage)
 
 L' `x:Array` extension de balisage vous permet de définir un tableau dans le balisage. Elle est prise en charge par la [`ArrayExtension`](xref:Xamarin.Forms.Xaml.ArrayExtension) classe, qui définit deux propriétés :
@@ -407,9 +385,7 @@ Vers la fin de cet article, vous verrez une extension de balisage XAML personnal
 <local:HslColor H="0.5" S="1.0" L="0.5" />
 ```
 
-Quand vous définissez des tableaux de types communs tels que des chaînes ou des nombres, utilisez les balises listées dans l’article [**passage d’arguments de constructeur**](~/xamarin-forms/xaml/passing-arguments.md#constructor_arguments) pour délimiter les valeurs.
-
-<a name="null" />
+Quand vous définissez des tableaux de types communs tels que des chaînes ou des nombres, utilisez les balises listées dans l’article [**passage d’arguments de constructeur**](~/xamarin-forms/xaml/passing-arguments.md#passing-constructor-arguments) pour délimiter les valeurs.
 
 ## <a name="xnull-markup-extension"></a>x:Null (extension de balisage)
 
@@ -464,8 +440,6 @@ Voici le programme en cours d’exécution :
 
 Notez que quatre des `Label` éléments ont une police serif, mais que le centre `Label` possède la police sans empattement par défaut.
 
-<a name="onplatform" />
-
 ## <a name="onplatform-markup-extension"></a>Extension de balisage OnPlatform
 
 L’extension de balisage `OnPlatform` vous permet de personnaliser l’apparence de l’interface utilisateur pour chaque plateforme. Il fournit les mêmes fonctionnalités que les [`OnPlatform`](xref:Xamarin.Forms.OnPlatform`1) [`On`](xref:Xamarin.Forms.On) classes et, mais avec une représentation plus concise.
@@ -505,8 +479,6 @@ Dans cet exemple, les trois `OnPlatform` expressions utilisent la version abrég
 Voici le programme en cours d’exécution :
 
 [![Démonstration OnPlatform](consuming-images/onplatformdemo-small.png "Démonstration OnPlatform")](consuming-images/onplatformdemo-large.png#lightbox "Démonstration OnPlatform")
-
-<a name="onidiom" />
 
 ## <a name="onidiom-markup-extension"></a>Extension de balisage OnIdiom
 

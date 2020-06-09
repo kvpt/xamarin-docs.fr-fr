@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 786afa6967731fb1bd508fa3c835b980639eb282
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 45b7c1081571b52bb8760b4207e3a05a4ffa77ae
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032383"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84572310"
 ---
 # <a name="in-app-purchase-basics-and-configuration-in-xamarinios"></a>Notions de base et configuration des achats dans l’application dans Xamarin. iOS
 
@@ -146,7 +146,7 @@ Vous pouvez proposer cinq types de produits d’achat dans l’application :
 
  *Ce document couvre actuellement uniquement les deux premiers types de produits (consommables et non consommables).*
 
- <a name="Price_Tiers" />
+ <a name="Price_Tiers"></a>
 
 ### <a name="price-tiers"></a>Niveaux de prix
 
@@ -156,7 +156,7 @@ Apple fournit une matrice de prix pour vous aider à sélectionner le niveau app
 
  [![](in-app-purchase-basics-and-configuration-images/image10.png "An excerpt of the price matrix August 2012")](in-app-purchase-basics-and-configuration-images/image10.png#lightbox)
 
-Au moment de la rédaction de l’article (juin 2013), il y a 87 niveaux, de 0,99 USD à 999,99. La matrice de tarification affiche le prix que vos clients paient et le montant que vous allez recevoir d’Apple, ce qui est inférieur à 30% et également les taxes locales qu’ils doivent collecter (Voir l’exemple que les vendeurs américains et Canadiens reçoivent 70C pour 99c p roduit, tandis que les vendeurs australiens reçoivent uniquement des 63C en raison de la taxe sur les biens &amp; services, perçue sur le prix de vente).
+Au moment de la rédaction de l’article (juin 2013), il y a 87 niveaux, de 0,99 USD à 999,99. La matrice de tarification affiche le prix que vos clients paient et le montant que vous allez recevoir d’Apple, ce qui est inférieur à 30% et également les taxes locales qu’ils doivent collecter (Notez dans l’exemple que les vendeurs aux États-Unis et au Canada reçoivent 70C pour un produit 99c, tandis que les vendeurs australiens reçoivent uniquement des 63C en raison des « taxes de biens &amp; » perçues
 
 La tarification de votre produit peut être mise à jour à tout moment, y compris les changements de prix planifiés qui prennent effet à une date ultérieure. Cette capture d’écran montre comment un changement de prix futur daté est ajouté : le prix est provisoirement modifié du niveau 1 au niveau 3 pour le mois de septembre uniquement :
 

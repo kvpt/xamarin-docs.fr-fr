@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 4731be58c1fadae0bba6768570ecfd181b071dd2
-ms.sourcegitcommit: ce4670de51e24116a944c778ee64585bd0aae0e1
+ms.openlocfilehash: 49ea0cf7bd45a7fc261f6be3dc3becd2c847ad0c
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79088939"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84564899"
 ---
 # <a name="ios-7-user-interface-overview"></a>Vue d’ensemble de l’interface utilisateur iOS 7
 
@@ -30,27 +30,27 @@ Toutes les vues dans UIKit sont conformes à la nouvelle apparence d’iOS 7. Ce
 
 ### <a name="uibutton"></a>UIButton
 
-Les boutons créés à partir de la classe `UIButton` sont désormais sans bordure, sans arrière-plan par défaut, comme indiqué ci-dessous :
+Les boutons créés à partir de la `UIButton` classe sont désormais sans bordure, sans arrière-plan par défaut, comme indiqué ci-dessous :
 
  ![](ios7-ui-images/button.png "Sample UIButton")
 
-Le style de `UIButtonType.RoundedRect` est déconseillé. S’il est utilisé dans iOS 7, `UIButtonType.RoundedRect` entraîne l’utilisation d' `UIButtonType.System`, ce qui produit le style de bouton par défaut sans bords d’arrière-plan ou visibles, comme indiqué ci-dessus.
+Le `UIButtonType.RoundedRect` style est déconseillé. S’il est utilisé dans iOS 7, `UIButtonType.RoundedRect` est `UIButtonType.System` utilisé, ce qui produit le style de bouton par défaut sans bords d’arrière-plan ou visibles, comme indiqué ci-dessus.
 
 ### <a name="uibarbuttonitem"></a>UIBarButtonItem
 
-À l’instar des `UIButton`, les boutons de barre sont également sans bordure, le nouveau style de `UIBarButtonItemStyle.Plain` présenté ci-dessous, par défaut :
+De la même façon `UIButton` que les boutons de barre sont également sans bordure, le nouveau `UIBarButtonItemStyle.Plain` style présenté ci-dessous est utilisé par défaut :
 
  ![](ios7-ui-images/barbuttonplain.png "Sample UIBarButtonItem")
 
-En outre, le style de `UIBarButtonItemStyle.Bordered` est déconseillé. La définition de `UIBarButtonItemStyle.Bordered` dans iOS 7 entraîne l’utilisation du style `UIBarButtonItemStyle.Plain`.
+En outre, le `UIBarButtonItemStyle.Bordered` style est déconseillé. `UIBarButtonItemStyle.Bordered`Dans iOS 7, le `UIBarButtonItemStyle.Plain` style est utilisé.
 
-Le style de `UIBarButtonItemStyle.Done` n’a pas été déconseillé. Toutefois, il crée également un bouton sans bordure, uniquement avec un style de texte en gras, comme indiqué ci-dessous :
+Le `UIBarButtonItemStyle.Done` style n’est pas déconseillé. Toutefois, il crée également un bouton sans bordure, uniquement avec un style de texte en gras, comme indiqué ci-dessous :
 
  ![](ios7-ui-images/barbuttondone.png "Sample UIBarButtonItem in the Done style")
 
 ### <a name="uialertview"></a>UIAlertView
 
-En plus de la modification de style pour la nouvelle apparence iOS 7, les affichages des alertes ne prennent plus en charge la personnalisation via la sous-vue. Même si `UIAlertView` hérite de `UIView`, l’appel de `AddSubview` sur un `UIAlertView` n’a aucun effet. Considérons par exemple le code suivant :
+En plus de la modification de style pour la nouvelle apparence iOS 7, les affichages des alertes ne prennent plus en charge la personnalisation via la sous-vue. Même si `UIAlertView` hérite de `UIView` , l’appel `AddSubview` de sur un n' `UIAlertView` a aucun effet. Considérons par exemple le code suivant :
 
 ```csharp
 UIBarButtonItem button = new UIBarButtonItem ("Bar Button", UIBarButtonItemStyle.Plain, (s,e) =>
@@ -78,7 +78,7 @@ Les contrôles segmentés dans iOS 7 sont transparents et prennent en charge la 
 
  ![](ios7-ui-images/segmentedcontrol.png "Sample UISegmentedControl")
 
-En outre, le `UISegmentedControlStyle` est déconseillé dans iOS 7.
+En outre, le `UISegmentedControlStyle` a été déconseillé dans iOS 7.
 
 ### <a name="picker-views"></a>Vues du sélecteur
 
@@ -88,9 +88,9 @@ L’API pour les vues du sélecteur est en grande partie inchangée. Toutefois, 
 
 ### <a name="uisearchdisplaycontroller"></a>UISearchDisplayController
 
-La barre de recherche est maintenant affichée à l’intérieur de la barre de navigation lorsque la propriété `UISearchDisplayController.DisplaysSearchBarInNavigationBar` a la valeur true. Si la valeur est false (valeur par défaut), la barre de navigation est masquée lorsque le contrôleur de recherche est affiché.
+La barre de recherche est maintenant affichée à l’intérieur de la barre de navigation lorsque la `UISearchDisplayController.DisplaysSearchBarInNavigationBar` propriété a la valeur true. Si la valeur est false (valeur par défaut), la barre de navigation est masquée lorsque le contrôleur de recherche est affiché.
 
-La capture d’écran suivante montre la barre de recherche dans un `UISearchDisplayController`:
+La capture d’écran suivante montre la barre de recherche dans un `UISearchDisplayController` :
 
  ![](ios7-ui-images/searchbar.png "Sample UISearchDisplayController")
 
@@ -106,7 +106,7 @@ Le style groupé modifié a été mis à jour et le contenu s’étend maintenan
 
 #### <a name="separatorinset"></a>SeparatorInset
 
-Les séparateurs de lignes peuvent maintenant être mis en retrait en définissant la propriété `UITableVIewCell.SeparatorInset`. Par exemple, le code suivant est utilisé pour mettre en retrait les cellules du bord gauche :
+Les séparateurs de lignes peuvent maintenant être mis en retrait en définissant la `UITableVIewCell.SeparatorInset` propriété. Par exemple, le code suivant est utilisé pour mettre en retrait les cellules du bord gauche :
 
 ```csharp
 cell.SeparatorInset = new UIEdgeInsets (0, 50, 0, 0);
@@ -134,7 +134,7 @@ En plus des modifications apportées à UIKit, iOS 7 introduit une variété de 
 - Apparence de la barre
 - Couleur de teinte
 
-<a name="fullscreen" />
+<a name="fullscreen"></a>
 
 ### <a name="full-screen-content"></a>Contenu plein écran
 
@@ -144,7 +144,7 @@ Lorsque vous préparez votre application pour iOS 7, vous pouvez réaligner les 
 
 #### <a name="toplayoutguide-and-bottomlayoutguide"></a>TopLayoutGuide et BottomLayoutGuide
 
- `TopLayoutGuide` et `BottomLayoutGuide` servent de référence pour les vues où les vues doivent commencer ou se terminer, de sorte que le contenu ne se chevauche pas par une barre d' `UIKit` translucide, comme dans l’exemple suivant :
+ `TopLayoutGuide`et `BottomLayoutGuide` servent de référence pour les emplacements où les vues doivent commencer ou se terminer, de sorte que le contenu ne se chevauche pas par une barre translucide `UIKit` , comme dans l’exemple suivant :
 
  [![](ios7-ui-images/clipped.png "Sample content not overlapped by a translucent UIKit bar")](ios7-ui-images/clipped.png#lightbox)
 
@@ -164,20 +164,20 @@ public override void ViewDidLayoutSubviews ()
 }
 ```
 
-Nous pouvons utiliser la valeur calculée ci-dessus pour définir le décalage de la `ImageView`à partir du haut de l’écran, de sorte que l’image entière soit visible :
+Nous pouvons utiliser la valeur calculée ci-dessus pour définir notre déplacement de la `ImageView` partie supérieure de l’écran, de sorte que l’image entière soit visible :
 
  [![](ios7-ui-images/good2.png "Example ImageViews displacement from the top of the screen")](ios7-ui-images/good2.png#lightbox)
 
 Reportez-vous à [imageviewer](https://docs.microsoft.com/samples/xamarin/ios-samples/ios7-ui-updates/) pour obtenir un exemple fonctionnel.
 
-La valeur de déplacement est générée dynamiquement après que la vue a été ajoutée à la hiérarchie, de sorte que la tentative de lecture des valeurs `TopLayoutGuide` et `BottomLayoutGuide` dans `ViewDidLoad` retourne 0. Calculez la valeur après le chargement de la vue, par exemple, dans la `ViewDidLayoutSubviews`.
+La valeur de déplacement est générée dynamiquement après que la vue a été ajoutée à la hiérarchie, si bien que la tentative de lecture `TopLayoutGuide` des `BottomLayoutGuide` valeurs et dans `ViewDidLoad` retourne 0. Calculez la valeur après le chargement de la vue, par exemple dans `ViewDidLayoutSubviews` .
 
 > [!IMPORTANT]
-> les `TopLayoutGuide` et les `BottomLayoutGuide` sont dépréciées dans iOS 11 en faveur de la nouvelle disposition de zone sécurisée. Apple a indiqué que l’utilisation de la zone sécurisée est compatible avec la version d’iOS antérieure à iOS 11. Pour plus d’informations, consultez le Guide de [mise à jour de votre application pour iOS 11](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md#fullscreen) .
+> `TopLayoutGuide`et `BottomLayoutGuide` sont dépréciées dans iOS 11 en faveur de la nouvelle disposition de zone sécurisée. Apple a indiqué que l’utilisation de la zone sécurisée est compatible avec la version d’iOS antérieure à iOS 11. Pour plus d’informations, consultez le Guide de [mise à jour de votre application pour iOS 11](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md#fullscreen) .
 
 #### <a name="edgesforextendedlayout"></a>EdgesForExtendedLayout
 
-Cette API spécifie les bords d’une vue qui doivent être étendus en plein écran, indépendamment de la barre translucidité. Dans iOS 7, les barres de navigation et les barres d’outils apparaissent en couche au-dessus de la vue du contrôleur, contrairement aux versions iOS précédentes, où elles n’occupent pas le même espace. L’application iOS 7 photos illustre la valeur par défaut `UIViewController.EdgesForExtendedLayout`, `UIRectEdge.All`. Ce paramètre remplit les quatre bords de la vue avec le contenu, créant ainsi l’effet de chevauchement et d’affichage plein écran :
+Cette API spécifie les bords d’une vue qui doivent être étendus en plein écran, indépendamment de la barre translucidité. Dans iOS 7, les barres de navigation et les barres d’outils apparaissent en couche au-dessus de la vue du contrôleur, contrairement aux versions iOS précédentes, où elles n’occupent pas le même espace. L’application iOS 7 photos illustre la valeur par défaut `UIViewController.EdgesForExtendedLayout` , `UIRectEdge.All` . Ce paramètre remplit les quatre bords de la vue avec le contenu, créant ainsi l’effet de chevauchement et d’affichage plein écran :
 
  [![](ios7-ui-images/photos.png "Sample EdgesForExtendedLayout")](ios7-ui-images/photos.png#lightbox)
 
@@ -189,7 +189,7 @@ Le fait de cliquer sur l’image permet de supprimer les barres et d’afficher 
 
  [![](ios7-ui-images/clipped.png "Apps configured for iOS 6 will have part of the view clipped, as in this screenshot")](ios7-ui-images/clipped.png#lightbox)
 
-La modification de la propriété `UIViewController.EdgesForExtendedLayout` ajuste ce comportement. Nous pouvons spécifier que la vue ne remplit aucune arête, donc notre vue évitera d’afficher le contenu dans l’espace occupé par la navigation ou les barres d’outils (à chaque orientation) :
+La modification `UIViewController.EdgesForExtendedLayout` de la propriété ajuste ce comportement. Nous pouvons spécifier que la vue ne remplit aucune arête, donc notre vue évitera d’afficher le contenu dans l’espace occupé par la navigation ou les barres d’outils (à chaque orientation) :
 
 ```csharp
 if (UIDevice.CurrentDevice.CheckSystemVersion (7, 0)) { 
@@ -201,7 +201,7 @@ Dans notre application, nous voyons que la vue est à nouveau repositionnée, de
 
  [![](ios7-ui-images/good.png "Example with whole image visible")](ios7-ui-images/good.png#lightbox)
 
-Notez que, bien que les effets des API `TopLayoutGuide/BottomLayoutGuide` et `EdgesForExtendedLayout` soient similaires, ils sont destinés à remplir différents objectifs. La modification du paramètre de `EdgesForExtendedLayout` à partir de la valeur par défaut peut corriger les vues tronquées dans les applications conçues pour iOS 6, mais une bonne conception iOS 7 doit honorer l’esthétique du plein écran et fournir une expérience d’affichage plein écran, en se basant sur `TopLayoutGuide` et `BottomLayoutGuide` pour positionner correctement le contenu destiné à être manipulé dans un endroit confortable pour l’utilisateur.
+Notez que, bien que les effets `TopLayoutGuide/BottomLayoutGuide` des `EdgesForExtendedLayout` API et soient similaires, ils sont destinés à remplir différents objectifs. La modification du `EdgesForExtendedLayout` paramètre de la valeur par défaut peut corriger les vues tronquées dans les applications conçues pour iOS 6, mais une bonne conception iOS 7 doit honorer l’esthétique plein écran et fournir une expérience d’affichage plein écran, en se basant sur `TopLayoutGuide` et `BottomLayoutGuide` pour positionner correctement le contenu destiné à être manipulé dans un endroit confortable pour l’utilisateur.
 
 Reportez-vous à [imageviewer](https://docs.microsoft.com/samples/xamarin/ios-samples/ios7-ui-updates/) pour obtenir un exemple fonctionnel.
 
@@ -215,7 +215,7 @@ La barre d’État et les barres de navigation sont rendues avec transparence. L
 
 Avec le flou et la transparence, le premier plan d’une barre d’État peut être clair ou sombre (la valeur par défaut est le noir). Le style de barre d’État peut être défini à partir du contrôleur d’affichage. Un contrôleur d’affichage peut également définir si la barre d’État est masquée ou affichée.
 
-Par exemple, le code suivant remplace la méthode `PreferredStatusBarStyle` d’un contrôleur d’affichage pour que la barre d’état affiche un premier plan clair :
+Par exemple, le code suivant remplace la `PreferredStatusBarStyle` méthode d’un contrôleur d’affichage pour que la barre d’état affiche un premier plan clair :
 
 ```csharp
 public override UIStatusBarStyle PreferredStatusBarStyle ()
@@ -228,7 +228,7 @@ La barre d’État s’affiche alors comme indiqué ci-dessous :
 
  ![](ios7-ui-images/light-status-bar.png "Sample Status Bar")
 
-Pour masquer la barre d’État du code du contrôleur d’affichage, remplacez `PrefersStatusBarHidden`, comme indiqué ci-dessous :
+Pour masquer la barre d’État du code du contrôleur d’affichage, remplacez `PrefersStatusBarHidden` , comme indiqué ci-dessous :
 
 ```csharp
 public override bool PrefersStatusBarHidden ()
@@ -243,20 +243,20 @@ Cela masque la barre d’État :
 
 ### <a name="tint-color"></a>Couleur de teinte
 
-Les boutons s’affichent désormais sous forme de texte sans chrome. La couleur du texte peut être contrôlée à l’aide de la nouvelle propriété `TintColor` sur `UIView`. La définition de la `TintColor` applique la couleur à la hiérarchie d’affichage entière pour la vue qui la définit. Pour appliquer un `TintColor`dans une application, définissez-le sur le `Window`. Vous pouvez également détecter quand la couleur de teinte change via la méthode `UIView.TintColorDidChange`.
+Les boutons s’affichent désormais sous forme de texte sans chrome. La couleur du texte peut être contrôlée à l’aide de la nouvelle `TintColor` propriété sur `UIView` . La définition de la `TintColor` propriété applique la couleur à la hiérarchie d’affichage entière pour la vue qui la définit. Pour appliquer un `TintColor` tout dans une application, définissez-le sur le `Window` . Vous pouvez également détecter quand la couleur de teinte change via la `UIView.TintColorDidChange` méthode.
 
 Par exemple, la capture d’écran suivante montre l’effet de la modification de la couleur de teinte de la vue d’un contrôleur de navigation en violet :
 
  ![](ios7-ui-images/tint-color.png "Purple tint color on a navigation controllers view")
 
-La couleur de teinte peut également être appliquée aux images lorsque le `RenderingMode` est défini sur `UIImageRenderingMode.AlwaysTemplate`.
+La couleur de teinte peut également être appliquée aux images lorsque `RenderingMode` est défini sur `UIImageRenderingMode.AlwaysTemplate` .
 
 > [!IMPORTANT]
-> Impossible de définir la couleur de teinte à l’aide de `UIAppearance`.
+> Impossible de définir la couleur de teinte à l’aide de `UIAppearance` .
 
 ### <a name="dynamic-type"></a>Type dynamique
 
-Dans iOS 7, l’utilisateur peut spécifier la taille du texte dans les paramètres système. Avec le type dynamique, la police est ajustée dynamiquement pour paraître correcte quelle que soit la taille. `UIFont.PreferredFontForTextStyle` doit être utilisé pour obtenir une police optimisée pour la taille contrôlée par l’utilisateur.
+Dans iOS 7, l’utilisateur peut spécifier la taille du texte dans les paramètres système. Avec le type dynamique, la police est ajustée dynamiquement pour paraître correcte quelle que soit la taille. `UIFont.PreferredFontForTextStyle`doit être utilisé pour obtenir une police optimisée pour la taille contrôlée par l’utilisateur.
 
 ## <a name="summary"></a>Résumé
 

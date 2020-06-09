@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 11/25/2015
-ms.openlocfilehash: 4f5f6adf99306754fa7b2aa49855fe228e740d7e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 736d70aebcf861b5557d5f076a42ff0a3dcfc043
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016943"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84569949"
 ---
 # <a name="systemdata-in-xamarinios"></a>System. Data dans Xamarin. iOS
 
-Xamarin. iOS 8,10 ajoute la prise en charge de [System. Data](xref:System.Data), y compris le fournisseur `Mono.Data.Sqlite.dll` ADO.net. La prise en charge comprend l’ajout des [assemblys](~/cross-platform/internals/available-assemblies.md)suivants :
+Xamarin. iOS 8,10 ajoute la prise en charge de [System. Data](xref:System.Data), y compris le `Mono.Data.Sqlite.dll` fournisseur ADO.net. La prise en charge comprend l’ajout des [assemblys](~/cross-platform/internals/available-assemblies.md)suivants :
 
 - `System.Data.dll`
 - `System.Data.Service.Client.dll`
@@ -24,15 +24,15 @@ Xamarin. iOS 8,10 ajoute la prise en charge de [System. Data](xref:System.Data),
 - `Mono.Data.Tds.dll`
 - `Mono.Data.Sqlite.dll`
 
-<a name="Example" />
+<a name="Example"></a>
 
 ## <a name="example"></a>Exemple
 
-Le programme suivant crée une base de données dans `Documents/mydb.db3`, et si la base de données n’existe pas déjà, elle est remplie avec des exemples de données. La base de données est ensuite interrogée, avec la sortie écrite dans `stderr`.
+Le programme suivant crée une base de données dans `Documents/mydb.db3` , et si la base de données n’existe pas déjà, elle est remplie avec des exemples de données. La base de données est ensuite interrogée, avec la sortie écrite `stderr` .
 
 ### <a name="add-references"></a>Ajouter des références
 
-Tout d’abord, cliquez avec le bouton droit sur le nœud **références** et choisissez **modifier les références..** ., puis sélectionnez `System.Data` et `Mono.Data.Sqlite`:
+Tout d’abord, cliquez avec le bouton droit sur le nœud **références** et choisissez **modifier les références...** , puis sélectionnez `System.Data` et `Mono.Data.Sqlite` :
 
 [![](system.data-images/edit-references-sml.png "Adding new references")](system.data-images/edit-references.png#lightbox)
 
@@ -129,13 +129,13 @@ using (var addCmd = conn.CreateCommand ()) {
 }
 ```
 
-<a name="Missing_Functionality" />
+<a name="Missing_Functionality"></a>
 
 ## <a name="missing-functionality"></a>Fonctionnalités manquantes
 
 Les fonctionnalités de **System. Data** et **mono. Data. sqlite** sont manquantes.
 
-<a name="System.Data" />
+<a name="System.Data"></a>
 
 ### <a name="systemdata"></a>System.Data
 
@@ -144,15 +144,15 @@ Les fonctionnalités manquantes dans **System. Data. dll** sont constituées des
 - Tout ce qui nécessite [System. CodeDom](xref:System.CodeDom) (par exemple,  [System. Data. TypedDataSetGenerator](xref:System.Data.TypedDataSetGenerator) )
 - Prise en charge du fichier de configuration XML (par exemple  [System. Data. Common. DbProviderConfigurationHandler](xref:System.Data.Common.DbProviderConfigurationHandler) )
 - [System. Data. Common. DbProviderFactories](xref:System.Data.Common.DbProviderFactories) (dépend de la prise en charge du fichier de configuration XML)
-- [System. Data. OleDb](xref:System.Data.OleDb)
-- [System. Data. ODBC](xref:System.Data.Odbc)
-- La dépendance de `System.EnterpriseServices.dll` a été *supprimée* de `System.Data.dll`, ce qui a entraîné la suppression de la méthode [SqlConnection. EnlistDistributedTransaction (ITransaction)](xref:System.Data.SqlClient.SqlConnection.EnlistDistributedTransaction*) .
+- [System.Data.OleDb](xref:System.Data.OleDb)
+- [System.Data.Odbc](xref:System.Data.Odbc)
+- La `System.EnterpriseServices.dll` dépendance a été *supprimée* de `System.Data.dll` , ce qui a entraîné la suppression de la méthode [SqlConnection. EnlistDistributedTransaction (ITransaction)](xref:System.Data.SqlClient.SqlConnection.EnlistDistributedTransaction*) .
 
-<a name="Mono.Data.Sqlite" />
+<a name="Mono.Data.Sqlite"></a>
 
 ### <a name="monodatasqlite"></a>Mono. Data. sqlite
 
-Entre-temps, **mono. Data. sqlite. dll** n’a subi aucune modification de code source, mais peut à la place héberger un certain nombre de problèmes d' *exécution* , car `Mono.Data.Sqlite.dll` lie SQLite 3,5. iOS 8, en attendant, est fourni avec SQLite 3.8.5. Il suffit d’indiquer que certaines choses ont changé entre les deux versions.
+En attendant, **mono. Data. sqlite. dll** n’a subi aucune modification de code source, mais peut à la place héberger un certain nombre de problèmes d' *exécution* , car `Mono.Data.Sqlite.dll` lie SQLite 3,5. iOS 8, en attendant, est fourni avec SQLite 3.8.5. Il suffit d’indiquer que certaines choses ont changé entre les deux versions.
 
 Une version antérieure d’iOS est fournie avec les versions suivantes de SQLite :
 
@@ -161,9 +161,9 @@ Une version antérieure d’iOS est fournie avec les versions suivantes de SQLit
 - **iOS 5** -version 3.7.7.
 - **iOS 4** -version 3.6.22.
 
-Les problèmes les plus courants semblent être liés à l’interrogation des schémas de base de données, par exemple la détermination de la présence de colonnes sur une table donnée au moment de l’exécution, telles que la `Mono.Data.Sqlite.SqliteConnection.GetSchema` (substitution de [DbConnection. GetSchema](xref:System.Data.Common.DbConnection.GetSchema) et `Mono.Data.Sqlite.SqliteDataReader.GetSchemaTable` (substitution [ DbDataReader. GetSchemaTable](xref:System.Data.Common.DbDataReader.GetSchemaTable). En bref, il semble que tout ce qui utilise [DataTable](xref:System.Data.DataTable) est peu susceptible de fonctionner.
+Les problèmes les plus courants semblent être liés à l’interrogation d’un schéma de base de données, par exemple, en déterminant au moment de l’exécution les colonnes qui existent sur une table donnée, telles que `Mono.Data.Sqlite.SqliteConnection.GetSchema` (en remplaçant [DbConnection. GetSchema](xref:System.Data.Common.DbConnection.GetSchema) et en `Mono.Data.Sqlite.SqliteDataReader.GetSchemaTable` remplaçant [DbDataReader. GetSchemaTable](xref:System.Data.Common.DbDataReader.GetSchemaTable). En bref, il semble que tout ce qui utilise [DataTable](xref:System.Data.DataTable) est peu susceptible de fonctionner.
 
-<a name="Data_Binding" />
+<a name="Data_Binding"></a>
 
 ## <a name="data-binding"></a>Liaison de données
 

@@ -6,12 +6,12 @@ ms.assetid: CC6847B2-23FB-4EDE-9F7E-EF29DD46A5C5
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 418c0da2b8fa0e495ae7e6a605c7fde43b6515cb
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: f496a831c226e377f62e2a6fab8ed328bf1be0b9
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016794"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571067"
 ---
 # <a name="localization"></a>Localisation
 
@@ -31,7 +31,7 @@ La *localisation* est l’étape qui suit : création de ressources (telles que
 
 L’internationalisation est souvent abrégée en i18n – raccourci pour 18 lettres entre « i » et « n ». La localisation est également raccourcie à l10n, soit 10 lettres entre « L » et « n ».
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d’ensemble
 
 Ce document présente les concepts associés à l’internationalisation et à la localisation, et comment ils s’appliquent au développement d’applications mobiles en général.
 Lors de la conception et de la création d’une application, les éléments que vous pouvez avoir précédemment codés en dur, mais qui doivent être paramétrés pour la localisation, sont les suivants :
@@ -45,9 +45,9 @@ Lors de la conception et de la création d’une application, les éléments que
 
 Quelles que soient les plateformes mobiles ciblées par votre application, ces conseils vous aideront à créer une application localisée de haute qualité.
 
-## <a name="design-considerations"></a>Considérations de design
+## <a name="design-considerations"></a>Remarques sur la conception
 
-L’architecture d’une application afin qu’il soit possible de localiser son contenu est appelée « internationalisation ». L’internationalisation est bien plus qu’une simple possibilité de charger des chaînes de langage différentes au moment de l’exécution : une application bien conçue doit permettre la modification de toutes les ressources en fonction de la langue et des paramètres régionaux (y compris les images, les sons et les vidéos) et peut s’adapter mise en forme et disposition pour faire face à des chaînes de taille différente.
+L’architecture d’une application afin qu’il soit possible de localiser son contenu est appelée « internationalisation ». L’internationalisation de l’internationalisation est plus qu’une simple possibilité de charger des chaînes de langage différentes au moment de l’exécution. une application bien conçue doit permettre la modification de toutes les ressources en fonction de la langue et des paramètres régionaux (y compris les images, les sons et les vidéos) et peut adapter la mise en forme et la disposition pour gérer des chaînes de taille différente.
 
 Cette section décrit quelques considérations relatives à la conception à prendre en compte lors de la création d’une application internationalisée.
 
@@ -110,7 +110,7 @@ double.Parse("1 999,99", CultureInfo.CreateSpecificCulture("fr-FR"));
 
 Pour plus d’informations, consultez les articles MSDN [analyse des chaînes numériques](https://msdn.microsoft.com/library/xbtzcc4w(v=vs.110).aspx) et [analyse des chaînes de date et d’heure](https://msdn.microsoft.com/library/2h3syy57(v=vs.110).aspx) .
 
-<a name="rtl" />
+<a name="rtl"></a>
 
 ### <a name="right-to-left-rtl-languages"></a>Langues de droite à gauche (RTL)
 
@@ -151,11 +151,11 @@ Il existe peu de stratégies que vous pouvez utiliser pour essayer de vérifier 
 - Affichage localisé : Si vous affichez un flux Twitter ou photo, vous devez afficher les métadonnées (telles que le temps nécessaire) dans sa propre langue, même si le contenu lui-même reste dans la langue d’origine.
 - Traduction : vous pouvez créer une option de traduction dans votre application pour effectuer une traduction automatique des données entrantes. Cela peut être automatique ou à la discrétion de l’utilisateur. Veillez simplement à avertir l’utilisateur si cela se produit, car les traductions des machines ne sont jamais parfaites !
 
-Cela peut également affecter des liens externes vers des pistes audio ou des vidéos : lors de la conception de votre application, veillez à planifier le contenu traduit ou à vous assurer que les utilisateurs sont correctement informés par l’interface utilisateur lorsque le contenu ne sera pas présenté dans leur sous.
+Cela peut également affecter des liens externes vers des pistes audio ou des vidéos : lors de la conception de votre application, veillez à planifier le contenu traduit ou à vous assurer que les utilisateurs sont correctement informés par l’interface utilisateur lorsque le contenu ne sera pas présenté dans leur langue.
 
 ### <a name="dont-over-translate"></a>Ne pas dépasser la traduction
 
-Certaines chaînes de votre application n’ont peut-être pas besoin d’être traduites, ou au moins une attention particulière doit être prise en considération par le traducteur. Les exemples peuvent inclure :
+Certaines chaînes de votre application n’ont peut-être pas besoin d’être traduites, ou au moins une attention particulière doit être prise en considération par le traducteur. Les exemples doivent inclure :
 
 - URL : Si vous répertoriez une URL, il se peut qu’elle ne doive pas être ajustée par langue. Par exemple, facebook.com ne nécessite pas de traduction. il détecte automatiquement la langue sur le site principal. D’autres sites ont un contenu spécifique aux paramètres régionaux et vous pouvez proposer une autre URL, telle que yahoo.com ou yahoo.fr ou yahoo.it.
 - Numéros de téléphone, en particulier ceux dont les indicatifs sont différents pour les appelants qui parlent une langue particulière.
@@ -166,7 +166,7 @@ Enfin, veillez à inclure des instructions détaillées pour le traducteur si ce
 
 ### <a name="formatted-text"></a>Texte mis en forme
 
-Ce n’est généralement pas un problème avec les applications mobiles, car les chaînes ne sont généralement pas formatées de manière riche. Toutefois, si du texte enrichi (par exemple, une mise en forme en gras ou en italique) est requis dans votre application, assurez-vous que le traducteur sait comment entrer la mise en forme, que vos fichiers de chaînes le stockent correctement et qu’il est correctement mis en forme avant d’être affiché à l’utilisateur (IE). ne laissez pas accidentellement les codes de mise en forme sont eux-mêmes présentés à l’utilisateur).
+Ce n’est généralement pas un problème avec les applications mobiles, car les chaînes ne sont généralement pas formatées de manière riche. Toutefois, si du texte enrichi (par exemple, une mise en forme en gras ou en italique) est requis dans votre application, assurez-vous que le traducteur sait comment entrer la mise en forme, que vos fichiers de chaînes le stockent correctement et qu’il est correctement mis en forme avant d’être affiché à l’utilisateur (IE).
 
 ## <a name="translation-tips"></a>Conseils de traduction
 
@@ -218,7 +218,7 @@ et les jetons sont classés comme étant le traducteur prévu. Veillez à inclur
 
 ### <a name="use-multiple-strings-for-cardinality"></a>Utiliser plusieurs chaînes pour la cardinalité
 
-Évitez les chaînes comme les `"You have {0} message/s."` utiliser des chaînes spécifiques pour chaque État afin de fournir une meilleure expérience utilisateur :
+Évitez les chaînes comme `"You have {0} message/s."` utiliser des chaînes spécifiques pour chaque État afin de fournir une meilleure expérience utilisateur :
 
 **Bonne**:
 
@@ -235,7 +235,7 @@ Vous devrez écrire du code dans votre application pour évaluer le nombre affic
 
 Les langues latines utilisent parfois des mots différents selon le sexe de l’objet. Si votre application connaît le sexe, vous devez autoriser les chaînes traduites à refléter ceci.
 
-Il y a également le cas le plus évident, même en anglais, où les chaînes font référence à une personne ou un utilisateur spécifique de votre application. Par exemple, certains sites affichent des messages comme `"Bob commented on his post"`. vous avez donc besoin de chaînes pour un sexe mâle, femelle et non binaire ou inconnu :
+Il y a également le cas le plus évident, même en anglais, où les chaînes font référence à une personne ou un utilisateur spécifique de votre application. Par exemple, certains sites affichent des messages comme `"Bob commented on his post"` . vous avez donc besoin de chaînes pour un sexe mâle, femelle et non binaire ou inconnu :
 
 **Bonne**:
 
@@ -270,7 +270,7 @@ Pour créer des fonctionnalités de traduction dans votre application, envisagez
 
 À des fins de test, vous pouvez utiliser l’un des nombreux outils de traduction en ligne pour inclure du texte localisé dans votre application pendant le développement :
 
-- [Traducteur Bing](https://www.bing.com/translator/)
+- [Bing Traduction](https://www.bing.com/translator/)
 - [Google translate](https://translate.google.com/)
 
 De nombreuses autres sont disponibles. La qualité de la traduction automatique n’est généralement pas considérée comme suffisante pour libérer une application sans avoir été vérifiée et testée par des traducteurs professionnels ou des orateurs natifs.
@@ -281,7 +281,7 @@ Il existe également des services de traduction professionnels qui prennent vos 
 
 L’un des meilleurs services connus est [Lionbridge](https://www.lionbridge.com/). La plupart des services professionnels prennent en charge tous les types de fichiers courants, y compris les chaînes, XML, RESX et POT/PO.
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article a présenté certains des concepts avec lesquels vous devez être familiarisé avant l’internationalisation de votre application, puis la localisation de vos ressources, ainsi que la modification des préférences linguistiques pour chaque plateforme.
 
@@ -293,7 +293,7 @@ Continuez à lire les détails techniques de la plateforme qui vous intéresse 
 - Localisation de plateforme native [Xamarin. iOS](~/ios/app-fundamentals/localization/index.md) .
 - Localisation de la plateforme native [Xamarin. Android](~/android/app-fundamentals/localization.md) .
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Présentation de la localisation d’Apple](https://developer.apple.com/internationalization/)
 - [Liste de vérification de la localisation d’Android](https://developer.android.com/distribute/tools/localization-checklist.html)

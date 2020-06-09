@@ -1,22 +1,22 @@
 ---
-title: Utilisation de l’Application parente dans Xamarin watchOS
-description: Ce document décrit comment travailler avec une application de parent watchOS dans Xamarin. Il aborde les extensions d’application Watchos, les applications iOS, le stockage partagé, et bien plus encore.
+title: Utilisation de l’application parente Watchos dans Xamarin
+description: Ce document décrit comment utiliser une application parente Watchos dans Xamarin. Il aborde les extensions d’application Watchos, les applications iOS, le stockage partagé, et bien plus encore.
 ms.prod: xamarin
 ms.assetid: 9AD29833-E9CC-41A3-95D2-8A655FF0B511
 ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 3e11b163d16be9711bf09102e3ab8604d98299d7
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 49f2bdf63c286464073308cd1f17239692aa2395
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79304960"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84567331"
 ---
-# <a name="working-with-the-watchos-parent-application-in-xamarin"></a>Utilisation de l’Application parente dans Xamarin watchOS
+# <a name="working-with-the-watchos-parent-application-in-xamarin"></a>Utilisation de l’application parente Watchos dans Xamarin
 
-Il existe différentes façons de communiquer entre l’application de surveillance et de l’application iOS qui il est fourni avec :
+Il existe différentes façons de communiquer entre l’application espion et l’application iOS avec laquelle elle est regroupée :
 
 - Les applications de visionneuse peuvent [exécuter du code](#run-code) sur l’application parente sur l’iPhone.
 
@@ -24,9 +24,9 @@ Il existe différentes façons de communiquer entre l’application de surveilla
 
 - Utilisez la remise pour transmettre des données d’une notification à l’application Watch, en envoyant l’utilisateur à un contrôleur d’interface spécifique dans l’application.
 
-L’application parente est également parfois appelée l’application de conteneur.
+L’application parente est également parfois appelée « application de conteneur ».
 
-## <a name="run-code"></a>Exécuter du Code
+## <a name="run-code"></a>Exécuter le code
 
 Ces deux exemples montrent comment utiliser `WCSession` pour exécuter du code et envoyer des messages entre une application espion et l’iPhone couplé :
 
@@ -37,9 +37,9 @@ Ces deux exemples montrent comment utiliser `WCSession` pour exécuter du code e
 
 Si vous configurez un [groupe d’applications](~/ios/watchos/app-fundamentals/app-groups.md) , les extensions iOS 8 (y compris les extensions espion) peuvent partager des données avec l’application parente.
 
-### <a name="nsuserdefaults"></a>Valeurs NSUserDefaults
+### <a name="nsuserdefaults"></a>NSUserDefaults
 
-Le code suivant peut être écrit à la fois dans l’extension de l’application espion et dans l’application iPhone parente afin qu’il puisse référencer un ensemble commun de `NSUserDefaults`:
+Le code suivant peut être écrit à la fois dans l’extension de l’application espion et dans l’application iPhone parente afin de pouvoir faire référence à un ensemble commun de `NSUserDefaults` :
 
 ```csharp
 NSUserDefaults shared = new NSUserDefaults(
@@ -55,11 +55,11 @@ shared.Synchronize ();
 var count = shared.IntForKey ("count");
 ```
 
-<a name="files" />
+<a name="files"></a>
 
 ### <a name="files"></a>Fichiers
 
-L’extension d’application et regardez iOS peut également partager des fichiers à l’aide d’un chemin d’accès de fichier commun.
+L’extension d’application et de visionneuse iOS peut également partager des fichiers à l’aide d’un chemin d’accès de fichier commun.
 
 ```csharp
 var FileManager = new NSFileManager ();
@@ -70,7 +70,7 @@ Console.WriteLine ("agcpath: " + appGroupContainerPath);
 // use the path to create and update files
 ```
 
-Remarque : si le chemin d’accès est `null` Vérifiez la [configuration du groupe d’applications](~/ios/watchos/app-fundamentals/app-groups.md) pour vous assurer que les profils de configuration ont été correctement configurés et ont été téléchargés/installés sur l’ordinateur de développement.
+Remarque : si le chemin d’accès est `null` ensuite, vérifiez la [configuration du groupe d’applications](~/ios/watchos/app-fundamentals/app-groups.md) pour vous assurer que les profils d’approvisionnement ont été correctement configurés et ont été téléchargés/installés sur l’ordinateur de développement.
 
 Pour plus d’informations, consultez la documentation sur les [fonctionnalités du groupe d’applications](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md) .
 

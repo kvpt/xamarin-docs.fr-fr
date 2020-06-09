@@ -1,23 +1,8 @@
 ---
-title: ''
-description: Cet article explique comment utiliser l’indexation d’application et la liaison profonde pour faciliter la Xamarin.Forms recherche de contenu d’application sur les appareils iOS et Android.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-ms.custom: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: d93f9bbcfafc3cb71d6b71159f6d3368f50c08be
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135731"
+titre : « indexation d’application et liaison profonde » : cet article explique comment utiliser l’indexation d’application et la liaison profonde pour faciliter la Xamarin.Forms recherche de contenu d’application sur les appareils iOS et Android.
+ms. Prod : xamarin ms. AssetID : 410C5D19-AA3C-4E0D-B799-E288C5803226 ms. Technology : xamarin-Forms ms. Custom : xamu-Video Author : davidbritch ms. Author : dabritch ms. Date : 11/28/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="application-indexing-and-deep-linking"></a>Indexation d’applications et liens ciblés
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/deeplinking)
@@ -41,7 +26,7 @@ Pour plus d’informations sur l’utilisation d’une base de données SQLite, 
 > [!NOTE]
 > Xamarin.Formsl’indexation des applications et la fonctionnalité de liaison profonde sont uniquement disponibles sur les plateformes iOS et Android, et nécessitent au minimum iOS 9 et l’API 23 respectivement.
 
-## <a name="setup"></a>Installation
+## <a name="setup"></a>Programme d’installation
 
 Les sections suivantes fournissent des instructions d’installation supplémentaires pour utiliser cette fonctionnalité sur les plateformes iOS et Android.
 
@@ -57,7 +42,7 @@ Pour utiliser les liens universels iOS :
 
 Pour plus d’informations, consultez [Allowing Apps and Websites to Link to Your Content](https://developer.apple.com/documentation/uikit/core_app/allowing_apps_and_websites_to_link_to_your_content) sur developer.apple.com.
 
-### <a name="android"></a>Téléphone
+### <a name="android"></a>Android
 
 Sur la plateforme Android, vous devez répondre à un nombre de prérequis pour utiliser la fonctionnalité d’indexation d’applications et de liens ciblés :
 
@@ -155,8 +140,6 @@ Cela supprime l' [`AppLinkEntry`](xref:Xamarin.Forms.AppLinkEntry) instance de l
 
 > [!NOTE]
 > Sur Android, il n’est pas possible de supprimer le contenu indexé des résultats de recherche.
-
-<a name="responding" />
 
 ## <a name="responding-to-a-deep-link"></a>Réponse à un lien ciblé
 

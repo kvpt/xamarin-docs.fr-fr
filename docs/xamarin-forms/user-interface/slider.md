@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsCurseur
-description: Le Xamarin.Forms curseur est une barre horizontale qui peut être manipulée par l’utilisateur pour sélectionner une valeur double dans une plage continue. Cet article explique comment utiliser la classe Slider pour sélectionner une valeur dans une plage de valeurs continues.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 1cde999e6781f019b6abceee82caf259e1e5a710
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84140151"
+title : « Xamarin.Forms Slider » Description : «le Xamarin.Forms curseur est une barre horizontale qui peut être manipulée par l’utilisateur pour sélectionner une valeur double dans une plage continue. Cet article explique comment utiliser la classe Slider pour sélectionner une valeur dans une plage de valeurs continues.
+ms. Prod : xamarin ms. AssetID : 36B1C645-26E0-4874-B6B6-BDBF77662878 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 02/27/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-slider"></a>Xamarin.FormsCurseur
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)
@@ -116,7 +102,7 @@ Voici le programme en cours d’exécution sur les appareils iOS et Android :
 
 [![Code Slider de base](slider-images/BasicSliderCode.png "Code Slider de base")](slider-images/BasicSliderCode-Large.png#lightbox)
 
-Le deuxième `Label` affiche le texte « (non initialisé) » jusqu’à ce que le `Slider` soit manipulé, ce qui entraîne le déclenchement du premier `ValueChanged` événement. Notez que le nombre de décimales affichées est différent pour chaque plateforme. Ces différences sont liées aux implémentations de plateforme du `Slider` et sont abordées plus loin dans cet article dans la section [différences d’implémentation](#implementations)de la plateforme.
+Le deuxième `Label` affiche le texte « (non initialisé) » jusqu’à ce que le `Slider` soit manipulé, ce qui entraîne le déclenchement du premier `ValueChanged` événement. Notez que le nombre de décimales affichées est différent pour chaque plateforme. Ces différences sont liées aux implémentations de plateforme du `Slider` et sont abordées plus loin dans cet article dans la section [différences d’implémentation](#platform-implementation-differences)de la plateforme.
 
 ### <a name="creating-a-slider-in-xaml"></a>Création d’un curseur en XAML
 
@@ -210,8 +196,6 @@ La page des **liaisons de curseur de base** montre comment écrire un programme 
 
 La `Rotation` propriété du premier `Label` est liée à la `Value` propriété de `Slider` , tout comme la `Text` propriété de la seconde `Label` avec une `StringFormat` spécification. La page des **liaisons de curseur de base** fonctionne un peu différemment des deux pages précédentes : lorsque la page s’affiche pour la première fois, la deuxième `Label` affiche la chaîne de texte avec la valeur. Il s’agit d’un avantage de l’utilisation de la liaison de données. Pour afficher du texte sans liaison de données, vous devez initialiser spécifiquement la `Text` propriété de `Label` ou simuler un déclenchement de l' `ValueChanged` événement en appelant le gestionnaire d’événements à partir du constructeur de classe.
 
-<a name="precautions" />
-
 ## <a name="precautions"></a>Précautions
 
 La valeur de la `Minimum` propriété doit toujours être inférieure à la valeur de la `Maximum` propriété. L’extrait de code suivant provoque la `Slider` levée d’une exception par le.
@@ -283,8 +267,6 @@ Si un `ValueChanged` Gestionnaire d’événements a été attaché au moment o�
 ```
 
 Lorsque `Minimum` a la valeur 10, `Value` est également défini sur 10 et l' `ValueChanged` événement est déclenché. Cela peut se produire avant la construction du reste de la page, et le gestionnaire peut tenter de faire référence à d’autres éléments de la page qui n’ont pas encore été créés. Vous souhaiterez peut-être ajouter du code au `ValueChanged` gestionnaire qui vérifie les `null` valeurs d’autres éléments sur la page. Ou bien, vous pouvez définir le `ValueChanged` Gestionnaire d’événements une fois que les `Slider` valeurs ont été initialisées.
-
-<a name="implementations" />
 
 ## <a name="platform-implementation-differences"></a>Différences d’implémentation de plateforme
 
@@ -508,7 +490,7 @@ Le fichier **HslColorSlidersPage. Xaml** instancie le `HslColorViewModel` et le 
 
 [![Curseurs de couleurs TSL](slider-images/HslColorSliders.png "Curseurs de couleurs TSL")](slider-images/HslColorSliders-Large.png#lightbox)
 
-Le `StringFormat` composant de l' `Binding` extension de balisage est défini pour un format « F2 » afin d’afficher deux décimales. (La mise en forme des chaînes dans les liaisons de données est décrite dans l’article [mise en forme de chaîne](~/xamarin-forms/app-fundamentals/data-binding/string-formatting.md).) Toutefois, la version UWP du programme est limitée aux valeurs 0, 0,1, 0,2,... 0,9 et 1,0. Il s’agit d’un résultat direct de l’implémentation de la série UWP `Slider` , comme décrit ci-dessus dans la section différences de l’implémentation de la [plateforme](#implementations).
+Le `StringFormat` composant de l' `Binding` extension de balisage est défini pour un format « F2 » afin d’afficher deux décimales. (La mise en forme des chaînes dans les liaisons de données est décrite dans l’article [mise en forme de chaîne](~/xamarin-forms/app-fundamentals/data-binding/string-formatting.md).) Toutefois, la version UWP du programme est limitée aux valeurs 0, 0,1, 0,2,... 0,9 et 1,0. Il s’agit d’un résultat direct de l’implémentation de la série UWP `Slider` , comme décrit ci-dessus dans la section différences de l’implémentation de la [plateforme](#platform-implementation-differences).
 
 ## <a name="related-links"></a>Liens connexes
 

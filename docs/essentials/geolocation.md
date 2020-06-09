@@ -7,7 +7,7 @@ ms. AssetID : 8F66092C-13F0-4FEE-8AA5-901D5F79B357 Author : jamesmontemagno ms
 
 La classe **Geolocation** fournit des API permettant de récupérer les coordonnées de géolocalisation de l’appareil.
 
-## <a name="get-started"></a>Bien démarrer
+## <a name="get-started"></a>Commencer
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -179,7 +179,7 @@ Le tableau suivant indique la précision en fonction de la plateforme :
 | iOS | ~0 |
 | UWP | <= 10 |
 
-<a name="calculate-distance" />
+<a name="calculate-distance"></a>
 
 ## <a name="detecting-mock-locations"></a>Détection des emplacements fictifs
 Certains appareils peuvent retourner un emplacement fictif du fournisseur ou par une application qui fournit des emplacements fictifs. Vous pouvez détecter ce cas à l’aide `IsFromMockProvider` de l’un des [`Location`](xref:Xamarin.Essentials.Location) .

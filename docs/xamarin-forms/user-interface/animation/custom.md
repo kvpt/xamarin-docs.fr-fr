@@ -1,29 +1,15 @@
 ---
-title: Animations personnalisées dansXamarin.Forms
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 4fb9c94c39823e4ce6d60be6b9dbef1294321a63
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137226"
+title : "personnaliser les animations dans Xamarin.Forms " Description : "cet article montre comment utiliser la classe d’animation Xamarin. Forms pour créer et annuler des animations, synchroniser plusieurs animations et créer des animations personnalisées qui animent des propriétés qui ne sont pas animées par les méthodes d’animation existantes.
+ms. Prod : xamarin ms. AssetID : 03B2E3FC-E720-4D45-B9A0-711081FC1907 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 02/10/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="custom-animations-in-xamarinforms"></a>Animations personnalisées dansXamarin.Forms
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-custom)
 
 _La classe d’animation est le bloc de construction de toutes les Xamarin.Forms animations, avec les méthodes d’extension de la classe ViewExtensions qui créent un ou plusieurs objets d’animation. Cet article montre comment utiliser la classe d’animation pour créer et annuler des animations, synchroniser plusieurs animations et créer des animations personnalisées qui animent des propriétés qui ne sont pas animées par les méthodes d’animation existantes._
 
-Un certain nombre de paramètres doivent être spécifiés lors `Animation` de la création d’un objet, y compris les valeurs de début et de fin de la propriété animée et un rappel qui modifie la valeur de la propriété. Un `Animation` objet peut également gérer une collection d’animations enfants qui peuvent être exécutées et synchronisées. Pour plus d’informations, consultez [animations enfants](#child).
+Un certain nombre de paramètres doivent être spécifiés lors `Animation` de la création d’un objet, y compris les valeurs de début et de fin de la propriété animée et un rappel qui modifie la valeur de la propriété. Un `Animation` objet peut également gérer une collection d’animations enfants qui peuvent être exécutées et synchronisées. Pour plus d’informations, consultez [animations enfants](#child-animations).
 
 L’exécution d’une animation créée avec la [`Animation`](xref:Xamarin.Forms.Animation) classe, qui peut ou non inclure des animations enfants, est obtenue en appelant la [ `Commit` ] (XREF : Xamarin.Forms . Animation. Commit ( Xamarin.Forms . IAnimatable, System. String, System. UInt32, System. UInt32, Xamarin.Forms . Méthode d’accélération, System. Action {System. double, System. Boolean}, System. Func {System. Boolean})). Cette méthode spécifie la durée de l’animation, et entre autres éléments, un rappel qui contrôle si l’animation doit être répétée.
 
@@ -61,8 +47,6 @@ L’effet global consiste à créer une animation qui augmente la [`Scale`](xref
 
 > [!NOTE]
 > Les animations simultanées, qui s’exécutent indépendamment les unes des autres, peuvent être construites en créant un `Animation` objet pour chaque animation, puis en appelant la `Commit` méthode sur chaque animation.
-
-<a name="child" />
 
 ### <a name="child-animations"></a>Animations enfants
 

@@ -6,12 +6,12 @@ ms.assetid: E7B55354-9BBE-4122-BCE3-3506B79090DD
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 7dabb420aa094e67fae689f47b3b64a8fe1a6ed4
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 5e63e6470a7dac0f9148147a0303d35cf33adb1b
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016710"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571139"
 ---
 # <a name="creating-a-new-multiplatform-library-for-nuget"></a>Création d’une nouvelle bibliothèque multiplateforme pour NuGet
 
@@ -58,13 +58,13 @@ Cette capture d’écran montre le contenu d’un NuGet basé sur PCL : un seul
 
 ![](single-codebase-images/nuget-output.png "Files contained in the NuGet package")
 
-<a name="add-platforms" />
+<a name="add-platforms"></a>
 
 ## <a name="adding-platform-specific-code"></a>Ajout de code spécifique à la plateforme
 
 Les projets basés sur PCL et les projets basés sur des .NET Standard ne peuvent pas contenir de références spécifiques à la plateforme (telles que les fonctionnalités iOS ou Android).
 
-Si vous devez développer un projet .NET Standard ou un projet PCL existant pour inclure du code spécifique à la plateforme, vous pouvez effectuer cette opération en cliquant avec le bouton droit sur le projet et en sélectionnant **ajouter > ajouter une implémentation de plateforme...** :
+Si vous devez développer un projet .NET Standard ou un projet PCL existant pour inclure du code spécifique à la plateforme, vous pouvez effectuer cette opération en cliquant avec le bouton droit sur le projet et en sélectionnant **ajouter > ajouter une implémentation de plateforme...**:
 
 [![](single-codebase-images/add-later-sml.png "Add platform implementation menu")](single-codebase-images/add-later.png#lightbox)
 
@@ -72,9 +72,9 @@ Un ou plusieurs projets de plateforme peuvent être ajoutés à la solution, et 
 
 [![](single-codebase-images/add-later-platforms-sml.png "Add platform options such as iOS, Android, and Shared Project")](single-codebase-images/add-later-platforms-sml.png#lightbox)
 
-Après la conversion en projet partagé, accédez à la [section](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/platform-specific.md) **Options de projet > package NuGet > assemblys de référence**
-et assurez-vous que tous les profils requis sont sélectionnés (afin que NuGet continue à être compatible avec les projets qu’il utilisait précédemment dans).
+Après la conversion en projet partagé, accédez à la section **options de projet > package NuGet > des assemblys de référence** 
+ [section](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/platform-specific.md) et assurez-vous que tous les profils requis sont sélectionnés (afin que NuGet continue à être compatible avec les projets qu’il utilisait précédemment dans).
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Guide sur les métadonnées](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md)
+- [Guide des métadonnées](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md)

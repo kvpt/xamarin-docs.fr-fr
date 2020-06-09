@@ -7,28 +7,28 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/05/2017
-ms.openlocfilehash: 1c9282c790aa5436667b37e1861a96afffcaa668
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 0de7fcd5af9e0338679893b3d7fde073c5274365
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73009439"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84567714"
 ---
 # <a name="threading-in-xamarinios"></a>Threading dans Xamarin. iOS
 
-Le runtime Xamarin. iOS permet aux développeurs d’accéder aux API de thread .NET, à la fois explicitement lors de l’utilisation de threads (`System.Threading.Thread, System.Threading.ThreadPool`) et implicitement lors de l’utilisation de modèles de délégué asynchrones ou des méthodes BeginXXX, ainsi que de la plage complète d’API qui prennent en charge la tâche. Bibliothèque parallèle.
+Le runtime Xamarin. iOS permet aux développeurs d’accéder aux API de thread .NET, à la fois explicitement lors de l’utilisation de threads ( `System.Threading.Thread, System.Threading.ThreadPool` ) et implicitement lors de l’utilisation de modèles de délégué asynchrones ou des méthodes BeginXxx, ainsi que de la plage complète d’API qui prennent en charge la bibliothèque parallèle de tâches.
 
 Xamarin recommande vivement d’utiliser la [bibliothèque parallèle de tâches](https://msdn.microsoft.com/library/dd460717.aspx) (TPL) pour créer des applications pour plusieurs raisons :
 
 - Le planificateur TPL par défaut délègue l’exécution des tâches au pool de threads, qui, à son tour, augmente de manière dynamique le nombre de threads nécessaires à l’exécution du processus, tout en évitant un scénario où un trop grand nombre de threads finissent par concurrence pour le temps processeur. 
 - Il est plus facile de réfléchir aux opérations en termes de tâches TPL. Vous pouvez facilement les manipuler, les planifier, sérialiser leur exécution ou lancer un grand nombre en parallèle avec un ensemble complet d’API. 
-- C’est la base de la programmation avec les C# nouvelles extensions de langage Async. 
+- C’est la base de la programmation avec les nouvelles extensions de langage C# Async. 
 
-Le pool de threads augmentera lentement le nombre de threads selon les besoins en fonction du nombre de cœurs de processeur disponibles sur le système, de la charge système et des demandes de votre application. Vous pouvez utiliser ce pool de threads en appelant des méthodes dans `System.Threading.ThreadPool` ou en utilisant la `System.Threading.Tasks.TaskScheduler` par défaut (partie des *frameworks parallèles*).
+Le pool de threads augmentera lentement le nombre de threads selon les besoins en fonction du nombre de cœurs de processeur disponibles sur le système, de la charge système et des demandes de votre application. Vous pouvez utiliser ce pool de threads en appelant des méthodes dans `System.Threading.ThreadPool` ou à l’aide de la valeur par défaut `System.Threading.Tasks.TaskScheduler` (partie des *frameworks parallèles*).
 
 En général, les développeurs utilisent des threads lorsqu’ils doivent créer des applications réactives et qu’ils ne souhaitent pas bloquer la boucle d’exécution de l’interface utilisateur principale.
 
- <a name="Developing_Responsive_Applications" />
+ <a name="Developing_Responsive_Applications"></a>
 
 ## <a name="developing-responsive-applications"></a>Développement d’applications réactives
 
@@ -51,13 +51,13 @@ MyThreadedRoutine ()
 
 Le code ci-dessus appelle le code à l’intérieur du délégué dans le contexte du thread principal, sans provoquer de conditions de concurrence qui pourraient potentiellement bloquer votre application.
 
- <a name="Threading_and_Garbage_Collection" />
+ <a name="Threading_and_Garbage_Collection"></a>
 
 ## <a name="threading-and-garbage-collection"></a>Threading et garbage collection
 
-Au cours de l’exécution, le runtime objective-C va créer et libérer des objets. Si les objets sont marqués pour la « libération automatique », le runtime objective-C libère ces objets dans le `NSAutoReleasePool`actuel du thread. Xamarin. iOS crée un pool de `NSAutoRelease` pour chaque thread du `System.Threading.ThreadPool` et du thread principal. Ce par extension couvre tous les threads créés à l’aide du TaskScheduler par défaut dans System. Threading. Tasks.
+Au cours de l’exécution, le runtime objective-C va créer et libérer des objets. Si les objets sont marqués pour la « libération automatique », le runtime objective-C libère ces objets dans le actuel du thread `NSAutoReleasePool` . Xamarin. iOS crée un `NSAutoRelease` pool pour chaque thread du `System.Threading.ThreadPool` et du thread principal. Ce par extension couvre tous les threads créés à l’aide du TaskScheduler par défaut dans System. Threading. Tasks.
 
-Si vous créez vos propres threads à l’aide de `System.Threading` vous devez vous fournir `NSAutoRelease` pool pour empêcher les fuites de données. Pour ce faire, encapsulez simplement votre thread dans le morceau de code suivant :
+Si vous créez vos propres threads à l’aide `System.Threading` de, vous devez fournir votre propre `NSAutoRelease` pool pour empêcher les fuites de données. Pour ce faire, encapsulez simplement votre thread dans le morceau de code suivant :
 
 ```csharp
 void MyThreadStart (object arg)
@@ -68,8 +68,8 @@ void MyThreadStart (object arg)
 }
 ```
 
-Remarque : étant donné que Xamarin. iOS 5,2, vous n’avez plus besoin de fournir votre propre `NSAutoReleasePool`, car un seul sera fourni automatiquement.
+Remarque : étant donné que Xamarin. iOS 5,2, vous n’avez plus besoin de fournir votre propre `NSAutoReleasePool` compte, car un seul sera fourni automatiquement.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Utilisation du thread d’interface utilisateur](~/ios/user-interface/ios-ui/ui-thread.md)

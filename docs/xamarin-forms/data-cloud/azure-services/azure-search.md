@@ -1,29 +1,15 @@
 ---
-title: Rechercher des données avec Azure Search etXamarin.Forms
-description: Cet article explique comment utiliser la bibliothèque de recherche Microsoft Azure pour intégrer Azure Search dans une Xamarin.Forms application.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 69962bbb51a493ba2bcaed5d3c9407c5aafe471c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84133287"
+titre : « Rechercher des données avec recherche Azure et Xamarin.Forms «Description : » cet article explique comment utiliser la bibliothèque de recherche de Microsoft Azure pour intégrer Azure Search dans une Xamarin.Forms application.»
+ms. Prod : xamarin ms. AssetID : A4AEF233-3672-4174-9DBA-15BEE3030C0B ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 12/05/2016 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="search-data-with-azure-search-and-xamarinforms"></a>Rechercher des données avec Azure Search etXamarin.Forms
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azuresearch)
 
 _Recherche Azure est un service Cloud qui fournit des fonctionnalités d’indexation et d’interrogation pour les données chargées. Cela supprime les exigences en matière d’infrastructure et les complexités de l’algorithme de recherche traditionnellement associées à l’implémentation de la fonctionnalité de recherche dans une application. Cet article explique comment utiliser la bibliothèque de recherche Microsoft Azure pour intégrer Azure Search dans une Xamarin.Forms application._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d’ensemble
 
 Les données sont stockées dans la recherche Azure sous la forme d’index et de documents. Un *index* est un magasin de données qui peut être recherché par le service Azure Search et qui est conceptuellement similaire à une table de base de données. Un *document* est une unité unique de données pouvant faire l’objet d’une recherche dans un index, et est conceptuellement similaire à une ligne de base de données. Lors du chargement de documents et de l’envoi de requêtes de recherche à Azure Search, les demandes sont adressées à un index spécifique dans le service de recherche.
 
@@ -39,12 +25,12 @@ La requête la plus courante auprès d’Azure Search consiste à exécuter une 
 
 Les requêtes de recherche et les requêtes de filtre peuvent être utilisées séparément ou ensemble. En cas d’utilisation conjointe, la requête de filtre est appliquée en premier à la totalité de l’index, puis la requête de recherche est exécutée sur les résultats de la requête de filtre.
 
-Azure Search prend également en charge la récupération de suggestions en fonction de l’entrée de recherche. Pour plus d’informations, consultez [suggestions de requêtes](#suggestions).
+Azure Search prend également en charge la récupération de suggestions en fonction de l’entrée de recherche. Pour plus d’informations, consultez [suggestions de requêtes](#suggestion-queries).
 
 > [!NOTE]
 > Si vous n’avez pas [d’abonnement Azure](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing), créez un [compte gratuit](https://aka.ms/azfree-docs-mobileapps) avant de commencer.
 
-## <a name="setup"></a>Installation
+## <a name="setup"></a>Programme d’installation
 
 Le processus d’intégration d’Azure Search dans une Xamarin.Forms application est le suivant :
 
@@ -225,8 +211,6 @@ La `SearchAsync` méthode retourne un `DocumentSearchResult` objet qui contient 
 ![](azure-search-images/search.png "Search Results")
 
 Pour plus d’informations sur la recherche et le filtrage, consultez [interroger votre index Azure Search à l’aide du kit de développement logiciel (SDK) .net](/azure/search/search-query-dotnet/).
-
-<a name="suggestions" />
 
 ### <a name="suggestion-queries"></a>Requêtes de suggestion
 

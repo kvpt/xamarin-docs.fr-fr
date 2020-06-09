@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 58fbe6d688ffb506db4316ee29d79a364f849a97
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: b9254afdcb6286edcffc67a1a69af8b049f08b6b
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73030424"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573220"
 ---
 # <a name="ipa-support-in-xamarinios"></a>Prise en charge d’IPA dans Xamarin.iOS
 
@@ -25,7 +25,7 @@ Non seulement vous pouvez mettre en vente une application sur l’App Store d’
 
 Dans les deux cas, un paquet IPA (type spécial de fichier zip) doit être créé et signé numériquement avec le profil de provisionnement de distribution approprié. Cet article décrit les étapes nécessaires pour générer le paquet IPA et l’installer sur un appareil iOS à l’aide d’iTunes depuis un Mac ou un PC Windows.
 
-<a name="iTunesMetadata" />
+<a name="iTunesMetadata"></a>
 
 ## <a name="the-itunesmetadataplist-file"></a>Fichier iTunesMetadata.plist
 
@@ -35,7 +35,7 @@ Les applications iOS fournies via une distribution ad hoc ou en interne doivent 
 
 Vous pouvez également créer un fichier **iTunesMetadata.plist** personnalisé pour fournir les informations supplémentaires d’une distribution. Pour plus d’informations sur le contenu de ce fichier et sur la manière de le créer, consultez [Contenu d’iTunesMetadata.plist](~/ios/deploy-test/app-distribution/itunesmetadata.md#iTunesMetadata_contents) et [Création d’un fichier iTunesMetadata.plist ](~/ios/deploy-test/app-distribution/itunesmetadata.md#iTunesMetadata_creating) dans notre documentation.
 
-<a name="iTunesArtwork" />
+<a name="iTunesArtwork"></a>
 
 ## <a name="itunes-artwork"></a>Conception graphique iTunes
 
@@ -50,7 +50,7 @@ Pour spécifier les illustrations iTunes, effectuez les tâches suivantes :
 
 Pour plus d’informations, consultez [Conception graphique iTunes](~/ios/app-fundamentals/images-icons/app-icons.md) dans la documentation.
 
-<a name="createipa" />
+<a name="createipa"></a>
 
 ## <a name="creating-an-ipa"></a>Création d’un fichier IPA
 
@@ -70,7 +70,7 @@ Pour générer un fichier IPA, nous devons créer une _archive_ d’une build de
 
     ![](ipa-support-images/buildxs01new.png "Select the Release | Device configuration")
 
-1. Dans le menu **Build,** sélectionnez **Archive for Publishing**:
+1. Dans le menu **générer** , sélectionnez **Archiver pour la publication**:
 
     ![](ipa-support-images/buildxs02new.png "Select Archive for Publishing")
 
@@ -165,7 +165,7 @@ Une fois que vous avez créé et sélectionné le profil de provisionnement, que
 
 -----
 
-<a name="Customizing-the-IPA-Location" />
+<a name="Customizing-the-IPA-Location"></a>
 
 ## <a name="customizing-the-ipa-location"></a>Personnalisation de l’emplacement du fichier IPA
 
@@ -173,7 +173,7 @@ Une nouvelle propriété **MSBuild**`IpaPackageDir` a été ajoutée pour facili
 
 Il existe plusieurs façons d’utiliser la nouvelle propriété :
 
-Par exemple, pour produire le fichier **.ipa** sur l’ancien répertoire par défaut (comme dans Xamarin.iOS 9.6 et inférieur), vous pouvez définir la propriété à `IpaPackageDir` `$(OutputPath)` l’aide d’une des approches suivantes. Les deux approches sont compatibles avec toutes les builds d’API unifiée Xamarin.iOS, notamment les builds d’IDE et les builds de ligne de commande qui utilisent **msbuild**, **xbuild** ou **mdtool** :
+Par exemple, pour générer le fichier **. Loi** dans l’ancien répertoire par défaut (comme dans Xamarin. iOS 9,6 et versions antérieures), vous pouvez affecter `IpaPackageDir` à la propriété l' `$(OutputPath)` une des approches suivantes. Les deux approches sont compatibles avec toutes les builds d’API unifiée Xamarin.iOS, notamment les builds d’IDE et les builds de ligne de commande qui utilisent **msbuild**, **xbuild** ou **mdtool** :
 
 - La première option consiste à définir la propriété `IpaPackageDir` dans un élément `<PropertyGroup>` d’un fichier **MSBuild**. Par exemple, vous pouvez ajouter le `<PropertyGroup>` suivant au bas du fichier **.csproj** du projet d’application iOS (juste avant la balise de fermeture `</Project>`) :
 
@@ -183,7 +183,7 @@ Par exemple, pour produire le fichier **.ipa** sur l’ancien répertoire par d�
     </PropertyGroup>
     ```
 
-- Une meilleure approche consiste `<IpaPackageDir>` à ajouter un `<PropertyGroup>` élément au bas de l’existant qui correspond à la configuration utilisée pour construire le fichier **.ipa.** Cette solution est préférable, car elle permet de préparer le projet pour une compatibilité future avec un paramètre planifié de la page de propriétés de projet dans les Options IPA iOS. Si vous utilisez `Release|iPhone` actuellement la configuration pour construire le fichier **.ipa,** le groupe complet de propriété mis à jour peut ressembler à ce qui suit :
+- Une meilleure approche consiste à ajouter un `<IpaPackageDir>` élément au bas du existant `<PropertyGroup>` qui correspond à la configuration utilisée pour générer le fichier **. Loi** . Cette solution est préférable, car elle permet de préparer le projet pour une compatibilité future avec un paramètre planifié de la page de propriétés de projet dans les Options IPA iOS. Si vous utilisez actuellement la `Release|iPhone` configuration pour générer le fichier **. Loi** , le groupe de propriétés mise à jour complète peut ressembler à ce qui suit :
 
     ```xml
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
@@ -221,7 +221,7 @@ Ou sur Mac :
 msbuild /p:Configuration="Release" /p:Platform="iPhone" /p:IpaPackageDir="$HOME/Builds" /t:Build SingleViewIphone1.sln
 ```
 
-<a name="installipa" />
+<a name="installipa"></a>
 
 ## <a name="installing-an-ipa-using-itunes"></a>Installation d’un fichier IPA à l’aide d’iTunes
 
@@ -241,20 +241,20 @@ La nouvelle application iOS s’affiche dans la section **My Apps (Mes applicati
 
 L’utilisateur peut à présent synchroniser son appareil avec iTunes pour installer la nouvelle application iOS.
 
-<a name="Summary" />
+<a name="Summary"></a>
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article a décrit les étapes nécessaires à la préparation d’une application Xamarin.iOS pour une build non liée à l’App Store. Il a montré comment créer un paquet IPA et comment installer l’application iOS qui en résulte sur l’appareil iOS de l’utilisateur final à des fins de test ou de distribution en interne.
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Distribution De l’App Store](~/ios/deploy-test/app-distribution/app-store-distribution/index.md)
-- [Configurer une application dans iTunes Connect](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)
-- [Publication dans l’App Store](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)
+- [Distribution de l’App Store](~/ios/deploy-test/app-distribution/app-store-distribution/index.md)
+- [Configuration d’une application dans iTunes Connect](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)
+- [Publication sur l’App Store](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)
 - [Distribution en interne](~/ios/deploy-test/app-distribution/in-house-distribution.md)
 - [Distribution ad hoc](~/ios/deploy-test/app-distribution/ad-hoc-distribution.md)
-- [Fichier iTunesMetadata.plist](~/ios/deploy-test/app-distribution/itunesmetadata.md)
+- [Le fichier iTunesMetadata. plist](~/ios/deploy-test/app-distribution/itunesmetadata.md)
 - [Dépannage](~/ios/deploy-test/troubleshooting.md)
 - [Conception graphique iTunes](~/ios/app-fundamentals/images-icons/app-icons.md#itunes)
 - [Développer et distribuer des applications d’entreprise (Apple)](https://help.apple.com/xcode/mac/current/#/devba5e7054d)

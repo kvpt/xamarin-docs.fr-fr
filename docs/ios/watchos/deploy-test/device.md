@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: c049fb0bd05749db30d99603fb9179e710f815f7
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: cbbf8194505e9caa09587471020026d495f9f99b
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028351"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84569694"
 ---
 # <a name="testing-on-apple-watch-devices"></a>Test sur des appareils Apple Watch
 
@@ -22,11 +22,11 @@ Une fois que vous avez suivi les [étapes de déploiement](~/ios/watchos/deploy-
 - [Créez des profils de provisionnement de développement](#profiles), puis
 - [Déployez et testez](#testing) sur un Apple Watch.
 
-<a name="devices" />
+<a name="devices"></a>
 
 ## <a name="devices"></a>Appareils
 
-Tester des applications iOS sur un iPhone ou iPad réel a toujours requis l’inscription de l’appareil dans le centre de développement. La liste des appareils ressemble à ce qui suit (cliquez sur le signe plus **+** pour ajouter un nouvel appareil) :
+Tester des applications iOS sur un iPhone ou iPad réel a toujours requis l’inscription de l’appareil dans le centre de développement. La liste des appareils ressemble à ceci (cliquez sur le signe plus **+** pour ajouter un nouvel appareil) :
 
 ![](device-images/devices-sml.png "The device list looks like this")
 
@@ -44,7 +44,7 @@ Une fois l’appareil espion ajouté, assurez-vous qu’il est sélectionné dan
 
 N’oubliez pas que si vous modifiez un profil de provisionnement existant pour le téléchargement et la réinstallation !
 
-<a name="profiles" />
+<a name="profiles"></a>
 
 ## <a name="development-provisioning-profiles"></a>Profils de provisionnement de développement
 
@@ -64,7 +64,7 @@ La liste **profil de provisionnement** affiche tous les profils correspondants. 
 
 ![](device-images/options-selectprofile.png "The Provisioning Profile list")
 
-<a name="testing" />
+<a name="testing"></a>
 
 ## <a name="testing-on-a-watch-device"></a>Test sur un appareil Watch
 
@@ -87,7 +87,7 @@ Une fois que vous avez configuré votre appareil, les ID d’application et les 
 
 8. Si l’application Watch est correctement installée, l’icône reste sur l’écran Watch. Touchez-la pour commencer à tester votre application !
 
-## <a name="troubleshooting"></a>Résolution des problèmes
+## <a name="troubleshooting"></a>Dépannage
 
 Si une erreur se produit pendant le déploiement, utilisez la **vue > pad > journal** de l’appareil pour afficher plus d’informations sur l’erreur. Certaines erreurs et leurs causes sont répertoriées ci-dessous :
 
@@ -120,7 +120,7 @@ Si ces messages s’affichent *sur l’écran Watch* après une tentative d’in
 
 - Les profils de provisionnement de développement utilisés pour les tests n’ont pas inclus l’appareil espion ; ou après l’ajout de la montre aux profils de provisionnement, ils n’ont pas été téléchargés et réinstallés. Suivez les instructions pour [configurer correctement les profils de provisionnement](#profiles).
 
-- Si le **Journal de l’appareil iOS** contient des `The system version is lower than the minimum OS version specified for bundle...Have 8.2; need 8.3`, la valeur **MinimumOSVersion** du fichier **info. plist** de l’application espion est incorrecte.
+- Si le **Journal de l’appareil iOS** contient, le fichier `The system version is lower than the minimum OS version specified for bundle...Have 8.2; need 8.3` **info. plist** de l’application espion a une valeur **MinimumOSVersion** incorrecte.
   Il doit s’agir de **8,2** -si vous avez installé Xcode 6,3, vous devrez peut-être modifier manuellement la source pour qu’elle soit définie sur 8,2.
 
 - Les droits de l’application Watch **. plist** de manière incorrecte sont activés (par exemple, les groupes d’applications).

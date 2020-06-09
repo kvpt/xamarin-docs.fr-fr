@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 965ed4e802c05f8450192c0fec17fe31e464c779
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: e6be5d5d42abf7d99c5bd305d6e303ef770e5a04
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79304533"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84567713"
 ---
 # <a name="debug-on-a-wear-device"></a>Déboguer sur un appareil Wear
 
@@ -86,7 +86,7 @@ Suivez les étapes ci-dessous pour connecter votre appareil d’usure à votre t
     Target: connected
     ```
 
-6. Une fois les étapes ci-dessus terminées, l’exécution de `adb devices` indique l’état du téléphone et de l’appareil Android :
+6. Une fois que vous avez effectué les étapes ci-dessus, l’exécution `adb devices` de affiche l’état du téléphone et de l’appareil Android :
 
     ```
     List of devices attached
@@ -96,7 +96,7 @@ Suivez les étapes ci-dessous pour connecter votre appareil d’usure à votre t
 
 À ce stade, vous pouvez déployer votre application sur l’appareil d’usure.
 
-<a name="screenshots" />
+<a name="screenshots"></a>
 
 ### <a name="taking-screenshots"></a>Captures d’écran
 
@@ -126,7 +126,7 @@ Vous pouvez désinstaller une application à partir de l’appareil d’usure en
 adb -s 127.0.0.1:4444 uninstall <package name>
 ```
 
-Par exemple, pour supprimer l’application avec le nom du package `com.xamarin.weartest`, entrez la commande suivante :
+Par exemple, pour supprimer l’application avec le nom du package `com.xamarin.weartest` , entrez la commande suivante :
 
 ```shell
 adb -s 127.0.0.1:4444 uninstall com.xamarin.weartest

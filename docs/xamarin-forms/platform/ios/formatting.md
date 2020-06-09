@@ -1,34 +1,18 @@
 ---
-title: ''
-description: Cet article explique comment définir l’apparence spécifique à iOS sans utiliser de Xamarin.Forms convertisseur personnalisé.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: eb44b7d756fee4fa4f452b79292effb45ab98154
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138513"
+titre : « ajout d’une mise en forme spécifique à iOS » Description : « cet article explique comment définir l’apparence spécifique à iOS sans utiliser de Xamarin.Forms convertisseur personnalisé ».
+ms. Prod : xamarin ms. AssetID : CE50E207-D092-4D88-8439-1B51F178E7ED ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 01/29/2016 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="adding-ios-specific-formatting"></a>Ajout d’une mise en forme spécifique à iOS
 
 Une façon de définir une mise en forme spécifique à iOS consiste à créer un [convertisseur personnalisé](~/xamarin-forms/app-fundamentals/custom-renderer/index.md) pour un contrôle et à définir des couleurs et des styles spécifiques à la plateforme pour chaque plateforme.
 
 D’autres options pour contrôler l' Xamarin.Forms apparence de votre application IOS sont les suivantes :
 
-- Configuration des options d’affichage dans [ **info. plist**](#info-plist)
-- Définition de styles de contrôle via l' [ `UIAppearance` API](#uiappearance)
+- Configuration des options d’affichage dans [ **info. plist**](#customizing-infoplist)
+- Définition de styles de contrôle via l' [ `UIAppearance` API](#uiappearance-api)
 
 Ces alternatives sont présentées ci-dessous.
-
-<a name="info-plist"/>
 
 ## <a name="customizing-infoplist"></a>Personnalisation d’info. plist
 
@@ -62,8 +46,6 @@ ou modifiez le fichier **info. plist** directement pour inclure :
 Désormais, lorsque l’application est exécutée, la barre de navigation est verte et son texte est blanc (en raison de Xamarin.Forms la mise en forme) *et* le texte de la barre d’État est également blanc grâce à la configuration spécifique à IOS :
 
 ![](theme-images/status-white-sml.png "iOS Theming")
-
-<a name="uiappearance"/>
 
 ## <a name="uiappearance-api"></a>API UIAppearance
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/14/2017
-ms.openlocfilehash: 9353cffd924688058c1495b9258cc7f0e0ce7b82
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 1fae83f60f819da9767e14612a7f778dc49ddf52
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79304883"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84564628"
 ---
 # <a name="introduction-to-ios-8"></a>Introduction à iOS 8
 
@@ -50,7 +50,7 @@ Le diagramme ci-dessous montre la hiérarchie de base de la configuration des ac
 
 ![](introduction-to-ios8-images/image1.png "This diagram shows the basic hierarchy of the configuration of HomeKit accessories")
 
-Pour commencer à utiliser HomeKit, les développeurs doivent s’assurer que le service HomeKit est sélectionné pour le profil de configuration. Apple a également fourni aux développeurs un complément HomeKit Simulator pour Xcode. Vous pouvez le trouver dans le [Centre de développement Apple](https://developer.apple.com/downloads/index.action), sous `Hardware IO Tools for Xcode`. 
+Pour commencer à utiliser HomeKit, les développeurs doivent s’assurer que le service HomeKit est sélectionné pour le profil de configuration. Apple a également fourni aux développeurs un complément HomeKit Simulator pour Xcode. Vous pouvez le trouver dans le [Centre de développement Apple](https://developer.apple.com/downloads/index.action), sous `Hardware IO Tools for Xcode` . 
 
 Pour plus d’informations, consultez notre guide [HomeKit](~/ios/platform/homekit.md) .
 
@@ -68,7 +68,7 @@ Les extensions d’application, pour simplifier, sont un moyen pour les applicat
 
 La première étape de la création d’une extension d’application consiste à définir le point d’extension correct, ce qui est important pour garantir le comportement et la disponibilité des API appropriées. Pour créer une extension d’application dans Visual Studio pour Mac, ajoutez-la à une application existante en ajoutant un nouveau projet à votre solution.
 
-Dans la boîte de dialogue **nouveau projet** , accédez à **C#**  > **iOS** > **API unifiée** **Extensions**de > , comme illustré dans la capture d’écran ci-dessous :
+Dans la boîte de dialogue **nouveau projet** , accédez à **C#**  >  **iOS**  >  **API unifiée**  >  **Extensions**, comme illustré dans la capture d’écran ci-dessous :
 
 ![](introduction-to-ios8-images/image2.png "Creating a new extension")
 
@@ -91,7 +91,7 @@ Il existe deux façons d’utiliser Touch ID comme mécanisme d’authentificati
 
 Tout d’abord, il aide les services de trousseau existants grâce à l’utilisation de nouvelles listes de Access Control de trousseau (ACL). Les données de trousseau peuvent être déverrouillées avec l’authentification réussie de l’empreinte digitale d’un utilisateur.
 
-Deuxièmement, LocalAuthentication fournit deux méthodes pour authentifier votre application localement. Les développeurs doivent utiliser `CanEvaluatePolicy` pour déterminer si l’appareil est en capacité d’accepter Touch ID, puis `EvaluatePolicy` pour démarrer l’opération d’authentification.
+Deuxièmement, LocalAuthentication fournit deux méthodes pour authentifier votre application localement. Les développeurs doivent utiliser `CanEvaluatePolicy` pour déterminer si l’appareil peut accepter l’id tactile, puis `EvaluatePolicy` Démarrer l’opération d’authentification.
 
 Pour plus d’informations sur Touch ID et pour savoir comment l’intégrer dans une application Xamarin. iOS, consultez [Touch ID et face ID dans Xamarin. iOS](~/ios/platform/touch-id-face-id.md) guides.
 
@@ -132,7 +132,7 @@ Pour plus d’informations, consultez notre guide [PhotoKit](~/ios/platform/phot
 
 ## <a name="games"></a>Jeux
 
-<a name="scenekit" />
+<a name="scenekit"></a>
 
 ### <a name="scene-kit"></a>Kit de scène
 
@@ -140,7 +140,7 @@ Scene Kit est une API graphique de scène 3D qui simplifie l’utilisation des g
 
 Pour plus d’informations, consultez notre documentation [SceneKit](~/ios/platform/gaming/scenekit.md) .
 
-<a name="spritekit" />
+<a name="spritekit"></a>
 
 ### <a name="sprite-kit"></a>Sprite Kit
 

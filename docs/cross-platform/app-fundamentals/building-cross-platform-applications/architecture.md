@@ -6,12 +6,12 @@ ms.assetid: 2176DB2D-E84A-3757-CFAB-04A586068D50
 author: davidortinau
 ms.author: daortin
 ms.date: 03/27/2017
-ms.openlocfilehash: 84a06e23ec7125892701762ab5bad7b86a8faf90
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 315defe5017e3744013d1babd35f06deed255946
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030264"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84566329"
 ---
 # <a name="part-2---architecture"></a>Partie 2 : Architecture
 
@@ -23,7 +23,7 @@ Un principe clé de la création d’applications multiplateformes consiste à c
 
 Le résultat naturel est une application modélisée après des entités réelles ou abstraites avec des couches logiques distinctes. La séparation du code en couches rend les applications plus faciles à comprendre, à tester et à entretenir. Il est recommandé que le code de chaque couche soit physiquement séparé (dans des répertoires ou même des projets distincts pour les applications très volumineuses), ainsi que logiquement séparé (à l’aide d’espaces de noms).
 
- <a name="Typical_Application_Layers" />
+ <a name="Typical_Application_Layers"></a>
 
 ## <a name="typical-application-layers"></a>Couches d’application standard
 
@@ -38,17 +38,17 @@ Tout au long de ce document et des études de cas, nous faisons référence aux 
 
 Une application ne doit pas nécessairement contenir toutes les couches, par exemple la couche d’accès au service n’existe pas dans une application qui n’accède pas aux ressources du réseau. Une application très simple peut fusionner la couche de données et la couche d’accès aux données, car les opérations sont extrêmement basiques.
 
- <a name="Common_Mobile_Software_Patterns" />
+ <a name="Common_Mobile_Software_Patterns"></a>
 
 ## <a name="common-mobile-software-patterns"></a>Modèles courants de logiciels mobiles
 
 Les modèles sont un moyen établi pour capturer des solutions récurrentes à des problèmes courants. Quelques modèles clés sont utiles pour comprendre la création d’applications mobiles gérables/compréhensibles.
 
 - **Model, View, ViewModel (MVVM)** – le modèle Model-View-ViewModel est populaire avec les infrastructures qui prennent en charge la liaison de données, telles que Xamarin. Forms. Il a été répandu par les kits de développement logiciel (SDK) compatibles XAML, tels que Windows Presentation Foundation (WPF) et Silverlight. où le ViewModel agit comme un passage entre les données (modèle) et l’interface utilisateur (vue) via la liaison de données et les commandes.
-- **Modèle, vue, contrôleur (MVC)** : modèle commun et souvent mal compris, MVC est le plus souvent utilisé lors de la création d’interfaces utilisateur et fournit une séparation entre la définition réelle d’un écran d’interface utilisateur (affichage), le moteur situé derrière celui-ci qui gère l’interaction ( ) Et les données qui le remplissent (modèle). Le modèle est en fait une pièce entièrement facultative et, par conséquent, le cœur de la compréhension de ce modèle se trouve dans la vue et le contrôleur. MVC est une approche répandue pour les applications iOS.
-- Le modèle **Business Facade** – alias Manager fournit un point d’entrée simplifié pour un travail complexe. Par exemple, dans une application de suivi des tâches, vous pouvez avoir une classe `TaskManager` avec des méthodes telles que `GetAllTasks()`, `GetTask(taskID)`, `SaveTask (task)`, etc. La classe `TaskManager` fournit une façade au fonctionnement interne de l’enregistrement et de la récupération des objets Tasks.
+- **Modèle, vue, contrôleur (MVC)** : modèle commun et souvent mal compris, MVC est le plus souvent utilisé lors de la création d’interfaces utilisateur et fournit une séparation entre la définition réelle d’un écran d’interface utilisateur (affichage), le moteur qui en est à l’appui qui gère l’interaction (contrôleur) et les données qui le remplissent (modèle). Le modèle est en fait une pièce entièrement facultative et, par conséquent, le cœur de la compréhension de ce modèle se trouve dans la vue et le contrôleur. MVC est une approche répandue pour les applications iOS.
+- Le modèle **Business Facade** – alias Manager fournit un point d’entrée simplifié pour un travail complexe. Par exemple, dans une application de suivi des tâches, vous pouvez avoir une `TaskManager` classe avec des méthodes telles que `GetAllTasks()` , `GetTask(taskID)` , `SaveTask (task)` , etc. La `TaskManager` classe fournit une façade au fonctionnement interne de l’enregistrement et de la récupération des objets de tâches.
 - **Singleton** : le modèle Singleton fournit un moyen dans lequel une seule instance d’un objet particulier peut exister. Par exemple, lors de l’utilisation de SQLite dans les applications mobiles, vous ne voulez jamais qu’une seule instance de la base de données. L’utilisation du modèle Singleton est un moyen simple de s’en assurer.
 - **Fournisseur** : modèle inventé par Microsoft (sans doute similaire à la stratégie ou à l’injection de dépendances de base) pour encourager la réutilisation de code dans les applications Silverlight, WPF et WinForms. Le code partagé peut être écrit par rapport à une interface ou une classe abstraite, et les implémentations concrètes spécifiques à la plateforme sont écrites et transmises lorsque le code est utilisé.
-- **Async** : à ne pas confondre avec le mot clé Async, le modèle asynchrone est utilisé lorsque le travail de longue durée doit être exécuté sans l’interface utilisateur ou le traitement actuel. Dans sa forme la plus simple, le modèle asynchrone décrit simplement que les tâches longues doivent être lancées dans un autre thread (ou abstraction de threads similaire, par exemple, une tâche) tandis que le thread actuel continue à traiter et à écouter une réponse du processus en arrière-plan. , puis met à jour l’interface utilisateur lorsque les données et l’État sont retournés.
+- **Async** : à ne pas confondre avec le mot clé Async, le modèle asynchrone est utilisé lorsque le travail de longue durée doit être exécuté sans l’interface utilisateur ou le traitement actuel. Dans sa forme la plus simple, le modèle asynchrone décrit simplement que les tâches longues doivent être lancées dans un autre thread (ou abstraction de threads similaire, comme une tâche), tandis que le thread actuel continue à traiter et à écouter une réponse du processus en arrière-plan, puis met à jour l’interface utilisateur lorsque les données et l’État sont retournés.
 
 Chacun des modèles sera examiné plus en détail dans la mesure où son utilisation pratique est illustrée dans les études de cas. Wikipedia présente des descriptions plus détaillées des modèles [MVVM](https://en.wikipedia.org/wiki/Model–view–viewmodel), [MVC](https://en.wikipedia.org/wiki/Model–view–controller), [facade](https://en.wikipedia.org/wiki/Facade_pattern), [Singleton](https://en.wikipedia.org/wiki/Singleton_pattern), [Strategy](https://en.wikipedia.org/wiki/Strategy_pattern) et [Provider](https://en.wikipedia.org/wiki/Provider_model) (et des [modèles de conception](https://en.wikipedia.org/wiki/Design_Patterns) en général).

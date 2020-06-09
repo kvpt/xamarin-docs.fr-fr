@@ -1,22 +1,8 @@
 ---
-title: ''
-description: Cet article explique comment utiliser le geste TAP pour la détection de TAP dans une Xamarin.Forms application. La détection des appuis est implémentée avec la classe TapGestureRecognizer.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 0470419dd5070424c362dec8d4b1978507985783
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137616"
+titre : « ajout d’un module de reconnaissance de mouvement TAP » : cet article explique comment utiliser le geste TAP pour la détection de TAP dans une Xamarin.Forms application. La détection de TAP est implémentée avec la classe TapGestureRecognizer.»
+ms. Prod : xamarin ms. AssetID : 1D150BAF-4157-49BC-90A0-153323B8EBCF ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 01/21/2016 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="adding-a-tap-gesture-recognizer"></a>Ajout d’un module de reconnaissance des appuis
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-tapgesture)
@@ -40,8 +26,6 @@ tapGestureRecognizer.NumberOfTapsRequired = 2; // double-tap
 ```
 
 Lorsque [`NumberOfTapsRequired`](xref:Xamarin.Forms.TapGestureRecognizer.NumberOfTapsRequired) est défini au-dessus d’un, le gestionnaire d’événements est exécuté uniquement si les clics se produisent dans un laps de temps défini (cette période n’est pas configurable). Si les appuis suivants (le deuxième ou les autres) ne se produisent pas dans cette période, ils sont effectivement ignorés et le « nombre d’appuis » redémarre.
-
-<a name="Using_Xaml" />
 
 ## <a name="using-xaml"></a>Utilisation de Xaml
 

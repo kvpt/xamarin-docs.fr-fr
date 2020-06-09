@@ -1,11 +1,11 @@
 ---
 ms.topic: include
-ms.openlocfilehash: fedf918a2217a5fd1d5863ee5926057317fd3294
-ms.sourcegitcommit: 2105091f2eeb7844b19ae94708a6ab07e3e79bce
+ms.openlocfilehash: 0c426be72ced315165dade8e862a0d06de7d6c6d
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "70206222"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574643"
 ---
 Xamarin peut être installé dans le cadre d’une _nouvelle_ installation de Visual Studio 2017, en effectuant les étapes suivantes :
 
@@ -33,7 +33,7 @@ Xamarin peut être installé dans le cadre d’une _nouvelle_ installation de Vi
 
     ![Emplacement du bouton Lancer](~/get-started/installation/windows-images/05-launch.png)
 
-<a name="vs2017" />
+<a name="vs2017"></a>
 
 ### <a name="adding-xamarin-to-visual-studio-2017"></a>Ajout de Xamarin à Visual Studio 2017
 

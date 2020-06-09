@@ -1,22 +1,8 @@
 ---
-title: ''
-description: Xamarin.FormsLes anciennes solutions (ou celles créées sur MacOS) n’ont pas de projets de plateforme Windows universelle. cet article explique donc comment ajouter un nouveau projet UWP à une Xamarin.Forms solution existante.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 87ad78e97046eef7fd6c2e062fa9f84d92c11b38
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84132208"
+titre : « configurer les projets Windows » : « Xamarin.Forms les anciennes solutions (ou celles créées sur MacOS) n’ont pas de projets de plateforme Windows universelle. cet article explique donc comment ajouter un nouveau projet UWP à une Xamarin.Forms solution existante. »
+ms. Prod : xamarin ms. AssetID : A0774D2E-6994-4D91-84E8-DAB66FC92320 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 04/10/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="setup-windows-projects"></a>Configurer des projets Windows
 
 _Ajout de nouveaux projets Windows à une Xamarin.Forms solution existante_
@@ -108,9 +94,7 @@ LoadApplication(new YOUR_NAMESPACE.App());
 
 douze. Ajoutez des ressources locales (par exemple, fichiers image) à partir des projets de plateforme existants qui sont requis.
 
-## <a name="troubleshooting"></a>Résolution des problèmes
-
-<a name="target-invocation-exception" />
+## <a name="troubleshooting"></a>Dépannage
 
 ### <a name="target-invocation-exception-when-using-compile-with-net-native-tool-chain"></a>« Exception d’appel cible » lors de l’utilisation de « compiler avec .NET Native chaîne d’outils »
 

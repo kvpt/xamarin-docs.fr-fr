@@ -1,68 +1,68 @@
 ---
-title: App-Linking sur Android
-description: Ce guide discutera de la façon dont Android 6.0 prend en charge la liaison d’applications, une technique qui permet aux applications mobiles de répondre aux URL sur les sites Web. Il discutera de ce qu’est le lien avec l’application, de la façon d’implémenter des liaisons d’applications dans une application Android 6.0 et de la façon de configurer un site Web pour accorder des autorisations à l’application mobile pour un domaine.
+title: Liaison d’applications dans Android
+description: Ce guide explique comment Android 6,0 prend en charge la liaison d’applications, une technique qui permet aux applications mobiles de répondre aux URL sur les sites Web. Il aborde ce qu’est la liaison d’application, comment implémenter la liaison d’applications dans une application Android 6,0 et comment configurer un site Web pour accorder des autorisations à l’application mobile pour un domaine.
 ms.prod: xamarin
 ms.assetid: 48174E39-19FD-43BC-B54C-9AF11D4B1F91
 ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: af90c286d2bb960a9f78547dd15c3d98a69529ae
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: bdcefd6a1b0192dc337afd5b5a5535a20eeaef9e
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75487826"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571387"
 ---
-# <a name="app-linking-in-android"></a>App-Linking sur Android
+# <a name="app-linking-in-android"></a>Liaison d’applications dans Android
 
-_Ce guide discutera de la façon dont Android 6.0 prend en charge la liaison d’applications, une technique qui permet aux applications mobiles de répondre aux URL sur les sites Web. Il discutera de ce qu’est le lien avec l’application, de la façon d’implémenter des liaisons d’applications dans une application Android 6.0 et de la façon de configurer un site Web pour accorder des autorisations à l’application mobile pour un domaine._
+_Ce guide explique comment Android 6,0 prend en charge la liaison d’applications, une technique qui permet aux applications mobiles de répondre aux URL sur les sites Web. Il aborde ce qu’est la liaison d’application, comment implémenter la liaison d’applications dans une application Android 6,0 et comment configurer un site Web pour accorder des autorisations à l’application mobile pour un domaine._
 
-## <a name="app-linking-overview"></a>Aperçu de l’application de liaison
+## <a name="app-linking-overview"></a>Vue d’ensemble des liens d’application
 
-Les applications mobiles ne vivent &ndash; plus dans un silo dans de nombreux cas, elles sont des composantes importantes de leurs activités, ainsi que leur site Web. Il est souhaitable que les entreprises connectent en toute transparence leur présence sur le Web et leurs applications mobiles, avec des liens sur un site Web lançant des applications mobiles et affichant du contenu pertinent dans l’application mobile. *App-linking* (également appelé *lien profond*) est une technique qui permet à un appareil mobile de répondre à un URI et de lancer une application mobile qui correspond à cette URI.
+Les applications mobiles ne se trouvent plus dans un silo &ndash; dans de nombreux cas, elles constituent un composant important de leur entreprise, ainsi que leur site Web. Il est souhaitable que les entreprises connectent en toute transparence leur présence sur le Web et leurs applications mobiles, avec des liens sur un site Web lançant des applications mobiles et affichant le contenu pertinent dans l’application mobile. La *liaison d’application* (également appelée *liaison profonde*) est une technique qui permet à un appareil mobile de répondre à un URI et de lancer une application mobile qui correspond à cet URI.
 
-Android gère app-liaison à travers le &ndash; *système d’intention* lorsque l’utilisateur clique sur un lien dans un navigateur mobile, le navigateur mobile enverra une intention que Android déléguer à une application enregistrée. Par exemple, en cliquant sur un lien sur un site Web de cuisine ouvrirait une application mobile qui est associée à ce site Web et afficherait une recette spécifique à l’utilisateur. S’il y a plus d’une application enregistrée pour gérer cette intention, Alors Android soulèvera ce qui est connu comme un *dialogue de désambiguation* qui demandera à un utilisateur quelle application pour sélectionner l’application qui devrait gérer l’intention, par exemple :
+Android gère la liaison des applications via le *système d’intention* &ndash; lorsque l’utilisateur clique sur un lien dans un navigateur mobile, le navigateur mobile envoie une intention que Android délègue à une application inscrite. Par exemple, un clic sur un lien sur un site Web de cuisine ouvre une application mobile associée à ce site Web et affiche une recette spécifique pour l’utilisateur. Si plusieurs applications sont inscrites pour gérer cet objectif, Android déclenchera une *boîte de dialogue de désambiguïsation* qui demandera à l’utilisateur l’application de sélectionner l’application qui devrait gérer l’intention, par exemple :
 
-![Exemple de capture d’écran d’un dialogue de disambiguation](app-linking-images/01-disambiguation-dialog.png)
+![Exemple de capture d’écran d’une boîte de dialogue de désambiguïsation](app-linking-images/01-disambiguation-dialog.png)
 
-Android 6.0 améliore à ce sujet en utilisant la manipulation automatique de lien. Il est possible pour Android d’enregistrer automatiquement une &ndash; application car le gestionnaire par défaut pour un URI l’application sera automatiquement lancer et naviguer directement vers l’activité pertinente. La façon dont Android 6.0 décide de gérer un clic URI dépend des critères suivants :
+Android 6,0 améliore cette fonctionnalité à l’aide de la gestion automatique des liaisons. Android peut inscrire automatiquement une application en tant que gestionnaire par défaut d’un URI &ndash; . l’application est automatiquement lancée et accède directement à l’activité correspondante. La manière dont Android 6,0 décide de gérer un URI, cliquez sur dépend des critères suivants :
 
-1. **Une application existante est déjà associée à l’URI** &ndash; L’utilisateur a peut-être déjà associé une application existante à une URI. Dans ce cas, Android continuera à utiliser cette application.
-2. **Aucune application existante n’est associée à l’URI, mais une application de soutien est installée** &ndash; Dans ce scénario, l’utilisateur n’a pas spécifié une application existante, donc Android utilisera l’application de support installée pour traiter la demande.
-3. **Aucune application existante n’est associée à l’URI, mais de nombreuses applications de soutien sont installées** &ndash; Car il existe plusieurs applications qui prennent en charge l’URI, le dialogue de désambiguation sera affiché et l’utilisateur doit sélectionner quelle application gérera l’URI.
+1. **Une application existante est déjà associée à l’URI** &ndash; L’utilisateur a peut-être déjà associé une application existante à un URI. Dans ce cas, Android continue à utiliser cette application.
+2. **Aucune application existante n’est associée à l’URI, mais une application de prise en charge est installée** &ndash; Dans ce scénario, l’utilisateur n’a pas spécifié d’application existante. par conséquent, Android utilise l’application de prise en charge installée pour traiter la demande.
+3. **Aucune application existante n’est associée à l’URI, mais de nombreuses applications de prise en charge sont installées** &ndash; Étant donné qu’il y a plusieurs applications qui prennent en charge l’URI, la boîte de dialogue de désambiguïsation s’affiche et l’utilisateur doit sélectionner l’application qui gérera l’URI.
 
-Si l’utilisateur n’a pas d’applications installées qui prennent en charge l’URI, et l’un est ensuite installé, puis Android définira cette application comme le gestionnaire par défaut pour l’URI après vérification de l’association avec le site Web qui est associé à l’URI.
+Si l’utilisateur n’a pas d’applications installées qui prennent en charge l’URI et qu’une application est ensuite installée, Android définit cette application en tant que gestionnaire par défaut de l’URI après avoir vérifié l’association avec le site Web associé à l’URI.
 
-Ce guide discutera de la façon de configurer une application Android 6.0 et de la façon de créer et de publier le fichier Digital Asset Links pour prendre en charge la liaison d’applications dans Android 6.0.
+Ce guide explique comment configurer une application Android 6,0 et comment créer et publier le fichier de liens de ressources numériques pour prendre en charge la liaison d’applications dans Android 6,0.
 
 ## <a name="requirements"></a>Spécifications
 
-Ce guide nécessite Xamarin.Android 6.1 et une application qui cible Android 6.0 (niveau API 23) ou plus.
+Ce guide requiert Xamarin. Android 6,1 et une application qui cible Android 6,0 (niveau d’API 23) ou version ultérieure.
 
-App-linking est possible dans les versions antérieures d’Android en utilisant le [paquet Rivets NuGet](https://www.nuget.org/packages/Rivets/) de la boutique de composants Xamarin. Le forfait Rivets n’est pas compatible avec l’app-liaison dans Android 6.0; il ne prend pas en charge Android 6.0 liaison app.
+La liaison d’application est possible dans les versions antérieures d’Android en utilisant le [package NuGet rivets](https://www.nuget.org/packages/Rivets/) du magasin de composants Xamarin. Le package rivets n’est pas compatible avec la liaison d’applications dans Android 6,0 ; il ne prend pas en charge la liaison d’applications Android 6,0.
 
-## <a name="configuring-app-linking-in-android-60"></a>Configurer App-Linking dans Android 6.0
+## <a name="configuring-app-linking-in-android-60"></a>Configuration de la liaison d’applications dans Android 6,0
 
-La mise en place de liens d’applications dans Android 6.0 comporte deux étapes majeures :
+La configuration des liens d’application dans Android 6,0 implique deux étapes principales :
 
-1. **Ajout d’un ou plusieurs filtres d’intention pour le site URI** &ndash; les filtres d’intention guident Android dans la façon de gérer un clic URL dans un navigateur mobile.
-2. **Publication d’un fichier *Digital Asset Links JSON* sur le site Web** &ndash; c’est un fichier qui est téléchargé sur un site Web et est utilisé par Android pour vérifier la relation entre l’application mobile et le domaine du site. Sans cela, Android ne peut pas installer l’application comme la poignée par défaut pour URI; l’utilisateur doit le faire manuellement.
+1. **Ajout d’un ou de plusieurs filtres intentionnels pour les URI** &ndash; du site Web le guide des filtres d’intention Android dans Comment gérer une URL clique sur un navigateur mobile.
+2. **Publication d’un fichier *JSON de liens de biens numériques* sur le site Web** &ndash; Il s’agit d’un fichier qui est téléchargé vers un site Web et utilisé par Android pour vérifier la relation entre l’application mobile et le domaine du site Web. Sans cela, Android ne peut pas installer l’application en tant que descripteur par défaut pour les URI ; l’utilisateur doit le faire manuellement.
 
-<a name="configure-intent-filter" />
+<a name="configure-intent-filter"></a>
 
-### <a name="configuring-the-intent-filter"></a>Configurer le filtre d’intention
+### <a name="configuring-the-intent-filter"></a>Configuration du filtre d’intention
 
-Il est nécessaire de configurer un filtre d’intention qui cartographie une URI (ou possible un ensemble d’URI) à partir d’un site Web à une activité dans une application Android. Dans Xamarin.Android, cette relation est établie en ornant une activité avec [l’IntentionFilterAttribute](xref:Android.App.IntentFilterAttribute). Le filtre d’intention doit déclarer les informations suivantes :
+Il est nécessaire de configurer un filtre d’intention qui mappe un URI (ou un ensemble d’URI) d’un site Web à une activité dans une application Android. Dans Xamarin. Android, cette relation est établie en orneant une activité avec [IntentFilterAttribute](xref:Android.App.IntentFilterAttribute). Le filtre d’intention doit déclarer les informations suivantes :
 
-- **`Intent.ActionView`**&ndash; Cela enregistrera le filtre d’intention pour répondre aux demandes de visionnage de l’information
-- **`Categories`**&ndash; Le filtre d’intention doit enregistrer à la fois **[l’intention.CategoryBrowsable](xref:Android.Content.Intent.CategoryBrowsable)** et **[l’intention.CategoryDefault](xref:Android.Content.Intent.CategoryDefault)** pour être en mesure de gérer correctement l’URI Web.
-- **`DataScheme`**&ndash; Le filtre d’intention doit déclarer `http` et/ou `https`. Ce sont les deux seuls régimes valables.
-- **`DataHost`**&ndash; C’est le domaine d’où les ITI viendront.
-- **`DataPathPrefix`**&ndash; Il s’agit d’un chemin facultatif vers les ressources sur le site Web.
-- **`AutoVerify`**&ndash; L’attribut `autoVerify` indique à Android de vérifier la relation entre l’application et le site Web. Cela sera discuté plus ci-dessous.
+- **`Intent.ActionView`**&ndash;Le filtre d’intention est alors enregistré pour répondre aux demandes d’affichage des informations.
+- **`Categories`**&ndash;Le filtre d’intention doit enregistrer les **[intentions. CategoryBrowsable](xref:Android.Content.Intent.CategoryBrowsable)** et **[intentionnelle. CategoryDefault](xref:Android.Content.Intent.CategoryDefault)** pour pouvoir gérer correctement l’URI Web.
+- **`DataScheme`**&ndash;Le filtre d’intention doit déclarer `http` et/ou `https` . Il s’agit des deux seuls schémas valides.
+- **`DataHost`**&ndash;Il s’agit du domaine à partir duquel les URI proviennent.
+- **`DataPathPrefix`**&ndash;Il s’agit d’un chemin d’accès facultatif aux ressources sur le site Web.
+- **`AutoVerify`**&ndash;L' `autoVerify` attribut indique à Android de vérifier la relation entre l’application et le site Web. Vous y trouverez plus d’informations ci-dessous.
 
-L’exemple suivant montre comment utiliser [l’IntentFilterAttribute](xref:Android.App.IntentFilterAttribute) pour gérer les liens à partir de `https://www.recipe-app.com/recipes` et à partir de `http://www.recipe-app.com/recipes`:
+L’exemple suivant montre comment utiliser [IntentFilterAttribute](xref:Android.App.IntentFilterAttribute) pour gérer les liens depuis `https://www.recipe-app.com/recipes` et vers `http://www.recipe-app.com/recipes` :
 
 ```csharp
 [IntentFilter(new [] { Intent.ActionView },
@@ -77,24 +77,24 @@ public class RecipeActivity : Activity
 }
 ```
 
-Android vérifiera chaque hôte qui est identifié par les filtres d’intention contre le fichier d’actifs numériques sur le site Web avant d’enregistrer l’application en tant que gestionnaire par défaut pour un URI. Tous les filtres d’intention doivent passer la vérification avant qu’Android puisse établir l’application en tant que gestionnaire par défaut.
+Android vérifie chaque ordinateur hôte identifié par les filtres d’intention par rapport au fichier de ressources numériques sur le site Web avant d’inscrire l’application en tant que gestionnaire par défaut d’un URI. Tous les filtres d’intention doivent réussir la vérification avant qu’Android puisse établir l’application en tant que gestionnaire par défaut.
 
-### <a name="creating-the-digital-assets-link-file"></a>Création du fichier Digital Assets Link
+### <a name="creating-the-digital-assets-link-file"></a>Création du fichier de liaison de ressources numériques
 
-Android 6.0 app-linking exige qu’Android vérifier l’association entre l’application et le site Web avant de définir l’application comme le gestionnaire par défaut pour l’URI. Cette vérification aura lieu lorsque l’application sera installée pour la première fois. Le fichier *Digital Assets Links* est un fichier JSON hébergé par le webdomain pertinent.
+La liaison d’application Android 6,0 requiert que Android vérifie l’association entre l’application et le site Web avant de définir l’application comme gestionnaire par défaut de l’URI. Cette vérification se produit lors de la première installation de l’application. Le fichier de *liens des ressources numériques* est un fichier JSON qui est hébergé par le ou les domaines webdomaine pertinents.
 
 > [!NOTE]
-> L’attribut `android:autoVerify` doit être défini &ndash; par le filtre d’intention sinon Android n’effectuera pas la vérification.
+> L' `android:autoVerify` attribut doit être défini par le filtre intentionnel &ndash; , sinon Android n’effectue pas la vérification.
 
-Le fichier est placé par le webmaster **https://domain/.well-known/assetlinks.json**du domaine à l’emplacement .
+Le fichier est placé par l’webmaster du domaine à l’emplacement **https://domain/.well-known/assetlinks.json** .
 
-Le fichier d’actifs numériques contient les méta-données nécessaires pour Android pour vérifier l’association. Un fichier **assetlinks.json** a les paires de valeur clé suivantes :
+Le fichier de ressources numériques contient les métadonnées nécessaires à Android pour vérifier l’Association. Un fichier **assetlinks. JSON** contient les paires clé/valeur suivantes :
 
-- `namespace`&ndash; l’espace nom de l’application Android.
-- `package_name`&ndash; le nom du paquet de l’application Android (déclaré dans le manifeste de l’application).
-- `sha256_cert_fingerprints`&ndash; les empreintes digitales SHA256 de la demande signée. Veuillez consulter le guide [Trouver le MD5 ou la signature SHA1 de votre Keystore](~/android/deploy-test/signing/keystore-signature.md) pour plus d’informations sur la façon d’obtenir l’empreinte digitale SHA1 d’une application.
+- `namespace`&ndash;espace de noms de l’application Android.
+- `package_name`&ndash;nom du package de l’application Android (déclaré dans le manifeste de l’application).
+- `sha256_cert_fingerprints`&ndash;les empreintes digitales SHA256 de l’application signée. Pour plus d’informations sur la façon d’obtenir l’empreinte digitale SHA1 d’une application, consultez le Guide de recherche de la [signature MD5 ou SHA1 de votre magasin de clés](~/android/deploy-test/signing/keystore-signature.md) .
 
-L’extrait suivant est un exemple de **assetlinks.json** avec une seule application répertoriée:
+L’extrait de code suivant est un exemple de **assetlinks. JSON** avec une seule application listée :
 
 ```json
 [
@@ -113,7 +113,7 @@ L’extrait suivant est un exemple de **assetlinks.json** avec une seule applica
 ]
 ```
 
-Il est possible d’enregistrer plus d’une empreinte digitale SHA256 pour prendre en charge différentes versions ou builds de votre application. Ce prochain fichier **assetlinks.json** est un exemple d’enregistrement de plusieurs applications :
+Il est possible d’inscrire plus d’une empreinte digitale SHA256 pour prendre en charge différentes versions ou builds de votre application. Ce prochain fichier **assetlinks. JSON** est un exemple d’inscription de plusieurs applications :
 
 ```json
 [
@@ -144,22 +144,22 @@ Il est possible d’enregistrer plus d’une empreinte digitale SHA256 pour pren
 ]
 ```
 
-Le [site Web de Google Digital Asset Links](https://developers.google.com/digital-asset-links/tools/generator) dispose d’un outil en ligne qui peut aider à créer et tester le fichier Digital Assets.
+Le [site Web de Microsoft Google Digital Asset Links](https://developers.google.com/digital-asset-links/tools/generator) dispose d’un outil en ligne qui peut vous aider à créer et à tester le fichier de ressources numériques.
 
-### <a name="testing-app-links"></a>Test d’App-Links
+### <a name="testing-app-links"></a>Test de l’application-liens
 
-Après la mise en œuvre des app-links, les différentes pièces doivent être testées pour s’assurer qu’elles fonctionnent comme prévu.
+Après l’implémentation des liens vers les applications, les différents éléments doivent être testés pour s’assurer qu’ils fonctionnent comme prévu.
 
-Il est possible de confirmer que le fichier Digital Assets est correctement formaté et hébergé en utilisant l’API Digital Asset Links de Google, comme le montre cet exemple :
+Il est possible de confirmer que le fichier de ressources numériques est correctement formaté et hébergé à l’aide de l’API de liens de ressources numériques de Google, comme illustré dans cet exemple :
 
 ```html
 https://digitalassetlinks.googleapis.com/v1/statements:list?source.web.site=
   https://<WEB SITE ADDRESS>:&relation=delegate_permission/common.handle_all_urls
 ```
 
-Il existe deux tests qui peuvent être effectués pour s’assurer que les filtres d’intention ont été correctement configurés et que l’application est définie comme le gestionnaire par défaut pour un URI:
+Deux tests peuvent être effectués pour s’assurer que les filtres d’intention ont été correctement configurés et que l’application est définie en tant que gestionnaire par défaut d’un URI :
 
-1. Le fichier d’actifs numériques est correctement hébergé comme décrit ci-dessus. Le premier test enverra une intention qu’Android devrait rediriger vers l’application mobile. L’application Android doit lancer et afficher l’activité enregistrée pour l’URL. À un type d’invite de commande :
+1. Le fichier de ressources numériques est correctement hébergé comme décrit ci-dessus. Le premier test distribuera une intention qu’Android devrait rediriger vers l’application mobile. L’application Android doit démarrer et afficher l’activité inscrite pour l’URL. À l’invite de commandes, tapez :
 
     ```shell
     $ adb shell am start -a android.intent.action.VIEW \
@@ -167,15 +167,15 @@ Il existe deux tests qui peuvent être effectués pour s’assurer que les filtr
         -d "http://<domain1>/recipe/scalloped-potato"
     ```
 
-2. Affichez les stratégies de traitement des liaisons existantes pour les applications installées sur un appareil donné. La commande suivante videra une liste des stratégies de liaison pour chaque utilisateur sur l’appareil avec les informations suivantes. Saisissez ensuite la commande suivante dans l’invite de commandes :
+2. Affichez les stratégies de gestion des liens existantes pour les applications installées sur un appareil donné. La commande suivante permet de vider une liste de stratégies de liaison pour chaque utilisateur sur l’appareil avec les informations suivantes. Saisissez ensuite la commande suivante dans l’invite de commandes :
 
     ```shell
     $ adb shell dumpsys package domain-preferred-apps
     ```
 
-    - **`Package`**&ndash; Le nom du paquet de l’application.
-    - **`Domain`**&ndash; Les domaines (séparés par des espaces) dont les liens web seront gérés par l’application
-    - **`Status`**&ndash; Il s’agit de l’état actuel de gestion des liens pour l’application. Une valeur de **toujours** signifie `android:autoVerify=true` que l’application a déclaré et a passé la vérification du système. Il est suivi d’un nombre hexadecimal représentant l’enregistrement du système Android de la préférence.
+    - **`Package`**&ndash;Nom du package de l’application.
+    - **`Domain`**&ndash;Les domaines (séparés par des espaces) dont les liens Web seront gérés par l’application
+    - **`Status`**&ndash;Il s’agit de l’état actuel de la gestion des liens pour l’application. La valeur **Always** signifie que l’application a `android:autoVerify=true` déclaré et a réussi la vérification du système. Il est suivi d’un nombre hexadécimal représentant l’enregistrement de la préférence du système Android.
 
     Par exemple :
 
@@ -188,13 +188,13 @@ Il existe deux tests qui peuvent être effectués pour s’assurer que les filtr
     Status: always : 200000002
     ```
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
-Ce guide a discuté du fonctionnement de l’application-liaison dans Android 6.0. Il a ensuite couvert la façon de configurer une application Android 6.0 pour prendre en charge et répondre aux liens d’application. Il a également discuté de la façon de tester app-liaison dans une application Android.
+Ce guide a abordé le fonctionnement de la liaison d’application dans Android 6,0. Il a ensuite abordé la configuration d’une application Android 6,0 pour prendre en charge les liens d’application et y répondre. Elle a également expliqué comment tester la liaison d’application dans une application Android.
 
 ## <a name="related-links"></a>Liens connexes
 
 - [Recherche de la signature MD5 ou SHA1 de votre magasin de clés](~/android/deploy-test/signing/keystore-signature.md)
-- [AppLinks (en)](https://developers.facebook.com/docs/applinks)
-- [Liens Google Digital Assets](https://developers.google.com/digital-asset-links/)
-- [Générateur et testeur de liste d’énoncés](https://developers.google.com/digital-asset-links/tools/generator)
+- [AppLinks](https://developers.facebook.com/docs/applinks)
+- [Liens de Google Digital actifs](https://developers.google.com/digital-asset-links/)
+- [Générateur de listes d’instructions et testeur](https://developers.google.com/digital-asset-links/tools/generator)

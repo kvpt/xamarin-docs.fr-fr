@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/05/2017
-ms.openlocfilehash: ca3d4dfcd773a4f236ffbfd715cb53b514f6e2a3
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 07b39f87b6eeb0fc24486be83573a721abc07966
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032529"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84572401"
 ---
 # <a name="exception-marshaling-in-xamarinios"></a>Regroupement d’exceptions dans Xamarin. iOS
 
@@ -32,7 +32,7 @@ Le problème se produit lorsqu’une exception est levée, et Pendant le déroul
 
 Un exemple typique de cette opération pour Xamarin. iOS ou Xamarin. Mac est lorsqu’une API native lève une exception objective-C, puis cette exception objective-C doit être gérée lorsque le processus de déroulement de la pile atteint un frame managé.
 
-L’action par défaut consiste à ne rien faire. Pour l’exemple ci-dessus, cela signifie que les frames managés du déroulement de l’exécution objective-C sont en effet. Cela pose problème, car le runtime objective-C ne sait pas comment dérouler les frames managés ; par exemple, il n’exécute aucune clause `catch` ou `finally` dans ce frame.
+L’action par défaut consiste à ne rien faire. Pour l’exemple ci-dessus, cela signifie que les frames managés du déroulement de l’exécution objective-C sont en effet. Cela pose problème, car le runtime objective-C ne sait pas comment dérouler les frames managés ; par exemple, il n’exécutera pas de `catch` `finally` clauses or dans ce frame.
 
 ### <a name="broken-code"></a>Code endommagé
 
@@ -61,7 +61,7 @@ Et la trace de la pile ressemblera à ce qui suit :
 6   TestApp                 ExceptionMarshaling.Exceptions.ThrowObjectiveCException ()
 ```
 
-Les frames 0-3 sont des frames natifs, et le déroulateur de pile dans le runtime objective-C _peut_ dérouler ces frames. En particulier, il exécute les clauses objective-C `@catch` ou `@finally`.
+Les frames 0-3 sont des frames natifs, et le déroulateur de pile dans le runtime objective-C _peut_ dérouler ces frames. En particulier, elle exécute toutes les clauses objective-C `@catch` ou `@finally` .
 
 Toutefois, le dérouleur de pile objective-C ne peut _pas_ dérouler correctement les frames managés (frames 4-6), dans le fait que les frames seront déroulés, mais que la logique d’exception managée ne sera pas exécutée.
 
@@ -78,19 +78,19 @@ try {
 }
 ```
 
-Cela est dû au fait que le dérouleur de pile objective-C ne connaît pas la clause Managed `catch` et que ni la clause `finally` ne seront exécutées.
+Cela est dû au fait que le dérouleur de pile objective-C ne connaît pas la clause managée `catch` , et aucune des `finally` clauses ne sera exécutée.
 
-Lorsque l’exemple de code ci-dessus _est_ efficace, c’est parce que objective-c a une méthode qui est notifiée des exceptions objective-c non gérées, [`NSSetUncaughtExceptionHandler`][2], que Xamarin. iOS et Xamarin. Mac utilisent, et à ce stade, tente de convertir n’importe quel objective-c exceptions aux exceptions managées.
+Lorsque l’exemple de code ci-dessus _est_ efficace, c’est parce que objective-c a une méthode qui est notifiée des exceptions objective-c non gérées, [`NSSetUncaughtExceptionHandler`][2] que Xamarin. iOS et Xamarin. Mac utilisent, et à ce stade, tente de convertir les exceptions objective-c en exceptions managées.
 
 ## <a name="scenarios"></a>Scénarios
 
 ### <a name="scenario-1---catching-objective-c-exceptions-with-a-managed-catch-handler"></a>Scénario 1 : interception des exceptions objective-C avec un gestionnaire catch managé
 
-Dans le scénario suivant, il est possible d’intercepter les exceptions objective-C à l’aide de gestionnaires de `catch` managés :
+Dans le scénario suivant, il est possible d’intercepter les exceptions objective-C à l’aide de gestionnaires managés `catch` :
 
 1. Une exception objective-C est levée.
-2. Le runtime objective-C parcourt la pile (mais ne la déroulera pas), en recherchant un gestionnaire de `@catch` natif qui peut gérer l’exception.
-3. Le runtime objective-C ne trouve pas de gestionnaires de `@catch`, appelle `NSGetUncaughtExceptionHandler`et appelle le gestionnaire installé par Xamarin. iOS/Xamarin. Mac.
+2. Le runtime objective-C parcourt la pile (mais ne la déroulera pas), en recherchant un `@catch` gestionnaire natif qui peut gérer l’exception.
+3. Le runtime objective-C ne trouve pas de `@catch` gestionnaires, appelle `NSGetUncaughtExceptionHandler` et appelle le gestionnaire installé par Xamarin. iOS/Xamarin. Mac.
 4. Le gestionnaire Xamarin. iOS/Xamarin. Mac convertit l’exception objective-C en une exception managée et la lève. Étant donné que le runtime objective-C n’a pas déroulé la pile (ne l’a pas fait), le frame actuel est le même que celui où l’exception objective-C a été levée.
 
 Un autre problème se produit ici, car le runtime mono ne sait pas comment dérouler correctement les frames objective C.
@@ -111,9 +111,9 @@ Lorsque le rappel d’exception objective-C Xamarin. iOS est appelé, la pile se
 10 TestApp                  ExceptionMarshaling.Exceptions.ThrowObjectiveCException () [0x00013]
 ```
 
-Ici, les seuls frames managés sont des trames 8-10, mais l’exception managée est levée dans le frame 0. Cela signifie que le runtime mono doit dérouler les frames natifs 0-7, ce qui provoque un problème équivalent au problème décrit ci-dessus : bien que le runtime mono déroule les frames natifs, il n’exécute aucune clause objective-C `@catch` ou `@finally`.
+Ici, les seuls frames managés sont des trames 8-10, mais l’exception managée est levée dans le frame 0. Cela signifie que le runtime mono doit dérouler les frames natifs 0-7, ce qui provoque un problème équivalant au problème décrit ci-dessus : bien que le runtime mono déroulera les frames natifs, il n’exécutera pas les clauses objective-C `@catch` ou `@finally` .
 
-Exemple de code :
+Exemple de code :
 
 ```objc
 -(id) setObject: (id) object forKey: (id) key
@@ -127,9 +127,9 @@ Exemple de code :
 }
 ```
 
-Et la clause `@finally` ne seront pas exécutées, car le runtime mono qui déroule ce frame ne le connaît pas.
+Et la `@finally` clause ne sera pas exécutée, car le runtime mono qui déroule ce frame ne le connaît pas.
 
-Une variation de cela consiste à lever une exception managée dans le code managé, puis à effectuer un déroulement à travers des frames natifs pour obtenir la première clause de `catch` managée :
+Une variation de cela consiste à lever une exception managée dans le code managé, puis à effectuer un déroulement à travers des frames natifs pour obtenir la première clause managée `catch` :
 
 ```csharp
 class AppDelegate : UIApplicationDelegate {
@@ -148,7 +148,7 @@ class AppDelegate : UIApplicationDelegate {
 }
 ```
 
-La méthode de `UIApplication:Main` managée appellera la méthode Native `UIApplicationMain`, puis iOS fera beaucoup d’exécution du code natif avant d’appeler la méthode managée `AppDelegate:FinishedLaunching`, avec un grand nombre de frames natifs sur la pile lorsque l’exception managée est levée. :
+La méthode managée `UIApplication:Main` appellera la `UIApplicationMain` méthode native, puis iOS fera beaucoup d’exécution du code natif avant d’appeler la méthode managée `AppDelegate:FinishedLaunching` , avec un grand nombre de frames natifs sur la pile lorsque l’exception managée est levée :
 
 ```
  0: TestApp                 ExceptionMarshaling.IOS.AppDelegate:FinishedLaunching (UIKit.UIApplication,Foundation.NSDictionary)
@@ -184,15 +184,15 @@ La méthode de `UIApplication:Main` managée appellera la méthode Native `UIApp
 30: TestApp                 ExceptionMarshaling.IOS.Application:Main (string[])
 ```
 
-Les trames 0-1 et 27-30 sont gérées, alors que toutes les entre elles sont natives. Si mono se déroule à travers ces frames, aucune clause objective-C `@catch` ou `@finally` ne sera exécutée.
+Les trames 0-1 et 27-30 sont gérées, alors que toutes les entre elles sont natives. Si mono se déroule à travers ces frames, aucune clause objective-C ou n’est `@catch` `@finally` exécutée.
 
 ### <a name="scenario-2---not-able-to-catch-objective-c-exceptions"></a>Scénario 2-ne peut pas intercepter les exceptions objective-C
 
-Dans le scénario suivant, il n’est _pas_ possible d’intercepter des exceptions objective-c à l’aide de gestionnaires de `catch` managés, car l’exception objective-c a été gérée d’une autre façon :
+Dans le scénario suivant, il n’est _pas_ possible d’intercepter les exceptions objective-c à l’aide de gestionnaires managés `catch` , car l’exception objective-c a été gérée d’une autre façon :
 
 1. Une exception objective-C est levée.
-2. Le runtime objective-C parcourt la pile (mais ne la déroulera pas), en recherchant un gestionnaire de `@catch` natif qui peut gérer l’exception.
-3. Le runtime objective-C recherche un gestionnaire de `@catch`, déroule la pile et démarre l’exécution du gestionnaire de `@catch`.
+2. Le runtime objective-C parcourt la pile (mais ne la déroulera pas), en recherchant un `@catch` gestionnaire natif qui peut gérer l’exception.
+3. Le runtime objective-C trouve un `@catch` Gestionnaire, déroule la pile et démarre l’exécution du `@catch` Gestionnaire.
 
 Ce scénario se trouve généralement dans les applications Xamarin. iOS, car sur le thread principal, il y a généralement un code similaire à celui-ci :
 
@@ -213,7 +213,7 @@ void UIApplicationMain ()
 
 Cela signifie que sur le thread principal, il n’y a jamais vraiment d’exception objective-C non gérée. par conséquent, notre rappel qui convertit les exceptions objective-C en exceptions managées n’est jamais appelé.
 
-Cela est également assez courant lors du débogage d’applications Xamarin. Mac sur une version Mac OS antérieure à celle prise en charge par Xamarin. Mac, car l’inspection de la plupart des objets d’interface utilisateur dans le débogueur essaiera d’extraire les propriétés qui correspondent aux sélecteurs qui n’existent pas sur la plateforme en cours d’exécution ( étant donné que Xamarin. Mac prend en charge une version Mac OS supérieure). L’appel de tels sélecteurs lèvera une `NSInvalidArgumentException` (« sélecteur non reconnu envoyé à... »), ce qui finit par provoquer le blocage du processus.
+Cela est également assez courant lors du débogage d’applications Xamarin. Mac sur une version Mac OS antérieure à celle prise en charge par Xamarin. Mac, car l’inspection de la plupart des objets d’interface utilisateur dans le débogueur tente d’extraire des propriétés qui correspondent à des sélecteurs qui n’existent pas sur la plateforme en cours d’exécution (car Xamarin. L’appel de tels sélecteurs lèvera une `NSInvalidArgumentException` (« sélecteur non reconnu envoyé à... »), ce qui finit par provoquer le blocage du processus.
 
 Pour résumer, le fait d’avoir le runtime objective-C ou les frames de déroulement d’exécution mono qu’ils ne sont pas programmés pour gérer peut entraîner des comportements non définis, tels que des incidents, des fuites de mémoire et d’autres types de comportements imprévisibles (mis).
 
@@ -257,30 +257,30 @@ L’interception des exceptions sur la limite Native managée n’est pas sans c
 
 La section [indicateurs au moment](#build_time_flags) de la génération explique comment activer l’interception lorsqu’elle n’est pas activée par défaut.
 
-## <a name="events"></a>événements
+## <a name="events"></a>Événements
 
-Deux nouveaux événements sont déclenchés une fois qu’une exception est interceptée : `Runtime.MarshalManagedException` et `Runtime.MarshalObjectiveCException`.
+Deux nouveaux événements sont déclenchés une fois qu’une exception est interceptée : `Runtime.MarshalManagedException` et `Runtime.MarshalObjectiveCException` .
 
-Un objet `EventArgs` qui contient l’exception d’origine qui a été levée (la propriété `Exception`) est passé aux deux événements, et une propriété `ExceptionMode` pour définir la manière dont l’exception doit être marshalée.
+Les deux événements sont passés `EventArgs` à un objet qui contient l’exception d’origine qui a été levée (la `Exception` propriété) et une `ExceptionMode` propriété pour définir la manière dont l’exception doit être marshalée.
 
-La propriété `ExceptionMode` peut être modifiée dans le gestionnaire d’événements pour modifier le comportement en fonction du traitement personnalisé effectué dans le gestionnaire. Un exemple serait d’abandonner le processus si une certaine exception se produit.
+La `ExceptionMode` propriété peut être modifiée dans le gestionnaire d’événements pour modifier le comportement en fonction de tout traitement personnalisé effectué dans le gestionnaire. Un exemple serait d’abandonner le processus si une certaine exception se produit.
 
-La modification de la propriété `ExceptionMode` s’applique à l’événement unique, mais elle n’affecte pas les exceptions interceptées à l’avenir.
+La modification de la `ExceptionMode` propriété s’applique à l’événement unique, mais elle n’affecte pas les exceptions interceptées à l’avenir.
 
 Les modes suivants sont disponibles :
 
-- `Default`: la valeur par défaut varie selon la plateforme. Elle est `ThrowObjectiveCException` si le GC est en mode coopératif (Watchos) et `UnwindNativeCode` dans le cas contraire (iOS/Watchos/macOS). La valeur par défaut peut changer à l’avenir.
-- `UnwindNativeCode`: il s’agit du comportement précédent (non défini). Cette option n’est pas disponible lors de l’utilisation du GC en mode coopératif (qui est la seule option sur Watchos. il ne s’agit donc pas d’une option valide sur Watchos), mais il s’agit de l’option par défaut pour toutes les autres plateformes.
+- `Default`: La valeur par défaut varie selon la plateforme. C’est `ThrowObjectiveCException` le cas si le GC est en mode coopératif (Watchos) et dans le `UnwindNativeCode` cas contraire (iOS/Watchos/MacOS). La valeur par défaut peut changer à l’avenir.
+- `UnwindNativeCode`: Il s’agit du comportement précédent (non défini). Cette option n’est pas disponible lors de l’utilisation du GC en mode coopératif (qui est la seule option sur Watchos. il ne s’agit donc pas d’une option valide sur Watchos), mais il s’agit de l’option par défaut pour toutes les autres plateformes.
 - `ThrowObjectiveCException`: Convertissez l’exception managée en une exception objective-C et levez l’exception objective-C. Il s’agit de la valeur par défaut sur Watchos.
-- `Abort`: abandonner le processus.
-- `Disable`: désactive l’interception des exceptions. il n’est donc pas judicieux de définir cette valeur dans le gestionnaire d’événements, mais une fois que l’événement est déclenché, il est trop tard pour le désactiver. Dans tous les cas, s’il est défini, il se comporte comme `UnwindNativeCode`.
+- `Abort`: Abandonner le processus.
+- `Disable`: Désactive l’interception des exceptions. il n’est donc pas judicieux de définir cette valeur dans le gestionnaire d’événements, mais une fois que l’événement est déclenché, il est trop tard pour le désactiver. Dans tous les cas, s’il est défini, il se comporte comme `UnwindNativeCode` .
 
 Pour le marshaling des exceptions objective-C vers du code managé, les modes suivants sont disponibles :
 
-- `Default`: la valeur par défaut varie selon la plateforme. Elle est `ThrowManagedException` si le GC est en mode coopératif (Watchos) et `UnwindManagedCode` dans le cas contraire (iOS/tvOS/macOS). La valeur par défaut peut changer à l’avenir.
-- `UnwindManagedCode`: il s’agit du comportement précédent (non défini). Cela n’est pas possible lors de l’utilisation du GC en mode coopératif (qui est le seul mode GC valide sur Watchos ; il ne s’agit donc pas d’une option valide sur Watchos), mais c’est la valeur par défaut pour toutes les autres plateformes.
-- `ThrowManagedException`: Convertissez l’exception objective-C en une exception managée et levez l’exception managée. Il s’agit de la valeur par défaut sur Watchos.
-- `Abort`: abandonner le processus.
+- `Default`: La valeur par défaut varie selon la plateforme. C’est `ThrowManagedException` le cas si le GC est en mode coopératif (Watchos) et dans le `UnwindManagedCode` cas contraire (iOS/TvOS/MacOS). La valeur par défaut peut changer à l’avenir.
+- `UnwindManagedCode`: Il s’agit du comportement précédent (non défini). Cela n’est pas possible lors de l’utilisation du GC en mode coopératif (qui est le seul mode GC valide sur Watchos ; il ne s’agit donc pas d’une option valide sur Watchos), mais c’est la valeur par défaut pour toutes les autres plateformes.
+- `ThrowManagedException`: Convertit l’exception objective-C en une exception managée et lève l’exception managée. Il s’agit de la valeur par défaut sur Watchos.
+- `Abort`: Abandonner le processus.
 - `Disable`:D isables l’interception des exceptions, il n’est pas judicieux de définir cette valeur dans le gestionnaire d’événements, mais une fois que l’événement est déclenché, il est trop tard pour le désactiver. Dans tous les cas, s’il est défini, le processus est abandonné.
 
 Ainsi, pour voir chaque fois qu’une exception est marshalée, vous pouvez effectuer cette opération :
@@ -301,7 +301,7 @@ Runtime.MarshalObjectiveCException += (object sender, MarshalObjectiveCException
 };
 ```
 
-<a name="build_time_flags" />
+<a name="build_time_flags"></a>
 
 ## <a name="build-time-flags"></a>Indicateurs au moment de la génération
 
@@ -321,16 +321,16 @@ Il est possible de passer les options suivantes à **mTouch** (pour les applicat
   - `abort`
   - `disable`
 
-À l’exception de `disable`, ces valeurs sont identiques aux valeurs de `ExceptionMode` transmises aux événements `MarshalManagedException` et `MarshalObjectiveCException`.
+À l’exception de `disable` , ces valeurs sont identiques aux `ExceptionMode` valeurs transmises aux `MarshalManagedException` `MarshalObjectiveCException` événements et.
 
-L’option `disable` désactivera _principalement_ l’interception, sauf que nous intercepterons toujours les exceptions quand elles n’ajouteront pas de surcharge d’exécution. Les événements de marshaling sont toujours déclenchés pour ces exceptions, avec le mode par défaut étant le mode par défaut pour la plateforme en cours d’exécution.
+L' `disable` option désactivera _principalement_ l’interception, sauf que nous intercepterons toujours les exceptions quand elles n’ajouteront pas de surcharge d’exécution. Les événements de marshaling sont toujours déclenchés pour ces exceptions, avec le mode par défaut étant le mode par défaut pour la plateforme en cours d’exécution.
 
-## <a name="limitations"></a>Limitations
+## <a name="limitations"></a>Limites
 
-Nous interceptons uniquement les appels P/Invoke à la famille de fonctions `objc_msgSend` lors de la tentative d’interception des exceptions objective-C. Cela signifie qu’un appel P/Invoke à une autre fonction C, qui lève ensuite des exceptions objective-C, s’exécutera toujours dans le comportement ancien et non défini (cela peut être amélioré à l’avenir).
+Nous interceptons uniquement les appels P/Invoke à la `objc_msgSend` famille de fonctions quand vous tentez d’intercepter des exceptions objective-C. Cela signifie qu’un appel P/Invoke à une autre fonction C, qui lève ensuite des exceptions objective-C, s’exécutera toujours dans le comportement ancien et non défini (cela peut être amélioré à l’avenir).
 
 [2]: https://developer.apple.com/reference/foundation/1409609-nssetuncaughtexceptionhandler?language=objc
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Marshaling d’exceptions (exemple)](https://github.com/xamarin/mac-ios-samples/tree/master/ExceptionMarshaling)

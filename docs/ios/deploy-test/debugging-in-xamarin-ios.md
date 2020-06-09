@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 48aba9ead925d3404146795eb9a3e0588d7b600d
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 141d268e7a5670f9ba8002ae9edda828538a01a4
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76724694"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571790"
 ---
 # <a name="debugging-xamarinios-apps"></a>Débogage des applications Xamarin.iOS
 
@@ -174,7 +174,7 @@ Cela signifie qu’il est presque impossible de définir des points d’arrêt d
 
 Si une erreur se produit durant la configuration du débogueur, vous pouvez activer les diagnostics détaillés en ajoutant "-v -v -v" aux arguments mtouch supplémentaires dans les options du projet. Cela permet d’afficher des informations détaillées relatives à l’erreur sur la console de l’appareil.
 
- <a name="WiFi_Debugging" />
+ <a name="WiFi_Debugging"></a>
 
 ## <a name="wireless-debugging"></a>Débogage sans fil
 
@@ -182,7 +182,7 @@ Par défaut, dans Xamarin.iOS, votre application est déboguée sur les appareil
 
 Pour plus d’informations sur le déploiement et le débogage sans fil, consultez le guide [Déploiement sans fil](~/ios/deploy-test/wireless-deployment.md).
 
-<a name="Technical_Details" />
+<a name="Technical_Details"></a>
 
 ## <a name="technical-details"></a>Détails techniques
 
@@ -192,7 +192,7 @@ Au démarrage, l’application à déboguer contacte le débogueur, qui démarre
 
 Ce débogueur Soft nécessite un schéma de débogage coopératif quand il s’exécute sur l’appareil. Cela signifie que vos builds binaires au moment du débogage sont plus volumineuses, car le code est instrumenté pour contenir du code supplémentaire à chaque point de séquence afin de prendre en charge le débogage.
 
-<a name="Accessing_the_Console" />
+<a name="Accessing_the_Console"></a>
 
 ## <a name="accessing-the-console"></a>Accès à la console
 
@@ -204,7 +204,7 @@ Pour les utilisateurs de Visual Studio, certains journaux sont disponibles dans 
 
 -----
 
-<a name="Debugging_Mono's_Class_Libraries" />
+<a name="Debugging_Mono's_Class_Libraries"></a>
 
 ## <a name="debugging-monos-class-libraries"></a>Débogage des bibliothèques de classes de Mono
 

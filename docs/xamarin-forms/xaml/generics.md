@@ -1,22 +1,8 @@
 ---
-title: Génériques en Xamarin.Forms XAML
-description: Xamarin.FormsXAML assure la prise en charge de l’utilisation des types CLR génériques en spécifiant les contraintes génériques en tant qu’arguments de type.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 814e622a822e2eb1cf07f71bfb1da1d6eac5631f
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138110"
+title : "génériques en Xamarin.Forms XAML" Description : " Xamarin.Forms XAML assure la prise en charge de l’utilisation des types CLR génériques en spécifiant les contraintes génériques comme arguments de type."
+ms. Prod : xamarin ms. AssetID : 97B73048-4F90-41AD-AB48-8EB804C4998B ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 04/28/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="generics-in-xamarinforms-xaml"></a>Génériques en Xamarin.Forms XAML
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-generics/)
@@ -31,7 +17,7 @@ Les arguments de type sont spécifiés sous la forme d’une chaîne et sont en 
 Plusieurs arguments de type peuvent être spécifiés à l’aide d’un délimiteur de virgule. En outre, si une contrainte générique utilise des types génériques, les arguments de type de contrainte imbriquée doivent être contenus entre parenthèses.
 
 > [!NOTE]
-> L' `x:Type` extension de balisage fournit une référence de type CLR pour un type générique et a une fonction similaire à l' `typeof` opérateur en C#. Pour plus d’informations, consultez [x :type, extension de balisage](~/xamarin-forms/xaml/markup-extensions/consuming.md#type).
+> L' `x:Type` extension de balisage fournit une référence de type CLR pour un type générique et a une fonction similaire à l' `typeof` opérateur en C#. Pour plus d’informations, consultez [x :type, extension de balisage](~/xamarin-forms/xaml/markup-extensions/consuming.md#xtype-markup-extension).
 
 ## <a name="single-primitive-type-argument"></a>Argument de type primitif unique
 
@@ -208,11 +194,11 @@ Plusieurs arguments de type peuvent être spécifiés en tant qu’arguments de 
 </ContentPage    
 ```
 
-Dans cet exemple, `GenericsDemo.Models` est défini en tant qu' `models` espace de noms XAML et `System.Collections.Generic` est défini en tant qu' `scg` espace de noms XAML. La `CollectionView.ItemsSource` propriété est définie sur un `List<T>` qui est instancié avec une `KeyValuePair<TKey, TValue>` contrainte, avec les arguments de type de contrainte interne `string` et `Monkey` . La `List<KeyValuePair<string,Monkey>>` collection est initialisée avec plusieurs `KeyValuePair` éléments, en utilisant le constructeur non défini par défaut `KeyValuePair` , et un [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) qui définit l’apparence de chaque `Monkey` objet est défini comme le `ItemTemplate` du de [`CollectionView`](xref:Xamarin.Forms.CollectionView) . Pour plus d’informations sur le passage d’arguments à un constructeur non défini par défaut, consultez [passage des arguments de constructeur](~/xamarin-forms/xaml/passing-arguments.md#constructor_arguments).
+Dans cet exemple, `GenericsDemo.Models` est défini en tant qu' `models` espace de noms XAML et `System.Collections.Generic` est défini en tant qu' `scg` espace de noms XAML. La `CollectionView.ItemsSource` propriété est définie sur un `List<T>` qui est instancié avec une `KeyValuePair<TKey, TValue>` contrainte, avec les arguments de type de contrainte interne `string` et `Monkey` . La `List<KeyValuePair<string,Monkey>>` collection est initialisée avec plusieurs `KeyValuePair` éléments, en utilisant le constructeur non défini par défaut `KeyValuePair` , et un [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) qui définit l’apparence de chaque `Monkey` objet est défini comme le `ItemTemplate` du de [`CollectionView`](xref:Xamarin.Forms.CollectionView) . Pour plus d’informations sur le passage d’arguments à un constructeur non défini par défaut, consultez [passage des arguments de constructeur](~/xamarin-forms/xaml/passing-arguments.md#passing-constructor-arguments).
 
 ## <a name="related-links"></a>Liens connexes
 
 - [Génériques en XAML (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-generics/)
 - [Primitives de langage XAML 2009](/dotnet/desktop-wpf/xaml-services/types-for-primitives#xaml-2009-language-primitives)
-- [x :Type (extension de balisage)](~/xamarin-forms/xaml/markup-extensions/consuming.md#type)
-- [Passer des arguments de constructeur](~/xamarin-forms/xaml/passing-arguments.md#constructor_arguments)
+- [x :Type (extension de balisage)](~/xamarin-forms/xaml/markup-extensions/consuming.md#xtype-markup-extension)
+- [Passer des arguments de constructeur](~/xamarin-forms/xaml/passing-arguments.md#passing-constructor-arguments)

@@ -6,20 +6,20 @@ ms.assetid: 442FC40A-84DD-A218-0D15-EAD86594B6D7
 author: davidortinau
 ms.author: daortin
 ms.date: 01/28/2016
-ms.openlocfilehash: 551e9b1fc6298ddc2cf64e2e9ef60d90f6c1abac
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.openlocfilehash: 2f7d09405f90ac9fc4c3ce80181baafa447df637
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "78292134"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571236"
 ---
 # <a name="building-cross-platform-applications"></a>Création d’applications multiplateformes
 
 Il existe deux options pour partager du code entre des applications mobiles multiplateformes : les projets de ressources partagées et les bibliothèques de classes portables. Ces options sont [décrites ici](~/cross-platform/app-fundamentals/code-sharing.md). des informations supplémentaires sur les [bibliothèques de classes portables](~/cross-platform/app-fundamentals/pcl.md) et les [projets partagés](~/cross-platform/app-fundamentals/shared-projects.md) sont également disponibles.
 
-<a name="Sections" />
+<a name="Sections"></a>
 
- [Vue d'ensemble](~/cross-platform/app-fundamentals/building-cross-platform-applications/overview.md)
+ [Vue d’ensemble](~/cross-platform/app-fundamentals/building-cross-platform-applications/overview.md)
 
  [Partie 1 : comprendre la plate-forme mobile Xamarin](~/cross-platform/app-fundamentals/building-cross-platform-applications/understanding-the-xamarin-mobile-platform.md)
 
@@ -31,22 +31,22 @@ Il existe deux options pour partager du code entre des applications mobiles mult
 
  [Partie 5 : stratégies de partage de code pratiques](~/cross-platform/app-fundamentals/building-cross-platform-applications/practical-code-sharing-strategies.md)
 
- [Partie 6 : Test et approbations de l’App Store](~/cross-platform/app-fundamentals/building-cross-platform-applications/testing-and-app-store-approvals.md)
+ [Partie 6-approbations de test et d’App Store](~/cross-platform/app-fundamentals/building-cross-platform-applications/testing-and-app-store-approvals.md)
 
- <a name="Cross-Platform_Mobile_Application_Case_Studies" />
+ <a name="Cross-Platform_Mobile_Application_Case_Studies"></a>
 
 ## <a name="case-studies"></a>Études de cas
 
 Les principes énoncés dans ce document sont mis en pratique dans l’exemple d’application *Tasky*, ainsi que des [Applications prédéfinies](https://xamarin.com/prebuilt) telles que [Xamarin CRM](https://xamarin.com/prebuilt/#xamarincrm).
 
- <a name="Tasky" />
+ <a name="Tasky"></a>
 
 ### <a name="tasky"></a>Tasky
 
 Tasky est une application de liste de tâches simple pour iOS, Android et Windows Phone.
 Il montre les principes fondamentaux de la création d’une application multiplateforme avec Xamarin et utilise une base de données SQLite locale.
 
- [![liste tasky](images/iphone-list-sml.png)](images/iphone-list.png#lightbox) [![liste](images/iphone-list-sml.png)](images/iphone-list.png#lightbox) des tâches
+ [ ![ liste](images/iphone-list-sml.png)](images/iphone-list.png#lightbox) des tâches de [ ![ liste de tâches](images/iphone-list-sml.png)](images/iphone-list.png#lightbox)
 
 Lisez l' [étude de cas Tasky](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md).
 
@@ -65,5 +65,5 @@ Enfin, il aborde brièvement les tests et fournit des références à une étude
 - [Options de partage de code](~/cross-platform/app-fundamentals/code-sharing.md)
 - [Étude de cas : Tasky](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)
 - [Application d’exemple Tasky (GitHub)](https://docs.microsoft.com/samples/xamarin/mobile-samples/taskyportable/)
-- [Développement d’applications mobiles Xamarin : notions de C# base sur les plateformes et les Xamarin. Forms (Amazon)](https://www.amazon.com/Xamarin-Mobile-Application-Development-Cross-Platform/dp/1484202155/)
-- [Développement mobile avec C# Greg-manilles (O’Reilly)](https://shop.oreilly.com/product/0636920024002.do)
+- [Développement d’applications mobiles Xamarin : notions de base des plateformes C# et Xamarin. Forms multiplateforme (Amazon)](https://www.amazon.com/Xamarin-Mobile-Application-Development-Cross-Platform/dp/1484202155/)
+- [Développement mobile en C# par Greg-manilles (O’Reilly)](https://shop.oreilly.com/product/0636920024002.do)

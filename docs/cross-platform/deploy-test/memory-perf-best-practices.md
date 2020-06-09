@@ -6,18 +6,18 @@ ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
 author: davidortinau
 ms.author: daortin
 ms.date: 03/24/2017
-ms.openlocfilehash: f99b64b67f4f1cabf3a5884fabb1301e5ee39eee
-ms.sourcegitcommit: 06043f6a5628a7326ac6690eb62ead8e4780f4a7
+ms.openlocfilehash: d21394b3c33b3f415cbe45ae13c84cabab1ec30b
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/04/2020
-ms.locfileid: "82738793"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571036"
 ---
 # <a name="cross-platform-performance"></a>Niveau de performance multiplateforme
 
 Le mauvais niveau de performance d’une application se présente de plusieurs façons. L’application semble ne pas répondre, le défilement de l’affichage est ralenti et la durée de vie de la batterie de l’appareil réduite. Toutefois, l’optimisation des performances implique davantage de choses que l’implémentation d’un code efficace. L’expérience utilisateur liée au niveau de performance de l’application doit également être prise en compte. Par exemple, pour contribuer à améliorer l’expérience utilisateur, vous devez vérifier que les opérations s’exécutent sans empêcher l’utilisateur d’effectuer d’autres activités.
 
-<a name="profiler" />
+<a name="profiler"></a>
 
 ## <a name="use-the-profiler"></a>Utiliser le profileur
 
@@ -31,7 +31,7 @@ Les bonnes pratiques suivantes sont recommandées lorsque vous profilez une appl
 - Dans l’idéal, le profilage doit être effectué sur plusieurs types d’appareils. En effet, les performances mesurées sur un appareil ne seront pas forcément les mêmes sur un autre appareil. Cependant, le profilage doit au moins être effectué sur un appareil dont les spécifications anticipées sont les moins élevées.
 - Fermez toutes les autres applications pour être sûr de ne mesurer que l’impact de l’application en cours de profilage, et non celui d’autres applications.
 
-<a name="idisposable" />
+<a name="idisposable"></a>
 
 ## <a name="release-idisposable-resources"></a>Libérer des ressources IDisposable
 
@@ -89,7 +89,7 @@ La classe `StreamReader` implémente `IDisposable`, et le bloc `finally` appelle
 
 Pour plus d’informations, consultez [Interface IDisposable](xref:System.IDisposable).
 
-<a name="events" />
+<a name="events"></a>
 
 ## <a name="unsubscribe-from-events"></a>Se désabonner d’événements
 
@@ -160,14 +160,14 @@ public class Subscriber : IDisposable
 
 Le champ `handler` conserve la référence à la méthode anonyme, et est utilisé pour l’abonnement et le désabonnement aux événements.
 
-<a name="weakreferences" />
+<a name="weakreferences"></a>
 
 ## <a name="use-weak-references-to-prevent-immortal-objects"></a>Utiliser des références faibles pour empêcher les objets immortels
 
 > [!NOTE]
 > Les développeurs iOS doivent consulter la documentation sur [éviter les références circulaires dans iOS](~/ios/deploy-test/performance.md#avoid-strong-circular-references) pour s’assurer que leurs applications utilisent la mémoire de manière efficace.
 
-<a name="lazy" />
+<a name="lazy"></a>
 
 ## <a name="delay-the-cost-of-creating-objects"></a>Retarder le coût de la création d’objets
 
@@ -209,7 +209,7 @@ L’initialisation tardive se produit lors du premier accès à la propriété `
 
 Pour plus d’informations sur l’initialisation tardive, consultez [Initialisation tardive](https://msdn.microsoft.com/library/dd997286(v=vs.110).aspx).
 
-<a name="async" />
+<a name="async"></a>
 
 ## <a name="implement-asynchronous-operations"></a>Implémenter des opérations asynchrones
 
@@ -248,7 +248,7 @@ Les opérations de longue durée doivent également prendre en charge l’annula
 
 Pour plus d’informations, consultez [Présentation de la prise en charge asynchrone](~/cross-platform/platform/async.md).
 
-<a name="sgen" />
+<a name="sgen"></a>
 
 ## <a name="use-the-sgen-garbage-collector"></a>Utiliser le récupérateur de mémoire SGen
 
@@ -282,7 +282,7 @@ Pour réduire la pression sur le récupérateur de mémoire, suivez ces instruct
 - Libérez explicitement les ressources telles que les flux de données, les connexions réseau, les grands blocs de mémoire et les fichiers, lorsque ceux-ci ne sont plus nécessaires. Pour plus d’informations, consultez [Libérer des ressources IDisposable](#idisposable).
 - Désinscrivez les gestionnaires d’événements lorsqu’ils ne sont plus nécessaires pour permettre le nettoyage des objets. Pour plus d’informations, consultez [Se désabonner d’événements](#events).
 
-<a name="linker" />
+<a name="linker"></a>
 
 ## <a name="reduce-the-size-of-the-application"></a>Réduire la taille de l’application
 
@@ -335,7 +335,7 @@ Les étapes suivantes peuvent être effectuées pour réduire encore davantage l
 Les applications Android peuvent également être placées dans un APK distinct pour chaque ABI (« architecture »).
 Pour en savoir plus, lisez ce billet de blog : [How To Keep Your Android App Size Down](https://montemagno.com/how-to-keep-your-android-app-size-down/).
 
-<a name="optimizeimages" />
+<a name="optimizeimages"></a>
 
 ## <a name="optimize-image-resources"></a>Optimiser les ressources d’images
 
@@ -343,7 +343,7 @@ Les images font partie des ressources les plus coûteuses qui sont utilisées pa
 
 Quelle que soit la résolution des images, l’affichage de ressources d’images peut augmenter considérablement l’encombrement mémoire de l’application. Par conséquent, elles ne doivent être créées que si elles sont nécessaires, et doivent être libérées dès que l’application n’en a plus besoin.
 
-<a name="activationperiod" />
+<a name="activationperiod"></a>
 
 ## <a name="reduce-the-application-activation-period"></a>Réduire la période d’activation de l’application
 
@@ -353,7 +353,7 @@ Avant d’afficher son interface utilisateur initiale, une application doit four
 
 Pendant la période d’activation, les applications exécutent une logique d’activation, ce qui inclut souvent le chargement et le traitement des ressources. Pour réduire la période d’activation, empaquetez les ressources nécessaires dans l’application, au lieu de les récupérer à distance. Par exemple, dans certains cas, il peut être judicieux de charger des données d’espace réservé stockées localement pendant la période d’activation. Ensuite, une fois que l’interface utilisateur initiale est affichée et que l’utilisateur peut interagir avec l’application, les données d’espace réservé peuvent être remplacées progressivement à partir d’une source distante. En outre, la logique d’activation de l’application doit exécuter uniquement les tâches qui permettent à l’utilisateur de commencer à utiliser l’application. Il peut être utile de différer le chargement des assemblys supplémentaires, car les assemblys sont chargés lors de leur première utilisation.
 
-<a name="webservicecommunication" />
+<a name="webservicecommunication"></a>
 
 ## <a name="reduce-web-service-communication"></a>Réduire la communication du service web
 

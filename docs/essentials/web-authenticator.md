@@ -41,8 +41,8 @@ Android requiert un filtre d’intention pour gérer votre URI de rappel. Pour c
 const string CALLBACK_SCHEME = "myapp";
 
 [Activity(NoHistory = true, LaunchMode = LaunchMode.SingleTop)]
-[IntentFilter(new[] { Intent.ActionView },
-    Categories = new[] { Intent.CategoryDefault, Intent.CategoryBrowsable },
+[IntentFilter(new[] { Android.Content.Intent.ActionView },
+    Categories = new[] { Android.Content.Intent.CategoryDefault, Android.Content.Intent.CategoryBrowsable },
     DataScheme = CALLBACK_SCHEME)]
 public class WebAuthenticationCallbackActivity : Xamarin.Essentials.WebAuthenticatorCallbackActivity
 {

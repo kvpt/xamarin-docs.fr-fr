@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 8d5bf1d7821187924adc58582a5139f81235e6a0
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139098"
+titre : « authentification et autorisation » Description : « ce chapitre explique comment l’application mobile eShopOnContainers effectue l’authentification et l’autorisation sur les microservices en conteneur ».
+ms. Prod : xamarin ms. AssetID : e3f27b4c-f7f5-4839-a48c-30bcb919c59e ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 08/08/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="authentication-and-authorization"></a>Authentification et autorisation
 
 L’authentification est le processus qui consiste à obtenir des informations d’identification, telles que le nom et le mot de passe d’un utilisateur, et à valider ces informations d’identification par rapport à une autorité. Si les informations d’identification sont valides, l’entité qui a envoyé les informations d’identification est considérée comme une identité authentifiée. Une fois qu’une identité a été authentifiée, un processus d’autorisation détermine si cette identité a accès à une ressource donnée.
@@ -40,7 +26,7 @@ OpenID Connect est une couche d’authentification par-dessus le protocole OAuth
 
 La combinaison de OpenID Connect et OAuth 2,0 combine les deux problèmes de sécurité fondamentaux liés à l’authentification et à l’accès à l’API, et IdentityServer 4 est une implémentation de ces protocoles.
 
-Dans les applications qui utilisent la communication directe entre les clients et les microservices, telle que l’application de référence eShopOnContainers, un microservice d’authentification dédié agissant comme un service d’émission de jeton de sécurité (STS) peut être utilisé pour authentifier les utilisateurs, comme illustré dans la figure 9-1. Pour plus d’informations sur la communication directe entre les clients et les microservices, consultez [communication entre le client et les microservices](~/xamarin-forms/enterprise-application-patterns/containerized-microservices.md#communication_between_client_and_microservices).
+Dans les applications qui utilisent la communication directe entre les clients et les microservices, telle que l’application de référence eShopOnContainers, un microservice d’authentification dédié agissant comme un service d’émission de jeton de sécurité (STS) peut être utilisé pour authentifier les utilisateurs, comme illustré dans la figure 9-1. Pour plus d’informations sur la communication directe entre les clients et les microservices, consultez [communication entre le client et les microservices](~/xamarin-forms/enterprise-application-patterns/containerized-microservices.md#communication-between-client-and-microservices).
 
 ![](authentication-and-authorization-images/authentication.png "Authentication by a dedicated authentication microservice")
 
@@ -195,7 +181,7 @@ Cette configuration spécifie les données pour les propriétés suivantes :
 
 - `ClientId`: Un ID unique pour le client.
 - `ClientName`: Le nom complet du client, qui est utilisé pour la journalisation et l’écran de consentement.
-- `AllowedGrantTypes`: Spécifie comment un client souhaite interagir avec IdentityServer. Pour plus d’informations, consultez [configuration du workflow d’authentification](#configuring_the_authentication_flow).
+- `AllowedGrantTypes`: Spécifie comment un client souhaite interagir avec IdentityServer. Pour plus d’informations, consultez [configuration du workflow d’authentification](#configuring-the-authentication-flow).
 - `ClientSecrets`: Spécifie les informations d’identification de la clé secrète client qui sont utilisées lors de la demande de jetons à partir du point de terminaison de jeton.
 - `RedirectUris`: Spécifie les URI autorisés auxquels retourner des jetons ou des codes d’autorisation.
 - `RequireConsent`: Spécifie si un écran de consentement est requis.
@@ -204,8 +190,6 @@ Cette configuration spécifie les données pour les propriétés suivantes :
 - `AllowedCorsOrigins`: Spécifie l’origine du client afin que IdentityServer puisse autoriser les appels Cross-Origin à partir de l’origine.
 - `AllowedScopes`: Spécifie les ressources auxquelles le client a accès. Par défaut, un client n’a accès à aucune ressource.
 - `AllowOfflineAccess`: Spécifie si le client peut demander des jetons d’actualisation.
-
-<a name="configuring_the_authentication_flow" />
 
 #### <a name="configuring-the-authentication-flow"></a>Configuration du workflow d’authentification
 
@@ -326,14 +310,14 @@ Cette méthode analyse la réponse d’authentification contenue dans l’URI de
 
 Si le point de terminaison de jeton reçoit un code d’autorisation valide et un vérificateur de secret PKCE, il répond avec un jeton d’accès, un jeton d’identité et un jeton d’actualisation. Le jeton d’accès (qui autorise l’accès aux ressources de l’API) et le jeton d’identité sont ensuite stockés en tant que paramètres d’application, et la navigation entre les pages est effectuée. Par conséquent, l’effet global dans l’application mobile eShopOnContainers est le suivant : à condition que les utilisateurs soient en mesure de s’authentifier avec IdentityServer, ils accèdent à la `MainView` page, qui est un [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) qui affiche l' `CatalogView` comme onglet sélectionné.
 
-Pour plus d’informations sur la navigation entre les pages, consultez [navigation](~/xamarin-forms/enterprise-application-patterns/navigation.md). Pour plus d’informations sur la façon dont la [`WebView`](xref:Xamarin.Forms.WebView) navigation provoque l’exécution d’une méthode de modèle de vue, consultez appel de la [navigation à l’aide de comportements](~/xamarin-forms/enterprise-application-patterns/navigation.md#invoking_navigation_using_behaviors). Pour plus d’informations sur les paramètres d’application, consultez Gestion de la [configuration](~/xamarin-forms/enterprise-application-patterns/configuration-management.md).
+Pour plus d’informations sur la navigation entre les pages, consultez [navigation](~/xamarin-forms/enterprise-application-patterns/navigation.md). Pour plus d’informations sur la façon dont la [`WebView`](xref:Xamarin.Forms.WebView) navigation provoque l’exécution d’une méthode de modèle de vue, consultez appel de la [navigation à l’aide de comportements](~/xamarin-forms/enterprise-application-patterns/navigation.md#invoking-navigation-using-behaviors). Pour plus d’informations sur les paramètres d’application, consultez Gestion de la [configuration](~/xamarin-forms/enterprise-application-patterns/configuration-management.md).
 
 > [!NOTE]
 > Le eShopOnContainers autorise également une connexion fictive lorsque l’application est configurée pour utiliser des services fictifs dans le `SettingsView` . Dans ce mode, l’application ne communique pas avec IdentityServer, ce qui permet à l’utilisateur de se connecter à l’aide des informations d’identification.
 
 #### <a name="signing-out"></a>Déconnexion
 
-Quand l’utilisateur appuie sur le bouton **déconnexion** dans le `ProfileView` , le `LogoutCommand` de la `ProfileViewModel` classe est exécuté, ce qui à son tour exécute la `LogoutAsync` méthode. Cette méthode effectue la navigation entre les pages sur la `LoginView` page, en passant une `LogoutParameter` instance de définie à `true` comme paramètre. Pour plus d’informations sur le passage de paramètres pendant la navigation entre les pages, consultez [transmission de paramètres lors](~/xamarin-forms/enterprise-application-patterns/navigation.md#passing_parameters_during_navigation)de la navigation.
+Quand l’utilisateur appuie sur le bouton **déconnexion** dans le `ProfileView` , le `LogoutCommand` de la `ProfileViewModel` classe est exécuté, ce qui à son tour exécute la `LogoutAsync` méthode. Cette méthode effectue la navigation entre les pages sur la `LoginView` page, en passant une `LogoutParameter` instance de définie à `true` comme paramètre. Pour plus d’informations sur le passage de paramètres pendant la navigation entre les pages, consultez [transmission de paramètres lors](~/xamarin-forms/enterprise-application-patterns/navigation.md#passing-parameters-during-navigation)de la navigation.
 
 Quand une vue est créée et naviguée vers, la `InitializeAsync` méthode du modèle de vue associé à la vue est exécutée, ce qui exécute ensuite la `Logout` méthode de la `LoginViewModel` classe, qui est illustrée dans l’exemple de code suivant :
 
@@ -385,12 +369,10 @@ private async Task NavigateAsync(string url)
 
 Cette méthode efface à la fois le jeton d’identité et le jeton d’accès des paramètres de l’application, et affecte `IsLogin` à la propriété la valeur `false` , ce qui provoque l' [`WebView`](xref:Xamarin.Forms.WebView) invisibilité du sur la `LoginView` page. Enfin, la `LoginUrl` propriété est définie sur l’URI du point de [terminaison d’autorisation](https://identityserver4.readthedocs.io/en/latest/endpoints/authorize.html)de IdentityServer, avec les paramètres requis, en préparation pour la prochaine fois que l’utilisateur initie une connexion.
 
-Pour plus d’informations sur la navigation entre les pages, consultez [navigation](~/xamarin-forms/enterprise-application-patterns/navigation.md). Pour plus d’informations sur la façon dont la [`WebView`](xref:Xamarin.Forms.WebView) navigation provoque l’exécution d’une méthode de modèle de vue, consultez appel de la [navigation à l’aide de comportements](~/xamarin-forms/enterprise-application-patterns/navigation.md#invoking_navigation_using_behaviors). Pour plus d’informations sur les paramètres d’application, consultez Gestion de la [configuration](~/xamarin-forms/enterprise-application-patterns/configuration-management.md).
+Pour plus d’informations sur la navigation entre les pages, consultez [navigation](~/xamarin-forms/enterprise-application-patterns/navigation.md). Pour plus d’informations sur la façon dont la [`WebView`](xref:Xamarin.Forms.WebView) navigation provoque l’exécution d’une méthode de modèle de vue, consultez appel de la [navigation à l’aide de comportements](~/xamarin-forms/enterprise-application-patterns/navigation.md#invoking-navigation-using-behaviors). Pour plus d’informations sur les paramètres d’application, consultez Gestion de la [configuration](~/xamarin-forms/enterprise-application-patterns/configuration-management.md).
 
 > [!NOTE]
 > Le eShopOnContainers autorise également une déconnexion factice lorsque l’application est configurée pour utiliser des services fictifs dans le SettingsView. Dans ce mode, l’application ne communique pas avec IdentityServer et efface à la place tous les jetons stockés des paramètres de l’application.
-
-<a name="authorization" />
 
 ## <a name="authorization"></a>Autorisation
 

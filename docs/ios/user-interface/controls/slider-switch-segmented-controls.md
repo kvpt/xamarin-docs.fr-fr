@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 763165f1e09f847745b820987f8dbbae8f834fd7
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: f7b27c9f1010be313810b4b0f289ef792efd47a3
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021951"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84568644"
 ---
 # <a name="sliders-switches-and-segmented-controls-in-xamarinios"></a>Curseurs, commutateurs et contrôles segmentés dans Xamarin. iOS
 
-<a name="Sliders" />
+<a name="Sliders"></a>
 
 ## <a name="sliders"></a>Curseurs
 
@@ -28,7 +28,7 @@ La capture d’écran suivante montre les propriétés qui sont modifiables dans
 
  [![](slider-switch-segmented-controls-images/image26a.png "Slider Properties")](slider-switch-segmented-controls-images/image25a.png#lightbox)
 
-Vous pouvez définir ces valeurs dans le code comme indiqué ci-dessous, y compris l’installation d’un gestionnaire pour afficher la valeur actuellement sélectionnée dans un contrôle `UILabel` :
+Vous pouvez définir ces valeurs dans le code comme indiqué ci-dessous, y compris l’installation d’un gestionnaire pour afficher la valeur actuellement sélectionnée dans un `UILabel` contrôle :
 
 ```csharp
 slider1.MinValue = -1;
@@ -50,17 +50,17 @@ Le curseur personnalisé ressemble à ceci :
  [![](slider-switch-segmented-controls-images/image27a.png "Custom Slider")](slider-switch-segmented-controls-images/image28a.png#lightbox)
 
 > [!IMPORTANT]
-> Il existe actuellement un [bogue](https://stackoverflow.com/a/19496179) qui empêche le rendu de l' `ThumbTint` au moment de l’exécution comme prévu. Vous pouvez ajouter la ligne de code suivante **avant** le code ci-dessus comme solution de contournement. [[Source](https://stackoverflow.com/a/21396794)] :
+> Il existe actuellement un [bogue](https://stackoverflow.com/a/19496179) qui provoque l' `ThumbTint` imprécision du rendu au moment de l’exécution comme prévu. Vous pouvez ajouter la ligne de code suivante **avant** le code ci-dessus comme solution de contournement. [[Source](https://stackoverflow.com/a/21396794)] :
 >
 > `slider1.SetThumbImage(UIImage.FromBundle("thumb.png"),UIControlState.Normal);`
 > 
 > Vous pouvez utiliser n’importe quelle image, telle qu’elle sera remplacée, mais assurez-vous qu’elle est placée _dans_ le répertoire Resources et qu’elle est appelée dans votre code.
 
-<a name="Switch" />
+<a name="Switch"></a>
 
 ## <a name="switch"></a>Basculer
 
-iOS utilise le `UISwitch` comme entrée booléenne qui peut être représentée par un bouton radio sur d’autres plateformes. L’utilisateur peut manipuler le contrôle en déplaçant le *curseur* entre les positions **on/off** .
+iOS utilise `UISwitch` comme entrée booléenne qui peut être représentée par un bouton radio sur d’autres plateformes. L’utilisateur peut manipuler le contrôle en déplaçant le *curseur* entre les positions **on/off** .
 
  [![](slider-switch-segmented-controls-images/image28a.png "Switch")](slider-switch-segmented-controls-images/image28a.png#lightbox)
 
@@ -68,13 +68,13 @@ L’apparence du commutateur peut être personnalisée dans le **panneau Propri�
 
  [![](slider-switch-segmented-controls-images/image29a.png "Switch Properties")](slider-switch-segmented-controls-images/image29a.png#lightbox)
 
-Les propriétés du commutateur peuvent également être définies dans le code. par exemple, le code ci-dessous affiche un commutateur avec la valeur par défaut `On`:
+Les propriétés du commutateur peuvent également être définies dans le code. par exemple, le code ci-dessous affiche un commutateur avec la valeur par défaut `On` :
 
 ```csharp
 switch1.On = true;
 ```
 
- <a name="Segmented_Controls" />
+ <a name="Segmented_Controls"></a>
 
 ## <a name="segmented-controls"></a>Contrôles segmentés
 
@@ -92,7 +92,7 @@ Cela permet à l’Panneau Propriétés d’être utilisé pour contrôler plus 
 
 Il convient de noter que le style de contrôle segmenté est déconseillé dans iOS7 et, par conséquent, l’ajustement des options pour cela dans une application iOS7 n’aura aucun effet.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Contrôles (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/controls)
 - [Contrôleur d’alerte](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/alertcontroller)

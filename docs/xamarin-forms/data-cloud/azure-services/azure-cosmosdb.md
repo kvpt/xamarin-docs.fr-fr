@@ -1,23 +1,8 @@
 ---
-title: Utiliser une base de données de documents Azure Cosmos DB dansXamarin.Forms
-description: Cet article explique comment utiliser la bibliothèque cliente Azure Cosmos DB .NET Standard pour intégrer une base de données de documents Azure Cosmos DB à une Xamarin.Forms application.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-ms.custom: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 47b35d394eab339a8e9a1f81880e6de4233f29b6
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84127083"
+titre : « utiliser une base de données de documents Azure Cosmos DB dans Xamarin.Forms » Description : cet article explique comment utiliser la Azure Cosmos DB .NET standard bibliothèque cliente pour intégrer une base de données de documents Azure Cosmos dB dans une Xamarin.Forms application.»
+ms. Prod : xamarin ms. AssetID : 7C0605D9-9B7F-4002-9B60-2B5DAA3EA30C ms. Technology : xamarin-Forms ms. Custom : xamu-Video Author : davidbritch ms. Author : dabritch ms. Date : 06/16/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="consume-an-azure-cosmos-db-document-database-in-xamarinforms"></a>Utiliser une base de données de documents Azure Cosmos DB dansXamarin.Forms
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-tododocumentdb)
@@ -43,7 +28,7 @@ Pour plus d’informations sur Azure Cosmos DB, consultez la [Documentation Azur
 > [!NOTE]
 > Si vous n’avez pas [d’abonnement Azure](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing), créez un [compte gratuit](https://aka.ms/azfree-docs-mobileapps) avant de commencer.
 
-## <a name="setup"></a>Installation
+## <a name="setup"></a>Programme d’installation
 
 Le processus d’intégration d’une base de données de documents Azure Cosmos DB dans une Xamarin.Forms application est le suivant :
 
@@ -120,8 +105,6 @@ La `CreateDocumentCollectionIfNotExistsAsync` méthode requiert deux arguments o
 > [!IMPORTANT]
 > Notez que la `CreateDocumentCollectionIfNotExistsAsync` méthode crée une collection avec un débit réservé, ce qui a des répercussions sur la tarification.
 
-<a name="document_query" />
-
 ### <a name="retrieving-document-collection-documents"></a>Récupération de documents de collection de documents
 
 Le contenu d’une collection de documents peut être récupéré en créant et en exécutant une requête de document. Une requête de document est créée à l’aide de la `DocumentClient.CreateDocumentQuery` méthode :
@@ -160,8 +143,6 @@ var query = client.CreateDocumentQuery<TodoItem>(collectionLink)
 
 Cette requête récupère tous les documents de la collection dont la `Done` propriété est égale à `false` .
 
-<a name="inserting_document" />
-
 ### <a name="inserting-a-document-into-a-document-collection"></a>Insertion d’un document dans une collection de documents
 
 Les documents sont du contenu JSON défini par l’utilisateur et peuvent être insérés dans une collection de documents à l’aide de la `DocumentClient.CreateDocumentAsync` méthode :
@@ -191,8 +172,6 @@ public async Task SaveTodoItemAsync(TodoItem item, bool isNewItem = false)
 ```
 
 La `ReplaceDocumentAsync` méthode spécifie un `Uri` argument qui représente le document dans la collection qui doit être remplacée et un `object` argument qui représente les données de document mises à jour.
-
-<a name="deleting_document" />
 
 ### <a name="deleting-a-document-from-a-document-collection"></a>Suppression d’un document d’une collection de documents
 

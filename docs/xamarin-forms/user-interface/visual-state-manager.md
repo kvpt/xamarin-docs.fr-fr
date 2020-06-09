@@ -1,23 +1,8 @@
 ---
-title: Xamarin.FormsGestionnaire d’état visuel
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-ms.custom: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 13dd0a3f5d665e2232e7e6e12edac7cf117dd0ca
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84127281"
+title : " Xamarin.Forms Description du gestionnaire d’état visuel" : "utilisez le gestionnaire d’état visuel pour apporter des modifications aux éléments XAML en fonction des États visuels définis à partir du code."
+ms. Prod : xamarin ms. AssetID : 17296F14-640D-484B-A24C-A4E9B7013E4F ms. Technology : xamarin-Forms ms. Custom : xamu-Video Author : davidbritch ms. Author : dabritch ms. Date : 02/21/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-visual-state-manager"></a>Xamarin.FormsGestionnaire d’état visuel
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-vsmdemos)
@@ -409,41 +394,13 @@ Désormais, tous les `Entry` affichages de cette page répondent de la même fa�
 Le tableau suivant répertorie les États visuels définis dans Xamarin.Forms :
 
 | Classe | États | Informations complémentaires |
-| ----- | ---
-title : ' Xamarin.Forms Description du gestionnaire d’état visuel : ms. Prod : ms. AssetID : ms. Technology : ms. Custom : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
---- | titre de la--- : ' Xamarin.Forms Description du gestionnaire d’état visuel : ms. Prod : ms. AssetID : ms. Technology : ms. Custom : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-title : ' Xamarin.Forms Description du gestionnaire d’état visuel : ms. Prod : ms. AssetID : ms. Technology : ms. Custom : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-title : ' Xamarin.Forms Description du gestionnaire d’état visuel : ms. Prod : ms. AssetID : ms. Technology : ms. Custom : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-title : ' Xamarin.Forms Description du gestionnaire d’état visuel : ms. Prod : ms. AssetID : ms. Technology : ms. Custom : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-title : ' Xamarin.Forms Description du gestionnaire d’état visuel : ms. Prod : ms. AssetID : ms. Technology : ms. Custom : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-title : ' Xamarin.Forms Description du gestionnaire d’état visuel : ms. Prod : ms. AssetID : ms. Technology : ms. Custom : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--------- | | `Button` | `Pressed` |  [États visuels du bouton](~/xamarin-forms/user-interface/button.md#button-visual-states) | | `CheckBox` | `IsChecked` |  [États visuels de la case à cocher](~/xamarin-forms/user-interface/checkbox.md#checkbox-visual-states) | | `CarouselView`  |  `DefaultItem` , `CurrentItem` , `PreviousItem` , `NextItem`  |  [CarouselView États visuels](~/xamarin-forms/user-interface/carouselview/interaction.md#define-visual-states) | `ImageButton` |  |  `Pressed`  |  [États visuels ImageButton](~/xamarin-forms/user-interface/imagebutton.md#imagebutton-visual-states) | | `RadioButton` | `IsChecked` |  [États visuels RadioButton](~/xamarin-forms/user-interface/radiobutton.md#radiobutton-visual-states) | | `VisualElement`  |  `Normal` , `Disabled` , `Focused` , `Selected`  |  [États courants](#common-states) |
+| ----- | ------ | ---------------- |
+| `Button` | `Pressed` | [États visuels du bouton](~/xamarin-forms/user-interface/button.md#button-visual-states) |
+| `CheckBox` | `IsChecked` | [États visuels des cases à cocher](~/xamarin-forms/user-interface/checkbox.md#checkbox-visual-states) |
+| `CarouselView` | `DefaultItem`, `CurrentItem`, `PreviousItem`, `NextItem` | [CarouselView les États visuels](~/xamarin-forms/user-interface/carouselview/interaction.md#define-visual-states) |
+| `ImageButton` | `Pressed` | [États visuels ImageButton](~/xamarin-forms/user-interface/imagebutton.md#imagebutton-visual-states) |
+| `RadioButton` | `IsChecked` | [États visuels de RadioButton](~/xamarin-forms/user-interface/radiobutton.md#radiobutton-visual-states) |
+| `VisualElement` | `Normal`, `Disabled`, `Focused`, `Selected` | [États communs](#common-states) |
 
 Chacun de ces États est accessible via le groupe d’États visuels nommé `CommonStates` .
 
@@ -635,8 +592,6 @@ Lorsque vous utilisez des déclencheurs d’État pour contrôler les États vis
 Si plusieurs déclencheurs sont actifs simultanément (par exemple, deux déclencheurs personnalisés), le premier déclencheur déclaré dans le balisage est prioritaire.
 
 Pour plus d’informations sur les déclencheurs d’État, consultez [déclencheurs d’État](~/xamarin-forms/app-fundamentals/triggers.md#state-triggers).
-
-<a name="adaptive-layout" />
 
 ## <a name="use-the-visual-state-manager-for-adaptive-layout"></a>Utiliser le gestionnaire d’état visuel pour la disposition adaptative
 

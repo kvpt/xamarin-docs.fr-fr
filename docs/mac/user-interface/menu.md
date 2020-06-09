@@ -7,18 +7,18 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 7cca5be2ea13deb17b27e5452df389a998c6eb09
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2a7a09b1dec840090587377199533ef8c6ec63b5
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73026173"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84572889"
 ---
 # <a name="menus-in-xamarinmac"></a>Menus dans Xamarin. Mac
 
 _Cet article traite de l’utilisation des menus dans une application Xamarin. Mac. Il décrit la création et la gestion des menus et des éléments de menu dans Xcode et Interface Builder et leur utilisation par programmation._
 
-Lorsque vous travaillez C# avec et .net dans une application Xamarin. Mac, vous avez accès aux mêmes menus de cacao qu’un développeur qui travaille en Objective-C et Xcode. Comme Xamarin. Mac s’intègre directement à Xcode, vous pouvez utiliser la Interface Builder de Xcode pour créer et gérer vos barres de menus, menus et éléments de menu (ou éventuellement les créer directement C# dans le code).
+Lorsque vous travaillez avec C# et .NET dans une application Xamarin. Mac, vous avez accès aux mêmes menus de cacao qu’un développeur travaillant dans objective-C et Xcode. Comme Xamarin. Mac s’intègre directement à Xcode, vous pouvez utiliser Interface Builder de Xcode pour créer et gérer vos barres de menus, menus et éléments de menu (ou éventuellement les créer directement en code C#).
 
 Les menus font partie intégrante de l’expérience utilisateur d’une application Mac et apparaissent généralement dans les différentes parties de l’interface utilisateur :
 
@@ -30,9 +30,9 @@ Les menus font partie intégrante de l’expérience utilisateur d’une applica
 
 [![Un exemple de menu](menu-images/intro01.png "Un exemple de menu")](menu-images/intro01-large.png#lightbox)
 
-Dans cet article, nous allons aborder les bases de l’utilisation des barres de menus, des menus et des éléments de menu de cacao dans une application Xamarin. Mac. Nous vous recommandons vivement d’utiliser l’article [Hello, Mac](~/mac/get-started/hello-mac.md) , en particulier la [Présentation de Xcode et Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) et les sections [actions et actions](~/mac/get-started/hello-mac.md#outlets-and-actions) , car il aborde les concepts et les techniques clés que nous allons utiliser dans. Cet article.
+Dans cet article, nous allons aborder les bases de l’utilisation des barres de menus, des menus et des éléments de menu de cacao dans une application Xamarin. Mac. Nous vous recommandons vivement d’utiliser l’article [Hello, Mac](~/mac/get-started/hello-mac.md) , en particulier la [Présentation de Xcode et Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) et les sections [actions et actions](~/mac/get-started/hello-mac.md#outlets-and-actions) , car il aborde les concepts et les techniques clés que nous allons utiliser dans cet article.
 
-Vous pouvez également jeter un coup d’œil à la section [exposition des C# classes/méthodes à Objective-C](~/mac/internals/how-it-works.md) du document [Internals Xamarin. Mac.](~/mac/internals/how-it-works.md) elle explique également les attributs `Register` et `Export` utilisés pour relier vos C# classes à objective-c. objets et éléments d’interface utilisateur.
+Vous pouvez également jeter un coup d’œil sur la section [exposition des classes/méthodes C# à Objective-C](~/mac/internals/how-it-works.md) du document [Internals Xamarin. Mac.](~/mac/internals/how-it-works.md) elle explique également les `Register` `Export` attributs et utilisés pour relier vos classes C# aux objets objective-c et aux éléments d’interface utilisateur.
 
 ## <a name="the-applications-menu-bar"></a>Barre de menus de l’application 
 
@@ -72,11 +72,11 @@ Double-cliquez sur le fichier **main. Storyboard** pour l’ouvrir en vue de le 
 
 Nous allons ajouter, modifier et supprimer des menus et des éléments plus loin dans cet article. Pour l’instant, nous voulons juste voir quels menus et éléments de menu sont disponibles par défaut et comment ils ont été automatiquement exposés au code via un ensemble d’actions et de prises prédéfinies (pour plus d’informations, consultez la documentation sur les [prises et les actions](~/mac/get-started/hello-mac.md#outlets-and-actions) ).
 
-Par exemple, si vous cliquez sur l' **inspecteur de connexion** pour l’élément de menu **ouvrir** , nous voyons qu’il est automatiquement relié à l’action `openDocument:` : 
+Par exemple, si vous cliquez sur l' **inspecteur de connexion** pour l’élément de menu **ouvrir** , nous voyons qu’il est automatiquement relié à l' `openDocument:` action : 
 
 [![Affichage de l’action attachée](menu-images/defaultbar03.png "Affichage de l’action attachée")](menu-images/defaultbar03-large.png#lightbox)
 
-Si vous sélectionnez le **premier répondeur** dans la **hiérarchie d’interface** et faites défiler l' **inspecteur de connexion**vers le début, vous verrez la définition de l’action de `openDocument:` à laquelle l’élément de menu **ouvert** est attaché (avec plusieurs autres les actions par défaut de l’application qui sont et qui ne sont pas automatiquement associées aux contrôles) sont les suivantes :
+Si vous sélectionnez le **premier répondeur** dans la **hiérarchie d’interface** et faites défiler l' **inspecteur de connexion**vers le haut, vous verrez la définition de l' `openDocument:` action à laquelle l’élément de menu **ouvert** est attaché (avec plusieurs autres actions par défaut pour l’application qui sont et qui ne sont pas automatiquement associées à des contrôles) :
 
 [![Affichage de toutes les actions attachées](menu-images/defaultbar04.png "Affichage de toutes les actions attachées")](menu-images/defaultbar04-large.png#lightbox) 
 
@@ -84,11 +84,11 @@ Pourquoi est-ce important ? Dans la section suivante, vous verrez comment ces a
 
 Plus tard, nous allons utiliser ces actions intégrées pour activer et désactiver des éléments à partir du code et fournir nos propres fonctionnalités lorsqu’elles sont sélectionnées.
 
-<a name="Built-In_Menu_Functionality" />
+<a name="Built-In_Menu_Functionality"></a>
 
 ### <a name="built-in-menu-functionality"></a>Fonctionnalités de menu intégrées
 
-Si vous avez exécuté une application Xamarin. Mac nouvellement créée avant d’ajouter des éléments d’interface utilisateur ou du code, vous remarquerez que certains éléments sont automatiquement câblés et activés pour vous (avec des fonctionnalités entièrement intégrées), comme l’élément **quitter** dans leMenu de l’application :
+Si vous avez exécuté une application Xamarin. Mac nouvellement créée avant d’ajouter des éléments d’interface utilisateur ou du code, vous remarquerez que certains éléments sont automatiquement câblés et activés pour vous (avec des fonctionnalités entièrement intégrées), telles que l’élément **quitter** dans le menu de l' **application** :
 
 ![Élément de menu activé](menu-images/appmenu03.png "Élément de menu activé")
 
@@ -110,26 +110,26 @@ Enregistrez les modifications apportées à la conception de l’interface utili
 
 Notez que les éléments **couper**, **copier**et **coller** sont automatiquement activés et entièrement fonctionnels, tout cela sans écrire une seule ligne de code. 
 
-Qu'est-ce qui se passe? N’oubliez pas les actions prédéfinies intégrées qui sont associées aux éléments de menu par défaut (comme indiqué ci-dessus), la plupart des éléments d’interface utilisateur de cacao qui font partie de macOS ont des crochets intégrés à des actions spécifiques (par exemple `copy:`). Ainsi, lorsqu’ils sont ajoutés à une fenêtre, actifs et sélectionnés, l’élément de menu correspondant ou les éléments associés à cette action sont automatiquement activés. Si l’utilisateur sélectionne cet élément de menu, les fonctionnalités intégrées à l’élément d’interface utilisateur sont appelées et exécutées, sans intervention du développeur.
+Comment cela se fait-il ? N’oubliez pas les actions prédéfinies intégrées qui sont associées aux éléments de menu par défaut (comme indiqué ci-dessus), la plupart des éléments de l’interface utilisateur de cacao qui font partie de macOS ont des crochets intégrés à des actions spécifiques (par exemple `copy:` ,). Ainsi, lorsqu’ils sont ajoutés à une fenêtre, actifs et sélectionnés, l’élément de menu correspondant ou les éléments associés à cette action sont automatiquement activés. Si l’utilisateur sélectionne cet élément de menu, les fonctionnalités intégrées à l’élément d’interface utilisateur sont appelées et exécutées, sans intervention du développeur.
 
 ### <a name="enabling-and-disabling-menus-and-items"></a>Activation et désactivation des menus et des éléments
 
 Par défaut, chaque fois qu’un événement utilisateur se produit, `NSMenu` active et désactive automatiquement chaque menu visible et élément de menu en fonction du contexte de l’application. Il existe trois façons d’activer/de désactiver un élément :
 
-- **Activation automatique du menu** : un élément de menu est activé si `NSMenu` peut trouver un objet approprié qui répond à l’action à laquelle l’élément est connecté. Par exemple, l’affichage de texte ci-dessus avait un raccordement intégré à l’action `copy:`.
-- **Actions personnalisées et validateMenuItem :** pour tout élément de menu lié à une [action personnalisée de fenêtre ou de contrôleur d’affichage](#Working-with-Custom-Window-Actions), vous pouvez ajouter l’action `validateMenuItem:` et activer ou désactiver manuellement les éléments de menu.
-- **Activation manuelle du menu** : vous définissez manuellement la propriété `Enabled` de chaque `NSMenuItem` pour activer ou désactiver chaque élément d’un menu.
+- **Activation automatique du menu** : un élément de menu est activé si `NSMenu` peut trouver un objet approprié qui répond à l’action à laquelle l’élément est connecté. Par exemple, l’affichage de texte ci-dessus avait un raccordement intégré à l' `copy:` action.
+- **Actions personnalisées et validateMenuItem :** pour tout élément de menu lié à une [action personnalisée de fenêtre ou de contrôleur d’affichage](#Working-with-Custom-Window-Actions), vous pouvez ajouter l' `validateMenuItem:` action et activer ou désactiver manuellement les éléments de menu.
+- **Activation manuelle du menu** : vous définissez manuellement la `Enabled` propriété de chaque `NSMenuItem` élément pour activer ou désactiver chaque élément d’un menu.
 
-Pour choisir un système, définissez la propriété `AutoEnablesItems` d’un `NSMenu`. `true` est automatique (comportement par défaut) et `false` est manuel. 
+Pour choisir un système, définissez la `AutoEnablesItems` propriété d’un `NSMenu` . `true`est automatique (comportement par défaut) et `false` est manuel. 
 
 > [!IMPORTANT]
-> Si vous choisissez d’utiliser l’activation manuelle du menu, aucun des éléments de menu, même ceux contrôlés par les classes AppKit comme `NSTextView`, sont mis à jour automatiquement. Vous êtes responsable de l’activation et de la désactivation de tous les éléments à la main dans le code.
+> Si vous choisissez d’utiliser l’activation manuelle du menu, aucun des éléments de menu, même ceux contrôlés par les classes AppKit comme `NSTextView` , n’est mis à jour automatiquement. Vous êtes responsable de l’activation et de la désactivation de tous les éléments à la main dans le code.
 
 #### <a name="using-validatemenuitem"></a>Utilisation de validateMenuItem
 
-Comme indiqué ci-dessus, pour tout élément de menu lié à une [action personnalisée de fenêtre ou de contrôleur d’affichage](#Working-with-Custom-Window-Actions), vous pouvez ajouter l’action `validateMenuItem:` et activer ou désactiver manuellement les éléments de menu.
+Comme indiqué ci-dessus, pour tout élément de menu lié à une [action personnalisée de fenêtre ou de contrôleur d’affichage](#Working-with-Custom-Window-Actions), vous pouvez ajouter l' `validateMenuItem:` action et activer ou désactiver manuellement les éléments de menu.
 
-Dans l’exemple suivant, la propriété `Tag` est utilisée pour déterminer le type d’élément de menu qui sera activé/désactivé par l’action `validateMenuItem:` en fonction de l’état du texte sélectionné dans un `NSTextView`. La propriété `Tag` a été définie dans Interface Builder pour chaque élément de menu :
+Dans l’exemple suivant, la `Tag` propriété est utilisée pour décider du type d’élément de menu qui sera activé/désactivé par l' `validateMenuItem:` action en fonction de l’état du texte sélectionné dans un `NSTextView` . La `Tag` propriété a été définie dans Interface Builder pour chaque élément de menu :
 
 ![Définition de la propriété Tag](menu-images/validate01.png "Définition de la propriété Tag")
 
@@ -156,7 +156,7 @@ public bool ValidateMenuItem (NSMenuItem item) {
 }
 ```
 
-Quand ce code est exécuté et qu’aucun texte n’est sélectionné dans le `NSTextView`, les deux éléments de menu de retour à la ligne sont désactivés (même s’ils sont connectés à des actions sur le contrôleur d’affichage) :
+Quand ce code est exécuté et qu’aucun texte n’est sélectionné dans le `NSTextView` , les deux éléments de menu de retour à la ligne sont désactivés (même s’ils sont connectés à des actions sur le contrôleur d’affichage) :
 
 ![Montrer les éléments désactivés](menu-images/validate02.png "Montrer les éléments désactivés")
 
@@ -166,15 +166,15 @@ Si une section de texte est sélectionnée et que le menu est rouvert, les deux 
 
 ## <a name="enabling-and-responding-to-menu-items-in-code"></a>Activation et réponse aux éléments de menu dans le code
 
-Comme nous l’avons vu précédemment, en ajoutant simplement des éléments d’interface utilisateur de cacao spécifiques à la conception de l’interface utilisateur (par exemple, un champ de texte), plusieurs des éléments de menu par défaut sont activés et fonctionnent automatiquement, sans qu’il soit nécessaire d’écrire du code. Voyons ensuite comment ajouter votre propre C# code à notre projet Xamarin. Mac pour activer un élément de menu et fournir des fonctionnalités lorsque l’utilisateur le sélectionne.
+Comme nous l’avons vu précédemment, en ajoutant simplement des éléments d’interface utilisateur de cacao spécifiques à la conception de l’interface utilisateur (par exemple, un champ de texte), plusieurs des éléments de menu par défaut sont activés et fonctionnent automatiquement, sans qu’il soit nécessaire d’écrire du code. Voyons ensuite comment ajouter notre propre code C# à notre projet Xamarin. Mac pour activer un élément de menu et fournir des fonctionnalités lorsque l’utilisateur le sélectionne.
 
 Par exemple, imaginons que l’utilisateur soit en mesure d’utiliser l’élément **ouvrir** dans le menu **fichier** pour sélectionner un dossier. Étant donné que nous voulons qu’il s’agit d’une fonction au niveau de l’application sans être limité à une fenêtre ou un élément d’interface utilisateur, nous allons ajouter le code pour le gérer à notre délégué d’application.
 
-Dans la **panneau solutions**, double-cliquez sur le fichier `AppDelegate.CS` pour l’ouvrir et le modifier :
+Dans la **panneau solutions**, double-cliquez sur le fichier pour l' `AppDelegate.CS` ouvrir et le modifier :
 
 ![Sélection du délégué d’application](menu-images/appmenu08.png "Sélection du délégué d’application")
 
-Ajoutez le code suivant sous la méthode `DidFinishLaunching` :
+Ajoutez le code suivant sous la `DidFinishLaunching` méthode :
 
 ```csharp
 [Export ("openDocument:")]
@@ -207,7 +207,7 @@ Si nous cliquons sur le bouton **ouvrir** , notre message d’alerte s’affiche
 
 ![Un exemple de message de boîte de dialogue](menu-images/appmenu11.png "Un exemple de message de boîte de dialogue")
 
-La ligne de la clé est `[Export ("openDocument:")]`, elle indique `NSMenu` que notre **AppDelegate** a une méthode `void OpenDialog (NSObject sender)` qui répond à l’action `openDocument:`. Si vous vous en souvenez, l’élément de menu **ouvrir** est automatiquement câblé à cette action par défaut dans Interface Builder :
+Ici, la ligne de clé était `[Export ("openDocument:")]` , elle indique `NSMenu` que notre **AppDelegate** a une méthode `void OpenDialog (NSObject sender)` qui répond à l' `openDocument:` action. Si vous vous en souvenez, l’élément de menu **ouvrir** est automatiquement câblé à cette action par défaut dans Interface Builder :
 
 [![Affichage des actions attachées](menu-images/defaultbar03.png "Affichage des actions attachées")](menu-images/defaultbar03-large.png#lightbox)
 
@@ -215,7 +215,7 @@ Voyons ensuite comment créer le menu, les éléments de menu et les actions et 
 
 ### <a name="working-with-the-open-recent-menu"></a>Utilisation du menu ouvert récent
 
-Par défaut, le menu **fichier** contient un élément **récent ouvert** qui effectue le suivi des derniers fichiers ouverts par l’utilisateur avec votre application. Si vous créez une application Xamarin. Mac basée sur `NSDocument`, ce menu sera géré automatiquement. Pour tout autre type d’application Xamarin. Mac, vous êtes responsable de la gestion et de la réponse de cet élément de menu manuellement.
+Par défaut, le menu **fichier** contient un élément **récent ouvert** qui effectue le suivi des derniers fichiers ouverts par l’utilisateur avec votre application. Si vous créez une `NSDocument` application Xamarin. Mac basée sur, ce menu sera géré automatiquement. Pour tout autre type d’application Xamarin. Mac, vous êtes responsable de la gestion et de la réponse de cet élément de menu manuellement.
 
 Pour gérer manuellement le menu **ouvert récent** , vous devez d’abord l’informer qu’un nouveau fichier a été ouvert ou enregistré à l’aide des éléments suivants :
 
@@ -224,9 +224,9 @@ Pour gérer manuellement le menu **ouvert récent** , vous devez d’abord l’i
 NSDocumentController.SharedDocumentController.NoteNewRecentDocumentURL(url);
 ```
 
-Même si votre application n’utilise pas `NSDocuments`, vous utilisez toujours le `NSDocumentController` pour gérer le menu **ouvert récent** en envoyant un `NSUrl` avec l’emplacement du fichier à la méthode `NoteNewRecentDocumentURL` de l' `SharedDocumentController`.
+Même si votre application n’utilise pas `NSDocuments` , vous utilisez toujours le `NSDocumentController` pour gérer le menu **ouvert récent** en envoyant un `NSUrl` avec l’emplacement du fichier à la `NoteNewRecentDocumentURL` méthode de `SharedDocumentController` .
 
-Ensuite, vous devez remplacer la méthode `OpenFile` du délégué d’application pour ouvrir n’importe quel fichier que l’utilisateur sélectionne dans le menu **ouvrir récemment** . Exemple :
+Ensuite, vous devez remplacer la `OpenFile` méthode du délégué d’application pour ouvrir n’importe quel fichier que l’utilisateur sélectionne dans le menu **ouvrir récemment** . Par exemple :
 
 ```csharp
 public override bool OpenFile (NSApplication sender, string filename)
@@ -244,13 +244,13 @@ public override bool OpenFile (NSApplication sender, string filename)
 
 Retourne `true` si le fichier peut être ouvert, sinon retourne `false` et un avertissement intégré s’affiche pour l’utilisateur indiquant que le fichier n’a pas pu être ouvert.
 
-Étant donné que le nom de fichier et le chemin d’accès retournés à partir du menu **ouvert récent** , peuvent inclure un espace, nous devons insérer correctement ce caractère dans une séquence d’échappement avant de créer un `NSUrl` ou nous recevrons une erreur. Nous faisons cela avec le code suivant :
+Étant donné que le nom de fichier et le chemin d’accès retournés depuis le menu **ouvert récent** , peuvent inclure un espace, nous devons insérer correctement ce caractère dans une séquence d’échappement avant de créer un `NSUrl` ou nous obtenons une erreur. Nous faisons cela avec le code suivant :
 
 ```csharp
 filename = filename.Replace (" ", "%20");
 ```
 
-Enfin, nous créons une `NSUrl` qui pointe vers le fichier et utilisez une méthode d’assistance dans le délégué d’application pour ouvrir une nouvelle fenêtre et y charger le fichier :
+Enfin, nous créons un `NSUrl` qui pointe vers le fichier et utilisons une méthode d’assistance dans le délégué d’application pour ouvrir une nouvelle fenêtre et y charger le fichier :
 
 ```csharp
 var url = new NSUrl ("file://"+filename);
@@ -392,7 +392,7 @@ for(int n=0; n<NSApplication.SharedApplication.Windows.Length; ++n) {
 }
 ```
 
-Nous avons conçu notre classe `ViewController` pour stocker le chemin d’accès au fichier dans sa propriété `Path`. Ensuite, nous parcourons toutes les fenêtres actuellement ouvertes dans l’application. Si le fichier est déjà ouvert dans l’une des fenêtres, il est placé devant toutes les autres fenêtres à l’aide de :
+Nous avons conçu notre `ViewController` classe pour stocker le chemin d’accès au fichier dans sa `Path` propriété. Ensuite, nous parcourons toutes les fenêtres actuellement ouvertes dans l’application. Si le fichier est déjà ouvert dans l’une des fenêtres, il est placé devant toutes les autres fenêtres à l’aide de :
 
 ```csharp
 NSApplication.SharedApplication.Windows[n].MakeKeyAndOrderFront(this);
@@ -419,13 +419,13 @@ viewController.View.Window.RepresentedUrl = url;
 NSDocumentController.SharedDocumentController.NoteNewRecentDocumentURL(url);
 ```
 
-<a name="Working-with-Custom-Window-Actions" />
+<a name="Working-with-Custom-Window-Actions"></a>
 
 ### <a name="working-with-custom-window-actions"></a>Utilisation d’actions de fenêtre personnalisée
 
 À l’instar des premières actions de **répondeur** intégrées qui sont pré-câblées aux éléments de menu standard, vous pouvez créer de nouvelles actions personnalisées et les relier aux éléments de menu dans Interface Builder.
 
-Tout d’abord, définissez une action personnalisée sur l’un des contrôleurs de fenêtre de votre application. Exemple :
+Tout d’abord, définissez une action personnalisée sur l’un des contrôleurs de fenêtre de votre application. Par exemple :
 
 ```csharp
 [Action("defineKeyword:")]
@@ -439,7 +439,7 @@ Ensuite, double-cliquez sur le fichier Storyboard de l’application dans le **p
 
 ![L’inspecteur d’attributs](menu-images/action01.png "L’inspecteur d’attributs")
 
-Cliquez sur le bouton **+** au bas de l' **inspecteur d’attributs** pour ajouter une nouvelle action personnalisée :
+Cliquez sur le **+** bouton en bas de l' **inspecteur d’attributs** pour ajouter une nouvelle action personnalisée :
 
 ![Ajout d’une nouvelle action](menu-images/action02.png "Ajout d’une nouvelle action")
 
@@ -447,7 +447,7 @@ Donnez-lui le même nom que l’action personnalisée que vous avez créée sur 
 
 ![Modification du nom de l’action](menu-images/action03.png "Modification du nom de l’action")
 
-Cliquez avec le contrôle sur un élément de menu et faites-le glisser vers le **premier répondeur** sous la scène de l' **application**. Dans la liste déroulante, sélectionnez la nouvelle action que vous venez de créer (`defineKeyword:` dans cet exemple) :
+Cliquez avec le contrôle sur un élément de menu et faites-le glisser vers le **premier répondeur** sous la scène de l' **application**. Dans la liste déroulante, sélectionnez la nouvelle action que vous venez de créer ( `defineKeyword:` dans cet exemple) :
 
 ![Attachement d’une action](menu-images/action04.png "Attachement d’une action")
 
@@ -455,7 +455,7 @@ Enregistrez les modifications apportées à la table de montage séquentiel et r
 
 [![Test de la nouvelle action](menu-images/action05.png "Test de la nouvelle action")](menu-images/action05-large.png#lightbox)
 
-<a name="Adding,_Editing_and_Deleting_Menus" />
+<a name="Adding,_Editing_and_Deleting_Menus"></a>
 
 ### <a name="adding-editing-and-deleting-menus"></a>Ajout, modification et suppression de menus
 
@@ -517,7 +517,7 @@ Créons ensuite un menu personnalisé d’expressions prédéfinies qui seront a
     [![Modification du nom d’un élément de menu](menu-images/maint14.png "Modification du nom d’un élément de menu")](menu-images/maint14-large.png#lightbox)
 7. Enregistrez les modifications apportées à la barre de menus.
 
-Créons maintenant un ensemble d’actions personnalisées afin que les nouveaux éléments de menu soient exposés au C# code. Dans Xcode, basculez vers la vue **Assistant** :
+Créons maintenant un ensemble d’actions personnalisées afin que les nouveaux éléments de menu soient exposés au code C#. Dans Xcode, basculez vers la vue **Assistant** :
 
 [![Création des actions requises](menu-images/maint15.png "Création des actions requises")](menu-images/maint15-large.png#lightbox)
 
@@ -529,13 +529,13 @@ Procédez comme suit :
     [![Sélection du type d’action](menu-images/maint17.png "Sélection du type d’action")](menu-images/maint17-large.png#lightbox)
 3. Entrez un **nom** de « phraseAddress » et appuyez sur le bouton de **connexion** pour créer la nouvelle action : 
 
-    [![Configuration de l’action](menu-images/maint18.png "Configuration de l’action")](menu-images/maint18-large.png#lightbox)
+    [![Configuration de l'action](menu-images/maint18.png "Configuration de l'action")](menu-images/maint18-large.png#lightbox)
 4. Répétez les étapes ci-dessus pour les éléments de menu **Date**, **salutation**et **signature** : 
 
     [![Actions terminées](menu-images/maint19.png "Actions terminées")](menu-images/maint19-large.png#lightbox)
 5. Enregistrez les modifications apportées à la barre de menus.
 
-Ensuite, nous devons créer une prise pour notre affichage de texte afin de pouvoir ajuster son contenu à partir du code. Sélectionnez le fichier **ViewController. h** dans l' **éditeur** de l’Assistant et créez une nouvelle sortie appelée `documentText` :
+Ensuite, nous devons créer une prise pour notre affichage de texte afin de pouvoir ajuster son contenu à partir du code. Sélectionnez le fichier **ViewController. h** dans l' **éditeur** de l’Assistant et créez une nouvelle sortie appelée `documentText` :
 
 [![Création d’une sortie](menu-images/maint20.png "Création d’une sortie")](menu-images/maint20-large.png#lightbox)
 
@@ -606,7 +606,7 @@ namespace MacMenus
 }
 ```
 
-Cela expose le texte de notre vue de texte en dehors de la classe `ViewController` et informe le délégué de l’application lorsque la fenêtre gagne ou perd le focus. Modifiez maintenant le fichier **AppDelegate.cs** et faites-le ressembler à ce qui suit :
+Cela expose le texte de notre vue de texte en dehors de la `ViewController` classe et informe le délégué de l’application lorsque la fenêtre gagne ou perd le focus. Modifiez maintenant le fichier **AppDelegate.cs** et faites-le ressembler à ce qui suit :
 
 ```csharp
 using AppKit;
@@ -682,7 +682,7 @@ namespace MacMenus
 }
 ```
 
-Ici, nous avons fait de la `AppDelegate` une classe partielle pour pouvoir utiliser les actions et les prises de sortie que nous avons définies dans Interface Builder. Nous exposerons également un `textEditor` pour suivre la fenêtre qui est actuellement active.
+Ici, nous avons créé `AppDelegate` une classe partielle pour pouvoir utiliser les actions et les prises de sortie que nous avons définies dans Interface Builder. Nous exposerons également un `textEditor` pour suivre la fenêtre qui est actuellement active.
 
 Les méthodes suivantes sont utilisées pour gérer nos menus et éléments de menu personnalisés :
 
@@ -773,7 +773,7 @@ namespace AppKit.TextKit.Formatter
 
 #### <a name="adding-menus-and-items"></a>Ajouter des menus et des éléments
 
-Une fois cette classe définie, la routine suivante analyse une collection de `LanguageFormatCommand`objects et génère de manière récursive de nouveaux menus et éléments de menu en les ajoutant au bas du menu existant (créé dans Interface Builder) qui a été transmis :
+Une fois cette classe définie, la routine suivante analyse une collection d' `LanguageFormatCommand` objets et génère de manière récursive de nouveaux menus et éléments de menu en les ajoutant au bas du menu existant (créé dans Interface Builder) qui a été transmis :
 
 ```csharp
 private void AssembleMenu(NSMenu menu, List<LanguageFormatCommand> commands) {
@@ -805,7 +805,7 @@ private void AssembleMenu(NSMenu menu, List<LanguageFormatCommand> commands) {
 }
 ``` 
 
-Pour tout objet `LanguageFormatCommand` qui a une propriété `Title` vide, cette routine crée un **élément de menu séparateur** (une ligne grise fine) entre les sections de menu :
+Pour tout `LanguageFormatCommand` objet dont la propriété est vide `Title` , cette routine crée un **élément de menu séparateur** (une ligne grise fine) entre les sections de menu :
 
 ```csharp
 menuItem = NSMenuItem.SeparatorItem;
@@ -817,7 +817,7 @@ Si un titre est fourni, un nouvel élément de menu portant ce titre est créé�
 menuItem = new NSMenuItem (command.Title);
 ``` 
 
-Si l’objet `LanguageFormatCommand` contient des objets `LanguageFormatCommand` enfants, un sous-menu est créé et la méthode `AssembleMenu` est appelée de manière récursive pour générer ce menu :
+Si l' `LanguageFormatCommand` objet contient des `LanguageFormatCommand` objets enfants, un sous-menu est créé et la `AssembleMenu` méthode est appelée de manière récursive pour générer ce menu :
 
 ```csharp
 menuItem.Submenu = new NSMenu (command.Title);
@@ -835,7 +835,7 @@ menuItem.Activated += (sender, e) => {
 
 #### <a name="testing-the-menu-creation"></a>Test de la création du menu
 
-Avec tout le code ci-dessus en place, si la collection d’objets `LanguageFormatCommand` suivante a été créée :
+Avec tout le code ci-dessus en place, si la collection d' `LanguageFormatCommand` objets suivante a été créée :
 
 ```csharp
 // Define formatting commands
@@ -865,13 +865,13 @@ FormattingCommands.Add(new LanguageFormatCommand("Image","![](",")"));
 FormattingCommands.Add(new LanguageFormatCommand("Image Link","[![](",")](LinkImageHere)"));
 ```
 
-Et cette collection est passée à la fonction `AssembleMenu` (avec le menu **format** défini en tant que base), les menus dynamiques et les éléments de menu suivants sont créés :
+Et cette collection est passée à la `AssembleMenu` fonction (avec le menu **format** défini en tant que base), les menus dynamiques et les éléments de menu suivants sont créés :
 
 ![Nouveaux éléments de menu dans l’application en cours d’exécution](menu-images/dynamic01.png "Nouveaux éléments de menu dans l’application en cours d’exécution")
 
 #### <a name="removing-menus-and-items"></a>Supprimer des menus et des éléments
 
-Si vous devez supprimer un menu ou un élément de menu de l’interface utilisateur de l’application, vous pouvez utiliser la méthode `RemoveItemAt` de la classe `NSMenu` simplement en lui donnant l’index de base zéro de l’élément à supprimer.
+Si vous devez supprimer un menu ou un élément de menu de l’interface utilisateur de l’application, vous pouvez utiliser la `RemoveItemAt` méthode de la `NSMenu` classe en lui donnant simplement l’index de base zéro de l’élément à supprimer.
 
 Par exemple, pour supprimer les menus et les éléments de menu créés par la routine ci-dessus, vous pouvez utiliser le code suivant :
 
@@ -887,13 +887,13 @@ public void UnpopulateFormattingMenu(NSMenu menu) {
 
 Dans le cas du code ci-dessus, les quatre premiers éléments de menu sont créés dans les Interface Builder et les objets de Xcode disponibles dans l’application, de sorte qu’ils ne sont pas supprimés dynamiquement.
 
-<a name="Contextual_Menus" />
+<a name="Contextual_Menus"></a>
 
 ## <a name="contextual-menus"></a>Menus contextuels
 
 Les menus contextuels s’affichent quand l’utilisateur clique avec le bouton droit ou clique sur un élément de contrôle dans une fenêtre. Par défaut, plusieurs des éléments d’interface utilisateur intégrés à macOS ont déjà des menus contextuels qui leur sont associés (tels que l’affichage de texte). Toutefois, il peut arriver que vous souhaitiez créer des menus contextuels personnalisés pour un élément d’interface utilisateur que nous avons ajouté à une fenêtre.
 
-Nous allons modifier notre fichier **main. Storyboard** dans Xcode et ajouter une fenêtre de **fenêtre** à notre conception, définir sa **classe** sur « NSPanel » dans l' **inspecteur d’identité**, ajouter un nouvel élément **Assistant** au menu **fenêtre** et l’attacher au nouveau fenêtre à l’aide d’un **segue Show**:
+Nous allons modifier notre fichier **main. Storyboard** dans Xcode et ajouter une fenêtre de **fenêtre** à notre conception, définir sa **classe** sur « NSPanel » dans l' **inspecteur d’identité**, ajouter un nouvel élément **Assistant** au menu **fenêtre** , puis l’attacher à la nouvelle fenêtre à l’aide d’un **segue afficher**:
 
 [![Définition du type segue](menu-images/context01.png "Définition du type segue")](menu-images/context01-large.png#lightbox)
 
@@ -916,13 +916,13 @@ Procédez comme suit :
     [![Définition de la classe segue](menu-images/context10.png "Définition de la classe segue")](menu-images/context10-large.png#lightbox)
 6. Revenez à Visual Studio pour Mac à synchroniser, puis revenez à Interface Builder.
 7. Basculez vers l’éditeur de l' **Assistant** et sélectionnez le fichier **PanelViewController. h** .
-8. Créez une action pour l’élément de menu **document** appelé `propertyDocument` : 
+8. Créez une action pour l’élément de menu **document** appelé `propertyDocument` : 
 
-    [![Configuration de l’action](menu-images/context06.png "Configuration de l’action")](menu-images/context06-large.png#lightbox)
+    [![Configuration de l'action](menu-images/context06.png "Configuration de l'action")](menu-images/context06-large.png#lightbox)
 9. Répétez la création des actions pour les autres éléments de menu : 
 
     [![Actions requises](menu-images/context07.png "Actions requises")](menu-images/context07-large.png#lightbox)
-10. Enfin, créez une sortie pour l' **étiquette de propriété** appelée `propertyLabel` : 
+10. Enfin, créez une sortie pour l' **étiquette de propriété** appelée `propertyLabel` : 
 
     [![Configuration de la sortie](menu-images/context08.png "Configuration de la sortie")](menu-images/context08-large.png#lightbox)
 11. Enregistrez vos modifications et revenez à Visual Studio pour Mac pour effectuer une synchronisation avec Xcode.
@@ -953,7 +953,7 @@ Voyons ensuite comment créer des menus de barre d’État.
 
 Les menus de la barre d’état affichent une collection d’éléments de menu État qui fournissent une interaction avec l’utilisateur ou des commentaires à l’utilisateur, tel qu’un menu ou une image reflétant l’état d’une application. Le menu de la barre d’état d’une application est activé et actif même si l’application s’exécute en arrière-plan. La barre d’État à l’ensemble du système se trouve à droite de la barre de menus de l’application et est la seule barre d’État actuellement disponible dans macOS.
 
-Nous allons modifier notre fichier **AppDelegate.cs** et faire en sorte que la méthode `DidFinishLaunching` ressemble à ce qui suit :
+Nous allons modifier notre fichier **AppDelegate.cs** et faire en sorte que la méthode ressemble à `DidFinishLaunching` ce qui suit :
 
 ```csharp
 public override void DidFinishLaunching (NSNotification notification)
@@ -992,7 +992,7 @@ public override void DidFinishLaunching (NSNotification notification)
 }
 ```
 
-`NSStatusBar statusBar = NSStatusBar.SystemStatusBar;` nous donne accès à la barre d’État du système. `var item = statusBar.CreateStatusItem (NSStatusItemLength.Variable);` crée un nouvel élément de la barre d’État. À partir de là, nous créons un menu et un certain nombre d’éléments de menu et attachons le menu à l’élément de barre d’État que nous venons de créer. 
+`NSStatusBar statusBar = NSStatusBar.SystemStatusBar;`nous donne accès à la barre d’État du système. `var item = statusBar.CreateStatusItem (NSStatusItemLength.Variable);`crée un nouvel élément de la barre d’État. À partir de là, nous créons un menu et un certain nombre d’éléments de menu et attachons le menu à l’élément de barre d’État que nous venons de créer. 
 
 Si nous exécutons l’application, le nouvel élément de la barre d’État s’affiche. La sélection d’un élément dans le menu modifie le texte dans l’affichage de texte : 
 
@@ -1008,25 +1008,25 @@ Le menu ancre s’affiche pour votre application Mac quand l’utilisateur cliqu
 
 Nous allons créer un menu d’ancrage personnalisé pour notre application en procédant comme suit :
 
-1. Dans Visual Studio pour Mac, cliquez avec le bouton droit sur le projet de l’application, puis sélectionnez **ajouter**  > **nouveau fichier...** Dans la boîte de dialogue nouveau fichier, sélectionnez **Xamarin. Mac**  > **définition d’interface vide**, utilisez « dockmenu » comme **nom** et cliquez sur le bouton **nouveau** pour créer le nouveau fichier **dockmenu. XIB** :
+1. Dans Visual Studio pour Mac, cliquez avec le bouton droit sur le projet de l’application, puis sélectionnez **Ajouter**  >  **un nouveau fichier...** Dans la boîte de dialogue nouveau fichier, sélectionnez **Xamarin. Mac**  >  **définition d’interface vide**, utilisez « dockmenu » comme **nom** et cliquez sur le bouton **nouveau** pour créer le nouveau fichier **dockmenu. XIB** :
 
     ![Ajout d’une définition d’interface vide](menu-images/dock02.png "Ajout d’une définition d’interface vide")
 2. Dans la **panneau solutions**, double-cliquez sur le fichier **dockmenu. XIB** pour l’ouvrir et le modifier dans Xcode. Créez un nouveau **menu** avec les éléments suivants : **adresse**, **Date**, **salutation**et **signature** 
 
     [![Disposition de l’interface utilisateur](menu-images/dock03.png "Disposition de l’interface utilisateur")](menu-images/dock03-large.png#lightbox)
-3. Ensuite, nous allons connecter nos nouveaux éléments de menu à nos actions existantes que nous avons créées pour notre menu personnalisé dans la section [Ajouter, modifier et supprimer des menus](#Adding,_Editing_and_Deleting_Menus) ci-dessus. Basculez vers l' **inspecteur de connexion** et sélectionnez le **premier répondeur** dans la hiérarchie de l' **interface**. Faites défiler la liste et recherchez l’action `phraseAddress:`. Faites glisser une ligne du cercle sur cette action vers l’élément de menu **adresse** :
+3. Ensuite, nous allons connecter nos nouveaux éléments de menu à nos actions existantes que nous avons créées pour notre menu personnalisé dans la section [Ajouter, modifier et supprimer des menus](#Adding,_Editing_and_Deleting_Menus) ci-dessus. Basculez vers l' **inspecteur de connexion** et sélectionnez le **premier répondeur** dans la hiérarchie de l' **interface**. Faites défiler l’action et recherchez l' `phraseAddress:` action. Faites glisser une ligne du cercle sur cette action vers l’élément de menu **adresse** :
 
     [![Glissement pour associer une action](menu-images/dock04.png "Glissement pour associer une action")](menu-images/dock04-large.png#lightbox)
 4. Répétez cette opération pour tous les autres éléments de menu qui les joignent à leurs actions correspondantes : 
 
     [![Actions requises](menu-images/dock05.png "Actions requises")](menu-images/dock05-large.png#lightbox)
-5. Ensuite, sélectionnez l' **application** dans la **hiérarchie**de l’interface. Dans l' **inspecteur de connexion**, faites glisser une ligne du cercle sur le `dockMenu` orifice vers le menu que nous venons de créer :
+5. Ensuite, sélectionnez l' **application** dans la **hiérarchie**de l’interface. Dans l' **inspecteur de connexion**, faites glisser une ligne du cercle sur la `dockMenu` sortie vers le menu que nous venons de créer :
 
     [![Faire glisser le câble vers le haut de la sortie](menu-images/dock06.png "Faire glisser le câble vers le haut de la sortie")](menu-images/dock06-large.png#lightbox)
 6. Enregistrez vos modifications et revenez à Visual Studio pour Mac pour effectuer une synchronisation avec Xcode.
 7. Double-cliquez sur le fichier **info. plist** pour l’ouvrir et le modifier : 
 
-    [![Modification du fichier info. plist](menu-images/dock07.png "Modification du fichier info. plist")](menu-images/dock07-large.png#lightbox)
+    [![Modification du fichier info. plist](menu-images/dock07.png "Modification du fichier Info.plist")](menu-images/dock07-large.png#lightbox)
 8. Cliquez sur l’onglet **source** en bas de l’écran : 
 
     [![Sélection de la vue source](menu-images/dock08.png "Sélection de la vue source")](menu-images/dock08-large.png#lightbox)
@@ -1040,7 +1040,7 @@ Maintenant, si nous exécutons notre application et que vous cliquez avec le bou
 
 Si vous sélectionnez l’un des éléments personnalisés dans le menu, le texte de notre vue de texte sera modifié.
 
-<a name="Pop-up_Menus_and_Pull-Down_Lists" />
+<a name="Pop-up_Menus_and_Pull-Down_Lists"></a>
 
 ## <a name="pop-up-button-and-pull-down-lists"></a>Liste déroulante et bouton déroulant
 
@@ -1054,7 +1054,7 @@ Nous allons créer un bouton contextuel personnalisé pour notre application en 
 2. Ajoutez un nouvel élément de menu et définissez les titres des éléments dans la fenêtre contextuelle sur : **adresse**, **Date**, **salutation**et **signature** 
 
     [![Configuration des éléments de menu](menu-images/popup02.png "Configuration des éléments de menu")](menu-images/popup02-large.png#lightbox)
-3. Ensuite, nous allons connecter nos nouveaux éléments de menu aux actions existantes que nous avons créées pour notre menu personnalisé dans la section [Ajouter, modifier et supprimer des menus](#Adding,_Editing_and_Deleting_Menus) ci-dessus. Basculez vers l' **inspecteur de connexion** et sélectionnez le **premier répondeur** dans la hiérarchie de l' **interface**. Faites défiler la liste et recherchez l’action `phraseAddress:`. Faites glisser une ligne du cercle sur cette action vers l’élément de menu **adresse** : 
+3. Ensuite, nous allons connecter nos nouveaux éléments de menu aux actions existantes que nous avons créées pour notre menu personnalisé dans la section [Ajouter, modifier et supprimer des menus](#Adding,_Editing_and_Deleting_Menus) ci-dessus. Basculez vers l' **inspecteur de connexion** et sélectionnez le **premier répondeur** dans la hiérarchie de l' **interface**. Faites défiler l’action et recherchez l' `phraseAddress:` action. Faites glisser une ligne du cercle sur cette action vers l’élément de menu **adresse** : 
 
     [![Glissement pour associer une action](menu-images/popup03.png "Glissement pour associer une action")](menu-images/popup03-large.png#lightbox)
 4. Répétez cette opération pour tous les autres éléments de menu qui les joignent à leurs actions correspondantes : 
@@ -1068,11 +1068,11 @@ Maintenant, si nous exécutons l’application et que vous sélectionnez un él�
 
 Vous pouvez créer et utiliser des listes déroulantes exactement de la même façon que les boutons contextuels. Au lieu de vous attacher à une action existante, vous pouvez créer vos propres actions personnalisées comme nous l’avons fait pour notre menu contextuel dans la section [menus contextuels](#Contextual_Menus) .
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article a décrit en détail l’utilisation des menus et des éléments de menu dans une application Xamarin. Mac. Tout d’abord, nous avons examiné la barre de menus de l’application, puis nous avons examiné la création de menus contextuels. ensuite, nous avons examiné les menus de barre d’État et les menus d’ancrage personnalisés. Enfin, nous avons abordé les menus contextuels et les listes déroulantes.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [MacMenus (exemple)](https://docs.microsoft.com/samples/xamarin/mac-samples/macmenus)
 - [Hello, Mac](~/mac/get-started/hello-mac.md)

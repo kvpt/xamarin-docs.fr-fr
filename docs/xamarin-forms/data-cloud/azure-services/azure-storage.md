@@ -1,22 +1,8 @@
 ---
-title: Stocker des données et y accéder dans stockage Azure à partir deXamarin.Forms
-description: Le stockage Azure est une solution de stockage cloud évolutive qui peut être utilisée pour stocker des données structurées et non structurées. Cet article explique comment utiliser Xamarin.Forms pour stocker du texte et des données binaires dans le stockage Azure et comment accéder aux données.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 4df14ef4d3eb72b92e4201e57103780801ca2d2f
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84131025"
+titre : « description de la Banque et de l’accès aux données dans le stockage Azure à partir de Xamarin.Forms » : «Azure Storage est une solution de stockage cloud évolutive qui peut être utilisée pour stocker des données structurées et non structurées. Cet article explique comment utiliser Xamarin.Forms pour stocker du texte et des données binaires dans le stockage Azure et comment accéder aux données.
+ms. Prod : xamarin ms. AssetID : 5B10D37B-839B-4CD0-9C65-91014A93F3EB ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 12/28/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="store-and-access-data-in-azure-storage-from-xamarinforms"></a>Stocker des données et y accéder dans stockage Azure à partir deXamarin.Forms
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurestorage)
@@ -65,16 +51,14 @@ Chaque objet stocké dans le stockage Azure a une adresse URL unique. Le nom du 
 
 L’URL permettant d’accéder à un objet dans un compte de stockage est constituée de l’ajout de l’emplacement de l’objet dans le compte de stockage au point de terminaison. Par exemple, une adresse d’objet BLOB sera au format `https://mystorageaccount.blob.core.windows.net/mycontainer/myblob` .
 
-## <a name="setup"></a>Installation
+## <a name="setup"></a>Programme d’installation
 
 Le processus d’intégration d’un compte de stockage Azure dans une Xamarin.Forms application est le suivant :
 
 1. Créez un compte de stockage. Pour plus d’informations, consultez [créer un compte de stockage](https://azure.microsoft.com/documentation/articles/storage-create-storage-account/#create-a-storage-account).
 1. Ajoutez la [bibliothèque cliente de stockage Azure](https://www.nuget.org/packages/WindowsAzure.Storage/) à l' Xamarin.Forms application.
-1. Configurez la chaîne de connexion de stockage. Pour plus d’informations, consultez [connexion à Azure Storage](#connecting).
+1. Configurez la chaîne de connexion de stockage. Pour plus d’informations, consultez [connexion à Azure Storage](#connecting-to-azure-storage).
 1. Ajoutez `using` des directives pour `Microsoft.WindowsAzure.Storage` les `Microsoft.WindowsAzure.Storage.Blob` espaces de noms et aux classes qui accéderont au stockage Azure.
-
-<a name="connecting" />
 
 ## <a name="connecting-to-azure-storage"></a>Connexion à Stockage Azure
 

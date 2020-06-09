@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsAbsoluteLayout
-description: Cet article explique comment utiliser la Xamarin.Forms classe AbsoluteLayout pour créer des interfaces utilisateur parfaite en pixels. Cette classe positionne et dimensionne les éléments enfants proportionnels à sa propre taille et position ou par valeurs absolues.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: d81a80e1f1190cbdffd578024cf9c6db1e7737e1
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139241"
+titre : « Xamarin.Forms AbsoluteLayout » Description : «cet article explique comment utiliser la Xamarin.Forms classe AbsoluteLayout pour créer des interfaces utilisateur de type pixel-perfectly. Cette classe positionne et dimensionne les éléments enfants proportionnels à sa propre taille et position ou par valeurs absolues.»
+ms. Prod : xamarin ms. AssetID : 01A5CCE0-AD45-4806-84FD-72C007005B38 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 11/25/2015 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-absolutelayout"></a>Xamarin.FormsAbsoluteLayout
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
@@ -27,14 +13,12 @@ ms.locfileid: "84139241"
 
 Cet article couvre ce qui suit :
 
-- **[Objet](#Purpose)** &ndash; utilisations courantes de `AbsoluteLayout` .
-- **[Utilisation](#Usage)** &ndash; Comment utiliser `AbsoluteLayout` pour obtenir la conception de votre choix.
-  - **[Dispositions](#Proportional_Layouts)** &ndash; proportionnelles comprendre le fonctionnement des valeurs proportionnelles dans un `AbsoluteLayout` .
-  - **[Spécification de valeurs](#Specifying_Values)** &ndash; comprenez comment les valeurs proportionnelles et absolues sont spécifiées.
-  - **[Valeurs](#Proportional_Values)** &ndash; proportionnelles comprendre le fonctionnement des valeurs proportionnelles.
-    - **[Valeurs](#Absolute_Values)** &ndash; absolues comprendre le fonctionnement des valeurs absolues.
-
-<a name="Purpose" />
+- **[Objet](#purpose)** &ndash; utilisations courantes de `AbsoluteLayout` .
+- **[Utilisation](#usage)** &ndash; Comment utiliser `AbsoluteLayout` pour obtenir la conception de votre choix.
+  - **[Dispositions](#proportional-layouts)** &ndash; proportionnelles comprendre le fonctionnement des valeurs proportionnelles dans un `AbsoluteLayout` .
+  - **[Spécification de valeurs](#specifying-values)** &ndash; comprenez comment les valeurs proportionnelles et absolues sont spécifiées.
+  - **[Valeurs](#proportional-values)** &ndash; proportionnelles comprendre le fonctionnement des valeurs proportionnelles.
+    - **[Valeurs](#absolute-values)** &ndash; absolues comprendre le fonctionnement des valeurs absolues.
 
 ## <a name="purpose"></a>Objectif
 
@@ -42,11 +26,7 @@ En raison du modèle de positionnement de `AbsoluteLayout` , la disposition rend
 
 `AbsoluteLayout`peut être utilisé partout où les éléments doivent être positionnés dans une vue et s’avèrent particulièrement utiles pour l’alignement des éléments sur les bords.
 
-<a name="Usage" />
-
-## <a name="usage"></a>Utilisation
-
-<a name="Proportional_Layouts" />
+## <a name="usage"></a>Usage
 
 ### <a name="proportional-layouts"></a>Dispositions proportionnelles
 
@@ -63,8 +43,6 @@ Notez dans la capture d’écran suivante, l’ancre de la boîte est un point b
 ![](absolute-layout-images/anchor-center.png "Anchor at Center")
 ![](absolute-layout-images/anchor-end.png "Anchor at End")
 
-<a name="Specifying_Values" />
-
 ### <a name="specifying-values"></a>Spécification de valeurs
 
 Les vues dans un `AbsoluteLayout` sont positionnées à l’aide de quatre valeurs :
@@ -74,7 +52,7 @@ Les vues dans un `AbsoluteLayout` sont positionnées à l’aide de quatre valeu
 - **Largeur** &ndash; largeur de la vue
 - **Hauteur** &ndash; hauteur de la vue
 
-Chacune de ces valeurs peut être définie sous la forme d’une valeur [proportionnelle](#Proportional_Values) ou d’une valeur [absolue](#Absolute_Values) .
+Chacune de ces valeurs peut être définie sous la forme d’une valeur [proportionnelle](#proportional-values) ou d’une valeur [absolue](#absolute-values) .
 
 Les valeurs sont spécifiées sous la forme d’une combinaison de limites et d’un indicateur. `LayoutBounds`est [`Rectangle`](xref:Xamarin.Forms.Rectangle) constitué de quatre valeurs : `x` , `y` , `width` , `height` .
 
@@ -169,8 +147,6 @@ public class AbsoluteLayoutExplorationCode : ContentPage
 }
 ```
 
-<a name="Proportional_Values" />
-
 ### <a name="proportional-values"></a>Valeurs proportionnelles
 
 Les valeurs proportionnelles définissent une relation entre une disposition et une vue. Cette relation définit la position ou la valeur de mise à l’échelle d’une vue enfant sous la forme d’une proportion de la valeur correspondante de la disposition parente. Ces valeurs sont exprimées en `double` s avec des valeurs comprises entre 0 et 1.
@@ -193,8 +169,6 @@ var label = new Label {Text = "I'm bottom center on every device."};
 AbsoluteLayout.SetLayoutBounds(label, new Rectangle(.5,1,.5,.1));
 AbsoluteLayout.SetLayoutFlags(label, AbsoluteLayoutFlags.All);
 ```
-
-<a name="Absolute_Values" />
 
 ### <a name="absolute-values"></a>Valeurs absolues
 

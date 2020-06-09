@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 9a9dbb63b78b00a9bcac9d7833530da02890afc6
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 1d1e40de646362e9b573ad7040ab08ba6d01d6e8
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73017300"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571608"
 ---
 # <a name="xamarinmac-extension-support"></a>Prise en charge de l’extension Xamarin.Mac
 
@@ -22,7 +22,7 @@ Dans Xamarin. Mac 2,10, la prise en charge a été ajoutée pour plusieurs point
 - Partager
 - Aujourd'hui
 
-<a name="Limitations-and-Known-Issues" />
+<a name="Limitations-and-Known-Issues"></a>
 
 ## <a name="limitations-and-known-issues"></a>Limitations et problèmes connus
 
@@ -32,21 +32,21 @@ Voici les limitations et les problèmes qui peuvent se produire lors du dévelop
 - Les extensions doivent être contenues dans une application hôte, qui, lorsqu’elles sont exécutées une fois, s’inscrivent auprès du système. Ils doivent ensuite être activés dans la section **extension** des **Préférences système**. 
 - Certains incidents d’extension peuvent déstabiliser l’application hôte et provoquer un comportement étrange. En particulier, le **Finder** et la section **Today** du **Centre de notification** peuvent devenir « coincés » et cesser de répondre. Cela a également été constaté dans les projets d’extension dans Xcode et n’est pas lié à Xamarin. Mac. Ce problème peut se produire dans le journal système (via la **console**, consultez les conseils pour plus d’informations) sur l’impression des messages d’erreur répétés. Le redémarrage de macOS s’affiche pour résoudre le problème.
 
-<a name="Tips" />
+<a name="Tips"></a>
 
 ## <a name="tips"></a>Conseils
 
 Les conseils suivants peuvent être utiles lors de l’utilisation d’extensions dans Xamarin. Mac :
 
-- Comme Xamarin. Mac ne prend actuellement pas en charge les extensions de débogage, l’expérience de débogage dépend principalement de l’exécution et `printf` instructions like. Toutefois, les extensions s’exécutent dans un processus de bac à sable (sandbox), `Console.WriteLine` n’agira donc pas comme dans d’autres applications Xamarin. Mac. L’appel de `NSLog` entraîne la sortie [directe](https://gist.github.com/chamons/e2e409013a449cfbe1f2fbe5547f6554) des messages de débogage dans le journal système.
-- Toutes les exceptions non interceptées bloquent le processus d’extension, en fournissant uniquement une petite quantité d’informations utiles dans le **Journal système**. Encapsulation du code gênant dans un bloc `try/catch` (exception) qui `NSLog` avant la nouvelle levée peut être utile.
-- Le **Journal système** est accessible à partir de l’application **Console** sous **applications**  > **utilitaires**:
+- Comme Xamarin. Mac ne prend actuellement pas en charge les extensions de débogage, l’expérience de débogage dépend principalement de l’exécution et des `printf` instructions like. Toutefois, les extensions s’exécutent dans un processus de bac à sable (sandbox) et n' `Console.WriteLine` agissent donc pas comme dans d’autres applications Xamarin. Mac. L’appel [ `NSLog` direct](https://gist.github.com/chamons/e2e409013a449cfbe1f2fbe5547f6554) de génère des messages de débogage dans le journal système.
+- Toutes les exceptions non interceptées bloquent le processus d’extension, en fournissant uniquement une petite quantité d’informations utiles dans le **Journal système**. L’encapsulation de code gênant dans un `try/catch` bloc (exception) `NSLog` avant la nouvelle levée peut être utile.
+- Le **Journal système** est accessible à partir de l’application **console** sous utilitaires des **applications**  >  **Utilities**:
 
     [![](extensions-images/extension02.png "The system log")](extensions-images/extension02.png#lightbox)
 - Comme indiqué ci-dessus, l’exécution de l’application hôte d’extension l’inscrit auprès du système. Suppression de l’ensemble d’applications avec annulation de son inscription. 
-- Si les versions « inactives » des extensions d’une application sont inscrites, utilisez la commande suivante pour les localiser (afin qu’elles puissent être supprimées) : `plugin kit -mv`
+- Si les versions « isolées » des extensions d’une application sont inscrites, utilisez la commande suivante pour les localiser (afin qu’elles puissent être supprimées) :`plugin kit -mv`
 
-<a name="Walkthrough-and-Sample-App" />
+<a name="Walkthrough-and-Sample-App"></a>
 
 ## <a name="walkthrough-and-sample-app"></a>Procédure pas à pas et exemple d’application
 
@@ -54,13 +54,13 @@ Les conseils suivants peuvent être utiles lors de l’utilisation d’extension
 
 Vous trouverez [ici](https://docs.microsoft.com/samples/xamarin/mac-samples/extensionsamples)un exemple de projet Xamarin. Mac contenant de petits exemples fonctionnels de chaque type d’extension.
 
-<a name="Summary" />
+<a name="Summary"></a>
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article a fait un aperçu rapide de l’utilisation des extensions dans une application Xamarin. Mac version 2,10 (et ultérieure).
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Hello, Mac](~/mac/get-started/hello-mac.md)
 - [ExtensionSamples](https://docs.microsoft.com/samples/xamarin/mac-samples/extensionsamples)

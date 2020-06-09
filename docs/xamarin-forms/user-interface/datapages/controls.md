@@ -1,22 +1,8 @@
 ---
-title: ''
-description: Cet article présente les contrôles qui sont disponibles dans le Xamarin.Forms package NuGet de DataPages.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 093ef4b9b3ae7bde25da276330894bcf4e399145
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84134444"
+title : "référence des contrôles DataPages" Description : "cet article présente les contrôles qui sont disponibles dans le Xamarin.Forms package NuGet de DataPages."
+ms. Prod : xamarin ms. AssetID : 891615D0-E8BD-4ACC-A7F0-4C3725FBCC31 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 12/01/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="datapages-controls-reference"></a>Référence des contrôles DataPages
 
 ![](~/media/shared/preview.png "This API is currently in preview")
@@ -36,21 +22,19 @@ Pour utiliser ces contrôles en XAML, assurez-vous que l’espace de noms a ét�
     x:Class="DataPagesDemo.Detail">
 ```
 
-Les exemples ci-dessous incluent des `DynamicResource` références qui doivent exister dans le dictionnaire de ressources du projet pour fonctionner. Il existe également un exemple de création d’un [contrôle personnalisé](#custom)
+Les exemples ci-dessous incluent des `DynamicResource` références qui doivent exister dans le dictionnaire de ressources du projet pour fonctionner. Il existe également un exemple de création d’un [contrôle personnalisé](#custom-control-example).
 
 ## <a name="built-in-controls"></a>Contrôles intégrés
 
 * [HeroImage](#heroimage)
 * [ListItem](#listitem)
 
-<a name="heroimage" />
-
 ### <a name="heroimage"></a>HeroImage
 
 Le `HeroImage` contrôle a quatre propriétés :
 
 * Texte
-* Détails
+* Détail
 * ImageSource
 * Aspect
 
@@ -70,16 +54,14 @@ Le `HeroImage` contrôle a quatre propriétés :
 
 ![](controls-images/heroimage-light-ios.png "Contrôle HeroImage sur iOS") ![](controls-images/heroimage-dark-ios.png "Contrôle HeroImage sur iOS")
 
-<a name="listitem" />
-
 ### <a name="listitem"></a>ListItem
 
 La `ListItem` disposition du contrôle est similaire aux lignes de liste ou de table iOS et Android natives. Toutefois, il peut également être utilisé comme affichage normal. Dans l’exemple de code ci-dessous, il est affiché dans un `StackLayout` , mais il peut également être utilisé dans les contrôles de liste scolling liés aux données.
 
 Il existe cinq propriétés :
 
-* Titre
-* Détails
+* Intitulé
+* Détail
 * ImageSource
 * PlaceholdImageSource
 * Aspect
@@ -111,7 +93,7 @@ L’objectif de ce `CardView` contrôle personnalisé est de ressembler à un Ca
 Elle contient trois propriétés :
 
 * Texte
-* Détails
+* Détail
 * ImageSource
 
 L’objectif est un contrôle personnalisé qui ressemble au code ci-dessous (Notez qu’un personnalisé `xmlns:local` est requis qui référence l’assembly actuel) :
@@ -134,19 +116,15 @@ Elle doit ressembler aux captures d’écran ci-dessous à l’aide de couleurs 
 
 ![](controls-images/cardview-light-ios.png "Contrôle personnalisé CardView sur iOS") ![](controls-images/cardview-dark-ios.png "Contrôle personnalisé CardView sur iOS")
 
-<a name="custom" />
-
 ### <a name="building-the-custom-cardview"></a>Création du CardView personnalisé
 
-1. [Sous-classe DataView](#1)
-2. [Définir la police, la disposition et les marges](#2)
-3. [Créer des styles pour les enfants du contrôle](#3)
-4. [Créer le modèle de disposition de contrôle](#4)
-5. [Ajouter les ressources spécifiques au thème](#5)
-6. [Définir le ControlTemplate pour la classe CardView](#6)
-7. [Ajouter le contrôle à une page](#7)
-
-<a name="1" />
+1. [Sous-classe DataView](#1-dataview-subclass)
+2. [Définir la police, la disposition et les marges](#2-define-font-layout-and-margins)
+3. [Créer des styles pour les enfants du contrôle](#3-create-styles-for-the-controls-children)
+4. [Créer le modèle de disposition de contrôle](#4-create-the-control-layout-template)
+5. [Ajouter les ressources spécifiques au thème](#5-add-the-theme-specific-resources)
+6. [Définir le ControlTemplate pour la classe CardView](#6-set-the-controltemplate-for-the-cardview-class)
+7. [Ajouter le contrôle à une page](#7-add-the-control-to-a-page)
 
 #### <a name="1-dataview-subclass"></a>1. sous-classe DataView
 
@@ -188,13 +166,11 @@ public class CardView : DataView
 }
 ```
 
-<a name="2" />
-
 #### <a name="2-define-font-layout-and-margins"></a>2. définir la police, la disposition et les marges
 
 Le concepteur de contrôles va déterminer ces valeurs dans le cadre de la conception de l’interface utilisateur pour le contrôle personnalisé. Lorsque des spécifications spécifiques à la plateforme sont requises, l' `OnPlatform` élément est utilisé.
 
-Notez que certaines valeurs font référence à `StaticResource` s. celles-ci seront définies à l' [étape 5](#5).
+Notez que certaines valeurs font référence à `StaticResource` s. celles-ci seront définies à l' [étape 5](#5-add-the-theme-specific-resources).
 
 ```xml
 <!-- CARDVIEW FONT SIZES -->
@@ -246,8 +222,6 @@ Notez que certaines valeurs font référence à `StaticResource` s. celles-ci se
 </OnPlatform>
 ```
 
-<a name="3" />
-
 #### <a name="3-create-styles-for-the-controls-children"></a>3. créer des styles pour les enfants du contrôle
 
 Référencez tous les éléments définis sur pour créer les enfants qui seront utilisés dans le contrôle personnalisé :
@@ -277,8 +251,6 @@ Référencez tous les éléments définis sur pour créer les enfants qui seront
     <Setter Property="HeightRequest" Value="165"/>
 </Style>
 ```
-
-<a name="4" />
 
 #### <a name="4-create-the-control-layout-template"></a>4. créer le modèle de disposition de contrôle
 
@@ -321,8 +293,6 @@ La conception visuelle du contrôle personnalisé est déclarée explicitement d
 </ControlTemplate>
 ```
 
-<a name="5" />
-
 #### <a name="5-add-the-theme-specific-resources"></a>5. ajouter les ressources spécifiques au thème
 
 Étant donné qu’il s’agit d’un contrôle personnalisé, ajoutez les ressources qui correspondent au thème que vous utilisez dans le dictionnaire de ressources :
@@ -354,11 +324,9 @@ La conception visuelle du contrôle personnalisé est déclarée explicitement d
             <Color x:Key="iOSCardViewDetailTextColor">#B5B4B9</Color>
 ```
 
-<a name="6" />
-
 #### <a name="6-set-the-controltemplate-for-the-cardview-class"></a>6. définir le ControlTemplate pour la classe CardView
 
-Enfin, assurez-vous que la classe C# créée à l' [étape 1](#1) utilise le modèle de contrôle défini à l' [étape 4](#4) à l’aide d’un `Style` `Setter` élément.
+Enfin, assurez-vous que la classe C# créée à l' [étape 1](#1-dataview-subclass) utilise le modèle de contrôle défini à l' [étape 4](#4-create-the-control-layout-template) à l’aide d’un `Style` `Setter` élément.
 
 ```xml
 <Style TargetType="local:CardView">
@@ -367,8 +335,6 @@ Enfin, assurez-vous que la classe C# créée à l' [étape 1](#1) utilise le mod
   <Setter Property="BackgroundColor" Value="{ StaticResource CardViewBackgroundColor }" />
 </Style>
 ```
-
-<a name="7" />
 
 #### <a name="7-add-the-control-to-a-page"></a>7. ajouter le contrôle à une page
 

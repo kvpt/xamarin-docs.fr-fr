@@ -1,24 +1,10 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 39cf115ad80dd8cdd3ddb298ce87c065663d6cb2
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84132676"
+titre : « installation de Xamarin dans Visual Studio 2019 » Description : «ce document décrit comment installer Xamarin dans Visual Studio 2019. Il traite des exigences, du processus d’installation et de la vérification de l’installation.»
+ms. Prod : xamarin ms. AssetID : E20D4463-368E-4B60-A059-F50DB8C5552D auteur : conceptdev ms. Author : crdun ms. Date : 08/28/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
 # <a name="installing-xamarin-in-visual-studio-2019"></a>Installation de Xamarin dans Visual Studio 2019
 
-<a name="requirements" />
+<a name="requirements"></a>
 
 Vérifiez la [configuration requise](~/cross-platform/get-started/requirements.md) avant de commencer.
 
@@ -50,7 +36,7 @@ Pour plus d’informations, consultez le guide [Installation de Xamarin.iOS sur 
 4. [Remoted iOS Simulator](~/tools/ios-simulator/index.md)
 5. [Introduction à Xamarin.iOS pour Visual Studio](~/ios/get-started/installation/windows/introduction-to-xamarin-ios-for-visual-studio.md)
 
-### <a name="android"></a>Téléphone
+### <a name="android"></a>Android
 
 Pour plus d’informations, consultez le guide [Installation de Xamarin.Android sur un système Windows](~/android/get-started/installation/windows.md).
 

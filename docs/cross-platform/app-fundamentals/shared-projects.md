@@ -6,12 +6,12 @@ ms.assetid: 191c71fb-44a4-4e6c-af4b-7b1107dce6af
 author: davidortinau
 ms.author: daortin
 ms.date: 07/18/2018
-ms.openlocfilehash: eee76c056d05edccd1e039bc5e4cb8107d1aceb5
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b8be06b9da4561ffc0d628b53f8daf639b5e3179
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016698"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571093"
 ---
 # <a name="shared-projects-code-sharing"></a>Partage de code des projets partagés
 
@@ -35,7 +35,7 @@ Un projet partagé n’est pas compilé seul, il existe simplement comme un regr
 
 Notez que les projets d’application Android ne peuvent pas référencer d’autres projets d’application Android. par exemple, un projet de test unitaire Android ne peut pas faire référence à un projet d’application Android. Pour plus d’informations sur cette limitation, consultez ce [Forum de discussion](https://forums.xamarin.com/discussion/comment/98092/).
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 ## <a name="visual-studio-for-mac-walkthrough"></a>Procédure pas à pas Visual Studio pour Mac
 
@@ -43,7 +43,7 @@ Cette section explique comment créer et utiliser un projet partagé à l’aide
 
 ## <a name="creating-a-shared-project"></a>Création d’un projet partagé
 
-Pour créer un nouveau projet partagé, accédez à **fichier > nouvelle solution...** (ou cliquez avec le bouton droit sur une solution existante, puis choisissez **Ajouter > ajouter un nouveau projet...** ) :
+Pour créer un nouveau projet partagé, accédez à **fichier > nouvelle solution...** (ou cliquez avec le bouton droit sur une solution existante, puis choisissez **Ajouter > ajouter un nouveau projet...**) :
 
 [![Nouveau projet partagé](shared-projects-images/xs-newsolution-sml.png "Nouvelle solution")](shared-projects-images/xs-newsolution.png#lightbox)
 
@@ -69,7 +69,7 @@ L’écran d' **options** est illustré ci-dessous : le **nom** du projet et l'
 
 ![](shared-projects-images/xs-sharedprojectoptions.png "Shared Project Options")
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 ## <a name="visual-studio-walkthrough"></a>Procédure pas à pas Visual Studio
 
@@ -77,7 +77,7 @@ Cette section explique comment créer et utiliser un projet partagé à l’aide
 
 ### <a name="creating-a-shared-project"></a>Création d’un projet partagé
 
-Pour créer un projet partagé, accédez à **fichier**  > **nouveau** **projet** > .
+Pour créer un projet partagé, accédez à **fichier**  >  **nouveau**  >  **projet**.
 
 Dans Visual Studio 2019, entrez **Shared** dans la zone de recherche de la page **créer un nouveau projet** . Sélectionnez le modèle de **projet partagé** , puis cliquez sur **suivant**. Entrez un nom pour le projet, puis sélectionnez **créer**.
 
@@ -107,19 +107,19 @@ Le volet **Propriétés** est indiqué ci-dessous : l' **espace de noms racine*
 
 -----
 
-<a name="Shared_Project_Example"/>
+<a name="Shared_Project_Example"></a>
 
 ## <a name="shared-project-example"></a>Exemple de projet partagé
 
-L’exemple [Tasky](https://github.com/xamarin/mobile-samples/tree/master/Tasky) utilise un projet partagé pour contenir le code commun utilisé par les applications iOS, Android et Windows Phone. Les fichiers de code source `SQLite.cs` et `TaskRepository.cs` utilisent les directives de compilateur (par exemple, `#if __ANDROID__`) pour produire une sortie différente pour chacune des applications qui les référencent.
+L’exemple [Tasky](https://github.com/xamarin/mobile-samples/tree/master/Tasky) utilise un projet partagé pour contenir le code commun utilisé par les applications iOS, Android et Windows Phone. Les `SQLite.cs` fichiers de `TaskRepository.cs` code source et utilisent les directives de compilateur (par exemple, `#if __ANDROID__`) pour produire différentes sorties pour chacune des applications qui les référencent.
 
 La structure complète de la solution est illustrée ci-dessous (dans Visual Studio pour Mac et Visual Studio, respectivement) :
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 ![](shared-projects-images/xs-examplesolution.png "Visual Studio for Mac solution")
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 ![](shared-projects-images/vs-examplesolution.png "Visual Studio solution")
 
@@ -131,11 +131,11 @@ Les applications en cours d’exécution sont présentées ci-dessous :
 
 ![](shared-projects-images/example.png "iOS, Android, Windows Phone examples")
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Ce document décrit le fonctionnement des projets partagés, comment ils peuvent être créés et utilisés dans Visual Studio pour Mac et Visual Studio, et introduit un exemple d’application simple qui illustre un projet partagé en action.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Exemple d’application Tasky](https://github.com/xamarin/mobile-samples/tree/master/Tasky)
 - [Bibliothèques de classes portables (exemple)](~/cross-platform/app-fundamentals/pcl.md)
