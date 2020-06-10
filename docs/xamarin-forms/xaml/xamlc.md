@@ -1,22 +1,8 @@
 ---
-title: Compilation XAML dansXamarin.Forms
-description: Cet article explique comment XAML peut éventuellement être compilé directement en langage intermédiaire (IL) avec le Xamarin.Forms compilateur XAML (XAMLC).
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: eebbb3040175118320639bcb4482ec77b5c16ac7
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137291"
+title : "compilation XAML dans Xamarin.Forms " Description : "cet article explique comment XAML peut éventuellement être compilé directement en langage intermédiaire (il) avec le Xamarin.Forms compilateur XAML (XAMLC).
+ms. Prod : xamarin ms. AssetID : 9A2D10A6-5DFC-485F-A75A-2F7B98314025 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 08/22/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xaml-compilation-in-xamarinforms"></a>Compilation XAML dansXamarin.Forms
 
 _XAML peut être éventuellement compilé directement en langage intermédiaire (IL) avec le compilateur XAML (XAMLC)._

@@ -1,9 +1,6 @@
 ---
-titre : « résolution de dépendance dans Xamarin.Forms » Description : cet article explique comment injecter une méthode de résolution de dépendance dans Xamarin.Forms afin que le conteneur d’injection de dépendances d’une application contrôle la création et la durée de vie des convertisseurs, des effets et des implémentations de DependencyService personnalisés.
-ms. Prod : ms. AssetID : ms. Technology : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+titre : « résolution des dépendances dans Xamarin.Forms » Description : cet article explique comment injecter une méthode de résolution des dépendances dans Xamarin.Forms afin que le conteneur d’injection de dépendances d’une application contrôle la création et la durée de vie des convertisseurs personnalisés, des effets et des implémentations de DependencyService.»
+ms. Prod : xamarin ms. AssetID : 491B87DC-14CB-4ADC-AC6C-40A7627B2524 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 07/27/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
 
 # <a name="dependency-resolution-in-xamarinforms"></a>Résolution des dépendances dansXamarin.Forms

@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsCarouselView EmptyView
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a9f952da75e68e9ad39e0a15f57fbd0379233d7e
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137395"
+title : " Xamarin.Forms CarouselView EmptyView" Description : "dans CarouselView, vous pouvez spécifier une vue vide qui fournit des commentaires à l’utilisateur quand aucune donnée n’est disponible pour l’affichage. La vue vide peut être une chaîne, une vue ou plusieurs vues.
+ms. Prod : xamarin ms. AssetID : C6DEE1A9-63FC-4889-BC77-F401D5D7DF32 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 10/03/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-carouselview-emptyview"></a>Xamarin.FormsCarouselView EmptyView
 
 ![](~/media/shared/preview.png "This API is currently pre-release")

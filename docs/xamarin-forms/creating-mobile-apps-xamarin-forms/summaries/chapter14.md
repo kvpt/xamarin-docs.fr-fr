@@ -1,23 +1,7 @@
 ---
-title: ''
-description: ''
-Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 14. Absolute layout''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 72ee9c4a481388e69aeeb52dbd5b8eeaabb164f6
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136758"
+titre : «Résumé du chapitre 14. Disposition absolue "Description :" création d’Mobile Apps avec Xamarin.Forms : Résumé du chapitre 14. Disposition absolue "ms. Prod : xamarin ms. Technology : xamarin-Forms ms. AssetID : 88882A48-3226-42D1-96ED-241250B64A84 auteur : davidbritch ms. Author : dabritch ms. Date : 07/19/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="summary-of-chapter-14-absolute-layout"></a>Résumé du chapitre 14. Disposition absolue
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14)

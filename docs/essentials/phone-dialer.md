@@ -1,15 +1,12 @@
 ---
-titre : « » Xamarin.Essentials : le Numéroteur téléphonique «Description : » la classe PhoneDialer dans Xamarin.Essentials permet à une application d’ouvrir un numéro de téléphone dans le numéroteur «ms. AssetID : Author : ms. Custom : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title : " Xamarin.Essentials : Numéroteur téléphonique" Description : "la classe PhoneDialer dans Xamarin.Essentials permet à une application d’ouvrir un numéro de téléphone dans le numéroteur" ms. AssetID : E7457942-4D7B-4195-A2FF-417919B9537F auteur : jamesmontemagno ms. Custom : Video ms. Author : Jamont ms. date : 07/02/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
 
 # <a name="xamarinessentials-phone-dialer"></a>Xamarin.Essentials: Numéroteur téléphonique
 
 La classe **PhoneDialer** permet à une application de composer un numéro de téléphone sur le clavier.
 
-## <a name="get-started"></a>Prise en main
+## <a name="get-started"></a>Prendre en main
 
 [!include[](~/essentials/includes/get-started.md)]
 

@@ -1,23 +1,7 @@
 ---
-title: ''
-description: ''
-Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 23. Triggers and behaviors''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 9a0206354254f79756e29f834c85837240736eca
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136654"
+titre : «Résumé du chapitre 23. Déclencheurs et comportements "Description :" création d’Mobile Apps avec Xamarin.Forms : Résumé du chapitre 23. Déclencheurs et comportements "ms. Prod : xamarin ms. Technology : xamarin-Forms ms. AssetID : 19E84B5D-46B4-4B6D-A255-87BEFB011261 auteur : davidbritch ms. Author : dabritch ms. Date : 11/07/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="summary-of-chapter-23-triggers-and-behaviors"></a>Résumé du chapitre 23. Déclencheurs et comportements
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23)
@@ -129,7 +113,7 @@ L’exemple [**OrConditions**](https://github.com/xamarin/xamarin-forms-book-sam
 
 La combinaison de logiques and et OR n’est pas si simple et requiert généralement des éléments invisibles `Switch` pour les résultats intermédiaires. L’exemple [**XorConditions**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/XorConditions) montre comment un `Button` peut être activé si un texte est tapé dans l’un des deux `Entry` éléments, mais pas s’ils ont tous deux du texte tapé.
 
-## <a name="behaviors"></a>Comportements
+## <a name="behaviors"></a>comportements
 
 Tout ce que vous pouvez faire avec un déclencheur, vous pouvez également faire avec un comportement, mais les comportements requièrent toujours une classe qui dérive de [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) et substitue les deux méthodes suivantes :
 

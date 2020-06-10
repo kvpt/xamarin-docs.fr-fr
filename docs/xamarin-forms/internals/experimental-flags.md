@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Formsindicateurs expérimentaux
-description: Xamarin.Formsles indicateurs expérimentaux permettent à l’équipe d’ingénierie de fournir de nouvelles fonctionnalités aux utilisateurs plus rapidement, tout en étant en mesure de modifier les API de fonctionnalités avant qu’elles ne passent à une version stable.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: b548323330ccdce6fb01e83c7e8ab7c2d5307125
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139059"
+titre : « Xamarin.Forms indicateurs expérimentaux » : « Xamarin.Forms les indicateurs expérimentaux permettent à l’équipe d’ingénierie d’expédier de nouvelles fonctionnalités aux utilisateurs plus rapidement, tout en étant en mesure de modifier les API de fonctionnalités avant qu’elles ne passent à une version stable ».
+ms. Prod : xamarin ms. AssetID : AF4BDD27-89F6-48AE-A8CD-D7E4DDA2CCA2 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 04/14/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-experimental-flags"></a>Xamarin.Formsindicateurs expérimentaux
 
 Quand une nouvelle Xamarin.Forms fonctionnalité est implémentée, elle est parfois placée derrière un indicateur expérimental. Cela permet à l’équipe d’ingénierie de fournir de nouvelles fonctionnalités plus rapidement, tout en étant en mesure de modifier les API de fonctionnalités avant qu’elles ne passent à une version stable. L’indicateur expérimental est ensuite supprimé une fois la fonctionnalité déplacée vers une version stable.

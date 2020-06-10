@@ -1,23 +1,7 @@
 ---
-title: ''
-description: ''
-Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 13. Bitmaps''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 43caf088ad6cb816f049e7862a287c17839c2170
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136771"
+titre : «Résumé du chapitre 13. Bitmaps « Description : » création d’Mobile Apps avec Xamarin.Forms : Résumé du chapitre 13. Bitmaps "ms. Prod : xamarin ms. Technology : xamarin-Forms ms. AssetID : 5D153857-B6B7-4A14-8FB9-067DE198C2C7 auteur : davidbritch ms. Author : dabritch ms. Date : 07/18/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="summary-of-chapter-13-bitmaps"></a>Résumé du chapitre 13. Images bitmap
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13)
@@ -143,11 +127,11 @@ Sur iOS, ces bitmaps sont différenciées par un suffixe sur le nom de fichier 
 
 Une image bitmap destinée à être affichée sous la forme d’un carré d’un pouce existe dans trois versions :
 
-- MyImage. jpg à 160 pixels carrés
+- MyImage.jpg à 160 pixels carrés
 - MyImage@2x.jpgà 320 pixels carrés
 - MyImage@3x.jpgà 480 pixels carrés
 
-Le programme ferait référence à cette image bitmap en tant que MyImage. jpg, mais la version appropriée est récupérée au moment de l’exécution en fonction de la résolution de l’écran. En cas de non-contrainte, l’image bitmap s’affiche toujours à 160 unités indépendantes du périphérique.
+Le programme ferait référence à cette image bitmap comme MyImage.jpg, mais la version appropriée est récupérée au moment de l’exécution en fonction de la résolution de l’écran. En cas de non-contrainte, l’image bitmap s’affiche toujours à 160 unités indépendantes du périphérique.
 
 Pour Android, les bitmaps sont stockées dans différents sous-dossiers du dossier **ressources** :
 
@@ -160,18 +144,18 @@ Pour Android, les bitmaps sont stockées dans différents sous-dossiers du dossi
 
 Pour une image bitmap destinée à être rendue à un pouce carré, les différentes versions de la bitmap auront le même nom mais une taille différente, et seront stockées dans ces dossiers :
 
-- Drawable-LDPI/MyImage. jpg à 120 pixels carrés
-- Drawable-MDPI/MyImage. jpg à 160 pixels carrés
-- Drawable-HDPI/MyImage. jpg à 240 pixels carrés
-- Drawable-xhdpi/MyImage. jpg à 320 pixels carrés
-- Drawable-xxhdpi/MyImage. jpg à 480 pixels carrés
-- Drawable-xxxhdpi/MyImage. jpg à 640 pixels carrés
+- dessinable-LDPI/MyImage.jpg à 120 pixels carrés
+- dessinable-MDPI/MyImage.jpg à 160 pixels carrés
+- dessinable-HDPI/MyImage.jpg à 240 pixels carrés
+- dessinable-xhdpi/MyImage.jpg à 320 pixels carrés
+- dessinable-xxhdpi/MyImage.jpg à 480 pixels carrés
+- dessinable-xxxhdpi/MyImage.jpg à 640 pixels carrés
 
 La bitmap s’affiche toujours à 160 unités indépendantes du périphérique. (Le Xamarin.Forms modèle de solution standard comprend uniquement les dossiers HDPI, xhdpi et xxhdpi.)
 
 Le projet UWP prend en charge un modèle d’attribution de nom d’image bitmap qui se compose d’un facteur d’échelle en pixels par unité indépendante du périphérique sous la forme d’un pourcentage, par exemple :
 
-- MyImage. Scale-200. jpg à 320 pixels carrés
+- MyImage.scale-200.jpg à 320 pixels carrés
 
 Seuls certains pourcentages sont valides. Les exemples de programmes de ce livre incluent uniquement les images avec les suffixes de **Scale-200** , mais les Xamarin.Forms modèles de solution actuels incluent **Scale-100**, **scale-125**, **Scale-150**et **Scale-400**.
 

@@ -1,29 +1,15 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 64529b81a375ee5a8cc8a96ec557c03401e60495
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84130570"
+titre : « authentifier les utilisateurs avec Azure Active Directory B2C » Description : «Azure Active Directory B2C fournit la gestion des identités dans le Cloud pour les applications mobiles et Web destinées aux consommateurs. Cet article explique comment utiliser Azure Active Directory B2C pour intégrer la gestion des identités dans une application mobile à l’aide de la bibliothèque d’authentification Microsoft.»
+ms. Prod : xamarin ms. AssetID : B0A5DB65-0585-4A00-B908-22CCC286E6B6 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 12/04/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="authenticate-users-with-azure-active-directory-b2c"></a>Authentifier les utilisateurs avec Azure Active Directory B2C
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azureadb2cauth)
 
 _Azure Active Directory B2C fournit la gestion des identités dans le Cloud pour les applications mobiles et Web destinées aux consommateurs. Cet article explique comment utiliser Azure Active Directory B2C pour intégrer la gestion des identités dans une application mobile à l’aide de la bibliothèque d’authentification Microsoft._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d’ensemble
 
 Azure Active Directory B2C (ADB2C) est un service de gestion des identités pour les applications accessibles aux consommateurs. Il permet aux utilisateurs de se connecter à votre application à l’aide de leurs comptes sociaux existants ou d’informations d’identification personnalisées telles que l’e-mail, le nom d’utilisateur et le mot de passe. Les comptes d’identification personnalisés sont appelés comptes _locaux_ .
 
@@ -70,7 +56,7 @@ La bibliothèque d’authentification Microsoft s’attend à ce que l' **URL de
 
 ![URI de redirection personnalisée dans l’affichage des propriétés de l’application Azure](azure-ad-b2c-images/azure-redirect-uri.png)
 
-L’URL sera utilisée ultérieurement dans Android **fichier ApplicationManifest. xml** et iOS **info. plist**.
+L’URL sera utilisée ultérieurement dans les **ApplicationManifest.xml** Android et iOS **info. plist**.
 
 Dans l’exemple de projet, modifiez le fichier **constants.cs** pour définir le `clientId` champ sur votre **ID d’application**. Le code suivant montre comment cette valeur doit être définie si votre ID d’application est `1234abcd` :
 
@@ -284,9 +270,9 @@ namespace TodoAzure.iOS
 }
 ```
 
-### <a name="android"></a>Téléphone
+### <a name="android"></a>Android
 
-Sur Android, le schéma d’URL personnalisé qui a été enregistré avec Azure Active Directory B2C doit être inscrit dans **fichier AndroidManifest. xml**. MSAL s’attend à ce que le schéma d’URL adhère à un modèle spécifique, décrit précédemment dans [inscrire votre application mobile avec Azure Active Directory B2C](~/xamarin-forms/data-cloud/authentication/azure-ad-b2c.md#register-your-mobile-application-with-azure-active-directory-b2c). L’exemple suivant montre le schéma d’URL personnalisé dans **fichier AndroidManifest. xml**.
+Sur Android, le schéma d’URL personnalisé qui a été enregistré avec Azure Active Directory B2C doit être inscrit dans le **AndroidManifest.xml**. MSAL s’attend à ce que le schéma d’URL adhère à un modèle spécifique, décrit précédemment dans [inscrire votre application mobile avec Azure Active Directory B2C](~/xamarin-forms/data-cloud/authentication/azure-ad-b2c.md#register-your-mobile-application-with-azure-active-directory-b2c). L’exemple suivant montre le schéma d’URL personnalisé dans la **AndroidManifest.xml**.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -307,7 +293,7 @@ Sur Android, le schéma d’URL personnalisé qui a été enregistré avec Azure
 </manifest>
 ```
 
-La `MainActivity` classe doit être modifiée pour fournir l' `UIParent` objet à l’application pendant l' `OnCreate` appel. Lorsque Azure Active Directory B2C termine la demande d’autorisation, il effectue une redirection vers le schéma d’URL enregistré à partir du **fichier fichier AndroidManifest. xml**. Le schéma d’URI inscrit entraîne l’appel de la méthode par Android `OnActivityResult` avec l’URL en tant que paramètre de lancement, où elle est traitée par la `SetAuthenticationContinuationEventArgs` méthode.
+La `MainActivity` classe doit être modifiée pour fournir l' `UIParent` objet à l’application pendant l' `OnCreate` appel. Lorsque Azure Active Directory B2C termine la demande d’autorisation, il effectue une redirection vers le schéma d’URL inscrit à partir du **AndroidManifest.xml**. Le schéma d’URI inscrit entraîne l’appel de la méthode par Android `OnActivityResult` avec l’URL en tant que paramètre de lancement, où elle est traitée par la `SetAuthenticationContinuationEventArgs` méthode.
 
 ```csharp
 public class MainActivity : FormsAppCompatActivity
@@ -345,6 +331,6 @@ Exécutez l’application sur un appareil virtuel ou physique. Appuyez sur le bo
 ## <a name="related-links"></a>Liens connexes
 
 - [AzureADB2CAuth (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azureadb2cauth)
-- [Azure Active Directory B2C](/azure/active-directory-b2c/)
+- [Azure Active Directory B2C](/azure/active-directory-b2c/)
 - [Microsoft Authentication Library](https://www.nuget.org/packages/Microsoft.Identity.Client)
 - [Documentation de la bibliothèque d’authentification Microsoft](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki)

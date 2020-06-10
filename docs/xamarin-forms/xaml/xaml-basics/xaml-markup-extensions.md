@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 3fcea963b253ea34601a36434007f18d925975eb
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84131337"
+titre : «partie 3. Description des extensions de balisage XAML : les extensions de balisage XAML constituent une fonctionnalité importante du langage XAML qui permet de définir des propriétés sur des objets ou des valeurs qui sont référencés indirectement à partir d’autres sources.»
+ms. Prod : xamarin ms. Technology : xamarin-Forms ms. AssetID : F4A37564-B18B-42FF-B841-9A1949895AB6 auteur : davidbritch ms. Author : dabritch ms. Date : 03/27/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="part-3-xaml-markup-extensions"></a>Partie 3. Extensions de balisage XAML
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)

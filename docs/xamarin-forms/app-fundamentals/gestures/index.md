@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Formsmouvements
-description: Ce guide explique comment Xamarin.Forms les détecteurs de mouvement peuvent être utilisés pour détecter l’interaction de l’utilisateur avec les vues dans une Xamarin.Forms application.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 5e1e93f74ab8ef6d63213a8fbdc7ec45a794cf55
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137875"
+titre : « Xamarin.Forms gestes » Description : « ce guide explique comment Xamarin.Forms les module de reconnaissance de mouvement peuvent être utilisés pour détecter l’interaction de l’utilisateur avec les vues dans une Xamarin.Forms application ».
+ms. Prod : xamarin ms. AssetID : 0E197A51-2304-4C09-A710-C7FF24A89F15 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 07/25/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-gestures"></a>Xamarin.Formsmouvements
 
 _Les détecteurs de mouvement peuvent être utilisés pour détecter l’interaction de l’utilisateur avec des vues dans une Xamarin.Forms application._

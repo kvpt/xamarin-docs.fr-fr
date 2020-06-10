@@ -1,27 +1,13 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 6ae4116be99f076a7afd5ed9c2823bc12f445e18
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137985"
+titre : « Margin and Padding » Description : «les propriétés de marge et de remplissage contrôlent le comportement de disposition lorsqu’un élément est affiché dans l’interface utilisateur. Cet article explique la différence entre les deux propriétés et comment les définir.
+ms. Prod : xamarin ms. AssetID : BEB096BB-51DF-410F-B0F1-D235287B0F4A ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 04/27/2016 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="margin-and-padding"></a>Marge et remplissage
 
 _Les propriétés de marge et de marge intérieure contrôlent le comportement de disposition lorsqu’un élément est rendu dans l’interface utilisateur. Cet article explique la différence entre les deux propriétés et comment les définir._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d’ensemble
 
 Les marges et le remplissage sont des concepts de disposition associés :
 

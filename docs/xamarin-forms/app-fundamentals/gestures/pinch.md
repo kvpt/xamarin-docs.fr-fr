@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: da4a8bc66a7986efd3683de6dce1f6af618b85cc
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137850"
+titre : « ajout d’un module de reconnaissance de mouvement de pincement » Description : « cet article explique comment utiliser le geste de pincement pour effectuer un zoom interactif d’une image à l’emplacement de pincement ».
+ms. Prod : xamarin ms. AssetID : 832F7810-F0CF-441A-B04A-3975F3FB8B29 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 01/21/2016 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="adding-a-pinch-gesture-recognizer"></a>Ajout d’un module de reconnaissance des pincements
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-pinchgesture)

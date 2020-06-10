@@ -1,23 +1,7 @@
 ---
-title: ''
-description: ''
-Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 25. Page varieties''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: e66fb50b8d537ee0267457d5b0ab0f417813e676
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136615"
+titre : «Résumé du chapitre 25. Variétés de page "Description :" création d’Mobile Apps avec Xamarin.Forms : Résumé du chapitre 25. Variétés de page «ms. Prod : xamarin ms. Technology : xamarin-Forms ms. AssetID : D1D348F2-6A44-4781-ADCE-A0B7BB9AEF89 Author : davidbritch ms. Author : dabritch ms. Date : 11/07/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="summary-of-chapter-25-page-varieties"></a>Résumé du chapitre 25. Variétés de page
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25)
@@ -66,7 +50,7 @@ Ce fichier XAML affecte également [`IsPresented`](xref:Xamarin.Forms.MasterDeta
 
 ### <a name="your-own-user-interface"></a>Votre propre interface utilisateur
 
-Bien que Xamarin.Forms offre une interface utilisateur pour basculer entre les vues maître et détail, vous pouvez fournir les vôtres. Pour cela :
+Bien que Xamarin.Forms offre une interface utilisateur pour basculer entre les vues maître et détail, vous pouvez fournir les vôtres. Pour ce faire :
 
 - Affectez à la propriété la valeur [`IsGestureEnabled`](xref:Xamarin.Forms.MasterDetailPage.IsGestureEnabled) `false` pour désactiver le balayage
 - Substituez la [`ShouldShowToolbarButton`](xref:Xamarin.Forms.MasterDetailPage.ShouldShowToolbarButton) méthode et retournez `false` pour masquer les boutons de la barre d’outils sur Windows 8.1 et Windows Phone 8,1.

@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 6a28dd20eb8978334365ac217df1241e5288fd28
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137421"
+title : "Description de la mosaïque de bitmap SkiaSharp" : "juxtaposer une zone à l’aide de bitmaps répétés horizontalement et verticalement."
+ms. Prod : xamarin ms. Technology : xamarin-skiasharp ms. AssetID : 9ED14E07-4DC8-4B03-8A33-772838BF51EA auteur : davidbritch ms. Author : dabritch ms. Date : 08/23/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="skiasharp-bitmap-tiling"></a>Mosaïque de bitmaps SkiaSharp
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

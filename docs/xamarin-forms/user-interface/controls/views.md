@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsAffichage
-description: Xamarin.Formsles vues sont les blocs de construction des interfaces utilisateur mobiles multiplateformes. Cet article répertorie les affichages inclus dans Xamarin.Forms .
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 8c15626e405645d28a785c32d276860f9751ea25
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84132377"
+titre : « Xamarin.Forms views » Description : « Xamarin.Forms les vues sont les blocs de construction des interfaces utilisateur mobiles multiplateforme. Cet article répertorie les affichages inclus dans Xamarin.Forms .
+ms. Prod : xamarin ms. AssetID : AC070686-A423-4A98-8BB6-0B9F94C062CC ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 04/16/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-views"></a>Xamarin.FormsAffichage
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery/)
@@ -41,7 +27,7 @@ Les vues sont des objets d’interface utilisateur, tels que des étiquettes, de
 | `Expander`fournit un conteneur extensible pour héberger tout contenu, et est constitué d’un en-tête et d’un contenu. Affectez `Header` à la propriété une valeur [`View`](xref:Xamarin.Forms.View) qui sera affichée comme en-tête et la `Content` propriété à un [`View`](xref:Xamarin.Forms.View) qui s’affichera lorsque l’en-tête sera développé par un TAP.<br /><br />[Guide](~/xamarin-forms/user-interface/expander.md)  /  [Exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-expanderdemos) | [![Exemple d’Expander](views-images/Expander.png "Exemple d’Expander")](views-images/Expander-Large.png#lightbox "Exemple d’Expander")<br /> [Code C# pour cette page](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ExpanderDemoPage.cs)  /  [Page XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ExpanderDemoPage.xaml) |
 |     |     |
 
-### <a name="label"></a>Étiquette
+### <a name="label"></a>Etiquette
 
 |     |     |
 | --- | --- |
@@ -55,7 +41,7 @@ Les vues sont des objets d’interface utilisateur, tels que des étiquettes, de
 | [`Image`](xref:Xamarin.Forms.Image)affiche une image bitmap. Les bitmaps peuvent être téléchargées sur le Web, incorporées en tant que ressources dans les projets de plateforme ou de projet communs, ou créées à l’aide d’un `Stream` objet .net.<br /><br />Documentation sur les [API](xref:Xamarin.Forms.Image)  /  [Guide](~/xamarin-forms/user-interface/images.md)  /  [Exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithimages) | [![Exemple d’image](views-images/Image.png "Exemple d’image")](views-images/Image-Large.png#lightbox "Exemple d’image")<br />[Code C# pour cette page](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ImageDemoPage.cs)  /  [Page XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ImageDemoPage.xaml) |
 |     |     |
 
-### <a name="map"></a>Carte
+### <a name="map"></a>Mappage
 
 |     |     |
 | --- | --- |
@@ -198,7 +184,7 @@ Ces deux classes dérivent de la [`InputView`](xref:Xamarin.Forms.InputView) cla
 | [`ActivityIndicator`](xref:Xamarin.Forms.ActivityIndicator)utilise une animation pour montrer que l’application est engagée dans une activité de longue durée sans donner aucune indication de la progression. La [`IsRunning`](xref:Xamarin.Forms.ActivityIndicator.IsRunning) propriété contrôle l’animation.<br /><br />Si la progression de l’activité est connue, utilisez à la [`ProgressBar`](#progressbar) place.<br /><br />Documentation sur les [API](xref:Xamarin.Forms.ActivityIndicator)  /  [Guide](~/xamarin-forms/user-interface/activityindicator.md)  /  [Exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-activityindicatordemos/) | [![Exemple ActivityIndicator](views-images/ActivityIndicator.png "Exemple ActivityIndicator")](views-images/ActivityIndicator-Large.png#lightbox "Exemple ActivityIndicator")<br />[Code C# pour cette page](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ActivityIndicatorDemoPage.cs)  /  [Page XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ActivityIndicatorDemoPage.xaml) |
 |     |     |
 
-### <a name="progressbar"></a>ProgressBar
+### <a name="progressbar"></a>Barre de progression
 
 |     |     |
 | --- | --- |

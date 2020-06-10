@@ -1,23 +1,7 @@
 ---
-title: ''
-description: ''
-Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 6. Button clicks''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: f9bafbf4af2a89acd02d436604e882be87cbde8c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136836"
+titre : «Résumé du chapitre 6. Clics sur le bouton "Description :" création d’Mobile Apps avec Xamarin.Forms : Résumé du chapitre 6. Clics de bouton "ms. Prod : xamarin ms. Technology : xamarin-Forms ms. AssetID : D4F9C429-A6CF-40FA-AC68-3F149307A5F9 auteur : davidbritch ms. Author : dabritch ms. Date : 07/18/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="summary-of-chapter-6-button-clicks"></a>Résumé du chapitre 6. Clics de bouton
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06)

@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 01f4fcf1953658af44d2a8996913860a3b605abf
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138656"
+titre : « enregistrement des bitmaps SkiaSharp dans des fichiers » Description : « Explorez les différents formats de fichiers pris en charge par SkiaSharp pour enregistrer des bitmaps dans la bibliothèque de photos de l’utilisateur ».
+ms. Prod : xamarin ms. Technology : xamarin-skiasharp ms. AssetID : 2D696CB6-B31B-42BC-8D3B-11D63B1E7D9C auteur : davidbritch ms. Author : dabritch ms. Date : 07/10/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="saving-skiasharp-bitmaps-to-files"></a>Enregistrement de bitmaps SkiaSharp dans des fichiers
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -176,7 +162,7 @@ public class PhotoLibrary : IPhotoLibrary
 
 L’appel à `MediaScannerConnection.ScanFile` n’est pas strictement obligatoire, mais si vous testez votre programme en vérifiant immédiatement la bibliothèque de photos, cela vous aide à mettre à jour la vue bibliothèque de la bibliothèque.
 
-Le fichier **fichier AndroidManifest. xml** requiert la balise d’autorisation suivante :
+Le fichier **AndroidManifest.xml** requiert la balise d’autorisation suivante :
 
 ```xml
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -456,17 +442,15 @@ Pour tous les autres formats, la `Encode` méthode n’écrit rien dans le flux 
 
 La bitmap enregistrée par la page de **formats de fichier d’enregistrement** est de 600 pixels carrés. Avec 4 octets par pixel, il s’agit d’un total de 1 440 000 octets en mémoire. Le tableau suivant indique la taille des fichiers pour différentes combinaisons de format de fichier et de qualité :
 
-|Mettre en forme|Qualité|Size|
-|---
-titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
----|---titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
----:|---:| | PNG | NON APPLICABLE | 492K | | JPEG | 0 | 2.95 k | |      | 50 | 22.1 k | |      | 100 | 206K | | WebP | 0 | 2.71 k | |      | 50 | 11.9 k | |      | 100 | 101K |
+|Format|Qualité|Taille|
+|------|------:|---:|
+| PNG | N/A | 492K |
+| JPEG | 0 | 2.95 k |
+|      | 50 | 22.1 k |
+|      | 100 | 206K |
+| WebP | 0 | 2.71 k |
+|      | 50 | 11.9 k |
+|      | 100 | 101K |
 
 Vous pouvez expérimenter différents paramètres de qualité et examiner les résultats.
 

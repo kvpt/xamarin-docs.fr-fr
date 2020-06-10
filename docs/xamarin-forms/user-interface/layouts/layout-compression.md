@@ -1,29 +1,15 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 40af5aeaa51025dae70113faa6f7ff83edf43c73
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138023"
+titre : « compression de disposition » : «la compression de disposition supprime les dispositions spécifiées de l’arborescence d’éléments visuels afin d’améliorer les performances de rendu de la page. Cet article explique comment activer la compression de disposition et les avantages qu’elle peut apporter.
+ms. Prod : xamarin ms. AssetID : da9e1b26-9d31-4762-94c3-4039f306b7f2 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 12/13/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="layout-compression"></a>Compression des dispositions
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layoutcompression)
 
 _La compression de disposition supprime les dispositions spécifiées de l’arborescence d’éléments visuels afin d’améliorer les performances de rendu des pages. Cet article explique comment activer la compression de disposition et les avantages qu’elle peut apporter._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d’ensemble
 
 Xamarin.Formseffectue la disposition à l’aide de deux séries d’appels de méthode récursives :
 

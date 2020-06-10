@@ -1,22 +1,8 @@
 ---
-title: Couleurs dansXamarin.Forms
-description: Xamarin.Formsfournit une classe de couleur multiplateforme flexible. Cet article explique la fonctionnalité fournie par la classe Color et comment l’utiliser.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a02fe7451702367d85d322b756df4a547a009454
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137343"
+title : "les couleurs dans Xamarin.Forms " Description : " Xamarin.Forms fournissent une classe de couleur multiplateforme flexible. Cet article explique les fonctionnalités fournies par la classe Color et comment l’utiliser.»
+ms. Prod : xamarin ms. AssetID : 22288ABF-57BE-47A9-ACC3-AC604D787C46 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 04/02/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="colors-in-xamarinforms"></a>Couleurs dansXamarin.Forms
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithcolors)

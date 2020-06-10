@@ -1,23 +1,7 @@
 ---
-title: ''
-description: ''
-Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 7. XAML vs. code''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 0b92988e1e838072fca0d8a284455a62db05e757
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136855"
+titre : «Résumé du chapitre 7. XAML et Code « Description : » création d’Mobile Apps avec Xamarin.Forms : Résumé du chapitre 7. XAML et code «ms. Prod : xamarin ms. Technology : xamarin-Forms ms. AssetID : E91F387B-CE90-481C-8D90-CB25519BFD2B auteur : davidbritch ms. Author : dabritch ms. Date : 07/19/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="summary-of-chapter-7-xaml-vs-code"></a>Résumé du chapitre 7. XAML et code
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07)

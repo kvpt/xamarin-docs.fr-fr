@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 45b7d0d20c43aa22ebde3a17552f10ceea77a48b
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139137"
+titre : « Xamarin Hot restart » Description : « ce document décrit comment configurer et utiliser le redémarrage à chaud Xamarin pour déboguer une application iOS ».
+ms. Prod : xamarin ms. AssetID : 6BC62A88-9368-41BB-8494-760F2A4805DB ms. Technology : xamarin-Forms Author : maddyleger1 ms. Author : maleger ms. Date : 03/16/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarin-hot-restart-preview"></a>Xamarin Hot Restart (préversion)
 
 ![Fonctionnalité d’évaluation](~/media/shared/preview.png)
@@ -26,7 +12,7 @@ Xamarin Hot Restart vous permet de tester rapidement les modifications apportée
 > [!IMPORTANT]
 > Le redémarrage à chaud Xamarin est actuellement disponible dans Visual Studio 2019 version 16,5 stable et prend en charge les applications iOS à l’aide de Xamarin.Forms . La prise en charge des Visual Studio pour Mac et des applications non basées Xamarin.Forms sur le plan.
 
-## <a name="requirements"></a>Conditions requises
+## <a name="requirements"></a>Configuration requise
 
 - Visual Studio 2019 version 16,5
 - iTunes (64 bits)
@@ -66,7 +52,7 @@ Vous pouvez apporter des modifications à vos fichiers de code pendant le débog
 
 Vous pouvez également utiliser le `HOTRESTART` symbole de préprocesseur pour empêcher l’exécution de certains codes lors du débogage avec redémarrage à chaud Xamarin.
 
-## <a name="limitations"></a>Limitations
+## <a name="limitations"></a>Limites
 
 - Seules les applications iOS créées avec Xamarin.Forms et les appareils IOS sont actuellement prises en charge.
 - Seuls les appareils iOS 64 bits sont pris en charge. Depuis iOS 11, Apple n’autorise plus l’exécution d’applications iOS sur l’architecture 32 bits (appareils antérieurs à iPhone 5 s).

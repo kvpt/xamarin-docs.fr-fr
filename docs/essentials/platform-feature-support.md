@@ -1,27 +1,15 @@
 ---
-title: Xamarin.EssentialsPrise en charge des fonctionnalités de & de plateforme
-description: Xamarin.Essentialsfournit une API multiplateforme unique qui fonctionne avec n’importe quelle application iOS, Android ou UWP accessible à partir de code partagé, quelle que soit la façon dont l’interface utilisateur est créée.
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: b052e03f3ca57229988a29b7d3f38f5fa7bb6f97
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137174"
+title : « Xamarin.Essentials Platform & Feature support «Description : » Xamarin.Essentials fournit une API multiplateforme unique qui fonctionne avec n’importe quelle application iOS, Android ou UWP accessible à partir de code partagé, quelle que soit la façon dont l’interface utilisateur est créée.
+ms. AssetID : 63FA28A5-6F52-4CB7-AF39-8DF7B436B5A4 auteur : jamesmontemagno ms. Author : Jamont ms. Date : 08/20/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="platform-support"></a>Prise en charge de plateforme
 
 Xamarin.Essentialsprend en charge les plateformes et systèmes d’exploitation suivants :
 
 | Plateforme | Version |
 | --- | --- |
-| Téléphone | 4.4 (API 19) ou version ultérieure |
+| Android | 4.4 (API 19) ou version ultérieure |
 | iOS |10.0 ou version ultérieure |
 | Tizen | 4.0 ou version supérieure |
 | tvOS | 10.0 ou version ultérieure |
@@ -43,7 +31,7 @@ Guide des icônes :
 * ![Prise en charge limitée](~/media/shared/warn.png "Prise en charge limitée") -prise en charge limitée
 * ![Non pris en charge](~/media/shared/no.png "Non pris en charge") -non pris en charge
 
-| Caractéristique | Android | iOS | UWP | watchOS | tvOS | Tizen |
+| Fonctionnalité | Android | iOS | UWP | watchOS | tvOS | Tizen |
 | --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | [Accelerometer](accelerometer.md?context=xamarin/xamarin-forms) | ![Android pris en charge](~/media/shared/yes.png "Android pris en charge") | ![iOS pris en charge](~/media/shared/yes.png "iOS pris en charge") | ![UWP pris en charge](~/media/shared/yes.png "UWP pris en charge") | ![Watchos pris en charge](~/media/shared/yes.png "Watchos pris en charge") | ![tvOS non pris en charge](~/media/shared/no.png "tvOS non pris en charge") | ![Tizen pris en charge](~/media/shared/yes.png "Tizen pris en charge") |
 | [Informations de l'application](app-information.md?context=xamarin/xamarin-forms) | ![Android pris en charge](~/media/shared/yes.png "Android pris en charge") | ![iOS pris en charge](~/media/shared/yes.png "iOS pris en charge") | ![UWP pris en charge](~/media/shared/yes.png "UWP pris en charge") | ![Watchos pris en charge](~/media/shared/no.png "Watchos non pris en charge") | ![tvOS pris en charge](~/media/shared/yes.png "tvOS pris en charge") | ![Tizen pris en charge](~/media/shared/yes.png "Tizen pris en charge") |
@@ -56,7 +44,7 @@ Guide des icônes :
 | [Connectivité](connectivity.md?context=xamarin/xamarin-forms) | ![Android pris en charge](~/media/shared/yes.png "Android pris en charge") | ![iOS pris en charge](~/media/shared/yes.png "iOS pris en charge") | ![UWP pris en charge](~/media/shared/yes.png "UWP pris en charge") | ![Watchos non pris en charge](~/media/shared/no.png "Watchos non pris en charge") | ![tvOS pris en charge](~/media/shared/yes.png "tvOS pris en charge") | ![Tizen pris en charge](~/media/shared/yes.png "Tizen pris en charge") |
 | [Détecter les secousses](detect-shake.md?context=xamarin/xamarin-forms) | ![Android pris en charge](~/media/shared/yes.png "Android pris en charge") | ![iOS pris en charge](~/media/shared/yes.png "iOS pris en charge") | ![UWP pris en charge](~/media/shared/yes.png "UWP pris en charge") | ![Watchos pris en charge](~/media/shared/yes.png "Watchos pris en charge") | ![tvOS pris en charge](~/media/shared/yes.png "tvOS pris en charge") | ![Tizen pris en charge](~/media/shared/yes.png "Tizen pris en charge") |
 | [Informations d’affichage de l’appareil](device-display.md?context=xamarin/xamarin-forms) | ![Android pris en charge](~/media/shared/yes.png "Android pris en charge") | ![iOS pris en charge](~/media/shared/yes.png "iOS pris en charge") | ![UWP pris en charge](~/media/shared/yes.png "UWP pris en charge") | ![Watchos non pris en charge](~/media/shared/no.png "Watchos non pris en charge") | ![tvOS non pris en charge](~/media/shared/no.png "tvOS non pris en charge") | ![Tizen non pris en charge](~/media/shared/no.png "Tizen non pris en charge") |
-| [Informations sur l’appareil](device-information.md?context=xamarin/xamarin-forms) | ![Android pris en charge](~/media/shared/yes.png "Android pris en charge") | ![iOS pris en charge](~/media/shared/yes.png "iOS pris en charge") | ![UWP pris en charge](~/media/shared/yes.png "UWP pris en charge") | ![Watchos pris en charge](~/media/shared/yes.png "Watchos pris en charge") | ![tvOS pris en charge](~/media/shared/yes.png "tvOS pris en charge") | ![Tizen pris en charge](~/media/shared/yes.png "Tizen pris en charge") |
+| [Informations sur l'appareil](device-information.md?context=xamarin/xamarin-forms) | ![Android pris en charge](~/media/shared/yes.png "Android pris en charge") | ![iOS pris en charge](~/media/shared/yes.png "iOS pris en charge") | ![UWP pris en charge](~/media/shared/yes.png "UWP pris en charge") | ![Watchos pris en charge](~/media/shared/yes.png "Watchos pris en charge") | ![tvOS pris en charge](~/media/shared/yes.png "tvOS pris en charge") | ![Tizen pris en charge](~/media/shared/yes.png "Tizen pris en charge") |
 | [E-mail](email.md?context=xamarin/xamarin-forms) | ![Android pris en charge](~/media/shared/yes.png "Android pris en charge") | ![iOS pris en charge](~/media/shared/yes.png "iOS pris en charge") | ![UWP pris en charge](~/media/shared/yes.png "UWP pris en charge") | ![Watchos non pris en charge](~/media/shared/no.png "Watchos non pris en charge") | ![tvOS non pris en charge](~/media/shared/no.png "tvOS non pris en charge") | ![Tizen pris en charge](~/media/shared/yes.png "Tizen pris en charge") |
 | [Assistances de système de fichiers](file-system-helpers.md?context=xamarin/xamarin-forms) | ![Android pris en charge](~/media/shared/yes.png "Android pris en charge") | ![iOS pris en charge](~/media/shared/yes.png "iOS pris en charge") | ![UWP pris en charge](~/media/shared/yes.png "UWP pris en charge") | ![Watchos pris en charge](~/media/shared/yes.png "Watchos pris en charge") | ![tvOS pris en charge](~/media/shared/yes.png "tvOS pris en charge") | ![Tizen pris en charge](~/media/shared/yes.png "Tizen pris en charge") |
 | [Lampe torche](flashlight.md?context=xamarin/xamarin-forms) | ![Android pris en charge](~/media/shared/yes.png "Android pris en charge") | ![iOS pris en charge](~/media/shared/yes.png "iOS pris en charge") | ![UWP pris en charge](~/media/shared/yes.png "UWP pris en charge") | ![Watchos non pris en charge](~/media/shared/no.png "Watchos non pris en charge") | ![tvOS non pris en charge](~/media/shared/no.png "tvOS non pris en charge") | ![Tizen pris en charge](~/media/shared/yes.png "Tizen pris en charge") |
@@ -75,7 +63,7 @@ Guide des icônes :
 | [Préférences](preferences.md?context=xamarin/xamarin-forms) | ![Android pris en charge](~/media/shared/yes.png "Android pris en charge") | ![iOS pris en charge](~/media/shared/yes.png "iOS pris en charge") | ![UWP pris en charge](~/media/shared/yes.png "UWP pris en charge") | ![Watchos pris en charge](~/media/shared/yes.png "Watchos pris en charge") | ![tvOS pris en charge](~/media/shared/yes.png "tvOS pris en charge") | ![Tizen pris en charge](~/media/shared/yes.png "Tizen pris en charge") |
 | [Stockage sécurisé](secure-storage.md?context=xamarin/xamarin-forms) | ![Android pris en charge](~/media/shared/yes.png "Android pris en charge") | ![iOS pris en charge](~/media/shared/yes.png "iOS pris en charge") | ![UWP pris en charge](~/media/shared/yes.png "UWP pris en charge") | ![Watchos pris en charge](~/media/shared/yes.png "Watchos pris en charge") | ![tvOS pris en charge](~/media/shared/yes.png "tvOS pris en charge") | ![Tizen pris en charge](~/media/shared/yes.png "Tizen pris en charge") |
 | [Partager](share.md?context=xamarin/xamarin-forms) | ![Android pris en charge](~/media/shared/yes.png "Android pris en charge") | ![iOS pris en charge](~/media/shared/yes.png "iOS pris en charge") | ![UWP pris en charge](~/media/shared/yes.png "UWP pris en charge") | ![Watchos non pris en charge](~/media/shared/no.png "Watchos non pris en charge") | ![tvOS non pris en charge](~/media/shared/no.png "tvOS non pris en charge") | ![Tizen pris en charge](~/media/shared/yes.png "Tizen pris en charge") |
-| [sms](sms.md?context=xamarin/xamarin-forms) | ![Android pris en charge](~/media/shared/yes.png "Android pris en charge") | ![iOS pris en charge](~/media/shared/yes.png "iOS pris en charge") | ![UWP pris en charge](~/media/shared/yes.png "UWP pris en charge") | ![Watchos non pris en charge](~/media/shared/no.png "Watchos non pris en charge") | ![tvOS non pris en charge](~/media/shared/no.png "tvOS non pris en charge") | ![Tizen pris en charge](~/media/shared/yes.png "Tizen pris en charge") |
+| [SMS](sms.md?context=xamarin/xamarin-forms) | ![Android pris en charge](~/media/shared/yes.png "Android pris en charge") | ![iOS pris en charge](~/media/shared/yes.png "iOS pris en charge") | ![UWP pris en charge](~/media/shared/yes.png "UWP pris en charge") | ![Watchos non pris en charge](~/media/shared/no.png "Watchos non pris en charge") | ![tvOS non pris en charge](~/media/shared/no.png "tvOS non pris en charge") | ![Tizen pris en charge](~/media/shared/yes.png "Tizen pris en charge") |
 | [Synthèse vocale](text-to-speech.md?context=xamarin/xamarin-forms) | ![Android pris en charge](~/media/shared/yes.png "Android pris en charge") | ![iOS pris en charge](~/media/shared/yes.png "iOS pris en charge") | ![UWP pris en charge](~/media/shared/yes.png "UWP pris en charge") | ![Watchos pris en charge](~/media/shared/yes.png "Watchos pris en charge") | ![tvOS pris en charge](~/media/shared/yes.png "tvOS pris en charge") | ![Tizen pris en charge](~/media/shared/yes.png "Tizen pris en charge") |
 | [Convertisseurs d’unités](unit-converters.md?context=xamarin/xamarin-forms) | ![Android pris en charge](~/media/shared/yes.png "Android pris en charge") | ![iOS pris en charge](~/media/shared/yes.png "iOS pris en charge") | ![UWP pris en charge](~/media/shared/yes.png "UWP pris en charge") | ![Watchos pris en charge](~/media/shared/yes.png "Watchos pris en charge") | ![tvOS pris en charge](~/media/shared/yes.png "tvOS pris en charge") | ![Tizen pris en charge](~/media/shared/yes.png "Tizen pris en charge") |
 | [Suivi des versions](version-tracking.md?context=xamarin/xamarin-forms) | ![Android pris en charge](~/media/shared/yes.png "Android pris en charge") | ![iOS pris en charge](~/media/shared/yes.png "iOS pris en charge") | ![UWP pris en charge](~/media/shared/yes.png "UWP pris en charge") | ![Watchos pris en charge](~/media/shared/yes.png "Watchos pris en charge") | ![tvOS pris en charge](~/media/shared/yes.png "tvOS pris en charge") | ![Tizen pris en charge](~/media/shared/yes.png "Tizen pris en charge") |

@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsDataSourceControl
-description: Cet article présente la Xamarin.Forms classe DataPages, qui fournit une API permettant de lier rapidement et facilement une source de données à des vues prédéfinies.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 7d99870dd975d0996ffcd05d4aef153f3515ec9e
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84134314"
+titre : « Xamarin.Forms DataPages » Description : « cet article présente Xamarin.Forms les DataPages, qui fournissent une API pour lier rapidement et facilement une source de données à des vues prédéfinies. »
+ms. Prod : xamarin ms. AssetID : DF16EAEE-DB78-42CA-9C59-51D9D6CB6B95 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 12/01/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-datapages"></a>Xamarin.FormsDataSourceControl
 
 ![](~/media/shared/preview.png "This API is currently in preview")
@@ -38,7 +24,7 @@ Les sources de données et les pages de données associées permettent aux déve
 
 Les DataPages sont ajoutées à une Xamarin.Forms application en incluant ** Xamarin.Forms . **Package de pages NuGet.
 
-### <a name="data-sources"></a>Data Sources
+### <a name="data-sources"></a>Sources de données
 
 La version préliminaire contient des sources de données prédéfinies pouvant être utilisées :
 

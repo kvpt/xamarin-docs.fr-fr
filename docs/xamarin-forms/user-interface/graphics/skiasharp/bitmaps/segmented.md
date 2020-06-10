@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 5c3909271580d0568d7c603de0d434ff5b3f3bc4
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138669"
+titre : « affichage segmenté des bitmaps SkiaSharp » : « afficher une bitmap SkiaSharp de sorte que certaines zones soient étirées et que certaines ne le sont pas. »
+ms. Prod : xamarin ms. Technology : xamarin-skiasharp ms. AssetID : 79AE2033-C41C-4447-95A6-76D22E913D19 auteur : davidbritch ms. Author : dabritch ms. Date : 07/17/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="segmented-display-of-skiasharp-bitmaps"></a>Affichage segmenté des bitmaps SkiaSharp
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

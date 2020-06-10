@@ -1,22 +1,8 @@
 ---
-title: Héritage de style dansXamarin.Forms
-description: Les styles peuvent hériter d’autres styles pour réduire la duplication et permettre la réutilisation. Cet article explique comment effectuer un héritage de style dans une Xamarin.Forms application.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 80cc419ae098f4a0cbbd782785c0ec5ba03fa703
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138955"
+title : « description de style dans Xamarin.Forms » Description : les styles peuvent hériter d’autres styles pour réduire la duplication et permettre une réutilisation. Cet article explique comment effectuer un héritage de style dans une Xamarin.Forms application.
+ms. Prod : xamarin ms. AssetID : 67A3A39C-8CC0-446D-8162-FFA73582D3B8 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 02/17/2016 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="style-inheritance-in-xamarinforms"></a>Héritage de style dansXamarin.Forms
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
@@ -165,4 +151,4 @@ Les `baseStyle` [`View`](xref:Xamarin.Forms.View) instances cibles et définit l
 - [Utilisation des styles (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
 - [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
 - [Style](xref:Xamarin.Forms.Style)
-- [Setter](xref:Xamarin.Forms.Setter)
+- [Déclaré](xref:Xamarin.Forms.Setter)

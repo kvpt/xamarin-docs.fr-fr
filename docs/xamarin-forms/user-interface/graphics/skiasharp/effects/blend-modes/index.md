@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: b5b03779b9f0847621456b25582fb8ea04f8386d
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84131701"
+title : "SkiaSharp Blend modes" Description : "utilisez les modes de fondu pour définir ce qui se passe lorsque des objets graphiques sont empilés les uns sur les autres."
+ms. Prod : xamarin ms. Technology : xamarin-skiasharp ms. AssetID : CE1B222E-A2D0-4016-A532-EC1E59EE3D6B auteur : davidbritch ms. Author : dabritch ms. Date : 08/23/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="skiasharp-blend-modes"></a>Modes de fusion SkiaSharp
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -32,60 +18,20 @@ Les modes de fusion SkiaSharp correspondent étroitement à ceux décrits dans l
 Les 29 membres de l' `SKBlendMode` énumération peuvent être divisés en trois catégories :
 
 | Porter-Duff | Quoiqu'    | Non séparable |
-| ---
-titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
------- | titre de la--- : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
------- | titre de la--- : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
-------- | | `Clear`     | `Modulate`   | `Hue`         | | `Src`       | `Screen`     | `Saturation`  | | `Dst`       | `Overlay`    | `Color`       | | `SrcOver`   | `Darken`     | `Luminosity`  | | `DstOver`   | `Lighten`    |               | | `SrcIn`     | `ColorDodge` |               | | `DstIn`     | `ColorBurn`  |               | | `SrcOut`    | `HardLight`  |               | | `DstOut`    | `SoftLight`  |               | | `SrcATop`   | `Difference` |               | | `DstATop`   | `Exclusion`  |               | | `Xor`       | `Multiply`   |               | | `Plus`      |              |               |
+| ----------- | ------------ | ------------- |
+| `Clear`     | `Modulate`   | `Hue`         |
+| `Src`       | `Screen`     | `Saturation`  |
+| `Dst`       | `Overlay`    | `Color`       |
+| `SrcOver`   | `Darken`     | `Luminosity`  |
+| `DstOver`   | `Lighten`    |               |
+| `SrcIn`     | `ColorDodge` |               |
+| `DstIn`     | `ColorBurn`  |               |
+| `SrcOut`    | `HardLight`  |               |
+| `DstOut`    | `SoftLight`  |               |
+| `SrcATop`   | `Difference` |               |
+| `DstATop`   | `Exclusion`  |               |
+| `Xor`       | `Multiply`   |               |
+| `Plus`      |              |               |
 
 Les noms de ces trois catégories prendront plus de sens dans les discussions qui suivent. L’ordre dans lequel les membres sont répertoriés ici est le même que dans la définition de l' `SKBlendMode` énumération. Les 13 membres de l’énumération de la première colonne ont les valeurs entières comprises entre 0 et 12. La deuxième colonne sont des membres de l’énumération qui correspondent aux entiers de 13 à 24, et les membres de la troisième colonne ont des valeurs de 25 à 28.
 

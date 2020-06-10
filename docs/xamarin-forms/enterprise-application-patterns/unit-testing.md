@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a05de34089fdf6ad90740067b88edea0b62f55a7
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84134652"
+titre : « tests unitaires d’applications d’entreprise » Description : « ce chapitre explique comment effectuer des tests unitaires dans l’application mobile eShopOnContainers ».
+ms. Prod : xamarin ms. AssetID : 4af82e52-F99B-4CAD-B278-1745f190c240 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 08/07/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="unit-testing-enterprise-apps"></a>Tests unitaires d’applications d’entreprise
 
 Les applications mobiles présentent des problèmes uniques que les applications bureautiques et Web n’ont pas à se soucier. Les utilisateurs mobiles diffèrent par les appareils qu’ils utilisent, par la connectivité réseau, par la disponibilité des services et par un éventail d’autres facteurs. Par conséquent, les applications mobiles doivent être testées, car elles seront utilisées dans le monde réel pour améliorer la qualité, la fiabilité et les performances. Il existe de nombreux types de test qui doivent être effectués sur une application, notamment les tests unitaires, les tests d’intégration et les tests de l’interface utilisateur, avec des tests unitaires étant la forme de test la plus courante.

@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a1e6290c0f85b54c3fd8958bc43667714bdece20
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84131051"
+title : "porter-Duff Blend modes" Description : "utilisez les modes de mélange porter-Duff pour composer des scènes en fonction des images source et de destination."
+ms. Prod : xamarin ms. Technology : xamarin-skiasharp ms. AssetID : 57F172F8-BA03-43EC-A215-ED6B78696BB5 auteur : davidbritch ms. Author : dabritch ms. Date : 08/23/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="porter-duff-blend-modes"></a>Modes de fusion porter-Duff
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -72,59 +58,21 @@ Skia ajoute un quatorzième mode appelé `Modulate` qui est très semblable à `
 Voici les 14 modes porter-Duff tels qu’ils sont définis dans SkiaSharp. Le tableau montre la couleur de chacune des trois zones non vides dans le diagramme ci-dessus :
 
 | Mode       | Destination | Ensembles | Source |
-| ---
-titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
------| :---titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
------- :|:---titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
------- :|:---titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
----:| | `Clear`    |             |              |        | | `Src`      |             | Source | X | | `Dst`      | X | Destination |        | | `SrcOver`  | X | Source | X | | `DstOver`  | X | Destination | X | | `SrcIn`    |             | Source |        | | `DstIn`    |             | Destination |        | | `SrcOut`   |             |              | X | | `DstOut`   | X |              |        | | `SrcATop`  | X | Source |        | | `DstATop`  |             | Destination | X | | `Xor`      | X |              | X | | `Plus`     | X | Somme | X | | `Modulate` |             | Produit |        | 
+| ---------- |:-----------:|:------------:|:------:|
+| `Clear`    |             |              |        |
+| `Src`      |             | Source       | X      |
+| `Dst`      | X           | Destination  |        |
+| `SrcOver`  | X           | Source       | X      |
+| `DstOver`  | X           | Destination  | X      |
+| `SrcIn`    |             | Source       |        |
+| `DstIn`    |             | Destination  |        |
+| `SrcOut`   |             |              | X      |
+| `DstOut`   | X           |              |        |
+| `SrcATop`  | X           | Source       |        |
+| `DstATop`  |             | Destination  | X      |
+| `Xor`      | X           |              | X      |
+| `Plus`     | X           | SUM          | X      |
+| `Modulate` |             | Produit      |        | 
 
 Ces modes de fusion sont symétriques. La source et la destination peuvent être échangées et tous les modes sont toujours disponibles.
 
@@ -320,11 +268,11 @@ Il peut être tentant de remplacer les bitmaps de la page de **grille porter-Duf
 
 ## <a name="using-mattes-with-porter-duff"></a>Utilisation de Matts avec porter-Duff
 
-La page de **composition du mur brique** illustre un exemple de tâche de composition classique : une image doit être Assemblée à partir de plusieurs éléments, y compris une image bitmap avec un arrière-plan qui doit être éliminé. Voici la bitmap **SeatedMonkey. jpg** avec l’arrière-plan problématique :
+La page de **composition du mur brique** illustre un exemple de tâche de composition classique : une image doit être Assemblée à partir de plusieurs éléments, y compris une image bitmap avec un arrière-plan qui doit être éliminé. Voici le **SeatedMonkey.jpg** bitmap avec l’arrière-plan problématique :
 
 ![Singe assis](porter-duff-images/SeatedMonkey.jpg "Singe assis")
 
-En préparation de la composition, un _cache_ correspondant a été créé, qui est une autre bitmap noire à l’endroit où vous souhaitez que l’image apparaisse et transparente dans le cas contraire. Ce fichier se nomme **SeatedMonkeyMatte. png** et figure parmi les ressources dans le dossier **Media** de l’exemple [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) :
+En préparation de la composition, un _cache_ correspondant a été créé, qui est une autre bitmap noire à l’endroit où vous souhaitez que l’image apparaisse et transparente dans le cas contraire. Ce fichier est nommé **SeatedMonkeyMatte.png** et se trouve parmi les ressources du dossier **Media** dans l’exemple [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) :
 
 ![Cache du singe assis](porter-duff-images/SeatedMonkeyMatte.png "Cache du singe assis")
 
@@ -406,7 +354,7 @@ Quand le programme s’exécute pour la première fois, rien n’est visible à 
 
 [![Étape de composition du mur brique 0](porter-duff-images/BrickWallCompositing0.png "Étape de composition du mur brique 0")](porter-duff-images/BrickWallCompositing0-Large.png#lightbox)
 
-Le fait d’appuyer sur la touche `Button` une seule fois provoque un `step` incrément de 1, et le `PaintSurface` Gestionnaire affiche maintenant **SeatedMonkey. jpg**:
+Le fait d’appuyer sur la touche `Button` une seule fois provoque un `step` incrément de 1, et le `PaintSurface` gestionnaire affiche maintenant **SeatedMonkey.jpg**:
 
 ```csharp
 public partial class BrickWallCompositingPage : ContentPage
@@ -432,7 +380,7 @@ Il n’y a pas d' `SKPaint` objet et, par conséquent, aucun mode de fusion. Le 
 
 [![Étape de composition du mur brique 1](porter-duff-images/BrickWallCompositing1.png "Étape de composition du mur brique 1")](porter-duff-images/BrickWallCompositing1-Large.png#lightbox)
 
-Appuyez de nouveau sur la touche `Button` et `step` incrémente la valeur 2. Il s’agit de l’étape essentielle de l’affichage du fichier **SeatedMonkeyMatte. png** :
+Appuyez de nouveau sur la touche `Button` et `step` incrémente la valeur 2. Il s’agit de l’étape essentielle de l’affichage du fichier **SeatedMonkeyMatte.png** :
 
 ```csharp
 public partial class BrickWallCompositingPage : ContentPage
@@ -551,31 +499,21 @@ Les couleurs RVB sont prémultipliées par la valeur alpha. Par exemple, si **SC
 Le résultat est indiqué entre crochets avec le canal alpha et la couleur RVB séparés par une virgule : **[alpha, couleur]**. Pour la couleur, le calcul est effectué séparément pour les composants rouge, vert et bleu :
 
 | Mode       | Opération |
-| ---
-titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
------ | titre de la--- : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
------ | | `Clear`    | [0, 0] | | `Src`      | [Sa, SC] | | `Dst`      | [DA, DC] | | `SrcOver`  | [Sa + da · (1 – sa), SC + DC · (1 – sa) | | `DstOver`  | [Da + sa · (1 – da), DC + SC · (1 – da) | | `SrcIn`    | Sa DA, SC · DA] | | `DstIn`    | Da Sa, DC · Sa] | | `SrcOut`   | Sa (1 – da), SC · (1 – da)] | | `DstOut`   | Da (1 – sa), DC · (1 – sa)] | | `SrcATop`  | [DA, SC · Da + DC · (1 – sa)] | | `DstATop`  | [Sa, DC · Sa + SC · (1 – da)] | | `Xor`      | [Sa + da – 2 · Sa DA, SC · (1 – da) + DC · (1 – sa)] | | `Plus`     | [Sa + da, SC + DC] | | `Modulate` | Sa DA, SC · DC] | 
+| ---------- | --------- |
+| `Clear`    | [0, 0]    |
+| `Src`      | [Sa, SC]  |
+| `Dst`      | [DA, DC]  |
+| `SrcOver`  | [Sa + da · (1 – sa), SC + DC · (1 – sa) | 
+| `DstOver`  | [Da + sa · (1 – da), DC + SC · (1 – da) |
+| `SrcIn`    | Sa DA, SC · Da |
+| `DstIn`    | Da Sa, DC · Sa |
+| `SrcOut`   | Sa (1 – da), SC · (1 – da)] |
+| `DstOut`   | Da (1 – sa), DC · (1 – sa)] |
+| `SrcATop`  | [DA, SC · Da + DC · (1 – sa)] |
+| `DstATop`  | [Sa, DC · Sa + SC · (1 – da)] |
+| `Xor`      | [Sa + da – 2 · Sa DA, SC · (1 – da) + DC · (1 – sa)] |
+| `Plus`     | [Sa + da, SC + DC] |
+| `Modulate` | Sa DA, SC · Métafichier | 
 
 Ces opérations sont plus faciles à analyser lorsque les fonctions **da** et **sa** sont égales à 0 ou à 1. Par exemple, pour le mode par défaut `SrcOver` , **si sa** est égale à 0, **SC** est également 0 et le résultat est **[DA, DC]**, l’alpha et la couleur de destination. Si **sa** valeur est 1, le résultat est **[sa, SC]**, la source alpha et la couleur, ou **[1, SC]**.
 

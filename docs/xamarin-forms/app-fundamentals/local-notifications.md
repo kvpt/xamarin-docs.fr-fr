@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Formsnotifications locales
-description: Cet article explique comment envoyer et recevoir des notifications locales dans Xamarin.Forms .
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 40e040f216ddda40931273f4e7f5614964862fe8
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137590"
+titre : « Xamarin.Forms notifications locales » Description : « cet article explique comment envoyer et recevoir des notifications locales dans Xamarin.Forms . »
+ms. Prod : xamarin ms. AssetID : 60460F57-63C6-4916-BBB5-A870F1DF53D7 ms. Technology : xamarin-Forms Author : profexorgeek ms. Author : jusjohns ms. Date : 10/10/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="local-notifications-in-xamarinforms"></a>Notifications locales dansXamarin.Forms
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/local-notifications)

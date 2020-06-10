@@ -1,23 +1,7 @@
 ---
-title: ''
-description: ''
-Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 15. The interactive interface''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 9bb930c2d0e4b6281b1aa48589ea5245eedc1a60
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136745"
+titre : «Résumé du chapitre 15. L’interface interactive « Description : » création d’Mobile Apps avec Xamarin.Forms : Résumé du chapitre 15. L’interface interactive «ms. Prod : xamarin ms. Technology : xamarin-Forms ms. AssetID : F54E86F4-1CDA-474E-9B09-242060C2C13D auteur : davidbritch ms. Author : dabritch ms. Date : 11/07/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="summary-of-chapter-15-the-interactive-interface"></a>Résumé du chapitre 15. Interface interactive
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15)

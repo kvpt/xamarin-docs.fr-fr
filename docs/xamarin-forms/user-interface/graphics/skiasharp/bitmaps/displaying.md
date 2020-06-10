@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: b0fecac02c44e3ba721dd4625e7bee264c6869d0
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84134756"
+titre : « affichage des bitmaps SkiaSharp » Description : « Découvrez comment afficher des bitmaps SkiaSharp en taille de pixel et les étendre pour remplir des rectangles tout en préservant les proportions. »
+ms. Prod : xamarin ms. Technology : xamarin-skiasharp ms. AssetID : 8E074F8D-4715-4146-8CC0-FD7A8290EDE9 auteur : davidbritch ms. Author : dabritch ms. Date : 07/17/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="displaying-skiasharp-bitmaps"></a>Affichage des bitmaps SkiaSharp
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

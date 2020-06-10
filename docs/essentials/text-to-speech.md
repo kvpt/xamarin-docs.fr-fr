@@ -1,16 +1,13 @@
 ---
-titre : ' ' Xamarin.Essentials : conversion de texte en parole' 'Description : 'la classe TextToSpeech dans Xamarin.Essentials permet à une application d’utiliser les moteurs de conversion de texte en parole intégrés pour parler du texte de l’appareil et pour interroger les langues disponibles que le moteur peut prendre en charge. '
-ms. AssetID : Auteur : ms. Custom : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title : « Xamarin.Essentials : Text-to-Speech » Description : « la classe TextToSpeech dans Xamarin.Essentials permet à une application d’utiliser les moteurs de conversion de texte par synthèse vocale intégrés pour parler du texte à partir de l’appareil et pour interroger les langues disponibles que le moteur peut prendre en charge. »
+ms. AssetID : AEEF03AE-A047-4DF0-B0E8-CC8D9A7B8351 Author : jamesmontemagno ms. Custom : vidéo ms. Author : Jamont ms. Date : 11/04/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
 
 # <a name="xamarinessentials-text-to-speech"></a>Xamarin.Essentials: Conversion de texte par synthèse vocale
 
 La classe **Synthèse vocale** permet à une application d’utiliser les moteurs de synthèse vocale intégrés pour énoncer le texte à partir de l’appareil et également pour interroger les langages disponibles pris en charge par le moteur.
 
-## <a name="get-started"></a>Prise en main
+## <a name="get-started"></a>Prendre en main
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -135,7 +132,7 @@ public async Task SpeakNow()
 }
 ```
 
-## <a name="limitations"></a>Limitations
+## <a name="limitations"></a>Limites
 
 - La file d’attente de l’énoncé n’est pas garantie si elle est appelée sur plusieurs threads.
 - La lecture audio en arrière-plan n’est pas officiellement prise en charge.

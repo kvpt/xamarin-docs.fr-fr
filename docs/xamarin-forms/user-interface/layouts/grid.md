@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsBoutons
-description: La Xamarin.Forms grille est une disposition qui organise ses enfants en lignes et colonnes de cellules.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: c4e63d6c1701d9eb247ecb7c52188e5dbc045934
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138071"
+titre : « Xamarin.Forms Grid » Description : « la Xamarin.Forms grille est une disposition qui organise ses enfants en lignes et colonnes de cellules ».
+ms. Prod : xamarin ms. AssetID : 762B1802-D185-494C-B643-74EED55882FE ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 05/15/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-grid"></a>Xamarin.FormsBoutons
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-griddemos)

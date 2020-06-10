@@ -1,22 +1,8 @@
 ---
-title: ''
-description: Cet article explique comment utiliser SkiaSharp pour restituer des courbes de Bézier cubiques, quadratiques et coniques dans des Xamarin.Forms applications, et illustre cela avec un exemple de code.
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 1ad548846500ccbacc2a3d117919bfb4df1a1d79
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138682"
+titre : « trois types de courbes de Bézier » : « cet article explique comment utiliser SkiaSharp pour restituer des courbes de Bézier cubiques, quadratiques et coniques dans des Xamarin.Forms applications, et illustre cela avec un exemple de code ».
+ms. Prod : xamarin ms. Technology : xamarin-skiasharp ms. AssetID : 8FE0F6DC-16BC-435F-9626-DD1790C0145A auteur : davidbritch ms. Author : dabritch ms. Date : 05/25/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="three-types-of-bzier-curves"></a>Trois types de courbes Bézier
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -444,7 +430,7 @@ public void ConicTo (Single x1, Single y1, Single x2, Single y2, Single weight)
 
 Notez le `weight` paramètre final.
 
-La page **courbe conique** vous permet d’expérimenter ces courbes. La classe `ConicCurvePage` dérive de la classe `InteractivePage`. Le fichier [**ConicCurvePage. Xaml**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml) instancie un `Slider` pour sélectionner une valeur de poids comprise entre – 2 et 2. Le fichier code-behind [**ConicCurvePage.Xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml.cs) crée trois `TouchPoint` objets, et le `PaintSurface` Gestionnaire affiche simplement la courbe résultante avec les lignes tangentes aux points de contrôle :
+La page **courbe conique** vous permet d’expérimenter ces courbes. La classe `ConicCurvePage` est dérivée de `InteractivePage`. Le fichier [**ConicCurvePage. Xaml**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml) instancie un `Slider` pour sélectionner une valeur de poids comprise entre – 2 et 2. Le fichier code-behind [**ConicCurvePage.Xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml.cs) crée trois `TouchPoint` objets, et le `PaintSurface` Gestionnaire affiche simplement la courbe résultante avec les lignes tangentes aux points de contrôle :
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)

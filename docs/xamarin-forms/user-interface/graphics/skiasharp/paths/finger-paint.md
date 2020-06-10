@@ -1,22 +1,8 @@
 ---
-title: ''
-description: Cet article explique comment utiliser vos doigts pour peindre sur le canevas SkiaSharp dans une Xamarin.Forms application et illustre cela avec un exemple de code.
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 61ae651a2402204f69f642235d74d8d641b47988
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139020"
+title : « peinture Finger dans SkiaSharp » Description : « cet article explique comment utiliser vos doigts pour peindre sur le canevas SkiaSharp dans une Xamarin.Forms application et illustre cela avec un exemple de code ».
+ms. Prod : xamarin ms. Technology : xamarin-skiasharp ms. AssetID : 56929D74-8F2C-44C6-90E6-3FBABCDC0A4B auteur : davidbritch ms. Author : dabritch ms. Date : 04/05/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="finger-painting-in-skiasharp"></a>Peinture par doigt dans SkiaSharp
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

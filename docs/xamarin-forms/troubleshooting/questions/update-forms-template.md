@@ -1,22 +1,8 @@
 ---
-title: Puis-je mettre à jour le Xamarin.Forms modèle par défaut vers un package NuGet plus récent ?
-ms.topic: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: bdead80671a1ae6539de6614441df7e86863a5a6
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137473"
+titre : « puis-je mettre à jour le Xamarin.Forms modèle par défaut vers un package NuGet plus récent ? »
+ms. topic : Troubleshooting ms. Prod : xamarin ms. AssetID : 160FBE13-26EB-4B4F-9248-A5CBE58FDD7F ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 04/25/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="can-i-update-the-xamarinforms-default-template-to-a-newer-nuget-package"></a>Puis-je mettre à jour le Xamarin.Forms modèle par défaut vers un package NuGet plus récent ?
 
 Ce guide utilise le Xamarin.Forms modèle de bibliothèque .NET standard comme exemple, mais la même méthode générale fonctionne également pour le Xamarin.Forms modèle de projet partagé. Ce guide est écrit avec l’exemple de mise à jour de Xamarin.Forms 1.5.1.6471 vers 2.1.0.6529, mais les mêmes étapes sont possibles pour définir d’autres versions comme valeurs par défaut à la place.

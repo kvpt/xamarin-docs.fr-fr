@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsMediaElement
-description: Cet article explique comment utiliser MediaElement pour lire des données audio et vidéo dans une Xamarin.Forms application.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 1dfa51177bba3ebf1e3e29208cc926c77567a048
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84134236"
+titre : « Xamarin.Forms MediaElement » Description : « cet article explique comment utiliser MediaElement pour lire des données audio et vidéo dans une Xamarin.Forms application ».
+ms. Prod : xamarin ms. AssetID : e65f1e56-a80d-46C7-9FF4-7ae6650a3165 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 02/18/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-mediaelement"></a>Xamarin.FormsMediaElement
 
 ![](~/media/shared/preview.png "This API is currently pre-release")

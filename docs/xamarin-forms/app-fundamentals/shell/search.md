@@ -1,9 +1,6 @@
 ---
-titre : « Xamarin.Forms recherche de Shell » Description : les Xamarin.Forms applications Shell peuvent utiliser la fonctionnalité de recherche intégrée qui est fournie par une zone de recherche qui peut être ajoutée en haut de chaque page.
-ms. Prod : ms. AssetID : ms. Technology : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title : " Xamarin.Forms Description de l’interpréteur de commandes" : "les Xamarin.Forms applications Shell peuvent utiliser la fonctionnalité de recherche intégrée qui est fournie par une zone de recherche qui peut être ajoutée en haut de chaque page."
+ms. Prod : xamarin ms. AssetID : F8F9471D-6771-4D23-96C0-2B79473A06D4 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 12/18/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
 
 # <a name="xamarinforms-shell-search"></a>Xamarin.FormsRecherche de Shell

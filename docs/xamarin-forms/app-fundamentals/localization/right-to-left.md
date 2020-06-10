@@ -1,23 +1,8 @@
 ---
-title: ''
-description: La localisation de droite à gauche ajoute la prise en charge du sens du déroulement de droite à gauche aux Xamarin.Forms applications.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-ms.custom: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 212674472706a36c66436a3955ab7b988f8e246b
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137551"
+titre : « localisation de droite à gauche » : « la localisation de droite à gauche ajoute la prise en charge du sens du déroulement de droite à gauche aux Xamarin.Forms applications ».
+ms. Prod : xamarin ms. AssetID : 90E0CB16-C42A-4CC8-A70E-0C2CFB64A429 ms. Technology : xamarin-Forms ms. Custom : xamu-Video Author : davidbritch ms. Author : dabritch ms. Date : 05/07/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="right-to-left-localization"></a>Localisation de droite à gauche
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todolocalizedrtl)
@@ -84,7 +69,7 @@ Vous pouvez ensuite tester la localisation de droite à gauche en remplaçant la
 > [!WARNING]
 > Notez que lorsque vous remplacez la langue et la région par des paramètres régionaux de droite à gauche sur iOS, les [`DatePicker`](xref:Xamarin.Forms.DatePicker) vues lèvent une exception si vous n’incluez pas les ressources requises pour les paramètres régionaux. Par exemple, quand vous testez une application en arabe comportant `DatePicker`, vérifiez que **mideast** est sélectionné dans la section **Internationalisation** du volet **Build iOS**.
 
-### <a name="android"></a>Téléphone
+### <a name="android"></a>Android
 
 Le fichier **AndroidManifest.xml** de l’application doit être mis à jour pour que le nœud `<uses-sdk>` affecte la valeur 17 à l’attribut `android:minSdkVersion`, et que le nœud `<application>` affecte la valeur `true` à l’attribut `android:supportsRtl` :
 
@@ -121,7 +106,7 @@ using System.Resources;
 
 Vous pouvez ensuite tester la localisation de droite à gauche en remplaçant la langue et la région de l’appareil/du simulateur par les paramètres régionaux de droite à gauche appropriés.
 
-## <a name="limitations"></a>Limitations
+## <a name="limitations"></a>Limites
 
 Xamarin.Formsla localisation de droite à gauche présente actuellement un certain nombre de limitations :
 
@@ -138,7 +123,7 @@ Xamarin.Formsla localisation de droite à gauche présente actuellement un certa
 - [`EntryCell`](xref:Xamarin.Forms.EntryCell)l’alignement du texte est contrôlé par les paramètres régionaux de l’appareil, plutôt que par la [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) propriété.
 - [`ContextActions`](xref:Xamarin.Forms.Cell.ContextActions)les mouvements et l’alignement ne sont pas inversés.
 
-### <a name="android"></a>Téléphone
+### <a name="android"></a>Android
 
 - [`SearchBar`](xref:Xamarin.Forms.SearchBar)l’orientation est contrôlée par les paramètres régionaux de l’appareil, plutôt que par la [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) propriété.
 - [`ContextActions`](xref:Xamarin.Forms.Cell.ContextActions)le positionnement est contrôlé par les paramètres régionaux de l’appareil, plutôt que par la [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) propriété.
@@ -179,7 +164,7 @@ Cette approche est utile pour les applications qui requièrent toujours une disp
 
 Pour plus d’informations sur la `IntrPtr_objc_msgSend` méthode, consultez [sélecteurs objective-C dans Xamarin. iOS](~/ios/internals/objective-c-selectors.md).
 
-### <a name="android"></a>Téléphone
+### <a name="android"></a>Android
 
 Les applications Xamarin. Android peuvent être forcées à toujours utiliser une disposition de droite à gauche en modifiant la classe **MainActivity** pour inclure la ligne suivante :
 

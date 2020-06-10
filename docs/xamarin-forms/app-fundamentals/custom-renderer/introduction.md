@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: e2bed4d5e8f89efa2997fb085278c4b549870245
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135319"
+titre : « Introduction aux convertisseurs personnalisés » Description : « cet article fournit une introduction aux convertisseurs personnalisés et décrit le processus de création d’un convertisseur personnalisé ».
+ms. Prod : xamarin ms. AssetID : 264314BE-1C5C-4727-A14E-F6F98151CDBD ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 01/19/2016 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="introduction-to-custom-renderers"></a>Présentation des renderers personnalisés
 
 _Les convertisseurs personnalisés fournissent une approche puissante pour personnaliser l’apparence et le comportement des Xamarin.Forms contrôles. Ils peuvent être utilisés pour des modifications de style réduites ou une personnalisation sophistiquée de la disposition et du comportement des plateformes. Cet article fournit une introduction aux convertisseurs personnalisés et décrit le processus de création d’un convertisseur personnalisé._
@@ -76,7 +62,7 @@ Le processus de création d’une classe de renderer personnalisé est le suivan
 
 Les rubriques de cette série fournissent des démonstrations et des explications sur ce processus pour différents Xamarin.Forms éléments.
 
-## <a name="troubleshooting"></a>Résolution des problèmes
+## <a name="troubleshooting"></a>Dépannage
 
 Si un contrôle personnalisé est contenu dans un projet de bibliothèque .NET Standard qui a été ajouté à la solution (autrement dit, pas la bibliothèque .NET Standard créée par le modèle de projet d’application Visual Studio pour Mac/Visual Studio Xamarin.Forms ), une exception peut se produire dans iOS lors de la tentative d’accès au contrôle personnalisé. Si ce problème se produit, vous pouvez le résoudre en créant une référence au contrôle personnalisé à partir de la classe `AppDelegate` :
 

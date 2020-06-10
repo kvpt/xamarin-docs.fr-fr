@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsConvertisseurs personnalisés
-description: Les convertisseurs personnalisés permettent aux développeurs de substituer le rendu des contrôles natifs sur chaque plateforme, afin de personnaliser l’apparence et le comportement des Xamarin.Forms contrôles.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: be281f9b7987a8d23ba6ac93f0771e432f277d45
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138916"
+title : " Xamarin.Forms Description des convertisseurs personnalisés" : "les convertisseurs personnalisés permettent aux développeurs de substituer le rendu des contrôles natifs sur chaque plateforme, afin de personnaliser l’apparence et le comportement des Xamarin.Forms contrôles."
+ms. Prod : xamarin ms. AssetID : BF1CF23A-3BC9-4226-92E6-DAEEB91422F1 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 12/03/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-custom-renderers"></a>Xamarin.FormsConvertisseurs personnalisés
 
 _Les interfaces utilisateur Xamarin. Forms sont rendues à l’aide des contrôles natifs de la plateforme cible, ce qui permet Xamarin.Forms aux applications de conserver l’apparence et la convivialité appropriées pour chaque plateforme. Les convertisseurs personnalisés permettent aux développeurs de substituer ce processus afin de personnaliser l’apparence et le comportement des Xamarin.Forms contrôles sur chaque plateforme._

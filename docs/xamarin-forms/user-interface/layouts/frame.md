@@ -1,21 +1,6 @@
 ---
-title: Xamarin.FormsFrame
-description: La Xamarin.Forms classe Frame est une disposition utilisée pour encapsuler une vue ou une disposition avec une bordure qui peut être configurée avec une couleur, une ombre et d’autres options.
-ms.prod: ''
-ms.assetId: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 42192111befbefda7e0f62b7691a8392c2828818
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137187"
+titre : « Xamarin.Forms Frame » Description : « la Xamarin.Forms classe Frame est une disposition utilisée pour encapsuler une vue ou une disposition avec une bordure qui peut être configurée avec des options de couleur, d’ombre et autres. »
+ms. Prod : xamarin ms. assetId : 4E074714-0928-41C8-A468-B60E23236A8C ms. Technology : xamarin-Forms Author : profexorgeek ms. Author : jusjohns ms. Date : 08/06/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
 # <a name="xamarinforms-frame"></a>Xamarin.FormsFrame
 
@@ -189,7 +174,7 @@ Frame circleImageFrame = new Frame
 };
 ```
 
-L’image **Outdoor. jpg** doit être ajoutée à chaque projet de plateforme, et la façon dont cela est réalisé varie selon la plateforme. Pour plus d’informations, consultez [images Xamarin.Forms dans ](~/xamarin-forms/user-interface/images.md).
+L’image de **outdoors.jpg** doit être ajoutée à chaque projet de plateforme, et la façon dont cela est réalisé varie selon la plateforme. Pour plus d’informations, consultez [images Xamarin.Forms dans ](~/xamarin-forms/user-interface/images.md).
 
 > [!NOTE]
 > Les angles arrondis se comportent légèrement différemment sur les plateformes. La `Image` valeur de l’objet `Margin` doit être la moitié de la différence entre la largeur de l’image et la largeur du cadre parent, et doit être négative pour centrer l’image uniformément au sein de l' `Frame` objet. Toutefois, la largeur et la hauteur demandées ne sont pas garanties `Margin` . par conséquent, les `HeightRequest` Propriétés, et `WidthRequest` doivent être modifiées en fonction de la taille de votre image et d’autres choix de disposition.

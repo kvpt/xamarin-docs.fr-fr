@@ -1,23 +1,7 @@
 ---
-title: ''
-description: ''
-Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 22. Animation''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 2a8a089c210a3fe2f48dbe32bf8cda6179af2a78
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136628"
+titre : «Résumé du chapitre 22. Animation « Description : » création d’Mobile Apps avec Xamarin.Forms : Résumé du chapitre 22. Animation «ms. Prod : xamarin ms. Technology : xamarin-Forms ms. AssetID : 47C2B9AB-E688-4412-8AF5-9F633B3DA695 auteur : davidbritch ms. Author : dabritch ms. Date : 11/07/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="summary-of-chapter-22-animation"></a>Résumé du chapitre 22. Animation
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22)

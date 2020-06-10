@@ -1,28 +1,13 @@
 ---
-title: Générateur d’aperçu XAML pourXamarin.Forms
-description: Cet article explique comment utiliser le générateur d’aperçu XAML pour afficher les Xamarin.Forms dispositions rendues à mesure que vous tapez. Le générateur d’aperçu XAML est disponible dans Visual Studio 2019 et Visual Studio 2019 pour Mac.
-zone_pivot_groups: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 6916d5fde688c5b1162f12db0d36bc3ca27156d8
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137317"
+title : "Description du générateur d’aperçu XAML pour Xamarin.Forms " Description : "cet article explique comment utiliser le générateur d’aperçu XAML pour afficher les Xamarin.Forms dispositions rendues à mesure que vous tapez. Le générateur d’aperçu XAML est disponible dans Visual Studio 2019 et Visual Studio 2019 pour Mac.
+zone_pivot_groups : Platform ms. Prod : xamarin ms. AssetID : 84769ff1-72fd-4C44-8251-dd6d5bf8c7b2 ms. Technology : xamarin-Forms Author : maddyleger1 ms. Author : maleger ms. Date : 03/16/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xaml-previewer-for-xamarinforms"></a>Générateur d’aperçu XAML pourXamarin.Forms
 
 _Afficher les Xamarin.Forms dispositions rendues à mesure que vous tapez_
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d’ensemble
 
 Le générateur d’aperçu XAML vous montre comment votre Xamarin.Forms page XAML s’affichera sur iOS et Android. Lorsque vous apportez des modifications à votre code XAML, vous les voyez immédiatement en regard de votre code. Le générateur d’aperçu XAML est disponible dans Visual Studio et Visual Studio pour Mac.
 
@@ -30,7 +15,7 @@ Le générateur d’aperçu XAML vous montre comment votre Xamarin.Forms page XA
 
 ::: zone pivot="windows"
 
-### <a name="visual-studio-2019"></a>Visual Studio 2019
+### <a name="visual-studio-2019"></a>Visual Studio 2019
 
 Vous pouvez ouvrir le générateur d’aperçu XAML en cliquant sur les flèches du volet mode fractionné. Si vous souhaitez modifier le comportement par défaut du mode fractionné, utilisez les **outils > Options > boîte de dialogue Xamarin > générateur d' Xamarin.Forms Aperçu XAML** . Dans cette boîte de dialogue, vous pouvez sélectionner la vue de document par défaut et l’orientation de fractionnement.
 
@@ -98,7 +83,7 @@ if (!DesignMode.IsDesignModeEnabled)
 
 Cette propriété est utile si vous initialisez une bibliothèque dans votre constructeur de page dont l’exécution échoue au moment du Design.
 
-## <a name="troubleshooting"></a>Résolution des problèmes
+## <a name="troubleshooting"></a>Dépannage
 
 Si le générateur d’aperçu ne fonctionne pas, vérifiez les problèmes ci-dessous et les [Forums Xamarin](https://forums.xamarin.com/categories/xamarin-forms).
 

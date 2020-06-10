@@ -1,22 +1,8 @@
 ---
-title: Choisir une Xamarin.Forms disposition
-description: Xamarin.Formsles classes de disposition vous permettent d’organiser et de regrouper des contrôles d’interface utilisateur dans votre application.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 16a48423d05ce1cede75c0020bf18f4f398f5adc
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138500"
+title : "choisir une Xamarin.Forms disposition" Description : "les Xamarin.Forms classes de disposition vous permettent d’organiser et de regrouper des contrôles d’interface utilisateur dans votre application."
+ms. Prod : xamarin ms. AssetID : 05A39752-A174-447E-A30D-3CC9EF98CB96 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 08/21/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="choose-a-xamarinforms-layout"></a>Choisir une Xamarin.Forms disposition
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
@@ -258,4 +244,4 @@ En outre, les performances de rendu de page peuvent également être améliorée
 - [Xamarin.FormsAbsoluteLayout](absolute-layout.md)
 - [Xamarin.FormsRelativeLayout](relative-layout.md)
 - [Optimiser les performances de disposition](~/xamarin-forms/deploy-test/performance.md#optimize-layout-performance)
-- [Compression de la disposition](layout-compression.md)
+- [Compression de disposition](layout-compression.md)
