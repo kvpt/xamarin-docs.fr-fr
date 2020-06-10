@@ -60,7 +60,7 @@ La `ListItem` disposition du contrôle est similaire aux lignes de liste ou de t
 
 Il existe cinq propriétés :
 
-* Intitulé
+* Titre
 * Détail
 * ImageSource
 * PlaceholdImageSource
