@@ -1,22 +1,8 @@
 ---
-title: ''
-description: Cet article explique comment déterminer la taille de la chaîne de texte rendue pour intégrer du texte à des graphiques SkiaSharp dans des Xamarin.Forms applications et illustre cela avec un exemple de code.
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: ee97ee2aae11e4e54a0d25e80ffd7bce301fa2f3
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137681"
+titre : « intégration du texte et des graphiques » Description : « cet article explique comment déterminer la taille de la chaîne de texte rendue pour intégrer du texte à des graphiques SkiaSharp dans des Xamarin.Forms applications et illustre cela avec un exemple de code ».
+ms. Prod : xamarin ms. Technology : xamarin-skiasharp ms. AssetID : A0B5AC82-7736-4AD8-AA16-FE43E18D203C auteur : davidbritch ms. Author : dabritch ms. Date : 03/10/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="integrating-text-and-graphics"></a>Intégration de texte et de graphisme
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

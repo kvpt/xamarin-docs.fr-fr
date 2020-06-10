@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsInscription et résolution DependencyService
-description: Cet article explique comment utiliser la Xamarin.Forms classe DependencyService pour appeler des fonctionnalités de plateforme natives.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 50d77e9ba41767aa1f676bf21994431844fc4530
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138773"
+title : " Xamarin.Forms Description de l’inscription et de la résolution DependencyService" : "cet article explique comment utiliser la Xamarin.Forms classe DependencyService pour appeler des fonctionnalités de plateforme natives."
+ms. Prod : xamarin ms. AssetID : 5d019604-4f6f-4932-9b26-1fce3b4d88f8 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 06/05/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-dependencyservice-registration-and-resolution"></a>Xamarin.FormsInscription et résolution DependencyService
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/)

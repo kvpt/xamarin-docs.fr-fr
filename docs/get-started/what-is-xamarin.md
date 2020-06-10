@@ -81,12 +81,12 @@ Xamarin.Formsest une infrastructure d’interface utilisateur Open source. Xamar
 - Langage d’interface utilisateur XAML
 - Liaison de données
 - Mouvements
-- Effects (Effets)
+- Effets
 - Styles
 
 Pour plus d’informations, consultez [Xamarin.Forms](~/xamarin-forms/index.yml).
 
-## <a name="get-started"></a>Bien démarrer
+## <a name="get-started"></a>Prendre en main
 
 Les guides suivants vont vous aider à générer votre première application à l’aide de Xamarin :
 

@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsBalisage C#
-description: Le balisage C# est un ensemble de méthodes et de classes d’assistance Fluent pour simplifier le processus de création d' Xamarin.Forms interfaces utilisateur déclaratives en C#.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 939727d3dd8d419cdc020d33d3e7241dcedb8158
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137746"
+title : " Xamarin.Forms Description du balisage c#" Description : "le balisage c# est un ensemble de méthodes et de classes d’assistance Fluent pour simplifier le processus de création d' Xamarin.Forms interfaces utilisateur déclaratives en C#."
+ms. Prod : xamarin ms. AssetID : D41B9DCD-5C34-4C2F-B177-FC082AB2E9E0 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 05/15/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-c-markup"></a>Xamarin.FormsBalisage C#
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
@@ -231,7 +217,7 @@ new Label { Text = "Tap Me" }
 
 Étant donné qu’un module de reconnaissance de mouvement est un `BindableObject` , vous pouvez utiliser les `Bind` `BindCommand` méthodes d’extension et lorsque vous l’initialisez. Vous pouvez également initialiser des types de module de reconnaissance de mouvement personnalisés avec la `Gesture<TGestureElement, TGestureRecognizer>` méthode d’extension.
 
-## <a name="layout"></a>Disposition
+## <a name="layout"></a>Mise en page
 
 Le balisage C# comprend une série de méthodes d’extension de disposition qui prennent en charge le positionnement des vues dans les dispositions et le contenu dans les vues :
 

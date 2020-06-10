@@ -7,7 +7,7 @@ ms. AssetID : BF85B0C3-C686-43D9-811A-07DCAF8CDD86 Author : jamesmontemagno ms
 
 La classe **Compass** vous permet de superviser le cap du nord magnétique de l’appareil.
 
-## <a name="get-started"></a>Bien démarrer
+## <a name="get-started"></a>Prendre en main
 
 [!include[](~/essentials/includes/get-started.md)]
 

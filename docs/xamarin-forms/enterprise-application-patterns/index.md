@@ -1,22 +1,8 @@
 ---
-title: Modèles d’application d’entreprise utilisant Xamarin.Forms ebook
-description: Ce livre électronique fournit des conseils architecturaux pour le développement d’applications d’entreprise adaptables, gérables et pouvant être testées Xamarin.Forms .
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: cc0f98d94c76ff63e7a002dfb92b51eae153d7b4
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139397"
+title : « Enterprise Application patterns using Xamarin.Forms ebook » Description : « ce livre électronique fournit des conseils architecturaux pour le développement d’applications d’entreprise adaptables, gérables et pouvant être testées Xamarin.Forms . »
+ms. Prod : xamarin ms. AssetID : 28cfed6c-6175-4223-a8cc-798d40bf0832 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 08/07/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="enterprise-application-patterns-using-xamarinforms-ebook"></a>Modèles d’application d’entreprise utilisant Xamarin.Forms ebook
 
 _Conseils architecturaux pour le développement d’applications d’entreprise adaptables, gérables et pouvant être testées Xamarin.Forms_

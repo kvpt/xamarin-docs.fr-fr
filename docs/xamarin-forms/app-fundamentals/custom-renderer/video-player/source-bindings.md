@@ -1,22 +1,8 @@
 ---
-title: ''
-description: Cet article explique comment lier des sources vidéo au lecteur vidéo à l’aide de Xamarin.Forms .
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: c02764d6160bb8ce2481a3cf67e357933d25934f
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84133729"
+titre : « liaison de sources vidéo au lecteur » Description : « cet article explique comment lier des sources vidéo au lecteur vidéo à l’aide de Xamarin.Forms . »
+ms. Prod : xamarin ms. AssetID : 504E0C7E-051A-4AF2-B654-BAB4D0957928 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 02/12/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="binding-video-sources-to-the-player"></a>Liaison de sources vidéo au lecteur
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

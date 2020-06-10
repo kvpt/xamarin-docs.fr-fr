@@ -1,22 +1,8 @@
 ---
-title: Présentation des Xamarin.Forms modèles de données
-description: Xamarin.Formsles modèles de données permettent de définir la présentation des données sur les contrôles pris en charge. Cet article présente les modèles de données et explique pourquoi ils sont nécessaires.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: f71e0a67b823d92a17158a076707f606f6a4c73f
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136108"
+title : « présentation Xamarin.Forms des modèles de données » Description : «les Xamarin.Forms modèles de données permettent de définir la présentation des données sur les contrôles pris en charge. Cet article fournit une introduction aux modèles de données, en examinant pourquoi ils sont nécessaires.»
+ms. Prod : xamarin ms. AssetID : 4ED4ACF4-BE4A-44ED-8EAF-C03947B8663B ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 09/11/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="introduction-to-xamarinforms-data-templates"></a>Présentation des Xamarin.Forms modèles de données
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplates)

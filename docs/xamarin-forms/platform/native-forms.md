@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Formsdans les projets natifs Xamarin
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 9fb741a03d1c8dd2a8754120d0b46567d8889a0b
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84132273"
+title : « Xamarin.Forms in Xamarin Native Projects » Description : « cet article explique comment utiliser les pages dérivées de ContentPage qui sont directement ajoutées aux projets natifs Xamarin et comment naviguer entre eux. »
+ms. Prod : xamarin ms. AssetID : f343fc21-dfb1-4364-A332-9da6705d36bc ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 08/19/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-in-xamarin-native-projects"></a>Xamarin.Formsdans les projets natifs Xamarin
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/native2forms)
@@ -144,7 +130,7 @@ La `PopViewController` substitution appelle la `Dispose` méthode sur l' `UIView
 > [!IMPORTANT]
 > Les objets orphelins ne peuvent pas être récupérés par le garbage collector, ce qui entraîne une fuite de mémoire.
 
-## <a name="android"></a>Téléphone
+## <a name="android"></a>Android
 
 Sur Android, le `OnCreate` remplacement dans la `MainActivity` classe est généralement l’endroit où effectuer des tâches liées au démarrage de l’application. L’exemple de code suivant montre la `MainActivity` classe dans l’exemple d’application :
 

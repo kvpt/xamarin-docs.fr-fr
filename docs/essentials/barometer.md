@@ -7,7 +7,7 @@ ms. AssetID : DA4F968A-D988-41F5-8745-1BEE693660A1 auteur : jamesmontemagno ms
 
 La classe **Baromètre** vous permet d’analyser le capteur du baromètre de l’appareil, qui mesure la pression.
 
-## <a name="get-started"></a>Bien démarrer
+## <a name="get-started"></a>Prendre en main
 
 [!include[](~/essentials/includes/get-started.md)]
 

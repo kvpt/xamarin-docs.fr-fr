@@ -1,29 +1,15 @@
 ---
-title: ''
-description: Vérification orthographique Bing effectue une vérification orthographique contextuelle du texte, en fournissant des suggestions incorporées pour les mots mal orthographiés. Cet article explique comment utiliser l’API REST Vérification orthographique Bing pour corriger les fautes d’orthographe dans une Xamarin.Forms application.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 1703f0049408381a86da73fb28696ef8708cc790
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139293"
+titre : « vérification de l’orthographe à l’aide de la API Vérification orthographique Bing » Description : «Vérification orthographique Bing effectue une vérification orthographique contextuelle du texte, en fournissant des suggestions Inline pour les mots mal orthographiés. Cet article explique comment utiliser l’API REST Vérification orthographique Bing pour corriger les fautes d’orthographe dans une Xamarin.Forms application.»
+ms. Prod : xamarin ms. AssetID : B40EB103-FDC0-45C6-9940-FB4ACDC2F4F9 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 02/08/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="spell-checking-using-the-bing-spell-check-api"></a>Vérification de l’orthographe à l’aide de l’API Vérification orthographique Bing
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
 _Vérification orthographique Bing effectue une vérification orthographique contextuelle du texte, en fournissant des suggestions incorporées pour les mots mal orthographiés. Cet article explique comment utiliser l’API REST Vérification orthographique Bing pour corriger les fautes d’orthographe dans une Xamarin.Forms application._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d’ensemble
 
 L’API REST Vérification orthographique Bing a deux modes de fonctionnement, et un mode doit être spécifié lors de l’exécution d’une requête auprès de l’API :
 
@@ -173,4 +159,4 @@ Cet article explique comment utiliser l’API REST Vérification orthographique 
 - [Documentation Vérification orthographique Bing](/azure/cognitive-services/bing-spell-check/)
 - [Utilisation d’un service Web RESTful](~/xamarin-forms/data-cloud/web-services/rest.md)
 - [Cognitive Services todo (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
-- [Informations de référence sur API Vérification orthographique Bing v7](/rest/api/cognitiveservices/bing-spell-check-api-v7-reference/)
+- [Informations de référence sur l’API Vérification orthographique Bing v7](/rest/api/cognitiveservices/bing-spell-check-api-v7-reference/)

@@ -7,7 +7,7 @@ ms. AssetID : E1B1F152-B1D5-4227-965E-C0AEBF528F49 auteur : jamesmontemagno ms
 
 La classe **Connectivité** vous permet de surveiller les modifications des conditions réseau de l’appareil, l’accès au réseau actuel et le mode de connexion actuel.
 
-## <a name="get-started"></a>Bien démarrer
+## <a name="get-started"></a>Prendre en main
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -25,7 +25,7 @@ Ouvrez le fichier **AssemblyInfo.cs** sous le dossier **Propriétés** et ajoute
 
 OU mettez à jour le manifeste Android :
 
-Ouvrez le fichier **fichier AndroidManifest. xml** dans le dossier **Propriétés** et ajoutez le code suivant dans le nœud **manifeste** .
+Ouvrez le fichier **AndroidManifest.xml** sous le dossier **Propriétés** , puis ajoutez le code suivant dans le nœud **manifeste** .
 
 ```xml
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -99,7 +99,7 @@ public class ConnectivityTest
 }
 ```
 
-## <a name="limitations"></a>Limitations
+## <a name="limitations"></a>Limites
 
 Il est important de noter qu’il est possible que `Internet` soit signalé par `NetworkAccess` mais l’accès complet sur le web n’est pas disponible. En raison du fonctionnement de la connectivité sur chaque plateforme, seul le fait qu’une connexion est disponible peut être garanti. Par exemple, l’appareil peut être connecté à un réseau Wi-Fi, mais le routeur est déconnecté d’Internet. Dans cet exemple, Internet peut être signalé, mais une connexion active n’est pas disponible.
 

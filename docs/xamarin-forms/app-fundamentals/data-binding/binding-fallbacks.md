@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsLiaison de secours
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: f3aadef1960618731c3749507233933b8bf7630e
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84133458"
+titre : « Xamarin.Forms liaison de secours » Description : « cet article explique comment rendre les liaisons plus robustes en définissant les valeurs de secours qui seront utilisées en cas d’échec de la liaison. »
+ms. Prod : xamarin ms. AssetID : 637ACD9D-3E5D-4014-86DE-A77D1FEF238A ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 08/16/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-binding-fallbacks"></a>Xamarin.FormsLiaison de secours
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)

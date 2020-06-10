@@ -1,9 +1,6 @@
 ---
 titre : « créer une Xamarin.Forms application Shell » Description : « le processus de création d’une Xamarin.Forms application Shell consiste à créer un fichier XAML qui sous-classe la classe Shell, à définir la propriété MainPage de la classe App de l’application sur l’objet Shell sous-classé, puis à décrire la hiérarchie visuelle de l’application dans la classe Shell sous-classée. »
-ms. Prod : ms. AssetID : ms. Technology : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+ms. Prod : xamarin ms. AssetID : 2A51D78F-6CD5-4BC4-A62E-11CEFA799987 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 05/24/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
 
 # <a name="create-a-xamarinforms-shell-application"></a>Créer une Xamarin.Forms application Shell

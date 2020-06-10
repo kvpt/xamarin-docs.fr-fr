@@ -1,21 +1,7 @@
 ---
-title: Service Azure Signalr avecXamarin.Forms
-description: Prise en main du service et des Azure Functions Azure Signalr avecXamarin.Forms
-ms.prod: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: ffa44beb68dc845a64d8bf2a9f86f6d7e56df8f9
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139436"
+title : « service Azure Signalr avec Xamarin.Forms «Description : » prise en main du service Azure signalr et Azure Functions avec Xamarin.Forms «ms. Prod : xamarin ms. AssetID : 1B9A69EF-C200-41BF-B098-D978D7F9CD8F auteur : profexorgeek ms. Author : jusjohns ms. date : 06/07/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="azure-signalr-service-with-xamarinforms"></a>Service Azure Signalr avecXamarin.Forms
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azuresignalr/)

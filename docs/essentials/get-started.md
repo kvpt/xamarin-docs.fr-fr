@@ -1,21 +1,8 @@
 ---
-title: Prise en main deXamarin.Essentials
-description: Xamarin.Essentialsfournit une API multiplateforme unique qui fonctionne avec n’importe quelle application iOS, Android ou UWP accessible à partir de code partagé, quelle que soit la façon dont l’interface utilisateur est créée.
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.custom: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 0c0052b35475522ffb3634ebe22f69f66fe3b22b
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84129309"
+titre : « prise en main de Xamarin.Essentials la description : » Xamarin.Essentials fournit une API multiplateforme unique qui fonctionne avec n’importe quelle application iOS, Android ou UWP accessible à partir de code partagé, quelle que soit la façon dont l’interface utilisateur est créée.
+ms. AssetID : B2669C48-B659-4854-BD80-FEB0E876F5B9 auteur : jamesmontemagno ms. Author : Jamont ms. Custom : Video ms. Date : 05/11/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="get-started-with-xamarinessentials"></a>Prise en main deXamarin.Essentials
 
 Xamarin.Essentialsfournit une API multiplateforme unique qui fonctionne avec n’importe quelle application iOS, Android ou UWP accessible à partir de code partagé, quelle que soit la façon dont l’interface utilisateur est créée. Pour plus d’informations sur les systèmes d’exploitation pris en charge, consultez le [guide de prise en charge des plateformes et des fonctionnalités](platform-feature-support.md).

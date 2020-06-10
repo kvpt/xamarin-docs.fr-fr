@@ -73,7 +73,7 @@ image.Source = Device.RuntimePlatform == Device.Android
 ```
 
 > [!IMPORTANT]
-> Pour utiliser le même nom de fichier d’image sur toutes les plateformes, le nom doit être valide sur toutes les plateformes. Les drawables Android ont des restrictions de nommage : seules les lettres minuscules, les chiffres, le trait de soulignement et le point sont autorisés, et pour la compatibilité multiplateforme, cette fonction doit également être suivie sur toutes les autres plateformes. L’exemple de nom de fichier **quais. png** suit les règles, mais des exemples de noms de fichiers non valides incluent « Water front. png », « quais. png », « Water-front. png » et « wåterfront. png ».
+> Pour utiliser le même nom de fichier d’image sur toutes les plateformes, le nom doit être valide sur toutes les plateformes. Les drawables Android ont des restrictions de nommage : seules les lettres minuscules, les chiffres, le trait de soulignement et le point sont autorisés, et pour la compatibilité multiplateforme, cette fonction doit également être suivie sur toutes les autres plateformes. L’exemple de nom de fichier **waterfront.png** suit les règles, mais des exemples de noms de fichiers non valides incluent « Water front.png », « WaterFront.png », « water-front.png » et « wåterfront.png ».
 
 ### <a name="native-resolutions-retina-and-high-dpi"></a>Résolutions natives (retine et haute résolution)
 
@@ -87,7 +87,7 @@ Les images de résolution alternative Android doivent être placées dans des [r
 
 [![Emplacement d’image à résolution multiple Android](images-images/xs-highdpisolution-sml.png)](images-images/xs-highdpisolution.png#lightbox)
 
-Les noms de fichiers image UWP [peuvent être suivis d’un suffixe `.scale-xxx` avant l’extension de fichier](https://docs.microsoft.com/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast), où `xxx` est le pourcentage de mise à l’échelle appliqué à la ressource, par exemple **myImage. Scale-200. png**. Les images peuvent ensuite être référencées dans le code ou XAML sans le modificateur d’échelle, par exemple, simplement **myImage. png**. La plateforme sélectionnera l’échelle de ressources appropriée la plus proche en fonction de la résolution actuelle de l’affichage.
+Les noms de fichiers image UWP [peuvent être suivis d’un suffixe `.scale-xxx` avant l’extension de fichier](https://docs.microsoft.com/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast), où `xxx` est le pourcentage de mise à l’échelle appliqué à la ressource, par exemple **myimage.scale-200.png**. Les images peuvent ensuite être référencées dans le code ou XAML sans le modificateur d’échelle, par exemple **myimage.png**. La plateforme sélectionnera l’échelle de ressources appropriée la plus proche en fonction de la résolution actuelle de l’affichage.
 
 ### <a name="additional-controls-that-display-images"></a>Contrôles supplémentaires qui affichent des images
 
@@ -116,7 +116,7 @@ Pour incorporer une image dans un projet, cliquez avec le bouton droit pour ajou
 
 L' **action de génération** peut être affichée et modifiée dans la fenêtre **Propriétés** d’un fichier.
 
-Dans cet exemple, l’ID de ressource est **WorkingWithImages. Beach. jpg**.
+Dans cet exemple, l’ID de ressource est **WorkingWithImages.beach.jpg**.
 L’IDE a généré cette valeur par défaut en concaténant l' **espace de noms par défaut** pour ce projet avec le nom de fichier, à l’aide d’un point (.) entre chaque valeur.
 <!-- https://msdn.microsoft.com/library/ms950960.aspx -->
 
@@ -125,15 +125,15 @@ L’IDE a généré cette valeur par défaut en concaténant l' **espace de noms
 ![](images-images/xs-buildaction.png "Set Build Action: EmbeddedResource")
 
 L' **action de génération** peut également être affichée et modifiée dans le panneau **Propriétés** d’un fichier.
-Ce panneau affiche l' **ID de ressource** utilisé pour référencer la ressource dans le code. Dans la capture d’écran ci-dessous, l' **ID de ressource** est **WorkingWithImages. Beach. jpg**.
+Ce panneau affiche l' **ID de ressource** utilisé pour référencer la ressource dans le code. Dans la capture d’écran ci-dessous, l' **ID de ressource** est **WorkingWithImages.beach.jpg**.
 L’IDE a généré cette valeur par défaut en concaténant l' **espace de noms par défaut** pour ce projet avec le nom de fichier, à l’aide d’un point (.) entre chaque valeur.
-Cet ID peut être modifié dans le panneau **Propriétés** , mais pour ces exemples, la valeur **WorkingWithImages. Beach. jpg** sera utilisée.
+Cet ID peut être modifié dans le panneau **Propriétés** , mais pour ces exemples, la valeur **WorkingWithImages.beach.jpg** sera utilisée.
 
 [![Panneau Propriétés des ressources incorporées](images-images/xs-embeddedproperties-sml.png)](images-images/xs-embeddedproperties.png#lightbox)
 
 -----
 
-Si vous placez des images incorporées dans des dossiers de votre projet, les noms de dossiers sont également séparés par des points (.) dans l’ID de ressource. Le déplacement de l’image **Beach. jpg** dans un dossier appelé **myImages** entraînerait l’ID de ressource **WorkingWithImages. myImages. Beach. jpg**
+Si vous placez des images incorporées dans des dossiers de votre projet, les noms de dossiers sont également séparés par des points (.) dans l’ID de ressource. Le déplacement de l’image **beach.jpg** dans un dossier appelé **myImages** entraînerait un ID de ressource de **WorkingWithImages.MyImages.beach.jpg**
 
 Le code permettant de charger une image incorporée transmet simplement l' **ID de ressource** à la [`ImageSource.FromResource`](xref:Xamarin.Forms.ImageSource.FromResource*) méthode comme indiqué ci-dessous :
 

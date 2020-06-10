@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsExpander
-description: Le Xamarin.Forms contrôle Expander fournit un conteneur extensible pour héberger tout contenu. Le contenu est affiché ou masqué en appuyant sur l’en-tête Expander.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 5e9afa0f6d27003891963af5715d5721e3129306
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84129531"
+titre : « Xamarin.Forms Expander » Description : «le Xamarin.Forms contrôle Expander fournit un conteneur extensible pour héberger tout contenu. Le contenu est affiché ou masqué en appuyant sur l’en-tête Expander.»
+ms. Prod : xamarin ms. AssetID : 381DCB55-522D-4414-B45B-E8DD70AA9985 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 04/15/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-expander"></a>Xamarin.FormsExpander
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-expanderdemos/)

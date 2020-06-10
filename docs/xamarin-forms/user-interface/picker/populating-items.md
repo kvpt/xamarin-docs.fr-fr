@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 8872c6748ba778a2622d82803d580c781bd282cd
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139631"
+titre : « ajout de données à la collection d’éléments d’un sélecteur » : «la vue sélecteur est un contrôle permettant de sélectionner un élément de texte dans une liste de données. Cet article explique comment remplir un sélecteur avec des données en l’ajoutant à la collection Items et comment répondre à la sélection d’élément par l’utilisateur.»
+ms. Prod : xamarin ms. AssetID : 3C840F64-A430-457D-A4B2-3D7AF46F9DBE ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 02/26/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="adding-data-to-a-pickers-items-collection"></a>Ajout de données à la collection d’éléments d’un sélecteur
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-pickerdemo)

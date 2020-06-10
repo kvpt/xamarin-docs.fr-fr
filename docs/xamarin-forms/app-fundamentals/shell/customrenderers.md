@@ -1,9 +1,6 @@
 ---
-titre : « Xamarin.Forms Description des convertisseurs personnalisés de l’interpréteur de commandes » : les Xamarin.Forms applications Shell sont hautement personnalisables via les propriétés et les méthodes exposées par les différentes classes de Shell. Toutefois, il est également possible de créer un convertisseur personnalisé Shell quand des personnalisations spécifiques à une plateforme plus sophistiquées sont requises.
-ms. Prod : ms. AssetID : ms. Technology : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title : " Xamarin.Forms Description des convertisseurs personnalisés de l’interpréteur de commandes" : "les Xamarin.Forms applications de l’interpréteur de commandes sont hautement personnalisables via les propriétés et les méthodes exposées par les différentes classes de Shell. Toutefois, il est également possible de créer un convertisseur personnalisé Shell quand des personnalisations spécifiques à une plateforme plus sophistiquées sont requises.»
+ms. Prod : xamarin ms. AssetID : 3B1A6AE8-1D1E-4C34-B9AB-48F4444FEF32 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 05/06/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
 
 # <a name="xamarinforms-shell-custom-renderers"></a>Xamarin.FormsConvertisseurs personnalisés de l’interpréteur de commandes

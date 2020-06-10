@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a891ec70f6f83984ed463fe914442758bdf57a2e
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139306"
+titre : « Introduction aux effets » Description : «les effets permettent aux contrôles natifs sur chaque plateforme d’être personnalisés et sont généralement utilisés pour les petites modifications de style. Cet article fournit une introduction aux effets, présente la limite entre les effets et les convertisseurs personnalisés, et décrit la classe PlatformEffect.»
+ms. Prod : xamarin ms. AssetID : 30CB8615-8F39-4762-BDB7-333D2B57D112 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 03/08/2016 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="introduction-to-effects"></a>Présentation des effets
 
 _Les effets permettent de personnaliser les contrôles natifs sur chaque plateforme et sont généralement utilisés pour les petites modifications de style. Cet article fournit une introduction aux effets, présente la limite entre les effets et les convertisseurs personnalisés, et décrit la classe PlatformEffect._
@@ -44,7 +30,7 @@ Le tableau suivant liste l’espace de noms pour la classe `PlatformEffect` sur 
 |Plateforme|Espace de noms|Conteneur|Control|
 |--- |--- |--- |--- |
 |iOS|Xamarin.Forms. Platform. iOS|UIView|UIView|
-|Téléphone|Xamarin.Forms. Platform. Android|ViewGroup|Affichage|
+|Android|Xamarin.Forms. Platform. Android|ViewGroup|Affichage|
 |Plateforme Windows universelle (UWP)|Xamarin.Forms. Platform. UWP|FrameworkElement|FrameworkElement|
 
 Chaque classe `PlatformEffect` spécifique à une plateforme expose les propriétés suivantes :

@@ -1,22 +1,8 @@
 ---
-title: Connectez-vous avec Apple dansXamarin.Forms
-description: La connexion avec Apple offre une protection des identités aux utilisateurs et peut être implémentée pour les scénarios mobiles multiplateforme dans Xamarin.Forms .
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 84c7fdef5d12dfe6fca6294b3125e90761349002
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139449"
+titre : « Connectez-vous avec Apple dans la Xamarin.Forms Description : «Connectez-vous avec Apple fournit la protection des identités aux utilisateurs et peut être implémenté pour les scénarios mobiles multiplateforme dans Xamarin.Forms . »
+ms. Prod : xamarin ms. AssetID : 414465F8-0CC8-4078-B3D1-F36983069658 ms. Technology : xamarin-Forms Author : davidortinau ms. Author : daortin ms. Date : 09/10/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="sign-in-with-apple-in-xamarinforms"></a>Connectez-vous avec Apple dansXamarin.Forms
 
 La connexion avec Apple introduit un nouveau service qui fournit la protection des identités pour les utilisateurs. À compter d’iOS 13 Apple, les applications utilisant des fournisseurs d’authentification tiers doivent également se connecter avec Apple. Pour obtenir des instructions sur l’utilisation de cette fonctionnalité avec Xamarin. iOS, [consultez plus d’informations ici](~/ios/platform/ios13/sign-in.md).

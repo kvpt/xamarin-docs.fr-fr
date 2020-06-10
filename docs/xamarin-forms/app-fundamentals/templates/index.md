@@ -1,25 +1,11 @@
 ---
-title: Xamarin.Formsceux
-description: Ce guide explique comment utiliser la prise en charge de modèles fournie par Xamarin.Forms . Cette prise en charge comprend des modèles de contrôle qui définissent la structure visuelle des contrôles et des pages personnalisés, ainsi que des modèles de données qui définissent la présentation des données sur les contrôles pris en charge.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 079c9079efdf224db1dee8a60f054439eeee8e8c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135926"
+titre : « Xamarin.Forms modèles » Description : «ce guide explique comment utiliser la prise en charge de modèles fournie par Xamarin.Forms . Cette prise en charge comprend des modèles de contrôle qui définissent la structure visuelle des contrôles et des pages personnalisés, ainsi que des modèles de données qui définissent la présentation des données sur les contrôles pris en charge.
+ms. Prod : xamarin ms. AssetID : 4453C209-C068-47D5-A49B-0ECC95C0FB3B ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 01/13/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-templates"></a>Xamarin.Formsceux
 
-## <a name="control-templates"></a>[Modèles de contrôles](control-template.md)
+## <a name="control-templates"></a>[Modèles de contrôle](control-template.md)
 
 Xamarin.Formsles modèles de contrôle définissent la structure visuelle des [`ContentView`](xref:Xamarin.Forms.ContentView) contrôles personnalisés dérivés et des [`ContentPage`](xref:Xamarin.Forms.ContentPage) pages dérivées.
 

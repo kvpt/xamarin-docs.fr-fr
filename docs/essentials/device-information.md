@@ -7,7 +7,7 @@ ms. AssetID : A1AC5373-926A-4FB6-8D7D-4B87EB8EB522 Author : jamesmontemagno ms
 
 La classe **DeviceInfo** fournit des informations sur l’appareil où l’application s’exécute.
 
-## <a name="get-started"></a>Bien démarrer
+## <a name="get-started"></a>Prendre en main
 
 [!include[](~/essentials/includes/get-started.md)]
 

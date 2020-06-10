@@ -95,7 +95,7 @@ L’application mobile eShopOnContainers exerce les Xamarin.Forms fonctionnalit�
 - Commandes
 - comportements
 - Déclencheurs
-- Effects (Effets)
+- Effets
 - Renderers personnalisés
 - MessagingCenter
 - Contrôles personnalisés
@@ -108,7 +108,7 @@ En outre, des tests unitaires sont fournis pour certaines des classes de l’app
 
 La solution d’application mobile eShopOnContainers organise le code source et d’autres ressources en projets. Tous les projets utilisent des dossiers pour organiser le code source et d’autres ressources en catégories. Le tableau suivant présente les projets qui composent l’application mobile eShopOnContainers :
 
-|Project|Description|
+|Projet|Description|
 |--- |--- |
 |eShopOnContainers. Core|Ce projet est le projet de bibliothèque de classes portable (PCL) qui contient le code partagé et l’interface utilisateur partagée.|
 |eShopOnContainers. Droid|Ce projet contient le code spécifique à Android et constitue le point d’entrée de l’application Android.|
@@ -131,7 +131,7 @@ Le projet PCL eShopOnContainers. Core contient les dossiers suivants :
 |comportements|Contient les comportements exposés aux classes d’affichage.|
 |Contrôles|Contient des contrôles personnalisés utilisés par l’application.|
 |Convertisseurs|Contient des convertisseurs de valeurs qui appliquent une logique personnalisée à une liaison.|
-|Effects (Effets)|Contient la `EntryLineColorEffect` classe, qui est utilisée pour modifier la couleur de bordure de `Entry` contrôles spécifiques.|
+|Effets|Contient la `EntryLineColorEffect` classe, qui est utilisée pour modifier la couleur de bordure de `Entry` contrôles spécifiques.|
 |Exceptions|Contient le personnalisé `ServiceAuthenticationException` .|
 |Extensions|Contient des méthodes d’extension pour les `VisualElement` `IEnumerable` classes et.|
 |Programmes d’assistance|Contient des classes d’assistance pour l’application.|

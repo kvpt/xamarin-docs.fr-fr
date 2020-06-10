@@ -1,8 +1,6 @@
 ---
-titre : « » Xamarin.Essentials : MainThread « » Description : ms. AssetID : Auteur : ms. Custom : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title : " Xamarin.Essentials : MainThread" Description : "la classe MainThread permet aux applications d’exécuter du code sur le thread d’exécution principal."
+ms. AssetID : CD6D51E7-D933-4FE7-A7F7-392EF27812E1 Author : jamesmontemagno ms. Custom : vidéo ms. Author : Jamont ms. Date : 08/20/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
 
 # <a name="xamarinessentials-mainthread"></a>Xamarin.Essentials: MainThread
@@ -15,7 +13,7 @@ La plupart des systèmes d’exploitation, notamment iOS, Android et la platefor
 
 Les applications ont parfois besoin d’utiliser des événements qui appellent le Gestionnaire d’événements sur un thread secondaire d’exécution. (Les Xamarin.Essentials classes [`Accelerometer`](accelerometer.md) , [`Compass`](compass.md) , [`Gyroscope`](gyroscope.md) , [`Magnetometer`](magnetometer.md) et [`OrientationSensor`](orientation-sensor.md) peuvent toutes retourner des informations sur un thread secondaire lorsqu’elles sont utilisées avec des vitesses plus rapides.) Si le gestionnaire d’événements doit accéder aux éléments de l’interface utilisateur, il doit exécuter ce code sur le thread principal. La classe **MainThread** permet à l’application de se charger de cette exécution.
 
-## <a name="get-started"></a>Prise en main
+## <a name="get-started"></a>Prendre en main
 
 [!include[](~/essentials/includes/get-started.md)]
 

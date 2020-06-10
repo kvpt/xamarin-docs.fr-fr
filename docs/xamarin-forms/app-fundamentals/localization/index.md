@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsLocaliz
-description: L’infrastructure de localisation .NET intégrée peut être utilisée pour créer des applications multilingues multiplateformes avec Xamarin.Forms . Le texte et les images peuvent être localisés, et les applications peuvent prendre en charge un sens de flux de droite à gauche.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: dddb80e8fb683547d2bf6ba0b74e870fe240695c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137564"
+title : « Xamarin.Forms Localization » Description : «the Built-in .net localization Framework peut être utilisé pour créer des applications multilingues multiplateformes avec Xamarin.Forms . Le texte et les images peuvent être localisés, et les applications peuvent prendre en charge un sens de déroulement de droite à gauche.»
+ms. Prod : xamarin ms. AssetID : 97BF843B-BDAA-4CEA-8189-6DB54B291D7F ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 11/07/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-localization"></a>Xamarin.FormsLocaliz
 
 _L’infrastructure de localisation .NET intégrée peut être utilisée pour créer des applications multilingues multiplateformes avec Xamarin.Forms ._

@@ -1,25 +1,8 @@
 ---
-title: Xamarin.FormsPrésentation approfondie des Démarrages rapides
-description: Cet article examine les notions de base du développement d’applications à l’aide de Xamarin.Forms . Les rubriques couvertes comprenaient l’anatomie d’une Xamarin.Forms application, l’architecture et les notions de base de l’application, ainsi que l’interface utilisateur.
-zone_pivot_groups: ''
-ms.topic: ''
-ms.prod: ''
-ms.custom: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 1bfb76f71a2ac9d8bc9ae84152501909000b9623
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84132520"
+title : « Xamarin.Forms Présentation approfondie de démarrage rapide » : «cet article examine les notions de base du développement d’applications à l’aide de Xamarin.Forms . Les rubriques couvertes comportaient l’anatomie d’une Xamarin.Forms application, l’architecture et les notions de base de l’application, ainsi que l’interface utilisateur.»
+zone_pivot_groups : plateforme ms. topic : démarrage rapide ms. Prod : xamarin ms. Custom : Video ms. AssetID : 7B2340A1-6883-41D8-860C-0BB6C4E0C316 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 11/27/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-quickstart-deep-dive"></a>Xamarin.FormsPrésentation approfondie des Démarrages rapides
 
 Dans le Guide de [ Xamarin.Forms démarrage rapide](~/get-started/index.yml), l’application notes a été générée. Cet article passe en revue ce qui a été conçu pour comprendre les principes de base du fonctionnement des Xamarin.Forms applications.
@@ -162,7 +145,7 @@ namespace Notes.iOS
 
 La `FinishedLaunching` substitution Initialise le Xamarin.Forms Framework en appelant la `Init` méthode. Cela entraîne le chargement de l’implémentation spécifique à iOS Xamarin.Forms dans l’application avant que le contrôleur d’affichage racine soit défini par l’appel à la `LoadApplication` méthode.
 
-### <a name="android"></a>Téléphone
+### <a name="android"></a>Android
 
 Pour lancer la Xamarin.Forms page initiale dans Android, le projet notes. Android comprend du code qui crée un `Activity` avec l' `MainLauncher` attribut, avec l’activité qui hérite de la `FormsAppCompatActivity` classe :
 
@@ -240,7 +223,7 @@ Quatre groupes de contrôles principaux sont utilisés pour créer l’interface
 
 Lors de l’exécution, chaque contrôle est mappé à son équivalent natif, ce qui sera affiché.
 
-### <a name="layout"></a>Disposition
+### <a name="layout"></a>Mise en page
 
 L’application notes utilise le [`StackLayout`](xref:Xamarin.Forms.StackLayout) pour simplifier le développement d’applications interplateformes en organisant automatiquement des vues sur l’écran, quelle que soit la taille de l’écran. Les éléments enfants sont placés les uns après les autres, horizontalement ou verticalement dans l’ordre dans lequel ils ont été ajoutés. La quantité d’espace que le `StackLayout` doit utiliser dépend de la façon dont les [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) [`VerticalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) Propriétés et sont définies, mais par défaut, le `StackLayout` essaie d’utiliser la totalité de l’écran.
 
@@ -536,9 +519,9 @@ Vous pouvez également [_créer mobile apps avec Xamarin. Forms_](~/xamarin-form
 
 ## <a name="related-links"></a>Liens connexes
 
-- [XAML (eXtensible Application Markup Language)](~/xamarin-forms/xaml/index.yml)
+- [eXtensible Application Markup Language (XAML)](~/xamarin-forms/xaml/index.yml)
 - [Liaison de données](~/xamarin-forms/app-fundamentals/data-binding/index.md)
-- [Référence des contrôles](~/xamarin-forms/user-interface/controls/index.md)
+- [Informations de référence sur les contrôles](~/xamarin-forms/user-interface/controls/index.md)
 - [Extensions de balisage XAML](~/xamarin-forms/xaml/markup-extensions/index.md)
 - [Xamarin.FormsExtraits](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
 - [Exemples de Prise en main](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms%20get%20started)

@@ -1,22 +1,8 @@
 ---
-title: ''
-description: Ce guide explique les principes fondamentaux des concepts et coordonnées graphiques SkiaSharp dans les Xamarin.Forms applications.
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: fd82f7ffe135c12c9dfc59c3353d7d9f5d73068c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137707"
+title : « SkiaSharp Drawing Basics » Description : « ce guide explique les principes fondamentaux des concepts et coordonnées des graphiques SkiaSharp dans les Xamarin.Forms applications ».
+ms. Prod : xamarin ms. Technology : xamarin-skiasharp ms. AssetID : 25141E3E-D22E-44B1-A647-7E6FA0C9737B auteur : davidbritch ms. Author : dabritch ms. Date : 03/10/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="skiasharp-drawing-basics"></a>Principes de base de dessin SkiaSharp
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

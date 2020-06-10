@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsNavigation dans le shell
-description: Xamarin.FormsLes applications de l’interpréteur de commandes peuvent utiliser une expérience de navigation basée sur un URI qui permet de naviguer vers n’importe quelle page de l’application, sans avoir à suivre une hiérarchie de navigation définie.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: e67d49f300a8a98ec5685c33abf98f5b2ded08ed
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84132390"
+title : " Xamarin.Forms Description de la navigation de l’interpréteur de commandes" : "les Xamarin.Forms applications Shell peuvent utiliser une expérience de navigation basée sur un URI qui permet la navigation vers n’importe quelle page de l’application, sans avoir à suivre une hiérarchie de navigation définie."
+ms. Prod : xamarin ms. AssetID : 57079D89-D1CB-48BD-9FEE-539CEC29EABB ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 04/02/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-shell-navigation"></a>Xamarin.FormsNavigation dans le shell
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
@@ -211,7 +197,7 @@ Dans cet exemple, l’effet global consiste à parcourir deux fois en arrière, 
 
 Les formats d’itinéraires suivants ne sont pas valides :
 
-| Mettre en forme | Explication |
+| Format | Explication |
 | --- | --- |
 | *route* ou /*route* | Les itinéraires dans la hiérarchie visuelle ne peuvent pas être transmis en mode push à la pile de navigation. |
 | //*page* ou ///*page* | Actuellement, les itinéraires globaux ne peuvent pas représenter la seule page de la pile de navigation. Par conséquent, l’acheminement absolu pour les itinéraires globaux n’est pas pris en charge. |

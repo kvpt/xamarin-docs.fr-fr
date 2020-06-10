@@ -43,7 +43,7 @@ Le tableau suivant répertorie les classes de convertisseur et de contrôle nati
 
 Le tableau suivant répertorie les classes de convertisseur et de contrôle natif qui implémentent chaque type de Xamarin.Forms [disposition](~/xamarin-forms/user-interface/controls/layouts.md) :
 
-|Layout|Renderer|iOS|Android|Android (AppCompat)|UWP|
+|Mise en page|Renderer|iOS|Android|Android (AppCompat)|UWP|
 |--- |--- |--- |--- |--- |
 |[`ContentPresenter`](xref:Xamarin.Forms.ContentPresenter)|ViewRenderer|UIView|Affichage|Affichage|FrameworkElement|
 |[`ContentView`](xref:Xamarin.Forms.ContentView)|ViewRenderer|UIView|Affichage|Affichage|FrameworkElement|

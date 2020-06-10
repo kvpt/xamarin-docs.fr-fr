@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 08be571d3ba69891a56c08efd556a999e51431c8
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139852"
+titre : «partie 4. Concepts de base de la liaison de données « Description : » les liaisons de données permettent de lier les propriétés de deux objets afin qu’une modification dans l’un provoque une modification de l’autre.»
+ms. Prod : xamarin ms. Technology : xamarin-Forms ms. AssetID : 342288C3-BB4C-4924-B178-72E112D777BA auteur : davidbritch ms. Author : dabritch ms. Date : 10/25/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="part-4-data-binding-basics"></a>Partie 4. Notions de base sur la liaison de données
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)

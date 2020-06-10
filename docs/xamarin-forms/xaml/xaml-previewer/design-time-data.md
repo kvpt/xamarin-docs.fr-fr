@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 182256fd572a370a7b322898b1e24ade12e971fd
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84127353"
+title : "utiliser les données au moment du design avec le générateur d’aperçu XAML" Description : "cet article explique comment utiliser les données au moment du design pour afficher des dispositions lourdes en données dans le générateur d’aperçu XAML sans exécuter votre application."
+ms. Prod : xamarin ms. AssetID : 0F608019-5951-4BE6-80E0-9EEE1733D642 ms. Technology : xamarin-Forms Author : maddyleger1 ms. Author : maleger ms. Date : 03/27/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="use-design-time-data-with-the-xaml-previewer"></a>Utiliser des données au moment du design avec le générateur d’aperçu XAML
 
 _Certaines dispositions sont difficiles à visualiser sans données. Utilisez ces conseils pour tirer le meilleur parti de l’aperçu de vos pages à données volumineuses dans le générateur d’aperçu XAML._
@@ -136,9 +122,9 @@ L’avantage est que vous pouvez lier le modèle réel que vous prévoyez d’ut
 
 Si vous ne souhaitez pas ajouter de données au moment de la conception à des contrôles individuels, vous pouvez configurer un magasin de données factices à lier à votre page. Reportez-vous au billet de blog de James Montemagno [sur l’ajout de données au moment](https://montemagno.com/xamarin-forms-design-time-data-tips-best-practices/) de la conception pour voir comment établir une liaison à un ViewModel statique en XAML.
 
-## <a name="troubleshooting"></a>Résolution des problèmes
+## <a name="troubleshooting"></a>Dépannage
 
-### <a name="requirements"></a>Conditions requises
+### <a name="requirements"></a>Configuration requise
 
 Les données au moment de la conception requièrent une version minimale de Xamarin.Forms 3,6.
 

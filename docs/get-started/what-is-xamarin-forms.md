@@ -63,7 +63,7 @@ Pour plus d’informations, consultez [ Xamarin.Forms Shell](~/xamarin-forms/app
 
 Xamarin.Formsfournit une API commune qui restitue des contrôles natifs sur plusieurs plateformes, mais une plateforme spécifique peut avoir des fonctionnalités qui n’existent pas sur d’autres plateformes. Par exemple, la plateforme Android offre des fonctionnalités natives pour le défilement rapide dans un `ListView` alors qu’iOS n’en offre pas. Xamarin.Formsles spécificités des plateformes vous permettent d’utiliser des fonctionnalités qui sont uniquement disponibles sur une plateforme spécifique sans créer de convertisseurs ou d’effets personnalisés.
 
-Xamarin.Formscomprend des solutions prédéfinies pour une large gamme de fonctionnalités spécifiques à la plateforme. Pour plus d'informations, voir :
+Xamarin.Formscomprend des solutions prédéfinies pour une large gamme de fonctionnalités spécifiques à la plateforme. Pour plus d'informations, consultez les pages suivantes :
 
 - [Xamarin.Formsspécificités de la plateforme](~/xamarin-forms/platform/platform-specifics/index.md)
 - [Caractéristiques de la plateforme Android](~/xamarin-forms/platform/android/index.md)

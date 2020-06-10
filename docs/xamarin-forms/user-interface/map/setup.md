@@ -1,9 +1,6 @@
 ---
-titre : ' Xamarin.Forms mapper l’initialisation et la configuration’Description : ' Xamarin.Forms . Le package NuGet Maps est requis pour utiliser la fonctionnalité Maps dans une application. En outre, l’accès à l’emplacement de l’utilisateur nécessite des autorisations d’emplacement pour être accordé à l’application.»
-ms. Prod : ms. AssetID : ms. Technology : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title : " Xamarin.Forms Description de l’initialisation et de la configuration de la carte" : " Xamarin.Forms . Le package NuGet Maps est requis pour utiliser la fonctionnalité Maps dans une application. En outre, l’accès à l’emplacement de l’utilisateur nécessite des autorisations d’emplacement pour être accordé à l’application.»
+ms. Prod : xamarin ms. AssetID : 59CD1344-8248-406C-9144-0C8A67141E5B ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 02/07/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
 
 # <a name="xamarinforms-map-initialization-and-configuration"></a>Xamarin.FormsInitialisation et configuration de la carte
@@ -76,7 +73,7 @@ Une invite s’affiche lorsque l’application tente d’accéder à l’emplace
 
 [![Capture d’écran de la demande d’autorisation d’emplacement sur iOS](setup-images/permission-ios.png "demande d’autorisation iOS")](setup-images/permission-ios-large.png#lightbox "demande d’autorisation iOS")
 
-### <a name="android"></a>Téléphone
+### <a name="android"></a>Android
 
 Le processus de configuration pour l’affichage et l’interaction avec une carte sur Android est le suivant :
 
@@ -87,13 +84,13 @@ Le processus de configuration pour l’affichage et l’interaction avec une car
 1. facultatif Spécifiez les autorisations d’emplacement dans le manifeste.
 1. facultatif Autorisations relatives à l’emplacement d’exécution de la requête dans la `MainActivity` classe.
 
-Pour obtenir un exemple de fichier manifeste correctement configuré, consultez [fichier AndroidManifest. xml](https://github.com/xamarin/xamarin-forms-samples/blob/master/WorkingWithMaps/WorkingWithMaps/WorkingWithMaps.Android/Properties/AndroidManifest.xml) dans l’exemple d’application.
+Pour obtenir un exemple de fichier manifeste correctement configuré, consultez [AndroidManifest.xml](https://github.com/xamarin/xamarin-forms-samples/blob/master/WorkingWithMaps/WorkingWithMaps/WorkingWithMaps.Android/Properties/AndroidManifest.xml) à partir de l’exemple d’application.
 
 #### <a name="get-a-google-maps-api-key"></a>Obtenir une clé API Google Maps
 
 Pour utiliser l' [API Google Maps](https://developers.google.com/maps/documentation/android/) sur Android, vous devez générer une clé API. Pour ce faire, suivez les instructions de la procédure d' [obtention d’une clé API Google Maps](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md).
 
-Une fois que vous avez obtenu une clé API, elle doit être ajoutée dans l' `<application>` élément du fichier **Properties/fichier AndroidManifest. xml** :
+Une fois que vous avez obtenu une clé API, elle doit être ajoutée dans l' `<application>` élément du fichier **Properties/AndroidManifest.xml** :
 
 ```xml
 <application ...>
@@ -110,7 +107,7 @@ Pour que votre APK accède à Google Maps, vous devez inclure les empreintes de 
 
 #### <a name="specify-the-google-play-services-version-number"></a>Spécifier le numéro de version de Google Play services
 
-Ajoutez la déclaration suivante dans l' `<application>` élément de **fichier AndroidManifest. xml**:
+Ajoutez la déclaration suivante dans l' `<application>` élément de **AndroidManifest.xml**:
 
 ```xml
 <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
@@ -120,7 +117,7 @@ Cela incorpore la version de Google Play services avec laquelle l’application 
 
 #### <a name="specify-the-requirement-for-the-apache-http-legacy-library"></a>Spécifier la configuration requise pour la bibliothèque Legacy HTTP Apache
 
-Si votre Xamarin.Forms application cible l’API 28 ou une version ultérieure, vous devez ajouter la déclaration suivante dans l' `<application>` élément de **fichier AndroidManifest. xml**:
+Si votre Xamarin.Forms application cible l’API 28 ou une version ultérieure, vous devez ajouter la déclaration suivante dans l' `<application>` élément de **AndroidManifest.xml**:
 
 ```xml
 <uses-library android:name="org.apache.http.legacy" android:required="false" />    

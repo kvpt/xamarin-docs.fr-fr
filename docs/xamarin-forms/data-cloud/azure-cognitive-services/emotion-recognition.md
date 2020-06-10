@@ -1,22 +1,8 @@
 ---
-title: ''
-description: L’API Visage prend une expression faciale dans une image comme entrée, et retourne des données qui incluent des niveaux de confiance sur un ensemble d’émotions pour chaque visage de l’image. Cet article explique comment utiliser l’API Visage pour reconnaître une émotion, pour évaluer une Xamarin.Forms application.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: ff384605b35f6406b628da99de500b550da811c9
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136056"
+titre : « reconnaissance des émotions perçues à l’aide de la API Visage » Description : «la API Visage prend une expression faciale dans une image en tant qu’entrée, et retourne des données qui incluent des niveaux de confiance sur un ensemble d’émotions pour chaque visage dans l’image. Cet article explique comment utiliser l’API Visage pour reconnaître l’émotion, pour évaluer une Xamarin.Forms application.»
+ms. Prod : xamarin ms. AssetID : 19D36A7C-E8D8-43D1-BE80-48DE6C02879A ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 05/10/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="perceived-emotion-recognition-using-the-face-api"></a>Reconnaissance des émotions perçues à l’aide de l’API Visage
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)

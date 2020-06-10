@@ -1,22 +1,8 @@
 ---
-title: Styliser des Xamarin.Forms applications à l’aide de styles XAML
-description: Ce guide explique comment personnaliser l’apparence d’une Xamarin.Forms application à l’aide de styles XAML.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 72effe15d3456b5a48cbf5d09e889600134ac686
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138799"
+title : « stylisation Xamarin.Forms d’applications à l’aide de styles XAML » Description : « ce guide explique comment personnaliser l’apparence d’une Xamarin.Forms application à l’aide de styles XAML ».
+ms. Prod : xamarin ms. AssetID : 344A34AA-B19A-4765-BC8A-875D9A6B5EA8 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 01/30/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="styling-xamarinforms-apps-using-xaml-styles"></a>Styliser des Xamarin.Forms applications à l’aide de styles XAML
 
 ## <a name="introduction"></a>[Introduction](introduction.md)

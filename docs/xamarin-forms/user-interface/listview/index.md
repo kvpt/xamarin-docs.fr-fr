@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsListe
-description: Ce guide présente le Xamarin.Forms ListView, qui peut être utilisé pour présenter des données dans des listes interactives.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a1ff8dd5c8a8a4051cea8ce4b288c42bdbaa8d31
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139904"
+titre : « Xamarin.Forms ListView » Description : « ce guide présente le Xamarin.Forms ListView, qui peut être utilisé pour présenter des données dans des listes interactives ».
+ms. Prod : xamarin ms. AssetID : FEFDF7E0-720F-4BD1-863F-4477226AA695 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 09/04/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-listview"></a>Xamarin.FormsListe
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistview)
@@ -38,7 +24,7 @@ Un `ListView` est mieux adapté à une collection composée d’un type de donn�
 
 Pour plus d’informations sur la liaison de données à une `ListView` instance, consultez [sources de données ListView](~/xamarin-forms/user-interface/listview/data-and-databinding.md).
 
-## <a name="components"></a>Components
+## <a name="components"></a>Composants
 
 Le `ListView` contrôle a un certain nombre de composants disponibles pour tester les fonctionnalités natives de chaque plateforme. Ces composants sont définis dans les sections suivantes.
 
@@ -67,7 +53,7 @@ La capture d’écran suivante montre un `ListView` avec des éléments ImageCel
 
 Pour en savoir plus sur la personnalisation des cellules dans un `ListView` , consultez Personnalisation de l' [apparence des cellules ListView](customizing-cell-appearance.md).
 
-## <a name="functionality"></a>Fonctionnalité
+## <a name="functionality"></a>Fonctionnalités
 
 La `ListView` classe prend en charge un certain nombre de styles d’interaction.
 

@@ -1,22 +1,8 @@
 ---
-title: Affichages natifs dansXamarin.Forms
-description: Les affichages natifs d’iOS, Android et le plateforme Windows universelle (UWP) peuvent être directement référencés à partir de Xamarin.Forms et ils peuvent interagir avec les Xamarin.Forms vues.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: b622d19675694f4d4c7816a81f969b93cdfb5828
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139566"
+titre : « affichages natifs dans Xamarin.Forms » Description : les affichages natifs d’iOS, Android et la plateforme Windows universelle (UWP) peuvent être directement référencés à partir de Xamarin.Forms et ils peuvent interagir avec les Xamarin.Forms vues.
+ms. Prod : xamarin ms. AssetID : 2294a023-d763-41de-A9da-c2bfc239a132 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 11/24/2016 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="native-views-in-xamarinforms"></a>Affichages natifs dansXamarin.Forms
 
 _Les affichages natifs d’iOS, Android et du plateforme Windows universelle (UWP) peuvent être directement référencés à partir de Xamarin.Forms . Les propriétés et les gestionnaires d’événements peuvent être définis sur des vues natives et interagir avec les Xamarin.Forms vues._

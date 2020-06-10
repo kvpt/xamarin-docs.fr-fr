@@ -1,22 +1,8 @@
 ---
-title: Création d’un Xamarin.Forms DataTemplateSelector
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 74650eb2c52f1da9d0c539b711784896267ed183
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135952"
+titre : « création d’un Xamarin.Forms DataTemplateSelector » Description : « cet article montre comment créer et utiliser un DataTemplateSelector, qui peut être utilisé pour choisir un DataTemplate au moment de l’exécution en fonction de la valeur d’une propriété liée aux données. »
+ms. Prod : xamarin ms. AssetID : A4629E8F-2BAF-45CE-A76E-DF225FE8D26C ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 03/08/2016 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="creating-a-xamarinforms-datatemplateselector"></a>Création d’un Xamarin.Forms DataTemplateSelector
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplateselector)
@@ -46,7 +32,7 @@ La méthode `OnSelectTemplate` retourne le modèle approprié en fonction de la 
 
 Une instance de la classe de sélecteur de modèle de données peut ensuite être assignée aux Xamarin.Forms Propriétés de contrôle telles que [`ListView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1) . Pour obtenir la liste des propriétés valides, consultez [Création d’un DataTemplate](~/xamarin-forms/app-fundamentals/templates/data-templates/creating.md).
 
-### <a name="limitations"></a>Limitations
+### <a name="limitations"></a>Limites
 
 [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)les instances présentent les limitations suivantes :
 

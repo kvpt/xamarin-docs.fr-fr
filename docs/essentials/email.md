@@ -7,7 +7,7 @@ ms. AssetID : 5FBB6FF0-0E7B-4C29-8F06-91642AF12629 Author : jamesmontemagno ms
 
 La classe **Email** permet à une application d’ouvrir l’application de messagerie par défaut en utilisant des informations spécifiques, notamment l’objet, le corps et les destinataires (À, CC, CCI).
 
-## <a name="get-started"></a>Bien démarrer
+## <a name="get-started"></a>Prendre en main
 
 [!include[](~/essentials/includes/get-started.md)]
 

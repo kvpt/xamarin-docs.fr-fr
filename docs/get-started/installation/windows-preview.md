@@ -1,21 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 5ccd5a610ad41c0160a6778a63a367376bd200b3
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84134015"
+titre : « installation de Xamarin Preview sur Windows » Description : « ce document décrit comment installer une version préliminaire de Xamarin sur Visual Studio 2019 à l’aide de la version préliminaire du canal. »
+ms. Prod : xamarin ms. AssetID : 9F730444-06E8-4B3F-8A19-CA95CD484FFA auteur : conceptdev ms. Author : crdun ms. Date : 03/20/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="installing-xamarin-preview-on-windows"></a>Installation de la préversion Xamarin sur W
 
 Visual Studio 2019 et Visual Studio 2017 ne prennent pas en charge les canaux alpha, bêta et stables de la même manière que les versions antérieures. Au lieu de cela, il n’existe que deux options :

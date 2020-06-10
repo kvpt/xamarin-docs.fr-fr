@@ -1,22 +1,8 @@
 ---
-title: Thèmes d’une Xamarin.Forms application
-description: Xamarin.Formsles applications les prennent en charge en créant un ResourceDictionary pour chaque thème, puis en chargeant les ressources avec l’extension de balisage DynamicResource.
-ms.prod: ''
-ms.assetId: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 80660ae7d3af0fe5948a5ae4ffdb35d2f9c2a40f
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136134"
+title : description « thèmes d’une Xamarin.Forms application » : « les Xamarin.Forms applications prennent en charge la création d’un ResourceDictionary pour chaque thème, puis le chargement des ressources avec l’extension de balisage DynamicResource ».
+ms. Prod : xamarin ms. assetId : BF92AEDD-EF23-4D08-A972-B089066E75F9 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 04/22/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="theming-a-xamarinforms-application"></a>Thèmes d’une Xamarin.Forms application
 
 ## <a name="theme-an-application"></a>[Thème d’une application](theming.md)

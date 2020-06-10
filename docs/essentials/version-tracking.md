@@ -1,16 +1,13 @@
 ---
-titre : « » Xamarin.Essentials : suivi des versions « » Description : « la classe VersionTracking dans vous Xamarin.Essentials permet de vérifier la version des applications et les numéros de build, ainsi que d’afficher des informations supplémentaires, par exemple si c’est la première fois que l’application est lancée ou pour la version actuelle, obtenez les informations de build précédentes, et bien plus encore. »
-ms. AssetID : Auteur : ms. Author : ms. Date : ms. Custom : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+titre : « Xamarin.Essentials : suivi des versions » Description : « la classe VersionTracking dans Xamarin.Essentials vous permet de vérifier la version des applications et les numéros de build, ainsi que d’afficher des informations supplémentaires, par exemple si c’est la première fois que l’application est lancée ou pour la version actuelle, obtenez les informations de build précédentes, et bien plus encore ».
+ms. AssetID : 670C7E8A-E882-4AC0-97D2-A53D90ADD6A3 auteur : jamesmontemagno ms. Author : Jamont ms. Date : 05/28/2019 ms. Custom : Video No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
 
 # <a name="xamarinessentials-version-tracking"></a>Xamarin.Essentials: Suivi des versions
 
 La classe **VersionTracking** vous permet de connaître les numéros de version et de build des applications. Elle vous permet également de voir des informations supplémentaires, par exemple le premier lancement de l’application ou, pour la version actuelle, d’obtenir les informations de build précédentes, etc.
 
-## <a name="get-started"></a>Prise en main
+## <a name="get-started"></a>Prendre en main
 
 [!include[](~/essentials/includes/get-started.md)]
 

@@ -1,22 +1,8 @@
 ---
-title: ''
-description: Cet article explique les principes de base du dessin SkiaSharp, y compris les canevas et les objets Paint, dans Xamarin.Forms les applications et illustre cela avec un exemple de code.
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: fb873102bfb8568b8298a39ea2429fb6c27af175
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137720"
+titre : « dessin d’un cercle simple dans SkiaSharp » Description : « cet article explique les principes de base du dessin SkiaSharp, y compris les canevas et les objets Paint, dans les Xamarin.Forms applications et illustre cela avec un exemple de code ».
+ms. Prod : xamarin ms. Technology : xamarin-skiasharp ms. AssetID : E3A4E373-F65D-45C8-8E77-577A804AC3F8 auteur : davidbritch ms. Author : dabritch ms. Date : 03/10/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="drawing-a-simple-circle-in-skiasharp"></a>Dessin d’un cercle simple dans SkiaSharp
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

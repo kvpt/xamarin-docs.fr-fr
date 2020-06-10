@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsMessagingCenter
-description: La Xamarin.Forms classe MessagingCenter implémente le modèle publication-abonnement, ce qui permet la communication basée sur les messages entre les composants qui sont peu pratiques à lier par objet et les références de type.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: d1407c3c948afe764854cbd99f5c29332f7041aa
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137538"
+titre : « Xamarin.Forms MessagingCenter » Description : « la Xamarin.Forms classe MessagingCenter implémente le modèle de publication-abonnement, ce qui permet la communication basée sur les messages entre les composants qui sont peu pratiques à lier par objet et les références de type. »
+ms. Prod : xamarin ms. AssetID : EDFE7B19-C5FD-40D5-816C-FAE56532E885 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 10/08/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-messagingcenter"></a>Xamarin.FormsMessagingCenter
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingmessagingcenter)

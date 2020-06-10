@@ -7,7 +7,7 @@ ms. AssetID : 78856C0D-76BB-406E-A880-D5A3987B7D64 auteur : jamesmontemagno ms
 
 La classe **SecureStorage** permet de stocker en toute sécurité des paires clé/valeur simples.
 
-## <a name="get-started"></a>Bien démarrer
+## <a name="get-started"></a>Prendre en main
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -149,7 +149,7 @@ Ces valeurs chiffrées sont stockées dans `ApplicationData.Current.LocalSetting
 
 -----
 
-## <a name="limitations"></a>Limitations
+## <a name="limitations"></a>Limites
 
 Cette API est destinée à stocker de petites quantités de texte.  Les performances risquent d’être lentes si vous essayez de l’utiliser pour stocker de grandes quantités de texte.
 

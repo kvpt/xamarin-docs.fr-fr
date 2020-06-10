@@ -1,22 +1,8 @@
 ---
-title: ''
-description: Cet article explique comment utiliser l’API Azure Speech service pour transcrire la parole en texte dans une Xamarin.Forms application.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 171ecc02fda304135e5f535c3e798067595d7047
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139319"
+title : « reconnaissance vocale à l’aide de l’API Speech Service » Description : « cet article explique comment utiliser l’API Azure Speech service pour transcrire la parole en texte dans une Xamarin.Forms application ».
+ms. Prod : xamarin ms. AssetID : B435FF6B-8785-48D9-B2D9-1893F5A87EA1 ms. Technology : xamarin-Forms Author : profexorgeek ms. Author : jusjohns ms. Date : 01/14/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="speech-recognition-using-azure-speech-service"></a>Reconnaissance vocale à l’aide du service Azure Speech
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-cognitivespeechservice)
@@ -238,7 +224,7 @@ La `UpdateTranscription` méthode écrit le fourni `newText` `string` dans l' `L
 
 L’application doit disposer d’un accès au microphone pour collecter des données vocales. L' `IMicrophoneService` interface doit être implémentée et inscrite auprès de `DependencyService` sur chaque plateforme pour que l’application fonctionne.
 
-### <a name="android"></a>Téléphone
+### <a name="android"></a>Android
 
 L’exemple de projet définit une `IMicrophoneService` implémentation pour Android appelée `AndroidMicrophoneService` :
 
@@ -347,7 +333,7 @@ public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompa
 
 La `MainActivity` classe définit une référence statique appelée `Instance` , qui est requise par l' `AndroidMicrophoneService` objet lors de la demande d’autorisations. Elle substitue la `OnRequestPermissionsResult` méthode pour mettre à jour l' `AndroidMicrophoneService` objet quand la demande d’autorisations est approuvée ou refusée par l’utilisateur.
 
-Enfin, l’application Android doit inclure l’autorisation d’enregistrer l’audio dans le fichier **fichier AndroidManifest. xml** :
+Enfin, l’application Android doit inclure l’autorisation d’enregistrer l’audio dans le fichier **AndroidManifest.xml** :
 
 ```xml
 <manifest ...>

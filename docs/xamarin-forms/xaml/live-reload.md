@@ -1,23 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-robots: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: b67594e2675c774512f3bf64f2e91ef10dbff444
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84134210"
+title : « Xamarin Live Reload (préversion) » Description : « voir les modifications apportées à votre XAML en direct, sans nécessiter d’autre compilation et déploiement ».
+ms. Prod : xamarin ms. AssetID : 4917273d-32f9-401a-A52C-5cfb53a2170d ms. Technology : xamarin-Forms Author : pierceboggan ms. Auteur : piboggan robots : noindex ms. Date : 10/26/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarin-live-reload-preview"></a>Xamarin Live Reload (préversion)
 
 > [!NOTE]
@@ -28,12 +13,12 @@ ms.locfileid: "84134210"
 
 Le rechargement Xamarin Live vous permet d' **apporter des modifications à votre code XAML et de voir qu’ils sont reflétés, sans nécessiter une autre compilation et un nouveau déploiement**. Toutes les modifications apportées à votre code XAML seront redéployées lors de l’enregistrement et reflétées sur votre cible de déploiement.
 
-## <a name="requirements"></a>Conditions requises
+## <a name="requirements"></a>Configuration requise
 
 * [Visual Studio 2017 version 15,7 ou ultérieure](https://visualstudio.microsoft.com/vs/) avec la charge de travail **développement mobile avec .net** .
 * [ Xamarin.Forms 3.0.0 ou version ultérieure](https://www.nuget.org/packages/Xamarin.Forms/).
 
-## <a name="getting-started"></a>Prise en main
+## <a name="getting-started"></a>Mise en route
 ### <a name="1-install-xamarin-live-reload-from-the-visual-studio-marketplace"></a>1. Installez Xamarin Live Reload à partir du Visual Studio Marketplace
 
 Le rechargement Xamarin Live est distribué via le Visual Studio Marketplace. Pour installer l’extension, accédez à la [page Xamarin Live reload sur le](https://marketplace.visualstudio.com/items?itemName=Xamarin.XamarinLiveReload) site Web Visual Studio Marketplace, puis cliquez sur **Télécharger**.
@@ -113,7 +98,7 @@ Si vous déboguez sur un émulateur Android ou un simulateur iOS, le rechargemen
 
 Non. En fait, vous pouvez même démarrer toutes les cibles d’application prises en charge (Android, iOS et UWP) sur un nombre quelconque d’appareils ou de simulateurs/émulateurs, et voir toutes les mises à jour en même temps. 
 
-## <a name="limitations"></a>Limitations
+## <a name="limitations"></a>Limites
 
 * Seul le rechargement du code XAML est pris en charge.
 * L’état de l’interface utilisateur ne peut pas être maintenu entre les redéploiement, sauf si vous utilisez MVVM.
@@ -127,7 +112,7 @@ Non. En fait, vous pouvez même démarrer toutes les cibles d’application pris
 * Les éléments contenant AutomationId peuvent entraîner un échec de rechargement.
 * La modification du code XAML pendant le débogage UWP peut entraîner un blocage du Runtime. Solution de contournement : utilisez **exécuter sans débogage (Ctrl + F5)** au lieu de **Démarrer le débogage (F5)**.
 
-## <a name="troubleshooting"></a>Résolution des problèmes
+## <a name="troubleshooting"></a>Dépannage
 
 ### <a name="error-codes"></a>Codes d’erreur
 

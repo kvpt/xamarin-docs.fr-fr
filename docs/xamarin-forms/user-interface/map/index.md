@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsCanal
-description: Le contrôle de carte affiche un mappage et requiert le Xamarin.Forms . Mappe le package NuGet.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 2461ffa8168207e6a57fae005f752be48772a34a
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139826"
+titre : « Xamarin.Forms mappage » Description : «le contrôle de carte affiche un mappage et requiert le Xamarin.Forms . Mappe le package NuGet.»
+ms. Prod : xamarin ms. AssetID : B669B5EE-D24C-4C69-93E1-2CA5CC9108B5 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 10/29/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-map"></a>Xamarin.FormsCanal
 
 ## <a name="initialization-and-configuration"></a>[Initialisation et configuration](setup.md)

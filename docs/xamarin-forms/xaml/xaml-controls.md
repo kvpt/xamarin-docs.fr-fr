@@ -1,23 +1,8 @@
 ---
-title: ''
-description: Toutes les vues définies dans Xamarin.Forms peuvent être référencées à partir de fichiers XAML.
-ms.topic: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 445ef85f661d945bda25203f35dea787e64dc9b0
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138422"
+titre : « contrôles XAML » Description : « toutes les vues définies dans Xamarin.Forms peuvent être référencées à partir de fichiers XAML ».
+ms. topic : article ms. Prod : xamarin ms. AssetID : 639BD392-1496-41BB-BB09-7652273AC9D8 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 04/17/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xaml-controls"></a>Contrôles XAML
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
@@ -33,8 +18,8 @@ Toutes les vues définies dans Xamarin.Forms peuvent être référencées à par
 | <h3>BoxView</h3>Affiche un rectangle d’une couleur particulière.<p align="center">![Capture d’écran d’un BoxView](xaml-controls-images/BoxView.png "BoxView")</p>[API](xref:Xamarin.Forms.BoxView)  /  [Guide](~/xamarin-forms/user-interface/boxview.md) | <pre valign="center">&lt;BoxView Color="Accent"<br />         WidthRequest="150"<br />         HeightRequest="150"<br />         HorizontalOptions="Center"&gt;</pre></p> |
 | <h3>Expander</h3>Fournit un conteneur développable pour héberger tout contenu.<p align="center">![Capture d’écran d’un Expander](xaml-controls-images/Expander.png "Expander")</p>[Père](~/xamarin-forms/user-interface/expander.md) | <pre>&lt;Expander&gt;<br />    &lt;Expander.Header&gt;<br />        &lt;Label Text=&quot;Baboon&quot; /&gt;<br />    &lt;/Expander.Header&gt;<br />    &lt;Image Source=&quot;Baboon.png&quot;<br />           Aspect=&quot;AspectFill&quot; /&gt;<br />&lt;/Expander&gt;</pre></p> |
 | <h3>Image</h3>Affiche une image bitmap.<p align="center">![Capture d’écran d’une image](xaml-controls-images/Image.png "Image")</p>[API](xref:Xamarin.Forms.Image)  /  [Guide](~/xamarin-forms/user-interface/images.md) | <pre>&lt;Image Source="https://aka.ms/campus.jpg"<br />       Aspect="AspectFit"<br />       HorizontalOptions="Center" /&gt;</pre></p> |
-| <h3>Étiquette</h3>Affiche une ou plusieurs lignes de texte.<p align="center">![Capture d’écran d’une étiquette](xaml-controls-images/Label.png "Etiquette")</p>[API](xref:Xamarin.Forms.Label)  /  [Guide](~/xamarin-forms/user-interface/text/label.md) | <p valign="center"><pre>&lt;Label Text="Hello, Xamarin.Forms!"<br />       FontSize="Large"<br />       FontAttributes="Italic"<br />       HorizontalTextAlignment="Center" /&gt;</pre></p> |
-| <h3>Carte</h3>Affiche une carte.<p align="center">![Capture d’écran d’une carte](xaml-controls-images/Map.png "Carte")</p>[API](xref:Xamarin.Forms.Maps.Map)  /  [Guide](~/xamarin-forms/user-interface/map/index.md) | <p valign="center"><pre>&lt;maps:Map ItemsSource="{Binding Locations}" /&gt;</pre></p> |
+| <h3>Etiquette</h3>Affiche une ou plusieurs lignes de texte.<p align="center">![Capture d’écran d’une étiquette](xaml-controls-images/Label.png "Etiquette")</p>[API](xref:Xamarin.Forms.Label)  /  [Guide](~/xamarin-forms/user-interface/text/label.md) | <p valign="center"><pre>&lt;Label Text="Hello, Xamarin.Forms!"<br />       FontSize="Large"<br />       FontAttributes="Italic"<br />       HorizontalTextAlignment="Center" /&gt;</pre></p> |
+| <h3>Mappage</h3>Affiche une carte.<p align="center">![Capture d’écran d’une carte](xaml-controls-images/Map.png "Carte")</p>[API](xref:Xamarin.Forms.Maps.Map)  /  [Guide](~/xamarin-forms/user-interface/map/index.md) | <p valign="center"><pre>&lt;maps:Map ItemsSource="{Binding Locations}" /&gt;</pre></p> |
 | <h3>MediaElement</h3>Lire de la vidéo ou de l’audio.<p align="center">![Capture d’écran d’un MediaElement](xaml-controls-images/MediaElement.png "MediaELement")</p>[API](xref:Xamarin.Forms.MediaElement)  /  [Guide](~/xamarin-forms/user-interface/mediaelement.md) | <p valign="center"><pre>&lt;MediaElement Source="https://sec.ch9.ms/ch9/XamarinShow_mid.mp4"<br />              AutoPlay="True"<br />              ShowsPlaybackControls="True" /&gt;</pre></p> |
 | <h3>WebView</h3>Affiche des pages Web ou du contenu HTML.<p align="center">![Capture d’écran d’une WebView](xaml-controls-images/WebView.png "WebView")</p>[API](xref:Xamarin.Forms.WebView)  /  [Guide](~/xamarin-forms/user-interface/webview.md) | <p valign="center"><pre>&lt;WebView Source="https://docs.microsoft.com/xamarin/"<br/>         VerticalOptions="FillAndExpand" /&gt;</pre></p> |
 |     |     |
@@ -68,7 +53,7 @@ Toutes les vues définies dans Xamarin.Forms peuvent être référencées à par
 |     |     |
 | --- | --- |
 | <h3>Entrée</h3>Permet d’entrer et de modifier une seule ligne de texte.<p align="center">![Capture d’écran d’une entrée](xaml-controls-images/Entry.png "Entrée")</p>[API](xref:Xamarin.Forms.Entry)  /  [Guide](~/xamarin-forms/user-interface/text/entry.md) | <p valign="center"><pre>&lt;Entry Keyboard="Email"<br />       Placeholder="Enter email address"<br />       VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
-| <h3>Éditeur</h3>Permet d’entrer et de modifier plusieurs lignes de texte.<p align="center">![Capture d’écran d’un éditeur](xaml-controls-images/Editor.png "Étiquette")</p>[API](xref:Xamarin.Forms.Editor)  /  [Guide](~/xamarin-forms/user-interface/text/editor.md) | <p valign="center"><pre>&lt;Editor VerticalOptions="FillAndExpand" /&gt;</pre></p> |
+| <h3>Éditeur</h3>Permet d’entrer et de modifier plusieurs lignes de texte.<p align="center">![Capture d’écran d’un éditeur](xaml-controls-images/Editor.png "Etiquette")</p>[API](xref:Xamarin.Forms.Editor)  /  [Guide](~/xamarin-forms/user-interface/text/editor.md) | <p valign="center"><pre>&lt;Editor VerticalOptions="FillAndExpand" /&gt;</pre></p> |
 |     |     |
 
 ## <a name="views-to-indicate-activity"></a>Affichages pour indiquer une activité
@@ -76,7 +61,7 @@ Toutes les vues définies dans Xamarin.Forms peuvent être référencées à par
 |     |     |
 | --- | --- |
 | <h3>ActivityIndicator</h3>Affiche une animation qui montre que l’application est engagée dans une activité longue, sans donner aucune indication de la progression.<p align="center">![Capture d’écran d’un ActivityIndicator](xaml-controls-images/ActivityIndicator.png "ActivityIndicator")</p>[API](xref:Xamarin.Forms.ActivityIndicator)  /  [Guide](~/xamarin-forms/user-interface/activityindicator.md) | <p valign="center"><pre>&lt;ActivityIndicator IsRunning="True"<br />                   VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
-| <h3>ProgressBar</h3>Affiche une animation qui montre que l’application progresse dans une activité longue.<p align="center">![Capture d’écran d’un ProgressBar](xaml-controls-images/ProgressBar.png "Barre de progression")</p>[API](xref:Xamarin.Forms.ProgressBar)  /  [Guide](~/xamarin-forms/user-interface/progressbar.md) | <p valign="center"><pre>&lt;ProgressBar Progress=".5"<br />             VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
+| <h3>Barre de progression</h3>Affiche une animation qui montre que l’application progresse dans une activité longue.<p align="center">![Capture d’écran d’un ProgressBar](xaml-controls-images/ProgressBar.png "Barre de progression")</p>[API](xref:Xamarin.Forms.ProgressBar)  /  [Guide](~/xamarin-forms/user-interface/progressbar.md) | <p valign="center"><pre>&lt;ProgressBar Progress=".5"<br />             VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
 |     |     |
 
 ## <a name="views-that-display-collections"></a>Affichages qui montrent des collections

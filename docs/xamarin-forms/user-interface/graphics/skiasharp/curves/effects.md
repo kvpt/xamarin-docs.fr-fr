@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: f3a5a581ffb4ca2acf1d4209b8b7a744f0daa5eb
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84128045"
+title : « Path Effects in SkiaSharp » Description : « cet article explique les différents effets du chemin d’accès SkiaSharp qui permettent d’utiliser des chemins d’accès pour le détourage et le remplissage, et illustre cela avec un exemple de code. »
+ms. Prod : xamarin ms. Technology : xamarin-skiasharp ms. AssetID : 95167D1F-A718-405A-AFCC-90E596D422F3 auteur : davidbritch ms. Author : dabritch ms. Date : 07/29/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="path-effects-in-skiasharp"></a>Effets du chemin dans SkiaSharp
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

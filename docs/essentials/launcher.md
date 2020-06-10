@@ -7,7 +7,7 @@ ms. AssetID : BABF40CC-8BEE-43FD-BE12-6301DF27DD33 Author : jamesmontemagno ms
 
 La classe **Lanceur** permet à une application d’ouvrir un URI par le système. Elle est souvent utilisée en cas de lien profond avec les schémas d’URI personnalisés d’une autre application. Si vous souhaitez ouvrir le navigateur sur un site web, reportez-vous à l’API **[Navigateur](open-browser.md)**.
 
-## <a name="get-started"></a>Bien démarrer
+## <a name="get-started"></a>Prendre en main
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -69,7 +69,7 @@ Aucune configuration supplémentaire.
 
 -----
 
-## <a name="files"></a>Files
+## <a name="files"></a>Fichiers
 
 Cette fonctionnalité permet à une application de demander à d’autres applications d’ouvrir et d’afficher un fichier. Xamarin.Essentialsdétecte automatiquement le type de fichier (MIME) et demande l’ouverture du fichier.
 

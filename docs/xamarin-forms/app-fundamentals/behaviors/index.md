@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsComportements
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 83952982bd163725fb931c860cac3e267726315c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135809"
+titre : « Xamarin.Forms comportements » Description : «les comportements vous permettent d’ajouter des fonctionnalités aux contrôles d’interface utilisateur sans avoir à les sous-classer. Les comportements sont écrits en code et ajoutés aux contrôles en XAML ou code.»
+ms. Prod : xamarin ms. AssetID : 42E32AD7-8E3B-48B3-B402-E75B758DA913 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 04/06/2016 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-behaviors"></a>Xamarin.FormsComportements
 
 _Les comportements vous permettent d’ajouter des fonctionnalités aux contrôles d’interface utilisateur sans avoir à les sous-classer. Les comportements sont écrits en code et ajoutés aux contrôles en XAML ou dans le code._

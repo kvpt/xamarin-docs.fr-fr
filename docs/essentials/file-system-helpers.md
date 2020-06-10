@@ -7,7 +7,7 @@ ms. AssetID : B3EC2DE0-EFC0-410C-AF71-7410AE84CF84 Author : jamesmontemagno ms
 
 La classe **FileSystem** contient une série de composants d’assistance qui permettent de rechercher les répertoires de cache et de données de l’application, ainsi que d’ouvrir des fichiers contenus dans le paquet d’application.
 
-## <a name="get-started"></a>Bien démarrer
+## <a name="get-started"></a>Prendre en main
 
 [!include[](~/essentials/includes/get-started.md)]
 

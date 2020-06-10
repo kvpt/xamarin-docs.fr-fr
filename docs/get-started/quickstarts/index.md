@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsDémarrages rapides
-description: Démarrages rapides sur le développement Xamarin.Forms d’applications avec Visual Studio et Visual Studio pour Mac.
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 03d20114fb84bf17be40d9166e32c3d631786069
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84132507"
+title : Xamarin.Forms Description des Démarrages rapides : « Démarrages rapides sur le développement Xamarin.Forms d’applications avec Visual Studio et Visual Studio pour Mac ».
+ms. Prod : xamarin ms. Technology : xamarin-Forms ms. AssetID : 3318B8F8-3B24-489E-8E7B-28FA948796F8 auteur : davidbritch ms. Author : dabritch ms. Date : 01/06/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-quickstarts"></a>Xamarin.FormsDémarrages rapides
 
 _Découvrez comment créer des applications mobiles avec Xamarin.Forms ._

@@ -1,22 +1,8 @@
 ---
-title: Indicateur d’activité dansXamarin.Forms
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a83885175a44f2174db343abf4591f8777041d39
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136511"
+titre : « indicateur d’activité dans Xamarin.Forms «Description » : le contrôle ActivityIndicator indique aux utilisateurs que l’application est engagée dans une activité longue, sans donner d’indication de la progression. Cet article explique comment utiliser un ActivityIndicator en XAML et du code.»
+ms. Prod : xamarin ms. AssetID : 4CEED02D-5CA3-4C3A-B7ED-3193FC272261 ms. Technology : xamarin-Forms Author : profexorgeek ms. Author : jusjohns ms. Date : 07/10/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-activityindicator"></a>Xamarin.FormsActivityIndicator
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-activityindicatordemos/)
 
@@ -68,4 +54,4 @@ Les captures d’écran suivantes montrent le `ActivityIndicator` avec la `Color
 ## <a name="related-links"></a>Liens connexes
 
 * [Démonstrations ActivityIndicator](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-activityindicatordemos/)
-* [ProgressBar](~/xamarin-forms/user-interface/progressbar.md)
+* [Barre de progression](~/xamarin-forms/user-interface/progressbar.md)

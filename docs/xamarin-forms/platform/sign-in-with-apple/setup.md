@@ -91,11 +91,19 @@ Prenez également note de votre **ID de clé** à cette étape. Ce sera utilisé
 Vous aurez téléchargé un `.p8` fichier de clé.  Vous pouvez ouvrir ce fichier dans le bloc-notes ou VSCode pour afficher le contenu du texte.  Ils doivent ressembler à ceci :
 
 ```
------BEGIN PRIVATE KEY-----
-MIGTAgEAMBMGBasGSM49AgGFCCqGSM49AwEHBHkwdwIBAQQg3MX8n6VnQ2WzgEy0
-Skoz9uOvatLMKTUIPyPCAejzzUCgCgYIKoZIzj0DAQehRANCAARZ0DoM6QPqpJxP
-JKSlWz0AohFhYre10EXPkjrih4jTm+b0AeG2BGuoIWd18i8FimGDgK6IzHHPsEqj
-DHF5Svq0
+---
+title: "Setup Steps - Sign In with Apple for Xamarin.Forms"
+description: Sign In with Apple setup differs depending on the different platforms your mobile application targets.
+ms.prod: xamarin
+ms.assetid: 8F712802-395B-469B-B5BE-C927AD1A8391
+ms.technology: xamarin-forms
+author: davidortinau
+ms.author: daortin
+ms.date: 09/10/2019
+no-loc:
+- "Xamarin.Forms"
+- "Xamarin.Essentials"
+
 -----END PRIVATE KEY-----
 ```
 

@@ -1,22 +1,8 @@
 ---
-title: ''
-description: Cet article explique comment implémenter une application de lecteur vidéo à l’aide de Xamarin.Forms .
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 08bfb86f040bfbce834df5a5d98231afae92e78d
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84133757"
+titre : « implémentation d’un lecteur vidéo » : cet article explique comment implémenter une application de lecteur vidéo à l’aide de Xamarin.Forms .
+ms. Prod : xamarin ms. AssetID : 0CE9BEE7-4F81-4A00-B9B3-5E2535CD3050 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 02/12/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="implementing-a-video-player"></a>Implémentation d’un lecteur vidéo
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

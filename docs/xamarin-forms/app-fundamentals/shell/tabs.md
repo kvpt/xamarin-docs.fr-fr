@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsDisposition du shell
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: fa49cdb7944e3ab942ccda611af906e2822b072a
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139956"
+title : " Xamarin.Forms Description de l’interpréteur de commandes" : après un menu volant, le niveau de navigation suivant dans une application Shell est la barre d’onglets inférieure. Le modèle de navigation pour une application peut également commencer avec des onglets en bas et n’utiliser aucun menu volant. Dans les deux cas, lorsqu’un onglet inférieur contient plusieurs pages, les pages sont explorées par des onglets supérieurs.»
+ms. Prod : xamarin ms. AssetID : 318D81DB-E456-4E44-B083-36A27DBD9523 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 11/06/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-shell-tabs"></a>Xamarin.FormsOnglets de Shell
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)

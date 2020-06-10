@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 8478db85bd9904ee6c5cfeab9b2af390e7d3096d
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139501"
+title : "description spécifique à la plateforme" : "les spécificités de la plateforme vous permettent d’utiliser des fonctionnalités uniquement disponibles sur une plateforme spécifique, sans implémenter de convertisseurs ou d’effets personnalisés. Cet article explique comment utiliser et créer des caractéristiques spécifiques à la plateforme.
+ms. Prod : xamarin ms. AssetID : 4729DB9C-8800-4E29-9D66-3BE13C5F8C94 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 10/01/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="platform-specifics"></a>Spécificités de la plateforme
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
@@ -282,8 +268,8 @@ shadowLabel.On<iOS>().SetIsShadowed(true);
 
 - [PlatformSpecifics (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [ShadowPlatformSpecific (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shadowplatformspecific)
-- [Caractéristiques de la plateforme iOS](~/xamarin-forms/platform/ios/index.md)
-- [Caractéristiques de la plateforme Android](~/xamarin-forms/platform/android/index.md)
+- [Spécificités de la plateforme iOS](~/xamarin-forms/platform/ios/index.md)
+- [Spécificités de la plateforme Android](~/xamarin-forms/platform/android/index.md)
 - [Spécificités de la plateforme Windows](~/xamarin-forms/platform/windows/index.md)
 - [Personnalisation des contrôles avec des effets](~/xamarin-forms/app-fundamentals/effects/index.md)
 - [Propriétés attachées](~/xamarin-forms/xaml/attached-properties.md)

@@ -1,26 +1,13 @@
 ---
-title: Xamarin.EssentialsConvertisseurs d’unités
-description: La classe UnitConverters dans Xamarin.Essentials fournit plusieurs convertisseurs d’unités pour aider les développeurs à utiliser Xamarin.Essentials .
-ms.assetid: ''
-author: ''
-ms.custom: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: deff6997ff921e6048ccb2497a0747c770501a04
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137135"
+titre : « Xamarin.Essentials convertisseurs d’unités » Description : « la classe UnitConverters dans Xamarin.Essentials fournit plusieurs convertisseurs d’unités pour aider les développeurs lors de l’utilisation de Xamarin.Essentials . »
+ms. AssetID : 35DE2704-E730-4337-9476-66CD53376943 Author : jamesmontemagno ms. Custom : vidéo ms. Author : Jamont ms. Date : 01/06/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinessentials-unit-converters"></a>Xamarin.Essentials: Convertisseurs d’unités
 
 La classe **UnitConverters** fournit plusieurs convertisseurs d’unités pour aider les développeurs à utiliser Xamarin.Essentials .
 
-## <a name="get-started"></a>Prise en main
+## <a name="get-started"></a>Prendre en main
 
 [!include[](~/essentials/includes/get-started.md)]
 

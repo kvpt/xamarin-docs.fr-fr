@@ -1,29 +1,15 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 08b1c738dc87bb9373436a3fd96486eb15341112
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139423"
+titre : « comportements attachés » Description : «les comportements attachés sont des classes statiques avec une ou plusieurs propriétés jointes. Cet article montre comment créer et consommer des comportements attachés.
+ms. Prod : xamarin ms. AssetID : ECEE6AEC-44FA-4AF7-BAD0-88C6EE48422E ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 04/06/2016 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="attached-behaviors"></a>Comportements attachés
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-attachednumericvalidationbehavior)
 
 _Les comportements attachés sont des classes statiques avec une ou plusieurs propriétés jointes. Cet article montre comment créer et consommer des comportements attachés._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d’ensemble
 
 Les propriétés attachées constituent un type particulier de propriété liable. Elles sont définies dans une seule classe, mais attachées à d’autres objets. En XAML, elles sont reconnaissables car elles sont représentées sous forme d’attributs contenant un nom de classe et un nom de propriété séparés par un point.
 

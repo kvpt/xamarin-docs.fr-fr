@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsModèles de conception à deux écrans
-description: Ce guide explique comment Xamarin.Forms prend en charge un large éventail de modèles de conception optimisés pour les appareils à deux écrans.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 277fb67eeea465239d9340e755240288286d2359
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138786"
+title : « Xamarin.Forms modèles de conception à deux écrans » : « ce guide explique comment Xamarin.Forms prend en charge un large éventail de modèles de conception optimisés pour les appareils à deux écrans ».
+ms. Prod : xamarin ms. AssetID : 3176d792-6dbA-4E00-b463-497c58678ee9 ms. Technology : xamarin-Forms Author : davidortinau ms. Author : daortin ms. Date : 02/08/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-dual-screen-design-patterns"></a>Xamarin.Formsmodèles de conception à deux écrans
 
 ![](~/media/shared/preview.png "This API is currently pre-release")

@@ -1,9 +1,6 @@
 ---
-titre : Description : « cet article explique la prise en charge de la plate-forme Windows qui est disponible dans Xamarin.Forms . »
-ms. Prod : ms. AssetID : ms. Technology : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+titre : « fonctionnalités de la plateforme Windows » : cet article explique la prise en charge de la plateforme Windows qui est disponible dans Xamarin.Forms .
+ms. Prod : xamarin ms. AssetID : F6EA9E49-FB3E-442F-AF13-B7AD0C80D11F ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 01/16/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
 
 # <a name="windows-platform-features"></a>Fonctionnalités de la plateforme Windows

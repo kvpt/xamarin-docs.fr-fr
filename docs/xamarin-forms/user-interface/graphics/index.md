@@ -1,22 +1,8 @@
 ---
-title: Graphiques dansXamarin.Forms
-description: Ce guide explique comment incorporer des graphiques et des éléments visuels de moteur de jeu dans une Xamarin.Forms application, à l’aide de CocosSharp, SkiaShap et UrhoSharp.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 227bb3f0971bb8e3ceef7015f8fffb9994ccc36b
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84129322"
+title : « Graphics in Xamarin.Forms » Description : « ce guide explique comment incorporer des graphiques et des visuels de moteur de jeu dans une Xamarin.Forms application, à l’aide de CocosSharp, SkiaShap et UrhoSharp ».
+ms. Prod : xamarin ms. AssetID : 167ec01a-fb9e-431e-a44d-a10eaf62bf39 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 02/01/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="graphics-in-xamarinforms"></a>Graphiques dansXamarin.Forms
 
 _Comment incorporer des graphiques et des éléments visuels de moteur de jeu dans une Xamarin.Forms application._

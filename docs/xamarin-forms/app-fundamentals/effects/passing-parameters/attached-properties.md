@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: cf03d0c32d80d7a1821e323acdc84a351413efec
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138877"
+titre : « passage des paramètres d’effet en tant que propriétés jointes » : «les propriétés jointes peuvent être utilisées pour définir des paramètres d’effet qui répondent aux modifications des propriétés d’exécution. Cet article montre comment utiliser des propriétés jointes pour passer des paramètres à un effet, et comment modifier un paramètre au moment de l’exécution.
+ms. Prod : xamarin ms. AssetID : DFCDCB9F-17DD-4117-BD53-B4FB206BB387 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 08/05/2016 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="passing-effect-parameters-as-attached-properties"></a>Passer des paramètres d’effet en tant que propriétés jointes
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffectruntimechange)
@@ -439,7 +425,7 @@ Cet article a décrit comment utiliser des propriétés jointes pour passer des 
 ## <a name="related-links"></a>Liens connexes
 
 - [Renderers personnalisés](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)
-- [Résultat](xref:Xamarin.Forms.Effect)
+- [Effet](xref:Xamarin.Forms.Effect)
 - [PlatformEffect](xref:Xamarin.Forms.PlatformEffect`2)
 - [RoutingEffect](xref:Xamarin.Forms.RoutingEffect)
 - [Effet d’ombre (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffectruntimechange)

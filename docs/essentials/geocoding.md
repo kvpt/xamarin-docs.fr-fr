@@ -7,7 +7,7 @@ ms. AssetID : 3ADC440C-B000-4708-A2CC-296F5160AF90 auteur : jamesmontemagno ms
 
 La classe **Geocoding** fournit des API qui permettent de géocoder un repère en coordonnées de position, et d’inverser les coordonnées de géocodage en un repère.
 
-## <a name="get-started"></a>Bien démarrer
+## <a name="get-started"></a>Prendre en main
 
 [!include[](~/essentials/includes/get-started.md)]
 

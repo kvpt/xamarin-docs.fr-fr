@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 892bffa4027a1a61d6c22cc26d1556fb007432d8
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136979"
+title : « appel d’événements à partir d’effets » Description : «un effet peut définir et appeler un événement, en signalant les modifications dans la vue Native sous-jacente. Cet article explique comment implémenter le suivi des doigts multipoint de bas niveau et comment générer des événements qui signalent une activité tactile.»
+ms. Prod : xamarin ms. AssetID : 6A724681-55EB-45B8-9EED-7E412AB19DD2 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 12/14/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="invoking-events-from-effects"></a>Appel d’événements à partir d’effets
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/)

@@ -1,23 +1,8 @@
 ---
-title: Xamarin.FormsLiaisons de base
-description: Cet article explique comment utiliser la Xamarin.Forms liaison de données, qui lie une paire de propriétés entre deux objets, au moins un objet d’interface utilisateur. Ces deux objets sont appelés la cible et la source.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.custom: ''
-ms.openlocfilehash: c0c6bc6e1005997548952aedc09cd83a451e7caa
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84133534"
+titre : « Xamarin.Forms Basic Bindings » Description : «cet article explique comment utiliser la Xamarin.Forms liaison de données, qui lie une paire de propriétés entre deux objets, au moins un objet d’interface utilisateur. Ces deux objets sont appelés la cible et la source.»
+ms. Prod : xamarin ms. AssetID : 96553DF7-12EA-4FB2-AE85-3D1D59382B40 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 01/22/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ] ms. Custom : Video
 ---
+
 # <a name="xamarinforms-basic-bindings"></a>Xamarin.FormsLiaisons de base
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)

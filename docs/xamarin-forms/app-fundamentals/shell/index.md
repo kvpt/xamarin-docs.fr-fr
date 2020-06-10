@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsShell
-description: Ce guide explique comment utiliser Xamarin.Forms l’interpréteur de commandes, qui réduit la complexité des Xamarin.Forms applications en fournissant les fonctionnalités fondamentales nécessaires à la plupart des applications.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 0acf00d85c2bfb823ec1cfba099179bb6743117c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138747"
+titre : « Xamarin.Forms Shell » Description : « ce guide explique comment utiliser Xamarin.Forms l’interpréteur de commandes, ce qui réduit la complexité des Xamarin.Forms applications en fournissant les fonctionnalités fondamentales nécessaires à la plupart des applications. »
+ms. Prod : xamarin ms. AssetID : 85B322AA-808F-41B6-953A-5877264AE643 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 05/28/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-shell"></a>Xamarin.FormsShell
 
 ## <a name="introduction"></a>[Introduction](introduction.md)
@@ -31,7 +17,7 @@ Le processus de création d’une Xamarin.Forms application d’interpréteur de
 
 Le menu volant est le menu racine d’une application Shell, accessible via une icône ou en balayant depuis le côté de l’écran. Le menu volant se compose d’un en-tête facultatif, de différents éléments de menu volant et d’éléments de menu facultatifs.
 
-## <a name="tabs"></a>[Onglets](tabs.md)
+## <a name="tabs"></a>[Tabulations](tabs.md)
 
 Le niveau de navigation suivant le menu volant dans une application Shell est la barre d’onglets du bas. Le modèle de navigation pour une application peut également commencer avec des onglets en bas et n’utiliser aucun menu volant. Dans les deux cas, lorsqu’un onglet contient plusieurs pages, il est possible de passer de l’une à l’autre grâce aux onglets du haut.
 

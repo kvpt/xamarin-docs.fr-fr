@@ -7,7 +7,7 @@ ms. AssetID : BABF40CC-8BEE-43FD-BE12-6301DF27DD33 auteur : jamesmontemagno ms
 
 La classe **Map** permet à une application d’ouvrir l’application de cartes installée à un emplacement spécifique.
 
-## <a name="get-started"></a>Bien démarrer
+## <a name="get-started"></a>Prendre en main
 
 [!include[](~/essentials/includes/get-started.md)]
 

@@ -1,22 +1,8 @@
 ---
-title: Chargement du code XAML au moment de l’exécution dansXamarin.Forms
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: d750aa84a48ad4c8015a619d819134cefc63c3d9
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139371"
+titre : « chargement du code XAML au moment de l’exécution dans Xamarin.Forms «Description : » le code XAML peut être chargé et analysé au moment de l’exécution avec les méthodes d’extension LoadFromXaml.»
+ms. Prod : xamarin ms. AssetID : 25F73FBF-2DD3-468E-A2D8-0897414F0F4A ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 12/12/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="loading-xaml-at-runtime-in-xamarinforms"></a>Chargement du code XAML au moment de l’exécution dansXamarin.Forms
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-loadruntimexaml)

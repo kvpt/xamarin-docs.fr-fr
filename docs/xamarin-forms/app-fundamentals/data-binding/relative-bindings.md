@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsLiaisons relatives
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 8d4e2696e6027f07b7b8e638cd1e0f1d65a5503d
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139709"
+titre : « Xamarin.Forms liaisons relatives » : « cet article explique comment créer des liaisons relatives à l’aide de l’extension de balisage RelativeSource pour définir la source de liaison par rapport à la position de la cible de liaison. »
+ms. Prod : xamarin ms. AssetID : CC64BB1D-8303-46B1-94B6-4EF2F20317A8 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 12/04/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-relative-bindings"></a>Xamarin.FormsLiaisons relatives
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)

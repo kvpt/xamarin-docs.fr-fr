@@ -1,21 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 71b2754d19d00b7bf4860acd96bfb7ad8dec4ce5
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84132989"
+titre : « instructions de configuration du pare-feu Xamarin » : « ce document fournit une liste des hôtes qui doivent être autorisés dans votre pare-feu pour permettre à Xamarin de fonctionner dans un environnement d’entreprise ».
+ms. Prod : xamarin ms. AssetID : 658f699b-8CCA-48f7-ae54-fa956384b6d6 auteur : conceptdev ms. Author : crdun ms. Date : 07/17/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarin-firewall-configuration-instructions"></a>Instructions de configuration du pare-feu Xamarin
 
 _Une liste d’hôtes que vous devez autoriser dans votre pare-feu afin de permettre à la plateforme de Xamarin de fonctionner pour votre entreprise._

@@ -1,22 +1,8 @@
 ---
-title: Utiliser la connexion avec Apple pourXamarin.Forms
-description: Découvrez comment implémenter la connexion avec Apple dans vos Xamarin.Forms applications mobiles.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: fb37f8fb2d01154bf2e749e685c4e96c12d6bc5e
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139488"
+titre : « utiliser la connexion avec Apple pour Xamarin.Forms » Description : Découvrez comment implémenter la connexion avec Apple dans vos Xamarin.Forms applications mobiles.»
+ms. Prod : xamarin ms. AssetID : 2E47E7F2-93D4-4CA3-9E66-247466D25E4D ms. Technology : xamarin-Forms Author : davidortinau ms. Author : daortin ms. Date : 09/10/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="use-sign-in-with-apple-in-xamarinforms"></a>Utiliser la connexion avec Apple dansXamarin.Forms
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/signinwithapple/)

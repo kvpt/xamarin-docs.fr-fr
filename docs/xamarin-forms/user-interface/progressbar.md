@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsProgressBar
-description: Le Xamarin.Forms ProgressBar est un contrôle qui représente visuellement la progression sous la forme d’une barre horizontale remplie en fonction d’une propriété de type float.
-ms.prod: ''
-ms.assetId: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: b4ac6231c0483c0c44755c2ac9539f237dd64251
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136277"
+titre : « Xamarin.Forms ProgressBar » Description : « Xamarin.Forms ProgressBar est un contrôle qui représente visuellement la progression sous la forme d’une barre horizontale qui est remplie en fonction d’une propriété de type float ».
+ms. Prod : xamarin ms. assetId : C2F85FED-797C-466B-A0FD-E73CFB79B267 ms. Technology : xamarin-Forms Author : profexorgeek ms. Author : jusjohns ms. Date : 07/09/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-progressbar"></a>Xamarin.FormsProgressBar
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-progressbardemos/)
 

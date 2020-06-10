@@ -1,24 +1,8 @@
 ---
-title: Styliser une application multiplateforme Xamarin.Forms
-description: Cet article explique comment styliser une Xamarin.Forms application multiplateforme à l’aide de styles XAML.
-zone_pivot_groups: ''
-ms.topic: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 2d458bafc5bb1c8dcffc7858fd15734187f7612b
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84134067"
+titre : « style d’une application multiplateforme Xamarin.Forms » : « cet article explique comment styliser une Xamarin.Forms application multiplateforme à l’aide de styles XAML ».
+zone_pivot_groups : plateforme ms. topic : QuickStart ms. Prod : xamarin ms. AssetID : CCCF8E57-D021-4542-8709-5808570FC26A ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 02/07/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="style-a-cross-platform-xamarinforms-application"></a>Styliser une application multiplateforme Xamarin.Forms
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-styled/)

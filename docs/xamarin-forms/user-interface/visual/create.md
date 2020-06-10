@@ -1,22 +1,8 @@
 ---
-title: Créer un Xamarin.Forms convertisseur visuel
-description: Créer Xamarin.Forms des éléments visuels à appliquer de manière sélective aux objets VisualElement, sans avoir à les afficher sous-classes Xamarin.Forms .
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 23edbb007e912d13858686d1c5ec574c9e3349c7
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84127138"
+titre : « créer un Xamarin.Forms convertisseur visuel » : « créer des éléments Xamarin.Forms visuels à appliquer de manière sélective aux objets VisualElement, sans avoir à les afficher sous-classes Xamarin.Forms ».
+ms. Prod : xamarin ms. AssetID : 80BF9C72-AC28-4AAF-9DDD-B60CBDD1CD59 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 03/12/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="create-a-xamarinforms-visual-renderer"></a>Créer un Xamarin.Forms convertisseur visuel
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)
@@ -65,7 +51,7 @@ public class CustomButtonRenderer : ButtonRenderer
 }
 ```
 
-### <a name="android"></a>Téléphone
+### <a name="android"></a>Android
 
 L’exemple de code suivant montre le convertisseur de bouton pour Android :
 

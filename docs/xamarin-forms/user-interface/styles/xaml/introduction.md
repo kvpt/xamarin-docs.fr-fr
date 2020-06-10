@@ -1,22 +1,8 @@
 ---
-title: Présentation des Xamarin.Forms styles
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 5766af7da3a0cf550a2ccb3a926dad25fd7962eb
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138817"
+titre : « présentation Xamarin.Forms des styles » Description : «les styles permettent de personnaliser l’apparence des éléments visuels. Les styles sont définis pour un type spécifique et contiennent des valeurs pour les propriétés disponibles sur ce type.»
+ms. Prod : xamarin ms. AssetID : 3FF899C0-6CFB-4C1D-837D-9E9E10181967 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 04/27/2016 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="introduction-to-xamarinforms-styles"></a>Présentation des Xamarin.Forms styles
 
 _Les styles permettent de personnaliser l’apparence des éléments visuels. Les styles sont définis pour un type spécifique et contiennent des valeurs pour les propriétés disponibles sur ce type._
@@ -142,4 +128,4 @@ Les Articles de cette section décrivent et expliquent comment créer et appliqu
 
 - [Extensions de balisage XAML](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
 - [Style](xref:Xamarin.Forms.Style)
-- [Setter](xref:Xamarin.Forms.Setter)
+- [Déclaré](xref:Xamarin.Forms.Setter)

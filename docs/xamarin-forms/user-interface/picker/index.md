@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsEmoji
-description: Le Xamarin.Forms Sélecteur affiche une liste succincte d’éléments, à partir desquels l’utilisateur peut sélectionner un élément. Cet article explique comment utiliser la classe Picker pour sélectionner un élément de texte dans une liste de données.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 50f605f4ad9839521fd4169531ad46d197f20dbf
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139654"
+titre : « Xamarin.Forms Sélecteur » Description : «le Xamarin.Forms Sélecteur affiche une liste succincte d’éléments, à partir de laquelle l’utilisateur peut sélectionner un élément. Cet article explique comment utiliser la classe Picker pour sélectionner un élément de texte dans une liste de données.
+ms. Prod : xamarin ms. AssetID : D4815A4B-104B-4294-951B-BD8F2EC33C86 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 02/26/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-picker"></a>Xamarin.FormsEmoji
 
 _La vue sélecteur est un contrôle permettant de sélectionner un élément de texte dans une liste de données._

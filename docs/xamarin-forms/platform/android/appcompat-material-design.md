@@ -1,22 +1,8 @@
 ---
-title: ''
-description: Cet article explique comment convertir Xamarin.Forms des applications Android existantes pour utiliser une conception AppCompat et matérielle.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 24206f6d6764c73f13a4b06fb44fa746f9d353af
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135705"
+titre : « ajout de la conception AppCompat et de la conception de matériau » : « cet article explique comment convertir Xamarin.Forms des applications Android existantes pour utiliser une conception AppCompat et matérielle ».
+ms. Prod : xamarin ms. AssetID : 045FBCDF-4D45-48BB-9911-BD3938C87D58 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 06/27/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="adding-appcompat-and-material-design"></a>Ajout de AppCompat et de la conception de matériau
 
 _Suivez les étapes ci-dessous pour convertir Xamarin.Forms des applications Android existantes afin d’utiliser AppCompat et la conception de matériaux_
@@ -24,7 +10,7 @@ _Suivez les étapes ci-dessous pour convertir Xamarin.Forms des applications And
 <!-- source https://gist.github.com/jassmith/a3b2a543f99126782936
 https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/ -->
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d’ensemble
 
 Ces instructions expliquent comment mettre à jour vos Xamarin.Forms applications Android existantes pour utiliser la bibliothèque AppCompat et activer la conception de matériaux dans la version Android de vos Xamarin.Forms applications.
 
@@ -43,7 +29,7 @@ Vérifiez que le Framework cible du projet Android est Android 6,0 (Marshmallow)
 
 Créez les trois fichiers suivants dans votre projet Android et collez le contenu ci-dessous. Google fournit un [Guide de style](https://www.google.com/design/spec/style/color.html#color-color-palette) et un [Générateur de palettes de couleurs](https://www.materialpalette.com/) pour vous aider à choisir un autre jeu de couleurs pour celui spécifié.
 
-**Ressources/valeurs/couleurs. Xml**
+**Ressources/valeurs/colors.xml**
 
 ```xml
 <resources>
@@ -54,7 +40,7 @@ Créez les trois fichiers suivants dans votre projet Android et collez le conten
 </resources>
 ```
 
-**Ressources/valeurs/style. Xml**
+**Ressources/valeurs/style.xml**
 
 ```xml
 <resources>
@@ -72,7 +58,7 @@ Créez les trois fichiers suivants dans votre projet Android et collez le conten
 
 Un style supplémentaire doit être inclus dans le dossier **values-v21** pour appliquer des propriétés spécifiques lors de l’exécution sur Android Lollipop et versions ultérieures.
 
-**Ressources/values-v21/style. Xml**
+**Ressources/valeurs-v21/style.xml**
 
 ```xml
 <resources>
@@ -84,11 +70,11 @@ Un style supplémentaire doit être inclus dans le dossier **values-v21** pour a
 </resources>
 ```
 
-### <a name="4-update-androidmanifestxml"></a>4. mettre à jour fichier AndroidManifest. Xml
+### <a name="4-update-androidmanifestxml"></a>4. mettre à jour AndroidManifest.xml
 
 Pour vous assurer que ces informations sur les nouveaux thèmes sont utilisées, définissez le thème dans le fichier **fichier AndroidManifest** en ajoutant `android:theme="@style/MyTheme"` (laissez le reste du code XML tel qu’il était).
 
-**Propriétés/fichier AndroidManifest. Xml**
+**Propriétés/AndroidManifest.xml**
 
 ```xml
 ...

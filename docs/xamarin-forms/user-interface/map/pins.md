@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsÉpingler les broches
-description: Cet article explique comment créer des codes confidentiels sur une Xamarin.Forms carte.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 5e22888291a430863b8e45ee21d359a5acec750f
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138435"
+title : " Xamarin.Forms Description des codes confidentiels" : "cet article explique comment créer des codes confidentiels sur une Xamarin.Forms carte."
+ms. Prod : xamarin ms. AssetID : F8FC081B-A811-4FBB-B8F8-30D6FD36BD40 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 10/23/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-map-pins"></a>Xamarin.FormsÉpingler les broches
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)

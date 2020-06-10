@@ -1,23 +1,7 @@
 ---
-title: ''
-description: ''
-Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 28. Location and maps''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 301dc65c7909603e117717a993959e3c73fa2d32
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84133404"
+titre : «Résumé du chapitre 28. Emplacement et mappages « Description : » création d’Mobile Apps avec Xamarin.Forms : Résumé du chapitre 28. Emplacement et cartes "ms. Prod : xamarin ms. Technology : xamarin-Forms ms. AssetID : F6E20077-687C-45C4-A375-31D4F49BBFA4 Author : davidbritch ms. Author : dabritch ms. Date : 07/19/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="summary-of-chapter-28-location-and-maps"></a>Résumé du chapitre 28. Emplacement et mappages
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter28)
@@ -92,7 +76,7 @@ Pour iOS, le fichier **info. plist** doit inclure les éléments contenant le te
 
 #### <a name="location-permissions-for-android"></a>Autorisations d’emplacement pour Android
 
-Les applications Android qui obtiennent l’emplacement de l’utilisateur doivent disposer d’une autorisation ACCESS_FILE_LOCATION dans le fichier fichier AndroidManifest. Xml.
+Les applications Android qui obtiennent l’emplacement de l’utilisateur doivent disposer d’une autorisation ACCESS_FILE_LOCATION dans le fichier AndroidManifest.xml.
 
 #### <a name="location-permissions-for-the-uwp"></a>Autorisations d’emplacement pour la série UWP
 
@@ -120,7 +104,7 @@ Une application iOS utilisant `Map` requiert deux lignes dans le fichier info. p
 
 #### <a name="enabling-android-maps"></a>Activation des cartes Android
 
-Une clé d’autorisation est requise pour l’utilisation des services Google Map. Cette clé est insérée dans le fichier **fichier AndroidManifest. xml** . En outre, le fichier **fichier AndroidManifest. xml** requiert des `manifest` balises impliquées dans l’obtention de l’emplacement de l’utilisateur.
+Une clé d’autorisation est requise pour l’utilisation des services Google Map. Cette clé est insérée dans le fichier **AndroidManifest.xml** . En outre, le fichier **AndroidManifest.xml** requiert des `manifest` balises impliquées dans l’obtention de l’emplacement de l’utilisateur.
 
 #### <a name="enabling-uwp-maps"></a>Activation des cartes UWP
 
@@ -219,7 +203,7 @@ Enfin, la `Map` classe définit une [`Pins`](xref:Xamarin.Forms.Maps.Map.Pins) p
 - [`Position`](xref:Xamarin.Forms.Maps.Pin.Position)de type `Position` indiquant où le code confidentiel est affiché sur la carte
 - [`Type`](xref:Xamarin.Forms.Maps.Pin.Type)de type [`PinType`](xref:Xamarin.Forms.Maps.PinType) , une énumération, qui n’est pas utilisée
 
-Le projet **MapDemos** contient le fichier [ScienceMuseums. xml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/Data/ScienceMuseums.xml), qui répertorie les musées scientifiques dans le États-Unis, et les [`Locations`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/Locations.cs) [`Site`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/Site.cs) classes et pour la désérialisation de ces données.
+Le projet **MapDemos** contient le fichier [ScienceMuseums.xml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/Data/ScienceMuseums.xml), qui répertorie les musées scientifiques dans le États-Unis, et les [`Locations`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/Locations.cs) [`Site`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/Site.cs) classes et pour la désérialisation de ces données.
 
 Le fichier [ScienceMuseumsPage. Xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/ScienceMuseumsPage.xaml) et le fichier code-behind [ScienceMuseumsPage.Xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/ScienceMuseumsPage.xaml.cs) affichent les broches de ces musées scientifiques dans la carte. Quand l’utilisateur appuie sur un code confidentiel, il affiche l’adresse et un site Web pour l’Musée.
 

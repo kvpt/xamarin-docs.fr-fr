@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsEffets
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a6206d2c561df74a01b7d7408e8d542f1e2189d3
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139332"
+title : " Xamarin.Forms Effects" Description : "les effets permettent de personnaliser les contrôles natifs sur chaque plateforme sans avoir à recourir à une implémentation de convertisseur personnalisée."
+ms. Prod : xamarin ms. AssetID : 8AF168A7-4CD9-4603-B961-15B8B1543784 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 03/01/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-effects"></a>Xamarin.FormsEffets
 
 _Les interfaces utilisateur Xamarin. Forms sont rendues à l’aide des contrôles natifs de la plateforme cible, ce qui permet Xamarin.Forms aux applications de conserver l’apparence et la convivialité appropriées pour chaque plateforme. Les effets permettent de personnaliser les contrôles natifs sur chaque plateforme sans avoir à recourir à une implémentation de convertisseur personnalisée._

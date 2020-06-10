@@ -1,23 +1,9 @@
 ---
-title: Xamarin.FormsÉditeurs
-description: Cet article explique comment utiliser le Xamarin.Forms contrôle de l’éditeur pour accepter une entrée de texte sur plusieurs lignes dans une application.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 02749c9f8f55427bb1742e78464bbc003f1f7358
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136173"
+title : " Xamarin.Forms éditeur" Description : "cet article explique comment utiliser le Xamarin.Forms contrôle Editor pour accepter une entrée de texte multiligne dans une application."
+ms. Prod : xamarin ms. AssetID : 7074DB3A-30D2-4A6B-9A89-B029EEF20B07 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 09/26/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
-# <a name="xamarinforms-editor"></a>Xamarin.FormsÉditeurs
+
+# <a name="xamarinforms-editor"></a>Xamarin.Forms Éditeur
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
@@ -285,7 +271,7 @@ Assurez-vous que les couleurs de texte et d’arrière-plan que vous choisissez 
 > [!NOTE]
 > La [`VisualElement`](xref:Xamarin.Forms.VisualElement) classe, dont [`Entry`](xref:Xamarin.Forms.Entry) hérite, possède également les [`Focused`](xref:Xamarin.Forms.VisualElement.Focused) [`Unfocused`](xref:Xamarin.Forms.VisualElement.Unfocused) événements et.
 
-### <a name="completed"></a>Effectué
+### <a name="completed"></a>Completed
 
 L' `Completed` événement est utilisé pour réagir à l’achèvement d’une interaction avec un `Editor` . `Completed`est déclenché lorsque l’utilisateur termine l’entrée par un champ en entrant la touche retour sur le clavier (ou en appuyant sur la touche Tab sur UWP). Le gestionnaire de l’événement est un gestionnaire d’événements générique, qui prend l’expéditeur et `EventArgs` :
 

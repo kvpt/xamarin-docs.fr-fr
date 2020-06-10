@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsDéfilement CarouselView
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 462948905f40679e2b931d4aa0039308c64a0a8f
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136492"
+title : " Xamarin.Forms Description du défilement CarouselView" : quand un utilisateur effectue un balayage pour lancer un défilement, la position de fin du défilement peut être contrôlée afin que les éléments soient entièrement affichés. En outre, CarouselView définit deux méthodes ScrollTo, qui défilent les éléments par programmation.
+ms. Prod : xamarin ms. AssetID : 92D7B618-07FA-4343-9D0F-212525E92C39 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 01/28/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-carouselview-scrolling"></a>Xamarin.FormsDéfilement CarouselView
 
 ![](~/media/shared/preview.png "This API is currently pre-release")

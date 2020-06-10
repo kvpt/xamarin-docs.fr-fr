@@ -7,7 +7,7 @@ ms. AssetID : 7E8B24C4-2625-4DAE-A129-383542D34F1E Author : jamesmontemagno ms
 
 La classe **Vibration** vous permet de démarrer et d’arrêter la fonctionnalité de vibration pendant la durée souhaitée.
 
-## <a name="get-started"></a>Bien démarrer
+## <a name="get-started"></a>Prendre en main
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -25,7 +25,7 @@ Ouvrez le fichier **AssemblyInfo.cs** sous le dossier **Propriétés** et ajoute
 
 OU mettez à jour le manifeste Android :
 
-Ouvrez le fichier **fichier AndroidManifest. xml** dans le dossier **Propriétés** et ajoutez le code suivant dans le nœud **manifeste** .
+Ouvrez le fichier **AndroidManifest.xml** sous le dossier **Propriétés** , puis ajoutez le code suivant dans le nœud **manifeste** .
 
 ```xml
 <uses-permission android:name="android.permission.VIBRATE" />

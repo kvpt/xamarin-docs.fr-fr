@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: d9fa710f5dfc61c2892b8fc409a39b37cf449018
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136303"
+titre : « SkiaSharp Effects » Description : « Découvrez comment modifier l’affichage normal des graphiques avec des dégradés, la mosaïque de bitmaps, les modes de fusion, le flou et d’autres effets ».
+ms. Prod : xamarin ms. Technology : xamarin-skiasharp ms. AssetID : B3E06572-8E2A-49FA-90D1-444C394CD516 auteur : davidbritch ms. Author : dabritch ms. Date : 08/22/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="skiasharp-effects"></a>Effets SkiaSharp
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

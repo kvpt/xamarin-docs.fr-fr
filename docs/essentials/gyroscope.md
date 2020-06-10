@@ -1,15 +1,13 @@
 ---
-titre : « » Xamarin.Essentials : gyroscope « » Description : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+titre : « Xamarin.Essentials : gyroscope » Description : « la classe gyroscope dans vous Xamarin.Essentials permet de surveiller le capteur de gyroscope de l’appareil, qui mesure la rotation autour des trois axes principaux de l’appareil. »
+ms. AssetID : DA4F968A-D988-41F5-8745-1BEE693660A1 auteur : jamesmontemagno ms. Author : Jamont ms. Date : 11/04/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
 
 # <a name="xamarinessentials-gyroscope"></a>Xamarin.Essentials: Gyroscope
 
 La classe **Gyroscope** vous permet de superviser le capteur gyroscopique de l’appareil, qui mesure la rotation autour des trois axes principaux de l’appareil.
 
-## <a name="get-started"></a>Prise en main
+## <a name="get-started"></a>Prendre en main
 
 [!include[](~/essentials/includes/get-started.md)]
 

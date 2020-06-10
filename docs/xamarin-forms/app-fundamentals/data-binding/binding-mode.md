@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsMode de liaison
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: c14215071a1d9d3ec804c307fa6edbbe4ddcf8e9
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139774"
+titre : « Xamarin.Forms mode de liaison » Description : «cet article explique comment contrôler le workflow des informations entre la source et la cible à l’aide d’un mode de liaison, qui est spécifié avec un membre de l’énumération BindingMode. Chaque propriété pouvant être liée possède un mode de liaison par défaut, qui indique le mode en vigueur quand cette propriété est une cible de liaison de données.
+ms. Prod : xamarin ms. AssetID : D087C389-2E9E-47B9-A341-5B14AC732C45 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 05/01/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-binding-mode"></a>Xamarin.FormsMode de liaison
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)

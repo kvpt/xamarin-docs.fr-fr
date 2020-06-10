@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsPrésentation de CollectionView
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: d6a09ead9c3def2f58ad2755de4574f6d6e331e8
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136433"
+titre : « Xamarin.Forms CollectionView Introduction » Description : « CollectionView est une vue flexible et performante pour la présentation de listes de données à l’aide de spécifications de disposition différentes ».
+ms. Prod : xamarin ms. AssetID : 5C08F687-B9E6-4CE4-8726-F287F6D0B6A7 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 12/11/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-collectionview-introduction"></a>Xamarin.FormsPrésentation de CollectionView
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
@@ -52,7 +38,7 @@ Les [`CollectionView`](xref:Xamarin.Forms.CollectionView) API et [`ListView`](xr
 | Apparence de l’élément | `ItemTemplate` | L’apparence de chaque élément dans un [`CollectionView`](xref:Xamarin.Forms.CollectionView) peut être définie en affectant `ItemTemplate` à la propriété la valeur [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) . Pour plus d’informations, consultez [définir l’apparence des éléments](populate-data.md#define-item-appearance). |
 | Cellules | `TextCell`, `ImageCell`, `ViewCell` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)n’a pas de concept de cellules et, par conséquent, aucun concept d’indicateurs de divulgation. Au lieu de cela, un modèle de données est utilisé pour définir l’apparence de chaque élément de données de la liste. |
 | Séparateurs de lignes | `SeparatorColor`, `SeparatorVisibility` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)n’inclut pas de séparateurs intégrés. Elles peuvent être fournies, si vous le souhaitez, dans le modèle d’élément. |
-| Sélection | `SelectionMode`, `SelectedItem` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)prend en charge la sélection unique et multiple. Pour plus d’informations, consultez [ Xamarin.Forms CollectionView Selection](selection.md). |
+| d’un certificat SSTP | `SelectionMode`, `SelectedItem` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)prend en charge la sélection unique et multiple. Pour plus d’informations, consultez [ Xamarin.Forms CollectionView Selection](selection.md). |
 | Hauteur de ligne | `HasUnevenRows`, `RowHeight` | Dans un `CollectionView` , la hauteur de ligne de chaque élément est déterminée par la `ItemSizingStrategy` propriété. Pour plus d’informations, consultez [dimensionnement](layout.md#item-sizing)d’un élément.|
 | Mise en cache | `CachingStrategy` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)utilise automatiquement la virtualisation fournie par les contrôles natifs sous-jacents. |
 | En-têtes et pieds de page | `Header`, `HeaderElement`, `HeaderTemplate`, `Footer`, `FooterElement`, `FooterTemplate` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)peut présenter un en-tête et un pied de page qui défilent avec les éléments de la liste, à l’aide des `Header` Propriétés,, `Footer` `HeaderTemplate` et `FooterTemplate` . Pour plus d’informations, consultez [en-têtes et pieds de page](layout.md#headers-and-footers). |

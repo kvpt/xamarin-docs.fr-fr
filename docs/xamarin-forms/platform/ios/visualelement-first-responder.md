@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: d8bd539c2bb0e8963afae3392b6f8e99d79af9af
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136966"
+titre : « VisualElement First répondeur sur iOS » Description : «les spécificités de la plateforme vous permettent d’utiliser des fonctionnalités qui ne sont disponibles que sur une plateforme spécifique, sans implémenter de convertisseurs ou d’effets personnalisés. Cet article explique comment utiliser le spécifique à la plateforme iOS qui permet à un objet VisualElement de devenir le premier répondeur aux événements tactiles.
+ms. Prod : xamarin ms. AssetID : 3A77BA02-B87A-44EC-AC51-9D3130EF314C ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 01/15/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="visualelement-first-responder-on-ios"></a>VisualElement premier répondeur sur iOS
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

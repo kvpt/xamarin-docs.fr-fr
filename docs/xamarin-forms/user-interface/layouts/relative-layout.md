@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsRelativeLayout
-description: Cet article explique comment utiliser la Xamarin.Forms classe RelativeLayout pour créer des interfaces utilisateur qui s’adaptent à n’importe quelle taille d’écran.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: f250b109f759bcf6bb7fa4ac0573743ac12c4bc1
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84127190"
+titre : « Xamarin.Forms RelativeLayout » Description : « cet article explique comment utiliser la Xamarin.Forms classe RelativeLayout pour créer des interfaces utilisateur qui s’adaptent à n’importe quelle taille d’écran. »
+ms. Prod : xamarin ms. AssetID : 2530BCB8-01B8-4C4F-BF14-CA53659F1B5A ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 11/25/2015 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-relativelayout"></a>Xamarin.FormsRelativeLayout
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
@@ -31,7 +17,7 @@ ms.locfileid: "84127190"
 
 ![](relative-layout-images/flag.png "RelativeLayout Exploration")
 
-## <a name="usage"></a>Utilisation
+## <a name="usage"></a>Usage
 
 ### <a name="understanding-constraints"></a>Fonctionnement des contraintes
 

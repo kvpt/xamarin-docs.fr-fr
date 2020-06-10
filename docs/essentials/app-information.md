@@ -7,7 +7,7 @@ ms. AssetID : 15924FCB-19E0-45B2-944E-E94FD7AE12FA auteur : jamesmontemagno ms
 
 La classe **AppInfo** fournit des informations sur votre application.
 
-## <a name="get-started"></a>Bien démarrer
+## <a name="get-started"></a>Prendre en main
 
 [!include[](~/essentials/includes/get-started.md)]
 

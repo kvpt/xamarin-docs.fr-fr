@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: c1939c30cbefdbf8d6546761a8c6ac7199bfff62
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139683"
+titre : « description des modes de fusion séparables » : utilisez les modes de fusion séparable pour modifier les couleurs rouge, vert et bleu.
+ms. Prod : xamarin ms. Technology : xamarin-skiasharp ms. AssetID : 66D1A537-A247-484E-B5B9-FBCB7838FBE9 auteur : davidbritch ms. Author : dabritch ms. Date : 08/23/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="the-separable-blend-modes"></a>Modes de fusion séparable
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -151,45 +137,20 @@ Les composants rouge, vert et bleu sont gérés séparément, ce qui explique po
 Le tableau suivant présente tous les modes de fusion séparables avec une brève explication de ce qu’ils font. La deuxième colonne indique la couleur source qui ne produit aucune modification :
 
 | Mode de fusion   | Aucun changement | Opération |
-| ---
-titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
------- | titre de la--- : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
------ | titre de la--- : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-titre : Description : ms. Prod : ms. Technology : ms. AssetID : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
------ | | `Plus`       | Noir | Éclaircit en ajoutant des couleurs : SC + DC | | `Modulate`   | Blanc | Assombrit en multipliant les couleurs : SC · DC | | `Screen`     | Noir | Complète le produit de compléments : SC + DC &ndash; SC · DC | | `Overlay`    | Gris | Inverse de `HardLight` | | `Darken`     | Blanc | Nombre minimal de couleurs : min (SC, DC) | | `Lighten`    | Noir | Nombre maximal de couleurs : Max (SC, DC) | | `ColorDodge` | Noir | Éclaircit la destination en fonction de la source | | `ColorBurn`  | Blanc | Assombrit la destination en fonction de la source | | `HardLight`  | Gris | Similaire à l’effet de la lumière crue | | `SoftLight`  | Gris | Similaire à l’effet de la lumière douce | | `Difference` | Noir | Soustrait le plus sombre du plus clair : ABS (DC &ndash; SC) | | `Exclusion`  | Noir | Semblable à, `Difference` mais contraste inférieur | | `Multiply`   | Blanc | Assombrit en multipliant les couleurs : SC · DC |
+| ------------ | --------- | --------- |
+| `Plus`       | Noir     | Éclaircit en ajoutant des couleurs : SC + DC |
+| `Modulate`   | White     | Assombrit en multipliant les couleurs : SC · Métafichier | 
+| `Screen`     | Noir     | Complète le produit de compléments : SC + DC &ndash; SC · Métafichier |
+| `Overlay`    | Gris      | Inverse de`HardLight` |
+| `Darken`     | White     | Nombre minimal de couleurs : min (SC, DC) |
+| `Lighten`    | Noir     | Nombre maximal de couleurs : Max (SC, DC) |
+| `ColorDodge` | Noir     | Éclaircit la destination en fonction de la source |
+| `ColorBurn`  | White     | Assombrit la destination en fonction de la source | 
+| `HardLight`  | Gris      | Similaire à l’effet de la lumière crue |
+| `SoftLight`  | Gris      | Similaire à l’effet de la lumière douce | 
+| `Difference` | Noir     | Soustrait le plus sombre du plus clair : ABS (DC &ndash; SC) | 
+| `Exclusion`  | Noir     | Semblable à, `Difference` mais contraste inférieur |
+| `Multiply`   | White     | Assombrit en multipliant les couleurs : SC · Métafichier |
 
 Vous trouverez des algorithmes plus détaillés dans la spécification du W3C sur la [**composition et la fusion de niveau 1**](https://www.w3.org/TR/compositing-1/) et la [**référence skia SkBlendMode**](https://skia.org/user/api/SkBlendMode_Reference), bien que la notation dans ces deux sources ne soit pas la même. Gardez à l’esprit que `Plus` est généralement considéré comme un mode de fusion porter-Duff et qu’il ne fait `Modulate` pas partie de la spécification du W3C.
 

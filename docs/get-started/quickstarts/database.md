@@ -1,24 +1,8 @@
 ---
-title: ''
-description: ''
-zone_pivot_groups: ''
-ms.topic: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 2864c7edabde18faec06c2c42042168d3e6c9671
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139800"
+titre : « stocker les données dans une base de données SQLite.NET locale » Description : « cet article explique comment stocker des données dans une base de données SQLite.NET locale ».
+zone_pivot_groups : plateforme ms. topic : QuickStart ms. Prod : xamarin ms. AssetID : 5BF901BD-FDE8-4B74-B4AB-418E81745A3B ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 04/01/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="store-data-in-a-local-sqlitenet-database"></a>Stocker des données dans une base de données SQLite.NET locale
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-database/)
@@ -54,7 +38,7 @@ Vous devez suivre correctement le [précédent guide de démarrage rapide](multi
     > [!NOTE]
     > Il existe plusieurs packages NuGet portant des noms similaires. Le package correct possède ces attributs :
     > - **Auteur (s) :** Frank A. Krueger
-    > - **ID ** sqlite-net-pcl
+    > - **ID**  sqlite-net-pcl
     > - **Lien NuGet :** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)  
     >
     > Ne vous fiez pas au nom du package. Vous devez utiliser ce package NuGet dans les projets .NET Standard.
@@ -270,8 +254,8 @@ Vous devez suivre correctement le [précédent guide de démarrage rapide](multi
 
     > [!NOTE]
     > Il existe plusieurs packages NuGet portant des noms similaires. Le package correct possède ces attributs :
-    > - **Auteur :** Frank A. Krueger
-    > - **ID ** sqlite-net-pcl
+    > - **Author :** Frank A. Krueger
+    > - **ID**  sqlite-net-pcl
     > - **Lien NuGet :** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)  
     >
     > Ne vous fiez pas au nom du package. Vous devez utiliser ce package NuGet dans les projets .NET Standard.

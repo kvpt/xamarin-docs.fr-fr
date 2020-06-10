@@ -1,9 +1,6 @@
 ---
-titre : 'description à chaud XAML pour Xamarin.Forms 'Description : 'rechargent instantanément les modifications dans votre fichier XAML sur votre application en cours d’exécution, de sorte que vous n’avez pas besoin de générer votre Xamarin.Forms projet après chaque modification XAML.
-ms. Prod : ms. AssetID : ms. Technology : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title : "Description du chargement à chaud XAML pour Xamarin.Forms " Description : "recharger instantanément les modifications apportées à votre fichier XAML sur votre application en cours d’exécution afin de ne pas avoir à générer votre Xamarin.Forms projet après chaque modification XAML.
+ms. Prod : xamarin ms. AssetID : E220F054-32EE-424C-A7E5-6156BE271519 ms. Technology : xamarin-Forms Author : maddyleger1 ms. Author : maleger ms. Date : 03/14/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
 
 # <a name="xaml-hot-reload-for-xamarinforms"></a>Rechargement à chaud XAML pourXamarin.Forms
@@ -15,57 +12,13 @@ Le rechargement à chaud XAML se connecte à votre flux de travail existant pour
 >
 > Le rechargement à chaud XAML pour Xamarin.Forms ne fonctionne _pas_ actuellement pour les Xamarin.Forms projets UWP.
 
-## <a name="system-requirements"></a>Configuration requise
+## <a name="system-requirements"></a>Configuration système requise
 
 | IDE/infrastructure | Version requise |
-|---
-titre : 'description à chaud XAML pour Xamarin.Forms 'Description : 'rechargent instantanément les modifications dans votre fichier XAML sur votre application en cours d’exécution, de sorte que vous n’avez pas besoin de générer votre Xamarin.Forms projet après chaque modification XAML.
-ms. Prod : ms. AssetID : ms. Technology : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
----|---titre : 'description à chaud XAML pour Xamarin.Forms 'Description : 'rechargez instantanément les modifications dans votre fichier XAML sur votre application en cours d’exécution afin de ne pas avoir à générer votre Xamarin.Forms projet après chaque modification de XAML. '
-ms. Prod : ms. AssetID : ms. Technology : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-titre : 'description à chaud XAML pour Xamarin.Forms 'Description : 'rechargent instantanément les modifications dans votre fichier XAML sur votre application en cours d’exécution, de sorte que vous n’avez pas besoin de générer votre Xamarin.Forms projet après chaque modification XAML.
-ms. Prod : ms. AssetID : ms. Technology : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-titre : 'description à chaud XAML pour Xamarin.Forms 'Description : 'rechargent instantanément les modifications dans votre fichier XAML sur votre application en cours d’exécution, de sorte que vous n’avez pas besoin de générer votre Xamarin.Forms projet après chaque modification XAML.
-ms. Prod : ms. AssetID : ms. Technology : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-titre : 'description à chaud XAML pour Xamarin.Forms 'Description : 'rechargent instantanément les modifications dans votre fichier XAML sur votre application en cours d’exécution, de sorte que vous n’avez pas besoin de générer votre Xamarin.Forms projet après chaque modification XAML.
-ms. Prod : ms. AssetID : ms. Technology : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-titre : 'description à chaud XAML pour Xamarin.Forms 'Description : 'rechargent instantanément les modifications dans votre fichier XAML sur votre application en cours d’exécution, de sorte que vous n’avez pas besoin de générer votre Xamarin.Forms projet après chaque modification XAML.
-ms. Prod : ms. AssetID : ms. Technology : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-titre : 'description à chaud XAML pour Xamarin.Forms 'Description : 'rechargent instantanément les modifications dans votre fichier XAML sur votre application en cours d’exécution, de sorte que vous n’avez pas besoin de générer votre Xamarin.Forms projet après chaque modification XAML.
-ms. Prod : ms. AssetID : ms. Technology : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-titre : 'description à chaud XAML pour Xamarin.Forms 'Description : 'rechargent instantanément les modifications dans votre fichier XAML sur votre application en cours d’exécution, de sorte que vous n’avez pas besoin de générer votre Xamarin.Forms projet après chaque modification XAML.
-ms. Prod : ms. AssetID : ms. Technology : Auteur : ms. Author : ms. Date : No-Loc :
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
----------| | Visual Studio 2019 | 16,4 ou version ultérieure de Visual Studio 2019 pour Mac | 8,4 ou supérieur Xamarin.Forms | 4,1 ou supérieur
+|------|------------------|
+|Visual Studio 2019 | 16,4 ou version ultérieure
+Visual Studio 2019 pour Mac | 8,4 ou version ultérieure
+Xamarin.Forms | 4,1 ou version ultérieure
 
 ## <a name="enable-xaml-hot-reload-for-xamarinforms"></a>Activer le rechargement à chaud XAML pourXamarin.Forms
 
@@ -108,7 +61,7 @@ Le rechargement à chaud XAML prend en charge le débogage simultané dans Visua
 * [Trucs et astuces pour le rechargement à chaud XAML](https://devblogs.microsoft.com/xamarin/tips-tricks-xaml-hot-reload/)
 * [Rechargement à chaud XAML pour Xamarin.Forms en profondeur : le Xamarin Show](https://www.youtube.com/watch?v=crhjjPjzknk)
 
-## <a name="troubleshooting"></a>Résolution des problèmes
+## <a name="troubleshooting"></a>Dépannage
 
 * Si le rechargement à chaud XAML ne parvient pas à s’initialiser :
   * Mettez à jour votre Xamarin.Forms version.

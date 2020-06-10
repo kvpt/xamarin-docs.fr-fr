@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: f5738f376e2a814ef1af455178c2e68135184402
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84140164"
+titre : « manipulations tactiles » Description : « cet article explique comment utiliser les transformations de matrice pour implémenter le glissement, le pincement et la rotation tactiles, et illustre cela avec un exemple de code. »
+ms. Prod : xamarin ms. Technology : xamarin-skiasharp ms. AssetID : A0B8DD2D-7392-4EC5-BFB0-6209407AD650 auteur : davidbritch ms. Author : dabritch ms. Date : 09/14/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="touch-manipulations"></a>Manipulations tactiles
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

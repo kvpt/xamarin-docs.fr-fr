@@ -1,22 +1,8 @@
 ---
-title: ''
-description: Cet article explore les différences entre les coordonnées et les coordonnées SkiaSharp Xamarin.Forms et les illustre avec un exemple de code.
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 6d01018f4393ac5562220fa1f9524bc0d9872c67
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137668"
+titre : « pixels et unités indépendantes du périphérique » : « cet article explore les différences entre les coordonnées et les coordonnées SkiaSharp Xamarin.Forms et illustre cela avec un exemple de code ».
+ms. Prod : xamarin ms. Technology : xamarin-skiasharp ms. AssetID : 26C25BB8-FBE8-4B77-B01D-16A163A16890 auteur : davidbritch ms. Author : dabritch ms. Date : 02/09/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="pixels-and-device-independent-units"></a>Unités indépendantes de l’appareil et pixels
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

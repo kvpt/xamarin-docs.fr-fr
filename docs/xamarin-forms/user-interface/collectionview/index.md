@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsCollectionView
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a2c9fd9e6e48192bc2237d6b451b533fcee6e6ed
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136446"
+titre : « Xamarin.Forms CollectionView » Description : « CollectionView est une vue flexible et performante pour la présentation de listes de données à l’aide de spécifications de disposition différentes ».
+ms. Prod : xamarin ms. AssetID : 2BC9B223-2D5C-4B09-849C-B9D578954557 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 07/24/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-collectionview"></a>Xamarin.FormsCollectionView
 
 ## <a name="introduction"></a>[Introduction](introduction.md)
@@ -31,7 +17,7 @@ Un [`CollectionView`](xref:Xamarin.Forms.CollectionView) est rempli avec des don
 
 Par défaut, un [`CollectionView`](xref:Xamarin.Forms.CollectionView) affiche ses éléments dans une liste verticale. Toutefois, les listes et grilles verticales et horizontales peuvent être spécifiées.
 
-## <a name="selection"></a>[Sélection](selection.md)
+## <a name="selection"></a>[d’un certificat SSTP](selection.md)
 
 Par défaut, la [`CollectionView`](xref:Xamarin.Forms.CollectionView) sélection est désactivée. Toutefois, une sélection unique et une sélection multiple peuvent être activées.
 

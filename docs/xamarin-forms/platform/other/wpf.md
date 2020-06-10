@@ -1,23 +1,7 @@
 ---
-title: ''
-description: Xamarin.Formsprend désormais en charge la version préliminaire de la plateforme WPF
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-ms.custom: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: bbb9ea950c9f1daa1b5ee4762527d689f3cdd483
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139527"
+title : « description de l’installation de la plateforme WPF » : « Xamarin.Forms prend désormais en charge la version préliminaire de la plateforme WPF «ms. Prod : xamarin ms. AssetID : 650723F2-4279-4B7B-B0A1-D7F8FF26BF1E ms. Technology : xamarin-Forms ms. Custom : xamu-Video Author : davidbritch ms. Author : dabritch ms. Date : 04/09/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="wpf-platform-setup"></a>Configuration de la plateforme WPF
 
 ![PRÉVERSION](~/media/shared/preview.png)

@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: d62e533d127294c77c0779c20fd9c78ef2231200
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135718"
+titre : « authentifier un service Web RESTful » : «l’authentification de base permet d’accéder aux ressources uniquement aux clients qui disposent des informations d’identification correctes. Cet article explique comment utiliser l’authentification de base pour protéger l’accès aux ressources de service Web RESTful.
+ms. Prod : xamarin ms. AssetID : 7B5FFDC4-F2AA-4B12-A30A-1DACC7FECBF1 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 01/22/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="authenticate-a-restful-web-service"></a>Authentifier un service Web RESTful
 
 _HTTP prend en charge l’utilisation de plusieurs mécanismes d’authentification pour contrôler l’accès aux ressources. L’authentification de base permet d’accéder aux ressources uniquement pour les clients disposant des informations d’identification correctes. Cet article explique comment utiliser l’authentification de base pour protéger l’accès aux ressources de service Web RESTful._
@@ -80,7 +66,7 @@ Quand une demande est effectuée à une opération de service Web, la demande es
 
 ## <a name="processing-the-authorization-header-server-side"></a>Traitement du côté serveur d’en-tête d’autorisation
 
-Le service REST doit décorer chaque action avec l' `[BasicAuthentication]` attribut. Cet attribut est utilisé pour analyser l' `Authorization` en-tête et déterminer si les informations d’identification encodées en base64 sont valides en les comparant aux valeurs stockées dans *Web. config*. Bien que cette approche soit adaptée à un exemple de service, elle nécessite une extension pour un service Web public.
+Le service REST doit décorer chaque action avec l' `[BasicAuthentication]` attribut. Cet attribut est utilisé pour analyser l' `Authorization` en-tête et déterminer si les informations d’identification encodées en base64 sont valides en les comparant aux valeurs stockées dans *Web.config*. Bien que cette approche soit adaptée à un exemple de service, elle nécessite une extension pour un service Web public.
 
 Dans le module d’authentification de base utilisé par IIS, les utilisateurs sont authentifiés par rapport à leurs informations d’identification Windows. Par conséquent, les utilisateurs doivent disposer de comptes sur le domaine du serveur. Toutefois, le modèle d’authentification de base peut être configuré pour autoriser l’authentification personnalisée, où les comptes d’utilisateurs sont authentifiés par rapport à une source externe, telle qu’une base de données. Pour plus d’informations [, consultez authentification de base dans API Web ASP.net](https://www.asp.net/web-api/overview/security/basic-authentication) sur le site Web ASP.net.
 

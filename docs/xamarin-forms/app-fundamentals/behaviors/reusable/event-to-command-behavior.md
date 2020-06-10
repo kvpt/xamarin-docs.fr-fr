@@ -1,29 +1,15 @@
 ---
-title: ''
-description: Les comportements peuvent être utilisés pour associer des commandes à des contrôles qui n’ont pas été conçus pour interagir avec les commandes. Cet article décrit la création et l’utilisation d’un Xamarin.Forms comportement pour appeler une commande lorsqu’un événement se déclenche.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 46d1566c89de763a469f30ce8ed2c6ef919f1426
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135796"
+title : "Description réutilisable de EventToCommandBehavior" : "les comportements peuvent être utilisés pour associer des commandes à des contrôles qui n’ont pas été conçus pour interagir avec des commandes. Cet article décrit la création et l’utilisation d’un Xamarin.Forms comportement pour appeler une commande lorsqu’un événement se déclenche.
+ms. Prod : xamarin ms. AssetID : EC7F6556-9776-40B8-9424-A8094482A2F3 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 11/09/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="reusable-eventtocommandbehavior"></a>EventToCommandBehavior réutilisable
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior)
 
 _Les comportements peuvent être utilisés pour associer des commandes à des contrôles qui n’ont pas été conçus pour interagir avec des commandes. Cet article décrit la création et l’utilisation d’un Xamarin.Forms comportement pour appeler une commande lorsqu’un événement se déclenche._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d’ensemble
 
 La `EventToCommandBehavior` classe est un comportement personnalisé réutilisable Xamarin.Forms qui exécute une commande en réponse à *tout* déclenchement d’événement. Par défaut, les arguments d’événement pour l’événement sont passés à la commande et peuvent éventuellement être convertis par une [`IValueConverter`](xref:Xamarin.Forms.IValueConverter) implémentation.
 

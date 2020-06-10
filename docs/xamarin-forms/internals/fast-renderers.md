@@ -44,4 +44,4 @@ Les convertisseurs rapides peuvent être remplacés par les approches suivantes�
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Convertisseurs personnalisés](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)
+- [Renderers personnalisés](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)

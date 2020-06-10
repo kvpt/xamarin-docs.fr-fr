@@ -7,7 +7,7 @@ ms. AssetID : F6F6D496-A8A9-4B9A-AF1A-370D937E5073 Author : jamesmontemagno ms
 
 L’API **RequestedTheme** fait partie de la [`AppInfo`](app-information.md) classe et fournit des informations sur le thème qui est demandé pour votre application en cours d’exécution par le système.
 
-## <a name="get-started"></a>Bien démarrer
+## <a name="get-started"></a>Prendre en main
 
 [!include[](~/essentials/includes/get-started.md)]
 

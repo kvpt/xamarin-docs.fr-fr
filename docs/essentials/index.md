@@ -1,20 +1,8 @@
 ---
-title: Xamarin.Essentials
-description: Ce document contient des liens vers les différents guides qui décrivent Xamarin.Essentials , qui fournit aux développeurs des API multiplateforme pour leurs applications mobiles.
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 27421ecc8b089321cd2331829d87365f3cf37a65
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139462"
+titre : « Xamarin.Essentials Description : » ce document contient des liens vers les différents guides qui décrivent Xamarin.Essentials , qui fournit aux développeurs des API multiplateforme pour leurs applications mobiles.
+ms. AssetID : 4EDC9897-5FD1-44CA-A26D-2E5AB472C99A auteur : jamesmontemagno ms. Author : Jamont ms. Date : 02/26/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # Xamarin.Essentials
 
 Xamarin.Essentialsfournit aux développeurs des API multiplateforme pour leurs applications mobiles.
@@ -66,7 +54,7 @@ Suivez les guides pour intégrer ces Xamarin.Essentials fonctionnalités dans vo
 * [Vibreur](vibrate.md?context=xamarin/xamarin-forms) : faire vibrer l’appareil.
 * [Web Authenticator](web-authenticator.md?context=xamarin/xamarin-forms) -démarrer des flux d’authentification Web et écouter un rappel.
 
-## <a name="troubleshooting"></a>[Résolution des problèmes](troubleshooting.md?context=xamarin/xamarin-forms)
+## <a name="troubleshooting"></a>[Dépannage](troubleshooting.md?context=xamarin/xamarin-forms)
 
 Trouvez de l’aide si vous rencontrez des problèmes.
 

@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsVisual
-description: Xamarin.FormsVisual permet aux convertisseurs d’être appliqués de manière sélective aux objets VisualElement, sans avoir à effectuer de sous-classes de Xamarin.Forms vues.
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 5c0afcaa75029288d527fac2a2b21bcd614fd4dc
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84127125"
+titre : « Xamarin.Forms visuel » Description : « Xamarin.Forms Visual permet aux convertisseurs d’être appliqués de manière sélective aux objets VisualElement, sans avoir à les afficher sous-classes Xamarin.Forms ».
+ms. Prod : xamarin ms. AssetID : 69228A9C-39C4-46AE-A803-C38EED6FB965 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 03/05/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-visual"></a>Xamarin.FormsVisual
 
 ## <a name="xamarinforms-material-visualmaterial-visualmd"></a>[Xamarin.FormsÉlément visuel](material-visual.md)

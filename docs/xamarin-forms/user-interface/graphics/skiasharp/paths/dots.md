@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 8698bacd7257df431b12166c749f5826e8d6fd3c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138448"
+titre : « points et tirets dans SkiaSharp » Description : « cet article explore comment maîtriser les subtilités de dessin de lignes en pointillés et en pointillés dans SkiaSharp, et illustre cela avec un exemple de code ».
+ms. Prod : xamarin ms. AssetID : 8E9BCC13-830C-458C-9FC8-ECB4EAE66078 ms. Technology : xamarin-skiasharp auteur : davidbritch ms. Author : dabritch ms. Date : 03/10/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="dots-and-dashes-in-skiasharp"></a>Points et tirets dans SkiaSharp
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -155,7 +141,7 @@ Dans les captures d’écran suivantes, l’écran iOS à l’extrême gauche af
 
 [![](dots-images/dotsanddashes-small.png "Triple screenshot of the Dots and Dashes page")](dots-images/dotsanddashes-large.png#lightbox "Triple screenshot of the Dots and Dashes page")
 
-Toutefois, l’écran Android est également supposé afficher une ligne en pointillés à l’aide du tableau {10, 10}, mais la ligne est pleine. Que s’est-il passé ? Le problème est que la valeur de l’écran Android est également définie sur `Square` . Cela étend tous les tirets de la moitié de la largeur du trait, provoquant ainsi le remplissage des espaces vides.
+Toutefois, l’écran Android est également supposé afficher une ligne en pointillés à l’aide du tableau {10, 10}, mais la ligne est pleine. Que s’est-il passé ? Le problème est que la valeur de l’écran Android est également définie sur `Square` . Cela étend tous les tirets de la moitié de la largeur du trait, provoquant ainsi le remplissage des espaces vides.
 
 Pour contourner ce problème lors de l’utilisation d’une extrémité de trait de `Square` ou `Round` , vous devez réduire les longueurs de tiret dans le tableau en fonction de la longueur du trait (ce qui entraîne parfois une longueur de tiret de 0) et augmenter les longueurs d’intervalle par la longueur du trait. Voici comment les trois tableaux de tirets finaux dans le `Picker` fichier XAML ont été calculés :
 

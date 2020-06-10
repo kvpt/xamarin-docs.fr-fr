@@ -25,8 +25,8 @@ Utilisez le gestionnaire de package NuGet pour rechercher **SQLite-net-PCL** et 
 
 Il existe plusieurs packages NuGet portant des noms similaires. Le package correct possède ces attributs :
 
-- **Créé par :** Frank A. Krueger (praeclarum)
-- **ID :** SQLite-net-PCL
+- **Créé par :** Frank A. Krueger (praeclarum)
+- **ID :** sqlite-net-pcl
 - **Lien NuGet :** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 
 > [!NOTE]

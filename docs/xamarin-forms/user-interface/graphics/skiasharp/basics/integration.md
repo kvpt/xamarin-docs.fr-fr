@@ -1,22 +1,8 @@
 ---
-title: Intégrer àXamarin.Forms
-description: Cet article explique comment créer des graphiques SkiaSharp qui répondent à des éléments tactiles et Xamarin.Forms illustre cette procédure avec un exemple de code.
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 9e763184f38719cda4526eb0a2dfdf39b2191a03
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137694"
+titre : « intégration avec Xamarin.Forms » Description :» cet article explique comment créer des graphiques SkiaSharp qui répondent à des éléments tactiles et Xamarin.Forms illustrent cela avec un exemple de code.
+ms. Prod : xamarin ms. Technology : xamarin-skiasharp ms. AssetID : 288224F1-7AEE-4148-A88D-A70C03F83D7A auteur : davidbritch ms. Author : dabritch ms. Date : 02/09/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="integrating-with-xamarinforms"></a>Intégrer àXamarin.Forms
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

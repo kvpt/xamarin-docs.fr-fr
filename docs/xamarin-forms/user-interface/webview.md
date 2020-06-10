@@ -11,7 +11,7 @@ ms. Prod : xamarin ms. AssetID : E44F5D0F-DB8E-46C7-8789-114F1652A6C5 ms. Tech
 
 ![Dans l’Explorateur d’applications](webview-images/in-app-browser.png)
 
-## <a name="content"></a>Contenu
+## <a name="content"></a>Content
 
 `WebView`prend en charge les types de contenu suivants :
 
@@ -416,7 +416,7 @@ Pour que `WebView` fonctionne, vous devez vous assurer que les autorisations son
 - **Android** &ndash; nécessite `INTERNET` uniquement lors de l’affichage du contenu à partir du réseau. Le contenu local ne requiert pas d’autorisations spéciales.
 - **iOS** &ndash; ne requiert pas d’autorisations spéciales.
 
-## <a name="layout"></a>Layout
+## <a name="layout"></a>Mise en page
 
 Contrairement à la plupart des autres Xamarin.Forms vues, `WebView` exige que `HeightRequest` et `WidthRequest` soient spécifiés lorsqu’ils sont contenus dans StackLayout ou RelativeLayout. Si vous ne parvenez pas à spécifier ces propriétés, le `WebView` n’est pas restitué.
 

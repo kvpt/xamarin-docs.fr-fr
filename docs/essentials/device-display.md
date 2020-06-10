@@ -7,7 +7,7 @@ ms. AssetID : 2821C908-C613-490D-8E8C-1BD3269FCEEA Author : jamesmontemagno ms
 
 La classe **DeviceDisplay** fournit des informations sur les métriques d’écran de l’appareil où s’exécute l’application et peut demander d’empêcher l’écran de se mettre en veille quand l’application est en cours d’exécution.
 
-## <a name="get-started"></a>Bien démarrer
+## <a name="get-started"></a>Prendre en main
 
 [!include[](~/essentials/includes/get-started.md)]
 

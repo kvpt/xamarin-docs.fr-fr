@@ -7,7 +7,7 @@ ms. AssetID : B7B01D55-0129-4C87-B515-89F8F4E94665 auteur : jamesmontemagno ms
 
 La classe **Share** permet à une application de partager des données comme du texte et des liens web avec d’autres applications sur l’appareil.
 
-## <a name="get-started"></a>Bien démarrer
+## <a name="get-started"></a>Prendre en main
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -49,7 +49,7 @@ L’interface utilisateur de partage avec une application externe s’affiche qu
 
 ![Partager](images/share.png)
 
-## <a name="files"></a>Files
+## <a name="files"></a>Fichiers
 
 Cette fonctionnalité permet à une application de partager des fichiers avec d’autres applications sur l’appareil. Xamarin.Essentialsdétecte automatiquement le type de fichier (MIME) et demande un partage. Chaque plateforme peut prendre uniquement en charge certaines extensions de fichiers spécifiques.
 
