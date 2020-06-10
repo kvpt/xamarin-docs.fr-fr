@@ -6,12 +6,12 @@ ms.assetid: 72627B90-586A-02B6-E231-F7CE015A1B97
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 4012b648bd451907bdb91221aba13df5ed3d34e3
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 06a3197cfcd3b49538cfa5fa97e40a9f50c7a244
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571023"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84655099"
 ---
 # <a name="introduction-to-web-services"></a>Introduction aux services web
 
@@ -437,8 +437,6 @@ Ensuite, vous pouvez spécifier les informations d’identification de l’authe
 client.ClientCredentials.UserName.UserName = @"foo";
 client.ClientCredentials.UserName.Password = @"mrsnuggles";
 ```
-
-Dans l’exemple ci-dessus, si vous recevez le message « trampolines de type 0 », vous pouvez augmenter le nombre de type 0 trampolines en ajoutant l' `–aot “trampolines={number of trampolines}”` argument à la Build. Pour plus d’informations, consultez [Résolution des problèmes](~/ios/troubleshooting/troubleshooting.md#trampolines).
 
 Pour plus d’informations sur l’authentification HTTP de base, bien que dans le contexte d’un service Web REST, consultez [authentification d’un service Web RESTful](~/xamarin-forms/data-cloud/authentication/rest.md).
 

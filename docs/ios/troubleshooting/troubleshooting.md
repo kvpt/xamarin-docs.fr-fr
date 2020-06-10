@@ -7,13 +7,13 @@ ms.assetid: B50FE9BD-9E01-AE88-B178-10061E3986DA
 ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
-ms.date: 05/22/2018
-ms.openlocfilehash: 6368c3a4b128c06687b23b965b308ad6a788188b
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.date: 06/10/2020
+ms.openlocfilehash: 1b3eb61bf08eb006890b8b879c560163bd131844
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574485"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84655085"
 ---
 # <a name="troubleshooting-tips-for-xamarinios"></a>Conseils de dépannage pour Xamarin. iOS
 
@@ -166,7 +166,7 @@ Les outils Mac populaires QuickSilver, la barre d’outils Google et la barre de
 
 ## <a name="visual-studio-for-mac-complains-about-mono-24-required"></a>Visual Studio pour Mac se plaint de mono 2,4 obligatoire
 
-Si vous avez mis à jour Visual Studio pour Mac en raison d’une mise à jour récente, et que vous tentez de la redémarrer, 2,4 il vous suffit de [mettre à niveau l’installation de mono 2,4](http://www.go-mono.com/mono-downloads/download.html).  
+Si vous avez mis à jour Visual Studio pour Mac en raison d’une mise à jour récente, et que vous tentez de la redémarrer, 2,4 il vous suffit de [mettre à niveau l’installation de mono 2,4](http://www.go-mono.com/mono-downloads/download.html).
 
 Mono 2.4.2.3 _6 résout certains problèmes importants qui empêchaient Visual Studio pour Mac de s’exécuter de manière fiable, parfois bloqués Visual Studio pour Mac au démarrage ou empêchaient la génération de la base de données de saisie semi-automatique de code.
 
@@ -217,7 +217,7 @@ Attachez les journaux XS, **~/Library/logs/XamarinStudio-{version}/IDE-{timestam
 
 Pour prendre en charge le débogage, les versions Debug contiennent du code supplémentaire. Les projets intégrés en mode version sont une fraction de la taille.
 
-À partir de Xamarin. iOS 1,3, les versions de débogage comprenaient la prise en charge du débogage pour chaque composant unique de mono (chaque méthode dans chaque classe des frameworks).  
+À partir de Xamarin. iOS 1,3, les versions de débogage comprenaient la prise en charge du débogage pour chaque composant unique de mono (chaque méthode dans chaque classe des frameworks).
 
 Avec Xamarin. iOS 1,4, nous allons introduire une méthode plus fine pour le débogage, la valeur par défaut est de fournir uniquement l’instrumentation de débogage pour votre code et vos bibliothèques, et non pas pour tous les [assemblys mono](~/cross-platform/internals/available-assemblies.md) (cela restera possible, mais vous devrez choisir de déboguer ces assemblys).
 
@@ -226,33 +226,6 @@ Avec Xamarin. iOS 1,4, nous allons introduire une méthode plus fine pour le dé
 Les programmes d’installation mono et Xamarin. iOS se bloquent si le simulateur iPhone est en cours d’exécution. Ce problème n’est pas limité à mono ou à Xamarin. iOS. il s’agit d’un problème cohérent sur tout logiciel qui tente d’installer un logiciel sur MacOS Snow Leopard si le simulateur iPhone s’exécute au moment de l’installation.
 
 Veillez à quitter le simulateur iPhone, puis recommencez l’installation.
-
-<a name="trampolines"></a>
-
-## <a name="ran-out-of-trampolines-of-type-0"></a>Trampolines de type 0 insuffisant
-
-Si vous recevez ce message lors de l’exécution de l’appareil, vous pouvez créer plus de type 0 trampolines (spécifique au type) en modifiant la section Options de projet « Build iPhone ».  Vous souhaitez ajouter des arguments supplémentaires pour les cibles de génération d’appareil :
-
- `-aot "ntrampolines=2048"`
-
-Le nombre par défaut de trampolines est 1024. Essayez d’améliorer ce nombre jusqu’à ce que vous disposiez de suffisamment pour votre application.
-
-## <a name="ran-out-of-trampolines-of-type-1"></a>Trampolines de type 1 insuffisant
-
-Si vous utilisez intensivement des génériques récursifs, vous pouvez recevoir ce message sur l’appareil.  Vous pouvez créer plus de types 1 trampolines (type RGCTX) en modifiant la section Options de projet « Build iPhone ».  Vous souhaitez ajouter des arguments supplémentaires pour les cibles de génération d’appareil :
-
- `-aot "nrgctx-trampolines=2048"`
-
-Le nombre par défaut de trampolines est 1024. Essayez d’améliorer ce nombre jusqu’à ce que vous ayez suffisamment d’espace pour votre utilisation des génériques.
-
-## <a name="ran-out-of-trampolines-of-type-2"></a>Trampolines de type 2 insuffisant
-
-Si vous créez des interfaces intensives, vous pouvez recevoir ce message sur l’appareil.
-Vous pouvez créer plusieurs trampolines de type 2 (type IMT thunks) en modifiant les options de votre projet section « Build iPhone ».  Vous souhaitez ajouter des arguments supplémentaires pour les cibles de génération d’appareil :
-
- `-aot "nimt-trampolines=512"`
-
-Le nombre par défaut de IMT thunk trampolines est 128. Essayez d’améliorer ce nombre jusqu’à ce que vous ayez suffisamment d’espace pour votre utilisation des interfaces.
 
 ## <a name="debugger-is-unable-to-connect-with-the-device"></a>Le débogueur ne parvient pas à se connecter à l’appareil
 
@@ -384,7 +357,7 @@ Si vous obtenez un blocage au moment de l’exécution (SIGSEGV) dans le simulat
   at (wrapper runtime-invoke) <Module>.runtime_invoke_void_object (object,intptr,intptr,intptr)
 ```
 
-... vous avez probablement un ou plusieurs assemblys obsolètes dans le répertoire de votre application de simulateur. De tels assemblys peuvent exister, car Apple iOS Simulator ajoute et met à jour les fichiers, mais ne les supprime jamais. Dans ce cas, la solution la plus simple consiste à sélectionner « réinitialiser et contenu et paramètres... ». dans le menu du simulateur.   
+... vous avez probablement un ou plusieurs assemblys obsolètes dans le répertoire de votre application de simulateur. De tels assemblys peuvent exister, car Apple iOS Simulator ajoute et met à jour les fichiers, mais ne les supprime jamais. Dans ce cas, la solution la plus simple consiste à sélectionner « réinitialiser et contenu et paramètres... ». dans le menu du simulateur.
 
 > [!WARNING]
 > Cette opération supprime tous les fichiers, applications et données du simulateur.   La prochaine fois que vous exécuterez votre application, Visual Studio pour Mac le déploiera dans le simulateur et il n’y aura aucun ancien assembly obsolète pour provoquer l’incident.
@@ -413,3 +386,18 @@ Pour vérifier l’action de génération, cliquez avec le bouton droit sur le f
 Lorsque vous incluez des bibliothèques tierces dans votre application Xamarin. iOS, vous pouvez obtenir une erreur au format « System. NotSupportedException : aucune donnée n’est disponible pour l’encodage 437 » lors de la tentative de compilation et d’exécution de l’application. Par exemple, les bibliothèques, telles que `Ionic.Zip.ZipFile` , peuvent lever cette exception pendant l’opération.
 
 Cela peut être résolu en ouvrant les options du projet Xamarin. iOS, en accédant à **iOS Build**  >  **internationalisation** et en vérifiant l’internationalisation de l' **Ouest** .
+
+## <a name="could-not-launch-xamarinlauncher-could-not-find-the-executable-mlaunchexe"></a>Impossible de lancer Xamarin. Launcher n’a pas pu trouver le fichier exécutable’mlaunch. exe'
+
+Dans certains cas, les logiciels antivirus peuvent incorrectement signaler le kit de développement logiciel (SDK) Xamarin. iOS comme programme malveillant et supprimer les fichiers nécessaires, ce qui endommage le kit de développement logiciel (SDK). Cela entraînera des erreurs telles que « impossible de lancer Xamarin. le lanceur n’a pas pu trouver le fichier exécutable «mlaunch. exe ».
+
+Si vous avez été affecté, excluez mlaunch. exe de votre scanneur antivirus pour empêcher une nouvelle occurrence. Pour plus d’informations, voir [How to Create an application exception in the Symantex gestionnaire Endpoint Protection](https://knowledge.broadcom.com/external/article/180778/how-to-create-an-application-exception-i.html) for Symantec, and [Exclude Files and Folders from Norton AutoProtect, sonar et Download intelligence analyses](https://support.norton.com/sp/en/uk/home/current/solutions/v3672136) for Norton. En outre, envisagez de signaler un faux positif à [Symantec](https://symsubmit.symantec.com) ou [Norton](https://submit.norton.com/?type=FP).
+
+Une fois que vous avez ajouté une exclusion pour mlaunch. exe, une réinstallation est nécessaire pour restaurer les fichiers manquants. L’approche la plus simple consiste à basculer les canaux dans le programme de mise à jour :
+
+- Menu **Visual Studio** > **Rechercher les mises à jour**.
+- Sélectionnez un autre canal de mise à jour dans la liste déroulante et appuyez sur le bouton **canal du commutateur** .
+- Attendez le téléchargement des mises à jour.
+- Revenez à la chaîne d’origine et installez les mises à jour.
+
+Si ces instructions ne permettent pas de résoudre votre problème, ajoutez un commentaire au problème GitHub suivant : [8736](https://github.com/xamarin/xamarin-macios/issues/8736).
