@@ -1,8 +1,22 @@
 ---
-titre : « améliorer Xamarin.Forms les performances de l’application » : «il existe de nombreuses techniques pour améliorer les performances des Xamarin.Forms applications. Collectivement, ces techniques peuvent réduire de façon considérable la quantité de travail effectuée par un processeur et la quantité de mémoire consommée par une application.»
-ms. Prod : xamarin ms. AssetID : 0be84c56-6698-448D-BE5A-b4205f1caa9f ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 11/27/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Améliorer les Xamarin.Forms performances des applications
+description: Il existe de nombreuses techniques pour améliorer les performances des Xamarin.Forms applications. Utilisées conjointement, ces techniques peuvent considérablement réduire la charge de travail d’une UC, ainsi que la quantité de mémoire consommée par une application.
+ms.prod: xamarin
+ms.assetid: 0be84c56-6698-448d-be5a-b4205f1caa9f
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/27/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 96b5939fd1f8448d45d1398fd56770f9032de083
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139111"
 ---
-
 # <a name="improve-xamarinforms-app-performance"></a>Améliorer les Xamarin.Forms performances des applications
 
 > [!VIDEO https://youtube.com/embed/RZvdql3Ev0E]

@@ -1,6 +1,19 @@
 ---
-title : " Xamarin.Essentials : OrientationSensor" Description : "la classe OrientationSensor vous permet de surveiller l’orientation d’un appareil dans un espace tridimensionnel."
-ms. AssetID : F3091D93-E779-41BA-8696-23D296F2F6F5 auteur : jamesmontemagno ms. Author : Jamont ms. Date : 11/04/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: 'Xamarin.Essentials: OrientationSensor'
+description: La classe Capteur d’orientation vous permet de surveiller l’orientation d’un appareil dans l’espace tridimensionnel.
+ms.assetid: F3091D93-E779-41BA-8696-23D296F2F6F5
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 11/04/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e61a3730e80c8fb60aee076b028ee54bed6887b3
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802216"
 ---
 # <a name="xamarinessentials-orientationsensor"></a>Xamarin.Essentials: OrientationSensor
 
@@ -9,7 +22,7 @@ La classe **Capteur d’orientation** vous permet de surveiller l’orientation 
 > [!NOTE]
 > Cette classe permet de déterminer l’orientation d’un appareil dans un espace en 3D. Si vous devez déterminer si l’affichage vidéo de l’appareil est en mode portrait ou paysage, utilisez la `Orientation` propriété de l' `ScreenMetrics` objet disponible à partir de la [`DeviceDisplay`](device-display.md) classe.
 
-## <a name="get-started"></a>Prendre en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -100,5 +113,5 @@ Exemples :
 
 ## <a name="api"></a>API
 
-- [Code source de Capteur d’orientation](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/OrientationSensor)
+- [Code source de Capteur d’orientation](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/OrientationSensor)
 - [Documentation de l’API Capteur d’orientation](xref:Xamarin.Essentials.OrientationSensor)

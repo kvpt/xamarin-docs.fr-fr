@@ -1,13 +1,26 @@
 ---
-titre : « Xamarin.Essentials : Compass » Description : « ce document décrit la classe Compass dans Xamarin.Essentials , qui vous permet de surveiller l’en-tête de nord magnétique de l’appareil. »
-ms. AssetID : BF85B0C3-C686-43D9-811A-07DCAF8CDD86 Author : jamesmontemagno ms. Custom : vidéo ms. Author : Jamont ms. Date : 11/04/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: 'Xamarin.Essentials: Compass'
+description: Ce document décrit la classe Compass dans Xamarin.Essentials , qui vous permet de surveiller l’en-tête de nord magnétique de l’appareil.
+ms.assetid: BF85B0C3-C686-43D9-811A-07DCAF8CDD86
+author: jamesmontemagno
+ms.custom: video
+ms.author: jamont
+ms.date: 11/04/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f85c6c1d262606ce75131e6ba39f326526bb8eb7
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802463"
 ---
-
 # <a name="xamarinessentials-compass"></a>Xamarin.Essentials: Compass
 
 La classe **Compass** vous permet de superviser le cap du nord magnétique de l’appareil.
 
-## <a name="get-started"></a>Prendre en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -87,7 +100,7 @@ Il est appliqué uniquement sur la plateforme Android et le paramètre est ignor
 
 ## <a name="api"></a>API
 
-- [Code source de la fonctionnalité de boussole](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Compass)
+- [Code source de la fonctionnalité de boussole](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Compass)
 - [Documentation sur l’API de boussole](xref:Xamarin.Essentials.Compass)
 
 ## <a name="related-video"></a>Vidéo associée

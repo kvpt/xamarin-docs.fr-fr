@@ -1,13 +1,26 @@
 ---
-titre : « Xamarin.Essentials : Clipboard » Description : « ce document décrit la classe Clipboard dans Xamarin.Essentials , qui vous permet de copier et coller du texte dans le presse-papiers du système entre les applications. »
-ms. AssetID : C52AE99A-0FB3-425D-9106-3DA5777FEFA0 auteur : jamesmontemagno ms. Author : Jamont ms. Date : 01/06/2020 ms. Custom : Video No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: 'Xamarin.Essentials: Presse-papiers'
+description: Ce document décrit la classe Clipboard dans Xamarin.Essentials , qui vous permet de copier et coller du texte dans le presse-papiers du système entre les applications.
+ms.assetid: C52AE99A-0FB3-425D-9106-3DA5777FEFA0
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 01/06/2020
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d0a984f0f3bf27447e250c12e38fd9adcfb0029f
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802456"
 ---
-
 # <a name="xamarinessentials-clipboard"></a>Xamarin.Essentials: Presse-papiers
 
 La classe **Clipboard** vous permet de copier et de coller du texte dans le Presse-papiers système entre les applications.
 
-## <a name="get-started"></a>Prendre en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -60,7 +73,7 @@ public class ClipboardTest
 
 ## <a name="api"></a>API
 
-- [Code source de la fonctionnalité de Presse-papiers](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Clipboard)
+- [Code source de la fonctionnalité de Presse-papiers](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Clipboard)
 - [Documentation sur l’API de Presse-papiers](xref:Xamarin.Essentials.Clipboard)
 
 ## <a name="related-video"></a>Vidéo associée

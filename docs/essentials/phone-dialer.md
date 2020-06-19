@@ -1,12 +1,26 @@
 ---
-title : " Xamarin.Essentials : Numéroteur téléphonique" Description : "la classe PhoneDialer dans Xamarin.Essentials permet à une application d’ouvrir un numéro de téléphone dans le numéroteur" ms. AssetID : E7457942-4D7B-4195-A2FF-417919B9537F auteur : jamesmontemagno ms. Custom : Video ms. Author : Jamont ms. date : 07/02/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: 'Xamarin.Essentials: Numéroteur téléphonique'
+description: La classe PhoneDialer dans Xamarin.Essentials permet à une application d’ouvrir un numéro de téléphone dans le numéroteur
+ms.assetid: E7457942-4D7B-4195-A2FF-417919B9537F
+author: jamesmontemagno
+ms.custom: video
+ms.author: jamont
+ms.date: 07/02/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d642005e9aed663570c251e955c6a3af4704ed5c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802210"
 ---
-
 # <a name="xamarinessentials-phone-dialer"></a>Xamarin.Essentials: Numéroteur téléphonique
 
 La classe **PhoneDialer** permet à une application de composer un numéro de téléphone sur le clavier.
 
-## <a name="get-started"></a>Prendre en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -47,7 +61,7 @@ public class PhoneDialerTest
 
 ## <a name="api"></a>API
 
-- [Code source de la fonctionnalité de clavier téléphonique](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/PhoneDialer)
+- [Code source de la fonctionnalité de clavier téléphonique](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/PhoneDialer)
 - [Documentation sur l’API de clavier téléphonique](xref:Xamarin.Essentials.PhoneDialer)
 
 ## <a name="related-video"></a>Vidéo associée

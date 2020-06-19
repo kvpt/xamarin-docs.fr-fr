@@ -1,8 +1,22 @@
 ---
-title : « reconnaissance vocale à l’aide de l’API Speech Service » Description : « cet article explique comment utiliser l’API Azure Speech service pour transcrire la parole en texte dans une Xamarin.Forms application ».
-ms. Prod : xamarin ms. AssetID : B435FF6B-8785-48D9-B2D9-1893F5A87EA1 ms. Technology : xamarin-Forms Author : profexorgeek ms. Author : jusjohns ms. Date : 01/14/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Reconnaissance vocale à l’aide de l’API Speech service
+description: Cet article explique comment utiliser l’API Azure Speech service pour transcrire la parole en texte dans une Xamarin.Forms application.
+ms.prod: xamarin
+ms.assetid: B435FF6B-8785-48D9-B2D9-1893F5A87EA1
+ms.technology: xamarin-forms
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 01/14/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 171ecc02fda304135e5f535c3e798067595d7047
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139319"
 ---
-
 # <a name="speech-recognition-using-azure-speech-service"></a>Reconnaissance vocale à l’aide du service Azure Speech
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-cognitivespeechservice)

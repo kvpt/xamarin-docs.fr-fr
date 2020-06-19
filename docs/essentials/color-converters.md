@@ -1,13 +1,26 @@
 ---
-titre : « Xamarin.Essentials convertisseurs de couleurs » : « la classe ColorConverters dans Xamarin.Essentials fournit plusieurs méthodes d’assistance et méthodes d’extension pour fonctionner avec System. Drawing. Color ».
-ms. AssetID : B10428D6-89E2-4714-A39F-7E6E626391B2 auteur : jamesmontemagno ms. Author : Jamont ms. Date : 01/06/2020 ms. Custom : Video No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.EssentialsConvertisseurs de couleurs
+description: La classe ColorConverters dans Xamarin.Essentials fournit plusieurs méthodes d’assistance et méthodes d’extension pour fonctionner avec System. Drawing. Color.
+ms.assetid: B10428D6-89E2-4714-A39F-7E6E626391B2
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 01/06/2020
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: ff6a5bed600f45dcd48867596a7fc8aa45decb82
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802442"
 ---
-
 # <a name="xamarinessentials-color-converters"></a>Xamarin.Essentials: Convertisseurs de couleurs
 
 La classe **ColorConverters** dans Xamarin.Essentials fournit plusieurs méthodes d’assistance pour System. Drawing. Color.
 
-## <a name="get-started"></a>Prendre en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -70,9 +83,9 @@ La méthode `ToSystemColor` s’applique à Android.Graphics.Color, UIKit.UIColo
 
 ## <a name="api"></a>API
 
-- [Code source des convertisseurs de couleurs](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Types/ColorConverters.shared.cs)
+- [Code source des convertisseurs de couleurs](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Types/ColorConverters.shared.cs)
 - [Documentation sur les API de convertisseurs de couleurs](xref:Xamarin.Essentials.ColorConverters)
-- [Code source des extensions de couleurs](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Types/ColorConverters.shared.cs)
+- [Code source des extensions de couleurs](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Types/ColorConverters.shared.cs)
 - [Documentation sur les API d’extensions de couleurs](xref:Xamarin.Essentials.ColorExtensions)
 
 ## <a name="related-video"></a>Vidéo associée

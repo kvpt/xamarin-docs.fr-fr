@@ -1,13 +1,26 @@
 ---
-titre : « Xamarin.Essentials : informations sur l’appareil » Description : « ce document décrit la classe DeviceInfo dans Xamarin.Essentials , qui fournit des informations sur l’appareil sur lequel l’application s’exécute. »
-ms. AssetID : A1AC5373-926A-4FB6-8D7D-4B87EB8EB522 Author : jamesmontemagno ms. Custom : vidéo ms. Author : Jamont ms. Date : 11/04/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: 'Xamarin.Essentials: Informations sur l’appareil'
+description: Ce document décrit la classe DeviceInfo dans Xamarin.Essentials , qui fournit des informations sur l’appareil sur lequel l’application s’exécute.
+ms.assetid: A1AC5373-926A-4FB6-8D7D-4B87EB8EB522
+author: jamesmontemagno
+ms.custom: video
+ms.author: jamont
+ms.date: 11/04/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 70619097baa2c5f10321835b087f693c4fbac0c4
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802391"
 ---
-
 # <a name="xamarinessentials-device-information"></a>Xamarin.Essentials: Informations sur l’appareil
 
 La classe **DeviceInfo** fournit des informations sur l’appareil où l’application s’exécute.
 
-## <a name="get-started"></a>Prendre en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -78,7 +91,7 @@ iOS n’expose pas d’API permettant aux développeurs d’obtenir le modèle d
 
 ## <a name="api"></a>API
 
-- [Code source de DeviceInfo](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/DeviceInfo)
+- [Code source de DeviceInfo](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/DeviceInfo)
 - [Documentation sur l’API de DeviceInfo](xref:Xamarin.Essentials.DeviceInfo)
 
 ## <a name="related-video"></a>Vidéo associée

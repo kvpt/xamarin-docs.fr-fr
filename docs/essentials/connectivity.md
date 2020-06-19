@@ -1,13 +1,26 @@
 ---
-title : " Xamarin.Essentials : Connectivity" Description : "la classe de connectivité de vous Xamarin.Essentials permet de surveiller les modifications apportées aux conditions réseau de l’appareil, de vérifier l’accès au réseau actuel et de savoir comment il est actuellement connecté.
-ms. AssetID : E1B1F152-B1D5-4227-965E-C0AEBF528F49 auteur : jamesmontemagno ms. Author : Jamont ms. Date : 01/08/2019 ms. Custom : Video No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: 'Xamarin.Essentials: Connectivité'
+description: La classe de connectivité de vous Xamarin.Essentials permet de surveiller les modifications apportées aux conditions réseau de l’appareil, de vérifier l’accès au réseau actuel et de savoir comment il est actuellement connecté.
+ms.assetid: E1B1F152-B1D5-4227-965E-C0AEBF528F49
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 01/08/2019
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 056992b06e012845755aa02b2076a1bb80c6f176
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802416"
 ---
-
 # <a name="xamarinessentials-connectivity"></a>Xamarin.Essentials: Connectivité
 
 La classe **Connectivité** vous permet de surveiller les modifications des conditions réseau de l’appareil, l’accès au réseau actuel et le mode de connexion actuel.
 
-## <a name="get-started"></a>Prendre en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -105,7 +118,7 @@ Il est important de noter qu’il est possible que `Internet` soit signalé par 
 
 ## <a name="api"></a>API
 
-* [Code source Connectivité](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Connectivity)
+* [Code source Connectivité](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Connectivity)
 * [Documentation de l’API Connectivité](xref:Xamarin.Essentials.Connectivity)
 
 ## <a name="related-video"></a>Vidéo associée

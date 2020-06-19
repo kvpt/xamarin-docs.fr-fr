@@ -1,13 +1,26 @@
 ---
-title : " Xamarin.Essentials : stockage sécurisé" Description : "ce document décrit la classe SecureStorage dans Xamarin.Essentials , qui permet de stocker en toute sécurité des paires clé/valeur simples. Il explique comment utiliser la classe, les spécificités de l’implémentation de la plateforme et les limitations.»
-ms. AssetID : 78856C0D-76BB-406E-A880-D5A3987B7D64 auteur : jamesmontemagno ms. Author : Jamont ms. Date : 04/02/2019 ms. Custom : Video No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: 'Xamarin.Essentials: Stockage sécurisé'
+description: Ce document décrit la classe SecureStorage dans Xamarin.Essentials , qui permet de stocker en toute sécurité des paires clé/valeur simples. Il explique comment utiliser la classe et expose les caractéristiques de mise en œuvre de la plateforme et ses limitations.
+ms.assetid: 78856C0D-76BB-406E-A880-D5A3987B7D64
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 04/02/2019
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 061bc1cfe785ad080092ba21340f7d38bc499ed9
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84801944"
 ---
-
 # <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials: Stockage sécurisé
 
 La classe **SecureStorage** permet de stocker en toute sécurité des paires clé/valeur simples.
 
-## <a name="get-started"></a>Prendre en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -155,7 +168,7 @@ Cette API est destinée à stocker de petites quantités de texte.  Les performa
 
 ## <a name="api"></a>API
 
-- [Code source de SecureStorage](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/SecureStorage)
+- [Code source de SecureStorage](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/SecureStorage)
 - [Documentation de l’API SecureStorage](xref:Xamarin.Essentials.SecureStorage)
 
 ## <a name="related-video"></a>Vidéo associée

@@ -1,13 +1,26 @@
 ---
-titre : « Xamarin.Essentials : email » Description : « la classe de messagerie dans Xamarin.Essentials permet à une application d’ouvrir l’application de messagerie par défaut avec les informations spécifiées, notamment Subject, corps et Recipients (à, CC, CCI) ».
-ms. AssetID : 5FBB6FF0-0E7B-4C29-8F06-91642AF12629 Author : jamesmontemagno ms. Custom : vidéo ms. Author : Jamont ms. Date : 08/20/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: 'Xamarin.Essentials: E-mail'
+description: La classe email dans Xamarin.Essentials permet à une application d’ouvrir l’application de messagerie par défaut avec les informations spécifiées, notamment Subject, corps et Recipients (à, CC, CCI).
+ms.assetid: 5FBB6FF0-0E7B-4C29-8F06-91642AF12629
+author: jamesmontemagno
+ms.custom: video
+ms.author: jamont
+ms.date: 08/20/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: eba2b6decc74c63e6b2790287842e6cc9b237bd2
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802371"
 ---
-
 # <a name="xamarinessentials-email"></a>Xamarin.Essentials: E-mail
 
 La classe **Email** permet à une application d’ouvrir l’application de messagerie par défaut en utilisant des informations spécifiques, notamment l’objet, le corps et les destinataires (À, CC, CCI).
 
-## <a name="get-started"></a>Prendre en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -95,7 +108,7 @@ Tous les clients de messagerie ne prennent pas en charge l’envoi de pièces jo
 
 ## <a name="api"></a>API
 
-- [Code source de la fonctionnalité d’e-mail](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Email)
+- [Code source de la fonctionnalité d’e-mail](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Email)
 - [Documentation sur l’API Email](xref:Xamarin.Essentials.Email)
 
 ## <a name="related-video"></a>Vidéo associée

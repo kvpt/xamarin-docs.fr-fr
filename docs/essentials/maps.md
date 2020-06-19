@@ -1,13 +1,26 @@
 ---
-titre : « Xamarin.Essentials Map » Description : « la classe Map dans Xamarin.Essentials permet à une application d’ouvrir l’application Map installée à un emplacement ou à un placemark spécifique ».
-ms. AssetID : BABF40CC-8BEE-43FD-BE12-6301DF27DD33 auteur : jamesmontemagno ms. Author : Jamont ms. Date : 05/26/2020 ms. Custom : Video No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.EssentialsCanal
+description: La classe Map dans Xamarin.Essentials permet à une application d’ouvrir l’application Map installée à un emplacement ou à un placemark spécifique.
+ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 05/26/2020
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b566b6705d1cd8e229b6a2636fffd2ebc2ed5cde
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802260"
 ---
-
 # <a name="xamarinessentials-map"></a>Xamarin.Essentials: Mappage
 
 La classe **Map** permet à une application d’ouvrir l’application de cartes installée à un emplacement spécifique.
 
-## <a name="get-started"></a>Prendre en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -146,7 +159,7 @@ Aucun détail d’implémentation spécifique à la plateforme.
 
 ## <a name="api"></a>API
 
-- [Code source de Map](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Map)
+- [Code source de Map](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Map)
 - [Documentation de l’API Map](xref:Xamarin.Essentials.Map)
 
 ## <a name="related-video"></a>Vidéo associée

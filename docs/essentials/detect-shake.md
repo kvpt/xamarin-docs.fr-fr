@@ -1,13 +1,26 @@
 ---
-titre : « Xamarin.Essentials : détecter le tremblement » : « la classe accéléromètre dans Xamarin.Essentials vous permet de détecter un mouvement de tremblement de l’appareil ».
-ms. AssetID : 07513D32-120F-4F12-8757-A47802A8027B auteur : jamesmontemagno ms. Author : Jamont ms. Date : 05/28/2019 ms. Custom : Video No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: 'Xamarin.Essentials: Détecter le tremblement'
+description: La classe accéléromètre de Xamarin.Essentials vous permet de détecter un mouvement de tremblement de l’appareil.
+ms.assetid: 07513D32-120F-4F12-8757-A47802A8027B
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 05/28/2019
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 4fd4c7d0e3ffe04ebbb936cff0992272a9085649
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802426"
 ---
-
 # <a name="xamarinessentials-detect-shake"></a>Xamarin.Essentials: Détecter le tremblement
 
 La classe **[accéléromètre](accelerometer.md)** vous permet de surveiller le capteur d’accéléromètre de l’appareil, qui indique l’accélération de l’appareil dans un espace tridimensionnel. De plus, elle vous permet d’enregistrer des événements quand l’utilisateur secoue l’appareil.
 
-## <a name="get-started"></a>Prendre en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -68,7 +81,7 @@ L’API de détection des secousses utilise des relevés bruts de l’accéléro
 
 ## <a name="api"></a>API
 
-- [Code source de l’accéléromètre](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Accelerometer)
+- [Code source de l’accéléromètre](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Accelerometer)
 - [Documentation de l’API Accéléromètre](xref:Xamarin.Essentials.Accelerometer)
 
 ## <a name="related-video"></a>Vidéo associée

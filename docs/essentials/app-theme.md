@@ -1,13 +1,26 @@
 ---
-titre : « Xamarin.Essentials : thème d’application » Description : « ce document décrit l’API de thème d’application demandée dans Xamarin.Essentials , qui fournit des informations sur le style de thème demandé pour l’application en cours d’exécution ».
-ms. AssetID : F6F6D496-A8A9-4B9A-AF1A-370D937E5073 Author : jamesmontemagno ms. Custom : vidéo ms. Author : Jamont ms. Date : 01/06/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: 'Xamarin.Essentials: Thème d’application'
+description: Ce document décrit l’API de thème d’application demandée dans Xamarin.Essentials , qui fournit des informations sur le style de thème demandé pour l’application en cours d’exécution.
+ms.assetid: F6F6D496-A8A9-4B9A-AF1A-370D937E5073
+author: jamesmontemagno
+ms.custom: video
+ms.author: jamont
+ms.date: 01/06/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: eca052c82ae3333feb0437b8a4e24bc6b97b836d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802505"
 ---
-
 # <a name="xamarinessentials-app-theme"></a>Xamarin.Essentials: Thème d’application
 
 L’API **RequestedTheme** fait partie de la [`AppInfo`](app-information.md) classe et fournit des informations sur le thème qui est demandé pour votre application en cours d’exécution par le système.
 
-## <a name="get-started"></a>Prendre en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -63,7 +76,7 @@ Pour plus d’informations, consultez la [documentation relative au thème UWP](
 
 ## <a name="api"></a>API
 
-- [Code source d’AppInfo](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/AppInfo)
+- [Code source d’AppInfo](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/AppInfo)
 - [Documentation sur l’API d’AppInfo](xref:Xamarin.Essentials.AppInfo)
 
 ## <a name="related-video"></a>Vidéo associée

@@ -1,13 +1,26 @@
 ---
-title : " Xamarin.Essentials : accéléromètre" Description : "la classe accéléromètre de vous Xamarin.Essentials permet de surveiller le capteur de l’accéléromètre de l’appareil, qui indique l’accélération de l’appareil dans l’espace tridimensionnel."
-ms. AssetID : 97883573-F0D9-4854-AC7C-A654814401C5 auteur : jamesmontemagno ms. Author : Jamont ms. Date : 04/02/2019 ms. Custom : Video No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: 'Xamarin.Essentials: Accéléromètre'
+description: La classe accéléromètre de vous Xamarin.Essentials permet de surveiller le capteur de l’accéléromètre de l’appareil, qui indique l’accélération de l’appareil dans l’espace tridimensionnel.
+ms.assetid: 97883573-F0D9-4854-AC7C-A654814401C5
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 04/02/2019
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f3d7b313039e66294a0095fd34a2caa6689cef2e
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802537"
 ---
-
 # <a name="xamarinessentials-accelerometer"></a>Xamarin.Essentials: Accéléromètre
 
 La classe **Accelerometer** permet de surveiller le capteur de type accéléromètre de l’appareil, qui indique l’accélération de l’appareil dans un espace en trois dimensions.
 
-## <a name="get-started"></a>Prendre en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -80,7 +93,7 @@ Exemples :
 
 ## <a name="api"></a>API
 
-- [Code source de l’accéléromètre](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Accelerometer)
+- [Code source de l’accéléromètre](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Accelerometer)
 - [Documentation de l’API Accéléromètre](xref:Xamarin.Essentials.Accelerometer)
 
 ## <a name="related-video"></a>Vidéo associée

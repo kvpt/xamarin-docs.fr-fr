@@ -1,13 +1,26 @@
 ---
-titre : « Xamarin.Essentials ouvrir le navigateur » Description : « la classe browser dans Xamarin.Essentials permet à une application d’ouvrir un lien Web dans le navigateur préféré du système optimisé ou dans le navigateur externe. »
-ms. AssetID : BABF40CC-8BEE-43FD-BE12-6301DF27DD33 auteur : jamesmontemagno ms. Author : Jamont ms. Date : 04/02/2019 ms. Custom : Video No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.EssentialsOuvrir le navigateur
+description: La classe browser dans Xamarin.Essentials permet à une application d’ouvrir un lien Web dans le navigateur préféré du système optimisé ou dans le navigateur externe.
+ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 04/02/2019
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 997c6b66b5dba43eb440130f3f58d31a5a274815
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802248"
 ---
-
 # <a name="xamarinessentials-browser"></a>Xamarin.Essentials: Navigateur
 
 La classe **Navigateur** permet à une application d’ouvrir un lien web dans le navigateur préféré du système optimisé ou le navigateur externe.
 
-## <a name="get-started"></a>Prendre en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -84,7 +97,7 @@ Le navigateur par défaut de l’utilisateur sera toujours exécuté, quel que s
 
 ## <a name="api"></a>API
 
-- [Code source de Navigateur](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Browser)
+- [Code source de Navigateur](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Browser)
 - [Documentation de l’API Browser](xref:Xamarin.Essentials.Browser)
 
 ## <a name="related-video"></a>Vidéo associée

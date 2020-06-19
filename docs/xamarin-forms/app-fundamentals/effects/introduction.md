@@ -1,8 +1,22 @@
 ---
-titre : « Introduction aux effets » Description : «les effets permettent aux contrôles natifs sur chaque plateforme d’être personnalisés et sont généralement utilisés pour les petites modifications de style. Cet article fournit une introduction aux effets, présente la limite entre les effets et les convertisseurs personnalisés, et décrit la classe PlatformEffect.»
-ms. Prod : xamarin ms. AssetID : 30CB8615-8F39-4762-BDB7-333D2B57D112 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 03/08/2016 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Présentation des effets
+description: Les effets permettent de personnaliser les contrôles natifs de chaque plateforme et sont généralement utilisés pour les petits changements de style. Cet article présente les effets, décrit la limite entre les effets et les renderers personnalisés, et décrit la classe PlatformEffect.
+ms.prod: xamarin
+ms.assetid: 30CB8615-8F39-4762-BDB7-333D2B57D112
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/08/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a891ec70f6f83984ed463fe914442758bdf57a2e
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139306"
 ---
-
 # <a name="introduction-to-effects"></a>Présentation des effets
 
 _Les effets permettent de personnaliser les contrôles natifs sur chaque plateforme et sont généralement utilisés pour les petites modifications de style. Cet article fournit une introduction aux effets, présente la limite entre les effets et les convertisseurs personnalisés, et décrit la classe PlatformEffect._

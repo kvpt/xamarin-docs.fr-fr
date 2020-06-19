@@ -1,13 +1,26 @@
 ---
-title : " Xamarin.Essentials : File System Helpers" Description : "la classe FileSystem dans Xamarin.Essentials contient une série d’applications d’assistance pour rechercher les répertoires de cache et de données de l’application, ainsi que les fichiers ouverts dans le package d’application."
-ms. AssetID : B3EC2DE0-EFC0-410C-AF71-7410AE84CF84 Author : jamesmontemagno ms. Custom : vidéo ms. Author : Jamont ms. Date : 11/04/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: 'Xamarin.Essentials: Applications auxiliaires du système de fichiers'
+description: La classe FileSystem dans Xamarin.Essentials contient une série d’applications d’assistance pour rechercher les répertoires de cache et de données de l’application, ainsi que les fichiers ouverts dans le package d’application.
+ms.assetid: B3EC2DE0-EFC0-410C-AF71-7410AE84CF84
+author: jamesmontemagno
+ms.custom: video
+ms.author: jamont
+ms.date: 11/04/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5fafc24d9c4bd35d4ef0010ae4530341316c878a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802362"
 ---
-
 # <a name="xamarinessentials-file-system-helpers"></a>Xamarin.Essentials: Applications auxiliaires du système de fichiers
 
 La classe **FileSystem** contient une série de composants d’assistance qui permettent de rechercher les répertoires de cache et de données de l’application, ainsi que d’ouvrir des fichiers contenus dans le paquet d’application.
 
-## <a name="get-started"></a>Prendre en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -70,7 +83,7 @@ Ajoutez un fichier à la racine du projet UWP, et marquez l’action de généra
 
 ## <a name="api"></a>API
 
-- [Code source de la fonctionnalité des composants d’assistance de système de fichiers](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/FileSystem)
+- [Code source de la fonctionnalité des composants d’assistance de système de fichiers](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/FileSystem)
 - [Documentation sur l’API de système de fichiers](xref:Xamarin.Essentials.FileSystem)
 
 ## <a name="related-video"></a>Vidéo associée

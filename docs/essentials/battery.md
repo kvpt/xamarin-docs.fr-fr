@@ -1,13 +1,26 @@
 ---
-titre : « Xamarin.Essentials : Battery » Description : « ce document décrit la classe de batterie dans Xamarin.Essentials , qui vous permet de vérifier les informations sur la batterie de l’appareil et de surveiller les modifications ».
-ms. AssetID : 47EB26D8-8C62-477B-A13C-6977F74E6E43 auteur : jamesmontemagno ms. Author : Jamont ms. Date : 01/22/2019 ms. Custom : Video No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: 'Xamarin.Essentials: Batterie'
+description: Ce document décrit la classe Battery dans Xamarin.Essentials , qui vous permet de vérifier les informations sur la batterie de l’appareil et de surveiller les modifications.
+ms.assetid: 47EB26D8-8C62-477B-A13C-6977F74E6E43
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 01/22/2019
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 3138db09c2a3d343f36aa48f561930df47f48ae6
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802484"
 ---
-
 # <a name="xamarinessentials-battery"></a>Xamarin.Essentials: Batterie
 
 La classe **Battery** vous permet de vérifier les informations de batterie de l’appareil et de superviser les changements. Elle fournit aussi des informations sur l’état d’économie d’énergie de l’appareil, qui indique si l’appareil s’exécute dans un mode de basse consommation. Les applications doivent de préférence éviter le traitement en arrière-plan lorsque l’économie d’énergie de l’appareil est activée.
 
-## <a name="get-started"></a>Prendre en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -171,7 +184,7 @@ Aucune différence entre les plateformes.
 
 ## <a name="api"></a>API
 
-- [Code source de la fonctionnalité de batterie](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Battery)
+- [Code source de la fonctionnalité de batterie](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Battery)
 - [Documentation sur l’API de batterie](xref:Xamarin.Essentials.Battery)
 
 ## <a name="related-video"></a>Vidéo associée
