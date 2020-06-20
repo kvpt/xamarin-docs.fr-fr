@@ -1,8 +1,22 @@
 ---
-titre : « Xamarin.Forms Introduction aux services Web » Description : «ce guide fournit une procédure pas à pas de l' Xamarin.Forms exemple d’application qui montre comment communiquer avec différents services Web. Bien que chaque service Web utilise un exemple d’application distinct, il est similaire au fonctionnement et partage des classes communes.»
-ms. Prod : xamarin ms. AssetID : A3FEB262-0D79-42E6-8F8B-A565618C490B ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 02/28/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsPrésentation des services Web
+description: Ce guide fournit une procédure pas à pas de l' Xamarin.Forms exemple d’application qui montre comment communiquer avec différents services Web. Bien que chaque service Web utilise un exemple d’application distinct, il est similaire au fonctionnement et partage des classes communes.
+ms.prod: xamarin
+ms.assetid: A3FEB262-0D79-42E6-8F8B-A565618C490B
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/28/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d714b4c9d598d8cca26ae992abf3f15df703d11b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139176"
 ---
-
 # <a name="xamarinforms-web-services-introduction"></a>Xamarin.FormsPrésentation des services Web
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)

@@ -1,8 +1,22 @@
 ---
-titre : « personnalisation d’un code confidentiel de carte » : cet article montre comment créer un convertisseur personnalisé pour le contrôle de carte, qui affiche une carte native avec un code confidentiel personnalisé et une vue personnalisée des données de code confidentiel sur chaque plateforme.»
-ms. Prod : xamarin ms. AssetID : C5481D86-80E9-4E3D-9FB6-57B0F93711A6 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 11/06/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Personnalisation d’une épingle de carte
+description: Cet article montre comment créer un renderer personnalisé pour le contrôle Map qui affiche une carte native avec une épingle personnalisée et une vue personnalisée des données de l’épingle sur chaque plateforme.
+ms.prod: xamarin
+ms.assetid: C5481D86-80E9-4E3D-9FB6-57B0F93711A6
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/06/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 06ff88f1d4f272d9b77737d2168418c007afe8bc
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573896"
 ---
-
 # <a name="customizing-a-map-pin"></a>Personnalisation d’une épingle de carte
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-map-pin)

@@ -1,8 +1,22 @@
 ---
-titre : « Xamarin.Forms déclencheurs » Description : «cet article explique comment utiliser Xamarin.Forms les déclencheurs pour répondre aux modifications de l’interface utilisateur avec XAML. Les déclencheurs vous permettent d’exprimer de façon déclarative des actions en XAML qui modifient l’apparence des contrôles en fonction des événements ou des modifications de propriétés.»
-ms. Prod : xamarin ms. AssetID : 60460F57-63C6-4916-BBB5-A870F1DF53D7 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 04/17/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsDéclencheurs
+description: Cet article explique comment utiliser Xamarin.Forms des déclencheurs pour répondre aux modifications de l’interface utilisateur avec XAML. Les déclencheurs vous permettent d’exprimer des actions de manière déclarative en XAML. Les actions en question modifient l’apparence des contrôles en fonction des événements ou des modifications apportées aux propriétés.
+ms.prod: xamarin
+ms.assetid: 60460F57-63C6-4916-BBB5-A870F1DF53D7
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/17/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f92ad47ae883f4b1b413ae5192a9add83045bb77
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136953"
 ---
-
 # <a name="xamarinforms-triggers"></a>Xamarin.FormsDéclencheurs
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithtriggers)

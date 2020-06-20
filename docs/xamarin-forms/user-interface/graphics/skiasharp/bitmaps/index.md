@@ -1,8 +1,22 @@
 ---
-titre : « SkiaSharp bitmaps » Description : « Découvrez comment charger, enregistrer, afficher, créer, dessiner, animer et accéder aux bits des bitmaps SkiaSharp. »
-ms. Prod : xamarin ms. Technology : xamarin-skiasharp ms. AssetID : 70C19370-157A-4B1B-9532-F77E32AC21BC auteur : davidbritch ms. Author : dabritch ms. Date : 07/17/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Bitmaps SkiaSharp
+description: Découvrez comment charger, enregistrer, afficher, créer, dessiner, animer et accéder aux bits des bitmaps SkiaSharp.
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 70C19370-157A-4B1B-9532-F77E32AC21BC
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/17/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1d21fc199dd67471440ca0e3eeaf9a140e7a1967
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84140229"
 ---
-
 # <a name="skiasharp-bitmaps"></a>Bitmaps SkiaSharp
 
 Une image bitmap est un tableau rectangulaire de données correspondant aux pixels d’un périphérique d’affichage. Le domaine de la programmation graphique associé aux bitmaps est parfois appelé _graphiques raster_ (nommés après les lignes de numérisation des premières vidéos affichées), contrairement aux _graphiques vectoriels_ des lignes et des courbes. 

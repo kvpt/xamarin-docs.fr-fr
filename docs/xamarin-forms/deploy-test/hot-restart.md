@@ -1,8 +1,22 @@
 ---
-titre : « Xamarin Hot restart » Description : « ce document décrit comment configurer et utiliser le redémarrage à chaud Xamarin pour déboguer une application iOS ».
-ms. Prod : xamarin ms. AssetID : 6BC62A88-9368-41BB-8494-760F2A4805DB ms. Technology : xamarin-Forms Author : maddyleger1 ms. Author : maleger ms. Date : 03/16/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin Hot Restart
+description: Ce document décrit comment configurer et utiliser Xamarin Hot Restart pour déboguer une application iOS.
+ms.prod: xamarin
+ms.assetid: 6BC62A88-9368-41BB-8494-760F2A4805DB
+ms.technology: xamarin-forms
+author: maddyleger1
+ms.author: maleger
+ms.date: 03/16/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 45b7d0d20c43aa22ebde3a17552f10ceea77a48b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139137"
 ---
-
 # <a name="xamarin-hot-restart-preview"></a>Xamarin Hot Restart (préversion)
 
 ![Fonctionnalité d’évaluation](~/media/shared/preview.png)
@@ -12,7 +26,7 @@ Xamarin Hot Restart vous permet de tester rapidement les modifications apportée
 > [!IMPORTANT]
 > Le redémarrage à chaud Xamarin est actuellement disponible dans Visual Studio 2019 version 16,5 stable et prend en charge les applications iOS à l’aide de Xamarin.Forms . La prise en charge des Visual Studio pour Mac et des applications non basées Xamarin.Forms sur le plan.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>Spécifications
 
 - Visual Studio 2019 version 16,5
 - iTunes (64 bits)

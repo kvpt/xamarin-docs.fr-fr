@@ -1,8 +1,22 @@
 ---
-title : " Xamarin.Forms Description de la configuration de l’interpréteur de commandes" : "la classe Shell définit des propriétés jointes qui peuvent être utilisées pour configurer l’apparence des pages dans les Xamarin.Forms applications Shell. Cela comprend la définition des couleurs des pages, la désactivation de la barre de navigation, la désactivation de la barre d’onglets et l’affichage des affichages dans la barre de navigation.
-ms. Prod : xamarin ms. AssetID : 3FC2FBD1-C30B-4408-97B2-B04E3A2E4F03 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 01/29/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsConfiguration de la page de Shell
+description: La classe Shell définit des propriétés jointes qui peuvent être utilisées pour configurer l’apparence des pages dans les Xamarin.Forms applications Shell. Cela comprend notamment la configuration des couleurs de la page, la désactivation de la barre de navigation et de la barre d’onglet ainsi que l’apparence des affichages dans la barre de navigation.
+ms.prod: xamarin
+ms.assetid: 3FC2FBD1-C30B-4408-97B2-B04E3A2E4F03
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/29/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 102070fc478b42e9fbc0c7d0006197c81a49c9b8
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137499"
 ---
-
 # <a name="xamarinforms-shell-page-configuration"></a>Xamarin.FormsConfiguration de la page de Shell
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)

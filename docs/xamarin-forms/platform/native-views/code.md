@@ -1,8 +1,22 @@
 ---
-title : « affichages natifs en C# » Description : «les affichages natifs d’iOS, Android et UWP peuvent être directement référencés à partir des Xamarin.Forms pages créées à l’aide de C#. Cet article montre comment ajouter des vues natives à une Xamarin.Forms mise en page créée à l’aide de C# et comment remplacer la disposition des vues personnalisées pour corriger leur utilisation de l’API de mesure.»
-ms. Prod : xamarin ms. AssetID : 230F937C-F914-4B21-8EA1-1A2A9E644769 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 04/27/2016 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Vues natives en C#
+description: Les vues natives d’iOS, Android et UWP peuvent être directement référencées à partir des Xamarin.Forms pages créées à l’aide de C#. Cet article explique comment ajouter des vues natives à une Xamarin.Forms mise en page créée à l’aide de C# et comment remplacer la disposition des vues personnalisées pour corriger leur utilisation de l’API de mesure.
+ms.prod: xamarin
+ms.assetid: 230F937C-F914-4B21-8EA1-1A2A9E644769
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/27/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 18cdeccbdff86a6b20aab4b33db259f1f06ee096
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139592"
 ---
-
 # <a name="native-views-in-c"></a>Vues natives en C\#
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeembedding)

@@ -1,8 +1,22 @@
 ---
-title : "les styles d’appareil dans Xamarin.Forms " Description : " Xamarin.Forms incluent six styles dynamiques, appelés styles de périphérique, dans la classe Device. styles. Cet article explique comment utiliser les styles d’appareil dans une Xamarin.Forms application.
-ms. Prod : xamarin ms. AssetID : 7FF19ED1-0822-4238-9435-AD970317A2F8 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 02/17/2016 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Styles de périphérique dansXamarin.Forms
+description: Xamarin.Formscomprend six styles dynamiques, appelés styles de périphérique, dans la classe Device. styles. Cet article explique comment utiliser les styles d’appareil dans une Xamarin.Forms application.
+ms.prod: xamarin
+ms.assetid: 7FF19ED1-0822-4238-9435-AD970317A2F8
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/17/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b835847fea39e1c2f968e7b81fb9d22f68ea461c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84140099"
 ---
-
 # <a name="device-styles-in-xamarinforms"></a>Styles de périphérique dansXamarin.Forms
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-dynamicstyles)

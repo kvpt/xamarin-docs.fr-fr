@@ -1,8 +1,22 @@
 ---
-title : " Xamarin.Forms CollectionView EmptyView" Description : "dans CollectionView, vous pouvez spécifier une vue vide qui fournit des commentaires à l’utilisateur quand aucune donnée n’est disponible pour l’affichage. La vue vide peut être une chaîne, une vue ou plusieurs vues.
-ms. Prod : xamarin ms. AssetID : 6CEBCFE6-5577-4F68-9709-431062609153 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 05/06/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsCollectionView EmptyView
+description: Dans CollectionView, vous pouvez spécifier une vue vide qui fournit des commentaires à l’utilisateur quand aucune donnée n’est disponible pour l’affichage. La vue vide peut être une chaîne, une vue ou plusieurs vues.
+ms.prod: xamarin
+ms.assetid: 6CEBCFE6-5577-4F68-9709-431062609153
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/06/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d35e39e55d66452e47c7a3e3faf86a7a7d6adaca
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136487"
 ---
-
 # <a name="xamarinforms-collectionview-emptyview"></a>Xamarin.FormsCollectionView EmptyView
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)

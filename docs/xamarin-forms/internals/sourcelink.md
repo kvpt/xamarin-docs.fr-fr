@@ -1,8 +1,23 @@
 ---
-titre : « lien source avec Xamarin.Forms «Description » : cet article explique comment utiliser le lien source pour déboguer dans Xamarin.Forms .»
-zone_pivot_groups : « Platform » ms. Prod : xamarin ms. assetId : 1E13FCD9-5607-46E8-80E4-87A58B389BEB ms. Technology : xamarin-Forms Author : profexorgeek ms. Author : jusjohns ms. Date : 09/26/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Lien source avecXamarin.Forms
+description: Cet article explique comment utiliser le lien source pour déboguer dans Xamarin.Forms .
+zone_pivot_groups: platform
+ms.prod: xamarin
+ms.assetId: 1E13FCD9-5607-46E8-80E4-87A58B389BEB
+ms.technology: xamarin-forms
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 09/26/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 57db314538c42ef9d58691ba16ab68371ff092b7
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138299"
 ---
-
 # <a name="source-link-with-xamarinforms"></a>Lien source avecXamarin.Forms
 
 Xamarin.FormsLes packages NuGet incluent les mappages de lien source. Le lien source mappe des bibliothèques compilées, contenues dans un package NuGet, à un référentiel de code source. Visual Studio télécharge les fichiers de code source pendant le débogage et permet aux développeurs d’effectuer un pas à pas détaillé dans le code, en activant le débogage des packages sans générer à partir de la source.

@@ -1,8 +1,22 @@
 ---
-title : " Xamarin.Forms Description de la carte, polylignes et cercles" Description : "cet article explique comment créer des polygones, des polylignes et des cercles sur une Xamarin.Forms instance de carte."
-ms. Prod : xamarin ms. AssetID : CDAF0B02-1AA8-4AD6-94A7-ABFC18006A2D ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 03/10/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsMapper des polygones, des polylignes et des cercles
+description: Cet article explique comment créer des polygones, des polylignes et des cercles sur une Xamarin.Forms instance de carte.
+ms.prod: xamarin
+ms.assetid: CDAF0B02-1AA8-4AD6-94A7-ABFC18006A2D
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/10/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: ca813f9f0f75aeaf4a2502faa7cb96d1fbead471
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138409"
 ---
-
 # <a name="xamarinforms-map-polygons-and-polylines"></a>Xamarin.FormsMapper des polygones et des polylignes
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)

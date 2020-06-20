@@ -1,8 +1,22 @@
 ---
-titre : « Xamarin.Forms Double-Screen » Description : « ce guide explique comment créer Xamarin.Forms des applications pour les appareils à deux écrans ».
-ms. Prod : xamarin ms. AssetID : f9906e83-f8ae-48F9-997b-e1540b96ee8e ms. Technology : xamarin-Forms Author : davidortinau ms. Author : daortin ms. Date : 02/08/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsDouble écran
+description: Ce guide explique comment créer Xamarin.Forms des applications pour les appareils à deux écrans.
+ms.prod: xamarin
+ms.assetid: f9906e83-f8ae-48f9-997b-e1540b96ee8e
+ms.technology: xamarin-forms
+author: davidortinau
+ms.author: daortin
+ms.date: 02/08/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: aeaaeb732adaea45446d6baf833027801abf4d2a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138903"
 ---
-
 # <a name="xamarinforms-dual-screen"></a>Xamarin.Formsdouble écran
 
 ![](~/media/shared/preview.png "This API is currently pre-release")

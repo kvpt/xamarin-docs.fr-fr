@@ -1,8 +1,22 @@
 ---
-titre : « propriétés jointes » Description : « cet article fournit une introduction aux propriétés jointes et montre comment les créer et les utiliser. »
-ms. Prod : xamarin ms. AssetID : 6E9DCDC3-A0E4-46A6-BAA9-4FEB6DF8A5A8 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 06/02/2016 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Propriétés attachées
+description: Cet article fournit une introduction aux propriétés jointes et montre comment les créer et les utiliser.
+ms.prod: xamarin
+ms.assetid: 6E9DCDC3-A0E4-46A6-BAA9-4FEB6DF8A5A8
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/02/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1f26a4415a75b2b02fd7d6893e366ef81156f077
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138188"
 ---
-
 # <a name="attached-properties"></a>Propriétés attachées
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)

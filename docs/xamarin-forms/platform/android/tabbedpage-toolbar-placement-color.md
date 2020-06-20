@@ -1,8 +1,22 @@
 ---
-title : « TabbedPage Toolbar placement and Color on Android » Description : «la plateforme spécifique vous permet d’utiliser des fonctionnalités uniquement disponibles sur une plateforme spécifique, sans implémenter de convertisseurs ou d’effets personnalisés. Cet article explique comment utiliser le spécifique à la plateforme Android qui définit l’emplacement et la couleur de la barre d’outils sur un TabbedPage.
-ms. Prod : xamarin ms. AssetID : A5C68D6A-9A5F-42EE-845D-1E5B0CB1544E ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 07/10/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Couleur et positionnement de la barre d’outils TabbedPage sur Android
+description: Les spécificités des plateformes vous permettent d’utiliser des fonctionnalités uniquement disponibles sur une plateforme spécifique, sans implémenter de convertisseurs ou d’effets personnalisés. Cet article explique comment utiliser le spécifique à la plateforme Android qui définit la position et la couleur de la barre d’outils sur un TabbedPage.
+ms.prod: xamarin
+ms.assetid: A5C68D6A-9A5F-42EE-845D-1E5B0CB1544E
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/10/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f5a2be4bd61056a42593fc45e1abdd3679795bc0
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139982"
 ---
-
 # <a name="tabbedpage-toolbar-placement-and-color-on-android"></a>Couleur et positionnement de la barre d’outils TabbedPage sur Android
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

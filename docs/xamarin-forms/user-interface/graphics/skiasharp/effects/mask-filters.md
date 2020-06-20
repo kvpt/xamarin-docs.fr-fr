@@ -1,8 +1,22 @@
 ---
-titre : « SkiaSharp masque Filters » Description : « Découvrez comment utiliser le filtre de masque pour créer des flous et d’autres effets alpha ».
-ms. Prod : xamarin ms. Technology : xamarin-skiasharp ms. AssetID : 940422A1-8BC0-4039-8AD7-26C61320F858 auteur : davidbritch ms. Author : dabritch ms. Date : 08/27/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Filtres de masque SkiaSharp
+description: Découvrez comment utiliser le filtre de masque pour créer des flous et d’autres effets alpha.
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 940422A1-8BC0-4039-8AD7-26C61320F858
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/27/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 10192e93d2e20f9aa58ca95dd81c07f560193905
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136407"
 ---
-
 # <a name="skiasharp-mask-filters"></a>Filtres de masque SkiaSharp
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

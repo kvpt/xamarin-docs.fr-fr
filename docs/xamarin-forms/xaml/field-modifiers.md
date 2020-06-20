@@ -1,8 +1,22 @@
 ---
-title : "modificateurs de champ XAML dans Xamarin.Forms " Description : "l’attribut d’espace de noms x :FieldModifier spécifie le niveau d’accès pour les champs générés pour les éléments XAML nommés."
-ms. Prod : xamarin ms. AssetID : 12357CE0-3C11-4B62-947F-72DB6DFC23A2 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 08/02/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Modificateurs de champ XAML dansXamarin.Forms
+description: L’attribut d’espace de noms x :FieldModifier spécifie le niveau d’accès pour les champs générés pour les éléments XAML nommés.
+ms.prod: xamarin
+ms.assetid: 12357CE0-3C11-4B62-947F-72DB6DFC23A2
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/02/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: db00f522b71a8993ef0f7f6cf5070813ce07396a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138123"
 ---
-
 # <a name="xaml-field-modifiers-in-xamarinforms"></a>Modificateurs de champ XAML dansXamarin.Forms
 
 L' `x:FieldModifier` attribut namespace spécifie le niveau d’accès pour les champs générés pour les éléments XAML nommés. Les valeurs valides de l’attribut sont :

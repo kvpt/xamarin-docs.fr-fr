@@ -1,8 +1,22 @@
 ---
-title : « ListView Appearance » Description : « cet article explique comment personnaliser des ListView dans des Xamarin.Forms applications à l’aide des en-têtes, des pieds de page, des groupes et des cellules de hauteur variable. »
-ms. Prod : xamarin ms. AssetID : DC8009B0-4371-4D60-885A-5362FC7EE3E5 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 12/13/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Apparence de ListView
+description: Cet article explique comment personnaliser des ListView dans des Xamarin.Forms applications à l’aide des en-têtes, des pieds de page, des groupes et des cellules de hauteur variable.
+ms.prod: xamarin
+ms.assetid: DC8009B0-4371-4D60-885A-5362FC7EE3E5
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/13/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c7fdecdb0ce209c88dbe9e6f4e6e6588ec4fd3fd
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139917"
 ---
-
 # <a name="listview-appearance"></a>Apparence de ListView
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-grouping)

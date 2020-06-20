@@ -1,8 +1,22 @@
 ---
-titre : « Xamarin.Forms propriétés pouvant être liées » : cet article fournit une introduction aux propriétés pouvant être liées et montre comment les créer et les utiliser.
-ms. Prod : xamarin ms. AssetID : 1EE869D8-6FE1-45CA-A0AD-26EC7D032AD7 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 01/16/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsPropriétés pouvant être liées
+description: Cet article fournit une introduction aux propriétés pouvant être liées et montre comment les créer et les utiliser.
+ms.prod: xamarin
+ms.assetid: 1EE869D8-6FE1-45CA-A0AD-26EC7D032AD7
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/16/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 33b3763075b64ea8af615465825313a527d20db2
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138175"
 ---
-
 # <a name="xamarinforms-bindable-properties"></a>Xamarin.FormsPropriétés pouvant être liées
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior)

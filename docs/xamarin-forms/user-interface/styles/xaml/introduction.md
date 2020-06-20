@@ -1,8 +1,22 @@
 ---
-titre : « présentation Xamarin.Forms des styles » Description : «les styles permettent de personnaliser l’apparence des éléments visuels. Les styles sont définis pour un type spécifique et contiennent des valeurs pour les propriétés disponibles sur ce type.»
-ms. Prod : xamarin ms. AssetID : 3FF899C0-6CFB-4C1D-837D-9E9E10181967 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 04/27/2016 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Présentation des Xamarin.Forms styles
+description: Les styles permettent de personnaliser l’apparence des éléments visuels. Les styles sont définis pour un type spécifique et contiennent des valeurs pour les propriétés disponibles sur ce type.
+ms.prod: xamarin
+ms.assetid: 3FF899C0-6CFB-4C1D-837D-9E9E10181967
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/27/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5766af7da3a0cf550a2ccb3a926dad25fd7962eb
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138817"
 ---
-
 # <a name="introduction-to-xamarinforms-styles"></a>Présentation des Xamarin.Forms styles
 
 _Les styles permettent de personnaliser l’apparence des éléments visuels. Les styles sont définis pour un type spécifique et contiennent des valeurs pour les propriétés disponibles sur ce type._

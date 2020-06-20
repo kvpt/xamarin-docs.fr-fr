@@ -1,7 +1,22 @@
 ---
-titre : «Résumé du chapitre 9. Appels d’API spécifiques à la plateforme "Description :" création d’Mobile Apps avec Xamarin.Forms : Résumé du chapitre 9. L’API spécifique à la plateforme appelle "ms. Prod : xamarin ms. Technology : xamarin-Forms ms. AssetID : 4FFA1BD4-B3ED-461C-9B00-06ABF70D471D auteur : davidbritch ms. Author : dabritch ms. Date : 07/19/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Résumé du chapitre 9. Appels d’API spécifiques de la plateforme
+description: 'Création d’Mobile Apps avec Xamarin.Forms : Résumé du chapitre 9. Appels d’API spécifiques de la plateforme'
+ms.prod: xamarin
+ms.technology: xamarin-forms
+ms.assetid: 4FFA1BD4-B3ED-461C-9B00-06ABF70D471D
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/19/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e8feb636057f1e11c7df90236dee44697203d51c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136851"
 ---
-
 # <a name="summary-of-chapter-9-platform-specific-api-calls"></a>Résumé du chapitre 9. Appels d’API spécifiques de la plateforme
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter09)

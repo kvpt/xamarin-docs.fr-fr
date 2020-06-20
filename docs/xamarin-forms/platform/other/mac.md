@@ -1,8 +1,23 @@
 ---
-title : "Description de l’installation de la plateforme Mac" : "cet article explique comment ajouter un projet Mac à un Xamarin.Forms projet, qui produit une application capable de s’exécuter sur MacOS Sierra et MacOS El Capitan."
-ms. Prod : xamarin ms. AssetID : EEC549E0-F182-4F9C-B2BA-B31D19569AA5 ms. Technology : xamarin-Forms ms. Custom : xamu-Video Author : davidbritch ms. Author : dabritch ms. Date : 05/03/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Configuration de la plateforme Mac
+description: Cet article explique comment ajouter un projet Mac à un Xamarin.Forms projet, qui produit une application capable de s’exécuter sur MacOS Sierra et MacOS El Capitan.
+ms.prod: xamarin
+ms.assetid: EEC549E0-F182-4F9C-B2BA-B31D19569AA5
+ms.technology: xamarin-forms
+ms.custom: xamu-video
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/03/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 11897d2d3b8b7ba0a62956f1dbe4d8b873352e7a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139553"
 ---
-
 # <a name="mac-platform-setup"></a>Configuration de la plateforme Mac
 
 ![PRÉVERSION](~/media/shared/preview.png)

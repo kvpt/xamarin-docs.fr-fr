@@ -1,8 +1,22 @@
 ---
-titre : « ajout d’un module de reconnaissance de mouvement de balayage » Description : « cet article explique comment reconnaître un mouvement de balayage qui se produit sur une vue ».
-ms. Prod : xamarin ms. AssetID : 164976C2-1429-49FB-9EB6-621E2681C19B ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 08/14/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Ajout d’un module de reconnaissance des mouvements de balayage
+description: Cet article explique comment reconnaître un mouvement de balayage qui se produit sur une vue.
+ms.prod: xamarin
+ms.assetid: 164976C2-1429-49FB-9EB6-621E2681C19B
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/14/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 03663803313c870a3361c6e1ffc85cf1f8999068
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137868"
 ---
-
 # <a name="adding-a-swipe-gesture-recognizer"></a>Ajout d’un module de reconnaissance des mouvements de balayage
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-swipegesture)

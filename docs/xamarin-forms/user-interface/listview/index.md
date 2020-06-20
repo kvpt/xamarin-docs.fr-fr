@@ -1,8 +1,22 @@
 ---
-titre : « Xamarin.Forms ListView » Description : « ce guide présente le Xamarin.Forms ListView, qui peut être utilisé pour présenter des données dans des listes interactives ».
-ms. Prod : xamarin ms. AssetID : FEFDF7E0-720F-4BD1-863F-4477226AA695 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 09/04/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsListe
+description: Ce guide présente le Xamarin.Forms ListView, qui peut être utilisé pour présenter des données dans des listes interactives.
+ms.prod: xamarin
+ms.assetid: FEFDF7E0-720F-4BD1-863F-4477226AA695
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/04/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a1ff8dd5c8a8a4051cea8ce4b288c42bdbaa8d31
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139904"
 ---
-
 # <a name="xamarinforms-listview"></a>Xamarin.FormsListe
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistview)
@@ -24,7 +38,7 @@ Un `ListView` est mieux adapté à une collection composée d’un type de donn�
 
 Pour plus d’informations sur la liaison de données à une `ListView` instance, consultez [sources de données ListView](~/xamarin-forms/user-interface/listview/data-and-databinding.md).
 
-## <a name="components"></a>Composants
+## <a name="components"></a>Components
 
 Le `ListView` contrôle a un certain nombre de composants disponibles pour tester les fonctionnalités natives de chaque plateforme. Ces composants sont définis dans les sections suivantes.
 

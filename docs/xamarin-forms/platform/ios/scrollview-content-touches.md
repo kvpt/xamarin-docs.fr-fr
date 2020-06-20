@@ -1,8 +1,22 @@
 ---
-title : « ScrollView content touche on iOS » Description : «la plateforme spécifique vous permet d’utiliser des fonctionnalités uniquement disponibles sur une plateforme spécifique, sans implémenter de convertisseurs ou d’effets personnalisés. Cet article explique comment utiliser le spécifique à la plateforme iOS qui contrôle si un ScrollView gère un mouvement tactile ou le transmet à son contenu.»
-ms. Prod : xamarin ms. AssetID : 99F823DB-B379-40F0-A343-A9783C341120 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 10/24/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Le contenu ScrollView touche sur iOS
+description: Les spécificités des plateformes vous permettent d’utiliser des fonctionnalités uniquement disponibles sur une plateforme spécifique, sans implémenter de convertisseurs ou d’effets personnalisés. Cet article explique comment utiliser le spécifique à la plateforme iOS qui contrôle si un ScrollView gère un mouvement tactile ou le transmet à son contenu.
+ms.prod: xamarin
+ms.assetid: 99F823DB-B379-40F0-A343-A9783C341120
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/24/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9b8f743b2c3d7f4b38feb4cfc5015b1113620562
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137096"
 ---
-
 # <a name="scrollview-content-touches-on-ios"></a>Le contenu ScrollView touche sur iOS
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

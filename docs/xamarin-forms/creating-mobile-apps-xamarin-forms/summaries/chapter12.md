@@ -1,7 +1,22 @@
 ---
-titre : «Résumé du chapitre 12. Styles "Description :" création d’Mobile Apps avec Xamarin.Forms : Résumé du chapitre 12. Styles "ms. Prod : xamarin ms. Technology : xamarin-Forms ms. AssetID : 3EAE6BDC-8EFB-464B-A87B-1C35B8387BB3 Author : davidbritch ms. Author : dabritch ms. Date : 07/19/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Résumé du chapitre 12. Styles
+description: 'Création d’Mobile Apps avec Xamarin.Forms : Résumé du chapitre 12. Styles'
+ms.prod: xamarin
+ms.technology: xamarin-forms
+ms.assetid: 3EAE6BDC-8EFB-464B-A87B-1C35B8387BB3
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/19/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 22f7272751c30bed350fe7aada8d5dacf0acc809
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136784"
 ---
-
 # <a name="summary-of-chapter-12-styles"></a>Résumé du chapitre 12. Styles
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter12)

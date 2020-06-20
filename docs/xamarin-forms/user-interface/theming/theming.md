@@ -1,8 +1,22 @@
 ---
-titre : « Theme a Xamarin.Forms application » Description : « les thèmes peuvent être implémentés dans les Xamarin.Forms applications en créant un ResourceDictionary pour chaque thème, puis en chargeant les ressources avec l’extension de balisage DynamicResource ».
-ms. Prod : xamarin ms. assetId : B7B17F66-4E37-4B50-9A57-351B62BE4FED ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 08/07/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Thème d’une Xamarin.Forms application
+description: Ils peuvent être implémentés dans les Xamarin.Forms applications en créant un ResourceDictionary pour chaque thème, puis en chargeant les ressources avec l’extension de balisage DynamicResource.
+ms.prod: xamarin
+ms.assetId: B7B17F66-4E37-4B50-9A57-351B62BE4FED
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/07/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 3341ada6c5605917eeec79aac96e38cb99b40fc4
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138201"
 ---
-
 # <a name="theme-a-xamarinforms-application"></a>Thème d’une Xamarin.Forms application
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-theming/)

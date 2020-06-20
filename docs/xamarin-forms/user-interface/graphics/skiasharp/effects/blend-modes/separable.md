@@ -1,8 +1,22 @@
 ---
-titre : « description des modes de fusion séparables » : utilisez les modes de fusion séparable pour modifier les couleurs rouge, vert et bleu.
-ms. Prod : xamarin ms. Technology : xamarin-skiasharp ms. AssetID : 66D1A537-A247-484E-B5B9-FBCB7838FBE9 auteur : davidbritch ms. Author : dabritch ms. Date : 08/23/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Modes de fusion séparable
+description: Utilisez les modes de fusion séparable pour modifier les couleurs rouge, vert et bleu.
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 66D1A537-A247-484E-B5B9-FBCB7838FBE9
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/23/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c1939c30cbefdbf8d6546761a8c6ac7199bfff62
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139683"
 ---
-
 # <a name="the-separable-blend-modes"></a>Modes de fusion séparable
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

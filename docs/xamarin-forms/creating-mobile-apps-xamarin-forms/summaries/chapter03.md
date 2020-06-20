@@ -1,7 +1,22 @@
 ---
-titre : «Résumé du chapitre 3. Plus loin dans le texte « Description : » création d’Mobile Apps avec Xamarin.Forms : Résumé du chapitre 3. Plus loin dans le texte «ms. Prod : xamarin ms. Technology : xamarin-Forms ms. AssetID : 2E5581A6-4D3E-4BD5-9FDB-ACBA0F0FC734 Author : davidbritch ms. Author : dabritch ms. Date : 07/18/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Résumé du chapitre 3. Détails du texte
+description: 'Création d’Mobile Apps avec Xamarin.Forms : Résumé du chapitre 3. Détails du texte'
+ms.prod: xamarin
+ms.technology: xamarin-forms
+ms.assetid: 2E5581A6-4D3E-4BD5-9FDB-ACBA0F0FC734
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/18/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5423a9f716f384eca107003bdeca69615f8b459f
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136901"
 ---
-
 # <a name="summary-of-chapter-3-deeper-into-text"></a>Résumé du chapitre 3. Détails du texte
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03)

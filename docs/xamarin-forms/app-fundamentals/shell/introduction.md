@@ -1,8 +1,22 @@
 ---
-titre : « Xamarin.Forms Présentation de l’interpréteur de commandes » : « Xamarin.Forms l’interpréteur de commandes fournit les fonctionnalités fondamentales nécessaires à la plupart des applications, notamment une expérience utilisateur de navigation commune, un schéma de navigation basé sur les URI et un gestionnaire de recherche intégré ».
-ms. Prod : xamarin ms. AssetID : 4604DCB5-83DA-458A-8B02-6508A740BE0E ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 09/20/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsPrésentation de l’interpréteur de commandes
+description: Xamarin.FormsL’interpréteur de commandes fournit les fonctionnalités fondamentales nécessaires à la plupart des applications, notamment une expérience utilisateur de navigation commune, un schéma de navigation basé sur les URI et un gestionnaire de recherche intégré.
+ms.prod: xamarin
+ms.assetid: 4604DCB5-83DA-458A-8B02-6508A740BE0E
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/20/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 29a99161ff2ef2d71b6c803db994522bfe80ed03
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138734"
 ---
-
 # <a name="xamarinforms-shell-introduction"></a>Xamarin.FormsPrésentation de l’interpréteur de commandes
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)

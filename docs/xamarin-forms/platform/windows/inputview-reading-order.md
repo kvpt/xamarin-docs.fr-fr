@@ -1,8 +1,22 @@
 ---
-title : "InputView sens de lecture sur Windows" Description : "les spécificités de la plateforme vous permettent d’utiliser des fonctionnalités uniquement disponibles sur une plateforme spécifique, sans implémenter de convertisseurs ou d’effets personnalisés. Cet article explique comment utiliser le spécifique à la plateforme Windows, qui permet de détecter de manière dynamique l’ordre de lecture du texte bidirectionnel.»
-ms. Prod : xamarin ms. AssetID : E61BAEE0-C8B7-4F33-8DDC-FA1B9CA8E81D ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 10/24/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Ordre de lecture InputView sur Windows
+description: Les spécificités des plateformes vous permettent d’utiliser des fonctionnalités uniquement disponibles sur une plateforme spécifique, sans implémenter de convertisseurs ou d’effets personnalisés. Cet article explique comment utiliser le spécifique à la plateforme Windows, qui permet de détecter de manière dynamique le texte bidirectionnel.
+ms.prod: xamarin
+ms.assetid: E61BAEE0-C8B7-4F33-8DDC-FA1B9CA8E81D
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/24/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f5f0bcdc2d2c8eb1b51ad8dcd1014c649af80c90
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137759"
 ---
-
 # <a name="inputview-reading-order-on-windows"></a>Ordre de lecture InputView sur Windows
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

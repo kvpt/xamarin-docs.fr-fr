@@ -1,8 +1,22 @@
 ---
-titre : « Xamarin.Forms navigation » Description : «ce guide explique comment effectuer la navigation dans les Xamarin.Forms applications. Xamarin.Formsfournit un certain nombre d’expériences de navigation entre les pages différentes, en fonction du type de page utilisé.»
-ms. Prod : xamarin ms. AssetID : BC5D0C6C-D5A9-4B12-A492-ED1F570CEC87 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 12/01/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsDéplacement
+description: Ce guide explique comment effectuer une navigation dans les Xamarin.Forms applications. Xamarin.Formsfournit un certain nombre d’expériences de navigation entre les pages différentes, en fonction du type de page utilisé.
+ms.prod: xamarin
+ms.assetid: BC5D0C6C-D5A9-4B12-A492-ED1F570CEC87
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/01/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8c907cd8a4a1d14b936dee309610bffc67ef363f
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137837"
 ---
-
 # <a name="xamarinforms-navigation"></a>Xamarin.FormsDéplacement
 
 _Xamarin. Forms fournit un certain nombre d’expériences de navigation entre les pages différentes, en fonction du type de page utilisé._

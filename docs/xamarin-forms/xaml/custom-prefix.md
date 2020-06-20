@@ -1,8 +1,22 @@
 ---
-title : "Description des préfixes d’espace de noms XAML dans Xamarin.Forms " Description : "la classe XmlnsPrefixAttribute peut être utilisée par les auteurs de contrôle pour spécifier un préfixe recommandé à associer à un espace de noms XAML, pour l’utilisation de XAML."
-ms. Prod : xamarin ms. AssetID : 7B315BEC-7A35-48F4-A9C7-EF40255E95FF ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 02/28/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Préfixes d’espace de noms XAML recommandés dansXamarin.Forms
+description: La classe XmlnsPrefixAttribute peut être utilisée par les auteurs de contrôle pour spécifier un préfixe recommandé à associer à un espace de noms XAML, pour l’utilisation de XAML.
+ms.prod: xamarin
+ms.assetid: 7B315BEC-7A35-48F4-A9C7-EF40255E95FF
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/28/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 71ae523f40f3f7529c12f853778404e224fbae30
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138136"
 ---
-
 # <a name="xaml-namespace-recommended-prefixes-in-xamarinforms"></a>Préfixes d’espace de noms XAML recommandés dansXamarin.Forms
 
 La `XmlnsPrefixAttribute` classe peut être utilisée par les auteurs de contrôle pour spécifier un préfixe recommandé à associer à un espace de noms XAML, pour l’utilisation de XAML. Le préfixe est utile lors de la prise en charge de la sérialisation de l’arborescence d’objets en XAML, ou lors de l’interaction avec un environnement de conception qui a des fonctionnalités d’édition XAML. Par exemple :

@@ -1,8 +1,22 @@
 ---
-title : "Description de la barre d’outils de la page sur Windows" Description : "les spécificités de la plateforme vous permettent d’utiliser des fonctionnalités uniquement disponibles sur une plateforme spécifique, sans implémenter de convertisseurs ou d’effets personnalisés. Cet article explique comment utiliser la propre plateforme Windows qui modifie le positionnement d’une barre d’outils sur une page.»
-ms. Prod : xamarin ms. AssetID : 99F29E95-0C36-4A3B-BDE8-7E9F119E844E ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 10/24/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Positionnement de la barre d’outils de la page sur Windows
+description: Les spécificités des plateformes vous permettent d’utiliser des fonctionnalités uniquement disponibles sur une plateforme spécifique, sans implémenter de convertisseurs ou d’effets personnalisés. Cet article explique comment utiliser la propre plateforme Windows qui modifie le positionnement d’une barre d’outils sur une page.
+ms.prod: xamarin
+ms.assetid: 99F29E95-0C36-4A3B-BDE8-7E9F119E844E
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/24/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 76b4633e6b224e234f9d5f693f4e01ed7a35d6db
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138045"
 ---
-
 # <a name="page-toolbar-placement-on-windows"></a>Positionnement de la barre d’outils de la page sur Windows
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

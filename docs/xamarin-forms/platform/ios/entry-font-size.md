@@ -1,8 +1,22 @@
 ---
-title : "Description de la police d’entrée sur iOS" Description : "les spécificités de la plateforme vous permettent d’utiliser des fonctionnalités uniquement disponibles sur une plateforme spécifique, sans implémenter de convertisseurs ou d’effets personnalisés. Cet article explique comment utiliser le spécifique à la plateforme iOS qui met à l’échelle la taille de police d’une entrée.»
-ms. Prod : xamarin ms. AssetID : E8881D4E-902B-4397-A43E-916B2885EC87 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 10/24/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Taille de la police d’entrée sur iOS
+description: Les spécificités des plateformes vous permettent d’utiliser des fonctionnalités uniquement disponibles sur une plateforme spécifique, sans implémenter de convertisseurs ou d’effets personnalisés. Cet article explique comment utiliser le spécifique à la plateforme iOS qui met à l’échelle la taille de police d’une entrée.
+ms.prod: xamarin
+ms.assetid: E8881D4E-902B-4397-A43E-916B2885EC87
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/24/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 57498811d8789d8ef9ef775f8f39f141b77659c8
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138526"
 ---
-
 # <a name="entry-font-size-on-ios"></a>Taille de la police d’entrée sur iOS
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

@@ -1,8 +1,22 @@
 ---
-titre : « résolution des dépendances dans Xamarin.Forms » Description : cet article explique comment injecter une méthode de résolution des dépendances dans Xamarin.Forms afin que le conteneur d’injection de dépendances d’une application contrôle la création et la durée de vie des convertisseurs personnalisés, des effets et des implémentations de DependencyService.»
-ms. Prod : xamarin ms. AssetID : 491B87DC-14CB-4ADC-AC6C-40A7627B2524 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 07/27/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Résolution des dépendances dansXamarin.Forms
+description: Cet article explique comment injecter une méthode de résolution des dépendances dans Xamarin.Forms afin que le conteneur d’injection de dépendances d’une application contrôle la création et la durée de vie des convertisseurs, des effets et des implémentations de DependencyService personnalisés.
+ms.prod: xamarin
+ms.assetid: 491B87DC-14CB-4ADC-AC6C-40A7627B2524
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/27/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: ae30b4a4b75906613baf8a2568548c8890ccb33a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139085"
 ---
-
 # <a name="dependency-resolution-in-xamarinforms"></a>Résolution des dépendances dansXamarin.Forms
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-dicontainerdemo)

@@ -1,8 +1,22 @@
 ---
-title : « description de style dans Xamarin.Forms » Description : les styles peuvent hériter d’autres styles pour réduire la duplication et permettre une réutilisation. Cet article explique comment effectuer un héritage de style dans une Xamarin.Forms application.
-ms. Prod : xamarin ms. AssetID : 67A3A39C-8CC0-446D-8162-FFA73582D3B8 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 02/17/2016 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Héritage de style dansXamarin.Forms
+description: Les styles peuvent hériter d’autres styles pour réduire la duplication et permettre la réutilisation. Cet article explique comment effectuer un héritage de style dans une Xamarin.Forms application.
+ms.prod: xamarin
+ms.assetid: 67A3A39C-8CC0-446D-8162-FFA73582D3B8
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/17/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 80cc419ae098f4a0cbbd782785c0ec5ba03fa703
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138955"
 ---
-
 # <a name="style-inheritance-in-xamarinforms"></a>Héritage de style dansXamarin.Forms
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)

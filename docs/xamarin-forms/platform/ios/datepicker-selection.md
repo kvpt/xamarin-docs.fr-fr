@@ -1,8 +1,22 @@
 ---
-title : "sélection de l’élément DatePicker sur iOS" Description : "les spécificités de la plateforme vous permettent d’utiliser des fonctionnalités uniquement disponibles sur une plateforme spécifique, sans implémenter de convertisseurs ou d’effets personnalisés. Cet article explique comment utiliser le spécifique à la plateforme iOS qui contrôle le moment où la sélection de l’élément se produit dans un DatePicker.
-ms. Prod : xamarin ms. AssetID : 847E69D1-6AE0-4E82-B9C8-919E009C2014 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 01/15/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Sélection de l’élément DatePicker sur iOS
+description: Les spécificités des plateformes vous permettent d’utiliser des fonctionnalités uniquement disponibles sur une plateforme spécifique, sans implémenter de convertisseurs ou d’effets personnalisés. Cet article explique comment utiliser le spécifique à la plateforme iOS qui contrôle le moment où la sélection de l’élément se produit dans un DatePicker.
+ms.prod: xamarin
+ms.assetid: 847E69D1-6AE0-4E82-B9C8-919E009C2014
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/15/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c65cac4c777150185524b291adc6e9d1e79958d3
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138552"
 ---
-
 # <a name="datepicker-item-selection-on-ios"></a>Sélection de l’élément DatePicker sur iOS
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

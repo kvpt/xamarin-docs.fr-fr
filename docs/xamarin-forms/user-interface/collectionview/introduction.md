@@ -1,8 +1,22 @@
 ---
-titre : « Xamarin.Forms CollectionView Introduction » Description : « CollectionView est une vue flexible et performante pour la présentation de listes de données à l’aide de spécifications de disposition différentes ».
-ms. Prod : xamarin ms. AssetID : 5C08F687-B9E6-4CE4-8726-F287F6D0B6A7 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 12/11/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsPrésentation de CollectionView
+description: Le CollectionView est une vue flexible et performante pour la présentation de listes de données à l’aide de différentes spécifications de disposition.
+ms.prod: xamarin
+ms.assetid: 5C08F687-B9E6-4CE4-8726-F287F6D0B6A7
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/11/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d6a09ead9c3def2f58ad2755de4574f6d6e331e8
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136433"
 ---
-
 # <a name="xamarinforms-collectionview-introduction"></a>Xamarin.FormsPrésentation de CollectionView
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)

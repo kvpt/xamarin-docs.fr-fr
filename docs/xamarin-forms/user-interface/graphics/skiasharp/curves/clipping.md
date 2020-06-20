@@ -1,8 +1,22 @@
 ---
-titre : « découpage avec les chemins d’accès et les régions » : « cet article explique comment utiliser les chemins d’accès SkiaSharp pour découper des graphiques dans des zones spécifiques, et pour créer des régions et illustre cela avec un exemple de code ».
-ms. Prod : xamarin ms. Technology : xamarin-skiasharp ms. AssetID : 8022FBF9-2208-43DB-94D8-0A4E9A5DA07F auteur : davidbritch ms. Author : dabritch ms. Date : 06/16/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Détourage avec tracés et régions
+description: Cet article explique comment utiliser des chemins d’accès SkiaSharp pour découper des graphiques dans des zones spécifiques, et pour créer des régions, et illustre cela avec un exemple de code.
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 8022FBF9-2208-43DB-94D8-0A4E9A5DA07F
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/16/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a4bb6c30ada13691146d00d2094df8f13ca453b9
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84140255"
 ---
-
 # <a name="clipping-with-paths-and-regions"></a>Détourage avec tracés et régions
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

@@ -1,8 +1,22 @@
 ---
-titre : « lignes et traits d’extrémité » Description : « cet article explique comment utiliser SkiaSharp pour dessiner des lignes avec différentes épaisseurs de trait dans les Xamarin.Forms applications et illustre cela avec un exemple de code ».
-ms. Prod : xamarin ms. AssetID : 1F854DDD-5D1B-4DE4-BD2D-584439429FDB ms. Technology : xamarin-skiasharp auteur : davidbritch ms. Author : dabritch ms. Date : 03/10/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Lignes et extrémités de trait
+description: Cet article explique comment utiliser SkiaSharp pour dessiner des lignes avec différentes épaisseurs de trait dans les Xamarin.Forms applications et illustre cela avec un exemple de code.
+ms.prod: xamarin
+ms.assetid: 1F854DDD-5D1B-4DE4-BD2D-584439429FDB
+ms.technology: xamarin-skiasharp
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/10/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 87b97ad913e08c42d16bbf055f168c07b9bd60e8
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137202"
 ---
-
 # <a name="lines-and-stroke-caps"></a>Lignes et extrémités de trait
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

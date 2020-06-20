@@ -1,7 +1,22 @@
 ---
-titre : «Résumé du chapitre 5. Gestion des tailles « Description : » création d’Mobile Apps avec Xamarin.Forms : Résumé du chapitre 5. Traitement des tailles «ms. Prod : xamarin ms. Technology : xamarin-Forms ms. AssetID : 486800E9-C09F-4B95-9AC2-C0F8FE563BCF auteur : davidbritch ms. Author : dabritch ms. Date : 07/19/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Résumé du chapitre 5. Gestion des tailles
+description: 'Création d’Mobile Apps avec Xamarin.Forms : Résumé du chapitre 5. Gestion des tailles'
+ms.prod: xamarin
+ms.technology: xamarin-forms
+ms.assetid: 486800E9-C09F-4B95-9AC2-C0F8FE563BCF
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/19/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 37403cfe9f37972c20fb074db5e30cc54b60fea9
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136875"
 ---
-
 # <a name="summary-of-chapter-5-dealing-with-sizes"></a>Résumé du chapitre 5. Gestion des tailles
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05)

@@ -1,8 +1,22 @@
 ---
-title : " Xamarin.Forms Description des convertisseurs personnalisés de l’interpréteur de commandes" : "les Xamarin.Forms applications de l’interpréteur de commandes sont hautement personnalisables via les propriétés et les méthodes exposées par les différentes classes de Shell. Toutefois, il est également possible de créer un convertisseur personnalisé Shell quand des personnalisations spécifiques à une plateforme plus sophistiquées sont requises.»
-ms. Prod : xamarin ms. AssetID : 3B1A6AE8-1D1E-4C34-B9AB-48F4444FEF32 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 05/06/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsConvertisseurs personnalisés de l’interpréteur de commandes
+description: Xamarin.FormsLes applications de l’interpréteur de commandes sont hautement personnalisables par le biais des propriétés et des méthodes exposées par les différentes classes de Shell. Toutefois, il est également possible de créer un renderer Shell personnalisé lorsque des personnalisations plus sophistiquées spécifiques à une plateforme sont requises.
+ms.prod: xamarin
+ms.assetid: 3B1A6AE8-1D1E-4C34-B9AB-48F4444FEF32
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/06/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 321539f877a86804245d27a2d76d1edeb1abd1e9
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137785"
 ---
-
 # <a name="xamarinforms-shell-custom-renderers"></a>Xamarin.FormsConvertisseurs personnalisés de l’interpréteur de commandes
 
 L’un des avantages des Xamarin.Forms applications Shell est que leur apparence et leur comportement sont hautement personnalisables par le biais des propriétés et des méthodes exposées par les différentes classes de Shell. Toutefois, il est également possible de créer un renderer Shell personnalisé lorsque des personnalisations plus sophistiquées spécifiques à une plateforme sont requises. Comme avec d’autres renderers personnalisés, un renderer Shell personnalisé peut être ajouté à un projet de plateforme unique afin de personnaliser son apparence et son comportement, tout en autorisant le comportement par défaut sur l’autre plate-forme ; ou un renderer Shell différent peut être ajouté à chaque projet de plateforme pour personnaliser son apparence et son comportement à la fois sur iOS et Android.

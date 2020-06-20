@@ -1,8 +1,23 @@
 ---
-titre : « localisation de droite à gauche » : « la localisation de droite à gauche ajoute la prise en charge du sens du déroulement de droite à gauche aux Xamarin.Forms applications ».
-ms. Prod : xamarin ms. AssetID : 90E0CB16-C42A-4CC8-A70E-0C2CFB64A429 ms. Technology : xamarin-Forms ms. Custom : xamu-Video Author : davidbritch ms. Author : dabritch ms. Date : 05/07/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Localisation de droite à gauche
+description: La localisation de droite à gauche ajoute la prise en charge du sens du déroulement de droite à gauche aux Xamarin.Forms applications.
+ms.prod: xamarin
+ms.assetid: 90E0CB16-C42A-4CC8-A70E-0C2CFB64A429
+ms.technology: xamarin-forms
+ms.custom: xamu-video
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/07/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 212674472706a36c66436a3955ab7b988f8e246b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137551"
 ---
-
 # <a name="right-to-left-localization"></a>Localisation de droite à gauche
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todolocalizedrtl)

@@ -1,7 +1,22 @@
 ---
-titre : «Résumé du chapitre 16. Description de la liaison de données : «création d’Mobile Apps avec Xamarin.Forms : Résumé du chapitre 16. Liaison de données «MS. Prod : xamarin ms. Technology : xamarin-Forms ms. AssetID : ED997DB0-C229-4868-A5FB-928703B377D6 auteur : davidbritch ms. Author : dabritch ms. Date : 07/18/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Résumé du chapitre 16. Liaison de données
+description: 'Création d’Mobile Apps avec Xamarin.Forms : Résumé du chapitre 16. Liaison de données'
+ms.prod: xamarin
+ms.technology: xamarin-forms
+ms.assetid: ED997DB0-C229-4868-A5FB-928703B377D6
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/18/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: ece93730100001e8339a5f50cdb7ac437d96fa62
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136732"
 ---
-
 # <a name="summary-of-chapter-16-data-binding"></a>Résumé du chapitre 16. Liaison de données
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16)

@@ -1,8 +1,22 @@
 ---
-title : « SearchBar Vérification orthographique sur Windows » Description : «les spécificités de la plateforme vous permettent d’utiliser des fonctionnalités uniquement disponibles sur une plateforme spécifique, sans implémenter de convertisseurs ou d’effets personnalisés. Cet article explique comment utiliser la propre plateforme Windows qui permet à un SearchBar d’interagir avec le moteur de vérification orthographique.»
-ms. Prod : xamarin ms. AssetID : 7974C91F-7502-4DB3-B0E9-C45E943DDA26 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 10/24/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: " SearchBar Vérification orthographique sur Windows"
+description: Les spécificités des plateformes vous permettent d’utiliser des fonctionnalités uniquement disponibles sur une plateforme spécifique, sans implémenter de convertisseurs ou d’effets personnalisés. Cet article explique comment utiliser le spécifique à la plate-forme Windows qui permet à un SearchBar d’interagir avec le moteur de vérification orthographique.
+ms.prod: xamarin
+ms.assetid: 7974C91F-7502-4DB3-B0E9-C45E943DDA26
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/24/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f6c8810ea37c767ef67c7f53d312b63a9de09f26
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136563"
 ---
-
 # <a name="searchbar-spell-check-on-windows"></a>SearchBar Vérification orthographique sur Windows
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

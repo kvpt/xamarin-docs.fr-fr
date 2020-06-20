@@ -1,7 +1,22 @@
 ---
-titre : «Résumé du chapitre 10. Description des extensions de balisage XAML : «création d’Mobile Apps avec Xamarin.Forms : Résumé du chapitre 10. Extensions de balisage XAML "ms. Prod : xamarin ms. Technology : xamarin-Forms ms. AssetID : 575EAE55-BD4D-470F-A583-3D065FA102E2 auteur : davidbritch ms. Author : dabritch ms. Date : 07/19/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Résumé du chapitre 10. Extensions de balisage XAML
+description: 'Création d’Mobile Apps avec Xamarin.Forms : Résumé du chapitre 10. Extensions de balisage XAML'
+ms.prod: xamarin
+ms.technology: xamarin-forms
+ms.assetid: 575EAE55-BD4D-470F-A583-3D065FA102E2
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/19/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8f23034df684e778677e4f2e480e1c41807536fb
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136810"
 ---
-
 # <a name="summary-of-chapter-10-xaml-markup-extensions"></a>Résumé du chapitre 10. Extensions de balisage XAML
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10)

@@ -1,8 +1,22 @@
 ---
-titre : « authentification et autorisation » Description : « ce chapitre explique comment l’application mobile eShopOnContainers effectue l’authentification et l’autorisation sur les microservices en conteneur ».
-ms. Prod : xamarin ms. AssetID : e3f27b4c-f7f5-4839-a48c-30bcb919c59e ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 08/08/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Authentification et autorisation
+description: Ce chapitre explique comment l’application mobile eShopOnContainers effectue l’authentification et l’autorisation sur les microservices en conteneur.
+ms.prod: xamarin
+ms.assetid: e3f27b4c-f7f5-4839-a48c-30bcb919c59e
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/08/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8b712b2a5d7eeb2ee5e71047b9e6c460eb10d72a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573831"
 ---
-
 # <a name="authentication-and-authorization"></a>Authentification et autorisation
 
 L’authentification est le processus qui consiste à obtenir des informations d’identification, telles que le nom et le mot de passe d’un utilisateur, et à valider ces informations d’identification par rapport à une autorité. Si les informations d’identification sont valides, l’entité qui a envoyé les informations d’identification est considérée comme une identité authentifiée. Une fois qu’une identité a été authentifiée, un processus d’autorisation détermine si cette identité a accès à une ressource donnée.

@@ -1,8 +1,22 @@
 ---
-title : "description spécifique à la plateforme" : "les spécificités de la plateforme vous permettent d’utiliser des fonctionnalités uniquement disponibles sur une plateforme spécifique, sans implémenter de convertisseurs ou d’effets personnalisés. Cet article explique comment utiliser et créer des caractéristiques spécifiques à la plateforme.
-ms. Prod : xamarin ms. AssetID : 4729DB9C-8800-4E29-9D66-3BE13C5F8C94 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 10/01/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Spécificités de la plateforme
+description: Les spécificités des plateformes vous permettent d’utiliser des fonctionnalités uniquement disponibles sur une plateforme spécifique, sans implémenter de convertisseurs ou d’effets personnalisés. Cet article explique comment utiliser et créer des spécifiques à la plateforme.
+ms.prod: xamarin
+ms.assetid: 4729DB9C-8800-4E29-9D66-3BE13C5F8C94
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/01/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8478db85bd9904ee6c5cfeab9b2af390e7d3096d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139501"
 ---
-
 # <a name="platform-specifics"></a>Spécificités de la plateforme
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

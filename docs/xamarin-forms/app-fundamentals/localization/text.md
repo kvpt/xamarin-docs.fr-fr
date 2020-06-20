@@ -1,8 +1,23 @@
 ---
-title : "localisation de chaînes et d’images dans Xamarin.Forms " Description : "les Xamarin.Forms applications peuvent être localisées à l’aide de fichiers de ressources .net."
-zone_pivot_groups : « Platform » ms. Prod : xamarin ms. AssetID : 852B4ED3-2D2D-48A5-A759-A6591F6A1509 ms. Technology : xamarin-Forms Author : profexorgeek ms. Author : jusjohns ms. Date : 11/01/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Localisation de chaîne et d’image dansXamarin.Forms
+description: Xamarin.Formsles applications peuvent être localisées à l’aide de fichiers de ressources .NET.
+zone_pivot_groups: platform
+ms.prod: xamarin
+ms.assetid: 852B4ED3-2D2D-48A5-A759-A6591F6A1509
+ms.technology: xamarin-forms
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 11/01/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: af15dc5a23404a11be6207bef7b4fc3e4bf9fad7
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137600"
 ---
-
 # <a name="xamarinforms-string-and-image-localization"></a>Xamarin.FormsLocalisation de chaînes et d’images
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingresxlocalization)

@@ -1,8 +1,22 @@
 ---
-titre : « Xamarin.Forms Description du géocodage » : cet article explique comment géocoder et inverser les données cartographiques géocode, à l’aide de Xamarin.Forms . Classe de géocodeur Maps.»
-ms. Prod : xamarin ms. AssetID : DE7DB31A-8921-4614-8B49-DAEF1E7B03B3 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 10/22/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsGéocodage de la carte
+description: Cet article explique comment géocoder et inverser les données de la carte géocode à l’aide du Xamarin.Forms . Classe de géocodeur Maps.
+ms.prod: xamarin
+ms.assetid: DE7DB31A-8921-4614-8B49-DAEF1E7B03B3
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/22/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: fe099235857f6bd0531539e3aa84e41bf59b50ba
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139865"
 ---
-
 # <a name="xamarinforms-map-geocoding"></a>Xamarin.FormsGéocodage de la carte
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)

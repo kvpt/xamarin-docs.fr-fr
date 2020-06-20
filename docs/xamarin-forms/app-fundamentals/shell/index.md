@@ -1,8 +1,22 @@
 ---
-titre : « Xamarin.Forms Shell » Description : « ce guide explique comment utiliser Xamarin.Forms l’interpréteur de commandes, ce qui réduit la complexité des Xamarin.Forms applications en fournissant les fonctionnalités fondamentales nécessaires à la plupart des applications. »
-ms. Prod : xamarin ms. AssetID : 85B322AA-808F-41B6-953A-5877264AE643 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 05/28/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsShell
+description: Ce guide explique comment utiliser Xamarin.Forms l’interpréteur de commandes, qui réduit la complexité des Xamarin.Forms applications en fournissant les fonctionnalités fondamentales nécessaires à la plupart des applications.
+ms.prod: xamarin
+ms.assetid: 85B322AA-808F-41B6-953A-5877264AE643
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/28/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0acf00d85c2bfb823ec1cfba099179bb6743117c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138747"
 ---
-
 # <a name="xamarinforms-shell"></a>Xamarin.FormsShell
 
 ## <a name="introduction"></a>[Introduction](introduction.md)
@@ -13,7 +27,7 @@ Xamarin.FormsL’interpréteur de commandes réduit la complexité du développe
 
 Le processus de création d’une Xamarin.Forms application d’interpréteur de commandes consiste à créer un fichier XAML qui sous-classe la `Shell` classe, à définir la `MainPage` propriété de la classe de l’application `App` sur l’objet sous-classé, puis à `Shell` décrire la hiérarchie visuelle de l’application dans la classe sous-classée `Shell` .
 
-## <a name="flyout"></a>[Menu volant](flyout.md)
+## <a name="flyout"></a>[Flyout](flyout.md)
 
 Le menu volant est le menu racine d’une application Shell, accessible via une icône ou en balayant depuis le côté de l’écran. Le menu volant se compose d’un en-tête facultatif, de différents éléments de menu volant et d’éléments de menu facultatifs.
 

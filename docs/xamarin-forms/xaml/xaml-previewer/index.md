@@ -1,8 +1,23 @@
 ---
-title : "Description du générateur d’aperçu XAML pour Xamarin.Forms " Description : "cet article explique comment utiliser le générateur d’aperçu XAML pour afficher les Xamarin.Forms dispositions rendues à mesure que vous tapez. Le générateur d’aperçu XAML est disponible dans Visual Studio 2019 et Visual Studio 2019 pour Mac.
-zone_pivot_groups : Platform ms. Prod : xamarin ms. AssetID : 84769ff1-72fd-4C44-8251-dd6d5bf8c7b2 ms. Technology : xamarin-Forms Author : maddyleger1 ms. Author : maleger ms. Date : 03/16/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Générateur d’aperçu XAML pourXamarin.Forms
+description: Cet article explique comment utiliser le générateur d’aperçu XAML pour afficher les Xamarin.Forms dispositions rendues à mesure que vous tapez. Le générateur d’aperçu XAML est disponible dans Visual Studio 2019 et Visual Studio 2019 pour Mac.
+zone_pivot_groups: platform
+ms.prod: xamarin
+ms.assetid: 84769ff1-72fd-4c44-8251-dd6d5bf8c7b2
+ms.technology: xamarin-forms
+author: maddyleger1
+ms.author: maleger
+ms.date: 03/16/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 6916d5fde688c5b1162f12db0d36bc3ca27156d8
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137317"
 ---
-
 # <a name="xaml-previewer-for-xamarinforms"></a>Générateur d’aperçu XAML pourXamarin.Forms
 
 _Afficher les Xamarin.Forms dispositions rendues à mesure que vous tapez_

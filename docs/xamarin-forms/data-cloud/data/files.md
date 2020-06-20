@@ -1,8 +1,22 @@
 ---
-title : « gestion des fichiers dans Xamarin.Forms «Description » : la gestion des fichiers avec Xamarin.Forms peut être réalisée à l’aide du code dans une bibliothèque .NET standard, ou à l’aide de ressources incorporées.»
-ms. Prod : xamarin ms. AssetID : 9987C3F6-5F04-403B-BBB4-ECB024EA6CC8 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 06/21/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Gestion des fichiers dansXamarin.Forms
+description: La gestion des fichiers avec Xamarin.Forms peut être effectuée à l’aide de code dans une bibliothèque .NET standard, ou à l’aide de ressources incorporées.
+ms.prod: xamarin
+ms.assetid: 9987C3F6-5F04-403B-BBB4-ECB024EA6CC8
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/21/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f62e5522b5b9a10a3806a70fe949561d77ce0d4e
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84574351"
 ---
-
 # <a name="file-handling-in-xamarinforms"></a>Gestion des fichiers dansXamarin.Forms
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfiles)
@@ -61,7 +75,7 @@ Pour incorporer un fichier dans un assembly **.NET Standard**, créez ou ajoutez
 
 -----
 
-`GetManifestResourceStream` est utilisé pour accéder au fichier incorporé à l’aide de son **ID de ressource**. Par défaut, l’ID de ressource est le nom préfixé avec l’espace de noms par défaut pour le projet dans lequel il est incorporé. dans ce cas, l’assembly est **WorkingWithFiles** et le nom de fichier est **LibTextResource. txt**, donc l’ID de ressource est `WorkingWithFiles.LibTextResource.txt` .
+`GetManifestResourceStream` est utilisé pour accéder au fichier incorporé à l’aide de son **ID de ressource**. Par défaut, l’ID de ressource est le nom de fichier préfixé avec l’espace de noms par défaut pour le projet dans lequel il est incorporé. dans ce cas, l’assembly est **WorkingWithFiles** et le nom de fichier est **LibTextResource.txt**, donc l’ID de ressource est `WorkingWithFiles.LibTextResource.txt` .
 
 ```csharp
 var assembly = IntrospectionExtensions.GetTypeInfo(typeof(LoadResourceText)).Assembly;

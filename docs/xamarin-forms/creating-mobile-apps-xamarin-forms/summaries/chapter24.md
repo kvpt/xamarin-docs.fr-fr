@@ -1,8 +1,23 @@
 ---
-titre : «Résumé du chapitre 24. Navigation entre les pages « Description : » création d’Mobile Apps avec Xamarin.Forms : Résumé du chapitre 24. Navigation entre les pages «ms. Prod : xamarin ms. Technology : xamarin-Forms ms. AssetID : DDCDB49C-6008-4F72-B095-463EE21D7C23 auteur : davidbritch ms. Author : dabritch ms. Date : 11/07/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Résumé du chapitre 24. Navigation de page
+description: 'Création d’Mobile Apps avec Xamarin.Forms : Résumé du chapitre 24. Navigation de page'
+ms.prod: xamarin
+ms.technology: xamarin-forms
+ms.assetid: DDCDB49C-6008-4F72-B095-463EE21D7C23
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/07/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 09622adc269027b589a7345a7d4411c3dcecbf0c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136641"
 ---
-
-# <a name="summary-of-chapter-24-page-navigation"></a>Résumé du chapitre 24. Navigation entre les pages
+# <a name="summary-of-chapter-24-page-navigation"></a>Résumé du chapitre 24. Navigation de page
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24)
 

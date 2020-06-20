@@ -1,8 +1,23 @@
 ---
-title : " Xamarin.Forms notions de base de XAML" Description : "ce guide explique comment prendre en main le code XAML multiplateforme pour les appareils mobiles. XAML permet aux développeurs de définir des interfaces utilisateur dans des Xamarin.Forms applications à l’aide du balisage plutôt que du code.»
-ms. Prod : xamarin ms. Custom : vidéo ms. AssetID : 67CC2CD6-D10A-4B14-9696-1D3A410EFFBF ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 10/25/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsConcepts de base du langage XAML
+description: Ce guide explique comment prendre en main le XAML multiplateforme pour les appareils mobiles. XAML permet aux développeurs de définir des interfaces utilisateur dans des Xamarin.Forms applications à l’aide du balisage plutôt que du code.
+ms.prod: xamarin
+ms.custom: video
+ms.assetid: 67CC2CD6-D10A-4B14-9696-1D3A410EFFBF
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/25/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8f5f69038f7d5cfe7ad46f013acb1519c4e9569f
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138617"
 ---
-
 # <a name="xamarinforms-xaml-basics"></a>Xamarin.FormsConcepts de base du langage XAML
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
@@ -37,7 +52,7 @@ XAML est fondamentalement XML, mais XAML possède des fonctionnalités de syntax
 
 Ces fonctionnalités ne sont *pas* des extensions XML. XAML est entièrement conforme à XML. Toutefois, ces fonctionnalités de syntaxe XAML utilisent XML de manière unique. Elles sont décrites en détail dans les articles ci-dessous, qui se terminent par une introduction à l’utilisation du code XAML pour l’implémentation de MVVM.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>Spécifications
 
 Cet article suppose une connaissance du fonctionnement de Xamarin.Forms . Cet article suppose également une certaine connaissance de XML, notamment la compréhension de l’utilisation des déclarations d’espaces de noms XML et des termes *élément*, *balise*et *attribut*.
 

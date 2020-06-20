@@ -1,8 +1,22 @@
 ---
-title : "choisir une Xamarin.Forms disposition" Description : "les Xamarin.Forms classes de disposition vous permettent d’organiser et de regrouper des contrôles d’interface utilisateur dans votre application."
-ms. Prod : xamarin ms. AssetID : 05A39752-A174-447E-A30D-3CC9EF98CB96 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 08/21/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Choisir une Xamarin.Forms disposition
+description: Xamarin.Formsles classes de disposition vous permettent d’organiser et de regrouper des contrôles d’interface utilisateur dans votre application.
+ms.prod: xamarin
+ms.assetid: 05A39752-A174-447E-A30D-3CC9EF98CB96
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/21/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 16a48423d05ce1cede75c0020bf18f4f398f5adc
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138500"
 ---
-
 # <a name="choose-a-xamarinforms-layout"></a>Choisir une Xamarin.Forms disposition
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)

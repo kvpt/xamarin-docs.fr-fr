@@ -1,8 +1,22 @@
 ---
-title : « Xamarin.Forms Data Binding » Description : «la liaison de données est la technique de liaison des propriétés de deux objets afin que les modifications apportées à une propriété soient répercutées automatiquement dans l’autre propriété. La liaison de données fait partie intégrante de l’architecture d’application MVVM (Model-View-ViewModel).
-ms. Prod : xamarin ms. AssetID : 938E85C8-521D-43B9-92CB-D591A06D98A6 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 03/23/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsLiaison de données
+description: La liaison de données est la technique qui permet de lier les propriétés de deux objets afin que les changements d’une propriété soient automatiquement répercutés sur l’autre propriété. La liaison de données fait partie intégrante de l’architecture d’application modèle-vue-vue modèle (MVVM).
+ms.prod: xamarin
+ms.assetid: 938E85C8-521D-43B9-92CB-D591A06D98A6
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/21/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9abbe60865cbf5fb9082b5f4882c27fe095b36ac
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84946453"
 ---
-
 # <a name="xamarinforms-data-binding"></a>Xamarin.FormsLiaison de données
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
@@ -55,6 +69,10 @@ Utilisez des liaisons relatives pour définir la source de liaison par rapport �
 ## <a name="binding-fallbacks"></a>[Valeurs de repli pour les liaisons](binding-fallbacks.md)
 
 Renforcez les liaisons de données en définissant les valeurs de secours à utiliser en cas d’échec du processus de liaison.
+
+## <a name="multi-bindings"></a>[Liaisons multiples](multibinding.md)
+
+Attachez une collection d' [`Binding`](xref:Xamarin.Forms.Binding) objets à une propriété de cible de liaison unique.
 
 ## <a name="the-command-interface"></a>[Interface de commande](commanding.md)
 

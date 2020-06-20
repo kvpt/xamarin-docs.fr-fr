@@ -1,8 +1,22 @@
 ---
-titre : « rotations 3D dans SkiaSharp » Description : « cet article explique comment utiliser des transformations non affines pour faire pivoter des objets 2D dans l’espace 3D et illustre cela avec un exemple de code ».
-ms. Prod : xamarin ms. Technology : xamarin-skiasharp ms. AssetID : B5894EA0-C415-41F9-93A4-BBF6EC72AFB9 auteur : davidbritch ms. Author : dabritch ms. Date : 04/14/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Rotations 3D dans SkiaSharp
+description: Cet article explique comment utiliser des transformations non affines pour faire pivoter des objets 2D dans l’espace 3D et illustre cela avec un exemple de code.
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: B5894EA0-C415-41F9-93A4-BBF6EC72AFB9
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/14/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 3706139a2c15d01af67203c2bd09b281de80ed52
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84140203"
 ---
-
 # <a name="3d-rotations-in-skiasharp"></a>Rotations 3D dans SkiaSharp
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

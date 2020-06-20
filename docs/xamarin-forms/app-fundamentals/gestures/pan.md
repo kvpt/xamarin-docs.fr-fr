@@ -1,8 +1,22 @@
 ---
-titre : « ajout d’un module de reconnaissance de mouvement panoramique » : cet article explique comment utiliser un mouvement panoramique pour faire pivoter une image horizontalement et verticalement, de sorte que tout le contenu de l’image puisse être affiché lorsqu’il est affiché dans une fenêtre d’affichage plus petite que les dimensions de l’image.
-ms. Prod : xamarin ms. AssetID : 42CBD2CF-432D-4F19-A05E-D569BB7F8713 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 01/21/2016 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Ajout d’un module de reconnaissance des mouvements panoramiques
+description: Cet article explique comment utiliser un mouvement panoramique pour faire un panoramique horizontal et vertical d’une image afin que tout le contenu de l’image soit visible quand il est affiché dans une fenêtre d’affichage plus petite que les dimensions de l’image.
+ms.prod: xamarin
+ms.assetid: 42CBD2CF-432D-4F19-A05E-D569BB7F8713
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/21/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 53122991811c06360e8d015a753096cb35c1cca0
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137629"
 ---
-
 # <a name="adding-a-pan-gesture-recognizer"></a>Ajout d’un module de reconnaissance des mouvements panoramiques
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-pangesture)

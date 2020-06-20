@@ -1,8 +1,22 @@
 ---
-title : " Xamarin.Forms Description de l’initialisation et de la configuration de la carte" : " Xamarin.Forms . Le package NuGet Maps est requis pour utiliser la fonctionnalité Maps dans une application. En outre, l’accès à l’emplacement de l’utilisateur nécessite des autorisations d’emplacement pour être accordé à l’application.»
-ms. Prod : xamarin ms. AssetID : 59CD1344-8248-406C-9144-0C8A67141E5B ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 02/07/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsInitialisation et configuration de la carte
+description: Xamarin.Forms. Le package NuGet Maps est requis pour utiliser la fonctionnalité Maps dans une application. En outre, l’accès à l’emplacement de l’utilisateur nécessite des autorisations d’emplacement pour être accordé à l’application.
+ms.prod: xamarin
+ms.assetid: 59CD1344-8248-406C-9144-0C8A67141E5B
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/07/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 52e2ac5f8075c57f533fcba064223f355e07ba48
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139839"
 ---
-
 # <a name="xamarinforms-map-initialization-and-configuration"></a>Xamarin.FormsInitialisation et configuration de la carte
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)

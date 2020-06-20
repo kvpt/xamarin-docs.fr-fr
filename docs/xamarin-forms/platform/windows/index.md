@@ -1,8 +1,22 @@
 ---
-titre : « fonctionnalités de la plateforme Windows » : cet article explique la prise en charge de la plateforme Windows qui est disponible dans Xamarin.Forms .
-ms. Prod : xamarin ms. AssetID : F6EA9E49-FB3E-442F-AF13-B7AD0C80D11F ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 01/16/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Fonctionnalités de la plateforme Windows
+description: Cet article explique la prise en charge de la plateforme Windows qui est disponible dans Xamarin.Forms .
+ms.prod: xamarin
+ms.assetid: F6EA9E49-FB3E-442F-AF13-B7AD0C80D11F
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/16/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 52246ce5d54ba97e91777f598f25c187901f89c4
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137772"
 ---
-
 # <a name="windows-platform-features"></a>Fonctionnalités de la plateforme Windows
 
 Le développement Xamarin.Forms d’applications pour les plateformes Windows nécessite Visual Studio. La [page plateformes prises en charge](~/get-started/supported-platforms.md) contient des informations supplémentaires sur les conditions préalables.

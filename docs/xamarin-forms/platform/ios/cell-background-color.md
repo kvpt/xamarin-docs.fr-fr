@@ -1,8 +1,22 @@
 ---
-titre : « couleur d’arrière-plan de la cellule sur iOS » Description : «les spécificités de la plateforme vous permettent d’utiliser des fonctionnalités uniquement disponibles sur une plateforme spécifique, sans implémenter de convertisseurs ou d’effets personnalisés. Cet article explique comment utiliser le spécifique à la plateforme iOS qui définit la couleur d’arrière-plan par défaut des cellules sur iOS.
-ms. Prod : xamarin ms. AssetID : 2A3FDACF-5AE2-40DE-8488-6FE41733712F ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 10/24/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Couleur d’arrière-plan de cellule sur iOS
+description: Les spécificités des plateformes vous permettent d’utiliser des fonctionnalités uniquement disponibles sur une plateforme spécifique, sans implémenter de convertisseurs ou d’effets personnalisés. Cet article explique comment utiliser le spécifique à la plateforme iOS qui définit la couleur d’arrière-plan par défaut des cellules sur iOS.
+ms.prod: xamarin
+ms.assetid: 2A3FDACF-5AE2-40DE-8488-6FE41733712F
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/24/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 90282262926fef663183be247e37d64dd1be9124
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138565"
 ---
-
 # <a name="cell-background-color-on-ios"></a>Couleur d’arrière-plan de cellule sur iOS
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

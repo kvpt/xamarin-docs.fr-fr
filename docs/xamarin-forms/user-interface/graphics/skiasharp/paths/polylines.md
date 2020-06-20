@@ -1,8 +1,22 @@
 ---
-title : "Description des polylignes et des équations paramétriques" : "cet article explique comment utiliser SkiaSharp pour afficher une ligne que vous pouvez définir avec des équations paramétriques et illustre cela avec un exemple de code.»
-ms. Prod : xamarin ms. AssetID : 85AEBB33-E954-4364-A6E1-808FAB197BEE ms. Technology : xamarin-skiasharp auteur : davidbritch ms. Author : dabritch ms. Date : 03/10/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Polylignes et équations paramétriques
+description: Cet article explique comment utiliser SkiaSharp pour afficher une ligne que vous pouvez définir avec des équations paramétriques et illustre cela avec un exemple de code.
+ms.prod: xamarin
+ms.assetid: 85AEBB33-E954-4364-A6E1-808FAB197BEE
+ms.technology: xamarin-skiasharp
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/10/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b435e99180791b64e0a8ad975527fb3cb5316b7d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84140216"
 ---
-
 # <a name="polylines-and-parametric-equations"></a>Polylignes et équations paramétriques
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

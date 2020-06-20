@@ -1,8 +1,22 @@
 ---
-title : " Xamarin.Forms Description des convertisseurs de valeurs de liaison" : "cet article explique comment Caster ou convertir des valeurs au sein d’une Xamarin.Forms liaison de données en implémentant un convertisseur de valeur (qui est également appelé convertisseur de liaison ou convertisseur de valeur de liaison)."
-ms. Prod : xamarin ms. AssetID : 02B1BBE6-D804-490D-BDD4-8ACED8B70C92 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 01/05/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsConvertisseurs de valeurs de liaison
+description: Cet article explique comment effectuer un cast ou une conversion de valeurs dans une Xamarin.Forms liaison de données en implémentant un convertisseur de valeur (qui est également appelé convertisseur de liaison ou convertisseur de valeur de liaison).
+ms.prod: xamarin
+ms.assetid: 02B1BBE6-D804-490D-BDD4-8ACED8B70C92
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/05/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e1a4faabc8f0703b497062a8c5d587221692dab7
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139758"
 ---
-
 # <a name="xamarinforms-binding-value-converters"></a>Xamarin.FormsConvertisseurs de valeurs de liaison
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)

@@ -1,8 +1,22 @@
 ---
-title : " Xamarin.Forms Description de l’interpréteur de commandes" : "les applications Shell respectent le Xamarin.Forms cycle de vie et un événement apparaissant est déclenché quand une page est sur le point d’apparaître sur l’écran, et un événement de disparition est déclenché quand une page est sur le point de disparaître de l’écran."
-ms. Prod : xamarin ms. AssetID : 4E4EE50E-3BB4-441D-8355-CD9CD26ED1D0 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 07/25/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsCycle de vie du shell
+description: Les applications de Shell respectent le Xamarin.Forms cycle de vie et un événement apparaît lorsqu’une page est sur le point d’apparaître sur l’écran, et un événement de disparition est déclenché quand une page est sur le point de disparaître de l’écran.
+ms.prod: xamarin
+ms.assetid: 4E4EE50E-3BB4-441D-8355-CD9CD26ED1D0
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/25/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 3a7a46187d861098b61f638a3fb460d890b081dd
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138721"
 ---
-
 # <a name="xamarinforms-shell-lifecycle"></a>Xamarin.FormsCycle de vie du shell
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)

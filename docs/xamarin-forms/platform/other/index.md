@@ -1,8 +1,22 @@
 ---
-titre : « Xamarin.Forms autres plateformes » Description : « ce guide explique les plateformes supplémentaires prises en charge par Xamarin.Forms . »
-ms. Prod : xamarin ms. AssetID : C713B905-0C98-4442-B5CB-91C384A384DA ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 10/04/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsAutres plateformes
+description: Ce guide explique les plateformes supplémentaires prises en charge par Xamarin.Forms .
+ms.prod: xamarin
+ms.assetid: C713B905-0C98-4442-B5CB-91C384A384DA
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/04/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a0ab248d3e23854e8027f515fbcf0fa6ca9521fd
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139540"
 ---
-
 # <a name="xamarinforms-other-platforms"></a>Xamarin.FormsAutres plateformes
 
 Xamarin.Formsprend en charge des plateformes supplémentaires autres que iOS, Android et Windows.

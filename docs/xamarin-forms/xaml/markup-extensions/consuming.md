@@ -1,8 +1,22 @@
 ---
-title : "utilisation des extensions de balisage XAML" Description : "cet article explique comment utiliser Xamarin.Forms les extensions de balisage XAML pour améliorer la puissance et la flexibilité du XAML en permettant de définir des attributs d’élément à partir de diverses sources.»
-ms. Prod : xamarin ms. AssetID : CE686893-609C-4EC3-9225-6C68D2A9F79C ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 04/21/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Consommation des extensions de balisage XAML
+description: Cet article explique comment utiliser Xamarin.Forms les extensions de balisage XAML pour améliorer la puissance et la flexibilité du XAML en permettant de définir des attributs d’élément à partir de diverses sources.
+ms.prod: xamarin
+ms.assetid: CE686893-609C-4EC3-9225-6C68D2A9F79C
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/17/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e1429c3f39e37dc552d7f6ca8767058e5aec853b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84903105"
 ---
-
 # <a name="consuming-xaml-markup-extensions"></a>Consommation des extensions de balisage XAML
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
@@ -18,7 +32,7 @@ Les extensions de balisage XAML aident à améliorer la puissance et la flexibil
 - [`OnIdiom`](#onidiom-markup-extension): personnalisez l’apparence de l’interface utilisateur en fonction de l’idiome du périphérique sur lequel l’application s’exécute.
 - [`DataTemplate`](#datatemplate-markup-extension): convertit un type en [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) .
 - [`FontImage`](#fontimage-markup-extension): affiche une icône de police dans n’importe quelle vue pouvant afficher un `ImageSource` .
-- [`OnAppTheme`](#onapptheme-markup-extension): utilise une ressource basée sur le thème système actuel.
+- [`AppThemeBinding`](#appthemebinding-markup-extension): utilise une ressource basée sur le thème système actuel.
 
 Des extensions de balisage XAML supplémentaires ont été prises en charge par d’autres implémentations XAML, et sont également prises en charge par Xamarin.Forms . Celles-ci sont décrites plus en détail dans d’autres articles :
 
@@ -566,60 +580,55 @@ Voici le programme en cours d’exécution :
 
 Pour plus d’informations sur l’affichage des icônes de police en spécifiant les données d’icône de police dans un `FontImageSource` objet, consultez [afficher les icônes de police](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons).
 
-## <a name="onapptheme-markup-extension"></a>Extension de balisage OnAppTheme
+## <a name="appthemebinding-markup-extension"></a>Extension de balisage AppThemeBinding
 
-L' `OnAppTheme` extension de balisage vous permet de spécifier une ressource à consommer, telle qu’une image ou une couleur, en fonction du thème système actuel. Il fournit les mêmes fonctionnalités que la `OnAppTheme<T>` classe, mais avec une représentation plus concise.
+L' `AppThemeBinding` extension de balisage vous permet de spécifier une ressource à consommer, telle qu’une image ou une couleur, en fonction du thème système actuel.
 
 > [!IMPORTANT]
-> L' `OnAppTheme` extension de balisage a une configuration minimale requise pour le système d’exploitation. Pour plus d’informations, consultez [répondre aux modifications de thème du système dans les Xamarin.Forms applications](~/xamarin-forms/user-interface/theming/system-theme-changes.md).
+> L' `AppThemeBinding` extension de balisage a une configuration minimale requise pour le système d’exploitation. Pour plus d’informations, consultez [répondre aux modifications de thème du système dans les Xamarin.Forms applications](~/xamarin-forms/user-interface/theming/system-theme-changes.md).
 
-L' `OnAppTheme` extension de balisage est prise en charge par la `OnAppThemeExtension` classe, qui définit les propriétés suivantes :
+L' `AppThemeBinding` extension de balisage est prise en charge par la `AppThemeBindingExtension` classe, qui définit les propriétés suivantes :
 
 - `Default`, de type `object` , que vous définissez sur la ressource à utiliser par défaut.
 - `Light`, de type `object` , que vous définissez sur la ressource à utiliser lorsque l’appareil utilise son thème clair.
 - `Dark`, de type `object` , que vous définissez sur la ressource à utiliser lorsque l’appareil utilise son thème sombre.
 - `Value`, de type `object` , qui retourne la ressource actuellement utilisée par l’extension de balisage.
-- `Converter`de type `IValueConverter` , qui peut être défini sur une `IValueConverter` implémentation.
-- `ConverterParameter`de type `object` , qui peut être défini sur une valeur à passer à l' `IValueConverter` implémentation.
 
 > [!NOTE]
-> L’analyseur XAML permet `OnAppThemeExtension` à la classe d’être abrégée comme `OnAppTheme` .
+> L’analyseur XAML permet `AppThemeBindingExtension` à la classe d’être abrégée comme `AppBindingTheme` .
 
-La `Default` propriété est la propriété de contenu de `OnAppThemeExtension` . Par conséquent, pour les expressions de balisage XAML exprimées à l’aide d’accolades, vous pouvez éliminer la `Default=` partie de l’expression à condition qu’il s’agisse du premier argument.
+La `Default` propriété est la propriété de contenu de `AppThemeBindingExtension` . Par conséquent, pour les expressions de balisage XAML exprimées à l’aide d’accolades, vous pouvez éliminer la `Default=` partie de l’expression à condition qu’il s’agisse du premier argument.
 
-La page de **démonstration OnAppTheme** montre comment utiliser l' `OnAppTheme` extension de balisage :
+La page de **démonstration AppThemeBinding** montre comment utiliser l' `AppThemeBinding` extension de balisage :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MarkupExtensions.OnAppThemeDemoPage"
-             Title="OnAppTheme Demo">
+             x:Class="MarkupExtensions.AppThemeBindingDemoPage"
+             Title="AppThemeBinding Demo">
     <ContentPage.Resources>
 
         <Style x:Key="labelStyle"
                TargetType="Label">
             <Setter Property="TextColor"
-                    Value="{OnAppTheme Black, Light=Blue, Dark=Teal}" />
+                    Value="{AppThemeBinding Black, Light=Blue, Dark=Teal}" />
         </Style>
 
     </ContentPage.Resources>
     <StackLayout Margin="20">
         <Label Text="This text is green in light mode, and red in dark mode."
-               TextColor="{OnAppTheme Light=Green, Dark=Red}" />
+               TextColor="{AppThemeBinding Light=Green, Dark=Red}" />
         <Label Text="This text is black by default, blue in light mode, and teal in dark mode."
-               Style="{DynamicResource labelStyle}" />
+               Style="{StaticResource labelStyle}" />
     </StackLayout>
 </ContentPage>
 ```
 
 Dans cet exemple, la couleur de texte du premier [`Label`](xref:Xamarin.Forms.Label) est définie sur la couleur verte lorsque l’appareil utilise son thème clair, et est défini sur rouge lorsque l’appareil utilise son thème sombre. La deuxième `Label` a sa [`TextColor`](xref:Xamarin.Forms.Label.TextColor) propriété définie via un [`Style`](xref:Xamarin.Forms.Style) . Cela `Style` définit la couleur de texte du `Label` à noir par défaut, le bleu lorsque l’appareil utilise son thème clair et la couleur bleu-vert lorsque l’appareil utilise son thème sombre.
 
-> [!NOTE]
-> Un [`Style`](xref:Xamarin.Forms.Style) qui utilise l' `OnAppTheme` extension de balisage doit être appliqué à un contrôle avec l' `DynamicResource` extension de balisage, afin que l’interface utilisateur de l’application soit mise à jour lorsque le thème système change.
-
 Voici le programme en cours d’exécution :
 
-![Démonstration OnAppTheme](consuming-images/onappthemedemo.png "Démonstration OnAppTheme")
+![Démonstration AppThemeBinding](consuming-images/appthemebindingdemo.png "Démonstration AppThemeBinding")
 
 ## <a name="define-markup-extensions"></a>Définir des extensions de balisage
 

@@ -1,8 +1,22 @@
 ---
-titre : « dispositions pouvant être liées dans Xamarin.Forms » Description : les dispositions pouvant être liées permettent aux classes de disposition de générer leur contenu en les liant à une collection d’éléments, avec la possibilité de définir l’apparence de chaque élément avec un DataTemplate.
-ms. Prod : xamarin ms. AssetID : 824C3319-20A0-42D0-8632-CDECD98349C3 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 03/09/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Dispositions pouvant être liées dansXamarin.Forms
+description: Les dispositions pouvant être liées permettent aux classes de disposition de générer leur contenu en liant à une collection d’éléments, avec l’option permettant de définir l’apparence de chaque élément avec un DataTemplate.
+ms.prod: xamarin
+ms.assetid: 824C3319-20A0-42D0-8632-CDECD98349C3
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/09/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9d0497c0c0593b54f69bac84307976c4050e9c95
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138240"
 ---
-
 # <a name="bindable-layouts-in-xamarinforms"></a>Dispositions pouvant être liées dansXamarin.Forms
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-bindablelayouts)

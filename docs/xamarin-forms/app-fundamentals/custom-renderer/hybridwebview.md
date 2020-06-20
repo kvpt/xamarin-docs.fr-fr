@@ -1,8 +1,22 @@
 ---
-title : « personnalisation d’une vue WebView » : «une Xamarin.Forms WebView est une vue qui affiche du contenu Web et HTML dans votre application. Cet article explique comment créer un convertisseur personnalisé qui étend la WebView pour permettre au code C# d’être appelé à partir de JavaScript.»
-ms. Prod : xamarin ms. AssetID : 58DFFA52-4057-49A8-8682-50A58C7E842C ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 03/31/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Personnalisation d’une WebView
+description: Une vue Xamarin.Forms WebView est une vue qui affiche du contenu Web et HTML dans votre application. Cet article explique comment créer un convertisseur personnalisé qui étend la WebView pour permettre au code C# d’être appelé à partir de JavaScript.
+ms.prod: xamarin
+ms.assetid: 58DFFA52-4057-49A8-8682-50A58C7E842C
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/31/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8c83742896af4a22bcff327df82c1b14ff983bb2
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138968"
 ---
-
 # <a name="customizing-a-webview"></a>Personnalisation d’une WebView
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-hybridwebview)

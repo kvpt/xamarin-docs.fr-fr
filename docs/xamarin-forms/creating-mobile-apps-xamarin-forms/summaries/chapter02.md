@@ -1,7 +1,22 @@
 ---
-titre : «Résumé du chapitre 2. Anatomie d’une application « Description : » création d’Mobile Apps avec Xamarin.Forms : Résumé du chapitre 2. Anatomie d’une application «ms. Prod : xamarin ms. Technology : xamarin-Forms ms. AssetID : 8764EB7D-8331-4CF7-9BE1-26D0DEE9E0BB auteur : davidbritch ms. Author : dabritch ms. Date : 07/17/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Résumé du chapitre 2. Anatomie d’une application
+description: 'Création d’Mobile Apps avec Xamarin.Forms : Résumé du chapitre 2. Anatomie d’une application'
+ms.prod: xamarin
+ms.technology: xamarin-forms
+ms.assetid: 8764EB7D-8331-4CF7-9BE1-26D0DEE9E0BB
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/17/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 78da3ed91acea0c056074d712d368de70b251392
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136914"
 ---
-
 # <a name="summary-of-chapter-2-anatomy-of-an-app"></a>Résumé du chapitre 2. Anatomie d’une application
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02)

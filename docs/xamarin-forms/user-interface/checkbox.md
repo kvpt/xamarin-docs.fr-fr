@@ -1,8 +1,22 @@
 ---
-titre : « Xamarin.Forms CheckBox » Description : «la Xamarin.Forms case à cocher est un type de bouton qui peut être activé ou vide. Lorsqu’une case à cocher est activée, elle est considérée comme étant activée. Quand une case à cocher est vide, elle est considérée comme étant désactivée.»
-ms. Prod : xamarin ms. AssetID : B8B9268B-BCB8-42B9-B08C-C0F22C137238 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 06/11/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsActivé
+description: La Xamarin.Forms case à cocher est un type de bouton qui peut être activé ou vide. Lorsqu’une case à cocher est activée, elle est considérée comme étant activée. Quand une case à cocher est vide, elle est considérée comme étant désactivée.
+ms.prod: xamarin
+ms.assetid: B8B9268B-BCB8-42B9-B08C-C0F22C137238
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/11/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8399dde2e4e2c9fb53b38fca2923eb0e3bfc6ce3
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136472"
 ---
-
 # <a name="xamarinforms-checkbox"></a>Xamarin.FormsActivé
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-checkboxdemos/)

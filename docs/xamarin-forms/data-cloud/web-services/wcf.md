@@ -1,8 +1,22 @@
 ---
-titre : « utiliser un service Web Windows Communication Foundation (WCF) » : « cet article montre comment utiliser un service SOAP (Simple Object Access Protocol) WCF à partir d’une Xamarin.Forms application ».
-ms. Prod : xamarin ms. AssetID : 5696FF04-EF21-4B7A-8C8B-26DE28B5C0AD ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 03/28/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Utiliser un service Web Windows Communication Foundation (WCF)
+description: Cet article montre comment utiliser un service SOAP (Simple Object Access Protocol) WCF à partir d’une Xamarin.Forms application.
+ms.prod: xamarin
+ms.assetid: 5696FF04-EF21-4B7A-8C8B-26DE28B5C0AD
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/28/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: cf95427807e0179a608b428bc7e02499c9616fe7
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139150"
 ---
-
 # <a name="consume-a-windows-communication-foundation-wcf-web-service"></a>Utiliser un service Web Windows Communication Foundation (WCF)
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todowcf)

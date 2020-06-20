@@ -1,8 +1,22 @@
 ---
-title : « NavigationPage Text bar mode Color on iOS » Description : «la plateforme spécifique vous permet d’utiliser des fonctionnalités uniquement disponibles sur une plateforme spécifique, sans implémenter de convertisseurs ou d’effets personnalisés. Cet article explique comment utiliser le spécifique à la plateforme iOS qui contrôle si la couleur de texte de la barre d’État sur un NavigationPage correspond à la luminosité de la barre de navigation.»
-ms. Prod : xamarin ms. AssetID : 03698A44-39F1-4030-9AF5-F10A6713828A ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 10/24/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Mode de couleur du texte de la barre NavigationPage sur iOS
+description: Les spécificités des plateformes vous permettent d’utiliser des fonctionnalités uniquement disponibles sur une plateforme spécifique, sans implémenter de convertisseurs ou d’effets personnalisés. Cet article explique comment utiliser le spécifique à la plateforme iOS qui contrôle si la couleur de texte de la barre d’État sur un NavigationPage correspond à la luminosité de la barre de navigation.
+ms.prod: xamarin
+ms.assetid: 03698A44-39F1-4030-9AF5-F10A6713828A
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/24/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: dcbc20139b989ced11f2d1d890ca7dd99a780e96
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137057"
 ---
-
 # <a name="navigationpage-bar-text-color-mode-on-ios"></a>Mode de couleur du texte de la barre NavigationPage sur iOS
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

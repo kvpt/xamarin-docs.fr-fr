@@ -1,8 +1,24 @@
 ---
-titre : « stocker les données dans une base de données SQLite.NET locale » Description : « cet article explique comment stocker des données dans une base de données SQLite.NET locale ».
-zone_pivot_groups : plateforme ms. topic : QuickStart ms. Prod : xamarin ms. AssetID : 5BF901BD-FDE8-4B74-B4AB-418E81745A3B ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 04/01/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Stocker des données dans une base de données SQLite.NET locale
+description: Cet article explique comment stocker des données dans une base de données SQLite.NET locale.
+zone_pivot_groups: platform
+ms.topic: quickstart
+ms.prod: xamarin
+ms.assetid: 5BF901BD-FDE8-4B74-B4AB-418E81745A3B
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/01/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 2864c7edabde18faec06c2c42042168d3e6c9671
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139800"
 ---
-
 # <a name="store-data-in-a-local-sqlitenet-database"></a>Stocker des données dans une base de données SQLite.NET locale
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-database/)
