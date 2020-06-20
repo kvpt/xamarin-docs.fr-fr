@@ -1,8 +1,22 @@
 ---
-titre : « transformations non affines » : cet article explique comment créer des effets de perspective et de dépouille avec la troisième colonne de la matrice de transformation et illustre cela avec un exemple de code.
-ms. Prod : xamarin ms. Technology : xamarin-skiasharp ms. AssetID : 785F4D13-7430-492E-B24E-3B45C560E9F1 auteur : davidbritch ms. Author : dabritch ms. Date : 04/14/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Transformations non affines
+description: Cet article explique comment créer des effets de perspective et de dépouille avec la troisième colonne de la matrice de transformation et illustre cela avec un exemple de code.
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 785F4D13-7430-492E-B24E-3B45C560E9F1
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/14/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 91a639b2d3c2f6a8437a09a70808dc6d793ba76b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84131753"
 ---
-
 # <a name="non-affine-transforms"></a>Transformations non affines
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

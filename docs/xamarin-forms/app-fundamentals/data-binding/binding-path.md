@@ -1,8 +1,22 @@
 ---
-titre : « Xamarin.Forms chemin de liaison » Description : « cet article explique comment utiliser Xamarin.Forms les liaisons de données pour accéder aux sous-propriétés et aux membres de collection avec la propriété Path de la classe Binding. »
-ms. Prod : xamarin ms. AssetID : 3CF721A5-E157-468B-AD3A-DA0A45E58E8D ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 01/05/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsChemin de liaison
+description: Cet article explique comment utiliser Xamarin.Forms des liaisons de données pour accéder aux sous-propriétés et aux membres de collection avec la propriété Path de la classe Binding.
+ms.prod: xamarin
+ms.assetid: 3CF721A5-E157-468B-AD3A-DA0A45E58E8D
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/05/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a0ac8a568c3e8c46fa7e53112461aa0bff5684ae
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84570789"
 ---
-
 # <a name="xamarinforms-binding-path"></a>Xamarin.FormsChemin de liaison
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)

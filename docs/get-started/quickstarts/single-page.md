@@ -1,8 +1,24 @@
 ---
-titre : « créer une application à page unique Xamarin.Forms » Description : « cet article explique comment créer une application multiplateforme à une seule page Xamarin.Forms , ce qui vous permet d’entrer une note et de la conserver dans le stockage de l’appareil. »
-zone_pivot_groups : Platform-dev16 ms. topic : QuickStart ms. Prod : xamarin ms. AssetID : E8CF05B1-54B9-428B-8518-D068837BD61E ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 04/01/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Créer une application à page unique Xamarin.Forms
+description: Cet article explique comment créer une application multiplateforme à une seule page Xamarin.Forms , ce qui vous permet d’entrer une note et de la conserver dans le stockage de l’appareil.
+zone_pivot_groups: platform-dev16
+ms.topic: quickstart
+ms.prod: xamarin
+ms.assetid: E8CF05B1-54B9-428B-8518-D068837BD61E
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/01/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b9a3017fc8188d3669b64d95c968b2d0a5325358
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136069"
 ---
-
 # <a name="create-a-single-page-xamarinforms-application"></a>Créer une application à page unique Xamarin.Forms
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-singlepage/)

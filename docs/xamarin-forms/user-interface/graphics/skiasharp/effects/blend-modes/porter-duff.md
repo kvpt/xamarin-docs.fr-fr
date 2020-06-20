@@ -1,8 +1,22 @@
 ---
-title : "porter-Duff Blend modes" Description : "utilisez les modes de mélange porter-Duff pour composer des scènes en fonction des images source et de destination."
-ms. Prod : xamarin ms. Technology : xamarin-skiasharp ms. AssetID : 57F172F8-BA03-43EC-A215-ED6B78696BB5 auteur : davidbritch ms. Author : dabritch ms. Date : 08/23/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Modes de fusion porter-Duff
+description: Utilisez les modes de fusion porter-Duff pour composer des scènes en fonction des images source et de destination.
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 57F172F8-BA03-43EC-A215-ED6B78696BB5
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/23/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a1e6290c0f85b54c3fd8958bc43667714bdece20
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84131051"
 ---
-
 # <a name="porter-duff-blend-modes"></a>Modes de fusion porter-Duff
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

@@ -1,8 +1,22 @@
 ---
-title : " Xamarin.Forms base de données locale" Description : " Xamarin.Forms prend en charge les applications pilotées par base de données à l’aide du moteur de base de données SQLite, qui permet de charger et d’enregistrer des objets dans du code partagé. Cet article décrit comment Xamarin.Forms les applications peuvent lire et écrire des données dans une base de données SQLite locale à l’aide de sqlite.net.
-ms. Prod : xamarin ms. AssetID : F687B24B-7DF0-4F8E-A21A-A9BB507480EB ms. Technology : xamarin-Forms Author : profexorgeek ms. Author : jusjohns ms. Date : 12/05/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsBases de données locales
+description: Xamarin.Formsprend en charge les applications pilotées par base de données à l’aide du moteur de base de données SQLite, qui permet de charger et d’enregistrer des objets en code partagé. Cet article décrit comment Xamarin.Forms les applications peuvent lire et écrire des données dans une base de données SQLite locale à l’aide de sqlite.net.
+ms.prod: xamarin
+ms.assetid: F687B24B-7DF0-4F8E-A21A-A9BB507480EB
+ms.technology: xamarin-forms
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 12/05/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f7cef5fd39d82cf0a4b55337835c0fe1d57b8bf9
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84197590"
 ---
-
 # <a name="xamarinforms-local-databases"></a>Xamarin.FormsBases de données locales
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)

@@ -1,8 +1,22 @@
 ---
-title : « définition de la propriété ItemsSource d’un sélecteur » Description : la vue sélecteur est un contrôle permettant de sélectionner un élément de texte dans une liste de données. Cet article explique comment remplir un sélecteur avec des données en définissant la propriété ItemsSource et comment répondre à la sélection d’élément par l’utilisateur.»
-ms. Prod : xamarin ms. AssetID : 8ECF390C-9DB2-4441-B9A3-101AE7E5AEC5 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 02/26/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Définition de la propriété ItemsSource d’un sélecteur
+description: La vue sélecteur est un contrôle permettant de sélectionner un élément de texte dans une liste de données. Cet article explique comment remplir un sélecteur avec des données en définissant la propriété ItemsSource et comment répondre à la sélection d’élément par l’utilisateur.
+ms.prod: xamarin
+ms.assetid: 8ECF390C-9DB2-4441-B9A3-101AE7E5AEC5
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/26/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8c4fc732082a77a2e471465af448a487862b513c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136290"
 ---
-
 # <a name="setting-a-pickers-itemssource-property"></a>Définition de la propriété ItemsSource d’un sélecteur
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-monkeyapppicker)

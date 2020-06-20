@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/10/2020
-ms.openlocfilehash: 1b3eb61bf08eb006890b8b879c560163bd131844
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: c3b0749fae9a035c234961880a4a7059ccba2349
+ms.sourcegitcommit: 8f558dba59bfb95da0ee9154c94d7121b6a59037
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84655085"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84767343"
 ---
 # <a name="troubleshooting-tips-for-xamarinios"></a>Conseils de dépannage pour Xamarin. iOS
 
@@ -48,7 +48,7 @@ Le membre a probablement été supprimé par l’éditeur de liens et, par cons�
 - Ajoutez l' [`[Preserve]`](http://www.go-mono.com/docs/index.aspx?link=T:MonoTouch.Foundation.PreserveAttribute) attribut au membre.  Cela empêchera l’éditeur de liens de le supprimer.
 - Quand vous appelez [**mTouch**](http://www.go-mono.com/docs/index.aspx?link=man:mtouch%281%29), utilisez les options **-nolink** ou **-linksdkonly** :
   - **-nolink** désactive toutes les liaisons.
-  - **-linksdkonly** lie uniquement les assemblys fournis par Xamarin. iOS, tels que **Xamarin. iOS. dll**, tout en conservant tous les types dans les assemblys créés par l’utilisateur (IE. vos projets d’application).
+  - **-linksdkonly** lie uniquement les assemblys fournis par Xamarin. iOS, tels que **xamarin.ios.dll**, tout en conservant tous les types dans les assemblys créés par l’utilisateur (IE. vos projets d’application).
 
 Notez que les assemblys sont liés de sorte que l’exécutable résultant soit plus petit ; ainsi, la désactivation de la liaison peut entraîner un plus grand nombre de fichiers exécutables.
 
@@ -130,7 +130,7 @@ Les actions des fichiers d’interface Builder sont connectées aux widgets par 
 
 Vous pouvez utiliser « #pragma warning Disable 0169 » #pragma warning Enable 0169» autour de vos actions si vous souhaitez supprimer cet avertissement uniquement pour ces méthodes, ou ajouter 0169 au champ « ignorer les avertissements » dans les options du compilateur si vous souhaitez le désactiver pour l’ensemble de votre projet (non recommandé).
 
-## <a name="mtouch-failed-with-the-following-message-cannot-open-assembly-pathtoyourprojectexe"></a>échec de mTouch avec le message suivant : impossible d’ouvrir l’assembly'/path/to/yourproject.exe'
+## <a name="mtouch-failed-with-the-following-message-cannot-open-assembly-pathtoyourprojectexe"></a>échec de mTouch avec le message suivant : impossible d’ouvrir l’assembly'/path/to/yourproject.exe '
 
 Si vous voyez ce message d’erreur, le problème est généralement que le chemin d’accès absolu à votre projet contient un espace. Cela sera résolu dans une future version de Xamarin. iOS, mais vous pouvez contourner le problème en déplaçant le projet vers un dossier sans espaces.
 
@@ -186,7 +186,7 @@ Stacktrace:
 
 Cela signifie que vous liez une bibliothèque statique compilée avec du code Thumb dans votre projet. Depuis la version 3,1 du kit de développement logiciel (SDK) iPhone (ou une version ultérieure au moment de la rédaction de cet article), Apple a introduit un bogue dans son éditeur de liens lors de la liaison de code non-Thumb (Xamarin. iOS) avec du code Thumb (votre bibliothèque statique). Vous devrez établir un lien avec une version non-Thumb de votre bibliothèque statique pour atténuer ce problème.
 
-## <a name="systemexecutionengineexception-attempting-to-jit-compile-method-wrapper-managed-to-managed-foosystemcollectionsgenericicollection1get_count-"></a>System. ExecutionEngineException : tentative de compilation de la méthode JIT (wrapper managé à managé) foo [] : System. Collections. Generic. ICollection' 1. get_Count ()
+## <a name="systemexecutionengineexception-attempting-to-jit-compile-method-wrapper-managed-to-managed-foosystemcollectionsgenericicollection1get_count-"></a>System.ExecutionEngineException : tentative de compilation JIT, méthode (wrapper managé à managé) foo [] : System. Collections. Generic. ICollection' 1. get_Count ()
 
 Le suffixe [] indique que vous ou la bibliothèque de classes appelez une méthode sur un tableau par le biais d’une collection générique, telle que IEnumerable<>, ICollection<> ou IList<>. En guise de solution de contournement, vous pouvez forcer explicitement le compilateur AOA à inclure une telle méthode en appelant la méthode vous-même et en vous assurant que ce code est exécuté avant l’appel qui a déclenché l’exception. Dans ce cas, vous pouvez écrire :
 
@@ -387,13 +387,16 @@ Lorsque vous incluez des bibliothèques tierces dans votre application Xamarin. 
 
 Cela peut être résolu en ouvrant les options du projet Xamarin. iOS, en accédant à **iOS Build**  >  **internationalisation** et en vérifiant l’internationalisation de l' **Ouest** .
 
-## <a name="could-not-launch-xamarinlauncher-could-not-find-the-executable-mlaunchexe"></a>Impossible de lancer Xamarin. Launcher n’a pas pu trouver le fichier exécutable’mlaunch. exe'
+## <a name="could-not-launch-xamarinlauncher-could-not-find-the-executable-mlaunchexe"></a>Impossible de lancer Xamarin. Launcher n’a pas pu trouver le fichier exécutable' mlaunch.exe '
 
-Dans certains cas, les logiciels antivirus peuvent incorrectement signaler le kit de développement logiciel (SDK) Xamarin. iOS comme programme malveillant et supprimer les fichiers nécessaires, ce qui endommage le kit de développement logiciel (SDK). Cela entraînera des erreurs telles que « impossible de lancer Xamarin. le lanceur n’a pas pu trouver le fichier exécutable «mlaunch. exe ».
+Dans certains cas, les logiciels antivirus peuvent incorrectement signaler le kit de développement logiciel (SDK) Xamarin. iOS comme programme malveillant et supprimer les fichiers nécessaires, ce qui endommage le kit de développement logiciel (SDK). Cela entraînera des erreurs telles que « impossible de lancer Xamarin. le lanceur n’a pas pu trouver le fichier exécutable «mlaunch.exe ».
 
-Si vous avez été affecté, excluez mlaunch. exe de votre scanneur antivirus pour empêcher une nouvelle occurrence. Pour plus d’informations, voir [How to Create an application exception in the Symantex gestionnaire Endpoint Protection](https://knowledge.broadcom.com/external/article/180778/how-to-create-an-application-exception-i.html) for Symantec, and [Exclude Files and Folders from Norton AutoProtect, sonar et Download intelligence analyses](https://support.norton.com/sp/en/uk/home/current/solutions/v3672136) for Norton. En outre, envisagez de signaler un faux positif à [Symantec](https://symsubmit.symantec.com) ou [Norton](https://submit.norton.com/?type=FP).
+Si vous avez été affecté, excluez mlaunch.exe de votre scanneur antivirus pour empêcher une nouvelle occurrence. Pour plus d’informations, voir [How to Create an application exception in the Symantex gestionnaire Endpoint Protection](https://knowledge.broadcom.com/external/article/180778/how-to-create-an-application-exception-i.html) for Symantec, and [Exclude Files and Folders from Norton AutoProtect, sonar et Download intelligence analyses](https://support.norton.com/sp/en/uk/home/current/solutions/v3672136) for Norton. En outre, envisagez de signaler un faux positif à [Symantec](https://symsubmit.symantec.com) ou [Norton](https://submit.norton.com/?type=FP).
 
-Une fois que vous avez ajouté une exclusion pour mlaunch. exe, une réinstallation est nécessaire pour restaurer les fichiers manquants. L’approche la plus simple consiste à basculer les canaux dans le programme de mise à jour :
+> [!IMPORTANT]
+> Pour les utilisateurs de Norton, les membres de la communauté ont également signalé que vous devrez peut-être désactiver l’analyse inactive comme indiqué ici : [Windows](https://community.norton.com/en/comment/5179683#comment-5179683), [Mac](https://github.com/xamarin/xamarin-macios/issues/8736#issuecomment-642874505).
+
+Une fois que vous avez ajouté une exclusion pour mlaunch.exe, une réinstallation est nécessaire pour restaurer les fichiers manquants. L’approche la plus simple consiste à basculer les canaux dans le programme de mise à jour :
 
 - Menu **Visual Studio** > **Rechercher les mises à jour**.
 - Sélectionnez un autre canal de mise à jour dans la liste déroulante et appuyez sur le bouton **canal du commutateur** .

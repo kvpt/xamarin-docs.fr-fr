@@ -1,13 +1,26 @@
 ---
-titre : « Xamarin.Essentials : suivi des versions » Description : « la classe VersionTracking dans Xamarin.Essentials vous permet de vérifier la version des applications et les numéros de build, ainsi que d’afficher des informations supplémentaires, par exemple si c’est la première fois que l’application est lancée ou pour la version actuelle, obtenez les informations de build précédentes, et bien plus encore ».
-ms. AssetID : 670C7E8A-E882-4AC0-97D2-A53D90ADD6A3 auteur : jamesmontemagno ms. Author : Jamont ms. Date : 05/28/2019 ms. Custom : Video No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: 'Xamarin.Essentials: Suivi des versions'
+description: La classe VersionTracking dans vous Xamarin.Essentials permet de vérifier la version des applications et les numéros de build, ainsi que d’afficher des informations supplémentaires, par exemple si c’est la première fois que l’application est lancée ou pour la version actuelle, obtenez les informations de build précédentes, et bien plus encore.
+ms.assetid: 670C7E8A-E882-4AC0-97D2-A53D90ADD6A3
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 05/28/2019
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 20819d76c23ca43f60073bcc2cd762abda280374
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802035"
 ---
-
 # <a name="xamarinessentials-version-tracking"></a>Xamarin.Essentials: Suivi des versions
 
 La classe **VersionTracking** vous permet de connaître les numéros de version et de build des applications. Elle vous permet également de voir des informations supplémentaires, par exemple le premier lancement de l’application ou, pour la version actuelle, d’obtenir les informations de build précédentes, etc.
 
-## <a name="get-started"></a>Prendre en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -69,7 +82,7 @@ Toutes les informations de version sont stockées à l’aide de l’API de [Pr�
 
 ## <a name="api"></a>API
 
-- [Code source de la fonctionnalité de suivi des versions](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/VersionTracking)
+- [Code source de la fonctionnalité de suivi des versions](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/VersionTracking)
 - [Documentation sur l’API de suivi des versions](xref:Xamarin.Essentials.VersionTracking)
 
 ## <a name="related-video"></a>Vidéo associée

@@ -1,8 +1,22 @@
 ---
-titre : « création et dessin sur les bitmaps SkiaSharp » Description : « Découvrez comment créer des bitmaps SkiaSharp, puis dessiner sur ces bitmaps en créant une zone de dessin basée sur ces bitmaps ».
-ms. Prod : xamarin ms. Technology : xamarin-skiasharp ms. AssetID : 79BD3266-D457-4E50-BDDF-33450035FA0F auteur : davidbritch ms. Author : dabritch ms. Date : 07/17/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Création et dessin sur des bitmaps SkiaSharp
+description: Découvrez comment créer des bitmaps SkiaSharp, puis dessiner sur ces bitmaps en créant une zone de dessin basée sur ces bitmaps.
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 79BD3266-D457-4E50-BDDF-33450035FA0F
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/17/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c045e297beca675c0582efc2f75b1d6b2bcedcf8
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573289"
 ---
-
 # <a name="creating-and-drawing-on-skiasharp-bitmaps"></a>Création et dessin sur des bitmaps SkiaSharp
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -188,7 +202,7 @@ Cette amélioration des performances est la raison pour laquelle `SkiaSharp` les
 
 Il n’est pas nécessaire de créer une image bitmap à dessiner dessus. Vous pouvez également dessiner sur une image bitmap existante.
 
-La page **singe moustache** utilise son constructeur pour charger l’image **MonkeyFace. png** . Il crée ensuite un `SKCanvas` objet en fonction de cette image bitmap, et utilise `SKPaint` les `SKPath` objets et pour dessiner un moustache sur celui-ci :
+La page **singe moustache** utilise son constructeur pour charger l’image **MonkeyFace.png** . Il crée ensuite un `SKCanvas` objet en fonction de cette image bitmap, et utilise `SKPaint` les `SKPath` objets et pour dessiner un moustache sur celui-ci :
 
 ```csharp
 public partial class MonkeyMoustachePage : ContentPage

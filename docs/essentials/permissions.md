@@ -1,13 +1,26 @@
 ---
-titre : « Xamarin.Essentials : autorisations » Description : « ce document décrit la classe d’autorisations dans Xamarin.Essentials , qui offre la possibilité de vérifier et de demander des autorisations d’exécution. »
-ms. AssetID : 34062D84-3E55-4AF7-A688-8551068B1E57 auteur : jamesmontemagno ms. Author : Jamont ms. Custom : Video ms. Date : 01/06/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: 'Xamarin.Essentials: Autorisations'
+description: Ce document décrit la classe d’autorisations dans Xamarin.Essentials , qui offre la possibilité de vérifier et de demander des autorisations d’exécution.
+ms.assetid: 34062D84-3E55-4AF7-A688-8551068B1E57
+author: jamesmontemagno
+ms.author: jamont
+ms.custom: video
+ms.date: 01/06/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5de10511d73614570d6308b6f4deb7b4ca55549a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802227"
 ---
-
 # <a name="xamarinessentials-permissions"></a>Xamarin.Essentials: Autorisations
 
 La classe d' **autorisations** offre la possibilité de vérifier et de demander des autorisations d’exécution.
 
-## <a name="get-started"></a>Prendre en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -214,7 +227,7 @@ Pour plus d’informations, consultez la documentation sur la [déclaration des 
 
 ## <a name="api"></a>API
 
-- [Code source des autorisations](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Permissions)
+- [Code source des autorisations](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Permissions)
 - [Documentation sur les API des autorisations](xref:Xamarin.Essentials.Permissions)
 
 

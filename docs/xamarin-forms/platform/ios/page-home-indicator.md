@@ -1,8 +1,22 @@
 ---
-title : "Description de la visibilité de l’indicateur d’hébergement sur iOS" : "les spécificités de la plateforme vous permettent d’utiliser des fonctionnalités uniquement disponibles sur une plateforme spécifique, sans implémenter de convertisseurs ou d’effets personnalisés. Cet article explique comment utiliser le spécifique à la plateforme iOS qui définit la visibilité de l’indicateur de démarrage sur une page.»
-ms. Prod : xamarin ms. AssetID : F81022E0-3C6C-49C0-A000-FAF6574D3FB7 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 05/09/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Visibilité de l’indicateur de démarrage sur iOS
+description: Les spécificités des plateformes vous permettent d’utiliser des fonctionnalités uniquement disponibles sur une plateforme spécifique, sans implémenter de convertisseurs ou d’effets personnalisés. Cet article explique comment utiliser le spécifique à la plateforme iOS qui définit la visibilité de l’indicateur de démarrage sur une page.
+ms.prod: xamarin
+ms.assetid: F81022E0-3C6C-49C0-A000-FAF6574D3FB7
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/09/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e76684ffb293380c283153c35c907acc50e40aab
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84128074"
 ---
-
 # <a name="home-indicator-visibility-on-ios"></a>Visibilité de l’indicateur de démarrage sur iOS
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

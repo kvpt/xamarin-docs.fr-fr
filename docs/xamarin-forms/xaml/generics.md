@@ -1,8 +1,22 @@
 ---
-title : "génériques en Xamarin.Forms XAML" Description : " Xamarin.Forms XAML assure la prise en charge de l’utilisation des types CLR génériques en spécifiant les contraintes génériques comme arguments de type."
-ms. Prod : xamarin ms. AssetID : 97B73048-4F90-41AD-AB48-8EB804C4998B ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 04/28/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Génériques en Xamarin.Forms XAML
+description: Xamarin.FormsXAML assure la prise en charge de l’utilisation des types CLR génériques en spécifiant les contraintes génériques en tant qu’arguments de type.
+ms.prod: xamarin
+ms.assetid: 97B73048-4F90-41AD-AB48-8EB804C4998B
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/28/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5a033e5feeefc41b97be29491a70632e767aa1b4
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84565198"
 ---
-
 # <a name="generics-in-xamarinforms-xaml"></a>Génériques en Xamarin.Forms XAML
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-generics/)

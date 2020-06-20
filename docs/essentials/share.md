@@ -1,13 +1,26 @@
 ---
-title : " Xamarin.Essentials : Share" Description : "la classe share dans Xamarin.Essentials permet à une application de partager des données telles que du texte et des liens Web vers d’autres applications sur l’appareil."
-ms. AssetID : B7B01D55-0129-4C87-B515-89F8F4E94665 auteur : jamesmontemagno ms. Author : Jamont ms. Date : 01/06/2020 ms. Custom : Video No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: 'Xamarin.Essentials: Partager'
+description: La classe share dans Xamarin.Essentials permet à une application de partager des données telles que du texte et des liens Web vers d’autres applications sur l’appareil.
+ms.assetid: B7B01D55-0129-4C87-B515-89F8F4E94665
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 01/06/2020
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: ef4c9961e7e1fac20084247f4c85e87b79bcc427
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84801931"
 ---
-
 # <a name="xamarinessentials-share"></a>Xamarin.Essentials: Partager
 
 La classe **Share** permet à une application de partager des données comme du texte et des liens web avec d’autres applications sur l’appareil.
 
-## <a name="get-started"></a>Prendre en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -49,7 +62,7 @@ L’interface utilisateur de partage avec une application externe s’affiche qu
 
 ![Partager](images/share.png)
 
-## <a name="files"></a>Fichiers
+## <a name="files"></a>Files
 
 Cette fonctionnalité permet à une application de partager des fichiers avec d’autres applications sur l’appareil. Xamarin.Essentialsdétecte automatiquement le type de fichier (MIME) et demande un partage. Chaque plateforme peut prendre uniquement en charge certaines extensions de fichiers spécifiques.
 
@@ -102,7 +115,7 @@ await Share.RequestAsync(new ShareFileRequest
 
 ## <a name="api"></a>API
 
-- [Code source de Share](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Share)
+- [Code source de Share](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Share)
 - [Documentation de l’API Share](xref:Xamarin.Essentials.Share)
 
 ## <a name="related-video"></a>Vidéo associée

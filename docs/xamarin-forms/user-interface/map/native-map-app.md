@@ -1,8 +1,22 @@
 ---
-title : « lancer l’application de mappage native à partir de Xamarin.Forms » Description : « l’application Maps natives sur chaque plateforme peut être lancée à partir d’une Xamarin.Forms application par la Xamarin.Essentials classe Launcher ».
-ms. Prod : xamarin ms. AssetID : 5CF7CD67-3F20-4D80-B99E-D35A5FD1019A ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 10/30/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Lancer l’application Map native à partir deXamarin.Forms
+description: L’application Maps natives sur chaque plateforme peut être lancée à partir d’une Xamarin.Forms application par la Xamarin.Essentials classe Launcher.
+ms.prod: xamarin
+ms.assetid: 5CF7CD67-3F20-4D80-B99E-D35A5FD1019A
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/30/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c135d5dd02bba5102f5a93132f079526c84865d5
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84129335"
 ---
-
 # <a name="launch-the-native-map-app-from-xamarinforms"></a>Lancer l’application Map native à partir deXamarin.Forms
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)

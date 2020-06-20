@@ -1,13 +1,26 @@
 ---
-title : " Xamarin.Essentials : géolocalisation" Description : "ce document décrit la classe de géolocalisation dans Xamarin.Essentials , qui fournit des API pour récupérer les coordonnées de géolocalisation actuelles de l’appareil."
-ms. AssetID : 8F66092C-13F0-4FEE-8AA5-901D5F79B357 Author : jamesmontemagno ms. Custom : vidéo ms. Author : Jamont ms. Date : 03/13/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: 'Xamarin.Essentials: Géolocalisation'
+description: Ce document décrit la classe de géolocalisation dans Xamarin.Essentials , qui fournit des API permettant de récupérer les coordonnées de géolocalisation actuelles de l’appareil.
+ms.assetid: 8F66092C-13F0-4FEE-8AA5-901D5F79B357
+author: jamesmontemagno
+ms.custom: video
+ms.author: jamont
+ms.date: 03/13/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f54c31afef691d316cbc3108792ab3158359c47c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802324"
 ---
-
 # <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials: Géolocalisation
 
 La classe **Geolocation** fournit des API permettant de récupérer les coordonnées de géolocalisation de l’appareil.
 
-## <a name="get-started"></a>Commencer
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -231,7 +244,7 @@ Sur UWP, l’altitude est retournée en mètres. Pour plus d’informations, con
 
 ## <a name="api"></a>API
 
-- [Code source de la fonctionnalité de géolocalisation](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Geolocation)
+- [Code source de la fonctionnalité de géolocalisation](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Geolocation)
 - [Documentation sur l’API de géolocalisation](xref:Xamarin.Essentials.Geolocation)
 
 ## <a name="related-video"></a>Vidéo associée

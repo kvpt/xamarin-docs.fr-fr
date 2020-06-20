@@ -1,8 +1,22 @@
 ---
-titre : « Xamarin.Forms Description de la mise en forme des chaînes » : cet article explique comment utiliser les liaisons de données Xamarin. Forms pour mettre en forme et afficher des objets sous forme de chaînes. Cela est possible en affectant à l’StringFormat de la liaison une chaîne de mise en forme .NET standard avec un espace réservé.»
-ms. Prod : xamarin ms. AssetID : 978C85B7-CB58-4483-A131-21B381A865E0 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 01/05/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsMise en forme de chaîne
+description: Cet article explique comment utiliser les liaisons de données Xamarin.Forms pour formater et afficher des objets sous forme de chaînes. Pour cela, vous devez définir le StringFormat de la liaison sur une chaîne de formatage .NET standard avec un espace réservé.
+ms.prod: xamarin
+ms.assetid: 978C85B7-CB58-4483-A131-21B381A865E0
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/05/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d08a89d5394a227e3cee76603e4e97d2cf9495e0
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84135757"
 ---
-
 # <a name="xamarinforms-string-formatting"></a>Xamarin.FormsMise en forme de chaîne
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)

@@ -1,8 +1,22 @@
 ---
-title : " Xamarin.Forms Description de l’inscription et de la résolution DependencyService" : "cet article explique comment utiliser la Xamarin.Forms classe DependencyService pour appeler des fonctionnalités de plateforme natives."
-ms. Prod : xamarin ms. AssetID : 5d019604-4f6f-4932-9b26-1fce3b4d88f8 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 06/05/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsInscription et résolution DependencyService
+description: Cet article explique comment utiliser la Xamarin.Forms classe DependencyService pour appeler des fonctionnalités de plateforme natives.
+ms.prod: xamarin
+ms.assetid: 5d019604-4f6f-4932-9b26-1fce3b4d88f8
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/05/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 050b53be5e4ae67e2adbc1436bbd56ff824f5f7b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84946388"
 ---
-
 # <a name="xamarinforms-dependencyservice-registration-and-resolution"></a>Xamarin.FormsInscription et résolution DependencyService
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/)
@@ -13,7 +27,7 @@ Quand vous utilisez Xamarin.Forms [`DependencyService`](xref:Xamarin.Forms.Depen
 
 Les implémentations de plateforme doivent être inscrites auprès du [`DependencyService`](xref:Xamarin.Forms.DependencyService) afin que Xamarin.Forms puisse les localiser au moment de l’exécution.
 
-L’inscription peut être effectuée avec [`DependencyAttribute`](xref:Xamarin.Forms.DependencyAttribute) , ou avec les [`Register`](xref:Xamarin.Forms.DependencyService.Register*) méthodes.
+L’inscription peut être effectuée avec [`DependencyAttribute`](xref:Xamarin.Forms.DependencyAttribute) , ou avec les [`Register`](xref:Xamarin.Forms.DependencyService.Register*) `RegisterSingleton` méthodes et.
 
 > [!IMPORTANT]
 > Les versions Release des projets UWP qui utilisent la compilation native .NET doivent inscrire des implémentations de plateforme avec les [`Register`](xref:Xamarin.Forms.DependencyService.Register*) méthodes.
@@ -49,7 +63,7 @@ De même, les implémentations de l' `IDeviceOrientationService` interface sur d
 
 ### <a name="registration-by-method"></a>Inscription par méthode
 
-Les [`DependencyService.Register`](xref:Xamarin.Forms.DependencyService.Register*) méthodes peuvent être utilisées pour inscrire une implémentation de plateforme avec le [`DependencyService`](xref:Xamarin.Forms.DependencyService) .
+Les [`DependencyService.Register`](xref:Xamarin.Forms.DependencyService.Register*) méthodes, et la `RegisterSingleton` méthode, peuvent être utilisées pour inscrire une implémentation de plateforme avec [`DependencyService`](xref:Xamarin.Forms.DependencyService) .
 
 L’exemple suivant illustre l’utilisation de la [`Register`](xref:Xamarin.Forms.DependencyService.Register*) méthode pour inscrire l’implémentation iOS de l' `IDeviceOrientationService` interface :
 
@@ -75,10 +89,19 @@ DependencyService.Register<DeviceOrientationService>();
 
 Dans cet exemple, la [`Register`](xref:Xamarin.Forms.DependencyService.Register*) méthode inscrit le `DeviceOrientationService` avec [`DependencyService`](xref:Xamarin.Forms.DependencyService) . Ce qui aboutit à l’inscription du type concret auprès de l’interface qu’il implémente.
 
-De même, les implémentations de l' `IDeviceOrientationService` interface sur d’autres plateformes peuvent être inscrites avec les [`Register`](xref:Xamarin.Forms.DependencyService.Register*) méthodes.
+Une instance d’objet existante peut également être inscrite en tant que singleton avec la `RegisterSingleton` méthode :
+
+```csharp
+var service = new DeviceOrientationService();
+DependencyService.RegisterSingleton<IDeviceOrientationService>(service);
+```
+
+Dans cet exemple, la `RegisterSingleton` méthode enregistre l' `DeviceOrientationService` instance d’objet par rapport à l' `IDeviceOrientationService` interface, en tant que singleton.
+
+De même, les implémentations de l' `IDeviceOrientationService` interface sur d’autres plateformes peuvent être inscrites avec les [`Register`](xref:Xamarin.Forms.DependencyService.Register*) méthodes, ou la `RegisterSingleton` méthode.
 
 > [!IMPORTANT]
-> L’inscription avec les [`Register`](xref:Xamarin.Forms.DependencyService.Register*) méthodes doit être effectuée dans les projets de plateforme, avant que les fonctionnalités fournies par l’implémentation de la plateforme ne soient appelées à partir de code partagé.
+> L’inscription auprès [`Register`](xref:Xamarin.Forms.DependencyService.Register*) des `RegisterSingleton` méthodes et doit être effectuée dans les projets de plateforme, avant que les fonctionnalités fournies par l’implémentation de la plateforme ne soient appelées à partir du code partagé.
 
 ## <a name="resolve-the-platform-implementations"></a>Résoudre les implémentations d’une plateforme
 
@@ -91,7 +114,12 @@ Par défaut, le [`DependencyService`](xref:Xamarin.Forms.DependencyService) ne r
 
 ### <a name="resolve-using-the-getlttgt-method"></a>Résoudre avec la méthode Get&lt;T&gt;
 
-La [`Get<T>`](xref:Xamarin.Forms.DependencyService.Get*) méthode récupère l’implémentation de plateforme de l’interface `T` au moment de l’exécution et crée une instance de celle-ci en tant que singleton. Cette instance va perdurer pendant tout la durée de vie de l’application, et tous les appels suivants pour résoudre la même implémentation de la plateforme vont récupérer la même instance.
+La [`Get<T>`](xref:Xamarin.Forms.DependencyService.Get*) méthode récupère l’implémentation de la plateforme de l’interface `T` au moment de l’exécution et :
+
+- Crée une instance de celle-ci en tant que singleton.
+- Retourne une instance existante en tant que singleton, qui a été inscrit avec le `DependencyService` par la `RegisterSingleton` méthode.
+
+Dans les deux cas, l’instance est active pendant la durée de vie de l’application, et tous les appels suivants pour résoudre la même implémentation de la plateforme récupèrent la même instance.
 
 Le code suivant illustre un exemple d’appel de la [`Get<T>`](xref:Xamarin.Forms.DependencyService.Get*) méthode pour résoudre l’interface, puis l’appel de la `IDeviceOrientationService` `GetOrientation` méthode :
 
@@ -107,7 +135,7 @@ DeviceOrientation orientation = DependencyService.Get<IDeviceOrientationService>
 ```
 
 > [!NOTE]
-> Par [`Get<T>`](xref:Xamarin.Forms.DependencyService.Get*) défaut, la méthode crée une instance de l’implémentation de plateforme de l’interface `T` en tant que singleton. Vous pouvez cependant changer ce comportement. Pour plus d’informations, consultez [Gérer la durée de vie des objets résolus](#manage-the-lifetime-of-resolved-objects).
+> Par [`Get<T>`](xref:Xamarin.Forms.DependencyService.Get*) défaut, la méthode retourne une instance de l’implémentation de plateforme de l’interface `T` en tant que singleton. Vous pouvez cependant changer ce comportement. Pour plus d’informations, consultez [Gérer la durée de vie des objets résolus](#manage-the-lifetime-of-resolved-objects).
 
 ### <a name="resolve-using-the-resolvelttgt-method"></a>Résoudre avec la méthode Resolve&lt;T&gt;
 
@@ -127,7 +155,7 @@ DeviceOrientation orientation = DependencyService.Resolve<IDeviceOrientationServ
 ```
 
 > [!NOTE]
-> Lorsque la [`Resolve<T>`](xref:Xamarin.Forms.DependencyService.Resolve*) méthode revient à appeler la [`Get<T>`](xref:Xamarin.Forms.DependencyService.Get*) méthode, elle crée par défaut une instance de l’implémentation de la plateforme de l’interface `T` en tant que singleton. Vous pouvez cependant changer ce comportement. Pour plus d’informations, consultez [Gérer la durée de vie des objets résolus](#manage-the-lifetime-of-resolved-objects).
+> Lorsque la [`Resolve<T>`](xref:Xamarin.Forms.DependencyService.Resolve*) méthode revient à appeler la [`Get<T>`](xref:Xamarin.Forms.DependencyService.Get*) méthode, elle retourne une instance de l’implémentation de plateforme de l’interface `T` en tant que singleton, par défaut. Vous pouvez cependant changer ce comportement. Pour plus d’informations, consultez [Gérer la durée de vie des objets résolus](#manage-the-lifetime-of-resolved-objects).
 
 ## <a name="manage-the-lifetime-of-resolved-objects"></a>Gérer la durée de vie des objets résolus
 

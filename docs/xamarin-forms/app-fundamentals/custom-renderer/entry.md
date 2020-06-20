@@ -1,8 +1,22 @@
 ---
-title : « personnalisation d’une entrée » Description : «le Xamarin.Forms contrôle d’entrée permet de modifier une seule ligne de texte. Cet article montre comment créer un convertisseur personnalisé pour le contrôle d’entrée, ce qui permet aux développeurs de remplacer le rendu natif par défaut par leur propre personnalisation propre à la plateforme.
-ms. Prod : xamarin ms. AssetID : 7B5DD10D-0411-424F-88D8-8A474DF16D8D ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 11/26/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Personnalisation d’une entrée
+description: Le Xamarin.Forms contrôle d’entrée permet de modifier une seule ligne de texte. Cet article montre comment créer un renderer personnalisé pour le contrôle Entry afin de permettre aux développeurs de remplacer le rendu natif par défaut par leur propre personnalisation spécifique à la plateforme.
+ms.prod: xamarin
+ms.assetid: 7B5DD10D-0411-424F-88D8-8A474DF16D8D
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/26/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d28a9079d27310dde0e5ea5bf80c83895bbcf1d4
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84571569"
 ---
-
 # <a name="customizing-an-entry"></a>Personnalisation d’une entrée
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-entry)

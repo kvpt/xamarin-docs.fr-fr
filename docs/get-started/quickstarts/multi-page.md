@@ -1,8 +1,24 @@
 ---
-titre : « effectuer la navigation dans une application multipage Xamarin.Forms » Description : cet article explique comment activer l’application à page unique, qui permet de stocker une seule note dans une application à plusieurs pages, qui est en mesure de stocker plusieurs remarques.
-zone_pivot_groups : plateforme ms. topic : démarrage rapide ms. Prod : xamarin ms. AssetID : 9DC3B3D6-6CBC-4705-BE80-3D86A9E65F92 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 04/01/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Effectuer une navigation dans une application à plusieurs pages Xamarin.Forms
+description: Cet article explique comment transformer l’application monopage, capable de stocker une seule note, en application multipage, capable de stocker plusieurs notes.
+zone_pivot_groups: platform
+ms.topic: quickstart
+ms.prod: xamarin
+ms.assetid: 9DC3B3D6-6CBC-4705-BE80-3D86A9E65F92
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/01/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b3616d0cf4804dfb37d4fe65034796c672dec828
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84127879"
 ---
-
 # <a name="perform-navigation-in-a-multi-page-xamarinforms-application"></a>Effectuer une navigation dans une application à plusieurs pages Xamarin.Forms
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-multipage/)

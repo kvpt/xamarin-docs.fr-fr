@@ -1,8 +1,22 @@
 ---
-title : « fonctionnalités de la plateforme iOS dans Xamarin.Forms » Description : « ajout de fonctionnalités spécifiques à IOS aux Xamarin.Forms applications ».
-ms. Prod : xamarin ms. AssetID : 634AB62E-68C8-454C-838B-F1CC4E4E21BC ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 03/05/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: fonctionnalités de la plateforme iOS dansXamarin.Forms
+description: Ajout de fonctionnalités spécifiques à iOS aux Xamarin.Forms applications.
+ms.prod: xamarin
+ms.assetid: 634AB62E-68C8-454C-838B-F1CC4E4E21BC
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/05/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1008eab6e56be7a235498e01ffd3ea1b27d2bbae
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84130167"
 ---
-
 # <a name="ios-platform-features-in-xamarinforms"></a>fonctionnalités de la plateforme iOS dansXamarin.Forms
 
 Le développement Xamarin.Forms d’applications pour iOS nécessite Visual Studio. La [page plateformes prises en charge](~/get-started/supported-platforms.md) contient des informations supplémentaires sur les conditions préalables.

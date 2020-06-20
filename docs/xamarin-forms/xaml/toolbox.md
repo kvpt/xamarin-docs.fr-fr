@@ -1,6 +1,21 @@
 ---
-title : "modifier le Xamarin.Forms code XAML à l’aide de la boîte à outils" Description : "la boîte à outils XAML contient toutes les dispositions et les contrôles intégrés, qui peuvent être déplacés directement dans un fichier XAML ouvert."
-ms. Prod : xamarin ms. AssetID : 513D1247-8AD0-4611-8660-1D277CD369E1 ms. Technology : xamarin-Forms Author : conceptdev ms. Author : crdun ms. Date : 08/29/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Modifier Xamarin.Forms le code XAML à l’aide de la boîte à outils
+description: La boîte à outils XAML contient toutes les mises en page et tous les contrôles intégrés, qui peuvent être déplacés directement dans un fichier XAML ouvert.
+ms.prod: xamarin
+ms.assetid: 513D1247-8AD0-4611-8660-1D277CD369E1
+ms.technology: xamarin-forms
+author: conceptdev
+ms.author: crdun
+ms.date: 08/29/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 76d6a6f39692445f208f250ca7f6141a1e1ad450
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84198012"
 ---
 # <a name="xamarinforms-xaml-toolbox"></a>Xamarin.FormsBoîte à outils XAML
 

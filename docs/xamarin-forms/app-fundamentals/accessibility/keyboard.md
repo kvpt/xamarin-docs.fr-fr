@@ -1,8 +1,22 @@
 ---
-title : « description de l’accessibilité du clavier » : plutôt que d’utiliser la séquence d’onglets par défaut, il est parfois nécessaire de paramétrer l’accessibilité de votre interface utilisateur en spécifiant la séquence d’onglets avec une combinaison des propriétés TabIndex et IsTabStop.»
-ms. Prod : xamarin ms. AssetID : 8be8f498-558a-4894-A01F-91a0d3ef927e ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 05/09/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Accessibilité du clavier
+description: Au lieu d’utiliser la séquence d’onglets par défaut, il est parfois nécessaire de régler l’accessibilité de votre interface utilisateur en spécifiant la séquence d’onglets avec une combinaison des propriétés TabIndex et IsTabStop.
+ms.prod: xamarin
+ms.assetid: 8be8f498-558a-4894-a01f-91a0d3ef927e
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/09/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e1590d0a4f9716541f18bc4f50a2c480c5e4478a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84129777"
 ---
-
 # <a name="keyboard-accessibility-in-xamarinforms"></a>Accessibilité du clavier dansXamarin.Forms
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-accessibility)

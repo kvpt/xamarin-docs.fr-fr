@@ -1,8 +1,22 @@
 ---
-titre : « créer un Xamarin.Forms convertisseur visuel » : « créer des éléments Xamarin.Forms visuels à appliquer de manière sélective aux objets VisualElement, sans avoir à les afficher sous-classes Xamarin.Forms ».
-ms. Prod : xamarin ms. AssetID : 80BF9C72-AC28-4AAF-9DDD-B60CBDD1CD59 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 03/12/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Créer un Xamarin.Forms convertisseur visuel
+description: Créer Xamarin.Forms des éléments visuels à appliquer de manière sélective aux objets VisualElement, sans avoir à les afficher sous-classes Xamarin.Forms .
+ms.prod: xamarin
+ms.assetid: 80BF9C72-AC28-4AAF-9DDD-B60CBDD1CD59
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/12/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 23edbb007e912d13858686d1c5ec574c9e3349c7
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84127138"
 ---
-
 # <a name="create-a-xamarinforms-visual-renderer"></a>Créer un Xamarin.Forms convertisseur visuel
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)

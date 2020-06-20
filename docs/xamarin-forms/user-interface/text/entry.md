@@ -1,8 +1,22 @@
 ---
-titre : « Xamarin.Forms entrée » Description : « cet article explique comment utiliser la Xamarin.Forms classe Entry pour accepter un texte sur une seule ligne ou une entrée de mot de passe dans une application ».
-ms. Prod : xamarin ms. AssetID : 9923C541-3C10-4D14-BAB5-C4D6C514FB1E ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 09/25/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsMention
+description: Cet article explique comment utiliser la Xamarin.Forms classe Entry pour accepter une entrée de texte ou de mot de passe sur une seule ligne dans une application.
+ms.prod: xamarin
+ms.assetid: 9923C541-3C10-4D14-BAB5-C4D6C514FB1E
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/25/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5c17d6a106474c4c5b183bd41923533ffc95789b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136199"
 ---
-
 # <a name="xamarinforms-entry"></a>Xamarin.FormsMention
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
@@ -358,7 +372,7 @@ L’entrée expose deux événements :
 > [!NOTE]
 > La [`VisualElement`](xref:Xamarin.Forms.VisualElement) classe, dont [`Entry`](xref:Xamarin.Forms.Entry) hérite, possède également les [`Focused`](xref:Xamarin.Forms.VisualElement.Focused) [`Unfocused`](xref:Xamarin.Forms.VisualElement.Unfocused) événements et.
 
-### <a name="completed"></a>Completed
+### <a name="completed"></a>Effectué
 
 L' `Completed` événement est utilisé pour réagir à l’achèvement d’une interaction avec une entrée. `Completed`est déclenché lorsque l’utilisateur termine l’entrée par un champ en appuyant sur la touche retour sur le clavier (ou en appuyant sur la touche Tab sur UWP). Le gestionnaire de l’événement est un gestionnaire d’événements générique, qui prend l’expéditeur et `EventArgs` :
 

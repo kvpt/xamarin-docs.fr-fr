@@ -1,8 +1,22 @@
 ---
-title : « Fonts in Xamarin.Forms » Description :» cet article explique comment spécifier des informations de police sur des contrôles qui affichent du texte dans des Xamarin.Forms applications.
-ms. Prod : xamarin ms. AssetID : 49DD2249-C575-41AE-AE06-08F890FD6031 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 04/01/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Polices dansXamarin.Forms
+description: Cet article explique comment spécifier des informations de police sur les contrôles qui affichent du texte dans les Xamarin.Forms applications.
+ms.prod: xamarin
+ms.assetid: 49DD2249-C575-41AE-AE06-08F890FD6031
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/01/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a657915edb41573f9637128b4c88233d58a5909a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84572206"
 ---
-
 # <a name="fonts-in-xamarinforms"></a>Polices dansXamarin.Forms
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfonts)
@@ -45,7 +59,7 @@ Xamarin.Formsdéfinit également les champs de l' [`NamedSize`](xref:Xamarin.For
 Les styles de police tels que **gras** et *italique* peuvent être définis sur la `FontAttributes` propriété. Les valeurs suivantes sont actuellement prises en charge :
 
 - **Aucun**
-- **Format**
+- **Gras**
 - **Italique**
 
 L' `FontAttribute` énumération peut être utilisée comme suit (vous pouvez spécifier un seul attribut ou `OR` les deux) :

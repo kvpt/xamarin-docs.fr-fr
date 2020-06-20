@@ -1,8 +1,22 @@
 ---
-titre : « présentation des applications pour tablette et bureau » : « cet article explique comment optimiser Xamarin.Forms les dispositions des applications pour les tablettes, par opposition aux téléphones ».
-ms. Prod : xamarin ms. AssetID : D62F472B-4345-4983-8403-659A538B591F ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 02/01/2016 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Mise en page pour les applications de bureau et tablette
+description: Cet article explique comment optimiser Xamarin.Forms les dispositions des applications pour les tablettes, par opposition aux téléphones.
+ms.prod: xamarin
+ms.assetid: D62F472B-4345-4983-8403-659A538B591F
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/01/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0ecbc850960465296dc4047277bdafe78ac800a4
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573246"
 ---
-
 # <a name="layout-for-tablet-and-desktop-apps"></a>Mise en page pour les applications de bureau et tablette
 
 Xamarin.Formsprend en charge tous les types d’appareils disponibles sur les plateformes prises en charge. ainsi, en plus des téléphones, les applications peuvent également s’exécuter sur :

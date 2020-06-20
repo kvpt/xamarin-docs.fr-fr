@@ -1,8 +1,22 @@
 ---
-title : "utiliser les données au moment du design avec le générateur d’aperçu XAML" Description : "cet article explique comment utiliser les données au moment du design pour afficher des dispositions lourdes en données dans le générateur d’aperçu XAML sans exécuter votre application."
-ms. Prod : xamarin ms. AssetID : 0F608019-5951-4BE6-80E0-9EEE1733D642 ms. Technology : xamarin-Forms Author : maddyleger1 ms. Author : maleger ms. Date : 03/27/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Utiliser des données au moment du design avec le générateur d’aperçu XAML
+description: Cet article explique comment utiliser les données au moment du design pour afficher des dispositions lourdes en données dans le générateur d’aperçu XAML sans exécuter votre application.
+ms.prod: xamarin
+ms.assetid: 0F608019-5951-4BE6-80E0-9EEE1733D642
+ms.technology: xamarin-forms
+author: maddyleger1
+ms.author: maleger
+ms.date: 03/27/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 182256fd572a370a7b322898b1e24ade12e971fd
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84127353"
 ---
-
 # <a name="use-design-time-data-with-the-xaml-previewer"></a>Utiliser des données au moment du design avec le générateur d’aperçu XAML
 
 _Certaines dispositions sont difficiles à visualiser sans données. Utilisez ces conseils pour tirer le meilleur parti de l’aperçu de vos pages à données volumineuses dans le générateur d’aperçu XAML._
@@ -124,7 +138,7 @@ Si vous ne souhaitez pas ajouter de données au moment de la conception à des c
 
 ## <a name="troubleshooting"></a>Dépannage
 
-### <a name="requirements"></a>Configuration requise
+### <a name="requirements"></a>Spécifications
 
 Les données au moment de la conception requièrent une version minimale de Xamarin.Forms 3,6.
 

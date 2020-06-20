@@ -1,8 +1,23 @@
 ---
-title : « Xamarin Live Reload (préversion) » Description : « voir les modifications apportées à votre XAML en direct, sans nécessiter d’autre compilation et déploiement ».
-ms. Prod : xamarin ms. AssetID : 4917273d-32f9-401a-A52C-5cfb53a2170d ms. Technology : xamarin-Forms Author : pierceboggan ms. Auteur : piboggan robots : noindex ms. Date : 10/26/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin Live Reload (préversion)
+description: Consultez les modifications apportées à votre XAML en direct, sans nécessiter d’autre compilation et déploiement.
+ms.prod: xamarin
+ms.assetid: 4917273d-32f9-401a-a52c-5cfb53a2170d
+ms.technology: xamarin-forms
+author: pierceboggan
+ms.author: piboggan
+robots: noindex
+ms.date: 10/26/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b67594e2675c774512f3bf64f2e91ef10dbff444
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84134210"
 ---
-
 # <a name="xamarin-live-reload-preview"></a>Xamarin Live Reload (préversion)
 
 > [!NOTE]
@@ -13,7 +28,7 @@ ms. Prod : xamarin ms. AssetID : 4917273d-32f9-401a-A52C-5cfb53a2170d ms. Tech
 
 Le rechargement Xamarin Live vous permet d' **apporter des modifications à votre code XAML et de voir qu’ils sont reflétés, sans nécessiter une autre compilation et un nouveau déploiement**. Toutes les modifications apportées à votre code XAML seront redéployées lors de l’enregistrement et reflétées sur votre cible de déploiement.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>Spécifications
 
 * [Visual Studio 2017 version 15,7 ou ultérieure](https://visualstudio.microsoft.com/vs/) avec la charge de travail **développement mobile avec .net** .
 * [ Xamarin.Forms 3.0.0 ou version ultérieure](https://www.nuget.org/packages/Xamarin.Forms/).
@@ -69,7 +84,7 @@ Compilez et déployez votre application. Une fois l’application déployée, ou
 
 Le rechargement dynamique fonctionne avec les modifications apportées à un fichier XAML. Les modifications apportées à C# ou l’ajout/la suppression de packages NuGet requièrent une nouvelle build et le déploiement pour prendre effet.
 
-## <a name="frequently-asked-questions"></a>Forum Aux Questions (FAQ) 
+## <a name="frequently-asked-questions"></a>Forum Aux Questions 
 ### <a name="is-xamarin-live-reload-available-on-visual-studio-for-mac"></a>Le rechargement dynamique de Xamarin est-il disponible sur Visual Studio pour Mac ? 
 
 Non, la version préliminaire de Xamarin Live Reload n’est disponible que pour Visual Studio 2017.

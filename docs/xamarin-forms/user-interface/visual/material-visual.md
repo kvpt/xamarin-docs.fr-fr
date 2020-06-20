@@ -1,8 +1,22 @@
 ---
-titre : « Xamarin.Forms élément visuel » Description : « un Xamarin.Forms élément visuel peut être utilisé pour créer Xamarin.Forms des applications qui semblent quasiment identiques sur iOS et Android ».
-ms. Prod : xamarin ms. AssetID : B774F68C-EF9E-49E1-B738-CDC64879ADA2 ms. Technology : xamarin-Forms Author : profexorgeek ms. Author : jusjohns ms. Date : 11/25/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsÉlément visuel
+description: Xamarin.FormsLe visuel matière peut être utilisé pour créer Xamarin.Forms des applications qui semblent quasiment identiques sur iOS et Android.
+ms.prod: xamarin
+ms.assetid: B774F68C-EF9E-49E1-B738-CDC64879ADA2
+ms.technology: xamarin-forms
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 11/25/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: bba7d77d8cf565b1b2db2c1324e171389c5d0280
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84127177"
 ---
-
 # <a name="xamarinforms-material-visual"></a>Xamarin.FormsÉlément visuel
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)

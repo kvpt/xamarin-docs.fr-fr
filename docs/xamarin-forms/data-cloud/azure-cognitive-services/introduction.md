@@ -1,8 +1,22 @@
 ---
-titre : « Xamarin.Forms et présentation d’Azure cognitive Services » Description : « cet article fournit une introduction à un exemple d’application qui montre comment appeler certaines des API de Microsoft cognitive service ».
-ms. Prod : xamarin ms. AssetID : 74121ADB-1322-4C1E-A103-F37257BC7CB0 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 02/08/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.Formset présentation d’Azure Cognitive Services
+description: Cet article fournit une introduction à un exemple d’application qui montre comment appeler certaines des API Microsoft cognitive service.
+ms.prod: xamarin
+ms.assetid: 74121ADB-1322-4C1E-A103-F37257BC7CB0
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/08/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 7c2a63c40d1006c7d83c9dde871e17d4b194bdca
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84129712"
 ---
-
 # <a name="xamarinforms-and-azure-cognitive-services-introduction"></a>Xamarin.Formset présentation d’Azure Cognitive Services
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)

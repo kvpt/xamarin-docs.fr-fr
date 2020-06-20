@@ -1,8 +1,22 @@
 ---
-title : « Xamarin.Forms Slider » Description : «le Xamarin.Forms curseur est une barre horizontale qui peut être manipulée par l’utilisateur pour sélectionner une valeur double dans une plage continue. Cet article explique comment utiliser la classe Slider pour sélectionner une valeur dans une plage de valeurs continues.
-ms. Prod : xamarin ms. AssetID : 36B1C645-26E0-4874-B6B6-BDBF77662878 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 02/27/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsCurseur
+description: Le Xamarin.Forms curseur est une barre horizontale qui peut être manipulée par l’utilisateur pour sélectionner une valeur double dans une plage continue. Cet article explique comment utiliser la classe Slider pour sélectionner une valeur dans une plage de valeurs continues.
+ms.prod: xamarin
+ms.assetid: 36B1C645-26E0-4874-B6B6-BDBF77662878
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/27/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9fc61dcac588f49fc1df7ee96792cf55bdfa46c5
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84572037"
 ---
-
 # <a name="xamarinforms-slider"></a>Xamarin.FormsCurseur
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)

@@ -1,8 +1,22 @@
 ---
-titre : « accès à la bibliothèque vidéo de l’appareil » Description : « cet article explique comment accéder à la bibliothèque vidéo de l’appareil dans une application de lecteur vidéo à l’aide de Xamarin.Forms . »
-ms. Prod : xamarin ms. AssetID : 364C1D43-EAAE-45B9-BE24-0DA5AE74C4D9 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 02/12/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Accès à la vidéothèque de l’appareil
+description: Cet article explique comment accéder à la bibliothèque vidéo de l’appareil dans une application de lecteur vidéo à l’aide de Xamarin.Forms .
+ms.prod: xamarin
+ms.assetid: 364C1D43-EAAE-45B9-BE24-0DA5AE74C4D9
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/12/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 00f1434a55fb815710bff26ac090a90bce5f41ee
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84197533"
 ---
-
 # <a name="accessing-the-devices-video-library"></a>Accès à la vidéothèque de l’appareil
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

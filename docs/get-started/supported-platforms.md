@@ -1,8 +1,22 @@
 ---
-titre : « Xamarin.Forms plateformes prises en charge » Description : « plateforme et développement configuration requise pour » Xamarin.Forms .
-ms. Prod : xamarin ms. AssetID : eecaf6a5-567c-49B2-AC83-2a195596c5bf ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 01/22/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsPlateformes prises en charge
+description: Configuration requise pour la plateforme et le développement pour Xamarin.Forms .
+ms.prod: xamarin
+ms.assetid: eecaf6a5-567c-49b2-ac83-2a195596c5bf
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/22/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f93af19587cf962ac0c852599157261a087dadbc
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84197545"
 ---
-
 # <a name="xamarinforms-supported-platforms"></a>Xamarin.FormsPlateformes prises en charge
 
 Xamarin.Formsles applications peuvent être écrites pour les systèmes d’exploitation suivants :

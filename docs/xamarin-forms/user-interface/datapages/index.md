@@ -1,8 +1,22 @@
 ---
-titre : « Xamarin.Forms DataPages » Description : « cet article présente Xamarin.Forms les DataPages, qui fournissent une API pour lier rapidement et facilement une source de données à des vues prédéfinies. »
-ms. Prod : xamarin ms. AssetID : DF16EAEE-DB78-42CA-9C59-51D9D6CB6B95 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 12/01/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsDataSourceControl
+description: Cet article présente la Xamarin.Forms classe DataPages, qui fournit une API permettant de lier rapidement et facilement une source de données à des vues prédéfinies.
+ms.prod: xamarin
+ms.assetid: DF16EAEE-DB78-42CA-9C59-51D9D6CB6B95
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/01/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 7d99870dd975d0996ffcd05d4aef153f3515ec9e
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84134314"
 ---
-
 # <a name="xamarinforms-datapages"></a>Xamarin.FormsDataSourceControl
 
 ![](~/media/shared/preview.png "This API is currently in preview")

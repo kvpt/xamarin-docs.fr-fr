@@ -1,8 +1,22 @@
 ---
-title : « image in Xamarin.Forms » Description : les images peuvent être partagées entre les plateformes avec Xamarin.Forms , elles peuvent être chargées spécifiquement pour chaque plateforme, ou elles peuvent être téléchargées pour l’affichage.»
-ms. Prod : xamarin ms. AssetID : C025AB53-05CC-49BA-9815-75D6DF9E40B7 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 12/04/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Images dansXamarin.Forms
+description: Les images peuvent être partagées entre les plateformes avec Xamarin.Forms , elles peuvent être chargées spécifiquement pour chaque plateforme, ou elles peuvent être téléchargées pour l’affichage.
+ms.prod: xamarin
+ms.assetid: C025AB53-05CC-49BA-9815-75D6DF9E40B7
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/19/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 7117bb809c43ab5edb67e8367840b17cd1d97ef9
+ms.sourcegitcommit: c000c0ed15b7b2ef2a8f46a39171e11b6d9f8a5d
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84980088"
 ---
-
 # <a name="images-in-xamarinforms"></a>Images dansXamarin.Forms
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithimages)
@@ -15,7 +29,7 @@ Les images spécifiques à la plateforme sont également requises pour les icôn
 
 ## <a name="display-images"></a>Afficher les images
 
-Xamarin.Formsutilise la [`Image`](xref:Xamarin.Forms.Image) vue pour afficher des images sur une page. Il a deux propriétés importantes :
+Xamarin.Formsutilise la [`Image`](xref:Xamarin.Forms.Image) vue pour afficher des images sur une page. Il comporte plusieurs propriétés importantes :
 
 - [`Source`](xref:Xamarin.Forms.Image.Source)- [`ImageSource`](xref:Xamarin.Forms.ImageSource) Instance, fichier, Uri ou ressource, qui définit l’image à afficher.
 - [`Aspect`](xref:Xamarin.Forms.Image.Aspect): Dimensionnement de l’image dans les limites dans lesquelles elle est affichée (étirer, rogner ou bandes).
@@ -39,7 +53,7 @@ Les images peuvent être chargées à partir d’un [fichier local](#local-image
 
 Des fichiers image peuvent être ajoutés à chaque projet d’application et référencés à partir du Xamarin.Forms code partagé. Cette méthode de distribution d’images est indispensable dans le cas d’images spécifiques à la plateforme, par exemple si vous utilisez différentes résolutions sur différentes plateformes ou des conceptions qui présentent quelques variations mineures.
 
-Pour utiliser une seule image pour l’ensemble des applications, *le même nom de fichier doit être utilisé sur chaque plateforme*et doit être un nom de ressource Android valide (par ex., seules les lettres minuscules, les chiffres, le trait de soulignement et le point sont autorisés).
+Pour utiliser une seule image pour l’ensemble des applications, *le même nom de fichier doit être utilisé sur chaque plateforme*et doit être un nom de ressource Android valide (c’est-à-dire uniquement des lettres minuscules, des chiffres, le trait de soulignement et le point sont autorisés).
 
 - **iOS** : la meilleure façon de gérer et de prendre en charge les images depuis iOS 9 consiste à utiliser des **ensembles d’images du catalogue de ressources**, qui doivent contenir toutes les versions d’une image qui sont nécessaires pour prendre en charge différents appareils et facteurs d’échelle pour une application. Pour plus d’informations, consultez [Ajout d’images à un ensemble d’images du catalogue de composants](~/ios/app-fundamentals/images-icons/displaying-an-image.md).
 - **Android** : Placez les images dans le répertoire **Resources/Drawable** avec l' **action de génération : AndroidResource**. Les versions haute et basse résolution d’une image peuvent également être fournies (dans des sous-répertoires de **ressources** nommées de manière appropriée, tels que les sous-répertoires de **dessinable-LDPI**, les **bacs-HDPI**et les **xhdpi de dessin**).
@@ -231,14 +245,13 @@ var imageSource = ImageSource.FromResource("filename.png",
 Les images peuvent être téléchargées automatiquement pour l’affichage, comme illustré dans le code XAML suivant :
 
 ```xaml
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
        x:Class="WorkingWithImages.DownloadImagesXaml">
   <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
     <Label Text="Image UriSource Xaml" />
-    <Image Source="https://xamarin.com/content/images/pages/forms/example-app.png" />
-    <Label Text="example-app.png gets downloaded from xamarin.com" />
+    <Image Source="https://aka.ms/campus.jpg" />
+    <Label Text="campus.jpg gets downloaded from microsoft.com" />
   </StackLayout>
 </ContentPage>
 ```
@@ -248,7 +261,7 @@ Le code C# équivalent est le suivant :
 ```csharp
 var webImage = new Image {
      Source = ImageSource.FromUri(
-        new Uri("https://xamarin.com/content/images/pages/forms/example-app.png")
+        new Uri("https://aka.ms/campus.jpg")
      ) };
 ```
 
@@ -257,7 +270,7 @@ La [`ImageSource.FromUri`](xref:Xamarin.Forms.ImageSource.FromUri(System.Uri)) m
 Il y a également une conversion implicite pour les chaînes d’URI, l’exemple suivant fonctionne également :
 
 ```csharp
-webImage.Source = "https://xamarin.com/content/images/pages/forms/example-app.png";
+webImage.Source = "https://aka.ms/campus.jpg";
 ```
 
 Les captures d’écran suivantes montrent le résultat de l’affichage d’une image distante sur chaque plateforme :
@@ -274,7 +287,7 @@ Les captures d’écran suivantes montrent le résultat de l’affichage d’une
 La mise en cache est activée par défaut et stocke l’image localement pendant 24 heures. Pour désactiver la mise en cache d’une image particulière, instanciez la source de l’image comme suit :
 
 ```csharp
-image.Source = new UriImageSource { CachingEnabled = false, Uri = new Uri("http://server.com/image") };
+image.Source = new UriImageSource { CachingEnabled = false, Uri = new Uri("https://server.com/image") };
 ```
 
 Pour définir une période de cache spécifique (par exemple, 5 jours), instanciez la source de l’image comme suit :
@@ -282,7 +295,7 @@ Pour définir une période de cache spécifique (par exemple, 5 jours), instanci
 ```csharp
 webImage.Source = new UriImageSource
 {
-    Uri = new Uri("https://xamarin.com/content/images/pages/forms/example-app.png"),
+    Uri = new Uri("https://aka.ms/campus.jpg"),
     CachingEnabled = true,
     CacheValidity = new TimeSpan(5,0,0,0)
 };

@@ -1,9 +1,22 @@
 ---
-titre : « qu’est-ce que Xamarin ? »
-Description : « cet article présente la plateforme Xamarin et les bibliothèques associées ».
-ms. Prod : xamarin ms. AssetID : 33C83E13-F3E5-17B4-6512-207F3D3C5AB6 ms. Custom : Video Author : profexorgeek ms. Author : jusjohns ms. Date : 05/28/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Qu’est-ce que Xamarin ?
+description: Cet article présente la plateforme Xamarin et les bibliothèques associées.
+ms.prod: xamarin
+ms.assetid: 33C83E13-F3E5-17B4-6512-207F3D3C5AB6
+ms.custom: video
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 05/28/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 708a310ea015f9e678d534898fde18abc3848120
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84198321"
 ---
-
 # <a name="what-is-xamarin"></a>Qu’est-ce que Xamarin ?
 
 [![Captures d’écran de l’exemple d’application Xamarin dans iOS et Android](what-is-xamarin-images/xamarin-app-cropped.png)](what-is-xamarin-images/xamarin-app.png#lightbox)
@@ -86,7 +99,7 @@ Xamarin.Formsest une infrastructure d’interface utilisateur Open source. Xamar
 
 Pour plus d’informations, consultez [Xamarin.Forms](~/xamarin-forms/index.yml).
 
-## <a name="get-started"></a>Prendre en main
+## <a name="get-started"></a>Bien démarrer
 
 Les guides suivants vont vous aider à générer votre première application à l’aide de Xamarin :
 

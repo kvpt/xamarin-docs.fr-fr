@@ -1,8 +1,22 @@
 ---
-titre : « Xamarin.Forms rendu rapide » Description : « cet article présente des convertisseurs rapides qui réduisent les coûts d’inflation et de rendu d’un Xamarin.Forms contrôle sur Android en aplatit la hiérarchie des contrôles natifs résultants ».
-ms. Prod : xamarin ms. AssetID : 097f87f2-d891-4f3c-BE02-fb7d195a481a ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 05/28/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsConvertisseurs rapides
+description: Cet article présente les convertisseurs rapides, qui réduisent les coûts d’inflation et de rendu d’un Xamarin.Forms contrôle sur Android en aplatint la hiérarchie des contrôles natifs résultante.
+ms.prod: xamarin
+ms.assetid: 097f87f2-d891-4f3c-be02-fb7d195a481a
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/28/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 29f79e4aed0314fe1590fa26c8e4b052e14a94d6
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84198062"
 ---
-
 # <a name="xamarinforms-fast-renderers"></a>Xamarin.FormsConvertisseurs rapides
 
 Traditionnellement, la plupart des convertisseurs de contrôle d’origine sur Android sont composés de deux vues :

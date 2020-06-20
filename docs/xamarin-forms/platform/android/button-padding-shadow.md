@@ -1,8 +1,22 @@
 ---
-title : « Button padding and Shadows on Android » Description : «la plateforme spécifique vous permet d’utiliser des fonctionnalités uniquement disponibles sur une plateforme spécifique, sans implémenter de convertisseurs ou d’effets personnalisés. Cet article explique comment utiliser le spécifique à la plateforme Android qui utilise les valeurs de remplissage par défaut et les valeurs Shadow des boutons Android.
-ms. Prod : xamarin ms. AssetID : BD2B60D1-DE6E-4691-A777-8EC5F560A4E9 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 07/10/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Remplissage de bouton et ombres sur Android
+description: Les spécificités des plateformes vous permettent d’utiliser des fonctionnalités uniquement disponibles sur une plateforme spécifique, sans implémenter de convertisseurs ou d’effets personnalisés. Cet article explique comment utiliser le spécifique à la plateforme Android qui utilise les valeurs de remplissage par défaut et les valeurs Shadow des boutons Android.
+ms.prod: xamarin
+ms.assetid: BD2B60D1-DE6E-4691-A777-8EC5F560A4E9
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/10/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5554341493b52d20c946a4bcfe2d1230e4a02759
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84135562"
 ---
-
 # <a name="button-padding-and-shadows-on-android"></a>Remplissage de bouton et ombres sur Android
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

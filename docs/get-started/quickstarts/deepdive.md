@@ -1,8 +1,25 @@
 ---
-title : « Xamarin.Forms Présentation approfondie de démarrage rapide » : «cet article examine les notions de base du développement d’applications à l’aide de Xamarin.Forms . Les rubriques couvertes comportaient l’anatomie d’une Xamarin.Forms application, l’architecture et les notions de base de l’application, ainsi que l’interface utilisateur.»
-zone_pivot_groups : plateforme ms. topic : démarrage rapide ms. Prod : xamarin ms. Custom : Video ms. AssetID : 7B2340A1-6883-41D8-860C-0BB6C4E0C316 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 11/27/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsPrésentation approfondie des Démarrages rapides
+description: Cet article examine les notions de base du développement d’applications à l’aide de Xamarin.Forms . Les rubriques couvertes comprenaient l’anatomie d’une Xamarin.Forms application, l’architecture et les notions de base de l’application, ainsi que l’interface utilisateur.
+zone_pivot_groups: platform
+ms.topic: quickstart
+ms.prod: xamarin
+ms.custom: video
+ms.assetid: 7B2340A1-6883-41D8-860C-0BB6C4E0C316
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/27/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1bfb76f71a2ac9d8bc9ae84152501909000b9623
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84132520"
 ---
-
 # <a name="xamarinforms-quickstart-deep-dive"></a>Xamarin.FormsPrésentation approfondie des Démarrages rapides
 
 Dans le Guide de [ Xamarin.Forms démarrage rapide](~/get-started/index.yml), l’application notes a été générée. Cet article passe en revue ce qui a été conçu pour comprendre les principes de base du fonctionnement des Xamarin.Forms applications.
@@ -223,7 +240,7 @@ Quatre groupes de contrôles principaux sont utilisés pour créer l’interface
 
 Lors de l’exécution, chaque contrôle est mappé à son équivalent natif, ce qui sera affiché.
 
-### <a name="layout"></a>Mise en page
+### <a name="layout"></a>Layout
 
 L’application notes utilise le [`StackLayout`](xref:Xamarin.Forms.StackLayout) pour simplifier le développement d’applications interplateformes en organisant automatiquement des vues sur l’écran, quelle que soit la taille de l’écran. Les éléments enfants sont placés les uns après les autres, horizontalement ou verticalement dans l’ordre dans lequel ils ont été ajoutés. La quantité d’espace que le `StackLayout` doit utiliser dépend de la façon dont les [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) [`VerticalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) Propriétés et sont définies, mais par défaut, le `StackLayout` essaie d’utiliser la totalité de l’écran.
 

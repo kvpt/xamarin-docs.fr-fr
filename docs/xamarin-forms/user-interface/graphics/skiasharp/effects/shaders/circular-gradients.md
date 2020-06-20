@@ -1,8 +1,22 @@
 ---
-title : "Description des dégradés circulaires de SkiaSharp" : "en savoir plus sur les différents types de dégradés basés sur des cercles."
-ms. Prod : xamarin ms. Technology : xamarin-skiasharp ms. AssetID : 400AE23A-6A0B-4FA8-BD6B-DE4146B04732 auteur : davidbritch ms. Author : dabritch ms. Date : 08/23/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Dégradés circulaires SkiaSharp
+description: En savoir plus sur les différents types de dégradés basés sur des cercles.
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 400AE23A-6A0B-4FA8-BD6B-DE4146B04732
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/23/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 418d29010a8cce81d2bb8c365608c54b61739622
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84135640"
 ---
-
 # <a name="the-skiasharp-circular-gradients"></a>Dégradés circulaires SkiaSharp
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

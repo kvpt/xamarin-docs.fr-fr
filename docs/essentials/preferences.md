@@ -1,13 +1,26 @@
 ---
-titre : « Xamarin.Essentials : Preferences » Description : «ce document décrit la classe de préférences dans Xamarin.Essentials , qui enregistre les préférences de l’application dans un magasin de clés/valeurs. Il explique comment utiliser la classe et les types de données qui peuvent être stockés.»
-ms. AssetID : AA81BCBD-79BA-448F-942B-BA4415CA50FF auteur : jamesmontemagno ms. Author : Jamont ms. Date : 01/15/2019 ms. Custom : Video No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: 'Xamarin.Essentials: Préférences'
+description: Ce document décrit la classe de préférences dans Xamarin.Essentials , qui enregistre les préférences de l’application dans un magasin de clés/valeurs. Il explique comment utiliser la classe et les types de données pouvant être stockés.
+ms.assetid: AA81BCBD-79BA-448F-942B-BA4415CA50FF
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 01/15/2019
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: acc0c48776c7a91e9e5a060928564bc6e0c1d775
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84801814"
 ---
-
 # <a name="xamarinessentials-preferences"></a>Xamarin.Essentials: Préférences
 
 La classe **Preferences** permet de stocker les préférences d’application dans un magasin de clés/valeurs.
 
-## <a name="get-started"></a>Prendre en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -104,7 +117,7 @@ Quand vous stockez une chaîne, cette API permet de stocker de petites quantité
 
 ## <a name="api"></a>API
 
-- [Code source de la fonctionnalité des préférences](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Preferences)
+- [Code source de la fonctionnalité des préférences](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Preferences)
 - [Documentation sur l’API de préférences](xref:Xamarin.Essentials.Preferences)
 
 ## <a name="related-video"></a>Vidéo associée

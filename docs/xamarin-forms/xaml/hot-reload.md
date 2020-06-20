@@ -1,8 +1,22 @@
 ---
-title : "Description du chargement à chaud XAML pour Xamarin.Forms " Description : "recharger instantanément les modifications apportées à votre fichier XAML sur votre application en cours d’exécution afin de ne pas avoir à générer votre Xamarin.Forms projet après chaque modification XAML.
-ms. Prod : xamarin ms. AssetID : E220F054-32EE-424C-A7E5-6156BE271519 ms. Technology : xamarin-Forms Author : maddyleger1 ms. Author : maleger ms. Date : 03/14/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Rechargement à chaud XAML pourXamarin.Forms
+description: Rechargez les modifications apportées à votre fichier XAML instantanément sur votre application en cours d’exécution afin de ne pas avoir à générer votre Xamarin.Forms projet après chaque modification XAML.
+ms.prod: xamarin
+ms.assetid: E220F054-32EE-424C-A7E5-6156BE271519
+ms.technology: xamarin-forms
+author: maddyleger1
+ms.author: maleger
+ms.date: 03/14/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0655739c95ba58b8d93aae6d3987d54bd0582c7b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84127450"
 ---
-
 # <a name="xaml-hot-reload-for-xamarinforms"></a>Rechargement à chaud XAML pourXamarin.Forms
 
 Le rechargement à chaud XAML se connecte à votre flux de travail existant pour augmenter votre productivité et vous faire gagner du temps. Sans le rechargement à chaud XAML, vous devez générer et déployer votre application chaque fois que vous souhaitez voir une modification XAML. Avec le rechargement à chaud, lorsque vous enregistrez votre fichier XAML, les modifications sont reflétées dans votre application en cours d’exécution. En outre, votre état de navigation et vos données sont conservés, ce qui vous permet d’effectuer rapidement une itération sur votre interface utilisateur sans perdre votre place dans l’application. Par conséquent, avec le rechargement à chaud XAML, vous allez consacrer moins de temps à la reconstruction et au déploiement de vos applications pour valider les modifications de l’interface utilisateur.

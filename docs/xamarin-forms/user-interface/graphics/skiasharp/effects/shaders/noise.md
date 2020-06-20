@@ -1,8 +1,22 @@
 ---
-titre : « description du bruit et de la composition SkiaSharp » : « générer des nuanceurs de bruit Perl et les combiner avec d’autres nuanceurs ».
-ms. Prod : xamarin ms. Technology : xamarin-skiasharp ms. AssetID : 90C2D00A-2876-43EA-A836-538C3318CF93 auteur : davidbritch ms. Author : dabritch ms. Date : 08/23/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: SkiaSharp le bruit et la composition
+description: Générez des nuanceurs de bruit Perl et associez-les à d’autres nuanceurs.
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 90C2D00A-2876-43EA-A836-538C3318CF93
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/23/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 45ec48c0b7b58e26fa47d7343e96bb49591cb339
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84127762"
 ---
-
 # <a name="skiasharp-noise-and-composing"></a>SkiaSharp le bruit et la composition
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

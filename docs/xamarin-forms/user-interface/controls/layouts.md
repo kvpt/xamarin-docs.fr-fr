@@ -1,8 +1,22 @@
 ---
-titre : « Xamarin.Forms dispositions » Description : Xamarin.Forms les dispositions sont utilisées pour composer des contrôles d’interface utilisateur dans des structures visuelles. Cet article répertorie les mises en page incluses dans Xamarin.Forms .
-ms. Prod : xamarin ms. AssetID : F4180997-BA21-453A-9958-D1E2940DF050 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 05/21/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsDispositions
+description: Xamarin.FormsLes dispositions sont utilisées pour composer des contrôles d’interface utilisateur dans des structures visuelles. Cet article répertorie les dispositions incluses dans Xamarin.Forms .
+ms.prod: xamarin
+ms.assetid: F4180997-BA21-453A-9958-D1E2940DF050
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/21/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 751a004e0051fcbfd0592654b0e73f26874b15d3
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84567084"
 ---
-
 # <a name="xamarinforms-layouts"></a>Xamarin.FormsDispositions
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)

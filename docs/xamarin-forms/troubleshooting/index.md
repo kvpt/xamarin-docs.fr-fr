@@ -1,7 +1,23 @@
 ---
-titre : « Dépannage » Description : « conditions d’erreur courantes et comment les résoudre » ms. topic : Troubleshooting ms. Prod : xamarin ms. AssetID : 63291951-7375-4CBF-BCC3-2E4AD157A2C8 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 04/25/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Dépannage
+description: Conditions d’erreur courantes et comment les résoudre
+ms.topic: troubleshooting
+ms.prod: xamarin
+ms.assetid: 63291951-7375-4CBF-BCC3-2E4AD157A2C8
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/25/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 237dfd637d5456636afd19ea0175cb388773d273
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84135913"
 ---
-
 # <a name="troubleshooting"></a>Dépannage
 
 _Conditions d’erreur courantes et comment les résoudre_

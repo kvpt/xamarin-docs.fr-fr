@@ -1,8 +1,22 @@
 ---
-titre : « Xamarin.Forms WebView » Description : « cet article explique comment utiliser la Xamarin.Forms classe WebView pour présenter le contenu Web local ou réseau et les documents aux utilisateurs ».
-ms. Prod : xamarin ms. AssetID : E44F5D0F-DB8E-46C7-8789-114F1652A6C5 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 05/06/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsWebView
+description: Cet article explique comment utiliser la Xamarin.Forms classe WebView pour présenter des documents et du contenu Web locaux ou réseau aux utilisateurs.
+ms.prod: xamarin
+ms.assetid: E44F5D0F-DB8E-46C7-8789-114F1652A6C5
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/06/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9b07e044e55f99a7a183e55c566bf59dbd082655
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84198166"
 ---
-
 # <a name="xamarinforms-webview"></a>Xamarin.FormsWebView
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithwebview)
@@ -315,7 +329,7 @@ public partial class InAppBrowserXaml : ContentPage
 }
 ```
 
-Et c’est tout !
+C’est tout !
 
 ![Boutons de navigation WebView](webview-images/in-app-browser.png)
 
@@ -416,7 +430,7 @@ Pour que `WebView` fonctionne, vous devez vous assurer que les autorisations son
 - **Android** &ndash; nécessite `INTERNET` uniquement lors de l’affichage du contenu à partir du réseau. Le contenu local ne requiert pas d’autorisations spéciales.
 - **iOS** &ndash; ne requiert pas d’autorisations spéciales.
 
-## <a name="layout"></a>Mise en page
+## <a name="layout"></a>Layout
 
 Contrairement à la plupart des autres Xamarin.Forms vues, `WebView` exige que `HeightRequest` et `WidthRequest` soient spécifiés lorsqu’ils sont contenus dans StackLayout ou RelativeLayout. Si vous ne parvenez pas à spécifier ces propriétés, le `WebView` n’est pas restitué.
 

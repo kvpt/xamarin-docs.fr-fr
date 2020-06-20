@@ -1,10 +1,20 @@
 ---
-titre : « GTK
+title: 'Configuration de la plateforme GTK #'
+description: 'Xamarin.Formsprend désormais en charge la version préliminaire de la plateforme GTK #'
+ms.prod: xamarin
+ms.assetid: 3417FB95-3E4B-47DA-85D0-F34832747236
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/10/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
 ms.openlocfilehash: a5635da9f7c083609ce1e0f120d0613fff9bd77b
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/10/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84198106"
 ---
 # <a name="gtk-platform-setup"></a>Configuration de la plateforme GTK #

@@ -1,8 +1,22 @@
 ---
-title : « SkiaSharp image filters » Description : « Découvrez comment utiliser le filtre d’images pour créer des flous et des ombres portées. »
-ms. Prod : xamarin ms. Technology : xamarin-skiasharp ms. AssetID : 173E7B22-AEC8-4F12-B657-1C0CEE01AD63 auteur : davidbritch ms. Author : dabritch ms. Date : 08/27/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Filtres d’image SkiaSharp
+description: Découvrez comment utiliser le filtre d’images pour créer des flous et des ombres portées.
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 173E7B22-AEC8-4F12-B657-1C0CEE01AD63
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/27/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: eedbca080fce9f3001a7b1e2358845fd63c6121b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136342"
 ---
-
 # <a name="skiasharp-image-filters"></a>Filtres d’image SkiaSharp
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

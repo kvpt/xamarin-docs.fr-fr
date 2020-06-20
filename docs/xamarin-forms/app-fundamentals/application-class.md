@@ -1,8 +1,23 @@
 ---
-titre : « Xamarin.Forms classe d’application » Description : « cet article explique les fonctionnalités de la classe d’application par défaut, qui comprend une propriété à définir sur la page initiale de l’application, et un dictionnaire permanent pour stocker des valeurs simples dans les modifications d’État du cycle de vie. »
-ms. Prod : xamarin ms. AssetID : 421F8294-1944-46A4-8459-D2BD5AAABC9D ms. Technology : xamarin-Forms ms. Custom : Video Author : davidbritch ms. Author : dabritch ms. Date : 02/19/2016 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsClasse d’application
+description: Cet article décrit les fonctionnalités de la classe App par défaut, qui inclut une propriété à définir sur la page initiale de l’application, ainsi qu’un dictionnaire persistant pour stocker des valeurs simples lors des changements d’état de cycle de vie.
+ms.prod: xamarin
+ms.assetid: 421F8294-1944-46A4-8459-D2BD5AAABC9D
+ms.technology: xamarin-forms
+ms.custom: video
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/19/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1e761830fb08662a82a8bf98b4544aafaa6eccf7
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573350"
 ---
-
 # <a name="xamarinforms-app-class"></a>Xamarin.FormsClasse d’application
 
 La classe de base `Application` offre les fonctionnalités suivantes, qui sont exposées dans la sous-classe `App` par défaut de votre sous-projet :

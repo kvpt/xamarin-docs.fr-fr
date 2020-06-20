@@ -1,8 +1,22 @@
 ---
-titre : « validation dans les applications d’entreprise » Description : «ce chapitre explique comment l’application mobile eShopOnContainers effectue la validation des entrées utilisateur. Cela comprend la spécification des règles de validation, le déclenchement de la validation et l’affichage des erreurs de validation.»
-ms. Prod : xamarin ms. AssetID : 56e4f0fc-48D9-4033-91EC-173bb46a5e4d ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 08/07/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Validation dans les applications d’entreprise
+description: Ce chapitre explique comment l’application mobile eShopOnContainers effectue la validation des entrées d’utilisateur. Cela comprend la spécification des règles de validation, le déclenchement de la validation et l’affichage des erreurs de validation.
+ms.prod: xamarin
+ms.assetid: 56e4f0fc-48d9-4033-91ec-173bb46a5e4d
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/07/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a4b82552956ab0e75d0a76a14ce7c919c744e09a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84565328"
 ---
-
 # <a name="validation-in-enterprise-apps"></a>Validation dans les applications d’entreprise
 
 Toute application qui accepte les entrées d’utilisateurs doit s’assurer que l’entrée est valide. Une application peut, par exemple, Rechercher des entrées qui contiennent uniquement des caractères dans une plage particulière, qui est d’une certaine longueur ou qui correspond à un format particulier. Sans validation, un utilisateur peut fournir des données qui provoquent l’échec de l’application. La validation applique des règles d’entreprise et empêche une personne malveillante d’injecter des données malveillantes.

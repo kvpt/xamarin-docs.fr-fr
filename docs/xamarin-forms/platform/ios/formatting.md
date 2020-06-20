@@ -1,8 +1,22 @@
 ---
-titre : « ajout d’une mise en forme spécifique à iOS » Description : « cet article explique comment définir l’apparence spécifique à iOS sans utiliser de Xamarin.Forms convertisseur personnalisé ».
-ms. Prod : xamarin ms. AssetID : CE50E207-D092-4D88-8439-1B51F178E7ED ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 01/29/2016 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Ajout d’une mise en forme spécifique à iOS
+description: Cet article explique comment définir l’apparence spécifique à iOS sans utiliser de Xamarin.Forms convertisseur personnalisé.
+ms.prod: xamarin
+ms.assetid: CE50E207-D092-4D88-8439-1B51F178E7ED
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/29/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 062dd77f1dc7b82f16bfbc6d46e44d4adeb73350
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84564704"
 ---
-
 # <a name="adding-ios-specific-formatting"></a>Ajout d’une mise en forme spécifique à iOS
 
 Une façon de définir une mise en forme spécifique à iOS consiste à créer un [convertisseur personnalisé](~/xamarin-forms/app-fundamentals/custom-renderer/index.md) pour un contrôle et à définir des couleurs et des styles spécifiques à la plateforme pour chaque plateforme.

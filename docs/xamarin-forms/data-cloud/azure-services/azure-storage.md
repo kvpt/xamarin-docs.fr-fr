@@ -1,8 +1,22 @@
 ---
-titre : « description de la Banque et de l’accès aux données dans le stockage Azure à partir de Xamarin.Forms » : «Azure Storage est une solution de stockage cloud évolutive qui peut être utilisée pour stocker des données structurées et non structurées. Cet article explique comment utiliser Xamarin.Forms pour stocker du texte et des données binaires dans le stockage Azure et comment accéder aux données.
-ms. Prod : xamarin ms. AssetID : 5B10D37B-839B-4CD0-9C65-91014A93F3EB ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 12/28/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Stocker des données et y accéder dans stockage Azure à partir deXamarin.Forms
+description: Le stockage Azure est une solution de stockage cloud évolutive qui peut être utilisée pour stocker des données structurées et non structurées. Cet article explique comment utiliser Xamarin.Forms pour stocker du texte et des données binaires dans le stockage Azure et comment accéder aux données.
+ms.prod: xamarin
+ms.assetid: 5B10D37B-839B-4CD0-9C65-91014A93F3EB
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/28/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a69edd3bf014809cc479dcb7cba0e430dcefbe5b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84564678"
 ---
-
 # <a name="store-and-access-data-in-azure-storage-from-xamarinforms"></a>Stocker des données et y accéder dans stockage Azure à partir deXamarin.Forms
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurestorage)

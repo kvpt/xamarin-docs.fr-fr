@@ -1,8 +1,22 @@
 ---
-titre : « comportements réutilisables » Description : «les comportements sont réutilisables dans plusieurs applications. Ces articles expliquent comment créer des comportements utiles pour effectuer des fonctionnalités couramment utilisées.»
-ms. Prod : xamarin ms. AssetID : DC9AA512-3624-4EE6-AB5E-628EBA55D2DF ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 04/06/2016 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Comportements réutilisables
+description: Les comportements sont réutilisables entre plusieurs applications. Ces articles expliquent comment créer des comportements utiles pour exécuter des fonctionnalités couramment utilisées.
+ms.prod: xamarin
+ms.assetid: DC9AA512-3624-4EE6-AB5E-628EBA55D2DF
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/06/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a668a6272a7158de3594f6001cc552ff294cf1a3
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84135744"
 ---
-
 # <a name="reusable-behaviors"></a>Comportements réutilisables
 
 _Les comportements sont réutilisables dans plusieurs applications. Ces articles expliquent comment créer des comportements utiles pour effectuer des fonctionnalités couramment utilisées._

@@ -1,8 +1,22 @@
 ---
-title : "recadrage des bitmaps SkiaSharp" Description : "Découvrez comment utiliser SkiaSharp pour concevoir une interface utilisateur pour décrivant un rectangle de rognage de manière interactive.
-ms. Prod : xamarin ms. Technology : xamarin-skiasharp ms. AssetID : 0A79AB27-C69F-4376-8FFE-FF46E4783F30 auteur : davidbritch ms. Author : dabritch ms. Date : 07/17/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Rognage des bitmaps SkiaSharp
+description: Découvrez comment utiliser SkiaSharp pour concevoir une interface utilisateur qui décrivant de manière interactive un rectangle de rognage.
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 0A79AB27-C69F-4376-8FFE-FF46E4783F30
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/17/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d613c4f73c0a377a599b0137ce2f2b557c04ad6a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84572336"
 ---
-
 # <a name="cropping-skiasharp-bitmaps"></a>Rognage des bitmaps SkiaSharp
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

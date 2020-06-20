@@ -1,8 +1,22 @@
 ---
-titre : « Xamarin.Forms classe d’appareil » Description : « cet article explique comment utiliser la Xamarin.Forms classe d’appareil pour contrôler de façon précise les fonctionnalités et les dispositions par plateforme. »
-ms. Prod : xamarin ms. AssetID : 2F304AEC-8612-4833-81E5-B2F3F469B2DF ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 04/17/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsClasse d’appareil
+description: Cet article explique comment utiliser la Xamarin.Forms classe d’appareil pour contrôler précisément les fonctionnalités et les dispositions sur la base de chaque plateforme.
+ms.prod: xamarin
+ms.assetid: 2F304AEC-8612-4833-81E5-B2F3F469B2DF
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/17/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: ba4e93b8f364d6887439b05017a9cd373dce5985
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84572323"
 ---
-
 # <a name="xamarinforms-device-class"></a>Xamarin.FormsClasse d’appareil
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithdevice)

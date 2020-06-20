@@ -1,8 +1,22 @@
 ---
-title : « Préface to Enterprise App development » Description : « ce chapitre fournit une préface aux modèles d’application d’entreprise à l’aide de Xamarin.Forms . »
-ms. Prod : xamarin ms. AssetID : fbf32a44-1d33-4E16-A904-dc7ee5991e7c ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 08/07/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Préface au développement d’applications d’entreprise
+description: Ce chapitre fournit une préface aux modèles d’application d’entreprise à l’aide de Xamarin.Forms .
+ms.prod: xamarin
+ms.assetid: fbf32a44-1d33-4e16-a904-dc7ee5991e7c
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/07/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 6ea63fc483025fc6f9b0c7f379b6dfdc6ca30de8
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84198087"
 ---
-
 # <a name="preface-to-enterprise-app-development"></a>Préface au développement d’applications d’entreprise
 
 Ce livre électronique fournit des conseils sur la création d’applications d’entreprise multiplateforme à l’aide de Xamarin.Forms . Xamarin.Formsest une boîte à outils d’interface utilisateur multiplateforme qui permet aux développeurs de créer facilement des dispositions d’interface utilisateur natives qui peuvent être partagées entre différentes plateformes, notamment iOS, Android et le plateforme Windows universelle (UWP). Il offre une solution complète pour les applications d’entreprise à employé (B2E), d’entreprise à entreprise (B2B) et d’entreprise à consommateur (B2C), offrant ainsi la possibilité de partager du code sur toutes les plateformes cibles et de réduire le coût total de possession (TCO).

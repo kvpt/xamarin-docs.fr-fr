@@ -1,8 +1,22 @@
 ---
-title : "modèle-vue-ViewModel modèle" Description : "ce chapitre explique comment l’application mobile eShopOnContainers utilise le modèle MVVM pour séparer proprement la logique métier et de présentation de l’application de son interface utilisateur.
-ms. Prod : xamarin ms. AssetID : dd8c1813-df44-4947-BCEE-1a1ff2334b87 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 08/07/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Modèle Model-View-ViewModel
+description: Ce chapitre explique comment l’application mobile eShopOnContainers utilise le modèle MVVM pour séparer correctement la logique métier et de présentation de l’application à partir de son interface utilisateur.
+ms.prod: xamarin
+ms.assetid: dd8c1813-df44-4947-bcee-1a1ff2334b87
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/07/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c07fc9f42c4175b4e4569ab95a951b24c130c4f3
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84572050"
 ---
-
 # <a name="the-model-view-viewmodel-pattern"></a>Modèle Model-View-ViewModel
 
 L' Xamarin.Forms expérience du développeur implique généralement la création d’une interface utilisateur en XAML, puis l’ajout du code-behind qui fonctionne sur l’interface utilisateur. À mesure que les applications sont modifiées et qu’elles augmentent la taille et la portée, des problèmes de maintenance complexes peuvent survenir. Ces problèmes incluent le couplage étroit entre les contrôles de l’interface utilisateur et la logique métier, ce qui augmente le coût des modifications apportées à l’interface utilisateur et la difficulté du test unitaire de ce code.

@@ -1,8 +1,22 @@
 ---
-title : « fonctionnalités de la plateforme Android » Description : « cet article explique comment ajouter des fonctionnalités Android spécifiques aux Xamarin.Forms applications. »
-ms. Prod : xamarin ms. AssetID : E24168F3-0138-4814-86EA-B467F6B8A545 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 12/11/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Fonctionnalités de la plateforme Android
+description: Cet article explique comment ajouter des fonctionnalités Android spécifiques aux Xamarin.Forms applications.
+ms.prod: xamarin
+ms.assetid: E24168F3-0138-4814-86EA-B467F6B8A545
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/11/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 3045db1248aa16529d4e43b9a8afc97377cfd9cb
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84128943"
 ---
-
 # <a name="android-platform-features"></a>Fonctionnalités de la plateforme Android
 
 Le développement Xamarin.Forms d’applications pour Android nécessite Visual Studio. La [page plateformes prises en charge](~/get-started/supported-platforms.md) contient des informations supplémentaires sur les conditions préalables.

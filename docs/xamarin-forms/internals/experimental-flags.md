@@ -1,8 +1,22 @@
 ---
-titre : « Xamarin.Forms indicateurs expérimentaux » : « Xamarin.Forms les indicateurs expérimentaux permettent à l’équipe d’ingénierie d’expédier de nouvelles fonctionnalités aux utilisateurs plus rapidement, tout en étant en mesure de modifier les API de fonctionnalités avant qu’elles ne passent à une version stable ».
-ms. Prod : xamarin ms. AssetID : AF4BDD27-89F6-48AE-A8CD-D7E4DDA2CCA2 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 04/14/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.Formsindicateurs expérimentaux
+description: Xamarin.Formsles indicateurs expérimentaux permettent à l’équipe d’ingénierie de fournir de nouvelles fonctionnalités aux utilisateurs plus rapidement, tout en étant en mesure de modifier les API de fonctionnalités avant qu’elles ne passent à une version stable.
+ms.prod: xamarin
+ms.assetid: AF4BDD27-89F6-48AE-A8CD-D7E4DDA2CCA2
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/15/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 17fcc996b4dc8013a23a598ece8e240caba3f775
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84946115"
 ---
-
 # <a name="xamarinforms-experimental-flags"></a>Xamarin.Formsindicateurs expérimentaux
 
 Quand une nouvelle Xamarin.Forms fonctionnalité est implémentée, elle est parfois placée derrière un indicateur expérimental. Cela permet à l’équipe d’ingénierie de fournir de nouvelles fonctionnalités plus rapidement, tout en étant en mesure de modifier les API de fonctionnalités avant qu’elles ne passent à une version stable. L’indicateur expérimental est ensuite supprimé une fois la fonctionnalité déplacée vers une version stable.
@@ -12,10 +26,10 @@ Xamarin.Formscomprend les indicateurs expérimentaux suivants :
 - `AppTheme_Experimental`
 - `CarouselView_Experimental`
 - `Expander_Experimental`
-- `IndicatorView_Experimental`
 - `Markup_Experimental`
 - `MediaElement_Experimental`
 - `RadioButton_Experimental`
+- `Shapes_Experimental`
 - `Shell_UWP_Experimental`
 - `StateTriggers_Experimental`
 - `SwipeView_Experimental`
@@ -44,7 +58,7 @@ La `SetFlags` méthode doit être appelée dans votre `AppDelegate` classe sur i
 La `Xamarin.Forms.Forms.SetFlags` méthode accepte un `string` argument de tableau, ce qui permet d’activer plusieurs indicateurs expérimentaux dans un appel de méthode unique :
 
 ```csharp
-Xamarin.Forms.Forms.SetFlags(new string[] { "CarouselView_Experimental", "IndicatorView_Experimental", "SwipeView_Experimental" });
+Xamarin.Forms.Forms.SetFlags(new string[] { "CarouselView_Experimental", "MediaElement_Experimental", "SwipeView_Experimental" });
 ```
 
 > [!WARNING]

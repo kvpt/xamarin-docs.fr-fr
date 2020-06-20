@@ -1,8 +1,22 @@
 ---
-titre : « introduction au développement d’applications d’entreprise » Description : « ce chapitre fournit une introduction au développement d’applications d’entreprise et présente l’application mobile eShopOnContainers ».
-ms. Prod : xamarin ms. AssetID : cbce0659-FA03-447A-86ec-140438143230 ms. Technology : xamarin-Forms auteur : davidbritch ms. Author : dabritch ms. Date : 08/07/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Présentation du développement d’applications d’entreprise
+description: Ce chapitre fournit une introduction au développement d’applications d’entreprise et présente l’application mobile eShopOnContainers.
+ms.prod: xamarin
+ms.assetid: cbce0659-fa03-447a-86ec-140438143230
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/07/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e78e7c3056d4f1e22114819f54c1df261aec70e1
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84198114"
 ---
-
 # <a name="introduction-to-enterprise-app-development"></a>Présentation du développement d’applications d’entreprise
 
 Quelle que soit la plateforme, les développeurs d’applications d’entreprise sont confrontés à plusieurs défis :
@@ -108,7 +122,7 @@ En outre, des tests unitaires sont fournis pour certaines des classes de l’app
 
 La solution d’application mobile eShopOnContainers organise le code source et d’autres ressources en projets. Tous les projets utilisent des dossiers pour organiser le code source et d’autres ressources en catégories. Le tableau suivant présente les projets qui composent l’application mobile eShopOnContainers :
 
-|Projet|Description|
+|Project|Description|
 |--- |--- |
 |eShopOnContainers. Core|Ce projet est le projet de bibliothèque de classes portable (PCL) qui contient le code partagé et l’interface utilisateur partagée.|
 |eShopOnContainers. Droid|Ce projet contient le code spécifique à Android et constitue le point d’entrée de l’application Android.|

@@ -1,8 +1,22 @@
 ---
-titre : « Xamarin.Forms RelativeLayout » Description : « cet article explique comment utiliser la Xamarin.Forms classe RelativeLayout pour créer des interfaces utilisateur qui s’adaptent à n’importe quelle taille d’écran. »
-ms. Prod : xamarin ms. AssetID : 2530BCB8-01B8-4C4F-BF14-CA53659F1B5A ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 11/25/2015 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsRelativeLayout
+description: Cet article explique comment utiliser la Xamarin.Forms classe RelativeLayout pour créer des interfaces utilisateur qui s’adaptent à n’importe quelle taille d’écran.
+ms.prod: xamarin
+ms.assetid: 2530BCB8-01B8-4C4F-BF14-CA53659F1B5A
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/25/2015
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f250b109f759bcf6bb7fa4ac0573743ac12c4bc1
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84127190"
 ---
-
 # <a name="xamarinforms-relativelayout"></a>Xamarin.FormsRelativeLayout
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
@@ -17,7 +31,7 @@ ms. Prod : xamarin ms. AssetID : 2530BCB8-01B8-4C4F-BF14-CA53659F1B5A ms. Tech
 
 ![](relative-layout-images/flag.png "RelativeLayout Exploration")
 
-## <a name="usage"></a>Usage
+## <a name="usage"></a>Utilisation
 
 ### <a name="understanding-constraints"></a>Fonctionnement des contraintes
 

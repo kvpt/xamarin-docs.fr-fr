@@ -1,8 +1,22 @@
 ---
-title : "Description réutilisable de EffectBehavior" : "les comportements sont une approche utile pour ajouter un effet à un contrôle, en supprimant le code de gestion des effets d’une plaque de chaudière des fichiers code-behind. Cet article décrit la création et l’utilisation d’un Xamarin.Forms comportement pour ajouter un effet à un contrôle.»
-ms. Prod : xamarin ms. AssetID : A909B24D-960A-4023-AFF6-4B9256C55ADD ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 04/06/2016 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: EffectBehavior réutilisable
+description: Les comportements sont une approche utile pour ajouter un effet à un contrôle, tout en supprimant le code de gestion de l’effet réutilisable dans les fichiers code-behind. Cet article décrit la création et l’utilisation d’un Xamarin.Forms comportement pour ajouter un effet à un contrôle.
+ms.prod: xamarin
+ms.assetid: A909B24D-960A-4023-AFF6-4B9256C55ADD
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/06/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0a105548f869eb448a990a1cc12e6feff4197d48
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84135783"
 ---
-
 # <a name="reusable-effectbehavior"></a>EffectBehavior réutilisable
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-effectbehavior)

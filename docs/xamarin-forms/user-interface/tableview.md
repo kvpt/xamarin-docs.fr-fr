@@ -1,8 +1,22 @@
 ---
-title : " Xamarin.Forms TableView" Description : "cet article explique comment utiliser la Xamarin.Forms classe TableView pour présenter des menus, des paramètres et des formulaires de saisie de défilement dans des applications.
-ms. Prod : xamarin ms. AssetID : D1619D19-A74F-40DF-8E53-B1B7DFF7A3FB ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 09/25/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsTableView
+description: Cet article explique comment utiliser la Xamarin.Forms classe TableView pour présenter des menus déroulants, des paramètres et des formulaires d’entrée dans des applications.
+ms.prod: xamarin
+ms.assetid: D1619D19-A74F-40DF-8E53-B1B7DFF7A3FB
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/25/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: bf09856efddbd1887ee93b34014ef0f573058f4d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84565289"
 ---
-
 # <a name="xamarinforms-tableview"></a>Xamarin.FormsTableView
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-tableview)

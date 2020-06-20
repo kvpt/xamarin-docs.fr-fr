@@ -1,13 +1,25 @@
 ---
-title : « Xamarin.Essentials extensions de plateforme » Description : « Xamarin.Essentials fournit plusieurs méthodes d’extension de plateforme lorsqu’il est nécessaire d’utiliser des types de plateforme tels que Rect, size et point ».
-ms. AssetID : AB4D198A-4FD7-479E-8627-01F887A6D056 auteur : jamesmontemagno ms. Author : Jamont ms. Date : 03/13/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.EssentialsExtensions de plateforme
+description: Xamarin.Essentialsfournit plusieurs méthodes d’extension de plateforme lorsqu’il est nécessaire d’utiliser des types de plateforme tels que Rect, size et point.
+ms.assetid: AB4D198A-4FD7-479E-8627-01F887A6D056
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 03/13/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 56cb9619a4132f6568cee8fbf590965934024639
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84801907"
 ---
-
 # <a name="xamarinessentials-platform-extensions"></a>Xamarin.Essentials: Extensions de plateforme
 
 Xamarin.Essentialsfournit plusieurs méthodes d’extension de plateforme lorsqu’il est nécessaire d’utiliser des types de plateforme tels que Rect, size et point. Cela signifie que vous pouvez convertir la version `System` de ces types en types spécifiques iOS, Android et UWP.
 
-## <a name="get-started"></a>Prendre en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -135,7 +147,7 @@ var system2 = platform.ToSystemRectangle();
 
 ## <a name="api"></a>API
 
-- [Code source des convertisseurs](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Types/PlatformExtensions)
+- [Code source des convertisseurs](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Types/PlatformExtensions)
 - [Documentation sur les API de convertisseurs de points](xref:Xamarin.Essentials.PointExtensions)
 - [Documentation de l’API de convertisseurs de rectangles](xref:Xamarin.Essentials.RectangleExtensions)
 - [Documentation sur les API de convertisseurs de tailles](xref:Xamarin.Essentials.SizeExtensions)

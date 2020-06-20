@@ -1,8 +1,22 @@
 ---
-titre : « création des lecteurs vidéo de la plateforme » Description : « cet article explique comment implémenter un convertisseur personnalisé de lecteur vidéo sur chaque plateforme à l’aide de Xamarin.Forms . »
-ms. Prod : xamarin ms. AssetID : EEE2FB9B-EB73-4A3F-A859-7A1D4808E149 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 02/12/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Création des lecteurs vidéo de la plateforme
+description: Cet article explique comment implémenter un convertisseur personnalisé de lecteur vidéo sur chaque plateforme à l’aide de Xamarin.Forms .
+ms.prod: xamarin
+ms.assetid: EEE2FB9B-EB73-4A3F-A859-7A1D4808E149
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/12/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d026ecc3288da155aefb0f68ee0c70721106c0da
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84133742"
 ---
-
 # <a name="creating-the-platform-video-players"></a>Création des lecteurs vidéo de la plateforme
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

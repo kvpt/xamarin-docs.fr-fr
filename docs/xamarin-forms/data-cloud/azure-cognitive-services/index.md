@@ -1,8 +1,22 @@
 ---
-titre : « Xamarin.Forms et azure cognitive Services » Description : « ajoutez de l’intelligence aux Xamarin.Forms applications avec Azure cognitive services, notamment la reconnaissance vocale, la vérification orthographique, la traduction de texte et la reconnaissance d’émotions. »
-ms. Prod : xamarin ms. AssetID : 64386A65-FD31-4A1B-A769-91495E57345A ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 06/27/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.Formset Azure Cognitive Services
+description: Ajoutez de l’intelligence aux Xamarin.Forms applications avec Azure cognitive services, notamment la reconnaissance vocale, la vérification orthographique, la traduction de texte et la reconnaissance d’émotions.
+ms.prod: xamarin
+ms.assetid: 64386A65-FD31-4A1B-A769-91495E57345A
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/27/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 64f5dce9337444a1e910a11a69426964a09ac05a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136017"
 ---
-
 # <a name="xamarinforms-and-azure-cognitive-services"></a>Xamarin.Formset Azure Cognitive Services
 
 ## <a name="introduction"></a>[Introduction](introduction.md)

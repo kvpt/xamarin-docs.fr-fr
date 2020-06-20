@@ -1,6 +1,23 @@
 ---
-titre : « créer votre première application Xamarin.Forms » Description : « Guide vidéo qui montre comment créer votre première Xamarin.Forms application dans Visual Studio ».
-zone_pivot_groups : Platform-dev16 ms. Prod : xamarin ms. AssetID : 72B6AF82-4D98-47E5-AB54-0A35B3253468 ms. Technology : xamarin-Forms ms. Custom : Video Author : conceptdev ms. Author : crdun ms. Date : 05/23/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Créer votre première Xamarin.Forms application
+description: Guide vidéo qui montre comment créer votre première Xamarin.Forms application dans Visual Studio.
+zone_pivot_groups: platform-dev16
+ms.prod: xamarin
+ms.assetid: 72B6AF82-4D98-47E5-AB54-0A35B3253468
+ms.technology: xamarin-forms
+ms.custom: video
+author: conceptdev
+ms.author: crdun
+ms.date: 05/23/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: da56bde956a0ff7730ef6737e2802c3723d6d716
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84133473"
 ---
 # <a name="build-your-first-xamarinforms-app"></a>Créer votre première Xamarin.Forms application
 

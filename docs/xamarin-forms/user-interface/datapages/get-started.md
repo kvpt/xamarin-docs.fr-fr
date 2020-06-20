@@ -1,8 +1,22 @@
 ---
-titre : « Prise en main avec DataPages » Description : « cet article explique comment prendre en main la création d’une page simple pilotée par les données à l’aide de Xamarin.Forms DataPages. »
-ms. Prod : xamarin ms. AssetID : 6416E5FA-6384-4298-BAA1-A89381E47210 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 12/01/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Prise en main avec DataPages
+description: Cet article explique comment prendre en main la création d’une page simple pilotée par les données à l’aide de Xamarin.Forms DataPages.
+ms.prod: xamarin
+ms.assetid: 6416E5FA-6384-4298-BAA1-A89381E47210
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/01/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: bb08d359048d53639a700cc5ff526f26d6b077b6
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84571465"
 ---
-
 # <a name="getting-started-with-datapages"></a>Prise en main avec DataPages
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://github.com/xamarin/xamarin-forms-samples/tree/master/Pages/DataPagesDemo)

@@ -1,13 +1,26 @@
 ---
-titre : « Xamarin.Essentials convertisseurs d’unités » Description : « la classe UnitConverters dans Xamarin.Essentials fournit plusieurs convertisseurs d’unités pour aider les développeurs lors de l’utilisation de Xamarin.Essentials . »
-ms. AssetID : 35DE2704-E730-4337-9476-66CD53376943 Author : jamesmontemagno ms. Custom : vidéo ms. Author : Jamont ms. Date : 01/06/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.EssentialsConvertisseurs d’unités
+description: La classe UnitConverters dans Xamarin.Essentials fournit plusieurs convertisseurs d’unités pour aider les développeurs à utiliser Xamarin.Essentials .
+ms.assetid: 35DE2704-E730-4337-9476-66CD53376943
+author: jamesmontemagno
+ms.custom: video
+ms.author: jamont
+ms.date: 01/06/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 332762a83796fef24278c6685a29f7d31a10dadc
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84801853"
 ---
-
 # <a name="xamarinessentials-unit-converters"></a>Xamarin.Essentials: Convertisseurs d’unités
 
 La classe **UnitConverters** fournit plusieurs convertisseurs d’unités pour aider les développeurs à utiliser Xamarin.Essentials .
 
-## <a name="get-started"></a>Prendre en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -59,7 +72,7 @@ Voici la liste des conversions disponibles :
 
 ## <a name="api"></a>API
 
-- [Code source des convertisseurs d’unités](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Types/UnitConverters.shared.cs)
+- [Code source des convertisseurs d’unités](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Types/UnitConverters.shared.cs)
 - [Documentation sur les API de convertisseurs d’unités](xref:Xamarin.Essentials.UnitConverters)
 
 ## <a name="related-video"></a>Vidéo associée

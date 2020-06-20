@@ -1,8 +1,22 @@
 ---
-title : " Xamarin.Forms Description du défilement CollectionView" : quand un utilisateur effectue un balayage pour lancer un défilement, la position de fin du défilement peut être contrôlée afin que les éléments soient entièrement affichés. En outre, CollectionView définit deux méthodes ScrollTo, qui défilent les éléments par programmation.
-ms. Prod : xamarin ms. AssetID : 2ED719AF-33D2-434D-949A-B70B479C9BA5 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 09/17/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsDéfilement CollectionView
+description: Lorsqu’un utilisateur effectue un balayage pour lancer un défilement, la position de fin du défilement peut être contrôlée afin que les éléments soient entièrement affichés. En outre, CollectionView définit deux méthodes ScrollTo, qui défilent par programmation des éléments dans la vue.
+ms.prod: xamarin
+ms.assetid: 2ED719AF-33D2-434D-949A-B70B479C9BA5
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/17/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 04d190971fa5ef16e08091600558f7f016bc8605
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84134509"
 ---
-
 # <a name="xamarinforms-collectionview-scrolling"></a>Xamarin.FormsDéfilement CollectionView
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)

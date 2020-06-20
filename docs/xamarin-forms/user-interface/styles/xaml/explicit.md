@@ -1,8 +1,22 @@
 ---
-title : "styles explicites dans Xamarin.Forms " Description : "un style explicite est appliqué de manière sélective aux contrôles en définissant leurs propriétés de style. Cet article explique comment utiliser des styles explicites dans une Xamarin.Forms application.
-ms. Prod : xamarin ms. AssetID : C0DF9F8F-B431-4374-A574-325BC3C41A3B ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 02/17/2016 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Styles explicites dansXamarin.Forms
+description: Un style explicite est appliqué de manière sélective aux contrôles en définissant leurs propriétés de style. Cet article explique comment utiliser des styles explicites dans une Xamarin.Forms application.
+ms.prod: xamarin
+ms.assetid: C0DF9F8F-B431-4374-A574-325BC3C41A3B
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/17/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 62b84a5028c17c28a69a887a832028c2064fa78d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136264"
 ---
-
 # <a name="explicit-styles-in-xamarinforms"></a>Styles explicites dansXamarin.Forms
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)

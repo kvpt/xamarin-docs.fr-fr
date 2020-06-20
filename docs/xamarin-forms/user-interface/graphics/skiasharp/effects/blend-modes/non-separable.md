@@ -1,8 +1,22 @@
 ---
-titre : « description des modes de fusion non séparables » : utilisez les modes de fusion non séparables pour modifier la teinte, la saturation ou la luminosité.
-ms. Prod : xamarin ms. Technology : xamarin-skiasharp ms. AssetID : 97FA2730-87C0-4914-8C9F-C64A02CF9EEF auteur : davidbritch ms. Author : dabritch ms. Date : 08/23/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Modes de fusion non séparables
+description: Utilisez les modes de fusion non séparables pour modifier la teinte, la saturation ou la luminosité.
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 97FA2730-87C0-4914-8C9F-C64A02CF9EEF
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/23/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 52be7641ac3b2983f537e11bccd76f2a5b52574d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84130180"
 ---
-
 # <a name="the-non-separable-blend-modes"></a>Modes de fusion non séparables
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

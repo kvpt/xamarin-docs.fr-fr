@@ -1,8 +1,22 @@
 ---
-title : "Description de la navigation des applications d’entreprise" : "ce chapitre explique comment l’application mobile eShopOnContainers effectue la navigation dans le modèle de vue, en commençant par les modèles de vue."
-ms. Prod : xamarin ms. AssetID : 4cad57b5-7fe4-4527-A988-d9b60c9620b4 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 08/07/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Navigation dans les applications d’entreprise
+description: Ce chapitre explique comment l’application mobile eShopOnContainers effectue la navigation à partir des modèles de vue.
+ms.prod: xamarin
+ms.assetid: 4cad57b5-7fe4-4527-a988-d9b60c9620b4
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/07/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: ca562120a819d4d9fe09b2ee5891a78f1010b1a5
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84572024"
 ---
-
 # <a name="enterprise-app-navigation"></a>Navigation dans les applications d’entreprise
 
 Xamarin.Formsprend en charge la navigation entre les pages, qui résulte généralement de l’interaction de l’utilisateur avec l’interface utilisateur ou à partir de l’application elle-même suite à des modifications d’État pilotées par la logique interne. Toutefois, la navigation peut être complexe à implémenter dans les applications qui utilisent le modèle MVVM (Model-View-ViewModel), car les défis suivants doivent être respectés :

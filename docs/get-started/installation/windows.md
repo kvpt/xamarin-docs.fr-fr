@@ -1,6 +1,20 @@
 ---
-titre : « installation de Xamarin dans Visual Studio 2019 » Description : «ce document décrit comment installer Xamarin dans Visual Studio 2019. Il traite des exigences, du processus d’installation et de la vérification de l’installation.»
-ms. Prod : xamarin ms. AssetID : E20D4463-368E-4B60-A059-F50DB8C5552D auteur : conceptdev ms. Author : crdun ms. Date : 08/28/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Installation de Xamarin dans Visual Studio 2019
+description: Ce document explique comment installer Xamarin dans Visual Studio 2019. Il décrit la configuration requise, le processus d’installation et la vérification de l’installation.
+ms.prod: xamarin
+ms.assetid: E20D4463-368E-4B60-A059-F50DB8C5552D
+author: conceptdev
+ms.author: crdun
+ms.date: 08/28/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 91e4cbf09ac730483659dbe692bab19f8bb0b113
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84570125"
 ---
 # <a name="installing-xamarin-in-visual-studio-2019"></a>Installation de Xamarin dans Visual Studio 2019
 

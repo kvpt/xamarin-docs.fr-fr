@@ -1,8 +1,22 @@
 ---
-titre : « Xamarin.Forms views » Description : « Xamarin.Forms les vues sont les blocs de construction des interfaces utilisateur mobiles multiplateforme. Cet article répertorie les affichages inclus dans Xamarin.Forms .
-ms. Prod : xamarin ms. AssetID : AC070686-A423-4A98-8BB6-0B9F94C062CC ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 04/16/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsAffichage
+description: Xamarin.Formsles vues sont les blocs de construction des interfaces utilisateur mobiles multiplateformes. Cet article répertorie les affichages inclus dans Xamarin.Forms .
+ms.prod: xamarin
+ms.assetid: AC070686-A423-4A98-8BB6-0B9F94C062CC
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/16/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8c15626e405645d28a785c32d276860f9751ea25
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84132377"
 ---
-
 # <a name="xamarinforms-views"></a>Xamarin.FormsAffichage
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery/)
@@ -27,7 +41,7 @@ Les vues sont des objets d’interface utilisateur, tels que des étiquettes, de
 | `Expander`fournit un conteneur extensible pour héberger tout contenu, et est constitué d’un en-tête et d’un contenu. Affectez `Header` à la propriété une valeur [`View`](xref:Xamarin.Forms.View) qui sera affichée comme en-tête et la `Content` propriété à un [`View`](xref:Xamarin.Forms.View) qui s’affichera lorsque l’en-tête sera développé par un TAP.<br /><br />[Guide](~/xamarin-forms/user-interface/expander.md)  /  [Exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-expanderdemos) | [![Exemple d’Expander](views-images/Expander.png "Exemple d’Expander")](views-images/Expander-Large.png#lightbox "Exemple d’Expander")<br /> [Code C# pour cette page](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ExpanderDemoPage.cs)  /  [Page XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ExpanderDemoPage.xaml) |
 |     |     |
 
-### <a name="label"></a>Etiquette
+### <a name="label"></a>Étiquette
 
 |     |     |
 | --- | --- |

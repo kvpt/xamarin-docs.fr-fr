@@ -1,13 +1,26 @@
 ---
-title : « Xamarin.Essentials Launcher » Description : « la classe du lanceur dans Xamarin.Essentials permet à une application d’ouvrir un URI par le système ».
-ms. AssetID : BABF40CC-8BEE-43FD-BE12-6301DF27DD33 Author : jamesmontemagno ms. Custom : vidéo ms. Author : Jamont ms. Date : 08/20/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.EssentialsWorks
+description: La classe Launcher dans Xamarin.Essentials permet à une application d’ouvrir un URI par le système.
+ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
+author: jamesmontemagno
+ms.custom: video
+ms.author: jamont
+ms.date: 08/20/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: dcb236c47cf2eec77b3b90da798b0cf0d58f3c1d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802314"
 ---
-
 # <a name="xamarinessentials-launcher"></a>Xamarin.Essentials: Lanceur
 
 La classe **Lanceur** permet à une application d’ouvrir un URI par le système. Elle est souvent utilisée en cas de lien profond avec les schémas d’URI personnalisés d’une autre application. Si vous souhaitez ouvrir le navigateur sur un site web, reportez-vous à l’API **[Navigateur](open-browser.md)**.
 
-## <a name="get-started"></a>Prendre en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -69,7 +82,7 @@ Aucune configuration supplémentaire.
 
 -----
 
-## <a name="files"></a>Fichiers
+## <a name="files"></a>Files
 
 Cette fonctionnalité permet à une application de demander à d’autres applications d’ouvrir et d’afficher un fichier. Xamarin.Essentialsdétecte automatiquement le type de fichier (MIME) et demande l’ouverture du fichier.
 
@@ -108,7 +121,7 @@ Aucune différence entre les plateformes.
 
 ## <a name="api"></a>API
 
-- [Code source de Lanceur](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Launcher)
+- [Code source de Lanceur](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Launcher)
 - [Documentation de l’API Lanceur](xref:Xamarin.Essentials.Launcher)
 
 ## <a name="related-video"></a>Vidéo associée

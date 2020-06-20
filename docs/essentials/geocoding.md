@@ -1,13 +1,26 @@
 ---
-titre : « Xamarin.Essentials : géocodage » Description : « la classe de géocodage dans Xamarin.Essentials fournit des API pour géocoder un placemark en coordonnées de position et des coordonnées géocode inversées en placemark ».
-ms. AssetID : 3ADC440C-B000-4708-A2CC-296F5160AF90 auteur : jamesmontemagno ms. Author : Jamont ms. Date : 05/28/2019 ms. Custom : Video No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: 'Xamarin.Essentials: Géocodage'
+description: La classe de géocodage dans Xamarin.Essentials fournit des API pour géocoder un placemark en coordonnées de position et des coordonnées géocodes inversées vers un placemark.
+ms.assetid: 3ADC440C-B000-4708-A2CC-296F5160AF90
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 05/28/2019
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 66383e441435b5f4bdb48224c9ab602f28072b3d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802341"
 ---
-
 # <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials: Géocodage
 
 La classe **Geocoding** fournit des API qui permettent de géocoder un repère en coordonnées de position, et d’inverser les coordonnées de géocodage en un repère.
 
-## <a name="get-started"></a>Prendre en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -113,7 +126,7 @@ Les [`Location`](xref:Xamarin.Essentials.Location) [`LocationExtensions`](xref:X
 
 ## <a name="api"></a>API
 
-- [Code source de la fonctionnalité de géocodage](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Geocoding)
+- [Code source de la fonctionnalité de géocodage](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Geocoding)
 - [Documentation sur l’API de géocodage](xref:Xamarin.Essentials.Geocoding)
 
 ## <a name="related-video"></a>Vidéo associée

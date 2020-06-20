@@ -1,8 +1,22 @@
 ---
-titre : « Xamarin.Forms menu volant de l’interpréteur de commandes » : «le menu volant est le menu racine d’une application Shell et est accessible par le biais d’une icône ou par balayage du côté de l’écran. Le lanceur se compose d’un en-tête facultatif, d’éléments de menu volant et d’éléments de menu facultatifs.
-ms. Prod : xamarin ms. AssetID : FEDE51EB-577E-4B3E-9890-B7C1A5E52516 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 04/22/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsMenu volant Shell
+description: Le menu volant est le menu racine d’une application Shell, accessible via une icône ou en balayant depuis le côté de l’écran. Le menu volant se compose d’un en-tête facultatif, de différents éléments de menu volant et d’éléments de menu facultatifs.
+ms.prod: xamarin
+ms.assetid: FEDE51EB-577E-4B3E-9890-B7C1A5E52516
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/10/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1a1d47b2b37fa532b3e2a64ada5f367e612f557d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84946258"
 ---
-
 # <a name="xamarinforms-shell-flyout"></a>Xamarin.FormsMenu volant Shell
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)

@@ -1,13 +1,25 @@
 ---
-titre : « Xamarin.Essentials : magnétomètre » Description : « la classe magnétomètre dans vous Xamarin.Essentials permet de surveiller le capteur magnétomètre de l’appareil, qui indique l’orientation de l’appareil par rapport au champ magnétique de la terre ».
-ms. AssetID : 64DD0D41-03E2-40DD-9EC8-101CA0ED852B auteur : jamesmontemagno ms. Author : Jamont ms. Date : 11/04/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: 'Xamarin.Essentials: Magnétomètre'
+description: La classe magnétomètre dans vous Xamarin.Essentials permet de surveiller le capteur magnétomètre de l’appareil, qui indique l’orientation du périphérique par rapport au champ magnétique de la terre.
+ms.assetid: 64DD0D41-03E2-40DD-9EC8-101CA0ED852B
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 11/04/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b01bc1fd9c65186952635c5f472b1ac6beb0c9bd
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802287"
 ---
-
 # <a name="xamarinessentials-magnetometer"></a>Xamarin.Essentials: Magnétomètre
 
 La classe **Magnetometer** vous permet de superviser le capteur magnétométrique de l’appareil, qui indique l’orientation de l’appareil par rapport au champ magnétique terrestre.
 
-## <a name="get-started"></a>Prendre en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -68,5 +80,5 @@ Toutes les données sont retournées dans μT (microteslas).
 
 ## <a name="api"></a>API
 
-- [Code source de la fonctionnalité de magnétomètre](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Magnetometer)
+- [Code source de la fonctionnalité de magnétomètre](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Magnetometer)
 - [Documentation sur l’API de magnétomètre](xref:Xamarin.Essentials.Magnetometer)

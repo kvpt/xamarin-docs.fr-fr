@@ -1,7 +1,22 @@
 ---
-title : "erreur de build Android – échec inattendu de la tâche LinkAssemblies" ms. topic : Troubleshooting ms. Prod : xamarin ms. AssetID : EB3BE685-CB72-48E3-89D7-C845E76B9FA2 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 03/07/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: 'Erreur de build Android : échec inattendu de la tâche LinkAssemblies'
+ms.topic: troubleshooting
+ms.prod: xamarin
+ms.assetid: EB3BE685-CB72-48E3-89D7-C845E76B9FA2
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/07/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9c0403203345ed78fae9f30c623c3e501f24ea0e
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84135900"
 ---
-
 # <a name="android-build-error--the-linkassemblies-task-failed-unexpectedly"></a>Erreur de build Android : échec inattendu de la tâche LinkAssemblies
 
 Vous pouvez voir un message d’erreur `The "LinkAssemblies" task failed unexpectedly` lors de la création d’un projet Xamarin. Android qui utilise des formulaires. Cela se produit lorsque l’éditeur de liens est actif (généralement sur une version *Release* pour réduire la taille du package d’application); Cela se produit parce que les cibles Android ne sont pas mises à jour avec le Framework le plus récent. (Plus d’informations : [ Xamarin.Forms plateformes prises en charge](~/get-started/supported-platforms.md#android-platform-support))

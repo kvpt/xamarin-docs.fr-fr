@@ -1,8 +1,22 @@
 ---
-title : "Description du style de séparateur ListView sur iOS" : "les spécificités de la plateforme vous permettent d’utiliser des fonctionnalités uniquement disponibles sur une plateforme spécifique, sans implémenter de convertisseurs ou d’effets personnalisés. Cet article explique comment utiliser le spécifique à la plateforme iOS qui contrôle si le séparateur entre les cellules d’un ListView utilise la largeur complète du ListView.»
-ms. Prod : xamarin ms. AssetID : A4CB45CE-9FB7-47ED-8C3D-93E39BF282E4 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 10/24/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Style de séparateur ListView sur iOS
+description: Les spécificités des plateformes vous permettent d’utiliser des fonctionnalités uniquement disponibles sur une plateforme spécifique, sans implémenter de convertisseurs ou d’effets personnalisés. Cet article explique comment utiliser le spécifique à la plateforme iOS qui contrôle si le séparateur entre les cellules d’un ListView utilise la largeur complète de ListView.
+ms.prod: xamarin
+ms.assetid: A4CB45CE-9FB7-47ED-8C3D-93E39BF282E4
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/24/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c8d660896684283ba9b40cde168adbfe30ca0c51
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84135991"
 ---
-
 # <a name="listview-separator-style-on-ios"></a>Style de séparateur ListView sur iOS
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

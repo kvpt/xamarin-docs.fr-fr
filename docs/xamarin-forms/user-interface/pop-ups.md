@@ -1,8 +1,22 @@
 ---
-titre : « afficher les fenêtres contextuelles » Description : Xamarin.Forms fournit trois éléments d’interface utilisateur de type popup : une alerte, une feuille d’action et une invite. Cet article explique comment utiliser les API d’alerte, de feuille d’action et d’invite pour afficher des boîtes de dialogue qui demandent aux utilisateurs des questions simples, guident les utilisateurs à travers des tâches et affichent des invites.»
-ms. Prod : xamarin ms. AssetID : 46AB0D5E-0025-4A8A-9D00-3E66C3D0BA2E ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 03/10/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Afficher les fenêtres contextuelles
+description: 'Xamarin.Formsfournit trois éléments d’interface utilisateur de type popup : une alerte, une feuille d’action et une invite. Cet article montre comment utiliser les API d’alerte, de feuille d’action et d’invite pour afficher des boîtes de dialogue qui demandent aux utilisateurs des questions simples, guident les utilisateurs par le biais de tâches et affichent des invites.'
+ms.prod: xamarin
+ms.assetid: 46AB0D5E-0025-4A8A-9D00-3E66C3D0BA2E
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/10/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a7ddd9134b7214b84a883e171d7b0cadaba3390b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136316"
 ---
-
 # <a name="display-pop-ups"></a>Afficher les fenêtres contextuelles
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-pop-ups)

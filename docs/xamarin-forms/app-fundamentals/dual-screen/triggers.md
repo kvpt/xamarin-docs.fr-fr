@@ -1,8 +1,22 @@
 ---
-titre : « Xamarin.Forms déclencheurs à deux écrans » : « cet article explique comment utiliser Xamarin.Forms les déclencheurs à deux écrans pour répondre aux modifications de l’interface utilisateur avec XAML ».
-ms. Prod : xamarin ms. AssetID : 2181715D-3995-4E71-9A21-6B892F0B3B59 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 02/28/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.Formsdéclencheurs à deux écrans
+description: Cet article explique comment utiliser Xamarin.Forms les déclencheurs à deux écrans pour répondre aux modifications de l’interface utilisateur avec XAML.
+ms.prod: xamarin
+ms.assetid: 2181715D-3995-4E71-9A21-6B892F0B3B59
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/28/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: df10327b2ac12d2b119f1ab558d7f27e8c319507
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84131194"
 ---
-
 # <a name="xamarinforms-dual-screen-triggers"></a>Xamarin.Formsdéclencheurs à deux écrans
 
 ![](~/media/shared/preview.png "This API is currently pre-release")

@@ -1,8 +1,22 @@
 ---
-title : " Xamarin.Forms CollectionView Data" Description : "une CollectionView est remplie avec des données en définissant sa propriété ItemsSource sur n’importe quelle collection qui implémente IEnumerable."
-ms. Prod : xamarin ms. AssetID : E1783E34-1C0F-401A-80D5-B2BE5508F5F8 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 04/29/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsDonnées CollectionView
+description: Un CollectionView est rempli avec des données en affectant à sa propriété ItemsSource une collection qui implémente IEnumerable.
+ms.prod: xamarin
+ms.assetid: E1783E34-1C0F-401A-80D5-B2BE5508F5F8
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/29/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e381184271d4a7bfa9872d2502d2281b1f3864bf
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84134561"
 ---
-
 # <a name="xamarinforms-collectionview-data"></a>Xamarin.FormsDonnées CollectionView
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)

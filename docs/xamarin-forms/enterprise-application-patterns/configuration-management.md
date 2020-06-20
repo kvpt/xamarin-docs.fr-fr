@@ -1,8 +1,22 @@
 ---
-titre : « gestion de la configuration » Description : « ce chapitre explique comment l’application mobile eShopOnContainers implémente la gestion de la configuration pour fournir des paramètres d’application et des paramètres utilisateur ».
-ms. Prod : xamarin ms. AssetID : 50d6e780-E768-47F8-9361-3af11e56b87b ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 08/07/2017 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Gestion de la configuration
+description: Ce chapitre explique comment l’application mobile eShopOnContainers implémente la gestion de la configuration pour fournir des paramètres d’application et des paramètres utilisateur.
+ms.prod: xamarin
+ms.assetid: 50d6e780-e768-47f8-9361-3af11e56b87b
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/07/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f6f61503f619c08ed3e4eae2adf6ddb2c474f99f
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84571478"
 ---
-
 # <a name="configuration-management"></a>Gestion de la configuration
 
 Les paramètres permettent de séparer les données qui configurent le comportement d’une application à partir du code, ce qui permet de modifier le comportement sans reconstruire l’application. Il existe deux types de paramètres : les paramètres de l’application et les paramètres utilisateur.

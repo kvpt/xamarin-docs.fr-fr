@@ -1,13 +1,26 @@
 ---
-title : « Xamarin.Essentials : Text-to-Speech » Description : « la classe TextToSpeech dans Xamarin.Essentials permet à une application d’utiliser les moteurs de conversion de texte par synthèse vocale intégrés pour parler du texte à partir de l’appareil et pour interroger les langues disponibles que le moteur peut prendre en charge. »
-ms. AssetID : AEEF03AE-A047-4DF0-B0E8-CC8D9A7B8351 Author : jamesmontemagno ms. Custom : vidéo ms. Author : Jamont ms. Date : 11/04/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: 'Xamarin.Essentials: Conversion de texte par synthèse vocale'
+description: La classe TextToSpeech dans Xamarin.Essentials permet à une application d’utiliser les moteurs de conversion de texte en parole intégrés pour lire le texte de l’appareil et pour interroger les langues disponibles que le moteur peut prendre en charge.
+ms.assetid: AEEF03AE-A047-4DF0-B0E8-CC8D9A7B8351
+author: jamesmontemagno
+ms.custom: video
+ms.author: jamont
+ms.date: 11/04/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 452a54637c270f80c2e1add4d6cadedbb4b27077
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84801827"
 ---
-
 # <a name="xamarinessentials-text-to-speech"></a>Xamarin.Essentials: Conversion de texte par synthèse vocale
 
 La classe **Synthèse vocale** permet à une application d’utiliser les moteurs de synthèse vocale intégrés pour énoncer le texte à partir de l’appareil et également pour interroger les langages disponibles pris en charge par le moteur.
 
-## <a name="get-started"></a>Prendre en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -139,7 +152,7 @@ public async Task SpeakNow()
 
 ## <a name="api"></a>API
 
-- [Code source de Synthèse vocale](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/TextToSpeech)
+- [Code source de Synthèse vocale](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/TextToSpeech)
 - [Documentation de l’API Synthèse vocale](xref:Xamarin.Essentials.TextToSpeech)
 
 ## <a name="related-video"></a>Vidéo associée

@@ -1,7 +1,22 @@
 ---
-titre : «Résumé du chapitre 28. Emplacement et mappages « Description : » création d’Mobile Apps avec Xamarin.Forms : Résumé du chapitre 28. Emplacement et cartes "ms. Prod : xamarin ms. Technology : xamarin-Forms ms. AssetID : F6E20077-687C-45C4-A375-31D4F49BBFA4 Author : davidbritch ms. Author : dabritch ms. Date : 07/19/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Résumé du chapitre 28. Emplacement et mappages
+description: 'Création d’Mobile Apps avec Xamarin.Forms : Résumé du chapitre 28. Emplacement et mappages'
+ms.prod: xamarin
+ms.technology: xamarin-forms
+ms.assetid: F6E20077-687C-45C4-A375-31D4F49BBFA4
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/19/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 301dc65c7909603e117717a993959e3c73fa2d32
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84133404"
 ---
-
 # <a name="summary-of-chapter-28-location-and-maps"></a>Résumé du chapitre 28. Emplacement et mappages
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter28)

@@ -1,8 +1,22 @@
 ---
-titre : « Xamarin.Forms fonctionnalités de l’appareil à deux écrans » : « ce guide explique comment utiliser la Xamarin.Forms classe DualScreenInfo pour optimiser votre expérience d’application pour les appareils à deux écrans tels que surface Duo et surface Neo ».
-ms. Prod : xamarin ms. AssetID : dd5eb074-f4cb-4AB4-b47d-76f862ac7cfa ms. Technology : xamarin-Forms Author : davidortinau ms. Author : daortin ms. Date : 02/08/2020 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.Formsfonctionnalités de l’appareil à deux écrans
+description: Ce guide explique comment utiliser la Xamarin.Forms classe DualScreenInfo pour optimiser votre expérience d’application pour les appareils à deux écrans tels que surface Duo et surface Neo.
+ms.prod: xamarin
+ms.assetid: dd5eb074-f4cb-4ab4-b47d-76f862ac7cfa
+ms.technology: xamarin-forms
+author: davidortinau
+ms.author: daortin
+ms.date: 05/19/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 12f3ac86d2418c6516d000371753fc8ae65d557c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84946349"
 ---
-
 # <a name="xamarinforms-dual-screen-device-capabilities"></a>Xamarin.Formsfonctionnalités de l’appareil à deux écrans
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
@@ -18,15 +32,15 @@ La classe `DualScreenInfo` vous permet de déterminer le volet où se trouve vot
 - `IsLandscape` : indique si l’appareil est en mode paysage. Ceci est utile, car les API d’orientation natives ne signalent pas correctement l’orientation quand l’application est étendue.
 - `SpanMode` : indique si la disposition est en mode Tall, Wide ou SinglePane.
 
-En outre, un événement `PropertyChanged` est déclenché quand une propriété change.
+En outre, l' `PropertyChanged` événement se déclenche quand des propriétés changent et que l' `HingeAngleChanged` événement se déclenche lorsque l’angle de la charnière change.
 
-## <a name="poll-hinge-angle-on-android"></a>Obtenir l’angle de la charnière sur Android
+## <a name="poll-hinge-angle-on-android-and-uwp"></a>Angle d’interrogation des charnières sur Android et UWP
 
-La propriété suivante est disponible quand vous accédez à `DualScreenInfo` à partir du projet de plateforme Android :
+La méthode suivante est disponible lors de l’accès `DualScreenInfo` à partir de projets de plateforme Android et UWP :
 
 - `GetHingeAngleAsync` : récupère l’angle actuel de la charnière de l’appareil. Quand vous utilisez le simulateur, vous pouvez définir HingeAngle en modifiant le capteur de pression.
 
-Cette propriété peut être utilisée à partir d’un renderer personnalisé Android :
+Cette méthode peut être appelée à partir de convertisseurs personnalisés sur Android et UWP. Le code suivant illustre un exemple de convertisseur personnalisé Android :
 
 ```csharp
 public class HingeAngleLabelRenderer : Xamarin.Forms.Platform.Android.FastRenderers.LabelRenderer

@@ -1,8 +1,22 @@
 ---
-title : « personnalisation de l’apparence de la cellule ListView » : cet article explore les options de présentation des données dans Xamarin.Forms les applications, tout en tirant parti de la commodité du contrôle ListView.
-ms. Prod : xamarin ms. AssetID : FD45CB91-1A8F-46FB-B432-6BC20492E456 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 09/12/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Personnalisation de l’apparence des cellules ListView
+description: Cet article explore les options de présentation des données dans Xamarin.Forms les applications, tout en tirant parti de la commodité du contrôle ListView.
+ms.prod: xamarin
+ms.assetid: FD45CB91-1A8F-46FB-B432-6BC20492E456
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/12/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: cdede547e3ef7cf9f7b6d89751c7476a2ce66d3d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84129010"
 ---
-
 # <a name="customizing-listview-cell-appearance"></a>Personnalisation de l’apparence des cellules ListView
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-customcells)

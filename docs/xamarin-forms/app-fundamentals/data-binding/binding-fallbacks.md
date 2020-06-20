@@ -1,13 +1,27 @@
 ---
-titre : « Xamarin.Forms liaison de secours » Description : « cet article explique comment rendre les liaisons plus robustes en définissant les valeurs de secours qui seront utilisées en cas d’échec de la liaison. »
-ms. Prod : xamarin ms. AssetID : 637ACD9D-3E5D-4014-86DE-A77D1FEF238A ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 08/16/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsLiaison de secours
+description: Cet article explique comment renforcer des liaisons en définissant des valeurs de repli qui seront utilisées si une liaison échoue.
+ms.prod: xamarin
+ms.assetid: 637ACD9D-3E5D-4014-86DE-A77D1FEF238A
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/16/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 2c5ce10aa0a1137ad4e4832d5dc931c902b82810
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84946206"
 ---
-
 # <a name="xamarinforms-binding-fallbacks"></a>Xamarin.FormsLiaison de secours
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
-Une liaison de données échoue parfois car la source de la liaison ne peut pas être résolue ou parce que la liaison réussit mais retourne une valeur `null`. De tels scénarios peuvent être gérés avec des convertisseurs de valeurs ou du code supplémentaire, mais il est possible de renforcer les liaisons de données en définissant des valeurs de repli à utiliser si le processus de liaison échoue. Pour ce faire, vous devez définir [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) les [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) Propriétés et dans une expression de liaison. Étant donné que ces propriétés résident dans la [`BindingBase`](xref:Xamarin.Forms.BindingBase) classe, elles peuvent être utilisées avec des liaisons, des liaisons compilées et l' `Binding` extension de balisage.
+Une liaison de données échoue parfois car la source de la liaison ne peut pas être résolue ou parce que la liaison réussit mais retourne une valeur `null`. De tels scénarios peuvent être gérés avec des convertisseurs de valeurs ou du code supplémentaire, mais il est possible de renforcer les liaisons de données en définissant des valeurs de repli à utiliser si le processus de liaison échoue. Pour ce faire, vous devez définir [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) les [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) Propriétés et dans une expression de liaison. Étant donné que ces propriétés résident dans la [`BindingBase`](xref:Xamarin.Forms.BindingBase) classe, elles peuvent être utilisées avec des liaisons, des liaisons multiples, des liaisons compilées et avec l' `Binding` extension de balisage.
 
 > [!NOTE]
 > L’utilisation des [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) Propriétés et dans une expression de liaison est facultative.

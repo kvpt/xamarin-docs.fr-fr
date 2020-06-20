@@ -1,8 +1,22 @@
 ---
-titre : « Xamarin.Forms liaisons compilées » Description : « cet article explique comment utiliser des liaisons compilées pour améliorer les performances de liaison de données dans les Xamarin.Forms applications. »
-ms. Prod : xamarin ms. AssetID : ABE6B7F7-875E-4402-A1D2-845CE374402B ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 09/18/2019 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsLiaisons compilées
+description: Cet article explique comment utiliser des liaisons compilées pour améliorer les performances de liaison de données dans les Xamarin.Forms applications.
+ms.prod: xamarin
+ms.assetid: ABE6B7F7-875E-4402-A1D2-845CE374402B
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/18/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 094691796fed9653f2a2e468ccb1c33d1a408a49
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84571556"
 ---
-
 # <a name="xamarinforms-compiled-bindings"></a>Xamarin.FormsLiaisons compilées
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)

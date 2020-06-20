@@ -1,13 +1,26 @@
 ---
-titre : « Xamarin.Essentials : vibratoire » Description : « ce document décrit la classe vibratoire dans Xamarin.Essentials , qui vous permet de démarrer et d’arrêter la fonctionnalité vibreur pendant un laps de temps souhaité. »
-ms. AssetID : 7E8B24C4-2625-4DAE-A129-383542D34F1E Author : jamesmontemagno ms. Custom : vidéo ms. Author : Jamont ms. Date : 11/04/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: 'Xamarin.Essentials: Vibration'
+description: Ce document décrit la classe vibratoire dans Xamarin.Essentials , qui vous permet de démarrer et d’arrêter la fonctionnalité vibreur pour un laps de temps souhaité.
+ms.assetid: 7E8B24C4-2625-4DAE-A129-383542D34F1E
+author: jamesmontemagno
+ms.custom: video
+ms.author: jamont
+ms.date: 11/04/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e2ed2dfdca6b6811089d4dbb5d6e90e794c79591
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84801801"
 ---
-
 # <a name="xamarinessentials-vibration"></a>Xamarin.Essentials: Vibration
 
 La classe **Vibration** vous permet de démarrer et d’arrêter la fonctionnalité de vibration pendant la durée souhaitée.
 
-## <a name="get-started"></a>Prendre en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -110,7 +123,7 @@ Aucune différence entre les plateformes.
 
 ## <a name="api"></a>API
 
-- [Code source de la fonctionnalité de vibration](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Vibration)
+- [Code source de la fonctionnalité de vibration](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Vibration)
 - [Documentation sur l’API de vibration](xref:Xamarin.Essentials.Vibration)
 
 ## <a name="related-video"></a>Vidéo associée

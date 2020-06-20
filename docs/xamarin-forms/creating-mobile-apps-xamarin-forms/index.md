@@ -1,8 +1,22 @@
 ---
-titre : « création d’Mobile Apps avec Xamarin.Forms l’ouvrage » Description : « Découvrez Xamarin.Forms le développement d’applications avec la version électronique de la création de Mobile Apps avec le Xamarin.Forms livre de Charles Petzold ».
-ms. Prod : xamarin ms. AssetID : CDE99818-689B-4376-9DC4-C4102AC0F931 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 07/19/2018 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Création d’Mobile Apps avec Xamarin.Forms Book
+description: Découvrez Xamarin.Forms le développement d’applications avec la version électronique de la création de Mobile Apps avec le Xamarin.Forms livre de Charles Petzold.
+ms.prod: xamarin
+ms.assetid: CDE99818-689B-4376-9DC4-C4102AC0F931
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/19/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e38c319db0d0adf23a2ec0d328ccc3822e33f66d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84198280"
 ---
-
 # <a name="creating-mobile-apps-with-xamarinforms-book"></a>Création d’Mobile Apps avec Xamarin.Forms Book
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://github.com/xamarin/xamarin-forms-book-samples)

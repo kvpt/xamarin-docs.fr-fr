@@ -1,8 +1,22 @@
 ---
-titre : « Xamarin.Forms AbsoluteLayout » Description : «cet article explique comment utiliser la Xamarin.Forms classe AbsoluteLayout pour créer des interfaces utilisateur de type pixel-perfectly. Cette classe positionne et dimensionne les éléments enfants proportionnels à sa propre taille et position ou par valeurs absolues.»
-ms. Prod : xamarin ms. AssetID : 01A5CCE0-AD45-4806-84FD-72C007005B38 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 11/25/2015 No-Loc : [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsAbsoluteLayout
+description: Cet article explique comment utiliser la Xamarin.Forms classe AbsoluteLayout pour créer des interfaces utilisateur parfaite en pixels. Cette classe positionne et dimensionne les éléments enfants proportionnels à sa propre taille et position ou par valeurs absolues.
+ms.prod: xamarin
+ms.assetid: 01A5CCE0-AD45-4806-84FD-72C007005B38
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/25/2015
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 110b01d6482fbe3e23a772c90194b6bf40d54877
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84570529"
 ---
-
 # <a name="xamarinforms-absolutelayout"></a>Xamarin.FormsAbsoluteLayout
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
@@ -26,7 +40,7 @@ En raison du modèle de positionnement de `AbsoluteLayout` , la disposition rend
 
 `AbsoluteLayout`peut être utilisé partout où les éléments doivent être positionnés dans une vue et s’avèrent particulièrement utiles pour l’alignement des éléments sur les bords.
 
-## <a name="usage"></a>Usage
+## <a name="usage"></a>Utilisation
 
 ### <a name="proportional-layouts"></a>Dispositions proportionnelles
 
