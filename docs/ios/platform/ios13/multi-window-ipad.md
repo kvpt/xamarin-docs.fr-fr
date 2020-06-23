@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/20/2019
-ms.openlocfilehash: b3f96f342679d8be6d2f8fbc0ad5962ca675d2a5
-ms.sourcegitcommit: 09bc69d7119a04684c9e804c5cb113b8b1bb7dfc
+ms.openlocfilehash: ce7df59d41efdd2d151fd2ea73cf26b40ee7fa10
+ms.sourcegitcommit: 834466c9d9cf35e9659e467ce0123e5f5ade6138
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71213792"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85129907"
 ---
 # <a name="multiple-windows-for-ipad"></a>Plusieurs fenêtres pour iPad
 
@@ -20,7 +20,7 @@ iOS 13 prend désormais en charge les fenêtres côte à côte pour la même app
 
 ## <a name="project-configuration"></a>Configuration du projet
 
-Pour configurer votre projet pour plusieurs fenêtres, modifiez le `info.plist` pour déclarer `NSUserActivityTypes` à IOS votre application gèrera les activités de ce type, `UIApplicationSceneManifest` et pour `UIApplicationSupportsMultipleScenes` activer plusieurs fenêtres et `UISceneConfigurations` associer votre scène avec un Storyboard.
+Pour configurer votre projet pour plusieurs fenêtres, modifiez le `info.plist` pour déclarer que `NSUserActivityTypes` votre application gèrera les activités de ce type, et pour `UIApplicationSceneManifest` activer `UIApplicationSupportsMultipleScenes` plusieurs fenêtres et `UISceneConfigurations` associer votre scène à une table de montage séquentiel.
 
 ```xml
 <key>NSUserActivityTypes</key>
@@ -58,7 +58,7 @@ Avec votre application ouverte et en cours d’exécution sur un iPad, il existe
 
 Des interactions supplémentaires pour entrer dans un mode à plusieurs fenêtres sont disponibles dans votre application.
 
-**Faire glisser à partir de l’application** : utilisez une interaction de glissement dans `NSUserActivity` votre application pour démarrer une nouvelle icône de glissement d’application dans les exemples précédents.
+**Faire glisser à partir de l’application** : utilisez une interaction de glissement dans votre application pour démarrer une nouvelle `NSUserActivity` icône de glissement d’application dans les exemples précédents.
 
 Lorsque vous utilisez une [interaction de glisser-déplacer][0], vous créez un `NSUserActivity` et associez les données à transmettre à la nouvelle fenêtre que vous demandez à IOS de s’ouvrir pour vous.
 
@@ -79,14 +79,14 @@ public UIDragItem [] GetItemsForBeginningDragSession (UICollectionView collectio
 }
 ```
 
-Dans le code ci-dessus `selectedPhoto` , l’objet de modèle a une méthode `NSUserActivity` pour `OpenDetailUserActivity()`retourner un appelé. Lorsque le mouvement de glissement est terminé `UIDragItem` , le avec `userActivity` présente le `NSItemProvider`via le.
+Dans le code ci-dessus, l' `selectedPhoto` objet de modèle a une méthode pour retourner un `NSUserActivity` appelé `OpenDetailUserActivity()` . Lorsque le mouvement de glissement est terminé, le `UIDragItem` avec présente le `userActivity` via le `NSItemProvider` .
 
 **Actions explicites** : les gestes utilisateur sur des boutons ou des liens offrent la possibilité d’ouvrir une nouvelle fenêtre.
 
-À partir `UIApplication` du, vous pouvez démarrer `UISceneSession` un nouveau `RequestSceneSessionActivation`en appelant. Si une scène existante existe déjà, vous devez l’utiliser. Par défaut, une nouvelle scène est créée pour vous.
+À partir du `UIApplication` , vous pouvez démarrer un nouveau `UISceneSession` en appelant `RequestSceneSessionActivation` . Si une scène existante existe déjà, vous devez l’utiliser. Par défaut, une nouvelle scène est créée pour vous.
 
 ```csharp
-pubic void ItemSelected(UICollectionView collectionView, NSIndexPath indexPath)
+public void ItemSelected(UICollectionView collectionView, NSIndexPath indexPath)
 {
     var userActivity = selectedPhoto.OpenDetailUserActivity ();
 
@@ -99,7 +99,7 @@ pubic void ItemSelected(UICollectionView collectionView, NSIndexPath indexPath)
 }
 ```
 
-Dans cet exemple `userActivity` , est la seule valeur passée à la `RequestSceneSessionActivation` méthode pour ouvrir une nouvelle fenêtre de l’application basée sur une action explicite de l’utilisateur `ItemSelected` ; dans ce cas, il s’agit d' `UICollectionView`un gestionnaire d’un.
+Dans cet exemple, `userActivity` est la seule valeur passée à la `RequestSceneSessionActivation` méthode pour ouvrir une nouvelle fenêtre de l’application basée sur une action explicite de l’utilisateur ; dans ce cas, il s’agit d’un `ItemSelected` Gestionnaire d’un `UICollectionView` .
 
 ## <a name="related-links"></a>Liens connexes
 

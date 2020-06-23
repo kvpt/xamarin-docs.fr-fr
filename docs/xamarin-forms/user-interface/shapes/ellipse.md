@@ -6,28 +6,32 @@ ms.assetid: 5BF81E25-12E5-49F0-A40C-0CF4C5D63B9B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/16/2020
+ms.date: 06/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 142deccbcd29548e2d72b7144a01322f9909d98f
-ms.sourcegitcommit: d86b7a18cf8b1ef28cd0fe1d311f1c58a65101a8
+ms.openlocfilehash: aed8d902291272a6bcbdc1ec542b5edacb7668e2
+ms.sourcegitcommit: 7fc658bbdcb8130cd9d611e55e79a1830fc5d5a2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85101284"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85133046"
 ---
 # <a name="xamarinforms-shapes-ellipse"></a>Xamarin.FormsFormes : ellipse
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ShapesDemos/)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 La `Ellipse` classe dérive de la `Shape` classe et peut être utilisée pour dessiner des ellipses et des cercles. Pour plus d’informations sur les propriétés que la `Ellipse` classe hérite de la `Shape` classe, consultez [ Xamarin.Forms Shapes](index.md).
 
-La `Ellipse` classe affecte `Aspect` à la propriété, héritée de la `Shape` classe, la valeur `Stretch.Fill` .
+La `Ellipse` classe affecte `Aspect` à la propriété, héritée de la `Shape` classe, la valeur `Stretch.Fill` . Pour plus d’informations sur la `Aspect` propriété, consultez [Stretch Shapes](index.md#stretch-shapes).
 
 ## <a name="create-an-ellipse"></a>Créer une ellipse
+
+Pour dessiner une ellipse, créez un `Ellipse` objet et définissez ses `WidthRequest` `HeightRequest` Propriétés et. Pour peindre l’intérieur de l’ellipse, affectez `Fill` à sa propriété la valeur a [`Color`](xref:Xamarin.Forms.Color) . Pour attribuer un contour à l’ellipse, affectez la valeur `Stroke` à sa propriété [`Color`](xref:Xamarin.Forms.Color) . La `StrokeThickness` propriété spécifie l’épaisseur du contour de l’ellipse.
+
+Pour dessiner un cercle, rendez `WidthRequest` les `HeightRequest` Propriétés et de l' `Ellipse` objet égales.
 
 L’exemple de code XAML suivant montre comment dessiner une Ellipse remplie :
 
@@ -37,6 +41,10 @@ L’exemple de code XAML suivant montre comment dessiner une Ellipse remplie :
          HeightRequest="50"
          HorizontalOptions="Start" />
 ```
+
+Dans cet exemple, une Ellipse remplie en rouge avec les dimensions 150x50 (unités indépendantes du périphérique) est dessinée :
+
+![Ellipse remplie](ellipse-images/filled.png "Ellipse remplie")
 
 L’exemple de code XAML suivant montre comment dessiner un cercle :
 
@@ -48,7 +56,13 @@ L’exemple de code XAML suivant montre comment dessiner un cercle :
          HorizontalOptions="Start" />
 ```
 
+Dans cet exemple, un cercle rouge avec les dimensions 150 x 150 (unités indépendantes du périphérique) est dessiné :
+
+![Cercle](ellipse-images/circle.png "Circle")
+
+Pour plus d’informations sur le dessin d’une ellipse en pointillés, consultez [traits en pointillés](index.md#dashed-shapes).
+
 ## <a name="related-links"></a>Liens connexes
 
-- [ShapeDemos (exemple)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ShapesDemos/)
+- [ShapeDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.FormsFormes](index.md)
