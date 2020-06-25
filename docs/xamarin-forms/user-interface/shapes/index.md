@@ -10,12 +10,12 @@ ms.date: 06/22/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c01aac4b415e9b6620f0faa059bf99d42b688b40
-ms.sourcegitcommit: 7fc658bbdcb8130cd9d611e55e79a1830fc5d5a2
+ms.openlocfilehash: fdab7d422040aee5a00b16bb1e301f917b0c4883
+ms.sourcegitcommit: ef3d4a70e70927c4f231b763842c5355f1571d15
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85132912"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85243761"
 ---
 # <a name="xamarinforms-shapes"></a>Xamarin.FormsFormes
 
@@ -97,7 +97,7 @@ Dans cet exemple, un `Path` objet dessine un cœur. Les `Path` Propriétés et d
 
 ![Étirer les formes](images/aspect.png "Étirer les formes")
 
-## <a name="dashed-shapes"></a>Formes en pointillés
+## <a name="draw-dashed-shapes"></a>Dessiner des formes en pointillés
 
 `Shape`les objets ont une `StrokeDashArray` propriété, de type `DoubleCollection` . Cette propriété représente une collection de `double` valeurs qui indiquent le motif des tirets et des intervalles utilisés pour définir le contour d’une forme. Un `DoubleCollection` est un `ObservableCollection` de `double` valeurs. Chaque `double` dans la collection spécifie la longueur d’un tiret ou d’un intervalle. Le premier élément de la collection, situé à l’index 0, spécifie la longueur d’un tiret. Le deuxième élément de la collection, situé à l’index 1, spécifie la longueur d’un intervalle. Par conséquent, les objets avec une valeur d’index pair spécifient des tirets, tandis que les objets avec une valeur d’index impair spécifient des lacunes.
 
@@ -122,7 +122,7 @@ Dans cet exemple, un rectangle plein avec un trait en pointillés est dessiné 
 
 ![Rectangle en pointillés](images/dashed-rectangle.png "Ligne en pointillés")
 
-## <a name="line-ends"></a>Extrémités de ligne
+## <a name="control-line-ends"></a>Extrémités de la ligne de contrôle
 
 Une ligne comporte trois parties : embout de début, corps de ligne et extrémité de fin. Les majuscules de début et de fin décrivent la forme au début et à la fin d’une ligne ou d’un segment.
 
@@ -151,7 +151,7 @@ Dans cet exemple, la ligne rouge est arrondie au début et à la fin de la ligne
 
 ![Lignes d’épaisseur](images/linecap.png "Lignes d’épaisseur")
 
-## <a name="line-joins"></a>Jointures de lignes
+## <a name="control-line-joins"></a>Jointures de lignes de contrôle
 
 `Shape`les objets ont une `StrokeLineJoin` propriété, de type `PenLineJoin` , qui spécifie le type de jointure utilisé aux sommets de la forme. L’énumération `PenLineJoin` définit les membres suivants :
 

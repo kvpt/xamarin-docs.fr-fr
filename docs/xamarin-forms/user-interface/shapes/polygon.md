@@ -10,12 +10,12 @@ ms.date: 06/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1c3164fbd1d7fb3bc3de15558cdd41f4791515eb
-ms.sourcegitcommit: 22aca3e7e24038d6f83d68dbfc7435080223b1ee
+ms.openlocfilehash: e6f8ad3afdcdb9137869dc57078ac94895f4183c
+ms.sourcegitcommit: ef3d4a70e70927c4f231b763842c5355f1571d15
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85133762"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85243802"
 ---
 # <a name="xamarinforms-shapes-polygon"></a>Xamarin.FormsFormes : polygone
 
@@ -36,8 +36,8 @@ Le `PointsCollection` type est un `ObservableCollection` d' [`Point`](xref:Xamar
 
 L’énumération `FillRule` définit les membres suivants :
 
-- `EvenOdd`représente une règle qui détermine si un point se trouve dans la région de remplissage du polygone. Il dessine un rayon du point vers l’infini dans n’importe quelle direction et compte le nombre de segments de chemin d’accès dans la forme que le rayon traverse. Si ce nombre est impair, le point est à l’intérieur de. Si ce nombre est pair, le point est à l’extérieur de.
-- `Nonzero`représente une règle qui détermine si un point se trouve dans la région de remplissage du polygone. Il dessine un rayon du point vers l’infini dans n’importe quelle direction, puis examine les emplacements où un segment de la forme coupe le rayon. En commençant par un nombre égal à zéro, ajoutez un chaque fois qu’un segment croise le rayon de gauche à droite et soustrayez un chaque fois qu’un segment croise le rayon de droite à gauche. Comptez ensuite le nombre d’intersections : si le résultat est égal à zéro, le point est à l’extérieur du tracé. Dans le cas contraire, elle est à l’intérieur.
+- `EvenOdd`représente une règle qui détermine si un point se trouve dans la région de remplissage du polygone. Il dessine un rayon du point vers l’infini dans n’importe quelle direction et compte le nombre de segments dans la forme que le rayon traverse. Si ce nombre est impair, le point est à l’intérieur de. Si ce nombre est pair, le point est à l’extérieur de.
+- `Nonzero`représente une règle qui détermine si un point se trouve dans la région de remplissage du polygone. Il dessine un rayon du point vers l’infini dans n’importe quelle direction, puis examine les emplacements où un segment de la forme coupe le rayon. En commençant par un nombre égal à zéro, le nombre est incrémenté chaque fois qu’un segment croise le rayon de gauche à droite et décrémenté chaque fois qu’un segment croise le rayon de droite à gauche. Après avoir compté les intersections, si le résultat est égal à zéro, le point est à l’extérieur du polygone. Dans le cas contraire, elle est à l’intérieur.
 
 ## <a name="create-a-polygon"></a>Créer un polygone
 
@@ -71,7 +71,7 @@ Dans cet exemple, le contour du polygone est discontinu :
 
 ![Polygone avec tirets](polygon-images/dashed.png "Polygone avec tirets")
 
-Pour plus d’informations sur le dessin d’un polygone en pointillés, consultez [traits en pointillés](index.md#dashed-shapes).
+Pour plus d’informations sur le dessin d’un polygone en pointillés, consultez [dessiner des formes en pointillés](index.md#draw-dashed-shapes).
 
 L’exemple de code XAML suivant illustre un polygone qui utilise la règle de remplissage par défaut :
 

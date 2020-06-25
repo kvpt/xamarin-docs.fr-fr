@@ -10,12 +10,12 @@ ms.date: 06/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c3b869d10d454453172065b30eb7ce32da81c8ce
-ms.sourcegitcommit: 7fc658bbdcb8130cd9d611e55e79a1830fc5d5a2
+ms.openlocfilehash: 412b0255dafcbd752c7b350ddc25ecd13f8f98d8
+ms.sourcegitcommit: 8f6cc5208f675c8cfb645bd9ffb0fc1f8ea71411
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85133033"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85326182"
 ---
 # <a name="xamarinforms-shapes-geometries"></a>Xamarin.FormsFormes : géométries
 
@@ -124,6 +124,8 @@ La `PathGeometry` classe définit les propriétés suivantes :
 
 Ces propriétés sont sauvegardées par des [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) objets, ce qui signifie qu’elles peuvent être des cibles de liaisons de données et être stylisées.
 
+Pour plus d’informations sur l' `FillRule` énumération, consultez [ Xamarin.Forms Shapes : Fill Rules](fillrules.md).
+
 Un `PathGeometry` est constitué d’une collection d' `PathFigure` objets, chacun d’entre eux `PathFigure` décrivant une forme dans la géométrie. Chaque `PathFigure` objet est constitué d’un ou plusieurs `PathSegment` objets, chacun d’eux décrivant un segment de la forme. Il existe de nombreux types de segments :
 
 - `ArcSegment`, qui crée un arc elliptique entre deux points.
@@ -226,3 +228,4 @@ La `GeometryHelper` classe fournit les méthodes d’assistance suivantes :
 
 - [ShapeDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.FormsFormes](index.md)
+- [Xamarin.FormsFormes : règles de remplissage](fillrules.md)

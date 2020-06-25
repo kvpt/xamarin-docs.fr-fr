@@ -6,24 +6,24 @@ ms.assetid: 15D02690-AC03-457E-8815-8E4C17E4D642
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/16/2020
+ms.date: 06/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b6c884caa7bfb301f949f353f3c6c3445704aa89
-ms.sourcegitcommit: d86b7a18cf8b1ef28cd0fe1d311f1c58a65101a8
+ms.openlocfilehash: fee7dd2a2e5b713b3a82fc2e1227b21caddbceaa
+ms.sourcegitcommit: ef3d4a70e70927c4f231b763842c5355f1571d15
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85101355"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85243804"
 ---
 # <a name="xamarinforms-shapes-polyline"></a>Xamarin.FormsFormes : polyligne
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ShapesDemos/)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
-La `Polyline` classe dérive de la `Shape` classe et peut être utilisée pour dessiner une série de lignes droites connectées. Pour plus d’informations sur les propriétés que la `Polyline` classe hérite de la `Shape` classe, consultez [ Xamarin.Forms Shapes](index.md).
+La `Polyline` classe dérive de la `Shape` classe et peut être utilisée pour dessiner une série de lignes droites connectées. Une polyligne est similaire à un polygone, sauf que le dernier point d’une polyligne n’est pas connecté au premier point. Pour plus d’informations sur les propriétés que la `Polyline` classe hérite de la `Shape` classe, consultez [ Xamarin.Forms Shapes](index.md).
 
 `Polyline` définit les propriétés suivantes :
 
@@ -32,18 +32,75 @@ La `Polyline` classe dérive de la `Shape` classe et peut être utilisée pour d
 
 Ces propriétés sont sauvegardées par des [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) objets, ce qui signifie qu’elles peuvent être des cibles de liaisons de données et être stylisées.
 
+Le `PointsCollection` type est un `ObservableCollection` d' [`Point`](xref:Xamarin.Forms.Point) objets. La `Point` structure définit `X` les `Y` Propriétés et, de type `double` , qui représentent une paire de coordonnées x et y dans un espace 2D. Par conséquent, la `Points` propriété doit être définie sur une liste de paires de coordonnées x et y qui décrivent les points de vertex de polylignes, délimitées par une virgule unique et/ou un ou plusieurs espaces. Par exemple, « 40, 10 70, 80 » et « 40 10, 70 80 » sont tous deux valides.
+
+L’énumération `FillRule` définit les membres suivants :
+
+- `EvenOdd`représente une règle qui détermine si un point se trouve dans la région de remplissage de la polyligne. Il dessine un rayon du point vers l’infini dans n’importe quelle direction et compte le nombre de segments dans la forme que le rayon traverse. Si ce nombre est impair, le point est à l’intérieur de. Si ce nombre est pair, le point est à l’extérieur de.
+- `Nonzero`représente une règle qui détermine si un point se trouve dans la région de remplissage de la polyligne. Il dessine un rayon du point vers l’infini dans n’importe quelle direction, puis examine les emplacements où un segment de la forme coupe le rayon. En commençant par un nombre égal à zéro, le nombre est incrémenté chaque fois qu’un segment croise le rayon de gauche à droite et décrémenté chaque fois qu’un segment croise le rayon de droite à gauche. Après avoir compté les intersections, si le résultat est égal à zéro, le point est à l’extérieur de la polyligne. Dans le cas contraire, elle est à l’intérieur.
+
 ## <a name="create-a-polyline"></a>Créer une polyligne
 
-L’exemple de code XAML suivant montre comment dessiner un polygone :
+Pour dessiner une polyligne, créez un `Polyline` objet et affectez `Points` à sa propriété les sommets d’une forme. Pour attribuer un contour à la polyligne, affectez à sa propriété la valeur `Stroke` a [`Color`](xref:Xamarin.Forms.Color) . La `StrokeThickness` propriété spécifie l’épaisseur du contour de la polyligne.
+
+> [!IMPORTANT]
+> Si vous affectez `Fill` à la propriété d’un la valeur `Polyline` [`Color`](xref:Xamarin.Forms.Color) , l’espace intérieur de la polyligne est peint, même si le point de départ et le point de terminaison ne se croisent pas.
+
+L’exemple de code XAML suivant montre comment dessiner une polyligne :
+
+```xaml
+<Polyline Points="0,0 10,30, 15,0 18,60 23,30 35,30 40,0 43,60 48,30 100,30"
+          Stroke="Red" />
+```
+
+Dans cet exemple, une polyligne rouge est dessinée :
+
+![Polyligne](polyline-images/stroke.png "Polyligne")
+
+L’exemple de code XAML suivant montre comment dessiner une polyligne en pointillés :
 
 ```xaml
 <Polyline Points="0,0 10,30, 15,0 18,60 23,30 35,30 40,0 43,60 48,30 100,30"
           Stroke="Red"
-          HeightRequest="100"
-          WidthRequest="500" />
+          StrokeThickness="2"
+          StrokeDashArray="1,1"
+          StrokeDashOffset="6" />
 ```
+
+Dans cet exemple, la polyligne est en pointillés :
+
+![Ligne en pointillés](polyline-images/dashed.png "Ligne en pointillés")
+
+Pour plus d’informations sur le dessin d’une polyligne en pointillés, consultez [dessiner des formes en pointillés](index.md#draw-dashed-shapes).
+
+L’exemple de code XAML suivant montre une polyligne qui utilise la règle de remplissage par défaut :
+
+```xaml
+<Polyline Points="0 48, 0 144, 96 150, 100 0, 192 0, 192 96, 50 96, 48 192, 150 200 144 48"
+          Fill="Blue"
+          Stroke="Red"
+          StrokeThickness="3" />
+```
+
+Dans cet exemple, le comportement de remplissage de la polyligne est déterminé à l’aide de la `EvenOdd` règle de remplissage.
+
+![Ligne EvenOdd](polyline-images/evenodd.png "EvenOdd polyine")
+
+L’exemple de code XAML suivant montre une polyligne qui utilise la `Nonzero` règle de remplissage :
+
+```xaml
+<Polyline Points="0 48, 0 144, 96 150, 100 0, 192 0, 192 96, 50 96, 48 192, 150 200 144 48"
+          Fill="Black"
+          FillRule="Nonzero"
+          Stroke="Yellow"
+          StrokeThickness="3" />
+```
+
+![Polyligne différente de zéro](polyline-images/nonzero.png "Polyligne différente de zéro")
+
+Dans cet exemple, le comportement de remplissage de la polyligne est déterminé à l’aide de la `Nonzero` règle de remplissage.
 
 ## <a name="related-links"></a>Liens connexes
 
-- [ShapeDemos (exemple)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ShapesDemos/)
+- [ShapeDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.FormsFormes](index.md)

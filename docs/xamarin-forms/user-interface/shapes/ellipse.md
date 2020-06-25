@@ -10,12 +10,12 @@ ms.date: 06/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: aed8d902291272a6bcbdc1ec542b5edacb7668e2
-ms.sourcegitcommit: 7fc658bbdcb8130cd9d611e55e79a1830fc5d5a2
+ms.openlocfilehash: 725f892a667b4e89d55266abcf69e5394b09b6a5
+ms.sourcegitcommit: ef3d4a70e70927c4f231b763842c5355f1571d15
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85133046"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85243803"
 ---
 # <a name="xamarinforms-shapes-ellipse"></a>Xamarin.FormsFormes : ellipse
 
@@ -60,7 +60,7 @@ Dans cet exemple, un cercle rouge avec les dimensions 150 x 150 (unités indépe
 
 ![Cercle](ellipse-images/circle.png "Circle")
 
-Pour plus d’informations sur le dessin d’une ellipse en pointillés, consultez [traits en pointillés](index.md#dashed-shapes).
+Pour plus d’informations sur le dessin d’une ellipse en pointillés, consultez [dessiner des formes en pointillés](index.md#draw-dashed-shapes).
 
 ## <a name="related-links"></a>Liens connexes
 

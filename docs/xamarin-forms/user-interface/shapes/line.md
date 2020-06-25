@@ -10,12 +10,12 @@ ms.date: 06/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c33c6408a901a1726e37ddda5e24a4c82f671738
-ms.sourcegitcommit: 7fc658bbdcb8130cd9d611e55e79a1830fc5d5a2
+ms.openlocfilehash: f97e6930f543f47383e2b8da09b36573bd3192d0
+ms.sourcegitcommit: ef3d4a70e70927c4f231b763842c5355f1571d15
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85132878"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85243748"
 ---
 # <a name="xamarinforms-shapes-line"></a>Xamarin.FormsFormes : ligne
 
@@ -34,7 +34,7 @@ La `Line` classe dérive de la `Shape` classe et peut être utilisée pour dessi
 
 Ces propriétés sont sauvegardées par des [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) objets, ce qui signifie qu’elles peuvent être des cibles de liaisons de données et être stylisées.
 
-Pour plus d’informations sur le contrôle de la façon dont les extrémités de ligne sont dessinées, consultez [terminaisons de ligne](index.md#line-ends).
+Pour plus d’informations sur le contrôle de la façon dont les extrémités de ligne sont dessinées, consultez [terminaisons de ligne de contrôle](index.md#control-line-ends).
 
 ## <a name="create-a-line"></a>Créer une ligne
 
@@ -82,7 +82,7 @@ Dans cet exemple, un trait Diagonal en pointillés bleus foncé est dessiné de 
 
 ![Ligne en pointillés](line-images/dashed-line.png "Ligne en pointillés")
 
-Pour plus d’informations sur le dessin d’une ligne en pointillés, consultez [traits en pointillés](index.md#dashed-shapes).
+Pour plus d’informations sur le dessin d’une ligne en pointillés, consultez [dessiner des formes en pointillés](index.md#draw-dashed-shapes).
 
 ## <a name="related-links"></a>Liens connexes
 
