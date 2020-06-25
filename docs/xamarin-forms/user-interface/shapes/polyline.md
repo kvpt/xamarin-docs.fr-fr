@@ -10,12 +10,12 @@ ms.date: 06/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: fee7dd2a2e5b713b3a82fc2e1227b21caddbceaa
-ms.sourcegitcommit: ef3d4a70e70927c4f231b763842c5355f1571d15
+ms.openlocfilehash: 5ffbf452816eb9e60d70175a995419a124bcc457
+ms.sourcegitcommit: 8f6cc5208f675c8cfb645bd9ffb0fc1f8ea71411
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85243804"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85326164"
 ---
 # <a name="xamarinforms-shapes-polyline"></a>Xamarin.FormsFormes : polyligne
 
@@ -34,10 +34,7 @@ Ces propriétés sont sauvegardées par des [`BindableProperty`](xref:Xamarin.Fo
 
 Le `PointsCollection` type est un `ObservableCollection` d' [`Point`](xref:Xamarin.Forms.Point) objets. La `Point` structure définit `X` les `Y` Propriétés et, de type `double` , qui représentent une paire de coordonnées x et y dans un espace 2D. Par conséquent, la `Points` propriété doit être définie sur une liste de paires de coordonnées x et y qui décrivent les points de vertex de polylignes, délimitées par une virgule unique et/ou un ou plusieurs espaces. Par exemple, « 40, 10 70, 80 » et « 40 10, 70 80 » sont tous deux valides.
 
-L’énumération `FillRule` définit les membres suivants :
-
-- `EvenOdd`représente une règle qui détermine si un point se trouve dans la région de remplissage de la polyligne. Il dessine un rayon du point vers l’infini dans n’importe quelle direction et compte le nombre de segments dans la forme que le rayon traverse. Si ce nombre est impair, le point est à l’intérieur de. Si ce nombre est pair, le point est à l’extérieur de.
-- `Nonzero`représente une règle qui détermine si un point se trouve dans la région de remplissage de la polyligne. Il dessine un rayon du point vers l’infini dans n’importe quelle direction, puis examine les emplacements où un segment de la forme coupe le rayon. En commençant par un nombre égal à zéro, le nombre est incrémenté chaque fois qu’un segment croise le rayon de gauche à droite et décrémenté chaque fois qu’un segment croise le rayon de droite à gauche. Après avoir compté les intersections, si le résultat est égal à zéro, le point est à l’extérieur de la polyligne. Dans le cas contraire, elle est à l’intérieur.
+Pour plus d’informations sur l' `FillRule` énumération, consultez [ Xamarin.Forms Shapes : Fill Rules](fillrules.md).
 
 ## <a name="create-a-polyline"></a>Créer une polyligne
 
@@ -104,3 +101,4 @@ Dans cet exemple, le comportement de remplissage de la polyligne est déterminé
 
 - [ShapeDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.FormsFormes](index.md)
+- [Xamarin.FormsFormes : règles de remplissage](fillrules.md)
