@@ -13,12 +13,12 @@ metadata:
   no-loc:
   - Xamarin.Forms
   - Xamarin.Essentials
-  ms.openlocfilehash: e07215723a6c54e9d5ce3eb22103cb5eba7929d2
-  ms.sourcegitcommit: 16847681df17ed59b3b3528761c02e8fb48ffc4f
+  ms.openlocfilehash: a0acc942c84f085c2cff4a70b5863ae4f4644bc6
+  ms.sourcegitcommit: 8f6cc5208f675c8cfb645bd9ffb0fc1f8ea71411
   ms.translationtype: HT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 06/19/2020
-  ms.locfileid: "85104271"
+  ms.lasthandoff: 06/24/2020
+  ms.locfileid: "85326118"
 landingContent:
 - title: Informations de référence sur les contrôles
   linkLists:
@@ -160,16 +160,14 @@ landingContent:
       url: shapes/index.md
     - text: Ellipse
       url: shapes/ellipse.md
+    - text: Règles de remplissage
+      url: shapes/fillrules.md
     - text: Géométries
       url: shapes/geometries.md
     - text: Ligne
       url: shapes/line.md
     - text: Chemin d’accès
       url: shapes/path.md
-    - text: Syntaxe XAML pour les tracés
-      url: shapes/path-markup-syntax.md
-    - text: Transformations de chemins
-      url: shapes/path-transforms.md
     - text: Polygone
       url: shapes/polygon.md
     - text: Polyligne
