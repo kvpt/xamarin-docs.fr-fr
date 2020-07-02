@@ -10,12 +10,12 @@ ms.date: 06/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f3ab70dc20dda78e3acf400cf51d0ee9df84ff93
-ms.sourcegitcommit: 16847681df17ed59b3b3528761c02e8fb48ffc4f
+ms.openlocfilehash: 9afad335de60e605ef6551b0878455674a40750f
+ms.sourcegitcommit: 91b4d2f93687fadec5c3f80aadc8f7298d911624
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85104328"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85795028"
 ---
 # <a name="xamarinforms-common-control-properties-methods-and-events"></a>Xamarin.FormsPropriétés, méthodes et événements du contrôle commun
 
@@ -47,7 +47,7 @@ La `Bounds` propriété est un objet en lecture seule `Rectangle` qui représent
 
 ### `Clip`
 
-La `Clip` propriété est un `Geometry` objet qui définit le contour du contenu d’un élément. Pour définir un clip, utilisez un `Geometry` objet tel que `EllipseGeometry` pour définir la propriété de l’élément `Clip` . Seule la zone située dans la région de la géométrie sera visible. Pour plus d’informations, consultez [géométries de clip](~/xamarin-forms/user-interface/shapes/geometries.md#clip-geometries).
+La `Clip` propriété est un `Geometry` objet qui définit le contour du contenu d’un élément. Pour définir un clip, utilisez un `Geometry` objet tel que `EllipseGeometry` pour définir la propriété de l’élément `Clip` . Seule la zone située dans la région de la géométrie sera visible. Pour plus d’informations, consultez [clip avec une géométrie](~/xamarin-forms/user-interface/shapes/geometries.md#clip-with-a-geometry).
 
 ### [`Effects`](xref:Xamarin.Forms.Element.Effects)
 
