@@ -1,20 +1,23 @@
 ---
 title: Lier des bibliothèques iOS SWIFT
-description: Ce document décrit comment créer C# des liaisons au code SWIFT, ce qui permet de consommer des bibliothèques natives et des CocoaPods dans une application Xamarin. iOS.
+description: Ce document explique comment créer des liaisons C# vers du code SWIFT, ce qui permet de consommer des bibliothèques natives et des CocoaPods dans une application Xamarin. iOS.
 ms.prod: xamarin
 ms.assetid: 890EFCCA-A2A2-4561-88EA-30DE3041F61D
 ms.technology: xamarin-ios
 author: alexeystrakh
 ms.author: alstrakh
 ms.date: 02/11/2020
-ms.openlocfilehash: 9a683f31016a9db4271e3909e421f27ef83c2080
-ms.sourcegitcommit: b751605179bef8eee2df92cb484011a7dceb6fda
+ms.openlocfilehash: 72ab1d9f10ee308313569528d152d5930a258207
+ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "78292734"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85852976"
 ---
 # <a name="bind-ios-swift-libraries"></a>Lier des bibliothèques iOS SWIFT
+
+> [!IMPORTANT]
+> Nous étudions actuellement l’utilisation de la liaison personnalisée sur la plateforme Xamarin. Veuillez suivre [**ce questionnaire**](https://www.surveymonkey.com/r/KKBHNLT) pour informer les futurs efforts de développement.
 
 La plateforme iOS, ainsi que ses langages et outils natifs, évoluent constamment et il existe de nombreuses bibliothèques tierces qui ont été développées à l’aide des dernières offres. L’optimisation du code et de la réutilisation des composants est l’un des objectifs clés du développement multiplateforme. La possibilité de réutiliser des composants créés avec SWIFT est devenue de plus en plus importante pour les développeurs Xamarin, car leur popularité entre les développeurs continue de croître. Vous êtes peut-être déjà familiarisé avec le processus de liaison de bibliothèques [objective-C](https://docs.microsoft.com/xamarin/ios/platform/binding-objective-c/walkthrough) régulières. Une documentation supplémentaire est désormais disponible décrivant le processus de [liaison d’un Framework SWIFT](walkthrough.md), afin qu’ils soient consommables par une application Xamarin de la même manière. L’objectif de ce document est de décrire une approche de haut niveau pour créer une liaison SWIFT pour Xamarin.
 
@@ -23,7 +26,7 @@ La plateforme iOS, ainsi que ses langages et outils natifs, évoluent constammen
 Avec Xamarin, vous pouvez lier toutes les bibliothèques natives tierces pour qu’elles soient consommables par une application Xamarin. SWIFT est le nouveau langage et la création d’une liaison pour les bibliothèques créées avec ce langage nécessite des étapes et des outils supplémentaires. Cette approche implique les quatre étapes suivantes :
 
 1. Génération de la bibliothèque Native
-1. Préparation des métadonnées Xamarin, ce qui permet aux outils Xamarin C# de générer des classes
+1. Préparation des métadonnées Xamarin, ce qui permet aux outils Xamarin de générer des classes C#
 1. Génération d’une bibliothèque de liaisons Xamarin à l’aide de la bibliothèque native et des métadonnées
 1. Utilisation de la bibliothèque de liaisons Xamarin dans une application Xamarin
 
@@ -31,14 +34,14 @@ Les sections suivantes décrivent ces étapes avec des détails supplémentaires
 
 ### <a name="build-the-native-library"></a>Générer la bibliothèque Native
 
-La première étape consiste à avoir un Framework SWIFT natif prêt avec l’en-tête objective-C créé. Ce fichier est un en-tête généré automatiquement qui expose les classes, méthodes et champs SWIFT souhaités, ce qui les rend accessibles à C# la fois en Objective-C et au final par le biais d’une bibliothèque de liaisons Xamarin. Ce fichier se trouve dans le Framework sous le chemin d’accès suivant : **\<frameworkname >. Framework/headers/\<FrameworkName >-SWIFT. h**. Si l’interface exposée contient tous les membres requis, vous pouvez passer à l’étape suivante. Dans le cas contraire, d’autres étapes sont requises pour exposer ces membres. L’approche varie selon que vous avez accès au code source SWIFT Framework :
+La première étape consiste à avoir un Framework SWIFT natif prêt avec l’en-tête objective-C créé. Ce fichier est un en-tête généré automatiquement qui expose les classes, méthodes et champs SWIFT souhaités, ce qui les rend accessibles à la fois en Objective-C et en C# par le biais d’une bibliothèque de liaisons Xamarin. Ce fichier se trouve dans le Framework sous le chemin d’accès suivant : ** \<FrameworkName> . Framework/en-têtes/ \<FrameworkName> -SWIFT. h**. Si l’interface exposée contient tous les membres requis, vous pouvez passer à l’étape suivante. Dans le cas contraire, d’autres étapes sont requises pour exposer ces membres. L’approche varie selon que vous avez accès au code source SWIFT Framework :
 
-- Si vous avez accès au code, vous pouvez décorer le ou les membres SWIFT requis avec l’attribut `@objc` et appliquer quelques règles supplémentaires pour permettre aux outils de génération Xcode de savoir que ces membres doivent être exposés au monde objective-C et à l’en-tête.
-- Si vous n’avez pas accès au code source, vous devez créer un Framework SWIFT proxy, qui encapsule l’infrastructure SWIFT d’origine et définit l’interface publique requise par votre application à l’aide de l’attribut `@objc`.
+- Si vous avez accès au code, vous pouvez décorer le ou les membres SWIFT requis avec l' `@objc` attribut et appliquer quelques règles supplémentaires pour permettre aux outils de génération Xcode de savoir que ces membres doivent être exposés au monde objective-C et à l’en-tête.
+- Si vous n’avez pas accès au code source, vous devez créer un Framework SWIFT de proxy, qui encapsule l’infrastructure SWIFT d’origine et définit l’interface publique requise par votre application à l’aide de l' `@objc` attribut.
 
 ### <a name="prepare-the-xamarin-metadata"></a>Préparer les métadonnées Xamarin
 
-La deuxième étape consiste à préparer les interfaces de définition d’API, qui sont utilisées par un projet C# de liaison pour générer des classes. Ces définitions peuvent être créées manuellement ou automatiquement par l’outil [objectivité objective](https://docs.microsoft.com/xamarin/cross-platform/macios/binding/objective-sharpie/) et le fichier d’en-tête **\<FrameworkName >-SWIFT. h** généré automatiquement ci-dessus. Une fois les métadonnées générées, elles doivent être vérifiées et validées manuellement.
+La deuxième étape consiste à préparer les interfaces de définition d’API, qui sont utilisées par un projet de liaison pour générer des classes C#. Ces définitions peuvent être créées manuellement ou automatiquement par l’outil [objectivité objective](https://docs.microsoft.com/xamarin/cross-platform/macios/binding/objective-sharpie/) et le fichier d’en-tête generated ** \<FrameworkName> -SWIFT. h ci-** dessus. Une fois les métadonnées générées, elles doivent être vérifiées et validées manuellement.
 
 ### <a name="build-the-xamarinios-binding-library"></a>Générer la bibliothèque de liaisons Xamarin. iOS
 

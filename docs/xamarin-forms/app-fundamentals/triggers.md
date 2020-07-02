@@ -10,16 +10,16 @@ ms.date: 04/17/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f92ad47ae883f4b1b413ae5192a9add83045bb77
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a287ff28ab62fcfcc00c88858cf3595ba2fa5118
+ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136953"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853134"
 ---
 # <a name="xamarinforms-triggers"></a>Xamarin.FormsDéclencheurs
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithtriggers)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithtriggers)
 
 Les déclencheurs vous permettent d’exprimer des actions de manière déclarative en XAML. Les actions en question modifient l’apparence des contrôles en fonction des événements ou des modifications apportées aux propriétés. En outre, les déclencheurs d’État, qui sont un groupe spécialisé de déclencheurs, définissent quand un [`VisualState`](xref:Xamarin.Forms.VisualState) doit être appliqué.
 
@@ -319,11 +319,7 @@ public class FadeTriggerAction : TriggerAction<VisualElement>
 
 ## <a name="state-triggers"></a>Déclencheurs d’État
 
-Les déclencheurs d’État ont été introduits dans Xamarin.Forms 4,5 et sont un groupe spécialisé de déclencheurs qui définissent les conditions dans lesquelles un [`VisualState`](xref:Xamarin.Forms.VisualState) doit être appliqué. Toutefois, ils sont actuellement expérimentaux et ne peuvent être utilisés qu’en ajoutant la ligne de code suivante à votre fichier *app.Xaml.cs* :
-
-```csharp
-Device.SetFlags(new string[]{ "StateTriggers_Experimental" });
-```
+Les déclencheurs d’État sont un groupe spécialisé de déclencheurs qui définissent les conditions dans lesquelles un [`VisualState`](xref:Xamarin.Forms.VisualState) doit être appliqué. 
 
 Les déclencheurs d’État sont ajoutés à la [`StateTriggers`](xref:Xamarin.Forms.VisualState.StateTriggers) collection d’un [`VisualState`](xref:Xamarin.Forms.VisualState) . Cette collection peut contenir un seul déclencheur d’État ou plusieurs déclencheurs d’État. [`VisualState`](xref:Xamarin.Forms.VisualState)Est appliqué lorsque tous les déclencheurs d’état de la collection sont actifs.
 

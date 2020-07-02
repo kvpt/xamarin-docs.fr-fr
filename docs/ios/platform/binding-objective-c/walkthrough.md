@@ -7,14 +7,17 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2017
-ms.openlocfilehash: 328633bc58f17216c071a2b2cd779704da2bbf74
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: c36159984f314ecbf90f98df6472eee2149eee92
+ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84569411"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853167"
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>Procédure pas à pas : liaison d’une bibliothèque objective-C iOS
+
+> [!IMPORTANT]
+> Nous étudions actuellement l’utilisation de la liaison personnalisée sur la plateforme Xamarin. Veuillez suivre [**ce questionnaire**](https://www.surveymonkey.com/r/KKBHNLT) pour informer les futurs efforts de développement.
 
 _Cet article fournit une procédure pas à pas de création d’une liaison Xamarin. iOS pour une bibliothèque objective-C existante, InfColorPicker. Il aborde des sujets tels que la compilation d’une bibliothèque objective-C statique, sa liaison et l’utilisation de la liaison dans une application Xamarin. iOS._
 
@@ -41,7 +44,7 @@ Nous allons aborder toutes les étapes nécessaires à l’utilisation de cette 
 
 L’exemple d’application montre comment utiliser un délégué renforcé pour la communication entre l’API InfColorPicker et notre code C#. Une fois que nous avons vu comment utiliser un délégué fort, nous allons aborder l’utilisation de délégués faibles pour effectuer les mêmes tâches.
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Configuration requise
 
 Cet article suppose que vous êtes familiarisé avec Xcode et le langage Objective-C et que vous avez lu notre documentation [objective-c de liaison](~/cross-platform/macios/binding/index.md) . En outre, les éléments suivants sont requis pour effectuer les étapes présentées :
 
@@ -670,7 +673,7 @@ Nous obtenons d’abord une instance de `InfColorPickerController` par le biais 
 
 [![](walkthrough-images/run01.png "Running the Application")](walkthrough-images/run01.png#lightbox)
 
-Félicitations ! À ce stade, vous avez créé et lié avec succès une bibliothèque objective-C à utiliser dans une application Xamarin. iOS. Voyons ensuite comment utiliser des délégués faibles.
+Félicitations ! À ce stade, vous avez créé et lié avec succès une bibliothèque objective-C à utiliser dans une application Xamarin. iOS. Voyons ensuite comment utiliser des délégués faibles.
 
 ### <a name="implementing-a-weak-delegate"></a>Implémentation d’un délégué faible
 
@@ -717,7 +720,7 @@ Exécutez l'application. Elle doit maintenant se comporter exactement comme avan
 
 Cet article a parcouru le processus de création et d’utilisation d’un projet de liaison Xamarin. iOS. Tout d’abord, nous avons abordé la compilation d’une bibliothèque objective-C existante dans une bibliothèque statique. Nous avons ensuite abordé la création d’un projet de liaison Xamarin. iOS et l’utilisation d’objective Sharp pour générer les définitions d’API pour la bibliothèque objective-C. Nous avons abordé la manière de mettre à jour et de modifier les définitions d’API générées afin qu’elles soient adaptées à la consommation publique. Une fois le projet de liaison Xamarin. iOS terminé, nous avons passé à consommer cette liaison dans une application Xamarin. iOS, en se concentrant sur l’utilisation de délégués forts et de délégués faibles.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Liaison de bibliothèques Objective-C](~/cross-platform/macios/binding/objective-c-libraries.md)
 - [Détails de la liaison](~/cross-platform/macios/binding/overview.md)

@@ -7,16 +7,19 @@ ms.technology: xamarin-ios
 author: alexeystrakh
 ms.author: alstrakh
 ms.date: 02/11/2020
-ms.openlocfilehash: b650f86a1bba62d5db7463875de3398db9c33842
-ms.sourcegitcommit: b751605179bef8eee2df92cb484011a7dceb6fda
+ms.openlocfilehash: 3c63b1a4ed58b0efcc510085934a5380e6049ae7
+ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "78291514"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853157"
 ---
 # <a name="walkthrough-bind-an-ios-swift-library"></a>Procédure pas à pas : liaison d’une bibliothèque SWIFT iOS
 
-Xamarin permet aux développeurs mobiles de créer des expériences mobiles natives multiplateformes à C#l’aide de Visual Studio et. Vous pouvez utiliser les composants du kit de développement logiciel (SDK) de la plateforme iOS prêts à l’emploi. Toutefois, dans de nombreux cas, vous souhaitez également utiliser des kits de développement logiciel tiers développés pour cette plateforme, ce que Xamarin vous permet d’effectuer via des liaisons. Pour intégrer un framework Objective-C tiers à votre application Xamarin. iOS, vous devez créer une liaison Xamarin. iOS pour celle-ci avant de pouvoir l’utiliser dans vos applications.
+> [!IMPORTANT]
+> Nous étudions actuellement l’utilisation de la liaison personnalisée sur la plateforme Xamarin. Veuillez suivre [**ce questionnaire**](https://www.surveymonkey.com/r/KKBHNLT) pour informer les futurs efforts de développement.
+
+Xamarin permet aux développeurs mobiles de créer des expériences mobiles natives multiplateformes à l’aide de Visual Studio et de C#. Vous pouvez utiliser les composants du kit de développement logiciel (SDK) de la plateforme iOS prêts à l’emploi. Toutefois, dans de nombreux cas, vous souhaitez également utiliser des kits de développement logiciel tiers développés pour cette plateforme, ce que Xamarin vous permet d’effectuer via des liaisons. Pour intégrer un framework Objective-C tiers à votre application Xamarin. iOS, vous devez créer une liaison Xamarin. iOS pour celle-ci avant de pouvoir l’utiliser dans vos applications.
 
 La plateforme iOS, ainsi que ses langages et outils natifs, évoluent en permanence et SWIFT est l’une des zones les plus dynamiques dans le monde de développement iOS. Il existe un certain nombre de kits de développement logiciel tiers, qui ont déjà été migrés de Objective-C vers SWIFT et nous présentent de nouveaux défis. Même si le processus de liaison SWIFT est similaire à Objective-C, il requiert des étapes supplémentaires et des paramètres de configuration pour créer et exécuter une application Xamarin. iOS acceptable pour le AppStore.
 
@@ -26,7 +29,7 @@ L’objectif de ce document est de présenter une approche de haut niveau pour t
 
 SWIFT a été introduite initialement par Apple dans 2014 et est désormais à la version 5,1, avec l’adoption de frameworks tiers en constante évolution. Vous avez le choix entre plusieurs options pour lier un Framework SWIFT et ce document décrit l’approche à l’aide de l’en-tête d’interface généré par objective-C. L’en-tête est automatiquement créé par les outils Xcode lorsqu’une infrastructure est créée, et elle est utilisée pour communiquer du monde géré au monde SWIFT.
 
-## <a name="prerequisites"></a>Conditions préalables requises
+## <a name="prerequisites"></a>Prérequis
 
 Pour effectuer cette procédure pas à pas, vous avez besoin des éléments suivants :
 
@@ -37,11 +40,11 @@ Pour effectuer cette procédure pas à pas, vous avez besoin des éléments suiv
 
 ## <a name="build-a-native-library"></a>Créer une bibliothèque Native
 
-La première étape consiste à créer une infrastructure SWIFT native avec l’en-tête objective-C activé. L’infrastructure est généralement fournie par un développeur tiers et l’en-tête est incorporé dans le package dans le répertoire suivant : **\<frameworkname >. Framework/headers/\<FrameworkName >-SWIFT. h**.
+La première étape consiste à créer une infrastructure SWIFT native avec l’en-tête objective-C activé. L’infrastructure est généralement fournie par un développeur tiers et l’en-tête est incorporé dans le package dans le répertoire suivant : ** \<FrameworkName> . Framework/en-têtes/ \<FrameworkName> -SWIFT. h**.
 
-Cet en-tête expose les interfaces publiques, qui seront utilisées pour créer des métadonnées de liaison Xamarin C# . iOS et générer des classes qui exposent les membres du Framework SWIFT. Si l’en-tête n’existe pas ou a une interface publique incomplète (par exemple, vous ne voyez pas classes/membres), vous avez deux options :
+Cet en-tête expose les interfaces publiques, qui seront utilisées pour créer des métadonnées de liaison Xamarin. iOS et générer des classes C# exposant les membres du Framework SWIFT. Si l’en-tête n’existe pas ou a une interface publique incomplète (par exemple, vous ne voyez pas classes/membres), vous avez deux options :
 
-- Mettre à jour le code source SWIFT pour générer l’en-tête et marquer les membres requis avec l’attribut `@objc`
+- Mettre à jour le code source SWIFT pour générer l’en-tête et marquer les membres requis avec l' `@objc` attribut
 - Créer une infrastructure de proxy dans laquelle vous contrôlez l’interface publique et proxy de tous les appels à l’infrastructure sous-jacente
 
 Dans ce didacticiel, la deuxième approche est décrite, car elle a moins de dépendances sur le code source tiers, ce qui n’est pas toujours disponible. Une autre raison d’éviter la première approche est l’effort supplémentaire requis pour prendre en charge les futures modifications de l’infrastructure. Une fois que vous avez commencé à ajouter des modifications au code source tiers, vous êtes responsable de la prise en charge de ces modifications et de leur fusion éventuelle avec chaque mise à jour ultérieure.
@@ -66,15 +69,15 @@ Par exemple, dans ce didacticiel, une liaison pour le [Kit de développement log
 
 1. Assurez-vous que l’option **ne pas incorporer** est sélectionnée, qui sera ensuite contrôlée manuellement :
 
-    [![donotembed Xcode (option)](walkthrough-images/xcode-donotembed-option.png)](walkthrough-images/xcode-donotembed-option.png#lightbox)
+    [![Xcode donotembed (option)](walkthrough-images/xcode-donotembed-option.png)](walkthrough-images/xcode-donotembed-option.png#lightbox)
 
 1. Assurez-vous que l’option paramètres de build **incorporer toujours les bibliothèques standard SWIFT**, qui incluent des bibliothèques SWIFT avec l’infrastructure est définie sur non. Il sera ensuite contrôlé manuellement, les dylibs SWIFT inclus dans le package final :
 
-    [![Xcode incorporer toujours la valeur false](walkthrough-images/xcode-alwaysembedfalse-option.png)](walkthrough-images/xcode-alwaysembedfalse-option.png#lightbox)
+    [![Xcode toujours incorporer l’option false](walkthrough-images/xcode-alwaysembedfalse-option.png)](walkthrough-images/xcode-alwaysembedfalse-option.png#lightbox)
 
 1. Assurez-vous que l’option **Enable Bitcode** a la valeur **no**. À partir de maintenant Xamarin. iOS n’inclut pas Bitcode alors qu’Apple exige que toutes les bibliothèques prennent en charge les mêmes architectures :
 
-    [![Xcode Enable bitcode option false](walkthrough-images/xcode-enablebitcodefalse-option.png)](walkthrough-images/xcode-enablebitcodefalse-option.png#lightbox)
+    [![Active Xcode Enable bitcode option false](walkthrough-images/xcode-enablebitcodefalse-option.png)](walkthrough-images/xcode-enablebitcodefalse-option.png#lightbox)
 
     Vous pouvez vérifier que l’option Bitcode de l’infrastructure résultante est désactivée en exécutant la commande de terminal suivante sur le Framework :
 
@@ -84,11 +87,11 @@ Par exemple, dans ce didacticiel, une liaison pour le [Kit de développement log
 
     La sortie doit être vide, sinon vous souhaitez vérifier les paramètres du projet pour votre configuration spécifique.
 
-1. Assurez-vous que l’option **de nom d’en-tête d’interface générée par objective-C** est activée et spécifie un nom d’en-tête. Le nom par défaut est **\<FrameworkName >-SWIFT. h**:
+1. Assurez-vous que l’option **de nom d’en-tête d’interface générée par objective-C** est activée et spécifie un nom d’en-tête. Le nom par défaut est ** \<FrameworkName> -SWIFT. h**:
 
-    [![l’option d’en-tête objectice-c de Xcode](walkthrough-images/xcode-objcheaderenabled-option.png)](walkthrough-images/xcode-objcheaderenabled-option.png#lightbox)
+    [![option d’en-tête Xcode objectice-c activée](walkthrough-images/xcode-objcheaderenabled-option.png)](walkthrough-images/xcode-objcheaderenabled-option.png#lightbox)
 
-1. Exposez les méthodes souhaitées et marquez-les avec `@objc` attribut et appliquez des règles supplémentaires définies ci-dessous. Si vous générez l’infrastructure sans cette étape, l’en-tête objective-C généré sera vide et Xamarin. iOS ne pourra pas accéder aux membres du Framework SWIFT. Exposez la logique d’initialisation du kit de développement logiciel (SDK) SWIFT Gigya sous-jacent en créant un fichier SWIFT **SwiftFrameworkProxy. Swift** et en définissant le code suivant :
+1. Exposez les méthodes souhaitées et marquez-les avec l' `@objc` attribut et appliquez des règles supplémentaires définies ci-dessous. Si vous générez l’infrastructure sans cette étape, l’en-tête objective-C généré sera vide et Xamarin. iOS ne pourra pas accéder aux membres du Framework SWIFT. Exposez la logique d’initialisation du kit de développement logiciel (SDK) SWIFT Gigya sous-jacent en créant un fichier SWIFT **SwiftFrameworkProxy. Swift** et en définissant le code suivant :
 
     ```swift
     import Foundation
@@ -111,9 +114,9 @@ Par exemple, dans ce didacticiel, une liaison pour le [Kit de développement log
     Voici quelques remarques importantes sur le code ci-dessus :
 
     - Importez le module Gigya ici à partir du kit de développement logiciel (SDK) Gigya tiers d’origine et pouvez maintenant accéder à n’importe quel membre du Framework.
-    - Marquez la classe SwiftFrameworkProxy avec l’attribut `@objc` en spécifiant un nom ; sinon, un nom unique illisible sera généré, tel que `_TtC19SwiftFrameworkProxy19SwiftFrameworkProxy`. Le nom du type doit être clairement défini, car il sera utilisé ultérieurement par son nom.
-    - Hériter de la classe proxy de `NSObject`, sinon elle ne sera pas générée dans le fichier d’en-tête objective-C.
-    - Marquez tous les membres à exposer en tant que `public`.
+    - Marquez la classe SwiftFrameworkProxy avec l' `@objc` attribut qui spécifie un nom ; sinon, un nom unique illisible sera généré, tel que `_TtC19SwiftFrameworkProxy19SwiftFrameworkProxy` . Le nom du type doit être clairement défini, car il sera utilisé ultérieurement par son nom.
+    - Hériter de la classe proxy de `NSObject` ; sinon, elle ne sera pas générée dans le fichier d’en-tête objective-C.
+    - Marquez tous les membres à exposer en tant que `public` .
 
 1. Modifiez la configuration de build du schéma de **Debug** en **Release**. Pour ce faire, ouvrez la boîte de dialogue **> cible Xcode > modifier le schéma** , puis affectez à l’option de **configuration Build** la valeur **Release**:
 
@@ -200,7 +203,7 @@ Par exemple, dans ce didacticiel, une liaison pour le [Kit de développement log
 
 ## <a name="prepare-metadata"></a>Préparer les métadonnées
 
-À ce stade, vous devez disposer de l’infrastructure avec l’en-tête d’interface généré par objective-C prêt à être consommé par une liaison Xamarin. iOS.  L’étape suivante consiste à préparer les interfaces de définition d’API, qui sont utilisées par un projet de C# liaison pour générer des classes. Ces définitions peuvent être créées manuellement ou automatiquement par l’outil [précision objective](https://docs.microsoft.com/xamarin/cross-platform/macios/binding/objective-sharpie/) et le fichier d’en-tête généré. Utilisez la métaie pour générer les métadonnées :
+À ce stade, vous devez disposer de l’infrastructure avec l’en-tête d’interface généré par objective-C prêt à être consommé par une liaison Xamarin. iOS.  L’étape suivante consiste à préparer les interfaces de définition d’API, qui sont utilisées par un projet de liaison pour générer des classes C#. Ces définitions peuvent être créées manuellement ou automatiquement par l’outil [précision objective](https://docs.microsoft.com/xamarin/cross-platform/macios/binding/objective-sharpie/) et le fichier d’en-tête généré. Utilisez la métaie pour générer les métadonnées :
 
 1. Téléchargez le dernier outil [Sharp objective](https://docs.microsoft.com/xamarin/cross-platform/macios/binding/objective-sharpie/) à partir du site Web des téléchargements officiels et installez-le en suivant les étapes de l’Assistant. Une fois l’installation terminée, vous pouvez la vérifier en exécutant la commande sharpy :
 
@@ -223,7 +226,7 @@ Par exemple, dans ce didacticiel, une liaison pour le [Kit de développement log
         [write] StructsAndEnums.cs
     ```
 
-    L’outil génère C# des métadonnées pour chaque membre objective-C exposé, qui doit ressembler au code suivant. Comme vous pouvez le voir, il peut être défini manuellement, car il a un format lisible par l’utilisateur et un mappage de membres simples :
+    L’outil génère des métadonnées C# pour chaque membre objective-C exposé, qui ressemble au code suivant. Comme vous pouvez le voir, il peut être défini manuellement, car il a un format lisible par l’utilisateur et un mappage de membres simples :
 
     ```csharp
     [Export ("initForApiKey:")]
@@ -249,7 +252,7 @@ L’étape suivante consiste à créer un projet de liaison Xamarin. iOS à l’
 
     ![métadonnées de structure de projet Visual Studio](walkthrough-images/visualstudio-project-structure-metadata.png)
 
-    Les métadonnées elles-mêmes décrivent chaque classe et membre objective-C exposé à l’aide C# du langage. Vous pouvez voir la définition d’en-tête objective-C d’origine C# avec la déclaration suivante :
+    Les métadonnées elles-mêmes décrivent chaque classe et membre objective-C exposé à l’aide du langage C#. Vous pouvez voir la définition d’en-tête objective-C d’origine à côté de la déclaration C# :
 
     ```csharp
     // @interface SwiftFrameworkProxy : NSObject
@@ -262,7 +265,7 @@ L’étape suivante consiste à créer un projet de liaison Xamarin. iOS à l’
     }
     ```
 
-    Même s’il s’agit d' C# un code valide, il n’est pas utilisé tel quel mais est utilisé par les outils Xamarin. C# IOS pour générer des classes basées sur cette définition de métadonnées. Par conséquent, au lieu de l’interface SwiftFrameworkProxy vous obtenez une C# classe portant le même nom, qui peut être instanciée par votre code Xamarin. iOS. Cette classe obtient des méthodes, des propriétés et d’autres membres définis par vos métadonnées, que vous appellerez de C# manière.
+    Bien qu’il s’agisse d’un code C# valide, il n’est pas utilisé tel quel mais est utilisé par les outils Xamarin. iOS pour générer des classes C# basées sur cette définition de métadonnées. Par conséquent, au lieu de l’interface SwiftFrameworkProxy vous obtenez une classe C# portant le même nom, qui peut être instanciée par votre code Xamarin. iOS. Cette classe obtient des méthodes, des propriétés et d’autres membres définis par vos métadonnées, que vous appellerez en C#.
 
 1. Ajoutez une référence native à l’infrastructure Fat antérieure générée, ainsi que chaque dépendance de cette infrastructure. Dans ce cas, ajoutez les références natives SwiftFrameworkProxy et Gigya Framework au projet de liaison :
 
@@ -294,9 +297,9 @@ L’étape suivante consiste à créer un projet de liaison Xamarin. iOS à l’
         L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/ -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos -Wl,-rpath -Wl,@executable_path/Frameworks
         ```
 
-        Les deux premières options (les `-L ...` ) indiquent au compilateur natif où trouver les bibliothèques SWIFT. Le compilateur natif ignorera les bibliothèques qui n’ont pas l’architecture correcte, ce qui signifie qu’il est possible de passer l’emplacement pour les bibliothèques de simulateur et les bibliothèques d’appareils en même temps, afin qu’il fonctionne pour les builds du simulateur et de l’appareil (ces les chemins d’accès sont corrects uniquement pour iOS. pour tvOS et Watchos, ils doivent être mis à jour). L’un des inconvénients est que cette approche nécessite que le Xcode correct se trouve dans/Application/Xcode.app, si le consommateur de la bibliothèque de liaison possède Xcode à un autre emplacement, il ne fonctionne pas. L’autre solution consiste à ajouter ces options dans les arguments mTouch supplémentaires dans les options de build iOS du projet exécutable (`--gcc_flags -L... -L...`). La troisième option permet à l’éditeur de liens natif de stocker l’emplacement des bibliothèques SWIFT dans l’exécutable, afin que le système d’exploitation puisse les trouver.
+        Les deux premières options (celles-ci  `-L ...`   ) indiquent au compilateur natif où trouver les bibliothèques SWIFT. Le compilateur natif ignorera les bibliothèques qui n’ont pas l’architecture correcte, ce qui signifie qu’il est possible de passer l’emplacement pour les bibliothèques de simulateur et les bibliothèques d’appareils en même temps, afin qu’il fonctionne pour les builds du simulateur et de l’appareil (ces chemins d’accès sont corrects uniquement pour iOS. pour tvOS et Watchos, ils doivent être mis à jour L’un des inconvénients est que cette approche nécessite que le Xcode correct se trouve dans/Application/Xcode.app, si le consommateur de la bibliothèque de liaison possède Xcode à un autre emplacement, il ne fonctionne pas. L’autre solution consiste à ajouter ces options dans les arguments mTouch supplémentaires dans les options de build iOS du projet exécutable ( `--gcc_flags -L... -L...` ). La troisième option permet à l’éditeur de liens natif de stocker l’emplacement des bibliothèques SWIFT dans l’exécutable, afin que le système d’exploitation puisse les trouver.
 
-1. La dernière action consiste à générer la bibliothèque et à vérifier que vous n’avez pas d’erreurs de compilation. Vous constaterez souvent que les métadonnées de liaisons produites par objective Sharp sont annotées avec l’attribut `[Verify]` . Ces attributs indiquent que vous devez vérifier que la finesse objective a fait la bonne chose en comparant la liaison avec la déclaration objective-C d’origine (qui sera fournie dans un commentaire au-dessus de la déclaration liée). Vous pouvez en savoir plus sur les membres marqués avec l’attribut à [l’aide du lien suivant](https://docs.microsoft.com/xamarin/cross-platform/macios/binding/objective-sharpie/platform/verify). Une fois le projet généré, il peut être consommé par une application Xamarin. iOS.
+1. La dernière action consiste à générer la bibliothèque et à vérifier que vous n’avez pas d’erreurs de compilation. Vous constaterez souvent que les métadonnées de liaisons produites par objective Sharp sont annotées avec l'  `[Verify]`   attribut. Ces attributs indiquent que vous devez vérifier que la finesse objective a fait la bonne chose en comparant la liaison avec la déclaration objective-C d’origine (qui sera fournie dans un commentaire au-dessus de la déclaration liée). Vous pouvez en savoir plus sur les membres marqués avec l’attribut à [l’aide du lien suivant](https://docs.microsoft.com/xamarin/cross-platform/macios/binding/objective-sharpie/platform/verify). Une fois le projet généré, il peut être consommé par une application Xamarin. iOS.
 
 ## <a name="consume-the-binding-library"></a>Utiliser la bibliothèque de liaisons
 
@@ -334,11 +337,11 @@ L’étape finale consiste à utiliser la bibliothèque de liaisons Xamarin. iOS
     }
     ```
 
-1. Exécutez l’application, dans la sortie de débogage, vous devriez voir la ligne suivante : `Gigya initialized with domain: us1.gigya.com`. Cliquez sur le bouton pour activer le workflow d’authentification :
+1. Exécutez l’application, dans la sortie de débogage, vous devriez voir la ligne suivante : `Gigya initialized with domain: us1.gigya.com` . Cliquez sur le bouton pour activer le workflow d’authentification :
 
-    [résultat du proxy SWIFT ![](walkthrough-images/swiftproxy-result.png)](walkthrough-images/swiftproxy-result.png#lightbox)
+    [![résultat du proxy SWIFT](walkthrough-images/swiftproxy-result.png)](walkthrough-images/swiftproxy-result.png#lightbox)
 
-Félicitations ! Vous avez créé avec succès une application Xamarin. iOS et une bibliothèque de liaison, qui consomme un Framework SWIFT. L’application ci-dessus s’exécutera avec succès sur iOS 12.2 +, car à partir de cette version d’iOS, [Apple a introduit la stabilité Abi](https://swift.org/blog/swift-5-1-released/) et chaque iOS démarrant + + comprend des bibliothèques Runtime SWIFT qui pourraient être utilisées pour exécuter votre application compilée avec SWIFT 5.1 +. Si vous devez ajouter la prise en charge des versions antérieures d’iOS, vous devez effectuer quelques étapes supplémentaires :
+Félicitations ! Vous avez créé avec succès une application Xamarin. iOS et une bibliothèque de liaison, qui consomme un Framework SWIFT. L’application ci-dessus s’exécutera avec succès sur iOS 12.2 +, car à partir de cette version d’iOS, [Apple a introduit la stabilité Abi](https://swift.org/blog/swift-5-1-released/) et chaque iOS démarrant + + comprend des bibliothèques Runtime SWIFT qui pourraient être utilisées pour exécuter votre application compilée avec SWIFT 5.1 +. Si vous devez ajouter la prise en charge des versions antérieures d’iOS, vous devez effectuer quelques étapes supplémentaires :
 
 1. Afin d’ajouter la prise en charge d’iOS 12,1 et versions antérieures, vous souhaitez expédier un dylibs SWIFT spécifique utilisé pour compiler votre infrastructure. Utilisez le package NuGet [Xamarin. iOS. SwiftRuntimeSupport](https://www.nuget.org/packages/Xamarin.iOS.SwiftRuntimeSupport/) pour traiter et copier les bibliothèques nécessaires avec votre Loi. Ajoutez la référence NuGet à votre projet cible et régénérez l’application. Aucune étape supplémentaire n’est requise, le package NuGet installe des tâches spécifiques, qui sont exécutées avec le processus de génération, identifient les dylibs SWIFT requis et les empaquette avec la loi finale.
 

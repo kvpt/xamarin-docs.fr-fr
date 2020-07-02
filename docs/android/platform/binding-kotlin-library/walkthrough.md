@@ -1,30 +1,33 @@
 ---
-title: 'Procédure pas à pas: Bind une bibliothèque Android Kotlin'
-description: Cet article fournit une procédure pratique de la création d’une liaison Xamarin.Android pour une bibliothèque Kotlin existante, BubblePicker. Il couvre des sujets tels que la compilation d’une bibliothèque Kotlin, la lier, et l’utilisation de la liaison dans une application Xamarin.Android.
+title: 'Procédure pas à pas : liaison d’une bibliothèque Kotlin Android'
+description: Cet article fournit une procédure pas à pas de création d’une liaison Xamarin. Android pour une bibliothèque Kotlin existante, BubblePicker. Il aborde des sujets tels que la compilation d’une bibliothèque Kotlin, sa liaison et l’utilisation de la liaison dans une application Xamarin. Android.
 ms.prod: xamarin
 ms.assetid: 5E45451F-514F-4F2B-A6E8-599ED2EFDA2C
 ms.technology: xamarin-android
 author: alexeystrakh
 ms.author: alstrakh
 ms.date: 02/11/2020
-ms.openlocfilehash: cbd7c796cd13aa45dc107bddf06ca44d6adbdf9d
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: af926b518c55bd0d6c73180e512dd669e93778f7
+ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "78291708"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853058"
 ---
-# <a name="walkthrough-bind-an-android-kotlin-library"></a>Procédure pas à pas: Bind une bibliothèque Android Kotlin
+# <a name="walkthrough-bind-an-android-kotlin-library"></a>Procédure pas à pas : liaison d’une bibliothèque Kotlin Android
 
-Xamarin permet aux développeurs mobiles de créer des applications mobiles natives multiplateformes à l’aide de Visual Studio et de C. Vous pouvez utiliser la plate-forme Android composants SDK hors de la boîte, mais dans de nombreux cas, vous souhaitez également utiliser des SDK tiers écrit pour cette plate-forme et Xamarin vous permet de le faire via des liaisons. Afin d’intégrer un cadre Android tiers dans votre application Xamarin.Android, vous devez créer une liaison Xamarin.Android pour elle avant que vous puissiez l’utiliser dans vos applications.
+> [!IMPORTANT]
+> Nous étudions actuellement l’utilisation de la liaison personnalisée sur la plateforme Xamarin. Veuillez suivre [**ce questionnaire**](https://www.surveymonkey.com/r/KKBHNLT) pour informer les futurs efforts de développement.
 
-La plate-forme Android, ainsi que ses langues maternelles et l’outillage, sont en constante évolution, y compris l’introduction récente de la langue Kotlin, qui est fixé à terme pour remplacer Java. Il ya un certain nombre de SDKs parti 3d, qui ont déjà été migrés de Java à Kotlin et il nous présente de nouveaux défis. Même si le processus de liaison Kotlin est similaire à Java, il nécessite des étapes supplémentaires et des paramètres de configuration pour construire et exécuter avec succès dans le cadre d’une application Xamarin.Android.  
+Xamarin permet aux développeurs mobiles de créer des applications mobiles natives multiplateformes à l’aide de Visual Studio et de C#. Vous pouvez utiliser les composants du kit de développement logiciel (SDK) de la plateforme Android prêts à l’emploi, mais dans de nombreux cas, vous souhaitez également utiliser des kits de développement logiciel tiers écrits pour cette plateforme et Xamarin vous permet de le faire via des liaisons. Pour intégrer une infrastructure Android tierce à votre application Xamarin. Android, vous devez créer une liaison Xamarin. Android pour celle-ci avant de pouvoir l’utiliser dans vos applications.
 
-L’objectif de ce document est d’esquisser une approche de haut niveau pour aborder ce scénario et de fournir un guide détaillé étape par étape avec un exemple simple.
+La plateforme Android, ainsi que ses langages et outils natifs, évoluent en permanence, y compris la dernière présentation du langage Kotlin, qui est finalement définie pour remplacer Java. Il existe plusieurs kits de développement logiciel (SDK) tiers en 3D, qui ont déjà été migrés de Java vers Kotlin et nous présentent de nouveaux défis. Bien que le processus de liaison Kotlin soit similaire à Java, il requiert des étapes supplémentaires et des paramètres de configuration pour générer et s’exécuter avec succès dans le cadre d’une application Xamarin. Android.  
+
+L’objectif de ce document est de présenter une approche de haut niveau pour traiter ce scénario et de fournir un guide pas à pas détaillé avec un exemple simple.
 
 ## <a name="background"></a>Arrière-plan
 
-Kotlin est sorti en février 2016 et a été positionné comme une alternative au compilateur Java standard dans Android Studio d’ici 2017. Plus tard en 2019, Google a annoncé que le langage de programmation Kotlin deviendrait son langage préféré pour les développeurs d’applications Android. L’approche contraignante de haut niveau est similaire [au processus contraignant des bibliothèques Java régulières](https://docs.microsoft.com/xamarin/android/platform/binding-java-library/) avec quelques étapes importantes spécifiques Kotlin.
+Kotlin a été publié en février 2016 et était positionné comme alternative au compilateur Java standard dans Android Studio par 2017. Plus tard dans 2019, Google a annoncé que le langage de programmation Kotlin devenait le langage préféré pour les développeurs d’applications Android. L’approche de la liaison de haut niveau est similaire au [processus de liaison des bibliothèques Java normales](https://docs.microsoft.com/xamarin/android/platform/binding-java-library/) , avec quelques étapes importantes spécifiques Kotlin.
 
 ## <a name="prerequisites"></a>Prérequis
 
@@ -32,27 +35,27 @@ Pour réaliser cette procédure pas à pas, vous aurez besoin des éléments sui
 
 - [Android Studio](https://developer.android.com/studio)
 - [Visual Studio pour Mac](https://visualstudio.microsoft.com/downloads)
-- [Décompiler Java](http://java-decompiler.github.io/)
+- [Décompilateur Java](http://java-decompiler.github.io/)
 
-## <a name="build-a-native-library"></a>Construire une bibliothèque autochtone
+## <a name="build-a-native-library"></a>Créer une bibliothèque Native
 
-La première étape consiste à construire une bibliothèque Kotlin indigène en utilisant Android Studio. La bibliothèque est généralement fournie par un développeur tiers ou disponible [au référentiel Maven de Google](https://maven.google.com/web/index.html) et à d’autres dépôts distants. À titre d’exemple, dans ce tutoriel, une liaison pour la bibliothèque Bubble Picker Kotlin est créée :
+La première étape consiste à créer une bibliothèque Kotlin Native à l’aide de Android Studio. La bibliothèque est généralement fournie par un développeur tiers ou disponible dans [le référentiel maven de Google](https://maven.google.com/web/index.html) et dans d’autres référentiels distants. Par exemple, dans ce didacticiel, une liaison pour la bibliothèque Kotlin du sélecteur de bulles est créée :
 
-![Démo de GitHub BubblePicker](walkthrough-images/github-bubblepicker-demo.png)
+![Démo GitHub BubblePicker](walkthrough-images/github-bubblepicker-demo.png)
 
-1. Téléchargez [le code source](https://github.com/igalata/Bubble-Picker/archive/develop.zip) de GitHub pour la bibliothèque et déballez-le dans un dossier local **Bubble-Picker**.
+1. Téléchargez [le code source](https://github.com/igalata/Bubble-Picker/archive/develop.zip) à partir de GitHub pour la bibliothèque et décompressez-le dans un dossier local **-Sélecteur de bulles**.
 
-1. Lancez l’Android Studio et **sélectionnez Open une** option de menu de projet Android Studio existante choisissant le dossier local Bubble-Picker :
+1. Lancez le Android Studio et sélectionnez l’option de menu **ouvrir un projet Android Studio existant** , en choisissant le dossier local de sélecteur de bulles :
 
-    ![Projet Android Studio Open](walkthrough-images/android-studio-open-project.png)
+    ![Android Studio ouvrir le projet](walkthrough-images/android-studio-open-project.png)
 
-1. Vérifiez que l’Android Studio est à jour, y compris Gradle. Le code source peut être construit avec succès sur Android Studio v3.5.3, Gradle v5.4.1. Instructions sur la façon de mettre à jour Gradle à la dernière version Gradle [pourrait être trouvé ici](https://gradle.org/install/).
+1. Vérifiez que la Android Studio est à jour, y compris Gradle. Le code source peut être généré avec succès sur Android Studio v 3.5.3, Gradle v 5.4.1. Vous trouverez des instructions sur la mise à jour de Gradle vers la dernière version de Gradle [ici](https://gradle.org/install/).
 
-1. Vérifiez que le SDK Android requis est installé. Le code source nécessite Android SDK v25. Open Tools > option de menu **SDK Manager** pour installer des composants SDK.
+1. Vérifiez que la Android SDK requise est installée. Le code source requiert Android SDK V25. Ouvrez l’option de menu **outils > du gestionnaire du kit SDK** pour installer les composants du SDK.
 
-1. Mettre à jour et synchroniser le fichier de configuration **build.gradle** principal situé à la racine du dossier du projet :
+1. Mettez à jour et synchronisez le fichier de configuration **Build. gradle** situé à la racine du dossier du projet :
 
-    - Définir la version Kotlin à 1.3.10
+    - Définir la version de Kotlin sur 1.3.10
 
         ```gradle
         buildscript {
@@ -60,7 +63,7 @@ La première étape consiste à construire une bibliothèque Kotlin indigène en
         }
         ```
 
-    - Enregistrez le référentiel Maven par défaut de Google afin que la dépendance de la bibliothèque de support puisse être résolue :
+    - Inscrire le référentiel maven de Google par défaut afin que la dépendance de la bibliothèque de prise en charge puisse être résolue :
 
         ```gradle
         allprojects {
@@ -73,36 +76,36 @@ La première étape consiste à construire une bibliothèque Kotlin indigène en
         }
         ```
 
-    - Une fois que le fichier de configuration est mis à jour, il est désynchronisé et Gradle affiche le bouton **Sync Now,** appuyez-le et attendez que le processus de synchronisation soit terminé :
+    - Une fois le fichier de configuration mis à jour, il n’est plus synchronisé et Gradle affiche le bouton **Synchroniser maintenant** , puis vous attendez que le processus de synchronisation se termine :
 
-        ![Android Studio Gradle Sync Maintenant](walkthrough-images/android-studio-gradle-syncnow.png)
-
-        > [!TIP]
-        > Le cache de dépendance de Gradle peut être corrompu, cela se produit parfois après un délai de connexion réseau. Recharger les dépendances et synchroniser le projet (nécessite un réseau).
+        ![Android Studio Gradle synchroniser maintenant](walkthrough-images/android-studio-gradle-syncnow.png)
 
         > [!TIP]
-        > L’état d’un processus de construction de Gradle (daemon) peut être corrompu. Arrêter tous les daemons Gradle peut résoudre ce problème. Arrêter les processus de construction Gradle (nécessite un redémarrage). Dans le cas des processus corrompus Gradle, vous pouvez également essayer de fermer l’IDE, puis tuer tous les processus Java.
+        > Le cache de dépendances de Gradle est peut-être endommagé, ce qui se produit parfois après un délai de connexion réseau. Retélécharger les dépendances et synchroniser le projet (nécessite un réseau).
 
         > [!TIP]
-        > Votre projet peut être l’utilisation d’un plugin tiers, qui n’est pas compatible avec les autres plugins dans le projet ou la version de Gradle demandée par le projet.
+        > L’état d’un processus de génération Gradle (démon) est peut-être endommagé. L’arrêt de tous les démons Gradle peut résoudre ce problème. Arrêter les processus de génération Gradle (nécessite un redémarrage). Dans le cas de processus Gradle endommagés, vous pouvez également essayer de fermer l’IDE, puis de tuer tous les processus Java.
 
-1. Ouvrez le menu Gradle sur la droite, naviguez vers le menu **bubblepicker > Tasks,** exécutez la tâche **de construction** en tapant double sur elle, et attendez que le processus de construction pour terminer :
+        > [!TIP]
+        > Votre projet utilise peut-être un plug-in tiers, qui n’est pas compatible avec les autres plug-ins du projet ou la version de Gradle demandée par le projet.
 
-    ![Android Studio Gradle Exécuter La tâche](walkthrough-images/android-studio-gradle-execute-task.png)
+1. Ouvrez le menu Gradle à droite, accédez au menu **bubblepicker > Tasks** , exécutez la tâche de **génération** en double-cliquant dessus et attendez que le processus de génération se termine :
 
-1. Ouvrez le navigateur de fichiers de dossiers de racine et naviguez vers le dossier de construction : **Bubble-Picker -> bubblepicker -> build -> outputs -> aar**, save the **bubblepicker-release.aar** file as **bubblepicker-v1.0.aar**, this file will be used later in the binding process:
+    ![Android Studio la tâche d’exécution de Gradle](walkthrough-images/android-studio-gradle-execute-task.png)
 
-    ![Android Studio AAR Sortie](walkthrough-images/android-studio-aar-output.png)
+1. Ouvrez le navigateur fichiers du dossier racine et accédez au dossier de génération : **Bubble-sélecteur-> bubblepicker-> Build-> sorties-> AAR**, enregistrez le fichier **bubblepicker-Release. AAR** en tant que **bubblepicker-v 1.0. AAR**, ce fichier sera utilisé ultérieurement dans le processus de liaison :
 
-Le fichier AAR est une archive Android, qui contient le code source Kotlin compilé et les actifs, requis par Android pour exécuter une application à l’aide de ce SDK.  
+    ![Sortie de AAR Android Studio](walkthrough-images/android-studio-aar-output.png)
+
+Le fichier AAR est une archive Android, qui contient le code source Kotlin compilé et les ressources requises par Android pour exécuter une application à l’aide de ce kit de développement logiciel (SDK).  
 
 ## <a name="prepare-metadata"></a>Préparer les métadonnées
 
-La deuxième étape consiste à préparer le fichier de transformation des métadonnées, qui est utilisé par Xamarin.Android pour générer des classes C respectives. Un projet de liaison Xamarin.Android découvrira toutes les classes et les membres natifs à partir d’une archive Android donnée générant par la suite un fichier XML avec les métadonnées appropriées. Le fichier de transformation des métadonnées créé manuellement est ensuite appliqué à la ligne de base précédemment générée pour créer le fichier de définition XML final utilisé pour générer le code C.
+La deuxième étape consiste à préparer le fichier de transformation des métadonnées, qui est utilisé par Xamarin. Android pour générer des classes C# respectives. Un projet de liaison Xamarin. Android détecte toutes les classes et les membres natifs d’une archive Android donnée, puis génère un fichier XML avec les métadonnées appropriées. Le fichier de transformation de métadonnées créé manuellement est ensuite appliqué à la ligne de base générée précédemment pour créer le fichier de définition XML final utilisé pour générer le code C#.
 
-Les métadonnées utilisent la syntaxe [XPath](https://www.w3.org/TR/xpath/) et sont utilisées par le générateur de liaisons pour influencer la création de l’assemblage de liaison. [L’article Java Binding Metadata](https://docs.microsoft.com/xamarin/android/platform/binding-java-library/customizing-bindings/java-bindings-metadata) fournit plus d’informations sur les transformations, qui pourraient être appliquées:
+Les métadonnées utilisent la syntaxe [XPath](https://www.w3.org/TR/xpath/)   et sont utilisées par le générateur de liaisons pour influencer la création de l’assembly de liaison. L’article sur les [métadonnées de liaison Java](https://docs.microsoft.com/xamarin/android/platform/binding-java-library/customizing-bindings/java-bindings-metadata) fournit plus d’informations sur les transformations, qui peuvent être appliquées :
 
-1. Créez un fichier **De Métadonnées.xml** vide :
+1. Créez un fichier de **Metadata.xml** vide :
 
     ```xml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -110,27 +113,27 @@ Les métadonnées utilisent la syntaxe [XPath](https://www.w3.org/TR/xpath/) e
     </metadata>
     ```
 
-1. Décrivez les transformations xml :
+1. Définir les transformations XML :
 
-- La bibliothèque natale de Kotlin a deux dépendances, que vous ne voulez pas exposer au monde de C, définissent deux transformations pour les ignorer complètement. Important de dire que les membres autochtones ne seront pas dépouillés du binaire résultant, seules les classes de C ne seront pas générées. [Java Decompiler](http://java-decompiler.github.io/) peut être utilisé pour identifier les dépendances. Exécutez l’outil et ouvrez le fichier AAR créé plus tôt, en conséquence la structure de l’archive Android sera montré, reflétant toutes les dépendances, valeurs, ressources, manifeste, et les classes:  
+- La bibliothèque Kotlin Native a deux dépendances, que vous ne souhaitez pas exposer au monde C#, définissez deux transformations pour les ignorer complètement. Il est important de préciser que les membres natifs ne seront pas supprimés du fichier binaire résultant, seules les classes C# ne seront pas générées. [Java décompilateur](http://java-decompiler.github.io/) peut être utilisé pour identifier les dépendances. Exécutez l’outil et ouvrez le fichier AAR créé précédemment. par conséquent, la structure de l’archive Android s’affichera, reflétant toutes les dépendances, valeurs, ressources, manifestes et classes :  
 
-    ![Dépendances Java Decompiler](walkthrough-images/java-decompiler-dependencies.png)
+    ![Dépendances décompilateur Java](walkthrough-images/java-decompiler-dependencies.png)
 
-    Les transformations pour sauter le traitement de ces paquets sont définies à l’aide d’instructions XPath :
+    Les transformations pour ignorer le traitement de ces packages sont définies à l’aide des instructions XPath :
 
     ```xml
     <remove-node path="/api/package[starts-with(@name,'org.jbox2d')]" />
     <remove-node path="/api/package[starts-with(@name,'org.slf4j')]" />
     ```
 
-- La `BubblePicker` classe autochtone `getBackgroundColor` a `setBackgroundColor` deux méthodes et la transformation `BackgroundColor` suivante la transformera en propriété CMD :
+- La `BubblePicker` classe native a deux méthodes `getBackgroundColor` et `setBackgroundColor` la transformation suivante la remplacera par une propriété C# `BackgroundColor` :
 
     ```xml
     <attr path="/api/package[@name='com.igalata.bubblepicker.rendering']/class[@name='BubblePicker']/method[@name='getBackground' and count(parameter)=0]" name="propertyName">BackgroundColor</attr>
     <attr path="/api/package[@name='com.igalata.bubblepicker.rendering']/class[@name='BubblePicker']/method[@name='setBackground' and count(parameter)=1 and parameter[1][@type='int']]" name="propertyName">BackgroundColor</attr>
     ```
 
-- Les types `UInt, UShort, ULong, UByte` non signés nécessitent une manipulation spéciale. Pour ces types Kotlin change les noms de la méthode et les types de paramètres automatiquement, qui est reflété dans le code généré:
+- Les types non signés `UInt, UShort, ULong, UByte` nécessitent un traitement spécial. Pour ces types, Kotlin modifie automatiquement les types de noms de méthode et de paramètres, ce qui est reflété dans le code généré :
 
     ```Kotlin
     public open fun fooUIntMethod(value: UInt) : String {
@@ -138,7 +141,7 @@ Les métadonnées utilisent la syntaxe [XPath](https://www.w3.org/TR/xpath/) e
     }
     ```
 
-    Ce code est compilé dans le code d’ente Java suivant :
+    Ce code est compilé dans le code d’octet Java suivant :
 
     ```Java byte code
     @NotNull
@@ -147,7 +150,7 @@ Les métadonnées utilisent la syntaxe [XPath](https://www.w3.org/TR/xpath/) e
     }
     ```
 
-    En outre, les `UIntArray, UShortArray, ULongArray, UByteArray` types connexes tels que sont également touchés par Kotlin. Le nom de la méthode est changé pour inclure un suffixe supplémentaire et les paramètres sont modifiés en un éventail d’éléments de versions signées des mêmes types. Dans l’exemple ci-dessous un paramètre de `UIntArray` type est converti automatiquement en `int[]` et le nom de la méthode est changé de `fooUIntArrayMethod` . `fooUIntArrayMethod--ajY-9A` Ce dernier est découvert par les outils Xamarin.Android et généré comme un nom de méthode valide:
+    En outre, les types associés tels que `UIntArray, UShortArray, ULongArray, UByteArray` sont également affectés par Kotlin. Le nom de la méthode est modifié pour inclure un suffixe supplémentaire et les paramètres sont modifiés en un tableau d’éléments des versions signées des mêmes types. Dans l’exemple ci-dessous, un paramètre de type `UIntArray` est converti automatiquement en `int[]` et le nom de la méthode passe de `fooUIntArrayMethod` à `fooUIntArrayMethod--ajY-9A` . Ce dernier est découvert par les outils Xamarin. Android et généré en tant que nom de méthode valide :
 
     ```Kotlin
     public open fun fooUIntArrayMethod(value: UIntArray) : String {
@@ -155,7 +158,7 @@ Les métadonnées utilisent la syntaxe [XPath](https://www.w3.org/TR/xpath/) e
     }
     ```
 
-    Ce code est compilé dans le code d’ente Java suivant :
+    Ce code est compilé dans le code d’octet Java suivant :
 
     ```Java byte code
     @NotNull
@@ -165,15 +168,15 @@ Les métadonnées utilisent la syntaxe [XPath](https://www.w3.org/TR/xpath/) e
     }
     ```
 
-    Afin de lui donner un nom significatif, les métadonnées suivantes peuvent être ajoutées à la **Métaadata.xml**, qui mettra à jour le nom de nouveau à initialement défini dans le code Kotlin:
+    Pour lui attribuer un nom explicite, les métadonnées suivantes peuvent être ajoutées à la **Metadata.xml**, ce qui a pour effet de mettre à jour le nom à l’origine défini dans le code Kotlin :
 
     ```xml
     <attr path="/api/package[@name='com.microsoft.simplekotlinlib']/class[@name='FooClass']/method[@name='fooUIntArrayMethod--ajY-9A']" name="managedName">fooUIntArrayMethod</attr>
     ```
 
-    Dans l’échantillon BubblePicker, aucun membre n’utilise des types non signés, donc aucun changement supplémentaire n’est nécessaire.
+    Dans l’exemple BubblePicker, il n’y a aucun membre utilisant des types non signés, par conséquent, aucune autre modification n’est requise.
 
-- Membres Kotlin avec des paramètres génériques par défaut transformés en paramètres de Java.`Lang.Object` Type. Par exemple, une méthode Kotlin \<a un paramètre générique T> :
+- Les membres Kotlin avec des paramètres génériques sont transformés par défaut en paramètres de Java.`Lang.Object` entrer. Par exemple, une méthode Kotlin a un paramètre générique \<T> :
 
     ```Kotlin
     public open fun <T>fooGenericMethod(value: T) : String {
@@ -181,7 +184,7 @@ Les métadonnées utilisent la syntaxe [XPath](https://www.w3.org/TR/xpath/) e
     }
     ```
 
-    Une fois qu’une liaison Xamarin.Android est générée, la méthode est exposée à C ' comme ci-dessous:
+    Une fois qu’une liaison Xamarin. Android est générée, la méthode est exposée à C# comme indiqué ci-dessous :
 
     ```csharp
     [Register ("fooGenericMethod", "(Ljava/lang/Object;)Ljava/lang/String;", "GetFooGenericMethod_Ljava_lang_Object_Handler")]
@@ -192,59 +195,59 @@ Les métadonnées utilisent la syntaxe [XPath](https://www.w3.org/TR/xpath/) e
     public virtual string FooGenericMethod (Java.Lang.Object value);
     ```
 
-    Les génériques Java et Kotlin ne sont pas pris en charge par les liaisons Xamarin.Android, donc une méthode généralisée de C pour accéder à l’API générique est créée. En tant que work-around, vous pouvez créer une bibliothèque Kotlin wrapper et exposer les API nécessaires d’une manière forte typée sans génériques. Vous pouvez également créer des aides du côté de Cmd pour aborder le problème de la même manière par le biais d’API de type solide.
+    Les génériques Java et Kotlin ne sont pas pris en charge par les liaisons Xamarin. Android. par conséquent, une méthode C# généralisée pour accéder à l’API générique est créée. En guise de solution de contournement, vous pouvez créer une bibliothèque Kotlin Wrapper et exposer les API requises d’une manière fortement typée sans génériques. Vous pouvez également créer des assistances sur le côté C# pour résoudre le problème de la même façon via des API fortement typées.
 
     > [!TIP]
-    > En transformant les métadonnées, tout changement pourrait être appliqué à la liaison générée. [L’article de la Bibliothèque Java binding](https://docs.microsoft.com/xamarin/android/platform/binding-java-library/) explique en détail comment les métadonnées sont générées et traitées.
+    > En transformant les métadonnées, toutes les modifications peuvent être appliquées à la liaison générée. L’article liaison de la [bibliothèque Java](https://docs.microsoft.com/xamarin/android/platform/binding-java-library/) de la bibliothèque explique en détail comment les métadonnées sont générées et traitées.
 
-## <a name="build-a-binding-library"></a>Construire une bibliothèque contraignante
+## <a name="build-a-binding-library"></a>Créer une bibliothèque de liaisons
 
-L’étape suivante consiste à créer un projet de liaison Xamarin.Android à l’aide du modèle de liaison Visual Studio, ajouter les métadonnées requises, références natives, puis construire le projet pour produire une bibliothèque consommable :
+L’étape suivante consiste à créer un projet de liaison Xamarin. Android à l’aide du modèle de liaison Visual Studio, à ajouter les métadonnées requises, aux références natives, puis à générer le projet pour générer une bibliothèque consommable :
 
-1. Ouvrez Visual Studio pour Mac et créez un nouveau projet Xamarin.Android Binding Library, donnez-lui un nom, dans ce cas **testBubblePicker.Binding** et complétez l’assistant. Le modèle de liaison Xamarin.Android est situé par le chemin suivant: **Android > Library > Binding Library:**
+1. Ouvrez Visual Studio pour Mac et créez un projet de bibliothèque de liaisons Xamarin. Android, donnez-lui un nom, dans ce cas **testBubblePicker. Binding** et terminez l’Assistant. Le modèle de liaison Xamarin. Android se trouve à l’emplacement suivant : bibliothèque de **> android > bibliothèque de liaisons**:
 
-    ![Studio visuel créer la liaison](walkthrough-images/visual-studio-create-binding.png)
+    ![Créer une liaison Visual Studio](walkthrough-images/visual-studio-create-binding.png)
 
-    Dans le dossier Transformations il y a trois fichiers de transformation principaux :
+    Dans le dossier transformations, il existe trois fichiers de transformation principaux :
 
-    - **Metadata.xml** - Permet d’apporter des modifications à l’API finale, comme la modification de l’espace nom de la liaison générée.
-    - **EnumFields.xml** - Contient la cartographie entre les constantes Java int et enums C.
-    - **EnumMethods.xml** - Permet de changer les paramètres de la méthode et les types de retour de Java int constants à C 'enums.
+    - **Metadata.xml** : permet d’apporter des modifications à l’API finale, telles que la modification de l’espace de noms de la liaison générée.
+    - **EnumFields.xml** : contient le mappage entre les constantes Java int et les énumérations C#.
+    - **EnumMethods.xml** : permet de modifier les paramètres de méthode et les types de retour des constantes Java int aux enums C#.
 
-    Gardez vider les fichiers **EnumFields.xml** et **EnumMethods.xml** et mettez à jour les **fichiers Metadata.xml** pour définir vos transformations.
+    Conservez les fichiers **EnumFields.xml** et **EnumMethods.xml** et mettez à jour les **Metadata.xml** pour définir vos transformations.
 
-1. Remplacez le fichier **Transformations/Metadata.xml** existant avec le fichier **Metadata.xml** créé à l’étape précédente. Dans la fenêtre des propriétés, vérifiez que le fichier **Build Action** est réglé sur **TransformationFile**:
+1. Remplacez le fichier **transformations/Metadata.xml** existant par le fichier **Metadata.xml** créé à l’étape précédente. Dans la fenêtre Propriétés, vérifiez que l' **action de génération** de fichier est définie sur **TransformationFile**:
 
-    ![Métadonnées visualiseres](walkthrough-images/visual-studio-metadata.png)
+    ![Métadonnées Visual Studio](walkthrough-images/visual-studio-metadata.png)
 
-1. Ajoutez le fichier **bubblepicker-v1.0.aar** que vous avez construit à l’étape 1 au projet de liaison en tant que référence native. Pour ajouter des références de bibliothèque natives, ouvrez le finder et naviguez vers le dossier avec les archives Android. Faites glisser et déposez les archives dans le dossier Jars dans Solution Explorer. Alternativement, vous pouvez utiliser l’option de menu contexte **Ajouter** sur le dossier Jars et choisir **les fichiers existants...**. Choisissez de copier le fichier à l’annuaire aux fins de cette procédure pas à pas. Assurez-vous de vérifier que **l’action build** est définie à **LibraryProjectZip**:
+1. Ajoutez le fichier **bubblepicker-v 1.0. AAR** que vous avez créé à l’étape 1 au projet de liaison en tant que référence native. Pour ajouter des références de bibliothèque natives, Ouvrez Finder et accédez au dossier avec l’archive Android. Glissez-déposez l’archive dans le dossier jar dans Explorateur de solutions. Vous pouvez également utiliser l’option de menu **Ajouter** un contexte dans le dossier jar et choisir **fichiers existants...**. Choisissez de copier le fichier dans le répertoire pour les besoins de cette procédure pas à pas. Veillez à vérifier que l' **action de génération** est définie sur **LibraryProjectZip**:
 
-    ![Référence native Visual Studio](walkthrough-images/visual-studio-native-reference.png)
+    ![Référence native de Visual Studio](walkthrough-images/visual-studio-native-reference.png)
 
-1. Ajoutez une référence au forfait [Xamarin.Kotlin.StdLib NuGet.](https://www.nuget.org/packages/Xamarin.Kotlin.StdLib/) Ce forfait est une reliure pour la bibliothèque standard Kotlin. Sans ce paquet, la liaison ne fonctionnera que si la bibliothèque Kotlin n’utilise pas de types spécifiques Kotlin, sinon tous ces membres ne seront pas exposés à C et toute application qui tente de consommer la liaison se plantera à l’heure de l’exécution.
+1. Ajoutez une référence au package [NuGet Xamarin. Kotlin. stdlib](https://www.nuget.org/packages/Xamarin.Kotlin.StdLib/) . Ce package est une liaison pour la bibliothèque standard Kotlin. Sans ce package, la liaison ne fonctionnera que si la bibliothèque Kotlin n’utilise pas de types spécifiques Kotlin. dans le cas contraire, tous ces membres ne seront pas exposés à C# et toute application tentant d’utiliser la liaison se bloquera au moment de l’exécution.
 
     > [!TIP]
-    > En raison d’une limitation de la Xamarin.Android, les outils de liaison seulement une seule archive Android (AAR) peut être ajouté par projet de liaison. Si plusieurs fichiers AAR doivent être inclus, plusieurs projets Xamarin.Android sont nécessaires, un par chaque AAR. Si c’était le cas pour cette procédure pas à pas, alors les quatre actions précédentes de cette étape devraient être répétées pour chaque archive. Comme une option alternative, il est possible de fusionner manuellement plusieurs archives Android comme une seule archive et, par conséquent, vous pouvez utiliser un seul projet de liaison Xamarin.Android.
+    > En raison d’une limitation de Xamarin. Android, les outils de liaison ne peuvent être ajoutés qu’à une seule archive Android (AAR) par projet de liaison. Si plusieurs fichiers AAR doivent être inclus, plusieurs projets Xamarin. Android sont requis, un pour chaque AAR. Si c’était le cas pour cette procédure pas à pas, les quatre actions précédentes de cette étape devaient être répétées pour chaque archive. Une autre option consiste à fusionner manuellement plusieurs archives Android en tant qu’archive unique. vous pouvez donc utiliser un seul projet de liaison Xamarin. Android.
 
-1. L’action finale est de construire la bibliothèque et faire n’ont pas d’erreurs de compilation. En cas d’erreurs de compilation, elles peuvent être traitées et traitées à l’aide du fichier Metadata.xml, que vous avez créé plus tôt en ajoutant des métadonnées de transformation xml, qui ajouteront, supprimeront ou renommeront les membres de la bibliothèque.
+1. La dernière action consiste à générer la bibliothèque et à ne pas avoir d’erreurs de compilation. En cas d’erreurs de compilation, elles peuvent être traitées et gérées à l’aide du fichier Metadata.xml, que vous avez créé précédemment en ajoutant des métadonnées de transformation XML, ce qui permet d’ajouter, de supprimer ou de renommer des membres de bibliothèque.
 
-## <a name="consume-the-binding-library"></a>Consommer la bibliothèque de liaison
+## <a name="consume-the-binding-library"></a>Utiliser la bibliothèque de liaisons
 
-La dernière étape est de consommer la bibliothèque de liaison Xamarin.Android dans une application Xamarin.Android. Créez un nouveau projet Xamarin.Android, ajoutez une référence à la bibliothèque de liaison et rendre l’interface utilisateur Bubble Picker :
+L’étape finale consiste à utiliser la bibliothèque de liaisons Xamarin. Android dans une application Xamarin. Android. Créez un nouveau projet Xamarin. Android, ajoutez une référence à la bibliothèque de liaison et l’interface utilisateur du sélecteur de bulles de rendu :
 
-1. Créez le projet Xamarin.Android. Utilisez **l’application Android > >'application Android** comme point de départ et sélectionnez **dernières et plus grandes** que vous ciblez l’option Plates-formes pour éviter les problèmes de compatibilité. Toutes les étapes suivantes ciblent ce projet :
+1. Créez un projet Xamarin. Android. Utilisez l' **application android > > application Android** comme point de départ et sélectionnez les **dernières et les plus** importantes lorsque vous ciblez les plateformes pour éviter les problèmes de compatibilité. Toutes les étapes suivantes ciblent ce projet :
 
-    ![Visual Studio Créer App](walkthrough-images/visual-studio-create-app.png)
+    ![Créer une application Visual Studio](walkthrough-images/visual-studio-create-app.png)
 
-1. Ajoutez une référence de projet au projet contraignant ou ajoutez une référence que le DLL a créée précédemment :
+1. Ajoutez une référence de projet au projet de liaison ou ajoutez une référence à la DLL créée précédemment :
 
-    ![Studio visuel Ajouter Binding Reference.png](walkthrough-images/visual-studio-add-binding-reference.png)
+    ![Reference.png Visual Studio-ajouter une liaison](walkthrough-images/visual-studio-add-binding-reference.png)
 
-1. Ajoutez une référence au forfait [Xamarin.Kotlin.StdLib NuGet,](https://www.nuget.org/packages/Xamarin.Kotlin.StdLib/) que vous avez ajouté au projet de liaison Xamarin.Android plus tôt. Il ajoute un soutien à tous les types spécifiques Kotlin qui ont besoin de remise dans le temps d’exécution.  Sans ce paquet, l’application peut être compilée mais se plantera au moment de l’exécution :
+1. Ajoutez une référence au package [NuGet Xamarin. Kotlin. stdlib](https://www.nuget.org/packages/Xamarin.Kotlin.StdLib/) que vous avez ajouté précédemment au projet de liaison Xamarin. Android. Elle ajoute la prise en charge de tous les types spécifiques de Kotlin qui nécessitent une gestion dans le Runtime.  Sans ce package, l’application peut être compilée, mais se bloquera au moment de l’exécution :
 
-    ![Studio visuel Ajouter StdLib NuGet](walkthrough-images/visual-studio-add-stdlib-nuget.png)
+    ![Ajout de StdLib NuGet dans Visual Studio](walkthrough-images/visual-studio-add-stdlib-nuget.png)
 
-1. Ajouter `BubblePicker` le contrôle à `MainActivity`la mise en page Android pour . Ouvrez **testBubblePicker/Resources/layout/content_main.xml** fichier et appendice le nœud de contrôle BubblePicker comme le dernier élément de la racine RelativeLayout contrôle:
+1. Ajoutez le `BubblePicker` contrôle à la disposition Android pour `MainActivity` . Ouvrez **testBubblePicker/Resources/layout/content_main.xml** fichier et ajoutez le nœud de contrôle BubblePicker en tant que dernier élément du contrôle RelativeLayout racine :
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -258,7 +261,7 @@ La dernière étape est de consommer la bibliothèque de liaison Xamarin.Android
     </RelativeLayout>
     ```
 
-1. Mettre à jour le code source de l’application et ajouter la logique d’initialisation à la `MainActivity`, qui active le Bubble Picker SDK:
+1. Mettez à jour le code source de l’application et ajoutez la logique d’initialisation au `MainActivity` , qui active le kit de développement logiciel (SDK) de sélecteur de bulles :
 
     ```csharp
     protected override void OnCreate(Bundle savedInstanceState)
@@ -272,7 +275,7 @@ La dernière étape est de consommer la bibliothèque de liaison Xamarin.Android
     }
     ```
 
-    `BubblePickerAdapter`et `BubblePickerListener` sont deux classes à créer à partir de zéro, qui traitent les bulles de données et d’interaction de contrôle:
+    `BubblePickerAdapter`et `BubblePickerListener` sont deux classes à créer à partir de zéro, qui gèrent les données des bulles et l’interaction des contrôles :
 
     ```csharp
     public class BubblePickerAdapter : Java.Lang.Object, IBubblePickerAdapter
@@ -322,25 +325,25 @@ La dernière étape est de consommer la bibliothèque de liaison Xamarin.Android
     }
     ```
 
-1. Exécutez l’application, qui devrait rendre l’interface utilisateur Bubble Picker:
+1. Exécutez l’application, qui doit afficher l’interface utilisateur du sélecteur de bulles :
 
-    ![Démonstration de BubblePicker](walkthrough-images/bubble-picker-demo.png)
+    ![Démonstration BubblePicker](walkthrough-images/bubble-picker-demo.png)
 
-    L’échantillon nécessite un code supplémentaire pour `BubblePicker` rendre les éléments de style et de gérer les interactions, mais le contrôle a été créé et activé avec succès.
+    L’exemple requiert du code supplémentaire pour afficher le style des éléments et gérer les interactions, mais le `BubblePicker` contrôle a été créé et activé avec succès.
 
-Félicitations ! Vous avez créé avec succès une application Xamarin.Android et une bibliothèque de liaison, qui consomme une bibliothèque Kotlin.  
+Félicitations ! Vous avez créé avec succès une application Xamarin. Android et une bibliothèque de liaison, qui consomme une bibliothèque Kotlin.  
 
-Vous devriez maintenant avoir une application de base Xamarin.Android qui utilise une bibliothèque Kotlin indigène via une bibliothèque de liaison Xamarin.Android. Ce pas-là utilise intentionnellement un exemple de base pour mieux mettre l’accent sur les concepts clés introduits. Dans le monde réel, vous serez probablement tenu d’exposer un plus grand nombre d’API et d’appliquer des transformations de métadonnées pour eux.
+Vous devez maintenant disposer d’une application Xamarin. Android de base qui utilise une bibliothèque Kotlin Native via une bibliothèque de liaisons Xamarin. Android. Cette procédure pas à pas utilise intentionnellement un exemple de base pour mieux mettre l’accent sur les concepts clés introduits. Dans les scénarios réels, vous aurez probablement besoin d’exposer un plus grand nombre d’API et d’appliquer des transformations de métadonnées à celles-ci.
 
 ## <a name="related-links"></a>Liens connexes
 
 - [Android Studio](https://developer.android.com/studio)
-- [Gradle Installation](https://gradle.org/install/)
+- [Installation de Gradle](https://gradle.org/install/)
 - [Visual Studio pour Mac](https://visualstudio.microsoft.com/downloads)
-- [Décompiler Java](http://java-decompiler.github.io/)
+- [Décompilateur Java](http://java-decompiler.github.io/)
 - [Bibliothèque BubblePicker Kotlin](https://github.com/igalata/Bubble-Picker)
-- [Bibliothèque Java contraignante](https://docs.microsoft.com/xamarin/android/platform/binding-java-library/)
-- [Xpath](https://www.w3.org/TR/xpath/)
-- [Java Binding Metadata](https://docs.microsoft.com/xamarin/android/platform/binding-java-library/customizing-bindings/java-bindings-metadata)
-- [Xamarin.Kotlin.StdLib NuGet](https://www.nuget.org/packages/Xamarin.Kotlin.StdLib/)
-- [Exemple de dépôt de projet](https://github.com/alexeystrakh/xamarin-binding-kotlin-framework)
+- [Liaison de la bibliothèque Java](https://docs.microsoft.com/xamarin/android/platform/binding-java-library/)
+- [XPath](https://www.w3.org/TR/xpath/)
+- [Métadonnées de liaison Java](https://docs.microsoft.com/xamarin/android/platform/binding-java-library/customizing-bindings/java-bindings-metadata)
+- [Xamarin. Kotlin. StdLib NuGet](https://www.nuget.org/packages/Xamarin.Kotlin.StdLib/)
+- [Exemple de référentiel de projet](https://github.com/alexeystrakh/xamarin-binding-kotlin-framework)

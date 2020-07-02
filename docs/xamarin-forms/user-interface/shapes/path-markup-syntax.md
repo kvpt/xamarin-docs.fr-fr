@@ -10,12 +10,12 @@ ms.date: 06/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 68b7f4a245a60df1723f5a6442f30dc2b1a15932
-ms.sourcegitcommit: 91b4d2f93687fadec5c3f80aadc8f7298d911624
+ms.openlocfilehash: 124c739f68ce8a3fcbc359a07513a2bcb178578f
+ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85794973"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853131"
 ---
 # <a name="xamarinforms-shapes-path-markup-syntax"></a>Xamarin.FormsShapes : syntaxe de balisage de chemin
 
@@ -59,11 +59,11 @@ Une commande draw peut se composer de plusieurs commandes shape. Les commandes d
 - Line ( `L` ou `l` ).
 - Ligne horizontale ( `H` ou `h` ).
 - Ligne verticale ( `V` ou `v` ).
+- Arc elliptique ( `A` ou `a` ).
 - Courbe de Bézier cubique ( `C` ou `c` ).
 - Courbe de Bézier quadratique ( `Q` ou `q` ).
 - Courbe de Bézier cubique lissée ( `S` ou `s` ).
 - Courbe de Bézier quadratique lisse ( `T` ou `t` ).
-- Arc elliptique ( `A` ou `a` ).
 
 Chaque commande de dessin est spécifiée avec une lettre qui ne respecte pas la casse. Lorsque vous entrez séquentiellement plusieurs commandes du même type, vous pouvez omettre l’entrée de commande en double. Par exemple `L 100,200 300,400` , équivaut à `L 100,200 L 300,400` .
 
@@ -74,6 +74,8 @@ La commande line crée une ligne droite entre le point actuel et le point de ter
 Dans cette syntaxe, *Endpoint* est un [`Point`](xref:Xamarin.Forms.Point) qui représente le point de terminaison de la ligne.
 
 `L 20,30`et `L 20 30` sont des exemples de commandes de ligne valides.
+
+Pour plus d’informations sur la création d’une ligne droite en tant qu' `PathGeometry` objet, consultez [créer un LineSegment](geometries.md#create-a-linesegment).
 
 ### <a name="horizontal-line-command"></a>Commande de ligne horizontale
 
@@ -91,6 +93,22 @@ Dans cette syntaxe, *y* est un `double` qui représente la coordonnée y du poin
 
 `V 90` est un exemple de commande vertical line valide.
 
+### <a name="elliptical-arc-command"></a>Commande d’arc elliptique
+
+La commande elliptique arc crée un arc elliptique entre le point actuel et le point de terminaison spécifié. La syntaxe de cette commande est la suivante : `A` *size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *Endpoint* ou `a` *Size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *Endpoint*.
+
+Dans cette syntaxe :
+
+- `size`est un [`Size`](xref:Xamarin.Forms.Size) qui représente le rayon x et le rayon y de l’arc.
+- `rotationAngle`est un `double` qui représente la rotation de l’ellipse, en degrés.
+- `isLargeArcFlag`doit avoir la valeur 1 si l’angle de l’ARC doit être égal ou supérieur à 180 degrés ; sinon, affectez-lui la valeur 0.
+- `sweepDirectionFlag`doit avoir la valeur 1 si l’arc est dessiné dans une direction d’angle positif ; sinon, affectez-lui la valeur 0.
+- `endPoint`est un [`Point`](xref:Xamarin.Forms.Point) vers lequel l’arc est dessiné.
+
+`A 150,150 0 1,0 150,-150`est un exemple de commande d’arc elliptique valide.
+
+Pour plus d’informations sur la création d’un arc elliptique en tant qu' `PathGeometry` objet, consultez [créer un ArcSegment](geometries.md#create-an-arcsegment).
+
 ### <a name="cubic-bezier-curve-command"></a>Commande de courbe de Bézier cubique
 
 La commande de courbe de Bézier cubique crée une courbe de Bézier cubique entre le point actuel et le point de terminaison spécifié à l’aide des deux points de contrôle spécifiés. La syntaxe de cette commande est : `C` *ControlPoint1* *ControlPoint2* *Endpoint* ou `c` *ControlPoint1* *ControlPoint2* *Endpoint*.
@@ -103,6 +121,8 @@ Dans cette syntaxe :
 
 `C 100,200 200,400 300,200`est un exemple de commande de courbe de Bézier cubique valide.
 
+Pour plus d’informations sur la création d’une courbe de Bézier cubique en tant qu' `PathGeometry` objet, consultez [créer un BezierSegment](geometries.md#create-a-beziersegment).
+
 ### <a name="quadratic-bezier-curve-command"></a>Commande de courbe de Bézier quadratique
 
 La commande de courbe de Bézier quadratique crée une courbe de Bézier quadratique entre le point actuel et le point de terminaison spécifié à l’aide du point de contrôle spécifié. La syntaxe de cette commande est : le point de terminaison `Q` *ControlPoint* *endPoint* ou le point de `q` *controlPoint* *terminaison*ControlPoint.
@@ -113,6 +133,8 @@ Dans cette syntaxe :
 - *Endpoint* est un [`Point`](xref:Xamarin.Forms.Point) qui représente le point vers lequel la courbe est dessinée.
 
 `Q 100,200 300,200` est un exemple de commande quadratic Bezier curve valide.
+
+Pour plus d’informations sur la création d’une courbe de Bézier quadratique en tant qu' `PathGeometry` objet, consultez [créer un QuadraticBezierSegment](geometries.md#create-a-quadraticbeziersegment).
 
 ### <a name="smooth-cubic-bezier-curve-command"></a>Commande lisser la courbe de Bézier cubique
 
@@ -136,20 +158,6 @@ Dans cette syntaxe, *Endpoint* est un [`Point`](xref:Xamarin.Forms.Point) qui re
 Le point de contrôle est supposé être la réflexion du point de contrôle de la commande précédente par rapport au point actuel. S’il n’existe pas de commande précédente ou si la commande précédente n’était pas une courbe de Bézier quadratique ou une commande de courbe de Bézier lisse quadratique, le point de contrôle est supposé coïncider avec le point actuel.
 
 `T 100,30`est un exemple de commande de courbe de Bézier cubique lissée valide.
-
-### <a name="elliptical-arc-command"></a>Commande d’arc elliptique
-
-La commande elliptique arc crée un arc elliptique entre le point actuel et le point de terminaison spécifié. La syntaxe de cette commande est la suivante : `A` *size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *Endpoint* ou `a` *Size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *Endpoint*.
-
-Dans cette syntaxe :
-
-- `size`est un [`Size`](xref:Xamarin.Forms.Size) qui représente le rayon x et le rayon y de l’arc.
-- `rotationAngle`est un `double` qui représente la rotation de l’ellipse, en degrés.
-- `isLargeArcFlag`doit avoir la valeur 1 si l’angle de l’ARC doit être égal ou supérieur à 180 degrés ; sinon, affectez-lui la valeur 0.
-- `sweepDirectionFlag`doit avoir la valeur 1 si l’arc est dessiné dans une direction d’angle positif ; sinon, affectez-lui la valeur 0.
-- `endPoint`est un [`Point`](xref:Xamarin.Forms.Point) vers lequel l’arc est dessiné.
-
-`A 150,150 0 1,0 150,-150`est un exemple de commande d’arc elliptique valide.
 
 ## <a name="close-command"></a>Bouton de fermeture
 
