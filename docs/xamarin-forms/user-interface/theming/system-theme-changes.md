@@ -10,16 +10,16 @@ ms.date: 06/17/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 28bcbed3a03a2abbec42a619062579419a3063a4
-ms.sourcegitcommit: 8a18471b3d96f3f726b66f9bc50a829f1c122f29
+ms.openlocfilehash: b451fe004ca21c8770658f31c9c38253e073c259
+ms.sourcegitcommit: 82eabb0eaa4a674897aa6d5e64efb91fd580c330
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84988199"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86100181"
 ---
 # <a name="respond-to-system-theme-changes-in-xamarinforms-applications"></a>Répondre aux modifications de thème du système dans les Xamarin.Forms applications
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-systemthemesdemo/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-systemthemesdemo/)
 
 Les appareils incluent généralement des thèmes clairs et foncés, qui font chacun référence à un large éventail de préférences d’apparence qui peuvent être définies au niveau du système d’exploitation. Les applications doivent respecter ces thèmes système et répondre immédiatement lorsque le thème du système change.
 
@@ -158,6 +158,9 @@ Application.Current.RequestedThemeChanged += (s, a) =>
 ```
 
 L' `AppThemeChangedEventArgs` objet, qui accompagne l' `RequestedThemeChanged` événement, a une propriété unique nommée `RequestedTheme` , de type `OSAppTheme` . Cette propriété peut être examinée pour détecter le thème système demandé.
+
+> [!IMPORTANT]
+> Pour répondre aux modifications de thème sur Android, vous devez inclure l' `ConfigChanges.UiMode` indicateur dans l' `Activity` attribut de votre `MainActivity` classe.
 
 ## <a name="related-links"></a>Liens connexes
 

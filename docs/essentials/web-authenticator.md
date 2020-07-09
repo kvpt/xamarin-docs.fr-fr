@@ -8,12 +8,12 @@ ms.date: 03/26/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 578e750afd718c684d70217355629a0286d2b028
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 6b094ddd7334da777d39d403eb06d72558c96ed2
+ms.sourcegitcommit: 82eabb0eaa4a674897aa6d5e64efb91fd580c330
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84801879"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86100192"
 ---
 # <a name="xamarinessentials-web-authenticator"></a>Xamarin.Essentials: Web Authenticator
 
@@ -192,7 +192,7 @@ Il est possible d’utiliser l' `WebAuthenticator` API avec n’importe quel ser
 
 1. Configurez les [fournisseurs d’authentification sociale externes](https://docs.microsoft.com/aspnet/core/security/authentication/social/?view=aspnetcore-3.1&tabs=visual-studio) souhaités dans une application Web ASP.net core.
 2. Définissez le schéma d’authentification par défaut sur `CookieAuthenticationDefaults.AuthenticationScheme` dans votre `.AddAuthentication()` appel.
-3. Utilisez `.AddCookies()` dans votre `.AddAuthentication()` appel Startup.cs.
+3. Utilisez `.AddCookie()` dans votre `.AddAuthentication()` appel Startup.cs.
 4. Tous les fournisseurs doivent être configurés avec `.SaveTokens = true;` .
 
 > [!TIP]
