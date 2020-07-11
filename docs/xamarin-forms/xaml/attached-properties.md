@@ -10,16 +10,16 @@ ms.date: 06/02/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1f26a4415a75b2b02fd7d6893e366ef81156f077
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 1277b3cd875c1b4e05e45202a8e30ef2ff93972a
+ms.sourcegitcommit: 898ba8e5140ae32a7df7e07c056aff65f6fe4260
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138188"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86226792"
 ---
 # <a name="attached-properties"></a>Propriétés attachées
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)
 
 
 Les propriétés jointes permettent à un objet d’assigner une valeur pour une propriété qui n’est pas définie par sa propre classe. Par exemple, les éléments enfants peuvent utiliser des propriétés jointes pour informer leur élément parent de la façon dont ils doivent être présentés dans l’interface utilisateur. Le [`Grid`](xref:Xamarin.Forms.Grid) contrôle permet de spécifier la ligne et la colonne d’un enfant en définissant `Grid.Row` les `Grid.Column` propriétés jointes et. `Grid.Row`et `Grid.Column` sont des propriétés jointes, car elles sont définies sur les éléments qui sont des enfants d’un `Grid` , plutôt que sur le `Grid` lui-même.
@@ -44,6 +44,9 @@ Lors de la création d’une propriété jointe pour une utilisation sur d’aut
 
 Une propriété jointe peut être créée en déclarant une `public static readonly` propriété de type [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) . La propriété pouvant être liée doit être définie sur la valeur retournée de l’un des [ `BindableProperty.CreateAttached` ] (XREF : Xamarin.Forms . BindableProperty. CreateAttached (System. String, System. type, System. type, System. Object, Xamarin.Forms . BindingMode, Xamarin.Forms . BindableProperty. ValidateValueDelegate, Xamarin.Forms . BindableProperty. BindingPropertyChangedDelegate, Xamarin.Forms . BindableProperty. BindingPropertyChangingDelegate, Xamarin.Forms . BindableProperty. CoerceValueDelegate, Xamarin.Forms . BindableProperty. CreateDefaultValueDelegate)) surcharges de la méthode. La déclaration doit se trouver dans le corps de la classe propriétaire, mais en dehors de toutes les définitions de membre.
 
+> [!IMPORTANT]
+> La Convention d’affectation de noms pour les propriétés jointes est que l’identificateur de la propriété jointe doit correspondre au nom de propriété spécifié dans la `CreateAttached` méthode, avec « propriété » ajoutée.
+
 Le code suivant illustre un exemple de propriété jointe :
 
 ```csharp
@@ -51,7 +54,7 @@ public static readonly BindableProperty HasShadowProperty =
   BindableProperty.CreateAttached ("HasShadow", typeof(bool), typeof(ShadowEffect), false);
 ```
 
-Cela crée une propriété jointe nommée `HasShadow` , de type `bool` . La propriété appartient à la `ShadowEffect` classe et a une valeur par défaut de `false` . La Convention d’affectation de noms pour les propriétés jointes est que l’identificateur de la propriété jointe doit correspondre au nom de propriété spécifié dans la `CreateAttached` méthode, avec « propriété » ajoutée. Par conséquent, dans l’exemple ci-dessus, l’identificateur de la propriété jointe est `HasShadowProperty` .
+Cela crée une propriété jointe nommée `HasShadowProperty` , de type `bool` . La propriété appartient à la `ShadowEffect` classe et a une valeur par défaut de `false` .
 
 Pour plus d’informations sur la création de propriétés pouvant être liées, y compris sur les paramètres qui peuvent être spécifiés lors de la création, consultez [créer une propriété pouvant être liée](~/xamarin-forms/xaml/bindable-properties.md#consume-a-bindable-property).
 

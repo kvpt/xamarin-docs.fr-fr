@@ -10,16 +10,16 @@ ms.date: 12/05/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f7cef5fd39d82cf0a4b55337835c0fe1d57b8bf9
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 2268f9034a4b09adce697f5fb7b6652baa4feed6
+ms.sourcegitcommit: 898ba8e5140ae32a7df7e07c056aff65f6fe4260
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84197590"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86226818"
 ---
 # <a name="xamarinforms-local-databases"></a>Xamarin.FormsBases de données locales
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)
 
 Le moteur de base de données SQLite permet Xamarin.Forms aux applications de charger et d’enregistrer des objets de données dans du code partagé. L’exemple d’application utilise une table de base de données SQLite pour stocker les éléments todo. Cet article explique comment utiliser SQLite.Net dans du code partagé pour stocker et récupérer des informations dans une base de données locale.
 
@@ -39,8 +39,10 @@ Utilisez le gestionnaire de package NuGet pour rechercher **SQLite-net-PCL** et 
 
 Il existe plusieurs packages NuGet portant des noms similaires. Le package correct possède ces attributs :
 
-- **Créé par :** Frank A. Krueger (praeclarum)
 - **ID :** sqlite-net-pcl
+- **Auteur (s) :** SQLite-net
+- **Propriétaire (s) :** praeclarum
+- **URL du projet :**https://github.com/praeclarum/sqlite-net
 - **Lien NuGet :** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 
 > [!NOTE]
@@ -285,7 +287,7 @@ En général, le déplacement, le changement de nom ou la copie d’un fichier d
 
 Pour plus d’informations, consultez [gestion des Xamarin.Forms fichiers dans ](~/xamarin-forms/data-cloud/data/files.md).
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Exemple d’application TODO](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)
 - [Package NuGet SQLite.NET](https://www.nuget.org/packages/sqlite-net-pcl/)

@@ -9,16 +9,16 @@ ms.date: 06/07/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ffa44beb68dc845a64d8bf2a9f86f6d7e56df8f9
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 4ef1f9aadd93c971adb66ede442796c2b72c2c9a
+ms.sourcegitcommit: 898ba8e5140ae32a7df7e07c056aff65f6fe4260
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139436"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86226831"
 ---
 # <a name="azure-signalr-service-with-xamarinforms"></a>Service Azure Signalr avecXamarin.Forms
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azuresignalr/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azuresignalr/)
 
 ASP.NET Core Signalr est un modèle d’application qui simplifie le processus d’ajout de communication en temps réel aux applications. Le service Azure Signalr permet de développer et de déployer rapidement des applications Signalr évolutives. Azure Functions sont des méthodes de code sans serveur à courte durée de vie qui peuvent être combinées pour former des applications pilotées par des événements et des applications évolutives.
 
@@ -298,7 +298,7 @@ void AddMessage(string message)
 }
 ```
 
-## <a name="test-the-application"></a>Test de l’application
+## <a name="test-the-application"></a>Tester l’application
 
 L’application Signalr chat peut être testée sur iOS, Android et UWP, à condition que vous disposiez des éléments suivants :
 
@@ -310,8 +310,8 @@ Une fois que ces étapes sont terminées et que l’application est exécutée, 
 
 ## <a name="related-links"></a>Liens connexes
 
-* [Création d’applications mobiles en temps réel avec Xamarin et Signalr](https://mybuild.techcommunity.microsoft.com/sessions/77333/)
+* [Création d’applications mobiles en temps réel avec Xamarin et Signalr](https://www.youtube.com/watch?v=AlqZ1LpUXeg)
 * [Introduction à SignalR](/aspnet/signalr/overview/getting-started/introduction-to-signalr)
 * [Présentation d’Azure Functions](/azure/azure-functions/functions-overview)
-* [Documentation sur Azure Functions](/azure/azure-functions/)
+* [Documentation Azure Functions](/azure/azure-functions/)
 * [Exemple de conversation MVVM Signalr](https://github.com/lbugnion/sample-xamarin-signalr)

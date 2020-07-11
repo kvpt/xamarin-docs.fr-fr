@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 07/02/2018
-ms.openlocfilehash: c6a606bf326d1e59398ab77c51b1de5ed3e497e0
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 66d2f66f0118e84778b25fc0e872099439510ce2
+ms.sourcegitcommit: 898ba8e5140ae32a7df7e07c056aff65f6fe4260
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571530"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86226844"
 ---
 # <a name="signing-the-android-application-package"></a>Signature du paquet d’application Android
 
@@ -46,7 +46,7 @@ Un certificat existant peut être utilisé en cliquant sur le bouton **Importer*
 
 [![Identité de signature ad hoc](images/vs/02-ad-hoc-signing-identity-vs-sml.png)](images/vs/02-ad-hoc-signing-identity-vs.png#lightbox)
 
-La boîte de dialogue **Créer un magasin de clés Android** s’affiche. Utilisez cette boîte de dialogue pour créer un nouveau certificat de signature qui sera utilisé pour la signature des applications Android. Entrez les informations requises (indiquées en rouge), comme illustré dans cette boîte de dialogue :
+La boîte de dialogue **créer un magasin de clés Android** s’affiche. Utilisez cette boîte de dialogue pour créer un nouveau certificat de signature qui peut être utilisé pour la signature des applications Android. Entrez les informations requises (indiquées en rouge), comme illustré dans cette boîte de dialogue :
 
 [![Boîte de dialogue créer un magasin de clés Android](images/vs/03-create-android-key-store-vs-sml.png)](images/vs/03-create-android-key-store-vs.png#lightbox)
 
@@ -62,8 +62,10 @@ Par exemple, en utilisant **chimp** comme alias, la procédure ci-dessus créera
 
 **C:\\Utilisateurs\\*NOM_UTILISATEUR*\\AppData\\Local\\Xamarin\\Mono for Android\\Keystore\\chimp\\chimp.keystore**
 
-> [!NOTE]
-> Veillez à sauvegarder le fichier du magasin de clés résultant et le mot de passe en lieu sûr, car ils ne sont pas inclus dans la solution. Si vous perdez votre fichier de magasin de clés (par exemple, suite à un changement d’ordinateur ou à la réinstallation de Windows), vous ne pourrez pas signer votre application avec le même certificat que les versions précédentes.
+> [!IMPORTANT]
+> Le dossier AppData est masqué par défaut et vous devrez peut-être l’afficher pour y accéder.
+>
+> En outre, veillez à sauvegarder le fichier de magasin de clés et le mot de passe résultants dans un endroit sûr, &ndash; car il n’est pas inclus dans la solution. Si vous perdez votre fichier de magasin de clés (par exemple, suite à un changement d’ordinateur ou à la réinstallation de Windows), vous ne pourrez pas signer votre application avec le même certificat que les versions précédentes.
 
 Pour plus d’informations sur le magasin de clés, consultez [Recherche de la signature MD5 ou SHA1 de votre magasin de clés](~/android/deploy-test/signing/keystore-signature.md).
 

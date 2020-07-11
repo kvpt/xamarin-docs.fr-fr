@@ -10,16 +10,16 @@ ms.date: 01/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 33b3763075b64ea8af615465825313a527d20db2
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 7d83728edc161a89b381330884e86f09b7788e3d
+ms.sourcegitcommit: 898ba8e5140ae32a7df7e07c056aff65f6fe4260
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138175"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86226779"
 ---
 # <a name="xamarinforms-bindable-properties"></a>Xamarin.FormsPropriétés pouvant être liées
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior)
 
 Les propriétés pouvant être liées étendent la fonctionnalité de propriété CLR en sauvegardant une propriété avec un [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) type, au lieu de sauvegarder une propriété avec un champ. L’objectif des propriétés pouvant être liées est de fournir un système de propriétés qui prend en charge la liaison de données, les styles, les modèles et les valeurs définis par le biais de relations parent-enfant. En outre, les propriétés pouvant être liées peuvent fournir des valeurs par défaut, la validation des valeurs de propriété et les rappels qui surveillent les modifications de propriété.
 
@@ -55,6 +55,9 @@ Au minimum, un identificateur doit être spécifié lors de la création d’un 
 - Type de l’objet propriétaire.
 - Valeur par défaut de la propriété. Cela garantit que la propriété retourne toujours une valeur par défaut particulière lorsqu’elle est non définie et qu’elle peut être différente de la valeur par défaut pour le type de la propriété. La valeur par défaut est restaurée quand [ `ClearValue` ] (XREF : Xamarin.Forms . BindableObject. ClearValue ( Xamarin.Forms . BindableProperty)) est appelé sur la propriété pouvant être liée.
 
+> [!IMPORTANT]
+> La Convention d’affectation de noms pour les propriétés pouvant être liées est que l’identificateur de propriété pouvant être lié doit correspondre au nom de propriété spécifié dans la `Create` méthode, avec « propriété » ajoutée. 
+
 Le code suivant illustre un exemple de propriété pouvant être liée, avec un identificateur et des valeurs pour les quatre paramètres requis :
 
 ```csharp
@@ -62,7 +65,7 @@ public static readonly BindableProperty EventNameProperty =
   BindableProperty.Create ("EventName", typeof(string), typeof(EventToCommandBehavior), null);
 ```
 
-Cela crée une [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) instance nommée `EventName` , de type `string` . La propriété appartient à la `EventToCommandBehavior` classe et a une valeur par défaut de `null` . La Convention d’affectation de noms pour les propriétés pouvant être liées est que l’identificateur de propriété pouvant être lié doit correspondre au nom de propriété spécifié dans la `Create` méthode, avec « propriété » ajoutée. Par conséquent, dans l’exemple ci-dessus, l’identificateur de propriété pouvant être lié est `EventNameProperty` .
+Cela crée une [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) instance nommée `EventNameProperty` , de type `string` . La propriété appartient à la `EventToCommandBehavior` classe et a une valeur par défaut de `null` .
 
 Si vous le souhaitez, lors de la création d’une [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) instance, vous pouvez spécifier les paramètres suivants :
 
