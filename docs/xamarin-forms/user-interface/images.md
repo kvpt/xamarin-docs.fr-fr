@@ -10,16 +10,16 @@ ms.date: 05/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7117bb809c43ab5edb67e8367840b17cd1d97ef9
-ms.sourcegitcommit: c000c0ed15b7b2ef2a8f46a39171e11b6d9f8a5d
+ms.openlocfilehash: 7ae6e5e764dc066940971dd9b5a8fdc36c7a1970
+ms.sourcegitcommit: cd0c0999b53e825b60471bfbfd4144cfcd783587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84980088"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86225492"
 ---
 # <a name="images-in-xamarinforms"></a>Images dansXamarin.Forms
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithimages)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithimages)
 
 _Les images peuvent être partagées entre les plateformes avec Xamarin.Forms , elles peuvent être chargées spécifiquement pour chaque plateforme, ou elles peuvent être téléchargées pour l’affichage._
 
@@ -152,11 +152,10 @@ Si vous placez des images incorporées dans des dossiers de votre projet, les no
 Le code permettant de charger une image incorporée transmet simplement l' **ID de ressource** à la [`ImageSource.FromResource`](xref:Xamarin.Forms.ImageSource.FromResource*) méthode comme indiqué ci-dessous :
 
 ```csharp
-var embeddedImage = new Image {
-      Source = ImageSource.FromResource(
-        "WorkingWithImages.beach.jpg",
-        typeof(EmbeddedImages).GetTypeInfo().Assembly
-      ) };
+Image embeddedImage = new Image
+{
+    Source = ImageSource.FromResource("WorkingWithImages.beach.jpg", typeof(MyClass).GetTypeInfo().Assembly)
+};
 ```
 
 > [!NOTE]
@@ -222,7 +221,7 @@ Pour utiliser cette extension, ajoutez un personnalisé `xmlns` au code XAML, en
 using System.Reflection;
 // ...
 // NOTE: use for debugging, not in released app code!
-var assembly = typeof(EmbeddedImages).GetTypeInfo().Assembly;
+var assembly = typeof(MyClass).GetTypeInfo().Assembly;
 foreach (var res in assembly.GetManifestResourceNames())
 {
     System.Diagnostics.Debug.WriteLine("found resource: " + res);
