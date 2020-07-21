@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: jondouglas
 ms.author: jodou
 ms.date: 02/13/2020
-ms.openlocfilehash: 2a9260bc782d2b19e6fd74356738276e1648dcf2
-ms.sourcegitcommit: 16847681df17ed59b3b3528761c02e8fb48ffc4f
+ms.openlocfilehash: 93336f5a741cf9643288163f2bf1d8ef44ea52d2
+ms.sourcegitcommit: d42dadc6da584953865b1adb616489d91a7b25d0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85104348"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86473435"
 ---
 # <a name="hardware-acceleration-for-emulator-performance-hyper-v--haxm"></a>Accélération matérielle pour les performances de l’émulateur (Hyper-V et HAXM)
 
@@ -49,7 +49,7 @@ Pour une expérience optimale sur Windows, il est recommandé d’utiliser WHPX 
 - L’émulateur exécute une image système créée pour un appareil virtuel **x86**.
 
 > [!IMPORTANT]
-> Vous ne pouvez pas exécuter un émulateur accéléré par machine virtuelle dans une autre machine virtuelle telle qu’une machine virtuelle hébergée par VirtualBox, VMWare ou Docker. Vous devez exécuter l’émulateur Android [directement sur votre matériel système](https://developer.android.com/studio/run/emulator-acceleration.html#extensions).
+> Vous ne pouvez pas exécuter un émulateur accéléré par ordinateur virtuel à l’intérieur d’une autre machine virtuelle, par exemple une machine virtuelle hébergée par VirtualBox, VMware ou la station d’accueil. Vous devez exécuter l’émulateur Android [directement sur votre matériel système](https://developer.android.com/studio/run/emulator-acceleration.html#extensions).
 
 Pour plus d’informations sur le lancement et le débogage avec l’émulateur Android, consultez [débogage sur le émulateur Android](~/android/deploy-test/debugging/debug-on-emulator.md).
 
@@ -177,7 +177,7 @@ Il est recommandé d’utiliser le framework Hypervisor pour accélérer l’ém
 
 > [!IMPORTANT]
 >
-> Vous ne pouvez pas exécuter un émulateur accéléré par une machine virtuelle dans une autre machine virtuelle, par exemple une machine virtuelle hébergée par VirtualBox, VMWare ou Docker. Vous devez exécuter l’émulateur Android [directement sur votre matériel système](https://developer.android.com/studio/run/emulator-acceleration.html#extensions).
+> Vous ne pouvez pas exécuter un émulateur accéléré par ordinateur virtuel à l’intérieur d’une autre machine virtuelle, par exemple une machine virtuelle hébergée par VirtualBox, VMware ou la station d’accueil. Vous devez exécuter l’émulateur Android [directement sur votre matériel système](https://developer.android.com/studio/run/emulator-acceleration.html#extensions).
 
 Pour plus d’informations sur le lancement et le débogage avec l’émulateur Android, consultez [débogage sur le émulateur Android](~/android/deploy-test/debugging/debug-on-emulator.md).
 
@@ -247,6 +247,6 @@ Pour obtenir de l’aide sur la résolution des problèmes d’accélération ma
 
 ::: zone-end
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Exécuter des applications sur l’émulateur Android](https://developer.android.com/studio/run/emulator)
