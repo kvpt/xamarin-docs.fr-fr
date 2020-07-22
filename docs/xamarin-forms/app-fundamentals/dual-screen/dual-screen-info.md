@@ -10,20 +10,28 @@ ms.date: 05/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 12f3ac86d2418c6516d000371753fc8ae65d557c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 070de4db34eb55980ad7ef3452c0ff8b2b2d7460
+ms.sourcegitcommit: 60f475a3d6ca880aff34f1177f76eff0b0f96233
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84946349"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86869859"
 ---
-# <a name="xamarinforms-dual-screen-device-capabilities"></a>Xamarin.Formsfonctionnalités de l’appareil à deux écrans
+# <a name="xamarinforms-dualscreeninfo-helper-class"></a>Xamarin.FormsClasse d’assistance DualScreenInfo
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
 
 La classe `DualScreenInfo` vous permet de déterminer le volet où se trouve votre vue, sa taille, la position de l’appareil, l’angle de la charnière, etc.
+
+## <a name="configure-dualscreeninfo"></a>Configurer DualScreenInfo
+
+Suivez ces instructions pour créer une disposition à deux écrans dans votre application :
+
+1. Suivez les instructions de [prise en main](index.md) pour ajouter NuGet et configurer la `MainActivity` classe Android.
+1. Ajoutez `using Xamarin.Forms.DualScreen;` à votre fichier de classe.
+1. Utilisez la `DualScreenInfo.Current` classe dans votre application.
 
 ## <a name="properties"></a>Propriétés
 
