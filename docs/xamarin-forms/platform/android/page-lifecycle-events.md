@@ -10,16 +10,16 @@ ms.date: 07/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 76724ff17613fcebe35cb68518a1c932eee8aad7
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: fb4d1e28fded70005ef23eb4f7540eccd2fba372
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84128724"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939306"
 ---
 # <a name="page-lifecycle-events-on-android"></a>Événements du cycle de vie d’une page sur Android
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Ce spécifique à la plateforme Android est utilisé pour désactiver [`Disappearing`](xref:Xamarin.Forms.Page.Appearing) les [`Appearing`](xref:Xamarin.Forms.Page.Appearing) événements de page et de mise en pause de l’application, respectivement, pour les applications qui utilisent AppCompat. En outre, il offre la possibilité de contrôler si le clavier logiciel est affiché à la reprise, s’il a été affiché lors de la pause, à condition que le mode d’opération du clavier logiciel soit défini sur [`WindowSoftInputModeAdjust.Resize`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize) .
 
@@ -58,7 +58,7 @@ La `Application.Current.On<Android>` méthode spécifie que ce spécifique à la
 
 Le résultat est que les [`Disappearing`](xref:Xamarin.Forms.Page.Appearing) [`Appearing`](xref:Xamarin.Forms.Page.Appearing) événements de page et ne seront pas déclenchés à la pause et à la reprise de l’application, et que si le clavier logiciel était affiché lorsque l’application a été suspendue, elle sera également affichée au moment de la reprise de l’application :
 
-[![](page-lifecycle-events-images/keyboard-on-resume.png "Lifecycle Events Platform-Specific")](page-lifecycle-events-images/keyboard-on-resume-large.png#lightbox "Lifecycle Events Platform-Specific")
+[![Événements de cycle de vie spécifiques à la plateforme](page-lifecycle-events-images/keyboard-on-resume.png)](page-lifecycle-events-images/keyboard-on-resume-large.png#lightbox "Événements de cycle de vie spécifiques à la plateforme")
 
 ## <a name="related-links"></a>Liens connexes
 

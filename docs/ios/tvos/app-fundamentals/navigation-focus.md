@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 69886a0da53d419a0c40bdf34f91d301c9efe504
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: d9e8d91b03a5a82373012da215bd29a747e67d3e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573714"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939449"
 ---
 # <a name="working-with-tvos-navigation-and-focus-in-xamarin"></a>Utilisation de la navigation tvOS et focus dans Xamarin
 
@@ -20,7 +20,7 @@ _Cet article traite du concept de focus et de la façon dont il est utilisé pou
 
 Cet article traite du concept de [focus](#Focus-and-Selection) et de la façon dont il est utilisé pour gérer la [navigation](#Navigation) dans une interface utilisateur de l’application Xamarin. tvOS. Nous allons examiner comment les contrôles de navigation tvOS intégrés utilisent le focus, la mise en surbrillance et la sélection pour fournir la navigation de l’interface utilisateur de votre application Xamarin. tvOS.
 
-[![](navigation-focus-images/intro01.png "tvOS apps User Interface Navigation")](navigation-focus-images/intro01.png#lightbox)
+[![Navigation dans l’interface utilisateur des applications tvOS](navigation-focus-images/intro01.png)](navigation-focus-images/intro01.png#lightbox)
 
 Ensuite, nous allons examiner comment le focus peut être utilisé avec la [parallaxe](#Focus-and-Parallax) et les *images superposées* pour fournir des indices visuels pour l’état de navigation actuel à l’utilisateur final.
 
@@ -34,7 +34,7 @@ Les utilisateurs de votre application Xamarin. tvOS n’interagissent pas direct
 
 Une application tvOS réussie implémente la navigation d’une manière qui prend en charge en douceur l’objectif de l’application et la structure des données qu’elle présente sans attirer l’attention sur la navigation elle-même. Concevez votre navigation de manière à ce qu’elle soit naturelle et familière sans qui prennent l’interface utilisateur ou le focus de dessin à l’extérieur du contenu et de l’expérience utilisateur des applications.
 
-[![](navigation-focus-images/nav01.png "The tvOS settings app")](navigation-focus-images/nav01.png#lightbox)
+[![Application de paramètres tvOS](navigation-focus-images/nav01.png)](navigation-focus-images/nav01.png#lightbox)
 
 Quand vous utilisez une TV Apple, l’utilisateur parcourt généralement un ensemble d’écrans empilés, chacun présentant un ensemble de contenu donné. À son tour, chaque nouvel écran peut aboutir à un ou plusieurs sous-écrans de contenu à l’aide de contrôles d’interface utilisateur standard tels que des [boutons](~/ios/tvos/user-interface/buttons.md), des [barres d’onglets](~/ios/tvos/user-interface/tab-bars.md), des tables, des [vues de collection](~/ios/tvos/user-interface/collection-views.md) ou des [affichages fractionnés](~/ios/tvos/user-interface/split-views.md).
 
@@ -57,7 +57,7 @@ Apple suggère de garder à l’esprit les éléments suivants lors de la concep
 
 Sur la TV Apple, une image, un bouton ou un autre élément d’interface utilisateur est considéré comme étant _actif_ lorsqu’il est la cible de la navigation actuelle.
 
-[![](navigation-focus-images/focus01.png "Focus and Selection example")](navigation-focus-images/focus01.png#lightbox)
+[![Exemple de focus et de sélection](navigation-focus-images/focus01.png)](navigation-focus-images/focus01.png#lightbox)
 
 Contrairement aux appareils iOS dans lesquels l’utilisateur interagit directement avec des éléments sur l’écran tactile de l’appareil, les utilisateurs interagissent avec les éléments tvOS à partir de la salle à l’aide de la télécommande Siri. Pour présenter et gérer cette interaction avec l’utilisateur, Apple TV utilise un modèle de _focus_ .
 
@@ -134,7 +134,7 @@ Toutefois, il peut y avoir des cas, en raison de la nécessité de la conception
 
 Pour obtenir un exemple, prenez la disposition d’interface utilisateur suivante :
 
- [![](navigation-focus-images/guide01.png "Working with Focus Guides example")](navigation-focus-images/guide01.png#lightbox)
+ [![Exemple d’utilisation de repères de focus](navigation-focus-images/guide01.png)](navigation-focus-images/guide01.png#lightbox)
 
 Étant donné que le bouton **plus d’informations** ne se trouve pas sur une grille horizontale et verticale avec le bouton **acheter** , il n’est pas accessible à l’utilisateur. Toutefois, cela peut être facilement corrigé à l’aide d’un _repère de focalisation_ pour fournir des indications de déplacement au moteur de focalisation. 
 
@@ -166,7 +166,7 @@ Tout d’abord, un nouveau `UIFocusGuide` est créé et ajouté à la collection
 
 Ensuite, les ancres supérieure, gauche, largeur et hauteur du repère de focus sont ajustées par rapport aux boutons **plus d’informations** et d' **achat** pour les placer entre eux. Consultez l'article :
 
-[![](navigation-focus-images/guide02.png "Example Focus Guide")](navigation-focus-images/guide02.png#lightbox)
+[![Guide de focus de l’exemple](navigation-focus-images/guide02.png)](navigation-focus-images/guide02.png#lightbox)
 
 Il est également important de noter que les nouvelles contraintes sont activées au fur et à mesure de leur création en affectant à leur propriété la valeur `Active` `true` :
 
@@ -274,7 +274,7 @@ Si cette propriété a la valeur `true` , la vue d’image obtiendra automatique
 
 Cet article a abordé le concept de focus et la façon dont il est utilisé pour gérer la navigation dans une interface utilisateur de l’application Xamarin. tvOS. Il examine comment les contrôles de navigation tvOS intégrés utilisent le focus, la mise en surbrillance et la sélection pour assurer la navigation. Ensuite, il a vu comment le focus peut être utilisé avec la parallaxe et les images superposées pour fournir des indices visuels pour l’état de navigation actuel à l’utilisateur final. Enfin, il a examiné l’utilisation du focus, le focus des mises à jour, le focus dans les collections et l’activation de la parallaxe.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Exemples tvOS](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
 - [tvOS](https://developer.apple.com/tvos/)

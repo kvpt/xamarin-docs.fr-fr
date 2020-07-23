@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 9a45e87165101a8e8afcfc51d15d085982b6499e
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: d4a1cab23b8d295d899c47edc5ffe77f6d20a467
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84569931"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939761"
 ---
 # <a name="working-with-tvos-page-controls-in-xamarin"></a>Utilisation des contrôles de page tvOS dans Xamarin
 
 Parfois, vous devrez peut-être afficher une série de pages ou d’images dans votre application Xamarin. tvOS. Un contrôle de page a été conçu pour montrer clairement la page dont l’utilisateur se trouve en dehors du nombre maximal de pages. Un contrôle de page affiche une série de points par rapport à un arrière-plan de forme ovale sombre. La page active affiche un point rempli, toutes les autres pages s’affichent sous forme de points creux. Le contrôle de page découpera les points les plus extérieurs s’ils sont trop nombreux pour s’ajuster à la zone d’arrière-plan.
 
-[![](page-controls-images/page01.png "Sample Page control")](page-controls-images/page01.png#lightbox)
+[![Exemple de contrôle de page](page-controls-images/page01.png)](page-controls-images/page01.png#lightbox)
 
 Contrôle de page dans un élément non interactif conçu pour fournir des commentaires à l’utilisateur uniquement. Vous devrez ajouter d’autres contrôles pour modifier le numéro de page actuel (tels que les gestes ou les boutons).
 
@@ -38,14 +38,14 @@ Le moyen le plus simple d’utiliser les contrôles de page dans une application
 1. Dans la **panneau solutions**, double-cliquez sur le `Main.storyboard` fichier et ouvrez-le pour le modifier.
 1. Faites glisser un **contrôle page** de la **boîte à outils** et déposez-le sur la vue :
 
-    [![](page-controls-images/page02.png "A Page Control")](page-controls-images/page02.png#lightbox)
+    [![Contrôle de page](page-controls-images/page02.png)](page-controls-images/page02.png#lightbox)
 1. Dans l' **onglet widget** du **panneau Propriétés**, vous pouvez ajuster plusieurs propriétés du contrôle de page, telles que sa **page actuelle** et le **nombre de pages**:
 
-    [![](page-controls-images/page03.png "The Widget Tab")](page-controls-images/page03.png#lightbox)
+    [![Onglet widget](page-controls-images/page03.png)](page-controls-images/page03.png#lightbox)
 1. Ensuite, ajoutez des contrôles ou des gestes à la vue pour vous déplacer vers l’avant et vers l’arrière dans la collection de pages.
 1. Enfin, assignez des **noms** aux contrôles pour pouvoir y répondre en code C#. Par exemple :
 
-    [![](page-controls-images/page04.png "Name the control")](page-controls-images/page04.png#lightbox)
+    [![Nommer le contrôle](page-controls-images/page04.png)](page-controls-images/page04.png#lightbox)
 1. Enregistrez vos modifications.
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
@@ -53,14 +53,14 @@ Le moyen le plus simple d’utiliser les contrôles de page dans une application
 1. Dans la **Explorateur de solutions**, double-cliquez sur le `Main.storyboard` fichier et ouvrez-le pour le modifier.
 1. Faites glisser un **contrôle page** de la **boîte à outils** et déposez-le sur la vue :
 
-    [![](page-controls-images/page02-vs.png "A Page Control")](page-controls-images/page02-vs.png#lightbox)
+    [![Contrôle de page](page-controls-images/page02-vs.png)](page-controls-images/page02-vs.png#lightbox)
 1. Dans l' **onglet widget** de l' **Explorateur de propriétés**, vous pouvez ajuster plusieurs propriétés du contrôle de page, telles que sa **page actuelle** et le **nombre de pages**:
 
-    [![](page-controls-images/page03-vs.png "The Widget tab")](page-controls-images/page03-vs.png#lightbox)
+    [![Onglet widget](page-controls-images/page03-vs.png)](page-controls-images/page03-vs.png#lightbox)
 1. Ensuite, ajoutez des contrôles ou des gestes à la vue pour vous déplacer vers l’avant et vers l’arrière dans la collection de pages.
 1. Enfin, assignez des **noms** aux contrôles pour pouvoir y répondre en code C#. Par exemple :
 
-    [![](page-controls-images/page04-vs.png "Name the control")](page-controls-images/page04-vs.png#lightbox)
+    [![Nommer le contrôle](page-controls-images/page04-vs.png)](page-controls-images/page04-vs.png#lightbox)
 1. Enregistrez vos modifications.
 
 -----
@@ -164,7 +164,7 @@ Pour plus d’informations sur l’utilisation des storyboards, consultez notre 
 
 Cet article a abordé la conception et l’utilisation du contrôle de page dans une application Xamarin. tvOS.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Exemples tvOS](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
 - [tvOS](https://developer.apple.com/tvos/)

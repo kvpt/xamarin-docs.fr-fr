@@ -10,16 +10,16 @@ ms.date: 11/29/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ca9a541c3d152d1b84ed682881c395f2199b9eaf
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: adbceca38fca2cbe65c739f0d7fe26f18bdf5450
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84574377"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939852"
 ---
 # <a name="customizing-a-contentpage"></a>Personnalisation d’un ContentPage
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-contentpage)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-contentpage)
 
 _Un ContentPage est un élément visuel qui affiche une vue unique et occupe la majeure partie de l’écran. Cet article montre comment créer un convertisseur personnalisé pour la page ContentPage, ce qui permet aux développeurs de remplacer le rendu natif par défaut par leur propre personnalisation propre à la plateforme._
 
@@ -27,7 +27,7 @@ Chaque Xamarin.Forms contrôle a un convertisseur associé pour chaque plateform
 
 Le diagramme suivant illustre la relation entre le [`ContentPage`](xref:Xamarin.Forms.ContentPage) et les contrôles natifs correspondants qui l’implémentent :
 
-![](contentpage-images/contentpage-classes.png "Relationship Between ContentPage Class and Implementing Native Controls")
+![Relation entre la classe ContentPage et les contrôles natifs qui l’implémentent](contentpage-images/contentpage-classes.png)
 
 Le processus de rendu peut être utilisé pour implémenter des personnalisations spécifiques à la plateforme en créant un convertisseur personnalisé pour un [`ContentPage`](xref:Xamarin.Forms.ContentPage) sur chaque plateforme. Le processus pour y parvenir est le suivant :
 
@@ -102,11 +102,11 @@ Le processus de création de la classe de renderer personnalisé est le suivant�
 
 Le diagramme suivant montre les responsabilités de chaque projet dans l’exemple d’application ainsi que la relation qu’ils entretiennent les uns avec les autres :
 
-![](contentpage-images/solution-structure.png "CameraPage Custom Renderer Project Responsibilities")
+![Responsabilités du projet de renderer personnalisé CameraPage](contentpage-images/solution-structure.png)
 
 L’instance `CameraPage` est restituée par des classes `CameraPageRenderer` spécifiques à la plateforme qui dérivent toutes de la classe `PageRenderer` pour cette plateforme. Chaque instance `CameraPage` est alors restituée avec un flux vidéo en temps réel, comme le montrent les captures d’écran suivantes :
 
-![](contentpage-images/screenshots.png "CameraPage on each Platform")
+![CameraPage sur chaque plateforme](contentpage-images/screenshots.png)
 
 La `PageRenderer` classe expose la `OnElementChanged` méthode, qui est appelée lorsque la Xamarin.Forms page est créée pour restituer le contrôle natif correspondant. Cette méthode prend un paramètre `ElementChangedEventArgs` qui contient les propriétés `OldElement` et `NewElement`. Ces propriétés représentent l' Xamarin.Forms élément auquel le convertisseur *a été* attaché, et l' Xamarin.Forms élément auquel le convertisseur *est* attaché, respectivement. Dans l’exemple d’application, la propriété `OldElement` sera `null` et la propriété `NewElement` contiendra une référence à l’instance `CameraPage`.
 
@@ -251,6 +251,6 @@ Quand vous implémentez un renderer personnalisé qui dérive de `PageRenderer` 
 
 Cet article a montré comment créer un convertisseur personnalisé pour la [`ContentPage`](xref:Xamarin.Forms.ContentPage) page, ce qui permet aux développeurs de substituer le rendu natif par défaut avec leur propre personnalisation propre à la plateforme. Un `ContentPage` est un élément visuel qui affiche une seule vue et occupe la majeure partie de l’écran.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [CustomRendererContentPage (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-contentpage)

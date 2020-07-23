@@ -10,12 +10,12 @@ ms.date: 02/26/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 50f605f4ad9839521fd4169531ad46d197f20dbf
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 5e3153e796f26ef150dccc79d8ea6f90127c6a26
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139654"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938682"
 ---
 # <a name="xamarinforms-picker"></a>Xamarin.FormsEmoji
 
@@ -38,15 +38,15 @@ Toutes les propriétés sont sauvegardées par des [`BindableProperty`](xref:Xam
 
 Un [`Picker`](xref:Xamarin.Forms.Picker) n’affiche aucune donnée lorsqu’il est affiché pour la première fois. Au lieu de cela, la valeur de sa [`Title`](xref:Xamarin.Forms.Picker.Title) propriété est affichée sous la forme d’un espace réservé sur les plateformes iOS et Android :
 
-[![](images/picker-initial.png "Initial Picker Display")](images/picker-initial-large.png#lightbox "Initial Picker Display")
+[![Affichage initial du sélecteur](images/picker-initial.png)](images/picker-initial-large.png#lightbox "Affichage initial du sélecteur")
 
 Lorsque le [`Picker`](xref:Xamarin.Forms.Picker) obtient le focus, ses données sont affichées et l’utilisateur peut sélectionner un élément :
 
-[![](images/picker-selection.png "Picker Selecting an Item")](images/picker-selection-large.png#lightbox "Picker Selecting an Item")
+[![Sélecteur sélectionnant un élément](images/picker-selection.png)](images/picker-selection-large.png#lightbox "Sélecteur sélectionnant un élément")
 
 Le [`Picker`](xref:Xamarin.Forms.Picker) déclenche un [`SelectedIndexChanged`](xref:Xamarin.Forms.Picker.SelectedIndexChanged) événement lorsque l’utilisateur sélectionne un élément. Après la sélection, l’élément sélectionné est affiché par le `Picker` :
 
-![](images/picker-after-selection.png "Picker after Selection")
+![Sélecteur après sélection](images/picker-after-selection.png)
 
 Il existe deux techniques pour remplir un [`Picker`](xref:Xamarin.Forms.Picker) avec des données :
 

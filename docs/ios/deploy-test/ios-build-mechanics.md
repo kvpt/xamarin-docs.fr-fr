@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 92bf7934b1ad4f6d959fc458f536cf3b3426df51
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 52a6c3c996e2d5df204b6d0df40368bc835e990f
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73026370"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936771"
 ---
 # <a name="ios-build-mechanics"></a>Mécanismes de génération d’iOS
 
@@ -32,7 +32,7 @@ Pour activer la sortie MSBuild de diagnostic dans Visual Studio pour Mac :
 
 1. Cliquez sur **Visual Studio pour Mac > Préférences...**
 2. Dans l’arborescence à gauche, sélectionnez **Projets > Générer**
-3. Dans le panneau de droite, définissez le dépôt de verbosité de log à **Diagnostic**:[![](ios-build-mechanics-images/image2.png "Définition du niveau de détail du journal")](ios-build-mechanics-images/image2.png#lightbox)
+3. Dans le volet de droite, définissez la liste déroulante commentaires du journal sur **diagnostic**: [ ![ définition du niveau de détail du journal](ios-build-mechanics-images/image2.png)](ios-build-mechanics-images/image2.png#lightbox)
 4. Cliquez sur **OK**
 5. Redémarrer Visual Studio pour Mac
 6. Nettoyer et regénérer votre package
@@ -44,7 +44,7 @@ Pour activer la sortie MSBuild de diagnostic dans Visual Studio :
 
 1. Cliquez sur **Outils > Options...**
 2. Dans l’arborescence à gauche, sélectionnez **Projets et solutions > Générer et exécuter**
-3. Dans le panneau de droite, définissez le *MSBuild construire la verbosité de sortie* de sortie de baisse à **diagnostic**:[![](ios-build-mechanics-images/image2-vs.png "Définition du niveau de détail de la sortie de génération MSBuild")](ios-build-mechanics-images/image2-vs.png#lightbox)
+3. Dans le volet de droite, définissez la *liste déroulante détail de la sortie de génération MSBuild* sur **diagnostic**: définition du niveau de [ ![ détail de la sortie de génération MSBuild](ios-build-mechanics-images/image2-vs.png)](ios-build-mechanics-images/image2-vs.png#lightbox)
 4. Cliquez sur **OK**
 5. Nettoyez et regénérez votre package.
 6. La sortie de diagnostic est visible dans le panneau Sortie.
@@ -67,7 +67,7 @@ Total time: 1554 ms
 
 Les outils Xamarin fonctionnent techniquement sur n’importe quel Mac pouvant exécuter OS X 10.10 Yosemite ou version ultérieure. Toutefois, les expériences de développement et les durées de génération peuvent être gênées par les performances du Mac.
 
-Dans l’état déconnecté, Visual Studio sur Windows n’effectue que la phase de compilation C et ne tente pas d’effectuer la liaison ou la compilation AOT, emballe l’application dans un _.app_ Bundle, ou signez le paquet d’application. (La phase de compilation C est rarement un goulot d’étranglement de performance.) Tentative de déterminer où dans le pipeline la construction ralentit en construisant directement sur l’hôte mac construire dans Visual Studio pour Mac.
+Dans l’État Disconnected, Visual Studio sur Windows exécute uniquement la phase de compilation C# et n’essaie pas d’effectuer la liaison ou la compilation AOA, d’empaqueter l’application dans un bundle _. app_   ou de signer l’offre groupée d’applications. (La phase de compilation C# est rarement un goulot d’étranglement au niveau des performances.) Essayez d’identifier dans le pipeline où la build ralentit en générant directement sur l’hôte de build Mac dans Visual Studio pour Mac.
 
 En outre, la connexion réseau entre l’ordinateur Windows et l’hôte de build Mac constitue l’un des emplacements les plus courants à l’origine de la lenteur. Cela peut être dû à un obstacle physique sur le réseau, à l’utilisation d’une connexion sans fil ou au fait de devoir passer par un ordinateur saturé (par exemple, un service Mac dans le cloud).
 
@@ -97,7 +97,7 @@ En tenant compte des informations ci-dessus, la liste ci-dessous donne des infor
 
 La capture d’écran ci-dessous illustre comment définir ces options pour le simulateur dans vos options iOS :
 
-[![](ios-build-mechanics-images/image3.png "Setting the options")](ios-build-mechanics-images/image3.png#lightbox)
+[![Définition des options](ios-build-mechanics-images/image3.png)](ios-build-mechanics-images/image3.png#lightbox)
 
 ## <a name="device-tricks"></a>Astuces relatives à l’appareil
 
@@ -148,7 +148,7 @@ Conseils supplémentaires
 
 La capture d’écran ci-dessous illustre comment définir ces options pour le simulateur dans vos options iOS :
 
-[![](ios-build-mechanics-images/image4.png "Setting the options")](ios-build-mechanics-images/image4.png#lightbox)
+[![Définition des options](ios-build-mechanics-images/image4.png)](ios-build-mechanics-images/image4.png#lightbox)
 
 ## <a name="using-the-linker"></a>Utilisation de l’éditeur de liens
 
@@ -165,7 +165,7 @@ Lorsque vous utilisez l’éditeur de liens, considérez les points suivants :
   - Toutefois, si vous choisissez **Tout lier** l’application peut se bloquer, en particulier si des composants externes sont utilisés. Ceci est dû au fait que certains composants utilisent la Réflexion sur certains types.
   - La réflexion et l’analyse statique ne fonctionnent pas ensemble. 
 
-Les outils peuvent être chargés de garder les choses à l’intérieur de l’application en utilisant [ `[Preserve]` l’attribut](~/ios/deploy-test/linker.md). 
+Les outils peuvent être demandés pour conserver les éléments à l’intérieur de l’application à l’aide de l' [ `[Preserve]` attribut](~/ios/deploy-test/linker.md). 
 
 Si vous n’avez pas accès au code source, ou s’il est généré par un outil et que vous ne souhaitez pas le modifier, il peut toujours être lié via la création d’un fichier XML qui décrit tous les types et membres devant être conservés. Vous pouvez ensuite ajouter l’indicateur `--xml={file.name}.xml` à vos options de projet, qui a traité le code exactement comme si vous utilisiez des attributs.
 
@@ -192,7 +192,7 @@ Il est également possible de lier partiellement des applications, pour aider à
   - Cela permet à l’éditeur de liens natif d’éliminer le code natif de la bibliothèque avec laquelle vous effectuez la liaison. 
   - Notez que la recherche dynamique de symboles ne fonctionne pas avec ceci. 
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Ce guide a exploré comment minuter une application iOS et les options à prendre en compte qui sont dépendantes de la configuration et des options de la génération du projet. 
 
@@ -276,8 +276,8 @@ L3 Cache: 4 MB
 - 8 GB RAM 
 ---->
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [Blog](https://blog.xamarin.com/xamarin-ios-build-improvements/)
+- [Billet de blog](https://blog.xamarin.com/xamarin-ios-build-improvements/)
 - [Liaison sur iOS](~/ios/deploy-test/linker.md)
-- [Configuration De Linker personnalisée](~/cross-platform/deploy-test/linker.md)
+- [Configuration de l’éditeur de liens personnalisé](~/cross-platform/deploy-test/linker.md)

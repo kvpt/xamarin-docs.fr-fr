@@ -10,28 +10,28 @@ ms.date: 11/25/2015
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f250b109f759bcf6bb7fa4ac0573743ac12c4bc1
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e9c6bc604368f36646260d6a3766cc5417a1ff52
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84127190"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937785"
 ---
 # <a name="xamarinforms-relativelayout"></a>Xamarin.FormsRelativeLayout
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
 
 `RelativeLayout`est utilisé pour positionner et dimensionner les vues par rapport aux propriétés des affichages de mise en page ou frères. Contrairement `AbsoluteLayout` `RelativeLayout` à, n’a pas le concept de l’ancre en déplacement et n’a pas de fonctions pour positionner les éléments par rapport aux bords inférieur ou droit de la disposition. `RelativeLayout`prend en charge le positionnement des éléments en dehors de ses propres limites.
 
-[![](relative-layout-images/layouts-sml.png "Xamarin.Forms Layouts")](relative-layout-images/layouts.png#lightbox "Xamarin.Forms Layouts")
+[![Xamarin.FormsDispositions](relative-layout-images/layouts-sml.png)](relative-layout-images/layouts.png#lightbox "[! Opérationnel. Dispositions NO-LOC (Xamarin. Forms)]")
 
 ## <a name="purpose"></a>Objectif
 
 `RelativeLayout`peut être utilisé pour positionner des vues sur l’écran par rapport à la disposition générale ou à d’autres vues.
 
-![](relative-layout-images/flag.png "RelativeLayout Exploration")
+![Exploration RelativeLayout](relative-layout-images/flag.png)
 
-## <a name="usage"></a>Utilisation
+## <a name="usage"></a>Usage
 
 ### <a name="understanding-constraints"></a>Fonctionnement des contraintes
 
@@ -133,7 +133,7 @@ layout.Children.Add (blueBox, Constraint.RelativeToView (redBox, (Parent, siblin
 
 Cela produit la sortie suivante, avec la position de la zone bleue déterminée _par rapport_ à la position de la boîte rouge :
 
-![](relative-layout-images/red-blue-box.png "RelativeLayout with Red and Blue BoxViews")
+![RelativeLayout avec BoxViews rouge et bleu](relative-layout-images/red-blue-box.png)
 
 ### <a name="sizing"></a>Dimensionnement
 
@@ -226,11 +226,11 @@ Title="RelativeLayout">
 
 Le code ci-dessus donne la disposition suivante :
 
-![](relative-layout-images/relative.png "Complex RelativeLayout")
+![RelativeLayout complexe](relative-layout-images/relative.png)
 
 Notez que `RelativeLayouts` les s sont imbriquées, car dans certains cas, l’imbrication des dispositions peut être plus facile que la présentation de tous les éléments dans la même disposition. Notez également que certains éléments sont `RelativeToView` , car cela permet une mise en page plus simple et plus intuitive lorsque les relations entre les vues sont placées dans le positionnement du repère.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Disposition (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
 - [Exemple BusinessTumble (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-businesstumble)

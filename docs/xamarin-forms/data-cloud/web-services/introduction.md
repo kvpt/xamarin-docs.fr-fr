@@ -10,16 +10,16 @@ ms.date: 02/28/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d714b4c9d598d8cca26ae992abf3f15df703d11b
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: cd9815c6448efae0bb0af982c8807c47263ae13e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139176"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938203"
 ---
 # <a name="xamarinforms-web-services-introduction"></a>Xamarin.FormsPrésentation des services Web
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)
 
 _Cette rubrique fournit une procédure pas à pas de l' Xamarin.Forms exemple d’application qui montre comment communiquer avec différents services Web. Bien que chaque service Web utilise un exemple d’application distinct, il est similaire au fonctionnement et partage des classes communes._
 
@@ -34,8 +34,8 @@ Dans tous les cas, les tâches sont stockées dans un serveur principal accessib
 
 Lorsque l’application est lancée, une page s’affiche et répertorie toutes les tâches récupérées à partir du service Web et permet à l’utilisateur de créer une nouvelle tâche. Cliquez sur une tâche pour accéder à une deuxième page dans laquelle la tâche peut être modifiée, enregistrée, supprimée et parlée. L’application finale est indiquée ci-dessous :
 
-![](introduction-images/app-example-1.png "Todo application - first page")
-![](introduction-images/app-example-2.png "Todo application - second page")
+![Tâche TODO application-première page ](introduction-images/app-example-1.png)
+ ![ TODO application-second](introduction-images/app-example-2.png)
 
 Chaque rubrique de ce guide fournit un lien de téléchargement vers une *autre* version de l’application qui illustre un type spécifique de serveur principal du service Web. Téléchargez l’exemple de code approprié sur la page relative à chaque style de service Web.
 

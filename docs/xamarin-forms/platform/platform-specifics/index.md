@@ -10,16 +10,16 @@ ms.date: 10/01/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8478db85bd9904ee6c5cfeab9b2af390e7d3096d
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e0c6e305287c97abac3500cba4771479b60381ac
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139501"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939800"
 ---
 # <a name="platform-specifics"></a>Spécificités de la plateforme
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 _Les spécificités des plateformes vous permettent d’utiliser des fonctionnalités uniquement disponibles sur une plateforme spécifique, sans implémenter de convertisseurs ou d’effets personnalisés._
 
@@ -58,7 +58,7 @@ Le résultat de l’exposition d’un effet en tant que spécifique à une plate
 
 L' [exemple d’application](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shadowplatformspecific) illustre un `Shadow` spécifique à une plateforme qui ajoute une ombre au texte affiché par un [`Label`](xref:Xamarin.Forms.Label) contrôle :
 
-![](images/screenshots.png "Shadow Platform-Specific")
+![Shadow-spécifique à la plateforme](images/screenshots.png)
 
 L' [exemple d’application](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shadowplatformspecific) implémente la `Shadow` plateforme spécifique à chaque plateforme, afin de faciliter la compréhension. Toutefois, hormis chaque implémentation d’effet propre à la plateforme, l’implémentation de la classe Shadow est largement identique pour chaque plateforme. Par conséquent, ce guide se concentre sur l’implémentation de la classe Shadow et l’effet associé sur une plate-forme unique.
 

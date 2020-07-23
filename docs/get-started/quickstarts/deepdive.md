@@ -13,12 +13,12 @@ ms.date: 11/27/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1bfb76f71a2ac9d8bc9ae84152501909000b9623
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: d1670506fa78b39825368fc91d2452a44ddf8f03
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84132520"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939917"
 ---
 # <a name="xamarinforms-quickstart-deep-dive"></a>Xamarin.FormsPrésentation approfondie des Démarrages rapides
 
@@ -30,7 +30,7 @@ Dans le Guide de [ Xamarin.Forms démarrage rapide](~/get-started/index.yml), l�
 
 Visual Studio organise le code en *solutions* et *projets*. Une solution est un conteneur qui peut comprendre un ou plusieurs projets. Un projet peut être une application, une bibliothèque de prise en charge, une application de test, etc. L’application Notes se compose d’une solution qui contient quatre projets, comme le montre la capture d’écran suivante :
 
-![](deepdive-images/vs/solution.png "Visual Studio Solution Explorer")
+![Explorateur de solutions Visual Studio](deepdive-images/vs/solution.png)
 
 Les projets sont :
 
@@ -43,7 +43,7 @@ Les projets sont :
 
 La capture d’écran suivante montre le contenu du projet de bibliothèque .NET Standard Notes dans Visual Studio :
 
-![](deepdive-images/vs/net-standard-project.png "Phoneword .NET Standard Project Contents")
+![Contenu du projet .NET Standard Phoneword](deepdive-images/vs/net-standard-project.png)
 
 Le projet a un nœud **dépendances** qui contient les nœuds **NuGet** et **SDK** :
 
@@ -57,7 +57,7 @@ Le projet a un nœud **dépendances** qui contient les nœuds **NuGet** et **SDK
 
 Tout comme Visual Studio, [Visual Studio pour Mac](/visualstudio/mac/) organise le code en *solutions* et en *projets*. Une solution est un conteneur qui peut comprendre un ou plusieurs projets. Un projet peut être une application, une bibliothèque de prise en charge, une application de test, etc. L’application Notes se compose d’une solution qui contient trois projets, comme le montre la capture d’écran suivante :
 
-![](deepdive-images/vsmac/solution.png "Visual Studio for Mac Solution Pane")
+![Volet Solution Visual Studio pour Mac](deepdive-images/vsmac/solution.png)
 
 Les projets sont :
 
@@ -69,7 +69,7 @@ Les projets sont :
 
 La capture d’écran suivante montre le contenu du projet de bibliothèque .NET Standard Notes dans Visual Studio pour Mac :
 
-![](deepdive-images/vsmac/net-standard-project.png "Phoneword .NET Standard Library Project Contents")
+![Contenu du projet de bibliothèque .NET Standard Phoneword](deepdive-images/vsmac/net-standard-project.png)
 
 Le projet a un nœud **dépendances** qui contient les nœuds **NuGet** et **SDK** :
 
@@ -98,12 +98,12 @@ Une Xamarin.Forms application est structurée de la même façon qu’une applic
 
 ::: zone pivot="windows"
 
-![](deepdive-images/vs/architecture.png "Notes Architecture")
+![Architecture de Notes](deepdive-images/vs/architecture.png)
 
 ::: zone-end
 ::: zone pivot="macos"
 
-![](deepdive-images/vsmac/architecture.png "Notes Architecture")
+![Architecture de Notes](deepdive-images/vsmac/architecture.png)
 
 ::: zone-end
 
@@ -240,7 +240,7 @@ Quatre groupes de contrôles principaux sont utilisés pour créer l’interface
 
 Lors de l’exécution, chaque contrôle est mappé à son équivalent natif, ce qui sera affiché.
 
-### <a name="layout"></a>Layout
+### <a name="layout"></a>Mise en page
 
 L’application notes utilise le [`StackLayout`](xref:Xamarin.Forms.StackLayout) pour simplifier le développement d’applications interplateformes en organisant automatiquement des vues sur l’écran, quelle que soit la taille de l’écran. Les éléments enfants sont placés les uns après les autres, horizontalement ou verticalement dans l’ordre dans lequel ils ont été ajoutés. La quantité d’espace que le `StackLayout` doit utiliser dépend de la façon dont les [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) [`VerticalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) Propriétés et sont définies, mais par défaut, le `StackLayout` essaie d’utiliser la totalité de l’écran.
 
@@ -388,7 +388,7 @@ La liaison de données permet de simplifier la façon dont une Xamarin.Forms app
 
 La liaison de données connecte deux objets, appelés la *source* et la *cible*. L’objet *source* fournit les données. L’objet *cible* consomme (et affiche souvent) les données de l’objet source. Par exemple, un [`Editor`](xref:Xamarin.Forms.Editor) (objet*cible* ) lie généralement sa [`Text`](xref:Xamarin.Forms.InputView.Text) propriété à une propriété publique `string` dans un objet *source* . Le diagramme suivant illustre la relation de liaison :
 
-![](deepdive-images/data-binding.png "Data Binding")
+![Liaison de données](deepdive-images/data-binding.png)
 
 Le principal avantage de la liaison de données est que vous n’avez plus à vous soucier de la synchronisation des données entre les vues et la source de données. Les modifications apportées à l’objet *source* sont automatiquement envoyées à l’objet *cible* dans les coulisses par le framework de liaison, et les modifications apportées à l’objet cible peuvent éventuellement être renvoyées à l’objet *source*.
 
@@ -532,13 +532,13 @@ Cette présentation approfondie a examiné les notions de base du développement
 - Les effets permettent également de personnaliser les contrôles natifs sur chaque plateforme. Les effets sont créés dans des projets spécifiques à la plateforme en sous-classant la [`PlatformEffect`](xref:Xamarin.Forms.PlatformEffect`2) classe et sont consommés en les joignant à un Xamarin.Forms contrôle approprié. Pour plus d’informations, consultez [Effets](~/xamarin-forms/app-fundamentals/effects/index.md).
 - Le code partagé peut accéder aux fonctionnalités natives par le biais de la [`DependencyService`](xref:Xamarin.Forms.DependencyService) classe. Pour plus d’informations, consultez [Accès aux fonctionnalités natives avec DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md).
 
-Vous pouvez également [_créer mobile apps avec Xamarin. Forms_](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md), un livre de Charles Petzold, pour en savoir plus sur Xamarin.Forms . Le livre est disponible au format PDF ou dans une variété de formats électroniques.
+Vous pouvez également [_créer des Mobile Apps Xamarin.Forms avec _](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md), un livre de Charles Petzold, pour en savoir plus sur Xamarin.Forms . Le livre est disponible au format PDF ou dans une variété de formats électroniques.
 
 ## <a name="related-links"></a>Liens connexes
 
 - [eXtensible Application Markup Language (XAML)](~/xamarin-forms/xaml/index.yml)
 - [Liaison de données](~/xamarin-forms/app-fundamentals/data-binding/index.md)
-- [Informations de référence sur les contrôles](~/xamarin-forms/user-interface/controls/index.md)
+- [Référence des contrôles](~/xamarin-forms/user-interface/controls/index.md)
 - [Extensions de balisage XAML](~/xamarin-forms/xaml/markup-extensions/index.md)
 - [Xamarin.FormsExtraits](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
 - [Exemples de Prise en main](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms%20get%20started)

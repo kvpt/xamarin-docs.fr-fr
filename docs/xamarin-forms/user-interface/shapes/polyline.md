@@ -10,18 +10,18 @@ ms.date: 06/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5ffbf452816eb9e60d70175a995419a124bcc457
-ms.sourcegitcommit: 8f6cc5208f675c8cfb645bd9ffb0fc1f8ea71411
+ms.openlocfilehash: 2f00daff6cada3f74b2dbcf6daa8245b80cf13eb
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85326164"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937655"
 ---
 # <a name="xamarinforms-shapes-polyline"></a>Xamarin.FormsFormes : polyligne
 
-![](~/media/shared/preview.png "This API is currently pre-release")
+![API de la version préliminaire](~/media/shared/preview.png "Cette API est actuellement en préversion.")
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 La `Polyline` classe dérive de la `Shape` classe et peut être utilisée pour dessiner une série de lignes droites connectées. Une polyligne est similaire à un polygone, sauf que le dernier point d’une polyligne n’est pas connecté au premier point. Pour plus d’informations sur les propriétés que la `Polyline` classe hérite de la `Shape` classe, consultez [ Xamarin.Forms Shapes](index.md).
 

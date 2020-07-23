@@ -10,16 +10,16 @@ ms.date: 04/02/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1f7a0d04d1e7b6abc9931c05c0e46ef49f8ba09c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: aa600974cdf25f8f85d9152edc4a377334cc8c78
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138461"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936550"
 ---
 # <a name="consume-an-aspnet-web-service-asmx"></a>Consommer un service web ASP.NET (ASMX)
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todoasmx)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todoasmx)
 
 _ASMX offre la possibilité de créer des services Web qui envoient des messages à l’aide du protocole SOAP (Simple Object Access Protocol). SOAP est un protocole indépendant de la plateforme et indépendant du langage pour la création et l’accès aux services Web. Les consommateurs d’un service ASMX n’ont pas besoin de savoir quoi que ce soit sur la plateforme, le modèle objet ou le langage de programmation utilisé pour implémenter le service. Ils doivent uniquement comprendre comment envoyer et recevoir des messages SOAP. Cet article montre comment utiliser un service SOAP ASMX à partir d’une Xamarin.Forms application._
 
@@ -34,7 +34,7 @@ SOAP peut fonctionner sur de nombreux protocoles de transport, y compris HTTP, S
 
 Cet exemple inclut les applications mobiles qui s’exécutent sur des appareils physiques ou émulés, et un service ASMX qui fournit des méthodes pour récupérer, ajouter, modifier et supprimer des données. Lorsque les applications mobiles sont exécutées, elles se connectent au service ASMX hébergé localement comme indiqué dans la capture d’écran suivante :
 
-![](asmx-images/portal.png "Sample Application")
+![Exemple d'application](asmx-images/portal.png)
 
 > [!NOTE]
 > Dans iOS 9 et versions ultérieures, application transport Security (ATS) applique des connexions sécurisées entre les ressources Internet (par exemple, le serveur principal de l’application) et l’application, ce qui empêche la divulgation accidentelle d’informations sensibles. Dans la mesure où ATS est activé par défaut dans les applications générées pour iOS 9, toutes les connexions sont soumises aux exigences de sécurité ATS. Si les connexions ne répondent pas à ces exigences, elles échouent avec une exception.
@@ -264,7 +264,7 @@ public class SoapService : ISoapService
 }
 ```
 
-## <a name="test-the-web-service"></a>Test du service web
+## <a name="test-the-web-service"></a>Tester le service web
 
 Le test des appareils physiques ou émulés avec un service hébergé localement requiert la mise en place d’une configuration IIS personnalisée, des adresses de point de terminaison et des règles de pare-feu. Pour plus d’informations sur la configuration de votre environnement à des fins de test, consultez [configurer l’accès à distance à IIS Express](wcf.md#configure-remote-access-to-iis-express). La seule différence entre le test de WCF et ASMX est le numéro de port du TodoService.
 

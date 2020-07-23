@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7410386e10f605fdeed452fe37755c1e48e6b9b9
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: b4772299421ad26f0fbe0fced8c80a7f633341c6
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136992"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938448"
 ---
 # <a name="visualelement-drop-shadows-on-ios"></a>VisualElement supprimer les ombres sur iOS
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Ce spécifique à la plateforme iOS est utilisé pour activer une ombre portée sur un [`VisualElement`](xref:Xamarin.Forms.VisualElement) . Il est consommé en XAML en affectant [`VisualElement.IsShadowEnabled`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.IsShadowEnabledProperty) à la propriété jointe `true` , ainsi qu’à un certain nombre de propriétés jointes facultatives supplémentaires qui contrôlent l’ombre portée :
 
@@ -74,7 +74,7 @@ La `VisualElement.On<iOS>` méthode spécifie que ce spécifique à la plateform
 
 Le résultat est qu’une ombre portée peut être activée sur un [`VisualElement`](xref:Xamarin.Forms.VisualElement) :
 
-![](drop-shadow-images/drop-shadow.png "Drop shadow enabled")
+![Ombre portée activée](drop-shadow-images/drop-shadow.png)
 
 ## <a name="related-links"></a>Liens connexes
 

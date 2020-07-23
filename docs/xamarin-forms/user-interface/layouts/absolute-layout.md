@@ -10,20 +10,20 @@ ms.date: 11/25/2015
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 110b01d6482fbe3e23a772c90194b6bf40d54877
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 923f7643bd1e137192bfb80dbbc7c5d2c25b5471
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84570529"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938422"
 ---
 # <a name="xamarinforms-absolutelayout"></a>Xamarin.FormsAbsoluteLayout
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
 
 [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout)positionne et redimensionne les éléments enfants proportionnels à sa propre taille et position ou par valeurs absolues. Les vues enfants peuvent être positionnées et dimensionnées à l’aide de valeurs proportionnelles ou de valeurs statiques, et les valeurs proportionnelles et statiques peuvent être mélangées.
 
-[![](absolute-layout-images/layouts-sml.png "Xamarin.Forms Layouts")](absolute-layout-images/layouts.png#lightbox "Xamarin.Forms Layouts")
+[![Xamarin.FormsDispositions](absolute-layout-images/layouts-sml.png)](absolute-layout-images/layouts.png#lightbox "[! Opérationnel. Dispositions NO-LOC (Xamarin. Forms)]")
 
 Cet article couvre ce qui suit :
 
@@ -40,7 +40,7 @@ En raison du modèle de positionnement de `AbsoluteLayout` , la disposition rend
 
 `AbsoluteLayout`peut être utilisé partout où les éléments doivent être positionnés dans une vue et s’avèrent particulièrement utiles pour l’alignement des éléments sur les bords.
 
-## <a name="usage"></a>Utilisation
+## <a name="usage"></a>Usage
 
 ### <a name="proportional-layouts"></a>Dispositions proportionnelles
 
@@ -53,9 +53,9 @@ En raison du modèle de positionnement de `AbsoluteLayout` , la disposition rend
 
 Notez dans la capture d’écran suivante, l’ancre de la boîte est un point blanc. Notez la relation entre l’ancre et la zone à mesure qu’elle progresse dans la disposition :
 
-![](absolute-layout-images/anchor-start.png "Anchor at Start")
-![](absolute-layout-images/anchor-center.png "Anchor at Center")
-![](absolute-layout-images/anchor-end.png "Anchor at End")
+![Ancrer au point d’ancrage de début ](absolute-layout-images/anchor-start.png)
+ ![ au centre ](absolute-layout-images/anchor-center.png)
+ ![ à la fin](absolute-layout-images/anchor-end.png)
 
 ### <a name="specifying-values"></a>Spécification de valeurs
 
@@ -109,7 +109,7 @@ Title="Absolute Layout Exploration">
 </ContentPage>
 ```
 
-![](absolute-layout-images/exploration.png "AbsoluteLayout Examples")
+![Exemples AbsoluteLayout](absolute-layout-images/exploration.png)
 
 Notez les points suivants :
 
@@ -275,11 +275,11 @@ Title="AbsoluteLayout">
 
 Le code ci-dessus donne la disposition suivante :
 
-![](absolute-layout-images/abs.png "Complex AbsoluteLayout")
+![AbsoluteLayout complexe](absolute-layout-images/abs.png)
 
 Notez que `AbsoluteLayout` les s sont imbriquées, car dans certains cas, l’imbrication des dispositions peut être plus facile que la présentation de tous les éléments dans la même disposition.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Création d’Mobile Apps avec Xamarin.Forms , chapitre 14](https://developer.xamarin.com/r/xamarin-forms/book/chapter14.pdf)
 - [AbsoluteLayout](xref:Xamarin.Forms.AbsoluteLayout)

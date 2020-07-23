@@ -10,16 +10,16 @@ ms.date: 04/24/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0b1a47d4dcc92fca4d280708a2cbbe9374c17da8
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: de5ebf086af7fa8d7c6360bf3a1f48f57b834e44
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84573290"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938435"
 ---
 # <a name="device-orientation"></a>Orientation de l’appareil
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-responsivelayout)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-responsivelayout)
 
 Il est important de prendre en compte la façon dont votre application est utilisée et comment l’orientation paysage peut être incorporée pour améliorer l’expérience utilisateur. Les dispositions individuelles peuvent être conçues pour prendre en charge plusieurs orientations et utiliser au mieux l’espace disponible. Au niveau de l’application, la rotation peut être désactivée ou activée.
 
@@ -123,11 +123,11 @@ protected override void OnSizeAllocated(double width, double height)
 
 Une fois qu’une modification a été détectée dans l’orientation de l’appareil, vous souhaiterez peut-être ajouter ou supprimer des affichages supplémentaires à partir de votre interface utilisateur pour réagir à la modification de l’espace disponible. Par exemple, considérez la calculatrice intégrée sur chaque plateforme en portrait :
 
-![](device-orientation-images/calculator-portrait.png "Calculator Application in Portrait")
+![Application Calculatrice en portrait](device-orientation-images/calculator-portrait.png)
 
 et paysage :
 
-![](device-orientation-images/calculator-landscape.png "Calculator Application in Landscape")
+![Application Calculatrice en paysage](device-orientation-images/calculator-landscape.png)
 
 Notez que les applications tirent parti de l’espace disponible en ajoutant plus de fonctionnalités en mode paysage.
 
@@ -147,11 +147,11 @@ Les règles ci-dessus s’appliquent également lors de l’implémentation d’
 
 Prenons l’exemple de l’application suivante, affichée en portrait :
 
-![](device-orientation-images/photo-stack-portrait.png "Photo Application in Portrait")
+![Application photo en portrait](device-orientation-images/photo-stack-portrait.png)
 
 et paysage :
 
-![](device-orientation-images/photo-stack-landscape.png "Photo Application in Landscape")
+![Application photo en mode paysage](device-orientation-images/photo-stack-landscape.png)
 
 Cela s’effectue à l’aide du code XAML suivant :
 
@@ -221,11 +221,11 @@ Notez les points suivants :
 
 Prenons l’exemple de l’application suivante, affichée en portrait :
 
-![](device-orientation-images/photo-abs-portrait.png "Photo Application in Portrait")
+![Application photo en portrait](device-orientation-images/photo-abs-portrait.png)
 
 et paysage :
 
-![](device-orientation-images/photo-abs-landscape.png "Photo Application in Landscape")
+![Application photo en mode paysage](device-orientation-images/photo-abs-landscape.png)
 
 Cela s’effectue à l’aide du code XAML suivant :
 
@@ -273,11 +273,11 @@ Notez les points suivants :
 
 Prenons l’exemple de l’application suivante, affichée en portrait :
 
-![](device-orientation-images/photo-rel-portrait.png "Photo Application in Portrait")
+![Application photo en portrait](device-orientation-images/photo-rel-portrait.png)
 
 et paysage :
 
-![](device-orientation-images/photo-rel-landscape.png "Photo Application in Landscape")
+![Application photo en mode paysage](device-orientation-images/photo-rel-landscape.png)
 
 Cela s’effectue à l’aide du code XAML suivant :
 
@@ -364,11 +364,11 @@ Notez les points suivants :
 
 Prenons l’exemple de l’application suivante, affichée en portrait :
 
-![](device-orientation-images/photo-grid-portrait.png "Photo Application in Portrait")
+![Application photo en portrait](device-orientation-images/photo-grid-portrait.png)
 
 et paysage :
 
-![](device-orientation-images/photo-grid-landscape.png "Photo Application in Landscape")
+![Application photo en mode paysage](device-orientation-images/photo-grid-landscape.png)
 
 Cela s’effectue à l’aide du code XAML suivant :
 
@@ -462,7 +462,7 @@ Notez les points suivants :
 
 - En raison de la disposition de la page, il existe une méthode pour modifier l’emplacement de la grille des contrôles.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Disposition (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
 - [Exemple BusinessTumble (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-businesstumble)

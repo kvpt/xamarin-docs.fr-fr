@@ -10,12 +10,12 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cef3c2369bb4aee81a52ddd27d6ad732d7544dfa
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: df79a9b6a7b0ab44d4fcf03f12a7b4d8aabd0a82
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84573844"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939267"
 ---
 # <a name="accessing-remote-data"></a>Accès aux données distantes
 
@@ -54,7 +54,7 @@ La `CatalogService` classe est utilisée pour gérer le processus de récupérat
 
 La figure 10-1 montre l’interaction des classes qui lisent les données de catalogue à partir du microservice de catalogue pour les afficher par le `CatalogView` .
 
-[![](accessing-remote-data-images/catalogdata.png "Retrieving data from the catalog microservice")](accessing-remote-data-images/catalogdata-large.png#lightbox "Retrieving data from the catalog microservice")
+[![Récupération de données à partir du microservice de catalogue](accessing-remote-data-images/catalogdata.png)](accessing-remote-data-images/catalogdata-large.png#lightbox "Récupération de données à partir du microservice de catalogue")
 
 **Figure 10-1**: récupération des données à partir du microservice de catalogue
 
@@ -159,7 +159,7 @@ La `BasketService` classe est utilisée pour gérer la récupération des donné
 
 La figure 10-2 montre l’interaction des classes qui envoient les données du panier affichées par le `BasketView` , au microservice du panier.
 
-[![](accessing-remote-data-images/basketdata.png "Sending data to the basket microservice")](accessing-remote-data-images/basketdata-large.png#lightbox "Sending data to the basket microservice")
+[![Envoi de données au microservice de panier](accessing-remote-data-images/basketdata.png)](accessing-remote-data-images/basketdata-large.png#lightbox "Envoi de données au microservice de panier")
 
 **Figure 10-2**: envoi de données au microservice de panier
 
@@ -232,7 +232,7 @@ Cette méthode utilise une instance de la `RedisBasketRepository` classe pour co
 
 La figure 10-3 montre les interactions des classes qui suppriment les données de panier du microservice du panier, pour le `CheckoutView` .
 
-![](accessing-remote-data-images/checkoutdata.png "Deleteing data from the basket microservice")
+![Suppression de données du microservice de panier](accessing-remote-data-images/checkoutdata.png)
 
 **Figure 10-3**: suppression de données du microservice de panier
 
@@ -372,7 +372,7 @@ La stratégie de nouvelle tentative doit être paramétrée pour répondre aux b
 > [!NOTE]
 > Une stratégie de nouvelle tentative agressive avec un délai minimal entre les tentatives et un grand nombre de tentatives peut dégrader un service distant qui s’exécute à proximité ou à la capacité. En outre, une stratégie de nouvelle tentative peut également affecter la réactivité de l’application si elle tente continuellement d’effectuer une opération qui échoue.
 
-Si une demande continue d’échouer après un certain nombre de nouvelles tentatives, il est préférable pour l’application d’empêcher d’autres demandes d’accéder à la même ressource et de signaler un échec. Ensuite, après une période définie, l’application peut effectuer une ou plusieurs demandes à la ressource pour voir si elles sont réussies. Pour plus d’informations, consultez [Modèle Disjoncteur](#circuit-breaker-pattern).
+Si une demande continue d’échouer après un certain nombre de nouvelles tentatives, il est préférable pour l’application d’empêcher d’autres demandes d’accéder à la même ressource et de signaler un échec. Ensuite, après une période définie, l’application peut effectuer une ou plusieurs demandes à la ressource pour voir si elles sont réussies. Pour plus d’informations, consultez [modèle disjoncteur](#circuit-breaker-pattern).
 
 > [!TIP]
 > N’implémentez jamais de mécanisme de nouvelle tentative infini. Utilisez un nombre fini de nouvelles tentatives ou implémentez le modèle [disjoncteur](/azure/architecture/patterns/circuit-breaker/) pour permettre à un service de récupérer.
@@ -409,7 +409,7 @@ Les performances d’une application peuvent être améliorées en mettant en ca
 
 Lors de la communication avec les API Web, les applications doivent être sensibles aux erreurs temporaires. Les erreurs temporaires incluent la perte momentanée de la connectivité réseau aux services, l’indisponibilité temporaire d’un service ou les délais d’attente qui surviennent lorsqu’un service est occupé. Ces erreurs sont souvent à correction automatique et, si l’action est répétée après un délai approprié, il est probable qu’elle aboutisse. Par conséquent, les applications doivent encapsuler toutes les tentatives d’accès à une API Web dans le code qui implémente un mécanisme de gestion des erreurs transitoires.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Télécharger le livre électronique (PDF de 2 Mo)](https://aka.ms/xamarinpatternsebook)
 - [eShopOnContainers (GitHub) (exemple)](https://github.com/dotnet-architecture/eShopOnContainers)

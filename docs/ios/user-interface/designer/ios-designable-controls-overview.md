@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: e8c38ec407d13a99e2990a6d4cf39b5a23728b1d
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 5c8a852a37e2cd5c679283bc4d078f19e6e5d241
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73003974"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939683"
 ---
 # <a name="custom-controls-in-the-xamarin-designer-for-ios"></a>Contrôles personnalisés dans le Xamarin Designer pour iOS
 
@@ -20,7 +20,7 @@ _Le Xamarin Designer pour iOS prend en charge le rendu des contrôles personnali
 
 Le Xamarin Designer pour iOS est un outil puissant pour la visualisation de l’interface utilisateur d’une application et fournit la prise en charge de l’édition WYSIWYG pour la plupart des vues iOS et des contrôleurs d’affichage. Votre application peut également contenir des contrôles personnalisés qui étendent ceux intégrés à iOS. Si ces contrôles personnalisés sont écrits avec quelques instructions à l’esprit, ils peuvent également être rendus par le concepteur iOS, ce qui offre une expérience d’édition encore plus riche. Ce document examine ces instructions.
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Spécifications
 
 Un contrôle qui remplit toutes les conditions suivantes sera restitué sur l’aire de conception :
 
@@ -45,9 +45,9 @@ La propriété peut également être décorée avec un [DisplayNameAttribute](xr
 
 ## <a name="initialization"></a>Initialisation
 
-Pour `UIViewController` sous-classes, vous devez utiliser la méthode [ViewDidLoad](xref:UIKit.UIViewController.ViewDidLoad) pour le code qui dépend des vues que vous avez créées dans le concepteur.
+Pour les `UIViewController` sous-classes, vous devez utiliser la méthode [ViewDidLoad](xref:UIKit.UIViewController.ViewDidLoad) pour le code qui dépend des vues que vous avez créées dans le concepteur.
 
-Pour `UIView` et d’autres sous-classes `NSObject`, la méthode [AwakeFromNib](xref:Foundation.NSObject.AwakeFromNib) est l’emplacement recommandé pour effectuer l’initialisation de votre contrôle personnalisé après son chargement à partir du fichier de disposition. En effet, toutes les propriétés personnalisées définies dans le panneau des propriétés ne sont pas définies lors de l’exécution du constructeur du contrôle, mais elles sont définies avant l’appel de `AwakeFromNib` :
+Pour `UIView` et d’autres `NSObject` sous-classes, la méthode [AwakeFromNib](xref:Foundation.NSObject.AwakeFromNib) est l’emplacement recommandé pour effectuer l’initialisation de votre contrôle personnalisé après son chargement à partir du fichier de disposition. En effet, toutes les propriétés personnalisées définies dans le panneau des propriétés ne sont pas définies lors de l’exécution du constructeur du contrôle, mais elles sont définies avant que `AwakeFromNib` ne soit appelé :
 
 ```csharp
 [Register ("CustomView"), DesignTimeVisible (true)]
@@ -122,16 +122,16 @@ public class CustomView : UIView {
 }
 ```
 
-Le composant `CustomView` expose une propriété `Counter` qui peut être définie par le développeur à l’intérieur du concepteur iOS. Toutefois, quelle que soit la valeur définie dans le concepteur, la valeur de la propriété `Counter` sera toujours égale à zéro (0). En voici les raisons :
+Le `CustomView` composant expose une `Counter` propriété qui peut être définie par le développeur à l’intérieur du concepteur iOS. Toutefois, quelle que soit la valeur définie dans le concepteur, la valeur de la `Counter` propriété sera toujours égale à zéro (0). Voici pourquoi :
 
-- Une instance du `CustomControl` est augmentée du fichier de Storyboard.
-- Toutes les propriétés modifiées dans le concepteur iOS sont définies (par exemple, la définition de la valeur de la `Counter` à deux (2), par exemple).
-- La méthode `AwakeFromNib` est exécutée et un appel est effectué vers la méthode `Initialize` du composant.
-- Dans `Initialize`, la valeur de la propriété `Counter` est réinitialisée à zéro (0).
+- Une instance du `CustomControl` est incluse dans le fichier de table de montage séquentiel.
+- Toutes les propriétés modifiées dans le concepteur iOS sont définies (comme la définition de la valeur de `Counter` sur deux (2), par exemple).
+- La `AwakeFromNib` méthode est exécutée et un appel à la méthode du composant est effectué `Initialize` .
+- L’intérieur `Initialize` de la valeur de la `Counter` propriété est remis à zéro (0).
 
-Pour remédier à cette situation, initialisez la propriété `Counter` ailleurs (par exemple dans le constructeur du composant) ou ne substituez pas la méthode `AwakeFromNib` et appelez `Initialize` si le composant ne requiert aucune initialisation supplémentaire en dehors de ce qui est actuellement géré par ses constructeurs.
+Pour résoudre ce problème, initialisez la `Counter` propriété ailleurs (par exemple, dans le constructeur du composant) ou ne substituez pas la `AwakeFromNib` méthode et appelez `Initialize` si le composant ne requiert aucune initialisation supplémentaire en dehors de ce qui est actuellement géré par ses constructeurs.
 
-## <a name="design-mode"></a>Mode création
+## <a name="design-mode"></a>Mode Création
 
 Sur l’aire de conception, un contrôle personnalisé doit respecter quelques restrictions :
 
@@ -163,8 +163,8 @@ public class DesignerAwareLabel : UILabel, IComponent {
 }
 ```
 
-Vous devez toujours vérifier la propriété `Site` pour `null` avant d’essayer d’accéder à l’un de ses membres. Si `Site` est `null`, il est possible de supposer que le contrôle n’est pas en cours d’exécution dans le concepteur.
-En mode création, `Site` sera définie après l’exécution du constructeur du contrôle et avant l’appel de `AwakeFromNib`.
+Vous devez toujours vérifier la `Site` propriété pour `null` avant d’essayer d’accéder à l’un de ses membres. Si `Site` est `null` , il est possible de supposer que le contrôle n’est pas en cours d’exécution dans le concepteur.
+En mode création, est `Site` défini après l’exécution du constructeur du contrôle et avant l' `AwakeFromNib` appel de.
 
 ## <a name="debugging"></a>Débogage
 
@@ -173,17 +173,17 @@ Si un contrôle n’est pas rendu, vérifiez les bogues dans le contrôle ou l�
 
 L’aire de conception peut souvent intercepter les exceptions levées par des contrôles, tout en continuant d’afficher d’autres contrôles. Le contrôle défectueux est remplacé par un espace réservé rouge et vous pouvez afficher le suivi des exceptions en cliquant sur l’icône d’exclamation :
 
- ![](ios-designable-controls-overview-images/exception-box.png "A faulty control as red placeholder and the exception details")
+ ![Un contrôle défectueux en tant qu’espace réservé rouge et les détails de l’exception](ios-designable-controls-overview-images/exception-box.png)
 
 Si des symboles de débogage sont disponibles pour le contrôle, la trace aura des noms de fichiers et des numéros de ligne.
 Double-cliquez sur une ligne dans la trace de la pile pour accéder à cette ligne dans le code source.
 
 Si le concepteur ne peut pas isoler le contrôle défectueux, un message d’avertissement s’affiche en haut de l’aire de conception :
 
- ![](ios-designable-controls-overview-images/info-bar.png "A warning message at the top of the design surface")
+ ![Un message d’avertissement en haut de l’aire de conception](ios-designable-controls-overview-images/info-bar.png)
 
 Le rendu complet reprendra lorsque le contrôle défectueux sera résolu ou supprimé de l’aire de conception.
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article a introduit la création et l’application de contrôles personnalisés dans le concepteur iOS. Tout d’abord, il a décrit les exigences que les contrôles doivent respecter pour être rendues sur l’aire de conception et exposer des propriétés personnalisées dans le volet de propriétés. Il a ensuite examiné le code derrière l’initialisation du contrôle et la propriété DesignMode. Enfin, il a décrit ce qui se passe lorsque des exceptions sont levées et comment résoudre ce problème.

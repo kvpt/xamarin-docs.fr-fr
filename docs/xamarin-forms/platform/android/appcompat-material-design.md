@@ -10,12 +10,12 @@ ms.date: 06/27/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 24206f6d6764c73f13a4b06fb44fa746f9d353af
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e86224ffb5da3f4b300c82a2821cee0a9b17469d
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84135705"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939332"
 ---
 # <a name="adding-appcompat-and-material-design"></a>Ajout de AppCompat et de la conception de matériau
 
@@ -37,7 +37,7 @@ Assurez-vous que la solution utilise Xamarin.Forms 2,0 ou une version plus réce
 
 Vérifiez que le Framework cible du projet Android est Android 6,0 (Marshmallow). Vérifiez les **Options > du projet Android > générer > paramètres généraux** pour vous assurer que l’infrastructure Corrent est sélectionnée :
 
- ![](appcompat-images/target-android-6-sml.png "Android General Build Configuration")
+ ![Configuration de build générale Android](appcompat-images/target-android-6-sml.png)
 
 ### <a name="3-add-new-themes-to-support-material-design"></a>3. ajouter de nouveaux thèmes pour prendre en charge la conception de matériel
 

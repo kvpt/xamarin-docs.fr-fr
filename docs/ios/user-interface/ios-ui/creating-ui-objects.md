@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: ef54cebebb3881f5bb08aa6edfdc344169f179b4
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 729289c1764746f9777ef3d720e77865c9a71389
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574091"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937252"
 ---
 # <a name="creating-user-interface-objects-in-xamarinios"></a>Création d’objets d’interface utilisateur dans Xamarin. iOS
 
@@ -42,17 +42,17 @@ Pour commencer à créer votre interface utilisateur dans le concepteur iOS, dou
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
- [![](creating-ui-objects-images/image2b.png "Toolbox Pad")](creating-ui-objects-images/image2b.png#lightbox)
+ [![Boîte à outils](creating-ui-objects-images/image2b.png)](creating-ui-objects-images/image2b.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
- [![](creating-ui-objects-images/image2b-vs.png "Toolbox Pad - Visual Stuio")](creating-ui-objects-images/image2b.png#lightbox)
+ [![Panneau boîte à outils-Visual Studio](creating-ui-objects-images/image2b-vs.png)](creating-ui-objects-images/image2b.png#lightbox)
 
 -----
 
 Lorsqu’un contrôle est sélectionné sur l’aire de conception, le **panneau Propriétés** affiche les attributs de ce contrôle. Le **Widget >** le champ nom de l’identité >, qui est renseigné dans la capture d’écran ci-dessous, est utilisé comme nom de *sortie* . Voici comment vous pouvez référencer le contrôle en C# :
 
- [![](creating-ui-objects-images/image3b.png "Properties Widget Pad")](creating-ui-objects-images/image3b.png#lightbox)
+ [![Bloc widget propriétés](creating-ui-objects-images/image3b.png)](creating-ui-objects-images/image3b.png#lightbox)
 
 Pour approfondir votre connaissance de l’utilisation du concepteur iOS, reportez-vous au guide [d’introduction au concepteur iOS](~/ios/user-interface/designer/introduction.md) .
 
@@ -64,27 +64,27 @@ Pour ouvrir une table de montage séquentiel dans Xcode, cliquez avec le bouton 
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
- [![](creating-ui-objects-images/imagexcode.png "Storyboard context menu - Xcode")](creating-ui-objects-images/imagexcode.png#lightbox)
+ [![Menu contextuel de Storyboard-Xcode](creating-ui-objects-images/imagexcode.png)](creating-ui-objects-images/imagexcode.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[![](creating-ui-objects-images/imagexcode-vs.png "Storyboard context menu - Xcode")](creating-ui-objects-images/imagexcode-vs.png#lightbox)
+[![Menu contextuel de Storyboard-Xcode](creating-ui-objects-images/imagexcode-vs.png)](creating-ui-objects-images/imagexcode-vs.png#lightbox)
 
 -----
 
 Vous pouvez faire glisser les contrôles sur le Aire de conception à partir de la **bibliothèque d’objets** illustrée ci-dessous :
 
- [![](creating-ui-objects-images/image5a.png "Xcode Object Library")](creating-ui-objects-images/image5a.png#lightbox)
+ [![Bibliothèque d’objets Xcode](creating-ui-objects-images/image5a.png)](creating-ui-objects-images/image5a.png#lightbox)
 
 Lorsque vous concevez votre interface utilisateur avec Interface Builder vous devez créer une **sortie** pour chaque contrôle que vous souhaitez référencer en C#. Pour ce faire, vous activez l' **éditeur** de l’Assistant à l’aide du **bouton centrer** de la barre d’outils Xcode :
 
- [![](creating-ui-objects-images/image6a.png "Assistant Editor button")](creating-ui-objects-images/image6a.png#lightbox)
+ [![Bouton de l’éditeur de l’Assistant](creating-ui-objects-images/image6a.png)](creating-ui-objects-images/image6a.png#lightbox)
 
 Cliquez sur un objet d’interface utilisateur. Ensuite, le **contrôle fait glisser** dans le fichier. h. Pour **contrôler le glissement**, maintenez la touche CTRL enfoncée, puis cliquez et maintenez le pointeur sur l’objet d’interface utilisateur pour lequel vous créez la sortie (ou action). Maintenez la touche CTRL enfoncée pendant que vous faites glisser le fichier d’en-tête. Terminez le glissement sous la `@interface` définition. Une ligne bleue doit apparaître avec une légende insérer une sortie ou une collection de sortie, comme illustré dans la capture d’écran ci-dessous.
 
 Quand vous relâchez le clic, vous êtes invité à fournir un nom pour la prise, qui sera utilisé pour créer une propriété C# qui peut être référencée dans le code :
 
- [![](creating-ui-objects-images/image8a.png "Creating an outlet")](creating-ui-objects-images/image8a.png#lightbox)
+ [![Création d’une sortie](creating-ui-objects-images/image8a.png)](creating-ui-objects-images/image8a.png#lightbox)
 
 Pour plus d’informations sur l’intégration de l’Interface Builder de Xcode à Visual Studio pour Mac, consultez le document de [génération de code XIB](~/ios/internals/xib-code-generation.md#generated) .
 
@@ -118,7 +118,7 @@ public override void ViewDidLoad () {
 
 Lorsque les contrôleurs d’affichage sont ajoutés au Aire de conception, deux fichiers C# correspondants sont créés dans le projet. Dans cet exemple, `ControlsViewController.cs` et `ControlsViewController.designer.cs` ont été créés automatiquement :
 
- [![](creating-ui-objects-images/image9b.png "ViewController partial class")](creating-ui-objects-images/image9b.png#lightbox)
+ [![Classe partielle ViewController](creating-ui-objects-images/image9b.png)](creating-ui-objects-images/image9b.png#lightbox)
 
 Le `ControlsViewController.cs` fichier est destiné à *votre code*. C’est là que les `View` méthodes de cycle de vie telles que `ViewDidLoad` et `ViewWillAppear` sont implémentées, et où vous pouvez ajouter vos propres propriétés, champs et méthodes.
 
@@ -169,6 +169,6 @@ Le `designer.cs` fichier ne doit pas être modifié manuellement : l’IDE (Vis
 
 Lorsque des objets d’interface utilisateur sont ajoutés par programmation à un `View` ou à `ViewController` , vous instanciez et gérez les références de l’objet vous-même, et aucun fichier de concepteur n’est donc requis.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Contrôles (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/controls)

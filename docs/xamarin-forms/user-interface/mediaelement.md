@@ -10,18 +10,18 @@ ms.date: 02/18/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1dfa51177bba3ebf1e3e29208cc926c77567a048
-ms.sourcegitcommit: c000c0ed15b7b2ef2a8f46a39171e11b6d9f8a5d
+ms.openlocfilehash: f1a015784dd87bc4c6da7daf99a6e463c1e65e5c
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84980101"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937161"
 ---
 # <a name="xamarinforms-mediaelement"></a>Xamarin.FormsMediaElement
 
-![](~/media/shared/preview.png "This API is currently pre-release")
+![API de la version préliminaire](~/media/shared/preview.png "Cette API est actuellement en préversion.")
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-mediaelementdemos/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-mediaelementdemos/)
 
 [`MediaElement`](xref:Xamarin.Forms.MediaElement)est une vue pour la lecture de données audio et vidéo. Les médias pris en charge par la plateforme sous-jacente peuvent être lus à partir des sources suivantes :
 

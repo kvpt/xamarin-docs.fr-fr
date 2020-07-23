@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 321ea87bfa4f460c4eaab31ef2ede6f3eb1b927f
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 1e1a9f3cd601a9d469bb53cce412daf08a8140f6
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573571"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938890"
 ---
 # <a name="working-with-tvos-stacked-views-in-xamarin"></a>Utilisation des vues empilées tvOS dans Xamarin
 
@@ -20,7 +20,7 @@ Le contrôle d’affichage de la pile ( `UIStackView` ) tire parti de la puissan
 
 La disposition de toutes les sous-vues attachées à un affichage de la pile est gérée par celle-ci en fonction des propriétés définies par le développeur, telles que l’axe, la distribution, l’alignement et l’espacement :
 
-[![](stacked-views-images/stacked01.png "Subview layout diagram")](stacked-views-images/stacked01.png#lightbox)
+[![Diagramme de disposition de sous-affichage](stacked-views-images/stacked01.png)](stacked-views-images/stacked01.png#lightbox)
 
 Lors de l’utilisation `UIStackView` d’un dans une application Xamarin. tvOS, le développeur peut définir les sous-vues soit à l’intérieur d’un Storyboard dans le concepteur iOS, soit en ajoutant et supprimant des sous-vues dans le code C#.
 
@@ -97,21 +97,21 @@ Le moyen le plus simple d’utiliser les vues de pile dans une application Xamar
 1. Dans la **panneau solutions**, double-cliquez sur le `Main.storyboard` fichier et ouvrez-le pour le modifier.
 1. Concevez la disposition de vos éléments individuels que vous allez ajouter à l’affichage de la pile :
 
-    [![](stacked-views-images/layout01.png "Element layout example")](stacked-views-images/layout01.png#lightbox)
+    [![Exemple de disposition d’élément](stacked-views-images/layout01.png)](stacked-views-images/layout01.png#lightbox)
 1. Ajoutez toutes les contraintes requises aux éléments pour garantir leur mise à l’échelle correctement. Cette étape est importante une fois que l’élément est ajouté à l’affichage de la pile.
 1. Effectuez le nombre requis de copies (quatre dans ce cas) :
 
-    [![](stacked-views-images/layout02.png "The required number of copies")](stacked-views-images/layout02.png#lightbox)
+    [![Nombre requis de copies](stacked-views-images/layout02.png)](stacked-views-images/layout02.png#lightbox)
 1. Faites glisser une vue de la **pile** de la **boîte à outils** et déposez-la sur la vue :
 
-    [![](stacked-views-images/layout03.png "A Stack View")](stacked-views-images/layout03.png#lightbox)
+    [![Affichage de la pile](stacked-views-images/layout03.png)](stacked-views-images/layout03.png#lightbox)
 1. Sélectionnez l’affichage des piles, sous l' **onglet widget** du **panneau Propriétés** sélectionnez **remplissage** pour l' **alignement**, **remplissez la même** position pour la **distribution** et entrez `25` pour l' **espacement**:
 
-    [![](stacked-views-images/layout04.png "The Widget Tab")](stacked-views-images/layout04.png#lightbox)
+    [![Onglet widget](stacked-views-images/layout04.png)](stacked-views-images/layout04.png#lightbox)
 1. Placez l’affichage de la pile à l’écran où vous le souhaitez et ajoutez des contraintes pour le conserver à l’emplacement requis.
 1. Sélectionnez les éléments individuels et faites-les glisser vers l’affichage de la pile :
 
-    [![](stacked-views-images/layout05.png "The individual elements in the Stack View")](stacked-views-images/layout05.png#lightbox)
+    [![Éléments individuels dans l’affichage de la pile](stacked-views-images/layout05.png)](stacked-views-images/layout05.png#lightbox)
 1. La disposition est ajustée et les éléments sont disposés en vue pile en fonction des attributs que vous avez définis ci-dessus.
 1. Affectez des **noms** sous l' **onglet widget** de l' **Explorateur de propriétés** pour travailler avec vos contrôles d’interface utilisateur dans du code C#.
 1. Enregistrez vos modifications.
@@ -121,21 +121,21 @@ Le moyen le plus simple d’utiliser les vues de pile dans une application Xamar
 1. Dans la **Explorateur de solutions**, double-cliquez sur le `Main.storyboard` fichier et ouvrez-le pour le modifier.
 1. Concevez la disposition de vos éléments individuels que vous allez ajouter à l’affichage de la pile :
 
-    [![](stacked-views-images/layout01.png "Example element layout")](stacked-views-images/layout01.png#lightbox)
+    [![Exemple de disposition des éléments](stacked-views-images/layout01.png)](stacked-views-images/layout01.png#lightbox)
 1. Ajoutez toutes les contraintes requises aux éléments pour garantir leur mise à l’échelle correctement. Cette étape est importante une fois que l’élément est ajouté à l’affichage de la pile.
 1. Effectuez le nombre requis de copies (quatre dans ce cas) :
 
-    [![](stacked-views-images/layout02.png "The required number of copies")](stacked-views-images/layout02.png#lightbox)
+    [![Nombre requis de copies](stacked-views-images/layout02.png)](stacked-views-images/layout02.png#lightbox)
 1. Faites glisser une vue de la **pile** de la **boîte à outils** et déposez-la sur la vue :
 
-    [![](stacked-views-images/layout03-vs.png "A Stack View")](stacked-views-images/layout03-vs.png#lightbox)
+    [![Affichage de la pile](stacked-views-images/layout03-vs.png)](stacked-views-images/layout03-vs.png#lightbox)
 1. Sélectionnez l’affichage des piles, puis dans l' **onglet widget** de l' **Explorateur de propriétés** , sélectionnez **remplissage** pour l' **alignement**, **remplissez la même** **distribution** et entrez `25` pour l' **espacement**:
 
-    [![](stacked-views-images/layout04-vs.png "The Widget Tab")](stacked-views-images/layout04-vs.png#lightbox)
+    [![Onglet widget](stacked-views-images/layout04-vs.png)](stacked-views-images/layout04-vs.png#lightbox)
 1. Placez l’affichage de la pile à l’écran où vous le souhaitez et ajoutez des contraintes pour le conserver à l’emplacement requis.
 1. Sélectionnez les éléments individuels et faites-les glisser vers l’affichage de la pile :
 
-    [![](stacked-views-images/layout05-vs.png "The individual elements in the Stack View")](stacked-views-images/layout05-vs.png#lightbox)
+    [![Éléments individuels dans l’affichage de la pile](stacked-views-images/layout05-vs.png)](stacked-views-images/layout05-vs.png#lightbox)
 1. La disposition est ajustée et les éléments sont disposés en vue pile en fonction des attributs que vous avez définis ci-dessus.
 1. Affectez des **noms** sous l' **onglet widget** de l' **Explorateur de propriétés** pour travailler avec vos contrôles d’interface utilisateur dans du code C#.
 1. Enregistrez vos modifications.
@@ -184,11 +184,11 @@ partial void PlayerCountChanged (Foundation.NSObject sender) {
 
 Lorsque l’application est exécutée, les quatre éléments sont répartis de manière égale dans notre vue de la pile :
 
-[![](stacked-views-images/layout06.png "When the app is run, the four elements will equally be distributed in our Stack View")](stacked-views-images/layout06.png#lightbox)
+[![Lorsque l’application est exécutée, les quatre éléments sont répartis de manière égale dans notre vue de la pile](stacked-views-images/layout06.png)](stacked-views-images/layout06.png#lightbox)
 
 Si le nombre de joueurs est réduit, les vues inutilisées sont masquées et l’affichage de la pile ajuste la disposition pour s’ajuster :
 
-[![](stacked-views-images/layout07.png "If the number of players is decreased, the unused views are hidden and the Stack View adjust the layout to fit")](stacked-views-images/layout07.png#lightbox)
+[![Si le nombre de joueurs est réduit, les vues inutilisées sont masquées et l’affichage de la pile ajuste la disposition pour ajuster](stacked-views-images/layout07.png)](stacked-views-images/layout07.png#lightbox)
 
 <a name="Populate-a-Stack-View-from-Code"></a>
 
@@ -307,7 +307,7 @@ La plupart des propriétés de la vue de la pile peuvent être spécifiées à l
 
 Cet article a abordé la conception et l’utilisation de la vue empilée dans une application Xamarin. tvOS.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Exemples tvOS](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
 - [tvOS](https://developer.apple.com/tvos/)

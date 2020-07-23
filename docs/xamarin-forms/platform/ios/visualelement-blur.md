@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ce28a9ef2d5cbf4bdf1c12a85ea64ac9bb8bee8b
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 44504ed47ca5ea94ed22c9569f8674ca0e63d89a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137005"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937863"
 ---
 # <a name="visualelement-blur-on-ios"></a>VisualElement flou sur iOS
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Ce spécifique à la plateforme iOS est utilisé pour brouiller le contenu en dessous de lui et peut être appliqué à n’importe quel [`VisualElement`](xref:Xamarin.Forms.VisualElement) . Il est consommé en XAML en affectant [`VisualElement.BlurEffect`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.BlurEffectProperty) à la propriété jointe une valeur de l' [`BlurEffectStyle`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle) énumération :
 
@@ -49,7 +49,7 @@ La `BoxView.On<iOS>` méthode spécifie que ce spécifique à la plateforme s’
 
 Le résultat est qu’un spécifié [`BlurEffectStyle`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle) est appliqué à l' [`BoxView`](xref:Xamarin.Forms.BoxView) instance, ce qui atténue la [`Image`](xref:Xamarin.Forms.Image) couche en dessous :
 
-![](applying-blur-images/blur-effect.png "Blur Effect Platform-Specific")
+![Effet de flou propre à la plateforme](applying-blur-images/blur-effect.png)
 
 > [!NOTE]
 > Lors de l’ajout d’un effet de flou à un [`VisualElement`](xref:Xamarin.Forms.VisualElement) , les événements tactiles sont toujours reçus par `VisualElement` .

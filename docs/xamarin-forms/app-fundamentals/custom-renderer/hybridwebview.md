@@ -10,16 +10,16 @@ ms.date: 03/31/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8c83742896af4a22bcff327df82c1b14ff983bb2
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e0653e46d2c349e05df8716e5114de8f631cab1a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138968"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939540"
 ---
 # <a name="customizing-a-webview"></a>Personnalisation d’une WebView
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-hybridwebview)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-hybridwebview)
 
 _Un Xamarin.Forms `WebView` est une vue qui affiche du contenu Web et HTML dans votre application. Cet article explique comment créer un convertisseur personnalisé qui étend le `WebView` pour permettre au code C# d’être appelé à partir de JavaScript._
 
@@ -27,7 +27,7 @@ Chaque Xamarin.Forms vue possède un convertisseur associé pour chaque platefor
 
 Le diagramme suivant illustre la relation entre le [`View`](xref:Xamarin.Forms.View) et les contrôles natifs correspondants qui l’implémentent :
 
-![](hybridwebview-images/webview-classes.png "Relationship Between the WebView Class and its Implementing Native Classes")
+![Relation entre la classe WebView et son implémentation des classes natives](hybridwebview-images/webview-classes.png)
 
 Le processus de rendu peut être utilisé pour implémenter des personnalisations de plateforme en créant un convertisseur personnalisé pour un [`WebView`](xref:Xamarin.Forms.WebView) sur chaque plateforme. Le processus pour y parvenir est le suivant :
 
@@ -155,11 +155,11 @@ Le processus de création de la classe de renderer personnalisé est le suivant�
 
 Le diagramme suivant illustre les responsabilités de chaque projet dans l’exemple d’application ainsi que les relations qu’ils entretiennent les uns avec les autres :
 
-![](hybridwebview-images/solution-structure.png "HybridWebView Custom Renderer Project Responsibilities")
+![Responsabilités du projet de renderer personnalisé HybridWebView](hybridwebview-images/solution-structure.png)
 
 Le `HybridWebView` contrôle personnalisé est rendu par les classes de convertisseur de plateforme, qui dérivent de la `WkWebViewRenderer` classe sur iOS et de la `WebViewRenderer` classe sur Android et UWP. Cela entraîne `HybridWebView` le rendu de chaque contrôle personnalisé avec les contrôles Web natifs, comme illustré dans les captures d’écran suivantes :
 
-![](hybridwebview-images/screenshots.png "HybridWebView on each Platform")
+![HybridWebView sur chaque plateforme](hybridwebview-images/screenshots.png)
 
 Les `WkWebViewRenderer` `WebViewRenderer` classes et exposent la `OnElementChanged` méthode, qui est appelée lorsque le Xamarin.Forms contrôle personnalisé est créé pour restituer le contrôle Web natif correspondant. Cette méthode prend un `VisualElementChangedEventArgs` paramètre qui contient `OldElement` les `NewElement` Propriétés et. Ces propriétés représentent l' Xamarin.Forms élément auquel le convertisseur *a été* attaché, et l' Xamarin.Forms élément auquel le convertisseur *est* attaché, respectivement. Dans l’exemple d’application, la propriété `OldElement` sera `null` et la propriété `NewElement` contiendra une référence à l’instance `HybridWebView`.
 

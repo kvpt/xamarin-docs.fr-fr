@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 17ccc67b2976b93fbb290a1d2425168cab50228e
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 497096e7f422e8337498339737ab304b0d896dfe
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84568787"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938994"
 ---
 # <a name="watchos-troubleshooting"></a>Résolution des problèmes surveilléos
 
@@ -36,7 +36,7 @@ Cette page contient des informations supplémentaires et des solutions de contou
 <a name="deploy"></a>
 
 - Les versions antérieures de Visual Studio pour Mac afficher de manière incorrecte l’une des icônes **AppleCompanionSettings** comme 88x88 pixels ; ce qui entraîne une **erreur d’icône manquante** si vous tentez de l’envoyer à l’App Store.
-    Cette icône doit être 87x87 pixels (29 unités pour les **@3x** écrans de retine). Vous ne pouvez pas résoudre ce problème dans Visual Studio pour Mac : modifiez la ressource d’image dans Xcode ou modifiez manuellement le fichier **Contents. JSON** .
+    Cette icône doit être 87x87 pixels (29 unités pour les **@3x** écrans de retine). Vous ne pouvez pas résoudre ce problème dans Visual Studio pour Mac : modifiez la ressource d’image dans Xcode ou modifiez manuellement l' **Contents.jsdans** le fichier.
 
 - Si l' **ID d’offre groupée info. plist** du projet d’Extension Watch > n’est pas [correctement défini](~/ios/watchos/get-started/project-references.md) pour correspondre à l' **ID d’offre groupée**de l’application espion, le débogueur ne parvient pas à se connecter et Visual Studio pour Mac attend le message *« en attente de la connexion du débogueur »*.
 
@@ -47,7 +47,7 @@ Cette page contient des informations supplémentaires et des solutions de contou
 - Vous ne pouvez pas `WKNotificationControllers` en ajouter deux à une table de montage séquentiel.
     Solution de contournement : l' `notificationCategory` élément dans le fichier XML de la table de montage séquentiel est toujours inséré avec le même `id` . Pour contourner ce problème, vous pouvez ajouter deux ou plusieurs contrôleurs de notification, ouvrir le fichier de plan conceptuel dans un éditeur de texte, puis modifier manuellement l' `id` élément pour qu’il soit unique.
 
-    [![](troubleshooting-images/duplicate-id-sml.png "Opening the storyboard file in a text editor and manually change the id element to be unique")](troubleshooting-images/duplicate-id.png#lightbox)
+    [![Ouverture du fichier de table de montage séquentiel dans un éditeur de texte et modification manuelle de l’élément ID pour qu’il soit unique](troubleshooting-images/duplicate-id-sml.png)](troubleshooting-images/duplicate-id.png#lightbox)
 
 - Une erreur « l’application n’a pas été générée » peut s’afficher lors de la tentative de lancement de l’application. Cela se produit après un **nettoyage** lorsque le projet de démarrage est défini sur le projet d’extension Watch.
     Le correctif consiste à sélectionner **générer > régénérer tout** , puis à relancer l’application.
@@ -74,7 +74,7 @@ Il est facile de supprimer le canal alpha sur Mac OS X à l’aide de l’applic
 
 2. La boîte de dialogue qui s’affiche contient une case à cocher **alpha** si un canal alpha est présent.
 
-    ![](troubleshooting-images/remove-alpha-sml.png "The dialog that appears will include an Alpha checkbox if an alpha channel is present")
+    ![La boîte de dialogue qui s’affiche contient une case à cocher alpha si un canal alpha est présent.](troubleshooting-images/remove-alpha-sml.png)
 
 3. *Décochez* la case **alpha** et **Enregistrez** le fichier à l’emplacement approprié.
 
@@ -91,15 +91,15 @@ Il est facile de supprimer le canal alpha sur Mac OS X à l’aide de l’applic
 
 1. Ouvrez l’interface de l’application Watch **. Storyboard** dans **Xcode Interface Builder**.
 
-    ![](troubleshooting-images/add-6.png "Opening the storyboard in Xcode Interface Builder")
+    ![Ouverture de la table de montage séquentiel dans Xcode Interface Builder](troubleshooting-images/add-6.png)
 
 2. Faites glisser un nouveau `InterfaceController` sur le Storyboard :
 
-    ![](troubleshooting-images/add-1.png "A InterfaceController")
+    ![Un InterfaceController](troubleshooting-images/add-1.png)
 
 3. Vous pouvez maintenant faire glisser des contrôles sur le contrôleur d’interface (par exemple, étiquettes et boutons), mais vous ne pouvez pas créer de prises ou d’actions pour l’instant, car il n’y a aucun fichier d’en-tête **. h** . Les étapes suivantes entraînent la création du fichier d’en-tête **. h** requis.
 
-    ![](troubleshooting-images/add-2.png "A button in the layout")
+    ![Un bouton dans la disposition](troubleshooting-images/add-2.png)
 
 4. Fermez le Storyboard et revenez à Visual Studio pour Mac. Créez un nouveau fichier C# **MyInterfaceController.cs** (ou le nom de votre choix) dans le projet d’extension de l' **application Watch** (pas l’application Watch elle-même où se trouve la table de montage séquentiel). Ajoutez le code suivant (mise à jour de l’espace de noms, ClassName et du nom du constructeur) :
 
@@ -158,34 +158,34 @@ Il est facile de supprimer le canal alpha sur Mac OS X à l’aide de l’applic
     > [!TIP]
     > Vous pouvez (si vous le souhaitez) faire de ce fichier un nœud enfant du premier fichier en le faisant glisser vers l’autre fichier C# dans le Panneau Solutions de Visual Studio pour Mac. Elle s’affiche alors comme suit :
 
-    ![](troubleshooting-images/add-5.png "The Solution pad")
+    ![Panneau solutions](troubleshooting-images/add-5.png)
 
 6. Sélectionnez **générer > générer tout** afin que la synchronisation Xcode reconnaisse la nouvelle classe (via l' `Register` attribut) que nous avons utilisée.
 
 7. Rouvrez la table de montage séquentiel en cliquant avec le bouton droit sur le fichier d’animation de l’application Watch, puis en sélectionnant **Ouvrir avec > Xcode Interface Builder**:
 
-    ![](troubleshooting-images/add-6.png "Opening the storyboard in Interface Builder")
+    ![Ouverture de la table de montage séquentiel dans Interface Builder](troubleshooting-images/add-6.png)
 
 8. Sélectionnez votre nouveau contrôleur d’interface et donnez-lui le ClassName que vous avez défini ci-dessus, par exemple. `MyInterfaceController`.
     Si tout fonctionne correctement, il doit apparaître automatiquement dans la liste déroulante **classe :** et vous pouvez le sélectionner à partir de là.
 
-    ![](troubleshooting-images/add-4.png "Setting a custom class")
+    ![Définition d’une classe personnalisée](troubleshooting-images/add-4.png)
 
 9. Choisissez la vue de l’éditeur de l' **Assistant** dans Xcode (l’icône avec deux cercles se chevauchant) pour que vous puissiez voir la table de montage séquentiel et le code côte à côte :
 
-    ![](troubleshooting-images/add-7.png "The Assistant Editor toolbar item")
+    ![L’élément de barre d’outils Éditeur de l’Assistant](troubleshooting-images/add-7.png)
 
     Lorsque le focus se trouve dans le volet de code, vérifiez que vous examinez le fichier d’en-tête **. h** et, si vous ne cliquez pas avec le bouton droit dans la barre de navigation et sélectionnez le fichier approprié (**MyInterfaceController. h**).
 
-    ![](troubleshooting-images/add-8.png "Select MyInterfaceController")
+    ![Sélectionner MyInterfaceController](troubleshooting-images/add-8.png)
 
 10. Vous pouvez maintenant créer des prises et des actions en **appuyant sur CTRL + déplacer** du storyboard dans le fichier d’en-tête **. h** .
 
-    ![](troubleshooting-images/add-9.png "Creating outlets and actions")
+    ![Création des sorties et des actions](troubleshooting-images/add-9.png)
 
     Lorsque vous relâchez le glissement, vous êtes invité à indiquer si vous souhaitez créer une sortie ou une action, et choisir son nom :
 
-    ![](troubleshooting-images/add-a.png "The outlet and an action dialog")
+    ![Boîte de dialogue sortie et action](troubleshooting-images/add-a.png)
 
 11. Une fois que les modifications de la table de montage séquentiel sont enregistrées et que Xcode est fermé, revenez à Visual Studio pour Mac. Il détecte les modifications du fichier d’en-tête et ajoute automatiquement le code au fichier **. Designer.cs** :
 
@@ -291,7 +291,7 @@ Exemple :
 --device=:v2:runtime=com.apple.CoreSimulator.SimRuntime.iOS-8-2,devicetype=com.apple.CoreSimulator.SimDeviceType.iPhone-6
 ```
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [WatchKitCatalog (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
 - [WatchTables (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchtables)

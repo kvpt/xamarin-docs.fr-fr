@@ -10,16 +10,16 @@ ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 896f652d69bca0f186e53185926ee5c46d87fa7c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: c234af1a5d47446149c92a71e9ce592dc0366b8f
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84570672"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937460"
 ---
 # <a name="xamarinforms-carousel-page"></a>Xamarin.FormsPage du carrousel
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-carouselpage)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-carouselpage)
 
 _Le Xamarin.Forms CarouselPage est une page que les utilisateurs peuvent faire glisser d’un côté à l’autre pour naviguer dans les pages de contenu, comme une galerie. Cet article montre comment utiliser un CarouselPage pour naviguer dans une collection de pages._
 
@@ -28,15 +28,15 @@ _Le Xamarin.Forms CarouselPage est une page que les utilisateurs peuvent faire g
 
 Les captures d’écran suivantes montrent une [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) sur chaque plateforme :
 
-![](carousel-page-images/thirdpage.png "CarouselPage Third Item")
+![Troisième élément CarouselPage](carousel-page-images/thirdpage.png)
 
 La disposition d’un [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) est identique sur chaque plateforme. Les pages peuvent être parcourues en balayant de droite à gauche pour naviguer vers l’avant dans la collection, et en balayant de gauche à droite pour naviguer en arrière dans la collection. Les captures d’écran suivantes montrent la première page d’une [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) instance :
 
-![](carousel-page-images/firstpage.png "CarouselPage First Item")
+![Premier élément CarouselPage](carousel-page-images/firstpage.png)
 
 Un balayage de droite à gauche permet d’accéder à la deuxième page, comme illustré dans les captures d’écran suivantes :
 
-![](carousel-page-images/secondpage.png "CarouselPage Second Item")
+![Deuxième élément CarouselPage](carousel-page-images/secondpage.png)
 
 Un nouveau balayage de droite à gauche permet d’accéder à la troisième page, tandis qu’un balayage de gauche à droite permet de revenir à la page précédente.
 

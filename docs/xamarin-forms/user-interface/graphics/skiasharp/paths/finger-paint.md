@@ -10,22 +10,22 @@ ms.date: 04/05/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 61ae651a2402204f69f642235d74d8d641b47988
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 074b782bfc5458cf89e593913b6f31de633ffd73
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139020"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938149"
 ---
 # <a name="finger-painting-in-skiasharp"></a>Peinture par doigt dans SkiaSharp
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Utilisez vos doigts pour peindre sur le canevas._
 
 Un `SKPath` objet peut être continuellement mis à jour et affiché. Cette fonctionnalité permet d’utiliser un chemin d’accès pour le dessin interactif, par exemple dans un programme de peinture par doigt.
 
-![](finger-paint-images/fingerpaintsample.png "An exercise in finger painting")
+![Exercice de peinture par doigt](finger-paint-images/fingerpaintsample.png)
 
 La prise en charge de Touch dans Xamarin.Forms n’autorise pas le suivi des doigts individuels sur l’écran, ce qui Xamarin.Forms a pour effet de développer un effet tactile pour fournir un support tactile supplémentaire. Cet effet est décrit dans l’article [**appel d’événements à partir d’effets**](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md). Les [**démonstrations d’effet tactile**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/) du programme incluent deux pages qui utilisent SkiaSharp, y compris un programme de peinture par doigt.
 
@@ -168,11 +168,11 @@ public partial class FingerPaintPage : ContentPage
 
 Vos peintures Finger ne sont limitées que par vos talents :
 
-[![](finger-paint-images/fingerpaint-small.png "Triple screenshot of the Finger Paint page")](finger-paint-images/fingerpaint-large.png#lightbox "Triple screenshot of the Finger Paint page")
+[![Triple capture d’écran de la page Finger Paint](finger-paint-images/fingerpaint-small.png)](finger-paint-images/fingerpaint-large.png#lightbox "Triple capture d’écran de la page Finger Paint")
 
 Vous avez maintenant vu comment dessiner des lignes et définir des courbes à l’aide d’équations paramétriques. Une section ultérieure sur les [**courbes et chemins d’accès SkiaSharp**](../curves/index.md) couvre les différents types de courbes `SKPath` pris en charge par. Mais un prérequis utile est l’exploration des [**transformations SkiaSharp**](../transforms/index.md).
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

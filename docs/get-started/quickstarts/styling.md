@@ -12,16 +12,16 @@ ms.date: 02/07/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2d458bafc5bb1c8dcffc7858fd15734187f7612b
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 05560ae7c3d255140c0782e5f442dd2356d86cad
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84134067"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937421"
 ---
 # <a name="style-a-cross-platform-xamarinforms-application"></a>Styliser une application multiplateforme Xamarin.Forms
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-styled/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-styled/)
 
 Dans ce guide de démarrage rapide, vous allez apprendre à :
 
@@ -29,8 +29,8 @@ Dans ce guide de démarrage rapide, vous allez apprendre à :
 
 Le Guide de démarrage rapide explique comment styliser une Xamarin.Forms application multiplateforme à l’aide de styles XAML. L’application finale est indiquée ci-dessous :
 
-[![](styling-images/screenshots1-sml.png "Notes Page")](styling-images/screenshots1.png#lightbox "Notes Page")
-[![](styling-images/screenshots2-sml.png "Note Entry Page")](styling-images/screenshots2.png#lightbox "Note Entry Page")
+Page de [ ![ Commentaires](styling-images/screenshots1-sml.png)](styling-images/screenshots1.png#lightbox "Page de notes")page 
+ [ ![ entrée note](styling-images/screenshots2-sml.png)](styling-images/screenshots2.png#lightbox "Page d’entrée de note")
 
 ### <a name="prerequisites"></a>Prérequis
 

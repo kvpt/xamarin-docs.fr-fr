@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 75ef118b642a8c6a66205c6f7e3bc03089c6593c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: f7149a818506611176f7c34a6fae4ec733cd2ad9
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84127892"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938565"
 ---
 # <a name="picker-item-selection-on-ios"></a>Sélection de l’élément de sélecteur sur iOS
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Ce contrôle spécifique à la plateforme iOS lorsque la sélection d’élément se produit dans un [`Picker`](xref:Xamarin.Forms.Picker) , ce qui permet à l’utilisateur de spécifier la sélection de cet élément lors de l’exploration des éléments du contrôle, ou uniquement une fois que le bouton **terminé** est enfoncé. Il est consommé en XAML en affectant `Picker.UpdateMode` à la propriété jointe une valeur de l' `UpdateMode` énumération :
 
@@ -66,7 +66,7 @@ switch (picker.On<iOS>().UpdateMode())
 
 Le résultat est qu’un spécifié `UpdateMode` est appliqué au [`Picker`](xref:Xamarin.Forms.Picker) , qui contrôle le moment où la sélection de l’élément se produit :
 
-[![](picker-selection-images/picker-updatemode.png "Picker UpdateMode Platform-Specific")](picker-selection-images/picker-updatemode-large.png#lightbox "Picker UpdateMode Platform-Specific")
+[![Sélecteur UpdateMode-spécifique à la plateforme](picker-selection-images/picker-updatemode.png)](picker-selection-images/picker-updatemode-large.png#lightbox "Sélecteur UpdateMode-spécifique à la plateforme")
 
 ## <a name="related-links"></a>Liens connexes
 

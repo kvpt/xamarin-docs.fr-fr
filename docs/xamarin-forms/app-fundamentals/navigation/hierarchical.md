@@ -10,26 +10,26 @@ ms.date: 03/10/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ec35b03e7e96f0730813918bdd96e1408cfabde7
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 0d6a18ec55b49da2b668ccc183646d5e4dde5849
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84571491"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937226"
 ---
 # <a name="hierarchical-navigation"></a>Navigation hiérarchique
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-hierarchical)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-hierarchical)
 
 _La classe NavigationPage fournit une expérience de navigation hiérarchique dans laquelle l’utilisateur peut naviguer dans les pages, vers l’avant et vers l’arrière, selon les besoins. La classe implémente la navigation sous la forme d’une pile d’objets page LIFO (dernier entré, premier sorti). Cet article montre comment utiliser la classe NavigationPage pour effectuer la navigation dans une pile de pages._
 
 Pour passer d’une page à une autre, une application envoie une nouvelle page dans la pile de navigation, où elle devient la page active, comme illustré dans le diagramme suivant :
 
-![](hierarchical-images/pushing.png "Pushing a Page to the Navigation Stack")
+![Envoi d’une page vers la pile de navigation](hierarchical-images/pushing.png)
 
 Pour revenir à la page précédente, l’application dépile la page actuelle, et la nouvelle page tout en haut devient la page active, comme illustré dans le diagramme suivant :
 
-![](hierarchical-images/popping.png "Popping a Page from the Navigation Stack")
+![Retrait d’une page de la pile de navigation](hierarchical-images/popping.png)
 
 Les méthodes de navigation sont exposées par la [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) propriété sur tous les [`Page`](xref:Xamarin.Forms.Page) types dérivés. Ces méthodes permettent d’envoyer des pages dans la pile de navigation, de retirer des pages de la pile de navigation, et d’effectuer des manipulations de la pile.
 
@@ -37,7 +37,7 @@ Les méthodes de navigation sont exposées par la [`Navigation`](xref:Xamarin.Fo
 
 Dans la navigation hiérarchique, la [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) classe est utilisée pour naviguer dans une pile d' [`ContentPage`](xref:Xamarin.Forms.ContentPage) objets. Les captures d’écran suivantes montrent les principaux composants de `NavigationPage` sur chaque plateforme :
 
-![](hierarchical-images/navigationpage-components.png "NavigationPage Components")
+![Composants de NavigationPage](hierarchical-images/navigationpage-components.png)
 
 La disposition d’un dépend [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) de la plateforme :
 
@@ -63,7 +63,7 @@ public App ()
 
 Cela entraîne le push de l' `Page1Xaml` [`ContentPage`](xref:Xamarin.Forms.ContentPage) instance dans la pile de navigation, où elle devient la page active et la page racine de l’application. Ceci est illustré dans les captures d’écran suivantes :
 
-![](hierarchical-images/mainpage.png "Root Page of Navigation Stack")
+![Page racine de la pile de navigation](hierarchical-images/mainpage.png)
 
 > [!NOTE]
 > La [`RootPage`](xref:Xamarin.Forms.NavigationPage.RootPage) propriété d’une [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) instance de permet d’accéder à la première page de la pile de navigation.
@@ -81,7 +81,7 @@ async void OnNextPageButtonClicked (object sender, EventArgs e)
 
 L’instance de `Page2Xaml` est ainsi envoyée dans la pile de navigation, où elle devient la page active. Ceci est illustré dans les captures d’écran suivantes :
 
-![](hierarchical-images/secondpage.png "Page Pushed onto Navigation Stack")
+![Page envoyée dans la pile de navigation](hierarchical-images/secondpage.png)
 
 Lorsque la [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*) méthode est appelée, les événements suivants se produisent :
 
@@ -181,7 +181,7 @@ public MainPage (string date)
 
 Les données sont ensuite affichées sur la page en définissant la [`Label.Text`](xref:Xamarin.Forms.Label.Text) propriété, comme illustré dans les captures d’écran suivantes :
 
-![](hierarchical-images/passing-data-constructor.png "Data Passed Through a Page Constructor")
+![Données transmises par le biais d’un constructeur de page](hierarchical-images/passing-data-constructor.png)
 
 ### <a name="passing-data-through-a-bindingcontext"></a>Passage des données via un BindingContext
 
@@ -267,7 +267,7 @@ public class SecondPageCS : ContentPage
 
 Les données sont ensuite affichées sur la page par une série de [`Label`](xref:Xamarin.Forms.Label) contrôles, comme illustré dans les captures d’écran suivantes :
 
-![](hierarchical-images/passing-data-bindingcontext.png "Data Passed Through a BindingContext")
+![Données transmises par le biais d’un BindingContext](hierarchical-images/passing-data-bindingcontext.png)
 
 Pour plus d’informations sur la liaison de données, consultez [Notions de base de la liaison de données](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md).
 
@@ -277,11 +277,11 @@ La [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) propriété ex
 
 La [`InsertPageBefore`](xref:Xamarin.Forms.INavigation.InsertPageBefore*) méthode insère une page spécifiée dans la pile de navigation avant une page spécifiée existante, comme indiqué dans le diagramme suivant :
 
-![](hierarchical-images/insert-page-before.png "Inserting a Page in the Navigation Stack")
+![Insertion d’une page dans la pile de navigation](hierarchical-images/insert-page-before.png)
 
 La [`RemovePage`](xref:Xamarin.Forms.INavigation.RemovePage*) méthode supprime la page spécifiée de la pile de navigation, comme indiqué dans le diagramme suivant :
 
-![](hierarchical-images/remove-page.png "Removing a Page from the Navigation Stack")
+![Retrait d’une page de la pile de navigation](hierarchical-images/remove-page.png)
 
 Ces méthodes permettent de disposer d’une expérience de navigation personnalisée, par exemple remplacer une page de connexion par une nouvelle page, suite à une connexion réussie. L’exemple de code suivant illustre ce scénario :
 
@@ -356,7 +356,7 @@ Il existe un certain nombre de limitations à connaître lorsque vous affichez u
 - Sur Android, vous ne pouvez placer des vues dans la barre de navigation d’une `NavigationPage` que dans les applications qui utilisent app-compat.
 - Il n’est pas recommandé de placer des vues volumineuses et complexes, telles que [`ListView`](xref:Xamarin.Forms.ListView) et [`TableView`](xref:Xamarin.Forms.TableView) , dans la barre de navigation d’un `NavigationPage` .
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Navigation entre les pages](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)
 - [Hierarchical (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-hierarchical)

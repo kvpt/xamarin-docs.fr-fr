@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2017
-ms.openlocfilehash: 92d62e7ea53893089131a127bf9f2d808c6252b0
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: d4fe04412eb4fb456bc49d71c1e5fe87df5f9e76
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031355"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939636"
 ---
 # <a name="enhanced-user-notifications-in-xamarinios"></a>Notifications utilisateur améliorées dans Xamarin. iOS
 
@@ -94,7 +94,7 @@ Un développeur peut rencontrer plusieurs problèmes lors de l’utilisation de 
 
 ### <a name="about-the-new-user-notification-framework"></a>À propos de la nouvelle infrastructure de notification utilisateur
 
-Avec iOS 10, Apple a introduit la nouvelle infrastructure de notification utilisateur, qui remplace la méthode de `UIApplication` existante indiquée ci-dessus.
+Avec iOS 10, Apple a introduit la nouvelle infrastructure de notification utilisateur, qui remplace la `UIApplication` méthode existante mentionnée ci-dessus.
 
 L’infrastructure de notification utilisateur fournit les éléments suivants :
 
@@ -127,7 +127,7 @@ Il existe trois niveaux différents de demandes de notification que l’utilisat
 
 En outre, ces niveaux d’approbation doivent être demandés et définis pour les notifications locales et distantes.
 
-L’autorisation de notification doit être demandée dès le lancement de l’application en ajoutant le code suivant à la méthode `FinishedLaunching` de la `AppDelegate` et en définissant le type de notification souhaité (`UNAuthorizationOptions`) :
+L’autorisation de notification doit être demandée dès le lancement de l’application en ajoutant le code suivant à la `FinishedLaunching` méthode de `AppDelegate` et en définissant le type de notification souhaité ( `UNAuthorizationOptions` ) :
 
 ```csharp
 using UserNotifications;
@@ -161,34 +161,34 @@ Nouveauté d’iOS 10, le développeur doit informer le système d’exploitatio
 
 Pour fournir le droit requis, procédez comme suit :
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
-1. Double-cliquez sur le fichier `Entitlements.plist` dans le **panneau solutions** pour l’ouvrir et le modifier.
+1. Double-cliquez sur le `Entitlements.plist` fichier dans le **panneau solutions** pour l’ouvrir et le modifier.
 2. Basculez vers la vue **source** : 
 
-    [![](enhanced-user-notifications-images/setup01.png "The Source view")](enhanced-user-notifications-images/setup01.png#lightbox)
-3. Cliquez sur le bouton **+** pour ajouter une nouvelle clé.
-4. Entrez `aps-environment` pour la **propriété**, laissez le **type** `String` et entrez `development` ou `production` pour la **valeur**: 
+    [![Vue source](enhanced-user-notifications-images/setup01.png)](enhanced-user-notifications-images/setup01.png#lightbox)
+3. Cliquez sur le **+** bouton pour ajouter une nouvelle clé.
+4. Entrez `aps-environment` pour la **propriété**, laissez le **type** en tant que `String` et entrez `development` ou `production` pour la **valeur**: 
 
-    [![](enhanced-user-notifications-images/setup02.png "The aps-environment Property")](enhanced-user-notifications-images/setup02.png#lightbox)
-5. Enregistrez les modifications dans le fichier.
+    [![Propriété APS-Environment](enhanced-user-notifications-images/setup02.png)](enhanced-user-notifications-images/setup02.png#lightbox)
+5. Enregistrez les modifications du fichier.
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. Double-cliquez sur le fichier `Entitlements.plist` dans le **Explorateur de solutions** pour l’ouvrir et le modifier.
-2. Cliquez sur le bouton **+** pour ajouter une nouvelle clé.
-3. Entrez `aps-environment` pour la **propriété**, laissez le **type** `String` et entrez `development` ou `production` pour la **valeur**: 
+1. Double-cliquez sur le `Entitlements.plist` fichier dans le **Explorateur de solutions** pour l’ouvrir et le modifier.
+2. Cliquez sur le **+** bouton pour ajouter une nouvelle clé.
+3. Entrez `aps-environment` pour la **propriété**, laissez le **type** en tant que `String` et entrez `development` ou `production` pour la **valeur**: 
 
-    [![](enhanced-user-notifications-images/setup02w.png "The aps-environment Property")](enhanced-user-notifications-images/setup02.png#lightbox)
-4. Enregistrez les modifications dans le fichier.
+    [![Propriété APS-Environment](enhanced-user-notifications-images/setup02w.png)](enhanced-user-notifications-images/setup02.png#lightbox)
+4. Enregistrez les modifications du fichier.
 
 -----
 
 ### <a name="registering-for-remote-notifications"></a>Inscription pour les notifications distantes
 
-Si l’application envoie et reçoit des notifications distantes, elle doit toujours effectuer une _inscription de jeton_ à l’aide de l’API `UIApplication` existante. Cette inscription requiert que l’appareil ait un APNs d’accès à la connexion réseau active, ce qui génère le jeton nécessaire qui sera envoyé à l’application. L’application doit ensuite transférer ce jeton à l’application côté serveur du développeur pour s’inscrire aux notifications distantes :
+Si l’application envoie et reçoit des notifications distantes, elle doit toujours effectuer une _inscription de jeton_ à l’aide de l’API existante `UIApplication` . Cette inscription requiert que l’appareil ait un APNs d’accès à la connexion réseau active, ce qui génère le jeton nécessaire qui sera envoyé à l’application. L’application doit ensuite transférer ce jeton à l’application côté serveur du développeur pour s’inscrire aux notifications distantes :
 
-[![](enhanced-user-notifications-images/token01.png "Token Registration overview")](enhanced-user-notifications-images/token01.png#lightbox)
+[![Présentation de l’inscription des jetons](enhanced-user-notifications-images/token01.png)](enhanced-user-notifications-images/token01.png#lightbox)
 
 Utilisez le code suivant pour initialiser l’inscription requise :
 
@@ -198,7 +198,7 @@ UIApplication.SharedApplication.RegisterForRemoteNotifications ();
 
 Le jeton qui est envoyé à l’application côté serveur du développeur doit être inclus dans la charge utile de notification qui est envoyée du serveur à APNs lors de l’envoi d’une notification distante :
 
-[![](enhanced-user-notifications-images/token02.png "The token included as part of the Notification Payload")](enhanced-user-notifications-images/token02.png#lightbox)
+[![Jeton inclus dans la charge utile de notification](enhanced-user-notifications-images/token02.png)](enhanced-user-notifications-images/token02.png#lightbox)
 
 Le jeton joue le rôle de clé qui relie la notification et l’application utilisée pour ouvrir ou répondre à la notification.
 
@@ -242,11 +242,11 @@ Pour les notifications distantes, le processus est similaire :
 Une fois le contenu de la notification créé, l’application doit planifier le moment auquel la notification est présentée à l’utilisateur en définissant un *déclencheur*. iOS 10 propose quatre types de déclencheurs :
 
 - **Notification push** : est utilisé exclusivement avec les notifications distantes et est déclenché quand APNs envoie un package de notification à l’application en cours d’exécution sur l’appareil.
-- **Intervalle de temps** -permet de planifier une notification locale à partir d’un intervalle de temps commençant à maintenant et en terminant un point ultérieur. Par exemple, `var trigger =  UNTimeIntervalNotificationTrigger.CreateTrigger (5, false);`.
+- **Intervalle de temps** -permet de planifier une notification locale à partir d’un intervalle de temps commençant à maintenant et en terminant un point ultérieur. Par exemple : `var trigger =  UNTimeIntervalNotificationTrigger.CreateTrigger (5, false);`
 - **Date du calendrier** -permet de planifier des notifications locales pour une date et une heure spécifiques.
 - **Basé sur l’emplacement** : permet de planifier les notifications locales lorsque l’appareil iOS entre en déplacement ou en quittant un emplacement géographique spécifique, ou se trouve dans une proximité donnée à n’importe quelle balise Bluetooth.
 
-Lorsqu’une notification locale est prête, l’application doit appeler la méthode `Add` de l’objet `UNUserNotificationCenter` pour planifier son affichage à l’utilisateur. Pour les notifications distantes, l’application côté serveur envoie une charge utile de notification à APNs, qui envoie ensuite le paquet à l’appareil de l’utilisateur.
+Lorsqu’une notification locale est prête, l’application doit appeler la `Add` méthode de l' `UNUserNotificationCenter` objet pour planifier son affichage à l’utilisateur. Pour les notifications distantes, l’application côté serveur envoie une charge utile de notification à APNs, qui envoie ensuite le paquet à l’appareil de l’utilisateur.
 
 En regroupant tous les éléments, un exemple de notification locale peut se présenter comme suit :
 
@@ -274,7 +274,7 @@ UNUserNotificationCenter.Current.AddNotificationRequest (request, (err) => {
 
 ## <a name="handling-foreground-app-notifications"></a>Gestion des notifications d’application de premier plan
 
-Nouveauté d’iOS 10, une application peut gérer les notifications différemment lorsqu’elle se trouve au premier plan et qu’une notification est déclenchée. En fournissant une `UNUserNotificationCenterDelegate` et en implémentant la méthode `WillPresentNotification`, l’application peut assumer la responsabilité de l’affichage de la notification. Exemple :
+Nouveauté d’iOS 10, une application peut gérer les notifications différemment lorsqu’elle se trouve au premier plan et qu’une notification est déclenchée. En fournissant un `UNUserNotificationCenterDelegate` et en implémentant la `WillPresentNotification` méthode, l’application peut assumer la responsabilité de l’affichage de la notification. Par exemple :
 
 ```csharp
 using System;
@@ -305,7 +305,7 @@ namespace MonkeyNotification
 }
 ```
 
-Ce code écrit simplement le contenu du `UNNotification` dans la sortie de l’application et demande au système d’afficher l’alerte standard pour la notification. 
+Ce code écrit simplement le contenu de `UNNotification` dans la sortie de l’application et demande au système d’afficher l’alerte standard pour la notification. 
 
 Si l’application souhaite afficher la notification elle-même lorsqu’elle se trouvait au premier plan et n’utilise pas les valeurs système par défaut, transmettez `None` au gestionnaire d’achèvement. Exemple :
 
@@ -313,7 +313,7 @@ Si l’application souhaite afficher la notification elle-même lorsqu’elle se
 completionHandler (UNNotificationPresentationOptions.None);
 ```
 
-Une fois ce code en place, ouvrez le fichier `AppDelegate.cs` pour le modifier, puis modifiez la méthode `FinishedLaunching` de manière à ce qu’elle ressemble à ce qui suit :
+Une fois ce code en place, ouvrez le `AppDelegate.cs` fichier pour le modifier et modifiez la `FinishedLaunching` méthode pour qu’elle ressemble à ce qui suit :
 
 ```csharp
 public override bool FinishedLaunching (UIApplication application, NSDictionary launchOptions)
@@ -330,13 +330,13 @@ public override bool FinishedLaunching (UIApplication application, NSDictionary 
 }
 ```
 
-Ce code attache la `UNUserNotificationCenterDelegate` personnalisée ci-dessus au `UNUserNotificationCenter` actuel, de sorte que l’application peut gérer la notification pendant qu’elle est active et au premier plan.
+Ce code associe le personnalisé `UNUserNotificationCenterDelegate` ci-dessus au actuel `UNUserNotificationCenter` , de sorte que l’application peut gérer la notification pendant qu’elle est active et au premier plan.
 
 ## <a name="notification-management"></a>Gestion des notifications
 
 Nouveauté d’iOS 10, la gestion des notifications permet d’accéder aux notifications en attente et remises, et ajoute la possibilité de supprimer, mettre à jour ou promouvoir ces notifications.
 
-Une partie importante de la gestion des notifications est l' _identificateur de demande_ qui a été affecté à la notification lorsqu’elle a été créée et planifiée avec le système. Pour les notifications distantes, elles sont affectées via le nouveau champ `apps-collapse-id` dans l’en-tête de requête HTTP.
+Une partie importante de la gestion des notifications est l' _identificateur de demande_ qui a été affecté à la notification lorsqu’elle a été créée et planifiée avec le système. Pour les notifications distantes, elles sont affectées via le nouveau `apps-collapse-id` champ dans l’en-tête de requête http.
 
 L’identificateur de demande permet de sélectionner la notification sur laquelle l’application souhaite effectuer la gestion des notifications.
 
@@ -395,7 +395,7 @@ Dans iOS 10, les notifications envoyées à l’utilisateur ne sont pas statique
 Une application iOS peut répondre à trois types d’actions :
 
 - **Action par défaut** : lorsque l’utilisateur clique sur une notification pour ouvrir l’application et afficher les détails de la notification donnée.
-- **Actions personnalisées** : celles-ci ont été ajoutées dans iOS 8 et permettent à l’utilisateur d’exécuter rapidement une tâche personnalisée à partir de la notification sans avoir à lancer l’application. Ils peuvent être présentés sous la forme d’une liste de boutons avec des titres personnalisables ou d’un champ d’entrée de texte qui peut s’exécuter en arrière-plan (dans lequel l’application reçoit un peu de temps pour traiter la demande) ou le premier plan (où l’application est lancée au premier plan lfill la demande). Les actions personnalisées sont disponibles à la fois pour iOS et Watchos.
+- **Actions personnalisées** : celles-ci ont été ajoutées dans iOS 8 et permettent à l’utilisateur d’exécuter rapidement une tâche personnalisée à partir de la notification sans avoir à lancer l’application. Ils peuvent être présentés sous la forme d’une liste de boutons avec des titres personnalisables ou d’un champ d’entrée de texte qui peut s’exécuter en arrière-plan (dans lequel l’application reçoit un peu de temps pour satisfaire la demande) ou le premier plan (où l’application est lancée au premier plan pour traiter la demande). Les actions personnalisées sont disponibles à la fois pour iOS et Watchos.
 - **Ignorer l’action** : cette action est envoyée à l’application lorsque l’utilisateur ignore une notification donnée.
 
 ### <a name="creating-custom-actions"></a>Création d’actions personnalisées
@@ -420,17 +420,17 @@ var categories = new UNNotificationCategory [] { category };
 UNUserNotificationCenter.Current.SetNotificationCategories (new NSSet<UNNotificationCategory>(categories)); 
 ```
 
-Lorsque vous créez un `UNNotificationAction`, il reçoit un ID unique et le titre qui apparaît sur le bouton. Par défaut, l’action est créée en tant qu’action en arrière-plan, mais des options peuvent être fournies pour ajuster le comportement de l’action (par exemple, en lui affectant une action de premier plan).
+Lors de la création d’un nouveau `UNNotificationAction` , il reçoit un ID unique et le titre qui s’affiche sur le bouton. Par défaut, l’action est créée en tant qu’action en arrière-plan, mais des options peuvent être fournies pour ajuster le comportement de l’action (par exemple, en lui affectant une action de premier plan).
 
-Chacune des actions créées doit être associée à une catégorie. Lorsque vous créez un `UNNotificationCategory`, il reçoit un ID unique, une liste des actions qu’il peut effectuer, une liste d’ID d’intention pour fournir plus d’informations sur l’intention des actions dans la catégorie et certaines options pour contrôler le comportement de la catégorie.
+Chacune des actions créées doit être associée à une catégorie. Lors de la création d’un `UNNotificationCategory` , un ID unique lui est attribué, une liste d’actions qu’il peut effectuer, une liste d’ID d’intention fournissant plus d’informations sur l’intention des actions dans la catégorie et certaines options pour contrôler le comportement de la catégorie.
 
-Enfin, toutes les catégories sont inscrites auprès du système à l’aide de la méthode `SetNotificationCategories`.
+Enfin, toutes les catégories sont inscrites auprès du système à l’aide de la `SetNotificationCategories` méthode.
 
 ### <a name="presenting-custom-actions"></a>Présentation des actions personnalisées
 
 Une fois qu’un ensemble d’actions et de catégories personnalisées a été créé et inscrit auprès du système, il peut être présenté à partir de notifications locales ou distantes.
 
-Pour notification à distance, définissez un `category` dans la charge utile de notification distante qui correspond à l’une des catégories créées ci-dessus. Exemple :
+Pour notification à distance, définissez une valeur `category` dans la charge utile de notification distante qui correspond à l’une des catégories créées ci-dessus. Par exemple :
 
 ```csharp
 {
@@ -441,7 +441,7 @@ Pour notification à distance, définissez un `category` dans la charge utile de
 }
 ```
 
-Pour les notifications locales, définissez la propriété `CategoryIdentifier` de l’objet `UNMutableNotificationContent`. Exemple :
+Pour les notifications locales, définissez la `CategoryIdentifier` propriété de l' `UNMutableNotificationContent` objet. Par exemple :
 
 ```csharp
 var content = new UNMutableNotificationContent ();
@@ -457,7 +457,7 @@ Là encore, cet ID doit correspondre à l’une des catégories créées ci-dess
 
 ### <a name="handling-dismiss-actions"></a>Gestion des actions d’annulation
 
-Comme indiqué ci-dessus, une action d’annulation peut être envoyée à l’application lorsque l’utilisateur ignore une notification. Étant donné qu’il ne s’agit pas d’une action standard, une option doit être définie lors de la création de la catégorie. Exemple :
+Comme indiqué ci-dessus, une action d’annulation peut être envoyée à l’application lorsque l’utilisateur ignore une notification. Étant donné qu’il ne s’agit pas d’une action standard, une option doit être définie lors de la création de la catégorie. Par exemple :
 
 ```csharp
 var categoryID = "message";
@@ -470,7 +470,7 @@ var category = UNNotificationCategory.FromIdentifier (categoryID, actions, inten
 
 ### <a name="handling-action-responses"></a>Gestion des réponses aux actions
 
-Lorsque l’utilisateur interagit avec les actions personnalisées et les catégories créées ci-dessus, l’application doit accomplir la tâche demandée. Pour ce faire, vous fournissez une `UNUserNotificationCenterDelegate` et implémentez la méthode `UserNotificationCenter`. Exemple :
+Lorsque l’utilisateur interagit avec les actions personnalisées et les catégories créées ci-dessus, l’application doit accomplir la tâche demandée. Pour ce faire, vous fournissez un `UNUserNotificationCenterDelegate` et implémentez la `UserNotificationCenter` méthode. Par exemple :
 
 ```csharp
 using System;
@@ -508,9 +508,9 @@ namespace MonkeyNotification
 }
 ```
 
-La classe `UNNotificationResponse` passée a une propriété `ActionIdentifier` qui peut être l’action par défaut ou l’action faire disparaître. Utilisez `response.Notification.Request.Identifier` pour tester toutes les actions personnalisées.
+La classe passée `UNNotificationResponse` a une `ActionIdentifier` propriété qui peut être l’action par défaut ou l’action faire disparaître. Utilisez `response.Notification.Request.Identifier` pour tester toutes les actions personnalisées.
 
-La propriété `UserText` contient la valeur de toute entrée de texte utilisateur. La propriété `Notification` contient la notification d’origine qui inclut la demande avec le déclencheur et le contenu de la notification. L’application peut décider s’il s’agit d’une notification locale ou distante selon le type de déclencheur.
+La `UserText` propriété contient la valeur de toute entrée de texte de l’utilisateur. La `Notification` propriété contient la notification d’origine qui inclut la demande avec le déclencheur et le contenu de notification. L’application peut décider s’il s’agit d’une notification locale ou distante selon le type de déclencheur.
 
 > [!NOTE]
 > iOS 12 permet à une interface utilisateur de notification personnalisée de modifier ses boutons d’action au moment de l’exécution. Pour plus d’informations, consultez la documentation sur les [boutons d’action de notification dynamiques](~/ios/platform/introduction-to-ios12/notifications/dynamic-actions.md) .
@@ -519,7 +519,7 @@ La propriété `UserText` contient la valeur de toute entrée de texte utilisate
 
 Lorsque vous utilisez des notifications distantes, les _extensions de service_ offrent un moyen d’activer le chiffrement de bout en bout à l’intérieur de la charge utile de notification. Les extensions de service sont une extension non-utilisateur (disponible dans iOS 10) qui s’exécute en arrière-plan avec l’objectif principal de l’augmentation ou du remplacement du contenu visible d’une notification avant qu’elle ne soit présentée à l’utilisateur. 
 
-[![](enhanced-user-notifications-images/extension01.png "Service Extension overview")](enhanced-user-notifications-images/extension01.png#lightbox)
+[![Présentation de l’extension de service](enhanced-user-notifications-images/extension01.png)](enhanced-user-notifications-images/extension01.png#lightbox)
 
 Les extensions de service sont conçues pour s’exécuter rapidement et ne peuvent être exécutées que par le système. Si l’extension de service ne parvient pas à terminer sa tâche dans le délai imparti, une méthode de secours sera appelée. Si le secours échoue, le contenu de la notification d’origine sera affiché à l’utilisateur.
 
@@ -532,35 +532,35 @@ Certaines utilisations possibles des extensions de service sont les suivantes :
 
 Pour implémenter une extension de service dans une application Xamarin. iOS, procédez comme suit :
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 1. Ouvrez la solution de l’application dans Visual Studio pour Mac.
-2. Cliquez avec le bouton droit sur le nom de la solution dans le **panneau solutions** puis sélectionnez **Ajouter** > **Ajouter un nouveau projet**.
-3. Sélectionnez **Extensions** de > **iOS** > extensions de **service de notification** , puis cliquez sur le bouton **suivant** : 
+2. Cliquez avec le bouton droit sur le nom de la solution dans le **panneau solutions** puis sélectionnez **Ajouter**  >  **Ajouter un nouveau projet**.
+3. Sélectionnez extensions **iOS**extensions  >  **Extensions**  >  de service de**notification** , puis cliquez sur le bouton **suivant** : 
 
-    [![](enhanced-user-notifications-images/extension02.png "Select Notification Service Extensions")](enhanced-user-notifications-images/extension02.png#lightbox)
+    [![Sélectionner les extensions du service de notification](enhanced-user-notifications-images/extension02.png)](enhanced-user-notifications-images/extension02.png#lightbox)
 4. Entrez un **nom** pour l’extension et cliquez sur le bouton **suivant** : 
 
-    [![](enhanced-user-notifications-images/extension03.png "Enter a Name for the extension")](enhanced-user-notifications-images/extension03.png#lightbox)
+    [![Entrer un nom pour l’extension](enhanced-user-notifications-images/extension03.png)](enhanced-user-notifications-images/extension03.png#lightbox)
 5. Ajustez le **nom du projet** et/ou le nom de la **solution** , si nécessaire, puis cliquez sur le bouton **créer** : 
 
-    [![](enhanced-user-notifications-images/extension04.png "Adjust the Project Name and/or Solution Name")](enhanced-user-notifications-images/extension04.png#lightbox) 
+    [![Ajuster le nom du projet et/ou le nom de la solution](enhanced-user-notifications-images/extension04.png)](enhanced-user-notifications-images/extension04.png#lightbox) 
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. Ouvrez la solution de l’application dans Visual Studio.
-2. Cliquez avec le bouton droit sur le nom de la solution dans le **Explorateur de solutions** puis sélectionnez **Ajouter > nouveau projet...** .
+2. Cliquez avec le bouton droit sur le nom de la solution dans le **Explorateur de solutions** puis sélectionnez **Ajouter > nouveau projet...**.
 3. Sélectionnez **Visual C# > extensions iOS > extension de service de notification**:
 
-    [![](enhanced-user-notifications-images/extension01.w157-sml.png "Select Notification Service Extensions")](enhanced-user-notifications-images/extension01.w157.png#lightbox)
+    [![Sélectionner les extensions du service de notification](enhanced-user-notifications-images/extension01.w157-sml.png)](enhanced-user-notifications-images/extension01.w157.png#lightbox)
 4. Entrez un **nom** pour l’extension et cliquez sur le bouton **OK** .
 
 -----
 
 > [!IMPORTANT]
-> L’identificateur de Bundle pour l’extension de service doit correspondre à l’identificateur de Bundle de l’application principale, avec `.appnameserviceextension` ajouté à la fin. Par exemple, si l’application principale avait un identificateur de Bundle de `com.xamarin.monkeynotify`, l’extension de service doit avoir un identificateur de Bundle `com.xamarin.monkeynotify.monkeynotifyserviceextension`. Elle doit être définie automatiquement lorsque l’extension est ajoutée à la solution. 
+> L’identificateur de Bundle pour l’extension de service doit correspondre à l’identificateur de Bundle de l’application principale avec `.appnameserviceextension` ajouté à la fin. Par exemple, si l’application principale avait un identificateur de Bundle de `com.xamarin.monkeynotify` , l’extension de service doit avoir un identificateur de Bundle `com.xamarin.monkeynotify.monkeynotifyserviceextension` . Elle doit être définie automatiquement lorsque l’extension est ajoutée à la solution. 
 
-Il existe une classe principale dans l’extension de service de notification qui doit être modifiée pour fournir les fonctionnalités requises. Exemple :
+Il existe une classe principale dans l’extension de service de notification qui doit être modifiée pour fournir les fonctionnalités requises. Par exemple :
 
 ```csharp
 using System;
@@ -609,13 +609,13 @@ namespace MonkeyChatServiceExtension
 }
 ```
 
-La première méthode, `DidReceiveNotificationRequest`, reçoit l’identificateur de notification ainsi que le contenu de la notification via l’objet `request`. Le `contentHandler` transmis doit être appelé pour présenter la notification à l’utilisateur.
+La première méthode, `DidReceiveNotificationRequest` , reçoit l’identificateur de notification ainsi que le contenu de notification via l' `request` objet. Le passé doit `contentHandler` être appelé pour présenter la notification à l’utilisateur.
 
-La deuxième méthode, `TimeWillExpire`, sera appelée juste avant que le temps soit sur le point de s’exécuter pour que l’extension de service traite la demande. Si l’extension de service ne parvient pas à appeler la `contentHandler` dans la durée allouée, le contenu d’origine sera affiché à l’utilisateur.
+La deuxième méthode, `TimeWillExpire` , sera appelée juste avant que le temps ne soit sur le point de s’exécuter pour que l’extension de service traite la demande. Si l’extension de service ne parvient pas à appeler l’intervalle `contentHandler` de temps alloué, le contenu d’origine est affiché à l’utilisateur.
 
 ### <a name="triggering-a-service-extension"></a>Déclenchement d’une extension de service
 
-Lorsqu’une extension de service est créée et fournie avec l’application, elle peut être déclenchée par la modification de la charge utile de notification distante envoyée à l’appareil. Exemple :
+Lorsqu’une extension de service est créée et fournie avec l’application, elle peut être déclenchée par la modification de la charge utile de notification distante envoyée à l’appareil. Par exemple :
 
 ```csharp
 {
@@ -627,7 +627,7 @@ Lorsqu’une extension de service est créée et fournie avec l’application, e
 }
 ```
 
-La nouvelle clé de `mutable-content` spécifie que l’extension de service doit être lancée pour mettre à jour le contenu de la notification distante. La clé de `encrypted-content` contient les données chiffrées que l’extension de service peut déchiffrer avant de la présenter à l’utilisateur.
+La nouvelle `mutable-content` clé spécifie que l’extension de service doit être lancée pour mettre à jour le contenu de la notification distante. La `encrypted-content` clé contient les données chiffrées que l’extension de service peut déchiffrer avant de la présenter à l’utilisateur.
 
 Jetez un coup d’œil à l’exemple d’extension de service suivant :
 
@@ -658,9 +658,9 @@ namespace myApp {
 }
 ```
 
-Ce code déchiffre le contenu chiffré à partir de la clé de `encrypted-content`, crée un nouveau `UNMutableNotificationContent`, définit la propriété `Body` sur le contenu déchiffré et utilise le `contentHandler` pour présenter la notification à l’utilisateur.
+Ce code déchiffre le contenu chiffré à partir de la `encrypted-content` clé, crée un nouveau `UNMutableNotificationContent` , définit la `Body` propriété sur le contenu déchiffré et utilise le `contentHandler` pour présenter la notification à l’utilisateur.
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article a abordé tous les modes d’amélioration de la notification des utilisateurs par iOS 10. Il a présenté la nouvelle infrastructure de notification utilisateur et comment l’utiliser dans une application Xamarin. iOS ou une extension d’application.
 

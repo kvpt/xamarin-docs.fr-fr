@@ -9,18 +9,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: c89a3616bfa239ba919ae9750082bcef48c9f890
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 1b279b125ce88a37ddb3209cfe689a7fef50a256
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73023369"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938747"
 ---
 # <a name="hello-ios-multiscreen--quickstart"></a>Hello.iOS multi-écran - Démarrage rapide
 
 Cette partie de la procédure pas à pas permet d’ajouter un deuxième écran à l’application Phoneword pour afficher l’historique des numéros de téléphone appelés avec l’application. L’application finale propose un deuxième écran qui affiche l’historique des appels, comme l’illustre la capture d’écran suivante :
 
-[![](hello-ios-multiscreen-quickstart-images/00.png "The final application will have a second screen that displays the call history, as illustrated by this screenshot")](hello-ios-multiscreen-quickstart-images/00.png#lightbox)
+[![L’application finale aura un deuxième écran qui affiche l’historique des appels, comme illustré dans cette capture d’écran.](hello-ios-multiscreen-quickstart-images/00.png)](hello-ios-multiscreen-quickstart-images/00.png#lightbox)
 
 La partie [En profondeur](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-deepdive.md) complémentaire reprend l’application générée et aborde l’architecture, la navigation et d’autres nouveaux concepts iOS rencontrés en chemin.
 
@@ -34,36 +34,36 @@ Ce guide reprend là où le document Hello, iOS s’est arrêté et nécessite d
 
 Cette procédure pas à pas permet d’ajouter un écran d’historique des appels à notre application **Phoneword**.
 
-1. Ouvrez l’application **Phoneword** dans Visual Studio pour Mac. Si nécessaire, l’application Phoneword complétée à partir du guide [Hello, iOS walkthrough](~/ios/get-started/hello-ios/index.md) peut être téléchargé à partir [d’ici](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios).
+1. Ouvrez l’application **Phoneword** dans Visual Studio pour Mac. Si nécessaire, l’application Phoneword terminée du guide [pas à pas de Hello, iOS](~/ios/get-started/hello-ios/index.md) peut être téléchargée [ici](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios).
 
 2. Ouvrez le fichier **Main.storyboard** à partir du **Panneau Solutions** :
 
-    ![](hello-ios-multiscreen-quickstart-images/02new.png "The Main.storyboard in the iOS Designer")
+    ![Main.storyboard dans le Concepteur iOS](hello-ios-multiscreen-quickstart-images/02new.png)
 
-3. Faites glisser un contrôleur de **navigation** de la boîte à **outils** sur la surface de conception (vous devrez peut-être zoomer pour les adapter à tous sur la surface de conception!):
+3. Faites glisser un **contrôleur de navigation** de la **boîte à outils** vers l’aire de conception (vous devrez peut-être effectuer un zoom arrière pour ajuster ces éléments sur l’aire de conception !) :
 
-    ![](hello-ios-multiscreen-quickstart-images/03new.png "Drag a navigation controller from the Toolbox onto the design surface")
+    ![Faire glisser un contrôleur de navigation de la boîte à outils vers l’aire de conception](hello-ios-multiscreen-quickstart-images/03new.png)
 
-4. Faites glisser la **segue sans source** (c’est la flèche grise à gauche du contrôleur à vue unique) au contrôleur de **navigation** pour changer le point de départ de l’application :
+4. Faites glisser le **segue sans source** (qui est la flèche grise à gauche d’un contrôleur d’affichage unique) vers le contrôleur de **navigation** pour modifier le point de départ de l’application :
 
-    ![](hello-ios-multiscreen-quickstart-images/04new.png "Drag the Sourceless Segue to the navigation controller to change the starting point of the application")
+    ![Faites glisser le segue sans source vers le contrôleur de navigation pour modifier le point de départ de l’application](hello-ios-multiscreen-quickstart-images/04new.png)
 
-5. Sélectionnez le **contrôleur de vue racine** existant en cliquant sur la barre inférieure, et appuyez sur **Supprimer** pour le supprimer de la surface de conception.
-Ensuite, déplacez la scène **Phoneword** à côté du contrôleur de **navigation**:
+5. Sélectionnez le **contrôleur d’affichage racine** existant en cliquant sur la barre inférieure, puis appuyez sur **supprimer** pour le supprimer de l’aire de conception.
+Ensuite, déplacez la scène **Phoneword** à côté du **contrôleur de navigation**:
 
-    ![](hello-ios-multiscreen-quickstart-images/05new.png "Move the Phoneword scene next to the navigation controller")
+    ![Déplacer la scène Phoneword à côté du contrôleur de navigation](hello-ios-multiscreen-quickstart-images/05new.png)
 
-6. Définissez le **ViewController** en tant que **contrôleur de vue Root**du contrôleur de navigation . Appuyez sur la touche **Ctrl** et cliquez à l’intérieur du **contrôleur de navigation**. Une ligne bleue doit apparaître. Puis, toujours en maintenant la clé **Ctrl,** glisser du contrôleur de **navigation** à la scène **Phoneword** et la libération. Cette opération est appelée _Ctrl+Faire glisser_ :
+6. Définissez **ViewController** en tant que **contrôleur d’affichage racine**du contrôleur de navigation. Appuyez sur la touche **CTRL** et cliquez à l’intérieur du **contrôleur de navigation**. Une ligne bleue doit apparaître. Ensuite, maintenez la touche **CTRL** enfoncée, puis faites glisser le **contrôleur de navigation** vers la scène **Phoneword** et la version finale. Cette opération est appelée _Ctrl+Faire glisser_ :
 
-    ![](hello-ios-multiscreen-quickstart-images/06.png "Drag from the navigation controller to the Phoneword scene and release")
+    ![Faites glisser le contrôleur de navigation vers la scène Phoneword et relâchez](hello-ios-multiscreen-quickstart-images/06.png)
 
 7. Depuis le menu, affectez à la relation la valeur **Racine** :
 
-    ![](hello-ios-multiscreen-quickstart-images/07new.png "Setting the relationship to Root")
+    ![Définition de la relation sur Racine](hello-ios-multiscreen-quickstart-images/07new.png)
 
-    Le **ViewController** est maintenant le **contrôleur de vue Root du contrôleur de navigation :**
+    Le **ViewController** est maintenant le **contrôleur d’affichage racine du contrôleur de navigation :**
 
-    ![](hello-ios-multiscreen-quickstart-images/08.png "The ViewController is now the navigation controllers Root view controller")
+    ![Le ViewController est maintenant le contrôleur d’affichage racine des contrôleurs de navigation](hello-ios-multiscreen-quickstart-images/08.png)
 
 8. Double-cliquez sur la barre de **titre** de l’écran **Phoneword** et remplacez le **titre** par **Phoneword** :
 
@@ -71,23 +71,23 @@ Ensuite, déplacez la scène **Phoneword** à côté du contrôleur de **navigat
 
 9. Faites glisser un **bouton** à partir de la **boîte à outils** et placez-le sous le **bouton d’appel**. Faites glisser les poignées pour que le nouveau **bouton** ait la même largeur que le **bouton d’appel** :
 
-    ![](hello-ios-multiscreen-quickstart-images/10new.png "Make the new Button the same width as the Call Button")
+    ![Définir la même largeur que celle du bouton d’appel pour le nouveau bouton](hello-ios-multiscreen-quickstart-images/10new.png)
 
-10. Dans le **pad propriétés**, changer le **nom** du bouton à **CallHistoryButton** et changer le **titre** à **l’historique des appels:**
+10. Dans la **panneau Propriétés**, remplacez le **nom** du bouton par **CallHistoryButton** et remplacez le **titre** par **historique des appels**:
 
-    ![](hello-ios-multiscreen-quickstart-images/11new.png "Change the Name of the Button to CallHistoryButton and change the Title to Call History")
+    ![Remplacer le nom du bouton par CallHistoryButton et remplacer le titre par Historique des appels](hello-ios-multiscreen-quickstart-images/11new.png)
 
-11. Créez l’écran **Historique des appels**. De la **boîte à outils**, faites glisser un contrôleur de vue de **table** sur la surface de conception :
+11. Créez l’écran **Historique des appels**. À partir de la **boîte à outils**, faites glisser un **contrôleur d’affichage de table** sur l’aire de conception :
 
-    ![](hello-ios-multiscreen-quickstart-images/12new.png "Drag a table view controller onto the design surface")
+    ![Faire glisser un contrôleur d’affichage de table sur l’aire de conception](hello-ios-multiscreen-quickstart-images/12new.png)
 
-12. Ensuite, sélectionnez le **contrôleur de vue de table** en cliquant sur la barre noire au bas de la scène. Dans le **Pad Propriétés**, changer la classe **du contrôleur de vue de table** pour `CallHistoryController` et appuyez sur **Entrez**:
+12. Ensuite, sélectionnez le **contrôleur d’affichage de table** en cliquant sur la barre noire située au bas de la scène. Dans le **panneau Propriétés**, remplacez la classe **du contrôleur d’affichage de table** par `CallHistoryController` et appuyez sur **entrée**:
 
-    ![](hello-ios-multiscreen-quickstart-images/13new.png "Change the table view controllers class to CallHistoryController")
+    ![Remplacez la classe de contrôleurs d’affichage de table par CallHistoryController](hello-ios-multiscreen-quickstart-images/13new.png)
 
     Le concepteur iOS génère une classe de support personnalisée appelée `CallHistoryController` pour gérer la hiérarchie de vues de contenu de cet écran. Le fichier **CallHistoryController.cs** s’affiche dans le **Panneau Solutions** :
 
-    ![](hello-ios-multiscreen-quickstart-images/14new.png "The CallHistoryController.cs file in the Solution Pad")
+    ![Le fichier CallHistoryController.cs s’affiche dans le Panneau Solutions](hello-ios-multiscreen-quickstart-images/14new.png)
 
 13. Double-cliquez sur le fichier **CallHistoryController.cs** pour l’ouvrir et remplacez son contenu par le code suivant :
     
@@ -141,26 +141,26 @@ Ensuite, déplacez la scène **Phoneword** à côté du contrôleur de **navigat
 
     Enregistrez l’application (**⌘ + S**) et générez-la (**⌘ + B**) pour vérifier l’absence d’erreurs.
 
-14. Créez une _segue_ (transition) entre la scène **Phoneword** et la scène **Call History.**
-  Dans la **scène Phoneword**, sélectionnez le **bouton d’histoire d’appel** et Ctrl-drag du **bouton** à la scène **d’histoire d’appel** :
+14. Créez un _segue_ (transition) entre la scène **Phoneword** et la scène **historique des appels** .
+  Dans la **scène Phoneword**, sélectionnez le **bouton historique des appels** et appuyez sur CTRL + faire glisser depuis le **bouton** vers la scène **historique des appels** :
 
-    ![](hello-ios-multiscreen-quickstart-images/15.png "Ctrl-drag from the Button to the Call History scene")
+    ![Ctrl + faire glisser du bouton vers la scène de l’historique des appels](hello-ios-multiscreen-quickstart-images/15.png)
 
-    De **l’Action Segue** popover, **sélectionnez Show**
+    À partir de l' **action segue** menu Segue, sélectionnez **Afficher** .
 
     Le concepteur iOS ajoute un Segue entre les deux scènes :
 
-    ![](hello-ios-multiscreen-quickstart-images/17new.png "The Segue between the two scenes")
+    ![Segue entre les deux scènes](hello-ios-multiscreen-quickstart-images/17new.png)
 
-15. Ajoutez un **titre** au contrôleur de **vue** de table en sélectionnant la barre noire au bas de la scène et en changeant le titre du contrôleur de **vue** pour **appeler l’historique** dans le **pad de propriétés**:
+15. Ajoutez un **titre** au **contrôleur d’affichage table** en sélectionnant la barre noire au bas de la scène et en remplaçant le **titre du contrôleur d’affichage** par historique des **appels** dans la **panneau Propriétés**:
 
-    ![](hello-ios-multiscreen-quickstart-images/18new.png "Change the view controller title to Call History in the Properties Pad")
+    ![Remplacez le titre du contrôleur d’affichage par historique des appels dans le Panneau Propriétés](hello-ios-multiscreen-quickstart-images/18new.png)
 
 16. Quand l’application s’exécute, le **bouton d’historique des appels** ouvre l’écran **Historique des appels**, mais la vue de tableau est vide, car il n’existe pas de code permettant de mémoriser et d’afficher les numéros de téléphone.
 
     Cette application enregistre les numéros de téléphone sous la forme d’une liste de chaînes.
 
-    Ajouter `using` une `System.Collections.Generic` directive pour en haut de **ViewController**:
+    Ajoutez une `using` directive pour `System.Collections.Generic` en haut de **ViewController**:
 
     ```csharp
     using System.Collections.Generic;
@@ -262,9 +262,9 @@ Ensuite, déplacez la scène **Phoneword** à côté du contrôleur de **navigat
 
     Enregistrez et générez l’application pour vérifier qu'il n'y a pas d'erreurs.
 
-18. Appuyez sur le bouton **Démarrer** pour lancer l’application à l’intérieur du **simulateur iOS**:
+18. Appuyez sur le bouton **Démarrer** pour lancer l’application dans le **simulateur iOS**:
 
-    ![](hello-ios-multiscreen-quickstart-images/19.png "Press the Start button to launch the application inside the iOS Simulator")
+    ![Appuyer sur le bouton Démarrer pour lancer l’application dans le simulateur iOS](hello-ios-multiscreen-quickstart-images/19.png)
 
 Félicitations ! Vous avez terminé votre première application Xamarin.iOS multi-écran.
 
@@ -279,54 +279,54 @@ Cette procédure pas à pas permet d’ajouter un écran d’historique des appe
 
 2. Commencez par modifier l’interface utilisateur. Ouvrez le fichier **Main.storyboard** depuis l’**Explorateur de solutions**, en vérifiant que **Afficher en tant que** a la valeur _iPhone 6_ :
 
-    ![](hello-ios-multiscreen-quickstart-images/image1.png "The Main.storyboard in the iOS Designer")
+    ![Main.storyboard dans le Concepteur iOS](hello-ios-multiscreen-quickstart-images/image1.png)
 
-3. Faites glisser un contrôleur de **navigation** de la **boîte à outils** sur la surface de conception :
+3. Faites glisser un **contrôleur de navigation** de la **boîte à outils** vers l’aire de conception :
 
-    ![](hello-ios-multiscreen-quickstart-images/image2.png "Drag a navigation controller from the Toolbox onto the design surface")
+    ![Faire glisser un contrôleur de navigation de la boîte à outils vers l’aire de conception](hello-ios-multiscreen-quickstart-images/image2.png)
 
-4. Faites glisser la **Segue sourceless** (c’est la flèche grise à gauche de la scène **Phoneword)** de la scène **Phoneword** au contrôleur de **navigation** pour changer le point de départ de l’application:
+4. Faites glisser le **segue sans source** (c’est-à-dire la flèche grise à gauche de la scène **Phoneword** ) de la scène **Phoneword** vers le **contrôleur de navigation** pour modifier le point de départ de l’application :
 
-    ![](hello-ios-multiscreen-quickstart-images/image3.png "Drag the Sourceless Segue to the navigation controller to change the starting point of the application")
+    ![Faites glisser le segue sans source vers le contrôleur de navigation pour modifier le point de départ de l’application](hello-ios-multiscreen-quickstart-images/image3.png)
 
-5. Sélectionnez le **contrôleur de vue Root** en cliquant sur la barre noire, et appuyez sur **Supprimer** pour le supprimer de la surface de conception.
-  Ensuite, déplacez la scène **Phoneword** à côté du contrôleur de **navigation**:
+5. Sélectionnez le **contrôleur d’affichage racine** en cliquant sur la barre noire, puis appuyez sur la touche **Suppr** pour la supprimer de l’aire de conception.
+  Ensuite, déplacez la scène **Phoneword** à côté du **contrôleur de navigation**:
 
-    ![](hello-ios-multiscreen-quickstart-images/image4.png "Move the Phoneword scene next to the navigation controller")
+    ![Déplacer la scène Phoneword à côté du contrôleur de navigation](hello-ios-multiscreen-quickstart-images/image4.png)
 
-6. Définissez le **ViewController** en tant que contrôleur de vue racine du contrôleur de navigation. Appuyez sur la touche **Ctrl** et cliquez à l’intérieur du **contrôleur de navigation**. Une ligne bleue doit apparaître. Ensuite, toujours en maintenant la clé **Ctrl,** glisser du contrôleur de **navigation** à la scène **Phoneword** et la libération. Cette opération est appelée _Ctrl+Faire glisser_ :
+6. Définissez **ViewController** en tant que contrôleur d’affichage racine du contrôleur de navigation. Appuyez sur la touche **Ctrl** et cliquez à l’intérieur du **contrôleur de navigation**. Une ligne bleue doit apparaître. Ensuite, maintenez la touche **CTRL** enfoncée, puis faites glisser le **contrôleur de navigation** vers la scène **Phoneword** et la version finale. Cette opération est appelée _Ctrl+Faire glisser_ :
 
-    ![](hello-ios-multiscreen-quickstart-images/image5.png "Drag from the navigation controller to the Phoneword scene and release")
+    ![Faites glisser le contrôleur de navigation vers la scène Phoneword et relâchez](hello-ios-multiscreen-quickstart-images/image5.png)
 
 7. Depuis le menu, affectez à la relation la valeur **Racine** :
 
-    ![](hello-ios-multiscreen-quickstart-images/image6.png "Set the relationship to Root")
+    ![Affecter à la relation la valeur Racine](hello-ios-multiscreen-quickstart-images/image6.png)
 
-    Le **ViewController** est maintenant le contrôleur de vue Root de notre **contrôleur de navigation.**
+    Le **ViewController** est maintenant le **contrôleur d’affichage racine de notre contrôleur de navigation.**
 
 8. Double-cliquez sur la barre de **titre** de l’écran **Phoneword** et remplacez le **titre** par **Phoneword** :
 
-    ![](hello-ios-multiscreen-quickstart-images/image7.png "Change the Title to Phoneword")
+    ![Remplacez le titre par Phoneword](hello-ios-multiscreen-quickstart-images/image7.png)
 
 9. Faites glisser un **bouton** à partir de la **boîte à outils** et placez-le sous le **bouton d’appel**. Faites glisser les poignées pour que le nouveau **bouton** ait la même largeur que le **bouton d’appel** :
 
-    ![](hello-ios-multiscreen-quickstart-images/image8.png "Make the new Button the same width as the Call Button")
+    ![Définir la même largeur que celle du bouton d’appel pour le nouveau bouton](hello-ios-multiscreen-quickstart-images/image8.png)
 
 10. Dans le **volet Propriétés**, remplacez le **nom** du **bouton** par `CallHistoryButton` et remplacez le **titre** par **Historique des appels** :
 
     ![](hello-ios-multiscreen-quickstart-images/image9.png "Change the Name of the Button to 'CallHistoryButton' and the Title to 'Call History'")
 
-11. Créez l’écran **Historique des appels**. De la **boîte à outils**, faites glisser un contrôleur de vue de **table** sur la surface de conception :
+11. Créez l’écran **Historique des appels**. À partir de la **boîte à outils**, faites glisser un **contrôleur d’affichage de table** sur l’aire de conception :
 
-    ![](hello-ios-multiscreen-quickstart-images/image10.png "Drag a table view controller onto the design surface")
+    ![Faire glisser un contrôleur d’affichage de table sur l’aire de conception](hello-ios-multiscreen-quickstart-images/image10.png)
 
-12. Sélectionnez le **contrôleur de vue de table** en cliquant sur la barre noire au bas de la scène. Dans **l’Explorer Propriétés**, changer la `CallHistoryController` classe du contrôleur de vue de **table** pour et appuyez sur **Entrez**:
+12. Sélectionnez le **contrôleur d’affichage de table** en cliquant sur la barre noire située au bas de la scène. Dans l' **Explorateur de propriétés**, remplacez la classe **du contrôleur d’affichage de table** par `CallHistoryController` et appuyez sur **entrée**:
 
-    ![](hello-ios-multiscreen-quickstart-images/image11.png "Change the table view controllers class to CallHistoryController")
+    ![Remplacez la classe de contrôleurs d’affichage de table par CallHistoryController](hello-ios-multiscreen-quickstart-images/image11.png)
 
     Le concepteur iOS génère une classe de support personnalisée appelée `CallHistoryController` pour gérer la hiérarchie de vues de contenu de cet écran. Le fichier **CallHistoryController.cs** s’affiche dans l’**Explorateur de solutions** :
 
-    ![](hello-ios-multiscreen-quickstart-images/image12.png "The CallHistoryController.cs file in the Solution Explorer")
+    ![Le fichier CallHistoryController.cs s’affiche dans l’Explorateur de solutions](hello-ios-multiscreen-quickstart-images/image12.png)
 
 13. Double-cliquez sur le fichier **CallHistoryController.cs** pour l’ouvrir et remplacez son contenu par le code suivant :
 
@@ -381,22 +381,22 @@ Cette procédure pas à pas permet d’ajouter un écran d’historique des appe
 
     Enregistrez l’application et générez-la pour vérifier l’absence d’erreurs. Vous pouvez ignorer les avertissements de génération pour le moment.
 
-14. Créez une _segue_ (transition) entre la scène **Phoneword** et la scène **Call History.**
-  Dans la **scène Phoneword**, sélectionnez le **bouton d’histoire d’appel** et **Ctrl-drag** du **bouton** à la scène **d’histoire d’appel** :
+14. Créez un _segue_ (transition) entre la scène **Phoneword** et la scène **historique des appels** .
+  Dans la **scène Phoneword**, sélectionnez le **bouton historique des appels** et **Appuyez sur CTRL + faire glisser** depuis le **bouton** vers la scène **historique des appels** :
 
-    ![](hello-ios-multiscreen-quickstart-images/image13.png "Ctrl-drag from the Button to the Call History scene")
+    ![Ctrl + faire glisser du bouton vers la scène de l’historique des appels](hello-ios-multiscreen-quickstart-images/image13.png)
 
     Dans le menu **Action Segue**, sélectionnez **Afficher** :
 
-    ![](hello-ios-multiscreen-quickstart-images/image14.png "Select Show as the segue type")
+    ![Sélectionner Afficher comme type de Segue](hello-ios-multiscreen-quickstart-images/image14.png)
 
     Le concepteur iOS ajoute un segue entre les deux scènes :
 
-    ![](hello-ios-multiscreen-quickstart-images/image15.png "The Segue between the two scenes")
+    ![Segue entre les deux scènes](hello-ios-multiscreen-quickstart-images/image15.png)
 
-15. Ajoutez un **titre** au contrôleur de vue de **table** en sélectionnant la barre noire au bas de la scène et en changeant le contrôleur de vue **> Titre** **d’histoire d’appel** dans l’explorateur de **propriétés**:
+15. Ajoutez un **titre** au **contrôleur d’affichage de table** en sélectionnant la barre noire au bas de la scène et en remplaçant le contrôleur d' **affichage > titre** par **historique des appels** dans l' **Explorateur de propriétés**:
 
-    ![](hello-ios-multiscreen-quickstart-images/image16.png "Change the view controller Title to Call History")
+    ![Remplacer le titre du contrôleur d’affichage par historique des appels](hello-ios-multiscreen-quickstart-images/image16.png)
 
 16. Quand l’application s’exécute, le **bouton d’historique des appels** ouvre l’écran **Historique des appels**, mais la vue de tableau est vide, car il n’existe pas de code permettant de mémoriser et d’afficher les numéros de téléphone.
 
@@ -507,7 +507,7 @@ Cette procédure pas à pas permet d’ajouter un écran d’historique des appe
 
 18. Appuyez sur le bouton **Démarrer** pour lancer l’application dans le **simulateur iOS** :
 
-    ![](hello-ios-multiscreen-quickstart-images/19.png "The first screen of the sample app")
+    ![Premier écran de l’exemple d’application](hello-ios-multiscreen-quickstart-images/19.png)
 
 Félicitations ! Vous avez terminé votre première application Xamarin.iOS multi-écran.
 
@@ -515,7 +515,7 @@ Félicitations ! Vous avez terminé votre première application Xamarin.iOS mul
 
 L’application peut désormais prendre en charge la navigation à l’aide de Segues de Storyboard et dans le code. Le moment est maintenant venu d’éplucher les outils découverts et les compétences acquises tout au long du guide [Hello, iOS multi-écran - En profondeur](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-deepdive.md).
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Hello, iOS (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios)
 - [Human Interface Guidelines pour iOS](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html)

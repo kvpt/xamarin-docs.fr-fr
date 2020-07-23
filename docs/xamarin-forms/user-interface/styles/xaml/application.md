@@ -10,16 +10,16 @@ ms.date: 02/17/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2a222c3ee2234904cce94b52a14654728a1aa6d1
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: ae3759c1e111906b82596af80d4bdcffd5d23305
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84140125"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938526"
 ---
 # <a name="global-styles-in-xamarinforms"></a>Styles globaux dansXamarin.Forms
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 
 _Les styles peuvent être rendus disponibles globalement en les ajoutant au dictionnaire de ressources de l’application. Cela permet d’éviter la duplication des styles entre les pages ou les contrôles._
 
@@ -65,7 +65,7 @@ L’exemple de code suivant montre une page XAML appliquant `buttonStyle` à l�
 
 Cela donne l’affichage illustré dans les captures d’écran suivantes :
 
-[![](application-images/application-styles-1.png "Global Styles Example")](application-images/application-styles-1-large.png#lightbox "Global Styles Example")
+[![Exemple de styles globaux](application-images/application-styles-1.png)](application-images/application-styles-1-large.png#lightbox "Exemple de styles globaux")
 
 Pour plus d’informations sur la création de styles dans une page [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) , consultez [styles explicites](~/xamarin-forms/user-interface/styles/explicit.md) et [styles implicites](~/xamarin-forms/user-interface/styles/implicit.md).
 
@@ -103,7 +103,7 @@ Les styles inférieurs dans la hiérarchie d’affichage ont priorité sur ceux 
 
 L’original `buttonStyle` , défini au niveau de l’application, est remplacé par l' `buttonStyle` instance définie au niveau de la page. En outre, le style de niveau page est remplacé par le niveau de contrôle `buttonStyle` . Par conséquent, les [`Button`](xref:Xamarin.Forms.Button) instances sont affichées avec du texte en bleu, comme illustré dans les captures d’écran suivantes :
 
-[![](application-images/application-styles-2.png "Overriding Styles Example")](application-images/application-styles-2-large.png#lightbox "Overriding Styles Example")
+[![Exemple de substitution de styles](application-images/application-styles-2.png)](application-images/application-styles-2-large.png#lightbox "Exemple de substitution de styles")
 
 ## <a name="create-a-global-style-in-c35"></a>Créer un style global en C&#35;
 

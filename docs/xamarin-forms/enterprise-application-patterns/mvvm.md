@@ -10,12 +10,12 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c07fc9f42c4175b4e4569ab95a951b24c130c4f3
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: cc0528e7696130a772e93be67526ea9d6b10373f
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84572050"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936524"
 ---
 # <a name="the-model-view-viewmodel-pattern"></a>Modèle Model-View-ViewModel
 
@@ -27,7 +27,7 @@ Le modèle MVVM (Model-View-ViewModel) permet de séparer correctement la logiqu
 
 Il existe trois composants principaux dans le modèle MVVM : le modèle, la vue et le modèle de vue. Chacun remplit un rôle distinct. La figure 2-1 montre les relations entre les trois composants.
 
-![](mvvm-images/mvvm.png "The MVVM pattern")
+![Modèle MVVM](mvvm-images/mvvm.png)
 
 **Figure 2-1**: modèle MVVM
 
@@ -363,7 +363,7 @@ Le modèle MVVM (Model-View-ViewModel) permet de séparer correctement la logiqu
 
 À l’aide du modèle MVVM, l’interface utilisateur de l’application et la présentation et la logique métier sous-jacentes sont divisées en trois classes distinctes : la vue, qui encapsule l’interface utilisateur et la logique de l’interface utilisateur. le modèle de vue, qui encapsule la logique et l’état de la présentation ; et le modèle, qui encapsule la logique métier et les données de l’application.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Télécharger le livre électronique (PDF de 2 Mo)](https://aka.ms/xamarinpatternsebook)
 - [eShopOnContainers (GitHub) (exemple)](https://github.com/dotnet-architecture/eShopOnContainers)

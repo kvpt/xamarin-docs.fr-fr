@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 76b4633e6b224e234f9d5f693f4e01ed7a35d6db
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 0c2bbc89f503cfbaad24d8f1ac5d0635c1c22e48
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138045"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937811"
 ---
 # <a name="page-toolbar-placement-on-windows"></a>Positionnement de la barre d’outils de la page sur Windows
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Ce plateforme Windows universelle spécifique à la plateforme est utilisé pour modifier le positionnement d’une barre d’outils sur un [`Page`](xref:Xamarin.Forms.Page) et est consommé en XAML en affectant [`Page.ToolbarPlacement`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.Page.ToolbarPlacementProperty) à la propriété jointe la valeur de l' [`ToolbarPlacement`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement) énumération :
 
@@ -45,7 +45,7 @@ La `Page.On<Windows>` méthode spécifie que ce spécifique à la plateforme s�
 
 Le résultat est que la position de la barre d’outils spécifiée est appliquée à l' [`Page`](xref:Xamarin.Forms.Page) instance :
 
-[![](page-toolbar-placement-images/toolbar-placement.png "Toolbar Placement Platform-Specific")](page-toolbar-placement-images/toolbar-placement-large.png#lightbox "Toolbar Placement Platform-Specific")
+[![Positionnement de la barre d’outils spécifique à la plateforme](page-toolbar-placement-images/toolbar-placement.png)](page-toolbar-placement-images/toolbar-placement-large.png#lightbox "Positionnement de la barre d’outils spécifique à la plateforme")
 
 ## <a name="related-links"></a>Liens connexes
 

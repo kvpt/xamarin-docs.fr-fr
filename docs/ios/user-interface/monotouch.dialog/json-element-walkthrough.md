@@ -7,38 +7,38 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: davidortinau
 ms.author: daortin
-ms.openlocfilehash: ad2386d912dba28041c02c4fb4a8046d341a85ed
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 8ad1bf746c129cfb5cfbc8b3e04b871224df486d
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73002267"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936576"
 ---
 # <a name="using-json-to-create-a-user-interface-in-xamarinios"></a>Utilisation de JSON pour créer une interface utilisateur dans Xamarin. iOS
 
 _Boîte de dialogue MonoTouch. (MT. D) prend en charge la génération dynamique d’interfaces utilisateur via des données JSON. Dans ce didacticiel, nous allons découvrir comment utiliser un JSONElement pour créer une interface utilisateur à partir de JSON qui est incluse dans une application ou chargée à partir d’une URL distante._
 
-MT. D prend en charge la création d’interfaces utilisateur déclarées en JSON. Lorsque les éléments sont déclarés à l’aide de JSON, MT. D crée automatiquement les éléments associés pour vous. Le code JSON peut être chargé à partir d’un fichier local, d’une instance analysée `JsonObject`, ou même d’une URL distante.
+MT. D prend en charge la création d’interfaces utilisateur déclarées en JSON. Lorsque les éléments sont déclarés à l’aide de JSON, MT. D crée automatiquement les éléments associés pour vous. Le code JSON peut être chargé à partir d’un fichier local, d’une instance analysée `JsonObject` ou même d’une URL distante.
 
 MT. D prend en charge la gamme complète des fonctionnalités disponibles dans l’API d’éléments lors de l’utilisation de JSON. Par exemple, l’application de la capture d’écran suivante est entièrement déclarée à l’aide de JSON :
 
-[![](json-element-walkthrough-images/01-load-from-file.png "Par exemple, l’application de cette capture d’écran est entièrement déclarée à l’aide de JSON")](json-element-walkthrough-images/01-load-from-file.png#lightbox)[![](json-element-walkthrough-images/01-load-from-file.png "Par exemple, l’application de cette capture d’écran est entièrement déclarée à l’aide de JSON")](json-element-walkthrough-images/01-load-from-file.png#lightbox)
+[ ![ Par exemple, l’application de cette capture d’écran est entièrement déclarée à l’aide de JSON](json-element-walkthrough-images/01-load-from-file.png)](json-element-walkthrough-images/01-load-from-file.png#lightbox) [ ![ , par exemple, l’application de cette capture d’écran est entièrement déclarée à l’aide de JSON](json-element-walkthrough-images/01-load-from-file.png)](json-element-walkthrough-images/01-load-from-file.png#lightbox)
 
 Revenons à l’exemple du didacticiel sur les éléments de l' [API procédures](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md) , qui montre comment ajouter un écran de détails de tâche à l’aide de JSON.
 
 ## <a name="setting-up-mtd"></a>Configuration de MT. E
 
-MT. D est distribué avec Xamarin. iOS. Pour l’utiliser, cliquez avec le bouton droit sur le nœud **références** d’un projet Xamarin. iOS dans Visual Studio 2017 ou Visual Studio pour Mac et ajoutez une référence à l’assembly **MonoTouch. boîte de dialogue-1** . Ajoutez ensuite `using MonoTouch.Dialog` instructions dans votre code source, si nécessaire.
+MT. D est distribué avec Xamarin. iOS. Pour l’utiliser, cliquez avec le bouton droit sur le nœud **références** d’un projet Xamarin. iOS dans Visual Studio 2017 ou Visual Studio pour Mac et ajoutez une référence à l’assembly **MonoTouch. boîte de dialogue-1** . Ajoutez ensuite `using MonoTouch.Dialog` des instructions dans votre code source, si nécessaire.
 
 ## <a name="json-walkthrough"></a>Procédure pas à pas JSON
 
 L’exemple de cette procédure pas à pas permet de créer des tâches. Quand une tâche est sélectionnée sur le premier écran, un écran de détails s’affiche, comme indiqué ci-dessous :
 
- [![](json-element-walkthrough-images/03-task-list.png "When a task is selected on the first screen, a detail screen is presented as shown")](json-element-walkthrough-images/03-task-list.png#lightbox)
+ [![Quand une tâche est sélectionnée sur le premier écran, un écran de détails s’affiche comme indiqué](json-element-walkthrough-images/03-task-list.png)](json-element-walkthrough-images/03-task-list.png#lightbox)
 
 ## <a name="creating-the-json"></a>Création du JSON
 
-Pour cet exemple, nous chargeons le JSON à partir d’un fichier dans le projet nommé `task.json`. MT. D s’attend à ce que le JSON soit conforme à une syntaxe qui reflète l’API Elements. Tout comme l’utilisation de l’API Elements à partir du code, lors de l’utilisation de JSON, nous déclarons des sections et, dans ces sections, nous ajoutons des éléments. Pour déclarer des sections et des éléments dans JSON, nous utilisons les chaînes « sections » et « Elements » respectivement comme clés. Pour chaque élément, le type d’élément associé est défini à l’aide de la clé de `type`. Chaque autre propriété Elements est définie avec le nom de la propriété comme clé.
+Pour cet exemple, nous chargeons le JSON à partir d’un fichier dans le projet nommé `task.json` . MT. D s’attend à ce que le JSON soit conforme à une syntaxe qui reflète l’API Elements. Tout comme l’utilisation de l’API Elements à partir du code, lors de l’utilisation de JSON, nous déclarons des sections et, dans ces sections, nous ajoutons des éléments. Pour déclarer des sections et des éléments dans JSON, nous utilisons les chaînes « sections » et « Elements » respectivement comme clés. Pour chaque élément, le type d’élément associé est défini à l’aide de la `type` clé. Chaque autre propriété Elements est définie avec le nom de la propriété comme clé.
 
 Par exemple, le code JSON suivant décrit les sections et les éléments pour les détails de la tâche :
 
@@ -69,7 +69,7 @@ Notez que le JSON ci-dessus comprend un ID pour chaque élément. Tout élément
 
 ## <a name="loading-the-json-in-code"></a>Chargement du JSON dans le code
 
-Une fois le JSON défini, nous devons le charger dans MT. D à l’aide de la classe `JsonElement`. En supposant qu’un fichier avec le JSON créé ci-dessus a été ajouté au projet avec le nom sample. JSON et qu’une action de génération de contenu soit générée, le chargement de la `JsonElement` est aussi simple que l’appel de la ligne de code suivante :
+Une fois le JSON défini, nous devons le charger dans MT. D à l’aide de la `JsonElement` classe. En supposant qu’un fichier avec le JSON créé ci-dessus a été ajouté au projet avec le nom sample.jssur et qu’une action de génération de contenu soit générée, le chargement de `JsonElement` est aussi simple que l’appel de la ligne de code suivante :
 
 ```csharp
 var taskElement = JsonElement.FromFile ("task.json");
@@ -121,7 +121,7 @@ _addButton.Clicked += (sender, e) => {
 
 ## <a name="loading-json-from-a-url"></a>Chargement de JSON à partir d’une URL
 
-MT. D prend également en charge le chargement dynamique de JSON à partir d’une URL externe en passant simplement l’URL au constructeur de l' `JsonElement`. MT. D développe la hiérarchie déclarée dans le JSON à la demande à mesure que vous naviguez entre les écrans. Par exemple, imaginez un fichier JSON, tel que celui ci-dessous, situé à la racine du serveur Web local :
+MT. D prend également en charge le chargement dynamique de JSON à partir d’une URL externe en passant simplement l’URL au constructeur de `JsonElement` . MT. D développe la hiérarchie déclarée dans le JSON à la demande à mesure que vous naviguez entre les écrans. Par exemple, imaginez un fichier JSON, tel que celui ci-dessous, situé à la racine du serveur Web local :
 
 ```json
 {
@@ -147,7 +147,7 @@ MT. D prend également en charge le chargement dynamique de JSON à partir d’u
 }
 ```
 
-Nous pouvons le charger à l’aide de la `JsonElement` comme dans le code suivant :
+Nous pouvons charger ce code à l’aide de `JsonElement` , comme dans le code suivant :
 
 ```csharp
 _rootElement = new RootElement ("Json Example") {
@@ -159,9 +159,9 @@ _rootElement = new RootElement ("Json Example") {
 
 Au moment de l’exécution, le fichier est récupéré et analysé par MT. D lorsque l’utilisateur accède à la deuxième vue, comme illustré dans la capture d’écran ci-dessous :
 
- [![](json-element-walkthrough-images/04-json-web-example.png "The file will be retrieved and parsed by MT.D when the user navigates to the second view")](json-element-walkthrough-images/04-json-web-example.png#lightbox)
+ [![Le fichier sera récupéré et analysé par MT. D lorsque l’utilisateur accède à la deuxième vue](json-element-walkthrough-images/04-json-web-example.png)](json-element-walkthrough-images/04-json-web-example.png#lightbox)
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article a montré comment créer une interface using avec MT. D à partir de JSON. Il a montré comment charger JSON inclus dans un fichier avec l’application et à partir d’une URL distante. Elle a également montré comment accéder aux éléments décrits dans JSON au moment de l’exécution.
 

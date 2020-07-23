@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 584b398deafd233fdbe6b24189a2047ae712fdcf
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 01f95641a0cf65341479c51b2f6314a0ef3ea2de
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573519"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939072"
 ---
 # <a name="working-with-the-ui-thread-in-xamarinios"></a>Utilisation du thread d’interface utilisateur dans Xamarin. iOS
 
@@ -36,7 +36,7 @@ La `InvokeOnMainThread` méthode est définie sur de `NSObject` sorte qu’elle 
 
 Lors du débogage des applications Xamarin. iOS, une erreur est levée si votre code tente d’accéder à un contrôle d’interface utilisateur à partir du mauvais thread. Cela vous permet d’identifier et de résoudre ces problèmes avec la méthode InvokeOnMainThread. Cela se produit uniquement lors du débogage et ne génère pas d’erreur dans les versions release. Le message d’erreur s’affiche comme suit :
 
- ![](ui-thread-images/image10.png "UI Thread Execution")
+ ![Exécution du thread d’interface utilisateur](ui-thread-images/image10.png)
 
  <a name="Background_Thread_Example"></a>
 
@@ -91,7 +91,7 @@ async partial void button2_TouchUpInside (UIButton sender)
 
 Si une méthode Async est appelée à partir d’un thread d’arrière-plan (et non le thread d’interface utilisateur principal), elle est `InvokeOnMainThread` toujours requise.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Contrôles (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/controls)
-- [Threads](~/ios/app-fundamentals/threading.md)
+- [Thread](~/ios/app-fundamentals/threading.md)

@@ -10,16 +10,16 @@ ms.date: 05/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8d7ae5eb16b8a94f16b6eca013b4ec7a93f427bd
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 972a5ac99ff775ea7301f803c333d8239ae7f193
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84198128"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938188"
 ---
 # <a name="consume-a-restful-web-service"></a>Utilisation d’un service Web RESTful
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)
 
 _L’intégration d’un service Web dans une application est un scénario courant. Cet article explique comment utiliser un service Web RESTful à partir d’une Xamarin.Forms application._
 
@@ -43,7 +43,7 @@ La simplicité de REST a aidé à en faire la principale méthode pour accéder 
 
 Lorsque l’exemple d’application est exécuté, il se connecte à un service REST hébergé localement, comme illustré dans la capture d’écran suivante :
 
-![](rest-images/portal.png "Sample Application")
+![Exemple d'application](rest-images/portal.png)
 
 > [!NOTE]
 > Dans iOS 9 et versions ultérieures, application transport Security (ATS) applique des connexions sécurisées entre les ressources Internet (par exemple, le serveur principal de l’application) et l’application, ce qui empêche la divulgation accidentelle d’informations sensibles. Dans la mesure où ATS est activé par défaut dans les applications générées pour iOS 9, toutes les connexions sont soumises aux exigences de sécurité ATS. Si les connexions ne répondent pas à ces exigences, elles échouent avec une exception.
@@ -59,7 +59,7 @@ Le service REST est écrit à l’aide de ASP.NET Core et fournit les opération
 |Obtenir une liste de tâches|GET|/api/todoitems/|
 |Créer un nouvel élément de tâche|POST|/api/todoitems/|TodoItem au format JSON|
 |Mettre à jour une tâche|PUT|/api/todoitems/|TodoItem au format JSON|
-|Supprimer une tâche|Suppression|/api/todoitems/{id}|
+|Supprimer une tâche|DELETE|/api/todoitems/{id}|
 
 La majorité des URI incluent l' `TodoItem` ID dans le chemin d’accès. Par exemple, pour supprimer l' `TodoItem` dont l’ID est `6bb8a868-dba1-4f1a-93b7-24ebce87e243` , le client envoie une requête Delete à `http://hostname/api/todoitems/6bb8a868-dba1-4f1a-93b7-24ebce87e243` . Pour plus d’informations sur le modèle de données utilisé dans l’exemple d’application, consultez [modélisation des données](~/xamarin-forms/data-cloud/web-services/introduction.md).
 
@@ -211,7 +211,7 @@ Le service REST envoie un code d’état HTTP dans la `HttpResponseMessage.IsSuc
 - **400 (requête INcorrecte)** : la demande n’est pas comprise par le serveur.
 - **404 (INtrouvable)** : la ressource demandée n’existe pas sur le serveur.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Création de services principaux pour les applications mobiles natives](/aspnet/core/mobile/native-mobile-backend/)
 - [TodoREST (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)

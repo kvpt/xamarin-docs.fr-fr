@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: aed11ff8794f79ff7e16fbb8401a95a5697d2d4b
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 9280917f451d58ae864398088bec7faaf15ad96a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572063"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937343"
 ---
 # <a name="source-lists-in-xamarinmac"></a>Listes de sources dans Xamarin. Mac
 
@@ -22,7 +22,7 @@ Lorsque vous travaillez avec C# et .NET dans une application Xamarin. Mac, vous 
 
 Une liste source est un type spécial de mode plan utilisé pour afficher la source d’une action, comme la barre latérale dans Finder ou iTunes.
 
-[![](source-list-images/source05.png "An example source list")](source-list-images/source05.png#lightbox)
+[![Exemple de liste de sources](source-list-images/source05.png)](source-list-images/source05.png#lightbox)
 
 Dans cet article, nous allons aborder les bases de l’utilisation des listes de sources dans une application Xamarin. Mac. Nous vous recommandons vivement d’utiliser l’article [Hello, Mac](~/mac/get-started/hello-mac.md) , en particulier la [Présentation de Xcode et Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) et les sections [actions et actions](~/mac/get-started/hello-mac.md#outlets-and-actions) , car il aborde les concepts et les techniques clés que nous allons utiliser dans cet article.
 
@@ -50,7 +50,7 @@ Une liste source est un type spécial de mode plan utilisé pour afficher la sou
 
 Tout d’abord, nous allons créer une `SourceListItem` classe pour stocker les données de notre liste source. Dans le **Explorateur de solutions**, cliquez avec le bouton droit sur le projet, puis sélectionnez **Ajouter**  >  **un nouveau fichier...** Sélectionnez **General**  >  **classe générale vide**, entrez `SourceListItem` pour le **nom** et cliquez sur le bouton **nouveau** :
 
-[![](source-list-images/source01.png "Adding an empty class")](source-list-images/source01.png#lightbox)
+[![Ajout d’une classe vide](source-list-images/source01.png)](source-list-images/source01.png#lightbox)
 
 Faites en sorte que le fichier ressemble à `SourceListItem.cs` ce qui suit : 
 
@@ -532,19 +532,19 @@ Cela crée une sous-classe personnalisée, réutilisable de `NSOutlineView` ( `S
 
 À présent, nous allons concevoir notre liste de sources dans Interface Builder. Double-cliquez sur le `Main.storyboard` fichier pour l’ouvrir et le modifier dans Interface Builder, puis faites glisser un affichage fractionné de l' **inspecteur de bibliothèque**, ajoutez-le au contrôleur d’affichage et définissez-le pour qu’il se redimensionne avec la vue dans l’éditeur de **contraintes**:
 
-[![](source-list-images/source00.png "Editing constraints")](source-list-images/source00.png#lightbox)
+[![Modification des contraintes](source-list-images/source00.png)](source-list-images/source00.png#lightbox)
 
 Ensuite, faites glisser une liste source à partir de l' **inspecteur de bibliothèque**, ajoutez-la à gauche de l’affichage fractionné et affectez-lui la valeur redimensionner avec la vue dans l' **éditeur de contraintes**:
 
-[![](source-list-images/source02.png "Editing constraints")](source-list-images/source02.png#lightbox)
+[![Modification des contraintes](source-list-images/source02.png)](source-list-images/source02.png#lightbox)
 
 Ensuite, basculez vers la **vue d’identité**, sélectionnez la liste source, puis remplacez sa **classe** par `SourceListView` :
 
-[![](source-list-images/source03.png "Setting the class name")](source-list-images/source03.png#lightbox)
+[![Définition du nom de la classe](source-list-images/source03.png)](source-list-images/source03.png#lightbox)
 
 Enfin, créez une **sortie** pour notre liste source appelée `SourceList` dans le `ViewController.h` fichier :
 
-[![](source-list-images/source04.png "Configuring an Outlet")](source-list-images/source04.png#lightbox)
+[![Configuration d’une prise](source-list-images/source04.png)](source-list-images/source04.png#lightbox)
 
 Enregistrez vos modifications et revenez à Visual Studio pour Mac pour effectuer une synchronisation avec Xcode.
 
@@ -614,7 +614,7 @@ public override void DidFinishLaunching (NSNotification notification)
 
 Si nous exécutons notre application, les éléments suivants s’affichent :
 
-[![](source-list-images/source05.png "An example app run")](source-list-images/source05.png#lightbox)
+[![Exemple d’exécution d’application](source-list-images/source05.png)](source-list-images/source05.png#lightbox)
 
 <a name="Summary"></a>
 
@@ -622,7 +622,7 @@ Si nous exécutons notre application, les éléments suivants s’affichent :
 
 Cet article a décrit en détail l’utilisation des listes de sources dans une application Xamarin. Mac. Nous avons vu comment créer et gérer des listes de sources dans le Interface Builder de Xcode et comment utiliser des listes de sources dans du code C#.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [MacOutlines (exemple)](https://docs.microsoft.com/samples/xamarin/mac-samples/macoutlines)
 - [Hello, Mac](~/mac/get-started/hello-mac.md)

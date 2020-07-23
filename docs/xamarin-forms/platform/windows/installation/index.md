@@ -10,12 +10,12 @@ ms.date: 04/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 13b46fd06b0116332241b0d523aea707d56b39ec
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 06f7a138ee27fe095b99a55917267aaa6e01998e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84573363"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939020"
 ---
 # <a name="setup-windows-projects"></a>Configurer des projets Windows
 
@@ -35,21 +35,21 @@ Suivez ces instructions pour ajouter une application UWP qui s’exécutera sur 
 
  1,0. Cliquez avec le bouton droit sur la solution, puis sélectionnez **ajouter > nouveau projet...** et ajouter un projet d' **application vide (Windows universel)** :
 
-  ![](universal-images/add-wu.png "Add New Project Dialog")
+  ![Ajouter une nouvelle boîte de dialogue Nouveau projet](universal-images/add-wu.png)
 
  2. Dans la boîte de dialogue **nouveau projet de plateforme Windows universelle** , sélectionnez les versions minimale et cible de Windows 10 sur lesquelles l’application doit s’exécuter :
 
-  ![](universal-images/target-version.png "New Universal Windows Platform Project Dialog")
+  ![Boîte de dialogue Nouveau projet de plateforme Windows universelle](universal-images/target-version.png)
 
  1,3. Cliquez avec le bouton droit sur le projet UWP, puis sélectionnez **gérer les packages NuGet...** et ajouter le **Xamarin.Forms** Package. Assurez-vous que les autres projets de la solution sont également mis à jour vers la même version du Xamarin.Forms Package.
 
  4. Assurez-vous que le nouveau projet UWP sera créé dans la fenêtre de **Configuration Manager de > de build** (cela ne s’est probablement pas produit par défaut). Cochez les cases **générer** et **déployer** pour le projet universel :
 
-  [![](universal-images/configuration-sml.png "Configuration Manager Window")](universal-images/configuration.png#lightbox "Configuration Manager Window")
+  [![Fenêtre Configuration Manager](universal-images/configuration-sml.png)](universal-images/configuration.png#lightbox "Fenêtre Configuration Manager")
 
  5,5. Cliquez avec le bouton droit sur le projet, puis sélectionnez **ajouter > référence** et créer une référence au Xamarin.Forms projet d’application (.NET standard ou projet partagé).
 
-  ![](universal-images/addref-sml.png "Reference Manager Dialog")
+  ![Boîte de dialogue Gestionnaire de références](universal-images/addref-sml.png)
 
  6,3. Dans le projet UWP, modifiez **app.Xaml.cs** pour inclure l' `Init` appel de méthode à l’intérieur de la `OnLaunched` méthode autour de la ligne 52 :
 

@@ -10,12 +10,12 @@ ms.date: 12/11/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3045db1248aa16529d4e43b9a8afc97377cfd9cb
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 9e5aeedb7dd51717a9bb987e90dffdcd9b514da0
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84128943"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937941"
 ---
 # <a name="android-platform-features"></a>Fonctionnalités de la plateforme Android
 
@@ -68,11 +68,11 @@ Pour ajouter des thèmes de conception de matériau à votre Xamarin.Forms proje
 
 Voici l’exemple **TODO** avec la valeur par défaut `FormsApplicationActivity` :
 
-[![](images/before-appcompat-sml.png "Todo Sample Application Without AppCompat")](images/before-appcompat.png#lightbox "Todo Sample Application Without AppCompat")
+[![Exemple d’application todo sans AppCompat](images/before-appcompat-sml.png)](images/before-appcompat.png#lightbox "Exemple d’application todo sans AppCompat")
 
 Et il s’agit du même code après la mise à niveau du projet pour utiliser `FormsAppCompatActivity` (et l’ajout d’informations de thème supplémentaires) :
 
-[![](images/post-appcompat-sml.png "Todo Sample Application With AppCompat and Theming")](images/post-appcompat.png#lightbox "Todo Sample Application With AppCompat and Theming")
+[![Exemple d’application todo avec AppCompat et thèmes](images/post-appcompat-sml.png)](images/post-appcompat.png#lightbox "Exemple d’application todo avec AppCompat et thèmes")
 
 > [!NOTE]
 > Lorsque `FormsAppCompatActivity` vous utilisez, les [classes de base de certains convertisseurs personnalisés Android](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md) seront différentes.

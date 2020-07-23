@@ -10,16 +10,16 @@ ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 86b526fff305b195221aca3fb6a86ad0823cb145
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e206c89de278c8b85848294e76e4431825eaee85
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84569398"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938955"
 ---
 # <a name="datapages-controls-reference"></a>Référence des contrôles DataPages
 
-![](~/media/shared/preview.png "This API is currently in preview")
+![Cette API est actuellement en version préliminaire](~/media/shared/preview.png)
 
 > [!IMPORTANT]
 > DataPages requiert une Xamarin.Forms référence de thème à restituer. Cela implique l’installation de [ Xamarin.Forms . Package. base](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/) NuGet dans votre projet, suivi de l’un ou l’autre [ Xamarin.Forms . Theme. Light](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/) ou [ Xamarin.Forms . Packages NuGet Theme. Dark](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/) .
@@ -48,7 +48,7 @@ Les exemples ci-dessous incluent des `DynamicResource` références qui doivent 
 Le `HeroImage` contrôle a quatre propriétés :
 
 * Texte
-* Détail
+* Detail
 * ImageSource
 * Aspect
 
@@ -62,11 +62,11 @@ Le `HeroImage` contrôle a quatre propriétés :
 
 **Android**
 
-![](controls-images/heroimage-light-android.png "Contrôle HeroImage sur Android") ![](controls-images/heroimage-dark-android.png "Contrôle HeroImage sur Android")
+![Contrôle HeroImage sur Android](controls-images/heroimage-light-android.png) ![Contrôle HeroImage sur Android](controls-images/heroimage-dark-android.png)
 
 **iOS**
 
-![](controls-images/heroimage-light-ios.png "Contrôle HeroImage sur iOS") ![](controls-images/heroimage-dark-ios.png "Contrôle HeroImage sur iOS")
+![Contrôle HeroImage sur iOS](controls-images/heroimage-light-ios.png) ![Contrôle HeroImage sur iOS](controls-images/heroimage-dark-ios.png)
 
 ### <a name="listitem"></a>ListItem
 
@@ -74,8 +74,8 @@ La `ListItem` disposition du contrôle est similaire aux lignes de liste ou de t
 
 Il existe cinq propriétés :
 
-* Titre
-* Détail
+* Intitulé
+* Detail
 * ImageSource
 * PlaceholdImageSource
 * Aspect
@@ -94,11 +94,11 @@ Ces captures d’écran montrent les `ListItem` plateformes sur iOS et Android �
 
 **Android**
 
-![](controls-images/listitem-light-android.png "Contrôle ListItem sur Android") ![](controls-images/listitem-dark-android.png "Contrôle ListItem sur Android")
+![Contrôle ListItem sur Android](controls-images/listitem-light-android.png) ![Contrôle ListItem sur Android](controls-images/listitem-dark-android.png)
 
 **iOS**
 
-![](controls-images/listitem-light-ios.png "Contrôle ListItem sur iOS") ![](controls-images/listitem-dark-ios.png "Contrôle ListItem sur iOS")
+![Contrôle ListItem sur iOS](controls-images/listitem-light-ios.png) ![Contrôle ListItem sur iOS](controls-images/listitem-dark-ios.png)
 
 ## <a name="custom-control-example"></a>Exemple de contrôle personnalisé
 
@@ -107,7 +107,7 @@ L’objectif de ce `CardView` contrôle personnalisé est de ressembler à un Ca
 Elle contient trois propriétés :
 
 * Texte
-* Détail
+* Detail
 * ImageSource
 
 L’objectif est un contrôle personnalisé qui ressemble au code ci-dessous (Notez qu’un personnalisé `xmlns:local` est requis qui référence l’assembly actuel) :
@@ -124,11 +124,11 @@ Elle doit ressembler aux captures d’écran ci-dessous à l’aide de couleurs 
 
 **Android**
 
-![](controls-images/cardview-light-android.png "Contrôle personnalisé CardView sur Android") ![](controls-images/cardview-dark-android.png "Contrôle personnalisé CardView sur Android")
+![Contrôle personnalisé CardView sur Android](controls-images/cardview-light-android.png) ![Contrôle personnalisé CardView sur Android](controls-images/cardview-dark-android.png)
 
 **iOS**
 
-![](controls-images/cardview-light-ios.png "Contrôle personnalisé CardView sur iOS") ![](controls-images/cardview-dark-ios.png "Contrôle personnalisé CardView sur iOS")
+![Contrôle personnalisé CardView sur iOS](controls-images/cardview-light-ios.png) ![Contrôle personnalisé CardView sur iOS](controls-images/cardview-dark-ios.png)
 
 ### <a name="building-the-custom-cardview"></a>Création du CardView personnalisé
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/07/2016
-ms.openlocfilehash: 99565d7e61e8e8c1d28b67a6a6d25979c79fa387
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 2a883c85eede7f7600e5716dded71f3c90f49026
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84566160"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939748"
 ---
 # <a name="introduction-to-tvos-9"></a>Introduction à tvOS 9
 
@@ -34,7 +34,7 @@ les applications tvOS qui s’exécutent sur Apple TV offrent les fonctionnalit�
 
 - App Groups
 - Background Modes
-- Data Protection
+- Protection des données
 - Centre de jeux
 - Contrôleurs de jeu
 - iCloud
@@ -50,7 +50,7 @@ Les fonctionnalités et les fonctionnalités suivantes ne sont pas prises en cha
 - HomeKit
 - Inter-App Audio
 - Cartes
-- VPN personnel
+- Personal VPN
 - Notifications Push
 - Wallet
 - Configuration d’accessoires sans fil
@@ -90,7 +90,7 @@ La télécommande Siri est actuellement disponible dans les pays suivants :
 
 Tous les autres pays recevront la télécommande Apple TV qui remplace le bouton Siri par un bouton de recherche qui affiche l’écran de recherche par défaut avec entrée de texte pour la recherche :
 
-[![](tvos9-images/remote02.png "Siri Remote")](tvos9-images/remote02.png#lightbox)
+[![Siri à distance](tvos9-images/remote02.png)](tvos9-images/remote02.png#lightbox)
 
 Pour plus d’informations, consultez notre documentation sur [les contrôleurs distants et Bluetooth Siri](~/ios/tvos/platform/remote-bluetooth.md) .
 
@@ -154,7 +154,7 @@ Pour plus d’informations, consultez notre page [utilisation de la navigation e
 
 L’écran d’accueil Apple TV affiche toutes les applications installées et fournit un moyen d’accéder aux préférences de l’utilisateur :
 
-[![](tvos9-images/home01.png "The Home Screen")](tvos9-images/home01.png#lightbox)
+[![Écran d’accueil](tvos9-images/home01.png)](tvos9-images/home01.png#lightbox)
 
 L’utilisateur parcourt une grille d’icônes d’application à l’aide de gestes tactiles sur le Siri distant à l’aide du focus pour sélectionner une application et la lancer. L’icône de l’application est la première opportunité de vous donner une grande impression à votre utilisateur potentiel et doit communiquer d’un coup d’œil à l’objectif de votre application.
 
@@ -168,7 +168,7 @@ Pour plus d’informations, consultez notre documentation [sur l’utilisation d
 
 Si l’utilisateur a placé votre application Xamarin. tvOS sur la ligne supérieure de l’écran d’accueil Apple TV, une grande image de haut rayon s’affiche lorsque votre application est sélectionnée par l’utilisateur. Cette image doit mettre en surbrillance les fonctionnalités de votre application ou fournir des liens directs vers son contenu.
 
-[![](tvos9-images/topshelf01.png "The Top Shelf")](tvos9-images/topshelf01.png#lightbox)
+[![L’étagère supérieur](tvos9-images/topshelf01.png)](tvos9-images/topshelf01.png#lightbox)
 
 L’image de l’étagère supérieure peut être fournie sous la forme d’un `.png` fichier statique ou d’un fichier unique, `.lsr` ou elle peut être créée dynamiquement au moment de l’exécution sous la forme d’une ligne unique d’éléments pouvant être mis sur le focus.
 
@@ -176,7 +176,7 @@ Au lieu d’afficher une image de rayon supérieure statique, elle peut contenir
 
 Pour plus d’informations, consultez notre documentation sur l' [utilisation des icônes et des images](~/ios/tvos/app-fundamentals/icons-images.md) et informations de référence sur l' [infrastructure TVServices](https://developer.apple.com/library/prerelease/tvos/documentation/TVServices/Reference/TVServices_Ref/index.html#//apple_ref/doc/uid/TP40016412) d’Apple pour plus d’informations sur l’ajout d’une extension d’étagère supérieure à votre application afin de fournir un contenu dynamique supérieur.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Exemples tvOS](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
 - [tvOS](https://developer.apple.com/tvos/)

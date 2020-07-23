@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 2341d90a297d6241c47a5f03fbe8fffa89dd34b0
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 6d87f99ae504346d55c4ddf86a093799ba9ddbd5
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032313"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936719"
 ---
 # <a name="purchasing-non-consumable-products-in-xamarinios"></a>Achat de produits non-consommables dans Xamarin. iOS
 
@@ -24,13 +24,13 @@ Le [code InAppPurchaseSample](https://docs.microsoft.com/samples/xamarin/ios-sam
 
 Le processus d’achat est illustré dans cette série de captures d’écran : le bouton **acheter** devient le bouton d’activation des fonctionnalités :   
 
- [![](purchasing-non-consumable-products-images/image34.png "The purchase process is shown in this series of screenshots")](purchasing-non-consumable-products-images/image34.png#lightbox)   
+ [![Le processus d’achat est illustré dans cette série de captures d’écran](purchasing-non-consumable-products-images/image34.png)](purchasing-non-consumable-products-images/image34.png#lightbox)   
 
 Le processus d’achat est identique à celui d’un produit consommable. la principale différence réside dans la façon dont l’achat est suivi dans le code de l’application. Dans cet exemple, le bouton acheter est disponible uniquement si le produit n’a pas déjà été acheté. sinon, le bouton active la fonctionnalité elle-même.   
 
 Le diagramme suivant montre les interactions entre les classes et le serveur de l’App Store pour effectuer un achat de produit non consommable :   
 
- [![](purchasing-non-consumable-products-images/image35.png "The interactions between classes and the App Store server to perform a non-consumable product purchase")](purchasing-non-consumable-products-images/image35.png#lightbox)   
+ [![Interactions entre les classes et le serveur App Store pour effectuer un achat de produit non consommable](purchasing-non-consumable-products-images/image35.png)](purchasing-non-consumable-products-images/image35.png#lightbox)   
 
 La principale différence par rapport à l’exemple consommable est que, une fois l’achat terminé, l’interface utilisateur est mise à jour pour empêcher la réachat. Dans cet exemple, la notification d’une transaction réussie met à jour l’interface utilisateur, de sorte que le bouton **acheter** est converti en un bouton qui active la fonctionnalité elle-même.
 
@@ -47,5 +47,5 @@ Dans certains cas, une application ne peut pas déterminer si un produit non uti
 Le chemin de code dans ce scénario est exactement le même qu’un achat régulier, les seules différences sont les suivantes :
 
 - L’utilisateur n’est pas facturé à nouveau pour le produit.
-- L’objet `SKPaymentTransaction` passé à l’application aura une propriété `OriginalTransaction` qui fait référence à la transaction qui a été générée lors de l’achat initial du produit. 
+- L' `SKPaymentTransaction` objet passé à l’application aura une `OriginalTransaction` propriété qui fait référence à la transaction qui a été générée lors de l’achat initial du produit. 
 - Les applications qui vendent des produits non consommables doivent également implémenter la fonctionnalité de **restauration** de StoreKit pour aider les utilisateurs à récupérer des achats existants. 

@@ -10,16 +10,16 @@ ms.date: 04/27/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 18cdeccbdff86a6b20aab4b33db259f1f06ee096
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 4cad46bdee1b49c316947bc56bdb69a3b9e9a270
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139592"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938207"
 ---
 # <a name="native-views-in-c"></a>Vues natives en C\#
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeembedding)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeembedding)
 
 _Les vues natives d’iOS, Android et UWP peuvent être directement référencées à partir des Xamarin.Forms pages créées à l’aide de C#. Cet article explique comment ajouter des vues natives à une Xamarin.Forms mise en page créée à l’aide de C# et comment remplacer la disposition des vues personnalisées pour corriger leur utilisation de l’API de mesure._
 
@@ -29,7 +29,7 @@ Tout Xamarin.Forms contrôle qui permet `Content` d’être défini ou qui a une
 
 Les captures d’écran suivantes montrent des vues spécifiques à la plateforme qui ont été ajoutées à Xamarin.Forms [`StackLayout`](xref:Xamarin.Forms.StackLayout) :
 
-[![](code-images/screenshots-sml.png "StackLayout Containing Platform-Specific Views")](code-images/screenshots.png#lightbox "StackLayout Containing Platform-Specific Views")
+[![StackLayout contenant des vues spécifiques à la plateforme](code-images/screenshots-sml.png)](code-images/screenshots.png#lightbox "StackLayout contenant des vues spécifiques à la plateforme")
 
 La possibilité d’ajouter des vues spécifiques à une plateforme à une Xamarin.Forms disposition est activée par deux méthodes d’extension sur chaque plateforme :
 
@@ -132,7 +132,7 @@ stackLayout.Children.Add (customControl);
 
 Toutefois, étant donné que le `CustomControl.SizeThatFits` remplacement retourne toujours une hauteur de 150, la vue sera affichée avec un espace vide au-dessus et au-dessous de celle-ci, comme illustré dans la capture d’écran suivante :
 
-![](code-images/ios-bad-measurement.png "iOS CustomControl with Bad SizeThatFits Implementation")
+![iOS CustomControl avec implémentation incorrecte de SizeThatFits](code-images/ios-bad-measurement.png)
 
 Une solution à ce problème consiste à fournir une `GetDesiredSizeDelegate` implémentation, comme illustré dans l’exemple de code suivant :
 
@@ -163,7 +163,7 @@ stackLayout.Children.Add (customControl, FixSize);
 
 Cela entraîne l’affichage correct de la vue personnalisée, sans espace vide au-dessus et au-dessous de celle-ci, comme illustré dans la capture d’écran suivante :
 
-![](code-images/ios-good-measurement.png "iOS CustomControl with GetDesiredSize Override")
+![iOS CustomControl avec remplacement de GetDesiredSize](code-images/ios-good-measurement.png)
 
 ### <a name="android"></a>Android
 
@@ -201,7 +201,7 @@ stackLayout.Children.Add (customControl);
 
 Toutefois, étant donné que le `CustomControl.OnMeasure` remplacement retourne toujours la moitié de la largeur demandée, la vue sera affichée en occupant uniquement la moitié de la largeur disponible de l’appareil, comme illustré dans la capture d’écran suivante :
 
-![](code-images/android-bad-measurement.png "Android CustomControl with Bad OnMeasure Implementation")
+![Android CustomControl avec une implémentation incorrecte de OnMeasure](code-images/android-bad-measurement.png)
 
 Une solution à ce problème consiste à fournir une `GetDesiredSizeDelegate` implémentation, comme illustré dans l’exemple de code suivant :
 
@@ -230,7 +230,7 @@ stackLayout.Children.Add (customControl, FixSize);
 
 Cela entraîne l’affichage correct de la vue personnalisée, en occupant la largeur de l’appareil, comme illustré dans la capture d’écran suivante :
 
-![](code-images/android-good-measurement.png "Android CustomControl with Custom GetDesiredSize Delegate")
+![Android CustomControl avec délégué GetDesiredSize personnalisé](code-images/android-good-measurement.png)
 
 ### <a name="universal-windows-platform"></a>Plateforme Windows universelle
 
@@ -298,7 +298,7 @@ stackLayout.Children.Add(brokenControl);
 
 Toutefois, étant donné que le `CustomControl.ArrangeOverride` remplacement retourne toujours la moitié de la largeur demandée, la vue sera découpée à la moitié de la largeur disponible de l’appareil, comme illustré dans la capture d’écran suivante :
 
-![](code-images/winrt-bad-measurement.png "UWP CustomControl with Bad ArrangeOverride Implementation")
+![Plateforme UWP avec implémentation d’ArrangeOverride erronée](code-images/winrt-bad-measurement.png)
 
 Une solution à ce problème consiste à fournir une `ArrangeOverrideDelegate` implémentation, lors de l’ajout de la vue à [`StackLayout`](xref:Xamarin.Forms.StackLayout) , comme illustré dans l’exemple de code suivant :
 
@@ -317,13 +317,13 @@ stackLayout.Children.Add(fixedControl, arrangeOverrideDelegate: (renderer, final
 
 Cette méthode utilise la largeur fournie par la `CustomControl.ArrangeOverride` méthode, mais la multiplie par deux. Cela entraîne l’affichage correct de la vue personnalisée, en occupant la largeur de l’appareil, comme illustré dans la capture d’écran suivante :
 
-![](code-images/winrt-good-measurement.png "UWP CustomControl with ArrangeOverride Delegate")
+![UWP CustomControl avec délégué ArrangeOverride](code-images/winrt-good-measurement.png)
 
 ## <a name="summary"></a>Résumé
 
 Cet article a expliqué comment ajouter des vues natives à une Xamarin.Forms mise en page créée à l’aide de C# et comment remplacer la disposition des vues personnalisées pour corriger leur utilisation de l’API de mesure.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [NativeEmbedding (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeembedding)
 - [Formulaires natifs](~/xamarin-forms/platform/native-forms.md)

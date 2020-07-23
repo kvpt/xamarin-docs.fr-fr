@@ -10,16 +10,16 @@ ms.date: 06/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c0cd0e1939e443bc2c4a1ead8d0a29462ce04a68
-ms.sourcegitcommit: 91b4d2f93687fadec5c3f80aadc8f7298d911624
+ms.openlocfilehash: 8e23e4151c4841dd4dce80ba0358471c64a26f39
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85795044"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937606"
 ---
 # <a name="xamarinforms-shapes-path"></a>Xamarin.FormsFormes : chemin d’accès
 
-![](~/media/shared/preview.png "This API is currently pre-release")
+![API de la version préliminaire](~/media/shared/preview.png "Cette API est actuellement en préversion.")
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 

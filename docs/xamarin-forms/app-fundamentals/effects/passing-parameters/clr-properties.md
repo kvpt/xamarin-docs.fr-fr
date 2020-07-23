@@ -10,16 +10,16 @@ ms.date: 08/05/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 37d870509e034f4c23afba60fa055965ed9df4de
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 24468e88d39283d2b8282fe0cb9b59f33fcef2f0
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138862"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936693"
 ---
 # <a name="passing-effect-parameters-as-common-language-runtime-properties"></a>Passer des paramètres d’effet en tant que propriétés CLR (Common Language Runtime)
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)
 
 _Les propriétés CLR (Common Language Runtime) peuvent être utilisées pour définir des paramètres Effects qui ne répondent pas aux modifications de propriété d’exécution. Cet article montre comment utiliser les propriétés CLR pour passer des paramètres à un effet._
 
@@ -33,11 +33,11 @@ Les paramètres peuvent ensuite être passés à l’effet en spécifiant des va
 
 L’exemple d’application montre un `ShadowEffect` qui ajoute une ombre au texte affiché par un [`Label`](xref:Xamarin.Forms.Label) contrôle. Le diagramme suivant illustre les responsabilités de chaque projet dans l’exemple d’application ainsi que les relations qu’ils entretiennent les uns avec les autres :
 
-![](clr-properties-images/shadow-effect.png "Shadow Effect Project Responsibilities")
+![Responsabilités de projet ShadowEffect](clr-properties-images/shadow-effect.png)
 
 Un [`Label`](xref:Xamarin.Forms.Label) contrôle sur le `HomePage` est personnalisé par `LabelShadowEffect` dans chaque projet spécifique à la plateforme. Les paramètres sont passés à chaque `LabelShadowEffect` par le biais des propriétés dans la classe `ShadowEffect`. Chaque classe `LabelShadowEffect` dérive de la classe `PlatformEffect` pour chaque plateforme. Il en résulte l’ajout d’une ombre au texte affiché par le contrôle `Label`, comme illustré dans les captures d’écran suivantes :
 
-![](clr-properties-images/screenshots.png "Shadow Effect on each Platform")
+![Effet d’ombre sur chaque plateforme](clr-properties-images/screenshots.png)
 
 ## <a name="creating-effect-parameters"></a>Création de paramètres d’effet
 
@@ -241,10 +241,10 @@ La plateforme Windows universelle ne fournit pas d’effet d’ombre, et l' `Lab
 
 Cet article a montré comment utiliser des propriétés CLR pour passer des paramètres à un effet. Les propriétés CLR permettent de définir des paramètres d’effet qui ne répondent pas aux changements apportés aux propriétés au moment de l’exécution.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [Renderers personnalisés](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)
-- [Résultat](xref:Xamarin.Forms.Effect)
+- [Convertisseurs personnalisés](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)
+- [Effet](xref:Xamarin.Forms.Effect)
 - [PlatformEffect](xref:Xamarin.Forms.PlatformEffect`2)
 - [RoutingEffect](xref:Xamarin.Forms.RoutingEffect)
 - [Effet d’ombre (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)

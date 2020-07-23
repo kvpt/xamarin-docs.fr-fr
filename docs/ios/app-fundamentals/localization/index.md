@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 04/28/2017
-ms.openlocfilehash: c42b41f9b853fba58ef70b8bd2f8ab20a3369647
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 1f5f9e13607d672a6fdec5ed8fb116466973a260
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84569239"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938032"
 ---
 # <a name="localization-in-xamarinios"></a>Localisation dans Xamarin. iOS
 
@@ -173,9 +173,9 @@ Pour localiser une image dans iOS :
     UIImage.FromBundle("flag");
     ```
 
-2. Placez le fichier image par défaut **Flag. png** dans **base. lproj** (le répertoire du langage de développement natif).
+2. Placez le fichier image par défaut **flag.png** dans **base. lproj** (le répertoire du langage de développement natif).
 
-3. Vous pouvez éventuellement placer des versions localisées de l’image dans des dossiers **. lproj** pour chaque langue (par exemple, **es. lproj**, **ja. lproj**). Utilisez le même nom de fichier **Flag. png** dans chaque répertoire de langue.
+3. Vous pouvez éventuellement placer des versions localisées de l’image dans des dossiers **. lproj** pour chaque langue (par exemple, **es. lproj**, **ja. lproj**). Utilisez le même nom de fichier **flag.png** dans chaque répertoire de langue.
 
 Si aucune image n’est présente pour une langue particulière, iOS revient au dossier de langue native par défaut et charge l’image à partir de là.
 
@@ -255,9 +255,9 @@ iOS fournit un certain nombre de fonctionnalités pour faciliter la création d�
 
 Les captures d’écran suivantes illustrent l' [exemple Tasky localisé](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n) en arabe et en Hébreu (même si l’anglais a été entré dans les champs) :
 
-[![](images/rtl-ar-sml.png "Localization in Arabic")](images/rtl-ar.png#lightbox "Arabic")
+[![Localisation en arabe](images/rtl-ar-sml.png)](images/rtl-ar.png#lightbox "Arabe")
 
-[![](images/rtl-he-sml.png "Localization in Hebrew")](images/rtl-he.png#lightbox "Hebrew")
+[![Localisation en Hébreu](images/rtl-he-sml.png)](images/rtl-he.png#lightbox "Hébreu")
 
 iOS inverse automatiquement le `UINavigationController` , et les autres contrôles sont placés à l’intérieur `UIStackView` ou alignés avec la disposition automatique.
 Le texte RTL est localisé à l’aide de fichiers **. Strings** de la même façon que le texte LTR.
@@ -270,7 +270,7 @@ L’exemple [Tasky (localisé dans le code)](https://github.com/conceptdev/xamar
 
 ### <a name="project-structure"></a>Structure du projet
 
-![](images/solution-code.png "Resources tree")
+![Arborescence des ressources](images/solution-code.png)
 
 ### <a name="localizablestrings-file"></a>Fichier. Strings localisable
 
@@ -305,13 +305,13 @@ someControl.Text = localizedString;
 
 L’exemple [Tasky (Storyboard localisé)](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10nStoryboard) montre comment localiser du texte sur des contrôles dans une table de montage séquentiel.
 
-### <a name="project-structure"></a>Structure de projet
+### <a name="project-structure"></a>Structure du projet
 
 Le répertoire **base. lproj** contient la table de montage séquentiel et doit également contenir toutes les images utilisées dans l’application.
 
 Les autres répertoires de langage contiennent un fichier **localisable. Strings** pour toutes les ressources de chaîne référencées dans le code, ainsi qu’un fichier **fichier mainstoryboard. Strings** qui contient des traductions de texte dans le Storyboard.
 
-![](images/solution-storyboard.png "Resources tree")
+![Arborescence des ressources](images/solution-storyboard.png)
 
 Les répertoires de langage doivent contenir une copie des images localisées, afin de remplacer celle présente dans **base. lproj**.
 
@@ -324,7 +324,7 @@ Lorsque vous créez et modifiez des contrôles dans une table de montage séquen
 
 Cette valeur de chaîne a souvent une forme telle que « NF3-H8-xmR », comme illustré dans la capture d’écran suivante :
 
-![](images/xs-designer-localization-id.png "Xcode view of Storyboard localization")
+![Vue Xcode de la localisation des storyboards](images/xs-designer-localization-id.png)
 
 Cette valeur est utilisée dans le fichier **. Strings** pour assigner automatiquement du texte traduit à chaque contrôle.
 
@@ -347,7 +347,7 @@ Dans l’exemple **fichier mainstoryboard. Strings** ci-dessous, vous pouvez voi
 > [!IMPORTANT]
 > L’utilisation d’une table de montage séquentiel avec des classes de taille peut entraîner des traductions qui n’apparaissent pas dans l’application. Les [notes de publication de Xcode d’Apple](https://developer.apple.com/library/content/releasenotes/DeveloperTools/RN-Xcode/Chapters/Introduction.html) indiquent qu’une table de montage séquentiel ou une XIB ne se traduit pas correctement si trois choses sont vraies : elle utilise des classes de taille, la localisation de base et la cible de génération ont la valeur universel, et la génération cible iOS 7,0. Le correctif consiste à dupliquer votre fichier de chaînes de Storyboard dans deux fichiers identiques : **fichier mainstoryboard ~ iPhone. Strings** et **fichier mainstoryboard ~ iPad. Strings**, comme indiqué dans la capture d’écran suivante :
 >
-> ![](images/xs-dup-strings.png "Strings files")
+> ![Fichiers de chaînes](images/xs-dup-strings.png)
 
 <a name="appstore"></a>
 
@@ -361,7 +361,7 @@ Cet article décrit les principes fondamentaux de la localisation d’applicatio
 
 Vous pouvez en savoir plus sur i18n et l10n pour les applications iOS, Android et multiplateforme (y compris Xamarin. Forms) dans [ce guide multiplateforme](~/cross-platform/app-fundamentals/localization.md).
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Tasky (localisé dans le code) (exemple)](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n)
 - [Tasky (Storyboard localisé) (exemple)](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10nStoryboard)

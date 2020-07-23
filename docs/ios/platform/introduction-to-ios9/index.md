@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: de4b6e8b95eed33e7fb38baf51a0da73cef313c0
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: bfa2a74bf9cd30fb7b9888ecd7339a80fe472c9e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574130"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939085"
 ---
 # <a name="introduction-to-ios-9"></a>Introduction à iOS 9
 
 _Cet article présente toutes les API et fonctionnalités nouvelles et modifiées disponibles dans iOS 9 pour les développeurs Xamarin. iOS._
 
-![](images/ios9-sml.png "The iOS 9 logo")
+![Logo iOS 9](images/ios9-sml.png)
 
 Apple a ajouté plusieurs nouvelles API et services dans iOS 9, ainsi que de nombreuses améliorations apportées aux fonctionnalités existantes.
 
@@ -145,7 +145,7 @@ Pour plus d’informations, consultez [id tactile et ID facial dans Xamarin. iOS
 
 ## <a name="right-to-left-language-support"></a>Prise en charge des langues de droite à gauche
 
-Dans iOS 9, Apple a rendu une interface utilisateur retournée plus facile que jamais en fournissant une prise en charge complète des langues de droite à gauche. Ce dernier est détaillé ci-après :
+Dans iOS 9, Apple a rendu une interface utilisateur retournée plus facile que jamais en fournissant une prise en charge complète des langues de droite à gauche. Notamment :
 
 - Les contrôles [UIKit](xref:UIKit) standard sont automatiquement retournés de droite à gauche selon les paramètres régionaux et linguistiques des appareils iOS.
 - La classe [UIView](xref:UIKit.UIView) fournit des attributs qui vous permettent de définir la manière dont une vue donnée doit apparaître lorsqu’elle est retournée de droite à gauche.
@@ -201,7 +201,7 @@ Consultez également les parties iOS de ces exemples (compléments Mac OS X vers
 - [AgentsCatalog](https://github.com/xamarin/mac-ios-samples/tree/master/AgentsCatalog)
 - [MetalKitEssentials](https://github.com/xamarin/mac-ios-samples/tree/master/MetalKitEssentials)
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Exemples iOS 9](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
 - [Présentation de l’interface tactile 3D](~/ios/platform/3d-touch.md)

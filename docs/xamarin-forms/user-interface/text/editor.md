@@ -10,16 +10,16 @@ ms.date: 09/26/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 02749c9f8f55427bb1742e78464bbc003f1f7358
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 36f4946ffc6d5a42e1997f389501f921449d0259
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136173"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937590"
 ---
 # <a name="xamarinforms-editor"></a>Xamarin.Forms Éditeur
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
 _Entrée de texte sur plusieurs lignes_
 
@@ -271,7 +271,7 @@ En XAML :
 </ContentPage>
 ```
 
-![](editor-images/textbackgroundcolor.png "Editor with BackgroundColor Example")
+![Éditeur avec l’exemple BackgroundColor](editor-images/textbackgroundcolor.png)
 
 Assurez-vous que les couleurs de texte et d’arrière-plan que vous choisissez sont utilisables sur chaque plateforme et ne masquez aucun texte d’espace réservé.
 
@@ -285,7 +285,7 @@ Assurez-vous que les couleurs de texte et d’arrière-plan que vous choisissez 
 > [!NOTE]
 > La [`VisualElement`](xref:Xamarin.Forms.VisualElement) classe, dont [`Entry`](xref:Xamarin.Forms.Entry) hérite, possède également les [`Focused`](xref:Xamarin.Forms.VisualElement.Focused) [`Unfocused`](xref:Xamarin.Forms.VisualElement.Unfocused) événements et.
 
-### <a name="completed"></a>Effectué
+### <a name="completed"></a>Completed
 
 L' `Completed` événement est utilisé pour réagir à l’achèvement d’une interaction avec un `Editor` . `Completed`est déclenché lorsque l’utilisateur termine l’entrée par un champ en entrant la touche retour sur le clavier (ou en appuyant sur la touche Tab sur UWP). Le gestionnaire de l’événement est un gestionnaire d’événements générique, qui prend l’expéditeur et `EventArgs` :
 
@@ -380,7 +380,7 @@ Title="Editor Demo">
 </ContentPage>
 ```
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Texte (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 - [API Editor](xref:Xamarin.Forms.Editor)

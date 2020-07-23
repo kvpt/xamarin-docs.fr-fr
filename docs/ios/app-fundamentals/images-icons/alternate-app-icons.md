@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: e90ee165073dbbe792e4ca1916463517ad86255d
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 39a18a775946c2f139b4c032d2c360bc5680a0e7
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572297"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937915"
 ---
 # <a name="alternate-app-icons-in-xamarinios"></a>Autres icônes d’application dans Xamarin. iOS
 
@@ -25,7 +25,7 @@ Apple a ajouté plusieurs améliorations à iOS 10,3 qui permettent à une appli
 - `AlternateIconName`-Retourne le nom de l’autre icône actuellement sélectionnée ou `null` si vous utilisez l’icône principale.
 - `SetAlternameIconName`-Utilisez cette méthode pour faire passer l’icône de l’application à l’autre icône donnée.
 
-![](alternate-app-icons-images/icons04.png "A sample alert when an app changes its icon")
+![Exemple d’alerte quand une application modifie son icône](alternate-app-icons-images/icons04.png)
 
 <a name="Adding-Alternate-Icons"></a>
 
@@ -37,15 +37,15 @@ Effectuez les actions suivantes :
 
 1. Sélectionnez les images d’icône requises dans un dossier, sélectionnez tout et faites-les glisser vers le dossier **Resources** dans le **Explorateur de solutions**:
 
-    ![](alternate-app-icons-images/icons00.png "Select the icons images from a folder")
+    ![Sélectionner les images d’icônes dans un dossier](alternate-app-icons-images/icons00.png)
 
 2. Lorsque vous y êtes invité, sélectionnez **copier**, **Utilisez la même action pour tous les fichiers sélectionnés** , puis cliquez sur le bouton **OK** :
 
-    ![](alternate-app-icons-images/icons02.png "The Add File to Folder dialog box")
+    ![Boîte de dialogue Ajouter un fichier à un dossier](alternate-app-icons-images/icons02.png)
 
 3. Lorsque vous avez terminé, le dossier **ressources** doit se présenter comme suit :
 
-    ![](alternate-app-icons-images/icons01.png "The Resources folder should look like this")
+    ![Le dossier Resources doit ressembler à ceci](alternate-app-icons-images/icons01.png)
 
 <a name="Modifying-the-Info.plist-File"></a>
 
@@ -56,18 +56,18 @@ Une fois les images requises ajoutées au dossier **Resources** , la clé [CFBun
 Effectuez les actions suivantes :
 
 1. Dans l’**Explorateur de solutions**, double-cliquez sur le fichier **Info.plist** pour l’ouvrir et le modifier.
-2. Basculez en mode **source** .
+2. Basculez sur la vue **Source**.
 3. Ajoutez une clé d' **icônes de regroupement** et laissez le **type** défini sur **dictionary**.
 4. Ajoutez une `CFBundleAlternateIcons` clé et définissez le **type** sur **dictionary**.
 5. Ajoutez une `AppIcon2` clé et définissez le **type** sur **dictionary**. Il s’agit du nom du nouveau jeu d’icônes d’application de remplacement.
 6. Ajouter une `CFBundleIconFiles` clé et définir le **type** sur **Array**
 7. Ajoutez une nouvelle chaîne au `CFBundleIconFiles` tableau pour chaque fichier d’icône en ignorant l’extension et les `@2x` `@3x` suffixes,, etc. (exemple `100_icon` ). Répétez cette étape pour chaque fichier qui compose le jeu d’icônes de remplacement.
 8. Ajoutez une `UIPrerenderedIcon` clé au `AppIcon2` dictionnaire, définissez le **type** sur **booléen** et la valeur sur **non**.
-9. Enregistrez les modifications dans le fichier.
+9. Enregistrez les modifications du fichier.
 
 Une fois terminé, le fichier **info. plist** doit se présenter comme suit :
 
-![](alternate-app-icons-images/icons03.png "The completed Info.plist file")
+![Fichier info. plist terminé](alternate-app-icons-images/icons03.png)
 
 Ou comme ceci si vous l’ouvrez dans un éditeur de texte :
 
@@ -158,11 +158,11 @@ partial void UseAlternateIcon (Foundation.NSObject sender)
 
 Lorsque l’application est exécutée et que l’utilisateur sélectionne une autre icône, une alerte semblable à la suivante s’affiche :
 
-![](alternate-app-icons-images/icons04.png "A sample alert when an app changes its icon")
+![Exemple d’alerte quand une application modifie son icône](alternate-app-icons-images/icons04.png)
 
 Si l’utilisateur revient à l’icône principale, une alerte semblable à la suivante s’affiche :
 
-![](alternate-app-icons-images/icons05.png "A sample alert when an app changes to the primary icon")
+![Exemple d’alerte quand une application passe à l’icône principale](alternate-app-icons-images/icons05.png)
 
 <a name="Summary"></a>
 
@@ -170,6 +170,6 @@ Si l’utilisateur revient à l’icône principale, une alerte semblable à la 
 
 Cet article a abordé l’ajout d’icônes d’application alternatives à un projet Xamarin. iOS et son utilisation dans l’application.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Exemple iOSTenThree](https://docs.microsoft.com/samples/xamarin/ios-samples/ios10-iostenthree/)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/15/2017
-ms.openlocfilehash: f0d638d566290dd2ae0d8453133ee340d5b4ce3f
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 6ade57c60332f736e04b991bf83a7b12afa4cf54
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031583"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939462"
 ---
 # <a name="app-search-enhancements-in-xamarinios"></a>Améliorations de la recherche d’applications dans Xamarin. iOS
 
@@ -25,7 +25,7 @@ Dans iOS 10, Apple a apporté plusieurs améliorations à la recherche d’appli
 Core Spotlight dans iOS 10 offre plusieurs améliorations à la recherche d’applications, telles que :
 
 - **Participatives popularité des liens approfondis (avec confidentialité différentielle)** : permet de promouvoir le contenu d’application lié de manière détaillée dans les résultats de recherche.
-- **Recherche dans l’application** : utilisez la nouvelle classe `CSSearchQuery` pour fournir une fonctionnalité de recherche dans la Galerie d’applications similaire à la façon dont les applications mail, messages et notes fonctionnent.
+- **Recherche dans l’application** : utilisez la nouvelle `CSSearchQuery` classe pour fournir une fonctionnalité de recherche en vedette dans l’application similaire à la façon dont les applications de messagerie, de messages et notes fonctionnent.
 - **Continuation** de la recherche : permet à un utilisateur de lancer une recherche dans Spotlight ou Safari, puis d’ouvrir une application et de poursuivre cette recherche.
 - **Visualisation des résultats de la validation** : l’outil de validation de l' [API de recherche d’applications](https://search.developer.apple.com/appsearch-validation-tool) d’Apple affiche désormais une représentation visuelle du balisage d’un site Web et des liens détaillés lors de la préformation des tests.
 - **Partage d’images d’application de message** : permet d’afficher les images courantes dans l’application fournies pour le partage des messages (via une extension de l’application de message) dans les recherches Spotlight.
@@ -34,9 +34,9 @@ Les sections suivantes aborderont ces sujets plus en détail.
 
 ## <a name="crowdsourced-deep-link-popularity"></a>Participatives de la popularité des liens détaillés
 
-iOS 10 fournit un mécanisme permettant de compter la fréquence à laquelle les liens détaillés populaires dans une application sont suivis par l’utilisateur et qui utilise ces informations pour améliorer le classement du contenu d’une application dans les résultats de la recherche, tout en protégeant l’identité de l’utilisateur à l’aide de la fonctionnalité *différentielle Confidentialité*.
+iOS 10 fournit un mécanisme permettant de compter la fréquence à laquelle les liens profond populaires dans une application sont suivis par l’utilisateur et qui utilise ces informations pour améliorer le classement du contenu d’une application dans les résultats de la recherche, tout en protégeant l’identité de l’utilisateur à l’aide de la *confidentialité différentielle*.
 
-Pour les applications qui utilisent des objets `NSUserActivity` pour fournir des URL de lien profond et dont la propriété `EligibleForPublicIndexing` a la valeur `true`, iOS 10 soumet un sous-ensemble de *hachages de confidentialité différentielle* aux serveurs d’Apple. Ces informations sont ensuite utilisées pour promouvoir un contenu dans l’application populaire dans les résultats de recherche.
+Pour les applications qui utilisent des `NSUserActivity` objets pour fournir des URL de lien profond et dont la propriété a la `EligibleForPublicIndexing` valeur `true` , iOS 10 soumet un sous-ensemble de *hachages de confidentialité différentielle* aux serveurs Apple. Ces informations sont ensuite utilisées pour promouvoir un contenu dans l’application populaire dans les résultats de recherche.
 
 Pour plus d’informations sur l’implémentation de la liaison profonde dans une application Xamarin. iOS, consultez notre [recherche avec](~/ios/platform/search/nsuseractivity.md) la documentation NSUserActivity.
 
@@ -44,27 +44,27 @@ Pour plus d’informations sur l’implémentation de la liaison profonde dans u
 
 En implémentant la nouvelle classe [CSSearchQuery](https://developer.apple.com/reference/corespotlight/cssearchquery) , une application peut fournir une technologie de recherche et de correspondance de mise en vedette pour rechercher du contenu à l’intérieur de lui-même, sans que l’utilisateur n’ait à laisser l’application (semblable à la façon dont l’application mail, les messages et les notes fonctionnent).
 
-En règle générale, les applications qui prennent en charge `CSSearchQuery` n’ont pas besoin de conserver leur propre index de recherche distinct.
+En règle générale, les applications qui prennent en charge n' `CSSearchQuery` ont pas besoin de conserver leur propre index de recherche distinct.
 
 ## <a name="search-continuation"></a>Continuation de recherche
 
-Dans iOS 9, Apple a introduit les API de recherche (par exemple, Spotlight de base, `NSUserActivity` et balisage Web) pour fournir des informations détaillées sur le contenu d’une application, afin de permettre aux utilisateurs de Rechercher ce contenu à l’aide des interfaces de recherche Spotlight et Safari. Pour plus d’informations, consultez la documentation de notre [nouvelle API de recherche](~/ios/platform/search/index.md) .
+Dans iOS 9, Apple a introduit les API de recherche (telles que Core Spotlight `NSUserActivity` et le balisage Web) pour fournir des informations détaillées sur le contenu d’une application, afin de permettre aux utilisateurs de Rechercher ce contenu à l’aide des interfaces de recherche Spotlight et Safari. Pour plus d’informations, consultez la documentation de notre [nouvelle API de recherche](~/ios/platform/search/index.md) .
 
 Dans iOS 10, Apple s’appuie sur cette fonctionnalité en permettant à l’utilisateur de lancer une recherche dans Spotlight ou Safari, puis de continuer la recherche lors de l’ouverture d’une application.
 
-Pour implémenter cette fonctionnalité, modifiez le fichier `Info.plist` de l’application, ajoutez la clé `CoreSpotlightContinuation` de type **booléen** et définissez sa valeur sur `YES`:
+Pour implémenter cette fonctionnalité, modifiez le fichier de l’application `Info.plist` , ajoutez la `CoreSpotlightContinuation` clé de type **booléen** et définissez sa valeur sur `YES` :
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
-[![](app-search-enhancements-images/search01.png "Editing CoreSpotlightContinuation in the Info.plist file")](app-search-enhancements-images/search01.png#lightbox)
+[![Modification de CoreSpotlightContinuation dans le fichier info. plist](app-search-enhancements-images/search01.png)](app-search-enhancements-images/search01.png#lightbox)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[![](app-search-enhancements-images/searchw01.png "Editing CoreSpotlightContinuation in the Info.plist file")](app-search-enhancements-images/search01.png#lightbox)
+[![Modification de CoreSpotlightContinuation dans le fichier info. plist](app-search-enhancements-images/searchw01.png)](app-search-enhancements-images/search01.png#lightbox)
 
 -----
 
-Pour répondre à l’utilisateur qui continue un résultat de recherche (`NSUserActivity`), modifiez le fichier `AppDelegate.cs` et remplacez la méthode `ContinueUserActivity`. Exemple :
+Pour répondre à l’utilisateur qui continue un résultat de recherche ( `NSUserActivity` ), modifiez le `AppDelegate.cs` fichier et remplacez la `ContinueUserActivity` méthode. Par exemple :
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)
@@ -87,7 +87,7 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 }
 ```
 
-Ce code recherche le type d’action de continuation de requête (`userActivity.ActivityType == CSSearchQuery.ContinuationActionType`), puis lit la requête actuelle de l’utilisateur à partir du dictionnaire d’informations utilisateur de la classe `NSUserActivity` (`userActivity.UserInfo.KeyForValue(CSSearchQuery.QueryString)`). À partir de là, l’application doit prendre des mesures pour poursuivre la recherche de l’utilisateur.
+Ce code recherche le type d’action de continuation de requête ( `userActivity.ActivityType == CSSearchQuery.ContinuationActionType` ), puis lit la requête actuelle de l’utilisateur à partir du `NSUserActivity` dictionnaire d’informations utilisateur de la classe ( `userActivity.UserInfo.KeyForValue(CSSearchQuery.QueryString)` ). À partir de là, l’application doit prendre des mesures pour poursuivre la recherche de l’utilisateur.
 
 Pour plus d’informations sur l’utilisation des recherches dans une application Xamarin. iOS, consultez notre page [de recherche avec](~/ios/platform/search/corespotlight.md) la documentation de base Spotlight.
 
@@ -106,13 +106,13 @@ Si une extension d’application de message fournit des images à partager dans 
 Pour activer cette fonctionnalité, procédez comme suit :
 
 1. Créer une extension d’application de message.
-2. Ajoutez le `com.apple.developer.associated-domains` aux droits de l’application et incluez une liste de domaines Web qui hébergent les images que l’extension d’application de message partage. Pour chaque domaine, spécifiez le service `spotlight-image-search`.
-3. Ajoutez un fichier de `apple-app-site-association` au site Web qui héberge les images. Ce fichier comprend un dictionnaire pour le service `spotlight-image-search` et comprend l’ID de l’application, qui est l’ID d’équipe ou le préfixe d’ID d’application suivi de l’ID d’offre groupée. Le fichier peut contenir jusqu’à 500 chemins d’accès et des modèles qui seront indexés par Spotlight et inclus dans les recherches d’images populaires. Pour plus d’informations, consultez la documentation relative à [la création et au chargement du fichier d’association](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/AppSearch/UniversalLinks.html#//apple_ref/doc/uid/TP40016308-CH12-SW4) d’Apple.
+2. Ajoutez le `com.apple.developer.associated-domains` aux droits de l’application et incluez une liste de domaines Web qui hébergent les images que l’extension d’application de message partage. Pour chaque domaine, spécifiez le `spotlight-image-search` service.
+3. Ajoutez un `apple-app-site-association` fichier au site Web qui héberge les images. Ce fichier comprend un dictionnaire pour le `spotlight-image-search` service et comprend l’ID de l’application, qui est l’ID d’équipe ou le préfixe d’ID d’application suivi de l’ID d’offre groupée. Le fichier peut contenir jusqu’à 500 chemins d’accès et des modèles qui seront indexés par Spotlight et inclus dans les recherches d’images populaires. Pour plus d’informations, consultez la documentation relative à [la création et au chargement du fichier d’association](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/AppSearch/UniversalLinks.html#//apple_ref/doc/uid/TP40016308-CH12-SW4) d’Apple.
 4. Autorisez Applebot à analyser les sites Web. Consultez la documentation d’Apple [sur Applebot](https://support.apple.com/HT204683) .
 
 Pour plus d’informations, consultez la documentation relative à l' [intégration des applications de messagerie](~/ios/platform/message-app-integration/index.md) .
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article a abordé les améliorations apportées par Apple à la recherche d’applications dans iOS 10 et comment les implémenter dans Xamarin. iOS.
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 1d1e40de646362e9b573ad7040ab08ba6d01d6e8
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: ac4c8d7bbd28946b6089e7f22a36727d2d73ec18
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571608"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939202"
 ---
 # <a name="xamarinmac-extension-support"></a>Prise en charge de l’extension Xamarin.Mac
 
@@ -42,7 +42,7 @@ Les conseils suivants peuvent être utiles lors de l’utilisation d’extension
 - Toutes les exceptions non interceptées bloquent le processus d’extension, en fournissant uniquement une petite quantité d’informations utiles dans le **Journal système**. L’encapsulation de code gênant dans un `try/catch` bloc (exception) `NSLog` avant la nouvelle levée peut être utile.
 - Le **Journal système** est accessible à partir de l’application **console** sous utilitaires des **applications**  >  **Utilities**:
 
-    [![](extensions-images/extension02.png "The system log")](extensions-images/extension02.png#lightbox)
+    [![Journal système](extensions-images/extension02.png)](extensions-images/extension02.png#lightbox)
 - Comme indiqué ci-dessus, l’exécution de l’application hôte d’extension l’inscrit auprès du système. Suppression de l’ensemble d’applications avec annulation de son inscription. 
 - Si les versions « isolées » des extensions d’une application sont inscrites, utilisez la commande suivante pour les localiser (afin qu’elles puissent être supprimées) :`plugin kit -mv`
 
@@ -60,7 +60,7 @@ Vous trouverez [ici](https://docs.microsoft.com/samples/xamarin/mac-samples/exte
 
 Cet article a fait un aperçu rapide de l’utilisation des extensions dans une application Xamarin. Mac version 2,10 (et ultérieure).
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Hello, Mac](~/mac/get-started/hello-mac.md)
 - [ExtensionSamples](https://docs.microsoft.com/samples/xamarin/mac-samples/extensionsamples)

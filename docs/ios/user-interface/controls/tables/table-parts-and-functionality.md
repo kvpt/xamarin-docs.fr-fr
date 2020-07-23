@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: bf023543d3159f5d5baf7f7036a576b8a746cf9e
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 6002e5cc62dfe30c14f21943c690a5a1b15a0c12
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572128"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936589"
 ---
 # <a name="table-parts-and-functionality-in-xamarinios"></a>Parties et fonctionnalités de table dans Xamarin. iOS
 
@@ -21,12 +21,12 @@ Un UITableView peut avoir un style « groupé » ou « clair », et se compo
 - [En-tête de section](#Section_Header)
 - [Cellules](#Cells) (ou lignes, si vous préférez)
 - [Pied de page de la section](#Section_Footer)
-- [Évaluer](#Index)
+- [Index](#Index)
 - [Mode édition](#Edit_Features) (comprend’balayer pour supprimer’et faire glisser les poignées pour modifier l’ordre des lignes) 
 
 Ces captures d’écran montrent comment les lignes, les en-têtes, les pieds de page, les contrôles d’édition et l’index sont affichés.
 
- [![](table-parts-and-functionality-images/image1a.png "These screenshots show how section rows, headers, footers, edit controls and the index are displayed")](table-parts-and-functionality-images/image1a.png#lightbox)
+ [![Ces captures d’écran montrent comment les lignes, les en-têtes, les pieds de page, les contrôles d’édition et l’index sont affichés.](table-parts-and-functionality-images/image1a.png)](table-parts-and-functionality-images/image1a.png#lightbox)
 
 Ces éléments sont décrits plus en détail ci-dessous :
 
@@ -72,7 +72,7 @@ Le reste de ce document montre comment implémenter toutes ces fonctionnalités 
 
 Les classes principales utilisées pour afficher les vues de table sont indiquées ici :
 
-[![](table-parts-and-functionality-images/classdiagram.png "The primary classes used to display table views are shown here")](table-parts-and-functionality-images/classdiagram.png#lightbox)
+[![Les classes principales utilisées pour afficher les vues de table sont présentées ici](table-parts-and-functionality-images/classdiagram.png)](table-parts-and-functionality-images/classdiagram.png#lightbox)
 
 L’objectif de chaque classe est décrit ci-dessous :
 
@@ -90,6 +90,6 @@ UITableViewSource remplace les deux classes suivantes, qui sont toujours disponi
 
 Dans ce document, les exemples utilisent tous UITableViewSource et ignorent ces deux classes. Ils sont mentionnés ici, car tous les exemples objective-C trouvés dans la documentation d’Apple les référencent. il est donc utile de comprendre ce qu’ils font (et que vous pouvez utiliser UITableViewSource à la place de Xamarin. iOS).
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [WorkingWithTables (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/workingwithtables)

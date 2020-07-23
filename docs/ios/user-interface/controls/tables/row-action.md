@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/25/2017
-ms.openlocfilehash: cc83fa65fd040b30d71a30fb703da866c5d0824c
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 40640f903ad82c5f154dbb74307c0003d7271561
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84570815"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936602"
 ---
 # <a name="working-with-row-actions-in-xamarinios"></a>Utilisation des actions de ligne dans Xamarin. iOS
 
@@ -33,7 +33,7 @@ Trois étapes sont nécessaires pour implémenter des actions de balayage avec `
 
 1. Substituez `GetLeadingSwipeActionsConfiguration` les méthodes et/ou `GetTrailingSwipeActionsConfiguration` . Ces méthodes retournent un `UISwipeActionsConfiguration` .
 2. Instanciez le `UISwipeActionsConfiguration` à retourner. Cette classe prend un tableau de `UIContextualAction` .
-3. Créez un `UIContextualAction`.
+3. Créer un `UIContextualAction`.
 
 Celles-ci sont expliquées plus en détail dans les sections suivantes.
 
@@ -175,11 +175,11 @@ table.Delegate = tableDelegate;
 
 Lorsque le code ci-dessus est exécuté et que l’utilisateur fait défiler la ligne vers la gauche, le bouton **haut** s’affiche à la place du bouton **supprimer** qui s’affiche par défaut :
 
-[![](row-action-images/action01.png "The Hi button being displayed instead of the Delete button")](row-action-images/action01.png#lightbox)
+[![Bouton AIM affiché à la place du bouton supprimer](row-action-images/action01.png)](row-action-images/action01.png#lightbox)
 
 Si l’utilisateur appuie sur le bouton **AIM** , est `Hello World!` écrit sur la console dans Visual Studio pour Mac ou Visual Studio lorsque l’application est exécutée en mode débogage.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [TableSwipeActions (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/tableswipeactions)
 - [WorkingWithTables (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/workingwithtables)

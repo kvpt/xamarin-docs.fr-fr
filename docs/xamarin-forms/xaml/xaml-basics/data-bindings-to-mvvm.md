@@ -11,16 +11,16 @@ ms.date: 10/25/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 047cf963394325e8f88759ffe9da7dcf2ca3ad12
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 805bdef812b33d3f4329346a437e1202a16fe3ae
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84127528"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937317"
 ---
 # <a name="part-5-from-data-bindings-to-mvvm"></a>Partie 5. Des liaisons de données à MVVM
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
 _Le modèle d’architecture MVVM (Model-View-ViewModel) a été inventé avec XAML à l’esprit. Le modèle applique une séparation entre trois couches logicielles (l’interface utilisateur XAML, appelée vue). données sous-jacentes, appelées modèle ; et un intermédiaire entre la vue et le modèle, appelé ViewModel. La vue et le ViewModel sont souvent connectés via des liaisons de données définies dans le fichier XAML. L’BindingContext de la vue est généralement une instance du ViewModel._
 
@@ -65,7 +65,7 @@ Dans le programme **DateTime à une seule capture** , deux des enfants contienne
 
 Le problème est que la date et l’heure sont définies une fois lorsque la page est générée pour la première fois et ne changent jamais :
 
-[![](data-bindings-to-mvvm-images/oneshotdatetime.png "View Displaying Date and Time")](data-bindings-to-mvvm-images/oneshotdatetime-large.png#lightbox "View Displaying Date and Time")
+[![Afficher l’affichage de la date et de l’heure](data-bindings-to-mvvm-images/oneshotdatetime.png)](data-bindings-to-mvvm-images/oneshotdatetime-large.png#lightbox "Afficher l’affichage de la date et de l’heure")
 
 Un fichier XAML peut afficher une horloge qui affiche toujours l’heure actuelle, mais il a besoin de code pour vous aider. Lorsque vous envisagez en termes de MVVM, le modèle et le ViewModel sont des classes écrites entièrement dans le code. La vue est souvent un fichier XAML qui référence les propriétés définies dans le ViewModel via des liaisons de données.
 
@@ -148,7 +148,7 @@ Notez que `ClockViewModel` est défini sur le `BindingContext` des `Label` balis
 
 L' `Binding` extension de balisage sur la `Text` propriété de `Label` met en forme la `DateTime` propriété. Voici l’affichage :
 
-[![](data-bindings-to-mvvm-images/clock.png "View Displaying Date and Time via ViewModel")](data-bindings-to-mvvm-images/clock-large.png#lightbox "View Displaying Date and Time via ViewModel")
+[![Afficher l’affichage de la date et de l’heure via ViewModel](data-bindings-to-mvvm-images/clock.png)](data-bindings-to-mvvm-images/clock-large.png#lightbox "Afficher l’affichage de la date et de l’heure via ViewModel")
 
 Il est également possible d’accéder aux propriétés individuelles de la `DateTime` propriété du ViewModel en séparant les propriétés par des points :
 
@@ -298,7 +298,7 @@ Le fichier XAML suivant contient un `BoxView` dont la `Color` propriété est li
 
 La liaison sur chaque `Label` est la valeur par défaut `OneWay` . Elle doit uniquement afficher la valeur. Mais la liaison sur chaque `Slider` est `TwoWay` . Cela permet `Slider` à d’être initialisé à partir du ViewModel. Notez que la `Color` propriété a la valeur `Aqua` lorsque le ViewModel est instancié. Mais une modification dans le `Slider` doit également définir une nouvelle valeur pour la propriété dans le ViewModel, qui calcule ensuite une nouvelle couleur.
 
-[![](data-bindings-to-mvvm-images/hslcolorscroll.png "MVVM using Two-Way Data Bindings")](data-bindings-to-mvvm-images/hslcolorscroll-large.png#lightbox "MVVM using Two-Way Data Bindings")
+[![MVVM utilisant des liaisons de données bidirectionnelles](data-bindings-to-mvvm-images/hslcolorscroll.png)](data-bindings-to-mvvm-images/hslcolorscroll-large.png#lightbox "MVVM utilisant des liaisons de données bidirectionnelles")
 
 ## <a name="commanding-with-viewmodels"></a>Commande avec ViewModels
 
@@ -559,7 +559,7 @@ Le clavier suivant n’est pas aussi visuellement sophistiqué que possible. Au 
 
 La `Command` propriété du premier `Button` qui apparaît dans ce balisage est liée à `DeleteCharCommand` ; le reste est lié au `AddCharCommand` avec un `CommandParameter` qui est le même que le caractère qui apparaît sur la `Button` face. Voici le programme en action :
 
-[![](data-bindings-to-mvvm-images/keypad.png "Calculator using MVVM and Commands")](data-bindings-to-mvvm-images/keypad-large.png#lightbox "Calculator using MVVM and Commands")
+[![Calculatrice utilisant MVVM et des commandes](data-bindings-to-mvvm-images/keypad.png)](data-bindings-to-mvvm-images/keypad-large.png#lightbox "Calculatrice utilisant MVVM et des commandes")
 
 ### <a name="invoking-asynchronous-methods"></a>Appel de méthodes asynchrones
 
@@ -684,7 +684,7 @@ Le fichier XAML pour `MainPage` définit un `ListBox` dont la `ItemsSource` prop
 
 Les pages sont affichées dans une liste déroulante :
 
-[![](data-bindings-to-mvvm-images/mainpage.png "Scrollable list of pages")](data-bindings-to-mvvm-images/mainpage-large.png#lightbox "Scrollable list of pages")
+[![Liste déroulante de pages](data-bindings-to-mvvm-images/mainpage.png)](data-bindings-to-mvvm-images/mainpage-large.png#lightbox "Liste déroulante de pages")
 
 Le gestionnaire du fichier code-behind est déclenché lorsque l’utilisateur sélectionne un élément. Le gestionnaire affecte `SelectedItem` à la propriété de la `ListBox` valeur `null` , puis instancie la page sélectionnée et y accède :
 
@@ -712,7 +712,7 @@ private async void OnListViewItemSelected(object sender, SelectedItemChangedEven
 
 XAML est un outil puissant permettant de définir des interfaces utilisateur dans des Xamarin.Forms applications, notamment lorsque la liaison de données et MVVM sont utilisées. Le résultat est une représentation propre, élégante et pouvant être intégrée à une interface utilisateur avec toute la prise en charge en arrière-plan dans le code.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 - [Partie 1. Prise en main avec XAML](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)

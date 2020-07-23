@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: davidortinau
 ms.author: daortin
-ms.openlocfilehash: 1a6391c0e626c60fe35acee61f55f2f202f077b8
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: c087bb4a75664c4fae551b9288e7900c4c7fce4b
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573441"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936992"
 ---
 # <a name="creating-a-xamarinios-application-using-the-reflection-api"></a>Création d’une application Xamarin. iOS à l’aide de l’API de réflexion
 
@@ -106,7 +106,7 @@ window.RootViewController = nav;
 
 Maintenant, lorsque nous exécutons l’application, le titre s’affiche dans la `UINavigationController’s` barre de navigation, comme le montre la capture d’écran ci-dessous :
 
- [![](reflection-api-walkthrough-images/02-create-task.png "Now when we run the application, the title appears in the UINavigationControllers navigation bar")](reflection-api-walkthrough-images/02-create-task.png#lightbox)
+ [![Maintenant, lorsque nous exécutons l’application, le titre s’affiche dans la barre de navigation UINavigationControllers](reflection-api-walkthrough-images/02-create-task.png)](reflection-api-walkthrough-images/02-create-task.png#lightbox)
 
 En incluant un `UINavigationController` , nous pouvons désormais tirer parti des autres fonctionnalités de Mt. D pour laquelle la navigation est nécessaire. Par exemple, nous pouvons ajouter une énumération à la `Expense` classe pour définir la catégorie des dépenses et Mt. D crée automatiquement un écran de sélection. Pour illustrer, modifiez la `Expense` classe pour inclure un `ExpenseCategory` champ comme suit :
 
@@ -129,11 +129,11 @@ public class Expense
 
 L’exécution de l’application génère désormais une nouvelle ligne dans la table pour la catégorie, comme indiqué ci-dessous :
 
- [![](reflection-api-walkthrough-images/03-set-details.png "Running the application now results in a new row in the table for the category as shown")](reflection-api-walkthrough-images/03-set-details.png#lightbox)
+ [![L’exécution de l’application entraîne désormais la création d’une nouvelle ligne dans la table pour la catégorie, comme indiqué ci-dessous.](reflection-api-walkthrough-images/03-set-details.png)](reflection-api-walkthrough-images/03-set-details.png#lightbox)
 
 Si vous sélectionnez la ligne, l’application accède à un nouvel écran avec des lignes correspondant à l’énumération, comme indiqué ci-dessous :
 
- [![](reflection-api-walkthrough-images/04-set-category.png "Selecting the row results in the application navigating to a new screen with rows corresponding to the enumeration")](reflection-api-walkthrough-images/04-set-category.png#lightbox)
+ [![Si vous sélectionnez la ligne, l’application accède à un nouvel écran avec des lignes correspondant à l’énumération](reflection-api-walkthrough-images/04-set-category.png)](reflection-api-walkthrough-images/04-set-category.png#lightbox)
 
  <a name="Summary"></a>
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/24/2017
-ms.openlocfilehash: 263c48c5006ba0060756e1050497c38dfb7c8eae
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 7769e3d02acc9f1522c6028f88f37c1f522866af
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84567773"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936758"
 ---
 # <a name="linking-xamarinios-apps"></a>Liaison d’applications Xamarin.iOS
 
@@ -30,7 +30,7 @@ L’éditeur de liens utilise l’analyse statique pour déterminer les différe
 
 Le processus de liaison peut être personnalisé via le menu déroulant du comportement de l’éditeur de liens dans **Options du projet**. Pour accéder à ce processus, double-cliquez sur le projet iOS et accédez à **Build iOS > Options de l’éditeur de liens**, comme illustré ci-dessous :
 
-[![](linker-images/image1.png "Linker Options")](linker-images/image1.png#lightbox)
+[![Options de l’éditeur de liens](linker-images/image1.png)](linker-images/image1.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
@@ -40,10 +40,10 @@ Effectuez les actions suivantes :
 
 1. Cliquez avec le bouton droit sur le **nom du projet** dans la **Explorateur de solutions** et sélectionnez **Propriétés**:
 
-    ![](linker-images/linking01w.png "Right-click on the Project Name in the Solution Explorer and select Properties")
+    ![Cliquez avec le bouton de droite sur le Nom du projet dans l’Explorateur de solutions et sélectionnez Propriétés](linker-images/linking01w.png)
 2. Dans les **Propriétés du projet**, sélectionnez **Build IOS** :
 
-    ![](linker-images/linking02w.png "Select IOS Build")
+    ![Sélectionner le build IOS](linker-images/linking02w.png)
 3. Suivez les instructions ci-dessous pour modifier les options de liaison.
 
 -----
@@ -165,7 +165,7 @@ class LinkerSafeAttribute : System.Attribute {}
 
 Suivez les [instructions pour la création d’un fichier de configuration de l’éditeur de liens](~/cross-platform/deploy-test/linker.md).
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Configuration de l’éditeur de liens personnalisé](~/cross-platform/deploy-test/linker.md)
 - [Liaison sur Mac](~/mac/deploy-test/linker.md)

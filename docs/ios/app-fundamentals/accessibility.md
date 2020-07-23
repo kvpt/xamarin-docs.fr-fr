@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/18/2016
-ms.openlocfilehash: 2259566fc6342a40a8c0a94bacd1c146b6509d52
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: e976f5bf0789ca6c703a14b667e75b05a7f47819
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574156"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937850"
 ---
 # <a name="accessibility-on-ios"></a>Accessibilité sur iOS
 
@@ -29,7 +29,7 @@ Certains contrôles peuvent ne pas avoir besoin d’être accessibles (par exemp
 
 L' **panneau Propriétés** contient une section d’accessibilité qui permet de modifier ces paramètres lorsqu’un contrôle est sélectionné dans le concepteur d’interface utilisateur iOS :
 
-![](accessibility-images/ios-designer-sml.png "Accessibility Settings")
+![Paramètres d’accessibilité](accessibility-images/ios-designer-sml.png)
 
 **C#**
 
@@ -115,7 +115,7 @@ Reportez-vous au [Guide de localisation iOS](~/ios/app-fundamentals/localization
 
 VoiceOver est activé dans l’application **paramètres** en accédant à **général > accessibilité > VoiceOver**:
 
-![](accessibility-images/settings-sml.png "Setting the speaking rate")
+![Définition du taux d’élocution](accessibility-images/settings-sml.png)
 
 L’écran **accessibilité** fournit également des paramètres pour les options zoom, taille du texte, couleur & contraste, paramètres vocaux et autres options de configuration.
 
@@ -125,16 +125,16 @@ Suivez ces [instructions VoiceOver](https://developer.apple.com/library/ios/tech
 
 Lors du test dans le simulateur, l' **inspecteur d’accessibilité** est disponible pour vous aider à vérifier que les propriétés et les événements d’accessibilité sont correctement configurés. Activez l’inspecteur dans l’application **paramètres** en accédant à **général > accessibilité > l’inspecteur d’accessibilité**:
 
-![](accessibility-images/settings-inspector-sml.png "Enable Accessibility Inspector")
+![Activer l’inspecteur d’accessibilité](accessibility-images/settings-inspector-sml.png)
 
 Une fois activée, la fenêtre de l’inspecteur passe à tout moment sur l’écran iOS.
 Voici un exemple de sortie lorsqu’une ligne de la vue table est sélectionnée : Notez que l' **étiquette** contient une phrase qui donne le contenu de la ligne et qu’elle est « done » (c’est-à-dire que le battement est visible) :
 
-![](accessibility-images/tableview-a11y-sml.png "Using Accessibility Inspector")
+![Utilisation de l’inspecteur d’accessibilité](accessibility-images/tableview-a11y-sml.png)
 
 Lorsque l’inspecteur est visible, utilisez l’icône « X » en haut à gauche pour afficher et masquer temporairement la superposition et activer/désactiver les paramètres d’accessibilité.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Accessibilité multiplateforme](~/cross-platform/app-fundamentals/accessibility.md)
 - [Accessibilité iOS (Apple)](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Accessibility_on_iPhone/Accessibility_on_iPhone.html)

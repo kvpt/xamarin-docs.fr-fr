@@ -10,16 +10,16 @@ ms.date: 11/26/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d28a9079d27310dde0e5ea5bf80c83895bbcf1d4
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: d5a5dc7de2835038079a1bdf8af5be44a173f86e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84571569"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939826"
 ---
 # <a name="customizing-an-entry"></a>Personnalisation d’une entrée
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-entry)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-entry)
 
 _Le Xamarin.Forms contrôle d’entrée permet de modifier une seule ligne de texte. Cet article montre comment créer un convertisseur personnalisé pour le contrôle d’entrée, ce qui permet aux développeurs de remplacer le rendu natif par défaut par leur propre personnalisation propre à la plateforme._
 
@@ -27,7 +27,7 @@ Chaque Xamarin.Forms contrôle a un convertisseur associé pour chaque plateform
 
 Le diagramme suivant illustre la relation entre le [`Entry`](xref:Xamarin.Forms.Entry) contrôle et les contrôles natifs correspondants qui l’implémentent :
 
-![](entry-images/entry-classes.png "Relationship Between Entry Control and Implementing Native Controls")
+![Relation entre le contrôle Entry et l’implémentation de contrôles natifs](entry-images/entry-classes.png)
 
 Le processus de rendu peut être utilisé pour implémenter des personnalisations spécifiques à la plateforme en créant un convertisseur personnalisé pour le [`Entry`](xref:Xamarin.Forms.Entry) contrôle sur chaque plateforme. Le processus pour y parvenir est le suivant :
 
@@ -108,11 +108,11 @@ Le processus de création de la classe de renderer personnalisé est le suivant�
 
 Le diagramme suivant illustre les responsabilités de chaque projet dans l’exemple d’application ainsi que les relations qu’ils entretiennent les uns avec les autres :
 
-![](entry-images/solution-structure.png "MyEntry Custom Renderer Project Responsibilities")
+![Responsabilités du projet de renderer personnalisé MyEntry](entry-images/solution-structure.png)
 
 Le contrôle `MyEntry` est restitué par des classes `MyEntryRenderer` spécifiques à la plateforme qui dérivent toutes de la classe `EntryRenderer` pour chaque plateforme. Il en résulte le rendu de chaque contrôle `MyEntry` avec une couleur d’arrière-plan spécifique à la plateforme, comme le montrent les captures d’écran suivantes :
 
-![](entry-images/screenshots.png "MyEntry Control on each Platform")
+![Contrôle MyEntry sur chaque plateforme](entry-images/screenshots.png)
 
 La `EntryRenderer` classe expose la `OnElementChanged` méthode, qui est appelée lorsque le Xamarin.Forms contrôle est créé pour restituer le contrôle natif correspondant. Cette méthode prend un paramètre `ElementChangedEventArgs` qui contient les propriétés `OldElement` et `NewElement`. Ces propriétés représentent l' Xamarin.Forms élément auquel le convertisseur *a été* attaché, et l' Xamarin.Forms élément auquel le convertisseur *est* attaché, respectivement. Dans l’exemple d’application, la propriété `OldElement` sera `null` et la propriété `NewElement` contiendra une référence au contrôle `MyEntry`.
 
@@ -210,6 +210,6 @@ L’appel à la méthode `OnElementChanged` de la classe de base instancie un co
 
 Cet article a montré comment créer un convertisseur de contrôle personnalisé pour le Xamarin.Forms [`Entry`](xref:Xamarin.Forms.Entry) contrôle, ce qui permet aux développeurs de substituer le rendu natif par défaut avec leur propre rendu propre à la plateforme. Les convertisseurs personnalisés fournissent une approche puissante pour personnaliser l’apparence des Xamarin.Forms contrôles. Ils peuvent être utilisés aussi bien pour les petits changements de style que pour la personnalisation de la disposition sophistiquée d’une plateforme et du comportement.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [CustomRendererEntry (sample)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-entry)

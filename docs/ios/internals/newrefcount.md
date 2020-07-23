@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 11/25/2015
-ms.openlocfilehash: 8d8ad5b5f79b90fc415c9e3cdf6809a4e196056f
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: a9d8b8fa1826c1a7dafb3d6c3e3ab45d05c1aaa8
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022302"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938708"
 ---
 # <a name="new-reference-counting-system-in-xamarinios"></a>Nouveau système de comptage de références dans Xamarin. iOS
 
@@ -22,13 +22,13 @@ Xamarin. iOS 9.2.1 a introduit par défaut le système de comptage de référenc
 
 À partir de Xamarin 9.2.1, le nouveau système de comptage de références est activé pour **toutes les** applications par défaut.
 
-Si vous développez une application existante, vous pouvez vérifier le fichier. csproj pour vous assurer que toutes les occurrences de `MtouchUseRefCounting` sont définies sur `true`, comme ci-dessous :
+Si vous développez une application existante, vous pouvez vérifier le fichier. csproj pour vous assurer que toutes les occurrences de `MtouchUseRefCounting` ont la valeur `true` , comme ci-dessous :
 
 ```xml
 <MtouchUseRefCounting>true</MtouchUseRefCounting>
 ```
 
-S’il est défini sur `false` votre application n’utilisera pas les nouveaux outils.
+S’il est défini sur `false` votre application, il n’utilise pas les nouveaux outils.
 
 ### <a name="using-older-versions-of-xamarin"></a>Utilisation de versions antérieures de Xamarin
 
@@ -38,7 +38,7 @@ Xamarin. iOS 7.2.1 et versions ultérieures offre une version préliminaire amé
 
 Pour activer ce nouveau système de comptage de références, activez la case à cocher **utiliser l’extension de comptage de références** située dans l’onglet **avancé** des **options de génération iOS**de votre projet, comme indiqué ci-dessous : 
 
-[![](newrefcount-images/image1.png "Enable the new Reference Counting System")](newrefcount-images/image1.png#lightbox)
+[![Activer le nouveau système de comptage de références](newrefcount-images/image1.png)](newrefcount-images/image1.png#lightbox)
 
 Notez que ces options ont été supprimées dans les versions plus récentes de Visual Studio pour Mac.
 
@@ -49,7 +49,7 @@ Notez que ces options ont été supprimées dans les versions plus récentes de 
 > [!IMPORTANT]
 > Une version antérieure de cette fonctionnalité a été créée depuis MonoTouch 5,2 mais n’était disponible que pour **SGen** en version préliminaire expérimentale. Cette nouvelle version améliorée est désormais également disponible pour le garbage collector **Boehm** .
 
-Historiquement, il y a deux types d’objets gérés par Xamarin. iOS : ceux qui étaient simplement un wrapper autour d’un objet natif (objets homologues) et ceux qui ont étendu ou incorporé de nouvelles fonctionnalités (objets dérivés), généralement en conservant un État mémoire supplémentaire. Auparavant, il était possible d’étendre un objet homologue avec l’État (par exemple, en C# ajoutant un gestionnaire d’événements), mais nous laissons l’objet non référencé, puis collecté. Cela peut entraîner un blocage ultérieur (par exemple, si le runtime objective-C a rappelé dans l’objet managé).
+Historiquement, il y a deux types d’objets gérés par Xamarin. iOS : ceux qui étaient simplement un wrapper autour d’un objet natif (objets homologues) et ceux qui ont étendu ou incorporé de nouvelles fonctionnalités (objets dérivés), généralement en conservant un État mémoire supplémentaire. Auparavant, il était possible d’étendre un objet homologue avec l’État (par exemple, en ajoutant un gestionnaire d’événements C#), mais nous laissons l’objet non référencé, puis collecté. Cela peut entraîner un blocage ultérieur (par exemple, si le runtime objective-C a rappelé dans l’objet managé).
 
 Le nouveau système met automatiquement à niveau les objets homologues dans des objets gérés par le runtime lorsqu’ils stockent des informations supplémentaires.
 
@@ -71,7 +71,7 @@ class MyTableSource : UITableViewSource {
 }
 ```
 
-Sans l’extension du décompte de références, ce code se bloquerait, car `cell` devient l’objets pouvant être collectés, et donc son `TouchDown` délégué, qui se traduira par un pointeur non résolu.
+Sans l’extension du décompte de références, ce code se bloquerait parce qu’il `cell` est collecté, et donc son `TouchDown` délégué, qui se traduira par un pointeur non résolu.
 
 L’extension de décompte de références garantit que l’objet managé reste actif et empêche sa collection, à condition que l’objet natif soit conservé par le code natif.
 

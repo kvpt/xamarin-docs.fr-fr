@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: f05e763df58e6fafc4d4ed1d4007979859670c28
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 84a764054567bc504b3432a503a1072362e374dd
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76725460"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938487"
 ---
 # <a name="signing-xamarinmac-apps-with-a-developer-id"></a>Signature d’applications Xamarin.Mac avec un ID de développeur
 
@@ -24,28 +24,28 @@ Pour en savoir plus sur l’[ID de développeur et GateKeeper](https://developer
 
 Pour générer une application en vue de la déployer directement pour les utilisateurs (et non par le biais du Mac App Store), définissez les **paramètres de signature** pour utiliser l’**ID de développeur**. Veillez à modifier la configuration **Release**.
 
- [![](signing-images/config02.png "The Mac Signing options")](signing-images/config02.png#lightbox)
+ [![Options de signature Mac](signing-images/config02.png)](signing-images/config02.png#lightbox)
 
 ## <a name="build"></a>Build
 
 Avant d’effectuer la génération, veillez à sélectionner la configuration appropriée et à sélectionner l’option permettant de créer un paquet d’installation dans les paramètres **Build Mac** :
 
-[![](signing-images/config03.png "The build options")](signing-images/config03.png#lightbox)
+[![Options de génération](signing-images/config03.png)](signing-images/config03.png#lightbox)
 
 Lors de la génération de l’application, le développeur est invité à utiliser les deux certificats :
 
- [![](signing-images/image57.png "Allowing keychain access")](signing-images/image57.png#lightbox)
+ [![Autorisation de l’accès au trousseau](signing-images/image57.png)](signing-images/image57.png#lightbox)
 
- [![](signing-images/image58.png "Allowing keychain access")](signing-images/image58.png#lightbox)
+ [![Autorisation de l’accès au trousseau](signing-images/image58.png)](signing-images/image58.png#lightbox)
 
 Une fois l’application générée, le développeur peut cliquer avec le bouton droit sur le projet, puis choisir **Ouvrir le dossier conteneur** pour rechercher le fichier de paquet (dans le répertoire `bin/Release`). Ce fichier de paquet inclut un programme d’installation pour l’application qui permet de distribuer celle-ci à n’importe quel utilisateur macOS pour qu’il l’installe.
 
- [![](signing-images/image59.png "Selecting the app package in Finder")](signing-images/image59.png#lightbox)
+ [![Sélection du package d’application dans Finder](signing-images/image59.png)](signing-images/image59.png#lightbox)
 
 ## <a name="related-links"></a>Liens connexes
 
 - [Installation](~//mac/get-started/installation.md)
-- [Bonjour, échantillon De Mac](~//mac/get-started/hello-mac.md)
+- [Exemple Hello, Mac](~//mac/get-started/hello-mac.md)
 - [Distribuer vos applications sur le Mac App Store](https://developer.apple.com/devcenter/mac/checklist/)
 - [Guide sur les outils : Signature du code de votre application](https://developer.apple.com/library/mac/#documentation/ToolsLanguages/Conceptual/OSXWorkflowGuide/CodeSigning/CodeSigning.html)
 - [ID de développeur et GateKeeper](https://developer.apple.com/developer-id/)

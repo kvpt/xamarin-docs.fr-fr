@@ -10,16 +10,16 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0eb3b4a6b37d59363984c9248cc39de91a6819e0
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: ed20da1005447334a99ea40c177c8f88d59d71ce
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138253"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938468"
 ---
 # <a name="the-translate-transform"></a>La transformation de traduction
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Découvrez comment utiliser la transformation de traduction pour déplacer des graphiques SkiaSharp_
 
@@ -27,7 +27,7 @@ Le type de *transformation le plus* simple dans SkiaSharp est la transformation 
 
 La traduction est également utile pour l’animation et pour les effets de texte simples :
 
-![](translate-images/translateexample.png "Text shadow, engraving, and embossing with translation")
+![Ombre du texte, gravure et estampage avec translation](translate-images/translateexample.png)
 
 La [`Translate`](xref:SkiaSharp.SKCanvas.Translate(System.Single,System.Single)) méthode dans `SKCanvas` a deux paramètres qui entraînent le décalage horizontal et vertical des objets graphiques dessinés par la suite :
 
@@ -74,7 +74,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Les rectangles successifs traversent la page :
 
-[![](translate-images/accumulatedtranslate-small.png "Triple screenshot of the Accumulated Translate page")](translate-images/accumulatedtranslate-large.png#lightbox "Triple screenshot of the Accumulated Translate page")
+[![Capture d’écran triple de la page de traduction cumulée](translate-images/accumulatedtranslate-small.png)](translate-images/accumulatedtranslate-large.png#lightbox "Capture d’écran triple de la page de traduction cumulée")
 
 Si les facteurs de traduction accumulés sont `dx` et `dy` , et que le point que vous spécifiez dans une fonction de dessin est ( `x` , `y` ), l’objet graphique est rendu au point ( `x'` , `y'` ), où :
 
@@ -131,7 +131,7 @@ using (SKPaint textPaint = new SKPaint())
 
 Dans chacun des trois exemples, `Translate` est appelé pour afficher le texte afin de l’offset de l’emplacement donné par les `x` `y` variables et. Le texte s’affiche à nouveau dans une autre couleur sans effet de traduction :
 
-[![](translate-images/translatetexteffects-small.png "Triple screenshot of the Translate Text Effects page")](translate-images/translatetexteffects-large.png#lightbox "Triple screenshot of the Translate Text Effects page")
+[![Capture d’écran triple de la page traduire les effets de texte](translate-images/translatetexteffects-small.png)](translate-images/translatetexteffects-large.png#lightbox "Capture d’écran triple de la page traduire les effets de texte")
 
 Chacun des trois exemples illustre une façon différente de nier l' `Translate` appel :
 
@@ -217,7 +217,7 @@ public class HendecagramArrayPage : ContentPage
 
 Voici le résultat :
 
-[![](translate-images/hendecagramarray-small.png "Triple screenshot of the Hendecagram Array page")](translate-images/hendecagramarray-large.png#lightbox "Triple screenshot of the Hendecagram Array page")
+[![Capture d’écran triple de la page du tableau Hendecagram](translate-images/hendecagramarray-small.png)](translate-images/hendecagramarray-large.png#lightbox "Capture d’écran triple de la page du tableau Hendecagram")
 
 Les animations impliquent souvent des transformations. La page d' **animation Hendecagram** déplace l’étoile à 11 branches autour d’un cercle. La [`HendecagramAnimationPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/HendecagramAnimationPage.cs) classe commence par certains champs et substitue les `OnAppearing` `OnDisappearing` méthodes et pour démarrer et arrêter un Xamarin.Forms minuteur :
 
@@ -302,11 +302,11 @@ public class HendecagramAnimationPage : ContentPage
 
 Le `PaintSurface` Gestionnaire appelle la `Translate` méthode deux fois, d’abord pour effectuer la translation au centre du canevas, puis pour effectuer la translation vers la circonférence d’un cercle centré autour de (0,0). Le rayon du cercle est défini pour être le plus grand possible tout en gardant l’étoile dans les limites de la page :
 
-[![](translate-images/hendecagramanimation-small.png "Triple screenshot of the Hendecagram Animation page")](translate-images/hendecagramanimation-large.png#lightbox "Triple screenshot of the Hendecagram Animation page")
+[![Capture d’écran triple de la page d’animation Hendecagram](translate-images/hendecagramanimation-small.png)](translate-images/hendecagramanimation-large.png#lightbox "Capture d’écran triple de la page d’animation Hendecagram")
 
 Notez que l’étoile conserve la même orientation que lorsqu’elle s’appuie sur le centre de la page. Elle ne pivote pas du tout. Il s’agit d’un travail pour une transformation de rotation.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

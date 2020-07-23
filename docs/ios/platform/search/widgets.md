@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: ca6ccce934b32fa0d7e48cd8f295d9acefe6e121
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: aa9d946f295b46a3aa2d9559d28907d9a30f184b
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031513"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938968"
 ---
 # <a name="search-and-home-screen-widget-enhancements-in-ios-10"></a>Améliorations des widgets de recherche et d’écran d’accueil dans iOS 10
 
@@ -24,7 +24,7 @@ Les widgets (également appelés « extensions aujourd’hui ») sont un type 
 
 Les widgets sont hautement personnalisables et peuvent contenir des éléments d’interface utilisateur tels que du texte, des images, des boutons, etc. En outre, le développeur peut personnaliser davantage la disposition de ses widgets.
 
-[![](widgets-images/widgets01.png "Example widgets")](widgets-images/widgets01.png#lightbox)
+[![Exemples de widgets](widgets-images/widgets01.png)](widgets-images/widgets01.png#lightbox)
 
 Il existe deux emplacements principaux qu’un utilisateur peut afficher et interagir avec les widgets d’une application :
 
@@ -50,14 +50,14 @@ Pour plus d’informations sur l’utilisation des widgets, consultez notre [Int
 
 ## <a name="working-with-vibrancy"></a>Utilisation du vibreur
 
-Vibrance garantit que le texte d’un widget reste lisible lorsqu’il est présenté sur la lumière du widget, en arrière-plan flou (fourni par le système). Avant iOS 10, le développeur utiliserait un [NotificationCenterVibrancyEffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1613917-notificationcentervibrancyeffect) pour la Vibrance du widget. Exemple :
+Vibrance garantit que le texte d’un widget reste lisible lorsqu’il est présenté sur la lumière du widget, en arrière-plan flou (fourni par le système). Avant iOS 10, le développeur utiliserait un [NotificationCenterVibrancyEffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1613917-notificationcentervibrancyeffect) pour la Vibrance du widget. Par exemple :
 
 ```csharp
 // DEPRECATED: Get Widget Vibrancy Effect
 var vibrancy = UIVibrancyEffect.CreateForNotificationCenter ();
 ```
 
-Cette valeur est déconseillée dans iOS 10 et doit être remplacée par un [WidgetPrimaryVibrancyEffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1771278-widgetprimaryvibrancyeffect) ou un [WidgetSecondaryVibrancyEffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1771277-widgetsecondaryvibrancyeffect). Exemple :
+Cette valeur est déconseillée dans iOS 10 et doit être remplacée par un [WidgetPrimaryVibrancyEffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1771278-widgetprimaryvibrancyeffect) ou un [WidgetSecondaryVibrancyEffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1771277-widgetsecondaryvibrancyeffect). Par exemple :
 
 ```csharp
 // Get Primary Widget Vibrancy Effect
@@ -188,7 +188,7 @@ public void WidgetActiveDisplayModeDidChange (NCWidgetDisplayMode activeDisplayM
 
 En plus de définir la taille demandée pour chaque État (réduit ou développé), il met également à jour le contenu affiché pour qu’il corresponde à la nouvelle taille.
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article a abordé les améliorations apportées par Apple au système du widget dans iOS 10 et expliqué comment les implémenter dans Xamarin. iOS.
 

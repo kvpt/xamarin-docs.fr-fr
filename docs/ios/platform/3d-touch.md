@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: b69328b00778b0c3c03cd4d954b2e0bef33e4784
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: d50f104b8b6e3e82fb7e9d6dbea45757742a5739
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574598"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937031"
 ---
 # <a name="introduction-to-3d-touch-in-xamarinios"></a>Présentation de l’interface tactile 3D dans Xamarin. iOS
 
 _Cet article aborde l’utilisation des nouvelles entrées iPhone 6S et iPhone 6S, ainsi que des gestes tactiles 3D dans votre application._
 
-[![](3d-touch-images/info01.png "Examples of 3D Touch enabled apps")](3d-touch-images/info01.png#lightbox)
+[![Exemples d’applications tactiles 3D](3d-touch-images/info01.png)](3d-touch-images/info01.png#lightbox)
 
 Cet article fournit une introduction à l’utilisation des nouvelles API tactiles 3D pour ajouter des gestes sensibles à la pression à vos applications Xamarin. iOS qui s’exécutent sur les nouveaux appareils iPhone 6S et iPhone 6S plus.
 
@@ -39,7 +39,7 @@ l’interface tactile 3D fournit les fonctionnalités suivantes à votre applica
 
 Comme indiqué ci-dessus, en utilisant les nouvelles propriétés de la classe [UITouch](xref:UIKit.UITouch) , vous pouvez mesurer la quantité de pression que l’utilisateur applique à l’écran de l’appareil iOS et utiliser ces informations dans votre interface utilisateur. Par exemple, pour rendre un trait de pinceau plus transparent ou opaque en fonction de la quantité de pression.
 
-[![](3d-touch-images/pressure01.png "A brush stroke rendered as more translucent or opaque based on the amount of pressure")](3d-touch-images/pressure01.png#lightbox)
+[![Un trait de pinceau rendu plus transparent ou opaque en fonction de la quantité de pression](3d-touch-images/pressure01.png)](3d-touch-images/pressure01.png#lightbox)
 
 Suite à l’utilisation de l’interface tactile en 3D, si votre application s’exécute sur iOS 9 (ou une version ultérieure) et que l’appareil iOS est en mesure de prendre en charge la fonction tactile 3D, les modifications de pression entraînent le déclenchement de l' `TouchesMoved` événement.
 
@@ -77,7 +77,7 @@ l’interface tactile 3D offre aux utilisateurs de nouvelles façons d’interag
 
 Par exemple, si votre application affiche un tableau de messages, l’utilisateur peut appuyer sur un élément pour afficher un aperçu de son contenu dans une vue en forme de superposition (laquelle Apple fait référence à un *Aperçu).*
 
-[![](3d-touch-images/peekandpop01.png "An example of Peeking at content")](3d-touch-images/peekandpop01.png#lightbox)
+[![Exemple de lecture du contenu](3d-touch-images/peekandpop01.png)](3d-touch-images/peekandpop01.png#lightbox)
 
 Si l’utilisateur appuie plus difficile, il passe à la vue de message standard (qui est appelée « *pop*-ping » dans la vue).
 
@@ -205,7 +205,7 @@ Pour plus d’informations, consultez notre [exemple iOS 9 ApplicationShortcuts]
 
 Comme indiqué ci-dessus, vous pouvez envisager des actions rapides comme les menus contextuels qui peuvent être dépilés lorsqu’un utilisateur clique avec le bouton droit sur un élément dans une application de bureau. Vous devez utiliser des actions rapides pour fournir des raccourcis vers les fonctions ou fonctionnalités les plus courantes de votre application.
 
-[![](3d-touch-images/quickactions01.png "An example of a Quick Actions menu")](3d-touch-images/quickactions01.png#lightbox)
+[![Exemple de menu actions rapides](3d-touch-images/quickactions01.png)](3d-touch-images/quickactions01.png#lightbox)
 
 ### <a name="defining-static-quick-actions"></a>Définition des actions rapides statiques
 
@@ -270,7 +270,7 @@ Ici, nous définissons deux éléments d’action rapide statiques avec les clé
   - `UIApplicationShortcutIconTypeTime`
   - `UIApplicationShortcutIconTypeUpdate`
 
-  ![](3d-touch-images/uiapplicationshortcuticontype.png "UIApplicationShortcutIconType imagery")
+  ![Image UIApplicationShortcutIconType](3d-touch-images/uiapplicationshortcuticontype.png)
 
 - `UIApplicationShortcutItemSubtitle`: Définit le sous-titre de l’élément.
 - `UIApplicationShortcutItemTitle`-Définit le titre de l’élément.
@@ -430,7 +430,7 @@ Lorsque vous utilisez la dernière version de Xcode et du simulateur iOS sur un 
 
 Pour activer cette fonctionnalité, exécutez n’importe quelle application dans un matériel iPhone simulé qui prend en charge l’interface tactile en 3D (iPhone 6S et ultérieur). Sélectionnez ensuite le menu **matériel** dans le simulateur iOS, puis activez l’option **utiliser pavé tactile force pour le menu tactile 3D** :
 
-[![](3d-touch-images/simulator01.png "Select the Hardware menu in the iOS Simulator and enable the Use Trackpad Force for 3D touch menu item")](3d-touch-images/simulator01.png#lightbox)
+[![Sélectionnez le menu matériel dans le simulateur iOS et activez l’élément de menu utiliser pavé tactile force for 3D touch](3d-touch-images/simulator01.png)](3d-touch-images/simulator01.png#lightbox)
 
 Une fois cette fonctionnalité activée, vous pouvez appuyer sur le pavé tactile du Mac pour activer le toucher 3D comme vous le feriez sur du matériel iPhone réel.
 
@@ -438,7 +438,7 @@ Une fois cette fonctionnalité activée, vous pouvez appuyer sur le pavé tactil
 
 Cet article a introduit les nouvelles API tactiles 3D disponibles dans iOS 9 pour iPhone 6S et iPhone 6S plus. Il a abordé l’ajout de sensibilité à la pression à une application. utilisation de Peek et pop pour afficher rapidement les informations dans l’application à partir du contexte actuel sans navigation ; et l’utilisation des actions rapides pour fournir des raccourcis vers les fonctionnalités les plus couramment utilisées de votre application.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Exemple ViewControllerPreview iOS 9](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-viewcontrollerpreview)
 - [Exemple ApplicationShortcuts iOS 9](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-applicationshortcuts)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 65a89afb3f301fd88ac4819bb8c3658a2be5e29d
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 76f5a10720505796e30079d6be3506bc66636f7e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573194"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938123"
 ---
 # <a name="the-itunesmetadataplist-file-in-xamarinios-apps"></a>Fichier iTunesMetadata.plist dans les applications Xamarin.iOS
 
@@ -300,26 +300,26 @@ Effectuez les actions suivantes :
 1. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le fichier projet Xamarin.iOS, puis sélectionnez **Ajouter** > **Nouveau fichier...**
 2. Dans la boîte de dialogue nouveau fichier **iOS**, sélectionnez  >  **liste de propriétés**iOS :
 
-    ![](itunesmetadata-images/image01.png "Select iOS Property List")
+    ![Sélectionner la liste de propriétés iOS](itunesmetadata-images/image01.png)
 3. Entrez `iTunesMetadata` comme **Nom**, puis cliquez sur le bouton **Nouveau**.
 4. Dans l’**Explorateur de solutions**, double-cliquez sur le fichier `iTunesMetadata.plist` pour l’ouvrir et le modifier :
 
-    ![](itunesmetadata-images/image02.png "The iTunesMetadata.plist editor")
+    ![Éditeur iTunesMetadata.plist](itunesmetadata-images/image02.png)
 5. Cliquez sur le vert **+** pour créer une entrée et entrez `UIRequiredDeviceCapabilities` comme nom de clé :
 
-    ![](itunesmetadata-images/image03.png "Create a new entry and enter UIRequiredDeviceCapabilities as the key name")
+    ![Créer une entrée et entrer le nom de clé UIRequiredDeviceCapabilities](itunesmetadata-images/image03.png)
 6. Cliquez sur le type valeur **Chaîne**, puis sélectionnez **Dictionnaire** dans la liste déroulante :
 
-    ![](itunesmetadata-images/image04.png "Select Dictionary from the popup list")
+    ![Sélectionner Dictionnaire dans la liste déroulante](itunesmetadata-images/image04.png)
 7. Cliquez sur la flèche vers le bas située à gauche du nom de la propriété pour afficher les entrées du dictionnaire :
 
-    ![](itunesmetadata-images/image05.png "Reveal the dictionary entries")
+    ![Révéler les entrées du dictionnaire](itunesmetadata-images/image05.png)
 8. Cliquez sur le texte **Ajouter une nouvelle entrée**, puis sur le **+** de couleur verte pour ajouter une entrée au dictionnaire :
 
-    ![](itunesmetadata-images/image06.png "Add an entry to the dictionary")
+    ![Ajouter une entrée au dictionnaire](itunesmetadata-images/image06.png)
 9. Entrez le nom de clé `armv7`, sélectionnez le type **Booléen**, puis entrez la valeur **Oui** :
 
-    ![](itunesmetadata-images/image07.png "Enter armv7 for the key name, select a type of Boolean and enter Yes as the value")
+    ![Entrer le nom de clé armv7, sélectionner le type Booléen, puis entrer la valeur Oui](itunesmetadata-images/image07.png)
 10. Répétez les étapes ci-dessus jusqu’à ce que vous ayez rempli le fichier `iTunesMetadata.plist` avec toutes les paires clé/valeur nécessaires (pour plus d’informations, consultez la section [Contenu d’iTunesMetadata.plist](#iTunesMetadata_contents) ci-dessus).
 
 11. Enregistrez les changements dans le fichier plist.
@@ -358,7 +358,7 @@ Plus tard, vous devez sélectionner ce fichier `iTunesMetadata.plist` quand vous
 
 Cet article a présenté le fichier `iTunesMetadata.plist`, qui permet d’informer iTunes sur une application iOS faisant l’objet d’une distribution ad hoc. Il a décrit les clés standard du fichier plist. Il a ensuite expliqué comment créer et tenir à jour ce fichier dans Visual Studio et Visual Studio pour Mac.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Distribution de l’App Store](~/ios/deploy-test/app-distribution/app-store-distribution/index.md)
 - [Configuration d’une application dans iTunes Connect](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)

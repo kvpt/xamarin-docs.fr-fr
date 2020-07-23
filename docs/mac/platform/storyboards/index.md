@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 395ac62cd4db62c02863e352ed5643958348dcff
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 8b911be4b1bf547a9a1ad5d6b795894ddba3c26d
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574388"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939059"
 ---
 # <a name="introduction-to-storyboards-in-xamarinmac"></a>Présentation des storyboards dans Xamarin. Mac
 
@@ -20,7 +20,7 @@ _Cet article fournit une introduction à l’utilisation des storyboards dans un
 
 Les storyboards vous permettent de développer une interface utilisateur pour votre application Xamarin. Mac qui inclut non seulement les définitions et les contrôles de fenêtres, mais également les liens entre les différentes fenêtres (via SEGUES) et les États d’affichage.
 
-[![](images/intro01.png "A sample UI in Xcode")](images/intro01.png#lightbox)
+[![Exemple d’interface utilisateur dans Xcode](images/intro01.png)](images/intro01.png#lightbox)
 
 Cet article fournit une introduction à l’utilisation des storyboards pour définir une interface utilisateur de l’application Xamarin. Mac.
 
@@ -36,11 +36,11 @@ En utilisant des storyboards, toute l’interface utilisateur d’une applicatio
 
 Comme indiqué ci-dessus, un Storyboard définit la totalité de l’interface utilisateur pour une application donnée, décomposée en une vue d’ensemble fonctionnelle de ses _contrôleurs d’affichage_. Dans Interface Builder de Xcode, chacun de ces contrôleurs vit dans sa propre _scène_.
 
-[![](images/intro02.png "An example view controller")](images/intro02.png#lightbox)
+[![Exemple de contrôleur d’affichage](images/intro02.png)](images/intro02.png#lightbox)
 
 Chaque scène représente une vue donnée et une paire de contrôleurs d’affichage avec un ensemble de lignes (appelé SEGUES) qui connectent chaque scène de l’interface utilisateur, ce qui affiche leurs relations. Certains SEGUES définissent la façon dont un contrôleur d’affichage contient un ou plusieurs affichages enfants ou contrôleurs d’affichage. D’autres SEGUES, définissent des transitions entre le contrôleur d’affichage (comme l’affichage d’une boîte de dialogue Menu segue ou). 
 
-[![](images/intro03.png "A sample segue")](images/intro03.png#lightbox)
+[![Exemple de Segue](images/intro03.png)](images/intro03.png#lightbox)
 
 La chose la plus importante à noter est que chaque segue représente le workflow d’une forme de données entre l’élément donné de l’interface utilisateur de l’application.
 
@@ -50,7 +50,7 @@ La chose la plus importante à noter est que chaque segue représente le workflo
 
 Les contrôleurs d’affichage définissent les relations entre une vue donnée des informations au sein d’une application Mac et le modèle de données qui fournit ces informations. Chaque scène de niveau supérieur dans le Storyboard représente un contrôleur d’affichage dans le code de l’application Xamarin. Mac.
 
-[![](images/intro04.png "An example slips view controller")](images/intro04.png#lightbox)
+[![Exemple de contrôleur d’affichage de feuillets](images/intro04.png)](images/intro04.png#lightbox)
 
 De cette façon, chaque contrôleur d’affichage est un jumelage autonome et réutilisable de la représentation visuelle des informations (vue) et de la logique de présentation et de contrôle de ces informations.
 
@@ -112,7 +112,7 @@ Le code SourceWriter a été entièrement commenté et, le cas échéant, des li
 
 Cet article a fait un aperçu rapide de l’utilisation des storyboards dans une application Xamarin. Mac. Nous avons vu comment créer une nouvelle application à l’aide de storyboards et comment définir une interface utilisateur. Nous avons également vu comment naviguer entre les différentes fenêtres et les États d’affichage à l’aide de SEGUES.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Hello, Mac (exemple)](https://docs.microsoft.com/samples/xamarin/mac-samples/hello-mac)
 - [Hello, Mac](~/mac/get-started/hello-mac.md)

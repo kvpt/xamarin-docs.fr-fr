@@ -10,16 +10,16 @@ ms.date: 11/29/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: dc28cdaf78c72c219706a30c30af7f90ae7c4eec
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 8892a49f2d7d93f8310293bc70d5e1acdfabe3f5
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84569619"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937083"
 ---
 # <a name="customizing-a-listview"></a>Personnalisation d’un ListView
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-listview)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-listview)
 
 _Un Xamarin.Forms ListView est une vue qui affiche une collection de données sous la forme d’une liste verticale. Cet article montre comment créer un convertisseur personnalisé qui encapsule des contrôles de liste spécifiques à la plateforme et des dispositions de cellule natives, ce qui permet de mieux contrôler les performances des contrôles de liste natifs._
 
@@ -27,7 +27,7 @@ Chaque Xamarin.Forms vue possède un convertisseur associé pour chaque platefor
 
 Le diagramme suivant illustre la relation entre le [`ListView`](xref:Xamarin.Forms.ListView) contrôle et les contrôles natifs correspondants qui l’implémentent :
 
-![](listview-images/listview-classes.png "Relationship Between the ListView Control and the Implementing Native Controls")
+![Relation entre le contrôle ListView et les contrôles natifs qui l’implémentent](listview-images/listview-classes.png)
 
 Le processus de rendu peut être utilisé pour implémenter des personnalisations spécifiques à la plateforme en créant un convertisseur personnalisé pour un [`ListView`](xref:Xamarin.Forms.ListView) sur chaque plateforme. Le processus pour y parvenir est le suivant :
 
@@ -152,11 +152,11 @@ Le processus de création de la classe de renderer personnalisé est le suivant�
 
 Le diagramme suivant illustre les responsabilités de chaque projet dans l’exemple d’application ainsi que les relations qu’ils entretiennent les uns avec les autres :
 
-![](listview-images/solution-structure.png "NativeListView Custom Renderer Project Responsibilities")
+![Responsabilités du projet de renderer personnalisé NativeListView](listview-images/solution-structure.png)
 
 Le contrôle personnalisé `NativeListView` est restitué par des classes de renderer spécifiques à la plateforme qui dérivent toutes de la classe `ListViewRenderer` pour chaque plateforme. Chaque contrôle personnalisé `NativeListView` est donc restitué avec des contrôles de liste spécifiques à la plateforme et des dispositions de cellule natives, comme le montrent les captures d’écran suivantes :
 
-![](listview-images/screenshots.png "NativeListView on each Platform")
+![NativeListView sur chaque plateforme](listview-images/screenshots.png)
 
 La `ListViewRenderer` classe expose la `OnElementChanged` méthode, qui est appelée lorsque le Xamarin.Forms contrôle personnalisé est créé pour restituer le contrôle natif correspondant. Cette méthode prend un paramètre `ElementChangedEventArgs` qui contient les propriétés `OldElement` et `NewElement`. Ces propriétés représentent l' Xamarin.Forms élément auquel le convertisseur *a été* attaché, et l' Xamarin.Forms élément auquel le convertisseur *est* attaché, respectivement. Dans l’exemple d’application, la propriété `OldElement` sera `null` et la propriété `NewElement` contiendra une référence à l’instance `NativeListView`.
 
@@ -561,6 +561,6 @@ La méthode remplit à nouveau le contrôle natif `ListView` des données ayant 
 
 Dans cet article, nous avons vu comment créer un renderer personnalisé qui encapsule des contrôles de liste spécifiques à la plateforme et des dispositions de cellule natives afin de mieux contrôler les performances des contrôles de liste natifs.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [CustomRendererListView (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-listview)

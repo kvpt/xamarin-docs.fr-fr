@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c8d660896684283ba9b40cde168adbfe30ca0c51
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: fda45bc0aa2b7bc582c30b752662055bd4bd4865
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84135991"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937057"
 ---
 # <a name="listview-separator-style-on-ios"></a>Style de séparateur ListView sur iOS
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Cette plateforme iOS détermine si le séparateur entre les cellules d’un objet [`ListView`](xref:Xamarin.Forms.ListView) utilise la largeur complète du `ListView` . Il est consommé en XAML en affectant [`ListView.SeparatorStyle`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.ListView.SeparatorStyleProperty) à la propriété jointe une valeur de l' [`SeparatorStyle`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle) énumération :
 
@@ -51,7 +51,7 @@ La `ListView.On<iOS>` méthode spécifie que ce spécifique à la plateforme s�
 
 Le résultat est qu’une [`SeparatorStyle`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle) valeur spécifiée est appliquée au [`ListView`](xref:Xamarin.Forms.ListView) , qui contrôle la largeur du séparateur entre les cellules :
 
-![](listview-separator-style-images/listview-separatorstyle.png "ListView SeparatorStyle Platform-Specific")
+![ListView SeparatorStyle spécifique à la plateforme](listview-separator-style-images/listview-separatorstyle.png)
 
 > [!NOTE]
 > Une fois le style de séparateur défini sur `FullWidth` , il ne peut pas être rétabli au moment de l' `Default` exécution.

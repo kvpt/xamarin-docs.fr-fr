@@ -10,16 +10,16 @@ ms.date: 11/09/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 46d1566c89de763a469f30ce8ed2c6ef919f1426
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 0967845ac61ddf5f8e1cc76664a50877d041f011
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84135796"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939670"
 ---
 # <a name="reusable-eventtocommandbehavior"></a>EventToCommandBehavior réutilisable
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior)
 
 _Les comportements peuvent être utilisés pour associer des commandes à des contrôles qui n’ont pas été conçus pour interagir avec des commandes. Cet article décrit la création et l’utilisation d’un Xamarin.Forms comportement pour appeler une commande lorsqu’un événement se déclenche._
 
@@ -201,7 +201,7 @@ La `Command` propriété du comportement est liée aux données de la `OutputAge
 
 Lors de l’exécution, le comportement répond à l’interaction avec le contrôle. Lorsqu’un élément est sélectionné dans le [`ListView`](xref:Xamarin.Forms.ListView) , l' [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected) événement se déclenche, ce qui entraîne l’exécution `OutputAgeCommand` de dans le ViewModel. À son tour, cette commande met à jour la `SelectedItemText` propriété ViewModel à laquelle est [`Label`](xref:Xamarin.Forms.Label) lié, comme illustré dans les captures d’écran suivantes :
 
-[![](event-to-command-behavior-images/screenshots-sml.png "Sample Application with EventToCommandBehavior")](event-to-command-behavior-images/screenshots.png#lightbox "Sample Application with EventToCommandBehavior")
+[![Exemple d’application avec EventToCommandBehavior](event-to-command-behavior-images/screenshots-sml.png)](event-to-command-behavior-images/screenshots.png#lightbox "Exemple d’application avec EventToCommandBehavior")
 
 L’avantage d’utiliser ce comportement pour exécuter une commande quand un événement se déclenche est que les commandes peuvent être associées à des contrôles qui n’ont pas été conçus pour interagir avec les commandes. De plus, cela permet de supprimer des fichiers code-behind le code réutilisable qui gère les événements.
 
@@ -209,7 +209,7 @@ L’avantage d’utiliser ce comportement pour exécuter une commande quand un �
 
 Cet article a montré l’utilisation Xamarin.Forms d’un comportement pour appeler une commande lorsqu’un événement se déclenche. Les comportements peuvent être utilisés pour associer des commandes à des contrôles qui n’ont pas été conçus pour interagir avec les commandes.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Comportement EventToCommand (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior)
 - [Comportement](xref:Xamarin.Forms.Behavior)

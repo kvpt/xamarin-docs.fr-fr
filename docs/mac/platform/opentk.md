@@ -7,18 +7,18 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: bd5217173e00de7d09e4ec14a5acf4d6a8389b10
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: fbd6e4a3b1c5cdb45a057f1ed664a0d5e71e224d
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574442"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937889"
 ---
 # <a name="introduction-to-opentk-in-xamarinmac"></a>Présentation de OpenTK dans Xamarin. Mac
 
 OpenTK (Open Toolkit) est une bibliothèque C# de bas niveau avancée qui facilite l’utilisation de OpenGL, OpenCL et Open. OpenTK peut être utilisé pour les jeux, les applications scientifiques ou d’autres projets qui requièrent des fonctionnalités graphiques, audio ou de calcul en 3D. Cet article fournit une brève introduction à l’utilisation de OpenTK dans une application Xamarin. Mac.
 
-[![](opentk-images/intro01.png "An example app run")](opentk-images/intro01.png#lightbox)
+[![Exemple d’exécution d’application](opentk-images/intro01.png)](opentk-images/intro01.png#lightbox)
 
 Dans cet article, nous allons aborder les principes fondamentaux de OpenTK dans une application Xamarin. Mac. Nous vous recommandons vivement d’utiliser l’article [Hello, Mac](~/mac/get-started/hello-mac.md) , en particulier la [Présentation de Xcode et Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) et les sections [actions et actions](~/mac/get-started/hello-mac.md#outlets-and-actions) , car il aborde les concepts et les techniques clés que nous allons utiliser dans cet article.
 
@@ -54,11 +54,11 @@ En guise d’introduction rapide à l’utilisation de OpenTK dans une applicati
 
 Démarrez Visual Studio pour Mac et créez une nouvelle solution Xamarin. Mac. Sélectionnez application **Mac**application de  >  **App**  >  **General**  >  **cacao**générale :
 
-[![](opentk-images/sample01.png "Adding a new Cocoa App")](opentk-images/sample01.png#lightbox)
+[![Ajout d’une nouvelle application de cacao](opentk-images/sample01.png)](opentk-images/sample01.png#lightbox)
 
 Entrez `MacOpenTK` pour le **nom du projet**:
 
-[![](opentk-images/sample02.png "Setting the project name")](opentk-images/sample02.png#lightbox)
+[![Définition du nom du projet](opentk-images/sample02.png)](opentk-images/sample02.png#lightbox)
 
 Cliquez sur le bouton **créer** pour générer le nouveau projet.
 
@@ -70,7 +70,7 @@ Avant de pouvoir utiliser Open TK dans une application Xamarin. Mac, vous devez 
 
 Activez la case à cocher `OpenTK` et cliquez sur le bouton **OK** :
 
-[![](opentk-images/sample03.png "Editing the project references")](opentk-images/sample03.png#lightbox)
+[![Modification des références de projet](opentk-images/sample03.png)](opentk-images/sample03.png#lightbox)
 
 <a name="Using_OpenTK"></a>
 
@@ -297,7 +297,7 @@ Nous passons la fréquence d’images souhaitée à laquelle nous voulons que la
 
 Exécutons notre application et voyons la sortie :
 
-[![](opentk-images/intro01.png "A sample of the apps output")](opentk-images/intro01.png#lightbox)
+[![Exemple de sortie d’applications](opentk-images/intro01.png)](opentk-images/intro01.png#lightbox)
 
 Si nous redimensionneons notre fenêtre, la vue du jeu sera également hébergée et le triangle sera également redimensionné et mis à jour en temps réel.
 
@@ -323,7 +323,7 @@ Pour obtenir un exemple Xamarin. Mac plus complexe d’une implémentation OpenT
 
 Cet article a fait un aperçu rapide de l’utilisation de OpenTK dans une application Xamarin. Mac. Nous avons vu comment créer une fenêtre de jeu, comment attacher la fenêtre de jeu à une fenêtre Mac et comment afficher une forme simple dans la fenêtre du jeu.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [MacOpenTK (exemple)](https://docs.microsoft.com/samples/xamarin/mac-samples/macopentk)
 - [MonoMacGameView (exemple)](https://docs.microsoft.com/samples/xamarin/mac-samples/monomacgamewindow)

@@ -10,22 +10,22 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8698bacd7257df431b12166c749f5826e8d6fd3c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 47182578a6583dde34cb7f06e3433cdb2703f6ba
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138448"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937680"
 ---
 # <a name="dots-and-dashes-in-skiasharp"></a>Points et tirets dans SkiaSharp
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Maîtrisez les subtilités de dessin de lignes en pointillés et en pointillés dans SkiaSharp_
 
 SkiaSharp vous permet de dessiner des lignes qui ne sont pas solides, mais qui sont composées de points et de tirets :
 
-![](dots-images/dottedlinesample.png "Dotted line")
+![Ligne en pointillés](dots-images/dottedlinesample.png)
 
 Pour ce faire, il s’agit d’un *effet de chemin d’accès*, qui est une instance de la [`SKPathEffect`](xref:SkiaSharp.SKPathEffect) classe que vous affectez à la [`PathEffect`](xref:SkiaSharp.SKPaint.PathEffect) propriété de `SKPaint` . Vous pouvez créer un effet de tracé (ou combiner des effets de tracés) à l’aide de l’une des méthodes de création statique définies par `SKPathEffect` . ( `SKPathEffect` est l’un des six effets pris en charge par SkiaSharp ; les autres sont décrits dans la section [**SkiaSharp Effect**](../effects/index.md).)
 
@@ -153,7 +153,7 @@ float[] GetPickerArray(Picker picker)
 
 Dans les captures d’écran suivantes, l’écran iOS à l’extrême gauche affiche une ligne en pointillés :
 
-[![](dots-images/dotsanddashes-small.png "Triple screenshot of the Dots and Dashes page")](dots-images/dotsanddashes-large.png#lightbox "Triple screenshot of the Dots and Dashes page")
+[![Capture d’écran triple de la page des points et des tirets](dots-images/dotsanddashes-small.png)](dots-images/dotsanddashes-large.png#lightbox "Capture d’écran triple de la page des points et des tirets")
 
 Toutefois, l’écran Android est également supposé afficher une ligne en pointillés à l’aide du tableau {10, 10}, mais la ligne est pleine. Que s’est-il passé ? Le problème est que la valeur de l’écran Android est également définie sur `Square` . Cela étend tous les tirets de la moitié de la largeur du trait, provoquant ainsi le remplissage des espaces vides.
 
@@ -214,9 +214,9 @@ public class AnimatedSpiralPage : ContentPage
 
 Bien entendu, vous devrez exécuter le programme pour voir l’animation :
 
-[![](dots-images/animatedspiral-small.png "Triple screenshot of the Animated Spiral page")](dots-images/animatedspiral-large.png#lightbox "Triple screenshot of the Animated Spiral page")
+[![Capture d’écran triple de la page en spirale animée](dots-images/animatedspiral-small.png)](dots-images/animatedspiral-large.png#lightbox "Capture d’écran triple de la page en spirale animée")
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

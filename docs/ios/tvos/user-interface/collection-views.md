@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: aa03ab7a3663fa5e0704a605116b19147f14a10b
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: fd1bf68e45fa163588d91640147d9e9dbf8ff237
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572583"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939488"
 ---
 # <a name="working-with-tvos-collection-views-in-xamarin"></a>Utilisation des vues de collection tvOS dans Xamarin
 
 Les vues de collection permettent d’afficher un groupe de contenu à l’aide de dispositions arbitraires. À l’aide de la prise en charge intégrée, elles permettent de créer facilement des dispositions similaires à des grilles ou linéaires, tout en prenant en charge des dispositions personnalisées.
 
-[![](collection-views-images/collection01.png "Sample collection view")](collection-views-images/collection01.png#lightbox)
+[![Exemple d’affichage de collection](collection-views-images/collection01.png)](collection-views-images/collection01.png#lightbox)
 
 La vue de collection gère une collection d’éléments à l’aide d’un délégué et d’une source de données pour fournir une interaction utilisateur et le contenu de la collection. Étant donné que la vue de collection est basée sur un sous-système de mise en page indépendant de la vue elle-même, il est possible de modifier facilement la présentation des données de la vue de collection à la volée.
 
@@ -100,36 +100,36 @@ Procédez comme suit :
 1. Dans la **Explorateur de solutions**, double-cliquez sur le `Main.storyboard` fichier et ouvrez-le dans le concepteur iOS.
 1. Ajoutez une vue d’image, une étiquette et un bouton à la vue existante et configurez-les de façon à ce qu’elle ressemble à ce qui suit : 
 
-    [![](collection-views-images/collection02.png "Sample layout")](collection-views-images/collection02.png#lightbox)
+    [![Exemple de disposition](collection-views-images/collection02.png)](collection-views-images/collection02.png#lightbox)
 1. Attribuez un **nom** à la vue image et à l’étiquette dans l' **onglet widget** de l' **Explorateur de propriétés**. Par exemple : 
 
-    [![](collection-views-images/collection03.png "Setting the name")](collection-views-images/collection03.png#lightbox)
+    [![Définition du nom](collection-views-images/collection03.png)](collection-views-images/collection03.png#lightbox)
 1. Ensuite, faites glisser un contrôleur d’affichage de collection sur le Storyboard : 
 
-    [![](collection-views-images/collection04.png "A Collection View Controller")](collection-views-images/collection04.png#lightbox)
+    [![Un contrôleur d’affichage de collection](collection-views-images/collection04.png)](collection-views-images/collection04.png#lightbox)
 1. Maintenez la touche Ctrl enfaits glisser du bouton vers le contrôleur d’affichage de collection et sélectionnez **Push** dans le menu contextuel : 
 
-    [![](collection-views-images/collection05.png "Select Push from the popup")](collection-views-images/collection05.png#lightbox)
+    [![Sélectionner un push dans la fenêtre contextuelle](collection-views-images/collection05.png)](collection-views-images/collection05.png#lightbox)
 1. Lorsque l’application est exécutée, l’affichage de la collection s’affiche chaque fois que l’utilisateur clique sur le bouton.
 1. Sélectionnez la vue de collection et entrez les valeurs suivantes sous l' **onglet disposition** de l' **Explorateur de propriétés**: 
 
-    [![](collection-views-images/collection06.png "The Properties Explorer")](collection-views-images/collection06.png#lightbox)
+    [![Explorateur de propriétés](collection-views-images/collection06.png)](collection-views-images/collection06.png#lightbox)
 1. Cela contrôle la taille des cellules individuelles et les bordures entre les cellules et le bord externe de la vue de collection.
 1. Sélectionnez le contrôleur d’affichage de collection et définissez sa classe sur `CityCollectionViewController` dans l' **onglet widget**: 
 
-    [![](collection-views-images/collection07.png "Set the class to CityCollectionViewController")](collection-views-images/collection07.png#lightbox)
+    [![Définir la classe sur CityCollectionViewController](collection-views-images/collection07.png)](collection-views-images/collection07.png#lightbox)
 1. Sélectionnez la vue de collection et définissez sa classe sur `CityCollectionView` dans l' **onglet widget**: 
 
-    [![](collection-views-images/collection08.png "Set the class to CityCollectionView")](collection-views-images/collection08.png#lightbox)
+    [![Définir la classe sur CityCollectionView](collection-views-images/collection08.png)](collection-views-images/collection08.png#lightbox)
 1. Sélectionnez la cellule d’affichage de collection et définissez sa classe sur `CityCollectionViewCell` dans l' **onglet widget**: 
 
-    [![](collection-views-images/collection09.png "Set the class to CityCollectionViewCell")](collection-views-images/collection09.png#lightbox)
+    [![Définir la classe sur CityCollectionViewCell](collection-views-images/collection09.png)](collection-views-images/collection09.png#lightbox)
 1. Dans l' **onglet widget** , vérifiez que la **disposition** est `Flow` et que la **direction de défilement** est `Vertical` pour la vue de collection : 
 
-    [![](collection-views-images/collection10.png "The Widget Tab")](collection-views-images/collection10.png#lightbox)
+    [![Onglet widget](collection-views-images/collection10.png)](collection-views-images/collection10.png#lightbox)
 1. Sélectionnez la cellule d’affichage de collection et définissez son **identité** sur `CityCell` sous l' **onglet widget**: 
 
-    [![](collection-views-images/collection11.png "Set the Identity to CityCell")](collection-views-images/collection11.png#lightbox)
+    [![Définir l’identité sur CityCell](collection-views-images/collection11.png)](collection-views-images/collection11.png#lightbox)
 1. Enregistrez vos modifications.
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
@@ -138,34 +138,34 @@ Procédez comme suit :
 1. Dans la **Explorateur de solutions**, double-cliquez sur le `Main.storyboard` fichier et ouvrez-le dans le concepteur iOS.
 1. Ajoutez une vue d’image, une étiquette et un bouton à la vue existante et configurez-les de façon à ce qu’elle ressemble à ce qui suit : 
 
-    [![](collection-views-images/collection02vs.png "Configure the layout")](collection-views-images/collection02vs.png#lightbox)
+    [![Configurer la disposition](collection-views-images/collection02vs.png)](collection-views-images/collection02vs.png#lightbox)
 1. Attribuez un **nom** à la vue image et à l’étiquette dans l' **onglet widget** de l' **Explorateur de propriétés**. Par exemple : 
 
-    [![](collection-views-images/collection03vs.png "The Properties Explorer")](collection-views-images/collection03vs.png#lightbox)
+    [![Explorateur de propriétés](collection-views-images/collection03vs.png)](collection-views-images/collection03vs.png#lightbox)
 1. Ensuite, faites glisser un contrôleur d’affichage de collection sur le Storyboard : 
 
-    [![](collection-views-images/collection04vs.png "A Collection View Controller")](collection-views-images/collection04vs.png#lightbox)
+    [![Un contrôleur d’affichage de collection](collection-views-images/collection04vs.png)](collection-views-images/collection04vs.png#lightbox)
 1. Maintenez la touche Ctrl enfaits glisser du bouton vers le contrôleur d’affichage de collection et sélectionnez **Push** dans le menu contextuel : 
 
-    [![](collection-views-images/collection05vs.png "Select Push from the popup")](collection-views-images/collection05vs.png#lightbox)
+    [![Sélectionner un push dans la fenêtre contextuelle](collection-views-images/collection05vs.png)](collection-views-images/collection05vs.png#lightbox)
 1. Lorsque l’application est exécutée, l’affichage de la collection s’affiche chaque fois que l’utilisateur clique sur le bouton.
 1. Sélectionnez la vue de collection et, sous l' **onglet disposition** de l' **Explorateur de propriétés** , entrez la **largeur** _361_ et la **hauteur** _256_ 
 1. Cela contrôle la taille des cellules individuelles et les bordures entre les cellules et le bord externe de la vue de collection.
 1. Sélectionnez le contrôleur d’affichage de collection et définissez sa classe sur `CityCollectionViewController` dans l' **onglet widget**: 
 
-    [![](collection-views-images/collection07vs.png "Set the class to CityCollectionViewController")](collection-views-images/collection07vs.png#lightbox)
+    [![Définir la classe sur CityCollectionViewController](collection-views-images/collection07vs.png)](collection-views-images/collection07vs.png#lightbox)
 1. Sélectionnez la vue de collection et définissez sa classe sur `CityCollectionView` dans l' **onglet widget**: 
 
-    [![](collection-views-images/collection08vs.png "Set the class to CityCollectionView")](collection-views-images/collection08vs.png#lightbox)
+    [![Définir la classe sur CityCollectionView](collection-views-images/collection08vs.png)](collection-views-images/collection08vs.png#lightbox)
 1. Sélectionnez la cellule d’affichage de collection et définissez sa classe sur `CityCollectionViewCell` dans l' **onglet widget**: 
 
-    [![](collection-views-images/collection09vs.png "Set the class to CityCollectionViewCell")](collection-views-images/collection09vs.png#lightbox)
+    [![Définir la classe sur CityCollectionViewCell](collection-views-images/collection09vs.png)](collection-views-images/collection09vs.png#lightbox)
 1. Dans l' **onglet widget** , vérifiez que la **disposition** est `Flow` et que la **direction de défilement** est `Vertical` pour la vue de collection : 
 
-    [![](collection-views-images/collection10vs.png "Tthe Widget Tab")](collection-views-images/collection10vs.png#lightbox)
+    [![Onglet du widget](collection-views-images/collection10vs.png)](collection-views-images/collection10vs.png#lightbox)
 1. Sélectionnez la cellule d’affichage de collection et définissez son **identité** sur `CityCell` sous l' **onglet widget**: 
 
-    [![](collection-views-images/collection11vs.png "Set the Identity to CityCell")](collection-views-images/collection11vs.png#lightbox)
+    [![Définir l’identité sur CityCell](collection-views-images/collection11vs.png)](collection-views-images/collection11vs.png#lightbox)
 1. Enregistrez vos modifications.
 
 -----
@@ -797,17 +797,17 @@ public override void ViewWillAppear (bool animated)
 
 Tout en étant en place, si vous générez et exécutez l’application, la vue principale est affichée avec la ville par défaut :
 
-[![](collection-views-images/run01.png "The main screen")](collection-views-images/run01.png#lightbox)
+[![Écran principal](collection-views-images/run01.png)](collection-views-images/run01.png#lightbox)
 
 Si l’utilisateur clique sur le bouton **Sélectionner une vue** , la vue de collection s’affiche :
 
-[![](collection-views-images/run02.png "The collection view")](collection-views-images/run02.png#lightbox)
+[![Vue de collection](collection-views-images/run02.png)](collection-views-images/run02.png#lightbox)
 
 Toute ville dont la propriété a la `CanSelect` valeur `false` est affichée grisée et l’utilisateur ne peut pas lui affecter le focus. Lorsque l’utilisateur met un élément en surbrillance (en le mettant en focus), le titre est affiché et il peut utiliser l’effet parallaxe pour incliner l’image en 3D.
 
 Quand l’utilisateur clique sur une image Select, la vue de collection est fermée et la vue principale est réaffichée avec la nouvelle image :
 
-[![](collection-views-images/run03.png "A new image on the home screen")](collection-views-images/run03.png#lightbox)
+[![Nouvelle image sur l’écran d’accueil](collection-views-images/run03.png)](collection-views-images/run03.png#lightbox)
 
 <a name="Creating-Custom-Layout-and-Reordering-Items"></a>
 
@@ -823,7 +823,7 @@ Récemment ajoutés aux vues de collection pour iOS 9 était la possibilité d�
 
 Cet article a abordé la conception et l’utilisation des vues de collection au sein d’une application Xamarin. tvOS. Tout d’abord, elle a abordé tous les éléments qui composent la vue de collection. Ensuite, il a montré comment concevoir et implémenter une vue de collection à l’aide d’une table de montage séquentiel. Enfin, fournit des liens vers des informations sur la création de dispositions personnalisées et la réorganisation des éléments.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Exemples tvOS](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
 - [tvOS](https://developer.apple.com/tvos/)

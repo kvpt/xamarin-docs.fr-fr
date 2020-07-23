@@ -10,16 +10,16 @@ ms.date: 03/11/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: fbf717092da7f77e265803fae87efb5bf0e9876f
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: fd1893a91d9d8e5d2c2581a9f3f9b5ef8ee59f1f
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84574364"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937668"
 ---
 # <a name="using-urhosharp-in-xamarinforms"></a>Utilisation de UrhoSharp dansXamarin.Forms
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://github.com/xamarin/urho-samples/tree/master/FormsSample)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://github.com/xamarin/urho-samples/tree/master/FormsSample)
 
 ## <a name="what-is-urhosharp"></a>Qu’est-ce que UrhoSharp ?
 
@@ -28,8 +28,8 @@ ms.locfileid: "84574364"
 UrhoSharp peut être utilisé pour restituer des graphiques dans des Xamarin.Forms applications.
 Cet [exemple](https://github.com/xamarin/urho-samples/tree/master/FormsSample) illustre l’utilisation de UrhoSharp pour construire un graphique 3D interactif :
 
-![](urhosharp-images/ios-animation.gif "UrhoSharp 3D Interactive Chart on iOS")
-![](urhosharp-images/android-animation.gif "UrhoSharp 3D Interactive Chart on Android")
+![Graphique interactif 3D UrhoSharp sur iOS ](urhosharp-images/ios-animation.gif)
+ ![ UrhoSharp 3D interactive Chart sur Android](urhosharp-images/android-animation.gif)
 
 ## <a name="adding-the-urhosharp-nuget-packages"></a>Ajout des packages NuGet UrhoSharp
 
@@ -38,11 +38,11 @@ Avant d’utiliser UrhoSharp, les développeurs doivent ajouter le package NuGet
 Le package NuGet UrhoSharp. Forms contient tous les objets nécessaires pour créer des objets UrhoSharp. Le package NuGet UrhoSharp. Forms comprend la `UrhoSurface` classe, qui est utilisée pour héberger des UrhoSharp dans Xamarin.Forms .
 Pour commencer, cliquez avec le bouton droit sur le dossier **packages** dans le projet de bibliothèque .NET standard et sélectionnez **Ajouter des packages...**. Entrez le terme de recherche **UrhoSharp. Forms**, sélectionnez **UrhoSharp pour Xamarin.Forms **, puis cliquez sur Ajouter un **package**.
 
-[![](urhosharp-images/add-package-sml.png "Add Packages Dialog")](urhosharp-images/add-package.png#lightbox "Add Packages Dialog")
+[![Boîte de dialogue Ajouter des packages](urhosharp-images/add-package-sml.png)](urhosharp-images/add-package.png#lightbox "Boîte de dialogue Ajouter des packages")
 
 Le package NuGet UrhoSharp. Forms sera ajouté au projet :
 
-![](urhosharp-images/packages.png "Packages Folder")
+![Dossier Packages](urhosharp-images/packages.png)
 
 Répétez les étapes ci-dessus pour les projets spécifiques à une plateforme (par exemple, iOS et Android).
 
@@ -217,7 +217,7 @@ Les animations en [haut de la page](#what-is-urhosharp) affichent l’exemple en
 
 Cette page montre comment UrhoSharp peut être utilisé pour ajouter une visualisation de données 3D à Xamarin.Forms . Pour plus [UrhoSharp documentation](~/graphics-games/urhosharp/index.md) d’informations sur la création de scènes Urho qui peuvent être incluses dans des Xamarin.Forms applications à l’aide de la méthode illustrée ci-dessus, consultez la documentation UrhoSharp.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Exemple de graphiques (C# 6)](https://github.com/xamarin/urho-samples/tree/master/FormsSample)
 - [UrhoSharp](~/graphics-games/urhosharp/index.md)

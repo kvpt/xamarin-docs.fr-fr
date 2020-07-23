@@ -10,16 +10,16 @@ ms.date: 08/05/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cf03d0c32d80d7a1821e323acdc84a351413efec
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 71238775e9cc9d3e32ab9c9287e5b52c759ca9eb
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138877"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939930"
 ---
 # <a name="passing-effect-parameters-as-attached-properties"></a>Passer des paramètres d’effet en tant que propriétés jointes
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffectruntimechange)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffectruntimechange)
 
 _Les propriétés jointes peuvent être utilisées pour définir des paramètres d’effet qui répondent aux modifications de propriété d’exécution. Cet article montre comment utiliser des propriétés jointes pour passer des paramètres à un effet et comment modifier un paramètre au moment de l’exécution._
 
@@ -38,11 +38,11 @@ Les paramètres peuvent ensuite être passés à l’effet en ajoutant les propr
 
 L’exemple d’application montre un `ShadowEffect` qui ajoute une ombre au texte affiché par un [`Label`](xref:Xamarin.Forms.Label) contrôle. La couleur de l’ombre peut également être changée au moment de l’exécution. Le diagramme suivant illustre les responsabilités de chaque projet dans l’exemple d’application ainsi que les relations qu’ils entretiennent les uns avec les autres :
 
-![](attached-properties-images/shadow-effect.png "Shadow Effect Project Responsibilities")
+![Responsabilités de projet ShadowEffect](attached-properties-images/shadow-effect.png)
 
 Un [`Label`](xref:Xamarin.Forms.Label) contrôle sur le `HomePage` est personnalisé par `LabelShadowEffect` dans chaque projet spécifique à la plateforme. Les paramètres sont passés à chaque `LabelShadowEffect` par le biais des propriétés jointes dans la classe `ShadowEffect`. Chaque classe `LabelShadowEffect` dérive de la classe `PlatformEffect` pour chaque plateforme. Il en résulte l’ajout d’une ombre au texte affiché par le contrôle `Label`, comme illustré dans les captures d’écran suivantes :
 
-![](attached-properties-images/screenshots.png "Shadow Effect on each Platform")
+![Effet d’ombre sur chaque plateforme](attached-properties-images/screenshots.png)
 
 ## <a name="creating-effect-parameters"></a>Création de paramètres d’effet
 
@@ -436,10 +436,10 @@ La méthode `OnElementPropertyChanged` met à jour la couleur ou le décalage de
 
 Cet article a décrit comment utiliser des propriétés jointes pour passer des paramètres à un effet et comment changer un paramètre au moment de l’exécution. Les propriétés jointes permettent de définir des paramètres d’effet qui répondent aux changements apportés aux propriétés au moment de l’exécution.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [Renderers personnalisés](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)
-- [Résultat](xref:Xamarin.Forms.Effect)
+- [Convertisseurs personnalisés](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)
+- [Effet](xref:Xamarin.Forms.Effect)
 - [PlatformEffect](xref:Xamarin.Forms.PlatformEffect`2)
 - [RoutingEffect](xref:Xamarin.Forms.RoutingEffect)
 - [Effet d’ombre (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffectruntimechange)

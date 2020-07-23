@@ -6,12 +6,12 @@ ms.assetid: 191c71fb-44a4-4e6c-af4b-7b1107dce6af
 author: davidortinau
 ms.author: daortin
 ms.date: 07/18/2018
-ms.openlocfilehash: b8be06b9da4561ffc0d628b53f8daf639b5e3179
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 1a71b84d1068fef1730196bafb0f0d7e2a948c5c
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571093"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936914"
 ---
 # <a name="shared-projects-code-sharing"></a>Partage de code des projets partagés
 
@@ -27,7 +27,7 @@ Si vous avez utilisé la liaison de fichiers dans le passé pour partager du cod
 
 Contrairement à la plupart des autres types de projets, un projet partagé n’a pas de sortie (sous forme de DLL). au lieu de cela, le code est compilé dans chaque projet qui le référence. Cela est illustré dans le diagramme ci-dessous, de manière conceptuelle, le contenu entier du projet partagé est « copié dans » chaque projet de référencement et compilé comme s’il s’agissait d’une partie d’entre eux.
 
-![](shared-projects-images/sharedassetproject.png "Shared Project architecture")
+![Architecture de projet partagé](shared-projects-images/sharedassetproject.png)
 
 Le code d’un projet partagé peut contenir des directives de compilateur qui activent ou désactivent des sections de code selon le projet d’application qui utilise le code, ce qui est suggéré par les zones de plateforme de couleur dans le diagramme.
 
@@ -57,7 +57,7 @@ Pour qu’un projet partagé soit utile, il doit être référencé par au moins
 
 L’ajout d’une référence à un projet partagé s’effectue de la même façon que le référencement d’un projet de bibliothèque standard. Cette capture d’écran montre un projet Xamarin. iOS référençant un projet partagé.
 
-![](shared-projects-images/xs-reference.png "Project reference to Shared Project")
+![Référence de projet au projet partagé](shared-projects-images/xs-reference.png)
 
 Une fois que le projet partagé est référencé par une autre bibliothèque ou application, vous pouvez générer la solution et afficher toutes les erreurs dans le code. Quand le projet partagé est référencé par _deux ou plusieurs_ autres projets, un menu s’affiche dans l’angle supérieur gauche de l’éditeur de code source qui montre le choix des projets qui font référence à ce fichier.
 
@@ -67,7 +67,7 @@ Lorsque vous cliquez avec le bouton droit sur un projet partagé et choisissez *
 
 L’écran d' **options** est illustré ci-dessous : le **nom** du projet et l' **espace de noms par défaut** sont les deux seuls paramètres que vous allez généralement modifier.
 
-![](shared-projects-images/xs-sharedprojectoptions.png "Shared Project Options")
+![Options de projet partagé](shared-projects-images/xs-sharedprojectoptions.png)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
@@ -87,13 +87,13 @@ Dans Visual Studio 2017, sélectionnez le modèle de **projet partagé** , puis 
 
 Vous pouvez également ajouter un nouveau projet partagé à une solution existante en cliquant avec le bouton droit sur le fichier de solution et en choisissant **ajouter > nouveau projet**. Un nouveau projet partagé apparaît comme indiqué ci-dessous (après l’ajout d’un fichier de classe). Notez qu’il n’existe aucune référence ni aucun nœud de composant ; celles-ci ne sont pas prises en charge pour les projets partagés.
 
-![](shared-projects-images/vs-empty.png "Empty Shared Project")
+![Projet partagé vide](shared-projects-images/vs-empty.png)
 
 Pour qu’un projet partagé soit utile, il doit être référencé par au moins un projet de génération (par exemple, une bibliothèque ou une application iOS ou Android, ou un projet PCL). Un projet partagé n’est pas compilé lorsqu’il ne fait pas référence à celui-ci. par conséquent, la syntaxe (ou toute autre erreur) n’est pas mise en surbrillance tant qu’il n’a pas été référencé par autre chose.
 
 L’ajout d’une référence à un projet partagé s’effectue de la même façon que le référencement d’un projet de bibliothèque standard. Cette capture d’écran montre un projet Xamarin. iOS référençant un projet partagé.
 
-![](shared-projects-images/vs-reference.png "Project reference to Shared Project")
+![Référence de projet au projet partagé](shared-projects-images/vs-reference.png)
 
 Une fois que le projet partagé est référencé par une autre bibliothèque ou application, vous pouvez générer la solution et afficher toutes les erreurs dans le code. Quand le projet partagé est référencé par _deux ou plusieurs_ autres projets, un menu s’affiche dans l’angle supérieur gauche de l’éditeur de code source pour voir quels projets font référence au fichier de code actuel.
 
@@ -103,7 +103,7 @@ Lorsque vous sélectionnez un projet partagé, il y a moins de paramètres dans 
 
 Le volet **Propriétés** est indiqué ci-dessous : l' **espace de noms racine** est le seul paramètre que vous pouvez modifier.
 
-![](shared-projects-images/vs-sharedprojectproperties.png "Shared Project Properties")
+![Propriétés du projet partagé](shared-projects-images/vs-sharedprojectproperties.png)
 
 -----
 
@@ -117,11 +117,11 @@ La structure complète de la solution est illustrée ci-dessous (dans Visual Stu
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
-![](shared-projects-images/xs-examplesolution.png "Visual Studio for Mac solution")
+![Solution Visual Studio pour Mac](shared-projects-images/xs-examplesolution.png)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-![](shared-projects-images/vs-examplesolution.png "Visual Studio solution")
+![Solution Visual Studio](shared-projects-images/vs-examplesolution.png)
 
 -----
 
@@ -129,13 +129,13 @@ Le projet Windows Phone peut être parcouru à partir d’Visual Studio pour Mac
 
 Les applications en cours d’exécution sont présentées ci-dessous :
 
-![](shared-projects-images/example.png "iOS, Android, Windows Phone examples")
+![exemples iOS, Android, Windows Phone](shared-projects-images/example.png)
 
 ## <a name="summary"></a>Résumé
 
 Ce document décrit le fonctionnement des projets partagés, comment ils peuvent être créés et utilisés dans Visual Studio pour Mac et Visual Studio, et introduit un exemple d’application simple qui illustre un projet partagé en action.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Exemple d’application Tasky](https://github.com/xamarin/mobile-samples/tree/master/Tasky)
 - [Bibliothèques de classes portables (exemple)](~/cross-platform/app-fundamentals/pcl.md)

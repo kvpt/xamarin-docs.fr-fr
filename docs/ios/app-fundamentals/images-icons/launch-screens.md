@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2018
-ms.openlocfilehash: a2f15c8385b7df7afc3f04e033a085cb00bc9005
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: b4191ae3c25ee5d2eeccd44377177d7d0df6f19e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573857"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937369"
 ---
 # <a name="launch-screens-for-xamarinios-apps"></a>Écrans de lancement pour les applications Xamarin. iOS
 
@@ -191,39 +191,39 @@ Pour plus d’informations sur la création d’un écran de lancement avec une 
 
 Quand vous mettez à jour une application existante pour utiliser des storyboards pour ses écrans de lancement, cliquez avec le bouton droit sur le **nom du projet** dans le **Explorateur de solutions** puis sélectionnez **Ajouter**  >  **un nouveau fichier...**. Sélectionnez **iOS**  >  **écran de lancement** iOS, puis cliquez sur le bouton **nouveau** :
 
-![](launch-screens-images/storyboard02.png "Select an iOS Launch Screen")
+![Sélectionner un écran de lancement iOS](launch-screens-images/storyboard02.png)
 
 Ensuite, double-cliquez sur le `Info.plist` fichier dans le **Explorateur de solutions** pour l’ouvrir et le modifier. Sous **écran de lancement**, sélectionnez le nouveau fichier de Storyboard créé ci-dessus.
 
-![](launch-screens-images/storyboard09.png "Select the new Storyboard file created above")
+![Sélectionner le nouveau fichier de Storyboard créé ci-dessus](launch-screens-images/storyboard09.png)
 
 Pour utiliser le nouvel Storyboard comme écran de lancement, procédez comme suit :
 
 1. Double-cliquez sur le `Info.plist` fichier dans le **Explorateur de solutions** pour l’ouvrir et le modifier.
 2. Faites défiler jusqu’à la section **images de lancement universel** de l’éditeur, ouvrez la liste déroulante **lancer l’écran** et sélectionnez le nom de la table de montage séquentiel créée ci-dessus : 
 
-    ![](launch-screens-images/storyboard08.png "Setting the launch screen to the storyboard")
+    ![Définition de l’écran de lancement sur le Storyboard](launch-screens-images/storyboard08.png)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. Cliquez avec le bouton droit sur le nom du projet dans le **Explorateur de solutions** puis sélectionnez **Ajouter**  >  **un nouveau fichier...**: 
 
-    ![](launch-screens-images/image012.png "Add new file")
+    ![Ajouter un nouveau fichier](launch-screens-images/image012.png)
 2. Entrez un nom pour l’écran de lancement, puis cliquez sur le bouton **Ajouter** : 
 
-    ![](launch-screens-images/image013.png "Enter a name for the launch screen")
+    ![Entrer un nom pour l’écran de lancement](launch-screens-images/image013.png)
 3. Dans la **Explorateur de solutions**, double-cliquez sur le fichier de Storyboard nouvellement créé pour l’ouvrir et le modifier.
 4. Assurez-vous que la **classe Size** a la valeur **any** , et **que la vue** est **générique**: 
 
-    ![](launch-screens-images/image016.png "Ensure that the Size Class is set to any:any and the View As is Generic")
+    ![Assurez-vous que la classe Size a la valeur any, any et la vue Generic.](launch-screens-images/image016.png)
 5. Assembly l’écran de lancement à partir de classes de taille, d’éléments d’interface utilisateur simples (tels que `UIImageView` ) et d’images que vous avez inclus dans l’offre groupée de l’application : 
 
-    ![](launch-screens-images/image017.png "Assembly the launch screen in the iOS Designer")
+    ![L’écran de lancement de l’assembly dans le concepteur iOS](launch-screens-images/image017.png)
 6. Enregistrez les modifications apportées à la table de montage séquentiel.
 
 -----
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Écrans de lancement dynamique (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-dynamiclaunchscreen)
 - [Storyboards unifiés](~/ios/user-interface/storyboards/unified-storyboards.md)

@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: fd9bced0d2185fd9bd0d18932921c101b2ed207c
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.openlocfilehash: 30501600e0b86498ae967340e2201a135b22d7ad
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "78291977"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939116"
 ---
 # <a name="additional-ios-9-frameworks-changes"></a>Modifications supplémentaires des frameworks iOS 9
 
 _Cet article traite des modifications supplémentaires ou des améliorations apportées aux infrastructures existantes pour iOS 9._
 
-[![](additional-framework-changes-images/ios9-sml.png "iOS 9 Logo")](additional-framework-changes-images/ios9.png#lightbox)
+[![Logo iOS 9](additional-framework-changes-images/ios9-sml.png)](additional-framework-changes-images/ios9.png#lightbox)
 
 Outre les modifications majeures apportées à iOS, Apple a apporté des modifications et des améliorations à plusieurs infrastructures existantes dans iOS 9.
 
@@ -32,7 +32,7 @@ Par exemple, le code suivant obtient une liste de toutes les voix disponibles :
 var voices = AVSpeechSynthesisVoice.GetSpeechVoices ();
 ```
 
-Vous pouvez ensuite utiliser l’une des voix de la liste en la définissant comme `Voice` propriété d’une instance de la classe [AVSpeachUtterance](xref:AVFoundation.AVSpeechUtterance) .
+Vous pouvez ensuite utiliser l’une des voix de la liste en la définissant comme la `Voice` propriété d’une instance de la classe [AVSpeachUtterance](xref:AVFoundation.AVSpeechUtterance) .
 
 La classe [AVQueuePlayer](xref:AVFoundation.AVQueuePlayer) prend désormais en charge un mélange de diffusion Internet et de média basé sur des fichiers dans la file d’attente. Les versions précédentes pouvaient uniquement faire une file d’attente du même type.
 
@@ -40,10 +40,10 @@ Pour plus d’informations, consultez la [référence AVSpeechSynthesisVoice](ht
 
 ## <a name="avkit-framework-additions"></a>Ajouts du Framework AVKit
 
-Pour utiliser la nouvelle fonctionnalité d’incrustation d’image (PIP), l’infrastructure AVKit comprend les nouvelles classes `AVPictureInPictureController` et [AVPlayerViewController](xref:AVKit.AVPlayerViewController) :
+Pour utiliser la nouvelle fonctionnalité d’incrustation d’image (PIP), l’infrastructure AVKit comprend les nouvelles `AVPictureInPictureController` classes et [AVPlayerViewController](xref:AVKit.AVPlayerViewController) :
 
 - **AVPictureInPictureController** : cette classe permet à une application iOS 9 de répondre à l’utilisateur qui lance la lecture d’une vidéo dans une fenêtre PIP flottante et redimensionnable sur un iPad.
-- **AVPlayerViewController** : gère un contrôleur de `AVPlayer` utilisé pour présenter une vidéo dans une fenêtre PIP flottante et redimensionnable sur un iPad.
+- **AVPlayerViewController** : gère un `AVPlayer` contrôleur utilisé pour présenter une vidéo dans une fenêtre PIP flottante et redimensionnable sur un iPad.
 
 Pour plus d’informations, consultez notre documentation [sur les multitâches pour iPad](~/ios/platform/introduction-to-ios9/index.md#multitasking) et la [référence AVPictureInPictureController](https://developer.apple.com/library/prerelease/ios/documentation/AVKit/Reference/AVPictureInPictureController_Class/index.html#//apple_ref/occ/cl/AVPictureInPictureController) et [AVPlayerViewController](https://developer.apple.com/library/prerelease/ios/documentation/AVFoundation/Reference/AVPlayerViewController_Class/index.html#//apple_ref/occ/cl/AVPlayerViewController)de référence d’Apple.
 
@@ -74,8 +74,8 @@ Apple a inclus les modifications suivantes à l’infrastructure de Fondation da
 
 Les modifications suivantes ont été apportées à la classe [NSBundle](xref:Foundation.NSBundle) pour iOS 9 :
 
-- `GetPreservationPriorityForTag (NSString tag)` : obtient la priorité de conservation actuelle pour les ressources avec la balise donnée. Les valeurs valides sont comprises dans la plage `0.0` à `1.0`, les ressources dont la priorité est la plus basse seront supprimées en premier.
-- `SetPreservationPriorityForTag (double priority, NSSet tags)` : définit la priorité de conservation actuelle pour les ressources avec les balises spécifiées. Les valeurs valides sont comprises dans la plage `0.0` à `1.0`, les ressources dont la priorité est la plus basse seront supprimées en premier.
+- `GetPreservationPriorityForTag (NSString tag)`-Obtient la priorité de conservation actuelle pour les ressources avec la balise donnée. Les valeurs valides sont comprises dans la plage `0.0` de `1.0` , les ressources dont la priorité est la plus basse seront supprimées en premier.
+- `SetPreservationPriorityForTag (double priority, NSSet tags)`: Définit la priorité de conservation actuelle pour les ressources avec les balises spécifiées. Les valeurs valides sont comprises dans la plage `0.0` de `1.0` , les ressources dont la priorité est la plus basse seront supprimées en premier.
 
 Pour plus d’informations, consultez la [référence NSBundle](https://developer.apple.com/library/prerelease/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class/index.html#//apple_ref/occ/cl/NSBundle)d’Apple.
 
@@ -100,7 +100,7 @@ Pour plus d’informations, consultez la [référence NSProcessInfo](https://dev
 
 ### <a name="reacting-to-low-power-mode"></a>Réagit en mode faible puissance
 
-Utilisez la propriété `LowPowerModeEnabled` de la classe [NSProcessInfo](xref:Foundation.NSProcessInfo) pour déterminer si le mode Low Power a été activé sur le périphérique iOS sur lequel l’application s’exécute. Par exemple :
+Utilisez la `LowPowerModeEnabled` propriété de la classe [NSProcessInfo](xref:Foundation.NSProcessInfo) pour déterminer si le mode Low Power a été activé sur le périphérique iOS sur lequel l’application s’exécute. Par exemple :
 
 ```csharp
 // Is the device in low power mode?
@@ -116,7 +116,7 @@ if (NSProcessInfo.ProcessInfo.LowPowerModeEnabled) {
 Apple a inclus les modifications suivantes à l’infrastructure [HealthKit](xref:HealthKit) dans iOS 9 :
 
 - Prise en charge du suivi de suppression et de suppression en bloc des entrées dans la base de données HealthKit. Pour plus d’informations, consultez Référence de la classe [HKDeletedObject](https://developer.apple.com/library/prerelease/ios/documentation/HealthKit/Reference/HKDeletedObject_ClassReference/index.html#//apple_ref/occ/cl/HKDeletedObject), [HKAnchoredObjectQuery](https://developer.apple.com/library/prerelease/ios/documentation/HealthKit/Reference/HKAnchoredObjectQuery_Class/index.html#//apple_ref/occ/cl/HKAnchoredObjectQuery) et [HKHealthStore](https://developer.apple.com/library/prerelease/ios/documentation/HealthKit/Reference/HKHealthStore_Class/index.html#//apple_ref/doc/uid/TP40014708) d’Apple.
-- De nouvelles catégories et caractéristiques de suivi ont été ajoutées à la classe `HKQuantityTypeIdentifier` (par exemple, `UVExposure`) et à la classe `HKCategoryTypeIdentifier` (par exemple, `OvulationTestResult`). 
+- De nouvelles catégories et caractéristiques de suivi ont été ajoutées à la `HKQuantityTypeIdentifier` classe (telle que `UVExposure` ) et à la `HKCategoryTypeIdentifier` classe (telle que `OvulationTestResult` ). 
 
 Pour plus d’informations sur l’utilisation de HealthKit dans Xamarin. iOS, consultez notre [Introduction à](~/ios/platform/healthkit.md) la documentation de HealthKit.
 
@@ -124,7 +124,7 @@ Pour plus d’informations sur l’utilisation de HealthKit dans Xamarin. iOS, c
 
 Apple a inclus les modifications suivantes à l’infrastructure [d’authentification locale](xref:LocalAuthentication) dans iOS 9 :
 
-- À l’aide des méthodes `EvaluateAccessControl` et `EvaluatePolicy` de la classe [LAContext](xref:LocalAuthentication.LAContext) , vous pouvez désormais réutiliser les correspondances d’ID tactiles à partir des tentatives de déverrouillage réussies précédentes.
+- À l' `EvaluateAccessControl` aide `EvaluatePolicy` des méthodes et de la classe [LAContext](xref:LocalAuthentication.LAContext) , vous pouvez désormais réutiliser les correspondances d’ID tactiles à partir des tentatives de déverrouillage réussies précédentes.
 - La possibilité d’obtenir la liste des doigts actuellement inscrits.
 - Prise en charge du suivi lorsqu’un doigt est ajouté ou supprimé de l’authentification.
 - La possibilité d’utiliser le _contexte d’authentification_ dans les appels de trousseau et la prise en charge de l’évaluation des listes de contrôle d’accès au trousseau.
@@ -153,7 +153,7 @@ Apple a inclus les modifications suivantes à l’infrastructure [MapKit](xref:M
 
 - MapKit prend désormais en charge le lancement de l’application Map directement dans les directions de transit et l’interrogation de l’heure d’arrivée estimée de transit (ETA) à l’aide des classes [MKLaunchOptions](xref:MapKit.MKLaunchOptions) et [MKDirections](xref:MapKit.MKLaunchOptions) .
 - Les résultats de la recherche retournés par MapKit et la classe [CLGeocoder](xref:CoreLocation.CLGeocoder) peuvent également fournir le fuseau horaire du résultat.
-- Vous pouvez désormais personnaliser entièrement les annotations de carte présentées par votre application iOS à l’aide de la propriété `DetailCalloutAccessoryView` de la classe [MKAnnotationView](xref:MapKit.MKAnnotationView) .
+- Vous pouvez désormais personnaliser entièrement les annotations de carte présentées par votre application iOS à l’aide `DetailCalloutAccessoryView` de la propriété de la classe [MKAnnotationView](xref:MapKit.MKAnnotationView) .
 
 Pour plus d’informations sur l’utilisation des mappages et des annotations dans Xamarin. iOS et la [référence CLGeocoder](https://developer.apple.com/library/prerelease/ios/documentation/CoreLocation/Reference/CLGeocoder_class/index.html#//apple_ref/occ/cl/CLGeocoder) d’Apple, consultez nos [cartes iOS](~/ios/user-interface/controls/ios-maps/index.md) et la [procédure pas à pas : exploration des annotations et des superpositions dans](~/ios/user-interface/controls/ios-maps/ios-maps-walkthrough.md) la documentation de MapKit.
 
@@ -192,17 +192,17 @@ Apple a inclus de nombreuses améliorations à plusieurs éléments de l’infra
 
 ### <a name="3d-touch-events"></a>Événements tactiles 3D
 
-Nouveauté d’iOS 9 et de iPhone 6S et iPhone 6S plus, le toucher 3D ajoute des gestes sensibles à la pression à vos applications iOS. Par conséquent, si votre application s’exécute sur iOS 9 (ou une version ultérieure) et que l’appareil iOS est en mesure de prendre en charge la fonction tactile 3D, les modifications de pression entraînent le déclenchement de l’événement `TouchesMoved`.
+Nouveauté d’iOS 9 et de iPhone 6S et iPhone 6S plus, le toucher 3D ajoute des gestes sensibles à la pression à vos applications iOS. Par conséquent, si votre application s’exécute sur iOS 9 (ou une version ultérieure) et que l’appareil iOS est en mesure de prendre en charge la fonction tactile 3D, les modifications de pression entraînent le déclenchement de l' `TouchesMoved` événement.
 
-En raison de ce changement de comportement, vos applications iOS doivent être préparées pour que l’événement `TouchesMoved` soit appelé plus souvent, même si les coordonnées X/Y n’ont pas changé.
+En raison de ce changement de comportement, vos applications iOS doivent être préparées pour que l' `TouchesMoved` événement soit appelé plus souvent, même si les coordonnées X/Y n’ont pas changé.
 
 Pour plus d’informations, consultez notre [Introduction au Guide tactile 3D](~/ios/platform/3d-touch.md) .
 
 ### <a name="document-open-in-place-functionality"></a>Fonctionnalités Open-in-place du document
 
-À l’aide des méthodes `FinishedLaunching (application, launchOptions)` ou `WillFinishLaunching (Application, launchOptions)` de la classe [UIApplicationDelegate](xref:UIKit.UIApplicationDelegate) , vous pouvez maintenant ouvrir un document et le modifier sur place (au lieu de travailler sur une copie).
+À l’aide `FinishedLaunching (application, launchOptions)` `WillFinishLaunching (Application, launchOptions)` des méthodes ou de la classe [UIApplicationDelegate](xref:UIKit.UIApplicationDelegate) , vous pouvez maintenant ouvrir un document et le modifier sur place (au lieu de travailler sur une copie).
 
-Pour prendre en charge la nouvelle fonctionnalité ouverte, ajoutez la clé de `LSSupportsOpeningDocumentsInPlace` au fichier **info. plist** de votre application Xamarin. iOS, avec la valeur `YES`.
+Pour prendre en charge la nouvelle fonctionnalité ouverte, ajoutez la `LSSupportsOpeningDocumentsInPlace` clé au fichier **info. plist** de votre application Xamarin. iOS, avec la valeur `YES` .
 
 Pour plus d’informations, consultez la [référence UIApplicationDelegate](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intf/UIApplicationDelegate) d’Apple.
 
@@ -214,25 +214,25 @@ Pour plus d’informations, consultez le [Guide de gestion des événements Appl
 
 ### <a name="fetching-tailored-content"></a>Récupération du contenu personnalisé
 
-La nouvelle classe `NSDataAsset` permet à une application Xamarin. iOS d’extraire du contenu adapté aux fonctionnalités de mémoire et de graphique du périphérique iOS sur lequel il est en cours d’exécution.
+La nouvelle `NSDataAsset` classe permet à une application Xamarin. iOS d’extraire du contenu adapté aux fonctionnalités de mémoire et de graphique du périphérique iOS sur lequel il est en cours d’exécution.
 
 ### <a name="new-layout-anchors"></a>Nouvelles ancres de disposition
 
-Les nouvelles classes d’ancre de disposition `NSLayoutAnchor` et `NSLayoutDimension` fonctionnent avec les nouvelles propriétés d’ancrage de la classe [UIView](xref:UIKit.UIView) (comme `LeadingAnchor` et `WidthAnchor`) pour faciliter la mise en page dans iOS 9.
+Les nouvelles `NSLayoutAnchor` `NSLayoutDimension` classes d’ancre et de mise en page fonctionnent avec les nouvelles propriétés d’ancrage de la classe [UIView](xref:UIKit.UIView) (telles que `LeadingAnchor` et `WidthAnchor` ) pour faciliter la mise en page dans iOS 9.
 
 Pour plus d’informations sur l’utilisation des classes de mise en page et de taille dans une application Xamarin. iOS, ainsi que sur la référence [NSLayoutAnchor](https://developer.apple.com/library/prerelease/ios/documentation/AppKit/Reference/NSLayoutAnchor_ClassReference/index.html#//apple_ref/occ/cl/NSLayoutAnchor), [NSLayoutDimension](https://developer.apple.com/library/prerelease/ios/documentation/AppKit/Reference/NSLayoutDimension_ClassReference/index.html#//apple_ref/occ/cl/NSLayoutDimension) et la référence de [UIView](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/cl/UIView) d’Apple, consultez notre introduction à la documentation sur les [storyboards unifiés](~/ios/user-interface/storyboards/unified-storyboards.md) .
 
 ### <a name="new-readable-content-margins"></a>Nouvelles marges de contenu lisibles
 
-La nouvelle classe `UILayoutGuide` peut être utilisée pour fournir des marges de contenu lisibles et définir les zones de dessin pour le contenu à l’intérieur d’une vue. Pour plus d’informations, consultez [référence UILayoutGuide](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UILayoutGuide_Class_Reference/index.html#//apple_ref/occ/cl/UILayoutGuide) d’Apple.
+La nouvelle `UILayoutGuide` classe peut être utilisée pour fournir des marges de contenu lisibles et définir les zones de dessin pour le contenu à l’intérieur d’une vue. Pour plus d’informations, consultez [référence UILayoutGuide](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UILayoutGuide_Class_Reference/index.html#//apple_ref/occ/cl/UILayoutGuide) d’Apple.
 
 ### <a name="text-input-in-notifications-modifications"></a>Entrée de texte dans les modifications de notifications
 
-La classe [UIUserNotificationAction](xref:UIKit.UIUserNotificationAction) a une nouvelle propriété `Behavior` qui peut être utilisée pour prendre en charge l’entrée de texte à partir des notifications.
+La classe [UIUserNotificationAction](xref:UIKit.UIUserNotificationAction) a une nouvelle `Behavior` propriété qui peut être utilisée pour prendre en charge l’entrée de texte à partir des notifications.
 
 ### <a name="uiapplicationdelegate-changes"></a>Modifications de UIApplicationDelegate
 
-Bien qu’il ne soit pas explicitement déconseillé par Apple, ils suggèrent de remplacer tous les appels à la méthode `FinishedLaunching (UIApplication application)` de la classe [UIApplicationDelegate](xref:UIKit.UIApplicationDelegate) par les méthodes `FinishedLaunching (UIApplication application, NSDictionary launchOptions)` ou `WillFinishLaunching (UIApplication application, NSDictionary launchOptions)`.
+Bien qu’il ne soit pas explicitement déconseillé par Apple, ils suggèrent de remplacer tous les appels à la `FinishedLaunching (UIApplication application)` méthode de la classe [UIApplicationDelegate](xref:UIKit.UIApplicationDelegate) par les `FinishedLaunching (UIApplication application, NSDictionary launchOptions)` `WillFinishLaunching (UIApplication application, NSDictionary launchOptions)` méthodes ou.
 
 Pour plus d’informations, consultez la [référence UIApplicationDelegate](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intf/UIApplicationDelegate) d’Apple.
 
@@ -241,8 +241,8 @@ Pour plus d’informations, consultez la [référence UIApplicationDelegate](htt
 Apple a inclus les modifications suivantes dans UIKit Dynamics dans iOS 9 :
 
 - Dynamics prend désormais en charge les limites de collision non rectangulaires.
-- La nouvelle classe `UIFieldBehavior` personnalisable est utilisée pour prendre en charge différents types de champs.
-- D’autres types de pièces jointes ont été ajoutés à la classe `UIAttachmentBehavior`.
+- La nouvelle classe personnalisable `UIFieldBehavior` est utilisée pour prendre en charge différents types de champs.
+- D’autres types de pièces jointes ont été ajoutés à la `UIAttachmentBehavior` classe.
 
 Pour plus d’informations, consultez la [référence UIAttachment](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIAttachmentBehavior_Class/index.html#//apple_ref/occ/cl/UIAttachmentBehavior) d’Apple.
 
@@ -256,9 +256,9 @@ Pour corriger cette situation, utilisez les classes disposition automatique et t
 
 ### <a name="new-uitextinputassistantitem-class"></a>Nouvelle classe UITextInputAssistantItem
 
-Utilisez la nouvelle classe `UITextInputAssistantItem` pour mettre en forme les groupes de boutons de barre dans une _barre de raccourcis_. La barre de raccourcis est une nouvelle zone disponible dans le clavier logiciel pour fournir des raccourcis de saisie.
+Utilisez la nouvelle `UITextInputAssistantItem` classe pour les groupes de boutons de la barre de disposition dans une _barre de raccourcis_. La barre de raccourcis est une nouvelle zone disponible dans le clavier logiciel pour fournir des raccourcis de saisie.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Exemples iOS 9](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
 - [Introduction à iOS 9](~/ios/platform/introduction-to-ios9/index.md)

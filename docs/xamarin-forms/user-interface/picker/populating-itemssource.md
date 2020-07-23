@@ -10,16 +10,16 @@ ms.date: 02/26/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8c4fc732082a77a2e471465af448a487862b513c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a15ca2e11dabb73054f5f0a1dc3f79342d8ce7f5
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136290"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938604"
 ---
 # <a name="setting-a-pickers-itemssource-property"></a>Définition de la propriété ItemsSource d’un sélecteur
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-monkeyapppicker)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-monkeyapppicker)
 
 _La vue sélecteur est un contrôle permettant de sélectionner un élément de texte dans une liste de données. Cet article explique comment remplir un sélecteur avec des données en définissant la propriété ItemsSource et comment répondre à la sélection d’élément par l’utilisateur._
 
@@ -178,7 +178,7 @@ detailsLabel.SetBinding(Label.TextProperty, "SelectedMonkey.Details");
 
 Les [`SelectedItem`](xref:Xamarin.Forms.Picker.SelectedItem) données de propriété sont liées à la `SelectedMonkey` propriété du modèle de vue connectée, qui est de type `Monkey` . Par conséquent, lorsque l’utilisateur sélectionne un élément dans le [`Picker`](xref:Xamarin.Forms.Picker) , la `SelectedMonkey` propriété est définie sur l' `Monkey` objet sélectionné. Les `SelectedMonkey` données de l’objet sont affichées dans l’interface utilisateur par [`Label`](xref:Xamarin.Forms.Label) et les [`Image`](xref:Xamarin.Forms.Image) vues :
 
-![](populating-itemssource-images/monkeys.png "Picker Item Selection")
+![Sélection d’élément Picker](populating-itemssource-images/monkeys.png)
 
 > [!NOTE]
 > Notez que les [`SelectedItem`](xref:Xamarin.Forms.Picker.SelectedItem) [`SelectedIndex`](xref:Xamarin.Forms.Picker.SelectedIndex) Propriétés et prennent toutes les deux en charge les liaisons bidirectionnelles par défaut.

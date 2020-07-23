@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 08ddf282c8839a6283b90c0736c0b4259bd01469
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: f5796ee17e947494d1e22f750bc43ff823d56d55
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73028444"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937278"
 ---
 # <a name="unit-testing-xamarinios-apps"></a>Tests unitaires d’applications Xamarin.iOS
 
@@ -23,11 +23,11 @@ Les tests unitaires avec Xamarin.iOS s’effectuent à l’aide du framework Tou
 
 Pour configurer un framework pour votre projet de tests unitaires, ajoutez simplement à votre solution un projet de type **Projet de tests unitaires iOS**. Cliquez avec le bouton droit sur votre solution, puis sélectionnez **Ajouter > Ajouter un nouveau projet**. Dans la liste, sélectionnez **iOS > Tests > API unifiée > Projet de tests unitaires iOS** (vous pouvez choisir C# ou F#).
 
-![](touch.unit-images/00.png "Choose either C# or F#")
+![Choisir C# ou F#](touch.unit-images/00.png)
 
 Les étapes précédentes créent un projet de base qui contient un programme Runner simple et qui fait référence au nouvel assembly MonoTouch.NUnitLite. Votre projet doit ressembler à ceci :
 
-![](touch.unit-images/01.png "The project in the Solution Explorer")
+![Projet dans l’Explorateur de solutions](touch.unit-images/01.png)
 
 La classe `AppDelegate.cs` contient Test Runner, comme illustré ci-dessous :
 
@@ -105,14 +105,14 @@ Pour exécuter ce projet dans votre solution, cliquez dessus avec le bouton droi
 
 Test Runner affiche les tests qui sont enregistrés et vous permet de sélectionner individuellement les tests à exécuter.
 
-[![](touch.unit-images/02-sml.png "The list of registered tests")](touch.unit-images/02.png#lightbox) 
-[![](touch.unit-images/03-sml.png "An individual text")](touch.unit-images/03.png#lightbox) 
+[ ![ Liste de tests inscrits](touch.unit-images/02-sml.png)](touch.unit-images/02.png#lightbox)  
+ [ ![ d’un texte individuel](touch.unit-images/03-sml.png)](touch.unit-images/03.png#lightbox) 
 
-[![](touch.unit-images/04-sml.png "The run results")](touch.unit-images/04.png#lightbox)
+[![Résultats de l’exécution](touch.unit-images/04-sml.png)](touch.unit-images/04.png#lightbox)
 
 Vous pouvez exécuter les fixtures de test de votre choix en les sélectionnant dans les vues imbriquées, ou exécuter tous les tests en sélectionnant le bouton « Exécuter tout ». Si vous exécutez le test par défaut, celui-ci est censé inclure un test réussi, un test échoué et un test ignoré. Voici à quoi ressemble le rapport. Vous pouvez accéder directement aux détails des tests ayant échoué pour déterminer la cause de l’échec :
 
-[![](touch.unit-images/05-sml.png "Un rapport d’échantillon")](touch.unit-images/05.png#lightbox) [![](touch.unit-images/06-sml.png "Un rapport d’échantillon")](touch.unit-images/06.png#lightbox) [![](touch.unit-images/07-sml.png "Un rapport d’échantillon")](touch.unit-images/07.png#lightbox)
+[ ![ Exemple de](touch.unit-images/05-sml.png)](touch.unit-images/05.png#lightbox) [ ![ rapport](touch.unit-images/06-sml.png)](touch.unit-images/06.png#lightbox) exemple de rapport exemple [ ![ de](touch.unit-images/07-sml.png)](touch.unit-images/07.png#lightbox) rapport
 
 Vous pouvez également examiner les tests en cours d’exécution et leur état actuel dans la fenêtre Sortie de l’application dans votre environnement IDE.
 

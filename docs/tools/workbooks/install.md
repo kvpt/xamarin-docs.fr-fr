@@ -6,12 +6,12 @@ ms.assetid: 9D4E10E8-A288-4C6C-9475-02969198C119
 author: davidortinau
 ms.author: daortin
 ms.date: 06/19/2018
-ms.openlocfilehash: a044169f86b46abff4158011e99320c528180ffc
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 99ecf661679f02bda6cfffa6093bd4a904676bce
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573883"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939345"
 ---
 # <a name="workbooks-installation-and-requirements"></a>Installation et configuration requise des classeurs
 
@@ -27,7 +27,7 @@ ms.locfileid: "84573883"
 2. Téléchargez et installez [Xamarin Workbooks pour Windows](https://dl.xamarin.com/interactive/XamarinInteractive.msi).
 3. Commencez à [Parcourir](~/tools/workbooks/workbook.md) les classeurs.
 
-# <a name="macos"></a>[MacOS](#tab/macos)
+# <a name="macos"></a>[macOS](#tab/macos)
 
 1. Vérifiez la [Configuration requise](#requirements) ci-dessous.
 2. Téléchargez et installez [Xamarin Workbooks pour Mac](https://dl.xamarin.com/interactive/XamarinInteractive.pkg).
@@ -37,7 +37,7 @@ ms.locfileid: "84573883"
 
 ## <a name="requirements"></a>Spécifications
 
-#### <a name="supported-operating-systems"></a>Systèmes d'exploitation pris en charge
+#### <a name="supported-operating-systems"></a>Systèmes d’exploitation pris en charge
 
 - **Mac** -OS X 10,11 ou version ultérieure
 - **Windows** -Windows 7 ou version ultérieure (avec Internet Explorer 11 ou version ultérieure et .net 4.6.1 ou version ultérieure)
@@ -118,7 +118,7 @@ Si vous rencontrez des problèmes de connexion à votre classeur iOS ou Android 
 
 Selon la manière dont vous avez acquis les classeurs, vous devrez peut-être effectuer deux procédures de désinstallation. Vérifiez les deux à la fois pour désinstaller complètement le logiciel.
 
-#### <a name="visual-studio-installer"></a>Programme d’installation de Visual Studio
+#### <a name="visual-studio-installer"></a>Visual Studio Installer
 
 Si vous disposez de Visual Studio 2017, ouvrez **Visual Studio installer**et recherchez dans **les composants individuels** des **Xamarin Workbooks**. Si elle est cochée, décochez-la, puis cliquez sur **modifier** pour désinstaller.
 
@@ -128,7 +128,7 @@ Si vous avez installé des classeurs avec un programme d’installation téléch
 
 > **Démarrer les paramètres > > système > applications &**
 
-![](install-images/windows-remove.png "Xamarin Workbooks as listed in &quot;Apps &amp; features&quot;")
+![Xamarin Workbooks comme indiqué dans &quot; les &amp; fonctionnalités des applications&quot;](install-images/windows-remove.png)
 
 **Vous devez toujours suivre la procédure de la Visual Studio Installer pour vous assurer que les classeurs ne sont pas réinstallés à votre insu.**
 

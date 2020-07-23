@@ -10,12 +10,12 @@ ms.date: 04/27/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6ae4116be99f076a7afd5ed9c2823bc12f445e18
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: b8ba915f3bc701b6a100d206dc791f9572fa594b
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137985"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936615"
 ---
 # <a name="margin-and-padding"></a>Marge et remplissage
 
@@ -30,7 +30,7 @@ Les marges et le remplissage sont des concepts de disposition associés :
 
 Le diagramme suivant illustre les deux concepts :
 
-[![](margin-and-padding-images/margins-and-padding-sml.png "Margins and Padding Concepts")](margin-and-padding-images/margins-and-padding.png#lightbox "Margins and Padding Concepts")
+[![Marges et concepts de remplissage](margin-and-padding-images/margins-and-padding-sml.png)](margin-and-padding-images/margins-and-padding.png#lightbox "Marges et concepts de remplissage")
 
 Notez que [`Margin`](xref:Xamarin.Forms.View.Margin) les valeurs sont additives. Par conséquent, si deux éléments adjacents spécifient une marge de 20 pixels, la distance entre les éléments sera de 40 pixels. En outre, la marge et le remplissage sont additifs quand les deux sont appliqués, en ce sens que la distance entre un élément et tout contenu est la marge plus le remplissage.
 
@@ -72,8 +72,8 @@ var stackLayout = new StackLayout {
 
 Cet article a montré la différence entre [`Margin`](xref:Xamarin.Forms.View.Margin) les [`Padding`](xref:Xamarin.Forms.Layout.Padding) Propriétés et et comment les définir. Les propriétés contrôlent le comportement de disposition lorsqu’un élément est affiché dans l’interface utilisateur.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Margin](xref:Xamarin.Forms.View.Margin)
-- [Espacement](xref:Xamarin.Forms.Layout.Padding)
+- [Remplissage](xref:Xamarin.Forms.Layout.Padding)
 - [Thickness](xref:Xamarin.Forms.Thickness)

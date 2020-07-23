@@ -10,16 +10,16 @@ ms.date: 12/14/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 892bffa4027a1a61d6c22cc26d1556fb007432d8
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: cc150ecffbf9b6b31ec2f533bcc33876100614dc
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136979"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936849"
 ---
 # <a name="invoking-events-from-effects"></a>Appel d’événements à partir d’effets
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/)
 
 _Un effet peut définir et appeler un événement, en signalant les modifications apportées à la vue Native sous-jacente. Cet article explique comment implémenter le suivi des doigts multipoint de bas niveau et comment générer des événements qui signalent une activité tactile._
 
@@ -456,7 +456,7 @@ La logique de `Moved` déplace l’élément `BoxView` en modifiant la propriét
 
 Vous pouvez déplacer plusieurs éléments `BoxView` simultanément en utilisant des doigts différents.
 
-[![](touch-tracking-images/boxviewdragging-small.png "Triple screenshot of the BoxView Dragging page")](touch-tracking-images/boxviewdragging-large.png#lightbox "Triple screenshot of the BoxView Dragging page")
+[![Triple capture d’écran de la page BoxView Dragging](touch-tracking-images/boxviewdragging-small.png)](touch-tracking-images/boxviewdragging-large.png#lightbox "Triple capture d’écran de la page BoxView Dragging")
 
 ### <a name="subclassing-the-view"></a>Sous-classement de la vue
 
@@ -519,7 +519,7 @@ Les deux démonstrations suivantes nécessitent des graphiques, et elles utilise
 
 La page **Ellipse Drawing** vous permet de dessiner une ellipse en faisant glisser votre doigt sur l’écran. Selon la façon dont vous déplacez votre doigt, vous pouvez dessiner l’ellipse en partant du coin supérieur gauche vers le coin inférieur droit, ou en partant de n’importe quel autre coin vers le coin opposé. L’ellipse est dessinée avec une couleur et une opacité aléatoires.
 
-[![](touch-tracking-images/ellipsedrawing-small.png "Triple screenshot of the Ellipse Drawing page")](touch-tracking-images/ellipsedrawing-large.png#lightbox "Triple screenshot of the Ellipse Drawing page")
+[![Triple capture d’écran de la page Ellipse Drawing](touch-tracking-images/ellipsedrawing-small.png)](touch-tracking-images/ellipsedrawing-large.png#lightbox "Triple capture d’écran de la page Ellipse Drawing")
 
 Si vous touchez ensuite une des ellipses, vous pouvez la faire glisser vers un autre emplacement. Ceci nécessite une technique appelée « test d’atteinte » (hit-testing), qui implique la recherche de l’objet graphique à un point donné. Les ellipses SkiaSharp ne sont pas des Xamarin.Forms éléments. elles ne peuvent donc pas effectuer leur propre `TouchEffect` traitement. Le `TouchEffect` doit s’appliquer à tout l’objet `SKCanvasView`.
 
@@ -691,7 +691,7 @@ case TouchActionType.Pressed:
 
 L’autre exemple SkiaSharp est la page **Finger Paint**. Vous pouvez sélectionner une couleur de trait et une épaisseur de trait dans deux vues `Picker`, puis dessiner avec un ou plusieurs doigts :
 
-[![](touch-tracking-images/fingerpaint-small.png "Triple screenshot of the Finger Paint page")](touch-tracking-images/fingerpaint-large.png#lightbox "Triple screenshot of the Finger Paint page")
+[![Triple capture d’écran de la page Finger Paint](touch-tracking-images/fingerpaint-small.png)](touch-tracking-images/fingerpaint-large.png#lightbox "Triple capture d’écran de la page Finger Paint")
 
 Cet exemple nécessite également une classe distincte pour représenter chaque ligne peinte à l’écran :
 
@@ -799,7 +799,7 @@ Les méthodes `AddToList` et `RemoveFromList` vérifient toutes deux si l’él�
 
 Les différents éléments `WhiteKey` et `BlackKey` sont organisés dans le [fichier XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffect/TouchTrackingEffect/TouchTrackingEffect/SilentKeyboardPage.xaml) de la page, ce qui convient mieux quand le téléphone est tenu en mode paysage :
 
-[![](touch-tracking-images/silentkeyboard-small.png "Triple screenshot of the Silent Keyboard page")](touch-tracking-images/silentkeyboard-large.png#lightbox "Triple screenshot of the Silent Keyboard page")
+[![Triple capture d’écran de la page Silent Keyboard](touch-tracking-images/silentkeyboard-small.png)](touch-tracking-images/silentkeyboard-large.png#lightbox "Triple capture d’écran de la page Silent Keyboard")
 
 Si vous balayez avec votre doigt sur les touches, vous voyez grâce à de légères modifications de couleur que les événements tactiles sont transférés d’une touche à une autre.
 
@@ -807,7 +807,7 @@ Si vous balayez avec votre doigt sur les touches, vous voyez grâce à de légè
 
 Cet article a montré comment appeler des événements dans un effet, et comment écrire et utiliser un effet qui implémente un traitement de l’interaction tactile multipoint de bas niveau.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Suivi de l’interaction tactile multipoint dans iOS](~/ios/app-fundamentals/touch/touch-tracking.md)
 - [Suivi de l’interaction tactile multipoint dans Android](~/android/app-fundamentals/touch/touch-tracking.md)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 11/15/2018
-ms.openlocfilehash: 6366a51f18ae2af8a94cf60a82e31ff413180e2d
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: e2dcd5ea0f099ea84d7824eda4170df8efb22cb6
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573948"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937213"
 ---
 # <a name="appearance-api-in-xamarinios"></a>API Appearance dans Xamarin. iOS
 
@@ -32,7 +32,7 @@ Il existe deux façons différentes d’appliquer une apparence personnalisée 
 
 L’exemple d’application Appearance illustre les trois méthodes, comme indiqué dans les captures d’écran suivantes :
 
-[![](introduction-to-the-appearance-api-images/appearance01-sml.png "The Appearance sample application demonstrates all three methods")](introduction-to-the-appearance-api-images/appearance01.png#lightbox)
+[![L’exemple d’application Appearance illustre les trois méthodes](introduction-to-the-appearance-api-images/appearance01-sml.png)](introduction-to-the-appearance-api-images/appearance01.png#lightbox)
 
 Depuis iOS 8, le proxy d’apparence a été étendu à TraitCollections.
  `AppearanceForTraitCollection`peut être utilisé pour définir l’apparence par défaut sur une collection de traits particulière. Pour plus d’informations à ce sujet, consultez le guide [Présentation des storyboards](~/ios/user-interface/storyboards/unified-storyboards.md) .
@@ -85,11 +85,11 @@ sg1.TintColor = UIColor.Magenta;
 
 Vous pouvez également définir la valeur dans le panneau Propriétés du concepteur :
 
-[![](introduction-to-the-appearance-api-images/propertiespadtint.png "Properties Pad Tint")](introduction-to-the-appearance-api-images/propertiespadtint.png#lightbox)
+[![Teinte de Panneau Propriétés](introduction-to-the-appearance-api-images/propertiespadtint.png)](introduction-to-the-appearance-api-images/propertiespadtint.png#lightbox)
 
 L’image ci-dessous montre que cela définit la teinte uniquement sur le contrôle nommé « SG1 ».
 
-[![](introduction-to-the-appearance-api-images/image53.png "Setting the individual control tint")](introduction-to-the-appearance-api-images/image53.png#lightbox)
+[![Définition de la teinte d’un contrôle individuel](introduction-to-the-appearance-api-images/image53.png)](introduction-to-the-appearance-api-images/image53.png#lightbox)
 
 Pour définir de nombreux contrôles de cette manière serait totalement inefficace, nous pouvons plutôt définir la propriété statique `Appearance` sur la classe elle-même. Cela est illustré dans le code ci-dessous :
 
@@ -99,13 +99,13 @@ UISegmentedControl.Appearance.TintColor = UIColor.Magenta;
 
 L’image ci-dessous illustre maintenant les deux contrôles segmentés avec l’apparence définie sur magenta :
 
-[![](introduction-to-the-appearance-api-images/image54.png "Setting the Appearance control tint")](introduction-to-the-appearance-api-images/image54.png#lightbox)
+[![Définition de la teinte de contrôle d’apparence](introduction-to-the-appearance-api-images/image54.png)](introduction-to-the-appearance-api-images/image54.png#lightbox)
 
 `Appearance`les propriétés doivent être définies au début du cycle de vie de l’application, comme dans l’événement de AppDelegate `FinishedLaunching` ou dans un ViewController avant l’affichage des contrôles affectés.
 
 Reportez-vous à la [Présentation de l’API d’apparence](~/ios/user-interface/ios-ui/introduction-to-the-appearance-api.md) pour obtenir des informations plus détaillées.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Apparence (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/appearance)
 - [Référence du protocole UIAppearance](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAppearance_Protocol/)

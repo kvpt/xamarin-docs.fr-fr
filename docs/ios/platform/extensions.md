@@ -1,5 +1,5 @@
 ---
-title: Extensions iOS dans Xamarin. iOS
+title: Extensions iOS dans Xamarin.iOS
 description: Ce document décrit les extensions, qui sont des widgets présentés par iOS dans un contexte standard, par exemple dans le centre de notification. Il explique comment créer une extension et communiquer avec elle à partir de l’application parente.
 ms.prod: xamarin
 ms.assetid: 3DEB3D43-3E4A-4099-8331-93C1E7A77095
@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidortinau
 ms.author: daortin
 ms.date: 05/12/2020
-ms.openlocfilehash: 6f2f1a908a43d81b2aabf5cb2db2f7a230356fa4
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
+ms.openlocfilehash: d5a51b70237c4e8a6f6a5e48ae684031697a0897
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83149929"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939839"
 ---
 # <a name="ios-extensions-in-xamarinios"></a>extensions iOS dans Xamarin. iOS
 
@@ -34,11 +34,11 @@ Toutes les extensions sont installées conjointement avec une application conten
 |Clavier|Autres claviers|`com.apple.keyboard-service`|Quelconque|
 |Édition photo|Manipulation et modification de photos|`com.apple.photo-editing`|Éditeur de photos. app|
 |Partager|Partage des données avec les réseaux sociaux, les services de messagerie, etc.|`com.apple.share-services`|Quelconque|
-|Aujourd’hui|« Widgets » apparaissant sur l’écran Today ou le centre de notifications|`com.apple.widget-extensions`|Aujourd’hui et le centre de notifications|
+|Aujourd'hui|« Widgets » apparaissant sur l’écran Today ou le centre de notifications|`com.apple.widget-extensions`|Aujourd’hui et le centre de notifications|
 
 Des points d’extension supplémentaires ont été ajoutés dans [iOS 10](~/ios/platform/introduction-to-ios10/index.md#app-extensions) et [IOS 12](~/ios/platform/introduction-to-ios12/index.md#notification-improvements). Vous trouverez la table complète de tous les types pris en charge dans le Guide de programmation de l' [extension d’application iOS](https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214-CH20-SW2).
 
-## <a name="limitations"></a>Limitations
+## <a name="limitations"></a>Limites
 
 Les extensions présentent un certain nombre de limitations, dont certaines sont universelles pour tous les types (par exemple, aucun type d’extension ne peut accéder aux appareils photo ou aux micros), tandis que les autres types d’extension peuvent avoir des limitations spécifiques à leur utilisation (par exemple, les claviers personnalisés ne peuvent pas être utilisés pour sécuriser les champs d’entrée de données tels que pour 
 
@@ -118,7 +118,7 @@ Des spécifications supplémentaires peuvent être requises pour certains types 
 
 Dans la procédure pas à pas suivante, vous allez créer un exemple de widget **Today** qui calcule le jour et le nombre de jours restants dans l’année :
 
-[![](extensions-images/carpediemscreenshot-sm.png "An example Today widget that calculates the day and number of days remaining in the year")](extensions-images/carpediemscreenshot.png#lightbox)
+[![Exemple de widget Today qui calcule le jour et le nombre de jours restants dans l’année](extensions-images/carpediemscreenshot-sm.png)](extensions-images/carpediemscreenshot.png#lightbox)
 
 ### <a name="creating-the-solution"></a>Création de la solution
 
@@ -126,26 +126,26 @@ Pour créer la solution requise, procédez comme suit :
 
 1. Tout d’abord, créez un projet d' **application de vue unique** iOS, puis cliquez sur le bouton **suivant** : 
 
-    [![](extensions-images/today01.png "First, create a new iOS, Single View App project and click the Next button")](extensions-images/today01.png#lightbox)
+    [![Tout d’abord, créez un projet d’application de vue unique iOS, puis cliquez sur le bouton suivant](extensions-images/today01.png)](extensions-images/today01.png#lightbox)
 2. Appelez le projet `TodayContainer` et cliquez sur le bouton **suivant** : 
 
-    [![](extensions-images/today02.png "Call the project TodayContainer and click the Next button")](extensions-images/today02.png#lightbox)
+    [![Appelez le projet TodayContainer et cliquez sur le bouton suivant](extensions-images/today02.png)](extensions-images/today02.png#lightbox)
 3. Vérifiez le **nom du projet** et le **NomSolution** , puis cliquez sur le bouton **créer** pour créer la solution : 
 
-    [![](extensions-images/today03.png "Verify the Project Name and SolutionName and click the Create button to create the solution")](extensions-images/today03.png#lightbox)
+    [![Vérifiez le nom du projet et le NomSolution, puis cliquez sur le bouton créer pour créer la solution.](extensions-images/today03.png)](extensions-images/today03.png#lightbox)
 4. Ensuite, dans la **Explorateur de solutions**, cliquez avec le bouton droit sur la solution et ajoutez un nouveau projet d' **extension iOS** à partir du modèle d' **extension aujourd’hui** : 
 
-    [![](extensions-images/today04.png "Next, in the Solution Explorer, right-click on the Solution and add a new iOS Extension project from the Today Extension template")](extensions-images/today04.png#lightbox)
+    [![Ensuite, dans la Explorateur de solutions, cliquez avec le bouton droit sur la solution et ajoutez un nouveau projet d’extension iOS à partir du modèle d’extension aujourd’hui](extensions-images/today04.png)](extensions-images/today04.png#lightbox)
 5. Appelez le projet `DaysRemaining` et cliquez sur le bouton **suivant** : 
 
-    [![](extensions-images/today05.png "Call the project DaysRemaining and click the Next button")](extensions-images/today05.png#lightbox)
+    [![Appelez le projet DaysRemaining et cliquez sur le bouton suivant](extensions-images/today05.png)](extensions-images/today05.png#lightbox)
 6. Examinez le projet et cliquez sur le bouton **créer** pour le créer : 
 
-    [![](extensions-images/today06.png "Review the project and click the Create button to create it")](extensions-images/today06.png#lightbox)
+    [![Passez en revue le projet et cliquez sur le bouton créer pour le créer](extensions-images/today06.png)](extensions-images/today06.png#lightbox)
 
 La solution obtenue doit maintenant avoir deux projets, comme illustré ici :
 
-[![](extensions-images/today07.png "The resulting Solution should now have two projects, as shown here")](extensions-images/today07.png#lightbox)
+[![La solution obtenue doit maintenant avoir deux projets, comme illustré ici](extensions-images/today07.png)](extensions-images/today07.png#lightbox)
 
 ### <a name="creating-the-extension-user-interface"></a>Création de l’interface utilisateur de l’extension
 
@@ -157,10 +157,10 @@ Pour générer l’interface utilisateur avec une table de montage séquentiel, 
 
 1. Dans la **Explorateur de solutions**, double-cliquez sur le fichier du projet d’extension `Main.storyboard` pour l’ouvrir et le modifier : 
 
-    [![](extensions-images/today08.png "Double-click the Extension projects Main.storyboard file to open it for editing")](extensions-images/today08.png#lightbox)
+    [![Double-cliquez sur le fichier main. Storyboard des projets d’extension pour l’ouvrir et le modifier](extensions-images/today08.png)](extensions-images/today08.png#lightbox)
 2. Sélectionnez l’étiquette qui a été automatiquement ajoutée à l’interface utilisateur par modèle et donnez-lui le **nom** `TodayMessage` sous l’onglet **widget** de l' **Explorateur de propriétés**: 
 
-    [![](extensions-images/today09.png "Select the Label that was automatically added to the UI by template and give it the Name TodayMessage in the Widget tab of the Properties Explorer")](extensions-images/today09.png#lightbox)
+    [![Sélectionnez l’étiquette qui a été automatiquement ajoutée à l’interface utilisateur par modèle et donnez-lui le nom TodayMessage dans l’onglet widget de l’Explorateur de propriétés.](extensions-images/today09.png)](extensions-images/today09.png#lightbox)
 3. Enregistrez les modifications apportées à la table de montage séquentiel.
 
 #### <a name="using-code"></a>Utilisation du code
@@ -169,16 +169,16 @@ Pour générer l’interface utilisateur dans le code, procédez comme suit :
 
 1. Dans le **Explorateur de solutions**, sélectionnez le projet **DaysRemaining** , ajoutez une nouvelle classe et appelez-la `CodeBasedViewController` : 
 
-    [![](extensions-images/code01.png "Aelect the DaysRemaining project, add a new class and call it CodeBasedViewController")](extensions-images/code01.png#lightbox)
+    [![Aelect le projet DaysRemaining, ajoutez une nouvelle classe et appelez-la CodeBasedViewController](extensions-images/code01.png)](extensions-images/code01.png#lightbox)
 2. Là encore, dans le **Explorateur de solutions**, double-cliquez sur le fichier de l’extension `Info.plist` pour l’ouvrir et le modifier : 
 
-    [![](extensions-images/code02.png "Double-click Extensions Info.plist file to open it for editing")](extensions-images/code02.png#lightbox)
+    [![Double-cliquez sur extensions du fichier info. plist pour l’ouvrir et le modifier](extensions-images/code02.png)](extensions-images/code02.png#lightbox)
 3. Sélectionnez la **vue source** (en bas de l’écran) et ouvrez le `NSExtension` nœud : 
 
-    [![](extensions-images/code03.png "Select the Source View from the bottom of the screen and open the NSExtension node")](extensions-images/code03.png#lightbox)
+    [![Sélectionnez la vue source en bas de l’écran et ouvrez le nœud NSExtension](extensions-images/code03.png)](extensions-images/code03.png#lightbox)
 4. Supprimez la `NSExtensionMainStoryboard` clé et ajoutez un `NSExtensionPrincipalClass` avec la valeur `CodeBasedViewController` : 
 
-    [![](extensions-images/code04.png "Remove the NSExtensionMainStoryboard key and add a NSExtensionPrincipalClass with the value CodeBasedViewController")](extensions-images/code04.png#lightbox)
+    [![Supprimez la clé NSExtensionMainStoryboard et ajoutez un NSExtensionPrincipalClass avec la valeur CodeBasedViewController](extensions-images/code04.png)](extensions-images/code04.png#lightbox)
 5. Enregistrez vos modifications.
 
 Modifiez ensuite le `CodeBasedViewController.cs` fichier et faites en sorte qu’il ressemble à ce qui suit :
@@ -250,7 +250,7 @@ Notez que ce processus est similaire au processus normal d’écriture d’une a
 
 Pour cette procédure pas à pas, l’application conteneur est simplement utilisée comme méthode pour livrer et installer l’extension et ne fournit aucune fonctionnalité propre. Modifiez le fichier de TodayContainer `Main.storyboard` et ajoutez du texte qui définit la fonction de l’extension et comment l’installer :
 
-[![](extensions-images/today10.png "Edit the TodayContainers Main.storyboard file and add some text defining the Extensions function and how to install it")](extensions-images/today10.png#lightbox)
+[![Modifiez le fichier main. Storyboard TodayContainers et ajoutez du texte qui définit la fonction extensions et comment l’installer.](extensions-images/today10.png)](extensions-images/today10.png#lightbox)
 
 Enregistrez les modifications apportées à la table de montage séquentiel.
 
@@ -258,19 +258,19 @@ Enregistrez les modifications apportées à la table de montage séquentiel.
 
 Pour tester votre extension dans le simulateur iOS, exécutez l’application **TodayContainer** . La vue principale du conteneur s’affiche :
 
-[![](extensions-images/run01.png "The containers main view will be displayed")](extensions-images/run01.png#lightbox)
+[![La vue principale des conteneurs s’affiche](extensions-images/run01.png)](extensions-images/run01.png#lightbox)
 
 Ensuite, appuyez sur le bouton **Accueil** dans le simulateur, faites défiler vers le haut de l’écran pour ouvrir le **Centre de notification**, sélectionnez l’onglet **aujourd’hui** , puis cliquez sur le bouton **modifier** :
 
-[![](extensions-images/run02.png "Hit the Home button in the Simulator, swipe down from the top of the screen to open the Notification Center, select the Today tab and click the Edit button")](extensions-images/run02.png#lightbox)
+[![Appuyez sur le bouton Accueil dans le simulateur, balayez vers le haut à partir du haut de l’écran pour ouvrir le centre de notifications, sélectionnez l’onglet aujourd’hui, puis cliquez sur le bouton modifier.](extensions-images/run02.png)](extensions-images/run02.png#lightbox)
 
 Ajoutez l’extension **DaysRemaining** à l’affichage **aujourd’hui** , puis cliquez sur le bouton **terminé** :
 
-[![](extensions-images/run03.png "Add the DaysRemaining Extension to the Today view and click the Done button")](extensions-images/run03.png#lightbox)
+[![Ajoutez l’extension DaysRemaining à la vue aujourd’hui, puis cliquez sur le bouton terminé](extensions-images/run03.png)](extensions-images/run03.png#lightbox)
 
 Le nouveau widget est ajouté à l’affichage **aujourd’hui** et les résultats s’affichent :
 
-[![](extensions-images/run04.png "The new widget will be added to the Today view and the results will be displayed")](extensions-images/run04.png#lightbox)
+[![Le nouveau widget sera ajouté à l’affichage aujourd’hui et les résultats seront affichés](extensions-images/run04.png)](extensions-images/run04.png#lightbox)
 
 ## <a name="communicating-with-the-host-app"></a>Communication avec l’application hôte
 
@@ -466,7 +466,7 @@ Les extensions ont beaucoup moins de mémoire disponible que les applications. I
 
 Compte tenu de ces exigences strictes, vous ne devez déployer que des extensions qui ont été rigoureusement testées et optimisées pour les performances et la consommation de mémoire. 
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Ce document contient des extensions couvertes, ce qu’elles sont, le type de points d’extension et les limitations connues imposées à une extension par iOS. Il a abordé la création, la distribution, l’installation et l’exécution des extensions et du cycle de vie de l’extension. Il a fourni une procédure pas à pas de création d’un widget simple **Today** qui montre deux façons de créer l’interface utilisateur du widget à l’aide des storyboards ou du code. Il a montré comment tester une extension dans le simulateur iOS. Enfin, il a brièvement abordé la communication avec l’application hôte et quelques précautions et considérations qui doivent être prises lors du développement d’une extension. 
 

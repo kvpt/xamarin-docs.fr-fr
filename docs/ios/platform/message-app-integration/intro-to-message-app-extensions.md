@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2017
-ms.openlocfilehash: 51a89533390eb1be8c1f36e0121229fb5a942279
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2cc27b18bdb58ee633cae2d61e8cc6a8064df581
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031663"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937119"
 ---
 # <a name="message-app-extension-basics-in-xamarinios"></a>Notions de base sur l’extension d’application de message dans Xamarin. iOS
 
@@ -37,7 +37,7 @@ Nouveauté d’iOS 10, l’application message intègre désormais son propre Ap
 
 Également nouveau dans iOS 10, Apple a ajouté l’attribution d’application inline qui permet à l’utilisateur de découvrir facilement une application. Par exemple, si un utilisateur envoie du contenu à un autre à partir d’une application que le 2e utilisateur n’a pas installée (comme un autocollant par exemple), le nom de l’application émettrice est listé sous le contenu de l’historique des messages. Si l’utilisateur appuie sur le nom de l’application, le message Store de l’application s’ouvre et l’application est sélectionnée dans le Store.
 
-Les extensions de message apps sont similaires aux applications iOS existantes que le développeur est familiarisé avec la création et qu’elles ont accès à tous les frameworks et fonctionnalités standard d’une application iOS standard. Exemple :
+Les extensions de message apps sont similaires aux applications iOS existantes que le développeur est familiarisé avec la création et qu’elles ont accès à tous les frameworks et fonctionnalités standard d’une application iOS standard. Par exemple :
 
 - Ils ont accès à l’achat dans l’application.
 - Ils ont accès à Apple Pay.
@@ -57,7 +57,7 @@ Contrairement à d’autres points d’extension fournis par Apple dans le syst�
 
 Si les extensions message apps sont incluses dans l’offre groupée d’une application iOS, l’icône de l’application s’affiche à la fois sur l’écran d’accueil de l’appareil et dans le tiroir d’application de message à l’intérieur de l’application messages. S’il n’est pas inclus dans un bundle d’applications, l’extension de message Apps s’affiche uniquement dans le tiroir de message de l’application.
 
-Même si les extensions de message apps ne sont pas incluses dans un bundle d’applications hôtes, le développeur doit fournir une icône d’application dans le bundle de l’extension de message Apps, car il s’agit de l’icône qui s’affiche dans d’autres parties du système, telles que le message d’application ou les paramètres , pour l’extension.
+Même si les extensions de message apps ne sont pas incluses dans un bundle d’applications hôte, le développeur doit fournir une icône d’application dans le bundle de l’extension de message Apps, car il s’agit de l’icône qui s’affiche dans d’autres parties du système, telles que le message de l’application ou les paramètres, pour l’extension.
 
 ## <a name="about-stickers"></a>À propos des autocollants
 
@@ -87,7 +87,7 @@ Pour qu’une image soit incluse dans un pack d’autocollants, elle doit rempli
 - Les images ne peuvent pas être inférieures à 100x100 points, ou supérieures à 206 x 206 points.
 
 > [!IMPORTANT]
-> Les images autocollantes doivent toujours être fournies au `@3x` résolution dans la plage de pixels 300 x 300 à 618 x 618. Le système génère automatiquement les versions `@2x` et `@1x` au moment de l’exécution en fonction des besoins.
+> Les images autocollantes doivent toujours être fournies à la `@3x` résolution de la plage de pixels 300 x 300 à 618 x 618. Le système génère automatiquement les `@2x` versions et `@1x` au moment de l’exécution en fonction des besoins.
 
 Apple suggère de tester les éléments de l’image de la vignette par rapport à différents arrière-plans de couleur (tels que le blanc, le noir, le rouge, le jaune et le multicolore) et sur des photos, afin de s’assurer qu’ils recherchent le meilleur dans toutes les situations possibles.
 
@@ -117,65 +117,65 @@ Pour créer une expérience d’autocollant personnalisée, procédez comme suit
 
 <!-- markdownlint-disable MD001 -->
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 1. Démarrez Visual Studio pour Mac.
 2. Ouvrez la solution pour ajouter une extension d’application de message à.
-3. Sélectionnez **extensions** > **iOS** > **extension IMessage** , puis cliquez sur le bouton **suivant** :
+3. Sélectionnez **iOS**  >  **Extensions**  >  **extension IMessage** des extensions iOS et cliquez sur le bouton **suivant** :
 
-    [![](intro-to-message-app-extensions-images/message01.png "Select iMessage Extension")](intro-to-message-app-extensions-images/message01.png#lightbox)
+    [![Sélectionner l’extension iMessage](intro-to-message-app-extensions-images/message01.png)](intro-to-message-app-extensions-images/message01.png#lightbox)
 4. Entrez un **nom d’extension** , puis cliquez sur le bouton **suivant** :
 
-    [![](intro-to-message-app-extensions-images/message02.png "Enter an Extension Name")](intro-to-message-app-extensions-images/message02.png#lightbox)
+    [![Entrer un nom d’extension](intro-to-message-app-extensions-images/message02.png)](intro-to-message-app-extensions-images/message02.png#lightbox)
 5. Cliquez sur le bouton **créer** pour générer l’extension :
 
-    [![](intro-to-message-app-extensions-images/message03.png "Click the Create button")](intro-to-message-app-extensions-images/message03.png#lightbox)
+    [![Cliquez sur le bouton créer](intro-to-message-app-extensions-images/message03.png)](intro-to-message-app-extensions-images/message03.png#lightbox)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. Démarrez Visual Studio.
 2. Ouvrez la solution pour ajouter une extension d’application de message.
 3. Sélectionnez **Extensions ios > extension IMessage (IOS)** , puis cliquez sur le bouton **suivant** :
 
-    [![sélectionner l’extension iMessage (iOS)](intro-to-message-app-extensions-images/message01.w157-sml.png)](intro-to-message-app-extensions-images/message01.w157.png#lightbox)
+    [![Sélectionner l’extension iMessage (iOS)](intro-to-message-app-extensions-images/message01.w157-sml.png)](intro-to-message-app-extensions-images/message01.w157.png#lightbox)
 
 4. Entrez un **nom** et cliquez sur le bouton **OK**
 
 -----
 
-Par défaut, le fichier `MessagesViewController.cs` est ajouté à la solution. Il s’agit du point d’entrée principal dans l’extension et il hérite de la classe `MSMessageAppViewController`.
+Par défaut, le `MessagesViewController.cs` fichier est ajouté à la solution. Il s’agit du point d’entrée principal dans l’extension et il hérite de la `MSMessageAppViewController` classe.
 
 L’infrastructure de messages fournit des classes pour la présentation des autocollants disponibles à l’utilisateur :
 
-- `MSStickerBrowserViewController`-contrôle la vue dans laquelle les autocollants seront présentés. Il est également conforme à l’interface `IMSStickerBrowserViewDataSource` pour retourner le nombre d’autocollants et l’autocollant pour un index de navigateur donné.
-- `MSStickerBrowserView`-il s’agit de la vue dans laquelle les autocollants disponibles seront affichés.
-- `MSStickerSize` : détermine les tailles des cellules individuelles pour la grille des autocollants présentée dans la vue du navigateur.
+- `MSStickerBrowserViewController`-Contrôle la vue dans laquelle les autocollants seront présentés. Il est également conforme à l' `IMSStickerBrowserViewDataSource` interface pour retourner le nombre d’autocollants et l’autocollant pour un index de navigateur donné.
+- `MSStickerBrowserView`-Il s’agit de la vue dans laquelle les autocollants disponibles seront affichés.
+- `MSStickerSize`-Détermine les tailles des cellules individuelles pour la grille des autocollants présentée dans la vue du navigateur.
 
 ### <a name="creating-a-custom-sticker-browser"></a>Création d’un navigateur de vignettes personnalisé
 
-Le développeur peut personnaliser davantage l’utilisation des autocollants pour l’utilisateur en fournissant un navigateur de vignettes personnalisé (`MSMessageAppBrowserViewController`) dans l’extension de l’application de message. Le navigateur de vignettes personnalisées change la façon dont les autocollants sont présentés à l’utilisateur lorsqu’ils sélectionnent un autocollant à inclure dans le flux de message.
+Le développeur peut personnaliser davantage l’utilisation des autocollants pour l’utilisateur en fournissant un navigateur de vignettes personnalisé ( `MSMessageAppBrowserViewController` ) dans l’extension de l’application de message. Le navigateur de vignettes personnalisées change la façon dont les autocollants sont présentés à l’utilisateur lorsqu’ils sélectionnent un autocollant à inclure dans le flux de message.
 
-Effectuez ce qui suit :
+Effectuez les actions suivantes :
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
-1. Dans le **panneau solutions**, cliquez avec le bouton droit sur le nom du projet de l’extension et sélectionnez **Ajouter** > **nouveau fichier...**  > **iOS | Apple Watch** > **contrôleur d’interface**.
+1. Dans le **panneau solutions**, cliquez avec le bouton droit sur le nom du projet de l’extension et sélectionnez **Ajouter**  >  **un nouveau fichier...**  >  **iOS | **  >  **Contrôleur d’interface**Apple Watch.
 2. Entrez `StickerBrowserViewController` pour le **nom** et cliquez sur le bouton **nouveau** :
 
-    [![](intro-to-message-app-extensions-images/browser01.png "Enter StickerBrowserViewController for the Name")](intro-to-message-app-extensions-images/browser01.png#lightbox)
-3. Ouvrez le fichier `StickerBrowserViewController.cs` pour le modifier.
+    [![Entrez StickerBrowserViewController pour le nom](intro-to-message-app-extensions-images/browser01.png)](intro-to-message-app-extensions-images/browser01.png#lightbox)
+3. Ouvre le fichier `StickerBrowserViewController.cs` pour modification.
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. Dans le **Explorateur de solutions**, cliquez avec le bouton droit sur le nom du projet de l’extension et sélectionnez **Ajouter** > **nouveau fichier...**  > **iOS | Apple Watch** > **contrôleur d’interface**.
+1. Dans le **Explorateur de solutions**, cliquez avec le bouton droit sur le nom du projet de l’extension et sélectionnez **Ajouter**  >  **un nouveau fichier...**  >  **iOS | **  >  **Contrôleur d’interface**Apple Watch.
 2. Entrez `StickerBrowserViewController` pour le **nom** et cliquez sur le bouton **nouveau** :
 
-    [![](intro-to-message-app-extensions-images/browser01.w157-sml.png "Enter StickerBrowserViewController for the Name")](intro-to-message-app-extensions-images/browser01.w157.png#lightbox)
-3. Ouvrez le fichier `StickerBrowserViewController.cs` pour le modifier.
+    [![Entrez StickerBrowserViewController pour le nom](intro-to-message-app-extensions-images/browser01.w157-sml.png)](intro-to-message-app-extensions-images/browser01.w157.png#lightbox)
+3. Ouvre le fichier `StickerBrowserViewController.cs` pour modification.
 
 -----
 
-Faites en sorte que le `StickerBrowserViewController.cs` ressemble à ce qui suit :
+Procédez `StickerBrowserViewController.cs` comme suit :
 
 ```csharp
 using System;
@@ -270,7 +270,7 @@ Examinez le code ci-dessus en détail. Il crée un stockage pour les autocollant
 public List<MSSticker> Stickers { get; set; } = new List<MSSticker> ();
 ```
 
-Et substitue deux méthodes de la classe `MSStickerBrowserViewController` pour fournir des données pour le navigateur à partir de ce magasin de données :
+Et substitue deux méthodes de la `MSStickerBrowserViewController` classe pour fournir des données pour le navigateur à partir de ce magasin de données :
 
 ```csharp
 public override nint GetNumberOfStickers (MSStickerBrowserView stickerBrowserView)
@@ -284,7 +284,7 @@ public override MSSticker GetSticker (MSStickerBrowserView stickerBrowserView, n
 }
 ```
 
-La méthode `CreateSticker` obtient le chemin d’accès d’une ressource d’image à partir de l’offre groupée de l’extension et l’utilise pour créer une nouvelle instance d’une `MSSticker` à partir de cette ressource, qu’elle ajoute à la collection :
+La `CreateSticker` méthode obtient le chemin d’accès d’une ressource d’image à partir de l’offre groupée de l’extension et l’utilise pour créer une nouvelle instance d’un `MSSticker` à partir de cette ressource, qu’elle ajoute à la collection :
 
 ```csharp
 private void CreateSticker (string assetName, string localizedDescription)
@@ -311,9 +311,9 @@ private void CreateSticker (string assetName, string localizedDescription)
 }
 ```
 
-La méthode `LoadSticker` est appelée à partir de `ViewDidLoad` pour créer un autocollant à partir de la ressource d’image nommée (incluse dans l’offre groupée de l’application) et l’ajouter à la collection d’autocollants.
+La `LoadSticker` méthode est appelée à partir de `ViewDidLoad` pour créer un autocollant à partir de la ressource d’image nommée (incluse dans l’offre groupée de l’application) et l’ajouter à la collection d’autocollants.
 
-Pour implémenter le navigateur de vignettes personnalisé, modifiez le fichier `MessagesViewController.cs` et faites-le ressembler à ce qui suit :
+Pour implémenter le navigateur de vignettes personnalisé, modifiez le `MessagesViewController.cs` fichier et faites-le ressembler à ce qui suit :
 
 ```csharp
 using System;
@@ -361,7 +361,7 @@ En examinant ce code en détail, il crée un stockage pour le navigateur personn
 public StickerBrowserViewController BrowserViewController { get; set;}
 ```
 
-Et dans la méthode `ViewDidLoad`, elle instancie et configure un nouveau navigateur :
+Et dans la `ViewDidLoad` méthode, il instancie et configure un nouveau navigateur :
 
 ```csharp
 // Create new browser and configure it
@@ -666,7 +666,7 @@ namespace MessageExtension
 }
 ```
 
-Lorsque l’utilisateur demande l’ajout d’un nouvel autocollant à son regroupement disponible, un nouveau `AddStickerViewController` devient le contrôleur visible et la vue autocollante passe à la vue **développée** :
+Quand l’utilisateur demande à ajouter un nouvel autocollant à son regroupement disponible, un nouveau `AddStickerViewController` est rendu visible par le contrôleur et la vue autocollante s’affiche dans la vue **développée** :
 
 ```csharp
 // Switch to expanded view mode
@@ -686,7 +686,7 @@ public void AddStickerToCollection (MSSticker sticker)
 }
 ```
 
-La méthode `DidTransition` est remplacée pour gérer le basculement entre les deux modes :
+La `DidTransition` méthode est substituée pour gérer le basculement entre les deux modes :
 
 ```csharp
 public override void DidTransition (MSMessagesAppPresentationStyle presentationStyle)
@@ -705,7 +705,7 @@ public override void DidTransition (MSMessagesAppPresentationStyle presentationS
 }
 ```
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article a été abordé dans le cas d’une extension d’application de message dans une solution Xamarin. iOS qui s’intègre à l’application **messages** et présente de nouvelles fonctionnalités à l’utilisateur. Elle est traitée à l’aide de l’extension pour envoyer du texte, des autocollants, des fichiers multimédias et des messages interactifs.
 

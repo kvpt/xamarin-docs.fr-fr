@@ -10,22 +10,22 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9a59f65655772768860ce29128f14a48641abc26
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 71e64f7b8286f22040a802336e9be756d932c0cd
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84134275"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936537"
 ---
 # <a name="basic-animation-in-skiasharp"></a>Animation de base dans SkiaSharp
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Découvrez comment animer vos graphiques SkiaSharp_
 
 Vous pouvez animer des graphiques SkiaSharp dans Xamarin.Forms en provoquant l' `PaintSurface` appel périodique de la méthode, à chaque fois que les graphiques dessineront un peu différemment. Voici une animation présentée plus loin dans cet article avec des cercles concentriques qui s’étendent apparemment à partir du Centre :
 
-![](animation-images/animationexample.png "Several concentric circles seemingly expanding from the center")
+![Plusieurs cercles concentriques ont apparemment été étendus à partir du centre](animation-images/animationexample.png)
 
 La page d' **ellipse Pulsating** dans le programme [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) anime les deux axes d’une ellipse afin qu’elle semble être Pulsating, et vous pouvez même contrôler le taux de cette pulsation. Le fichier [**PulsatingEllipsePage. Xaml**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml) instancie un Xamarin.Forms `Slider` et un `Label` pour afficher la valeur actuelle du curseur. Il s’agit d’une méthode courante pour intégrer un `SKCanvasView` avec d’autres Xamarin.Forms vues :
 
@@ -144,7 +144,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 La méthode calcule un rayon maximal en fonction de la taille de la zone d’affichage et d’un rayon minimal basé sur le rayon maximal. La `scale` valeur est animée entre 0 et 1 et revient à 0. par conséquent, la méthode utilise celle-ci pour calculer un `xRadius` et les `yRadius` plages entre `minRadius` et `maxRadius` . Ces valeurs sont utilisées pour dessiner et remplir une ellipse :
 
-[![](animation-images/pulsatingellipse-small.png "Triple screenshot of the Pulsating Ellipse page")](animation-images/pulsatingellipse-large.png#lightbox "Triple screenshot of the Pulsating Ellipse page")
+[![Capture d’écran triple de la page d’ellipse Pulsating](animation-images/pulsatingellipse-small.png)](animation-images/pulsatingellipse-large.png#lightbox "Capture d’écran triple de la page d’ellipse Pulsating")
 
 Notez que l' `SKPaint` objet est créé dans un `using` bloc. Comme de nombreuses classes SkiaSharp `SKPaint` dérivent de, `SKObject` qui dérive de `SKNativeObject` , qui implémente l' [`IDisposable`](xref:System.IDisposable) interface. `SKPaint`Substitue la `Dispose` méthode pour libérer des ressources non managées.
 
@@ -247,9 +247,9 @@ public class ExpandingCirclesPage : ContentPage
 
 Le résultat est que l’image a le même résultat lorsque est `t` égal à 0 comme lorsque `t` est égal à 1 et que les cercles semblent continuer à s’étendre indéfiniment :
 
-[![](animation-images/expandingcircles-small.png "Triple screenshot of the Expanding Circles page")](animation-images/expandingcircles-large.png#lightbox "Triple screenshot of the Expanding Circles page")
+[![Capture d’écran triple de la page agrandissement des cercles](animation-images/expandingcircles-small.png)](animation-images/expandingcircles-large.png#lightbox "Capture d’écran triple de la page agrandissement des cercles")
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

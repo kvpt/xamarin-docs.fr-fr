@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: davidortinau
 ms.author: daortin
-ms.openlocfilehash: fc6066155a4171b106e772c1fe6fe7ee3e5c67cf
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 023a85451ca83df6c15e8b3bbc3169f2884a0a46
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573506"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936563"
 ---
 # <a name="monotouchdialog-json-markup"></a>MonoTouch.Dialog Json Markup
 
@@ -77,7 +77,7 @@ Commençons par un exemple. Voici un fichier JSON complet qui peut être passé 
 
 Le balisage ci-dessus produit l’interface utilisateur suivante :
 
- [![](monotouch.dialog-json-markup-images/screen-shot-2012-03-02-at-11.31.31-am.png "The UI created by the given markup")](monotouch.dialog-json-markup-images/screen-shot-2012-03-02-at-11.31.31-am.png#lightbox)
+ [![Interface utilisateur créée par le balisage donné](monotouch.dialog-json-markup-images/screen-shot-2012-03-02-at-11.31.31-am.png)](monotouch.dialog-json-markup-images/screen-shot-2012-03-02-at-11.31.31-am.png#lightbox)
 
 Chaque élément de l’arborescence peut contenir la propriété `"id"` . Il est possible lors de l’exécution de référencer des sections ou des éléments individuels à l’aide de l’indexeur JsonElement. Comme ceci :
 
@@ -330,7 +330,7 @@ Valeur secondaire à afficher sur l’élément de rendu. La disposition de ce e
 
 ## <a name="boolean-elements"></a>Éléments booléens
 
-Les éléments booléens doivent définir le type avec la valeur `"bool"` , peut contenir un `"caption"` à afficher et `"value"` a la valeur true ou false. Si les `"on"` `"off"` Propriétés et sont définies, elles sont supposées être des images. Les images sont résolues par rapport au répertoire de travail actuel de l’application. Si vous souhaitez référencer des fichiers relatifs à un bundle, vous pouvez utiliser le `"~"` comme raccourci pour représenter le répertoire de l’ensemble d’applications. Par exemple `"~/favorite.png"` , est le fichier favori. png contenu dans le fichier de bundle. Par exemple :
+Les éléments booléens doivent définir le type avec la valeur `"bool"` , peut contenir un `"caption"` à afficher et `"value"` a la valeur true ou false. Si les `"on"` `"off"` Propriétés et sont définies, elles sont supposées être des images. Les images sont résolues par rapport au répertoire de travail actuel de l’application. Si vous souhaitez référencer des fichiers relatifs à un bundle, vous pouvez utiliser le `"~"` comme raccourci pour représenter le répertoire de l’ensemble d’applications. Par exemple `"~/favorite.png"` , est le favorite.png contenu dans le fichier de bundle. Par exemple :
 
 ```json
 { 
