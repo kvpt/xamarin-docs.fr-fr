@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: ca1acd58ba9b5c598e19424f46cc0bcb838315aa
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: b547d21b19d223aebb345f7c4a1dc8dc126fb0d6
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571777"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86928781"
 ---
 # <a name="walkthrough-using-touch-in-xamarinios"></a>Procédure pas à pas : utilisation de Touch dans Xamarin. iOS
 
@@ -34,7 +34,7 @@ Dans cet exemple, nous allons présenter certaines des API tactiles. Procédez c
 
 1. Ouvrez le projet **Touch_Start**. Exécutez d’abord le projet pour vérifier que tout est correct, puis appuyez sur le bouton d' **exemples tactiles** . Vous devez voir un écran similaire à ce qui suit (même si aucun des boutons ne fonctionne) :
 
-    [![](ios-touch-walkthrough-images/image4.png "Sample app run with non-working buttons")](ios-touch-walkthrough-images/image4.png#lightbox)
+    [![Exemple d’exécution d’application avec des boutons non fonctionnels](ios-touch-walkthrough-images/image4.png)](ios-touch-walkthrough-images/image4.png#lightbox)
 
 1. Modifiez le fichier **TouchViewController.cs** et ajoutez les deux variables d’instance suivantes à la classe `TouchViewController` :
 
@@ -163,9 +163,9 @@ Dans cet exemple, nous allons présenter certaines des API tactiles. Procédez c
 
 1. À ce stade, l’écran d’exemples tactiles est terminé. Notez que l’écran change quand vous interagissez avec chacune des images, comme illustré dans la capture d’écran suivante :
 
-    [![](ios-touch-walkthrough-images/image4.png "The starting app screen")](ios-touch-walkthrough-images/image4.png#lightbox)
+    [![Écran de démarrage de l’application](ios-touch-walkthrough-images/image4.png)](ios-touch-walkthrough-images/image4.png#lightbox)
 
-    [![](ios-touch-walkthrough-images/image5.png "The screen after the user drags a button")](ios-touch-walkthrough-images/image5.png#lightbox)
+    [![L’écran lorsque l’utilisateur fait glisser un bouton](ios-touch-walkthrough-images/image5.png)](ios-touch-walkthrough-images/image5.png#lightbox)
 
 <a name="Gesture_Recognizer_Samples"></a>
 
@@ -294,7 +294,7 @@ Notez que nous attribuons une cible au geste sous la forme de la méthode `Handl
 1. Exécutez l’application et interagissez avec les deux images.
 La capture d’écran suivante est un exemple de ces interactions :
 
-    [![](ios-touch-walkthrough-images/image7.png "This screenshot shows a drag interaction")](ios-touch-walkthrough-images/image7.png#lightbox)
+    [![Cette capture d’écran montre une interaction de glissement](ios-touch-walkthrough-images/image7.png)](ios-touch-walkthrough-images/image7.png#lightbox)
 
 <a name="Custom_Gesture_Recognizer"></a>
 
@@ -302,7 +302,7 @@ La capture d’écran suivante est un exemple de ces interactions :
 
 Dans cette section, nous allons appliquer les concepts des sections précédentes pour créer un module de reconnaissance de mouvement personnalisé. Le module de reconnaissance de mouvement personnalisé est sous-classé `UIGestureRecognizer` et reconnaîtra quand l’utilisateur dessinera un « V » à l’écran, puis basculera une image bitmap. La capture d’écran suivante est un exemple de cet écran :
 
- [![](ios-touch-walkthrough-images/image8.png "The app will recognize when the user draws a `V` on the screen")](ios-touch-walkthrough-images/image8.png#lightbox)
+ [![L’application reconnaîtra quand l’utilisateur dessinera un « V » à l’écran](ios-touch-walkthrough-images/image8.png)](ios-touch-walkthrough-images/image8.png#lightbox)
 
 Pour créer un module de reconnaissance de mouvement personnalisé, procédez comme suit :
 
@@ -476,12 +476,12 @@ Désormais, la classe peut démarrer la prochaine fois que l’utilisateur inter
 
 1. Exécutez l’application et essayez de dessiner un « V » à l’écran. Vous devez voir l’image en cours de modification, comme illustré dans les captures d’écran suivantes :
 
-    [![](ios-touch-walkthrough-images/image9.png "The button checked")](ios-touch-walkthrough-images/image9.png#lightbox)
+    [![Bouton activé](ios-touch-walkthrough-images/image9.png)](ios-touch-walkthrough-images/image9.png#lightbox)
 
-    [![](ios-touch-walkthrough-images/image10.png "The button unchecked")](ios-touch-walkthrough-images/image10.png#lightbox)
+    [![Bouton désactivé](ios-touch-walkthrough-images/image10.png)](ios-touch-walkthrough-images/image10.png#lightbox)
 
 Les trois sections ci-dessus ont démontré différentes façons de répondre aux événements tactiles dans iOS : à l’aide des événements tactiles, des détecteurs de mouvement intégrés ou avec un module de reconnaissance de mouvement personnalisé.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [iOS Touch final (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-touch-final)

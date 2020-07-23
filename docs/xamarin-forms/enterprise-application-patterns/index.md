@@ -10,18 +10,18 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cc0f98d94c76ff63e7a002dfb92b51eae153d7b4
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 1d993afa7163beb0b24e496b0c876d903f2396e7
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139397"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934288"
 ---
 # <a name="enterprise-application-patterns-using-xamarinforms-ebook"></a>Modèles d’application d’entreprise utilisant Xamarin.Forms ebook
 
 _Conseils architecturaux pour le développement d’applications d’entreprise adaptables, gérables et pouvant être testées Xamarin.Forms_
 
-![](images/cover-sml.png "Enterprise Application Patterns using Xamarin.Forms eBook")
+![Modèles d’application d’entreprise utilisant Xamarin.Forms ebook](images/cover-sml.png)
 
 Ce livre électronique fournit des conseils sur la façon d’implémenter le modèle MVVM (Model-View-ViewModel), l’injection de dépendances, la navigation, la validation et la gestion de la configuration, tout en conservant un couplage faible. En outre, il existe également des conseils sur l’exécution de l’authentification et de l’autorisation avec IdentityServer, l’accès aux données à partir de microservices en conteneur et les tests unitaires.
 
@@ -83,7 +83,7 @@ Le test de modèles et de vues à partir d’applications MVVM est identique au 
 
 Ce projet contient un site de la Communauté, sur lequel vous pouvez poser des questions et fournir des commentaires. Le site de la communauté se trouve sur [GitHub](https://github.com/dotnet-architecture/eShopOnContainers). Vous pouvez également envoyer des commentaires sur le livre électronique à [dotnet-architecture-ebooks-feedback@service.microsoft.com](mailto:dotnet-architecture-ebooks-feedback@service.microsoft.com) .
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Télécharger le livre électronique (PDF de 2 Mo)](https://aka.ms/xamarinpatternsebook)
 - [eShopOnContainers (GitHub) (exemple)](https://github.com/dotnet-architecture/eShopOnContainers)

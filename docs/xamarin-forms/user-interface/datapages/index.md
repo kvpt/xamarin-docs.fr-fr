@@ -10,16 +10,16 @@ ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7d99870dd975d0996ffcd05d4aef153f3515ec9e
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 5e1ea94e42e98609b3f77f0198e125b94e2b437d
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84134314"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86928833"
 ---
 # <a name="xamarinforms-datapages"></a>Xamarin.FormsDataSourceControl
 
-![](~/media/shared/preview.png "This API is currently in preview")
+![Cette API est actuellement en version préliminaire](~/media/shared/preview.png)
 
 > [!IMPORTANT]
 > DataPages requiert une Xamarin.Forms référence de thème à restituer. Cela implique l’installation de [ Xamarin.Forms . Package. base](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/) NuGet dans votre projet, suivi de l’un ou l’autre [ Xamarin.Forms . Theme. Light](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/) ou [ Xamarin.Forms . Packages NuGet Theme. Dark](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/) .
@@ -30,7 +30,7 @@ Les DataPages fournissent une API pour lier rapidement et facilement une source 
 
 Pour voir comment fonctionne la démonstration faire évoluer le discours, consultez le [Guide de mise](get-started.md)en route.
 
-[![](images/demo-sml.png "DataPages Sample Application")](images/demo.png#lightbox "DataPages Sample Application")
+[![Exemple d’application DataPages](images/demo-sml.png)](images/demo.png#lightbox "Exemple d’application DataPages")
 
 ## <a name="introduction"></a>Introduction
 

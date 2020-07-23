@@ -6,12 +6,12 @@ ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
 author: davidortinau
 ms.author: daortin
 ms.date: 03/06/2018
-ms.openlocfilehash: 67e66d5d8f1023c0e7561791ff29ed2952ac040b
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 6508f7ec48d10196b47e0b51fc30e54e3c3668a6
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571010"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930557"
 ---
 # <a name="binding-objective-c-libraries"></a>Liaison des bibliothèques objective-C
 
@@ -32,21 +32,21 @@ Vous pouvez utiliser l’exemple de projet de [liaison iOS](https://github.com/x
 
 <a name="Getting_Started"></a>
 
-## <a name="getting-started"></a>Prise en main
+## <a name="getting-started"></a>Mise en route
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 Le moyen le plus simple de créer une liaison consiste à créer un projet de liaison Xamarin. iOS.
 Pour ce faire, vous pouvez Visual Studio pour Mac en sélectionnant le type de projet, bibliothèque de **> iOS > bibliothèques de liaisons**:
 
-[![](objective-c-libraries-images/00-sml.png "Do this from Visual Studio for Mac by selecting the project type, iOS Library Bindings Library")](objective-c-libraries-images/00.png#lightbox)
+[![Pour ce faire, à partir de Visual Studio pour Mac, sélectionnez le type de projet Bibliothèque de liaisons de bibliothèque iOS](objective-c-libraries-images/00-sml.png)](objective-c-libraries-images/00.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Le moyen le plus simple de créer une liaison consiste à créer un projet de liaison Xamarin. iOS.
 Pour ce faire, vous pouvez utiliser Visual Studio sur Windows en sélectionnant le type de projet, **Visual C# > ios > bibliothèques de liaisons (IOS)**:
 
-[![](objective-c-libraries-images/00vs-sml.png "iOS Bindings Library iOS")](objective-c-libraries-images/00vs.png#lightbox)
+[![Bibliothèque de liaisons iOS iOS](objective-c-libraries-images/00vs-sml.png)](objective-c-libraries-images/00vs.png#lightbox)
 
 > [!IMPORTANT]
 > Remarque : les projets de liaison pour **Xamarin. Mac** sont uniquement pris en charge dans les Visual Studio pour Mac.
@@ -104,7 +104,7 @@ Pour produire une liaison complète, vous devez généralement gérer quatre com
 
 Ce graphique montre la relation entre les fichiers :
 
- [![](objective-c-libraries-images/screen-shot-2012-02-08-at-3.33.07-pm.png "This chart shows the relationship between the files")](objective-c-libraries-images/screen-shot-2012-02-08-at-3.33.07-pm.png#lightbox)
+ [![Ce graphique montre la relation entre les fichiers.](objective-c-libraries-images/screen-shot-2012-02-08-at-3.33.07-pm.png)](objective-c-libraries-images/screen-shot-2012-02-08-at-3.33.07-pm.png#lightbox)
 
 Le fichier de définition d’API ne contient que des espaces de noms et des définitions d’interface (avec tous les membres qu’une interface peut contenir) et ne doit pas contenir des classes, des énumérations, des délégués ou des structs. Le fichier de définition d’API est simplement le contrat qui sera utilisé pour générer l’API.
 
@@ -135,7 +135,7 @@ La génération de la bibliothèque produira votre liaison native.
 Pour terminer cette liaison, vous devez ajouter la bibliothèque Native au projet.  Pour ce faire, vous pouvez ajouter la bibliothèque native à votre projet, soit en faisant glisser la bibliothèque native de Finder vers le projet dans l’Explorateur de solutions, soit en cliquant avec le bouton droit sur le projet et en choisissant **Ajouter**  >  **Ajouter des fichiers** pour sélectionner la bibliothèque native.
 Les bibliothèques natives par convention commencent par le mot « lib » et se terminent par l’extension « . a ». Visual Studio pour Mac ajoutera alors deux fichiers : le fichier. a et un fichier C# rempli automatiquement qui contient des informations sur ce que contient la bibliothèque Native :
 
- [![](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png "Native libraries by convention start with the word lib and end with the extension .a")](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png#lightbox)
+ [![Les bibliothèques natives par convention commencent par le mot lib et se terminent par l’extension. a](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png)](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png#lightbox)
 
 Le contenu du `libMagicChord.linkwith.cs` fichier contient des informations sur la façon dont cette bibliothèque peut être utilisée et indique à votre IDE d’empaqueter ce binaire dans le fichier dll résultant :
 

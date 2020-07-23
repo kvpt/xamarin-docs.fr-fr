@@ -10,22 +10,22 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b435e99180791b64e0a8ad975527fb3cb5316b7d
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 8ffa7ab7c9d2cebb9854ed155c3a00fe65e497c9
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84140216"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936134"
 ---
 # <a name="polylines-and-parametric-equations"></a>Polylignes et équations paramétriques
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Utilisez SkiaSharp pour afficher une ligne que vous pouvez définir avec des équations paramétriques_
 
 Dans la section [**courbes et chemins d’accès SkiaSharp**](../curves/index.md) de ce guide, vous verrez les différentes méthodes qui [`SKPath`](xref:SkiaSharp.SKPath) définissent le rendu de certains types de courbes. Toutefois, il est parfois nécessaire de dessiner un type de courbe qui n’est pas directement prise en charge par `SKPath` . Dans ce cas, vous pouvez utiliser une polyligne (une collection de lignes connectées) pour dessiner une courbe que vous pouvez définir de façon mathématique. Si vous rendez les lignes suffisamment petites et suffisamment nombreuses, le résultat doit ressembler à une courbe. Cette spirale est en fait 3 600 peu de lignes :
 
-![](polylines-images/spiralexample.png "A spiral")
+![Spirale](polylines-images/spiralexample.png)
 
 En général, il est préférable de définir une courbe en termes de paire d’équations paramétrées. Voici des équations pour les coordonnées X et Y qui dépendent d’une troisième variable, parfois appelée `t` pour l’heure. Par exemple, les équations paramétriques suivantes définissent un cercle avec un rayon de 1 centré au point (0,0) pour *t* de 0 à 1 :
 
@@ -120,11 +120,11 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Le résultat est également appelé une *spirale arithmétique* , car le décalage entre chaque boucle est constant :
 
-[![](polylines-images/archimedeanspiral-small.png "Triple screenshot of the Archimedean Spiral page")](polylines-images/archimedeanspiral-large.png#lightbox "Triple screenshot of the Archimedean Spiral page")
+[![Capture d’écran triple de la page en spirale ARCHIMEDEAN](polylines-images/archimedeanspiral-small.png)](polylines-images/archimedeanspiral-large.png#lightbox "Capture d’écran triple de la page en spirale ARCHIMEDEAN")
 
 Notez que le `SKPath` est créé dans un `using` bloc. Cela `SKPath` consomme plus de mémoire que les `SKPath` objets des programmes précédents, ce qui suggère qu’un `using` bloc est plus approprié pour supprimer toutes les ressources non managées.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

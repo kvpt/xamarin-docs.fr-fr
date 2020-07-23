@@ -10,12 +10,12 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a4b82552956ab0e75d0a76a14ce7c919c744e09a
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: cf7e3a260308a81dc40c4fe81be66e5436ed7c63
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84565328"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935796"
 ---
 # <a name="validation-in-enterprise-apps"></a>Validation dans les applications d’entreprise
 
@@ -23,7 +23,7 @@ Toute application qui accepte les entrées d’utilisateurs doit s’assurer que
 
 Dans le contexte du modèle MVVM (Model-View-ViewModel), un modèle de vue ou un modèle est souvent requis pour effectuer la validation des données et signaler toutes les erreurs de validation à la vue afin que l’utilisateur puisse les corriger. L’application mobile eShopOnContainers effectue une validation synchrone côté client des propriétés de modèle de vue et avertit l’utilisateur des erreurs de validation en mettant en surbrillance le contrôle qui contient les données non valides et en affichant les messages d’erreur qui informent l’utilisateur de la raison pour laquelle les données ne sont pas valides. La figure 6-1 montre les classes impliquées dans l’exécution de la validation dans l’application mobile eShopOnContainers.
 
-[![](validation-images/validation.png "Validation classes in the eShopOnContainers mobile app")](validation-images/validation-large.png#lightbox "Validation classes in the eShopOnContainers mobile app")
+[![Classes de validation dans l’application mobile eShopOnContainers](validation-images/validation.png)](validation-images/validation-large.png#lightbox "Classes de validation dans l’application mobile eShopOnContainers")
 
 **Figure 6-1**: classes de validation dans l’application mobile eShopOnContainers
 
@@ -215,7 +215,7 @@ Pour plus d’informations sur les comportements, consultez [implémentation de 
 
 L’application mobile eShopOnContainers informe l’utilisateur des erreurs de validation en mettant en surbrillance le contrôle qui contient les données non valides avec une ligne rouge et en affichant un message d’erreur qui informe l’utilisateur que les données ne sont pas valides sous le contrôle contenant les données non valides. Lorsque les données non valides sont corrigées, la ligne devient noire et le message d’erreur est supprimé. La figure 6-2 montre le LoginView dans l’application mobile eShopOnContainers lorsque des erreurs de validation sont présentes.
 
-![](validation-images/validation-login.png "Displaying validation errors during login")
+![Affichage des erreurs de validation pendant la connexion](validation-images/validation-login.png)
 
 **Figure 6-2 :** Affichage des erreurs de validation pendant la connexion
 
@@ -379,7 +379,7 @@ La `OnAttached` méthode récupère le contrôle natif pour le Xamarin.Forms [`E
 
 Quand des données valides sont entrées dans le [`Entry`](xref:Xamarin.Forms.Entry) contrôle, elles appliquent une ligne noire en bas du contrôle, pour indiquer qu’il n’y a aucune erreur de validation. La figure 6-3 illustre un exemple.
 
-![](validation-images/validation-blackline.png "Black line indicating no validation error")
+![Ligne noire indiquant l’absence d’erreur de validation](validation-images/validation-blackline.png)
 
 **Figure 6-3**: ligne noire indiquant l’absence d’erreur de validation
 
@@ -402,7 +402,7 @@ Le [`Entry`](xref:Xamarin.Forms.Entry) contrôle a également un [`DataTrigger`]
 
 Cela [`DataTrigger`](xref:Xamarin.Forms.DataTrigger) surveille la `UserName.IsValid` propriété et, si elle est valeur `false` , elle exécute le [`Setter`](xref:Xamarin.Forms.Setter) , qui modifie la `LineColor` propriété jointe du `LineColorBehavior` comportement attaché en rouge. La figure 6-4 illustre un exemple.
 
-![](validation-images/validation-redline.png "Red line indicating validation error")
+![Ligne rouge indiquant une erreur de validation](validation-images/validation-redline.png)
 
 **Figure 6-4**: ligne rouge indiquant une erreur de validation
 
@@ -427,7 +427,7 @@ L’application mobile eShopOnContainers effectue une validation synchrone côt�
 
 Les propriétés de modèle de vue qui nécessitent une validation sont de type `ValidatableObject<T>` , et chaque `ValidatableObject<T>` instance a des règles de validation ajoutées à sa `Validations` propriété. La validation est appelée à partir du modèle de vue en appelant la `Validate` méthode de l' `ValidatableObject<T>` instance, qui récupère les règles de validation et les exécute sur la `ValidatableObject<T>` `Value` propriété. Toutes les erreurs de validation sont placées dans la `Errors` propriété de l' `ValidatableObject<T>` instance et la `IsValid` propriété de l' `ValidatableObject<T>` instance est mise à jour pour indiquer si la validation a réussi ou échoué.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Télécharger le livre électronique (PDF de 2 Mo)](https://aka.ms/xamarinpatternsebook)
 - [eShopOnContainers (GitHub) (exemple)](https://github.com/dotnet-architecture/eShopOnContainers)

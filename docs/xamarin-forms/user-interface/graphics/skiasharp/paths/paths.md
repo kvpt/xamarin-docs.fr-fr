@@ -10,22 +10,22 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6ceac2d866e67af5cf3496fcf8c072ae83ecfe38
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a7a4e8c4467438d1f732508a15bee7045310109b
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84140242"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931220"
 ---
 # <a name="path-basics-in-skiasharp"></a>Concepts de base du chemin d’accès dans SkiaSharp
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Explorer l’objet SkiaSharp SKPath pour combiner les lignes et les courbes connectées_
 
 L’une des fonctionnalités les plus importantes du chemin d’accès aux graphiques est la possibilité de définir quand plusieurs lignes doivent être connectées et quand elles ne doivent pas être connectées. La différence peut être importante, étant donné que le haut de ces deux triangles illustre ce qui suit :
 
-![](paths-images/connectedlinesexample.png "Two triangles showing the difference between connected and disconnected lines")
+![Deux triangles présentant la différence entre les lignes connectées et déconnectées](paths-images/connectedlinesexample.png)
 
 Un chemin d’accès graphique est encapsulé par l' [`SKPath`](xref:SkiaSharp.SKPath) objet. Un chemin d’accès est une collection d’un ou de plusieurs *contourages*. Chaque contour est une collection de lignes droites et de courbes *connectées* . Les contournements ne sont pas connectés les uns aux autres, mais ils peuvent se chevaucher visuellement. Parfois, un seul contour peut se chevaucher.
 
@@ -104,7 +104,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Le premier contour se compose d’un appel à [`MoveTo`](xref:SkiaSharp.SKPath.MoveTo(System.Single,System.Single)) l’utilisation de coordonnées X et Y plutôt que d’une `SKPoint` valeur, suivie de trois appels à [`LineTo`](xref:SkiaSharp.SKPath.LineTo(System.Single,System.Single)) pour dessiner les trois côtés du triangle. Le deuxième contour n’a que deux appels à `LineTo` , mais il finit le contour par un appel à [`Close`](xref:SkiaSharp.SKPath.Close) , qui ferme le contour. La différence est importante :
 
-[![](paths-images/twotrianglecontours-small.png "Triple screenshot of the Two Triangle Contours page")](paths-images/twotrianglecontours-large.png#lightbox "Triple screenshot of the Two Triangle Contours page")
+[![Capture d’écran triple de la page des contours de deux triangles](paths-images/twotrianglecontours-small.png)](paths-images/twotrianglecontours-large.png#lightbox "Capture d’écran triple de la page des contours de deux triangles")
 
 Comme vous pouvez le voir, le premier contour est évidemment une série de trois lignes connectées, mais la fin ne se connecte pas au début. Les deux lignes se chevauchent en haut. Le deuxième contour est évidemment fermé et a été effectué avec un nombre d’appels inférieur, `LineTo` car la `Close` méthode ajoute automatiquement une dernière ligne pour fermer le contour.
 
@@ -194,11 +194,11 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Voici le programme en cours d’exécution :
 
-[![](paths-images/strokejoins-small.png "Triple screenshot of the Stroke Joins page")](paths-images/strokejoins-large.png#lightbox "Triple screenshot of the Stroke Joins page")
+[![Capture d’écran triple de la page de jointures de traits](paths-images/strokejoins-small.png)](paths-images/strokejoins-large.png#lightbox "Capture d’écran triple de la page de jointures de traits")
 
 La jointure à onglets se compose d’un point aigu où les lignes se connectent. Lorsque deux lignes sont jointes à un petit angle, la jointure Mitre peut devenir assez longue. Pour éviter les jointures d’angle excessivement longues, la longueur de la jointure Mitre est limitée par la valeur de la [`StrokeMiter`](xref:SkiaSharp.SKPaint.StrokeMiter) propriété de `SKPaint` . Une jointure Mitre qui dépasse cette longueur est découpée pour devenir une jointure biseautée.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

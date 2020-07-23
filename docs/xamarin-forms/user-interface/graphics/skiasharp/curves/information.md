@@ -10,16 +10,16 @@ ms.date: 09/12/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 931b8d0946f1af5e697e581a04c0feefb31ba2d3
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 4fee695a20cae26537beb30513423492114e5c77
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84131922"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936231"
 ---
 # <a name="path-information-and-enumeration"></a>Informations et énumération de tracés
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Obtenir des informations sur les chemins et énumérer le contenu_
 
@@ -29,7 +29,7 @@ Il est parfois utile de déterminer la longueur totale de toutes les lignes et c
 
 Il est également parfois utile d’obtenir toutes les opérations de dessin et les points qui composent un chemin d’accès. Dans un premier temps, cette fonctionnalité peut paraître inutile : Si votre programme a créé le chemin d’accès, le programme connaît déjà le contenu. Toutefois, vous avez vu que les chemins d’accès peuvent également être créés par des [effets de tracés](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) et en convertissant des [chaînes de texte en chemins d'](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md)accès. Vous pouvez également obtenir toutes les opérations de dessin et les points qui composent ces chemins d’accès. L’une des possibilités consiste à appliquer une transformation algorithmique à tous les points, par exemple pour habiller le texte autour d’un hémisphère :
 
-![](information-images/pathenumerationsample.png "Text wrapped on a hemisphere")
+![Texte encapsulé sur un hémisphère](information-images/pathenumerationsample.png)
 
 ## <a name="getting-the-path-length"></a>Obtention de la longueur du chemin
 
@@ -115,7 +115,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 La `Length` propriété de l’objet nouvellement créé `SKPathMeasure` obtient la longueur du chemin d’accès. La longueur du chemin d’accès est divisée par la `baseTextWidth` valeur (qui est la largeur du texte en fonction d’une taille de texte de 10), puis multipliée par la taille du texte de base de 10. Le résultat est une nouvelle taille de texte pour l’affichage du texte le long de ce chemin d’accès :
 
-[![](information-images/pathlength-small.png "Triple screenshot of the Path Length page")](information-images/pathlength-large.png#lightbox "Triple screenshot of the Path Length page")
+[![Capture d’écran triple de la page longueur du chemin d’accès](information-images/pathlength-small.png)](information-images/pathlength-large.png#lightbox "Capture d’écran triple de la page longueur du chemin d’accès")
 
 Lorsque la courbe de Bézier est plus longue ou plus petite, vous pouvez voir la modification de la taille du texte.
 
@@ -141,7 +141,7 @@ Les membres de l' [`SKPathMeasureMatrixFlags`](xref:SkiaSharp.SKPathMeasureMatri
 
 La page à **demi-tube Unicycle** anime un chiffre en forme de bâton sur un unicycle qui semble passer en arrière et en arrière sur une courbe de Bézier cubique :
 
-[![](information-images/unicyclehalfpipe-small.png "Triple screenshot of the Unicycle Half-Pipe page")](information-images/unicyclehalfpipe-large.png#lightbox "Triple screenshot of the Unicycle Half-Pipe page")
+[![Capture d’écran triple de la page à demi-tube Unicycle](information-images/unicyclehalfpipe-small.png)](information-images/unicyclehalfpipe-large.png#lightbox "Capture d’écran triple de la page à demi-tube Unicycle")
 
 L' `SKPaint` objet utilisé pour le détourage du demi-canal et du Unicycle est défini en tant que champ dans la `UnicycleHalfPipePage` classe. Également défini est l' `SKPath` objet pour le Unicycle :
 
@@ -252,7 +252,7 @@ Toutefois, le verbe problématique est `Close` . Cette commande dessine une lign
 
 Il est parfois préférable d’appliquer une transformation algorithmique à un chemin d’accès pour l’malform d’une certaine manière :
 
-![](information-images/pathenumerationsample.png "Text wrapped on a hemisphere")
+![Texte encapsulé sur un hémisphère](information-images/pathenumerationsample.png)
 
 La plupart de ces lettres se composent de lignes droites, mais ces lignes droites sont apparemment tordues en courbes. Comment est-ce possible ?
 
@@ -441,7 +441,7 @@ Notez que la méthode conserve le premier point de chaque contour dans la variab
 
 L’exemple **GlobularText** utilise cette méthode d’extension pour habiller en apparence le texte autour d’un hémisphère dans un effet 3D :
 
-[![](information-images/globulartext-small.png "Triple screenshot of the Globular Text page")](information-images/globulartext-large.png#lightbox "Triple screenshot of the Globular Text page")
+[![Capture d’écran triple de la page de texte globular](information-images/globulartext-small.png)](information-images/globulartext-large.png#lightbox "Capture d’écran triple de la page de texte globular")
 
 Le [`GlobularTextPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/GlobularTextPage.cs) constructeur de classe effectue cette transformation. Il crée un `SKPaint` objet pour le texte, puis obtient un `SKPath` objet à partir de la `GetTextPath` méthode. Il s’agit du chemin d’accès passé à la `CloneWithTransform` méthode d’extension avec une fonction de transformation :
 
@@ -524,7 +524,7 @@ public class GlobularTextPage : ContentPage
 
 Il s’agit d’une technique très polyvalente. Si le tableau d’effets de tracés décrit dans l’article [**Effects Path**](effects.md) n’englobe pas tout ce que vous avez pensé à inclure, c’est un moyen de combler les lacunes.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

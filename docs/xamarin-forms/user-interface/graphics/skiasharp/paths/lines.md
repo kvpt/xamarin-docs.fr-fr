@@ -10,22 +10,22 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 87b97ad913e08c42d16bbf055f168c07b9bd60e8
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 644e6ab4acffa7acf2d86733d68fed8db07a752a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137202"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932364"
 ---
 # <a name="lines-and-stroke-caps"></a>Lignes et extrémités de trait
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Découvrez comment utiliser SkiaSharp pour dessiner des lignes avec des épaisseurs de trait différentes_
 
 Dans SkiaSharp, le rendu d’une seule ligne est très différent du rendu d’une série de lignes droites connectées. Toutefois, même lors du dessin de lignes uniques, il est souvent nécessaire de fournir aux lignes une largeur de trait particulière. À mesure que ces lignes deviennent larges, l’apparence des extrémités des lignes devient également importante. L’apparence de la fin de la ligne est appelée *extrémité du trait*:
 
-![](lines-images/strokecapsexample.png "The three stroke caps options")
+![Trois options d’extrémité de trait](lines-images/strokecapsexample.png)
 
 Pour dessiner des lignes uniques, `SKCanvas` définit une [`DrawLine`](xref:SkiaSharp.SKCanvas.DrawLine(System.Single,System.Single,System.Single,System.Single,SkiaSharp.SKPaint)) méthode simple dont les arguments indiquent les coordonnées de début et de fin de la ligne avec un `SKPaint` objet :
 
@@ -97,7 +97,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Pour chaque membre de l' `SKStrokeCap` énumération, le gestionnaire dessine deux lignes, l’une avec une épaisseur de trait de 50 pixels et une autre sur la partie supérieure avec une épaisseur de trait de deux pixels. Cette deuxième ligne a pour but d’illustrer le début et la fin géométriques de la ligne indépendamment de l’épaisseur de la ligne et d’un embout de trait :
 
-[![](lines-images/strokecaps-small.png "Triple screenshot of the Stroke Caps page")](lines-images/strokecaps-large.png#lightbox "Triple screenshot of the Stroke Caps page")
+[![Capture d’écran triple de la page d’épaisseur de trait](lines-images/strokecaps-small.png)](lines-images/strokecaps-large.png#lightbox "Capture d’écran triple de la page d’épaisseur de trait")
 
 Comme vous pouvez le voir, `Square` les `Round` embouts de trait et étendent efficacement la longueur de la ligne de la moitié de la largeur du trait au début de la ligne et à nouveau à la fin. Cette extension devient importante quand il est nécessaire de déterminer les dimensions d’un objet graphique rendu.
 
@@ -231,7 +231,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Les captures d’écran présentent diverses `Picker` sélections :
 
-[![](lines-images/multiplelines-small.png "Triple screenshot of the Multiple Lines page")](lines-images/multiplelines-large.png#lightbox "Triple screenshot of the Multiple Lines page")
+[![Capture d’écran triple de la page plusieurs lignes](lines-images/multiplelines-small.png)](lines-images/multiplelines-large.png#lightbox "Capture d’écran triple de la page plusieurs lignes")
 
 L’iPhone à gauche montre comment le membre de l' `SKPointMode.Points` énumération provoque le `DrawPoints` rendu de chacun des points du `SKPoint` tableau sous la forme d’un carré si l’extrémité de ligne est `Butt` ou `Square` . Des cercles sont affichés si l’extrémité de ligne est `Round` .
 
@@ -241,7 +241,7 @@ Quand vous utilisez `SKPointMode.Polygon` à la place, une ligne est dessinée e
 
 Le fait que les lignes soient connectées ou non connectées est un aspect crucial de l’utilisation des chemins d’accès aux graphiques.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

@@ -10,12 +10,12 @@ ms.date: 02/01/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0ecbc850960465296dc4047277bdafe78ac800a4
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 8c53b1e58ad97f7d0e17972a2b232c16e05ecc1a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84573246"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934886"
 ---
 # <a name="layout-for-tablet-and-desktop-apps"></a>Mise en page pour les applications de bureau et tablette
 
@@ -43,7 +43,7 @@ Pour fournir une expérience de démarrage agréable et garantir que la résolut
 Avant iOS 9, toutes les applications remontent en mode plein écran sur l’appareil, mais certains iPad peuvent désormais effectuer des [tâches multitâches fractionnées](~/ios/platform/multitasking.md).
 Cela signifie que votre application peut utiliser simplement une colonne fine sur le côté de l’écran, 50% de la largeur de l’écran ou l’écran entier.
 
-[![](tablet-images/ipad-sml.png "iPad Split Screen Example")](tablet-images/ipad.png#lightbox "iPad Split Screen Example")
+[![Exemple d’écran de fractionnement iPad](tablet-images/ipad-sml.png)](tablet-images/ipad.png#lightbox "Exemple d’écran de fractionnement iPad")
 
 La fonctionnalité de fractionnement d’écran signifie que vous devez concevoir votre application pour qu’elle fonctionne correctement avec un minimum de 320 pixels de largeur, ou jusqu’à 1366 pixels de largeur.
 
@@ -60,7 +60,7 @@ Pour prendre en charge les tablettes et les ordinateurs de bureau exécutant Win
 
 Les applications qui s’exécutent sur des tablettes et des postes de travail Windows peuvent être redimensionnées en dimensions arbitraires, en plus de s’exécuter en mode plein écran.
 
-[![](tablet-images/splitscreen-sml.png "Windows Split Screen Example")](tablet-images/splitscreen.png#lightbox "Windows Split Screen Example")
+[![Exemple d’écran fractionné Windows](tablet-images/splitscreen-sml.png)](tablet-images/splitscreen.png#lightbox "Exemple d’écran fractionné Windows")
 
 ## <a name="optimize-for-tablet-and-desktop"></a>Optimiser pour tablette et bureau
 
@@ -87,7 +87,7 @@ Le [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) est idéal pour les
 
 Consultez [ce billet de blog Xamarin](https://devblogs.microsoft.com/xamarin/bringing-xamarin-forms-apps-to-tablets/) pour découvrir comment adapter votre interface utilisateur afin que les téléphones utilisent une disposition et les écrans plus grands puissent utiliser une autre (avec `MasterDetailPage` ).
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Blog Xamarin](https://devblogs.microsoft.com/xamarin/bringing-xamarin-forms-apps-to-tablets/)
 - [Exemple MyShoppe](https://github.com/jamesmontemagno/myshoppe)

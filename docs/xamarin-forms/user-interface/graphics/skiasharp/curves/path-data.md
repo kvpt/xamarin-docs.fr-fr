@@ -10,22 +10,22 @@ ms.date: 05/24/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 680c924280f8f3a6080b2fcc1968ecaf308f33a0
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 2571375e7ad28acbf367870b5c48e19d3a7525e7
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138058"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931246"
 ---
 # <a name="svg-path-data-in-skiasharp"></a>Données du chemin d’accès SVG dans SkiaSharp
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Définir des chemins d’accès à l’aide de chaînes de texte dans le format graphique vectoriel Scalable_
 
 La [`SKPath`](xref:SkiaSharp.SKPath) classe prend en charge la définition d’objets de chemin d’accès complets à partir de chaînes de texte dans un format défini par la spécification SVG (Scalable Vector Graphics). Vous verrez plus loin dans cet article comment vous pouvez représenter un chemin d’accès complet tel que celui-ci dans une chaîne de texte :
 
-![](path-data-images/pathdatasample.png "A sample path defined with SVG path data")
+![Exemple de chemin d’accès défini avec des données de chemin d’accès SVG](path-data-images/pathdatasample.png)
 
 SVG est un langage de programmation graphique basé sur XML pour les pages Web. Étant donné que SVG doit autoriser les chemins d’accès à être définis dans le balisage plutôt que dans une série d’appels de fonction, la norme SVG comprend un moyen extrêmement concis de spécifier un chemin d’accès graphique entier comme une chaîne de texte.
 
@@ -222,7 +222,7 @@ public class PathDataHelloPage : ContentPage
 
 Le chemin d’accès remplit le canevas, ce qui semble plus raisonnable lorsqu’il est affiché en mode paysage :
 
-[![](path-data-images/pathdatahello-small.png "Triple screenshot of the Path Data Hello page")](path-data-images/pathdatahello-large.png#lightbox "Triple screenshot of the Path Data Hello page")
+[![Capture d’écran triple de la page de salutation des données de chemin](path-data-images/pathdatahello-small.png)](path-data-images/pathdatahello-large.png#lightbox "Capture d’écran triple de la page de salutation des données de chemin")
 
 La page de **données du chemin d’accès** est similaire. Les objets Path et Paint sont définis en tant que champs dans la [`PathDataCatPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs) classe :
 
@@ -293,7 +293,7 @@ public class PathDataCatPage : ContentPage
 
 Voici le programme en cours d’exécution :
 
-[![](path-data-images/pathdatacat-small.png "Triple screenshot of the Path Data Cat page")](path-data-images/pathdatacat-large.png#lightbox "Triple screenshot of the Path Data Cat page")
+[![Capture d’écran triple de la page de la CAT des données de chemin](path-data-images/pathdatacat-small.png)](path-data-images/pathdatacat-large.png#lightbox "Capture d’écran triple de la page de la CAT des données de chemin")
 
 Normalement, lorsqu’un `SKPath` objet est défini en tant que champ, les contournements du chemin d’accès doivent être définis dans le constructeur ou une autre méthode. Toutefois, lorsque vous utilisez des données de chemin d’accès SVG, vous avez vu que le chemin d’accès peut être spécifié entièrement dans la définition du champ.
 
@@ -430,9 +430,9 @@ public class PrettyAnalogClockPage : ContentPage
 
 Toutefois, une opération spéciale est effectuée avec la seconde main. Étant donné que l’horloge est mise à jour toutes les 16 millisecondes, la `Millisecond` propriété de la `DateTime` valeur peut potentiellement être utilisée pour animer une seconde main au lieu d’une qui déplace les sauts discrets de la seconde à la seconde. Mais ce code ne permet pas de lisser le mouvement. Au lieu de cela, il utilise les Xamarin.Forms [`SpringIn`](xref:Xamarin.Forms.Easing.SpringIn) [`SpringOut`](xref:Xamarin.Forms.Easing.SpringOut) fonctions d’accélération d’animation et pour un autre type de déplacement. Ces fonctions d’accélération provoquent le déplacement de la seconde main d’une manière jerkier, en &mdash; retirant un peu avant son déplacement, puis en déplaçant légèrement la destination, un effet qui ne peut malheureusement pas être reproduit dans les captures d’écran statiques suivantes :
 
-[![](path-data-images/prettyanalogclock-small.png "Triple screenshot of the Pretty Analog Clock page")](path-data-images/prettyanalogclock-large.png#lightbox "Triple screenshot of the Pretty Analog Clock page")
+[![Capture d’écran triple de la page de l’horloge analogique](path-data-images/prettyanalogclock-small.png)](path-data-images/prettyanalogclock-large.png#lightbox "Capture d’écran triple de la page de l’horloge analogique")
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/07/2017
-ms.openlocfilehash: 63aa344ec94730ebe448aba090e2d91af9da64b5
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 0de41379800d3f8fcb26e2bc58497010b8e3bf95
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574039"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931376"
 ---
 # <a name="working-with-tvos-buttons-in-xamarin"></a>Utilisation des boutons tvOS dans Xamarin
 
 Utilisez une instance de la `UIButton` classe pour créer un bouton pouvant être activé et sélectionnable dans une fenêtre tvOS. Quand l’utilisateur sélectionne un bouton, il envoie un message d’action à l’objet cible, ce qui permet à votre application Xamarin. tvOS de répondre à l’entrée de l’utilisateur.
 
-[![](buttons-images/buttons01.png "Example buttons")](buttons-images/buttons01.png#lightbox)
+[![Exemples de boutons](buttons-images/buttons01.png)](buttons-images/buttons01.png#lightbox)
 
 Pour plus d’informations sur l’utilisation du focus et la navigation avec la Siri distante, consultez la documentation relative à la [navigation et au focus](~/ios/tvos/app-fundamentals/navigation-focus.md) et aux [Contrôleurs distants et des contrôleurs Bluetooth Siri](~/ios/tvos/platform/remote-bluetooth.md) .
 
@@ -28,7 +28,7 @@ Pour plus d’informations sur l’utilisation du focus et la navigation avec la
 
 Dans tvOS, les boutons sont utilisés pour les actions spécifiques à l’application et peuvent contenir un titre, une icône ou les deux. Lorsque l’utilisateur navigue dans l’interface utilisateur de l’application à l’aide de la [Siri distante](~/ios/tvos/platform/remote-bluetooth.md#The-Siri-Remote), le focus se déplace sur le bouton donné, ce qui permet de modifier le texte et les couleurs d’arrière-plan. Une ombre est également appliquée au bouton qui ajoute un effet 3D, ce qui a pour effet d’augmenter au-dessus du reste de l’interface utilisateur.
 
-[![](buttons-images/buttons01.png "Example buttons")](buttons-images/buttons01.png#lightbox)
+[![Exemples de boutons](buttons-images/buttons01.png)](buttons-images/buttons01.png#lightbox)
 
 Apple propose les suggestions suivantes pour l’utilisation des boutons :
 
@@ -66,19 +66,19 @@ Le moyen le plus simple d’utiliser des boutons dans une application Xamarin. t
 1. Dans la **Explorateur de solutions**, double-cliquez sur le `Main.storyboard` fichier et ouvrez-le pour le modifier.
 1. Faites glisser un **bouton** à partir de la **bibliothèque** et déposez-le sur la vue : 
 
-    [![](buttons-images/storyboard01.png "A button")](buttons-images/storyboard01.png#lightbox)
+    [![Bouton A](buttons-images/storyboard01.png)](buttons-images/storyboard01.png#lightbox)
 1. Dans l' **Explorateur de propriétés**, vous pouvez ajuster plusieurs propriétés du bouton, telles que le **titre** et la **couleur du texte**: 
 
-    [![](buttons-images/storyboard02.png "Button properties")](buttons-images/storyboard02.png#lightbox)
+    [![Propriétés du bouton](buttons-images/storyboard02.png)](buttons-images/storyboard02.png#lightbox)
 1. Ensuite, basculez vers l' **onglet événements** et connectez un **événement** à partir du **bouton** et appelez-le `ButtonPressed` : 
 
-    [![](buttons-images/storyboard03.png "The Events Tab")](buttons-images/storyboard03.png#lightbox)
+    [![Onglet événements](buttons-images/storyboard03.png)](buttons-images/storyboard03.png#lightbox)
 1. Vous serez automatiquement dirigé vers la `ViewController.cs` vue dans laquelle vous pouvez placer la nouvelle action dans votre code à l’aide des touches de direction **haut** et **bas** : 
 
-    [![](buttons-images/storyboard04.png "Placing a new Action in code")](buttons-images/storyboard04.png#lightbox)
+    [![Placement d’une nouvelle action dans le code](buttons-images/storyboard04.png)](buttons-images/storyboard04.png#lightbox)
 1. Appuyez sur la touche **entrée** pour sélectionner l’emplacement : 
 
-    [![](buttons-images/storyboard05.png "The code editor")](buttons-images/storyboard05.png#lightbox)
+    [![Éditeur de code](buttons-images/storyboard05.png)](buttons-images/storyboard05.png#lightbox)
 1. Enregistrez les modifications apportées à tous les fichiers.
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
@@ -86,13 +86,13 @@ Le moyen le plus simple d’utiliser des boutons dans une application Xamarin. t
 1. Dans la **Explorateur de solutions**, double-cliquez sur le `Main.storyboard` fichier et ouvrez-le pour le modifier.
 1. Faites glisser un **bouton** à partir de la **bibliothèque** et déposez-le sur la vue : 
 
-    [![](buttons-images/storyboard01vs.png "A button")](buttons-images/storyboard01vs.png#lightbox)
+    [![Bouton A](buttons-images/storyboard01vs.png)](buttons-images/storyboard01vs.png#lightbox)
 1. Dans l' **Explorateur de propriétés**, vous pouvez ajuster plusieurs propriétés du bouton, telles que le **titre** et la **couleur du texte**: 
 
-    [![](buttons-images/storyboard02vs.png "The Properties Explorer")](buttons-images/storyboard02vs.png#lightbox)
+    [![Explorateur de propriétés](buttons-images/storyboard02vs.png)](buttons-images/storyboard02vs.png#lightbox)
 1. Ensuite, basculez vers l' **onglet événements** et connectez un **événement** à partir du **bouton** et appelez-le `ButtonPressed` : 
 
-    [![](buttons-images/storyboard03vs.png "The Events Tab")](buttons-images/storyboard03vs.png#lightbox)
+    [![Onglet événements](buttons-images/storyboard03vs.png)](buttons-images/storyboard03vs.png#lightbox)
 1. Enregistrez les modifications apportées à tous les fichiers.
 
 Modifiez le fichier de votre contrôleur d’affichage (exemple `ViewController.cs` ) et ajoutez le code suivant pour gérer le bouton sélectionné :
@@ -252,7 +252,7 @@ Utilisez la `TintColor` propriété pour définir une teinte de couleur appliqu�
 
 Cet article a abordé la conception et l’utilisation de boutons à l’intérieur d’une application Xamarin. tvOS. Il a montré comment utiliser des boutons dans le concepteur iOS et comment créer des boutons dans du code C#. Enfin, il a montré comment modifier le titre d’un bouton et modifier son style et son apparence.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Exemples tvOS](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
 - [tvOS](https://developer.apple.com/tvos/)

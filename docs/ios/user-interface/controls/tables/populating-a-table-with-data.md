@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 9acdde897a3a700d0138cb67db6735a8cce07120
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 48aeaf8e3036c9b4e1ed548208b7daa822a00913
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84570828"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933417"
 ---
 # <a name="populating-a-table-with-data-in-xamarinios"></a>Remplissage d’une table avec des données dans Xamarin. iOS
 
@@ -89,7 +89,7 @@ public override void ViewDidLoad ()
 
 La table résultante ressemble à ceci :
 
- [![](populating-a-table-with-data-images/image3.png "Sample table running")](populating-a-table-with-data-images/image3.png#lightbox)
+ [![Exemple de table en cours d’exécution](populating-a-table-with-data-images/image3.png)](populating-a-table-with-data-images/image3.png#lightbox)
 
 La plupart des tables permettent à l’utilisateur de toucher une ligne pour la sélectionner et d’effectuer une autre action (par exemple, la diffusion d’une chanson, l’appel d’un contact ou l’affichage d’un autre écran). Pour ce faire, vous devez effectuer quelques opérations. Tout d’abord, nous allons créer un AlertController pour afficher un message lorsque l’utilisateur clique sur une ligne en ajoutant le code suivant à la `RowSelected` méthode :
 
@@ -141,7 +141,7 @@ public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
 
 L’utilisateur peut maintenant toucher une ligne et une alerte s’affiche :
 
- [![](populating-a-table-with-data-images/image4.png "The row selected alert")](populating-a-table-with-data-images/image4.png#lightbox)
+ [![Alerte de ligne sélectionnée](populating-a-table-with-data-images/image4.png)](populating-a-table-with-data-images/image4.png#lightbox)
 
 ## <a name="cell-reuse"></a>Réutilisation des cellules
 
@@ -220,7 +220,7 @@ Vous pouvez voir des exemples des rubriques expliquées ci-dessus dans l’exemp
 
 Un index aide l’utilisateur à faire défiler les longues listes, généralement classées par ordre alphabétique, bien que vous puissiez indexer selon les critères de votre choix. L’exemple **BasicTableIndex** charge une liste plus longue d’éléments à partir d’un fichier pour illustrer l’index. Chaque élément de l’index correspond à une « section » de la table.
 
- [![](populating-a-table-with-data-images/image5.png "The Index display")](populating-a-table-with-data-images/image5.png#lightbox)
+ [![Affichage de l’index](populating-a-table-with-data-images/image5.png)](populating-a-table-with-data-images/image5.png#lightbox)
 
 Pour prendre en charge les « sections », les données de la table doivent être regroupées, de sorte que l’exemple BasicTableIndex crée un `Dictionary<>` à partir du tableau de chaînes à l’aide de la première lettre de chaque élément comme clé de dictionnaire :
 
@@ -268,7 +268,7 @@ Les index sont généralement utilisés uniquement avec le style de table simple
 Les en-têtes et les pieds de page peuvent être utilisés pour regrouper visuellement des lignes dans une table. La structure de données requise est très similaire à l’ajout d’un index : un `Dictionary<>` fonctionne vraiment bien. Au lieu d’utiliser l’alphabet pour regrouper les cellules, cet exemple regroupe les légumes par type botanique.
 Le résultat se présente ainsi :
 
- [![](populating-a-table-with-data-images/image6.png "Sample Headers and Footers")](populating-a-table-with-data-images/image6.png#lightbox)
+ [![Exemples d’en-têtes et de pieds de page](populating-a-table-with-data-images/image6.png)](populating-a-table-with-data-images/image6.png#lightbox)
 
 Pour afficher les en-têtes et les pieds de page, la `UITableViewSource` sous-classe requiert les méthodes supplémentaires suivantes :
 
@@ -290,6 +290,6 @@ public override string TitleForFooter (UITableView tableView, nint section)
 
 Vous pouvez personnaliser davantage l’apparence de l’en-tête et du pied de page avec un objet de vue, à l’aide des `GetViewForHeader` `GetViewForFooter` substitutions de méthode et sur `UITableViewSource` .
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [WorkingWithTables (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/workingwithtables)

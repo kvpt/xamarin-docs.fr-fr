@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 57498811d8789d8ef9ef775f8f39f141b77659c8
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a0c30d32d53397392a4be2ca984ac5f60975ca78
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138526"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936316"
 ---
 # <a name="entry-font-size-on-ios"></a>Taille de la police d’entrée sur iOS
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Ce spécifique à la plateforme iOS est utilisé pour mettre à l’échelle la taille de police d’un [`Entry`](xref:Xamarin.Forms.Entry) pour s’assurer que le texte entré tient dans le contrôle. Il est consommé en XAML en affectant [`Entry.AdjustsFontSizeToFitWidth`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.AdjustsFontSizeToFitWidthProperty) une valeur à la propriété jointe `boolean` :
 
@@ -54,7 +54,7 @@ entry.On<iOS>().SetAdjustsFontSizeToFitWidth(!entry.On<iOS>().AdjustsFontSizeToF
 
 Le résultat est que la taille de police de [`Entry`](xref:Xamarin.Forms.Entry) est mise à l’échelle pour garantir que le texte entré est ajusté dans le contrôle :
 
-![](entry-font-size-images/entry-font-size.png "Adjust Entry Font Size Platform-Specific")
+![Ajuster la taille de police d’entrée spécifique à la plateforme](entry-font-size-images/entry-font-size.png)
 
 ## <a name="related-links"></a>Liens connexes
 

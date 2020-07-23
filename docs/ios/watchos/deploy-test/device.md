@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: cbbf8194505e9caa09587471020026d495f9f99b
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 683ac99ba46d2e23b0190d411e4911725c409f23
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84569694"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931571"
 ---
 # <a name="testing-on-apple-watch-devices"></a>Test sur des appareils Apple Watch
 
@@ -28,11 +28,11 @@ Une fois que vous avez suivi les [étapes de déploiement](~/ios/watchos/deploy-
 
 Tester des applications iOS sur un iPhone ou iPad réel a toujours requis l’inscription de l’appareil dans le centre de développement. La liste des appareils ressemble à ceci (cliquez sur le signe plus **+** pour ajouter un nouvel appareil) :
 
-![](device-images/devices-sml.png "The device list looks like this")
+![La liste des appareils ressemble à ce qui suit.](device-images/devices-sml.png)
 
 Les espions ne sont pas différents : vous devez maintenant ajouter votre appareil Apple Watch avant de déployer des applications sur celui-ci. Recherchez le UDID du espion à l’aide de **Xcode** (**Windows > Devices** List). Lorsque le téléphone couplé est connecté, les informations du espion s’affichent également :
 
-[![](device-images/xcode-devices-sml.png "Paired Watch Information")](device-images/xcode-devices.png#lightbox)
+[![Informations de surveillance jumelée](device-images/xcode-devices-sml.png)](device-images/xcode-devices.png#lightbox)
 
 Lorsque vous connaissez le UDID du espion, ajoutez-le à la liste des appareils dans le centre de développement :
 
@@ -40,7 +40,7 @@ Lorsque vous connaissez le UDID du espion, ajoutez-le à la liste des appareils 
 
 Une fois l’appareil espion ajouté, assurez-vous qu’il est sélectionné dans tous les profils de développement nouveaux ou existants ou les profils de configuration ad hoc que vous créez :
 
-![](device-images/devices-provisioning.png "Available device list")
+![Liste des appareils disponibles](device-images/devices-provisioning.png)
 
 N’oubliez pas que si vous modifiez un profil de provisionnement existant pour le téléchargement et la réinstallation !
 
@@ -52,17 +52,17 @@ Pour générer des tests sur votre appareil, vous devez créer un **profil de pr
 
 Si vous avez un ID d’application générique, *un seul profil de provisionnement sera requis*; Toutefois, si vous disposez d’un ID d’application distinct pour chaque projet, vous aurez besoin d’un profil de configuration pour chaque ID d’application :
 
-![](device-images/provisioningprofile-development.png "The Development Provisioning Profile")
+![Le profil de provisionnement de développement](device-images/provisioningprofile-development.png)
 
 Une fois que vous avez créé les trois profils, ceux-ci s’affichent dans la liste. N’oubliez pas de télécharger et d’installer chacun d’eux :
 
-![](device-images/provisioningprofiles.png "The available Development Provisioning Profiles")
+![Les profils de provisionnement de développement disponibles](device-images/provisioningprofiles.png)
 
 Vous pouvez vérifier le profil de provisionnement dans **les options du projet** en sélectionnant l’écran de signature de l' **offre groupée > iOS** , puis en sélectionnant la configuration de la **version** ou de l' **iPhone de débogage** .
 
 La liste **profil de provisionnement** affiche tous les profils correspondants. vous devez voir les profils correspondants que vous avez créés dans cette liste déroulante :
 
-![](device-images/options-selectprofile.png "The Provisioning Profile list")
+![Liste des profils d’approvisionnement](device-images/options-selectprofile.png)
 
 <a name="testing"></a>
 
@@ -97,7 +97,7 @@ Cela peut se produire lors de la génération en mode débogage pour le déploie
 
 Pour contourner ce problème *temporairement* , désactivez les **Builds incrémentielles** dans les options de projet de l’Extension Watch **> générer > fenêtre de génération Watchos** :
 
-[![](device-images/disable-incremental-sml.png "The Incremental Builds checkbox")](device-images/disable-incremental.png#lightbox)
+[![Case à cocher builds incrémentielles](device-images/disable-incremental-sml.png)](device-images/disable-incremental.png#lightbox)
 
 Ce problème sera résolu dans une version ultérieure, après quoi les builds incrémentielles pourront être réactivées pour tirer parti des temps de génération plus rapides.
 
@@ -112,7 +112,7 @@ Failed to install [APPNAME]
 Invalid executable/Application Verification Failed
 ```
 
-![](device-images/invalid-application-executable.png "Invalid Application Executable alert")
+![Alerte de l’exécutable de l’application non valide](device-images/invalid-application-executable.png)
 
 Si ces messages s’affichent *sur l’écran Watch* après une tentative d’installation de l’application, il peut y avoir quelques problèmes :
 

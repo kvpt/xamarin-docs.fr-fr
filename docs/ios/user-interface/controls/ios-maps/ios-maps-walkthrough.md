@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 7e9010eb579f28e62b5f7ab72ac061e9898e7ecf
-ms.sourcegitcommit: a9b180651863cb7da31d3af14182fe3ad44796f7
+ms.openlocfilehash: 59ad6a11eecf629fc2a815e21a29493f4a1a1397
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2020
-ms.locfileid: "78292725"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932221"
 ---
 # <a name="annotations-and-overlays-in-xamarinios"></a>Annotations et superpositions dans Xamarin. iOS
 
 L’application que nous allons créer dans cette procédure pas à pas est illustrée ci-dessous :
 
- [![](ios-maps-walkthrough-images/00-map-overlay.png "An example MapKit app")](ios-maps-walkthrough-images/00-map-overlay.png#lightbox)
+ [![Exemple d’application MapKit](ios-maps-walkthrough-images/00-map-overlay.png)](ios-maps-walkthrough-images/00-map-overlay.png#lightbox)
 
 Vous trouverez le code complet dans l' [exemple de procédure pas à pas Maps](https://docs.microsoft.com/samples/xamarin/ios-samples/mapswalkthrough).
 
@@ -26,7 +26,7 @@ Commençons par créer un nouveau **projet iOS vide**et lui donner un nom pertin
 
 ## <a name="viewcontroller"></a>ViewController
 
-1. Ajoutez les espaces de noms suivants au `ViewController`:
+1. Ajoutez les espaces de noms suivants au `ViewController` :
 
     ```csharp
     using MapKit;
@@ -35,7 +35,7 @@ Commençons par créer un nouveau **projet iOS vide**et lui donner un nom pertin
     using CoreGraphics
     ```
 
-1. Ajoutez une variable d’instance `MKMapView` à la classe, ainsi qu’une instance `MapDelegate`. Nous allons créer le `MapDelegate` bientôt :
+1. Ajoutez une `MKMapView` variable d’instance à la classe, ainsi qu’une `MapDelegate` instance. Nous allons créer `MapDelegate` bientôt :
 
     ```csharp
     public partial class ViewController : UIViewController
@@ -45,7 +45,7 @@ Commençons par créer un nouveau **projet iOS vide**et lui donner un nom pertin
         ...
     ```
 
-1. Dans la méthode `LoadView` du contrôleur, ajoutez un `MKMapView` et définissez-le sur la propriété `View` du contrôleur :
+1. Dans la méthode du contrôleur `LoadView` , ajoutez un `MKMapView` et affectez-lui la `View` propriété du contrôleur :
 
     ```csharp
     public override void LoadView ()
@@ -57,7 +57,7 @@ Commençons par créer un nouveau **projet iOS vide**et lui donner un nom pertin
 
     Nous allons ensuite ajouter du code pour initialiser le mappage dans la méthode « ViewDidLoad ».
 
-1. Dans `ViewDidLoad` ajouter du code pour définir le type de carte, affichez l’emplacement de l’utilisateur et autorisez le zoom et le panoramique :
+1. Dans `ViewDidLoad` Ajouter du code pour définir le type de carte, affichez l’emplacement de l’utilisateur et autorisez le zoom et le panoramique :
 
     ```csharp
     // change map type, show user location and allow zooming and panning
@@ -80,20 +80,20 @@ Commençons par créer un nouveau **projet iOS vide**et lui donner un nom pertin
 
     ```
 
-1. Créez une nouvelle instance de `MapDelegate` et affectez-la à la `Delegate` du `MKMapView`. Là encore, nous allons implémenter le `MapDelegate` bientôt :
+1. Créez une nouvelle instance de `MapDelegate` et assignez-la au `Delegate` du `MKMapView` . Là encore, nous implémenterons `MapDelegate` bientôt :
 
     ```csharp
     mapDelegate = new MapDelegate ();
     map.Delegate = mapDelegate;
     ```
 
-1. À partir d’iOS 8, vous devez demander à l’utilisateur d’utiliser son emplacement. nous allons donc l’ajouter à notre exemple. Tout d’abord, définissez une `CLLocationManager` variable au niveau de la classe :
+1. À partir d’iOS 8, vous devez demander à l’utilisateur d’utiliser son emplacement. nous allons donc l’ajouter à notre exemple. Tout d’abord, définissez une `CLLocationManager` variable de niveau classe :
 
     ```csharp
     CLLocationManager locationManager = new CLLocationManager();
     ```
 
-1. Dans la méthode `ViewDidLoad`, nous souhaitons vérifier si l’appareil exécutant l’application utilise iOS 8, et s’il s’agit d’une demande d’autorisation quand l’application est en cours d’utilisation :
+1. Dans la `ViewDidLoad` méthode, nous souhaitons vérifier si l’appareil exécutant l’application utilise iOS 8, et s’il s’agit d’une demande d’autorisation quand l’application est en cours d’utilisation :
 
     ```csharp
     if (UIDevice.CurrentDevice.CheckSystemVersion(8,0)){
@@ -111,7 +111,7 @@ Commençons par créer un nouveau **projet iOS vide**et lui donner un nom pertin
 
 ## <a name="conferenceannotationcs--a-class-for-custom-annotations"></a>ConferenceAnnotation.cs : classe pour les annotations personnalisées
 
-1. Nous allons utiliser une classe personnalisée pour l’annotation appelée `ConferenceAnnotation`. Ajoutez la classe suivante au projet :
+1. Nous allons utiliser une classe personnalisée pour l’annotation appelée `ConferenceAnnotation` . Ajoutez la classe suivante au projet :
 
     ```csharp
     using System;
@@ -149,13 +149,13 @@ Commençons par créer un nouveau **projet iOS vide**et lui donner un nom pertin
 
 ## <a name="viewcontroller---adding-the-annotation-and-overlay"></a>ViewController-ajout de l’annotation et de la superposition
 
-1. Une fois le `ConferenceAnnotation` en place, nous pouvons l’ajouter à la carte. De retour dans la méthode `ViewDidLoad` de l' `ViewController`, ajoutez l’annotation à la coordonnée centrale de la carte :
+1. Avec le `ConferenceAnnotation` en place, nous pouvons l’ajouter à la carte. De retour dans la `ViewDidLoad` méthode de `ViewController` , ajoutez l’annotation à la coordonnée centrale de la carte :
 
     ```csharp
     map.AddAnnotations (new ConferenceAnnotation ("Evolve Conference", mapCenter));
     ```
 
-1. Nous souhaitons également avoir un chevauchement de l’hôtel. Ajoutez le code suivant pour créer le `MKPolygon` à l’aide des coordonnées de l’hôtel fourni, puis ajoutez-le à la carte par appel `AddOverlay`:
+1. Nous souhaitons également avoir un chevauchement de l’hôtel. Ajoutez le code suivant pour créer le `MKPolygon` à l’aide des coordonnées de l’hôtel fourni, puis ajoutez-le à la carte par appel `AddOverlay` :
 
     ```csharp
     // add an overlay of the hotel
@@ -176,11 +176,11 @@ Commençons par créer un nouveau **projet iOS vide**et lui donner un nom pertin
     map.AddOverlay (hotelOverlay);
     ```
 
-Cela termine le code dans `ViewDidLoad`. Nous devons à présent implémenter notre classe `MapDelegate` pour gérer la création des vues d’annotation et de superposition, respectivement.
+Cela termine le code dans `ViewDidLoad` . Nous devons à présent implémenter notre `MapDelegate` classe pour gérer la création des vues d’annotation et de superposition, respectivement.
 
 ## <a name="mapdelegate"></a>MapDelegate
 
-1. Créez une classe appelée `MapDelegate` qui hérite de `MKMapViewDelegate` et incluez une variable `annotationId` à utiliser comme identificateur de réutilisation pour l’annotation :
+1. Créez une classe appelée `MapDelegate` qui hérite de `MKMapViewDelegate` et incluez une `annotationId` variable à utiliser comme identificateur de réutilisation pour l’annotation :
 
     ```csharp
     class MapDelegate : MKMapViewDelegate
@@ -192,7 +192,7 @@ Cela termine le code dans `ViewDidLoad`. Nous devons à présent implémenter no
 
     Nous n’avons qu’une seule annotation ici afin que le code de réutilisation ne soit pas strictement nécessaire, mais il est conseillé de l’inclure.
 
-1. Implémentez la méthode `GetViewForAnnotation` pour retourner une vue du `ConferenceAnnotation` à l’aide de l’image **Conference. png** incluse dans cette procédure pas à pas :
+1. Implémentez la `GetViewForAnnotation` méthode pour retourner une vue pour le `ConferenceAnnotation` à l’aide de l’image **conference.png** incluse dans cette procédure pas à pas :
 
     ```csharp
     public override MKAnnotationView GetViewForAnnotation (MKMapView mapView, NSObject annotation)
@@ -218,14 +218,14 @@ Cela termine le code dans `ViewDidLoad`. Nous devons à présent implémenter no
     }
     ```
 
-1. Quand l’utilisateur appuie sur l’annotation, nous souhaitons afficher une image représentant la ville d’Austin. Ajoutez les variables suivantes à la `MapDelegate` pour l’image et la vue pour l’afficher :
+1. Quand l’utilisateur appuie sur l’annotation, nous souhaitons afficher une image représentant la ville d’Austin. Ajoutez les variables suivantes au `MapDelegate` pour l’image et la vue pour l’afficher :
 
     ```csharp
     UIImageView venueView;
     UIImage venueImage;
     ```
 
-1. Ensuite, pour afficher l’image lorsque l’annotation est frappée, implémentez la méthode `DidSelectAnnotation` comme suit :
+1. Ensuite, pour afficher l’image lorsque l’annotation est frappée, implémentez la `DidSelectAnnotation` méthode comme suit :
 
     ```csharp
     public override void DidSelectAnnotationView (MKMapView mapView, MKAnnotationView view)
@@ -245,7 +245,7 @@ Cela termine le code dans `ViewDidLoad`. Nous devons à présent implémenter no
     }
     ```
 
-1. Pour masquer l’image lorsque l’utilisateur désélectionne l’annotation en cliquant n’importe où sur la carte, implémentez la méthode `DidDeselectAnnotationView` comme suit :
+1. Pour masquer l’image lorsque l’utilisateur désélectionne l’annotation en cliquant n’importe où sur la carte, implémentez la `DidDeselectAnnotationView` méthode comme suit :
 
     ```csharp
     public override void DidDeselectAnnotationView (MKMapView mapView, MKAnnotationView view)
@@ -260,9 +260,9 @@ Cela termine le code dans `ViewDidLoad`. Nous devons à présent implémenter no
     }
     ```
 
-    Nous disposons à présent du code pour l’annotation en place. Tout ce qui reste, c’est d’ajouter du code à la `MapDelegate` pour créer la vue pour la superposition d’hôtel.
+    Nous disposons à présent du code pour l’annotation en place. Tout ce qui reste, c’est d’ajouter du code à pour `MapDelegate` créer la vue pour la superposition d’hôtel.
 
-1. Ajoutez l’implémentation suivante de `GetViewForOverlay` au `MapDelegate`:
+1. Ajoutez l’implémentation suivante de `GetViewForOverlay` à `MapDelegate` :
 
     ```csharp
     public override MKOverlayView GetViewForOverlay (MKMapView mapView, NSObject overlay)
@@ -278,13 +278,13 @@ Cela termine le code dans `ViewDidLoad`. Nous devons à présent implémenter no
 
 Exécutez l'application. Nous disposons maintenant d’une carte interactive avec une annotation personnalisée et une superposition ! Appuyez sur l’annotation et l’image d’Austin s’affiche, comme indiqué ci-dessous :
 
- [![](ios-maps-walkthrough-images/01-map-image.png "Tap on the annotation and the image of Austin is displayed")](ios-maps-walkthrough-images/01-map-image.png#lightbox)
+ [![Appuyez sur l’annotation et l’image d’Austin s’affiche](ios-maps-walkthrough-images/01-map-image.png)](ios-maps-walkthrough-images/01-map-image.png#lightbox)
 
 ## <a name="summary"></a>Résumé
 
 Dans cet article, nous avons vu comment ajouter une annotation à une carte et comment ajouter une superposition pour un polygone spécifié. Nous avons également démontré comment ajouter une prise en charge tactile à l’annotation pour animer une image sur une carte.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Exemple de procédure pas à pas de Maps](https://docs.microsoft.com/samples/xamarin/ios-samples/mapswalkthrough)
 - [Exemple de démonstration cartographique](https://docs.microsoft.com/samples/xamarin/ios-samples/mapdemo)

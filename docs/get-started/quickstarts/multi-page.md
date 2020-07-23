@@ -12,16 +12,16 @@ ms.date: 04/01/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b3616d0cf4804dfb37d4fe65034796c672dec828
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 8858a66d2caeea815bf06d5d2741bfc3623598f5
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84127879"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933729"
 ---
 # <a name="perform-navigation-in-a-multi-page-xamarinforms-application"></a>Effectuer une navigation dans une application à plusieurs pages Xamarin.Forms
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-multipage/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-multipage/)
 
 Dans ce guide de démarrage rapide, vous allez apprendre à :
 
@@ -31,8 +31,8 @@ Dans ce guide de démarrage rapide, vous allez apprendre à :
 
 Le Guide de démarrage rapide vous guide dans la manière de transformer une application multiplateforme à une seule page, qui est Xamarin.Forms en mesure de stocker une seule note dans une application à plusieurs pages, qui est en mesure de stocker plusieurs notes. L’application finale est indiquée ci-dessous :
 
-[![](multi-page-images/screenshots1-sml.png "Notes Page")](multi-page-images/screenshots1.png#lightbox "Notes Page")
-[![](multi-page-images/screenshots2-sml.png "Note Entry Page")](multi-page-images/screenshots2.png#lightbox "Note Entry Page")
+Page de [ ![ Commentaires](multi-page-images/screenshots1-sml.png)](multi-page-images/screenshots1.png#lightbox "Page de notes")page 
+ [ ![ entrée note](multi-page-images/screenshots2-sml.png)](multi-page-images/screenshots2.png#lightbox "Page d’entrée de note")
 
 ### <a name="prerequisites"></a>Prérequis
 
@@ -44,23 +44,23 @@ Vous devez suivre correctement le [précédent guide de démarrage rapide](singl
 
 1. Lancez Visual Studio. Dans la fenêtre de démarrage, cliquez dans la liste des derniers projets/solutions sur la solution **Notes**, ou cliquez sur **Ouvrir un projet ou une solution**, puis dans la boîte de dialogue **Ouvrir une solution/un projet**, sélectionnez le fichier solution du projet Notes :
 
-    ![](multi-page-images/vs/open-solution.png "Open Project")
+    ![Ouvrir un projet](multi-page-images/vs/open-solution.png)
 
 2. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le projet **Notes**, puis sélectionnez **Ajouter > Nouveau dossier** :
 
-    ![](multi-page-images/vs/add-new-item.png "Add New Item")
+    ![Ajouter un nouvel élément](multi-page-images/vs/add-new-item.png)
 
 3. Dans l’**Explorateur de solutions**, nommez le nouveau dossier **Modèles** :
 
-    ![](multi-page-images/vs/name-folder.png "Models Folder")
+    ![Dossier Models](multi-page-images/vs/name-folder.png)
 
 4. Dans l’**Explorateur de solutions**, sélectionnez le dossier **Modèles**, cliquez avec le bouton droit, puis sélectionnez **Ajouter > Nouvel élément** :
 
-    ![](multi-page-images/vs/add-new-models-file.png "Add New File")
+    ![Ajouter un nouveau fichier](multi-page-images/vs/add-new-models-file.png)
 
 5. Dans la boîte de dialogue **Ajouter un nouvel élément**, sélectionnez **Éléments Visual C# > Classe**, nommez le nouveau fichier **Note**, puis cliquez sur le bouton **Ajouter** :
 
-    ![](multi-page-images/vs/add-note-class.png "Add Note Class")
+    ![Ajouter la classe Note](multi-page-images/vs/add-note-class.png)
 
     Cela permet d’ajouter une classe nommée **Note** au dossier **Modèles** du projet **Notes**.
 
@@ -86,7 +86,7 @@ Vous devez suivre correctement le [précédent guide de démarrage rapide](singl
 
 7. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le projet **Notes** et sélectionnez **Ajouter > nouvel élément.**.. Dans la boîte de dialogue **Ajouter un nouvel élément** , sélectionnez **éléments Visual C# > Xamarin.Forms > page contenu**, nommez le nouveau fichier **NoteEntryPage**, puis cliquez sur le bouton **Ajouter** :
 
-    ![](multi-page-images/vs/add-note-entry-page.png "Add Xamarin.Forms ContentPage")
+    ![Ajouter Xamarin.Forms ContentPage](multi-page-images/vs/add-note-entry-page.png)
 
     Cela permet d’ajouter une nouvelle page nommée **NoteEntryPage** au dossier racine du projet. Cette page est la deuxième page de l’application.
 
@@ -327,23 +327,23 @@ Vous devez suivre correctement le [précédent guide de démarrage rapide](singl
 
 1. Lancez Visual Studio pour Mac. Dans la fenêtre de démarrage, cliquez sur **Ouvrir**, puis dans la boîte de dialogue, sélectionnez le fichier solution du projet Notes :
 
-    ![](multi-page-images/vsmac/open-solution.png "Open Solution")
+    ![Ouvrir une solution](multi-page-images/vsmac/open-solution.png)
 
 2. Dans le **Panneau Solutions**, sélectionnez le projet **Notes**, cliquez avec le bouton droit, puis sélectionnez **Ajouter > Nouveau dossier** :
 
-    ![](multi-page-images/vsmac/add-new-folder.png "Add New Folder")
+    ![Ajouter un nouveau dossier](multi-page-images/vsmac/add-new-folder.png)
 
 3. Dans le **Panneau Solutions**, nommez le nouveau dossier **Modèles** :
 
-    ![](multi-page-images/vsmac/name-folder.png "Models Folder")
+    ![Dossier Models](multi-page-images/vsmac/name-folder.png)
 
 4. Dans le **Panneau Solutions**, sélectionnez le dossier **Modèles**, cliquez avec le bouton droit, puis sélectionnez **Ajouter > Nouveau fichier** :
 
-    ![](multi-page-images/vsmac/add-new-models-file.png "Add New File")
+    ![Ajouter un nouveau fichier](multi-page-images/vsmac/add-new-models-file.png)
 
 5. Dans la boîte de dialogue **Nouveau fichier**, sélectionnez **Général > Classe vide**, nommez le nouveau fichier **Note**, puis cliquez sur le bouton **Nouveau** :
 
-    ![](multi-page-images/vsmac/add-note-class.png "Add Note Class")
+    ![Ajouter la classe Note](multi-page-images/vsmac/add-note-class.png)
 
     Cela permet d’ajouter une classe nommée **Note** au dossier **Modèles** du projet **Notes**.
 
@@ -369,7 +369,7 @@ Vous devez suivre correctement le [précédent guide de démarrage rapide](singl
 
 7. Dans le **panneau solutions**, sélectionnez le projet **Notes** , cliquez avec le bouton droit, puis sélectionnez **Ajouter > nouveau fichier...**. Dans la boîte de dialogue **nouveau fichier** , sélectionnez **formulaires > Forms ContentPage XAML**, nommez le nouveau fichier **NoteEntryPage**, puis cliquez sur le bouton **nouveau** :
 
-    ![](multi-page-images/vsmac/add-note-entry-page.png "Add Xamarin.Forms ContentPage")
+    ![Ajouter Xamarin.Forms ContentPage](multi-page-images/vsmac/add-note-entry-page.png)
 
     Cela permet d’ajouter une nouvelle page nommée **NoteEntryPage** au dossier racine du projet. Cette page est la deuxième page de l’application.
 

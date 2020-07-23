@@ -10,16 +10,16 @@ ms.date: 11/06/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 06ff88f1d4f272d9b77737d2168418c007afe8bc
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 4a9dca7556e9e08915e7e8915a0c01cd1ce6f676
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84573896"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935718"
 ---
 # <a name="customizing-a-map-pin"></a>Personnalisation d’une épingle de carte
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-map-pin)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-map-pin)
 
 _Cet article montre comment créer un renderer personnalisé pour le contrôle Map qui affiche une carte native avec une épingle personnalisée et une vue personnalisée des données de l’épingle sur chaque plateforme._
 
@@ -27,7 +27,7 @@ Chaque Xamarin.Forms vue possède un convertisseur associé pour chaque platefor
 
 Le diagramme suivant illustre la relation entre le [`Map`](xref:Xamarin.Forms.Maps.Map) et les contrôles natifs correspondants qui l’implémentent :
 
-![](map-pin-images/map-classes.png "Relationship Between the Map Control and the Implementing Native Controls")
+![Relation entre le contrôle Map et les contrôles natifs qui l’implémentent](map-pin-images/map-classes.png)
 
 Le processus de rendu peut être utilisé pour implémenter des personnalisations spécifiques à la plateforme en créant un convertisseur personnalisé pour un [`Map`](xref:Xamarin.Forms.Maps.Map) sur chaque plateforme. Le processus pour y parvenir est le suivant :
 
@@ -135,11 +135,11 @@ Le processus de création de la classe de renderer personnalisé est le suivant�
 
 Le diagramme suivant illustre les responsabilités de chaque projet dans l’exemple d’application ainsi que les relations qu’ils entretiennent les uns avec les autres :
 
-![](map-pin-images/solution-structure.png "CustomMap Custom Renderer Project Responsibilities")
+![Responsabilités du projet de renderer personnalisé CustomMap](map-pin-images/solution-structure.png)
 
 Le contrôle `CustomMap` est restitué par des classes de renderer spécifiques à la plateforme qui dérivent de la classe `MapRenderer` pour chaque plateforme. Chaque contrôle `CustomMap` est ainsi restitué avec des contrôles spécifiques à la plateforme, comme le montrent les captures d’écran suivantes :
 
-![](map-pin-images/screenshots.png "CustomMap on each Platform")
+![CustomMap sur chaque plateforme](map-pin-images/screenshots.png)
 
 La `MapRenderer` classe expose la `OnElementChanged` méthode, qui est appelée lorsque le Xamarin.Forms mappage personnalisé est créé pour restituer le contrôle natif correspondant. Cette méthode prend un paramètre `ElementChangedEventArgs` qui contient les propriétés `OldElement` et `NewElement`. Ces propriétés représentent l' Xamarin.Forms élément auquel le convertisseur *a été* attaché, et l' Xamarin.Forms élément auquel le convertisseur *est* attaché, respectivement. Dans l’exemple d’application, la propriété `OldElement` sera `null` et la propriété `NewElement` contiendra une référence à l’instance `CustomMap`.
 
@@ -174,7 +174,7 @@ Les sections suivantes décrivent l’implémentation de chaque classe de render
 
 Les captures d’écran suivantes montrent la carte, avant et après la personnalisation :
 
-![](map-pin-images/map-layout-ios.png "Map Control Before and After Customization")
+![Contrôle de carte avant et après la personnalisation](map-pin-images/map-layout-ios.png)
 
 Sur iOS, l’épingle est appelée *annotation* et peut être une image personnalisée ou une épingle définie par le système de différentes couleurs. Les annotations peuvent éventuellement présenter une *légende*, qui s’affiche en réponse à l’utilisateur quand il sélectionne l’annotation. La légende affiche les propriétés `Label` et `Address` de l’instance `Pin` avec les vues d’accessoires gauche et droite facultatives. Dans la capture d’écran ci-dessus, la vue d’accessoire gauche est l’image d’un singe, tandis que la vue d’accessoire droite est le bouton *Information*.
 
@@ -347,7 +347,7 @@ Pour plus d’informations sur la personnalisation d’une instance `MKMapView`,
 
 Les captures d’écran suivantes montrent la carte, avant et après la personnalisation :
 
-![](map-pin-images/map-layout-android.png "Map Control Before and After Customization")
+![Contrôle de carte avant et après la personnalisation](map-pin-images/map-layout-android.png)
 
 Sur Android, l’épingle est appelée *marqueur* et peut être une image personnalisée ou un marqueur défini par le système de différentes couleurs. Les marqueurs peuvent afficher une *fenêtre d’informations* qui apparaît en réponse à l’utilisateur quand il appuie sur le marqueur. La fenêtre d’informations affiche les propriétés `Label` et `Address` de l’instance `Pin` et peut être personnalisée pour inclure d’autres contenus. Par contre, une seule fenêtre d’informations peut être affichée à la fois.
 
@@ -510,7 +510,7 @@ Pour plus d’informations sur la personnalisation d’une instance `MapView`, c
 
 Les captures d’écran suivantes montrent la carte, avant et après la personnalisation :
 
-![](map-pin-images/map-layout-uwp.png "Map Control Before and After Customization")
+![Contrôle de carte avant et après la personnalisation](map-pin-images/map-layout-uwp.png)
 
 Sur UWP, l’épingle est appelée *icône de carte* et peut être une image personnalisée ou l’image par défaut définie par le système. Une icône de carte peut afficher un `UserControl` qui apparaît en réponse à l’utilisateur quand il appuie sur l’icône de carte. Le `UserControl` peut afficher tout contenu, notamment les propriétés `Label` et `Address` de l’instance `Pin`.
 
@@ -652,7 +652,7 @@ Cette méthode ouvre un navigateur web et accède à l’adresse stockée dans l
 
 Pour plus d’informations sur la personnalisation d’une instance `MapControl`, consultez [Vue d’ensemble des cartes et de l’emplacement](https://msdn.microsoft.com/library/windows/apps/mt219699.aspx) sur MSDN.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Contrôle Maps](~/xamarin-forms/user-interface/map/index.md)
 - [Cartes iOS](~/ios/user-interface/controls/ios-maps/index.md)

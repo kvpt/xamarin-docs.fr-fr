@@ -10,22 +10,22 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ee97ee2aae11e4e54a0d25e80ffd7bce301fa2f3
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a98c7210f2e71f6f26d53da3555f3f9b5e016952
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137681"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935978"
 ---
 # <a name="integrating-text-and-graphics"></a>Intégration de texte et de graphisme
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Voir comment déterminer la taille de la chaîne de texte rendue pour intégrer du texte à des graphiques SkiaSharp_
 
 Cet article montre comment mesurer du texte, mettre à l’échelle le texte à une taille particulière et intégrer du texte à d’autres graphiques :
 
-![](text-images/textandgraphicsexample.png "Text surrounded by rectangles")
+![Texte entouré par des rectangles](text-images/textandgraphicsexample.png)
 
 Cette image comprend également un rectangle arrondi. La `Canvas` classe SkiaSharp comprend des [`DrawRect`](xref:SkiaSharp.SKCanvas.DrawRect*) méthodes permettant de dessiner un rectangle et des [`DrawRoundRect`](xref:SkiaSharp.SKCanvas.DrawRoundRect*) méthodes pour dessiner un rectangle avec des angles arrondis. Ces méthodes permettent de définir le rectangle comme une `SKRect` valeur ou d’autres façons.
 
@@ -126,7 +126,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Après cela, le reste de la méthode est simple. Elle crée un autre `SKPaint` objet pour les bordures et appelle `DrawRoundRect` deux fois. Le deuxième appel utilise un rectangle gonflé par 10 pixels sur deux. Le premier appel spécifie un rayon de l’angle de 20 pixels. Le second a un rayon d’angle de 30 pixels, donc ils semblent être parallèles :
 
- [![](text-images/framedtext-small.png "Triple screenshot of the Framed Text page")](text-images/framedtext-large.png#lightbox "Triple screenshot of the Framed Text page")
+ [![Capture d’écran triple de la page de texte encadrée](text-images/framedtext-small.png)](text-images/framedtext-large.png#lightbox "Capture d’écran triple de la page de texte encadrée")
 
 Vous pouvez faire pivoter votre téléphone ou votre simulateur pour voir la taille du texte et de l’image augmenter.
 
@@ -134,7 +134,7 @@ Si vous devez uniquement centrer du texte à l’écran, vous pouvez le faire ap
 
 Le texte peut être traité de la même façon que n’importe quel autre objet graphique. Une option simple consiste à afficher le contour des caractères de texte :
 
-[![](text-images/outlinedtext-small.png "Triple screen shot of the Outlined Text page")](text-images/outlinedtext-large.png#lightbox "Triple screenshot of the Outlined Text page")
+[![Capture d’écran triple de la page de texte avec contour](text-images/outlinedtext-small.png)](text-images/outlinedtext-large.png#lightbox "Capture d’écran triple de la page de texte avec contour")
 
 Pour ce faire, il suffit de remplacer la valeur `Style` par défaut de la propriété normal de l' `SKPaint` objet par, en `SKPaintStyle.Fill` `SKPaintStyle.Stroke` spécifiant une largeur de trait. Le `PaintSurface` Gestionnaire de la page de **texte avec contour** montre comment procéder :
 
@@ -177,7 +177,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Un autre objet graphique courant est l’image bitmap. C’est une grande rubrique traitée en détail dans la section [**SkiaSharp bitmaps**](../bitmaps/index.md), mais l’article suivant, les [**concepts de base de la bitmap dans SkiaSharp**](bitmaps.md), fournit une introduction plus rapide.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 9f4e88cdc04431660376b885faef0a855e14efc2
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: b36ae9f9fe04ea060ef0238d5af25fb771cafe85
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572115"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932338"
 ---
 # <a name="text-input-in-xamarinios"></a>Entrée de texte dans Xamarin. iOS
 
@@ -20,9 +20,9 @@ L’acceptation de l’entrée de texte de l’utilisateur est effectuée avec l
 
 Les captures d’écran ci-dessous montrent les icônes de ces contrôles, situées dans le panneau boîte à outils dans Visual Studio pour Mac :
 
- [![](text-input-images/image11a.png "UITextField")](text-input-images/image11a.png#lightbox)
+ [![UITextField](text-input-images/image11a.png)](text-input-images/image11a.png#lightbox)
 
- [![](text-input-images/image13a.png "UITextView")](text-input-images/image13a.png#lightbox)
+ [![UITextView](text-input-images/image13a.png)](text-input-images/image13a.png#lightbox)
 
 Une fois que vous avez nommé la sortie et enregistré le fichier de table de montage séquentiel, Visual Studio pour Mac met à jour la `.designer.cs` classe partielle et vous pouvez ajouter du code C# qui référence le contrôle à votre fichier de classe. Chaque contrôle possède ses propres propriétés et événements uniques qui sont accessibles dans votre code C#.
 
@@ -32,7 +32,7 @@ Une fois que vous avez nommé la sortie et enregistré le fichier de table de mo
 
 Le `UITextField` contrôle est le plus souvent utilisé pour accepter une seule ligne d’entrée de texte, par exemple un nom d’utilisateur ou un mot de passe. Voici quelques-unes des options disponibles pour personnaliser le contrôle :
 
- [![](text-input-images/image15a.png "UITextField Properties")](text-input-images/image15a.png#lightbox)
+ [![Propriétés champ UITextField](text-input-images/image15a.png)](text-input-images/image15a.png#lightbox)
 
 Ces contrôles sont expliqués ci-dessous :
 
@@ -74,7 +74,7 @@ View.Add(textfield1);
 
 Le `UITextView` contrôle peut être utilisé pour afficher du texte en lecture seule ou pour accepter une entrée de texte sur plusieurs lignes. Il possède un grand nombre des mêmes options que le `UITextField` (par exemple, la mise en majuscules, la correction, etc.).
 
- [![](text-input-images/image16a.png "UITextView Properties")](text-input-images/image16a.png#lightbox)
+ [![Propriétés UITextView](text-input-images/image16a.png)](text-input-images/image16a.png#lightbox)
 
 Les propriétés spécifiques sont les suivantes :
 
@@ -89,6 +89,6 @@ textview1.Editable = true;
 textview1.DataDetectorTypes = UIDataDetectorType.PhoneNumber | UIDataDetectorType.Link;
 ```
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Contrôles (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/controls)

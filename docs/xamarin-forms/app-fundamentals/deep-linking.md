@@ -11,16 +11,16 @@ ms.date: 11/28/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c7f5979b93ff35b14ec7c13418a4565604f46bd7
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: d2bd0bf696e652e95e0feb88cca7cf685b14433b
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84570633"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936498"
 ---
 # <a name="application-indexing-and-deep-linking"></a>Indexation d’applications et liens ciblés
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/deeplinking)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/deeplinking)
 
 _L’indexation des applications permet aux applications qui seraient autrement oubliées après quelques utilisations de rester pertinentes en apparaissant dans les résultats de la recherche. La liaison profonde permet aux applications de répondre à un résultat de recherche qui contient des données d’application, généralement en accédant à une page référencée à partir d’un lien profond. Cet article explique comment utiliser l’indexation d’application et la liaison profonde pour faciliter la Xamarin.Forms recherche de contenu d’application sur les appareils iOS et Android._
 
@@ -32,7 +32,7 @@ Xamarin.Formsl’indexation d’application et la liaison profonde fournissent u
 
 Cet exemple d’application montre une application de liste Todo où les données sont stockées dans une base de données SQLite locale, comme illustré dans les captures d’écran suivantes :
 
-![](deep-linking-images/screenshots.png "TodoList Application")
+![Application TodoList](deep-linking-images/screenshots.png)
 
 Chaque instance `TodoItem` créée par l’utilisateur est indexée. La recherche propre à la plateforme peut ensuite servir à localiser les données indexées de l’application. Quand l’utilisateur appuie sur un élément de résultat de recherche de l’application, l’application démarre, la `TodoItemPage` est parcourue et le `TodoItem` référencé à partir du lien ciblé s’affiche.
 
@@ -41,7 +41,7 @@ Pour plus d’informations sur l’utilisation d’une base de données SQLite, 
 > [!NOTE]
 > Xamarin.Formsl’indexation des applications et la fonctionnalité de liaison profonde sont uniquement disponibles sur les plateformes iOS et Android, et nécessitent au minimum iOS 9 et l’API 23 respectivement.
 
-## <a name="setup"></a>Programme d’installation
+## <a name="setup"></a>Installation
 
 Les sections suivantes fournissent des instructions d’installation supplémentaires pour utiliser cette fonctionnalité sur les plateformes iOS et Android.
 
@@ -141,7 +141,7 @@ L' [`AppLinkEntry`](xref:Xamarin.Forms.AppLinkEntry) instance est ajoutée à la
 
 Une fois qu’une [`AppLinkEntry`](xref:Xamarin.Forms.AppLinkEntry) instance a été inscrite pour l’indexation, elle peut apparaître dans les résultats de la recherche. La capture d’écran suivante montre le contenu indexé apparaître dans les résultats de recherche sur la plateforme iOS :
 
-![](deep-linking-images/ios-search.png "Indexed Content in Search Results on iOS")
+![Contenu indexé dans les résultats de recherche sur iOS](deep-linking-images/ios-search.png)
 
 ## <a name="de-registering-indexed-content"></a>Désenregistrement du contenu indexé
 
@@ -249,7 +249,7 @@ Pour plus d’informations sur Handoff, consultez [Introduction à Handoff](~/io
 
 Cet article a expliqué comment utiliser l’indexation d’application et la liaison profonde pour faciliter la Xamarin.Forms recherche de contenu d’application sur les appareils iOS et Android. L’indexation d’applications permet aux applications de rester pertinentes en apparaissant dans les résultats de recherche, qui sinon auraient été oubliées après quelques utilisations.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Deep Linking (sample)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/deeplinking)
 - [API de recherche iOS](~/ios/platform/search/index.md)

@@ -10,16 +10,16 @@ ms.date: 07/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5554341493b52d20c946a4bcfe2d1230e4a02759
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 3efcd5cd7c2d00e9d646c937863fd7e55d17f240
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84135562"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929881"
 ---
 # <a name="button-padding-and-shadows-on-android"></a>Remplissage de bouton et ombres sur Android
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Ce contrôle spécifique à la plateforme Android indique si Xamarin.Forms les boutons utilisent les valeurs de remplissage par défaut et les valeurs Shadow des boutons Android. Il est consommé en XAML en affectant [`Button.UseDefaultPadding`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Button.UseDefaultPaddingProperty) [`Button.UseDefaultShadow`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Button.UseDefaultShadowProperty) aux propriétés jointes la valeur `boolean` :
 
@@ -49,7 +49,7 @@ La `Button.On<Android>` méthode spécifie que ce spécifique à la plateforme s
 
 Le résultat est que les Xamarin.Forms boutons peuvent utiliser les valeurs de remplissage par défaut et les valeurs d’ombre des boutons Android :
 
-![](button-padding-shadow-images/button-padding-and-shadow.png "Default Padding and Shadow Values on Android Buttons")
+![Valeurs par défaut de remplissage et de tons foncés sur les boutons Android](button-padding-shadow-images/button-padding-and-shadow.png)
 
 Notez que, dans la capture d’écran ci-dessus [`Button`](xref:Xamarin.Forms.Button) , chacune a des définitions identiques, sauf que la main droite `Button` utilise les valeurs de remplissage par défaut et les valeurs Shadow des boutons Android.
 

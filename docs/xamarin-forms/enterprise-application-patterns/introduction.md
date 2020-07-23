@@ -10,12 +10,12 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e78e7c3056d4f1e22114819f54c1df261aec70e1
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 665971607d8c67f77ad5172778cddcd97bf79841
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84198114"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932624"
 ---
 # <a name="introduction-to-enterprise-app-development"></a>Présentation du développement d’applications d’entreprise
 
@@ -65,7 +65,7 @@ Ce guide comprend un exemple d’application, eShopOnContainers, qui est un maga
 
 La figure 1-1 fournit une vue d’ensemble de l’architecture de l’exemple d’application.
 
-![](introduction-images/architecture.png "eShopOnContainers high-level architecture")
+![architecture de haut niveau eShopOnContainers](introduction-images/architecture.png)
 
 **Figure 1-1**: architecture de haut niveau eShopOnContainers
 
@@ -92,7 +92,7 @@ Pour plus d’informations sur l’implémentation des services principaux, cons
 
 Ce guide se concentre sur la création d’applications d’entreprise multiplateforme à l’aide de Xamarin.Forms , et utilise l’application mobile eShopOnContainers comme exemple. La figure 1-2 montre les pages de l’application mobile eShopOnContainers qui fournissent les fonctionnalités décrites précédemment.
 
-[![](introduction-images/screenshots.png "The eShopOnContainers mobile app")](introduction-images/screenshots-large.png#lightbox "The eShopOnContainers mobile app")
+[![Application mobile eShopOnContainers](introduction-images/screenshots.png)](introduction-images/screenshots-large.png#lightbox "Application mobile eShopOnContainers")
 
 **Figure 1-2**: application mobile eShopOnContainers
 
@@ -109,7 +109,7 @@ L’application mobile eShopOnContainers exerce les Xamarin.Forms fonctionnalit�
 - Commandes
 - comportements
 - Déclencheurs
-- Effets
+- Effects (Effets)
 - Renderers personnalisés
 - MessagingCenter
 - Contrôles personnalisés
@@ -122,7 +122,7 @@ En outre, des tests unitaires sont fournis pour certaines des classes de l’app
 
 La solution d’application mobile eShopOnContainers organise le code source et d’autres ressources en projets. Tous les projets utilisent des dossiers pour organiser le code source et d’autres ressources en catégories. Le tableau suivant présente les projets qui composent l’application mobile eShopOnContainers :
 
-|Project|Description|
+|Projet|Description|
 |--- |--- |
 |eShopOnContainers. Core|Ce projet est le projet de bibliothèque de classes portable (PCL) qui contient le code partagé et l’interface utilisateur partagée.|
 |eShopOnContainers. Droid|Ce projet contient le code spécifique à Android et constitue le point d’entrée de l’application Android.|
@@ -145,7 +145,7 @@ Le projet PCL eShopOnContainers. Core contient les dossiers suivants :
 |comportements|Contient les comportements exposés aux classes d’affichage.|
 |Contrôles|Contient des contrôles personnalisés utilisés par l’application.|
 |Convertisseurs|Contient des convertisseurs de valeurs qui appliquent une logique personnalisée à une liaison.|
-|Effets|Contient la `EntryLineColorEffect` classe, qui est utilisée pour modifier la couleur de bordure de `Entry` contrôles spécifiques.|
+|Effects (Effets)|Contient la `EntryLineColorEffect` classe, qui est utilisée pour modifier la couleur de bordure de `Entry` contrôles spécifiques.|
 |Exceptions|Contient le personnalisé `ServiceAuthenticationException` .|
 |Extensions|Contient des méthodes d’extension pour les `VisualElement` `IEnumerable` classes et.|
 |Programmes d’assistance|Contient des classes d’assistance pour l’application.|
@@ -167,7 +167,7 @@ Les plateformes et outils de développement d’applications mobiles multiplatef
 
 Les développeurs d’applications d’entreprise font face à plusieurs défis qui peuvent altérer l’architecture de l’application pendant le développement. Par conséquent, il est important de créer une application afin qu’elle puisse être modifiée ou étendue au fil du temps. La conception pour une telle adaptation peut être difficile, mais implique généralement le partitionnement d’une application en composants discrets et faiblement couplés qui peuvent être facilement intégrés ensemble dans une application.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Télécharger le livre électronique (PDF de 2 Mo)](https://aka.ms/xamarinpatternsebook)
 - [eShopOnContainers (GitHub) (exemple)](https://github.com/dotnet-architecture/eShopOnContainers)

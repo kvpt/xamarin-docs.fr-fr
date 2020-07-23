@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2018
-ms.openlocfilehash: ae32588d75ec3152a1b8b8558d40abbe2e76d1b4
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 2650bda7115cd132e87bf669914320f63214e295
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73022487"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933222"
 ---
 # <a name="introduction-to-xamarinios-for-visual-studio"></a>Introduction à Xamarin.iOS pour Visual Studio
 
@@ -53,7 +53,7 @@ Les fonctions de ces barres d’outils sont décrites ci-dessous.
 
 Les contrôles qui concernent le développement Xamarin iOS sont entourés en rouge :
 
-[![](introduction-to-xamarin-ios-for-visual-studio-images/03.png "The controls relevant to Xamarin iOS development are circled in red")](introduction-to-xamarin-ios-for-visual-studio-images/03.png#lightbox "The controls relevant to Xamarin iOS development are circled in red")
+[![Les contrôles relatifs au développement Xamarin iOS sont entourés en rouge](introduction-to-xamarin-ios-for-visual-studio-images/03.png)](introduction-to-xamarin-ios-for-visual-studio-images/03.png#lightbox "Les contrôles relatifs au développement Xamarin iOS sont entourés en rouge")
 
 - **Démarrer** : démarre le débogage ou l’exécution de l’application sur la plateforme sélectionnée. Un Mac doit être connecté (voir l’indicateur d’état dans la barre d’outils iOS).
 - **Configurations de solutions** : vous permet de sélectionner la configuration à utiliser (par exemple, Debug, Release).
@@ -63,7 +63,7 @@ Les contrôles qui concernent le développement Xamarin iOS sont entourés en ro
 
 La barre d’outils iOS dans Visual Studio est la même dans chaque version de Visual Studio. La voici :
 
-[![](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png "iOS Toolbar")](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png#lightbox)
+[![Barre d’outils iOS](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png)](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png#lightbox)
 
 Chaque élément est décrit ci-dessous :
 
@@ -79,31 +79,31 @@ Le volet *Sortie* contient des options que vous pouvez examiner pour découvrir 
 
 La capture d’écran ci-dessous montre les fenêtres Sortie disponibles. Elles peuvent varier en fonction du type de votre projet :
 
-[![](introduction-to-xamarin-ios-for-visual-studio-images/output-sml.png "The available output windows")](introduction-to-xamarin-ios-for-visual-studio-images/output-large.png#lightbox)
+[![Les fenêtres de sortie disponibles](introduction-to-xamarin-ios-for-visual-studio-images/output-sml.png)](introduction-to-xamarin-ios-for-visual-studio-images/output-large.png#lightbox)
 
 - **Xamarin** : cette fenêtre contient des informations concernant uniquement Xamarin, comme la connexion au Mac et l’état de l’activation.
 
-  [![](introduction-to-xamarin-ios-for-visual-studio-images/output3-sml.png "Information relating solely to Xamarin, such as the connection to the Mac and activation status")](introduction-to-xamarin-ios-for-visual-studio-images/output3-large.png#lightbox)
+  [![Informations relatives uniquement à Xamarin, telles que la connexion au Mac et l’état d’activation](introduction-to-xamarin-ios-for-visual-studio-images/output3-sml.png)](introduction-to-xamarin-ios-for-visual-studio-images/output3-large.png#lightbox)
 
 - **Diagnostics Xamarin** : cette fenêtre affiche des informations plus détaillées sur votre projet Xamarin, comme l’interaction avec et pour Android.
 
-  [![](introduction-to-xamarin-ios-for-visual-studio-images/output4-sml.png "Detailed information about the Xamarin project")](introduction-to-xamarin-ios-for-visual-studio-images/output3-large.png#lightbox)
+  [![Informations détaillées sur le projet Xamarin](introduction-to-xamarin-ios-for-visual-studio-images/output4-sml.png)](introduction-to-xamarin-ios-for-visual-studio-images/output3-large.png#lightbox)
 
 D’autres volets de sortie de Visual Studio par défaut, comme les volets de débogage et de génération, sont toujours disponibles dans la vue Sortie. Ils sont utilisés pour la sortie de débogage et pour la sortie MSBuild :
 
-- **Débogage**
+- **Déboguer**
 
-  [![](introduction-to-xamarin-ios-for-visual-studio-images/output2-sml.png "Debugging Output")](introduction-to-xamarin-ios-for-visual-studio-images/output2-large.png#lightbox)
+  [![Sortie de débogage](introduction-to-xamarin-ios-for-visual-studio-images/output2-sml.png)](introduction-to-xamarin-ios-for-visual-studio-images/output2-large.png#lightbox)
 
-- **Construire** & **l’ordre de construction**
+- **Créer**  &  **Ordre de génération**
 
-  [![](introduction-to-xamarin-ios-for-visual-studio-images/output1-sml.png "MSBuild Output")](introduction-to-xamarin-ios-for-visual-studio-images/output1-large.png#lightbox)
+  [![Sortie MSBuild](introduction-to-xamarin-ios-for-visual-studio-images/output1-sml.png)](introduction-to-xamarin-ios-for-visual-studio-images/output1-large.png#lightbox)
 
 ## <a name="ios-project-properties"></a>Propriétés de projet iOS
 
 Pour accéder aux propriétés de projet de Visual Studio, cliquez avec le bouton droit sur le nom du projet, puis sélectionnez *Propriétés* dans le menu contextuel. Vous pouvez alors configurer votre application iOS, comme l’illustre la capture d’écran ci-dessous :
 
-![](introduction-to-xamarin-ios-for-visual-studio-images/iosproperties.png "Configuring an iOS application")
+![Configuration d’une application iOS](introduction-to-xamarin-ios-for-visual-studio-images/iosproperties.png)
 
 - *Signature du bundle iOS* : établit une connexion au Mac pour remplir les identités de signature de code et les profils de provisionnement :
 
@@ -133,11 +133,11 @@ Les fichiers de plan conceptuel et .xib peuvent être modifiés dans Visual Stu
 
 Pour commencer à créer ou à modifier votre plan conceptuel, double-cliquez sur `Main.storyboard` pour l’ouvrir dans le Concepteur iOS :
 
-![](introduction-to-xamarin-ios-for-visual-studio-images/iosdesigner.png "The Main.storyboard in the iOS Designer")
+![Main.storyboard dans le Concepteur iOS](introduction-to-xamarin-ios-for-visual-studio-images/iosdesigner.png)
 
 Pour ajouter des objets à votre vue, utilisez le volet **Boîte à outils** pour faire glisser et déposer des éléments sur votre aire de conception. Pour ajouter la boîte à outils, si ce n’est pas déjà fait, sélectionnez **Affichage > Boîte à outils**. Il est possible de modifier les propriétés des objets, d’ajuster leur disposition et de créer des événements à l’aide du volet **Propriétés**, comme illustré ci-dessous :
 
-![](introduction-to-xamarin-ios-for-visual-studio-images/properties.png "The Properties pane")
+![Volet Propriétés](introduction-to-xamarin-ios-for-visual-studio-images/properties.png)
 
  Pour plus d’informations sur l’utilisation du Concepteur iOS, reportez-vous aux guides relatifs au [Concepteur](~/ios/user-interface/designer/index.md).
 
@@ -163,7 +163,7 @@ Cette fenêtre Outil fournit les éléments suivants : une table des entrées d
 
 Il est possible de définir des points d’arrêt à tout moment dans votre application pour indiquer au débogueur d’interrompre temporairement l’exécution du programme. Pour définir un point d’arrêt dans votre Visual Studio, cliquez sur la zone de marge de votre éditeur, en regard du numéro de ligne du code où vous voulez marquer un arrêt :
 
-![](introduction-to-xamarin-ios-for-visual-studio-images/image18.png "Setting a debug point")
+![Définition d’un point de débogage](introduction-to-xamarin-ios-for-visual-studio-images/image18.png)
 
 Démarrez le débogage, puis utilisez le simulateur ou l’appareil pour parcourir votre application jusqu’à un point d’arrêt. Quand un point d’arrêt est atteint, la ligne est mise en surbrillance et le comportement de débogage normal de Visual Studio est activé : vous pouvez effectuer un pas à pas détaillé, principal ou sortant du code, examiner les variables locales ou utiliser la fenêtre Exécution.
 
@@ -175,13 +175,13 @@ Cette capture d’écran présente le simulateur iOS en cours d’exécution à 
 
 ![Examen des variables locales avec le débogage](introduction-to-xamarin-ios-for-visual-studio-images/image20.png)
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article a expliqué comment utiliser Xamarin iOS pour Visual Studio. Il a répertorié les différentes fonctionnalités disponibles pour la création, la génération et le test d’une application iOS à partir de Visual Studio, et a décrit en détail la génération et le débogage d’une application iOS simple.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [Installation de Xamarin.iOS](~/ios/get-started/installation/windows/index.md)
-- [Provisionnement d’appareils](~/ios/get-started/installation/device-provisioning/index.md)
+- [Installation de Xamarin. iOS](~/ios/get-started/installation/windows/index.md)
+- [Approvisionnement des appareils](~/ios/get-started/installation/device-provisioning/index.md)
 - [Création d’une interface utilisateur iOS dans le code](~/ios/app-fundamentals/ios-code-only.md)
 - [Connecter un Mac à un environnement Visual Studio avec XMA (vidéo)](https://university.xamarin.com/lightninglectures/xamarin-mac-agent)

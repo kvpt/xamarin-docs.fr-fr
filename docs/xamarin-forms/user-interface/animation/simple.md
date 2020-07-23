@@ -10,16 +10,16 @@ ms.date: 11/05/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 89f0182bfebc4d018eb083904595f0fbb211e3ba
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: b13ec7ab079dcf7069b5f4b0dccbb52faf25f927
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84573376"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933794"
 ---
 # <a name="simple-animations-in-xamarinforms"></a>Animations simples dansXamarin.Forms
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-basic)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-basic)
 
 _La classe ViewExtensions fournit des méthodes d’extension qui peuvent être utilisées pour construire des animations simples. Cet article explique comment créer et annuler des animations à l’aide de la classe ViewExtensions._
 
@@ -66,7 +66,7 @@ Ce code anime l' [`Image`](xref:Xamarin.Forms.Image) instance en faisant pivoter
 
 Les captures d’écran suivantes montrent la rotation en cours sur chaque plateforme :
 
-![](simple-images/rotateto.png "Rotation Animation")
+![Animation rotation](simple-images/rotateto.png)
 
 > [!NOTE]
 > En plus de [ `RotateTo` ] (XREF : Xamarin.Forms . ViewExtensions. RotateTo ( Xamarin.Forms . VisualElement, System. double, System. UInt32, Xamarin.Forms . Accélération)), il y a également [ `RotateXTo` ] (XREF : Xamarin.Forms . ViewExtensions. RotateXTo ( Xamarin.Forms . VisualElement, System. double, System. UInt32, Xamarin.Forms . Accélération)) et [ `RotateYTo` ] (XREF : Xamarin.Forms . ViewExtensions. RotateYTo ( Xamarin.Forms . VisualElement, System. double, System. UInt32, Xamarin.Forms . Accélération)) qui animent les [`RotationX`](xref:Xamarin.Forms.VisualElement.RotationX) [`RotationY`](xref:Xamarin.Forms.VisualElement.RotationY) Propriétés et, respectivement.
@@ -83,7 +83,7 @@ Ce code anime l' [`Image`](xref:Xamarin.Forms.Image) instance en faisant pivoter
 
 Les captures d’écran suivantes montrent la rotation relative en cours sur chaque plateforme :
 
-![](simple-images/relrotateto.png "Relative Rotation Animation")
+![Animation de rotation relative](simple-images/relrotateto.png)
 
 ### <a name="scaling"></a>Mise à l'échelle
 
@@ -97,7 +97,7 @@ Ce code anime l' [`Image`](xref:Xamarin.Forms.Image) instance en mettant à l’
 
 Les captures d’écran suivantes illustrent la mise à l’échelle en cours sur chaque plateforme :
 
-![](simple-images/scaleto.png "Scaling Animation")
+![Mise à l’échelle de l’animation](simple-images/scaleto.png)
 
 > [!NOTE]
 > En plus de la [`ScaleTo`](xref:Xamarin.Forms.ViewExtensions.ScaleTo*) méthode, il existe également `ScaleXTo` des `ScaleYTo` méthodes et qui animent les [`ScaleX`](xref:Xamarin.Forms.VisualElement.ScaleX) [`ScaleY`](xref:Xamarin.Forms.VisualElement.ScaleY) Propriétés et, respectivement.
@@ -126,7 +126,7 @@ await image.RotateTo(360, 2000);
 
 Pour faire pivoter l' [`Image`](xref:Xamarin.Forms.Image) instance autour du centre de la disposition, les [`AnchorX`](xref:Xamarin.Forms.VisualElement.AnchorX) [`AnchorY`](xref:Xamarin.Forms.VisualElement.AnchorY) Propriétés et doivent être définies sur des valeurs relatives à la largeur et à la hauteur du `Image` . Dans cet exemple, le centre de `Image` est défini pour être au centre de la disposition, de sorte que la valeur par défaut `AnchorX` de 0,5 ne nécessite pas de modification. Toutefois, la `AnchorY` propriété est redéfinie comme étant une valeur à partir du haut de l’interface `Image` jusqu’au point central de la disposition. Cela garantit que `Image` effectue une rotation complète de 360 degrés autour du point central de la disposition, comme illustré dans les captures d’écran suivantes :
 
-![](simple-images/rotate-anchors.png "Rotation Animation with Anchors")
+![Animation de rotation avec ancres](simple-images/rotate-anchors.png)
 
 ### <a name="translation"></a>Traduction
 
@@ -140,7 +140,7 @@ Ce code anime l' [`Image`](xref:Xamarin.Forms.Image) instance en le traduisant h
 
 Les captures d’écran suivantes illustrent la traduction en cours sur chaque plateforme :
 
-![](simple-images/translateto.png "Translation Animation")
+![Animation de translation](simple-images/translateto.png)
 
 > [!NOTE]
 > Si un élément est initialement disposé hors de l’écran, puis traduit sur l’écran, après la traduction, la disposition d’entrée de l’élément reste hors de l’écran et l’utilisateur ne peut pas interagir avec lui. Par conséquent, il est recommandé de disposer d’une vue à sa position finale, puis d’effectuer toutes les traductions requises.
@@ -158,7 +158,7 @@ Ce code anime l' [`Image`](xref:Xamarin.Forms.Image) instance en l’atténuant 
 
 Les captures d’écran suivantes montrent le fondu en cours sur chaque plateforme :
 
-![](simple-images/fadeto.png "Fading Animation")
+![Animation de fondu](simple-images/fadeto.png)
 
 ## <a name="compound-animations"></a>Animations composées
 
@@ -218,7 +218,7 @@ Dans cet exemple, l' `Task.WhenAll` appel de méthode contient trois tâches, ch
 
 Les captures d’écran suivantes montrent les multiples rotations en cours sur chaque plateforme :
 
-![](simple-images/multiple-rotations.png "Composite Animation")
+![Animation composite](simple-images/multiple-rotations.png)
 
 ## <a name="canceling-animations"></a>Annulation d’animations
 
@@ -234,7 +234,7 @@ Cette opération annule immédiatement toutes les animations en cours d’exécu
 
 Cet article a montré comment créer et annuler des animations à l’aide de la [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) classe. Cette classe fournit des méthodes d’extension qui peuvent être utilisées pour construire des animations simples qui font pivoter, mettre à l’échelle, traduire et estomper des [`VisualElement`](xref:Xamarin.Forms.VisualElement) instances.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Vue d’ensemble de la prise en charge Async](~/cross-platform/platform/async.md)
 - [Animation de base (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-basic)

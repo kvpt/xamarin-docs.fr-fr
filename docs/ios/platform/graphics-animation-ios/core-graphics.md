@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: ac746c8489dae600bc2d8c6d1752d8fb10d4e016
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 84e21378a8ac7b61bc1a389352eb53b75881592a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84564717"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929647"
 ---
 # <a name="core-graphics-in-xamarinios"></a>Core Graphics dans Xamarin. iOS
 
@@ -133,7 +133,7 @@ Une fois le chemin d’accès créé, il est ajouté au contexte graphique afin 
 
 La vue obtenue est illustrée ci-dessous :
 
- ![](core-graphics-images/00-bluetriangle.png "The sample output triangle")
+ ![Le triangle de sortie de l’exemple](core-graphics-images/00-bluetriangle.png)
 
 ## <a name="creating-gradient-fills"></a>Création de remplissages dégradés
 
@@ -167,7 +167,7 @@ La définition du chemin d’accès actuel en tant que chemin d’accès de déc
 
 Ces modifications produisent un remplissage dégradé comme indiqué ci-dessous :
 
- ![](core-graphics-images/01-gradient-fill.png "The example with a gradient fill")
+ ![L’exemple avec un remplissage dégradé](core-graphics-images/01-gradient-fill.png)
 
 ## <a name="modifying-line-patterns"></a>Modification des modèles de ligne
 
@@ -180,7 +180,7 @@ g.SetLineDash (0, new nfloat[] { 10, 4 * (nfloat)Math.PI });
 
 Si vous ajoutez ce code avant toute opération de dessin, les traits en pointillés ont une longueur de 10 unités, avec 4 unités d’espace entre les tirets, comme indiqué ci-dessous :
 
- ![](core-graphics-images/02-dashed-stroke.png "Adding this code before any drawing operations results in dashed strokes")
+ ![Ajout de ce code avant toute opération de dessin entraînant des traits en pointillés](core-graphics-images/02-dashed-stroke.png)
 
 Notez que lorsque vous utilisez l’API unifiée dans Xamarin. iOS, le type de tableau doit être un `nfloat` et doit également être explicitement converti en math. pi.
 
@@ -203,7 +203,7 @@ public override void Draw (CGRect rect)
 
 Toutefois, cela produit une image dessinée à l’envers, comme indiqué ci-dessous :
 
- ![](core-graphics-images/03-upside-down-monkey.png "An image drawn upside down")
+ ![Image dessinée à l’envers](core-graphics-images/03-upside-down-monkey.png)
 
 La raison est l’origine des graphiques de base pour le dessin d’image est dans la partie inférieure gauche, tandis que la vue a son origine dans le coin supérieur gauche. Par conséquent, pour afficher correctement l’image, l’origine doit être modifiée, ce qui peut être effectué en modifiant la *matrice de transformation actuelle* *(CTM)*. Le CTM définit l’emplacement des points actifs, également appelés *espace utilisateur*. L’inversion du CTM dans la direction y et le décalage de la hauteur des limites dans l’axe y négatif peuvent retourner l’image.
 
@@ -225,7 +225,7 @@ public override void Draw (CGRect rect)
 
 L’image résultante est alors affichée verticalement :
 
- ![](core-graphics-images/04-upright-monkey.png "The sample image displayed upright")
+ ![Image d’exemple affichée verticalement](core-graphics-images/04-upright-monkey.png)
 
 > [!IMPORTANT]
 > Les modifications apportées au contexte graphique s’appliquent à toutes les opérations de dessin suivantes. Par conséquent, lorsque le CTM est transformé, il affecte tout dessin supplémentaire. Par exemple, si vous avez dessiné le triangle après la transformation CTM, il apparaît à l’envers.
@@ -264,7 +264,7 @@ Comme vous pouvez le voir, la définition de l’État Graphics pour le dessin d
 
 Le texte obtenu s’affiche avec l’image, comme indiqué ci-dessous :
 
- ![](core-graphics-images/05-text-on-image.png "The resulting text is displayed with the image")
+ ![Le texte obtenu s’affiche avec l’image](core-graphics-images/05-text-on-image.png)
 
 ## <a name="memory-backed-images"></a>Images sauvegardées en mémoire
 
@@ -425,7 +425,7 @@ Le texte obtenu est dessiné dans le fichier PDF, qui est ensuite contenu dans u
 
 Dans cet article, nous avons examiné les fonctionnalités graphiques fournies par le biais de l’infrastructure *graphique principale* . Nous avons vu comment utiliser des graphiques de base pour dessiner une géométrie, des images et des fichiers PDF dans le contexte d’un, ainsi `UIView,` que des contextes de graphiques sauvegardés en mémoire.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Core Graphics, exemple](https://docs.microsoft.com/samples/xamarin/ios-samples/graphicsandanimation)
 - [Procédure pas à pas graphiques et animation](~/ios/platform/graphics-animation-ios/graphics-animation-walkthrough.md)

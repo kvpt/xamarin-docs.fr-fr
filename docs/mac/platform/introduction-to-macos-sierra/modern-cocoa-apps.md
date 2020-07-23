@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 13d1709f77b312dbdf357c8ce1871727b2073fef
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: f8c449045de292590aa833324d443579332be999
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574429"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935809"
 ---
 # <a name="building-modern-macos-apps"></a>Création d’applications macOS modernes
 
@@ -24,7 +24,7 @@ _Cet article aborde plusieurs conseils, fonctionnalités et techniques que les d
 
 Un look moderne inclura une fenêtre moderne et une apparence de barre d’outils comme l’exemple d’application illustré ci-dessous :
 
-[![](modern-cocoa-apps-images/content08.png "An example of a modern Mac app UI")](modern-cocoa-apps-images/content08.png#lightbox)
+[![Exemple d’interface utilisateur d’une application Mac moderne](modern-cocoa-apps-images/content08.png)](modern-cocoa-apps-images/content08.png#lightbox)
 
 <a name="Enabling-Full-Sized-Content-Views"></a>
 
@@ -145,11 +145,11 @@ topConstraint.Active = true;
 
 Une fenêtre macOS normale comprend une barre de titre standard au niveau de l’exécution et du bord supérieur de la fenêtre. Si la fenêtre comprend également une barre d’outils, elle est affichée sous cette zone de barre de titre :
 
-[![](modern-cocoa-apps-images/content02.png "A standard Mac Toolbar")](modern-cocoa-apps-images/content02.png#lightbox)
+[![Une barre d’outils Mac standard](modern-cocoa-apps-images/content02.png)](modern-cocoa-apps-images/content02.png#lightbox)
 
 Lorsque vous utilisez une barre d’outils rationalisée, la zone de titre disparaît et la barre d’outils se déplace dans la position de la barre de titre, en ligne avec les boutons Fermer, réduire et agrandir de la fenêtre :
 
-[![](modern-cocoa-apps-images/content03.png "A streamlined Mac Toolbar")](modern-cocoa-apps-images/content03.png#lightbox)
+[![Une barre d’outils Mac rationalisée](modern-cocoa-apps-images/content03.png)](modern-cocoa-apps-images/content03.png#lightbox)
 
 La barre d’outils simplifiée est activée en substituant la `ViewWillAppear` méthode de `NSViewController` et en lui faisant ressembler à ce qui suit :
 
@@ -171,7 +171,7 @@ Cet effet est généralement utilisé pour les _applications Shoebox_ (une appli
 
 Selon la conception de l’application, le développeur peut également vouloir compléter la zone de barre de titre avec un contrôleur d’affichage des accessoires qui s’affiche juste en dessous de la zone de titre/barre d’outils pour fournir des contrôles sensibles au contexte à l’utilisateur en fonction de l’activité à laquelle ils sont actuellement engagés :
 
-[![](modern-cocoa-apps-images/content04.png "An example Accessory View Controller")](modern-cocoa-apps-images/content04.png#lightbox)
+[![Exemple de contrôleur d’affichage accessoire](modern-cocoa-apps-images/content04.png)](modern-cocoa-apps-images/content04.png#lightbox)
 
 Le contrôleur d’affichage des accessoires sera automatiquement flou et redimensionné par le système sans intervention du développeur.
 
@@ -180,13 +180,13 @@ Pour ajouter un contrôleur d’affichage des accessoires, procédez comme suit�
 1. Dans l’**Explorateur de solutions**, double-cliquez sur le fichier `Main.storyboard` pour l’ouvrir et le modifier.
 2. Faites glisser un **contrôleur d’affichage personnalisé** dans la hiérarchie de la fenêtre : 
 
-    [![](modern-cocoa-apps-images/content05.png "Adding a new Custom View Controller")](modern-cocoa-apps-images/content05.png#lightbox)
+    [![Ajout d’un nouveau contrôleur d’affichage personnalisé](modern-cocoa-apps-images/content05.png)](modern-cocoa-apps-images/content05.png#lightbox)
 3. Disposition de l’interface utilisateur de la vue des accessoires : 
 
-    [![](modern-cocoa-apps-images/content06.png "Designing the new view")](modern-cocoa-apps-images/content06.png#lightbox)
+    [![Conception de la nouvelle vue](modern-cocoa-apps-images/content06.png)](modern-cocoa-apps-images/content06.png#lightbox)
 4. Exposez la vue des accessoires en tant que **sortie** et toute autre **action** ou **sortie** pour son interface utilisateur : 
 
-    [![](modern-cocoa-apps-images/content07.png "Adding the required OUtlet")](modern-cocoa-apps-images/content07.png#lightbox)
+    [![Ajout de la sortie requise](modern-cocoa-apps-images/content07.png)](modern-cocoa-apps-images/content07.png#lightbox)
 5. Enregistrez les modifications.
 6. Revenez à Visual Studio pour Mac pour synchroniser les modifications.
 
@@ -248,7 +248,7 @@ accessoryView.LayoutAttribute = NSLayoutAttribute.Bottom;
 
 En outre, le système macOS peut ajouter des contrôleurs d’affichage des accessoires à la fenêtre de l’application. Par exemple, pour créer des fenêtres avec onglets où plusieurs fenêtres de l’application sont fusionnées dans une fenêtre virtuelle :
 
-[![](modern-cocoa-apps-images/content08.png "An example of a tabbed Mac Window")](modern-cocoa-apps-images/content08.png#lightbox)
+[![Exemple de fenêtre Mac avec onglets](modern-cocoa-apps-images/content08.png)](modern-cocoa-apps-images/content08.png#lightbox)
 
 En règle générale, le développeur doit utiliser des fenêtres avec onglets dans leurs applications Xamarin. Mac, le système les gère automatiquement comme suit :
 
@@ -430,7 +430,7 @@ En outre, Apple suggère d’utiliser des vues sauvegardées par couche plutôt 
 
 La sauvegarde de couche peut être activée en définissant le `WantsLayer` d’un `NSView` vers `true` ou à l’intérieur de la Interface Builder de Xcode sous l' **inspecteur d’effets de vue** en vérifiant la couche d' **animation principale**:
 
-[![](modern-cocoa-apps-images/content09.png "The View Effects Inspector")](modern-cocoa-apps-images/content09.png#lightbox)
+[![Inspecteur des effets de vue](modern-cocoa-apps-images/content09.png)](modern-cocoa-apps-images/content09.png#lightbox)
 
 <a name="Redrawing-Views-with-Layers"></a>
 
@@ -792,7 +792,7 @@ Apple suggérant d’exécuter les opérations suivantes :
 
 Apple a fourni plusieurs fonctionnalités dans le Interface Builder de Xcode que le développeur peut utiliser lors de la conception ou de la modification de l’interface utilisateur d’une application pour prendre en charge la localisation. La section **orientation du texte** de l’inspecteur d' **attribut** permet au développeur de fournir des indications sur l’utilisation et la mise à jour de la direction sur une vue de type texte (telle que `NSTextField` ) :
 
-[![](modern-cocoa-apps-images/content10.png "The Text Direction options")](modern-cocoa-apps-images/content10.png#lightbox)
+[![Options d’orientation du texte](modern-cocoa-apps-images/content10.png)](modern-cocoa-apps-images/content10.png#lightbox)
 
 Il existe trois valeurs possibles pour la **direction du texte**:
 
@@ -851,7 +851,7 @@ var button2 = NSButton.CreateButton (myTitle, myImage, () => {
 
 Les applications macOS modernes peuvent adopter une nouvelle apparence d’interface sombre qui fonctionne bien pour la création d’images, la modification ou la présentation d’applications :
 
-[![](modern-cocoa-apps-images/content11.png "An example of a dark Mac Window UI")](modern-cocoa-apps-images/content11.png#lightbox)
+[![Exemple d’interface utilisateur de fenêtre Mac sombre](modern-cocoa-apps-images/content11.png)](modern-cocoa-apps-images/content11.png#lightbox)
 
 Pour ce faire, vous pouvez ajouter une ligne de code avant que la fenêtre ne s’affiche. Par exemple :
 
@@ -952,6 +952,6 @@ Apple a inclus plusieurs fonctionnalités accessibles aux utilisateurs dans macO
 
 Cet article a présenté plusieurs conseils, fonctionnalités et techniques que les développeurs peuvent utiliser pour créer une application macOS moderne dans Xamarin. Mac.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Exemples macOS](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Mac)

@@ -10,12 +10,12 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3ebd3940cbd61342977bde60addc773460a08854
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 3f85c6528a1bf599c38a39b4e88400bc8b0c4f05
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84569567"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931987"
 ---
 # <a name="containerized-microservices"></a>Microservices conteneurisés
 
@@ -23,7 +23,7 @@ Le développement d’applications client-serveur a donné lieu à la création 
 
 En particulier en ce qui concerne l’âge du Cloud, les composants individuels ne peuvent pas être facilement mis à l’échelle. Une application monolithique contient des fonctionnalités spécifiques à un domaine et est généralement divisée par des couches fonctionnelles telles que le serveur frontal, la logique métier et le stockage de données. Une application monolithique est mise à l’échelle en clonant l’ensemble de l’application sur plusieurs ordinateurs, comme illustré à la figure 8-1.
 
-![](containerized-microservices-images/monolithicapp.png "Monolithic application scaling approach")
+![Approche de mise à l’échelle des applications monolithiques](containerized-microservices-images/monolithicapp.png)
 
 **Figure 8-1**: approche de mise à l’échelle des applications monolithiques
 
@@ -33,7 +33,7 @@ Les microservices offrent une approche différente du développement et du dépl
 
 Les microservices peuvent être mis à l’échelle indépendamment, par rapport aux applications monolithiques géantes qui sont mises à l’échelle. Cela signifie qu’une zone fonctionnelle spécifique nécessitant plus de puissance de traitement ou de bande passante réseau pour prendre en charge la demande peut être mise à l’échelle, plutôt que de faire évoluer inutilement d’autres zones de l’application. La figure 8-2 illustre cette approche, où les microservices sont déployés et mis à l’échelle indépendamment, créant des instances de services sur plusieurs ordinateurs.
 
-![](containerized-microservices-images/microservicesapp.png "Microservices application scaling approach")
+![Approche de mise à l’échelle des applications de microservices](containerized-microservices-images/microservicesapp.png)
 
 **Figure 8-2**: approche de mise à l’échelle des applications de microservices
 
@@ -67,7 +67,7 @@ Un conteneur est un environnement d’exploitation portable, contrôlé par les 
 
 Il existe de nombreuses similitudes entre les conteneurs et les machines virtuelles, comme illustré dans la figure 8-3.
 
-![](containerized-microservices-images/containersvsvirtualmachines.png "Microservices application scaling approach")
+![Approche de mise à l’échelle des applications de microservices](containerized-microservices-images/containersvsvirtualmachines.png)
 
 **Figure 8-3**: comparaison des machines virtuelles et des conteneurs
 
@@ -87,7 +87,7 @@ Les entreprises adoptent de plus en plus de conteneurs lors de l’implémentati
 
 L’application de référence eShopOnContainers utilise Dockr pour héberger quatre microservices back-end en conteneur, comme illustré dans la figure 8-4.
 
-![](containerized-microservices-images/microservicesarchitecture.png "eShopOnContainers reference application back-end microservices")
+![microservices principaux de l’application de référence eShopOnContainers](containerized-microservices-images/microservicesarchitecture.png)
 
 **Figure 8-4**: microservices back-end de l’application de référence eShopOnContainers
 
@@ -101,7 +101,7 @@ Pour plus d’informations sur l’application de référence, consultez [micros
 
 L’application mobile eShopOnContainers communique avec les microservices back-end en conteneur à l’aide de la communication directe entre les clients et les *microservices* , illustrée dans la figure 8-5.
 
-![](containerized-microservices-images/directclienttomicroservicecommunication.png "Microservices application scaling approach")
+![Approche de mise à l’échelle des applications de microservices](containerized-microservices-images/directclienttomicroservicecommunication.png)
 
 **Figure 8-5**: communication directe entre les clients et les microservices
 
@@ -120,19 +120,19 @@ Les communications asynchrones basées sur les événements sont critiques lors 
 
 Un bus d’événements permet la communication de publication-abonnement entre les microservices, sans exiger que les composants soient explicitement conscients l’un de l’autre, comme illustré dans la figure 8-6.
 
-![](containerized-microservices-images/eventbus.png "Publish-subscribe with an event bus")
+![Publier-s’abonner avec un bus d’événements](containerized-microservices-images/eventbus.png)
 
 **Figure 8-6 :** Publier-s’abonner avec un bus d’événements
 
 Du point de vue de l’application, le bus d’événements est simplement un canal de publication-abonnement exposé via une interface. Toutefois, la façon dont le bus d’événements est implémenté peut varier. Par exemple, une implémentation du bus d’événements peut utiliser RabbitMQ, Azure Service Bus ou d’autres bus de service tels que NServiceBus et MassTransit. La figure 8-7 montre comment un bus d’événements est utilisé dans l’application de référence eShopOnContainers.
 
-![](containerized-microservices-images/microservicesarchitecturewitheventbus.png "Asynchronous event-driven communication in the reference application")
+![Communication asynchrone pilotée par les événements dans l’application de référence](containerized-microservices-images/microservicesarchitecturewitheventbus.png)
 
 **Figure 8-7 :** Communication asynchrone pilotée par les événements dans l’application de référence
 
 Le bus d’événements eShopOnContainers, implémenté à l’aide de RabbitMQ, offre une fonctionnalité de publication-abonnement asynchrone d’un à plusieurs. Cela signifie qu’après la publication d’un événement, plusieurs abonnés peuvent écouter le même événement. La figure 8-9 illustre cette relation.
 
-![](containerized-microservices-images/eventdrivencommunication.png "One-to-many communication")
+![Communication un-à-plusieurs](containerized-microservices-images/eventdrivencommunication.png)
 
 **Figure 8-9**: communication un-à-plusieurs
 
@@ -149,7 +149,7 @@ Les microservices offrent une approche du développement et du déploiement d’
 
 Un conteneur est un environnement d’exploitation portable, contrôlé par les ressources et isolé, dans lequel une application peut s’exécuter sans toucher aux ressources d’autres conteneurs ou à l’hôte. Les entreprises adoptent de plus en plus de conteneurs lors de l’implémentation d’applications basées sur des microservices, et l’arrimeur est devenu l’implémentation de conteneur standard adoptée par la plupart des plateformes logicielles et des fournisseurs de Cloud.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Télécharger le livre électronique (PDF de 2 Mo)](https://aka.ms/xamarinpatternsebook)
 - [eShopOnContainers (GitHub) (exemple)](https://github.com/dotnet-architecture/eShopOnContainers)

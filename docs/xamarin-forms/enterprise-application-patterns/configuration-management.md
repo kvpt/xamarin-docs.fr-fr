@@ -10,12 +10,12 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f6f61503f619c08ed3e4eae2adf6ddb2c474f99f
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 6def31ebfe2a619f1d5db1e0fba071494afbcd3e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84571478"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931961"
 ---
 # <a name="configuration-management"></a>Gestion de la configuration
 
@@ -124,7 +124,7 @@ Chaque fois que la `BaseEndpoint` propriété est définie, la `UpdateEndpoint` 
 
 Dans l’application mobile eShopOnContainers, le `SettingsView` expose deux paramètres utilisateur. Ces paramètres permettent de configurer si l’application doit récupérer des données à partir de microservices qui sont déployés en tant que conteneurs d’ancrage, ou si l’application doit récupérer des données à partir de services fictifs qui ne nécessitent pas de connexion Internet. Lorsque vous choisissez de récupérer des données à partir de microservices en conteneur, vous devez spécifier une URL de point de terminaison de base pour les microservices. La figure 7-1 montre le `SettingsView` moment où l’utilisateur a choisi de récupérer des données à partir de microservices en conteneur.
 
-![](configuration-management-images/settings-endpoint.png "User settings exposed by the eShopOnContainers mobile app")
+![Paramètres utilisateur exposés par l’application mobile eShopOnContainers](configuration-management-images/settings-endpoint.png)
 
 **Figure 7-1**: paramètres utilisateur exposés par l’application mobile eShopOnContainers
 
@@ -188,7 +188,7 @@ Les paramètres permettent de séparer les données qui configurent le comportem
 
 La bibliothèque Xam. plugins. Settings fournit une approche multiplateforme, de type sécurisé et cohérente pour la persistance et la récupération des paramètres de l’application et de l’utilisateur, et la liaison de données peut être utilisée pour accéder aux paramètres créés avec la bibliothèque.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Télécharger le livre électronique (PDF de 2 Mo)](https://aka.ms/xamarinpatternsebook)
 - [eShopOnContainers (GitHub) (exemple)](https://github.com/dotnet-architecture/eShopOnContainers)

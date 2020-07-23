@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 81ad57119ff7271094966cf9b0c372876646f81b
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: d8dcf64f9a905557bea69402bcaf7fcfb51fb10b
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573428"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86928573"
 ---
 # <a name="programmatic-layout-constraints-in-xamarinios"></a>Contraintes de disposition par programmation dans Xamarin. iOS
 
@@ -69,7 +69,7 @@ OrangeView.HeightAnchor.ConstraintEqualTo (OrangeView.WidthAnchor, 2.0f);
 
 Une contrainte de disposition classique peut être exprimée simplement comme une expression linéaire. Prenons l’exemple suivant :
 
-[![](programmatic-layout-constraints-images/graph01.png "A Layout Constraint expressed as a linear expression")](programmatic-layout-constraints-images/graph01.png#lightbox)
+[![Contrainte de disposition exprimée sous la forme d’une expression linéaire](programmatic-layout-constraints-images/graph01.png)](programmatic-layout-constraints-images/graph01.png#lightbox)
 
 Qui serait converti en la ligne suivante de code C# à l’aide d’ancres de disposition :
 
@@ -159,7 +159,7 @@ Pour obtenir des exemples de spécification de contraintes courantes et de la gr
 
 Ce guide a présenté la création et l’utilisation de contraintes de mise en page automatique en C#, par opposition à leur création graphique dans le concepteur iOS. Tout d’abord, il a vu à l’aide des ancres de disposition ( `NSLayoutAnchor` ) pour gérer la disposition automatique. Ensuite, il a montré comment utiliser les contraintes de disposition ( `NSLayoutConstraint` ). Enfin, il a présenté l’utilisation de la langue de format visuel pour la disposition automatique.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Introduction aux storyboards](~/ios/user-interface/storyboards/index.md)
 - [Procédures pas à pas pour les contrôles iOS](~/ios/user-interface/designer/ios-designable-controls-walkthrough.md)

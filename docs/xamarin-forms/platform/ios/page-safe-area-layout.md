@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5ca30481fbc0e5631ff75000c688dd805793e670
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 5bab1166ade7a5eeebbb720fa48f6116b4ec95d0
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84128054"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933709"
 ---
 # <a name="safe-area-layout-guide-on-ios"></a>Guide de disposition en zone sécurisée sur iOS
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Ce spécifique à la plateforme iOS est utilisé pour s’assurer que le contenu de la page est positionné sur une zone de l’écran qui est sécurisée pour tous les appareils qui utilisent iOS 11 et versions ultérieures. Plus précisément, il permet de s’assurer que le contenu n’est pas coupé par des angles de périphérique arrondis, l’indicateur de début ou le boîtier du capteur sur un iPhone X. Il est consommé en XAML en affectant `Page.UseSafeArea` une valeur à la propriété jointe `boolean` :
 
@@ -48,7 +48,7 @@ La `Page.On<iOS>` méthode spécifie que ce spécifique à la plateforme s’ex�
 
 Le résultat est que le contenu de la page peut être positionné sur une zone de l’écran qui est sûre pour tous les iPhone :
 
-[![](page-safe-area-images/safe-area-layout.png "Safe Area Layout Guide")](page-safe-area-images/safe-area-layout-large.png#lightbox "Safe Area Layout Guide")
+[![Repère de disposition de zone protégée](page-safe-area-images/safe-area-layout.png)](page-safe-area-images/safe-area-layout-large.png#lightbox "Repère de disposition de zone protégée")
 
 > [!NOTE]
 > La zone sécurisée définie par Apple est utilisée dans Xamarin.Forms pour définir la [`Page.Padding`](xref:Xamarin.Forms.Page.Padding) propriété et remplace toutes les valeurs précédentes de cette propriété qui ont été définies.

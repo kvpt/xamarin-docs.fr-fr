@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: c73be27ed82a643b01528ccba3887f59beeceb53
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 91ead74f1ae26e10046b1e57d722e84014546108
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574052"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929023"
 ---
 # <a name="troubleshooting-tvos-apps-built-with-xamarin"></a>Dépannage des applications tvOS générées avec Xamarin
 
@@ -47,7 +47,7 @@ Pour résoudre ce problème, procédez comme suit :
 1. Dans Visual Studio pour Mac, cliquez avec le bouton droit sur votre fichier projet Xamarin. tvOS dans le **Explorateur de solutions** et sélectionnez **options**.
 2. Sélectionnez **TvOS Build** et assurez-vous que vous êtes dans la configuration **Release** : 
 
-    [![](troubleshooting-images/ts01.png "Select tvOS Build options")](troubleshooting-images/ts01.png#lightbox)
+    [![Sélectionner les options de build tvOS](troubleshooting-images/ts01.png)](troubleshooting-images/ts01.png#lightbox)
 3. Ajoutez `--bitcode=asmonly` le champ **arguments mTouch supplémentaires** , puis cliquez sur le bouton **OK** .
 4. Régénérez votre application dans la configuration **Release** .
 
@@ -125,7 +125,7 @@ Recompilez votre application pour qu’elle soit publiée et renvoyez-la à iTun
 
 Si vous utilisez une bibliothèque tierce (telle que l’utilisation de plusieurs jeux) et que la compilation de la version a échoué avec une longue série de messages d’erreur se terminant par `Task "MTouch" execution -- FAILED` , essayez `-gcc_flags="-framework OpenAL"` d’ajouter à vos **arguments tactiles supplémentaires**:
 
-[![](troubleshooting-images/mtouch01.png "Task MTouch execution")](troubleshooting-images/mtouch01.png#lightbox)
+[![Exécution de la tâche MTouch](troubleshooting-images/mtouch01.png)](troubleshooting-images/mtouch01.png#lightbox)
 
 Vous devez également inclure `--bitcode=asmonly` dans les **arguments tactiles supplémentaires**, faire en sorte que vos options de l’éditeur de liens aient la valeur **lier tout** et effectuer une compilation propre.
 
@@ -200,7 +200,7 @@ Notez que le numéro de profil dans le chemin d’accès doit correspondre au nu
 
 Ce fichier étant en place, vous devez être en mesure d’ajouter le fichier PCL au projet Xamarin. tvOS.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Exemples tvOS](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
 - [tvOS](https://developer.apple.com/tvos/)

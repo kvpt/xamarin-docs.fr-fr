@@ -10,16 +10,16 @@ ms.date: 05/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ff384605b35f6406b628da99de500b550da811c9
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: ac7b90fb3e70fd07fcafe78a68136338469862e0
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136056"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936368"
 ---
 # <a name="perceived-emotion-recognition-using-the-face-api"></a>Reconnaissance des émotions perçues à l’aide de l’API Visage
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
 La API Visage peut effectuer la détection d’émotion pour détecter colère, satentant, dégoût, peur, bonheur, neutral, tristesse et surprise, dans une expression faciale basée sur des annotations perçues par des codeurs humains. Il est important de noter, cependant, que les expressions faciales seules ne peuvent pas nécessairement représenter les États internes des personnes.
 
@@ -178,7 +178,7 @@ emotionResultLabel.Text = faces.FirstOrDefault().FaceAttributes.Emotion.ToRanked
 
 La capture d’écran suivante montre le résultat du processus de reconnaissance des émotions dans l’exemple d’application :
 
-![](emotion-recognition-images/emotion-recognition.png "Emotion Recognition")
+![Reconnaissance des émotions](emotion-recognition-images/emotion-recognition.png)
 
 ## <a name="related-links"></a>Liens connexes
 

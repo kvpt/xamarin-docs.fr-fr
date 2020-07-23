@@ -10,18 +10,18 @@ ms.date: 04/06/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 67db30b5caadce75a41755530db2b245562d0304
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: f265d1da894b195402c91cbf9468a11837c53bcf
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84135822"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933707"
 ---
 # <a name="create-xamarinforms-behaviors"></a>Créer des Xamarin.Forms comportements
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-numericvalidationbehavior)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-numericvalidationbehavior)
 
-_Les comportements Xamarin. Forms sont créés en dérivant de la classe Behavior ou Behavior &lt; T &gt; . Cet article montre comment créer et utiliser des Xamarin.Forms comportements._
+_Xamarin.Formsles comportements sont créés en dérivant de la classe Behavior ou Behavior &lt; T &gt; . Cet article montre comment créer et utiliser des Xamarin.Forms comportements._
 
 ## <a name="overview"></a>Vue d’ensemble
 
@@ -113,7 +113,7 @@ entry.Behaviors.Add (new NumericValidationBehavior ());
 
 Lors de l’exécution, le comportement répond à l’interaction avec le contrôle en fonction de l’implémentation de comportement. Les captures d’écran suivantes illustrent le comportement répondant à une entrée non valide :
 
-[![](creating-images/screenshots-sml.png "Sample Application with Xamarin.Forms Behavior")](creating-images/screenshots.png#lightbox "Sample Application with Xamarin.Forms Behavior")
+[![Exemple d’application avec Xamarin.Forms comportement](creating-images/screenshots-sml.png)](creating-images/screenshots.png#lightbox "Exemple d’application avec [ ! Opérationnel. Comportement NO-LOC (Xamarin. Forms)]")
 
 > [!NOTE]
 > Les comportements sont écrits pour un type de contrôle spécifique (ou une superclasse qui peut s’appliquer à de nombreux contrôles) et doivent être ajoutés à un contrôle compatible uniquement. La tentative d’attachement d’un comportement à un contrôle incompatible entraîne la levée d’une exception.
@@ -211,7 +211,7 @@ De plus, notez que les comportements ne sont pas supprimés implicitement des co
 
 Cet article a montré comment créer et utiliser des Xamarin.Forms comportements. Xamarin.Formsles comportements sont créés par dérivation à partir de [`Behavior`](xref:Xamarin.Forms.Behavior) la [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) classe ou.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Xamarin.FormsComportement (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-numericvalidationbehavior)
 - [Xamarin.FormsComportement appliqué avec un style (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-numericvalidationbehaviorstyle)

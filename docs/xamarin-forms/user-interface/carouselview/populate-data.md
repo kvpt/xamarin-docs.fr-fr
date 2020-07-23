@@ -10,18 +10,18 @@ ms.date: 04/29/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1081bfafae8e4d7a7a522414e9b45cde48037f1d
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e8898120ae234c13c6650a7c818796fd25fa1101
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136550"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929111"
 ---
 # <a name="xamarinforms-carouselview-data"></a>Xamarin.FormsDonnées CarouselView
 
-![](~/media/shared/preview.png "This API is currently pre-release")
+![API de la version préliminaire](~/media/shared/preview.png "Cette API est actuellement en préversion.")
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView)comprend les propriétés suivantes qui définissent les données à afficher et leur apparence :
 
@@ -289,7 +289,7 @@ Dans cet exemple, le `IndicatorView` est rendu sous le `CarouselView` , avec un 
 
 Pour plus d’informations sur les indicateurs, consultez [ Xamarin.Forms IndicatorView](~/xamarin-forms/user-interface/indicatorview.md).
 
-## <a name="context-menus"></a>Les menus contextuels :
+## <a name="context-menus"></a>Menu contextuels
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView)prend en charge les menus contextuels pour les éléments de données via `SwipeView` , qui révèle le menu contextuel avec un mouvement de balayage. Le `SwipeView` est un contrôle conteneur qui encapsule un élément de contenu et fournit des éléments de menu contextuel pour cet élément de contenu. Par conséquent, les menus contextuels sont implémentés pour un `CarouselView` en créant un `SwipeView` qui définit le contenu que le `SwipeView` encapsule et les éléments de menu contextuel qui sont révélés par le mouvement de balayage. Pour cela, `SwipeView` vous devez ajouter un au [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) qui définit l’apparence de chaque élément de données dans le `CarouselView` :
 

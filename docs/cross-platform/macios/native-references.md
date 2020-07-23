@@ -6,12 +6,12 @@ ms.assetid: E53185FB-CEF5-4AB5-94F9-CC9B57C52300
 author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: a06bc0cb91ff3d3894bb7be5bbb275aca35da07d
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: e2f874446b48726afc2218e5cdcac9b8736e1681
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84570958"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930440"
 ---
 # <a name="native-references-in-ios-mac-and-bindings-projects"></a>Références natives dans les projets iOS, Mac et Bindings
 
@@ -73,13 +73,13 @@ L’étape suivante est requise pour incorporer une infrastructure dans un proje
 1. Créez ou ouvrez un projet Xamarin. iOS, Xamarin. Mac ou de liaison existant.
 2. Dans le **Explorateur de solutions**, cliquez avec le bouton droit sur le nom du projet, puis sélectionnez **Ajouter**  >  **Ajouter une référence Native**: 
 
-    [![](native-references-images/ref01.png "In the Solution Explorer, right-click on the project name and select Add Native Reference")](native-references-images/ref01.png#lightbox)
+    [![Dans le Explorateur de solutions, cliquez avec le bouton droit sur le nom du projet et sélectionnez Ajouter une référence native.](native-references-images/ref01.png)](native-references-images/ref01.png#lightbox)
 3. Dans la boîte de dialogue **ouvrir** , sélectionnez le nom de l’infrastructure Native que vous souhaitez incorporer, puis cliquez sur le bouton **ouvrir** : 
 
-    [![](native-references-images/ref02.png "Select the name of the Native Framework to embed and click the Open button")](native-references-images/ref02.png#lightbox)
+    [![Sélectionnez le nom de l’infrastructure native à incorporer, puis cliquez sur le bouton Ouvrir.](native-references-images/ref02.png)](native-references-images/ref02.png#lightbox)
 4. L’infrastructure sera ajoutée à l’arborescence du projet : 
 
-    [![](native-references-images/ref03.png "The framework will be added to the projects tree")](native-references-images/ref03.png#lightbox)
+    [![L’infrastructure sera ajoutée à l’arborescence des projets](native-references-images/ref03.png)](native-references-images/ref03.png#lightbox)
 
 Lorsque le projet est compilé, le Framework natif est incorporé dans l’offre groupée de l’application.
 

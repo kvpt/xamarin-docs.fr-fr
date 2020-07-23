@@ -10,12 +10,12 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a05de34089fdf6ad90740067b88edea0b62f55a7
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 4f30b8be762e23f84a90595a56912587cc3aa838
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84134652"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934249"
 ---
 # <a name="unit-testing-enterprise-apps"></a>Tests unitaires d’applications d’entreprise
 
@@ -55,7 +55,7 @@ public class OrderDetailViewModel : ViewModelBase
 
 La `OrderDetailViewModel` classe a une dépendance sur le `IOrderService` type que le conteneur résout lorsqu’il instancie un `OrderDetailViewModel` objet. Toutefois, au lieu de créer un `OrderService` objet pour effectuer un test unitaire de la `OrderDetailViewModel` classe, remplacez plutôt l' `OrderService` objet par un simulacre dans le cadre des tests. La figure 10-1 illustre cette relation.
 
-![](unit-testing-images/unittesting.png "Classes that implement the IOrderService interface")
+![Classes qui implémentent l’interface IOrderService](unit-testing-images/unittesting.png)
 
 **Figure 10-1 :** Classes qui implémentent l’interface IOrderService
 
@@ -229,7 +229,7 @@ Le comportement d’un objet testé peut être isolé en remplaçant les objets 
 
 Le test de modèles et de vues à partir d’applications MVVM est identique au test de toute autre classe, et les mêmes outils et techniques peuvent être utilisés.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Télécharger le livre électronique (PDF de 2 Mo)](https://aka.ms/xamarinpatternsebook)
 - [eShopOnContainers (GitHub) (exemple)](https://github.com/dotnet-architecture/eShopOnContainers)

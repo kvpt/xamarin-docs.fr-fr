@@ -10,18 +10,18 @@ ms.date: 02/17/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b835847fea39e1c2f968e7b81fb9d22f68ea461c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 04669479bb321da4fee6c45fd0f2c00deb5bbf1a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84140099"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929725"
 ---
 # <a name="device-styles-in-xamarinforms"></a>Styles de périphérique dansXamarin.Forms
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-dynamicstyles)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-dynamicstyles)
 
-_Xamarin. Forms comprend six styles dynamiques, appelés « styles de périphérique », dans la classe Device. styles._
+_Xamarin.Formscomprend six styles dynamiques, appelés styles de périphérique, dans la classe Device. styles._
 
 Les styles d' *appareil* sont les suivants :
 
@@ -70,7 +70,7 @@ L’exemple de code suivant montre comment utiliser les styles d' *appareil* dan
 
 Les styles d’appareil sont liés à à l’aide de l' `DynamicResource` extension de balisage. La nature dynamique des styles peut être vue dans iOS en modifiant les paramètres d' **accessibilité** pour la taille du texte. L’apparence des styles d' *appareil* est différente sur chaque plateforme, comme illustré dans les captures d’écran suivantes :
 
-![](device-images/device-styles.png "Device Styles on Each Platform")
+![Styles de périphériques sur chaque plateforme](device-images/device-styles.png)
 
 Les styles d' *appareil* peuvent également être dérivés de en affectant [`BaseResourceKey`](xref:Xamarin.Forms.Style.BaseResourceKey) à la propriété le nom de clé du style d’appareil. Dans l’exemple de code ci-dessus, `myBodyStyle` hérite de [`BodyStyle`](xref:Xamarin.Forms.Device.Styles.BodyStyle) et définit une couleur de texte accentuée. Pour plus d’informations sur l’héritage de style dynamique, consultez [héritage de style dynamique](~/xamarin-forms/user-interface/styles/xaml/dynamic.md#dynamic-style-inheritance).
 
@@ -120,11 +120,11 @@ Les styles de *périphérique* respectent les préférences d’accessibilité, 
 
 Les captures d’écran suivantes montrent les styles de périphérique sur chaque plateforme, avec la plus petite taille de police accessible :
 
-[![](device-images/minimum-size.png "Accessible Small Device Styles on Each Platform")](device-images/minimum-size-large.png#lightbox "Accessible Small Device Styles on Each Platform")
+[![Petits styles d’appareils accessibles sur chaque plateforme](device-images/minimum-size.png)](device-images/minimum-size-large.png#lightbox "Petits styles d’appareils accessibles sur chaque plateforme")
 
 Les captures d’écran suivantes illustrent les styles de périphérique sur chaque plateforme, avec la taille de police accessible la plus grande :
 
-![](device-images/maximum-size.png "Accessible Large Device Styles on Each Platform")
+![Accessibilité des grands styles d’appareils sur chaque plateforme](device-images/maximum-size.png)
 
 ## <a name="related-links"></a>Liens connexes
 

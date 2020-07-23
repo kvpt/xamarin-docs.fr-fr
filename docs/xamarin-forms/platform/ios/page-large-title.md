@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0db20620870340386ccd0cedf7f98cb2975527ba
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 88761472c4beae3f40f2ca6852eea4db8276c4c9
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84128040"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930679"
 ---
 # <a name="large-page-titles-on-ios"></a>Titres de page de grande taille sur iOS
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Ce spécifique à la plateforme iOS est utilisé pour afficher le titre de la page sous la forme d’un grand titre dans la barre de navigation d’un [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) , pour les appareils qui utilisent iOS 11 ou une version ultérieure. Un titre de grande taille est aligné à gauche et utilise une police plus grande, et passe à un titre standard lorsque l’utilisateur commence à faire défiler le contenu, afin que l’ensemble de l’écran soit utilisé efficacement. Toutefois, dans l’orientation paysage, le titre revient au centre de la barre de navigation pour optimiser la disposition du contenu. Il est consommé en XAML en affectant `NavigationPage.PrefersLargeTitles` une valeur à la propriété jointe `boolean` :
 
@@ -100,7 +100,7 @@ switch (On<iOS>().LargeTitleDisplay())
 
 Le résultat est qu’un spécifié `LargeTitleDisplayMode` est appliqué au [`Page`](xref:Xamarin.Forms.Page) , qui contrôle le comportement du titre volumineux :
 
-![](page-large-title-images/large-title.png "Blur Effect Platform-Specific")
+![Effet de flou propre à la plateforme](page-large-title-images/large-title.png)
 
 ## <a name="related-links"></a>Liens connexes
 

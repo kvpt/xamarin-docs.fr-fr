@@ -10,12 +10,12 @@ ms.date: 08/08/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8b712b2a5d7eeb2ee5e71047b9e6c460eb10d72a
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 5550ea7a355492f724459449f3b37cdcb8d05b1e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84573831"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932143"
 ---
 # <a name="authentication-and-authorization"></a>Authentification et autorisation
 
@@ -42,7 +42,7 @@ La combinaison de OpenID Connect et OAuth 2,0 combine les deux problèmes de sé
 
 Dans les applications qui utilisent la communication directe entre les clients et les microservices, telle que l’application de référence eShopOnContainers, un microservice d’authentification dédié agissant comme un service d’émission de jeton de sécurité (STS) peut être utilisé pour authentifier les utilisateurs, comme illustré dans la figure 9-1. Pour plus d’informations sur la communication directe entre les clients et les microservices, consultez [communication entre le client et les microservices](~/xamarin-forms/enterprise-application-patterns/containerized-microservices.md#communication-between-client-and-microservices).
 
-![](authentication-and-authorization-images/authentication.png "Authentication by a dedicated authentication microservice")
+![Authentification par un microservice d’authentification dédié](authentication-and-authorization-images/authentication.png)
 
 **Figure 9-1 :** Authentification par un microservice d’authentification dédié
 
@@ -224,7 +224,7 @@ Pour que IdentityServer émette des jetons pour le compte d’un utilisateur, l�
 
 L’application mobile eShopOnContainers s’authentifie auprès de IdentityServer avec le schéma d’authentification hybride, illustré dans la figure 9-2.
 
-![](authentication-and-authorization-images/sign-in.png "High-level overview of the sign-in process")
+![Vue d’ensemble globale du processus de connexion](authentication-and-authorization-images/sign-in.png)
 
 **Figure 9-2 :** Vue d’ensemble globale du processus de connexion
 
@@ -232,7 +232,7 @@ Une demande de connexion est effectuée `<base endpoint>:5105/connect/authorize`
 
 L’application mobile eShopOnContainers se déconnecte de IdentityServer en envoyant une requête à `<base endpoint>:5105/connect/endsession` , avec des paramètres supplémentaires. Une fois la déconnexion effectuée, IdentityServer répond en renvoyant un URI de redirection de déconnexion de publication à l’application mobile. La figure 9-3 illustre ce processus.
 
-![](authentication-and-authorization-images/sign-out.png "High-level overview of the sign-out process")
+![Vue d’ensemble globale du processus de déconnexion](authentication-and-authorization-images/sign-out.png)
 
 **Figure 9-3 :** Vue d’ensemble globale du processus de déconnexion
 
@@ -288,7 +288,7 @@ Cette méthode crée l’URI pour le [point de terminaison d’autorisation](htt
 
 L’URI retourné est stocké dans la `LoginUrl` propriété de la `LoginViewModel` classe. Lorsque la `IsLogin` propriété devient `true` , le [`WebView`](xref:Xamarin.Forms.WebView) dans le `LoginView` devient visible. Les `WebView` données lient sa [`Source`](xref:Xamarin.Forms.WebView.Source) propriété à la `LoginUrl` propriété de la `LoginViewModel` classe, ce qui fait une demande de connexion à IdentityServer lorsque la `LoginUrl` propriété est définie sur le point de terminaison d’autorisation de IdentityServer. Quand IdentityServer reçoit cette demande et que l’utilisateur n’est pas authentifié, le `WebView` est redirigé vers la page de connexion configurée, comme illustré à la Figure 9-4.
 
-![](authentication-and-authorization-images/login.png "Login page displayed by the WebView")
+![Page de connexion affichée par la WebView](authentication-and-authorization-images/login.png)
 
 **Figure 9-4 :** Page de connexion affichée par la WebView
 
@@ -409,7 +409,7 @@ Si un utilisateur non autorisé tente d’accéder à un contrôleur ou une acti
 
 Les IdentityServer peuvent être intégrés dans le flux de travail d’autorisation afin que les jetons d’accès qu’il fournit autorisent le contrôle. Cette approche est illustrée dans la figure 9-5.
 
-![](authentication-and-authorization-images/authorization.png "Authorization by access token")
+![Autorisation par jeton d’accès](authentication-and-authorization-images/authorization.png)
 
 **Figure 9-5 :** Autorisation par jeton d’accès
 
@@ -477,7 +477,7 @@ Il existe de nombreuses approches pour intégrer l’authentification et l’aut
 
 L’application mobile demande des jetons de sécurité à partir de IdentityServer, soit pour authentifier un utilisateur, soit pour accéder à une ressource. Lors de l’accès à une ressource, un jeton d’accès doit être inclus dans la demande aux API qui nécessitent une autorisation. L’intergiciel (middleware) de IdentityServer valide les jetons d’accès entrants pour s’assurer qu’ils sont envoyés à partir d’un émetteur approuvé et qu’ils sont valides pour être utilisés avec l’API qui les reçoit.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Télécharger le livre électronique (PDF de 2 Mo)](https://aka.ms/xamarinpatternsebook)
 - [eShopOnContainers (GitHub) (exemple)](https://github.com/dotnet-architecture/eShopOnContainers)

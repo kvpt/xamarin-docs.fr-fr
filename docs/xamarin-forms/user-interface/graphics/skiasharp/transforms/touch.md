@@ -10,22 +10,22 @@ ms.date: 09/14/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f5738f376e2a814ef1af455178c2e68135184402
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 6de2caf95d4ce983f7e97e0bc017932df534aedb
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84140164"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931857"
 ---
 # <a name="touch-manipulations"></a>Manipulations tactiles
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Utiliser des transformations de matrice pour implémenter le glissement, le pincement et la rotation tactiles_
 
 Dans les environnements tactiles multiples tels que ceux des appareils mobiles, les utilisateurs utilisent souvent leurs doigts pour manipuler des objets à l’écran. Les mouvements courants tels qu’un glisser-doigt et un pincement à deux doigts peuvent déplacer et mettre à l’échelle des objets, voire les faire pivoter. Ces mouvements sont généralement implémentés à l’aide de matrices de transformation, et cet article vous explique comment procéder.
 
-![](touch-images/touchmanipulationsexample.png "A bitmap subjected to translation, scaling, and rotation")
+![Image bitmap soumise à la translation, à la mise à l’échelle et à la rotation](touch-images/touchmanipulationsexample.png)
 
 Tous les exemples présentés ici utilisent l' Xamarin.Forms effet de suivi tactile présenté dans l’article [**appel d’événements à partir d’effets**](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md).
 
@@ -920,7 +920,7 @@ public partial class TouchManipulationPage : ContentPage
 
 Le `PaintSurface` Gestionnaire se termine en affichant un `MatrixDisplay` objet montrant la matrice tactile accumulée :
 
-[![](touch-images/touchmanipulation-small.png "Triple screenshot of the Touch Manipulation page")](touch-images/touchmanipulation-large.png#lightbox "Triple screenshot of the Touch Manipulation page")
+[![Capture d’écran triple de la page manipulation tactile](touch-images/touchmanipulation-small.png)](touch-images/touchmanipulation-large.png#lightbox "Capture d’écran triple de la page manipulation tactile")
 
 ## <a name="manipulating-multiple-bitmaps"></a>Manipulation de plusieurs bitmaps
 
@@ -1058,7 +1058,7 @@ public partial class BitmapScatterViewPage : ContentPage
 
 Le code parcourt la collection et affiche le tas des bitmaps du début à la fin de la collection :
 
-[![](touch-images/bitmapscatterview-small.png "Triple screenshot of the Bitmap Scatter View page")](touch-images/bitmapscatterview-large.png#lightbox "Triple screenshot of the Bitmap Scatter View page")
+[![Capture d’écran triple de la page de vue à nuages de points bitmap](touch-images/bitmapscatterview-small.png)](touch-images/bitmapscatterview-large.png#lightbox "Capture d’écran triple de la page de vue à nuages de points bitmap")
 
 ## <a name="single-finger-scaling"></a>Mise à l’échelle à un seul doigt
 
@@ -1271,7 +1271,7 @@ else
 
 Ce code divise efficacement la zone de l’image bitmap en une forme en losange intérieur et quatre triangles aux angles. Cela permet d’obtenir des zones plus larges aux angles pour saisir et mettre à l’échelle l’image bitmap.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

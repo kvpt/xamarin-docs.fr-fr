@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/22/2017
-ms.openlocfilehash: 41272e25570d9346751d7130ee8b52c6056f7f35
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 16ba6357c5ec31c14ecb881630d6a6b920da89c1
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84565224"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929201"
 ---
 # <a name="application-icons-in-xamarinios"></a>Icônes d’application dans Xamarin. iOS
 
@@ -30,13 +30,13 @@ De la même façon qu’une application Xamarin. iOS peut utiliser des ressource
 
 - **Icône d’application** : chaque application iOS doit définir une icône d’application. Il s’agit de l’icône sur laquelle l’utilisateur appuie sur l’écran d’accueil iOS pour lancer l’application. En outre, cette icône est utilisée par Game Center, le cas échéant. Exemple : 
 
-    [![](app-icons-images/000.png "Application Icon")](app-icons-images/000-full.png#lightbox)
+    [![Icône d’application](app-icons-images/000.png)](app-icons-images/000-full.png#lightbox)
 - **Icône Spotlight** : chaque fois que l’utilisateur entre le nom d’une application dans une recherche Spotlight, cette icône s’affiche. Exemple : 
 
-    [![](app-icons-images/000a.png "Spotlight Icon")](app-icons-images/000a-full.png#lightbox)
+    [![Icône de Spotlight](app-icons-images/000a.png)](app-icons-images/000a-full.png#lightbox)
 - **Icône des paramètres** : si l’utilisateur entre l’application **paramètres** sur son appareil iOS, cette icône s’affiche à la fin de la liste des **paramètres** de l’application. Exemple : 
 
-    [![](app-icons-images/000b.png "Settings Icon")](app-icons-images/000b-full.png#lightbox)
+    [![Icône Paramètres](app-icons-images/000b.png)](app-icons-images/000b-full.png#lightbox)
 
 Les tailles et résolutions de ressource d’image suivantes seront nécessaires pour prendre en charge tous les types d’icônes requis par une application Xamarin. iOS ciblant iOS 5 via iOS 9 (ou version ultérieure) :
 
@@ -115,15 +115,15 @@ Pour utiliser un catalogue de composants, procédez comme suit :
 2. Faites défiler jusqu’à la section **icônes iPhone** .
 3. Cliquez sur le bouton **migrer vers le catalogue d’actifs** :
 
-    ![](app-icons-images/migrate01.png "Ensure AppIcon is selected")
+    ![Vérifier que l’option AppIcon est sélectionnée](app-icons-images/migrate01.png)
 
 4. À partir de la **Explorateur de solutions**, double-cliquez sur le fichier pour l' `Assets.xcassets` ouvrir et le modifier : 
 
-    ![](app-icons-images/asset01.png "The Assets.xcassets file in the Solution Explorer")
+    ![Fichier Assets. xcassets dans le Explorateur de solutions](app-icons-images/asset01.png)
 
 5. Sélectionnez `AppIcon` dans la liste des ressources pour afficher `Icon Editor` :
 
-    ![](app-icons-images/asset02.png "The AppIcon editor")
+    ![Éditeur AppIcon](app-icons-images/asset02.png)
 
 6. Cliquez sur le type d’icône donné, puis sélectionnez un fichier image pour le type/la taille requis ou faites-le glisser dans une image à partir d’un dossier et déposez-le à la taille souhaitée.
 7. Cliquez sur le bouton **ouvrir** pour inclure l’image dans le projet et la définir dans le xcasset.
@@ -133,21 +133,21 @@ Pour utiliser un catalogue de composants, procédez comme suit :
 
 1. Double-cliquez sur * * info.  * * fichier dans le **Explorateur de solutions**:
 
-    ![](app-icons-images/icon01w.png "Select Info.plist")
+    ![Sélectionnez info. plist](app-icons-images/icon01w.png)
 
 2. Cliquez sur l’onglet **ressources visuelles** , puis cliquez sur le bouton **utiliser le catalogue de ressources** sous icônes d' **application**: 
 
-    ![](app-icons-images/icon02w.png "Select the Visual Assets tab")
+    ![Sélectionnez l’onglet ressources visuelles](app-icons-images/icon02w.png)
 
     S’il n’y a aucun bouton, mais plutôt une liste déroulante, un catalogue de ressources a déjà été ajouté à ce projet.
 
 3. À partir de la **Explorateur de solutions**, développez le dossier du **catalogue de composants** : 
 
-    ![](app-icons-images/image009.png "Expand the Asset Catalog folder")
+    ![Développer le dossier du catalogue de ressources](app-icons-images/image009.png)
 
 4. Double-cliquez sur le fichier **multimédia** pour l’ouvrir dans l’éditeur : 
 
-    ![](app-icons-images/image010.png "Open the Media file in the editor")
+    ![Ouvrir le fichier multimédia dans l’éditeur](app-icons-images/image010.png)
 
 5. Dans l' **Explorateur de propriétés** , le développeur peut sélectionner les différents types et tailles d’icônes requis.
 6. Cliquez sur le type d’icône donné et sélectionnez un fichier image pour le type/la taille requis.
@@ -171,7 +171,7 @@ Pour spécifier les illustrations iTunes, effectuez les tâches suivantes :
 1. Double-cliquez sur le `Info.plist` fichier dans le **Explorateur de solutions** pour l’ouvrir et le modifier.
 2. Faites défiler jusqu’à la section **illustrations d’iTunes** de l’éditeur : 
 
-    ![](app-icons-images/itunes01.png "Scroll to the iTunes Artwork section of the editor")
+    ![Faire défiler jusqu’à la section illustrations d’iTunes de l’éditeur](app-icons-images/itunes01.png)
 3. Pour toute image manquante, cliquez sur la miniature dans l’éditeur, sélectionnez le fichier image correspondant à l’illustration iTunes souhaitée dans la boîte de dialogue Ouvrir un fichier, puis cliquez sur le bouton **OK** .
 4. Répétez cette étape jusqu’à ce que toutes les images nécessaires aient été spécifiées pour l’application.
 
@@ -181,13 +181,13 @@ Pour spécifier les illustrations iTunes, effectuez les tâches suivantes :
 
 2. Cliquez sur l’onglet **ressources visuelles** et développez l' **illustration iTunes**: 
 
-    ![](app-icons-images/itunes01w.png "Editing iTunes Artwork in Visual Studio")
+    ![Modification d’une illustration iTunes dans Visual Studio](app-icons-images/itunes01w.png)
 3. Pour toute image manquante, cliquez sur la miniature dans l’éditeur, sélectionnez le fichier image correspondant à l’illustration iTunes souhaitée dans la boîte de dialogue Ouvrir un fichier, puis cliquez sur le bouton **ouvrir** .
 4. Répétez cette étape jusqu’à ce que toutes les images nécessaires aient été spécifiées pour l’application.
 
 -----
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Utilisation des images (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/workingwithimages)
 - [Hello, iPhone](~/ios/get-started/hello-ios/index.md)

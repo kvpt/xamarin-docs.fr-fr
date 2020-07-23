@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/13/2017
-ms.openlocfilehash: a7534ec706633a856e5e095369e29f5fdef5f6a7
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 74647a3c9128496373917e714755f5aaa7f73187
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574221"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931688"
 ---
 # <a name="app-transport-security-in-xamarinios"></a>Sécurité du transport d’application dans Xamarin. iOS
 
@@ -87,7 +87,7 @@ Selon le serveur auquel vous communiquez (surtout s’il s’agit d’un service
 
 Pour définir l’implémentation HTTPClient utilisée par une application iOS, double-cliquez sur le **projet** dans la **Explorateur de solutions** pour ouvrir les **Options du projet**. Accédez à la **Build iOS** et sélectionnez le type de client souhaité sous la liste déroulante **implémentation de httpclient** :
 
-![](ats-images/client01.png "Setting the iOS Build Options")
+![Définition des options de génération iOS](ats-images/client01.png)
 
 #### <a name="managed-handler"></a>Gestionnaire managé
 
@@ -212,7 +212,7 @@ Si votre application Xamarin. iOS doit effectuer une demande à un domaine non s
 
 Dans Visual Studio pour Mac, double-cliquez sur le `Info.plist` fichier dans le **Explorateur de solutions**, basculez vers la vue **source** et ajoutez les clés ci-dessus :
 
-[![](ats-images/ats01.png "The Source view of the Info.plist file")](ats-images/ats01.png#lightbox)
+[![Vue source du fichier info. plist](ats-images/ats01.png)](ats-images/ats01.png#lightbox)
 
 Si votre application a besoin de charger et d’afficher du contenu Web à partir de sites non sécurisés, ajoutez le code suivant au fichier **info. plist** de votre application pour que les pages Web soient correctement chargées, alors que la protection d’Apple transport Security (ATS) est toujours activée pour le reste de l’application :
 
@@ -236,7 +236,7 @@ Si vous le souhaitez, vous pouvez apporter les modifications suivantes au fichie
 
 Dans Visual Studio pour Mac, double-cliquez sur le `Info.plist` fichier dans le **Explorateur de solutions**, basculez vers la vue **source** et ajoutez les clés ci-dessus :
 
-[![](ats-images/ats02.png "The Source view of the Info.plist file")](ats-images/ats02.png#lightbox)
+[![Vue source du fichier info. plist](ats-images/ats02.png)](ats-images/ats02.png#lightbox)
 
 > [!IMPORTANT]
 > Si votre application nécessite une connexion à un site Web non sécurisé, vous devez **toujours** entrer le domaine en tant qu’exception `NSExceptionDomains` au lieu de désactiver complètement l’ATS à l’aide de `NSAllowsArbitraryLoads` . `NSAllowsArbitraryLoads`ne doit être utilisé qu’en cas d’urgence extrême.
@@ -249,7 +249,7 @@ Là encore, la désactivation de l’ATS _ne doit être utilisée qu’en_ derni
 
 Cet article a introduit la sécurité de transport d’application (ATS) et décrit son mode d’application des communications sécurisées avec Internet. Tout d’abord, nous avons abordé les modifications apportées à ATS requis pour une application Xamarin. iOS s’exécutant sur iOS 9. Nous avons ensuite abordé la maîtrise des fonctionnalités et options ATS. Enfin, nous avons abordé le choix de l’ATS dans votre application Xamarin. iOS.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Exemples iOS 9](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
 - [iOS 9 pour les développeurs](https://developer.apple.com/ios/pre-release/)

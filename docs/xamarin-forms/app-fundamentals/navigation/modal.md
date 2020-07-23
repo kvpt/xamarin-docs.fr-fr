@@ -10,18 +10,18 @@ ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: aecab26efaed9815ec6916877b5f42297821582c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: ea0d38946a773dc7571a08f999be5eb6500bfc9b
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84569606"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934496"
 ---
 # <a name="xamarinforms-modal-pages"></a>Xamarin.FormsPages modales
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-modal)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-modal)
 
-_Xamarin. Forms prend en charge les pages modales. Une page modale encourage les utilisateurs à effectuer une tâche autonome qui ne peut pas être quittée jusqu’à ce que la tâche soit terminée ou annulée. Cet article montre comment naviguer vers des pages modales._
+_Xamarin.Formsprend en charge les pages modales. Une page modale encourage les utilisateurs à effectuer une tâche autonome qui ne peut pas être quittée jusqu’à ce que la tâche soit terminée ou annulée. Cet article montre comment naviguer vers des pages modales._
 
 Cet article aborde les thèmes suivants :
 
@@ -32,11 +32,11 @@ Cet article aborde les thèmes suivants :
 
 Une page modale peut être n’importe quel type de [page](~/xamarin-forms/user-interface/controls/pages.md) pris en charge par Xamarin.Forms . Pour afficher une page modale, l’application l’envoie vers la pile modale, où elle devient la page active, comme indiqué dans le diagramme suivant :
 
-![](modal-images/pushing.png "Pushing a Page to the Modal Stack")
+![Envoi (push) d’une page dans la pile modale](modal-images/pushing.png)
 
 Pour retourner à la page précédente, l’application dépile la page actuelle de la pile modale. La nouvelle page la plus haute de la pile devient la page active, comme indiqué dans le diagramme suivant :
 
-![](modal-images/popping.png "Popping a Page from the Modal Stack")
+![Dépilation d’une page de la pile modale](modal-images/popping.png)
 
 ## <a name="performing-navigation"></a>Navigation
 
@@ -64,7 +64,7 @@ async void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
 
 Cela entraîne le `ModalPage` push de l’instance sur la pile modale, où elle devient la page active, à condition qu’un élément ait été sélectionné dans le [`ListView`](xref:Xamarin.Forms.ListView) sur l' `MainPage` instance. L’instance de `ModalPage` est présentée dans les captures d’écran suivantes :
 
-![](modal-images/modalpage.png "Modal Page Example")
+![Exemple de page modale](modal-images/modalpage.png)
 
 Lorsque [`PushModalAsync`](xref:Xamarin.Forms.INavigation.PushModalAsync*) est appelé, les événements suivants se produisent :
 
@@ -253,7 +253,7 @@ Pour plus d’informations sur la liaison de données, consultez [Notions de bas
 
 Cet article a montré comment accéder aux pages modales. Une page modale encourage les utilisateurs à effectuer une tâche autonome et ne peut pas être quittée tant que la tâche n’est pas terminée ou annulée.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Navigation entre les pages](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)
 - [Modal (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-modal)

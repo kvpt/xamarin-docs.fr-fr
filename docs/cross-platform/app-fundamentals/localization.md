@@ -6,12 +6,12 @@ ms.assetid: CC6847B2-23FB-4EDE-9F7E-EF29DD46A5C5
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: f496a831c226e377f62e2a6fab8ed328bf1be0b9
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: dab6d1ff573f0f74b3b230732aa4669ba9fda0d5
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571067"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934860"
 ---
 # <a name="localization"></a>Localisation
 
@@ -59,7 +59,7 @@ Les chaînes allemandes (par exemple) peuvent être très longues ; parfois, un
 
 Comparez les longueurs de chaîne de quelques éléments sur l’écran d’accueil iOS en anglais, allemand et japonais :
 
-[![](localization-images/language-compare-sml.png "German vs Japanese string length")](localization-images/language-compare.png#lightbox)
+[![Longueur de chaîne en allemand et japonais](localization-images/language-compare-sml.png)](localization-images/language-compare.png#lightbox)
 
 Notez que les **paramètres** en anglais (8 caractères) requièrent 13 caractères pour la traduction en allemand, mais seulement 2 caractères en japonais.
 
@@ -293,7 +293,7 @@ Continuez à lire les détails techniques de la plateforme qui vous intéresse 
 - Localisation de plateforme native [Xamarin. iOS](~/ios/app-fundamentals/localization/index.md) .
 - Localisation de la plateforme native [Xamarin. Android](~/android/app-fundamentals/localization.md) .
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Présentation de la localisation d’Apple](https://developer.apple.com/internationalization/)
 - [Liste de vérification de la localisation d’Android](https://developer.android.com/distribute/tools/localization-checklist.html)

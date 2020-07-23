@@ -10,12 +10,12 @@ ms.date: 03/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 45b7d0d20c43aa22ebde3a17552f10ceea77a48b
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 5367d7933e70c59298faacff85c1d5f533bc0776
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139137"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929279"
 ---
 # <a name="xamarin-hot-restart-preview"></a>Xamarin Hot Restart (préversion)
 
@@ -44,7 +44,7 @@ Xamarin Hot Restart vous permet de tester rapidement les modifications apportée
 
 2. Sélectionnez et cliquez sur **Appareil local** dans la barre d’outils pour lancer l’Assistant d’installation :
 
-    [![](hot-restart-images/toolbar.png "Screenshot of the Visual Studio toolbar with local device set as the debug target.")](hot-restart-images/toolbar.png)
+    [![Capture d’écran de la barre d’outils Visual Studio avec l’appareil local défini comme cible de débogage.](hot-restart-images/toolbar.png)](hot-restart-images/toolbar.png)
 
 3. Si iTunes n’est pas installé, cliquez sur **Télécharger iTunes** pour télécharger le programme d’installation. Cliquez sur **Suivant** quand l'installation d’iTunes est terminée.
 
@@ -62,7 +62,7 @@ Après la configuration initiale, votre appareil connecté apparaît dans le men
 
 Vous pouvez apporter des modifications à vos fichiers de code pendant le débogage, puis appuyer sur le bouton **Redémarrer** dans la barre d’outils de débogage ou utiliser **Ctrl+Maj+F5** pour redémarrer la session de débogage avec les nouvelles modifications appliquées :
 
-[![](hot-restart-images/restart.png "Screenshot of the debug toolbar with the restart button highlighted.")](hot-restart-images/toolbar.png)
+[![Capture d’écran de la barre d’outils de débogage avec le bouton de redémarrage sélectionné.](hot-restart-images/restart.png)](hot-restart-images/toolbar.png)
 
 Vous pouvez également utiliser le `HOTRESTART` symbole de préprocesseur pour empêcher l’exécution de certains codes lors du débogage avec redémarrage à chaud Xamarin.
 

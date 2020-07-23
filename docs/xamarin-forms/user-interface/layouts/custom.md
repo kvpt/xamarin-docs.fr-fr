@@ -10,18 +10,18 @@ ms.date: 03/29/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2c1a958bd4cb56096f554acf26756019eeb0693c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: b3063a644a48a8796b03b1a6acedbbcbfc7acbf7
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84572232"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934262"
 ---
 # <a name="create-a-custom-layout-in-xamarinforms"></a>Créer une disposition personnalisée dansXamarin.Forms
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
 
-_Xamarin. Forms définit cinq classes de disposition (StackLayout, AbsoluteLayout, RelativeLayout, Grid et FlexLayout) et chacune réorganise ses enfants d’une façon différente. Toutefois, il est parfois nécessaire d’organiser le contenu de la page à l’aide d’une disposition non fournie par Xamarin.Forms . Cet article explique comment écrire une classe de disposition personnalisée et illustre une classe WrapLayout sensible à l’orientation qui réorganise ses enfants horizontalement sur la page, puis encapsule l’affichage des enfants suivants sur des lignes supplémentaires._
+_Xamarin.Formsdéfinit cinq classes de disposition (StackLayout, AbsoluteLayout, RelativeLayout, Grid et FlexLayout) et chacune réorganise ses enfants d’une façon différente. Toutefois, il est parfois nécessaire d’organiser le contenu de la page à l’aide d’une disposition non fournie par Xamarin.Forms . Cet article explique comment écrire une classe de disposition personnalisée et illustre une classe WrapLayout sensible à l’orientation qui réorganise ses enfants horizontalement sur la page, puis encapsule l’affichage des enfants suivants sur des lignes supplémentaires._
 
 Dans Xamarin.Forms , toutes les classes de disposition dérivent de la [`Layout<T>`](xref:Xamarin.Forms.Layout`1) classe et contraignent le type générique à [`View`](xref:Xamarin.Forms.View) et à ses types dérivés. À son tour, la `Layout<T>` classe dérive de la [`Layout`](xref:Xamarin.Forms.Layout) classe, qui fournit le mécanisme permettant de positionner et de redimensionner des éléments enfants.
 
@@ -29,7 +29,7 @@ Chaque élément visuel est responsable de la détermination de sa propre taille
 
 Une compréhension approfondie de la Xamarin.Forms disposition et des cycles d’invalidation est nécessaire pour créer une disposition personnalisée. Ces cycles seront à présent abordés.
 
-## <a name="layout"></a>Layout
+## <a name="layout"></a>Mise en page
 
 La disposition commence en haut de l’arborescence d’éléments visuels par une page et se poursuit dans toutes les branches de l’arborescence d’éléments visuels pour englober chaque élément visuel d’une page. Les éléments qui sont parents d’autres éléments sont responsables du dimensionnement et du positionnement de leurs enfants par rapport à eux-mêmes.
 
@@ -40,7 +40,7 @@ La [`VisualElement`](xref:Xamarin.Forms.VisualElement) classe définit un [ `Mea
 
 Ce cycle garantit que chaque élément visuel sur la page reçoit des appels aux `Measure` `Layout` méthodes et. Le processus est illustré dans le diagramme suivant :
 
-![](custom-images/layout-cycle.png "Xamarin.Forms Layout Cycle")
+![Xamarin.FormsCycle de disposition](custom-images/layout-cycle.png)
 
 > [!NOTE]
 > Notez que les cycles de disposition peuvent également se produire sur un sous-ensemble de l’arborescence d’éléments visuels si une modification affecte la disposition. Cela comprend les éléments ajoutés ou supprimés d’une collection, tels que dans [`StackLayout`](xref:Xamarin.Forms.StackLayout) , une modification de la [`IsVisible`](xref:Xamarin.Forms.VisualElement.IsVisible) propriété d’un élément ou une modification de la taille d’un élément.
@@ -60,7 +60,7 @@ Les éléments sont invalidés en appelant la [`InvalidateMeasure`](xref:Xamarin
 
 La [`Layout`](xref:Xamarin.Forms.Layout) classe définit un gestionnaire pour l' [`MeasureInvalidated`](xref:Xamarin.Forms.VisualElement.MeasureInvalidated) événement sur chaque enfant ajouté à sa `Content` propriété ou `Children` collection, et détache le gestionnaire lorsque l’enfant est supprimé. Par conséquent, chaque élément de l’arborescence d’éléments visuels qui a des enfants est alerté chaque fois que l’un de ses enfants change de taille. Le diagramme suivant illustre la façon dont une modification de la taille d’un élément dans l’arborescence d’éléments visuels peut entraîner des modifications qui réagitent dans l’arborescence :
 
-![](custom-images/invalidation.png "Invalidation in the Visual Tree")
+![Invalidation dans l’arborescence d’éléments visuels](custom-images/invalidation.png)
 
 Toutefois, la `Layout` classe tente de limiter l’impact d’une modification de la taille d’un enfant sur la disposition d’une page. Si la disposition est restreinte, une modification de la taille de l’enfant n’affecte pas ce qui est plus élevé que la disposition parente dans l’arborescence d’éléments visuels. Toutefois, une modification de la taille d’une disposition affecte généralement la manière dont la disposition réorganise ses enfants. Par conséquent, toute modification apportée à la taille d’une disposition démarre un cycle de disposition pour la disposition, et la disposition reçoit des appels à ses [`OnMeasure`](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) [`LayoutChildren`](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) méthodes et.
 
@@ -400,13 +400,13 @@ async Task<ImageList> GetImageListAsync()
 
 Lorsque la page contenant le `WrapLayout` s’affiche, l’exemple d’application accède de façon asynchrone à un fichier JSON distant contenant une liste de photos, crée un [`Image`](xref:Xamarin.Forms.Image) élément pour chaque photo et l’ajoute à `WrapLayout` . Cela donne l’affichage illustré dans les captures d’écran suivantes :
 
-![](custom-images/portait-screenshots.png "Sample Application Portrait Screenshots")
+![Captures d’écran de l’exemple d’application portrait](custom-images/portait-screenshots.png)
 
 Les captures d’écran suivantes montrent le `WrapLayout` après sa rotation en orientation paysage :
 
-![](custom-images/landscape-ios.png "Sample iOS Application Landscape Screenshot")
-![](custom-images/landscape-android.png "Sample Android Application Landscape Screenshot")
-![](custom-images/landscape-uwp.png "Sample UWP Application Landscape Screenshot")
+![Exemple de capture d’écran paysage d’application iOS exemple de capture d’écran paysage d’application Android exemple de capture d' ](custom-images/landscape-ios.png)
+ ![ ](custom-images/landscape-android.png)
+ ![ écran paysage d’application UWP](custom-images/landscape-uwp.png)
 
 Le nombre de colonnes dans chaque ligne dépend de la taille de la photo, de la largeur de l’écran et du nombre de pixels par unité indépendante du périphérique. Les [`Image`](xref:Xamarin.Forms.Image) éléments chargent les photos de manière asynchrone et, par conséquent, la `WrapLayout` classe recevra des appels fréquents à sa [`LayoutChildren`](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) méthode, car chaque `Image` élément reçoit une nouvelle taille en fonction de la photo chargée.
 
@@ -415,6 +415,6 @@ Le nombre de colonnes dans chaque ligne dépend de la taille de la photo, de la 
 - [WrapLayout (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
 - [Dispositions personnalisées](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter26.md)
 - [Création de dispositions personnalisées dans Xamarin.Forms (vidéo)](https://www.youtube.com/watch?v=sxjOqNZFhKU)
-- [Layout\<T>](xref:Xamarin.Forms.Layout`1)
+- [Mise en page\<T>](xref:Xamarin.Forms.Layout`1)
 - [Disposition](xref:Xamarin.Forms.Layout)
 - [VisualElement](xref:Xamarin.Forms.VisualElement)

@@ -10,12 +10,12 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c35cd6e30e7843cda0431581025aa7440a21cc29
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 0a43ce2d27c8152137101d616302f6e56a57bd39
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84140047"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931974"
 ---
 # <a name="communicating-between-loosely-coupled-components"></a>Communication entre les composants faiblement couplés
 
@@ -29,7 +29,7 @@ La Xamarin.Forms [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) classe 
 
 La [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) classe fournit la fonctionnalité de publication-abonnement multidiffusion. Cela signifie qu’il peut y avoir plusieurs serveurs de publication qui publient un seul message, et il peut y avoir plusieurs abonnés qui écoutent le même message. La figure 4-1 illustre cette relation :
 
-![](communicating-between-loosely-coupled-components-images/messagingcenter.png "Multicast publish-subscribe functionality")
+![Fonctionnalité publier-s’abonner de multidiffusion](communicating-between-loosely-coupled-components-images/messagingcenter.png)
 
 **Figure 4-1 :** Fonctionnalité de publication/abonnement multidiffusion
 
@@ -127,7 +127,7 @@ Dans cet exemple, la [`Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscr
 
 La Xamarin.Forms [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) classe implémente le modèle de publication-abonnement, ce qui permet la communication basée sur les messages entre les composants qui sont peu pratiques à lier par objet et les références de type. Ce mécanisme permet aux éditeurs et aux abonnés de communiquer sans avoir une référence entre eux, ce qui contribue à réduire les dépendances entre les composants, tout en permettant aux composants d’être développés et testés indépendamment.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Télécharger le livre électronique (PDF de 2 Mo)](https://aka.ms/xamarinpatternsebook)
 - [eShopOnContainers (GitHub) (exemple)](https://github.com/dotnet-architecture/eShopOnContainers)

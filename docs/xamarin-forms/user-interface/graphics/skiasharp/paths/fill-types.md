@@ -10,22 +10,22 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c8c54f3d3815e418d2f71960dc7733711cb40ae2
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e82572d88e380997fb2435179dba824c1b3f0c2f
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139046"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936186"
 ---
 # <a name="the-path-fill-types"></a>Types de remplissage des tracés
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Découvrez les différents effets possibles avec les types de remplissage de chemin SkiaSharp_
 
 Deux contournements dans un chemin d’accès peuvent se chevaucher, et les lignes qui composent un contour unique peuvent se chevaucher. Toute zone fermée peut éventuellement être remplie, mais vous ne souhaitez peut-être pas remplir toutes les zones délimitées. Voici un exemple :
 
-![](fill-types-images/filltypeexample.png "Five-pointed star partially filles")
+![Étoile à cinq branches partiellement filles](fill-types-images/filltypeexample.png)
 
 Vous avez un peu de contrôle sur ce point. L’algorithme de remplissage est régi par la [`SKFillType`](xref:SkiaSharp.SKPath.FillType) propriété de `SKPath` , que vous affectez à un membre de l' [`SKPathFillType`](xref:SkiaSharp.SKPathFillType) énumération :
 
@@ -173,7 +173,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Normalement, le type de remplissage du chemin d’accès doit affecter uniquement les remplissages et non les traits, mais les deux `Inverse` modes affectent les remplissages et les traits. Pour les remplissages, les deux `Inverse` types remplissent les zones de manière opposée afin que la zone en dehors de l’étoile soit remplie. Pour les traits, les deux `Inverse` types colorent tout sauf le trait. L’utilisation de ces types de remplissage inverse peut produire des effets impairs, comme le montre la capture d’écran iOS :
 
-[![](fill-types-images/fivepointedstar-small.png "Triple screenshot of the Five-Pointed Star page")](fill-types-images/fivepointedstar-large.png#lightbox "Triple screenshot of the Five-Pointed Star page")
+[![Capture d’écran triple de la page en étoile à cinq branches](fill-types-images/fivepointedstar-small.png)](fill-types-images/fivepointedstar-large.png#lightbox "Capture d’écran triple de la page en étoile à cinq branches")
 
 La capture d’écran Android affiche les effets pair-impair et d’enroulement classiques, mais l’ordre du trait et du remplissage affecte également les résultats.
 
@@ -226,9 +226,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Il s’agit d’une image intéressante créée avec un minimum de code :
 
-[![](fill-types-images/overlappingcircles-small.png "Triple screenshot of the Overlapping Circles page")](fill-types-images/overlappingcircles-large.png#lightbox "Triple screenshot of the Overlapping Circles page")
+[![Capture d’écran triple de la page des cercles se chevauchant](fill-types-images/overlappingcircles-small.png)](fill-types-images/overlappingcircles-large.png#lightbox "Capture d’écran triple de la page des cercles se chevauchant")
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

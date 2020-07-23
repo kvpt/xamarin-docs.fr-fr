@@ -10,18 +10,18 @@ ms.date: 06/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 725f892a667b4e89d55266abcf69e5394b09b6a5
-ms.sourcegitcommit: ef3d4a70e70927c4f231b763842c5355f1571d15
+ms.openlocfilehash: b4369fdb7c5a35d6b9a192d9222fd82670b7e3f3
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85243803"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933586"
 ---
 # <a name="xamarinforms-shapes-ellipse"></a>Xamarin.FormsFormes : ellipse
 
-![](~/media/shared/preview.png "This API is currently pre-release")
+![API de la version préliminaire](~/media/shared/preview.png "Cette API est actuellement en préversion.")
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 La `Ellipse` classe dérive de la `Shape` classe et peut être utilisée pour dessiner des ellipses et des cercles. Pour plus d’informations sur les propriétés que la `Ellipse` classe hérite de la `Shape` classe, consultez [ Xamarin.Forms Shapes](index.md).
 
@@ -58,7 +58,7 @@ L’exemple de code XAML suivant montre comment dessiner un cercle :
 
 Dans cet exemple, un cercle rouge avec les dimensions 150 x 150 (unités indépendantes du périphérique) est dessiné :
 
-![Cercle](ellipse-images/circle.png "Circle")
+![Circle](ellipse-images/circle.png "Circle")
 
 Pour plus d’informations sur le dessin d’une ellipse en pointillés, consultez [dessiner des formes en pointillés](index.md#draw-dashed-shapes).
 

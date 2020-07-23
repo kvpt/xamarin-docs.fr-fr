@@ -6,12 +6,12 @@ ms.assetid: 852F8AB1-F9E2-4126-9C8A-12500315C599
 author: davidortinau
 ms.author: daortin
 ms.date: 03/24/2017
-ms.openlocfilehash: fb96dab2d9979a365964d4993d9c7fc7fee299f5
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: f27a95481bc590814b6031cbdd9fc9606fe0e19f
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73016548"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932520"
 ---
 # <a name="multi-process-debugging"></a>Débogage multiprocessus
 
@@ -33,28 +33,28 @@ Par défaut, Visual Studio pour Mac affiche un seul projet dans la zone **Config
 
 Pour démarrer et déboguer plusieurs processus dans Visual Studio pour Mac, vous devez créer une _configuration de solution_. Une configuration de solution décrit les projets d’une solution qui doivent être inclus lorsqu’une session de débogage est démarrée après un clic de l’utilisateur sur le bouton **Démarrer**, ou lorsque l’utilisateur appuie sur les touches &#8984;&#8617; (**Cmd-Entrée**). Dans la capture d’écran suivante, un exemple de solution avec plusieurs configurations de solution est ouvert dans Visual Studio pour Mac :
 
-![](multi-process-debugging-images/mpd01-xs.png "A solution with multiple solution configurations")
+![Solution avec plusieurs configurations de solution](multi-process-debugging-images/mpd01-xs.png)
 
 ### <a name="parts-of-the-debug-toolbar"></a>Éléments de la barre d’outils de débogage
 
 La barre d’outils de débogage permet désormais de sélectionner une configuration de solution via un menu contextuel. Cette capture d’écran montre les différents éléments qui composent la barre d’outils de débogage :
 
-![](multi-process-debugging-images/mpd02-xs.png "The parts of the debug toolbar")
+![Éléments de la barre d’outils de débogage](multi-process-debugging-images/mpd02-xs.png)
 
 1. **Configuration de la solution** : Vous pouvez cliquer sur la solution dans la barre d’outils de débogage et sélectionner la configuration dans le menu contextuel :
 
-    ![](multi-process-debugging-images/mpd03-xs.png "A sample popup with solution configurations")
+    ![Exemple de fenêtre contextuelle avec plusieurs configurations de solution](multi-process-debugging-images/mpd03-xs.png)
 
 2. **Cible de génération** : Identifie la cible de génération des projets. Cela reste inchangé par rapport aux versions antérieures de Visual Studio pour Mac.
 3. **Appareils cibles** : Permet de sélectionner les appareils sur lesquels la solution va être exécutée. Il est possible de sélectionner un appareil ou un émulateur pour chaque projet :
 
-    ![](multi-process-debugging-images/mpd04-xs.png "Popup showing the devices for a project")
+    ![Fenêtre contextuelle montrant les appareils d’un projet](multi-process-debugging-images/mpd04-xs.png)
 
 ### <a name="multiple-debug-pads"></a>Panneaux de débogage multiprocessus
 
 Lorsque la configuration à plusieurs solutions est activée, certains panneaux Visual Studio pour Mac s’affichent plusieurs fois, c’est-à-dire, une fois pour chaque processus. La capture d’écran suivante montre deux panneaux **Sortie de l’application** pour une solution exécutant deux projets :
 
-![](multi-process-debugging-images/mpd05-xs.png "Output Pad for a solution configuration")
+![Panneau de sortie d’application pour une configuration de solution](multi-process-debugging-images/mpd05-xs.png)
 
 ### <a name="multiple-processes-and-the-_active-thread_"></a>Options Multiprocessus et _Thread actif_
 
@@ -64,7 +64,7 @@ Pour résoudre ce problème, Visual Studio pour Mac n’affiche qu’un thread �
 
 Le **panneau Thread** affiche des informations sur tous les processus et tous les threads examinés dans la configuration de solution, et donne des indices visuels permettant de déterminer quel thread est actif :
 
-![](multi-process-debugging-images/mpd06-xs.png "Thread pad for a solution configuration")
+![Panneau Thread pour une configuration de solution](multi-process-debugging-images/mpd06-xs.png)
 
 Les threads sont regroupés selon le processus qui les héberge. Le nom du projet et l’ID du thread actif sont affichés en gras, et une flèche pointant vers la droite s’affiche en regard du thread actif. Dans la capture d’écran précédente, le **thread n°1** sous l’**ID de processus 48703** (**FirstProject**) est le thread actif.
 
@@ -88,7 +88,7 @@ Si seul un des projets a un point d’arrêt défini, alors seul ce processus se
 
 Pour suspendre et reprendre un processus, cliquez avec le bouton droit sur le processus, puis sélectionnez **Suspendre** ou **Reprendre** dans le menu contextuel :
 
-![](multi-process-debugging-images/mpd08-xs.png "Pause or resume in the Thread pad")
+![Options Suspendre et Reprendre dans le panneau Thread](multi-process-debugging-images/mpd08-xs.png)
 
 L’apparence de la barre d’outils de débogage change en fonction de l’état des projets en cours de débogage. Lorsque plusieurs projets sont en cours d’exécution, la barre d’outils de débogage affiche les deux boutons **Suspendre** et **Reprendre**, lorsqu’il y a au moins un projet en cours d’exécution et un projet suspendu :
 
@@ -110,7 +110,7 @@ Pour créer une configuration de solution dans Xamarin Studio :
 
 1. Ouvrez la boîte de dialogue **Options de la solution** dans Visual Studio pour Mac, puis sélectionnez **Exécuter > Configurations** :
 
-    ![](multi-process-debugging-images/mpd10-xs.png "Solution Configuration in the Solution Options dialog")
+    ![Configuration de solution dans la boîte de dialogue Options de la solution](multi-process-debugging-images/mpd10-xs.png)
 
 2. Cliquez sur le bouton **Nouveau**, entrez le nom de la nouvelle configuration de solution, puis cliquez sur **Créer**. La nouvelle configuration de solution s’affiche dans la fenêtre **Configurations** :
 
@@ -118,14 +118,14 @@ Pour créer une configuration de solution dans Xamarin Studio :
 
 3. Sélectionnez la nouvelle configuration de série de tests dans la liste de configurations. La boîte de dialogue **Options de la solution** affiche tous les projets de la solution. Cochez les projets qui doivent être démarrés lorsqu’une session de débogage est lancée :
 
-    ![](multi-process-debugging-images/mpd12-xs.png "Selecting the project to start")
+    ![Sélection des projets qui doivent être démarrés](multi-process-debugging-images/mpd12-xs.png)
 
 La configuration de solution **MultipleProjects** s’affiche désormais dans la **barre d’outils de débogage**, ce qui permet au développeur de déboguer simultanément les deux projets.
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Ce guide a abordé le débogage de plusieurs processus dans Visual Studio pour Mac. Il a abordé également certaines des modifications apportées à l’IDE pour permettre le débogage simultané de plusieurs processus, ainsi que les changements de comportement qui découlent de ces modifications.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Notes de mise en production Xamarin Cycle 9](https://releases.xamarin.com/stable-release-cycle-9/)

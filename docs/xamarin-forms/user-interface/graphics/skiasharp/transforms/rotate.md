@@ -10,22 +10,22 @@ ms.date: 03/23/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 520c4c3b61049bf17c2c964523714db196da6839
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 533cb607cc2c47bf108d5e03733f31ebfc2fe475
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84132182"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934132"
 ---
 # <a name="the-rotate-transform"></a>La transformation de rotation
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Explorez les effets et les animations possibles avec la transformation de rotation SkiaSharp_
 
 Avec la transformation de rotation, les objets graphiques SkiaSharp sautent la contrainte d’alignement avec les axes horizontal et vertical :
 
-![](rotate-images/rotateexample.png "Text rotated around a center")
+![Texte pivoté autour d’un centre](rotate-images/rotateexample.png)
 
 Pour faire pivoter un objet graphique autour du point (0, 0), SkiaSharp prend en charge à la fois une [`RotateDegrees`](xref:SkiaSharp.SKCanvas.RotateDegrees(System.Single)) méthode et une [`RotateRadians`](xref:SkiaSharp.SKCanvas.RotateRadians(System.Single)) méthode :
 
@@ -63,7 +63,7 @@ using (SKPaint textPaint = new SKPaint
 
 Étant donné que la rotation est centrée autour de l’angle supérieur gauche de la zone de dessin, pour la plupart des angles définis dans ce programme, le texte est pivoté hors de l’écran :
 
-[![](rotate-images/basicrotate-small.png "Triple screenshot of the Basic Rotate page")](rotate-images/basicrotate-large.png#lightbox "Triple screenshot of the Basic Rotate page")
+[![Capture d’écran triple de la page de rotation de base](rotate-images/basicrotate-small.png)](rotate-images/basicrotate-large.png#lightbox "Capture d’écran triple de la page de rotation de base")
 
 Très souvent, vous souhaiterez faire pivoter un point centré autour d’un point pivot spécifié à l’aide de ces versions des [`RotateDegrees`](xref:SkiaSharp.SKCanvas.RotateDegrees(System.Single,System.Single,System.Single)) [`RotateRadians`](xref:SkiaSharp.SKCanvas.RotateRadians(System.Single,System.Single,System.Single)) méthodes et :
 
@@ -91,7 +91,7 @@ using (SKPaint textPaint = new SKPaint
 
 À présent, le texte pivote autour du point utilisé pour positionner le texte, qui est le centre horizontal de la ligne de base du texte :
 
-[![](rotate-images/centeredrotate-small.png "Triple screenshot of the Centered Rotate page")](rotate-images/centeredrotate-large.png#lightbox "Triple screenshot of the Centered Rotate page")
+[![Capture d’écran triple de la page centrée pivoter](rotate-images/centeredrotate-small.png)](rotate-images/centeredrotate-large.png#lightbox "Capture d’écran triple de la page centrée pivoter")
 
 Comme avec la version centrée de la `Scale` méthode, la version centrée de l' `RotateDegrees` appel est un raccourci. Voici la méthode :
 
@@ -145,7 +145,7 @@ Conceptuellement, les deux transformations sont appliquées dans l’ordre inver
 
 Il existe généralement plusieurs façons de combiner la rotation et la translation. La page de **texte pivoté** crée l’affichage suivant :
 
-[![](rotate-images/rotatedtext-small.png "Triple screenshot of the Rotated Text page")](rotate-images/rotatedtext-large.png#lightbox "Triple screenshot of the Rotated Text page")
+[![Capture d’écran triple de la page de texte pivotée](rotate-images/rotatedtext-small.png)](rotate-images/rotatedtext-large.png#lightbox "Capture d’écran triple de la page de texte pivotée")
 
 Voici le `PaintSurface` Gestionnaire de la [`RotatedTextPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/RotatedTextPage.cs) classe :
 
@@ -369,11 +369,11 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 L’horloge est certainement fonctionnelle bien que les mains soient plutôt brutes :
 
-[![](rotate-images/uglyanalogclock-small.png "Triple screenshot of the Ugly Analog Clock Text page")](rotate-images/uglyanalogclock-large.png#lightbox "Triple screenshot of the Ugly Analog page")
+[![Capture d’écran triple de la page de texte de l’horloge analogique](rotate-images/uglyanalogclock-small.png)](rotate-images/uglyanalogclock-large.png#lightbox "Capture d’écran triple de la page analogique")
 
 Pour obtenir une horloge plus attrayante, consultez l’article [**données du chemin d’accès SVG dans SkiaSharp**](../curves/path-data.md).
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

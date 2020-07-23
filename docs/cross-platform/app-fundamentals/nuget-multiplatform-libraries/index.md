@@ -6,12 +6,12 @@ ms.assetid: F0A5A9BB-86CD-44C9-8EE8-74D1E5E74A30
 author: davidortinau
 ms.author: daortin
 ms.date: 07/25/2018
-ms.openlocfilehash: 5744bb9947b196ee319535729338bcf64a5cd09e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: ac8e4b2eef0905ba50cb24b9eb035d50a05dd84a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016758"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932239"
 ---
 # <a name="nuget-multiplatform-library-projects-nugetizer-3000"></a>Projets de bibliothèque multiplateforme NuGet (Nugetizer 3000)
 
@@ -19,13 +19,13 @@ _Créer automatiquement des packages NuGet pour partager du code entre les plate
 
 Il est possible de créer automatiquement des packages NuGet pour partager du code entre les plateformes à l’aide du _Nugetizer 3000_. Il est ainsi possible de créer des packages NuGet à partir de projets de bibliothèque existants ou en créant un nouveau **projet de bibliothèque multiplateforme**.
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
-Le Nugetizer 3000 est inclus dans Visual Studio pour Mac &ndash; recherchez la Bibliothèque > type de projet **Mulitplatform Library** dans le **fichier > nouvelle** fenêtre :
+Le Nugetizer 3000 est inclus dans Visual Studio pour Mac &ndash; recherchez la **bibliothèque >** type de projet de bibliothèque Mulitplatform dans le **fichier > nouvelle** fenêtre :
 
-[![](images/mulitplatform-library-sml.png "Create new Multiplatform Library window")](images/mulitplatform-library.png#lightbox)
+[![Fenêtre créer une nouvelle bibliothèque multiplateforme](images/mulitplatform-library-sml.png)](images/mulitplatform-library.png#lightbox)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Pour utiliser Nugetizer 3000 dans Visual Studio, [Téléchargez et exécutez le programme d’installation VSIX](https://bit.ly/nugetizer-2017).
 
@@ -63,4 +63,4 @@ La discussion de conception pour les projets de package NuGet (également appel�
 
 - [Cas d’usage NuGetizer-3000](https://github.com/NuGet/Home/wiki/NuGetizer-Core-Scenarios)
 - [Créer manuellement des packages NuGet pour Xamarin](~/cross-platform/app-fundamentals/nuget-manual.md)
-- [Documentation NuGet](https://docs.microsoft.com/nuget/)
+- [Documentation de NuGet](https://docs.microsoft.com/nuget/)

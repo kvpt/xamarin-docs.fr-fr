@@ -6,12 +6,12 @@ ms.assetid: 0060E9D1-C003-4E4C-ADE8-B406978FE891
 author: davidortinau
 ms.author: daortin
 ms.date: 10/27/2017
-ms.openlocfilehash: 5b4b4bdf85ec79a46a4e4c06504eb8b9b85af329
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 93c3f4dcb56710c72cdc61c25aa6481fbd27582e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84566955"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934912"
 ---
 # <a name="xamarin-profiler-troubleshooting"></a>Résolution des problèmes de Xamarin Profiler
 
@@ -43,11 +43,11 @@ Vous pouvez également enregistrer le fichier **. MLPD** pour une session active
 
 **Visual Studio pour Mac**:
 
-![](troubleshooting-images/image17.png "Saving .mlpd file in Visual Studio for Mac")
+![Enregistrement du fichier. MLPD dans Visual Studio pour Mac](troubleshooting-images/image17.png)
 
 **Visual Studio**:
 
-![](troubleshooting-images/image17-vs.png "Saving .mlpd file in Visual Studio")
+![Enregistrement du fichier. MLPD dans Visual Studio](troubleshooting-images/image17-vs.png)
 
 Il est important de noter que **. MLPD** contient un grand nombre d’informations et que la taille du fichier est importante.
 
@@ -73,7 +73,7 @@ Vérifiez les paramètres suivants pour résoudre ce qui suit :
 
 Si vous rencontrez ce message d’erreur lors de l’utilisation du profileur dans Visual Studio :
 
-![](troubleshooting-images/error.png "Error box when using the profiler in Visual Studio")
+![Boîte d’erreur lors de l’utilisation du profileur dans Visual Studio](troubleshooting-images/error.png)
 
 En règle générale, il est impossible de lancer le simulateur/émulateur. Essayez d’exécuter l’application normalement, corrigez les problèmes qu’elle fournit, puis réessayez d’utiliser le profileur.
 
@@ -87,7 +87,7 @@ RunOnUiThread (() => {
 });
 ```
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Procédure pas à pas : utilisation de l’Xamarin Profiler](~/tools/profiler/index.md)
 - [Meilleures pratiques en matière de performances et de mémoire](~/cross-platform/deploy-test/memory-perf-best-practices.md)

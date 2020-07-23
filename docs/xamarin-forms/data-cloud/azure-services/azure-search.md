@@ -10,16 +10,16 @@ ms.date: 12/05/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 33675fbb644c5967726fee29b3e235247aec633a
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 29e73f4051eda9117663992af9e710483e4b772b
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84565355"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934093"
 ---
 # <a name="search-data-with-azure-search-and-xamarinforms"></a>Rechercher des données avec Azure Search etXamarin.Forms
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azuresearch)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azuresearch)
 
 _Recherche Azure est un service Cloud qui fournit des fonctionnalités d’indexation et d’interrogation pour les données chargées. Cela supprime les exigences en matière d’infrastructure et les complexités de l’algorithme de recherche traditionnellement associées à l’implémentation de la fonctionnalité de recherche dans une application. Cet article explique comment utiliser la bibliothèque de recherche Microsoft Azure pour intégrer Azure Search dans une Xamarin.Forms application._
 
@@ -44,7 +44,7 @@ Azure Search prend également en charge la récupération de suggestions en fonc
 > [!NOTE]
 > Si vous n’avez pas [d’abonnement Azure](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing), créez un [compte gratuit](https://aka.ms/azfree-docs-mobileapps) avant de commencer.
 
-## <a name="setup"></a>Programme d’installation
+## <a name="setup"></a>Installation
 
 Le processus d’intégration d’Azure Search dans une Xamarin.Forms application est le suivant :
 
@@ -222,7 +222,7 @@ Cette requête de filtre est appliquée à la totalité de l’index et supprime
 
 La `SearchAsync` méthode retourne un `DocumentSearchResult` objet qui contient les résultats de la requête. Cet objet est énuméré, chaque `Document` objet étant créé en tant qu' `Monkey` objet et ajouté au pour l' `Monkeys` `ObservableCollection` affichage. Les captures d’écran suivantes montrent les résultats de la requête de recherche renvoyés par Azure Search :
 
-![](azure-search-images/search.png "Search Results")
+![Résultats de la recherche](azure-search-images/search.png)
 
 Pour plus d’informations sur la recherche et le filtrage, consultez [interroger votre index Azure Search à l’aide du kit de développement logiciel (SDK) .net](/azure/search/search-query-dotnet/).
 
@@ -272,7 +272,7 @@ L’effet global est que les 10 premiers résultats de l’index sont retournés
 
 La `SuggestAsync` méthode retourne un `DocumentSuggestResult` objet qui contient les résultats de la requête. Cet objet est énuméré, chaque `Document` objet étant créé en tant qu' `Monkey` objet et ajouté au pour l' `Monkeys` `ObservableCollection` affichage. Les captures d’écran suivantes montrent les résultats des suggestions renvoyées par Azure Search :
 
-![](azure-search-images/suggest.png "Suggestion Results")
+![Résultats des suggestions](azure-search-images/suggest.png)
 
 Notez que dans l’exemple d’application, la `SuggestAsync` méthode est appelée uniquement lorsque l’utilisateur finit de saisir un terme de recherche. Toutefois, il peut également être utilisé pour prendre en charge les requêtes de recherche à saisie semi-automatique en s’exécutant sur chaque pression.
 
@@ -280,7 +280,7 @@ Notez que dans l’exemple d’application, la `SuggestAsync` méthode est appel
 
 Cet article a montré comment utiliser la bibliothèque de recherche Microsoft Azure pour intégrer Azure Search dans une Xamarin.Forms application. Recherche Azure est un service Cloud qui fournit des fonctionnalités d’indexation et d’interrogation pour les données chargées. Cela supprime les exigences en matière d’infrastructure et les complexités de l’algorithme de recherche traditionnellement associées à l’implémentation de la fonctionnalité de recherche dans une application.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Recherche Azure (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azuresearch)
 - [Documentation recherche Azure](/azure/search/)

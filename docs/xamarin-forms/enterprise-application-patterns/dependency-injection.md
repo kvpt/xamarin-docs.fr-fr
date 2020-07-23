@@ -10,12 +10,12 @@ ms.date: 11/04/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 99cac3c597cf1d7351d3214ce59fd0a0a0a46400
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 8aea3ad36f6c35e9faf2771fc6b54c378c304afb
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84572349"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933599"
 ---
 # <a name="dependency-injection"></a>Injection de dépendances
 
@@ -62,7 +62,7 @@ De nombreux conteneurs d’injection de dépendances sont disponibles, avec l’
 
 Dans TinyIoC, le `TinyIoCContainer` type fournit le conteneur d’injection de dépendances. La figure 3-1 montre les dépendances lors de l’utilisation de ce conteneur, qui instancie un `IOrderService` objet et l’injecte dans la `ProfileViewModel` classe.
 
-![](dependency-injection-images/dependencyinjection.png "Dependencies example when using dependency injection")
+![Exemple de dépendances lors de l’utilisation de l’injection de dépendances](dependency-injection-images/dependencyinjection.png)
 
 **Figure 3-1 :** Dépendances lors de l’utilisation de l’injection de dépendances
 
@@ -166,7 +166,7 @@ L’injection de dépendances permet de découpler des types concrets du code qu
 
 TinyIoC est un conteneur léger qui offre des performances supérieures sur les plateformes mobiles par rapport à la majorité des conteneurs connus. Il facilite la création d’applications faiblement couplées et fournit toutes les fonctionnalités couramment utilisées dans les conteneurs d’injection de dépendances, notamment les méthodes d’enregistrement des mappages de types, la résolution des objets, la gestion des durées de vie des objets et l’injection d’objets dépendants dans des constructeurs d’objets qu’il résout.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Télécharger le livre électronique (PDF de 2 Mo)](https://aka.ms/xamarinpatternsebook)
 - [eShopOnContainers (GitHub) (exemple)](https://github.com/dotnet-architecture/eShopOnContainers)

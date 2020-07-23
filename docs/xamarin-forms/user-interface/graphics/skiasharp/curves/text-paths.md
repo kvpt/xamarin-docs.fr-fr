@@ -10,16 +10,16 @@ ms.date: 08/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b0cbb7d26a2aea02a3255fc75947c20a3d803b86
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e0964ad7d2bf517a6a4c7cf7965c346629716166
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84131896"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936017"
 ---
 # <a name="paths-and-text-in-skiasharp"></a>Chemins et texte dans SkiaSharp
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Explorer l’intersection des chemins et du texte_
 
@@ -29,7 +29,7 @@ Vous avez déjà vu que vous pouvez rayer les contours des caractères de texte 
 
 Outre l’utilisation d’un effet de tracé pour rayer un contour de caractères, vous pouvez également créer des effets de tracés basés sur un chemin d’accès dérivé d’une chaîne de caractères, et vous pouvez même combiner les deux effets :
 
-![](text-paths-images/pathsandtextsample.png "Text Path Effect")
+![Effet de tracé de texte](text-paths-images/pathsandtextsample.png)
 
 Dans l’article précédent sur les [**effets de tracé**](effects.md), vous avez vu comment la [`GetFillPath`](xref:SkiaSharp.SKPaint.GetFillPath(SkiaSharp.SKPath,SkiaSharp.SKPath,SkiaSharp.SKRect,System.Single)) méthode de `SKPaint` peut obtenir un contour d’un tracé rayé. Vous pouvez également utiliser cette méthode avec les chemins dérivés des contours de caractère.
 
@@ -49,7 +49,7 @@ La `GetTextPath` méthode est excessive si vous souhaitez simplement remplir ou 
 
 L’une de ces tâches est le découpage. La page de **texte de découpage** crée un tracé de détourage en fonction des contours de caractère du mot « code ». Ce chemin d’accès est étiré sur la taille de la page pour découper une bitmap qui contient une image du code source du **texte de découpage** :
 
-[![](text-paths-images/clippingtext-small.png "Triple screenshot of the Clipping Text page")](text-paths-images/clippingtext-large.png#lightbox "Triple screenshot of the Clipping Text page")
+[![Capture d’écran triple de la page de texte du découpage](text-paths-images/clippingtext-small.png)](text-paths-images/clippingtext-large.png#lightbox "Capture d’écran triple de la page de texte du découpage")
 
 Le [`ClippingTextPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ClippingTextPage.cs) constructeur de classe charge l’image bitmap qui est stockée en tant que ressource incorporée dans le dossier **Media** de la solution :
 
@@ -129,7 +129,7 @@ Une fois le tracé de détourage défini, l’image bitmap peut être affichée 
 
 La page **effet de tracé de texte** convertit un caractère perluète unique en tracé pour créer un effet de tracé 1D. Un objet Paint avec cet effet de tracé est ensuite utilisé pour rayer le contour d’une version plus grande de ce même caractère :
 
-[![](text-paths-images/textpatheffect-small.png "Triple screenshot of the Text Path Effect page")](text-paths-images/textpatheffect-large.png#lightbox "Triple screenshot of the Text Path Effect page")
+[![Capture d’écran triple de la page effet de tracé de texte](text-paths-images/textpatheffect-small.png)](text-paths-images/textpatheffect-large.png#lightbox "Capture d’écran triple de la page effet de tracé de texte")
 
 Une grande partie du travail de la [`TextPathEffectPath`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TextPathEffectPage.cs) classe se produit dans les champs et le constructeur. Les deux `SKPaint` objets définis en tant que champs sont utilisés à deux fins différentes : le premier (nommé `textPathPaint` ) est utilisé pour convertir l’esperluette avec un `TextSize` de 50 en chemin d’accès pour l’effet 1D Path. Le deuxième ( `textPaint` ) est utilisé pour afficher la plus grande version de l’esperluette avec cet effet de tracé. Pour cette raison, le `Style` de ce second objet Paint a la valeur `Stroke` , mais la `StrokeWidth` propriété n’est pas définie, car cette propriété n’est pas nécessaire lors de l’utilisation d’un effet 1D Path :
 
@@ -274,7 +274,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Le `PaintSurface` Gestionnaire crée alors un nouveau chemin d’accès nommé `outlinePath` . Cela devient le chemin d’accès de destination dans l’appel à `GetFillPath` . La `StrokeWidth` propriété de 25 provoque `outlinePath` la description de la structure d’un chemin d’accès à 25 pixels, en traçant les caractères de texte. Ce chemin d’accès est ensuite affiché en rouge avec une largeur de trait de 5 :
 
-[![](text-paths-images/characteroutlineoutlines-small.png "Triple screenshot of the Character Outline Outlines page")](text-paths-images/characteroutlineoutlines-large.png#lightbox "Triple screenshot of the Character Outline Outlines page")
+[![Capture d’écran triple de la page des contours de contour de caractères](text-paths-images/characteroutlineoutlines-small.png)](text-paths-images/characteroutlineoutlines-large.png#lightbox "Capture d’écran triple de la page des contours de contour de caractères")
 
 Examinez attentivement et vous verrez des chevauchements où la structure du tracé fait un angle aigu. Il s’agit d’artefacts normaux de ce processus.
 
@@ -327,11 +327,11 @@ public class CircularTextPage : ContentPage
 
 La `TextSize` propriété de `textPaint` est ensuite ajustée de sorte que la largeur du texte corresponde à la circonférence du cercle :
 
-[![](text-paths-images/circulartext-small.png "Triple screenshot of the Circular Text page")](text-paths-images/circulartext-large.png#lightbox "Triple screenshot of the Circular Text page")
+[![Capture d’écran triple de la page de texte circulaire](text-paths-images/circulartext-small.png)](text-paths-images/circulartext-large.png#lightbox "Capture d’écran triple de la page de texte circulaire")
 
 Le texte lui-même a été choisi comme étant un peu circulaire : le mot « Circle » est à la fois le sujet de la phrase et l’objet d’une phrase de préposition.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

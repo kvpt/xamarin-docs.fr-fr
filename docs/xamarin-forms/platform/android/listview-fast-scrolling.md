@@ -10,16 +10,16 @@ ms.date: 07/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 30e6a39b1a7649fbb9e09dfeeb85ee889da68fc1
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e52ee0a9b61a654ae048fd0fb4a14c402c932524
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84128802"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929830"
 ---
 # <a name="listview-fast-scrolling-on-android"></a>Défilement rapide de ListView sur Android
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Ce spécifique à la plateforme Android est utilisé pour permettre le défilement rapide des données dans un [`ListView`](xref:Xamarin.Forms.ListView) . Il est consommé en XAML en affectant `ListView.IsFastScrollEnabled` une valeur à la propriété jointe `boolean` :
 
@@ -59,7 +59,7 @@ listView.On<Android>().SetIsFastScrollEnabled(!listView.On<Android>().IsFastScro
 
 Le résultat est que le défilement rapide des données dans un [`ListView`](xref:Xamarin.Forms.ListView) peut être activé, ce qui modifie la taille du curseur de défilement :
 
-[![](listview-fast-scrolling-images/fastscroll.png "ListView FastScroll Platform-Specific")](listview-fast-scrolling-images/fastscroll-large.png#lightbox "ListView FastScroll Platform-Specific")
+[![ListView FastScroll spécifique à la plateforme](listview-fast-scrolling-images/fastscroll.png)](listview-fast-scrolling-images/fastscroll-large.png#lightbox "ListView FastScroll spécifique à la plateforme")
 
 ## <a name="related-links"></a>Liens connexes
 

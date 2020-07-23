@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: ed58694073f8d04d16cf19840a07f5210f0afb91
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 1274fc409cd20b974c44fecd87b6d1b175591710
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574065"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930167"
 ---
 # <a name="working-with-tvos-alerts-in-xamarin"></a>Utilisation des alertes tvOS dans Xamarin
 
@@ -20,7 +20,7 @@ _Cet article traite de l’utilisation de UIAlertController pour afficher un mes
 
 Si vous avez besoin d’attirer l’attention de l’utilisateur tvOS ou de demander l’autorisation d’effectuer une action destructrice (telle que la suppression d’un fichier), vous pouvez présenter un message d’alerte à l’aide des `UIAlertViewController` éléments suivants :
 
-[![](alerts-images/alert01.png "An example UIAlertViewController")](alerts-images/alert01.png#lightbox)
+[![Exemple de UIAlertViewController](alerts-images/alert01.png)](alerts-images/alert01.png#lightbox)
 
 En plus d’afficher un message, vous pouvez ajouter des boutons et des champs de texte à une alerte pour permettre à l’utilisateur de répondre aux actions et de fournir des commentaires.
 
@@ -30,7 +30,7 @@ En plus d’afficher un message, vous pouvez ajouter des boutons et des champs d
 
 Comme indiqué ci-dessus, les alertes sont utilisées pour attirer l’attention de l’utilisateur et l’informer de l’état de votre application ou demander des commentaires. Les alertes doivent présenter un titre, mais elles peuvent éventuellement avoir un message et un ou plusieurs boutons ou champs de texte.
 
-[![](alerts-images/alert04.png "An example alert")](alerts-images/alert04.png#lightbox)
+[![Un exemple d’alerte](alerts-images/alert04.png)](alerts-images/alert04.png#lightbox)
 
 Apple propose les suggestions suivantes pour l’utilisation des alertes :
 
@@ -117,11 +117,11 @@ La `AddAction` méthode ajoute l’action donnée au `UIAlertViewController` et,
 
 Outre l’ajout d’actions (boutons) à l’alerte, vous pouvez ajouter des champs de texte à l’alerte pour permettre à l’utilisateur de renseigner des informations telles que des ID utilisateur et des mots de passe :
 
-[![](alerts-images/alert02.png "Text Field in an alert")](alerts-images/alert02.png#lightbox)
+[![Champ de texte dans une alerte](alerts-images/alert02.png)](alerts-images/alert02.png#lightbox)
 
 Si l’utilisateur sélectionne le champ de texte, le clavier standard tvOS est affiché, ce qui lui permet d’entrer une valeur pour le champ :
 
-[![](alerts-images/alert03.png "Entering text")](alerts-images/alert03.png#lightbox)
+[![Entrée de texte](alerts-images/alert03.png)](alerts-images/alert03.png#lightbox)
 
 Le code suivant affiche une alerte OK/Annuler avec un champ de texte unique pour l’entrée d’une valeur :
 
@@ -367,7 +367,7 @@ partial void DisplayTextInputAlert (Foundation.NSObject sender) {
 
 Cet article traite de l’utilisation de `UIAlertController` pour afficher un message d’alerte à l’utilisateur dans Xamarin. tvOS. Tout d’abord, il a montré comment afficher une alerte simple et ajouter des boutons. Ensuite, il a montré comment ajouter des champs de texte à une alerte. Enfin, il a montré comment utiliser une classe d’assistance pour réduire la quantité de code répétitif nécessaire à l’affichage d’une alerte.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Exemples tvOS](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
 - [tvOS](https://developer.apple.com/tvos/)

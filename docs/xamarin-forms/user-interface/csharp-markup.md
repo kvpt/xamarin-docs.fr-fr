@@ -10,18 +10,18 @@ ms.date: 05/15/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 939727d3dd8d419cdc020d33d3e7241dcedb8158
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 279df31eeda506d6780533bac8ae190f799424a3
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137746"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936030"
 ---
 # <a name="xamarinforms-c-markup"></a>Xamarin.FormsBalisage C#
 
-![](~/media/shared/preview.png "This API is currently pre-release")
+![API de la version préliminaire](~/media/shared/preview.png "Cette API est actuellement en préversion.")
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-csharpmarkupdemos/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-csharpmarkupdemos/)
 
 Le balisage C# est un ensemble de méthodes et de classes d’assistance Fluent pour simplifier le processus de création d' Xamarin.Forms interfaces utilisateur déclaratives en C#. L’API Fluent fournie par le balisage C# est disponible dans l' `Xamarin.Forms.Markup` espace de noms.
 
@@ -231,7 +231,7 @@ new Label { Text = "Tap Me" }
 
 Étant donné qu’un module de reconnaissance de mouvement est un `BindableObject` , vous pouvez utiliser les `Bind` `BindCommand` méthodes d’extension et lorsque vous l’initialisez. Vous pouvez également initialiser des types de module de reconnaissance de mouvement personnalisés avec la `Gesture<TGestureElement, TGestureRecognizer>` méthode d’extension.
 
-## <a name="layout"></a>Layout
+## <a name="layout"></a>Mise en page
 
 Le balisage C# comprend une série de méthodes d’extension de disposition qui prennent en charge le positionnement des vues dans les dispositions et le contenu dans les vues :
 
@@ -357,7 +357,7 @@ new Grid
 }
 ```
 
-## <a name="fonts"></a>Fonts
+## <a name="fonts"></a>Polices
 
 Les contrôles de la liste suivante peuvent appeler les `FontSize` `Bold` méthodes d’extension,, `Italic` et `Font` pour définir l’apparence du texte affiché par le contrôle :
 
@@ -371,7 +371,7 @@ Les contrôles de la liste suivante peuvent appeler les `FontSize` `Bold` métho
 - `Span`
 - `TimePicker`
 
-## <a name="effects"></a>Effets
+## <a name="effects"></a>Effects (Effets)
 
 Les effets peuvent être attachés aux contrôles avec la `Effect` méthode d’extension :
 

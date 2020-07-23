@@ -12,16 +12,16 @@ ms.date: 04/01/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2864c7edabde18faec06c2c42042168d3e6c9671
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a28e391c6bacd460f095c94e30b2d9433a5191e4
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139800"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931792"
 ---
 # <a name="store-data-in-a-local-sqlitenet-database"></a>Stocker des données dans une base de données SQLite.NET locale
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-database/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-database/)
 
 Dans ce guide de démarrage rapide, vous allez apprendre à :
 
@@ -30,8 +30,8 @@ Dans ce guide de démarrage rapide, vous allez apprendre à :
 
 Le guide de démarrage rapide explique comment stocker des données dans une base de données SQLite.NET locale. L’application finale est indiquée ci-dessous :
 
-[![](database-images/screenshots1-sml.png "Notes Page")](database-images/screenshots1.png#lightbox "Notes Page")
-[![](database-images/screenshots2-sml.png "Note Entry Page")](database-images/screenshots2.png#lightbox "Note Entry Page")
+Page de [ ![ Commentaires](database-images/screenshots1-sml.png)](database-images/screenshots1.png#lightbox "Page de notes")page 
+ [ ![ entrée note](database-images/screenshots2-sml.png)](database-images/screenshots2.png#lightbox "Page d’entrée de note")
 
 ## <a name="prerequisites"></a>Prérequis
 
@@ -45,11 +45,11 @@ Vous devez suivre correctement le [précédent guide de démarrage rapide](multi
 
 2. Dans l’**Explorateur de solutions**, sélectionnez le projet **Notes**, cliquez avec le bouton droit, puis sélectionnez **Gérer les packages NuGet** :
 
-    ![](database-images/vs/add-nuget-packages.png "Add NuGet Packages")    
+    ![Ajouter des paquets NuGet](database-images/vs/add-nuget-packages.png)    
 
 3. Dans le **Gestionnaire de package NuGet**, sélectionnez l’onglet **Parcourir**, recherchez et sélectionnez le package NuGet **sqlite-net-pcl**, puis cliquez sur le bouton **Installer** pour l’ajouter au projet :
 
-    ![](database-images/vs/add-package.png "Add Package")
+    ![Ajouter un paquet](database-images/vs/add-package.png)
 
     > [!NOTE]
     > Il existe plusieurs packages NuGet portant des noms similaires. Le package correct possède ces attributs :
@@ -262,11 +262,11 @@ Vous devez suivre correctement le [précédent guide de démarrage rapide](multi
 
 2. Dans le **Panneau Solutions**, sélectionnez le projet **Notes**, cliquez avec le bouton droit, puis sélectionnez **Ajouter > Ajouter des paquets NuGet** :
 
-    ![](database-images/vsmac/add-nuget-packages.png "Add NuGet Packages")    
+    ![Ajouter des paquets NuGet](database-images/vsmac/add-nuget-packages.png)    
 
 3. Dans la fenêtre **Ajouter des packages**, recherchez et sélectionnez le package NuGet **sqlite-net-pcl**, puis cliquez sur le bouton **Ajouter un package** pour l’ajouter au projet :
 
-    ![](database-images/vsmac/add-package.png "Add Package")
+    ![Ajouter un paquet](database-images/vsmac/add-package.png)
 
     > [!NOTE]
     > Il existe plusieurs packages NuGet portant des noms similaires. Le package correct possède ces attributs :

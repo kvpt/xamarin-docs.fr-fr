@@ -10,18 +10,18 @@ ms.date: 01/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 52246ce5d54ba97e91777f598f25c187901f89c4
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 0cdbd39f0217b0e4d175eb2443250eb3df8dd046
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137772"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936173"
 ---
 # <a name="windows-platform-features"></a>Fonctionnalités de la plateforme Windows
 
 Le développement Xamarin.Forms d’applications pour les plateformes Windows nécessite Visual Studio. La [page plateformes prises en charge](~/get-started/supported-platforms.md) contient des informations supplémentaires sur les conditions préalables.
 
-![](images/allhanselman.png "Xamarin.Forms Applications Running on Windows")
+![Xamarin.FormsApplications s’exécutant sur Windows](images/allhanselman.png)
 
 ## <a name="platform-specifics"></a>Spécificités des plateformes
 
@@ -57,7 +57,7 @@ Les Xamarin.Forms modèles disponibles dans Visual Studio contiennent un projet 
 > [!NOTE]
 > Xamarin.Forms1. x et 2. x prennent en charge _Windows Phone 8 Silverlight_, _Windows Phone 8,1_et le développement d’applications _Windows 8.1_ . Toutefois, ces types de projets ont été dépréciés.
 
-## <a name="getting-started"></a>Prise en main
+## <a name="getting-started"></a>Mise en route
 
 Accédez à **fichier > nouveau projet >** dans Visual Studio et choisissez l’un des modèles **multiplateforme > application vide ( Xamarin.Forms )** pour commencer.
 

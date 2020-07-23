@@ -10,16 +10,16 @@ ms.date: 02/08/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f0f43f8f2113b6bd0a800ed3e0bd96b641575b1c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 38c7f11ecf65a2a9ec9ef54b5beb270f51d24dda
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139280"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929946"
 ---
 # <a name="text-translation-using-the-translator-api"></a>Traduction de texte à l’aide de l’API Translator
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
 _L’API Microsoft Translator peut être utilisée pour traduire la parole et le texte via une API REST. Cet article explique comment utiliser l’API de traduction de texte Translator Text Microsoft pour traduire du texte d’une langue à l’autre dans une Xamarin.Forms application._
 
@@ -143,13 +143,13 @@ La réponse de l’API est retournée au format XML. Les données XML suivantes 
 
 Dans l’exemple d’application, la réponse XML est analysée dans une `XDocument` instance, avec la valeur racine XML retournée à la méthode d’appel pour l’affichage, comme illustré dans les captures d’écran suivantes :
 
-![](text-translation-images/text-translation.png "Text Translation to German")
+![Traduction de texte en allemand](text-translation-images/text-translation.png)
 
 ## <a name="summary"></a>Résumé
 
 Cet article explique comment utiliser l’API de traduction de texte Translator Text Microsoft pour traduire du texte d’une langue en texte d’une autre langue dans une Xamarin.Forms application. En plus de traduire du texte, l’API Microsoft Translator peut également transcrire la parole d’une langue à une autre.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Documentation de l’API de traduction de texte Translator Text](/azure/cognitive-services/translator/)
 - [Utilisation d’un service Web RESTful](~/xamarin-forms/data-cloud/web-services/rest.md)

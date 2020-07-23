@@ -7,12 +7,12 @@ ms.assetid: 6968606B-C287-424F-A321-2492E12BC0BB
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: e117fce77e9cdc8d9e9dc8b9ed7b3aa22eca4e39
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: ee3897f14c460149e840fcea8b3fb533beeab935
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73001714"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931623"
 ---
 # <a name="working-with-watchos-app-groups-in-xamarin"></a>Utilisation des groupes d’applications Watchos dans Xamarin
 
@@ -28,15 +28,15 @@ L’emplacement partagé est configuré à l’aide d’un [groupe d’applicati
 
 ### <a name="provisioning"></a>Provisionnement
 
-Le groupe d’applications aura un identificateur, qui est généralement votre ID d’offre groupée avec un préfixe `group.`. Par exemple, nous pourrions utiliser l’ID de Bundle `com.xamarin.WatchSettings` et le groupe d’applications `group.com.xamarin.WatchSettings`.
+Le groupe d’applications aura un identificateur, qui est généralement votre ID d’offre groupée avec un `group.` préfixe. Par exemple, nous pourrions utiliser l’ID d’offre groupée `com.xamarin.WatchSettings` et le groupe d’applications `group.com.xamarin.WatchSettings` .
 
-[![](app-groups-images/app-group-sml.png "Use the Bundle ID com.xamarin.WatchSettings and the app group   group.com.xamarin.WatchSettings")](app-groups-images/app-group.png#lightbox)
+[![Utilisez l’ID de Bundle com. xamarin. WatchSettings et le groupe d’applications. com. xamarin. WatchSettings](app-groups-images/app-group-sml.png)](app-groups-images/app-group.png#lightbox)
 
 ### <a name="entitlementsplist"></a>Entitlements.plist
 
 Vous pouvez également configurer le profil de provisionnement, **activer des groupes d’applications** dans les **droits. plist** et entrer l’ID que vous avez choisi :
 
-[![](app-groups-images/entitlements-sml.png "Configure the plist and enter the ID")](app-groups-images/entitlements.png#lightbox)
+[![Configurez les plist et entrez l’ID](app-groups-images/entitlements-sml.png)](app-groups-images/entitlements.png#lightbox)
 
 ### <a name="deployment"></a>Déploiement
 

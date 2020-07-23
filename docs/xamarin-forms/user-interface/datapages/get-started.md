@@ -10,25 +10,25 @@ ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: bb08d359048d53639a700cc5ff526f26d6b077b6
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 325aa7be9e8a1eb6da816ef4ec6403c2882c6ed4
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84571465"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86928911"
 ---
 # <a name="getting-started-with-datapages"></a>Prise en main avec DataPages
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://github.com/xamarin/xamarin-forms-samples/tree/master/Pages/DataPagesDemo)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://github.com/xamarin/xamarin-forms-samples/tree/master/Pages/DataPagesDemo)
 
-![](~/media/shared/preview.png "This API is currently in preview")
+![Cette API est actuellement en version préliminaire](~/media/shared/preview.png)
 
 > [!IMPORTANT]
 > DataPages requiert une Xamarin.Forms référence de thème à restituer. Cela implique l’installation de [ Xamarin.Forms . Package. base](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/) NuGet dans votre projet, suivi de l’un ou l’autre [ Xamarin.Forms . Theme. Light](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/) ou [ Xamarin.Forms . Packages NuGet Theme. Dark](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/) .
 
 Pour commencer à créer une page simple pilotée par les données à l’aide de la version préliminaire de DataPages, suivez les étapes ci-dessous. Cette démonstration utilise un style codé en dur (« Events ») dans la version préliminaire des builds qui fonctionne uniquement avec le format JSON spécifique dans le code.
 
-[![](get-started-images/demo-sml.png "DataPages Sample Application")](get-started-images/demo.png#lightbox "DataPages Sample Application")
+[![Exemple d’application DataPages](get-started-images/demo-sml.png)](get-started-images/demo.png#lightbox "Exemple d’application DataPages")
 
 ## <a name="1-add-nuget-packages"></a>1. ajouter des packages NuGet
 
@@ -140,7 +140,7 @@ Voici un exemple de données JSON provenant de la source de la démonstration :
 
 Les étapes ci-dessus doivent aboutir à une page de données de travail :
 
-[![](get-started-images/demo-sml.png "DataPages Sample Application")](get-started-images/demo.png#lightbox "DataPages Sample Application")
+[![Exemple d’application DataPages](get-started-images/demo-sml.png)](get-started-images/demo.png#lightbox "Exemple d’application DataPages")
 
 Cela fonctionne parce que le style prédéfini **« événements »** existe dans le package NuGet de thème clair et que des styles définis correspondent à la source de données (par exemple, "title", "image", "presenter").
 
@@ -169,7 +169,7 @@ Le style hérité peut être substitué en spécifiant un modèle et en utilisan
 
 En fournissant un `DataTemplate` , ce code remplace `StyleClass` et utilise à la place la disposition par défaut pour un `ListItemControl` .
 
-[![](get-started-images/custom-sml.png "DataPages Sample Application")](get-started-images/custom.png#lightbox "DataPages Sample Application")
+[![Exemple d’application DataPages](get-started-images/custom-sml.png)](get-started-images/custom.png#lightbox "Exemple d’application DataPages")
 
 Les développeurs qui préfèrent C# à XAML peuvent créer des liaisons de source de données (n’oubliez pas d’inclure une `using Xamarin.Forms.Pages;` instruction) :
 
@@ -205,6 +205,6 @@ x = typeof(Xamarin.Forms.Themes.LightThemeResources);
 x = typeof(Xamarin.Forms.Themes.Android.UnderlineEffect);
 ```
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Exemple DataPagesDemo](https://github.com/xamarin/xamarin-forms-samples/tree/master/Pages/DataPagesDemo)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 04/28/2017
-ms.openlocfilehash: 78c048d793fd792576e2482491ebf11460d5b511
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 88f95f797d1230c818a635376f7b17a2264afadf
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571803"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930336"
 ---
 # <a name="internationalization-encodings-in-xamarinios"></a>Encodages d’internationalisation dans Xamarin. iOS
 
@@ -22,9 +22,9 @@ Pour réduire la taille de l’application, Xamarin. iOS n’inclut pas d’enco
 
 Pour ce faire, sélectionnez les encodages supplémentaires à partir du volet Build/avancé iOS dans Visual Studio pour Mac ou Visual Studio :
 
- [![](encodings-images/00.png "Selecting the extra encodings")](encodings-images/00.png#lightbox)
+ [![Sélection des encodages supplémentaires](encodings-images/00.png)](encodings-images/00.png#lightbox)
 
- [![](encodings-images/00a.png "Selecting the extra encodings")](encodings-images/00a.png#lightbox)
+ [![Sélection des encodages supplémentaires](encodings-images/00a.png)](encodings-images/00a.png#lightbox)
 
 Vous pouvez sélectionner l’un des éléments suivants :
 
@@ -60,7 +60,7 @@ Vous pouvez sélectionner l’un des éléments suivants :
 
  <a name="other"></a>
 
-## <a name="other"></a>autre
+## <a name="other"></a>Autres
 
 - CP1251
 - CP1257

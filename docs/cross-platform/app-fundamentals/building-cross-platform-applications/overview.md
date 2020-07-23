@@ -6,12 +6,12 @@ ms.assetid: E442EEFB-FA9C-40E9-9668-5A3F915C8400
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: de8c66e6a89f035b8370a2139361d3e942aa9c09
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 6924379f49a80733714a488851533f506e83b245
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571205"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930830"
 ---
 # <a name="building-cross-platform-applications-overview"></a>Vue d’ensemble de la création d’applications multiplateformes
 
@@ -53,7 +53,7 @@ Certains de ces composants sont implémentés dans l’étude de cas *Tasky* .
 
 En suivant le principe de séparation de responsabilité en baparant l’architecture de votre application, puis en déplaçant les fonctionnalités principales qui sont indépendantes des plateformes dans une bibliothèque principale réutilisable, vous pouvez maximiser le partage du code entre les plateformes, comme illustré ci-dessous :
 
- ![](overview-images/layers2.png "By following the principle of separation of responsibility by layering your application architecture and then moving core functionality that is platform agnostic into a reusable core library, you can maximize code sharing across platforms")
+ ![En suivant le principe de séparation de responsabilité en baparant l’architecture de votre application, puis en déplaçant les fonctionnalités principales indépendantes des plateformes dans une bibliothèque principale réutilisable, vous pouvez maximiser le partage du code entre les plateformes](overview-images/layers2.png)
 
  <a name="Case_Studies"></a>
 

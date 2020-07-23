@@ -10,16 +10,16 @@ ms.date: 12/13/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 40af5aeaa51025dae70113faa6f7ff83edf43c73
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 5fa9c7592ecd2cb314ce12d7e303677447a5e104
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138023"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931168"
 ---
 # <a name="layout-compression"></a>Compression des dispositions
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layoutcompression)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layoutcompression)
 
 _La compression de disposition supprime les dispositions spécifiées de l’arborescence d’éléments visuels afin d’améliorer les performances de rendu des pages. Cet article explique comment activer la compression de disposition et les avantages qu’elle peut apporter._
 
@@ -36,7 +36,7 @@ Le résultat du processus de disposition est une hiérarchie de contrôles natif
 
 Par exemple, considérez le bouton suivant de l’exemple d’application pour la connexion à Facebook :
 
-![](layout-compression-images/facebook-button.png "Facebook Button")
+![Bouton Facebook](layout-compression-images/facebook-button.png)
 
 Ce bouton est spécifié en tant que contrôle personnalisé avec la hiérarchie de vue XAML suivante :
 
@@ -60,7 +60,7 @@ Ce bouton est spécifié en tant que contrôle personnalisé avec la hiérarchie
 
 La hiérarchie d’affichage imbriquée résultante peut être examinée avec [Xamarin Inspector](~/tools/inspector/index.md). Sur Android, la hiérarchie d’affichage imbriqué contient 17 vues :
 
-![](layout-compression-images/no-compression.png "View Hierarchy for Facebook Button")
+![Bouton afficher la hiérarchie pour Facebook](layout-compression-images/no-compression.png)
 
 La compression de la disposition, qui est disponible pour Xamarin.Forms les applications sur les plateformes iOS et Android, vise à aplatir l’imbrication des affichages en supprimant les dispositions spécifiées de l’arborescence d’éléments visuels, ce qui peut améliorer les performances de rendu des pages. L’avantage en matière de performances fourni dépend de la complexité d’une page, de la version du système d’exploitation utilisé et du périphérique sur lequel l’application s’exécute. Toutefois, les gains en termes de performances les plus importants seront visibles sur les appareils les plus anciens.
 
@@ -101,7 +101,7 @@ Pour le bouton Facebook, la compression de disposition peut être activée sur l
 
 Sur Android, il en résulte une hiérarchie d’affichage imbriquée de 14 vues :
 
-![](layout-compression-images/layout-compression.png "View Hierarchy for Facebook Button with Layout Compression")
+![Afficher la hiérarchie pour le bouton Facebook avec compression de disposition](layout-compression-images/layout-compression.png)
 
 Par rapport à la hiérarchie d’affichage imbriqué d’origine de 17 vues, cela représente une réduction du nombre de vues de 17%. Bien que cette réduction puisse sembler non significative, la réduction de la vue sur une page entière peut être plus significative.
 
@@ -111,7 +111,7 @@ Les convertisseurs rapides réduisent les coûts d’inflation et de rendu des X
 
 Pour le bouton Facebook dans l’exemple d’application, la combinaison de la compression de disposition et des convertisseurs rapides produit une hiérarchie d’affichage imbriquée de 8 vues :
 
-![](layout-compression-images/layout-compression-with-fast-renderers.png "View Hierarchy for Facebook Button with Layout Compression and Fast Renderers")
+![Bouton afficher la hiérarchie pour Facebook avec compression de disposition et convertisseurs rapides](layout-compression-images/layout-compression-with-fast-renderers.png)
 
 Par rapport à la hiérarchie d’affichage imbriqué d’origine de 17 vues, cela représente une réduction de 52%.
 
@@ -121,7 +121,7 @@ L’exemple d’application contient une page extraite d’une application réel
 
 La compression de disposition supprime les dispositions spécifiées de l’arborescence d’éléments visuels afin d’améliorer les performances de rendu des pages. Les avantages en matière de performances de cette technique varient selon la complexité d’une page, la version du système d’exploitation utilisé et l’appareil sur lequel l’application est en cours d’exécution. Toutefois, les gains en termes de performances les plus importants seront visibles sur les appareils les plus anciens.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Création d’une disposition personnalisée](~/xamarin-forms/user-interface/layouts/custom.md)
 - [Renderers rapides](~/xamarin-forms/internals/fast-renderers.md)

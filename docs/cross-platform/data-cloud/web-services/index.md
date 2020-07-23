@@ -6,12 +6,12 @@ ms.assetid: 72627B90-586A-02B6-E231-F7CE015A1B97
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 06a3197cfcd3b49538cfa5fa97e40a9f50c7a244
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: 164c059b60c1b5b2aadb2cb348c6b5407da63928
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84655099"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934704"
 ---
 # <a name="introduction-to-web-services"></a>Introduction aux services web
 
@@ -190,7 +190,7 @@ Les services Web RESTful utilisent généralement des messages JSON pour retourn
 
 <a name="Using_System.JSON"></a>
 
-### <a name="systemjson"></a>System. JSON
+### <a name="systemjson"></a>System.JS
 
 La plateforme Xamarin est fournie avec la prise en charge de JSON prête à l’emploi. En utilisant un `JsonObject` , les résultats peuvent être récupérés comme indiqué dans l’exemple de code suivant :
 
@@ -293,7 +293,7 @@ L’URL du service Web peut être une source distante hébergée ou une ressourc
 file:///Users/myUserName/projects/MyProjectName/service.wsdl
 ```
 
-[![](images/add-webreference-dialog.png "The web service URL can either be a hosted remote source or local file system resource accessible via the file path prefix")](images/add-webreference-dialog.png#lightbox)
+[![L’URL du service Web peut être une source distante hébergée ou une ressource du système de fichiers local accessible via le préfixe du chemin de fichier](images/add-webreference-dialog.png)](images/add-webreference-dialog.png#lightbox)
 
 Cela génère le proxy dans le dossier Web ou Service References du projet. Étant donné qu’un proxy est généré en code, il ne doit pas être modifié.
 
@@ -301,7 +301,7 @@ Cela génère le proxy dans le dossier Web ou Service References du projet. Éta
 
 #### <a name="manually-adding-a-proxy-to-a-project"></a>Ajout manuel d’un proxy à un projet
 
-Si vous avez un proxy existant qui a été généré à l’aide d’outils compatibles, cette sortie peut être consommée lorsqu’elle est incluse dans le cadre de votre projet. Dans Visual Studio pour Mac, utilisez **Ajouter des fichiers...** option de menu permettant d’ajouter le proxy. En outre, cela nécessite que *System. Web. services. dll* soit explicitement référencé à l’aide de la fonction **Ajouter des références...** dialogue.
+Si vous avez un proxy existant qui a été généré à l’aide d’outils compatibles, cette sortie peut être consommée lorsqu’elle est incluse dans le cadre de votre projet. Dans Visual Studio pour Mac, utilisez **Ajouter des fichiers...** option de menu permettant d’ajouter le proxy. En outre, il est nécessaire de faire référence explicitement à *System.Web.Services.dll* à l’aide de la fonction **Ajouter des références...** dialogue.
 
 ### <a name="consuming-the-proxy"></a>Consommation du proxy
 
@@ -352,7 +352,7 @@ Il existe des différences entre les services Web ASP.NET (ASMX) et WCF, mais il
 
 Un *proxy* doit être généré pour consommer un service WCF, ce qui permet à l’application de se connecter au service. Le proxy est construit en consommant des métadonnées de service qui définissent les méthodes et la configuration de service associée. Ces métadonnées sont exposées sous la forme d’un document Web Services Description Language (WSDL) qui est généré par le service Web. Le proxy peut être généré à l’aide de la Microsoft WCF Web Service Reference Provider dans Visual Studio 2017 pour ajouter une référence de service pour le service Web à une bibliothèque de .NET Standard.
 
-Une alternative à la création du proxy à l’aide de l’Microsoft WCF Web Service Reference Provider dans Visual Studio 2017 consiste à utiliser l’outil ServiceModel Metadata Utility Tool (Svcutil. exe). Pour plus d’informations, consultez [outil ServiceModel Metadata Utility Tool (Svcutil. exe)](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe).
+Une alternative à la création du proxy à l’aide de l’Microsoft WCF Web Service Reference Provider dans Visual Studio 2017 consiste à utiliser l’outil ServiceModel Metadata Utility Tool (svcutil.exe). Pour plus d’informations, consultez outil de l' [utilitaire de métadonnées ServiceModel (Svcutil.exe)](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe).
 
 <a name="Calling_a_WCF_Service_with_Client_Credential_Security"></a>
 
@@ -440,8 +440,8 @@ client.ClientCredentials.UserName.Password = @"mrsnuggles";
 
 Pour plus d’informations sur l’authentification HTTP de base, bien que dans le contexte d’un service Web REST, consultez [authentification d’un service Web RESTful](~/xamarin-forms/data-cloud/authentication/rest.md).
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Services Web dans Xamarin. Forms](~/xamarin-forms/data-cloud/index.yml)
-- [Outil utilitaire de métadonnées ServiceModel (Svcutil. exe)](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)
+- [Outil utilitaire de métadonnées ServiceModel (svcutil.exe)](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)
 - [BasicHttpBinding](https://msdn.microsoft.com/library/system.servicemodel.basichttpbinding.aspx)

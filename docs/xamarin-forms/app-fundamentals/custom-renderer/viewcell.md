@@ -10,16 +10,16 @@ ms.date: 12/07/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c908da816352e8b3790ded0bef932e1485170abd
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: bb6167eae394b41583195911bfac9d691e48d361
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84573870"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929374"
 ---
 # <a name="customizing-a-viewcell"></a>Personnalisation d’une ViewCell
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-viewcell)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-viewcell)
 
 _Un Xamarin.Forms ViewCell est une cellule qui peut être ajoutée à un ListView ou un TableView, qui contient une vue définie par le développeur. Cet article montre comment créer un convertisseur personnalisé pour un ViewCell qui est hébergé dans un Xamarin.Forms contrôle ListView. Cela empêche les Xamarin.Forms calculs de disposition d’être appelés de façon répétée pendant le défilement de ListView._
 
@@ -27,7 +27,7 @@ Chaque Xamarin.Forms cellule a un convertisseur associé pour chaque plateforme 
 
 Le diagramme suivant illustre la relation entre le [`ViewCell`](xref:Xamarin.Forms.ViewCell) et les contrôles natifs correspondants qui l’implémentent :
 
-![](viewcell-images/viewcell-classes.png "Relationship Between the ViewCell Control and the Implementing Native Controls")
+![Relation entre le contrôle ViewCell et les contrôles natifs qui l’implémentent](viewcell-images/viewcell-classes.png)
 
 Le processus de rendu peut être utilisé pour implémenter des personnalisations spécifiques à la plateforme en créant un convertisseur personnalisé pour un [`ViewCell`](xref:Xamarin.Forms.ViewCell) sur chaque plateforme. Le processus pour y parvenir est le suivant :
 
@@ -164,11 +164,11 @@ Le processus de création de la classe de renderer personnalisé est le suivant�
 
 Le diagramme suivant illustre les responsabilités de chaque projet dans l’exemple d’application ainsi que les relations qu’ils entretiennent les uns avec les autres :
 
-![](viewcell-images/solution-structure.png "NativeCell Custom Renderer Project Responsibilities")
+![Responsabilités du projet de renderer personnalisé NativeCell](viewcell-images/solution-structure.png)
 
 La cellule personnalisée `NativeCell` est restituée par des classes de renderer spécifiques à la plateforme qui dérivent toutes de la classe `ViewCellRenderer` pour chaque plateforme. Il en résulte la restitution de chaque cellule personnalisée `NativeCell` avec une disposition spécifique à la plateforme, comme le montrent les captures d’écran suivantes :
 
-![](viewcell-images/screenshots.png "NativeCell on each Platform")
+![NativeCell sur chaque plateforme](viewcell-images/screenshots.png)
 
 La classe `ViewCellRenderer` expose des méthodes spécifiques à la plateforme pour le rendu de la cellule personnalisée. Il s’agit de la méthode `GetCell` sur la plateforme iOS, de la méthode `GetCellCore` sur la plateforme Android et de la méthode `GetTemplate` sur UWP.
 
@@ -571,7 +571,7 @@ Le `DataTemplate` est stocké dans le dictionnaire de ressources de niveau appli
 
 Cet article a montré comment créer un convertisseur personnalisé pour un [`ViewCell`](xref:Xamarin.Forms.ViewCell) qui est hébergé à l’intérieur d’un Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) contrôle. Cela empêche les Xamarin.Forms calculs de disposition d’être appelés de façon répétée pendant le `ListView` défilement.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Performances de ListView](~/xamarin-forms/user-interface/listview/performance.md)
 - [CustomRendererViewCell (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-viewcell)

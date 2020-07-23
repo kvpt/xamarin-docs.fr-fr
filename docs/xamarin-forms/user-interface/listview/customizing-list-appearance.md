@@ -10,16 +10,16 @@ ms.date: 12/13/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c7fdecdb0ce209c88dbe9e6f4e6e6588ec4fd3fd
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: be8dd5d29aebf29395885d650fbd28082013d0d1
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139917"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929162"
 ---
 # <a name="listview-appearance"></a>Apparence de ListView
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-grouping)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-grouping)
 
 Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) Vous permet de personnaliser la présentation de la liste, en plus des [`ViewCell`](xref:Xamarin.Forms.ViewCell) instances de chaque ligne de la liste.
 
@@ -114,7 +114,7 @@ Ce code XAML effectue les actions suivantes :
 
 La capture d’écran suivante montre l’interface utilisateur obtenue :
 
-![](customizing-list-appearance-images/grouping-depth.png "ListView Grouping Example")
+![Exemple de regroupement ListView](customizing-list-appearance-images/grouping-depth.png)
 
 ### <a name="customizing-grouping"></a>Personnalisation du regroupement
 
@@ -183,7 +183,7 @@ En XAML :
 </ListView>
 ```
 
-![](customizing-list-appearance-images/header-default.png "ListView with Header and Footer")
+![ListView avec en-tête et pied de page](customizing-list-appearance-images/header-default.png)
 
 Pour créer un en-tête et un pied de page personnalisés, définissez les vues d’en-tête et de pied de page :
 
@@ -204,7 +204,7 @@ Pour créer un en-tête et un pied de page personnalisés, définissez les vues 
 </ListView.Footer>
 ```
 
-![](customizing-list-appearance-images/header-custom.png "ListView with Customized Header and Footer")
+![ListView avec en-tête et pied de page personnalisés](customizing-list-appearance-images/header-custom.png)
 
 ## <a name="scrollbar-visibility"></a>Visibilité de la barre de défilement
 
@@ -235,7 +235,7 @@ XAML :
 <ListView x:Name="SeparatorDemoListView" SeparatorVisibility="Default" />
 ```
 
-![](customizing-list-appearance-images/separator-default.png "ListView with Default Row Separators")
+![ListView avec séparateurs de lignes par défaut](customizing-list-appearance-images/separator-default.png)
 
 Aucune :
 
@@ -251,7 +251,7 @@ XAML :
 <ListView x:Name="SeparatorDemoListView" SeparatorVisibility="None" />
 ```
 
-![](customizing-list-appearance-images/separator-none.png "ListView without Row Separators")
+![ListView sans séparateurs de lignes](customizing-list-appearance-images/separator-none.png)
 
 Vous pouvez également définir la couleur de la ligne de séparation par le biais de la `SeparatorColor` propriété :
 
@@ -267,7 +267,7 @@ XAML :
 <ListView x:Name="SeparatorDemoListView" SeparatorColor="Green" />
 ```
 
-![](customizing-list-appearance-images/separator-custom.png "ListView with Green Row Separators")
+![ListView avec séparateurs de lignes verts](customizing-list-appearance-images/separator-custom.png)
 
 > [!NOTE]
 > La définition de l’une de ces propriétés sur Android après le chargement de `ListView` entraîne une baisse importante des performances.
@@ -295,7 +295,7 @@ XAML :
 <ListView x:Name="RowHeightDemoListView" RowHeight="100" />
 ```
 
-![](customizing-list-appearance-images/height-custom.png "ListView with Fixed Row Height")
+![ListView avec hauteur de ligne fixe](customizing-list-appearance-images/height-custom.png)
 
 ### <a name="uneven-rows"></a>Lignes irrégulières
 
@@ -313,7 +313,7 @@ XAML :
 <ListView x:Name="RowHeightDemoListView" HasUnevenRows="true" />
 ```
 
-![](customizing-list-appearance-images/height-uneven.png "ListView with Uneven Rows")
+![ListView avec lignes irrégulières](customizing-list-appearance-images/height-uneven.png)
 
 ### <a name="resize-rows-at-runtime"></a>Redimensionner les lignes au moment de l’exécution
 
@@ -334,7 +334,7 @@ void OnImageTapped (object sender, EventArgs args)
 
 Le `OnImageTapped` Gestionnaire d’événements est exécuté en réponse à un [`Image`](xref:Xamarin.Forms.Image) dans une cellule qui fait l’objet d’un clic, et augmente la taille du `Image` affiché dans la cellule afin qu’il soit facilement visible.
 
-![](customizing-list-appearance-images/dynamic-row-resizing.png "ListView with Runtime Row Resizing")
+![ListView avec redimensionnement de ligne Runtime](customizing-list-appearance-images/dynamic-row-resizing.png)
 
 > [!WARNING]
 > Une utilisation abusive du redimensionnement des lignes du runtime peut entraîner une dégradation des performances.

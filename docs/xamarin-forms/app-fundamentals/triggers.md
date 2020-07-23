@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsDéclencheurs
+title: Xamarin.Forms Déclencheurs
 description: Cet article explique comment utiliser Xamarin.Forms des déclencheurs pour répondre aux modifications de l’interface utilisateur avec XAML. Les déclencheurs vous permettent d’exprimer des actions de manière déclarative en XAML. Les actions en question modifient l’apparence des contrôles en fonction des événements ou des modifications apportées aux propriétés.
 ms.prod: xamarin
 ms.assetid: 60460F57-63C6-4916-BBB5-A870F1DF53D7
@@ -10,14 +10,14 @@ ms.date: 04/17/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a287ff28ab62fcfcc00c88858cf3595ba2fa5118
-ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
+ms.openlocfilehash: 2a71f48fb9911267188e7aa4b4124cd9b7488d31
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85853134"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936472"
 ---
-# <a name="xamarinforms-triggers"></a>Xamarin.FormsDéclencheurs
+# <a name="xamarinforms-triggers"></a>Xamarin.Forms Déclencheurs
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithtriggers)
 
@@ -257,7 +257,7 @@ Le code XAML est fourni ci-dessous. Notez les différences suivantes par rapport
 Ces captures d’écran montrent la différence entre les deux exemples de déclencheurs multiples. Dans la partie supérieure des écrans, l’entrée de texte dans un seul `Entry` suffit à activer le bouton **Save** (Enregistrer).
 Dans la partie inférieure de l’écran, le bouton **Login** (Connexion) reste inactif jusqu’à ce que les deux champs contiennent des données.
 
-![](triggers-images/multi-requireall.png "MultiTrigger Examples")
+![Exemples de déclencheurs multiples](triggers-images/multi-requireall.png)
 
 ## <a name="enteractions-and-exitactions"></a>EnterActions et ExitActions
 

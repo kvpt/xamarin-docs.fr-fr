@@ -10,18 +10,18 @@ ms.date: 09/11/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f71e0a67b823d92a17158a076707f606f6a4c73f
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 3558352c9f43b8e301492077806bbb611e9b58cf
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136108"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929309"
 ---
 # <a name="introduction-to-xamarinforms-data-templates"></a>Présentation des Xamarin.Forms modèles de données
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplates)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplates)
 
-_Les modèles de données Xamarin. Forms permettent de définir la présentation des données sur les contrôles pris en charge. Cet article fournit une introduction aux modèles de données, en examinant pourquoi ils sont nécessaires._
+_Xamarin.Formsles modèles de données permettent de définir la présentation des données sur les contrôles pris en charge. Cet article fournit une introduction aux modèles de données, en examinant pourquoi ils sont nécessaires._
 
 Prenons l’exemple d’un [`ListView`](xref:Xamarin.Forms.ListView) qui affiche une collection d' `Person` objets. L’exemple de code suivant montre la définition de la classe `Person` :
 
@@ -93,7 +93,7 @@ public WithoutDataTemplatePageCS()
 
 [`ListView`](xref:Xamarin.Forms.ListView)Appelle `ToString` lors de l’affichage des objets dans la collection. Dans la mesure où il n’existe pas de substitution de `Person.ToString`, `ToString` retourne le nom du type de chaque objet, comme indiqué dans les captures d’écran suivantes :
 
-![](introduction-images/no-data-template.png "ListView without a Data Template")
+![ListView sans modèle de données](introduction-images/no-data-template.png)
 
 L’objet `Person` peut remplacer la méthode `ToString` pour afficher les données significatives, comme indiqué dans l’exemple de code suivant :
 
@@ -110,7 +110,7 @@ public class Person
 
 Cela entraîne l' [`ListView`](xref:Xamarin.Forms.ListView) affichage de la `Person.Name` valeur de la propriété pour chaque objet de la collection, comme illustré dans les captures d’écran suivantes :
 
-![](introduction-images/override-tostring.png "ListView with a Data Template")
+![ListView avec un modèle de données](introduction-images/override-tostring.png)
 
 La substitution de `Person.ToString` peut retourner une chaîne mise en forme composée des propriétés `Name`, `Age` et `Location`. Toutefois, cette approche offre uniquement un contrôle limité sur l’apparence de chaque élément de données. Pour plus de flexibilité, vous [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) pouvez créer un qui définit l’apparence des données.
 
@@ -137,7 +137,7 @@ Un [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) qui est placé en tant qu�
 
 Les modèles de données situés plus bas dans la hiérarchie de vues sont prioritaires par rapport à ceux définis plus haut quand ils partagent des attributs `x:Key`. Par exemple, un modèle de données au niveau de l’application est remplacé par un modèle de données au niveau de la page, et un modèle de données au niveau de la page est remplacé par un modèle de données au niveau du contrôle ou par un modèle de données inline.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Apparence de cellule](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)
 - [Modèles de données (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplates)

@@ -6,12 +6,12 @@ ms.assetid: C6618E9D-07FA-4C84-D014-10DAC989E48D
 author: davidortinau
 ms.author: daortin
 ms.date: 03/06/2018
-ms.openlocfilehash: da6bf97bfc5769647c63b55c289293e63f50e5cb
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 8549e993bf46ffd3b24ad8ec495791eb25b25023
+ms.sourcegitcommit: bd49f28105218f04e978e58143bba8cdec9fd4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84570997"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925982"
 ---
 # <a name="binding-types-reference-guide"></a>Guide de référence des types de liaison
 
@@ -30,7 +30,7 @@ interface MyType : [Protocol1, Protocol2] {
 }
 ```
 
-Chaque interface dans votre définition de contrat qui a l' [`[BaseType]`](#BaseTypeAttribute) attribut qui déclare le type de base pour l’objet généré. Dans la déclaration ci-dessus, un `MyType` type C# de classe sera généré et lié à un type objective-C appelé `MyType` .
+Chaque interface de votre définition de contrat qui a l' [`[BaseType]`](#BaseTypeAttribute) attribut déclare le type de base pour l’objet généré. Dans la déclaration ci-dessus, un `MyType` type C# de classe sera généré et lié à un type objective-C appelé `MyType` .
 
 Si vous spécifiez des types après le TypeName (dans l’exemple ci-dessus `Protocol1` et `Protocol2` ) à l’aide de la syntaxe d’héritage de l’interface, le contenu de ces interfaces est Inline comme s’ils avaient fait partie du contrat pour `MyType` .
 La façon dont les surfaces Xamarin. iOS qu’un type adopte un protocole consiste à incorporer toutes les méthodes et propriétés déclarées dans le protocole dans le type lui-même.
@@ -356,7 +356,7 @@ Les modèles sont généralement utilisés par l’implémentation de protocole.
 Elles diffèrent dans le fait que le runtime s’inscrit uniquement avec Objective-C, les méthodes qui ont été remplacées.
 Dans le cas contraire, la méthode ne sera pas inscrite.
 
-Cela signifie généralement que lorsque vous sous-classez une classe qui a été marquée avec le `ModelAttribute` , vous ne devez pas appeler la méthode de base.   L’appel de cette méthode lèvera une exception, vous devez implémenter l’ensemble du comportement sur votre sous-classe pour les méthodes que vous substituez.
+Cela signifie généralement que lorsque vous sous-classez une classe qui a été marquée avec le `ModelAttribute` , vous ne devez pas appeler la méthode de base.   L’appel de cette méthode lève l’exception suivante : Foundation. You_Should_Not_Call_base_In_This_Method. Vous êtes censé implémenter l’intégralité du comportement sur votre sous-classe pour toutes les méthodes que vous substituez.
 
 <a name="AbstractAttribute"></a>
 

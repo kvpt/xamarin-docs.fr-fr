@@ -10,22 +10,22 @@ ms.date: 04/14/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3706139a2c15d01af67203c2bd09b281de80ed52
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 855fde62483dcbc6f8769e7a8eb66d84aadfe1da
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84140203"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934977"
 ---
 # <a name="3d-rotations-in-skiasharp"></a>Rotations 3D dans SkiaSharp
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Utilisez des transformations non affines pour faire pivoter des objets 2D dans l’espace 3D._
 
 Une application courante de transformations non affines simule la rotation d’un objet 2D dans l’espace 3D :
 
-![](3d-rotation-images/3drotationsexample.png "A text string rotated in 3D space")
+![Chaîne de texte pivotée dans l’espace 3D](3d-rotation-images/3drotationsexample.png)
 
 Ce travail implique l’utilisation de rotations à trois dimensions, puis la dérivation d’une transformation non affine `SKMatrix` qui effectue ces rotations 3D.
 
@@ -412,7 +412,7 @@ public partial class Rotation3DPage : ContentPage
 
 Lorsque vous faites des essais avec le quatrième curseur, vous remarquerez que les différents paramètres de profondeur ne déplacent pas l’objet plus loin de la visionneuse, mais modifient plutôt l’étendue de l’effet de perspective :
 
-[![](3d-rotation-images/rotation3d-small.png "Triple screenshot of the Rotation 3D page")](3d-rotation-images/rotation3d-large.png#lightbox "Triple screenshot of the Rotation 3D page")
+[![Capture d’écran triple de la page rotation 3D](3d-rotation-images/rotation3d-small.png)](3d-rotation-images/rotation3d-large.png#lightbox "Capture d’écran triple de la page rotation 3D")
 
 La **rotation animée 3D** utilise également `SKMatrix44` pour animer une chaîne de texte dans l’espace 3D. L' `textPaint` objet défini en tant que champ est utilisé dans le constructeur pour déterminer les limites du texte :
 
@@ -536,9 +536,9 @@ public class AnimatedRotation3DPage : ContentPage
 
 Cette rotation 3D est entourée de plusieurs transformations 2D pour déplacer le centre de rotation au centre de l’écran, et pour mettre à l’échelle la taille de la chaîne de texte pour qu’elle soit de la même largeur que l’écran :
 
-[![](3d-rotation-images/animatedrotation3d-small.png "Triple screenshot of the Animated Rotation 3D page")](3d-rotation-images/animatedrotation3d-large.png#lightbox "Triple screenshot of the Animated Rotation 3D page")
+[![Capture d’écran triple de la page 3D de rotation animée](3d-rotation-images/animatedrotation3d-small.png)](3d-rotation-images/animatedrotation3d-large.png#lightbox "Capture d’écran triple de la page 3D de rotation animée")
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

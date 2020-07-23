@@ -10,16 +10,16 @@ ms.date: 09/11/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3054180a9deb1357357c90db7b7fbdd8058b6773
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 9ed7e485adbc13862ff6fb6af9b02c43cc6a1f10
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84565497"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935640"
 ---
 # <a name="creating-a-xamarinforms-datatemplate"></a>Création d’un Xamarin.Forms DataTemplate
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplates)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplates)
 
 _Les modèles de données peuvent être créés en ligne, dans un ResourceDictionary, ou à partir d’un type personnalisé ou d’un Xamarin.Forms type de cellule approprié. Cet article explore chaque technique._
 
@@ -31,7 +31,7 @@ Un scénario d’utilisation courante pour un [`DataTemplate`](xref:Xamarin.Form
 
 Quelle que soit la technique utilisée, le résultat est que l’apparence de chaque cellule du [`ListView`](xref:Xamarin.Forms.ListView) est définie par un [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) , comme illustré dans les captures d’écran suivantes :
 
-![](creating-images/data-template-appearance.png "ListView with a DataTemplate")
+![ListView avec un DataTemplate](creating-images/data-template-appearance.png)
 
 ## <a name="creating-an-inline-datatemplate"></a>Création d’un DataTemplate inline
 
@@ -286,7 +286,7 @@ Le [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) est ajouté au [`ResourceDi
 
 Cet article a expliqué comment créer des modèles de données, inline, à partir d’un type personnalisé ou dans un [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) . Vous devez utiliser un modèle inline si vous n’avez pas besoin de réutiliser le modèle de données ailleurs. Vous pouvez aussi réutiliser un modèle de données en le définissant en tant que type personnalisé, ou en tant que ressource au niveau du contrôle, de la page ou de l’application.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Apparence de cellule](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)
 - [Modèles de données (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplates)

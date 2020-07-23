@@ -10,12 +10,12 @@ ms.date: 01/22/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d62e533d127294c77c0779c20fd9c78ef2231200
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 2a46d099520103ba6f1552d5bda3f619c07b743d
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84135718"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86928521"
 ---
 # <a name="authenticate-a-restful-web-service"></a>Authentifier un service Web RESTful
 
@@ -31,11 +31,11 @@ L’authentification de base est le mécanisme d’authentification le plus simp
 
 - Si un service Web reçoit une demande pour une ressource protégée, il rejette la demande avec un code d’état HTTP 401 (accès refusé) et définit l’en-tête de réponse WWW-Authenticate, comme indiqué dans le diagramme suivant :
 
-![](rest-images/basic-authentication-fail.png "Basic Authentication Failing")
+![Échec de l’authentification de base](rest-images/basic-authentication-fail.png)
 
 - Si un service Web reçoit une demande pour une ressource protégée, avec l' `Authorization` en-tête correctement défini, le service Web répond avec un code d’état HTTP 200, qui indique que la demande a réussi et que les informations demandées se trouvent dans la réponse. Ce scénario est illustré dans le diagramme suivant :
 
-![](rest-images/basic-authentication-success.png "Basic Authentication Succeeding")
+![Authentification de base réussie](rest-images/basic-authentication-success.png)
 
 > [!NOTE]
 > L’authentification de base ne doit être utilisée que sur une connexion HTTPs. Lorsqu’il est utilisé sur une connexion HTTP, l' `Authorization` en-tête peut facilement être décodé si le trafic HTTP est capturé par une personne malveillante.
@@ -87,7 +87,7 @@ Dans le module d’authentification de base utilisé par IIS, les utilisateurs s
 > [!NOTE]
 > L’authentification de base n’a pas été conçue pour gérer la déconnexion. Par conséquent, l’approche d’authentification de base standard pour la déconnexion consiste à mettre fin à la session.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Utilisation d’un service Web RESTful](~/xamarin-forms/data-cloud/web-services/rest.md)
 - [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx)

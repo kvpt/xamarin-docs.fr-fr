@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: 3d5db2f060b59fc689bea99141342b0447ac8933
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: cd9e5e3fc604fc6e6993b10424a209aa6c382a10
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031528"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935055"
 ---
 # <a name="search-with-web-markup-in-xamarinios"></a>Rechercher avec le balisage Web dans Xamarin. iOS
 
@@ -20,12 +20,12 @@ Pour les applications qui fournissent un accès à leur contenu via un site Web 
 
 Si votre application iOS prend déjà en charge la liaison profonde mobile et que votre site Web a présenté des liens ciblés vers du contenu au sein de votre application, le robot Web _Applebot_ d’Apple indexera ce contenu et l’ajoutera automatiquement à son index Cloud :
 
-[![](web-markup-images/webmarkup01.png "Cloud Index overview")](web-markup-images/webmarkup01.png#lightbox)
+[![Présentation de l’index Cloud](web-markup-images/webmarkup01.png)](web-markup-images/webmarkup01.png#lightbox)
 
 Apple affiche ces résultats dans la recherche Spotlight et les résultats de recherche Safari.
 Si l’utilisateur clique sur l’un de ces résultats (et que votre application est installée), il est dirigé vers le contenu de votre application :
 
-[![](web-markup-images/webmarkup02.png "Deep linking from a website in search results")](web-markup-images/webmarkup02.png#lightbox)
+[![Liaison profonde à partir d’un site Web dans les résultats de recherche](web-markup-images/webmarkup02.png)](web-markup-images/webmarkup02.png#lightbox)
 
 ## <a name="enabling-web-content-indexing"></a>Activation de l’indexation de contenu Web
 
@@ -63,7 +63,7 @@ Nouveauté d’iOS 9, les liens universels fournissent une meilleure alternative
 
 ## <a name="using-twitter-cards"></a>Utilisation des cartes Twitter
 
-Vous pouvez fournir des liens détaillés vers le contenu de votre application à l’aide d’une carte Twitter. Exemple :
+Vous pouvez fournir des liens détaillés vers le contenu de votre application à l’aide d’une carte Twitter. Par exemple :
 
 ```html
 <meta name="twitter:app:name:iphone" content="AppName">
@@ -75,7 +75,7 @@ Pour plus d’informations, consultez la documentation sur le [protocole de cart
 
 ## <a name="using-facebook-app-links"></a>Utilisation des liens d’application Facebook
 
-Vous pouvez fournir des liens détaillés vers le contenu de votre application à l’aide d’un lien vers une application Facebook. Exemple :
+Vous pouvez fournir des liens détaillés vers le contenu de votre application à l’aide d’un lien vers une application Facebook. Par exemple :
 
 ```html
 <meta property="al:ios:app_name" content="AppName">
@@ -87,7 +87,7 @@ Pour plus d’informations, consultez la documentation [des liens vers les appli
 
 ## <a name="opening-deep-links"></a>Ouverture de liens détaillés
 
-Vous devez ajouter la prise en charge de l’ouverture et de l’affichage des liens détaillés dans votre application Xamarin. iOS. Modifiez le fichier **AppDelegate.cs** et remplacez la méthode `OpenURL` pour gérer le format d’URL personnalisé. Exemple :
+Vous devez ajouter la prise en charge de l’ouverture et de l’affichage des liens détaillés dans votre application Xamarin. iOS. Modifiez le fichier **AppDelegate.cs** et remplacez la `OpenURL` méthode pour gérer le format d’URL personnalisé. Par exemple :
 
 ```csharp
 public override bool OpenUrl (UIApplication application, NSUrl url, string sourceApplication, NSObject annotation)
@@ -113,7 +113,7 @@ public override bool OpenUrl (UIApplication application, NSUrl url, string sourc
 }
 ```
 
-Dans le code ci-dessus, nous recherchons une URL contenant `/appname` et transmettant la valeur de `query` (`123` dans cet exemple) à un contrôleur d’affichage personnalisé dans notre application pour afficher le contenu demandé à l’utilisateur.
+Dans le code ci-dessus, nous recherchons une URL qui contient `/appname` et transmettant la valeur de `query` ( `123` dans cet exemple) à un contrôleur d’affichage personnalisé dans notre application pour afficher le contenu demandé à l’utilisateur.
 
 ## <a name="providing-rich-results-with-structured-data"></a>Fournir des résultats enrichis avec des données structurées
 
@@ -121,7 +121,7 @@ En incluant le balisage de données structurées, vous pouvez fournir à l’uti
 
 Les résultats enrichis sont plus attrayants et peuvent contribuer à améliorer votre classement dans l’index de recherche basé sur le Cloud en attirant davantage d’utilisateurs pour interagir avec eux.
 
-Une option pour fournir le balisage de données structurées consiste à utiliser ouvrir un graphique. Exemple :
+Une option pour fournir le balisage de données structurées consiste à utiliser ouvrir un graphique. Par exemple :
 
 ```html
 <meta property="og:image" content="http://company.com/appname/icon.jpg">
@@ -131,7 +131,7 @@ Une option pour fournir le balisage de données structurées consiste à utilise
 
 Pour plus d’informations, consultez le site Web [Open Graph](https://ogp.me) .
 
-Un autre format courant pour le balisage de données structurées est le format microdonnées de Schema. org. Exemple :
+Un autre format courant pour le balisage de données structurées est le format microdonnées de Schema. org. Par exemple :
 
 ```html
 <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
@@ -152,17 +152,17 @@ Les mêmes informations peuvent être représentées au format JSON-LD de Schema
 
 Voici un exemple de métadonnées de votre site Web fournissant des résultats de recherche enrichis à l’utilisateur final :
 
-[![](web-markup-images/deeplink01.png "Rich search results via Structured Data Markup")](web-markup-images/deeplink01.png#lightbox)
+[![Résultats de recherche enrichis via le balisage de données structurées](web-markup-images/deeplink01.png)](web-markup-images/deeplink01.png#lightbox)
 
 Apple prend actuellement en charge les types de schémas suivants à partir de schema.org :
 
 - AggregateRating
 - ImageObject
 - InteractionCount
-- Offre
-- Dernière
-- Gammedeprix
-- Recette
+- Offres
+- Organisation
+- PriceRange
+- Recette (recipe)
 - SearchAction
 
 Pour plus d’informations sur ces types de schéma, consultez [Schema.org](https://schema.org).

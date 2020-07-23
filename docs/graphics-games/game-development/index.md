@@ -6,12 +6,12 @@ ms.assetid: 0E3CDCD2-FBE4-49F5-A70E-8A7B937BAF1D
 author: conceptdev
 ms.author: crdun
 ms.date: 03/24/2017
-ms.openlocfilehash: 5992e8df3080bb35fd123483e5ffb5e64f268b1a
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.openlocfilehash: 8f7ec5175895a31746710fad9ea7372052b698ff
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "78292893"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936485"
 ---
 # <a name="introduction-to-game-development-with-xamarin"></a>Présentation du développement de jeux avec Xamarin
 
@@ -34,7 +34,7 @@ Un jeu classique nécessite un déplacement ou une modification constant sur l�
 
 Voici un diagramme d’une boucle de jeu simple :
 
-![](images/image1.png "This is a diagram of a simple game loop")
+![Il s’agit d’un diagramme d’une boucle de jeux simple](images/image1.png)
 
 Les technologies que nous abordons ci-dessous feront abstraction de la boucle while réelle, mais en dépit de cette abstraction, le concept des mises à jour de chaque frame sera présent.
 
@@ -61,13 +61,13 @@ Le chargement et le déchargement (ou suppression) du contenu manuellement peuve
 
 Les formats de fichier personnalisés peuvent nécessiter un traitement au moment du chargement, ce qui nécessite du code de chargement personnalisé.
 
-### <a name="math"></a>Mathématique
+### <a name="math"></a>Math
 
 De nombreux jeux nécessitent des mathématiques plus avancées que les applications sans jeu. Bien entendu, le niveau de maths dépend de la complexité du jeu. Dans les jeux en 3D généraux, vous avez besoin de plus de mathématiques que de 2D. Heureusement, vous pouvez toujours commencer à utiliser des jeux simples et vous familiariser avec vos déplacements. Le développement de jeux peut être un excellent moyen d’apprendre les mathématiques !
 
 Si vous êtes familiarisé avec le plan cartésien, c’est-à-dire en utilisant des coordonnées X et Y pour positionner les objets, vous vous en êtes suffisamment suffisamment pour commencer le développement de jeux. L’exemple suivant montre un plan cartésien avec un point positif Y pointant vers le haut :
 
-![](images/image2.png "This shows a Cartesian plane with positive Y pointing upward")
+![Cela montre un plan cartésien avec un Y positif pointant vers le haut](images/image2.png)
 
 > [!IMPORTANT]
 > Certains moteurs/API utilisent un système de coordonnées dans lequel l’extension de la valeur Y d’un objet le déplacera, tandis que d’autres systèmes utilisent un système de coordonnées dont l’ordonnée positive est. Gardez cela à l’esprit si vous passez d’un système à un autre.
@@ -86,8 +86,8 @@ Certains pipelines de contenu peuvent être très rapides et ne nécessitent pas
 Le développement de jeux introduit de nouveaux rôles et titres pour les personnes impliquées dans le processus. La plupart des développeurs de jeux ne sont pas en mesure de répondre à l’ensemble des compétences requises pour libérer un jeu complet. il existe donc un certain nombre de disciplines. N’oubliez pas qu’il ne s’agit pas d’une liste complète des domaines de développement, mais seulement de quelques-uns des plus courants.
 
 - **Programmeur** : la plupart des personnes lisant cet article seront classées dans cette catégorie. Le rôle d’un programmeur dans le développement de jeux est semblable au rôle d’un programmeur dans une application non Game. Les responsabilités incluent l’écriture d’une logique pour contrôler le déroulement d’un jeu, le développement de systèmes pour les tâches courantes dans le contexte d’un projet donné, l’ajout et l’affichage de contenu et, bien sûr, la résolution des bogues.
-- **artiste 2D** : les artistes 2D sont responsables de la création de *ressources 2D*. Il s’agit notamment des fichiers image pour l’interface utilisateur graphique, les particules, les environnements et les caractères du jeu. Si le jeu que vous développez est 3D, alors les artistes 2D peuvent ne pas être responsables des environnements et des caractères. Vous pouvez trouver un art gratuit pour votre jeu au [http://opengameart.org/](http://opengameart.org/) .
-- **artistes 3D** : les artistes 3D sont responsables de la création de *ressources 3D*. Celles-ci incluent des modèles 3D pour les environnements, les caractères et les propriétés (mobilier, plantes et autres objets inanimés). Certaines équipes font la différence entre les artistes 3D et les animateurs 3D en fonction de la taille de l’équipe. Vous pouvez trouver un art 3D gratuit pour votre jeu sur [http://opengameart.org/](http://opengameart.org/) .
+- **artiste 2D** : les artistes 2D sont responsables de la création de *ressources 2D*. Il s’agit notamment des fichiers image pour l’interface utilisateur graphique, les particules, les environnements et les caractères du jeu. Si le jeu que vous développez est 3D, alors les artistes 2D peuvent ne pas être responsables des environnements et des caractères. Vous pouvez trouver un art gratuit pour votre jeu à l’adresse [http://opengameart.org/](http://opengameart.org/) .
+- **artistes 3D** : les artistes 3D sont responsables de la création de *ressources 3D*. Celles-ci incluent des modèles 3D pour les environnements, les caractères et les propriétés (mobilier, plantes et autres objets inanimés). Certaines équipes font la différence entre les artistes 3D et les animateurs 3D en fonction de la taille de l’équipe. Vous pouvez trouver un art 3D gratuit pour votre jeu à l’adresse [http://opengameart.org/](http://opengameart.org/) .
 - **Concepteur de jeux** : les concepteurs de jeux sont chargés de définir la façon dont le jeu est joué. Cela peut inclure des décisions de haut niveau, telles que la définition du jeu, l’objectif global du jeu et la façon dont un joueur progresse dans le jeu. Les concepteurs de jeux peuvent également être impliqués dans des décisions très détaillées telles que le mappage d’entrées à des actions, la définition de coefficients pour le déplacement ou les niveaux et la conception de la disposition du niveau. N’oubliez pas que le *Concepteur* de termes peut faire référence à un concepteur de jeux ou à un concepteur visuel en fonction du contexte.
 - **Sound Designer** : les concepteurs de sons sont responsables des ressources audio d’un jeu. Certaines équipes peuvent faire la différence entre les personnes responsables de la création d’effets sonores et de compositeurs, tandis que les petites équipes peuvent avoir une seule personne responsable de l’audio.
 
@@ -121,11 +121,11 @@ Les exemples notables de jeux utilisant un monojeu sont les suivants :
 
 FEZ:
 
-![](images/image7.png "FEZ")
+![FEZ](images/image7.png)
 
 Bastion
 
-![](images/image8.jpg "Bastion")
+![Bastion](images/image8.jpg)
 
 Pour commencer à travailler avec monojeu, accédez à nos [guides monojeu](~/graphics-games/monogame/index.md).
 
@@ -133,7 +133,7 @@ Pour commencer à travailler avec monojeu, accédez à nos [guides monojeu](~/gr
 
 UrhoSharp est un moteur 3D et 2D de haut niveau, qui peut être utilisé pour créer des scènes 3D et 2D animées pour vos applications à l’aide de géométries, de matériaux, d’éclairages et de caméras.
 
-![](images/urhosharp.gif "UrhoSharp is a cross-platform high-level 3D and 2D engine that can be used to create animated 3D and 2D scenes")
+![UrhoSharp est un moteur 3D et 2D de haut niveau, qui peut être utilisé pour créer des scènes 3D et 2D animées](images/urhosharp.gif)
 
 Consultez les [guides UrhoSharp](~/graphics-games/urhosharp/index.md) pour commencer.
 
@@ -141,11 +141,11 @@ Consultez les [guides UrhoSharp](~/graphics-games/urhosharp/index.md) pour comme
 
 Les technologies mises en surbrillance ci-dessus ne sont qu’un exemple des technologies disponibles. Les autres technologies notables sont les suivantes :
 
-- **Sprite Kit** – Xamarin fournit la prise en charge de l’infrastructure de jeu de sprites du Kit Apple, qui vous permet d’accéder à toutes les fonctionnalités de l’API native. Étant donné que le kit de sprites est une technologie créée par Apple, il offre une intégration profonde avec le reste de l’écosystème iOS. Bien entendu, le kit sprite n’est pas multiplateforme et ne peut donc pas être utilisé sur Android. Pour plus d’informations sur l’utilisation du kit Sprite, consultez ce billet : [https://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/](https://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/)
-- **Scène Kit** – Xamarin fournit également la prise en charge de l’infrastructure du kit de scène d’Apple, qui simplifie l’implémentation de graphiques 3D dans les applications iOS. Scene Kit est également une technologie fournie par Apple. il a donc à la fois des considérations relatives à l’intégration et à la plate-forme, mentionnées ci-dessus pour le kit Sprite. Pour plus d’informations sur le kit de scène, consultez ce billet : [https://blog.xamarin.com/3d-in-ios-8-with-scene-kit/](https://blog.xamarin.com/3d-in-ios-8-with-scene-kit/)
-- **OpenTK –** OpenTK (qui signifie Open Tool Kit) fournit un accès OpenGL de bas niveau à du matériel iOS, Apple et Mac. Pour plus d’informations sur OpenTK, consultez la page principale à l’adresse suivante : [https://opentk.net/](https://opentk.net/)
+- **Sprite Kit** – Xamarin fournit la prise en charge de l’infrastructure de jeu de sprites du Kit Apple, qui vous permet d’accéder à toutes les fonctionnalités de l’API native. Étant donné que le kit de sprites est une technologie créée par Apple, il offre une intégration profonde avec le reste de l’écosystème iOS. Bien entendu, le kit sprite n’est pas multiplateforme et ne peut donc pas être utilisé sur Android. Pour plus d’informations sur l’utilisation du kit de sprites, consultez ce billet :[https://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/](https://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/)
+- **Scène Kit** – Xamarin fournit également la prise en charge de l’infrastructure du kit de scène d’Apple, qui simplifie l’implémentation de graphiques 3D dans les applications iOS. Scene Kit est également une technologie fournie par Apple. il a donc à la fois des considérations relatives à l’intégration et à la plate-forme, mentionnées ci-dessus pour le kit Sprite. Pour plus d’informations sur le kit de scène, consultez ce billet :[https://blog.xamarin.com/3d-in-ios-8-with-scene-kit/](https://blog.xamarin.com/3d-in-ios-8-with-scene-kit/)
+- **OpenTK –** OpenTK (qui signifie Open Tool Kit) fournit un accès OpenGL de bas niveau à du matériel iOS, Apple et Mac. Pour plus d’informations sur OpenTK, consultez la page principale à l’adresse suivante :[https://opentk.net/](https://opentk.net/)
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Guides monojeu](~/graphics-games/monogame/index.md)
 - [Guides UrhoSharp](~/graphics-games/urhosharp/index.md)

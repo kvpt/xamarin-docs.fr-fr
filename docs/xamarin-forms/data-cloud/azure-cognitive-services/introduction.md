@@ -10,16 +10,16 @@ ms.date: 02/08/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7c2a63c40d1006c7d83c9dde871e17d4b194bdca
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: cce5b0fc9c3d1d04c20b1be242197e3bc9e4f901
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84129712"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929335"
 ---
 # <a name="xamarinforms-and-azure-cognitive-services-introduction"></a>Xamarin.Formset présentation d’Azure Cognitive Services
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
 _Microsoft Cognitive Services sont un ensemble d’API, de kits de développement logiciel (SDK) et de services accessibles aux développeurs pour rendre leurs applications plus intelligentes en ajoutant des fonctionnalités telles que la reconnaissance faciale, la reconnaissance vocale et la compréhension de la langue. Cet article fournit une présentation de l’exemple d’application qui montre comment appeler certaines des API Microsoft cognitive service._
 
@@ -42,17 +42,17 @@ Les tâches sont stockées dans une base de données SQLite locale. Pour plus d�
 
 Le `TodoListPage` s’affiche lorsque l’application est lancée. Cette page affiche une liste de toutes les tâches stockées dans la base de données locale et permet à l’utilisateur de créer une nouvelle tâche ou d’évaluer l’application :
 
-![](introduction-images/sample-application-1.png "TodoListPage")
+![TodoListPage](introduction-images/sample-application-1.png)
 
 Vous pouvez créer des éléments en cliquant sur le *+* bouton qui navigue vers le `TodoItemPage` . Vous pouvez également accéder à cette page en sélectionnant une tâche :
 
-![](introduction-images/sample-application-2.png "TodoItemPage")
+![TodoItemPage](introduction-images/sample-application-2.png)
 
 Le `TodoItemPage` permet la création, la modification, la vérification orthographique, la traduction, l’enregistrement et la suppression des tâches. La reconnaissance vocale peut être utilisée pour créer ou modifier une tâche. Pour ce faire, appuyez sur le bouton microphone pour démarrer l’enregistrement, puis appuyez une deuxième fois sur le même bouton pour arrêter l’enregistrement, qui envoie l’enregistrement à l’API de reconnaissance Reconnaissance vocale Bing.
 
 Le fait de cliquer sur le bouton smils sur le `TodoListPage` permet de naviguer jusqu’au `RateAppPage` , qui est utilisé pour effectuer la reconnaissance des émotions sur une image d’une expression faciale :
 
-![](introduction-images/sample-application-3.png "RateAppPage")
+![RateAppPage](introduction-images/sample-application-3.png)
 
 Le `RateAppPage` permet à l’utilisateur de prendre une photo de son visage, qui est soumise au API visage avec l’émotion retournée affichée.
 
