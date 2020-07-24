@@ -8,24 +8,24 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
 no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 48060356014dc7600518b5de555ad3f346c50c35
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+- ':::no-loc(Xamarin.Forms):::'
+- ':::no-loc(Xamarin.Essentials):::'
+ms.openlocfilehash: a721f51d3f59bc166a48f5cc3a3eec9712ace837
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84128542"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996680"
 ---
 # <a name="visualelement-elevation-on-android"></a>Élévation VisualElement sur Android
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Ce spécifique à la plateforme Android est utilisé pour contrôler l’élévation, ou ordre de plan, des éléments visuels sur les applications qui ciblent l’API 21 ou une version ultérieure. L’élévation d’un élément visuel détermine son ordre de dessin, avec des éléments visuels avec des valeurs Z plus élevées obturant des éléments visuels avec des valeurs Z inférieures. Il est consommé en XAML en affectant `VisualElement.Elevation` une valeur à la propriété jointe `boolean` :
 
 ```xaml
 <ContentPage ...
-             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:android="clr-namespace::::no-loc(Xamarin.Forms):::.PlatformConfiguration.AndroidSpecific;assembly=:::no-loc(Xamarin.Forms):::.Core"
              Title="Elevation">
     <StackLayout>
         <Grid>
@@ -43,8 +43,8 @@ Ce spécifique à la plateforme Android est utilisé pour contrôler l’éléva
 Elle peut également être utilisée à partir de C# à l’aide de l’API Fluent :
 
 ```csharp
-using Xamarin.Forms.PlatformConfiguration;
-using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
+using :::no-loc(Xamarin.Forms):::.PlatformConfiguration;
+using :::no-loc(Xamarin.Forms):::.PlatformConfiguration.AndroidSpecific;
 ...
 
 public class AndroidElevationPageCS : ContentPage
@@ -82,15 +82,15 @@ public class AndroidElevationPageCS : ContentPage
 }
 ```
 
-La `Button.On<Android>` méthode spécifie que ce spécifique à la plateforme s’exécutera uniquement sur Android. La `VisualElement.SetElevation` méthode, dans l' [`Xamarin.Forms.PlatformConfiguration.AndroidSpecific`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) espace de noms, est utilisée pour affecter une valeur null à l’élévation de l’élément visuel `float` . En outre, la `VisualElement.GetElevation` méthode peut être utilisée pour récupérer la valeur d’élévation d’un élément visuel.
+La `Button.On<Android>` méthode spécifie que ce spécifique à la plateforme s’exécutera uniquement sur Android. La `VisualElement.SetElevation` méthode, dans l' [`:::no-loc(Xamarin.Forms):::.PlatformConfiguration.AndroidSpecific`](xref::::no-loc(Xamarin.Forms):::.PlatformConfiguration.AndroidSpecific) espace de noms, est utilisée pour affecter une valeur null à l’élévation de l’élément visuel `float` . En outre, la `VisualElement.GetElevation` méthode peut être utilisée pour récupérer la valeur d’élévation d’un élément visuel.
 
-Le résultat est que l’élévation d’éléments visuels peut être contrôlée afin que les éléments visuels avec des valeurs Z supérieures occultait les éléments visuels avec des valeurs Z inférieures. Par conséquent, dans cet exemple, le deuxième [`Button`](xref:Xamarin.Forms.Button) est rendu au-dessus de [`BoxView`](xref:Xamarin.Forms.BoxView) , car il a une valeur d’élévation supérieure :
+Le résultat est que l’élévation d’éléments visuels peut être contrôlée afin que les éléments visuels avec des valeurs Z supérieures occultait les éléments visuels avec des valeurs Z inférieures. Par conséquent, dans cet exemple, le deuxième [`Button`](xref::::no-loc(Xamarin.Forms):::.Button) est rendu au-dessus de [`BoxView`](xref::::no-loc(Xamarin.Forms):::.BoxView) , car il a une valeur d’élévation supérieure :
 
-![](visualelement-elevation-images/elevation.png)
+![Capture d’écran d’élévation VisualElement](visualelement-elevation-images/elevation.png)
 
 ## <a name="related-links"></a>Liens connexes
 
 - [PlatformSpecifics (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [Création de caractéristiques de la plateforme](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
-- [API AndroidSpecific](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
-- [API AndroidSpecific. AppCompat](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)
+- [API AndroidSpecific](xref::::no-loc(Xamarin.Forms):::.PlatformConfiguration.AndroidSpecific)
+- [API AndroidSpecific. AppCompat](xref::::no-loc(Xamarin.Forms):::.PlatformConfiguration.AndroidSpecific.AppCompat)

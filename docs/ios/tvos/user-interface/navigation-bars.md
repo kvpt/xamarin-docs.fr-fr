@@ -127,7 +127,7 @@ Pour plus d’informations sur l’utilisation des storyboards, consultez notre 
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a abordé la conception et l’utilisation des barres de navigation à l’intérieur d’une application Xamarin. tvOS.
 

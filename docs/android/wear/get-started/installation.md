@@ -1,5 +1,5 @@
 ---
-title: 'Installation et configuration de l’usure du système d’exploitation onXamarin. Android '
+title: 'Installation et configuration du système d’exploitation d’usure sur Xamarin. Android '
 description: Cet article vous guide tout au long des étapes d’installation et des détails de configuration nécessaires à la préparation de votre ordinateur et de vos appareils au développement Android. À la fin de cet article, vous disposerez d’une installation Xamarin. Android d’usure intégrée dans Visual Studio pour Mac et/ou Microsoft Visual Studio, et vous serez prêt à commencer à créer votre première application Xamarin. Android usure.
 ms.prod: xamarin
 ms.assetid: 3BB395FA-0545-4024-A18F-98CF5E9CA55F
@@ -7,28 +7,28 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 04/25/2018
-ms.openlocfilehash: 83ec214ae1838959355e99322ce5a809ead004fa
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: ea54dcd1df800df1df855fc6b7efedecfda1a24f
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028730"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996862"
 ---
-# <a name="setup-and-installation"></a>Installation et configuration
+# <a name="install-and-setup-wear-os-on-xamarinandroid"></a>Installer et configurer l’usure du système d’exploitation sur Xamarin. Android
 
 _Cet article vous guide tout au long des étapes d’installation et des détails de configuration nécessaires à la préparation de votre ordinateur et de vos appareils au développement Android. À la fin de cet article, vous disposerez d’une installation Xamarin. Android d’usure intégrée dans Visual Studio pour Mac et/ou Microsoft Visual Studio, et vous serez prêt à commencer à créer votre première application Xamarin. Android usure._
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Configuration requise
 
 Les éléments suivants sont requis pour créer des applications d’usure Android basées sur Xamarin :
 
-- **Visual Studio ou Visual Studio pour Mac** &ndash; visual studio 2017 ou version ultérieure est requis.
+- **Visual Studio ou Visual Studio pour Mac** &ndash; La Communauté Visual Studio 2017 ou une version ultérieure est requise.
 
-- **Xamarin. android** &ndash; Xamarin. Android 4,17 ou version ultérieure doit être installé et configuré à l’aide de Visual Studio ou de Visual Studio pour Mac.
+- **Xamarin. Android** &ndash; Xamarin. Android 4,17 ou version ultérieure doit être installé et configuré à l’aide de Visual Studio ou de Visual Studio pour Mac.
 
 - **Android SDK** -Android SDK 5.0.1 (API 21) ou version ultérieure doit être installé via le gestionnaire de Android SDK.
 
-- **Java Developer Kit** &ndash; Xamarin Android Development requiert [JDK 1,8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) si vous développez pour l’API de niveau 24 ou supérieur (JDK 1,8 prend également en charge les niveaux d’API antérieurs à 24).
+- Kit de développement **java** &ndash; Le développement Xamarin Android requiert [JDK 1,8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) si vous développez pour l’API de niveau 24 ou supérieur (JDK 1,8 prend également en charge les niveaux d’API antérieurs à 24).
 
 Vous pouvez continuer à utiliser [JDK 1,7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) si vous développez spécifiquement pour l’API de niveau 23 ou antérieur.
 
@@ -37,23 +37,23 @@ Vous pouvez continuer à utiliser [JDK 1,7](https://www.oracle.com/technetwork/j
 
 ## <a name="installation"></a>Installation
 
-Après avoir installé Xamarin. Android, procédez comme suit pour être prêt à créer et à tester des applications d’usure Android : 
+Après avoir installé Xamarin. Android, procédez comme suit pour être prêt à créer et à tester des applications d’usure Android :
 
 1. Installez les Android SDK et les outils requis.
 2. Configurez un appareil de test.
 3. Créez votre première application Android usure.
 
-Ces étapes sont décrites dans les sections suivantes.
+Les étapes de cette procédure sont décrites dans les sections suivantes.
 
-### <a name="install-android-sdk-and-tools"></a>Installer Android SDK et les outils 
+### <a name="install-android-sdk-and-tools"></a>Installer Android SDK et les outils
 
-Lancez le **Gestionnaire de Android SDK**: 
+Lancez le **Gestionnaire de Android SDK**:
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 ![Comment lancer le gestionnaire de Android SDK dans Visual Studio](installation-images/vs/sdk-menu.png)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 ![Comment lancer le gestionnaire de Android SDK dans Visual Studio pour Mac](installation-images/xs/sdk-menu.png)
 
@@ -65,13 +65,13 @@ Assurez-vous que les Android SDK et les outils suivants sont installés :
 - Android 4.4 W (API20) ou
 - Android 5.0.1 (API21) ou version ultérieure.
 
-Si le kit de développement logiciel (SDK) et les outils les plus récents ne sont pas installés, téléchargez les outils requis du kit de développement logiciel (SDK) *et* les bits d’API (vous devrez peut-être faire défiler un bit pour les trouver &ndash; la sélection de l’API est indiquée ci-dessous 
+Si le kit de développement logiciel (SDK) et les outils les plus récents ne sont pas installés, téléchargez les outils requis du kit de développement logiciel (SDK) *et* les bits d’API (vous devrez peut-être faire défiler un peu pour les trouver dans &ndash; la sélection de l’API) :
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 ![Exemple de capture d’écran du gestionnaire SDK de l’activation des composants Android 5.0.1](installation-images/vs/sdk-select.png)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 ![Exemple de capture d’écran du gestionnaire SDK de l’activation des composants Android 4,4 et 5.0.1](installation-images/xs/sdk-select.png)
 
@@ -79,17 +79,17 @@ Si le kit de développement logiciel (SDK) et les outils les plus récents ne so
 
 ## <a name="configuration"></a>Configuration
 
-Avant de pouvoir utiliser tester votre application, vous devez configurer un émulateur d’usure Android ou un appareil d’usure Android réel. 
+Avant de pouvoir utiliser tester votre application, vous devez configurer un émulateur d’usure Android ou un appareil d’usure Android réel.
 
 ### <a name="android-wear-emulator"></a>Émulateur d’usure Android
 
 Avant de pouvoir utiliser un émulateur Android d’usure, vous devez configurer un appareil virtuel Android d’usure à l’aide du **Gestionnaire d’émulateur Google**:
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 ![Comment lancer le gestionnaire de Émulateur Android à partir de Visual Studio](installation-images/vs/emulator-menu.png)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 ![Comment lancer le gestionnaire de Émulateur Android à partir de Visual Studio pour Mac](installation-images/xs/emulator-menu.png)
 
@@ -107,9 +107,9 @@ Suivez les instructions [Hello, usure](~/android/wear/get-started/hello-wear.md)
 
 ## <a name="packaging-your-app"></a>Empaquetage de votre application
 
-Les applications d’usure Android sont toujours distribuées avec une application de téléphone Android auxiliaire. 
+Les applications d’usure Android sont toujours distribuées avec une application de téléphone Android auxiliaire.
 
-Quand vous ajoutez votre application Android usure comme référence à votre application Android principale, il est automatiquement considéré comme un projet Android d’usure et génère toutes les données XML et les métadonnées nécessaires pour vous. En outre, il vérifie que les numéros de package et de version correspondent pour vous permettre d’envoyer facilement vos applications à Google Play. 
+Quand vous ajoutez votre application Android usure comme référence à votre application Android principale, il est automatiquement considéré comme un projet Android d’usure et génère toutes les données XML et les métadonnées nécessaires pour vous. En outre, il vérifie que les numéros de package et de version correspondent pour vous permettre d’envoyer facilement vos applications à Google Play.
 
 Pour en savoir plus sur l’empaquetage d’applications, consultez [utilisation de l’empaquetage](~/android/wear/deploy-test/packaging.md).
 

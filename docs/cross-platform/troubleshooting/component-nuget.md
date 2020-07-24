@@ -7,12 +7,12 @@ ms.assetid: 9E6C986F-3FBA-4599-8367-FB0C565C0ADE
 author: davidortinau
 ms.author: daortin
 ms.date: 04/18/2018
-ms.openlocfilehash: f81df8ac253e53b16c3ab09bf80d66a7b6324854
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: b9b771efe338fbcc250aa6e7a83b73f35269d3bf
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571517"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996810"
 ---
 # <a name="updating-component-references-to-nuget"></a>Mise à jour des références de composants à NuGet
 
@@ -27,7 +27,7 @@ Une liste de plug- [ins et de bibliothèques](https://github.com/xamarin/Xamarin
 
 ## <a name="manually-removing-component-references"></a>Suppression manuelle des références de composant
 
-La version 15,6 de Visual Studio et de la version 7,4 de Visual Studio pour Mac ne prend plus en charge les composants de votre projet. 
+La version 15,6 de Visual Studio et de la version 7,4 de Visual Studio pour Mac ne prend plus en charge les composants de votre projet.
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
@@ -37,7 +37,7 @@ Si vous chargez un projet dans Visual Studio, la boîte de dialogue suivante s�
 
 Pour supprimer un composant de votre projet :
 
-1. Ouvrez le fichier  **.csproj**. Pour ce faire, cliquez avec le bouton droit sur le nom du projet, puis sélectionnez **décharger le projet**. 
+1. Ouvrez le fichier  **.csproj**. Pour ce faire, cliquez avec le bouton droit sur le nom du projet, puis sélectionnez **décharger le projet**.
 
 2. Cliquez à nouveau avec le bouton droit sur le projet déchargé, puis sélectionnez **modifier {Your-Project-Name}. csproj**.
 
@@ -151,7 +151,7 @@ Si l’onglet **assemblys** de la page d’informations du composant contient de
 
 Notez que l’onglet **packages** est probablement vide :
 
-![](component-nuget-images/packages-tab-empty-sml.png)
+![Onglet packages](component-nuget-images/packages-tab-empty-sml.png)
 
 _Il peut contenir des dépendances NuGet, mais celles-ci peuvent être ignorées._
 
@@ -179,7 +179,7 @@ Cette opération supprime le composant et toutes les références. Cela entraîn
 1. Cliquez avec le bouton droit sur le nœud **packages** et choisissez **Ajouter des packages...**.
 2. Recherchez le remplacement NuGet par son nom ou son auteur :
 
-    ![](component-nuget-images/nuget-search-sml.png)
+    ![Recherche NuGet](component-nuget-images/nuget-search-sml.png)
 
 3. Appuyez sur **Ajouter un package**.
 
@@ -201,7 +201,7 @@ Cela signifie que si vous ouvrez la solution sur un nouvel ordinateur, le compos
 
 De nombreux fournisseurs de composants travaillent toujours sur la migration vers NuGet, tandis que d’autres (y compris les produits disponibles dans le commerce) peuvent rechercher d’autres options de remise.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Liste des plug-ins et des bibliothèques Xamarin populaires](https://github.com/xamarin/XamarinComponents/blob/master/README.md)
 - [Installer et utiliser un package NuGet (Windows)](https://docs.microsoft.com/nuget/quickstart/use-a-package)
