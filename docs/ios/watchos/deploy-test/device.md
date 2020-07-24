@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 683ac99ba46d2e23b0190d411e4911725c409f23
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: a1ff70349ca7d7b97431b2e3d07aa4c8028c38c0
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86931571"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996355"
 ---
 # <a name="testing-on-apple-watch-devices"></a>Test sur des appareils Apple Watch
 
@@ -36,7 +36,7 @@ Les espions ne sont pas différents : vous devez maintenant ajouter votre appar
 
 Lorsque vous connaissez le UDID du espion, ajoutez-le à la liste des appareils dans le centre de développement :
 
-![](device-images/devices-watch-sml.png "The Watch's UDID in the device list")
+![UDID de l’espion dans la liste des appareils](device-images/devices-watch-sml.png)
 
 Une fois l’appareil espion ajouté, assurez-vous qu’il est sélectionné dans tous les profils de développement nouveaux ou existants ou les profils de configuration ad hoc que vous créez :
 
@@ -87,7 +87,7 @@ Une fois que vous avez configuré votre appareil, les ID d’application et les 
 
 8. Si l’application Watch est correctement installée, l’icône reste sur l’écran Watch. Touchez-la pour commencer à tester votre application !
 
-## <a name="troubleshooting"></a>Dépannage
+## <a name="troubleshooting"></a>Résolution des problèmes
 
 Si une erreur se produit pendant le déploiement, utilisez la **vue > pad > journal** de l’appareil pour afficher plus d’informations sur l’erreur. Certaines erreurs et leurs causes sont répertoriées ci-dessous :
 

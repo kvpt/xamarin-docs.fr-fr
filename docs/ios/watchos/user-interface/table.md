@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: c9943842d71ffa19e0691e1f9c7dca0063749463
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 0358e1570a5e38e008894a7eb9b6ca1985a0fed0
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936901"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997252"
 ---
 # <a name="watchos-table-controls-in-xamarin"></a>Contrôles de table Watchos dans Xamarin
 
 Le contrôle Watchos `WKInterfaceTable` est bien plus simple que son équivalent iOS, mais il joue un rôle similaire. Il crée une liste déroulante de lignes qui peuvent avoir des dispositions personnalisées et qui répondent aux événements tactiles.
 
-![Liste ](table-images/table-list-sml.png) des tables de surveillance![](table-images/table-detail-sml.png)
+![Détail de la ](table-images/table-list-sml.png) table de surveillance de liste de tables de surveillance ![](table-images/table-detail-sml.png)
 <!-- watch image courtesy of http://infinitapps.com/bezel/ -->
 
 ## <a name="adding-a-table"></a>Ajout d’une table
@@ -142,7 +142,7 @@ for (var i = 0; i < rows.Count; i++) {
 
 Watchos 3 a introduit une nouvelle fonctionnalité pour les tables : la possibilité de faire défiler les pages de détails associées à chaque ligne, sans avoir à revenir à la table et à choisir une autre ligne. Vous pouvez faire défiler les écrans de détails en effectuant un balayage vers le haut ou vers le haut, ou en utilisant le Digital Crown.
 
-![Exemple ](table-images/table-scroll-sml.png) de pagination des détails verticaux![](table-images/table-detail-sml.png)
+![Exemple de pagination des détails verticaux](table-images/table-scroll-sml.png) ![Détail de la pagination verticale](table-images/table-detail-sml.png)
 
 > [!IMPORTANT]
 > Cette fonctionnalité n’est actuellement disponible qu’en modifiant le Storyboard dans Xcode Interface Builder.

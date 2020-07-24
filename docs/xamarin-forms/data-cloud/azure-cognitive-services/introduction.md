@@ -66,7 +66,7 @@ Le projet de code partagé pour l’exemple d’application se compose de cinq d
 |Référentiels|Contient l' `ITodoItemRepository` interface et la `TodoItemRepository` classe utilisées pour effectuer des opérations de base de données.|
 |Services|Contient les interfaces et les classes utilisées pour accéder à différentes API Microsoft cognitive service, ainsi que les interfaces utilisées par la `DependencyService` classe pour localiser les classes qui implémentent les interfaces dans les projets de plateforme.|
 |Utils|Contient la `Timer` classe, qui est utilisée par la `AuthenticationService` classe pour renouveler un jeton d’accès JWT toutes les 9 minutes.|
-|Les vues|Contient les pages de l’application.|
+|Affichages|Contient les pages de l’application.|
 
 Le projet de code partagé contient également des fichiers importants :
 

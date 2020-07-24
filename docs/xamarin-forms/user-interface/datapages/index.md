@@ -38,7 +38,7 @@ Les sources de données et les pages de données associées permettent aux déve
 
 Les DataPages sont ajoutées à une Xamarin.Forms application en incluant ** Xamarin.Forms . **Package de pages NuGet.
 
-### <a name="data-sources"></a>Sources de données
+### <a name="data-sources"></a>Data Sources
 
 La version préliminaire contient des sources de données prédéfinies pouvant être utilisées :
 

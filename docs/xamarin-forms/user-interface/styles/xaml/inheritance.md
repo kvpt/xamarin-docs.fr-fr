@@ -1,6 +1,6 @@
 ---
-title: Héritage de style dansXamarin.Forms
-description: Les styles peuvent hériter d’autres styles pour réduire la duplication et permettre la réutilisation. Cet article explique comment effectuer un héritage de style dans une Xamarin.Forms application.
+title: 'Héritage de style dans:::no-loc(Xamarin.Forms):::'
+description: 'Les styles peuvent hériter d’autres styles pour réduire la duplication et permettre la réutilisation. Cet article explique comment effectuer un héritage de style dans une :::no-loc(Xamarin.Forms)::: application.'
 ms.prod: xamarin
 ms.assetid: 67A3A39C-8CC0-446D-8162-FFA73582D3B8
 ms.technology: xamarin-forms
@@ -8,26 +8,26 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
 no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 80cc419ae098f4a0cbbd782785c0ec5ba03fa703
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+- ':::no-loc(Xamarin.Forms):::'
+- ':::no-loc(Xamarin.Essentials):::'
+ms.openlocfilehash: 9b374987ce7741c82c433b2e35261c3a23ef778f
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138955"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996742"
 ---
-# <a name="style-inheritance-in-xamarinforms"></a>Héritage de style dansXamarin.Forms
+# <a name="style-inheritance-in-no-locxamarinforms"></a>Héritage de style dans:::no-loc(Xamarin.Forms):::
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 
 _Les styles peuvent hériter d’autres styles pour réduire la duplication et permettre la réutilisation._
 
 ## <a name="style-inheritance-in-xaml"></a>Héritage de style en XAML
 
-L’héritage de style est effectué en affectant [`Style.BasedOn`](xref:Xamarin.Forms.Style.BasedOn) à la propriété une valeur existante [`Style`](xref:Xamarin.Forms.Style) . En XAML, cela est possible en affectant `BasedOn` à la propriété une `StaticResource` extension de balisage qui référence un créé précédemment `Style` . En C#, cela est possible en affectant `BasedOn` à la propriété une `Style` instance.
+L’héritage de style est effectué en affectant [`Style.BasedOn`](xref::::no-loc(Xamarin.Forms):::.Style.BasedOn) à la propriété une valeur existante [`Style`](xref::::no-loc(Xamarin.Forms):::.Style) . En XAML, cela est possible en affectant `BasedOn` à la propriété une `StaticResource` extension de balisage qui référence un créé précédemment `Style` . En C#, cela est possible en affectant `BasedOn` à la propriété une `Style` instance.
 
-Les styles qui héritent d’un style de base peuvent inclure [`Setter`](xref:Xamarin.Forms.Setter) des instances de nouvelles propriétés ou les utiliser pour remplacer les styles du style de base. En outre, les styles qui héritent d’un style de base doivent cibler le même type ou un type qui dérive du type ciblé par le style de base. Par exemple, si un style de base cible des [`View`](xref:Xamarin.Forms.View) instances, les styles basés sur le style de base peuvent cibler `View` des instances ou des types qui dérivent de la `View` classe, tels que les [`Label`](xref:Xamarin.Forms.Label) [`Button`](xref:Xamarin.Forms.Button) instances et.
+Les styles qui héritent d’un style de base peuvent inclure [`Setter`](xref::::no-loc(Xamarin.Forms):::.Setter) des instances de nouvelles propriétés ou les utiliser pour remplacer les styles du style de base. En outre, les styles qui héritent d’un style de base doivent cibler le même type ou un type qui dérive du type ciblé par le style de base. Par exemple, si un style de base cible des [`View`](xref::::no-loc(Xamarin.Forms):::.View) instances, les styles basés sur le style de base peuvent cibler `View` des instances ou des types qui dérivent de la `View` classe, tels que les [`Label`](xref::::no-loc(Xamarin.Forms):::.Label) [`Button`](xref::::no-loc(Xamarin.Forms):::.Button) instances et.
 
 Le code suivant illustre l’héritage de style *explicite* dans une page XAML :
 
@@ -65,9 +65,9 @@ Le code suivant illustre l’héritage de style *explicite* dans une page XAML 
 </ContentPage>
 ```
 
-Les `baseStyle` [`View`](xref:Xamarin.Forms.View) instances cibles et définit les [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) Propriétés et [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) . Le `baseStyle` n’est pas défini directement sur les contrôles. Au lieu `labelStyle` `buttonStyle` de cela, en définissant des valeurs de propriété pouvant être liées supplémentaires. Les `labelStyle` et `buttonStyle` sont ensuite appliqués aux [`Label`](xref:Xamarin.Forms.Label) instances et à l' [`Button`](xref:Xamarin.Forms.Button) instance, en définissant leurs [`Style`](xref:Xamarin.Forms.NavigableElement.Style) Propriétés. Cela donne l’affichage illustré dans les captures d’écran suivantes :
+Les `baseStyle` [`View`](xref::::no-loc(Xamarin.Forms):::.View) instances cibles et définit les [`HorizontalOptions`](xref::::no-loc(Xamarin.Forms):::.View.HorizontalOptions) Propriétés et [`VerticalOptions`](xref::::no-loc(Xamarin.Forms):::.View.VerticalOptions) . Le `baseStyle` n’est pas défini directement sur les contrôles. Au lieu `labelStyle` `buttonStyle` de cela, en définissant des valeurs de propriété pouvant être liées supplémentaires. Les `labelStyle` et `buttonStyle` sont ensuite appliqués aux [`Label`](xref::::no-loc(Xamarin.Forms):::.Label) instances et à l' [`Button`](xref::::no-loc(Xamarin.Forms):::.Button) instance, en définissant leurs [`Style`](xref::::no-loc(Xamarin.Forms):::.NavigableElement.Style) Propriétés. Cela donne l’affichage illustré dans les captures d’écran suivantes :
 
-[![](inheritance-images/style-inheritance.png)](inheritance-images/style-inheritance-large.png#lightbox)
+[![Capture d’écran d’héritage de style](inheritance-images/style-inheritance.png)](inheritance-images/style-inheritance-large.png#lightbox)
 
 > [!NOTE]
 > Un style implicite peut être dérivé d’un style explicite, mais un style explicite ne peut pas être dérivé d’un style implicite.
@@ -113,7 +113,7 @@ Dans cet exemple, `labelStyle` et `buttonStyle` sont des ressources de niveau co
 
 ## <a name="style-inheritance-in-c35"></a>Héritage de style en C&#35;
 
-La page C# équivalente, où les [`Style`](xref:Xamarin.Forms.Style) instances sont affectées directement aux [`Style`](xref:Xamarin.Forms.NavigableElement.Style) Propriétés des contrôles requis, est présentée dans l’exemple de code suivant :
+La page C# équivalente, où les [`Style`](xref::::no-loc(Xamarin.Forms):::.Style) instances sont affectées directement aux [`Style`](xref::::no-loc(Xamarin.Forms):::.NavigableElement.Style) Propriétés des contrôles requis, est présentée dans l’exemple de code suivant :
 
 ```csharp
 public class StyleInheritancePageCS : ContentPage
@@ -156,13 +156,13 @@ public class StyleInheritancePageCS : ContentPage
 }
 ```
 
-Les `baseStyle` [`View`](xref:Xamarin.Forms.View) instances cibles et définit les [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) Propriétés et [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) . Le `baseStyle` n’est pas défini directement sur les contrôles. Au lieu `labelStyle` `buttonStyle` de cela, en définissant des valeurs de propriété pouvant être liées supplémentaires. Les `labelStyle` et `buttonStyle` sont ensuite appliqués aux [`Label`](xref:Xamarin.Forms.Label) instances et à l' [`Button`](xref:Xamarin.Forms.Button) instance, en définissant leurs [`Style`](xref:Xamarin.Forms.NavigableElement.Style) Propriétés.
+Les `baseStyle` [`View`](xref::::no-loc(Xamarin.Forms):::.View) instances cibles et définit les [`HorizontalOptions`](xref::::no-loc(Xamarin.Forms):::.View.HorizontalOptions) Propriétés et [`VerticalOptions`](xref::::no-loc(Xamarin.Forms):::.View.VerticalOptions) . Le `baseStyle` n’est pas défini directement sur les contrôles. Au lieu `labelStyle` `buttonStyle` de cela, en définissant des valeurs de propriété pouvant être liées supplémentaires. Les `labelStyle` et `buttonStyle` sont ensuite appliqués aux [`Label`](xref::::no-loc(Xamarin.Forms):::.Label) instances et à l' [`Button`](xref::::no-loc(Xamarin.Forms):::.Button) instance, en définissant leurs [`Style`](xref::::no-loc(Xamarin.Forms):::.NavigableElement.Style) Propriétés.
 
 ## <a name="related-links"></a>Liens connexes
 
 - [Extensions de balisage XAML](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
 - [Styles de base (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 - [Utilisation des styles (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
-- [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
-- [Style](xref:Xamarin.Forms.Style)
-- [Déclaré](xref:Xamarin.Forms.Setter)
+- [ResourceDictionary](xref::::no-loc(Xamarin.Forms):::.ResourceDictionary)
+- [Style](xref::::no-loc(Xamarin.Forms):::.Style)
+- [Déclaré](xref::::no-loc(Xamarin.Forms):::.Setter)

@@ -6,12 +6,12 @@ ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
 author: davidortinau
 ms.author: daortin
 ms.date: 03/24/2017
-ms.openlocfilehash: d21394b3c33b3f415cbe45ae13c84cabab1ec30b
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 89b5dc2ae296b9e9033c45bf93c87de83054f721
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571036"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996485"
 ---
 # <a name="cross-platform-performance"></a>Niveau de performance multiplateforme
 
@@ -298,11 +298,11 @@ Pour aider à réduire la taille des applications, la plateforme Xamarin a ajout
 
 La capture d’écran suivante présente les options de l’éditeur de liens dans Visual Studio pour Mac pour un projet Xamarin.iOS :
 
-![](memory-perf-best-practices-images/linker-options-ios.png)
+![Options de l’éditeur de liens pour Xamarin. iOS](memory-perf-best-practices-images/linker-options-ios.png)
 
 La capture d’écran suivante présente les options de l’éditeur de liens dans Visual Studio pour Mac pour un projet Xamarin.Android :
 
-![](memory-perf-best-practices-images/linker-options-droid.png)
+![Options de l’éditeur de liens pour Xamarin. Android](memory-perf-best-practices-images/linker-options-droid.png)
 
 L’éditeur de liens fournit trois paramètres pour contrôler son comportement :
 
@@ -367,11 +367,11 @@ Il est recommandé d’utiliser des objets de transfert de données lorsque vous
 
 Les données récupérées à partir du service web doivent être mises en cache localement. Les données mises en cache doivent être utilisées au lieu d’être récupérées de manière répétée à partir du service web. Toutefois, si vous choisissez cette méthode, vous devez implémenter une stratégie de mise en cache adaptée pour mettre à jour les données dans le cache local lorsque celles-ci sont modifiées dans le service web.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a abordé les techniques qui permettent d’accroître les performances des applications conçues sur la plateforme Xamarin. Utilisées conjointement, ces techniques peuvent considérablement réduire la charge de travail d’une UC, ainsi que la quantité de mémoire consommée par une application.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Performances des applications Xamarin.iOS](~/ios/deploy-test/performance.md)
 - [Performances de Xamarin.Android](~/android/deploy-test/performance.md)

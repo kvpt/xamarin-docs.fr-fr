@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/25/2018
-ms.openlocfilehash: bcf293b29d6ddca10ab60ae061491b60f1e30520
-ms.sourcegitcommit: b751605179bef8eee2df92cb484011a7dceb6fda
+ms.openlocfilehash: a70095c5897163d3699d03ec42c33826f6d40419
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "78292814"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997148"
 ---
 # <a name="ios-platform-features-overview"></a>vue d’ensemble des fonctionnalités de la plateforme iOS
 
@@ -20,16 +20,16 @@ Cette page répertorie les dernières versions d’iOS, ainsi que la mise en sur
 
 ## <a name="ios-releases"></a>versions iOS
 
-|  |  |
+| Libérer | Description |
 |-------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Présentation d’iOS 13](~/ios/platform/ios13/index.md) | Ce document décrit Xamarin. iOS 13.|
+| [Présentation d’iOS 13](~/ios/platform/ios13/index.md) | Ce document décrit Xamarin. iOS 13.|
 | [Introduction à iOS 12](~/ios/platform/introduction-to-ios12/index.md) | Ce document décrit les fonctionnalités d’iOS 12 disponibles lors de la création d’applications Xamarin. iOS.|
 | [Introduction à iOS 11](~/ios/platform/introduction-to-ios11/index.md) | Ce document décrit les fonctionnalités nouvelles et mises à jour d’iOS 11 et de Xcode 9, telles que ARKit, Core ML, Core NFC, glisser-déplacer, MapKit, PDFKit, SiriKit et vision. Elle contient des liens vers des guides qui décrivent comment utiliser ces fonctionnalités avec Xamarin. iOS. |
 | [Introduction à iOS 10](~/ios/platform/introduction-to-ios10/index.md) | iOS 10 comprend plusieurs nouvelles API et services qui vous permettent de développer des applications avec de nouvelles fonctionnalités et fonctionnalités. Avec iOS 10, les applications ont de nouvelles fonctionnalités telles que l’extension des cartes, des messages, du téléphone et des Siri. Cette section présente comment pour tirer parti de ces fonctionnalités dans une application Xamarin. iOS. |
 | [Introduction à iOS 9](~/ios/platform/introduction-to-ios9/index.md)   | Cette section définit les modifications apportées à iOS 9 lors de la mise à niveau à partir d’iOS 8 et l’utilisation de ces fonctionnalités dans une application Xamarin. iOS. |
 | [Introduction à iOS 8](~/ios/platform/introduction-to-ios8.md)         | iOS 8 a apporté un grand nombre de modifications au système d’exploitation à partir d’iOS 7. Ici, nous montrons ce qu’ils sont et comment les utiliser. |
 | [Introduction à iOS 7](~/ios/platform/introduction-to-ios7/index.md)   | À propos des nouvelles API majeures introduites dans iOS 7, notamment les transitions de contrôleur d’affichage, les améliorations apportées aux animations UIView, à UIKit Dynamics et au kit de texte. |
-| [Introduction à iOS 6](~/ios/platform/introduction-to-ios6/index.md)   | Explications des fonctionnalités introduites dans iOS 6, y compris les vues de collection, le kit de réussite, le kit d’événements et l’infrastructure sociale. |
+| [Introduction à iOS 6](~/ios/platform/introduction-to-ios6/index.md)   | Explications des fonctionnalités introduites dans iOS 6, y compris les vues de collection, le kit de réussite, le kit d’événements et l’infrastructure sociale. |
 
 ## <a name="apple-pay"></a>[Apple Pay](~/ios/platform/apple-pay.md)
 
@@ -41,7 +41,7 @@ La nouvelle API CallKit dans iOS 10 permet aux applications VOIP de s’intégre
 
 ## <a name="contacts-and-contactsui"></a>[Contacts et ContactsUI](~/ios/platform/contacts.md)
 
-Avec l’introduction d’iOS 9, Apple a publié deux nouveaux frameworks, `Contacts` et `ContactsUI`, qui remplacent les infrastructures d’interface utilisateur du carnet d’adresses et du carnet d’adresses existantes utilisées par iOS 8 et les versions antérieures.
+Avec l’introduction d’iOS 9, Apple a publié deux nouveaux frameworks, `Contacts` et `ContactsUI` , qui remplacent les infrastructures d’interface utilisateur du carnet d’adresses et du carnet d’adresses existantes utilisées par IOS 8 et les versions antérieures.
 
 ## <a name="document-picker"></a>[Sélecteur de document](~/ios/platform/document-picker.md)
 
@@ -53,9 +53,9 @@ iOS a deux applications liées au calendrier intégrées : l’application de c
 
 ## <a name="ios-extensions"></a>[extensions iOS](~/ios/platform/extensions.md)
 
-Les extensions, telles qu’introduites dans iOS 8, sont des `UIViewControllers` spécialisées présentées par iOS dans des contextes standard tels que dans le **Centre de notifications**, en tant que types de clavier personnalisés demandés par l’utilisateur pour effectuer des entrées spécialisées ou d’autres contextes tels que la modification d’une photo dans laquelle l’extension peut fournir des filtres d’effet spéciaux.
+Les extensions, telles qu’introduites dans iOS 8, sont spécialisées `UIViewControllers` présentées par iOS dans des contextes standard tels que dans le **Centre de notifications**, en tant que types de clavier personnalisés demandés par l’utilisateur pour effectuer des entrées spécialisées ou d’autres contextes tels que la modification d’une photo où l’extension peut fournir des filtres d’effet spéciaux.
 
-## <a name="graphics-and-animation-in-ios"></a>[Graphiques et animation dans iOS](~/ios/platform/graphics-animation-ios/index.md)
+## <a name="graphics-and-animation-in-ios"></a>[Graphismes et animation dans iOS](~/ios/platform/graphics-animation-ios/index.md)
 
 Les graphiques et les animations dans iOS couvrent les principaux concepts des graphiques dans iOS, tels que CoreImage, Core Graphics et Core Animation.
 
@@ -99,9 +99,9 @@ Le kit photo est une nouvelle infrastructure qui permet aux applications d’int
 
 ## <a name="request-app-review"></a>[Demander une révision de l’application](~/ios/platform/request-app-review.md)
 
-Nouveauté d’iOS 10,3, la méthode `RequestReview()` permet à une application iOS de demander à l’utilisateur de la noter ou de la passer en revue. Lorsque cette méthode est appelée dans une application d’expédition que l’utilisateur a installée à partir de l’App Store, iOS 10 gère l’intégralité du processus d’évaluation et de révision pour le développeur. Étant donné que ce processus est régi par la stratégie App Store, une alerte peut être affichée ou non.
+Nouveauté d’iOS 10,3, la `RequestReview()` méthode permet à une application iOS de demander à l’utilisateur de la noter ou de la passer en revue. Lorsque cette méthode est appelée dans une application d’expédition que l’utilisateur a installée à partir de l’App Store, iOS 10 gère l’intégralité du processus d’évaluation et de révision pour le développeur. Étant donné que ce processus est régi par la stratégie App Store, une alerte peut être affichée ou non.
 
-## <a name="search-apis"></a>[API de recherche](~/ios/platform/search/index.md)
+## <a name="search-apis"></a>[API Recherche](~/ios/platform/search/index.md)
 
 La recherche a été développée dans iOS 9 pour offrir de nouvelles façons d’accéder à des informations et à des fonctionnalités à l’intérieur d’une application Xamarin. iOS. À l’aide des nouvelles API de recherche d’application, le contenu de l’application peut faire l’objet d’une recherche via les résultats de recherche Spotlight et Safari, les rappels et les suggestions de Siri et de remise. Cela permet aux utilisateurs d’accéder rapidement aux activités et aux informations contenues dans votre application.
 
@@ -133,17 +133,17 @@ Touch ID et face ID sont des systèmes d’authentification biométriques dispon
 
 Nouveauté d’iOS 10, l’infrastructure de notification utilisateur permet la remise et la gestion des notifications locales et distantes. À l’aide de ce Framework, l’application ou l’extension d’application peut planifier la remise de notifications locales en spécifiant un ensemble de conditions, telles que l’emplacement ou l’heure de la journée.
 
-## <a name="wide-color"></a>[Large couleur](~/ios/platform/wide-color.md)
+## <a name="wide-color"></a>[Couleur à spectre large](~/ios/platform/wide-color.md)
 
 iOS 10 et macOS Sierra améliorent la prise en charge des formats de pixel étendus et des espaces de couleurs à grande échelle dans le système, y compris les infrastructures telles que Core Graphics, Core image, Metal et AVFoundation. La prise en charge des appareils avec des affichages de couleurs larges est encore plus facilitée en fournissant ce comportement dans l’ensemble de la pile graphique.
 
 ## <a name="binding-objective-c"></a>[Liaison Objective-C](binding-objective-c/index.md)
 
-Lorsque vous travaillez sur iOS, vous pouvez rencontrer des cas où vous souhaitez consommer une bibliothèque objective-C tierce. Dans ces situations, vous pouvez utiliser des projets de liaison monotactiles pour C# créer une liaison aux bibliothèques objective-C natives. Le projet utilise les mêmes outils que ceux que nous utilisons pour importer les API C#iOS. Ce document décrit comment lier des API objective-C.
+Lorsque vous travaillez sur iOS, vous pouvez rencontrer des cas où vous souhaitez consommer une bibliothèque objective-C tierce. Dans ces situations, vous pouvez utiliser des projets de liaison monotactiles pour créer une liaison C# avec les bibliothèques objective-C natives. Le projet utilise les mêmes outils que ceux que nous utilisons pour intégrer les API iOS à C#. Ce document décrit comment lier des API objective-C.
 
-## <a name="bind-ios-swift-libraries"></a>[Lier des bibliothèques iOS SWIFT](binding-swift/index.md)
+## <a name="bind-ios-swift-libraries"></a>[Lier des bibliothèques iOS Swift](binding-swift/index.md)
 
-Ce document décrit comment créer C# des liaisons au code SWIFT, ce qui permet de consommer des bibliothèques natives et des CocoaPods dans une application Xamarin. iOS.
+Ce document explique comment créer des liaisons C# vers du code SWIFT, ce qui permet de consommer des bibliothèques natives et des CocoaPods dans une application Xamarin. iOS.
 
 ## <a name="referencing-native-libraries"></a>[Référencement des bibliothèques natives](native-interop.md)
 

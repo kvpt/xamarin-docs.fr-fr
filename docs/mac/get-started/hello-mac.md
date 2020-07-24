@@ -8,12 +8,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 09/02/2018
-ms.openlocfilehash: 767282516d9fc2ce097d13641697290dad7bd8ad
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: fe052fee9bd72164ce0d739f01cc1c21a9517cc6
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938071"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997161"
 ---
 # <a name="hello-mac-walkthrough"></a>Hello, Mac – Procédure pas à pas
 
@@ -33,7 +33,7 @@ Les concepts suivants sont abordés :
 - **Outlets et actions** : comment utiliser les outlets et actions pour relier des contrôles dans l’interface utilisateur.
 - **Déploiement/tests** : comment exécuter et tester une application Xamarin.Mac.
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Configuration requise
 
 Le développement d’applications Xamarin.Mac nécessite :
 
@@ -324,7 +324,7 @@ Suivez ces étapes pour utiliser Interface Builder :
 
 3. Cliquez sur la propriété **Titre** dans **l’inspecteur d’attributs** et remplacez le titre du bouton par **Click Me** :
 
-    [![](hello-mac-images/xcode09.png "Setting the button's properties")](hello-mac-images/xcode09.png#lightbox)
+    [![Définition des propriétés du bouton](hello-mac-images/xcode09.png)](hello-mac-images/xcode09.png#lightbox)
 
 4. Faites glisser une **étiquette** à partir de la **section Bibliothèque** :
 
@@ -585,7 +585,7 @@ La [Galerie d’exemples Mac](https://docs.microsoft.com/samples/browse/?product
 
 Le code SourceWriter a été entièrement commenté et, le cas échéant, des liens ont été fournis à partir des principales technologies ou méthodes vers des informations pertinentes dans la documentation Xamarin.Mac.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a couvert les principes de base d’une application Xamarin.Mac standard. Il a abordé la création d’une application dans Visual Studio pour Mac, la conception de l’interface utilisateur dans Xcode et Interface Builder, l’exposition des éléments d’interface utilisateur au code C# à l’aide des **outlets** et **actions**, l’ajout de code pour utiliser les éléments d’interface utilisateur et, enfin, la génération et le test d’une application Xamarin.Mac.
 

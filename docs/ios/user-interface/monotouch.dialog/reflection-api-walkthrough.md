@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: davidortinau
 ms.author: daortin
-ms.openlocfilehash: c087bb4a75664c4fae551b9288e7900c4c7fce4b
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: bdbff7760e7680173c57e5fc83cecb80967c0a51
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936992"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996095"
 ---
 # <a name="creating-a-xamarinios-application-using-the-reflection-api"></a>Création d’une application Xamarin. iOS à l’aide de l’API de réflexion
 
@@ -27,12 +27,12 @@ MT. D est distribué avec Xamarin. iOS. Pour l’utiliser, cliquez avec le bouto
 L’utilisation de l’API de réflexion est aussi simple que :
 
 1. Création d’une classe décorée avec MT. Attributs D.
-1. Création d’une `BindingContext` instance, en lui passant une instance de la classe ci-dessus. 
-1. Création d’un `DialogViewController` , en lui passant le `BindingContext’s` `RootElement` . 
+1. Création d’une `BindingContext` instance, en lui passant une instance de la classe ci-dessus.
+1. Création d’un `DialogViewController` , en lui passant le `BindingContext’s` `RootElement` .
 
 Examinons un exemple pour illustrer l’utilisation de l’API de réflexion. Dans cet exemple, nous allons créer un écran d’entrée de données simple comme indiqué ci-dessous :
 
- [![](reflection-api-walkthrough-images/01-expense-entry.png "In this example, we'll build a simple data entry screen as shown here")](reflection-api-walkthrough-images/01-expense-entry.png#lightbox)
+ [![Dans cet exemple, nous allons créer un écran d’entrée de données simple comme indiqué ici](reflection-api-walkthrough-images/01-expense-entry.png)](reflection-api-walkthrough-images/01-expense-entry.png#lightbox)
 
 ## <a name="creating-a-class-with-mtd-attributes"></a>Création d’une classe avec MT. Attributs D
 
@@ -45,13 +45,13 @@ public class Expense
 
     [Entry("Enter expense name")]
     public string Name;
-        
+
     [Section("Expense Details")]
-  
+
     [Caption("Description")]
     [Entry]
     public string Details;
-        
+
     [Checkbox]
     public bool IsApproved = true;
 }
@@ -81,14 +81,14 @@ UIWindow window;
 public override bool FinishedLaunching (UIApplication app, NSDictionary options)
 {   
     window = new UIWindow (UIScreen.MainScreen.Bounds);
-            
+
     var expense = new Expense ();
     var bctx = new BindingContext (null, expense, "Create a task");
     var dvc = new DialogViewController (bctx.Root);
-            
+
     window.RootViewController = dvc;
     window.MakeKeyAndVisible ();
-            
+
     return true;
 }
 ```
@@ -117,7 +117,7 @@ public enum Category
     Lodging,
     Books
 }
-        
+
 public class Expense
 {
     …
@@ -137,7 +137,7 @@ Si vous sélectionnez la ligne, l’application accède à un nouvel écran avec
 
  <a name="Summary"></a>
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a présenté une procédure pas à pas de l’API de réflexion. Nous avons montré comment ajouter des attributs à une classe pour contrôler ce qui est affiché. Nous avons également expliqué comment utiliser un `BindingContext` pour lier les données d’une classe à la hiérarchie d’éléments créée, ainsi que l’utilisation de Mt. D avec un `UINavigationController` .
 

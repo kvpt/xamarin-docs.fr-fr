@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Formsdisposition sur deux écrans
-description: Ce guide explique comment utiliser Xamarin.Forms TwoPaneView pour optimiser votre expérience d’application pour les appareils à deux écrans tels que surface Duo et surface Neo.
+title: :::no-loc(Xamarin.Forms):::disposition sur deux écrans
+description: 'Ce guide explique comment utiliser :::no-loc(Xamarin.Forms)::: TwoPaneView pour optimiser votre expérience d’application pour les appareils à deux écrans tels que surface Duo et surface Neo.'
 ms.prod: xamarin
 ms.assetid: 17ee8afa-5e7c-4a4f-a9b6-2aca03f30fe3
 ms.technology: xamarin-forms
@@ -8,16 +8,16 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/08/2020
 no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: fb5474c7436cb985a1404b662fcf842f22cfdc0d
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+- ':::no-loc(Xamarin.Forms):::'
+- ':::no-loc(Xamarin.Essentials):::'
+ms.openlocfilehash: 4f7fdc0bb18a49e601c00ce1e3eb13371bb80be3
+ms.sourcegitcommit: 3698b35c823225a74892a47139d19e8ae8e6d9ed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937694"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87113819"
 ---
-# <a name="xamarinforms-twopaneview-layout"></a>Xamarin.FormsDisposition TwoPaneView
+# <a name="no-locxamarinforms-twopaneview-layout"></a>:::no-loc(Xamarin.Forms):::Disposition TwoPaneView
 
 ![API de la version préliminaire](~/media/shared/preview.png "Cette API est actuellement en préversion.")
 
@@ -34,7 +34,7 @@ Suivez ces instructions pour créer une disposition à deux écrans dans votre a
 
     ```xaml
     <ContentPage 
-        xmlns:dualScreen="clr-namespace:Xamarin.Forms.DualScreen;assembly=Xamarin.Forms.DualScreen">
+        xmlns:dualScreen="clr-namespace::::no-loc(Xamarin.Forms):::.DualScreen;assembly=:::no-loc(Xamarin.Forms):::.DualScreen">
         <dualScreen:TwoPaneView>
             <dualScreen:TwoPaneView.Pane1>
                 <StackLayout>
@@ -77,8 +77,8 @@ Les propriétés suivantes s’appliquent quand `TwoPaneView` occupe un seul éc
 
 Les propriétés suivantes s’appliquent quand `TwoPaneView` occupe un seul écran ou deux écrans :
 
-- `TallModeConfiguration` en mode Tall indique la disposition gauche/droite ou si vous voulez qu’un seul volet soit visible (comme défini par TwoPaneViewPriority).
-- `WideModeConfiguration` en mode Wide indique la disposition haut/bas ou si vous voulez qu’un seul volet soit visible (comme défini par TwoPaneViewPriority).
+- `TallModeConfiguration`indique, en mode haut, la disposition supérieure/inférieure ou si vous souhaitez qu’un seul volet soit visible comme défini par TwoPaneViewPriority.
+- `WideModeConfiguration`indique, en mode étendu, la disposition gauche/droite ou si vous souhaitez qu’un seul volet soit visible comme défini par TwoPaneViewPriority.
 - `PanePriority` détermine s’il faut montrer Pane1 ou Pane2 en mode SinglePane.
 
 ## <a name="related-links"></a>Liens connexes

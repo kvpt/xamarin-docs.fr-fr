@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/15/2017
-ms.openlocfilehash: 116ae63619aa90defb25db31b959e36b8b44edf2
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 791ab82e0e5f47929eff561ac836ec87e6d6c134
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86934730"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997317"
 ---
 # <a name="callkit-in-xamarinios"></a>CallKit dans Xamarin. iOS
 
@@ -635,7 +635,7 @@ Provider = new CXProvider (Configuration);
 Provider.SetDelegate (this, null);
 ```
 
-Lorsque vous utilisez CallKit, l’application ne crée plus et ne gère pas ses propres sessions audio. au lieu de cela, elle doit configurer et utiliser une session audio que le système créera et traitera pour elle. 
+Lorsque vous utilisez CallKit, l’application ne crée plus et ne gère pas ses propres sessions audio. au lieu de cela, elle doit configurer et utiliser une session audio que le système créera et traitera pour elle.
 
 S’il s’agissait d’une application réelle, la `DidActivateAudioSession` méthode est utilisée pour démarrer l’appel avec un préconfiguré `AVAudioSession` que le système a fourni :
 
@@ -697,7 +697,7 @@ namespace MonkeyCall
             // Found?
             if (handle == null) {
                 // No, report to system
-                Console.WriteLine ("Unable to get call handle from URL: {0}", url); 
+                Console.WriteLine ("Unable to get call handle from URL: {0}", url);
                 return false;
             } else {
                 // Yes, start call and inform system
@@ -820,7 +820,7 @@ Ce code recherche d’abord l’appel donné dans sa liste d’appels actifs. Si
 
 Si l’utilisateur souhaite terminer l’appel à partir de l’interface utilisateur de l’application, voici ce qui se produit :
 
-[![](callkit-images/callkit07.png "The user terminates the call from within the app's UI")](callkit-images/callkit07.png#lightbox)
+[![L’utilisateur met fin à l’appel à partir de l’interface utilisateur de l’application](callkit-images/callkit07.png)](callkit-images/callkit07.png#lightbox)
 
 1. L’application crée `CXEndCallAction` qui est regroupée dans un `CXTransaction` qui est envoyé au système pour l’informer que l’appel se termine.
 2. Le système vérifie l’intention de l’appel de fin et le renvoie `CXEndCallAction` à l’application via le `CXProvider` .
@@ -872,12 +872,12 @@ Si l’utilisateur appuie sur une entrée de la liste récents (dans l’applica
 
 [![Réception d’une intention d’appel de démarrage](callkit-images/callkit08.png)](callkit-images/callkit08.png#lightbox)
 
-1. L’application crée une _action démarrer l’appel_ en fonction de l’intention de l’appel de démarrage reçue du système. 
+1. L’application crée une _action démarrer l’appel_ en fonction de l’intention de l’appel de démarrage reçue du système.
 2. L’application utilisera `CXCallController` pour demander l’action de démarrage à partir du système.
 3. Si le système accepte l’action, elle est retournée à l’application via le `XCProvider` délégué.
 4. L’application démarre l’appel sortant avec son réseau de communication.
 
-Pour plus d’informations sur les intentions, consultez notre documentation sur [les intentions et les extensions d’interface utilisateur](~/ios/platform/sirikit/understanding-sirikit.md) des intentions. 
+Pour plus d’informations sur les intentions, consultez notre documentation sur [les intentions et les extensions d’interface utilisateur](~/ios/platform/sirikit/understanding-sirikit.md) des intentions.
 
 ### <a name="the-outgoing-call-lifecycle"></a>Cycle de vie des appels sortants
 
@@ -1025,7 +1025,7 @@ public void EndCall (ActiveCall call)
 }
 ```
 
-Si crée un `CXEndCallAction` avec l’UUID de l’appel à end, le regroupe dans un `CXTransaction` qui est envoyé au système à l’aide `RequestTransaction` de la méthode de la `CXCallController` classe. 
+Si crée un `CXEndCallAction` avec l’UUID de l’appel à end, le regroupe dans un `CXTransaction` qui est envoyé au système à l’aide `RequestTransaction` de la méthode de la `CXCallController` classe.
 
 ## <a name="additional-callkit-details"></a>Détails supplémentaires sur CallKit
 
@@ -1044,11 +1044,11 @@ Une application peut effectuer les types de personnalisations suivants :
 
 - Affichez un nom localisé.
 - Activer la prise en charge de l’appel vidéo.
-- Personnalisez les boutons sur l’interface utilisateur d’appel en présentant sa propre icône d’image de modèle. L’interaction de l’utilisateur avec des boutons personnalisés est envoyée directement à l’application à traiter. 
+- Personnalisez les boutons sur l’interface utilisateur d’appel en présentant sa propre icône d’image de modèle. L’interaction de l’utilisateur avec des boutons personnalisés est envoyée directement à l’application à traiter.
 
 ### <a name="action-errors"></a>Erreurs d’action
 
-les applications VOIP iOS 10 utilisant CallKit doivent gérer les actions qui échouent correctement et garder l’utilisateur informé de l’état d’action à tout moment. 
+les applications VOIP iOS 10 utilisant CallKit doivent gérer les actions qui échouent correctement et garder l’utilisateur informé de l’état d’action à tout moment.
 
 Prenez en considération l’exemple suivant :
 
@@ -1082,7 +1082,7 @@ public class ProviderDelegate : CXProviderDelegate
         // Create update to describe the incoming call and caller
         var update = new CXCallUpdate ();
         update.RemoteHandle = new CXHandle (CXHandleType.Generic, handle);
-    
+
         // Report incoming call to system
         Provider.ReportNewIncomingCall (uuid, update, (error) => {
             // Was the call accepted
@@ -1134,21 +1134,21 @@ Pour implémenter une extension de répertoire d’appels dans une application X
 
 1. Ouvrez la solution de l’application dans Visual Studio pour Mac.
 2. Cliquez avec le bouton droit sur le nom de la solution dans le **Explorateur de solutions** puis sélectionnez **Ajouter**  >  **Ajouter un nouveau projet**.
-3. Sélectionnez **iOS**  >  **Extensions**iOS  >  **extensions de répertoire appel** , puis cliquez sur le bouton **suivant** : 
+3. Sélectionnez **iOS**  >  **Extensions**iOS  >  **extensions de répertoire appel** , puis cliquez sur le bouton **suivant** :
 
     [![Création d’une extension de répertoire d’appels](callkit-images/calldir01.png)](callkit-images/calldir01.png#lightbox)
-4. Entrez un **nom** pour l’extension et cliquez sur le bouton **suivant** : 
+4. Entrez un **nom** pour l’extension et cliquez sur le bouton **suivant** :
 
     [![Saisie d’un nom pour l’extension](callkit-images/calldir02.png)](callkit-images/calldir02.png#lightbox)
-5. Ajustez le **nom du projet** et/ou le nom de la **solution** , si nécessaire, puis cliquez sur le bouton **créer** : 
+5. Ajustez le **nom du projet** et/ou le nom de la **solution** , si nécessaire, puis cliquez sur le bouton **créer** :
 
-    [![Création du projet](callkit-images/calldir03.png)](callkit-images/calldir03.png#lightbox) 
+    [![Création du projet](callkit-images/calldir03.png)](callkit-images/calldir03.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. Ouvrez la solution de l’application dans Visual Studio.
 2. Cliquez avec le bouton droit sur le nom de la solution dans le **Explorateur de solutions** puis sélectionnez **Ajouter**  >  **Ajouter un nouveau projet**.
-3. Sélectionnez **iOS**  >  **Extensions**iOS  >  **extensions de répertoire appel** , puis cliquez sur le bouton **suivant** : 
+3. Sélectionnez **iOS**  >  **Extensions**iOS  >  **extensions de répertoire appel** , puis cliquez sur le bouton **suivant** :
 
     [![Création d’une extension de répertoire d’appels](callkit-images/calldir01w.png)](callkit-images/calldir01.png#lightbox)
 4. Entrez un **nom** pour l’extension et cliquez sur le bouton **OK**
@@ -1255,7 +1255,7 @@ Pour définir les numéros bloqués, utilisez la `AddBlockingEntry` méthode de 
 
 Pour informer l’application de contact des numéros de contact connus de l’application VOIP, utilisez la `AddIdentificationEntry` méthode de la `CXCallDirectoryExtensionContext` classe et fournissez le nombre et une étiquette d’identification. Là encore, les nombres fournis à la méthode _doivent_ être dans l’ordre numérique croissant. Pour optimiser les performances et l’utilisation de la mémoire lorsqu’il existe de nombreux numéros de téléphone, envisagez de charger uniquement un sous-ensemble de nombres à un moment donné et d’utiliser un ou plusieurs pools de mise en service pour libérer des objets alloués au cours de chaque lot de numéros chargés.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a abordé la nouvelle API CallKit qu’Apple a publiée dans iOS 10 et comment l’implémenter dans les applications VOIP Xamarin. iOS. Il a montré comment CallKit permet à une application de s’intégrer au système iOS, comment elle fournit la parité des fonctionnalités avec les applications intégrées (comme le téléphone) et comment elle augmente la visibilité d’une application dans iOS dans des emplacements tels que les écrans de verrouillage et d’habitation, via des interactions Siri et via les applications contacts.
 

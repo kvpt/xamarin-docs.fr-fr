@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 04/24/2018
-ms.openlocfilehash: 1b8c18dfcc1a0eef1fd4837d34c4c0b080881edc
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: f9de09065d7c26c9ae98ef664be63599becb4da5
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938136"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997447"
 ---
 # <a name="displaying-an-image-in-xamarinios"></a>Affichage d’une image dans Xamarin. iOS
 
@@ -42,11 +42,11 @@ Pour créer un ensemble d’images et y ajouter des images, procédez comme suit
 
     ![Éditeur d’ensemble d’images](displaying-an-image-images/imageset03.png)
 4. À partir de là, faites glisser les images pour chacun des différents appareils et résolutions requis.
-5. Double-cliquez sur le **nom** du nouvel ensemble d’images dans la **liste ressources** pour le modifier :![](displaying-an-image-images/imageset04.png "Modification du nom du nouvel ensemble d’images")
+5. Double-cliquez sur le **nom** du nouvel ensemble d’images dans la **liste ressources** pour le modifier : ![ modification du nom du nouvel ensemble d’images](displaying-an-image-images/imageset04.png)
 
 Quand vous utilisez un **ensemble d’images** dans le concepteur iOS, il vous suffit de sélectionner le nom du jeu dans la liste déroulante de l’éditeur de propriétés :
 
-![](displaying-an-image-images/imageset06.png "Select an image set's name from the dropdown list")
+![Sélectionner le nom d’un ensemble d’images dans la liste déroulante](displaying-an-image-images/imageset06.png)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 

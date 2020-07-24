@@ -6,20 +6,20 @@ ms.assetid: 852F8AB1-F9E2-4126-9C8A-12500315C599
 author: davidortinau
 ms.author: daortin
 ms.date: 03/24/2017
-ms.openlocfilehash: f27a95481bc590814b6031cbdd9fc9606fe0e19f
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 9bdc5790133241ed30e903617541244a9d6ee06e
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86932520"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996576"
 ---
 # <a name="multi-process-debugging"></a>Débogage multiprocessus
 
-Il est très courant que les solutions modernes développées dans Visual Studio pour Mac contiennent des projets qui ciblent des plateformes différentes. Par exemple, une solution peut contenir un projet d’application mobile qui s’appuie sur des données fournies par un projet de service web. Pendant le développement de la solution, un développeur peut avoir besoin que les deux projets soient exécutés simultanément afin de résoudre des erreurs. Avec la version [Cycle 9 de Xamarin](https://releases.xamarin.com/stable-release-cycle-9/), Visual Studio pour Mac peut désormais déboguer des processus qui sont exécutés en même temps. Il est donc possible de définir des points d’arrêt, d’inspecter des variables et d’afficher les threads de plusieurs projets en cours d’exécution. C’est ce que l’on appelle le _débogage multiprocessus_. 
+Il est très courant que les solutions modernes développées dans Visual Studio pour Mac contiennent des projets qui ciblent des plateformes différentes. Par exemple, une solution peut contenir un projet d’application mobile qui s’appuie sur des données fournies par un projet de service web. Pendant le développement de la solution, un développeur peut avoir besoin que les deux projets soient exécutés simultanément afin de résoudre des erreurs. Avec la version [Cycle 9 de Xamarin](https://releases.xamarin.com/stable-release-cycle-9/), Visual Studio pour Mac peut désormais déboguer des processus qui sont exécutés en même temps. Il est donc possible de définir des points d’arrêt, d’inspecter des variables et d’afficher les threads de plusieurs projets en cours d’exécution. C’est ce que l’on appelle le _débogage multiprocessus_.
 
 Ce guide aborde certaines des modifications qui ont été apportées à Visual Studio pour Mac en vue de prendre en charge le débogage de plusieurs processus à la fois. Il explique également comment configurer les solutions pour le débogage multiprocessus, et comment joindre le débogueur à des processus existants avec Visual Studio pour Mac.
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Configuration requise
 
 Le débogage simultané de plusieurs processus nécessite l’utilisation de Visual Studio pour Mac.
 
@@ -74,7 +74,7 @@ Lorsque vous déboguez plusieurs processus, vous pouvez basculer le thread actif
 
 Lorsque plusieurs projets ont des points d’arrêt, Visual Studio pour Mac suspend tous les processus. Vous pouvez uniquement **exécuter du code pas à pas** dans le thread actif. Les autres processus seront suspendus jusqu’à ce qu’une modification de l’étendue permette au débogueur de déplacer le focus du thread actif vers un autre thread. Regardez la capture d’écran suivante, où Visual Studio pour Mac débogue deux projets :
 
-![](multi-process-debugging-images/mpd09-xs.png  "Visual Studio for Mac debugging two projects")
+![Débogage de deux projets dans Visual Studio pour Mac](multi-process-debugging-images/mpd09-xs.png)
 
 Dans cette capture d’écran, chaque solution a son propre point d’arrêt. Lorsque le débogage commence, le premier point d’arrêt rencontré se trouve sur la **ligne 10** de `MainClass` dans **SecondProject**. Étant donné que les deux projets ont des points d’arrêt, chaque processus est arrêté. Une fois que le point d’arrêt est rencontré, Visual Studio pour Mac exécute du code pas à pas dans le thread actif après chaque appel de l’**exécution pas à pas**.
 
@@ -92,7 +92,7 @@ Pour suspendre et reprendre un processus, cliquez avec le bouton droit sur le pr
 
 L’apparence de la barre d’outils de débogage change en fonction de l’état des projets en cours de débogage. Lorsque plusieurs projets sont en cours d’exécution, la barre d’outils de débogage affiche les deux boutons **Suspendre** et **Reprendre**, lorsqu’il y a au moins un projet en cours d’exécution et un projet suspendu :
 
-![](multi-process-debugging-images/mpd07-xs.png  "Debug toolbar")
+![Déboguer (barre d'outils)](multi-process-debugging-images/mpd07-xs.png)
 
 Quand vous cliquez sur le bouton **Suspendre** de la **barre d’outils de débogage**, vous suspendez tous les processus en cours de débogage. Quand vous cliquez sur le bouton **Reprendre**, vous relancez l’exécution de tous les processus suspendus.
 
@@ -100,7 +100,7 @@ Quand vous cliquez sur le bouton **Suspendre** de la **barre d’outils de débo
 
 Vous pouvez également déboguer un deuxième projet une fois que le premier projet a été démarré par Visual Studio pour Mac. Une fois le premier projet démarré, **cliquez avec le bouton droit* sur le projet dans le **Panneau Solutions**, puis sélectionnez **Démarrer le débogage de l’élément** :
 
-![](multi-process-debugging-images/mpd13-xs.png  "Start Debugging Item")
+![Démarrer le débogage de l’élément](multi-process-debugging-images/mpd13-xs.png)
 
 ## <a name="creating-a-solution-configuration"></a>Création d’une configuration de solution
 
@@ -114,7 +114,7 @@ Pour créer une configuration de solution dans Xamarin Studio :
 
 2. Cliquez sur le bouton **Nouveau**, entrez le nom de la nouvelle configuration de solution, puis cliquez sur **Créer**. La nouvelle configuration de solution s’affiche dans la fenêtre **Configurations** :
 
-    ![](multi-process-debugging-images/mpd11-xs.png  "Naming a new solution configuration")
+    ![Nommage d’une nouvelle configuration de solution](multi-process-debugging-images/mpd11-xs.png)
 
 3. Sélectionnez la nouvelle configuration de série de tests dans la liste de configurations. La boîte de dialogue **Options de la solution** affiche tous les projets de la solution. Cochez les projets qui doivent être démarrés lorsqu’une session de débogage est lancée :
 
@@ -122,7 +122,7 @@ Pour créer une configuration de solution dans Xamarin Studio :
 
 La configuration de solution **MultipleProjects** s’affiche désormais dans la **barre d’outils de débogage**, ce qui permet au développeur de déboguer simultanément les deux projets.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Ce guide a abordé le débogage de plusieurs processus dans Visual Studio pour Mac. Il a abordé également certaines des modifications apportées à l’IDE pour permettre le débogage simultané de plusieurs processus, ainsi que les changements de comportement qui découlent de ces modifications.
 

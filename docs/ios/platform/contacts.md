@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: 9a5ca5988bc5bf43af4837aa689c89a016829282
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 0af77464f849971050246a1676f89fe4702737e8
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939982"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997291"
 ---
 # <a name="contacts-and-contactsui-in-xamarinios"></a>Contacts et ContactsUI dans Xamarin. iOS
 
@@ -110,7 +110,7 @@ else
 
 Si ce code est exécuté sur un appareil iOS 9, un nouveau contact est ajouté au regroupement de l’utilisateur. Par exemple :
 
-[![](contacts-images/add01.png "A new contact added to the user's collection")](contacts-images/add01.png#lightbox)
+[![Un nouveau contact ajouté à la collection de l’utilisateur](contacts-images/add01.png)](contacts-images/add01.png#lightbox)
 
 ### <a name="contact-formatting-and-localization"></a>Mise en forme et localisation des contacts
 
@@ -353,7 +353,7 @@ var view = CNContactViewController.FromContact(contact);
 PresentViewController(view, true, null);
 ```
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a décrit en détail l’utilisation des frameworks d’interface utilisateur contact et contact dans une application Xamarin. iOS. Tout d’abord, il a abordé les différents types d’objets que l’infrastructure de contact fournit et comment vous les utilisez pour créer des contacts existants ou y accéder. Il a également examiné l’infrastructure de l’interface utilisateur de contact pour sélectionner les contacts existants et afficher les informations de contact.
 

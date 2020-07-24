@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/13/2016
-ms.openlocfilehash: a7b0f0af887232da52cdca6f6506124fa5e0eef8
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 96873e1bff34a4ef3ed76d675ca0a2b5c03f0d72
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86930089"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997239"
 ---
 # <a name="watchos-project-references-in-xamarin"></a>Références de projet Watchos dans Xamarin
 
@@ -59,11 +59,11 @@ Cette capture d’écran est le fichier info. plist **de l’extension Watch** ,
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
-![](project-references-images/infoplist-extension.png "This screenshot is the Watch Extension's Info.plist file")
+![Cette capture d’écran est le fichier info. plist de l’extension Watch](project-references-images/infoplist-extension.png)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-![](project-references-images/infoplist-extension-vs.png "This screenshot is the Watch Extension's Info.plist file")
+![Cette capture d’écran est le fichier info. plist de l’extension Watch](project-references-images/infoplist-extension-vs.png)
 
 -----
 

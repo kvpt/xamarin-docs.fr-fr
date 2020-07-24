@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 1b279b125ce88a37ddb3209cfe689a7fef50a256
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: b937cc653275f509b7f759af5c3d995e84381cb2
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938747"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997343"
 ---
 # <a name="hello-ios-multiscreen--quickstart"></a>Hello.iOS multi-écran - Démarrage rapide
 
@@ -24,7 +24,7 @@ Cette partie de la procédure pas à pas permet d’ajouter un deuxième écran 
 
 La partie [En profondeur](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-deepdive.md) complémentaire reprend l’application générée et aborde l’architecture, la navigation et d’autres nouveaux concepts iOS rencontrés en chemin.
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Configuration requise
 
 Ce guide reprend là où le document Hello, iOS s’est arrêté et nécessite d’avoir terminé la partie [Hello, iOS - Démarrage rapide](~/ios/get-started/hello-ios/index.md). Téléchargez la version complète de l’application Phoneword à partir de l’[exemple Hello, iOS](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios).
 
@@ -67,7 +67,7 @@ Ensuite, déplacez la scène **Phoneword** à côté du **contrôleur de navigat
 
 8. Double-cliquez sur la barre de **titre** de l’écran **Phoneword** et remplacez le **titre** par **Phoneword** :
 
-    ![](hello-ios-multiscreen-quickstart-images/09.png "Change the Title to 'Phoneword'")
+    ![Remplacez le titre par Phoneword](hello-ios-multiscreen-quickstart-images/09.png)
 
 9. Faites glisser un **bouton** à partir de la **boîte à outils** et placez-le sous le **bouton d’appel**. Faites glisser les poignées pour que le nouveau **bouton** ait la même largeur que le **bouton d’appel** :
 
@@ -90,7 +90,7 @@ Ensuite, déplacez la scène **Phoneword** à côté du **contrôleur de navigat
     ![Le fichier CallHistoryController.cs s’affiche dans le Panneau Solutions](hello-ios-multiscreen-quickstart-images/14new.png)
 
 13. Double-cliquez sur le fichier **CallHistoryController.cs** pour l’ouvrir et remplacez son contenu par le code suivant :
-    
+
     ```csharp
     using System;
     using Foundation;
@@ -314,7 +314,7 @@ Cette procédure pas à pas permet d’ajouter un écran d’historique des appe
 
 10. Dans le **volet Propriétés**, remplacez le **nom** du **bouton** par `CallHistoryButton` et remplacez le **titre** par **Historique des appels** :
 
-    ![](hello-ios-multiscreen-quickstart-images/image9.png "Change the Name of the Button to 'CallHistoryButton' and the Title to 'Call History'")
+    ![Remplacez le nom du bouton par CallHistoryButton et le titre par historique des appels](hello-ios-multiscreen-quickstart-images/image9.png)
 
 11. Créez l’écran **Historique des appels**. À partir de la **boîte à outils**, faites glisser un **contrôleur d’affichage de table** sur l’aire de conception :
 

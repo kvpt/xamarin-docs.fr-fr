@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: c503a312db640eb24b4fec24ba484c8e0382657e
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 9e33f843d836ed5b66ed36397c9367dc671c51ed
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936958"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996251"
 ---
 # <a name="working-with-watchos-localization-in-xamarin"></a>Utilisation de la localisation Watchos dans Xamarin
 
@@ -199,7 +199,7 @@ Dans le simulateur, sélectionnez la langue à tester à l’aide de l’applica
 
 Quand vous effectuez un test avec un espion, changez la langue de l’espion dans l’application **Apple Watch** sur l’iPhone couplé.
 
-  ![](localization-images/phone-settings-sml.png "Change the watch's language in the Apple Watch app on the paired iPhone")
+  ![Modifier la langue de l’espion dans l’application Apple Watch sur l’iPhone couplé](localization-images/phone-settings-sml.png)
 
 ## <a name="related-links"></a>Liens associés
 

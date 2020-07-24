@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 3cdfad92362efa2974b214cac5d7fa424e9ba94d
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 743bdf4d843d9e427e2343bf58cc29b98ec07e2b
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938305"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997044"
 ---
 # <a name="siri-remote-and-bluetooth-controllers-for-tvos-in-xamarin"></a>Contrôleurs distants et Bluetooth Siri pour tvOS dans Xamarin
 
@@ -53,7 +53,7 @@ La surface tactile de la Siri distante est en mesure de détecter une variété 
 
 |Balayer|Cliquez sur |Taper|
 |---|---|---|
-|![](remote-bluetooth-images/Gesture01.png)|![](remote-bluetooth-images/Gesture02.png)|![](remote-bluetooth-images/Gesture03.png)|
+|![Déplace la sélection](remote-bluetooth-images/Gesture01.png)|![Active l’élément sélectionné](remote-bluetooth-images/Gesture02.png)|![Boutons directionnels](remote-bluetooth-images/Gesture03.png)|
 |Déplace la sélection (Focus) entre les éléments de l’interface utilisateur à l’écran (vers le haut, vers la gauche, à droite). Le balayage peut être utilisé pour faire défiler rapidement des listes volumineuses de contenu à l’aide de l’inertie.|Active l’élément sélectionné (en focus) ou agit comme le bouton principal dans un jeu. Cliquer et maintenir peut activer des menus contextuels ou des fonctions secondaires.|Appuyer légèrement sur la surface tactile sur les bords agit comme des boutons directionnels sur un BMD, en déplaçant le focus vers le haut, vers le haut, vers la gauche ou vers la droite en fonction de la zone. En fonction de l’application, peut être utilisé pour révéler des contrôles masqués.|
 
 Apple fournit les suggestions suivantes pour l’utilisation des gestes de surface tactile :
@@ -361,7 +361,7 @@ Pour plus d’informations sur l’implémentation de la prise en charge des con
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a abordé la nouvelle télécommande Siri fournie avec la TV Apple, les gestes de surface tactile et les boutons distants Siri. Ensuite, il a abordé l’utilisation des mouvements et des storyboards, des gestes et du code et des événements de bas niveau. Enfin, si vous avez abordé l’utilisation des contrôleurs de jeu.
 

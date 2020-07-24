@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/03/2018
-ms.openlocfilehash: 42d90175b6ddc005aa34b9fb7ae558741e4a4642
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: edd49cc891a86d3323bab319ab811e85f9148640
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86930635"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997096"
 ---
 # <a name="creating-ios-user-interfaces-in-code-in-xamarinios"></a>Création d’interfaces utilisateur iOS dans le code dans Xamarin. iOS
 
@@ -162,7 +162,7 @@ public class AppDelegate : UIApplicationDelegate
 
 Chaque contrôleur est associé à une vue, accessible à partir de la `View` propriété. Le code ci-dessus modifie la propriété de la vue `BackgroundColor` pour `UIColor.LightGray` qu’elle soit visible, comme indiqué ci-dessous :
 
- [![](ios-code-only-images/image1.png "The View's background is a visible light gray")](ios-code-only-images/image1.png#lightbox)
+ [![L’arrière-plan de la vue est un gris clair visible](ios-code-only-images/image1.png)](ios-code-only-images/image1.png#lightbox)
 
 Nous pouvons également définir une sous- `UIViewController` classe `RootViewController` de cette manière, y compris les contrôleurs de UIKit, ainsi que ceux que nous écrivons nous-mêmes. Par exemple, le code suivant ajoute un `UINavigationController` comme `RootViewController` :
 
@@ -304,7 +304,7 @@ Par exemple, nous allons modifier le `CustomViewController` pour créer un écra
 
 ### <a name="adding-the-text-fields"></a>Ajout des champs de texte
 
-Tout d’abord, supprimez le bouton et le gestionnaire d’événements qui a été ajouté dans la section [initialisation de la vue](#initializing-the-view) . 
+Tout d’abord, supprimez le bouton et le gestionnaire d’événements qui a été ajouté dans la section [initialisation de la vue](#initializing-the-view) .
 
 Ajoutez un contrôle pour le nom d’utilisateur en créant et en initialisant un, `UITextField` puis en l’ajoutant à la hiérarchie d’affichage, comme indiqué ci-dessous :
 
@@ -615,7 +615,7 @@ Cette image statique peut être définie dans le fichier info. plist ou en tant 
 > [!IMPORTANT]
 > Si votre application n’a pas d’écran de lancement, vous remarquerez peut-être qu’elle ne s’ajuste pas entièrement à l’écran. Dans ce cas, vous devez veiller à inclure au moins une image 640x1136 nommée `Default-568@2x.png` à votre fichier info. plist.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 

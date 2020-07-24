@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: f8c449045de292590aa833324d443579332be999
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 5d10f1def56d73c6837587bbbd47299d208a345a
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86935809"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997473"
 ---
 # <a name="building-modern-macos-apps"></a>Création d’applications macOS modernes
 
@@ -64,7 +64,7 @@ namespace MacModern
 
 Cette fonctionnalité peut également être activée dans le Interface Builder de Xcode en sélectionnant la fenêtre et en vérifiant l’affichage du contenu de la **taille complète**:
 
-[![](modern-cocoa-apps-images/content01.png "Editing the main storyboard in Xcode's Interface Builder")](modern-cocoa-apps-images/content01.png#lightbox)
+[![Modification du storyboard principal dans le Interface Builder de Xcode](modern-cocoa-apps-images/content01.png)](modern-cocoa-apps-images/content01.png#lightbox)
 
 Lorsque vous utilisez un affichage de contenu de taille complète, le développeur peut avoir besoin de décaler le contenu sous les zones de titre et de barre d’outils afin que du contenu spécifique (tel que des étiquettes) n’y glisse pas.
 
@@ -163,7 +163,7 @@ public override void ViewWillAppear ()
 }
 ```
 
-Cet effet est généralement utilisé pour les _applications Shoebox_ (une application Windows) comme les cartes, le calendrier, les notes et les préférences système. 
+Cet effet est généralement utilisé pour les _applications Shoebox_ (une application Windows) comme les cartes, le calendrier, les notes et les préférences système.
 
 <a name="Using-Accessory-View-Controllers"></a>
 
@@ -178,13 +178,13 @@ Le contrôleur d’affichage des accessoires sera automatiquement flou et redime
 Pour ajouter un contrôleur d’affichage des accessoires, procédez comme suit :
 
 1. Dans l’**Explorateur de solutions**, double-cliquez sur le fichier `Main.storyboard` pour l’ouvrir et le modifier.
-2. Faites glisser un **contrôleur d’affichage personnalisé** dans la hiérarchie de la fenêtre : 
+2. Faites glisser un **contrôleur d’affichage personnalisé** dans la hiérarchie de la fenêtre :
 
     [![Ajout d’un nouveau contrôleur d’affichage personnalisé](modern-cocoa-apps-images/content05.png)](modern-cocoa-apps-images/content05.png#lightbox)
-3. Disposition de l’interface utilisateur de la vue des accessoires : 
+3. Disposition de l’interface utilisateur de la vue des accessoires :
 
     [![Conception de la nouvelle vue](modern-cocoa-apps-images/content06.png)](modern-cocoa-apps-images/content06.png#lightbox)
-4. Exposez la vue des accessoires en tant que **sortie** et toute autre **action** ou **sortie** pour son interface utilisateur : 
+4. Exposez la vue des accessoires en tant que **sortie** et toute autre **action** ou **sortie** pour son interface utilisateur :
 
     [![Ajout de la sortie requise](modern-cocoa-apps-images/content07.png)](modern-cocoa-apps-images/content07.png#lightbox)
 5. Enregistrez les modifications.
@@ -302,7 +302,7 @@ namespace MacModern
 
             // Display
             controller.ShowWindow (this);
-        } 
+        }
         #endregion
     }
 }
@@ -496,7 +496,7 @@ namespace MacModern
         {
             base.UpdateLayer ();
 
-            // Draw view 
+            // Draw view
             Layer.BackgroundColor = NSColor.Red.CGColor;
         }
         #endregion
@@ -571,7 +571,7 @@ namespace MacModern
         {
             // Return required pasteboard writer
             ...
-            
+
             // Pasteboard writer failed
             return null;
         }
@@ -733,7 +733,7 @@ Le statique `NSTableViewRowAction.FromStyle` est utilisé pour créer une nouvel
 
 <a name="Scroll-View-Enhancements"></a>
 
-## <a name="scroll-view-enhancements"></a>Améliorations de l’affichage de défilement 
+## <a name="scroll-view-enhancements"></a>Améliorations de l’affichage de défilement
 
 Lorsque vous utilisez un mode Scroll ( `NSScrollView` ) directement ou dans le cadre d’un autre contrôle (tel que `NSTableView` ), le contenu de l’affichage de défilement peut glisser sous les zones titre et barre d’outils dans une application Xamarin. Mac à l’aide d’une apparence et de vues modernes.
 
@@ -760,9 +760,9 @@ Pour plus d’informations, consultez le [Guide d’internationalisation et de l
 
 <a name="Implementing-Base-Internationalization"></a>
 
-### <a name="implementing-base-internationalization"></a>Implémentation de l’internationalisation de base 
+### <a name="implementing-base-internationalization"></a>Implémentation de l’internationalisation de base
 
-En implémentant l’internationalisation de base, le développeur peut fournir un fichier de Storyboard unique pour représenter l’interface utilisateur de l’application et séparer toutes les chaînes accessibles à l’utilisateur. 
+En implémentant l’internationalisation de base, le développeur peut fournir un fichier de Storyboard unique pour représenter l’interface utilisateur de l’application et séparer toutes les chaînes accessibles à l’utilisateur.
 
 Lorsque le développeur crée le fichier de Storyboard initial (ou les fichiers) qui définissent l’interface utilisateur de l’application, il est intégré à l’internationalisation de base (le langage que le développeur parle).
 
@@ -865,7 +865,7 @@ namespace MacModern
     public partial class ViewController : NSViewController
     {
         ...
-    
+
         #region Override Methods
         public override void ViewWillAppear ()
         {
@@ -898,7 +898,7 @@ Les storyboards permettent au développeur de concevoir non seulement les élém
 
 Les contrôleurs permettent au développeur de collecter des éléments dans une unité de composition et SEGUES abstraite et de supprimer le « code de type glue » classique requis pour se déplacer dans la hiérarchie d’affichage :
 
-[![](modern-cocoa-apps-images/content12.png "Editing the UI in Xcode's Interface Builder")](modern-cocoa-apps-images/content12.png#lightbox)
+[![Modification de l’interface utilisateur dans le Interface Builder de Xcode](modern-cocoa-apps-images/content12.png)](modern-cocoa-apps-images/content12.png#lightbox)
 
 Pour plus d’informations, consultez notre [Introduction à la documentation sur les storyboards](~/mac/platform/storyboards/index.md) .
 
@@ -948,7 +948,7 @@ Apple a inclus plusieurs fonctionnalités accessibles aux utilisateurs dans macO
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a présenté plusieurs conseils, fonctionnalités et techniques que les développeurs peuvent utiliser pour créer une application macOS moderne dans Xamarin. Mac.
 

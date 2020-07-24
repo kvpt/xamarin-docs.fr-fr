@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 1de157540011011be6d48db25414c8667195c679
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 90309fe8a9282110a685151455d0b1407b269128
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86932706"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997356"
 ---
 # <a name="configuring-an-app-in-itunes-connect"></a>Configuration d’une application dans iTunes Connect
 
@@ -185,7 +185,7 @@ Effectuez ce qui suit dans [iTunes Connect](https://itunesconnect.apple.com/WebO
 4. Faites défiler l’affichage jusqu’à la section **Name (Nom)**.
 5. Indiquez toutes les informations obligatoires :
 
-    [![](itunesconnect-images/name01.png "Editing Name, Description, What's New, Keywords and URLs in iTunes Connect")](itunesconnect-images/name01.png#lightbox)
+    [![Modification du nom, de la description, des nouveautés, des mots clés et des URL dans iTunes Connect](itunesconnect-images/name01.png)](itunesconnect-images/name01.png#lightbox)
 6. Cliquez sur le bouton **Save (Enregistrer)** en haut de l’écran pour enregistrer vos changements.
 
 > [!IMPORTANT]
@@ -352,7 +352,7 @@ Une fois que votre application a été publiée sur l’App Store, les utilisate
 
 [![Affichage des révisions d’application](itunesconnect-images/reviews01.png)](itunesconnect-images/reviews01.png#lightbox)
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article explique comment utiliser iTunes Connect pour préparer une application Xamarin.iOS à être publiée sur l’App Store, et comment gérer toutes les informations affichées concernant votre application dans l’App Store.
 

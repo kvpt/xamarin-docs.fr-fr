@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: f020219f28ce9389c3f8d5157ddfddc32af07f0f
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 1f86227573fc5e9dc39d4781125c49a067e8967d
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939969"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997486"
 ---
 # <a name="using-testflight-to-distribute-xamarinios-apps"></a>Utilisation de TestFlight pour distribuer des applications Xamarin.iOS
 
@@ -29,7 +29,7 @@ Auparavant, le binaire devait être généré dans Visual Studio pour Mac, puis 
 - L’application TestFlight est maintenant une réelle application iOS. Elle s’exécute donc plus rapidement.
 - À la fin du bêta testing, la soumission de l’application pour revue s’effectue rapidement et simplement, en un clic.
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Configuration requise
 
 TestFlight permet uniquement de tester des applications iOS 8.0 ou version ultérieure.
 
@@ -75,8 +75,8 @@ Pour plus d’informations sur la création d’un enregistrement iTunes Connect
 
 Le formulaire doit comporter exactement les mêmes informations que celles du fichier Info.plist de votre application, comme illustré ci-dessous :
 
-[![](testflight-images/infoplist.png "Info. plist de l’application")](testflight-images/infoplist.png#lightbox)
-[![Formulaire sur iTunes Connect](testflight-images/newiosapp.png)](testflight-images/newiosapp.png#lightbox)
+Le formulaire [ ![ info. plist](testflight-images/infoplist.png)](testflight-images/infoplist.png#lightbox)de l’application 
+ [ ![ sur iTunes Connect](testflight-images/newiosapp.png)](testflight-images/newiosapp.png#lightbox)
 
 - **Nom** : nom descriptif entré au moment de la création du bundle d’application. Ce nom doit être strictement identique au **nom d’application** entré dans votre fichier `Info.plist`.
 - **Langue principale** : langue par défaut utilisée dans l’application. Il s’agit généralement de la langue dans laquelle vous parlez.
@@ -123,7 +123,7 @@ Tout d’abord, générez votre [distribuable final](~/ios/deploy-test/app-distr
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 ### <a name="building-your-final-distributable"></a>Génération de votre distribuable final
- Le plug-in Xamarin pour Visual Studio ne prend pas en charge l’archivage des applications Xamarin.iOS pour la publication sur l’App Store. Pour publier une application iOS à partir de Visual Studio, vous avez le choix entre les Ces règles sont les suivantes :
+ Le plug-in Xamarin pour Visual Studio ne prend pas en charge l’archivage des applications Xamarin.iOS pour la publication sur l’App Store. Pour publier une application iOS à partir de Visual Studio, vous avez le choix entre les Ces deux types de pools sont les suivants :
 
 1. Charger un IPA créé avec la commande Générer un paquet ad-hoc (IPA).
 1. Charger un bundle `.app` zippé.
@@ -227,7 +227,7 @@ Vous pouvez maintenant commencer à préparer les invitations et ajouter jusqu�
 
 Si vous avez beaucoup de testeurs externes, vous pouvez utiliser le lien **Importer un fichier** pour importer un fichier `CSV` au format de ligne suivant :
 
-``` 
+```
 first name, last name, email address
 ```
 
@@ -263,7 +263,7 @@ Quand le bêta testing est terminé, vous pouvez soumettre votre application sur
 
 [![Cliquez sur le bouton Envoyer pour révision](testflight-images/submit-for-review.png)](testflight-images/submit-for-review.png#lightbox)
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a montré comment utiliser l’outil de bêta testing TestFlight d’Apple à partir d’iTunes Connect. Il a expliqué comment charger une nouvelle build dans iTunes Connect, et comment inviter des bêta testeurs internes et externes à utiliser notre application.
 

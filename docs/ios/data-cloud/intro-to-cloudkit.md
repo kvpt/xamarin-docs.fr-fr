@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/11/2016
-ms.openlocfilehash: 3ff868ed10d59a7c1026a222f314a1166a8de45e
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 588dadbfe63a46bc7658d5d29a052cebe52be65c
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86930193"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997408"
 ---
 # <a name="cloudkit-in-xamarinios"></a>CloudKit dans Xamarin. iOS
 
@@ -23,7 +23,7 @@ Les développeurs peuvent se concentrer sur leurs applications côté client et 
 > [!IMPORTANT]
 > Apple [fournit des outils](https://developer.apple.com/support/allowing-users-to-manage-data/) pour aider les développeurs à gérer correctement le Règlement général sur la protection des données (RGPD) de l’Union européenne.
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Configuration requise
 
 Les éléments suivants sont requis pour effectuer les étapes présentées dans cet article :
 
@@ -811,7 +811,7 @@ Effectuez les actions suivantes :
 
 6. Sélectionnez l’archive de l’application, puis cliquez sur le bouton **Exporter...** :
 
-    [![](intro-to-cloudkit-images/shipping05.png "The application's archive")](intro-to-cloudkit-images/shipping05.png#lightbox)
+    [![L’archive de l’application](intro-to-cloudkit-images/shipping05.png)](intro-to-cloudkit-images/shipping05.png#lightbox)
 
 7. Sélectionnez une méthode pour l’exportation, puis cliquez sur le bouton **suivant** :
 
@@ -848,7 +848,7 @@ Les cas d’usage suivants devraient aider le développeur à décider quand uti
 
 En gardant ces cas d’utilisation à l’esprit, le développeur doit choisir la technologie iCloud appropriée pour fournir les fonctionnalités d’application requises actuelles et offrir une bonne évolutivité en vue d’une croissance future.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a abordé une présentation rapide de l’API CloudKit. Il a montré comment approvisionner et configurer une application Xamarin iOS pour utiliser CloudKit. Il a abordé les fonctionnalités de l’API de commodité CloudKit. Il explique comment concevoir une application CloudKit activée pour l’évolutivité à l’aide de requêtes et d’abonnements. Enfin, il a montré les informations du compte d’utilisateur qui sont exposées à une application par CloudKit.
 

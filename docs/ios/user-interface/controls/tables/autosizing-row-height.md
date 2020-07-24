@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: cba171760673c5b5a87760d291550e6df82fe424
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 03e6a513f367be4c19f925427c8a896b1fc87107
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939584"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996329"
 ---
 # <a name="auto-sizing-row-height-in-xamarinios"></a>Dimensionnement automatique de la hauteur de ligne dans Xamarin. iOS
 
@@ -24,7 +24,7 @@ iOS 11 a ajouté la possibilité que les lignes se développent automatiquement.
 
 Ouvrez le Storyboard de la vue de table pour laquelle vous souhaitez redimensionner automatiquement la ligne dans le concepteur iOS, sélectionnez le *prototype* de la cellule et concevez la mise en page de la cellule. Par exemple :
 
-[![](autosizing-row-height-images/table01.png "The Cell's Prototype design")](autosizing-row-height-images/table01.png#lightbox)
+[![Conception du prototype de la cellule](autosizing-row-height-images/table01.png)](autosizing-row-height-images/table01.png#lightbox)
 
 Pour chaque élément du prototype, ajoutez des contraintes pour conserver les éléments à la position correcte, car la vue de table est redimensionnée pour la rotation ou des tailles d’écran d’appareil iOS différentes. Par exemple, épinglez le `Title` en haut, à gauche et à droite de l' *affichage de contenu*de la cellule :
 
@@ -53,7 +53,7 @@ Pour chaque élément de notre prototype de cellule, assignez un **nom** pour l�
 
 [![Assigner un nom pour l’exposer au code C#](autosizing-row-height-images/table05.png)](autosizing-row-height-images/table05.png#lightbox)
 
-Ensuite, ajoutez une classe personnalisée pour `UITableViewController` , `UITableView` et `UITableCell` (prototype). Par exemple : 
+Ensuite, ajoutez une classe personnalisée pour `UITableViewController` , `UITableView` et `UITableCell` (prototype). Par exemple :
 
 [![Ajout d’une classe personnalisée pour UITableViewController, UITableView et UITableCell](autosizing-row-height-images/table06.png)](autosizing-row-height-images/table06.png#lightbox)
 

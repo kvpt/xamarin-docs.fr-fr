@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: b319abba7cf14fe4aade35d232b5182cb202e707
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 8ed83ee8f0bded6258b695f7a6383cda1929f542
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937707"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997083"
 ---
 # <a name="creating-custom-controls-in-xamarinmac"></a>Création de contrôles personnalisés dans Xamarin. Mac
 
@@ -342,7 +342,7 @@ Ensuite, faites glisser un `Custom View` dans la conception de l’interface uti
 
 Avec la vue personnalisée toujours sélectionnée, basculez vers l' **inspecteur d’identité** et remplacez la **classe** de la vue par `NSFlipSwitch` :
 
-[![](custom-controls-images/custom04.png "Setting the View's class")](custom-controls-images/custom04.png#lightbox)
+[![Définition de la classe de l’affichage](custom-controls-images/custom04.png)](custom-controls-images/custom04.png#lightbox)
 
 Basculez vers l' **éditeur** de l’Assistant et créez une **sortie** pour le contrôle personnalisé (en veillant à le lier au `ViewController.h` fichier et non au `.m` fichier) :
 
@@ -383,7 +383,7 @@ partial void OptionTwoFlipped (Foundation.NSObject sender) {
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a décrit en détail la création d’un contrôle d’interface utilisateur personnalisé réutilisable dans une application Xamarin. Mac. Nous avons vu comment dessiner l’interface utilisateur des contrôles personnalisés, les deux principales façons de répondre à la souris et aux entrées utilisateur et comment exposer le nouveau contrôle aux actions de l’Interface Builder de Xcode.
 

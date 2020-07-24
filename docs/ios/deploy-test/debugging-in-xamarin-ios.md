@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 8dc70cc8f1bf29a58cb20540fa538be2025b2ba4
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: a5135d9bb481afcaefc851e392196a87b8ef80dd
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86935627"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997200"
 ---
 # <a name="debugging-xamarinios-apps"></a>Débogage des applications Xamarin.iOS
 
@@ -140,7 +140,7 @@ Dans Visual Studio pour Mac, ils se présentent comme ceci :
 
  [![Les outils de débogage permettent au développeur de contrôler l’exécution du programme](debugging-in-xamarin-ios-images/image7.png)](debugging-in-xamarin-ios-images/image7.png#lightbox)
 
-Ces règles sont les suivantes :
+Ces deux types de pools sont les suivants :
 
 - **Lecture/Arrêt** - Permet de démarrer/d’arrêter l’exécution du code, jusqu’au point d’arrêt suivant.
 - **Pas à pas principal** - Permet d’exécuter la ligne de code suivante. Si la ligne suivante est un appel de fonction, l’opération Pas à pas principal exécute la fonction et s’arrête à la ligne de code suivante située _après_ la fonction.
@@ -153,7 +153,7 @@ Dans Visual Studio, ils se présentent comme ceci :
 
 [![Les outils de débogage permettent au développeur de contrôler l’exécution du programme](debugging-in-xamarin-ios-images/image7vs.png)](debugging-in-xamarin-ios-images/image7vs.png#lightbox)
 
-Ces règles sont les suivantes :
+Ces deux types de pools sont les suivants :
 
 - **Lecture/Arrêt** - Permet de démarrer/d’arrêter l’exécution du code, jusqu’au point d’arrêt suivant.
 - **Pas à pas principal (F11)**  - Permet d’exécuter la ligne de code suivante. Si la ligne suivante est un appel de fonction, l’opération Pas à pas principal exécute la fonction et s’arrête à la ligne de code suivante située _après_ la fonction.
@@ -216,13 +216,13 @@ Comme cette fonctionnalité consomme plus de mémoire durant le débogage, elle 
 
 Pour activer cette fonctionnalité, vérifiez que l’option **Déboguer uniquement le code du projet ; ignorer le code du framework** est désélectionnée sous le menu _Visual Studio pour Mac > Préférences > Débogueur_ comme illustré ci-dessous :
 
-[![](debugging-in-xamarin-ios-images/debugging6.png "Debugging Mono's Class Libraries")](debugging-in-xamarin-ios-images/debugging6.png#lightbox)
+[![Débogage des bibliothèques de classes de mono](debugging-in-xamarin-ios-images/debugging6.png)](debugging-in-xamarin-ios-images/debugging6.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Pour déboguer les bibliothèques de classes dans Visual Studio, vous devez désactiver **Uniquement mon code** sous le menu _Déboguer > Options_. Dans le nœud _Débogage > Général_, décochez la case **Activer Uniquement mon code** :
 
-[![](debugging-in-xamarin-ios-images/debugging6vs.png "Debugging Mono's Class Libraries")](debugging-in-xamarin-ios-images/debugging6vs.png#lightbox)
+[![Débogage des bibliothèques de classes de mono](debugging-in-xamarin-ios-images/debugging6vs.png)](debugging-in-xamarin-ios-images/debugging6vs.png#lightbox)
 
 -----
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 07/26/2018
-ms.openlocfilehash: b4eaca39470e44a3d9f686fde4eedc1800124557
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: e2beb12ea366918219d2c83532e8a62d94e688b5
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86932741"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996264"
 ---
 # <a name="working-with-watchos-icons-in-xamarin"></a>Utilisation des icônes Watchos dans Xamarin
 
@@ -23,7 +23,7 @@ Apple Watch solutions requièrent deux ensembles d’icônes :
 
 ## <a name="apple-watch-icons"></a>Icônes de Apple Watch
 
-| | | |
+|Icône|Description|Apparence|
 |-|-|-|
 |Icône d’application iOS|Apparaît sur l’iPhone et démarre l’application parente|![icône d’application iOS](icons-images/icon-ios.png)|
 |Icône regarder l’application|Apparaît sur la Apple Watch écran d’accueil|![icône d’application Watchos](icons-images/icon-home.png)|

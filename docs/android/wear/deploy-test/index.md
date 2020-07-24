@@ -7,26 +7,26 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 04/25/2018
-ms.openlocfilehash: 774e21349a3a937dc609386119d522654b539563
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 5eb9e8c49f3002e265f06b182e26f312e3204056
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028656"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997122"
 ---
-# <a name="deployment-and-testing"></a>Déploiement et tests
+# <a name="deployment-and-testing-of-wear-os-apps"></a>Déploiement et test de l’usure des applications de système d’exploitation
 
 Cette section explique comment tester votre application Android usure sur un appareil Android d’usure (ou sur un émulateur Android configuré pour l’usure). Il comprend également des conseils de débogage et des informations sur la configuration d’une connexion Bluetooth entre votre ordinateur de développement et un appareil Android.
 Lorsque votre application est prête, la dernière rubrique explique comment préparer votre application pour le déploiement.
 
-## <a name="debug-android-wear-on-an-emulatorandroidweardeploy-testdebug-on-emulatormd"></a>[Déboguer l’usure Android sur un émulateur](~/android/wear/deploy-test/debug-on-emulator.md)
+## <a name="debug-android-wear-on-an-emulator"></a>[Déboguer l’usure Android sur un émulateur](~/android/wear/deploy-test/debug-on-emulator.md)
 
 Comment déboguer une application Xamarin. Android usure sur l’émulateur Android SDK.
 
-## <a name="debug-on-a-wear-deviceandroidweardeploy-testdebug-on-devicemd"></a>[Déboguer sur un appareil Wear](~/android/wear/deploy-test/debug-on-device.md)
+## <a name="debug-on-a-wear-device"></a>[Déboguer sur un appareil Wear](~/android/wear/deploy-test/debug-on-device.md)
 
 Comment configurer un appareil Android afin que les applications d’usure Xamarin. Android puissent être déployées directement à partir de Visual Studio ou Visual Studio pour Mac.
 
-## <a name="packaging-wear-appsandroidweardeploy-testpackagingmd"></a>[Empaqueter des applications d’usure](~/android/wear/deploy-test/packaging.md)
+## <a name="packaging-wear-apps"></a>[Empaqueter des applications d’usure](~/android/wear/deploy-test/packaging.md)
 
 Comment empaqueter des applications d’usure Xamarin. Android pour la distribution sur Google Play.

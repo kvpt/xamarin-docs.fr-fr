@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2017
-ms.openlocfilehash: bb6a88ad5197dfe0ec37160890760028d59ac47e
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 2ba5d6b99a32684fd53572e0db00b19a6841ed64
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937993"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996459"
 ---
 # <a name="understanding-sirikit-concepts"></a>Présentation des concepts de SiriKit
 
@@ -136,7 +136,7 @@ Siri sait qu’un plus grand nombre d’éléments est nécessaire pour envoyer 
 
 Dans l’exemple ci-dessus, l’utilisateur a répondu *« veuillez envoyer plus de bananes »*, que Siri regroupe dans un **but**structuré :
 
-[![](understanding-sirikit-images/monkeychat05.png "Siri will bundle the user's response into a structured Intent")](understanding-sirikit-images/monkeychat05.png#lightbox)
+[![Siri regroupe la réponse de l’utilisateur dans un but structuré](understanding-sirikit-images/monkeychat05.png)](understanding-sirikit-images/monkeychat05.png#lightbox)
 
 L’intention structurée contiendra les informations suivantes :
 
@@ -457,7 +457,7 @@ N’oubliez pas de tester l’application dans différentes situations et toutes
 
 Efforcez-vous que les conversations avec Siri (pour le compte de l’application) soient fluides, naturelles et « semblent juste ».
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a abordé les concepts clés nécessaires à l’utilisation de SiriKit et montre qu’il peut interagir avec les applications Xamarin. iOS pour fournir des services qui sont accessibles à l’utilisateur à l’aide de Siri et de l’application Maps sur un appareil iOS.
 

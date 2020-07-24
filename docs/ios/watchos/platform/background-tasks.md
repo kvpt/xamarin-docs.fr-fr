@@ -7,20 +7,20 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/13/2017
-ms.openlocfilehash: 60e7c2b5771f7f65c07926b2fb5958fdc3f419fb
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 84953ce2ec09cc757b5719991e499dc24b708cae
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86931039"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996108"
 ---
 # <a name="watchos-background-tasks-in-xamarin"></a>Tâches en arrière-plan Watchos dans Xamarin
 
-Avec Watchos 3, il existe trois manières principales pour une application de surveillance de conserver ses informations à jour : 
+Avec Watchos 3, il existe trois manières principales pour une application de surveillance de conserver ses informations à jour :
 
-- À l’aide de l’une des nombreuses nouvelles tâches en arrière-plan. 
-- Avoir un de ses complications sur la face de la montre (en lui donnant plus de temps de mise à jour). 
-- Faire en sorte que l’utilisateur épingle à l’application sur le nouvel ancrage (où elle est conservée en mémoire et souvent mise à jour). 
+- À l’aide de l’une des nombreuses nouvelles tâches en arrière-plan.
+- Avoir un de ses complications sur la face de la montre (en lui donnant plus de temps de mise à jour).
+- Faire en sorte que l’utilisateur épingle à l’application sur le nouvel ancrage (où elle est conservée en mémoire et souvent mise à jour).
 
 ## <a name="keeping-an-app-up-to-date"></a>Mise à jour d’une application
 
@@ -43,7 +43,7 @@ En utilisant les nouvelles API Apple incluses dans Watchos 3, l’application pe
 
 [![Exemple de la complications météorologiques](background-tasks-images/update01.png)](background-tasks-images/update01.png#lightbox)
 
-1. Les planifications d’application doivent être réveillées par le système à un moment donné. 
+1. Les planifications d’application doivent être réveillées par le système à un moment donné.
 2. L’application extrait les informations nécessaires à la génération de la mise à jour.
 3. L’application régénère son interface utilisateur pour refléter les nouvelles données.
 4. Lorsque l’utilisateur parvient à la complication de l’application, il dispose d’informations à jour sans que l’utilisateur n’ait à attendre la mise à jour.
@@ -190,7 +190,7 @@ Il est essentiel qu’une application Watchos se comporte de manière responsabl
 
 Jetez un coup d’œil au scénario suivant :
 
-[![](background-tasks-images/update13.png "A watchOS app limits its drain on the system's shared resources")](background-tasks-images/update13.png#lightbox)
+[![Une application Watchos limite son drainage sur les ressources partagées du système](background-tasks-images/update13.png)](background-tasks-images/update13.png#lightbox)
 
 1. L’utilisateur lance une application Watchos à 1:00 h 00.
 2. L’application planifie une tâche pour réveiller et télécharger le nouveau contenu en une heure à 2:00 h 00.
@@ -203,7 +203,7 @@ Tandis que chaque application est différente, Apple suggère de trouver des mod
 
 ## <a name="implementing-background-tasks"></a>Implémentation des tâches en arrière-plan
 
-À titre d’exemple, ce document utilise l’application MonkeySoccer Sports factice qui signale les scores de football à l’utilisateur. 
+À titre d’exemple, ce document utilise l’application MonkeySoccer Sports factice qui signale les scores de football à l’utilisateur.
 
 Jetez un coup d’œil au scénario d’utilisation classique suivant :
 
@@ -215,7 +215,7 @@ L’équipe de football préférée de l’utilisateur est en train de trouver u
 2. L’application reçoit la tâche et met à jour ses données et l’interface utilisateur, puis planifie une autre tâche en arrière-plan 30 minutes plus tard. Il est important que le développeur se souvient de la planification d’une autre tâche en arrière-plan, ou que l’application ne soit jamais activé pour obtenir des mises à jour supplémentaires.
 3. Là encore, l’application reçoit la tâche et met à jour ses données, met à jour son interface utilisateur et planifie une autre tâche en arrière-plan 30 minutes plus tard.
 4. Le même processus se répète à nouveau.
-5. La dernière tâche d’arrière-plan est reçue et l’application met à jour ses données et son interface utilisateur. Puisqu’il s’agit du score final qu’il ne planifie pas pour une nouvelle actualisation en arrière-plan. 
+5. La dernière tâche d’arrière-plan est reçue et l’application met à jour ses données et son interface utilisateur. Puisqu’il s’agit du score final qu’il ne planifie pas pour une nouvelle actualisation en arrière-plan.
 
 <a name="Scheduling-for-Background-Update"></a>
 
@@ -229,7 +229,7 @@ private void ScheduleNextBackgroundUpdate ()
   // Create a fire date 30 minutes into the future
   var fireDate = NSDate.FromTimeIntervalSinceNow (30 * 60);
 
-  // Create 
+  // Create
   var userInfo = new NSMutableDictionary ();
   userInfo.Add (new NSString ("LastActiveDate"), NSDate.FromTimeIntervalSinceNow(0));
   userInfo.Add (new NSString ("Reason"), new NSString ("UpdateScore"));
@@ -260,7 +260,7 @@ Ensuite, examinez de plus près la fenêtre de 5 minutes pour afficher les étap
 
 1. À 7:30:02, l’application est réveillée par le système et reçoit la tâche d’arrière-plan de mise à jour. Sa première priorité consiste à récupérer les scores les plus récents à partir du serveur. Voir [planification d’un passer](#Scheduling-a-NSUrlSession) ci-dessous.
 2. À 7:30:05, l’application termine la tâche d’origine, le système met l’application en veille et continue à télécharger les données demandées en arrière-plan.
-3. Une fois le téléchargement terminé, le système crée une tâche pour réveiller l’application afin de pouvoir traiter les informations téléchargées. Consultez [gestion des tâches en arrière-plan](#Handling-Background-Tasks) et [gestion du téléchargement](#Handling-the-Download-Completing) ci-dessous. 
+3. Une fois le téléchargement terminé, le système crée une tâche pour réveiller l’application afin de pouvoir traiter les informations téléchargées. Consultez [gestion des tâches en arrière-plan](#Handling-Background-Tasks) et [gestion du téléchargement](#Handling-the-Download-Completing) ci-dessous.
 4. L’application enregistre les informations mises à jour et marque la tâche comme terminée. Le développeur peut être tenté de mettre à jour l’interface utilisateur de l’application à ce stade, mais Apple suggère de planifier une tâche de capture instantanée pour gérer ce processus. Consultez [planification d’une mise à jour d’instantané](#Scheduling-a-Snapshot-Update) ci-dessous.
 5. L’application reçoit la tâche d’instantané, met à jour son interface utilisateur et marque la tâche comme terminée. Consultez [gestion d’une mise à jour d’instantané](#Handling-a-Snapshot-Update) ci-dessous.
 
@@ -308,7 +308,7 @@ namespace MonkeySoccer.MonkeySoccerExtension
     #endregion
 
     ...
-    
+
     #region Public Methods
     public void CompleteTask (WKRefreshBackgroundTask task)
     {
@@ -316,7 +316,7 @@ namespace MonkeySoccer.MonkeySoccerExtension
       task.SetTaskCompleted ();
       PendingTasks.Remove (task);
     }
-    #endregion 
+    #endregion
 
     #region Override Methods
     public override void HandleBackgroundTasks (NSSet<WKRefreshBackgroundTask> backgroundTasks)
@@ -341,7 +341,7 @@ namespace MonkeySoccer.MonkeySoccerExtension
       }
     }
     #endregion
-    
+
     ...
   }
 }
@@ -521,7 +521,7 @@ En outre, il indique également à la tâche d’instantané que l’application
 
 ## <a name="working-efficiently"></a>Travailler efficacement
 
-Comme indiqué dans l’exemple ci-dessus de la fenêtre de cinq minutes utilisée par l’application MonkeySoccer pour mettre à jour ses scores, en travaillant efficacement et en utilisant les nouvelles tâches d’arrière-plan Watchos 3, l’application n’était active que pendant un total de 15 secondes : 
+Comme indiqué dans l’exemple ci-dessus de la fenêtre de cinq minutes utilisée par l’application MonkeySoccer pour mettre à jour ses scores, en travaillant efficacement et en utilisant les nouvelles tâches d’arrière-plan Watchos 3, l’application n’était active que pendant un total de 15 secondes :
 
 [![L’application n’était active que pendant un total de 15 secondes](background-tasks-images/update16.png)](background-tasks-images/update16.png#lightbox)
 
@@ -531,7 +531,7 @@ Cela réduit l’impact que l’application aura sur les ressources disponibles 
 
 ## <a name="how-scheduling-works"></a>Fonctionnement de la planification
 
-Alors qu’une application Watchos 3 se trouve au premier plan, elle est toujours planifiée pour s’exécuter et peut effectuer tout type de traitement requis, par exemple mettre à jour des données ou redessiner son interface utilisateur. Lorsque l’application passe en arrière-plan, elle est généralement suspendue par le système et toutes les opérations d’exécution sont arrêtées. 
+Alors qu’une application Watchos 3 se trouve au premier plan, elle est toujours planifiée pour s’exécuter et peut effectuer tout type de traitement requis, par exemple mettre à jour des données ou redessiner son interface utilisateur. Lorsque l’application passe en arrière-plan, elle est généralement suspendue par le système et toutes les opérations d’exécution sont arrêtées.
 
 Alors que l’application est en arrière-plan, elle peut être ciblée par le système pour exécuter rapidement une tâche spécifique. Ainsi, dans Watchos 2, le système peut réveiller temporairement une application en arrière-plan pour effectuer des opérations telles que la gestion d’une longue notification ou la mise à jour de la complication de l’application. Dans Watchos 3, il existe plusieurs nouvelles façons d’exécuter une application en arrière-plan.
 
@@ -638,7 +638,7 @@ Il peut arriver que le système décide qu’il a besoin d’un nouvel instantan
 
 <a name="Best-Practices"></a>
 
-## <a name="best-practices"></a>Bonnes pratiques 
+## <a name="best-practices"></a>Bonnes pratiques
 
 Apple suggère les meilleures pratiques suivantes lorsque vous travaillez avec des tâches en arrière-plan :
 
@@ -651,7 +651,7 @@ Apple suggère les meilleures pratiques suivantes lorsque vous travaillez avec d
   - Actualisations en arrière-plan.
 - Utilisez `ScheduleBackgroundRefresh` pour le runtime d’arrière-plan à usage général, par exemple :
   - Interrogation du système pour obtenir des informations.
-  - Planifiez demain `NSURLSessions` pour demander des données en arrière-plan. 
+  - Planifiez demain `NSURLSessions` pour demander des données en arrière-plan.
   - Transitions de temps connues.
   - Déclenchement des mises à jour de complication.
 
@@ -693,7 +693,7 @@ Apple présente les suggestions suivantes :
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a abordé les améliorations apportées par Apple et la façon dont elles peuvent être utilisées pour tenir à jour une application de surveillance. Tout d’abord, la nouvelle tâche en arrière-plan Apple a été ajoutée à Watchos 3. Il a ensuite abordé le cycle de vie de l’API en arrière-plan et comment implémenter des tâches en arrière-plan dans une application Xamarin Watchos. Enfin, il a abordé le fonctionnement de la planification et a donné quelques meilleures pratiques.
 

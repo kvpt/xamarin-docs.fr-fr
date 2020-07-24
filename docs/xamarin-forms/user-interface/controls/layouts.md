@@ -1,6 +1,6 @@
 ---
-title: Xamarin.FormsDispositions
-description: Xamarin.FormsLes dispositions sont utilisées pour composer des contrôles d’interface utilisateur dans des structures visuelles. Cet article répertorie les dispositions incluses dans Xamarin.Forms .
+title: :::no-loc(Xamarin.Forms):::Dispositions
+description: ':::no-loc(Xamarin.Forms):::Les dispositions sont utilisées pour composer des contrôles d’interface utilisateur dans des structures visuelles. Cet article répertorie les dispositions incluses dans :::no-loc(Xamarin.Forms)::: .'
 ms.prod: xamarin
 ms.assetid: F4180997-BA21-453A-9958-D1E2940DF050
 ms.technology: xamarin-forms
@@ -8,107 +8,55 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/21/2018
 no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 751a004e0051fcbfd0592654b0e73f26874b15d3
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+- ':::no-loc(Xamarin.Forms):::'
+- ':::no-loc(Xamarin.Essentials):::'
+ms.openlocfilehash: 9b75ab8d3778770b37fee33c3b3f87d46d9ca5f0
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84567084"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997304"
 ---
-# <a name="xamarinforms-layouts"></a>Xamarin.FormsDispositions
+# <a name="no-locxamarinforms-layouts"></a>:::no-loc(Xamarin.Forms):::Dispositions
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
 
-_Les dispositions Xamarin. Forms sont utilisées pour composer des contrôles d’interface utilisateur dans des structures visuelles._
+_:::no-loc(Xamarin.Forms):::Les dispositions sont utilisées pour composer des contrôles d’interface utilisateur dans des structures visuelles._
 
-Les [`Layout`](xref:Xamarin.Forms.Layout) [`Layout<T>`](xref:Xamarin.Forms.Layout`1) classes et dans Xamarin.Forms sont des sous-types spécialisés de vues qui jouent le rôle de conteneurs pour les vues et d’autres dispositions. La `Layout` classe elle-même dérive de [`View`](views.md) . Un `Layout` dérivé contient généralement une logique pour définir la position et la taille des éléments enfants dans les Xamarin.Forms applications.
+Les [`Layout`](xref::::no-loc(Xamarin.Forms):::.Layout) [`Layout<T>`](xref::::no-loc(Xamarin.Forms):::.Layout`1) classes et dans :::no-loc(Xamarin.Forms)::: sont des sous-types spécialisés de vues qui jouent le rôle de conteneurs pour les vues et d’autres dispositions. La `Layout` classe elle-même dérive de [`View`](views.md) . Un `Layout` dérivé contient généralement une logique pour définir la position et la taille des éléments enfants dans les :::no-loc(Xamarin.Forms)::: applications.
 
-[![Xamarin.FormsTypes de disposition](layouts-images/layouts-sml.png "[! Opérationnel. NO-LOC (Xamarin. Forms)] types de disposition")](layouts-images/layouts.png#lightbox "[! Opérationnel. NO-LOC (Xamarin. Forms)] types de disposition")
+[![::: No-Loc (Xamarin. Forms) ::: Layout types](layouts-images/layouts-sml.png "::: No-Loc (Xamarin. Forms) ::: Layout types")](layouts-images/layouts.png#lightbox "::: No-Loc (Xamarin. Forms) ::: Layout types")
 
 Les classes qui dérivent de `Layout` peuvent être divisées en deux catégories :
 
 ## <a name="layouts-with-single-content"></a>Dispositions avec contenu unique
 
-Ces classes dérivent de [`Layout`](xref:Xamarin.Forms.Layout) , qui définit les [`Padding`](xref:Xamarin.Forms.Layout.Padding) [`IsClippedToBounds`](xref:Xamarin.Forms.Layout.IsClippedToBounds) Propriétés et.
+Ces classes dérivent de [`Layout`](xref::::no-loc(Xamarin.Forms):::.Layout) , qui définit les [`Padding`](xref::::no-loc(Xamarin.Forms):::.Layout.Padding) [`IsClippedToBounds`](xref::::no-loc(Xamarin.Forms):::.Layout.IsClippedToBounds) Propriétés et :
 
-### <a name="contentview"></a>ContentView
-
-|     |     |
-| --- | --- |
-| [`ContentView`](xref:Xamarin.Forms.ContentView)contient un seul enfant qui est défini avec la [`Content`](xref:Xamarin.Forms.ContentView.Content) propriété. La `Content` propriété peut être définie sur n’importe quel `View` dérivé, y compris d’autres `Layout` dérivés. `ContentView`est principalement utilisé comme un élément structurel et sert de classe de base à [`Frame`](#frame) .<br /><br />Documentation sur les [API](xref:Xamarin.Forms.ContentView)  /  [Guide](~/xamarin-forms/user-interface/layouts/contentview.md)  /  [Exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-contentviewdemos/) | [![Exemple ContentView](layouts-images/ContentView.png "Exemple ContentView")](layouts-images/ContentView-Large.png#lightbox "Exemple ContentView")<br />[Code C# pour cette page](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ContentViewDemoPage.cs)  /  [Page XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ContentViewDemoPage.xaml) |
-|     |     |
-
-### <a name="frame"></a>Frame
-
-|     |     |
-| --- | --- |
-| La [`Frame`](xref:Xamarin.Forms.Frame) classe dérive de [`ContentView`](#contentview) et affiche une bordure, ou Frame, autour de son enfant. La `Frame` classe a une valeur par défaut [`Padding`](xref:Xamarin.Forms.Layout.Padding) de 20 et définit également [`BorderColor`](xref:Xamarin.Forms.Frame.BorderColor) les [`CornerRadius`](xref:Xamarin.Forms.Frame.CornerRadius) Propriétés, et [`HasShadow`](xref:Xamarin.Forms.Frame.HasShadow) .<br /><br />Documentation sur les [API](xref:Xamarin.Forms.Frame)  /  [Guide](~/xamarin-forms/user-interface/layouts/frame.md)  /  [Exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-frame/) | [![Exemple de frame](layouts-images/Frame.png "Exemple de frame")](layouts-images/Frame-Large.png#lightbox "Exemple de frame")<br />[Code C# pour cette page](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/FrameDemoPage.cs)  /  [Page XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/FrameDemoPage.xaml) |
-|     |     |
-
-### <a name="scrollview"></a>ScrollView
-
-|     |     |
-| --- | --- |
-| [`ScrollView`](xref:Xamarin.Forms.ScrollView)peut faire défiler son contenu. Affectez [`Content`](xref:Xamarin.Forms.ScrollView.Content) à la propriété une vue ou une disposition trop grande pour tenir sur l’écran. (Le contenu d’un `ScrollView` est très souvent un [`StackLayout`](#stacklayout) .) Définissez la [`Orientation`](xref:Xamarin.Forms.ScrollView.Orientation) propriété pour indiquer si le défilement doit être vertical, horizontal ou les deux.<br /><br />Documentation sur les [API](xref:Xamarin.Forms.ScrollView)  /  [Guide](~/xamarin-forms/user-interface/layouts/scrollview.md)  /  [Exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout) | [![Exemple ScrollView](layouts-images/ScrollView.png "Exemple ScrollView")](layouts-images/ScrollView-Large.png#lightbox "Exemple ScrollView")<br />[Code C# pour cette page](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ScrollViewDemoPage.cs)  /  [Page XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ScrollViewDemoPage.xaml) |
-|     |     |
-
-### <a name="templatedview"></a>TemplatedView
-
-|     |     |
-| --- | --- |
-| [`TemplatedView`](xref:Xamarin.Forms.TemplatedView)affiche le contenu avec un modèle de contrôle et est la classe de base pour [`ContentView`](#contentview) .<br /><br />Documentation sur les [API](xref:Xamarin.Forms.TemplatedView)  /  [Guide](~/xamarin-forms/app-fundamentals/templates/control-template.md) | [![Exemple TemplatedView](layouts-images/TemplatedView.png "Exemple TemplatedView")](layouts-images/TemplatedView.png#lightbox "Exemple TemplatedView") |
-|     |     |
-
-### <a name="contentpresenter"></a>ContentPresenter
-
-|     |     |
-| --- | --- |
-| [`ContentPresenter`](xref:Xamarin.Forms.ContentPresenter)est un gestionnaire de disposition pour les vues basées sur des modèles, utilisé dans un [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) pour marquer l’emplacement où le contenu à présenter s’affiche.<br /><br />Documentation sur les [API](xref:Xamarin.Forms.ContentPresenter)  /  [Guide](~/xamarin-forms/app-fundamentals/templates/control-template.md) | [![Exemple ContentPresenter](layouts-images/ContentPresenter.png "Exemple ContentPresenter")](layouts-images/ContentPresenter.png#lightbox "Exemple ContentPresenter") |
-|     |     |
+| Type | Description | Apparence |
+| --- | --- | --- |
+| `ContentView` | [`ContentView`](xref::::no-loc(Xamarin.Forms):::.ContentView)contient un seul enfant qui est défini avec la [`Content`](xref::::no-loc(Xamarin.Forms):::.ContentView.Content) propriété. La `Content` propriété peut être définie sur n’importe quel `View` dérivé, y compris d’autres `Layout` dérivés. `ContentView`est principalement utilisé comme un élément structurel et sert de classe de base à [`Frame`](xref::::no-loc(Xamarin.Forms):::.Frame) .<br /><br />Documentation sur les [API](xref::::no-loc(Xamarin.Forms):::.ContentView)  /  [Guide](~/xamarin-forms/user-interface/layouts/contentview.md)  /  [Exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-contentviewdemos/) | [![Exemple ContentView](layouts-images/ContentView.png "Exemple ContentView")](layouts-images/ContentView-Large.png#lightbox "Exemple ContentView")<br />[Code C# pour cette page](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ContentViewDemoPage.cs)  /  [Page XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ContentViewDemoPage.xaml) |
+| `Frame` | La [`Frame`](xref::::no-loc(Xamarin.Forms):::.Frame) classe dérive de [`ContentView`](xref::::no-loc(Xamarin.Forms):::.ContentView) et affiche une bordure, ou Frame, autour de son enfant. La `Frame` classe a une valeur par défaut [`Padding`](xref::::no-loc(Xamarin.Forms):::.Layout.Padding) de 20 et définit également [`BorderColor`](xref::::no-loc(Xamarin.Forms):::.Frame.BorderColor) les [`CornerRadius`](xref::::no-loc(Xamarin.Forms):::.Frame.CornerRadius) Propriétés, et [`HasShadow`](xref::::no-loc(Xamarin.Forms):::.Frame.HasShadow) .<br /><br />Documentation sur les [API](xref::::no-loc(Xamarin.Forms):::.Frame)  /  [Guide](~/xamarin-forms/user-interface/layouts/frame.md)  /  [Exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-frame/) | [![Exemple de frame](layouts-images/Frame.png "Exemple de frame")](layouts-images/Frame-Large.png#lightbox "Exemple de frame")<br />[Code C# pour cette page](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/FrameDemoPage.cs)  /  [Page XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/FrameDemoPage.xaml) |
+| `ScrollView` | [`ScrollView`](xref::::no-loc(Xamarin.Forms):::.ScrollView)peut faire défiler son contenu. Affectez [`Content`](xref::::no-loc(Xamarin.Forms):::.ScrollView.Content) à la propriété une vue ou une disposition trop grande pour tenir sur l’écran. (Le contenu d’un `ScrollView` est très souvent un [`StackLayout`](xref::::no-loc(Xamarin.Forms):::.StackLayout) .) Définissez la [`Orientation`](xref::::no-loc(Xamarin.Forms):::.ScrollView.Orientation) propriété pour indiquer si le défilement doit être vertical, horizontal ou les deux.<br /><br />Documentation sur les [API](xref::::no-loc(Xamarin.Forms):::.ScrollView)  /  [Guide](~/xamarin-forms/user-interface/layouts/scrollview.md)  /  [Exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout) | [![Exemple ScrollView](layouts-images/ScrollView.png "Exemple ScrollView")](layouts-images/ScrollView-Large.png#lightbox "Exemple ScrollView")<br />[Code C# pour cette page](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ScrollViewDemoPage.cs)  /  [Page XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ScrollViewDemoPage.xaml) |
+| `TemplatedView` | [`TemplatedView`](xref::::no-loc(Xamarin.Forms):::.TemplatedView)affiche le contenu avec un modèle de contrôle et est la classe de base pour [`ContentView`](xref::::no-loc(Xamarin.Forms):::.ContentView) .<br /><br />Documentation sur les [API](xref::::no-loc(Xamarin.Forms):::.TemplatedView)  /  [Guide](~/xamarin-forms/app-fundamentals/templates/control-template.md) | [![Exemple TemplatedView](layouts-images/TemplatedView.png "Exemple TemplatedView")](layouts-images/TemplatedView.png#lightbox "Exemple TemplatedView") |
+| `ContentPresenter` | [`ContentPresenter`](xref::::no-loc(Xamarin.Forms):::.ContentPresenter)est un gestionnaire de disposition pour les vues basées sur des modèles, utilisé dans un [`ControlTemplate`](xref::::no-loc(Xamarin.Forms):::.ControlTemplate) pour marquer l’emplacement où le contenu à présenter s’affiche.<br /><br />Documentation sur les [API](xref::::no-loc(Xamarin.Forms):::.ContentPresenter)  /  [Guide](~/xamarin-forms/app-fundamentals/templates/control-template.md) | [![Exemple ContentPresenter](layouts-images/ContentPresenter.png "Exemple ContentPresenter")](layouts-images/ContentPresenter.png#lightbox "Exemple ContentPresenter") |
+|     |     |     |
 
 ## <a name="layouts-with-multiple-children"></a>Dispositions avec plusieurs enfants
 
-Ces classes dérivent de [`Layout<View>`](xref:Xamarin.Forms.Layout`1) .
+Ces classes dérivent de [`Layout<View>`](xref::::no-loc(Xamarin.Forms):::.Layout`1) :
 
-### <a name="stacklayout"></a>StackLayout
-
-|     |     |
-| --- | --- |
-| [`StackLayout`](xref:Xamarin.Forms.StackLayout)positionne les éléments enfants dans une pile, horizontalement ou verticalement, en fonction de la [`Orientation`](xref:Xamarin.Forms.StackLayout.Orientation) propriété. La [`Spacing`](xref:Xamarin.Forms.StackLayout.Spacing) propriété régit l’espacement entre les enfants et a une valeur par défaut de 6.<br /><br />Documentation sur les [API](xref:Xamarin.Forms.StackLayout)  /  [Guide](~/xamarin-forms/user-interface/layouts/stacklayout.md)  /  [Exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)| [![Exemple StackLayout](layouts-images/StackLayout.png "Exemple StackLayout")](layouts-images/StackLayout-Large.png#lightbox "Exemple StackLayout")<br />[Code C# pour cette page](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/StackLayoutDemoPage.cs)  /  [Page XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/StackLayoutDemoPage.xaml) |
-|     |     |
-
-### <a name="grid"></a>Grille
-
-|     |     |
-| --- | --- |
-| [`Grid`](xref:Xamarin.Forms.Grid)positionne ses éléments enfants dans une grille de lignes et de colonnes. La position d’un enfant est indiquée à l’aide des [propriétés jointes](~/xamarin-forms/xaml/attached-properties.md) [`Row`](xref:Xamarin.Forms.Grid.RowProperty) ,, [`Column`](xref:Xamarin.Forms.Grid.ColumnProperty) [`RowSpan`](xref:Xamarin.Forms.Grid.RowSpanProperty) et [`ColumnSpan`](xref:Xamarin.Forms.Grid.ColumnSpanProperty) .<br /><br />Documentation sur les [API](xref:Xamarin.Forms.Grid)  /  [Guide](~/xamarin-forms/user-interface/layouts/grid.md)  /  [Exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout) | [![Exemple de grille](layouts-images/Grid.png "Exemple de grille")](layouts-images/Grid-Large.png#lightbox "Exemple de grille")<br />[Code C# pour cette page](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/GridDemoPage.cs)  /  [Page XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/GridDemoPage.xaml) |
-|     |     |
-
-### <a name="absolutelayout"></a>AbsoluteLayout
-
-|     |     |
-| --- | --- |
-| [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout)positionne des éléments enfants à des emplacements spécifiques par rapport à son parent. La position d’un enfant est indiquée à l’aide des [propriétés jointes](~/xamarin-forms/xaml/attached-properties.md) [`LayoutBounds`](xref:Xamarin.Forms.AbsoluteLayout.LayoutBoundsProperty) et [`LayoutFlags`](xref:Xamarin.Forms.AbsoluteLayout.LayoutFlagsProperty) . Un `AbsoluteLayout` est utile pour animer les positions des vues.<br /><br />Documentation sur les [API](xref:Xamarin.Forms.AbsoluteLayout)  /  [Guide](~/xamarin-forms/user-interface/layouts/absolute-layout.md)  /  [Exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout) | [![Exemple AbsoluteLayout](layouts-images/AbsoluteLayout.png "Exemple AbsoluteLayout")](layouts-images/AbsoluteLayout-Large.png#lightbox "Exemple AbsoluteLayout")<br />[Code C# pour cette page](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/AbsoluteLayoutDemoPage.cs)  /  [Page XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/AbsoluteLayoutDemoPage.xaml) avec [code-behind](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/AbsoluteLayoutDemoPage.xaml.cs) |
-|     |     |
-
-### <a name="relativelayout"></a>RelativeLayout
-
-|     |     |
-| --- | --- |
-| [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout)positionne des éléments enfants par rapport à `RelativeLayout` lui-même ou à leurs frères. La position d’un enfant est indiquée à l’aide des [propriétés jointes](~/xamarin-forms/xaml/attached-properties.md) qui sont définies sur des objets de type [`Constraint`](xref:Xamarin.Forms.Constraint) et [`BoundsConstraint`](xref:Xamarin.Forms.Constraint) .<br /><br />Documentation sur les [API](xref:Xamarin.Forms.RelativeLayout)  /  [Guide](~/xamarin-forms/user-interface/layouts/relative-layout.md)  /  [Exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout) | [![Exemple RelativeLayout](layouts-images/RelativeLayout.png "Exemple RelativeLayout")](layouts-images/RelativeLayout-Large.png#lightbox "Exemple RelativeLayout")<br />[Code C# pour cette page](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/RelativeLayoutDemoPage.cs)  /  [Page XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/RelativeLayoutDemoPage.xaml) |
-|     |     |
-
-### <a name="flexlayout"></a>FlexLayout
-
-|     |     |
-| --- | --- |
-| [`FlexLayout`](xref:Xamarin.Forms.FlexLayout)est basé sur le [module de disposition de zone flexible](https://www.w3.org/TR/css-flexbox-1/)CSS, communément appelé _disposition flexible_ ou _zone flexible_. `FlexLayout`définit six propriétés pouvant être liées et cinq propriétés pouvant être liées qui permettent d’empiler des enfants ou de les envelopper avec de nombreuses options d’alignement et d’orientation.<br /><br />Documentation sur les [API](xref:Xamarin.Forms.FlexLayout)  /  [Guide](~/xamarin-forms/user-interface/layouts/flex-layout.md)  /  [Exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos) | [![Exemple FlexLayout](layouts-images/FlexLayout.png "Exemple FlexLayout")](layouts-images/FlexLayout-Large.png#lightbox "Exemple FlexLayout")<br />[Code C# pour cette page](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/FlexLayoutDemoPage.cs)  /  [Page XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/FlexLayoutDemoPage.xaml) |
-|     |     |
+| Type | Description | Apparence |
+| --- | --- | --- |
+| `StackLayout` | [`StackLayout`](xref::::no-loc(Xamarin.Forms):::.StackLayout)positionne les éléments enfants dans une pile, horizontalement ou verticalement, en fonction de la [`Orientation`](xref::::no-loc(Xamarin.Forms):::.StackLayout.Orientation) propriété. La [`Spacing`](xref::::no-loc(Xamarin.Forms):::.StackLayout.Spacing) propriété régit l’espacement entre les enfants et a une valeur par défaut de 6.<br /><br />Documentation sur les [API](xref::::no-loc(Xamarin.Forms):::.StackLayout)  /  [Guide](~/xamarin-forms/user-interface/layouts/stacklayout.md)  /  [Exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)| [![Exemple StackLayout](layouts-images/StackLayout.png "Exemple StackLayout")](layouts-images/StackLayout-Large.png#lightbox "Exemple StackLayout")<br />[Code C# pour cette page](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/StackLayoutDemoPage.cs)  /  [Page XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/StackLayoutDemoPage.xaml) |
+| `Grid` | [`Grid`](xref::::no-loc(Xamarin.Forms):::.Grid)positionne ses éléments enfants dans une grille de lignes et de colonnes. La position d’un enfant est indiquée à l’aide des [propriétés jointes](~/xamarin-forms/xaml/attached-properties.md) [`Row`](xref::::no-loc(Xamarin.Forms):::.Grid.RowProperty) ,, [`Column`](xref::::no-loc(Xamarin.Forms):::.Grid.ColumnProperty) [`RowSpan`](xref::::no-loc(Xamarin.Forms):::.Grid.RowSpanProperty) et [`ColumnSpan`](xref::::no-loc(Xamarin.Forms):::.Grid.ColumnSpanProperty) .<br /><br />Documentation sur les [API](xref::::no-loc(Xamarin.Forms):::.Grid)  /  [Guide](~/xamarin-forms/user-interface/layouts/grid.md)  /  [Exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout) | [![Exemple de grille](layouts-images/Grid.png "Exemple de grille")](layouts-images/Grid-Large.png#lightbox "Exemple de grille")<br />[Code C# pour cette page](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/GridDemoPage.cs)  /  [Page XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/GridDemoPage.xaml) |
+| `AbsoluteLayout` | [`AbsoluteLayout`](xref::::no-loc(Xamarin.Forms):::.AbsoluteLayout)positionne des éléments enfants à des emplacements spécifiques par rapport à son parent. La position d’un enfant est indiquée à l’aide des [propriétés jointes](~/xamarin-forms/xaml/attached-properties.md) [`LayoutBounds`](xref::::no-loc(Xamarin.Forms):::.AbsoluteLayout.LayoutBoundsProperty) et [`LayoutFlags`](xref::::no-loc(Xamarin.Forms):::.AbsoluteLayout.LayoutFlagsProperty) . Un `AbsoluteLayout` est utile pour animer les positions des vues.<br /><br />Documentation sur les [API](xref::::no-loc(Xamarin.Forms):::.AbsoluteLayout)  /  [Guide](~/xamarin-forms/user-interface/layouts/absolute-layout.md)  /  [Exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout) | [![Exemple AbsoluteLayout](layouts-images/AbsoluteLayout.png "Exemple AbsoluteLayout")](layouts-images/AbsoluteLayout-Large.png#lightbox "Exemple AbsoluteLayout")<br />[Code C# pour cette page](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/AbsoluteLayoutDemoPage.cs)  /  [Page XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/AbsoluteLayoutDemoPage.xaml) avec [code-behind](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/AbsoluteLayoutDemoPage.xaml.cs) |
+| `RelativeLayout` | [`RelativeLayout`](xref::::no-loc(Xamarin.Forms):::.RelativeLayout)positionne des éléments enfants par rapport à `RelativeLayout` lui-même ou à leurs frères. La position d’un enfant est indiquée à l’aide des [propriétés jointes](~/xamarin-forms/xaml/attached-properties.md) qui sont définies sur des objets de type [`Constraint`](xref::::no-loc(Xamarin.Forms):::.Constraint) et [`BoundsConstraint`](xref::::no-loc(Xamarin.Forms):::.Constraint) .<br /><br />Documentation sur les [API](xref::::no-loc(Xamarin.Forms):::.RelativeLayout)  /  [Guide](~/xamarin-forms/user-interface/layouts/relative-layout.md)  /  [Exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout) | [![Exemple RelativeLayout](layouts-images/RelativeLayout.png "Exemple RelativeLayout")](layouts-images/RelativeLayout-Large.png#lightbox "Exemple RelativeLayout")<br />[Code C# pour cette page](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/RelativeLayoutDemoPage.cs)  /  [Page XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/RelativeLayoutDemoPage.xaml) |
+| `FlexLayout` | [`FlexLayout`](xref::::no-loc(Xamarin.Forms):::.FlexLayout)est basé sur le [module de disposition de zone flexible](https://www.w3.org/TR/css-flexbox-1/)CSS, communément appelé _disposition flexible_ ou _zone flexible_. `FlexLayout`définit six propriétés pouvant être liées et cinq propriétés pouvant être liées qui permettent d’empiler des enfants ou de les envelopper avec de nombreuses options d’alignement et d’orientation.<br /><br />Documentation sur les [API](xref::::no-loc(Xamarin.Forms):::.FlexLayout)  /  [Guide](~/xamarin-forms/user-interface/layouts/flex-layout.md)  /  [Exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos) | [![Exemple FlexLayout](layouts-images/FlexLayout.png "Exemple FlexLayout")](layouts-images/FlexLayout-Large.png#lightbox "Exemple FlexLayout")<br />[Code C# pour cette page](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/FlexLayoutDemoPage.cs)  /  [Page XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/FlexLayoutDemoPage.xaml) |
+|     |     |     |
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Xamarin.FormsExemple FormsGallery](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
-- [Xamarin.FormsExtraits](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
-- [Xamarin.FormsDocumentation sur les API](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)
+- [:::no-loc(Xamarin.Forms):::Exemple FormsGallery](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
+- [:::no-loc(Xamarin.Forms):::Extraits](https://docs.microsoft.com/samples/browse/?products=xamarin&term=:::no-loc(Xamarin.Forms):::)
+- [:::no-loc(Xamarin.Forms):::Documentation sur les API](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)

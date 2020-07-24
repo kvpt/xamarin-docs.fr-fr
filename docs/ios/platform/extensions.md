@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidortinau
 ms.author: daortin
 ms.date: 05/12/2020
-ms.openlocfilehash: d5a51b70237c4e8a6f6a5e48ae684031697a0897
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 540fd0180899f8eb7c1b171148be81c5d541613b
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939839"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997499"
 ---
 # <a name="ios-extensions-in-xamarinios"></a>extensions iOS dans Xamarin. iOS
 
@@ -23,7 +23,7 @@ ms.locfileid: "86939839"
 
 Les extensions, telles qu’introduites dans iOS 8, sont spécialisées `UIViewControllers` présentées par iOS dans des contextes standard tels que dans le **Centre de notifications**, en tant que types de clavier personnalisés demandés par l’utilisateur pour effectuer des entrées spécialisées ou d’autres contextes tels que la modification d’une photo où l’extension peut fournir des filtres d’effet spéciaux.
 
-Toutes les extensions sont installées conjointement avec une application conteneur (avec les deux éléments écrits à l’aide des API unifiées 64 bits) et sont activées à partir d’un point d’extension particulier dans une application hôte. Et dans la mesure où elles seront utilisées comme suppléments aux fonctions système existantes, elles doivent être hautes performances, épurées et robustes. 
+Toutes les extensions sont installées conjointement avec une application conteneur (avec les deux éléments écrits à l’aide des API unifiées 64 bits) et sont activées à partir d’un point d’extension particulier dans une application hôte. Et dans la mesure où elles seront utilisées comme suppléments aux fonctions système existantes, elles doivent être hautes performances, épurées et robustes.
 
 ## <a name="extension-points"></a>Points d’extension
 
@@ -40,7 +40,7 @@ Des points d’extension supplémentaires ont été ajoutés dans [iOS 10](~/ios
 
 ## <a name="limitations"></a>Limites
 
-Les extensions présentent un certain nombre de limitations, dont certaines sont universelles pour tous les types (par exemple, aucun type d’extension ne peut accéder aux appareils photo ou aux micros), tandis que les autres types d’extension peuvent avoir des limitations spécifiques à leur utilisation (par exemple, les claviers personnalisés ne peuvent pas être utilisés pour sécuriser les champs d’entrée de données tels que pour 
+Les extensions présentent un certain nombre de limitations, dont certaines sont universelles pour tous les types (par exemple, aucun type d’extension ne peut accéder aux appareils photo ou aux micros), tandis que les autres types d’extension peuvent avoir des limitations spécifiques à leur utilisation (par exemple, les claviers personnalisés ne peuvent pas être utilisés pour sécuriser les champs d’entrée de données tels que pour
 
 Les limitations universelles sont les suivantes :
 
@@ -57,7 +57,7 @@ Pour les limitations individuelles, consultez le Guide de programmation de l' [e
 
 ## <a name="distributing-installing-and-running-extensions"></a>Distribution, installation et exécution des extensions
 
-Les extensions sont distribuées à partir d’une application conteneur, qui, à son tour, est envoyée et distribuée via l’App Store. Les extensions distribuées avec l’application sont installées à ce stade, mais l’utilisateur doit activer explicitement chaque extension. Les différents types d’extensions sont activés de différentes façons ; plusieurs requièrent que l’utilisateur accède à l’application **paramètres** et les active à partir de là. Tandis que d’autres sont activées au point d’utilisation, telles que l’activation d’une extension de partage lors de l’envoi d’une photo. 
+Les extensions sont distribuées à partir d’une application conteneur, qui, à son tour, est envoyée et distribuée via l’App Store. Les extensions distribuées avec l’application sont installées à ce stade, mais l’utilisateur doit activer explicitement chaque extension. Les différents types d’extensions sont activés de différentes façons ; plusieurs requièrent que l’utilisateur accède à l’application **paramètres** et les active à partir de là. Tandis que d’autres sont activées au point d’utilisation, telles que l’activation d’une extension de partage lors de l’envoi d’une photo.
 
 L’application dans laquelle l’extension est utilisée (où l’utilisateur rencontre le point d’extension) est appelée **application hôte**, car il s’agit de l’application qui héberge l’extension lors de son exécution. L’application qui installe l’extension est l' **application conteneur**, car il s’agit de l’application qui contenait l’extension lors de son installation.  
 
@@ -65,7 +65,7 @@ En règle générale, l’application conteneur décrit l’extension et guide l
 
 ## <a name="debug-and-release-versions-of-extensions"></a>Versions Debug et Release des extensions
 
-Les limites de mémoire pour les extensions d’application en cours d’exécution sont beaucoup plus basses que les limites de mémoire appliquées à une application de premier plan. Les simulateurs exécutant iOS ont moins de restrictions appliquées aux extensions et vous pouvez exécuter votre extension sans aucun problème. Toutefois, l’exécution de la même extension sur un appareil peut aboutir à des résultats inattendus, y compris à une panne de l’extension ou une interruption agressive du système. Par conséquent, assurez-vous de créer et de tester l’extension sur un appareil avant de l’expédier. 
+Les limites de mémoire pour les extensions d’application en cours d’exécution sont beaucoup plus basses que les limites de mémoire appliquées à une application de premier plan. Les simulateurs exécutant iOS ont moins de restrictions appliquées aux extensions et vous pouvez exécuter votre extension sans aucun problème. Toutefois, l’exécution de la même extension sur un appareil peut aboutir à des résultats inattendus, y compris à une panne de l’extension ou une interruption agressive du système. Par conséquent, assurez-vous de créer et de tester l’extension sur un appareil avant de l’expédier.
 
 Vous devez vous assurer que les paramètres suivants sont appliqués au projet de conteneur et à toutes les extensions référencées :
 
@@ -75,7 +75,7 @@ Vous devez vous assurer que les paramètres suivants sont appliqués au projet d
 
 ## <a name="extension-lifecycle"></a>Cycle de vie des extensions
 
-Une extension peut être aussi simple qu’une [UIViewController](xref:UIKit.UIViewController) unique ou des extensions plus complexes qui présentent plusieurs écrans d’interface utilisateur. Lorsque l’utilisateur rencontre des points d' _extension_ (par exemple, lors du partage d’une image), il peut choisir parmi les extensions inscrites pour ce point d’extension. 
+Une extension peut être aussi simple qu’une [UIViewController](xref:UIKit.UIViewController) unique ou des extensions plus complexes qui présentent plusieurs écrans d’interface utilisateur. Lorsque l’utilisateur rencontre des points d' _extension_ (par exemple, lors du partage d’une image), il peut choisir parmi les extensions inscrites pour ce point d’extension.
 
 S’ils choisissent l’une des extensions de votre application, elles `UIViewController` sont instanciées et commencent le cycle de vie normal du contrôleur d’affichage. Toutefois, contrairement à une application normale, qui sont suspendues, mais qui ne se terminent généralement pas lorsque l’utilisateur termine l’interaction avec eux, les extensions sont chargées, exécutées, puis arrêtées à plusieurs reprises.
 
@@ -92,29 +92,29 @@ Les extensions (et leurs applications conteneur) doivent être des binaires 64 b
 L’application conteneur utilisée pour installer l’extension présente les exigences suivantes :
 
 - Elle doit conserver une référence au projet d’extension.   
-- Il doit s’agir d’une application complète (doit pouvoir être lancée et exécutée avec succès), même si elle ne fait rien d’autre que fournir un moyen d’installer une extension. 
+- Il doit s’agir d’une application complète (doit pouvoir être lancée et exécutée avec succès), même si elle ne fait rien d’autre que fournir un moyen d’installer une extension.
 - Elle doit avoir un identificateur de bundle qui est la base de l’identificateur de Bundle du projet d’extension (pour plus d’informations, consultez la section ci-dessous).
 
 ### <a name="extension-project-requirements"></a>Spécifications du projet d’extension
 
 En outre, le projet de l’extension présente les exigences suivantes :
 
-- Elle doit avoir un identificateur de bundle qui commence par l’identificateur d’offre groupée de l’application conteneur. Par exemple, si l’application conteneur a un identificateur de Bundle `com.myCompany.ContainerApp` , l’identificateur de l’extension peut être `com.myCompany.ContainerApp.MyExtension` : 
+- Elle doit avoir un identificateur de bundle qui commence par l’identificateur d’offre groupée de l’application conteneur. Par exemple, si l’application conteneur a un identificateur de Bundle `com.myCompany.ContainerApp` , l’identificateur de l’extension peut être `com.myCompany.ContainerApp.MyExtension` :
 
-  ![](extensions-images/bundleidentifiers.png) 
+  ![Identificateurs de Bundle](extensions-images/bundleidentifiers.png)
 - Il doit définir la clé `NSExtensionPointIdentifier` avec une valeur appropriée (par exemple, `com.apple.widget-extension` pour un widget de centre de notifications **aujourd’hui** ), dans son `Info.plist` fichier.
 - Elle doit *également définir la* `NSExtensionMainStoryboard` clé ou la `NSExtensionPrincipalClass` clé dans son `Info.plist` fichier avec une valeur appropriée :
   - Utilisez la `NSExtensionMainStoryboard` clé pour spécifier le nom de la table de montage séquentiel qui présente l’interface utilisateur principale de l’extension (moins `.storyboard` ). Par exemple, `Main` pour le `Main.storyboard` fichier.
-  - Utilisez la `NSExtensionPrincipalClass` clé pour spécifier la classe qui sera initialisée au démarrage de l’extension. La valeur doit correspondre à la valeur de **Registre** de votre `UIViewController` : 
+  - Utilisez la `NSExtensionPrincipalClass` clé pour spécifier la classe qui sera initialisée au démarrage de l’extension. La valeur doit correspondre à la valeur de **Registre** de votre `UIViewController` :
 
-  ![](extensions-images/registerandprincipalclass.png)
+  ![Inscription de la classe principale](extensions-images/registerandprincipalclass.png)
 
 Des spécifications supplémentaires peuvent être requises pour certains types d’extensions. Par exemple, la classe principale d’une extension de **Centre de notification** ou d' **aujourd’hui** doit implémenter [INCWidgetProviding](xref:NotificationCenter.INCWidgetProviding).
 
 > [!IMPORTANT]
 > Si vous démarrez votre projet à l’aide d’un des modèles d’extensions fournis par Visual Studio pour Mac, la plupart (dans le cas contraire), ces exigences seront fournies et remplies automatiquement par le modèle.
 
-## <a name="walkthrough"></a>Procédure pas à pas 
+## <a name="walkthrough"></a>Procédure pas à pas
 
 Dans la procédure pas à pas suivante, vous allez créer un exemple de widget **Today** qui calcule le jour et le nombre de jours restants dans l’année :
 
@@ -124,22 +124,22 @@ Dans la procédure pas à pas suivante, vous allez créer un exemple de widget *
 
 Pour créer la solution requise, procédez comme suit :
 
-1. Tout d’abord, créez un projet d' **application de vue unique** iOS, puis cliquez sur le bouton **suivant** : 
+1. Tout d’abord, créez un projet d' **application de vue unique** iOS, puis cliquez sur le bouton **suivant** :
 
     [![Tout d’abord, créez un projet d’application de vue unique iOS, puis cliquez sur le bouton suivant](extensions-images/today01.png)](extensions-images/today01.png#lightbox)
-2. Appelez le projet `TodayContainer` et cliquez sur le bouton **suivant** : 
+2. Appelez le projet `TodayContainer` et cliquez sur le bouton **suivant** :
 
     [![Appelez le projet TodayContainer et cliquez sur le bouton suivant](extensions-images/today02.png)](extensions-images/today02.png#lightbox)
-3. Vérifiez le **nom du projet** et le **NomSolution** , puis cliquez sur le bouton **créer** pour créer la solution : 
+3. Vérifiez le **nom du projet** et le **NomSolution** , puis cliquez sur le bouton **créer** pour créer la solution :
 
     [![Vérifiez le nom du projet et le NomSolution, puis cliquez sur le bouton créer pour créer la solution.](extensions-images/today03.png)](extensions-images/today03.png#lightbox)
-4. Ensuite, dans la **Explorateur de solutions**, cliquez avec le bouton droit sur la solution et ajoutez un nouveau projet d' **extension iOS** à partir du modèle d' **extension aujourd’hui** : 
+4. Ensuite, dans la **Explorateur de solutions**, cliquez avec le bouton droit sur la solution et ajoutez un nouveau projet d' **extension iOS** à partir du modèle d' **extension aujourd’hui** :
 
     [![Ensuite, dans la Explorateur de solutions, cliquez avec le bouton droit sur la solution et ajoutez un nouveau projet d’extension iOS à partir du modèle d’extension aujourd’hui](extensions-images/today04.png)](extensions-images/today04.png#lightbox)
-5. Appelez le projet `DaysRemaining` et cliquez sur le bouton **suivant** : 
+5. Appelez le projet `DaysRemaining` et cliquez sur le bouton **suivant** :
 
     [![Appelez le projet DaysRemaining et cliquez sur le bouton suivant](extensions-images/today05.png)](extensions-images/today05.png#lightbox)
-6. Examinez le projet et cliquez sur le bouton **créer** pour le créer : 
+6. Examinez le projet et cliquez sur le bouton **créer** pour le créer :
 
     [![Passez en revue le projet et cliquez sur le bouton créer pour le créer](extensions-images/today06.png)](extensions-images/today06.png#lightbox)
 
@@ -155,28 +155,28 @@ Vous devez ensuite concevoir l’interface pour votre widget **Today** . Pour ce
 
 Pour générer l’interface utilisateur avec une table de montage séquentiel, procédez comme suit :
 
-1. Dans la **Explorateur de solutions**, double-cliquez sur le fichier du projet d’extension `Main.storyboard` pour l’ouvrir et le modifier : 
+1. Dans la **Explorateur de solutions**, double-cliquez sur le fichier du projet d’extension `Main.storyboard` pour l’ouvrir et le modifier :
 
     [![Double-cliquez sur le fichier main. Storyboard des projets d’extension pour l’ouvrir et le modifier](extensions-images/today08.png)](extensions-images/today08.png#lightbox)
-2. Sélectionnez l’étiquette qui a été automatiquement ajoutée à l’interface utilisateur par modèle et donnez-lui le **nom** `TodayMessage` sous l’onglet **widget** de l' **Explorateur de propriétés**: 
+2. Sélectionnez l’étiquette qui a été automatiquement ajoutée à l’interface utilisateur par modèle et donnez-lui le **nom** `TodayMessage` sous l’onglet **widget** de l' **Explorateur de propriétés**:
 
     [![Sélectionnez l’étiquette qui a été automatiquement ajoutée à l’interface utilisateur par modèle et donnez-lui le nom TodayMessage dans l’onglet widget de l’Explorateur de propriétés.](extensions-images/today09.png)](extensions-images/today09.png#lightbox)
 3. Enregistrez les modifications apportées à la table de montage séquentiel.
 
 #### <a name="using-code"></a>Utilisation du code
 
-Pour générer l’interface utilisateur dans le code, procédez comme suit : 
+Pour générer l’interface utilisateur dans le code, procédez comme suit :
 
-1. Dans le **Explorateur de solutions**, sélectionnez le projet **DaysRemaining** , ajoutez une nouvelle classe et appelez-la `CodeBasedViewController` : 
+1. Dans le **Explorateur de solutions**, sélectionnez le projet **DaysRemaining** , ajoutez une nouvelle classe et appelez-la `CodeBasedViewController` :
 
     [![Aelect le projet DaysRemaining, ajoutez une nouvelle classe et appelez-la CodeBasedViewController](extensions-images/code01.png)](extensions-images/code01.png#lightbox)
-2. Là encore, dans le **Explorateur de solutions**, double-cliquez sur le fichier de l’extension `Info.plist` pour l’ouvrir et le modifier : 
+2. Là encore, dans le **Explorateur de solutions**, double-cliquez sur le fichier de l’extension `Info.plist` pour l’ouvrir et le modifier :
 
     [![Double-cliquez sur extensions du fichier info. plist pour l’ouvrir et le modifier](extensions-images/code02.png)](extensions-images/code02.png#lightbox)
-3. Sélectionnez la **vue source** (en bas de l’écran) et ouvrez le `NSExtension` nœud : 
+3. Sélectionnez la **vue source** (en bas de l’écran) et ouvrez le `NSExtension` nœud :
 
     [![Sélectionnez la vue source en bas de l’écran et ouvrez le nœud NSExtension](extensions-images/code03.png)](extensions-images/code03.png#lightbox)
-4. Supprimez la `NSExtensionMainStoryboard` clé et ajoutez un `NSExtensionPrincipalClass` avec la valeur `CodeBasedViewController` : 
+4. Supprimez la `NSExtensionMainStoryboard` clé et ajoutez un `NSExtensionPrincipalClass` avec la valeur `CodeBasedViewController` :
 
     [![Supprimez la clé NSExtensionMainStoryboard et ajoutez un NSExtensionPrincipalClass avec la valeur CodeBasedViewController](extensions-images/code04.png)](extensions-images/code04.png#lightbox)
 5. Enregistrez vos modifications.
@@ -274,7 +274,7 @@ Le nouveau widget est ajouté à l’affichage **aujourd’hui** et les résulta
 
 ## <a name="communicating-with-the-host-app"></a>Communication avec l’application hôte
 
-L’exemple d’extension aujourd’hui que vous avez créé ci-dessus ne communique pas avec son application hôte (l’écran **aujourd’hui** ). Si c’est le cas, elle utilise la propriété [ExtensionContext](xref:Foundation.NSExtensionContext) des `TodayViewController` `CodeBasedViewController` classes ou. 
+L’exemple d’extension aujourd’hui que vous avez créé ci-dessus ne communique pas avec son application hôte (l’écran **aujourd’hui** ). Si c’est le cas, elle utilise la propriété [ExtensionContext](xref:Foundation.NSExtensionContext) des `TodayViewController` `CodeBasedViewController` classes ou.
 
 Pour les extensions qui recevront des données de leurs applications hôtes, les données se présenteront sous la forme d’un tableau d’objets [NSExtensionItem](xref:Foundation.NSExtensionItem) stockés dans la propriété [InputItems](xref:Foundation.NSExtensionContext.InputItems) du [ExtensionContext](xref:Foundation.NSExtensionContext) de l’extension `UIViewController` .
 
@@ -344,7 +344,7 @@ La `MobileCoreServices.UTType` classe statique définit les propriétés d’ass
 - `kUTTypeFont` - `Font`
 - `kUTTypeFramework` - `Framework`
 - `kUTTypeGIF` - `GIF`
-- `kUTTypeGNUZipArchive` - `GNUZipArchive` 
+- `kUTTypeGNUZipArchive` - `GNUZipArchive`
 - `kUTTypeHTML` - `HTML`
 - `kUTTypeICO` - `ICO`
 - `kUTTypeIconFileKey` - `IconFileKey`
@@ -363,7 +363,7 @@ La `MobileCoreServices.UTType` classe statique définit les propriétés d’ass
 - `kUTTypeJSON` - `JSON`
 - `kUTType3dObject` - `k3dObject`
 - `kUTTypeLivePhoto` - `LivePhoto`
-- `kUTTypeLog` - `Log` 
+- `kUTTypeLog` - `Log`
 - `kUTTypeM3UPlaylist` - `M3UPlaylist`
 - `kUTTypeMessage` - `Message`
 - `kUTTypeMIDIAudio` - `MIDIAudio`
@@ -395,7 +395,7 @@ La `MobileCoreServices.UTType` classe statique définit les propriétés d’ass
 - `kUTTypePythonScript` - `PythonScript`
 - `kUTTypeQuickLookGenerator` - `QuickLookGenerator`
 - `kUTTypeQuickTimeImage` - `QuickTimeImage`
-- `kUTTypeQuickTimeMovie` - `QuickTimeMovie` 
+- `kUTTypeQuickTimeMovie` - `QuickTimeMovie`
 - `kUTTypeRawImage` - `RawImage`
 - `kUTTypeReferenceURLKey` - `ReferenceURLKey`
 - `kUTTypeResolvable` - `Resolvable`
@@ -423,16 +423,16 @@ La `MobileCoreServices.UTType` classe statique définit les propriétés d’ass
 - `kUTTypeTXNTextAndMultimediaData` - `TXNTextAndMultimediaData`
 - `kUTTypeUniversalSceneDescription` - `UniversalSceneDescription`
 - `kUTTypeUnixExecutable` - `UnixExecutable`
-- `kUTTypeURL` - `URL` 
+- `kUTTypeURL` - `URL`
 - `kUTTypeURLBookmarkData` - `URLBookmarkData`
 - `kUTTypeUTF16ExternalPlainText` - `UTF16ExternalPlainText`
 - `kUTTypeUTF16PlainText` - `UTF16PlainText`
 - `kUTTypeUTF8PlainText` - `UTF8PlainText`
 - `kUTTypeUTF8TabSeparatedText` - `UTF8TabSeparatedText`
 - `kUTTypeVCard` - `VCard`
-- `kUTTypeVersionKey` - `VersionKey` 
-- `kUTTypeVideo` - `Video` 
-- `kUTTypeVolume` - `Volume` 
+- `kUTTypeVersionKey` - `VersionKey`
+- `kUTTypeVideo` - `Video`
+- `kUTTypeVolume` - `Volume`
 - `kUTTypeWaveformAudio` - `WaveformAudio`
 - `kUTTypeWebArchive` - `WebArchive`
 - `kUTTypeWindowsExecutable` - `WindowsExecutable`
@@ -464,11 +464,11 @@ Pour plus d’informations, consultez la section [app Groups](~/ios/deploy-test/
 
 Les extensions ont beaucoup moins de mémoire disponible que les applications. Ils sont censés fonctionner rapidement et avec une intrusion minimale pour l’utilisateur et l’application dans laquelle ils sont hébergés. Toutefois, une extension doit également fournir une fonction propre et utile à l’application consommatrice avec une interface utilisateur personnalisée qui permet à l’utilisateur d’identifier l’application de développeur ou de conteneur de l’extension à laquelle il appartient.
 
-Compte tenu de ces exigences strictes, vous ne devez déployer que des extensions qui ont été rigoureusement testées et optimisées pour les performances et la consommation de mémoire. 
+Compte tenu de ces exigences strictes, vous ne devez déployer que des extensions qui ont été rigoureusement testées et optimisées pour les performances et la consommation de mémoire.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
-Ce document contient des extensions couvertes, ce qu’elles sont, le type de points d’extension et les limitations connues imposées à une extension par iOS. Il a abordé la création, la distribution, l’installation et l’exécution des extensions et du cycle de vie de l’extension. Il a fourni une procédure pas à pas de création d’un widget simple **Today** qui montre deux façons de créer l’interface utilisateur du widget à l’aide des storyboards ou du code. Il a montré comment tester une extension dans le simulateur iOS. Enfin, il a brièvement abordé la communication avec l’application hôte et quelques précautions et considérations qui doivent être prises lors du développement d’une extension. 
+Ce document contient des extensions couvertes, ce qu’elles sont, le type de points d’extension et les limitations connues imposées à une extension par iOS. Il a abordé la création, la distribution, l’installation et l’exécution des extensions et du cycle de vie de l’extension. Il a fourni une procédure pas à pas de création d’un widget simple **Today** qui montre deux façons de créer l’interface utilisateur du widget à l’aide des storyboards ou du code. Il a montré comment tester une extension dans le simulateur iOS. Enfin, il a brièvement abordé la communication avec l’application hôte et quelques précautions et considérations qui doivent être prises lors du développement d’une extension.
 
 ## <a name="related-links"></a>Liens connexes
 
