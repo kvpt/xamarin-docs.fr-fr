@@ -10,16 +10,16 @@ ms.date: 11/07/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 38389867ba52e63d8310e3b59d7838f58e8cf488
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 733ec985f4d285f26aca62930868970026847825
+ms.sourcegitcommit: 69d9a61ba479f707d96eb4c1c56a4b05a2a2a26f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137512"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87426875"
 ---
-# <a name="xamarinforms-tabbedpage"></a>Xamarin.FormsTabbedPage
+# <a name="no-locxamarinforms-tabbedpage"></a>Xamarin.FormsTabbedPage
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-tabbedpagewithnavigationpage)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-tabbedpagewithnavigationpage)
 
 Le Xamarin.Forms [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) se compose d’une liste d’onglets et d’une zone de détails plus grande, chaque onglet chargeant du contenu dans la zone de détails. Les captures d’écran suivantes montrent une `TabbedPage` sur iOS et Android :
 
@@ -33,7 +33,7 @@ Sur iOS, la liste des onglets apparaît au bas de l’écran et la zone de déta
 Sur Android, la liste des onglets apparaît en haut de l’écran et la zone de détails est affichée en dessous. Chaque onglet est constitué d’un titre et d’une icône, qui doit être un fichier PNG avec un canal alpha. Toutefois, les onglets peuvent être déplacés vers le bas de l’écran avec un spécifique à la plateforme. S’il y a plus de cinq onglets et que la liste d’onglets se trouve au bas de l’écran, un onglet *plus* s’affiche et peut être utilisé pour accéder aux onglets supplémentaires. Pour plus d’informations sur les exigences relatives aux icônes, consultez les [onglets](https://material.io/components/tabs/#) sur Material.IO et la [prise en charge de différentes densités de pixels](https://developer.android.com/training/multiscreen/screendensities) sur Developer.Android.com. Pour plus d’informations sur le déplacement des onglets vers le bas de l’écran, consultez Définition de la couleur et de l’emplacement de la [barre d’outils TabbedPage](~/xamarin-forms/platform/android/tabbedpage-toolbar-placement-color.md).
 
 > [!TIP]
-> Le `TabbedPageRenderer` pour Android AppCompat a une méthode substituable `GetIconDrawable` qui peut être utilisée pour charger des icônes d’onglet à partir d’un personnalisé `Drawable` . Cette substitution rend possible l’utilisation d’images SVG comme icônes sur un `TabbedPage`, et fonctionne à la fois avec les barres d’onglets supérieures et inférieures. En guise d’alternative, vous pouvez utiliser la méthode `SetTabIcon` substituable pour charger des icônes d’onglets à partir d’un `Drawable` personnalisé pour les barres d’onglets supérieures.
+> Le `TabbedPageRenderer` pour Android AppCompat a une méthode substituable `SetTabIconImageSource` qui peut être utilisée pour charger des icônes d’onglet à partir d’un personnalisé `Drawable` . Cette substitution rend possible l’utilisation d’images SVG comme icônes sur un `TabbedPage`, et fonctionne à la fois avec les barres d’onglets supérieures et inférieures.
 
 Sur la plateforme Windows universelle (UWP), la liste des onglets s’affiche en haut de l’écran et la zone de détails est indiquée ci-dessous. Chaque onglet est constitué d’un titre. Toutefois, les icônes peuvent être ajoutées à chaque onglet avec un spécifique à la plateforme. Pour plus d’informations, consultez [TabbedPage icons on Windows](~/xamarin-forms/platform/windows/tabbedpage-icons.md).
 

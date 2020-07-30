@@ -10,16 +10,16 @@ ms.date: 11/06/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: fa49cdb7944e3ab942ccda611af906e2822b072a
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 7c4ed503e0379c2c7f235bd91621a031bd660c85
+ms.sourcegitcommit: 69d9a61ba479f707d96eb4c1c56a4b05a2a2a26f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139956"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87426888"
 ---
-# <a name="xamarinforms-shell-tabs"></a>Xamarin.FormsOnglets de Shell
+# <a name="no-locxamarinforms-shell-tabs"></a>Xamarin.FormsOnglets de Shell
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
 Lorsque le modèle de navigation pour une application comprend un menu volant, le niveau de navigation suivant dans l’application se situe dans la barre d’onglets du bas. De plus, lorsque le menu volant est fermé, la barre d’onglets du bas peut être considérée comme le plus haut niveau de navigation.
 
@@ -268,7 +268,7 @@ Dans une application Shell, chaque [`ContentPage`](xref:Xamarin.Forms.ContentPag
 </Shell>
 ```
 
-Ce XAML crée et affiche `CatsPage`, car il s’agit du premier élément de contenu déclaré dans l’objet `Shell` sous-classé. Les pages `CatsPage` et `MonkeysPage`, accessibles par les onglets du bas, ne sont créées que lorsque l’utilisateur y accède. Cette approche présente l’avantage d’éviter une mauvaise expérience de démarrage, car les pages sont créées à la demande en réponse à la navigation, plutôt qu’au lancement de l’application.
+Ce XAML crée et affiche `CatsPage`, car il s’agit du premier élément de contenu déclaré dans l’objet `Shell` sous-classé. Les pages `DogsPage` et `MonkeysPage`, accessibles par les onglets du bas, ne sont créées que lorsque l’utilisateur y accède. Cette approche présente l’avantage d’éviter une mauvaise expérience de démarrage, car les pages sont créées à la demande en réponse à la navigation, plutôt qu’au lancement de l’application.
 
 ## <a name="tab-appearance"></a>Apparence des onglets
 
