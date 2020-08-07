@@ -6,20 +6,20 @@ ms.assetId: F5EFEA72-CB23-4DD6-9545-D9BB755AF3CB
 ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
-ms.date: 11/04/2019
+ms.date: 07/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d8ceb139b1b9cd77aa922f98c80884d5c3e1a474
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a4c782f95db0f8e777494c47e9e668e9af67a2cc
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84127541"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87917771"
 ---
-# <a name="xamarinforms-searchbar"></a>Xamarin.FormsSearchBar
+# <a name="no-locxamarinforms-searchbar"></a>Xamarin.FormsSearchBar
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-searchbardemos/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-searchbardemos/)
 
 Le Xamarin.Forms [`SearchBar`](xref:Xamarin.Forms.SearchBar) est un contrôle d’entrée utilisateur utilisé pour lancer une recherche. Le `SearchBar` contrôle prend en charge le texte de l’espace réservé, l’entrée de requête, l’exécution de la recherche et l’annulation. La capture d’écran suivante montre une `SearchBar` requête avec les résultats affichés dans un `ListView` :
 
@@ -40,6 +40,7 @@ La `SearchBar` classe définit les propriétés suivantes :
 * [`SearchCommandParameter`](xref:Xamarin.Forms.SearchBar.SearchCommandParameter)est un `object` qui spécifie le paramètre qui doit être passé à l' `SearchCommand` .
 * [`Text`](xref:Xamarin.Forms.InputView.Text)est un `string` qui contient le texte de la requête dans le `SearchBar` .
 * [`TextColor`](xref:Xamarin.Forms.InputView.TextColor)est un `Color` qui définit la couleur du texte de la requête.
+* `TextTransform`est une `TextTransform` valeur qui détermine la casse du `SearchBar` texte.
 
 Ces propriétés sont sauvegardées par des [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) objets, ce qui signifie que `SearchBar` peut être personnalisé et être la cible des liaisons de données. La spécification des propriétés de police sur le `SearchBar` est cohérente avec la personnalisation du texte sur d’autres [ Xamarin.Forms contrôles de texte](~/xamarin-forms/user-interface/text/index.md). Pour plus d’informations, consultez [polices Xamarin.Forms dans ](~/xamarin-forms/user-interface/text/fonts.md).
 
@@ -66,6 +67,7 @@ Le `SearchBar` contrôle définit de nombreuses propriétés qui personnalisent 
            CancelButtonColor="Orange"
            PlaceholderColor="Orange"
            TextColor="Orange"
+           TextTransform="Lowercase"
            HorizontalTextAlignment="Center"
            FontSize="Medium"
            FontAttributes="Italic" />
@@ -79,6 +81,7 @@ SearchBar searchBar = new SearchBar
     Placeholder = "Search items...",
     PlaceholderColor = Color.Orange,
     TextColor = Color.Orange,
+    TextTransform = TextTransform.Lowercase,
     HorizontalTextAlignment = TextAlignment.Center,
     FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(SearchBar)),
     FontAttributes = FontAttributes.Italic

@@ -6,18 +6,18 @@ ms.prod: xamarin
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/17/2020
+ms.date: 08/06/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b451fe004ca21c8770658f31c9c38253e073c259
-ms.sourcegitcommit: 82eabb0eaa4a674897aa6d5e64efb91fd580c330
+ms.openlocfilehash: efd9cabc9504a9fa56f1f7a763013e6852be9382
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86100181"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918099"
 ---
-# <a name="respond-to-system-theme-changes-in-xamarinforms-applications"></a>Répondre aux modifications de thème du système dans les Xamarin.Forms applications
+# <a name="respond-to-system-theme-changes-in-no-locxamarinforms-applications"></a>Répondre aux modifications de thème du système dans les Xamarin.Forms applications
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-systemthemesdemo/)
 
@@ -26,9 +26,6 @@ Les appareils incluent généralement des thèmes clairs et foncés, qui font ch
 Le thème du système peut changer pour diverses raisons, en fonction de la configuration de l’appareil. Cela comprend le thème du système qui est explicitement modifié par l’utilisateur, qu’il change en raison de l’heure de la journée et qu’il change en raison de facteurs environnementaux tels que la faible luminosité.
 
 Xamarin.Formsles applications peuvent répondre aux modifications de thème du système en consommant des ressources avec l' `AppThemeBinding` extension de balisage, ainsi que les `SetAppThemeColor` méthodes d' `SetOnAppTheme<T>` extension et.
-
-> [!IMPORTANT]
-> La réponse à une modification de thème système est actuellement expérimentale et ne peut être utilisée qu’en définissant l' `AppTheme_Experimental` indicateur. Pour plus d’informations, consultez la page [indicateurs expérimentaux](~/xamarin-forms/internals/experimental-flags.md).
 
 Les conditions suivantes doivent être remplies pour que Xamarin.Forms réponde à un changement de thème du système :
 

@@ -10,16 +10,16 @@ ms.date: 06/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 971cf76fece1ea9b0744052eb23e696d02ce0bc1
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 8250bd5e5f7d6c9cb93a986656e908b40cec9ae2
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937733"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918509"
 ---
-# <a name="xamarinforms-shapes-path-markup-syntax"></a>Xamarin.FormsShapes : syntaxe de balisage de chemin
+# <a name="no-locxamarinforms-shapes-path-markup-syntax"></a>Xamarin.FormsShapes : syntaxe de balisage de chemin
 
-![API de la version préliminaire](~/media/shared/preview.png "Cette API est actuellement en préversion.")
+![API de la version préliminaire](~/media/shared/preview.png)
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
@@ -27,6 +27,7 @@ Xamarin.Formsla syntaxe de balisage Path vous permet de spécifier de manière c
 
 ```xaml
 <Path Stroke="Black"
+      StrokeThickness="1"
       Data="M13.908992,16.207977 L32.000049,16.207977 32.000049,31.999985 13.908992,30.109983Z" />
 ```
 

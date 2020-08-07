@@ -10,16 +10,16 @@ ms.date: 01/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cf5d3924a726247ea1884acc75720566d76c76e4
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 5c15760919c2511ee24485ab7539463ec252d999
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86929214"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918136"
 ---
-# <a name="xamarinforms-carouselview-scrolling"></a>Xamarin.FormsDéfilement CarouselView
+# <a name="no-locxamarinforms-carouselview-scrolling"></a>Xamarin.FormsDéfilement CarouselView
 
-![API de la version préliminaire](~/media/shared/preview.png "Cette API est actuellement en préversion.")
+![API de la version préliminaire](~/media/shared/preview.png)
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 

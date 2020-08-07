@@ -6,20 +6,20 @@ ms.assetid: FEDE51EB-577E-4B3E-9890-B7C1A5E52516
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/10/2020
+ms.date: 07/30/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1a1d47b2b37fa532b3e2a64ada5f367e612f557d
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 821eafab6896d8771ba38332a43c0cbc319797a7
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84946258"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87917832"
 ---
-# <a name="xamarinforms-shell-flyout"></a>Xamarin.FormsMenu volant Shell
+# <a name="no-locxamarinforms-shell-flyout"></a>Xamarin.FormsMenu volant Shell
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
 Le menu volant est le menu racine d’une application Shell, accessible via une icône ou en balayant depuis le côté de l’écran. Il se compose d’un en-tête facultatif, d’éléments de menu volant et d’éléments de menu facultatifs :
 
@@ -234,6 +234,7 @@ La classe `FlyoutItem` comporte différentes propriétés qui contrôlent l’ap
 - `IsChecked`, de type `boolean`, détermine si l’élément est actuellement en surbrillance dans le menu volant.
 - `IsEnabled`, de type `boolean`, détermine si l’élément est sélectionnable dans le chrome.
 - `IsTabStop`, de type `bool`, indique si un `FlyoutItem` est inclus dans la navigation par onglets. Sa valeur par défaut est `true`. Lorsqu’il a la valeur`false`, `FlyoutItem` est ignoré par l’infrastructure de navigation par onglets, indépendamment de `TabIndex`.
+- `IsVisible`, de type `bool` , indique si le `FlyoutItem` est masqué dans le menu contextuel. Sa valeur par défaut est `true`.
 - `TabIndex`, de type `int`, indique l’ordre dans lequel les objets `FlyoutItem` reçoivent le focus lorsque l’utilisateur parcourt des éléments en appuyant sur la touche Tab. La valeur par défaut de la propriété est 0.
 - `Title`, de type `string`, représente le titre à afficher dans l’interface utilisateur.
 - `Route`, de type `string`, représente la chaîne utilisée pour traiter l’élément.
@@ -249,6 +250,46 @@ En outre, la classe `FlyoutItem` expose les méthodes substituables suivantes :
 - `OnTabStopPropertyChanged`, qui est appelée à chaque modification de la propriété `IsTabStop`.
 - `TabIndexDefaultValueCreator`, qui retourne un `int` et est appelée pour définir la valeur par défaut de la propriété `TabIndex`.
 - `TabStopDefaultValueCreator`, qui retourne un `bool` et est appelée pour définir la valeur par défaut de la propriété `TabStop`.
+
+## <a name="flyout-backdrop"></a>Fond de la fenêtre
+
+Le fond du lanceur, qui est l’apparence de la superposition de la fenêtre d’affichage, peut être spécifié en affectant `Shell.FlyoutBackdrop` à la propriété jointe `Brush` :
+
+```xaml
+<Shell ...
+       FlyoutBackdrop="Silver">
+    ...
+</Shell>
+```
+
+Dans cet exemple, le fond de la fenêtre mobile est peint avec un argent `SolidColorBrush` .
+
+> [!IMPORTANT]
+> `FlyoutBackdrop`La propriété jointe peut être définie sur n’importe quel élément de l’interpréteur de commandes, mais elle sera appliquée uniquement lorsqu’elle est définie sur des `Shell` `FlyoutItem` objets, ou `TabBar` .
+
+L’exemple suivant montre comment définir le fond de la fenêtre mobile sur un `FlyoutItem` `LinearGradientBrush` :
+
+```xaml
+<Shell ...>
+    <FlyoutItem ...>
+      <Shell.FlyoutBackdrop>
+          <LinearGradientBrush StartPoint="0,0"
+                               EndPoint="1,1">
+              <GradientStop Color="#8A2387"
+                            Offset="0.1" />
+              <GradientStop Color="#E94057"
+                            Offset="0.6" />
+              <GradientStop Color="#F27121"
+                            Offset="1.0" />
+          </LinearGradientBrush>
+      </Shell.FlyoutBackdrop>
+      ...
+    </FlyoutItem>
+    ...
+</Shell>
+```
+
+Pour plus d’informations sur les pinceaux, consultez [ Xamarin.Forms pinceaux](~/xamarin-forms/user-interface/brushes/index.md).
 
 ## <a name="flyout-vertical-scroll"></a>Défilement verticale du menu volant
 
@@ -652,3 +693,4 @@ En outre, les classes de style personnalisées peuvent être définies et appliq
 - [Xaminals (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 - [Xamarin.FormsClasses de style](~/xamarin-forms/user-interface/styles/xaml/style-class.md)
 - [Xamarin.FormsGestionnaire d’état visuel](~/xamarin-forms/user-interface/visual-state-manager.md)
+- [Xamarin.FormsBrosse](~/xamarin-forms/user-interface/brushes/index.md)

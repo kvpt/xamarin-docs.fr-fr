@@ -10,16 +10,16 @@ ms.date: 05/15/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 279df31eeda506d6780533bac8ae190f799424a3
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 3e8c95e84dd525c274403290712260ba86abd677
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936030"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918563"
 ---
-# <a name="xamarinforms-c-markup"></a>Xamarin.FormsBalisage C#
+# <a name="no-locxamarinforms-c-markup"></a>Xamarin.FormsBalisage C#
 
-![API de la version préliminaire](~/media/shared/preview.png "Cette API est actuellement en préversion.")
+![API de la version préliminaire](~/media/shared/preview.png)
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-csharpmarkupdemos/)
 
@@ -231,7 +231,7 @@ new Label { Text = "Tap Me" }
 
 Étant donné qu’un module de reconnaissance de mouvement est un `BindableObject` , vous pouvez utiliser les `Bind` `BindCommand` méthodes d’extension et lorsque vous l’initialisez. Vous pouvez également initialiser des types de module de reconnaissance de mouvement personnalisés avec la `Gesture<TGestureElement, TGestureRecognizer>` méthode d’extension.
 
-## <a name="layout"></a>Mise en page
+## <a name="layout"></a>Disposition
 
 Le balisage C# comprend une série de méthodes d’extension de disposition qui prennent en charge le positionnement des vues dans les dispositions et le contenu dans les vues :
 

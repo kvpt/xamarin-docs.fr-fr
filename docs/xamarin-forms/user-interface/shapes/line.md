@@ -10,16 +10,16 @@ ms.date: 06/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9d79f232a77972b6abbce23ba65d9c277b090311
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: a5d130922a9bd8f30b33b99f7f3dc512f056269f
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86935445"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918630"
 ---
-# <a name="xamarinforms-shapes-line"></a>Xamarin.FormsFormes : ligne
+# <a name="no-locxamarinforms-shapes-line"></a>Xamarin.FormsFormes : ligne
 
-![API de la version préliminaire](~/media/shared/preview.png "Cette API est actuellement en préversion.")
+![API de la version préliminaire](~/media/shared/preview.png)
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
@@ -50,17 +50,19 @@ L’exemple de code XAML suivant montre comment dessiner une ligne :
       Y1="0"
       X2="0"
       Y2="120"
-      Stroke="Red" />
+      Stroke="Red"
+      StrokeThickness="1" />
 ```
 
 Dans cet exemple, une ligne diagonale rouge est dessinée de (40, 0) à (0120) :
 
-![Spline](line-images/line.png "Courbes")
+![Spline](line-images/line.png "Ligne")
 
 Étant donné que les `X1` `Y1` Propriétés,, `X2` et `Y2` ont des valeurs par défaut égales à 0, il est possible de dessiner des lignes avec une syntaxe minimale :
 
 ```xaml
 <Line Stroke="Red"
+      StrokeThickness="1"
       X2="200" />
 ```
 
@@ -74,6 +76,7 @@ L’exemple de code XAML suivant montre comment dessiner une ligne en pointillé
       X2="0"
       Y2="120"
       Stroke="DarkBlue"
+      StrokeThickness="1"
       StrokeDashArray="1,1"
       StrokeDashOffset="6" />
 ```

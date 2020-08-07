@@ -10,12 +10,12 @@ ms.date: 11/06/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7c4ed503e0379c2c7f235bd91621a031bd660c85
-ms.sourcegitcommit: 69d9a61ba479f707d96eb4c1c56a4b05a2a2a26f
+ms.openlocfilehash: 9ecdc3aca3264b52163d35e29659f434f521147f
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87426888"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918614"
 ---
 # <a name="no-locxamarinforms-shell-tabs"></a>Xamarin.FormsOnglets de Shell
 
@@ -184,6 +184,7 @@ La classe `ShellContent` comporte différentes propriétés qui contrôlent l’
 - `Icon`, de type `ImageSource`, définit l’icône à afficher dans les parties du chrome autres que le menu volant.
 - `IsChecked`, de type `boolean`, détermine si l’élément est actuellement en surbrillance dans le menu volant.
 - `IsEnabled`, de type `boolean`, détermine si l’élément est sélectionnable dans le chrome.
+- `IsVisible`, de type `bool` , indique si le `ShellContent` est masqué dans toutes les structures de l’interface utilisateur. Sa valeur par défaut est `true`.
 - `MenuItems`, de type `MenuItemCollection`, représente les éléments de menu à afficher dans le menu volant lorsque ce `ShellContent` est la page présentée.
 - `Title`, de type `string`, représente le titre à afficher dans l’interface utilisateur.
 

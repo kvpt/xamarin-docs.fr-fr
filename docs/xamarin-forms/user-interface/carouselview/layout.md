@@ -10,16 +10,16 @@ ms.date: 01/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d245ebbf42333ad822e0d6ed8569cc8193f1b478
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: b45b1375ab7676e96976951e10b903d25c88bc14
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936706"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918528"
 ---
-# <a name="xamarinforms-carouselview-layout"></a>Xamarin.FormsDisposition CarouselView
+# <a name="no-locxamarinforms-carouselview-layout"></a>Xamarin.FormsDisposition CarouselView
 
-![API de la version préliminaire](~/media/shared/preview.png "Cette API est actuellement en préversion.")
+![API de la version préliminaire](~/media/shared/preview.png)
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 

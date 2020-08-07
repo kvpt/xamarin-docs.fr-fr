@@ -6,20 +6,20 @@ ms.assetid: F8F9471D-6771-4D23-96C0-2B79473A06D4
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/18/2019
+ms.date: 07/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cc5e0c4cb8b474a1b7e23b476b0c5125eb2ba298
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 00dfec5b48507c83f43d0622c11770ecec304ea6
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138084"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87917548"
 ---
-# <a name="xamarinforms-shell-search"></a>Xamarin.FormsRecherche de Shell
+# <a name="no-locxamarinforms-shell-search"></a>Xamarin.FormsRecherche de Shell
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
 Xamarin.FormsL’interpréteur de commandes comprend une fonctionnalité de recherche intégrée qui est fournie par la `SearchHandler` classe. Une fonction de recherche peut être ajoutée à une page en définissant la propriété jointe `Shell.SearchHandler` sur un objet `SearchHandler` sous-classé. Une zone de recherche est alors ajoutée en haut de la page :
 
@@ -224,6 +224,7 @@ La classe `SearchHandler` définit les propriétés suivantes destinées à modi
 - `HorizontalTextAlignment`, de type `TextAlignment` : alignement horizontal du texte de la zone de recherche.
 - `PlaceholderColor`, de type `Color` : couleur pour l’espace réservé du texte de la zone de recherche.
 - `TextColor`, de type `Color` : couleur pour le texte de la zone de recherche.
+- `TextTransform`, de type `TextTransform` , détermine la casse du texte de la zone de recherche.
 - `VerticalTextAlignment`, de type `TextAlignment` , est l’alignement vertical du texte de la zone de recherche.
 
 ## <a name="searchhandler-keyboard"></a>Clavier SearchHandler
@@ -320,6 +321,7 @@ La classe `SearchHandler` définit les propriétés suivantes, qui contrôlent s
 - `SelectedItem`, de type `object` : élément sélectionné dans les résultats de la recherche. Cette propriété est en lecture seule et sa la valeur par défaut est `null`.
 - `ShowsResults`, de type `bool` : indique si les résultats de la recherche doivent être attendus dans la zone de suggestion, lors de la saisie du texte. La valeur par défaut est `false`.
 - `TextColor`, de type `Color` : couleur pour le texte de la zone de recherche.
+- `TextTransform`, de type `TextTransform` , détermine la casse du texte de la zone de recherche.
 
 Toutes ces propriétés sont sauvegardées par des [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) objets, ce qui signifie que les propriétés peuvent être des cibles de liaisons de données.
 

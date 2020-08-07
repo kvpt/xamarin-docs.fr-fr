@@ -1,6 +1,6 @@
 ---
-title: :::no-loc(Xamarin.Forms):::disposition sur deux écrans
-description: 'Ce guide explique comment utiliser :::no-loc(Xamarin.Forms)::: TwoPaneView pour optimiser votre expérience d’application pour les appareils à deux écrans tels que surface Duo et surface Neo.'
+title: Xamarin.Formsdisposition sur deux écrans
+description: Ce guide explique comment utiliser Xamarin.Forms TwoPaneView pour optimiser votre expérience d’application pour les appareils à deux écrans tels que surface Duo et surface Neo.
 ms.prod: xamarin
 ms.assetid: 17ee8afa-5e7c-4a4f-a9b6-2aca03f30fe3
 ms.technology: xamarin-forms
@@ -8,18 +8,18 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/08/2020
 no-loc:
-- ':::no-loc(Xamarin.Forms):::'
-- ':::no-loc(Xamarin.Essentials):::'
-ms.openlocfilehash: 4f7fdc0bb18a49e601c00ce1e3eb13371bb80be3
-ms.sourcegitcommit: 3698b35c823225a74892a47139d19e8ae8e6d9ed
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 734dea456af56f4103691e0368ae72202bce9556
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87113819"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918235"
 ---
-# <a name="no-locxamarinforms-twopaneview-layout"></a>:::no-loc(Xamarin.Forms):::Disposition TwoPaneView
+# <a name="no-locxamarinforms-twopaneview-layout"></a>Xamarin.FormsDisposition TwoPaneView
 
-![API de la version préliminaire](~/media/shared/preview.png "Cette API est actuellement en préversion.")
+![API de la version préliminaire](~/media/shared/preview.png)
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
 
@@ -33,8 +33,8 @@ Suivez ces instructions pour créer une disposition à deux écrans dans votre a
 1. Commencez avec un de base `TwoPaneView` à l’aide du code XAML suivant :
 
     ```xaml
-    <ContentPage 
-        xmlns:dualScreen="clr-namespace::::no-loc(Xamarin.Forms):::.DualScreen;assembly=:::no-loc(Xamarin.Forms):::.DualScreen">
+    <ContentPage
+        xmlns:dualScreen="clr-namespace:Xamarin.Forms.DualScreen;assembly=Xamarin.Forms.DualScreen">
         <dualScreen:TwoPaneView>
             <dualScreen:TwoPaneView.Pane1>
                 <StackLayout>

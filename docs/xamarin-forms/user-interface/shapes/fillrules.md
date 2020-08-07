@@ -10,16 +10,16 @@ ms.date: 06/24/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 86bbad476f206c13e6437f867c8e85e6bea5063a
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 536992f5a8501f51e14dc15caa9825771e4ed950
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937291"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918603"
 ---
-# <a name="xamarinforms-shapes-fill-rules"></a>Xamarin.FormsFormes : règles de remplissage
+# <a name="no-locxamarinforms-shapes-fill-rules"></a>Xamarin.FormsFormes : règles de remplissage
 
-![API de la version préliminaire](~/media/shared/preview.png "Cette API est actuellement en préversion.")
+![API de la version préliminaire](~/media/shared/preview.png)
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
@@ -38,6 +38,7 @@ L’exemple XAML suivant crée et restitue une forme composite, avec `FillRule` 
 
 ```xaml
 <Path Stroke="Black"
+      StrokeThickness="1"
       Fill="#CCCCFF"
       Aspect="Uniform"
       HorizontalOptions="Start">
@@ -79,6 +80,7 @@ L’exemple XAML suivant crée et restitue une forme composite, avec le `FillRul
 
 ```xaml
 <Path Stroke="Black"
+      StrokeThickness="1"
       Fill="#CCCCFF"
       Aspect="Uniform"
       HorizontalOptions="Start">
@@ -115,6 +117,7 @@ Une forme plus complexe avec des segments exécutés dans des directions différ
 
 ```xaml
 <Path Stroke="Black"
+      StrokeThickness="1"
       Fill="#CCCCFF">
      <Path.Data>
          <GeometryGroup FillRule="Nonzero">

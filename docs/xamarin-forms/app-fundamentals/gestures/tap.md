@@ -1,5 +1,5 @@
 ---
-title: Ajout d’un module de reconnaissance des appuis
+title: Ajouter un module de reconnaissance de mouvement TAP
 description: Cet article explique comment utiliser le geste TAP pour la détection de TAP dans une Xamarin.Forms application. La détection des appuis est implémentée avec la classe TapGestureRecognizer.
 ms.prod: xamarin
 ms.assetid: 1D150BAF-4157-49BC-90A0-153323B8EBCF
@@ -10,16 +10,16 @@ ms.date: 01/21/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1f5b476ac83f801b4ccded3e18bb601c06e0d0ef
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: fddee777ac74cb3ca50ebd0dca809d4a2f1412ab
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84570607"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918422"
 ---
-# <a name="adding-a-tap-gesture-recognizer"></a>Ajout d’un module de reconnaissance des appuis
+# <a name="add-a-tap-gesture-recognizer"></a>Ajouter un module de reconnaissance de mouvement TAP
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-tapgesture)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-tapgesture)
 
 _Le geste d’appui est utilisé pour la détection des appuis, il est implémentée avec la classe TapGestureRecognizer._
 
@@ -115,7 +115,7 @@ public class TapViewModel : INotifyPropertyChanged
 }
 ```
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [TapGesture (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-tapgesture)
 - [GestureRecognizer](xref:Xamarin.Forms.GestureRecognizer)

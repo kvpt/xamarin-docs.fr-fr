@@ -6,22 +6,22 @@ ms.assetid: 02E6C553-5670-49A0-8EE9-5153ED21EA91
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/09/2020
+ms.date: 07/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8bf6517e3624ad80c2fd4d209e5a77472460be76
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 1fcfc2c3fbb91a7ee326db7aeef08459e05d834d
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84570503"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87917874"
 ---
-# <a name="xamarinforms-label"></a>Xamarin.FormsNoms
+# <a name="no-locxamarinforms-label"></a>Xamarin.FormsNoms
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
-_Afficher le texte dans Xamarin. Forms_
+_Afficher le texte dansXamarin.Forms_
 
 La [`Label`](xref:Xamarin.Forms.Label) vue est utilisée pour afficher du texte, qu’il s’agit d’une seule ou plusieurs lignes. Les étiquettes peuvent contenir des décorations de texte, du texte en couleur et utiliser des polices personnalisées (familles, tailles et options).
 
@@ -55,6 +55,32 @@ Les captures d’écran suivantes montrent les `TextDecorations` membres de l’
 
 > [!NOTE]
 > Les décorations de texte peuvent également être appliquées aux [`Span`](xref:Xamarin.Forms.Span) instances. Pour plus d’informations sur la `Span` classe, consultez [texte mis en forme](#formatted-text).
+
+## <a name="transform-text"></a>Transformer le texte
+
+Un [`Label`](xref:Xamarin.Forms.Entry) peut transformer la casse de son texte, stocké dans la `Text` propriété, en affectant `TextTransform` à la propriété une valeur de l' `TextTransform` énumération. Cette énumération a quatre valeurs :
+
+- `None`indique que le texte ne sera pas transformé.
+- `Default`indique que le comportement par défaut de la plateforme sera utilisé. C’est la valeur par défaut de la propriété `TextTransform`.
+- `Lowercase`indique que le texte sera transformé en minuscules.
+- `Uppercase`indique que le texte sera transformé en majuscules.
+
+L’exemple suivant illustre la transformation de texte en majuscules :
+
+```xaml
+<Label Text="This text will be displayed in uppercase."
+       TextTransform="Uppercase" />
+```
+
+Le code C# équivalent est :
+
+```csharp
+Label label = new Label
+{
+    Text = "This text will be displayed in uppercase.",
+    TextTransform = TextTransform.Uppercase
+};
+```
 
 ## <a name="character-spacing"></a>Espacement des caractères
 
@@ -143,7 +169,7 @@ Les captures d’écran suivantes montrent le résultat de la définition de la 
 
 Pour plus d’informations sur les couleurs, consultez [couleurs](~/xamarin-forms/user-interface/colors.md).
 
-## <a name="fonts"></a>Fonts
+## <a name="fonts"></a>Polices
 
 Pour plus d’informations sur la spécification des polices sur un `Label` , consultez [polices](~/xamarin-forms/user-interface/text/fonts.md).
 
@@ -390,7 +416,7 @@ Les captures d’écran suivantes montrent le résultat de la définition de la 
 
 ![Exemple d’étendue de LineHeight](label-images/span-lineheight.png)
 
-## <a name="padding"></a>Espacement
+## <a name="padding"></a>Remplissage
 
 Le remplissage représente l’espace entre un élément et ses éléments enfants, et est utilisé pour séparer l’élément de son propre contenu. Le remplissage peut être appliqué aux [`Label`](xref:Xamarin.Forms.Label) instances en affectant `Label.Padding` à la propriété une [`Thickness`](xref:Xamarin.Forms.Thickness) valeur :
 

@@ -6,20 +6,20 @@ ms.assetid: 62CAEB63-0800-44F4-9B8C-EE632138C2F5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/04/2019
+ms.date: 07/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 595367d94bcc4ac384763e915a0a19db7517341d
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 7ed24d38c75036245a024eecbef7f9a74380b591
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84573389"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87917895"
 ---
-# <a name="xamarinforms-button"></a>Xamarin.FormsBouton
+# <a name="no-locxamarinforms-button"></a>Xamarin.FormsBouton
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)
 
 _Le bouton répond à un TAP ou à un clic qui indique à une application d’effectuer une tâche particulière._
 
@@ -426,7 +426,8 @@ Ce type de comportement a des applications pour les jeux : un doigt détenu sur
 - [`FontAttributes`](xref:Xamarin.Forms.Button.FontAttributes)indique si le texte est en italique ou en gras
 - [`BorderWidth`](xref:Xamarin.Forms.Button.BorderWidth)largeur de la bordure
 - [`CornerRadius`](xref:Xamarin.Forms.Button.CornerRadius)est le rayon de l’angle du`Button`
-- `CharacterSpacing`espacement entre les caractères du `Button` texte
+- [`CharacterSpacing`](xref:Xamarin.Forms.Button.CharacterSpacing)espacement entre les caractères du `Button` texte.
+- `TextTransform`détermine la casse du `Button` texte.
 
 > [!NOTE]
 > La `Button` classe possède également [`Margin`](xref:Xamarin.Forms.View.Margin) des [`Padding`](xref:Xamarin.Forms.Button.Padding) Propriétés et qui contrôlent le comportement de disposition de `Button` . Pour plus d’informations, consultez la page [Marge et remplissage](~/xamarin-forms/user-interface/layouts/margin-and-padding.md).

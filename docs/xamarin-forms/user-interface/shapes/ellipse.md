@@ -10,16 +10,16 @@ ms.date: 06/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b4369fdb7c5a35d6b9a192d9222fd82670b7e3f3
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 0796ba2a3b1ab28370fd8280e12df273223b9f4d
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86933586"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87917739"
 ---
-# <a name="xamarinforms-shapes-ellipse"></a>Xamarin.FormsFormes : ellipse
+# <a name="no-locxamarinforms-shapes-ellipse"></a>Xamarin.FormsFormes : ellipse
 
-![API de la version préliminaire](~/media/shared/preview.png "Cette API est actuellement en préversion.")
+![API de la version préliminaire](~/media/shared/preview.png)
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 

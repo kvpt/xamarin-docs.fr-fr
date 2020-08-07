@@ -6,33 +6,35 @@ ms.assetid: D4815A4B-104B-4294-951B-BD8F2EC33C86
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/26/2019
+ms.date: 07/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5e3153e796f26ef150dccc79d8ea6f90127c6a26
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 30f5aefe5fcb327a7c3333bee8e8b553e2630f57
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938682"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918002"
 ---
-# <a name="xamarinforms-picker"></a>Xamarin.FormsEmoji
+# <a name="no-locxamarinforms-picker"></a>Xamarin.FormsEmoji
 
 _La vue sélecteur est un contrôle permettant de sélectionner un élément de texte dans une liste de données._
 
 Xamarin.Forms [`Picker`](xref:Xamarin.Forms.Picker) Affiche une brève liste d’éléments, à partir de laquelle l’utilisateur peut sélectionner un élément. `Picker` définit les propriétés suivantes :
 
-- [`Title`](xref:Xamarin.Forms.Picker.Title)de type `string` , qui a comme valeur par défaut `null` .
-- `TitleColor`de type [`Color`](xref:Xamarin.Forms.Color) , la couleur utilisée pour afficher le `Title` texte.
+- [`CharacterSpacing`](xref:Xamarin.Forms.Picker.CharacterSpacing), de type `double` , est l’espacement entre les caractères de l’élément affiché par le `Picker` .
+- [`FontAttributes`](xref:Xamarin.Forms.Picker.FontAttributes)de type [`FontAttributes`](xref:Xamarin.Forms.FontAttributes) , qui a comme valeur par défaut [`FontAtributes.None`](xref:Xamarin.Forms.FontAttributes.None) .
+- [`FontFamily`](xref:Xamarin.Forms.Picker.FontFamily)de type `string` , qui a comme valeur par défaut `null` .
+- [`FontSize`](xref:Xamarin.Forms.Picker.FontSize)de type `double` , qui a comme valeur par défaut-1,0.
+- `HorizontalTextAlignment`, de type [`TextAlignment`](xref:Xamarin.Forms.TextAlignment) , est l’alignement horizontal du texte affiché par le `Picker` .
 - [`ItemsSource`](xref:Xamarin.Forms.Picker.ItemsSource)de type `IList` , la liste source des éléments à afficher, dont la valeur par défaut est `null` .
 - [`SelectedIndex`](xref:Xamarin.Forms.Picker.SelectedIndex)de type `int` , l’index de l’élément sélectionné, qui a comme valeur par défaut-1.
 - [`SelectedItem`](xref:Xamarin.Forms.Picker.SelectedItem)de type `object` , l’élément sélectionné, qui a comme valeur par défaut `null` .
 - [`TextColor`](xref:Xamarin.Forms.Picker.TextColor)de type [`Color`](xref:Xamarin.Forms.Color) , la couleur utilisée pour afficher le texte, qui a comme valeur par défaut [`Color.Default`](xref:Xamarin.Forms.Color.Default) .
-- [`FontAttributes`](xref:Xamarin.Forms.Picker.FontAttributes)de type [`FontAttributes`](xref:Xamarin.Forms.FontAttributes) , qui a comme valeur par défaut [`FontAtributes.None`](xref:Xamarin.Forms.FontAttributes.None) .
-- [`FontFamily`](xref:Xamarin.Forms.Picker.FontFamily)de type `string` , qui a comme valeur par défaut `null` .
-- [`FontSize`](xref:Xamarin.Forms.Picker.FontSize)de type `double` , qui a comme valeur par défaut-1,0.
-- `CharacterSpacing`, de type `double` , est l’espacement entre les caractères de l’élément affiché par le `Picker` .
+- [`Title`](xref:Xamarin.Forms.Picker.Title)de type `string` , qui a comme valeur par défaut `null` .
+- [`TitleColor`](xref:Xamarin.Forms.Picker.TitleColor)de type [`Color`](xref:Xamarin.Forms.Color) , la couleur utilisée pour afficher le `Title` texte.
+- `VerticalTextAlignment`, de type [`TextAlignment`](xref:Xamarin.Forms.TextAlignment) , est l’alignement vertical du texte affiché par le `Picker` .
 
 Toutes les propriétés sont sauvegardées par des [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) objets, ce qui signifie qu’elles peuvent être stylisées et que les propriétés peuvent être des cibles de liaisons de données. Les [`SelectedIndex`](xref:Xamarin.Forms.Picker.SelectedIndex) [`SelectedItem`](xref:Xamarin.Forms.Picker.SelectedItem) Propriétés et ont un mode de liaison par défaut de, ce qui [`BindingMode.TwoWay`](xref:Xamarin.Forms.BindingMode.TwoWay) signifie qu’elles peuvent être des cibles de liaisons de données dans une application qui utilise l’architecture [MVVM (Model-View-ViewModel)](~/xamarin-forms/enterprise-application-patterns/mvvm.md) . Pour plus d’informations sur la définition des propriétés de police, consultez [polices](~/xamarin-forms/user-interface/text/fonts.md).
 

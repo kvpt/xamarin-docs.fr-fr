@@ -10,16 +10,16 @@ ms.date: 06/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8e23e4151c4841dd4dce80ba0358471c64a26f39
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 274ff08d7fffc1cd3a817906e14ebddfac2c9337
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937606"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918258"
 ---
-# <a name="xamarinforms-shapes-path"></a>Xamarin.FormsFormes : chemin d’accès
+# <a name="no-locxamarinforms-shapes-path"></a>Xamarin.FormsFormes : chemin d’accès
 
-![API de la version préliminaire](~/media/shared/preview.png "Cette API est actuellement en préversion.")
+![API de la version préliminaire](~/media/shared/preview.png)
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
@@ -48,6 +48,7 @@ L’exemple de code XAML suivant montre comment dessiner un triangle à l’aide
 ```xaml
 <Path Data="M 10,100 L 100,100 100,50Z"
       Stroke="Black"
+      StrokeThickness="1"
       Aspect="Uniform"
       HorizontalOptions="Start" />
 ```
@@ -71,6 +72,7 @@ L’exemple de code XAML suivant montre comment dessiner un triangle à l’aide
 
 ```xaml
 <Path Stroke="Black"
+      StrokeThickness="1"
       Aspect="Uniform"
       HorizontalOptions="Start">
     <Path.Data>

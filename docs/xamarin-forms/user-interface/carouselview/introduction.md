@@ -10,16 +10,16 @@ ms.date: 10/08/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 49aa0ffcf7e7fa4d22024ee08f8bdf509cafd73a
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: a78536463b4966c38025d5c46a33aa07cb81bfdf
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937798"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918378"
 ---
-# <a name="xamarinforms-carouselview-introduction"></a>Xamarin.FormsPrésentation de CarouselView
+# <a name="no-locxamarinforms-carouselview-introduction"></a>Xamarin.FormsPrésentation de CarouselView
 
-![API de la version préliminaire](~/media/shared/preview.png "Cette API est actuellement en préversion.")
+![API de la version préliminaire](~/media/shared/preview.png)
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView)est une vue qui permet de présenter des données dans une disposition à défilement, où les utilisateurs peuvent effectuer un balayage pour se déplacer dans une collection d’éléments. Par défaut, `CarouselView` affiche ses éléments dans une orientation horizontale. Un seul élément s’affiche à l’écran, avec des mouvements de balayage qui entraînent la navigation vers l’avant et vers l’arrière dans la collection d’éléments. En outre, des indicateurs peuvent s’afficher pour représenter chaque élément dans le `CarouselView` :
 

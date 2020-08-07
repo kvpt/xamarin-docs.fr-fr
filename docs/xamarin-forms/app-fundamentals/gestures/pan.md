@@ -1,5 +1,5 @@
 ---
-title: Ajout d’un module de reconnaissance des mouvements panoramiques
+title: Ajouter un module de reconnaissance de mouvement de panoramique
 description: Cet article explique comment utiliser un mouvement panoramique pour faire un panoramique horizontal et vertical d’une image afin que tout le contenu de l’image soit visible quand il est affiché dans une fenêtre d’affichage plus petite que les dimensions de l’image.
 ms.prod: xamarin
 ms.assetid: 42CBD2CF-432D-4F19-A05E-D569BB7F8713
@@ -10,16 +10,16 @@ ms.date: 01/21/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 53122991811c06360e8d015a753096cb35c1cca0
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 886191725421a754e696409deb7a3cca0f6ea923
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137629"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87917694"
 ---
-# <a name="adding-a-pan-gesture-recognizer"></a>Ajout d’un module de reconnaissance des mouvements panoramiques
+# <a name="add-a-pan-gesture-recognizer"></a>Ajouter un module de reconnaissance de mouvement de panoramique
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-pangesture)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-pangesture)
 
 _Le mouvement de panoramique est utilisé pour détecter le mouvement des doigts sur l’écran et appliquer ce mouvement au contenu, et est implémenté avec la `PanGestureRecognizer` classe. Un scénario courant pour le mouvement panoramique consiste à faire pivoter horizontalement et verticalement une image, afin que tout le contenu de l’image puisse être affiché lorsqu’il est affiché dans une fenêtre d’affichage plus petite que les dimensions de l’image. Pour ce faire, vous devez déplacer l’image dans la fenêtre d’affichage et elle est illustrée dans cet article._
 
@@ -149,7 +149,7 @@ Lorsque vous panoramiqueez du contenu dans un élément qui n’occupe pas le pl
 > [!NOTE]
 > L’affichage d’images haute résolution peut augmenter considérablement l’empreinte mémoire d’une application. Par conséquent, elles doivent être créées seulement si elles sont nécessaires et doivent être libérées dès que l’application n’en a plus besoin. Pour plus d’informations, consultez [Optimiser les ressources d’images](~/xamarin-forms/deploy-test/performance.md#optimize-image-resources).
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [PanGesture (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-pangesture)
 - [GestureRecognizer](xref:Xamarin.Forms.GestureRecognizer)

@@ -10,16 +10,16 @@ ms.date: 06/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2f00daff6cada3f74b2dbcf6daa8245b80cf13eb
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 5b7e6404dec40814b800aef696afd058cafb69e5
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937655"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918354"
 ---
-# <a name="xamarinforms-shapes-polyline"></a>Xamarin.FormsFormes : polyligne
+# <a name="no-locxamarinforms-shapes-polyline"></a>Xamarin.FormsFormes : polyligne
 
-![API de la version préliminaire](~/media/shared/preview.png "Cette API est actuellement en préversion.")
+![API de la version préliminaire](~/media/shared/preview.png)
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
@@ -47,7 +47,8 @@ L’exemple de code XAML suivant montre comment dessiner une polyligne :
 
 ```xaml
 <Polyline Points="0,0 10,30, 15,0 18,60 23,30 35,30 40,0 43,60 48,30 100,30"
-          Stroke="Red" />
+          Stroke="Red"
+          StrokeThickness="1" />
 ```
 
 Dans cet exemple, une polyligne rouge est dessinée :

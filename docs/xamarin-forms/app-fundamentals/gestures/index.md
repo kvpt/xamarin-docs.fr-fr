@@ -6,35 +6,39 @@ ms.assetid: 0E197A51-2304-4C09-A710-C7FF24A89F15
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/25/2018
+ms.date: 08/04/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5e1e93f74ab8ef6d63213a8fbdc7ec45a794cf55
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 7528afd0971cf06eb69df4ed7c08c3fd6dcc9e22
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137875"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87917830"
 ---
-# <a name="xamarinforms-gestures"></a>Xamarin.Formsmouvements
+# <a name="no-locxamarinforms-gestures"></a>Xamarin.Formsmouvements
 
 _Les détecteurs de mouvement peuvent être utilisés pour détecter l’interaction de l’utilisateur avec des vues dans une Xamarin.Forms application._
 
-La Xamarin.Forms [`GestureRecognizer`](xref:Xamarin.Forms.GestureRecognizer) classe prend en charge les gestes de type Tap, pincement, panoramique et balayage sur les [`View`](xref:Xamarin.Forms.View) instances.
+La Xamarin.Forms [`GestureRecognizer`](xref:Xamarin.Forms.GestureRecognizer) classe prend en charge le TAP, le pincement, le panoramique, le balayage et les mouvements de glisser-déplacer sur les [`View`](xref:Xamarin.Forms.View) instances.
 
-## <a name="adding-a-tap-gesture-recognizer"></a>[Ajout d’un module de reconnaissance des appuis](tap.md)
+## <a name="add-a-tap-gesture-recognizer"></a>[Ajouter un module de reconnaissance de mouvement TAP](tap.md)
 
 Un mouvement TAP est utilisé pour la détection de TAP et est reconnu avec la [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) classe.
 
-## <a name="adding-a-pinch-gesture-recognizer"></a>[Ajout d’un module de reconnaissance des pincements](pinch.md)
+## <a name="add-a-pinch-gesture-recognizer"></a>[Ajouter un module de reconnaissance de mouvement de pincement](pinch.md)
 
 Un mouvement de pincement est utilisé pour effectuer un zoom interactif et est reconnu avec la [`PinchGestureRecognizer`](xref:Xamarin.Forms.PinchGestureRecognizer) classe.
 
-## <a name="adding-a-pan-gesture-recognizer"></a>[Ajout d’un module de reconnaissance des mouvements panoramiques](pan.md)
+## <a name="add-a-pan-gesture-recognizer"></a>[Ajouter un module de reconnaissance de mouvement de panoramique](pan.md)
 
 Un mouvement panoramique est utilisé pour détecter le mouvement des doigts à l’écran et pour appliquer ce mouvement au contenu, et est reconnu avec la [`PanGestureRecognizer`](xref:Xamarin.Forms.PanGestureRecognizer) classe.
 
-## <a name="adding-a-swipe-gesture-recognizer"></a>[Ajout d’un module de reconnaissance des mouvements de balayage](swipe.md)
+## <a name="add-a-swipe-gesture-recognizer"></a>[Ajouter un module de reconnaissance de mouvement de balayage](swipe.md)
 
 Un mouvement de balayage se produit quand un doigt est déplacé verticalement ou horizontalement sur l’écran. Il est souvent utilisé pour lancer l’exploration du contenu. Les mouvements de balayage sont reconnus avec la [`SwipeGestureRecognizer`](xref:Xamarin.Forms.SwipeGestureRecognizer) classe.
+
+## <a name="add-a-drag-and-drop-gesture-recognizer"></a>[Ajouter un module de reconnaissance de mouvement glisser-déplacer](drag-and-drop.md)
+
+Un mouvement de glisser-déplacer permet de faire glisser des éléments et leurs packages de données associés à partir d’un emplacement à l’écran à un autre emplacement à l’aide d’un mouvement continu. Les mouvements de glissement sont reconnus avec la `DragGestureRecognizer` classe et les mouvements de suppression sont reconnus avec la `DropGestureRecognizer` classe.
