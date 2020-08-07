@@ -10,18 +10,18 @@ ms.date: 07/27/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6b6fe37fda3fd54b4df5cb6f5dacce0d910ecb3f
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 254a4433888be0e441ae37d41c24b1886040998b
+ms.sourcegitcommit: 579ec4f2884fa391e5e214a3952cd6004c521eb8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87919017"
+ms.locfileid: "87919617"
 ---
 # <a name="no-locxamarinforms-brushes-gradients"></a>Xamarin.FormsPinceaux : dégradés
 
 ![API d’aperçu](~/media/shared/preview.png "Cette API est actuellement en préversion.")
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-brushdemos/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/BrushDemos)
 
 La `GradientBrush` classe dérive de la `Brush` classe et est une classe abstraite qui décrit un dégradé, qui est composé de points de dégradé. Un pinceau de dégradé peint une zone avec plusieurs couleurs qui se mélangent le long d’un axe. Les classes qui dérivent de `GradientBrush` décrivent les différents modes d’interprétation des arrêts de dégradé et Xamarin.Forms fournissent les pinceaux de dégradé suivants :
 
@@ -71,6 +71,6 @@ Dans ce diagramme, les cercles marquent la position des points de dégradé et l
 
 ## <a name="related-links"></a>Liens connexes
 
-- [BrushesDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-brushdemos/)
+- [BrushesDemos (exemple)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/BrushDemos)
 - [Xamarin.FormsPinceaux : dégradés linéaires](lineargradient.md)
 - [Xamarin.FormsPinceaux : dégradés radiaux](radialgradient.md)

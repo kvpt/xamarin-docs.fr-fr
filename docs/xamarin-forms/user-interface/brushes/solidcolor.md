@@ -10,18 +10,18 @@ ms.date: 07/27/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 04e882f9b64d0e1f56e1170d353af4e13b079933
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 7b77cab7c0f87dbedf66651c3ab59ef20b7f3ecd
+ms.sourcegitcommit: 579ec4f2884fa391e5e214a3952cd6004c521eb8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918966"
+ms.locfileid: "87919561"
 ---
 # <a name="no-locxamarinforms-brushes-solid-colors"></a>Xamarin.FormsPinceaux : couleurs unies
 
 ![API d’aperçu](~/media/shared/preview.png "Cette API est actuellement en préversion.")
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-brushdemos/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/BrushDemos)
 
 La `SolidColorBrush` classe dérive de la `Brush` classe et est utilisée pour peindre une zone avec une couleur unie. Il existe plusieurs façons de spécifier la couleur d’un `SolidColorBrush` . Par exemple, vous pouvez spécifier sa couleur à l’aide d’une [`Color`](xref:Xamarin.Forms.Color) valeur ou de l’un des objets prédéfinis `SolidColorBrush` fournis par la `Brush` classe.
 
@@ -131,5 +131,5 @@ Pour plus de commodité, la `Brush` classe fournit un ensemble d' `SolidColorBru
 
 ## <a name="related-links"></a>Liens connexes
 
-- [BrushesDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-brushdemos/)
+- [BrushesDemos (exemple)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/BrushDemos)
 - [Couleurs dansXamarin.Forms](~/xamarin-forms/user-interface/colors.md)

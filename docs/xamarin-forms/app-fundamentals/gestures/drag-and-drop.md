@@ -10,18 +10,18 @@ ms.date: 08/04/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0f49521bb6818b73614107ea6ec383a3c5bd06ce
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: b21c1c85a29717bd9e5b9e9f164ce8f058764865
+ms.sourcegitcommit: 579ec4f2884fa391e5e214a3952cd6004c521eb8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87919011"
+ms.locfileid: "87919643"
 ---
 # <a name="add-drag-and-drop-gesture-recognizers"></a>Ajouter des modules de reconnaissance de mouvement de glisser-déplacer
 
 ![API de la version préliminaire](~/media/shared/preview.png)
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-draganddropgesture)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://github.com/xamarin/xamarin-forms-samples/tree/master/WorkingWithGestures/DragAndDropGesture)
 
 Un mouvement de glisser-déplacer permet de faire glisser des éléments et leurs packages de données associés à partir d’un emplacement à l’écran à un autre emplacement à l’aide d’un mouvement continu. La fonction glisser-déplacer peut avoir lieu dans une application unique, ou elle peut démarrer dans une application et se terminer dans une autre.
 
@@ -312,4 +312,4 @@ Dans cet exemple, l' `Square` objet est récupéré à partir du conteneur des p
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Mouvement glisser-déplacer (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-draganddropgesture)
+- [Mouvement glisser-déplacer (exemple)](https://github.com/xamarin/xamarin-forms-samples/tree/master/WorkingWithGestures/DragAndDropGesture)

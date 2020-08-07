@@ -10,18 +10,18 @@ ms.date: 07/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: dd915384c630cc08a2bd79a52dd22ccb40835dfa
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 897ffd8b86eb161f0264a095b5a041828e631dae
+ms.sourcegitcommit: 579ec4f2884fa391e5e214a3952cd6004c521eb8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918975"
+ms.locfileid: "87919548"
 ---
 # <a name="no-locxamarinforms-brushes-radial-gradients"></a>Xamarin.FormsPinceaux : dégradés radiaux
 
 ![API d’aperçu](~/media/shared/preview.png "Cette API est actuellement en préversion.")
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-brushdemos/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/BrushDemos)
 
 La `RadialGradientBrush` classe dérive de la `GradientBrush` classe et peint une zone avec un dégradé radial, qui fusionne deux couleurs ou plus sur un cercle. `GradientStop`les objets sont utilisés pour spécifier les couleurs du dégradé et leurs positions. Pour plus d’informations sur les `GradientStop` objets, consultez [ Xamarin.Forms pinceaux : dégradés](gradient.md).
 
@@ -102,5 +102,5 @@ Dans cet exemple, l’arrière-plan de [`Frame`](xref:Xamarin.Forms.Frame) est p
 
 ## <a name="related-links"></a>Liens connexes
 
-- [BrushesDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-brushdemos/)
+- [BrushesDemos (exemple)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/BrushDemos)
 - [Xamarin.FormsPinceaux : dégradés](gradient.md)
