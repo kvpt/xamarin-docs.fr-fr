@@ -10,12 +10,12 @@ ms.date: 03/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5367d7933e70c59298faacff85c1d5f533bc0776
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 3240906cdf964bcf798137e640a82dbd1e2341d9
+ms.sourcegitcommit: a662910a6ba14d241e01047739eb1cd87aa7d884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86929279"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88029719"
 ---
 # <a name="xamarin-hot-restart-preview"></a>Xamarin Hot Restart (préversion)
 
@@ -26,7 +26,7 @@ Xamarin Hot Restart vous permet de tester rapidement les modifications apportée
 > [!IMPORTANT]
 > Le redémarrage à chaud Xamarin est actuellement disponible dans Visual Studio 2019 version 16,5 stable et prend en charge les applications iOS à l’aide de Xamarin.Forms . La prise en charge des Visual Studio pour Mac et des applications non basées Xamarin.Forms sur le plan.
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Configuration requise
 
 - Visual Studio 2019 version 16,5
 - iTunes (64 bits)
@@ -48,7 +48,7 @@ Xamarin Hot Restart vous permet de tester rapidement les modifications apportée
 
 3. Si iTunes n’est pas installé, cliquez sur **Télécharger iTunes** pour télécharger le programme d’installation. Cliquez sur **Suivant** quand l'installation d’iTunes est terminée.
 
-4. Connectez un appareil iOS à votre ordinateur. Si un appareil est déjà branché, débranchez-le, puis reconnectez-le. Le nom de l’appareil apparaît dans l’Assistant une fois qu’il est détecté. Cliquez sur **Suivant**.
+4. Connectez un appareil iOS à votre ordinateur. Si un appareil est déjà branché, débranchez-le, puis reconnectez-le. Le nom de l’appareil apparaît dans l’Assistant une fois qu’il est détecté. Cliquez sur **Next**.
 
 5. Entrez les informations d’identification de votre compte de développeur Apple, puis cliquez sur **Suivant**.
 
@@ -73,6 +73,7 @@ Vous pouvez également utiliser le `HOTRESTART` symbole de préprocesseur pour e
 - Les fichiers Storyboard et XIB ne sont pas pris en charge et l’application peut planter si elle tente de les charger au moment de l’exécution. Utilisez le `HOTRESTART` symbole de préprocesseur pour empêcher l’exécution de ce code.
 - Les infrastructures et bibliothèques iOS statiques ne sont pas prises en charge et vous pouvez voir des erreurs d’exécution ou des blocages si votre application tente de les charger. Utilisez le `HOTRESTART` symbole de préprocesseur pour empêcher l’exécution de ce code. Les bibliothèques iOS dynamiques sont prises en charge.
 - Vous ne pouvez pas utiliser Xamarin Hot Restart pour créer des bundles d’applications en vue d’une publication. Vous aurez toujours d’un ordinateur Mac pour la compilation, la signature et le déploiement complets de votre application en production.
+- Les catalogues de biens ne sont actuellement pas pris en charge. Quand vous utilisez le redémarrage à chaud, votre application affiche l’écran d’icône et de lancement par défaut pour les applications Xamarin. Lorsqu’ils sont associés à un Mac ou au développement sur un Mac, vos catalogues de ressources fonctionnent.
 
 ## <a name="troubleshoot"></a>Dépanner
 
