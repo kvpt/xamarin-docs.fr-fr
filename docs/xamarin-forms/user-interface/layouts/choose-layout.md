@@ -10,22 +10,22 @@ ms.date: 08/21/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 16a48423d05ce1cede75c0020bf18f4f398f5adc
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 9a097d6dad067f209d3aad27bde382f28910324a
+ms.sourcegitcommit: c3329ab25d377907d8804cdd5e26dc84a274f39c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138500"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88130927"
 ---
-# <a name="choose-a-xamarinforms-layout"></a>Choisir une Xamarin.Forms disposition
+# <a name="choose-a-no-locxamarinforms-layout"></a>Choisir une Xamarin.Forms disposition
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
 
 Xamarin.Formsles classes de disposition vous permettent d’organiser et de regrouper des contrôles d’interface utilisateur dans votre application. Le choix d’une classe de disposition requiert une connaissance de la façon dont la disposition positionne ses éléments enfants, et de la façon dont la disposition dimensionne ses éléments enfants. En outre, il peut être nécessaire d’imbriquer des dispositions pour créer la disposition souhaitée.
 
 L’illustration suivante montre les dispositions typiques qui peuvent être obtenues avec les Xamarin.Forms classes de mise en page principales :
 
-[![Les classes de disposition principales dansXamarin.Forms](images/layouts.png "[! Opérationnel. NO-LOC (Xamarin. Forms)] classes de disposition")](images/layouts-large.png#lightbox "[! Opérationnel. NO-LOC (Xamarin. Forms)] classes de disposition")
+[![Les classes de disposition principales dans ::: No-Loc (Xamarin. Forms) :::](images/layouts.png "::: No-Loc (Xamarin. Forms) ::: Layout, classes")](images/layouts-large.png#lightbox "::: No-Loc (Xamarin. Forms) ::: Layout, classes")
 
 ## <a name="stacklayout"></a>StackLayout
 
@@ -234,7 +234,7 @@ Dans cet exemple, la disposition fonctionne comme suit :
 > [!CAUTION]
 > Évitez d’utiliser la [`AbsoluteLayout.AutoSize`](xref:Xamarin.Forms.AbsoluteLayout.AutoSize) propriété chaque fois que cela est possible, car le moteur de présentation effectuera des calculs de disposition supplémentaires.
 
-Pour plus d’informations, consultez [ Xamarin.Forms AbsoluteLayout](absolute-layout.md).
+Pour plus d’informations, consultez [ Xamarin.Forms AbsoluteLayout](absolutelayout.md).
 
 ## <a name="input-transparency"></a>Transparence de l’entrée
 
@@ -255,7 +255,7 @@ En outre, les performances de rendu de page peuvent également être améliorée
 - [Xamarin.FormsStackLayout](stacklayout.md)
 - [Xamarin.FormsBoutons](grid.md)
 - [Xamarin.FormsFlexLayout](flex-layout.md)
-- [Xamarin.FormsAbsoluteLayout](absolute-layout.md)
+- [Xamarin.FormsAbsoluteLayout](absolutelayout.md)
 - [Xamarin.FormsRelativeLayout](relative-layout.md)
 - [Optimiser les performances de disposition](~/xamarin-forms/deploy-test/performance.md#optimize-layout-performance)
 - [Compression de disposition](layout-compression.md)

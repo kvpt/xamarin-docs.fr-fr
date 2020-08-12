@@ -10,16 +10,16 @@ ms.date: 07/19/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 72ee9c4a481388e69aeeb52dbd5b8eeaabb164f6
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 5aa62927efe0a9803efbddaef97ac6557edccd6c
+ms.sourcegitcommit: c3329ab25d377907d8804cdd5e26dc84a274f39c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136758"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88130901"
 ---
 # <a name="summary-of-chapter-14-absolute-layout"></a>Résumé du chapitre 14. Disposition absolue
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14)
 
 Comme `StackLayout` , [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout) dérive de `Layout<View>` et hérite d’une `Children` propriété. `AbsoluteLayout`implémente un système de disposition qui requiert que le programmeur spécifie les positions de ses enfants et, éventuellement, leur taille. La position est spécifiée par l’angle supérieur gauche de l’enfant par rapport au coin supérieur gauche du `AbsoluteLayout` dans les unités indépendantes du périphérique. `AbsoluteLayout`implémente également une fonctionnalité de positionnement et de dimensionnement proportionnel.
 
@@ -106,5 +106,5 @@ Le programme [**BouncingText**](https://github.com/xamarin/xamarin-forms-book-sa
 
 - [Chapitre 14 texte intégral (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch14-Apr2016.pdf)
 - [Exemples du chapitre 14](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14)
-- [AbsoluteLayout](~/xamarin-forms/user-interface/layouts/absolute-layout.md)
-- [Propriétés attachées](~/xamarin-forms/xaml/attached-properties.md)
+- [AbsoluteLayout](~/xamarin-forms/user-interface/layouts/absolutelayout.md)
+- [Propriétés jointes](~/xamarin-forms/xaml/attached-properties.md)

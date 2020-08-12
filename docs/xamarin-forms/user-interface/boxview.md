@@ -10,16 +10,16 @@ ms.date: 07/26/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 06f1813bafb34a9c32603490e66f8caa6c6a6a22
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 3f4788c0201d2d286ff4de9b29ba6385d323a3b0
+ms.sourcegitcommit: c3329ab25d377907d8804cdd5e26dc84a274f39c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84573818"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88130940"
 ---
-# <a name="xamarinforms-boxview"></a>Xamarin.FormsBoxView
+# <a name="no-locxamarinforms-boxview"></a>Xamarin.FormsBoxView
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-basicboxview)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-basicboxview)
 
 [`BoxView`](xref:Xamarin.Forms.BoxView)génère le rendu d’un rectangle simple d’une largeur, d’une hauteur et d’une couleur spécifiées. Vous pouvez utiliser `BoxView` pour la décoration, les graphiques rudimentaires et pour l’interaction avec l’utilisateur via Touch.
 
@@ -70,7 +70,7 @@ Voici le résultat :
 
 Si les `VerticalOptions` `HorizontalOptions` Propriétés et sont supprimées de la `BoxView` balise ou ont la valeur `Fill` , le `BoxView` devient alors restreint par la taille de la page et se développe pour remplir la page.
 
-Un `BoxView` peut également être un enfant d’un `AbsoluteLayout` . Dans ce cas, l’emplacement et la taille du `BoxView` sont définis à l’aide de la `LayoutBounds` propriété pouvant être liée. `AbsoluteLayout`Est abordé dans l’article [**AbsoluteLayout**](~/xamarin-forms/user-interface/layouts/absolute-layout.md).
+Un `BoxView` peut également être un enfant d’un `AbsoluteLayout` . Dans ce cas, l’emplacement et la taille du `BoxView` sont définis à l’aide de la `LayoutBounds` propriété pouvant être liée. `AbsoluteLayout`Est abordé dans l’article [**AbsoluteLayout**](~/xamarin-forms/user-interface/layouts/absolutelayout.md).
 
 Vous verrez des exemples de ces cas dans les exemples de programmes qui suivent.
 
@@ -762,7 +762,7 @@ public partial class MainPage : ContentPage
 
 La deuxième main est traitée un peu différemment : une fonction d’accélération d’animation est appliquée pour que le mouvement semble mécanique plutôt que lisse. À chaque battement, la deuxième main récupère un peu, puis déjoue sa destination. Ce petit morceau de code ajoute beaucoup au réalisme du mouvement.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [BoxView de base (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-basicboxview)
 - [Décoration de texte (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-textdecoration)
