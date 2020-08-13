@@ -6,12 +6,12 @@ ms.assetid: 81174493-02D3-4FF5-AD57-04F3288A7F94
 author: davidortinau
 ms.author: daortin
 ms.date: 06/19/2018
-ms.openlocfilehash: 39e7a6c86a2d4ab4231a29c0e1014de702af01ac
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 1545af984c0a409244c323048b448ec44e9be6a8
+ms.sourcegitcommit: f7fe46c0236a7130b63a33d9d1670d5111582dd2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573415"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88186185"
 ---
 # <a name="inspector-installation-and-requirements"></a>Installation et configuration de l’inspecteur
 
@@ -23,7 +23,7 @@ ms.locfileid: "84573415"
 1. [Connectez-vous](https://docs.microsoft.com/visualstudio/ide/signing-in-to-visual-studio) pour activer votre abonnement Enterprise.
 1. [Inspectez](~/tools/inspector/inspect.md) votre propre application !
 
-# <a name="macos"></a>[MacOS](#tab/macos)
+# <a name="macos"></a>[macOS](#tab/macos)
 
 1. Téléchargez et installez [Visual Studio pour Mac](https://visualstudio.microsoft.com/vs/mac/).
 1. [Connectez-vous](https://docs.microsoft.com/visualstudio/mac/activation) pour activer votre abonnement Enterprise.
@@ -31,9 +31,9 @@ ms.locfileid: "84573415"
 
 -----
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Configuration requise
 
-### <a name="supported-operating-systems"></a>Systèmes d'exploitation pris en charge
+### <a name="supported-operating-systems"></a>Systèmes d’exploitation pris en charge
 
 - **Mac** -OS X 10,11 ou version ultérieure
 - **Windows** -Windows 7 ou version ultérieure (avec Internet Explorer 11 ou version ultérieure et .net 4.6.1 ou version ultérieure)
@@ -52,7 +52,7 @@ L’inspection des applications en direct est disponible pour les entreprises.
 |Plateforme d’application|Prise en charge IDE|Notes|
 |--- |--- |--- |
 |Mac|Uniquement pris en charge dans Visual Studio pour Mac|
-|iOS|Pris en charge dans Visual Studio 2017 et Visual Studio pour Mac| Le comportement de l’éditeur de liens doit être défini sur **ne pas lier** (sous options du projet de **génération iOS** ) |
+|iOS|Pris en charge dans Visual Studio 2017 et Visual Studio pour Mac| Le comportement de l’éditeur de liens doit être défini sur [**ne pas lier**](~/ios/deploy-test/linker.md) (sous options du projet de **génération iOS** ) |
 |Android|Pris en charge dans Visual Studio 2017 et Visual Studio pour Mac|Vous devez cibler Android >= 4.0.3, avec **fastdev** activé.<br />Doit utiliser des émulateurs Google, Visual Studio ou Xamarin Android. Les émulateurs Android 7 ne peuvent pas autoriser l’inspection pour l’instant.|
 |WPF|Pris en charge uniquement dans Visual Studio 2017|
 

@@ -6,16 +6,16 @@ ms.assetid: AF4BDD27-89F6-48AE-A8CD-D7E4DDA2CCA2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/31/2020
+ms.date: 08/13/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6dafdc547e4673134e8ff3badc85a3527dfc55c4
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 94fed78d7cf67ec5b6d783b1ced25a81266242d6
+ms.sourcegitcommit: f7fe46c0236a7130b63a33d9d1670d5111582dd2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87917422"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88186107"
 ---
 # <a name="no-locxamarinforms-experimental-flags"></a>Xamarin.Formsindicateurs expérimentaux
 
@@ -80,3 +80,17 @@ Device.SetFlags(new string[]{ "CarouselView_Experimental", "MediaElement_Experim
 
 > [!WARNING]
 > N’appelez jamais la `SetFlags` méthode plusieurs fois, car les appels suivants remplaceront le résultat des appels précédents.
+
+## <a name="old-experimental-flags"></a>Anciens indicateurs expérimentaux
+
+Le tableau suivant répertorie les indicateurs expérimentaux pour les fonctionnalités qui sont désormais en disponibilité générale et la Xamarin.Forms version dans laquelle l’indicateur expérimental a été supprimé :
+
+| Indicateur | Xamarin.Forms3/05 |
+| ---- | --------------------- |
+| `AppTheme_Experimental` | 4.8 |
+| `CollectionView_Experimental` | 4.3 |
+| `FastRenderers_Experimental` | 4.0 |
+| `IndicatorView_Experimental` | 4,7 |
+| `Shell_Experimental` | 4.0  |
+| `StateTriggers_Experimental` | 4,7 |
+| `Visual_Experimental` | 3.6 |
