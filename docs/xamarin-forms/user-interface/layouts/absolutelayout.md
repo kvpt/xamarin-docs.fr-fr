@@ -10,12 +10,12 @@ ms.date: 08/07/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 696429e04775640d46add77ec6a4bbf6e69f675b
-ms.sourcegitcommit: c3329ab25d377907d8804cdd5e26dc84a274f39c
+ms.openlocfilehash: a6efa4615f0061c83243f2d00d2d141a51607301
+ms.sourcegitcommit: 808ff109928a1eea16e17e23ea81f8c903a239e8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88134115"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88181496"
 ---
 # <a name="no-locxamarinforms-absolutelayout"></a>Xamarin.FormsAbsoluteLayout
 
@@ -55,7 +55,7 @@ Pour spécifier qu’un enfant se redimensionne horizontalement ou verticalement
 
 ## <a name="absolute-positioning-and-sizing"></a>Positionnement et dimensionnement absolus
 
-Par défaut, [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout) les positions et les tailles enfants utilisent des valeurs absolues, spécifiées dans les unités indépendantes du périphérique, qui définissent de manière explicite où les vues doivent être placées dans la disposition. Pour ce faire, il suffit d’ajouter des enfants à la `Children` collection d’un `AbsoluteLayout` et de définir la [`AbsoluteLayout.LayoutBounds`](xref:Xamarin.Forms.AbsoluteLayout.LayoutBoundsProperty) propriété jointe sur chaque enfant à des valeurs de position et/ou de taille absolues.
+Par défaut, [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout) les positions et les tailles enfants utilisent des valeurs absolues, spécifiées dans les unités indépendantes du périphérique, qui définissent de manière explicite où les enfants doivent être placés dans la disposition. Pour ce faire, il suffit d’ajouter des enfants à la `Children` collection d’un `AbsoluteLayout` et de définir la [`AbsoluteLayout.LayoutBounds`](xref:Xamarin.Forms.AbsoluteLayout.LayoutBoundsProperty) propriété jointe sur chaque enfant à des valeurs de position et/ou de taille absolues.
 
 > [!WARNING]
 > L’utilisation de valeurs absolues pour le positionnement et le dimensionnement des enfants peut être problématique, car les différents appareils ont des tailles et des résolutions d’écran différentes. Par conséquent, les coordonnées du centre de l’écran sur un appareil peuvent être décalées sur d’autres appareils.
@@ -190,7 +190,7 @@ Dans cet exemple, chaque enfant est positionné à l’aide de valeurs proportio
 
 La capture d’écran suivante montre la disposition résultante :
 
-![Enfants placés dans un AbsoluteLayout à l’aide de valeurs positino proportionnelles](absolutelayout-images/proportional-position.png)
+![Enfants placés dans un AbsoluteLayout à l’aide de valeurs de position proportionnelles](absolutelayout-images/proportional-position.png)
 
 Le code C# équivalent est illustré ci-dessous :
 

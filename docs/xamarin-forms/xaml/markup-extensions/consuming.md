@@ -10,16 +10,16 @@ ms.date: 06/17/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e1429c3f39e37dc552d7f6ca8767058e5aec853b
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: b23aca29fa77b58183a1f09053bc2bb9ba66bb49
+ms.sourcegitcommit: 808ff109928a1eea16e17e23ea81f8c903a239e8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84903105"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88181509"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>Consommation des extensions de balisage XAML
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
 
 Les extensions de balisage XAML aident à améliorer la puissance et la flexibilité du XAML en permettant de définir des attributs d’élément à partir de diverses sources. Plusieurs extensions de balisage XAML font partie de la spécification XAML 2009. Ils s’affichent dans les fichiers XAML avec le `x` préfixe d’espace de noms personnalisé, et sont communément désignés par ce préfixe. Cet article aborde les extensions de balisage suivantes :
 
@@ -42,7 +42,7 @@ Des extensions de balisage XAML supplémentaires ont été prises en charge par 
 - `TemplateBinding`-effectue une liaison de données à partir d’un modèle de contrôle, comme indiqué dans l’article [** Xamarin.Forms modèles de contrôle**](~/xamarin-forms/app-fundamentals/templates/control-template.md).
 - `RelativeSource`-définit la source de liaison par rapport à la position de la cible de liaison, comme indiqué dans l’article [liaisons relatives](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md).
 
-La [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) disposition utilise l’extension de balisage personnalisée [`ConstraintExpression`](xref:Xamarin.Forms.ConstraintExpression) . Cette extension de balisage est décrite dans l’article [**RelativeLayout**](~/xamarin-forms/user-interface/layouts/relative-layout.md).
+La [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) disposition utilise l’extension de balisage personnalisée [`ConstraintExpression`](xref:Xamarin.Forms.ConstraintExpression) . Cette extension de balisage est décrite dans l’article [**RelativeLayout**](~/xamarin-forms/user-interface/layouts/relativelayout.md).
 
 ## <a name="xstatic-markup-extension"></a>x:Static (extension de balisage)
 

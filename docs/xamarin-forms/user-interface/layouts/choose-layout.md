@@ -1,6 +1,6 @@
 ---
 title: Choisir une Xamarin.Forms disposition
-description: Xamarin.Formsles classes de disposition vous permettent d’organiser et de regrouper des contrôles d’interface utilisateur dans votre application.
+description: Xamarin.Forms les classes de disposition vous permettent d’organiser et de regrouper des contrôles d’interface utilisateur dans votre application.
 ms.prod: xamarin
 ms.assetid: 05A39752-A174-447E-A30D-3CC9EF98CB96
 ms.technology: xamarin-forms
@@ -10,18 +10,18 @@ ms.date: 08/21/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9a097d6dad067f209d3aad27bde382f28910324a
-ms.sourcegitcommit: c3329ab25d377907d8804cdd5e26dc84a274f39c
+ms.openlocfilehash: 38b44bbb8f01f090d286bb2203014455a32a2290
+ms.sourcegitcommit: 808ff109928a1eea16e17e23ea81f8c903a239e8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88130927"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88181483"
 ---
 # <a name="choose-a-no-locxamarinforms-layout"></a>Choisir une Xamarin.Forms disposition
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
 
-Xamarin.Formsles classes de disposition vous permettent d’organiser et de regrouper des contrôles d’interface utilisateur dans votre application. Le choix d’une classe de disposition requiert une connaissance de la façon dont la disposition positionne ses éléments enfants, et de la façon dont la disposition dimensionne ses éléments enfants. En outre, il peut être nécessaire d’imbriquer des dispositions pour créer la disposition souhaitée.
+Xamarin.Forms les classes de disposition vous permettent d’organiser et de regrouper des contrôles d’interface utilisateur dans votre application. Le choix d’une classe de disposition requiert une connaissance de la façon dont la disposition positionne ses éléments enfants, et de la façon dont la disposition dimensionne ses éléments enfants. En outre, il peut être nécessaire d’imbriquer des dispositions pour créer la disposition souhaitée.
 
 L’illustration suivante montre les dispositions typiques qui peuvent être obtenues avec les Xamarin.Forms classes de mise en page principales :
 
@@ -29,7 +29,7 @@ L’illustration suivante montre les dispositions typiques qui peuvent être obt
 
 ## <a name="stacklayout"></a>StackLayout
 
-[`StackLayout`](xref:Xamarin.Forms.StackLayout)Organise les éléments d’une pile unidimensionnelle, horizontalement ou verticalement. La [`Orientation`](xref:Xamarin.Forms.StackLayout.Orientation) propriété spécifie la direction des éléments, et l’orientation par défaut est [`Vertical`](xref:Xamarin.Forms.StackOrientation) . `StackLayout`est généralement utilisé pour réorganiser une sous-section de l’interface utilisateur sur une page.
+[`StackLayout`](xref:Xamarin.Forms.StackLayout)Organise les éléments d’une pile unidimensionnelle, horizontalement ou verticalement. La [`Orientation`](xref:Xamarin.Forms.StackLayout.Orientation) propriété spécifie la direction des éléments, et l’orientation par défaut est [`Vertical`](xref:Xamarin.Forms.StackOrientation) . `StackLayout` est généralement utilisé pour réorganiser une sous-section de l’interface utilisateur sur une page.
 
 Le code XAML suivant montre comment créer un vertical [`StackLayout`](xref:Xamarin.Forms.StackLayout) contenant trois [`Label`](xref:Xamarin.Forms.Label) objets :
 
@@ -78,7 +78,7 @@ Cela ne sert à rien, car des calculs de dispositions inutiles sont effectués. 
 
 Pour plus d’informations, consultez [ Xamarin.Forms StackLayout](stacklayout.md).
 
-## <a name="grid"></a>Grille
+## <a name="grid"></a>Grid
 
 Un [`Grid`](xref:Xamarin.Forms.Grid) est utilisé pour afficher des éléments dans les lignes et les colonnes, qui peuvent avoir des tailles proportionnelles ou absolues. Les lignes et les colonnes d’une grille sont spécifiées avec les [`RowDefinitions`](xref:Xamarin.Forms.Grid.RowDefinitions) [`ColumnDefinitions`](xref:Xamarin.Forms.Grid.ColumnDefinitions) Propriétés et.
 
@@ -194,7 +194,7 @@ Dans cet exemple, la disposition fonctionne comme suit :
 > [!WARNING]
 > Évitez d’utiliser un élément `RelativeLayout` autant que possible. Le processeur aurait considérablement plus de travail à effectuer.
 
-Pour plus d’informations, consultez [ Xamarin.Forms RelativeLayout](relative-layout.md).
+Pour plus d’informations, consultez [ Xamarin.Forms RelativeLayout](relativelayout.md).
 
 ## <a name="absolutelayout"></a>AbsoluteLayout
 
@@ -251,11 +251,11 @@ En outre, les performances de rendu de page peuvent également être améliorée
 ## <a name="related-links"></a>Liens connexes
 
 - [Disposition (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
-- [Xamarin.FormsDispositions (vidéo)](https://youtu.be/4HlLjTZQzjM)
-- [Xamarin.FormsStackLayout](stacklayout.md)
-- [Xamarin.FormsBoutons](grid.md)
-- [Xamarin.FormsFlexLayout](flex-layout.md)
-- [Xamarin.FormsAbsoluteLayout](absolutelayout.md)
-- [Xamarin.FormsRelativeLayout](relative-layout.md)
+- [Xamarin.Forms Dispositions (vidéo)](https://youtu.be/4HlLjTZQzjM)
+- [Xamarin.Forms StackLayout](stacklayout.md)
+- [Xamarin.Forms Boutons](grid.md)
+- [Xamarin.Forms FlexLayout](flex-layout.md)
+- [Xamarin.Forms AbsoluteLayout](absolutelayout.md)
+- [Xamarin.Forms RelativeLayout](relativelayout.md)
 - [Optimiser les performances de disposition](~/xamarin-forms/deploy-test/performance.md#optimize-layout-performance)
 - [Compression de disposition](layout-compression.md)
