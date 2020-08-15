@@ -10,12 +10,12 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5bab1166ade7a5eeebbb720fa48f6116b4ec95d0
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 920246e9cbbe85c606969333ccb05d3c87dcef66
+ms.sourcegitcommit: 14d67a2db82e67471584b1749e0d5b9ec0c0c09b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86933709"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88228584"
 ---
 # <a name="safe-area-layout-guide-on-ios"></a>Guide de disposition en zone sécurisée sur iOS
 
@@ -53,7 +53,7 @@ Le résultat est que le contenu de la page peut être positionné sur une zone d
 > [!NOTE]
 > La zone sécurisée définie par Apple est utilisée dans Xamarin.Forms pour définir la [`Page.Padding`](xref:Xamarin.Forms.Page.Padding) propriété et remplace toutes les valeurs précédentes de cette propriété qui ont été définies.
 
-La zone sécurisée peut être personnalisée en extrayant sa [`Thickness`](xref:Xamarin.Forms.Thickness) valeur avec la `Page.SafeAreaInsets` méthode de l' [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) espace de noms. Elle peut ensuite être modifiée en fonction des besoins et être réaffectée à la `Padding` propriété dans le constructeur de page ou la [`OnAppearing`](xref:Xamarin.Forms.Page.OnAppearing) substitution :
+La zone sécurisée peut être personnalisée en extrayant sa [`Thickness`](xref:Xamarin.Forms.Thickness) valeur avec la `Page.SafeAreaInsets` méthode de l' [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) espace de noms. Elle peut ensuite être modifiée en fonction des besoins et être réaffectée à la `Padding` propriété dans le [`OnAppearing`](xref:Xamarin.Forms.Page.OnAppearing) remplacement :
 
 ```csharp
 protected override void OnAppearing()

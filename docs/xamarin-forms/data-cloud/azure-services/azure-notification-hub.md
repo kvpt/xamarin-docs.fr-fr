@@ -1,5 +1,5 @@
 ---
-title: Envoyer et recevoir des notifications Push avec Azure Notification Hubs etXamarin.Forms
+title: Envoyer et recevoir des notifications Push avec Azure Notification Hubs et Xamarin.Forms
 description: Cet article explique comment utiliser Azure Notification Hubs pour envoyer des notifications push interplateformes à des Xamarin.Forms applications.
 ms.prod: xamarin
 ms.assetid: 07D13195-3A0D-4C95-ACF0-143A9084973C
@@ -11,14 +11,14 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 - Firebase
-ms.openlocfilehash: 5fd657a3d55bd26b95e79e39540dcfe5b8bce08f
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 5a069595aa12852a4a861de9bac52eebd7247e48
+ms.sourcegitcommit: 14d67a2db82e67471584b1749e0d5b9ec0c0c09b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918586"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88228623"
 ---
-# <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-no-locxamarinforms"></a>Envoyer et recevoir des notifications Push avec Azure Notification Hubs etXamarin.Forms
+# <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-no-locxamarinforms"></a>Envoyer et recevoir des notifications Push avec Azure Notification Hubs et Xamarin.Forms
 
 [![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurenotificationhub/)
 
@@ -77,7 +77,7 @@ Pour recevoir des messages, chaque application native doit effectuer les étapes
 
 Ces étapes sont décrites en détail pour chaque plateforme dans les sections [configurer l’application Android pour les notifications](#configure-the-android-application-for-notifications) et [configurer IOS pour les notifications](#configure-ios-for-notifications) .
 
-## <a name="no-locxamarinforms-application-functionality"></a>Xamarin.Formsfonctionnalités de l’application
+## <a name="no-locxamarinforms-application-functionality"></a>Xamarin.Forms fonctionnalités de l’application
 
 L’exemple Xamarin.Forms d’application affiche la liste des messages de notification push. Cela est accompli avec la `AddMessage` méthode, qui ajoute le message de notification push spécifié à l’interface utilisateur. Cette méthode empêche également les messages en double d’être ajoutés à l’interface utilisateur et s’exécute sur le thread principal afin qu’il puisse être appelé à partir de n’importe quel thread. Le code suivant montre la méthode `AddMessage` :
 
@@ -251,7 +251,7 @@ void SendLocalNotification(string body)
     var requestCode = new Random().Next();
     var pendingIntent = PendingIntent.GetActivity(this, requestCode, intent, PendingIntentFlags.OneShot);
 
-    var notificationBuilder = new NotificationCompat.Builder(this)
+    var notificationBuilder = new NotificationCompat.Builder(this, AppConstants.NotificationChannelName)
         .SetContentTitle("XamarinNotify Message")
         .SetSmallIcon(Resource.Drawable.ic_launcher)
         .SetContentText(body)

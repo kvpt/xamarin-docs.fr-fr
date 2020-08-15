@@ -1,6 +1,6 @@
 ---
-title: Localisation de chaîne et d’image dansXamarin.Forms
-description: Xamarin.Formsles applications peuvent être localisées à l’aide de fichiers de ressources .NET.
+title: Localisation de chaîne et d’image dans Xamarin.Forms
+description: Xamarin.Forms les applications peuvent être localisées à l’aide de fichiers de ressources .NET.
 zone_pivot_groups: platform
 ms.prod: xamarin
 ms.assetid: 852B4ED3-2D2D-48A5-A759-A6591F6A1509
@@ -11,16 +11,16 @@ ms.date: 11/01/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: af15dc5a23404a11be6207bef7b4fc3e4bf9fad7
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: d68227fbf4a4c9db8f4ba8858fdeda6637ce4732
+ms.sourcegitcommit: 14d67a2db82e67471584b1749e0d5b9ec0c0c09b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137600"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88228602"
 ---
-# <a name="xamarinforms-string-and-image-localization"></a>Xamarin.FormsLocalisation de chaînes et d’images
+# <a name="no-locxamarinforms-string-and-image-localization"></a>Xamarin.Forms Localisation de chaînes et d’images
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingresxlocalization)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingresxlocalization)
 
 La localisation est le processus d’adaptation d’une application pour répondre à la langue ou aux exigences culturelles spécifiques d’un marché cible. Pour effectuer la localisation, le texte et les images d’une application devront peut-être être traduites dans plusieurs langues. Une application localisée affiche automatiquement le texte traduit en fonction des paramètres de culture de l’appareil mobile :
 
@@ -59,7 +59,7 @@ Une fois le fichier ajouté, des lignes peuvent être ajoutées pour chaque ress
 
 Le paramètre de liste déroulante de **modificateur d’accès** détermine la façon dont Visual Studio génère la classe utilisée pour accéder aux ressources. L’affectation de la valeur **public** ou **Internal** au modificateur d’accès entraîne la génération d’une classe générée avec le niveau d’accessibilité spécifié. Le fait de définir le modificateur d’accès sur **aucune génération de code** ne génère pas de fichier de classe. Le fichier de ressources par défaut doit être configuré pour générer un fichier de classe, ce qui entraîne l’ajout d’un fichier avec l’extension **. Designer.cs** au projet.
 
-Une fois le fichier de ressources par défaut créé, des fichiers supplémentaires peuvent être créés pour chaque culture prise en charge par l’application. Chaque fichier de ressources supplémentaire doit inclure la culture de traduction dans le nom de fichier et doit avoir le **modificateur d’accès** défini sur **aucune génération de code**. 
+Une fois le fichier de ressources par défaut créé, des fichiers supplémentaires peuvent être créés pour chaque culture prise en charge par l’application. Chaque fichier de ressources supplémentaire doit inclure la culture de traduction dans le nom de fichier et doit avoir le **modificateur d’accès** défini sur **aucune génération de code**.
 
 Lors de l’exécution, l’application tente de résoudre une demande de ressource par ordre de spécificité. Par exemple, si la culture de l’appareil est **en-US** , l’application recherche des fichiers de ressources dans cet ordre :
 
@@ -149,7 +149,37 @@ Une fois qu’un fichier de ressources par défaut a été créé et que la cult
 
 Pour plus d’informations sur les fichiers de ressources, consultez [créer des fichiers de ressources pour les applications .net](https://docs.microsoft.com/dotnet/framework/resources/creating-resource-files-for-desktop-apps).
 
-## <a name="localize-text-in-xamarinforms"></a>Localiser le texte dansXamarin.Forms
+## <a name="specify-supported-languages-on-ios"></a>Spécifier les langues prises en charge sur iOS
+
+Sur iOS, vous devez déclarer toutes les langues prises en charge dans le fichier **info. plist** de votre projet. Dans le fichier **info. plist** , utilisez la vue **source** pour définir un tableau pour la `CFBundleLocalizations` clé et fournissez des valeurs qui correspondent aux fichiers resx. En outre, veillez à définir un langage attendu via la `CFBundleDevelopmentRegion` clé :
+
+![Capture d’écran de l’éditeur info. plist montrant la section de localisations](text-images/info-plist.png)
+
+Vous pouvez également ouvrir le fichier **info. plist** dans un éditeur XML et ajouter ce qui suit :
+
+```xml
+<key>CFBundleLocalizations</key>
+<array>
+    <string>de</string>
+    <string>es</string>
+    <string>fr</string>
+    <string>ja</string>
+    <string>pt</string> <!-- Brazil -->
+    <string>pt-PT</string> <!-- Portugal -->
+    <string>ru</string>
+    <string>zh-Hans</string>
+    <string>zh-Hant</string>
+</array>
+<key>CFBundleDevelopmentRegion</key>
+<string>en</string>
+```
+
+> [!NOTE]
+> Apple traite légèrement différemment du portugais. Pour plus d’informations, consultez [Ajout de langues](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPInternational/LocalizingYourApp/LocalizingYourApp.html#//apple_ref/doc/uid/10000171i-CH5-SW2) sur Developer.Apple.com.
+
+Pour plus d’informations, consultez [spécification des langues par défaut et prises en charge dans info. plist](~/ios/app-fundamentals/localization/index.md#specifying-default-and-supported-languages-in-infoplist).
+
+## <a name="localize-text-in-no-locxamarinforms"></a>Localiser le texte dans Xamarin.Forms
 
 Le texte est localisé dans Xamarin.Forms à l’aide de la `AppResources` classe générée. Cette classe est nommée en fonction du nom de fichier de ressources par défaut. Étant donné que l’exemple de fichier de ressources de projet est nommé **AppResources.cs**, Visual Studio génère une classe correspondante appelée `AppResources` . Les propriétés statiques sont générées dans la `AppResources` classe pour chaque ligne du fichier de ressources. Les propriétés statiques suivantes sont générées dans la classe de l’exemple d’application `AppResources` :
 
@@ -178,19 +208,19 @@ public LocalizedCodePage()
         Text = AppResources.NotesLabel,
         // ...
     };
-    
+
     Entry notesEntry = new Entry
     {
         Placeholder = AppResources.NotesPlaceholder,
         //...
     };
-    
+
     Button addButton = new Button
     {
         Text = AppResources.AddButton,
         // ...
     };
-    
+
     Content = new StackLayout
     {
         Children = {
