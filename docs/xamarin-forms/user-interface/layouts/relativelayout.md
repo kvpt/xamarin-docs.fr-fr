@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsRelativeLayout
+title: Xamarin.Forms RelativeLayout
 description: Le Xamarin.Forms RelativeLayout est utilisé pour la position et la taille des enfants par rapport aux propriétés des éléments de disposition ou frères.
 ms.prod: xamarin
 ms.assetid: 2530BCB8-01B8-4C4F-BF14-CA53659F1B5A
@@ -7,17 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/13/2020
+ms.custom: contperfq1
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b23da34239d99faa64578bd30c5a3e969cf4b289
-ms.sourcegitcommit: 808ff109928a1eea16e17e23ea81f8c903a239e8
+ms.openlocfilehash: 77b1837fb58d5743fd887b9f636f7f7311b807d3
+ms.sourcegitcommit: 9bd6b1b20d126b3f837c4cf859b25895c242e54e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88181782"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88648172"
 ---
-# <a name="no-locxamarinforms-relativelayout"></a>Xamarin.FormsRelativeLayout
+# <a name="no-locxamarinforms-relativelayout"></a>Xamarin.Forms RelativeLayout
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-relativelayoutdemos)
 
@@ -224,7 +225,7 @@ Le code XAML suivant montre un [`RelativeLayout`](xref:Xamarin.Forms.RelativeLay
 Dans cet exemple, la position de chaque [`BoxView`](xref:Xamarin.Forms.BoxView) objet est définie en définissant [`XConstraint`](xref:Xamarin.Forms.RelativeLayout.XConstraintProperty) les [`YConstraint`](xref:Xamarin.Forms.RelativeLayout.YConstraintProperty) propriétés jointes et. La première `BoxView` a ses `XConstraint` `YConstraint` Propriétés et jointes définies sur des constantes, qui sont des valeurs absolues. La position des objets restants `BoxView` est définie à l’aide d’au moins une valeur relative. Par exemple, l' `BoxView` objet jaune affecte `XConstraint` à la propriété jointe la largeur de son parent (le [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) ) moins 40. De même, `BoxView` définit la `YConstraint` propriété jointe sur la hauteur de son parent moins 40. Cela permet de s’assurer que le jaune `BoxView` apparaît dans le coin inférieur droit de l’écran.
 
 > [!NOTE]
-> [`BoxView`](xref:Xamarin.Forms.BoxView)les objets qui ne spécifient pas une taille sont automatiquement dimensionnés à 40 x 40 par Xamarin.Forms .
+> [`BoxView`](xref:Xamarin.Forms.BoxView) les objets qui ne spécifient pas une taille sont automatiquement dimensionnés à 40 x 40 par Xamarin.Forms .
 
 Le [`BoxView`](xref:Xamarin.Forms.BoxView) nommé Silver `oneThird` est positionné de manière centralisée par rapport à son parent. Elle est également dimensionnée par rapport à son parent, qui est un tiers de sa largeur et de sa hauteur. Cela est possible en affectant [`XConstraint`](xref:Xamarin.Forms.RelativeLayout.XConstraintProperty) [`WidthConstraint`](xref:Xamarin.Forms.RelativeLayout.WidthConstraintProperty) à la propriété et aux propriétés jointes la largeur du parent (le [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) ), multiplié par 0,33. De même, les [`YConstraint`](xref:Xamarin.Forms.RelativeLayout.YConstraintProperty) [`HeightConstraint`](xref:Xamarin.Forms.RelativeLayout.HeightConstraintProperty) propriétés jointes et sont définies sur la hauteur du parent, multiplié par 0,33.
 
@@ -341,7 +342,7 @@ Dans cet exemple, les enfants sont ajoutés au [`RelativeLayout`](xref:Xamarin.F
 ## <a name="related-links"></a>Liens connexes
 
 - [Démonstrations RelativeLayout (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-relativelayoutdemos)
-- [Xamarin.FormsPropriétés jointes](~/xamarin-forms/xaml/attached-properties.md)
+- [Xamarin.Forms Propriétés jointes](~/xamarin-forms/xaml/attached-properties.md)
 - [Extensions de balisage XAML](~/xamarin-forms/xaml/markup-extensions/index.md)
 - [Choisir une Xamarin.Forms disposition](choose-layout.md)
 - [Améliorer les Xamarin.Forms performances des applications](~/xamarin-forms/deploy-test/performance.md)
