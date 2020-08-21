@@ -1,29 +1,39 @@
 ---
 title: Empaqueter des applications d’usure
+description: Cet article explique comment empaqueter des applications Android usure.
 ms.prod: xamarin
 ms.assetid: E32DD855-78DD-46F8-B234-4EAC0756BDA2
 ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/02/2018
-ms.openlocfilehash: aa4a4f1ab3ae3024de2d969f9325c2efa4db48af
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 83c4ba8cbdc360682a4e06a885be15dd20d0f249
+ms.sourcegitcommit: f4b26c5b8cc84f79123951e80c15061eb859452d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028644"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88720303"
 ---
 # <a name="packaging-wear-apps"></a>Empaqueter des applications d’usure
 
-Les applications d’usure Android sont empaquetées avec une application Android complète pour la distribution sur Google Play. 
+> [!WARNING]
+> Les documents et exemples de projets suivants peuvent ne plus être gérés.
+> À compter de [Xamarin. Android 11,1][xa-11.1], le Packaging automatique d’une application Android d’usure dans une application de poche Android n’est plus pris en charge. Il est recommandé de distribuer les applications d’usure Android en tant qu' [applications autonomes][standalone] .
+
+Android usure 1,0 les applications sont empaquetées avec une application Android complète pour la distribution sur Google Play.
+
+Les applications Android usure 2,0 peuvent être soumises à Google Play en tant qu' [applications autonomes][standalone].
+
+[xa-11.1]: https://docs.microsoft.com/xamarin/android/release-notes/11/11.1
+[standalone]: https://developer.android.com/training/wearables/apps/standalone-apps
 
 ## <a name="automatic-packaging"></a>Empaquetage automatique
 
 À compter de Xamarin Android 5,0, votre application d’usure est automatiquement empaquetée en tant que ressource dans votre application de poche lorsque vous créez une référence de projet à partir du projet de poche vers le projet d’usure. Pour créer cette association, vous pouvez utiliser les étapes suivantes : 
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. Si votre application d’usure ne fait pas déjà partie de votre solution de poche, cliquez avec le bouton droit sur le nœud de la solution et sélectionnez **ajouter > ajouter un projet existant...** .
+1. Si votre application d’usure ne fait pas déjà partie de votre solution de poche, cliquez avec le bouton droit sur le nœud de la solution et sélectionnez **ajouter > ajouter un projet existant...**.
 
 2. Accédez au fichier **. csproj** de votre application usure, sélectionnez-le, puis cliquez sur **ouvrir**. Le projet d’application d’usure doit maintenant être visible dans votre solution de poche.
 
@@ -33,13 +43,13 @@ Les applications d’usure Android sont empaquetées avec une application Androi
 
 5. Modifiez le nom du package pour votre projet d’usure afin qu’il corresponde au nom du package du projet de poche (le nom du package peut être modifié sous **propriétés > manifeste Android**).
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
-1. Si votre application d’usure ne fait pas déjà partie de votre solution de poche, cliquez avec le bouton droit sur le nœud de la solution et sélectionnez **ajouter > ajouter un projet existant...** .
+1. Si votre application d’usure ne fait pas déjà partie de votre solution de poche, cliquez avec le bouton droit sur le nœud de la solution et sélectionnez **ajouter > ajouter un projet existant...**.
 
 2. Accédez au fichier **. csproj** de votre application usure, sélectionnez-le, puis cliquez sur **ouvrir**. Le projet d’application d’usure doit maintenant être visible dans votre solution de poche.
 
-3. Cliquez avec le bouton droit sur le nœud du projet Handheld dans la solution, puis cliquez sur **modifier les références...** .
+3. Cliquez avec le bouton droit sur le nœud du projet Handheld dans la solution, puis cliquez sur **modifier les références...**.
 
 4. Dans la boîte de dialogue **modifier les références** , activez votre projet d’usure (cliquez pour ajouter une coche), puis cliquez sur **OK**.
 
@@ -47,7 +57,7 @@ Les applications d’usure Android sont empaquetées avec une application Androi
 
 -----
 
-Notez que vous obtiendrez une erreur **XA5211** si le nom du package de l’application d’usure ne correspond pas au nom du package de l’application de poche. Exemple :
+Notez que vous obtiendrez une erreur **XA5211** si le nom du package de l’application d’usure ne correspond pas au nom du package de l’application de poche. Par exemple :
 
 ```shell
 Error XA5211: Embedded wear app package name differs from handheld 
@@ -62,7 +72,7 @@ L’assembly généré par le projet d’application d’usure n’est pas utili
 
 - Vérifie que les noms de packages correspondent. 
 
-- Génère du code XML et l’ajoute au projet Handheld pour l’associer à l’application usure. Exemple : 
+- Génère du code XML et l’ajoute au projet Handheld pour l’associer à l’application usure. Par exemple : 
 
     ```xml
     <!-- Handheld (Phone) Project.csproj -->
@@ -85,7 +95,7 @@ Vous pouvez écrire des applications d’usure Android dans Xamarin. Android ava
 
 3. Ajoutez manuellement la version **. APK** de l’étape (2) dans le répertoire **Resources/RAW** du projet de portable (téléphone).
 
-4. Ajoutez manuellement une nouvelle ressource de ressources XML **/XML/wearable_app_desc. xml** dans le projet de poche, qui fait référence à un **apk** portable de l’étape (3) :
+4. Ajoutez manuellement une nouvelle ressource de ressources XML **/XML/wearable_app_desc.xml** dans le projet de poche, qui fait référence à un **apk** portable de l’étape (3) :
 
     ```xml
     <wearableApp package="wearable.app.package.name">
@@ -95,7 +105,7 @@ Vous pouvez écrire des applications d’usure Android dans Xamarin. Android ava
     </wearableApp>
     ```
 
-5. Ajoutez manuellement un élément `<meta-data />` à l’élément **fichier AndroidManifest. xml** `<application>` du projet mobile qui fait référence à la nouvelle ressource XML :
+5. Ajoutez manuellement un `<meta-data />` élément à l’élément **AndroidManifest.xml** du projet Handheld `<application>` qui fait référence à la nouvelle ressource XML :
 
     ```xml
     <meta-data android:name="com.google.android.wearable.beta.app"
