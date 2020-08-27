@@ -10,16 +10,16 @@ ms.date: 01/05/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 253255f08cec6f08e03df94798c8572f7cf10f30
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: ad36bd5efe09909753fed948a961a690feb0592a
+ms.sourcegitcommit: a003b036f6fb83818e2ecc9c72a641e3aeb373bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139722"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88964660"
 ---
-# <a name="the-xamarinforms-command-interface"></a>Xamarin.FormsInterface de commande
+# <a name="the-no-locxamarinforms-command-interface"></a>Xamarin.FormsInterface de commande
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 Dans l’architecture MVVM (modèle-vue-vue modèle), les liaisons de données sont définies entre les propriétés de ViewModel (généralement une classe dérivée de `INotifyPropertyChanged`) et les propriétés dans la vue (généralement le fichier XAML). Parfois, une application a des besoins qui vont au-delà de ces liaisons de propriété en exigeant de l’utilisateur qu’il lance des commandes qui affectent un élément dans le ViewModel. Ces commandes sont généralement signalées par des clics de bouton ou des appuis tactiles et, en règle générale, elles sont traitées dans le fichier code-behind dans un gestionnaire pour l’événement `Clicked` du `Button` ou l’événement `Tapped` d’un `TapGestureRecognizer`.
 
@@ -27,18 +27,18 @@ L’interface d’exécution de commandes fournit une alternative à l’implém
 
 Pour permettre une liaison de données entre un `Button` et un ViewModel, le `Button` définit deux propriétés :
 
-- [`Command`](xref:Xamarin.Forms.Button.Command)de type[`System.Windows.Input.ICommand`](xref:System.Windows.Input.ICommand)
-- [`CommandParameter`](xref:Xamarin.Forms.Button.CommandParameter)de type`Object`
+- [`Command`](xref:Xamarin.Forms.Button.Command) de type [`System.Windows.Input.ICommand`](xref:System.Windows.Input.ICommand)
+- [`CommandParameter`](xref:Xamarin.Forms.Button.CommandParameter) de type `Object`
 
 Pour utiliser l’interface de commande, vous définissez une liaison de données qui cible la propriété `Command` du `Button` où la source est une propriété dans le ViewModel de type `ICommand`. Le ViewModel contient du code associé à cette propriété `ICommand` qui est exécuté lors d’un clic sur le bouton. Vous pouvez définir `CommandParameter` en spécifiant des données arbitraires pour faire la distinction entre plusieurs boutons s’ils sont tous liés à la même propriété `ICommand` dans le ViewModel.
 
 Les propriétés `Command` et `CommandParameter` sont également définies par les classes suivantes :
 
-- [`MenuItem`](xref:Xamarin.Forms.MenuItem)et donc, [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) , qui dérive de`MenuItem`
-- [`TextCell`](xref:Xamarin.Forms.TextCell)et donc, [`ImageCell`](xref:Xamarin.Forms.ImageCell) , qui dérive de`TextCell`
+- [`MenuItem`](xref:Xamarin.Forms.MenuItem) et donc, [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) , qui dérive de `MenuItem`
+- [`TextCell`](xref:Xamarin.Forms.TextCell) et donc, [`ImageCell`](xref:Xamarin.Forms.ImageCell) , qui dérive de `TextCell`
 - [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer)
 
-[`SearchBar`](xref:Xamarin.Forms.SearchBar)définit une [`SearchCommand`](xref:Xamarin.Forms.SearchBar.SearchCommand) propriété de type `ICommand` et une [`SearchCommandParameter`](xref:Xamarin.Forms.SearchBar.SearchCommandParameter) propriété. La [`RefreshCommand`](xref:Xamarin.Forms.ListView.RefreshCommand) propriété de [`ListView`](xref:Xamarin.Forms.ListView) est également de type `ICommand` .
+[`SearchBar`](xref:Xamarin.Forms.SearchBar) définit une [`SearchCommand`](xref:Xamarin.Forms.SearchBar.SearchCommand) propriété de type `ICommand` et une [`SearchCommandParameter`](xref:Xamarin.Forms.SearchBar.SearchCommandParameter) propriété. La [`RefreshCommand`](xref:Xamarin.Forms.ListView.RefreshCommand) propriété de [`ListView`](xref:Xamarin.Forms.ListView) est également de type `ICommand` .
 
 Toutes ces commandes peuvent être gérées au sein d’un ViewModel d’une manière qui ne dépend pas de l’objet d’interface utilisateur particulier dans la vue.
 
@@ -689,10 +689,6 @@ La méthode `canExecute` retourne `false` uniquement si l’argument est la virg
 
 Toutes les méthodes `execute` appellent `RefreshCanExecutes`, qui appelle à son tour `ChangeCanExecute` pour `DigitCommand` et `ClearCommand`. Cela garantit que les boutons de virgule décimale et retour arrière sont actifs ou désactivés en fonction de la séquence actuelle de chiffres saisis.
 
-## <a name="adding-commands-to-existing-views"></a>Ajout de commandes à des vues existantes
-
-Si vous souhaitez utiliser l’interface de commande avec des vues qui ne la prennent pas en charge, il est possible d’utiliser un Xamarin.Forms comportement qui convertit un événement en commande. Ceci est décrit dans l’article [**EventToCommandBehavior réutilisable**](~/xamarin-forms/app-fundamentals/behaviors/reusable/event-to-command-behavior.md).
-
 ## <a name="asynchronous-commanding-for-navigation-menus"></a>Exécution asynchrone de commandes pour les menus de navigation
 
 L’exécution de commandes est pratique pour implémenter des menus de navigation, tels que celui du programme [**Data Binding Demos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos) (Démos des liaisons de données) lui-même. Voici une partie de **MainPage.xaml** :
@@ -767,7 +763,7 @@ La définition des deux propriétés `NavigateCommand` et `BindingContext` (dans
 
 Comme vous l’avez vu dans cette série d’articles, bien que les liaisons de données s’avèrent parfois délicates, elles sont puissantes et polyvalentes et offrent une aide considérable pour organiser le code en séparant la logique sous-jacente de l’interface utilisateur.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Démonstrations de liaison de données (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 - [Chapitre sur la liaison de données à partir de Xamarin.Forms Book](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter18.md)

@@ -10,12 +10,12 @@ ms.date: 04/06/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d5bee3baa08387a1ed67384ba4089d63aad08d2c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 37c76a5f325c363a92c2a2c1e597dab28f064cd9
+ms.sourcegitcommit: a003b036f6fb83818e2ecc9c72a641e3aeb373bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84135770"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88964608"
 ---
 # <a name="introduction-to-behaviors"></a>Introduction aux comportements
 
@@ -30,14 +30,14 @@ Avec les comportements, vous pouvez implémenter du code que vous auriez dû nor
 
 Les comportements permettent également des scénarios plus avancés. Dans le contexte de *commande*, les comportements constituent une approche utile pour connecter un contrôle à une commande. De plus, ils peuvent être utilisés pour associer des commandes à des contrôles qui n’ont pas été conçus pour interagir avec les commandes. Par exemple, ils peuvent servir pour appeler une commande en réponse à un déclenchement d’événement.
 
-Xamarin.Formsprend en charge deux styles différents de comportements :
+Xamarin.Forms prend en charge deux styles différents de comportements :
 
-- ** Xamarin.Forms comportements** : classes qui dérivent de [`Behavior`](xref:Xamarin.Forms.Behavior) la [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) classe ou, où `T` est le type du contrôle auquel le comportement doit s’appliquer. Pour plus d’informations sur les Xamarin.Forms comportements, [ Xamarin.Forms ](~/xamarin-forms/app-fundamentals/behaviors/creating.md) consultez comportements et [comportements réutilisables](~/xamarin-forms/app-fundamentals/behaviors/reusable/index.md).
+- ** Xamarin.Forms comportements** : classes qui dérivent de [`Behavior`](xref:Xamarin.Forms.Behavior) la [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) classe ou, où `T` est le type du contrôle auquel le comportement doit s’appliquer. Pour plus d’informations sur les Xamarin.Forms comportements, consultez [ Xamarin.Forms comportements](~/xamarin-forms/app-fundamentals/behaviors/creating.md).
 - **Comportements attachés** : `static` classes avec une ou plusieurs propriétés jointes. Pour plus d’informations sur les comportements attachés, consultez [Comportements attachés](~/xamarin-forms/app-fundamentals/behaviors/attached.md).
 
 Ce guide se concentre sur Xamarin.Forms les comportements, car il s’agit de l’approche préférée de la construction de comportement.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Comportement](xref:Xamarin.Forms.Behavior)
 - [Comportement &lt; T&gt;](xref:Xamarin.Forms.Behavior`1)

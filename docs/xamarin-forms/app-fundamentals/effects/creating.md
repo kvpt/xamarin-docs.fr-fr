@@ -10,12 +10,12 @@ ms.date: 10/24/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d1aead9297312e190a5a04ee0f33328d81f2547a
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: bb4e0c81fb3f2e58be9c44d1ec7fddcf4d72a656
+ms.sourcegitcommit: a003b036f6fb83818e2ecc9c72a641e3aeb373bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939956"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88964595"
 ---
 # <a name="creating-an-effect"></a>Création d’un effet
 
@@ -42,8 +42,8 @@ L’exemple d’application montre un `FocusEffect` qui change la couleur d’ar
 
 Un [`Entry`](xref:Xamarin.Forms.Entry) contrôle sur le `HomePage` est personnalisé par la `FocusEffect` classe dans chaque projet spécifique à la plateforme. Chaque classe `FocusEffect` dérive de la classe `PlatformEffect` pour chaque plateforme. Il en résulte un rendu du contrôle `Entry` avec une couleur d’arrière-plan spécifique à la plateforme, qui change quand le contrôle obtient le focus, comme le montrent les captures d’écran suivantes :
 
-![Effet de focus sur chaque plateforme](creating-images/screenshots-1.png)
-![Effet de focus sur chaque plateforme](creating-images/screenshots-2.png)
+![Effet de focus sur chaque plateforme, contrôle ](creating-images/screenshots-1.png)
+ ![ du focus sur chaque plateforme, contrôle inactif](creating-images/screenshots-2.png)
 
 ## <a name="creating-the-effect-on-each-platform"></a>Création de l’effet sur chaque plateforme
 
@@ -239,7 +239,7 @@ public class FocusEffect : RoutingEffect
 
 La `FocusEffect` classe sous-classe la [`RoutingEffect`](xref:Xamarin.Forms.RoutingEffect) classe, qui représente un effet indépendant de la plateforme qui encapsule un effet interne qui est généralement spécifique à la plateforme. La `FocusEffect` classe appelle le constructeur de classe de base, en passant un paramètre composé d’une concaténation du nom du groupe de résolutions (spécifié à l’aide de l' [`ResolutionGroupName`](xref:Xamarin.Forms.ResolutionGroupNameAttribute) attribut sur la classe Effect) et de l’ID unique spécifié à l’aide de l' [`ExportEffect`](xref:Xamarin.Forms.ExportEffectAttribute) attribut sur la classe Effect. Par conséquent, lorsque le est initialisé lors de l' [`Entry`](xref:Xamarin.Forms.Entry) exécution, une nouvelle instance de `MyCompany.FocusEffect` est ajoutée à la collection du contrôle [`Effects`](xref:Xamarin.Forms.Element.Effects) .
 
-Les effets peuvent également être attachés à des contrôles avec un comportement ou avec des propriétés attachées. Pour plus d’informations sur l’attachement d’un effet à un contrôle avec un comportement, consultez [Comportement d’effet réutilisable](~/xamarin-forms/app-fundamentals/behaviors/reusable/effect-behavior.md). Pour plus d’informations sur l’attachement d’un effet à un contrôle avec des propriétés attachées, consultez [Passage de paramètres à un effet](~/xamarin-forms/app-fundamentals/effects/passing-parameters/index.md).
+Les effets peuvent également être attachés à des contrôles avec un comportement ou avec des propriétés attachées. Pour plus d’informations sur l’attachement d’un effet à un contrôle avec un comportement, consultez [Comportement d’effet réutilisable](~/xamarin-forms/app-fundamentals/behaviors/effect-behavior.md). Pour plus d’informations sur l’attachement d’un effet à un contrôle avec des propriétés attachées, consultez [Passage de paramètres à un effet](~/xamarin-forms/app-fundamentals/effects/passing-parameters/index.md).
 
 ## <a name="consuming-the-effect-in-cnum"></a>Consommation de l’effet en C&num;
 
@@ -271,7 +271,7 @@ Cet article a montré comment créer un effet qui modifie la couleur d’arrièr
 
 ## <a name="related-links"></a>Liens associés
 
-- [Convertisseurs personnalisés](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)
+- [Renderers personnalisés](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)
 - [Effet](xref:Xamarin.Forms.Effect)
 - [PlatformEffect](xref:Xamarin.Forms.PlatformEffect`2)
 - [Effet de couleur d’arrière-plan (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-backgroundcoloreffect)
