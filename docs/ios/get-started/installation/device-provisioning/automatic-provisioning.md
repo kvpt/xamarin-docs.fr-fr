@@ -8,24 +8,24 @@ author: davidortinau
 ms.author: daortin
 ms.custom: video
 ms.date: 03/05/2020
-ms.openlocfilehash: 09d20ef2e4fece36ce67a7891892defb05a5f3df
-ms.sourcegitcommit: ca1eca5bcf6c82bc4ec05db12ee1be585006d59f
+ms.openlocfilehash: 32d9142fb74cba637982438a2aa984adb759d847
+ms.sourcegitcommit: bb18e6b3b5d592374b17932efa1e85c3b5fbad57
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88514627"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88950714"
 ---
 # <a name="automatic-provisioning-for-xamarinios"></a>Provisionnement automatique pour Xamarin.iOS
 
 _Une fois Xamarin. iOS installé avec succès, l’étape suivante du développement iOS consiste à approvisionner votre appareil iOS. Ce guide explore l’utilisation de l’approvisionnement automatique pour demander des profils et des certificats de développement._
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>Spécifications
 
 L’approvisionnement automatique est disponible sur Visual Studio pour Mac, Visual Studio 2019 et Visual Studio 2017 (version 15,7 et ultérieures). 
 
 > [!NOTE]
 > Vous devez également avoir un compte de développeur Apple payant pour utiliser cette fonctionnalité. Vous trouverez plus d’informations sur les comptes de développeurs Apple dans le Guide de [provisionnement des appareils](~/ios/get-started/installation/device-provisioning/index.md) .
-> Si vous n’avez pas de compte de développeur Apple payant, consultez le Guide [approvisionnement gratuit pour Xamarin. iOS] (~/iOS/Get-Started/installation/Device-Provisioning/Free-Provisioning.MD).
+> Si vous n’avez pas de compte de développeur Apple payant, consultez le guide [d’approvisionnement gratuit pour Xamarin. iOS](~/ios/get-started/installation/device-provisioning/free-provisioning.md) .
 
 > [!NOTE]
 > Avant de commencer, veillez à accepter d’abord tous les contrats de licence dans le [portail des développeurs Apple](https://developer.apple.com/account/) ou dans l' [App Store Connect](https://appstoreconnect.apple.com/).
@@ -104,7 +104,7 @@ Dans certains cas, les droits d’une application nécessitent un ID d’applica
 - Achat dans l’application
 - Multipath
 - NFC
-- Personal VPN
+- VPN personnel
 - Notifications Push
 - Configuration d’accessoires sans fil
 
@@ -120,5 +120,5 @@ Si votre application utilise l’une de ces habilitations, Visual Studio tente d
 
 - [Provisionnement libre](~/ios/get-started/installation/device-provisioning/free-provisioning.md)
 - [Distribution d’applications](~/ios/deploy-test/app-distribution/index.md)
-- [Résolution des problèmes](~/ios/deploy-test/troubleshooting.md)
+- [Dépannage](~/ios/deploy-test/troubleshooting.md)
 - [Apple - Guide de distribution d’applications](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html)

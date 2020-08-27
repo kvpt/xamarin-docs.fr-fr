@@ -10,12 +10,12 @@ ms.date: 11/09/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0967845ac61ddf5f8e1cc76664a50877d041f011
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 7589e6e6f807c88c8ed17cf1e8f56645d2e98444
+ms.sourcegitcommit: bb18e6b3b5d592374b17932efa1e85c3b5fbad57
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939670"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88950727"
 ---
 # <a name="reusable-eventtocommandbehavior"></a>EventToCommandBehavior réutilisable
 
@@ -23,7 +23,7 @@ ms.locfileid: "86939670"
 
 _Les comportements peuvent être utilisés pour associer des commandes à des contrôles qui n’ont pas été conçus pour interagir avec des commandes. Cet article décrit la création et l’utilisation d’un Xamarin.Forms comportement pour appeler une commande lorsqu’un événement se déclenche._
 
-## <a name="overview"></a>Vue d’ensemble
+## <a name="overview"></a>Vue d'ensemble
 
 La `EventToCommandBehavior` classe est un comportement personnalisé réutilisable Xamarin.Forms qui exécute une commande en réponse à *tout* déclenchement d’événement. Par défaut, les arguments d’événement pour l’événement sont passés à la commande et peuvent éventuellement être convertis par une [`IValueConverter`](xref:Xamarin.Forms.IValueConverter) implémentation.
 
@@ -51,7 +51,7 @@ La `BehaviorBase<T>` classe fournit un substituable [ `OnAttachedTo` ] (XREF : 
 La `EventToCommandBehavior` classe définit quatre [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) instances, qui exécutent une commande définie par l’utilisateur lorsqu’un événement se déclenche. Ces propriétés sont présentées dans l’exemple de code suivant :
 
 ```csharp
-public class EventToCommandBehavior : BehaviorBase<View>
+public class EventToCommandBehavior : BehaviorBase<VisualElement>
 {
   public static readonly BindableProperty EventNameProperty =
     BindableProperty.Create ("EventName", typeof(string), typeof(EventToCommandBehavior), null, propertyChanged: OnEventNameChanged);
@@ -104,7 +104,7 @@ public class EventToCommandBehavior : BehaviorBase<View>
 L’objectif du comportement consiste à exécuter la commande définie par la propriété `Command` en réponse au déclenchement de l’événement qui est défini par la propriété `EventName`. La fonctionnalité de comportement clé est illustrée dans l’exemple de code suivant :
 
 ```csharp
-public class EventToCommandBehavior : BehaviorBase<View>
+public class EventToCommandBehavior : BehaviorBase<VisualElement>
 {
   ...
   void RegisterEvent (string name)
