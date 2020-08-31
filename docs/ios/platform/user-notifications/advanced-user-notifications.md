@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/03/2018
-ms.openlocfilehash: edf224428103c318307f3a05dc79e1e8d286f512
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: ce4614f7b21a42945a8541f2b18877e75a200f1a
+ms.sourcegitcommit: f6a2f07d2e689e0cfd01b30008d50c83c63fa70c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86935112"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89052771"
 ---
 # <a name="advanced-user-notifications-in-xamarinios"></a>Notifications utilisateur avancées dans Xamarin. iOS
 
@@ -96,7 +96,7 @@ namespace MonkeyNotification
     public class NotificationService : UNNotificationServiceExtension
     {
         #region Constructors
-        public NotificationService ()
+        public NotificationService (IntPtr handle) : base(handle)
         {
         }
         #endregion
@@ -192,9 +192,9 @@ Pour implémenter une interface utilisateur de notification utilisateur personna
 
 Lorsque l’extension de contenu de notification est ajoutée à la solution, trois fichiers sont créés dans le projet de l’extension :
 
-1. `NotificationViewController.cs`-Il s’agit du contrôleur d’affichage principal pour l’extension de contenu de notification.
-2. `MainInterface.storyboard`-Où le développeur dispose de l’interface utilisateur visible pour l’extension de contenu de notification dans le concepteur iOS.
-3. `Info.plist`-Contrôle la configuration de l’extension de contenu de notification.
+1. `NotificationViewController.cs` -Il s’agit du contrôleur d’affichage principal pour l’extension de contenu de notification.
+2. `MainInterface.storyboard` -Où le développeur dispose de l’interface utilisateur visible pour l’extension de contenu de notification dans le concepteur iOS.
+3. `Info.plist` -Contrôle la configuration de l’extension de contenu de notification.
 
 Le fichier par défaut se `NotificationViewController.cs` présente comme suit :
 
@@ -725,7 +725,7 @@ Server.PostEventResponse += (response) {
 };
 ```
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a pris une vue avancée de l’utilisation de la nouvelle infrastructure de notification utilisateur dans une application Xamarin. iOS. Elle a abordé l’ajout de pièces jointes à la notification locale et à distance, et elle est traitée à l’aide de la nouvelle interface utilisateur de notification pour créer des interfaces utilisateur de notification personnalisées.
 

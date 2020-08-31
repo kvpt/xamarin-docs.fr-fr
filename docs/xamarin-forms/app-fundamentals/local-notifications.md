@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Formsnotifications locales
+title: Xamarin.Forms notifications locales
 description: Cet article explique comment envoyer et recevoir des notifications locales dans Xamarin.Forms .
 ms.prod: xamarin
 ms.assetid: 60460F57-63C6-4916-BBB5-A870F1DF53D7
@@ -10,16 +10,16 @@ ms.date: 10/10/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 40e040f216ddda40931273f4e7f5614964862fe8
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: da867dd017ed50ccbc09f969891bb91011379d3f
+ms.sourcegitcommit: f6a2f07d2e689e0cfd01b30008d50c83c63fa70c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137590"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89052745"
 ---
-# <a name="local-notifications-in-xamarinforms"></a>Notifications locales dansXamarin.Forms
+# <a name="local-notifications-in-no-locxamarinforms"></a>Notifications locales dans Xamarin.Forms
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/local-notifications)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/local-notifications)
 
 Les notifications locales sont des alertes envoyées par les applications installées sur un appareil mobile. Les notifications locales sont souvent utilisées pour des fonctionnalités telles que :
 
@@ -50,7 +50,7 @@ public interface INotificationManager
 
 Cette interface sera implémentée dans chaque projet de plateforme. L' `NotificationReceived` événement permet à l’application de gérer les notifications entrantes. La `Initialize` méthode doit exécuter toute logique de plateforme Native nécessaire pour préparer le système de notification. La `ScheduleNotification` méthode doit envoyer une notification. La `ReceiveNotification` méthode doit être appelée par la plateforme sous-jacente lors de la réception d’un message.
 
-## <a name="consume-the-interface-in-xamarinforms"></a>Utiliser l’interface dansXamarin.Forms
+## <a name="consume-the-interface-in-no-locxamarinforms"></a>Utiliser l’interface dans Xamarin.Forms
 
 Une fois qu’une interface a été créée, elle peut être consommée dans le projet partagé, Xamarin.Forms même si les implémentations de plateforme n’ont pas encore été créées. L’exemple d’application contient un `ContentPage` appelé **MainPage. Xaml** avec le contenu suivant :
 
@@ -113,6 +113,16 @@ public partial class MainPage : ContentPage
 ```
 
 Le `MainPage` constructeur de classe utilise Xamarin.Forms `DependencyService` pour récupérer une instance spécifique à la plateforme de `INotificationManager` . La `OnScheduleClicked` méthode utilise l' `INotificationManager` instance pour planifier une nouvelle notification. La `ShowNotification` méthode est appelée à partir du gestionnaire d’événements attaché à l' `NotificationReceived` événement et insère un nouveau `Label` dans la page lorsque l’événement est appelé.
+
+Le `NotificationReceived` Gestionnaire d’événements effectue un cast de ses arguments d’événement vers `NotificationEventArgs` . Ce type est défini dans le Xamarin.Forms projet partagé :
+
+```csharp
+public class NotificationEventArgs : EventArgs
+{
+    public string Title { get; set; }
+    public string Message { get; set; }
+}
+```
 
 Pour plus d’informations sur le Xamarin.Forms `DependencyService` , consultez [ Xamarin.Forms DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/introduction.md).
 
@@ -386,7 +396,7 @@ public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 
 iOS offre de nombreuses options avancées pour les notifications. Pour plus d’informations, consultez [notifications dans Xamarin. iOS](~/ios/platform/user-notifications/index.md).
 
-## <a name="test-the-application"></a>Test de l’application
+## <a name="test-the-application"></a>Tester l’application
 
 Une fois que les projets de plateforme contiennent une implémentation inscrite de l' `INotificationManager` interface, l’application peut être testée sur les deux plateformes. Exécutez l’application et cliquez sur le bouton **planifier la notification** pour créer une notification.
 
@@ -403,4 +413,4 @@ Sur iOS, les notifications entrantes sont automatiquement reçues par l’applic
 - [Exemple de projet](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/local-notifications)
 - [Notifications dans Xamarin. Android](~/android/app-fundamentals/notifications/index.md)
 - [Notifications dans Xamarin. iOS](~/ios/platform/user-notifications/index.md)
-- [Xamarin.FormsDependency. service](~/xamarin-forms/app-fundamentals/dependency-service/introduction.md)
+- [Xamarin.Forms Dependency. service](~/xamarin-forms/app-fundamentals/dependency-service/introduction.md)
