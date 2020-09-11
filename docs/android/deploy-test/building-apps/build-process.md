@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 09/11/2020
-ms.openlocfilehash: e047bb5acd341c665ad2ee9cfbb8f51cfa013646
-ms.sourcegitcommit: 0f92ef326ed2975ee735c8e98df42d5b23f4947a
+ms.openlocfilehash: d4c8e9ba717602aa30cb736957da5a61d2a91130
+ms.sourcegitcommit: e4a51ca35887dd3e45016cf10111cee68d343fbe
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 09/11/2020
-ms.locfileid: "90026133"
+ms.locfileid: "90027605"
 ---
 # <a name="build-process"></a>Processus de génération
 
@@ -231,7 +231,7 @@ Les [propriétés de signature](#Signing_Properties) sont également impliquées
 
   Cette propriété est pertinente uniquement si `$(AndroidPackageFormat)` a la valeur `aab` .
 
-  Ajouté dans Xamarin. Android 10,2.
+  Ajouté dans Xamarin. Android 10,3.
 
   [bundle-config-format]: https://developer.android.com/studio/build/building-cmdline#bundleconfig
 
@@ -680,7 +680,7 @@ Les propriétés MSBuild suivantes sont utilisées avec les [projets de liaison]
 
 - **AndroidCodegenTarget** &ndash; propriété de chaîne qui contrôle l’ABI cible de la génération de code. Les valeurs possibles incluent :
 
-  - **XamarinAndroid** : utilise l’API de liaison JNI présente depuis Mono pour Android 1.0. La liaison des assemblys générés avec Xamarin.Android 5.0 ou ultérieur peut s’exécuter seulement sur Xamarin.Android 5.0 ou ultérieur (ajouts d’API/ABI), mais la *source* est compatible avec les versions antérieures du produit.
+  - **XamarinAndroid**: utilise l’API de liaison JNI présente dans la mesure où mono pour Android 1,0. La liaison des assemblys générés avec Xamarin.Android 5.0 ou ultérieur peut s’exécuter seulement sur Xamarin.Android 5.0 ou ultérieur (ajouts d’API/ABI), mais la *source* est compatible avec les versions antérieures du produit.
 
   - **XAJavaInterop1** : utilise Java.Interop pour les appels JNI. La liaison des assemblys avec `XAJavaInterop1` peut être générée et s’exécuter seulement avec Xamarin.Android 6.1 ou ultérieur. Xamarin.Android 6.1 et ultérieur effectue la liaison de `Mono.Android.dll` avec cette valeur.
 
@@ -706,13 +706,13 @@ Les propriétés des ressources contrôlent la génération du fichier `Resource
 
   Ajouté dans Xamarin.Android 9.1.
 
-- **AndroidExplicitCrunch** &ndash; N’est plus pris en charge dans Xamarin. Android 10,4.
-
-- **AndroidResgenExtraArgs** &ndash; Spécifie des options de ligne de commande supplémentaires à passer à la commande **AAPT** lors du traitement des ressources et ressources Android.
+- **AndroidExplicitCrunch** &ndash; N’est plus pris en charge dans Xamarin. Android 11,0.
 
 - **AndroidR8IgnoreWarnings** &ndash; Spécifie automatiquement la `-ignorewarnings` règle ProGuard pour `r8` . Cela permet `r8` à de continuer la compilation DEX même si certains avertissements sont rencontrés. La valeur par défaut est `True` , mais peut avoir la valeur `False` pour appliquer un comportement plus strict. Pour plus d’informations, consultez le [Manuel ProGuard](https://www.guardsquare.com/products/proguard/manual/usage) .
 
-  Ajouté dans Xamarin. Android 10,4.
+  Ajouté dans Xamarin. Android 10,3.
+
+- **AndroidResgenExtraArgs** &ndash; Spécifie des options de ligne de commande supplémentaires à passer à la commande **AAPT** lors du traitement des ressources et ressources Android.
 
 - **AndroidResgenFile** &ndash; spécifie le nom du fichier de ressources à générer. Le modèle par défaut définit cette valeur sur `Resource.designer.cs`.
 
@@ -911,14 +911,6 @@ Notez que comme Android prend en charge plusieurs ABI (Application Binary Interf
 
 Avec la détection de chemin, le nom du répertoire parent de la bibliothèque native est utilisé pour spécifier l’ABI ciblée par la bibliothèque. Ainsi, si vous ajoutez `lib/armeabi-v7a/libfoo.so` à la build, l’ABI sera « détectée » en tant que `armeabi-v7a`.
 
-### <a name="androidresourceanalysisconfig"></a>AndroidResourceAnalysisConfig
-
-L’action de génération `AndroidResourceAnalysisConfig` marque un fichier comme un fichier de configuration de niveau de gravité pour l’outil de diagnostic Xamarin Android designer Layout. Actuellement utilisé uniquement dans l’éditeur de disposition et non pour les messages de génération.
-
-Pour plus d’informations, consultez la documentation sur l' [analyse des ressources Android](https://aka.ms/androidresourceanalysis) .
-
-Ajouté dans Xamarin. Android 10,2.
-
 #### <a name="item-attribute-name"></a>Nom d’attribut d’élément
 
 **Abi** &ndash; spécifie l’ABI de la bibliothèque native.
@@ -967,6 +959,14 @@ Les utilisateurs plus expérimentés souhaitent éventuellement avoir des ressou
   </AndroidResource>
 </ItemGroup>
 ```
+
+### <a name="androidresourceanalysisconfig"></a>AndroidResourceAnalysisConfig
+
+L’action de génération `AndroidResourceAnalysisConfig` marque un fichier comme un fichier de configuration de niveau de gravité pour l’outil de diagnostic Xamarin Android designer Layout. Actuellement utilisé uniquement dans l’éditeur de disposition et non pour les messages de génération.
+
+Pour plus d’informations, consultez la documentation sur l' [analyse des ressources Android](https://aka.ms/androidresourceanalysis) .
+
+Ajouté dans Xamarin. Android 10,2.
 
 ### <a name="content"></a>Contenu
 
