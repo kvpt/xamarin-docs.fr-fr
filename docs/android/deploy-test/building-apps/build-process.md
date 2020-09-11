@@ -5,13 +5,13 @@ ms.assetid: 3BE5EE1E-3FF6-4E95-7C9F-7B443EE3E94C
 ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
-ms.date: 03/06/2020
-ms.openlocfilehash: 202041614d6a5b632aba6e92a77869effc21bb4f
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.date: 09/11/2020
+ms.openlocfilehash: e047bb5acd341c665ad2ee9cfbb8f51cfa013646
+ms.sourcegitcommit: 0f92ef326ed2975ee735c8e98df42d5b23f4947a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84568319"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90026133"
 ---
 # <a name="build-process"></a>Processus de génération
 
@@ -231,7 +231,7 @@ Les [propriétés de signature](#Signing_Properties) sont également impliquées
 
   Cette propriété est pertinente uniquement si `$(AndroidPackageFormat)` a la valeur `aab` .
 
-  Ajouté dans Xamarin. Android 10,3.
+  Ajouté dans Xamarin. Android 10,2.
 
   [bundle-config-format]: https://developer.android.com/studio/build/building-cmdline#bundleconfig
 
@@ -306,7 +306,7 @@ Les [propriétés de signature](#Signing_Properties) sont également impliquées
 
   En général, cette propriété doit être laissée vide, mais dans certains scénarios spéciaux, elle peut fournir une flexibilité utile.
 
-  Notez que cette propriété est différente de la `$(AndroidAotAdditionalArguments)` propriété associée. Cette propriété place les arguments séparés par des virgules dans l' `--aot` option du compilateur mono. `$(AndroidExtraAotOptions)`au lieu de cela, passe des options autonomes et séparées par des espaces, comme `--verbose` ou `--debug` au compilateur.
+  Notez que cette propriété est différente de la `$(AndroidAotAdditionalArguments)` propriété associée. Cette propriété place les arguments séparés par des virgules dans l' `--aot` option du compilateur mono. `$(AndroidExtraAotOptions)` au lieu de cela, passe des options autonomes et séparées par des espaces, comme `--verbose` ou `--debug` au compilateur.
 
   Ajouté dans Xamarin. Android 10,2.
 
@@ -362,7 +362,7 @@ Les [propriétés de signature](#Signing_Properties) sont également impliquées
 
     L’Assistant Nouveau projet sélectionne cette option pour les nouveaux projets lorsque la **Version minimale d’Android** est configurée sur **Android 5.0 (Lollipop)** ou version ultérieure dans Visual Studio, ou lorsque **Plateformes cibles** est défini sur **Tout dernier** dans Visual Studio pour Mac.
 
-  - Unset/la chaîne vide : cela équivaut à`System.Net.Http.HttpClientHandler, System.Net.Http`
+  - Unset/la chaîne vide : cela équivaut à `System.Net.Http.HttpClientHandler, System.Net.Http`
 
     Cela correspond à l’option **Par défaut** dans les pages de propriétés de Visual Studio.
 
@@ -427,7 +427,7 @@ Les [propriétés de signature](#Signing_Properties) sont également impliquées
   Lors de la génération, toutes les autres valeurs nécessaires y sont fusionnées pour produire le fichier `AndroidManifest.xml` effectif.
   `$(AndroidManifest)` doit contenir le nom du package dans l’attribut `/manifest/@package`.
 
-- **AndroidManifestMerger** &ndash; Spécifie l’implémentation pour la fusion des fichiers *fichier AndroidManifest. xml* . Il s’agit d’une propriété de style enum dans laquelle `legacy` sélectionne l’implémentation C# d’origine et `manifestmerger.jar` sélectionne l’implémentation Java de Google.
+- **AndroidManifestMerger** &ndash; Spécifie l’implémentation pour la fusion de fichiers *AndroidManifest.xml* . Il s’agit d’une propriété de style enum dans laquelle `legacy` sélectionne l’implémentation C# d’origine et `manifestmerger.jar` sélectionne l’implémentation Java de Google.
 
   La valeur par défaut est actuellement `legacy` . Cela passera à `manifestmerger.jar` dans une version ultérieure pour aligner le comportement avec Android Studio.
 
@@ -436,6 +436,16 @@ Les [propriétés de signature](#Signing_Properties) sont également impliquées
   Introduit dans Xamarin. Android 10,2
 
   [manifest-merger]: https://developer.android.com/studio/build/manifest-merge
+
+- **AndroidManifestPlaceholders** &ndash; Liste de paires de remplacement de clé-valeur séparées par des points-virgules pour *AndroidManifest.xml*, où chaque paire a le format `key=value` .
+
+  Par exemple, une valeur de propriété de `assemblyName=$(AssemblyName)` définit un `${assemblyName}` espace réservé qui peut ensuite apparaître dans *AndroidManifest.xml*:
+
+  ```xml
+  <application android:label="${assemblyName}"
+  ```
+
+  Cela permet d’insérer des variables à partir du processus de génération dans le fichier *AndroidManifest.xml* .
 
 - **AndroidMultiDexClassListExtraArgs** &ndash; Propriété de type chaîne qui permet aux développeurs de passer des arguments supplémentaires au lors de la `com.android.multidex.MainDexListBuilder` génération du `multidex.keep` fichier.
 
@@ -658,7 +668,7 @@ Les propriétés MSBuild suivantes sont utilisées avec les [projets de liaison]
 
   Les avantages de `class-parse` par rapport à `jar2xml` sont :
 
-  - `class-parse`peut extraire des noms de paramètres du bytecode Java qui contient des symboles de *débogage* (par exemple, bytecode compilé avec `javac -g` ).
+  - `class-parse` peut extraire des noms de paramètres du bytecode Java qui contient des symboles de *débogage* (par exemple, bytecode compilé avec `javac -g` ).
 
   - `class-parse` « n’ignore pas » les classes qui héritent de ou qui contiennent des membres de types qui ne peuvent pas être résolus.
 
@@ -670,7 +680,7 @@ Les propriétés MSBuild suivantes sont utilisées avec les [projets de liaison]
 
 - **AndroidCodegenTarget** &ndash; propriété de chaîne qui contrôle l’ABI cible de la génération de code. Les valeurs possibles incluent :
 
-  - **XamarinAndroid**: utilise l’API de liaison JNI présente dans la mesure où mono pour Android 1,0. La liaison des assemblys générés avec Xamarin.Android 5.0 ou ultérieur peut s’exécuter seulement sur Xamarin.Android 5.0 ou ultérieur (ajouts d’API/ABI), mais la *source* est compatible avec les versions antérieures du produit.
+  - **XamarinAndroid** : utilise l’API de liaison JNI présente depuis Mono pour Android 1.0. La liaison des assemblys générés avec Xamarin.Android 5.0 ou ultérieur peut s’exécuter seulement sur Xamarin.Android 5.0 ou ultérieur (ajouts d’API/ABI), mais la *source* est compatible avec les versions antérieures du produit.
 
   - **XAJavaInterop1** : utilise Java.Interop pour les appels JNI. La liaison des assemblys avec `XAJavaInterop1` peut être générée et s’exécuter seulement avec Xamarin.Android 6.1 ou ultérieur. Xamarin.Android 6.1 et ultérieur effectue la liaison de `Mono.Android.dll` avec cette valeur.
 
@@ -696,13 +706,13 @@ Les propriétés des ressources contrôlent la génération du fichier `Resource
 
   Ajouté dans Xamarin.Android 9.1.
 
-- **AndroidExplicitCrunch** &ndash; si vous générez une application avec un très grand nombre de drawables locaux, une build initiale (ou une regénération) peut durer plusieurs minutes. Pour accélérer le processus de génération, essayez en incluant cette propriété et en la définissant sur `True`. Quand cette propriété est définie, le processus de génération compresse les fichiers .png.
-
-  Remarque : Cette option n’est pas compatible avec l’option `$(AndroidUseAapt2)`. Si `$(AndroidUseAapt2)` est activé, cette fonctionnalité est désactivée. Si vous souhaitez continuer à utiliser cette fonctionnalité, définissez `$(AndroidUseAapt2)` sur `False`.
-
-  **Expérimental**. Ajouté dans Xamarin.Android 7.0.
+- **AndroidExplicitCrunch** &ndash; N’est plus pris en charge dans Xamarin. Android 10,4.
 
 - **AndroidResgenExtraArgs** &ndash; Spécifie des options de ligne de commande supplémentaires à passer à la commande **AAPT** lors du traitement des ressources et ressources Android.
+
+- **AndroidR8IgnoreWarnings** &ndash; Spécifie automatiquement la `-ignorewarnings` règle ProGuard pour `r8` . Cela permet `r8` à de continuer la compilation DEX même si certains avertissements sont rencontrés. La valeur par défaut est `True` , mais peut avoir la valeur `False` pour appliquer un comportement plus strict. Pour plus d’informations, consultez le [Manuel ProGuard](https://www.guardsquare.com/products/proguard/manual/usage) .
+
+  Ajouté dans Xamarin. Android 10,4.
 
 - **AndroidResgenFile** &ndash; spécifie le nom du fichier de ressources à générer. Le modèle par défaut définit cette valeur sur `Resource.designer.cs`.
 
@@ -901,6 +911,14 @@ Notez que comme Android prend en charge plusieurs ABI (Application Binary Interf
 
 Avec la détection de chemin, le nom du répertoire parent de la bibliothèque native est utilisé pour spécifier l’ABI ciblée par la bibliothèque. Ainsi, si vous ajoutez `lib/armeabi-v7a/libfoo.so` à la build, l’ABI sera « détectée » en tant que `armeabi-v7a`.
 
+### <a name="androidresourceanalysisconfig"></a>AndroidResourceAnalysisConfig
+
+L’action de génération `AndroidResourceAnalysisConfig` marque un fichier comme un fichier de configuration de niveau de gravité pour l’outil de diagnostic Xamarin Android designer Layout. Actuellement utilisé uniquement dans l’éditeur de disposition et non pour les messages de génération.
+
+Pour plus d’informations, consultez la documentation sur l' [analyse des ressources Android](https://aka.ms/androidresourceanalysis) .
+
+Ajouté dans Xamarin. Android 10,2.
+
 #### <a name="item-attribute-name"></a>Nom d’attribut d’élément
 
 **Abi** &ndash; spécifie l’ABI de la bibliothèque native.
@@ -950,15 +968,7 @@ Les utilisateurs plus expérimentés souhaitent éventuellement avoir des ressou
 </ItemGroup>
 ```
 
-### <a name="androidresourceanalysisconfig"></a>AndroidResourceAnalysisConfig
-
-L’action de génération `AndroidResourceAnalysisConfig` marque un fichier comme un fichier de configuration de niveau de gravité pour l’outil de diagnostic Xamarin Android designer Layout. Actuellement utilisé uniquement dans l’éditeur de disposition et non pour les messages de génération.
-
-Pour plus d’informations, consultez la documentation sur l' [analyse des ressources Android](https://aka.ms/androidresourceanalysis) .
-
-Ajouté dans Xamarin. Android 10,2.
-
-### <a name="content"></a>Content
+### <a name="content"></a>Contenu
 
 L’action de génération `Content` normale n’est pas prise en charge (comme nous n’avons pas trouvé comment la prendre en charge sans une étape de première exécution éventuellement coûteuse en ressources).
 
