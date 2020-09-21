@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Formsfonctionnalités de l’appareil à deux écrans
+title: Xamarin.Forms fonctionnalités de l’appareil à deux écrans
 description: Ce guide explique comment utiliser la Xamarin.Forms classe DualScreenInfo pour optimiser votre expérience d’application pour les appareils à deux écrans tels que surface Duo et surface Neo.
 ms.prod: xamarin
 ms.assetid: dd5eb074-f4cb-4ab4-b47d-76f862ac7cfa
@@ -10,16 +10,14 @@ ms.date: 05/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e1f0ee6b3c509fcdb15653789866a9ec2dc88791
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 8081eb604da0c9d2de07ee17abe05030efdc1005
+ms.sourcegitcommit: 69bd0fdc698c9b0c0d73217776d7084f32ae88ae
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918214"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90832292"
 ---
-# <a name="no-locxamarinforms-dualscreeninfo-helper-class"></a>Xamarin.FormsClasse d’assistance DualScreenInfo
-
-![API de la version préliminaire](~/media/shared/preview.png)
+# <a name="no-locxamarinforms-dualscreeninfo-helper-class"></a>Xamarin.Forms Classe d’assistance DualScreenInfo
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
 
@@ -35,7 +33,7 @@ Suivez ces instructions pour créer une disposition à deux écrans dans votre a
 
 ## <a name="properties"></a>Propriétés
 
-- `SpanningBounds` retourne, dans le cas d’une répartition sur deux écrans, deux rectangles indiquant les limites de chaque zone visible. Dans le cas contraire, un tableau vide est retourné.
+- `SpanningBounds` retourne, dans le cas d’une répartition sur deux écrans, deux rectangles indiquant les limites de chaque zone visible. Si la fenêtre n’est pas répartie sur deux écrans, un tableau vide est retourné.
 - `HingeBounds` indique la position de la charnière sur l’écran.
 - `IsLandscape` : indique si l’appareil est en mode paysage. Ceci est utile, car les API d’orientation natives ne signalent pas correctement l’orientation quand l’application est étendue.
 - `SpanMode` : indique si la disposition est en mode Tall, Wide ou SinglePane.

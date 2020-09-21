@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Formsdisposition sur deux écrans
+title: Xamarin.Forms disposition sur deux écrans
 description: Ce guide explique comment utiliser Xamarin.Forms TwoPaneView pour optimiser votre expérience d’application pour les appareils à deux écrans tels que surface Duo et surface Neo.
 ms.prod: xamarin
 ms.assetid: 17ee8afa-5e7c-4a4f-a9b6-2aca03f30fe3
@@ -10,16 +10,14 @@ ms.date: 02/08/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 734dea456af56f4103691e0368ae72202bce9556
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: d4582a8c27f1fe63a60f48830113f3a5514c56f9
+ms.sourcegitcommit: 69bd0fdc698c9b0c0d73217776d7084f32ae88ae
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918235"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90832253"
 ---
-# <a name="no-locxamarinforms-twopaneview-layout"></a>Xamarin.FormsDisposition TwoPaneView
-
-![API de la version préliminaire](~/media/shared/preview.png)
+# <a name="no-locxamarinforms-twopaneview-layout"></a>Xamarin.Forms Disposition TwoPaneView
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
 
@@ -58,8 +56,8 @@ Suivez ces instructions pour créer une disposition à deux écrans dans votre a
 Un seul de ces modes peut être actif :
 
 - `SinglePane` : un seul volet est actuellement visible.
-- `Wide` : les deux volets sont disposés horizontalement. Un volet est à gauche et l’autre à droite. Avec les deux écrans actifs, c’est le mode quand l’appareil est en mode portrait.
-- `Tall` : les deux volets sont disposés verticalement. Un volet est en haut et l’autre en bas. Avec les deux écrans actifs, c’est le mode quand l’appareil est en mode paysage.
+- `Wide` : les deux volets sont disposés horizontalement. Un volet est à gauche et l’autre est à droite. Avec les deux écrans actifs, c’est le mode quand l’appareil est en mode portrait.
+- `Tall` : les deux volets sont disposés verticalement. Un volet est en haut et l’autre est en bas. Avec les deux écrans actifs, c’est le mode quand l’appareil est en mode paysage.
 
 ## <a name="control-twopaneview-when-its-only-on-one-screen"></a>Contrôler TwoPaneView sur un seul écran
 
@@ -77,8 +75,8 @@ Les propriétés suivantes s’appliquent quand `TwoPaneView` occupe un seul éc
 
 Les propriétés suivantes s’appliquent quand `TwoPaneView` occupe un seul écran ou deux écrans :
 
-- `TallModeConfiguration`indique, en mode haut, la disposition supérieure/inférieure ou si vous souhaitez qu’un seul volet soit visible comme défini par TwoPaneViewPriority.
-- `WideModeConfiguration`indique, en mode étendu, la disposition gauche/droite ou si vous souhaitez qu’un seul volet soit visible comme défini par TwoPaneViewPriority.
+- `TallModeConfiguration` indique, en mode haut, la disposition supérieure/inférieure ou si vous souhaitez qu’un seul volet soit visible comme défini par TwoPaneViewPriority.
+- `WideModeConfiguration` indique, en mode étendu, la disposition gauche/droite ou si vous souhaitez qu’un seul volet soit visible comme défini par TwoPaneViewPriority.
 - `PanePriority` détermine s’il faut montrer Pane1 ou Pane2 en mode SinglePane.
 
 ## <a name="related-links"></a>Liens connexes

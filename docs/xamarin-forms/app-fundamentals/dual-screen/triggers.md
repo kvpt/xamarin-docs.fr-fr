@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Formsdéclencheurs à deux écrans
+title: Xamarin.Forms déclencheurs à deux écrans
 description: Cet article explique comment utiliser Xamarin.Forms les déclencheurs à deux écrans pour répondre aux modifications de l’interface utilisateur avec XAML.
 ms.prod: xamarin
 ms.assetid: 2181715D-3995-4E71-9A21-6B892F0B3B59
@@ -10,21 +10,19 @@ ms.date: 02/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 16a76fb06c0ee54e90fa1bf0d44e419be40ee254
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 59ed6628479048beaaa5a379d495a14079181149
+ms.sourcegitcommit: 69bd0fdc698c9b0c0d73217776d7084f32ae88ae
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918292"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90832266"
 ---
-# <a name="no-locxamarinforms-dual-screen-triggers"></a>Xamarin.Formsdéclencheurs à deux écrans
-
-![API de la version préliminaire](~/media/shared/preview.png)
+# <a name="no-locxamarinforms-dual-screen-triggers"></a>Xamarin.Forms déclencheurs à deux écrans
 
 L' [`Xamarin.Forms.DualScreen`](xref:Xamarin.Forms.DualScreen) espace de noms comprend deux déclencheurs d’État :
 
-- [`SpanModeStateTrigger`](xref:Xamarin.Forms.DualScreen.SpanModeStateTrigger)déclenche une [`VisualState`](xref:Xamarin.Forms.VisualState) modification lorsque le mode d’affichage de la disposition attachée change.
-- `WindowSpanModeStateTrigger`déclenche une [`VisualState`](xref:Xamarin.Forms.VisualState) modification lorsque le mode d’affichage de la fenêtre change.
+- [`SpanModeStateTrigger`](xref:Xamarin.Forms.DualScreen.SpanModeStateTrigger) déclenche une [`VisualState`](xref:Xamarin.Forms.VisualState) modification lorsque le mode d’affichage de la disposition attachée change.
+- `WindowSpanModeStateTrigger` déclenche une [`VisualState`](xref:Xamarin.Forms.VisualState) modification lorsque le mode d’affichage de la fenêtre change.
 
 Pour plus d’informations sur les déclencheurs d’État, consultez [déclencheurs d’État](~/xamarin-forms/app-fundamentals/triggers.md#state-triggers).
 
@@ -124,5 +122,5 @@ Dans cet exemple, les États visuels sont définis sur un [`Grid`](xref:Xamarin.
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Xamarin.FormsDéclencheurs](~/xamarin-forms/app-fundamentals/triggers.md)
-- [Xamarin.FormsGestionnaire d’état visuel](~/xamarin-forms/user-interface/visual-state-manager.md)
+- [Xamarin.Forms Déclencheurs](~/xamarin-forms/app-fundamentals/triggers.md)
+- [Xamarin.Forms Gestionnaire d’état visuel](~/xamarin-forms/user-interface/visual-state-manager.md)

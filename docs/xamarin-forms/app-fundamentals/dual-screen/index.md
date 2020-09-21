@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsDouble écran
+title: Xamarin.Forms Double écran
 description: Ce guide explique comment créer Xamarin.Forms des applications pour les appareils à deux écrans.
 ms.prod: xamarin
 ms.assetid: f9906e83-f8ae-48f9-997b-e1540b96ee8e
@@ -10,18 +10,16 @@ ms.date: 02/08/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2b0290daedab4a6e825d2bab4bea9889b4966645
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: a414127c01d26db6bf7b462d6fc5a7f9ae44dddc
+ms.sourcegitcommit: 69bd0fdc698c9b0c0d73217776d7084f32ae88ae
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918303"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90832278"
 ---
-# <a name="no-locxamarinforms-dual-screen"></a>Xamarin.Formsdouble écran
+# <a name="no-locxamarinforms-dual-screen"></a>Xamarin.Forms double écran
 
-![API de la version préliminaire](~/media/shared/preview.png)
-
-Les périphériques à deux écrans comme Microsoft surface Duo facilitent les nouvelles possibilités d’expérience utilisateur pour vos applications. Xamarin.Formscomprend `TwoPaneView` les `DualScreenInfo` classes et pour vous permettre de développer des applications pour les appareils à deux écrans.
+Les périphériques à deux écrans comme Microsoft surface Duo facilitent les nouvelles possibilités d’expérience utilisateur pour vos applications. Xamarin.Forms comprend `TwoPaneView` les `DualScreenInfo` classes et pour vous permettre de développer des applications pour les appareils à deux écrans.
 
 ## <a name="get-started"></a>Bien démarrer
 
