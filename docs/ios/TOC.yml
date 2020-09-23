@@ -56,7 +56,7 @@
           items:
             - name: Xamarin pour les développeurs Objective-C
               href: get-started/objective-c-developers/index.md
-            - name: 'Abécédaire du langage C# pour les développeurs Objective-C'
+            - name: Abécédaire du langage C# pour les développeurs Objective-C
               href: get-started/objective-c-developers/primer.md
     - name: Notions de base des applications
       items:
@@ -244,6 +244,12 @@
       items:
         - name: Vue d'ensemble
           href: platform/index.md
+        - name: "iOS\_14"
+          items:
+            - name: "Introduction à iOS\_14"
+              href: platform/ios14/index.md
+            - name: Bien démarrer
+              href: platform/ios14/get-started.md
         - name: iOS 13
           items:
             - name: "Présentation d’iOS\_13"
