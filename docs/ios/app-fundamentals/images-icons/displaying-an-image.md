@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 04/24/2018
-ms.openlocfilehash: f9de09065d7c26c9ae98ef664be63599becb4da5
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: a7bc2b87e267e78d841217b7860e5d54c046b788
+ms.sourcegitcommit: d7c09c6cc2f479b8f14910ad2d20ec76800cd9c7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997447"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91248137"
 ---
 # <a name="displaying-an-image-in-xamarinios"></a>Affichage d’une image dans Xamarin. iOS
 
@@ -100,9 +100,9 @@ MonkeyImage.Image = UIImage.FromBundle ("PurpleMonkey");
 
 Par exemple, si le développeur inclut un `MonkeyIcon.pdf` fichier comme vecteur d’un catalogue de composants avec une résolution de 150 px x 150 px, les ressources bitmap suivantes sont incluses dans l’ensemble d’applications final lors de la compilation :
 
-- `MonkeyIcon@1x.png`-150 px x 150 px résolution.
-- `MonkeyIcon@2x.png`-300 pixels x 300 pixels résolution.
-- `MonkeyIcon@3x.png`-450px x 450px résolution.
+- `MonkeyIcon@1x.png` -150 px x 150 px résolution.
+- `MonkeyIcon@2x.png` -300 pixels x 300 pixels résolution.
+- `MonkeyIcon@3x.png` -450px x 450px résolution.
 
 Les éléments suivants doivent être pris en considération lors de l’utilisation d’images vectorielles PDF dans des catalogues de ressources :
 
@@ -159,9 +159,9 @@ if (MyIcon.Image != null) {
 
 Il existe trois paramètres possibles pour `UIImage.RenderMode` via l' `UIImageRenderingMode` énumération :
 
-- `AlwaysOriginal`: Force le rendu de l’image en tant que fichier image source d’origine sans aucune modification.
-- `AlwaysTemplate`: Force le rendu de l’image en tant qu’image de modèle en coloriant les pixels avec la `Tint` couleur spécifiée.
-- `Automatic`: Effectue le rendu de l’image en tant que modèle ou original en fonction de l’environnement dans lequel elle est utilisée. Par exemple, si l’image est utilisée dans un `UIToolBar` , `UINavigationBar` `UITabBar` ou si `UISegmentControl` elle est traitée comme un modèle.
+- `AlwaysOriginal` : Force le rendu de l’image en tant que fichier image source d’origine sans aucune modification.
+- `AlwaysTemplate` : Force le rendu de l’image en tant qu’image de modèle en coloriant les pixels avec la `Tint` couleur spécifiée.
+- `Automatic` : Effectue le rendu de l’image en tant que modèle ou original en fonction de l’environnement dans lequel elle est utilisée. Par exemple, si l’image est utilisée dans un `UIToolBar` , `UINavigationBar` `UITabBar` ou si `UISegmentControl` elle est traitée comme un modèle.
 
 ## <a name="adding-new-assets-collections"></a>Ajout de nouveaux regroupements de ressources
 
@@ -215,7 +215,7 @@ TabBarItem.Image = UIImage.FromBundle ("MyImage.jpg");
 
 Pour plus d’informations sur les icônes et les images, consultez la documentation Apple sur l' [icône personnalisée et les instructions de création d’image](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html).
 
-## <a name="displaying-an-image-in-a-storyboards"></a>Affichage d’une image dans des storyboards
+## <a name="displaying-an-image-in-a-storyboard"></a>Affichage d’une image dans un Storyboard
 
 Une fois qu’une image a été ajoutée à un projet Xamarin. iOS à l’aide de catalogues de ressources, elle peut être facilement affichée sur une table de montage séquentiel à l’aide d’un `UIImageView` dans le concepteur iOS. Par exemple, si la ressource d’image suivante a été ajoutée :
 

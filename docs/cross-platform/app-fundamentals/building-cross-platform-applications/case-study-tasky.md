@@ -6,12 +6,12 @@ ms.assetid: B581B2D0-9890-C383-C654-0B0E12DAD5A6
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 87ba471dad102059788695f3fe50633bc1a3de0c
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 96f5dd638de17569d105e95c44a539e652b35986
+ms.sourcegitcommit: d7c09c6cc2f479b8f14910ad2d20ec76800cd9c7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86930180"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91248124"
 ---
 # <a name="cross-platform-app-case-study-tasky"></a>Étude de cas d’application multiplateforme : Tasky
 
@@ -115,7 +115,7 @@ Remarque : vous verrez que vos projets référencent les bibliothèques d’inf
 
 La couche de données contient le code qui effectue le stockage physique des données, qu’il s’agisse d’une base de données, de fichiers plats ou d’un autre mécanisme. La couche de données Tasky se compose de deux parties : la bibliothèque SQLite-NET et le code personnalisé ajouté pour l’associer.
 
-Tasky s’appuie sur le package NuGet SQLite-net (publié par Frank Kreuger) pour incorporer le code SQLite-NET qui fournit une interface de base de données de mappage relationnel objet (ORM). La `TaskItemDatabase` classe hérite de `SQLiteConnection` et ajoute les méthodes de création, de lecture, de mise à jour, de suppression (CRUD) requises pour lire et écrire des données dans sqlite. Il s’agit d’une implémentation simple et standard de méthodes CRUD génériques qui pourraient être réutilisées dans d’autres projets.
+Tasky s’appuie sur le package NuGet SQLite-net (publié par Frank Krueger) pour incorporer le code SQLite-NET qui fournit une interface de base de données de mappage relationnel objet (ORM). La `TaskItemDatabase` classe hérite de `SQLiteConnection` et ajoute les méthodes de création, de lecture, de mise à jour, de suppression (CRUD) requises pour lire et écrire des données dans sqlite. Il s’agit d’une implémentation simple et standard de méthodes CRUD génériques qui pourraient être réutilisées dans d’autres projets.
 
 `TaskItemDatabase`Est un singleton, garantissant que tous les accès sont exécutés sur la même instance. Un verrou est utilisé pour empêcher l’accès simultané à partir de plusieurs threads.
 
@@ -233,7 +233,7 @@ Dans Tasky, le modèle est la `TaskItem` classe et `TaskItemManager` implémente
 
 #### <a name="faade"></a>Facade
 
- `TaskItemManager`encapsule le `DAL.TaskItemRepository` pour fournir les méthodes d’extraction, d’enregistrement et de suppression qui seront référencées par l’application et les couches d’interface utilisateur.
+ `TaskItemManager` encapsule le `DAL.TaskItemRepository` pour fournir les méthodes d’extraction, d’enregistrement et de suppression qui seront référencées par l’application et les couches d’interface utilisateur.
 
 Les règles d’entreprise et la logique seraient placées ici si nécessaire (par exemple, toutes les règles de validation qui doivent être satisfaites avant l’enregistrement d’un objet).
 
@@ -280,7 +280,7 @@ La couche application et la couche d’interface utilisateur sont implémentées
 
 La couche application contient des classes spécifiques à la plateforme requises pour « lier » les objets exposés par la bibliothèque de classes portable à l’interface utilisateur. L’application spécifique à iOS a deux classes pour faciliter l’affichage des tâches :
 
-- **EditingSource** : cette classe permet de lier des listes de tâches à l’interface utilisateur. Étant donné que `MonoTouch.Dialog` a été utilisé pour la liste des tâches, nous devons implémenter cette application d’assistance pour activer la fonctionnalité de balayage à la suppression dans le `UITableView` . L’opération de balayage à la suppression est courante sur iOS, mais pas sur Android ou Windows Phone. par conséquent, le projet spécifique iOS est le seul qui l’implémente.
+- **EditingSource** : cette classe permet de lier des listes de tâches à l’interface utilisateur. Étant donné que `MonoTouch.Dialog` a été utilisé pour la liste des tâches, nous devons implémenter cette application d’assistance pour activer la fonctionnalité de balayage à la suppression dans le  `UITableView` . L’opération de balayage à la suppression est courante sur iOS, mais pas sur Android ou Windows Phone. par conséquent, le projet spécifique iOS est le seul qui l’implémente.
 - **TaskDialog** : cette classe est utilisée pour lier une tâche unique à l’interface utilisateur. Elle utilise l' `MonoTouch.Dialog` API de réflexion pour « encapsuler » l' `TaskItem` objet avec une classe qui contient les attributs corrects pour permettre au format correct de l’écran de saisie.
 
 La `TaskDialog` classe utilise `MonoTouch.Dialog` des attributs pour créer un écran basé sur les propriétés d’une classe. La classe se présente comme suit :
@@ -318,7 +318,7 @@ Notez que les `OnTap` attributs requièrent un nom de méthode : ces méthodes 
 
 La couche interface utilisateur est constituée des classes suivantes :
 
-1. **AppDelegate** – contient des appels à l’API Appearance pour appliquer un style aux polices et couleurs utilisées dans l’application. Tasky est une application simple, de sorte qu’aucune autre tâche d’initialisation ne s’exécute dans `FinishedLaunching` .
+1. **AppDelegate** – contient des appels à l’API Appearance pour appliquer un style aux polices et couleurs utilisées dans l’application. Tasky est une application simple, de sorte qu’aucune autre tâche d’initialisation ne s’exécute dans  `FinishedLaunching` .
 2. **Écrans** : sous-classes de `UIViewController` qui définissent chaque écran et son comportement. Les écrans lient l’interface utilisateur avec les classes de couche d’application et l’API commune ( `TaskItemManager` ). Dans cet exemple, les écrans sont créés dans le code, mais ils peuvent avoir été conçus à l’aide de l’Interface Builder de Xcode ou du concepteur de storyboards.
 3. **Images** : les éléments visuels constituent une partie importante de chaque application. Tasky contient des images d’écran de démarrage et d’icône qui, pour iOS, doivent être fournies dans une résolution normale et retine.
 
@@ -332,7 +332,7 @@ L’écran d’accueil est un `MonoTouch.Dialog` écran qui affiche la liste des
 
 Les deux principales méthodes relatives à l’affichage et à l’interaction avec la liste des tâches sont les suivantes :
 
-1. **PopulateTable** : utilise la méthode de la couche métier `TaskManager.GetTasks` pour récupérer une collection d' `TaskItem` objets à afficher.
+1. **PopulateTable** : utilise la méthode de la couche métier  `TaskManager.GetTasks` pour récupérer une collection d'  `TaskItem` objets à afficher.
 2. **Sélectionné** : lorsqu’une ligne est touchée, affiche la tâche dans un nouvel écran.
 
  <a name="Task_Details_Screen"></a>
@@ -349,9 +349,9 @@ Cette capture d’écran montre un écran vide qui montre l' `Entry` attribut d�
 
 La fonctionnalité de l’écran détails de la **tâche** (par exemple, l’enregistrement ou la suppression d’une tâche) doit être implémentée dans la `HomeScreen` classe, car il s’agit de l’emplacement où `MonoTouch.Dialog.BindingContext` est créé. Les `HomeScreen` méthodes suivantes prennent en charge l’écran détails de la tâche :
 
-1. **ShowTaskDetails** : crée un `MonoTouch.Dialog.BindingContext` pour afficher un écran. Il crée l’écran d’entrée à l’aide de la réflexion pour récupérer les noms et les types de propriété de la `TaskDialog` classe. Des informations supplémentaires, telles que le texte de filigrane pour les zones de saisie, sont implémentées avec des attributs sur les propriétés.
-2. **SaveTask** : cette méthode est référencée dans la `TaskDialog` classe via un `OnTap` attribut. Elle est appelée lorsque l’utilisateur clique sur l' **enregistrement** et utilise un `MonoTouch.Dialog.BindingContext` pour récupérer les données entrées par l’utilisateur avant d’enregistrer les modifications à l’aide de `TaskItemManager` .
-3. **DeleteTask** : cette méthode est référencée dans la `TaskDialog` classe via un `OnTap` attribut. Elle utilise `TaskItemManager` pour supprimer les données à l’aide de la clé primaire (propriété ID).
+1. **ShowTaskDetails** : crée un  `MonoTouch.Dialog.BindingContext` pour afficher un écran. Il crée l’écran d’entrée à l’aide de la réflexion pour récupérer les noms et les types de propriété de la  `TaskDialog` classe. Des informations supplémentaires, telles que le texte de filigrane pour les zones de saisie, sont implémentées avec des attributs sur les propriétés.
+2. **SaveTask** : cette méthode est référencée dans la  `TaskDialog` classe via un  `OnTap` attribut. Elle est appelée lorsque l’utilisateur clique sur l'  **enregistrement** et utilise un  `MonoTouch.Dialog.BindingContext` pour récupérer les données entrées par l’utilisateur avant d’enregistrer les modifications à l’aide de  `TaskItemManager` .
+3. **DeleteTask** : cette méthode est référencée dans la  `TaskDialog` classe via un  `OnTap` attribut. Elle utilise  `TaskItemManager` pour supprimer les données à l’aide de la clé primaire (propriété ID).
 
  <a name="Android_App"></a>
 
