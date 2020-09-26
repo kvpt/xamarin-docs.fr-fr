@@ -18,11 +18,11 @@
               items:
                 - name: Accélération matérielle (Hyper-V et HAXM)
                   href: get-started/installation/android-emulator/hardware-acceleration.md
-                - name: Device Manager
+                - name: Gestionnaire de périphériques
                   href: get-started/installation/android-emulator/device-manager.md
                 - name: Propriétés de l’appareil
                   href: get-started/installation/android-emulator/device-properties.md
-                - name: Résolution des problèmes
+                - name: Dépannage
                   href: get-started/installation/android-emulator/troubleshooting.md
             - name: Configuration des appareils Android
               href: get-started/installation/set-up-device-for-development.md
@@ -31,16 +31,16 @@
         - name: 'Hello, Android'
           href: get-started/hello-android/index.md
           items:
-            - name: "Partie 1\_: Démarrage rapide"
+            - name: "Première partie\_: Guide de démarrage rapide"
               href: get-started/hello-android/hello-android-quickstart.md
-            - name: "Partie 2\_: Immersion"
+            - name: "Seconde partie\_: En profondeur"
               href: get-started/hello-android/hello-android-deepdive.md
         - name: 'Hello, Android multi-écran'
           href: get-started/hello-android-multiscreen/index.md
           items:
-            - name: "Partie 1\_: Démarrage rapide"
+            - name: "Première partie\_: Guide de démarrage rapide"
               href: get-started/hello-android-multiscreen/hello-android-multiscreen-quickstart.md
-            - name: "Partie 2\_: Immersion"
+            - name: "Seconde partie\_: En profondeur"
               href: get-started/hello-android-multiscreen/hello-android-multiscreen-deepdive.md
         - name: Xamarin pour les développeurs Java
           href: get-started/java-developers.md
@@ -145,7 +145,7 @@
               href: user-interface/android-designer/diagnostics.md
             - name: Analyseurs de diagnostic Android Designer
               href: user-interface/android-designer/diagnostic-analyzers.md
-        - name: Thème matériau
+        - name: Material Theme
           href: user-interface/material-theme.md
         - name: Profil utilisateur
           href: user-interface/user-profile.md
@@ -169,7 +169,7 @@
                   href: user-interface/layouts/recycler-view/recyclerview-example.md
                 - name: Extension de l’exemple
                   href: user-interface/layouts/recycler-view/extending-the-example.md
-            - name: Affichage de liste
+            - name: ListView
               href: user-interface/layouts/list-view/index.md
               items:
                 - name: Composants et fonctionnement de ListView
@@ -207,7 +207,7 @@
                   href: user-interface/controls/buttons/radio-button.md
                 - name: Bouton bascule
                   href: user-interface/controls/buttons/toggle-button.md
-                - name: Case à cocher
+                - name: CheckBox
                   href: user-interface/controls/buttons/check-box.md
                 - name: Bouton personnalisé
                   href: user-interface/controls/buttons/custom-button.md
@@ -234,11 +234,11 @@
               href: user-interface/controls/ratingbar.md
             - name: Spinner
               href: user-interface/controls/spinner.md
-            - name: Basculer
+            - name: Commutateur
               href: user-interface/controls/switch.md
             - name: TextureView
               href: user-interface/controls/texture-view.md
-            - name: ToolBar
+            - name: Barre d’outils
               href: user-interface/controls/tool-bar/index.md
               items:
                 - name: Remplacement de la barre d’action
@@ -271,7 +271,7 @@
         - name: Authentification par empreinte digitale
           href: platform/fingerprint-authentication/index.md
           items:
-            - name: Prise en main
+            - name: Mise en route
               href: platform/fingerprint-authentication/get-started.md
             - name: Analyse des empreintes digitales
               href: platform/fingerprint-authentication/scanning.md
@@ -339,9 +339,9 @@
         - name: Cartes et emplacement
           href: platform/maps-and-location/index.md
           items:
-            - name: Emplacement
+            - name: Localisation
               href: platform/maps-and-location/location.md
-            - name: Maps
+            - name: Cartes
               href: platform/maps-and-location/maps/index.md
               items:
                 - name: Application Cartes
@@ -359,7 +359,7 @@
               href: platform/java-integration/android-callable-wrappers.md
             - name: Utilisation de JNI
               href: platform/java-integration/working-with-jni.md
-            - name: 'Portage de Java en C#'
+            - name: Portage de Java en C#
               href: platform/java-integration/porting-java-to-csharp.md
         - name: Liaison d’une bibliothèque Java
           href: platform/binding-java-library/index.md
@@ -391,7 +391,7 @@
     - name: Xamarin.Essentials
       href: ~/essentials/index.md?context=xamarin/android
       items:
-        - name: Prise en main
+        - name: Mise en route
           href: ~/essentials/get-started.md?context=xamarin/android
         - name: Prise en charge des plateformes et des fonctionnalités
           href: ~/essentials/platform-feature-support.md?context=xamarin/android
@@ -504,11 +504,11 @@
         - name: Messagerie Google
           href: data-cloud/google-messaging/index.md
           items:
-            - name: Messagerie cloud Firebase
+            - name: Firebase Cloud Messaging
               href: data-cloud/google-messaging/firebase-cloud-messaging.md
             - name: Procédure pas à pas sur les notifications FCM
               href: data-cloud/google-messaging/remote-notifications-with-fcm.md
-            - name: Google Cloud Messaging
+            - name: "Google\_Cloud\_Messaging"
               href: data-cloud/google-messaging/google-cloud-messaging.md
             - name: Procédure pas à pas sur les notifications GCM
               href: data-cloud/google-messaging/remote-notifications-with-gcm.md
@@ -526,6 +526,12 @@
           items:
             - name: Processus de génération
               href: deploy-test/building-apps/build-process.md
+            - name: Éléments de génération
+              href: deploy-test/building-apps/build-items.md
+            - name: Propriétés de build
+              href: deploy-test/building-apps/build-properties.md
+            - name: Cibles de génération
+              href: deploy-test/building-apps/build-targets.md
             - name: Création de fichiers APK propres à une interface ABI
               href: deploy-test/building-apps/abi-specific-apks.md
         - name: Émulateur en ligne de commande
@@ -592,16 +598,16 @@
           href: ~/cross-platform/internals/available-assemblies.md?context=xamarin/android
         - name: Conception d’API
           href: internals/api-design.md
-        - name: Garbage Collection
+        - name: Garbage collection
           href: internals/garbage-collection.md
-        - name: Limitations
+        - name: Limites
           href: internals/limitations.md
-    - name: Résolution des problèmes
+    - name: Dépannage
       href: troubleshooting/index.md
       items:
         - name: Conseils de dépannage
           href: troubleshooting/troubleshooting.md
-        - name: Questions fréquemment posées
+        - name: Forum Aux Questions (FAQ)
           href: troubleshooting/questions/index.md
           items:
             - name: "Quels packages Android SDK installer\_?"
@@ -674,7 +680,7 @@
               href: wear/deploy-test/debug-on-emulator.md
             - name: Déboguer sur un appareil Wear
               href: wear/deploy-test/debug-on-device.md
-            - name: Packages
+            - name: Packaging
               href: wear/deploy-test/packaging.md
     - name: Notes de publication
       href: 'https://docs.microsoft.com/xamarin/android/release-notes/'
