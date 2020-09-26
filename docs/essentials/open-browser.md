@@ -1,28 +1,59 @@
 ---
-title: Xamarin.EssentialsOuvrir le navigateur
+title: Xamarin.Essentials Ouvrir le navigateur
 description: La classe browser dans Xamarin.Essentials permet à une application d’ouvrir un lien Web dans le navigateur préféré du système optimisé ou dans le navigateur externe.
 ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 04/02/2019
+ms.date: 09/24/2020
 ms.custom: video
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 997c6b66b5dba43eb440130f3f58d31a5a274815
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 0c38949e9c8c0a957a7afa37206683588ffbb4cf
+ms.sourcegitcommit: 3a15d9b29d65139b18dcf0871fe00cffb2a56357
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84802248"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91353406"
 ---
-# <a name="xamarinessentials-browser"></a>Xamarin.Essentials: Navigateur
+# <a name="no-locxamarinessentials-browser"></a>Xamarin.Essentials: Navigateur
 
 La classe **Navigateur** permet à une application d’ouvrir un lien web dans le navigateur préféré du système optimisé ou le navigateur externe.
 
 ## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
+
+Pour accéder à la fonctionnalité du **navigateur** , la configuration spécifique à la plateforme suivante est requise.
+
+# <a name="android"></a>[Android](#tab/android)
+
+Si la version d’Android cible de votre projet est définie sur **Android 11 (API R 30),** vous devez mettre à jour votre manifeste Android avec les requêtes utilisées avec les nouvelles [exigences de visibilité du package](https://developer.android.com/preview/privacy/package-visibility).
+
+Ouvrez le fichier **AndroidManifest.xml** sous le dossier **Propriétés**, puis ajoutez ce qui suit dans le nœud **manifeste** :
+
+```xml
+<queries>
+  <intent>
+    <action android:name="android.intent.action.VIEW" />
+    <data android:scheme="http"/>
+  </intent>
+  <intent>
+    <action android:name="android.intent.action.VIEW" />
+    <data android:scheme="https"/>
+  </intent>
+</queries>
+```
+
+# <a name="ios"></a>[iOS](#tab/ios)
+
+Aucune configuration supplémentaire n’est requise.
+
+# <a name="uwp"></a>[UWP](#tab/uwp)
+
+Aucune différence entre les plateformes.
+
+-----
 
 ## <a name="using-browser"></a>Utilisation de Navigateur
 

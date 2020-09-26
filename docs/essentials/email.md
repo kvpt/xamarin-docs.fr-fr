@@ -5,20 +5,47 @@ ms.assetid: 5FBB6FF0-0E7B-4C29-8F06-91642AF12629
 author: jamesmontemagno
 ms.custom: video
 ms.author: jamont
-ms.date: 08/20/2019
+ms.date: 09/24/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: eba2b6decc74c63e6b2790287842e6cc9b237bd2
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: ddeba8e0d2d0f0894f7e43c5cf2501c942f7720a
+ms.sourcegitcommit: 3a15d9b29d65139b18dcf0871fe00cffb2a56357
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84802371"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91353393"
 ---
-# <a name="xamarinessentials-email"></a>Xamarin.Essentials: E-mail
+# <a name="no-locxamarinessentials-email"></a>Xamarin.Essentials: E-mail
 
 La classe **Email** permet à une application d’ouvrir l’application de messagerie par défaut en utilisant des informations spécifiques, notamment l’objet, le corps et les destinataires (À, CC, CCI).
+
+Pour accéder à la fonctionnalité de **messagerie** , la configuration spécifique à la plateforme suivante est requise.
+
+# <a name="android"></a>[Android](#tab/android)
+
+Si la version d’Android cible de votre projet est définie sur **Android 11 (API R 30),** vous devez mettre à jour votre manifeste Android avec les requêtes utilisées avec les nouvelles [exigences de visibilité du package](https://developer.android.com/preview/privacy/package-visibility).
+
+Ouvrez le fichier **AndroidManifest.xml** sous le dossier **Propriétés**, puis ajoutez ce qui suit dans le nœud **manifeste** :
+
+```xml
+<queries>
+  <intent>
+    <action android:name="android.intent.action.SENDTO" />
+    <data android:scheme="mailto" />
+  </intent>
+</queries>
+```
+
+# <a name="ios"></a>[iOS](#tab/ios)
+
+Aucune configuration supplémentaire n’est requise.
+
+# <a name="uwp"></a>[UWP](#tab/uwp)
+
+Aucune différence entre les plateformes.
+
+-----
 
 ## <a name="get-started"></a>Bien démarrer
 
@@ -68,7 +95,7 @@ public class EmailTest
 
 ## <a name="file-attachments"></a>Pièces jointes
 
-Cette fonctionnalité permet à une application d’envoyer par courrier électronique des fichiers à des clients de messagerie sur l’appareil. Xamarin.Essentialsdétecte automatiquement le type de fichier (MIME) et demande le fichier à ajouter en tant que pièce jointe. Chaque client de messagerie est différent et peut uniquement prendre en charge des extensions de fichier spécifiques, ou rien du tout.
+Cette fonctionnalité permet à une application d’envoyer par courrier électronique des fichiers à des clients de messagerie sur l’appareil. Xamarin.Essentials détecte automatiquement le type de fichier (MIME) et demande le fichier à ajouter en tant que pièce jointe. Chaque client de messagerie est différent et peut uniquement prendre en charge des extensions de fichier spécifiques, ou rien du tout.
 
 Voici un exemple d’écriture de texte sur le disque et d’ajout en tant que pièce jointe à un e-mail :
 
