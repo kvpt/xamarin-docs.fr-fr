@@ -8,12 +8,12 @@ ms.date: 09/22/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 129501b5b622901d4347daf60d3cee6579bb115a
-ms.sourcegitcommit: 744f977b0595f489c592e29c8a3ba548fde02b6f
+ms.openlocfilehash: b1bf597874dc22a95ca9a3db239d9c7d2dd5658a
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91414764"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436730"
 ---
 # <a name="no-locxamarinessentials-haptic-feedback"></a>Xamarin.Essentials: Commentaires haptique
 
@@ -21,11 +21,11 @@ La classe **HapticFeedback** vous permet de contrôler les commentaires haptique
 
 ![API de la version préliminaire](~/media/shared/preview.png)
 
-## <a name="get-started"></a>Bien démarrer
+## <a name="get-started"></a>Prise en main
 
 [!include[](~/essentials/includes/get-started.md)]
 
-Pour accéder à la fonctionnalité de **vibration**, la configuration suivante spécifique à la plateforme est obligatoire.
+Pour accéder à la fonctionnalité **HapticFeedback** , la configuration spécifique à la plateforme suivante est requise.
 
 # <a name="android"></a>[Android](#tab/android)
 

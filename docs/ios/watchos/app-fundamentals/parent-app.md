@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 49f2bdf63c286464073308cd1f17239692aa2395
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 002c57a1549201018cb2068f000a038f686eb2c0
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84567331"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436742"
 ---
 # <a name="working-with-the-watchos-parent-application-in-xamarin"></a>Utilisation de l’application parente Watchos dans Xamarin
 
@@ -30,8 +30,8 @@ L’application parente est également parfois appelée « application de conte
 
 Ces deux exemples montrent comment utiliser `WCSession` pour exécuter du code et envoyer des messages entre une application espion et l’iPhone couplé :
 
-- [Surveiller la connectivité](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchconnectivity/)
-- [SimpleWatchConnectivity](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-simplewatchconnectivity/) 
+- [Surveiller la connectivité](/samples/xamarin/ios-samples/watchos-watchconnectivity/)
+- [SimpleWatchConnectivity](/samples/xamarin/ios-samples/watchos-simplewatchconnectivity/) 
 
 ## <a name="shared-storage"></a>Stockage partagé
 
@@ -57,7 +57,7 @@ var count = shared.IntForKey ("count");
 
 <a name="files"></a>
 
-### <a name="files"></a>Fichiers
+### <a name="files"></a>Files
 
 L’extension d’application et de visionneuse iOS peut également partager des fichiers à l’aide d’un chemin d’accès de fichier commun.
 
@@ -74,7 +74,7 @@ Remarque : si le chemin d’accès est `null` ensuite, vérifiez la [configurat
 
 Pour plus d’informations, consultez la documentation sur les [fonctionnalités du groupe d’applications](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md) .
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Référence WKInterfaceController d’Apple](https://developer.apple.com/library/prerelease/ios/documentation/WatchKit/Reference/WKInterfaceController_class/index.html#//apple_ref/occ/clm/WKInterfaceController/openParentApplication:reply:)
 - [Partager des données avec votre application conteneur](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/ExtensionScenarios.html)

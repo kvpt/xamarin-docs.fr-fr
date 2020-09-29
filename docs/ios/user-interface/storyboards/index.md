@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: b61d851e793d3fb0ae5e97718b151dd87f37da61
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: b70a4693f356fdf83ca2f7fee9615855a5569712
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937044"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91437019"
 ---
 # <a name="introduction-to-storyboards-in-xamarinios"></a>Présentation des storyboards dans Xamarin. iOS
 
@@ -22,7 +22,7 @@ Avant que le format de fichier de Storyboard ait été introduit par Apple comme
 
 Une table de montage séquentiel peut être créée, ouverte et modifiée à l’aide du concepteur iOS Xamarin. Ce guide explique également comment utiliser le concepteur pour créer vos storyboards lors de l’utilisation de C# pour programmer la navigation.
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Configuration requise
 
 Les storyboards peuvent être utilisés avec Xcode, le concepteur iOS dans Visual Studio pour Mac et Visual Studio 2019 avec les charges de travail Xamarin installées.
 
@@ -66,10 +66,10 @@ Au niveau de la souris, un menu s’affiche pour vous permettre de choisir l’a
 
 Il existe différents types de transitions, chacun donnant le contrôle de la présentation d’un nouveau contrôleur d’affichage à l’utilisateur et de la façon dont il interagit avec d’autres contrôleurs d’affichage dans le Storyboard. Celles-ci sont expliquées ci-dessous. Il est également possible de sous-créer un objet segue pour implémenter une transition personnalisée :
 
-- **Show/Push** : un segue Push ajoute le contrôleur d’affichage à la pile de navigation. Il part du principe que le contrôleur d’affichage à l’origine du push fait partie du même contrôleur de navigation que le contrôleur d’affichage ajouté à la pile. Cela fait la même chose que `pushViewController` , et est généralement utilisé lorsqu’il existe une relation entre les données sur les écrans. L’utilisation de l’segue Push vous donne le luxe de disposer d’une barre de navigation avec un bouton précédent et un titre ajoutés à chaque vue de la pile, ce qui permet une navigation dans la hiérarchie d’affichage.
-- **Modal** : un segue modal crée une relation entre deux contrôleurs d’affichage de votre projet, avec l’option d’une transition animée affichée. Le contrôleur d’affichage enfant obscurcit complètement le contrôleur d’affichage parent lorsqu’il est mis en vue. Contrairement à un segue push, qui ajoute un bouton précédent pour nous ; Lorsque vous utilisez un segue modal `DismissViewController` , vous devez utiliser pour revenir au contrôleur d’affichage précédent.
+- **Show/Push** : un segue Push ajoute le contrôleur d’affichage à la pile de navigation. Il part du principe que le contrôleur d’affichage à l’origine du push fait partie du même contrôleur de navigation que le contrôleur d’affichage ajouté à la pile. Cela fait la même chose que  `pushViewController` , et est généralement utilisé lorsqu’il existe une relation entre les données sur les écrans. L’utilisation de l’segue Push vous donne le luxe de disposer d’une barre de navigation avec un bouton précédent et un titre ajoutés à chaque vue de la pile, ce qui permet une navigation dans la hiérarchie d’affichage.
+- **Modal** : un segue modal crée une relation entre deux contrôleurs d’affichage de votre projet, avec l’option d’une transition animée affichée. Le contrôleur d’affichage enfant obscurcit complètement le contrôleur d’affichage parent lorsqu’il est mis en vue. Contrairement à un segue push, qui ajoute un bouton précédent pour nous ; Lorsque vous utilisez un segue modal  `DismissViewController` , vous devez utiliser pour revenir au contrôleur d’affichage précédent.
 - **Personnalisé** : tout segue personnalisé peut être créé en tant que sous-classe de `UIStoryboardSegue` .
-- **Déroulement** – un segue de déroulement peut être utilisé pour naviguer en arrière dans un segue de type push ou modal, par exemple, en rejetant le contrôleur d’affichage présenté de façon modale. En outre, vous pouvez dérouler non seulement une, mais également une série de SEGUES push et modaux, puis revenir à plusieurs étapes de votre hiérarchie de navigation avec une seule action de déroulement. Pour comprendre comment utiliser un segue de déroulement dans iOS, consultez la recette de création d’un [déroulement SEGUES](https://github.com/xamarin/recipes/tree/master/Recipes/ios/general/storyboard/unwind_segue) .
+- **Déroulement** – un segue de déroulement peut être utilisé pour naviguer en arrière dans un segue de type push ou modal, par exemple, en rejetant le contrôleur d’affichage présenté de façon modale. En outre, vous pouvez dérouler non seulement une, mais également une série de SEGUES push et modaux, puis revenir à plusieurs étapes de votre hiérarchie de navigation avec une seule action de déroulement. Pour comprendre comment utiliser un segue de déroulement dans iOS, consultez la recette de création d’un  [déroulement SEGUES](https://github.com/xamarin/recipes/tree/master/Recipes/ios/general/storyboard/unwind_segue) .
 - Sans **source** : un segue sans source indique la scène contenant le contrôleur d’affichage initial et, par conséquent, la vue que l’utilisateur verra en premier. Elle est représentée par le segue illustré ci-dessous :  
 
     [![Segue de code source](images/sourcelesssegue.png)](images/sourcelesssegue.png#lightbox)
@@ -91,7 +91,7 @@ Toute application utilisant des classes de taille utilisera également la nouvel
 
 ### <a name="transferring-data-with-segues"></a>Transfert de données avec SEGUES
 
-Les avantages d’un segue ne se terminent pas par des transitions. Elles peuvent également être utilisées pour gérer le transfert de données entre les contrôleurs d’affichage. Cela est possible en remplaçant la `PrepareForSegue` méthode sur le contrôleur d’affichage initial et en gérant les données. Lorsque le segue est déclenché, par exemple avec une pression sur un bouton, l’application appellera cette méthode, en fournissant la possibilité de préparer le nouveau contrôleur d’affichage *avant* toute navigation. Le code ci-dessous, extrait de l’exemple [Phoneword](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios) , illustre ce qui suit :
+Les avantages d’un segue ne se terminent pas par des transitions. Elles peuvent également être utilisées pour gérer le transfert de données entre les contrôleurs d’affichage. Cela est possible en remplaçant la `PrepareForSegue` méthode sur le contrôleur d’affichage initial et en gérant les données. Lorsque le segue est déclenché, par exemple avec une pression sur un bouton, l’application appellera cette méthode, en fournissant la possibilité de préparer le nouveau contrôleur d’affichage *avant* toute navigation. Le code ci-dessous, extrait de l’exemple [Phoneword](/samples/xamarin/ios-samples/hello-ios) , illustre ce qui suit :
 
 ```csharp
 public override void PrepareForSegue (UIStoryboardSegue segue,
@@ -196,7 +196,7 @@ La capture d’écran ci-dessous montre deux contrôleurs d’affichage sur notr
 
     [![Ajout d’un NavigationController à partir de la bibliothèque](images/add-navigation-controller.png)](images/add-navigation-controller.png#lightbox)
 
-4. Ce contrôleur d’affichage possède sa propre classe personnalisée, et il a également besoin de son propre ID de Storyboard. Lorsque vous cliquez sur la zone située au-dessus de cette vue nouvellement ajoutée, trois icônes s’affichent, la plus à gauche représentant le contrôleur d’affichage de la vue. En sélectionnant cette icône, vous pouvez définir les valeurs de la classe et de l’ID dans l’onglet identité du volet droit. définissez ces valeurs sur `MainViewController` et assurez-vous de les vérifier `Use Storyboard ID` .
+4. Ce contrôleur d’affichage possède sa propre classe personnalisée, et il a également besoin de son propre ID de Storyboard. Lorsque vous cliquez sur la zone située au-dessus de cette vue nouvellement ajoutée, trois icônes s’affichent, la plus à gauche représentant le contrôleur d’affichage de la vue. En sélectionnant cette icône, vous pouvez définir les valeurs de la classe et de l’ID dans l’onglet identité du volet droit. Définissez ces valeurs sur `MainViewController` et assurez-vous qu’elles sont vérifiées `Use Storyboard ID` .
 
     [![Définition de MainViewController dans le panneau d’identité](images/identity-panel.png)](images/identity-panel.png#lightbox)
 
@@ -262,7 +262,7 @@ public partial class MainViewController : UIViewController
 }
 ```
 
-Pour plus d’informations sur l’inscription des classes et des méthodes, reportez-vous à la documentation [type Registrar](https://docs.microsoft.com/xamarin/ios/internals/registrar) .
+Pour plus d’informations sur l’inscription des classes et des méthodes, reportez-vous à la documentation [type Registrar](../../internals/registrar.md) .
 
 La dernière étape de cette classe consiste à relier le bouton et la transition au contrôleur d’affichage rose. Nous instancierons le `PinkViewController` à partir de la table de montage séquentiel. ensuite, nous allons programmer un push segue avec `PushViewController` , comme illustré dans l’exemple de code ci-dessous :
 
@@ -356,7 +356,7 @@ Dans ce code, nous avons mis en correspondance le segueIdentifier à notre `Segu
 
 Nous pouvons appliquer cette approche à n’importe quel segue sur ce contrôleur d’affichage en vérifiant l’argument segueIdentifier pour la méthode ShouldPerformSegue. Dans ce cas, nous n’avons qu’un seul identificateur segue : `SegueToPink` .
 
-Reportez-vous à la solution storyboards. Conditional dans l' [exemple de storyboards manuels](https://docs.microsoft.com/samples/xamarin/ios-samples/manualstoryboard) pour obtenir un exemple fonctionnel.
+Reportez-vous à la solution storyboards. Conditional dans l' [exemple de storyboards manuels](/samples/xamarin/ios-samples/manualstoryboard) pour obtenir un exemple fonctionnel.
 
 <a name="Using-Storyboard-References"></a>
 
@@ -426,7 +426,7 @@ Pour ajouter une référence à une scène spécifique, un Storyboard externe (e
 
 6. Dans l’onglet **widget** de l' **Explorateur de propriétés**, sélectionnez le nom de la table de **montage séquentiel** et l' **ID de référence** (Storyboard ID) de la scène que vous avez créée ci-dessus :
 
-    [![Onglet widget](images/ref09.png)](images/ref09.png#lightbox)
+    [![Onglet widget ](images/ref09.png)](images/ref09.png#lightbox)
 
 7. Cliquez avec le bouton droit sur un widget d’interface utilisateur (comme un bouton) sur une scène existante, puis créez un nouveau segue dans la **référence de table de montage séquentiel** que vous venez de créer :
 
@@ -482,7 +482,7 @@ Cet article présente le concept de storyboards et la façon dont ils peuvent ê
 
 ## <a name="related-links"></a>Liens associés
 
-- [Storyboard manuel (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/manualstoryboard/)
+- [Storyboard manuel (exemple)](/samples/xamarin/ios-samples/manualstoryboard/)
 - [Présentation du concepteur iOS](~/ios/user-interface/designer/introduction.md)
 - [Convertir en storyboards](https://developer.apple.com/library/ios/#releasenotes/Miscellaneous/RN-AdoptingStoryboards/)
 - [Référence de la classe UIStoryboard](https://developer.apple.com/library/ios/#documentation/UIKit/Reference/UIStoryboard_Class/Reference/Reference.html)

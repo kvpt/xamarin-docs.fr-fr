@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/07/2017
-ms.openlocfilehash: 48ea94b62ba01f32699bf595bc004de133371468
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 7bc102069d673b9459c863282b0423952c8fa59d
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574564"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91437317"
 ---
 # <a name="sirikit-updates-in-ios-11"></a>Mises à jour de SiriKit dans iOS 11
 
@@ -45,11 +45,11 @@ Les nouvelles listes et le domaine notes fournissent une API pour que les applic
 - Avoir un titre et un état d’achèvement.
 - Si vous le souhaitez, vous pouvez inclure une échéance et un emplacement.
 
-**Remarques**
+**Notes**
 
 - Avoir un titre et un champ de contenu.
 
-Les tâches et les notes peuvent être organisées en groupes. Le reste de cette section décrit comment implémenter ce nouveau domaine avec SiriKit, à l’aide de l' [exemple TasksNotes SiriKit](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-sirikitsample).
+Les tâches et les notes peuvent être organisées en groupes. Le reste de cette section décrit comment implémenter ce nouveau domaine avec SiriKit, à l’aide de l' [exemple TasksNotes SiriKit](/samples/xamarin/ios-samples/ios11-sirikitsample).
 
 ### <a name="how-to-process-a-sirikit-request"></a>Comment traiter une requête SiriKit
 
@@ -68,10 +68,10 @@ Ces méthodes facultatives permettent à votre code d’effectuer la validation,
 
 Par exemple, pour l' `IINCreateTaskListIntent` interface, la méthode requise est `HandleCreateTaskList` . Quatre méthodes facultatives permettent de mieux contrôler l’interaction Siri :
 
-- `ResolveTitle`: Valide le titre, définit un titre par défaut (le cas échéant) ou signale que les données ne sont pas requises.
-- `ResolveTaskTitles`: Valide la liste des tâches parlées par l’utilisateur.
-- `ResolveGroupName`: Valide le nom de groupe, choisit un groupe par défaut ou signale que les données ne sont pas requises.
-- `ConfirmCreateTaskList`: Valide le fait que votre code puisse exécuter l’opération demandée, mais ne l’exécute pas (seules les `Handle*` méthodes doivent modifier les données).
+- `ResolveTitle` : Valide le titre, définit un titre par défaut (le cas échéant) ou signale que les données ne sont pas requises.
+- `ResolveTaskTitles` : Valide la liste des tâches parlées par l’utilisateur.
+- `ResolveGroupName` : Valide le nom de groupe, choisit un groupe par défaut ou signale que les données ne sont pas requises.
+- `ConfirmCreateTaskList` : Valide le fait que votre code puisse exécuter l’opération demandée, mais ne l’exécute pas (seules les `Handle*` méthodes doivent modifier les données).
 
 ### <a name="handle-the-intent"></a>Gérer l’intention
 
@@ -94,18 +94,18 @@ Votre application doit analyser les données fournies, puis effectuer des action
 
 Les `Handle*` méthodes obligatoires et facultatives `Confirm*` indiquent un code de réponse en définissant une valeur sur l’objet qu’elles passent à leur gestionnaire d’achèvement. Les réponses proviennent de l' `INCreateTaskListIntentResponseCode` énumération :
 
-- `Ready`: Retourne pendant la phase de confirmation (c’est-à-dire à partir d’une `Confirm*` méthode, mais pas d’une `Handle*` méthode).
-- `InProgress`: Utilisé pour les tâches de longue durée (par exemple, une opération de réseau/serveur).
-- `Success`: Répond avec les détails de l’opération réussie (uniquement à partir d’une `Handle*` méthode).
-- `Failure`: Indique qu’une erreur s’est produite et que l’opération n’a pas pu être effectuée.
-- `RequiringAppLaunch`: Ne peut pas être traité par l’intention, mais l’opération est possible dans l’application.
-- `Unspecified`– Ne pas utiliser : un message d’erreur s’affiche pour l’utilisateur.
+- `Ready` : Retourne pendant la phase de confirmation (c’est-à-dire à partir d’une `Confirm*` méthode, mais pas d’une `Handle*` méthode).
+- `InProgress` : Utilisé pour les tâches de longue durée (par exemple, une opération de réseau/serveur).
+- `Success` : Répond avec les détails de l’opération réussie (uniquement à partir d’une `Handle*` méthode).
+- `Failure` : Indique qu’une erreur s’est produite et que l’opération n’a pas pu être effectuée.
+- `RequiringAppLaunch` : Ne peut pas être traité par l’intention, mais l’opération est possible dans l’application.
+- `Unspecified` – Ne pas utiliser : un message d’erreur s’affiche pour l’utilisateur.
 
 En savoir plus sur ces méthodes et les réponses dans les [listes SiriKit et la documentation des notes](https://developer.apple.com/documentation/sirikit/lists_and_notes)d’Apple.
 
 ### <a name="implementing-lists-and-notes"></a>Implémentation de listes et de notes
 
-L' [exemple TasksNotes SiriKit](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-sirikitsample) a été créé à l’aide de la procédure suivante pour ajouter la prise en charge de SiriKit à une application iOS vide.
+L' [exemple TasksNotes SiriKit](/samples/xamarin/ios-samples/ios11-sirikitsample) a été créé à l’aide de la procédure suivante pour ajouter la prise en charge de SiriKit à une application iOS vide.
 
 Tout d’abord, pour ajouter la prise en charge de SiriKit, procédez comme suit pour votre application iOS :
 
@@ -211,7 +211,7 @@ Avec les autres noms d’application définis, les expressions suivantes fonctio
 - « Créer une liste d’épiceries avec des pommes, des bananes et des poires en _MonkeyNotes_»
 - « Ajouter une tâche WWDC dans _MonkeyTodo_»
 
-## <a name="troubleshooting"></a>Dépannage
+## <a name="troubleshooting"></a>Résolution des problèmes
 
 Certaines erreurs que vous pouvez rencontrer lors de l’exécution de l’exemple ou de l’ajout de SiriKit à vos propres applications :
 
@@ -226,8 +226,8 @@ _Exception objective-C levée.  Nom : NSInternalInconsistencyException Reason 
 
 - (pour le déploiement d’appareils) L’ID d’application a SiriKit activé et le profil de provisionnement a été téléchargé.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [SiriKit (Apple)](https://developer.apple.com/documentation/sirikit)
-- [Exemple TasksNotes SiriKit](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-sirikitsample)
+- [Exemple TasksNotes SiriKit](/samples/xamarin/ios-samples/ios11-sirikitsample)
 - [Nouveautés de SiriKit (WWDC) (vidéo)](https://developer.apple.com/videos/play/wwdc2017/214/)

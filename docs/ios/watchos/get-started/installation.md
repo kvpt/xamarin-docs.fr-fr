@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 12/05/2017
-ms.openlocfilehash: 4cc321f44238a7b738e40c02656b42f1eda1155a
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 89d074e14f2a66d472f06acecf42127a7ff44c4c
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938760"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91437375"
 ---
 # <a name="installing-and-using-watchos-in-xamarin"></a>Installation et utilisation de Watchos dans Xamarin
 
@@ -33,7 +33,7 @@ Une application Watch se compose de trois projets :
 
 - **Projet d’application Watch** : contient le fichier Storyboard de l’interface utilisateur avec toutes les ressources d’interface utilisateur de l’application Watch.
 
-L' [exemple](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog) de solution du catalogue du kit de surveillance ressemble à ceci dans Xamarin. Studio :
+L' [exemple](/samples/xamarin/ios-samples/watchos-watchkitcatalog) de solution du catalogue du kit de surveillance ressemble à ceci dans Xamarin. Studio :
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
@@ -45,7 +45,7 @@ L' [exemple](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watc
 
 -----
 
-Téléchargez et exécutez l’exemple [WatchKitCatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog) pour commencer.
+Téléchargez et exécutez l’exemple [WatchKitCatalog](/samples/xamarin/ios-samples/watchos-watchkitcatalog) pour commencer.
 Les écrans de l’exemple se trouvent dans la page [contrôles](~/ios/watchos/user-interface/index.md) .
 
 ## <a name="creating-a-new-project"></a>Création d'un projet
@@ -151,7 +151,7 @@ Lorsque vous sélectionnez le projet d’application Watch et que vous en faites
 
 Lorsque vous démarrez le débogage, *deux* simulateurs doivent démarrer : le simulateur iOS *et* le simulateur de Apple Watch. Utilisez la **Commande + Maj + H** pour accéder au menu espion et à la facette de l’horloge. et utilisez le menu **matériel** pour définir la **pression force Touch**. Le défilement sur le pavé tactile ou la souris simule à l’aide de la Digital Crown.
 
-#### <a name="troubleshooting"></a>Dépannage
+#### <a name="troubleshooting"></a>Résolution des problèmes
 
 L’erreur suivante s’affiche dans la **sortie** de l’application si vous essayez de lancer un simulateur qui n’a pas d’espion jumelé :
 
@@ -216,6 +216,6 @@ Les fichiers de modèle Watchos (tels que `InterfaceController` ,, `ExtensionDel
 
 ## <a name="related-links"></a>Liens associés
 
-- [WatchKitCatalog (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
+- [WatchKitCatalog (exemple)](/samples/xamarin/ios-samples/watchos-watchkitcatalog)
 - [Vidéo de la première application Watch](https://blog.xamarin.com/your-first-watch-kit-app/)
 - [Conseils WatchKit d’Apple](https://developer.apple.com/watchkit/tips/)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 91db8ad0008afa29c732429c3304c24f4ab030a6
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 9468c7d00ec23743eb7772d2d5eeb252a44a957c
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86935380"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91437308"
 ---
 # <a name="textkit-in-xamarinios"></a>TextKit dans Xamarin. iOS
 
@@ -28,9 +28,9 @@ Pour que les fonctionnalités de TextKit soient disponibles pour les contrôles 
 
 TextKit fournit une architecture en couches qui sépare le stockage de texte de la disposition et de l’affichage, y compris les classes suivantes :
 
-- `NSTextContainer`: Fournit le système de coordonnées et la géométrie utilisés pour mettre en forme le texte.
-- `NSLayoutManager`: Met du texte en forme de glyphes.
-- `NSTextStorage`: Contient les données texte, ainsi que les mises à jour des propriétés de texte par lots. Toutes les mises à jour par lots sont transmises au gestionnaire de disposition pour le traitement réel des modifications, telles que le recalcul de la disposition et le redessin du texte.
+- `NSTextContainer` : Fournit le système de coordonnées et la géométrie utilisés pour mettre en forme le texte.
+- `NSLayoutManager` : Met du texte en forme de glyphes.
+- `NSTextStorage` : Contient les données texte, ainsi que les mises à jour des propriétés de texte par lots. Toutes les mises à jour par lots sont transmises au gestionnaire de disposition pour le traitement réel des modifications, telles que le recalcul de la disposition et le redessin du texte.
 
 Ces trois classes sont appliquées à une vue qui restitue le texte. Les vues de gestion de texte intégrées, telles que `UITextView` , `UITextField` et qui `UILabel` les ont déjà définies, vous pouvez les créer et les appliquer également à n’importe quelle `UIView` instance.
 
@@ -40,7 +40,7 @@ La figure suivante illustre cette architecture :
 
 ## <a name="text-storage-and-attributes"></a>Stockage et attributs de texte
 
-La `NSTextStorage` classe contient le texte affiché par une vue. Il communique également toutes les modifications apportées au texte, telles que les modifications apportées aux caractères ou à leurs attributs, dans le gestionnaire de disposition pour l’affichage. `NSTextStorage`hérite de `MSMutableAttributed` String, ce qui permet de spécifier des modifications des attributs de texte dans des lots entre `BeginEditing` les `EndEditing` appels et.
+La `NSTextStorage` classe contient le texte affiché par une vue. Il communique également toutes les modifications apportées au texte, telles que les modifications apportées aux caractères ou à leurs attributs, dans le gestionnaire de disposition pour l’affichage. `NSTextStorage` hérite de `MSMutableAttributed` String, ce qui permet de spécifier des modifications des attributs de texte dans des lots entre `BeginEditing` les `EndEditing` appels et.
 
 Par exemple, l’extrait de code suivant spécifie une modification des couleurs de premier plan et d’arrière-plan, respectivement, et cible des plages spécifiques :
 
@@ -164,6 +164,6 @@ Notez que la propriété du gestionnaire de présentation `AllowsNonContiguousLa
 
 ## <a name="related-links"></a>Liens associés
 
-- [Introduction à iOS 7 (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/introtoios7)
+- [Introduction à iOS 7 (exemple)](/samples/xamarin/ios-samples/introtoios7)
 - [Vue d’ensemble de l’interface utilisateur iOS 7](~/ios/platform/introduction-to-ios7/ios7-ui.md)
 - [Backgrounding](~/ios/app-fundamentals/backgrounding/index.md)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 1214360f98464e1451da58aaca13df6a3964aba9
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 56c4e9c5b0ca44500ca3930a63b300b6bd3fb33f
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86933066"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436594"
 ---
 # <a name="connection-troubleshooting-for-a-xamarinios-build-host"></a>Résolution des problèmes de connexion pour un hôte de build Xamarin.iOS
 
@@ -20,8 +20,8 @@ _Ce guide fournit des étapes de résolution des problèmes qui peuvent être re
 
 ## <a name="log-file-location"></a>Emplacement du fichier journal
 
-- **Mac** –`~/Library/Logs/Xamarin-[MAJOR.MINOR]`
-- **Windows** –`%LOCALAPPDATA%\Xamarin\Logs`
+- **Mac** – `~/Library/Logs/Xamarin-[MAJOR.MINOR]`
+- **Windows** – `%LOCALAPPDATA%\Xamarin\Logs`
 
 Les fichiers journaux peuvent être localisés en accédant à **Aide &gt; Xamarin &gt; Journaux Zip** dans Visual Studio.
 
@@ -173,7 +173,7 @@ Causes signalées :
 
     5. Supprimez toutes les lignes qui indiquent `UseDNS yes` pour garantir que le nouveau paramètre prend effet.
 
-    6. Enregistrez le fichier .
+    6. Enregistrez le fichier.
 
     7. Exécutez `sudo cp "$HOME/Desktop/sshd_config" /etc/ssh/sshd_config` dans Terminal pour copier le fichier modifié à son emplacement d’origine. Entrez votre mot de passe si vous y êtes invité.
 
@@ -268,7 +268,7 @@ Si les fichiers journaux normaux ne fournissent toujours pas suffisamment d’in
 
 1. Quittez Visual Studio.
 
-2. Démarrez une [**invite de commandes développeur**](https://msdn.microsoft.com/library/ms229859(v=vs.110).aspx).
+2. Démarrez une [**invite de commandes développeur**](/dotnet/framework/tools/developer-command-prompt-for-vs).
 
 3. Exécutez la commande suivante dans l’invite de commandes pour lancer Visual Studio avec la journalisation détaillée :
 
@@ -336,7 +336,7 @@ Causes signalées :
 
 Bogue pertinent : [n° 40781](https://bugzilla.xamarin.com/show_bug.cgi?id=40781).
 
-Ce problème peut se produire quand Visual Studio ne parvient pas à actualiser le cache du composant MEF. Si c’est le cas, l’installation de cette extension Visual Studio peut vous aider :[https://visualstudiogallery.msdn.microsoft.com/22b94661-70c7-4a93-9ca3-8b6dd45f47cd](https://visualstudiogallery.msdn.microsoft.com/22b94661-70c7-4a93-9ca3-8b6dd45f47cd)
+Ce problème peut se produire quand Visual Studio ne parvient pas à actualiser le cache du composant MEF. Si c’est le cas, l’installation de cette extension Visual Studio peut vous aider : [https://visualstudiogallery.msdn.microsoft.com/22b94661-70c7-4a93-9ca3-8b6dd45f47cd](https://visualstudiogallery.msdn.microsoft.com/22b94661-70c7-4a93-9ca3-8b6dd45f47cd)
 
 Cette opération efface le cache du composant MEF Visual Studio pour résoudre les problèmes liés à l’endommagement du cache.
 

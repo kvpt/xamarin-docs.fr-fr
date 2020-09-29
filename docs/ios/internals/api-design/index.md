@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 173af9638f4e7b2da39a89dd745ec53f54cf6c39
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 4ba1daeb94706efc9d27136c6bd4b4d13e774689
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937564"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91437204"
 ---
 # <a name="xamarinios-api-design"></a>Conception de l’API Xamarin. iOS
 
@@ -26,7 +26,7 @@ Le runtime de bas niveau pour communiquer avec le code Objective-C se trouve dan
 
 Voici quelques-uns de nos principes de conception pour les liaisons Xamarin. iOS (elles s’appliquent également à Xamarin. Mac, les liaisons mono pour objective-C sur macOS) :
 
-- Suivre les [instructions de conception](https://docs.microsoft.com/dotnet/standard/design-guidelines) de l’infrastructure
+- Suivre les [instructions de conception](/dotnet/standard/design-guidelines) de l’infrastructure
 - Permet aux développeurs de sous-classer des classes objective-C :
 
   - Dériver d’une classe existante
@@ -63,7 +63,7 @@ Voici quelques-uns de nos principes de conception pour les liaisons Xamarin. iOS
 
 - Types C# natifs :
 
-  - [`NSString`fait`string`](~/ios/internals/api-design/nsstring.md)
+  - [`NSString` fait `string`](~/ios/internals/api-design/nsstring.md)
   - Activer `int` les `uint` paramètres et qui doivent avoir été des énumérations c# et des énumérations c# avec `[Flags]` attributs
   - Au lieu d’objets indépendants du type `NSArray` , exposez les tableaux en tant que tableaux fortement typés.
   - Pour les événements et les notifications, donnez aux utilisateurs le choix entre :
@@ -95,7 +95,7 @@ Xamarin. iOS reflète en C# la hiérarchie des classes de Objective-C. Par exemp
 
 Bien que cet espace de noms fournit des liaisons pour les types objective-C Foundation sous-jacents, dans quelques cas, nous avons mappé les types sous-jacents aux types .NET. Par exemple :
 
-- Au lieu de gérer chaîne NSString et [NSArray](https://developer.apple.com/library/ios/#documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html), le runtime les expose sous la forme de [chaînes](xref:System.String)C# et de [tableaux](xref:System.Array)fortement typés dans l’ensemble de l’API.
+- Au lieu de gérer chaîne NSString et [NSArray](https://developer.apple.com/library/ios/#documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html), le runtime les expose sous la forme de  [chaînes](xref:System.String)C# et de  [tableaux](xref:System.Array)fortement typés dans l’ensemble de l’API.
 
 - Diverses API d’assistance sont exposées ici pour permettre aux développeurs de lier des API objective-C tierces, d’autres API iOS ou API qui ne sont pas actuellement liées par Xamarin. iOS.
 
@@ -283,11 +283,11 @@ Par exemple, considérez la classe UIWebView. Cette valeur est distribuée à un
 
 ##### <a name="via-events"></a>Événements via
 
-Pour de nombreux types, Xamarin. iOS créera automatiquement un délégué approprié qui transférera les `UIWebViewDelegate` appels vers les événements C#. Pour `UIWebView` :
+Pour de nombreux types, Xamarin. iOS créera automatiquement un délégué approprié qui transférera les `UIWebViewDelegate` appels vers les événements C#. Pour `UIWebView`:
 
-- La méthode webViewDidStartLoad est mappée à l’événement [UIWebView. LoadStarted](xref:UIKit.UIWebView.LoadStarted) .
-- La méthode webViewDidFinishLoad est mappée à l’événement [UIWebView. LoadFinished](xref:UIKit.UIWebView.LoadFinished) .
-- La méthode WebView : didFailLoadWithError est mappée à l’événement [UIWebView. LoadError](xref:UIKit.UIWebView.LoadError) .
+- La méthode webViewDidStartLoad est mappée à l’événement  [UIWebView. LoadStarted](xref:UIKit.UIWebView.LoadStarted) .
+- La méthode webViewDidFinishLoad est mappée à l’événement  [UIWebView. LoadFinished](xref:UIKit.UIWebView.LoadFinished) .
+- La méthode WebView : didFailLoadWithError est mappée à l’événement  [UIWebView. LoadError](xref:UIKit.UIWebView.LoadError) .
 
 Par exemple, ce programme simple enregistre les heures de début et de fin lors du chargement d’une vue Web :
 
@@ -665,7 +665,7 @@ Xamarin. iOS dispose d’un garbage collector qui prend en charge la libération
 
 L’exposition de l' `IDisposable` interface est un moyen pratique d’aider les développeurs à libérer des objets qui peuvent encapsuler de grands blocs de mémoire (par exemple, un `UIImage` peut se présenter comme un simple pointeur innocent, mais peut pointer vers une image de 2 mégaoctets) et d’autres ressources importantes et limitées (comme un tampon de décodage vidéo).
 
-NSObject implémente l’interface IDisposable et également le [modèle de suppression .net](https://msdn.microsoft.com/library/fs2xkftw.aspx). Cela permet aux développeurs dont la sous-classe NSObject est de remplacer le comportement de suppression et de libérer leurs propres ressources à la demande. Par exemple, considérez ce contrôleur d’affichage qui continue autour d’une série d’images :
+NSObject implémente l’interface IDisposable et également le [modèle de suppression .net](/dotnet/standard/garbage-collection/implementing-dispose). Cela permet aux développeurs dont la sous-classe NSObject est de remplacer le comportement de suppression et de libérer leurs propres ressources à la demande. Par exemple, considérez ce contrôleur d’affichage qui continue autour d’une série d’images :
 
 ```csharp
 class MenuViewController : UIViewController {

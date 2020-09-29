@@ -1,6 +1,6 @@
 ---
-title: Xamarin.EssentialsExtensions de plateforme
-description: Xamarin.Essentialsfournit plusieurs méthodes d’extension de plateforme lorsqu’il est nécessaire d’utiliser des types de plateforme tels que Rect, size et point.
+title: Xamarin.Essentials Extensions de plateforme
+description: Xamarin.Essentials fournit plusieurs méthodes d’extension de plateforme lorsqu’il est nécessaire d’utiliser des types de plateforme tels que Rect, size et point.
 ms.assetid: AB4D198A-4FD7-479E-8627-01F887A6D056
 author: jamesmontemagno
 ms.author: jamont
@@ -8,18 +8,18 @@ ms.date: 03/13/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 56cb9619a4132f6568cee8fbf590965934024639
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 4a13ed8e12e11595c6c1b7617e32a492205a9175
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84801907"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436566"
 ---
-# <a name="xamarinessentials-platform-extensions"></a>Xamarin.Essentials: Extensions de plateforme
+# <a name="no-locxamarinessentials-platform-extensions"></a>Xamarin.Essentials: Extensions de plateforme
 
-Xamarin.Essentialsfournit plusieurs méthodes d’extension de plateforme lorsqu’il est nécessaire d’utiliser des types de plateforme tels que Rect, size et point. Cela signifie que vous pouvez convertir la version `System` de ces types en types spécifiques iOS, Android et UWP.
+Xamarin.Essentials fournit plusieurs méthodes d’extension de plateforme lorsqu’il est nécessaire d’utiliser des types de plateforme tels que Rect, size et point. Cela signifie que vous pouvez convertir la version `System` de ces types en types spécifiques iOS, Android et UWP.
 
-## <a name="get-started"></a>Bien démarrer
+## <a name="get-started"></a>Prise en main
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -89,7 +89,7 @@ Les États d’activité sont les suivants :
 * Démarré
 * Arrêté
 
-Pour en savoir plus, consultez la documentation relative au [cycle de vie](https://docs.microsoft.com/xamarin/android/app-fundamentals/activity-lifecycle/) de l’activité.
+Pour en savoir plus, consultez la documentation relative au [cycle de vie](../android/app-fundamentals/activity-lifecycle/index.md) de l’activité.
 
 ## <a name="ios-extensions"></a>Extensions iOS
 

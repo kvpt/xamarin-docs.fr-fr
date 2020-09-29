@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 8619fa73a4dbaabe1e161c634b6a794b701d5135
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: b7d85af558f5665ae46d9a7d05d26badc313a993
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84570856"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91437068"
 ---
 # <a name="tvos-resources-and-data-storage-in-xamarin"></a>Ressources tvOS et stockage des données dans Xamarin
 
@@ -78,9 +78,9 @@ Vous utilisez Xcode pour créer des regroupements de contenu associé (par exemp
 
 Cet article a abordé les limites de taille, de ressources et de stockage des données placées sur une application Xamarin. tvOS par le système tvOS. Il a présenté des options pour contourner ces limitations et suggestions afin de créer une expérience utilisateur exceptionnelle pour votre application.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [Exemples tvOS](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [Exemples tvOS](/samples/browse/?products=xamarin&term=Xamarin.iOS%2btvOS)
 - [tvOS](https://developer.apple.com/tvos/)
 - [Guides de l’interface utilisateur tvOS](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [Guide de programmation d’applications pour tvOS](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

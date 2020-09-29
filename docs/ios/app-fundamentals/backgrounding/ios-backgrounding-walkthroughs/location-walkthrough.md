@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: bbb0dfbc9a6bf1396c8d517cc2c3289e2857a836
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 2350db2e8d4f43a33b0ce394e06ffd2c16b6b7ad
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938396"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436557"
 ---
 # <a name="walkthrough---background-location-in-xamarinios"></a>Procédure pas à pas-emplacement en arrière-plan dans Xamarin. iOS
 
@@ -73,9 +73,9 @@ Cette procédure pas à pas explique certains concepts fondamentaux de l’arri�
 
     Le code ci-dessus définit un certain nombre de propriétés et d’autorisations sur la classe [CLLocationManager](xref:CoreLocation.CLLocationManager) :
 
-    - `PausesLocationUpdatesAutomatically`: Il s’agit d’une valeur booléenne qui peut être définie selon que le système est autorisé ou non à suspendre les mises à jour de l’emplacement. Sur un appareil, la valeur par défaut est `true` , ce qui peut amener l’appareil à cesser d’obtenir des mises à jour de l’emplacement d’arrière-plan après environ 15 minutes.
-    - `RequestAlwaysAuthorization`-Vous devez passer cette méthode pour donner à l’utilisateur de l’application la possibilité d’autoriser l’accès à l’emplacement en arrière-plan. `RequestWhenInUseAuthorization`peut également être passé si vous souhaitez donner à l’utilisateur la possibilité d’autoriser l’accès à l’emplacement uniquement lorsque l’application est au premier plan.
-    - `AllowsBackgroundLocationUpdates`: Il s’agit d’une propriété booléenne, introduite dans iOS 9, qui peut être définie pour permettre à une application de recevoir des mises à jour d’emplacement lorsqu’elle est suspendue.
+    - `PausesLocationUpdatesAutomatically` : Il s’agit d’une valeur booléenne qui peut être définie selon que le système est autorisé ou non à suspendre les mises à jour de l’emplacement. Sur un appareil, la valeur par défaut est `true` , ce qui peut amener l’appareil à cesser d’obtenir des mises à jour de l’emplacement d’arrière-plan après environ 15 minutes.
+    - `RequestAlwaysAuthorization` -Vous devez passer cette méthode pour donner à l’utilisateur de l’application la possibilité d’autoriser l’accès à l’emplacement en arrière-plan. `RequestWhenInUseAuthorization` peut également être passé si vous souhaitez donner à l’utilisateur la possibilité d’autoriser l’accès à l’emplacement uniquement lorsque l’application est au premier plan.
+    - `AllowsBackgroundLocationUpdates` : Il s’agit d’une propriété booléenne, introduite dans iOS 9, qui peut être définie pour permettre à une application de recevoir des mises à jour d’emplacement lorsqu’elle est suspendue.
 
     > [!IMPORTANT]
     > iOS 8 (et versions ultérieures) nécessite également une entrée dans le fichier **info. plist** pour afficher l’utilisateur dans le cadre de la demande d’autorisation.
@@ -84,7 +84,7 @@ Cette procédure pas à pas explique certains concepts fondamentaux de l’arri�
 
 1. iOS 9 requiert que, lors de l’utilisation `AllowsBackgroundLocationUpdates` du fichier **info. plist** , la clé `UIBackgroundModes` avec la valeur est incluse `location` . Si vous avez terminé l’étape 2 de cette procédure pas à pas, vous devez déjà avoir dans votre fichier info. plist.
 
-1. À l’intérieur de la `LocationManager` classe, créez une méthode appelée `StartLocationUpdates` avec le code suivant. Ce code montre comment démarrer la réception des mises à jour de l’emplacement à partir du `CLLocationManager` :
+1. À l’intérieur de la `LocationManager` classe, créez une méthode appelée `StartLocationUpdates` avec le code suivant. Ce code montre comment démarrer la réception des mises à jour de l’emplacement à partir du   `CLLocationManager` :
 
     ```csharp
     if (CLLocationManager.LocationServicesEnabled) {
@@ -101,7 +101,7 @@ Cette procédure pas à pas explique certains concepts fondamentaux de l’arri�
 
     Il existe plusieurs éléments importants qui se produisent dans cette méthode. Tout d’abord, nous procédons à une vérification pour voir si l’application a accès aux données d’emplacement sur l’appareil. Nous vérifions cela en appelant `LocationServicesEnabled` sur `CLLocationManager` . Cette méthode retourne la **valeur false** si l’utilisateur a refusé l’accès à l’application aux informations relatives à l’emplacement.
 
-1. Ensuite, indiquez au gestionnaire d’emplacement la fréquence de mise à jour. `CLLocationManager`fournit de nombreuses options pour filtrer et configurer les données d’emplacement, y compris la fréquence des mises à jour. Dans cet exemple, définissez le `DesiredAccuracy` à mettre à jour chaque fois que l’emplacement change d’un compteur. Pour plus d’informations sur la configuration de la fréquence de mise à jour de l’emplacement et d’autres préférences, reportez-vous à la référence de la [classe CLLocationManager](https://developer.apple.com/library/ios/#documentation/CoreLocation/Reference/CLLocationManager_Class/CLLocationManager/CLLocationManager.html) dans la documentation Apple.
+1. Ensuite, indiquez au gestionnaire d’emplacement la fréquence de mise à jour. `CLLocationManager` fournit de nombreuses options pour filtrer et configurer les données d’emplacement, y compris la fréquence des mises à jour. Dans cet exemple, définissez le `DesiredAccuracy` à mettre à jour chaque fois que l’emplacement change d’un compteur. Pour plus d’informations sur la configuration de la fréquence de mise à jour de l’emplacement et d’autres préférences, reportez-vous à la référence de la [classe CLLocationManager](https://developer.apple.com/library/ios/#documentation/CoreLocation/Reference/CLLocationManager_Class/CLLocationManager/CLLocationManager.html) dans la documentation Apple.
 
 1. Enfin, appelez `StartUpdatingLocation` sur l' `CLLocationManager` instance. Cela indique au gestionnaire d’emplacement d’avoir un correctif initial à l’emplacement actuel et de commencer à envoyer des mises à jour
 
@@ -278,5 +278,5 @@ Dans cette procédure pas à pas, nous avons créé une application iOS avec pri
 
 ## <a name="related-links"></a>Liens associés
 
-- [Emplacement (partie 4) (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/location)
+- [Emplacement (partie 4) (exemple)](/samples/xamarin/ios-samples/location)
 - [Référence de l’infrastructure d’emplacement principal](https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CoreLocation_Framework/_index.html)

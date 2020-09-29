@@ -12,14 +12,14 @@ ms.date: 05/23/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: da56bde956a0ff7730ef6737e2802c3723d6d716
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e6670faf921248c007c20307fddb6a34057c5202
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84133473"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436669"
 ---
-# <a name="build-your-first-xamarinforms-app"></a>Créer votre première Xamarin.Forms application
+# <a name="build-your-first-no-locxamarinforms-app"></a>Créer votre première Xamarin.Forms application
 
 _Regardez cette vidéo et suivez la procédure pour créer votre première application mobile avec Xamarin.Forms ._
 
@@ -29,13 +29,13 @@ _Regardez cette vidéo et suivez la procédure pour créer votre première appli
 
 ## <a name="step-by-step-instructions-for-windows"></a>Instructions pas à pas pour Windows
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
 
 Suivez ces étapes, ainsi que la vidéo ci-dessus :
 
 1. Choisissez **Fichier > Nouveau > Projet**, ou appuyez sur le bouton **Créer un projet** :
 
-    [![Création d'un projet](images/win-2019/01-sml.png)](images/win-2019/01.png#lightbox)
+    [![Créer un projet](images/win-2019/01-sml.png)](images/win-2019/01.png#lightbox)
 
 2. Recherchez « Xamarin », ou choisissez **Mobile** dans le menu **Type de projet**. Sélectionnez le type de projet **application mobile ( Xamarin.Forms )** :
 
@@ -114,13 +114,13 @@ Cette vidéo décrit le processus de génération et de test d’une application
 
 ## <a name="step-by-step-instructions-for-windows"></a>Instructions pas à pas pour Windows
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
 
 Suivez ces étapes, ainsi que la vidéo ci-dessus :
 
 1. Choisissez **fichier > nouveau > projet...** ou appuyez sur le bouton **créer un nouveau projet.** .., puis sélectionnez **Visual C# > multiplateforme > application mobile ( Xamarin.Forms )**:
 
-    [![Application mobile ( Xamarin.Forms )](images/win/01-sml.png)](images/win/01.png#lightbox)
+    [![Application mobile ( ::: No-Loc (Xamarin. Forms) :::)](images/win/01-sml.png)](images/win/01.png#lightbox)
 
 2. Vérifiez qu’**Android** et **iOS** sont sélectionnés, ainsi que le partage de code **.NET Standard** :
 
@@ -161,7 +161,7 @@ Suivez ces étapes, ainsi que la vidéo ci-dessus :
 
 ## <a name="step-by-step-instructions-for-mac"></a>Instructions pas à pas pour Mac
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
 
 Suivez ces étapes, ainsi que la vidéo ci-dessus :
 
@@ -210,7 +210,7 @@ Suivez ces étapes, ainsi que la vidéo ci-dessus :
 
 ::: zone-end
 
-Vous pouvez télécharger le code complet à partir de la [galerie d’exemples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/) ou le voir sur [GitHub](https://github.com/xamarin/xamarin-forms-samples/tree/master/GetStarted/FirstApp).
+Vous pouvez télécharger le code complet à partir de la [galerie d’exemples](/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/) ou le voir sur [GitHub](https://github.com/xamarin/xamarin-forms-samples/tree/master/GetStarted/FirstApp).
 
 ## <a name="next-steps"></a>Étapes suivantes
 

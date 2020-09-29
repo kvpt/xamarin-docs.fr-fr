@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: davidortinau
 ms.author: daortin
-ms.openlocfilehash: 8ad1bf746c129cfb5cfbc8b3e04b871224df486d
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: c19cf373a89798703224574fe13724dfbade33bb
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936576"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436685"
 ---
 # <a name="using-json-to-create-a-user-interface-in-xamarinios"></a>Utilisation de JSON pour créer une interface utilisateur dans Xamarin. iOS
 
@@ -167,7 +167,7 @@ Cet article a montré comment créer une interface using avec MT. D à partir de
 
 ## <a name="related-links"></a>Liens connexes
 
-- [MTDJsonDemo (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/mtdjsondemo)
+- [MTDJsonDemo (exemple)](/samples/xamarin/ios-samples/mtdjsondemo)
 - [Présentation de la boîte de dialogue de monopression.](~/ios/user-interface/monotouch.dialog/index.md)
 - [Procédure pas à pas d’API d’éléments](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)
 - [Démonstration de l’API de réflexion](~/ios/user-interface/monotouch.dialog/reflection-api-walkthrough.md)

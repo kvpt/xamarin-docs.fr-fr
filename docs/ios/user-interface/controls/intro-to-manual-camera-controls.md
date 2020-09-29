@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: dcfa727499859164d950ca9abc24fb935b3d76f9
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 04c33b59e2a1bab7fb401ffdc49d120bcfd679d0
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937005"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436827"
 ---
 # <a name="manual-camera-controls-in-xamarinios"></a>Contrôles d’appareil photo manuels dans Xamarin. iOS
 
@@ -44,7 +44,7 @@ La capture entre crochets est basée sur les paramètres des contrôles d’appa
 
 Simplement indiqué, la capture entre crochets est une rafale d’images fixes prises avec divers paramètres, de l’image à l’image.
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Configuration requise
 
 Les éléments suivants sont requis pour effectuer les étapes présentées dans cet article :
 
@@ -308,16 +308,16 @@ Avec ces termes et connaissances à l’esprit, les nouveaux contrôles de focus
 
 iOS 7 et versions antérieures, à condition que les contrôles de focus existants via la `FocusMode` propriété soient les suivants :
 
-- `AVCaptureFocusModeLocked`: Le focus est verrouillé à un point de concentration unique.
-- `AVCaptureFocusModeAutoFocus`: L’appareil photo balaye l’objectif à travers tous les points de référence jusqu’à ce qu’il trouve un focus aigu, puis le reste.
-- `AVCaptureFocusModeContinuousAutoFocus`: L’appareil photo se focalise à chaque fois qu’il détecte une condition de non-focus.
+- `AVCaptureFocusModeLocked` : Le focus est verrouillé à un point de concentration unique.
+- `AVCaptureFocusModeAutoFocus` : L’appareil photo balaye l’objectif à travers tous les points de référence jusqu’à ce qu’il trouve un focus aigu, puis le reste.
+- `AVCaptureFocusModeContinuousAutoFocus` : L’appareil photo se focalise à chaque fois qu’il détecte une condition de non-focus.
 
 Les contrôles existants offraient également un point d’intérêt définissable via la `FocusPointOfInterest` propriété, afin que l’utilisateur puisse cliquer pour se concentrer sur une zone particulière. L’application peut également suivre le mouvement de la lentille en surveillant la `IsAdjustingFocus` propriété.
 
 En outre, une restriction de plage a été fournie par la `AutoFocusRangeRestriction` propriété en tant que :
 
-- `AVCaptureAutoFocusRangeRestrictionNear`: Limite l’autofocus à des profondeurs proches. Utile dans des situations telles que l’analyse d’un code QR ou d’un code-barres.
-- `AVCaptureAutoFocusRangeRestrictionFar`: Limite le focus à la profondeur distante. Utile dans les situations où les objets qui ne sont pas pertinents se trouvent dans le champ de vue (par exemple, un cadre de fenêtre).
+- `AVCaptureAutoFocusRangeRestrictionNear` : Limite l’autofocus à des profondeurs proches. Utile dans des situations telles que l’analyse d’un code QR ou d’un code-barres.
+- `AVCaptureAutoFocusRangeRestrictionFar` : Limite le focus à la profondeur distante. Utile dans les situations où les objets qui ne sont pas pertinents se trouvent dans le champ de vue (par exemple, un cadre de fenêtre).
 
 Enfin, il existe une `SmoothAutoFocus` propriété qui ralentit l’algorithme de focus automatique et la détaille en incréments plus petits pour éviter de déplacer des artefacts lors de l’enregistrement de vidéos.
 
@@ -529,8 +529,8 @@ Là encore, vous disposez du bloc d’exposition automatique qui tente de calcul
 
 iOS 7 et versions ultérieures, fournissez les contrôles d’exposition existants suivants via la `ExposureMode` propriété :
 
-- `AVCaptureExposureModeLocked`: Échantillonne la scène une fois et utilise ces valeurs tout au long de la scène.
-- `AVCaptureExposureModeContinuousAutoExposure`: Échantillonne en continu la scène pour s’assurer qu’elle est bien éclairée.
+- `AVCaptureExposureModeLocked` : Échantillonne la scène une fois et utilise ces valeurs tout au long de la scène.
+- `AVCaptureExposureModeContinuousAutoExposure` : Échantillonne en continu la scène pour s’assurer qu’elle est bien éclairée.
 
 `ExposurePointOfInterest`Peut être utilisé pour exposer la scène en sélectionnant un objet cible à exposer, et l’application peut surveiller la `AdjustingExposure` propriété pour voir quand l’exposition est ajustée.
 
@@ -578,7 +578,7 @@ La vue contient les éléments principaux suivants :
 
 - `UIImageView`Qui affichera le flux vidéo.
 - `UISegmentedControl`Qui va remplacer le mode de focus automatique par le mode verrouillé.
-- Quatre `UISlider` contrôles qui affichent et mettent à jour le décalage, la durée, l’ISO et le biais.
+- Quatre  `UISlider` contrôles qui affichent et mettent à jour le décalage, la durée, l’ISO et le biais.
 
 Procédez comme suit pour connecter le contrôleur d’affichage pour le contrôle de l’exposition manuelle :
 
@@ -817,8 +817,8 @@ les appareils iOS compensent les conversions en couleurs en amplifiant le gain d
 
 iOS 7 et versions ultérieures fournissait les contrôles d’équilibre des blancs existants suivants via la `WhiteBalanceMode` propriété :
 
-- `AVCapture WhiteBalance ModeLocked`: Échantillonne la scène une seule fois et en utilisant ces valeurs tout au long de la scène.
-- `AVCapture WhiteBalance ModeContinuousAutoExposure`: Échantillonne en continu la scène pour s’assurer qu’elle est bien équilibrée.
+- `AVCapture WhiteBalance ModeLocked` : Échantillonne la scène une seule fois et en utilisant ces valeurs tout au long de la scène.
+- `AVCapture WhiteBalance ModeContinuousAutoExposure` : Échantillonne en continu la scène pour s’assurer qu’elle est bien équilibrée.
 
 Et l’application peut surveiller la `AdjustingWhiteBalance` propriété pour voir quand l’exposition est ajustée.
 
@@ -845,13 +845,13 @@ La `DeviceWhiteBalanceGains` propriété peut être utilisée pour observer les 
 
 Des routines de conversion ont été ajoutées à iOS 8 pour faciliter la conversion vers et depuis les espaces de couleurs indépendants des appareils. Pour implémenter les routines de conversion, la `AVCaptureWhiteBalanceChromaticityValues` structure a été ajoutée avec les membres suivants :
 
-- `X`-est une valeur comprise entre 0 et 1.
-- `Y`-est une valeur comprise entre 0 et 1.
+- `X` -est une valeur comprise entre 0 et 1.
+- `Y` -est une valeur comprise entre 0 et 1.
 
 Une `AVCaptureWhiteBalanceTemperatureAndTintValues` structure a également été ajoutée avec les membres suivants :
 
-- `Temperature`-est une valeur à virgule flottante en degrés Kelvin.
-- `Tint`-décalage par rapport au vert ou magenta de 0 à 150 avec des valeurs positives vers le sens vert et négatif vers le magenta.
+- `Temperature` -est une valeur à virgule flottante en degrés Kelvin.
+- `Tint` -décalage par rapport au vert ou magenta de 0 à 150 avec des valeurs positives vers le sens vert et négatif vers le magenta.
 
 Utilisez les `CaptureDevice.GetTemperatureAndTintValues` méthodes et `CaptureDevice.GetDeviceWhiteBalanceGains` pour effectuer des conversions entre les espaces colorimétriques de température et de teinte, la chromatique et l’obtention RVB.
 
@@ -878,7 +878,7 @@ La vue contient les éléments principaux suivants :
 
 - `UIImageView`Qui affichera le flux vidéo.
 - `UISegmentedControl`Qui va remplacer le mode de focus automatique par le mode verrouillé.
-- Deux `UISlider` contrôles qui affichent et mettent à jour la température et la teinte.
+- Deux  `UISlider` contrôles qui affichent et mettent à jour la température et la teinte.
 - `UIButton`Utilisé pour échantillonner un espace de carte grise (monde gris) et définir l’équilibre blanc à l’aide de ces valeurs.
 
 Procédez comme suit pour connecter le contrôleur d’affichage pour le contrôle manuel de l’équilibre des blancs :
@@ -1116,8 +1116,8 @@ Toutes les commandes de capture entre crochets sont implémentées dans la `AVCa
 
 Deux nouvelles classes ont été implémentées pour gérer les paramètres :
 
-- `AVCaptureAutoExposureBracketedStillImageSettings`: Il possède une propriété, `ExposureTargetBias` , utilisée pour définir le décalage pour un crochet d’exposition automatique.
-- `AVCaptureManual`  `ExposureBracketedStillImageSettings`: Il a deux propriétés, `ExposureDuration` et `ISO` , utilisées pour définir la vitesse d’obturation et ISO pour un crochet d’exposition manuel.
+- `AVCaptureAutoExposureBracketedStillImageSettings` : Il possède une propriété,  `ExposureTargetBias` , utilisée pour définir le décalage pour un crochet d’exposition automatique.
+- `AVCaptureManual`  `ExposureBracketedStillImageSettings` : Il a deux propriétés,  `ExposureDuration` et  `ISO` , utilisées pour définir la vitesse d’obturation et ISO pour un crochet d’exposition manuel.
 
 ### <a name="bracketed-capture-controls-dos-and-donts"></a>Les contrôles de capture entre crochets ne sont pas
 
@@ -1125,22 +1125,22 @@ Deux nouvelles classes ont été implémentées pour gérer les paramètres :
 
 Vous trouverez ci-dessous une liste des opérations à effectuer lors de l’utilisation des contrôles de capture entre crochets dans iOS 8 :
 
-- Préparez l’application pour la situation de capture la plus défavorable en appelant la `PrepareToCaptureStillImageBracket` méthode.
+- Préparez l’application pour la situation de capture la plus défavorable en appelant la  `PrepareToCaptureStillImageBracket` méthode.
 - Supposons que les exemples de mémoires tampons proviennent du même pool partagé.
-- Pour libérer la mémoire qui a été allouée par un appel de préparation précédent, appelez `PrepareToCaptureStillImageBracket` à nouveau et envoyez-lui un tableau d’un objet.
+- Pour libérer la mémoire qui a été allouée par un appel de préparation précédent, appelez  `PrepareToCaptureStillImageBracket` à nouveau et envoyez-lui un tableau d’un objet.
 
 #### <a name="donts"></a>Choses à faire
 
 La liste suivante répertorie les éléments qui ne doivent pas être faits lors de l’utilisation des contrôles de capture entre crochets dans iOS 8 :
 
 - Ne mélangez pas les types de paramètres de capture entre crochets dans une seule capture.
-- Ne demandez pas plus de `MaxBracketedCaptureStillImageCount` images que dans une seule capture.
+- Ne demandez pas plus de  `MaxBracketedCaptureStillImageCount` images que dans une seule capture.
 
 ### <a name="bracketed-capture-details"></a>Détails de la capture entre crochets
 
 Les informations suivantes doivent être prises en considération lors de l’utilisation de capture entre crochets dans iOS 8 :
 
-- Les paramètres entre crochets remplacent temporairement les `AVCaptureDevice` paramètres.
+- Les paramètres entre crochets remplacent temporairement les  `AVCaptureDevice` paramètres.
 - Les paramètres de stabilisation d’image continue et Flash sont ignorés.
 - Toutes les images doivent utiliser le même format de sortie (JPEG, png, etc.)
 - La version préliminaire de la vidéo peut déposer des frames.
@@ -1157,7 +1157,7 @@ Une fois le code d’installation de capture AV général en place, un `UIViewCo
 La vue contient les éléments principaux suivants :
 
 - `UIImageView`Qui affichera le flux vidéo.
-- Trois `UIImageViews` qui affichent les résultats de la capture.
+- Trois  `UIImageViews` qui affichent les résultats de la capture.
 - `UIScrollView`Pour héberger le flux vidéo et les vues des résultats.
 - `UIButton`Utilisé pour prendre une capture entre crochets avec des paramètres prédéfinis.
 
@@ -1321,5 +1321,5 @@ Dans cet article, nous avons abordé une présentation des nouveaux contrôles d
 
 ## <a name="related-links"></a>Liens associés
 
-- [ManualCameraControls (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/manualcameracontrols)
+- [ManualCameraControls (exemple)](/samples/xamarin/ios-samples/manualcameracontrols)
 - [Introduction à iOS 8](~/ios/platform/introduction-to-ios8.md)

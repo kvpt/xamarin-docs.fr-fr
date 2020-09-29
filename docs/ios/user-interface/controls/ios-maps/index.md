@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 177701b8b50edea965e97da225265912f1f0c198
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 78c5d639ef75891c037529f270bfb36f776a12e7
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86932325"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436645"
 ---
 # <a name="maps-in-xamarinios"></a>Cartes dans Xamarin. iOS
 
@@ -28,13 +28,13 @@ map = new MKMapView (UIScreen.MainScreen.Bounds);
 View = map;
 ```
 
-`MKMapView`sous- `UIView` classe qui affiche une carte. Le simple ajout de la carte à l’aide du code ci-dessus génère une carte interactive :
+`MKMapView` sous- `UIView` classe qui affiche une carte. Le simple ajout de la carte à l’aide du code ci-dessus génère une carte interactive :
 
 ![Exemple de mappage](images/00-map.png)
 
 ## <a name="map-style"></a>Style de carte
 
-`MKMapView`prend en charge 3 styles différents de mappages. Pour appliquer un style de carte, il vous suffit de définir la `MapType` propriété sur une valeur de l' `MKMapType` énumération :
+`MKMapView` prend en charge 3 styles différents de mappages. Pour appliquer un style de carte, il vous suffit de définir la `MapType` propriété sur une valeur de l' `MKMapType` énumération :
 
 ```csharp
 map.MapType = MKMapType.Standard; //road map
@@ -48,7 +48,7 @@ La capture d’écran suivante montre les différents styles de carte disponible
 
 ## <a name="panning-and-zooming"></a>Panoramique et zoom
 
-`MKMapView`prend en charge les fonctionnalités d’interactivité de la carte, telles que :
+`MKMapView` prend en charge les fonctionnalités d’interactivité de la carte, telles que :
 
 - Zoom à l’aide d’un geste de pincement
 - Panoramique via un mouvement panoramique
@@ -89,7 +89,7 @@ map.ShowsUserLocation = true;
 
 ## <a name="annotations"></a>Annotations
 
- `MKMapView`prend également en charge l’affichage d’images, appelées annotations, sur une carte. Il peut s’agir d’images personnalisées ou d’épingles de différentes couleurs définies par le système. Par exemple, la capture d’écran suivante montre un mappage avec un code confidentiel et une image personnalisée :
+ `MKMapView` prend également en charge l’affichage d’images, appelées annotations, sur une carte. Il peut s’agir d’images personnalisées ou d’épingles de différentes couleurs définies par le système. Par exemple, la capture d’écran suivante montre un mappage avec un code confidentiel et une image personnalisée :
 
  ![Cette capture d’écran montre un mappage avec un code confidentiel et une image personnalisée](images/03-annotations.png)
 
@@ -187,8 +187,8 @@ En outre, des superpositions personnalisées peuvent être créées pour affiche
 
 Comme pour les annotations, l’ajout d’une superposition implique deux parties :
 
-- Création d’un objet de modèle pour la superposition et ajout de celui-ci à `MKMapView` .
-- Création d’une vue pour la superposition dans le `MKMapViewDelegate` .
+- Création d’un objet de modèle pour la superposition et ajout de celui-ci à  `MKMapView` .
+- Création d’une vue pour la superposition dans le  `MKMapViewDelegate` .
 
 Le modèle de la superposition peut être n’importe quelle `MKShape` sous-classe. Xamarin. iOS comprend `MKShape` des sous-classes pour les polygones, les polylignes et les cercles, par le biais des `MKPolygon` `MKPolyline` `MKCircle` classes et respectivement.
 
@@ -223,10 +223,10 @@ iOS comprend une API de recherche locale avec le kit Map, qui permet des recherc
 
 Pour effectuer une recherche locale, une application doit suivre les étapes suivantes :
 
-1. Créer un `MKLocalSearchRequest` objet.
-1. Créez un `MKLocalSearch` objet à partir du `MKLocalSearchRequest` .
-1. Appelez la `Start` méthode sur l' `MKLocalSearch` objet.
-1. Récupérez l' `MKLocalSearchResponse` objet dans un rappel.
+1. Créer un  `MKLocalSearchRequest` objet.
+1. Créez un  `MKLocalSearch` objet à partir du  `MKLocalSearchRequest` .
+1. Appelez la  `Start` méthode sur l'  `MKLocalSearch` objet.
+1. Récupérez l'  `MKLocalSearchResponse` objet dans un rappel.
 
 L’API recherche locale elle-même ne fournit pas d’interface utilisateur. Il n’a même pas besoin d’utiliser un mappage. Toutefois, pour faciliter l’utilisation de la recherche locale, une application doit fournir un moyen de spécifier une requête de recherche et d’afficher les résultats. En outre, étant donné que les résultats contiendront des données d’emplacement, il est souvent judicieux de les afficher sur une carte.
 
@@ -396,7 +396,7 @@ L’implémentation ci-dessus ajoute une annotation à la carte lorsqu’un él�
  ![Annotation ajoutée à la carte lorsqu’un élément est sélectionné dans les résultats](images/08-search-results.png)
 
 > [!IMPORTANT]
-> `UISearchController`a été implémenté dans iOS 8. Si vous souhaitez prendre en charge des appareils antérieurs à cette version, vous devez utiliser `UISearchDisplayController` .
+> `UISearchController` a été implémenté dans iOS 8. Si vous souhaitez prendre en charge des appareils antérieurs à cette version, vous devez utiliser `UISearchDisplayController` .
 
 ## <a name="summary"></a>Résumé
 
@@ -405,4 +405,4 @@ Cet article a examiné l’infrastructure du *Kit* *Map* pour iOS. Tout d’abor
 ## <a name="related-links"></a>Liens associés
 
 - [SearchController](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/search-controller)
-- [MapDemo (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/mapdemo)
+- [MapDemo (exemple)](/samples/xamarin/ios-samples/mapdemo)

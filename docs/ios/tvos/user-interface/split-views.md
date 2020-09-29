@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 56b9f82fcc15afc8c75012b204588b4da65a32c4
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 9cd19cfccac03ea1edb59c0422f197e33873abc6
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939735"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436889"
 ---
 # <a name="working-with-tvos-split-view-controllers-in-xamarin"></a>Utilisation des contrôleurs tvOS Split View dans Xamarin
 
@@ -174,7 +174,7 @@ Cet article a abordé la conception et l’utilisation des contrôleurs de vue f
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemples tvOS](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [Exemples tvOS](/samples/browse/?products=xamarin&term=Xamarin.iOS%2btvOS)
 - [tvOS](https://developer.apple.com/tvos/)
 - [Guides de l’interface utilisateur tvOS](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [Guide de programmation d’applications pour tvOS](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

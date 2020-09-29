@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: davidortinau
 ms.author: daortin
-ms.openlocfilehash: bdbff7760e7680173c57e5fc83cecb80967c0a51
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: 2eef38791f420fd49b87b46fd131f1e6ce501892
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86996095"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436577"
 ---
 # <a name="creating-a-xamarinios-application-using-the-reflection-api"></a>Création d’une application Xamarin. iOS à l’aide de l’API de réflexion
 
@@ -27,8 +27,8 @@ MT. D est distribué avec Xamarin. iOS. Pour l’utiliser, cliquez avec le bouto
 L’utilisation de l’API de réflexion est aussi simple que :
 
 1. Création d’une classe décorée avec MT. Attributs D.
-1. Création d’une `BindingContext` instance, en lui passant une instance de la classe ci-dessus.
-1. Création d’un `DialogViewController` , en lui passant le `BindingContext’s` `RootElement` .
+1. Création d’une  `BindingContext` instance, en lui passant une instance de la classe ci-dessus.
+1. Création d’un  `DialogViewController` , en lui passant le  `BindingContext’s` `RootElement` .
 
 Examinons un exemple pour illustrer l’utilisation de l’API de réflexion. Dans cet exemple, nous allons créer un écran d’entrée de données simple comme indiqué ci-dessous :
 
@@ -137,13 +137,13 @@ Si vous sélectionnez la ligne, l’application accède à un nouvel écran avec
 
  <a name="Summary"></a>
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article a présenté une procédure pas à pas de l’API de réflexion. Nous avons montré comment ajouter des attributs à une classe pour contrôler ce qui est affiché. Nous avons également expliqué comment utiliser un `BindingContext` pour lier les données d’une classe à la hiérarchie d’éléments créée, ainsi que l’utilisation de Mt. D avec un `UINavigationController` .
 
 ## <a name="related-links"></a>Liens connexes
 
-- [MTDReflectionWalkthrough (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/mtdreflectionwalkthrough)
+- [MTDReflectionWalkthrough (exemple)](/samples/xamarin/ios-samples/mtdreflectionwalkthrough)
 - [Présentation de la boîte de dialogue MonoTouch](~/ios/user-interface/monotouch.dialog/index.md)
 - [Procédure pas à pas d’API d’éléments](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)
 - [Procédure pas à pas d’élément JSON](~/ios/user-interface/monotouch.dialog/monotouch.dialog-json-markup.md)

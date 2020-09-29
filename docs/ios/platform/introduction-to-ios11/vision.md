@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 08/31/2017
-ms.openlocfilehash: 89a21eec369691e5c6e1ec8ce2430d679b6b309d
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 9a31cd31f7cbfb4748991d45204ca867b5d62c8c
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572141"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436626"
 ---
 # <a name="vision-framework-in-xamarinios"></a>Framework de vision dans Xamarin. iOS
 
@@ -35,7 +35,7 @@ La détection des rectangles et les Détection de visage sont décrits plus en d
 
 ## <a name="rectangle-detection"></a>Détection de rectangles
 
-L' [exemple VisionRects](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionrectangles) montre comment traiter une image et dessiner les rectangles détectés dessus.
+L' [exemple VisionRects](/samples/xamarin/ios-samples/ios11-visionrectangles) montre comment traiter une image et dessiner les rectangles détectés dessus.
 
 ### <a name="1-initialize-the-vision-request"></a>1. initialiser la demande de vision
 
@@ -94,7 +94,7 @@ La `OverlayRectangles` méthode de l’exemple **VisionRectangles** a trois fonc
 - Dessin d’un rectangle pour indiquer l’emplacement où chacun a été détecté, et
 - Ajout d’une étiquette de texte pour chaque rectangle à l’aide de CoreGraphics.
 
-Affichez la source de l' [exemple](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionrectangles) pour la méthode coregraphics exacte.
+Affichez la source de l' [exemple](/samples/xamarin/ios-samples/ios11-visionrectangles) pour la méthode coregraphics exacte.
 
 ![Photographie avec trois rectangles détectés](vision-images/found-rectangles-phone-sml.png)
 
@@ -106,7 +106,7 @@ La détection de rectangle est souvent simplement la première étape d’une ch
 
 ## <a name="face-detection"></a>Détection de visage
 
-L' [exemple VisionFaces](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionfaces) fonctionne de la même façon que l’exemple **VisionRectangles** , à l’aide d’une classe de demande de vision différente.
+L' [exemple VisionFaces](/samples/xamarin/ios-samples/ios11-visionfaces) fonctionne de la même façon que l’exemple **VisionRectangles** , à l’aide d’une classe de demande de vision différente.
 
 ### <a name="1-initialize-the-vision-request"></a>1. initialiser la demande de vision
 
@@ -167,7 +167,7 @@ La `OverlayRectangles` méthode de l’exemple **VisionFaces** a trois fonctions
 - Dessin d’un rectangle pour chaque visage détecté, et
 - Ajout d’une étiquette de texte pour chaque visage à l’aide de CoreGraphics.
 
-Affichez la source de l' [exemple](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionfaces) pour la méthode coregraphics exacte.
+Affichez la source de l' [exemple](/samples/xamarin/ios-samples/ios11-visionfaces) pour la méthode coregraphics exacte.
 
 ![Photographie avec deux visages détectés](vision-images/found-faces-phone-sml.png)
 
@@ -175,8 +175,8 @@ Affichez la source de l' [exemple](https://docs.microsoft.com/samples/xamarin/io
 
 L’infrastructure de vision comprend des fonctionnalités supplémentaires pour détecter les caractéristiques du visage, telles que les yeux et la bouche. Utilisez le `VNDetectFaceLandmarksRequest` type, qui retournera les `VNFaceObservation` résultats à l’étape 3 ci-dessus, mais avec des `VNFaceLandmark` données supplémentaires.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [Rectangles de vision (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionrectangles)
-- [Visages de vision (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionfaces)
+- [Rectangles de vision (exemple)](/samples/xamarin/ios-samples/ios11-visionrectangles)
+- [Visages de vision (exemple)](/samples/xamarin/ios-samples/ios11-visionfaces)
 - [Avance dans l’image principale-filtres, métal, vision, etc. (WWDC) (vidéo)](https://developer.apple.com/videos/play/wwdc2017/510/)

@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: b9e32fecab7fc5048de319d35ed1a1e55f32b96c
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: d9ea7a822b8b841df682a20a70d9231996a17d3d
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86929803"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436699"
 ---
 # <a name="standard-controls-in-xamarinmac"></a>Contrôles standard dans Xamarin. Mac
 
@@ -387,14 +387,14 @@ Les contrôles de menu disponibles pour macOS peuvent être configurés pour rem
 
 En plus de définir des éléments dans Interface Builder, les contrôles de menu (tels que `NSComboBox` ) fournissent un ensemble complet de méthodes qui vous permettent d’ajouter, de modifier ou de supprimer les éléments de la liste interne qu’ils maintiennent :
 
-- `Add`-Ajoute un nouvel élément à la fin de la liste.
-- `GetItem`-Retourne l’élément à l’index donné.
-- `Insert`-Insère un nouvel élément dans la liste à l’emplacement donné.
-- `IndexOf`-Retourne l’index de l’élément donné.
-- `Remove`-Supprime l’élément donné de la liste.
-- `RemoveAll`: Supprime tous les éléments de la liste.
-- `RemoveAt`: Supprime l’élément au niveau de l’index donné.
-- `Count`-Retourne le nombre d’éléments dans la liste.
+- `Add` -Ajoute un nouvel élément à la fin de la liste.
+- `GetItem` -Retourne l’élément à l’index donné.
+- `Insert` -Insère un nouvel élément dans la liste à l’emplacement donné.
+- `IndexOf` -Retourne l’index de l’élément donné.
+- `Remove` -Supprime l’élément donné de la liste.
+- `RemoveAll` : Supprime tous les éléments de la liste.
+- `RemoveAt` : Supprime l’élément au niveau de l’index donné.
+- `Count` -Retourne le nombre d’éléments dans la liste.
 
 > [!IMPORTANT]
 > Si vous utilisez une source de données extern ( `UsesDataSource = true` ), l’appel de l’une des méthodes ci-dessus lèvera une exception.
@@ -407,10 +407,10 @@ Au lieu d’utiliser les données internes intégrées pour fournir les lignes p
 
 Pour utiliser une source de données externe, vous allez créer une instance de la source de données du contrôle Menu ( `NSComboBoxDataSource` par exemple) et remplacer plusieurs méthodes pour fournir les données nécessaires :
 
-- `ItemCount`-Retourne le nombre d’éléments dans la liste.
-- `ObjectValueForItem`-Retourne la valeur de l’élément pour un index donné.
-- `IndexOfItem`-Retourne l’index pour la valeur de l’élément.
-- `CompletedString`-Retourne la première valeur de l’élément correspondant pour la valeur de l’élément partiellement typé. Cette méthode est appelée uniquement si la saisie semi-automatique a été activée ( `Completes = true` ).
+- `ItemCount` -Retourne le nombre d’éléments dans la liste.
+- `ObjectValueForItem` -Retourne la valeur de l’élément pour un index donné.
+- `IndexOfItem` -Retourne l’index pour la valeur de l’élément.
+- `CompletedString` -Retourne la première valeur de l’élément correspondant pour la valeur de l’élément partiellement typé. Cette méthode est appelée uniquement si la saisie semi-automatique a été activée ( `Completes = true` ).
 
 Pour plus d’informations, consultez la section [bases de données et comboboxs](~/mac/app-fundamentals/databases.md#Databases-and-ComboBoxes) du document [utilisation des bases de données](~/mac/app-fundamentals/databases.md) .
 
@@ -420,10 +420,10 @@ Pour plus d’informations, consultez la section [bases de données et comboboxs
 
 Les méthodes suivantes sont disponibles pour ajuster l’apparence du contrôle de menu :
 
-- `HasVerticalScroller`-Si `true` , le contrôle affichera une barre de défilement verticale. 
-- `VisibleItems`-Ajuster le nombre d’éléments affichés lorsque le contrôle est ouvert. La valeur par défaut est cinq (5).
-- `IntercellSpacing`-Ajuster la quantité d’espace autour d’un élément donné en fournissant un `NSSize` où le `Width` spécifie les marges gauche et droite et `Height` spécifie l’espace avant et après un élément.
-- `ItemHeight`: Spécifie la hauteur de chaque élément de la liste.
+- `HasVerticalScroller` -Si `true` , le contrôle affichera une barre de défilement verticale. 
+- `VisibleItems` -Ajuster le nombre d’éléments affichés lorsque le contrôle est ouvert. La valeur par défaut est cinq (5).
+- `IntercellSpacing` -Ajuster la quantité d’espace autour d’un élément donné en fournissant un `NSSize` où le `Width` spécifie les marges gauche et droite et `Height` spécifie l’espace avant et après un élément.
+- `ItemHeight` : Spécifie la hauteur de chaque élément de la liste.
 
 Pour les types de liste déroulante de `NSPopupButtons` , le premier élément de menu fournit le titre du contrôle. Par exemple : 
 
@@ -441,11 +441,11 @@ DropDownSelected.Title = "Item 1";
 
 Les méthodes et propriétés suivantes vous permettent de manipuler les éléments sélectionnés dans la liste du contrôle Menu :
 
-- `SelectItem`-Sélectionne l’élément à l’index donné.
-- `Select`-Sélectionnez la valeur de l’élément donné.
-- `DeselectItem`-Désélectionne l’élément à l’index donné.
-- `SelectedIndex`-Retourne l’index de l’élément actuellement sélectionné.
-- `SelectedValue`-Retourne la valeur de l’élément actuellement sélectionné.
+- `SelectItem` -Sélectionne l’élément à l’index donné.
+- `Select` -Sélectionnez la valeur de l’élément donné.
+- `DeselectItem` -Désélectionne l’élément à l’index donné.
+- `SelectedIndex` -Retourne l’index de l’élément actuellement sélectionné.
+- `SelectedValue` -Retourne la valeur de l’élément actuellement sélectionné.
 
 Utilisez le `ScrollItemAtIndexToTop` pour présenter l’élément à l’index donné en haut de la liste et le `ScrollItemAtIndexToVisible` pour faire défiler jusqu’à la liste jusqu’à ce que l’élément à l’index spécifié soit visible.
 
@@ -455,10 +455,10 @@ Utilisez le `ScrollItemAtIndexToTop` pour présenter l’élément à l’index 
 
 Les contrôles de menu fournissent les événements suivants pour répondre à l’interaction de l’utilisateur :
 
-- `SelectionChanged`-Est appelé quand l’utilisateur a sélectionné une valeur dans la liste.
-- `SelectionIsChanging`-Est appelé avant que le nouvel élément sélectionné par l’utilisateur devienne la sélection active.
-- `WillPopup`-Est appelé avant l’affichage de la liste déroulante d’éléments.
-- `WillDismiss`-Est appelé avant la fermeture de la liste déroulante d’éléments.
+- `SelectionChanged` -Est appelé quand l’utilisateur a sélectionné une valeur dans la liste.
+- `SelectionIsChanging` -Est appelé avant que le nouvel élément sélectionné par l’utilisateur devienne la sélection active.
+- `WillPopup` -Est appelé avant l’affichage de la liste déroulante d’éléments.
+- `WillDismiss` -Est appelé avant la fermeture de la liste déroulante d’éléments.
 
 Pour les `NSComboBox` contrôles, ils incluent tous les mêmes événements que `NSTextField` , tels que l' `Changed` événement qui est appelé chaque fois que l’utilisateur modifie la valeur du texte dans la zone de liste déroulante.
 
@@ -577,7 +577,7 @@ FeedbackLabel.StringValue = string.Format("Number: {0}",NumberField.IntValue);
 
 `NSTextView`Fournit une zone d’affichage et de modification de texte complète avec une mise en forme intégrée. Comme un `NSTextField` , utilisez la `StringValue` propriété pour lire ou définir la valeur de la zone.
 
-Pour obtenir un exemple d’utilisation complexe des affichages de texte dans une application Xamarin. Mac, consultez l' [exemple d’application SourceWriter](https://docs.microsoft.com/samples/xamarin/mac-samples/sourcewriter). SourceWriter est un éditeur de code source simple qui assure la prise en charge de la complétion de code et de la coloration syntaxique de base.
+Pour obtenir un exemple d’utilisation complexe des affichages de texte dans une application Xamarin. Mac, consultez l' [exemple d’application SourceWriter](/samples/xamarin/mac-samples/sourcewriter). SourceWriter est un éditeur de code source simple qui assure la prise en charge de la complétion de code et de la coloration syntaxique de base.
 
 Le code SourceWriter a été entièrement commenté et, le cas échéant, des liens ont être fournis entre les principales technologies ou méthodes et des informations pertinentes dans la documentation des guides Xamarin.Mac.
 
@@ -644,7 +644,7 @@ Cet article a décrit en détail l’utilisation des contrôles AppKit standard,
 
 ## <a name="related-links"></a>Liens associés
 
-- [MacControls (exemple)](https://docs.microsoft.com/samples/xamarin/mac-samples/maccontrols)
+- [MacControls (exemple)](/samples/xamarin/mac-samples/maccontrols)
 - [Hello, Mac](~/mac/get-started/hello-mac.md)
 - [Windows](~/mac/user-interface/window.md)
 - [Liaison de données et codage de clé-valeur](~/mac/app-fundamentals/databinding.md)

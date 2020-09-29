@@ -1,22 +1,22 @@
 ---
 title: Création d’une application Xamarin. iOS à l’aide de l’API Elements
-description: Cet article s’appuie sur les informations présentées dans l’article présentation de la boîte de dialogue présentation de monocontact. Il présente une procédure pas à pas qui montre comment utiliser la boîte de dialogue MonoTouch. D) API Elements pour commencer rapidement à créer une application avec MT. E.
+description: Cet article s’appuie sur les informations présentées dans l’article présentation de la boîte de dialogue présentation de monocontact. Il présente une procédure pas à pas qui montre comment utiliser la boîte de dialogue MonoTouch. D) API Elements pour commencer rapidement à créer une application avec MT. D.
 ms.prod: xamarin
 ms.assetid: F1124734-DF44-F1F3-0832-46F52A788CDC
 ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: davidortinau
 ms.author: daortin
-ms.openlocfilehash: 3e1e7a9c5fb01f73cddb4cab3a95aa421bd8c3fb
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: b95066379e7b6845bf1265b43681aec83b130aa4
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86933365"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436747"
 ---
 # <a name="creating-a-xamarinios-application-using-the-elements-api"></a>Création d’une application Xamarin. iOS à l’aide de l’API Elements
 
-_Cet article s’appuie sur les informations présentées dans l’article présentation de la boîte de dialogue présentation de monocontact. Il présente une procédure pas à pas qui montre comment utiliser la boîte de dialogue MonoTouch. D) API Elements pour commencer rapidement à créer une application avec MT. E._
+_Cet article s’appuie sur les informations présentées dans l’article présentation de la boîte de dialogue présentation de monocontact. Il présente une procédure pas à pas qui montre comment utiliser la boîte de dialogue MonoTouch. D) API Elements pour commencer rapidement à créer une application avec MT. D._
 
 Dans cette procédure pas à pas, nous allons utiliser le MT. API D Elements pour créer un style maître/détail d’une application qui affiche une liste de tâches. Quand l’utilisateur sélectionne le **+** bouton dans la barre de navigation, une nouvelle ligne est ajoutée à la table pour la tâche. Si vous sélectionnez la ligne, vous accédez à l’écran de détails qui nous permet de mettre à jour la description de la tâche et la date d’échéance, comme illustré ci-dessous :
 
@@ -28,7 +28,7 @@ MT. D est distribué avec Xamarin. iOS. Pour l’utiliser, cliquez avec le bouto
 
 ## <a name="elements-api-walkthrough"></a>Procédure pas à pas d’API d’éléments
 
-Dans l’article présentation de la [boîte de dialogue de monocontact](~/ios/user-interface/monotouch.dialog/index.md) , nous avons acquis une bonne compréhension des différentes parties de Mt. E. Utilisons l’API Elements pour les rassembler dans une application.
+Dans l’article présentation de la [boîte de dialogue de monocontact](~/ios/user-interface/monotouch.dialog/index.md) , nous avons acquis une bonne compréhension des différentes parties de Mt. D. Utilisons l’API Elements pour les rassembler dans une application.
 
 ## <a name="setting-up-the-multi-screen-application"></a>Configuration de l’application multi-écran
 
@@ -38,9 +38,9 @@ Pour créer une application à plusieurs écrans avec la boîte de dialogue Mono
 
 1. Créez une classe `UINavigationController.`
 1. Créez une classe `DialogViewController.`
-1. Ajoutez `DialogViewController` en tant que racine du`UINavigationController.` 
-1. Ajoutez un `RootElement` au`DialogViewController.`
-1. Ajoutez `Sections` et `Elements` à la`RootElement.` 
+1. Ajoutez `DialogViewController` en tant que racine du  `UINavigationController.` 
+1. Ajoutez un `RootElement` au  `DialogViewController.`
+1. Ajoutez `Sections` et  `Elements` à la  `RootElement.` 
 
 ### <a name="using-a-uinavigationcontroller"></a>Utilisation d’un UINavigationController
 
@@ -143,7 +143,7 @@ Cet article a présenté une procédure pas à pas qui a montré comment utilise
 
 ## <a name="related-links"></a>Liens connexes
 
-- [MTDWalkthrough (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/mtdwalkthrough)
+- [MTDWalkthrough (exemple)](/samples/xamarin/ios-samples/mtdwalkthrough)
 - [Présentation de la boîte de dialogue de monopression.](~/ios/user-interface/monotouch.dialog/index.md)
 - [Démonstration de l’API de réflexion](~/ios/user-interface/monotouch.dialog/reflection-api-walkthrough.md)
 - [Procédure pas à pas d’élément JSON](~/ios/user-interface/monotouch.dialog/json-element-walkthrough.md)

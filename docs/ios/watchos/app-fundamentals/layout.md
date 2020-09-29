@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 345c05a439423474644ac64ef86f9adc580ab0b1
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 1fdb7a10bd767085ba8758fa2e026cc36c93639a
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937720"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436925"
 ---
 # <a name="working-with-watchos-layout-in-xamarin"></a>Utilisation de la disposition Watchos dans Xamarin
 
@@ -54,9 +54,9 @@ Lorsque la taille est définie sur **relative au conteneur** , vous pouvez fourn
 
 ![Fournir une valeur proportionnelle et un ajustement de décalage](layout-images/button-attributes.png)
 
-### <a name="group"></a>Groupe
+### <a name="group"></a>Group
 
-`WKInterfaceGroup`est un conteneur de disposition simple qui peut être configuré pour empiler des contrôles verticalement ou horizontalement. Il comprend l’espacement entre chaque contrôle par défaut, mais vous pouvez modifier l’espacement (et les indéfinis) dans l’inspecteur d' **attributs** .
+`WKInterfaceGroup` est un conteneur de disposition simple qui peut être configuré pour empiler des contrôles verticalement ou horizontalement. Il comprend l’espacement entre chaque contrôle par défaut, mais vous pouvez modifier l’espacement (et les indéfinis) dans l’inspecteur d' **attributs** .
 
 ![Modifier l’espacement et les indéfinis dans l’inspecteur d’attributs](layout-images/group-attributes.png)
 
@@ -79,6 +79,6 @@ Celles-ci peuvent être positionnées dans vos dispositions à l’aide de **gro
 
 ## <a name="related-links"></a>Liens associés
 
-- [WatchKitCatalog (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
+- [WatchKitCatalog (exemple)](/samples/xamarin/ios-samples/watchos-watchkitcatalog)
 - [Informations de référence sur la disposition d’Apple](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/WatchHumanInterfaceGuidelines/Layout.html)
 - [Informations de référence sur la typographie de Color & d’Apple](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/WatchHumanInterfaceGuidelines/ColorandTypography.html)
