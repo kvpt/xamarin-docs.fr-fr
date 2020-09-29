@@ -9,18 +9,18 @@ ms.date: 03/13/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f54c31afef691d316cbc3108792ab3158359c47c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 4a671be5f65e0e35c89f4acec17f406a214b9fa9
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84802324"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91434620"
 ---
-# <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials: Géolocalisation
+# <a name="no-locxamarinessentials-geolocation"></a>Xamarin.Essentials: Géolocalisation
 
 La classe **Geolocation** fournit des API permettant de récupérer les coordonnées de géolocalisation de l’appareil.
 
-## <a name="get-started"></a>Bien démarrer
+## <a name="get-started"></a>Prise en main
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -176,7 +176,7 @@ Le tableau suivant indique la précision en fonction de la plateforme :
 | iOS | 100 |
 | UWP | 30 - 500 |
 
-### <a name="high"></a>Élevé
+### <a name="high"></a>Importante
 
 | Plateforme | Distance (en mètres) |
 | --- | --- |
@@ -238,7 +238,7 @@ Sur iOS, l' [altitude](https://developer.apple.com/documentation/corelocation/cl
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
 
-Sur UWP, l’altitude est retournée en mètres. Pour plus d’informations, consultez la documentation de [AltitudeReferenceSystem](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geopoint.altitudereferencesystem#Windows_Devices_Geolocation_Geopoint_AltitudeReferenceSystem) .
+Sur UWP, l’altitude est retournée en mètres. Pour plus d’informations, consultez la documentation de [AltitudeReferenceSystem](/uwp/api/windows.devices.geolocation.geopoint.altitudereferencesystem#Windows_Devices_Geolocation_Geopoint_AltitudeReferenceSystem) .
 
 -----
 

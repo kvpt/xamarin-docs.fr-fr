@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: af0b9b4a73a82afbaef314384b10d6b9465a4b29
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: f1a95bd49588077b6765eaec0a8e038f33f94109
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73022814"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436414"
 ---
 # <a name="sample-app-hello-ios"></a>Exemple d’application : Hello, iOS
 
@@ -25,6 +25,6 @@ La première partie de ce guide décrit comment créer une application qui conve
 
 La seconde partie de ce document examine l’application créée et explique le fonctionnement des applications iOS.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [Hello, iOS (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios)
+- [Hello, iOS (exemple)](/samples/xamarin/ios-samples/hello-ios)

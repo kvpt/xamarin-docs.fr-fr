@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: e779b874cda016a0cd6cc0444ff42a761ee7483e
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 793a82b7bb88f3e0c0a233c8c18c2d90f741b137
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86934678"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91434764"
 ---
 # <a name="tvos-user-interface-styles-in-xamarin"></a>Styles de l’interface utilisateur tvOS dans Xamarin
 
@@ -81,8 +81,8 @@ Si le développeur modifie la couleur de texte manuellement (dans le Storyboard 
 
 Pour la prise en charge des thèmes clairs et foncés dans une application tvOS 10, Apple a ajouté deux nouveaux effets de flou. Ces nouveaux effets ajustent automatiquement le flou en fonction du thème de l’interface utilisateur que l’utilisateur a sélectionné comme suit :
 
-- `UIBlurEffectStyleRegular`-Utilise un flou clair dans le thème clair et un flou foncé dans le thème sombre.
-- `UIBlurEffectStyleProminent`-Utilise un flou extra clair dans le thème clair et un flou extra-sombre dans le thème sombre.
+- `UIBlurEffectStyleRegular` -Utilise un flou clair dans le thème clair et un flou foncé dans le thème sombre.
+- `UIBlurEffectStyleProminent` -Utilise un flou extra clair dans le thème clair et un flou extra-sombre dans le thème sombre.
 
 <a name="Working-with-Trait-Collections"></a>
 
@@ -209,5 +209,5 @@ Cet article a abordé les thèmes de l’interface utilisateur Light et Dark qu�
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemples tvOS](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [Exemples tvOS](/samples/browse/?products=xamarin&term=Xamarin.iOS%2btvOS)
 - [Nouveautés de tvOS 10](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewinTVOS/Articles/tvOS10.html#//apple_ref/doc/uid/TP40017259-SW1)

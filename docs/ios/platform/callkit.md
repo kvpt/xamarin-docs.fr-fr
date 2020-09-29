@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/15/2017
-ms.openlocfilehash: 791ab82e0e5f47929eff561ac836ec87e6d6c134
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: 0dd7736d37f6db17ad794258d9dff852b2745053
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997317"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91431852"
 ---
 # <a name="callkit-in-xamarinios"></a>CallKit dans Xamarin. iOS
 
@@ -56,8 +56,8 @@ Examinez de plus près l’application MonkeyCall à partir du diagramme ci-dess
 
 Il existe deux interfaces principales dans CallKit que l’application utilise :
 
-- `CXProvider`-Cela permet à l’application MonkeyCall d’informer le système des notifications hors bande susceptibles de se produire.
-- `CXCallController`-Autorise l’application MonkeyCall à informer le système des actions de l’utilisateur local.
+- `CXProvider` -Cela permet à l’application MonkeyCall d’informer le système des notifications hors bande susceptibles de se produire.
+- `CXCallController` -Autorise l’application MonkeyCall à informer le système des actions de l’utilisateur local.
 
 ### <a name="the-cxprovider"></a>CXProvider
 
@@ -217,7 +217,7 @@ namespace MonkeyCall
 }
 ```
 
-`ActiveCall`contient plusieurs propriétés qui définissent l’état de l’appel et deux événements qui peuvent être déclenchés lorsque l’état de l’appel change. Étant donné qu’il s’agit d’un exemple uniquement, il existe trois méthodes utilisées pour simuler le démarrage, la réponse et la fin d’un appel.
+`ActiveCall` contient plusieurs propriétés qui définissent l’état de l’appel et deux événements qui peuvent être déclenchés lorsque l’état de l’appel change. Étant donné qu’il s’agit d’un exemple uniquement, il existe trois méthodes utilisées pour simuler le démarrage, la réponse et la fin d’un appel.
 
 ### <a name="the-startcallrequest-class"></a>La classe StartCallRequest
 
@@ -1255,10 +1255,10 @@ Pour définir les numéros bloqués, utilisez la `AddBlockingEntry` méthode de 
 
 Pour informer l’application de contact des numéros de contact connus de l’application VOIP, utilisez la `AddIdentificationEntry` méthode de la `CXCallDirectoryExtensionContext` classe et fournissez le nombre et une étiquette d’identification. Là encore, les nombres fournis à la méthode _doivent_ être dans l’ordre numérique croissant. Pour optimiser les performances et l’utilisation de la mémoire lorsqu’il existe de nombreux numéros de téléphone, envisagez de charger uniquement un sous-ensemble de nombres à un moment donné et d’utiliser un ou plusieurs pools de mise en service pour libérer des objets alloués au cours de chaque lot de numéros chargés.
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article a abordé la nouvelle API CallKit qu’Apple a publiée dans iOS 10 et comment l’implémenter dans les applications VOIP Xamarin. iOS. Il a montré comment CallKit permet à une application de s’intégrer au système iOS, comment elle fournit la parité des fonctionnalités avec les applications intégrées (comme le téléphone) et comment elle augmente la visibilité d’une application dans iOS dans des emplacements tels que les écrans de verrouillage et d’habitation, via des interactions Siri et via les applications contacts.
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Exemples iOS 10](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS10)
+- [Exemples iOS 10](/samples/browse/?products=xamarin&term=Xamarin.iOS%2biOS10)

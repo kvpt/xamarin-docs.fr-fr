@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: cf0e617b225cc7535acffa0880a0bc089ae8da28
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 01a09294d55490a723eb59b0365ac2dc516110c9
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86934054"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91434672"
 ---
 # <a name="sliders-switches-and-segmented-controls-in-xamarinios"></a>Curseurs, commutateurs et contrôles segmentés dans Xamarin. iOS
 
@@ -58,11 +58,11 @@ Le curseur personnalisé ressemble à ceci :
 
 <a name="Switch"></a>
 
-## <a name="switch"></a>Commutateur
+## <a name="switch"></a>Basculer
 
 iOS utilise `UISwitch` comme entrée booléenne qui peut être représentée par un bouton radio sur d’autres plateformes. L’utilisateur peut manipuler le contrôle en déplaçant le *curseur* entre les positions **on/off** .
 
- [![Commutateur](slider-switch-segmented-controls-images/image28a.png)](slider-switch-segmented-controls-images/image28a.png#lightbox)
+ [![Basculer](slider-switch-segmented-controls-images/image28a.png)](slider-switch-segmented-controls-images/image28a.png#lightbox)
 
 L’apparence du commutateur peut être personnalisée dans le **panneau Propriétés** du concepteur, ce qui vous permet de contrôler l’État par défaut, les couleurs **de teinte d’activation/de désactivation** et une **image d’activation/de désactivation**. Cela est illustré dans l’image ci-dessous :
 
@@ -94,5 +94,5 @@ Il convient de noter que le style de contrôle segmenté est déconseillé dans 
 
 ## <a name="related-links"></a>Liens associés
 
-- [Contrôles (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/controls)
+- [Contrôles (exemple)](/samples/xamarin/ios-samples/controls)
 - [Contrôleur d’alerte](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/alertcontroller)

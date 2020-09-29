@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 91ead74f1ae26e10046b1e57d722e84014546108
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: db630ba7db1532f24fb6e810653427d1678ad5e2
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86929023"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91434649"
 ---
 # <a name="troubleshooting-tvos-apps-built-with-xamarin"></a>Dépannage des applications tvOS générées avec Xamarin
 
@@ -34,7 +34,7 @@ La version actuelle de la prise en charge tvOS de Xamarin présente les problèm
 
 Signalez les bogues que vous trouverez sur [GitHub](https://github.com/xamarin/xamarin-macios/issues/new).
 
-## <a name="troubleshooting"></a>Dépannage
+## <a name="troubleshooting"></a>Résolution des problèmes
 
 Les sections suivantes répertorient certains problèmes connus qui peuvent se produire lors de l’utilisation de tvOS 9 avec Xamarin. tvOS et la solution à ces problèmes :
 
@@ -76,7 +76,7 @@ Section
  reserved2 0
 ```
 
-`addr`et `size` seront différents, mais d’autres champs doivent être identiques.
+`addr` et `size` seront différents, mais d’autres champs doivent être identiques.
 
 Vous devez vous assurer que toutes les bibliothèques statiques () tierces `.a` que vous utilisez ont été créées sur des bibliothèques tvOS (et non des bibliothèques IOS) et qu’elles incluent également des informations bitcode.
 
@@ -138,7 +138,7 @@ Si vous recevez un message au format «erreur ITMS-90471. La grande icône est m
 
 ### <a name="invalid-bundle--an-app-that-supports-game-controllers-must-also-support-the-apple-tv-remote"></a>Bundle non valide : une application qui prend en charge les contrôleurs de jeu doit également prendre en charge l’Apple TV à distance
 
-or 
+ou 
 
 ### <a name="invalid-bundle--apple-tv-apps-with-the-gamecontroller-framework-must-include-the-gcsupportedgamecontrollers-key-in-the-apps-infoplist"></a>Bundle non valide : les applications Apple TV avec l’infrastructure GameController doivent inclure la clé GCSupportedGameControllers dans le fichier info. plist de l’application
 
@@ -150,7 +150,7 @@ _Nous avons découvert un ou plusieurs problèmes liés à la livraison récente
 
 _Bundle non valide : une application qui prend en charge les contrôleurs de jeu doit également prendre en charge la télécommande Apple TV._
 
-or 
+ou 
 
 _Bundle non valide : les applications Apple TV avec l’infrastructure GameController doivent inclure la clé GCSupportedGameControllers dans le fichier info. plist de l’application._
 
@@ -202,7 +202,7 @@ Ce fichier étant en place, vous devez être en mesure d’ajouter le fichier PC
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemples tvOS](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [Exemples tvOS](/samples/browse/?products=xamarin&term=Xamarin.iOS%2btvOS)
 - [tvOS](https://developer.apple.com/tvos/)
 - [Guides de l’interface utilisateur tvOS](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [Guide de programmation d’applications pour tvOS](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

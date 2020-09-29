@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: cd04450d1429092453e6d8b65278d87b5d52e45e
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 65a76c0196b79a17f935f59902c8e6d2f9f25933
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571621"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91434913"
 ---
 # <a name="troubleshooting-tvos-10-apps-built-with-xamarin"></a>Dépannage des applications tvOS 10 générées avec Xamarin
 
@@ -28,7 +28,7 @@ Les sections suivantes répertorient certains problèmes connus qui peuvent se p
 
 <a name="App-Store"></a>
 
-## <a name="app-store"></a>App Store
+## <a name="app-store"></a>App Store
 
 Problèmes connus :
 
@@ -63,7 +63,7 @@ Les opérations de longue durée renverront un _« vous n’êtes pas autorisé
 
 ## <a name="core-image"></a>Image principale
 
-L' `CIImageProcessor` API prend maintenant en charge un nombre arbitraire d’images d’entrée. `CIImageProcessor`L’API qui était incluse dans tvOS 10 bêta 1 sera supprimée.
+L' `CIImageProcessor` API prend maintenant en charge un nombre arbitraire d’images d’entrée. `CIImageProcessor` L’API qui était incluse dans tvOS 10 bêta 1 sera supprimée.
 
 <a name="NSUserActivity"></a>
 
@@ -84,7 +84,7 @@ Problèmes connus :
 - Les applications avec des sous-classes personnalisées `UIView` qui remplacent et modifient `LayoutSubviews` la disposition avant d’appeler `base.LayoutSubviews` peuvent déclencher une boucle de disposition infinie dans tvOS 10.
 - Les ressources d’images spécifiques à une direction ou retournées ne sont pas retournées lorsqu’elles sont assignées aux `UIButton` objets.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [Exemples tvOS](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [Exemples tvOS](/samples/browse/?products=xamarin&term=Xamarin.iOS%2btvOS)
 - [Nouveautés de tvOS 10](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewinTVOS/Articles/tvOS10.html#//apple_ref/doc/uid/TP40017259-SW1)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/17/2017
-ms.openlocfilehash: 1a7d7ec017bb226efb05014dc7ac80160aeaae48
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: ce436f907c70657ff6d08f39bdec9e7d796d519c
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938343"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91431035"
 ---
 # <a name="events-protocols-and-delegates-in-xamarinios"></a>Événements, protocoles et délégués dans Xamarin. iOS
 
@@ -146,7 +146,7 @@ Apple utilise des protocoles dans iOS pour définir les contrats des classes à 
 
 ### <a name="protocols-with-xamarinios"></a>Protocoles avec Xamarin. iOS
 
-Jetons un coup d’œil à un exemple utilisant un protocole objective-C à partir de Xamarin. iOS. Pour cet exemple, nous allons utiliser le `MKAnnotation` protocole, qui fait partie de l' `MapKit` infrastructure. `MKAnnotation`est un protocole qui permet à tout objet qui l’adopte de fournir des informations sur une annotation qui peut être ajoutée à un mappage. Par exemple, un objet qui implémente `MKAnnotation` fournit l’emplacement de l’annotation et le titre qui lui est associé.
+Jetons un coup d’œil à un exemple utilisant un protocole objective-C à partir de Xamarin. iOS. Pour cet exemple, nous allons utiliser le `MKAnnotation` protocole, qui fait partie de l' `MapKit` infrastructure. `MKAnnotation` est un protocole qui permet à tout objet qui l’adopte de fournir des informations sur une annotation qui peut être ajoutée à un mappage. Par exemple, un objet qui implémente `MKAnnotation` fournit l’emplacement de l’annotation et le titre qui lui est associé.
 
 De cette façon, le `MKAnnotation` protocole est utilisé pour fournir des données pertinentes qui accompagnent une annotation. La vue réelle de l’annotation est créée à partir des données de l’objet qui adopte le `MKAnnotation` protocole. Par exemple, le texte de la légende qui apparaît lorsque l’utilisateur appuie sur l’annotation (comme indiqué dans la capture d’écran ci-dessous) provient de la `Title` propriété de la classe qui implémente le protocole :
 
@@ -249,7 +249,7 @@ public abstract class UITableViewDataSource : NSObject
 Notez que la classe est abstraite. Xamarin. iOS rend la classe abstraite pour prendre en charge les méthodes facultatives/requises dans les protocoles.
 Toutefois, contrairement aux protocoles objective-C (ou interfaces C#), les classes C# ne prennent pas en charge l’héritage multiple. Cela affecte la conception du code C# qui utilise des protocoles, et généralement des classes imbriquées. Pour plus d’informations sur ce problème, vous trouverez plus loin dans ce document, dans la section délégués.
 
- `GetCell(…)`est une méthode abstraite, liée au *Sélecteur*objective-C, `tableView:cellForRowAtIndexPath:` , qui est une méthode requise du `UITableViewDataSource` protocole. Selector est le terme objective-C pour le nom de la méthode. Pour appliquer la méthode en fonction des besoins, Xamarin. iOS la déclare comme abstraite. L’autre méthode, `NumberOfSections(…)` , est liée à `numberOfSectionsInTableview:` . Cette méthode étant facultative dans le protocole, Xamarin. iOS la déclare comme étant virtuelle, ce qui la rend facultatif à substituer en C#.
+ `GetCell(…)` est une méthode abstraite, liée au *Sélecteur*objective-C, `tableView:cellForRowAtIndexPath:` , qui est une méthode requise du `UITableViewDataSource` protocole. Selector est le terme objective-C pour le nom de la méthode. Pour appliquer la méthode en fonction des besoins, Xamarin. iOS la déclare comme abstraite. L’autre méthode, `NumberOfSections(…)` , est liée à `numberOfSectionsInTableview:` . Cette méthode étant facultative dans le protocole, Xamarin. iOS la déclare comme étant virtuelle, ce qui la rend facultatif à substituer en C#.
 
 Xamarin. iOS gère toutes les liaisons iOS pour vous. Toutefois, si vous devez lier manuellement un protocole à Objective-C, vous pouvez le faire en décorant une classe avec `ExportAttribute` . Il s’agit de la même méthode que celle utilisée par Xamarin. iOS.
 
@@ -385,7 +385,7 @@ Nous avons ensuite appris les protocoles objective-C, notamment la façon dont i
 
 ## <a name="related-links"></a>Liens associés
 
-- [Protocoles, délégués et événements (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/protocols-delegates-events)
+- [Protocoles, délégués et événements (exemple)](/samples/xamarin/ios-samples/protocols-delegates-events)
 - [Hello, iOS](~/ios/get-started/hello-ios/index.md)
 - [Liaison d’un type objective-C](~/ios/platform/binding-objective-c/index.md)
 - [Langage de programmation objective-C](https://developer.apple.com/library/ios/#documentation/Cocoa/Conceptual/ObjectiveC/Introduction/introObjectiveC.html)

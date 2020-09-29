@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 497096e7f422e8337498339737ab304b0d896dfe
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 7e56eed866cb647bd654370d587b02bcaba04d4e
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938994"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91432812"
 ---
 # <a name="watchos-troubleshooting"></a>Résolution des problèmes surveilléos
 
@@ -162,7 +162,7 @@ Il est facile de supprimer le canal alpha sur Mac OS X à l’aide de l’applic
 
 6. Sélectionnez **générer > générer tout** afin que la synchronisation Xcode reconnaisse la nouvelle classe (via l' `Register` attribut) que nous avons utilisée.
 
-7. Rouvrez la table de montage séquentiel en cliquant avec le bouton droit sur le fichier d’animation de l’application Watch, puis en sélectionnant **Ouvrir avec > Xcode Interface Builder**:
+7. Rouvrez la table de montage séquentiel en cliquant avec le bouton droit sur le fichier d’animation de l’application Watch, puis en sélectionnant  **Ouvrir avec > Xcode Interface Builder**:
 
     ![Ouverture de la table de montage séquentiel dans Interface Builder](troubleshooting-images/add-6.png)
 
@@ -175,7 +175,7 @@ Il est facile de supprimer le canal alpha sur Mac OS X à l’aide de l’applic
 
     ![L’élément de barre d’outils Éditeur de l’Assistant](troubleshooting-images/add-7.png)
 
-    Lorsque le focus se trouve dans le volet de code, vérifiez que vous examinez le fichier d’en-tête **. h** et, si vous ne cliquez pas avec le bouton droit dans la barre de navigation et sélectionnez le fichier approprié (**MyInterfaceController. h**).
+    Lorsque le focus se trouve dans le volet de code, vérifiez que vous examinez le fichier d’en-tête  **. h** et, si vous ne cliquez pas avec le bouton droit dans la barre de navigation et sélectionnez le fichier approprié (**MyInterfaceController. h**).
 
     ![Sélectionner MyInterfaceController](troubleshooting-images/add-8.png)
 
@@ -293,5 +293,5 @@ Exemple :
 
 ## <a name="related-links"></a>Liens associés
 
-- [WatchKitCatalog (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
-- [WatchTables (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchtables)
+- [WatchKitCatalog (exemple)](/samples/xamarin/ios-samples/watchos-watchkitcatalog)
+- [WatchTables (exemple)](/samples/xamarin/ios-samples/watchos-watchtables)

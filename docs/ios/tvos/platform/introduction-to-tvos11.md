@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 02/08/2018
-ms.openlocfilehash: 8069e28dabb804be862334dab5c75b888e23ef74
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b765a3ddb5a34c764d9e1b7cd4776e68cf404b08
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030579"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91434787"
 ---
 # <a name="introduction-to-tvos-11"></a>Introduction à tvOS 11
 
@@ -40,7 +40,7 @@ Pour obtenir la liste complète des modifications apportées à Apple dans tvOS 
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemples tvOS](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [Exemples tvOS](/samples/browse/?products=xamarin&term=Xamarin.iOS%2btvOS)
 - [Présentation de tvOS](~/ios/tvos/index.md)
 - [Nouveautés de tvOS 11 (Guide du développeur Apple)](https://developer.apple.com/library/content/releasenotes/General/WhatsNewinTVOS/Articles/tvOS_11_0.html)
 - [Nouveautés de tvOS 11 (WWDC 2017)](https://developer.apple.com/videos/play/wwdc2017/209/)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/09/2016
-ms.openlocfilehash: 6588747fb806c858f5bc7b024980ae0d0771c60e
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: cace68a1b85a4404774ca88ec697d419920d05cb
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938786"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91432900"
 ---
 # <a name="using-icloud-with-xamarinios"></a>Utilisation de iCloud avec Xamarin. iOS
 
@@ -33,7 +33,7 @@ Ce document aborde les deux premiers types-paires clé-valeur et sous-classes UI
 > [!IMPORTANT]
 > Apple [fournit des outils](https://developer.apple.com/support/allowing-users-to-manage-data/) pour aider les développeurs à gérer correctement le Règlement général sur la protection des données (RGPD) de l’Union européenne.
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Configuration requise
 
 - La dernière version stable de Xamarin. iOS
 - Xcode 10
@@ -45,13 +45,13 @@ Les applications doivent être configurées pour utiliser iCloud dans le [portai
 
 Pour configurer correctement une application pour accéder à iCloud :
 
-- **Recherchez votre TeamID** -Connectez-vous à [Developer.Apple.com](https://developer.apple.com) et visitez le **Centre des membres > votre compte > Résumé du compte de développeur** pour obtenir votre ID d’équipe (ou un ID individuel pour les développeurs uniques). Il s’agit d’une chaîne de 10 caractères ( **A93A5CM278** , par exemple), qui fait partie de l' « identificateur de conteneur ».
+- **Recherchez votre TeamID** -Connectez-vous à  [Developer.Apple.com](https://developer.apple.com) et visitez le  **Centre des membres > votre compte > Résumé du compte de développeur** pour obtenir votre ID d’équipe (ou un ID individuel pour les développeurs uniques). Il s’agit d’une chaîne de 10 caractères ( **A93A5CM278** , par exemple), qui fait partie de l' « identificateur de conteneur ».
 
-- **Créer un ID d’application** : pour créer un ID d’application, suivez les étapes décrites dans la [section Configuration des technologies du Windows Store du Guide de provisionnement des appareils](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)et veillez à vérifier **icloud** comme un service autorisé :
+- **Créer un ID d’application** : pour créer un ID d’application, suivez les étapes décrites dans la  [section Configuration des technologies du Windows Store du Guide de provisionnement des appareils](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)et veillez à vérifier **icloud** comme un service autorisé :
 
  [![Vérifier iCloud en tant que service autorisé](introduction-to-icloud-images/icloud-sml.png)](introduction-to-icloud-images/icloud.png#lightbox)
 
-- **Créer un profil de provisionnement** -pour créer un profil de provisionnement, suivez les étapes décrites dans le [Guide de provisionnement des appareils](~/ios/get-started/installation/device-provisioning/index.md#provisioning-your-device) .
+- **Créer un profil de provisionnement** -pour créer un profil de provisionnement, suivez les étapes décrites dans le  [Guide de provisionnement des appareils](~/ios/get-started/installation/device-provisioning/index.md#provisioning-your-device) .
 
 - **Ajoutez l’identificateur de conteneur au fichier Entitlements. plist** : le format de l’identificateur de conteneur est `TeamID.BundleID` . Pour plus d’informations, consultez le guide [utilisation des droits](~/ios/deploy-test/provisioning/entitlements.md) .
 
@@ -275,7 +275,7 @@ Dans ce cas, le modèle de données est très simple : il s’agit d’un champ
 
 ### <a name="finding-and-opening-icloud-documents"></a>Recherche et ouverture de documents iCloud
 
-L’exemple d’application ne traite qu’un seul fichier-test.txt, donc le code dans **AppDelegate.cs** crée un `NSPredicate` et `NSMetadataQuery` pour rechercher spécifiquement ce nom de fichier. Le `NSMetadataQuery` s’exécute de façon asynchrone et envoie une notification lorsqu’il se termine. `DidFinishGathering`est appelé par l’observateur de notification, arrête la requête et appelle LoadDocument, qui utilise la `UIDocument.Open` méthode avec un gestionnaire d’achèvement pour tenter de charger le fichier et de l’afficher dans un `MonkeyDocumentViewController` .
+L’exemple d’application ne traite qu’un seul fichier-test.txt, donc le code dans **AppDelegate.cs** crée un `NSPredicate` et `NSMetadataQuery` pour rechercher spécifiquement ce nom de fichier. Le `NSMetadataQuery` s’exécute de façon asynchrone et envoie une notification lorsqu’il se termine. `DidFinishGathering` est appelé par l’observateur de notification, arrête la requête et appelle LoadDocument, qui utilise la `UIDocument.Open` méthode avec un gestionnaire d’achèvement pour tenter de charger le fichier et de l’afficher dans un `MonkeyDocumentViewController` .
 
 ```csharp
 string monkeyDocFilename = "test.txt";
@@ -341,7 +341,7 @@ void LoadDocument (NSMetadataQuery metadataQuery)
 
 L’affichage d’un UIDocument ne doit pas être différent de celui d’une autre classe de modèle : les propriétés sont affichées dans les contrôles d’interface utilisateur, éventuellement modifiés par l’utilisateur, puis réécrits dans le modèle.
 
-Dans l’exemple **iCloudUIDoc\MonkeyDocumentViewController.cs** affiche le texte MonkeyDocument dans un `UITextView` . `ViewDidLoad`écoute la notification envoyée dans la `MonkeyDocument.LoadFromContents` méthode. `LoadFromContents`est appelé lorsque iCloud a de nouvelles données pour le fichier, de sorte que la notification indique que le document a été mis à jour.
+Dans l’exemple **iCloudUIDoc\MonkeyDocumentViewController.cs** affiche le texte MonkeyDocument dans un `UITextView` . `ViewDidLoad` écoute la notification envoyée dans la `MonkeyDocument.LoadFromContents` méthode. `LoadFromContents` est appelé lorsque iCloud a de nouvelles données pour le fichier, de sorte que la notification indique que le document a été mis à jour.
 
 ```csharp
 NSNotificationCenter.DefaultCenter.AddObserver (this,
@@ -427,7 +427,7 @@ Enfin, elle comprenait une brève discussion sur la façon dont l’ajout de la 
 
 ## <a name="related-links"></a>Liens associés
 
-- [Présentation de iCloud (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/introductiontoicloud)
+- [Présentation de iCloud (exemple)](/samples/xamarin/ios-samples/introductiontoicloud)
 - [Exemple de code de séminaire iCloud](https://github.com/xamarin/Seminars/tree/master/2012-03-22-iCloud)
 - [Diapositives du séminaire iCloud](https://www.slideshare.net/Xamarin/using-icloud-with-monotouch)
 - [iCloud NSUbiquitousKeyValueStore](https://developer.apple.com/library/prerelease/ios/)

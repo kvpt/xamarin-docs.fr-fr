@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: 0af77464f849971050246a1676f89fe4702737e8
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: 6fe6c254daf23f5f3d2fb267f6ba4986b94bcbd7
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997291"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91431748"
 ---
 # <a name="contacts-and-contactsui-in-xamarinios"></a>Contacts et ContactsUI dans Xamarin. iOS
 
@@ -44,11 +44,11 @@ L’infrastructure de contacts fournit un accès Xamarin. iOS aux informations d
 
 ### <a name="contact-objects"></a>Objets contact
 
-La `CNContact` classe fournit un accès en lecture seule thread-safe aux propriétés d’un contact, telles que le nom, l’adresse ou les numéros de téléphone. `CNContact`fonctionne comme un `NSDictionary` et contient plusieurs collections de propriétés en lecture seule (telles que des adresses ou des numéros de téléphone) :
+La `CNContact` classe fournit un accès en lecture seule thread-safe aux propriétés d’un contact, telles que le nom, l’adresse ou les numéros de téléphone. `CNContact` fonctionne comme un `NSDictionary` et contient plusieurs collections de propriétés en lecture seule (telles que des adresses ou des numéros de téléphone) :
 
 [![Vue d’ensemble des objets contact](contacts-images/contactobjects.png)](contacts-images/contactobjects.png#lightbox)
 
-Pour toute propriété pouvant avoir plusieurs valeurs (telles que l’adresse de messagerie ou les numéros de téléphone), elles sont représentées sous la forme d’un tableau d' `NSLabeledValue` objets. `NSLabeledValue`est un tuple thread-safe constitué d’un jeu d’étiquettes et de valeurs en lecture seule où l’étiquette définit la valeur pour l’utilisateur (par exemple, la messagerie personnelle ou professionnelle). L’infrastructure de contacts fournit une sélection d’étiquettes prédéfinies (par le biais des `CNLabelKey` `CNLabelPhoneNumberKey` classes statiques et) que vous pouvez utiliser dans votre application, ou vous avez la possibilité de définir des légendes personnalisées pour vos besoins.
+Pour toute propriété pouvant avoir plusieurs valeurs (telles que l’adresse de messagerie ou les numéros de téléphone), elles sont représentées sous la forme d’un tableau d' `NSLabeledValue` objets. `NSLabeledValue` est un tuple thread-safe constitué d’un jeu d’étiquettes et de valeurs en lecture seule où l’étiquette définit la valeur pour l’utilisateur (par exemple, la messagerie personnelle ou professionnelle). L’infrastructure de contacts fournit une sélection d’étiquettes prédéfinies (par le biais des `CNLabelKey` `CNLabelPhoneNumberKey` classes statiques et) que vous pouvez utiliser dans votre application, ou vous avez la possibilité de définir des légendes personnalisées pour vos besoins.
 
 Pour toute application Xamarin. iOS qui doit ajuster les valeurs d’un contact existant (ou en créer d’autres), utilisez la `NSMutableContact` version de la classe et ses sous-classes (telles que `CNMutablePostalAddress` ).
 
@@ -353,13 +353,13 @@ var view = CNContactViewController.FromContact(contact);
 PresentViewController(view, true, null);
 ```
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article a décrit en détail l’utilisation des frameworks d’interface utilisateur contact et contact dans une application Xamarin. iOS. Tout d’abord, il a abordé les différents types d’objets que l’infrastructure de contact fournit et comment vous les utilisez pour créer des contacts existants ou y accéder. Il a également examiné l’infrastructure de l’interface utilisateur de contact pour sélectionner les contacts existants et afficher les informations de contact.
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemple de contacts](https://docs.microsoft.com/samples/xamarin/ios-samples/contacts/)
+- [Exemple de contacts](/samples/xamarin/ios-samples/contacts/)
 - [Nouveautés d’iOS 9](https://developer.apple.com/library/content/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
 - [Informations de référence sur l’infrastructure des contacts](https://developer.apple.com/documentation/contacts?language=objc)
 - [Référence du Framework ContactsUI](https://developer.apple.com/documentation/contactsui?language=objc)

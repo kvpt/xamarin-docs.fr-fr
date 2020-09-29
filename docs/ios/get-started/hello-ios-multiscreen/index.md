@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 871a94d06048f893cf06b00de46d66dd59b3703e
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 01980ab03119729d5405691f94d2509ca9b1beee
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73023218"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435684"
 ---
 # <a name="hello-ios-multiscreen"></a>Hello, iOS Multiscreen
 
@@ -25,8 +25,8 @@ La première partie de ce guide permet d’ajouter un deuxième écran à l’ex
 
 La deuxième partie de ce document décrit ce qui a été généré et traite de l’architecture, de la navigation ainsi que des nouveaux concepts iOS rencontrés en chemin.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [Hello, iOS (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios)
+- [Hello, iOS (exemple)](/samples/xamarin/ios-samples/hello-ios)
 - [Human Interface Guidelines pour iOS](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html)
 - [Portail d’approvisionnement iOS](https://developer.apple.com/ios/manage/overview/index.action)

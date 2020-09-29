@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 07/17/2018
-ms.openlocfilehash: bb3fd0623d0361a42c573cf2b2bcb8249d32181c
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 08ef81f55ac1705224f2953197bfe582718b9cf7
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86933172"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91432512"
 ---
 # <a name="application-lifecycle-demo-for-xamarinios"></a>Démonstration du cycle de vie des applications pour Xamarin. iOS
 
-Cet article et l' [exemple de code](https://docs.microsoft.com/samples/xamarin/ios-samples/lifecycledemo) illustrent les quatre États d’application dans iOS et le rôle des `AppDelegate` méthodes dans la notification de l’application lorsque les États sont modifiés. L’application imprime les mises à jour sur la console chaque fois que l’application change d’État :
+Cet article et l' [exemple de code](/samples/xamarin/ios-samples/lifecycledemo) illustrent les quatre États d’application dans iOS et le rôle des `AppDelegate` méthodes dans la notification de l’application lorsque les États sont modifiés. L’application imprime les mises à jour sur la console chaque fois que l’application change d’État :
 
 [![Exemple d’application](application-lifecycle-demo-images/image3-sml.png)](application-lifecycle-demo-images/image3.png#lightbox)
 
@@ -51,9 +51,9 @@ Cet article et l' [exemple de code](https://docs.microsoft.com/samples/xamarin/i
     }
     ```
 
-1. Lancez l’application dans le simulateur ou sur l’appareil. `OnActivated`est appelé lors du lancement de l’application. L’application est maintenant à l’état _actif_ .
-1. Appuyez sur le bouton d’hébergement sur le simulateur ou l’appareil pour mettre l’application en arrière-plan. `OnResignActivation`et `DidEnterBackground` seront appelés lorsque l’application passera de `Active` à `Inactive` l' `Backgrounded` État. Étant donné qu’aucun code d’application n’est défini pour s’exécuter en arrière-plan, l’application est considérée comme étant _suspendue_ en mémoire.
-1. Revenez à l’application pour la ramener au premier plan. `WillEnterForeground`et `OnActivated` seront tous deux appelés :
+1. Lancez l’application dans le simulateur ou sur l’appareil. `OnActivated` est appelé lors du lancement de l’application. L’application est maintenant à l’état _actif_ .
+1. Appuyez sur le bouton d’hébergement sur le simulateur ou l’appareil pour mettre l’application en arrière-plan. `OnResignActivation` et `DidEnterBackground` seront appelés lorsque l’application passera de `Active` à `Inactive` l' `Backgrounded` État. Étant donné qu’aucun code d’application n’est défini pour s’exécuter en arrière-plan, l’application est considérée comme étant _suspendue_ en mémoire.
+1. Revenez à l’application pour la ramener au premier plan. `WillEnterForeground` et `OnActivated` seront tous deux appelés :
 
     ![Modifications d’État imprimées sur la console](application-lifecycle-demo-images/image4.png)
 
@@ -77,4 +77,4 @@ iOS met fin à l’application. Notez que `WillTerminate` n’est pas appelé pa
 
 ## <a name="related-links"></a>Liens connexes
 
-- [LifecycleDemo (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/lifecycledemo)
+- [LifecycleDemo (exemple)](/samples/xamarin/ios-samples/lifecycledemo)

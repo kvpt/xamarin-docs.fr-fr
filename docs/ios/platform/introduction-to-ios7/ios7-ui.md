@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: c02b810cc61779f5c3b5ee5eb61169e8c3fceab4
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 724d6ab8d39a5c0054302685c5f9f4ba0f3d9908
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86931207"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91431733"
 ---
 # <a name="ios-7-user-interface-overview"></a>Vue d’ensemble de l’interface utilisateur iOS 7
 
@@ -144,7 +144,7 @@ Lorsque vous préparez votre application pour iOS 7, vous pouvez réaligner les 
 
 #### <a name="toplayoutguide-and-bottomlayoutguide"></a>TopLayoutGuide et BottomLayoutGuide
 
- `TopLayoutGuide`et `BottomLayoutGuide` servent de référence pour les emplacements où les vues doivent commencer ou se terminer, de sorte que le contenu ne se chevauche pas par une barre translucide `UIKit` , comme dans l’exemple suivant :
+ `TopLayoutGuide` et `BottomLayoutGuide` servent de référence pour les emplacements où les vues doivent commencer ou se terminer, de sorte que le contenu ne se chevauche pas par une barre translucide `UIKit` , comme dans l’exemple suivant :
 
  [![Exemple de contenu ne chevauchant pas une barre UIKit translucide](ios7-ui-images/clipped.png)](ios7-ui-images/clipped.png#lightbox)
 
@@ -168,12 +168,12 @@ Nous pouvons utiliser la valeur calculée ci-dessus pour définir notre déplace
 
  [![Exemple de déplacement ImageViews à partir du haut de l’écran](ios7-ui-images/good2.png)](ios7-ui-images/good2.png#lightbox)
 
-Reportez-vous à [imageviewer](https://docs.microsoft.com/samples/xamarin/ios-samples/ios7-ui-updates/) pour obtenir un exemple fonctionnel.
+Reportez-vous à [imageviewer](/samples/xamarin/ios-samples/ios7-ui-updates/) pour obtenir un exemple fonctionnel.
 
 La valeur de déplacement est générée dynamiquement après que la vue a été ajoutée à la hiérarchie, si bien que la tentative de lecture `TopLayoutGuide` des `BottomLayoutGuide` valeurs et dans `ViewDidLoad` retourne 0. Calculez la valeur après le chargement de la vue, par exemple dans `ViewDidLayoutSubviews` .
 
 > [!IMPORTANT]
-> `TopLayoutGuide`et `BottomLayoutGuide` sont dépréciées dans iOS 11 en faveur de la nouvelle disposition de zone sécurisée. Apple a indiqué que l’utilisation de la zone sécurisée est compatible avec la version d’iOS antérieure à iOS 11. Pour plus d’informations, consultez le Guide de [mise à jour de votre application pour iOS 11](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md#fullscreen) .
+> `TopLayoutGuide` et `BottomLayoutGuide` sont dépréciées dans iOS 11 en faveur de la nouvelle disposition de zone sécurisée. Apple a indiqué que l’utilisation de la zone sécurisée est compatible avec la version d’iOS antérieure à iOS 11. Pour plus d’informations, consultez le Guide de [mise à jour de votre application pour iOS 11](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md#fullscreen) .
 
 #### <a name="edgesforextendedlayout"></a>EdgesForExtendedLayout
 
@@ -203,7 +203,7 @@ Dans notre application, nous voyons que la vue est à nouveau repositionnée, de
 
 Notez que, bien que les effets `TopLayoutGuide/BottomLayoutGuide` des `EdgesForExtendedLayout` API et soient similaires, ils sont destinés à remplir différents objectifs. La modification du `EdgesForExtendedLayout` paramètre de la valeur par défaut peut corriger les vues tronquées dans les applications conçues pour iOS 6, mais une bonne conception iOS 7 doit honorer l’esthétique plein écran et fournir une expérience d’affichage plein écran, en se basant sur `TopLayoutGuide` et `BottomLayoutGuide` pour positionner correctement le contenu destiné à être manipulé dans un endroit confortable pour l’utilisateur.
 
-Reportez-vous à [imageviewer](https://docs.microsoft.com/samples/xamarin/ios-samples/ios7-ui-updates/) pour obtenir un exemple fonctionnel.
+Reportez-vous à [imageviewer](/samples/xamarin/ios-samples/ios7-ui-updates/) pour obtenir un exemple fonctionnel.
 
 ### <a name="status-and-navigation-bars"></a>État et barres de navigation
 
@@ -256,7 +256,7 @@ La couleur de teinte peut également être appliquée aux images lorsque `Render
 
 ### <a name="dynamic-type"></a>Type dynamique
 
-Dans iOS 7, l’utilisateur peut spécifier la taille du texte dans les paramètres système. Avec le type dynamique, la police est ajustée dynamiquement pour paraître correcte quelle que soit la taille. `UIFont.PreferredFontForTextStyle`doit être utilisé pour obtenir une police optimisée pour la taille contrôlée par l’utilisateur.
+Dans iOS 7, l’utilisateur peut spécifier la taille du texte dans les paramètres système. Avec le type dynamique, la police est ajustée dynamiquement pour paraître correcte quelle que soit la taille. `UIFont.PreferredFontForTextStyle` doit être utilisé pour obtenir une police optimisée pour la taille contrôlée par l’utilisateur.
 
 ## <a name="summary"></a>Résumé
 
@@ -264,4 +264,4 @@ Cet article traite des modifications apportées aux éléments d’interface uti
 
 ## <a name="related-links"></a>Liens associés
 
-- [ImageViewer (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios7-ui-updates)
+- [ImageViewer (exemple)](/samples/xamarin/ios-samples/ios7-ui-updates)

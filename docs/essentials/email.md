@@ -9,12 +9,12 @@ ms.date: 09/24/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ddeba8e0d2d0f0894f7e43c5cf2501c942f7720a
-ms.sourcegitcommit: 3a15d9b29d65139b18dcf0871fe00cffb2a56357
+ms.openlocfilehash: 059405d4e3219162022b3f8c0208ee5cc4ac2d38
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91353393"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91434543"
 ---
 # <a name="no-locxamarinessentials-email"></a>Xamarin.Essentials: E-mail
 
@@ -47,7 +47,7 @@ Aucune différence entre les plateformes.
 
 -----
 
-## <a name="get-started"></a>Bien démarrer
+## <a name="get-started"></a>Prise en main
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -129,7 +129,7 @@ Aucune différence entre les plateformes.
 
 Prend uniquement en charge `PlainText` comme `BodyFormat`, la tentative d’envoi de `Html` lèvera une `FeatureNotSupportedException`.
 
-Tous les clients de messagerie ne prennent pas en charge l’envoi de pièces jointes. Pour plus d’informations, consultez la [documentation](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/sending-email) .
+Tous les clients de messagerie ne prennent pas en charge l’envoi de pièces jointes. Pour plus d’informations, consultez la [documentation](/windows/uwp/contacts-and-calendar/sending-email) .
 
 -----
 

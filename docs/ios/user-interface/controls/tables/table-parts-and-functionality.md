@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 6002e5cc62dfe30c14f21943c690a5a1b15a0c12
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 55f471fe02618becbfc4a7ab8571d9690fe44843
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936589"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91430589"
 ---
 # <a name="table-parts-and-functionality-in-xamarinios"></a>Parties et fonctionnalités de table dans Xamarin. iOS
 
@@ -78,7 +78,7 @@ L’objectif de chaque classe est décrit ci-dessous :
 
 - **UITableView** : vue qui contient une collection de cellules à l’intérieur d’un conteneur de défilement. La vue table utilise généralement l’écran entier dans une application iPhone, mais peut exister dans le cadre d’une vue plus large sur l’iPad (ou apparaître dans un menu Segue). 
 - **UITableViewCell** : vue qui représente une seule cellule (ou ligne) dans une vue de table. Il existe quatre types de cellules intégrés et il est possible de créer des cellules personnalisées en C# ou avec le concepteur iOS. 
-- **UITableViewSource** – Xamarin. iOS : classe abstraite exclusive qui fournit toutes les méthodes requises pour afficher une table, notamment le nombre de lignes, retournant un affichage de cellule pour chaque ligne, gérer la sélection de lignes et de nombreuses autres fonctionnalités facultatives. Vous *devez* la sous-classer pour obtenir un UITableView opérationnel. 
+- **UITableViewSource** – Xamarin. iOS : classe abstraite exclusive qui fournit toutes les méthodes requises pour afficher une table, notamment le nombre de lignes, retournant un affichage de cellule pour chaque ligne, gérer la sélection de lignes et de nombreuses autres fonctionnalités facultatives. Vous  *devez* la sous-classer pour obtenir un UITableView opérationnel. 
 - **NSIndexPath** – contient des propriétés de ligne et de section qui identifient de façon unique la position d’une cellule dans une table. 
 - **UITableViewController** : UIViewController prêt à l’emploi qui a un UITableView codé en dur comme vue et accessible via la propriété TableView. 
 - **UIViewController** : si la table n’occupe pas la totalité de l’écran, vous pouvez ajouter un UITableView à n’importe quel UIViewController avec son ensemble de frames correctement défini. 
@@ -92,4 +92,4 @@ Dans ce document, les exemples utilisent tous UITableViewSource et ignorent ces 
 
 ## <a name="related-links"></a>Liens associés
 
-- [WorkingWithTables (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/workingwithtables)
+- [WorkingWithTables (exemple)](/samples/xamarin/ios-samples/workingwithtables)

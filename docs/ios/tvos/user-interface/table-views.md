@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: eb95970066f85bb62eb207f23cfc135dc1625a11
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 364aa1ebc70517ee8378e603922486ae29adf6c1
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937096"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436441"
 ---
 # <a name="working-with-tvos-table-views-in-xamarin"></a>Utilisation des vues de table tvOS dans Xamarin
 
@@ -66,7 +66,7 @@ Apple propose les suggestions suivantes pour l’utilisation des cellules d’af
 
 Le moyen le plus simple d’utiliser les vues de table dans une application Xamarin. tvOS consiste à créer et à modifier leur apparence dans le concepteur d’interface.
 
-Pour commencer, effectuez les étapes suivantes :
+Pour commencer, suivez les étapes ci-dessous :
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
@@ -582,7 +582,7 @@ internal void RaiseAttractionHighlighted (AttractionInformation attraction)
 }
 ```
 
-La `CanFocusRow` méthode est appelée pour chaque ligne qui est sur le point d’être activée dans la vue table. Retourne `true` si la ligne peut obtenir le focus, sinon retourne `false` . Dans le cas de cet exemple, nous avons créé un `AttractionHighlighted` événement personnalisé qui sera déclenché sur chaque ligne lorsqu’il reçoit le focus.
+La `CanFocusRow` méthode est appelée pour chaque ligne qui est sur le point d’être activée dans la vue table. Retourne `true` si la ligne peut obtenir le focus, sinon retourne    `false` . Dans le cas de cet exemple, nous avons créé un `AttractionHighlighted` événement personnalisé qui sera déclenché sur chaque ligne lorsqu’il reçoit le focus.
 
 Pour plus d’informations sur l’utilisation d’un `UITableViewDelegate` , consultez la documentation [UITableViewDelegate](https://developer.apple.com/library/prerelease/tvos/documentation/UIKit/Reference/UITableViewDelegate_Protocol/index.html#//apple_ref/doc/uid/TP40006942) d’Apple.
 
@@ -883,8 +883,8 @@ namespace tvTable
 
 Là encore, cette classe définit simplement quelques raccourcis pour faciliter la communication entre les deux côtés du contrôleur d’affichage fractionné :
 
-- `SplitView`-Est un lien vers le contrôleur d’affichage fractionné ( `MainSpiltViewController` ) auquel appartient le contrôleur d’affichage de navigation.
-- `TableController`-Obtient le contrôleur d’affichage de table ( `AttractionTableViewController` ) présenté comme vue supérieure dans le contrôleur d’affichage de navigation.
+- `SplitView` -Est un lien vers le contrôleur d’affichage fractionné ( `MainSpiltViewController` ) auquel appartient le contrôleur d’affichage de navigation.
+- `TableController` -Obtient le contrôleur d’affichage de table ( `AttractionTableViewController` ) présenté comme vue supérieure dans le contrôleur d’affichage de navigation.
 
 <a name="The-Split-View-Controller"></a>
 
@@ -941,7 +941,7 @@ Tout d’abord, nous créons des raccourcis vers le côté **Détails** de la vu
 
 Ensuite, lorsque le mode fractionné est chargé en mémoire, nous attachons le contrôleur du mode fractionné aux deux côtés de l’affichage fractionné et répondrons à l’utilisateur mettant en surbrillance un attrait dans la vue table ( `AttractionHighlighted` ) en affichant le nouvel attrait dans le **volet Détails** du mode fractionné.
 
-Consultez l’exemple d’application [tvTables](https://docs.microsoft.com/samples/xamarin/ios-samples/tvos-tvtable) pour une implémentation complète des vues de table dans un affichage fractionné.
+Consultez l’exemple d’application [tvTables](/samples/xamarin/ios-samples/tvos-tvtable) pour une implémentation complète des vues de table dans un affichage fractionné.
 
 ## <a name="table-views-in-detail"></a>Affichages des tables en détail
 
@@ -955,7 +955,7 @@ Cet article a abordé la conception et l’utilisation des vues de table au sein
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemples tvOS](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [Exemples tvOS](/samples/browse/?products=xamarin&term=Xamarin.iOS%2btvOS)
 - [UITableViewController](https://developer.apple.com/library/prerelease/tvos/documentation/UIKit/Reference/UITableViewController_Class/index.html#//apple_ref/doc/uid/TP40007523)
 - [tvOS](https://developer.apple.com/tvos/)
 - [Guides de l’interface utilisateur tvOS](https://developer.apple.com/tvos/human-interface-guidelines/)

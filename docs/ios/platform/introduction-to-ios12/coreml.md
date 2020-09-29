@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 08/15/2018
-ms.openlocfilehash: 6245873385caa23e37d5499daa822fa0b699ac1e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 13eecdfe3ded3a0fd68594527f6c5bc8ca3a6c66
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032033"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91434242"
 ---
 # <a name="core-ml-2-in-xamarinios"></a>Noyau ML 2 dans Xamarin. iOS
 
@@ -22,13 +22,13 @@ Dans iOS 12, Core ML comprend une API de traitement par lots. Cette API amélior
 
 ## <a name="sample-app-marshabitatcoremltimer"></a>Exemple d’application : MarsHabitatCoreMLTimer
 
-Pour illustrer des prédictions par lot avec Core ML, jetez un coup d’œil sur l’exemple d’application [MarsHabitatCoreMLTimer](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-marshabitatcoremltimer) . Cet exemple utilise un modèle noyau ML formé pour prédire le coût de la construction d’un habitat sur mars, sur la base de diverses entrées : le nombre de panneaux solaires, le nombre de serres et le nombre de acres.
+Pour illustrer des prédictions par lot avec Core ML, jetez un coup d’œil sur l’exemple d’application [MarsHabitatCoreMLTimer](/samples/xamarin/ios-samples/ios12-marshabitatcoremltimer) . Cet exemple utilise un modèle noyau ML formé pour prédire le coût de la construction d’un habitat sur mars, sur la base de diverses entrées : le nombre de panneaux solaires, le nombre de serres et le nombre de acres.
 
 Les extraits de code de ce document proviennent de cet exemple.
 
-## <a name="generate-sample-data"></a>Générer un échantillon de données
+## <a name="generate-sample-data"></a>Générer un exemple de données
 
-Dans `ViewController`, la méthode de `ViewDidLoad` de l’exemple d’application appelle `LoadMLModel`, qui charge le modèle ML de noyau inclus :
+Dans `ViewController` , les appels de méthode de l’exemple d’application `ViewDidLoad` `LoadMLModel` , qui chargent le modèle ml de noyau inclus :
 
 ```csharp
 void LoadMLModel()
@@ -38,7 +38,7 @@ void LoadMLModel()
 }
 ```
 
-L’exemple d’application crée ensuite 100 000 `MarsHabitatPricerInput` objets à utiliser comme entrée pour les prédictions de noyaux de base. Chaque échantillon généré a une valeur aléatoire définie pour le nombre de panneaux solaires, le nombre de serres et le nombre de acres :
+L’exemple d’application crée ensuite 100 000 `MarsHabitatPricerInput` objets à utiliser comme entrée pour les prédictions de noyaux de base-ml. Chaque échantillon généré a une valeur aléatoire définie pour le nombre de panneaux solaires, le nombre de serres et le nombre de acres :
 
 ```csharp
 async void CreateInputs(int num)
@@ -59,7 +59,7 @@ async void CreateInputs(int num)
 }
 ```
 
-En appuyant sur l’un des trois boutons de l’application, vous exécutez deux séquences de prédictions : une à l’aide d’une `for` boucle et une autre à l’aide de la nouvelle méthode de `GetPredictions` batch introduite dans iOS 12 :
+En appuyant sur l’un des trois boutons de l’application, vous exécutez deux séquences de prédictions : une à l’aide d’une `for` boucle et une autre à l’aide de la nouvelle méthode de traitement par lots `GetPredictions` introduite dans IOS 12 :
 
 ```csharp
 async void RunTest(int num)
@@ -74,7 +74,7 @@ async void RunTest(int num)
 
 ## <a name="for-loop"></a>for (boucle)
 
-La version `for` Loop du test naïvement itère au sein du nombre spécifié d’entrées, en appelant [`GetPrediction`](xref:CoreML.MLModel.GetPrediction*) pour chaque et en ignorant le résultat. La méthode indique le temps nécessaire pour effectuer les prédictions :
+La `for` version en boucle du naïvement de test itère au sein du nombre spécifié d’entrées, en appelant [`GetPrediction`](xref:CoreML.MLModel.GetPrediction*) pour chaque et en ignorant le résultat. La méthode indique le temps nécessaire pour effectuer les prédictions :
 
 ```csharp
 async Task FetchNonBatchResults(int num)
@@ -94,8 +94,8 @@ async Task FetchNonBatchResults(int num)
 
 ## <a name="getpredictions-new-batch-api"></a>GetPredictions (nouvelle API batch)
 
-La version batch du test crée un objet `MLArrayBatchProvider` à partir du tableau d’entrée (étant donné qu’il s’agit d’un paramètre d’entrée requis pour la méthode `GetPredictions`), crée un [`MLPredictionOptions`](xref:CoreML.MLPredictionOptions)
-objet qui empêche les calculs de prédiction d’être limités au processeur, et utilise l’API `GetPredictions` pour extraire les prédictions, en ignorant à nouveau le résultat :
+La version de lot du test crée un `MLArrayBatchProvider` objet à partir du tableau d’entrée (puisqu’il s’agit d’un paramètre d’entrée requis pour la `GetPredictions` méthode), crée un [`MLPredictionOptions`](xref:CoreML.MLPredictionOptions)
+objet qui empêche les calculs de prédiction d’être limités au processeur, et utilise l' `GetPredictions` API pour extraire les prédictions, en ignorant le résultat :
 
 ```csharp
 async Task FetchBatchResults(int num)
@@ -118,13 +118,13 @@ async Task FetchBatchResults(int num)
 
 ## <a name="results"></a>Résultats
 
-Sur le simulateur et l’appareil, `GetPredictions` se termine plus rapidement que les prédictions de noyau à base de boucle.
+Sur le simulateur et l’appareil, `GetPredictions` se termine plus rapidement que les prédictions noyau en boucle.
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Exemple d’application – MarsHabitatCoreMLTimer](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-marshabitatcoremltimer)
+- [Exemple d’application – MarsHabitatCoreMLTimer](/samples/xamarin/ios-samples/ios12-marshabitatcoremltimer)
 - [Nouveautés de Core ML, partie 1 (WWDC 2018)](https://developer.apple.com/videos/play/wwdc2018/708/)
 - [Nouveautés de Core ML, partie 2 (WWDC 2018)](https://developer.apple.com/videos/play/wwdc2018/709/)
-- [Présentation de Core ML dans Xamarin. iOS](https://docs.microsoft.com/xamarin/ios/platform/introduction-to-ios11/coreml)
+- [Présentation de Core ML dans Xamarin. iOS](../introduction-to-ios11/coreml.md)
 - [Noyau ML (Apple)](https://developer.apple.com/documentation/coreml?language=objc)
 - [Utilisation des modèles ML de noyau](https://developer.apple.com/machine-learning/build-run-models/)

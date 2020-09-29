@@ -9,12 +9,12 @@ ms.date: 05/11/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3599958a493dd4051064b5e7f54aa5901e6bf32c
-ms.sourcegitcommit: f6a2f07d2e689e0cfd01b30008d50c83c63fa70c
+ms.openlocfilehash: f8a65c7bd3476114b849bb0e9383227e2ec78c7c
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89052758"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91432622"
 ---
 # <a name="get-started-with-no-locxamarinessentials"></a>Prise en main de Xamarin.Essentials
 
@@ -58,7 +58,7 @@ Xamarin.Essentials est disponible en tant que package NuGet et est inclus dans c
 
     Lors de la compilation par rapport à Android 9,0, Xamarin.Essentials installe la version 28.0.0.3 des bibliothèques Xamarin. Android. support nécessaires. Toutes les autres bibliothèques Xamarin. Android. support requises par votre application doivent également être mises à jour vers la version 28.0.0.3 à l’aide du gestionnaire de package NuGet. Toutes les bibliothèques Xamarin. Android. support utilisées par votre application doivent être identiques et doivent avoir au moins la version 28.0.0.3. Reportez-vous à la [page de dépannage](troubleshooting.md) si vous rencontrez des problèmes lors de l’ajout Xamarin.Essentials de NuGet ou de la mise à jour de packages NuGet dans votre solution.
 
-    À partir de la version 1.5.0 lors de la compilation sur Android 10,0, Xamarin.Essentials Installez les bibliothèques de prise en charge AndroidX dont il a besoin. Lisez la [documentation de AndroidX](https://docs.microsoft.com/xamarin/android/platform/androidx) si vous n’avez pas encore effectué la transition.
+    À partir de la version 1.5.0 lors de la compilation sur Android 10,0, Xamarin.Essentials Installez les bibliothèques de prise en charge AndroidX dont il a besoin. Lisez la [documentation de AndroidX](../android/platform/androidx.md) si vous n’avez pas encore effectué la transition.
 
     Dans le ou les projets Android `MainLauncher` `Activity` qui sont lancés, Xamarin.Essentials doit être initialisé dans la `OnCreate` méthode :
 

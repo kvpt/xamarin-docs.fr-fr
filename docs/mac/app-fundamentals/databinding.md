@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 2f9b4dfac4909a5c68b6c53fc913925ee95313a3
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: 688febbb8b2aae3ae9dff45ea06ef3cf3809641a
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997512"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436537"
 ---
 # <a name="data-binding-and-key-value-coding-in-xamarinmac"></a>Liaison de données et codage de clé-valeur dans Xamarin. Mac
 
@@ -371,10 +371,10 @@ public void SetPeople(NSMutableArray array) {
 
 Celles-ci permettent aux contrôleurs de demander et de modifier les données qu’ils affichent. Comme le `NSArray` décrit ci-dessus, ceux-ci ont une convention d’affectation de noms très spécifique (qui diffère des conventions de nommage C# typiques) :
 
-- `addObject:`-Ajoute un objet au tableau.
-- `insertObject:in{class_name}ArrayAtIndex:`-Où `{class_name}` est le nom de votre classe. Cette méthode insère un objet dans le tableau à un index donné.
-- `removeObjectFrom{class_name}ArrayAtIndex:`-Où `{class_name}` est le nom de votre classe. Cette méthode supprime l’objet dans le tableau au niveau d’un index donné.
-- `set{class_name}Array:`-Où `{class_name}` est le nom de votre classe. Cette méthode vous permet de remplacer le port existant par un nouveau.
+- `addObject:` -Ajoute un objet au tableau.
+- `insertObject:in{class_name}ArrayAtIndex:` -Où `{class_name}` est le nom de votre classe. Cette méthode insère un objet dans le tableau à un index donné.
+- `removeObjectFrom{class_name}ArrayAtIndex:` -Où `{class_name}` est le nom de votre classe. Cette méthode supprime l’objet dans le tableau au niveau d’un index donné.
+- `set{class_name}Array:` -Où `{class_name}` est le nom de votre classe. Cette méthode vous permet de remplacer le port existant par un nouveau.
 
 Dans ces méthodes, nous avons encapsulé des modifications dans le tableau dans `WillChangeValue` et `DidChangeValue` des messages pour la conformité KVO.
 
@@ -602,7 +602,7 @@ Nous devons maintenant lier notre vue de table au contrôleur de baie, procédez
 3. Sélectionnez la **cellule d’affichage de table** sous la colonne **Employee** . Dans l' **inspecteur de liaisons** sous la **valeur** Turndown, sélectionnez **lier à** et **vue de cellule de table**. Entrez `objectValue.Name` pour le **chemin d’accès**de la clé de modèle :
 
     [![Définition du chemin d’accès de la clé de modèle](databinding-images/table09.png "Définition du chemin d’accès de la clé de modèle")](databinding-images/table09-large.png#lightbox)
-4. `objectValue`est le actuel `PersonModel` dans le tableau géré par le contrôleur de tableau.
+4. `objectValue` est le actuel `PersonModel` dans le tableau géré par le contrôleur de tableau.
 5. Sélectionnez la **cellule d’affichage de table** sous la colonne **occupation** . Dans l' **inspecteur de liaisons** sous la **valeur** Turndown, sélectionnez **lier à** et **vue de cellule de table**. Entrez `objectValue.Occupation` pour le **chemin d’accès**de la clé de modèle :
 
     [![Définition du chemin d’accès de la clé de modèle](databinding-images/table10.png "Définition du chemin d’accès de la clé de modèle")](databinding-images/table10-large.png#lightbox)
@@ -724,7 +724,7 @@ Nous devons maintenant lier notre mode plan au contrôleur d’arborescence, pro
 3. Sélectionnez la **cellule d’affichage de table** sous la colonne **Employee** . Dans l' **inspecteur de liaisons** sous la **valeur** Turndown, sélectionnez **lier à** et **vue de cellule de table**. Entrez `objectValue.Name` pour le **chemin d’accès**de la clé de modèle :
 
     [![Saisie du chemin d’accès de la clé de modèle](databinding-images/outline09.png "Saisie du chemin d’accès de la clé de modèle")](databinding-images/outline09-large.png#lightbox)
-4. `objectValue`est le actuel `PersonModel` dans le tableau géré par le contrôleur d’arborescence.
+4. `objectValue` est le actuel `PersonModel` dans le tableau géré par le contrôleur d’arborescence.
 5. Sélectionnez la **cellule d’affichage de table** sous la colonne **occupation** . Dans l' **inspecteur de liaisons** sous la **valeur** Turndown, sélectionnez **lier à** et **vue de cellule de table**. Entrez `objectValue.Occupation` pour le **chemin d’accès**de la clé de modèle :
 
     [![Saisie du chemin d’accès de la clé de modèle](databinding-images/outline10.png "Saisie du chemin d’accès de la clé de modèle")](databinding-images/outline10-large.png#lightbox)
@@ -885,19 +885,19 @@ Si nous faisons défiler vers le haut de l’erreur dans la sortie de l' **appli
 
 Cette ligne indique que la clé `Title` n’existe pas sur l’objet auquel nous créons la liaison. Si nous revenons la liaison à `Name` dans Interface Builder, enregistrer, synchroniser, régénérer et exécuter, l’application s’exécutera comme prévu sans problème.
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article a décrit en détail l’utilisation de la liaison de données et du codage clé-valeur dans une application Xamarin. Mac. Tout d’abord, il s’est penché sur l’exposition d’une classe C# à Objective-C à l’aide du codage key-value (KVC) et de l’observation key-value (KVO). Ensuite, il a montré comment utiliser une classe conforme à KVO et lier les données aux éléments d’interface utilisateur du Interface Builder de Xcode. Enfin, elle affichait une liaison de données complexe à l’aide des **contrôleurs de tableau** et des **contrôleurs d’arborescence**.
 
 ## <a name="related-links"></a>Liens associés
 
-- [MacDatabinding Storyboard (exemple)](https://docs.microsoft.com/samples/xamarin/mac-samples/macdatabinding-storyboard)
-- [MacDatabinding XIB (exemple)](https://docs.microsoft.com/samples/xamarin/mac-samples/macdatabinding-xibs)
+- [MacDatabinding Storyboard (exemple)](/samples/xamarin/mac-samples/macdatabinding-storyboard)
+- [MacDatabinding XIB (exemple)](/samples/xamarin/mac-samples/macdatabinding-xibs)
 - [Hello, Mac](~/mac/get-started/hello-mac.md)
 - [Contrôles standard](~/mac/user-interface/standard-controls.md)
 - [Vues de table](~/mac/user-interface/table-view.md)
 - [Modes plan](~/mac/user-interface/outline-view.md)
-- [Affichages de collection](~/mac/user-interface/collection-view.md)
+- [Vues de collection](~/mac/user-interface/collection-view.md)
 - [Guide de programmation de codage de clé-valeur](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/KeyValueCoding/index.html)
 - [Présentation du Guide de programmation de l’observation de la valeur clé](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/KeyValueObserving/KeyValueObserving.html)
 - [Présentation des liaisons de cacao rubriques relatives à la programmation](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CocoaBindings/CocoaBindings.html)

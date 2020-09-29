@@ -7,12 +7,12 @@ ms.assetid: 19506F08-2603-465E-A806-6BD01638DE90
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/03/2018
-ms.openlocfilehash: 4d0e57b98a479112b9fdf4f9c503418f3966cc73
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: fd8926edce6b2310271e15418f2498162723ba49
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "64749924"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436455"
 ---
 # <a name="skiasharp-platform-independent-examples"></a>Exemples indépendants de la plateforme SkiaSharp
 
@@ -36,7 +36,7 @@ using (var surface = SKSurface.Create (width: 640, height: 480, SKImageInfo.Plat
 
 ## <a name="drawing-on-skcanvas"></a>Dessin sur SKCanvas
 
-Le `SKCanvas` utilise un modèle de dessin similaire à l’esprit pour d’autres modèles de dessin que vous connaissez peut-être, il utilise des couleurs avec un canal de transparence facultatif et peut dessiner des lignes, des arcs, du texte et des images.
+`SKCanvas`Utilise un modèle de dessin similaire à l’esprit pour d’autres modèles de dessin que vous connaissez peut-être, il utilise des couleurs avec un canal de transparence facultatif et peut dessiner des lignes, des arcs, du texte et des images.
 
 Voici quelques-unes des nombreuses opérations qui peuvent être effectuées avec SkiaSharp.  Dans les exemples ci-dessous, la variable `canvas` est de type SKCanvas.
 
@@ -133,6 +133,6 @@ using (var paint = new SKPaint()) {
 }
 ```
 
-## <a name="more-information"></a>Plus d'informations
+## <a name="more-information"></a>Informations complémentaires
 
-Vous trouverez plus d’informations sur l’utilisation de SkiaSharp dans la documentation de l' [API](https://docs.microsoft.com/dotnet/api/skiasharp) .
+Vous trouverez plus d’informations sur l’utilisation de SkiaSharp dans la documentation de l' [API](/dotnet/api/skiasharp) .

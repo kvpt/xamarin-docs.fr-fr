@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: a5135d9bb481afcaefc851e392196a87b8ef80dd
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: 8d4b60a2e8e53b5b3f97a781b7f1888239541f1a
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997200"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91431866"
 ---
 # <a name="debugging-xamarinios-apps"></a>Débogage des applications Xamarin.iOS
 
@@ -126,7 +126,7 @@ Sélectionnez **Conditions...** pour afficher le menu _Paramètres de point d’
 
 Ici, vous pouvez entrer les conditions de déclenchement du point d’arrêt
 
-Pour plus d’informations sur l’utilisation de conditions de point d’arrêt dans les versions antérieures de Visual Studio, consultez la [documentation de Visual Studio](https://docs.microsoft.com/visualstudio/debugger/using-breakpoints).
+Pour plus d’informations sur l’utilisation de conditions de point d’arrêt dans les versions antérieures de Visual Studio, consultez la [documentation de Visual Studio](/visualstudio/debugger/using-breakpoints).
 
 -----
 
@@ -140,7 +140,7 @@ Dans Visual Studio pour Mac, ils se présentent comme ceci :
 
  [![Les outils de débogage permettent au développeur de contrôler l’exécution du programme](debugging-in-xamarin-ios-images/image7.png)](debugging-in-xamarin-ios-images/image7.png#lightbox)
 
-Ces deux types de pools sont les suivants :
+Ces règles sont les suivantes :
 
 - **Lecture/Arrêt** - Permet de démarrer/d’arrêter l’exécution du code, jusqu’au point d’arrêt suivant.
 - **Pas à pas principal** - Permet d’exécuter la ligne de code suivante. Si la ligne suivante est un appel de fonction, l’opération Pas à pas principal exécute la fonction et s’arrête à la ligne de code suivante située _après_ la fonction.
@@ -153,14 +153,14 @@ Dans Visual Studio, ils se présentent comme ceci :
 
 [![Les outils de débogage permettent au développeur de contrôler l’exécution du programme](debugging-in-xamarin-ios-images/image7vs.png)](debugging-in-xamarin-ios-images/image7vs.png#lightbox)
 
-Ces deux types de pools sont les suivants :
+Ces règles sont les suivantes :
 
 - **Lecture/Arrêt** - Permet de démarrer/d’arrêter l’exécution du code, jusqu’au point d’arrêt suivant.
 - **Pas à pas principal (F11)**  - Permet d’exécuter la ligne de code suivante. Si la ligne suivante est un appel de fonction, l’opération Pas à pas principal exécute la fonction et s’arrête à la ligne de code suivante située _après_ la fonction.
 - **Pas à pas détaillé (F10)**  - Permet également d’exécuter la ligne de code suivante. Si la ligne suivante est un appel de fonction, Pas à pas détaillé s’arrête à la première ligne de la fonction, ce qui vous permet de continuer le débogage ligne par ligne de la fonction. Si la ligne suivante n’est pas une fonction, il se comporte comme Pas à pas principal.
 - **Pas à pas sortant (Maj + F11)**  - Permet de retourner à la ligne où la fonction active a été appelée.
 
-Pour une documentation plus approfondie sur le débogage, consultez [Naviguer dans le code avec le débogueur Visual Studio](https://docs.microsoft.com/visualstudio/debugger/navigating-through-code-with-the-debugger).
+Pour une documentation plus approfondie sur le débogage, consultez [Naviguer dans le code avec le débogueur Visual Studio](/visualstudio/debugger/navigating-through-code-with-the-debugger).
 
 -----
 

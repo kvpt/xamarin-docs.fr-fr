@@ -8,12 +8,12 @@ ms.date: 09/22/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d88be99c32f7b969019305ec821a2dccbb6d5fda
-ms.sourcegitcommit: 744f977b0595f489c592e29c8a3ba548fde02b6f
+ms.openlocfilehash: bd239a8dcf192c0bdbc6265769208f4fc989bbbe
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91414768"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91434485"
 ---
 # <a name="no-locxamarinessentials-contacts"></a>Xamarin.Essentials: Contacts
 
@@ -21,11 +21,11 @@ La classe **contacts** permet à un utilisateur de choisir un contact et de réc
 
 ![API de la version préliminaire](~/media/shared/preview.png)
 
-## <a name="get-started"></a>Bien démarrer
+## <a name="get-started"></a>Prise en main
 
 [!include[](~/essentials/includes/get-started.md)]
 
-Pour accéder à la fonctionnalité **FilePicker** , la configuration spécifique à la plateforme suivante est requise.
+Pour accéder à la fonctionnalité **contacts** , la configuration spécifique à la plateforme suivante est requise.
 
 # <a name="android"></a>[Android](#tab/android)
 

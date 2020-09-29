@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 04/16/2018
-ms.openlocfilehash: c5c819221bc08f1c39bde9b5900c2f9f9889764d
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 0f57c10ea263a3dcf882d2cf75a57105e7f7d0d4
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73022534"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91434522"
 ---
 # <a name="configuring-visual-studio-for-ios-development"></a>Configuration de Visual Studio pour le développement iOS
 
@@ -27,7 +27,7 @@ Visual Studio 2019 ou Visual Studio 2017 doit utiliser la même version de Xam
 - Si vous utilisez Visual Studio 2019 Preview, sélectionnez le canal des mises à jour **Alpha** dans Visual Studio pour Mac.
 
 > [!NOTE]
-> Depuis [Visual Studio 2017 version 15.6](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes#automatic-macos-provisioning), Visual Studio 2017 détecte automatiquement si l’hôte de build Mac utilise la même version de Xamarin.iOS que Windows. S’il existe une incompatibilité de versions, Visual Studio 2017 propose une installation à distance de la version correcte sur l’hôte de build Mac. Pour plus d’informations, examinez la section [Provisionnement Mac automatique](~/ios/get-started/installation/windows/connecting-to-mac/index.md#automatic-mac-provisioning) du guide [Appairer avec un Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
+> Depuis [Visual Studio 2017 version 15.6](/visualstudio/releasenotes/vs2017-relnotes#automatic-macos-provisioning), Visual Studio 2017 détecte automatiquement si l’hôte de build Mac utilise la même version de Xamarin.iOS que Windows. S’il existe une incompatibilité de versions, Visual Studio 2017 propose une installation à distance de la version correcte sur l’hôte de build Mac. Pour plus d’informations, examinez la section [Provisionnement Mac automatique](~/ios/get-started/installation/windows/connecting-to-mac/index.md#automatic-mac-provisioning) du guide [Appairer avec un Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
 
 ## <a name="ios-toolbar"></a>Barre d’outils iOS
 
@@ -42,7 +42,7 @@ Quand un projet iOS est ouvert dans Visual Studio 2019 ou Visual Studio 2017, 
 
 Si cette barre d’outils n’apparaît pas, ouvrez le menu **Affichage** dans Visual Studio 2019 ou Visual Studio 2017, puis choisissez **Barres d’outils > iOS** :
 
-![Permettre la barre d’outils iOS](config-options-images/ios-toolbar-enable.png "Permettre la barre d’outils iOS")
+![Activation de la barre d’outils iOS](config-options-images/ios-toolbar-enable.png "Activation de la barre d’outils iOS")
 
 ## <a name="solution-platforms-drop-down-menu"></a>Menu déroulant Plateformes solution
 
@@ -54,8 +54,8 @@ Pour vous assurer que ce menu déroulant est visible dans la barre d’outils st
 - Choisissez **Ajouter/supprimer des boutons** 
 - Vérifiez que l’élément **Plateformes solution** est coché :
 
-![Permettre le menu déroulant des plates-formes de solutions](config-options-images/solution-platforms-enable.png "Permettre le menu déroulant des plates-formes de solutions")
+![Activation du menu déroulant plateformes de solution](config-options-images/solution-platforms-enable.png "Activation du menu déroulant plateformes de solution")
 
 Avec un projet iOS ouvert, les barres d’outils **standard** et **iOS** doivent maintenant ressembler à la capture d’écran suivante :
 
-![Barres d’outils Standard et iOS](config-options-images/toolbars.png "Barres d’outils Standard et iOS")
+![Barres d’outils standard et iOS](config-options-images/toolbars.png "Barres d’outils standard et iOS")

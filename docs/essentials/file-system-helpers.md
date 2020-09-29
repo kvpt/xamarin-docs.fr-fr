@@ -9,18 +9,18 @@ ms.date: 11/04/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: eb35750372c5ccb878c7b38f9d25898b09fd7f1e
-ms.sourcegitcommit: e412858ce431b3280c88241e324fcab33066eb58
+ms.openlocfilehash: 967fa5f54ec9ccbb1f8bac2a87d77dca63caba3a
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86865895"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91434331"
 ---
-# <a name="xamarinessentials-file-system-helpers"></a>Xamarin.Essentials: Applications auxiliaires du système de fichiers
+# <a name="no-locxamarinessentials-file-system-helpers"></a>Xamarin.Essentials: Applications auxiliaires du système de fichiers
 
 La classe **FileSystem** contient une série de composants d’assistance qui permettent de rechercher les répertoires de cache et de données de l’application, ainsi que d’ouvrir des fichiers contenus dans le paquet d’application.
 
-## <a name="get-started"></a>Bien démarrer
+## <a name="get-started"></a>Prise en main
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -77,8 +77,8 @@ Ajoutez un fichier au dossier **Ressources** du projet iOS, et marquez l’actio
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
 
-- **CacheDirectory** - Retourne le répertoire [LocalCacheFolder](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localcachefolder#Windows_Storage_ApplicationData_LocalCacheFolder).
-- **AppDataDirectory** - Retourne le répertoire [LocalFolder](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localfolder#Windows_Storage_ApplicationData_LocalFolder) sauvegardé dans le cloud.
+- **CacheDirectory** - Retourne le répertoire [LocalCacheFolder](/uwp/api/windows.storage.applicationdata.localcachefolder#Windows_Storage_ApplicationData_LocalCacheFolder).
+- **AppDataDirectory** - Retourne le répertoire [LocalFolder](/uwp/api/windows.storage.applicationdata.localfolder#Windows_Storage_ApplicationData_LocalFolder) sauvegardé dans le cloud.
 
 Ajoutez un fichier à la racine du projet UWP, et marquez l’action de génération en tant que **Content** pour pouvoir l’utiliser avec `OpenAppPackageFileAsync`.
 

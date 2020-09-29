@@ -6,12 +6,12 @@ ms.assetid: 932AF5C2-884D-46E1-9455-4C359FD7C092
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: dfb03815f8642519cecf49ab7b626b9575821af1
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: ccec89253c58d7d43cb09f33777c253a2f0da56d
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937629"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91431120"
 ---
 # <a name="drawing-3d-graphics-with-vertices-in-monogame"></a>Dessin de graphiques 3D avec des vertex dans un monojeu
 
@@ -42,7 +42,7 @@ Le projet terminé contient un étage à damier qui est dessiné à l’aide d�
 
 ## <a name="creating-a-project"></a>Création d’un projet
 
-Tout d’abord, nous allons télécharger un projet qui servira de point de départ. Nous allons utiliser le projet de modèle [qui se trouve ici](https://docs.microsoft.com/samples/xamarin/mobile-samples/modelrenderingmg/).
+Tout d’abord, nous allons télécharger un projet qui servira de point de départ. Nous allons utiliser le projet de modèle [qui se trouve ici](/samples/xamarin/mobile-samples/modelrenderingmg/).
 
 Une fois que vous avez téléchargé et décompressé, ouvrez et exécutez le projet. Nous pensons que six modèles de robot sont dessinés à l’écran :
 
@@ -219,7 +219,7 @@ Le point important à retenir est que la `foreach` boucle permet au même code C
 
 ### <a name="drawuserprimitives"></a>DrawUserPrimitives
 
-`DrawUserPrimitives`est l’endroit où les vertex sont rendus. Le premier paramètre indique à la méthode comment nous avons organisé nos sommets. Nous les avons structurées de sorte que chaque triangle est défini par trois sommets ordonnés. nous utilisons donc la `PrimitiveType.TriangleList` valeur.
+`DrawUserPrimitives` est l’endroit où les vertex sont rendus. Le premier paramètre indique à la méthode comment nous avons organisé nos sommets. Nous les avons structurées de sorte que chaque triangle est défini par trois sommets ordonnés. nous utilisons donc la `PrimitiveType.TriangleList` valeur.
 
 Le deuxième paramètre est le tableau de vertex que nous avons défini précédemment.
 
@@ -468,4 +468,4 @@ Cette procédure pas à pas a montré comment utiliser un tableau de vertex pour
 ## <a name="related-links"></a>Liens associés
 
 - [Fichier damier (exemple)](https://github.com/xamarin/mobile-samples/blob/master/ModelRenderingMG/Resources/checkerboard.png?raw=true)
-- [Projet terminé (exemple)](https://docs.microsoft.com/samples/xamarin/mobile-samples/modelsandvertsmg/)
+- [Projet terminé (exemple)](/samples/xamarin/mobile-samples/modelsandvertsmg/)

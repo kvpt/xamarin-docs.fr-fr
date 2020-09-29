@@ -8,12 +8,12 @@ ms.date: 09/22/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9848fbe6b82d1c1705916d35ab1688dd2cb9f443
-ms.sourcegitcommit: 744f977b0595f489c592e29c8a3ba548fde02b6f
+ms.openlocfilehash: 536c0da222441808a842656853c642a2e876188b
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91414761"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91432254"
 ---
 # <a name="no-locxamarinessentials-media-picker"></a>Xamarin.Essentials: Sélecteur de média
 
@@ -21,11 +21,11 @@ La classe **MediaPicker** permet à l’utilisateur de choisir ou de prendre une
 
 ![API de la version préliminaire](~/media/shared/preview.png)
 
-## <a name="get-started"></a>Bien démarrer
+## <a name="get-started"></a>Prise en main
 
 [!include[](~/essentials/includes/get-started.md)]
 
-Pour accéder à la fonctionnalité **FilePicker** , la configuration spécifique à la plateforme suivante est requise.
+Pour accéder à la fonctionnalité **MediaPicker** , la configuration spécifique à la plateforme suivante est requise.
 
 # <a name="android"></a>[Android](#tab/android)
 

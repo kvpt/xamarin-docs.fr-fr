@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: bbd3d1663c3d796768095a12e5048b18f447fa7a
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 29ccf115facf9a086db473301f7dfb548a80dc9f
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937018"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91431113"
 ---
 # <a name="search-with-nsuseractivity-in-xamarinios"></a>Rechercher avec NSUserActivity dans Xamarin. iOS
 
-`NSUserActivity`a été introduit dans iOS 8 et est utilisé pour fournir les données pour la remise.
+`NSUserActivity` a été introduit dans iOS 8 et est utilisé pour fournir les données pour la remise.
 Elle vous permet de créer des activités dans des parties spécifiques de votre application qui peuvent ensuite être transférées vers une autre instance de votre application exécutée sur un autre appareil iOS. L’appareil de réception peut ensuite poursuivre l’activité démarrée sur l’appareil précédent, en reprenant juste là où l’utilisateur s’est arrêté. Pour plus d’informations sur l’utilisation de la remise, consultez notre introduction à la documentation relative [au transfert](~/ios/platform/handoff.md) .
 
 Nouveauté d’iOS 9, `NSUserActivity` peut être indexé (à la fois publique et privée) et recherchée dans la recherche Spotlight et Safari. En marquant un `NSUserActivity` comme pouvant faire l’objet d’une recherche et en ajoutant des métadonnées indexables, l’activité peut être listée dans les résultats de recherche sur l’appareil iOS.
@@ -27,14 +27,14 @@ Si l’utilisateur sélectionne un résultat de recherche qui appartient à une 
 
 Les propriétés suivantes de `NSUserActivity` sont utilisées pour prendre en charge la recherche d’applications :
 
-- `EligibleForHandoff`– Si `true` , cette activité peut être utilisée dans une opération de remise.
-- `EligibleForSearch`– Si `true` la valeur est, cette activité est ajoutée à l’index sur l’appareil et présentée dans les résultats de la recherche.
-- `EligibleForPublicIndexing`– Si `true` cette activité est ajoutée à l’index Cloud d’Apple et présentée aux utilisateurs (via la recherche) qui n’ont pas encore installé votre application sur leur appareil iOS. Pour plus d’informations, consultez la section [indexation de recherche publique](#public-search-indexing) ci-dessous.
-- `Title`: Fournit un titre pour votre activité et s’affiche dans les résultats de la recherche. Les utilisateurs peuvent également rechercher le texte du titre lui-même.
-- `Keywords`– Est un tableau de chaînes utilisé pour décrire votre activité qui sera indexée et fera l’objet d’une recherche par l’utilisateur final.
-- `ContentAttributeSet`– Est un `CSSearchableItemAttributeSet` utilisé pour décrire plus en détail votre activité et fournir du contenu riche dans les résultats de la recherche.
-- `ExpirationDate`: Si vous souhaitez qu’une activité s’affiche uniquement jusqu’à une date donnée, vous pouvez fournir cette date ici.
-- `WebpageURL`: Si l’activité peut être affichée sur le Web ou si votre application prend en charge les liens ciblés de Safari, vous pouvez définir le lien sur visiter ici.
+- `EligibleForHandoff` – Si `true` , cette activité peut être utilisée dans une opération de remise.
+- `EligibleForSearch` – Si `true` la valeur est, cette activité est ajoutée à l’index sur l’appareil et présentée dans les résultats de la recherche.
+- `EligibleForPublicIndexing` – Si `true` cette activité est ajoutée à l’index Cloud d’Apple et présentée aux utilisateurs (via la recherche) qui n’ont pas encore installé votre application sur leur appareil iOS. Pour plus d’informations, consultez la section [indexation de recherche publique](#public-search-indexing) ci-dessous.
+- `Title` : Fournit un titre pour votre activité et s’affiche dans les résultats de la recherche. Les utilisateurs peuvent également rechercher le texte du titre lui-même.
+- `Keywords` – Est un tableau de chaînes utilisé pour décrire votre activité qui sera indexée et fera l’objet d’une recherche par l’utilisateur final.
+- `ContentAttributeSet` – Est un `CSSearchableItemAttributeSet` utilisé pour décrire plus en détail votre activité et fournir du contenu riche dans les résultats de la recherche.
+- `ExpirationDate` : Si vous souhaitez qu’une activité s’affiche uniquement jusqu’à une date donnée, vous pouvez fournir cette date ici.
+- `WebpageURL` : Si l’activité peut être affichée sur le Web ou si votre application prend en charge les liens ciblés de Safari, vous pouvez définir le lien sur visiter ici.
 
 ## <a name="nsuseractivity-quickstart"></a>Démarrage rapide de NSUserActivity
 
@@ -168,7 +168,7 @@ En adoptant la recherche `NSUserActivity` d’application via dans votre applica
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemples iOS 9](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
+- [Exemples iOS 9](/samples/browse/?products=xamarin&term=Xamarin.iOS%2biOS9)
 - [iOS 9 pour les développeurs](https://developer.apple.com/ios/pre-release/)
 - [iOS 9,0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
 - [Guide de programmation de recherche d’applications](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/AppSearch/index.html#//apple_ref/doc/uid/TP40016308)

@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: b937cc653275f509b7f759af5c3d995e84381cb2
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: 94bb87e10b8cab2a9a37c7701b59d621f6329b8d
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997343"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436184"
 ---
 # <a name="hello-ios-multiscreen--quickstart"></a>Hello.iOS multi-écran - Démarrage rapide
 
@@ -26,7 +26,7 @@ La partie [En profondeur](~/ios/get-started/hello-ios-multiscreen/hello-ios-mult
 
 ## <a name="requirements"></a>Configuration requise
 
-Ce guide reprend là où le document Hello, iOS s’est arrêté et nécessite d’avoir terminé la partie [Hello, iOS - Démarrage rapide](~/ios/get-started/hello-ios/index.md). Téléchargez la version complète de l’application Phoneword à partir de l’[exemple Hello, iOS](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios).
+Ce guide reprend là où le document Hello, iOS s’est arrêté et nécessite d’avoir terminé la partie [Hello, iOS - Démarrage rapide](~/ios/get-started/hello-ios/index.md). Téléchargez la version complète de l’application Phoneword à partir de l’[exemple Hello, iOS](/samples/xamarin/ios-samples/hello-ios).
 
 ::: zone pivot="macos"
 
@@ -34,7 +34,7 @@ Ce guide reprend là où le document Hello, iOS s’est arrêté et nécessite d
 
 Cette procédure pas à pas permet d’ajouter un écran d’historique des appels à notre application **Phoneword**.
 
-1. Ouvrez l’application **Phoneword** dans Visual Studio pour Mac. Si nécessaire, l’application Phoneword terminée du guide [pas à pas de Hello, iOS](~/ios/get-started/hello-ios/index.md) peut être téléchargée [ici](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios).
+1. Ouvrez l’application **Phoneword** dans Visual Studio pour Mac. Si nécessaire, l’application Phoneword terminée du guide [pas à pas de Hello, iOS](~/ios/get-started/hello-ios/index.md) peut être téléchargée [ici](/samples/xamarin/ios-samples/hello-ios).
 
 2. Ouvrez le fichier **Main.storyboard** à partir du **Panneau Solutions** :
 
@@ -160,7 +160,7 @@ Ensuite, déplacez la scène **Phoneword** à côté du **contrôleur de navigat
 
     Cette application enregistre les numéros de téléphone sous la forme d’une liste de chaînes.
 
-    Ajoutez une `using` directive pour `System.Collections.Generic` en haut de **ViewController**:
+    Ajoutez une `using` directive pour `System.Collections.Generic`  en haut de **ViewController**:
 
     ```csharp
     using System.Collections.Generic;
@@ -275,7 +275,7 @@ Félicitations ! Vous avez terminé votre première application Xamarin.iOS mul
 
 Cette procédure pas à pas permet d’ajouter un écran d’historique des appels à notre application **Phoneword**.
 
-1. Ouvrez l’application **Phoneword** dans Visual Studio. Si nécessaire, téléchargez l’[application Phoneword complète](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios) à partir du guide de [procédure pas à pas Hello, iOS](~/ios/get-started/hello-ios/index.md). N’oubliez pas qu’il est nécessaire de se connecter à un [Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md) pour utiliser le concepteur iOS et le simulateur iOS.
+1. Ouvrez l’application **Phoneword** dans Visual Studio. Si nécessaire, téléchargez l’[application Phoneword complète](/samples/xamarin/ios-samples/hello-ios) à partir du guide de [procédure pas à pas Hello, iOS](~/ios/get-started/hello-ios/index.md). N’oubliez pas qu’il est nécessaire de se connecter à un [Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md) pour utiliser le concepteur iOS et le simulateur iOS.
 
 2. Commencez par modifier l’interface utilisateur. Ouvrez le fichier **Main.storyboard** depuis l’**Explorateur de solutions**, en vérifiant que **Afficher en tant que** a la valeur _iPhone 6_ :
 
@@ -517,6 +517,6 @@ L’application peut désormais prendre en charge la navigation à l’aide de S
 
 ## <a name="related-links"></a>Liens associés
 
-- [Hello, iOS (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios)
+- [Hello, iOS (exemple)](/samples/xamarin/ios-samples/hello-ios)
 - [Human Interface Guidelines pour iOS](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html)
 - [Portail d’approvisionnement iOS](https://developer.apple.com/ios/manage/overview/index.action)

@@ -7,18 +7,18 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 5cf86adf07043a60c6fe445265e14591692e365b
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 5a6c7a013a72d2ad0e80e305b8c4c550011a1737
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73008357"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91430748"
 ---
 # <a name="toolbars-in-xamarinmac"></a>Barres d’outils dans Xamarin. Mac
 
 _Cet article décrit l’utilisation des barres d’outils dans une application Xamarin. Mac. Il aborde la création et la gestion des barres d’outils dans Xcode et Interface Builder, leur exposition au code et leur utilisation par programmation._
 
-Les développeurs Xamarin. Mac qui travaillent avec Visual Studio pour Mac ont accès aux mêmes contrôles d’interface utilisateur que ceux disponibles pour les développeurs macOS qui travaillent avec Xcode, y compris le contrôle ToolBar. Comme Xamarin. Mac s’intègre directement à Xcode, il est possible d’utiliser la Interface Builder de Xcode pour créer et gérer des éléments de barre d’outils. Ces éléments de barre d’outils peuvent également C#être créés dans.
+Les développeurs Xamarin. Mac qui travaillent avec Visual Studio pour Mac ont accès aux mêmes contrôles d’interface utilisateur que ceux disponibles pour les développeurs macOS qui travaillent avec Xcode, y compris le contrôle ToolBar. Comme Xamarin. Mac s’intègre directement à Xcode, il est possible d’utiliser la Interface Builder de Xcode pour créer et gérer des éléments de barre d’outils. Ces éléments de barre d’outils peuvent également être créés en C#.
 
 Les barres d’outils dans macOS sont ajoutées à la partie supérieure d’une fenêtre et offrent un accès facile aux commandes associées à ses fonctionnalités. Les barres d’outils peuvent être masquées, affichées ou personnalisées par les utilisateurs d’une application, et elles peuvent présenter des éléments de barre d’outils de différentes façons.
 
@@ -26,7 +26,7 @@ Cet article présente les principes de base de l’utilisation des barres d’ou
 
 Avant de continuer, lisez l’article sur la [salutation, Mac](~/mac/get-started/hello-mac.md) , en particulier la [Présentation de Xcode et de Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) et des sections d' [actions](~/mac/get-started/hello-mac.md#outlets-and-actions) , en ce qui concerne les concepts et les techniques clés qui seront utilisés dans ce guide.
 
-Jetez également un coup d’œil à la section [exposition des C# classes/méthodes à Objective-C](~/mac/internals/how-it-works.md) du document [Internals Xamarin. Mac](~/mac/internals/how-it-works.md) . Elle explique les attributs `Register` et `Export` utilisés pour connecter C# des classes à des classes objective-C.
+Jetez également un coup d’œil à la section [exposition des classes/méthodes C# à Objective-C](~/mac/internals/how-it-works.md) du document [Internals Xamarin. Mac](~/mac/internals/how-it-works.md) . Elle explique les `Register` `Export` attributs et utilisés pour connecter des classes C# à des classes objective-C.
 
 ## <a name="introduction-to-toolbars"></a>Présentation des barres d’outils
 
@@ -46,7 +46,7 @@ Les barres d’outils peuvent afficher des éléments de trois façons :
 
      ![Barre d’outils icône uniquement](toolbar-images/info03.png "Barre d’outils icône uniquement")
 
-3. **Texte uniquement** 
+3. **Texte seul** 
 
      ![Barre d’outils de texte uniquement](toolbar-images/info04.png "Barre d’outils de texte uniquement")
 
@@ -76,7 +76,7 @@ Les sections suivantes de ce guide décrivent comment créer et gérer des barre
 
 ## <a name="setting-a-custom-main-window-controller"></a>Définition d’un contrôleur de fenêtre principale personnalisé
 
-Pour exposer des éléments d' C# interface utilisateur au code via des prises et des actions, l’application Xamarin. Mac doit utiliser un contrôleur de fenêtre personnalisé :
+Pour exposer des éléments d’interface utilisateur à du code C# via des prises et des actions, l’application Xamarin. Mac doit utiliser un contrôleur de fenêtre personnalisé :
 
 1. Ouvrez le Storyboard de l’application dans le Interface Builder de Xcode.
 2. Sélectionnez le contrôleur de fenêtre sur l’aire de conception.
@@ -108,7 +108,7 @@ Faites glisser une barre d’outils dans la fenêtre de l' **éditeur d’interf
 
 ![L’inspecteur d’attributs pour une barre d’outils](toolbar-images/edit04.png "L’inspecteur d’attributs pour une barre d’outils")
 
-Les propriétés suivantes sont disponibles :
+Les propriétés suivantes sont disponibles :
 
 1. **Display** -contrôle si la barre d’outils affiche des icônes, du texte ou les deux
 2. **Visible au lancement** -si cette option est sélectionnée, la barre d’outils est visible par défaut.
@@ -162,7 +162,7 @@ Ensuite, utilisez l' **inspecteur d’attributs** pour définir les propriétés
 
 ![Personnalisation d’un élément de barre d’outils à l’aide de l’inspecteur d’attributs](toolbar-images/add03.png "Personnalisation d’un élément de barre d’outils à l’aide de l’inspecteur d’attributs")
 
-Les propriétés suivantes sont disponibles :
+Les propriétés suivantes sont disponibles :
 
 - **Nom** de l’image-image à utiliser comme icône pour l’élément
 - **Étiquette** -texte à afficher pour l’élément dans la barre d’outils
@@ -198,7 +198,7 @@ Enregistrez le document, revenez à Visual Studio pour Mac à synchroniser avec 
 
 À l’aide d’un élément de la **barre d’outils image**, toute image bitmap ajoutée au dossier **ressources** (et avec une action de génération de **ressource Bundle**) peut être affichée dans la barre d’outils sous la forme d’une icône :
 
-1. Dans Visual Studio pour Mac, dans la **panneau solutions**, cliquez avec le bouton droit sur le dossier **ressources** , puis sélectionnez **Ajouter**  > **Ajouter des fichiers**.
+1. Dans Visual Studio pour Mac, dans la **panneau solutions**, cliquez avec le bouton droit sur le dossier **ressources** , puis sélectionnez **Ajouter**  >  **Ajouter des fichiers**.
 2. Dans la boîte de dialogue **Ajouter des fichiers** , accédez aux images de votre choix, sélectionnez-les et cliquez sur le bouton **ouvrir** : 
 
     [![Sélection des images à ajouter](toolbar-images/edit11.png "Sélection des images à ajouter")](toolbar-images/edit11-large.png#lightbox)
@@ -269,7 +269,7 @@ public void EraseDocument() {
 }
 ```
 
-Modifiez ensuite le fichier **WindowController.cs** et ajoutez le code suivant en bas de la classe `WindowController` :
+Modifiez ensuite le fichier **WindowController.cs** et ajoutez le code suivant au bas de la `WindowController` classe :
 
 ```csharp
 [Export ("trashDocument:")]
@@ -288,9 +288,9 @@ Notez que l’élément de la barre d’outils **Corbeille** peut maintenant êt
 
 ## <a name="disabling-toolbar-items"></a>Désactivation des éléments de barre d’outils
 
-Pour désactiver un élément dans une barre d’outils, créez une classe `NSToolbarItem` personnalisée et substituez la méthode `Validate`. Ensuite, dans Interface Builder, assignez le type personnalisé à l’élément que vous souhaitez activer/désactiver.
+Pour désactiver un élément dans une barre d’outils, créez une `NSToolbarItem` classe personnalisée et substituez la `Validate` méthode. Ensuite, dans Interface Builder, assignez le type personnalisé à l’élément que vous souhaitez activer/désactiver.
 
-Pour créer une classe de `NSToolbarItem` personnalisée, cliquez avec le bouton droit sur le projet et sélectionnez **ajouter**  > **nouveau fichier...** . Sélectionnez **général**  > **classe vide**, entrez « ActivatableItem » comme **nom**, puis cliquez sur le bouton **nouveau** : 
+Pour créer une `NSToolbarItem` classe personnalisée, cliquez avec le bouton droit sur le projet, puis sélectionnez **Ajouter**un  >  **nouveau fichier...**. Sélectionnez **General**  >  **classe générale vide**, entrez « ActivatableItem » comme **nom**, puis cliquez sur le bouton **nouveau** : 
 
 ![Ajout d’une classe vide dans Visual Studio pour Mac](toolbar-images/custom01.png "Ajout d’une classe vide dans Visual Studio pour Mac")
 
@@ -338,7 +338,7 @@ Double-cliquez sur **main. Storyboard** pour l’ouvrir dans Xcode. Sélectionne
 
 ![Définition d’une classe personnalisée pour un élément de barre d’outils](toolbar-images/custom02.png "Définition d’une classe personnalisée pour un élément de barre d’outils")
 
-Créez une sortie appelée `trashItem` pour l’élément de barre d’outils **Corbeille** . Enregistrez les modifications et revenez à Visual Studio pour Mac pour effectuer une synchronisation avec Xcode. Enfin, ouvrez **MainWindow.cs** et mettez à jour la méthode `AwakeFromNib` pour la lire comme suit :
+Créez une prise appelée `trashItem` pour l’élément de barre d’outils **Corbeille** . Enregistrez les modifications et revenez à Visual Studio pour Mac pour effectuer une synchronisation avec Xcode. Enfin, ouvrez **MainWindow.cs** et mettez à jour la `AwakeFromNib` méthode pour lire comme suit :
 
 ```csharp
 public override void AwakeFromNib ()
@@ -354,13 +354,13 @@ Exécutez l’application et notez que l’élément **Corbeille** est maintenan
 
 ![Barre d’outils avec élément de poubelle inactif](toolbar-images/custom03.png "Barre d’outils avec élément de poubelle inactif")
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
-Cet article a décrit en détail l’utilisation des barres d’outils et des éléments de barre d’outils dans une application Xamarin. Mac. Il a décrit comment créer et gérer des barres d’outils dans les Interface Builder de Xcode, comment certains contrôles d’interface utilisateur fonctionnent automatiquement avec des éléments de barre d' C# outils, comment utiliser des barres d’outils dans le code et comment activer et désactiver des éléments de barre d’outils.
+Cet article a décrit en détail l’utilisation des barres d’outils et des éléments de barre d’outils dans une application Xamarin. Mac. Il a décrit comment créer et gérer des barres d’outils dans les Interface Builder de Xcode, comment certains contrôles d’interface utilisateur fonctionnent automatiquement avec des éléments de barre d’outils, comment utiliser des barres d’outils dans le code C# et comment activer et désactiver des éléments de barre d’outils.
 
 ## <a name="related-links"></a>Liens associés
 
-- [MacToolbar (exemple)](https://docs.microsoft.com/samples/xamarin/mac-samples/mactoolbar)
+- [MacToolbar (exemple)](/samples/xamarin/mac-samples/mactoolbar)
 - [Hello, Mac](~/mac/get-started/hello-mac.md)
 - [Instructions relatives à l’interface humaine pour les barres d’outils](https://developer.apple.com/macos/human-interface-guidelines/windows-and-views/toolbars/)
 - [Présentation des barres d’outils](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/Toolbars/Toolbars.html)

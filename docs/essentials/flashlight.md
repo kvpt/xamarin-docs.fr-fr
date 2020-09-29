@@ -9,18 +9,18 @@ ms.date: 11/04/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7a8a90674b395c90f698a4a0854dc0dc3fc5fe15
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a7341137d7f7ddf1d0db47672af8810380805478
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84802348"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91434362"
 ---
-# <a name="xamarinessentials-flashlight"></a>Xamarin.Essentials: Torche
+# <a name="no-locxamarinessentials-flashlight"></a>Xamarin.Essentials: Torche
 
 La classe **Flashlight** permet d’activer ou de désactiver le flash de l’appareil photo de l’appareil pour transformer celui-ci en lampe de poche.
 
-## <a name="get-started"></a>Bien démarrer
+## <a name="get-started"></a>Prise en main
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -120,7 +120,7 @@ Une texture de surface d’appareil photo est créée pour activer ou désactive
 
 ### <a name="uwp"></a>[UWP](#tab/uwp)
 
-[Lamp](https://docs.microsoft.com/uwp/api/windows.devices.lights.lamp) permet de détecter l’activation ou la désactivation de la première lampe à l’arrière de l’appareil.
+[Lamp](/uwp/api/windows.devices.lights.lamp) permet de détecter l’activation ou la désactivation de la première lampe à l’arrière de l’appareil.
 
 -----
 

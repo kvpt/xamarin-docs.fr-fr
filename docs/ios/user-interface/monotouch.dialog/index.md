@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: davidortinau
 ms.author: daortin
-ms.openlocfilehash: 8216e0e41eea98dcdcd34ccfac6a9573224f3093
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: c57a6d02488272934ea77714b07c0328ac501d26
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936667"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91431218"
 ---
 # <a name="introduction-to-monotouchdialog-for-xamarinios"></a>Présentation de la boîte de dialogue MonoTouch. Xamarin. iOS
 
@@ -54,7 +54,7 @@ Par exemple, chaque fois qu’une table est nécessaire, une source de données 
 
 MT. D simplifie cela en encapsulant tout ce code dans une API générique pour la création de table. Il fournit ensuite une abstraction au-dessus de cette API qui permet une syntaxe de liaison d’objet déclarative qui la rend encore plus facile. Par conséquent, deux API sont disponibles dans MT. E
 
-- **API d’éléments de bas niveau** : l' *API Elements* est basée sur la création d’une arborescence d’éléments qui représentent des écrans et leurs composants. L’API Elements offre aux développeurs le plus de flexibilité et de contrôle dans la création d’interfaces utilisateur. En outre, l’API Elements a une prise en charge avancée de la définition déclarative via JSON, ce qui permet une déclaration extrêmement rapide, ainsi qu’une génération dynamique d’interface utilisateur à partir d’un serveur. 
+- **API d’éléments de bas niveau** : l'  *API Elements* est basée sur la création d’une arborescence d’éléments qui représentent des écrans et leurs composants. L’API Elements offre aux développeurs le plus de flexibilité et de contrôle dans la création d’interfaces utilisateur. En outre, l’API Elements a une prise en charge avancée de la définition déclarative via JSON, ce qui permet une déclaration extrêmement rapide, ainsi qu’une génération dynamique d’interface utilisateur à partir d’un serveur. 
 - **API de réflexion de haut niveau** (également appelée*API* de *liaison*) dans laquelle les classes sont annotées avec des indicateurs d’interface utilisateur, puis MT. D crée automatiquement des écrans basés sur les objets et fournit une liaison entre les éléments affichés (et éventuellement modifiés) à l’écran et l’objet sous-jacent.   L’exemple ci-dessus illustre l’utilisation de l’API de réflexion. Cette API ne fournit pas le contrôle affiné que fait l’API Elements, mais elle réduit encore davantage la complexité en générant automatiquement la hiérarchie d’éléments en fonction des attributs de classe. 
 
 MT. D est compressé avec un grand nombre d’éléments d’interface utilisateur intégrés pour la création d’écran, mais il reconnaît également la nécessité d’éléments personnalisés et de dispositions d’écran avancées. Par conséquent, l’extensibilité est une première classe intégrée à l’API. Les développeurs peuvent étendre les éléments existants ou en créer de nouveaux, puis s’intégrer en toute transparence.
@@ -64,8 +64,8 @@ En outre, MT. D possède un certain nombre de fonctionnalités d’expérience u
 Cet article présente en détail l’utilisation de la solution MT. D, y compris :
 
 - **Mt. Composants D** : il est axé sur la compréhension des classes qui composent Mt. D pour permettre une mise à niveau rapide. 
-- **Référence des éléments** : liste complète des éléments intégrés de Mt. E. 
-- **Utilisation avancée** : inclut des fonctionnalités avancées telles que l’extraction vers l’actualisation, la recherche, le chargement d’images d’arrière-plan, l’utilisation de LINQ pour créer des hiérarchies d’éléments et la création d’éléments, de cellules et de contrôleurs personnalisés pour une utilisation avec Mt. E. 
+- Informations de référence sur les **éléments** : liste complète des éléments intégrés de Mt. D. 
+- **Utilisation avancée** : inclut des fonctionnalités avancées telles que l’extraction à l’actualisation, la recherche, le chargement d’images d’arrière-plan, l’utilisation de LINQ pour créer des hiérarchies d’éléments et la création d’éléments, de cellules et de contrôleurs personnalisés pour une utilisation avec Mt. D. 
 
 ## <a name="setting-up-mtd"></a>Configuration de MT. E
 
@@ -73,14 +73,14 @@ MT. D est distribué avec Xamarin. iOS. Pour l’utiliser, cliquez avec le bouto
 
 ## <a name="understanding-the-pieces-of-mtd"></a>Comprendre les éléments de MT. E
 
-Même en cas d’utilisation de l’API de réflexion, MT. D crée une hiérarchie d’éléments sous le capot, comme s’il avait été créé directement via l’API Elements. En outre, la prise en charge de JSON mentionnée dans la section précédente crée également des éléments. Pour cette raison, il est important d’avoir une compréhension de base des composants de MT. E.
+Même en cas d’utilisation de l’API de réflexion, MT. D crée une hiérarchie d’éléments sous le capot, comme s’il avait été créé directement via l’API Elements. En outre, la prise en charge de JSON mentionnée dans la section précédente crée également des éléments. Pour cette raison, il est important d’avoir une compréhension de base des composants de MT. D.
 
 MT. D génère des écrans à l’aide des quatre parties suivantes :
 
 - **DialogViewController**
 - **RootElement**
 - **Section**
-- **Appartient**
+- **Element**
 
 ### <a name="dialogviewcontroller"></a>DialogViewController
 
@@ -164,7 +164,7 @@ var section = new Section (header);
 #### <a name="handling-nsaction"></a>Gestion de NSAction
 
 MT. D surface un `NSAction` en tant que délégué pour gérer les rappels.
-Par exemple, imaginons que vous souhaitez gérer un événement tactile pour une cellule de table créée par MT. E. Lors de la création d’un élément avec MT. D, fournissez simplement une fonction de rappel, comme indiqué ci-dessous :
+Par exemple, imaginons que vous souhaitez gérer un événement tactile pour une cellule de table créée par MT. D. Lors de la création d’un élément avec MT. D, fournissez simplement une fonction de rappel, comme indiqué ci-dessous :
 
 ```csharp
 new Section () {
@@ -256,7 +256,7 @@ En outre `KeyboardType` , la propriété peut être définie au moment de la cr�
 - Numérique
 - Téléphone
 - Url
-- E-mail
+- Messagerie
 
 ### <a name="boolean-element"></a>Élément booléen
 
@@ -276,7 +276,7 @@ mtRoot = new RootElement ("Demos", new RadioGroup("MyGroup", 0));
 
  [![Un radioélément nécessite la spécification d’un groupe de radiogroupe dans le RootElement](images/image14.png)](images/image14.png#lightbox)
 
- `RootElements`sont également utilisés pour coordonner les éléments radio. Les `RadioElement` membres peuvent s’étendre sur plusieurs sections (par exemple, pour implémenter un nom similaire au sélecteur de sonnerie de sonnerie et séparer les tonalités personnalisées des sonneries système). La vue Résumé affiche l’élément radio actuellement sélectionné. Pour ce faire, créez le `RootElement` avec le constructeur de groupe, comme suit :
+ `RootElements` sont également utilisés pour coordonner les éléments radio. Les `RadioElement` membres peuvent s’étendre sur plusieurs sections (par exemple, pour implémenter un nom similaire au sélecteur de sonnerie de sonnerie et séparer les tonalités personnalisées des sonneries système). La vue Résumé affiche l’élément radio actuellement sélectionné. Pour ce faire, créez le `RootElement` avec le constructeur de groupe, comme suit :
 
 ```csharp
 var root = new RootElement ("Meals", new RadioGroup ("myGroup", 0));
@@ -391,7 +391,7 @@ using (var reader = File.OpenRead ("json.sample"))
     return JsonElement.FromJson (JsonObject.Load (reader) as JsonObject, arg);
 ```
 
-Pour plus d’informations sur l’utilisation de JSON avec MT. D, consultez le didacticiel relatif [à la procédure pas à pas d’élément JSON](https://docs.microsoft.com/xamarin/ios/user-interface/monotouch.dialog/json-element-walkthrough) .
+Pour plus d’informations sur l’utilisation de JSON avec MT. D, consultez le didacticiel relatif [à la procédure pas à pas d’élément JSON](./json-element-walkthrough.md) .
 
 ## <a name="other-features"></a>Autres fonctionnalités
 
@@ -569,7 +569,7 @@ La façon dont vous informez l’utilisateur d’une erreur est spécifique à l
 
 ## <a name="summary"></a>Résumé
 
-Cet article a traité de nombreuses informations sur les dialogues monotactiles. Il a abordé les principes de base du fonctionnement de l’MT. D fonctionne et traite des différents composants qui composent le MT. E. Elle a également montré la vaste gamme d’éléments et de personnalisations de table prise en charge par MT. D et a abordé la manière dont MT. D peut être étendu avec des éléments personnalisés. En outre, il a expliqué la prise en charge de JSON dans MT. D, qui permet de créer dynamiquement des éléments à partir de JSON.
+Cet article a traité de nombreuses informations sur les dialogues monotactiles. Il a abordé les principes de base du fonctionnement de l’MT. D fonctionne et traite des différents composants qui composent le MT. D. Elle a également montré la vaste gamme d’éléments et de personnalisations de table prise en charge par MT. D et a abordé la manière dont MT. D peut être étendu avec des éléments personnalisés. En outre, il a expliqué la prise en charge de JSON dans MT. D, qui permet de créer dynamiquement des éléments à partir de JSON.
 
 ## <a name="related-links"></a>Liens associés
 

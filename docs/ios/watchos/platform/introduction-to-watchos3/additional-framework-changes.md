@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 628d2c8efe9459378c64c55d653eac14c55e0815
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 50f671febdc698454dd5bc7e00d040672c7a79af
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028280"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436534"
 ---
 # <a name="additional-watchos-3-frameworks-changes"></a>Modifications supplémentaires apportées aux infrastructures Watchos 3
 
@@ -27,8 +27,8 @@ Les améliorations suivantes ont été apportées à l’infrastructure de donn�
 - Les objets [NSManagedObjectContext](https://developer.apple.com/reference/coredata/nsmanagedobjectcontext) racines prennent en charge l’erreur et l’extraction simultanés sans sérialisation.
 - La classe [NSPersistentStoreCoordinator](https://developer.apple.com/reference/coredata/nspersistentstorecoordinator) gère un pool de banques de données SQLite.
 - Les objets [NSManagedObjectContext](https://developer.apple.com/reference/coredata/nsmanagedobjectcontext) avec les banques de données sqlite dans le mode journal de Wal prennent en charge la nouvelle fonctionnalité de génération de requêtes dans laquelle les contextes d’objets managés (MOC) peuvent être épinglés à des versions de base de données spécifiques pour des transactions de récupération et de défaillance futures.
-- Utilisation du `NSPersistenceContainer` de haut niveau pour référencer les ressources de configuration de `NSPersistentStoreCoordinator`, [NSManagedObjectModel](https://developer.apple.com/reference/coredata/nsmanagedobjectmodel) et autres données de base.
-- Plusieurs nouvelles méthodes pratiques ont été ajoutées à `NSManagedObject` ce qui facilite l’exécution d’extractions et la création de sous-classes.
+- Utilisation du niveau élevé `NSPersistenceContainer` pour référencer les `NSPersistentStoreCoordinator` ressources de configuration de données principales, [NSManagedObjectModel](https://developer.apple.com/reference/coredata/nsmanagedobjectmodel) et autres.
+- Plusieurs nouvelles méthodes pratiques ont été ajoutées pour `NSManagedObject` faciliter l’exécution des extractions et la création de sous-classes.
 
 Pour plus d’informations, consultez Référence de l' [infrastructure de données de base](https://developer.apple.com/reference/coredata)d’Apple.
 
@@ -39,7 +39,7 @@ Les améliorations suivantes ont été apportées à l’infrastructure Motion C
 - Le nouvel événement de mouvement d’appareil utilise l’accéléromètre et le gyroscope pour fournir des mises à jour d’orientation et de mouvement. L’application peut s’inscrire à cette mise à jour (à des tarifs allant jusqu’à 100Hz).
 - Le nouvel événement Pedometer permet des notifications rapides et en temps réel lorsque l’utilisateur s’arrête et reprend son exécution. Utilisez [CMPedometer](https://developer.apple.com/reference/coremotion/cmpedometer) pour vous inscrire aux événements de premier plan ou d’arrière-plan Pedometer.
 
-## <a name="foundation"></a>Pierre
+## <a name="foundation"></a>Foundation
 
 Les améliorations suivantes ont été apportées à l’infrastructure de base pour la surveillance du système d’exploitation 3 :
 
@@ -53,9 +53,9 @@ Les améliorations suivantes ont été apportées à l’infrastructure de base 
 
 Les améliorations suivantes ont été apportées à l’infrastructure HealthKit pour la surveillance du système d’exploitation 3 :
 
-- Utilisez la nouvelle classe [HKWorkoutConfiguration](https://developer.apple.com/reference/healthkit/hkworkoutconfiguration) pour spécifier les `ActivityType` et les `LocationType` d’une entraînement.
-- La nouvelle [HKWheelchairUseObject](https://developer.apple.com/reference/healthkit/hkwheelchairuseobject) et la méthode `WheelchairUse` de la classe [HKHealthStore](https://developer.apple.com/reference/healthkit/hkhealthstore) ont été ajoutées pour l’utilisation des données d’intégrité liées aux fauteuils roulants.
-- De nouvelles clés de métadonnées ont été ajoutées pour les types météo (tels que `HKWeatherConditionClear` et `HKWeatherConditionCloudy`) et les types d’entraînement (tels que `HKWorkoutActivityTypeFlexibility` et `HKWorkoutActivityTypeWheelchairRunPace`) ont été ajoutés.
+- Utilisez la nouvelle classe [HKWorkoutConfiguration](https://developer.apple.com/reference/healthkit/hkworkoutconfiguration) pour spécifier le `ActivityType` et `LocationType` un entraînement.
+- Le nouveau [HKWheelchairUseObject](https://developer.apple.com/reference/healthkit/hkwheelchairuseobject) et la `WheelchairUse` méthode de la classe [HKHealthStore](https://developer.apple.com/reference/healthkit/hkhealthstore) ont été ajoutés pour l’utilisation des données d’intégrité liées aux fauteuils roulants.
+- De nouvelles clés de métadonnées ont été ajoutées pour les types météo (tels que `HKWeatherConditionClear` et `HKWeatherConditionCloudy` ) et les types d’entraînement (tels que `HKWorkoutActivityTypeFlexibility` et `HKWorkoutActivityTypeWheelchairRunPace` ) ont été ajoutés.
 
 ## <a name="homekit"></a>HomeKit
 
@@ -76,10 +76,10 @@ Les améliorations suivantes ont été apportées à l’infrastructure PassKit 
 
 Les améliorations suivantes ont été apportées à l’infrastructure UIKit pour la surveillance du système d’exploitation 3 :
 
-- Pour prendre en charge le type dynamique dans les étiquettes, les champs de texte et les zones de texte, utilisez la nouvelle méthode `PreferredFontForTextStyle` de la classe `UIFont`.
-- La méthode `ColorWithDisplayP3` a été ajoutée pour prendre en charge la couleur étendue.
+- Pour prendre en charge le type dynamique dans les étiquettes, les champs de texte et les zones de texte, utilisez la nouvelle `PreferredFontForTextStyle` méthode de la `UIFont` classe.
+- La `ColorWithDisplayP3` méthode a été ajoutée pour prendre en charge la couleur étendue.
 
 ## <a name="related-links"></a>Liens associés
 
-- [exemples Watchos](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS%20watchos)
+- [exemples Watchos](/samples/browse/?products=xamarin&term=Xamarin.iOS%2bwatchos)
 - [Nouveautés de Watchos 3](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewInwatchOS/Articles/watchOS3.html#//apple_ref/doc/uid/TP40017085-SW1)

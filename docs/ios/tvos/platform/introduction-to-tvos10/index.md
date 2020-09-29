@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 02fda984d65bb89ac3dc8a4ae5e15e2c61ec7d90
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 5d59646f111e5ac3f50de7319f8d5065492c9942
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030616"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91434906"
 ---
 # <a name="introduction-to-tvos-10"></a>Introduction à tvOS 10
 
@@ -38,7 +38,7 @@ Pour plus d’informations, consultez notre nouvelle documentation sur les style
 
 Apple a apporté plusieurs améliorations à la sécurité et à la confidentialité dans tvOS 10, ce qui permet au développeur d’améliorer la sécurité de ses applications et de garantir la confidentialité de l’utilisateur final.
 
-Par conséquent, les applications qui s’exécutent sur Watchos 3 (ou version ultérieure) doivent déclarer de manière statique leur intention d’accéder à des fonctionnalités ou des informations utilisateur spécifiques en entrant une ou plusieurs clés spécifiques à la confidentialité dans leurs fichiers `Info.plist` qui expliquent à l’utilisateur pourquoi l’application souhaite obtenir un accès.
+Par conséquent, les applications qui s’exécutent sur Watchos 3 (ou version ultérieure) doivent déclarer de manière statique leur intention d’accéder à des fonctionnalités ou des informations utilisateur spécifiques en entrant une ou plusieurs clés spécifiques à la confidentialité dans leurs `Info.plist` fichiers qui expliquent à l’utilisateur pourquoi l’application souhaite obtenir un accès.
 
 Étant donné que tvOS 10 partage ces modifications avec iOS 10, consultez notre guide d’amélioration de la [sécurité et](~/ios/app-fundamentals/security-privacy.md) de la confidentialité d’iOS 10 pour plus d’informations.
 
@@ -52,12 +52,12 @@ Nouveauté de tvOS 10, l’infrastructure de compte d’abonné vidéo permet au
 
 tvOS 10 étend la prise en charge des formats de pixel étendus et des espaces de couleurs à grande échelle dans le système, y compris les infrastructures telles que Core Graphics, Core image, Metal et AVFoundation. La prise en charge des appareils avec des affichages de couleurs larges est encore plus facilitée en fournissant ce comportement dans l’ensemble de la pile graphique.
 
-En outre, `UIKit` a été modifiée pour fonctionner dans le nouveau colorspace **sRVB** étendu, ce qui facilite le mixage des couleurs dans des gammes de couleurs larges sans perte de performances significative.
+En outre, `UIKit` a été modifié pour fonctionner dans le nouveau colorspace **sRVB** étendu, ce qui facilite le mixage des couleurs dans des gammes de couleurs larges sans perte de performances significative.
 
 Apple offre les meilleures pratiques suivantes lorsque vous travaillez avec des couleurs larges :
 
-- `UIColor` utilise à présent l’espace de couleurs sRVB et ne pincera plus les valeurs à la `0.0` pour `1.0` plage. Si l’application s’appuie sur le comportement de verrouillage précédent, elle doit être modifiée pour tvOS 10.
-- Si l’application effectue un rendu personnalisé de `UIImages`, utilisez la nouvelle classe [UIGraphicsImageRender](https://developer.apple.com/reference/uikit/uigraphicsimagerenderer) pour spécifier l’utilisation des formats de plage étendue ou standard.
+- `UIColor` utilise à présent l’espace de couleurs sRVB et ne pincera plus les valeurs à la `0.0` `1.0` plage à. Si l’application s’appuie sur le comportement de verrouillage précédent, elle doit être modifiée pour tvOS 10.
+- Si l’application effectue un rendu personnalisé de `UIImages` , utilisez la nouvelle classe [UIGraphicsImageRender](https://developer.apple.com/reference/uikit/uigraphicsimagerenderer) pour spécifier l’utilisation des formats de plage étendue ou standard.
 - Lorsque vous utilisez une API de bas niveau, telle que des graphiques de base ou du métal, pour fournir un traitement d’image, l’application doit utiliser un espace de couleurs de plage étendue et un format de pixel qui prend en charge les valeurs à virgule flottante 16 bits. Le cas échéant, l’application devra fixer manuellement les valeurs des composants de couleur.
 - Core Graphics, Core image et Metal performance Nuancers fournissent de nouvelles méthodes pour la conversion entre les deux espaces de couleurs.
 
@@ -86,5 +86,5 @@ Aucune API ou infrastructure n’a été déconseillée par tvOS 10. Pour obteni
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemples tvOS](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [Exemples tvOS](/samples/browse/?products=xamarin&term=Xamarin.iOS%2btvOS)
 - [Nouveautés de tvOS 10](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewinTVOS/Articles/tvOS10.html#//apple_ref/doc/uid/TP40017259-SW1)
