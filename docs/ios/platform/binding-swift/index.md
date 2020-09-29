@@ -7,19 +7,19 @@ ms.technology: xamarin-ios
 author: alexeystrakh
 ms.author: alstrakh
 ms.date: 02/11/2020
-ms.openlocfilehash: 72ab1d9f10ee308313569528d152d5930a258207
-ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
+ms.openlocfilehash: f678ec02ca5b9b47f6f78eea77547b038274190f
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85852976"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435514"
 ---
 # <a name="bind-ios-swift-libraries"></a>Lier des bibliothèques iOS SWIFT
 
 > [!IMPORTANT]
 > Nous étudions actuellement l’utilisation de la liaison personnalisée sur la plateforme Xamarin. Veuillez suivre [**ce questionnaire**](https://www.surveymonkey.com/r/KKBHNLT) pour informer les futurs efforts de développement.
 
-La plateforme iOS, ainsi que ses langages et outils natifs, évoluent constamment et il existe de nombreuses bibliothèques tierces qui ont été développées à l’aide des dernières offres. L’optimisation du code et de la réutilisation des composants est l’un des objectifs clés du développement multiplateforme. La possibilité de réutiliser des composants créés avec SWIFT est devenue de plus en plus importante pour les développeurs Xamarin, car leur popularité entre les développeurs continue de croître. Vous êtes peut-être déjà familiarisé avec le processus de liaison de bibliothèques [objective-C](https://docs.microsoft.com/xamarin/ios/platform/binding-objective-c/walkthrough) régulières. Une documentation supplémentaire est désormais disponible décrivant le processus de [liaison d’un Framework SWIFT](walkthrough.md), afin qu’ils soient consommables par une application Xamarin de la même manière. L’objectif de ce document est de décrire une approche de haut niveau pour créer une liaison SWIFT pour Xamarin.
+La plateforme iOS, ainsi que ses langages et outils natifs, évoluent constamment et il existe de nombreuses bibliothèques tierces qui ont été développées à l’aide des dernières offres. L’optimisation du code et de la réutilisation des composants est l’un des objectifs clés du développement multiplateforme. La possibilité de réutiliser des composants créés avec SWIFT est devenue de plus en plus importante pour les développeurs Xamarin, car leur popularité entre les développeurs continue de croître. Vous êtes peut-être déjà familiarisé avec le processus de liaison de bibliothèques [objective-C](../binding-objective-c/walkthrough.md) régulières. Une documentation supplémentaire est désormais disponible décrivant le processus de [liaison d’un Framework SWIFT](walkthrough.md), afin qu’ils soient consommables par une application Xamarin de la même manière. L’objectif de ce document est de décrire une approche de haut niveau pour créer une liaison SWIFT pour Xamarin.
 
 ## <a name="high-level-approach"></a>Approche de haut niveau
 
@@ -41,7 +41,7 @@ La première étape consiste à avoir un Framework SWIFT natif prêt avec l’en
 
 ### <a name="prepare-the-xamarin-metadata"></a>Préparer les métadonnées Xamarin
 
-La deuxième étape consiste à préparer les interfaces de définition d’API, qui sont utilisées par un projet de liaison pour générer des classes C#. Ces définitions peuvent être créées manuellement ou automatiquement par l’outil [objectivité objective](https://docs.microsoft.com/xamarin/cross-platform/macios/binding/objective-sharpie/) et le fichier d’en-tête generated ** \<FrameworkName> -SWIFT. h ci-** dessus. Une fois les métadonnées générées, elles doivent être vérifiées et validées manuellement.
+La deuxième étape consiste à préparer les interfaces de définition d’API, qui sont utilisées par un projet de liaison pour générer des classes C#. Ces définitions peuvent être créées manuellement ou automatiquement par l’outil [objectivité objective](../../../cross-platform/macios/binding/objective-sharpie/index.md) et le fichier d’en-tête generated ** \<FrameworkName> -SWIFT. h ci-** dessus. Une fois les métadonnées générées, elles doivent être vérifiées et validées manuellement.
 
 ### <a name="build-the-xamarinios-binding-library"></a>Générer la bibliothèque de liaisons Xamarin. iOS
 
@@ -62,13 +62,13 @@ L’approche ci-dessus présente les étapes de haut niveau nécessaires à la c
 
 - [Xcode](https://apps.apple.com/us/app/xcode/id497799835)
 - [Visual Studio pour Mac](https://visualstudio.microsoft.com/downloads)
-- [Objective Sharpie](https://docs.microsoft.com/xamarin/cross-platform/macios/binding/objective-sharpie/)
-- [Vérification des métadonnées de la netteté](https://docs.microsoft.com/xamarin/cross-platform/macios/binding/objective-sharpie/platform/verify)
-- [Liaison de l’infrastructure objective-C](https://docs.microsoft.com/xamarin/ios/platform/binding-objective-c/walkthrough)
+- [Objective Sharpie](../../../cross-platform/macios/binding/objective-sharpie/index.md)
+- [Vérification des métadonnées de la netteté](../../../cross-platform/macios/binding/objective-sharpie/platform/verify.md)
+- [Liaison de l’infrastructure objective-C](../binding-objective-c/walkthrough.md)
 - [Kit de développement logiciel (SDK) Gigya iOS (Framework SWIFT)](https://developers.gigya.com/display/GD/Swift+SDK)
 - [SWIFT 5,1-stabilité ABI](https://swift.org/blog/swift-5-1-released/)
 - [SwiftRuntimeSupport NuGet](https://www.nuget.org/packages/Xamarin.iOS.SwiftRuntimeSupport/)
-- [Automatisation Xamarin UITest](https://docs.microsoft.com/appcenter/test-cloud/uitest/)
-- [Configuration de Xamarin. iOS UITest](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/xamarin-ios-uitest)
-- [AppCenter Test Cloud](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/xamarin-ios-uitest)
+- [Automatisation Xamarin UITest](/appcenter/test-cloud/uitest/)
+- [Configuration de Xamarin. iOS UITest](/appcenter/test-cloud/preparing-for-upload/xamarin-ios-uitest)
+- [AppCenter Test Cloud](/appcenter/test-cloud/preparing-for-upload/xamarin-ios-uitest)
 - [Exemple de référentiel de projet](https://github.com/xamcat/xamarin-binding-swift-framework)

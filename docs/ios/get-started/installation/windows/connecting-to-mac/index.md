@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/29/2018
-ms.openlocfilehash: 7bc6a7ce1b8cd20aa782ddde42925e4e72374ec4
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: 8cbed52524eac05cc4a737936fd6ee7d90279f8e
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86996944"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435456"
 ---
 # <a name="pair-to-mac-for-xamarinios-development"></a>Appairer avec un Mac pour le développement Xamarin.iOS
 
@@ -43,7 +43,7 @@ Avec Appairer avec un Mac, le flux de travail de développement est le suivant :
 > Avant de suivre les instructions fournies dans ce guide, effectuez les étapes ci-dessous :
 >
 > - Sur un ordinateur Windows, [installez Visual Studio 2019](~/get-started/installation/windows.md)
-> - Sur un Mac, [installez Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12) et [Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/installation)
+> - Sur un Mac, [installez Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12) et [Visual Studio for Mac](/visualstudio/mac/installation)
 >   - _Vous devez ouvrir manuellement Xcode après l’installation_ afin que celui-ci puisse ajouter des composants supplémentaires.
 >
 > Si vous préférez ne pas installer Visual Studio pour Mac, Visual Studio 2019 peut configurer automatiquement l’hôte de build Mac avec Xamarin.iOS et Mono.
@@ -86,7 +86,7 @@ Maintenant que la session à distance est activée, connectez Visual Studio 201
 
       ![Boîte de dialogue Appairer avec un Mac](images/pairtomac.png "Boîte de dialogue Appairer avec un Mac")
 
-3. Sélectionnez un Mac dans la liste. Cliquez sur **Connecter**.
+3. Sélectionnez un Mac dans la liste. Cliquez sur **Se connecter**.
 
 4. Entrez votre nom d'utilisateur et votre mot de passe.
 
@@ -101,7 +101,7 @@ Maintenant que la session à distance est activée, connectez Visual Studio 201
 
 5. Appairer avec un Mac configure automatiquement le Mac.
 
-    [À compter de Visual Studio 2019 version 15.6](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes#automatic-macos-provisioning), Visual Studio 2019 installe ou met à jour Mono et Xamarin.iOS sur un hôte de build Mac connecté si nécessaire (notez que Xcode doit néanmoins être installé manuellement). Pour plus d’informations, consultez [Provisionnement Mac automatique](#automatic-mac-provisioning).
+    [À compter de Visual Studio 2019 version 15.6](/visualstudio/releasenotes/vs2017-relnotes#automatic-macos-provisioning), Visual Studio 2019 installe ou met à jour Mono et Xamarin.iOS sur un hôte de build Mac connecté si nécessaire (notez que Xcode doit néanmoins être installé manuellement). Pour plus d’informations, consultez [Provisionnement Mac automatique](#automatic-mac-provisioning).
 
 6. Recherchez l’icône d’état de connexion.
 
@@ -160,7 +160,7 @@ Si vous ne voyez pas un Mac particulier répertorié dans la boîte de dialogue 
 
 ## <a name="automatic-mac-provisioning"></a>Provisionnement Mac automatique
 
-À compter de [Visual Studio 2019 version 15,6](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes#automatic-macos-provisioning), coupler à Mac approvisionne automatiquement un Mac avec les logiciels nécessaires pour générer des applications Xamarin. iOS : mono, Xamarin. iOS (l’infrastructure logicielle, et non l’IDE Visual Studio pour Mac) et divers outils liés à Xcode (mais pas à Xcode lui-même).
+À compter de [Visual Studio 2019 version 15,6](/visualstudio/releasenotes/vs2017-relnotes#automatic-macos-provisioning), coupler à Mac approvisionne automatiquement un Mac avec les logiciels nécessaires pour générer des applications Xamarin. iOS : mono, Xamarin. iOS (l’infrastructure logicielle, et non l’IDE Visual Studio pour Mac) et divers outils liés à Xcode (mais pas à Xcode lui-même).
 
 > [!IMPORTANT]
 >
@@ -176,7 +176,7 @@ Appairer avec un Mac vérifie que Mono est installé. S’il n’est pas install
 
 La progression est indiquée par différentes invites, comme illustré par les captures d’écran suivantes (cliquez pour effectuer un zoom) :
 
-|Mono|Vérification de l’installation|Downloading|Installing
+|Mono|Vérification de l’installation|Downloading|Installation de
 |---|---|---|---|
 ||[![Installation de Mono manquante](images/mono-missing.png "Installation de Mono manquante")](images/mono-missing-large.png#lightbox)|[![Téléchargement de Mono](images/mono-downloading.png "Téléchargement de Mono")](images/mono-downloading-large.png#lightbox)|[![Installation de Mono](images/mono-installing.png "Installation de Mono")](images/mono-installing-large.png#lightbox)|
 
@@ -185,14 +185,14 @@ La progression est indiquée par différentes invites, comme illustré par les c
 Appairer avec un Mac met à niveau Xamarin.iOS sur le Mac pour correspondre à la version installée sur l’ordinateur Windows.
 
 > [!IMPORTANT]
-> Appairer avec un Mac ne rétrograde pas Xamarin.iOS sur le Mac de la version alpha/bêta à la version stable. Si Visual Studio pour Mac est installé, définissez votre [canal des versions](https://docs.microsoft.com/visualstudio/mac/update) comme suit :
+> Appairer avec un Mac ne rétrograde pas Xamarin.iOS sur le Mac de la version alpha/bêta à la version stable. Si Visual Studio pour Mac est installé, définissez votre [canal des versions](/visualstudio/mac/update) comme suit :
 >
 > - Si vous utilisez Visual Studio 2019, sélectionnez le canal des mises à jour **Stable** dans Visual Studio pour Mac.
 > - Si vous utilisez Visual Studio 2019 Preview, sélectionnez le canal des mises à jour **Alpha** dans Visual Studio pour Mac.
 
 La progression est indiquée par différentes invites, comme illustré par les captures d’écran suivantes (cliquez pour effectuer un zoom) :
 
-|Xamarin.iOS|Vérification de l’installation|Downloading|Installing
+|Xamarin.iOS|Vérification de l’installation|Downloading|Installation de
 |---|---|---|---|
 ||[![Installation de Xamarin.iOS manquante](images/xamios-missing.png "Installation de Xamarin.iOS manquante")](images/xamios-missing-large.png#lightbox)|[![Téléchargement de Xamarin.iOS](images/xamios-downloading.png "Téléchargement de Xamarin.iOS")](images/xamios-downloading-large.png#lightbox)|[![Installation de Xamarin.iOS](images/xamios-installing.png "Installation de Xamarin.iOS")](images/xamios-installing-large.png#lightbox)|
 

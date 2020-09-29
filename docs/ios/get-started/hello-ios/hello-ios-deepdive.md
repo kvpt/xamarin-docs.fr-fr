@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 60c62bf4d2887cec3d68d44e7d384daae35c066f
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 4b9043d70bb7460abf62c964da8041f345cd1be6
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86929041"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435609"
 ---
 # <a name="hello-ios--deep-dive"></a>Hello, iOS – Exploration approfondie
 
@@ -26,7 +26,7 @@ Ce guide a pour but de vous aider à développer les compétences et les connais
 
 ## <a name="introduction-to-visual-studio-for-mac"></a>Introduction à Visual Studio pour Mac
 
-Visual Studio pour Mac est un environnement de développement intégré (IDE) gratuit et open source qui combine les fonctionnalités de Visual Studio et XCode. Il comprend un concepteur visuel entièrement intégré, un éditeur de texte avec outils de refactorisation, un explorateur d’assembly, l’intégration du code source, et bien plus encore. Ce guide présente certaines fonctionnalités essentielles de Visual Studio pour Mac, mais si vous ne connaissez pas cet outil, consultez la documentation de [Visual Studio pour Mac](https://docs.microsoft.com/visualstudio/mac/).
+Visual Studio pour Mac est un environnement de développement intégré (IDE) gratuit et open source qui combine les fonctionnalités de Visual Studio et XCode. Il comprend un concepteur visuel entièrement intégré, un éditeur de texte avec outils de refactorisation, un explorateur d’assembly, l’intégration du code source, et bien plus encore. Ce guide présente certaines fonctionnalités essentielles de Visual Studio pour Mac, mais si vous ne connaissez pas cet outil, consultez la documentation de [Visual Studio pour Mac](/visualstudio/mac/).
 
 Visual Studio pour Mac suit la pratique Visual Studio qui consiste à organiser le code en *solutions* et *projets*. Une solution est un conteneur qui peut comprendre un ou plusieurs projets. Un projet peut être une application (par exemple, iOS ou Android), une bibliothèque de prise en charge, une application de test, etc. Dans l’application Phoneword, un nouveau projet iPhone a été ajouté à l’aide du modèle **application avec affichage unique** . La solution initiale se présentait ainsi :
 
@@ -64,7 +64,7 @@ Visual Studio organise le code en solutions et en projets. Une solution est un c
 
 Dans la procédure pas à pas [Hello, iOS](~/ios/get-started/hello-ios/hello-ios-quickstart.md) , vous avez créé une solution appelée **Phoneword** et placé un projet iOS **Phoneword_iOS** à l’intérieur de celle-ci. Les éléments inclus dans le projet sont les suivants :
 
-- **Références** : contient les assemblys requis pour générer et exécuter l’application. Développez le répertoire pour voir les références aux assemblys .NET tels que [System](https://docs.microsoft.com/dotnet/api/system), System.Core et [System.Xml](https://docs.microsoft.com/dotnet/api/system.xml), ainsi qu’une référence à l’assembly Xamarin.iOS.
+- **Références** : contient les assemblys requis pour générer et exécuter l’application. Développez le répertoire pour voir les références aux assemblys .NET tels que [System](/dotnet/api/system), System.Core et [System.Xml](/dotnet/api/system.xml), ainsi qu’une référence à l’assembly Xamarin.iOS.
 - **Packages** : le répertoire packages contient des packages NuGet prêts à l’emploi.
 - **Ressources** : le dossier ressources stocke d’autres médias.
 - **Main.cs** : Ce fichier contient le principal point d’entrée de l’application. Pour démarrer l’application, le nom de la classe d’application principale, `AppDelegate`, est passé.
@@ -297,7 +297,7 @@ Le contrôleur de vue est responsable du chargement et du déchargement des hié
 
 Voici les méthodes de cycle de vie de base et leur fonction :
 
-- **ViewDidLoad** : appelée *une fois* la première fois que le contrôleur d’affichage charge sa hiérarchie d’affichage de contenu en mémoire. Il s’agit de l’endroit idéal pour effectuer la configuration initiale, car c’est là que les sous-affichages sont disponibles pour la première fois dans le code.
+- **ViewDidLoad** : appelée  *une fois* la première fois que le contrôleur d’affichage charge sa hiérarchie d’affichage de contenu en mémoire. Il s’agit de l’endroit idéal pour effectuer la configuration initiale, car c’est là que les sous-affichages sont disponibles pour la première fois dans le code.
 - **ViewWillAppear** : appelée chaque fois que la vue d’un contrôleur d’affichage est sur le point d’être ajoutée à une hiérarchie d’affichage de contenu et qu’elle s’affiche à l’écran.
 - **ViewWillDisappear** : appelée chaque fois que la vue d’un contrôleur d’affichage est sur le point d’être supprimée d’une hiérarchie d’affichage de contenu et disparaît de l’écran. Cet événement du cycle de vie est utilisé pour le nettoyage et l’enregistrement de l’état.
 - **ViewDidAppear** et **ViewDidDisappear** : appelées quand un affichage est ajouté ou supprimé de la hiérarchie d’affichage de contenu, respectivement.
@@ -353,7 +353,7 @@ public override void ViewDidLoad ()
 
 ## <a name="additional-concepts-introduced-in-phoneword"></a>Autres concepts introduits dans Phoneword
 
-L’application Phoneword a introduit plusieurs concepts qui ne sont pas traités dans ce guide. Ces concepts sont notamment :
+L’application Phoneword a introduit plusieurs concepts qui ne sont pas traités dans ce guide. Ces concepts sont les suivants :
 
 - **Modifier le texte du bouton** : l’application Phoneword a montré comment modifier le texte d’un **bouton** en appelant `SetTitle` sur le **bouton** et en passant le nouveau texte et l’**état du contrôle** du _bouton_. Par exemple, le code suivant remplace le texte de CallButton par « Call » :
 
@@ -454,11 +454,11 @@ Pour plus d’informations sur les tailles et spécifications des icônes et ima
 
 ## <a name="summary"></a>Récapitulatif
 
-Félicitations ! Vous avez maintenant une connaissance approfondie des composants des applications Xamarin.iOS, ainsi que des outils nécessaires à leur création.
+Félicitations ! Vous avez maintenant une connaissance approfondie des composants des applications Xamarin.iOS, ainsi que des outils nécessaires à leur création.
 Dans le [didacticiel suivant de la série de mise en route](~/ios/get-started/hello-ios-multiscreen/index.md), vous allez étendre notre application pour gérer plusieurs écrans. Vous allez au fur et à mesure implémenter un contrôleur de navigation, découvrir les enchaînements de Storyboard et faire connaissance avec le modèle MVC (modèle-vue-contrôleur) quand vous étendrez votre application pour gérer plusieurs écrans.
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Hello, iOS (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios)
+- [Hello, iOS (exemple)](/samples/xamarin/ios-samples/hello-ios)
 - [Human Interface Guidelines pour iOS](https://developer.apple.com/design/human-interface-guidelines/ios/overview/themes/)
 - [Portail d’approvisionnement iOS](https://developer.apple.com/account/#/overview)

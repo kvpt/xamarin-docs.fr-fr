@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 3822a03a78c91777ad9614ec298bbac1ab2332b1
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: ae54f4f4cfb9b2c604be9c55d2a47303fb22485e
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939475"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435573"
 ---
 # <a name="working-with-tvos-text-and-search-fields-in-xamarin"></a>Utilisation des champs de recherche et de texte tvOS dans Xamarin
 
@@ -72,7 +72,7 @@ Pour plus d’informations sur l’utilisation du clavier visuel, consultez [UIK
 
 <a name="Search"></a>
 
-## <a name="search"></a>Recherche
+## <a name="search"></a>Rechercher
 
 Un champ de recherche présente un écran spécialisé qui fournit un champ de texte et un clavier visuel qui permet à l’utilisateur de filtrer une collection d’éléments affichés sous le clavier :
 
@@ -780,13 +780,13 @@ Lorsque l’utilisateur commence à entrer un terme de recherche, la liste des r
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a abordé la conception et l’utilisation de texte et de champs de recherche à l’intérieur d’une application Xamarin. tvOS. Il a montré comment créer du texte et rechercher du contenu de collection dans le concepteur d’interface et qu’il a démontré deux façons différentes de présenter un champ de recherche à l’utilisateur dans tvOS.
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemples tvOS](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [Exemples tvOS](/samples/browse/?products=xamarin&term=Xamarin.iOS%2btvOS)
 - [tvOS](https://developer.apple.com/tvos/)
 - [Guides de l’interface utilisateur tvOS](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [Guide de programmation d’applications pour tvOS](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

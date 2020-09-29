@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 4235e6049b9700edbb3974f1e4cbaf7c405f6e83
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 246757ddc43c5480b26ab4c1360a036fd111dcfa
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937473"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435348"
 ---
 # <a name="watchos-proactive-suggestions-in-xamarin"></a>Suggestions proactives Watchos dans Xamarin
 
@@ -44,7 +44,7 @@ L’ajout de la prise en charge de suggestions proactives à l’application Xam
 
 Les suggestions proactives fonctionnent avec les applications de trois manières principales :
 
-- **`NSUserActivity`**-Aide le système à comprendre quelles informations l’utilisateur travaille actuellement sur l’écran.
+- **`NSUserActivity`** -Aide le système à comprendre quelles informations l’utilisateur travaille actuellement sur l’écran.
 - **Suggestions d’emplacement** : si l’application offre ou consomme des informations sur l’emplacement, ces extensions d’API offrent de nouvelles façons de partager ces informations entre les applications.
 
 Et est pris en charge dans l’application en implémentant les éléments suivants :
@@ -57,7 +57,7 @@ Toutes ces fonctionnalités ont une chose en commun, elles sont toutes utilisée
 
 ## <a name="nsuseractivity"></a>NSUserActivity
 
-Comme indiqué ci-dessus, `NSUserActivity` le système aide le système à comprendre quelles informations l’utilisateur travaille actuellement sur l’écran. `NSUserActivity`est un mécanisme de mise en cache d’État léger qui permet de capturer l’activité de l’utilisateur au fur et à mesure qu’il navigue dans l’application. Par exemple, en examinant l’application restaurant :
+Comme indiqué ci-dessus, `NSUserActivity` le système aide le système à comprendre quelles informations l’utilisateur travaille actuellement sur l’écran. `NSUserActivity` est un mécanisme de mise en cache d’État léger qui permet de capturer l’activité de l’utilisateur au fur et à mesure qu’il navigue dans l’application. Par exemple, en examinant l’application restaurant :
 
 [![L’application restaurant](proactive-suggestions-images/activity02.png)](proactive-suggestions-images/activity02.png#lightbox)
 
@@ -175,7 +175,7 @@ Toutes les fonctionnalités ci-dessus ont une chose en commun, elles indiquent t
 
 Watchos 3 a été amélioré pour activer cette fonctionnalité pour une application via plusieurs petites modifications et ajouts aux Frameworks existants :
 
-- `NSUserActivity`contient des champs supplémentaires pour la capture des informations d’emplacement affichées à l’intérieur de l’application.
+- `NSUserActivity` contient des champs supplémentaires pour la capture des informations d’emplacement affichées à l’intérieur de l’application.
 - Plusieurs ajouts ont été apportés à MapKit et CoreSpotlight pour capturer l’emplacement.
 - La fonctionnalité de prise en charge de l’emplacement a été ajoutée à Siri, Maps, multitâche et à d’autres applications dans le système.
 
@@ -356,11 +356,11 @@ geocoder.GeocodeAddress(address, (place, err)=> {
 
 ```
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a présenté des suggestions proactives et a montré comment le développeur peut les utiliser pour diriger le trafic vers une application Xamarin. iOS pour Watchos. Il a abordé la marche à suivre pour implémenter des suggestions proactives et présenter des instructions d’utilisation.
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemples watchOS](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+watchOS)
+- [Exemples watchOS](/samples/browse/?products=xamarin&term=Xamarin.iOS%2bwatchOS)
 - [Guide de programmation SiriKit](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/index.html)

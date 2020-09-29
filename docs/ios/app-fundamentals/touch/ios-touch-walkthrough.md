@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: b547d21b19d223aebb345f7c4a1dc8dc126fb0d6
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 3d296c36febfb5671c816372aa97661494179b83
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86928781"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91433910"
 ---
 # <a name="walkthrough-using-touch-in-xamarinios"></a>Procédure pas à pas : utilisation de Touch dans Xamarin. iOS
 
@@ -24,7 +24,7 @@ Cette procédure pas à pas montre comment écrire du code qui répond à diffé
 
 Chaque section contient des instructions permettant d’écrire le code à partir de zéro.
 
-Suivez les instructions ci-dessous pour ajouter du code à la table de montage séquentiel et découvrir les différents types d’événements tactiles disponibles dans iOS. Vous pouvez également ouvrir l' [exemple terminé](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-touch-final) pour voir tout ce qui est en cours d’exécution.
+Suivez les instructions ci-dessous pour ajouter du code à la table de montage séquentiel et découvrir les différents types d’événements tactiles disponibles dans iOS. Vous pouvez également ouvrir l' [exemple terminé](/samples/xamarin/ios-samples/applicationfundamentals-touch-final) pour voir tout ce qui est en cours d’exécution.
 
 <a name="Touch_Samples"></a>
 
@@ -159,7 +159,7 @@ Dans cet exemple, nous allons présenter certaines des API tactiles. Procédez c
     }
     ```
 
-    Ces deux méthodes réinitialisent l' `touchStartedInside` indicateur sur false. `TouchesEnded`s’affiche également `TouchesEnded` à l’écran.
+    Ces deux méthodes réinitialisent l' `touchStartedInside` indicateur sur false. `TouchesEnded` s’affiche également `TouchesEnded` à l’écran.
 
 1. À ce stade, l’écran d’exemples tactiles est terminé. Notez que l’écran change quand vous interagissez avec chacune des images, comme illustré dans la capture d’écran suivante :
 
@@ -484,4 +484,4 @@ Les trois sections ci-dessus ont démontré différentes façons de répondre au
 
 ## <a name="related-links"></a>Liens associés
 
-- [iOS Touch final (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-touch-final)
+- [iOS Touch final (exemple)](/samples/xamarin/ios-samples/applicationfundamentals-touch-final)

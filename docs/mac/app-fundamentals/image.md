@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/15/2017
-ms.openlocfilehash: b6681832ce83bbc2783ba874c5902c30013c8c94
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 53a3b43347e51cfbc99b2b798f0ad5c787f04847
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572469"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435550"
 ---
 # <a name="images-in-xamarinmac"></a>Images dans Xamarin. Mac
 
@@ -43,7 +43,7 @@ Lorsque vous ajoutez une image à utiliser dans une application Xamarin. Mac, il
 
 - **Arborescence de projet principale [déconseillé]** -les images peuvent être ajoutées directement à l’arborescence des projets. Lors de l’appel d’images stockées dans l’arborescence de projet principale à partir du code, aucun emplacement de dossier n’est spécifié. Par exemple : `NSImage image = NSImage.ImageNamed("tags.png");`. 
 - **Dossier des ressources [déconseillé]** -le dossier **ressources** spéciales concerne tous les fichiers qui feront partie de l’offre groupée de l’application, tels que l’icône, l’écran de lancement ou les images générales (ou toute autre image ou fichier que le développeur souhaite ajouter). Lors de l’appel d’images stockées dans le dossier **Resources** à partir du code, tout comme les images stockées dans l’arborescence de projet principale, aucun emplacement de dossier n’est spécifié. Par exemple : `NSImage.ImageNamed("tags.png")`.
-- **Dossier ou sous-dossier personnalisé [déconseillé]** -le développeur peut ajouter un dossier personnalisé à l’arborescence source des projets et y stocker les images. L’emplacement où le fichier est ajouté peut être imbriqué dans un sous-dossier pour faciliter l’organisation du projet. Par exemple, si le développeur a ajouté un `Card` dossier au projet et un sous-dossier de `Hearts` à ce dossier, puis stockez une image **Jack. png** dans le `Hearts` dossier, `NSImage.ImageNamed("Card/Hearts/Jack.png")` chargez l’image au moment de l’exécution.
+- **Dossier ou sous-dossier personnalisé [déconseillé]** -le développeur peut ajouter un dossier personnalisé à l’arborescence source des projets et y stocker les images. L’emplacement où le fichier est ajouté peut être imbriqué dans un sous-dossier pour faciliter l’organisation du projet. Par exemple, si le développeur a ajouté un `Card` dossier au projet et un sous-dossier de `Hearts` à ce dossier, puis stockez une image **Jack.png** dans le `Hearts` dossier, `NSImage.ImageNamed("Card/Hearts/Jack.png")` chargerait l’image au moment de l’exécution.
 - **Jeux d’images du catalogue des actifs [preferred]** -ajouté dans OS X El Capitan, les **jeux d’images des catalogues de ressources** contiennent toutes les versions ou représentations d’une image qui sont nécessaires pour prendre en charge différents appareils et facteurs d’échelle pour votre application. Au lieu de s’appuyer sur le nom de fichier des ressources d’image ( **@1x** , **@2x** ).
 
 <a name="asset-catalogs"></a>
@@ -72,9 +72,9 @@ Classe **Vector** spéciale ajoutée aux **jeux d’images** qui nous permet d�
 
 Par exemple, si vous incluez un `MonkeyIcon.pdf` fichier comme vecteur d’un catalogue de composants avec une résolution de 150 px x 150 px, les ressources bitmap suivantes seraient incluses dans l’ensemble d’applications final lors de sa compilation :
 
-1. **MonkeyIcon@1x.png**-150 px x 150 px résolution.
-2. **MonkeyIcon@2x.png**-300 pixels x 300 pixels résolution.
-3. **MonkeyIcon@3x.png**-450px x 450px résolution.
+1. **MonkeyIcon@1x.png** -150 px x 150 px résolution.
+2. **MonkeyIcon@2x.png** -300 pixels x 300 pixels résolution.
+3. **MonkeyIcon@3x.png** -450px x 450px résolution.
 
 Les éléments suivants doivent être pris en considération lors de l’utilisation d’images vectorielles PDF dans des catalogues de ressources :
 
@@ -137,14 +137,14 @@ Les ressources graphiques que vous ajoutez à une application Xamarin. Mac (icô
 
 Lorsque vous créez les versions standard et haute résolution d’une image, suivez cette Convention d’affectation de noms pour la paire d’images lorsque vous les incluez dans votre projet Xamarin. Mac :
 
-- **Résolution standard**   -  **ImageName. FileName-extension** (exemple : **Tags. png**)
+- **Résolution standard**   -  **ImageName. NomFichier-extension** (exemple : **tags.png**)
 - **Haute résolution**   -  **ImageName@2x.filename-extension** (Exemple : **tags@2x.png** )
 
 Lorsqu’ils sont ajoutés à un projet, ils apparaissent comme suit :
 
 ![Fichiers image dans le Panneau Solutions](image-images/add03.png "Fichiers image dans le Panneau Solutions")
 
-Quand une image est assignée à un élément d’interface utilisateur dans Interface Builder vous allez simplement sélectionner le fichier dans l' _ImageName_**.** format _de nom de fichier-extension_ (exemple : **Tags. png**). Comme pour l’utilisation d’une image dans du code C#, vous allez choisir le fichier dans l' _ImageName_**.** format _de nom de fichier_ .
+Quand une image est assignée à un élément d’interface utilisateur dans Interface Builder vous allez simplement sélectionner le fichier dans l' _ImageName_**.** format _de nom de fichier-extension_ (exemple : **tags.png**). Comme pour l’utilisation d’une image dans du code C#, vous allez choisir le fichier dans l' _ImageName_**.** format _de nom de fichier_ .
 
 Quand vous exécutez l’application Xamarin. Mac sur un Mac, l' _ImageName_**.** _NomFichier-_ l’image de format d’extension sera utilisée sur les affichages de résolution standard, l' **ImageName@2x.filename-extension** image sera automatiquement choisie sur la retine des ordinateurs Mac.
 
@@ -440,13 +440,13 @@ Exemple de sortie :
 
 Pour plus d’informations sur l’utilisation des vues en mode plan, consultez notre documentation sur les [modes plan](~/mac/user-interface/outline-view.md) .
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a décrit en détail l’utilisation des images et des icônes dans une application Xamarin. Mac. Nous avons vu les différents types et utilisations d’images, comment utiliser des images et des icônes dans le Interface Builder de Xcode et comment utiliser des images et des icônes dans le code C#.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [MacImages (exemple)](https://docs.microsoft.com/samples/xamarin/mac-samples/macimages)
+- [MacImages (exemple)](/samples/xamarin/mac-samples/macimages)
 - [Hello, Mac](~/mac/get-started/hello-mac.md)
 - [Vues de table](~/mac/user-interface/table-view.md)
 - [Modes plan](~/mac/user-interface/outline-view.md)

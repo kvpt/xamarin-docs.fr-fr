@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/07/2016
-ms.openlocfilehash: 2a883c85eede7f7600e5716dded71f3c90f49026
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 552a163636c85b13be64a0613b1523263deb5e92
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939748"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91437032"
 ---
 # <a name="introduction-to-tvos-9"></a>Introduction à tvOS 9
 
@@ -49,8 +49,8 @@ Les fonctionnalités et les fonctionnalités suivantes ne sont pas prises en cha
 - HealthKit
 - HomeKit
 - Inter-App Audio
-- Cartes
-- Personal VPN
+- Maps
+- VPN personnel
 - Notifications Push
 - Wallet
 - Configuration d’accessoires sans fil
@@ -178,7 +178,7 @@ Pour plus d’informations, consultez notre documentation sur l' [utilisation de
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemples tvOS](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [Exemples tvOS](/samples/browse/?products=xamarin&term=Xamarin.iOS%2btvOS)
 - [tvOS](https://developer.apple.com/tvos/)
 - [Guides de l’interface utilisateur tvOS](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [Guide de programmation d’applications pour tvOS](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

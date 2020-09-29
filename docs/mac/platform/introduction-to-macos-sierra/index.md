@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 4dde8941b09ac7b235b94e73e86dc60167fb6bd4
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 8715559db3f551773f41659a0c7c36adb29f0d1e
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574455"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91437226"
 ---
 # <a name="introduction-to-macos-sierra"></a>Introduction à macOS Sierra
 
@@ -127,7 +127,7 @@ En outre, `AppKit` a été modifié pour fonctionner dans le nouveau colorspace 
 
 Apple offre les meilleures pratiques suivantes lorsque vous travaillez avec des couleurs larges :
 
-- `NSColor`utilise à présent l’espace de couleurs sRVB et ne pincera plus les valeurs à la `0.0` `1.0` plage à. Si l’application s’appuie sur le comportement de verrouillage précédent, elle doit être modifiée pour macOS Sierra.
+- `NSColor` utilise à présent l’espace de couleurs sRVB et ne pincera plus les valeurs à la `0.0` `1.0` plage à. Si l’application s’appuie sur le comportement de verrouillage précédent, elle doit être modifiée pour macOS Sierra.
 - Lorsque vous utilisez une API de bas niveau, telle que des graphiques de base ou du métal, pour fournir un traitement d’image, l’application doit utiliser un espace de couleurs de plage étendue et un format de pixel qui prend en charge les valeurs à virgule flottante 16 bits. Le cas échéant, l’application devra fixer manuellement les valeurs des composants de couleur.
 - Core Graphics, Core image et Metal performance Nuancers fournissent de nouvelles méthodes pour la conversion entre les deux espaces de couleurs.
 
@@ -151,7 +151,7 @@ Les API suivantes sont dépréciées dans macOS Sierra :
 
 Pour obtenir la liste complète des désapprobations et des modifications, consultez la documentation relative aux différences de l' [API MacOS v 10.12](https://developer.apple.com/library/archive/releasenotes/General/APIDiffsMacOS10_12/index.html) d’Apple.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [Exemples Mac](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Mac)
+- [Exemples Mac](/samples/browse/?products=xamarin&term=Xamarin.Mac)
 - [Nouveautés de macOS 10,12](https://developer.apple.com/library/prerelease/content/releasenotes/MacOSX/WhatsNewInOSX/Articles/OSXv10.html#//apple_ref/doc/uid/TP40017145-SW1)

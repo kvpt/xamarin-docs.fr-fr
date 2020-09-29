@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 8a9a38c24af3e14cd6930cbb27717ba184dd0235
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: 3020bb588f79ce4faf471488c116516402642b73
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86996407"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91437283"
 ---
 # <a name="hello-ios-multiscreen--deep-dive"></a>Hello, iOS multiécran - Immersion
 
@@ -52,7 +52,7 @@ Dans certains cas, la partie Model du modèle MVC peut être vide. Par exemple, 
 > [!NOTE]
 > Dans certains documents, la partie Modèle du modèle MVC peut faire référence au backend de toute l’application, pas seulement aux données qui s’affichent dans l’interface utilisateur. Dans ce guide, nous utilisons une interprétation moderne de la partie Model, mais cette distinction n’est pas particulièrement importante.
 
-### <a name="view"></a>Vue
+### <a name="view"></a>Affichage
 
 Un affichage (View) est un composant chargé du rendu de l’interface utilisateur. Dans presque toutes les plateformes qui utilisent le modèle MVC, l’interface utilisateur se compose d’une hiérarchie d’affichages. Un affichage dans le modèle MVC peut être perçu comme une hiérarchie d’affichage avec un affichage unique (appelé affichage racine) en haut de la hiérarchie et autant d’affichages enfants (appelés sous-affichages) en dessous. Dans iOS, la hiérarchie de vues de contenu d’un écran correspond au composant Vue du modèle MVC.
 
@@ -80,7 +80,7 @@ Le contrôleur de navigation remplit trois fonctions principales :
 
     [![Ce diagramme illustre le découpage d’une carte en dehors de la pile](hello-ios-multiscreen-deepdive-images/03.png)](hello-ios-multiscreen-deepdive-images/03.png#lightbox)
 
-- **Fournit une barre de titre** : la partie supérieure du contrôleur de navigation est appelée *barre de titre* . Elle est chargée d’afficher le titre du contrôleur de vue, comme l’illustre le diagramme ci-dessous :  
+- **Fournit une barre de titre** : la partie supérieure du contrôleur de navigation est appelée  *barre de titre* . Elle est chargée d’afficher le titre du contrôleur de vue, comme l’illustre le diagramme ci-dessous :  
 
     [![La barre de titre est chargée d’afficher le titre du contrôleur d’affichage](hello-ios-multiscreen-deepdive-images/04.png)](hello-ios-multiscreen-deepdive-images/04.png#lightbox)
 
@@ -187,7 +187,7 @@ CallHistoryButton.TouchUpInside += (object sender, EventArgs e) => {
 
 ## <a name="additional-concepts-introduced-in-phoneword"></a>Autres concepts introduits dans Phoneword
 
-L’application Phoneword a introduit plusieurs concepts qui ne sont pas traités dans ce guide. Ces concepts sont notamment :
+L’application Phoneword a introduit plusieurs concepts qui ne sont pas traités dans ce guide. Ces concepts sont les suivants :
 
 - **Création automatique de contrôleurs de vues** : quand nous entrons un nom de classe pour le contrôleur de vue dans le **Panneau Propriétés**, le concepteur iOS vérifie si cette classe existe, puis génère la classe de support du contrôleur de vue pour nous. Pour plus d’informations sur ce concept et d’autres fonctionnalités du concepteur iOS, reportez-vous au guide de [présentation du concepteur iOS](~/ios/user-interface/designer/introduction.md).
 - **Contrôleur de vue de tableau** : `CallHistoryController` est un contrôleur de vue de tableau. Un contrôleur de vue de tableau contient une vue de tableau, l’outil de disposition et d’affichage de données le plus courant dans iOS. Les tables dépassent le cadre du présent guide. Pour plus d’informations sur les contrôleurs de vues de tableau, consultez le guide d’[utilisation des tableaux et des cellules](~/ios/user-interface/controls/tables/index.md).
@@ -203,6 +203,6 @@ Maintenant, apprenons à générer des applications multiplateforme avec Xamarin
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Hello, iOS (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios)
+- [Hello, iOS (exemple)](/samples/xamarin/ios-samples/hello-ios)
 - [Human Interface Guidelines pour iOS](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html)
 - [Portail d’approvisionnement iOS](https://developer.apple.com/ios/manage/overview/index.action)

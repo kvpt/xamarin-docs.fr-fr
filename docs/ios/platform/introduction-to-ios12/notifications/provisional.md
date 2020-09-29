@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/04/2018
-ms.openlocfilehash: 7d9fe2a651d8d75d8dd9d8c0dd1225350a58373d
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 745bfbc56dec12b7d46003a1d488e5638dc6c110
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031888"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435173"
 ---
 # <a name="provisional-notifications-in-xamarinios"></a>Notifications provisoires dans Xamarin. iOS
 
@@ -22,12 +22,12 @@ Dans le centre de notifications, les utilisateurs peuvent spécifier qu’une ap
 
 ## <a name="sample-app-redgreennotifications"></a>Exemple d’application : RedGreenNotifications
 
-Jetez un coup d’œil à l’exemple d’application [RedGreenNotifications](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-redgreennotifications) , qui envoie des notifications provisoires.
+Jetez un coup d’œil à l’exemple d’application [RedGreenNotifications](/samples/xamarin/ios-samples/ios12-redgreennotifications) , qui envoie des notifications provisoires.
 
 ## <a name="sending-provisional-notifications"></a>Envoi de notifications provisoires
 
-Pour envoyer des notifications provisoires, fournissez `UNAuthorizationOptions.Provisional` en tant qu’option au [`RequestAuthorization`](xref:UserNotifications.UNUserNotificationCenter.RequestAuthorization*)
-méthode de `UNUserNotificationCenter`:
+Pour envoyer des notifications provisoires, fournissez `UNAuthorizationOptions.Provisional` une option au [`RequestAuthorization`](xref:UserNotifications.UNUserNotificationCenter.RequestAuthorization*)
+méthode de `UNUserNotificationCenter` :
 
 ```csharp
 public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
@@ -41,11 +41,11 @@ public override bool FinishedLaunching(UIApplication application, NSDictionary l
 }
 ```
 
-Si l’utilisateur promeut des notifications provisoires vers une remise visible, les valeurs `UNAuthorizationOptions` transmises à `RequestAuthorization` détermineront les nouveaux paramètres de remise des notifications (dans le code ci-dessus, `UNAuthorizationOptions.Alert` et `UNAuthorizationOptions.Sound`).
+Si l’utilisateur promeut des notifications provisoires vers une remise visible, les `UNAuthorizationOptions` valeurs transmises à `RequestAuthorization` déterminent les nouveaux paramètres de remise des notifications (dans le code ci-dessus, `UNAuthorizationOptions.Alert` et `UNAuthorizationOptions.Sound` ).
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Exemple d’application – RedGreenNotifications](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-redgreennotifications)
+- [Exemple d’application – RedGreenNotifications](/samples/xamarin/ios-samples/ios12-redgreennotifications)
 - [Infrastructure de notifications utilisateur dans Xamarin. iOS](~/ios/platform/user-notifications/index.md)
 - [UserNotifications (Apple)](https://developer.apple.com/documentation/usernotifications?language=objc)
 - [Nouveautés des notifications utilisateur (WWDC 2018)](https://developer.apple.com/videos/play/wwdc2018/710/)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/07/2016
-ms.openlocfilehash: c65a06b8f2a04eda669b2d741135538fa8a583f2
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 587ce48f3d40bb4f16634409920b01d150d628ef
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571725"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436314"
 ---
 # <a name="working-with-user-defaults-in-xamarinios"></a>Utilisation des paramètres par défaut de l’utilisateur dans Xamarin. iOS
 
@@ -77,16 +77,16 @@ Où `group.com.xamarin.todaysharing` est le groupe d’applications créé dans 
 
 Une fois que vous avez accédé à la base de données par défaut de l’utilisateur souhaité, vous pouvez lire les valeurs par défaut à l’aide de paires clé/valeur et de plusieurs méthodes pratiques en fonction du type de données lues :
 
-- `ArrayForKey`-Retourne un tableau de `NSObjects` pour la valeur de clé donnée.
-- `BoolForKey`-Retourne une valeur booléenne pour la clé donnée.
-- `DataForKey`-Retourne un `NSData` objet pour la clé donnée.
-- `DictionaryForKey`-Retourne un `NSDictionary` pour la clé donnée.
-- `DoubleForKey`-Retourne une valeur double pour la clé donnée.
-- `FloatForKey`-Retourne une valeur de type float pour la clé donnée.
-- `IntForKey`-Retourne une valeur entière pour la clé donnée.
-- `StringArrayForKey`-Retourne un tableau d' `String` objets à partir de la valeur de clé donnée.
-- `StringForKey`-Retourne une valeur de chaîne pour la clé donnée.
-- `URLForKey`-Retourne une `NSUrl` valeur pour la clé donnée.
+- `ArrayForKey` -Retourne un tableau de `NSObjects` pour la valeur de clé donnée.
+- `BoolForKey` -Retourne une valeur booléenne pour la clé donnée.
+- `DataForKey` -Retourne un `NSData` objet pour la clé donnée.
+- `DictionaryForKey` -Retourne un `NSDictionary` pour la clé donnée.
+- `DoubleForKey` -Retourne une valeur double pour la clé donnée.
+- `FloatForKey` -Retourne une valeur de type float pour la clé donnée.
+- `IntForKey` -Retourne une valeur entière pour la clé donnée.
+- `StringArrayForKey` -Retourne un tableau d' `String` objets à partir de la valeur de clé donnée.
+- `StringForKey` -Retourne une valeur de chaîne pour la clé donnée.
+- `URLForKey` -Retourne une `NSUrl` valeur pour la clé donnée.
 
 Par exemple, le code suivant lit une valeur booléenne à partir des valeurs par défaut de l’utilisateur :
 
@@ -106,11 +106,11 @@ var useHeader = plist.BoolForKey("UseHeader");
 
 Tout comme la lecture des valeurs ci-dessus, une fois que vous avez accédé à la base de données par défaut de l’utilisateur souhaité, vous pouvez écrire des valeurs dans les valeurs par défaut à l’aide de paires clé/valeur et plusieurs méthodes pratiques en fonction du type de données en cours d’écriture :
 
-- `SetBool`-Écrit la valeur booléenne donnée dans la clé donnée.
-- `SetDouble`-Écrit la valeur double donnée dans la clé donnée.
-- `SetFloat`-Écrit la valeur float donnée dans la clé donnée.
-- `SetString`-Écrit la valeur de chaîne donnée dans la clé donnée.
-- `SetURL`-Écrit la valeur de l’URL ( `NSUrl` ) donnée dans la clé donnée.
+- `SetBool` -Écrit la valeur booléenne donnée dans la clé donnée.
+- `SetDouble` -Écrit la valeur double donnée dans la clé donnée.
+- `SetFloat` -Écrit la valeur float donnée dans la clé donnée.
+- `SetString` -Écrit la valeur de chaîne donnée dans la clé donnée.
+- `SetURL` -Écrit la valeur de l’URL ( `NSUrl` ) donnée dans la clé donnée.
 
 Par exemple, le code suivant écrit une valeur booléenne dans les valeurs par défaut de l’utilisateur :
 
@@ -130,12 +130,12 @@ plist.SetBool(useHeader, "UseHeader");
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a abordé la `NSUserDefaults` classe et comment elle peut être utilisée pour fournir un ensemble d’options que l’utilisateur final peut utiliser pour configurer votre application Xamarin. iOS. En outre, il a abordé l’utilisation des groupes d’applications pour communiquer entre une extension et son application parente ou entre les applications d’un groupe.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [Exemples tvOS](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [Exemples tvOS](/samples/browse/?products=xamarin&term=Xamarin.iOS%2btvOS)
 - [Guide de programmation des préférences et des paramètres](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/UserDefaults/Introduction/Introduction.html#//apple_ref/doc/uid/10000059i)
 - [NSUserDefaults](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSUserDefaults_Class/#//apple_ref/doc/constant_group/NSUserDefaults_Domains)

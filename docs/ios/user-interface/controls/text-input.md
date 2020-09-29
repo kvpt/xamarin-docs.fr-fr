@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: b36ae9f9fe04ea060ef0238d5af25fb771cafe85
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: e8f8c2196edd5450ca2949d59c2fc06ff62274b7
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86932338"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435373"
 ---
 # <a name="text-input-in-xamarinios"></a>Entrée de texte dans Xamarin. iOS
 
@@ -38,7 +38,7 @@ Ces contrôles sont expliqués ci-dessous :
 
 - **Espace réservé** : facultatif. S’il est défini, il s’affiche lorsque le champ de texte est vide, généralement pour expliquer à l’utilisateur quelle entrée est attendue.
 - **Bouton Effacer** : contrôle le moment où le bouton Effacer standard (le cercle gris avec (X)) apparaît dans le champ de texte, ce qui permet à l’utilisateur d’effacer rapidement le texte. Elle peut être masquée définitivement, visible définitivement ou affichée, selon que le champ est modifié ou non.
-- **Taille de police minimale** et **ajuster pour ajuster** : permet d’ajuster automatiquement la taille de police pour qu’elle s’ajuste au texte le plus long et d’empêcher la troncation, mais limitée à une taille inférieure à la taille spécifiée.
+- **Taille de police minimale** et  **ajuster pour ajuster** : permet d’ajuster automatiquement la taille de police pour qu’elle s’ajuste au texte le plus long et d’empêcher la troncation, mais limitée à une taille inférieure à la taille spécifiée.
 - Mise en **majuscules** : indique s’il faut mettre automatiquement en majuscules les mots, les phrases ou toutes les entrées.
 - **Correction** : indique si la vérification de l’orthographe et les suggestions sont activées.
 - **Clavier** : contrôle le style de clavier affiché pour l’entrée et, par conséquent, les touches disponibles sur le clavier. Cela comprend le pavé numérique, le pavé téléphonique, l’adresse de messagerie et l’URL, ainsi que d’autres options.
@@ -91,4 +91,4 @@ textview1.DataDetectorTypes = UIDataDetectorType.PhoneNumber | UIDataDetectorTyp
 
 ## <a name="related-links"></a>Liens associés
 
-- [Contrôles (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/controls)
+- [Contrôles (exemple)](/samples/xamarin/ios-samples/controls)

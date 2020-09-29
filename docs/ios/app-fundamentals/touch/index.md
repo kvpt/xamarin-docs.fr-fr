@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 01/23/2017
-ms.openlocfilehash: edf5f1c82857930a2647f306195a4c82f4338db6
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.openlocfilehash: db3e66920beb355e0b05df2118cd2645c602f0d5
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "78291508"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91433918"
 ---
 # <a name="handling-touch-in-xamarinios-apps"></a>Gestion des fonctions tactiles dans les applications Xamarin. iOS
 
 Comme les autres plateformes mobiles, iOS offre plusieurs moyens de gérer les fonctions tactiles. Il peut prendre en charge la fonctionnalité multipoint (plusieurs points de contact sur l’écran) et des mouvements complexes. Ce guide présente certains des concepts, ainsi que les particularités de l’implémentation des fonctions tactiles et des gestes sur iOS.
 
-iOS encapsule les données tactiles dans la classe `UITouch`, qui est mise à la disposition des applications par le biais d’une série de méthodes `UIResponder`. Les applications peuvent substituer ces méthodes dans les sous-classes de `UIView` et `UIViewController`, qui héritent toutes deux de `UIResponder`.
+iOS encapsule des données tactiles dans la `UITouch` classe, qui sont mises à la disposition des applications par le biais d’une série de `UIResponder` méthodes. Les applications peuvent substituer ces méthodes dans les sous-classes de `UIView` et `UIViewController` , qui héritent toutes les deux de `UIResponder` .
 
 En plus de capturer des données tactiles, iOS offre des moyens d’interpréter les séquences de touches en gestes. Ces détecteurs de mouvement peuvent à leur tour être utilisés pour interpréter des commandes spécifiques à l’application, telles que la rotation d’une image ou l’activation d’une page. iOS fournit une collection complète de classes pour gérer les gestes courants avec un code ajouté minimal.
 
@@ -37,7 +37,7 @@ Ce guide fait office d’introduction à Touch dans iOS. Pour plus d’informati
 - [3D Touch](~/ios/platform/3d-touch.md)
 - [Activation du retour haptique](~/ios/user-interface/ios-ui/haptic-feedback.md)
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [iOS Touch final (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-touch-final)
-- [FingerPaint (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-fingerpaint)
+- [iOS Touch final (exemple)](/samples/xamarin/ios-samples/applicationfundamentals-touch-final)
+- [FingerPaint (exemple)](/samples/xamarin/ios-samples/applicationfundamentals-fingerpaint)

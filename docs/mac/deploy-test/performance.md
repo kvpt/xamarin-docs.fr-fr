@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 11/10/2017
-ms.openlocfilehash: a5a759ae9f156eec71706d9681fac2a94995848e
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: a1649c4b8498f3e7ad3684cb4d119236b4ceaf57
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73021677"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435477"
 ---
 # <a name="xamarinmac-performance"></a>Performances de Xamarin.Mac
 
@@ -20,8 +20,8 @@ ms.locfileid: "73021677"
 
 Les applications Xamarin.Mac sont similaires aux applications Xamarin.iOS, et la plupart des mêmes suggestions relatives aux performances leur sont applicables :
 
-- [Performances Xamarin.iOS](~/ios/deploy-test/performance.md)
-- [Performances cross-plateforme](~/cross-platform/deploy-test/memory-perf-best-practices.md)
+- [Performances de Xamarin. iOS](~/ios/deploy-test/performance.md)
+- [Performances inter-plateformes](~/cross-platform/deploy-test/memory-perf-best-practices.md)
 
 mais un certain nombre de suggestions spécifiques à macOS peuvent être utiles.
 
@@ -59,9 +59,9 @@ Les applications de bureau traitent souvent de grandes quantités de données, e
 
 Autant que possible, utilisez [async](~/cross-platform/platform/async.md) et des threads pour éviter le blocage de l’interface utilisateur.
 
-Pour les opérations dont l’exécution est longue, utilisez [NSProgressIndicator](https://docs.microsoft.com/samples/xamarin/mac-samples/progressbarexample) ou d’autres options signalées dans les recommandations [HIG (Human Interface Guidelines)](https://developer.apple.com/macos/human-interface-guidelines/indicators/progress-indicators/) d’Apple pour avertir les utilisateurs.
+Pour les opérations dont l’exécution est longue, utilisez [NSProgressIndicator](/samples/xamarin/mac-samples/progressbarexample) ou d’autres options signalées dans les recommandations [HIG (Human Interface Guidelines)](https://developer.apple.com/macos/human-interface-guidelines/indicators/progress-indicators/) d’Apple pour avertir les utilisateurs.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [Performances cross-plateforme](~/cross-platform/deploy-test/memory-perf-best-practices.md)
-- [Performances Xamarin.iOS](~/ios/deploy-test/performance.md)
+- [Performances inter-plateformes](~/cross-platform/deploy-test/memory-perf-best-practices.md)
+- [Performances de Xamarin. iOS](~/ios/deploy-test/performance.md)

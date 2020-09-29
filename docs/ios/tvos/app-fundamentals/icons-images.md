@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 69ea9b0786170345109f0845f3af6e5fd01d2b7c
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: 26d4d5ef5f21d16e0de79579c4552e48975a4e2b
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997109"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91437136"
 ---
 # <a name="working-with-tvos-icons-and-images-in-xamarin"></a>Utilisation des icônes et des images tvOS dans Xamarin
 
@@ -38,7 +38,7 @@ L’image de lancement s’affiche rapidement et donne l’impression que votre 
 
 Les images de lancement ne sont pas une opportunité pour les publicités ou les expressions artistiques, elles existent uniquement pour apporter l’impression que votre application lance rapidement et est prête à l’emploi.
 
-|Taille de l’image de lancement|Remarques|
+|Taille de l’image de lancement|Notes|
 |---|---|
 |1920x1080px|Fichiers. png non superposés uniquement|
 
@@ -187,7 +187,7 @@ Si l’utilisateur a placé votre application Xamarin. tvOS sur la ligne supéri
 
 L’image de l’étagère supérieure peut être fournie sous la forme d’un `.png` fichier statique ou `.lsr` d’un fichier unique (consultez [création d’images superposées](#Creating-Layered-Images)) ou elle peut être créée dynamiquement au moment de l’exécution en tant qu’une seule ligne d’éléments pouvant être mis sur le focus (consultez [contenu de haut](#Dynamic-Top-Shelf-Content) de page dynamique ci-dessous).
 
-|Taille de l’image de l’étagère supérieure|Remarques|
+|Taille de l’image de l’étagère supérieure|Notes|
 |---|---|
 |1920x720px|Fichier static. png ou Layered. LSR|
 
@@ -320,7 +320,7 @@ Cet article a traité tous les types d’images et tailles utilisés dans une ap
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemples tvOS](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [Exemples tvOS](/samples/browse/?products=xamarin&term=Xamarin.iOS%2btvOS)
 - [tvOS](https://developer.apple.com/tvos/)
 - [Guides de l’interface utilisateur tvOS](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [Guide de programmation d’applications pour tvOS](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

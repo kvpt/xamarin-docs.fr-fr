@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 410b66e91168ed07da6f102d96b965f9e6a184f7
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 4eb81a074adb6d2b828bb74edfde9916d69960b1
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571634"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91434971"
 ---
 # <a name="additional-tvos-10-frameworks-changes"></a>Modifications supplémentaires apportées au Framework tvOS 10
 
@@ -66,7 +66,7 @@ tvOS 10 apporte les améliorations suivantes à l’infrastructure d’images pr
 - La `ImageWithExtent` méthode de la classe [CIFilter](https://developer.apple.com/reference/coreimage/cifilter) peut être utilisée pour insérer un traitement personnalisé dans l’opération de filtrage. L’image principale appellera le rappel donné entre les filtres lors du traitement d’une image pour la sortie ou l’affichage.
 - L’application peut maintenant traiter les images dans un espace de couleurs en dehors de l’espace de couleurs de travail du contexte d’image principal en convertissant dans et en dehors de l’espace de couleurs avant et après le traitement.
 - Plusieurs améliorations des performances de rendu ont été apportées au `UIImage` rendu (lorsqu’ils sont sauvegardés par des magasins d’images d’images principales) dans des `UIImageView` objets.
-- `UIImage`les objets avec une large gamme de couleurs s’affichent sous la forme d’une large gamme dans des `UIImageView` objets sur des appareils IOS qui prennent en charge la couleur large.
+- `UIImage` les objets avec une large gamme de couleurs s’affichent sous la forme d’une large gamme dans des `UIImageView` objets sur des appareils IOS qui prennent en charge la couleur large.
 - Le code noyau de l’image principale peut désormais demander des formats de sortie pixel spécifiques.
 
 En outre, les nouveaux filtres d’image principaux suivants ont été ajoutés :
@@ -96,7 +96,7 @@ Les améliorations suivantes ont été apportées à l’infrastructure de base 
 Les améliorations suivantes ont été apportées à l’infrastructure GameKit dans tvOS 10 :
 
 - Un nouveau type de compte iCloud est implémenté par la classe [GKCloudPlayer](https://developer.apple.com/reference/gamekit/gkcloudplayer) .
-- La nouvelle classe [GKGameSession](https://developer.apple.com/reference/gamekit/gkgamesession) fournit une solution généralisée pour la gestion du stockage de données persistant sur Game Center. `GKGameSession`gère une liste de joueurs et l’application est responsable de l’implémentation de la manière dont la date du participant est stockée, récupérée ou échangée entre les joueurs. Dans de nombreux cas, les sessions de jeu peuvent remplacer les correspondances basées sur les activations existantes, les correspondances en temps réel ou les méthodes d’enregistrement de jeu persistantes.
+- La nouvelle classe [GKGameSession](https://developer.apple.com/reference/gamekit/gkgamesession) fournit une solution généralisée pour la gestion du stockage de données persistant sur Game Center. `GKGameSession` gère une liste de joueurs et l’application est responsable de l’implémentation de la manière dont la date du participant est stockée, récupérée ou échangée entre les joueurs. Dans de nombreux cas, les sessions de jeu peuvent remplacer les correspondances basées sur les activations existantes, les correspondances en temps réel ou les méthodes d’enregistrement de jeu persistantes.
 
 <a name="GameplayKit-Enhancements"></a>
 
@@ -195,7 +195,7 @@ Les améliorations suivantes ont été apportées à l’infrastructure UIKit da
 - Initiez le partage CloudKit et modifiez ses propriétés à l’aide des nouvelles `UICloudSharingController` `UICloudSharingControllerDelegate` classes et.
 - Tirez parti des cellules préextraites pour améliorer l’expérience de défilement de `UICollectionViews` avec le nouveau `UICollectionViewDataSourcePrefetching` délégué.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [Exemples tvOS](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [Exemples tvOS](/samples/browse/?products=xamarin&term=Xamarin.iOS%2btvOS)
 - [Nouveautés de tvOS 10](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewinTVOS/Articles/tvOS10.html#//apple_ref/doc/uid/TP40017259-SW1)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 02/02/2018
-ms.openlocfilehash: 55e41c01421e2cd5a0bb5c3a0a9fe2d025c8a223
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: beaa26e0d028fb614baf76ff52d05b80584f14d4
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938045"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435259"
 ---
 # <a name="hello-tvos-quick-start-guide"></a>Guide de démarrage rapide de Hello, tvOS
 
@@ -38,7 +38,7 @@ Cet article vous présente les concepts clés nécessaires à la création d’u
 
 Nous allons aborder les concepts suivants :
 
-- **Visual Studio pour Mac** : présentation du Visual Studio pour Mac et de la création d’applications Xamarin. tvOS.
+- **Visual Studio pour Mac**  : présentation du Visual Studio pour Mac et de la création d’applications Xamarin. tvOS.
 - **Anatomie d’une application Xamarin. tvOS** – qu’est-ce qu’une application Xamarin. tvOS.
 - **Création d’une interface utilisateur** : comment utiliser pour Xamarin Designer pour IOS pour créer une interface utilisateur.
 - **Déploiement et test** : comment exécuter et tester votre application dans le simulateur tvOS et sur le matériel tvOS réel.
@@ -78,11 +78,11 @@ Si vous êtes familiarisé avec la programmation iOS, vous remarquerez un grand 
 Jetons un coup d’œil aux fichiers du projet :
 
 - `Main.cs` : ce fichier contient le point d’entrée principal de l’application. Quand l’application est lancée, il contient la toute première classe et la méthode qui est exécutée.
-- `AppDelegate.cs`: Ce fichier contient la classe d’application principale qui est chargée d’écouter les événements du système d’exploitation.
-- `Info.plist`: Ce fichier contient des propriétés d’application telles que le nom de l’application, des icônes, etc.
-- `ViewController.cs`: Il s’agit de la classe qui représente la fenêtre principale et contrôle le cycle de vie de celui-ci.
-- `ViewController.designer.cs`: Ce fichier contient le code de base qui vous permet de l’intégrer à l’interface utilisateur de l’écran principal.
-- `Main.storyboard`: Interface utilisateur pour la fenêtre principale. Ce fichier peut être créé et géré par le Xamarin Designer pour iOS.
+- `AppDelegate.cs` : Ce fichier contient la classe d’application principale qui est chargée d’écouter les événements du système d’exploitation.
+- `Info.plist` : Ce fichier contient des propriétés d’application telles que le nom de l’application, des icônes, etc.
+- `ViewController.cs` : Il s’agit de la classe qui représente la fenêtre principale et contrôle le cycle de vie de celui-ci.
+- `ViewController.designer.cs` : Ce fichier contient le code de base qui vous permet de l’intégrer à l’interface utilisateur de l’écran principal.
+- `Main.storyboard` : Interface utilisateur pour la fenêtre principale. Ce fichier peut être créé et géré par le Xamarin Designer pour iOS.
 
 Dans les sections suivantes, nous allons examiner rapidement certains de ces fichiers. Nous les explorerons plus en détail plus tard, mais il est judicieux de comprendre leurs principes de base dès maintenant.
 
@@ -486,13 +486,13 @@ Par conséquent, nous vous suggérons vivement de lire les documents suivants av
 
 Si vous rencontrez des problèmes lors de l’utilisation de Xamarin. tvOS, consultez notre documentation de [Dépannage](~/ios/tvos/troubleshooting.md) pour obtenir une liste des problèmes et solutions connus.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a fourni un démarrage rapide du développement d’applications pour tvOS avec Visual Studio pour Mac en créant une simple application Hello, tvOS. Il a abordé les principes de base de l’approvisionnement d’appareils tvOS, de la création d’interface, du codage pour tvOS et des tests sur le simulateur tvOS.
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemples tvOS](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [Exemples tvOS](/samples/browse/?products=xamarin&term=Xamarin.iOS%2btvOS)
 - [tvOS](https://developer.apple.com/tvos/)
 - [Guides de l’interface utilisateur tvOS](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [Guide de programmation d’applications pour tvOS](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/13/2017
-ms.openlocfilehash: 84953ce2ec09cc757b5719991e499dc24b708cae
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: 98f7f7b23fc437dee28f6797c3401bae472fa672
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86996108"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91433359"
 ---
 # <a name="watchos-background-tasks-in-xamarin"></a>Tâches en arrière-plan Watchos dans Xamarin
 
@@ -646,7 +646,7 @@ Apple suggère les meilleures pratiques suivantes lorsque vous travaillez avec d
 - Si le système envoie une tâche d’actualisation en arrière-plan et que l’application n’a pas besoin d’une mise à jour, différez le travail jusqu’à ce qu’une mise à jour soit réellement nécessaire.
 - Tenez compte de toutes les opportunités d’exécution disponibles pour une application :
   - Activation de l’ancrage et du premier plan.
-  - Fonctionnalité.
+  - Notifications.
   - Mises à jour de la complication.
   - Actualisations en arrière-plan.
 - Utilisez `ScheduleBackgroundRefresh` pour le runtime d’arrière-plan à usage général, par exemple :
@@ -699,4 +699,4 @@ Cet article a abordé les améliorations apportées par Apple et la façon dont 
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemples iOS 10](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS10)
+- [Exemples iOS 10](/samples/browse/?products=xamarin&term=Xamarin.iOS%2biOS10)

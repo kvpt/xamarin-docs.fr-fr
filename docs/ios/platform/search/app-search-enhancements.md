@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/15/2017
-ms.openlocfilehash: 6ade57c60332f736e04b991bf83a7b12afa4cf54
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 0e05c243d2cebe641f77ada013b04198ee754acc
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939462"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91433202"
 ---
 # <a name="app-search-enhancements-in-xamarinios"></a>Améliorations de la recherche d’applications dans Xamarin. iOS
 
@@ -112,10 +112,10 @@ Pour activer cette fonctionnalité, procédez comme suit :
 
 Pour plus d’informations, consultez la documentation relative à l' [intégration des applications de messagerie](~/ios/platform/message-app-integration/index.md) .
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a abordé les améliorations apportées par Apple à la recherche d’applications dans iOS 10 et comment les implémenter dans Xamarin. iOS.
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemples iOS 10](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS10)
+- [Exemples iOS 10](/samples/browse/?products=xamarin&term=Xamarin.iOS%2biOS10)

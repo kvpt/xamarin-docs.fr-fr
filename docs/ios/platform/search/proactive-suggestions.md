@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 363427a410a2e4bc40348c6f50e2920e552f31fe
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 85879026639dbf92e1c85881e57124e802803bb3
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939436"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436979"
 ---
 # <a name="introduction-to-proactive-suggestions-in-xamarinios"></a>Présentation des suggestions proactives dans Xamarin. iOS
 
@@ -25,7 +25,7 @@ iOS 10 présente de nouvelles méthodes de conduite de l’engagement à l’app
 - Le sélecteur d’application
 - L’écran de verrouillage
 - CarPlay
-- Cartes
+- Maps
 - Interactions Siri
 - Suggestions QuickType
 
@@ -93,7 +93,7 @@ Toutes ces fonctionnalités ont une chose en commun, elles sont toutes utilisée
 
 ## <a name="nsuseractivity"></a>NSUserActivity
 
-Comme indiqué ci-dessus, `NSUserActivity` le système aide le système à comprendre quelles informations l’utilisateur travaille actuellement sur l’écran. `NSUserActivity`est un mécanisme de mise en cache d’État léger qui permet de capturer l’activité de l’utilisateur au fur et à mesure qu’il navigue dans l’application. Par exemple, en examinant une application de restaurant :
+Comme indiqué ci-dessus, `NSUserActivity` le système aide le système à comprendre quelles informations l’utilisateur travaille actuellement sur l’écran. `NSUserActivity` est un mécanisme de mise en cache d’État léger qui permet de capturer l’activité de l’utilisateur au fur et à mesure qu’il navigue dans l’application. Par exemple, en examinant une application de restaurant :
 
 [![Mécanisme de mise en cache de l’État léger NSUserActivity](proactive-suggestions-images/activity02.png)](proactive-suggestions-images/activity02.png#lightbox)
 
@@ -213,7 +213,7 @@ Toutes les fonctionnalités ci-dessus ont une chose en commun, elles indiquent t
 
 iOS 10 a été amélioré pour activer cette fonctionnalité pour une application via plusieurs petites modifications et ajouts aux Frameworks existants :
 
-- `NSUserActivity`contient des champs supplémentaires pour la capture des informations d’emplacement affichées à l’intérieur de l’application.
+- `NSUserActivity` contient des champs supplémentaires pour la capture des informations d’emplacement affichées à l’intérieur de l’application.
 - Plusieurs ajouts ont été apportés à MapKit et CoreSpotlight pour capturer l’emplacement.
 - La fonctionnalité de prise en charge de l’emplacement a été ajoutée à Siri, Maps, claviers, multitâche et à d’autres applications dans le système.
 
@@ -326,7 +326,7 @@ Jetez un coup d’œil sur la façon dont l’application peut faire don d’int
 
 [![Présentation du don d’interactions](proactive-suggestions-images/activity04.png)](proactive-suggestions-images/activity04.png#lightbox)
 
-L’application crée un `INInteraction` objet qui contient une **intention** ( `INIntent` ), des **participants** et des **métadonnées**. L' **intention** représente une action de l’utilisateur, telle que la création d’un appel vidéo ou l’envoi d’un SMS. Les **participants** incluent les personnes qui reçoivent la communication. Les **métadonnées** définissent des informations supplémentaires, telles que l’envoi réussi du message, etc.
+L’application crée un `INInteraction` objet qui contient une  **intention** ( `INIntent` ), des **participants** et des **métadonnées**. L' **intention** représente une action de l’utilisateur, telle que la création d’un appel vidéo ou l’envoi d’un SMS. Les **participants** incluent les personnes qui reçoivent la communication. Les **métadonnées** définissent des informations supplémentaires, telles que l’envoi réussi du message, etc.
 
 Le développeur ne crée jamais directement une instance de `INIntent` ou `INIntentResponse` , il utilise l’une des classes enfants spécifiques (en fonction de la tâche que l’application accomplit pour le compte de l’utilisateur) qui héritent de ces classes parentes. Par exemple, `INSendMessageIntent` et `INSendMessageIntentResponse` pour l’envoi d’un message texte. 
 
@@ -677,11 +677,11 @@ namespace MonkeyPlayer
 }
 ```
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a présenté des suggestions proactives et a montré comment le développeur peut les utiliser pour diriger le trafic vers l’application Xamarin. iOS. Il a abordé la marche à suivre pour implémenter des suggestions proactives et présenter des instructions d’utilisation.
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemples iOS 10](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS10)
+- [Exemples iOS 10](/samples/browse/?products=xamarin&term=Xamarin.iOS%2biOS10)
 - [Guide de programmation SiriKit](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/index.html)

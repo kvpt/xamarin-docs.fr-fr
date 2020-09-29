@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/05/2017
-ms.openlocfilehash: 451e69be771a1a3214a772f0f9afc48893a6fa8d
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: acde83ee88ab17884cadd375f83efee8afb0385e
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86929582"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91433386"
 ---
 # <a name="c-primer-for-objective-c-developers"></a>Abécédaire du langage C# pour les développeurs Objective-C
 
@@ -143,8 +143,8 @@ Objective-C utilise des *blocs* pour créer des fermetures qui vous permettent d
 };
 ```
 
-Pour plus d’informations sur les expressions lambda, consultez le [Guide de programmation C#](https://msdn.microsoft.com/library/vstudio/bb397687.aspx) de Microsoft.
+Pour plus d’informations sur les expressions lambda, consultez le [Guide de programmation C#](/dotnet/csharp/language-reference/operators/lambda-expressions) de Microsoft.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a comparé plusieurs fonctionnalités de langage entre Objective-C et C#. Dans certains cas, il a évoqué des fonctionnalités analogues qui existent dans les deux langages, telles que les blocs pour les expressions lambda et les catégories pour les méthodes d’extension. Il a également souligné certaines différences entre les langages, par exemple au niveau des espaces de noms en C# et de la signification du mot clé static.

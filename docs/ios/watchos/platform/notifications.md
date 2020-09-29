@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 0358b2b422e4cc69faa15187ee24d72c7d02ca38
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: c8275811cb61aaa1a033ca414e9abd4d20ecc873
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937928"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435420"
 ---
 # <a name="watchos-notifications-in-xamarin"></a>Notifications Watchos dans Xamarin
 
@@ -56,7 +56,7 @@ La vue statique doit être simple et rapide à afficher.
 
 ![Vue statique](notifications-images/notification-static.png)
 
-#### <a name="dynamic"></a>Dynamique
+#### <a name="dynamic"></a>dynamique
 
 L’affichage dynamique peut afficher plus de données et fournir plus d’interactivité.
 
@@ -123,7 +123,7 @@ Il est également possible d’utiliser la [ligne de commande](~/ios/watchos/tro
 
 ### <a name="example-notification-payload"></a>Exemple de charge utile de notification
 
-Dans l’exemple de [catalogue du kit de surveillance](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog) , un exemple de fichier JSON de charge utile est **NotificationPayload.js** (listé ci-dessous).
+Dans l’exemple de [catalogue du kit de surveillance](/samples/xamarin/ios-samples/watchos-watchkitcatalog) , un exemple de fichier JSON de charge utile est **NotificationPayload.js** (listé ci-dessous).
 
 ```json
 {
@@ -146,5 +146,5 @@ Dans l’exemple de [catalogue du kit de surveillance](https://docs.microsoft.co
 
 ## <a name="related-links"></a>Liens associés
 
-- [WatchKitCatalog (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
+- [WatchKitCatalog (exemple)](/samples/xamarin/ios-samples/watchos-watchkitcatalog)
 - [Documentation sur les notifications du kit de surveillance Apple](https://developer.apple.com/library/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/BasicSupport.html)

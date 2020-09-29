@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: ce262faf2d79e6a2cc969df582446fdc2ec29bde
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 7bd7387302c1ec8b37ae4ffe3465fb1becece429
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79304771"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436214"
 ---
 # <a name="introduction-to-ios-10"></a>Introduction à iOS 10
 
@@ -26,15 +26,15 @@ Apple a ajouté plusieurs nouvelles API et services dans iOS 10, ainsi que de no
 
 ## <a name="adapting-to-the-true-tone-display"></a>Adapter à l’affichage du ton vrai
 
-La technologie d’affichage du vrai ton d’Apple utilise le capteur de lumière ambiante d’un appareil iOS pour ajuster dynamiquement la couleur et l’intensité de l’affichage afin qu’elles correspondent aux conditions d’éclairage actuelles. iOS 10 fournit la nouvelle clé [UIWhitePointAdaptivityStyle](https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html#//apple_ref/doc/uid/TP40009252-SW31) qui peut être ajoutée au fichier `Info.plist` de l’application et contrôle la manière dont le ton vrai applique le décalage de couleur standard. 
+La technologie d’affichage du vrai ton d’Apple utilise le capteur de lumière ambiante d’un appareil iOS pour ajuster dynamiquement la couleur et l’intensité de l’affichage afin qu’elles correspondent aux conditions d’éclairage actuelles. iOS 10 fournit la nouvelle clé [UIWhitePointAdaptivityStyle](https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html#//apple_ref/doc/uid/TP40009252-SW31) qui peut être ajoutée au fichier de l’application `Info.plist` et contrôle la manière dont le ton vrai applique le décalage de couleur standard. 
 
 Les valeurs suivantes sont disponibles :
 
-- `UIWhitePointAdaptivityStyleStandard` **par défaut** : utilisez l’adaptabilité des points blancs standard.
-- `UIWhitePointAdaptivityStyleReading` : utilisé pour les applications orientées lecture.
-- `UIWhitePointAdaptivityStyleGame` : utilisé pour les applications orientées jeu.
-- `UIWhitePointAdaptivityStyleVideo` : utilisé pour les applications vidéo.
-- `UIWhitePointAdaptivityStylePhoto` : utilisé pour les applications axées sur la photographie, où la fidélité des couleurs est plus importante que les réglages des points blancs environnementaux.
+- `UIWhitePointAdaptivityStyleStandard`**Par défaut** : utilisez l’adaptabilité des points blancs standard.
+- `UIWhitePointAdaptivityStyleReading` -Utilisé pour les applications orientées lecture.
+- `UIWhitePointAdaptivityStyleGame` -Utilisé pour les applications orientées jeu.
+- `UIWhitePointAdaptivityStyleVideo` -Utilisé pour les applications vidéo.
+- `UIWhitePointAdaptivityStylePhoto` -Utilisé pour les applications axées sur la photographie où la fidélité des couleurs est plus importante que les réglages des points blancs environnementaux.
 
 ## <a name="app-extensions"></a>Extensions d’application
 
@@ -49,8 +49,8 @@ Apple a fourni plusieurs nouveaux points d’extension d’application dans iOS 
 
 En outre, les extensions d’application de clavier tierces présentent les améliorations suivantes :
 
-- La nouvelle propriété `DocumentInputMode` de la classe `UITextDocumentProxy` peut déterminer la langue d’entrée d’un document et permettre à l’extension de clavier de s’aligner avec cette langue.
-- La nouvelle méthode `HandleInputModeList` permet à l’extension de clavier d’afficher le menu de sélection de clavier du système en réponse à la touche de l’Atlas qui est exploitée.
+- La nouvelle `DocumentInputMode` propriété de la `UITextDocumentProxy` classe peut déterminer la langue d’entrée d’un document et permettre à l’extension de clavier de s’aligner avec cette langue.
+- La nouvelle `HandleInputModeList` méthode permet à l’extension de clavier d’afficher le menu de sélection de clavier du système en réponse à la touche de la planète qui est exploitée.
 
 Pour plus d’informations, consultez notre [Introduction aux extensions](~/ios/platform/extensions.md), [intégration d’applications de message](~/ios/platform/message-app-integration/index.md), [Présentation des suggestions proactives](~/ios/platform/search/proactive-suggestions.md), [Présentation de SiriKit](~/ios/platform/sirikit/index.md), [Introduction aux notifications utilisateur](~/ios/platform/user-notifications/index.md) et [Guide de programmation d’extension d’application](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214)Apple.
 
@@ -59,7 +59,7 @@ Pour plus d’informations, consultez notre [Introduction aux extensions](~/ios/
 Core Spotlight dans iOS 10 offre plusieurs améliorations à la recherche d’applications, telles que :
 
 - **Participatives popularité des liens approfondis (avec confidentialité différentielle)** : permet de promouvoir le contenu d’application lié de manière détaillée dans les résultats de recherche.
-- **Recherche dans l’application** : utilisez la nouvelle classe `CSSearchQuery` pour fournir une fonctionnalité de recherche dans la Galerie d’applications similaire à la façon dont les applications mail, messages et notes fonctionnent.
+- **Recherche dans l’application** : utilisez la nouvelle `CSSearchQuery` classe pour fournir une fonctionnalité de recherche en vedette dans l’application similaire à la façon dont les applications de messagerie, de messages et notes fonctionnent.
 - **Continuation** de la recherche : permet à un utilisateur de lancer une recherche dans Spotlight ou Safari, puis d’ouvrir une application et de poursuivre cette recherche.
 - **Visualisation des résultats de la validation** : l’outil de validation de l' [API de recherche d’applications](https://search.developer.apple.com/appsearch-validation-tool) d’Apple affiche désormais une représentation visuelle du balisage d’un site Web et des liens détaillés lors de la préformation des tests.
 - **Partage d’images d’application de message** : permet d’afficher les images courantes dans l’application fournies pour le partage des messages (via une extension de l’application de message) dans les recherches Spotlight.
@@ -72,7 +72,7 @@ Apple a apporté plusieurs améliorations à Apple Pay dans iOS 10 qui permetten
 
 Avec iOS 10, plusieurs nouvelles API ont été ajoutées qui fonctionnent avec iOS et Watchos pour prendre en charge les réseaux de paiement dynamiques et un nouvel environnement de test bac à sable (sandbox).
 
-En outre, PassKit Framework a été étendu pour prendre en charge les Apple Pay en dehors de `UIKit` et pour permettre aux émetteurs de cartes de présenter leurs cartes à partir de leurs applications.
+En outre, l’infrastructure PassKit a été développée pour prendre en charge les Apple Pay en dehors de `UIKit` et pour permettre aux émetteurs de cartes de présenter leurs cartes à partir de leurs applications.
 
 Pour en savoir plus, consultez notre guide d’amélioration de l' [Apple Pay](~/ios/platform/apple-pay.md) .
 
@@ -80,10 +80,10 @@ Pour en savoir plus, consultez notre guide d’amélioration de l' [Apple Pay](~
 
 Apple a ajouté plusieurs améliorations à iOS 10,3 qui permettent à une application de gérer son icône :
 
-- `ApplicationIconBadgeNumber` : Obtient ou définit le badge de l’icône de l’application dans le Springboard.
-- `SupportsAlternateIcons`-si `true` l’application possède un autre ensemble d’icônes.
-- `AlternateIconName` : retourne le nom de l’autre icône actuellement sélectionnée ou `null` si l’icône principale est utilisée.
-- `SetAlternameIconName` : utilisez cette méthode pour faire passer l’icône de l’application à l’autre icône donnée.
+- `ApplicationIconBadgeNumber` -Obtient ou définit le badge de l’icône d’application dans le Springboard.
+- `SupportsAlternateIcons` -Si `true` l’application possède un autre ensemble d’icônes.
+- `AlternateIconName` -Retourne le nom de l’autre icône actuellement sélectionnée ou `null` si vous utilisez l’icône principale.
+- `SetAlternameIconName` -Utilisez cette méthode pour faire passer l’icône de l’application à l’autre icône donnée.
 
 Pour en savoir plus, consultez notre guide des [autres icônes d’application](~/ios/app-fundamentals/images-icons/alternate-app-icons.md) .
 
@@ -112,7 +112,7 @@ Avec iOS 10, Apple autorisera les sociétés de magazines et les nouvelles organ
 
 Sur les iPhone 7 et iPhone 7 plus, Apple a inclus de nouvelles réponses haptique qui offrent des moyens supplémentaires d’engagement physique de l’utilisateur. Utilisez les nouvelles options de commentaires tactiles pour attirer l’attention de l’utilisateur et renforcer ses actions.
 
-Plusieurs éléments d’interface utilisateur intégrés fournissent déjà des commentaires haptique tels que des sélecteurs, des commutateurs et des curseurs. iOS 10 ajoute désormais la possibilité de déclencher par programmation des haptique à l’aide d’une sous-classe concrète de la classe `UIFeedbackGenerator`.
+Plusieurs éléments d’interface utilisateur intégrés fournissent déjà des commentaires haptique tels que des sélecteurs, des commutateurs et des curseurs. iOS 10 ajoute désormais la possibilité de déclencher par programmation des haptique à l’aide d’une sous-classe concrète de la `UIFeedbackGenerator` classe.
 
 Pour en savoir plus, consultez notre guide de [Commentaires haptique](~/ios/user-interface/ios-ui/haptic-feedback.md) .
 
@@ -123,7 +123,7 @@ iOS 10 présente de nouvelles façons de conduire des engagements à une applica
 - Le sélecteur d’application
 - L’écran de verrouillage
 - CarPlay
-- Cartes
+- Maps
 - Interactions Siri
 - Suggestions QuickType
 
@@ -133,7 +133,7 @@ Pour en savoir plus, consultez notre guide [de présentation des suggestions pro
 
 ## <a name="request-app-review"></a>Demander une révision d’application
 
-Nouveauté d’iOS 10,3, la méthode `RequestReview()` permet à une application iOS de demander à l’utilisateur de la noter ou de la passer en revue. Bien que cette méthode puisse être appelée à tout moment dans le sens de l’expérience utilisateur, le processus de révision est régi et géré par la stratégie App Store. Par conséquent, cette méthode peut ou ne peut pas afficher une alerte et ne doit jamais être appelée en réponse à une action de l’utilisateur, par exemple en appuyant sur un bouton.
+Nouveauté d’iOS 10,3, la `RequestReview()` méthode permet à une application iOS de demander à l’utilisateur de la noter ou de la passer en revue. Bien que cette méthode puisse être appelée à tout moment dans le sens de l’expérience utilisateur, le processus de révision est régi et géré par la stratégie App Store. Par conséquent, cette méthode peut ou ne peut pas afficher une alerte et ne doit jamais être appelée en réponse à une action de l’utilisateur, par exemple en appuyant sur un bouton.
 
 Pour en savoir plus, consultez notre guide de [révision des applications de demande](~/ios/platform/request-app-review.md) .
 
@@ -141,7 +141,7 @@ Pour en savoir plus, consultez notre guide de [révision des applications de dem
 
 Apple a apporté plusieurs améliorations à la sécurité et à la confidentialité dans iOS 10, ce qui permet au développeur d’améliorer la sécurité de ses applications et de garantir la confidentialité de l’utilisateur final.
 
-Par conséquent, les applications qui s’exécutent sur iOS 10 (ou version ultérieure) doivent déclarer de manière statique leur intention d’accéder à des fonctionnalités ou des informations utilisateur spécifiques en entrant une ou plusieurs clés spécifiques à la confidentialité dans leurs fichiers `Info.plist` qui expliquent à l’utilisateur pourquoi l’application souhaite obtenir un accès.
+Par conséquent, les applications qui s’exécutent sur iOS 10 (ou version ultérieure) doivent déclarer de manière statique leur intention d’accéder à des fonctionnalités ou des informations utilisateur spécifiques en entrant une ou plusieurs clés spécifiques à la confidentialité dans leurs `Info.plist` fichiers qui expliquent à l’utilisateur pourquoi l’application souhaite obtenir un accès.
 
 Pour en savoir plus, consultez notre guide d’amélioration de la [sécurité et de la confidentialité](~/ios/app-fundamentals/security-privacy.md) .
 
@@ -168,7 +168,7 @@ Pour en savoir plus, consultez notre guide [de présentation du SiriKit](~/ios/p
 
 iOS 10 comprend une nouvelle API de reconnaissance vocale qui permet à l’application de prendre en charge la reconnaissance vocale continue et de transcrire la parole (des flux audio en direct ou enregistrés) en texte.
 
-Étant donné que la reconnaissance vocale requiert la transmission et le stockage temporaire des données sur les serveurs Apple, l’application _doit_ demander à l’utilisateur l’autorisation d’effectuer la reconnaissance en incluant la clé de `NSSpeechRecognitionUsageDescription` dans son fichier `Info.plist` et en appelant la méthode `SFSpeechRecognizer.RequestAutorization`.
+Étant donné que la reconnaissance vocale requiert la transmission et le stockage temporaire des données sur les serveurs Apple, l’application _doit_ demander à l’utilisateur l’autorisation d’effectuer la reconnaissance en incluant la `NSSpeechRecognitionUsageDescription` clé dans son `Info.plist` fichier et en appelant la `SFSpeechRecognizer.RequestAutorization` méthode.
 
 Pour en savoir plus, consultez notre guide [de présentation de la reconnaissance vocale](~/ios/platform/speech.md) .
 
@@ -194,9 +194,9 @@ En outre, [UIKit](xref:UIKit) a été modifié pour fonctionner dans le nouveau 
 
 Apple offre les meilleures pratiques suivantes lorsque vous travaillez avec des couleurs larges :
 
-- [UIColor](xref:UIKit.UIColor) utilise désormais l’espace de couleurs sRVB et ne bride plus les valeurs de la `0.0` à `1.0` plage. Si l’application s’appuie sur le comportement de verrouillage précédent, elle doit être modifiée pour iOS 10.
-- L’environnement de dessin sera configuré pour l’espace de couleurs sRVB lors de l’exécution personnalisée de `UIView` dessin sur un iPad Pro.
-- Si l’application effectue un rendu personnalisé de `UIImages`, utilisez la nouvelle classe [UIGraphicsImageRender](https://developer.apple.com/reference/uikit/uigraphicsimagerenderer) pour spécifier l’utilisation des formats de plage étendue ou standard.
+- [UIColor](xref:UIKit.UIColor) utilise désormais l’espace de couleurs sRVB et ne bride plus les valeurs de `0.0` la `1.0` plage à. Si l’application s’appuie sur le comportement de verrouillage précédent, elle doit être modifiée pour iOS 10.
+- L’environnement de dessin sera configuré pour l’espace de couleurs sRVB lors de l’exécution `UIView` d’un dessin personnalisé sur un iPad Pro.
+- Si l’application effectue un rendu personnalisé de `UIImages` , utilisez la nouvelle classe [UIGraphicsImageRender](https://developer.apple.com/reference/uikit/uigraphicsimagerenderer) pour spécifier l’utilisation des formats de plage étendue ou standard.
 - Lorsque vous utilisez une API de bas niveau, telle que des graphiques de base ou du métal, pour fournir un traitement d’image, le développeur doit utiliser un espace de couleurs de plage étendue et un format de pixel qui prend en charge les valeurs à virgule flottante 16 bits. Le cas échéant, le développeur devra fixer manuellement les valeurs des composants de couleur.
 - Core Graphics, Core image et Metal performance Nuancers fournissent de nouvelles méthodes pour la conversion entre les deux espaces de couleurs.
 
@@ -218,18 +218,18 @@ Pour en savoir plus, consultez notre guide [supplémentaire sur les modification
 
 Les API suivantes ont été dépréciées dans iOS 10 :
 
-- Les classes `CKDiscoverAllContactsOperation`, `CKDiscoveredUserInfo`, `CKDiscoverUserInfosOperation` et `CKFetchRecordChangesOperation` ont été dépréciées dans CloudKit pour iOS 10. Utilisez les classes [CKDiscoverAllUserIdentitiesOperation](xref:CloudKit.CKDiscoverUserIdentitiesOperation), [CKUserIdentity](xref:CloudKit.CKUserIdentity) et [CKFetchRecordZoneChangesOperation](xref:CloudKit.CKFetchRecordZoneChangesOperation) (qui prennent en charge le partage d’enregistrements) à la place.
+- Les `CKDiscoverAllContactsOperation` `CKDiscoveredUserInfo` classes, `CKDiscoverUserInfosOperation` et `CKFetchRecordChangesOperation` ont été dépréciées dans CloudKit pour iOS 10. Utilisez les classes [CKDiscoverAllUserIdentitiesOperation](xref:CloudKit.CKDiscoverUserIdentitiesOperation), [CKUserIdentity](xref:CloudKit.CKUserIdentity) et [CKFetchRecordZoneChangesOperation](xref:CloudKit.CKFetchRecordZoneChangesOperation) (qui prennent en charge le partage d’enregistrements) à la place.
 - Plusieurs API [CKSubscription](https://developer.apple.com/reference/cloudkit/cksubscription) , telles que les abonnements basés sur une zone et les abonnements basés sur des requêtes, ont été dépréciées. Utilisez plutôt les API [CKRecordZoneSubscription](xref:CloudKit.CKRecordZoneSubscription) et [CKQuerySubscription](xref:CloudKit.CKQuerySubscription) .
 - Les symboles [NSPersistentStoreCoordinator](xref:CoreData.NSPersistentStoreCoordinator) liés au contenu omniprésent sont dépréciés.
 - `ADBannerView`, `ADInterstitialAd` et les symboles associés dans la classe [UIViewController](xref:UIKit.UIViewController) ont été dépréciés.
 - Les symboles [SKUniform](https://developer.apple.com/reference/spritekit/skuniform) liés aux valeurs à virgule flottante ont été dépréciés.
-- Les classes `UILocalNotification`, `UIMutableUserNotificationAction`, `UIMutableUserNotificationCategory`, `UIUserNotificationAction`, `UIUserNotificationCategory` et `UIUserNotificationSettings` de UIKit ont été dépréciées. Utilisez plutôt l’infrastructure de [notifications utilisateur](#user-notifications) .
-- Les méthodes `HandleActionForLocalNotification`, `HandleActionForRemoteNotification`, `DidReceiveLocalNotification` et `DidReceiveRemoteNotification` WatchKit sont dépréciées. Utilisez plutôt les méthodes `HandleActionForNotification` et `DidReceiveNotification`.
-- Les méthodes `DidReceiveLocalNotification` et `DidReceiveRemoteNotification` de [WKExtensionDelegate](https://developer.apple.com/reference/watchkit/wkextensiondelegate) ont été dépréciées. Créez une instance de [UNUserNotificationCenterDelegate](https://developer.apple.com/reference/usernotifications/unusernotificationcenterdelegate) qui implémente les méthodes appropriées et assignez-la à la propriété `Delegate` de l’objet [UNUserNotificationCenter](https://developer.apple.com/reference/usernotifications/unusernotificationcenter) .
+- Les `UILocalNotification` classes,,, `UIMutableUserNotificationAction` `UIMutableUserNotificationCategory` `UIUserNotificationAction` `UIUserNotificationCategory` et `UIUserNotificationSettings` de UIKit ont été dépréciées. Utilisez plutôt l’infrastructure de [notifications utilisateur](#user-notifications) .
+- Les `HandleActionForLocalNotification` `HandleActionForRemoteNotification` méthodes, `DidReceiveLocalNotification` et `DidReceiveRemoteNotification` WatchKit ont été dépréciées. Utilisez `HandleActionForNotification` plutôt les `DidReceiveNotification` méthodes et.
+- Les `DidReceiveLocalNotification` `DidReceiveRemoteNotification` méthodes et du [WKExtensionDelegate](https://developer.apple.com/reference/watchkit/wkextensiondelegate) ont été dépréciées. Créez une instance de [UNUserNotificationCenterDelegate](https://developer.apple.com/reference/usernotifications/unusernotificationcenterdelegate) qui implémente les méthodes appropriées et assignez-la à la `Delegate` propriété de l’objet [UNUserNotificationCenter](https://developer.apple.com/reference/usernotifications/unusernotificationcenter) .
 - L' **application Game Center** a été dépréciée et supprimée d’iOS. Si l’application utilise GameKit, elle _doit_ présenter sa propre interface pour afficher les fonctionnalités GameKit telles que Leaderboards, etc.
 
 Consultez la documentation sur les [différences d’API ios 9,3 pour ios 10,0](https://developer.apple.com/library/prerelease/content/releasenotes/General/iOS10APIDiffs/index.html) pour obtenir une liste complète des désapprobations.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [Exemples iOS 10](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS10)
+- [Exemples iOS 10](/samples/browse/?products=xamarin&term=Xamarin.iOS%2biOS10)

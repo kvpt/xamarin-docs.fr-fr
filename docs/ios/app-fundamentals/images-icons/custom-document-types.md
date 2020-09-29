@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/23/2017
-ms.openlocfilehash: 09fc582182729d3d8e17b85ac0a3ecc4bdcfce7e
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 3a74084db461271ca7fd440ab2c9779f949b30ff
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939813"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436844"
 ---
 # <a name="custom-document-icons-in-xamarinios"></a>Icônes de document personnalisées dans Xamarin. iOS
 
@@ -47,6 +47,6 @@ Pour plus d’informations sur les types de documents, consultez les rubriques d
 
 ## <a name="related-links"></a>Liens associés
 
-- [Utilisation des images (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/workingwithimages)
+- [Utilisation des images (exemple)](/samples/xamarin/ios-samples/workingwithimages)
 - [Hello, iPhone](~/ios/get-started/hello-ios/index.md)
 - [Instructions personnalisées de création d’images et d’icônes](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html)

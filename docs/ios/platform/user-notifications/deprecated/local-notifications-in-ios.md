@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 07/13/2018
-ms.openlocfilehash: 04631993d47a1d51858ab24948ab61170d37bb6e
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: f99776a0e6a84c193362d0e5a4efb68e70717ad0
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939875"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436115"
 ---
 # <a name="notifications-in-xamarinios"></a>Notifications dans Xamarin. iOS
 
@@ -32,7 +32,7 @@ iOS fournit également un *Centre de notification* qui affiche toutes les notifi
 ## <a name="creating-local-notifications-in-ios"></a>Création de notifications locales dans iOS
 
 iOS simplifie la création et la gestion des notifications locales.
-Tout d’abord, iOS 8 requiert que les applications demandent l’autorisation de l’utilisateur pour afficher les notifications. Ajoutez le code suivant à votre application avant d’essayer d’envoyer une notification locale. l' [exemple joint](https://docs.microsoft.com/samples/xamarin/ios-samples/localnotifications) le place dans la méthode **FinishedLaunching** de **AppDelegate**.
+Tout d’abord, iOS 8 requiert que les applications demandent l’autorisation de l’utilisateur pour afficher les notifications. Ajoutez le code suivant à votre application avant d’essayer d’envoyer une notification locale. l' [exemple joint](/samples/xamarin/ios-samples/localnotifications) le place dans la méthode **FinishedLaunching** de **AppDelegate**.
 
 ```csharp
 var notificationSettings = UIUserNotificationSettings.GetSettingsForTypes(
@@ -129,14 +129,14 @@ if(remoteNotification != null)
 }
 ```
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cette section a montré comment créer et publier une notification dans Xamarin. iOS. Elle montre comment une application peut réagir aux notifications en substituant la `ReceivedLocalNotification` méthode ou la `ReceivedRemoteNotification` méthode dans `AppDelegate` .
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Notifications locales (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/localnotifications)
+- [Notifications locales (exemple)](/samples/xamarin/ios-samples/localnotifications)
 - [Notifications push et locales pour les développeurs](https://developer.apple.com/notifications/)
 - [Guide de programmation des notifications locales et Push](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/)
-- [UIApplication](https://docs.microsoft.com/dotnet/api/uikit.uiapplication)
-- [UILocalNotification](https://docs.microsoft.com/dotnet/api/uikit.UILocalNotification)
+- [UIApplication](/dotnet/api/uikit.uiapplication)
+- [UILocalNotification](/dotnet/api/uikit.UILocalNotification)

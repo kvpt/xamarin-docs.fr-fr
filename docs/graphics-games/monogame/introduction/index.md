@@ -6,18 +6,18 @@ ms.assetid: D781401F-7A96-4098-9645-5F98AEAF7F71
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 8ffb62c8715ff60e9b0ea3b2bc536f3441fb8765
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.openlocfilehash: bdbce0b001d5baf5ef751e092a2083efdf3ca992
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "78293054"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436274"
 ---
 # <a name="introduction-to-game-development-with-monogame"></a>Présentation du développement de jeux avec monojeu
 
 _Cette procédure pas à pas en plusieurs parties montre comment créer une application 2D simple à l’aide d’un monojeu.  Il couvre les concepts courants de la programmation de jeux, tels que les graphiques, les entrées, les entités de jeu et la physique._
 
-Cet article décrit la technologie des API monojeu pour créer des jeux multiplateformes. Pour obtenir la liste complète des plateformes, consultez le [site Web monojeu](http://www.monogame.net/). Ce didacticiel va utiliser C# pour les exemples de code, bien que le monojeu F# soit entièrement opérationnel avec.
+Cet article décrit la technologie des API monojeu pour créer des jeux multiplateformes. Pour obtenir la liste complète des plateformes, consultez le [site Web monojeu](http://www.monogame.net/). Ce didacticiel utilise C# pour les exemples de code, bien que l’utilisation de polygame soit entièrement fonctionnelle avec F #.
 
 Monogame est une API multiplateformes, accélérée sur le matériel, qui fournit des fonctionnalités graphiques, audio, de gestion de l’état du jeu, d’entrée et un pipeline de contenu pour l’importation des ressources. Contrairement à la plupart des moteurs de jeu, le monojeu ne fournit ni n’impose aucune structure de projet ou de modèle.  Bien que cela signifie que les développeurs sont libres d’organiser leur code comme ils le souhaitent, cela signifie également qu’un peu de code d’installation est nécessaire lors du premier démarrage d’un nouveau projet.
 
@@ -40,9 +40,9 @@ Les développeurs familiarisés avec XNA seront déjà familiarisés avec la syn
 - [Partie 1 : création d’un projet monogame multiplateforme](~/graphics-games/monogame/introduction/part1.md)
 - [Partie 2 : implémentation du WalkingGame](~/graphics-games/monogame/introduction/part2.md)
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [Projet monogame WalkingGame (exemple)](https://docs.microsoft.com/samples/xamarin/mobile-samples/walkinggamemg/)
+- [Projet monogame WalkingGame (exemple)](/samples/xamarin/mobile-samples/walkinggamemg/)
 - [Android monojeu sur NuGet](https://www.nuget.org/packages/MonoGame.Framework.Android/)
 - [IOS monogame sur NuGet](https://www.nuget.org/packages/MonoGame.Framework.iOS/)
 - [Documentation sur les API monojeu](http://www.monogame.net/documentation/?page=main)

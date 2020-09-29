@@ -9,14 +9,14 @@ ms.custom: video
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 061bc1cfe785ad080092ba21340f7d38bc499ed9
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: f4bb252448abe3c2987def143634d15b5cae194c
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84801944"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91433498"
 ---
-# <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials: Stockage sécurisé
+# <a name="no-locxamarinessentials-secure-storage"></a>Xamarin.Essentials: Stockage sécurisé
 
 La classe **SecureStorage** permet de stocker en toute sécurité des paires clé/valeur simples.
 
@@ -29,7 +29,7 @@ Pour accéder à la fonctionnalité **SecureStorage**, la configuration requise 
 # <a name="android"></a>[Android](#tab/android)
 
 > [!TIP]
-> La [sauvegarde automatique pour les applications](https://developer.android.com/guide/topics/data/autobackup) est une fonctionnalité d’Android 6.0 (niveau d’API 23) et des versions ultérieures qui sauvegarde les données d’application de l’utilisateur (préférences partagées, fichiers situés dans le stockage interne de l’application et autres fichiers spécifiques). Les données sont restaurées quand l’application est réinstallée ou installée sur un nouvel appareil. Ceci peut avoir une incidence sur `SecureStorage`, qui utilise les préférences de partage sauvegardées et non déchiffrables lors de la restauration. Xamarin.Essentialsgère automatiquement ce cas en supprimant la clé afin qu’elle puisse être réinitialisée, mais vous pouvez effectuer une étape supplémentaire en désactivant la sauvegarde automatique.
+> La [sauvegarde automatique pour les applications](https://developer.android.com/guide/topics/data/autobackup) est une fonctionnalité d’Android 6.0 (niveau d’API 23) et des versions ultérieures qui sauvegarde les données d’application de l’utilisateur (préférences partagées, fichiers situés dans le stockage interne de l’application et autres fichiers spécifiques). Les données sont restaurées quand l’application est réinstallée ou installée sur un nouvel appareil. Ceci peut avoir une incidence sur `SecureStorage`, qui utilise les préférences de partage sauvegardées et non déchiffrables lors de la restauration. Xamarin.Essentials gère automatiquement ce cas en supprimant la clé afin qu’elle puisse être réinitialisée, mais vous pouvez effectuer une étape supplémentaire en désactivant la sauvegarde automatique.
 
 ### <a name="enable-or-disable-backup"></a>Activer ou désactiver la sauvegarde
 Vous pouvez choisir de désactiver la sauvegarde automatique pour la totalité de votre application en définissant le paramètre `android:allowBackup` sur false dans le fichier `AndroidManifest.xml`. Cette approche n’est recommandée que si vous envisagez de restaurer les données d’une autre façon.
@@ -154,7 +154,7 @@ Dans certains cas, les données KeyChain sont synchronisées avec iCloud, et il 
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
 
-[DataProtectionProvider](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider) permet de chiffrer de façon sécurisée des valeurs sur des appareils UWP.
+[DataProtectionProvider](/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider) permet de chiffrer de façon sécurisée des valeurs sur des appareils UWP.
 
 Ces valeurs chiffrées sont stockées dans `ApplicationData.Current.LocalSettings`, à l’intérieur d’un conteneur, avec le nom **[VOTRE-ID-D-APPLICATION].xamarinessentials**.
 

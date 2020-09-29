@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 00e5b2a2238763822172a1b7d7a7c3090634ed17
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 55c4d4e6154ef75f15b2e75edc020b7cb4c96e38
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938084"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435303"
 ---
 # <a name="alerts-in-xamarinmac"></a>Alertes dans Xamarin. Mac
 
@@ -232,7 +232,7 @@ var result = alert.RunModal ();
 Console.WriteLine ("Alert Result: {0}, Suppress: {1}", result, alert.SuppressionButton.State == NSCellStateValue.On);
 ```
 
-Les lignes de clé ici vous `var input = new NSTextField (new CGRect (0, 0, 300, 20));` permettront de créer un **champ de texte** pour ajouter l’alerte. `alert.AccessoryView = input;`qui attache le **champ de texte** à l’alerte et l’appel à la `Layout()` méthode, qui est requis pour redimensionner l’alerte pour l’ajuster à la nouvelle sous-vue.
+Les lignes de clé ici vous `var input = new NSTextField (new CGRect (0, 0, 300, 20));` permettront de créer un **champ de texte** pour ajouter l’alerte. `alert.AccessoryView = input;` qui attache le **champ de texte** à l’alerte et l’appel à la `Layout()` méthode, qui est requis pour redimensionner l’alerte pour l’ajuster à la nouvelle sous-vue.
 
 Si nous exécutons le code, les éléments suivants s’affichent :
 
@@ -265,13 +265,13 @@ Si nous exécutons ce code, les éléments suivants s’affichent :
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a décrit en détail l’utilisation des alertes dans une application Xamarin. Mac. Nous avons vu les différents types et utilisations des alertes, comment créer et personnaliser des alertes et comment utiliser des alertes dans du code C#.
 
 ## <a name="related-links"></a>Liens associés
 
-- [MacWindows (exemple)](https://docs.microsoft.com/samples/xamarin/mac-samples/macwindows)
+- [MacWindows (exemple)](/samples/xamarin/mac-samples/macwindows)
 - [Hello, Mac](~/mac/get-started/hello-mac.md)
 - [Utilisation de Windows](~/mac/user-interface/window.md)
 - [OS X Human Interface Guidelines](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)

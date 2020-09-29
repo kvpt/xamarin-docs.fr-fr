@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 2e8dde87456c6e33eda6846967ceea13eb412b93
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 9bd048239c404c0eb3309fdc74b26bcb94db4740
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86934301"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91434129"
 ---
 # <a name="tab-bars-and-tab-bar-controllers-in-xamarinios"></a>Barres d’onglets et contrôleurs de barre d’onglets dans Xamarin. iOS
 
-Les applications avec onglets sont utilisées dans iOS pour prendre en charge les interfaces utilisateur où il est possible d’accéder à plusieurs écrans dans aucun ordre particulier. Grâce à la `UITabBarController` classe, les applications peuvent facilement inclure la prise en charge de tels scénarios à plusieurs écrans. `UITabBarController`prend en charge la gestion multi-écran, ce qui permet au développeur d’applications de se concentrer sur les détails de chaque écran.
+Les applications avec onglets sont utilisées dans iOS pour prendre en charge les interfaces utilisateur où il est possible d’accéder à plusieurs écrans dans aucun ordre particulier. Grâce à la `UITabBarController` classe, les applications peuvent facilement inclure la prise en charge de tels scénarios à plusieurs écrans. `UITabBarController` prend en charge la gestion multi-écran, ce qui permet au développeur d’applications de se concentrer sur les détails de chaque écran.
 
 En règle générale, les applications avec onglets sont créées avec le `UITabBarController` en tant que `RootViewController` de la fenêtre principale. Toutefois, avec un peu de code supplémentaire, les applications à onglets peuvent également être utilisées successivement pour un autre écran initial, tel que le scénario dans lequel une application présente d’abord un écran de connexion, suivi de l’interface avec onglets.
 
@@ -27,7 +27,7 @@ Cette page présente les deux scénarios : quand les onglets sont à la racine 
 Le `UITabBarController` prend en charge le développement d’applications avec onglets de la façon suivante :
 
 - Autoriser l’ajout de plusieurs contrôleurs.
-- Fournir une interface utilisateur avec onglets, via la `UITabBar` classe, pour permettre à un utilisateur de basculer entre les contrôleurs et leurs vues.
+- Fournir une interface utilisateur avec onglets, via la  `UITabBar` classe, pour permettre à un utilisateur de basculer entre les contrôleurs et leurs vues.
 
 Les contrôleurs sont ajoutés au `UITabBarController` via sa `ViewControllers` propriété, qui est un `UIViewController` tableau. Le `UITabBarController` lui-même gère le chargement du contrôleur approprié et la présentation de sa vue en fonction de l’onglet sélectionné.
 
@@ -63,9 +63,9 @@ La `TabController` classe contient l’implémentation du `UITabBarController` q
 
 Pour implémenter le, `UITabBarController` nous devons effectuer les opérations suivantes :
 
-1. Définissez la classe de base de `TabController` sur `UITabBarController` .
-1. Créez `UIViewController` des instances à ajouter à `TabController` .
-1. Ajoutez les `UIViewController` instances à un tableau assigné à la `ViewControllers` propriété de `TabController` .
+1. Définissez la classe de base de  `TabController` sur  `UITabBarController` .
+1. Créez  `UIViewController` des instances à ajouter à  `TabController` .
+1. Ajoutez les  `UIViewController` instances à un tableau assigné à la  `ViewControllers` propriété de  `TabController` .
 
 Ajoutez le code suivant à la `TabController` classe pour accomplir ces étapes :
 
@@ -326,12 +326,12 @@ Lorsque l’application s’exécute et que l’utilisateur appuie sur le bouton
 
 [![Exemple de sortie d’application](creating-tabbed-applications-images/first-view-sml.png)](creating-tabbed-applications-images/first-view.png#lightbox)
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a décrit comment utiliser un `UITabBarController` dans une application. Nous avons parcouru le mode de chargement des contrôleurs dans chaque onglet, ainsi que la façon de définir des propriétés sur les onglets tels que le titre, l’image et le badge. Nous avons ensuite examiné, à l’aide des storyboards, à charger un `UITabBarController` lors de l’exécution lorsqu’il n’est pas le `RootViewController` de la fenêtre.
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Création d’applications avec onglets (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/creatingtabbedapplications)
+- [Création d’applications avec onglets (exemple)](/samples/xamarin/ios-samples/creatingtabbedapplications)
 - [Images.zip](https://github.com/xamarin/ios-samples/blob/master/CreatingTabbedApplications/Resources/images.zip?raw=true)
 - [Référence de la classe UITabBarController](https://developer.apple.com/library/ios/#documentation/uikit/reference/UITabBarController_Class/Reference/Reference.html)

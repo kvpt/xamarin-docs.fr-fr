@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2017
-ms.openlocfilehash: 2cc27b18bdb58ee633cae2d61e8cc6a8064df581
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 0a2ca9fea8135e0188829b8651e9ec15303b933d
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937119"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436516"
 ---
 # <a name="message-app-extension-basics-in-xamarinios"></a>Notions de base sur l’extension d’application de message dans Xamarin. iOS
 
@@ -99,7 +99,7 @@ Les autocollants peuvent fournir des autocollants dans l’une des trois tailles
 
 Utilisez l’inspecteur d’attributs de Xcode pour définir la taille de la totalité du pack d’autocollants et fournir uniquement des ressources d’image qui correspondent à la taille demandée, pour obtenir les meilleurs résultats dans le navigateur des vignettes à l’intérieur de l’application messages.
 
-Pour plus d’informations, consultez notre application [Ice CREME Builder](https://docs.microsoft.com/samples/xamarin/ios-samples/ios10-icecreambuilder) et la [référence des messages](https://developer.apple.com/reference/messages)d’Apple.
+Pour plus d’informations, consultez notre application [Ice CREME Builder](/samples/xamarin/ios-samples/ios10-icecreambuilder) et la [référence des messages](https://developer.apple.com/reference/messages)d’Apple.
 
 ## <a name="creating-a-custom-sticker-experience"></a>Création d’une expérience d’autocollant personnalisée
 
@@ -147,9 +147,9 @@ Par défaut, le `MessagesViewController.cs` fichier est ajouté à la solution. 
 
 L’infrastructure de messages fournit des classes pour la présentation des autocollants disponibles à l’utilisateur :
 
-- `MSStickerBrowserViewController`-Contrôle la vue dans laquelle les autocollants seront présentés. Il est également conforme à l' `IMSStickerBrowserViewDataSource` interface pour retourner le nombre d’autocollants et l’autocollant pour un index de navigateur donné.
-- `MSStickerBrowserView`-Il s’agit de la vue dans laquelle les autocollants disponibles seront affichés.
-- `MSStickerSize`-Détermine les tailles des cellules individuelles pour la grille des autocollants présentée dans la vue du navigateur.
+- `MSStickerBrowserViewController` -Contrôle la vue dans laquelle les autocollants seront présentés. Il est également conforme à l' `IMSStickerBrowserViewDataSource` interface pour retourner le nombre d’autocollants et l’autocollant pour un index de navigateur donné.
+- `MSStickerBrowserView` -Il s’agit de la vue dans laquelle les autocollants disponibles seront affichés.
+- `MSStickerSize` -Détermine les tailles des cellules individuelles pour la grille des autocollants présentée dans la vue du navigateur.
 
 ### <a name="creating-a-custom-sticker-browser"></a>Création d’un navigateur de vignettes personnalisé
 
@@ -705,12 +705,12 @@ public override void DidTransition (MSMessagesAppPresentationStyle presentationS
 }
 ```
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a été abordé dans le cas d’une extension d’application de message dans une solution Xamarin. iOS qui s’intègre à l’application **messages** et présente de nouvelles fonctionnalités à l’utilisateur. Elle est traitée à l’aide de l’extension pour envoyer du texte, des autocollants, des fichiers multimédias et des messages interactifs.
 
 ## <a name="related-links"></a>Liens associés
 
-- [Générateur de crème glacée (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios10-icecreambuilder)
+- [Générateur de crème glacée (exemple)](/samples/xamarin/ios-samples/ios10-icecreambuilder)
 - [Référence des messages](https://developer.apple.com/reference/messages)
 - [Guide de programmation de l’extension d’application](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214)

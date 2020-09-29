@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidortinau
 ms.author: daortin
 ms.date: 05/12/2020
-ms.openlocfilehash: 540fd0180899f8eb7c1b171148be81c5d541613b
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: d305f671ef68e9a1eded61936f3f32cc8769393f
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997499"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436291"
 ---
 # <a name="ios-extensions-in-xamarinios"></a>extensions iOS dans Xamarin. iOS
 
@@ -472,6 +472,6 @@ Ce document contient des extensions couvertes, ce qu’elles sont, le type de po
 
 ## <a name="related-links"></a>Liens connexes
 
-- [ContainerApp (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/intro-to-extensions)
+- [ContainerApp (exemple)](/samples/xamarin/ios-samples/intro-to-extensions)
 - [Création d’extensions dans Xamarin. iOS (vidéo)](https://university.xamarin.com/lightninglectures/creating-extensions-in-ios)
 - [Optimiser l’efficacité et les performances d’une extension d’application iOS](https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/ExtensionCreation.html#//apple_ref/doc/uid/TP40014214-CH5-SW7)

@@ -12,14 +12,14 @@ ms.date: 04/01/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8858a66d2caeea815bf06d5d2741bfc3623598f5
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 06cd68c56192664f6d11ec9f6adbe30f9ae5168c
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86933729"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91433479"
 ---
-# <a name="perform-navigation-in-a-multi-page-xamarinforms-application"></a>Effectuer une navigation dans une application à plusieurs pages Xamarin.Forms
+# <a name="perform-navigation-in-a-multi-page-no-locxamarinforms-application"></a>Effectuer une navigation dans une application à plusieurs pages Xamarin.Forms
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-multipage/)
 
@@ -34,9 +34,9 @@ Le Guide de démarrage rapide vous guide dans la manière de transformer une app
 Page de [ ![ Commentaires](multi-page-images/screenshots1-sml.png)](multi-page-images/screenshots1.png#lightbox "Page de notes")page 
  [ ![ entrée note](multi-page-images/screenshots2-sml.png)](multi-page-images/screenshots2.png#lightbox "Page d’entrée de note")
 
-### <a name="prerequisites"></a>Prérequis
+### <a name="prerequisites"></a>Conditions préalables requises
 
-Vous devez suivre correctement le [précédent guide de démarrage rapide](single-page.md) avant de tenter de suivre ce guide de démarrage rapide. Vous pouvez également télécharger l’[exemple du précédent guide de démarrage rapide](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-singlepage/), et l’utiliser comme point de départ pour ce guide de démarrage rapide.
+Vous devez suivre correctement le [précédent guide de démarrage rapide](single-page.md) avant de tenter de suivre ce guide de démarrage rapide. Vous pouvez également télécharger l’[exemple du précédent guide de démarrage rapide](/samples/xamarin/xamarin-forms-samples/getstarted-notes-singlepage/), et l’utiliser comme point de départ pour ce guide de démarrage rapide.
 
 ::: zone pivot="windows"
 
@@ -86,7 +86,7 @@ Vous devez suivre correctement le [précédent guide de démarrage rapide](singl
 
 7. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le projet **Notes** et sélectionnez **Ajouter > nouvel élément.**.. Dans la boîte de dialogue **Ajouter un nouvel élément** , sélectionnez **éléments Visual C# > Xamarin.Forms > page contenu**, nommez le nouveau fichier **NoteEntryPage**, puis cliquez sur le bouton **Ajouter** :
 
-    ![Ajouter Xamarin.Forms ContentPage](multi-page-images/vs/add-note-entry-page.png)
+    ![Add ::: No-Loc (Xamarin. Forms) ::: ContentPage](multi-page-images/vs/add-note-entry-page.png)
 
     Cela permet d’ajouter une nouvelle page nommée **NoteEntryPage** au dossier racine du projet. Cette page est la deuxième page de l’application.
 
@@ -369,7 +369,7 @@ Vous devez suivre correctement le [précédent guide de démarrage rapide](singl
 
 7. Dans le **panneau solutions**, sélectionnez le projet **Notes** , cliquez avec le bouton droit, puis sélectionnez **Ajouter > nouveau fichier...**. Dans la boîte de dialogue **nouveau fichier** , sélectionnez **formulaires > Forms ContentPage XAML**, nommez le nouveau fichier **NoteEntryPage**, puis cliquez sur le bouton **nouveau** :
 
-    ![Ajouter Xamarin.Forms ContentPage](multi-page-images/vsmac/add-note-entry-page.png)
+    ![Add ::: No-Loc (Xamarin. Forms) ::: ContentPage](multi-page-images/vsmac/add-note-entry-page.png)
 
     Cela permet d’ajouter une nouvelle page nommée **NoteEntryPage** au dossier racine du projet. Cette page est la deuxième page de l’application.
 
@@ -616,9 +616,9 @@ Dans ce démarrage rapide, vous avez appris comment :
 Pour modifier l’application afin qu’elle stocke ses données dans une base de données SQLite.NET locale, passez au prochain guide de démarrage rapide.
 
 > [!div class="nextstepaction"]
-> [Suivant](database.md)
+> [Next](database.md)
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Notes (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-multipage/)
-- [Xamarin.FormsPrésentation approfondie des Démarrages rapides](deepdive.md)
+- [Notes (exemple)](/samples/xamarin/xamarin-forms-samples/getstarted-notes-multipage/)
+- [Xamarin.Forms Présentation approfondie des Démarrages rapides](deepdive.md)

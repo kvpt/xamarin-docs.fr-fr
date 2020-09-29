@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 9c2d00051d1e51db4523a484a0c187016ea9061f
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: f665d2de767721cd2f5eedd45653e36c01395569
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84567825"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435280"
 ---
 # <a name="ios-security-and-privacy-features"></a>Fonctionnalités de sécurité et de confidentialité iOS
 
@@ -88,7 +88,7 @@ Xamarin. iOS pour Visual Studio ne prend pas actuellement en charge la modificat
 6. Entrez une description dans la colonne valeur pour la raison pour laquelle l’application souhaite accéder aux informations sur la fonctionnalité donnée ou l’utilisateur : 
 
     ![Entrer une description](security-privacy-images/InfoPListSetValue.png "Entrer une description")
-7. Enregistrez les modifications dans le fichier.
+7. Enregistrez les modifications du fichier.
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
@@ -103,7 +103,7 @@ Pour définir l’une des clés de confidentialité, procédez comme suit :
 5. Entrez une description de la raison pour laquelle l’application souhaite accéder aux informations sur la fonctionnalité donnée ou l’utilisateur : 
 
     ![Entrer une description](security-privacy-images/info03.png "Entrer une description")
-6. Enregistrez les modifications dans le fichier.
+6. Enregistrez les modifications du fichier.
 
 -----
 
@@ -112,10 +112,10 @@ Pour définir l’une des clés de confidentialité, procédez comme suit :
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a abordé les modifications de sécurité et de confidentialité apportées par Apple dans iOS 10 et comment elles affectent une application Xamarin. iOS.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [Exemples iOS 10](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS10)
+- [Exemples iOS 10](/samples/browse/?products=xamarin&term=Xamarin.iOS%2biOS10)

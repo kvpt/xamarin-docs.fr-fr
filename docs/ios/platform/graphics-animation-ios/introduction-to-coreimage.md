@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 9e0363f941784ecc488861c0d2f089a30c275a10
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 7cb94956266a3094cc62ccc66c3d44e97884f04d
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937395"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435301"
 ---
 # <a name="core-image-in-xamarinios"></a>Image principale dans Xamarin. iOS
 
@@ -28,7 +28,7 @@ Ce document contient des exemples simples de :
 
 Ces exemples doivent vous aider à commencer à incorporer des fonctionnalités d’image principales dans vos applications Xamarin. iOS.
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Configuration requise
 
 Vous devez utiliser la dernière version de Xcode.
 
@@ -46,7 +46,7 @@ var ciImage = CIImage.FromCGImage(image.CGImage);
 CIFeature[] features = detector.FeaturesInImage(ciImage);
 ```
 
-Le tableau de fonctionnalités est rempli avec des `CIFaceFeature` objets (si des visages ont été détectés). Il existe un `CIFaceFeature` pour chaque visage. `CIFaceFeature`a les propriétés suivantes :
+Le tableau de fonctionnalités est rempli avec des `CIFaceFeature` objets (si des visages ont été détectés). Il existe un `CIFaceFeature` pour chaque visage. `CIFaceFeature` a les propriétés suivantes :
 
 - HasMouthPosition : indique si une bouche a été détectée pour ce visage.
 - HasLeftEyePosition : indique si l’œil gauche a été détecté pour cette face.
@@ -216,13 +216,13 @@ La sortie de la liste Catégories ressemble à ceci sur le simulateur : vous po
 
 Chaque filtre répertorié est exposé en tant que classe dans Xamarin. iOS. vous pouvez donc également explorer l’API Xamarin. iOS. CoreImage dans le navigateur d’assembly ou utiliser la saisie semi-automatique dans Visual Studio pour Mac ou Visual Studio. 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a montré comment utiliser certaines des nouvelles fonctionnalités d’infrastructure d’images principales iOS 5, telles que la détection de visages et l’application de filtres à une image. Des dizaines de filtres d’image différents sont disponibles dans l’infrastructure que vous pouvez utiliser.
 
 ## <a name="related-links"></a>Liens associés
 
-- [Image principale (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/coreimage)
+- [Image principale (exemple)](/samples/xamarin/ios-samples/coreimage)
 - [Ajuster le contrat et la luminosité d’une recette d’image](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/coreimage/adjust_contrast_and_brightness_of_an_image)
 - [Utilisation de filtres d’image principaux](https://developer.apple.com/library/prerelease/ios/#documentation/GraphicsImaging/Conceptual/CoreImaging/ci_tasks/ci_tasks.html)
 - [Référence de la classe CIFilter](https://developer.apple.com/library/prerelease/ios/#documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilter_Class/Reference/Reference.htm)

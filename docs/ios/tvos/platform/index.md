@@ -7,40 +7,40 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: cd7e2b0a195cd7d5c053d175bf813b12b88b46e1
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 155a2a72a3f45bf3bf2f9cd3f2e19dbcfb9613d0
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030641"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435001"
 ---
 # <a name="tvos-platform-features"></a>fonctionnalités de la plateforme tvOS
 
 Ces guides décrivent les fonctionnalités disponibles dans les versions spécifiques de tvOS.
 
-## <a name="introduction-to-tvos-12iostvosplatformintroduction-to-tvos12indexmd"></a>[Introduction à tvOS 12](~/ios/tvos/platform/introduction-to-tvos12/index.md)
+## <a name="introduction-to-tvos-12"></a>[Introduction à tvOS 12](~/ios/tvos/platform/introduction-to-tvos12/index.md)
 
 Ce document fournit une vue d’ensemble de haut niveau des fonctionnalités nouvelles et mises à jour de tvOS 12 qui peuvent être utilisées lors de la création d’applications tvOS avec Xamarin.
 
-## <a name="introduction-to-tvos-11iostvosplatformintroduction-to-tvos11md"></a>[Introduction à tvOS 11](~/ios/tvos/platform/introduction-to-tvos11.md)
+## <a name="introduction-to-tvos-11"></a>[Introduction à tvOS 11](~/ios/tvos/platform/introduction-to-tvos11.md)
 
 Cet article décrit les nouvelles fonctionnalités disponibles dans tvOS 11 pour les développeurs tvOS utilisant Xamarin.
 
-## <a name="introduction-to-tvos-10iostvosplatformintroduction-to-tvos10indexmd"></a>[Introduction à tvOS 10](~/ios/tvos/platform/introduction-to-tvos10/index.md)
+## <a name="introduction-to-tvos-10"></a>[Introduction à tvOS 10](~/ios/tvos/platform/introduction-to-tvos10/index.md)
 
 Cet article présente toutes les API et fonctionnalités nouvelles et modifiées disponibles dans tvOS 10 pour les développeurs tvOS utilisant Xamarin.
 
-## <a name="introduction-to-tvos-9iostvosplatformtvos9md"></a>[Introduction à tvOS 9](~/ios/tvos/platform/tvos9.md)
+## <a name="introduction-to-tvos-9"></a>[Introduction à tvOS 9](~/ios/tvos/platform/tvos9.md)
 
 Cet article présente toutes les API et fonctionnalités nouvelles et modifiées disponibles dans tvOS 9 pour les développeurs tvOS utilisant Xamarin.
 
-## <a name="siri-remote-and-bluetooth-controllersiostvosplatformremote-bluetoothmd"></a>[Contrôleurs Bluetooth et Siri distants](~/ios/tvos/platform/remote-bluetooth.md)
+## <a name="siri-remote-and-bluetooth-controllers"></a>[Contrôleurs Bluetooth et Siri distants](~/ios/tvos/platform/remote-bluetooth.md)
 
 Cet article traite de la prise en charge des nouveaux contrôleurs de jeu distants Siri et Bluetooth dans les applications tvOS générées avec Xamarin.
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Exemples tvOS](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [Exemples tvOS](/samples/browse/?products=xamarin&term=Xamarin.iOS%2btvOS)
 - [tvOS (Apple)](https://developer.apple.com/tvos/)
 - [Guides d’interface utilisateur tvOS (Apple)](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [Guide de programmation d’applications pour tvOS (Apple)](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

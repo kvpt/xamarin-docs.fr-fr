@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: f38aee099cd2551ab2bdbaa94a8a3f9c0e1cf869
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: a926ae3aa91b7c1dbe13ba78c28f4df63228e151
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939553"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436491"
 ---
 # <a name="stack-views-in-xamarinios"></a>Affichages de la pile dans Xamarin. iOS
 
@@ -62,7 +62,7 @@ Où :
 Lorsque vous utilisez un affichage de la pile, vous pouvez considérer l' **alignement** comme l’emplacement **X** et **Y** de la sous-vue et la **distribution** comme la **hauteur** et la **largeur**.
 
 > [!IMPORTANT]
-> `UIStackView`est conçu comme une vue de conteneur sans rendu et, par conséquent, il n’est pas dessiné dans le canevas comme les autres sous-classes de `UIView` . Par conséquent, la définition de propriétés telles que `BackgroundColor` ou la substitution n' `DrawRect` a aucun effet visuel.
+> `UIStackView` est conçu comme une vue de conteneur sans rendu et, par conséquent, il n’est pas dessiné dans le canevas comme les autres sous-classes de `UIView` . Par conséquent, la définition de propriétés telles que `BackgroundColor` ou la substitution n' `DrawRect` a aucun effet visuel.
 
 Continuez à mettre en page l’interface de l’application en ajoutant une étiquette, ImageView, deux boutons et une vue de pile horizontale afin qu’elle ressemble à ce qui suit :
 
@@ -266,14 +266,14 @@ UIView.Animate(0.25, ()=>{
 
 La plupart des propriétés de la vue de la pile peuvent être spécifiées à l’aide de classes de taille dans une table de montage séquentiel. Ces propriétés sont automatiquement animées pour répondre à des modifications de taille ou d’orientation.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a abordé le nouveau `UIStackView` contrôle (pour iOS 9) à gérer un ensemble de sous-affichages dans une pile horizontale ou verticale dans une application Xamarin. iOS.
 Il a commencé par un exemple simple d’utilisation d’affichages de pile pour créer une interface utilisateur, et a terminé avec une vue plus détaillée des vues de pile et leurs propriétés et fonctionnalités.
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemples iOS 9](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
+- [Exemples iOS 9](/samples/browse/?products=xamarin&term=Xamarin.iOS%2biOS9)
 - [iOS 9 pour les développeurs](https://developer.apple.com/ios/pre-release/)
 - [Nouveautés d’iOS 9,0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
 - [Référence UIStackView](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/)

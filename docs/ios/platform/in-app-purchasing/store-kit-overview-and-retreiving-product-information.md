@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: f05bc534b1220e6659f123a17dc57e02185fdea4
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: b7bfa98f84210c921790989c60a7bda21b7c6bcd
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86996342"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435544"
 ---
 # <a name="storekit-overview-and-retrieving-product-info-in-xamarinios"></a>Présentation de StoreKit et récupération des informations sur le produit dans Xamarin. iOS
 
@@ -80,11 +80,11 @@ La première étape de la vente d’un produit d’achat dans l’application es
 
 Quel que soit le type de produits vendus par une application (consommable, non consommable ou un type d’abonnement), le processus de récupération des informations sur le produit pour l’affichage est le même. Le code InAppPurchaseSample qui accompagne cet article contient un projet nommé *consommables* qui montre comment récupérer des informations de production à afficher. Il montre comment :
 
-- Créez une implémentation de `SKProductsRequestDelegate` et implémentez la `ReceivedResponse` méthode abstraite. L’exemple de code appelle cette `InAppPurchaseManager` classe.
-- Vérifiez avec StoreKit pour voir si les paiements sont autorisés (à l’aide de `SKPaymentQueue.CanMakePayments` ).
-- Instanciez un `SKProductsRequest` avec les ID de produit qui ont été définis dans iTunes Connect. Cette opération est effectuée dans la méthode de l’exemple `InAppPurchaseManager.RequestProductData` .
-- Appelez la méthode Start sur le `SKProductsRequest` . Cela déclenche un appel asynchrone aux serveurs de l’App Store. Le délégué ( `InAppPurchaseManager` ) est rappelé avec les résultats.
-- La méthode () du délégué `InAppPurchaseManager` `ReceivedResponse` met à jour l’interface utilisateur avec les données retournées à partir de l’App Store (prix du produit & descriptions ou messages sur les produits non valides).
+- Créez une implémentation de  `SKProductsRequestDelegate` et implémentez la  `ReceivedResponse` méthode abstraite. L’exemple de code appelle cette  `InAppPurchaseManager` classe.
+- Vérifiez avec StoreKit pour voir si les paiements sont autorisés (à l’aide de  `SKPaymentQueue.CanMakePayments` ).
+- Instanciez un  `SKProductsRequest` avec les ID de produit qui ont été définis dans iTunes Connect. Cette opération est effectuée dans la méthode de l’exemple  `InAppPurchaseManager.RequestProductData` .
+- Appelez la méthode Start sur le  `SKProductsRequest` . Cela déclenche un appel asynchrone aux serveurs de l’App Store. Le délégué ( `InAppPurchaseManager` ) est rappelé avec les résultats.
+- La méthode () du délégué `InAppPurchaseManager`  `ReceivedResponse` met à jour l’interface utilisateur avec les données retournées à partir de l’App Store (prix du produit & descriptions ou messages sur les produits non valides).
 
 L’interaction globale ressemble à ceci ( **StoreKit** est intégré à iOS, et l' **App Store** représente les serveurs d’Apple) :
 
@@ -92,7 +92,7 @@ L’interaction globale ressemble à ceci ( **StoreKit** est intégré à iOS, e
 
 ### <a name="displaying-product-information-example"></a>Exemple d’affichage des informations sur le produit
 
-L’exemple de *consommables* [InAppPurchaseSample](https://docs.microsoft.com/samples/xamarin/ios-samples/storekit) illustre le mode de récupération des informations sur les produits. L’écran principal de l’exemple affiche des informations pour deux produits récupérés à partir de l’App Store :   
+L’exemple de *consommables* [InAppPurchaseSample](/samples/xamarin/ios-samples/storekit) illustre le mode de récupération des informations sur les produits. L’écran principal de l’exemple affiche des informations pour deux produits récupérés à partir de l’App Store :   
 
  [![L’écran principal affiche les informations sur les produits récupérés à partir de l’App Store.](store-kit-overview-and-retreiving-product-information-images/image23.png)](store-kit-overview-and-retreiving-product-information-images/image23.png#lightbox)   
 

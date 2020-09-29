@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/03/2018
-ms.openlocfilehash: cfb694faff68e0762b93dd3bdf7c2e073108e77b
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: ed31e0262fecccf8974961d45d02388aeb8e85ea
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86935148"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91434420"
 ---
 # <a name="implementing-sirikit-in-xamarinios"></a>Implémentation de SiriKit dans Xamarin. iOS
 
@@ -43,7 +43,7 @@ Comme indiqué dans le Guide de [Présentation des concepts de SiriKit](~/ios/pl
 
 [![Extension de l’application avec le diagramme SiriKit](implementing-sirikit-images/elements01.png)](implementing-sirikit-images/elements01.png#lightbox)
 
-notamment :
+Il s’agit des tables suivantes :
 
 1. **Extension des intentions** -vérifie les réponses des utilisateurs, confirme que l’application peut traiter la demande et effectue en fait la tâche pour répondre à la demande de l’utilisateur.
 2. Extension d’IU **Intents**  -  *Facultatif*, fournit une interface utilisateur personnalisée aux réponses dans l’environnement Siri et peut amener l’interface utilisateur de l’application et la personnaliser à Siri pour enrichir l’expérience de l’utilisateur.
@@ -1056,13 +1056,13 @@ Apple suggère que le développeur prend en compte les points suivants lors de l
 - **Envisagez les tailles de vue minimales et maximales** : Assurez-vous que les extensions d’interface utilisateur sont correctes sur chaque type, taille et orientation d’appareil iOS. En outre, la taille souhaitée que l’application renvoie à Siri peut ne pas pouvoir être accordée.
 - **Utilisez des modèles de disposition flexibles et adaptatifs** : encore une fois pour vous assurer que l’interface utilisateur est bien adaptée à tous les appareils.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a abordé SiriKit et montre comment il peut être ajouté aux applications Xamarin. iOS pour fournir des services accessibles à l’utilisateur à l’aide de Siri et de l’application Maps sur un appareil iOS.
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemple ElizaChat](https://docs.microsoft.com/samples/xamarin/ios-samples/ios10-elizachat)
+- [Exemple ElizaChat](/samples/xamarin/ios-samples/ios10-elizachat)
 - [Guide de programmation SiriKit](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/index.html)
 - [Informations de référence sur l’infrastructure Intent](https://developer.apple.com/reference/intents)
 - [Informations de référence sur l’infrastructure d’interface utilisateur](https://developer.apple.com/reference/intentsui)

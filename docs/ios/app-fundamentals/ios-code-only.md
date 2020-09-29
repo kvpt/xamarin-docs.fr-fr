@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/03/2018
-ms.openlocfilehash: edd49cc891a86d3323bab319ab811e85f9148640
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: 7b6852485fed6cc14c9f9b2e1a303b7c2e576da9
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997096"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91433582"
 ---
 # <a name="creating-ios-user-interfaces-in-code-in-xamarinios"></a>Création d’interfaces utilisateur iOS dans le code dans Xamarin. iOS
 
@@ -54,8 +54,8 @@ Le modèle de projet vide ajoute 4 fichiers au projet :
 
 [![Fichiers projet](ios-code-only-images/empty-project.w157-sml.png "Fichiers projet")](ios-code-only-images/empty-project.w157.png#lightbox)
 
-1. **AppDelegate.cs** -contient une `UIApplicationDelegate` sous-classe, `AppDelegate` , qui est utilisée pour gérer les événements d’application d’iOS. La fenêtre d’application est créée dans `AppDelegate` la `FinishedLaunching` méthode de.
-1. **Main.cs** : contient le point d’entrée de l’application, qui spécifie la classe pour le `AppDelegate` .
+1. **AppDelegate.cs** -contient une  `UIApplicationDelegate` sous-classe,  `AppDelegate` , qui est utilisée pour gérer les événements d’application d’iOS. La fenêtre d’application est créée dans `AppDelegate` la  `FinishedLaunching` méthode de.
+1. **Main.cs** : contient le point d’entrée de l’application, qui spécifie la classe pour le  `AppDelegate` .
 1. **Info. plist** : fichier de liste de propriétés qui contient les informations de configuration de l’application.
 1. **Habilitations. plist** : fichier de liste de propriétés qui contient des informations sur les fonctionnalités et les autorisations de l’application.
 
@@ -234,7 +234,7 @@ namespace CodeOnlyDemo
 
 ## <a name="initializing-the-view"></a>Initialisation de la vue
 
-`UIViewController`contient une méthode appelée `ViewDidLoad` qui est appelée lorsque le contrôleur d’affichage est chargé pour la première fois en mémoire. Il s’agit d’un emplacement approprié pour l’initialisation de la vue, par exemple la définition de ses propriétés.
+`UIViewController` contient une méthode appelée `ViewDidLoad` qui est appelée lorsque le contrôleur d’affichage est chargé pour la première fois en mémoire. Il s’agit d’un emplacement approprié pour l’initialisation de la vue, par exemple la définition de ses propriétés.
 
 Par exemple, le code suivant ajoute un bouton et un gestionnaire d’événements pour envoyer un nouveau contrôleur d’affichage vers la pile de navigation lorsque le bouton est enfoncé :
 
@@ -498,7 +498,7 @@ namespace CodeOnlyDemo
 
 ### <a name="drawing-in-a-uiview"></a>Dessin dans un UIView
 
-Chaque `UIView` a une `Draw` méthode qui est appelée par le système lorsqu’il doit être dessiné. `Draw`ne doit jamais être appelé directement. Elle est appelée par le système lors du traitement de la boucle d’exécution. La première fois que vous exécutez la boucle Run après l’ajout d’une vue à la hiérarchie de la vue, sa `Draw` méthode est appelée. Les appels suivants à `Draw` se produisent lorsque la vue est marquée comme devant être dessinée en appelant `SetNeedsDisplay` ou `SetNeedsDisplayInRect` sur la vue.
+Chaque `UIView` a une `Draw` méthode qui est appelée par le système lorsqu’il doit être dessiné. `Draw` ne doit jamais être appelé directement. Elle est appelée par le système lors du traitement de la boucle d’exécution. La première fois que vous exécutez la boucle Run après l’ajout d’une vue à la hiérarchie de la vue, sa `Draw` méthode est appelée. Les appels suivants à `Draw` se produisent lorsque la vue est marquée comme devant être dessinée en appelant `SetNeedsDisplay` ou `SetNeedsDisplayInRect` sur la vue.
 
 Nous pouvons ajouter du code de dessin à notre vue en ajoutant un tel code à l’intérieur de la `Draw` méthode remplacée, comme indiqué ci-dessous :
 
@@ -539,7 +539,7 @@ Pour utiliser le que `CircleView` nous venons de créer, nous pouvons l’ajoute
 
 ### <a name="loading-a-view"></a>Chargement d’une vue
 
- `UIViewController`a une méthode nommée `LoadView` qui est appelée par le contrôleur pour créer sa vue. Il s’agit d’un emplacement approprié pour créer une vue et l’assigner à la propriété du contrôleur `View` .
+ `UIViewController` a une méthode nommée `LoadView` qui est appelée par le contrôleur pour créer sa vue. Il s’agit d’un emplacement approprié pour créer une vue et l’assigner à la propriété du contrôleur `View` .
 
 Tout d’abord, nous avons besoin d’un contrôleur. vous devez donc créer une classe vide nommée `CircleController` .
 
@@ -629,4 +629,4 @@ Cet article a expliqué comment développer des applications iOS par programmati
 
 ## <a name="related-links"></a>Liens associés
 
-- [SimpleLogin (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/simplelogin)
+- [SimpleLogin (exemple)](/samples/xamarin/ios-samples/simplelogin)

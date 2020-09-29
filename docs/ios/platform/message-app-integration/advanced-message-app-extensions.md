@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: c303125ac02c8e7c47fb16928df1432c66a8e8d2
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 8a1f386209ccc1f2cb33348930f29bf5ac65ce4f
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937148"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435615"
 ---
 # <a name="advanced-message-app-extensions-in-xamarinios"></a>Extensions des applications de message avancées dans Xamarin. iOS
 
@@ -30,7 +30,7 @@ Comme indiqué ci-dessus, une extension d’application de message s’intègre 
 Les extensions de message Apps fournissent trois types de contenu principaux :
 
 - **Messages interactifs** : type de contenu de message personnalisé généré par une application, lorsque l’utilisateur appuie sur le message, l’application est lancée au premier plan.
-- **Autocollants** : images générées par l’application qui peuvent être incluses dans les messages envoyés entre les utilisateurs. Pour obtenir un exemple d’implémentation d’une application de Pack d’autocollants, consultez notre exemple d’application [Ice CREME Builder](https://docs.microsoft.com/samples/xamarin/ios-samples/ios10-icecreambuilder) .
+- **Autocollants** : images générées par l’application qui peuvent être incluses dans les messages envoyés entre les utilisateurs. Pour obtenir un exemple d’implémentation d’une application de Pack d’autocollants, consultez notre exemple d’application [Ice CREME Builder](/samples/xamarin/ios-samples/ios10-icecreambuilder) .
 - **Autre contenu pris en charge** : l’application peut fournir du contenu tel que des photos, des vidéos, du texte ou des liens du type qui a toujours été pris en charge par l’application messages.
 
 Nouveauté d’iOS 10, l’application message intègre désormais son propre App Store dédié et intégré. Toutes les applications qui incluent des extensions de message apps sont affichées et promues dans ce magasin. Le tiroir de l’application nouveaux messages affiche toutes les applications qui ont été téléchargées à partir de l’App Store pour fournir un accès rapide aux utilisateurs.
@@ -71,8 +71,8 @@ Lorsqu’elle est appelée par l’utilisateur, une extension d’application de
 1. L' `MSMessageAppViewController` objet de l’extension de l’application de message est la classe principale qui est appelée lorsque la vue de l’extension est affichée à l’utilisateur.
 2. La conversation est présentée à l’utilisateur sous la forme d’une `MSConversation` instance d’objet.
 3. La `MSMessage` classe représente une bulle de message donnée dans la conversation.
-4. `MSSession`contrôle la façon dont un message est envoyé.
-5. `MSMessageTemplateLayout`contrôle le mode d’affichage du message
+4. `MSSession` contrôle la façon dont un message est envoyé.
+5. `MSMessageTemplateLayout` contrôle le mode d’affichage du message
 
 ## <a name="the-extension-lifecycle"></a>Cycle de vie de l’extension
 
@@ -503,9 +503,9 @@ Avec les fonctionnalités de base de la nouvelle API de message abordées en dé
 
 Tout d’abord, il existe plusieurs autres méthodes override dans la `MSMessagesAppViewController` classe qui fournissent un accès plus profond à la conversation :
 
-- `DidStartSendingMessage`: Cette méthode est appelée lorsque l’utilisateur clique sur le bouton Envoyer. Cela ne signifie pas que le message a effectivement été remis au destinataire, mais que le processus d’envoi a été démarré.
-- `DidCancelSendingMessage`: Cela se produit quand l’utilisateur appuie sur le bouton *X* dans le coin supérieur droit de la bulle de message dans la transcription de conversation.
-- `DidReceiveMessage`-Cette méthode est appelée lorsque l’extension de l’application de message est active. un nouveau message a été reçu de l’un des participants de la conversation.
+- `DidStartSendingMessage` : Cette méthode est appelée lorsque l’utilisateur clique sur le bouton Envoyer. Cela ne signifie pas que le message a effectivement été remis au destinataire, mais que le processus d’envoi a été démarré.
+- `DidCancelSendingMessage` : Cela se produit quand l’utilisateur appuie sur le bouton *X* dans le coin supérieur droit de la bulle de message dans la transcription de conversation.
+- `DidReceiveMessage` -Cette méthode est appelée lorsque l’extension de l’application de message est active. un nouveau message a été reçu de l’un des participants de la conversation.
 
 ### <a name="group-conversations"></a>Conversations de groupe
 
@@ -599,12 +599,12 @@ Ils seront remis dans un format de secours sous forme de deux messages distincts
 - L’une d’entre elles sera l’image fournie par la disposition du modèle.
 - L’autre sera l’URL fournie dans le `MSMessage` .
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a présenté des techniques avancées pour l’utilisation des extensions d’application de message dans une solution Xamarin. iOS qui s’intègre à l’application **messages** et présente de nouvelles fonctionnalités à l’utilisateur.
 
 ## <a name="related-links"></a>Liens associés
 
-- [Générateur de crème glacée (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios10-icecreambuilder)
+- [Générateur de crème glacée (exemple)](/samples/xamarin/ios-samples/ios10-icecreambuilder)
 - [Référence des messages](https://developer.apple.com/reference/messages)
 - [Guide de programmation de l’extension d’application](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214)

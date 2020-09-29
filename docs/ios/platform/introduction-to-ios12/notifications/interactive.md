@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/04/2018
-ms.openlocfilehash: e629cd8f481558991d02c7fb879502ebd54753bd
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: af06aa4dc7ea836887edcc0416cfd15ce3aa1446
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031938"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91433773"
 ---
 # <a name="interactive-notification-user-interfaces-in-xamarinios"></a>Interfaces utilisateur des notifications interactives dans Xamarin. iOS
 
@@ -20,7 +20,7 @@ Les [extensions de contenu de notification](~/ios/platform/user-notifications/ad
 
 ## <a name="sample-app-redgreennotifications"></a>Exemple d’application : RedGreenNotifications
 
-L’exemple d’application [RedGreenNotifications](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-redgreennotifications) contient une extension de contenu de notification avec une interface utilisateur interactive.
+L’exemple d’application [RedGreenNotifications](/samples/xamarin/ios-samples/ios12-redgreennotifications) contient une extension de contenu de notification avec une interface utilisateur interactive.
 
 Les extraits de code de ce guide proviennent de cet exemple.
 
@@ -58,15 +58,15 @@ Dans l’exemple d’application, le fichier **info. plist** du projet **RedGree
 
 Notez les caractéristiques suivantes :
 
-- Le tableau `UNNotificationExtensionCategory` spécifie le type des catégories de notification gérées par l’extension de contenu.
-- Afin de prendre en charge le contenu interactif, l’extension de contenu de notification définit la clé de `UNNotificationExtensionUserInteractionEnabled` sur `true`.
-- La clé de `UNNotificationExtensionInitialContentSizeRatio` spécifie le rapport hauteur/largeur initial pour l’interface de l’extension de contenu.
+- Le `UNNotificationExtensionCategory` tableau spécifie le type des catégories de notification gérées par l’extension de contenu.
+- Afin de prendre en charge le contenu interactif, l’extension de contenu de notification affecte la `UNNotificationExtensionUserInteractionEnabled` valeur à la clé `true` .
+- La `UNNotificationExtensionInitialContentSizeRatio` clé spécifie le rapport hauteur/largeur initial pour l’interface de l’extension de contenu.
 
 ## <a name="interactive-interface"></a>Interface interactive
 
-**MainInterface. Storyboard**, qui définit l’interface d’une extension de contenu de notification, est un storyboard standard contenant un contrôleur d’affichage unique. Dans l’exemple d’application, le contrôleur d’affichage est de type `NotificationViewController`et contient une vue d’image, trois boutons et un curseur. La table de montage séquentiel associe ces contrôles aux gestionnaires définis dans **NotificationViewController.cs**:
+**MainInterface. Storyboard**, qui définit l’interface d’une extension de contenu de notification, est un storyboard standard contenant un contrôleur d’affichage unique. Dans l’exemple d’application, le contrôleur d’affichage est de type `NotificationViewController` et contient une vue d’image, trois boutons et un curseur. La table de montage séquentiel associe ces contrôles aux gestionnaires définis dans **NotificationViewController.cs**:
 
-- Le gestionnaire de bouton **lancer l’application** appelle la méthode d’action `PerformNotificationDefaultAction` sur `ExtensionContext`, qui lance l’application :
+- Le gestionnaire de bouton **lancer l’application** appelle la `PerformNotificationDefaultAction` méthode d’action sur `ExtensionContext` , qui lance l’application :
 
     ```csharp
     partial void HandleLaunchAppButtonTap(UIButton sender)
@@ -75,7 +75,7 @@ Notez les caractéristiques suivantes :
     }
     ```
 
-    Dans l’application, le `Delegate` du centre de notification de l’utilisateur (dans l’exemple d’application, le `AppDelegate`) peut répondre à l’interaction dans la méthode `DidReceiveNotificationResponse` :
+    Dans l’application, le centre de notification de l’utilisateur `Delegate` (dans l’exemple d’application `AppDelegate` ) peut répondre à l’interaction dans la   `DidReceiveNotificationResponse` méthode :
 
     ```csharp
     [Export("userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:")]
@@ -87,7 +87,7 @@ Notez les caractéristiques suivantes :
             // ...
     ```
 
-- Le gestionnaire de bouton **Fermer la notification** appelle `DismissNotificationContentExtension` sur `ExtensionContext`, ce qui ferme la notification :
+- Le gestionnaire de bouton **Fermer la notification** appelle `DismissNotificationContentExtension` sur `ExtensionContext` , qui ferme la notification :
 
     ```csharp
     partial void HandleDismissNotificationButtonTap(UIButton sender)
@@ -117,7 +117,7 @@ Notez les caractéristiques suivantes :
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Exemple d’application – RedGreenNotifications](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-redgreennotifications)
+- [Exemple d’application – RedGreenNotifications](/samples/xamarin/ios-samples/ios12-redgreennotifications)
 - [Infrastructure de notifications utilisateur dans Xamarin. iOS](~/ios/platform/user-notifications/index.md)
 - [UserNotifications (Apple)](https://developer.apple.com/documentation/usernotifications?language=objc)
 - [Nouveautés des notifications utilisateur (WWDC 2018)](https://developer.apple.com/videos/play/wwdc2018/710/)

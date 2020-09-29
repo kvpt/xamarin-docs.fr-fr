@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/07/2017
-ms.openlocfilehash: 0de41379800d3f8fcb26e2bc58497010b8e3bf95
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 07d48a38751680f5e7227682d0639b77b3a3627b
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86931376"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436153"
 ---
 # <a name="working-with-tvos-buttons-in-xamarin"></a>Utilisation des boutons tvOS dans Xamarin
 
@@ -158,7 +158,7 @@ Ensuite, vous définissez la taille et l’emplacement à l’écran du bouton. 
 button.Frame = new CGRect (25, 25, 300, 150);
 ```
 
-Ensuite, définissez le titre du bouton. `UIButtons`sont différents de la plupart des `UIKit` contrôles dans la mesure où ils ont un État pour que vous ne puissiez pas simplement modifier le titre, vous devez le modifier pour un donné `UIControlState` . Par exemple :
+Ensuite, définissez le titre du bouton. `UIButtons` sont différents de la plupart des `UIKit` contrôles dans la mesure où ils ont un État pour que vous ne puissiez pas simplement modifier le titre, vous devez le modifier pour un donné `UIControlState` . Par exemple :
 
 ```csharp
 button.SetTitle ("Hello", UIControlState.Normal);
@@ -248,13 +248,13 @@ Utilisez la `TintColor` propriété pour définir une teinte de couleur appliqu�
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a abordé la conception et l’utilisation de boutons à l’intérieur d’une application Xamarin. tvOS. Il a montré comment utiliser des boutons dans le concepteur iOS et comment créer des boutons dans du code C#. Enfin, il a montré comment modifier le titre d’un bouton et modifier son style et son apparence.
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemples tvOS](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [Exemples tvOS](/samples/browse/?products=xamarin&term=Xamarin.iOS%2btvOS)
 - [tvOS](https://developer.apple.com/tvos/)
 - [Guides de l’interface utilisateur tvOS](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [Guide de programmation d’applications pour tvOS](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

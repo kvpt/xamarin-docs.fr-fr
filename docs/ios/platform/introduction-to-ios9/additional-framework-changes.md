@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 30501600e0b86498ae967340e2201a135b22d7ad
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 8a4b1b5ed3089cb7044850cf19629fa063e43703
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939116"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436349"
 ---
 # <a name="additional-ios-9-frameworks-changes"></a>Modifications supplémentaires des frameworks iOS 9
 
@@ -74,8 +74,8 @@ Apple a inclus les modifications suivantes à l’infrastructure de Fondation da
 
 Les modifications suivantes ont été apportées à la classe [NSBundle](xref:Foundation.NSBundle) pour iOS 9 :
 
-- `GetPreservationPriorityForTag (NSString tag)`-Obtient la priorité de conservation actuelle pour les ressources avec la balise donnée. Les valeurs valides sont comprises dans la plage `0.0` de `1.0` , les ressources dont la priorité est la plus basse seront supprimées en premier.
-- `SetPreservationPriorityForTag (double priority, NSSet tags)`: Définit la priorité de conservation actuelle pour les ressources avec les balises spécifiées. Les valeurs valides sont comprises dans la plage `0.0` de `1.0` , les ressources dont la priorité est la plus basse seront supprimées en premier.
+- `GetPreservationPriorityForTag (NSString tag)` -Obtient la priorité de conservation actuelle pour les ressources avec la balise donnée. Les valeurs valides sont comprises dans la plage `0.0` de `1.0` , les ressources dont la priorité est la plus basse seront supprimées en premier.
+- `SetPreservationPriorityForTag (double priority, NSSet tags)` : Définit la priorité de conservation actuelle pour les ressources avec les balises spécifiées. Les valeurs valides sont comprises dans la plage `0.0` de `1.0` , les ressources dont la priorité est la plus basse seront supprimées en premier.
 
 Pour plus d’informations, consultez la [référence NSBundle](https://developer.apple.com/library/prerelease/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class/index.html#//apple_ref/occ/cl/NSBundle)d’Apple.
 
@@ -260,7 +260,7 @@ Utilisez la nouvelle `UITextInputAssistantItem` classe pour les groupes de bouto
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemples iOS 9](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
+- [Exemples iOS 9](/samples/browse/?products=xamarin&term=Xamarin.iOS%2biOS9)
 - [Introduction à iOS 9](~/ios/platform/introduction-to-ios9/index.md)
 - [iOS 9 pour les développeurs](https://developer.apple.com/ios/pre-release/)
 - [Nouveautés d’iOS 9,0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)

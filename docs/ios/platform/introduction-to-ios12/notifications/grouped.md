@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/04/2018
-ms.openlocfilehash: 8c4ad31d91e6f9e4415309eee6c3da8a095dc097
-ms.sourcegitcommit: 80bd4d74812d2c086a164323b72a14662276d302
+ms.openlocfilehash: 8c440d61a41fc26aa7537dc169be08c2bf413c68
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88608608"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435222"
 ---
 # <a name="grouped-notifications-in-xamarinios"></a>Notifications groupées dans Xamarin. iOS
 
@@ -22,7 +22,7 @@ Les applications peuvent également regrouper les notifications par thread, ce q
 
 ## <a name="sample-app-groupednotifications"></a>Exemple d’application : GroupedNotifications
 
-Pour savoir comment utiliser des notifications groupées avec Xamarin. iOS, consultez l’exemple d’application [GroupedNotifications](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-groupednotifications) .
+Pour savoir comment utiliser des notifications groupées avec Xamarin. iOS, consultez l’exemple d’application [GroupedNotifications](/samples/xamarin/ios-samples/ios12-groupednotifications) .
 
 Cet exemple d’application simule des conversations avec différents amis, en envoyant une notification pour chaque message et en les regroupant par thread. Il montre également comment les notifications déthreadées s’imposent dans un groupe au niveau de l’application.
 
@@ -139,7 +139,7 @@ Toutefois, il ne définit pas `ThreadIdentifier` sur l' `UNMutableNotificationCo
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Exemple d’application – GroupedNotifications](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-groupednotifications)
+- [Exemple d’application – GroupedNotifications](/samples/xamarin/ios-samples/ios12-groupednotifications)
 - [Infrastructure de notifications utilisateur dans Xamarin. iOS](~/ios/platform/user-notifications/index.md)
 - [Nouveautés des notifications utilisateur (WWDC 2018)](https://developer.apple.com/videos/play/wwdc2018/710/)
 - [Utilisation de notifications groupées (WWDC 2018)](https://developer.apple.com/videos/play/wwdc2018/711/)

@@ -12,12 +12,12 @@ ms.date: 04/01/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a28e391c6bacd460f095c94e30b2d9433a5191e4
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 8f19595fdabd663312e6346deaed65f85aed1280
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86931792"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436972"
 ---
 # <a name="store-data-in-a-local-sqlitenet-database"></a>Stocker des données dans une base de données SQLite.NET locale
 
@@ -33,9 +33,9 @@ Le guide de démarrage rapide explique comment stocker des données dans une bas
 Page de [ ![ Commentaires](database-images/screenshots1-sml.png)](database-images/screenshots1.png#lightbox "Page de notes")page 
  [ ![ entrée note](database-images/screenshots2-sml.png)](database-images/screenshots2.png#lightbox "Page d’entrée de note")
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Conditions préalables requises
 
-Vous devez suivre correctement le [précédent guide de démarrage rapide](multi-page.md) avant de tenter de suivre ce guide de démarrage rapide. Vous pouvez également télécharger l’[exemple du précédent guide de démarrage rapide](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-multipage/), et l’utiliser comme point de départ pour ce guide de démarrage rapide.
+Vous devez suivre correctement le [précédent guide de démarrage rapide](multi-page.md) avant de tenter de suivre ce guide de démarrage rapide. Vous pouvez également télécharger l’[exemple du précédent guide de démarrage rapide](/samples/xamarin/xamarin-forms-samples/getstarted-notes-multipage/), et l’utiliser comme point de départ pour ce guide de démarrage rapide.
 
 ::: zone pivot="windows"
 
@@ -482,9 +482,9 @@ Dans ce démarrage rapide, vous avez appris comment :
 Pour appliquer des styles à l’application à l’aide de styles XAML, passez au prochain guide de démarrage rapide.
 
 > [!div class="nextstepaction"]
-> [Suivant](styling.md)
+> [Next](styling.md)
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Notes (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-database/)
-- [Xamarin.FormsPrésentation approfondie des Démarrages rapides](deepdive.md)
+- [Notes (exemple)](/samples/xamarin/xamarin-forms-samples/getstarted-notes-database/)
+- [Xamarin.Forms Présentation approfondie des Démarrages rapides](deepdive.md)

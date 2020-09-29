@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 002b6ced319bf7e7b1c5b9b7cc472c43eefcc450
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: e85a273c75fd09672c6c75738adcdc576705af09
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574264"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91433987"
 ---
 # <a name="copy-and-paste-in-xamarinmac"></a>Copier et coller dans Xamarin. Mac
 
@@ -659,11 +659,11 @@ Dans leur forme la plus simple, les pasteboards sont utilisés pour déplacer de
 
 Un tableau de montage peut être public ou privé et peut être utilisé à diverses fins dans une application ou entre plusieurs applications. macOS fournit plusieurs pasteboards standard, chacun avec une utilisation spécifique et bien définie :
 
-- `NSGeneralPboard`: Collage par défaut pour les opérations **couper**, **copier** et **coller** .
-- `NSRulerPboard`-Prend en charge les opérations **couper**, **copier** et **coller** sur les **règles**.
-- `NSFontPboard`-Prend en charge les opérations **couper**, **copier** et **coller** sur les `NSFont` objets.
-- `NSFindPboard`-Prend en charge des panneaux de recherche spécifiques à l’application qui peuvent partager le texte recherché.
-- `NSDragPboard`-Prend en charge les opérations **glisser-déplacer &** .
+- `NSGeneralPboard` : Collage par défaut pour les opérations **couper**, **copier** et **coller** .
+- `NSRulerPboard` -Prend en charge les opérations **couper**, **copier** et **coller** sur les **règles**.
+- `NSFontPboard` -Prend en charge les opérations **couper**, **copier** et **coller** sur les `NSFont` objets.
+- `NSFindPboard` -Prend en charge des panneaux de recherche spécifiques à l’application qui peuvent partager le texte recherché.
+- `NSDragPboard` -Prend en charge les opérations **glisser-déplacer &** .
 
 Dans la plupart des cas, vous utiliserez l’un des pasteboards définis par le système. Toutefois, il peut y avoir des situations qui nécessitent la création de vos propres pasteboards. Dans ces situations, vous pouvez utiliser la `FromName (string name)` méthode de la `NSPasteboard` classe pour créer une copie personnalisée avec le nom donné.
 
@@ -1272,13 +1272,13 @@ if (ok) {
 }
 ```
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a décrit en détail l’utilisation du collage dans une application Xamarin. Mac pour prendre en charge les opérations de copie et de collage. Tout d’abord, il a introduit un exemple simple pour vous familiariser avec les opérations pasteboards standard. Ensuite, il a vu un aperçu détaillé du montage et de la lecture et de l’écriture de données à partir de celui-ci. Enfin, il a étudié l’utilisation d’un type de données personnalisé pour prendre en charge la copie et le collage de types de données complexes dans une application.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [MacCopyPaste (exemple)](https://docs.microsoft.com/samples/xamarin/mac-samples/maccopypaste)
+- [MacCopyPaste (exemple)](/samples/xamarin/mac-samples/maccopypaste)
 - [Hello, Mac](~/mac/get-started/hello-mac.md)
 - [Guide de programmation de la copie](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/PasteboardGuide106/Articles/pbGettingStarted.html)
 - [Human Interface Guidelines pour macOS](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)

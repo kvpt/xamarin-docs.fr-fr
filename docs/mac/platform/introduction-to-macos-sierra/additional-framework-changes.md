@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 03840e127ba53ee63623252585e51e51e6890eb5
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 9bee1cb5108053dac74fcde4f4f5171c24c7ce1a
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571595"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91437216"
 ---
 # <a name="additional-macos-sierra-framework-changes"></a>Autres modifications du framework macOS Sierra
 
@@ -39,11 +39,11 @@ Les améliorations suivantes ont été apportées à l’infrastructure AppKit p
 - La passe de disposition de la vue différée a été optimisée et étendue.
 - L’API glisser-déplacer comprend désormais les nouvelles `NSFilePromiseProvider` `NSFilePromiseReceiver` classes et pour prendre en charge le troupeau de glissement.
 - Plusieurs constructeurs pratiques ont été ajoutés aux contrôles existants :
-  - `NSButton`comprend de nouveaux constructeurs pour créer des boutons de commande, des cases à cocher et des cases d’option.
-  - `NSTextField`comprend de nouveaux constructeurs permettant de créer des étiquettes d’habillage et sans habillage, des étiquettes avec attributs et des champs de texte modifiables.
-  - `NSSegmentedControl`comprend de nouveaux constructeurs pour la création de contrôles segmentés à partir d’un groupe d’étiquettes ou d’images.
-  - `NSSlider`comprend de nouveaux constructeurs pour créer des curseurs linéaires horizontaux.
-  - `NSImageView`comprend de nouveaux constructeurs permettant de créer des vues d’images non modifiables à partir d’un donné `NSImage` .
+  - `NSButton` comprend de nouveaux constructeurs pour créer des boutons de commande, des cases à cocher et des cases d’option.
+  - `NSTextField` comprend de nouveaux constructeurs permettant de créer des étiquettes d’habillage et sans habillage, des étiquettes avec attributs et des champs de texte modifiables.
+  - `NSSegmentedControl` comprend de nouveaux constructeurs pour la création de contrôles segmentés à partir d’un groupe d’étiquettes ou d’images.
+  - `NSSlider` comprend de nouveaux constructeurs pour créer des curseurs linéaires horizontaux.
+  - `NSImageView` comprend de nouveaux constructeurs permettant de créer des vues d’images non modifiables à partir d’un donné `NSImage` .
 - Le nouveau `NSGridView` a été ajouté pour mettre automatiquement en forme une collection de sous-vues dans une grille avec des lignes et des colonnes de taille variable qui peuvent être masquées ou affichées dynamiquement.
 
 <a name="AVFoundation-Framework-Enhancements"></a>
@@ -103,7 +103,7 @@ Les améliorations suivantes ont été apportées à l’infrastructure GameKit 
 
 - L' **application Game Center** a été dépréciée et supprimée de MacOS. Si l’application utilise GameKit, elle _doit_ présenter sa propre interface pour afficher les fonctionnalités GameKit telles que Leaderboards, etc.
 - Un nouveau type de compte iCloud est implémenté par la classe [GKCloudPlayer](https://developer.apple.com/reference/gamekit/gkcloudplayer) .
-- La nouvelle classe [GKGameSession](https://developer.apple.com/reference/gamekit/gkgamesession) fournit une solution généralisée pour la gestion du stockage de données persistant sur Game Center. `GKGameSession`gère une liste de joueurs et l’application est responsable de l’implémentation de la manière dont la date du participant est stockée, récupérée ou échangée entre les joueurs. Dans de nombreux cas, les sessions de jeu peuvent remplacer les correspondances basées sur les activations existantes, les correspondances en temps réel ou les méthodes d’enregistrement de jeu persistantes.
+- La nouvelle classe [GKGameSession](https://developer.apple.com/reference/gamekit/gkgamesession) fournit une solution généralisée pour la gestion du stockage de données persistant sur Game Center. `GKGameSession` gère une liste de joueurs et l’application est responsable de l’implémentation de la manière dont la date du participant est stockée, récupérée ou échangée entre les joueurs. Dans de nombreux cas, les sessions de jeu peuvent remplacer les correspondances basées sur les activations existantes, les correspondances en temps réel ou les méthodes d’enregistrement de jeu persistantes.
 
 <a name="GamePlayKit-Framework-Enhancements"></a>
 
@@ -199,7 +199,7 @@ Les infrastructures suivantes ont été ajoutées à macOS Sierra :
 - **Framework intentions** : ce Framework permet à l’application d’examiner les interactions (telles que l’emplacement ou les actions de l’utilisateur) et de prendre des mesures en fonction de ces informations.
 - **Framework SafariServices** : ce Framework permet à l’application de développer des extensions d’application pour Safari (comme les bloqueurs de contenu) pour MacOS et iOS.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [Exemples Mac](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Mac)
+- [Exemples Mac](/samples/browse/?products=xamarin&term=Xamarin.Mac)
 - [Nouveautés du système d’exploitation X 10,12](https://developer.apple.com/library/prerelease/content/releasenotes/MacOSX/WhatsNewInOSX/Articles/OSXv10.html#//apple_ref/doc/uid/TP40017145-SW1)

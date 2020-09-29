@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/05/2017
-ms.openlocfilehash: 0de7fcd5af9e0338679893b3d7fde073c5274365
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 30709b9b75c18f954135e950b95094f9ee2d71ac
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84567714"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435264"
 ---
 # <a name="threading-in-xamarinios"></a>Threading dans Xamarin. iOS
 
 Le runtime Xamarin. iOS permet aux développeurs d’accéder aux API de thread .NET, à la fois explicitement lors de l’utilisation de threads ( `System.Threading.Thread, System.Threading.ThreadPool` ) et implicitement lors de l’utilisation de modèles de délégué asynchrones ou des méthodes BeginXxx, ainsi que de la plage complète d’API qui prennent en charge la bibliothèque parallèle de tâches.
 
-Xamarin recommande vivement d’utiliser la [bibliothèque parallèle de tâches](https://msdn.microsoft.com/library/dd460717.aspx) (TPL) pour créer des applications pour plusieurs raisons :
+Xamarin recommande vivement d’utiliser la [bibliothèque parallèle de tâches](/dotnet/standard/parallel-programming/task-parallel-library-tpl) (TPL) pour créer des applications pour plusieurs raisons :
 
 - Le planificateur TPL par défaut délègue l’exécution des tâches au pool de threads, qui, à son tour, augmente de manière dynamique le nombre de threads nécessaires à l’exécution du processus, tout en évitant un scénario où un trop grand nombre de threads finissent par concurrence pour le temps processeur. 
 - Il est plus facile de réfléchir aux opérations en termes de tâches TPL. Vous pouvez facilement les manipuler, les planifier, sérialiser leur exécution ou lancer un grand nombre en parallèle avec un ensemble complet d’API. 
@@ -70,6 +70,6 @@ void MyThreadStart (object arg)
 
 Remarque : étant donné que Xamarin. iOS 5,2, vous n’avez plus besoin de fournir votre propre `NSAutoReleasePool` compte, car un seul sera fourni automatiquement.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Utilisation du thread d’interface utilisateur](~/ios/user-interface/ios-ui/ui-thread.md)

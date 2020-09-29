@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 90d3a3b6a1e3a3c20ba8cf2ed1f12f234e3af33b
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: c50d02b4fc806a9ce466da450cfeb6afaa68df93
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031483"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91433699"
 ---
 # <a name="sirikit-in-xamarinios"></a>SiriKit dans Xamarin. iOS
 
@@ -31,17 +31,17 @@ Siri fonctionne avec le concept de **domaines**, de groupes d’actions connues 
 
 Lorsque l’utilisateur effectue une requête de Siri impliquant l’un des services d’une extension d’application, SiriKit envoie à l’extension un objet d' **intention** qui décrit la demande de l’utilisateur ainsi que toutes les données de prise en charge. L’extension d’application génère ensuite l’objet de **réponse** approprié pour l' **intention**donnée, en détaillant la manière dont l’extension peut traiter la demande.
 
-## <a name="understanding-sirikit-conceptsiosplatformsirikitunderstanding-sirikitmd"></a>[Présentation des concepts de SiriKit](~/ios/platform/sirikit/understanding-sirikit.md)
+## <a name="understanding-sirikit-concepts"></a>[Présentation des concepts de SiriKit](~/ios/platform/sirikit/understanding-sirikit.md)
 
 Cet article aborde les concepts clés qui seront nécessaires à l’utilisation de SiriKit dans une application Xamarin. iOS. Il couvre les nouvelles intentions et les points d’extension d’interface utilisateur et la façon dont ils fonctionnent avec l’application et le vocabulaire utilisateur pour ouvrir une application sur Siri.
 
-## <a name="implementing-sirikitiosplatformsirikitimplementing-sirikitmd"></a>[Implémentation de SiriKit](~/ios/platform/sirikit/implementing-sirikit.md)
+## <a name="implementing-sirikit"></a>[Implémentation de SiriKit](~/ios/platform/sirikit/implementing-sirikit.md)
 
 Cet article décrit les étapes requises pour implémenter la prise en charge de SiriKit dans une application Xamarin. iOS. Le développeur doit lire le Guide de présentation des concepts SiriKit ci-dessus avant de tenter d’ajouter la prise en charge de SiriKit à une application, car les concepts clés qui seront nécessaires pour une implémentation réussie.
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemple ElizaChat](https://docs.microsoft.com/samples/xamarin/ios-samples/ios10-elizachat)
+- [Exemple ElizaChat](/samples/xamarin/ios-samples/ios10-elizachat)
 - [Guide de programmation SiriKit](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/index.html)
 - [Informations de référence sur l’infrastructure Intent](https://developer.apple.com/reference/intents)
 - [Informations de référence sur l’infrastructure d’interface utilisateur](https://developer.apple.com/reference/intentsui)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 08/30/2017
-ms.openlocfilehash: 51b28ec05af91dea21b1291956de30c549b1868e
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 6803ecf2303ff2c91265f3ac8352a7aa15e74d40
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571673"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436204"
 ---
 # <a name="introduction-to-arkit-in-xamarinios"></a>Présentation de ARKit dans Xamarin. iOS
 
@@ -103,16 +103,16 @@ Il est recommandé de suspendre la session ARKit quand le contrôleur d’affich
 SceneView.Session.Pause();
 ```
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Le code ci-dessus génère une application ARKit simple. Des exemples plus complexes s’attendent à ce que le contrôleur d’affichage hébergeant la session de réalité augmentée à implémenter `IARSCNViewDelegate` et que des méthodes supplémentaires soient implémentées.
 
 ARKit fournit un grand nombre de fonctionnalités plus sophistiquées, telles que le suivi des surfaces et l’interaction avec l’utilisateur. Pour obtenir un exemple de combinaison de suivi ARKit avec UrhoSharp, consultez la [démonstration UrhoSharp](urhosharp.md) .
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Réalité augmentée (Apple)](https://developer.apple.com/arkit/)
 - [Utilisation de ARKit avec UrhoSharp](urhosharp.md)
-- [Exemple simple de ARKit (jet)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-arkitsample)
-- [ARKit placement d’objets (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-arkitplacingobjects)
+- [Exemple simple de ARKit (jet)](/samples/xamarin/ios-samples/ios11-arkitsample)
+- [ARKit placement d’objets (exemple)](/samples/xamarin/ios-samples/ios11-arkitplacingobjects)
 - [Présentation de la réalité augmentée par ARKit pour iOS (WWDC) (vidéo)](https://developer.apple.com/videos/play/wwdc2017/602/)

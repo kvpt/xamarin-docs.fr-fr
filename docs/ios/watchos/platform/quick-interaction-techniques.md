@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: e57b6df0f0137d5a8a8f2c0ba68793008986ba18
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 0252626cb58ff334e3cff2cc60e6544e4eba18c0
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86932182"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435380"
 ---
 # <a name="quick-interaction-techniques-for-watchos-3-in-xamarin"></a>Techniques d’interaction rapide pour Watchos 3 dans Xamarin
 
@@ -115,8 +115,8 @@ Nouveauté de Watchos 3, le développeur a désormais un accès direct aux évé
 
 L’accès Digital Crown est fourni par les éléments suivants :
 
-- `WKCrownSequencer`-Permet d’accéder aux rotations par seconde.
-- `WKCrownDelegate`-Fournit l’accès aux événements Delta rotatifs.
+- `WKCrownSequencer` -Permet d’accéder aux rotations par seconde.
+- `WKCrownDelegate` -Fournit l’accès aux événements Delta rotatifs.
 
 #### <a name="rotations-per-second"></a>Rotations par seconde
 
@@ -252,8 +252,8 @@ Nouveauté de Watchos 3, le développeur peut maintenant utiliser les objets Spr
 
 Deux nouvelles classes d’interface ont été ajoutées pour prendre en charge cette fonctionnalité :
 
-- `WKInterfaceSKScene`-Pour l’utilisation de graphiques 2D SpriteKit.
-- `WKInterfaceSCNScene`-Pour travailler avec des graphiques 3D SceneKit.
+- `WKInterfaceSKScene` -Pour l’utilisation de graphiques 2D SpriteKit.
+- `WKInterfaceSCNScene` -Pour travailler avec des graphiques 3D SceneKit.
 
 Pour utiliser ces objets, faites-les simplement glisser sur l’aire de conception à l’intérieur du storyboard de l’application Watch dans le Interface Builder de Xcode et utilisez l' **inspecteur d’attributs** pour les configurer.
 
@@ -348,10 +348,10 @@ Apple suggère les éléments suivants :
 - Dans la mesure du possible, simplifiez la navigation au sein de l’application.
 - Ne jamais faire attendre l’utilisateur, les autoriser à supprimer leur poignet et à le dégager avec l’application dès que possible.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a abordé les techniques d’interaction rapide qu’Apple a ajoutées à Watchos 3 et comment les implémenter dans Xamarin. iOS pour Apple Watch.
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemples watchOS](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+watchOS)
+- [Exemples watchOS](/samples/browse/?products=xamarin&term=Xamarin.iOS%2bwatchOS)

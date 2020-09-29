@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: 4da0bd1c47c37430b278bed46f658b935a502e2d
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: fdfdd385563ee425f0e8767aed13304ae9541b94
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937876"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435355"
 ---
 # <a name="unified-storyboards-in-xamarinios"></a>Storyboards unifiés dans Xamarin. iOS
 
@@ -28,7 +28,7 @@ Avant iOS 8, le développeur a utilisé `UIInterfaceOrientation` et `UIInterface
 
 Les appareils sont définis par des classes de taille, à la fois dans les axes vertical et horizontal, et il existe deux types de classes de taille dans iOS 8 :
 
-- **Normal** : soit pour une grande taille d’écran (par exemple, un iPad), soit pour un gadget qui donne l’impression d’une grande taille (par exemple, un`UIScrollView`
+- **Normal** : soit pour une grande taille d’écran (par exemple, un iPad), soit pour un gadget qui donne l’impression d’une grande taille (par exemple, un `UIScrollView`
 - **Compact** : il s’agit des appareils plus petits (tels qu’un iPhone). Cette taille prend en compte l’orientation de l’appareil.
 
 Si les deux concepts sont utilisés ensemble, le résultat est une grille 2 x 2 qui définit les différentes tailles possibles qui peuvent être utilisées dans les deux orientations différentes, comme illustré dans le diagramme suivant :
@@ -216,7 +216,7 @@ iOS 8 fournit plusieurs rappels que le développeur peut utiliser pour participe
 
 |Phase|Rappel|Description|
 |--- |--- |--- |
-|Installation|<ul><li>`WillTransitionToTraitCollection`</li><li>`TraitCollectionDidChange`</li></ul>|<ul><li>Cette méthode est appelée au début d’une modification de trait avant qu’une collection de traits soit définie sur sa nouvelle valeur.</li><li>La méthode est appelée lorsque la valeur de la collection de traits a changé mais avant qu’une animation ait lieu.</li></ul>|
+|Programme d’installation|<ul><li>`WillTransitionToTraitCollection`</li><li>`TraitCollectionDidChange`</li></ul>|<ul><li>Cette méthode est appelée au début d’une modification de trait avant qu’une collection de traits soit définie sur sa nouvelle valeur.</li><li>La méthode est appelée lorsque la valeur de la collection de traits a changé mais avant qu’une animation ait lieu.</li></ul>|
 |Animation|`WillTransitionToTraitCollection`|Le coordinateur de transition qui est passé à cette méthode a une `AnimateAlongside` propriété qui permet au développeur d’ajouter des animations qui seront exécutées en même temps que les animations par défaut.|
 |Nettoyage|`WillTransitionToTraitCollection`|Fournit une méthode permettant aux développeurs d’inclure leur propre code de nettoyage une fois la transition effectuée.|
 
@@ -228,17 +228,17 @@ La `WillTransitionToTraitCollection` méthode est idéale pour animer des contr�
 
 Examinons à présent de plus près ce qui se passe lorsqu’un contrôleur de vue fractionnée réduit d’une colonne à une vue d’une colonne. Dans le cadre de cette modification, il existe deux processus qui doivent se produire :
 
-- Par défaut, le contrôleur du mode fractionné utilise le contrôleur d’affichage principal comme vue une fois la réduction effectuée. Le développeur peut substituer ce comportement en substituant la `GetPrimaryViewControllerForCollapsingSplitViewController` méthode du `UISplitViewControllerDelegate` et en fournissant un contrôleur d’affichage qu’il souhaite afficher dans l’État réduit.
-- Le contrôleur d’affichage secondaire doit être fusionné dans le contrôleur d’affichage principal. En général, le développeur n’a pas besoin d’entreprendre aucune action pour cette étape. le contrôleur de vue fractionnée prend en charge la gestion automatique de cette phase en fonction du périphérique matériel. Toutefois, il peut y avoir des cas particuliers où le développeur souhaite interagir avec cette modification. L’appel `CollapseSecondViewController` de la méthode du `UISplitViewControllerDelegate` permet l’affichage du contrôleur d’affichage principal lorsque la réduction se produit, au lieu du mode Détails.
+- Par défaut, le contrôleur du mode fractionné utilise le contrôleur d’affichage principal comme vue une fois la réduction effectuée. Le développeur peut substituer ce comportement en substituant la  `GetPrimaryViewControllerForCollapsingSplitViewController` méthode du  `UISplitViewControllerDelegate` et en fournissant un contrôleur d’affichage qu’il souhaite afficher dans l’État réduit.
+- Le contrôleur d’affichage secondaire doit être fusionné dans le contrôleur d’affichage principal. En général, le développeur n’a pas besoin d’entreprendre aucune action pour cette étape. le contrôleur de vue fractionnée prend en charge la gestion automatique de cette phase en fonction du périphérique matériel. Toutefois, il peut y avoir des cas particuliers où le développeur souhaite interagir avec cette modification. L’appel  `CollapseSecondViewController` de la méthode du  `UISplitViewControllerDelegate` permet l’affichage du contrôleur d’affichage principal lorsque la réduction se produit, au lieu du mode Détails.
 
 ### <a name="expanding-the-split-view-controller"></a>Développement du contrôleur d’affichage fractionné
 
 Examinons à présent de plus près ce qui se passe lorsqu’un contrôleur d’affichage fractionné est développé à partir d’un État réduit. Là encore, il y a deux étapes qui doivent se produire :
 
-- Tout d’abord, définissez le nouveau contrôleur d’affichage principal. Par défaut, le contrôleur du mode fractionné utilise automatiquement le contrôleur d’affichage principal à partir de l’affichage réduit. Là encore, le développeur peut substituer ce comportement à l’aide `GetPrimaryViewControllerForExpandingSplitViewController` de la méthode de `UISplitViewControllerDelegate` .
-- Une fois que le contrôleur d’affichage principal a été choisi, le contrôleur d’affichage secondaire doit être recréé. Là encore, le contrôleur de vue fractionnée prend en charge la gestion automatique de cette phase en fonction du périphérique matériel. Le développeur peut substituer ce comportement en appelant la `SeparateSecondaryViewController` méthode de `UISplitViewControllerDelegate` .
+- Tout d’abord, définissez le nouveau contrôleur d’affichage principal. Par défaut, le contrôleur du mode fractionné utilise automatiquement le contrôleur d’affichage principal à partir de l’affichage réduit. Là encore, le développeur peut substituer ce comportement à l’aide  `GetPrimaryViewControllerForExpandingSplitViewController` de la méthode de  `UISplitViewControllerDelegate` .
+- Une fois que le contrôleur d’affichage principal a été choisi, le contrôleur d’affichage secondaire doit être recréé. Là encore, le contrôleur de vue fractionnée prend en charge la gestion automatique de cette phase en fonction du périphérique matériel. Le développeur peut substituer ce comportement en appelant la  `SeparateSecondaryViewController` méthode de  `UISplitViewControllerDelegate` .
 
-Dans un contrôleur d’affichage fractionné, le contrôleur d’affichage principal joue un rôle dans le développement et la réduction des vues en implémentant `CollapseSecondViewController` les `SeparateSecondaryViewController` méthodes et du `UISplitViewControllerDelegate` . `UINavigationController`implémente ces méthodes pour pousser et dépiler automatiquement le contrôleur d’affichage secondaire.
+Dans un contrôleur d’affichage fractionné, le contrôleur d’affichage principal joue un rôle dans le développement et la réduction des vues en implémentant `CollapseSecondViewController` les `SeparateSecondaryViewController` méthodes et du `UISplitViewControllerDelegate` . `UINavigationController` implémente ces méthodes pour pousser et dépiler automatiquement le contrôleur d’affichage secondaire.
 
 ### <a name="showing-view-controllers"></a>Affichage des contrôleurs d’affichage
 
@@ -246,8 +246,8 @@ Une autre modification apportée par Apple à iOS 8 est la façon dont le dével
 
 Cela présentait un couplage très étroit entre le contrôleur de navigation et l’environnement dans lequel il s’exécutait. Dans iOS 8, Apple l’a découplée en fournissant deux nouvelles méthodes :
 
-- `ShowViewController`– S’adapte pour afficher le nouveau contrôleur d’affichage en fonction de son environnement. Par exemple, dans, `UINavigationController` il envoie simplement la nouvelle vue sur la pile. Dans un contrôleur d’affichage fractionné, le nouveau contrôleur d’affichage sera présenté sur le côté gauche en tant que nouveau contrôleur d’affichage principal. Si aucun contrôleur d’affichage de conteneur n’est présent, la nouvelle vue sera affichée en tant que contrôleur d’affichage modal.
-- `ShowDetailViewController`: Fonctionne de façon similaire à `ShowViewController` , mais est implémenté sur un contrôleur d’affichage fractionné pour remplacer le mode Détails par le nouveau contrôleur d’affichage passé. Si le contrôleur du mode fractionné est réduit (comme dans le cas d’une application iPhone), l’appel est redirigé vers la `ShowViewController` méthode et la nouvelle vue est affichée en tant que contrôleur d’affichage principal. Là encore, si aucun contrôleur d’affichage de conteneur n’est présent, la nouvelle vue sera affichée en tant que contrôleur d’affichage modal.
+- `ShowViewController` – S’adapte pour afficher le nouveau contrôleur d’affichage en fonction de son environnement. Par exemple, dans,  `UINavigationController` il envoie simplement la nouvelle vue sur la pile. Dans un contrôleur d’affichage fractionné, le nouveau contrôleur d’affichage sera présenté sur le côté gauche en tant que nouveau contrôleur d’affichage principal. Si aucun contrôleur d’affichage de conteneur n’est présent, la nouvelle vue sera affichée en tant que contrôleur d’affichage modal.
+- `ShowDetailViewController` : Fonctionne de façon similaire à  `ShowViewController` , mais est implémenté sur un contrôleur d’affichage fractionné pour remplacer le mode Détails par le nouveau contrôleur d’affichage passé. Si le contrôleur du mode fractionné est réduit (comme dans le cas d’une application iPhone), l’appel est redirigé vers la  `ShowViewController` méthode et la nouvelle vue est affichée en tant que contrôleur d’affichage principal. Là encore, si aucun contrôleur d’affichage de conteneur n’est présent, la nouvelle vue sera affichée en tant que contrôleur d’affichage modal.
 
 Ces méthodes fonctionnent en démarrant au contrôleur d’affichage feuille et parcourent la hiérarchie d’affichage jusqu’à ce qu’elles trouvent le contrôleur d’affichage de conteneur approprié pour gérer l’affichage de la nouvelle vue.
 
@@ -261,8 +261,8 @@ Dans cette section, nous allons voir comment ces méthodes sont réellement impl
 
 Cette méthode parcourt la chaîne de hiérarchie jusqu’à ce que le contrôleur d’affichage de conteneur correct soit trouvé. Par exemple :
 
-1. Si une `ShowViewController` méthode est appelée, le premier contrôleur d’affichage de la chaîne qui implémente cette méthode est le contrôleur de navigation. il est donc utilisé comme parent de la nouvelle vue.
-1. Si une `ShowDetailViewController` méthode a été appelée à la place, le contrôleur de vue fractionnée est le premier contrôleur d’affichage à l’implémenter, donc il est utilisé comme parent.
+1. Si une  `ShowViewController` méthode est appelée, le premier contrôleur d’affichage de la chaîne qui implémente cette méthode est le contrôleur de navigation. il est donc utilisé comme parent de la nouvelle vue.
+1. Si une  `ShowDetailViewController` méthode a été appelée à la place, le contrôleur de vue fractionnée est le premier contrôleur d’affichage à l’implémenter, donc il est utilisé comme parent.
 
 La `GetTargetForAction` méthode fonctionne en localisant un contrôleur d’affichage qui implémente une action donnée, puis demande ce contrôleur d’affichage s’il souhaite recevoir cette action. Étant donné que cette méthode est publique, les développeurs peuvent créer leurs propres méthodes personnalisées qui fonctionnent de la même façon que les `ShowViewController` méthodes et intégrées `ShowDetailViewController` .
 
@@ -454,7 +454,7 @@ public class SplitViewControllerDelegate : UISplitViewControllerDelegate
 }
 ```
 
-La `SeparateSecondaryViewController` méthode effectue un test pour déterminer si une photo est affichée et prend une mesure en fonction de cet État. Si aucune photo n’est affichée, elle réduit le contrôleur d’affichage secondaire afin que le contrôleur d’affichage principal soit affiché.
+La `SeparateSecondaryViewController`  méthode effectue un test pour déterminer si une photo est affichée et prend une mesure en fonction de cet État. Si aucune photo n’est affichée, elle réduit le contrôleur d’affichage secondaire afin que le contrôleur d’affichage principal soit affiché.
 
 La `CollapseSecondViewController` méthode est utilisée lors du développement du contrôleur d’affichage fractionné pour voir si des photos existent sur la pile, si elle est réduite à cette vue.
 
@@ -749,9 +749,9 @@ Revenez à Visual Studio pour Mac et arrêtez l’exécution de l’application.
 
 Pour assurer la compatibilité descendante avec iOS 7, il vous suffit d’inclure les `Default.png` ressources d’image habituelles dans l’application iOS 8. iOS retourne au comportement précédent et utilise ces fichiers comme écran de démarrage lors de l’exécution sur un appareil iOS 7.
 
-Pour afficher l’implémentation d’un écran de lancement dynamique dans Xamarin, consultez l’exemple d’application d' [écrans de lancement dynamique](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-dynamiclaunchscreen) , iOS 8 joint à ce document.
+Pour afficher l’implémentation d’un écran de lancement dynamique dans Xamarin, consultez l’exemple d’application d' [écrans de lancement dynamique](/samples/xamarin/ios-samples/ios8-dynamiclaunchscreen) , iOS 8 joint à ce document.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a examiné rapidement les classes de taille et comment elles affectent la disposition des appareils iPhone et iPad. Il a vu comment les caractéristiques, les environnements de trait et les collections de caractéristiques fonctionnent avec les classes de taille pour créer des interfaces unifiées. Il a suivi un bref aperçu des contrôleurs d’affichage adaptatif et de la façon dont ils fonctionnent avec les classes de taille dans des interfaces unifiées. Il a vu comment implémenter des classes de taille et des interfaces unifiées entièrement à partir de code C# à l’intérieur d’une application Xamarin iOS 8.
 
@@ -759,8 +759,8 @@ Enfin, cet article a abordé les principes de base de la création de storyboard
 
 ## <a name="related-links"></a>Liens associés
 
-- [Photos adaptatives (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-adaptivephotos)
-- [Écrans de lancement dynamique (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-dynamiclaunchscreen)
+- [Photos adaptatives (exemple)](/samples/xamarin/ios-samples/ios8-adaptivephotos)
+- [Écrans de lancement dynamique (exemple)](/samples/xamarin/ios-samples/ios8-dynamiclaunchscreen)
 - [Introduction à iOS 8](~/ios/platform/introduction-to-ios8.md)
 - [Dispositions dynamiques dans iOS8-évolution de 2014 (vidéo)](https://youtu.be/f3mMGlS-lM4)
 - [UIPresentationController](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIPresentationController_class/)

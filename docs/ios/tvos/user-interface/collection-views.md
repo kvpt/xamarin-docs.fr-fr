@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: fd1bf68e45fa163588d91640147d9e9dbf8ff237
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 2adc161742e7891fcce65cf2025a1b7c531c7a39
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939488"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435241"
 ---
 # <a name="working-with-tvos-collection-views-in-xamarin"></a>Utilisation des vues de collection tvOS dans Xamarin
 
@@ -56,8 +56,8 @@ La source de données d’une vue de collection est non seulement responsable de
 
 Étant donné que les vues de collection ont été conçues pour gérer de grandes collections d’éléments, les cellules individuelles peuvent être déplacées en file d’attente et réutilisées pour éviter les limitations de mémoire en cours d’exécution. Il existe deux méthodes différentes pour défiler les vues :
 
-- `DequeueReusableCell`-Crée ou retourne une cellule du type donné (tel que spécifié dans le Storyboard de l’application).
-- `DequeueReusableSupplementaryView`-Crée ou retourne une vue supplémentaire du type donné (tel que spécifié dans le Storyboard de l’application).
+- `DequeueReusableCell` -Crée ou retourne une cellule du type donné (tel que spécifié dans le Storyboard de l’application).
+- `DequeueReusableSupplementaryView` -Crée ou retourne une vue supplémentaire du type donné (tel que spécifié dans le Storyboard de l’application).
 
 Avant d’appeler l’une de ces méthodes, vous devez inscrire la classe, la table de montage séquentiel ou le `.xib` fichier utilisé pour créer l’affichage de la cellule avec la vue de collection. Par exemple :
 
@@ -819,13 +819,13 @@ Récemment ajoutés aux vues de collection pour iOS 9 était la possibilité d�
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a abordé la conception et l’utilisation des vues de collection au sein d’une application Xamarin. tvOS. Tout d’abord, elle a abordé tous les éléments qui composent la vue de collection. Ensuite, il a montré comment concevoir et implémenter une vue de collection à l’aide d’une table de montage séquentiel. Enfin, fournit des liens vers des informations sur la création de dispositions personnalisées et la réorganisation des éléments.
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemples tvOS](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [Exemples tvOS](/samples/browse/?products=xamarin&term=Xamarin.iOS%2btvOS)
 - [tvOS](https://developer.apple.com/tvos/)
 - [Guides de l’interface utilisateur tvOS](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [Guide de programmation d’applications pour tvOS](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

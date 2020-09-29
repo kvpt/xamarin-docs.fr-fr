@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: e89b24572d1581c83868b90a4da438f8fd7f91e4
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: f9ef6e833fe48bb2b124f02d741a39e4141e56e6
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936932"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436359"
 ---
 # <a name="push-notifications-in-ios"></a>Notifications push dans iOS
 
@@ -28,7 +28,7 @@ Les notifications distantes sont des chaînes au format JSON qui adhèrent au fo
 
 Apple gère deux environnements de APNS : un *bac à sable (sandbox)* et un environnement de *production* . L’environnement du bac à sable (sandbox) est destiné à des tests pendant la phase de développement et se trouve `gateway.sandbox.push.apple.com` sur le port TCP 2195. L’environnement de production est destiné à être utilisé dans les applications qui ont été déployées et se trouve `gateway.push.apple.com` sur le port TCP 2195.
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Configuration requise
 
 La notification push doit respecter les règles suivantes qui sont dictées par l’architecture de APNS :
 
@@ -52,7 +52,7 @@ Chacun des environnements mentionnés dans la section précédente requiert leur
 
     [![Entrer la description et un identificateur de Bundle pour l’ID d’application](remote-notifications-in-ios-images/image7new.png)](remote-notifications-in-ios-images/image7new.png#lightbox)
 
-4. Veillez à sélectionner l' **ID d’application explicite** et à ce que l’identificateur de Bundle ne se termine pas par un `*` . Cela créera un identificateur adapté à plusieurs applications, et les certificats de notification push doivent être pour une seule application.
+4. Veillez à sélectionner l' **ID d’application explicite** et à ce que l’identificateur de Bundle ne se termine pas par un  `*` . Cela créera un identificateur adapté à plusieurs applications, et les certificats de notification push doivent être pour une seule application.
 
 5. Sous App Services, sélectionnez **notifications push**:
 
@@ -74,23 +74,23 @@ Chacun des environnements mentionnés dans la section précédente requiert leur
 
     [![Sélectionnez le nouvel ID d’application que vous venez de créer](remote-notifications-in-ios-images/image12new.png)](remote-notifications-in-ios-images/image12new.png#lightbox)
 
-10. Cette opération affiche des instructions qui vous guideront tout au long du processus de création d’une *demande de signature de certificat* à l’aide de l’application Trousseau d' **accès** sur votre Mac.
+10. Cette opération affiche des instructions qui vous guideront tout au long du processus de création d’une  *demande de signature de certificat* à l’aide de l’application Trousseau d'  **accès** sur votre Mac.
 
 11. Maintenant que le certificat a été créé, il doit être utilisé dans le cadre du processus de génération pour signer l’application afin qu’il puisse s’inscrire auprès de APNs. Cela nécessite la création et l’installation d’un profil de provisionnement qui utilise le certificat.
 
 12. Pour créer un profil de provisionnement de développement, accédez à la section **profils de provisionnement** et suivez les étapes pour le créer, à l’aide de l’ID d’application que nous venons de créer.
 
-13. Une fois que vous avez créé le profil de provisionnement, ouvrez l' **organiseur Xcode** et actualisez-le. Si le profil de configuration que vous avez créé n’apparaît pas, il peut être nécessaire de télécharger le profil à partir du portail d’approvisionnement iOS et de l’importer manuellement. La capture d’écran suivante montre un exemple de l’organisateur avec le profil de mise en service ajouté :  
+13. Une fois que vous avez créé le profil de provisionnement, ouvrez l'  **organiseur Xcode** et actualisez-le. Si le profil de configuration que vous avez créé n’apparaît pas, il peut être nécessaire de télécharger le profil à partir du portail d’approvisionnement iOS et de l’importer manuellement. La capture d’écran suivante montre un exemple de l’organisateur avec le profil de mise en service ajouté :  
     [![Cette capture d’écran montre un exemple de l’organisateur avec le profil de mise en service ajouté](remote-notifications-in-ios-images/image13new.png)](remote-notifications-in-ios-images/image13new.png#lightbox)
 
-14. À ce stade, nous devons configurer le projet Xamarin. iOS pour qu’il utilise ce profil de provisionnement nouvellement créé. Cette opération s’effectue à partir de la boîte de dialogue **Options du projet** , sous l’onglet signature de l' **offre groupée iOS** , comme illustré dans la capture d’écran suivante :  
+14. À ce stade, nous devons configurer le projet Xamarin. iOS pour qu’il utilise ce profil de provisionnement nouvellement créé. Cette opération s’effectue à partir de la boîte de dialogue **Options du projet** , sous l’onglet signature de l'  **offre groupée iOS** , comme illustré dans la capture d’écran suivante :  
     [![Configurer le projet Xamarin. iOS pour utiliser ce profil de provisionnement nouvellement créé](remote-notifications-in-ios-images/image11.png)](remote-notifications-in-ios-images/image11.png#lightbox)
 
 À ce stade, l’application est configurée pour fonctionner avec les notifications push. Toutefois, il existe encore quelques étapes supplémentaires requises avec le certificat. Ce certificat est au format DER qui n’est pas compatible avec PushSharp, ce qui nécessite un certificat PKCS12 (Personal Information Exchange). Pour convertir le certificat afin qu’il puisse être utilisé par PushSharp, procédez comme suit :
 
-1. **Téléchargez le fichier de certificat** : Connectez-vous au portail d’approvisionnement iOS, choisissez l’onglet certificats, sélectionnez le certificat associé au profil de provisionnement correct, puis choisissez **Télécharger** .
+1. **Téléchargez le fichier de certificat** : Connectez-vous au portail d’approvisionnement iOS, choisissez l’onglet certificats, sélectionnez le certificat associé au profil de provisionnement correct, puis choisissez  **Télécharger** .
 1. **Ouvrir l’accès au trousseau** -il s’agit d’une interface GUI du système de gestion des mots de passe dans OS X.
-1. **Importer le certificat** : si le certificat n’est pas déjà installé, **fichier... Importez des éléments** à partir du menu Trousseau d’accès. Accédez au certificat qui a été exporté précédemment et sélectionnez-le.
+1. **Importer le certificat** : si le certificat n’est pas déjà installé,  **fichier... Importez des éléments** à partir du menu Trousseau d’accès. Accédez au certificat qui a été exporté précédemment et sélectionnez-le.
 1. **Exporter le certificat** -développez le certificat afin que la clé privée associée soit visible, cliquez avec le bouton droit sur la clé et choisissez Exporter. Vous serez invité à entrer un nom de fichier et un mot de passe pour le fichier exporté.
 
 À ce stade, nous avons terminé avec des certificats. Nous avons créé un certificat qui sera utilisé pour signer des applications iOS et convertir ce certificat dans un format qui peut être utilisé avec PushSharp dans une application serveur. Voyons ensuite comment les applications iOS interagissent avec APNS.
@@ -170,13 +170,13 @@ En outre, une nouvelle `timestamp` clé de données JSON sera dans le corps de l
 >
 > Arrêtez le push des notifications jusqu’à ce que l’appareil inscrive un jeton avec un horodateur ultérieur auprès de votre fournisseur.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cette section présente les concepts clés entourant les notifications push dans iOS. Il a expliqué le rôle du service Apple Push Notification Gateway (APNS). Il a ensuite abordé la création et l’utilisation des certificats de sécurité qui sont essentiels à APNS. Enfin, ce document s’est terminé par une discussion sur la façon dont les serveurs d’applications peuvent utiliser les *services de feedback* pour arrêter le suivi des jetons d’appareil arrivés à expiration.
 
 ## <a name="related-links"></a>Liens associés
 
-- [Notifications-démonstration des notifications locales et distantes (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/notifications)
+- [Notifications-démonstration des notifications locales et distantes (exemple)](/samples/xamarin/ios-samples/notifications)
 - [Notifications push et locales pour les développeurs](https://developer.apple.com/notifications/)
-- [UIApplication](https://docs.microsoft.com/dotnet/api/uikit.uiapplication)
-- [UIRemoteNotificationType](https://docs.microsoft.com/dotnet/api/uikit.UIRemoteNotificationType)
+- [UIApplication](/dotnet/api/uikit.uiapplication)
+- [UIRemoteNotificationType](/dotnet/api/uikit.UIRemoteNotificationType)

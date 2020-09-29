@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2017
-ms.openlocfilehash: 342558908c5f42941c9e6e7ef5c7f75d8e0fa9d4
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 82367d63d1cc7b52d69de52ee635e380cd68c382
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937980"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435653"
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>Procédure pas à pas : liaison d’une bibliothèque objective-C iOS
 
@@ -44,14 +44,14 @@ Nous allons aborder toutes les étapes nécessaires à l’utilisation de cette 
 
 L’exemple d’application montre comment utiliser un délégué renforcé pour la communication entre l’API InfColorPicker et notre code C#. Une fois que nous avons vu comment utiliser un délégué fort, nous allons aborder l’utilisation de délégués faibles pour effectuer les mêmes tâches.
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Configuration requise
 
 Cet article suppose que vous êtes familiarisé avec Xcode et le langage Objective-C et que vous avez lu notre documentation [objective-c de liaison](~/cross-platform/macios/binding/index.md) . En outre, les éléments suivants sont requis pour effectuer les étapes présentées :
 
 - Le **Kit de développement logiciel (SDK) Xcode et iOS** -le Xcode de Apple et la dernière API iOS doivent être installés et configurés sur l’ordinateur du développeur.
 - **[Outils en ligne de commande Xcode](#Installing_the_Xcode_Command_Line_Tools)** : les outils en ligne de commande Xcode doivent être installés pour la version actuellement installée de Xcode (voir ci-dessous pour plus d’informations sur l’installation).
 - **Visual Studio pour Mac ou Visual Studio** -la dernière version de Visual Studio pour Mac ou Visual Studio doit être installée et configurée sur l’ordinateur de développement. Un Mac Apple est requis pour le développement d’une application Xamarin. iOS et, lors de l’utilisation de Visual Studio, vous devez être connecté à [un hôte de build Xamarin. iOS](~/ios/get-started/installation/windows/connecting-to-mac/index.md)
-- **La dernière version de objective Sharp** -une copie en cours de l’outil Sharpship objective téléchargée [ici](~/cross-platform/macios/binding/objective-sharpie/get-started.md). Si vous avez déjà installé Sharpy, vous pouvez le mettre à jour vers la version la plus récente à l’aide de la`sharpie update`
+- **La dernière version de objective Sharp** -une copie en cours de l’outil Sharpship objective téléchargée [ici](~/cross-platform/macios/binding/objective-sharpie/get-started.md). Si vous avez déjà installé Sharpy, vous pouvez le mettre à jour vers la version la plus récente à l’aide de la `sharpie update`
 
 <a name="Installing_the_Xcode_Command_Line_Tools"></a>
 
@@ -491,7 +491,7 @@ Pour que la définition ressemble à ceci :
 
 Ensuite, nous faisons la même chose avec le contenu du `InfColorPicker.enums.cs` fichier, en le copiant et en le collant dans le `StructsAndEnums.cs` fichier en laissant les `using` instructions intactes :
 
-[![Le contenu du fichier StructsAndEnums.cs](walkthrough-images/os09.png)](walkthrough-images/os09.png#lightbox)
+[![Le contenu du fichier StructsAndEnums.cs ](walkthrough-images/os09.png)](walkthrough-images/os09.png#lightbox)
 
 Vous pouvez également constater que objective Sharp a annoté la liaison avec des `[Verify]` attributs. Ces attributs indiquent que vous devez vérifier que la netteté objective a effectué la bonne chose en comparant la liaison avec la déclaration d’origine C/Objective-C (qui sera fournie dans un commentaire au-dessus de la déclaration liée). Une fois que vous avez vérifié les liaisons, vous devez supprimer l’attribut Verify. Pour plus d’informations, reportez-vous au Guide de [vérification](~/cross-platform/macios/binding/objective-sharpie/platform/verify.md) .
 
@@ -716,7 +716,7 @@ public void ColorPickerControllerDidFinish (InfColorPickerController controller)
 
 Exécutez l'application. Elle doit maintenant se comporter exactement comme avant, mais elle utilise un délégué faible au lieu du délégué fort. À ce stade, vous avez terminé cette procédure pas à pas. Vous devez maintenant comprendre comment créer et utiliser un projet de liaison Xamarin. iOS.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a parcouru le processus de création et d’utilisation d’un projet de liaison Xamarin. iOS. Tout d’abord, nous avons abordé la compilation d’une bibliothèque objective-C existante dans une bibliothèque statique. Nous avons ensuite abordé la création d’un projet de liaison Xamarin. iOS et l’utilisation d’objective Sharp pour générer les définitions d’API pour la bibliothèque objective-C. Nous avons abordé la manière de mettre à jour et de modifier les définitions d’API générées afin qu’elles soient adaptées à la consommation publique. Une fois le projet de liaison Xamarin. iOS terminé, nous avons passé à consommer cette liaison dans une application Xamarin. iOS, en se concentrant sur l’utilisation de délégués forts et de délégués faibles.
 
@@ -726,4 +726,4 @@ Cet article a parcouru le processus de création et d’utilisation d’un proje
 - [Détails de la liaison](~/cross-platform/macios/binding/overview.md)
 - [Guide de référence des types de liaison](~/cross-platform/macios/binding/binding-types-reference.md)
 - [Xamarin pour les développeurs objective-C](~/ios/get-started/objective-c-developers/index.md)
-- [Directives de conception d’infrastructure](https://msdn.microsoft.com/library/ms229042.aspx)
+- [Directives de conception d’infrastructure](/dotnet/standard/design-guidelines/)

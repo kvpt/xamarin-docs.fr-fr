@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 832071023bfe2ea9d947946ff2b70428d93fc866
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 2a0d9ebabe2a1f5d6570559f018e6419712b42fc
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937535"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91433335"
 ---
 # <a name="ios-app-architecture"></a>Architecture des applications iOS
 
@@ -24,13 +24,13 @@ Le diagramme ci-dessous illustre une vue d’ensemble de cette architecture :
 
 ## <a name="native-and-managed-code-an-explanation"></a>Code natif et managé : explication
 
-Lors du développement pour Xamarin, les termes *natif et code managé* sont souvent utilisés. Le code [managé](https://blogs.msdn.microsoft.com/brada/2004/01/09/what-is-managed-code/) est du code dont l’exécution est gérée par le [common Language Runtime .NET Framework](https://msdn.microsoft.com/library/8bs2ecf4(v=vs.110).aspx), ou dans le cas de Xamarin : le runtime mono. C’est ce que nous appelons un langage intermédiaire.
+Lors du développement pour Xamarin, les termes *natif et code managé* sont souvent utilisés. Le code [managé](/archive/blogs/brada/what-is-managed-code) est du code dont l’exécution est gérée par le [common Language Runtime .NET Framework](/dotnet/standard/clr), ou dans le cas de Xamarin : le runtime mono. C’est ce que nous appelons un langage intermédiaire.
 
 Le code natif est du code qui s’exécute en mode natif sur la plateforme spécifique (par exemple, Objective-C ou code compilé de l’AOA, sur un processeur ARM). Ce guide explore la manière dont AOA compile votre code managé en code natif et explique comment fonctionne une application Xamarin. iOS, en utilisant pleinement les API iOS d’Apple via l’utilisation de liaisons, tout en ayant également accès à. La BCL du NET et un langage sophistiqué tel que C#.
 
 ## <a name="aot"></a>AOT
 
-Quand vous compilez une application de plateforme Xamarin, le compilateur mono C# (ou F #) s’exécute et compile votre code C# et F # en langage MSIL (Microsoft Intermediate Language). Si vous exécutez une application Xamarin. Android, Xamarin. Mac, ou même une application Xamarin. iOS sur le simulateur, le [clr (Common Language Runtime) .net](https://msdn.microsoft.com/library/8bs2ecf4(v=vs.110).aspx) compile le MSIL à l’aide d’un compilateur juste-à-temps (JIT). Au moment de l’exécution, cela est compilé en code natif, qui peut s’exécuter sur l’architecture appropriée pour votre application.
+Quand vous compilez une application de plateforme Xamarin, le compilateur mono C# (ou F #) s’exécute et compile votre code C# et F # en langage MSIL (Microsoft Intermediate Language). Si vous exécutez une application Xamarin. Android, Xamarin. Mac, ou même une application Xamarin. iOS sur le simulateur, le [clr (Common Language Runtime) .net](/dotnet/standard/clr) compile le MSIL à l’aide d’un compilateur juste-à-temps (JIT). Au moment de l’exécution, cela est compilé en code natif, qui peut s’exécuter sur l’architecture appropriée pour votre application.
 
 Toutefois, il existe une restriction de sécurité sur iOS, définie par Apple, qui interdit l’exécution de code généré dynamiquement sur un appareil.
 Pour garantir que nous respectons ces protocoles de sécurité, Xamarin. iOS utilise à la place un compilateur d’anticipation du temps (AOA) pour compiler le code managé. Cela génère un fichier binaire iOS natif, éventuellement optimisé avec LLVM pour les appareils, qui peut être déployé sur le processeur ARM d’Apple. Un diagramme approximatif de la façon dont cela s’ajuste à l’ensemble est illustré ci-dessous :
@@ -166,7 +166,7 @@ Une fois le Xamarin.iOS.dll créé, mTouch regroupe tous les composants.
 
 Pour plus d’informations sur l’éditeur de liens et son utilisation, reportez-vous au Guide de l' [éditeur de liens](~/ios/deploy-test/linker.md) .
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Ce guide a examiné la compilation AOA des applications Xamarin. iOS et explorait Xamarin. iOS et sa relation à Objective-C en profondeur.
 

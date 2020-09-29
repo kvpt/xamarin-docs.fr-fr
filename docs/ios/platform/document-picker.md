@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/05/2017
-ms.openlocfilehash: a74996c0390191a4fef8d20ba3f46d0e2578d17a
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: c8cffc9593b6de059a877654994e6747204ce34d
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997174"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435403"
 ---
 # <a name="document-picker-in-xamarinios"></a>Sélecteur de documents dans Xamarin. iOS
 
@@ -68,9 +68,9 @@ Supposons que l’appareil iOS d’origine était en train de modifier le fichie
 
 ### <a name="using-uidocument"></a>Utilisation de UIDocument
 
- `UIDocument`simplifie les choses (ou `NSDocument` sur MacOS) en faisant tout le gros du levage pour le développeur. Il fournit une coordination de fichiers intégrée avec des files d’attente d’arrière-plan pour éviter de bloquer l’interface utilisateur de l’application.
+ `UIDocument` simplifie les choses (ou `NSDocument` sur MacOS) en faisant tout le gros du levage pour le développeur. Il fournit une coordination de fichiers intégrée avec des files d’attente d’arrière-plan pour éviter de bloquer l’interface utilisateur de l’application.
 
- `UIDocument`expose plusieurs API de haut niveau qui facilitent l’effort de développement d’une application Xamarin pour les besoins du développeur.
+ `UIDocument` expose plusieurs API de haut niveau qui facilitent l’effort de développement d’une application Xamarin pour les besoins du développeur.
 
 Le code suivant crée une sous-classe de `UIDocument` pour implémenter un document de type texte générique qui peut être utilisé pour stocker et récupérer du texte à partir de icloud :
 
@@ -198,9 +198,9 @@ Avant iOS 8, `NSMetadataQuery` était lent à récupérer les modifications des 
 
 Dans le diagramme ci-dessus :
 
-1. Pour les fichiers qui existent déjà dans le conteneur d’application, `NSMetadataQuery` contient des `NSMetadata` enregistrements existants précréés et mis en file d’attente afin qu’ils soient instantanément accessibles à l’application.
+1. Pour les fichiers qui existent déjà dans le conteneur d’application,  `NSMetadataQuery` contient des  `NSMetadata` enregistrements existants précréés et mis en file d’attente afin qu’ils soient instantanément accessibles à l’application.
 1. L’application crée un nouveau fichier dans le conteneur d’application.
-1. Il y a un délai avant de `NSMetadataQuery` Voir la modification du conteneur d’application et de créer l' `NSMetadata` enregistrement requis.
+1. Il y a un délai avant de  `NSMetadataQuery` Voir la modification du conteneur d’application et de créer l'  `NSMetadata` enregistrement requis.
 
 En raison du délai de création de l' `NSMetadata` enregistrement, deux sources de données doivent être ouvertes pour l’application : une pour les modifications de fichiers locaux et une pour les modifications basées sur le Cloud.
 
@@ -212,10 +212,10 @@ Dans iOS 8, `NSMetadataQuery` est plus facile à utiliser directement avec une n
 
 À l’aide de la combinaison dans le diagramme ci-dessus :
 
-1. Comme précédemment, pour les fichiers qui existent déjà dans le conteneur d’application, `NSMetadataQuery` contient des `NSMetadata` enregistrements existants précréés et mis en attente.
+1. Comme précédemment, pour les fichiers qui existent déjà dans le conteneur d’application,  `NSMetadataQuery` contient des  `NSMetadata` enregistrements existants précréés et mis en attente.
 1. L’application crée un nouveau fichier dans le conteneur d’application à l’aide de la coordination de fichiers.
-1. Un hook dans le conteneur d’application voit la modification et les appels `NSMetadataQuery` pour créer l' `NSMetadata` enregistrement requis.
-1. L' `NSMetadata` enregistrement est créé directement après le fichier et mis à la disposition de l’application.
+1. Un hook dans le conteneur d’application voit la modification et les appels  `NSMetadataQuery` pour créer l'  `NSMetadata` enregistrement requis.
+1. L'  `NSMetadata` enregistrement est créé directement après le fichier et mis à la disposition de l’application.
 
 En utilisant la fonction de combinaison, l’application n’a plus à ouvrir de source de données pour surveiller les modifications de fichiers locales et sur le Cloud. Désormais, l’application peut s’appuyer `NSMetadataQuery` directement sur.
 
@@ -226,10 +226,10 @@ En utilisant la fonction de combinaison, l’application n’a plus à ouvrir de
 
 Les nouvelles fonctionnalités suivantes ont été ajoutées à `NSMetadataQuery` dans iOS 8 :
 
-- `NSMetatadataQuery`peut maintenant répertorier les documents non locaux stockés dans le Cloud.
+- `NSMetatadataQuery` peut maintenant répertorier les documents non locaux stockés dans le Cloud.
 - De nouvelles API ont été ajoutées pour accéder aux informations de métadonnées sur les documents basés sur le Cloud.
-- Il existe une nouvelle `NSUrl_PromisedItems` API qui permet d’accéder aux attributs de fichier des fichiers dont le contenu peut être disponible localement ou non.
-- Utilisez la `GetPromisedItemResourceValue` méthode pour obtenir des informations sur un fichier donné ou utilisez la `GetPromisedItemResourceValues` méthode pour obtenir des informations sur plusieurs fichiers à la fois.
+- Il existe une nouvelle  `NSUrl_PromisedItems` API qui permet d’accéder aux attributs de fichier des fichiers dont le contenu peut être disponible localement ou non.
+- Utilisez la  `GetPromisedItemResourceValue` méthode pour obtenir des informations sur un fichier donné ou utilisez la  `GetPromisedItemResourceValues` méthode pour obtenir des informations sur plusieurs fichiers à la fois.
 
 Deux nouveaux indicateurs de coordination de fichiers ont été ajoutés pour traiter les métadonnées :
 
@@ -457,8 +457,8 @@ Effectuez les actions suivantes :
     > [!IMPORTANT]
     > Dans Visual Studio, vous devrez peut-être ouvrir l’éditeur de droits en cliquant dessus avec le bouton droit, puis en sélectionnant **Ouvrir avec...** et sélection de l’éditeur de liste de propriétés
 
-7. Cochez la case **activer les icloud** , les **documents icloud** , **le stockage clé-valeur** et **CloudKit** .
-8. Assurez-vous que le **conteneur** existe pour l’application (tel qu’il a été créé ci-dessus). Exemple : `iCloud.com.your-company.AppName`
+7. Cochez la case  **activer les icloud** , les  **documents icloud** ,  **le stockage clé-valeur** et  **CloudKit** .
+8. Assurez-vous que le **conteneur** existe pour l’application (tel qu’il a été créé ci-dessus). Exemple : `iCloud.com.your-company.AppName`
 9. Enregistrez les modifications du fichier.
 
 Pour plus d’informations sur les droits, consultez le guide [utilisation des droits](~/ios/deploy-test/provisioning/entitlements.md) .
@@ -818,7 +818,7 @@ Avant iOS 8, il était très difficile d’accéder aux documents à partir d’
 Jetons un coup d’œil à l’accès à un document externe avant iOS 8 :
 
 1. Tout d’abord, l’utilisateur doit ouvrir l’application qui a créé le document à l’origine.
-1. Le document est sélectionné et le `UIDocumentInteractionController` est utilisé pour envoyer le document à la nouvelle application.
+1. Le document est sélectionné et le  `UIDocumentInteractionController` est utilisé pour envoyer le document à la nouvelle application.
 1. Enfin, une copie du document d’origine est placée dans le conteneur de la nouvelle application.
 
 À partir de là, le document est disponible pour la deuxième application et l’ouvrir et le modifier.
@@ -1023,16 +1023,16 @@ Comme indiqué ci-dessus, une application iOS 8 n’a pas accès aux conteneurs 
 Pour déplacer un document vers un emplacement externe, procédez comme suit :
 
 1. Commencez par créer un nouveau document dans un emplacement local ou temporaire.
-1. Créez un `NSUrl` qui pointe vers le nouveau document.
-1. Ouvrez un nouveau contrôleur d’affichage du sélecteur de documents et transmettez-lui le `NSUrl` avec le mode `MoveToService` .
+1. Créez un  `NSUrl` qui pointe vers le nouveau document.
+1. Ouvrez un nouveau contrôleur d’affichage du sélecteur de documents et transmettez-lui le  `NSUrl` avec le mode `MoveToService` .
 1. Une fois que l’utilisateur choisit un nouvel emplacement, le document est déplacé de son emplacement actuel vers le nouvel emplacement.
 1. Un document de référence est écrit dans le conteneur d’application de l’application afin que l’application de création puisse toujours y accéder.
 
-Vous pouvez utiliser le code suivant pour déplacer un document vers un emplacement externe :`var picker = new UIDocumentPickerViewController (srcURL, UIDocumentPickerMode.MoveToService);`
+Vous pouvez utiliser le code suivant pour déplacer un document vers un emplacement externe : `var picker = new UIDocumentPickerViewController (srcURL, UIDocumentPickerMode.MoveToService);`
 
 Le document de référence retourné par le processus ci-dessus est exactement le même que celui créé par le mode d’ouverture du sélecteur de documents. Toutefois, il arrive que l’application souhaite déplacer un document sans en conserver une référence.
 
-Pour déplacer un document sans générer de référence, utilisez le `ExportToService` mode. Exemple : `var picker = new UIDocumentPickerViewController (srcURL, UIDocumentPickerMode.ExportToService);`
+Pour déplacer un document sans générer de référence, utilisez le `ExportToService` mode. Exemple : `var picker = new UIDocumentPickerViewController (srcURL, UIDocumentPickerMode.ExportToService);`
 
 Lorsque vous utilisez le `ExportToService` mode, le document est copié dans le conteneur externe et la copie existante est conservée à son emplacement d’origine.
 
@@ -1048,7 +1048,7 @@ L’utilisateur peut sélectionner l’un de ces emplacements de stockage altern
 
 Elle est implémentée à l’aide de deux extensions différentes :
 
-- **Extension de sélecteur de documents** : fournit une `UIViewController` sous-classe qui fournit une interface graphique permettant à l’utilisateur de choisir un document à partir d’un autre emplacement de stockage. Cette sous-classe sera affichée dans le cadre du contrôleur d’affichage du sélecteur de documents.
+- **Extension de sélecteur de documents** : fournit une  `UIViewController` sous-classe qui fournit une interface graphique permettant à l’utilisateur de choisir un document à partir d’un autre emplacement de stockage. Cette sous-classe sera affichée dans le cadre du contrôleur d’affichage du sélecteur de documents.
 - **Extension de fichier fournie** : il s’agit d’une extension non-interface utilisateur qui traite réellement le contenu des fichiers. Ces extensions sont fournies par le biais de la coordination des fichiers ( `NSFileCoordinator` ). Il s’agit d’un autre cas important où la coordination des fichiers est requise.
 
 Le diagramme suivant illustre le workflow de données classique lors de l’utilisation des extensions de fournisseur de documents :
@@ -1058,7 +1058,7 @@ Le diagramme suivant illustre le workflow de données classique lors de l’util
 Le processus suivant se produit :
 
 1. L’application présente un contrôleur de sélecteur de documents pour permettre à l’utilisateur de sélectionner un fichier à utiliser.
-1. L’utilisateur sélectionne un autre emplacement de fichier et l' `UIViewController` extension personnalisée est appelée pour afficher l’interface utilisateur.
+1. L’utilisateur sélectionne un autre emplacement de fichier et l'  `UIViewController` extension personnalisée est appelée pour afficher l’interface utilisateur.
 1. L’utilisateur sélectionne un fichier à partir de cet emplacement et l’URL est renvoyée au sélecteur de documents.
 1. Le sélecteur de documents sélectionne l’URL du fichier et le renvoie à l’application pour que l’utilisateur travaille sur.
 1. L’URL est passée au coordinateur de fichiers pour retourner le contenu des fichiers à l’application.
@@ -1083,11 +1083,11 @@ Le diagramme suivant illustre le déroulement des données lorsque vous travaill
 Le processus suivant se produit :
 
 1. L’application est sur le paragraphe d’entrer en arrière-plan et doit conserver son état. Elle appelle `NSUrl` pour créer un signet vers un fichier dans un autre stockage.
-1. `NSUrl`appelle l’extension du fournisseur de fichiers pour obtenir une URL permanente vers le document.
+1. `NSUrl` appelle l’extension du fournisseur de fichiers pour obtenir une URL permanente vers le document.
 1. L’extension du fournisseur de fichiers retourne l’URL sous la forme d’une chaîne à `NSUrl` .
 1. Le `NSUrl` regroupe l’URL dans un signet et le retourne à l’application.
 1. Lorsque l’application se rend en arrière-plan et doit restaurer l’État, elle passe le signet à `NSUrl` .
-1. `NSUrl`appelle l’extension du fournisseur de fichiers avec l’URL du fichier.
+1. `NSUrl` appelle l’extension du fournisseur de fichiers avec l’URL du fichier.
 1. Le fournisseur d’extension de fichier accède au fichier et retourne l’emplacement du fichier à `NSUrl` .
 1. L’emplacement du fichier est fourni avec les informations de sécurité et retourné à l’application.
 
@@ -1126,6 +1126,6 @@ En outre, cet article présente brièvement les extensions du fournisseur de doc
 
 ## <a name="related-links"></a>Liens associés
 
-- [DocPicker (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-docpicker)
+- [DocPicker (exemple)](/samples/xamarin/ios-samples/ios8-docpicker)
 - [Introduction à iOS 8](~/ios/platform/introduction-to-ios8.md)
 - [Présentation des extensions d’application](~/ios/platform/extensions.md)

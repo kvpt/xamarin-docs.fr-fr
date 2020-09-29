@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 65ebefef0f03e2b4abd8c36fc1e0a68812e48218
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 2cacbf5640da60a7d084bf4ab113ef62fad097d8
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939514"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436387"
 ---
 # <a name="windows-in-xamarinmac"></a>Windows dans Xamarin. Mac
 
@@ -104,7 +104,7 @@ La plupart des applications macOS modernes présentent des contrôles et des opt
 
 [![Un exemple d’inspecteur](window-images/panel02.png)](window-images/panel02.png#lightbox)
 
-Pour plus d’informations, consultez la section des [panneaux](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/WindowPanels.html#//apple_ref/doc/uid/20000957-CH42-SW1) des [thèmes de conception](https://developer.apple.com/design/human-interface-guidelines/macos/overview/themes/) d’Apple MacOS et de notre exemple d’application [MacInspector](https://docs.microsoft.com/samples/xamarin/mac-samples/macinspector) pour une implémentation complète d’une **interface Inspector** dans une application Xamarin. Mac.
+Pour plus d’informations, consultez la section des [panneaux](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/WindowPanels.html#//apple_ref/doc/uid/20000957-CH42-SW1) des [thèmes de conception](https://developer.apple.com/design/human-interface-guidelines/macos/overview/themes/) d’Apple MacOS et de notre exemple d’application [MacInspector](/samples/xamarin/mac-samples/macinspector) pour une implémentation complète d’une **interface Inspector** dans une application Xamarin. Mac.
 
 ## <a name="creating-and-maintaining-windows-in-xcode"></a>Création et maintenance de fenêtres dans Xcode
 
@@ -750,16 +750,16 @@ Si nous exécutons notre application, le panneau s’affiche :
 [![Panneau dans une application en cours d’exécution](window-images/panels04.png)](window-images/panels04.png#lightbox)
 
 > [!IMPORTANT]
-> Les fenêtres de panneau ont été dépréciées par Apple et doivent être remplacées par des **interfaces d’inspecteur**. Pour obtenir un exemple complet de création d’un **Inspector** dans une application Xamarin. Mac, consultez notre exemple d’application [MacInspector](https://docs.microsoft.com/samples/xamarin/mac-samples/macinspector) .
+> Les fenêtres de panneau ont été dépréciées par Apple et doivent être remplacées par des **interfaces d’inspecteur**. Pour obtenir un exemple complet de création d’un **Inspector** dans une application Xamarin. Mac, consultez notre exemple d’application [MacInspector](/samples/xamarin/mac-samples/macinspector) .
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a décrit en détail l’utilisation des fenêtres et des panneaux dans une application Xamarin. Mac. Nous avons vu les différents types et utilisations des fenêtres et des panneaux, comment créer et gérer des fenêtres et des panneaux dans le Interface Builder de Xcode et comment travailler avec des fenêtres et des panneaux dans du code C#.
 
 ## <a name="related-links"></a>Liens connexes
 
-- [MacWindows (exemple)](https://docs.microsoft.com/samples/xamarin/mac-samples/macwindows)
-- [MacInspector (exemple)](https://docs.microsoft.com/samples/xamarin/mac-samples/macinspector)
+- [MacWindows (exemple)](/samples/xamarin/mac-samples/macwindows)
+- [MacInspector (exemple)](/samples/xamarin/mac-samples/macinspector)
 - [Hello, Mac](~/mac/get-started/hello-mac.md)
 - [Utilisation des menus](~/mac/user-interface/menu.md)
 - [thèmes de conception macOS (Apple)](https://developer.apple.com/design/human-interface-guidelines/macos/overview/themes/)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: bd57232b183d5940a22915a0277a016cab36af8a
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 9f27fa550bb21f4261288e8a9a3d809a0ccc7de2
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86931610"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436499"
 ---
 # <a name="introduction-to-ios-7"></a>Introduction à iOS 7
 
@@ -26,10 +26,10 @@ iOS 7 augmente la prise en charge de l’animation dans UIKit, ce qui permet aux
 
 ### <a name="spring-animations"></a>Animations Spring
 
- `UIView`prend désormais en charge l’animation des modifications de propriété avec un effet de ressort. Pour ajouter cela, appelez la `AnimateNotify` méthode ou `AnimateNotifyAsync` , en transmettant des valeurs pour le taux d’amortissement des ressorts et la vélocité initiale du ressort, comme décrit ci-dessous :
+ `UIView` prend désormais en charge l’animation des modifications de propriété avec un effet de ressort. Pour ajouter cela, appelez la `AnimateNotify` méthode ou `AnimateNotifyAsync` , en transmettant des valeurs pour le taux d’amortissement des ressorts et la vélocité initiale du ressort, comme décrit ci-dessous :
 
-- `springWithDampingRatio`: Valeur comprise entre 0 et 1, où l’oscillation augmente pour une valeur plus petite.
-- `initialSpringVelocity`: Vitesse du ressort initial sous la forme d’un pourcentage de la distance totale de l’animation par seconde.
+- `springWithDampingRatio` : Valeur comprise entre 0 et 1, où l’oscillation augmente pour une valeur plus petite.
+- `initialSpringVelocity` : Vitesse du ressort initial sous la forme d’un pourcentage de la distance totale de l’animation par seconde.
 
 Le code suivant produit un effet de ressort lorsque le centre de la vue d’image change :
 
@@ -96,12 +96,12 @@ L’API est déclarative par nature. Vous pouvez déclarer comment les interacti
 
 Plusieurs comportements primitifs différents sont disponibles pour déclencher des interactions complexes, notamment :
 
-- `UIAttachmentBehavior`: Attache deux éléments dynamiques de sorte qu’ils se déplacent ensemble ou attache un élément dynamique à un point d’attache.
-- `UICollisionBehavior`: Permet aux éléments dynamiques de participer aux collisions.
-- `UIDynamicItemBehavior`: Spécifie un ensemble général de propriétés à appliquer aux éléments dynamiques, tels que l’élasticité, la densité et le frottement.
-- `UIGravityBehavior`: Applique la gravité à un élément dynamique, ce qui entraîne l’accélération des éléments dans la direction de la gravité.
-- `UIPushBehavior`: Applique la force à un élément dynamique.
-- `UISnapBehavior`: Permet à un élément dynamique de s’aligner sur une position avec un effet de ressort.
+- `UIAttachmentBehavior` : Attache deux éléments dynamiques de sorte qu’ils se déplacent ensemble ou attache un élément dynamique à un point d’attache.
+- `UICollisionBehavior` : Permet aux éléments dynamiques de participer aux collisions.
+- `UIDynamicItemBehavior` : Spécifie un ensemble général de propriétés à appliquer aux éléments dynamiques, tels que l’élasticité, la densité et le frottement.
+- `UIGravityBehavior` : Applique la gravité à un élément dynamique, ce qui entraîne l’accélération des éléments dans la direction de la gravité.
+- `UIPushBehavior` : Applique la force à un élément dynamique.
+- `UISnapBehavior` : Permet à un élément dynamique de s’aligner sur une position avec un effet de ressort.
 
 Bien qu’il existe de nombreuses primitives, le processus général d’ajout d’interactions physiques à une vue à l’aide de UIKit Dynamics est cohérent entre les comportements :
 
@@ -233,12 +233,12 @@ iOS 7 change quand et comment le travail en arrière-plan est effectué. L’ach
 
 Pour plus d’informations sur les nouvelles fonctionnalités multitâches, consultez les sections iOS du [Guide d’arrière-plan](~/ios/app-fundamentals/backgrounding/index.md)Xamarin.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article présente plusieurs nouveaux ajouts importants à iOS. Tout d’abord, il montre comment ajouter des transitions personnalisées aux contrôleurs d’affichage. Il montre ensuite comment utiliser des transitions dans les vues de collection, à la fois à partir d’un contrôleur de navigation, et de manière interactive entre les vues de collection. Ensuite, il présente plusieurs améliorations apportées aux animations UIView, en expliquant comment les applications utilisent UIKit pour les choses qui nécessitaient auparavant une programmation directement par rapport à l’animation principale. Enfin, l’API Dynamics UIKit, qui apporte un moteur physique à UIKit, est introduite parallèlement à la prise en charge du texte enrichi disponible dans l’infrastructure du kit de texte.
 
 ## <a name="related-links"></a>Liens associés
 
-- [Introduction à iOS 7 (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/introtoios7)
+- [Introduction à iOS 7 (exemple)](/samples/xamarin/ios-samples/introtoios7)
 - [Vue d’ensemble de l’interface utilisateur iOS 7](~/ios/platform/introduction-to-ios7/ios7-ui.md)
 - [Backgrounding](~/ios/app-fundamentals/backgrounding/index.md)

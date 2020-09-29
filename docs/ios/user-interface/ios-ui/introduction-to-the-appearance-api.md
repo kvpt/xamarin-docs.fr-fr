@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 11/15/2018
-ms.openlocfilehash: e2dcd5ea0f099ea84d7824eda4170df8efb22cb6
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 7ba6eca8f74c10254ae93b95725bc73ae100be70
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937213"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91433857"
 ---
 # <a name="appearance-api-in-xamarinios"></a>API Appearance dans Xamarin. iOS
 
@@ -35,7 +35,7 @@ L’exemple d’application Appearance illustre les trois méthodes, comme indiq
 [![L’exemple d’application Appearance illustre les trois méthodes](introduction-to-the-appearance-api-images/appearance01-sml.png)](introduction-to-the-appearance-api-images/appearance01.png#lightbox)
 
 Depuis iOS 8, le proxy d’apparence a été étendu à TraitCollections.
- `AppearanceForTraitCollection`peut être utilisé pour définir l’apparence par défaut sur une collection de traits particulière. Pour plus d’informations à ce sujet, consultez le guide [Présentation des storyboards](~/ios/user-interface/storyboards/unified-storyboards.md) .
+ `AppearanceForTraitCollection` peut être utilisé pour définir l’apparence par défaut sur une collection de traits particulière. Pour plus d’informations à ce sujet, consultez le guide [Présentation des storyboards](~/ios/user-interface/storyboards/unified-storyboards.md) .
 
 ## <a name="setting-appearance-properties"></a>Définition des propriétés d’apparence
 
@@ -101,12 +101,12 @@ L’image ci-dessous illustre maintenant les deux contrôles segmentés avec l�
 
 [![Définition de la teinte de contrôle d’apparence](introduction-to-the-appearance-api-images/image54.png)](introduction-to-the-appearance-api-images/image54.png#lightbox)
 
-`Appearance`les propriétés doivent être définies au début du cycle de vie de l’application, comme dans l’événement de AppDelegate `FinishedLaunching` ou dans un ViewController avant l’affichage des contrôles affectés.
+`Appearance` les propriétés doivent être définies au début du cycle de vie de l’application, comme dans l’événement de AppDelegate `FinishedLaunching` ou dans un ViewController avant l’affichage des contrôles affectés.
 
 Reportez-vous à la [Présentation de l’API d’apparence](~/ios/user-interface/ios-ui/introduction-to-the-appearance-api.md) pour obtenir des informations plus détaillées.
 
 ## <a name="related-links"></a>Liens associés
 
-- [Apparence (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/appearance)
+- [Apparence (exemple)](/samples/xamarin/ios-samples/appearance)
 - [Référence du protocole UIAppearance](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAppearance_Protocol/)
 - [Apparence dans Xamarin. Forms](~/xamarin-forms/platform/ios/formatting.md#uiappearance-api)

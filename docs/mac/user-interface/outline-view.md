@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 7f1ae2ecfa7d6dbed56b8009593fc172615fd051
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: c5120fead9084b50912fb4ea1e8cfa100f4b3bbe
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86928794"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436325"
 ---
 # <a name="outline-views-in-xamarinmac"></a>Modes plan dans Xamarin. Mac
 
@@ -97,7 +97,7 @@ Sélectionnez le mode plan dans la **hiérarchie** de l’interface et les propr
 - **Tronque la dernière ligne visible** : si `true` la cellule est tronquée dans les données ne peut pas être contenue dans ses limites.
 
 > [!IMPORTANT]
-> À moins que vous ne conserviez une application Xamarin. Mac héritée, les `NSView` modes plan basés sur les vues de table doivent être utilisés sur des `NSCell` vues de tables basées sur. `NSCell`est considéré comme hérité et peut ne pas être pris en charge à l’avenir.
+> À moins que vous ne conserviez une application Xamarin. Mac héritée, les `NSView` modes plan basés sur les vues de table doivent être utilisés sur des `NSCell` vues de tables basées sur. `NSCell` est considéré comme hérité et peut ne pas être pris en charge à l’avenir.
 
 Sélectionnez une colonne de table dans la **hiérarchie d’interface** et les propriétés suivantes sont disponibles dans l’inspecteur d' **attribut**:
 
@@ -680,14 +680,14 @@ Pour plus d’informations, consultez la section [structure de liaison de donné
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a décrit en détail l’utilisation des vues en mode plan dans une application Xamarin. Mac. Nous avons vu les différents types et utilisations des modes plan, comment créer et gérer des vues en mode plan dans les Interface Builder de Xcode et comment travailler avec des modes plan dans du code C#.
 
 ## <a name="related-links"></a>Liens associés
 
-- [MacOutlines (exemple)](https://docs.microsoft.com/samples/xamarin/mac-samples/macoutlines)
-- [MacImages (exemple)](https://docs.microsoft.com/samples/xamarin/mac-samples/macimages)
+- [MacOutlines (exemple)](/samples/xamarin/mac-samples/macoutlines)
+- [MacImages (exemple)](/samples/xamarin/mac-samples/macimages)
 - [Hello, Mac](~/mac/get-started/hello-mac.md)
 - [Vues Table](~/mac/user-interface/table-view.md)
 - [Listes de sources](~/mac/user-interface/source-list.md)

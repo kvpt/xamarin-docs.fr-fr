@@ -8,14 +8,14 @@ ms.date: 03/26/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e86ebcd55f3a36da1ad5c7c13bb50e7fc9094010
-ms.sourcegitcommit: 898ba8e5140ae32a7df7e07c056aff65f6fe4260
+ms.openlocfilehash: c4437f05eddd6885f88fc57ddc108f4fc9f4376d
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86226805"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91433530"
 ---
-# <a name="xamarinessentials-web-authenticator"></a>Xamarin.Essentials: Web Authenticator
+# <a name="no-locxamarinessentials-web-authenticator"></a>Xamarin.Essentials: Web Authenticator
 
 La classe **WebAuthenticator** vous permet de lancer des flux basés sur un navigateur qui écoutent un rappel vers une URL spécifique inscrite auprès de l’application.
 
@@ -23,7 +23,7 @@ La classe **WebAuthenticator** vous permet de lancer des flux basés sur un navi
 
 De nombreuses applications nécessitent l’ajout de l’authentification utilisateur, ce qui signifie souvent que les utilisateurs peuvent se connecter à leurs comptes de connexion Microsoft, Facebook, Google et Now existants.
 
-La [bibliothèque d’authentification Microsoft (MSAL)](https://docs.microsoft.com/azure/active-directory/develop/msal-overview) fournit une excellente solution clé en main pour l’ajout de l’authentification à votre application. Il existe même une prise en charge des applications Xamarin dans leur package NuGet client.
+La [bibliothèque d’authentification Microsoft (MSAL)](/azure/active-directory/develop/msal-overview) fournit une excellente solution clé en main pour l’ajout de l’authentification à votre application. Il existe même une prise en charge des applications Xamarin dans leur package NuGet client.
 
 Si vous êtes intéressé par l’utilisation de votre propre service Web pour l’authentification, il est possible d’utiliser **WebAuthenticator** pour implémenter la fonctionnalité côté client.
 
@@ -36,7 +36,7 @@ La meilleure pratique consiste à utiliser un serveur principal Web comme couche
 > [!IMPORTANT]
 > Nous vous recommandons vivement d’utiliser des modèles et des bibliothèques d’authentification mobiles plus anciennes qui n’exploitent pas un backend Web dans le workflow d’authentification en raison de leur manque de sécurité inhérent au stockage des secrets des clients.
 
-## <a name="get-started"></a>Prise en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -153,7 +153,7 @@ Sur UWP, `WebAuthenticationBroker` est utilisé s’il est pris en charge ; sin
 
 Conformément aux [directives de révision d’Apple](https://developer.apple.com/app-store/review/guidelines/#sign-in-with-apple), si votre application utilise un service de connexion sociale pour s’authentifier, elle doit également proposer la connexion Apple en tant qu’option.
 
-Pour ajouter une connexion Apple à vos applications, vous devez d’abord [configurer votre application pour qu’elle utilise la connexion Apple](https://docs.microsoft.com/xamarin/ios/platform/ios13/sign-in).
+Pour ajouter une connexion Apple à vos applications, vous devez d’abord [configurer votre application pour qu’elle utilise la connexion Apple](../ios/platform/ios13/sign-in.md).
 
 Pour iOS 13 et versions ultérieures, vous souhaiterez peut-être appeler la `AppleSignInAuthenticator.AuthenticateAsync()` méthode. Cela utilisera les API de connexion Apple natives sous le capot afin que vos utilisateurs bénéficient de la meilleure expérience possible sur ces appareils. Vous pouvez écrire votre code partagé pour utiliser l’API appropriée au moment de l’exécution comme suit :
 
@@ -190,7 +190,7 @@ var accessToken = r?.AccessToken;
 
 Il est possible d’utiliser l' `WebAuthenticator` API avec n’importe quel service de back end Web.  Pour l’utiliser avec une application ASP.NET Core, vous devez d’abord configurer l’application Web en procédant comme suit :
 
-1. Configurez les [fournisseurs d’authentification sociale externes](https://docs.microsoft.com/aspnet/core/security/authentication/social/?view=aspnetcore-3.1&tabs=visual-studio) souhaités dans une application Web ASP.net core.
+1. Configurez les [fournisseurs d’authentification sociale externes](/aspnet/core/security/authentication/social/?tabs=visual-studio&view=aspnetcore-3.1) souhaités dans une application Web ASP.net core.
 2. Définissez le schéma d’authentification par défaut sur `CookieAuthenticationDefaults.AuthenticationScheme` dans votre `.AddAuthentication()` appel.
 3. Utilisez `.AddCookie()` dans votre `.AddAuthentication()` appel Startup.cs.
 4. Tous les fournisseurs doivent être configurés avec `.SaveTokens = true;` .

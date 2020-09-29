@@ -12,14 +12,14 @@ ms.date: 04/01/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cc09f93a8d86b96324435bf63cd3d19b51242ed2
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 96b3e6bd055c0bc89ae7bcbb66c8b3f48b21ad17
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86931803"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436226"
 ---
-# <a name="create-a-single-page-xamarinforms-application"></a>Créer une application à page unique Xamarin.Forms
+# <a name="create-a-single-page-no-locxamarinforms-application"></a>Créer une application à page unique Xamarin.Forms
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-singlepage/)
 
@@ -35,7 +35,7 @@ Le Guide de démarrage rapide vous guide dans la création d’une Xamarin.Forms
 
 ::: zone pivot="windows"
 
-### <a name="prerequisites"></a>Prérequis
+### <a name="prerequisites"></a>Conditions préalables requises
 
 - Installation de Visual Studio 2019 (dernière version) et de la charge de travail **Développement mobile en .NET**.
 - Connaissance de C#.
@@ -189,7 +189,7 @@ Pour plus d’informations sur ces prérequis, consultez [Installation de Xamari
 ::: zone-end
 ::: zone pivot="win-vs2017"
 
-### <a name="prerequisites"></a>Prérequis
+### <a name="prerequisites"></a>Conditions préalables requises
 
 - Installation de Visual Studio 2017 et de la charge de travail **Développement mobile en .NET**.
 - Connaissance de C#.
@@ -339,7 +339,7 @@ Pour plus d’informations sur ces prérequis, consultez [Installation de Xamari
 ::: zone-end
 ::: zone pivot="macos"
 
-### <a name="prerequisites"></a>Prérequis
+### <a name="prerequisites"></a>Conditions préalables requises
 
 - Visual Studio pour Mac (dernière version) avec installation de la prise en charge des plateformes iOS et Android.
 - Xcode (dernière version).
@@ -502,9 +502,9 @@ Dans ce démarrage rapide, vous avez appris comment :
 Pour transformer cette application monopage en application multipage, passez au prochain guide de démarrage rapide.
 
 > [!div class="nextstepaction"]
-> [Suivant](multi-page.md)
+> [Next](multi-page.md)
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Notes (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-singlepage/)
-- [Xamarin.FormsPrésentation approfondie des Démarrages rapides](deepdive.md)
+- [Notes (exemple)](/samples/xamarin/xamarin-forms-samples/getstarted-notes-singlepage/)
+- [Xamarin.Forms Présentation approfondie des Démarrages rapides](deepdive.md)

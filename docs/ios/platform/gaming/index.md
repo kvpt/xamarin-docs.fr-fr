@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: b21e72cc072b614c2e900d7c7b3aa04c9f0812cb
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 20efcf1af10b7c1d3d36e570bc838e396241ffee
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939774"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436240"
 ---
 # <a name="ios-gaming-apis-in-xamarinios"></a>API de jeu iOS dans Xamarin. iOS
 
@@ -462,13 +462,13 @@ Apple a ajouté les nouvelles fonctionnalités suivantes à SpriteKit pour iOS 9
 
 Pour plus d’informations, consultez notre [documentation SpriteKit informations](~/ios/platform/introduction-to-ios8.md#spritekit) de [référence](https://developer.apple.com/library/prerelease/ios/documentation/SpriteKit/Reference/SpriteKitFramework_Ref/index.html#//apple_ref/doc/uid/TP40013041) sur l’infrastructure d’Apple SpriteKit et leur [DemoBots : génération d’un jeu multiplateforme avec SpriteKit et GameplayKit exemple d'](https://developer.apple.com/library/prerelease/ios/samplecode/DemoBots/Introduction/Intro.html#//apple_ref/doc/uid/TP40015179) application.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a abordé les nouvelles fonctionnalités de jeux fournies par iOS 9 pour vos applications Xamarin. iOS.
 Il a introduit les GameplayKit et les e/s de modèle ; les principales améliorations apportées à Metal ; et les nouvelles fonctionnalités de SceneKit et SpriteKit.
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemples iOS 9](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
+- [Exemples iOS 9](/samples/browse/?products=xamarin&term=Xamarin.iOS%2biOS9)
 - [iOS 9 pour les développeurs](https://developer.apple.com/ios/pre-release/)
 - [iOS 9,0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)

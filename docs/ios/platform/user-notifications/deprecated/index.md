@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 10/07/2016
-ms.openlocfilehash: a97885518c0646d2d8315b5da5eb12c71d693cf6
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 0822f630d74563f5e6e0dcefa456cf5f5c07a8f5
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574078"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436941"
 ---
 # <a name="deprecated-notification-technologies-in-xamarinios"></a>Technologies de notification déconseillées dans Xamarin. iOS
 
@@ -41,6 +41,6 @@ Dans cette section, nous allons découvrir comment utiliser des notifications lo
 
 Cette section couvre les notifications push dans iOS. Il présente le service de passerelle de notifications push Apple (APNS) et le rôle qu’il joue pour la publication des notifications sur les applications iOS. Il explique comment créer les certificats de sécurité nécessaires pour activer les notifications push et les aborder. Enfin, cette section présente certaines des tâches de maintenance que les serveurs d’applications doivent effectuer pour effectuer le suivi des appareils mobiles clients.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [Notifications (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/notifications)
+- [Notifications (exemple)](/samples/xamarin/ios-samples/notifications)

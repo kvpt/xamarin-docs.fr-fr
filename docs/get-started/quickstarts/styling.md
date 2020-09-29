@@ -12,14 +12,14 @@ ms.date: 02/07/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 05560ae7c3d255140c0782e5f442dd2356d86cad
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 9794f429744611654ce883b48aa828b997ec881f
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937421"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435435"
 ---
-# <a name="style-a-cross-platform-xamarinforms-application"></a>Styliser une application multiplateforme Xamarin.Forms
+# <a name="style-a-cross-platform-no-locxamarinforms-application"></a>Styliser une application multiplateforme Xamarin.Forms
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-styled/)
 
@@ -32,9 +32,9 @@ Le Guide de démarrage rapide explique comment styliser une Xamarin.Forms applic
 Page de [ ![ Commentaires](styling-images/screenshots1-sml.png)](styling-images/screenshots1.png#lightbox "Page de notes")page 
  [ ![ entrée note](styling-images/screenshots2-sml.png)](styling-images/screenshots2.png#lightbox "Page d’entrée de note")
 
-### <a name="prerequisites"></a>Prérequis
+### <a name="prerequisites"></a>Conditions préalables requises
 
-Vous devez suivre correctement le [précédent guide de démarrage rapide](database.md) avant de tenter de suivre ce guide de démarrage rapide. Vous pouvez également télécharger l’[exemple du précédent guide de démarrage rapide](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-database/), et l’utiliser comme point de départ pour ce guide de démarrage rapide.
+Vous devez suivre correctement le [précédent guide de démarrage rapide](database.md) avant de tenter de suivre ce guide de démarrage rapide. Vous pouvez également télécharger l’[exemple du précédent guide de démarrage rapide](/samples/xamarin/xamarin-forms-samples/getstarted-notes-database/), et l’utiliser comme point de départ pour ce guide de démarrage rapide.
 
 ::: zone pivot="windows"
 
@@ -322,9 +322,9 @@ Dans ce démarrage rapide, vous avez appris comment :
 Pour en savoir plus sur les notions de base du développement d’applications à l’aide de Xamarin.Forms , passez à la présentation approfondie des Démarrages rapides.
 
 > [!div class="nextstepaction"]
-> [Suivant](deepdive.md)
+> [Next](deepdive.md)
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Notes (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-styled/)
-- [Xamarin.FormsPrésentation approfondie des Démarrages rapides](deepdive.md)
+- [Notes (exemple)](/samples/xamarin/xamarin-forms-samples/getstarted-notes-styled/)
+- [Xamarin.Forms Présentation approfondie des Démarrages rapides](deepdive.md)

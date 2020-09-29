@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: f9f1b09c5cbd5660018e8e8d346aa1d25e51dab2
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 47530b27fb754bf2efd50615fef9dfc558d9c7d2
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937382"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436193"
 ---
 # <a name="working-with-tvos-segmented-controls-in-xamarin"></a>Utilisation des contrôles segmentés tvOS dans Xamarin
 
@@ -209,12 +209,12 @@ Où `UIControlState` spécifie l’état du contrôle pour lequel vous définiss
 - Normal
 - Sélectionnés
 - Désactivé
-- Sélectionné
+- Selected
 - Avec focus
 
 Et `UIBarMetrics` spécifie les mesures à utiliser comme suit :
 
-- Default
+- Par défaut
 - Compact
 - DefaultPrompt
 - CompactPrompt
@@ -229,13 +229,13 @@ Où le premier `UIControlState` spécifie l’état du segment à gauche du sép
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a abordé la conception et l’utilisation d’un contrôle segmenté à l’intérieur d’une application Xamarin. tvOS.
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemples tvOS](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [Exemples tvOS](/samples/browse/?products=xamarin&term=Xamarin.iOS%2btvOS)
 - [tvOS](https://developer.apple.com/tvos/)
 - [Guides de l’interface utilisateur tvOS](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [Guide de programmation d’applications pour tvOS](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

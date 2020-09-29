@@ -6,12 +6,12 @@ ms.assetid: A4130995-48FD-4E2E-9C2B-ADCEFF35BE3A
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 54a4c6e32059b6ff32b3a93abf5fd30c65f16b5f
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 06309c2d746d1349a672d947e27503018b80ae40
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936628"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436958"
 ---
 # <a name="3d-coordinates-in-monogame"></a>Coordonnées 3D en monojeu
 
@@ -36,7 +36,7 @@ Une fois que vous avez terminé, nous aurons un projet avec un robot qui se dép
 
 ## <a name="creating-a-project"></a>Création d’un projet
 
-Cette procédure pas à pas se concentre sur le déplacement d’objets dans l’espace 3D. Nous allons commencer par le projet de rendu des modèles et des tableaux de vertex [qui se trouvent ici](https://docs.microsoft.com/samples/xamarin/mobile-samples/modelsandvertsmg/). Une fois téléchargé, décompressez et ouvrez le projet pour vérifier qu’il s’exécute et que les éléments suivants doivent s’afficher :
+Cette procédure pas à pas se concentre sur le déplacement d’objets dans l’espace 3D. Nous allons commencer par le projet de rendu des modèles et des tableaux de vertex [qui se trouvent ici](/samples/xamarin/mobile-samples/modelsandvertsmg/). Une fois téléchargé, décompressez et ouvrez le projet pour vérifier qu’il s’exécute et que les éléments suivants doivent s’afficher :
 
 ![Une fois téléchargé, décompressez et ouvrez le projet pour vérifier qu’il s’exécute et que cette vue doit être affichée.](part3-images/image2.png)
 
@@ -374,7 +374,7 @@ Si nous exécutons le code avec la multiplication inversée, nous remarquerons q
 
 L' `Camera` entité contient toute la logique nécessaire pour effectuer un déplacement basé sur l’entrée et fournir des propriétés pour assigner des propriétés sur la `BasicEffect` classe.
 
-Tout d’abord, nous allons implémenter une caméra statique (sans déplacement basé sur l’entrée) et l’intégrer dans notre projet existant. Ajoutez une nouvelle classe à la bibliothèque de classes portable **MonoGame3D** (le même projet que `Robot.cs` ) et nommez-la **appareil photo**. Remplacez le contenu du fichier par le code suivant :
+Tout d’abord, nous allons implémenter une caméra statique (sans déplacement basé sur l’entrée) et l’intégrer dans notre projet existant. Ajoutez une nouvelle classe à la bibliothèque de classes portable **MonoGame3D** (le même projet que `Robot.cs` ) et nommez-la **appareil photo**. Remplacez le contenu du fichier par le code suivant :
 
 ```csharp
 using System;
@@ -572,11 +572,11 @@ namespace MonoGame3D
 
 Les modifications apportées à la `Game1` version précédente (qui sont identifiées par `// New camera code` ) sont les suivantes :
 
-- `Camera`champ dans`Game1`
-- `Camera`instanciation dans`Game1.Initialize`
-- `Camera.Update`appeler dans`Game1.Update`
-- `Robot.Draw`accepte maintenant un `Camera` paramètre
-- `Game1.Draw`utilise désormais `Camera.ViewMatrix` et`Camera.ProjectionMatrix`
+- `Camera` champ dans `Game1`
+- `Camera` instanciation dans `Game1.Initialize`
+- `Camera.Update` appeler dans `Game1.Update`
+- `Robot.Draw` accepte maintenant un `Camera` paramètre
+- `Game1.Draw` utilise désormais `Camera.ViewMatrix` et `Camera.ProjectionMatrix`
 
 ## <a name="moving-the-camera-with-input"></a>Déplacement de l’appareil photo avec l’entrée
 
@@ -721,11 +721,11 @@ Si l’utilisateur touche l’écran, le code vérifie si la première touche ta
 
 Si l’utilisateur touche le troisième centre de l’écran, l’appareil photo se déplace vers l’avant. Cela est effectué en premier en obtenant le vecteur Forward, qui est initialement défini comme pointant vers l’axe Y négatif, puis pivoté par une matrice créée à l’aide de `Matrix.CreateRotationZ` et de la `angle` valeur. Enfin `forwardVector` , est appliqué à à `position` l’aide du `unitsPerSecond` coefficient.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cette procédure pas à pas explique comment déplacer et faire pivoter l' `Models` espace 3D à l’aide de `Matrices` et de la `BasicEffect.World` propriété. Cette forme de mouvement fournit la base pour déplacer des objets dans les jeux 3D. Cette procédure pas à pas explique également comment implémenter une `Camera` entité pour afficher le monde à partir de n’importe quelle position et angle.
 
 ## <a name="related-links"></a>Liens associés
 
 - [Lien de l’API monojeu](http://www.monogame.net/documentation/?page=api)
-- [Projet terminé (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/monogame3dcamera)
+- [Projet terminé (exemple)](/samples/xamarin/monodroid-samples/monogame3dcamera)
