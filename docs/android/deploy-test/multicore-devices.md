@@ -7,16 +7,16 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 05/30/2019
-ms.openlocfilehash: e27e73ac2c5164fa3431c8892b21a71c32fcd8ef
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 85efadaa88e8923f363bd92c0426d536b6ebd331
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76724013"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454869"
 ---
 # <a name="multi-core-devices--xamarinandroid"></a>Appareils multicœurs et Xamarin.Android
 
-_Android peut fonctionner sur plusieurs architectures informatiques différentes. Ce document traite des différentes architectures CPU qui peuvent être utilisées pour une application Xamarin.Android. Ce document expliquera également comment les applications Android sont emballées pour prendre en charge différentes architectures CPU. L’interface binaire d’application (ABI) sera introduite, et des conseils seront fournis concernant les ATI à utiliser dans une application Xamarin.Android._
+_Android peut s’exécuter sur plusieurs architectures d’ordinateur différentes. Ce document décrit les différentes architectures d’UC qui peuvent être utilisées pour une application Xamarin. Android. Ce document explique également comment les applications Android sont empaquetées pour prendre en charge différentes architectures d’UC. L’interface binaire d’application (ABI) sera introduite et des instructions concernant les Abi à utiliser dans une application Xamarin. Android sont fournies._
 
 ## <a name="overview"></a>Vue d’ensemble
 
@@ -87,19 +87,19 @@ C’est le nom d’une ABI pour les processeurs qui prennent en charge le jeu d�
 
 Le format de fichier Package d’application Android contient tout le code, les ressources et les certificats nécessaires pour une application Android. Il s’agit d’un fichier `.zip`, mais il utilise l’extension de nom de fichier `.apk`. Quand il est développé, le contenu d’un `.apk` créé par Xamarin.Android peut être consulté comme dans la capture d’écran ci-dessous :
 
-[![Contenu du .apk](multicore-devices-images/00.png)](multicore-devices-images/00.png#lightbox)
+[![Contenu du. apk](multicore-devices-images/00.png)](multicore-devices-images/00.png#lightbox)
 
 Une description rapide du contenu du fichier `.apk` :
 
-- **AndroidManifest.xml** &ndash; C’est le `AndroidManifest.xml` fichier, en format binaire XML.
+- **AndroidManifest.xml** &ndash; Il s’agit du `AndroidManifest.xml` fichier au format XML binaire.
 
-- **classes.dex** &ndash; Cela contient le code `dex` d’application, compilé dans le format de fichier qui est utilisé par le VM Android runtime.
+- **classes. DEX** &ndash; contient le code de l’application, compilé dans le `dex` format de fichier utilisé par la machine virtuelle du runtime Android.
 
-- **resources.arsc** &ndash; Ce fichier contient toutes les ressources précompilées pour l’application.
+- **Resources. ARSC** &ndash; ce fichier contient toutes les ressources précompilées pour l’application.
 
 - **LIB** &ndash; Ce répertoire contient le code compilé pour chaque ABI. Il contient un sous-dossier pour chaque ABI qui a été décrite dans la section précédente. Dans la capture d’écran ci-dessus, le fichier `.apk` en question a des bibliothèques natives pour `armeabi-v7a` et `x86`.
 
-- **META-INF** &ndash; Ce répertoire (si présent) est utilisé pour stocker des informations de signature, un package et des données de configuration d’extension.
+- **méta-INF** &ndash; Ce répertoire (le cas échéant) est utilisé pour stocker les informations de signature, le package et les données de configuration d’extension.
 
 - **res** &ndash; Ce répertoire contient les ressources qui n’ont pas été compilées dans `resources.arsc`.
 
@@ -110,7 +110,7 @@ Une description rapide du contenu du fichier `.apk` :
 
 Chaque appareil Android prend en charge l’exécution de code natif dans jusqu'à deux ABI :
 
-- **Le "primaire" ABI** &ndash; Cela correspond au code machine utilisé dans l’image du système.
+- ABI « principal **»** &ndash; Cela correspond au code machine utilisé dans l’image système.
 
 - **Une ABI « secondaire »** &ndash; Il s’agit d’un message ABI facultatif qui est également pris en charge par l’image système.
 
@@ -190,7 +190,7 @@ En outre, même si les deux ABI `armeabi` et `armeabi-v7a` sont spécifiées (co
 <AndroidSupportedAbis>armeabi,armeabi-v7a</AndroidSupportedAbis>
 ```
 
-Par conséquent, `armeabi` `libmonodroid.so` le sera trouvé `.apk`d’abord dans le , et `armeabi` `libmonodroid.so` le `armeabi-v7a` `libmonodroid.so` sera celui qui est extrait, même si le est présent et optimisé pour la cible. Cela peut également entraîner des erreurs d’exécution obscures, car `armeabi` n’est pas SMP-safe.
+Par conséquent, le se `armeabi` `libmonodroid.so` trouve en premier dans le `.apk` , et le `armeabi` `libmonodroid.so` sera celui qui est extrait, même si `armeabi-v7a` `libmonodroid.so` est présent et optimisé pour la cible. Cela peut également entraîner des erreurs d’exécution obscures, car `armeabi` n’est pas SMP-safe.
 
 ##### <a name="installing-native-libraries-android-404-and-later"></a>Installation des bibliothèques natives : Android 4.0.4 et versions ultérieures
 
@@ -226,7 +226,7 @@ Xamarin.Android prend en charge les architectures 32 bits suivantes :
 - `x86`
 
 > [!NOTE]
-> **^** En date de [Xamarin.Android 9.2](https://docs.microsoft.com/xamarin/android/release-notes/9/9.2#removal-of-support-for-armeabi-cpu-architecture), `armeabi` n’est plus pris en charge.
+> **^** À partir de [Xamarin. Android 9,2](/xamarin/android/release-notes/9/9.2#removal-of-support-for-armeabi-cpu-architecture), `armeabi` n’est plus pris en charge.
 
 Xamarin.Android ne fournit pas actuellement la prise en charge de `mips`.
 
@@ -238,7 +238,7 @@ Par défaut, Xamarin.Android utilise `armeabi-v7a` pour les versions de **Produc
 
 Dans Visual Studio pour Mac, les architectures prises en charge peuvent être sélectionnées dans la page **Build Android** des **Options du projet**, sous l’onglet **Avancé**, comme indiqué dans la capture d’écran suivante :
 
-[![Android Build ATI soutenu](multicore-devices-images/xs-abi-selections-sml.png)](multicore-devices-images/xs-abi-selections.png#lightbox)
+[![Abi de build Android pris en charge](multicore-devices-images/xs-abi-selections-sml.png)](multicore-devices-images/xs-abi-selections.png#lightbox)
 
 Il existe certaines situations où il peut être nécessaire de déclarer une prise en charge supplémentaire d’ABI, par exemple lorsque :
 
@@ -246,13 +246,13 @@ Il existe certaines situations où il peut être nécessaire de déclarer une pr
 
 - Vous déployez l’application sur un appareil `armeabi-v7a` pour garantir la sécurité des threads.
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Ce document décrit les différentes architectures d’UC qui peuvent être employées pour une application Android. Il présentait l’interface binaire d’application et comment elle est utilisée par Android pour prendre en charge différentes architectures d’UC.
 Il expliquait ensuite comment spécifier la prise en charge des ABI dans une application Xamarin.Android et soulignait les problèmes qui surviennent lors de l’utilisation des applications Xamarin.Android uniquement destinées à `armeabi` sur un appareil `armeabi-v7a`.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [Kit de développement natif (NDK) Android](https://developer.android.com/tools/sdk/ndk/index.html)
+- [Android NDK](https://developer.android.com/tools/sdk/ndk/index.html)
 - [Problème 9089 :Nexus One - AUCUNE bibliothèque native n’est chargée à partir d’armeabi s’il existe au moins une bibliothèque armeabi-v7a](https://code.google.com/p/android/issues/detail?id=9089)
 - [Problème 24321 : Galaxy Nexus 4.0.2 utilise le code natif armeabi lorsque armeabi et armeabi-v7a sont tous deux inclus dans l’apk](https://code.google.com/p/android/issues/detail?id=25321)

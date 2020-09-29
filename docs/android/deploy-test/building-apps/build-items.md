@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: jonpryor
 ms.author: jopryo
 ms.date: 09/23/2020
-ms.openlocfilehash: 2d84152551b6c9ddfb2263dcd65e2def5ba20e33
-ms.sourcegitcommit: 38496cfd4d30fd40a011011f303a31de639bd699
+ms.openlocfilehash: 90efe2533f971180124d044ec39ddcf1591b9d36
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91247263"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91455038"
 ---
 # <a name="build-items"></a>Éléments de génération
 
@@ -97,7 +97,7 @@ Tous les fichiers avec une action de génération *AndroidResource* sont compil�
 </ItemGroup>
 ```
 
-Les utilisateurs plus expérimentés souhaitent éventuellement avoir des ressources différentes utilisées dans des configurations différentes, mais avec le même chemin effectif. Il faut pour cela avoir plusieurs répertoires de ressources et des fichiers avec les mêmes chemins relatifs au sein de ces différents répertoires, et utiliser des conditions MSBuild pour inclure de façon conditionnelle des fichiers différents dans les différentes configurations. Exemple :
+Les utilisateurs plus expérimentés souhaitent éventuellement avoir des ressources différentes utilisées dans des configurations différentes, mais avec le même chemin effectif. Il faut pour cela avoir plusieurs répertoires de ressources et des fichiers avec les mêmes chemins relatifs au sein de ces différents répertoires, et utiliser des conditions MSBuild pour inclure de façon conditionnelle des fichiers différents dans les différentes configurations. Par exemple :
 
 ```xml
 <ItemGroup Condition="'$(Configuration)'!='Debug'">
@@ -128,7 +128,7 @@ Les utilisateurs plus expérimentés souhaitent éventuellement avoir des ressou
 
 L’action de génération `AndroidResourceAnalysisConfig` marque un fichier comme un fichier de configuration de niveau de gravité pour l’outil de diagnostic Xamarin Android designer Layout. Actuellement utilisé uniquement dans l’éditeur de disposition et non pour les messages de génération.
 
-Pour plus d’informations, consultez la documentation sur l' [analyse des ressources Android](https://aka.ms/androidresourceanalysis) .
+Pour plus d’informations, consultez la documentation sur l' [analyse des ressources Android](../../user-interface/android-designer/diagnostics.md) .
 
 Ajouté dans Xamarin. Android 10,2.
 

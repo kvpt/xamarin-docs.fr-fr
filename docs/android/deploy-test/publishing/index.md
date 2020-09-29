@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 3062afda82be2b45146687b9d77210a42f8f55fa
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 0b44cbf754e8d1be66b0f3bf09badb78852978eb
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75487956"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454635"
 ---
 # <a name="publishing-an-application"></a>Publication d'une application
 
@@ -27,7 +27,7 @@ La dernière étape du développement d’une application Xamarin.Android consis
 
 Le diagramme suivant illustre les étapes de la publication d’une application Xamarin.Android :
 
-[![Construire et déployer flowchart](images/build-and-deploy-steps.png)](images/build-and-deploy-steps.png#lightbox)
+[![Organigramme de génération et de déploiement](images/build-and-deploy-steps.png)](images/build-and-deploy-steps.png#lightbox)
 
 Comme le montre le diagramme ci-dessus, la préparation est identique quelle que soit la méthode de distribution utilisée. Une application Android peut être mise à disposition des utilisateurs de différentes manières :
 
@@ -50,13 +50,13 @@ Google Play est probablement la place de marché la plus complète et la plus po
 
 Cette section montre comment charger l’application sur un App Store tel que Google Play, avec le contenu promotionnel approprié. Un vue d’ensemble conceptuelle des fichiers d’extension APK, ce qu’ils sont et comment ils fonctionnent, est proposée. Les services Google Licensing sont également décrits. Enfin, d’autres moyens de distribution sont présentés, notamment l’utilisation d’un serveur web HTTP, la distribution simple par e-mail et l’Amazon Appstore pour Android.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [HelloWorldPublishing (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/helloworldpublishing)
+- [HelloWorldPublishing (exemple)](/samples/xamarin/monodroid-samples/helloworldpublishing)
 - [Processus de génération](~/android/deploy-test/building-apps/build-process.md)
 - [Liaison](~/android/deploy-test/linker.md)
-- [Obtenir une clé API Google Maps](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)
-- [Déploiement via Visual Studio App Center](https://docs.microsoft.com/appcenter/distribution/stores/googleplay)
+- [Obtention d’une clé API Google Maps](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)
+- [Déployer via Visual Studio App Center](/appcenter/distribution/stores/googleplay)
 - [Signature d’application](https://source.android.com/security/apksigning/)
 - [Publication sur Google Play](https://developer.android.com/distribute/googleplay/publish/index.html)
 - [Gestion des licences d’application Google](https://developer.android.com/guide/google/play/licensing/index.html)

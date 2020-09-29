@@ -6,12 +6,12 @@ ms.assetid: 5E2A3251-D17F-4F9C-9EA0-6321FEBE8577
 author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: c74c4bedc040ef8f01222b12ee3e6cb99bf5355a
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: d545daa10f9f771cd1708adf32569a49f6c4e709
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938903"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91453504"
 ---
 # <a name="migrating-a-binding-to-the-unified-api"></a>Migrer une liaison vers l’API unifiée
 
@@ -23,7 +23,7 @@ _Cet article décrit les étapes nécessaires pour mettre à jour un projet de l
 
 En outre, tout projet de liaison Xamarin doit également prendre en charge les nouvelles API unifiées à inclure dans un projet 64 bits Xamarin. iOS ou Xamarin. Mac. Cet article décrit les étapes nécessaires à la mise à jour d’un projet de liaison existant pour utiliser l’API unifiée.
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Configuration requise
 
 Les éléments suivants sont requis pour effectuer les étapes présentées dans cet article :
 
@@ -220,4 +220,4 @@ Dans cet article, nous avons présenté les modifications qui doivent être appo
 - [Considérations relatives à la plateforme 32/64 bits](~/cross-platform/macios/32-and-64/index.md)
 - [Mise à niveau des applications iOS existantes](~/cross-platform/macios/unified/updating-ios-apps.md)
 - [API unifiée](~/cross-platform/macios/unified/index.md)
-- [BindingSample](https://docs.microsoft.com/samples/xamarin/ios-samples/bindingsample/)
+- [BindingSample](/samples/xamarin/ios-samples/bindingsample/)

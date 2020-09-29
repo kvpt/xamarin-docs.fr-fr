@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 43637d8592631b2732e5922544f52d91947dd3bd
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b4740b91b3d59a3c50696af06eec4ff82bbf9b1e
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73024283"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91455194"
 ---
 # <a name="touch-and-gestures-in-xamarinandroid"></a>Toucher et gestes dans Xamarin. Android
 
@@ -22,7 +22,7 @@ _Les écrans tactiles sur la plupart des appareils actuels permettent aux utilis
 
 iOS et Android sont similaires dans la manière dont ils gèrent les fonctions tactiles. Les deux peuvent prendre en charge des points de contact multipoint à plusieurs touches sur les gestes d’écran et complexes. Ce guide présente certaines des similarités des concepts, ainsi que les particularités de l’implémentation des fonctions tactiles et des gestes sur les deux plateformes.
 
-Android utilise un objet `MotionEvent` pour encapsuler les données tactiles et les méthodes sur l’objet de vue pour écouter les touches.
+Android utilise un `MotionEvent` objet pour encapsuler les données tactiles et les méthodes sur l’objet de vue pour écouter les touches.
 
 En plus de capturer les données tactiles, iOS et Android offrent à la fois des moyens d’interpréter les modèles de touches en gestes. Ces détecteurs de mouvement peuvent à leur tour être utilisés pour interpréter des commandes spécifiques à l’application, telles que la rotation d’une image ou l’activation d’une page. Android fournit une poignée de mouvements pris en charge, ainsi que des ressources pour faciliter l’ajout de gestes personnalisés complexes.
 
@@ -36,12 +36,12 @@ Ce guide suit un format similaire pour chaque système d’exploitation : tout 
 - [Procédure pas à pas : utilisation de Touch dans Android](~/android/app-fundamentals/touch/android-touch-walkthrough.md)
 - [Suivi tactile multipoint](touch-tracking.md)
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Dans ce guide, nous avons examiné Touch dans Android. Pour les deux systèmes d’exploitation, nous avons appris à activer touch et à répondre aux événements tactiles. Ensuite, nous avons appris les gestes et certains des détecteurs de mouvement fournis par Android et iOS pour gérer certains des scénarios les plus courants. Nous avons examiné comment créer des mouvements personnalisés et les implémenter dans des applications. Une procédure pas à pas A montré les concepts et les API pour chaque système d’exploitation en action, et vous avez également vu comment suivre des doigts individuels.
 
 ## <a name="related-links"></a>Liens associés
 
-- [Android touch Start (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-touch-start)
-- [Android Touch (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-touch-final)
-- [FingerPaint (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-fingerpaint)
+- [Android touch Start (exemple)](/samples/xamarin/monodroid-samples/applicationfundamentals-touch-start)
+- [Android Touch (exemple)](/samples/xamarin/monodroid-samples/applicationfundamentals-touch-final)
+- [FingerPaint (exemple)](/samples/xamarin/monodroid-samples/applicationfundamentals-fingerpaint)

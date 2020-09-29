@@ -9,12 +9,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 2f8c6a80b00a4a91c40c70af05ac0ebe18daaed3
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: e07a7e6ea11cbf717db22dd46eaa5e28d907bafa
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571439"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454921"
 ---
 # <a name="hello-android-deep-dive"></a>Hello, Android - En profondeur
 
@@ -70,7 +70,7 @@ Visual Studio organise le code en _solutions_ et _projets_. Une solution est un 
 
 ## <a name="introduction-to-visual-studio-for-mac"></a>Introduction à Visual Studio pour Mac
 
-Visual Studio pour Mac est un IDE gratuit et open source, similaire à Visual Studio. Il comprend un concepteur visuel entièrement intégré, un éditeur de texte avec outils de refactorisation, un explorateur d’assembly, l’intégration du code source, et bien plus encore. Dans ce guide, vous allez apprendre à utiliser certaines fonctionnalités de base de Visual Studio pour Mac. Si vous utilisez Visual Studio pour Mac pour la première fois, vous pouvez lire la [Présentation de Visual Studio pour Mac](https://docs.microsoft.com/visualstudio/mac/), qui est plus approfondie.
+Visual Studio pour Mac est un IDE gratuit et open source, similaire à Visual Studio. Il comprend un concepteur visuel entièrement intégré, un éditeur de texte avec outils de refactorisation, un explorateur d’assembly, l’intégration du code source, et bien plus encore. Dans ce guide, vous allez apprendre à utiliser certaines fonctionnalités de base de Visual Studio pour Mac. Si vous utilisez Visual Studio pour Mac pour la première fois, vous pouvez lire la [Présentation de Visual Studio pour Mac](/visualstudio/mac/), qui est plus approfondie.
 
 Tout comme Visual Studio, Visual Studio pour Mac organise le code en _solutions_ et en _projets_. Une solution est un conteneur qui peut comprendre un ou plusieurs projets. Un projet peut être une application (par exemple, iOS ou Android), une bibliothèque de prise en charge, une application de test, etc. Dans l’application **Phoneword**, vous avez ajouté un nouveau projet Android (à l’aide du modèle **Application Android**) à la solution **Phoneword** que vous avez créée avec le guide [Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md).
 

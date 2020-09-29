@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 74226aff2ae135144172a06be5e7869c5cd8e408
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 6075b125f36625a8dec12c041631e3794a71cc6a
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84568449"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91455364"
 ---
 # <a name="started-services-with-xamarinandroid"></a>Services démarrés avec Xamarin. Android
 
@@ -23,7 +23,7 @@ Contrairement à un service lié, aucun canal de communication n’est présent 
 
 - `OnCreate`&ndash;Appelée une fois lorsque le service est démarré pour la première fois. C’est là que le code d’initialisation doit être implémenté.
 - `OnBind`&ndash;Cette méthode doit être implémentée par toutes les classes de service, mais un service démarré n’a généralement pas de client associé. Pour cette raison, un service démarré retourne simplement `null` . En revanche, un service hybride (qui est la combinaison d’un service lié et d’un service démarré) doit implémenter et retourner un `Binder` pour le client.
-- `OnStartCommand`&ndash;Appelé pour chaque demande de démarrage du service, en réponse à un appel à `StartService` ou à un redémarrage par le système. C’est là que le service peut commencer toute tâche de longue durée. La méthode retourne une `StartCommandResult` valeur qui indique comment ou si le système doit gérer le redémarrage du service après un arrêt en raison d’une mémoire insuffisante. Cet appel a lieu sur le thread principal. Cette méthode est décrite plus en détail ci-dessous.
+- `OnStartCommand`&ndash;Appelé pour chaque demande de démarrage du service, en réponse à un appel à `StartService` ou à un redémarrage par le système. C’est là que le service peut commencer toute tâche de longue durée. La méthode retourne une  `StartCommandResult` valeur qui indique comment ou si le système doit gérer le redémarrage du service après un arrêt en raison d’une mémoire insuffisante. Cet appel a lieu sur le thread principal. Cette méthode est décrite plus en détail ci-dessous.
 - `OnDestroy`&ndash;Cette méthode est appelée lorsque le service est en cours de destruction. Il est utilisé pour exécuter tout nettoyage final requis.
 
 La méthode la plus importante pour un service démarré est la `OnStartCommand` méthode. Elle est appelée chaque fois que le service reçoit une demande de travail. L’extrait de code suivant est un exemple de `OnStartCommand` : 
@@ -79,9 +79,9 @@ Un service démarré continue de s’exécuter indéfiniment. Android conservera
 
 Plusieurs appelants peuvent demander qu’un service soit démarré. S’il existe une demande de démarrage en suspens, le service peut utiliser le `startId` qui est passé dans `OnStartCommand` pour empêcher l’arrêt prématuré du service. Le `startId` correspond au dernier appel à `StartService` , et est incrémenté chaque fois qu’il est appelé. Par conséquent, si une requête suivante `StartService` n’a pas encore abouti à un appel à `OnStartCommand` , le service peut appeler `StopSelfResult` , en lui transmettant la dernière valeur de `startId` qu’il a reçue (au lieu d’appeler simplement `StopSelf` ). Si un appel à n' `StartService` a pas encore abouti à un appel correspondant à `OnStartCommand` , le système n’arrête pas le service, car le `startId` utilisé dans l’appel ne `StopSelf` correspond pas à l’appel le plus récent `StartService` .
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [StartedServicesDemo (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-servicesamples-startedservicesdemo)
+- [StartedServicesDemo (exemple)](/samples/xamarin/monodroid-samples/applicationfundamentals-servicesamples-startedservicesdemo)
 - [Android. app. service](xref:Android.App.Service)
 - [Android. app. StartCommandFlags](xref:Android.App.StartCommandFlags)
 - [Android. app. StartCommandResult](xref:Android.App.StartCommandResult)

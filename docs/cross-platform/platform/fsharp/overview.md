@@ -6,16 +6,16 @@ ms.assetid: 1A0E627D-A4C1-4F95-BAED-76A0E40B9054
 author: davidortinau
 ms.author: daortin
 ms.date: 03/24/2017
-ms.openlocfilehash: 6050ede8a8f725f75011a1ebc018406c197b1dcd
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: f6fca3bd02833e429ca3cbe8592124cb4cfba65b
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938830"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91453179"
 ---
 # <a name="getting-started-with-f35"></a>Prise en main avec F&#35;
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Configuration requise
 
 F # est inclus par défaut dans Visual Studio pour Mac.
 
@@ -51,6 +51,6 @@ Il existe une multitude d’informations en ligne pour vous familiariser avec le
 
 - [F# Software Foundation](https://fsharp.org)
 - [Portail de développement Visual F#](https://go.microsoft.com/fwlink/?LinkID=234174)
-- [Galerie de code Visual F#](https://go.microsoft.com/fwlink/?LinkID=124614)
-- [Programmation de Visual F# Math/stats](https://go.microsoft.com/fwlink/?LinkId=235173)
-- [Graphiques Visual F#](https://go.microsoft.com/fwlink/?LinkId=235176)
+- [Galerie de code Visual F#](/samples/browse/)
+- [Programmation de Visual F# Math/stats](/previous-versions/visualstudio/visual-studio-2010/hh273075(v=vs.100))
+- [Graphiques Visual F#](/previous-versions/visualstudio/visual-studio-2010/hh273079(v=vs.100))

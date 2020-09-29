@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 04/25/2018
-ms.openlocfilehash: ea54dcd1df800df1df855fc6b7efedecfda1a24f
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: 7c63f4c245d6fc5cb6e9da6320e159229b07de6e
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86996862"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91453673"
 ---
 # <a name="install-and-setup-wear-os-on-xamarinandroid"></a>Installer et configurer l’usure du système d’exploitation sur Xamarin. Android
 
@@ -115,4 +115,4 @@ Pour en savoir plus sur l’empaquetage d’applications, consultez [utilisation
 
 ## <a name="related-links"></a>Liens associés
 
-- [SkeletonWear (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-skeletonwear)
+- [SkeletonWear (exemple)](/samples/xamarin/monodroid-samples/wear-skeletonwear)

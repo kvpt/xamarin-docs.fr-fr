@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 04/11/2018
-ms.openlocfilehash: 514157873412b3af31e43ba211aa636c9b53c112
-ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
+ms.openlocfilehash: 489408400a7a900bf867a4303188cdc927020f7f
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85853111"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454466"
 ---
 # <a name="binding-an-aar"></a>Liaison d’un fichier .AAR
 
@@ -291,7 +291,7 @@ Compilez et exécutez le projet **BindingTest** . L’application démarre et pr
 
 [![BindingTest affichant le nombre de consonnes](binding-an-aar-images/13-count-consonants.png)](binding-an-aar-images/13-count-consonants.png#lightbox)
 
-Félicitations ! Vous avez correctement lié une bibliothèque Java. AAR!
+Félicitations ! Vous avez correctement lié une bibliothèque Java. AAR!
 
 ## <a name="summary"></a>Résumé
 
@@ -303,5 +303,5 @@ En outre, nous avons étendu l’application pour accéder et afficher une resso
 - [Création d’une bibliothèque de liaisons Java (vidéo)](https://university.xamarin.com/classes#10090)
 - [Liaison d’un fichier .JAR](~/android/platform/binding-java-library/binding-a-jar.md)
 - [Liaison d’une bibliothèque Java](~/android/platform/binding-java-library/index.md)
-- [AarBinding (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/javaintegration-aarbinding)
+- [AarBinding (exemple)](/samples/xamarin/monodroid-samples/javaintegration-aarbinding)
 - [Bogue 44573-un projet ne peut pas lier plusieurs fichiers. AAR](https://bugzilla.xamarin.com/show_bug.cgi?id=44573)

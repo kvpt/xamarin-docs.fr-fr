@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 09/11/2020
-ms.openlocfilehash: 6a8e6b9e03cafe2ef40ae41114831b727010d12a
-ms.sourcegitcommit: 38496cfd4d30fd40a011011f303a31de639bd699
+ms.openlocfilehash: d89f686be99dc8ae8d1aada12dcbe94d857424d7
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91246905"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454960"
 ---
 # <a name="build-process"></a>Processus de génération
 
@@ -125,7 +125,7 @@ Pour utiliser le magasin de clés généré ci-dessus, utilisez le groupe de pro
 
 ## <a name="build-extension-points"></a>Créer des points d’extension
 
-Le système de génération Xamarin.Android expose quelques points d’extension publics pour les utilisateurs souhaitant utiliser notre processus de génération. Pour utiliser l’un de ces points d’extension, vous devez ajouter votre cible personnalisée à la propriété MSBuild appropriée dans un `PropertyGroup`. Exemple :
+Le système de génération Xamarin.Android expose quelques points d’extension publics pour les utilisateurs souhaitant utiliser notre processus de génération. Pour utiliser l’un de ces points d’extension, vous devez ajouter votre cible personnalisée à la propriété MSBuild appropriée dans un `PropertyGroup`. Par exemple :
 
 ```xml
 <PropertyGroup>
@@ -141,7 +141,7 @@ Les points d’extension sont les suivants :
 - [' $ (AfterGenerateAndroidManifest)](~/android/deploy-test/building-apps/build-properties.md#aftergenerateandroidmanifest)
 - [' $ (BeforeGenerateAndroidManifest)](~/android/deploy-test/building-apps/build-properties.md#beforegenerateandroidmanifest)
 
-Un mot de prudence pour étendre le processus de génération : s’il n’est pas écrit correctement, les extensions de build peuvent affecter les performances de votre Build, en particulier si elles s’exécutent à chaque Build. Il est vivement recommandé de lire la [documentation](https://docs.microsoft.com/visualstudio/msbuild/msbuild) MSBuild avant d’implémenter ces extensions.
+Un mot de prudence pour étendre le processus de génération : s’il n’est pas écrit correctement, les extensions de build peuvent affecter les performances de votre Build, en particulier si elles s’exécutent à chaque Build. Il est vivement recommandé de lire la [documentation](/visualstudio/msbuild/msbuild) MSBuild avant d’implémenter ces extensions.
 
 ## <a name="target-definitions"></a>Définitions de cibles
 

@@ -6,18 +6,18 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/30/2018
-ms.openlocfilehash: 729dede97a9b153738ca72af499d4d1e9d77fae0
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 3c42743a26ab4ec5388c1d3458d88ef4d161a1f3
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73021443"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454843"
 ---
 # <a name="linking-on-android"></a>Liaison sur Android
 
 Les applications Xamarin.Android utilisent un *éditeur de liens* pour réduire la taille de l’application. L’éditeur de liens effectue une analyse statique de votre application pour déterminer les assemblys réellement utilisés, les types réellement utilisés et les membres réellement utilisés. L’éditeur de liens se comporte ensuite comme un *récupérateur de mémoire*, qui recherche en permanence des assemblys, des types des membres qui sont référencés jusqu'à la fermeture complète des assemblys, types et membres référencés. Tous les autres éléments sont *ignorés*.
 
-Par exemple, [Hello, Android](https://docs.microsoft.com/samples/xamarin/monodroid-samples/hellom4a) :
+Par exemple, [Hello, Android](/samples/xamarin/monodroid-samples/hellom4a) :
 
 |Configuration|1.2.0 Size|4.0.1 Size|
 |---|---|---|
@@ -178,8 +178,8 @@ Il est possible de spécifier qu’un jeu d’assemblys fourni par l’utilisate
 
 ### <a name="linkdescription"></a>LinkDescription
 
-[`@(LinkDescription)`](~/android/deploy-test/building-apps/build-process.md) 
- **L’action Build** peut être utilisée sur des fichiers qui peuvent contenir un [fichier de configuration de liaison personnalisé](~/cross-platform/deploy-test/linker.md).
+L' [`@(LinkDescription)`](~/android/deploy-test/building-apps/build-process.md) 
+ **action de génération** peut être utilisée sur des fichiers qui peuvent contenir un fichier de configuration de l' [éditeur de liens personnalisé](~/cross-platform/deploy-test/linker.md).
 .edmx. Des fichiers de configuration d’éditeur de liens personnalisés peuvent être nécessaires pour conserver les membres `internal` ou `private` qui doivent l’être.
 
 ### <a name="custom-attributes"></a>Attributs personnalisés
@@ -207,7 +207,7 @@ Lorsqu’un assembly est lié, les types d’attributs personnalisés suivants s
 - System.Diagnostics.DebuggerTypeProxyAttribute
 - System.Diagnostics.DebuggerVisualizerAttribute
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [Configuration De Linker personnalisée](~/cross-platform/deploy-test/linker.md)
+- [Configuration de l’éditeur de liens personnalisé](~/cross-platform/deploy-test/linker.md)
 - [Liaison sur iOS](~/ios/deploy-test/linker.md)

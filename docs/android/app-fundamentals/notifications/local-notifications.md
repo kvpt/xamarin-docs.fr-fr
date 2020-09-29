@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 08/16/2018
-ms.openlocfilehash: 87a6790e89f7f7ff0f84b4b59e7b4de9b1383bc3
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: f56e02a89474ebf5f89800b1f96318db7965159d
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84566950"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91456299"
 ---
 # <a name="local-notifications-on-android"></a>Notifications locales sur Android
 
@@ -114,13 +114,13 @@ L’application **YouTube** installée avec Android Oreo répertorie deux catég
 
 [![Écrans de notification pour YouTube dans Android Oreo](local-notifications-images/27-youtube-sml.png)](local-notifications-images/27-youtube.png#lightbox)
 
-Chacune de ces catégories correspond à un canal de notification. L’application YouTube implémente un canal de **notifications de téléchargement** et un canal de **notifications générales** . L’utilisateur peut appuyer sur **Télécharger les notifications**, ce qui affiche l’écran des paramètres pour le canal des notifications de téléchargement de l’application :
+Chacune de ces catégories correspond à un canal de notification. L’application YouTube implémente un canal de **notifications de téléchargement**  et un canal de **notifications générales** . L’utilisateur peut appuyer sur **Télécharger les notifications**, ce qui affiche l’écran des paramètres pour le canal des notifications de téléchargement de l’application :
 
 [![Écran de téléchargement des notifications pour l’application YouTube](local-notifications-images/28-yt-download-sml.png)](local-notifications-images/28-yt-download.png#lightbox)
 
 Dans cet écran, l’utilisateur peut modifier le comportement du canal de notifications de **Téléchargement** en procédant comme suit :
 
-- Définissez le niveau d’importance sur **urgent**, **élevé**, **moyen**ou **faible**, ce qui permet de configurer le niveau d’interruption sonore et visuel.
+- Définissez le niveau d’importance sur **urgent**, **élevé**, **moyen**ou   **faible**, ce qui permet de configurer le niveau d’interruption sonore et visuel.
 
 - Activez ou désactivez le point de notification.
 
@@ -139,13 +139,13 @@ Notez que vous ne disposez pas d’un contrôle absolu sur la façon dont vos ca
 ## <a name="notification-creation"></a>Création de notifications
 
 Pour créer une notification dans Android, vous utilisez la classe [NotificationCompat. Builder](https://developer.android.com/reference/android/support/v4/app/NotificationCompat.Builder) du package NuGet [Xamarin. Android. support. v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) . Cette classe permet de créer et de publier des notifications sur des versions antérieures d’Android.
-`NotificationCompat.Builder`est également abordé.
+`NotificationCompat.Builder` est également abordé.
 
-`NotificationCompat.Builder`fournit des méthodes pour définir les différentes options dans une notification, par exemple :
+`NotificationCompat.Builder` fournit des méthodes pour définir les différentes options dans une notification, par exemple :
 
 - Contenu, y compris le titre, le texte du message et l’icône de notification.
 
-- Style de la notification, tel que le *texte volumineux*, la *boîte de réception*ou le style d' *image* .
+- Style de la notification, tel que le *texte volumineux*, la *boîte de réception*ou le style d'   *image* .
 
 - Priorité de la notification : minimale, faible, par défaut, haute ou maximale. Sur Android 8,0 et versions ultérieures, la priorité est définie via un [_canal de notification_](#notification-channels).
 
@@ -236,7 +236,7 @@ const int notificationId = 0;
 notificationManager.Notify (notificationId, notification);
 ```
 
-Dans cet exemple, un nouvel `NotificationCompat.Builder` objet appelé `builder` est instancié, avec l’ID du canal de notification à utiliser. Le titre et le texte de la notification sont définis, et l’icône de notification est chargée à partir de **ressources/dessinable/ic_notification. png**. L’appel à la méthode du générateur de notification `Build` crée un objet de notification avec ces paramètres. L’étape suivante consiste à appeler la `Notify` méthode du gestionnaire de notifications. Pour rechercher le gestionnaire de notifications, vous appelez `GetSystemService` , comme indiqué ci-dessus.
+Dans cet exemple, un nouvel `NotificationCompat.Builder` objet appelé `builder` est instancié, avec l’ID du canal de notification à utiliser. Le titre et le texte de la notification sont définis, et l’icône de notification est chargée à partir de **ressources/dessinables/ic_notification.png**. L’appel à la méthode du générateur de notification `Build` crée un objet de notification avec ces paramètres. L’étape suivante consiste à appeler la `Notify` méthode du gestionnaire de notifications. Pour rechercher le gestionnaire de notifications, vous appelez `GetSystemService` , comme indiqué ci-dessus.
 
 La `Notify` méthode accepte deux paramètres : l’identificateur de notification et l’objet de notification. L’identificateur de notification est un entier unique qui identifie la notification à votre application. Dans cet exemple, l’identificateur de notification est défini sur zéro (0); Toutefois, dans une application de production, vous voudrez attribuer un identificateur unique à chaque notification. La réutilisation de la valeur d’identificateur précédente dans un appel à `Notify` entraîne le remplacement de la dernière notification.
 
@@ -460,7 +460,7 @@ Pour utiliser une image en tant que grande icône dans une notification, vous ap
 builder.SetLargeIcon (BitmapFactory.DecodeResource (Resources, Resource.Drawable.monkey_icon));
 ```
 
-Cet exemple de code ouvre le fichier image à l’adresse **ressources/dessinable/monkey_icon. png**, le convertit en bitmap et passe le bitmap résultant à `NotificationCompat.Builder` . En règle générale, la résolution de l’image source est supérieure à celle de la petite icône, &ndash; mais pas bien plus grande. Une image trop grande peut entraîner des opérations de redimensionnement inutiles qui pourraient retarder la publication de la notification.
+Cet exemple de code ouvre le fichier image à l’adresse **ressources/dessinable/monkey_icon.png**, le convertit en bitmap et passe le bitmap résultant à `NotificationCompat.Builder` . En règle générale, la résolution de l’image source est supérieure à celle de la petite icône, &ndash; mais pas bien plus grande. Une image trop grande peut entraîner des opérations de redimensionnement inutiles qui pourraient retarder la publication de la notification.
 
 ### <a name="big-text-style"></a>Style de texte Big
 
@@ -495,7 +495,7 @@ builder.SetStyle (textStyle);
 // Create the notification and publish it ...
 ```
 
-Dans cet exemple, le texte du message et le texte de synthèse sont stockés dans l' `BigTextStyle` objet ( `textStyle` ) avant d’être transmis à`NotificationCompat.Builder.`
+Dans cet exemple, le texte du message et le texte de synthèse sont stockés dans l' `BigTextStyle` objet ( `textStyle` ) avant d’être transmis à `NotificationCompat.Builder.`
 
 ### <a name="image-style"></a>Style d’image
 
@@ -529,7 +529,7 @@ builder.SetStyle (picStyle);
 // Create the notification and publish it ...
 ```
 
-À l’instar `SetLargeIcon` de la méthode de `NotificationCompat.Builder` , la méthode [BigPicture](xref:Android.App.Notification.BigPictureStyle.BigPicture*) de `BigPictureStyle` requiert une image bitmap de l’image que vous souhaitez afficher dans le corps de la notification. Dans cet exemple, la méthode [DecodeResource](xref:Android.Graphics.BitmapFactory.DecodeResource*) de `BitmapFactory` lit le fichier image situé dans **ressources/Drawable/x_bldg. png** et le convertit en bitmap.
+À l’instar `SetLargeIcon` de la méthode de `NotificationCompat.Builder` , la méthode [BigPicture](xref:Android.App.Notification.BigPictureStyle.BigPicture*) de `BigPictureStyle` requiert une image bitmap de l’image que vous souhaitez afficher dans le corps de la notification. Dans cet exemple, la méthode [DecodeResource](xref:Android.Graphics.BitmapFactory.DecodeResource*) de `BitmapFactory` lit le fichier image situé dans **ressources/dessinable/x_bldg.png** et le convertit en bitmap.
 
 Vous pouvez également afficher des images qui ne sont pas empaquetées en tant que ressources. Par exemple, l’exemple de code suivant charge une image à partir de la carte SD locale et l’affiche dans une notification d' *image* :
 
@@ -552,7 +552,7 @@ builder.SetStyle (picStyle);
 // Create notification and publish it ...
 ```
 
-Dans cet exemple, le fichier image situé dans **/sdcard/pictures/My-Tshirt.jpg** est chargé, redimensionné à la moitié de sa taille d’origine, puis converti en bitmap en vue de son utilisation dans la notification :
+Dans cet exemple, le fichier image situé dans **/sdcard/Pictures/my-tshirt.jpg** est chargé, redimensionné à la moitié de sa taille d’origine, puis converti en bitmap en vue de son utilisation dans la notification :
 
 ![Exemple d’image T-Shirt dans la notification](local-notifications-images/19-tshirt-notification.png)
 
@@ -596,7 +596,7 @@ Vous pouvez également utiliser le style de la *boîte de réception* pour toute
 
 ## <a name="configuring-metadata"></a>Configuration des métadonnées
 
-`NotificationCompat.Builder`comprend des méthodes que vous pouvez appeler pour définir les métadonnées relatives à votre notification, telles que la priorité, la visibilité et la catégorie. Android utilise ces informations &mdash; avec les paramètres de préférence &mdash; de l’utilisateur pour déterminer comment et quand afficher les notifications.
+`NotificationCompat.Builder` comprend des méthodes que vous pouvez appeler pour définir les métadonnées relatives à votre notification, telles que la priorité, la visibilité et la catégorie. Android utilise ces informations &mdash; avec les paramètres de préférence &mdash; de l’utilisateur pour déterminer comment et quand afficher les notifications.
 
 ### <a name="priority-settings"></a>Paramètres de priorité
 
@@ -709,7 +709,7 @@ La fonctionnalité *ne pas déranger* (nouveauté d’Android 5,0) filtre les no
 
 Lorsque l’utilisateur configure *ne pas déranger* pour bloquer toutes les interruptions à l’exception des appels téléphoniques (comme illustré dans la capture d’écran ci-dessus), Android autorise les notifications avec un paramètre de catégorie `Notification.CategoryCall` à être présenté lorsque l’appareil est en mode *ne pas déranger* . Notez que `Notification.CategoryAlarm` les notifications ne sont jamais bloquées en mode *ne pas déranger* .
 
-L’exemple [LocalNotifications](https://docs.microsoft.com/samples/xamarin/monodroid-samples/localnotifications) montre comment utiliser `NotificationCompat.Builder` pour lancer une deuxième activité à partir d’une notification. Cet exemple de code est expliqué dans la procédure pas [à pas utilisation de notifications locales dans Xamarin. Android](~/android/app-fundamentals/notifications/local-notifications-walkthrough.md) .
+L’exemple [LocalNotifications](/samples/xamarin/monodroid-samples/localnotifications) montre comment utiliser `NotificationCompat.Builder` pour lancer une deuxième activité à partir d’une notification. Cet exemple de code est expliqué dans la procédure pas [à pas utilisation de notifications locales dans Xamarin. Android](~/android/app-fundamentals/notifications/local-notifications-walkthrough.md) .
 
 ### <a name="notification-styles"></a>Styles de notification
 
@@ -726,7 +726,7 @@ De même, votre application peut utiliser `NotificationCompat.InboxStyle` et `No
 
 ### <a name="notification-priority-and-category"></a>Catégorie et priorité de notification
 
-`NotificationCompat.Builder`prend en charge la `SetPriority` méthode (disponible à partir d’Android 4,1). Toutefois, la `SetCategory` méthode n’est *pas* prise en charge par `NotificationCompat.Builder` car les catégories font partie du nouveau système de métadonnées de notification introduit dans Android 5,0.
+`NotificationCompat.Builder` prend en charge la `SetPriority` méthode (disponible à partir d’Android 4,1). Toutefois, la `SetCategory` méthode n’est *pas* prise en charge par `NotificationCompat.Builder` car les catégories font partie du nouveau système de métadonnées de notification introduit dans Android 5,0.
 
 Pour prendre en charge les versions antérieures d’Android, où `SetCategory` n’est pas disponible, votre code peut vérifier le niveau d’API au moment de l’exécution pour appeler de manière conditionnelle `SetCategory` lorsque le niveau d’API est supérieur ou égal à Android 5,0 (niveau d’API 21) :
 
@@ -754,10 +754,10 @@ Cet article a expliqué comment créer des notifications locales dans Android. I
 
 Pour obtenir des instructions sur la conception de notifications pour Android, consultez [notifications](https://developer.android.com/guide/topics/ui/notifiers/notifications.html).
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [NotificationsLab (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android50-notificationslab)
-- [LocalNotifications (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/localnotifications)
+- [NotificationsLab (exemple)](/samples/xamarin/monodroid-samples/android50-notificationslab)
+- [LocalNotifications (exemple)](/samples/xamarin/monodroid-samples/localnotifications)
 - [Notifications locales dans la procédure pas à pas Android](~/android/app-fundamentals/notifications/local-notifications-walkthrough.md)
 - [Notification de l’utilisateur](https://developer.android.com/training/notify-user/index.html)
 - [Notification](xref:Android.App.Notification)

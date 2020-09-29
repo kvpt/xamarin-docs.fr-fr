@@ -6,12 +6,12 @@ ms.assetid: B73675D2-09A3-14C1-E41E-20352B819B53
 author: davidortinau
 ms.author: daortin
 ms.date: 08/06/2018
-ms.openlocfilehash: 5edfd8216892eb28a2b1ad14d3ccee1668b21a43
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: b097a0549db6178576d9e10eb3282c88e96b9ddb
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571218"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91453296"
 ---
 # <a name="sharing-code-overview"></a>Vue d’ensemble du partage de code
 
@@ -47,9 +47,9 @@ Les bibliothèques de [.NET standard](~/cross-platform/app-fundamentals/net-stan
 
 - Impossible d’utiliser des directives de compilateur comme `#if __IOS__` .
 
-### <a name="remarks"></a>Remarks
+### <a name="remarks"></a>Remarques
 
-.NET Standard est [semblable à la bibliothèque PCL](https://docs.microsoft.com/dotnet/standard/net-standard#comparison-to-portable-class-libraries), mais avec un modèle plus simple pour la prise en charge des plateformes et un plus grand nombre de classes de la BCL.
+.NET Standard est [semblable à la bibliothèque PCL](/dotnet/standard/net-standard#comparison-to-portable-class-libraries), mais avec un modèle plus simple pour la prise en charge des plateformes et un plus grand nombre de classes de la BCL.
 
 <a name="Shared_Projects"></a>
 
@@ -81,8 +81,8 @@ Ainsi, les trois projets d’application partagent le même code source (les fic
 ### <a name="benefits"></a>Avantages
 
 - Vous permet de partager du code entre plusieurs projets.
-- Le code partagé peut être une branche basée sur la plateforme à l’aide de directives de compilateur (par exemple, à l’aide de `#if __ANDROID__` , comme indiqué dans le document [Building Cross Platform applications](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md) (en anglais).
-- Les projets d’application peuvent inclure des références spécifiques à la plateforme que le code partagé peut utiliser (comme l’utilisation `Community.CsharpSqlite.WP7` de dans l’exemple Tasky pour Windows Phone).
+- Le code partagé peut être une branche basée sur la plateforme à l’aide de directives de compilateur (par exemple, à l’aide de  `#if __ANDROID__` , comme indiqué dans le document  [Building Cross Platform applications](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md) (en anglais).
+- Les projets d’application peuvent inclure des références spécifiques à la plateforme que le code partagé peut utiliser (comme l’utilisation  `Community.CsharpSqlite.WP7` de dans l’exemple Tasky pour Windows Phone).
 
 ### <a name="disadvantages"></a>Inconvénients
 
@@ -91,7 +91,7 @@ Ainsi, les trois projets d’application partagent le même code source (les fic
 
 <a name="Shared_Remarks"></a>
 
-### <a name="remarks"></a>Remarks
+### <a name="remarks"></a>Remarques
 
 Une bonne solution pour les développeurs d’applications qui écrivent du code destiné uniquement au partage dans leur application (et non distribuant à d’autres développeurs).
 
@@ -113,11 +113,11 @@ Les bibliothèques de classes portables sont [présentées en détail ici](~/cro
 
 ### <a name="disadvantages"></a>Inconvénients
 
-- Obsolètes dans les dernières versions de Visual Studio, les bibliothèques .NET Standard sont recommandées à la place. Reportez-vous à cette [explication des différences](https://docs.microsoft.com/dotnet/standard/net-standard#comparison-to-portable-class-libraries) entre PCL et .NET standard.
+- Obsolètes dans les dernières versions de Visual Studio, les bibliothèques .NET Standard sont recommandées à la place. Reportez-vous à cette [explication des différences](/dotnet/standard/net-standard#comparison-to-portable-class-libraries) entre PCL et .NET standard.
 - Impossible d’utiliser les directives du compilateur.
-- Seul un sous-ensemble du .NET Framework peut être utilisé, déterminé par le profil sélectionné (pour plus d’informations, consultez [Introduction à PCL](~/cross-platform/app-fundamentals/pcl.md) ).
+- Seul un sous-ensemble du .NET Framework peut être utilisé, déterminé par le profil sélectionné (pour plus d’informations, consultez  [Introduction à PCL](~/cross-platform/app-fundamentals/pcl.md) ).
 
-### <a name="remarks"></a>Remarks
+### <a name="remarks"></a>Remarques
 
 Le modèle PCL est considéré comme déconseillé dans les dernières versions de Visual Studio.
 

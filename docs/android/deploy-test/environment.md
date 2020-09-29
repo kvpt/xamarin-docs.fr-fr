@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/15/2018
-ms.openlocfilehash: 54fc52c2f2460726fe1c22149d4e7cc0e8a92609
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: da0e3775f400c965ee59a762884e638e3379c8df
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73028074"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454856"
 ---
 # <a name="xamarinandroid-environment"></a>Environnement de Xamarin.Android
 
@@ -44,11 +44,11 @@ Xamarin.Android prend en charge la variable `XA_HTTP_CLIENT_HANDLER_TYPE`, qui p
 
 ### `XA_HTTP_CLIENT_HANDLER_TYPE`
 
-Le type qualifié d’assembly qui doit hériter de [HttpMessageHandler](https://docs.microsoft.com/dotnet/api/system.net.http.httpmessagehandler?view=xamarinandroid-7.1) est construit à partir du [`HttpClient()` constructeur par défaut](https://docs.microsoft.com/dotnet/api/system.net.http.httpclient.-ctor?view=xamarinandroid-7.1#System_Net_Http_HttpClient__ctor).
+Le type qualifié d’assembly qui doit hériter de [HttpMessageHandler](/dotnet/api/system.net.http.httpmessagehandler?view=xamarinandroid-7.1) est construit à partir du [`HttpClient()` constructeur par défaut](/dotnet/api/system.net.http.httpclient.-ctor?view=xamarinandroid-7.1#System_Net_Http_HttpClient__ctor).
 
-Dans Xamarin.Android 6.1, cette variable d’environnement n’est pas définie par défaut, et [HttpClientHandler](https://docs.microsoft.com/dotnet/api/system.net.http.httpclienthandler?view=xamarinandroid-7.1) sera utilisée.
+Dans Xamarin.Android 6.1, cette variable d’environnement n’est pas définie par défaut, et [HttpClientHandler](/dotnet/api/system.net.http.httpclienthandler?view=xamarinandroid-7.1) sera utilisée.
 
-Alternativement, la `Xamarin.Android.Net.AndroidClientHandler` valeur peut être spécifiée pour utiliser[`java.net.URLConnection`](xref:Java.Net.URLConnection)
+Vous pouvez également spécifier la valeur `Xamarin.Android.Net.AndroidClientHandler` à utiliser. [`java.net.URLConnection`](xref:Java.Net.URLConnection)
 pour l’accès réseau, ce qui *peut* permettre d’employer le protocole TLS 1.2, quand Android le prend en charge.
 
 Ajouté dans Xamarin.Android 6.1.
@@ -131,7 +131,7 @@ Cependant, elle permet *parfois* d’effectuer des recherches supplémentaires..
 La propriété système `debug.mono.wref` permet de remplacer le mécanisme à faible référence JNI par défaut détecté. Deux valeurs sont prises en charge :
 
 - `jni` : utilisez les références faibles JNI créées par `JNIEnv::NewWeakGlobalRef()` et détruites par `JNIEnv::DeleteWeakGlobalREf()`.
-- `java`: Utilisez les références `java.lang.WeakReference` JNI Global qui font référence aux instances.
+- `java`: Utilisez les références globales JNI qui référencent des `java.lang.WeakReference` instances.
 
 `java` est utilisé, par défaut, jusqu'à l’API-7 et sur l’API-19 (Kit Kat) où ART est activé. (API-8 a ajouté des références `jni` et ART a *rompu des références * `jni`.)
 
@@ -163,6 +163,6 @@ debug.mono.log=gref
 MONO_LOG_LEVEL=
 ```
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [Protocole Transport Layer Security (TLS)](~/cross-platform/app-fundamentals/transport-layer-security.md)
+- [Sécurité de la couche de transport](~/cross-platform/app-fundamentals/transport-layer-security.md)

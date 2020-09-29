@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 07/23/2018
-ms.openlocfilehash: 746433293c52d7071a3289962ea021f716fd0cfe
-ms.sourcegitcommit: f7fe46c0236a7130b63a33d9d1670d5111582dd2
+ms.openlocfilehash: 69c99d6aa132bb5326085f752b9220054e9f3e69
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88186172"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91453920"
 ---
 # <a name="file-storage-and-access-with-xamarinandroid"></a>Stockage de fichiers et accès avec Xamarin. Android
 
@@ -81,7 +81,7 @@ Pour optimiser le partage de code, les applications Xamarin. Android (ou les app
 
 ### <a name="reading-or-writing-to-files-on-internal-storage"></a>Lecture ou écriture dans des fichiers sur le stockage interne
 
-Toutes les [API C# pour l’écriture](https://docs.microsoft.com/dotnet/csharp/programming-guide/file-system/how-to-write-to-a-text-file) dans un fichier sont suffisantes ; le chemin d’accès au fichier qui se trouve dans le répertoire alloué à l’application est tout ce qui est nécessaire. Il est vivement recommandé d’utiliser les versions Async des API .NET pour réduire les problèmes qui peuvent être associés à l’accès aux fichiers bloquant le thread principal.
+Toutes les [API C# pour l’écriture](/dotnet/csharp/programming-guide/file-system/how-to-write-to-a-text-file) dans un fichier sont suffisantes ; le chemin d’accès au fichier qui se trouve dans le répertoire alloué à l’application est tout ce qui est nécessaire. Il est vivement recommandé d’utiliser les versions Async des API .NET pour réduire les problèmes qui peuvent être associés à l’accès aux fichiers bloquant le thread principal.
 
 Cet extrait de code est un exemple d’écriture d’un entier dans un fichier texte UTF-8 dans le répertoire de stockage interne d’une application :
 
@@ -137,7 +137,7 @@ var backingFile = Path.Combine(Xamarin.Essentials.FileSystem.AppDataDirectory, "
 var cacheFile = Path.Combine(Xamarin.Essentials.FileSystem.CacheDirectory, "count.txt");
 ```
 
-## <a name="hiding-files-from-the-mediastore"></a>Masquage des fichiers du`MediaStore`
+## <a name="hiding-files-from-the-mediastore"></a>Masquage des fichiers du `MediaStore`
 
 Le `MediaStore` est un composant Android qui collecte des métadonnées sur les fichiers multimédias (vidéos, musique, images) sur un appareil Android. Son objectif est de simplifier le partage de ces fichiers sur toutes les applications Android sur l’appareil.
 

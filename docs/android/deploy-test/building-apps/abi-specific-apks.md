@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/15/2018
-ms.openlocfilehash: 0520439b89458b7f73a025cd8d6b2cf8fc41dac0
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 0a066b9f1c75093257e364070e48f0cfbeb565ce
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76940637"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91455090"
 ---
 # <a name="building-abi-specific-apks"></a>Création de fichiers APK propres à une interface ABI
 
@@ -45,7 +45,7 @@ L’extension de ce modèle de code de version à huit chiffres permet d’inclu
 - **Index 0** (en rouge dans le diagramme ci-dessous) &ndash; Un nombre entier pour l’interface ABI :
   - 1 &ndash;`armeabi`
   - 2 &ndash;`armeabi-v7a`
-  - 6 &ndash; Annonces`x86`
+  - 6 &ndash;`x86`
 
 - **Index 1 à 2** (en orange dans le diagramme ci-dessous) &ndash; Le niveau d’API minimal pris en charge par l’application.
 
@@ -60,7 +60,7 @@ L’extension de ce modèle de code de version à huit chiffres permet d’inclu
 
 Le diagramme suivant illustre la position de chaque code décrit dans la liste ci-dessus :
 
-[![Diagramme du format de code de version à huit chiffres, codé par couleur](abi-specific-apks-images/image00.png)](abi-specific-apks-images/image00.png#lightbox)
+[![Diagramme de format de code de version à huit chiffres, codé par couleur](abi-specific-apks-images/image00.png)](abi-specific-apks-images/image00.png#lightbox)
 
 Google Play garantit que le fichier APK correct est remis à l’appareil en fonction du `versionCode` et de la configuration du fichier APK. Le fichier APK avec le code de version le plus élevé sera remis à l’appareil. Par exemple, une application peut avoir trois fichiers APK avec les codes de version suivants :
 
@@ -95,19 +95,19 @@ La meilleure façon de générer le fichier APK par le biais de l’interface AB
 
 la liste suivante explique chaque paramètre de ligne de commande :
 
-- `/t:Package`&ndash; Crée un APK Android qui est signé à l’aide du keystore de débogé
+- `/t:Package`&ndash;Crée un apk Android signé à l’aide du magasin de clés de débogage
 
-- `/p:AndroidSupportedAbis=<TARGET_ABI>`&ndash; C’est l’ABI à cibler. Cela doit être l’une des interfaces `armeabi`, `armeabi-v7a` ou `x86`.
+- `/p:AndroidSupportedAbis=<TARGET_ABI>`&ndash;L’Abi à cibler. Cela doit être l’une des interfaces `armeabi`, `armeabi-v7a` ou `x86`.
 
-- `/p:IntermediateOutputPath=obj.<TARGET_ABI>/`&ndash; C’est l’annuaire qui tiendra les fichiers intermédiaires qui sont créés dans le cadre de la construction. Si nécessaire, Xamarin.Android créera un répertoire nommé d’après l’interface ABI, par exemple `obj.armeabi-v7a`. Il est recommandé d’utiliser un dossier pour chaque interface ABI, car ceci empêchera des problèmes pouvant entraîner la « fuite » d’une version vers une autre. Notez que cette valeur se termine par un séparateur de répertoire (un `/` dans le cas d’OS X).
+- `/p:IntermediateOutputPath=obj.<TARGET_ABI>/`&ndash;Il s’agit du répertoire qui contiendra les fichiers intermédiaires créés dans le cadre de la génération. Si nécessaire, Xamarin.Android créera un répertoire nommé d’après l’interface ABI, par exemple `obj.armeabi-v7a`. Il est recommandé d’utiliser un dossier pour chaque interface ABI, car ceci empêchera des problèmes pouvant entraîner la « fuite » d’une version vers une autre. Notez que cette valeur se termine par un séparateur de répertoire (un `/` dans le cas d’OS X).
 
 - `/p:AndroidManifest` &ndash; Cette propriété spécifie le chemin du fichier **AndroidManifest.XML** qui sera utilisé lors de la build.
 
-- `/p:OutputPath=bin.<TARGET_ABI>`&ndash; C’est le répertoire qui abritera l’APK final. Xamarin.Android créera un répertoire nommé d’après l’interface ABI, par exemple `bin.armeabi-v7a`.
+- `/p:OutputPath=bin.<TARGET_ABI>`&ndash;Il s’agit du répertoire qui hébergera le apk final. Xamarin.Android créera un répertoire nommé d’après l’interface ABI, par exemple `bin.armeabi-v7a`.
 
-- `/p:Configuration=Release`&ndash; Effectuez une version de l’APK. Il n’est pas possible de télécharger des versions de débogage vers Google Play.
+- `/p:Configuration=Release`&ndash;Effectuez une version Release de apk. Il n’est pas possible de télécharger des versions de débogage vers Google Play.
 
-- `<CS_PROJ FILE>`&ndash; C’est le `.csproj` chemin vers le fichier pour le projet Xamarin.Android.
+- `<CS_PROJ FILE>`&ndash;Il s’agit du chemin d’accès au `.csproj` fichier pour le projet Xamarin. Android.
 
 ### <a name="sign-and-zipalign-the-apk"></a>Signer le fichier APK et le compresser dans un fichier Zipalign
 
@@ -141,7 +141,7 @@ Le fichier [rakefile](https://github.com/xamarin/monodroid-samples/blob/master/O
 
 1. [Signez le fichier APK](https://github.com/xamarin/monodroid-samples/blob/master/OneABIPerAPK/Rakefile.rb#L66) avec un magasin de clés de production.
 
-1. [Zipalign](https://github.com/xamarin/monodroid-samples/blob/master/OneABIPerAPK/Rakefile.rb#L67) l’APK.
+1. [ZIPALIGN](https://github.com/xamarin/monodroid-samples/blob/master/OneABIPerAPK/Rakefile.rb#L67) apk.
 
 Pour générer tous les fichiers APK de l’application, exécutez la tâche Rake `build` à partir de la ligne de commande :
 
@@ -154,17 +154,17 @@ $ rake build
 
 une fois la tâche Rake terminée, il y aura trois dossiers `bin` avec le fichier `xamarin.helloworld.apk`. La capture d’écran suivante montre chacun de ces dossiers avec son contenu :
 
-[![Emplacements des dossiers spécifiques à la plate-forme contenant xamarin.helloworld.apk](abi-specific-apks-images/image01.png)](abi-specific-apks-images/image01.png#lightbox)
+[![Emplacements des dossiers spécifiques à la plateforme contenant xamarin. HelloWorld. apk](abi-specific-apks-images/image01.png)](abi-specific-apks-images/image01.png#lightbox)
 
 > [!NOTE]
-> Le processus de génération décrit dans ce guide peut être implémenté dans un des nombreux systèmes de build différents. Bien que nous n’ayons pas un exemple pré-écrit, il devrait également être possible avec [Powershell](https://technet.microsoft.com/scriptcenter/powershell.aspx) / [psake](https://github.com/psake/psake) ou [Fake](https://fsharp.github.io/FAKE/).
+> Le processus de génération décrit dans ce guide peut être implémenté dans un des nombreux systèmes de build différents. Bien que nous n’ayons pas d’exemple pré-écrit, il doit également être possible avec [PowerShell](/powershell/)  /  [psake](https://github.com/psake/psake) ou [factice](https://fsharp.github.io/FAKE/).
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Ce guide contient quelques suggestions pour la création de fichiers APK Android qui ciblent une interface ABI spécifique. Il présente également un schéma possible pour la création du `android:versionCodes` qui identifiera l’architecture de processeur à laquelle le fichier APK est destiné. La procédure pas à pas inclut un exemple de projet dont le script de build est généré avec Rake.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [OneABIPerAPK (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/oneabiperapk)
-- [Publication d'une application](~/android/deploy-test/publishing/index.md)
+- [OneABIPerAPK (exemple)](/samples/xamarin/monodroid-samples/oneabiperapk)
+- [Publication d’une application](~/android/deploy-test/publishing/index.md)
 - [Prise en charge de plusieurs fichiers APK pour Google Play](https://developer.android.com/google/play/publishing/multiple-apks.html)

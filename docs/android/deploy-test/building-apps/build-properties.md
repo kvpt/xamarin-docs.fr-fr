@@ -7,17 +7,17 @@ ms.technology: xamarin-android
 author: jonpryor
 ms.author: jopryo
 ms.date: 09/21/2020
-ms.openlocfilehash: 25d1e7ba7cb3e74cb4bfed170662a3859823dfc5
-ms.sourcegitcommit: 38496cfd4d30fd40a011011f303a31de639bd699
+ms.openlocfilehash: aeb0cca9ead1a0f0a3f5b1dec88b2470289cd589
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91247272"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454934"
 ---
 # <a name="build-properties"></a>Propriétés de build
 
 Les propriétés MSBuild contrôlent le comportement des [cibles](~/android/deploy-test/building-apps/build-targets.md).
-Elles sont spécifiées dans le fichier projet, par exemple **MyApp. csproj**, au sein d’un [MSBuild PropertyGroup](https://docs.microsoft.com/visualstudio/msbuild/propertygroup-element-msbuild).
+Elles sont spécifiées dans le fichier projet, par exemple **MyApp. csproj**, au sein d’un [MSBuild PropertyGroup](/visualstudio/msbuild/propertygroup-element-msbuild).
 
 ## <a name="adbtarget"></a>AdbTarget
 
@@ -333,7 +333,7 @@ La valeur par défaut est False.
 
 Propriété de type chaîne qui peut être utilisée pour ajouter des paramètres supplémentaires à l' `jnimarshalmethod-gen.exe` appel.  Cette propriété est utile pour le débogage et rendre possible l’utilisation d’options telles que `-v`, `-d`, ou `--keeptemp`.
 
-La valeur par défaut est une chaîne vide. Il peut être défini dans le `.csproj` fichier ou sur la ligne de commande. Exemple :
+La valeur par défaut est une chaîne vide. Il peut être défini dans le `.csproj` fichier ou sur la ligne de commande. Par exemple :
 
 ```xml
 <AndroidGenerateJniMarshalMethodsAdditionalArguments>-v -d --keeptemp</AndroidGenerateJniMarshalMethodsAdditionalArguments>
@@ -353,7 +353,7 @@ Active la génération de [code-behind de disposition](https://github.com/xamari
 
 ## <a name="androidhttpclienthandlertype"></a>AndroidHttpClientHandlerType
 
-Contrôle l’implémentation par défaut `System.Net.Http.HttpMessageHandler` qui sera utilisée par le `System.Net.Http.HttpClient` constructeur par défaut. La valeur est un nom de type qualifié d’assembly d’une `HttpMessageHandler` sous-classe, pouvant être utilisée avec [`System.Type.GetType(string)`](https://docs.microsoft.com/dotnet/api/system.type.gettype#System_Type_GetType_System_String_) .
+Contrôle l’implémentation par défaut `System.Net.Http.HttpMessageHandler` qui sera utilisée par le `System.Net.Http.HttpClient` constructeur par défaut. La valeur est un nom de type qualifié d’assembly d’une `HttpMessageHandler` sous-classe, pouvant être utilisée avec [`System.Type.GetType(string)`](/dotnet/api/system.type.gettype#System_Type_GetType_System_String_) .
 Les valeurs les plus couramment utilisées pour cette propriété sont :
 
 - `Xamarin.Android.Net.AndroidClientHandler`: Utilisez les API Java Android pour effectuer des demandes réseau. Cela permet d’accéder aux URL TLS 1.2 lorsque la version Android sous-jacente prend en charge TLS 1.2. Seuls Android 5.0 et les versions ultérieures gèrent TLS 1.2 de façon fiable avec Java.
@@ -637,7 +637,7 @@ Les valeurs prises en charge sont :
 
 ## <a name="androidtlsprovider"></a>AndroidTlsProvider
 
-Valeur de chaîne qui spécifie le fournisseur TLS à utiliser dans une application. Les valeurs possibles sont :
+Valeur de chaîne qui spécifie le fournisseur TLS à utiliser dans une application. Les valeurs possibles sont les suivantes :
 
 - Unset/la chaîne vide : dans Xamarin. Android 7,3 et versions ultérieures, cela équivaut à `btls` .
 
@@ -791,7 +791,7 @@ autorisation pour qu’un débogueur puisse s’attacher au processus. Une appli
 
 ## <a name="debugtype"></a>DebugType
 
-Spécifie le [type de symboles de débogage](https://docs.microsoft.com/visualstudio/msbuild/csc-task) à générer dans le cadre de la génération, ce qui a également un impact sur la possibilité de déboguer l’application. Les valeurs possibles incluent :
+Spécifie le [type de symboles de débogage](/visualstudio/msbuild/csc-task) à générer dans le cadre de la génération, ce qui a également un impact sur la possibilité de déboguer l’application. Les valeurs possibles incluent :
 
 - **Full** : des symboles complets sont générés. Si le [`DebugSymbols`](#debugsymbols)
   La propriété MSBuild est également `True` , le package d’application est alors débogable.
@@ -909,7 +909,7 @@ La valeur par défaut est `Resources`. Changez ceci en `res` pour la structure d
 Propriété booléenne qui contrôle si les `.mSYM` artefacts sont créés pour une utilisation ultérieure avec `mono-symbolicate` , pour extraire les &ldquo; &rdquo; informations de nom de fichier et de numéro de ligne réelles des traces de la pile de mise en sortie.
 
 C’est le cas par défaut pour les &ldquo; applications de version pour &rdquo; lesquelles les symboles de débogage sont activés : [`$(EmbedAssembliesIntoApk)`](#embedassembliesintoapk) a la valeur true, [`$(DebugSymbols)`](~/android/deploy-test/building-apps/build-properties.md#debugsymbols)
-a la valeur true et [`$(Optimize)`](https://docs.microsoft.com/visualstudio/msbuild/common-msbuild-project-properties)
+a la valeur true et [`$(Optimize)`](/visualstudio/msbuild/common-msbuild-project-properties)
 a la valeur true.
 
 Ajouté dans Xamarin.Android 7.1.

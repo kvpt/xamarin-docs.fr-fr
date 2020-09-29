@@ -8,16 +8,16 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 12/02/2016
-ms.openlocfilehash: 199b9de670e424bdc21a05966cfdd73c7e2cbb42
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: d1272360656cb3c526b84fbad4219a715a4f0716
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73020908"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454545"
 ---
 # <a name="hello-android-multiscreen"></a>Hello, Android multi-écran
 
-_Dans ce guide en deux parties, vous élargissez l’application Phoneword que vous avez créée dans le guide Hello, Android pour gérer un deuxième écran. En cours de route, ce guide présentera les blocs de base Android Application Building et plongera plus profondément dans l’architecture Android que vous développez une meilleure compréhension de la structure d’application Android et la fonctionnalité._
+_Dans ce guide en deux parties, vous développez l’application Phoneword que vous avez créée dans le guide Hello, Android pour gérer un deuxième écran. En cours de route, ce guide présente les blocs de construction des applications Android de base et explore plus en détail l’architecture Android lorsque vous développez une meilleure compréhension de la structure et des fonctionnalités de l’application Android._
 
 ## <a name="part-1-quickstart"></a>[Première partie : Guide de démarrage rapide](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-quickstart.md)
 
@@ -27,8 +27,8 @@ Dans la première partie de ce guide, vous allez ajouter un second écran à l�
 
 La seconde partie de ce document examine ce que vous avez généré et décrit l’architecture, la navigation et les autres nouveaux concepts Android que vous avez rencontrés en chemin.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Démarrage sur Android](https://developer.android.com/training/index.html)
-- [Débogage dans Visual Studio](https://docs.microsoft.com/visualstudio/debugger/)
+- [Débogage dans Visual Studio](/visualstudio/debugger/)
 - [Recettes Visual Studio pour Mac – Débogage](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging)

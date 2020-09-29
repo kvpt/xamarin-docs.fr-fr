@@ -7,48 +7,48 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 04/26/2018
-ms.openlocfilehash: 4d9ef88f39914f8fa5e578577ee9f6977c2bc88e
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: c0d4b0d1a31be43d16fb69eba18c07815631f496
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73020270"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91453933"
 ---
-# <a name="fragments-walkthrough-ndash-landscape"></a>Fragments paysage pas &ndash; à pas
+# <a name="fragments-walkthrough-ndash-landscape"></a>Présentation de la procédure pas à pas de fragments &ndash;
 
-Le [Fragments Walkthrough &ndash; Partie 1](./walkthrough.md) a démontré comment créer et utiliser des fragments dans une application Android qui cible les écrans plus petits sur un téléphone. La prochaine étape dans cette procédure pas à pas est de modifier &ndash; l’application pour profiter de l’espace horizontal `TitlesFragment`supplémentaire `PlayQuoteFragment` sur la tablette il y aura une activité qui sera toujours la liste des jeux (le ) et sera dynamiquement ajouté à l’activité en réponse à une sélection faite par l’utilisateur:
+La [ &ndash; partie 1 de la procédure pas à pas fragments](./walkthrough.md) montre comment créer et utiliser des fragments dans une application Android qui cible les plus petits écrans sur un téléphone. L’étape suivante de cette procédure pas à pas consiste à modifier l’application pour tirer parti de l’espace horizontal supplémentaire sur la tablette. &ndash;  une activité sera toujours la liste des lectures (le `TitlesFragment` ) et  `PlayQuoteFragment` sera ajoutée dynamiquement à l’activité en réponse à une sélection effectuée par l’utilisateur :
 
-[![Application fonctionnant sur tablette](./walkthrough-landscape-images/01-tablet-screenshot-sml.png)](./walkthrough-landscape-images/01-tablet-screenshot.png#lightbox)
+[![Application en cours d’exécution sur tablette](./walkthrough-landscape-images/01-tablet-screenshot-sml.png)](./walkthrough-landscape-images/01-tablet-screenshot.png#lightbox)
 
-Les téléphones en mode paysage bénéficieront également de cette amélioration :
+Les téléphones qui s’exécutent en mode paysage bénéficient également de cette amélioration :
 
-[![Application fonctionnant sur un téléphone Android en mode paysage](./images/intro-screenshot-phone-land-sml.png)](./images/intro-screenshot-phone-land.png#lightbox)
+[![Application en cours d’exécution sur un téléphone Android en mode paysage](./images/intro-screenshot-phone-land-sml.png)](./images/intro-screenshot-phone-land.png#lightbox)
 
-## <a name="updating-the-app-to-handle-landscape-orientation"></a>Mise à jour de l’application pour gérer l’orientation paysagère
+## <a name="updating-the-app-to-handle-landscape-orientation"></a>Mise à jour de l’application pour gérer l’orientation paysage
 
-Les modifications suivantes s’appuieront sur le travail qui a été fait dans le [Procédure pas à pas Fragments - Téléphone](./walkthrough.md)
+Les modifications suivantes s’appuient sur le travail effectué dans la [procédure pas à pas sur les fragments-téléphone](./walkthrough.md)
 
-1. Créez une disposition alternative `TitlesFragment` pour `PlayQuoteFragment`afficher à la fois le et .
-1. Mise `TitlesFragment` à jour pour détecter si l’appareil affiche les deux fragments simultanément et changer le comportement en conséquence.
-1. Mise `PlayQuoteActivity` à jour pour fermer lorsque l’appareil est en mode paysage.
+1. Créez une autre disposition pour afficher à la fois le `TitlesFragment` et le `PlayQuoteFragment` .
+1. Mettez à jour `TitlesFragment` pour détecter si l’appareil affiche les deux fragments simultanément et modifier le comportement en conséquence.
+1. Mettez à jour `PlayQuoteActivity` pour fermer lorsque l’appareil est en mode paysage.
 
-## <a name="1-create-an-alternate-layout"></a>1. Créer une mise en page alternative
+## <a name="1-create-an-alternate-layout"></a>1. créer une autre disposition
 
-Lorsque Main Activity est créée sur un appareil Android, Android décidera de la mise en page à charger en fonction de l’orientation de l’appareil. Par défaut, Android fournira le fichier **de mise en page Ressources/layout/activity_main.axml.** Pour les appareils qui chargent en mode paysage Android fournira le fichier de mise en **page Ressources/layout-land/activity_main.axml.** Le guide sur [Android Resources](/xamarin/android/app-fundamentals/resources-in-android) contient plus de détails sur la façon dont Android décide quels fichiers de ressources à charger pour une application.
+Lorsque l’activité principale est créée sur un appareil Android, Android détermine la disposition à charger en fonction de l’orientation de l’appareil. Par défaut, Android fournit le fichier de disposition **Resources/layout/activity_main. AXML** . Pour les appareils qui se chargent en mode paysage Android fournissent le fichier de disposition **Resources/layout-Land/activity_main. AXML** . Le guide sur les [ressources Android](../../../app-fundamentals/resources-in-android/index.md) contient plus de détails sur la façon dont Android décide des fichiers de ressources à charger pour une application.
 
-Créez une disposition alternative qui cible **l’orientation du paysage** en suivant les étapes décrites dans le guide [Alternate Layouts.](/xamarin/android/user-interface/android-designer/alternative-layout-views) Cela devrait ajouter un nouveau fichier de ressources de mise en page au projet, **Ressources/mise en page/activity_main.axml**:
+Créez une autre disposition qui cible l’orientation **paysage** en suivant les étapes décrites dans le guide [autres dispositions](../../../user-interface/android-designer/alternative-layout-views.md) . Cela doit ajouter un nouveau fichier de ressources de disposition au projet, **Resources/layout/activity_main. AXML**:
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[![Mise en page alternative dans Solution Explorer](./walkthrough-landscape-images/02-alternate-layout.w157-sml.png)](./walkthrough-landscape-images/02-alternate-layout.w157.png#lightbox)
+[![Autre disposition dans Explorateur de solutions](./walkthrough-landscape-images/02-alternate-layout.w157-sml.png)](./walkthrough-landscape-images/02-alternate-layout.w157.png#lightbox)
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
-[![Mise en page alternative dans Solution Pad](./walkthrough-landscape-images/02-alternate-layout.m743-sml.png)](./walkthrough-landscape-images/02-alternate-layout.m743.png#lightbox)
+[![Autre disposition dans Panneau Solutions](./walkthrough-landscape-images/02-alternate-layout.m743-sml.png)](./walkthrough-landscape-images/02-alternate-layout.m743.png#lightbox)
 
 -----
 
-Après avoir créé la mise en page alternative, modifier la source du fichier **Ressources/ layout-land/activity_main.axml** afin qu’il corresponde à ce XML:
+Après avoir créé l’autre disposition, modifiez la source du fichier Resources **/Layout-Land/activity_main. AXML** afin qu’il corresponde à ce code XML :
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -74,21 +74,21 @@ Après avoir créé la mise en page alternative, modifier la source du fichier *
 </LinearLayout>
 ```
 
-La vue d’enracinement de `two_fragments_layout` l’activité est donnée `fragment` l’ID de ressource et a deux sous-vues, a et a `FrameLayout`. Bien `fragment` que le est `FrameLayout` chargé statiquement, les agit comme un «placeholder» qui sera remplacé à l’heure de exécution par le `PlayQuoteFragment`. Chaque fois qu’une nouvelle `TitlesFragment`pièce `playquote_container` est sélectionnée dans le `PlayQuoteFragment`, le sera mis à jour avec une nouvelle instance de la .
+La vue racine de l’activité reçoit l’ID de ressource `two_fragments_layout` et a deux sous-vues, a `fragment` et a `FrameLayout` . Tandis que le `fragment` est chargé de manière statique, le `FrameLayout` agit comme un « espace réservé » qui sera remplacé au moment de l’exécution par le `PlayQuoteFragment` . Chaque fois qu’une nouvelle lecture est sélectionnée dans le `TitlesFragment` , la est `playquote_container` mise à jour avec une nouvelle instance du `PlayQuoteFragment` .
 
-Chacune des sous-vues occupera toute la hauteur de ses parents. La largeur de chaque sous-vision `android:layout_weight` `android:layout_width` est contrôlée par les attributs et les attributs. Dans cet exemple, chaque sous-vision occupera 50 % de la largeur fourni par le parent. Voir [le document de Google sur le LinearLayout](https://developer.android.com/guide/topics/ui/layout/linear.html) pour plus de détails sur le poids de mise en _page_.
+Chaque sous-vue occupera la pleine hauteur de son parent. La largeur de chaque sous-affichage est contrôlée par `android:layout_weight` les `android:layout_width` attributs et. Dans cet exemple, chaque sous-vue occupe 50% de la largeur fournie par le parent. Pour plus d’informations sur l’épaisseur de la _disposition_, consultez [le document de Google sur le élément LinearLayout](https://developer.android.com/guide/topics/ui/layout/linear.html) .
 
-## <a name="2-changes-to-titlesfragment"></a>2. Modifications apportées à TitlesFragment
+## <a name="2-changes-to-titlesfragment"></a>2. modifications apportées à TitlesFragment
 
-Une fois que la disposition alternative a `TitlesFragment`été créée, il est nécessaire de mettre à jour . Lorsque l’application affiche les deux fragments `TitlesFragment` sur `PlayQuoteFragment` une activité, il faut ensuite charger l’activité dans l’activité parente. Sinon, `TitlesFragment` devrait `PlayQuoteActivity` lancer l’hôte qui le `PlayQuoteFragment`. Un drapeau boolean `TitlesFragment` aidera à déterminer quel comportement il doit utiliser. Ce drapeau sera paradé `OnActivityCreated` dans la méthode.
+Une fois l’autre disposition créée, vous devez la mettre à jour `TitlesFragment` . Lorsque l’application affiche les deux fragments sur une activité, vous `TitlesFragment` devez charger le `PlayQuoteFragment` dans l’activité parente. Sinon, `TitlesFragment` doit lancer le `PlayQuoteActivity` qui héberge le `PlayQuoteFragment` . Un indicateur booléen vous aide à `TitlesFragment` déterminer le comportement à utiliser. Cet indicateur sera initialisé dans la `OnActivityCreated` méthode.
 
-Tout d’abord, ajoutez une `TitlesFragment` variable d’instance en haut de la classe :
+Tout d’abord, ajoutez une variable d’instance en haut de la `TitlesFragment` classe :
 
 ```csharp
 bool showingTwoFragments;
 ```
 
-Ensuite, ajoutez l’extrait de `OnActivityCreated` code suivant pour initialiser la variable : 
+Ensuite, ajoutez l’extrait de code suivant à  `OnActivityCreated` pour initialiser la variable : 
 
 ```csharp
 var quoteContainer = Activity.FindViewById(Resource.Id.playquote_container);
@@ -101,9 +101,9 @@ if (showingTwoFragments)
 }
 ```
 
-Si l’appareil est en cours `FrameLayout` d’exécution `playquote_container` en mode paysage, `showingTwoFragments` puis l’ID `true`de ressource avec sera visible sur l’écran, sera donc parasécé à . Si l’appareil est en `playquote_container` cours d’exécution en `showingTwoFragments` mode `false`portrait, alors ne sera pas sur l’écran, sera donc .
+Si l’appareil s’exécute en mode paysage, alors le `FrameLayout` avec l’ID de ressource sera `playquote_container` visible à l’écran, donc `showingTwoFragments` sera initialisé à `true` . Si l’appareil s’exécute en mode portrait, il n' `playquote_container` apparaîtra pas à l’écran `showingTwoFragments` `false` .
 
-La `ShowPlayQuote` méthode devra changer la façon &ndash; dont elle affiche une citation soit dans un fragment ou lancer une nouvelle activité.  Mettre `ShowPlayQuote` à jour la méthode pour charger un fragment lors de la présentation de deux fragments, sinon il devrait lancer une activité:
+La `ShowPlayQuote` méthode devra modifier l’affichage d’un guillemet &ndash; dans un fragment ou lancer une nouvelle activité.  Mettez à jour la `ShowPlayQuote` méthode pour charger un fragment lors de l’émission de deux fragments. sinon, elle doit lancer une activité :
 
 ```csharp
 void ShowPlayQuote(int playId)
@@ -134,11 +134,11 @@ void ShowPlayQuote(int playId)
 }
 ```
 
-Si l’utilisateur a sélectionné une pièce différente de celle `PlayQuoteFragment`qui est `PlayQuoteFragment` actuellement affichée dans , `playquote_container` puis un nouveau `FragmentTransaction`est créé et remplacera le contenu de la dans le contexte d’un .
+Si l’utilisateur a sélectionné une lecture différente de celle qui est actuellement affichée dans `PlayQuoteFragment` , un nouveau `PlayQuoteFragment` est créé et remplace le contenu du `playquote_container` dans le contexte d’un objet `FragmentTransaction` .
 
 ### <a name="complete-code-for-titlesfragment"></a>Code complet pour TitlesFragment
 
-Après avoir terminé toutes `TitlesFragment`les modifications précédentes à , la classe complète doit correspondre à ce code:
+Après avoir effectué toutes les modifications précédentes de `TitlesFragment` , la classe complète doit correspondre à ce code :
 
 ```csharp
 public class TitlesFragment : ListFragment
@@ -208,9 +208,9 @@ public class TitlesFragment : ListFragment
 }
 ```
 
-## <a name="3-changes-to-playquoteactivity"></a>3. Modifications apportées à PlayQuoteActivity
+## <a name="3-changes-to-playquoteactivity"></a>3. modifications apportées à PlayQuoteActivity
 
-Il y a un dernier `PlayQuoteActivity` détail à prendre en charge : n’est pas nécessaire lorsque l’appareil est en mode paysage. Si l’appareil est `PlayQuoteActivity` en mode paysage, il ne doit pas être visible. Mettre `OnCreate` à `PlayQuoteActivity` jour la méthode de sorte qu’il se fermera. Ce code est la `PlayQuoteActivity.OnCreate`version finale de :
+Il existe un détail final à prendre en charge : `PlayQuoteActivity` n’est pas nécessaire lorsque l’appareil est en mode paysage. Si l’appareil est en mode paysage, le ne `PlayQuoteActivity` doit pas être visible. Mettez à jour la `OnCreate` méthode de `PlayQuoteActivity` afin qu’elle se ferme lui-même. Ce code est la dernière version de `PlayQuoteActivity.OnCreate` :
 
 ```csharp
 protected override void OnCreate(Bundle savedInstanceState)
@@ -230,12 +230,12 @@ protected override void OnCreate(Bundle savedInstanceState)
 }
 ```
 
-Cette modification ajoute un contrôle pour l’orientation de l’appareil. S’il est en `PlayQuoteActivity` mode paysage, alors se fermera.
+Cette modification ajoute une vérification de l’orientation de l’appareil. S’il est en mode paysage, `PlayQuoteActivity` se ferme lui-même.
 
-## <a name="4-run-the-application"></a>4. Exécuter l’application
+## <a name="4-run-the-application"></a>4. exécuter l’application
 
-Une fois ces modifications terminées, exécutez l’application, faites pivoter l’appareil en mode paysage (si nécessaire), puis sélectionnez une pièce. La citation doit être affichée sur le même écran que la liste des pièces de théâtre :
+Une fois ces modifications terminées, exécutez l’application, faites pivoter l’appareil en mode paysage (si nécessaire), puis sélectionnez une lecture. Le guillemet doit s’afficher sur le même écran que la liste des lectures :
 
-[![Application fonctionnant sur un téléphone Android en mode paysage](./images/intro-screenshot-phone-land-sml.png)](./images/intro-screenshot-phone-land.png#lightbox)
+[![Application en cours d’exécution sur un téléphone Android en mode paysage](./images/intro-screenshot-phone-land-sml.png)](./images/intro-screenshot-phone-land.png#lightbox)
 
-[![Application fonctionnant sur une tablette Android](./images/intro-screenshot-tablet-sml.png)](./images/intro-screenshot-tablet.png#lightbox)
+[![Application s’exécutant sur une tablette Android](./images/intro-screenshot-tablet-sml.png)](./images/intro-screenshot-tablet.png#lightbox)

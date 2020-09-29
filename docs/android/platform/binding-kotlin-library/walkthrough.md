@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: alexeystrakh
 ms.author: alstrakh
 ms.date: 02/11/2020
-ms.openlocfilehash: af926b518c55bd0d6c73180e512dd669e93778f7
-ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
+ms.openlocfilehash: d75ec48bf9736297c31e0bb5af5a71de4332c66b
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85853058"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454271"
 ---
 # <a name="walkthrough-bind-an-android-kotlin-library"></a>Procédure pas à pas : liaison d’une bibliothèque Kotlin Android
 
@@ -25,9 +25,9 @@ La plateforme Android, ainsi que ses langages et outils natifs, évoluent en per
 
 L’objectif de ce document est de présenter une approche de haut niveau pour traiter ce scénario et de fournir un guide pas à pas détaillé avec un exemple simple.
 
-## <a name="background"></a>Arrière-plan
+## <a name="background"></a>Contexte
 
-Kotlin a été publié en février 2016 et était positionné comme alternative au compilateur Java standard dans Android Studio par 2017. Plus tard dans 2019, Google a annoncé que le langage de programmation Kotlin devenait le langage préféré pour les développeurs d’applications Android. L’approche de la liaison de haut niveau est similaire au [processus de liaison des bibliothèques Java normales](https://docs.microsoft.com/xamarin/android/platform/binding-java-library/) , avec quelques étapes importantes spécifiques Kotlin.
+Kotlin a été publié en février 2016 et était positionné comme alternative au compilateur Java standard dans Android Studio par 2017. Plus tard dans 2019, Google a annoncé que le langage de programmation Kotlin devenait le langage préféré pour les développeurs d’applications Android. L’approche de la liaison de haut niveau est similaire au [processus de liaison des bibliothèques Java normales](../binding-java-library/index.md) , avec quelques étapes importantes spécifiques Kotlin.
 
 ## <a name="prerequisites"></a>Prérequis
 
@@ -103,7 +103,7 @@ Le fichier AAR est une archive Android, qui contient le code source Kotlin compi
 
 La deuxième étape consiste à préparer le fichier de transformation des métadonnées, qui est utilisé par Xamarin. Android pour générer des classes C# respectives. Un projet de liaison Xamarin. Android détecte toutes les classes et les membres natifs d’une archive Android donnée, puis génère un fichier XML avec les métadonnées appropriées. Le fichier de transformation de métadonnées créé manuellement est ensuite appliqué à la ligne de base générée précédemment pour créer le fichier de définition XML final utilisé pour générer le code C#.
 
-Les métadonnées utilisent la syntaxe [XPath](https://www.w3.org/TR/xpath/)   et sont utilisées par le générateur de liaisons pour influencer la création de l’assembly de liaison. L’article sur les [métadonnées de liaison Java](https://docs.microsoft.com/xamarin/android/platform/binding-java-library/customizing-bindings/java-bindings-metadata) fournit plus d’informations sur les transformations, qui peuvent être appliquées :
+Les métadonnées utilisent la syntaxe [XPath](https://www.w3.org/TR/xpath/)   et sont utilisées par le générateur de liaisons pour influencer la création de l’assembly de liaison. L’article sur les [métadonnées de liaison Java](../binding-java-library/customizing-bindings/java-bindings-metadata.md) fournit plus d’informations sur les transformations, qui peuvent être appliquées :
 
 1. Créez un fichier de **Metadata.xml** vide :
 
@@ -198,7 +198,7 @@ Les métadonnées utilisent la syntaxe [XPath](https://www.w3.org/TR/xpath/)  
     Les génériques Java et Kotlin ne sont pas pris en charge par les liaisons Xamarin. Android. par conséquent, une méthode C# généralisée pour accéder à l’API générique est créée. En guise de solution de contournement, vous pouvez créer une bibliothèque Kotlin Wrapper et exposer les API requises d’une manière fortement typée sans génériques. Vous pouvez également créer des assistances sur le côté C# pour résoudre le problème de la même façon via des API fortement typées.
 
     > [!TIP]
-    > En transformant les métadonnées, toutes les modifications peuvent être appliquées à la liaison générée. L’article liaison de la [bibliothèque Java](https://docs.microsoft.com/xamarin/android/platform/binding-java-library/) de la bibliothèque explique en détail comment les métadonnées sont générées et traitées.
+    > En transformant les métadonnées, toutes les modifications peuvent être appliquées à la liaison générée. L’article liaison de la [bibliothèque Java](../binding-java-library/index.md) de la bibliothèque explique en détail comment les métadonnées sont générées et traitées.
 
 ## <a name="build-a-binding-library"></a>Créer une bibliothèque de liaisons
 
@@ -275,7 +275,7 @@ L’étape finale consiste à utiliser la bibliothèque de liaisons Xamarin. And
     }
     ```
 
-    `BubblePickerAdapter`et `BubblePickerListener` sont deux classes à créer à partir de zéro, qui gèrent les données des bulles et l’interaction des contrôles :
+    `BubblePickerAdapter` et `BubblePickerListener` sont deux classes à créer à partir de zéro, qui gèrent les données des bulles et l’interaction des contrôles :
 
     ```csharp
     public class BubblePickerAdapter : Java.Lang.Object, IBubblePickerAdapter
@@ -331,7 +331,7 @@ L’étape finale consiste à utiliser la bibliothèque de liaisons Xamarin. And
 
     L’exemple requiert du code supplémentaire pour afficher le style des éléments et gérer les interactions, mais le `BubblePicker` contrôle a été créé et activé avec succès.
 
-Félicitations ! Vous avez créé avec succès une application Xamarin. Android et une bibliothèque de liaison, qui consomme une bibliothèque Kotlin.  
+Félicitations ! Vous avez créé avec succès une application Xamarin. Android et une bibliothèque de liaison, qui consomme une bibliothèque Kotlin.  
 
 Vous devez maintenant disposer d’une application Xamarin. Android de base qui utilise une bibliothèque Kotlin Native via une bibliothèque de liaisons Xamarin. Android. Cette procédure pas à pas utilise intentionnellement un exemple de base pour mieux mettre l’accent sur les concepts clés introduits. Dans les scénarios réels, vous aurez probablement besoin d’exposer un plus grand nombre d’API et d’appliquer des transformations de métadonnées à celles-ci.
 
@@ -342,8 +342,8 @@ Vous devez maintenant disposer d’une application Xamarin. Android de base qui 
 - [Visual Studio pour Mac](https://visualstudio.microsoft.com/downloads)
 - [Décompilateur Java](http://java-decompiler.github.io/)
 - [Bibliothèque BubblePicker Kotlin](https://github.com/igalata/Bubble-Picker)
-- [Liaison de la bibliothèque Java](https://docs.microsoft.com/xamarin/android/platform/binding-java-library/)
+- [Liaison de la bibliothèque Java](../binding-java-library/index.md)
 - [XPath](https://www.w3.org/TR/xpath/)
-- [Métadonnées de liaison Java](https://docs.microsoft.com/xamarin/android/platform/binding-java-library/customizing-bindings/java-bindings-metadata)
+- [Métadonnées de liaison Java](../binding-java-library/customizing-bindings/java-bindings-metadata.md)
 - [Xamarin. Kotlin. StdLib NuGet](https://www.nuget.org/packages/Xamarin.Kotlin.StdLib/)
 - [Exemple de référentiel de projet](https://github.com/alexeystrakh/xamarin-binding-kotlin-framework)
