@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 2a7a09b1dec840090587377199533ef8c6ec63b5
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: c607e4668e4754edaec50a4c8b24776c7bb5844e
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572889"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91430778"
 ---
 # <a name="menus-in-xamarinmac"></a>Menus dans Xamarin. Mac
 
@@ -120,7 +120,7 @@ Par défaut, chaque fois qu’un événement utilisateur se produit, `NSMenu` ac
 - **Actions personnalisées et validateMenuItem :** pour tout élément de menu lié à une [action personnalisée de fenêtre ou de contrôleur d’affichage](#Working-with-Custom-Window-Actions), vous pouvez ajouter l' `validateMenuItem:` action et activer ou désactiver manuellement les éléments de menu.
 - **Activation manuelle du menu** : vous définissez manuellement la `Enabled` propriété de chaque `NSMenuItem` élément pour activer ou désactiver chaque élément d’un menu.
 
-Pour choisir un système, définissez la `AutoEnablesItems` propriété d’un `NSMenu` . `true`est automatique (comportement par défaut) et `false` est manuel. 
+Pour choisir un système, définissez la `AutoEnablesItems` propriété d’un `NSMenu` . `true` est automatique (comportement par défaut) et `false` est manuel. 
 
 > [!IMPORTANT]
 > Si vous choisissez d’utiliser l’activation manuelle du menu, aucun des éléments de menu, même ceux contrôlés par les classes AppKit comme `NSTextView` , n’est mis à jour automatiquement. Vous êtes responsable de l’activation et de la désactivation de tous les éléments à la main dans le code.
@@ -992,7 +992,7 @@ public override void DidFinishLaunching (NSNotification notification)
 }
 ```
 
-`NSStatusBar statusBar = NSStatusBar.SystemStatusBar;`nous donne accès à la barre d’État du système. `var item = statusBar.CreateStatusItem (NSStatusItemLength.Variable);`crée un nouvel élément de la barre d’État. À partir de là, nous créons un menu et un certain nombre d’éléments de menu et attachons le menu à l’élément de barre d’État que nous venons de créer. 
+`NSStatusBar statusBar = NSStatusBar.SystemStatusBar;` nous donne accès à la barre d’État du système. `var item = statusBar.CreateStatusItem (NSStatusItemLength.Variable);` crée un nouvel élément de la barre d’État. À partir de là, nous créons un menu et un certain nombre d’éléments de menu et attachons le menu à l’élément de barre d’État que nous venons de créer. 
 
 Si nous exécutons l’application, le nouvel élément de la barre d’État s’affiche. La sélection d’un élément dans le menu modifie le texte dans l’affichage de texte : 
 
@@ -1068,13 +1068,13 @@ Maintenant, si nous exécutons l’application et que vous sélectionnez un él�
 
 Vous pouvez créer et utiliser des listes déroulantes exactement de la même façon que les boutons contextuels. Au lieu de vous attacher à une action existante, vous pouvez créer vos propres actions personnalisées comme nous l’avons fait pour notre menu contextuel dans la section [menus contextuels](#Contextual_Menus) .
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a décrit en détail l’utilisation des menus et des éléments de menu dans une application Xamarin. Mac. Tout d’abord, nous avons examiné la barre de menus de l’application, puis nous avons examiné la création de menus contextuels. ensuite, nous avons examiné les menus de barre d’État et les menus d’ancrage personnalisés. Enfin, nous avons abordé les menus contextuels et les listes déroulantes.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [MacMenus (exemple)](https://docs.microsoft.com/samples/xamarin/mac-samples/macmenus)
+- [MacMenus (exemple)](/samples/xamarin/mac-samples/macmenus)
 - [Hello, Mac](~/mac/get-started/hello-mac.md)
 - [Instructions relatives à l’interface humaine-menus](https://developer.apple.com/macos/human-interface-guidelines/menus/menu-anatomy/)
 - [Présentation des menus de l’application et des listes contextuelles](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/MenuList/MenuList.html)

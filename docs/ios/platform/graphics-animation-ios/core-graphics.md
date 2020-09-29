@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 84e21378a8ac7b61bc1a389352eb53b75881592a
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 281595f45db48316feeebb88debf8c70873f87f3
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86929647"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91430865"
 ---
 # <a name="core-graphics-in-xamarinios"></a>Core Graphics dans Xamarin. iOS
 
@@ -279,9 +279,9 @@ Contrairement à la `Draw` méthode, où le contexte est fourni par la vue, dans
 
 1. En appelant `UIGraphics.BeginImageContext` (ou `BeginImageContextWithOptions` )
 
-2. En créant un nouveau`CGBitmapContextInstance`
+2. En créant un nouveau `CGBitmapContextInstance`
 
- `CGBitmapContextInstance`est utile lorsque vous travaillez directement avec les bits d’image, par exemple dans les cas où vous utilisez un algorithme de manipulation d’image personnalisé. Dans tous les autres cas, vous devez utiliser `BeginImageContext` ou `BeginImageContextWithOptions` .
+ `CGBitmapContextInstance` est utile lorsque vous travaillez directement avec les bits d’image, par exemple dans les cas où vous utilisez un algorithme de manipulation d’image personnalisé. Dans tous les autres cas, vous devez utiliser `BeginImageContext` ou `BeginImageContextWithOptions` .
 
 Une fois que vous avez un contexte d’image, l’ajout de code de dessin est semblable à celui d’une sous- `UIView` classe. Par exemple, l’exemple de code utilisé précédemment pour dessiner un triangle peut être utilisé pour dessiner dans une image en mémoire plutôt que dans un `UIView` , comme indiqué ci-dessous :
 
@@ -421,13 +421,13 @@ UIGraphics.EndPDFContent ();
 
 Le texte obtenu est dessiné dans le fichier PDF, qui est ensuite contenu dans un `NSData` qui peut être enregistré, téléchargé, envoyé par courrier électronique, etc.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Dans cet article, nous avons examiné les fonctionnalités graphiques fournies par le biais de l’infrastructure *graphique principale* . Nous avons vu comment utiliser des graphiques de base pour dessiner une géométrie, des images et des fichiers PDF dans le contexte d’un, ainsi `UIView,` que des contextes de graphiques sauvegardés en mémoire.
 
 ## <a name="related-links"></a>Liens associés
 
-- [Core Graphics, exemple](https://docs.microsoft.com/samples/xamarin/ios-samples/graphicsandanimation)
+- [Core Graphics, exemple](/samples/xamarin/ios-samples/graphicsandanimation)
 - [Procédure pas à pas graphiques et animation](~/ios/platform/graphics-animation-ios/graphics-animation-walkthrough.md)
 - [Animation de base](~/ios/platform/graphics-animation-ios/core-animation.md)
 - [Recettes de l’animation principale](https://github.com/xamarin/recipes/tree/master/Recipes/ios/animation/coreanimation)

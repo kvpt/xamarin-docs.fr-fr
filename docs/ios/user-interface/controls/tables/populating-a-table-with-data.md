@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 48aeaf8e3036c9b4e1ed548208b7daa822a00913
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 819e4f89b1443b2e1154aedfb51007ca38fdca02
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86933417"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91429912"
 ---
 # <a name="populating-a-table-with-data-in-xamarinios"></a>Remplissage d’une table avec des données dans Xamarin. iOS
 
@@ -33,8 +33,8 @@ Une `UITableViewSource` sous-classe est assignée à chaque `UITableView` . La v
 
 Il n’y a que deux méthodes obligatoires requises pour créer une table à partir de données :
 
-- **RowsInSection** : retourne [`nint`](~/cross-platform/macios/nativetypes.md) le nombre total de lignes de données que la table doit afficher.
-- **GetCell** : retourne un `UITableViewCell` rempli avec les données de l’index de ligne correspondant passé à la méthode.
+- **RowsInSection** : retourne  [`nint`](~/cross-platform/macios/nativetypes.md) le nombre total de lignes de données que la table doit afficher.
+- **GetCell** : retourne un  `UITableViewCell` rempli avec les données de l’index de ligne correspondant passé à la méthode.
 
 L’exemple de fichier BasicTable **TableSource.cs** a l’implémentation la plus simple possible de `UITableViewSource` . Dans l’extrait de code ci-dessous, vous pouvez voir qu’il accepte un tableau de chaînes à afficher dans la table et qu’il retourne un style de cellule par défaut contenant chaque chaîne :
 
@@ -292,4 +292,4 @@ Vous pouvez personnaliser davantage l’apparence de l’en-tête et du pied de 
 
 ## <a name="related-links"></a>Liens associés
 
-- [WorkingWithTables (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/workingwithtables)
+- [WorkingWithTables (exemple)](/samples/xamarin/ios-samples/workingwithtables)

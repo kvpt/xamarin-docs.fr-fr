@@ -7,12 +7,12 @@ ms.assetid: 846B59D3-F66A-48F3-A78C-84217697194E
 author: davidortinau
 ms.author: daortin
 ms.date: 09/25/2017
-ms.openlocfilehash: 556ea205e9894a2553224da0dc71c00d9bb55a9b
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 17f5caa7849b076fd8ac2b7a22459fbf8fed1c9d
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84564735"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91432795"
 ---
 # <a name="core-nfc-in-xamarinios"></a>NFC principal dans Xamarin. iOS
 
@@ -29,7 +29,7 @@ Certaines restrictions sont à prendre en compte :
 - Les applications doivent être visibles au premier plan pour l’analyse.
 - CoreNFC peut uniquement être testé sur des appareils réels (pas sur le simulateur).
 
-Cette page décrit la configuration requise pour utiliser CoreNFC et montre comment utiliser l’API à l’aide de l' [exemple de code « NFCTagReader »](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-nfctagreader).
+Cette page décrit la configuration requise pour utiliser CoreNFC et montre comment utiliser l’API à l’aide de l' [exemple de code « NFCTagReader »](/samples/xamarin/ios-samples/ios11-nfctagreader).
 
 ## <a name="configuration"></a>Configuration
 
@@ -71,12 +71,12 @@ Vous devez ensuite créer un profil de provisionnement pour cet ID d’applicati
 
 Une fois votre projet configuré, ajoutez `using CoreNFC;` au début du fichier et suivez ces trois étapes pour implémenter la fonctionnalité de lecture des balises NFC :
 
-### <a name="1-implement-infcndefreadersessiondelegate"></a>1. implémentez`INFCNdefReaderSessionDelegate`
+### <a name="1-implement-infcndefreadersessiondelegate"></a>1. implémentez `INFCNdefReaderSessionDelegate`
 
 L’interface possède deux méthodes à implémenter :
 
-- `DidDetect`: Appelée lorsqu’une étiquette est correctement lue.
-- `DidInvalidate`: Appelée lorsqu’une erreur se produit ou que le deuxième délai d’expiration de 60 est atteint.
+- `DidDetect` : Appelée lorsqu’une étiquette est correctement lue.
+- `DidInvalidate` : Appelée lorsqu’une erreur se produit ou que le deuxième délai d’expiration de 60 est atteint.
 
 #### <a name="diddetect"></a>DidDetect
 
@@ -125,7 +125,7 @@ Une fois qu’une session a été invalidée, un nouvel objet de session doit ê
 
 <a name="step2"></a>
 
-### <a name="2-start-an-nfcndefreadersession"></a>2. démarrer un`NFCNdefReaderSession`
+### <a name="2-start-an-nfcndefreadersession"></a>2. démarrer un `NFCNdefReaderSession`
 
 L’analyse doit commencer par une demande de l’utilisateur, par exemple une pression sur un bouton.
 Le code suivant crée et démarre une session d’analyse :
@@ -137,9 +137,9 @@ Session?.BeginSession();
 
 Les paramètres du `NFCNdefReaderSession` constructeur sont les suivants :
 
-- `delegate`: Implémentation de `INFCNdefReaderSessionDelegate` . Dans l’exemple de code, le délégué est implémenté dans le contrôleur d’affichage de table. par conséquent, il `this` est utilisé comme paramètre délégué.
-- `queue`: La file d’attente sur laquelle les rappels sont gérés. Il peut s’agir `null` de, auquel cas veillez à utiliser `DispatchQueue.MainQueue` lors de la mise à jour des contrôles de l’interface utilisateur (comme indiqué dans l’exemple).
-- `invalidateAfterFirstRead`: Quand `true` , l’analyse s’arrête après la première analyse réussie ; lorsque l' `false` analyse se poursuit et que plusieurs résultats sont retournés jusqu’à ce que l’analyse soit annulée ou que le délai d’expiration de 60 est atteint.
+- `delegate` : Implémentation de `INFCNdefReaderSessionDelegate` . Dans l’exemple de code, le délégué est implémenté dans le contrôleur d’affichage de table. par conséquent, il `this` est utilisé comme paramètre délégué.
+- `queue` : La file d’attente sur laquelle les rappels sont gérés. Il peut s’agir `null` de, auquel cas veillez à utiliser `DispatchQueue.MainQueue` lors de la mise à jour des contrôles de l’interface utilisateur (comme indiqué dans l’exemple).
+- `invalidateAfterFirstRead` : Quand `true` , l’analyse s’arrête après la première analyse réussie ; lorsque l' `false` analyse se poursuit et que plusieurs résultats sont retournés jusqu’à ce que l’analyse soit annulée ou que le délai d’expiration de 60 est atteint.
 
 ### <a name="3-cancel-the-scanning-session"></a>3. annuler la session d’analyse
 
@@ -155,11 +155,11 @@ Session.InvalidateSession();
 
 Dans les deux cas, la méthode du délégué `DidInvalidate` sera appelée.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 CoreNFC permet à votre application de lire des données à partir de balises NFC. Il prend en charge la lecture d’un grand nombre de formats d’étiquette (types NDEF 1 à 5), mais ne prend pas en charge l’écriture ou la mise en forme.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [NFCTagReader (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-nfctagreader)
+- [NFCTagReader (exemple)](/samples/xamarin/ios-samples/ios11-nfctagreader)
 - [Présentation de Core NFC (WWDC) (vidéo)](https://developer.apple.com/videos/play/wwdc2017/718/)

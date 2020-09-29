@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: a462e3adf4109cc9a7a2e17e775609e2c3c81906
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 813a4de1966aa53e9c1447804deda8f55e5672f3
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938877"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91430276"
 ---
 # <a name="working-with-tvos-tab-bar-controllers-in-xamarin"></a>Utilisation des contrôleurs de barre d’onglets tvOS dans Xamarin
 
@@ -140,13 +140,13 @@ Utilisez la `Title` propriété du `UITabBarItem` pour modifier le titre et la `
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a abordé la conception et l’utilisation du contrôleur de barre d’onglets à l’intérieur d’une application Xamarin. tvOS.
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemples tvOS](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [Exemples tvOS](/samples/browse/?products=xamarin&term=Xamarin.iOS%2btvOS)
 - [tvOS](https://developer.apple.com/tvos/)
 - [Guides de l’interface utilisateur tvOS](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [Guide de programmation d’applications pour tvOS](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

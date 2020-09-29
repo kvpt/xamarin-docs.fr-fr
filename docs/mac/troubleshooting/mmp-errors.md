@@ -8,12 +8,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/27/2018
-ms.openlocfilehash: 48399d35d27a700fa0b24583cce9cd0335f0e354
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 9f21ccccbc3faf17fc272f303ef913b40b11ecd3
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572076"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91430916"
 ---
 # <a name="xamarinmac-error-messages-mmp"></a>Messages d’erreur Xamarin. Mac (MMP)
 
@@ -23,7 +23,7 @@ Par exemple, paramètres, environnement, outils manquants.
 
 <a name="MM0000"></a>
 
-#### <a name="mm0000-unexpected-error---please-file-a-bug-report-at-httpsgithubcomxamarinxamarin-maciosissuesnew"></a>MM0000 : erreur inattendue. Veuillez signaler un rapport de bogue àhttps://github.com/xamarin/xamarin-macios/issues/new
+#### <a name="mm0000-unexpected-error---please-file-a-bug-report-at-httpsgithubcomxamarinxamarin-maciosissuesnew"></a>MM0000 : erreur inattendue. Veuillez signaler un rapport de bogue à https://github.com/xamarin/xamarin-macios/issues/new
 
 Une condition d’erreur inattendue s’est produite. Veuillez indiquer le plus d’informations possible dans [un rapport de bogues](https://github.com/xamarin/xamarin-macios/issues/new) , notamment :
 
@@ -35,7 +35,7 @@ Pour obtenir des informations de version exactes, la méthode la plus simple con
 
 <a name="MM0001"></a>
 
-#### <a name="mm0001-this-version-of-xamarinmac-requires-mono-0-the-current-mono-version-is-1-please-update-the-monoframework-from-httpmono-projectcomdownloads"></a>MM0001 : cette version de Xamarin. Mac requiert mono {0} (la version mono actuelle est {1} ). Veuillez mettre à jour mono. Framework à partir dehttp://mono-project.com/Downloads
+#### <a name="mm0001-this-version-of-xamarinmac-requires-mono-0-the-current-mono-version-is-1-please-update-the-monoframework-from-httpmono-projectcomdownloads"></a>MM0001 : cette version de Xamarin. Mac requiert mono {0} (la version mono actuelle est {1} ). Veuillez mettre à jour mono. Framework à partir de http://mono-project.com/Downloads
 
 <a name="MM0003"></a>
 
@@ -57,7 +57,7 @@ Une erreur s’est produite lors du chargement des assemblys à partir des réf�
 
 <a name="MM0010"></a>
 
-#### <a name="mm0010-could-not-parse-the-command-line-arguments-0"></a>MM0010 : impossible d’analyser les arguments de ligne de commande :{0}
+#### <a name="mm0010-could-not-parse-the-command-line-arguments-0"></a>MM0010 : impossible d’analyser les arguments de ligne de commande : {0}
 
 <!-- 0013 is unused -->
 
@@ -83,7 +83,7 @@ Une erreur s’est produite lors du chargement des assemblys à partir des réf�
 
 <a name="MM0026"></a>
 
-#### <a name="mm0026-could-not-parse-the-command-line-argument-0-1"></a>MM0026 : impossible d’analyser l’argument de ligne de commande' {0} ' :{1}
+#### <a name="mm0026-could-not-parse-the-command-line-argument-0-1"></a>MM0026 : impossible d’analyser l’argument de ligne de commande' {0} ' : {1}
 
 <a name="MM0043"></a>
 
@@ -164,7 +164,7 @@ Une dernière solution consiste à utiliser une version antérieure de Xamarin. 
 
 <a name="MM0097"></a>
 
-#### <a name="mm0097-machineconfig-file-0-can-not-be-found"></a>MM0097 : le fichier machine. config « {0} » est introuvable.
+#### <a name="mm0097-machineconfig-file-0-can-not-be-found"></a>MM0097 : le fichier machine.config ' {0} 'est introuvable.
 
 <a name="MM0098"></a>
 
@@ -204,7 +204,7 @@ Lors de `--runregistrar` son exécution, la liste des assemblys doit inclure l�
 
 <a name="MM0132"></a>
 
-#### <a name="mm0132-unknown-optimization--valid-values-are-"></a>MM0132 : optimisation inconnue : \* . Les valeurs valides sont :\*
+#### <a name="mm0132-unknown-optimization--valid-values-are-"></a>MM0132 : optimisation inconnue : \* . Les valeurs valides sont : \*
 
 L’optimisation spécifiée n’a pas été reconnue.
 
@@ -224,7 +224,7 @@ Apple a annoncé qu’elle n’autorisera pas les envois de l’App Store macOS 
 
 En outre, les applications 32 bits ne s’exécutent pas sur la version de macOS après High Sierra « sans compromettre ».
 
-Pour plus d’informations :https://developer.apple.com/news/?id=06282017a
+Pour plus d’informations : https://developer.apple.com/news/?id=06282017a
 
 Envisagez de mettre à jour votre application et toutes les dépendances sur 64 bits.
 
@@ -236,7 +236,7 @@ Pour générer votre application, Xamarin. Mac doit être lié à des bibliothè
 
 La méthode recommandée pour corriger cette erreur consiste à mettre à niveau Xcode pour récupérer le kit de développement logiciel (SDK) nécessaire. Si plusieurs versions de Xcode sont installées ou si vous souhaitez utiliser un Xcode à un emplacement autre que celui par défaut, veillez à définir l’emplacement Xcode correct dans les préférences de votre IDE.
 
-Vous pouvez également activer l' [éditeur de liens](https://docs.microsoft.com/xamarin/mac/deploy-test/linker) managé pour supprimer les API inutilisées, y compris (dans la plupart des cas) celles qui nécessitent la bibliothèque spécifiée. Toutefois, cela ne fonctionnera pas si votre projet nécessite des API introduites dans un SDK plus récent que celui fourni par Xcode.
+Vous pouvez également activer l' [éditeur de liens](../deploy-test/linker.md) managé pour supprimer les API inutilisées, y compris (dans la plupart des cas) celles qui nécessitent la bibliothèque spécifiée. Toutefois, cela ne fonctionnera pas si votre projet nécessite des API introduites dans un SDK plus récent que celui fourni par Xcode.
 
 En tant que solution de dernière paille, utilisez une version antérieure de Xamarin. Mac qui ne requiert pas que ces nouveaux kits de développement logiciel (SDK) soient présents pendant le processus de génération.
 
@@ -280,7 +280,7 @@ En tant que solution de dernière paille, utilisez une version antérieure de Xa
 
 <a name="MM1501"></a>
 
-#### <a name="mm1501-can-not-resolve-reference-0"></a>MM1501 : impossible de résoudre la référence :{0}
+#### <a name="mm1501-can-not-resolve-reference-0"></a>MM1501 : impossible de résoudre la référence : {0}
 
 ### <a name="machocs"></a>MachO.cs
 
@@ -314,7 +314,7 @@ En tant que solution de dernière paille, utilisez une version antérieure de Xa
 
 <a name="MM2002"></a>
 
-#### <a name="mm2002-can-not-resolve-reference-0"></a>MM2002 : impossible de résoudre la référence :{0}
+#### <a name="mm2002-can-not-resolve-reference-0"></a>MM2002 : impossible de résoudre la référence : {0}
 
 <a name="MM2003"></a>
 
@@ -350,7 +350,7 @@ En tant que solution de dernière paille, utilisez une version antérieure de Xa
 
 <a name="MM2012"></a>
 
-#### <a name="mm2012-only-first-0-of-1-referenced-by-warnings-shown--this-message-related-to-2009-"></a>MM2012 : uniquement le premier {0} des {1} avertissements « référencés par » affichés. \*\*Ce message lié à 2009\*\*
+#### <a name="mm2012-only-first-0-of-1-referenced-by-warnings-shown--this-message-related-to-2009-"></a>MM2012 : uniquement le premier {0} des {1} avertissements « référencés par » affichés. \*\* Ce message lié à 2009 \*\*
 
 <a name="MM2013"></a>
 
@@ -358,7 +358,7 @@ En tant que solution de dernière paille, utilisez une version antérieure de Xa
 
 <a name="MM2014"></a>
 
-#### <a name="mm2014-xamarinmac-extensions-do-not-support-linking-request-for-linking-will-be-ignored--this-message-is-obsolete-in-xm-36-"></a>MM2014 : les extensions Xamarin. Mac ne prennent pas en charge la liaison. La demande de liaison sera ignorée. \*\*Ce message est obsolète dans XM 3.6 +\*\*
+#### <a name="mm2014-xamarinmac-extensions-do-not-support-linking-request-for-linking-will-be-ignored--this-message-is-obsolete-in-xm-36-"></a>MM2014 : les extensions Xamarin. Mac ne prennent pas en charge la liaison. La demande de liaison sera ignorée. \*\* Ce message est obsolète dans XM 3.6 + \*\*
 
 <!-- 2015 used by mtouch -->
 
@@ -368,7 +368,7 @@ En tant que solution de dernière paille, utilisez une version antérieure de Xa
 
 <a name="MM2017"></a>
 
-#### <a name="mm2017-could-not-process-xml-description-0"></a>MM2017 : impossible de traiter la description XML :{0}
+#### <a name="mm2017-could-not-process-xml-description-0"></a>MM2017 : impossible de traiter la description XML : {0}
 
 <a name="MM202x"></a>
 
@@ -501,7 +501,7 @@ Si ce n’est pas le cas, veuillez [Envoyer un problème](https://github.com/xam
 
 <a name="MM5103"></a>
 
-#### <a name="mm5103-failed-to-compile-error-code---0-please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MM5103 : échec de la compilation. Code d’erreur- {0} . Veuillez signaler un rapport de bogue àhttp://bugzilla.xamarin.com
+#### <a name="mm5103-failed-to-compile-error-code---0-please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MM5103 : échec de la compilation. Code d’erreur- {0} . Veuillez signaler un rapport de bogue à http://bugzilla.xamarin.com
 
 <!-- 5104 used by mtouch -->
 
@@ -509,7 +509,7 @@ Si ce n’est pas le cas, veuillez [Envoyer un problème](https://github.com/xam
 
 <a name="MM5202"></a>
 
-#### <a name="mm5202-monoframework-mdk-is-missing-please-install-the-mdk-for-your-monoframework-version-from-httpmono-projectcomdownloads"></a>MM5202 : mono. Framework MDK est manquant. Installez le MDK pour votre version mono. Framework à partir dehttp://mono-project.com/Downloads
+#### <a name="mm5202-monoframework-mdk-is-missing-please-install-the-mdk-for-your-monoframework-version-from-httpmono-projectcomdownloads"></a>MM5202 : mono. Framework MDK est manquant. Installez le MDK pour votre version mono. Framework à partir de http://mono-project.com/Downloads
 
 <a name="MM5203"></a>
 
@@ -546,7 +546,7 @@ Consultez l' [Avertissement mTouch équivalent](~/ios/troubleshooting/mtouch-err
 
 <a name="MM5301"></a>
 
-#### <a name="mm5301-pkg-config-could-not-be-found-please-install-the-monoframework-from-httpmono-projectcomdownloads"></a>MM5301 : pkg-config est introuvable. Installez le mono. Framework à partir dehttp://mono-project.com/Downloads
+#### <a name="mm5301-pkg-config-could-not-be-found-please-install-the-monoframework-from-httpmono-projectcomdownloads"></a>MM5301 : pkg-config est introuvable. Installez le mono. Framework à partir de http://mono-project.com/Downloads
 
 <!-- 5302 used by mtouch -->
 <!-- 5303 used by mtouch -->

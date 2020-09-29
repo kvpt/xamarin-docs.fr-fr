@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: d768be516b67ed23bdb851d87286a856a7269de4
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: d8c5cc10b4bce507f7a1d7896a41730745b08cbd
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86935549"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91431641"
 ---
 # <a name="table-views-in-xamarinmac"></a>Vues de table dans Xamarin. Mac
 
@@ -93,7 +93,7 @@ Sélectionnez la vue de table dans la **hiérarchie d’interface** et les propr
 - **Tronque la dernière ligne visible** : si `true` la cellule est tronquée dans les données ne peut pas être contenue dans ses limites.
 
 > [!IMPORTANT]
-> À moins que vous ne conserviez une application Xamarin. Mac héritée, les vues de table basées sur les tables `NSView` doivent être utilisées sur des `NSCell` vues de table basées sur. `NSCell`est considéré comme hérité et peut ne pas être pris en charge à l’avenir.
+> À moins que vous ne conserviez une application Xamarin. Mac héritée, les vues de table basées sur les tables `NSView` doivent être utilisées sur des `NSCell` vues de table basées sur. `NSCell` est considéré comme hérité et peut ne pas être pris en charge à l’avenir.
 
 Sélectionnez une colonne de table dans la **hiérarchie d’interface** et les propriétés suivantes sont disponibles dans l’inspecteur d' **attribut**:
 
@@ -420,10 +420,10 @@ Cela permettra à l’utilisateur de sélectionner n’importe quelle ligne dans
 
 La vue table ( `NSTableView` ) contient les méthodes suivantes pour l’utilisation de la sélection de lignes :
 
-- `DeselectRow(nint)`: Désélectionne la ligne donnée dans la table.
-- `SelectRow(nint,bool)`-Sélectionne la ligne donnée. Transmettez `false` le second paramètre pour sélectionner une seule ligne à la fois.
-- `SelectedRow`-Retourne la ligne actuelle sélectionnée dans la table.
-- `IsRowSelected(nint)`-Retourne `true` si la ligne donnée est sélectionnée.
+- `DeselectRow(nint)` : Désélectionne la ligne donnée dans la table.
+- `SelectRow(nint,bool)` -Sélectionne la ligne donnée. Transmettez `false` le second paramètre pour sélectionner une seule ligne à la fois.
+- `SelectedRow` -Retourne la ligne actuelle sélectionnée dans la table.
+- `IsRowSelected(nint)` -Retourne `true` si la ligne donnée est sélectionnée.
 
 <a name="Multiple_Row_Selection"></a>
 
@@ -448,15 +448,15 @@ Cela permettra à l’utilisateur de sélectionner n’importe quelle ligne dans
 
 La vue table ( `NSTableView` ) contient les méthodes suivantes pour l’utilisation de la sélection de lignes :
 
-- `DeselectAll(NSObject)`: Désélectionne toutes les lignes de la table. Utilisez `this` pour le premier paramètre à envoyer dans l’objet en cours de sélection. 
-- `DeselectRow(nint)`: Désélectionne la ligne donnée dans la table.
-- `SelectAll(NSobject)`: Sélectionne toutes les lignes de la table. Utilisez `this` pour le premier paramètre à envoyer dans l’objet en cours de sélection.
-- `SelectRow(nint,bool)`-Sélectionne la ligne donnée. Pass `false` pour le deuxième paramètre désactivez la sélection et sélectionnez une seule ligne, Pass `true` pour étendre la sélection et inclure cette ligne.
-- `SelectRows(NSIndexSet,bool)`-Sélectionne l’ensemble de lignes donné. Pass `false` pour le deuxième paramètre désactivez la sélection et sélectionnez uniquement ces lignes, Pass `true` pour étendre la sélection et inclure ces lignes.
-- `SelectedRow`-Retourne la ligne actuelle sélectionnée dans la table.
-- `SelectedRows`-Retourne un `NSIndexSet` contenant les index des lignes sélectionnées.
-- `SelectedRowCount`-Retourne le nombre de lignes sélectionnées.
-- `IsRowSelected(nint)`-Retourne `true` si la ligne donnée est sélectionnée.
+- `DeselectAll(NSObject)` : Désélectionne toutes les lignes de la table. Utilisez `this` pour le premier paramètre à envoyer dans l’objet en cours de sélection. 
+- `DeselectRow(nint)` : Désélectionne la ligne donnée dans la table.
+- `SelectAll(NSobject)` : Sélectionne toutes les lignes de la table. Utilisez `this` pour le premier paramètre à envoyer dans l’objet en cours de sélection.
+- `SelectRow(nint,bool)` -Sélectionne la ligne donnée. Pass `false` pour le deuxième paramètre désactivez la sélection et sélectionnez une seule ligne, Pass `true` pour étendre la sélection et inclure cette ligne.
+- `SelectRows(NSIndexSet,bool)` -Sélectionne l’ensemble de lignes donné. Pass `false` pour le deuxième paramètre désactivez la sélection et sélectionnez uniquement ces lignes, Pass `true` pour étendre la sélection et inclure ces lignes.
+- `SelectedRow` -Retourne la ligne actuelle sélectionnée dans la table.
+- `SelectedRows` -Retourne un `NSIndexSet` contenant les index des lignes sélectionnées.
+- `SelectedRowCount` -Retourne le nombre de lignes sélectionnées.
+- `IsRowSelected(nint)` -Retourne `true` si la ligne donnée est sélectionnée.
 
 <a name="Type_to_Select_Row"></a>
 
@@ -917,14 +917,14 @@ Pour plus d’informations, consultez la section [table Data Binding](~/mac/app-
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a décrit en détail l’utilisation des vues de table dans une application Xamarin. Mac. Nous avons vu les différents types et utilisations des vues de table, comment créer et gérer des vues de table dans les Interface Builder de Xcode et comment utiliser des vues de table dans du code C#.
 
 ## <a name="related-links"></a>Liens associés
 
-- [MacTables (exemple)](https://docs.microsoft.com/samples/xamarin/mac-samples/mactables)
-- [MacImages (exemple)](https://docs.microsoft.com/samples/xamarin/mac-samples/macimages)
+- [MacTables (exemple)](/samples/xamarin/mac-samples/mactables)
+- [MacImages (exemple)](/samples/xamarin/mac-samples/macimages)
 - [Hello, Mac](~/mac/get-started/hello-mac.md)
 - [Modes Plan](~/mac/user-interface/outline-view.md)
 - [Listes de sources](~/mac/user-interface/source-list.md)

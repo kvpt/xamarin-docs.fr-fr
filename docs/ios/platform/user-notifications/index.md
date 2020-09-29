@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/01/2016
-ms.openlocfilehash: fc3a0ace7760b89ad9b2679243c9b6d562191554
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: dec3d9a218fa2148f4740c5af2c94c24a1436a21
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75489074"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91430266"
 ---
 # <a name="user-notifications-framework-in-xamarinios"></a>Infrastructure de notifications utilisateur dans Xamarin. iOS
 
@@ -22,17 +22,17 @@ En outre, l’application ou l’extension peut recevoir (et éventuellement mod
 
 La nouvelle infrastructure d’interface utilisateur de notification utilisateur permet à l’extension d’application ou d’application de personnaliser l’apparence des notifications locales et distantes quand elles sont présentées à l’utilisateur.
 
-## <a name="enhanced-user-notificationsiosplatformuser-notificationsenhanced-user-notificationsmd"></a>[Améliorations des notifications utilisateur](~/ios/platform/user-notifications/enhanced-user-notifications.md)
+## <a name="enhanced-user-notifications"></a>[Notifications utilisateur améliorées](~/ios/platform/user-notifications/enhanced-user-notifications.md)
 
 Cet article présente toutes les façons dont les notifications utilisateur ont été améliorées pour iOS 10 et fournit une brève introduction à leur implémentation à l’aide de la nouvelle infrastructure de notification utilisateur.
 
-## <a name="advanced-user-notificationsiosplatformuser-notificationsadvanced-user-notificationsmd"></a>[Notifications utilisateur avancées](~/ios/platform/user-notifications/advanced-user-notifications.md)
+## <a name="advanced-user-notifications"></a>[Notifications utilisateur avancées](~/ios/platform/user-notifications/advanced-user-notifications.md)
 
 Cet article examine en détail la nouvelle infrastructure de notifications utilisateur et comment en tirer pleinement parti dans une application Xamarin. iOS.
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemples iOS 10](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS10)
+- [Exemples iOS 10](/samples/browse/?products=xamarin&term=Xamarin.iOS%2biOS10)
 - [Référence du Framework UserNotifications](https://developer.apple.com/reference/usernotifications)
 - [UserNotificationsUI](https://developer.apple.com/reference/usernotificationsui)
 - [Guide de programmation des notifications locales et distantes](https://developer.apple.com/documentation/usernotifications)

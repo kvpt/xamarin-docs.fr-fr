@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 09/22/2016
-ms.openlocfilehash: e7bc6fa12ab6720842ab264678cbf8124353fc40
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: d3ec300cbda5d22a285c3f63d3281bde29b94024
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574416"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91430051"
 ---
 # <a name="xamarinmac---macos-sierra-troubleshooting"></a>Xamarin. Mac-résolution des problèmes macOS Sierra
 
@@ -32,7 +32,7 @@ Les sections suivantes répertorient certains problèmes connus qui peuvent se p
 
 <a name="App-Store"></a>
 
-## <a name="app-store"></a>App Store
+## <a name="app-store"></a>App Store
 
 Problèmes connus :
 
@@ -72,7 +72,7 @@ Les opérations de longue durée renverront un _« vous n’êtes pas autorisé
 
 ## <a name="core-image"></a>Image principale
 
-L' `CIImageProcessor` API prend maintenant en charge un nombre arbitraire d’images d’entrée. `CIImageProcessor`L’API qui a été incluse dans macOS Sierra bêta 1 sera supprimée.
+L' `CIImageProcessor` API prend maintenant en charge un nombre arbitraire d’images d’entrée. `CIImageProcessor` L’API qui a été incluse dans macOS Sierra bêta 1 sera supprimée.
 
 <a name="Notifications"></a>
 
@@ -92,7 +92,7 @@ Après une opération de remise, la `UserInfo` propriété d’un `NSUserActivit
 
 WebGeolocation requiert l’utilisation d’une URL sécurisée ( `https://` ) sur iOS 10 et MacOS Sierra pour empêcher l’utilisation malveillante des données de localisation.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [Exemples Mac](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Mac)
+- [Exemples Mac](/samples/browse/?products=xamarin&term=Xamarin.Mac)
 - [Nouveautés de macOS 10,12](https://developer.apple.com/library/prerelease/content/releasenotes/MacOSX/WhatsNewInOSX/Articles/OSXv10.html#//apple_ref/doc/uid/TP40017145-SW1)

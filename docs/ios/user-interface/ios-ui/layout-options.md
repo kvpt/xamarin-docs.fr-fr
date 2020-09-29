@@ -7,19 +7,19 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 6cfb567e6f74228a0b7e9ce017c57436df06cb56
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 719436835f5d104930adfe8cd7aa95de326784e9
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939098"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91432085"
 ---
 # <a name="layout-options-in-xamarinios"></a>Options de disposition dans Xamarin. iOS
 
 Il existe deux mécanismes différents pour contrôler la disposition lorsqu’une vue est redimensionnée ou pivotée :
 
 - **Redimensionnement** automatique : l’inspecteur de redimensionnement automatique dans le concepteur permet de définir les `AutoresizingMask` Propriétés. Cela permet à un contrôle d’être ancré sur les bords de son conteneur et/ou de corriger leur taille. Le redimensionnement automatique fonctionne dans toutes les versions d’iOS. Cela est décrit plus en détail ci-dessous.
-- **Disposition automatique** : fonctionnalité, introduite dans iOS 6, qui permet de contrôler précisément les relations des contrôles de l’interface utilisateur. Il permet de contrôler les positions des éléments par rapport à d’autres éléments sur l’aire de conception. Cette rubrique est traitée plus en détail dans le guide [mise en page automatique avec le concepteur Xamarin iOS](~/ios/user-interface/designer/designer-auto-layout.md) .
+- **Disposition automatique** : fonctionnalité, introduite dans iOS 6, qui permet de contrôler précisément les relations des contrôles de l’interface utilisateur. Il permet de contrôler les positions des éléments par rapport à d’autres éléments sur l’aire de conception. Cette rubrique est traitée plus en détail dans le guide  [mise en page automatique avec le concepteur Xamarin iOS](~/ios/user-interface/designer/designer-auto-layout.md) .
 
 ## <a name="autosizing"></a>Redimensionnement automatique
 
@@ -64,4 +64,4 @@ Notez que l’affichage de texte et le champ de texte sont étirés pour conserv
 
 ## <a name="related-links"></a>Liens associés
 
-- [Contrôles (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/controls)
+- [Contrôles (exemple)](/samples/xamarin/ios-samples/controls)

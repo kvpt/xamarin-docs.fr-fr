@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: aa9d946f295b46a3aa2d9559d28907d9a30f184b
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 9a45fcccd693a51230a51600964acd75704e1b93
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938968"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91429718"
 ---
 # <a name="search-and-home-screen-widget-enhancements-in-ios-10"></a>Améliorations des widgets de recherche et d’écran d’accueil dans iOS 10
 
@@ -188,13 +188,13 @@ public void WidgetActiveDisplayModeDidChange (NCWidgetDisplayMode activeDisplayM
 
 En plus de définir la taille demandée pour chaque État (réduit ou développé), il met également à jour le contenu affiché pour qu’il corresponde à la nouvelle taille.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a abordé les améliorations apportées par Apple au système du widget dans iOS 10 et expliqué comment les implémenter dans Xamarin. iOS.
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemples iOS 10](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS10)
+- [Exemples iOS 10](/samples/browse/?products=xamarin&term=Xamarin.iOS%2biOS10)
 - [Présentation des extensions](~/ios/platform/extensions.md)
 - [Présentation de l’interface tactile 3D](~/ios/platform/3d-touch.md)
 - [Guide de programmation de l’extension d’application](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/ExtensibilityPG/index.html)

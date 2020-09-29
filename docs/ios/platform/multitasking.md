@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: b86f3a159a144f02ea13663bfddb41ed0100f740
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: e32042c4b7e7d67e219611014d3a06ad9ed17b9d
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86931402"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91432458"
 ---
 # <a name="multitasking-for-ipad-in-xamarinios"></a>Multitâche pour iPad dans Xamarin. iOS
 
@@ -100,7 +100,7 @@ Comme pour le mode glisser-déplacer et le mode fractionné, l’utilisateur dis
 
 Pour que votre application affiche la vidéo PIP à la demande de l’utilisateur, vous devez utiliser soit _AVKit_ , soit les _API AV Foundation_. Media Player Framework a été amorti dans iOS 9 et ne prend pas en charge PIP.
 
-Picture in Picture est disponible uniquement sur un iPad Pro, iPad air, iPad air 2, iPad mini 2, iPad Mini 3 ou iPad mini 4. Pour plus d’informations, consultez notre [exemple d’application PictureInPicture](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9) et la documentation d’Apple [sur Picture démarrage rapide](https://developer.apple.com/library/prerelease/ios/documentation/WindowsViews/Conceptual/AdoptingMultitaskingOniPad/QuickStartForPictureInPicture.html#//apple_ref/doc/uid/TP40015145-CH14) .
+Picture in Picture est disponible uniquement sur un iPad Pro, iPad air, iPad air 2, iPad mini 2, iPad Mini 3 ou iPad mini 4. Pour plus d’informations, consultez notre [exemple d’application PictureInPicture](/samples/browse/?products=xamarin&term=Xamarin.iOS%2biOS9) et la documentation d’Apple [sur Picture démarrage rapide](https://developer.apple.com/library/prerelease/ios/documentation/WindowsViews/Conceptual/AdoptingMultitaskingOniPad/QuickStartForPictureInPicture.html#//apple_ref/doc/uid/TP40015145-CH14) .
 
 <a name="Supporting-Multitasking-in-your-App"></a>
 
@@ -130,7 +130,7 @@ Sur iPad qui prennent en charge le mode glisser-déplacer et fractionner, vous p
 | **Paysage** |75% de l’écran<br />Horizontal normal<br />Vertical normal|25% de l’écran<br />Compact horizontal<br />Vertical normal|
 | **Paysage** |50% de l’écran<br />Compact horizontal<br />Vertical normal|50% de l’écran<br />Compact horizontal<br />Vertical normal|
 
-Dans l’exemple d’application [MuliTask](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-multitask) , si elle est exécutée en mode plein écran sur un iPad en mode paysage, elle présente la liste et la vue détaillée en même temps :
+Dans l’exemple d’application [MuliTask](/samples/xamarin/ios-samples/ios9-multitask) , si elle est exécutée en mode plein écran sur un iPad en mode paysage, elle présente la liste et la vue détaillée en même temps :
 
 [![Liste et vue détaillée présentées en même temps](multitasking-images/sizeclasses03.png)](multitasking-images/sizeclasses03.png#lightbox)
 
@@ -196,7 +196,7 @@ Si nous exécutons cette application sur un iPad avec un clavier matériel attac
 
 [![Menu contextuel raccourcis clavier](multitasking-images/keyboard03.png)](multitasking-images/keyboard03.png#lightbox)
 
-Pour obtenir un exemple d’implémentation, consultez l’exemple d' [application multitâche](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-multitask) .
+Pour obtenir un exemple d’implémentation, consultez l’exemple d' [application multitâche](/samples/xamarin/ios-samples/ios9-multitask) .
 
 <a name="Resource-Management-Considerations"></a>
 
@@ -247,14 +247,14 @@ Pour désactiver la lecture vidéo PIP, procédez comme suit dans votre applicat
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a abordé les étapes requises pour s’assurer qu’une application Xamarin. iOS s’exécutera et se comportera correctement dans les nouvelles capacités multitâches d’iOS 9 pour iPad. En outre, le fait de ne pas être un bon choix est de ne pas convenir du multitâche pour les applications.
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemples iOS 9](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
-- [Multitâche (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-multitask)
+- [Exemples iOS 9](/samples/browse/?products=xamarin&term=Xamarin.iOS%2biOS9)
+- [Multitâche (exemple)](/samples/xamarin/ios-samples/ios9-multitask)
 - [Présentation des storyboards unifiés](~/ios/user-interface/storyboards/unified-storyboards.md)
 - [iOS 9 pour les développeurs](https://developer.apple.com/ios/pre-release/)
 - [iOS 9,0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)

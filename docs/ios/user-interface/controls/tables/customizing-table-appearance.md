@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: f65b4f8f97059858067df8c847bc9ed181c8cc4c
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: dd79c2059d53702d947a966327bf22b2043d36c5
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86932676"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91429940"
 ---
 # <a name="customizing-a-tables-appearance-in-xamarinios"></a>Personnalisation de l’apparence d’un tableau dans Xamarin. iOS
 
@@ -123,7 +123,7 @@ L’exemple CellCustomTable implémente une `UITableViewCell` sous-classe qui d�
 La classe de cellule personnalisée se compose uniquement de trois méthodes :
 
 - **Constructor** : crée les contrôles d’interface utilisateur et définit les propriétés de style personnalisées (par exemple, type de police, taille et couleurs).
-- **UpdateCell** : méthode à `UITableView.GetCell` utiliser pour définir les propriétés de la cellule.
+- **UpdateCell** : méthode à  `UITableView.GetCell` utiliser pour définir les propriétés de la cellule.
 - **LayoutSubviews** : définissez l’emplacement des contrôles de l’interface utilisateur. Dans l’exemple, chaque cellule a la même disposition, mais une cellule plus complexe (en particulier celles qui ont des tailles différentes) peut nécessiter des positions de disposition différentes selon le contenu affiché.
 
 L’exemple de code complet dans **CellCustomTable > CustomVegeCell.cs** est le suivant :
@@ -184,4 +184,4 @@ public override UITableViewCell GetCell (UITableView tableView, NSIndexPath inde
 
 ## <a name="related-links"></a>Liens associés
 
-- [WorkingWithTables (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/workingwithtables)
+- [WorkingWithTables (exemple)](/samples/xamarin/ios-samples/workingwithtables)

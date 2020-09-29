@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 034169b4e77dace365b36733442afe295b62fb80
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: cae2b0ebfa81d140af1c233938ceddb9acd5ff07
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573986"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91432918"
 ---
 # <a name="databases-in-xamarinmac"></a>Bases de données dans Xamarin. Mac
 
@@ -1401,11 +1401,11 @@ namespace MacDatabase
 
 Dans cet exemple, nous créons un nouveau `NSComboBoxDataSource` qui peut présenter des éléments de zone de liste déroulante à partir de n’importe quelle source de données SQLite. Tout d’abord, nous définissons les propriétés suivantes :
 
-- `Conn`-Obtient ou définit une connexion à la base de données SQLite.
-- `TableName`-Obtient ou définit le nom de la table.
-- `IDField`-Obtient ou définit le champ qui fournit l’ID unique pour la table donnée. La valeur par défaut est `ID`.
-- `DisplayField`-Obtient ou définit le champ affiché dans la liste déroulante.
-- `RecordCount`-Obtient le nombre d’enregistrements dans la table donnée.
+- `Conn` -Obtient ou définit une connexion à la base de données SQLite.
+- `TableName` -Obtient ou définit le nom de la table.
+- `IDField` -Obtient ou définit le champ qui fournit l’ID unique pour la table donnée. La valeur par défaut est `ID`.
+- `DisplayField` -Obtient ou définit le champ affiché dans la liste déroulante.
+- `RecordCount` -Obtient le nombre d’enregistrements dans la table donnée.
 
 Lorsque nous créons une nouvelle instance de l’objet, nous passons la connexion, le nom de la table, éventuellement le champ ID et le champ d’affichage :
 
@@ -2218,13 +2218,13 @@ public override void AwakeFromNib ()
 
 Tout d’abord, nous obtenons l’accès à notre base de données SQLite.NET, en la créant et en la remplissant si elle n’existe pas déjà. Ensuite, nous créons une nouvelle instance de notre source de données de table personnalisée, nous passons à la connexion de base de données et nous l’attachons à la table. Enfin, nous créons une nouvelle instance de notre délégué de table personnalisé, nous transmettons notre source de données et l’attachons à la table.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a décrit en détail l’utilisation de la liaison de données et du codage clé-valeur avec les bases de données SQLite dans une application Xamarin. Mac. Tout d’abord, il s’est penché sur l’exposition d’une classe C# à Objective-C à l’aide du codage key-value (KVC) et de l’observation key-value (KVO). Ensuite, il a montré comment utiliser une classe conforme à KVO et lier les données aux éléments d’interface utilisateur du Interface Builder de Xcode. L’article traite également de l’utilisation des données SQLite via l’ORM SQLite.NET et de l’affichage de ces données dans une vue table.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [MacDatabase (exemple)](https://docs.microsoft.com/samples/xamarin/mac-samples/macdatabase)
+- [MacDatabase (exemple)](/samples/xamarin/mac-samples/macdatabase)
 - [Hello, Mac](~/mac/get-started/hello-mac.md)
 - [Liaison de données et codage de clé-valeur](~/mac/app-fundamentals/databinding.md)
 - [Contrôles standard](~/mac/user-interface/standard-controls.md)

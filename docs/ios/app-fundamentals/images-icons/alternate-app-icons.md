@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: 39a18a775946c2f139b4c032d2c360bc5680a0e7
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 6ac5a6924f2b297b63a73b8b417dd68bad062a84
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937915"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91431361"
 ---
 # <a name="alternate-app-icons-in-xamarinios"></a>Autres icônes d’application dans Xamarin. iOS
 
@@ -20,10 +20,10 @@ _Cet article traite de l’utilisation d’autres icônes d’application dans X
 
 Apple a ajouté plusieurs améliorations à iOS 10,3 qui permettent à une application de gérer son icône :
 
-- `ApplicationIconBadgeNumber`-Obtient ou définit le badge de l’icône d’application dans le Springboard.
-- `SupportsAlternateIcons`-Si `true` l’application possède un autre ensemble d’icônes.
-- `AlternateIconName`-Retourne le nom de l’autre icône actuellement sélectionnée ou `null` si vous utilisez l’icône principale.
-- `SetAlternameIconName`-Utilisez cette méthode pour faire passer l’icône de l’application à l’autre icône donnée.
+- `ApplicationIconBadgeNumber` -Obtient ou définit le badge de l’icône d’application dans le Springboard.
+- `SupportsAlternateIcons` -Si `true` l’application possède un autre ensemble d’icônes.
+- `AlternateIconName` -Retourne le nom de l’autre icône actuellement sélectionnée ou `null` si vous utilisez l’icône principale.
+- `SetAlternameIconName` -Utilisez cette méthode pour faire passer l’icône de l’application à l’autre icône donnée.
 
 ![Exemple d’alerte quand une application modifie son icône](alternate-app-icons-images/icons04.png)
 
@@ -166,10 +166,10 @@ Si l’utilisateur revient à l’icône principale, une alerte semblable à la 
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a abordé l’ajout d’icônes d’application alternatives à un projet Xamarin. iOS et son utilisation dans l’application.
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemple iOSTenThree](https://docs.microsoft.com/samples/xamarin/ios-samples/ios10-iostenthree/)
+- [Exemple iOSTenThree](/samples/xamarin/ios-samples/ios10-iostenthree/)

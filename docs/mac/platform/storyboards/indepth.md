@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 8586157dc9a803c3502ae2ffed9fed4fc285bfda
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: c90a51d8d849dc95ca9465dd55910bcd5b50e43e
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574403"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91430149"
 ---
 # <a name="working-with-storyboards-in-xamarinmac"></a>Utilisation des storyboards dans Xamarin. Mac
 
@@ -61,14 +61,14 @@ Les contrôleurs d’affichage définissent les relations entre une vue donnée 
 
 Plusieurs nouvelles méthodes ont été ajoutées à la `NSViewController` classe pour prendre en charge les storyboards dans MacOS. Plus important encore, les méthodes suivantes sont utilisées pour répondre au cycle de vie de la vue contrôlée par le contrôleur d’affichage donné :
 
-- `ViewDidLoad`-Cette méthode est appelée lorsque la vue est chargée à partir du fichier de table de montage séquentiel.
-- `ViewWillAppear`-Cette méthode est appelée juste avant que la vue ne s’affiche à l’écran.
-- `ViewDidAppear`-Cette méthode est appelée directement après l’affichage de la vue à l’écran.
-- `ViewWillDisappear`-Cette méthode est appelée juste avant que l’affichage ne soit supprimé de l’écran.
-- `ViewDidDisappear`-Cette méthode est appelée directement après que la vue a été supprimée de l’écran.
-- `UpdateViewConstraints`-Cette méthode est appelée lorsque les contraintes qui définissent une position et une taille de disposition automatique doivent être mises à jour.
-- `ViewWillLayout`-Cette méthode est appelée juste avant que les sous-vues de cette vue ne soient présentées à l’écran.
-- `ViewDidLayout`-Cette méthode est appelée directement après que les sous-vues de la vue ont été présentées à l’écran.
+- `ViewDidLoad` -Cette méthode est appelée lorsque la vue est chargée à partir du fichier de table de montage séquentiel.
+- `ViewWillAppear` -Cette méthode est appelée juste avant que la vue ne s’affiche à l’écran.
+- `ViewDidAppear` -Cette méthode est appelée directement après l’affichage de la vue à l’écran.
+- `ViewWillDisappear` -Cette méthode est appelée juste avant que l’affichage ne soit supprimé de l’écran.
+- `ViewDidDisappear` -Cette méthode est appelée directement après que la vue a été supprimée de l’écran.
+- `UpdateViewConstraints` -Cette méthode est appelée lorsque les contraintes qui définissent une position et une taille de disposition automatique doivent être mises à jour.
+- `ViewWillLayout` -Cette méthode est appelée juste avant que les sous-vues de cette vue ne soient présentées à l’écran.
+- `ViewDidLayout` -Cette méthode est appelée directement après que les sous-vues de la vue ont été présentées à l’écran.
 
 <a name="The-Responder-Chain"></a>
 
@@ -249,11 +249,11 @@ Au lieu de remplacer l' `MouseDown` événement dans votre contrôleur d’affic
 
 Les détecteurs de mouvements suivants sont disponibles dans macOS :
 
-- `NSClickGestureRecognizer`-Inscrivez les événements Mouse et up.
-- `NSPanGestureRecognizer`-Enregistre le bouton de la souris enfoncé, les événements de glisser-déplacer.
-- `NSPressGestureRecognizer`-Enregistre le bouton de la souris enfoncé pendant un événement de temps donné.
-- `NSMagnificationGestureRecognizer`-Enregistre un événement d’agrandissement à partir du matériel pavé tactile.
-- `NSRotationGestureRecognizer`-Enregistre un événement de rotation à partir du matériel pavé tactile.
+- `NSClickGestureRecognizer` -Inscrivez les événements Mouse et up.
+- `NSPanGestureRecognizer` -Enregistre le bouton de la souris enfoncé, les événements de glisser-déplacer.
+- `NSPressGestureRecognizer` -Enregistre le bouton de la souris enfoncé pendant un événement de temps donné.
+- `NSMagnificationGestureRecognizer` -Enregistre un événement d’agrandissement à partir du matériel pavé tactile.
+- `NSRotationGestureRecognizer` -Enregistre un événement de rotation à partir du matériel pavé tactile.
 
 <a name="Using-Storyboard-References"></a>
 
@@ -350,11 +350,11 @@ Lorsque l’application est exécutée et que l’utilisateur clique sur l’él
 
 ## <a name="complex-storyboard-example"></a>Exemple de Storyboard complexe
 
-Pour obtenir un exemple complexe de l’utilisation des storyboards dans une application Xamarin. Mac, consultez l' [exemple d’application SourceWriter](https://docs.microsoft.com/samples/xamarin/mac-samples/sourcewriter). SourceWriter est un éditeur de code source simple qui assure la prise en charge de la complétion de code et de la coloration syntaxique de base.
+Pour obtenir un exemple complexe de l’utilisation des storyboards dans une application Xamarin. Mac, consultez l' [exemple d’application SourceWriter](/samples/xamarin/mac-samples/sourcewriter). SourceWriter est un éditeur de code source simple qui assure la prise en charge de la complétion de code et de la coloration syntaxique de base.
 
 Le code SourceWriter a été entièrement commenté et, le cas échéant, des liens ont être fournis entre les principales technologies ou méthodes et des informations pertinentes dans la documentation des guides Xamarin.Mac.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Hello, Mac](~/mac/get-started/hello-mac.md)
 - [Utilisation de Windows](~/mac/user-interface/window.md)

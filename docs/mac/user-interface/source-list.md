@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 9280917f451d58ae864398088bec7faaf15ad96a
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: ae82918c1f87e47be9446e80f99ebc4dc967c078
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937343"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91431937"
 ---
 # <a name="source-lists-in-xamarinmac"></a>Listes de sources dans Xamarin. Mac
 
@@ -618,13 +618,13 @@ Si nous exécutons notre application, les éléments suivants s’affichent :
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a décrit en détail l’utilisation des listes de sources dans une application Xamarin. Mac. Nous avons vu comment créer et gérer des listes de sources dans le Interface Builder de Xcode et comment utiliser des listes de sources dans du code C#.
 
 ## <a name="related-links"></a>Liens associés
 
-- [MacOutlines (exemple)](https://docs.microsoft.com/samples/xamarin/mac-samples/macoutlines)
+- [MacOutlines (exemple)](/samples/xamarin/mac-samples/macoutlines)
 - [Hello, Mac](~/mac/get-started/hello-mac.md)
 - [Vues Table](~/mac/user-interface/table-view.md)
 - [Modes Plan](~/mac/user-interface/outline-view.md)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: a797fc654c7bdbbdb621c9d18dc7f1a82676778b
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 2e52fea7975094eb19d5247ea7747b40fda92630
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86930232"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91433167"
 ---
 # <a name="eventkit-in-xamarinios"></a>EventKit dans Xamarin. iOS
 
@@ -29,7 +29,7 @@ Toutes les tâches de ce guide sont disponibles dans l’exemple d’application
 
  [![Exemples d’écrans d’application compagnons](eventkit-images/01.png)](eventkit-images/01.png#lightbox)
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Configuration requise
 
 EventKit a été introduit dans iOS 4,0, mais l’accès aux données de rappels a été introduit dans iOS 6,0. Par conséquent, pour effectuer un développement EventKit général, vous devez cibler au moins la version 4,0 et 6,0 pour les rappels.
 
@@ -106,7 +106,7 @@ En outre, étant donné que le gestionnaire d’achèvement est appelé sur un t
 
 ### <a name="ekentitytype"></a>EKEntityType
 
-`EKEntityType`est une énumération qui décrit le type d' `EventKit` élément ou de données. Il a deux valeurs : `Event` et un rappel. Elle est utilisée dans un certain nombre de méthodes, notamment `EventStore.RequestAccess` pour indiquer `EventKit` le type de données auquel accéder ou récupérer.
+`EKEntityType` est une énumération qui décrit le type d' `EventKit` élément ou de données. Il a deux valeurs : `Event` et un rappel. Elle est utilisée dans un certain nombre de méthodes, notamment `EventStore.RequestAccess` pour indiquer `EventKit` le type de données auquel accéder ou récupérer.
 
 ### <a name="ekcalendar"></a>EKCalendar
 
@@ -126,7 +126,7 @@ En outre, étant donné que le gestionnaire d’achèvement est appelé sur un t
 
 ### <a name="ekspan"></a>EKSpan
 
-*EKSpan* est une énumération qui décrit l’étendue des événements lors de la modification d’événements susceptibles de se reproduire, et a deux valeurs : *cette* et *FutureEvents*. `ThisEvent`signifie que toutes les modifications ne se produiront que pour l’événement particulier de la série référencée, tandis que `FutureEvents` affecte cet événement et toutes les récurrences ultérieures.
+*EKSpan* est une énumération qui décrit l’étendue des événements lors de la modification d’événements susceptibles de se reproduire, et a deux valeurs : *cette* et *FutureEvents*. `ThisEvent` signifie que toutes les modifications ne se produiront que pour l’événement particulier de la série référencée, tandis que `FutureEvents` affecte cet événement et toutes les récurrences ultérieures.
 
 ## <a name="tasks"></a>Tâches
 
@@ -274,7 +274,7 @@ Une fois enregistrée, la propriété *EventIdentifier* est mise à jour avec un
 Console.WriteLine ("Event Saved, ID: " + newEvent.CalendarItemIdentifier);
 ```
 
- `EventIdentifier`est un GUID mis en forme de chaîne.
+ `EventIdentifier` est un GUID mis en forme de chaîne.
 
 ### <a name="create-a-reminder-programmatically"></a>Créer un rappel par programmation
 
@@ -372,12 +372,12 @@ App.Current.EventStore.FetchReminders (
         } );
 ```
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Ce document a fourni une vue d’ensemble des éléments importants de l’infrastructure EventKit et un certain nombre de tâches les plus courantes. Toutefois, l’infrastructure EventKit est très volumineuse et puissante, et comprend des fonctionnalités qui n’ont pas été introduites ici, telles que les mises à jour par lot, la configuration des alarmes, la configuration de la récurrence sur les événements, l’inscription et l’écoute des modifications sur la base de données de calendrier, la définition de limites géographiques et bien plus encore.  Pour plus d’informations, consultez le [Guide de programmation du calendrier et des rappels](https://developer.apple.com/library/prerelease/ios/#documentation/DataManagement/Conceptual/EventKitProgGuide/Introduction/Introduction.html)d’Apple.
 
 ## <a name="related-links"></a>Liens associés
 
-- [Calendriers (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/calendars)
+- [Calendriers (exemple)](/samples/xamarin/ios-samples/calendars)
 - [Introduction à iOS 6](~/ios/platform/introduction-to-ios6/index.md)
 - [Présentation des calendriers et des rappels](https://developer.apple.com/library/prerelease/ios/#documentation/DataManagement/Conceptual/EventKitProgGuide/Introduction/Introduction.html)

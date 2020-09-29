@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/06/2018
-ms.openlocfilehash: 98d2ef76974e63df7c1b0596d59c638590339fa3
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 4064b5561569124ab15f77b9614eea5b91eadad4
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84570862"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91429974"
 ---
 # <a name="xamarinios-errors"></a>Erreurs Xamarin. iOS
 
@@ -28,7 +28,7 @@ Par exemple, paramètres, environnement, outils manquants.
 
 <a name="MT0000"></a>
 
-### <a name="mt0000-unexpected-error---please-fill-a-bug-report-at-httpsgithubcomxamarinxamarin-maciosissuesnew"></a>MT0000 : erreur inattendue. Veuillez remplir un rapport de bogue àhttps://github.com/xamarin/xamarin-macios/issues/new
+### <a name="mt0000-unexpected-error---please-fill-a-bug-report-at-httpsgithubcomxamarinxamarin-maciosissuesnew"></a>MT0000 : erreur inattendue. Veuillez remplir un rapport de bogue à https://github.com/xamarin/xamarin-macios/issues/new
 
 Une condition d’erreur inattendue s’est produite. Veuillez envoyer un nouveau problème sur [GitHub](https://github.com/xamarin/xamarin-macios/issues/new) avec autant d’informations que possible, notamment :
 
@@ -48,7 +48,7 @@ Il s’agit d’un avertissement émis si-devname est passé à mTouch quand auc
 
 ### <a name="mt0002-could-not-parse-the-environment-variable-"></a>MT0002 : impossible d’analyser la variable d’environnement *.
 
-Cette erreur se produit si vous tentez de définir une paire clé-valeur de variable d’environnement non valide. Le format correct est le suivant :`mtouch --setenv=VARIABLE=VALUE`
+Cette erreur se produit si vous tentez de définir une paire clé-valeur de variable d’environnement non valide. Le format correct est le suivant : `mtouch --setenv=VARIABLE=VALUE`
 
 <a name="MT0003"></a>
 
@@ -204,7 +204,7 @@ Le nom de l’assembly exécutable et le nom de l’application ne peuvent pas c
 
 <a name="MT0026"></a>
 
-### <a name="mt0026-could-not-parse-the-command-line-argument--"></a>MT0026 : impossible d’analyser l’argument de ligne de commande' \* ' :\*
+### <a name="mt0026-could-not-parse-the-command-line-argument--"></a>MT0026 : impossible d’analyser l’argument de ligne de commande' \* ' : \*
 
 <a name="MT0027"></a>
 
@@ -238,11 +238,11 @@ Pour résoudre ce problème, modifiez « nom de l’application » dans les op
 
 <a name="MT0033"></a>
 
-### <a name="mt0033-a-xamarinios-project-must-reference-either-monotouchdll-or-xamariniosdll"></a>MT0033 : un projet Xamarin. iOS doit faire référence à unitouch. dll ou Xamarin. iOS. dll
+### <a name="mt0033-a-xamarinios-project-must-reference-either-monotouchdll-or-xamariniosdll"></a>MT0033 : un projet Xamarin. iOS doit référencer monotouch.dll ou Xamarin.iOS.dll
 
 <a name="MT0034"></a>
 
-### <a name="mt0034-cannot-include-both-monotouchdll-and-xamariniosdll-in-the-same-xamarinios-project----is-referenced-explicitly-while--is-referenced-by-"></a>MT0034 : ne peut pas inclure à la fois’unitouch. dll’et’Xamarin. iOS. dll’dans le même projet Xamarin. iOS-' \* 'est référencé explicitement, tandis que' \* 'est référencé par' * '.
+### <a name="mt0034-cannot-include-both-monotouchdll-and-xamariniosdll-in-the-same-xamarinios-project----is-referenced-explicitly-while--is-referenced-by-"></a>MT0034 : impossible d’inclure à la fois' monotouch.dll 'et' Xamarin.iOS.dll 'dans le même projet Xamarin. iOS-' \* 'est référencé explicitement, tandis que' \* 'est référencé par' * '.
 
 <!-- MT0035 unused -->
 
@@ -252,15 +252,15 @@ Pour résoudre ce problème, modifiez « nom de l’application » dans les op
 
 <a name="MT0037"></a>
 
-### <a name="mt0037-monotouchdll-is-not-64-bit-compatible-either-reference-xamariniosdll-or-do-not-build-for-a-64-bit-architecture-arm64-andor-x86_64"></a>MT0037 : unitouch. dll n’est pas compatible 64 bits. Référencez Xamarin. iOS. dll ou ne générez pas pour une architecture 64 bits (ARM64 et/ou x86_64).
+### <a name="mt0037-monotouchdll-is-not-64-bit-compatible-either-reference-xamariniosdll-or-do-not-build-for-a-64-bit-architecture-arm64-andor-x86_64"></a>MT0037 : monotouch.dll n’est pas compatible 64 bits. Les Xamarin.iOS.dll de référence ou ne sont pas générés pour une architecture 64 bits (ARM64 et/ou x86_64).
 
 <a name="MT0038"></a>
 
-### <a name="mt0038-the-old-registrars---registraroldstaticolddynamic-are-not-supported-when-referencing-xamariniosdll"></a>MT0038 : les anciens bureaux d’enregistrement (--Registrar : oldstatic | olddynamic) ne sont pas pris en charge lors du référencement de Xamarin. iOS. dll.
+### <a name="mt0038-the-old-registrars---registraroldstaticolddynamic-are-not-supported-when-referencing-xamariniosdll"></a>MT0038 : les anciens bureaux d’enregistrement (--Registrar : oldstatic | olddynamic) ne sont pas pris en charge lors du référencement Xamarin.iOS.dll.
 
 <a name="MT0039"></a>
 
-### <a name="mt0039-applications-targeting-armv6-cannot-reference-xamariniosdll"></a>MT0039 : les applications ciblant ARMv6 ne peuvent pas faire référence à Xamarin. iOS. dll.
+### <a name="mt0039-applications-targeting-armv6-cannot-reference-xamariniosdll"></a>MT0039 : les applications ciblant ARMv6 ne peuvent pas référencer Xamarin.iOS.dll.
 
 <a name="MT0040"></a>
 
@@ -268,15 +268,15 @@ Pour résoudre ce problème, modifiez « nom de l’application » dans les op
 
 <a name="MT0041"></a>
 
-### <a name="mt0041-cannot-reference-both-monotouchdll-and-xamariniosdll"></a>MT0041 : impossible de référencer à la fois’unitouch. dll’et’Xamarin. iOS. dll'.
+### <a name="mt0041-cannot-reference-both-monotouchdll-and-xamariniosdll"></a>MT0041 : impossible de référencer à la fois' monotouch.dll 'et' Xamarin.iOS.dll '.
 
 <a name="MT0042"></a>
 
-### <a name="mt0042-no-reference-to-either-monotouchdll-or-xamariniosdll-was-found-a-reference-to-monotouchdll-will-be-added"></a>MT0042 : aucune référence à unitouch. dll ou Xamarin. iOS. dll n’a été trouvée. Une référence à unitouch. dll sera ajoutée.
+### <a name="mt0042-no-reference-to-either-monotouchdll-or-xamariniosdll-was-found-a-reference-to-monotouchdll-will-be-added"></a>MT0042 : aucune référence à monotouch.dll ou Xamarin.iOS.dll n’a été trouvée. Une référence à monotouch.dll sera ajoutée.
 
 <a name="MT0043"></a>
 
-### <a name="mt0043-the-boehm-garbage-collector-is-currently-not-supported-when-referencing-xamariniosdll-the-sgen-garbage-collector-has-been-selected-instead"></a>MT0043 : le garbage collector Boehm n’est actuellement pas pris en charge lors du référencement de’Xamarin. iOS. dll'. Le garbage collector SGen a été sélectionné à la place.
+### <a name="mt0043-the-boehm-garbage-collector-is-currently-not-supported-when-referencing-xamariniosdll-the-sgen-garbage-collector-has-been-selected-instead"></a>MT0043 : le garbage collector Boehm n’est actuellement pas pris en charge lors du référencement de' Xamarin.iOS.dll '. Le garbage collector SGen a été sélectionné à la place.
 
 Seul le garbage collector SGen est pris en charge avec les projets unifiés. Assurez-vous qu’il n’existe aucun indicateur mTouch supplémentaire spécifiant Boehm comme garbage collector.
 
@@ -300,7 +300,7 @@ Installez une version de Xcode plus récente.
 
 <a name="MT0049"></a>
 
-### <a name="mt0049-framework-is-supported-only-if-deployment-target-is-80-or-later--features-might-not-work-correctly"></a>MT0049 : \* . Framework est pris en charge uniquement si la cible de déploiement est 8,0 ou une version ultérieure. \*les fonctionnalités peuvent ne pas fonctionner correctement.
+### <a name="mt0049-framework-is-supported-only-if-deployment-target-is-80-or-later--features-might-not-work-correctly"></a>MT0049 : \* . Framework est pris en charge uniquement si la cible de déploiement est 8,0 ou une version ultérieure. \* les fonctionnalités peuvent ne pas fonctionner correctement.
 
 L’infrastructure spécifiée n’est pas prise en charge dans la version iOS à laquelle la cible de déploiement fait référence. Mettez à jour la cible de déploiement vers une version iOS plus récente ou supprimez l’utilisation du Framework spécifié de l’application.
 
@@ -322,7 +322,7 @@ Aucune action n’a été spécifiée pour mTouch.
 
 <a name="MT0054"></a>
 
-### <a name="mt0054-unable-to-canonicalize-the-path--"></a>MT0054 : impossible de rendre canonique le chemin d’accès' \* ' :\*
+### <a name="mt0054-unable-to-canonicalize-the-path--"></a>MT0054 : impossible de rendre canonique le chemin d’accès' \* ' : \*
 
 Il s'agit d'une erreur interne. Si vous voyez cette erreur, veuillez envoyer un nouveau problème sur [GitHub](https://github.com/xamarin/xamarin-macios/issues/new).
 
@@ -448,7 +448,7 @@ Sélectionnez une cible de déploiement minimale antérieure dans le fichier inf
 
 <a name="MT0075"></a>
 
-### <a name="mt0075-invalid-architecture--for--projects-valid-architectures-are-"></a>MT0075 : architecture «» non valide \* pour les \* projets. Les architectures valides sont les suivantes :\*
+### <a name="mt0075-invalid-architecture--for--projects-valid-architectures-are-"></a>MT0075 : architecture «» non valide \* pour les \* projets. Les architectures valides sont les suivantes : \*
 
 Une architecture non valide a été spécifiée. Vérifiez que l’architecture est valide.
 
@@ -550,7 +550,7 @@ Une dernière solution consiste à utiliser une version antérieure de Xamarin. 
 
 <a name="MT0096"></a>
 
-### <a name="mt0096-no-reference-to-xamariniosdll-was-found"></a>MT0096 : aucune référence à Xamarin. iOS. dll n’a été trouvée.
+### <a name="mt0096-no-reference-to-xamariniosdll-was-found"></a>MT0096 : aucune référence à Xamarin.iOS.dll n’a été trouvée.
 
 <!-- MT0097: used by mmp -->
 <!-- MT0098: used by mmp -->
@@ -785,7 +785,7 @@ Remplacez l’architecture cible des options de génération iOS du projet par a
 
 ### <a name="mt0123-the-executable-assembly--does-not-reference-"></a>MT0123 : l’assembly exécutable \* ne fait pas référence à \* .
 
-Aucune référence à l’assembly de plateforme (Xamarin. iOS. dll/Xamarin. TVOS. dll/Xamarin. Watchos. dll) n’a été trouvée dans l’assembly exécutable.
+Aucune référence n’a été trouvée dans l’assembly de plateforme (Xamarin.iOS.dll/Xamarin.TVOS.dll/Xamarin.WatchOS.dll) dans l’assembly exécutable.
 
 Cela se produit généralement quand aucun code dans le projet exécutable n’utilise rien de l’assembly de plateforme. par exemple, une méthode main vide (et aucun autre code) affiche l’erreur suivante :
 
@@ -840,7 +840,7 @@ Pour plus d’informations, consultez le bogue n °[52727](https://bugzilla.xama
 
 <a name="MT0128"></a>
 
-### <a name="mt0128-could-not-touch-the-file--"></a>MT0128 : impossible de toucher le fichier' \* ' :\*
+### <a name="mt0128-could-not-touch-the-file--"></a>MT0128 : impossible de toucher le fichier' \* ' : \*
 
 Une erreur s’est produite lors du contact d’un fichier (qui est effectuée pour garantir que les builds partielles sont effectuées correctement).
 
@@ -854,7 +854,7 @@ Pour générer votre application, Xamarin. iOS doit être lié à des bibliothè
 
 La méthode recommandée pour corriger cette erreur consiste à mettre à niveau Xcode pour récupérer le kit de développement logiciel (SDK) nécessaire. Si plusieurs versions de Xcode sont installées ou si vous souhaitez utiliser un Xcode à un emplacement autre que celui par défaut, veillez à définir l’emplacement Xcode correct dans les préférences de votre IDE.
 
-Vous pouvez également activer l' [éditeur de liens](https://docs.microsoft.com/xamarin/ios/deploy-test/linker) managé pour supprimer les API inutilisées, y compris (dans la plupart des cas) celles qui nécessitent la bibliothèque spécifiée. Toutefois, cela ne fonctionnera pas si votre projet nécessite des API introduites dans un SDK plus récent que celui fourni par Xcode.
+Vous pouvez également activer l' [éditeur de liens](../deploy-test/linker.md) managé pour supprimer les API inutilisées, y compris (dans la plupart des cas) celles qui nécessitent la bibliothèque spécifiée. Toutefois, cela ne fonctionnera pas si votre projet nécessite des API introduites dans un SDK plus récent que celui fourni par Xcode.
 
 En tant que solution de dernière paille, utilisez une version antérieure de Xamarin. iOS qui ne requiert pas que ces nouveaux kits de développement logiciel (SDK) soient présents pendant le processus de génération.
 
@@ -925,7 +925,7 @@ Toutefois, étant donné que ce problème a été résolu dans la dernière vers
 
 <a name="MT1010"></a>
 
-### <a name="mt1010-could-not-load-the-assembly--"></a>MT1010 : impossible de charger l’assembly' \* ' :\*
+### <a name="mt1010-could-not-load-the-assembly--"></a>MT1010 : impossible de charger l’assembly' \* ' : \*
 
 <a name="MT1011"></a>
 
@@ -933,7 +933,7 @@ Toutefois, étant donné que ce problème a été résolu dans la dernière vers
 
 <a name="MT1012"></a>
 
-### <a name="mt1012-failed-to-list-the-apps-on-the-device--"></a>MT1012 : échec de la liste des applications sur l’appareil' \* ' :\*
+### <a name="mt1012-failed-to-list-the-apps-on-the-device--"></a>MT1012 : échec de la liste des applications sur l’appareil' \* ' : \*
 
 <a name="MT1013"></a>
 
@@ -947,11 +947,11 @@ Cela indique un bogue dans Xamarin. iOS. Veuillez envoyer un nouveau problème s
 
 <a name="MT1015"></a>
 
-### <a name="mt1015-failed-to-create-the-executable--"></a>MT1015 : échec de la création du fichier exécutable' \* ' :\*
+### <a name="mt1015-failed-to-create-the-executable--"></a>MT1015 : échec de la création du fichier exécutable' \* ' : \*
 
 <a name="MT1015"></a>
 
-### <a name="mt1015-failed-to-create-the-executable--"></a>MT1015 : échec de la création du fichier exécutable' \* ' :\*
+### <a name="mt1015-failed-to-create-the-executable--"></a>MT1015 : échec de la création du fichier exécutable' \* ' : \*
 
 <a name="MT1016"></a>
 
@@ -974,11 +974,11 @@ Supprimez le répertoire du `NOTICE` projet.
 Cela peut se produire si :
 
 - Votre application a des droits que le profil de provisionnement actuel ne prend pas en charge.
-  Solutions possibles :
+  Solutions possibles :
   - Spécifiez un autre profil de provisionnement qui prend en charge les droits dont votre application a besoin.
   - Supprimez les droits non pris en charge dans le profil de configuration actuel.
 - L’appareil sur lequel vous essayez d’effectuer le déploiement n’est pas inclus dans le profil de provisionnement que vous utilisez.
-  Solutions possibles :
+  Solutions possibles :
   - Créez une application à partir d’un modèle dans Xcode, sélectionnez le même profil de provisionnement et déployez sur le même appareil. Xcode peut parfois actualiser automatiquement les profils de provisionnement avec de nouveaux appareils (dans d’autres cas, Xcode vous demande quoi faire).
   -Accédez au centre de développement iOS et mettez à jour le profil de provisionnement avec le nouvel appareil, puis téléchargez le profil d’approvisionnement mis à jour sur votre ordinateur.
 
@@ -990,19 +990,19 @@ Dans la plupart des cas, des informations supplémentaires sur l’échec sont i
 
 <a name="MT1021"></a>
 
-### <a name="mt1021-could-not-copy-the-file--to--2"></a>MT1021 : impossible de copier le fichier' \* 'dans' ' \* :{2}
+### <a name="mt1021-could-not-copy-the-file--to--2"></a>MT1021 : impossible de copier le fichier' \* 'dans' ' \* : {2}
 
 Un fichier n’a pas pu être copié. Le message d’erreur de l’opération de copie contient plus d’informations sur l’erreur.
 
 <a name="MT1022"></a>
 
-### <a name="mt1022-could-not-copy-the-directory--to--2"></a>MT1022 : impossible de copier le répertoire « \* » dans «» \* :{2}
+### <a name="mt1022-could-not-copy-the-directory--to--2"></a>MT1022 : impossible de copier le répertoire « \* » dans «» \* : {2}
 
 Un répertoire n’a pas pu être copié. Le message d’erreur de l’opération de copie contient plus d’informations sur l’erreur.
 
 <a name="MT1023"></a>
 
-### <a name="mt1023-could-not-communicate-with-the-device-to-find-the-application---"></a>MT1023 : impossible de communiquer avec l’appareil pour trouver l’application' \* ' :\*
+### <a name="mt1023-could-not-communicate-with-the-device-to-find-the-application---"></a>MT1023 : impossible de communiquer avec l’appareil pour trouver l’application' \* ' : \*
 
 Une erreur s’est produite lors de la tentative de recherche d’une application sur l’appareil.
 
@@ -1345,7 +1345,7 @@ Voici ce que vous pouvez tenter de résoudre :
 
 <a name="MT1402"></a>
 
-### <a name="mt1402-could-not-read-file-info-for--afcfileinfoopen-returned-"></a>MT1402 : impossible de lire les informations du fichier pour \* : AFCFileInfoOpen retourné\*
+### <a name="mt1402-could-not-read-file-info-for--afcfileinfoopen-returned-"></a>MT1402 : impossible de lire les informations du fichier pour \* : AFCFileInfoOpen retourné \*
 
 Une erreur s’est produite lors de la tentative d’accès aux rapports d’incident à partir de l’appareil.
 
@@ -1359,7 +1359,7 @@ Voici ce que vous pouvez tenter de résoudre :
 
 <a name="MT1403"></a>
 
-### <a name="mt1403-could-not-read-crash-report-afcdirectoryopen--returned-"></a>MT1403 : impossible de lire le rapport d’incident : AFCDirectoryOpen ( \* ) a retourné :\*
+### <a name="mt1403-could-not-read-crash-report-afcdirectoryopen--returned-"></a>MT1403 : impossible de lire le rapport d’incident : AFCDirectoryOpen ( \* ) a retourné : \*
 
 Une erreur s’est produite lors de la tentative d’accès aux rapports d’incident à partir de l’appareil.
 
@@ -1373,7 +1373,7 @@ Voici ce que vous pouvez tenter de résoudre :
 
 <a name="MT1404"></a>
 
-### <a name="mt1404-could-not-read-crash-report-afcfilerefopen--returned-"></a>MT1404 : impossible de lire le rapport d’incident : AFCFileRefOpen ( \* ) a retourné :\*
+### <a name="mt1404-could-not-read-crash-report-afcfilerefopen--returned-"></a>MT1404 : impossible de lire le rapport d’incident : AFCFileRefOpen ( \* ) a retourné : \*
 
 Une erreur s’est produite lors de la tentative d’accès aux rapports d’incident à partir de l’appareil.
 
@@ -1387,7 +1387,7 @@ Voici ce que vous pouvez tenter de résoudre :
 
 <a name="MT1405"></a>
 
-### <a name="mt1405-could-not-read-crash-report-afcfilerefread--returned-"></a>MT1405 : impossible de lire le rapport d’incident : AFCFileRefRead ( \* ) a retourné :\*
+### <a name="mt1405-could-not-read-crash-report-afcfilerefread--returned-"></a>MT1405 : impossible de lire le rapport d’incident : AFCFileRefRead ( \* ) a retourné : \*
 
 Une erreur s’est produite lors de la tentative d’accès aux rapports d’incident à partir de l’appareil.
 
@@ -1401,7 +1401,7 @@ Voici ce que vous pouvez tenter de résoudre :
 
 <a name="MT1406"></a>
 
-### <a name="mt1406-could-not-list-crash-reports-afcdirectoryopen--returned-"></a>MT1406 : impossible de répertorier les rapports d’incidents : AFCDirectoryOpen ( \* ) a retourné :\*
+### <a name="mt1406-could-not-list-crash-reports-afcdirectoryopen--returned-"></a>MT1406 : impossible de répertorier les rapports d’incidents : AFCDirectoryOpen ( \* ) a retourné : \*
 
 Une erreur s’est produite lors de la tentative d’accès aux rapports d’incident à partir de l’appareil.
 
@@ -1532,7 +1532,7 @@ Il est important de signaler un rapport de bogue pour de tels problèmes. Dans l
 
 <a name="MT2006"></a>
 
-### <a name="mt2006-can-not-load-mscorlibdll-from--please-reinstall-xamarinios"></a>MT2006 : impossible de charger mscorlib. dll à partir de : *. Réinstallez Xamarin. iOS.
+### <a name="mt2006-can-not-load-mscorlibdll-from--please-reinstall-xamarinios"></a>MT2006 : impossible de charger mscorlib.dll à partir de : *. Réinstallez Xamarin. iOS.
 
 Cela indique généralement qu’il y a un problème avec votre installation de Xamarin. iOS. Essayez de réinstaller Xamarin. iOS.
 
@@ -1599,9 +1599,9 @@ Une erreur inattendue s’est produite lors de la tentative d’optimisation du 
 
 Le dernier chiffre `x` sera :
 
-- `0`pour un nom d’assembly ;
-- `1`pour un nom de type ;
-- `3`pour un nom de méthode ;
+- `0` pour un nom d’assembly ;
+- `1` pour un nom de type ;
+- `3` pour un nom de méthode ;
 
 <a name="MT2030"></a>
 
@@ -1609,9 +1609,9 @@ Le dernier chiffre `x` sera :
 
 Une erreur inattendue s’est produite lors de la tentative de suppression des ressources utilisateur. L’assembly à l’origine du problème est nommé dans le message d’erreur. Pour résoudre ce problème, l’assembly doit être fourni dans un nouveau problème sur [GitHub](https://github.com/xamarin/xamarin-macios/issues/new) , ainsi qu’un journal de génération complet avec des commentaires activés (par exemple, `-v -v -v -v` dans les **arguments mTouch supplémentaires**).
 
-Les ressources utilisateur sont des fichiers inclus dans des assemblys (en tant que ressources) qui doivent être extraits au moment de la génération pour créer l’offre groupée d’applications. notamment :
+Les ressources utilisateur sont des fichiers inclus dans des assemblys (en tant que ressources) qui doivent être extraits au moment de la génération pour créer l’offre groupée d’applications. Cela comprend :
 
-- `__monotouch_content_*`et `__monotouch_pages_*` ressources ; et
+- `__monotouch_content_*` et `__monotouch_pages_*` ressources ; et
 - Bibliothèques natives incorporées dans un assembly de liaison ;
 
 <a name="MT2040"></a>
@@ -1727,15 +1727,15 @@ Le débogage n’est pas pris en charge lorsque LLVM est activé. Si vous avez b
 
 ### <a name="mt3005-the-dependency--of-the-assembly--was-not-found-please-review-the-projects-references"></a>MT3005 : la dépendance « \* » de l’assembly « \* » est introuvable. Vérifiez les références du projet.
 
-Cela se produit généralement lorsqu’un assembly fait référence à une autre version d’un assembly de plateforme (généralement la version .NET 4 de mscorlib. dll).
+Cela se produit généralement lorsqu’un assembly fait référence à une autre version d’un assembly de plateforme (généralement la version .NET 4 de mscorlib.dll).
 
-Cela n’est pas pris en charge et peut ne pas être généré ou exécuté correctement (l’assembly peut utiliser l’API de la version .NET 4 de mscorlib. dll que la version de Xamarin. iOS n’a pas).
+Cela n’est pas pris en charge et peut ne pas être généré ou exécuté correctement (l’assembly peut utiliser l’API de la version .NET 4 de mscorlib.dll que la version de Xamarin. iOS n’a pas).
 
 <a name="MT3006"></a>
 
 ### <a name="mt3006-could-not-compute-a-complete-dependency-map-for-the-project-this-will-result-in-slower-build-times-because-xamarinios-cant-properly-detect-what-needs-to-be-rebuilt-and-what-does-not-need-to-be-rebuilt-please-review-previous-warnings-for-more-details"></a>MT3006 : impossible de calculer un mappage de dépendance complet pour le projet. Cela se traduira par des temps de génération plus lents, car Xamarin. iOS ne peut pas détecter correctement ce qui doit être reconstruit (et ce qui n’a pas besoin d’être régénéré). Pour plus d’informations, consultez les avertissements précédents.
 
- générer ou exécuter correctement (l’assembly peut utiliser l’API de la version .NET 4 de mscorlib. dll que la version de Xamarin. iOS n’a pas).
+ générer ou exécuter correctement (l’assembly peut utiliser l’API de la version .NET 4 de mscorlib.dll que la version de Xamarin. iOS n’a pas).
 
 <a name="MT3007"></a>
 
@@ -1769,7 +1769,7 @@ Une erreur s’est produite lors de la génération `main.m` . Veuillez envoyer 
 
 <a name="MT4002"></a>
 
-### <a name="mt4002-failed-to-compile-the-generated-code-for-pinvoke-methods-please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT4002 : échec de la compilation du code généré pour les méthodes P/Invoke. Veuillez signaler un rapport de bogue àhttp://bugzilla.xamarin.com
+### <a name="mt4002-failed-to-compile-the-generated-code-for-pinvoke-methods-please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT4002 : échec de la compilation du code généré pour les méthodes P/Invoke. Veuillez signaler un rapport de bogue à http://bugzilla.xamarin.com
 
 Échec de la compilation du code généré pour les méthodes P/Invoke. Veuillez envoyer un nouveau problème sur [GitHub](https://github.com/xamarin/xamarin-macios/issues/new).
 
@@ -1839,7 +1839,7 @@ Si vous pensez que Xamarin. iOS doit prendre en charge le type en question, veui
 
 <a name="MT4109"></a>
 
-### <a name="mt4109-failed-to-compile-the-generated-registrar-code-please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT4109 : échec de la compilation du code d’Registrar généré. Veuillez signaler un rapport de bogue àhttp://bugzilla.xamarin.com
+### <a name="mt4109-failed-to-compile-the-generated-registrar-code-please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT4109 : échec de la compilation du code d’Registrar généré. Veuillez signaler un rapport de bogue à http://bugzilla.xamarin.com
 
 Échec de la compilation du code généré pour le Bureau d’enregistrement. Le journal de génération contiendra la sortie du compilateur natif, en expliquant pourquoi le code n’est pas compilé.
 
@@ -1863,11 +1863,11 @@ Il s’agit toujours d’un bogue dans Xamarin. iOS. Veuillez envoyer un nouveau
 
 <a name="MT4114"></a>
 
-### <a name="mt4114-unexpected-error-in-the-registrar-for-the-method----please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT4114 : erreur inattendue dans le Bureau d’enregistrement de la méthode' \* . \* '-Veuillez signaler un rapport de bogue àhttp://bugzilla.xamarin.com
+### <a name="mt4114-unexpected-error-in-the-registrar-for-the-method----please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT4114 : erreur inattendue dans le Bureau d’enregistrement de la méthode' \* . \* '-Veuillez signaler un rapport de bogue à http://bugzilla.xamarin.com
 
 <a name="MT4116"></a>
 
-### <a name="mt4116-could-not-register-the-assembly--"></a>MT4116 : impossible d’inscrire l’assembly' \* ' :\*
+### <a name="mt4116-could-not-register-the-assembly--"></a>MT4116 : impossible d’inscrire l’assembly' \* ' : \*
 
 <a name="MT4117"></a>
 
@@ -1883,7 +1883,7 @@ Il s’agit toujours d’un bogue dans Xamarin. iOS. Veuillez envoyer un nouveau
 
 <a name="MT4120"></a>
 
-### <a name="mt4120-the-registrar-found-an-unknown-field-type--in-field--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT4120 : le Bureau d’enregistrement a trouvé un type de champ inconnu « \* » dans le champ « \* . * ». Veuillez signaler un rapport de bogue àhttp://bugzilla.xamarin.com
+### <a name="mt4120-the-registrar-found-an-unknown-field-type--in-field--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT4120 : le Bureau d’enregistrement a trouvé un type de champ inconnu « \* » dans le champ « \* . * ». Veuillez signaler un rapport de bogue à http://bugzilla.xamarin.com
 
 Cette erreur indique un bogue dans Xamarin. iOS. Veuillez envoyer un nouveau problème sur [GitHub](https://github.com/xamarin/xamarin-macios/issues/new).
 
@@ -1901,7 +1901,7 @@ Cette erreur indique un bogue dans Xamarin. iOS. Veuillez envoyer un nouveau pro
 
 <a name="MT4124"></a>
 
-### <a name="mt4124-invalid--found-on--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT4124 : non valide \* trouvé sur' \* '. Veuillez signaler un rapport de bogue àhttp://bugzilla.xamarin.com
+### <a name="mt4124-invalid--found-on--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT4124 : non valide \* trouvé sur' \* '. Veuillez signaler un rapport de bogue à http://bugzilla.xamarin.com
 
 Cette erreur indique un bogue dans Xamarin. iOS. Veuillez envoyer un nouveau problème sur [GitHub](https://github.com/xamarin/xamarin-macios/issues/new).
 
@@ -2109,7 +2109,7 @@ Mettez à niveau Xcode.
 
 <a name="MT4163"></a>
 
-### <a name="mt4163-internal-error-in-the-registrar--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT4163 : erreur interne dans le Bureau d’enregistrement (*). Veuillez signaler un rapport de bogue àhttp://bugzilla.xamarin.com
+### <a name="mt4163-internal-error-in-the-registrar--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT4163 : erreur interne dans le Bureau d’enregistrement (*). Veuillez signaler un rapport de bogue à http://bugzilla.xamarin.com
 
 Cette erreur indique un bogue dans Xamarin. iOS. Veuillez envoyer un nouveau problème sur [GitHub](https://github.com/xamarin/xamarin-macios/issues/new).
 
@@ -2191,11 +2191,11 @@ Si vous rencontrez ce code lors du développement d’un projet de liaison pour 
 
 <a name="MT5102"></a>
 
-### <a name="mt5102-failed-to-assemble-the-file--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT5102 : échec de l’assemblage du fichier' * '. Veuillez signaler un rapport de bogue àhttp://bugzilla.xamarin.com
+### <a name="mt5102-failed-to-assemble-the-file--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT5102 : échec de l’assemblage du fichier' * '. Veuillez signaler un rapport de bogue à http://bugzilla.xamarin.com
 
 <a name="MT5103"></a>
 
-### <a name="mt5103-failed-to-compile-the-file--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT5103 : échec de la compilation du fichier' * '. Veuillez signaler un rapport de bogue àhttp://bugzilla.xamarin.com
+### <a name="mt5103-failed-to-compile-the-file--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT5103 : échec de la compilation du fichier' * '. Veuillez signaler un rapport de bogue à http://bugzilla.xamarin.com
 
 <a name="MT5104"></a>
 
@@ -2205,7 +2205,7 @@ Si vous rencontrez ce code lors du développement d’un projet de liaison pour 
 
 <a name="MT5106"></a>
 
-### <a name="mt5106-could-not-compile-the-files--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT5106 : impossible de compiler le ou les fichiers' * '. Veuillez signaler un rapport de bogue àhttp://bugzilla.xamarin.com
+### <a name="mt5106-could-not-compile-the-files--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT5106 : impossible de compiler le ou les fichiers' * '. Veuillez signaler un rapport de bogue à http://bugzilla.xamarin.com
 
 Cela indique généralement un bogue dans Xamarin. iOS. Veuillez envoyer un nouveau problème sur [GitHub](https://github.com/xamarin/xamarin-macios/issues/new).
 
@@ -2363,7 +2363,7 @@ class MyImports {
 Voici quelques solutions possibles :
 
 - Supprimez les P/Invoke en question du code source.
-- Activez l’éditeur de liens managé pour tous les assemblys (cette opération s’effectue dans les options de génération iOS du projet, en définissant « comportement de l’éditeur de liens » sur « tous les assemblys »). Cela a pour effet de supprimer tous les P/Invoke que vous n’utilisez pas de l’application (automatiquement, et non pas manuellement comme le point précédent). L’inconvénient est que cela rendra la génération de votre simuleur un peu plus lente et risque de perturber votre application si elle utilise la réflexion. vous trouverez des informations supplémentaires sur l’éditeur de liens [ici](~/ios/deploy-test/linker.md) .
+- Activez l’éditeur de liens managé pour tous les assemblys (cette opération s’effectue dans les options de génération iOS du projet, en définissant « comportement de l’éditeur de liens » sur « tous les assemblys »). Cela a pour effet de supprimer tous les P/Invoke que vous n’utilisez pas de l’application (automatiquement, et non pas manuellement comme le point précédent). L’inconvénient est que cela rendra la génération de votre simuleur un peu plus lente et risque de perturber votre application si elle utilise la réflexion. vous trouverez des informations supplémentaires sur l’éditeur de liens  [ici](~/ios/deploy-test/linker.md) .
 - Créez une deuxième bibliothèque native qui contient les symboles natifs manquants. Notez qu’il s’agit simplement d’une solution de contournement (si vous tentez d’appeler ces fonctions, votre application se bloque).
 
 <a name="MT5215"></a>
@@ -2374,7 +2374,7 @@ Il s’agit d’un avertissement indiquant qu’un appel P/Invoke a été détec
 
 <a name="MT5216"></a>
 
-### <a name="mt5216-native-linking-failed-for--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT5216 : échec de la liaison native pour *. Veuillez signaler un rapport de bogue àhttp://bugzilla.xamarin.com
+### <a name="mt5216-native-linking-failed-for--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT5216 : échec de la liaison native pour *. Veuillez signaler un rapport de bogue à http://bugzilla.xamarin.com
 
 Cette erreur est signalée lors de la liaison de la sortie du compilateur AOA.
 
@@ -2396,7 +2396,7 @@ Il existe plusieurs sources possibles pour ces symboles dynamiques :
 - Références de champs aux emplacements de mémoire dans les bibliothèques liées statiquement à partir des projets de liaison ( `[Field]` attributs).
 - Classes objective-C référencées dans des bibliothèques liées de manière statique à partir de projets de liaison (en cas d’utilisation de builds incrémentielles ou lorsque le registre statique n’est pas utilisé).
 
-Solutions possibles :
+Solutions possibles :
 
 - Activez l’éditeur de liens managé (si possible pour tous les assemblys au lieu de uniquement les assemblys SDK). Cela peut supprimer suffisamment de sources pour les symboles dynamiques afin que la ligne de commande de l’éditeur de liens ne dépasse pas la valeur maximale.
 - Réduisez le nombre d’appels P/Invoke, de références de champ et/ou de classes objective-C.
@@ -2505,7 +2505,7 @@ Une erreur de sécurité s’est produite lors de la suppression des symboles de
 Procédure de résolution :
 
 - essayez d’exécuter `csharp -e 'System.Net.Dns.GetHostEntry (System.Net.Dns.GetHostName ()).AddressList'` (qui devrait vous fournir une adresse IP et non une erreur évidemment).
-- essayez d’exécuter « ping \` hostname \` », qui peut vous fournir plus d’informations, par exemple :`cannot resolve MyHost.local: Unknown host`
+- essayez d’exécuter « ping \` hostname \` », qui peut vous fournir plus d’informations, par exemple : `cannot resolve MyHost.local: Unknown host`
 
 Dans certains cas, il s’agit d’un problème de « réseau local » qui peut être résolu en ajoutant l’hôte inconnu `127.0.0.1    MyHost.local` dans `/etc/hosts` .
 
@@ -2781,7 +2781,7 @@ Où * peut être :
 - bool
 - real
 - entier
-- Date
+- date
 - data
 
 <a name="MT7046"></a>
@@ -2925,7 +2925,7 @@ Où * peut être :
 
 <a name="MT8001"></a>
 
-### <a name="mt8001-version-mismatch-between-the-native-xamarinios-runtime-and-monotouchdll-please-reinstall-xamarinios"></a>MT8001 : incompatibilité de version entre le runtime natif Xamarin. iOS et MonoTouch. dll. Réinstallez Xamarin. iOS.
+### <a name="mt8001-version-mismatch-between-the-native-xamarinios-runtime-and-monotouchdll-please-reinstall-xamarinios"></a>MT8001 : incompatibilité de version entre le runtime Xamarin. iOS natif et monotouch.dll. Réinstallez Xamarin. iOS.
 
 <a name="MT8002"></a>
 
@@ -2953,7 +2953,7 @@ Où * peut être :
 
 <a name="MT8008"></a>
 
-### <a name="mt8008-the-loaded-version-of-xamariniosdll-was-compiled-for--bits-while-the-process-is--bits-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8008 : la version chargée de Xamarin. iOS. dll a été compilée pour \* bits, tandis que le processus est \* bits. Veuillez signaler un bogue dans http://bugzilla.xamarin.com .
+### <a name="mt8008-the-loaded-version-of-xamariniosdll-was-compiled-for--bits-while-the-process-is--bits-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8008 : la version chargée de Xamarin.iOS.dll a été compilée pour \* bits, tandis que le processus est \* bits. Veuillez signaler un bogue dans http://bugzilla.xamarin.com .
 
 Cela indique qu’il s’agit d’un problème dans le processus de génération. Veuillez envoyer un nouveau problème sur [GitHub](https://github.com/xamarin/xamarin-macios/issues/new).
 

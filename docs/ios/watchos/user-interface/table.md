@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 0358e1570a5e38e008894a7eb9b6ca1985a0fed0
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: 21154ee5ed83d9d6af2c5d5f70bb64759de43137
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997252"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91431513"
 ---
 # <a name="watchos-table-controls-in-xamarin"></a>Contrôles de table Watchos dans Xamarin
 
@@ -41,7 +41,7 @@ Une fois que la classe du contrôleur de la ligne est définie, l’IDE crée un
 
 ## <a name="create-and-populate-rows"></a>Créer et remplir des lignes
 
-`SetNumberOfRows`crée les classes de contrôleur de ligne pour chaque ligne, à l’aide de `Identifier` pour sélectionner le bon. Si vous avez donné un personnalisé à votre contrôleur de ligne `Identifier` , remplacez la **valeur par défaut** dans l’extrait de code ci-dessous par l’identificateur que vous avez utilisé. Le `RowController` *de chaque ligne* est créé lorsque `SetNumberOfRows` est appelé et que la table est affichée.
+`SetNumberOfRows` crée les classes de contrôleur de ligne pour chaque ligne, à l’aide de `Identifier` pour sélectionner le bon. Si vous avez donné un personnalisé à votre contrôleur de ligne `Identifier` , remplacez la **valeur par défaut** dans l’extrait de code ci-dessous par l’identificateur que vous avez utilisé. Le `RowController` *de chaque ligne* est créé lorsque `SetNumberOfRows` est appelé et que la table est affichée.
 
 ```csharp
 myTable.SetNumberOfRows ((nint)rows.Count, "default");
@@ -51,7 +51,7 @@ myTable.SetNumberOfRows ((nint)rows.Count, "default");
 > [!IMPORTANT]
 > Les lignes de table ne sont pas virtualisées comme elles le sont dans iOS. Essayez de limiter le nombre de lignes (la commande Apple recommande moins de 20).
 
-Une fois les lignes créées, vous devez remplir chaque cellule (comme `GetCell` dans IOS). Cet extrait de code de l' [exemple WatchTables](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchtables) met à jour l’étiquette dans chaque ligne
+Une fois les lignes créées, vous devez remplir chaque cellule (comme `GetCell` dans IOS). Cet extrait de code de l' [exemple WatchTables](/samples/xamarin/ios-samples/watchos-watchtables) met à jour l’étiquette dans chaque ligne
 
 ```csharp
 for (var i = 0; i < rows.Count; i++) {
@@ -208,6 +208,6 @@ Les prises et les actions déclarées ici peuvent ensuite être référencées d
 
 ## <a name="related-links"></a>Liens associés
 
-- [WatchTables (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchtables)
-- [WatchKitCatalog (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
+- [WatchTables (exemple)](/samples/xamarin/ios-samples/watchos-watchtables)
+- [WatchKitCatalog (exemple)](/samples/xamarin/ios-samples/watchos-watchkitcatalog)
 - [Document de la table Apple](https://developer.apple.com/reference/watchkit/wkinterfacetable)

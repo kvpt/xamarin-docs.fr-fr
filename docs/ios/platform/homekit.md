@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 7319cc50a147da93018bdd1c2036d70cf01e9b80
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 7d5c5a6543da701b70532134d8ae901564e5c0b8
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936680"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91430178"
 ---
 # <a name="homekit-in-xamarinios"></a>HomeKit dans Xamarin. iOS
 
@@ -38,11 +38,11 @@ HomeKit organise tous les appareils Automation d’un emplacement donné dans un
 
 La collection d’hébergement est stockée dans une base de données de configuration de base qui sera automatiquement sauvegardée et synchronisée sur tous les appareils iOS de l’utilisateur. HomeKit fournit les classes suivantes pour l’utilisation de la base de données de configuration de base :
 
-- `HMHome`-Il s’agit du conteneur de niveau supérieur qui contient toutes les informations et configurations de tous les appareils domotiques à un seul emplacement physique (par exemple, un séjour de famille unique). L’utilisateur peut avoir plusieurs résidences, telles que la maison principale et un bureau de vacances. Ils peuvent également avoir des « maisons » différents sur la même propriété, telles que la maison principale et une maison invitée sur le garage. Dans les deux cas, au moins un `HMHome` objet _doit_ être configuré et stocké avant que toute autre information HomeKit puisse être entrée.
-- `HMRoom`-Si cette option est facultative, `HMRoom` elle permet à l’utilisateur de définir des pièces spécifiques à l’intérieur d’une page d’habitation ( `HMHome` ) telle que : cuisine, salle de bain, garage ou salon. L’utilisateur peut regrouper tous les appareils domotiques dans un emplacement spécifique de leur maison dans un `HMRoom` et les agit en tant qu’unité. Par exemple, demander à Siri de désactiver les lumières du garage.
-- `HMAccessory`: Représente un périphérique d’automatisation HomeKit physique individuel qui a été installé dans la résidence de l’utilisateur (par exemple, un thermostat intelligent). Chaque `HMAccessory` est assigné à un `HMRoom` . Si l’utilisateur n’a configuré aucune salle, HomeKit affecte des accessoires à une salle par défaut spéciale.
-- `HMService`-Représente un service fourni par un donné `HMAccessory` , tel que l’état activé/désactivé d’une lumière ou sa couleur (si le changement de couleur est pris en charge). Chacun `HMAccessory` peut avoir plusieurs services, tels qu’un ouvreur de porte de garage qui comprend également une lumière. En outre, un donné `HMAccessory` peut avoir des services, tels que la mise à jour du microprogramme, qui sont en dehors du contrôle utilisateur.
-- `HMZone`-Permet à l’utilisateur de regrouper une collection d' `HMRoom` objets dans des zones logiques, telles que les escaliers, les Starbucks ou le sous-sol. S’il est facultatif, cela permet des interactions comme demander à Siri de désactiver l’ensemble du Starbucks clair.
+- `HMHome` -Il s’agit du conteneur de niveau supérieur qui contient toutes les informations et configurations de tous les appareils domotiques à un seul emplacement physique (par exemple, un séjour de famille unique). L’utilisateur peut avoir plusieurs résidences, telles que la maison principale et un bureau de vacances. Ils peuvent également avoir des « maisons » différents sur la même propriété, telles que la maison principale et une maison invitée sur le garage. Dans les deux cas, au moins un `HMHome` objet _doit_ être configuré et stocké avant que toute autre information HomeKit puisse être entrée.
+- `HMRoom` -Si cette option est facultative, `HMRoom` elle permet à l’utilisateur de définir des pièces spécifiques à l’intérieur d’une page d’habitation ( `HMHome` ) telle que : cuisine, salle de bain, garage ou salon. L’utilisateur peut regrouper tous les appareils domotiques dans un emplacement spécifique de leur maison dans un `HMRoom` et les agit en tant qu’unité. Par exemple, demander à Siri de désactiver les lumières du garage.
+- `HMAccessory` : Représente un périphérique d’automatisation HomeKit physique individuel qui a été installé dans la résidence de l’utilisateur (par exemple, un thermostat intelligent). Chaque `HMAccessory` est assigné à un `HMRoom` . Si l’utilisateur n’a configuré aucune salle, HomeKit affecte des accessoires à une salle par défaut spéciale.
+- `HMService` -Représente un service fourni par un donné `HMAccessory` , tel que l’état activé/désactivé d’une lumière ou sa couleur (si le changement de couleur est pris en charge). Chacun `HMAccessory` peut avoir plusieurs services, tels qu’un ouvreur de porte de garage qui comprend également une lumière. En outre, un donné `HMAccessory` peut avoir des services, tels que la mise à jour du microprogramme, qui sont en dehors du contrôle utilisateur.
+- `HMZone` -Permet à l’utilisateur de regrouper une collection d' `HMRoom` objets dans des zones logiques, telles que les escaliers, les Starbucks ou le sous-sol. S’il est facultatif, cela permet des interactions comme demander à Siri de désactiver l’ensemble du Starbucks clair.
 
 <a name="Provisioning-a-HomeKit-App"></a>
 
@@ -68,7 +68,7 @@ Effectuez les actions suivantes :
     [![Sélectionner le profil de provisionnement que vous venez de créer](homekit-images/provision03.png)](homekit-images/provision03.png#lightbox)
 9. Modifiez ensuite votre fichier **info. plist** et assurez-vous que vous utilisez l’ID d’application qui a été utilisé pour créer le profil de provisionnement : 
 
-    [![Définir l’ID d’application](homekit-images/provision04.png)](homekit-images/provision04.png#lightbox)
+    [![Définir l’ID d’application ](homekit-images/provision04.png)](homekit-images/provision04.png#lightbox)
 10. Enfin, modifiez votre fichier **Entitlements. plist** et assurez-vous que le droit **HomeKit** a été sélectionné : 
 
     [![Activer le droit HomeKit](homekit-images/provision05.png)](homekit-images/provision05.png#lightbox)
@@ -274,7 +274,7 @@ Une fois qu’une page d’hébergement principale a été définie ou chargée 
 Appelez la `StartSearchingForNewAccessories` méthode pour commencer à rechercher de nouveaux accessoires et la `StopSearchingForNewAccessories` méthode lorsque vous avez terminé.
 
 > [!IMPORTANT]
-> `StartSearchingForNewAccessories`ne doit pas être exécuté pendant de longues périodes, car cela aura une incidence négative sur la durée de vie de la batterie et sur les performances de l’appareil iOS. Apple suggère `StopSearchingForNewAccessories` un appel après une minute ou uniquement lorsque l’interface utilisateur de recherche d’accessoire est présentée à l’utilisateur.
+> `StartSearchingForNewAccessories` ne doit pas être exécuté pendant de longues périodes, car cela aura une incidence négative sur la durée de vie de la batterie et sur les performances de l’appareil iOS. Apple suggère `StopSearchingForNewAccessories` un appel après une minute ou uniquement lorsque l’interface utilisateur de recherche d’accessoire est présentée à l’utilisateur.
 
 L' `DidFindNewAccessory` événement est appelé quand de nouveaux accessoires sont découverts et qu’ils sont ajoutés à `DiscoveredAccessories` la liste dans le navigateur d’accessoire.
 
@@ -379,7 +379,7 @@ Une fois qu’un service a été sélectionné, l’utilisateur peut afficher ou
 
 Chaque `HMService` objet peut contenir une collection d' `HMCharacteristic` objets qui peuvent fournir des informations sur l’état du service (par exemple, une porte ouverte ou fermée) ou autoriser l’utilisateur à ajuster un État (par exemple, définir la couleur d’une lumière).
 
-`HMCharacteristic`fournit non seulement des informations sur une caractéristique et son état, mais fournit également des méthodes pour l’utilisation de l’état via des _métadonnées caractéristiques_ ( `HMCharacteristisMetadata` ). Ces métadonnées peuvent fournir des propriétés (telles que des plages de valeurs minimales et maximales) qui sont utiles lors de l’affichage d’informations à l’utilisateur ou de leur autorisation de modifier les États.
+`HMCharacteristic` fournit non seulement des informations sur une caractéristique et son état, mais fournit également des méthodes pour l’utilisation de l’état via des _métadonnées caractéristiques_ ( `HMCharacteristisMetadata` ). Ces métadonnées peuvent fournir des propriétés (telles que des plages de valeurs minimales et maximales) qui sont utiles lors de l’affichage d’informations à l’utilisateur ou de leur autorisation de modifier les États.
 
 L' `HMCharacteristicType` énumération fournit un ensemble de valeurs de métadonnées caractéristiques qui peuvent être définies ou modifiées comme suit :
 
@@ -425,7 +425,7 @@ L' `HMCharacteristicType` énumération fournit un ensemble de valeurs de métad
 - Fabricant
 - Modèle
 - MotionDetected
-- Nom
+- Name
 - ObstructionDetected
 - OccupancyDetected
 - OutletInUse
@@ -701,13 +701,13 @@ Apple a apporté les modifications et ajouts suivants à HomeKit pour iOS 9 :
 
 Pour plus d’informations sur les nouvelles fonctionnalités de HomeKit dans iOS 9, consultez [index HomeKit](https://developer.apple.com/homekit/) d’Apple et [Nouveautés de HomeKit](https://developer.apple.com/videos/wwdc/2015/?id=210) Video.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a introduit l’infrastructure domotique HomeKit d’Apple. Il a montré comment configurer et configurer des appareils de test à l’aide du simulateur d’accessoires HomeKit et comment créer une application Xamarin. iOS simple pour découvrir, communiquer avec et contrôler des appareils domotiques à l’aide de HomeKit.
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemples iOS 9](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
+- [Exemples iOS 9](/samples/browse/?products=xamarin&term=Xamarin.iOS%2biOS9)
 - [iOS 9 pour les développeurs](https://developer.apple.com/ios/pre-release/)
 - [Nouveautés d’iOS 9,0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
 - [Guide HomeKitDeveloper](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/HomeKitDeveloperGuide/Introduction/Introduction.html)

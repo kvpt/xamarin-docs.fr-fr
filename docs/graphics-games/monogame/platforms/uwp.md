@@ -6,12 +6,12 @@ ms.assetid: C6B99E44-00C1-4139-A1B7-FCFBE8749AB1
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 59bfad17e4c3a4720360f007ddf3e85835f972fd
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 5d970c596d403c7d55ccc23bb5e9ba7e5fbd623a
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86931077"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91431962"
 ---
 # <a name="creating-a-monogame-uwp-project"></a>Création d’un projet UWP monojeu
 
@@ -21,7 +21,7 @@ Cette procédure pas à pas aborde la création et le chargement de contenu de p
 
 Cette procédure pas à pas crée un projet vide qui affiche un arrière-plan *bleu bleuet* (la couleur d’arrière-plan traditionnelle des applications XNA).
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Configuration requise
 
 Le développement d’applications UWP monojeu requiert :
 
@@ -31,15 +31,15 @@ Le développement d’applications UWP monojeu requiert :
 - Configuration de l’appareil en mode développeur
 - [Monojeu 3.7.1 pour Visual Studio](http://community.monogame.net/t/monogame-3-7-1-release/11173) ou une version plus récente
 
-Pour plus d’informations, consultez cette [page sur la configuration du développement UWP Windows 10](https://msdn.microsoft.com/windows/uwp/get-started/get-set-up).
+Pour plus d’informations, consultez cette [page sur la configuration du développement UWP Windows 10](/windows/uwp/get-started/get-set-up).
 
-Les jeux Xbox One peuvent être développés sur un matériel Xbox de détail. Des logiciels supplémentaires sont nécessaires sur le PC en développement et sur le Xbox One. Pour plus d’informations sur la configuration de Xbox One pour le développement de jeux, consultez cette page sur la [configuration d’une Xbox](https://msdn.microsoft.com/windows/uwp/xbox-apps/index).
+Les jeux Xbox One peuvent être développés sur un matériel Xbox de détail. Des logiciels supplémentaires sont nécessaires sur le PC en développement et sur le Xbox One. Pour plus d’informations sur la configuration de Xbox One pour le développement de jeux, consultez cette page sur la [configuration d’une Xbox](/windows/uwp/xbox-apps/).
 
 ## <a name="creating-an-empty-template"></a>Création d’un modèle vide
 
 Une fois que toutes les ressources requises ont été installées et que le mode développeur a été activé sur l’ordinateur Windows 10, nous pouvons créer un nouveau projet de monojeu à l’aide de Visual Studio en procédant comme suit :
 
-1. Sélectionnez **fichier**  >  **nouveau**  >  **projet...**
+1. Sélectionnez **Fichier** > **Nouveau** > **Projet...**
 1. Sélectionnez les **Installed**  >  **modèles**installés  >  catégorie monojeu**Visual C#**  >  **MonoGame** :
 
     ![Catégorie monojeu](uwp-images/image1.png)
@@ -114,6 +114,6 @@ Pour charger un `Texture2D` à partir d’un fichier :
 
 Pour plus d’informations sur l’utilisation d’un `Texture2D` , consultez le [Guide introduction au Guide de monojeu](~/graphics-games/monogame/introduction/index.md).
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Ce guide explique comment créer un projet UWP et des considérations spécifiques au UWP lors du chargement de fichiers. Les développeurs qui souhaitent créer des jeux UWP complets peuvent en savoir plus sur le monojeu dans le [Guide présentation du monojeu](~/graphics-games/monogame/introduction/index.md).

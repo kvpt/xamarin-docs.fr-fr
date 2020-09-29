@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/25/2017
-ms.openlocfilehash: 40640f903ad82c5f154dbb74307c0003d7271561
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 2cb453996a43d1e70f4fb818c86f6215c213b988
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936602"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91429742"
 ---
 # <a name="working-with-row-actions-in-xamarinios"></a>Utilisation des actions de ligne dans Xamarin. iOS
 
@@ -22,7 +22,7 @@ _Ce guide montre comment créer des actions de balayage personnalisées pour les
 
 iOS offre deux façons d’effectuer des actions sur une table : `UISwipeActionsConfiguration` et `UITableViewRowAction` .
 
-`UISwipeActionsConfiguration`a été introduit dans iOS 11 et est utilisé pour définir un ensemble d’actions qui doivent se produire lorsque l’utilisateur effectue un glissement _dans l’une ou l’autre des directions_ sur une ligne dans une vue de table. Ce comportement est similaire à celui de l’application de messagerie native.
+`UISwipeActionsConfiguration` a été introduit dans iOS 11 et est utilisé pour définir un ensemble d’actions qui doivent se produire lorsque l’utilisateur effectue un glissement _dans l’une ou l’autre des directions_ sur une ligne dans une vue de table. Ce comportement est similaire à celui de l’application de messagerie native.
 
 La `UITableViewRowAction` classe est utilisée pour définir une action qui se produit lorsque l’utilisateur fait défiler horizontalement la ligne d’une vue de table vers la gauche.
 Par exemple, lors de la modification d’une table, le balayage à gauche d’une ligne affiche un bouton **supprimer** par défaut. En attachant plusieurs instances de la `UITableViewRowAction` classe à un `UITableView` , plusieurs actions personnalisées peuvent être définies, chacune avec son propre texte, sa mise en forme et son propre comportement.
@@ -33,15 +33,15 @@ Trois étapes sont nécessaires pour implémenter des actions de balayage avec `
 
 1. Substituez `GetLeadingSwipeActionsConfiguration` les méthodes et/ou `GetTrailingSwipeActionsConfiguration` . Ces méthodes retournent un `UISwipeActionsConfiguration` .
 2. Instanciez le `UISwipeActionsConfiguration` à retourner. Cette classe prend un tableau de `UIContextualAction` .
-3. Créer un `UIContextualAction`.
+3. Créez un `UIContextualAction`.
 
 Celles-ci sont expliquées plus en détail dans les sections suivantes.
 
 ### <a name="1-implementing-the-swipeactionsconfigurations-methods"></a>1. implémentation des méthodes SwipeActionsConfigurations
 
-`UITableViewController`(et `UITableViewSource` `UITableViewDelegate` ) contiennent deux méthodes : `GetLeadingSwipeActionsConfiguration` et `GetTrailingSwipeActionsConfiguration` , qui sont utilisées pour implémenter un jeu d’actions de balayage sur une ligne de vue de table. L’action de balayage de début fait référence à un balayage de la partie gauche de l’écran dans une langue de gauche à droite et de la partie droite de l’écran dans une langue de droite à gauche.
+`UITableViewController` (et `UITableViewSource` `UITableViewDelegate` ) contiennent deux méthodes : `GetLeadingSwipeActionsConfiguration` et `GetTrailingSwipeActionsConfiguration` , qui sont utilisées pour implémenter un jeu d’actions de balayage sur une ligne de vue de table. L’action de balayage de début fait référence à un balayage de la partie gauche de l’écran dans une langue de gauche à droite et de la partie droite de l’écran dans une langue de droite à gauche.
 
-L’exemple suivant (de l’exemple [TableSwipeActions](https://docs.microsoft.com/samples/xamarin/ios-samples/tableswipeactions) ) illustre l’implémentation de la configuration de balayage de début. Deux actions sont créées à partir des actions contextuelles, qui sont expliquées [ci-dessous](#create-uicontextualaction). Ces actions sont ensuite transmises à un récemment initialisé [`UISwipeActionsConfiguration`](#create-uiswipeactionsconfigurations) , qui est utilisé comme valeur de retour.
+L’exemple suivant (de l’exemple [TableSwipeActions](/samples/xamarin/ios-samples/tableswipeactions) ) illustre l’implémentation de la configuration de balayage de début. Deux actions sont créées à partir des actions contextuelles, qui sont expliquées [ci-dessous](#create-uicontextualaction). Ces actions sont ensuite transmises à un récemment initialisé [`UISwipeActionsConfiguration`](#create-uiswipeactionsconfigurations) , qui est utilisé comme valeur de retour.
 
 ```csharp
 public override UISwipeActionsConfiguration GetLeadingSwipeActionsConfiguration(UITableView tableView, NSIndexPath indexPath)
@@ -61,7 +61,7 @@ public override UISwipeActionsConfiguration GetLeadingSwipeActionsConfiguration(
 
 <a name="create-uiswipeactionsconfigurations"></a>
 
-### <a name="2-instantiate-a-uiswipeactionsconfiguration"></a>2. instancier un`UISwipeActionsConfiguration`
+### <a name="2-instantiate-a-uiswipeactionsconfiguration"></a>2. instancier un `UISwipeActionsConfiguration`
 
 Instanciez un `UISwipeActionsConfiguration` à l’aide de la `FromActions` méthode pour ajouter un nouveau tableau de `UIContextualAction` s, comme indiqué dans l’extrait de code suivant :
 
@@ -181,5 +181,5 @@ Si l’utilisateur appuie sur le bouton **AIM** , est `Hello World!` écrit sur 
 
 ## <a name="related-links"></a>Liens associés
 
-- [TableSwipeActions (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/tableswipeactions)
-- [WorkingWithTables (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/workingwithtables)
+- [TableSwipeActions (exemple)](/samples/xamarin/ios-samples/tableswipeactions)
+- [WorkingWithTables (exemple)](/samples/xamarin/ios-samples/workingwithtables)

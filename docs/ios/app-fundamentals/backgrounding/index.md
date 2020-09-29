@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/05/2018
-ms.openlocfilehash: e51b6c7ffe0b0ae027e527d959979e558afa6325
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 3d50bf91502e7a3b7331348a61af50a5c789f838
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73005064"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91432423"
 ---
 # <a name="backgrounding-in-xamarinios"></a>Arrière-plan dans Xamarin. iOS
 
@@ -20,7 +20,7 @@ _Le traitement en arrière-plan ou l’arrière-plan est le processus qui permet
 
 L’arrière-plan dans les applications mobiles est fondamentalement différent du concept traditionnel du multitâche sur le bureau. Les ordinateurs de bureau disposent d’une variété de ressources disponibles pour une application, notamment l’espace de l’écran, la puissance et la mémoire. Les applications peuvent s’exécuter côte à côte et rester performantes et utilisables. Sur un appareil mobile, les ressources sont bien plus limitées. Il est difficile d’afficher plus d’une application sur un petit écran, et l’exécution de plusieurs applications à pleine vitesse draine la batterie. L’arrière-plan est un compromis constant entre donner aux applications les ressources nécessaires à l’exécution des tâches en arrière-plan dont elles ont besoin pour fonctionner correctement, et maintenir la réactivité de l’application de premier plan et de l’appareil. IOS et Android présentent des dispositions pour l’arrière-plan, mais ils le gèrent de manière très différente.
 
-Dans iOS, l’arrière-plan est reconnu comme un état d’application et les applications sont déplacées dans l’état d’arrière-plan en fonction du comportement de l’application et de l’utilisateur. iOS offre également plusieurs options pour le câblage d’une application à exécuter en arrière-plan, y compris pour demander le temps nécessaire à l’exécution d’une tâche importante, le fonctionnement d’un type d’application d’arrière-plan connue et l’actualisation du contenu d’une application à l’adresse désignée. intervalles.
+Dans iOS, l’arrière-plan est reconnu comme un état d’application et les applications sont déplacées dans l’état d’arrière-plan en fonction du comportement de l’application et de l’utilisateur. iOS offre également plusieurs options pour le câblage d’une application à exécuter en arrière-plan, y compris pour demander le temps nécessaire à l’exécution d’une tâche importante, le fonctionnement d’un type d’application d’arrière-plan connue et l’actualisation du contenu d’une application à des intervalles définis.
 
 Dans ce guide et les procédures pas à pas connexes, nous allons apprendre à effectuer des tâches d’application en arrière-plan. Nous allons aborder les concepts clés et les meilleures pratiques, puis créer une application réelle qui reçoit des mises à jour d’emplacement en arrière-plan.
 
@@ -39,7 +39,7 @@ Dans ce guide, nous avons présenté les différentes façons de procéder au tr
 ## <a name="related-links"></a>Liens associés
 
 - [Arrière-plan sur Android](~/android/app-fundamentals/services/index.md)
-- [LifecycleDemo (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/lifecycledemo)
-- [Emplacement (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/location)
-- [Transfert en arrière-plan simple (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/simplebackgroundtransfer)
+- [LifecycleDemo (exemple)](/samples/xamarin/ios-samples/lifecycledemo)
+- [Emplacement (exemple)](/samples/xamarin/ios-samples/location)
+- [Transfert en arrière-plan simple (exemple)](/samples/xamarin/ios-samples/simplebackgroundtransfer)
 - [Exécution en arrière-plan iOS](https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/BackgroundExecution/BackgroundExecution.html)

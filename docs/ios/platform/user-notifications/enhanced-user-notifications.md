@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2017
-ms.openlocfilehash: d4fe04412eb4fb456bc49d71c1e5fe87df5f9e76
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 207aac33101615a0a103176cd2bf5dd061e0d264
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939636"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91430420"
 ---
 # <a name="enhanced-user-notifications-in-xamarinios"></a>Notifications utilisateur améliorées dans Xamarin. iOS
 
@@ -242,7 +242,7 @@ Pour les notifications distantes, le processus est similaire :
 Une fois le contenu de la notification créé, l’application doit planifier le moment auquel la notification est présentée à l’utilisateur en définissant un *déclencheur*. iOS 10 propose quatre types de déclencheurs :
 
 - **Notification push** : est utilisé exclusivement avec les notifications distantes et est déclenché quand APNs envoie un package de notification à l’application en cours d’exécution sur l’appareil.
-- **Intervalle de temps** -permet de planifier une notification locale à partir d’un intervalle de temps commençant à maintenant et en terminant un point ultérieur. Par exemple : `var trigger =  UNTimeIntervalNotificationTrigger.CreateTrigger (5, false);`
+- **Intervalle de temps** -permet de planifier une notification locale à partir d’un intervalle de temps commençant à maintenant et en terminant un point ultérieur. Par exemple, `var trigger =  UNTimeIntervalNotificationTrigger.CreateTrigger (5, false);`
 - **Date du calendrier** -permet de planifier des notifications locales pour une date et une heure spécifiques.
 - **Basé sur l’emplacement** : permet de planifier les notifications locales lorsque l’appareil iOS entre en déplacement ou en quittant un emplacement géographique spécifique, ou se trouve dans une proximité donnée à n’importe quelle balise Bluetooth.
 
@@ -558,7 +558,7 @@ Pour implémenter une extension de service dans une application Xamarin. iOS, pr
 -----
 
 > [!IMPORTANT]
-> L’identificateur de Bundle pour l’extension de service doit correspondre à l’identificateur de Bundle de l’application principale avec `.appnameserviceextension` ajouté à la fin. Par exemple, si l’application principale avait un identificateur de Bundle de `com.xamarin.monkeynotify` , l’extension de service doit avoir un identificateur de Bundle `com.xamarin.monkeynotify.monkeynotifyserviceextension` . Elle doit être définie automatiquement lorsque l’extension est ajoutée à la solution. 
+> L’identificateur de Bundle pour l’extension de service doit correspondre à l’identificateur de Bundle de l’application principale avec `.appnameserviceextension` ajouté à la fin. Par exemple, si l’application principale avait un identificateur de Bundle de  `com.xamarin.monkeynotify` , l’extension de service doit avoir un identificateur de Bundle `com.xamarin.monkeynotify.monkeynotifyserviceextension` . Elle doit être définie automatiquement lorsque l’extension est ajoutée à la solution. 
 
 Il existe une classe principale dans l’extension de service de notification qui doit être modifiée pour fournir les fonctionnalités requises. Par exemple :
 
@@ -660,13 +660,13 @@ namespace myApp {
 
 Ce code déchiffre le contenu chiffré à partir de la `encrypted-content` clé, crée un nouveau `UNMutableNotificationContent` , définit la `Body` propriété sur le contenu déchiffré et utilise le `contentHandler` pour présenter la notification à l’utilisateur.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a abordé tous les modes d’amélioration de la notification des utilisateurs par iOS 10. Il a présenté la nouvelle infrastructure de notification utilisateur et comment l’utiliser dans une application Xamarin. iOS ou une extension d’application.
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemples iOS 10](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS10)
+- [Exemples iOS 10](/samples/browse/?products=xamarin&term=Xamarin.iOS%2biOS10)
 - [Référence du Framework UserNotifications](https://developer.apple.com/reference/usernotifications)
 - [UserNotificationsUI](https://developer.apple.com/reference/usernotificationsui)
 - [Guide de programmation des notifications locales et distantes](https://developer.apple.com/documentation/usernotifications)

@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: fe4927384470a37581f556f06e71d489ef90ecbb
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 47025f48b1f3455f70a077f2ca55da2cdeeba761
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574512"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91430893"
 ---
 # <a name="storyboardxib-less-user-interface-design-in-xamarinmac"></a>. Storyboard/. XIB-conception de l’interface utilisateur moins dans Xamarin. Mac
 
@@ -353,13 +353,13 @@ public override void DidFinishLaunching (NSNotification notification)
 
 La version ci-dessus crée un menu de barre d’État à partir du code et l’affiche lorsque l’application est lancée. Pour plus d’informations sur l’utilisation des menus, consultez notre documentation sur les [menus](~/mac/user-interface/menu.md) .
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a décrit en détail la création d’une interface utilisateur de l’application Xamarin. Mac dans le code C#, par opposition à l’utilisation de Interface Builder de Xcode avec des fichiers. Storyboard ou. XIB.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [MacXibless (exemple)](https://docs.microsoft.com/samples/xamarin/mac-samples/macxibless)
+- [MacXibless (exemple)](/samples/xamarin/mac-samples/macxibless)
 - [Windows](~/mac/user-interface/window.md)
 - [Menus](~/mac/user-interface/menu.md)
 - [Human Interface Guidelines pour macOS](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)

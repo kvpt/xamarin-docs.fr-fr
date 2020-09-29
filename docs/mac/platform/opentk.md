@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: fbd6e4a3b1c5cdb45a057f1ed664a0d5e71e224d
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 7f600593d7a3bb180ef8daca6639dbbea4bf07aa
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937889"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91430068"
 ---
 # <a name="introduction-to-opentk-in-xamarinmac"></a>Présentation de OpenTK dans Xamarin. Mac
 
@@ -315,18 +315,18 @@ Avec les principes fondamentaux de l’utilisation de OpenTk dans une applicatio
 
 Pour obtenir plus d’exemples, consultez [OpenTK Samples GitHub](https://github.com/opentk/opentk/tree/master/Source/Examples) référentiel. Il contient une liste officielle d’exemples d’utilisation de OpenTK. Vous devrez adapter ces exemples pour utiliser avec la version Xamarin. Mac de OpenTK.
 
-Pour obtenir un exemple Xamarin. Mac plus complexe d’une implémentation OpenTK, consultez notre exemple [MonoMacGameView](https://docs.microsoft.com/samples/xamarin/mac-samples/monomacgamewindow) .
+Pour obtenir un exemple Xamarin. Mac plus complexe d’une implémentation OpenTK, consultez notre exemple [MonoMacGameView](/samples/xamarin/mac-samples/monomacgamewindow) .
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a fait un aperçu rapide de l’utilisation de OpenTK dans une application Xamarin. Mac. Nous avons vu comment créer une fenêtre de jeu, comment attacher la fenêtre de jeu à une fenêtre Mac et comment afficher une forme simple dans la fenêtre du jeu.
 
 ## <a name="related-links"></a>Liens associés
 
-- [MacOpenTK (exemple)](https://docs.microsoft.com/samples/xamarin/mac-samples/macopentk)
-- [MonoMacGameView (exemple)](https://docs.microsoft.com/samples/xamarin/mac-samples/monomacgamewindow)
+- [MacOpenTK (exemple)](/samples/xamarin/mac-samples/macopentk)
+- [MonoMacGameView (exemple)](/samples/xamarin/mac-samples/monomacgamewindow)
 - [Hello, Mac](~/mac/get-started/hello-mac.md)
 - [Utilisation de Windows](~/mac/user-interface/window.md)
 - [La boîte à outils ouverte](https://opentk.net)

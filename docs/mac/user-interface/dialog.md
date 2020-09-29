@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 631b1019313ddde6b53ffe63600be8f3fc58673a
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: f4d90960547fb43d6681667daadde1ce71fc105a
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86931467"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91431753"
 ---
 # <a name="dialogs-in-xamarinmac"></a>Boîtes de dialogue dans Xamarin. Mac
 
@@ -1093,13 +1093,13 @@ Pour plus d’informations sur l’utilisation de la boîte de dialogue Enregist
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a décrit en détail l’utilisation des fenêtres modales, des feuilles et des boîtes de dialogue système standard dans une application Xamarin. Mac. Nous avons vu les différents types et utilisations des fenêtres modales, des feuilles et des boîtes de dialogue, comment créer et gérer des fenêtres modales et des feuilles dans le Interface Builder de Xcode et comment utiliser des fenêtres, des feuilles et des boîtes de dialogue modales dans le code C#.
 
 ## <a name="related-links"></a>Liens associés
 
-- [MacWindows (exemple)](https://docs.microsoft.com/samples/xamarin/mac-samples/macwindows)
+- [MacWindows (exemple)](/samples/xamarin/mac-samples/macwindows)
 - [Hello, Mac](~/mac/get-started/hello-mac.md)
 - [Menus](~/mac/user-interface/menu.md)
 - [Windows](~/mac/user-interface/window.md)

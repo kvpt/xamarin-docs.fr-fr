@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/11/2016
-ms.openlocfilehash: 588dadbfe63a46bc7658d5d29a052cebe52be65c
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: a01f0075ec7f47d6653313ea50047b7f89529bc6
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997408"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91431395"
 ---
 # <a name="cloudkit-in-xamarinios"></a>CloudKit dans Xamarin. iOS
 
@@ -54,9 +54,9 @@ Pour qu’une application Xamarin puisse utiliser CloudKit Framework, l’applic
 
 Pour accéder à CloudKit, le fichier **Entitlements. plist** doit inclure les autorisations **icloud**, de **stockage clé-valeur**et de **CloudKit** .
 
-### <a name="sample-app"></a>Exemple d'application
+### <a name="sample-app"></a>Exemple d’application
 
-L' [exemple CloudKitAtlas](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-cloudkitatlas) montre comment utiliser CloudKit avec Xamarin. Les étapes ci-dessous montrent comment configurer l’exemple : il requiert des paramètres supplémentaires au-delà de ce qui est nécessaire pour CloudKit seul :
+L' [exemple CloudKitAtlas](/samples/xamarin/ios-samples/ios8-cloudkitatlas) montre comment utiliser CloudKit avec Xamarin. Les étapes ci-dessous montrent comment configurer l’exemple : il requiert des paramètres supplémentaires au-delà de ce qui est nécessaire pour CloudKit seul :
 
 1. Ouvrez le projet dans Visual Studio pour Mac ou Visual Studio.
 2. Dans le **Explorateur de solutions**, ouvrez le fichier **info. plist** et assurez-vous que l' **identificateur de Bundle** correspond à celui défini dans ID d' **application** créé dans le cadre de la configuration de l’approvisionnement.
@@ -64,7 +64,7 @@ L' [exemple CloudKitAtlas](https://docs.microsoft.com/samples/xamarin/ios-sample
 4. Cliquez avec le bouton droit sur le projet iOS dans la solution, puis sélectionnez **options**.
 5. Sélectionnez **signature du bundle iOS**, sélectionnez l' **identité du développeur** et le profil de **provisionnement** créés ci-dessus.
 6. Assurez-vous que les **droits. plist** incluent **activer icloud**, **stockage clé-valeur**et **CloudKit**.
-7. Assurez-vous que le **conteneur ubiquité** existe pour l’application. Exemple : `iCloud.com.your-company.CloudKitAtlas`
+7. Assurez-vous que le **conteneur ubiquité** existe pour l’application. Exemple : `iCloud.com.your-company.CloudKitAtlas`
 8. Enregistrez les modifications du fichier.
 
 Avec ces paramètres en place, l’exemple d’application est maintenant prêt à accéder aux API CloudKit Framework, ainsi qu’aux services d’arrière-plan, d’emplacement et de notification.
@@ -103,7 +103,7 @@ Le conteneur de données iCloud permet également à CloudKit d’encapsuler les
 
 Les conteneurs sont entièrement gérés par le développeur de l’application via le portail WWDR. L’espace de noms du conteneur étant global pour tous les développeurs Apple, le conteneur ne doit pas être unique pour les applications d’un développeur donné, mais pour tous les développeurs et applications Apple.
 
-Apple suggère d’utiliser la notation DNS inverse lors de la création de l’espace de noms pour les conteneurs d’applications. Exemple : `iCloud.com.company-name.application-name`
+Apple suggère d’utiliser la notation DNS inverse lors de la création de l’espace de noms pour les conteneurs d’applications. Exemple : `iCloud.com.company-name.application-name`
 
 Alors que les conteneurs sont, par défaut, liés un-à-un à une application donnée, ils peuvent être partagés entre les applications. Plusieurs applications peuvent donc coordonner un seul conteneur. Une même application peut également communiquer avec plusieurs conteneurs.
 
@@ -218,7 +218,7 @@ Les identificateurs d’enregistrement sont exposés dans l’infrastructure Clo
 var recordID =  new CKRecordID("My Record");
 ```
 
-### <a name="references"></a>References
+### <a name="references"></a>Références
 
 Les références fournissent des relations entre les enregistrements associés dans une base de données spécifique :
 
@@ -373,7 +373,7 @@ ThisApp.PublicDatabase.SaveRecord(newRecord, (record, err) => {
 
 Trois points à noter concernant le code ci-dessus :
 
-1. En appelant la `SaveRecord` méthode de `PublicDatabase` , le développeur n’a pas à spécifier la façon dont les données sont envoyées, la zone dans laquelle elles sont écrites, etc. L’API de commodité prend en charge tous ces détails.
+1. En appelant la  `SaveRecord` méthode de  `PublicDatabase` , le développeur n’a pas à spécifier la façon dont les données sont envoyées, la zone dans laquelle elles sont écrites, etc. L’API de commodité prend en charge tous ces détails.
 1. L’appel est asynchrone et fournit une routine de rappel lorsque l’appel est terminé, avec succès ou échec. Si l’appel échoue, un message d’erreur est fourni.
 1. CloudKit ne fournit pas de stockage/persistance local ; Il s’agit uniquement d’un support de transfert. Ainsi, lorsqu’une demande est faite pour enregistrer un enregistrement, elle est immédiatement envoyée aux serveurs iCloud.
 
@@ -649,7 +649,7 @@ Comme indiqué ci-dessus, CloudKit permet à l’application d’identifier de f
 
 Une application cliente est en cours d’exécution sur les appareils de l’utilisateur et sur toutes les bases de données privées de l’utilisateur dans le conteneur CloudKit. L’application cliente va être liée à l’un de ces utilisateurs spécifiques. Cela est basé sur l’utilisateur qui est connecté à iCloud localement sur l’appareil.
 
-Dans la mesure où cette information provient de iCloud, il existe un magasin de stockage riche d’informations utilisateur. Et étant donné que iCloud héberge réellement le conteneur, il peut corréler les utilisateurs. Dans le graphique ci-dessus, l’utilisateur dont le compte iCloud `user@icloud.com` est lié au client actuel.
+Dans la mesure où cette information provient de iCloud, il existe un magasin de stockage riche d’informations utilisateur. Et étant donné que iCloud héberge réellement le conteneur, il peut corréler les utilisateurs. Dans le graphique ci-dessus, l’utilisateur dont le compte iCloud  `user@icloud.com` est lié au client actuel.
 
 Sur un conteneur par conteneur, un ID d’utilisateur unique généré de manière aléatoire est créé et associé au compte iCloud de l’utilisateur (adresse de messagerie). Cet ID d’utilisateur est renvoyé à l’application et peut être utilisé de la même façon que le développeur.
 
@@ -855,5 +855,5 @@ Cet article a abordé une présentation rapide de l’API CloudKit. Il a montré
 ## <a name="related-links"></a>Liens connexes
 
 - [CloudKit (Apple)](https://developer.apple.com/icloud/cloudkit/)
-- [CloudKitAtlas (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-cloudkitatlas)
+- [CloudKitAtlas (exemple)](/samples/xamarin/ios-samples/ios8-cloudkitatlas)
 - [Création d’un profil de provisionnement](~/ios/get-started/installation/device-provisioning/index.md)

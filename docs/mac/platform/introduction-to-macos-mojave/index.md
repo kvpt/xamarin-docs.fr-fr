@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 8c296e32fd0d1491c83ea3cb16e0921c0f0c5f12
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: dc3def5d5c709515574a72cf9f61d71d67690d87
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73017046"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91429705"
 ---
 # <a name="introduction-to-macos-mojave"></a>Introduction à macOS Mojave
 
@@ -38,14 +38,14 @@ L’infrastructure de vision comprend un détecteur de visage amélioré qui peu
 
 ## <a name="network-framework"></a>Infrastructure réseau
 
-Network Framework, la pile réseau sous-jacente des API `URLSession` couramment utilisées dans les applications iOS, est désormais disponible en tant qu’infrastructure autonome, ce qui facilite l’utilisation de TCP, UDP, TLS, IPv4/IPv6 et bien plus encore.
+Network Framework, la pile réseau sous-jacente aux `URLSession` API couramment utilisées dans les applications iOS, est désormais disponible en tant qu’infrastructure autonome, ce qui facilite l’utilisation de TCP, UDP, TLS, IPv4/IPv6 et bien plus encore.
 
-## <a name="deprecations"></a>Dépréciations
+## <a name="deprecations"></a>Désapprobations
 
 Avec macOS Mojave, Apple a déconseillé OpenGL ES et OpenCL, ce qui [encourage les développeurs](https://developer.apple.com/macos/whats-new/) à adopter des nuanceurs de performances métalliques et métalliques.
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Exemples Xamarin. Mac](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Mac)
+- [Exemples Xamarin.Mac](/samples/browse/?products=xamarin&term=Xamarin.Mac)
 - [macOS – développeur Apple](https://developer.apple.com/macos/)
-- [Notes de publication de Xamarin. Mac 5,0](https://docs.microsoft.com/xamarin/mac/release-notes/5/5.0/)
+- [Notes de publication de Xamarin. Mac 5,0](/xamarin/mac/release-notes/5/5.0/)

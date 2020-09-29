@@ -8,12 +8,12 @@ ms.date: 02/26/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ab49d8fd86a8864ba45d8ab9f4bbac1ba83ef505
-ms.sourcegitcommit: 744f977b0595f489c592e29c8a3ba548fde02b6f
+ms.openlocfilehash: 0910c6467cb0efdf9477e245d138528852f81166
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91410634"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91432293"
 ---
 # Xamarin.Essentials
 
@@ -76,7 +76,7 @@ Suivez les guides pour intégrer ces Xamarin.Essentials fonctionnalités dans vo
 
 Trouvez de l’aide si vous rencontrez des problèmes.
 
-## <a name="release-notes"></a>[Notes de publication](https://docs.microsoft.com/xamarin/essentials/release-notes/)
+## <a name="release-notes"></a>[Notes de publication](/xamarin/essentials/release-notes/)
 
 Recherchez des notes de publication complètes pour chaque version de Xamarin.Essentials .
 

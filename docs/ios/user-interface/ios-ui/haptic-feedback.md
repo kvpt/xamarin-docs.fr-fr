@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 86c7c726465257d71b6b407686153650dddbcbca
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: e6879db1631bc6b58a36142344ff1fba997ee4fb
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574468"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91432050"
 ---
 # <a name="providing-haptic-feedback-in-xamarinios"></a>Fournir des commentaires haptique dans Xamarin. iOS
 
@@ -37,9 +37,9 @@ Plusieurs éléments d’interface utilisateur intégrés fournissent déjà des
 
 Le développeur peut utiliser l’une des `UIFeedbackGenerator` sous-classes suivantes pour déclencher par programmation des commentaires haptique :
 
-- `UIImpactFeedbackGenerator`-Utilisez ce générateur de commentaires pour compléter une action ou une tâche telle que la présentation d’un « Thud » lorsqu’une vue est en place ou si deux objets à l’écran sont en conflit.
-- `UINotificationFeedbackGenerator`-Utilisez ce générateur de commentaires pour les notifications telles qu’une action qui se termine, échoue ou tout autre type d’avertissement.
-- `UISelectionFeedbackGenerator`-Utilisez ce générateur de commentaires pour une sélection qui change activement, par exemple le choix d’un élément dans une liste.
+- `UIImpactFeedbackGenerator` -Utilisez ce générateur de commentaires pour compléter une action ou une tâche telle que la présentation d’un « Thud » lorsqu’une vue est en place ou si deux objets à l’écran sont en conflit.
+- `UINotificationFeedbackGenerator` -Utilisez ce générateur de commentaires pour les notifications telles qu’une action qui se termine, échoue ou tout autre type d’avertissement.
+- `UISelectionFeedbackGenerator` -Utilisez ce générateur de commentaires pour une sélection qui change activement, par exemple le choix d’un élément dans une liste.
 
 <a name="UIImpactFeedbackGenerator"></a>
 
@@ -123,10 +123,10 @@ Une nouvelle instance de la `UISelectionFeedbackGenerator` classe est créée et
 
 La `SelectionChanged` méthode déclenche ensuite des commentaires haptique.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a abordé les nouveaux types de commentaires haptique disponibles dans iOS 10 et comment les implémenter dans Xamarin. iOS.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [Exemples iOS 10](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS10)
+- [Exemples iOS 10](/samples/browse/?products=xamarin&term=Xamarin.iOS%2biOS10)

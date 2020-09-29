@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 01/31/2018
-ms.openlocfilehash: e5cbbc10f189abb6d0d0b2ef99b50ae53d1103c2
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 7c6b5a4dd2f6f5d4992d84d5d8690a6dda3d20e3
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572284"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91432758"
 ---
 # <a name="ios-designer-basics"></a>notions de base du concepteur iOS
 
@@ -20,7 +20,7 @@ _Ce guide présente les Xamarin Designer pour iOS. Il montre comment utiliser le
 
 Le Xamarin Designer pour iOS est un concepteur d’interface visuel semblable au Interface Builder de Xcode et le Android Designer. Certaines de ses nombreuses fonctionnalités incluent une intégration transparente à Visual Studio pour Windows et Mac, la modification par glisser-déplacer, une interface pour la configuration des gestionnaires d’événements et la possibilité de restituer des contrôles personnalisés.
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Configuration requise
 
 Le concepteur iOS est disponible dans Visual Studio pour Mac et Visual Studio 2017 et versions ultérieures sur Windows. Dans Visual Studio pour Windows, le concepteur iOS requiert une connexion à un hôte de build Mac correctement configuré, même si Xcode n’a pas besoin d’être en cours d’exécution.
 
@@ -84,13 +84,13 @@ Maintenant que le bouton a un nom, il est accessible dans le code. Mais comment 
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
-Dans l' **panneau solutions**, la navigation jusqu’à **ViewController.cs** et en cliquant sur l’indicateur de divulgation révèle que la définition de classe du contrôleur d’affichage s' `ViewController` étend sur deux fichiers, chacun contenant une définition de [classe partielle](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) :
+Dans l' **panneau solutions**, la navigation jusqu’à **ViewController.cs** et en cliquant sur l’indicateur de divulgation révèle que la définition de classe du contrôleur d’affichage s' `ViewController` étend sur deux fichiers, chacun contenant une définition de [classe partielle](/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) :
 
 [![Les deux fichiers qui composent la classe ViewController : ViewController.cs et ViewController.designer.cs](introduction-images/5-twoviewcontrollerfiles-vsmac.png "Les deux fichiers qui composent la classe ViewController : ViewController.cs et ViewController.designer.cs")](introduction-images/5-twoviewcontrollerfiles-vsmac-large.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-Dans l' **Explorateur de solutions**, la navigation jusqu’à **ViewController.cs** et en cliquant sur l’indicateur de divulgation révèle que la définition de classe du contrôleur d’affichage s' `ViewController` étend sur deux fichiers, chacun contenant une définition de [classe partielle](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) :
+Dans l' **Explorateur de solutions**, la navigation jusqu’à **ViewController.cs** et en cliquant sur l’indicateur de divulgation révèle que la définition de classe du contrôleur d’affichage s' `ViewController` étend sur deux fichiers, chacun contenant une définition de [classe partielle](/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) :
 
 [![Les deux fichiers qui composent la classe ViewController : ViewController.cs et ViewController.designer.cs](introduction-images/5-twoviewcontrollerfiles-vs.png "Les deux fichiers qui composent la classe ViewController : ViewController.cs et ViewController.designer.cs")](introduction-images/5-twoviewcontrollerfiles-vs-large.png#lightbox)
 
@@ -173,7 +173,7 @@ Le concepteur iOS comprend six sections principales :
 2. **Barre d’outils contraintes** : permet de basculer entre le mode d’édition de frame et le mode de modification des contraintes, deux méthodes différentes pour positionner les éléments dans une interface utilisateur.
 3. **Boîte à outils** : répertorie les contrôleurs, les objets, les contrôles, les vues de données, les détecteurs de mouvement, les fenêtres et les barres qui peuvent être glissées sur l’aire de conception et ajoutées à une interface utilisateur.
 4. **Panneau Propriétés** : affiche les propriétés du contrôle sélectionné, y compris l’identité, les styles visuels, l’accessibilité, la disposition et le comportement.
-5. **Structure du document** : affiche l’arborescence des contrôles qui composent la disposition de l’interface en cours de modification. Cliquer sur un élément dans l’arborescence le sélectionne dans le concepteur iOS et affiche ses propriétés dans la **panneau Propriétés**. Cela est pratique pour sélectionner un contrôle spécifique dans une interface utilisateur profondément imbriquée.
+5. **Structure du document** : affiche l’arborescence des contrôles qui composent la disposition de l’interface en cours de modification. Cliquer sur un élément dans l’arborescence le sélectionne dans le concepteur iOS et affiche ses propriétés dans la  **panneau Propriétés**. Cela est pratique pour sélectionner un contrôle spécifique dans une interface utilisateur profondément imbriquée.
 6. **Barre d’outils inférieure** : contient des options permettant de modifier le mode d’affichage du fichier. Storyboard ou. XIB dans le concepteur iOS, y compris l’appareil, l’orientation et le zoom.
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
@@ -184,12 +184,12 @@ Le concepteur iOS comprend six sections principales :
 2. **Barre d’outils contraintes** : permet de basculer entre le mode d’édition de frame et le mode de modification des contraintes, deux méthodes différentes pour positionner les éléments dans une interface utilisateur.
 3. **Boîte à outils** : répertorie les contrôleurs, les objets, les contrôles, les vues de données, les détecteurs de mouvement, les fenêtres et les barres qui peuvent être glissées sur l’aire de conception et ajoutées à une interface utilisateur.
 4. **Fenêtre Propriétés** : affiche les propriétés du contrôle sélectionné, y compris l’identité, les styles visuels, l’accessibilité, la disposition et le comportement.
-5. **Structure du document** : affiche l’arborescence des contrôles qui composent la disposition de l’interface en cours de modification. Cliquer sur un élément dans l’arborescence le sélectionne dans le concepteur iOS et affiche ses propriétés dans la **fenêtre Propriétés**. Cela est pratique pour sélectionner un contrôle spécifique dans une interface utilisateur profondément imbriquée.
+5. **Structure du document** : affiche l’arborescence des contrôles qui composent la disposition de l’interface en cours de modification. Cliquer sur un élément dans l’arborescence le sélectionne dans le concepteur iOS et affiche ses propriétés dans la  **fenêtre Propriétés**. Cela est pratique pour sélectionner un contrôle spécifique dans une interface utilisateur profondément imbriquée.
 6. **Barre d’outils inférieure** : contient des options permettant de modifier le mode d’affichage du fichier. Storyboard ou. XIB dans le concepteur iOS, y compris l’appareil, l’orientation et le zoom.
 
 -----
 
-### <a name="design-workflow"></a>Concevoir un flux de travail
+### <a name="design-workflow"></a>Flux de travail de conception
 
 #### <a name="adding-a-control-to-the-interface"></a>Ajout d’un contrôle à l’interface
 
@@ -298,7 +298,7 @@ Une fois développée, la barre d’outils inférieure affiche tous les périph�
 
 Notez que la sélection d’un appareil et d’une orientation modifie uniquement la manière dont le concepteur iOS affiche un aperçu de la conception. Quelle que soit la sélection actuelle, les contraintes nouvellement ajoutées sont appliquées sur l’ensemble des appareils et des orientations, sauf si le bouton **modifier les traits** a été utilisé pour spécifier un autre élément.
 
-Lorsque les [classes de taille](~/ios/user-interface/storyboards/unified-storyboards.md#size-classes) sont [activées](~/ios/user-interface/storyboards/unified-storyboards.md#enabling-size-classes), le bouton **modifier les traits** s’affiche dans la barre d’outils inférieure développée.  En cliquant sur le bouton **modifier les traits** , vous affichez les options de création d’une variante d’interface en fonction de la classe de taille représentée par l’appareil et l’orientation sélectionnés. Voici quelques exemples :
+Lorsque les [classes de taille](~/ios/user-interface/storyboards/unified-storyboards.md#size-classes) sont [activées](~/ios/user-interface/storyboards/unified-storyboards.md#enabling-size-classes), le bouton **modifier les traits** s’affiche dans la barre d’outils inférieure développée.  En cliquant sur le bouton **modifier les traits** , vous affichez les options de création d’une variante d’interface en fonction de la classe de taille représentée par l’appareil et l’orientation sélectionnés. Penchez-vous sur les exemples suivants :
 
 - Si **iPhone se**  /  **portrait**, est sélectionné, menu segue fournit des options pour créer une variation d’interface pour la classe compact Width, normal height. 
 - Si **iPad Pro 9,7 "**  /  **mode**  /  **plein écran** est sélectionné, menu segue fournit des options pour créer une variation d’interface pour la largeur normale, classe de taille normale.
@@ -488,17 +488,17 @@ Pour plus d’informations sur l’utilisation des storyboards, reportez-vous à
 
 Cet exemple et d’autres guides relatifs au concepteur iOS font référence à l’utilisation des storyboards comme approche standard pour la création d’interfaces utilisateur, puisque la plupart des modèles de projet Xamarin. iOS fournissent un Storyboard par défaut.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Ce guide fournit une introduction au concepteur iOS, décrivant ses fonctionnalités et détaillant les outils qu’il propose pour concevoir de magnifiques interfaces utilisateur.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Introduction aux storyboards](~/ios/user-interface/storyboards/index.md)
 - [Procédures pas à pas pour les contrôles iOS](~/ios/user-interface/designer/ios-designable-controls-walkthrough.md)
 - [Hello, iOS](~/ios/get-started/hello-ios/index.md)
 - [Hello, iOS Multiscreen](~/ios/get-started/hello-ios-multiscreen/index.md)
 - [Présentation de Android Designer](~/android/user-interface/android-designer/index.md)
-- [Classes et méthodes partielles](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods)
+- [Classes et méthodes partielles](/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods)
 - [Plonger dans le Xamarin Designer pour iOS-évoluer 2014 (vidéo)](https://www.youtube.com/watch?v=W4H9uLjoEjM)
 - [Utilisation du concepteur iOS pour créer un écran de lancement (vidéo)](https://university.xamarin.com/lightninglectures/using-the-ios-designer-to-create-a-launch-screen)

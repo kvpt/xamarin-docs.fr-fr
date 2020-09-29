@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 11/12/2018
-ms.openlocfilehash: a552b7c395634c264114a378ee3f5c67d164d9f3
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: ef632b4bff3313de82c71cb5839ecdc24c9242ad
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937954"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91431491"
 ---
 # <a name="file-system-access-in-xamarinios"></a>Accès au système de fichiers dans Xamarin. iOS
 
@@ -245,7 +245,7 @@ iOS 11 a introduit l’application **fichiers** -un Explorateur de fichiers pour
 
 ![Définir LSSupportsOpeningDocumentsInPlace dans info. plist](file-system-images/51-supports-opening.png)
 
-Le répertoire **documents** de l’application est maintenant disponible pour l’exploration dans l’application **fichiers** . Dans l’application **fichiers** , accédez à **mon iPhone** et chaque application avec des fichiers partagés est visible. Les captures d’écran ci-dessous montrent à quoi ressemble l' [exemple d’application de système de fichiers](https://docs.microsoft.com/samples/xamarin/ios-samples/filesystemsamplecode) :
+Le répertoire **documents** de l’application est maintenant disponible pour l’exploration dans l’application **fichiers** . Dans l’application **fichiers** , accédez à **mon iPhone** et chaque application avec des fichiers partagés est visible. Les captures d’écran ci-dessous montrent à quoi ressemble l' [exemple d’application de système de fichiers](/samples/xamarin/ios-samples/filesystemsamplecode) :
 
 ![application fichiers iOS 11](file-system-images/50-files-app-1-sml.png) ![Parcourir mes fichiers iPhone](file-system-images/50-files-app-2-sml.png) ![Exemples de fichiers d’application](file-system-images/50-files-app-3-sml.png)
 
@@ -323,7 +323,7 @@ L’emplacement partagé est configuré à l’aide d’un [groupe d’applicati
 
 Pour plus d’informations sur la création et la configuration d’un groupe d’applications, reportez-vous au Guide des [fonctionnalités du groupe d’applications](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md) .
 
-### <a name="files"></a>Fichiers
+### <a name="files"></a>Files
 
 L’application iOS et l’extension peuvent également partager des fichiers à l’aide d’un chemin d’accès de fichier commun (étant donné qu’ils ont été correctement configurés avec les droits et l’approvisionnement appropriés) :
 
@@ -350,12 +350,12 @@ Quand une nouvelle version de votre application est téléchargée, iOS crée un
 
 D’autres répertoires peuvent également être copiés dans le répertoire de base et placés dans celui-ci, mais ils ne sont pas forcément copiés. votre application ne doit donc pas reposer sur ce comportement système.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a montré que les opérations de système de fichiers avec Xamarin. iOS sont similaires à toute autre application .NET. Elle a également introduit le bac à sable (sandbox) de l’application et examiné les implications en matière de sécurité. Ensuite, il a exploré le concept d’un bundle d’applications. Enfin, il a énuméré les répertoires spécialisés disponibles pour votre application et expliqué leurs rôles lors des mises à niveau et des sauvegardes d’applications.
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Exemple de code de système de fichiers](https://docs.microsoft.com/samples/xamarin/ios-samples/filesystemsamplecode)
+- [Exemple de code de système de fichiers](/samples/xamarin/ios-samples/filesystemsamplecode)
 - [Guide de programmation du système de fichiers](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/FileSystemProgrammingGUide/Introduction/Introduction.html)
 - [Enregistrement des types de fichiers pris en charge par votre application](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Articles/RegisteringtheFileTypesYourAppSupports.html#/apple_ref/doc/uid/TP40010411-SW1)

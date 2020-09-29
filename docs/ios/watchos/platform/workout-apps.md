@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: c4fc1607667dd6201c28c4d00a2938760e429f0f
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 826d8c982e9976cb4147c0ed77a55a4b1d18f879
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938981"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91432411"
 ---
 # <a name="watchos-workout-apps-in-xamarin"></a>Applications d’entraînement Watchos dans Xamarin
 
@@ -390,8 +390,8 @@ public override void DidGenerateEvent (HKWorkoutSession workoutSession, HKWorkou
 
 Apple a ajouté les nouveaux types d’événements suivants dans Watchos 3 :
 
-- `HKWorkoutEventType.Lap`-Concernent les événements qui rompent l’entraînement en portions égales à distance. Par exemple, pour marquer un tour autour d’une piste pendant l’exécution.
-- `HKWorkoutEventType.Marker`-Sont destinées à des points d’intérêt arbitraires au sein de l’entraînement. Par exemple, atteindre un point spécifique sur l’itinéraire d’une exécution extérieure.
+- `HKWorkoutEventType.Lap` -Concernent les événements qui rompent l’entraînement en portions égales à distance. Par exemple, pour marquer un tour autour d’une piste pendant l’exécution.
+- `HKWorkoutEventType.Marker` -Sont destinées à des points d’intérêt arbitraires au sein de l’entraînement. Par exemple, atteindre un point spécifique sur l’itinéraire d’une exécution extérieure.
 
 Ces nouveaux types peuvent être créés par l’application et stockés dans l’entraînement pour une utilisation ultérieure dans la création de graphiques et de statistiques.
 
@@ -1247,11 +1247,11 @@ Apple suggère d’utiliser les meilleures pratiques suivantes lors de la concep
 - Autorise l’application à afficher des entraînements à partir d’autres sources (telles que d’autres applications tierces) dans ses vues de données historiques.
 - Assurez-vous que l’application n’affiche pas les entraînements supprimés dans les données d’historique.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a abordé les améliorations apportées par Apple pour mettre en œuvre des applications dans Watchos 3 et comment les implémenter dans Xamarin.
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemples iOS 10](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS10)
+- [Exemples iOS 10](/samples/browse/?products=xamarin&term=Xamarin.iOS%2biOS10)
 - [Présentation de HealthKit](~/ios/platform/healthkit.md)

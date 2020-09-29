@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: c022c1af78a5a3800cd61096c3f142c1ed0235e7
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 3a33c2191f39ea72113a1d7eab660e1a172f752f
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86930934"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91430879"
 ---
 # <a name="editing-tables-with-xamarinios"></a>Modification des tables avec Xamarin. iOS
 
@@ -27,9 +27,9 @@ La fonctionnalité de balayage à supprimer est un geste naturel dans iOS que le
 
 Il existe trois remplacements de méthode qui affectent le mouvement de balayage pour afficher un bouton **supprimer** dans une cellule :
 
-- **CommitEditingStyle** : la source de la table détecte si cette méthode est substituée et active automatiquement le mouvement de balayage à supprimer. L’implémentation de la méthode doit appeler `DeleteRows` sur le `UITableView` pour provoquer la disparition des cellules et supprimer les données sous-jacentes de votre modèle (par exemple, un tableau, un dictionnaire ou une base de données). 
+- **CommitEditingStyle** : la source de la table détecte si cette méthode est substituée et active automatiquement le mouvement de balayage à supprimer. L’implémentation de la méthode doit appeler  `DeleteRows` sur le  `UITableView` pour provoquer la disparition des cellules et supprimer les données sous-jacentes de votre modèle (par exemple, un tableau, un dictionnaire ou une base de données). 
 - **CanEditRow** : si CommitEditingStyle est substitué, toutes les lignes sont supposées être modifiables. Si cette méthode est implémentée et retourne false (pour certaines lignes spécifiques ou pour toutes les lignes), le mouvement de balayage à supprimer n’est pas disponible dans cette cellule. 
-- **TitleForDeleteConfirmation** : spécifie éventuellement le texte du bouton **supprimer** . Si cette méthode n’est pas implémentée, le texte du bouton sera « Delete ». 
+- **TitleForDeleteConfirmation** : spécifie éventuellement le texte du bouton  **supprimer** . Si cette méthode n’est pas implémentée, le texte du bouton sera « Delete ». 
 
 Ces méthodes sont implémentées dans la `TableSource` classe suivante :
 
@@ -71,7 +71,7 @@ Il existe plusieurs méthodes sur `UITableViewSource` qui affectent le comportem
 
 - **CanEditRow** : indique si chaque ligne peut être modifiée. Retourne false pour empêcher la suppression et la suppression en mode édition. 
 - **CanMoveRow** : retourne la valeur true pour activer le déplacement’handle’ou false pour empêcher le déplacement. 
-- **EditingStyleForRow** : lorsque la table est en mode édition, la valeur de retour de cette méthode détermine si la cellule affiche l’icône de suppression rouge ou l’icône d’ajout verte. Retourne `UITableViewCellEditingStyle.None` si la ligne ne doit pas être modifiable. 
+- **EditingStyleForRow** : lorsque la table est en mode édition, la valeur de retour de cette méthode détermine si la cellule affiche l’icône de suppression rouge ou l’icône d’ajout verte. Retourne  `UITableViewCellEditingStyle.None` si la ligne ne doit pas être modifiable. 
 - **MoveRow** : appelée lorsqu’une ligne est déplacée afin que la structure de données sous-jacente puisse être modifiée pour correspondre aux données telles qu’elles sont affichées dans la table. 
 
 L’implémentation pour les trois premières méthodes est relativement simple, à moins que vous souhaitiez utiliser `indexPath` pour modifier le comportement de lignes spécifiques, il suffit de coder en dur les valeurs de retour pour la table entière.
@@ -133,14 +133,14 @@ L’insertion de lignes à partir de la table est une interface utilisateur rare
 
 Il existe plusieurs méthodes sur `UITableViewSource` qui affectent le comportement du mode édition d’une table. Ces méthodes ont été implémentées comme suit dans l’exemple de code :
 
-- **EditingStyleForRow** : retourne `UITableViewCellEditingStyle.Delete` pour les lignes contenant des données et retourne `UITableViewCellEditingStyle.Insert` pour la dernière ligne (qui sera ajoutée spécifiquement pour se comporter comme un bouton d’insertion). 
-- **CustomizeMoveTarget** – pendant que l’utilisateur déplace une cellule, la valeur de retour de cette méthode facultative peut remplacer son choix d’emplacement. Cela signifie que vous pouvez les empêcher de « déposer » la cellule dans certaines positions, comme dans cet exemple, afin d’éviter qu’une ligne soit déplacée après la ligne **(Ajouter nouveau)** . 
+- **EditingStyleForRow** : retourne  `UITableViewCellEditingStyle.Delete` pour les lignes contenant des données et retourne  `UITableViewCellEditingStyle.Insert` pour la dernière ligne (qui sera ajoutée spécifiquement pour se comporter comme un bouton d’insertion). 
+- **CustomizeMoveTarget** – pendant que l’utilisateur déplace une cellule, la valeur de retour de cette méthode facultative peut remplacer son choix d’emplacement. Cela signifie que vous pouvez les empêcher de « déposer » la cellule dans certaines positions, comme dans cet exemple, afin d’éviter qu’une ligne soit déplacée après la ligne  **(Ajouter nouveau)** . 
 - **CanMoveRow** : retourne la valeur true pour activer le déplacement’handle’ou false pour empêcher le déplacement. Dans l’exemple, la dernière ligne a le déplacement « handle » masqué, car il est destiné au serveur en tant que bouton d’insertion uniquement. 
 
 Nous allons également ajouter deux méthodes personnalisées pour ajouter la ligne « Insert », puis la supprimer quand elle n’est plus nécessaire. Elles sont appelées à partir des boutons **modifier** et **Terminer** :
 
-- **WillBeginTableEditing** : lorsque le bouton **modifier** est touché, il appelle `SetEditing` pour mettre la table en mode édition. Cela déclenche la méthode WillBeginTableEditing où nous affichons la ligne **(Ajouter nouveau)** à la fin de la table pour agir en tant que « bouton d’insertion ». 
-- **DidFinishTableEditing** : lorsque le bouton terminé est touché `SetEditing` est appelé à nouveau pour désactiver le mode édition. L’exemple de code supprime la ligne **(Ajouter nouveau)** de la table lorsque la modification n’est plus nécessaire. 
+- **WillBeginTableEditing** : lorsque le bouton  **modifier** est touché, il appelle  `SetEditing` pour mettre la table en mode édition. Cela déclenche la méthode WillBeginTableEditing où nous affichons la ligne  **(Ajouter nouveau)** à la fin de la table pour agir en tant que « bouton d’insertion ». 
+- **DidFinishTableEditing** : lorsque le bouton terminé est touché  `SetEditing` est appelé à nouveau pour désactiver le mode édition. L’exemple de code supprime la ligne  **(Ajouter nouveau)** de la table lorsque la modification n’est plus nécessaire. 
 
 Ces substitutions de méthode sont implémentées dans l’exemple de fichier **TableEditModeAdd/code/TableSource. cs**:
 
@@ -216,4 +216,4 @@ Ce modèle d’interface utilisateur d’insertion de ligne n’est pas utilisé
 
 ## <a name="related-links"></a>Liens associés
 
-- [WorkingWithTables (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/workingwithtables)
+- [WorkingWithTables (exemple)](/samples/xamarin/ios-samples/workingwithtables)

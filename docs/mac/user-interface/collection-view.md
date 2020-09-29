@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 05/24/2017
-ms.openlocfilehash: f6e9a9338c0bce628cfd62d1106601ddc7a11490
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 0d95ecb1997ba70a2994d74bacdedd334f2b4c61
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84568631"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91429736"
 ---
 # <a name="collection-views-in-xamarinmac"></a>Vues de collection dans Xamarin. Mac
 
@@ -769,7 +769,7 @@ var flowLayout = new NSCollectionViewFlowLayout()
 };
 ```
 
-La `ItemSize` propriété définit la taille de chaque cellule dans la collection. La `SectionInset` propriété définit les indéfinis à partir du bord de la collection dans laquelle les cellules seront disposées. `MinimumInteritemSpacing`définit l’espacement minimal entre les éléments et `MinimumLineSpacing` définit l’espacement minimal entre les lignes de la collection.
+La `ItemSize` propriété définit la taille de chaque cellule dans la collection. La `SectionInset` propriété définit les indéfinis à partir du bord de la collection dans laquelle les cellules seront disposées. `MinimumInteritemSpacing` définit l’espacement minimal entre les éléments et `MinimumLineSpacing` définit l’espacement minimal entre les lignes de la collection.
 
 La disposition est assignée à la vue de collection et une instance du `CollectionViewDelegate` est attachée pour gérer la sélection des éléments :
 
@@ -811,13 +811,13 @@ public override void ViewDidLoad()
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a décrit en détail l’utilisation des vues de collection dans une application Xamarin. Mac. Tout d’abord, il s’est penché sur l’exposition d’une classe C# à Objective-C à l’aide du codage key-value (KVC) et de l’observation key-value (KVO). Ensuite, il a montré comment utiliser une classe conforme à KVO et lier les données aux vues de collection du Interface Builder de Xcode. Enfin, il a montré comment interagir avec les vues de collection dans le code C#.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [MacCollectionNew (exemple)](https://docs.microsoft.com/samples/xamarin/mac-samples/maccollectionnew)
+- [MacCollectionNew (exemple)](/samples/xamarin/mac-samples/maccollectionnew)
 - [Hello, Mac](~/mac/get-started/hello-mac.md)
 - [Liaison de données et codage de clé-valeur](~/mac/app-fundamentals/databinding.md)
 - [NSCollectionView](https://developer.apple.com/reference/appkit/nscollectionview)
