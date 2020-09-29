@@ -7,20 +7,20 @@ author: davidortinau
 ms.author: daortin
 ms.custom: video
 ms.date: 07/18/2018
-ms.openlocfilehash: cae59053374f673a56d02e86cd59fb85f313c41b
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 6c2f0ef1d34b60e712dd713d4fff3fe5f9856926
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016814"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91458033"
 ---
 # <a name="net-standard-library-code-sharing"></a>Partage de code de la bibliothèque .NET Standard
 
-Les bibliothèques .NET Standard ont une API uniforme pour toutes les plateformes .NET, y compris Xamarin et .NET Core. Créez une seule bibliothèque de .NET Standard et utilisez-la à partir de n’importe quel Runtime qui prend en charge la plateforme .NET Standard. Reportez-vous à [Ce graphique](https://docs.microsoft.com/dotnet/standard/net-standard#net-implementation-support) pour plus d’informations sur les plateformes prises en charge.
+Les bibliothèques .NET Standard ont une API uniforme pour toutes les plateformes .NET, y compris Xamarin et .NET Core. Créez une seule bibliothèque de .NET Standard et utilisez-la à partir de n’importe quel Runtime qui prend en charge la plateforme .NET Standard. Reportez-vous à [Ce graphique](/dotnet/standard/net-standard#net-implementation-support) pour plus d’informations sur les plateformes prises en charge.
 
 Bien .NET Standard que les versions 1,0 à 1,6 fournissent des sous-ensembles incrémentiels plus grands du .NET Framework, .NET Standard 2,0 offre le meilleur niveau de prise en charge pour les applications Xamarin et le portage de bibliothèques de classes portables existantes.
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 ## <a name="visual-studio-for-mac"></a>Visual Studio pour Mac
 
@@ -36,7 +36,7 @@ Vous pouvez ajouter une bibliothèque .NET Standard à votre solution en procéd
 
 2. Dans l’écran suivant, choisissez Framework cible- **.NET Standard 2,0** est recommandé :
 
-    [![choisir .NET Standard 2,0](net-standard-images/vsm01a-m157-sml.png)](net-standard-images/vsm01a-m157.png#lightbox)
+    [![Choisir .NET Standard 2,0](net-standard-images/vsm01a-m157-sml.png)](net-standard-images/vsm01a-m157.png#lightbox)
 
 3. Dans l’écran final, tapez le nom du projet et cliquez sur **créer**.
 
@@ -50,21 +50,21 @@ Les paramètres de la bibliothèque .NET Standard peuvent être affichés et mod
 
 ![Modifier .NET Standard Framework cible dans les options du projet](net-standard-images/vsm03-m157.png "Modifier la version du Framework cible .NET Standard dans options du projet")
 
-Dans, vous pouvez modifier votre version de `netstandard` en modifiant la valeur de la liste déroulante `Target Framework`.
+Dans, vous pouvez modifier votre version de `netstandard` en modifiant la valeur de la `Target Framework` liste déroulante.
 
-**En outre :** Vous pouvez modifier la `.csproj` directement pour modifier cette valeur.
+**En outre :** Vous pouvez modifier `.csproj` directement le pour modifier cette valeur.
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 ## <a name="visual-studio-2017-windows"></a>Visual Studio 2017 (Windows)
 
 Cette section explique comment créer et utiliser une bibliothèque .NET Standard à l’aide de Visual Studio.
 
-### <a name="creating-a-net-standard-library"></a>Création d’une bibliothèque de .NET Standard
+### <a name="creating-a-net-standard-library"></a>Création d’une bibliothèque .NET Standard
 
 L’ajout d’une bibliothèque de .NET Standard à votre solution est relativement simple.
 
-1. Dans la boîte de dialogue **nouveau projet** , sélectionnez la catégorie **.NET standard** , puis sélectionnez **bibliothèque de classes (.NET standard)** .
+1. Dans la boîte de dialogue **nouveau projet** , sélectionnez la catégorie **.NET standard** , puis sélectionnez **bibliothèque de classes (.NET standard)**.
 
     ![Création d’une bibliothèque de classes .NET Standard](net-standard-images/vs01-w157.png "Créer une bibliothèque de classes de .NET Standard")
 
@@ -78,7 +78,7 @@ Vous pouvez afficher et modifier les paramètres de la bibliothèque .NET Standa
 
 ![Modifier des frameworks cibles .NET standard dans les propriétés du projet](net-standard-images/vs03-w157.png "Référencer une bibliothèque de .NET Standard de la même façon que les autres projets")
 
-**En outre :** Vous pouvez modifier la `.csproj` directement pour modifier l’élément de `TargetFramework` et changer la version ciblée (par exemple, `<TargetFramework>netstandard2.0</TargetFramework>`).
+**En outre :** Vous pouvez modifier `.csproj` directement le pour modifier l' `TargetFramework` élément et modifier la version ciblée (par exemple, `<TargetFramework>netstandard2.0</TargetFramework>`).
 
 ### <a name="using-a-net-standard-library-project"></a>Utilisation d’un projet de bibliothèque .NET Standard
 
@@ -94,4 +94,4 @@ Une fois la bibliothèque de .NET Standard créée, vous pouvez y ajouter une r�
 
 ## <a name="related-links"></a>Liens associés
 
-* [.NET standard](https://docs.microsoft.com/dotnet/standard/net-standard) -informations détaillées et comparaison avec PCL.
+* [.NET standard](/dotnet/standard/net-standard) -informations détaillées et comparaison avec PCL.

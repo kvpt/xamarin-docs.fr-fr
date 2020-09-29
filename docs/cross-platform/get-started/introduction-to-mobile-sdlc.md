@@ -6,12 +6,12 @@ ms.assetid: 420c5fdf-4610-4e71-9db5-fe894c961924
 author: davidortinau
 ms.author: daortin
 ms.date: 11/22/2016
-ms.openlocfilehash: 32dec6b8fcdd5387e138a7812d8c3e2074673111
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: f3de8f6bb5cc8cb717642ebc86cefe1a184f4a78
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939618"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91456624"
 ---
 # <a name="mobile-software-development-lifecycle"></a>Cycle de vie du développement de logiciel mobile
 
@@ -70,7 +70,7 @@ Une fois que les caractéristiques et les fonctionnalités de l’application on
 
 #### <a name="ux-design"></a>Conception de l’expérience utilisateur
 
-L’expérience utilisateur est généralement modélisée via des maquettes en utilisant l’un des nombreux [toolkits de conception](https://docs.microsoft.com/windows/uwp/design/downloads/). Les maquettes permettent de concevoir l’expérience utilisateur sans devoir se soucier de la conception de l’interface utilisateur réelle :
+L’expérience utilisateur est généralement modélisée via des maquettes en utilisant l’un des nombreux [toolkits de conception](/windows/uwp/design/downloads/). Les maquettes permettent de concevoir l’expérience utilisateur sans devoir se soucier de la conception de l’interface utilisateur réelle :
 
  [![L’expérience utilisateur est généralement modélisée par le biais de maquettes avec des outils comme Balsamiq](introduction-to-mobile-sdlc-images/balsamiq.png)](introduction-to-mobile-sdlc-images/balsamiq.png#lightbox)
 
@@ -78,7 +78,7 @@ Lors de la création des maquettes de l’expérience utilisateur, il est import
 
 1. **Apple**  -   [Instructions relatives à l’interface humaine](https://developer.apple.com/ios/human-interface-guidelines/overview/themes/)
 1. **Android** –  [Design Guidelines](https://developer.android.com/design/index.html)
-1. **UWP** –  [Principes de base de la conception UWP](https://docs.microsoft.com/windows/uwp/design/basics/)
+1. **UWP** –  [Principes de base de la conception UWP](/windows/uwp/design/basics/)
 
 Par exemple, chaque application a une métaphore pour passer d’une section à l’autre dans une application. iOS utilise une barre d’onglets en bas de l’écran, Android utilise une barre d’onglets en haut de l’écran et UWP utilise la vue [Pivot ou onglet](/windows/uwp/design/controls-and-patterns/pivot).
 
@@ -153,7 +153,7 @@ Ceci permet aux développeurs de disposer d’un canal de distribution potentiel
 
 #### <a name="uwp"></a>UWP
 
-Les applications UWP sont distribuées aux utilisateurs via le Microsoft Store. Les développeurs soumettent leurs applications pour approbation, qui apparaissent ensuite dans le Store. Pour plus d’informations sur la publication des applications Windows, consultez la documentation UWP sur la [publication](https://docs.microsoft.com/windows/uwp/publish/).
+Les applications UWP sont distribuées aux utilisateurs via le Microsoft Store. Les développeurs soumettent leurs applications pour approbation, qui apparaissent ensuite dans le Store. Pour plus d’informations sur la publication des applications Windows, consultez la documentation UWP sur la [publication](/windows/uwp/publish/).
 
 ## <a name="mobile-development-considerations"></a>Considérations sur le développement mobile
 
@@ -243,7 +243,7 @@ Bien que le matériel UWP soit relativement homogène, certains composants reste
 
 #### <a name="security-considerations"></a>Considérations relatives à la sécurité
 
-Pour plus d’informations sur les considérations de sécurité importantes dans UWP, reportez-vous à la documentation sur la [sécurité](https://docs.microsoft.com/windows/uwp/security/).
+Pour plus d’informations sur les considérations de sécurité importantes dans UWP, reportez-vous à la documentation sur la [sécurité](/windows/uwp/security/).
 
 ## <a name="summary"></a>Résumé
 

@@ -6,12 +6,12 @@ ms.assetid: 328D042A-FF78-A7B6-1574-B5AF49A1AADB
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: fd0e48c8f954ba926c5e1b5dc3a1c9bf6aab8c54
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: d10917471c37d91fa02db2585895f5694a5a4a60
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571192"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91457443"
 ---
 # <a name="part-5---practical-code-sharing-strategies"></a>Partie 5 : Stratégies de partage de code pratiques
 
@@ -90,7 +90,7 @@ SQLite-NET agit comme un ORM simple qui vous permettra d’enregistrer et de ré
 Fonctionnalités de SQLite-NET :
 
 - Les tables sont définies en ajoutant des attributs aux classes de modèle.
-- Une instance de base de données est représentée par une sous-classe de `SQLiteConnection` , la classe principale de la bibliothèque SQLite-net.
+- Une instance de base de données est représentée par une sous-classe de  `SQLiteConnection` , la classe principale de la bibliothèque SQLite-net.
 - Les données peuvent être insérées, interrogées et supprimées à l’aide d’objets. Aucune instruction SQL n’est requise (même si vous pouvez écrire des instructions SQL si nécessaire).
 - Les requêtes LINQ de base peuvent être exécutées sur les collections retournées par SQLite-NET.
 
@@ -140,7 +140,7 @@ Xamarin. iOS et Xamarin. Android autorisent l’accès au système de fichiers �
 
 Chaque plateforme a des restrictions d’accès différentes qui doivent être prises en considération :
 
-- les applications iOS s’exécutent dans un bac à sable (sandbox) avec un accès très restreint au système de fichiers. Apple détermine plus en détail comment utiliser le système de fichiers en spécifiant certains emplacements qui sont sauvegardés (et d’autres non). Pour plus d’informations, consultez le guide [utilisation du système de fichiers dans Xamarin. iOS](~/ios/app-fundamentals/file-system.md) .
+- les applications iOS s’exécutent dans un bac à sable (sandbox) avec un accès très restreint au système de fichiers. Apple détermine plus en détail comment utiliser le système de fichiers en spécifiant certains emplacements qui sont sauvegardés (et d’autres non). Pour plus d’informations, consultez le guide  [utilisation du système de fichiers dans Xamarin. iOS](~/ios/app-fundamentals/file-system.md) .
 - Android restreint également l’accès à certains répertoires liés à l’application, mais prend également en charge les supports externes (par exemple, Cartes SD) et l’accès aux données partagées.
 - Windows Phone 8 (Silverlight) n’autorisent pas l’accès direct aux fichiers : les fichiers ne peuvent être manipulés qu’à l’aide de `IsolatedStorage` .
 - Les projets UWP Windows 8.1 WinRT et Windows 10 offrent uniquement des opérations asynchrones sur les fichiers via des `Windows.Storage` API, qui sont différentes des autres plateformes.
@@ -184,7 +184,7 @@ Le stockage isolé est une API courante pour l’enregistrement et le chargement
 
 Il s’agit du mécanisme par défaut pour l’accès aux fichiers dans Windows Phone (Silverlight) qui a été implémenté dans Xamarin. iOS et Xamarin. Android pour permettre l’écriture d’un code d’accès aux fichiers commun. La `System.IO.IsolatedStorage` classe peut être référencée sur les trois plateformes d’un [projet partagé](~/cross-platform/app-fundamentals/shared-projects.md).
 
-Pour plus d’informations, consultez [vue d’ensemble du stockage isolé pour Windows Phone](https://msdn.microsoft.com/library/windowsphone/develop/ff402541(v=vs.105).aspx) .
+Pour plus d’informations, consultez [vue d’ensemble du stockage isolé pour Windows Phone](/previous-versions/windows/apps/ff402541(v=vs.105)) .
 
 Les API de stockage isolé ne sont pas disponibles dans les [bibliothèques de classes portables](~/cross-platform/app-fundamentals/pcl.md). Une alternative pour PCL est le [NuGet PCLStorage](https://pclstorage.codeplex.com/)
 
@@ -232,13 +232,13 @@ webClient.Encoding = System.Text.Encoding.UTF8;
 webClient.DownloadStringAsync (new Uri ("http://some-server.com/file.xml"));
 ```
 
- `WebClient`possède également `DownloadFileCompleted` et `DownloadFileAsync` pour la récupération de données binaires.
+ `WebClient` possède également `DownloadFileCompleted` et `DownloadFileAsync` pour la récupération de données binaires.
 
 <a name="HttpWebRequest"></a>
 
 ### <a name="httpwebrequest"></a>HttpWebRequest
 
-`HttpWebRequest`offre une personnalisation plus grande que `WebClient` et, par conséquent, nécessite davantage de code.
+`HttpWebRequest` offre une personnalisation plus grande que `WebClient` et, par conséquent, nécessite davantage de code.
 
 Le code d’une opération synchrone simple `HttpWebRequest` est le suivant :
 
@@ -307,7 +307,7 @@ En raison de la taille et de la complexité de l’infrastructure WCF, il peut y
 
  <a name="Threading"></a>
 
-## <a name="threading"></a>Threads
+## <a name="threading"></a>Thread
 
 La réactivité des applications est importante pour les applications mobiles : les utilisateurs attendent le chargement et l’exécution des applications rapidement. Un écran « figé » qui cesse d’accepter l’entrée utilisateur s’affiche pour indiquer que l’application s’est arrêtée. il est donc important de ne pas bloquer le thread d’interface utilisateur avec des appels de blocage de longue durée, tels que des requêtes réseau ou des opérations locales lentes (telles que la décompression d’un fichier). En particulier, le processus de démarrage ne doit pas contenir de tâches de longue durée : toutes les plateformes mobiles interrompent une application dont le chargement est trop long.
 
@@ -345,10 +345,10 @@ static Context uiContext = TaskScheduler.FromCurrentSynchronizationContext();
 
 Pour le code qui n’utilise pas la bibliothèque de tâches parallèles, chaque plateforme possède sa propre syntaxe pour le marshaling des opérations vers le thread d’interface utilisateur :
 
-- **iOS** :`owner.BeginInvokeOnMainThread(new NSAction(action))`
-- **Android** –`owner.RunOnUiThread(action)`
-- **Xamarin. Forms** –`Device.BeginInvokeOnMainThread(action)`
-- **Windows** –`Deployment.Current.Dispatcher.BeginInvoke(action)`
+- **iOS** : `owner.BeginInvokeOnMainThread(new NSAction(action))`
+- **Android** – `owner.RunOnUiThread(action)`
+- **Xamarin. Forms** – `Device.BeginInvokeOnMainThread(action)`
+- **Windows** – `Deployment.Current.Dispatcher.BeginInvoke(action)`
 
 La syntaxe iOS et Android nécessite la mise à disposition d’une classe « Context », ce qui signifie que le code doit passer cet objet dans toutes les méthodes qui requièrent un rappel sur le thread d’interface utilisateur.
 

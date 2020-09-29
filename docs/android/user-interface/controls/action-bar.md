@@ -6,31 +6,31 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/06/2018
-ms.openlocfilehash: f64b57e73b69b3111087ca1352f5fb9536f855e5
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
-ms.translationtype: HT
+ms.openlocfilehash: 45b6c080f6e50efc4648c5b2eab6db0634dee7f1
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75488957"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91457365"
 ---
 # <a name="actionbar-for-xamarinandroid"></a>Barre pour Xamarin. Android
 
-Lorsque vous utilisez `TabActivity`, le code permettant de créer les icônes d’onglet n’a aucun effet lorsqu’il est exécuté sur l’infrastructure Android 4,0. Bien qu’elle fonctionne comme elle le faisait dans les versions d’Android antérieures à 2,3, la classe `TabActivity` elle-même a été dépréciée dans 4,0. Une nouvelle façon de créer une interface avec onglets a été introduite et utilise la Barre d’action, que nous aborderons ensuite.
+Lorsque `TabActivity` vous utilisez, le code permettant de créer les icônes d’onglet n’a aucun effet lorsqu’il est exécuté sur l’infrastructure Android 4,0. Bien qu’elle fonctionne comme elle le faisait dans les versions d’Android antérieures à 2,3, la `TabActivity` classe elle-même a été dépréciée dans 4,0. Une nouvelle façon de créer une interface avec onglets a été introduite et utilise la Barre d’action, que nous aborderons ensuite.
 
 ## <a name="action-bar-tabs"></a>Onglets Barre d’action
 
 Le Barre d’action prend en charge l’ajout d’interfaces à onglets dans Android 4,0.
 La capture d’écran suivante montre un exemple d’une telle interface.
 
-[![capture d’écran de l’application en cours d’exécution dans un émulateur ; deux onglets sont affichés](action-bar-images/25-actionbartabs.png)](action-bar-images/25-actionbartabs.png#lightbox)
+[![Capture d’écran de l’application en cours d’exécution dans un émulateur ; deux onglets sont affichés](action-bar-images/25-actionbartabs.png)](action-bar-images/25-actionbartabs.png#lightbox)
 
-Pour créer des onglets dans la Barre d’action, nous devons tout d’abord définir sa propriété `NavigationMode` pour prendre en charge les onglets. Dans Android 4, une propriété `ActionBar` est disponible sur la classe Activity, que nous pouvons utiliser pour définir la `NavigationMode` comme suit :
+Pour créer des onglets dans la Barre d’action, nous devons tout d’abord définir sa `NavigationMode` propriété pour prendre en charge les onglets. Dans Android 4, une `ActionBar` propriété est disponible sur la classe Activity, que nous pouvons utiliser pour définir le `NavigationMode` comme suit :
 
 ```csharp
 this.ActionBar.NavigationMode = ActionBarNavigationMode.Tabs;
 ```
 
-Une fois cette opération effectuée, nous pouvons créer un onglet en appelant la méthode `NewTab` sur le Barre d’action. Avec cette instance de tabulation, nous pouvons appeler les méthodes `SetText` et `SetIcon` pour définir le texte et l’icône de l’étiquette de l’onglet. ces appels sont effectués dans l’ordre indiqué dans le code ci-dessous :
+Une fois cette opération effectuée, nous pouvons créer un onglet en appelant la `NewTab` méthode sur le barre d’action. Avec cette instance de tabulation, nous pouvons appeler `SetText` les `SetIcon` méthodes et pour définir l’icône et le texte de l’étiquette de l’onglet ; ces appels sont effectués dans l’ordre dans le code indiqué ci-dessous :
 
 ```csharp
 var tab = this.ActionBar.NewTab ();
@@ -38,7 +38,7 @@ tab.SetText (tabText);
 tab.SetIcon (Resource.Drawable.ic_tab_white);
 ```
 
-Avant de pouvoir ajouter l’onglet, nous devons gérer l’événement `TabSelected`. Dans ce gestionnaire, nous pouvons créer le contenu de l’onglet. Barre d’action onglets sont conçus pour fonctionner avec des *fragments*, qui sont des classes qui représentent une partie de l’interface utilisateur dans une activité. Pour cet exemple, la vue du fragment contient une seule `TextView`, que nous gonflons dans notre sous-classe `Fragment` comme suit :
+Avant de pouvoir ajouter l’onglet, nous devons gérer l' `TabSelected` événement. Dans ce gestionnaire, nous pouvons créer le contenu de l’onglet. Barre d’action onglets sont conçus pour fonctionner avec des *fragments*, qui sont des classes qui représentent une partie de l’interface utilisateur dans une activité. Pour cet exemple, la vue du fragment contient un unique `TextView` , que nous gonflons dans notre `Fragment` sous-classe comme suit :
 
 ```csharp
 class SampleTabFragment: Fragment
@@ -60,7 +60,7 @@ class SampleTabFragment: Fragment
 }
 ```
 
-L’argument d’événement passé dans le `TabSelected` événement est de type `TabEventArgs`, qui comprend une propriété `FragmentTransaction` que nous pouvons utiliser pour ajouter le fragment comme indiqué ci-dessous :
+L’argument d’événement passé dans l' `TabSelected` événement est de type `TabEventArgs` , ce qui comprend une `FragmentTransaction` propriété que nous pouvons utiliser pour ajouter le fragment, comme indiqué ci-dessous :
 
 ```csharp
 tab.TabSelected += delegate(object sender, ActionBar.TabEventArgs e) {             
@@ -69,7 +69,7 @@ tab.TabSelected += delegate(object sender, ActionBar.TabEventArgs e) {
 };
 ```
 
-Enfin, nous pouvons ajouter l’onglet au Barre d’action en appelant la méthode `AddTab` comme indiqué dans ce code :
+Enfin, nous pouvons ajouter l’onglet au Barre d’action en appelant la `AddTab` méthode comme indiqué dans ce code :
 
 ```csharp
 this.ActionBar.AddTab (tab);
@@ -79,13 +79,13 @@ Pour obtenir un exemple complet, consultez le projet *HelloTabsICS* dans l’exe
 
 ## <a name="shareactionprovider"></a>ShareActionProvider
 
-La classe `ShareActionProvider` permet à une action de partage d’être exécutée à partir d’un Barre d’action. Il s’occupe de créer une vue d’action avec une liste d’applications qui peuvent gérer une intention de partage et conserver un historique des applications précédemment utilisées pour y accéder plus tard à partir de la Barre d’action. Cela permet aux applications de partager des données via une expérience utilisateur cohérente dans Android.
+La `ShareActionProvider` classe permet à une action de partage d’avoir lieu à partir d’un barre d’action. Il s’occupe de créer une vue d’action avec une liste d’applications qui peuvent gérer une intention de partage et conserver un historique des applications précédemment utilisées pour y accéder plus tard à partir de la Barre d’action. Cela permet aux applications de partager des données via une expérience utilisateur cohérente dans Android.
 
 ### <a name="image-sharing-example"></a>Exemple de partage d’image
 
-Par exemple, voici une capture d’écran d’un Barre d’action avec un élément de menu pour partager une image (issue de l’exemple [ShareActionProvider](https://docs.microsoft.com/samples/xamarin/monodroid-samples/shareactionproviderdemo) ). Quand l’utilisateur clique sur l’élément de menu de la Barre d’action, ShareActionProvider charge l’application pour gérer une intention associée à l' `ShareActionProvider`. Dans cet exemple, l’application de messagerie a été utilisée précédemment. elle est donc présentée sur la Barre d’action.
+Par exemple, voici une capture d’écran d’un Barre d’action avec un élément de menu pour partager une image (issue de l’exemple [ShareActionProvider](/samples/xamarin/monodroid-samples/shareactionproviderdemo) ). Quand l’utilisateur clique sur l’élément de menu de la Barre d’action, ShareActionProvider charge l’application pour gérer une intention associée au `ShareActionProvider` . Dans cet exemple, l’application de messagerie a été utilisée précédemment. elle est donc présentée sur la Barre d’action.
 
-[![capture d’écran de l’icône de l’application de messagerie dans le Barre d’action](action-bar-images/09-shareactionprovider.png)](action-bar-images/09-shareactionprovider.png#lightbox)
+[![Capture d’écran de l’icône d’application de messagerie dans le Barre d’action](action-bar-images/09-shareactionprovider.png)](action-bar-images/09-shareactionprovider.png#lightbox)
 
 Lorsque l’utilisateur clique sur l’élément dans la Barre d’action, l’application de messagerie qui contient l’image partagée est lancée, comme indiqué ci-dessous :
 
@@ -93,7 +93,7 @@ Lorsque l’utilisateur clique sur l’élément dans la Barre d’action, l’a
 
 ### <a name="specifying-the-action-provider-class"></a>Spécification de la classe de fournisseur d’action
 
-Pour utiliser le `ShareActionProvider`, définissez l’attribut `android:actionProviderClass` sur un élément de menu dans le code XML pour le menu du Barre d’action comme suit :
+Pour utiliser le `ShareActionProvider` , définissez l' `android:actionProviderClass` attribut sur un élément de menu dans le code XML du menu de barre d’action comme suit :
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -107,7 +107,7 @@ Pour utiliser le `ShareActionProvider`, définissez l’attribut `android:action
 
 ### <a name="inflating-the-menu"></a>Personnalisation du menu
 
-Pour augmenter le menu, nous remplaçons `OnCreateOptionsMenu` dans la sous-classe d’activité. Une fois que nous avons une référence au menu, nous pouvons obtenir le `ShareActionProvider` à partir de la propriété `ActionProvider` de l’élément de menu, puis utiliser la méthode SetShareIntent pour définir l’intention de l' `ShareActionProvider`, comme indiqué ci-dessous :
+Pour augmenter le menu, nous remplaçons `OnCreateOptionsMenu` dans la sous-classe d’activité. Une fois que nous avons une référence au menu, nous pouvons obtenir le `ShareActionProvider` à partir `ActionProvider` de la propriété de l’élément de menu, puis utiliser la méthode SetShareIntent pour définir l’intention de l’objet `ShareActionProvider` , comme indiqué ci-dessous :
 
 ```csharp
 public override bool OnCreateOptionsMenu (IMenu menu)
@@ -123,7 +123,7 @@ public override bool OnCreateOptionsMenu (IMenu menu)
 
 ### <a name="creating-the-intent"></a>Création de l’intention
 
-La `ShareActionProvider` utilise l’intention, transmise à la méthode `SetShareIntent` dans le code ci-dessus, pour lancer l’activité appropriée. Dans ce cas, nous créons une intention d’envoyer une image à l’aide du code suivant :
+Le `ShareActionProvider` utilise l’intention, transmise à la `SetShareIntent` méthode dans le code ci-dessus, pour lancer l’activité appropriée. Dans ce cas, nous créons une intention d’envoyer une image à l’aide du code suivant :
 
 ```csharp
 Intent CreateIntent ()
@@ -140,5 +140,5 @@ L’image de l’exemple de code ci-dessus est incluse en tant que ressource ave
 
 ## <a name="related-links"></a>Liens associés
 
-- [Hello tabs ICS (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/hellotabsics)
-- [Démonstration ShareActionProvider (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/shareactionproviderdemo)
+- [Hello tabs ICS (exemple)](/samples/xamarin/monodroid-samples/hellotabsics)
+- [Démonstration ShareActionProvider (exemple)](/samples/xamarin/monodroid-samples/shareactionproviderdemo)

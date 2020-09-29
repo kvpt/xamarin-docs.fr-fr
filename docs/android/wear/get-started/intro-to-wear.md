@@ -1,24 +1,24 @@
 ---
 title: Introduction à Android Wear
-description: Avec l’introduction de l’usure de Google, vous n’êtes plus limité aux téléphones et tablettes lorsqu’il s’agit de développer de superbes applications Android. La prise en charge d’Android par Xamarin. Android vous permet d’exécuter C# du code sur votre poignet ! Cette introduction fournit une vue d’ensemble de base de l’usure d’Android, décrit ses principales fonctionnalités et offre une vue d’ensemble des fonctionnalités disponibles dans Android usure 2,0. Il répertorie certains des appareils Android d’usure les plus populaires et fournit des liens vers la documentation de Google Android usure essentielle pour une meilleure lecture.
+description: Avec l’introduction de l’usure de Google, vous n’êtes plus limité aux téléphones et tablettes lorsqu’il s’agit de développer de superbes applications Android. La prise en charge d’Android par Xamarin. Android vous permet d’exécuter du code C# sur votre poignet ! Cette introduction fournit une vue d’ensemble de base de l’usure d’Android, décrit ses principales fonctionnalités et offre une vue d’ensemble des fonctionnalités disponibles dans Android usure 2,0. Il répertorie certains des appareils Android d’usure les plus populaires et fournit des liens vers la documentation de Google Android usure essentielle pour une meilleure lecture.
 ms.prod: xamarin
 ms.assetid: EAEF99F0-8FBE-47E4-8644-E7244CFAF464
 ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: 3b1d27b1489cb71d4bd1922c2de993567ddf36bd
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: a0e352850dced5c78c68859912de8f41c1fe87f9
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028618"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91458108"
 ---
 # <a name="introduction-to-android-wear"></a>Introduction à Android Wear
 
-_Avec l’introduction de l’usure de Google, vous n’êtes plus limité aux téléphones et tablettes lorsqu’il s’agit de développer de superbes applications Android. La prise en charge d’Android par Xamarin. Android vous permet d’exécuter C# du code sur votre poignet ! Cette introduction fournit une vue d’ensemble de base de l’usure d’Android, décrit ses principales fonctionnalités et offre une vue d’ensemble des fonctionnalités disponibles dans Android usure 2,0. Il répertorie certains des appareils Android d’usure les plus populaires et fournit des liens vers la documentation de Google Android usure essentielle pour une meilleure lecture._
+_Avec l’introduction de l’usure de Google, vous n’êtes plus limité aux téléphones et tablettes lorsqu’il s’agit de développer de superbes applications Android. La prise en charge d’Android par Xamarin. Android vous permet d’exécuter du code C# sur votre poignet ! Cette introduction fournit une vue d’ensemble de base de l’usure d’Android, décrit ses principales fonctionnalités et offre une vue d’ensemble des fonctionnalités disponibles dans Android usure 2,0. Il répertorie certains des appareils Android d’usure les plus populaires et fournit des liens vers la documentation de Google Android usure essentielle pour une meilleure lecture._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d’ensemble
 
 Android s’exécute sur un large éventail d’appareils, notamment la première génération de Motorola 360, le espion G de LG et le rapport Samsung en direct. Une deuxième génération, y compris la SmartWatch 3 de Sony, a également été publiée avec des fonctionnalités supplémentaires, notamment le GPS intégré et la lecture de musique hors connexion. Pour Android usure 2,0, Google s’est associé à LG pour deux nouvelles observations : the LG Watch Sports and the LG Watch style.
 
@@ -30,25 +30,25 @@ Xamarin. Android 5,0 et versions ultérieures prennent en charge l’usure Andro
 
 Android usure présente un paradigme d’interface utilisateur qui diffère de celui des applications de poche Android. La première vague de l’usure des applications a été conçue pour étendre une application de poche auxiliaire d’une certaine façon, mais à partir d’Android usure 2,0, les applications d’usure peuvent être utilisées de manière autonome. Lorsque vous déployez une application d’usure, elle est empaquetée avec une application de poche auxiliaire. Étant donné que la plupart des applications d’usure dépendent d’une application de poche, elles ont besoin d’un moyen de communiquer avec les applications de poche. Les sections suivantes décrivent ces scénarios d’utilisation et présentent les fonctionnalités d’usure Android essentielles. 
 
-### <a name="usage-scenarios"></a>Scénarios d'utilisation
+### <a name="usage-scenarios"></a>Scénarios d’utilisation
 
 La première version de Android usure était principalement axée sur l’extension d’applications de poche actuelles avec des notifications améliorées et la synchronisation des données entre l’application de poche et l’application portable. Par conséquent, ces scénarios sont relativement simples à implémenter.
 
 #### <a name="wearable-notifications"></a>Notifications à porter
 
-La façon la plus simple de prendre en charge l’usure Android est de tirer parti de la nature partagée des notifications entre le portable et l’appareil portable. À l’aide de l’API de notification v4 de prise en charge et de la classe `WearableExtender` (disponible dans la [bibliothèque de prise en charge Xamarin Android](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)), vous pouvez exploiter les fonctionnalités natives de la plateforme, telles que les cartes de style de la boîte de réception ou l’entrée vocale. L’exemple [RecipeAssistant](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-recipeassistant) fournit un exemple de code qui montre comment envoyer une liste de notifications à un appareil Android d’usure. 
+La façon la plus simple de prendre en charge l’usure Android est de tirer parti de la nature partagée des notifications entre le portable et l’appareil portable. À l’aide de l’API de notification v4 de prise en charge et de la `WearableExtender` classe (disponible dans la [bibliothèque de prise en charge Xamarin Android](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)), vous pouvez exploiter les fonctionnalités natives de la plateforme, telles que les cartes de style de la boîte de réception ou l’entrée vocale. L’exemple [RecipeAssistant](/samples/xamarin/monodroid-samples/wear-recipeassistant) fournit un exemple de code qui montre comment envoyer une liste de notifications à un appareil Android d’usure. 
 
 #### <a name="companion-applications"></a>Applications auxiliaires
 
-Une autre stratégie consiste à créer une application complète qui s’exécute en mode natif sur l’appareil portable et les paires avec une application de poche auxiliaire. L’exemple d’application de [test](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-quiz) , qui montre comment créer un quiz qui s’exécute sur un appareil mobile et vous pose des questions sur l’appareil portable, est un bon exemple de cette approche. 
+Une autre stratégie consiste à créer une application complète qui s’exécute en mode natif sur l’appareil portable et les paires avec une application de poche auxiliaire. L’exemple d’application de [test](/samples/xamarin/monodroid-samples/wear-quiz) , qui montre comment créer un quiz qui s’exécute sur un appareil mobile et vous pose des questions sur l’appareil portable, est un bon exemple de cette approche. 
 
 ### <a name="user-interface"></a>Interface utilisateur
 
-Le modèle de navigation principal pour l’usure est une série de cartes organisées verticalement. Chacune de ces cartes peut avoir des actions associées qui sont superposées sur la même ligne. La classe `GridViewPager` fournit cette fonctionnalité. il adhère au même concept d’adaptateur que `ListView`. En général, vous associez le `GridViewPager` à un `FragmentGridPagerAdaptor` (ou `GridPagerAdaptor`) qui vous permet de représenter chaque cellule de ligne et de colonne sous la forme d’un `Fragment` : 
+Le modèle de navigation principal pour l’usure est une série de cartes organisées verticalement. Chacune de ces cartes peut avoir des actions associées qui sont superposées sur la même ligne. La `GridViewPager` classe fournit cette fonctionnalité ; elle adhère au même concept d’adaptateur que `ListView` . En général, vous associez `GridViewPager` à un `FragmentGridPagerAdaptor` (ou `GridPagerAdaptor` ) qui vous permet de représenter chaque ligne et chaque cellule de colonne en tant que `Fragment` : 
 
 [![Navigation usure](intro-to-wear-images/2d-picker-sml.png "Navigation usure")](intro-to-wear-images/2d-picker.png#lightbox)
 
-L’usure utilise également des boutons d’action qui se composent d’un petit cercle de couleur, avec un texte de description de petite taille en dessous (comme illustré ci-dessus).  L’exemple [GridViewPager](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-gridviewpager) montre comment utiliser `GridViewPager` et `GridPagerAdapter` dans une application d’usure.
+L’usure utilise également des boutons d’action qui se composent d’un petit cercle de couleur, avec un texte de description de petite taille en dessous (comme illustré ci-dessus).  L’exemple [GridViewPager](/samples/xamarin/monodroid-samples/wear-gridviewpager) montre comment utiliser `GridViewPager` et `GridPagerAdapter` dans une application d’usure.
 
 Android usure 2,0 ajoute un tiroir de navigation, un tiroir d’action et des boutons d’action en ligne à l’interface utilisateur d’usure. Pour plus d’informations sur les éléments d’interface utilisateur Android usure 2,0, consultez la rubrique [anatomie](https://www.google.com/design/spec-wear/system-overview/anatomy.html) Android. 
 
@@ -56,15 +56,15 @@ Android usure 2,0 ajoute un tiroir de navigation, un tiroir d’action et des bo
 
 Android usure fournit deux API de communication différentes pour faciliter la communication entre les applications mobiles et les applications de poche auxiliaires : 
 
-L' **API de données** &ndash; cette API est similaire à une banque de données synchronisée entre l’appareil portable et l’appareil mobile. Android s’occupe de la propagation des modifications entre les ordinateurs portables et les périphériques de poche lorsqu’il est optimal de le faire. Lorsque le portable est hors limites, il met la synchronisation en file d’attente pour une date ultérieure. Le point d’entrée principal pour cette API est `WearableClass.DataApi`. Pour plus d’informations sur cette API, consultez la rubrique [éléments de données de synchronisation](https://developer.android.com/training/wearables/data-layer/data-items.html) Android. 
+**API** &ndash; de données Cette API est similaire à une banque de données synchronisée entre l’appareil portable et l’appareil mobile. Android s’occupe de la propagation des modifications entre les ordinateurs portables et les périphériques de poche lorsqu’il est optimal de le faire. Lorsque le portable est hors limites, il met la synchronisation en file d’attente pour une date ultérieure. Le point d’entrée principal pour cette API est `WearableClass.DataApi` . Pour plus d’informations sur cette API, consultez la rubrique [éléments de données de synchronisation](https://developer.android.com/training/wearables/data-layer/data-items.html) Android. 
 
-L' **API de Message** &ndash; cette API vous permet d’utiliser un chemin de communication de niveau inférieur : une petite charge utile est envoyée à sens unique sans synchronisation entre les applications de poche et portable.
-Le point d’entrée principal pour cette API est `WearableClass.MessageApi`.
+**API** &ndash; de message Grâce à cette API, vous pouvez utiliser un chemin de communication de niveau inférieur : une petite charge utile est envoyée à sens unique sans synchronisation entre les applications de poche et portable.
+Le point d’entrée principal pour cette API est `WearableClass.MessageApi` .
 Pour plus d’informations sur cette API, consultez la rubrique [messages d’envoi et de réception](https://developer.android.com/training/wearables/data-layer/messages.html) Android.
 
-Vous pouvez choisir d’enregistrer les rappels pour recevoir ces messages via chacune des interfaces d’écouteur d’API ou, également, implémenter un service dans votre application qui dérive de `WearableListenerService`.
+Vous pouvez choisir d’enregistrer les rappels pour recevoir ces messages via chacune des interfaces d’écouteur d’API ou, également, implémenter un service dans votre application qui dérive de `WearableListenerService` .
 Ce service sera automatiquement instancié par Android.
-L’exemple [FindMyPhone](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-findmyphonesample) montre comment implémenter un `WearableListenerService`.
+L’exemple [FindMyPhone](/samples/xamarin/monodroid-samples/wear-findmyphonesample) illustre l’implémentation d’un `WearableListenerService` .
 
 ### <a name="deployment"></a>Déploiement
 
@@ -77,7 +77,7 @@ La meilleure façon de se familiariser avec Android est de générer et tester v
 
 1. [Le programme d'](~/android/wear/get-started/installation.md) installation de & fournit des instructions détaillées pour l’installation et la configuration de votre environnement de développement afin de générer des applications d’usure Xamarin. Android. 
 
-2. Une fois que vous avez installé les packages requis et configuré un émulateur ou un appareil, consultez [Hello, usure](~/android/wear/get-started/hello-wear.md) pour obtenir des instructions pas à pas qui expliquent comment créer un petit projet Android d’usure qui gère les clics de bouton et affiche un compteur sur l’usure passerelle. 
+2. Une fois que vous avez installé les packages requis et configuré un émulateur ou un appareil, consultez  [Hello, usure](~/android/wear/get-started/hello-wear.md) pour obtenir des instructions pas à pas qui expliquent comment créer un petit projet Android d’usure qui gère les clics de bouton et affiche un compteur click sur le périphérique d’usure. 
 
 3. Le [test de & de déploiement](~/android/wear/deploy-test/index.md) fournit des informations plus détaillées sur la configuration et le déploiement des émulateurs et des appareils, y compris des instructions sur la façon de déployer votre application sur un appareil d’usure via Bluetooth.
 
@@ -126,11 +126,11 @@ Pour plus d’informations sur ces deux nouveaux tiroirs interactifs, consultez 
 
 #### <a name="curved-layouts"></a>Dispositions courbées 
 
-L’usure 2,0 introduit de nouvelles fonctionnalités permettant d’afficher des dispositions courbées sur des appareils à usure ronde. Plus précisément, la nouvelle classe `WearableRecyclerView` est optimisée pour afficher une liste d’éléments verticaux sur les affichages arrondis : 
+L’usure 2,0 introduit de nouvelles fonctionnalités permettant d’afficher des dispositions courbées sur des appareils à usure ronde. Plus précisément, la nouvelle `WearableRecyclerView` classe est optimisée pour afficher une liste d’éléments verticaux sur les affichages arrondis : 
 
 ![Exemple de disposition courbée](intro-to-wear-images/curved-layout.png "Exemple de disposition courbée")
 
-`WearableRecyclerView` étend la classe `RecyclerView` pour prendre en charge les dispositions courbées et les gestes de défilement circulaires. Pour plus d’informations, consultez la documentation de l’API [WearableRecyclerView](https://developer.android.com/reference/android/support/wearable/view/WearableRecyclerView.html) Android. 
+`WearableRecyclerView` étend la `RecyclerView` classe pour prendre en charge les dispositions courbées et les gestes de défilement circulaires. Pour plus d’informations, consultez la documentation de l’API [WearableRecyclerView](https://developer.android.com/reference/android/support/wearable/view/WearableRecyclerView.html) Android. 
 
 #### <a name="standalone-apps"></a>Applications autonomes 
 
@@ -138,7 +138,7 @@ Android usure 2,0 les applications peuvent fonctionner indépendamment des appli
 
 #### <a name="wrist-gestures"></a>Gestes de poignet 
 
-Les gestes de poignet permettent aux utilisateurs d’interagir avec votre application sans utiliser l’écran tactile &ndash; les utilisateurs peuvent répondre à l’application à l’aide d’une seule main. Deux gestes de poignet sont pris en charge : 
+Les gestes de poignet permettent aux utilisateurs d’interagir avec votre application sans utiliser l’écran tactile &ndash; . les utilisateurs peuvent répondre à l’application à l’aide d’une seule main. Deux gestes de poignet sont pris en charge : 
 
 - Poignet de scintillement
 - Poignet de scintillement
@@ -147,7 +147,7 @@ Pour plus d’informations, consultez la rubrique [gestes du poignet](https://de
 
 Il existe de nombreuses fonctionnalités 2,0, telles que les actions en ligne, la réponse intelligente, l’entrée à distance, les notifications étendues et un nouveau mode de pontage pour les notifications. Pour plus d’informations sur les nouvelles fonctionnalités 2,0 de l’usure, consultez la [vue d’ensemble](https://developer.android.com/wear/preview/api-overview.html)de l’API Android. 
 
-## <a name="devices"></a>Appareils
+## <a name="devices"></a>Périphériques
 
 Voici quelques exemples des appareils qui peuvent exécuter Android :
 
@@ -158,7 +158,7 @@ Voici quelques exemples des appareils qui peuvent exécuter Android :
 - [Sony SmartWatch 3](https://www.sonymobile.com/global-en/products/smartwear/smartwatch-3-swr50/)
 - [ASUS ZenWatch](https://www.asus.com/us/Phones/ASUS_ZenWatch_WI500Q/)
 
-## <a name="further-reading"></a>informations supplémentaires
+## <a name="further-reading"></a>En savoir plus
 
 Consultez la documentation relative à l’usure d’Android de Google :
 
@@ -167,11 +167,11 @@ Consultez la documentation relative à l’usure d’Android de Google :
 - [Android. support. Bibliothèque portable](https://developer.android.com/reference/android/support/wearable/view/package-summary.html)
 - [Android usure 2,0](https://developer.android.com/wear/preview/index.html)
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cette introduction a fourni une vue d’ensemble de l’usure d’Android. Il a décrit les fonctionnalités de base de Android usure et a inclus une vue d’ensemble des fonctionnalités introduites dans Android usure 2,0. Il fournit des liens vers la documentation essentielle pour aider les développeurs à se familiariser avec le développement de Xamarin. Android, et il a présenté des exemples de certains appareils Android qui sont actuellement sur le marché.
 
 ## <a name="related-links"></a>Liens associés
 
 - [Installation et configuration](~/android/wear/get-started/installation.md)
-- [Bien démarrer](~/android/wear/get-started/index.md)
+- [Prise en main](~/android/wear/get-started/index.md)

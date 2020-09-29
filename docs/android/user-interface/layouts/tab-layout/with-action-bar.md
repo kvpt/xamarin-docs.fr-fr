@@ -7,24 +7,24 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/06/2018
-ms.openlocfilehash: 33afa963cba2e341f23326c6a7814f97f88b6870
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b1e6fadb52f6009e28d18143ac24c5180dae037c
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028770"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91457040"
 ---
 # <a name="tabbed-layouts-with-the-actionbar"></a>Dispositions avec onglets avec barre
 
 _Ce guide présente et explique comment utiliser les API barre pour créer une interface utilisateur avec onglets dans une application Xamarin. Android._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d’ensemble
 
 La barre d’action est un modèle d’interface utilisateur Android qui est utilisé pour fournir une interface utilisateur cohérente pour les fonctionnalités clés telles que les onglets, l’identité de l’application, les menus et la recherche. Dans Android 3,0 (API de niveau 11), Google a introduit les API barre sur la plateforme Android. Les API barre introduisent des thèmes d’interface utilisateur pour fournir une apparence et une convivialité cohérentes et des classes qui autorisent les interfaces utilisateur avec onglet. Ce guide explique comment ajouter des onglets Barre d’action à une application Xamarin. Android. Il explique également comment utiliser la bibliothèque de prise en charge Android v7 pour rétroporter les onglets barre aux applications Xamarin. Android ciblant Android 2,1 pour Android 2,3. 
 
-Notez que `Toolbar` est un composant de barre d’action plus récent et plus généralisé que vous devez utiliser à la place de `ActionBar` (`Toolbar` a été conçu pour remplacer `ActionBar`). Pour plus d’informations, consultez [Toolbar](~/android/user-interface/controls/tool-bar/index.md). 
+Notez que `Toolbar` est un composant de barre d’action plus récent et plus généralisé que vous devez utiliser à la place de `ActionBar` ( `Toolbar` a été conçu pour remplacer `ActionBar` ). Pour plus d’informations, consultez [Toolbar](~/android/user-interface/controls/tool-bar/index.md). 
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Configuration requise
 
 Toute application Xamarin. Android qui cible le niveau d’API 11 (Android 3,0) ou une version ultérieure a accès aux API barre dans le cadre des API Android natives. 
 
@@ -48,7 +48,7 @@ Chaque onglet de la barre d’action doit être associé à un [*fragment*](~/an
 
 - **OnTabUnselected** : cette méthode est appelée lorsque l’utilisateur sélectionne un autre onglet. Ce rappel est utilisé pour enregistrer l’État dans le fragment affiché avant qu’il ne se ferme.
 
-Xamarin. Android encapsule les `ActionBar.ITabListener` avec des événements sur la classe `ActionBar.Tab`. Les applications peuvent assigner des gestionnaires d’événements à un ou plusieurs de ces événements. Il existe trois événements (un pour chaque méthode dans `ActionBar.ITabListener`) qu’un onglet de barre d’action sera déclenché : 
+Xamarin. Android encapsule les `ActionBar.ITabListener` avec des événements sur la `ActionBar.Tab` classe. Les applications peuvent assigner des gestionnaires d’événements à un ou plusieurs de ces événements. Il existe trois événements (un pour chaque méthode dans `ActionBar.ITabListener` ) qu’un onglet de barre d’action sera déclenché : 
 
 - TabSelected
 - TabReselected
@@ -60,18 +60,18 @@ Le barre est natif pour Android 3,0 (niveau d’API 11) et supérieur et est dis
 
 Les étapes suivantes expliquent comment ajouter des onglets barre à une activité Android : 
 
-1. Dans la méthode `OnCreate` d’une activité &ndash; *avant d’initialiser des widgets d’interface utilisateur* &ndash; une application doit définir le `NavigationMode` de la `ActionBar` sur `ActionBar.NavigationModeTabs` comme indiqué dans cet extrait de code :
+1. Dans la `OnCreate` méthode d’une activité &ndash; *avant l’initialisation des widgets d’interface utilisateur* , &ndash; une application doit affecter à la valeur `NavigationMode` `ActionBar` `ActionBar.NavigationModeTabs` , comme indiqué dans cet extrait de code :
 
    ```csharp
    ActionBar.NavigationMode = ActionBarNavigationMode.Tabs;
    SetContentView(Resource.Layout.Main);
    ```
 
-2. Créez un nouvel onglet à l’aide de `ActionBar.NewTab()`.
+2. Créez un nouvel onglet à l’aide de `ActionBar.NewTab()` .
 
-3. Assignez des gestionnaires d’événements ou fournissez une implémentation de `ActionBar.ITabListener` personnalisée qui répondra aux événements déclenchés lorsque l’utilisateur interagit avec les onglets barre.
+3. Assignez des gestionnaires d’événements ou fournissez une `ActionBar.ITabListener` implémentation personnalisée qui répondra aux événements déclenchés lorsque l’utilisateur interagit avec les onglets barre.
 
-4. Ajoutez l’onglet créé à l’étape précédente à la `ActionBar`.
+4. Ajoutez l’onglet créé à l’étape précédente à `ActionBar` .
 
 Le code suivant est un exemple d’utilisation de ces étapes pour ajouter des onglets à une application qui utilise des gestionnaires d’événements pour répondre aux changements d’État : 
 
@@ -101,22 +101,22 @@ protected override void OnCreate(Bundle bundle)
 
 #### <a name="event-handlers-vs-actionbaritablistener"></a>Gestionnaires d’événements et barre. ITabListener
 
-Les applications doivent utiliser des gestionnaires d’événements et des `ActionBar.ITabListener` pour différents scénarios. Les gestionnaires d’événements offrent un certain niveau de commodité syntaxique. ils vous évitent d’avoir à créer une classe et à implémenter `ActionBar.ITabListener`. Cette solution est utile &ndash; Xamarin. Android effectue cette transformation pour vous, en créant une classe et en implémentant `ActionBar.ITabListener` pour vous. C’est parfait lorsqu’une application a un nombre limité d’onglets. 
+Les applications doivent utiliser des gestionnaires d’événements et `ActionBar.ITabListener` pour différents scénarios. Les gestionnaires d’événements offrent un certain niveau de commodité syntaxique. ils vous évitent d’avoir à créer une classe et à implémenter `ActionBar.ITabListener` . Cette facilité est &ndash; Xamarin. Android effectue cette transformation pour vous, en créant une classe et en implémentant `ActionBar.ITabListener` pour vous. C’est parfait lorsqu’une application a un nombre limité d’onglets. 
 
-Lors du traitement de nombreux onglets ou du partage des fonctionnalités communes entre les onglets de barre, il peut être plus efficace en termes de mémoire et de performances de créer une classe personnalisée qui implémente `ActionBar.ITabListener`et de partager une seule instance de la classe. Cela permet de réduire le nombre d’GREF qu’une application Xamarin. Android utilise. 
+Lorsque vous traitez un grand nombre d’onglets ou que vous partagez des fonctionnalités communes entre les onglets barre, il peut être plus efficace en termes de mémoire et de performances pour créer une classe personnalisée qui implémente `ActionBar.ITabListener` et partage une seule instance de la classe. Cela permet de réduire le nombre d’GREF qu’une application Xamarin. Android utilise. 
 
 ### <a name="backwards-compatibility-for-older-devices"></a>Compatibilité descendante pour les appareils plus anciens
 
 La [bibliothèque de prise en charge Android v7](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/) ports Back AppCompat barre onglets à Android 2,1 (niveau d’API 7). Les onglets sont accessibles dans une application Xamarin. Android une fois que ce composant a été ajouté au projet.
 
-Pour utiliser barre, une activité doit sous-classer `ActionBarActivity` et utiliser le thème AppCompat comme indiqué dans l’extrait de code suivant :
+Pour utiliser barre, une activité doit effectuer une sous-classe `ActionBarActivity` et utiliser le thème AppCompat comme indiqué dans l’extrait de code suivant :
 
 ```csharp
 [Activity(Label = "@string/app_name", Theme = "@style/Theme.AppCompat", MainLauncher = true, Icon = "@drawable/ic_launcher")]
 public class MainActivity: ActionBarActivity
 ```
 
-Une activité peut obtenir une référence à son barre à partir de la propriété `ActionBarActivity.SupportingActionBar`. L’extrait de code suivant illustre un exemple de configuration de barre dans une activité :
+Une activité peut obtenir une référence à son barre à partir de la `ActionBarActivity.SupportingActionBar` propriété. L’extrait de code suivant illustre un exemple de configuration de barre dans une activité :
 
 ```csharp
 [Activity(Label = "@string/app_name", Theme = "@style/Theme.AppCompat", MainLauncher = true, Icon = "@drawable/ic_launcher")]
@@ -160,13 +160,13 @@ public class MainActivity : ActionBarActivity, ActionBar.ITabListener
 }
 ```
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
-Dans ce guide, nous avons abordé la création d’une interface utilisateur avec onglets dans Xamarin. Android à l’aide de barre. Nous avons abordé l’ajout d’onglets au barre et la manière dont une activité peut interagir avec les événements de tabulation via l’interface `ActionBar.ITabListener`. Nous avons également vu comment le package de la bibliothèque de prise en charge Android v7 a utilisé les onglets barre dans les versions antérieures d’Android. 
+Dans ce guide, nous avons abordé la création d’une interface utilisateur avec onglets dans Xamarin. Android à l’aide de barre. Nous avons abordé l’ajout d’onglets au barre et la manière dont une activité peut interagir avec les événements de tabulation via l' `ActionBar.ITabListener` interface. Nous avons également vu comment le package de la bibliothèque de prise en charge Android v7 a utilisé les onglets barre dans les versions antérieures d’Android. 
 
 ## <a name="related-links"></a>Liens associés
 
-- [ActionBarTabs (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-actionbartabs)
+- [ActionBarTabs (exemple)](/samples/xamarin/monodroid-samples/userinterface-actionbartabs)
 - [Barre d’outils](~/android/user-interface/controls/tool-bar/index.md)
 - [Fragments](~/android/platform/fragments/index.md)
 - [ActionBar](https://developer.android.com/guide/topics/ui/actionbar.html)

@@ -7,18 +7,18 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 08/09/2018
-ms.openlocfilehash: 6180896002d19c51bce47bf53aaecdc11b0cae6e
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.openlocfilehash: fb29478791c97028ff4d62f97922c672f7a8b17b
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "78291760"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91457253"
 ---
 # <a name="xamarinandroid-edit-text"></a>Xamarin. Android-modifier le texte
 
 Dans cette section, vous allez utiliser le widget [EDITTEXT](xref:Android.Widget.EditText) pour créer un champ de texte pour l’entrée utilisateur. Une fois que le texte a été entré dans le champ, la touche **entrée** affiche le texte dans un message Toast.
 
-Ouvrez **Resources/layout/activity_main. AXML** et ajoutez l’élément [EDITTEXT](xref:Android.Widget.EditText) à une disposition contenante. L’exemple suivant **activity_main. AXML** a un `EditText` qui a été ajouté à un `LinearLayout`:
+Ouvrez **Resources/layout/activity_main. AXML** et ajoutez l’élément [EDITTEXT](xref:Android.Widget.EditText) à une disposition contenante. L’exemple suivant **activity_main. AXML** a un `EditText` qui a été ajouté à un `LinearLayout` :
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -35,8 +35,8 @@ Ouvrez **Resources/layout/activity_main. AXML** et ajoutez l’élément [EDITTE
 </LinearLayout>
 ```
 
-Dans cet exemple de code, l’attribut `EditText` `android:imeOptions` a la valeur `actionGo`. Ce paramètre remplace l’action [effectuée](https://developer.android.com/reference/android/view/inputmethod/EditorInfo#IME_ACTION_DONE) par défaut par l’action [atteindre](https://developer.android.com/reference/android/view/inputmethod/EditorInfo#IME_ACTION_GO) afin que le fait d’appuyer sur la touche **entrée** déclenche le gestionnaire d’entrée `KeyPress`.
-(En général, `actionGo` est utilisé pour que la touche **entrée** dirige l’utilisateur vers la cible d’une URL qui est tapée dans.)
+Dans cet exemple de code, l' `EditText` attribut `android:imeOptions` a la valeur `actionGo` . Ce paramètre remplace l’action [effectuée](https://developer.android.com/reference/android/view/inputmethod/EditorInfo#IME_ACTION_DONE) par défaut par l’action [atteindre](https://developer.android.com/reference/android/view/inputmethod/EditorInfo#IME_ACTION_GO) afin que le fait d’appuyer sur la touche **entrée** déclenche le `KeyPress` Gestionnaire d’entrée.
+(En général, `actionGo` est utilisé afin que la touche **entrée** dirige l’utilisateur vers la cible d’une URL qui est tapée dans.)
 
 Pour gérer l’entrée de texte de l’utilisateur, ajoutez le code suivant à la fin de la méthode [OnCreate](xref:Android.App.Activity.OnCreate*) dans **MainActivity.cs**:
 
@@ -52,7 +52,7 @@ edittext.KeyPress += (object sender, View.KeyEventArgs e) => {
 };
 ```
 
-En outre, ajoutez l’instruction `using` suivante au début de **MainActivity.cs** si elle n’est pas déjà présente :
+En outre, ajoutez l' `using` instruction suivante en haut de **MainActivity.cs** si elle n’est pas déjà présente :
 
 ```csharp
 using Android.Views;
@@ -62,10 +62,10 @@ Cet exemple de code montre l’élément [EDITTEXT](xref:Android.Widget.EditText
 
 Exécutez l’application et entrez du texte dans le champ de texte. Lorsque vous appuyez sur la touche **entrée** , le Toast s’affiche comme indiqué sur la droite :
 
-[![des exemples d’entrée de texte dans EditText](edit-text-images/edit-text-sml.png)](edit-text-images/edit-text.png#lightbox)
+[![Exemples d’entrée de texte dans EditText](edit-text-images/edit-text-sml.png)](edit-text-images/edit-text.png#lightbox)
 
 *Certaines parties de cette page sont des modifications basées sur le travail créé et partagé par le projet open source Android et utilisées conformément aux termes décrits dans la licence d'* [*attribution de Creative-2,5*](https://creativecommons.org/licenses/by/2.5/) *. Ce didacticiel est basé sur le didacticiel de* [*formulaire Android*](https://developer.android.com/resources/tutorials/views/hello-formstuff.html) *.*
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [EditTextSample](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-edittextsample)
+- [EditTextSample](/samples/xamarin/monodroid-samples/userinterface-edittextsample)

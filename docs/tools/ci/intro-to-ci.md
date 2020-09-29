@@ -6,12 +6,12 @@ ms.assetid: C034200E-2947-4309-9DDD-80DAC505C43F
 author: davidortinau
 ms.author: daortin
 ms.date: 07/19/2017
-ms.openlocfilehash: 21c8cba39031e133d96ed6a5ebeeab87f945af51
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 98606173913b57b7cf55f24c2581acbf82a587e3
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938252"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91457859"
 ---
 # <a name="introduction-to-continuous-integration-with-xamarin"></a>Présentation de l’intégration continue avec Xamarin
 
@@ -36,7 +36,7 @@ Le diagramme suivant illustre ce processus :
 
 Mobile Apps présente des défis uniques pour l’intégration continue. Les applications peuvent nécessiter des capteurs tels que le GPS ou l’appareil photo qui sont uniquement disponibles sur des appareils physiques. En outre, les simulateurs ou les émulateurs sont uniquement une approximation du matériel et peuvent masquer ou masquer les problèmes. En fin de compte, il est nécessaire de tester une application mobile sur du matériel réel pour être certain qu’elle est véritablement prête pour les clients.
 
-Le [test App Center](https://docs.microsoft.com/appcenter/test-cloud) résout ce problème en testant des applications directement sur des centaines d’appareils physiques. Les développeurs écrivent des tests d’acceptation automatisés, qui permettent un test puissant de l’interface utilisateur. Une fois ces tests téléchargés vers App Center, le serveur CI peut les exécuter automatiquement dans le cadre d’un processus CI, comme indiqué dans le diagramme suivant :
+Le [test App Center](/appcenter/test-cloud) résout ce problème en testant des applications directement sur des centaines d’appareils physiques. Les développeurs écrivent des tests d’acceptation automatisés, qui permettent un test puissant de l’interface utilisateur. Une fois ces tests téléchargés vers App Center, le serveur CI peut les exécuter automatiquement dans le cadre d’un processus CI, comme indiqué dans le diagramme suivant :
 
 [![Une fois ces tests téléchargés vers App Center, le serveur CI peut les exécuter automatiquement dans le cadre d’un processus CI, comme indiqué dans ce diagramme.](intro-to-ci-images/intro02-small.png)](intro-to-ci-images/intro02.png#lightbox)
 
@@ -55,13 +55,13 @@ Il existe un vaste écosystème d’outils commerciaux et open source conçus po
 
 TFS et Azure DevOps sont étroitement intégrés à Visual Studio et permettent aux développeurs d’effectuer de nombreuses tâches de contrôle de version et d’élément de configuration à partir d’un seul IDE. Le plug-in Team Explorer Everywhere pour Eclipse (voir ci-dessous) est également disponible. Visual Studio pour Mac propose [un aperçu des TFVC disponibles](/visualstudio/mac/tf-version-control/).
 
-Les [pipelines Azure DevOps](https://docs.microsoft.com/azure/devops/pipelines/languages/xamarin/) prennent en charge directement les projets Xamarin, dans lesquels vous créez une définition de build pour chaque plateforme que vous souhaitez cibler (Android, iOS et Windows). La licence Xamarin appropriée est nécessaire pour chaque définition de Build. Il est également possible de connecter un serveur de build TFS Xamarin local à Azure DevOps à cet effet. Avec cette configuration, les builds mises en file d’attente vers Azure DevOps sont déléguées au serveur local. Pour plus d’informations, consultez [agents de build et de mise en version](https://docs.microsoft.com/azure/devops/pipelines/agents/agents). Vous pouvez également utiliser un autre outil de génération comme Jenkins ou City Team.
+Les [pipelines Azure DevOps](/azure/devops/pipelines/languages/xamarin/) prennent en charge directement les projets Xamarin, dans lesquels vous créez une définition de build pour chaque plateforme que vous souhaitez cibler (Android, iOS et Windows). La licence Xamarin appropriée est nécessaire pour chaque définition de Build. Il est également possible de connecter un serveur de build TFS Xamarin local à Azure DevOps à cet effet. Avec cette configuration, les builds mises en file d’attente vers Azure DevOps sont déléguées au serveur local. Pour plus d’informations, consultez [agents de build et de mise en version](/azure/devops/pipelines/agents/agents). Vous pouvez également utiliser un autre outil de génération comme Jenkins ou City Team.
 
-Un résumé complet de toutes les fonctionnalités de Application Lifecycle Management (ALM) de Visual Studio, d’Azure DevOps et de Team Foundation Server, consultez [DevOps with Xamarin Apps](https://docs.microsoft.com/visualstudio/cross-platform/application-lifecycle-management-alm-with-xamarin-apps).
+Un résumé complet de toutes les fonctionnalités de Application Lifecycle Management (ALM) de Visual Studio, d’Azure DevOps et de Team Foundation Server, consultez [DevOps with Xamarin Apps](/visualstudio/cross-platform/application-lifecycle-management-alm-with-xamarin-apps).
 
 #### <a name="team-explorer-everywhere"></a>Team Explorer Everywhere
 
-[Team Explorer Everywhere](https://docs.microsoft.com/azure/devops/java/download-eclipse-plug-in/) apporte la puissance de Team Foundation Server et d’Azure DevOps aux équipes développant en dehors de Visual Studio. Il permet aux développeurs de se connecter à des projets d’équipe locaux ou dans le Cloud à partir d’Eclipse ou du client de ligne de commande multiplateforme pour OS X et Linux. Team Explorer Everywhere fournit un accès complet au contrôle de version (y compris git), des éléments de travail et des fonctionnalités de génération pour les plateformes non-Windows.
+[Team Explorer Everywhere](/azure/devops/java/download-eclipse-plug-in/) apporte la puissance de Team Foundation Server et d’Azure DevOps aux équipes développant en dehors de Visual Studio. Il permet aux développeurs de se connecter à des projets d’équipe locaux ou dans le Cloud à partir d’Eclipse ou du client de ligne de commande multiplateforme pour OS X et Linux. Team Explorer Everywhere fournit un accès complet au contrôle de version (y compris git), des éléments de travail et des fonctionnalités de génération pour les plateformes non-Windows.
 
 #### <a name="git"></a>Git
 
@@ -79,7 +79,7 @@ Les versions actuelles de Visual Studio pour Windows et Mac offrent une prise en
 
 La configuration d’un environnement d’intégration continue implique la combinaison d’un système de contrôle de version avec un service de Build.  Pour ce dernier, les deux types les plus courants sont les suivants :
 
-- [Azure pipelines](https://docs.microsoft.com/azure/devops/pipelines/) est le système de génération d’Azure DEVOPS et TFS. Il est étroitement intégré à Visual Studio, ce qui permet aux développeurs de déclencher des builds, d’exécuter automatiquement des tests et de voir les résultats.
+- [Azure pipelines](/azure/devops/pipelines/) est le système de génération d’Azure DEVOPS et TFS. Il est étroitement intégré à Visual Studio, ce qui permet aux développeurs de déclencher des builds, d’exécuter automatiquement des tests et de voir les résultats.
 - Jenkins est un serveur d’intégration open source avec un écosystème complet de plug-ins pour prendre en charge tous les types de développements logiciels. Il s’exécute sur Windows et Mac OS X. Jenkins n’est pas intégré à un IDE spécifique. Au lieu de cela, elle est configurée et gérée par le biais d’une interface Web. Jenkins CI est également facile à installer et à configurer, ce qui le rend attrayant pour les petites équipes.
 
 Vous pouvez utiliser TFS/Azure DevOps par lui-même, ou vous pouvez utiliser Jenkins en association avec TFS/Azure DevOps ou git, comme décrit dans les sections suivantes.
@@ -88,22 +88,22 @@ Vous pouvez utiliser TFS/Azure DevOps par lui-même, ou vous pouvez utiliser Jen
 
 Comme nous l’avons vu, Azure DevOps et Team Foundation Server fournissent à la fois le contrôle de version et les services de Build. Les services de build requièrent toujours une licence Xamarin Business ou Enterprise pour chaque plateforme cible.
 
-Avec Azure DevOps, vous créez une définition de build distincte pour chaque plateforme cible et entrez la licence appropriée. Une fois configuré, Azure DevOps exécute des builds et des tests dans le Cloud. Pour plus d’informations, consultez [Azure pipelines](https://docs.microsoft.com/azure/devops/pipelines/) .
+Avec Azure DevOps, vous créez une définition de build distincte pour chaque plateforme cible et entrez la licence appropriée. Une fois configuré, Azure DevOps exécute des builds et des tests dans le Cloud. Pour plus d’informations, consultez [Azure pipelines](/azure/devops/pipelines/) .
 
 Avec Team Foundation Server, vous configurez un ordinateur de build comme suit pour des plateformes cibles spécifiques :
 
-- **Android et Windows :** Installez Visual Studio et les outils Xamarin (pour Android et Windows) et configurez avec vos licences Xamarin. Il est également nécessaire de déplacer le Android SDK vers un emplacement partagé sur le serveur où l’agent de build TFS peut le trouver. Pour plus d’informations, consultez [configuration de TFVC](https://docs.microsoft.com/azure/devops/repos/tfvc/overview).
+- **Android et Windows :** Installez Visual Studio et les outils Xamarin (pour Android et Windows) et configurez avec vos licences Xamarin. Il est également nécessaire de déplacer le Android SDK vers un emplacement partagé sur le serveur où l’agent de build TFS peut le trouver. Pour plus d’informations, consultez [configuration de TFVC](/azure/devops/repos/tfvc/overview).
 - **iOS et Xamarin :** Installez Visual Studio et les outils Xamarin sur le serveur Windows avec la licence appropriée. Installez ensuite Visual Studio pour Mac sur un ordinateur Mac OS X accessible sur le réseau, qui servira d’hôte de build et créera le package d’application final (loi pour iOS, APP pour OS X).
 
 Le diagramme suivant illustre cette topographie :
 
 [![Ce diagramme illustre cette topographie](intro-to-ci-images/intro03-small.png)](intro-to-ci-images/intro03.png#lightbox)
 
-Il est également possible de lier un serveur TFS local à un projet Azure DevOps afin que les builds Azure DevOps soient déléguées au serveur local. Pour plus d’informations, consultez [agents de build et de mise en version](https://docs.microsoft.com/azure/devops/pipelines/agents/agents/).
+Il est également possible de lier un serveur TFS local à un projet Azure DevOps afin que les builds Azure DevOps soient déléguées au serveur local. Pour plus d’informations, consultez [agents de build et de mise en version](/azure/devops/pipelines/agents/agents/).
 
 #### <a name="azure-devops-and-jenkins"></a>Azure DevOps et Jenkins
 
-Si vous utilisez Jenkins pour générer vos applications, vous pouvez stocker votre code dans Azure DevOps ou Team Foundation Server et continuer à utiliser Jenkins pour vos builds d’intégration continue. Vous pouvez déclencher une build Jenkins quand vous envoyez du code au référentiel git de votre projet d’équipe ou lorsque vous archivez le code dans TFVC. Pour plus d’informations, consultez [Jenkins avec Azure DevOps](https://docs.microsoft.com/azure/devops/service-hooks/services/jenkins).
+Si vous utilisez Jenkins pour générer vos applications, vous pouvez stocker votre code dans Azure DevOps ou Team Foundation Server et continuer à utiliser Jenkins pour vos builds d’intégration continue. Vous pouvez déclencher une build Jenkins quand vous envoyez du code au référentiel git de votre projet d’équipe ou lorsque vous archivez le code dans TFVC. Pour plus d’informations, consultez [Jenkins avec Azure DevOps](/azure/devops/service-hooks/services/jenkins).
 
 [![Si vous utilisez Jenkins pour générer vos applications, vous pouvez stocker votre code dans Azure DevOps ou Team Foundation Server et continuer à utiliser Jenkins pour vos builds d’intégration continue](intro-to-ci-images/intro04-small.png)](intro-to-ci-images/intro04.png#lightbox)
 

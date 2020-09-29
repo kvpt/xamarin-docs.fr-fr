@@ -7,12 +7,12 @@ ms.custom: xamu-video
 author: davidortinau
 ms.author: daortin
 ms.date: 04/10/2017
-ms.openlocfilehash: bc7a5217f3260eb36e45a683b5520347c22641b0
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: da3148022f1280a18fd398e7c960c1a8440c0200
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73016381"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91456806"
 ---
 # <a name="building-mobile-apps"></a>Création d’applications mobiles
 
@@ -26,7 +26,7 @@ Avant de commencer, consultez la [configuration requise](requirements.md) et les
 Si vous souhaitez créer une application en utilisant des technologies d’interface utilisateur natives (comme Android XML ou Xcode Storyboards), essayez l’un de ces guides spécifiques à une plateforme :
 
 - [Démarrage rapide Android](~/android/get-started/hello-android/hello-android-quickstart.md)
-- [iOS Démarrage rapide](~/ios/get-started/hello-ios/hello-ios-quickstart.md)
+- [Démarrage rapide iOS](~/ios/get-started/hello-ios/hello-ios-quickstart.md)
 
 ## <a name="get-started-with-mobile-development"></a>Bien démarrer avec le développement mobile
 
@@ -44,7 +44,7 @@ Cet article décrit le cycle de vie du développement de logiciels pour les appl
 
 En choisissant Xamarin et en conservant à l’esprit quelques éléments quand vous concevez et développez vos applications mobiles, vous pouvez obtenir un partage de code considérable entre les plateformes mobiles, réduire le temps de commercialisation, tirer parti des compétences existantes, répondre à la demande des clients en matière d’accès mobile et réduire la complexité interplateforme. Ce document présente des recommandations de base afin de bénéficier de ces avantages pour les applications utilitaires et de productivité.
 
-### <a name="introducing-visual-studio-for-mac"></a>[Présentation de Visual Studio pour Mac](https://docs.microsoft.com/visualstudio/mac/)
+### <a name="introducing-visual-studio-for-mac"></a>[Présentation de Visual Studio pour Mac](/visualstudio/mac/)
 
 Découvrez Visual Studio pour Mac, l’environnement de développement intégré (IDE) pour macOS.
 
@@ -56,5 +56,5 @@ Découvrez Visual Studio pour Mac, l’environnement de développement intégré
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Exigences du système](requirements.md)
+- [Configuration requise](requirements.md)
 - [Instructions d’installation](~/get-started/installation/index.md)

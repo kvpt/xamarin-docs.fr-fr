@@ -6,18 +6,18 @@ ms.assetid: 63C7F5D2-8933-4D4A-8348-E9CBDA45C472
 author: davidortinau
 ms.author: daortin
 ms.date: 11/14/2017
-ms.openlocfilehash: 2f632e3218d817aa0162a63ea81c61ca18c52b93
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 7eccc83a28d0bac7b9ff15a46022942c7238c714
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73006770"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91457391"
 ---
 # <a name="net-embedding-best-practices-for-objective-c"></a>Méthodes recommandées pour l’incorporation .NET pour objective-C
 
 Il s’agit d’un brouillon qui peut ne pas être synchronisé avec les fonctionnalités actuellement prises en charge par l’outil. Nous espérons que ce document va évoluer séparément et qu’il correspond finalement à l’outil final. par conséquent, nous vous suggérons les meilleures approches à long terme : pas de solutions immédiates.
 
-Une grande partie de ce document s’applique également à d’autres langues prises en charge. Toutefois, tous les exemples fournis C# sont dans et objective-C.
+Une grande partie de ce document s’applique également à d’autres langues prises en charge. Toutefois, tous les exemples fournis sont en C# et objective-C.
 
 ## <a name="exposing-a-subset-of-the-managed-code"></a>Exposition d’un sous-ensemble du code managé
 
@@ -60,7 +60,7 @@ Person *p = [[Person alloc] initWithFirstName:@"Sebastien" lastName:@"Pouliot"];
 
 Étant donné que le nombre de transitions est plus faible, les performances seront meilleures. Il nécessite également moins de code à générer, ce qui produit une bibliothèque Native plus petite.
 
-## <a name="naming"></a>Attribution des noms
+## <a name="naming"></a>Dénomination
 
 L’attribution d’un nom à des choses est l’un des deux problèmes les plus difficiles en informatique, les autres étant des erreurs d’invalidation et de désactivation en fonction du 1. Espérons que l’incorporation .NET peut vous protéger de tout sauf en nommant.
 
@@ -101,15 +101,15 @@ Même les bons noms .NET peuvent ne pas être idéaux pour une API objective-C.
 Les conventions d’affectation de noms en Objective-C sont différentes de celles de .NET (casse mixte au lieu de la casse Pascal, plus détaillée).
 Veuillez lire les [instructions de codage pour le cacao](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CodingGuidelines/Articles/NamingMethods.html#//apple_ref/doc/uid/20001282-BCIGIJJF).
 
-Du point de vue du développeur objective-C, une méthode avec un préfixe `Get` implique que vous n’êtes pas propriétaire de l’instance, c’est-à-dire la [règle d’extraction](https://developer.apple.com/library/content/documentation/CoreFoundation/Conceptual/CFMemoryMgmt/Concepts/Ownership.html#//apple_ref/doc/uid/20001148-SW1).
+Du point de vue du développeur objective-C, une méthode avec un `Get` préfixe implique que vous n’êtes pas propriétaire de l’instance, c’est-à-dire la [règle d’extraction](https://developer.apple.com/library/content/documentation/CoreFoundation/Conceptual/CFMemoryMgmt/Concepts/Ownership.html#//apple_ref/doc/uid/20001148-SW1).
 
-Cette règle de nommage n’a pas de correspondance dans le monde de la GLOBALisation .NET. une méthode .NET avec un préfixe `Create` se comportera de la même manière dans .NET. Toutefois, pour les développeurs objective-C, cela signifie généralement que vous êtes propriétaire de l’instance retournée, c.-à-d. la [règle Create](https://developer.apple.com/library/content/documentation/CoreFoundation/Conceptual/CFMemoryMgmt/Concepts/Ownership.html#//apple_ref/doc/uid/20001148-103029).
+Cette règle de nommage n’a pas de correspondance dans le monde de la GLOBALisation .NET. une méthode .NET avec un `Create` préfixe se comportera de la même manière dans .net. Toutefois, pour les développeurs objective-C, cela signifie généralement que vous êtes propriétaire de l’instance retournée, c.-à-d. la [règle Create](https://developer.apple.com/library/content/documentation/CoreFoundation/Conceptual/CFMemoryMgmt/Concepts/Ownership.html#//apple_ref/doc/uid/20001148-103029).
 
 ## <a name="exceptions"></a>Exceptions
 
 Dans .NET, il est assez courant d’utiliser largement les exceptions pour signaler les erreurs. Toutefois, ils sont lents et ne sont pas tout à fait identiques en Objective-C. Dans la mesure du possible, vous devez les masquer dans le développeur objective-C.
 
-Par exemple, le modèle de `Try` .NET sera beaucoup plus facile à consommer à partir du code Objective-C :
+Par exemple, le `Try` modèle .net sera beaucoup plus facile à consommer à partir du code Objective-C :
 
 ```csharp
 public int Parse (string number)
@@ -131,14 +131,14 @@ public bool TryParse (string number, out int value)
 
 Dans .NET, un constructeur doit être correctement exécuté et retourner une instance valide (avec le plus de_chance_) ou lever une exception.
 
-En revanche, Objective-C permet à `init*` de retourner des `nil` lorsqu’une instance ne peut pas être créée. Il s’agit d’un modèle commun, mais pas général, utilisé dans de nombreuses infrastructures d’Apple. Dans d’autres cas, une `assert` peut se produire (et tuer le processus en cours).
+En revanche, Objective-C permet `init*` de retourner `nil` une valeur lorsqu’une instance ne peut pas être créée. Il s’agit d’un modèle commun, mais pas général, utilisé dans de nombreuses infrastructures d’Apple. Dans d’autres cas, une `assert` peut se produire (et tuer le processus en cours).
 
-Le générateur suit le même `return nil` modèle pour les méthodes de `init*` générées. Si une exception managée est levée, elle est imprimée (à l’aide de `NSLog`) et `nil` est retournée à l’appelant.
+Le générateur suit le même `return nil` modèle pour les `init*` méthodes générées. Si une exception managée est levée, elle est imprimée (à l’aide de `NSLog` ) et `nil` est retournée à l’appelant.
 
 ## <a name="operators"></a>Opérateurs
 
-Objective-C n’autorise pas les opérateurs à être surchargés, de sorte qu' C# ils sont convertis en sélecteurs de classe.
+Objective-C n’autorise pas les opérateurs à être surchargés au fur et à mesure de C#. ils sont donc convertis en sélecteurs de classe.
 
-Les méthodes nommées [« conviviales »](https://docs.microsoft.com/dotnet/standard/design-guidelines/operator-overloads) sont générées de préférence aux surcharges d’opérateur lorsqu’elles sont trouvées, et peuvent produire une API plus facile à consommer.
+Les méthodes nommées [« conviviales »](/dotnet/standard/design-guidelines/operator-overloads) sont générées de préférence aux surcharges d’opérateur lorsqu’elles sont trouvées, et peuvent produire une API plus facile à consommer.
 
-Les classes qui remplacent les opérateurs `==` et/ou `!=` doivent également remplacer la méthode Equals (Object) standard.
+Les classes qui remplacent les opérateurs `==` et/ou `!=` doivent remplacer également la méthode Equals (Object) standard.

@@ -6,60 +6,60 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 04/26/2018
-ms.openlocfilehash: 48b23a1dce66f13efd3ad598cd61684e64e2b03c
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 41b4bb25aa170abeb58a92058f4bfb8b78af35ad
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028900"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91457235"
 ---
 # <a name="customizing-a-listviews-appearance-with-xamarinandroid"></a>Personnalisation de l’apparence d’un ListView avec Xamarin. Android
 
-L’apparence d’un ListView est dictée par la disposition des lignes affichées. Pour modifier l’apparence d’un `ListView`, utilisez une disposition de ligne différente.
+L’apparence d’un ListView est dictée par la disposition des lignes affichées. Pour modifier l’apparence d’un `ListView` , utilisez une disposition de ligne différente.
 
 ## <a name="built-in-row-views"></a>Vues de lignes intégrées
 
 Il existe douze vues intégrées qui peuvent être référencées à l’aide d' **Android. Resource. Layout**:
 
-- **TestListItem** &ndash; une seule ligne de texte avec une mise en forme minimale.
+- **TestListItem** &ndash; Une seule ligne de texte avec une mise en forme minimale.
 
-- **SimpleListItem1** &ndash; une seule ligne de texte.
+- **SimpleListItem1** &ndash; Une seule ligne de texte.
 
-- **SimpleListItem2** &ndash; deux lignes de texte.
+- **SimpleListItem2** &ndash; Deux lignes de texte.
 
-- **SimpleSelectableListItem** &ndash; une seule ligne de texte qui prend en charge la sélection d’un ou de plusieurs éléments (ajouté au niveau de l’API 11).
+- **SimpleSelectableListItem** &ndash; Une seule ligne de texte qui prend en charge la sélection d’un ou de plusieurs éléments (ajouté au niveau de l’API 11).
 
-- **SimpleListItemActivated1** &ndash; similaire à SimpleListItem1, mais la couleur d’arrière-plan indique quand une ligne est sélectionnée (ajoutée au niveau de l’API 11).
+- **SimpleListItemActivated1** &ndash; Semblable à SimpleListItem1, mais la couleur d’arrière-plan indique qu’une ligne est sélectionnée (ajoutée au niveau de l’API 11).
 
-- **SimpleListItemActivated2** &ndash; similaire à SimpleListItem2, mais la couleur d’arrière-plan indique quand une ligne est sélectionnée (ajoutée au niveau de l’API 11).
+- **SimpleListItemActivated2** &ndash; Semblable à SimpleListItem2, mais la couleur d’arrière-plan indique qu’une ligne est sélectionnée (ajoutée au niveau de l’API 11).
 
-- **SimpleListItemChecked** &ndash; affiche des coches pour indiquer la sélection.
+- **SimpleListItemChecked** &ndash; Affiche des coches pour indiquer la sélection.
 
-- **SimpleListItemMultipleChoice** &ndash; affiche des cases à cocher pour indiquer une sélection à choix multiple.
+- **SimpleListItemMultipleChoice** &ndash; Affiche des cases à cocher pour indiquer une sélection à choix multiple.
 
-- **SimpleListItemSingleChoice** &ndash; affiche des cases d’option pour indiquer une sélection mutuellement exclusive.
+- **SimpleListItemSingleChoice** &ndash; Affiche des cases d’option pour indiquer une sélection mutuellement exclusive.
 
-- **TwoLineListItem** &ndash; deux lignes de texte.
+- **TwoLineListItem** &ndash; Deux lignes de texte.
 
-- **ActivityListItem** &ndash; une seule ligne de texte avec une image.
+- **ActivityListItem** &ndash; Une seule ligne de texte avec une image.
 
-- **SimpleExpandableListItem** &ndash; regroupe les lignes par catégories et chaque groupe peut être développé ou réduit.
+- **SimpleExpandableListItem** &ndash; Regroupe les lignes par catégories et chaque groupe peut être développé ou réduit.
 
 Chaque vue de ligne intégrée est associée à un style intégré. Ces captures d’écran montrent comment chaque vue s’affiche :
 
-[![captures d’écran de TestListItem, SimpleSelectableListItem, SimpleListitem1 et SimpleListItem2](customizing-appearance-images/builtinviews.png)](customizing-appearance-images/builtinviews.png#lightbox)
+[![Captures d’écran de TestListItem, SimpleSelectableListItem, SimpleListitem1 et SimpleListItem2](customizing-appearance-images/builtinviews.png)](customizing-appearance-images/builtinviews.png#lightbox)
 
-[![captures d’écran de SimpleListItemActivated1, SimpleListItemActivated2, SimpleListItemChecked et SimpleListItemMultipleChecked](customizing-appearance-images/builtinviews-2.png)](customizing-appearance-images/builtinviews-2.png#lightbox)
+[![Captures d’écran de SimpleListItemActivated1, SimpleListItemActivated2, SimpleListItemChecked et SimpleListItemMultipleChecked](customizing-appearance-images/builtinviews-2.png)](customizing-appearance-images/builtinviews-2.png#lightbox)
 
-[![captures d’écran de SimpleListItemSingleChoice, TwoLineListItem, ActivityListItem et SimpleExpandableListItem](customizing-appearance-images/builtinviews-3.png)](customizing-appearance-images/builtinviews-3.png#lightbox)
+[![Captures d’écran de SimpleListItemSingleChoice, TwoLineListItem, ActivityListItem et SimpleExpandableListItem](customizing-appearance-images/builtinviews-3.png)](customizing-appearance-images/builtinviews-3.png#lightbox)
 
-L’exemple de fichier **BuiltInViews/HomeScreenAdapter. cs** (dans la solution **BuiltInViews** ) contient le code permettant de générer les écrans d’éléments de liste non développables. La vue est définie dans la méthode `GetView` comme suit :
+L’exemple de fichier **BuiltInViews/HomeScreenAdapter. cs** (dans la solution **BuiltInViews** ) contient le code permettant de générer les écrans d’éléments de liste non développables. La vue est définie dans la `GetView` méthode comme suit :
 
 ```csharp
 view = context.LayoutInflater.Inflate(Android.Resource.Layout.SimpleListItem1, null);
 ```
 
-Les propriétés de la vue peuvent ensuite être définies en référençant les identificateurs de contrôle standard `Text1`, `Text2` et `Icon` sous `Android.Resource.Id` (ne définissez pas les propriétés que la vue ne contient pas ou une exception sera levée) :
+Les propriétés de la vue peuvent ensuite être définies en référençant les identificateurs de contrôle standard `Text1` , `Text2` et `Icon` sous `Android.Resource.Id` (ne pas définir les propriétés que la vue ne contient pas ou une exception sera levée) :
 
 ```csharp
 view.FindViewById<TextView>(Android.Resource.Id.Text1).Text = item.Heading;
@@ -67,33 +67,33 @@ view.FindViewById<TextView>(Android.Resource.Id.Text2).Text = item.SubHeading;
 view.FindViewById<ImageView>(Android.Resource.Id.Icon).SetImageResource(item.ImageResourceId); // only use with ActivityListItem
 ```
 
-L’exemple de fichier **BuiltInExpandableViews/ExpandableScreenAdapter. cs** (dans la solution **BuiltInViews** ) contient le code permettant de générer l’écran SimpleExpandableListItem. La vue de groupe est définie dans la méthode `GetGroupView` comme suit :
+L’exemple de fichier **BuiltInExpandableViews/ExpandableScreenAdapter. cs** (dans la solution **BuiltInViews** ) contient le code permettant de générer l’écran SimpleExpandableListItem. La vue de groupe est définie dans la `GetGroupView` méthode comme suit :
 
 ```csharp
 view = context.LayoutInflater.Inflate(Android.Resource.Layout.SimpleExpandableListItem1, null);
 ```
 
-La vue enfant est définie dans la méthode `GetChildView` comme suit :
+La vue enfant est définie dans la `GetChildView` méthode comme suit :
 
 ```csharp
 view = context.LayoutInflater.Inflate(Android.Resource.Layout.SimpleExpandableListItem2, null);
 ```
 
-Les propriétés de la vue de groupe et de la vue enfant peuvent ensuite être définies en référençant les identificateurs de contrôle `Text1` et `Text2` standard, comme indiqué ci-dessus. La capture d’écran SimpleExpandableListItem (illustrée ci-dessus) fournit un exemple de vue de groupe d’une ligne (SimpleExpandableListItem1) et d’une vue enfant de deux lignes (SimpleExpandableListItem2). La vue de groupe peut également être configurée pour deux lignes (SimpleExpandableListItem2) et la vue enfant peut être configurée pour une seule ligne (SimpleExpandableListItem1), ou les deux affichages groupe et enfant peuvent avoir le même nombre de lignes. 
+Les propriétés de la vue de groupe et de la vue enfant peuvent ensuite être définies en référençant les `Text1` identificateurs standard et de `Text2` contrôle comme indiqué ci-dessus. La capture d’écran SimpleExpandableListItem (illustrée ci-dessus) fournit un exemple de vue de groupe d’une ligne (SimpleExpandableListItem1) et d’une vue enfant de deux lignes (SimpleExpandableListItem2). La vue de groupe peut également être configurée pour deux lignes (SimpleExpandableListItem2) et la vue enfant peut être configurée pour une seule ligne (SimpleExpandableListItem1), ou les deux affichages groupe et enfant peuvent avoir le même nombre de lignes. 
 
-## <a name="accessories"></a>Automobiles
+## <a name="accessories"></a>Accessories
 
 Les lignes peuvent avoir des accessoires ajoutés à droite de la vue pour indiquer l’état de sélection :
 
-- **SimpleListItemChecked** &ndash; crée une liste à sélection unique avec un contrôle en tant qu’indicateur.
+- **SimpleListItemChecked** &ndash; Crée une liste à sélection unique avec un contrôle en tant qu’indicateur.
 
-- **SimpleListItemSingleChoice** &ndash; crée des listes de types de boutons radio où un seul choix est possible.
+- **SimpleListItemSingleChoice** &ndash; Crée des listes de types de boutons radio où un seul choix est possible.
 
-- **SimpleListItemMultipleChoice** &ndash; crée des listes de types de cases à cocher où plusieurs choix sont possibles.
+- **SimpleListItemMultipleChoice** &ndash; Crée des listes de types de cases à cocher là où plusieurs choix sont possibles.
 
 Les accessoires susmentionnés sont illustrés dans les écrans suivants, dans leur ordre respectif :
 
-[Captures d’écran ![de SimpleListItemChecked, SimpleListItemSingleChoice et SimpleListItemMultipleChoice avec accessoires](customizing-appearance-images/accessories.png)](customizing-appearance-images/accessories.png#lightbox)
+[![Captures d’écran de SimpleListItemChecked, SimpleListItemSingleChoice et SimpleListItemMultipleChoice avec accessoires](customizing-appearance-images/accessories.png)](customizing-appearance-images/accessories.png#lightbox)
 
 Pour afficher l’un de ces accessoires, transmettez l’ID de ressource de disposition requis à l’adaptateur, puis définissez manuellement l’état de sélection pour les lignes requises. Cette ligne de code montre comment créer et assigner un `Adapter` à l’aide de l’une de ces dispositions :
 
@@ -101,13 +101,13 @@ Pour afficher l’un de ces accessoires, transmettez l’ID de ressource de disp
 ListAdapter = new ArrayAdapter<String>(this, Android.Resource.Layout.SimpleListItemChecked, items);
 ```
 
-Le `ListView` lui-même prend en charge différents modes de sélection, quel que soit l’accessoire affiché. Pour éviter toute confusion, utilisez `Single` mode de sélection avec `SingleChoice` accessoires et le mode de `Checked` ou de `Multiple` avec le style `MultipleChoice`. Le mode de sélection est contrôlé par la propriété `ChoiceMode` du `ListView`.
+Le `ListView` lui-même prend en charge différents modes de sélection, quel que soit l’accessoire affiché. Pour éviter toute confusion, utilisez `Single` le mode de sélection avec `SingleChoice` accessoires et le `Checked` `Multiple` mode ou avec le `MultipleChoice` style. Le mode de sélection est contrôlé par la `ChoiceMode` propriété de `ListView` .
 
 ### <a name="handling-api-level"></a>Gestion du niveau de l’API
 
 Les versions antérieures de Xamarin. Android implémentaient des énumérations en tant que propriétés entières. La dernière version a introduit des types d’énumération .NET appropriés, ce qui facilite grandement la détection des options potentielles.
 
-En fonction du niveau d’API que vous ciblez, `ChoiceMode` est un entier ou une énumération. L’exemple de fichier **AccessoryViews/homescreen. cs** comporte un bloc commenté si vous souhaitez cibler l’API Gingerbread :
+Selon le niveau d’API que vous ciblez, `ChoiceMode` est soit un entier, soit une énumération. L’exemple de fichier **AccessoryViews/homescreen. cs** comporte un bloc commenté si vous souhaitez cibler l’API Gingerbread :
 
 ```csharp
 // For targeting Gingerbread the ChoiceMode is an int, otherwise it is an
@@ -128,20 +128,20 @@ lv.ChoiceMode = 1; // Single
 
 ### <a name="selecting-items-programmatically"></a>Sélection d’éléments par programmation
 
-La définition manuelle des éléments sélectionnés est effectuée à l’aide de la méthode `SetItemChecked` (elle peut être appelée plusieurs fois pour une sélection multiple) :
+La définition manuelle des éléments sélectionnés est effectuée à l’aide de la `SetItemChecked` méthode (elle peut être appelée plusieurs fois pour une sélection multiple) :
 
 ```csharp
 // Set the initially checked row ("Fruits")
 lv.SetItemChecked(1, true);
 ```
 
-Le code doit également détecter des sélections uniques différemment de plusieurs sélections. Pour déterminer la ligne qui a été sélectionnée en mode `Single` utilisez la propriété `CheckedItemPosition` entier :
+Le code doit également détecter des sélections uniques différemment de plusieurs sélections. Pour déterminer la ligne qui a été sélectionnée en `Single` mode, utilisez la `CheckedItemPosition` propriété Integer :
 
 ```csharp
 FindViewById<ListView>(Android.Resource.Id.List).CheckedItemPosition
 ```
 
-Pour déterminer les lignes qui ont été sélectionnées en mode `Multiple`, vous devez parcourir le `SparseBooleanArray``CheckedItemPositions`. Un tableau fragmenté est comme un dictionnaire qui contient uniquement des entrées pour lesquelles la valeur a été modifiée. vous devez donc traverser le tableau entier pour rechercher `true` valeurs qui ont été sélectionnées dans la liste, comme illustré dans l’extrait de code suivant :
+Pour déterminer les lignes qui ont été sélectionnées en `Multiple` mode, vous devez effectuer une boucle dans `CheckedItemPositions` `SparseBooleanArray` . Un tableau fragmenté est comme un dictionnaire qui contient uniquement des entrées pour lesquelles la valeur a été modifiée. vous devez donc traverser l’intégralité du tableau à la recherche de `true` valeurs pour savoir ce qui a été sélectionné dans la liste, comme illustré dans l’extrait de code suivant :
 
 ```csharp
 var sparseArray = FindViewById<ListView>(Android.Resource.Id.List).CheckedItemPositions;
@@ -158,23 +158,23 @@ Les quatre vues de lignes intégrées sont très simples. Pour afficher des disp
 
 Cet exemple diffère des exemples précédents de plusieurs façons :
 
-- Hérite de `Activity`, et non `ListActivity`. Vous pouvez personnaliser des lignes pour n’importe quel `ListView`, mais d’autres contrôles peuvent également être inclus dans une disposition `Activity` (comme un en-tête, des boutons ou d’autres éléments d’interface utilisateur). Cet exemple ajoute un titre au-dessus de la `ListView` à illustrer.
+- Hérite de `Activity` , et non de `ListActivity` . Vous pouvez personnaliser des lignes pour tout `ListView` , mais d’autres contrôles peuvent également être inclus dans une `Activity` disposition (par exemple, un en-tête, des boutons ou d’autres éléments d’interface utilisateur). Cet exemple ajoute un en-tête au-dessus du `ListView` à illustrer.
 
-- Requiert un fichier de disposition AXML pour l’écran ; dans les exemples précédents, le `ListActivity` ne nécessite pas de fichier de disposition. Ce AXML contient une déclaration de contrôle `ListView`.
+- Requiert un fichier de disposition AXML pour l’écran ; dans les exemples précédents, le `ListActivity` ne requiert pas de fichier de disposition. Ce AXML contient une `ListView` déclaration de contrôle.
 
 - Requiert un fichier de disposition AXML pour afficher chaque ligne. Ce fichier AXML contient les contrôles texte et image avec des paramètres de couleur et de police personnalisés.
 
 - Utilise un fichier XML de sélecteur personnalisé facultatif pour définir l’apparence de la ligne lorsqu’elle est sélectionnée.
 
-- L’implémentation de `Adapter` retourne une disposition personnalisée à partir de la substitution `GetView`.
+- L' `Adapter` implémentation retourne une disposition personnalisée à partir du  `GetView` remplacement.
 
-- `ItemClick` doit être déclaré différemment (un gestionnaire d’événements est attaché à `ListView.ItemClick` plutôt qu’à un `OnListItemClick` de substitution dans `ListActivity`).
+- `ItemClick` doit être déclaré différemment (un gestionnaire d’événements est attaché à `ListView.ItemClick` plutôt qu’à une substitution  `OnListItemClick` dans `ListActivity` ).
 
 Ces modifications sont détaillées ci-dessous, en commençant par la création de l’affichage de l’activité et de la vue de ligne personnalisée, puis en couvrant les modifications apportées à l’adaptateur et à l’activité pour les afficher.
 
 ### <a name="adding-a-listview-to-an-activity-layout"></a>Ajout d’un ListView à une disposition d’activité
 
-Étant donné que `HomeScreen` n’hérite plus de `ListActivity` il n’a pas d’affichage par défaut, un fichier AXML de mise en page doit être créé pour l’affichage du HomeScreen. Pour cet exemple, la vue aura un titre (à l’aide d’un `TextView`) et un `ListView` pour afficher les données. La disposition est définie dans le fichier **Resources/layout/homescreen. AXML,** qui est indiqué ici :
+Étant donné qu' `HomeScreen` il n’hérite plus de `ListActivity` ce mode par défaut, un fichier de mise en page AXML doit être créé pour l’affichage du homescreen. Pour cet exemple, la vue aura un en-tête (à l’aide de `TextView` ) et un `ListView` pour afficher les données. La disposition est définie dans le fichier **Resources/layout/homescreen. AXML,** qui est indiqué ici :
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -200,7 +200,7 @@ Ces modifications sont détaillées ci-dessous, en commençant par la création 
 </LinearLayout>
 ```
 
-L’avantage de l’utilisation d’un `Activity` avec une disposition personnalisée (au lieu d’un `ListActivity`) consiste à pouvoir ajouter des contrôles supplémentaires à l’écran, tels que l’en-tête `TextView` dans cet exemple.
+L’avantage de l’utilisation d’un `Activity` avec une disposition personnalisée (au lieu d’un) consiste à `ListActivity` pouvoir ajouter des contrôles supplémentaires à l’écran, tels que l’en-tête `TextView` de cet exemple.
 
 ### <a name="creating-a-custom-row-layout"></a>Création d’une disposition de ligne personnalisée
 
@@ -249,7 +249,7 @@ Alors qu’une disposition de ligne personnalisée peut contenir de nombreux con
 
 ### <a name="referencing-a-custom-row-view"></a>Référencement d’une vue de ligne personnalisée
 
-L’implémentation de l’exemple d’adaptateur personnalisé est en `HomeScreenAdapter.cs`. La méthode clé est `GetView` où elle charge le AXML personnalisé à l’aide de l’ID de ressource `Resource.Layout.CustomView`, puis définit les propriétés sur chacun des contrôles de la vue avant de la retourner. La classe d’adaptateur complète est illustrée ci-dessous :
+L’implémentation de l’exemple d’adaptateur personnalisé est dans `HomeScreenAdapter.cs` . La méthode clé est l' `GetView` emplacement où elle charge le AXML personnalisé à l’aide de l’ID de ressource `Resource.Layout.CustomView` , puis définit les propriétés sur chacun des contrôles de la vue avant de la retourner. La classe d’adaptateur complète est illustrée ci-dessous :
 
 ```csharp
 public class HomeScreenAdapter : BaseAdapter<TableItem> {
@@ -289,13 +289,13 @@ public class HomeScreenAdapter : BaseAdapter<TableItem> {
 
 ### <a name="referencing-the-custom-listview-in-the-activity"></a>Référencement du ListView personnalisé dans l’activité
 
-Étant donné que la classe `HomeScreen` hérite désormais de `Activity`, un champ `ListView` est déclaré dans la classe pour contenir une référence au contrôle déclaré dans AXML :
+Étant donné que la `HomeScreen` classe hérite désormais de `Activity` , un `ListView` champ est déclaré dans la classe pour contenir une référence au contrôle déclaré dans AXML :
 
 ```csharp
 ListView listView;
 ```
 
-La classe doit ensuite charger le AXML de disposition personnalisé de l’activité à l’aide de la méthode `SetContentView`. Il peut alors trouver le contrôle de `ListView` dans la disposition, puis crée et assigne l’adaptateur et assigne le gestionnaire de clics. Le code de la méthode OnCreate est illustré ici :
+La classe doit ensuite charger le AXML de disposition personnalisé de l’activité à l’aide de la `SetContentView` méthode. Il peut alors trouver le `ListView` contrôle dans la disposition, puis crée et assigne l’adaptateur et assigne le gestionnaire de clics. Le code de la méthode OnCreate est illustré ici :
 
 ```csharp
 SetContentView(Resource.Layout.HomeScreen); // loads the HomeScreen.axml as this activity's view
@@ -306,7 +306,7 @@ listView.Adapter = new HomeScreenAdapter(this, tableItems);
 listView.ItemClick += OnListItemClick;  // to be defined
 ```
 
-Enfin, le gestionnaire de `ItemClick` doit être défini ; dans ce cas, il affiche simplement un message de `Toast` :
+Enfin `ItemClick` , le gestionnaire doit être défini. dans ce cas, il affiche simplement un `Toast` message :
 
 ```csharp
 void OnListItemClick(object sender, AdapterView.ItemClickEventArgs e)
@@ -319,7 +319,7 @@ void OnListItemClick(object sender, AdapterView.ItemClickEventArgs e)
 
 L’écran résultant ressemble à ceci :
 
-[Capture d’écran ![de l’CustomRowView résultant](customizing-appearance-images/customrowview.png)](customizing-appearance-images/customrowview.png#lightbox)
+[![Capture d’écran de l’CustomRowView résultant](customizing-appearance-images/customrowview.png)](customizing-appearance-images/customrowview.png#lightbox)
 
 ### <a name="customizing-the-row-selector-color"></a>Personnalisation de la couleur du sélecteur de lignes
 
@@ -329,7 +329,7 @@ Lorsqu’une ligne est touchée, elle doit être mise en surbrillance pour les c
 android:background="#FFDAFF7F"
 ```
 
-Pour réactiver le comportement de mise en surbrillance, ainsi que pour personnaliser la couleur utilisée, affectez à l’attribut background un sélecteur personnalisé à la place. Le sélecteur déclare la couleur d’arrière-plan par défaut ainsi que la couleur de surbrillance. Le fichier **Resources/Drawable/CustomSelector. xml** contient la déclaration suivante :
+Pour réactiver le comportement de mise en surbrillance, ainsi que pour personnaliser la couleur utilisée, affectez à l’attribut background un sélecteur personnalisé à la place. Le sélecteur déclare la couleur d’arrière-plan par défaut ainsi que la couleur de surbrillance. Le fichier **Resources/Drawable/CustomSelector.xml** contient la déclaration suivante :
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -357,16 +357,16 @@ Pour référencer le sélecteur personnalisé, remplacez l’attribut d’arriè
 android:background="@drawable/CustomSelector"
 ```
 
-Une ligne sélectionnée et le message de `Toast` correspondant se présente désormais comme suit :
+Une ligne sélectionnée et le message correspondant se `Toast` présente désormais comme suit :
 
-[![une ligne sélectionnée en orange, avec un message Toast affichant le nom de la ligne sélectionnée](customizing-appearance-images/customselectcolor.png)](customizing-appearance-images/customselectcolor.png#lightbox)
+[![Une ligne sélectionnée en orange, avec un message Toast affichant le nom de la ligne sélectionnée](customizing-appearance-images/customselectcolor.png)](customizing-appearance-images/customselectcolor.png#lightbox)
 
 ### <a name="preventing-flickering-on-custom-layouts"></a>Empêcher le scintillement sur les dispositions personnalisées
 
-Android tente d’améliorer les performances de `ListView` le défilement en mettant en cache les informations de disposition. Si vous avez des listes de données à défilement long, vous devez également définir la propriété `android:cacheColorHint` sur la déclaration `ListView` dans la définition AXML de l’activité (sur la même valeur de couleur que l’arrière-plan de votre disposition de ligne personnalisée). Si cet indicateur n’est pas inclus, l’utilisateur fait défiler une liste avec les couleurs d’arrière-plan des lignes personnalisées.
+Android tente d’améliorer les performances de `ListView` défilement en mettant en cache les informations de disposition. Si vous avez des listes de données à défilement long, vous devez également définir la `android:cacheColorHint` propriété sur la `ListView` déclaration dans la définition AXML de l’activité (sur la même valeur de couleur que l’arrière-plan de votre disposition de ligne personnalisée). Si cet indicateur n’est pas inclus, l’utilisateur fait défiler une liste avec les couleurs d’arrière-plan des lignes personnalisées.
 
 ## <a name="related-links"></a>Liens associés
 
-- [BuiltInViews (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/builtinviews)
-- [AccessoryViews (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/accessoryviews)
-- [CustomRowView (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/customrowview)
+- [BuiltInViews (exemple)](/samples/xamarin/monodroid-samples/builtinviews)
+- [AccessoryViews (exemple)](/samples/xamarin/monodroid-samples/accessoryviews)
+- [CustomRowView (exemple)](/samples/xamarin/monodroid-samples/customrowview)

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2018
-ms.openlocfilehash: 395f7c477f1f2bdb608aec918f877f6d320d75cc
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.openlocfilehash: 1b7202a199315bf0be1664bf34725c26d12a66c8
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "78292494"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91458072"
 ---
 # <a name="user-profile"></a>Profil utilisateur
 
@@ -45,12 +45,12 @@ if (cursor != null)
 }
 ```
 
-À compter d’Android 4 (niveau d’API 14), la classe [ContactsContact. Profile](xref:Android.Provider.ContactsContract.Profile) est disponible via le fournisseur `ContactsContract`. L' `ContactsContact.Profile` fournit l’accès au profil personnel pour le propriétaire d’un appareil, y compris les données de contact, telles que le nom et le numéro de téléphone du propriétaire de l’appareil.
+À compter d’Android 4 (niveau d’API 14), la classe [ContactsContact. Profile](xref:Android.Provider.ContactsContract.Profile) est disponible via le `ContactsContract` fournisseur. Le `ContactsContact.Profile` fournit l’accès au profil personnel pour le propriétaire d’un appareil, y compris les données de contact, telles que le nom et le numéro de téléphone du propriétaire de l’appareil.
 
 ## <a name="required-permissions"></a>Autorisations requises
 
-Pour lire et écrire des données de contact, les applications doivent demander les autorisations `READ_CONTACTS` et `WRITE_CONTACTS`, respectivement.
-En outre, pour lire et modifier le profil utilisateur, les applications doivent demander les autorisations `READ_PROFILE` et `WRITE_PROFILE`.
+Pour lire et écrire des données de contact, les applications doivent demander les `READ_CONTACTS` `WRITE_CONTACTS` autorisations et, respectivement.
+En outre, pour lire et modifier le profil utilisateur, les applications doivent demander `READ_PROFILE` les `WRITE_PROFILE` autorisations et.
 
 ## <a name="updating-profile-data"></a>Mise à jour des données de profil
 
@@ -90,7 +90,7 @@ if (cursor != null)
 
 ## <a name="navigating-to-the-user-profile"></a>Navigation vers le profil utilisateur
 
-Enfin, pour accéder au profil utilisateur, créez une intention avec une action `ActionView` et un `ContactsContract.Profile.ContentUri` puis passez-la à la méthode `StartActivity` comme suit :
+Enfin, pour accéder au profil utilisateur, créez une intention avec une `ActionView` action et un, `ContactsContract.Profile.ContentUri` puis passez-la à la `StartActivity` méthode comme suit :
 
 ```csharp
 var intent = new Intent (Intent.ActionView,
@@ -100,10 +100,10 @@ StartActivity (intent);
 
 Quand vous exécutez le code ci-dessus, le profil utilisateur s’affiche comme illustré dans la capture d’écran suivante :
 
-[Capture d’écran ![du profil affichant le profil utilisateur John Doe](user-profile-images/01-profile-screen-sml.png)](user-profile-images/01-profile-screen.png#lightbox)
+[![Capture d’écran du profil affichant le profil utilisateur John Doe](user-profile-images/01-profile-screen-sml.png)](user-profile-images/01-profile-screen.png#lightbox)
 
 L’utilisation du profil utilisateur est similaire à l’interaction avec d’autres données dans Android, et offre un niveau supplémentaire de personnalisation de l’appareil.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [ContactsProviderDemo (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/contactsproviderdemo)
+- [ContactsProviderDemo (exemple)](/samples/xamarin/monodroid-samples/contactsproviderdemo)

@@ -6,18 +6,18 @@ ms.assetid: f264c632-8feb-4015-a5e5-cb9c681c787d
 author: davidortinau
 ms.author: daortin
 ms.date: 04/24/2019
-ms.openlocfilehash: 594f7584e914b7bd8f4d7b72b3c82c42bb2fb73e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 8ccf96e266f9d5eae69a178cfcad3d1e48fb6962
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73014570"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91457526"
 ---
 # <a name="visual-basic-and-net-standard"></a>Visual Basic et .NET Standard
 
 Les projets Xamarin Android et iOS ne prennent pas en charge en mode natif Visual Basic ; Toutefois, les développeurs peuvent utiliser des bibliothèques de [.NET standard](~/cross-platform/app-fundamentals/net-standard.md) pour migrer du code Visual Basic existant vers Android et iOS, ou écrire une partie importante de leur logique d’application dans Visual Basic. Les applications Xamarin. Forms peuvent être créées entièrement dans Visual Basic (à l’exception des convertisseurs personnalisés, des services de dépendance et du code-behind XAML).
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Configuration requise
 
 Pour créer et compiler des bibliothèques de .NET Standard Visual Basic vous devez utiliser Visual Studio sur Windows (Visual Studio 2017 ou version ultérieure).
 
@@ -39,17 +39,17 @@ Quand vous ajoutez une bibliothèque de .NET Standard Visual Basic dans Visual S
 
 2. Tapez **Visual Basic bibliothèque** pour filtrer les options du projet et choisissez l’option **bibliothèque de classes (.NET standard)** avec l’icône Visual Basic :
 
-    [Filtre de![pour la bibliothèque de Visual Basic](xamarin-forms-images/06-sml.png)](xamarin-forms-images/06.png#lightbox)
+    [![Filtre pour la bibliothèque de Visual Basic](xamarin-forms-images/06-sml.png)](xamarin-forms-images/06.png#lightbox)
 
 3. Dans l’écran suivant, tapez un nom pour le projet et appuyez sur **créer**.
 
-4. Le projet Visual Basic s’affiche comme indiqué dans le **Explorateur de solutions** comme suit :
+4. Le projet Visual Basic s’affiche comme indiqué dans le  **Explorateur de solutions** comme suit :
 
-    [![projet Visual Basic vide](images/new-library-sml.png)](images/new-library.png#lightbox)
+    [![Projet de Visual Basic vide](images/new-library-sml.png)](images/new-library.png#lightbox)
 
 Le projet est maintenant prêt pour l’ajout de code Visual Basic. Les projets .NET Standard peuvent être référencés par d’autres projets (projets d’application ou projets de bibliothèque).
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article a montré comment utiliser Visual Basic code dans les applications Xamarin à l’aide de Visual Studio. Même si Xamarin ne prend pas en charge directement Visual Basic, la compilation des Visual Basic dans une bibliothèque de .NET Standard permet d’inclure du code écrit avec Visual Basic dans des applications Android et iOS.
 
@@ -60,7 +60,7 @@ Les pages suivantes décrivent comment utiliser les bibliothèques Visual Basic.
 
 ## <a name="related-links"></a>Liens associés
 
-- [TaskyVB (exemple)](https://docs.microsoft.com/samples/xamarin/mobile-samples/visualbasic-taskyvb/)
-- [XamarinFormsVB (exemple)](https://docs.microsoft.com/samples/xamarin/mobile-samples/visualbasic-xamarinformsvb/)
+- [TaskyVB (exemple)](/samples/xamarin/mobile-samples/visualbasic-taskyvb/)
+- [XamarinFormsVB (exemple)](/samples/xamarin/mobile-samples/visualbasic-xamarinformsvb/)
 - [.NET Standard et Xamarin](~/cross-platform/app-fundamentals/net-standard.md)
 - [.NET Standard](/dotnet/standard/net-standard/)

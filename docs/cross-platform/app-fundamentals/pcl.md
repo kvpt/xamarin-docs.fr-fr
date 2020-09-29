@@ -6,12 +6,12 @@ ms.assetid: 76ba8f7a-9b6e-40f5-9a29-ff1274ece4f2
 author: davidortinau
 ms.author: daortin
 ms.date: 07/18/2018
-ms.openlocfilehash: 63ef7045051f21259e01c36fc5f702585b04a57b
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: a1672937b8c7c0ce429b82aee34ecf45aa59d4c8
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86934360"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91457417"
 ---
 # <a name="portable-class-libraries-pcl"></a>Bibliothèques de classes portables (PCL)
 
@@ -37,11 +37,11 @@ Toutefois, lorsque vous créez une bibliothèque de classes portable, vous pouve
 
 Le tableau ci-dessous présente certaines des fonctionnalités qui varient en fonction de la plateforme .NET. Pour écrire un assembly PCL dont l’exécution est garantie sur des appareils/plateformes spécifiques, vous choisissez simplement la prise en charge requise lorsque vous créez le projet.
 
-|Fonctionnalité|.NET Framework|Applications UWP|Silverlight|Windows Phone|Xamarin|
+|Caractéristique|.NET Framework|Applications UWP|Silverlight|Windows Phone|Xamarin|
 |---|---|---|---|---|---|
 |Core|O|O|O|O|O|
 |LINQ|O|O|O|O|O|
-|IQueryable|O|O|O|7,5 +|Y|
+|IQueryable|O|O|O|7,5 +|O|
 |Sérialisation|O|O|O|O|O|
 |Annotations de données|4.0.3 +|O|O||O|
 
@@ -54,7 +54,7 @@ Cela comprend les profils qui sont des combinaisons de :
 - Windows Phone 8
 - Applications UWP
 
-Pour en savoir plus sur les différentes fonctionnalités de profil sur le [site Web de Microsoft](https://msdn.microsoft.com/library/gg597391(v=vs.110).aspx) , consultez le [Résumé du profil PCL](https://portablelibraryprofiles.stephencleary.com/) d’un autre membre de la Communauté, qui comprend des informations sur le Framework prises en charge et d’autres remarques.
+Pour en savoir plus sur les différentes fonctionnalités de profil sur le [site Web de Microsoft](/dotnet/standard/cross-platform/cross-platform-development-with-the-portable-class-library) , consultez le [Résumé du profil PCL](https://portablelibraryprofiles.stephencleary.com/) d’un autre membre de la Communauté, qui comprend des informations sur le Framework prises en charge et d’autres remarques.
 
 **Avantages**
 
@@ -198,7 +198,7 @@ La méthode PCL est ainsi idéale pour envoyer des composants et des bibliothèq
 
 ## <a name="pcl-example"></a>Exemple PCL
 
-L’exemple d’application [TaskyPortable](https://docs.microsoft.com/samples/xamarin/mobile-samples/taskyportable/) montre comment une bibliothèque de classes portable peut être utilisée avec Xamarin.
+L’exemple d’application [TaskyPortable](/samples/xamarin/mobile-samples/taskyportable/) montre comment une bibliothèque de classes portable peut être utilisée avec Xamarin.
 Voici quelques captures d’écran des applications qui s’exécutent sur iOS et Android :
 
 [![Voici quelques captures d’écran des applications qui s’exécutent sur iOS, Android et Windows Phone](pcl-images/image18.png)](pcl-images/image18.png#lightbox)
@@ -272,9 +272,9 @@ Cet article a brièvement abordé les avantages et les pièges des bibliothèque
 
 ## <a name="related-links"></a>Liens connexes
 
-- [TaskyPortable (exemple)](https://docs.microsoft.com/samples/xamarin/mobile-samples/taskyportable/)
+- [TaskyPortable (exemple)](/samples/xamarin/mobile-samples/taskyportable/)
 - [Création d’applications multiplateformes](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)
 - [Visual Basic portable](~/cross-platform/platform/visual-basic/index.md)
 - [Projets partagés](~/cross-platform/app-fundamentals/shared-projects.md)
 - [Options de partage de code](~/cross-platform/app-fundamentals/code-sharing.md)
-- [Développement multiplateforme avec le .NET Framework (Microsoft)](https://docs.microsoft.com/dotnet/standard/cross-platform/cross-platform-development-with-the-portable-class-library)
+- [Développement multiplateforme avec le .NET Framework (Microsoft)](/dotnet/standard/cross-platform/cross-platform-development-with-the-portable-class-library)

@@ -6,12 +6,12 @@ ms.assetid: F0A5A9BB-86CD-44C9-8EE8-74D1E5E74A30
 author: davidortinau
 ms.author: daortin
 ms.date: 07/25/2018
-ms.openlocfilehash: ac8e4b2eef0905ba50cb24b9eb035d50a05dd84a
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: f0d1195d9159623ec865b1ea1fec26d9969925ca
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86932239"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91456598"
 ---
 # <a name="nuget-multiplatform-library-projects-nugetizer-3000"></a>Projets de bibliothèque multiplateforme NuGet (Nugetizer 3000)
 
@@ -53,9 +53,9 @@ Reportez-vous au [Guide des métadonnées](metadata.md) pour plus d’informatio
 
 ## <a name="further-nuget-information"></a>Informations supplémentaires sur NuGet
 
-En savoir plus sur la [Création manuelle de packages NuGet pour Xamarin](~/cross-platform/app-fundamentals/nuget-manual.md) et sur l' [inclusion d’un package NuGet dans une application](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough).
+En savoir plus sur la [Création manuelle de packages NuGet pour Xamarin](~/cross-platform/app-fundamentals/nuget-manual.md) et sur l' [inclusion d’un package NuGet dans une application](/visualstudio/mac/nuget-walkthrough).
 
-La [documentation NuGet](https://docs.microsoft.com/nuget/) de Microsoft contient des informations plus détaillées sur le format **. nupkg** et l’utilisation de packages NuGet dans Visual Studio.
+La [documentation NuGet](/nuget/) de Microsoft contient des informations plus détaillées sur le format **. nupkg** et l’utilisation de packages NuGet dans Visual Studio.
 
 La discussion de conception pour les projets de package NuGet (également appelé NuGetizer 3000) est disponible dans le [dépôt github NuGet](https://github.com/NuGet/Home/wiki/NuGetizer-3000).
 
@@ -63,4 +63,4 @@ La discussion de conception pour les projets de package NuGet (également appel�
 
 - [Cas d’usage NuGetizer-3000](https://github.com/NuGet/Home/wiki/NuGetizer-Core-Scenarios)
 - [Créer manuellement des packages NuGet pour Xamarin](~/cross-platform/app-fundamentals/nuget-manual.md)
-- [Documentation de NuGet](https://docs.microsoft.com/nuget/)
+- [Documentation de NuGet](/nuget/)

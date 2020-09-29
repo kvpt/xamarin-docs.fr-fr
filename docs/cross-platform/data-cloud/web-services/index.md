@@ -6,12 +6,12 @@ ms.assetid: 72627B90-586A-02B6-E231-F7CE015A1B97
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 164c059b60c1b5b2aadb2cb348c6b5407da63928
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 2131dd7611d802b8e1b1a22d1fbab42b5ac64746
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86934704"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91457963"
 ---
 # <a name="introduction-to-web-services"></a>Introduction aux services web
 
@@ -65,7 +65,7 @@ L’appel de services Web avec `HTTPWebRequest` implique :
 
 - Création de l’instance de requête pour un URI particulier.
 - Définition de différentes propriétés HTTP sur l’instance de demande.
-- Récupération d’un `HttpWebResponse` à partir de la demande.
+- Récupération d’un  `HttpWebResponse` à partir de la demande.
 - Lecture des données en dehors de la réponse.
 
 Par exemple, le code suivant récupère des données à partir de la Bibliothèque nationale américaine du service Web Medicine :
@@ -113,7 +113,7 @@ if(string.IsNullOrWhiteSpace(response.Content) || response.StatusCode != System.
 rxTerm = DeserializeRxTerm(response.Content);
 ```
 
-`DeserializeRxTerm`est une méthode qui prend la chaîne JSON brute de la `RestSharp.RestResponse.Content` propriété et la convertit en objet C#. La désérialisation des données retournées par les services Web est décrite plus loin dans cet article.
+`DeserializeRxTerm` est une méthode qui prend la chaîne JSON brute de la `RestSharp.RestResponse.Content` propriété et la convertit en objet C#. La désérialisation des données retournées par les services Web est décrite plus loin dans cet article.
 
 <a name="Using_NSUrlconnection"></a>
 
@@ -326,7 +326,7 @@ public async Task<List<TodoItem>> RefreshDataAsync ()
 
 La bibliothèque parallèle de tâches (TPL) peut simplifier le processus d’utilisation d’une paire de méthodes de programmation APM Begin/End en encapsulant les opérations asynchrones dans le même `Task` objet. Cette encapsulation est fournie par plusieurs surcharges de la `Task.Factory.FromAsync` méthode. Cette méthode crée un `Task` qui exécute la `TodoService.EndGetTodoItems` méthode une fois la `TodoService.BeginGetTodoItems` méthode terminée, avec le `null` paramètre indiquant qu’aucune donnée n’est passée dans le `BeginGetTodoItems` délégué. Enfin, la valeur de l' `TaskCreationOptions` énumération spécifie que le comportement par défaut pour la création et l’exécution de tâches doit être utilisé.
 
-Pour plus d’informations sur APM, consultez [modèle de programmation asynchrone](https://msdn.microsoft.com/library/ms228963(v=vs.110).aspx) et [bibliothèque parallèle de tâches et programmation asynchrone .NET Framework traditionnelle](https://msdn.microsoft.com/library/dd997423(v=vs.110).aspx) sur MSDN.
+Pour plus d’informations sur APM, consultez [modèle de programmation asynchrone](/dotnet/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm) et [bibliothèque parallèle de tâches et programmation asynchrone .NET Framework traditionnelle](/dotnet/standard/parallel-programming/tpl-and-traditional-async-programming) sur MSDN.
 
 Pour plus d’informations sur l’utilisation d’un service ASMX, consultez [consommer un service Web ASP.net (asmx)](~/xamarin-forms/data-cloud/web-services/asmx.md).
 
@@ -352,7 +352,7 @@ Il existe des différences entre les services Web ASP.NET (ASMX) et WCF, mais il
 
 Un *proxy* doit être généré pour consommer un service WCF, ce qui permet à l’application de se connecter au service. Le proxy est construit en consommant des métadonnées de service qui définissent les méthodes et la configuration de service associée. Ces métadonnées sont exposées sous la forme d’un document Web Services Description Language (WSDL) qui est généré par le service Web. Le proxy peut être généré à l’aide de la Microsoft WCF Web Service Reference Provider dans Visual Studio 2017 pour ajouter une référence de service pour le service Web à une bibliothèque de .NET Standard.
 
-Une alternative à la création du proxy à l’aide de l’Microsoft WCF Web Service Reference Provider dans Visual Studio 2017 consiste à utiliser l’outil ServiceModel Metadata Utility Tool (svcutil.exe). Pour plus d’informations, consultez outil de l' [utilitaire de métadonnées ServiceModel (Svcutil.exe)](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe).
+Une alternative à la création du proxy à l’aide de l’Microsoft WCF Web Service Reference Provider dans Visual Studio 2017 consiste à utiliser l’outil ServiceModel Metadata Utility Tool (svcutil.exe). Pour plus d’informations, consultez outil de l' [utilitaire de métadonnées ServiceModel (Svcutil.exe)](/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe).
 
 <a name="Calling_a_WCF_Service_with_Client_Credential_Security"></a>
 
@@ -404,7 +404,7 @@ public async Task<List<TodoItem>> RefreshDataAsync ()
 
 La bibliothèque parallèle de tâches (TPL) peut simplifier le processus d’utilisation d’une paire de méthodes de programmation APM Begin/End en encapsulant les opérations asynchrones dans le même `Task` objet. Cette encapsulation est fournie par plusieurs surcharges de la `Task.Factory.FromAsync` méthode. Cette méthode crée un `Task` qui exécute la `TodoServiceClient.EndGetTodoItems` méthode une fois la `TodoServiceClient.BeginGetTodoItems` méthode terminée, avec le `null` paramètre indiquant qu’aucune donnée n’est passée dans le `BeginGetTodoItems` délégué. Enfin, la valeur de l' `TaskCreationOptions` énumération spécifie que le comportement par défaut pour la création et l’exécution de tâches doit être utilisé.
 
-Pour plus d’informations sur APM, consultez [modèle de programmation asynchrone](https://msdn.microsoft.com/library/ms228963(v=vs.110).aspx) et [bibliothèque parallèle de tâches et programmation asynchrone .NET Framework traditionnelle](https://msdn.microsoft.com/library/dd997423(v=vs.110).aspx) sur MSDN.
+Pour plus d’informations sur APM, consultez [modèle de programmation asynchrone](/dotnet/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm) et [bibliothèque parallèle de tâches et programmation asynchrone .NET Framework traditionnelle](/dotnet/standard/parallel-programming/tpl-and-traditional-async-programming) sur MSDN.
 
 Pour plus d’informations sur l’utilisation d’un service WCF, consultez [consommer un service Web Windows Communication Foundation (WCF)](~/xamarin-forms/data-cloud/web-services/wcf.md).
 
@@ -443,5 +443,5 @@ Pour plus d’informations sur l’authentification HTTP de base, bien que dans 
 ## <a name="related-links"></a>Liens associés
 
 - [Services Web dans Xamarin. Forms](~/xamarin-forms/data-cloud/index.yml)
-- [Outil utilitaire de métadonnées ServiceModel (svcutil.exe)](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)
-- [BasicHttpBinding](https://msdn.microsoft.com/library/system.servicemodel.basichttpbinding.aspx)
+- [Outil utilitaire de métadonnées ServiceModel (svcutil.exe)](/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)
+- [BasicHttpBinding](/dotnet/api/system.servicemodel.basichttpbinding)

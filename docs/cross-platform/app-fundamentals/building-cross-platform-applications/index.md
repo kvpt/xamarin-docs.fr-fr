@@ -6,12 +6,12 @@ ms.assetid: 442FC40A-84DD-A218-0D15-EAD86594B6D7
 author: davidortinau
 ms.author: daortin
 ms.date: 01/28/2016
-ms.openlocfilehash: 2f7d09405f90ac9fc4c3ce80181baafa447df637
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: f725fe06a5438e4dbdca2773d93befc13bc8ff95
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571236"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91457495"
 ---
 # <a name="building-cross-platform-applications"></a>Création d’applications multiplateformes
 
@@ -19,7 +19,7 @@ Il existe deux options pour partager du code entre des applications mobiles mult
 
 <a name="Sections"></a>
 
- [Vue d’ensemble](~/cross-platform/app-fundamentals/building-cross-platform-applications/overview.md)
+ [Vue d'ensemble](~/cross-platform/app-fundamentals/building-cross-platform-applications/overview.md)
 
  [Partie 1 : comprendre la plate-forme mobile Xamarin](~/cross-platform/app-fundamentals/building-cross-platform-applications/understanding-the-xamarin-mobile-platform.md)
 
@@ -60,10 +60,10 @@ Des exemples sont fournis pour les fonctions d’application courantes (comme le
 
 Enfin, il aborde brièvement les tests et fournit des références à une étude de cas qui met ces principes en action.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Options de partage de code](~/cross-platform/app-fundamentals/code-sharing.md)
 - [Étude de cas : Tasky](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)
-- [Application d’exemple Tasky (GitHub)](https://docs.microsoft.com/samples/xamarin/mobile-samples/taskyportable/)
+- [Application d’exemple Tasky (GitHub)](/samples/xamarin/mobile-samples/taskyportable/)
 - [Développement d’applications mobiles Xamarin : notions de base des plateformes C# et Xamarin. Forms multiplateforme (Amazon)](https://www.amazon.com/Xamarin-Mobile-Application-Development-Cross-Platform/dp/1484202155/)
 - [Développement mobile en C# par Greg-manilles (O’Reilly)](https://shop.oreilly.com/product/0636920024002.do)

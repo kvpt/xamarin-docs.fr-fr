@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 04/10/2018
-ms.openlocfilehash: 0fe08856c70d8a23fb768a5b94b933addd42714b
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 8b640e867e3f7adb6960ecda557ac1e410ec5799
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028663"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91456943"
 ---
 # <a name="hello-wear"></a>Hello, Wear
 
@@ -30,13 +30,13 @@ Créer une **application Android usure**:
 
 <!-- markdownlint-disable MD001 -->
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[![de la création d’une application Android usure dans la boîte de dialogue Nouveau projet](hello-wear-images/vs/new-solution-sml.w157.png)](hello-wear-images/vs/new-solution.w157.png#lightbox)
+[![Création d’une application Android usure dans la boîte de dialogue Nouveau projet](hello-wear-images/vs/new-solution-sml.w157.png)](hello-wear-images/vs/new-solution.w157.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
-[![de la création d’une application Android usure dans la boîte de dialogue nouvelle solution](hello-wear-images/xs/new-solution-sml.png)](hello-wear-images/xs/new-solution.png#lightbox)
+[![Création d’une application Android usure dans la boîte de dialogue nouvelle solution](hello-wear-images/xs/new-solution-sml.png)](hello-wear-images/xs/new-solution.png#lightbox)
 
 -----
 
@@ -44,17 +44,17 @@ Ce modèle comprend automatiquement la **bibliothèque Xamarin Android portable*
 
 ### <a name="2-choose-the-correct-target-framework"></a>2. Choisissez le **Framework cible** approprié
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Assurez-vous que le **nombre minimal d’Android à cibler** est défini sur **Android 5,0 (lollipop)** ou version ultérieure : 
 
-[![la définition de la version cible de .NET Framework sur Android 5,0 dans Visual Studio](hello-wear-images/vs/target-framework-sml.png)](hello-wear-images/vs/target-framework.png#lightbox)
+[![Définition de la version cible de .NET Framework sur Android 5,0 dans Visual Studio](hello-wear-images/vs/target-framework-sml.png)](hello-wear-images/vs/target-framework.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 Vérifiez que la version cible de .NET Framework est définie sur **Android 5,0 (lollipop)** ou version ultérieure :
 
-[![la définition de la version cible de .NET Framework sur Android 5,0 dans Visual Studio pour Mac](hello-wear-images/xs/target-framework-sml.png)](hello-wear-images/xs/target-framework.png#lightbox)
+[![Définition de la version cible de .NET Framework sur Android 5,0 dans Visual Studio pour Mac](hello-wear-images/xs/target-framework-sml.png)](hello-wear-images/xs/target-framework.png#lightbox)
 
 -----
 
@@ -141,13 +141,13 @@ Si vous avez un appareil Android d’usure comme un SmartWatch Android, vous pou
 
 L’appareil Android usure doit apparaître dans le menu déroulant de l’appareil. Veillez à choisir le bon appareil Android ou AVD avant de commencer le débogage. Après avoir sélectionné l’appareil, cliquez sur le bouton de lecture pour déployer l’application sur l’émulateur ou l’appareil.
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[![choix d’un système d’usure dans le menu de périphérique Visual Studio](hello-wear-images/vs/choose-wear-sim.png)](hello-wear-images/vs/choose-wear-sim.png#lightbox)
+[![Choix d’une usure dans le menu de périphérique Visual Studio](hello-wear-images/vs/choose-wear-sim.png)](hello-wear-images/vs/choose-wear-sim.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
-[![de choisir un menu d’usure dans Visual Studio pour Mac appareil](hello-wear-images/xs/choose-wear-sim.png)](hello-wear-images/xs/choose-wear-sim.png#lightbox)
+[![Choix d’un menu d’usure dans Visual Studio pour Mac périphérique](hello-wear-images/xs/choose-wear-sim.png)](hello-wear-images/xs/choose-wear-sim.png#lightbox)
 
 -----
 
@@ -159,18 +159,18 @@ Si vous utilisez un émulateur Watch, le démarrage de l’application peut pren
 
 Une fois l’application déployée, l’écran de l’appareil d’usure doit afficher un écran semblable à ce qui suit :
 
-[![écran initial de l’application d’usure](hello-wear-images/mainactivity-screen.png)](hello-wear-images/mainactivity-screen.png#lightbox)
+[![Écran initial de l’application d’usure](hello-wear-images/mainactivity-screen.png)](hello-wear-images/mainactivity-screen.png#lightbox)
 
 Appuyez **sur le clic !** sur la face du dispositif d’usure et regardez l’incrément de nombre de chaque pression :
 
-[Capture d’écran ![de l’application d’usure après 3 clics](hello-wear-images/mainactivity-counts.png)](hello-wear-images/mainactivity-counts.png#lightbox)
+[![Capture d’écran de l’application d’usure après 3 clics](hello-wear-images/mainactivity-counts.png)](hello-wear-images/mainactivity-counts.png#lightbox)
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Découvrez les [exemples d’usure](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Android+wear) , notamment les applications Android avec des applications de téléphone auxiliaires.
+Découvrez les [exemples d’usure](/samples/browse/?products=xamarin&term=Xamarin.Android%2bwear) , notamment les applications Android avec des applications de téléphone auxiliaires.
 
 Lorsque vous êtes prêt à distribuer votre application, consultez [utilisation de l’empaquetage](~/android/wear/deploy-test/packaging.md).
 
 ## <a name="related-links"></a>Liens associés
 
-- [Cliquer sur l’application (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-weartest)
+- [Cliquer sur l’application (exemple)](/samples/xamarin/monodroid-samples/wear-weartest)

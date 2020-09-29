@@ -6,12 +6,12 @@ ms.assetid: 1E6825DF-1254-4FCB-B94D-ADD33D1B5309
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 55830c21c178a13fd58b73b6920c21cfa3e9c945
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 0ce1d4d0b74330b623b6d933e385222a71a38ec4
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86940034"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91458158"
 ---
 # <a name="using-jenkins-with-xamarin"></a>Utilisation de Jenkins avec Xamarin
 
@@ -32,7 +32,7 @@ Une fois que Jenkins est configuré et que tous les plug-ins nécessaires ont é
 
 Ce guide explique comment configurer un serveur Jenkins qui couvre chacun de ces points. À la fin de celle-ci, nous devrions avoir une bonne compréhension de la configuration et de la configuration de Jenkins pour créer des APK pour nos projets mobiles Xamarin.
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Configuration requise
 
 Le serveur de builds idéal est un ordinateur autonome dédié à l’unique objectif de la création et éventuellement du test de l’application. Un ordinateur dédié garantit que les artefacts qui peuvent être requis pour d’autres rôles (tels que ceux d’un serveur Web) ne contaminent pas la Build. Par exemple, si le serveur de builds joue également le rôle de serveur Web, le serveur Web peut nécessiter une version conflictuelle de la bibliothèque commune. En raison de ce conflit, le serveur Web peut ne pas fonctionner correctement ou Jenkins peut créer des builds qui ne fonctionnent pas lorsqu’elles sont déployées pour les utilisateurs.
 
@@ -44,7 +44,7 @@ Le diagramme suivant illustre tous ces éléments sur un serveur de builds Jenki
 
 les applications iOS peuvent uniquement être générées et signées sur un ordinateur exécutant macOS. Une mini-Mac est une option de faible coût raisonnable, mais tout ordinateur apte à exécuter OS X 10,10 (Yosemite) ou une version ultérieure suffit.
 
-Si TFS est utilisé pour le contrôle de code source, vous devez installer [Team Explorer Everywhere](https://docs.microsoft.com/azure/devops/java/download-eclipse-plug-in/). Team Explorer Everywhere fournit un accès multiplateforme à TFS sur le terminal dans macOS.
+Si TFS est utilisé pour le contrôle de code source, vous devez installer [Team Explorer Everywhere](/azure/devops/java/download-eclipse-plug-in/). Team Explorer Everywhere fournit un accès multiplateforme à TFS sur le terminal dans macOS.
 
 [!include[](~/tools/ci/includes/firewall-information.md)]
 
@@ -114,7 +114,7 @@ La page Gestionnaire de **plug-ins Jenkins** s’affiche. Si vous cliquez sur l�
 Le fait de faire défiler tous les plug-ins 600 pour en trouver quelques peut être fastidieux et sujet aux erreurs. Jenkins fournit un champ de recherche de filtre dans le coin supérieur droit de l’interface. L’utilisation de ce champ de filtre pour la recherche simplifiera la localisation et l’installation d’un ou de tous les plug-ins suivants :
 
 - **Plug-in MSBuild Jenkins** : ce plug-in permet de créer des projets Visual Studio et Visual Studio pour Mac (. sln) et des projets (. csproj).
-- **Plug-in d’injecteur d’environnement** : il s’agit d’un plug-in facultatif mais utile qui permet de définir des variables d’environnement au niveau du travail et de la Build. Il offre également une protection supplémentaire pour les variables telles que les mots de passe utilisés pour signer le code de l’application. Il est parfois abrégé en tant que *plug-in EnvInject* .
+- **Plug-in d’injecteur d’environnement** : il s’agit d’un plug-in facultatif mais utile qui permet de définir des variables d’environnement au niveau du travail et de la Build. Il offre également une protection supplémentaire pour les variables telles que les mots de passe utilisés pour signer le code de l’application. Il est parfois abrégé en tant que  *plug-in EnvInject* .
 - **Plug** -in Team Foundation Server : il s’agit d’un plug-in facultatif qui n’est requis que si vous utilisez Team Foundation Server ou Team Foundation services pour le contrôle de code source.
 
 Jenkins prend en charge git sans plug-ins supplémentaires.
@@ -139,7 +139,7 @@ Cliquez sur ce bouton et renseignez les champs **nom** et **chemin d’accès** 
 
 Cette section est obligatoire si vous envisagez d’utiliser TFS pour votre contrôle de code source.
 
-Pour qu’une station de travail macOS puisse interagir avec un serveur TFS, [Team Explorer Everywhere](https://docs.microsoft.com/azure/devops/java/download-eclipse-plug-in/) doit être installé sur la station de travail. Team Explorer Everywhere est un ensemble d’outils de Microsoft qui comprend un client de ligne de commande multiplateforme pour l’accès à TFS. Team Explorer Everywhere peut être téléchargée à partir de Microsoft et installée en trois étapes :
+Pour qu’une station de travail macOS puisse interagir avec un serveur TFS, [Team Explorer Everywhere](/azure/devops/java/download-eclipse-plug-in/) doit être installé sur la station de travail. Team Explorer Everywhere est un ensemble d’outils de Microsoft qui comprend un client de ligne de commande multiplateforme pour l’accès à TFS. Team Explorer Everywhere peut être téléchargée à partir de Microsoft et installée en trois étapes :
 
 1. Décompressez le fichier d’archive dans un répertoire accessible au compte d’utilisateur. Par exemple, vous pouvez décompresser le fichier vers **~/tee**.
 2. Configurez l’interpréteur de commandes ou le chemin d’accès système pour inclure le dossier qui contient les fichiers qui ont été décompressés à l’étape 1 ci-dessus. Par exemple,
@@ -396,4 +396,4 @@ Dans ce guide, nous avons introduit Jenkins comme serveur de builds sur macOS et
 ## <a name="related-links"></a>Liens associés
 
 - [Intégration continue](~/tools/ci/index.md)
-- [App Center Test](https://docs.microsoft.com/appcenter/test-cloud/)
+- [App Center Test](/appcenter/test-cloud/)

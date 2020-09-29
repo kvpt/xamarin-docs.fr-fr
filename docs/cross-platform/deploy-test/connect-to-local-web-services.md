@@ -6,16 +6,16 @@ ms.assetid: FD8FE199-898B-4841-8041-CC9CA1A00917
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/29/2020
-ms.openlocfilehash: 29875b3f6c747d5dc2f45eb876a269d2bc7e85c6
-ms.sourcegitcommit: 443ecd9146fe2a7bbb9b5ab6d33c835876efcf1f
+ms.openlocfilehash: 9520f4e81403869542cf758627b8e3cfc9fabdd8
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82852457"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91457976"
 ---
 # <a name="connect-to-local-web-services-from-ios-simulators-and-android-emulators"></a>Se connecter aux services Web locaux à partir des simulateurs iOS et des émulateurs Android
 
-[![Télécharger l'](~/media/shared/download.png) exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest/)
 
 De nombreuses applications mobiles consomment des services web. Pendant la phase de développement, il est courant de déployer un service web localement et de le consommer à partir d’une application mobile en cours d’exécution dans le simulateur iOS ou l’émulateur Android. Cela évite d’avoir à déployer le service web sur un point de terminaison hébergé et garantit une expérience de débogage simple, car l’application mobile et le web service mobile sont exécutés localement.
 
@@ -27,7 +27,7 @@ Les applications mobiles en cours d’exécution dans le simulateur iOS ou l’�
 Toutefois, un travail supplémentaire est nécessaire pour qu’une application en cours d’exécution dans le simulateur iOS ou l’émulateur Android puisse consommer un service web local exposé via le protocole HTTPS. Pour ce scénario, le processus est le suivant :
 
 1. Créez un certificat de développement auto-signé sur votre ordinateur. Pour plus d’informations, consultez [Créer un certificat de développement](#create-a-development-certificate).
-1. Configurez votre projet pour utiliser `HttpClient` la pile réseau appropriée pour votre version de débogage. Pour plus d’informations, consultez [Configurer votre projet](#configure-your-project).
+1. Configurez votre projet pour utiliser la `HttpClient` pile réseau appropriée pour votre version de débogage. Pour plus d’informations, consultez [Configurer votre projet](#configure-your-project).
 1. Spécifiez l’adresse de votre ordinateur local. Pour plus d’informations, consultez [Spécifier l’adresse de l’ordinateur local](#specify-the-local-machine-address).
 1. Contournez la vérification de sécurité du certificat de développement local. Pour plus d’informations, consultez [Contourner la vérification de sécurité du certificat](#bypass-the-certificate-security-check).
 
@@ -85,7 +85,7 @@ Cependant, le routeur virtuel de chaque émulateur gère un espace de réseau sp
 
 ### <a name="xamarinforms-example"></a>Exemple Xamarin.Forms
 
-Dans une application Xamarin. Forms, [`Device`](xref:Xamarin.Forms.Device) la classe peut être utilisée pour détecter la plateforme sur laquelle l’application s’exécute. Le nom d’hôte approprié, qui permet d’accéder aux services web sécurisés locaux, peut être ainsi défini comme suit :
+Dans une application Xamarin. Forms, la [`Device`](xref:Xamarin.Forms.Device) classe peut être utilisée pour détecter la plateforme sur laquelle l’application s’exécute. Le nom d’hôte approprié, qui permet d’accéder aux services web sécurisés locaux, peut être ainsi défini comme suit :
 
 ```csharp
 public static string BaseAddress =
@@ -95,7 +95,7 @@ public static string TodoItemsUrl = $"{BaseAddress}/api/todoitems/";
 
 ## <a name="bypass-the-certificate-security-check"></a>Contourner la vérification de sécurité du certificat
 
-Toute tentative pour appeler un service web sécurisé local à partir d’une application en cours d’exécution dans le simulateur iOS ou l’émulateur Android entraînera une exception `HttpRequestException`, même si vous utilisez la pile réseau gérée sur chaque plateforme. En effet, le certificat de développement HTTPS local est auto-signé, et les certificats auto-signés ne sont pas approuvés par iOS ou Android. Par conséquent, il est nécessaire d’ignorer les erreurs SSL lorsqu’une application consomme un service web sécurisé local. Pour ce faire, vous pouvez utiliser les piles réseau managées et natives sur iOS et Android en affectant `ServerCertificateCustomValidationCallback` à la propriété `HttpClientHandler` d’un objet un rappel qui ignore le résultat de la vérification de la sécurité du certificat pour le certificat de développement https local :
+Toute tentative pour appeler un service web sécurisé local à partir d’une application en cours d’exécution dans le simulateur iOS ou l’émulateur Android entraînera une exception `HttpRequestException`, même si vous utilisez la pile réseau gérée sur chaque plateforme. En effet, le certificat de développement HTTPS local est auto-signé, et les certificats auto-signés ne sont pas approuvés par iOS ou Android. Par conséquent, il est nécessaire d’ignorer les erreurs SSL lorsqu’une application consomme un service web sécurisé local. Pour ce faire, vous pouvez utiliser les piles réseau managées et natives sur iOS et Android en affectant `ServerCertificateCustomValidationCallback` à la propriété d’un `HttpClientHandler` objet un rappel qui ignore le résultat de la vérification de la sécurité du certificat pour le certificat de développement https local :
 
 ```csharp
 // This method must be in a class in a platform project, even if
@@ -113,7 +113,7 @@ public HttpClientHandler GetInsecureHandler()
 }
 ```
 
-Dans cet exemple de code, le résultat de la validation du certificat du serveur est retourné lorsque le certificat ayant fait l’objet de la validation n’est pas le certificat `localhost`. Pour obtenir ce certificat, le résultat de la validation est ignoré et la valeur `true` est renvoyée, indiquant que le certificat est valide. L’objet `HttpClientHandler` obtenu doit être passé en tant qu’argument au `HttpClient` constructeur pour les versions Debug :
+Dans cet exemple de code, le résultat de la validation du certificat du serveur est retourné lorsque le certificat ayant fait l’objet de la validation n’est pas le certificat `localhost`. Pour obtenir ce certificat, le résultat de la validation est ignoré et la valeur `true` est renvoyée, indiquant que le certificat est valide. L' `HttpClientHandler` objet obtenu doit être passé en tant qu’argument au `HttpClient` constructeur pour les versions Debug :
 
 ```csharp
 #if DEBUG
@@ -126,7 +126,7 @@ Dans cet exemple de code, le résultat de la validation du certificat du serveur
 
 ## <a name="related-links"></a>Liens connexes
 
-- [TodoREST (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest/)
+- [TodoREST (exemple)](/samples/xamarin/xamarin-forms-samples/webservices-todorest/)
 - [Activer le protocole HTTPs local](/aspnet/core/getting-started#enable-local-https)
 - [HttpClient et sélecteur d’implémentation SSL/TLS pour iOS/macOS](~/cross-platform/macios/http-stack.md)
 - [Pile HttpClient et sélecteur d’implémentation SSL/TLS pour Android](~/android/app-fundamentals/http-stack.md)

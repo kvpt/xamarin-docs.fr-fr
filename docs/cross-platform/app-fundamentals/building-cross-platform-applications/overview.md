@@ -6,18 +6,18 @@ ms.assetid: E442EEFB-FA9C-40E9-9668-5A3F915C8400
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 6924379f49a80733714a488851533f506e83b245
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 72b41854160d0810bbc4a58972f638ef920a4068
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86930830"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91457482"
 ---
 # <a name="building-cross-platform-applications-overview"></a>Vue d’ensemble de la création d’applications multiplateformes
 
 Ce guide présente la plate-forme Xamarin et explique comment concevoir une application multiplateforme pour optimiser la réutilisation du code et offrir une expérience native de haute qualité sur toutes les plateformes mobiles principales : iOS, Android et Windows Phone.
 
-L’approche utilisée dans ce document s’applique généralement aux applications de productivité et aux applications de jeu. Toutefois, l’accent est mis sur la productivité et l’utilitaire (applications sans jeu). Pour obtenir des conseils sur le développement de jeux interplateformes, consultez le [document Introduction aux documents monojeu](~/graphics-games/monogame/introduction/index.md) ou à l' [outils Visual Studio pour Unity](https://docs.microsoft.com/visualstudio/cross-platform/visual-studio-tools-for-unity) .
+L’approche utilisée dans ce document s’applique généralement aux applications de productivité et aux applications de jeu. Toutefois, l’accent est mis sur la productivité et l’utilitaire (applications sans jeu). Pour obtenir des conseils sur le développement de jeux interplateformes, consultez le [document Introduction aux documents monojeu](~/graphics-games/monogame/introduction/index.md) ou à l' [outils Visual Studio pour Unity](/visualstudio/cross-platform/visual-studio-tools-for-unity) .
 
 L’expression « écriture unique, exécuter partout » est souvent utilisée pour chantent les termes d’un code base unique qui s’exécute sans modification sur plusieurs plateformes. Bien qu’il présente l’avantage d’une réutilisation de code, cette approche entraîne souvent des applications qui possèdent un ensemble de fonctionnalités à dénominateur commun plus faible et une interface utilisateur générique qui ne s’intègre pas parfaitement aux plateformes cibles.
 
