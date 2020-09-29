@@ -8,20 +8,20 @@ ms.date: 02/26/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 27421ecc8b089321cd2331829d87365f3cf37a65
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: ab49d8fd86a8864ba45d8ab9f4bbac1ba83ef505
+ms.sourcegitcommit: 744f977b0595f489c592e29c8a3ba548fde02b6f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139462"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91410634"
 ---
 # Xamarin.Essentials
 
-Xamarin.Essentialsfournit aux développeurs des API multiplateforme pour leurs applications mobiles.
+Xamarin.Essentials fournit aux développeurs des API multiplateforme pour leurs applications mobiles.
 
-Android, iOS et UWP offrent des API de plateforme et de système d’exploitation unique auxquelles les développeurs ont accès dans C# en tirant parti de Xamarin. Xamarin.Essentialsfournit une API multiplateforme unique qui fonctionne avec n’importe quelle Xamarin.Forms application Android, iOS ou UWP accessible à partir de code partagé, quelle que soit la façon dont l’interface utilisateur est créée.
+Android, iOS et UWP offrent des API de plateforme et de système d’exploitation unique auxquelles les développeurs ont accès dans C# en tirant parti de Xamarin. Xamarin.Essentials fournit une API multiplateforme unique qui fonctionne avec n’importe quelle Xamarin.Forms application Android, iOS ou UWP accessible à partir de code partagé, quelle que soit la façon dont l’interface utilisateur est créée.
 
-## <a name="get-started-with-xamarinessentialsget-startedmdcontextxamarinxamarin-forms"></a>[Prise en main deXamarin.Essentials](get-started.md?context=xamarin/xamarin-forms)
+## <a name="get-started-with-no-locxamarinessentials"></a>[Prise en main de Xamarin.Essentials](get-started.md?context=xamarin/xamarin-forms)
 
 Suivez le [Guide de mise](get-started.md) en route pour installer le **Xamarin.Essentials** package NuGet dans vos projets existants ou nouveaux Xamarin.Forms , Android, iOS ou UWP.
 
@@ -30,6 +30,7 @@ Suivez le [Guide de mise](get-started.md) en route pour installer le **Xamarin.E
 Suivez les guides pour intégrer ces Xamarin.Essentials fonctionnalités dans vos applications :
 
 * [Accéléromètre](accelerometer.md?context=xamarin/xamarin-forms) : obtenir l’accélération de l’appareil autour de trois axes.
+* [Actions](app-actions.md?context=xamarin/xamarin-forms) de l’application : obtenir et définir des raccourcis pour l’application.
 * [Informations sur l’application](app-information.md?context=xamarin/xamarin-forms) : obtenir des informations générales sur l’application.
 * [Thème d’application](app-theme.md?context=xamarin/xamarin-forms) : détectez le thème actuel demandé pour l’application.
 * [Baromètre](barometer.md?context=xamarin/xamarin-forms) : analyser les modifications de la pression sur le baromètre.
@@ -38,27 +39,32 @@ Suivez les guides pour intégrer ces Xamarin.Essentials fonctionnalités dans vo
 * [Convertisseurs de couleurs](color-converters.md?context=xamarin/xamarin-forms) : méthodes d’assistance pour System.Drawing.Color.
 * [Boussole](compass.md?context=xamarin/xamarin-forms) : analyser les modifications dans la boussole.
 * [Connectivité](connectivity.md?context=xamarin/xamarin-forms) : vérifier l’état de la connectivité et détecter les modifications.
+* [Contacts](contacts.md?context=xamarin/xamarin-forms) : Récupérez les informations relatives à un contact sur l’appareil.
 * [Détecter les secousses](detect-shake.md?context=xamarin/xamarin-forms) : détecter un mouvement de secousse de l’appareil.
 * [Informations d’affichage de l’appareil](device-display.md?context=xamarin/xamarin-forms) : obtenir l’orientation et les métriques de l’écran de l’appareil.
 * [Informations sur l’appareil](device-information.md?context=xamarin/xamarin-forms) : découvrir l’appareil en toute simplicité.
 * [E-mail](email.md?context=xamarin/xamarin-forms) : envoyer facilement des e-mails.
+* [Sélecteur de fichiers](file-picker.md?context=xamarin/xamarin-forms) : permet à l’utilisateur de sélectionner des fichiers à partir de l’appareil.
 * [Assistances de système de fichiers](file-system-helpers.md?context=xamarin/xamarin-forms) : enregistrer facilement des fichiers dans les données de l’application.
 * [Torche](flashlight.md?context=xamarin/xamarin-forms) : activer/désactiver facilement la torche.
 * [Géocodage](geocoding.md?context=xamarin/xamarin-forms) : géocoder et géocoder en inversé les adresses et les coordonnées.
 * [Géolocalisation](geolocation.md?context=xamarin/xamarin-forms) : récupérer l’emplacement GPS de l’appareil.
 * [Gyroscope](gyroscope.md?context=xamarin/xamarin-forms) : effectuer le suivi de la rotation autour des trois axes principaux de l’appareil.
+* [Commentaires haptique](haptic-feedback.md?context=xamarin/xamarin-forms) : contrôle de clic et de longueurs de pression.
 * [Lanceur](launcher.md?context=xamarin/xamarin-forms) : autoriser une application à ouvrir un URI par le système.
 * [Magnétomètre](magnetometer.md?context=xamarin/xamarin-forms) : détecter l’orientation de l’appareil par rapport au champ magnétique de la terre.
 * [MainThread](main-thread.md?content=xamarin/xamarin-forms) : exécuter du code sur le thread principal de l’application.
 * [Cartes](maps.md?content=xamarin/xamarin-forms) : ouvrir l’application de mappage à un emplacement spécifique.
+* [Sélecteur de média](media-picker.md?context=xamarin/xamarin-forms) : permet à l’utilisateur de choisir ou de prendre des photos et des vidéos.
 * [Ouvrir le navigateur](open-browser.md?context=xamarin/xamarin-forms) : ouvrir rapidement et facilement un navigateur sur un site web spécifique.
 * [Capteur d’orientation](orientation-sensor.md?context=xamarin/xamarin-forms) : récupérer l’orientation de l’appareil dans un espace tridimensionnel.
 * [Autorisations](permissions.md?context=xamarin/xamarin-forms) : Vérifiez et demandez des autorisations aux utilisateurs.
 * [Numéroteur téléphonique](phone-dialer.md?context=xamarin/xamarin-forms) : ouvrir le Numéroteur téléphonique.
 * [Extensions de plateforme](platform-extensions.md?context=xamarin/xamarin-forms) : méthodes d’assistance pour convertir Rect, Size et Point.
 * [Préférences](preferences.md?context=xamarin/xamarin-forms) : ajouter rapidement et facilement des préférences persistantes.
+* [Capture d’écran](Screenshot.md?context=xamarin/xamarin-forms) : prenez une capture de l’affichage actuel de l’application.
 * [Stockage sécurisé](secure-storage.md?context=xamarin/xamarin-forms) : stocker des données en toute sécurité.
-* [Partager](share.md?context=xamarin/xamarin-forms) : envoyer du texte et des URI de sites web à d’autres applications.
+* [Partager](share.md?context=xamarin/xamarin-forms) : envoyer des liens de texte et de site Web à d’autres applications.
 * [SMS](sms.md?context=xamarin/xamarin-forms) : créer un message SMS à envoyer.
 * [Synthèse vocale](text-to-speech.md?context=xamarin/xamarin-forms) : énoncer du texte sur l’appareil.
 * [Convertisseurs d’unités](unit-converters.md?context=xamarin/xamarin-forms) : méthodes d’assistance pour convertir des unités.

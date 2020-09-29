@@ -9,14 +9,14 @@ ms.date: 11/04/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e2ed2dfdca6b6811089d4dbb5d6e90e794c79591
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 77ef074ab23532249e7a22bdd0cf8ecd429120a3
+ms.sourcegitcommit: 744f977b0595f489c592e29c8a3ba548fde02b6f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84801801"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91410673"
 ---
-# <a name="xamarinessentials-vibration"></a>Xamarin.Essentials: Vibration
+# <a name="no-locxamarinessentials-vibration"></a>Xamarin.Essentials: Vibration
 
 La classe **Vibration** vous permet de démarrer et d’arrêter la fonctionnalité de vibration pendant la durée souhaitée.
 
@@ -52,7 +52,7 @@ Aucune configuration supplémentaire n’est requise.
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
 
-Aucune différence entre les plateformes.
+Aucune configuration supplémentaire n’est requise.
 
 -----
 
