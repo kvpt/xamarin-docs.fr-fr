@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 1f86227573fc5e9dc39d4781125c49a067e8967d
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: 35adaf4a5cf9ce103cb36320692ad8307b9d1354
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997486"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91564119"
 ---
 # <a name="using-testflight-to-distribute-xamarinios-apps"></a>Utilisation de TestFlight pour distribuer des applications Xamarin.iOS
 
@@ -35,7 +35,7 @@ TestFlight permet uniquement de tester des applications iOS 8.0 ou version ult
 
 Tous les testeurs doivent tester l’application au moins sur un appareil iOS 8. Toutefois, la bonne pratique est de tester l’application sur toutes les versions d’iOS.
 
-## <a name="provisioning"></a>Provisionnement
+## <a name="provisioning"></a>Approvisionnement
 
 Pour tester vos builds avec TestFlight, vous devez créer un *profil de distribution sur l’App Store* qui intègre le nouveau droit bêta. Ce droit active le bêta testing dans TestFlight ; il est automatiquement inclus dans chaque **nouveau** profil de distribution sur l’App Store. Pour générer un nouveau profil, vous pouvez suivre les instructions pas à pas fournies dans [Création d’un profil de distribution](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#provisioningprofile).
 
@@ -52,9 +52,9 @@ Le workflow suivant décrit les étapes à effectuer pour commencer à utiliser 
 3. Gérez le bêta testing :
     - Ajoutez les métadonnées.
     - Ajoutez les utilisateurs internes :
-      - Le maximum est de 25 utilisateurs.
+      - Maximum 100 utilisateurs, chaque utilisateur peut effectuer des tests sur un maximum de 30 appareils.
     - Ajoutez les utilisateurs externes :
-      - Le maximum est de 1 000 utilisateurs.
+      - Maximum 10000 utilisateurs.
       - Nécessite une revue de test bêta, qui doit respecter les règles d’Apple.
 4. Collectez les commentaires des utilisateurs, prenez les actions requises, puis recommencez l’étape 2.
 
@@ -123,7 +123,7 @@ Tout d’abord, générez votre [distribuable final](~/ios/deploy-test/app-distr
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 ### <a name="building-your-final-distributable"></a>Génération de votre distribuable final
- Le plug-in Xamarin pour Visual Studio ne prend pas en charge l’archivage des applications Xamarin.iOS pour la publication sur l’App Store. Pour publier une application iOS à partir de Visual Studio, vous avez le choix entre les Ces deux types de pools sont les suivants :
+ Le plug-in Xamarin pour Visual Studio ne prend pas en charge l’archivage des applications Xamarin.iOS pour la publication sur l’App Store. Pour publier une application iOS à partir de Visual Studio, vous avez le choix entre les Ces règles sont les suivantes :
 
 1. Charger un IPA créé avec la commande Générer un paquet ad-hoc (IPA).
 1. Charger un bundle `.app` zippé.
@@ -187,7 +187,7 @@ Les testeurs internes sont des membres de votre équipe de développement auxque
 - **Juridique** : l’Agent de l’équipe est le seul utilisateur administrateur qui peut avoir ce rôle. Il a en charge la signature des contrats.
 - **Technique** : un utilisateur technique peut modifier la plupart des propriétés d’une application. Par exemple, il peut modifier les informations de l’application, charger un binaire et soumettre une application pour revue.
 
-Chaque build peut être partagée par 25 membres au maximum.
+Chaque Build peut être partagée avec un maximum de 100 membres, qui peuvent chaque test sur jusqu’à 30 appareils.
 
 Pour ajouter des testeurs, accédez à la section **Utilisateurs et rôles** dans l’écran iTunes Connect :
 
@@ -221,7 +221,7 @@ Pour soumettre votre application à une revue, cliquez sur le texte **Submit For
 
 Pour préparer la revue de votre application, vous devez entrer toutes les métadonnées demandées dans la page TestFlight Beta Information.
 
-Vous pouvez maintenant commencer à préparer les invitations et ajouter jusqu’à 2 000 testeurs externes dans l’onglet correspondant, en entrant leur adresse e-mail, leur prénom et leur nom, comme illustré dans la capture d’écran suivante. L’adresse e-mail n’est pas obligatoirement leur ID Apple. C’est simplement l’e-mail utilisé pour l’envoi de l’invitation.
+Vous pouvez maintenant commencer à préparer des invitations et ajouter jusqu’à 10000 testeurs externes par le biais de l’onglet testeurs externes, en entrant leur adresse e-mail, leur prénom et leur nom, comme illustré dans la capture d’écran ci-dessous. L’adresse e-mail n’est pas obligatoirement leur ID Apple. C’est simplement l’e-mail utilisé pour l’envoi de l’invitation.
 
 [![Inviter des testeurs](testflight-images/add-external.png)](testflight-images/add-external.png#lightbox)
 
@@ -263,7 +263,7 @@ Quand le bêta testing est terminé, vous pouvez soumettre votre application sur
 
 [![Cliquez sur le bouton Envoyer pour révision](testflight-images/submit-for-review.png)](testflight-images/submit-for-review.png#lightbox)
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article a montré comment utiliser l’outil de bêta testing TestFlight d’Apple à partir d’iTunes Connect. Il a expliqué comment charger une nouvelle build dans iTunes Connect, et comment inviter des bêta testeurs internes et externes à utiliser notre application.
 
