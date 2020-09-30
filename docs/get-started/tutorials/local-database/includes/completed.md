@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: a0f2e909d4c7003ba1314b848fd01e604d190a1b
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: c1d2900e31b76bb9f66bde55eb948d1f3f46e34e
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "71107231"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91451397"
 ---
 Félicitations ! Vous avez terminé ce didacticiel qui vous a expliqué comment effectuer les opérations suivantes :
 
@@ -23,6 +23,6 @@ Pour en savoir plus sur les principes fondamentaux de la création d’applicati
 
 ## <a name="related-links"></a>Liens connexes
 
-- [LocalDatabaseTutorial (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-localdatabasetutorial/)
+- [LocalDatabaseTutorial (exemple)](/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-localdatabasetutorial/)
 - [Bases de données locales Xamarin.Forms (guide)](~/xamarin-forms/data-cloud/data/databases.md)
 - [Package NuGet SQLite.NET](https://www.nuget.org/packages/sqlite-net-pcl/)

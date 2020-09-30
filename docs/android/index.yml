@@ -1,23 +1,23 @@
 ### YamlMime:Landing
 title: Xamarin.Android
-summary: Xamarin.Android expose le kit SDK Android complet pour les développeurs .NET. Créez des applications Android entièrement natives à l’aide de C# ou F# dans Visual Studio.
+summary: Xamarin. Android expose Android SDK pour les développeurs .NET. Générez des applications Android natives à l'aide de C# ou F# dans Visual Studio.
 metadata:
   title: Xamarin.Android
-  description: Xamarin.Android expose le kit SDK Android complet pour les développeurs .NET.
+  description: Xamarin. Android expose Android SDK pour les développeurs .NET.
   ms.topic: landing-page
   ms.prod: xamarin
   ms.technology: xamarin-android
   author: davidbritch
   ms.author: dabritch
   ms.date: 01/27/2020
-  ms.openlocfilehash: 394812b5150f7bbea46dff476bd2f896083b9a74
-  ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+  ms.openlocfilehash: 593d8d20433222e1b18fd65b86a7586aa5560933
+  ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
   ms.translationtype: HT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 04/09/2020
-  ms.locfileid: "77374082"
+  ms.lasthandoff: 09/29/2020
+  ms.locfileid: "91454284"
 landingContent:
-- title: Bien démarrer
+- title: Prise en main
   linkLists:
   - linkListType: concept
     links:
@@ -53,7 +53,7 @@ landingContent:
       url: ~/android/app-fundamentals/permissions.md
     - text: Entrées tactiles et mouvements
       url: ~/android/app-fundamentals/touch/index.md
-    - text: En savoir plus >
+    - text: Voir plus >
       url: ~/android/app-fundamentals/index.md
 - title: Interface utilisateur
   linkLists:
@@ -67,11 +67,11 @@ landingContent:
       url: ~/android/user-interface/user-profile.md
     - text: Écran de démarrage
       url: ~/android/user-interface/splash-screen.md
-    - text: Mises en forme
+    - text: Dispositions
       url: ~/android/user-interface/layouts/index.md
-    - text: Commandes
+    - text: Contrôles
       url: ~/android/user-interface/controls/index.md
-- title: Fonctionnalités de la plate-forme
+- title: Fonctionnalités de la plateforme
   linkLists:
   - linkListType: concept
     links:
@@ -89,26 +89,26 @@ landingContent:
       url: ~/android/platform/fragments/index.md
     - text: Intégration Java
       url: ~/android/platform/java-integration/index.md
-    - text: Planificateur de travaux
+    - text: Un planificateur de tâches
       url: ~/android/platform/android-job-scheduler.md
-    - text: Cartes et localisation
+    - text: Cartes et emplacement
       url: ~/android/platform/maps-and-location/index.md
-    - text: En savoir plus >
+    - text: Voir plus >
       url: ~/android/platform/index.md
 - title: Xamarin.Essentials
   linkLists:
   - linkListType: concept
     links:
-    - text: À propos
+    - text: À propos de
       url: ~/essentials/index.md?context=xamarin/android
-    - text: Bien démarrer
+    - text: Prise en main
       url: ~/essentials/get-started.md?context=xamarin/android
     - text: Prise en charge des plateformes et des fonctionnalités
       url: ~/essentials/platform-feature-support.md?context=xamarin/android
-    - text: Dépannage
+    - text: Résolution des problèmes
       url: ~/essentials/troubleshooting.md?context=xamarin/android
     - text: Notes de publication
-      url: https://docs.microsoft.com/xamarin/essentials/release-notes/
+      url: /xamarin/essentials/release-notes/
 - title: Données et services cloud
   linkLists:
   - linkListType: concept
@@ -139,13 +139,13 @@ landingContent:
       url: ~/android/deploy-test/performance.md
     - text: Profilage
       url: ~/android/deploy-test/profiling.md
-    - text: Préparer la publication
+    - text: Préparer la mise en production
       url: ~/android/deploy-test/release-prep/index.md
     - text: Signer l’APK
       url: ~/android/deploy-test/signing/index.md
     - text: Publier une application
       url: ~/android/deploy-test/publishing/index.md
-    - text: En savoir plus >
+    - text: Voir plus >
       url: ~/android/deploy-test/index.md
 - title: Éléments internes et concepts avancés
   linkLists:
@@ -157,15 +157,15 @@ landingContent:
       url: ~/cross-platform/internals/available-assemblies.md?context=xamarin/android
     - text: Conception d’API
       url: ~/android/internals/api-design.md
-    - text: Nettoyage de la mémoire
+    - text: Garbage collection
       url: ~/android/internals/garbage-collection.md
-    - text: Limites
+    - text: Limitations
       url: ~/android/internals/limitations.md
 - title: Android Wear
   linkLists:
   - linkListType: concept
     links:
-    - text: Bien démarrer
+    - text: Prise en main
       url: ~/android/wear/get-started/index.md
     - text: Interface utilisateur
       url: ~/android/wear/user-interface/index.md

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 36454d9fe2903bc5e9b05c7809bd09a1f305f46b
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 4ee2326079ba9ddea6b0f4c5c4356412a3d5b492
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "71059645"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91451414"
 ---
 Félicitations ! Vous avez terminé ce didacticiel qui vous a expliqué comment effectuer les opérations suivantes :
 
@@ -23,7 +23,7 @@ Pour en savoir plus sur les principes fondamentaux de la création d’applicati
 
 ## <a name="related-links"></a>Liens connexes
 
-- [GridTutorial (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-gridtutorial/)
+- [GridTutorial (exemple)](/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-gridtutorial/)
 - [Xamarin.Forms Grid (guide)](~/xamarin-forms/user-interface/layouts/grid.md)
 - [Marge et remplissage (guide)](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)
 - [API de grille](xref:Xamarin.Forms.Grid)

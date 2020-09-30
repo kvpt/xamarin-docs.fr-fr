@@ -1,25 +1,25 @@
 ### YamlMime:Landing
-title: Conseils multiplateforme
+title: Conseils multiplateformes
 summary: Xamarin fournit une solution de développement multiplateforme pour applications mobiles, de tablette et de bureau. Cette section fournit des informations applicables à toutes les plateformes ciblées.
 metadata:
-  title: Conseils multiplateforme
+  title: Conseils multiplateformes
   description: Xamarin fournit une solution de développement multiplateforme pour applications mobiles, de tablette et de bureau. Cette section fournit des informations applicables à toutes les plateformes ciblées.
   author: davidortinau
   ms.author: daortin
   ms.date: 12/23/2019
   ms.topic: landing-page
-  ms.openlocfilehash: 624228746f3212b0c8b237dcb9694daea037e89f
-  ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+  ms.openlocfilehash: b6140f951000a1a1a0dc458e74fb598442bb6f70
+  ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
   ms.translationtype: HT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 04/09/2020
-  ms.locfileid: "75718713"
+  ms.lasthandoff: 09/29/2020
+  ms.locfileid: "91456910"
 landingContent:
 - title: Créer des applications multiplateformes
   linkLists:
   - linkListType: get-started
     links:
-    - text: Spécifications
+    - text: Configuration requise
       url: ~/cross-platform/get-started/requirements.md
     - text: Xamarin.Forms
       url: ~/get-started/quickstarts/index.md
@@ -50,13 +50,13 @@ landingContent:
   - linkListType: concept
     links:
     - text: Performances de Xamarin.Forms
-      url: /xamarin/xamarin-forms/deploy-test/performance?context=xamarin/cross-platform
+      url: ../xamarin-forms/deploy-test/performance.md?context=xamarin%252fcross-platform
     - text: Performances d’Android
-      url: /xamarin/android/deploy-test/performance?context=xamarin/cross-platform
+      url: ../android/deploy-test/performance.md?context=xamarin%252fcross-platform
     - text: Performances d’iOS
-      url: /xamarin/ios/deploy-test/performance?context=xamarin/cross-platform
+      url: ../ios/deploy-test/performance.md?context=xamarin%252fcross-platform
     - text: Performances de Mac
-      url: /xamarin/mac/deploy-test/performance?context=xamarin/cross-platform
+      url: ../mac/deploy-test/performance.md?context=xamarin%252fcross-platform
     - text: TLS (Transport Layer Security) 1.2
       url: ~/cross-platform/app-fundamentals/transport-layer-security.md
 - title: Déploiement et débogage

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: e0f7e89be5de282daf10f941d0f0b8d0175df81a
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 572c6d378bdc2af72277bba8726daba860ab38fe
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "71107235"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91451519"
 ---
 Félicitations ! Vous avez terminé ce didacticiel qui vous a expliqué comment effectuer les opérations suivantes :
 
@@ -32,6 +32,6 @@ Vous pouvez également consulter [_Creating Mobile Apps with Xamarin.Forms_](~/x
 
 ## <a name="related-links"></a>Liens connexes
 
-- [WebServiceTutorial (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-webservicetutorial/)
+- [WebServiceTutorial (exemple)](/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-webservicetutorial/)
 - [Utiliser un service web RESTful (guide)](~/xamarin-forms/data-cloud/web-services/rest.md)
-- [Package NuGet Newtonsoft.JSON](https://www.nuget.org/packages/Newtonsoft.Json/)
+- [Package NuGet Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/)

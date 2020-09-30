@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: e01d661d5481c59175b5a9f747b2a11cb4a6301a
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 03b54f479e9fcc3b332ab45594ac013a4eea6aa3
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "71059651"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91451469"
 ---
 Félicitations ! Vous avez terminé ce didacticiel qui vous a expliqué comment effectuer les opérations suivantes :
 
@@ -22,6 +22,6 @@ Pour en savoir plus sur les principes fondamentaux de la création d’applicati
 
 ## <a name="related-links"></a>Liens connexes
 
-- [PopupsTutorial (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-popupstutorial/)
+- [PopupsTutorial (exemple)](/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-popupstutorial/)
 - [Afficher les fenêtres contextuelles (guide)](~/xamarin-forms/user-interface/pop-ups.md)
 - [API Page](xref:Xamarin.Forms.Page)
