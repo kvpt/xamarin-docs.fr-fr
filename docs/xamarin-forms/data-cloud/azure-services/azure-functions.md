@@ -1,5 +1,5 @@
 ---
-title: Azure Functions avecXamarin.Forms
+title: Azure Functions avec Xamarin.Forms
 description: Prise en main de Azure Functions à l’aide de Xamarin.Forms .
 ms.prod: xamarin
 ms.assetid: 2F311A60-A6FC-4051-B938-AEF32086642F
@@ -10,16 +10,16 @@ ms.date: 04/02/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 420cead8a43f35815110eb7ce3b183f10bb3ccd4
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: b1b8091a495a3d4f865aebd54ca1da0790c1c5f7
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84197574"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562819"
 ---
 # <a name="get-started-with-azure-functions"></a>Bien démarrer avec Azure Functions
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://azure.microsoft.com/resources/samples/functions-xamarin-getting-started/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://azure.microsoft.com/resources/samples/functions-xamarin-getting-started/)
 
 _Commencez à créer votre première fonction Azure qui interagit avec Xamarin.Forms ._
 
@@ -29,7 +29,7 @@ _Commencez à créer votre première fonction Azure qui interagit avec Xamarin.F
 
 ## <a name="step-by-step-instructions"></a>Instructions pas à pas
 
-En plus de la vidéo, vous pouvez suivre ces instructions pour [créer votre première fonction à l’aide de Visual Studio](https://docs.microsoft.com/azure/azure-functions/functions-create-your-first-function-visual-studio).
+En plus de la vidéo, vous pouvez suivre ces instructions pour [créer votre première fonction à l’aide de Visual Studio](/azure/azure-functions/functions-create-your-first-function-visual-studio).
 
 > [!NOTE]
 > Si vous n’avez pas [d’abonnement Azure](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing), créez un [compte gratuit](https://aka.ms/azfree-docs-mobileapps) avant de commencer.
@@ -40,7 +40,7 @@ En plus de la vidéo, vous pouvez suivre ces instructions pour [créer votre pre
 
 ## <a name="step-by-step-instructions"></a>Instructions pas à pas
 
-En plus de la vidéo, vous pouvez suivre ces instructions pour [créer votre première fonction à l’aide de Visual Studio](https://docs.microsoft.com/azure/azure-functions/functions-create-your-first-function-visual-studio).
+En plus de la vidéo, vous pouvez suivre ces instructions pour [créer votre première fonction à l’aide de Visual Studio](/azure/azure-functions/functions-create-your-first-function-visual-studio).
 
 > [!NOTE]
 > Si vous n’avez pas [d’abonnement Azure](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing), créez un [compte gratuit](https://aka.ms/azfree-docs-mobileapps) avant de commencer.
@@ -51,14 +51,14 @@ En plus de la vidéo, vous pouvez suivre ces instructions pour [créer votre pre
 
 ## <a name="step-by-step-instructions"></a>Instructions pas à pas
 
-En plus de cette vidéo, il existe un [didacticiel pas à pas](https://docs.microsoft.com/visualstudio/mac/azure-functions-lab) qui montre comment créer et déboguer des Azure Functions dans Visual Studio pour Mac.
+En plus de cette vidéo, il existe un [didacticiel pas à pas](/visualstudio/mac/azure-functions-lab) qui montre comment créer et déboguer des Azure Functions dans Visual Studio pour Mac.
 
 > [!NOTE]
 > Si vous n’avez pas [d’abonnement Azure](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing), créez un [compte gratuit](https://aka.ms/azfree-docs-mobileapps) avant de commencer.
 
 -----
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [Documentation Azure Functions](https://docs.microsoft.com/azure/azure-functions/)
+- [Documentation Azure Functions](/azure/azure-functions/)
 - [Implémentation d’une fonction Azure simple avec un Xamarin.Forms client (exemple)](https://azure.microsoft.com/resources/samples/functions-xamarin-getting-started/)

@@ -10,12 +10,12 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c74f9bd17f8da5cd41a55f8b35a66e21df81a8d2
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 99dc2b56a559048bb0dee776a9f9efee6a2618de
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86931181"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557892"
 ---
 # <a name="navigationpage-bar-separator-on-ios"></a>Séparateur de barre NavigationPage sur iOS
 
@@ -54,6 +54,6 @@ Le résultat est que le séparateur de barre de navigation sur un [`NavigationPa
 
 ## <a name="related-links"></a>Liens connexes
 
-- [PlatformSpecifics (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [Création de caractéristiques de la plateforme](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [API iOSSpecific](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

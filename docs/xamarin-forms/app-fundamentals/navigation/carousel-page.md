@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsPage du carrousel
+title: Xamarin.Forms Page du carrousel
 description: Le Xamarin.Forms CarouselPage est une page que les utilisateurs peuvent faire glisser d’un côté à l’autre pour naviguer dans les pages de contenu, comme une galerie. Cet article montre comment utiliser un CarouselPage pour parcourir une collection de pages.
 ms.prod: xamarin
 ms.assetid: 2D14FC9D-DF5F-427E-9006-2AAE61ECF8DC
@@ -10,14 +10,14 @@ ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c234af1a5d47446149c92a71e9ce592dc0366b8f
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 0110fa7c348c4facaf60cd261c8a584904aa0b8e
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937460"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563066"
 ---
-# <a name="xamarinforms-carousel-page"></a>Xamarin.FormsPage du carrousel
+# <a name="no-locxamarinforms-carousel-page"></a>Xamarin.Forms Page du carrousel
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-carouselpage)
 
@@ -238,6 +238,6 @@ Chaque [`ContentPage`](xref:Xamarin.Forms.ContentPage) affiche simplement un [`L
 ## <a name="related-links"></a>Liens connexes
 
 - [Types de pages](~/xamarin-forms/user-interface/controls/pages.md)
-- [CarouselPage (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-carouselpage)
-- [CarouselPageTemplate (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-carouselpagetemplate)
+- [CarouselPage (exemple)](/samples/xamarin/xamarin-forms-samples/navigation-carouselpage)
+- [CarouselPageTemplate (exemple)](/samples/xamarin/xamarin-forms-samples/navigation-carouselpagetemplate)
 - [CarouselPage](xref:Xamarin.Forms.CarouselPage)

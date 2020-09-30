@@ -10,18 +10,18 @@ ms.date: 08/23/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6a28dd20eb8978334365ac217df1241e5288fd28
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 8c6d139e47974247ce4af6bfa6c32331fcf7c824
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137421"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563131"
 ---
 # <a name="skiasharp-bitmap-tiling"></a>Mosaïque de bitmaps SkiaSharp
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/catclock)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/catclock)
 
 Comme vous l’avez vu dans les deux articles précédents, la [`SKShader`](xref:SkiaSharp.SKShader) classe peut créer des dégradés linéaires ou circulaires. Cet article se concentre sur l' `SKShader` objet qui utilise une image bitmap pour juxtaposer une zone. L’image bitmap peut être répétée horizontalement et verticalement, soit à l’aide de son orientation d’origine, soit à tour de point horizontalement et verticalement. Le retournement évite les discontinuités entre les vignettes :
 
@@ -45,7 +45,7 @@ Cet article contient plusieurs exemples d’utilisation de cette transformation 
 
 ## <a name="exploring-the-tile-modes"></a>Exploration des modes de vignette
 
-Le premier programme de la section **mosaïque d’images** de la page **nuanciers et autres effets** de l’exemple [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) illustre les effets des deux `SKShaderTileMode` arguments. Le fichier XAML de **mode de basculement de vignette de bitmap** instancie un `SKCanvasView` et deux `Picker` vues qui vous permettent de sélectionner une `SKShaderTilerMode` valeur pour la mosaïque horizontale et verticale. Notez qu’un tableau des `SKShaderTileMode` membres est défini dans la `Resources` section :
+Le premier programme de la section **mosaïque d’images** de la page **nuanciers et autres effets** de l’exemple [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) illustre les effets des deux `SKShaderTileMode` arguments. Le fichier XAML de **mode de basculement de vignette de bitmap** instancie un `SKCanvasView` et deux `Picker` vues qui vous permettent de sélectionner une `SKShaderTilerMode` valeur pour la mosaïque horizontale et verticale. Notez qu’un tableau des `SKShaderTileMode` membres est défini dans la `Resources` section :
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -303,7 +303,7 @@ Notez que les `SKShaderTileMode` arguments de `CreateBitmap` sont tous les deux 
 
 Un travail est nécessaire pour obtenir une image bitmap appropriée pour la vignette. Celui-ci ne fonctionne pas très bien, car la brique plus sombre est trop importante. Il apparaît régulièrement dans les images répétées, révélant le fait que ce mur de briques a été construit à partir d’une image bitmap plus petite.
 
-Le dossier **Media** de l’exemple [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) comprend également cette image d’un mur en pierre :
+Le dossier **Media** de l’exemple [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) comprend également cette image d’un mur en pierre :
 
 ![Vignette de mur de Pierre](bitmap-tiling-images/StoneWallTile.jpg "Vignette de mur de Pierre")
 
@@ -369,7 +369,7 @@ Si la transformation est appliquée à la vignette individuelle, chaque image r�
 
 Dans la section [**alignement**](#tile-alignment)de la mosaïque, vous verrez un exemple de transformation de traduction appliquée au nuanceur.
 
-L’exemple d' [**horloge Cat**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/catclock) autonome (qui ne fait pas partie de **SkiaSharpFormsDemos**) simule un arrière-plan de grain de bois à l’aide d’une mosaïque de bitmap basée sur cette image bitmap carrée de 240 pixels :
+L’exemple d' [**horloge Cat**](/samples/xamarin/xamarin-forms-samples/catclock) autonome (qui ne fait pas partie de **SkiaSharpFormsDemos**) simule un arrière-plan de grain de bois à l’aide d’une mosaïque de bitmap basée sur cette image bitmap carrée de 240 pixels :
 
 ![Grain grain](bitmap-tiling-images/WoodGrain.png "Grain grain")
 
@@ -782,6 +782,6 @@ Les `SKShaderTileMode.Mirror` options permettent de s’assurer que les bras de 
 
 ## <a name="related-links"></a>Liens connexes
 
-- [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
-- [CatClock (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/catclock)
+- [API SkiaSharp](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (exemple)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [CatClock (exemple)](/samples/xamarin/xamarin-forms-samples/catclock)

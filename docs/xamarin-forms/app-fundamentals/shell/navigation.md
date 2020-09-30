@@ -1,6 +1,6 @@
 ---
-title: Xamarin.FormsNavigation dans le shell
-description: Xamarin.FormsLes applications de l’interpréteur de commandes peuvent utiliser une expérience de navigation basée sur un URI qui permet de naviguer vers n’importe quelle page de l’application, sans avoir à suivre une hiérarchie de navigation définie.
+title: Xamarin.Forms Navigation dans le shell
+description: Xamarin.Forms Les applications de l’interpréteur de commandes peuvent utiliser une expérience de navigation basée sur un URI qui permet de naviguer vers n’importe quelle page de l’application, sans avoir à suivre une hiérarchie de navigation définie.
 ms.prod: xamarin
 ms.assetid: 57079D89-D1CB-48BD-9FEE-539CEC29EABB
 ms.technology: xamarin-forms
@@ -10,18 +10,18 @@ ms.date: 04/02/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e67d49f300a8a98ec5685c33abf98f5b2ded08ed
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 6cf4932c3265d1d66200ae12ba448a758586f11c
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84132390"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563144"
 ---
-# <a name="xamarinforms-shell-navigation"></a>Xamarin.FormsNavigation dans le shell
+# <a name="no-locxamarinforms-shell-navigation"></a>Xamarin.Forms Navigation dans le shell
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
-Xamarin.FormsL’interpréteur de commandes comprend une expérience de navigation basée sur les URI qui utilise des itinéraires pour accéder à n’importe quelle page de l’application, sans devoir suivre une hiérarchie de navigation définie. De plus, l’utilisateur peut revenir en arrière sans avoir à visiter toutes les pages de la pile de navigation.
+Xamarin.Forms L’interpréteur de commandes comprend une expérience de navigation basée sur les URI qui utilise des itinéraires pour accéder à n’importe quelle page de l’application, sans devoir suivre une hiérarchie de navigation définie. De plus, l’utilisateur peut revenir en arrière sans avoir à visiter toutes les pages de la pile de navigation.
 
 `Shell` définit les propriétés de navigation associées suivantes :
 
@@ -42,7 +42,7 @@ La navigation est effectuée en appelant la méthode `GoToAsync` à partir de la
 La navigation est effectuée dans une application Shell en spécifiant un URI vers lequel naviguer. Les URI de navigation peuvent avoir trois composants :
 
 - Un *itinéraire*, qui définit le chemin d’accès au contenu existant dans le cadre de la hiérarchie visuelle Shell.
-- Une *page*. Les pages qui n’existent pas dans la hiérarchie visuelle Shell peuvent être transmises en mode push à la pile de navigation depuis n’importe où dans une application Shell. Par exemple, une page de détails d’un élément ne sera pas définie dans la hiérarchie visuelle Shell, mais elle peut être transmise en mode push à la pile de navigation selon les besoins.
+- *Page*. Les pages qui n’existent pas dans la hiérarchie visuelle Shell peuvent être transmises en mode push à la pile de navigation depuis n’importe où dans une application Shell. Par exemple, une page de détails d’un élément ne sera pas définie dans la hiérarchie visuelle Shell, mais elle peut être transmise en mode push à la pile de navigation selon les besoins.
 - Un ou plusieurs *paramètres de requête*. Les paramètres de requête sont des paramètres qui peuvent être transmis à la page de destination lors de la navigation.
 
 Lorsqu’un URI de navigation comprend les trois composants, la structure est : //route/page?queryParameters
@@ -372,4 +372,4 @@ La propriété `Command` est définie sur un élément `ICommand` à exécuter l
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Xaminals (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
+- [Xaminals (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)

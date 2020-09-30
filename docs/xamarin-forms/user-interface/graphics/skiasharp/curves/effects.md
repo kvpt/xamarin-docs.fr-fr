@@ -10,16 +10,16 @@ ms.date: 07/29/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f3a5a581ffb4ca2acf1d4209b8b7a744f0daa5eb
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 074af11d7873ed44c0a48f923f7560dd50cea6a5
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84128045"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563235"
 ---
 # <a name="path-effects-in-skiasharp"></a>Effets du chemin dans SkiaSharp
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Découvrez les divers effets de tracés qui permettent d’utiliser les chemins d’accès pour le décontour et le remplissage_
 
@@ -38,7 +38,7 @@ Les effets de tracés vous permettent d’effectuer les opérations suivantes :
 
 En outre, vous pouvez combiner deux ou plusieurs effets de tracés.
 
-Cet article montre également comment utiliser la [`GetFillPath`](xref:SkiaSharp.SKPaint.GetFillPath*) méthode de `SKPaint` pour convertir un chemin dans un autre chemin d’accès en appliquant les propriétés de `SKPaint` , y compris `StrokeWidth` et `PathEffect` . Cela entraîne des techniques intéressantes, telles que l’obtention d’un chemin d’accès qui est un contour d’un autre chemin d’accès. `GetFillPath`est également utile pour la connexion avec des effets de chemin d’accès.
+Cet article montre également comment utiliser la [`GetFillPath`](xref:SkiaSharp.SKPaint.GetFillPath*) méthode de `SKPaint` pour convertir un chemin dans un autre chemin d’accès en appliquant les propriétés de `SKPaint` , y compris `StrokeWidth` et `PathEffect` . Cela entraîne des techniques intéressantes, telles que l’obtention d’un chemin d’accès qui est un contour d’un autre chemin d’accès. `GetFillPath` est également utile pour la connexion avec des effets de chemin d’accès.
 
 ## <a name="dots-and-dashes"></a>Points et tirets
 
@@ -98,7 +98,7 @@ public class AnimatedDottedTextPage : ContentPage
 }
 ```
 
-Le `PaintSurface` Gestionnaire commence par créer un `SKPaint` objet pour afficher le texte. La `TextSize` propriété est ajustée en fonction de la largeur de l’écran :
+Le `PaintSurface` Gestionnaire commence par créer un `SKPaint` objet pour afficher le texte. La  `TextSize` propriété est ajustée en fonction de la largeur de l’écran :
 
 ```csharp
 public class AnimatedDottedTextPage : ContentPage
@@ -288,7 +288,7 @@ En général, le chemin d’accès que vous transmettez `Create1DPath` est petit
 - `Rotate`
 - `Morph`
 
-Le `Translate` membre fait en sorte que le chemin reste dans la même orientation que lorsqu’il est répliqué sur une ligne ou une courbe. Pour `Rotate` , le tracé est pivoté en fonction d’une tangente à la courbe. Le chemin d’accès a son orientation normale pour les lignes horizontales. `Morph`est semblable à `Rotate` , à ceci près que le tracé lui-même est également courbé pour correspondre à la courbure de la ligne tracée.
+Le `Translate` membre fait en sorte que le chemin reste dans la même orientation que lorsqu’il est répliqué sur une ligne ou une courbe. Pour `Rotate` , le tracé est pivoté en fonction d’une tangente à la courbe. Le chemin d’accès a son orientation normale pour les lignes horizontales. `Morph` est semblable à `Rotate` , à ceci près que le tracé lui-même est également courbé pour correspondre à la courbure de la ligne tracée.
 
 La page **effet du chemin 1D** illustre ces trois options. Le fichier [**OneDimensionalPathEffectPage. Xaml**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/OneDimensionalPathEffectPage.xaml) définit un sélecteur contenant trois éléments correspondant aux trois membres de l’énumération :
 
@@ -1289,7 +1289,7 @@ public class CatsInFramePage : ContentPage
 
 `catPath`Peut être utilisé dans la `SKPathEffect.Create2DPath` méthode si la `SKPaint` propriété de l’objet a la `Style` valeur `Stroke` . Toutefois, si le `catPath` est utilisé directement dans ce programme, la partie entière du chat est remplie et les moustaches ne sont même pas visibles. (Essayez !) Il est nécessaire d’obtenir le contour de ce chemin d’accès et d’utiliser ce contour dans la `SKPathEffect.Create2DPath` méthode.
 
-Le constructeur effectue cette tâche. Elle applique d’abord deux transformations à pour `catPath` déplacer le point (0,0) vers le centre et l’ajuster à la taille. `GetFillPath`Obtient tous les plans des contours dans `outlinedCatPath` et cet objet est utilisé dans l' `SKPathEffect.Create2DPath` appel. Les facteurs de mise à l’échelle dans la `SKMatrix` valeur sont légèrement plus grands que les tailles horizontale et verticale du CAT pour fournir un petit tampon entre les vignettes, tandis que les facteurs de traduction étaient dérivés un peu de façon empirique pour qu’un chat complet soit visible dans l’angle supérieur gauche du cadre :
+Le constructeur effectue cette tâche. Elle applique d’abord deux transformations à pour `catPath` déplacer le point (0,0) vers le centre et l’ajuster à la taille. `GetFillPath` Obtient tous les plans des contours dans `outlinedCatPath` et cet objet est utilisé dans l' `SKPathEffect.Create2DPath` appel. Les facteurs de mise à l’échelle dans la `SKMatrix` valeur sont légèrement plus grands que les tailles horizontale et verticale du CAT pour fournir un petit tampon entre les vignettes, tandis que les facteurs de traduction étaient dérivés un peu de façon empirique pour qu’un chat complet soit visible dans l’angle supérieur gauche du cadre :
 
 ```csharp
 public class CatsInFramePage : ContentPage
@@ -1415,7 +1415,7 @@ Comme vous l’avez déjà découvert, les lignes de hachures ne sont pas limit�
 
 Maintenant que vous avez vu des effets de tracés allant de simples points et de tirets à des combinaisons étranges, utilisez votre imagination et voyez ce que vous pouvez créer.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [API SkiaSharp](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (exemple)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

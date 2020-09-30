@@ -1,27 +1,15 @@
 ---
-title: Implémentation d’une vue
-description: Cet article explique comment créer un convertisseur personnalisé pour un Xamarin.Forms contrôle personnalisé utilisé pour afficher un flux vidéo de préversion à partir de l’appareil photo de l’appareil.
-ms.prod: xamarin
-ms.assetid: 915E25E7-4A6B-4F34-B7B4-07D5F4B240F2
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 05/10/2018
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 8215454f80614c0c7cca79af5cf51e2dd96453ae
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86929478"
+titre : implémentation d’une description de vue : cet article explique comment créer un convertisseur personnalisé pour un Xamarin.Forms contrôle personnalisé utilisé pour afficher un flux vidéo en version préliminaire à partir de l’appareil photo de l’appareil.
+ms. Prod : xamarin ms. AssetID : 915E25E7-4A6B-4F34-B7B4-07D5F4B240F2 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 05/10/2018 No-Loc :
+- "Xamarin.Forms"
+- "Xamarin.Essentials"
+
 ---
 # <a name="implementing-a-view"></a>Implémentation d’une vue
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-view)
 
-_Xamarin.Formsles contrôles d’interface utilisateur personnalisés doivent dériver de la classe d’affichage, qui est utilisée pour placer des mises en page et des contrôles à l’écran. Cet article explique comment créer un convertisseur personnalisé pour un Xamarin.Forms contrôle personnalisé utilisé pour afficher un flux vidéo de préversion à partir de l’appareil photo de l’appareil._
+_Xamarin.Forms les contrôles d’interface utilisateur personnalisés doivent dériver de la classe d’affichage, qui est utilisée pour placer des mises en page et des contrôles à l’écran. Cet article explique comment créer un convertisseur personnalisé pour un Xamarin.Forms contrôle personnalisé utilisé pour afficher un flux vidéo de préversion à partir de l’appareil photo de l’appareil._
 
 Chaque Xamarin.Forms vue possède un convertisseur associé pour chaque plateforme qui crée une instance d’un contrôle natif. Lorsqu’un [`View`](xref:Xamarin.Forms.View) est rendu par une Xamarin.Forms application dans iOS, la `ViewRenderer` classe est instanciée, qui à son tour instancie un `UIView` contrôle natif. Sur la plateforme Android, la classe `ViewRenderer` instancie un contrôle `View` natif. Sur la plateforme Windows universelle (UWP), la classe `ViewRenderer` instancie un contrôle `FrameworkElement` natif. Pour plus d’informations sur le convertisseur et les classes de contrôle natifs sur lesquelles les Xamarin.Forms contrôles sont mappés, consultez [classes de base de convertisseur et contrôles natifs](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
 
@@ -327,8 +315,8 @@ Sous réserve que la propriété `Control` ait la valeur `null`, un nouveau `Cap
 
 ## <a name="summary"></a>Résumé
 
-Cet article a montré comment créer un convertisseur personnalisé pour un Xamarin.Forms contrôle personnalisé utilisé pour afficher un flux vidéo de préversion à partir de l’appareil photo de l’appareil. Xamarin.Formsles contrôles d’interface utilisateur personnalisés doivent dériver de la [`View`](xref:Xamarin.Forms.View) classe, qui est utilisée pour placer des dispositions et des contrôles à l’écran.
+Cet article a montré comment créer un convertisseur personnalisé pour un Xamarin.Forms contrôle personnalisé utilisé pour afficher un flux vidéo de préversion à partir de l’appareil photo de l’appareil. Xamarin.Forms les contrôles d’interface utilisateur personnalisés doivent dériver de la [`View`](xref:Xamarin.Forms.View) classe, qui est utilisée pour placer des dispositions et des contrôles à l’écran.
 
 ## <a name="related-links"></a>Liens associés
 
-- [CustomRendererView (sample)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-view)
+- [CustomRendererView (sample)](/samples/xamarin/xamarin-forms-samples/customrenderers-view)

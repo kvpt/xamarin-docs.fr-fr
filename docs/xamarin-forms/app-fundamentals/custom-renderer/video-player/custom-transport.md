@@ -10,16 +10,16 @@ ms.date: 02/12/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c72f68f327b6c0df6959d37ed4bf390e3bd7f31d
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 5d48c699ed89e91452efe84749a1dedac18a34f5
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84135003"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562728"
 ---
 # <a name="custom-video-transport-controls"></a>Contrôles de transport vidéo personnalisés
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
 Les contrôles de transport d’un lecteur vidéo incluent les boutons qui effectuent les fonctions **Lecture**, **Pause** et **Arrêt**. Ces boutons sont habituellement identifiés par des icônes familières plutôt que du texte, et les fonctions **Lecture** et **Pause** sont généralement combinées en un seul bouton.
 
@@ -660,6 +660,6 @@ Toutefois, sur Android et UWP, le bouton de **lecture** semble très différent 
 
 Dans une application de production, vous voudrez probablement utiliser vos propres images bitmap pour les boutons afin d’obtenir une uniformité visuelle.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [Démonstrations de lecteur vidéo (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+- [Démonstrations de lecteur vidéo (exemple)](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

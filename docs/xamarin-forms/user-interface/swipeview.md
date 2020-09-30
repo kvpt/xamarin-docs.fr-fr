@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsSwipeView
+title: Xamarin.Forms SwipeView
 description: Le Xamarin.Forms SwipeView est un contrôle conteneur qui encapsule un élément de contenu et fournit des éléments de menu contextuel qui sont révélés par un mouvement de balayage.
 ms.prod: xamarin
 ms.assetId: 602456B5-701B-4948-B454-B1F31283F1CF
@@ -10,14 +10,14 @@ ms.date: 03/26/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 4a51f2d7bef446bc14938aaa3e9b60d85580ebc9
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 178d36eabfdbe0452bec456979fcca89acdf8926
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918335"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563339"
 ---
-# <a name="no-locxamarinforms-swipeview"></a>Xamarin.FormsSwipeView
+# <a name="no-locxamarinforms-swipeview"></a>Xamarin.Forms SwipeView
 
 ![API de la version préliminaire](~/media/shared/preview.png)
 
@@ -27,7 +27,7 @@ Le `SwipeView` est un contrôle conteneur qui encapsule un élément de contenu 
 
 [![Capture d’écran des éléments de balayage SwipeView dans un CollectionView, sur iOS et Android](swipeview-images/swipeview-collectionview.png "SwipeView les éléments de balayage")](swipeview-images/swipeview-collectionview-large.png#lightbox "SwipeView les éléments de balayage")
 
-`SwipeView`est disponible dans Xamarin.Forms 4,4. Toutefois, il est actuellement expérimental et ne peut être utilisé qu’en ajoutant la ligne de code suivante à votre classe `AppDelegate` sur iOS, à votre `MainActivity` classe sur Android, ou à votre `App` classe sur UWP, avant d’appeler `Forms.Init` :
+`SwipeView` est disponible dans Xamarin.Forms 4,4. Toutefois, il est actuellement expérimental et ne peut être utilisé qu’en ajoutant la ligne de code suivante à votre classe `AppDelegate` sur iOS, à votre `MainActivity` classe sur Android, ou à votre `App` classe sur UWP, avant d’appeler `Forms.Init` :
 
 ```csharp
 Forms.SetFlags("SwipeView_Experimental");
@@ -46,15 +46,15 @@ En outre, le `SwipeView` hérite de la [`Content`](xref:Xamarin.Forms.ContentVie
 
 La `SwipeView` classe définit également quatre événements :
 
-- `SwipeStarted`est déclenché au démarrage d’un balayage. L' `SwipeStartedEventArgs` objet qui accompagne cet événement a une `SwipeDirection` propriété, de type `SwipeDirection` .
-- `SwipeChanging`est déclenché lors du déplacement du balayage. L' `SwipeChangingEventArgs` objet qui accompagne cet événement a une `SwipeDirection` propriété, de type `SwipeDirection` et une `Offset` propriété de type `double` .
-- `SwipeEnded`est déclenché lorsqu’un balayage se termine. L' `SwipeEndedEventArgs` objet qui accompagne cet événement a une `SwipeDirection` propriété, de type `SwipeDirection` .
-- `CloseRequested`est déclenché lorsque les éléments de balayage sont fermés.
+- `SwipeStarted` est déclenché au démarrage d’un balayage. L' `SwipeStartedEventArgs` objet qui accompagne cet événement a une `SwipeDirection` propriété, de type `SwipeDirection` .
+- `SwipeChanging` est déclenché lors du déplacement du balayage. L' `SwipeChangingEventArgs` objet qui accompagne cet événement a une `SwipeDirection` propriété, de type `SwipeDirection` et une `Offset` propriété de type `double` .
+- `SwipeEnded` est déclenché lorsqu’un balayage se termine. L' `SwipeEndedEventArgs` objet qui accompagne cet événement a une `SwipeDirection` propriété, de type `SwipeDirection` .
+- `CloseRequested` est déclenché lorsque les éléments de balayage sont fermés.
 
 En outre, `SwipeView` comprend `Open` les `Close` méthodes et, qui ouvrent et ferment respectivement les éléments de balayage.
 
 > [!NOTE]
-> `SwipeView`a un spécifique à une plateforme sur iOS et Android, qui contrôle la transition utilisée lors de l’ouverture d’un `SwipeView` . Pour plus d’informations, consultez [mode de transition par balayage SwipeView sur iOS](~/xamarin-forms/platform/ios/swipeview-swipetransitionmode.md) et [mode de transition par balayage SwipeView sur Android](~/xamarin-forms/platform/android/swipeview-swipetransitionmode.md).
+> `SwipeView` a un spécifique à une plateforme sur iOS et Android, qui contrôle la transition utilisée lors de l’ouverture d’un `SwipeView` . Pour plus d’informations, consultez [mode de transition par balayage SwipeView sur iOS](~/xamarin-forms/platform/ios/swipeview-swipetransitionmode.md) et [mode de transition par balayage SwipeView sur Android](~/xamarin-forms/platform/android/swipeview-swipetransitionmode.md).
 
 ## <a name="create-a-swipeview"></a>Créer un SwipeView
 
@@ -195,7 +195,7 @@ En plus de définir des éléments de balayage en tant qu' `SwipeItem` objets, i
 
 ## <a name="swipe-direction"></a>Sens de balayage
 
-`SwipeView`prend en charge quatre directions de balayage différentes, la direction de balayage étant définie par la `SwipeItems` collection directionnelle à laquelle les `SwipeItem` objets sont ajoutés. Chaque sens de balayage peut contenir ses propres éléments de balayage. Par exemple, l’exemple suivant montre un `SwipeView` dont les éléments de balayage dépendent de la direction de balayage :
+`SwipeView` prend en charge quatre directions de balayage différentes, la direction de balayage étant définie par la `SwipeItems` collection directionnelle à laquelle les `SwipeItem` objets sont ajoutés. Chaque sens de balayage peut contenir ses propres éléments de balayage. Par exemple, l’exemple suivant montre un `SwipeView` dont les éléments de balayage dépendent de la direction de balayage :
 
 ```xaml
 <SwipeView>
@@ -230,17 +230,17 @@ Dans cet exemple, le `SwipeView` contenu peut être balayé vers la droite ou la
 
 Les `SwipeStarted` `SwipeChanging` événements, et `SwipeEnded` signalent la direction de balayage via la `SwipeDirection` propriété dans les arguments d’événement. Cette propriété est de type `SwipeDirection` , qui est une énumération composée de quatre membres :
 
-- `Right`indique qu’un balayage à droite s’est produit.
-- `Left`indique qu’un balayage à gauche s’est produit.
-- `Up`indique qu’un balayage vers le haut s’est produit.
-- `Down`indique qu’un balayage vers le bas s’est produit.
+- `Right` indique qu’un balayage à droite s’est produit.
+- `Left` indique qu’un balayage à gauche s’est produit.
+- `Up` indique qu’un balayage vers le haut s’est produit.
+- `Down` indique qu’un balayage vers le bas s’est produit.
 
 ## <a name="swipe-mode"></a>Mode balayage
 
 La `SwipeItems` classe a une `Mode` propriété, qui indique l’effet d’une interaction de balayage. Cette propriété doit être définie sur l’un des `SwipeMode` membres de l’énumération :
 
-- `Reveal`indique qu’un balayage révèle les éléments de balayage. C’est la valeur par défaut de la propriété `SwipeItems.Mode`.
-- `Execute`indique qu’un balayage exécute les éléments de balayage.
+- `Reveal` indique qu’un balayage révèle les éléments de balayage. C’est la valeur par défaut de la propriété `SwipeItems.Mode`.
+- `Execute` indique qu’un balayage exécute les éléments de balayage.
 
 En mode d’affichage, l’utilisateur effectue un balayage `SwipeView` pour ouvrir un menu constitué d’un ou de plusieurs éléments de balayage et doit appuyer explicitement sur un élément balayer pour l’exécuter. Après l’exécution de l’élément de balayage, les éléments de balayage sont fermés et le `SwipeView` contenu est à nouveau affiché. En mode exécution, l’utilisateur effectue un balayage `SwipeView` pour ouvrir un menu constitué d’un ou plusieurs éléments de balayage, qui sont ensuite exécutés automatiquement. Après l’exécution, les éléments de balayage sont fermés et le `SwipeView` contenu s’affiche à nouveau.
 
@@ -266,9 +266,9 @@ Dans cet exemple, le `SwipeView` contenu peut être balayé directement pour ré
 
 La `SwipeItems` classe a une `SwipeBehaviorOnInvoked` propriété, qui indique comment un `SwipeView` se comporte après l’appel d’un élément de balayage. Cette propriété doit être définie sur l’un des `SwipeBehaviorOnInvoked` membres de l’énumération :
 
-- `Auto`indique que dans le mode d’affichage `SwipeView` , le se ferme après l’appel d’un élément de balayage, et en mode exécution, le `SwipeView` reste ouvert après l’appel d’un élément de balayage. C’est la valeur par défaut de la propriété `SwipeItems.SwipeBehaviorOnInvoked`.
-- `Close`indique que le `SwipeView` se ferme après l’appel d’un élément de balayage.
-- `RemainOpen`indique que le `SwipeView` reste ouvert après l’appel d’un élément de balayage.
+- `Auto` indique que dans le mode d’affichage `SwipeView` , le se ferme après l’appel d’un élément de balayage, et en mode exécution, le `SwipeView` reste ouvert après l’appel d’un élément de balayage. C’est la valeur par défaut de la propriété `SwipeItems.SwipeBehaviorOnInvoked`.
+- `Close` indique que le `SwipeView` se ferme après l’appel d’un élément de balayage.
+- `RemainOpen` indique que le `SwipeView` reste ouvert après l’appel d’un élément de balayage.
 
 L’exemple suivant montre un `SwipeView` configuré pour rester ouvert après l’appel d’un élément de balayage :
 
@@ -329,7 +329,7 @@ Dans cet exemple, le `SwipeItemView` comprend un [`StackLayout`](xref:Xamarin.Fo
 
 ## <a name="open-and-close-a-swipeview-programmatically"></a>Ouvrir et fermer un SwipeView par programmation
 
-`SwipeView`comprend `Open` les `Close` méthodes et, qui ouvrent et ferment respectivement les éléments de balayage.
+`SwipeView` comprend `Open` les `Close` méthodes et, qui ouvrent et ferment respectivement les éléments de balayage.
 
 La `Open` méthode requiert un `OpenSwipeItem` argument pour spécifier la direction `SwipeView` à partir de laquelle le sera ouvert. L' `OpenSwipeItem` énumération a quatre membres :
 
@@ -361,5 +361,5 @@ En outre, lorsque vous définissez la `Command` propriété d’un ou d’un `Sw
 
 ## <a name="related-links"></a>Liens connexes
 
-- [SwipeView (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-swipeviewdemos/)
-- [Xamarin.FormsMenuItem](~/xamarin-forms/user-interface/menuitem.md)
+- [SwipeView (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-swipeviewdemos/)
+- [Xamarin.Forms MenuItem](~/xamarin-forms/user-interface/menuitem.md)

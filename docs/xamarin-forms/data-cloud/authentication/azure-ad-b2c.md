@@ -10,16 +10,16 @@ ms.date: 12/04/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 64529b81a375ee5a8cc8a96ec557c03401e60495
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: be1de99ba42e58e375792b0a4e03d1847e2e3c87
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84130570"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562884"
 ---
 # <a name="authenticate-users-with-azure-active-directory-b2c"></a>Authentifier les utilisateurs avec Azure Active Directory B2C
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azureadb2cauth)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azureadb2cauth)
 
 _Azure Active Directory B2C fournit la gestion des identités dans le Cloud pour les applications mobiles et Web destinées aux consommateurs. Cet article explique comment utiliser Azure Active Directory B2C pour intégrer la gestion des identités dans une application mobile à l’aide de la bibliothèque d’authentification Microsoft._
 
@@ -207,7 +207,7 @@ public partial class LoginPage : ContentPage
 }
 ```
 
-La `OnForgotPassword` méthode est similaire au processus de connexion, mais elle implémente une stratégie personnalisée. `OnForgotPassword`utilise une surcharge différente de `AcquireTokenAsync` , qui vous permet de fournir une **autorité**spécifique. L’exemple suivant montre comment fournir une **autorité** personnalisée lors de l’acquisition d’un jeton :
+La `OnForgotPassword` méthode est similaire au processus de connexion, mais elle implémente une stratégie personnalisée. `OnForgotPassword` utilise une surcharge différente de `AcquireTokenAsync` , qui vous permet de fournir une **autorité**spécifique. L’exemple suivant montre comment fournir une **autorité** personnalisée lors de l’acquisition d’un jeton :
 
 ```csharp
 public partial class LoginPage : ContentPage
@@ -342,9 +342,9 @@ Exécutez l’application sur un appareil virtuel ou physique. Appuyez sur le bo
 
 ![« Écran de connexion Azure ADB2C sur Android et iOS »](azure-ad-b2c-images/login.png)
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [AzureADB2CAuth (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azureadb2cauth)
+- [AzureADB2CAuth (exemple)](/samples/xamarin/xamarin-forms-samples/webservices-azureadb2cauth)
 - [Azure Active Directory B2C](/azure/active-directory-b2c/)
 - [Microsoft Authentication Library](https://www.nuget.org/packages/Microsoft.Identity.Client)
 - [Documentation de la bibliothèque d’authentification Microsoft](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki)

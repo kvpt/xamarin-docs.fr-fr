@@ -10,12 +10,12 @@ ms.date: 12/13/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5fa9c7592ecd2cb314ce12d7e303677447a5e104
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: d5e1cb9709c224ed5059de24bb45eed882ef216b
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86931168"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563534"
 ---
 # <a name="layout-compression"></a>Compression des dispositions
 
@@ -25,7 +25,7 @@ _La compression de disposition supprime les dispositions spécifiées de l’arb
 
 ## <a name="overview"></a>Vue d’ensemble
 
-Xamarin.Formseffectue la disposition à l’aide de deux séries d’appels de méthode récursives :
+Xamarin.Forms effectue la disposition à l’aide de deux séries d’appels de méthode récursives :
 
 - La disposition commence en haut de l’arborescence d’éléments visuels par une page et se poursuit dans toutes les branches de l’arborescence d’éléments visuels pour englober chaque élément visuel d’une page. Les éléments qui sont parents d’autres éléments sont responsables du dimensionnement et du positionnement de leurs enfants par rapport à eux-mêmes.
 - L’invalidation est le processus par lequel une modification dans un élément d’une page déclenche un nouveau cycle de disposition. Les éléments sont considérés comme non valides lorsqu’ils n’ont plus la taille ou la position correcte. Chaque élément de l’arborescence d’éléments visuels qui a des enfants est alerté chaque fois que l’un de ses enfants change de taille. Par conséquent, une modification de la taille d’un élément dans l’arborescence d’éléments visuels peut entraîner des modifications qui remontent l’arborescence.
@@ -125,4 +125,4 @@ La compression de disposition supprime les dispositions spécifiées de l’arbo
 
 - [Création d’une disposition personnalisée](~/xamarin-forms/user-interface/layouts/custom.md)
 - [Renderers rapides](~/xamarin-forms/internals/fast-renderers.md)
-- [LayoutCompression (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layoutcompression)
+- [LayoutCompression (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-layoutcompression)

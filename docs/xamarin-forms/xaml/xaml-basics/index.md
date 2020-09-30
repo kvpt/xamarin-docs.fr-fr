@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsConcepts de base du langage XAML
+title: Xamarin.Forms Concepts de base du langage XAML
 description: Ce guide explique comment prendre en main le XAML multiplateforme pour les appareils mobiles. XAML permet aux développeurs de définir des interfaces utilisateur dans des Xamarin.Forms applications à l’aide du balisage plutôt que du code.
 ms.prod: xamarin
 ms.custom: video
@@ -11,16 +11,16 @@ ms.date: 10/25/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8f5f69038f7d5cfe7ad46f013acb1519c4e9569f
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 3d2620014c9554712c746b98de3b9a0eeaa20864
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138617"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562754"
 ---
-# <a name="xamarinforms-xaml-basics"></a>Xamarin.FormsConcepts de base du langage XAML
+# <a name="no-locxamarinforms-xaml-basics"></a>Xamarin.Forms Concepts de base du langage XAML
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
 Le langage XAML (eXtensible Application Markup Language) est un langage basé sur XML créé par Microsoft comme alternative à la programmation de code pour instancier et initialiser des objets, et à organiser ces objets dans des hiérarchies de type parent-enfant. XAML a été adapté à plusieurs technologies dans .NET Framework, mais il a trouvé son utilitaire le plus performant pour définir la disposition des interfaces utilisateur au sein du Windows Presentation Foundation (WPF), Silverlight, le Windows Runtime et le plateforme Windows universelle (UWP).
 
@@ -37,14 +37,14 @@ XAML présente plusieurs avantages par rapport au code équivalent :
 Il existe également des inconvénients, principalement liés aux limitations qui sont intrinsèques aux langages de balisage :
 
 - XAML ne peut pas contenir de code. Tous les gestionnaires d’événements doivent être définis dans un fichier de code.
-- XAML ne peut pas contenir de boucles pour un traitement répétitif. (Toutefois, plusieurs Xamarin.Forms objets visuels, le plus particulièrement [`ListView`](xref:Xamarin.Forms.ListView) , peuvent générer plusieurs enfants en fonction des objets de la `ItemsSource` collection.)
+- XAML ne peut pas contenir de boucles pour un traitement répétitif. (Toutefois, plusieurs Xamarin.Forms objets visuels, le plus particulièrement  [`ListView`](xref:Xamarin.Forms.ListView) , peuvent générer plusieurs enfants en fonction des objets de la `ItemsSource` collection.)
 - XAML ne peut pas contenir de traitement conditionnel (Toutefois, une liaison de données peut référencer un convertisseur de liaison basé sur du code qui autorise efficacement un traitement conditionnel).
 - En général, XAML ne peut pas instancier des classes qui ne définissent pas de constructeur sans paramètre. (Toutefois, il existe parfois un moyen de contourner cette restriction.)
 - XAML ne peut généralement pas appeler des méthodes. (Là encore, cette restriction peut parfois être surmontée.)
 
 Il n’existe pas encore de concepteur visuel pour générer du code XAML dans les Xamarin.Forms applications. Tout le code XAML doit être écrit manuellement, mais il existe un [Générateur d’aperçu XAML](~/xamarin-forms/xaml/xaml-previewer/index.md). Les programmeurs qui débutent en XAML peuvent souhaiter générer et exécuter fréquemment leurs applications, en particulier après tout ce qui n’est peut-être pas correct. Même les développeurs ayant beaucoup d’expérience en XAML savent que l’expérimentation est récompense.
 
-XAML est fondamentalement XML, mais XAML possède des fonctionnalités de syntaxe uniques. Les plus importants sont les suivants :
+XAML est fondamentalement XML, mais XAML possède des fonctionnalités de syntaxe uniques. Voici les plus importants :
 
 - Éléments de propriété
 - Propriétés jointes
@@ -52,7 +52,7 @@ XAML est fondamentalement XML, mais XAML possède des fonctionnalités de syntax
 
 Ces fonctionnalités ne sont *pas* des extensions XML. XAML est entièrement conforme à XML. Toutefois, ces fonctionnalités de syntaxe XAML utilisent XML de manière unique. Elles sont décrites en détail dans les articles ci-dessous, qui se terminent par une introduction à l’utilisation du code XAML pour l’implémentation de MVVM.
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Configuration requise
 
 Cet article suppose une connaissance du fonctionnement de Xamarin.Forms . Cet article suppose également une certaine connaissance de XML, notamment la compréhension de l’utilisation des déclarations d’espaces de noms XML et des termes *élément*, *balise*et *attribut*.
 
@@ -60,9 +60,9 @@ Lorsque vous êtes familiarisé avec Xamarin.Forms et XML, commencez par lire la
 
 ## <a name="related-links"></a>Liens connexes
 
-- [XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
+- [XamlSamples](/samples/xamarin/xamarin-forms-samples/xamlsamples)
 - [Création d’Mobile Apps Book](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)
-- [Xamarin.FormsExtraits](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
+- [Xamarin.Forms Extraits](/samples/browse/?products=xamarin&term=Xamarin.Forms)
 
 ## <a name="related-video"></a>Vidéo connexe
 

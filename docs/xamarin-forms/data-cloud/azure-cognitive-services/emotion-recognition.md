@@ -10,12 +10,12 @@ ms.date: 05/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ac7b90fb3e70fd07fcafe78a68136338469862e0
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 220b8a49f4f261568a653af16e333885edec23f8
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936368"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562871"
 ---
 # <a name="perceived-emotion-recognition-using-the-face-api"></a>Reconnaissance des émotions perçues à l’aide de l’API Visage
 
@@ -54,9 +54,9 @@ Si vous ne transmettez pas une clé d’API valide à la API Visage, une erreur 
 
 La reconnaissance d’émotions est effectuée en effectuant une demande de publication contenant une image à l' `detect` API à `https://[location].api.cognitive.microsoft.com/face/v1.0` , où `[location]]` est la région que vous avez utilisée pour obtenir votre clé API. Les paramètres de requête facultatifs sont les suivants :
 
-- `returnFaceId`: indique s’il faut retourner les faceIds des visages détectés. La valeur par défaut est `true`.
-- `returnFaceLandmarks`: indique s’il faut retourner les points de repère des visages détectés. La valeur par défaut est `false`.
-- `returnFaceAttributes`: indique s’il faut analyser et retourner un ou plusieurs attributs de visage spécifiés. Les attributs de visage pris en charge incluent `age` , `gender` , `headPose` , `smile` , `facialHair` , `glasses` ,,,, `emotion` `hair` `makeup` `occlusion` , `accessories` , `blur` , `exposure` et `noise` . Notez que l’analyse des attributs de face présente un coût de calcul et de temps supplémentaire.
+- `returnFaceId` : indique s’il faut retourner les faceIds des visages détectés. La valeur par défaut est `true`.
+- `returnFaceLandmarks` : indique s’il faut retourner les points de repère des visages détectés. La valeur par défaut est `false`.
+- `returnFaceAttributes` : indique s’il faut analyser et retourner un ou plusieurs attributs de visage spécifiés. Les attributs de visage pris en charge incluent `age` , `gender` , `headPose` , `smile` , `facialHair` , `glasses` ,,,, `emotion` `hair` `makeup` `occlusion` , `accessories` , `blur` , `exposure` et `noise` . Notez que l’analyse des attributs de face présente un coût de calcul et de temps supplémentaire.
 
 Le contenu de l’image doit être placé dans le corps de la demande de publication sous forme d’URL ou de données binaires.
 
@@ -183,5 +183,5 @@ La capture d’écran suivante montre le résultat du processus de reconnaissanc
 ## <a name="related-links"></a>Liens connexes
 
 - [API visage](/azure/cognitive-services/face/overview/).
-- [Cognitive Services todo (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
+- [Cognitive Services todo (exemple)](/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 - [API REST face](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)

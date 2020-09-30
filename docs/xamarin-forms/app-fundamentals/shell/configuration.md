@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsConfiguration de la page de Shell
+title: Xamarin.Forms Configuration de la page de Shell
 description: La classe Shell définit des propriétés jointes qui peuvent être utilisées pour configurer l’apparence des pages dans les Xamarin.Forms applications Shell. Cela comprend notamment la configuration des couleurs de la page, la désactivation de la barre de navigation et de la barre d’onglet ainsi que l’apparence des affichages dans la barre de navigation.
 ms.prod: xamarin
 ms.assetid: 3FC2FBD1-C30B-4408-97B2-B04E3A2E4F03
@@ -10,16 +10,16 @@ ms.date: 01/29/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 102070fc478b42e9fbc0c7d0006197c81a49c9b8
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 3f3eca53f9f7347472a554b4ec30b83f40a96e0e
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137499"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563300"
 ---
-# <a name="xamarinforms-shell-page-configuration"></a>Xamarin.FormsConfiguration de la page de Shell
+# <a name="no-locxamarinforms-shell-page-configuration"></a>Xamarin.Forms Configuration de la page de Shell
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
 La `Shell` classe définit les propriétés jointes qui peuvent être utilisées pour configurer l’apparence des pages dans les applications de l' Xamarin.Forms interpréteur de commandes. Cela comprend la définition des couleurs des pages, la définition du mode de présentation de la page, la désactivation de la barre de navigation, la désactivation de la barre d’onglets et l’affichage des affichages dans la barre de navigation.
 
@@ -93,11 +93,11 @@ Pour plus d’informations sur les styles XAML, consultez [stylisation d' Xamari
 
 Par défaut, une petite animation de navigation se produit lorsqu’une page est parcourue à l’aide de la `GoToAsync` méthode. Toutefois, ce comportement peut être modifié en affectant `Shell.PresentationMode` à la propriété jointe un sur [`ContentPage`](xref:Xamarin.Forms.ContentPage) l’un des membres de l' `PresentationMode` énumération :
 
-- `NotAnimated`indique que la page sera affichée sans animation de navigation.
-- `Animated`indique que la page sera affichée avec une animation de navigation. Il s’agit de la valeur par défaut de la `Shell.PresentationMode` propriété jointe.
-- `Modal`indique que la page s’affichera sous la forme d’une page modale.
-- `ModalAnimated`indique que la page s’affichera sous la forme d’une page modale, avec une animation de navigation.
-- `ModalNotAnimated`indique que la page s’affichera sous la forme d’une page modale, sans animation de navigation.
+- `NotAnimated` indique que la page sera affichée sans animation de navigation.
+- `Animated` indique que la page sera affichée avec une animation de navigation. Il s’agit de la valeur par défaut de la `Shell.PresentationMode` propriété jointe.
+- `Modal` indique que la page s’affichera sous la forme d’une page modale.
+- `ModalAnimated` indique que la page s’affichera sous la forme d’une page modale, avec une animation de navigation.
+- `ModalNotAnimated` indique que la page s’affichera sous la forme d’une page modale, sans animation de navigation.
 
 > [!IMPORTANT]
 > Le `PresentationMode` type est une énumération d’indicateurs. Cela signifie qu’une combinaison de membres de l’énumération peut être appliquée dans le code. Toutefois, pour faciliter l’utilisation en XAML, le `ModalAnimated` membre est une combinaison des `Animated` membres et `Modal` , et le `ModalNotAnimated` membre est une combinaison des `NotAnimated` `Modal` membres et. Pour plus d’informations sur les énumérations d’indicateur, consultez [types énumération en tant qu’indicateurs binaires](/dotnet/csharp/language-reference/builtin-types/enum#enumeration-types-as-bit-flags).
@@ -196,6 +196,6 @@ Le shell respecte la visibilité de la page, définie avec la [`IsVisible`](xref
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Xaminals (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
+- [Xaminals (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 - [Styliser des Xamarin.Forms applications à l’aide de styles XAML](~/xamarin-forms/user-interface/styles/xaml/index.md)
-- [Xamarin.FormsPropriétés spécifiques de l’interpréteur de commandes CSS](~/xamarin-forms/user-interface/styles/css/index.md#xamarinforms-shell-specific-properties)
+- [Xamarin.Forms Propriétés spécifiques de l’interpréteur de commandes CSS](~/xamarin-forms/user-interface/styles/css/index.md#xamarinforms-shell-specific-properties)

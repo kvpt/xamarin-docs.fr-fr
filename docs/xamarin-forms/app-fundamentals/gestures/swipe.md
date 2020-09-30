@@ -10,18 +10,18 @@ ms.date: 08/14/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: db0beb59ed882d76288968a239f0a0dd735d9990
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: cbd1bdd097bc205f82f98574df5c356b03769e29
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918470"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562650"
 ---
 # <a name="add-a-swipe-gesture-recognizer"></a>Ajouter un module de reconnaissance de mouvement de balayage
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-swipegesture)
 
-_Un mouvement de balayage se produit lorsqu’un doigt est déplacé sur l’écran dans un sens horizontal ou vertical, et est souvent utilisé pour lancer la navigation dans le contenu. Les exemples de code présentés dans cet article sont tirés de l’exemple de [mouvement de balayage](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-swipegesture) ._
+_Un mouvement de balayage se produit lorsqu’un doigt est déplacé sur l’écran dans un sens horizontal ou vertical, et est souvent utilisé pour lancer la navigation dans le contenu. Les exemples de code présentés dans cet article sont tirés de l’exemple de [mouvement de balayage](/samples/xamarin/xamarin-forms-samples/workingwithgestures-swipegesture) ._
 
 Pour faire en sorte qu’un [`View`](xref:Xamarin.Forms.View) mouvement de balayage soit reconnu, créez une [`SwipeGestureRecognizer`](xref:Xamarin.Forms.SwipeGestureRecognizer) instance, affectez [`Direction`](xref:Xamarin.Forms.SwipeGestureRecognizer.Direction) à la propriété une [`SwipeDirection`](xref:Xamarin.Forms.SwipeDirection) valeur d’énumération ( `Left` ,, `Right` `Up` ou `Down` ), définissez éventuellement la [`Threshold`](xref:Xamarin.Forms.SwipeGestureRecognizer.Threshold) propriété, gérez l' [`Swiped`](xref:Xamarin.Forms.SwipeGestureRecognizer.Swiped) événement et ajoutez le nouveau module de reconnaissance de mouvement à la [`GestureRecognizers`](xref:Xamarin.Forms.View.GestureRecognizers) collection sur la vue. L’exemple de code suivant montre un `SwipeGestureRecognizer` attaché à un [`BoxView`](xref:Xamarin.Forms.BoxView) :
 
@@ -142,7 +142,7 @@ Le code XAML équivalent est :
 </BoxView>
 ```
 
-`SwipeCommand`est une propriété de type `ICommand` définie dans l’instance de modèle de vue qui est définie comme page [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) . Quand un mouvement de balayage est reconnu, la méthode `Execute` de l’objet `SwipeCommand` est exécutée. L’argument de la `Execute` méthode est la valeur de la [`CommandParameter`](xref:Xamarin.Forms.SwipeGestureRecognizer.CommandParameter) propriété. Pour plus d’informations sur les commandes, consultez [Interface de commande](~/xamarin-forms/app-fundamentals/data-binding/commanding.md).
+`SwipeCommand` est une propriété de type `ICommand` définie dans l’instance de modèle de vue qui est définie comme page [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) . Quand un mouvement de balayage est reconnu, la méthode `Execute` de l’objet `SwipeCommand` est exécutée. L’argument de la `Execute` méthode est la valeur de la [`CommandParameter`](xref:Xamarin.Forms.SwipeGestureRecognizer.CommandParameter) propriété. Pour plus d’informations sur les commandes, consultez [Interface de commande](~/xamarin-forms/app-fundamentals/data-binding/commanding.md).
 
 ## <a name="creating-a-swipe-container"></a>Création d’un conteneur de balayage
 
@@ -210,6 +210,6 @@ Lorsque le [`BoxView`](xref:Xamarin.Forms.BoxView) reçoit un mouvement de balay
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Mouvement de balayage (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-swipegesture)
+- [Mouvement de balayage (exemple)](/samples/xamarin/xamarin-forms-samples/workingwithgestures-swipegesture)
 - [GestureRecognizer](xref:Xamarin.Forms.GestureRecognizer)
 - [SwipeGestureRecognizer](xref:Xamarin.Forms.SwipeGestureRecognizer)

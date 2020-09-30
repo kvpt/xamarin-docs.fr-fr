@@ -1,5 +1,5 @@
 ---
-title: Authentifier les utilisateurs avec une base de données de documents Azure Cosmos DB etXamarin.Forms
+title: Authentifier les utilisateurs avec une base de données de documents Azure Cosmos DB et Xamarin.Forms
 description: Cet article explique comment combiner le contrôle d’accès avec Azure Cosmos DB collections partitionnées, afin qu’un utilisateur puisse uniquement accéder à ses propres documents dans une Xamarin.Forms application.
 ms.prod: xamarin
 ms.assetid: 11ED4A4C-0F05-40B2-AB06-5A0F2188EF3D
@@ -10,14 +10,14 @@ ms.date: 06/16/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 05547e960ba1ea141a830396f803dfc265283627
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 2dacbc18fdbc7d9c7bd38d5ddfad2157e3a0a503
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936459"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563287"
 ---
-# <a name="authenticate-users-with-an-azure-cosmos-db-document-database-and-xamarinforms"></a>Authentifier les utilisateurs avec une base de données de documents Azure Cosmos DB etXamarin.Forms
+# <a name="authenticate-users-with-an-azure-cosmos-db-document-database-and-no-locxamarinforms"></a>Authentifier les utilisateurs avec une base de données de documents Azure Cosmos DB et Xamarin.Forms
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-tododocumentdbauth)
 
@@ -51,7 +51,7 @@ Le répartiteur de jetons de ressource est un service d’API Web de niveau inte
 
 Pour plus d’informations sur le partitionnement de Cosmos DB, consultez [comment partitionner et mettre à l’échelle dans Azure Cosmos DB](/azure/cosmos-db/partition-data/). Pour plus d’informations sur le contrôle d’accès Cosmos DB, consultez [sécurisation de l’accès à Cosmos DB Data](/azure/cosmos-db/secure-access-to-data/) and [Access Control dans l’API SQL](/rest/api/documentdb/access-control-on-documentdb-resources/).
 
-## <a name="setup"></a>Installation
+## <a name="setup"></a>Programme d’installation
 
 Le processus d’intégration du répartiteur de jetons de ressource dans une Xamarin.Forms application est le suivant :
 
@@ -77,11 +77,11 @@ Le processus d’hébergement du répartiteur de jetons de ressource dans Azure 
 
 1. Dans le Portail Azure, créez une nouvelle application Web App Service. Pour plus d’informations, consultez [créer une application Web dans une app service Environment](/azure/app-service-web/app-service-web-how-to-create-a-web-app-in-an-ase/).
 1. Dans la Portail Azure, ouvrez le panneau Paramètres de l’application pour l’application Web, puis ajoutez les paramètres suivants :
-    - `accountUrl`: la valeur doit être l’URL du compte Cosmos DB à partir du panneau clés du compte Cosmos DB.
-    - `accountKey`: la valeur doit être la Cosmos DB clé principale (primaire ou secondaire) à partir du panneau clés du compte Cosmos DB.
-    - `databaseId`: la valeur doit être le nom de la base de données Cosmos DB.
-    - `collectionId`: la valeur doit être le nom de la collection Cosmos DB (dans ce cas, `UserItems` ).
-    - `hostUrl`: la valeur doit être l’URL de l’application Web à partir du panneau vue d’ensemble du compte App Service.
+    - `accountUrl` : la valeur doit être l’URL du compte Cosmos DB à partir du panneau clés du compte Cosmos DB.
+    - `accountKey` : la valeur doit être la Cosmos DB clé principale (primaire ou secondaire) à partir du panneau clés du compte Cosmos DB.
+    - `databaseId` : la valeur doit être le nom de la base de données Cosmos DB.
+    - `collectionId` : la valeur doit être le nom de la collection Cosmos DB (dans ce cas, `UserItems` ).
+    - `hostUrl` : la valeur doit être l’URL de l’application Web à partir du panneau vue d’ensemble du compte App Service.
 
     La capture d’écran suivante illustre cette configuration :
 
@@ -121,16 +121,16 @@ Le processus de configuration de App Service Easy Authentication est le suivant�
 
 L’application Web App Service doit également être configurée pour communiquer avec l’application Facebook afin d’activer le workflow d’authentification. Pour ce faire, sélectionnez le fournisseur d’identité Facebook, puis entrez les valeurs **ID** de l’application et secret de l' **application** à partir des paramètres de l’application Facebook dans le centre de développement Facebook. Pour plus d’informations, consultez [Ajouter des informations Facebook à votre application](/azure/app-service-mobile/app-service-mobile-how-to-configure-facebook-authentication#a-namesecrets-aadd-facebook-information-to-your-application).
 
-### <a name="xamarinforms-application-configuration"></a>Xamarin.FormsConfiguration de l’application
+### <a name="no-locxamarinforms-application-configuration"></a>Xamarin.Forms Configuration de l’application
 
 Le processus de configuration de l' Xamarin.Forms exemple d’application est le suivant :
 
 1. Ouvrez la Xamarin.Forms solution.
 1. Ouvrez `Constants.cs` et mettez à jour les valeurs des constantes suivantes :
-    - `EndpointUri`: la valeur doit être l’URL du compte Cosmos DB à partir du panneau clés du compte Cosmos DB.
-    - `DatabaseName`: la valeur doit être le nom de la base de données de documents.
-    - `CollectionName`: la valeur doit être le nom de la collection de bases de données de documents (dans ce cas, `UserItems` ).
-    - `ResourceTokenBrokerUrl`: la valeur doit être l’URL de l’application Web du Service Broker pour les jetons de ressources à partir du panneau vue d’ensemble du compte App Service.
+    - `EndpointUri` : la valeur doit être l’URL du compte Cosmos DB à partir du panneau clés du compte Cosmos DB.
+    - `DatabaseName` : la valeur doit être le nom de la base de données de documents.
+    - `CollectionName` : la valeur doit être le nom de la collection de bases de données de documents (dans ce cas, `UserItems` ).
+    - `ResourceTokenBrokerUrl` : la valeur doit être l’URL de l’application Web du Service Broker pour les jetons de ressources à partir du panneau vue d’ensemble du compte App Service.
 
 ## <a name="initiating-login"></a>Initialisation de la connexion
 
@@ -264,10 +264,10 @@ Cet article a expliqué comment combiner le contrôle d’accès avec des collec
 
 ## <a name="related-links"></a>Liens associés
 
-- [TODO Azure Cosmos DB auth (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-tododocumentdbauth)
+- [TODO Azure Cosmos DB auth (exemple)](/samples/xamarin/xamarin-forms-samples/webservices-tododocumentdbauth)
 - [Consommation d’une base de données de documents Azure Cosmos DB](~/xamarin-forms/data-cloud/azure-services/azure-cosmosdb.md)
 - [Sécurisation de l’accès aux données d’Azure Cosmos DB](/azure/cosmos-db/secure-access-to-data/)
 - [Contrôle d’accès dans l’API SQL](/rest/api/documentdb/access-control-on-documentdb-resources/).
 - [Guide de partitionnement et de mise à l’échelle dans Azure Cosmos DB](/azure/cosmos-db/partition-data/)
 - [Bibliothèque cliente Azure Cosmos DB](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core)
-- [API Azure Cosmos DB](https://msdn.microsoft.com/library/azure/dn948556.aspx)
+- [API Azure Cosmos DB](/dotnet/api/overview/azure/cosmosdb/client)

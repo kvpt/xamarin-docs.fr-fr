@@ -10,12 +10,12 @@ ms.date: 11/29/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: adbceca38fca2cbe65c739f0d7fe26f18bdf5450
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 4d9749c110019f2cf711c1df56196d3296223641
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939852"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557970"
 ---
 # <a name="customizing-a-contentpage"></a>Personnalisation d’un ContentPage
 
@@ -37,7 +37,7 @@ Le processus de rendu peut être utilisé pour implémenter des personnalisation
 
 Nous allons à présent présenter chaque élément à tour de rôle pour implémenter un `CameraPage` qui fournit un flux vidéo en temps réel et qui permet de capturer une photo.
 
-## <a name="creating-the-xamarinforms-page"></a>Création de la Xamarin.Forms page
+## <a name="creating-the-no-locxamarinforms-page"></a>Création de la Xamarin.Forms page
 
 Un non modifié [`ContentPage`](xref:Xamarin.Forms.ContentPage) peut être ajouté au Xamarin.Forms projet partagé, comme indiqué dans l’exemple de code XAML suivant :
 
@@ -76,7 +76,7 @@ public class CameraPageCS : ContentPage
 
 Une instance de `CameraPage` est utilisée pour afficher le flux vidéo en temps réel sur chaque plateforme. La personnalisation du contrôle étant effectuée dans le renderer personnalisé, aucune implémentation supplémentaire n’est nécessaire dans la classe `CameraPage`.
 
-## <a name="consuming-the-xamarinforms-page"></a>Utilisation de la Xamarin.Forms page
+## <a name="consuming-the-no-locxamarinforms-page"></a>Utilisation de la Xamarin.Forms page
 
 La vide `CameraPage` doit être affichée par l' Xamarin.Forms application. Cela se produit quand un bouton est actionné dans l’instance `MainPage`, entraînant à son tour l’exécution de la méthode `OnTakePhotoButtonClicked`, comme le montre l’exemple de code suivant :
 
@@ -196,7 +196,7 @@ namespace CustomRenderer.Droid
 
 L’appel à la méthode `OnElementChanged` de la classe de base instancie un contrôle `ViewGroup` Android, qui est en fait un groupe de vues. Le flux de la caméra dynamique est rendu uniquement si le convertisseur n’est pas déjà attaché à un Xamarin.Forms élément existant, et à condition qu’une instance de page soit rendue par le convertisseur personnalisé.
 
-La page est ensuite personnalisée en appelant une série de méthodes qui utilisent l’API `Camera` pour fournir le flux en temps réel de la caméra et la possibilité de capturer une photo, puis la méthode `AddView` est appelée pour ajouter l’interface utilisateur du flux vidéo en temps réel à `ViewGroup`. Sur Android, notez qu’il est également nécessaire de remplacer la méthode `OnLayout` pour effectuer les opérations de mesure et de disposition sur la vue. Pour plus d’informations, consultez l’[exemple de renderer ContentPage](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-contentpage).
+La page est ensuite personnalisée en appelant une série de méthodes qui utilisent l’API `Camera` pour fournir le flux en temps réel de la caméra et la possibilité de capturer une photo, puis la méthode `AddView` est appelée pour ajouter l’interface utilisateur du flux vidéo en temps réel à `ViewGroup`. Sur Android, notez qu’il est également nécessaire de remplacer la méthode `OnLayout` pour effectuer les opérations de mesure et de disposition sur la vue. Pour plus d’informations, consultez l’[exemple de renderer ContentPage](/samples/xamarin/xamarin-forms-samples/customrenderers-contentpage).
 
 ### <a name="creating-the-page-renderer-on-uwp"></a>Création du renderer de page sur UWP
 
@@ -245,7 +245,7 @@ L’appel à la méthode `OnElementChanged` de la classe de base instancie un co
 Quand vous implémentez un renderer personnalisé qui dérive de `PageRenderer` sur UWP, la méthode `ArrangeOverride` doit également être implémentée pour organiser les contrôles de page car le renderer de base ne sait pas quoi en faire. Sinon, vous obtenez une page vierge. Ainsi, dans cet exemple, la méthode `ArrangeOverride` appelle la méthode `Arrange` sur l’instance `Page`.
 
 > [!NOTE]
-> Il est important d’arrêter et de supprimer les objets qui fournissent un accès à la caméra dans une application UWP. Si vous ne le faites pas, il peut se produire une interférence avec d’autres applications qui tentent d’accéder à la caméra de l’appareil. Pour plus d’informations, consultez [Afficher l’aperçu de la caméra](https://msdn.microsoft.com/windows/uwp/audio-video-camera/simple-camera-preview-access).
+> Il est important d’arrêter et de supprimer les objets qui fournissent un accès à la caméra dans une application UWP. Si vous ne le faites pas, il peut se produire une interférence avec d’autres applications qui tentent d’accéder à la caméra de l’appareil. Pour plus d’informations, consultez [Afficher l’aperçu de la caméra](/windows/uwp/audio-video-camera/simple-camera-preview-access).
 
 ## <a name="summary"></a>Résumé
 
@@ -253,4 +253,4 @@ Cet article a montré comment créer un convertisseur personnalisé pour la [`Co
 
 ## <a name="related-links"></a>Liens associés
 
-- [CustomRendererContentPage (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-contentpage)
+- [CustomRendererContentPage (exemple)](/samples/xamarin/xamarin-forms-samples/customrenderers-contentpage)

@@ -1,6 +1,6 @@
 ---
 title: Présentation des Xamarin.Forms modèles de données
-description: Xamarin.Formsles modèles de données permettent de définir la présentation des données sur les contrôles pris en charge. Cet article présente les modèles de données et explique pourquoi ils sont nécessaires.
+description: Xamarin.Forms les modèles de données permettent de définir la présentation des données sur les contrôles pris en charge. Cet article présente les modèles de données et explique pourquoi ils sont nécessaires.
 ms.prod: xamarin
 ms.assetid: 4ED4ACF4-BE4A-44ED-8EAF-C03947B8663B
 ms.technology: xamarin-forms
@@ -10,18 +10,18 @@ ms.date: 09/11/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3558352c9f43b8e301492077806bbb611e9b58cf
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 28dbbe6411983e1fd7986413ceac69a5543c4bb4
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86929309"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562572"
 ---
-# <a name="introduction-to-xamarinforms-data-templates"></a>Présentation des Xamarin.Forms modèles de données
+# <a name="introduction-to-no-locxamarinforms-data-templates"></a>Présentation des Xamarin.Forms modèles de données
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplates)
 
-_Xamarin.Formsles modèles de données permettent de définir la présentation des données sur les contrôles pris en charge. Cet article fournit une introduction aux modèles de données, en examinant pourquoi ils sont nécessaires._
+_Xamarin.Forms les modèles de données permettent de définir la présentation des données sur les contrôles pris en charge. Cet article fournit une introduction aux modèles de données, en examinant pourquoi ils sont nécessaires._
 
 Prenons l’exemple d’un [`ListView`](xref:Xamarin.Forms.ListView) qui affiche une collection d' `Person` objets. L’exemple de code suivant montre la définition de la classe `Person` :
 
@@ -140,5 +140,5 @@ Les modèles de données situés plus bas dans la hiérarchie de vues sont prior
 ## <a name="related-links"></a>Liens associés
 
 - [Apparence de cellule](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)
-- [Modèles de données (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplates)
+- [Modèles de données (exemple)](/samples/xamarin/xamarin-forms-samples/templates-datatemplates)
 - [DataTemplate](xref:Xamarin.Forms.DataTemplate)

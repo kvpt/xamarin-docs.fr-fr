@@ -10,12 +10,12 @@ ms.date: 01/29/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 4381b1fbe7b38c2695bce645903d599bdb792fc2
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: f447a89ca4b4f21554a75ec52c5771ee9f9d35fd
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937434"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562988"
 ---
 # <a name="adding-ios-specific-formatting"></a>Ajout d’une mise en forme spécifique à iOS
 
@@ -32,7 +32,7 @@ Ces alternatives sont présentées ci-dessous.
 
 Le fichier **info. plist** vous permet de configurer certains aspects du renderering d’une application iOS, par exemple comment (et si) la barre d’État est affichée.
 
-Par exemple, l' [exemple todo](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo) utilise le code suivant pour définir la couleur de la barre de navigation et la couleur du texte sur toutes les plateformes :
+Par exemple, l' [exemple todo](/samples/xamarin/xamarin-forms-samples/todo) utilise le code suivant pour définir la couleur de la barre de navigation et la couleur du texte sur toutes les plateformes :
 
 ```csharp
 var nav = new NavigationPage (new TodoListPage ());
@@ -85,7 +85,7 @@ public override bool FinishedLaunching (UIApplication app, NSDictionary options)
 
 ### <a name="uitabbar"></a>UITabBar
 
-Par défaut, l’icône de la barre d’onglets sélectionnée dans un[`TabbedPage`](~/xamarin-forms/app-fundamentals/navigation/tabbed-page.md)
+Par défaut, l’icône de la barre d’onglets sélectionnée dans un [`TabbedPage`](~/xamarin-forms/app-fundamentals/navigation/tabbed-page.md)
 serait bleu :
 
 ![Icône de barre d’onglet iOS par défaut dans TabbedPage](theme-images/tabbar-default.png)
@@ -100,8 +100,8 @@ L’onglet sélectionné est alors vert :
 
 ![Icône de barre d’onglets iOS verte dans TabbedPage](theme-images/tabbar-custom.png)
 
-L’utilisation de cette API vous permet de personnaliser l’apparence duXamarin.Forms
-`TabbedPage`sur iOS avec très peu de code. Reportez-vous à la [recette personnaliser les onglets](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/iOS/customize-tabs) pour plus d’informations sur l’utilisation d’un convertisseur personnalisé pour définir une police spécifique pour l’onglet.
+L’utilisation de cette API vous permet de personnaliser l’apparence du Xamarin.Forms
+`TabbedPage` sur iOS avec très peu de code. Reportez-vous à la [recette personnaliser les onglets](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/iOS/customize-tabs) pour plus d’informations sur l’utilisation d’un convertisseur personnalisé pour définir une police spécifique pour l’onglet.
 
 ### <a name="uiswitch"></a>UISwitch
 
@@ -111,7 +111,7 @@ Le `Switch` contrôle est un autre exemple qui peut être facilement stylisé :
 UISwitch.Appearance.OnTintColor = UIColor.FromRGB(0x91, 0xCA, 0x47); // green
 ```
 
-Ces deux captures d’écran affichent le contrôle par défaut `UISwitch` sur la gauche et la version personnalisée (paramètre `Appearance` ) à droite dans l' [exemple todo](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo):
+Ces deux captures d’écran affichent le contrôle par défaut `UISwitch` sur la gauche et la version personnalisée (paramètre `Appearance` ) à droite dans l' [exemple todo](/samples/xamarin/xamarin-forms-samples/todo):
 
 ![Couleur UISwitch par défaut](theme-images/switch-default.png) ![Couleur UISwitch personnalisée](theme-images/switch-custom.png)
 

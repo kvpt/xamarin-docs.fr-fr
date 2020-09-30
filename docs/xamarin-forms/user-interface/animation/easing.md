@@ -1,6 +1,6 @@
 ---
-title: Fonctions d’accélération dansXamarin.Forms
-description: Xamarin.Formscomprend une classe d’accélération qui vous permet de spécifier une fonction de transfert qui contrôle la vitesse à laquelle les animations augmentent ou ralentissent lorsqu’elles sont en cours d’exécution. Cet article montre comment utiliser les fonctions d’accélération prédéfinies et comment créer des fonctions d’accélération personnalisées.
+title: Fonctions d’accélération dans Xamarin.Forms
+description: Xamarin.Forms comprend une classe d’accélération qui vous permet de spécifier une fonction de transfert qui contrôle la vitesse à laquelle les animations augmentent ou ralentissent lorsqu’elles sont en cours d’exécution. Cet article montre comment utiliser les fonctions d’accélération prédéfinies et comment créer des fonctions d’accélération personnalisées.
 ms.prod: xamarin
 ms.assetid: E6F124C7-A161-4C1F-AF40-52F0935E54DE
 ms.technology: xamarin-forms
@@ -10,18 +10,18 @@ ms.date: 07/14/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 574b6f82aea3c71d43799c6ca86997d895eed4c5
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 1769a1eb562d4ae0551598493afa9b04491a42d5
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84573805"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562793"
 ---
-# <a name="easing-functions-in-xamarinforms"></a>Fonctions d’accélération dansXamarin.Forms
+# <a name="easing-functions-in-no-locxamarinforms"></a>Fonctions d’accélération dans Xamarin.Forms
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-easing)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-easing)
 
-_Xamarin. Forms comprend une classe d’accélération qui vous permet de spécifier une fonction de transfert qui contrôle la vitesse à laquelle les animations augmentent ou ralentissent lorsqu’elles sont en cours d’exécution. Cet article montre comment utiliser les fonctions d’accélération prédéfinies et comment créer des fonctions d’accélération personnalisées._
+_Xamarin.Forms comprend une classe d’accélération qui vous permet de spécifier une fonction de transfert qui contrôle la vitesse à laquelle les animations augmentent ou ralentissent lorsqu’elles sont en cours d’exécution. Cet article montre comment utiliser les fonctions d’accélération prédéfinies et comment créer des fonctions d’accélération personnalisées._
 
 La [`Easing`](xref:Xamarin.Forms.Easing) classe définit un certain nombre de fonctions d’accélération qui peuvent être consommées par les animations :
 
@@ -105,11 +105,11 @@ La fonction d’accélération personnalisée est spécifiée en tant qu’argum
 
 ## <a name="summary"></a>Résumé
 
-Cet article a montré comment utiliser les fonctions d’accélération prédéfinies et comment créer des fonctions d’accélération personnalisées. Xamarin.Formscomprend une [`Easing`](xref:Xamarin.Forms.Easing) classe qui vous permet de spécifier une fonction de transfert qui contrôle la vitesse à laquelle les animations augmentent ou ralentissent lorsqu’elles sont en cours d’exécution.
+Cet article a montré comment utiliser les fonctions d’accélération prédéfinies et comment créer des fonctions d’accélération personnalisées. Xamarin.Forms comprend une [`Easing`](xref:Xamarin.Forms.Easing) classe qui vous permet de spécifier une fonction de transfert qui contrôle la vitesse à laquelle les animations augmentent ou ralentissent lorsqu’elles sont en cours d’exécution.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Vue d’ensemble de la prise en charge Async](~/cross-platform/platform/async.md)
-- [Fonctions d’accélération (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-easing)
+- [Fonctions d’accélération (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-animation-easing)
 - [Simplifier](xref:Xamarin.Forms.Easing)
 - [ViewExtensions](xref:Xamarin.Forms.ViewExtensions)

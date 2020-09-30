@@ -10,16 +10,16 @@ ms.date: 06/16/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a4bb6c30ada13691146d00d2094df8f13ca453b9
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 604d2aa8368c85b852530f999601fffca8e104e6
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84140255"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562923"
 ---
 # <a name="clipping-with-paths-and-regions"></a>Détourage avec tracés et régions
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Utiliser des chemins d’accès pour découper des graphiques dans des zones spécifiques et pour créer des régions_
 
@@ -29,7 +29,7 @@ Il est parfois nécessaire de limiter le rendu des graphiques à une zone partic
 
 La *zone de découpage* correspond à la zone de l’écran dans laquelle les graphiques sont rendus. Tout ce qui est affiché en dehors de la zone de découpage n’est pas rendu. La zone de découpage est généralement définie par un rectangle ou un [`SKPath`](xref:SkiaSharp.SKPath) objet, mais vous pouvez également définir une zone de découpage à l’aide d’un [`SKRegion`](xref:SkiaSharp.SKRegion) objet. Ces deux types d’objets semblent tout d’abord liés, car vous pouvez créer une région à partir d’un chemin d’accès. Toutefois, vous ne pouvez pas créer un chemin d’accès à partir d’une région et ils sont très différents en interne : un chemin d’accès comprend une série de lignes et de courbes, tandis qu’une région est définie par une série de lignes de numérisation horizontales.
 
-L’image ci-dessus a été créée par le **singe via** la page Keyhole. La [`MonkeyThroughKeyholePage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/MonkeyThroughKeyholePage.cs) classe définit un chemin d’accès à l’aide de données SVG et utilise le constructeur pour charger une image bitmap à partir des ressources du programme :
+L’image ci-dessus a été créée par le **singe via** la page Keyhole. La  [`MonkeyThroughKeyholePage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/MonkeyThroughKeyholePage.cs) classe définit un chemin d’accès à l’aide de données SVG et utilise le constructeur pour charger une image bitmap à partir des ressources du programme :
 
 ```csharp
 public class MonkeyThroughKeyholePage : ContentPage
@@ -122,7 +122,7 @@ Il existe également une [`ClipRect`](xref:SkiaSharp.SKCanvas.ClipRect(SkiaSharp
 public Void ClipRect(SKRect rect, SKClipOperation operation = SKClipOperation.Intersect, Boolean antialias = false);
 ```
 
-Par défaut, la zone de découpage résultante est une intersection de la zone de découpage existante et du `SKPath` ou `SKRect` spécifié dans la `ClipPath` `ClipRect` méthode ou. Cela est illustré dans la page de **clip intersection des quatre cercles** . Le `PaintSurface` Gestionnaire de la [`FourCircleInteresectClipPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/FourCircleIntersectClipPage.cs) classe réutilise le même `SKPath` objet pour créer quatre cercles qui se chevauchent, chacun d’entre eux réduisant la zone de découpage par des appels successifs à `ClipPath` :
+Par défaut, la zone de découpage résultante est une intersection de la zone de découpage existante et du `SKPath` ou `SKRect` spécifié dans la `ClipPath` `ClipRect` méthode ou. Cela est illustré dans la page de **clip intersection des quatre cercles** . Le `PaintSurface` Gestionnaire de la  [`FourCircleInteresectClipPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/FourCircleIntersectClipPage.cs) classe réutilise le même `SKPath` objet pour créer quatre cercles qui se chevauchent, chacun d’entre eux réduisant la zone de découpage par des appels successifs à `ClipPath` :
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -173,9 +173,9 @@ Ce qui reste est l’intersection de ces quatre cercles :
 
 L' [`SKClipOperation`](xref:SkiaSharp.SKClipOperation) énumération n’a que deux membres :
 
-- `Difference`supprime le chemin d’accès ou le rectangle spécifié de la zone de découpage existante.
+- `Difference` supprime le chemin d’accès ou le rectangle spécifié de la zone de découpage existante.
 
-- `Intersect`croise le chemin d’accès ou le rectangle spécifié avec la zone de découpage existante
+- `Intersect` croise le chemin d’accès ou le rectangle spécifié avec la zone de découpage existante
 
 Si vous remplacez les quatre `SKClipOperation.Intersect` arguments de la `FourCircleIntersectClipPage` classe par `SKClipOperation.Difference` , vous verrez ce qui suit :
 
@@ -513,7 +513,7 @@ Il n’est pas vraiment similaire à un trèfle à quatre feuilles, mais il s’
 
 [![Capture d’écran triple de la page de trèfle à quatre feuilles](clipping-images//fourleafclover-small.png)](clipping-images/fourleafclover-large.png#lightbox)
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [API SkiaSharp](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (exemple)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

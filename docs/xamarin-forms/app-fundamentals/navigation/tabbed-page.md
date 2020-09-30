@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsTabbedPage
+title: Xamarin.Forms TabbedPage
 description: Le Xamarin.Forms TabbedPage se compose d’une liste d’onglets et d’une zone de détails plus grande, chaque onglet chargeant du contenu dans la zone de détails. Cet article montre comment utiliser un TabbedPage pour parcourir une collection de pages.
 ms.prod: xamarin
 ms.assetid: C946057F-C77C-412D-82A0-DAF475A24EF5
@@ -10,14 +10,14 @@ ms.date: 11/07/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 733ec985f4d285f26aca62930868970026847825
-ms.sourcegitcommit: 69d9a61ba479f707d96eb4c1c56a4b05a2a2a26f
+ms.openlocfilehash: afcf182fe093a9bb02ea23f53d0f568fd83c862c
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87426875"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563313"
 ---
-# <a name="no-locxamarinforms-tabbedpage"></a>Xamarin.FormsTabbedPage
+# <a name="no-locxamarinforms-tabbedpage"></a>Xamarin.Forms TabbedPage
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-tabbedpagewithnavigationpage)
 
@@ -112,7 +112,7 @@ Si vous sélectionnez un autre onglet [`ContentPage`](xref:Xamarin.Forms.Content
 Sous l’onglet **calendrier** , l' [`ContentPage`](xref:Xamarin.Forms.ContentPage) objet est encapsulé dans un [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) objet.
 
 > [!WARNING]
-> Alors qu’un [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) peut être placé dans un [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) , il n’est pas recommandé de placer un `TabbedPage` dans un `NavigationPage` . En effet, sur iOS, un `UITabBarController` agit toujours en tant que wrapper pour le `UINavigationController`. Pour plus d’informations, consultez [Combined View Controller Interfaces](https://developer.apple.com/library/ios/documentation/WindowsViews/Conceptual/ViewControllerCatalog/Chapters/CombiningViewControllers.html) (Interfaces de contrôleurs de vue combinés) dans la bibliothèque du développeur iOS.
+> Alors qu’un [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) peut être placé dans un  [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) , il n’est pas recommandé de placer un `TabbedPage` dans un `NavigationPage` . En effet, sur iOS, un `UITabBarController` agit toujours en tant que wrapper pour le `UINavigationController`. Pour plus d’informations, consultez [Combined View Controller Interfaces](https://developer.apple.com/library/ios/documentation/WindowsViews/Conceptual/ViewControllerCatalog/Chapters/CombiningViewControllers.html) (Interfaces de contrôleurs de vue combinés) dans la bibliothèque du développeur iOS.
 
 ## <a name="navigate-within-a-tab"></a>Naviguer dans un onglet
 
@@ -238,8 +238,8 @@ En sélectionnant un autre onglet, vous affichez l' [`ContentPage`](xref:Xamarin
 
 ## <a name="related-links"></a>Liens connexes
 
-- [TabbedPageWithNavigationPage (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-tabbedpagewithnavigationpage)
-- [TabbedPage (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-tabbedpage)
+- [TabbedPageWithNavigationPage (exemple)](/samples/xamarin/xamarin-forms-samples/navigation-tabbedpagewithnavigationpage)
+- [TabbedPage (exemple)](/samples/xamarin/xamarin-forms-samples/navigation-tabbedpage)
 - [Navigation hiérarchique](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md)
 - [Types de pages](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf)
 - [API TabbedPage](xref:Xamarin.Forms.TabbedPage)

@@ -10,12 +10,12 @@ ms.date: 07/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d6f3304c9eeb87405ab303a80450a1cd8b2af267
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: c355816ec1b89801814b217cad8a23be2f453226
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938058"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563794"
 ---
 # <a name="imagebutton-drop-shadows-on-android"></a>Supprimer les ombres sur Android
 
@@ -67,8 +67,8 @@ imageButton.On<Android>()
 
 La `ImageButton.On<Android>` méthode spécifie que ce spécifique à la plateforme s’exécutera uniquement sur Android. La `ImageButton.SetIsShadowEnabled` méthode, dans l' [`Xamarin.Forms.PlatformConfiguration.AndroidSpecific`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) espace de noms, est utilisée pour contrôler si une ombre portée est activée sur le `ImageButton` . En outre, les méthodes suivantes peuvent être appelées pour contrôler l’ombre portée :
 
-- `SetShadowColor`: définit la couleur de l’ombre portée. La couleur par défaut est [`Color.Default`](xref:Xamarin.Forms.Color.Default*) .
-- `SetShadowOffset`: définit le décalage de l’ombre portée. Le décalage change le sens de conversion de l’ombre et est spécifié en tant que [`Size`](xref:Xamarin.Forms.Size) valeur. Les `Size` valeurs de la structure sont exprimées en unités indépendantes du périphérique, avec la première valeur étant la distance à gauche (valeur négative) ou droite (valeur positive), et la deuxième valeur étant la distance au-dessus (valeur négative) ou inférieure (valeur positive). La valeur par défaut de cette propriété est (0,0, 0,0), ce qui entraîne le cast de l’ombre autour de chaque côté de `ImageButton` .
+- `SetShadowColor` : définit la couleur de l’ombre portée. La couleur par défaut est [`Color.Default`](xref:Xamarin.Forms.Color.Default*) .
+- `SetShadowOffset` : définit le décalage de l’ombre portée. Le décalage change le sens de conversion de l’ombre et est spécifié en tant que [`Size`](xref:Xamarin.Forms.Size) valeur. Les `Size` valeurs de la structure sont exprimées en unités indépendantes du périphérique, avec la première valeur étant la distance à gauche (valeur négative) ou droite (valeur positive), et la deuxième valeur étant la distance au-dessus (valeur négative) ou inférieure (valeur positive). La valeur par défaut de cette propriété est (0,0, 0,0), ce qui entraîne le cast de l’ombre autour de chaque côté de `ImageButton` .
 - `SetShadowRadius`: définit le rayon de flou utilisé pour le rendu de l’ombre portée. La valeur par défaut du rayon est 10,0.
 
 > [!NOTE]
@@ -80,7 +80,7 @@ Le résultat est qu’une ombre portée peut être activée sur un `ImageButton`
 
 ## <a name="related-links"></a>Liens connexes
 
-- [PlatformSpecifics (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [Création de caractéristiques de la plateforme](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [API AndroidSpecific](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
 - [API AndroidSpecific. AppCompat](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)

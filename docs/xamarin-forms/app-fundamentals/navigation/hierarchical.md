@@ -10,12 +10,12 @@ ms.date: 03/10/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0d6a18ec55b49da2b668ccc183646d5e4dde5849
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 8e8c52c03534ca5d8b653eed4d8fc2c8f39edf61
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937226"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562637"
 ---
 # <a name="hierarchical-navigation"></a>Navigation hiérarchique
 
@@ -307,7 +307,7 @@ async void OnLoginButtonClicked (object sender, EventArgs e)
 
 Tout Xamarin.Forms [`View`](xref:Xamarin.Forms.View) peut être affiché dans la barre de navigation d’un [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) . Pour ce faire, affectez la valeur [`NavigationPage.TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) à la propriété jointe `View` . Cette propriété jointe peut être définie sur Any [`Page`](xref:Xamarin.Forms.Page) et, lorsque le `Page` fait l’objet d’un push sur un `NavigationPage` , le `NavigationPage` respecte la valeur de la propriété.
 
-L’exemple suivant, tiré de l’[exemple Title View](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-titleview), montre comment définir la propriété jointe [`NavigationPage.TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) à partir de XAML :
+L’exemple suivant, tiré de l’[exemple Title View](/samples/xamarin/xamarin-forms-samples/navigation-titleview), montre comment définir la propriété jointe [`NavigationPage.TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) à partir de XAML :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -348,7 +348,7 @@ En guise d’alternative, une barre de navigation étendue peut être suggérée
 > [!NOTE]
 > Les [`BackButtonTitle`](xref:Xamarin.Forms.NavigationPage.BackButtonTitleProperty) Propriétés,, [`Title`](xref:Xamarin.Forms.Page.Title) [`TitleIcon`](xref:Xamarin.Forms.NavigationPage.TitleIconProperty) et [`TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) peuvent toutes définir des valeurs qui occupent de l’espace dans la barre de navigation. Bien que la taille de la barre de navigation varie en fonction de la plateforme et de la taille de l’écran, la définition de toutes ces propriétés provoquera des conflits en raison de l’espace limité disponible. Au lieu d’essayer d’utiliser une combinaison de ces propriétés, vous obtiendrez peut-être plus facilement la conception de barre de navigation souhaitée en définissant uniquement la propriété `TitleView`.
 
-### <a name="limitations"></a>Limites
+### <a name="limitations"></a>Limitations
 
 Il existe un certain nombre de limitations à connaître lorsque vous affichez un [`View`](xref:Xamarin.Forms.View) dans la barre de navigation d’un [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) :
 
@@ -359,9 +359,9 @@ Il existe un certain nombre de limitations à connaître lorsque vous affichez u
 ## <a name="related-links"></a>Liens associés
 
 - [Navigation entre les pages](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)
-- [Hierarchical (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-hierarchical)
-- [PassingData (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-passingdata)
-- [LoginFlow (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-loginflow)
-- [TitleView (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-titleview)
+- [Hierarchical (exemple)](/samples/xamarin/xamarin-forms-samples/navigation-hierarchical)
+- [PassingData (exemple)](/samples/xamarin/xamarin-forms-samples/navigation-passingdata)
+- [LoginFlow (exemple)](/samples/xamarin/xamarin-forms-samples/navigation-loginflow)
+- [TitleView (exemple)](/samples/xamarin/xamarin-forms-samples/navigation-titleview)
 - [Comment créer un flot d’écran de connexion dans une Xamarin.Forms vidéo](https://www.youtube.com/watch?v=qKQ7pyyG1fo)
 - [NavigationPage](xref:Xamarin.Forms.NavigationPage)

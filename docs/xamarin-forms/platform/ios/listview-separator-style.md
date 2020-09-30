@@ -10,12 +10,12 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: fda45bc0aa2b7bc582c30b752662055bd4bd4865
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: fe9a93e8e5a35df98587efc0dc3ad6192653d173
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937057"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563703"
 ---
 # <a name="listview-separator-style-on-ios"></a>Style de séparateur ListView sur iOS
 
@@ -46,8 +46,8 @@ listView.On<iOS>().SetSeparatorStyle(SeparatorStyle.FullWidth);
 
 La `ListView.On<iOS>` méthode spécifie que ce spécifique à la plateforme s’exécutera uniquement sur iOS. [ `ListView.SetSeparatorStyle` ] (XREF : Xamarin.Forms . PlatformConfiguration. iOSSpecific. ListView. SetSeparatorStyle ( Xamarin.Forms . IPlatformElementConfiguration { Xamarin.Forms . PlatformConfiguration. iOS, Xamarin.Forms . ListView}, Xamarin.Forms . La méthode PlatformConfiguration. iOSSpecific. SeparatorStyle)), dans l' [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) espace de noms, est utilisée pour contrôler si le séparateur entre les cellules dans [`ListView`](xref:Xamarin.Forms.ListView) utilise la largeur complète du `ListView` , avec l' [`SeparatorStyle`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle) énumération qui fournit deux valeurs possibles :
 
-- [`Default`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle.Default): indique le comportement de séparateur iOS par défaut. Il s’agit du comportement par défaut dans Xamarin.Forms .
-- [`FullWidth`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle.FullWidth): indique que les séparateurs seront dessinés d’un bord de `ListView` à l’autre.
+- [`Default`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle.Default) : indique le comportement de séparateur iOS par défaut. Il s’agit du comportement par défaut dans Xamarin.Forms .
+- [`FullWidth`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle.FullWidth) : indique que les séparateurs seront dessinés d’un bord de `ListView` à l’autre.
 
 Le résultat est qu’une [`SeparatorStyle`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle) valeur spécifiée est appliquée au [`ListView`](xref:Xamarin.Forms.ListView) , qui contrôle la largeur du séparateur entre les cellules :
 
@@ -58,6 +58,6 @@ Le résultat est qu’une [`SeparatorStyle`](xref:Xamarin.Forms.PlatformConfigur
 
 ## <a name="related-links"></a>Liens connexes
 
-- [PlatformSpecifics (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [Création de caractéristiques de la plateforme](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [API iOSSpecific](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

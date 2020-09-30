@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsChemin de liaison
+title: Xamarin.Forms Chemin de liaison
 description: Cet article explique comment utiliser Xamarin.Forms des liaisons de données pour accéder aux sous-propriétés et aux membres de collection avec la propriété Path de la classe Binding.
 ms.prod: xamarin
 ms.assetid: 3CF721A5-E157-468B-AD3A-DA0A45E58E8D
@@ -10,16 +10,16 @@ ms.date: 01/05/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a0ac8a568c3e8c46fa7e53112461aa0bff5684ae
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 154219f58c22005de0a0a2171aeedd04ec9f9ff9
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84570789"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557957"
 ---
-# <a name="xamarinforms-binding-path"></a>Xamarin.FormsChemin de liaison
+# <a name="no-locxamarinforms-binding-path"></a>Xamarin.Forms Chemin de liaison
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 Dans tous les exemples de liaison de données précédents, la [`Path`](xref:Xamarin.Forms.Binding.Path) propriété de la `Binding` classe (ou [`Path`](xref:Xamarin.Forms.Xaml.BindingExtension.Path) de la propriété de l' `Binding` extension de balisage) a été définie sur une seule propriété. Il est en fait possible de définir `Path` sur une *sous-propriété* (une propriété d’une propriété) ou un membre d’une collection.
 
@@ -166,7 +166,7 @@ Comme Xamarin.Forms traite le chemin de liaison, il installe un `PropertyChanged
 
 Si une propriété dans le chemin de liaison n’implémente pas `INotifyPropertyChanged`, toutes les modifications apportées à cette propriété sont ignorées. Certaines modifications pourraient invalider entièrement le chemin de liaison et vous devriez utiliser cette technique uniquement lorsque la chaîne des propriétés et les sous-propriétés ne deviennent jamais non valides.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [Démonstrations de liaison de données (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+- [Démonstrations de liaison de données (exemple)](/samples/xamarin/xamarin-forms-samples/databindingdemos)
 - [Chapitre sur la liaison de données à partir de Xamarin.Forms Book](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

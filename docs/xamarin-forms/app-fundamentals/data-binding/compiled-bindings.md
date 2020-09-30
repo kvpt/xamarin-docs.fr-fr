@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsLiaisons compilées
+title: Xamarin.Forms Liaisons compilées
 description: Cet article explique comment utiliser des liaisons compilées pour améliorer les performances de liaison de données dans les Xamarin.Forms applications.
 ms.prod: xamarin
 ms.assetid: ABE6B7F7-875E-4402-A1D2-845CE374402B
@@ -10,16 +10,16 @@ ms.date: 09/18/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 094691796fed9653f2a2e468ccb1c33d1a408a49
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 1bc2ed53b12e6953033760b072d38353c65a6708
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84571556"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563456"
 ---
-# <a name="xamarinforms-compiled-bindings"></a>Xamarin.FormsLiaisons compilées
+# <a name="no-locxamarinforms-compiled-bindings"></a>Xamarin.Forms Liaisons compilées
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 _Les liaisons compilées sont résolues plus rapidement que les liaisons classiques, ce qui améliore les performances de liaison de données dans les Xamarin.Forms applications._
 
@@ -178,4 +178,4 @@ Ces différences de performances peuvent être accrues sur les appareils mobiles
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Démonstrations de liaison de données (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+- [Démonstrations de liaison de données (exemple)](/samples/xamarin/xamarin-forms-samples/databindingdemos)

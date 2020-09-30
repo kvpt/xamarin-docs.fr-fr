@@ -10,12 +10,12 @@ ms.date: 01/05/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ad36bd5efe09909753fed948a961a690feb0592a
-ms.sourcegitcommit: a003b036f6fb83818e2ecc9c72a641e3aeb373bd
+ms.openlocfilehash: 7edde81a926b142a5e792a203e96ee61b1fdfb7b
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88964660"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562702"
 ---
 # <a name="the-no-locxamarinforms-command-interface"></a>Xamarin.FormsInterface de commande
 
@@ -89,7 +89,7 @@ Si le partage de ViewModels entre Windows et Xamarin.Forms n’est pas un probl�
 
 ## <a name="basic-commanding"></a>Exécution de commandes de base
 
-La page **Person Entry** (Saisie des détails de la personne) dans le programme [**Data Binding Demos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos) (Démos des liaisons de données) illustre des commandes simples, implémentées dans un ViewModel.
+La page **Person Entry** (Saisie des détails de la personne) dans le programme [**Data Binding Demos**](/samples/xamarin/xamarin-forms-samples/databindingdemos) (Démos des liaisons de données) illustre des commandes simples, implémentées dans un ViewModel.
 
 La classe `PersonViewModel` définit trois propriétés nommées `Name`, `Age` et `Skills` qui définissent une personne. Cette classe *ne contient pas* de propriété `ICommand` :
 
@@ -691,7 +691,7 @@ Toutes les méthodes `execute` appellent `RefreshCanExecutes`, qui appelle à so
 
 ## <a name="asynchronous-commanding-for-navigation-menus"></a>Exécution asynchrone de commandes pour les menus de navigation
 
-L’exécution de commandes est pratique pour implémenter des menus de navigation, tels que celui du programme [**Data Binding Demos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos) (Démos des liaisons de données) lui-même. Voici une partie de **MainPage.xaml** :
+L’exécution de commandes est pratique pour implémenter des menus de navigation, tels que celui du programme [**Data Binding Demos**](/samples/xamarin/xamarin-forms-samples/databindingdemos) (Démos des liaisons de données) lui-même. Voici une partie de **MainPage.xaml** :
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -765,5 +765,5 @@ Comme vous l’avez vu dans cette série d’articles, bien que les liaisons de 
 
 ## <a name="related-links"></a>Liens associés
 
-- [Démonstrations de liaison de données (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+- [Démonstrations de liaison de données (exemple)](/samples/xamarin/xamarin-forms-samples/databindingdemos)
 - [Chapitre sur la liaison de données à partir de Xamarin.Forms Book](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter18.md)

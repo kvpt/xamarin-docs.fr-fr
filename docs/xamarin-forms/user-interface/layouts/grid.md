@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsBoutons
+title: Xamarin.Forms Boutons
 description: La Xamarin.Forms grille est une disposition qui organise ses enfants en lignes et colonnes de cellules.
 ms.prod: xamarin
 ms.assetid: 762B1802-D185-494C-B643-74EED55882FE
@@ -10,18 +10,18 @@ ms.date: 06/15/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9d2e697a07e033fd7c3c8d3efffa1d67f6c097c3
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 59a4d5c0730719d6cc332728c6cab641d02239b4
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84946336"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563560"
 ---
-# <a name="xamarinforms-grid"></a>Xamarin.FormsBoutons
+# <a name="no-locxamarinforms-grid"></a>Xamarin.Forms Boutons
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-griddemos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-griddemos)
 
-[![Xamarin.FormsBoutons](grid-images/layouts.png "[! Opérationnel. NON-LOC (Xamarin. Forms)] grille")](grid-images/layouts-large.png#lightbox "[! Opérationnel. NON-LOC (Xamarin. Forms)] grille")
+[![::: No-Loc (Xamarin. Forms) ::: Grid](grid-images/layouts.png "::: No-Loc (Xamarin. Forms) ::: Grid")](grid-images/layouts-large.png#lightbox "::: No-Loc (Xamarin. Forms) ::: Grid")
 
 [`Grid`](xref:Xamarin.Forms.Grid)Est une disposition qui organise ses enfants en lignes et en colonnes, qui peuvent avoir des tailles proportionnelles ou absolues. Par défaut, un `Grid` contient une ligne et une colonne. En outre, un `Grid` peut être utilisé comme une disposition parente qui contient d’autres dispositions enfants.
 
@@ -67,9 +67,9 @@ Le comportement de disposition d’un [`Grid`](xref:Xamarin.Forms.Grid) peut êt
 
 La [`RowDefinition`](xref:Xamarin.Forms.RowDefinition) classe définit une [`Height`](xref:Xamarin.Forms.RowDefinition.Height) propriété, de type [`GridLength`](xref:Xamarin.Forms.GridLength) , et la [`ColumnDefinition`](xref:Xamarin.Forms.ColumnDefinition) classe définit une [`Width`](xref:Xamarin.Forms.ColumnDefinition.Width) propriété, de type [`GridLength`](xref:Xamarin.Forms.GridLength) . Le [`GridLength`](xref:Xamarin.Forms.GridLength) struct spécifie une hauteur de ligne ou une largeur de colonne en termes d' [`GridUnitType`](xref:Xamarin.Forms.GridUnitType) énumération, qui a trois membres :
 
-- `Absolute`: la hauteur de ligne ou la largeur de colonne est une valeur dans les unités indépendantes du périphérique (un nombre en XAML).
-- `Auto`: la hauteur de ligne ou la largeur de colonne est automatiquement redimensionnée en fonction du contenu de la cellule ( `Auto` en XAML).
-- `Star`: la hauteur de ligne ou la largeur de colonne restante est allouée proportionnellement (nombre suivi `*` de en XAML).
+- `Absolute` : la hauteur de ligne ou la largeur de colonne est une valeur dans les unités indépendantes du périphérique (un nombre en XAML).
+- `Auto` : la hauteur de ligne ou la largeur de colonne est automatiquement redimensionnée en fonction du contenu de la cellule ( `Auto` en XAML).
+- `Star` : la hauteur de ligne ou la largeur de colonne restante est allouée proportionnellement (nombre suivi `*` de en XAML).
 
 Une [`Grid`](xref:Xamarin.Forms.Grid) ligne avec une `Height` propriété de `Auto` limite la hauteur des vues dans cette ligne de la même façon qu’une verticale [`StackLayout`](xref:Xamarin.Forms.StackLayout) . De même, une colonne avec une `Width` propriété de `Auto` fonctionne comme un horizontal `StackLayout` .
 
@@ -344,7 +344,7 @@ public GridSpacingPageCS()
 }
 ```
 
-## <a name="alignment"></a>Alignement
+## <a name="alignment"></a>Alignment
 
 Les vues enfants dans un [`Grid`](xref:Xamarin.Forms.Grid) peuvent être positionnées dans leurs cellules par les [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) Propriétés et. Ces propriétés peuvent être définies sur les champs suivants à partir de la [`LayoutOptions`](xref:Xamarin.Forms.LayoutOptions) structure :
 
@@ -752,7 +752,7 @@ public class ColorSlidersGridPageCS : ContentPage
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Démonstrations de grille (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-griddemos)
-- [Options de disposition dansXamarin.Forms](layout-options.md)
+- [Démonstrations de grille (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-griddemos)
+- [Options de disposition dans Xamarin.Forms](layout-options.md)
 - [Choisir une Xamarin.Forms disposition](choose-layout.md)
 - [Améliorer les Xamarin.Forms performances des applications](~/xamarin-forms/deploy-test/performance.md)

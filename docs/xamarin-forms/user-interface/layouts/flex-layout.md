@@ -11,30 +11,30 @@ ms.date: 05/07/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 518bf97be3dd9d906d574b15434b0bfa67612516
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 88f89e3d17c693c48176a45605b036f56599ee6d
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84570685"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563625"
 ---
-# <a name="the-xamarinforms-flexlayout"></a>Xamarin.FormsFlexLayout
+# <a name="the-no-locxamarinforms-flexlayout"></a>Xamarin.FormsFlexLayout
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)
 
 _Utilisez FlexLayout pour empiler ou encapsuler une collection de vues enfants._
 
 Xamarin.Forms [`FlexLayout`](xref:Xamarin.Forms.FlexLayout) Est une nouveauté de la Xamarin.Forms version 3,0. Il est basé sur le [module de disposition de zone flexible](https://www.w3.org/TR/css-flexbox-1/)CSS, communément appelé _disposition flexible_ ou _zone flexible_, donc appelé, car il comprend de nombreuses options flexibles pour organiser les enfants dans la disposition.
 
-`FlexLayout`est semblable à Xamarin.Forms [`StackLayout`](~/xamarin-forms/user-interface/layouts/stacklayout.md) en ce sens qu’il peut réorganiser ses enfants horizontalement et verticalement dans une pile. Toutefois, le `FlexLayout` peut également encapsuler ses enfants s’il y a trop d’un grand nombre pour tenir dans une seule ligne ou colonne, et possède également de nombreuses options pour l’orientation, l’alignement et l’adaptation à différentes tailles d’écran.
+`FlexLayout` est semblable à Xamarin.Forms [`StackLayout`](~/xamarin-forms/user-interface/layouts/stacklayout.md) en ce sens qu’il peut réorganiser ses enfants horizontalement et verticalement dans une pile. Toutefois, le `FlexLayout` peut également encapsuler ses enfants s’il y a trop d’un grand nombre pour tenir dans une seule ligne ou colonne, et possède également de nombreuses options pour l’orientation, l’alignement et l’adaptation à différentes tailles d’écran.
 
-`FlexLayout`dérive de [`Layout<View>`](xref:Xamarin.Forms.Layout`1) et hérite d’une [`Children`](xref:Xamarin.Forms.Layout`1.Children) propriété de type `IList<View>` .
+`FlexLayout` dérive de [`Layout<View>`](xref:Xamarin.Forms.Layout`1) et hérite d’une [`Children`](xref:Xamarin.Forms.Layout`1.Children) propriété de type `IList<View>` .
 
-`FlexLayout`définit six propriétés pouvant être liées publiques et cinq propriétés pouvant être liées qui affectent la taille, l’orientation et l’alignement de ses éléments enfants. (Si vous n’êtes pas familiarisé avec les propriétés pouvant être liées, consultez l’article **[propriétés jointes](~/xamarin-forms/xaml/attached-properties.md)**.) Ces propriétés sont décrites en détail dans les sections ci-dessous sur **[les propriétés pouvant être liées, en détail](#the-bindable-properties-in-detail)** , ainsi que **[les propriétés pouvant être liées qui sont attachées en détail](#the-attached-bindable-properties-in-detail)**. Toutefois, cet article commence par une section sur certains **[scénarios d’utilisation courants](#common-usage-scenarios)** de `FlexLayout` qui décrivent un grand nombre de ces propriétés de manière plus informelle. Vers la fin de l’article, vous verrez comment combiner `FlexLayout` avec les [feuilles de style CSS](~/xamarin-forms/user-interface/styles/css/index.md).
+`FlexLayout` définit six propriétés pouvant être liées publiques et cinq propriétés pouvant être liées qui affectent la taille, l’orientation et l’alignement de ses éléments enfants. (Si vous n’êtes pas familiarisé avec les propriétés pouvant être liées, consultez l’article **[propriétés jointes](~/xamarin-forms/xaml/attached-properties.md)**.) Ces propriétés sont décrites en détail dans les sections ci-dessous sur **[les propriétés pouvant être liées, en détail](#the-bindable-properties-in-detail)** , ainsi que **[les propriétés pouvant être liées qui sont attachées en détail](#the-attached-bindable-properties-in-detail)**. Toutefois, cet article commence par une section sur certains **[scénarios d’utilisation courants](#common-usage-scenarios)** de `FlexLayout` qui décrivent un grand nombre de ces propriétés de manière plus informelle. Vers la fin de l’article, vous verrez comment combiner `FlexLayout` avec les [feuilles de style CSS](~/xamarin-forms/user-interface/styles/css/index.md).
 
 ## <a name="common-usage-scenarios"></a>Scénarios d’utilisation courants
 
-L’exemple de programme **[FlexLayoutDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** contient plusieurs pages qui illustrent des utilisations courantes de `FlexLayout` et vous permettent d’expérimenter ses propriétés.
+L’exemple de programme **[FlexLayoutDemos](/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** contient plusieurs pages qui illustrent des utilisations courantes de `FlexLayout` et vous permettent d’expérimenter ses propriétés.
 
 ### <a name="using-flexlayout-for-a-simple-stack"></a>Utilisation de FlexLayout pour une pile simple
 
@@ -69,7 +69,7 @@ Voici la page s’exécutant sur iOS, Android et la plateforme Windows universel
 
 Trois propriétés de `FlexLayout` sont affichées dans le fichier **SimpleStackPage. Xaml** :
 
-- La [`Direction`](xref:Xamarin.Forms.FlexLayout.Direction) propriété est définie sur une valeur de l' [`FlexDirection`](xref:Xamarin.Forms.FlexDirection) énumération. Par défaut, il s’agit de `Row`. Si vous affectez la valeur à la propriété `Column` , les enfants de l’objet `FlexLayout` doivent être disposés dans une seule colonne d’éléments.
+- La [`Direction`](xref:Xamarin.Forms.FlexLayout.Direction) propriété est définie sur une valeur de l' [`FlexDirection`](xref:Xamarin.Forms.FlexDirection) énumération. La valeur par défaut est `Row`. Si vous affectez la valeur à la propriété `Column` , les enfants de l’objet `FlexLayout` doivent être disposés dans une seule colonne d’éléments.
 
     Lorsque les éléments d’un `FlexLayout` sont disposés dans une colonne, `FlexLayout` est dit qu’il a un _axe_ vertical vertical et un _axe_horizontal.
 
@@ -93,7 +93,7 @@ Ces `FlexLayout` propriétés sont décrites plus en détail dans la section des
 
 ### <a name="using-flexlayout-for-wrapping-items"></a>Utilisation de FlexLayout pour l’encapsulage d’éléments
 
-La page Retour à la **photo** de l’exemple **[FlexLayoutDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** montre comment `FlexLayout` peut encapsuler ses enfants sur des lignes ou des colonnes supplémentaires. Le fichier XAML instancie `FlexLayout` et assigne deux propriétés de celui-ci :
+La page Retour à la **photo** de l’exemple **[FlexLayoutDemos](/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** montre comment `FlexLayout` peut encapsuler ses enfants sur des lignes ou des colonnes supplémentaires. Le fichier XAML instancie `FlexLayout` et assigne deux propriétés de celui-ci :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -193,7 +193,7 @@ Voici le programme en cours d’exécution, défilant progressivement de haut en
 
 Il existe une disposition standard dans la conception Web appelée le [_Saint Grail_](https://en.wikipedia.org/wiki/Holy_grail_(web_design)) , car il s’agit d’un format de disposition qui est très souhaitable, mais souvent difficile à réaliser avec la perfection. La disposition se compose d’un en-tête en haut de la page et d’un pied de page en bas, qui s’étend à la largeur totale de la page. L’occupant du centre de la page est le contenu principal, mais souvent avec un menu en colonnes à gauche du contenu et des informations supplémentaires (parfois appelées « zone de _réserve_ ») à droite. [La section 5.4.1 de la spécification de disposition de zone flexible CSS](https://www.w3.org/TR/css-flexbox-1/#order-accessibility) décrit comment la disposition Saint Grail peut être obtenue avec une zone flexible.
 
-La page de **disposition Saint Grail** de l’exemple **[FlexLayoutDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** illustre une implémentation simple de cette disposition en utilisant une `FlexLayout` imbriquée dans une autre. Étant donné que cette page est conçue pour un téléphone en mode portrait, les zones situées à gauche et à droite de la zone de contenu sont uniquement de 50 pixels de largeur :
+La page de **disposition Saint Grail** de l’exemple **[FlexLayoutDemos](/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** illustre une implémentation simple de cette disposition en utilisant une `FlexLayout` imbriquée dans une autre. Étant donné que cette page est conçue pour un téléphone en mode portrait, les zones situées à gauche et à droite de la zone de contenu sont uniquement de 50 pixels de largeur :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -262,7 +262,7 @@ Trois propriétés pouvant être liées sont démontrées dans ce programme :
 
 ### <a name="catalog-items-with-flexlayout"></a>Éléments de catalogue avec FlexLayout
 
-La page **éléments du catalogue** de l’exemple **[FlexLayoutDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** est similaire à l' [exemple 1 de la section 1,1 de la spécification de la zone de disposition CSS Flex](https://www.w3.org//TR/css-flexbox-1/#overview) , à ceci près qu’elle affiche une série d’images avec défilement horizontal et des descriptions de trois singes :
+La page **éléments du catalogue** de l’exemple **[FlexLayoutDemos](/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** est similaire à l' [exemple 1 de la section 1,1 de la spécification de la zone de disposition CSS Flex](https://www.w3.org//TR/css-flexbox-1/#overview) , à ceci près qu’elle affiche une série d’images avec défilement horizontal et des descriptions de trois singes :
 
 [![Page éléments du catalogue](flex-layout-images/CatalogItems.png "Page éléments du catalogue")](flex-layout-images/CatalogItems-Large.png#lightbox)
 
@@ -381,9 +381,9 @@ Dans chacune des trois `FlexLayout` vues, un vide `Label` précède `Button` , m
 ## <a name="the-bindable-properties-in-detail"></a>Propriétés pouvant être liées en détail
 
 Maintenant que vous avez vu certaines applications courantes de `FlexLayout` , les propriétés de `FlexLayout` peuvent être explorées plus en détail.
-`FlexLayout`définit six propriétés pouvant être liées que vous définissez sur `FlexLayout` lui-même, en code ou en XAML, pour contrôler l’orientation et l’alignement. (L’une de ces propriétés, [`Position`](xref:Xamarin.Forms.FlexLayout.Position) , n’est pas abordée dans cet article.)
+`FlexLayout` définit six propriétés pouvant être liées que vous définissez sur `FlexLayout` lui-même, en code ou en XAML, pour contrôler l’orientation et l’alignement. (L’une de ces propriétés, [`Position`](xref:Xamarin.Forms.FlexLayout.Position) , n’est pas abordée dans cet article.)
 
-Vous pouvez expérimenter les cinq autres propriétés pouvant être liées à l’aide de la page **expérience** de l’exemple **[FlexLayoutDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** . Cette page vous permet d’ajouter ou de supprimer des enfants d’un `FlexLayout` et de définir des combinaisons de cinq propriétés pouvant être liées. Tous les enfants de `FlexLayout` sont `Label` des vues de différentes couleurs et tailles, la propriété ayant la `Text` valeur un nombre correspondant à sa position dans la `Children` collection.
+Vous pouvez expérimenter les cinq autres propriétés pouvant être liées à l’aide de la page **expérience** de l’exemple **[FlexLayoutDemos](/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** . Cette page vous permet d’ajouter ou de supprimer des enfants d’un `FlexLayout` et de définir des combinaisons de cinq propriétés pouvant être liées. Tous les enfants de `FlexLayout` sont `Label` des vues de différentes couleurs et tailles, la propriété ayant la `Text` valeur un nombre correspondant à sa position dans la `Children` collection.
 
 Au démarrage du programme, cinq `Picker` vues affichent les valeurs par défaut de ces cinq `FlexLayout` Propriétés. Le `FlexLayout` vers le bas de l’écran contient trois enfants :
 
@@ -396,9 +396,9 @@ Chacun des `Label` affichages présente un arrière-plan gris qui indique l’es
 La [`Direction`](xref:Xamarin.Forms.FlexLayout.Direction) propriété est de type [`FlexDirection`](xref:Xamarin.Forms.FlexDirection) , une énumération avec quatre membres :
 
 - `Column`
-- `ColumnReverse`(ou « colonne-inversion » en XAML)
+- `ColumnReverse` (ou « colonne-inversion » en XAML)
 - `Row`, la valeur par défaut
-- `RowReverse`(ou « Row-inversé » en XAML)
+- `RowReverse` (ou « Row-inversé » en XAML)
 
 En XAML, vous pouvez spécifier la valeur de cette propriété en utilisant les noms des membres de l’énumération en minuscules, en majuscules ou en minuscules, ou vous pouvez utiliser deux chaînes supplémentaires indiquées entre parenthèses qui sont identiques aux indicateurs CSS. (Les chaînes « Column-inversé » et « Row-inversé » sont définies dans la [`FlexDirectionTypeConverter`](xref:Xamarin.Forms.FlexDirectionTypeConverter) classe utilisée par l’analyseur XAML.)
 
@@ -414,7 +414,7 @@ La [`Wrap`](xref:Xamarin.Forms.FlexLayout.Wrap) propriété est de type [`FlexWr
 
 - `NoWrap`, la valeur par défaut
 - `Wrap`
-- `Reverse`(ou « Wrap-inversé » en XAML)
+- `Reverse` (ou « Wrap-inversé » en XAML)
 
 De gauche à droite, ces écrans affichent `NoWrap` les `Wrap` options, et `Reverse` pour 12 enfants :
 
@@ -426,18 +426,18 @@ Lorsque la `Wrap` propriété a la valeur `NoWrap` et que l’axe principal est 
 
 La [`JustifyContent`](xref:Xamarin.Forms.FlexLayout.JustifyContent) propriété est de type [`FlexJustify`](xref:Xamarin.Forms.FlexJustify) , une énumération avec six membres :
 
-- `Start`(ou « Flex-Start » en XAML), la valeur par défaut
+- `Start` (ou « Flex-Start » en XAML), la valeur par défaut
 - `Center`
-- `End`(ou « Flex-end » en XAML)
-- `SpaceBetween`(ou « espace-entre » en XAML)
-- `SpaceAround`(ou « espace-autour » en XAML)
+- `End` (ou « Flex-end » en XAML)
+- `SpaceBetween` (ou « espace-entre » en XAML)
+- `SpaceAround` (ou « espace-autour » en XAML)
 - `SpaceEvenly`
 
 Cette propriété spécifie la manière dont les éléments sont espacés sur l’axe principal, qui est l’axe horizontal dans cet exemple :
 
 [![Page de l’expérience : justifier le contenu](flex-layout-images/ExperimentJustifyContent.png "Page de l’expérience-justifier le contenu")](flex-layout-images/ExperimentJustifyContent-Large.png#lightbox)
 
-Dans les trois captures d’écran, la `Wrap` propriété a la valeur `Wrap` . La `Start` valeur par défaut est indiquée dans la capture d’écran Android précédente. La capture d’écran iOS présente l' `Center` option : tous les éléments sont déplacés vers le centre. Les trois autres options qui commencent par le mot `Space` allouez l’espace supplémentaire non occupé par les éléments. `SpaceBetween`alloue l’espace de manière égale entre les éléments ; `SpaceAround`place un espace égal autour de chaque élément, tout en `SpaceEvenly` plaçant un espace égal entre chaque élément, et avant le premier élément et après le dernier élément de la ligne.
+Dans les trois captures d’écran, la `Wrap` propriété a la valeur `Wrap` . La `Start` valeur par défaut est indiquée dans la capture d’écran Android précédente. La capture d’écran iOS présente l' `Center` option : tous les éléments sont déplacés vers le centre. Les trois autres options qui commencent par le mot `Space` allouez l’espace supplémentaire non occupé par les éléments. `SpaceBetween` alloue l’espace de manière égale entre les éléments ; `SpaceAround` place un espace égal autour de chaque élément, tout en `SpaceEvenly` plaçant un espace égal entre chaque élément, et avant le premier élément et après le dernier élément de la ligne.
 
 ### <a name="the-alignitems-property"></a>Propriété AlignItems
 
@@ -445,8 +445,8 @@ La [`AlignItems`](xref:Xamarin.Forms.FlexLayout.AlignItems) propriété est de t
 
 - `Stretch`, la valeur par défaut
 - `Center`
-- `Start`(ou « Flex-Start » en XAML)
-- `End`(ou « Flex-end » en XAML)
+- `Start` (ou « Flex-Start » en XAML)
+- `End` (ou « Flex-end » en XAML)
 
 Il s’agit de l’une des deux propriétés (l’autre [`AlignContent`](#the-aligncontent-property) ) qui indique comment les enfants sont alignés sur l’axe croisé. Dans chaque ligne, les enfants sont étirés (comme indiqué dans la capture d’écran précédente) ou alignés sur le début, le centre ou la fin de chaque élément, comme indiqué dans les trois captures d’écran suivantes :
 
@@ -462,10 +462,10 @@ La [`AlignContent`](xref:Xamarin.Forms.FlexLayout.AlignContent) propriété est 
 
 - `Stretch`, la valeur par défaut
 - `Center`
-- `Start`(ou « Flex-Start » en XAML)
-- `End`(ou « Flex-end » en XAML)
-- `SpaceBetween`(ou « espace-entre » en XAML)
-- `SpaceAround`(ou « espace-autour » en XAML)
+- `Start` (ou « Flex-Start » en XAML)
+- `End` (ou « Flex-end » en XAML)
+- `SpaceBetween` (ou « espace-entre » en XAML)
+- `SpaceAround` (ou « espace-autour » en XAML)
 - `SpaceEvenly`
 
 Comme `AlignItems` , la `AlignContent` propriété aligne également les enfants sur l’axe transversal, mais affecte les lignes ou les colonnes entières :
@@ -480,7 +480,7 @@ Le n' `AlignContent` a aucun effet lorsqu’il n’y a qu’une seule ligne ou c
 
 ## <a name="the-attached-bindable-properties-in-detail"></a>Les propriétés pouvant être liées en pièce jointe en détail
 
-`FlexLayout`définit cinq propriétés pouvant être liées en pièce jointe. Ces propriétés sont définies sur les enfants de `FlexLayout` et se rapportent uniquement à cet enfant particulier.
+`FlexLayout` définit cinq propriétés pouvant être liées en pièce jointe. Ces propriétés sont définies sur les enfants de `FlexLayout` et se rapportent uniquement à cet enfant particulier.
 
 ### <a name="the-alignself-property"></a>Propriété AlignSelf
 
@@ -489,8 +489,8 @@ La [`AlignSelf`](xref:Xamarin.Forms.FlexLayout.AlignSelfProperty) propriété po
 - `Auto`, la valeur par défaut
 - `Stretch`
 - `Center`
-- `Start`(ou « Flex-Start » en XAML)
-- `End`(ou « Flex-end » en XAML)
+- `Start` (ou « Flex-Start » en XAML)
+- `End` (ou « Flex-end » en XAML)
 
 Pour tout enfant individuel de `FlexLayout` , ce paramètre de propriété remplace la [`AlignItems`](#the-alignitems-property) propriété définie sur le `FlexLayout` lui-même. La valeur par défaut de `Auto` signifie que utilise le `AlignItems` paramètre.
 
@@ -556,7 +556,7 @@ Ou vous pouvez spécifier un pourcentage dans la plage comprise entre 0% et 100%
 <Label ... FlexLayout.Basis="25%" ... />
 ```
 
-La page **expérience de base** de l’exemple **[FlexLayoutDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** vous permet d’expérimenter la `Basis` propriété. La page affiche une colonne encapsulée de cinq `Label` éléments avec des couleurs de premier plan et d’arrière-plan alternées. Deux `Slider` éléments vous permettent `Basis` de spécifier des valeurs pour les deuxième et quatrième `Label` :
+La page **expérience de base** de l’exemple **[FlexLayoutDemos](/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** vous permet d’expérimenter la `Basis` propriété. La page affiche une colonne encapsulée de cinq `Label` éléments avec des couleurs de premier plan et d’arrière-plan alternées. Deux `Slider` éléments vous permettent `Basis` de spécifier des valeurs pour les deuxième et quatrième `Label` :
 
 [![Page expérience de base](flex-layout-images/BasisExperiment.png "Page expérience de base")](flex-layout-images/BasisExperiment-Large.png#lightbox)
 
@@ -592,7 +592,7 @@ Vous pouvez définir les `Grow` valeurs et `Shrink` pour tenir compte des situat
 
 ## <a name="css-styling-with-flexlayout"></a>Styles CSS avec FlexLayout
 
-Vous pouvez utiliser la fonctionnalité de [style CSS](~/xamarin-forms/user-interface/styles/css/index.md) introduite avec Xamarin.Forms 3,0 dans le cadre de la connexion à `FlexLayout` . La page **éléments du catalogue CSS** de l’exemple **[FlexLayoutDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** duplique la disposition de la page **éléments du catalogue** , mais avec une feuille de style CSS pour la plupart des styles :
+Vous pouvez utiliser la fonctionnalité de [style CSS](~/xamarin-forms/user-interface/styles/css/index.md) introduite avec Xamarin.Forms 3,0 dans le cadre de la connexion à `FlexLayout` . La page **éléments du catalogue CSS** de l’exemple **[FlexLayoutDemos](/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** duplique la disposition de la page **éléments du catalogue** , mais avec une feuille de style CSS pour la plupart des styles :
 
 [![Page éléments du catalogue CSS](flex-layout-images/CssCatalogItems.png "Page éléments du catalogue CSS")](flex-layout-images/CssCatalogItems-Large.png#lightbox)
 
@@ -721,8 +721,8 @@ Vous avez vu que vous pouvez définir des propriétés directement sur le `FlexL
 
 > [!VIDEO https://youtube.com/embed/Ng3sel_5D_0]
 
-**Xamarin.Formsvidéo de disposition Flex 3,0**
+**Xamarin.Forms vidéo de disposition Flex 3,0**
 
 ## <a name="related-links"></a>Liens connexes
 
-- [FlexLayoutDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)
+- [FlexLayoutDemos](/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)

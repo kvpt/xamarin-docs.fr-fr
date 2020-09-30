@@ -1,6 +1,6 @@
 ---
-title: Xamarin.FormsClasses de style
-description: Xamarin.Formsles classes de style permettent d’appliquer plusieurs styles à un contrôle, sans recourir à l’héritage de style.
+title: Xamarin.Forms Classes de style
+description: Xamarin.Forms les classes de style permettent d’appliquer plusieurs styles à un contrôle, sans recourir à l’héritage de style.
 ms.prod: xamarin
 ms.assetid: 4762401E-2B48-48F1-B6E4-61F7AF8AA46F
 ms.technology: xamarin-forms
@@ -10,18 +10,18 @@ ms.date: 01/30/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2afb06c2d97e6f15c2041b9c2e9cad092b13d90d
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: f100f98418b7e3cb82939bf67dda61b66cb5864e
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138760"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557749"
 ---
-# <a name="xamarinforms-style-classes"></a>Xamarin.FormsClasses de style
+# <a name="no-locxamarinforms-style-classes"></a>Xamarin.Forms Classes de style
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 
-_Les classes de style Xamarin. Forms permettent d’appliquer plusieurs styles à un contrôle, sans recourir à l’héritage de style._
+_Xamarin.Forms les classes de style permettent d’appliquer plusieurs styles à un contrôle, sans recourir à l’héritage de style._
 
 ## <a name="create-style-classes"></a>Créer des classes de style
 
@@ -228,4 +228,4 @@ Content = new StackLayout
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Styles de base (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
+- [Styles de base (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)

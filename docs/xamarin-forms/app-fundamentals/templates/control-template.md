@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Formsmodèles de contrôle
-description: Xamarin.Formsles modèles de contrôle définissent la structure visuelle des contrôles personnalisés dérivés de ContentView et des pages dérivées ContentPage.
+title: Xamarin.Forms modèles de contrôle
+description: Xamarin.Forms les modèles de contrôle définissent la structure visuelle des contrôles personnalisés dérivés de ContentView et des pages dérivées ContentPage.
 ms.prod: xamarin
 ms.assetid: 8B8E2360-6531-44A3-A7C8-9A8808DE9B86
 ms.technology: xamarin-forms
@@ -10,18 +10,18 @@ ms.date: 01/13/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 44eebed2a49fbdda5504f9a09873f93466d0326c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 575169459433725ae3f3a7db675fc65caef1494e
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84132546"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563443"
 ---
-# <a name="xamarinforms-control-templates"></a>Xamarin.Formsmodèles de contrôle
+# <a name="no-locxamarinforms-control-templates"></a>Xamarin.Forms modèles de contrôle
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-controltemplatedemos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-controltemplatedemos)
 
-Xamarin.Formsles modèles de contrôle vous permettent de définir la structure visuelle des [`ContentView`](xref:Xamarin.Forms.ContentView) contrôles personnalisés dérivés et des [`ContentPage`](xref:Xamarin.Forms.ContentPage) pages dérivées. Les modèles de contrôle séparent l’interface utilisateur d’un contrôle personnalisé ou d’une page, de la logique qui implémente le contrôle ou la page. Du contenu supplémentaire peut également être inséré dans le contrôle personnalisé basé sur un modèle, ou dans la page basée sur un modèle, à un emplacement prédéfini.
+Xamarin.Forms les modèles de contrôle vous permettent de définir la structure visuelle des [`ContentView`](xref:Xamarin.Forms.ContentView) contrôles personnalisés dérivés et des [`ContentPage`](xref:Xamarin.Forms.ContentPage) pages dérivées. Les modèles de contrôle séparent l’interface utilisateur d’un contrôle personnalisé ou d’une page, de la logique qui implémente le contrôle ou la page. Du contenu supplémentaire peut également être inséré dans le contrôle personnalisé basé sur un modèle, ou dans la page basée sur un modèle, à un emplacement prédéfini.
 
 Par exemple, vous pouvez créer un modèle de contrôle qui redéfinit l’interface utilisateur fournie par un contrôle personnalisé. Le modèle de contrôle peut ensuite être consommé par l’instance de contrôle personnalisé requise. Vous pouvez également créer un modèle de contrôle qui définit toute interface utilisateur commune qui sera utilisée par plusieurs pages dans une application. Le modèle de contrôle peut ensuite être consommé par plusieurs pages, chacune d’elles affichant toujours son contenu unique.
 
@@ -637,9 +637,9 @@ Pour plus d’informations sur les liaisons relatives, consultez [ Xamarin.Forms
 
 ## <a name="related-links"></a>Liens connexes
 
-- [ControlTemplateDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-controltemplatedemos)
-- [Xamarin.FormsContentView](~/xamarin-forms/user-interface/layouts/contentview.md)
-- [Xamarin.FormsLiaisons relatives](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md)
-- [Xamarin.FormsDictionnaires de ressources](~/xamarin-forms/xaml/resource-dictionaries.md)
-- [Xamarin.FormsLiaison de données](~/xamarin-forms/app-fundamentals/data-binding/index.md)
-- [Xamarin.FormsIls](~/xamarin-forms/user-interface/styles/index.md)
+- [ControlTemplateDemos (exemple)](/samples/xamarin/xamarin-forms-samples/templates-controltemplatedemos)
+- [Xamarin.Forms ContentView](~/xamarin-forms/user-interface/layouts/contentview.md)
+- [Xamarin.Forms Liaisons relatives](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md)
+- [Xamarin.Forms Dictionnaires de ressources](~/xamarin-forms/xaml/resource-dictionaries.md)
+- [Xamarin.Forms Liaison de données](~/xamarin-forms/app-fundamentals/data-binding/index.md)
+- [Xamarin.Forms Ils](~/xamarin-forms/user-interface/styles/index.md)

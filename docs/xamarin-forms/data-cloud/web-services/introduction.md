@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsPrésentation des services Web
+title: Xamarin.Forms Présentation des services Web
 description: Ce guide fournit une procédure pas à pas de l' Xamarin.Forms exemple d’application qui montre comment communiquer avec différents services Web. Bien que chaque service Web utilise un exemple d’application distinct, il est similaire au fonctionnement et partage des classes communes.
 ms.prod: xamarin
 ms.assetid: A3FEB262-0D79-42E6-8F8B-A565618C490B
@@ -10,14 +10,14 @@ ms.date: 02/28/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cd9815c6448efae0bb0af982c8807c47263ae13e
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: ebff259519776718f41ab0fcc0a7abb0c692dac6
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938203"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563417"
 ---
-# <a name="xamarinforms-web-services-introduction"></a>Xamarin.FormsPrésentation des services Web
+# <a name="no-locxamarinforms-web-services-introduction"></a>Xamarin.Forms Présentation des services Web
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)
 
@@ -47,7 +47,7 @@ Le projet de code partagé pour chaque exemple d’application se compose de tro
 |--- |--- |
 |Données|Contient les classes et les interfaces utilisées pour gérer les éléments de données, et communiquer avec le service Web. Au minimum, cela comprend la `TodoItemManager` classe, qui est exposée via une propriété de la `App` classe pour appeler des opérations de service Web.|
 |Modèles|Contient les classes de modèle de données pour l’application. Au minimum, cela comprend la `TodoItem` classe, qui modélise un élément unique de données utilisé par l’application. Le dossier peut également inclure toutes les classes supplémentaires utilisées pour modéliser les données utilisateur.|
-|Les vues|Contient les pages de l’application. Il s’agit généralement des `TodoListPage` `TodoItemPage` classes et, ainsi que de toute classe supplémentaire utilisée à des fins d’authentification.|
+|Affichages|Contient les pages de l’application. Il s’agit généralement des `TodoListPage` `TodoItemPage` classes et, ainsi que de toute classe supplémentaire utilisée à des fins d’authentification.|
 
 Le projet de code partagé pour chaque application se compose également d’un certain nombre de fichiers importants :
 
@@ -96,6 +96,6 @@ Au lieu d’appeler directement les opérations de service Web, les `TodoItemMan
 
 ## <a name="related-links"></a>Liens connexes
 
-- [ASMX (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todoasmx)
-- [WCF (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todowcf)
-- [REST (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)
+- [ASMX (exemple)](/samples/xamarin/xamarin-forms-samples/webservices-todoasmx)
+- [WCF (exemple)](/samples/xamarin/xamarin-forms-samples/webservices-todowcf)
+- [REST (exemple)](/samples/xamarin/xamarin-forms-samples/webservices-todorest)

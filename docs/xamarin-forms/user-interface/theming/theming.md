@@ -10,18 +10,18 @@ ms.date: 08/07/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3341ada6c5605917eeec79aac96e38cb99b40fc4
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 7eef9cdf353c527be4e1de4721a5658a7763dabe
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138201"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557541"
 ---
-# <a name="theme-a-xamarinforms-application"></a>Thème d’une Xamarin.Forms application
+# <a name="theme-a-no-locxamarinforms-application"></a>Thème d’une Xamarin.Forms application
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-theming/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-theming/)
 
-Xamarin.Formsles applications peuvent répondre de manière dynamique aux modifications de style au moment de l’exécution à l’aide de l' `DynamicResource` extension de balisage. Cette extension de balisage est similaire à l' `StaticResource` extension de balisage, dans le sens où les deux utilisent une clé de dictionnaire pour extraire une valeur d’un [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) . Toutefois, si l' `StaticResource` extension de balisage effectue une recherche dans un dictionnaire unique, l' `DynamicResource` extension de balisage maintient un lien vers la clé du dictionnaire. Par conséquent, si la valeur associée à la clé est remplacée, la modification est appliquée à [`VisualElement`](xref:Xamarin.Forms.VisualElement) . Cela permet d’implémenter les thèmes d’exécution dans les Xamarin.Forms applications.
+Xamarin.Forms les applications peuvent répondre de manière dynamique aux modifications de style au moment de l’exécution à l’aide de l' `DynamicResource` extension de balisage. Cette extension de balisage est similaire à l' `StaticResource` extension de balisage, dans le sens où les deux utilisent une clé de dictionnaire pour extraire une valeur d’un [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) . Toutefois, si l' `StaticResource` extension de balisage effectue une recherche dans un dictionnaire unique, l' `DynamicResource` extension de balisage maintient un lien vers la clé du dictionnaire. Par conséquent, si la valeur associée à la clé est remplacée, la modification est appliquée à [`VisualElement`](xref:Xamarin.Forms.VisualElement) . Cela permet d’implémenter les thèmes d’exécution dans les Xamarin.Forms applications.
 
 Le processus d’implémentation du runtime dans une Xamarin.Forms application est le suivant :
 
@@ -225,8 +225,8 @@ void OnPickerSelectionChanged(object sender, EventArgs e)
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Thèmes (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-theming/)
+- [Thèmes (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-theming/)
 - [Répondre aux modifications du thème du système](system-theme-changes.md)
 - [Dictionnaires de ressources](~/xamarin-forms/xaml/resource-dictionaries.md)
-- [Styles dynamiques dansXamarin.Forms](~/xamarin-forms/user-interface/styles/xaml/dynamic.md)
+- [Styles dynamiques dans Xamarin.Forms](~/xamarin-forms/user-interface/styles/xaml/dynamic.md)
 - [Styliser des Xamarin.Forms applications à l’aide de styles XAML](~/xamarin-forms/user-interface/styles/xaml/index.md)

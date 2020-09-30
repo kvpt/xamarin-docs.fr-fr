@@ -10,18 +10,18 @@ ms.date: 02/12/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c02764d6160bb8ce2481a3cf67e357933d25934f
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: d417f5e0b2b0bea5a3e129c87e94b289dc7201ed
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84133729"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562481"
 ---
 # <a name="binding-video-sources-to-the-player"></a>Liaison de sources vidéo au lecteur
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
-Quand la propriété `Source` de l’affichage `VideoPlayer` est définie sur un nouveau fichier vidéo, la lecture de la vidéo existante s’arrête et celle de la nouvelle vidéo commence. Cela est illustré par la page **Sélectionner une vidéo web** de l’exemple [**VideoPlayerDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos). La page inclut un `ListView` avec les titres des trois vidéos référencées à partir du fichier **App.xaml** :
+Quand la propriété `Source` de l’affichage `VideoPlayer` est définie sur un nouveau fichier vidéo, la lecture de la vidéo existante s’arrête et celle de la nouvelle vidéo commence. Cela est illustré par la page **Sélectionner une vidéo web** de l’exemple [**VideoPlayerDemos**](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos). La page inclut un `ListView` avec les titres des trois vidéos référencées à partir du fichier **App.xaml** :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -142,6 +142,6 @@ La propriété `Source` de `VideoPlayer` est liée au `ListView`. Le `Path` de l
 
 Comme avec la première page **Sélectionner une vidéo web**, aucun élément n’est sélectionné initialement à partir du `ListView` de sorte que vous devez sélectionner l’une des vidéos avant le début de la lecture.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [Démonstrations de lecteur vidéo (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+- [Démonstrations de lecteur vidéo (exemple)](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

@@ -10,12 +10,12 @@ ms.date: 03/20/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 998584c3deebf5ab722758aeefe7560ba738f426
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: ed1bcbed86874362e291fb23ce86dea8992d3408
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939293"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563729"
 ---
 # <a name="the-skew-transform"></a>La transformation d’inclinaison
 
@@ -255,5 +255,5 @@ Désormais, l’ombre s’étend du bas de ces descendants :
 
 ## <a name="related-links"></a>Liens associés
 
-- [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [API SkiaSharp](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (exemple)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

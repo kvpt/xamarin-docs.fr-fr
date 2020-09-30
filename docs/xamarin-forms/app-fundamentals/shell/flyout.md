@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsMenu volant Shell
+title: Xamarin.Forms Menu volant Shell
 description: Le menu volant est le menu racine d’une application Shell, accessible via une icône ou en balayant depuis le côté de l’écran. Le menu volant se compose d’un en-tête facultatif, de différents éléments de menu volant et d’éléments de menu facultatifs.
 ms.prod: xamarin
 ms.assetid: FEDE51EB-577E-4B3E-9890-B7C1A5E52516
@@ -10,14 +10,14 @@ ms.date: 07/30/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 821eafab6896d8771ba38332a43c0cbc319797a7
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: a0ec978c1947cde4bd6f7fd619ad8cd2f0dbdbce
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87917832"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563040"
 ---
-# <a name="no-locxamarinforms-shell-flyout"></a>Xamarin.FormsMenu volant Shell
+# <a name="no-locxamarinforms-shell-flyout"></a>Xamarin.Forms Menu volant Shell
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
@@ -140,9 +140,9 @@ Le menu volant peut avoir une image d’arrière-plan facultative, qui apparaît
 
 Les proportions de l’image d’arrière-plan peuvent être configurées en définissant la `FlyoutBackgroundImageAspect` propriété pouvant être liée, de type [`Aspect`](xref:Xamarin.Forms.Aspect) , sur l’un des membres de l' `Aspect` énumération :
 
-- [`AspectFill`](xref:Xamarin.Forms.Aspect.AspectFill)-découpe l’image pour qu’elle remplisse la zone d’affichage tout en conservant les proportions.
-- [`AspectFit`](xref:Xamarin.Forms.Aspect.AspectFit)-cadres l’image, si nécessaire, pour que l’image s’ajuste à la zone d’affichage, avec un espace ajouté en haut/bas ou sur les côtés selon que l’image est grande ou haute.
-- [`Fill`](xref:Xamarin.Forms.Aspect.Fill)-étire l’image pour qu’elle remplisse complètement et exactement la zone d’affichage. Cela peut entraîner une distorsion de l’image.
+- [`AspectFill`](xref:Xamarin.Forms.Aspect.AspectFill) -découpe l’image pour qu’elle remplisse la zone d’affichage tout en conservant les proportions.
+- [`AspectFit`](xref:Xamarin.Forms.Aspect.AspectFit) -cadres l’image, si nécessaire, pour que l’image s’ajuste à la zone d’affichage, avec un espace ajouté en haut/bas ou sur les côtés selon que l’image est grande ou haute.
+- [`Fill`](xref:Xamarin.Forms.Aspect.Fill) -étire l’image pour qu’elle remplisse complètement et exactement la zone d’affichage. Cela peut entraîner une distorsion de l’image.
 
 Par défaut, la propriété `FlyoutBackgroundImageAspect` a la valeur `AspectFit`.
 
@@ -295,9 +295,9 @@ Pour plus d’informations sur les pinceaux, consultez [ Xamarin.Forms pinceaux]
 
 Par défaut, un menu volant peut faire défiler verticalement quand les éléments du menu volant ne rentrent pas dans le menu volant. Ce comportement peut être modifié en affectant `Shell.FlyoutVerticalScrollMode` à la propriété pouvant être liée l’un des membres de l' `ScrollMode` énumération :
 
-- `Disabled`: indique que le défilement vertical est désactivé.
-- `Enabled`: indique que le défilement vertical est activé.
-- `Auto`: indique que le défilement vertical est activé si les éléments du menu volant ne rentrent pas dans le menu volant. C’est la valeur par défaut de la propriété `Shell.FlyoutVerticalScrollMode`.
+- `Disabled` : indique que le défilement vertical est désactivé.
+- `Enabled` : indique que le défilement vertical est activé.
+- `Auto` : indique que le défilement vertical est activé si les éléments du menu volant ne rentrent pas dans le menu volant. C’est la valeur par défaut de la propriété `Shell.FlyoutVerticalScrollMode`.
 
 L’exemple suivant montre comment désactiver le défilement vertical :
 
@@ -543,7 +543,7 @@ Les éléments de menu peuvent éventuellement être ajoutés au menu volant et 
 > [!NOTE]
 > La `MenuItem` classe a un [`Clicked`](xref:Xamarin.Forms.MenuItem.Clicked) événement et une [`Command`](xref:Xamarin.Forms.MenuItem.Command) propriété. Par conséquent, les objets `MenuItem` donnent accès à des scénarios qui exécutent une action en réponse au `MenuItem` sélectionné : navigation et ouverture d’un navigateur web sur une page spécifique.
 
-[`MenuItem`](xref:Xamarin.Forms.MenuItem)les objets peuvent être ajoutés au menu volant comme indiqué dans l’exemple suivant :
+[`MenuItem`](xref:Xamarin.Forms.MenuItem) les objets peuvent être ajoutés au menu volant comme indiqué dans l’exemple suivant :
 
 ```xaml
 <Shell ...>
@@ -690,7 +690,7 @@ En outre, les classes de style personnalisées peuvent être définies et appliq
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Xaminals (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
-- [Xamarin.FormsClasses de style](~/xamarin-forms/user-interface/styles/xaml/style-class.md)
-- [Xamarin.FormsGestionnaire d’état visuel](~/xamarin-forms/user-interface/visual-state-manager.md)
-- [Xamarin.FormsBrosse](~/xamarin-forms/user-interface/brushes/index.md)
+- [Xaminals (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
+- [Xamarin.Forms Classes de style](~/xamarin-forms/user-interface/styles/xaml/style-class.md)
+- [Xamarin.Forms Gestionnaire d’état visuel](~/xamarin-forms/user-interface/visual-state-manager.md)
+- [Xamarin.Forms Brosse](~/xamarin-forms/user-interface/brushes/index.md)

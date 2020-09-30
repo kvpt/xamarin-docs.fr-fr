@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsDisposition du shell
+title: Xamarin.Forms Disposition du shell
 description: Le niveau de navigation suivant le menu volant dans une application Shell est la barre d’onglets du bas. Le modèle de navigation pour une application peut également commencer avec des onglets en bas et n’utiliser aucun menu volant. Dans les deux cas, lorsqu’un onglet contient plusieurs pages, il est possible de passer de l’une à l’autre grâce aux onglets du haut.
 ms.prod: xamarin
 ms.assetid: 318D81DB-E456-4E44-B083-36A27DBD9523
@@ -10,14 +10,14 @@ ms.date: 11/06/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9ecdc3aca3264b52163d35e29659f434f521147f
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 59c7435273d7c01f93ef0bbfb0240e3917f8b716
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918614"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563014"
 ---
-# <a name="no-locxamarinforms-shell-tabs"></a>Xamarin.FormsOnglets de Shell
+# <a name="no-locxamarinforms-shell-tabs"></a>Xamarin.Forms Onglets de Shell
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
@@ -301,6 +301,6 @@ Il est également possible de styliser les onglets avec des feuilles de style en
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Xaminals (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
-- [Xamarin.FormsNavigation dans le shell](navigation.md)
-- [Xamarin.FormsPropriétés spécifiques de l’interpréteur de commandes CSS](~/xamarin-forms/user-interface/styles/css/index.md#xamarinforms-shell-specific-properties)
+- [Xaminals (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
+- [Xamarin.Forms Navigation dans le shell](navigation.md)
+- [Xamarin.Forms Propriétés spécifiques de l’interpréteur de commandes CSS](~/xamarin-forms/user-interface/styles/css/index.md#xamarinforms-shell-specific-properties)

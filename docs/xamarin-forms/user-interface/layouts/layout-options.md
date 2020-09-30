@@ -1,5 +1,5 @@
 ---
-title: Options de disposition dansXamarin.Forms
+title: Options de disposition dans Xamarin.Forms
 description: Chaque Xamarin.Forms vue a des propriétés HorizontalOptions et VerticalOptions, de type LayoutOptions. Cet article explique l’effet de chaque valeur LayoutOptions sur l’alignement et l’expansion d’une vue.
 ms.prod: xamarin
 ms.assetid: 7CAB5631-5153-4DEF-8AD7-C6011CE44307
@@ -10,14 +10,14 @@ ms.date: 02/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1a3b9db435de49c438f458d1c4d85d3f81bbf749
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: bf85bb3bf6f694aa5eefa8512b8391084228598e
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86930678"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563521"
 ---
-# <a name="layout-options-in-xamarinforms"></a>Options de disposition dansXamarin.Forms
+# <a name="layout-options-in-no-locxamarinforms"></a>Options de disposition dans Xamarin.Forms
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layoutoptions)
 
@@ -53,7 +53,7 @@ Les `StartAndExpand` valeurs,, `CenterAndExpand` `EndAndExpand` et `FillAndExpan
 > [!NOTE]
 > La valeur par défaut des propriétés [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) et [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) d’une vue est [`LayoutOptions.Fill`](xref:Xamarin.Forms.LayoutOptions.Fill).
 
-## <a name="alignment"></a>Alignement
+## <a name="alignment"></a>Alignment
 
 L’alignement contrôle la manière dont une vue est positionnée dans sa disposition parente lorsque la disposition parente contient de l’espace inutilisé (autrement dit, la disposition parente est supérieure à la taille combinée de tous ses enfants).
 
@@ -62,7 +62,7 @@ A [`StackLayout`](xref:Xamarin.Forms.StackLayout) respecte uniquement les `Start
 Un [`StackLayout`](xref:Xamarin.Forms.StackLayout) ne respecte pas les `Start` `Center` champs,, `End` et `Fill` [`LayoutOptions`](xref:Xamarin.Forms.LayoutOptions) sur les vues enfants qui se trouvent dans la même direction que l' `StackLayout` orientation. Par conséquent, un orienté verticale `StackLayout` ignore les `Start` `Center` champs,, `End` ou `Fill` s’ils sont définis sur les [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) Propriétés des vues enfants. De même, un orienté horizontal `StackLayout` ignore les `Start` champs, `Center` , `End` ou `Fill` s’ils sont définis sur les [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) Propriétés des vues enfants.
 
 > [!NOTE]
-> [`LayoutOptions.Fill`](xref:Xamarin.Forms.LayoutOptions.Fill)remplace généralement les demandes de taille spécifiées à l’aide des [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) Propriétés et.
+> [`LayoutOptions.Fill`](xref:Xamarin.Forms.LayoutOptions.Fill) remplace généralement les demandes de taille spécifiées à l’aide des  [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) Propriétés et.
 
 L’exemple de code XAML suivant montre une orientation verticale [`StackLayout`](xref:Xamarin.Forms.StackLayout) où chaque enfant [`Label`](xref:Xamarin.Forms.Label) définit sa [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) propriété sur l’un des quatre champs d’alignement de la [`LayoutOptions`](xref:Xamarin.Forms.LayoutOptions) structure :
 
@@ -157,5 +157,5 @@ Cet article a expliqué l’effet de chaque [`LayoutOptions`](xref:Xamarin.Forms
 
 ## <a name="related-links"></a>Liens associés
 
-- [LayoutOptions (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layoutoptions)
+- [LayoutOptions (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-layoutoptions)
 - [LayoutOptions](xref:Xamarin.Forms.LayoutOptions)

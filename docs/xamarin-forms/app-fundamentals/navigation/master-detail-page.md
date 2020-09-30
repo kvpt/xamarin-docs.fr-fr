@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsPage maître-détail
+title: Xamarin.Forms Page maître-détail
 description: 'Le Xamarin.Forms MasterDetailPage est une page qui gère deux pages d’informations associées : une page maître qui présente des éléments et une page de détails qui présente des détails sur les éléments de la page maître. Cet article explique comment utiliser MasterDetailPage et comment naviguer entre ses pages d’informations.'
 ms.prod: xamarin
 ms.assetid: 119945E3-58B8-4630-A3D2-8B561529D53B
@@ -10,14 +10,14 @@ ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3a65e9bb90f01bcb5e0b1182a21d998e2335da9a
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: d29dafd5bcdf991f275580850d77a4923d37286e
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86934522"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563053"
 ---
-# <a name="xamarinforms-master-detail-page"></a>Xamarin.FormsPage maître-détail
+# <a name="no-locxamarinforms-master-detail-page"></a>Xamarin.Forms Page maître-détail
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-masterdetailpage)
 
@@ -296,5 +296,5 @@ Cet article a montré comment utiliser un [`MasterDetailPage`](xref:Xamarin.Form
 ## <a name="related-links"></a>Liens associés
 
 - [Types de pages](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf)
-- [MasterDetailPage (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-masterdetailpage)
+- [MasterDetailPage (exemple)](/samples/xamarin/xamarin-forms-samples/navigation-masterdetailpage)
 - [MasterDetailPage](xref:Xamarin.Forms.MasterDetailPage)

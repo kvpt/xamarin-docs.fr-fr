@@ -10,16 +10,16 @@ ms.date: 05/25/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1ad548846500ccbacc2a3d117919bfb4df1a1d79
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 9193cef76a5f474f3681b15a1315e5840b41d88a
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138682"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562975"
 ---
 # <a name="three-types-of-bzier-curves"></a>Trois types de courbes Bézier
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Découvrez comment utiliser SkiaSharp pour restituer des courbes de Bézier cubiques, quadratiques et coniques_
 
@@ -498,7 +498,7 @@ Il est très facile de dériver le point de contrôle et le poids pour utiliser 
 
 Vous pouvez utiliser trigonométrique pour déterminer la distance du point de contrôle à partir du centre du cercle : il s’agit du rayon du cercle divisé par le cosinus de la moitié de l’angle α. Pour dessiner un arc de cercle entre les points de début et de fin, définissez le poids sur le même cosinus de la moitié de l’angle. Notez que si l’angle est de 180 degrés, les lignes de tangente ne sont jamais satisfaites et le poids est égal à zéro. Mais pour des angles inférieurs à 180 degrés, la mathématique fonctionne bien.
 
-La page **arc de cercle conique** illustre cela. Le fichier [**ConicCircularArc. Xaml**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml) instancie un `Slider` pour la sélection de l’angle. Le `PaintSurface` Gestionnaire du fichier code-behind [**ConicCircularArc.Xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml.cs) calcule le point de contrôle et le poids :
+La page **arc de cercle conique** illustre cela. Le fichier [**ConicCircularArc. Xaml**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml) instancie un `Slider` pour la sélection de l’angle. Le `PaintSurface` Gestionnaire du fichier code-behind  [**ConicCircularArc.Xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml.cs) calcule le point de contrôle et le poids :
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -556,7 +556,7 @@ Mais définissez l’angle sur 180 degrés, et la mathématique échoue.
 
 Dans ce cas, cela `ConicTo` ne prend pas en charge les pondérations négatives, car en théorie (en fonction des équations paramétrées), le cercle peut être complété par un autre appel à `ConicTo` avec les mêmes points, mais avec une valeur négative du poids. Cela permet de créer un cercle entier avec seulement deux `ConicTo` courbes en fonction de n’importe quel angle entre (mais sans inclure) zéro degré et 180 degrés.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [API SkiaSharp](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (exemple)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

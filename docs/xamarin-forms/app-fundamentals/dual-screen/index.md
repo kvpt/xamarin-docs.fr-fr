@@ -10,18 +10,18 @@ ms.date: 02/08/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a414127c01d26db6bf7b462d6fc5a7f9ae44dddc
-ms.sourcegitcommit: 69bd0fdc698c9b0c0d73217776d7084f32ae88ae
+ms.openlocfilehash: e1d2a443a6005050c518e21e4e0f2df64c2aab0c
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90832278"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562624"
 ---
 # <a name="no-locxamarinforms-dual-screen"></a>Xamarin.Forms double écran
 
 Les périphériques à deux écrans comme Microsoft surface Duo facilitent les nouvelles possibilités d’expérience utilisateur pour vos applications. Xamarin.Forms comprend `TwoPaneView` les `DualScreenInfo` classes et pour vous permettre de développer des applications pour les appareils à deux écrans.
 
-## <a name="get-started"></a>Bien démarrer
+## <a name="get-started"></a>Prise en main
 
 Pour ajouter des fonctionnalités à deux écrans à une application, procédez comme suit Xamarin.Forms :
 
@@ -45,11 +45,11 @@ Pour ajouter des fonctionnalités à deux écrans à une application, procédez 
 
     Ces valeurs sont nécessaires pour que les modifications de configuration et l’état d’étendue puissent être signalés de manière plus fiable. Par défaut, seuls deux sont ajoutés aux Xamarin.Forms projets. n’oubliez pas d’ajouter le reste pour une prise en charge fiable du double écran.
 
-## <a name="troubleshooting"></a>Dépannage
+## <a name="troubleshooting"></a>Résolution des problèmes
 
 Si la `DualScreenInfo` classe ou la `TwoPaneView` mise en page ne fonctionne pas comme prévu, consultez les instructions de configuration sur cette page. L’omission ou la configuration indéfinie `Init` de la méthode ou des `ConfigurationChanges` valeurs d’attribut sont des causes courantes des erreurs.
 
-Consultez les [ Xamarin.Forms exemples à double écran](https://docs.microsoft.com/dual-screen/xamarin/samples) pour obtenir des instructions et une implémentation de référence supplémentaires.
+Consultez les [ Xamarin.Forms exemples à double écran](/dual-screen/xamarin/samples) pour obtenir des instructions et une implémentation de référence supplémentaires.
 
 ## <a name="next-steps"></a>Étapes suivantes
 
@@ -60,4 +60,4 @@ Une fois que vous avez ajouté le NuGet, ajoutez les fonctionnalités à deux é
 - [Classe d’assistance DualScreenInfo](dual-screen-info.md) : la `DualScreenInfo` classe vous permet de déterminer le volet sur lequel se trouve votre affichage, sa taille, la position de l’appareil, l’angle de la charnière et bien plus encore.
 - [Déclencheurs](triggers.md) à deux écrans : l' [`Xamarin.Forms.DualScreen`](xref:Xamarin.Forms.DualScreen) espace de noms comprend deux déclencheurs d’État qui déclenchent une [`VisualState`](xref:Xamarin.Forms.VisualState) modification lorsque le mode d’affichage de la disposition attachée, ou fenêtre, change.
 
-Pour plus d’informations, consultez les documents sur les [développeurs à deux écrans](https://docs.microsoft.com/dual-screen/) .
+Pour plus d’informations, consultez les documents sur les [développeurs à deux écrans](/dual-screen/) .

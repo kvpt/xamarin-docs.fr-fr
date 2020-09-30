@@ -1,5 +1,5 @@
 ---
-title: Animations personnalisées dansXamarin.Forms
+title: Animations personnalisées dans Xamarin.Forms
 description: Cet article montre comment utiliser la classe d’animation Xamarin. Forms pour créer et annuler des animations, synchroniser plusieurs animations et créer des animations personnalisées qui animent des propriétés qui ne sont pas animées par les méthodes d’animation existantes.
 ms.prod: xamarin
 ms.assetid: 03B2E3FC-E720-4D45-B9A0-711081FC1907
@@ -10,16 +10,16 @@ ms.date: 02/10/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 573f18de0d7593d832505eb6bb2b492caea024a1
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 3731f35ab03edf9b65c3adca7a2091c2a609b552
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84946102"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563391"
 ---
-# <a name="custom-animations-in-xamarinforms"></a>Animations personnalisées dansXamarin.Forms
+# <a name="custom-animations-in-no-locxamarinforms"></a>Animations personnalisées dans Xamarin.Forms
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-custom)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-custom)
 
 _La classe d’animation est le bloc de construction de toutes les Xamarin.Forms animations, avec les méthodes d’extension de la classe ViewExtensions qui créent un ou plusieurs objets d’animation. Cet article montre comment utiliser la classe d’animation pour créer et annuler des animations, synchroniser plusieurs animations et créer des animations personnalisées qui animent des propriétés qui ne sont pas animées par les méthodes d’animation existantes._
 
@@ -181,6 +181,6 @@ Dans cet exemple de code, la `ColorTo` méthode anime les [`TextColor`](xref:Xam
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Animations personnalisées (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-custom)
+- [Animations personnalisées (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-animation-custom)
 - [API d’animation](xref:Xamarin.Forms.Animation)
 - [API AnimationExtensions](xref:Xamarin.Forms.AnimationExtensions)

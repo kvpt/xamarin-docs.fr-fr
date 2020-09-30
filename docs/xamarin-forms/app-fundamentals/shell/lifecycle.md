@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsCycle de vie du shell
+title: Xamarin.Forms Cycle de vie du shell
 description: Les applications de Shell respectent le Xamarin.Forms cycle de vie et un événement apparaît lorsqu’une page est sur le point d’apparaître sur l’écran, et un événement de disparition est déclenché quand une page est sur le point de disparaître de l’écran.
 ms.prod: xamarin
 ms.assetid: 4E4EE50E-3BB4-441D-8355-CD9CD26ED1D0
@@ -10,16 +10,16 @@ ms.date: 07/25/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3a7a46187d861098b61f638a3fb460d890b081dd
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 1b2abf7925eabb79b1918a9b9fedb0ba7ecced38
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138721"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563157"
 ---
-# <a name="xamarinforms-shell-lifecycle"></a>Xamarin.FormsCycle de vie du shell
+# <a name="no-locxamarinforms-shell-lifecycle"></a>Xamarin.Forms Cycle de vie du shell
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
 Les applications de Shell respectent le Xamarin.Forms cycle de vie et un `Appearing` événement est déclenché lorsqu’une page est sur le point d’apparaître sur l’écran, et un `Disappearing` événement est déclenché lorsqu’une page est sur le point de disparaître de l’écran. Ces événements sont propagés aux pages et peuvent être gérés en remplaçant les [`OnAppearing`](xref:Xamarin.Forms.Page.OnAppearing) [`OnDisappearing`](xref:Xamarin.Forms.Page.OnDisappearing) méthodes ou sur la page.
 
@@ -42,6 +42,6 @@ Pour plus d’informations sur la navigation modale, consultez [ Xamarin.Forms p
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Xaminals (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
-- [Xamarin.FormsCycle de vie des applications](~/xamarin-forms/app-fundamentals/app-lifecycle.md)
-- [Xamarin.FormsPages modales](~/xamarin-forms/app-fundamentals/navigation/modal.md)
+- [Xaminals (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
+- [Xamarin.Forms Cycle de vie des applications](~/xamarin-forms/app-fundamentals/app-lifecycle.md)
+- [Xamarin.Forms Pages modales](~/xamarin-forms/app-fundamentals/navigation/modal.md)

@@ -10,16 +10,16 @@ ms.date: 07/11/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9018cbe6e41350b22a0f1f91858017531c75a0ac
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 7f0b7c61d44170ab97b060a16693287c28903660
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84135579"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562962"
 ---
 # <a name="accessing-skiasharp-bitmap-pixel-bits"></a>Accès aux bits de pixel de la bitmap SkiaSharp
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 Comme vous l’avez vu dans l’article [**enregistrement de bitmaps SkiaSharp**](saving.md)dans des fichiers, les bitmaps sont généralement stockés dans des fichiers dans un format compressé, tel que JPEG ou png. Dans contrairement, une bitmap SkiaSharp stockée en mémoire n’est pas compressée. Elle est stockée sous la forme d’une série séquentielle de pixels. Ce format non compressé facilite le transfert des bitmaps vers une surface d’affichage.
 
@@ -35,12 +35,12 @@ SkiaSharp fournit plusieurs techniques pour accéder aux bits de pixel d’une b
 
 - Les `GetPixel` `SetPixel` méthodes et vous permettent d’obtenir ou de définir la couleur d’un pixel unique.
 - La `Pixels` propriété obtient un tableau de couleurs de pixels pour l’ensemble de la bitmap, ou définit le tableau de couleurs.
-- `GetPixels`retourne l’adresse de la mémoire en pixels utilisée par la bitmap.
-- `SetPixels`remplace l’adresse de la mémoire en pixels utilisée par la bitmap.
+- `GetPixels` retourne l’adresse de la mémoire en pixels utilisée par la bitmap.
+- `SetPixels` remplace l’adresse de la mémoire en pixels utilisée par la bitmap.
 
 Vous pouvez considérer les deux premières techniques comme « haut niveau » et les deux deuxièmes comme « niveau bas ». Vous pouvez utiliser d’autres méthodes et propriétés, mais celles-ci sont les plus intéressantes.
 
-Pour vous permettre de voir les différences de performances entre ces techniques, l’application [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) contient une page nommée **bitmap de dégradé** qui crée une image bitmap avec des pixels qui combinent des nuances de rouge et de bleu pour créer un dégradé. Le programme crée huit copies différentes de cette image bitmap, toutes utilisant des techniques différentes pour définir les pixels de la bitmap. Chacune de ces huit bitmaps est créée dans une méthode distincte qui définit également une brève description du texte de la technique et calcule le temps nécessaire pour définir tous les pixels. Chaque méthode parcourt la logique de paramétrage de pixel 100 fois pour obtenir une meilleure estimation des performances.
+Pour vous permettre de voir les différences de performances entre ces techniques, l’application [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) contient une page nommée **bitmap de dégradé** qui crée une image bitmap avec des pixels qui combinent des nuances de rouge et de bleu pour créer un dégradé. Le programme crée huit copies différentes de cette image bitmap, toutes utilisant des techniques différentes pour définir les pixels de la bitmap. Chacune de ces huit bitmaps est créée dans une méthode distincte qui définit également une brève description du texte de la technique et calcule le temps nécessaire pour définir tous les pixels. Chaque méthode parcourt la logique de paramétrage de pixel 100 fois pour obtenir une meilleure estimation des performances.
 
 ### <a name="the-setpixel-method"></a>Méthode SetPixel
 
@@ -90,7 +90,7 @@ La `SetPixel` méthode est appelée 65 536 fois et, quelle que soit l’efficaci
 
 ### <a name="the-pixels-property"></a>La propriété pixels
 
-`SKBitmap`définit une [`Pixels`](xref:SkiaSharp.SKBitmap.Pixels) propriété qui retourne un tableau de `SKColor` valeurs pour la bitmap entière. Vous pouvez également utiliser `Pixels` pour définir un tableau de valeurs de couleur pour l’image bitmap :
+`SKBitmap` définit une [`Pixels`](xref:SkiaSharp.SKBitmap.Pixels) propriété qui retourne un tableau de `SKColor` valeurs pour la bitmap entière. Vous pouvez également utiliser `Pixels` pour définir un tableau de valeurs de couleur pour l’image bitmap :
 
 ```csharp
 SKColor[] pixels = bitmap.Pixels;
@@ -130,7 +130,7 @@ SKBitmap FillBitmapPixelsProp(out string description, out int milliseconds)
 
 Notez que l’index du `pixels` tableau doit être calculé à partir des `row` variables et `col` . La ligne est multipliée par le nombre de pixels de chaque ligne (256 dans le cas présent), puis la colonne est ajoutée.
 
-`SKBitmap`définit également une `Bytes` propriété similaire, qui retourne un tableau d’octets pour l’intégralité de la bitmap, mais elle est plus lourde pour les bitmaps de couleur entière.
+`SKBitmap` définit également une `Bytes` propriété similaire, qui retourne un tableau d’octets pour l’intégralité de la bitmap, mais elle est plus lourde pour les bitmaps de couleur entière.
 
 ### <a name="the-getpixels-pointer"></a>Pointeur GetPixels
 
@@ -287,7 +287,7 @@ La seule question est : le format d’entier de la `SKColor` valeur dans l’or
 
 ### <a name="the-setpixels-method"></a>Méthode SetPixels
 
-`SKBitmap`définit également une méthode nommée [`SetPixels`](xref:SkiaSharp.SKBitmap.SetPixels(System.IntPtr)) , que vous appelez comme suit :
+`SKBitmap` définit également une méthode nommée [`SetPixels`](xref:SkiaSharp.SKBitmap.SetPixels(System.IntPtr)) , que vous appelez comme suit :
 
 ```csharp
 bitmap.SetPixels(intPtr);
@@ -493,11 +493,11 @@ Voici un tableau qui consolide les durées d’exécution en millisecondes :
 | --------- | --------- | ----:| -------:| ----:|
 | SetPixel  |           | 3.17 |   10,77 | 3.49 |
 | Pixels    |           | 0.32 |    1.23 | 0,07 |
-| GetPixels | byte      | 0,09 |    0.24 | 0.10 |
-|           | uint      | 0.06 |    0,26 | 0.05 |
+| GetPixels | byte      | 0,09 |    0,24 | 0.10 |
+|           | uint      | 0,06 |    0,26 | 0,05 |
 |           | SKColor   | 0,29 |    0,99 | 0,07 |
 | SetPixels | byte      | 1.33 |    6,78 | 0.11 |
-|           | uint      | 0.14 |    0,69 | 0.06 |
+|           | uint      | 0.14 |    0,69 | 0,06 |
 |           | SKColor   | 0,35 |    1.93 | 0.10 |
 
 Comme prévu, l’appel de `SetPixel` 65 536 fois est le moins effeicient pour définir les pixels d’une bitmap. Le remplissage d’un `SKColor` tableau et la définition de la `Pixels` propriété sont bien meilleurs, et même une comparaison plus favorable avec certaines des `GetPixels` `SetPixels` techniques et. L’utilisation des `uint` valeurs de pixel est généralement plus rapide que la définition de `byte` composants distincts, et la conversion `SKColor` de la valeur en entier non signé ajoute une surcharge au processus.
@@ -796,5 +796,5 @@ Le code du constructeur accède à chaque pixel, effectue une opération and au 
 
 ## <a name="related-links"></a>Liens connexes
 
-- [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [API SkiaSharp](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (exemple)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

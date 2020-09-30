@@ -1,6 +1,6 @@
 ---
-title: Xamarin.FormsRecherche de Shell
-description: Xamarin.FormsLes applications Shell peuvent utiliser la fonctionnalité de recherche intégrée qui est fournie par une zone de recherche qui peut être ajoutée en haut de chaque page.
+title: Xamarin.Forms Recherche de Shell
+description: Xamarin.Forms Les applications Shell peuvent utiliser la fonctionnalité de recherche intégrée qui est fournie par une zone de recherche qui peut être ajoutée en haut de chaque page.
 ms.prod: xamarin
 ms.assetid: F8F9471D-6771-4D23-96C0-2B79473A06D4
 ms.technology: xamarin-forms
@@ -10,18 +10,18 @@ ms.date: 07/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 00dfec5b48507c83f43d0622c11770ecec304ea6
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: f0d8766420f876898a3f10c2f23a35a0b0afeb43
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87917548"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563469"
 ---
-# <a name="no-locxamarinforms-shell-search"></a>Xamarin.FormsRecherche de Shell
+# <a name="no-locxamarinforms-shell-search"></a>Xamarin.Forms Recherche de Shell
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
-Xamarin.FormsL’interpréteur de commandes comprend une fonctionnalité de recherche intégrée qui est fournie par la `SearchHandler` classe. Une fonction de recherche peut être ajoutée à une page en définissant la propriété jointe `Shell.SearchHandler` sur un objet `SearchHandler` sous-classé. Une zone de recherche est alors ajoutée en haut de la page :
+Xamarin.Forms L’interpréteur de commandes comprend une fonctionnalité de recherche intégrée qui est fournie par la `SearchHandler` classe. Une fonction de recherche peut être ajoutée à une page en définissant la propriété jointe `Shell.SearchHandler` sur un objet `SearchHandler` sous-classé. Une zone de recherche est alors ajoutée en haut de la page :
 
 [![Capture d’écran d’un shell SearchHandler, sur iOS et Android](search-images/searchhandler.png "Shell SearchHandler")](search-images/searchhandler-large.png#lightbox "Shell SearchHandler")
 
@@ -231,14 +231,14 @@ La classe `SearchHandler` définit les propriétés suivantes destinées à modi
 
 Le clavier présenté lorsque les utilisateurs interagissent avec un `SearchHandler` peut être défini par programmation via la `Keyboard` propriété, à l’une des propriétés suivantes à partir de la [`Keyboard`](xref:Xamarin.Forms.Keyboard) classe :
 
-- [`Chat`](xref:Xamarin.Forms.Keyboard.Chat): utilisé pour le texte et les emplacements où les Emoji sont utiles.
-- [`Default`](xref:Xamarin.Forms.Keyboard.Default): clavier par défaut.
-- [`Email`](xref:Xamarin.Forms.Keyboard.Email)– utilisé lors de la saisie des adresses e-mail.
-- [`Numeric`](xref:Xamarin.Forms.Keyboard.Numeric): utilisé lors de l’entrée de nombres.
-- [`Plain`](xref:Xamarin.Forms.Keyboard.Plain): utilisé lors de l’entrée de texte, sans aucun [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) spécifié.
-- [`Telephone`](xref:Xamarin.Forms.Keyboard.Telephone)– utilisé lors de l’entrée de numéros de téléphone.
-- [`Text`](xref:Xamarin.Forms.Keyboard.Text): utilisé lors de la saisie de texte.
-- [`Url`](xref:Xamarin.Forms.Keyboard.Url): permet d’entrer des chemins de fichier & des adresses Web.
+- [`Chat`](xref:Xamarin.Forms.Keyboard.Chat) : utilisé pour le texte et les emplacements où les Emoji sont utiles.
+- [`Default`](xref:Xamarin.Forms.Keyboard.Default) : clavier par défaut.
+- [`Email`](xref:Xamarin.Forms.Keyboard.Email) – utilisé lors de la saisie des adresses e-mail.
+- [`Numeric`](xref:Xamarin.Forms.Keyboard.Numeric) : utilisé lors de l’entrée de nombres.
+- [`Plain`](xref:Xamarin.Forms.Keyboard.Plain) : utilisé lors de l’entrée de texte, sans aucun [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) spécifié.
+- [`Telephone`](xref:Xamarin.Forms.Keyboard.Telephone) – utilisé lors de l’entrée de numéros de téléphone.
+- [`Text`](xref:Xamarin.Forms.Keyboard.Text) : utilisé lors de la saisie de texte.
+- [`Url`](xref:Xamarin.Forms.Keyboard.Url) : permet d’entrer des chemins de fichier & des adresses Web.
 
 Cela peut être accompli en XAML de la façon suivante :
 
@@ -252,16 +252,16 @@ Le code C# équivalent est :
 SearchHandler searchHandler = new SearchHandler { Keyboard = Keyboard.Email };
 ```
 
-La [`Keyboard`](xref:Xamarin.Forms.Keyboard) classe a également une [`Create`](xref:Xamarin.Forms.Keyboard.Create*) méthode de fabrique qui peut être utilisée pour personnaliser un clavier en spécifiant le comportement de mise en majuscules, de vérification orthographique et de suggestion. [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags)les valeurs d’énumération sont spécifiées comme arguments de la méthode, avec un personnalisé `Keyboard` qui est retourné. L’énumération `KeyboardFlags` contient les valeurs suivantes :
+La [`Keyboard`](xref:Xamarin.Forms.Keyboard) classe a également une [`Create`](xref:Xamarin.Forms.Keyboard.Create*) méthode de fabrique qui peut être utilisée pour personnaliser un clavier en spécifiant le comportement de mise en majuscules, de vérification orthographique et de suggestion. [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) les valeurs d’énumération sont spécifiées comme arguments de la méthode, avec un personnalisé `Keyboard` qui est retourné. L’énumération `KeyboardFlags` contient les valeurs suivantes :
 
-- [`None`](xref:Xamarin.Forms.KeyboardFlags.None): aucune fonctionnalité n’est ajoutée au clavier.
-- [`CapitalizeSentence`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeSentence): indique que la première lettre du premier mot de chaque phrase entrée est automatiquement mise en majuscules.
-- [`Spellcheck`](xref:Xamarin.Forms.KeyboardFlags.Spellcheck): indique que l’orthographe est effectuée sur le texte entré.
-- [`Suggestions`](xref:Xamarin.Forms.KeyboardFlags.Suggestions): indique que les saisies semi-automatiques de mot seront proposées dans le texte entré.
-- [`CapitalizeWord`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeWord): indique que la première lettre de chaque mot sera automatiquement mise en majuscules.
-- [`CapitalizeCharacter`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeCharacter): indique que chaque caractère sera automatiquement mis en majuscules.
-- [`CapitalizeNone`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeNone): indique qu’aucune mise en majuscule automatique n’aura lieu.
-- [`All`](xref:Xamarin.Forms.KeyboardFlags.All): indique que l’orthographe, la saisie semi-automatique des mots et la mise en majuscule des phrases se produisent dans le texte entré.
+- [`None`](xref:Xamarin.Forms.KeyboardFlags.None) : aucune fonctionnalité n’est ajoutée au clavier.
+- [`CapitalizeSentence`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeSentence) : indique que la première lettre du premier mot de chaque phrase entrée est automatiquement mise en majuscules.
+- [`Spellcheck`](xref:Xamarin.Forms.KeyboardFlags.Spellcheck) : indique que l’orthographe est effectuée sur le texte entré.
+- [`Suggestions`](xref:Xamarin.Forms.KeyboardFlags.Suggestions) : indique que les saisies semi-automatiques de mot seront proposées dans le texte entré.
+- [`CapitalizeWord`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeWord) : indique que la première lettre de chaque mot sera automatiquement mise en majuscules.
+- [`CapitalizeCharacter`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeCharacter) : indique que chaque caractère sera automatiquement mis en majuscules.
+- [`CapitalizeNone`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeNone) : indique qu’aucune mise en majuscule automatique n’aura lieu.
+- [`All`](xref:Xamarin.Forms.KeyboardFlags.All) : indique que l’orthographe, la saisie semi-automatique des mots et la mise en majuscule des phrases se produisent dans le texte entré.
 
 L’exemple de code XAML suivant montre comment personnaliser la valeur par défaut [`Keyboard`](xref:Xamarin.Forms.Keyboard) pour proposer des saisies semi-automatiques de mots et mettre en majuscules chaque caractère entré :
 
@@ -336,5 +336,5 @@ En outre, la classe `SearchHandler` fournit les méthodes substituables suivante
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Xaminals (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
-- [Xamarin.FormsNavigation dans le shell](navigation.md)
+- [Xaminals (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
+- [Xamarin.Forms Navigation dans le shell](navigation.md)

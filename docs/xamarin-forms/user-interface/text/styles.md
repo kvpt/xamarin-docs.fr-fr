@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsStyles de texte
+title: Xamarin.Forms Styles de texte
 description: Cet article explique comment styliser du texte dans des Xamarin.Forms applications. Les styles peuvent être définis une fois et utilisés par de nombreuses vues, mais un style peut être utilisé uniquement avec les vues d’un seul type.
 ms.prod: xamarin
 ms.assetid: 57C0CFD6-A568-46B8-ADA1-BF25681893CF
@@ -10,25 +10,25 @@ ms.date: 05/22/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7d82348231c4b4905f2f70b80f73c45f2f0bf66b
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e2c6898439da5869d79bc500643ca3cfc52c2e3f
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84571998"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557554"
 ---
-# <a name="xamarinforms-text-styles"></a>Xamarin.FormsStyles de texte
+# <a name="no-locxamarinforms-text-styles"></a>Xamarin.Forms Styles de texte
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
-_Stylisation de texte dans Xamarin. Forms_
+_Styliser du texte dans Xamarin.Forms_
 
 Les styles peuvent être utilisés pour ajuster l’apparence des étiquettes, des entrées et des éditeurs. Les styles peuvent être définis une fois et utilisés par de nombreuses vues, mais un style peut être utilisé uniquement avec les vues d’un seul type.
 Les styles peuvent être attribués `Key` et appliqués de manière sélective à l’aide de la propriété d’un contrôle spécifique `Style` .
 
 ## <a name="built-in-styles"></a>Styles intégrés
 
-Xamarin.Formscomprend plusieurs styles [intégrés](xref:Xamarin.Forms.Device.Styles) pour les scénarios courants :
+Xamarin.Forms comprend plusieurs styles [intégrés](xref:Xamarin.Forms.Device.Styles) pour les scénarios courants :
 
 - `BodyStyle`
 - `CaptionStyle`
@@ -142,9 +142,9 @@ Activé :
 
 Pour garantir l’accessibilité, assurez-vous que les styles intégrés sont utilisés comme base pour tous les styles liés au texte dans votre application, et que vous utilisez les styles de manière cohérente. Pour plus d’informations sur l’extension et l’utilisation des styles en général, consultez [styles](~/xamarin-forms/user-interface/styles/index.md) .
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Création d’Mobile Apps avec Xamarin.Forms , chapitre 12](https://developer.xamarin.com/r/xamarin-forms/book/chapter12.pdf)
 - [Styles](~/xamarin-forms/user-interface/styles/index.md)
-- [Texte (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
+- [Texte (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-text)
 - [Style](xref:Xamarin.Forms.Style)

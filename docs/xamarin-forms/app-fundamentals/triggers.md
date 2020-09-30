@@ -10,12 +10,12 @@ ms.date: 04/17/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: fa907babc8dae0f466fd870f55b0e5be23114498
-ms.sourcegitcommit: 37ad3c1ef8faa5bfeeb305fde06e7b4654a643e1
+ms.openlocfilehash: 29fb1300e62d15130e999f6816e2afefcd3fba3b
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87795992"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562598"
 ---
 # <a name="no-locxamarinforms-triggers"></a>Xamarin.Forms Déclencheurs
 
@@ -574,7 +574,7 @@ L’exemple de code XAML suivant montre un [`Style`](xref:Xamarin.Forms.Style) q
 </Style>
 ```
 
-Dans cet exemple, les [`Style`](xref:Xamarin.Forms.Style) objets cibles explicites [`ContentPage`](xref:Xamarin.Forms.ContentPage) . `ContentPage`les objets qui consomment le style ont la couleur d’arrière-plan Silver sur iOS sur iOS, le bleu pâle sur Android et vert eau marine sur UWP. Les captures d’écran suivantes montrent les pages obtenues sur iOS et Android :
+Dans cet exemple, les [`Style`](xref:Xamarin.Forms.Style) objets cibles explicites [`ContentPage`](xref:Xamarin.Forms.ContentPage) . `ContentPage` les objets qui consomment le style ont la couleur d’arrière-plan Silver sur iOS sur iOS, le bleu pâle sur Android et vert eau marine sur UWP. Les captures d’écran suivantes montrent les pages obtenues sur iOS et Android :
 
 [![Capture d’écran d’un changement d’état visuel déclenché, sur iOS et Android](triggers-images/devicestatetrigger.png "Exemple DeviceStateTrigger")](triggers-images/devicestatetrigger-large.png#lightbox "Exemple DeviceStateTrigger")
 
@@ -619,10 +619,10 @@ L’exemple de code XAML suivant montre un [`Style`](xref:Xamarin.Forms.Style) q
 </Style>
 ```
 
-Dans cet exemple, les [`Style`](xref:Xamarin.Forms.Style) objets cibles explicites [`ContentPage`](xref:Xamarin.Forms.ContentPage) . `ContentPage`les objets qui consomment le style attribuent à leur couleur d’arrière-plan la valeur Silver lorsque l’orientation est portrait, et la couleur d’arrière-plan est blanche lorsque l’orientation est paysage.
+Dans cet exemple, les [`Style`](xref:Xamarin.Forms.Style) objets cibles explicites [`ContentPage`](xref:Xamarin.Forms.ContentPage) . `ContentPage` les objets qui consomment le style attribuent à leur couleur d’arrière-plan la valeur Silver lorsque l’orientation est portrait, et la couleur d’arrière-plan est blanche lorsque l’orientation est paysage.
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Exemples de déclencheurs](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithtriggers)
-- [Xamarin.FormsGestionnaire d’état visuel](~/xamarin-forms/user-interface/visual-state-manager.md)
-- [Xamarin.FormsAPI déclencheur](xref:Xamarin.Forms.TriggerAction`1)
+- [Exemples de déclencheurs](/samples/xamarin/xamarin-forms-samples/workingwithtriggers)
+- [Xamarin.Forms Gestionnaire d’état visuel](~/xamarin-forms/user-interface/visual-state-manager.md)
+- [Xamarin.Forms API déclencheur](xref:Xamarin.Forms.TriggerAction`1)

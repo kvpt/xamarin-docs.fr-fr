@@ -10,12 +10,12 @@ ms.date: 04/02/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: aa600974cdf25f8f85d9152edc4a377334cc8c78
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 90f93c2fd17771ccd8bc5dc67404b76cd4ab9c30
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936550"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563001"
 ---
 # <a name="consume-an-aspnet-web-service-asmx"></a>Consommer un service web ASP.NET (ASMX)
 
@@ -67,7 +67,7 @@ L’exemple `SoapService` :
 
 1. Instancie le `TodoService` en tant qu’instance au niveau de la classe
 1. Crée une collection appelée `Items` pour stocker des `TodoItem` objets
-1. Spécifie un point de terminaison personnalisé pour la `Url` propriété facultative sur l'`TodoService`
+1. Spécifie un point de terminaison personnalisé pour la `Url` propriété facultative sur l' `TodoService`
 
 ```csharp
 public class SoapService : ISoapService
@@ -264,11 +264,11 @@ public class SoapService : ISoapService
 }
 ```
 
-## <a name="test-the-web-service"></a>Tester le service web
+## <a name="test-the-web-service"></a>Test du service web
 
 Le test des appareils physiques ou émulés avec un service hébergé localement requiert la mise en place d’une configuration IIS personnalisée, des adresses de point de terminaison et des règles de pare-feu. Pour plus d’informations sur la configuration de votre environnement à des fins de test, consultez [configurer l’accès à distance à IIS Express](wcf.md#configure-remote-access-to-iis-express). La seule différence entre le test de WCF et ASMX est le numéro de port du TodoService.
 
 ## <a name="related-links"></a>Liens connexes
 
-- [TodoASMX (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todoasmx)
-- [IAsyncResult](https://docs.microsoft.com/dotnet/api/system.iasyncresult)
+- [TodoASMX (exemple)](/samples/xamarin/xamarin-forms-samples/webservices-todoasmx)
+- [IAsyncResult](/dotnet/api/system.iasyncresult)

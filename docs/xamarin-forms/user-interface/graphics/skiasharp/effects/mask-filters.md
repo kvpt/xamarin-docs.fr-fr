@@ -10,16 +10,16 @@ ms.date: 08/27/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 10192e93d2e20f9aa58ca95dd81c07f560193905
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 827b5618dce019e2dedb773f270fe1090da5d616
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136407"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562507"
 ---
 # <a name="skiasharp-mask-filters"></a>Filtres de masque SkiaSharp
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 Les filtres de masque sont des effets qui manipulent la géométrie et le canal alpha des objets graphiques. Pour utiliser un filtre de masque, affectez à la propriété de la valeur d' [`MaskFilter`](xref:SkiaSharp.SKPaint.MaskFilter) `SKPaint` un objet de type [`SKMaskFilter`](xref:SkiaSharp.SKMaskFilter) que vous avez créé en appelant l’une des `SKMaskFilter` méthodes statiques.
 
@@ -37,7 +37,7 @@ public static SKMaskFilter CreateBlur (SKBlurStyle blurStyle, float sigma);
 
 Les surcharges permettent de spécifier des indicateurs pour l’algorithme utilisé pour créer le flou, et un rectangle pour éviter les flous dans les zones qui seront couvertes par d’autres objets graphiques.
 
-[`SKBlurStyle`](xref:SkiaSharp.SKBlurStyle)est une énumération avec les membres suivants :
+[`SKBlurStyle`](xref:SkiaSharp.SKBlurStyle) est une énumération avec les membres suivants :
 
 - `Normal`
 - `Solid`
@@ -46,7 +46,7 @@ Les surcharges permettent de spécifier des indicateurs pour l’algorithme util
 
 Les effets de ces styles sont présentés dans les exemples ci-dessous. Le `sigma` paramètre spécifie l’étendue du flou. Dans les versions antérieures de skia, l’étendue du flou était indiquée par une valeur de rayon. Si une valeur RADIUS est préférable pour votre application, il existe une méthode statique [`SKMaskFilter.ConvertRadiusToSigma`](xref:SkiaSharp.SKMaskFilter.ConvertRadiusToSigma*) qui peut effectuer une conversion de l’une à l’autre. La méthode multiplie le rayon par 0,57735 et ajoute 0,5.
 
-La page de l' **expérience masquer le masque** de l’exemple [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) vous permet d’expérimenter les styles de flou et les valeurs Sigma. Le fichier XAML instancie un `Picker` avec les quatre `SKBlurStyle` membres de l’énumération et un `Slider` pour la spécification de la valeur Sigma :
+La page de l' **expérience masquer le masque** de l’exemple [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) vous permet d’expérimenter les styles de flou et les valeurs Sigma. Le fichier XAML instancie un `Picker` avec les quatre `SKBlurStyle` membres de l’énumération et un `Slider` pour la spécification de la valeur Sigma :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -276,5 +276,5 @@ Ce filtre de flou rend la réflexion plus réaliste :
 
 ## <a name="related-links"></a>Liens connexes
 
-- [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [API SkiaSharp](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (exemple)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

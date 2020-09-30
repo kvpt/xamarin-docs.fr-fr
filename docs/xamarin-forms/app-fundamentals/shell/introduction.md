@@ -1,6 +1,6 @@
 ---
-title: Xamarin.FormsPrésentation de l’interpréteur de commandes
-description: Xamarin.FormsL’interpréteur de commandes fournit les fonctionnalités fondamentales nécessaires à la plupart des applications, notamment une expérience utilisateur de navigation commune, un schéma de navigation basé sur les URI et un gestionnaire de recherche intégré.
+title: Xamarin.Forms Présentation de l’interpréteur de commandes
+description: Xamarin.Forms L’interpréteur de commandes fournit les fonctionnalités fondamentales nécessaires à la plupart des applications, notamment une expérience utilisateur de navigation commune, un schéma de navigation basé sur les URI et un gestionnaire de recherche intégré.
 ms.prod: xamarin
 ms.assetid: 4604DCB5-83DA-458A-8B02-6508A740BE0E
 ms.technology: xamarin-forms
@@ -10,18 +10,18 @@ ms.date: 09/20/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 29a99161ff2ef2d71b6c803db994522bfe80ed03
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 61e48328aea01347678540cde5141a29387e92f5
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138734"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563170"
 ---
-# <a name="xamarinforms-shell-introduction"></a>Xamarin.FormsPrésentation de l’interpréteur de commandes
+# <a name="no-locxamarinforms-shell-introduction"></a>Xamarin.Forms Présentation de l’interpréteur de commandes
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
-Xamarin.FormsL’interpréteur de commandes réduit la complexité du développement d’applications mobiles en fournissant les fonctionnalités fondamentales nécessaires à la plupart des applications mobiles, notamment :
+Xamarin.Forms L’interpréteur de commandes réduit la complexité du développement d’applications mobiles en fournissant les fonctionnalités fondamentales nécessaires à la plupart des applications mobiles, notamment :
 
 - Un emplacement unique pour décrire la hiérarchie visuelle d’une application.
 - Une expérience utilisateur de navigation commune.
@@ -35,7 +35,7 @@ En outre, les applications Shell bénéficient d’une vitesse de rendu accrue e
 
 ## <a name="platform-support"></a>Plateforme prise en charge
 
-Xamarin.FormsL’interpréteur de commandes est entièrement disponible sur iOS et Android, mais uniquement partiellement disponible sur le plateforme Windows universelle (UWP). En outre, Shell est actuellement expérimental sur UWP et ne peut être utilisé qu’en ajoutant la ligne de code suivante à la classe `App` du projet UWP, avant d’appeler `Forms.Init` :
+Xamarin.Forms L’interpréteur de commandes est entièrement disponible sur iOS et Android, mais uniquement partiellement disponible sur le plateforme Windows universelle (UWP). En outre, Shell est actuellement expérimental sur UWP et ne peut être utilisé qu’en ajoutant la ligne de code suivante à la classe `App` du projet UWP, avant d’appeler `Forms.Init` :
 
 ```csharp
 global::Xamarin.Forms.Forms.SetFlags("Shell_UWP_Experimental");
@@ -66,4 +66,4 @@ Dans chaque onglet, [`ContentPage`](xref:Xamarin.Forms.ContentPage) vous pouvez 
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Xaminals (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
+- [Xaminals (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/18/2020
-ms.openlocfilehash: 0aafe01fcbde6cf1aacf3e2dd47444d4b77021e2
-ms.sourcegitcommit: 79ba3deb031c8a60d0841bb3dbeaaf65daf2b224
+ms.openlocfilehash: 0c10e73d8d6c2dcafacbb069eaf905a227030b87
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85846385"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557528"
 ---
 # <a name="xamarinforms-multi-bindings"></a>Liaisons multiples Xamarin. Forms
 
@@ -102,9 +102,9 @@ La `Convert` méthode convertit les valeurs sources en une valeur pour la cible 
 
 La `Convert` méthode retourne un `object` qui représente une valeur convertie. Cette méthode doit retourner :
 
-- `BindableProperty.UnsetValue`pour indiquer que le convertisseur n’a pas généré de valeur, et que la liaison utilisera `FallbackValue` .
-- `Binding.DoNothing`pour ordonner à Xamarin. Forms de ne pas exécuter d’action. Par exemple, pour indiquer à Xamarin. Forms de ne pas transférer une valeur à la cible de liaison, ou de ne pas utiliser le `FallbackValue` .
-- `null`pour indiquer que le convertisseur ne peut pas effectuer la conversion et que la liaison utilisera `TargetNullValue` .
+- `BindableProperty.UnsetValue` pour indiquer que le convertisseur n’a pas généré de valeur, et que la liaison utilisera `FallbackValue` .
+- `Binding.DoNothing` pour ordonner à Xamarin. Forms de ne pas exécuter d’action. Par exemple, pour indiquer à Xamarin. Forms de ne pas transférer une valeur à la cible de liaison, ou de ne pas utiliser le `FallbackValue` .
+- `null` pour indiquer que le convertisseur ne peut pas effectuer la conversion et que la liaison utilisera `TargetNullValue` .
 
 > [!IMPORTANT]
 > Un `MultiBinding` qui reçoit `BindableProperty.UnsetValue` une `Convert` méthode doit définir sa [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) propriété. De même, un `MultiBinding` qui reçoit `null` d’une `Convert` méthode doit définir sa méthode [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) .
@@ -118,9 +118,9 @@ La `ConvertBack` méthode convertit une cible de liaison en valeurs de liaison s
 
 La `ConvertBack` méthode retourne un tableau de valeurs, de type `object[]` , qui ont été converties de la valeur cible en valeurs sources. Cette méthode doit retourner :
 
-- `BindableProperty.UnsetValue`à `i` la position pour indiquer que le convertisseur n’est pas en mesure de fournir une valeur pour la liaison source au niveau de l’index `i` et qu’aucune valeur ne doit être définie dessus.
-- `Binding.DoNothing`à `i` la position pour indiquer qu’aucune valeur ne doit être définie sur la liaison source au niveau de l’index `i` .
-- `null`pour indiquer que le convertisseur ne peut pas effectuer la conversion ou qu’il ne prend pas en charge la conversion dans cette direction.
+- `BindableProperty.UnsetValue` à `i` la position pour indiquer que le convertisseur n’est pas en mesure de fournir une valeur pour la liaison source au niveau de l’index `i` et qu’aucune valeur ne doit être définie dessus.
+- `Binding.DoNothing` à `i` la position pour indiquer qu’aucune valeur ne doit être définie sur la liaison source au niveau de l’index `i` .
+- `null` pour indiquer que le convertisseur ne peut pas effectuer la conversion ou qu’il ne prend pas en charge la conversion dans cette direction.
 
 ## <a name="consume-a-imultivalueconverter"></a>Utilisation d’un IMultiValueConverter
 
@@ -190,7 +190,7 @@ Pour plus d’informations sur la liaison de secours, consultez [Xamarin. Forms 
 
 ## <a name="nest-multibinding-objects"></a>Objets multibinds imbriqués
 
-`MultiBinding`les objets peuvent être imbriqués afin que plusieurs `MultiBinding` objets soient évalués pour retourner une valeur par le biais d’une `IMultiValueConverter` instance :
+`MultiBinding` les objets peuvent être imbriqués afin que plusieurs `MultiBinding` objets soient évalués pour retourner une valeur par le biais d’une `IMultiValueConverter` instance :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -224,7 +224,7 @@ Dans cet exemple, l' `MultiBinding` objet utilise son `AnyTrueMultiConverter` in
 
 ## <a name="use-a-relativesource-binding-in-a-multibinding"></a>Utiliser une liaison RelativeSource dans une MultiBinding
 
-`MultiBinding`les objets prennent en charge les liaisons relatives, qui permettent de définir la source de liaison par rapport à la position de la cible de liaison :
+`MultiBinding` les objets prennent en charge les liaisons relatives, qui permettent de définir la source de liaison par rapport à la position de la cible de liaison :
 
 ```xaml
 <ContentPage ...
@@ -273,7 +273,7 @@ Pour plus d’informations sur les liaisons relatives, consultez [Liaisons relat
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Démonstrations de liaison de données (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+- [Démonstrations de liaison de données (exemple)](/samples/xamarin/xamarin-forms-samples/databindingdemos)
 - [Formatage de chaîne dans Xamarin.Forms](string-formatting.md)
 - [Valeurs de repli pour les liaisons Xamarin.Forms](binding-fallbacks.md)
 - [Liaisons relatives Xamarin.Forms](relative-bindings.md)

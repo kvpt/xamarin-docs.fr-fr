@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsFrame
+title: Xamarin.Forms Frame
 description: La Xamarin.Forms classe Frame est une disposition utilisée pour encapsuler une vue ou une disposition avec une bordure qui peut être configurée avec une couleur, une ombre et d’autres options.
 ms.prod: xamarin
 ms.assetId: 4E074714-0928-41C8-A468-B60E23236A8C
@@ -10,16 +10,16 @@ ms.date: 08/06/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 42192111befbefda7e0f62b7691a8392c2828818
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 8a14390afc04c1a0b2ccb5199350b69a9645a794
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137187"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563547"
 ---
-# <a name="xamarinforms-frame"></a>Xamarin.FormsFrame
+# <a name="no-locxamarinforms-frame"></a>Xamarin.Forms Frame
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-frame/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-frame/)
 
 La Xamarin.Forms [`Frame`](xref:Xamarin.Forms.Frame) classe est une disposition utilisée pour encapsuler une vue avec une bordure qui peut être configurée avec une couleur, une ombre et d’autres options. Les frames sont couramment utilisés pour créer des bordures autour des contrôles, mais peuvent être utilisés pour créer une interface utilisateur plus complexe. Pour plus d’informations, consultez [Utilisation avancée des frames](#advanced-frame-usage).
 
@@ -29,9 +29,9 @@ La capture d’écran suivante montre les `Frame` contrôles sur iOS et Android�
 
 La `Frame` classe définit les propriétés suivantes :
 
-* [`BorderColor`](xref:Xamarin.Forms.Frame.BorderColor)est une `Color` valeur qui détermine la couleur de la `Frame` bordure.
+* [`BorderColor`](xref:Xamarin.Forms.Frame.BorderColor) est une `Color` valeur qui détermine la couleur de la `Frame` bordure.
 * [`CornerRadius`](xref:Xamarin.Forms.Frame.CornerRadius)`float`valeur qui détermine le rayon arrondi de l’angle.
-* [`HasShadow`](xref:Xamarin.Forms.Frame.HasShadow)est une `bool` valeur qui détermine si le frame a une ombre portée.
+* [`HasShadow`](xref:Xamarin.Forms.Frame.HasShadow) est une `bool` valeur qui détermine si le frame a une ombre portée.
 
 Ces propriétés sont sauvegardées par des [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) objets, ce qui signifie que `Frame` peut être la cible des liaisons de données.
 
@@ -57,7 +57,7 @@ Frame defaultFrame = new Frame
 };
 ```
 
-`Frame`les objets peuvent être personnalisés avec des angles arrondis, des bordures coloriées et des ombres portées en définissant des propriétés dans le XAML. L’exemple suivant montre un `Frame` objet personnalisé :
+`Frame` les objets peuvent être personnalisés avec des angles arrondis, des bordures coloriées et des ombres portées en définissant des propriétés dans le XAML. L’exemple suivant montre un `Frame` objet personnalisé :
 
 ```xaml
 <Frame BorderColor="Orange"
@@ -196,5 +196,5 @@ L’image de **outdoors.jpg** doit être ajoutée à chaque projet de plateforme
 
 ## <a name="related-links"></a>Liens connexes
 
-* [Démonstrations de frame](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-frame/)
-* [Images dansXamarin.Forms](~/xamarin-forms/user-interface/images.md)
+* [Démonstrations de frame](/samples/xamarin/xamarin-forms-samples/userinterface-frame/)
+* [Images dans Xamarin.Forms](~/xamarin-forms/user-interface/images.md)

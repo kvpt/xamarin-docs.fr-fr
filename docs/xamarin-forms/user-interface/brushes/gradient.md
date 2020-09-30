@@ -1,5 +1,5 @@
 ---
-title: 'Xamarin.FormsPinceaux : dégradés'
+title: 'Xamarin.Forms Pinceaux : dégradés'
 description: La Xamarin.Forms classe GradientBrush est une classe abstraite qui décrit un dégradé composé de points de dégradé.
 ms.prod: xamarin
 ms.assetid: 24763E56-74EC-4082-897B-E4EAACCADFEE
@@ -10,18 +10,18 @@ ms.date: 07/27/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 254a4433888be0e441ae37d41c24b1886040998b
-ms.sourcegitcommit: 579ec4f2884fa391e5e214a3952cd6004c521eb8
+ms.openlocfilehash: 08a423830ee3db55cb0ec7facfa5630c8832885b
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87919617"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562936"
 ---
-# <a name="no-locxamarinforms-brushes-gradients"></a>Xamarin.FormsPinceaux : dégradés
+# <a name="no-locxamarinforms-brushes-gradients"></a>Xamarin.Forms Pinceaux : dégradés
 
 ![API d’aperçu](~/media/shared/preview.png "Cette API est actuellement en préversion.")
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/BrushDemos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-brushdemos/)
 
 La `GradientBrush` classe dérive de la `Brush` classe et est une classe abstraite qui décrit un dégradé, qui est composé de points de dégradé. Un pinceau de dégradé peint une zone avec plusieurs couleurs qui se mélangent le long d’un axe. Les classes qui dérivent de `GradientBrush` décrivent les différents modes d’interprétation des arrêts de dégradé et Xamarin.Forms fournissent les pinceaux de dégradé suivants :
 
@@ -71,6 +71,6 @@ Dans ce diagramme, les cercles marquent la position des points de dégradé et l
 
 ## <a name="related-links"></a>Liens connexes
 
-- [BrushesDemos (exemple)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/BrushDemos)
-- [Xamarin.FormsPinceaux : dégradés linéaires](lineargradient.md)
-- [Xamarin.FormsPinceaux : dégradés radiaux](radialgradient.md)
+- [BrushesDemos (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-brushdemos/)
+- [Xamarin.Forms Pinceaux : dégradés linéaires](lineargradient.md)
+- [Xamarin.Forms Pinceaux : dégradés radiaux](radialgradient.md)
