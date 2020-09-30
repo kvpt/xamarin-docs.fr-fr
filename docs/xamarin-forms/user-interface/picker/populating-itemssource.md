@@ -10,12 +10,12 @@ ms.date: 02/26/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a15ca2e11dabb73054f5f0a1dc3f79342d8ce7f5
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 395536752fb0d581408d0b8f91ef623d926aeeb4
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938604"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91559543"
 ---
 # <a name="setting-a-pickers-itemssource-property"></a>Définition de la propriété ItemsSource d’un sélecteur
 
@@ -23,7 +23,7 @@ ms.locfileid: "86938604"
 
 _La vue sélecteur est un contrôle permettant de sélectionner un élément de texte dans une liste de données. Cet article explique comment remplir un sélecteur avec des données en définissant la propriété ItemsSource et comment répondre à la sélection d’élément par l’utilisateur._
 
-Xamarin.Forms2.3.4 a amélioré la [`Picker`](xref:Xamarin.Forms.Picker) vue en ajoutant la possibilité de la remplir avec des données en définissant sa [`ItemsSource`](xref:Xamarin.Forms.Picker.ItemsSource) propriété, et de récupérer l’élément sélectionné à partir de la [`SelectedItem`](xref:Xamarin.Forms.Picker.SelectedItem) propriété. En outre, la couleur du texte de l’élément sélectionné peut être modifiée en affectant [`TextColor`](xref:Xamarin.Forms.Picker.TextColor) à la propriété [`Color`](xref:Xamarin.Forms.Color) .
+Xamarin.Forms 2.3.4 a amélioré la [`Picker`](xref:Xamarin.Forms.Picker) vue en ajoutant la possibilité de la remplir avec des données en définissant sa [`ItemsSource`](xref:Xamarin.Forms.Picker.ItemsSource) propriété, et de récupérer l’élément sélectionné à partir de la [`SelectedItem`](xref:Xamarin.Forms.Picker.SelectedItem) propriété. En outre, la couleur du texte de l’élément sélectionné peut être modifiée en affectant [`TextColor`](xref:Xamarin.Forms.Picker.TextColor) à la propriété [`Color`](xref:Xamarin.Forms.Color) .
 
 ## <a name="populating-a-picker-with-data"></a>Remplissage d’un sélecteur avec des données
 
@@ -185,7 +185,7 @@ Les [`SelectedItem`](xref:Xamarin.Forms.Picker.SelectedItem) données de propri�
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Démonstration du sélecteur (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-pickerdemo)
-- [Application singe (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-monkeyapppicker)
-- [Sélecteur pouvant être lié (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-bindablepicker)
+- [Démonstration du sélecteur (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-pickerdemo)
+- [Application singe (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-monkeyapppicker)
+- [Sélecteur pouvant être lié (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-bindablepicker)
 - [API du sélecteur](xref:Xamarin.Forms.Picker)

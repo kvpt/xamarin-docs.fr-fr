@@ -10,12 +10,12 @@ ms.date: 01/21/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 886191725421a754e696409deb7a3cca0f6ea923
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 8c9968ac7de45f3e6e239f82ba43b53abd05a647
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87917694"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91558516"
 ---
 # <a name="add-a-pan-gesture-recognizer"></a>Ajouter un module de reconnaissance de mouvement de panoramique
 
@@ -151,6 +151,6 @@ Lorsque vous panoramiqueez du contenu dans un élément qui n’occupe pas le pl
 
 ## <a name="related-links"></a>Liens associés
 
-- [PanGesture (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-pangesture)
+- [PanGesture (exemple)](/samples/xamarin/xamarin-forms-samples/workingwithgestures-pangesture)
 - [GestureRecognizer](xref:Xamarin.Forms.GestureRecognizer)
 - [PanGestureRecognizer](xref:Xamarin.Forms.PanGestureRecognizer)

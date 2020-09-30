@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsMediaElement
+title: Xamarin.Forms MediaElement
 description: Cet article explique comment utiliser MediaElement pour lire des données audio et vidéo dans une Xamarin.Forms application.
 ms.prod: xamarin
 ms.assetid: e65f1e56-a80d-46c7-9ff4-7ae6650a3165
@@ -10,40 +10,40 @@ ms.date: 02/18/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 4a8ca74fc12b59100cc60b72d3c2287cffadfd18
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: e868eccf446ab22879a66e6e507d810b7e0e13d7
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918107"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91559764"
 ---
-# <a name="no-locxamarinforms-mediaelement"></a>Xamarin.FormsMediaElement
+# <a name="no-locxamarinforms-mediaelement"></a>Xamarin.Forms MediaElement
 
 ![API de la version préliminaire](~/media/shared/preview.png)
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-mediaelementdemos/)
 
-[`MediaElement`](xref:Xamarin.Forms.MediaElement)est une vue pour la lecture de données audio et vidéo. Les médias pris en charge par la plateforme sous-jacente peuvent être lus à partir des sources suivantes :
+[`MediaElement`](xref:Xamarin.Forms.MediaElement) est une vue pour la lecture de données audio et vidéo. Les médias pris en charge par la plateforme sous-jacente peuvent être lus à partir des sources suivantes :
 
 - Le Web, à l’aide d’un URI (HTTP ou HTTPs).
 - Ressource incorporée dans l’application de plateforme à l’aide du `ms-appx:///` schéma d’URI.
 - Fichiers provenant des dossiers de données locaux et temporaires de l’application, à l’aide du `ms-appdata:///` schéma d’URI.
 - Bibliothèque de l’appareil.
 
-[`MediaElement`](xref:Xamarin.Forms.MediaElement)peut utiliser les contrôles de lecture de la plateforme, appelés contrôles de transport. Toutefois, ils sont désactivés par défaut et peuvent être remplacés par vos propres contrôles de transport. Les captures d’écran suivantes montrent comment `MediaElement` visionner une vidéo avec les contrôles de transport de la plateforme :
+[`MediaElement`](xref:Xamarin.Forms.MediaElement) peut utiliser les contrôles de lecture de la plateforme, appelés contrôles de transport. Toutefois, ils sont désactivés par défaut et peuvent être remplacés par vos propres contrôles de transport. Les captures d’écran suivantes montrent comment `MediaElement` visionner une vidéo avec les contrôles de transport de la plateforme :
 
 [![Capture d’écran d’un MediaElement lisant une vidéo, sur iOS et Android](mediaelement-images/playback-controls.png "MediaElement lisant une vidéo")](mediaelement-images/playback-controls-large.png#lightbox "MediaElement lisant une vidéo")
 
-[`MediaElement`](xref:Xamarin.Forms.MediaElement)est disponible dans Xamarin.Forms 4,5. Toutefois, il est actuellement expérimental et ne peut être utilisé qu’en ajoutant la ligne de code suivante à votre fichier *app.Xaml.cs* :
+[`MediaElement`](xref:Xamarin.Forms.MediaElement) est disponible dans Xamarin.Forms 4,5. Toutefois, il est actuellement expérimental et ne peut être utilisé qu’en ajoutant la ligne de code suivante à votre fichier *app.Xaml.cs* :
 
 ```csharp
 Device.SetFlags(new string[]{ "MediaElement_Experimental" });
 ```
 
 > [!NOTE]
-> [`MediaElement`](xref:Xamarin.Forms.MediaElement)est disponible sur iOS, Android, le plateforme Windows universelle (UWP), macOS, Windows Presentation Foundation et Tizen.
+> [`MediaElement`](xref:Xamarin.Forms.MediaElement) est disponible sur iOS, Android, le plateforme Windows universelle (UWP), macOS, Windows Presentation Foundation et Tizen.
 
-[`MediaElement`](xref:Xamarin.Forms.MediaElement)définit les propriétés suivantes :
+[`MediaElement`](xref:Xamarin.Forms.MediaElement) définit les propriétés suivantes :
 
 - [`Aspect`](xref:Xamarin.Forms.MediaElement.Aspect), de type [`Aspect`](xref:Xamarin.Forms.Aspect) , détermine la façon dont le média sera mis à l’échelle pour s’ajuster à la zone d’affichage. La valeur par défaut de cette propriété est `AspectFit`.
 - [`AutoPlay`](xref:Xamarin.Forms.MediaElement.AutoPlay), de type `bool` , indique si la lecture du média démarre automatiquement lorsque la [`Source`](xref:Xamarin.Forms.MediaElement.Source) propriété est définie. La valeur par défaut de cette propriété est `true`.
@@ -64,10 +64,10 @@ Ces propriétés, à l’exception de la `CanSeek` propriété, sont soulignes p
 
 La [`MediaElement`](xref:Xamarin.Forms.MediaElement) classe définit également quatre événements :
 
-- [`MediaOpened`](xref:Xamarin.Forms.MediaElement.MediaOpened)est déclenché lorsque le flux multimédia a été validé et ouvert.
-- [`MediaEnded`](xref:Xamarin.Forms.MediaElement.MediaEnded)est déclenché lorsque `MediaElement` termine la diffusion de son média.
-- [`MediaFailed`](xref:Xamarin.Forms.MediaElement.MediaFailed)est déclenché en cas d’erreur associée à la source du média.
-- [`SeekCompleted`](xref:Xamarin.Forms.MediaElement.SeekCompleted)est déclenché lorsque le point de recherche d’une opération de recherche demandée est prêt pour la lecture.
+- [`MediaOpened`](xref:Xamarin.Forms.MediaElement.MediaOpened) est déclenché lorsque le flux multimédia a été validé et ouvert.
+- [`MediaEnded`](xref:Xamarin.Forms.MediaElement.MediaEnded) est déclenché lorsque `MediaElement` termine la diffusion de son média.
+- [`MediaFailed`](xref:Xamarin.Forms.MediaElement.MediaFailed) est déclenché en cas d’erreur associée à la source du média.
+- [`SeekCompleted`](xref:Xamarin.Forms.MediaElement.SeekCompleted) est déclenché lorsque le point de recherche d’une opération de recherche demandée est prêt pour la lecture.
 
 En outre, [`MediaElement`](xref:Xamarin.Forms.MediaElement) comprend [`Play`](xref:Xamarin.Forms.MediaElement.Play) [`Pause`](xref:Xamarin.Forms.MediaElement.Pause) les méthodes, et [`Stop`](xref:Xamarin.Forms.MediaElement.Stop) .
 
@@ -84,7 +84,7 @@ Un [`MediaElement`](xref:Xamarin.Forms.MediaElement) peut lire des fichiers mult
 
 Par défaut, le média défini par la propriété est [`Source`](xref:Xamarin.Forms.MediaElement.Source) lu immédiatement après l’ouverture du média. Pour supprimer la lecture automatique du média, affectez à la propriété la valeur [`AutoPlay`](xref:Xamarin.Forms.MediaElement.AutoPlay) `false` .
 
-Les contrôles de lecture de média sont désactivés par défaut et sont activés en affectant à la propriété la valeur [`ShowsPlaybackControls`](xref:Xamarin.Forms.MediaElement.ShowsPlaybackControls) `true` . [`MediaElement`](xref:Xamarin.Forms.MediaElement)utilisera ensuite les contrôles de lecture de la plateforme.
+Les contrôles de lecture de média sont désactivés par défaut et sont activés en affectant à la propriété la valeur [`ShowsPlaybackControls`](xref:Xamarin.Forms.MediaElement.ShowsPlaybackControls) `true` . [`MediaElement`](xref:Xamarin.Forms.MediaElement) utilisera ensuite les contrôles de lecture de la plateforme.
 
 ## <a name="play-local-media"></a>Lire un support local
 
@@ -251,9 +251,9 @@ Le service de dépendance de sélection vidéo est appelé en appelant la `Depen
 
 La [`Aspect`](xref:Xamarin.Forms.MediaElement.Aspect) propriété détermine la façon dont les médias vidéo seront mis à l’échelle pour s’ajuster à la zone d’affichage. Par défaut, cette propriété a la valeur du `AspectFit` membre d’énumération, mais elle peut être définie sur l’un des membres de l' [`Aspect`](xref:Xamarin.Forms.Aspect) énumération :
 
-- `AspectFit`indique que la vidéo sera letterboxed, si nécessaire, pour s’ajuster à la zone d’affichage, tout en conservant les proportions.
-- `AspectFill`indique que la vidéo sera découpée de façon à remplir la zone d’affichage, tout en conservant les proportions.
-- `Fill`indique que la vidéo sera étirée pour remplir la zone d’affichage.
+- `AspectFit` indique que la vidéo sera letterboxed, si nécessaire, pour s’ajuster à la zone d’affichage, tout en conservant les proportions.
+- `AspectFill` indique que la vidéo sera découpée de façon à remplir la zone d’affichage, tout en conservant les proportions.
+- `Fill` indique que la vidéo sera étirée pour remplir la zone d’affichage.
 
 ## <a name="poll-for-position-data"></a>Interroger les données de position
 
@@ -313,12 +313,12 @@ La [`MediaElement`](xref:Xamarin.Forms.MediaElement) classe définit une propri�
 
 L' [`MediaElementState`](xref:Xamarin.Forms.MediaElementState) énumération définit les membres suivants :
 
-- `Closed`indique que `MediaElement` ne contient aucun média.
-- `Opening`indique que le `MediaElement` est en train de valider et de tenter de charger la source spécifiée.
-- `Buffering`indique que le `MediaElement` charge le média pour la lecture. Sa [`Position`](xref:Xamarin.Forms.MediaElement.Position) propriété n’avance pas au cours de cet État. Si le `MediaElement` était en cours de vidéo, il continue d’afficher la dernière image affichée.
-- `Playing`indique que le `MediaElement` lit la source du média.
-- `Paused`indique que `MediaElement` n’avance pas sa [`Position`](xref:Xamarin.Forms.MediaElement.Position) propriété. Si le `MediaElement` était en cours de vidéo, il continue d’afficher le frame actuel.
-- `Stopped`indique que le `MediaElement` contient un support, mais qu’il n’est pas lu ou suspendu. Sa [`Position`](xref:Xamarin.Forms.MediaElement.Position) propriété est 0 et n’avance pas. Si le média chargé est une vidéo, le `MediaElement` affiche la première image.
+- `Closed` indique que `MediaElement` ne contient aucun média.
+- `Opening` indique que le `MediaElement` est en train de valider et de tenter de charger la source spécifiée.
+- `Buffering` indique que le `MediaElement` charge le média pour la lecture. Sa [`Position`](xref:Xamarin.Forms.MediaElement.Position) propriété n’avance pas au cours de cet État. Si le `MediaElement` était en cours de vidéo, il continue d’afficher la dernière image affichée.
+- `Playing` indique que le `MediaElement` lit la source du média.
+- `Paused` indique que `MediaElement` n’avance pas sa [`Position`](xref:Xamarin.Forms.MediaElement.Position) propriété. Si le `MediaElement` était en cours de vidéo, il continue d’afficher le frame actuel.
+- `Stopped` indique que le `MediaElement` contient un support, mais qu’il n’est pas lu ou suspendu. Sa [`Position`](xref:Xamarin.Forms.MediaElement.Position) propriété est 0 et n’avance pas. Si le média chargé est une vidéo, le `MediaElement` affiche la première image.
 
 Il n’est généralement pas nécessaire d’examiner la [`CurrentState`](xref:Xamarin.Forms.MediaElement.CurrentState) propriété lors de l’utilisation des [`MediaElement`](xref:Xamarin.Forms.MediaElement) contrôles de transport. Toutefois, cette propriété devient importante lors de l’implémentation de vos propres contrôles de transport.
 
@@ -377,7 +377,7 @@ L’exemple de code XAML suivant montre une page qui contient un [`MediaElement`
 </ContentPage>
 ```
 
-Dans cet exemple, les contrôles de transport personnalisés sont définis en tant qu' [`Button`](xref:Xamarin.Forms.Button) objets. Toutefois, il n’y a que deux `Button` objets, le premier `Button` représentant la **lecture** et la **Pause**, et le second `Button` qui représente l' **arrêt**. [`DataTrigger`](xref:Xamarin.Forms.DataTrigger)les objets sont utilisés pour activer et désactiver les boutons, et pour basculer le premier bouton entre **lecture** et **Pause**. Pour plus d’informations sur les déclencheurs de données, consultez [ Xamarin.Forms déclencheurs](~/xamarin-forms/app-fundamentals/triggers.md).
+Dans cet exemple, les contrôles de transport personnalisés sont définis en tant qu' [`Button`](xref:Xamarin.Forms.Button) objets. Toutefois, il n’y a que deux `Button` objets, le premier `Button` représentant la **lecture** et la **Pause**, et le second `Button` qui représente l' **arrêt**. [`DataTrigger`](xref:Xamarin.Forms.DataTrigger) les objets sont utilisés pour activer et désactiver les boutons, et pour basculer le premier bouton entre **lecture** et **Pause**. Pour plus d’informations sur les déclencheurs de données, consultez [ Xamarin.Forms déclencheurs](~/xamarin-forms/app-fundamentals/triggers.md).
 
 Le fichier code-behind contient les gestionnaires des [`Clicked`](xref:Xamarin.Forms.Button.Clicked) événements :
 
@@ -540,9 +540,9 @@ Pour plus d’informations sur l’utilisation d’un [`Slider`](xref:Xamarin.Fo
 
 ## <a name="related-links"></a>Liens connexes
 
-- [MediaElementDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-mediaelementdemos/)
+- [MediaElementDemos (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-mediaelementdemos/)
 - [Schémas d’URI](/windows/uwp/app-resources/uri-schemes)
-- [Xamarin.FormsDéclencheurs](~/xamarin-forms/app-fundamentals/triggers.md)
-- [Xamarin.FormsCurseur](~/xamarin-forms/user-interface/slider.md)
+- [Xamarin.Forms Déclencheurs](~/xamarin-forms/app-fundamentals/triggers.md)
+- [Xamarin.Forms Curseur](~/xamarin-forms/user-interface/slider.md)
 - [Android : formats multimédias pris en charge](https://developer.android.com/guide/topics/media/media-formats)
 - [UWP : codecs pris en charge](/windows/uwp/audio-video-camera/supported-codecs)

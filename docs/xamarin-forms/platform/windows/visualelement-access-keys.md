@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1bfd61e79a2b4697e884afb45e4b9080ee939b87
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 6e25654fb856935c119d731df5db3eaa2d501930
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136524"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91560245"
 ---
 # <a name="visualelement-access-keys-on-windows"></a>Clés d’accès VisualElement sur Windows
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Les touches d’accès rapide sont des raccourcis clavier qui améliorent la convivialité et l’accessibilité des applications sur le plateforme Windows universelle (UWP) en fournissant un moyen intuitif aux utilisateurs de naviguer rapidement et d’interagir avec l’interface utilisateur visible de l’application par le biais d’un clavier plutôt que par une touche tactile ou une souris. Il s’agit de combinaisons de la touche Alt et d’une ou de plusieurs touches alphanumériques, généralement appuyées de manière séquentielle. Les raccourcis clavier sont automatiquement pris en charge pour les touches d’accès en utilisant un seul caractère alphanumérique.
 
@@ -80,12 +80,12 @@ button4.On<Windows>()
 
 La `VisualElement.On<Windows>` méthode spécifie que ce spécifique à la plateforme s’exécutera uniquement sur le plateforme Windows universelle. [ `VisualElement.SetAccessKey` ] (XREF : Xamarin.Forms . PlatformConfiguration. WindowsSpecific. VisualElement. SetAccessKey ( Xamarin.Forms . IPlatformElementConfiguration { Xamarin.Forms . PlatformConfiguration. Windows, Xamarin.Forms . VisualElement}, System. String)), dans l' [`Xamarin.Forms.PlatformConfiguration.WindowsSpecific`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) espace de noms, est utilisé pour définir la valeur de clé d’accès pour le `VisualElement` . [ `VisualElement.SetAccessKeyPlacement` ] (XREF : Xamarin.Forms . PlatformConfiguration. WindowsSpecific. VisualElement. SetAccessKeyPlacement ( Xamarin.Forms . IPlatformElementConfiguration { Xamarin.Forms . PlatformConfiguration. Windows, Xamarin.Forms . VisualElement}, Xamarin.Forms . AccessKeyPlacement)), spécifie éventuellement la position à utiliser pour afficher l’info-bulle de clé d’accès, avec l' [`AccessKeyPlacement`](xref:Xamarin.Forms.AccessKeyPlacement) énumération qui fournit les valeurs possibles suivantes :
 
-- [`Auto`](xref:Xamarin.Forms.AccessKeyPlacement.Auto): indique que le placement de l’info-bulle de clé d’accès sera déterminé par le système d’exploitation.
-- [`Top`](xref:Xamarin.Forms.AccessKeyPlacement.Top): indique que l’info-bulle de la touche d’accès est affichée au-dessus du bord supérieur du `VisualElement` .
-- [`Bottom`](xref:Xamarin.Forms.AccessKeyPlacement.Bottom): indique que l’info-bulle de la touche d’accès apparaît sous le bord inférieur du `VisualElement` .
-- [`Right`](xref:Xamarin.Forms.AccessKeyPlacement.Right): indique que l’info-bulle de la touche d’accès s’affiche à droite du bord droit du `VisualElement` .
-- [`Left`](xref:Xamarin.Forms.AccessKeyPlacement.Left): indique que l’info-bulle de la touche d’accès s’affiche à gauche du bord gauche du `VisualElement` .
-- [`Center`](xref:Xamarin.Forms.AccessKeyPlacement.Center): indique que l’info-bulle de la touche d’accès s’affiche sur le centre du `VisualElement` .
+- [`Auto`](xref:Xamarin.Forms.AccessKeyPlacement.Auto) : indique que le placement de l’info-bulle de clé d’accès sera déterminé par le système d’exploitation.
+- [`Top`](xref:Xamarin.Forms.AccessKeyPlacement.Top) : indique que l’info-bulle de la touche d’accès est affichée au-dessus du bord supérieur du `VisualElement` .
+- [`Bottom`](xref:Xamarin.Forms.AccessKeyPlacement.Bottom) : indique que l’info-bulle de la touche d’accès apparaît sous le bord inférieur du `VisualElement` .
+- [`Right`](xref:Xamarin.Forms.AccessKeyPlacement.Right) : indique que l’info-bulle de la touche d’accès s’affiche à droite du bord droit du `VisualElement` .
+- [`Left`](xref:Xamarin.Forms.AccessKeyPlacement.Left) : indique que l’info-bulle de la touche d’accès s’affiche à gauche du bord gauche du `VisualElement` .
+- [`Center`](xref:Xamarin.Forms.AccessKeyPlacement.Center) : indique que l’info-bulle de la touche d’accès s’affiche sur le centre du `VisualElement` .
 
 > [!NOTE]
 > En règle générale, le [`Auto`](xref:Xamarin.Forms.AccessKeyPlacement.Auto) positionnement de l’embout clé est suffisant, ce qui comprend la prise en charge des interfaces utilisateur adaptatives.
@@ -107,6 +107,6 @@ Pour plus d’informations sur les clés d’accès, consultez [clés d’accès
 
 ## <a name="related-links"></a>Liens connexes
 
-- [PlatformSpecifics (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [Création de caractéristiques de la plateforme](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [API WindowsSpecific](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)

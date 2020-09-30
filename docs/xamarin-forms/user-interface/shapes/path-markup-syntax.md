@@ -1,6 +1,6 @@
 ---
-title: 'Xamarin.FormsShapes : syntaxe de balisage de chemin'
-description: Xamarin.FormsLa syntaxe de balisage Path vous permet de spécifier de manière compacte des géométries de chemin d’accès en XAML.
+title: 'Xamarin.Forms Shapes : syntaxe de balisage de chemin'
+description: Xamarin.Forms La syntaxe de balisage Path vous permet de spécifier de manière compacte des géométries de chemin d’accès en XAML.
 ms.prod: xamarin
 ms.assetid: A2C1BD59-1A16-4E26-A825-0338E2AF9E65
 ms.technology: xamarin-forms
@@ -10,20 +10,20 @@ ms.date: 06/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8250bd5e5f7d6c9cb93a986656e908b40cec9ae2
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 743f6366cc7e798247ea0151720a81e9cbddfeeb
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918509"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91559102"
 ---
-# <a name="no-locxamarinforms-shapes-path-markup-syntax"></a>Xamarin.FormsShapes : syntaxe de balisage de chemin
+# <a name="no-locxamarinforms-shapes-path-markup-syntax"></a>Xamarin.Forms Shapes : syntaxe de balisage de chemin
 
 ![API de la version préliminaire](~/media/shared/preview.png)
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
-Xamarin.Formsla syntaxe de balisage Path vous permet de spécifier de manière compacte des géométries de chemin d’accès en XAML. La syntaxe est spécifiée sous la forme d’une valeur de chaîne pour la `Path.Data` propriété :
+Xamarin.Forms la syntaxe de balisage Path vous permet de spécifier de manière compacte des géométries de chemin d’accès en XAML. La syntaxe est spécifiée sous la forme d’une valeur de chaîne pour la `Path.Data` propriété :
 
 ```xaml
 <Path Stroke="Black"
@@ -35,7 +35,7 @@ La syntaxe de balisage de chemin d’accès est composée d’une `FillRule` val
 
 Dans cette syntaxe :
 
-- *fillRule* est un facultatif `Xamarin.Forms.Shapes.FillRule` qui spécifie si la géométrie doit utiliser `EvenOdd` ou `Nonzero` `FillRule` . `F0`est utilisé pour spécifier la `EvenOdd` règle de remplissage, tandis que `F1` est utilisé pour spécifier la `Nonzero` règle de remplissage. Pour plus d’informations sur les règles de remplissage, consultez [ Xamarin.Forms Shapes : Fill Rules](fillrules.md).
+- *fillRule* est un facultatif `Xamarin.Forms.Shapes.FillRule` qui spécifie si la géométrie doit utiliser `EvenOdd` ou `Nonzero` `FillRule` . `F0` est utilisé pour spécifier la `EvenOdd` règle de remplissage, tandis que `F1` est utilisé pour spécifier la `Nonzero` règle de remplissage. Pour plus d’informations sur les règles de remplissage, consultez [ Xamarin.Forms Shapes : Fill Rules](fillrules.md).
 - *figureDescription* représente une figure composée d’une commande Move, de commandes de dessin et d’une commande Close facultative. Une commande Move spécifie le point de départ de la figure. Les commandes de dessin décrivent le contenu de la figure, et la commande facultative Close ferme la figure.
 
 Dans l’exemple ci-dessus, la syntaxe de balisage Path spécifie un point de départ à l’aide de la commande Move ( `M` ), une série de lignes droites à l’aide de la commande line ( `L` ) et ferme le chemin d’accès avec la commande Close ( `Z` ).
@@ -51,7 +51,7 @@ La commande Move spécifie le point de départ d’une nouvelle figure. La synta
 
 Dans cette syntaxe, *StartPoint* est une [`Point`](xref:Xamarin.Forms.Point) structure qui spécifie le point de départ d’une nouvelle figure. Si vous répertoriez plusieurs points après la commande Move, une ligne est dessinée à ces points.
 
-`M 10,10`est un exemple de commande Move valide.
+`M 10,10` est un exemple de commande Move valide.
 
 ## <a name="draw-commands"></a>Commandes de dessin
 
@@ -74,7 +74,7 @@ La commande line crée une ligne droite entre le point actuel et le point de ter
 
 Dans cette syntaxe, *Endpoint* est un [`Point`](xref:Xamarin.Forms.Point) qui représente le point de terminaison de la ligne.
 
-`L 20,30`et `L 20 30` sont des exemples de commandes de ligne valides.
+`L 20,30` et `L 20 30` sont des exemples de commandes de ligne valides.
 
 Pour plus d’informations sur la création d’une ligne droite en tant qu' `PathGeometry` objet, consultez [créer un LineSegment](geometries.md#create-a-linesegment).
 
@@ -100,13 +100,13 @@ La commande elliptique arc crée un arc elliptique entre le point actuel et le p
 
 Dans cette syntaxe :
 
-- `size`est un [`Size`](xref:Xamarin.Forms.Size) qui représente le rayon x et le rayon y de l’arc.
-- `rotationAngle`est un `double` qui représente la rotation de l’ellipse, en degrés.
-- `isLargeArcFlag`doit avoir la valeur 1 si l’angle de l’ARC doit être égal ou supérieur à 180 degrés ; sinon, affectez-lui la valeur 0.
-- `sweepDirectionFlag`doit avoir la valeur 1 si l’arc est dessiné dans une direction d’angle positif ; sinon, affectez-lui la valeur 0.
-- `endPoint`est un [`Point`](xref:Xamarin.Forms.Point) vers lequel l’arc est dessiné.
+- `size` est un [`Size`](xref:Xamarin.Forms.Size) qui représente le rayon x et le rayon y de l’arc.
+- `rotationAngle` est un `double` qui représente la rotation de l’ellipse, en degrés.
+- `isLargeArcFlag` doit avoir la valeur 1 si l’angle de l’ARC doit être égal ou supérieur à 180 degrés ; sinon, affectez-lui la valeur 0.
+- `sweepDirectionFlag` doit avoir la valeur 1 si l’arc est dessiné dans une direction d’angle positif ; sinon, affectez-lui la valeur 0.
+- `endPoint` est un [`Point`](xref:Xamarin.Forms.Point) vers lequel l’arc est dessiné.
 
-`A 150,150 0 1,0 150,-150`est un exemple de commande d’arc elliptique valide.
+`A 150,150 0 1,0 150,-150` est un exemple de commande d’arc elliptique valide.
 
 Pour plus d’informations sur la création d’un arc elliptique en tant qu' `PathGeometry` objet, consultez [créer un ArcSegment](geometries.md#create-an-arcsegment).
 
@@ -120,7 +120,7 @@ Dans cette syntaxe :
 - *ControlPoint2* est un [`Point`](xref:Xamarin.Forms.Point) qui représente le deuxième point de contrôle de la courbe, qui détermine la tangente de fin de la courbe.
 - *Endpoint* est un [`Point`](xref:Xamarin.Forms.Point) qui représente le point vers lequel la courbe est dessinée.
 
-`C 100,200 200,400 300,200`est un exemple de commande de courbe de Bézier cubique valide.
+`C 100,200 200,400 300,200` est un exemple de commande de courbe de Bézier cubique valide.
 
 Pour plus d’informations sur la création d’une courbe de Bézier cubique en tant qu' `PathGeometry` objet, consultez [créer un BezierSegment](geometries.md#create-a-beziersegment).
 
@@ -148,7 +148,7 @@ Dans cette syntaxe :
 
 Le premier point de contrôle est supposé être la réflexion du deuxième point de contrôle de la commande précédente, par rapport au point actuel. S’il n’existe pas de commande précédente, ou si la commande précédente n’était pas une commande de courbe de Bézier cubique ou une commande de courbe de Bézier lissée lissée, le premier point de contrôle est supposé coïncider avec le point actuel.
 
-`S 100,200 200,300`est un exemple de commande de courbe de Bézier cubique lissé valide.
+`S 100,200 200,300` est un exemple de commande de courbe de Bézier cubique lissé valide.
 
 ### <a name="smooth-quadratic-bezier-curve-command"></a>Commande de courbe de Bézier lisse quadratique
 
@@ -158,7 +158,7 @@ Dans cette syntaxe, *Endpoint* est un [`Point`](xref:Xamarin.Forms.Point) qui re
 
 Le point de contrôle est supposé être la réflexion du point de contrôle de la commande précédente par rapport au point actuel. S’il n’existe pas de commande précédente ou si la commande précédente n’était pas une courbe de Bézier quadratique ou une commande de courbe de Bézier lisse quadratique, le point de contrôle est supposé coïncider avec le point actuel.
 
-`T 100,30`est un exemple de commande de courbe de Bézier cubique lissée valide.
+`T 100,30` est un exemple de commande de courbe de Bézier cubique lissée valide.
 
 ## <a name="close-command"></a>Bouton de fermeture
 
@@ -170,14 +170,14 @@ La syntaxe de la commande Close est : `Z` ou `z` .
 
 Au lieu d’une valeur numérique standard, vous pouvez également utiliser les valeurs spéciales suivantes qui respectent la casse :
 
-- `Infinity`représente `double.PositiveInfinity` .
+- `Infinity` représente `double.PositiveInfinity` .
 - `-Infinity`représente `double.NegativeInfinity` .
-- `NaN`représente `double.NaN` .
+- `NaN` représente `double.NaN` .
 
 En outre, vous pouvez également utiliser la notation scientifique ne respectant pas la casse. Par conséquent, `+1.e17` est une valeur valide.
 
 ## <a name="related-links"></a>Liens connexes
 
-- [ShapeDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
-- [Xamarin.FormsFormes : géométries](geometries.md)
-- [Xamarin.FormsFormes : règles de remplissage](fillrules.md)
+- [ShapeDemos (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+- [Xamarin.Forms Formes : géométries](geometries.md)
+- [Xamarin.Forms Formes : règles de remplissage](fillrules.md)

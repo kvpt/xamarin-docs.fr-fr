@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsMapper des polygones, des polylignes et des cercles
+title: Xamarin.Forms Mapper des polygones, des polylignes et des cercles
 description: Cet article explique comment créer des polygones, des polylignes et des cercles sur une Xamarin.Forms instance de carte.
 ms.prod: xamarin
 ms.assetid: CDAF0B02-1AA8-4AD6-94A7-ABFC18006A2D
@@ -10,16 +10,16 @@ ms.date: 03/10/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ca813f9f0f75aeaf4a2502faa7cb96d1fbead471
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: d4b82cc9c04dd711cc99b558475c2e003e557252
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138409"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91559777"
 ---
-# <a name="xamarinforms-map-polygons-and-polylines"></a>Xamarin.FormsMapper des polygones et des polylignes
+# <a name="no-locxamarinforms-map-polygons-and-polylines"></a>Xamarin.Forms Mapper des polygones et des polylignes
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
 `Polygon``Polyline`les éléments, et `Circle` vous permettent de mettre en surbrillance des zones spécifiques sur une carte. Un `Polygon` est une forme entièrement incluse qui peut avoir un trait et une couleur de remplissage. Un `Polyline` est une ligne qui ne délimite pas complètement une zone. Un `Circle` met en surbrillance une zone circulaire de la carte :
 
@@ -28,20 +28,20 @@ ms.locfileid: "84138409"
 
 Les `Polygon` `Polyline` classes, et `Circle` dérivent de la `MapElement` classe, qui expose les propriétés pouvant être liées suivantes :
 
-- `StrokeColor`est un `Color` objet qui détermine la couleur de ligne.
-- `StrokeWidth`est un `float` objet qui détermine la largeur de ligne.
+- `StrokeColor` est un `Color` objet qui détermine la couleur de ligne.
+- `StrokeWidth` est un `float` objet qui détermine la largeur de ligne.
 
 La `Polygon` classe définit une propriété pouvant être liée supplémentaire :
 
-- `FillColor`est un `Color` objet qui détermine la couleur d’arrière-plan du polygone.
+- `FillColor` est un `Color` objet qui détermine la couleur d’arrière-plan du polygone.
 
 En outre, les `Polygon` `Polyline` classes et définissent toutes deux une `GeoPath` propriété, qui est une liste d' [`Position`](xref:Xamarin.Forms.Maps.Position) objets qui spécifient les points de la forme.
 
 La `Circle` classe définit les propriétés pouvant être liées suivantes :
 
-- `Center`est un [`Position`](xref:Xamarin.Forms.Maps.Position) objet qui définit le centre du cercle, en latitude et en longitude.
-- `Radius`est un [`Distance`](xref:Xamarin.Forms.Maps.Distance) objet qui définit le rayon du cercle en mètres, en kilomètres ou en miles.
-- `FillColor`est une `Color` propriété qui détermine la couleur dans le périmètre du cercle.
+- `Center` est un [`Position`](xref:Xamarin.Forms.Maps.Position) objet qui définit le centre du cercle, en latitude et en longitude.
+- `Radius` est un [`Distance`](xref:Xamarin.Forms.Maps.Distance) objet qui définit le rayon du cercle en mètres, en kilomètres ou en miles.
+- `FillColor` est une `Color` propriété qui détermine la couleur dans le périmètre du cercle.
 
 > [!NOTE]
 > Si la `StrokeColor` propriété n’est pas spécifiée, le trait est noir par défaut. Si la `FillColor` propriété n’est pas spécifiée, le remplissage est transparent par défaut. Par conséquent, si aucune propriété n’est spécifiée, la forme aura un contour noir sans remplissage.
@@ -233,4 +233,4 @@ L’emplacement du `Circle` sur la carte est déterminé par la valeur des `Cent
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Exemple Maps](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+- [Exemple Maps](/samples/xamarin/xamarin-forms-samples/workingwithmaps)

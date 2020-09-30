@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsMap Control
+title: Xamarin.Forms Map Control
 description: Le contrôle de carte est une vue multiplateforme permettant d’afficher et d’annoter des cartes. Il utilise le contrôle de carte natif pour chaque plateforme, en fournissant une expérience de cartes rapide et familière aux utilisateurs.
 ms.prod: xamarin
 ms.assetid: 22C99029-0B16-43A6-BF58-26B48C4AED38
@@ -10,16 +10,16 @@ ms.date: 05/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1aee81b6988e1f3a7099c2722b6f336f071ad8c0
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: df3189455102cedab232e0c629e63f65e242c9b5
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84946362"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91560050"
 ---
-# <a name="xamarinforms-map-control"></a>Xamarin.FormsMap Control
+# <a name="no-locxamarinforms-map-control"></a>Xamarin.Forms Map Control
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
 Le [`Map`](xref:Xamarin.Forms.Maps.Map) contrôle est une vue multiplateforme permettant d’afficher et d’annoter des cartes. Elle utilise le contrôle de carte natif pour chaque plateforme, en fournissant une expérience de cartes rapide et familière aux utilisateurs :
 
@@ -89,9 +89,9 @@ Vous [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) pouvez également passer un ar
 
 La [`Map.MapType`](xref:Xamarin.Forms.Maps.Map.MapType) propriété peut être définie sur un [`MapType`](xref:Xamarin.Forms.Maps.MapType) membre de l’énumération pour définir le style d’affichage de la carte. L’énumération `MapType` définit les membres suivants :
 
-- `Street`Spécifie qu’une carte de rue sera affichée.
-- `Satellite`Spécifie qu’une carte contenant une image satellite sera affichée.
-- `Hybrid`Spécifie qu’une carte combinant les données de la rue et du satellite sera affichée.
+- `Street` Spécifie qu’une carte de rue sera affichée.
+- `Satellite` Spécifie qu’une carte contenant une image satellite sera affichée.
+- `Hybrid` Spécifie qu’une carte combinant les données de la rue et du satellite sera affichée.
 
 Par défaut, un [`Map`](xref:Xamarin.Forms.Maps.Map) affiche une carte postale si la [`MapType`](xref:Xamarin.Forms.Maps.Map.MapType) propriété n’est pas définie. La `MapType` propriété peut également être définie sur l’un des membres de l' [`MapType`](xref:Xamarin.Forms.Maps.MapType) énumération :
 
@@ -163,9 +163,9 @@ Il existe un certain nombre d’approches pour la création d' [`MapSpan`](xref:
 
 Il existe également trois méthodes dans la [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) classe qui retournent de nouveaux `MapSpan` objets :
 
-1. [`ClampLatitude`](xref:Xamarin.Forms.Maps.MapSpan.ClampLatitude*)retourne un `MapSpan` avec le même `LongitudeDegrees` que l’instance de la classe de la méthode, et un RADIUS défini par ses `north` `south` arguments et.
-1. [`FromCenterAndRadius`](xref:Xamarin.Forms.Maps.MapSpan.FromCenterAndRadius*)retourne un `MapSpan` défini par ses [`Position`](xref:Xamarin.Forms.Maps.Position) [`Distance`](xref:Xamarin.Forms.Maps.Distance) arguments et.
-1. [`WithZoom`](xref:Xamarin.Forms.Maps.MapSpan.WithZoom*)retourne un `MapSpan` avec le même centre que l’instance de la classe de la méthode, mais avec un rayon multiplié par son `double` argument.
+1. [`ClampLatitude`](xref:Xamarin.Forms.Maps.MapSpan.ClampLatitude*) retourne un `MapSpan` avec le même `LongitudeDegrees` que l’instance de la classe de la méthode, et un RADIUS défini par ses `north` `south` arguments et.
+1. [`FromCenterAndRadius`](xref:Xamarin.Forms.Maps.MapSpan.FromCenterAndRadius*) retourne un `MapSpan` défini par ses [`Position`](xref:Xamarin.Forms.Maps.Position) [`Distance`](xref:Xamarin.Forms.Maps.Distance) arguments et.
+1. [`WithZoom`](xref:Xamarin.Forms.Maps.MapSpan.WithZoom*) retourne un `MapSpan` avec le même centre que l’instance de la classe de la méthode, mais avec un rayon multiplié par son `double` argument.
 
 Pour plus d’informations sur la [`Distance`](xref:Xamarin.Forms.Maps.Distance) structure, consultez [position et distance](position-distance.md)de la carte.
 
@@ -328,7 +328,7 @@ map.MapClicked += OnMapClicked;
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Exemple Maps](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+- [Exemple Maps](/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 - [Position et distance de la carte](position-distance.md)
 - [Personnalisation d’une Xamarin.Forms carte](~/xamarin-forms/app-fundamentals/custom-renderer/map-pin.md)
 - [Passage d’arguments en XAML](~/xamarin-forms/xaml/passing-arguments.md)

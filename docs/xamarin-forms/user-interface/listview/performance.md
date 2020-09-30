@@ -10,16 +10,16 @@ ms.date: 12/11/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e2b8e057d9687cd0a472451fc73cc578f9358277
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: c010ac513cec8ac59927325dbe80ad1c8ac556d8
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139878"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91559998"
 ---
 # <a name="listview-performance"></a>Performances de ListView
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistviewnative)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistviewnative)
 
 Lors de l’écriture d’applications mobiles, les performances sont importantes. Les utilisateurs s’attendent à attendre un défilement régulier et des temps de chargement rapides. Si vous ne répondez pas aux attentes de vos utilisateurs, vous coûterez les évaluations dans le magasin d’applications, ou dans le cas d’une application métier, vous coûterez le temps et l’argent de votre organisation.
 
@@ -31,7 +31,7 @@ Les ListViews sont souvent utilisés pour afficher bien plus de données que s�
 
 Pour économiser de la mémoire, les [`ListView`](xref:Xamarin.Forms.ListView) équivalents natifs de chaque plateforme ont des fonctionnalités intégrées permettant de réutiliser des lignes. Seules les cellules visibles à l’écran sont chargées en mémoire et le **contenu** est chargé dans les cellules existantes. Ce modèle empêche l’application d’instancier des milliers d’objets, ce qui permet de gagner du temps et de la mémoire.
 
-Xamarin.Formsautorise la [`ListView`](xref:Xamarin.Forms.ListView) réutilisation des cellules via l' [`ListViewCachingStrategy`](xref:Xamarin.Forms.ListViewCachingStrategy) énumération, qui a les valeurs suivantes :
+Xamarin.Forms autorise la [`ListView`](xref:Xamarin.Forms.ListView) réutilisation des cellules via l' [`ListViewCachingStrategy`](xref:Xamarin.Forms.ListViewCachingStrategy) énumération, qui a les valeurs suivantes :
 
 ```csharp
 public enum ListViewCachingStrategy
@@ -167,20 +167,20 @@ Il existe de nombreuses techniques pour améliorer les performances d’un `List
 - Limitez l’utilisation de la [`Cell.ForceUpdateSize`](xref:Xamarin.Forms.Cell.ForceUpdateSize) méthode. En cas de surutilisation, les performances seront dégradées.
 - Sur Android, évitez de définir la `ListView` couleur ou la visibilité du séparateur de lignes d’une après son instanciation, car cela entraîne une baisse importante des performances.
 - Évitez de modifier la disposition des cellules en fonction de [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) . La modification de la disposition entraîne des coûts de mesure et d’initialisation importants.
-- Évitez les hiérarchies de disposition profondément imbriquées. Utilisez `AbsoluteLayout` ou `Grid` pour réduire l’imbrication.
-- Évitez une `LayoutOptions` valeur spécifique autre que `Fill` ( `Fill` est le moins coûteux à calculer).
+- Évitez les hiérarchies de disposition profondément imbriquées. Utilisez  `AbsoluteLayout` ou  `Grid` pour réduire l’imbrication.
+- Évitez une `LayoutOptions` valeur spécifique autre que  `Fill` ( `Fill` est le moins coûteux à calculer).
 - Évitez de placer un `ListView` à l’intérieur `ScrollView` d’un pour les raisons suivantes :
   - `ListView`Implémente son propre défilement.
   - Le `ListView` ne recevra aucun geste, car il sera géré par le parent `ScrollView` .
   - Le `ListView` peut présenter un en-tête et un pied de page personnalisés qui défilent les éléments de la liste, offrant potentiellement les fonctionnalités pour lesquelles le `ScrollView` a été utilisé. Pour plus d’informations, consultez [en-têtes et pieds de page](~/xamarin-forms/user-interface/listview/customizing-list-appearance.md#headers-and-footers).
 - Imaginez un convertisseur personnalisé si vous avez besoin d’une conception spécifique et complexe présentée dans vos cellules.
 
-`AbsoluteLayout`permet d’effectuer des mises en page sans appel de mesure unique, ce qui la rend très performante. Si `AbsoluteLayout` ne peut pas être utilisé, envisagez [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) . Si `RelativeLayout` vous utilisez, le passage direct de contraintes est beaucoup plus rapide que l’utilisation de l’API expression. Cette méthode est plus rapide, car l’API expression utilise JIT et, sur iOS, l’arborescence doit être interprétée, ce qui est plus lent. L’API expression convient pour les mises en page où elle est requise uniquement lors de la mise en page et de la rotation initiales, mais dans `ListView` , où elle est exécutée constamment pendant le défilement, elle nuit aux performances.
+`AbsoluteLayout` permet d’effectuer des mises en page sans appel de mesure unique, ce qui la rend très performante. Si `AbsoluteLayout` ne peut pas être utilisé, envisagez [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) . Si `RelativeLayout` vous utilisez, le passage direct de contraintes est beaucoup plus rapide que l’utilisation de l’API expression. Cette méthode est plus rapide, car l’API expression utilise JIT et, sur iOS, l’arborescence doit être interprétée, ce qui est plus lent. L’API expression convient pour les mises en page où elle est requise uniquement lors de la mise en page et de la rotation initiales, mais dans `ListView` , où elle est exécutée constamment pendant le défilement, elle nuit aux performances.
 
 La création d’un convertisseur personnalisé pour un [`ListView`](xref:Xamarin.Forms.ListView) ou ses cellules est une approche permettant de réduire l’effet des calculs de disposition sur les performances de défilement. Pour plus d’informations, consultez [Personnalisation d’un ListView](~/xamarin-forms/app-fundamentals/custom-renderer/listview.md) et [Personnalisation d’un ViewCell](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md).
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Vue du convertisseur personnalisé (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistviewnative)
-- [ViewCell de rendu personnalisé (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-viewcell)
+- [Vue du convertisseur personnalisé (exemple)](/samples/xamarin/xamarin-forms-samples/workingwithlistviewnative)
+- [ViewCell de rendu personnalisé (exemple)](/samples/xamarin/xamarin-forms-samples/customrenderers-viewcell)
 - [ListViewCachingStrategy](xref:Xamarin.Forms.ListViewCachingStrategy)

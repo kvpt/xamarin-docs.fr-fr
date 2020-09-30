@@ -10,12 +10,12 @@ ms.date: 03/23/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2c271c3537c6e96497763c67c5b8128148191f16
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 78bd93e2f6556480ae7d2903771d7d6303dda148
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937356"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91558374"
 ---
 # <a name="native-views-in-xaml"></a>Vues natives en XAML
 
@@ -171,7 +171,7 @@ La [`UIFont.FromName`](xref:UIKit.UIFont.FromName*) méthode de fabrique est uti
 
 La [`Typeface.Create`](xref:Android.Graphics.Typeface.Create*) méthode de fabrique est utilisée pour définir la [`TextView.Typeface`](xref:Android.Widget.TextView.Typeface) propriété sur un nouveau [`Typeface`](xref:Android.Graphics.Typeface) sur Android. Le `Typeface` nom et le style de famille sont spécifiés par les arguments de méthode qui sont des enfants de l' `x:Arguments` attribut.
 
-Le [`FontFamily`](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.fontfamily) constructeur est utilisé pour définir la [`TextBlock.FontFamily`](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.fontfamily) propriété sur un nouveau `FontFamily` plateforme Windows universelle (UWP). Le `FontFamily` nom est spécifié par l’argument de méthode qui est un enfant de l' `x:Arguments` attribut.
+Le [`FontFamily`](/uwp/api/Windows.UI.Xaml.Media.FontFamily) constructeur est utilisé pour définir la [`TextBlock.FontFamily`](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) propriété sur un nouveau `FontFamily` plateforme Windows universelle (UWP). Le `FontFamily` nom est spécifié par l’argument de méthode qui est un enfant de l' `x:Arguments` attribut.
 
 > [!NOTE]
 > Les arguments doivent correspondre aux types requis par le constructeur ou la méthode de fabrique.
@@ -466,9 +466,9 @@ La `MySpinner` classe expose `ItemsSource` les `SelectedObject` Propriétés et,
 
 ## <a name="related-links"></a>Liens connexes
 
-- [NativeSwitch (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-nativeswitch)
-- [Forms2Native (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/forms2native)
-- [NativeViewInsideContentView (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-nativeviewinsidecontentview)
-- [SubclassedNativeControls (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-subclassednativecontrols)
+- [NativeSwitch (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-nativeswitch)
+- [Forms2Native (exemple)](/samples/xamarin/xamarin-forms-samples/forms2native)
+- [NativeViewInsideContentView (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-nativeviewinsidecontentview)
+- [SubclassedNativeControls (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-subclassednativecontrols)
 - [Formulaires natifs](~/xamarin-forms/platform/native-forms.md)
 - [Passage d’arguments en XAML](~/xamarin-forms/xaml/passing-arguments.md)

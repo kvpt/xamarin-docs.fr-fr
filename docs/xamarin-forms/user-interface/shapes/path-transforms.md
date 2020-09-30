@@ -10,12 +10,12 @@ ms.date: 07/02/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6bc61eadb40a66c278955936e15158f34709fd18
-ms.sourcegitcommit: aeefe667156ca8d3ee2ee21d9bec0fa629589e33
+ms.openlocfilehash: 37ee7fe2278176024dc1662b87b494e84344b98c
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90928642"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91558958"
 ---
 # <a name="no-locxamarinforms-shapes-path-transforms"></a>Xamarin.Forms Formes : transformations de chemin d’accès
 
@@ -332,7 +332,7 @@ Le tableau suivant présente la structure d’une Xamarin.Forms matrice :
         OffsetY
     :::column-end:::
     :::column:::
-        1.0
+        1,0
     :::column-end:::
 :::row-end:::
 
@@ -400,5 +400,5 @@ En outre, l’exemple précédent peut être simplifié encore plus en spécifia
 
 ## <a name="related-links"></a>Liens connexes
 
-- [ShapeDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+- [ShapeDemos (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.Forms Formes](index.md)

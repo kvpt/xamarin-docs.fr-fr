@@ -10,16 +10,16 @@ ms.date: 02/26/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8872c6748ba778a2622d82803d580c781bd282cd
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: d65352022057ce32bd969950c2165ad530c05bbb
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139631"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91559621"
 ---
 # <a name="adding-data-to-a-pickers-items-collection"></a>Ajout de données à la collection d’éléments d’un sélecteur
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-pickerdemo)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-pickerdemo)
 
 _La vue sélecteur est un contrôle permettant de sélectionner un élément de texte dans une liste de données. Cet article explique comment remplir un sélecteur de données en l’ajoutant à la collection Items et comment répondre à la sélection d’éléments par l’utilisateur._
 
@@ -86,5 +86,5 @@ Cette méthode obtient la valeur de la [`SelectedIndex`](xref:Xamarin.Forms.Pick
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Démonstration du sélecteur (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-pickerdemo)
+- [Démonstration du sélecteur (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-pickerdemo)
 - [Sélecteur](xref:Xamarin.Forms.Picker)

@@ -1,6 +1,6 @@
 ---
-title: 'Xamarin.FormsFormes : géométries'
-description: Xamarin.Formsles classes Geometry vous permettent de décrire la géométrie d’une forme 2D.
+title: 'Xamarin.Forms Formes : géométries'
+description: Xamarin.Forms les classes Geometry vous permettent de décrire la géométrie d’une forme 2D.
 ms.prod: xamarin
 ms.assetid: 07DE3D66-1820-4642-BDDF-84146D40C99D
 ms.technology: xamarin-forms
@@ -10,20 +10,20 @@ ms.date: 06/24/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 420099cadd3a541736084403265b9302c9a32b37
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: c6c6fb0ea9d3e2b728072fa36c3cdb2a86ade131
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918313"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91559322"
 ---
-# <a name="no-locxamarinforms-shapes-geometries"></a>Xamarin.FormsFormes : géométries
+# <a name="no-locxamarinforms-shapes-geometries"></a>Xamarin.Forms Formes : géométries
 
 ![API de la version préliminaire](~/media/shared/preview.png)
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
-La `Geometry` classe, et les classes qui dérivent de celle-ci, vous permettent de décrire la géométrie d’une forme 2D. `Geometry`les objets peuvent être simples, tels que des rectangles et des cercles, ou composites, créés à partir de deux objets géométriques ou plus. En outre, il est possible de créer des géométries plus complexes qui incluent des arcs et des courbes.
+La `Geometry` classe, et les classes qui dérivent de celle-ci, vous permettent de décrire la géométrie d’une forme 2D. `Geometry` les objets peuvent être simples, tels que des rectangles et des cercles, ou composites, créés à partir de deux objets géométriques ou plus. En outre, il est possible de créer des géométries plus complexes qui incluent des arcs et des courbes.
 
 La `Geometry` classe est la classe parente de plusieurs classes qui définissent différentes catégories de géométries :
 
@@ -630,6 +630,6 @@ La `GeometryHelper` classe fournit les méthodes d’assistance suivantes :
 
 ## <a name="related-links"></a>Liens connexes
 
-- [ShapeDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
-- [Xamarin.FormsFormes](index.md)
-- [Xamarin.FormsFormes : règles de remplissage](fillrules.md)
+- [ShapeDemos (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+- [Xamarin.Forms Formes](index.md)
+- [Xamarin.Forms Formes : règles de remplissage](fillrules.md)

@@ -1,6 +1,6 @@
 ---
 title: Afficher les fenêtres contextuelles
-description: 'Xamarin.Formsfournit trois éléments d’interface utilisateur de type popup : une alerte, une feuille d’action et une invite. Cet article montre comment utiliser les API d’alerte, de feuille d’action et d’invite pour afficher des boîtes de dialogue qui demandent aux utilisateurs des questions simples, guident les utilisateurs par le biais de tâches et affichent des invites.'
+description: 'Xamarin.Forms fournit trois éléments d’interface utilisateur de type popup : une alerte, une feuille d’action et une invite. Cet article montre comment utiliser les API d’alerte, de feuille d’action et d’invite pour afficher des boîtes de dialogue qui demandent aux utilisateurs des questions simples, guident les utilisateurs par le biais de tâches et affichent des invites.'
 ms.prod: xamarin
 ms.assetid: 46AB0D5E-0025-4A8A-9D00-3E66C3D0BA2E
 ms.technology: xamarin-forms
@@ -10,18 +10,18 @@ ms.date: 03/10/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 75cc3070f552ef05c3e8702d27caf7c353ac0a8f
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 58ab2f785c26019c90b91c928daed864c3c6098b
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86931870"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91559569"
 ---
 # <a name="display-pop-ups"></a>Afficher les fenêtres contextuelles
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-pop-ups)
 
-L’affichage d’une alerte, la demande d’un utilisateur ou l’affichage d’une invite est une tâche courante de l’interface utilisateur. Xamarin.Formsa trois méthodes sur la [`Page`](xref:Xamarin.Forms.Page) classe pour interagir avec l’utilisateur via une fenêtre contextuelle : [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*) , [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*) et `DisplayPromptAsync` . Elles sont affichées avec les contrôles natifs appropriés sur chaque plateforme.
+L’affichage d’une alerte, la demande d’un utilisateur ou l’affichage d’une invite est une tâche courante de l’interface utilisateur. Xamarin.Forms a trois méthodes sur la [`Page`](xref:Xamarin.Forms.Page) classe pour interagir avec l’utilisateur via une fenêtre contextuelle : [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*) , [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*) et `DisplayPromptAsync` . Elles sont affichées avec les contrôles natifs appropriés sur chaque plateforme.
 
 ## <a name="display-an-alert"></a>Afficher une alerte
 
@@ -112,4 +112,4 @@ Ce code affiche une réponse prédéfinie de 10, limite le nombre de caractères
 
 ## <a name="related-links"></a>Liens connexes
 
-- [PopupsSample](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-pop-ups)
+- [PopupsSample](/samples/xamarin/xamarin-forms-samples/navigation-pop-ups)

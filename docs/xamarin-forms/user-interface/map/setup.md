@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsInitialisation et configuration de la carte
+title: Xamarin.Forms Initialisation et configuration de la carte
 description: Xamarin.Forms. Le package NuGet Maps est requis pour utiliser la fonctionnalité Maps dans une application. En outre, l’accès à l’emplacement de l’utilisateur nécessite des autorisations d’emplacement pour être accordé à l’application.
 ms.prod: xamarin
 ms.assetid: 59CD1344-8248-406C-9144-0C8A67141E5B
@@ -10,16 +10,16 @@ ms.date: 02/07/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 52e2ac5f8075c57f533fcba064223f355e07ba48
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 3da0223bf72e4de60cc50be2562a0fdbd279f52e
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139839"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91559738"
 ---
-# <a name="xamarinforms-map-initialization-and-configuration"></a>Xamarin.FormsInitialisation et configuration de la carte
+# <a name="no-locxamarinforms-map-initialization-and-configuration"></a>Xamarin.Forms Initialisation et configuration de la carte
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
 Le [`Map`](xref:Xamarin.Forms.Maps.Map) contrôle utilise le contrôle de carte natif sur chaque plateforme. Cela offre une expérience de cartes rapide et familière pour les utilisateurs, mais signifie que certaines étapes de configuration sont nécessaires pour respecter les exigences de chaque API de plateformes.
 
@@ -60,11 +60,11 @@ Une configuration supplémentaire est requise sur Android et le plateforme Windo
 L’affichage et l’interaction avec une carte sur iOS ne nécessitent aucune configuration supplémentaire. Toutefois, pour accéder aux services d’emplacement, vous devez définir les clés suivantes dans **info. plist**:
 
 - iOS 11 et versions ultérieures
-  - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26)– pour l’utilisation des services d’emplacement lorsque l’application est en cours d’utilisation
-  - [`NSLocationAlwaysAndWhenInUseUsageDescription`](https://developer.apple.com/documentation/bundleresources/information_property_list/nslocationalwaysandwheninuseusagedescription)– pour l’utilisation des services de localisation à tout moment
+  - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) – pour l’utilisation des services d’emplacement lorsque l’application est en cours d’utilisation
+  - [`NSLocationAlwaysAndWhenInUseUsageDescription`](https://developer.apple.com/documentation/bundleresources/information_property_list/nslocationalwaysandwheninuseusagedescription) – pour l’utilisation des services de localisation à tout moment
 - iOS 10 et versions antérieures
-  - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26)– pour l’utilisation des services d’emplacement lorsque l’application est en cours d’utilisation
-  - [`NSLocationAlwaysUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18)– pour l’utilisation des services de localisation à tout moment    
+  - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) – pour l’utilisation des services d’emplacement lorsque l’application est en cours d’utilisation
+  - [`NSLocationAlwaysUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18) – pour l’utilisation des services de localisation à tout moment    
 
 Pour prendre en charge iOS 11 et les versions antérieures, vous pouvez inclure les trois clés suivantes : `NSLocationWhenInUseUsageDescription` , `NSLocationAlwaysAndWhenInUseUsageDescription` et `NSLocationAlwaysUsageDescription` .
 
@@ -115,7 +115,7 @@ Une fois que vous avez obtenu une clé API, elle doit être ajoutée dans l' `<a
 Cela incorpore la clé API dans le manifeste. Si vous n’avez pas de clé API valide [`Map`](xref:Xamarin.Forms.Maps.Map) , le contrôle affichera une grille vide.
 
 > [!NOTE]
-> `com.google.android.geo.API_KEY`est le nom de métadonnées recommandé pour la clé API. À des fins de compatibilité descendante, le `com.google.android.maps.v2.API_KEY` nom des métadonnées peut être utilisé, mais autorise uniquement l’authentification à l’API de cartes Android v2.
+> `com.google.android.geo.API_KEY` est le nom de métadonnées recommandé pour la clé API. À des fins de compatibilité descendante, le `com.google.android.maps.v2.API_KEY` nom des métadonnées peut être utilisé, mais autorise uniquement l’authentification à l’API de cartes Android v2.
 
 Pour que votre APK accède à Google Maps, vous devez inclure les empreintes de l’algorithme SHA-1 et les noms des packages pour chaque magasin de clés (Debug et Release) que vous utilisez pour signer vos APK. Par exemple, si vous utilisez un ordinateur pour le débogage et un autre pour générer le APK de mise en production, vous devez inclure l’empreinte de certificat SHA-1 à partir du magasin de clés de débogage du premier ordinateur et l’empreinte de certificat SHA-1 du magasin de clés de version du deuxième ordinateur. N’oubliez pas également de modifier les informations d’identification de la clé si le **nom du package** de l’application est modifié. Consultez [obtention d’une clé API Google Maps](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md).
 
@@ -271,7 +271,7 @@ Ce code passe l’assembly dans lequel la `Xamarin.Forms.Maps.UWP.MapRenderer` c
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Exemple Maps](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+- [Exemple Maps](/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 - [Xamarin.Forms. Mappe les broches](~/xamarin-forms/user-interface/map/pins.md).
 - [API Cartes](xref:Xamarin.Forms.Maps)
 - [Convertisseur personnalisé de carte](~/xamarin-forms/app-fundamentals/custom-renderer/map-pin.md)

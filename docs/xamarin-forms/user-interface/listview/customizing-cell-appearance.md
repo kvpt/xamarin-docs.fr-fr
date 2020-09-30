@@ -10,12 +10,12 @@ ms.date: 09/12/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 05a001d3b49f38b2cb5306d8a19a08b4f8392425
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: d3deb5631bd37e4081ebaa591a52adb09d9db274
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86935562"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91560297"
 ---
 # <a name="customizing-listview-cell-appearance"></a>Personnalisation de l’apparence des cellules ListView
 
@@ -24,18 +24,18 @@ ms.locfileid: "86935562"
 La Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) classe est utilisée pour présenter des listes de défilement, qui peuvent être personnalisées par le biais de l’utilisation d' `ViewCell` éléments. Un `ViewCell` élément peut afficher du texte et des images, indiquer un État vrai/faux et recevoir une entrée d’utilisateur.
 
 ## <a name="built-in-cells"></a>Cellules intégrées
-Xamarin.Formsest fourni avec des cellules intégrées qui fonctionnent pour de nombreuses applications :
+Xamarin.Forms est fourni avec des cellules intégrées qui fonctionnent pour de nombreuses applications :
 
-- [`TextCell`](#textcell)les contrôles sont utilisés pour afficher du texte avec une deuxième ligne facultative pour le texte de détail.
-- [`ImageCell`](#imagecell)les contrôles sont similaires à `TextCell` s, mais incluent une image à gauche du texte.
-- `SwitchCell`les contrôles sont utilisés pour présenter et capturer les États activé/désactivé ou vrai/faux.
-- `EntryCell`les contrôles sont utilisés pour présenter des données texte que l’utilisateur peut modifier.
+- [`TextCell`](#textcell) les contrôles sont utilisés pour afficher du texte avec une deuxième ligne facultative pour le texte de détail.
+- [`ImageCell`](#imagecell) les contrôles sont similaires à `TextCell` s, mais incluent une image à gauche du texte.
+- `SwitchCell` les contrôles sont utilisés pour présenter et capturer les États activé/désactivé ou vrai/faux.
+- `EntryCell` les contrôles sont utilisés pour présenter des données texte que l’utilisateur peut modifier.
 
 Les [`SwitchCell`](~/xamarin-forms/user-interface/tableview.md#switchcell) [`EntryCell`](~/xamarin-forms/user-interface/tableview.md#entrycell) contrôles et sont plus couramment utilisés dans le contexte d’un [`TableView`](~/xamarin-forms/user-interface/tableview.md) .
 
 ### <a name="textcell"></a>TextCell
 
-[`TextCell`](xref:Xamarin.Forms.TextCell)est une cellule permettant d’afficher du texte, éventuellement avec une deuxième ligne comme texte de détail. La capture d’écran suivante montre `TextCell` des éléments sur iOS et Android :
+[`TextCell`](xref:Xamarin.Forms.TextCell) est une cellule permettant d’afficher du texte, éventuellement avec une deuxième ligne comme texte de détail. La capture d’écran suivante montre `TextCell` des éléments sur iOS et Android :
 
 ![Exemple de TextCell par défaut](customizing-cell-appearance-images/text-cell-default.png)
 
@@ -52,11 +52,11 @@ La capture d’écran suivante montre les `TextCell` éléments avec des propri�
 
 ### <a name="imagecell"></a>ImageCell
 
-[`ImageCell`](xref:Xamarin.Forms.ImageCell), comme `TextCell` , peut être utilisé pour afficher du texte et des détails secondaires, et offre de bonnes performances en utilisant les contrôles natifs de chaque plateforme. `ImageCell`diffère de `TextCell` en ce qu’il affiche une image à gauche du texte.
+[`ImageCell`](xref:Xamarin.Forms.ImageCell), comme `TextCell` , peut être utilisé pour afficher du texte et des détails secondaires, et offre de bonnes performances en utilisant les contrôles natifs de chaque plateforme. `ImageCell` diffère de `TextCell` en ce qu’il affiche une image à gauche du texte.
 
 La capture d’écran suivante montre `ImageCell` des éléments sur iOS et Android : ![« exemple ImageCell par défaut »](customizing-cell-appearance-images/image-cell-default.png "Exemple de ImageCell par défaut")
 
-`ImageCell`est utile lorsque vous devez afficher une liste de données avec un aspect visuel, par exemple une liste de contacts ou de films. `ImageCell`les s sont personnalisables, ce qui vous permet de définir les éléments suivants :
+`ImageCell` est utile lorsque vous devez afficher une liste de données avec un aspect visuel, par exemple une liste de contacts ou de films. `ImageCell`les s sont personnalisables, ce qui vous permet de définir les éléments suivants :
 
 - `Text`&ndash;texte affiché sur la première ligne, en grande police
 - `Detail`&ndash;texte affiché sous la première ligne, dans une police plus petite
@@ -71,7 +71,7 @@ Les cellules personnalisées vous permettent de créer des dispositions de cellu
 
 Toutes les cellules personnalisées doivent dériver de [`ViewCell`](xref:Xamarin.Forms.ViewCell) , la même classe de base que tous les types de cellules intégrés utilisent.
 
-Xamarin.Formsoffre un [comportement de mise en cache](~/xamarin-forms/user-interface/listview/performance.md#caching-strategy) sur le `ListView` contrôle, ce qui peut améliorer les performances de défilement pour certains types de cellules personnalisées.
+Xamarin.Forms offre un [comportement de mise en cache](~/xamarin-forms/user-interface/listview/performance.md#caching-strategy) sur le `ListView` contrôle, ce qui peut améliorer les performances de défilement pour certains types de cellules personnalisées.
 
 La capture d’écran suivante montre un exemple de cellule personnalisée :
 
@@ -112,7 +112,7 @@ x:Class="demoListView.ImageCellPage">
 Le code XAML fonctionne comme suit :
 
 - La cellule personnalisée est imbriquée dans un `DataTemplate` , qui est à l’intérieur de `ListView.ItemTemplate` . Il s’agit du même processus que l’utilisation d’une cellule intégrée.
-- `ViewCell`est le type de la cellule personnalisée. L’enfant de l' `DataTemplate` élément doit être de la classe, ou dériver de celle-ci `ViewCell` .
+- `ViewCell` est le type de la cellule personnalisée. L’enfant de l' `DataTemplate` élément doit être de la classe, ou dériver de celle-ci `ViewCell` .
 - Dans `ViewCell` , la disposition peut être gérée par n’importe quelle Xamarin.Forms disposition. Dans cet exemple, la disposition est gérée par un `StackLayout` , ce qui permet de personnaliser la couleur d’arrière-plan.
 
 > [!NOTE]
@@ -258,6 +258,6 @@ Sur iOS et Android, si le [`ListView`](xref:Xamarin.Forms.ListView) est en recyc
 
 ## <a name="related-links"></a>Liens associés
 
-- [Cellules intégrées (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-builtincells)
-- [Cellules personnalisées (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-customcells)
-- [Contexte de liaison modifié (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-bindingcontextchanged)
+- [Cellules intégrées (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-listview-builtincells)
+- [Cellules personnalisées (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-listview-customcells)
+- [Contexte de liaison modifié (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-listview-bindingcontextchanged)

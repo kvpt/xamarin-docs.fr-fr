@@ -10,12 +10,12 @@ ms.date: 09/25/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 287b116d9ba2cb84e4e196fff080b8212e4eca3b
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: d665a80d6f1e0319fc9dc8696db379cf781ee833
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938409"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91560115"
 ---
 # <a name="listview-interactivity"></a>Interactivité de ListView
 
@@ -27,13 +27,13 @@ La Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) classe prend en charg
 
 Le [`ListView`](xref:Xamarin.Forms.ListView) mode de sélection est contrôlé en affectant [`ListView.SelectionMode`](xref:Xamarin.Forms.ListView.SelectionMode) à la propriété une valeur de l' [`ListViewSelectionMode`](xref:Xamarin.Forms.ListViewSelectionMode) énumération :
 
-- [`Single`](xref:Xamarin.Forms.ListViewSelectionMode.Single)indique qu’un seul élément peut être sélectionné, avec l’élément sélectionné mis en surbrillance. Il s’agit de la valeur par défaut.
-- [`None`](xref:Xamarin.Forms.ListViewSelectionMode.None)indique que les éléments ne peuvent pas être sélectionnés.
+- [`Single`](xref:Xamarin.Forms.ListViewSelectionMode.Single) indique qu’un seul élément peut être sélectionné, avec l’élément sélectionné mis en surbrillance. Valeur par défaut.
+- [`None`](xref:Xamarin.Forms.ListViewSelectionMode.None) indique que les éléments ne peuvent pas être sélectionnés.
 
 Lorsqu’un utilisateur clique sur un élément, deux événements sont déclenchés :
 
-- [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected)se déclenche lorsqu’un nouvel élément est sélectionné.
-- [`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped)se déclenche lorsqu’un élément est frappé.
+- [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected) se déclenche lorsqu’un nouvel élément est sélectionné.
+- [`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped) se déclenche lorsqu’un élément est frappé.
 
 Le double-clic sur le même élément déclenche deux [`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped) événements, mais ne déclenche qu’un seul [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected) événement.
 
@@ -76,7 +76,7 @@ Par défaut, un n' `MenuItem` a aucun moyen de savoir à quelle cellule il appar
 
 ### <a name="xaml"></a>XAML
 
-`MenuItem`les éléments peuvent être créés dans une collection XAML. Le code XAML ci-dessous illustre une cellule personnalisée avec deux actions de contexte implémentées :
+`MenuItem` les éléments peuvent être créés dans une collection XAML. Le code XAML ci-dessous illustre une cellule personnalisée avec deux actions de contexte implémentées :
 
 ```xaml
 <ListView x:Name="ContextDemoList">
@@ -187,14 +187,14 @@ Les captures d’écran suivantes montrent l’extraction à actualiser une fois
 
 ![Extraction de ListView à actualiser terminée](interactivity-images/refresh-in-progress.png)
 
-[`ListView`](xref:Xamarin.Forms.ListView)déclenche l' [`Refreshing`](xref:Xamarin.Forms.ListView.Refreshing) événement pour lancer l’actualisation, et la [`IsRefreshing`](xref:Xamarin.Forms.ListView.IsRefreshing) propriété aura la valeur `true` . Quel que soit le code requis pour actualiser le contenu du `ListView` , doit être exécuté par le gestionnaire d’événements pour l' `Refreshing` événement ou par la méthode exécutée par le [`RefreshCommand`](xref:Xamarin.Forms.ListView.RefreshCommand) . Une fois le `ListView` est actualisé, la `IsRefreshing` propriété doit avoir la valeur `false` , ou la [`EndRefresh`](xref:Xamarin.Forms.ListView.EndRefresh) méthode doit être appelée pour indiquer que l’actualisation est terminée.
+[`ListView`](xref:Xamarin.Forms.ListView) déclenche l' [`Refreshing`](xref:Xamarin.Forms.ListView.Refreshing) événement pour lancer l’actualisation, et la [`IsRefreshing`](xref:Xamarin.Forms.ListView.IsRefreshing) propriété aura la valeur `true` . Quel que soit le code requis pour actualiser le contenu du `ListView` , doit être exécuté par le gestionnaire d’événements pour l' `Refreshing` événement ou par la méthode exécutée par le [`RefreshCommand`](xref:Xamarin.Forms.ListView.RefreshCommand) . Une fois le `ListView` est actualisé, la `IsRefreshing` propriété doit avoir la valeur `false` , ou la [`EndRefresh`](xref:Xamarin.Forms.ListView.EndRefresh) méthode doit être appelée pour indiquer que l’actualisation est terminée.
 
 > [!NOTE]
 > Lors de la définition d’un [`RefreshCommand`](xref:Xamarin.Forms.ListView.RefreshCommand) , la `CanExecute` méthode de la commande peut être spécifiée pour activer ou désactiver la commande.
 
 ## <a name="detect-scrolling"></a>Détecter le défilement
 
-[`ListView`](xref:Xamarin.Forms.ListView)définit un `Scrolled` événement qui est déclenché pour indiquer que le défilement s’est produit. L’exemple de code XAML suivant montre un `ListView` qui définit un gestionnaire d’événements pour l' `Scrolled` événement :
+[`ListView`](xref:Xamarin.Forms.ListView) définit un `Scrolled` événement qui est déclenché pour indiquer que le défilement s’est produit. L’exemple de code XAML suivant montre un `ListView` qui définit un gestionnaire d’événements pour l' `Scrolled` événement :
 
 ```xaml
 <ListView Scrolled="OnListViewScrolled">
@@ -223,4 +223,4 @@ Le `OnListViewScrolled` Gestionnaire d’événements génère les valeurs de l'
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Interactivité de ListView (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-interactivity)
+- [Interactivité de ListView (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-listview-interactivity)

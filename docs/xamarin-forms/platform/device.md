@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsClasse d’appareil
+title: Xamarin.Forms Classe d’appareil
 description: Cet article explique comment utiliser la Xamarin.Forms classe d’appareil pour contrôler précisément les fonctionnalités et les dispositions sur la base de chaque plateforme.
 ms.prod: xamarin
 ms.assetid: 2F304AEC-8612-4833-81E5-B2F3F469B2DF
@@ -10,14 +10,14 @@ ms.date: 07/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 38452ac477404d92468b7c9c4d2c88ce60104b50
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 8eff115e894f77aeacff0f6c072bfd338fa19844
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918023"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91560505"
 ---
-# <a name="no-locxamarinforms-device-class"></a>Xamarin.FormsClasse d’appareil
+# <a name="no-locxamarinforms-device-class"></a>Xamarin.Forms Classe d’appareil
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithdevice)
 
@@ -29,7 +29,7 @@ En plus des méthodes et des propriétés pour cibler le code à des tailles et 
 
 Avant le Xamarin.Forms , la plateforme sur laquelle l’application était exécutée pouvait être obtenue en examinant la [`Device.OS`](xref:Xamarin.Forms.Device.OS) propriété et en la comparant aux [`TargetPlatform.iOS`](xref:Xamarin.Forms.TargetPlatform.iOS) valeurs d' [`TargetPlatform.Android`](xref:Xamarin.Forms.TargetPlatform.Android) [`TargetPlatform.WinPhone`](xref:Xamarin.Forms.TargetPlatform.WinPhone) énumération,, et [`TargetPlatform.Windows`](xref:Xamarin.Forms.TargetPlatform.Windows) . De même, l’une des [`Device.OnPlatform`](xref:Xamarin.Forms.Device.OnPlatform(System.Action,System.Action,System.Action,System.Action)) surcharges peut être utilisée pour fournir des valeurs spécifiques à la plateforme à un contrôle.
 
-Toutefois, depuis Xamarin.Forms 2.3.4, ces API sont dépréciées et remplacées. La [`Device`](xref:Xamarin.Forms.Device) classe contient maintenant des constantes de chaîne publiques qui identifient les plateformes – [`Device.iOS`](xref:Xamarin.Forms.Device.iOS) , [`Device.Android`](xref:Xamarin.Forms.Device.Android) , `Device.WinPhone` (déconseillées), `Device.WinRT` (déconseillées), [`Device.UWP`](xref:Xamarin.Forms.Device.UWP) et [`Device.macOS`](xref:Xamarin.Forms.Device.macOS) . De même, les [`Device.OnPlatform`](xref:Xamarin.Forms.Device.OnPlatform(System.Action,System.Action,System.Action,System.Action)) surcharges ont été remplacées par [`OnPlatform`](xref:Xamarin.Forms.OnPlatform`1) les [`On`](xref:Xamarin.Forms.On) API et.
+Toutefois, depuis Xamarin.Forms 2.3.4, ces API sont dépréciées et remplacées. La [`Device`](xref:Xamarin.Forms.Device) classe contient maintenant des constantes de chaîne publiques qui identifient les plateformes – [`Device.iOS`](xref:Xamarin.Forms.Device.iOS) , [`Device.Android`](xref:Xamarin.Forms.Device.Android) , `Device.WinPhone` (déconseillées), `Device.WinRT` (déconseillées), [`Device.UWP`](xref:Xamarin.Forms.Device.UWP) et [`Device.macOS`](xref:Xamarin.Forms.Device.macOS) . De même, les  [`Device.OnPlatform`](xref:Xamarin.Forms.Device.OnPlatform(System.Action,System.Action,System.Action,System.Action)) surcharges ont été remplacées par [`OnPlatform`](xref:Xamarin.Forms.OnPlatform`1) les [`On`](xref:Xamarin.Forms.On) API et.
 
 En C#, les valeurs spécifiques à la plateforme peuvent être fournies en créant une `switch` instruction sur la [`Device.RuntimePlatform`](xref:Xamarin.Forms.Device.RuntimePlatform) propriété, puis en fournissant `case` des instructions pour les plateformes requises :
 
@@ -147,7 +147,7 @@ La [ `Styles` propriété](~/xamarin-forms/user-interface/styles/index.md) conti
 
 ## <a name="devicegetnamedsize"></a>Appareil. GetNamedSize
 
-`GetNamedSize`peut être utilisé lors de la définition [`FontSize`](~/xamarin-forms/user-interface/text/fonts.md) dans du code C# :
+`GetNamedSize` peut être utilisé lors de la définition [`FontSize`](~/xamarin-forms/user-interface/text/fonts.md) dans du code C# :
 
 ```csharp
 myLabel.FontSize = Device.GetNamedSize (NamedSize.Small, myLabel);
@@ -160,7 +160,7 @@ someLabel.FontSize = Device.OnPlatform (
 
 ## <a name="devicegetnamedcolor"></a>Appareil. GetNamedColor
 
-Xamarin.Forms4,6 introduit la prise en charge des couleurs nommées. Une couleur nommée est une couleur qui a une valeur différente selon le mode système (par exemple, clair ou sombre) qui est actif sur l’appareil. Sur Android, les couleurs nommées sont accessibles via la classe [R. Color](https://developer.android.com/reference/android/R.color#constants_2) . Sur iOS, les couleurs nommées sont appelées [couleurs système](https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/color/#system-colors). Sur la plateforme Windows universelle, les couleurs nommées sont appelées [ressources de thème XAML](/windows/uwp/design/controls-and-patterns/xaml-theme-resources).
+Xamarin.Forms 4,6 introduit la prise en charge des couleurs nommées. Une couleur nommée est une couleur qui a une valeur différente selon le mode système (par exemple, clair ou sombre) qui est actif sur l’appareil. Sur Android, les couleurs nommées sont accessibles via la classe [R. Color](https://developer.android.com/reference/android/R.color#constants_2) . Sur iOS, les couleurs nommées sont appelées [couleurs système](https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/color/#system-colors). Sur la plateforme Windows universelle, les couleurs nommées sont appelées [ressources de thème XAML](/windows/uwp/design/controls-and-patterns/xaml-theme-resources).
 
 La `GetNamedColor` méthode peut être utilisée pour récupérer des couleurs nommées sur Android, iOS et UWP. La méthode prend un `string` argument et retourne [`Color`](xref:Xamarin.Forms.Color) :
 
@@ -169,7 +169,7 @@ La `GetNamedColor` méthode peut être utilisée pour récupérer des couleurs n
 Color color = Device.GetNamedColor(NamedPlatformColor.HoloBlueBright);
 ```
 
-`Color.Default`est retourné lorsqu’un nom de couleur est introuvable ou lorsque `GetNamedColor` est appelé sur une plateforme non prise en charge.
+`Color.Default` est retourné lorsqu’un nom de couleur est introuvable ou lorsque `GetNamedColor` est appelé sur une plateforme non prise en charge.
 
 > [!NOTE]
 > Étant donné que la `GetNamedColor` méthode retourne un `Color` qui est spécifique à une plateforme, elle doit généralement être utilisée conjointement avec la [`Device.RuntimePlatform`](xref:Xamarin.Forms.Device.RuntimePlatform) propriété.
@@ -273,6 +273,6 @@ Device.BeginInvokeOnMainThread (() =>
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Exemple d’appareil](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithdevice)
-- [Styles, exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
+- [Exemple d’appareil](/samples/xamarin/xamarin-forms-samples/workingwithdevice)
+- [Styles, exemple](/samples/xamarin/xamarin-forms-samples/workingwithstyles)
 - [API de l'appareil](xref:Xamarin.Forms.Device)

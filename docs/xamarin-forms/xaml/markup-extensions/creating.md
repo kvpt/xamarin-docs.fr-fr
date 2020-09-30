@@ -10,26 +10,26 @@ ms.date: 01/05/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 878ebcaa5249261afac2776a9e7cf47c0c047135
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 43c8cd0dd7b50e3a5bfbd15d9858bd4502fedacc
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84130531"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91558776"
 ---
 # <a name="creating-xaml-markup-extensions"></a>Création d’extensions de balisage XAML
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
 
 Au niveau de la programmation, une extension de balisage XAML est une classe qui implémente l' [`IMarkupExtension`](xref:Xamarin.Forms.Xaml.IMarkupExtension) [`IMarkupExtension<T>`](xref:Xamarin.Forms.Xaml.IMarkupExtension`1) interface ou. Vous pouvez explorer le code source des extensions de balisage standard décrites ci-dessous dans le [répertoire **MarkupExtensions** ](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Xaml/MarkupExtensions) du Xamarin.Forms référentiel github.
 
 Il est également possible de définir vos propres extensions de balisage XAML personnalisées en dérivant de `IMarkupExtension` ou de `IMarkupExtension<T>` . Utilisez le formulaire générique si l’extension de balisage obtient une valeur d’un type particulier. C’est le cas avec plusieurs extensions de Xamarin.Forms balisage :
 
-- `TypeExtension`dérive de`IMarkupExtension<Type>`
-- `ArrayExtension`dérive de`IMarkupExtension<Array>`
-- `DynamicResourceExtension`dérive de`IMarkupExtension<DynamicResource>`
-- `BindingExtension`dérive de`IMarkupExtension<BindingBase>`
-- `ConstraintExpression`dérive de`IMarkupExtension<Constraint>`
+- `TypeExtension` dérive de `IMarkupExtension<Type>`
+- `ArrayExtension` dérive de `IMarkupExtension<Array>`
+- `DynamicResourceExtension` dérive de `IMarkupExtension<DynamicResource>`
+- `BindingExtension` dérive de `IMarkupExtension<BindingBase>`
+- `ConstraintExpression` dérive de `IMarkupExtension<Constraint>`
 
 Les deux `IMarkupExtension` interfaces définissent chacune une seule méthode, nommée `ProvideValue` :
 
@@ -156,7 +156,7 @@ class ImageResourceExtension : IMarkupExtension<ImageSource>
 }
 ```
 
-`ImageResourceExtension`est utile lorsqu’un fichier XAML doit accéder à un fichier image stocké en tant que ressource incorporée dans le projet de bibliothèque de .NET Standard. Elle utilise la `Source` propriété pour appeler la `ImageSource.FromResource` méthode statique. Cette méthode requiert un nom de ressource complet, qui se compose du nom de l’assembly, du nom du dossier et du nom de fichier séparés par des points. Le deuxième argument de la `ImageSource.FromResource` méthode fournit le nom de l’assembly et n’est requis que pour les versions release sur UWP. Quoi qu’il en soit, `ImageSource.FromResource` doit être appelé à partir de l’assembly qui contient la bitmap, ce qui signifie que cette extension de ressource XAML ne peut pas faire partie d’une bibliothèque externe, sauf si les images se trouvent également dans cette bibliothèque. (Pour plus d’informations sur l’accès aux bitmaps stockées en tant que ressources incorporées, consultez l’article [**images incorporées**](~/xamarin-forms/user-interface/images.md#embedded-images) .)
+`ImageResourceExtension` est utile lorsqu’un fichier XAML doit accéder à un fichier image stocké en tant que ressource incorporée dans le projet de bibliothèque de .NET Standard. Elle utilise la `Source` propriété pour appeler la `ImageSource.FromResource` méthode statique. Cette méthode requiert un nom de ressource complet, qui se compose du nom de l’assembly, du nom du dossier et du nom de fichier séparés par des points. Le deuxième argument de la `ImageSource.FromResource` méthode fournit le nom de l’assembly et n’est requis que pour les versions release sur UWP. Quoi qu’il en soit, `ImageSource.FromResource` doit être appelé à partir de l’assembly qui contient la bitmap, ce qui signifie que cette extension de ressource XAML ne peut pas faire partie d’une bibliothèque externe, sauf si les images se trouvent également dans cette bibliothèque. (Pour plus d’informations sur l’accès aux bitmaps stockées en tant que ressources incorporées, consultez l’article [**images incorporées**](~/xamarin-forms/user-interface/images.md#embedded-images) .)
 
 Bien que `ImageResourceExtension` requiert la définition de la `Source` propriété, la `Source` propriété est indiquée dans un attribut en tant que propriété de contenu de la classe. Cela signifie que la `Source=` partie de l’expression entre accolades peut être omise. Dans la page de démonstration de la **ressource image** , les `Image` éléments extraient deux images en utilisant le nom du dossier et le nom de fichier séparés par des points :
 
@@ -204,7 +204,7 @@ L' `GetService` appel avec un argument de `typeof(IProvideValueTarget)` retourne
 
 Les extensions de balisage XAML jouent un rôle essentiel dans XAML en étendant la possibilité de définir des attributs à partir de diverses sources. En outre, si les extensions de balisage XAML existantes ne fournissent pas exactement ce dont vous avez besoin, vous pouvez également écrire vos propres extensions.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [Extensions de balisage (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
+- [Extensions de balisage (exemple)](/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
 - [Chapitre sur les extensions de balisage XAML du Xamarin.Forms livre](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)

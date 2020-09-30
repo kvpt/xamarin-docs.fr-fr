@@ -10,12 +10,12 @@ ms.date: 06/17/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b23aca29fa77b58183a1f09053bc2bb9ba66bb49
-ms.sourcegitcommit: 808ff109928a1eea16e17e23ea81f8c903a239e8
+ms.openlocfilehash: ee834bf7bae945536facb576ae26b9d13f5b7bcd
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88181509"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91558945"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>Consommation des extensions de balisage XAML
 
@@ -23,24 +23,24 @@ ms.locfileid: "88181509"
 
 Les extensions de balisage XAML aident à améliorer la puissance et la flexibilité du XAML en permettant de définir des attributs d’élément à partir de diverses sources. Plusieurs extensions de balisage XAML font partie de la spécification XAML 2009. Ils s’affichent dans les fichiers XAML avec le `x` préfixe d’espace de noms personnalisé, et sont communément désignés par ce préfixe. Cet article aborde les extensions de balisage suivantes :
 
-- [`x:Static`](#xstatic-markup-extension): référencez des propriétés statiques, des champs ou des membres d’énumération.
-- [`x:Reference`](#xreference-markup-extension): référence des éléments nommés sur la page.
-- [`x:Type`](#xtype-markup-extension): définissez un attribut sur un `System.Type` objet.
-- [`x:Array`](#xarray-markup-extension): construisez un tableau d’objets d’un type particulier.
-- [`x:Null`](#xnull-markup-extension): affectez une valeur à un attribut `null` .
-- [`OnPlatform`](#onplatform-markup-extension): personnaliser l’apparence de l’interface utilisateur sur la base de chaque plateforme.
-- [`OnIdiom`](#onidiom-markup-extension): personnalisez l’apparence de l’interface utilisateur en fonction de l’idiome du périphérique sur lequel l’application s’exécute.
-- [`DataTemplate`](#datatemplate-markup-extension): convertit un type en [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) .
-- [`FontImage`](#fontimage-markup-extension): affiche une icône de police dans n’importe quelle vue pouvant afficher un `ImageSource` .
-- [`AppThemeBinding`](#appthemebinding-markup-extension): utilise une ressource basée sur le thème système actuel.
+- [`x:Static`](#xstatic-markup-extension) : référencez des propriétés statiques, des champs ou des membres d’énumération.
+- [`x:Reference`](#xreference-markup-extension) : référence des éléments nommés sur la page.
+- [`x:Type`](#xtype-markup-extension) : définissez un attribut sur un `System.Type` objet.
+- [`x:Array`](#xarray-markup-extension) : construisez un tableau d’objets d’un type particulier.
+- [`x:Null`](#xnull-markup-extension) : affectez une valeur à un attribut `null` .
+- [`OnPlatform`](#onplatform-markup-extension) : personnaliser l’apparence de l’interface utilisateur sur la base de chaque plateforme.
+- [`OnIdiom`](#onidiom-markup-extension) : personnalisez l’apparence de l’interface utilisateur en fonction de l’idiome du périphérique sur lequel l’application s’exécute.
+- [`DataTemplate`](#datatemplate-markup-extension) : convertit un type en [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) .
+- [`FontImage`](#fontimage-markup-extension) : affiche une icône de police dans n’importe quelle vue pouvant afficher un `ImageSource` .
+- [`AppThemeBinding`](#appthemebinding-markup-extension) : utilise une ressource basée sur le thème système actuel.
 
 Des extensions de balisage XAML supplémentaires ont été prises en charge par d’autres implémentations XAML, et sont également prises en charge par Xamarin.Forms . Celles-ci sont décrites plus en détail dans d’autres articles :
 
-- `StaticResource`-référencez des objets à partir d’un dictionnaire de ressources, comme décrit dans l’article [**dictionnaires de ressources**](~/xamarin-forms/xaml/resource-dictionaries.md).
-- `DynamicResource`-répondre aux modifications apportées aux objets dans un dictionnaire de ressources, comme décrit dans l’article [**styles dynamiques**](~/xamarin-forms/user-interface/styles/dynamic.md).
-- `Binding`: établissez un lien entre les propriétés de deux objets, comme décrit dans l’article [**liaison de données**](~/xamarin-forms/app-fundamentals/data-binding/index.md).
+- `StaticResource` -référencez des objets à partir d’un dictionnaire de ressources, comme décrit dans l’article  [**dictionnaires de ressources**](~/xamarin-forms/xaml/resource-dictionaries.md).
+- `DynamicResource` -répondre aux modifications apportées aux objets dans un dictionnaire de ressources, comme décrit dans l’article [**styles dynamiques**](~/xamarin-forms/user-interface/styles/dynamic.md).
+- `Binding` : établissez un lien entre les propriétés de deux objets, comme décrit dans l’article [**liaison de données**](~/xamarin-forms/app-fundamentals/data-binding/index.md).
 - `TemplateBinding`-effectue une liaison de données à partir d’un modèle de contrôle, comme indiqué dans l’article [** Xamarin.Forms modèles de contrôle**](~/xamarin-forms/app-fundamentals/templates/control-template.md).
-- `RelativeSource`-définit la source de liaison par rapport à la position de la cible de liaison, comme indiqué dans l’article [liaisons relatives](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md).
+- `RelativeSource` -définit la source de liaison par rapport à la position de la cible de liaison, comme indiqué dans l’article [liaisons relatives](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md).
 
 La [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) disposition utilise l’extension de balisage personnalisée [`ConstraintExpression`](xref:Xamarin.Forms.ConstraintExpression) . Cette extension de balisage est décrite dans l’article [**RelativeLayout**](~/xamarin-forms/user-interface/layouts/relativelayout.md).
 
@@ -48,7 +48,7 @@ La [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) disposition utilise l�
 
 L' `x:Static` extension de balisage est prise en charge par la [`StaticExtension`](xref:Xamarin.Forms.Xaml.StaticExtension) classe. La classe a une propriété unique nommée [`Member`](xref:Xamarin.Forms.Xaml.StaticExtension.Member) de type `string` que vous définissez sur le nom d’une constante publique, d’une propriété statique, d’un champ statique ou d’un membre d’énumération.
 
-Une façon courante d’utiliser `x:Static` est de commencer par définir une classe avec des constantes ou des variables statiques, telles que cette petite `AppConstants` classe dans le programme [**MarkupExtensions**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions) :
+Une façon courante d’utiliser `x:Static` est de commencer par définir une classe avec des constantes ou des variables statiques, telles que cette petite `AppConstants` classe dans le programme [**MarkupExtensions**](/samples/xamarin/xamarin-forms-samples/xaml-markupextensions) :
 
 ```csharp
 static class AppConstants
@@ -192,7 +192,7 @@ Les deux `x:Reference` expressions utilisent la version abrégée du `ReferenceE
 
 ## <a name="xtype-markup-extension"></a>x:Type (extension de balisage)
 
-L' `x:Type` extension de balisage est l’équivalent XAML du [`typeof`](/dotnet/csharp/language-reference/keywords/typeof/) mot clé C#. Elle est prise en charge par la [`TypeExtension`](xref:Xamarin.Forms.Xaml.TypeExtension) classe, qui définit une propriété nommée [`TypeName`](xref:Xamarin.Forms.Xaml.TypeExtension.TypeName) de type `string` qui a pour valeur un nom de classe ou de structure. L' `x:Type` extension de balisage retourne l' [`System.Type`](xref:System.Type) objet de cette classe ou structure. `TypeName`est la propriété de contenu de `TypeExtension` , ce qui `TypeName=` n’est pas obligatoire lorsque `x:Type` s’affiche entre accolades.
+L' `x:Type` extension de balisage est l’équivalent XAML du [`typeof`](/dotnet/csharp/language-reference/keywords/typeof/) mot clé C#. Elle est prise en charge par la [`TypeExtension`](xref:Xamarin.Forms.Xaml.TypeExtension) classe, qui définit une propriété nommée [`TypeName`](xref:Xamarin.Forms.Xaml.TypeExtension.TypeName) de type `string` qui a pour valeur un nom de classe ou de structure. L' `x:Type` extension de balisage retourne l' [`System.Type`](xref:System.Type) objet de cette classe ou structure. `TypeName` est la propriété de contenu de `TypeExtension` , ce qui `TypeName=` n’est pas obligatoire lorsque `x:Type` s’affiche entre accolades.
 
 Dans Xamarin.Forms , il existe plusieurs propriétés qui ont des arguments de type `Type` . Il peut s’agir, par exemple [`TargetType`](xref:Xamarin.Forms.Style.TargetType) , de la propriété de `Style` et de l’attribut [x :TypeArguments](~/xamarin-forms/xaml/passing-arguments.md#specifying-a-generic-type-argument) utilisé pour spécifier des arguments dans des classes génériques. Toutefois, l’analyseur XAML effectue l' `typeof` opération automatiquement et l' `x:Type` extension de balisage n’est pas utilisée dans ces cas.
 
@@ -330,8 +330,8 @@ La méthode qui est exécutée quand un `Button` est enfoncé crée une nouvelle
 
 L' `x:Array` extension de balisage vous permet de définir un tableau dans le balisage. Elle est prise en charge par la [`ArrayExtension`](xref:Xamarin.Forms.Xaml.ArrayExtension) classe, qui définit deux propriétés :
 
-- `Type`de type `Type` , qui indique le type des éléments dans le tableau.
-- `Items`de type `IList` , qui est une collection d’éléments eux-mêmes. Il s’agit de la propriété de contenu de `ArrayExtension` .
+- `Type` de type `Type` , qui indique le type des éléments dans le tableau.
+- `Items` de type `IList` , qui est une collection d’éléments eux-mêmes. Il s’agit de la propriété de contenu de `ArrayExtension` .
 
 L' `x:Array` extension de balisage elle-même n’apparaît jamais entre accolades. Au lieu de cela, `x:Array` les balises de début et de fin délimitent la liste des éléments. Affectez `Type` à la propriété une `x:Type` extension de balisage.
 
@@ -460,16 +460,16 @@ L’extension de balisage `OnPlatform` vous permet de personnaliser l’apparenc
 
 L' `OnPlatform` extension de balisage est prise en charge par la [`OnPlatformExtension`](xref:Xamarin.Forms.Xaml.OnPlatformExtension) classe, qui définit les propriétés suivantes :
 
-- `Default`de type `object` , que vous affectez à une valeur par défaut à appliquer aux propriétés qui représentent des plateformes.
-- `Android`de type `object` , que vous définissez sur une valeur à appliquer sur Android.
-- `GTK`de type `object` , que vous définissez sur une valeur à appliquer sur les plateformes GTK.
-- `iOS`de type `object` , que vous définissez sur une valeur à appliquer sur iOS.
-- `macOS`de type `object` , que vous définissez sur une valeur à appliquer sur MacOS.
-- `Tizen`de type `object` , que vous définissez sur une valeur à appliquer sur la plateforme Tizen.
-- `UWP`de type `object` , que vous définissez sur une valeur à appliquer sur le plateforme Windows universelle.
-- `WPF`de type `object` , que vous affectez à une valeur à appliquer sur la plateforme Windows Presentation Foundation.
-- `Converter`de type `IValueConverter` , qui peut être défini sur une `IValueConverter` implémentation.
-- `ConverterParameter`de type `object` , qui peut être défini sur une valeur à passer à l' `IValueConverter` implémentation.
+- `Default` de type `object` , que vous affectez à une valeur par défaut à appliquer aux propriétés qui représentent des plateformes.
+- `Android` de type `object` , que vous définissez sur une valeur à appliquer sur Android.
+- `GTK` de type `object` , que vous définissez sur une valeur à appliquer sur les plateformes GTK.
+- `iOS` de type `object` , que vous définissez sur une valeur à appliquer sur iOS.
+- `macOS` de type `object` , que vous définissez sur une valeur à appliquer sur MacOS.
+- `Tizen` de type `object` , que vous définissez sur une valeur à appliquer sur la plateforme Tizen.
+- `UWP` de type `object` , que vous définissez sur une valeur à appliquer sur le plateforme Windows universelle.
+- `WPF` de type `object` , que vous affectez à une valeur à appliquer sur la plateforme Windows Presentation Foundation.
+- `Converter` de type `IValueConverter` , qui peut être défini sur une `IValueConverter` implémentation.
+- `ConverterParameter` de type `object` , qui peut être défini sur une valeur à passer à l' `IValueConverter` implémentation.
 
 > [!NOTE]
 > L’analyseur XAML permet [`OnPlatformExtension`](xref:Xamarin.Forms.Xaml.OnPlatformExtension) à la classe d’être abrégée comme `OnPlatform` .
@@ -498,14 +498,14 @@ Voici le programme en cours d’exécution :
 
 L' `OnIdiom` extension de balisage vous permet de personnaliser l’apparence de l’interface utilisateur en fonction de l’idiome du périphérique sur lequel l’application s’exécute. Elle est prise en charge par la [`OnIdiomExtension`](xref:Xamarin.Forms.Xaml.OnIdiomExtension) classe, qui définit les propriétés suivantes :
 
-- `Default`de type `object` , que vous affectez à une valeur par défaut à appliquer aux propriétés qui représentent des idiomes de périphérique.
-- `Phone`de type `object` , que vous définissez sur une valeur à appliquer sur les téléphones.
-- `Tablet`de type `object` , que vous définissez sur une valeur à appliquer sur les tablettes.
-- `Desktop`de type `object` , que vous définissez sur une valeur à appliquer sur les plateformes de bureau.
-- `TV`de type `object` , que vous définissez sur une valeur à appliquer sur les plateformes TV.
-- `Watch`de type `object` , que vous définissez sur une valeur à appliquer sur les plateformes de surveillance.
-- `Converter`de type `IValueConverter` , qui peut être défini sur une `IValueConverter` implémentation.
-- `ConverterParameter`de type `object` , qui peut être défini sur une valeur à passer à l' `IValueConverter` implémentation.
+- `Default` de type `object` , que vous affectez à une valeur par défaut à appliquer aux propriétés qui représentent des idiomes de périphérique.
+- `Phone` de type `object` , que vous définissez sur une valeur à appliquer sur les téléphones.
+- `Tablet` de type `object` , que vous définissez sur une valeur à appliquer sur les tablettes.
+- `Desktop` de type `object` , que vous définissez sur une valeur à appliquer sur les plateformes de bureau.
+- `TV` de type `object` , que vous définissez sur une valeur à appliquer sur les plateformes TV.
+- `Watch` de type `object` , que vous définissez sur une valeur à appliquer sur les plateformes de surveillance.
+- `Converter` de type `IValueConverter` , qui peut être défini sur une `IValueConverter` implémentation.
+- `ConverterParameter` de type `object` , qui peut être défini sur une valeur à passer à l' `IValueConverter` implémentation.
 
 > [!NOTE]
 > L’analyseur XAML permet [`OnIdiomExtension`](xref:Xamarin.Forms.Xaml.OnIdiomExtension) à la classe d’être abrégée comme `OnIdiom` .
@@ -555,10 +555,10 @@ L' `FontImage` extension de balisage vous permet d’afficher une icône de poli
 
 L' `FontImage` extension de balisage est prise en charge par la `FontImageExtension` classe, qui définit les propriétés suivantes :
 
-- `FontFamily`de type `string` , la famille de polices à laquelle appartient l’icône de police.
-- `Glyph`de type `string` , la valeur de caractère Unicode de l’icône de police.
-- `Color`de type [`Color`](xref:Xamarin.Forms.Color) , la couleur à utiliser lors de l’affichage de l’icône de police.
-- `Size`de type `double` , la taille, en unités indépendantes du périphérique, de l’icône de police rendue. La valeur par défaut est 30. En outre, cette propriété peut être définie sur une taille de police nommée.
+- `FontFamily` de type `string` , la famille de polices à laquelle appartient l’icône de police.
+- `Glyph` de type `string` , la valeur de caractère Unicode de l’icône de police.
+- `Color` de type [`Color`](xref:Xamarin.Forms.Color) , la couleur à utiliser lors de l’affichage de l’icône de police.
+- `Size` de type `double` , la taille, en unités indépendantes du périphérique, de l’icône de police rendue. La valeur par défaut est 30. En outre, cette propriété peut être définie sur une taille de police nommée.
 
 > [!NOTE]
 > L’analyseur XAML permet `FontImageExtension` à la classe d’être abrégée comme `FontImage` .
@@ -636,10 +636,10 @@ Si vous avez eu besoin d’une extension de balisage XAML qui n’est pas dispon
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Extensions de balisage (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
+- [Extensions de balisage (exemple)](/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
 - [Chapitre sur les extensions de balisage XAML du Xamarin.Forms livre](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)
 - [Dictionnaires de ressources](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [Styles dynamiques](~/xamarin-forms/user-interface/styles/dynamic.md)
 - [Liaison de données](~/xamarin-forms/app-fundamentals/data-binding/index.md)
-- [Xamarin.FormsShell](~/xamarin-forms/app-fundamentals/shell/index.md)
+- [Xamarin.Forms Shell](~/xamarin-forms/app-fundamentals/shell/index.md)
 - [Répondre aux modifications de thème du système dans les Xamarin.Forms applications](~/xamarin-forms/user-interface/theming/system-theme-changes.md)

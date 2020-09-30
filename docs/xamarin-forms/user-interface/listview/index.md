@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsListe
+title: Xamarin.Forms Liste
 description: Ce guide présente le Xamarin.Forms ListView, qui peut être utilisé pour présenter des données dans des listes interactives.
 ms.prod: xamarin
 ms.assetid: FEFDF7E0-720F-4BD1-863F-4477226AA695
@@ -10,21 +10,21 @@ ms.date: 09/04/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a1ff8dd5c8a8a4051cea8ce4b288c42bdbaa8d31
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: fa3769d2533a5a6b482c92b832d54506e4954250
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139904"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91560141"
 ---
-# <a name="xamarinforms-listview"></a>Xamarin.FormsListe
+# <a name="no-locxamarinforms-listview"></a>Xamarin.Forms Liste
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistview)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistview)
 
-[`ListView`](xref:Xamarin.Forms.ListView)est une vue pour la présentation de listes de données, en particulier les longues listes nécessitant un défilement.
+[`ListView`](xref:Xamarin.Forms.ListView) est une vue pour la présentation de listes de données, en particulier les longues listes nécessitant un défilement.
 
 > [!IMPORTANT]
-> [`CollectionView`](xref:Xamarin.Forms.CollectionView)est une vue pour la présentation de listes de données à l’aide de différentes spécifications de disposition. Il vise à fournir une alternative plus flexible et plus performante à [`ListView`](xref:Xamarin.Forms.ListView) . Pour plus d’informations, consultez [ Xamarin.Forms CollectionView](~/xamarin-forms/user-interface/collectionview/index.md).
+> [`CollectionView`](xref:Xamarin.Forms.CollectionView) est une vue pour la présentation de listes de données à l’aide de différentes spécifications de disposition. Il vise à fournir une alternative plus flexible et plus performante à [`ListView`](xref:Xamarin.Forms.ListView) . Pour plus d’informations, consultez [ Xamarin.Forms CollectionView](~/xamarin-forms/user-interface/collectionview/index.md).
 
 ## <a name="use-cases"></a>Cas d'utilisation
 
@@ -83,10 +83,10 @@ Pour en savoir plus sur les fonctionnalités d’interactivité de `ListView` , 
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Utilisation de ListView (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistview)
-- [Liaison bidirectionnelle (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-switchentrytwobinding)
-- [Cellules intégrées (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-builtincells)
-- [Cellules personnalisées (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-customcells)
-- [Regroupement (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-grouping)
-- [Vue du convertisseur personnalisé (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistviewnative/)
-- [Interactivité de ListView (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-interactivity)
+- [Utilisation de ListView (exemple)](/samples/xamarin/xamarin-forms-samples/workingwithlistview)
+- [Liaison bidirectionnelle (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-listview-switchentrytwobinding)
+- [Cellules intégrées (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-listview-builtincells)
+- [Cellules personnalisées (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-listview-customcells)
+- [Regroupement (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-listview-grouping)
+- [Vue du convertisseur personnalisé (exemple)](/samples/xamarin/xamarin-forms-samples/workingwithlistviewnative/)
+- [Interactivité de ListView (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-listview-interactivity)

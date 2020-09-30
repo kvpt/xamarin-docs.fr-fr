@@ -10,12 +10,12 @@ ms.date: 12/13/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: be8dd5d29aebf29395885d650fbd28082013d0d1
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: dcf4e7ca0f081ff000aaa69d8be3a3cb3aa43e8e
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86929162"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91560284"
 ---
 # <a name="listview-appearance"></a>Apparence de ListView
 
@@ -55,7 +55,7 @@ public class PageTypeGroup : List<PageModel>
     }
 ```
 
-Dans le code ci-dessus, `All` est la liste qui sera donnée à notre ListView comme source de liaison. `Title`et `ShortName` sont les propriétés qui seront utilisées pour les en-têtes de groupe.
+Dans le code ci-dessus, `All` est la liste qui sera donnée à notre ListView comme source de liaison. `Title` et `ShortName` sont les propriétés qui seront utilisées pour les en-têtes de groupe.
 
 À ce niveau, `All` est une liste vide. Ajoutez un constructeur statique pour que la liste soit remplie au début du programme :
 
@@ -210,9 +210,9 @@ Pour créer un en-tête et un pied de page personnalisés, définissez les vues 
 
 La [`ListView`](xref:Xamarin.Forms.ListView) classe possède `HorizontalScrollBarVisibility` des `VerticalScrollBarVisibility` Propriétés et, qui obtiennent ou définissent une [`ScrollBarVisibility`](xref:Xamarin.Forms.ScrollBarVisibility) valeur qui représente le moment où la barre de défilement horizontale ou verticale est visible. Les deux propriétés peuvent être définies avec les valeurs suivantes :
 
-- [`Default`](xref:Xamarin.Forms.ScrollBarVisibility)indique le comportement par défaut de la barre de défilement pour la plateforme, et est la valeur par défaut pour les `HorizontalScrollBarVisibility` `VerticalScrollBarVisibility` Propriétés et.
-- [`Always`](xref:Xamarin.Forms.ScrollBarVisibility)indique que les barres de défilement sont visibles, même lorsque le contenu s’ajuste à la vue.
-- [`Never`](xref:Xamarin.Forms.ScrollBarVisibility)indique que les barres de défilement ne sont pas visibles, même si le contenu ne tient pas dans la vue.
+- [`Default`](xref:Xamarin.Forms.ScrollBarVisibility) indique le comportement par défaut de la barre de défilement pour la plateforme, et est la valeur par défaut pour les `HorizontalScrollBarVisibility` `VerticalScrollBarVisibility` Propriétés et.
+- [`Always`](xref:Xamarin.Forms.ScrollBarVisibility) indique que les barres de défilement sont visibles, même lorsque le contenu s’ajuste à la vue.
+- [`Never`](xref:Xamarin.Forms.ScrollBarVisibility) indique que les barres de défilement ne sont pas visibles, même si le contenu ne tient pas dans la vue.
 
 ## <a name="row-separators"></a>Séparateurs de lignes
 
@@ -341,8 +341,8 @@ Le `OnImageTapped` Gestionnaire d’événements est exécuté en réponse à un
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Regroupement (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-grouping)
-- [Vue du convertisseur personnalisé (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistviewnative)
-- [Redimensionnement dynamique des lignes (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-dynamicunevenlistcells)
+- [Regroupement (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-listview-grouping)
+- [Vue du convertisseur personnalisé (exemple)](/samples/xamarin/xamarin-forms-samples/workingwithlistviewnative)
+- [Redimensionnement dynamique des lignes (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-listview-dynamicunevenlistcells)
 - [Notes de publication 1,4](https://forums.xamarin.com/discussion/35451/xamarin-forms-1-4-0-released/)
 - [Notes de publication 1,3](https://forums.xamarin.com/discussion/29934/xamarin-forms-1-3-0-released/)

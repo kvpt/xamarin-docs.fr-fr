@@ -10,12 +10,12 @@ ms.date: 03/23/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1e5f3b6cb84081f5e167d9afe7e7f2f2dffce247
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: c77a219ab1b729aa279708d04610911fbbfe4e81
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938110"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91560128"
 ---
 # <a name="listview-data-sources"></a>Sources de données ListView
 
@@ -67,7 +67,7 @@ listView.ItemsSource = new string[]
 
 Cette approche remplira `ListView` avec une liste de chaînes. Par défaut, appellera `ListView` `ToString` et affichera le résultat dans un `TextCell` pour chaque ligne. Pour personnaliser la façon dont les données sont affichées, consultez apparence de la [cellule](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md).
 
-Étant donné que `ItemsSource` a été envoyé à un tableau, le contenu n’est pas mis à jour à mesure que la liste ou le tableau sous-jacent est modifié. Si vous souhaitez que le ListView soit automatiquement mis à jour à mesure que des éléments sont ajoutés, supprimés et modifiés dans la liste sous-jacente, vous devez utiliser un `ObservableCollection` . [`ObservableCollection`](xref:System.Collections.ObjectModel.ObservableCollection`1)est défini dans `System.Collections.ObjectModel` et est tout à fait similaire `List` , à ceci près qu’il peut notifier `ListView` les modifications :
+Étant donné que `ItemsSource` a été envoyé à un tableau, le contenu n’est pas mis à jour à mesure que la liste ou le tableau sous-jacent est modifié. Si vous souhaitez que le ListView soit automatiquement mis à jour à mesure que des éléments sont ajoutés, supprimés et modifiés dans la liste sous-jacente, vous devez utiliser un `ObservableCollection` . [`ObservableCollection`](xref:System.Collections.ObjectModel.ObservableCollection`1) est défini dans `System.Collections.ObjectModel` et est tout à fait similaire `List` , à ceci près qu’il peut notifier `ListView` les modifications :
 
 ```csharp
 ObservableCollection<Employee> employees = new ObservableCollection<Employee>();
@@ -165,4 +165,4 @@ En supposant `listView` `ItemsSource` que est une liste de chaînes, `SomeLabel`
 
 ## <a name="related-links"></a>Liens associés
 
-- [Liaison bidirectionnelle (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-switchentrytwobinding)
+- [Liaison bidirectionnelle (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-listview-switchentrytwobinding)

@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsGéocodage de la carte
+title: Xamarin.Forms Géocodage de la carte
 description: Cet article explique comment géocoder et inverser les données de la carte géocode à l’aide du Xamarin.Forms . Classe de géocodeur Maps.
 ms.prod: xamarin
 ms.assetid: DE7DB31A-8921-4614-8B49-DAEF1E7B03B3
@@ -10,14 +10,14 @@ ms.date: 10/22/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7e92385f3a82c2d12881be4ff3e54bc47533696d
-ms.sourcegitcommit: ea2abdc789d0e292c3e1700a2b53b92097e0e542
+ms.openlocfilehash: d6a63e952d7466dc4b7f2d3e8cfc39d6c63e4daf
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517491"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91559972"
 ---
-# <a name="no-locxamarinforms-map-geocoding"></a>Xamarin.FormsGéocodage de la carte
+# <a name="no-locxamarinforms-map-geocoding"></a>Xamarin.Forms Géocodage de la carte
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
@@ -60,6 +60,6 @@ La [`GetAddressesForPositionAsync`](xref:Xamarin.Forms.Maps.Geocoder.GetAddresse
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Exemple Maps](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
-- [Xamarin.FormsPosition et distance de la carte](position-distance.md)
+- [Exemple Maps](/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+- [Xamarin.Forms Position et distance de la carte](position-distance.md)
 - [API géocoder](xref:Xamarin.Forms.Maps.Geocoder)

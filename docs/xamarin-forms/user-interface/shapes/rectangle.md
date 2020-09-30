@@ -1,5 +1,5 @@
 ---
-title: 'Xamarin.FormsFormes : rectangle'
+title: 'Xamarin.Forms Formes : rectangle'
 description: La Xamarin.Forms classe Rectangle peut être utilisée pour dessiner des rectangles.
 ms.prod: xamarin
 ms.assetid: 2DD663D3-DAEC-495C-AB6D-8A143FC97637
@@ -10,14 +10,14 @@ ms.date: 06/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 42ecfc9f09683ccc61640520975b3f50beedaaf5
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 48d8d61633d09212e445d37f6bd282677ef6b1b1
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918500"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91558841"
 ---
-# <a name="no-locxamarinforms-shapes-rectangle"></a>Xamarin.FormsFormes : rectangle
+# <a name="no-locxamarinforms-shapes-rectangle"></a>Xamarin.Forms Formes : rectangle
 
 ![API de la version préliminaire](~/media/shared/preview.png)
 
@@ -76,5 +76,5 @@ Pour plus d’informations sur le dessin d’un rectangle en pointillés, consul
 
 ## <a name="related-links"></a>Liens connexes
 
-- [ShapeDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
-- [Xamarin.FormsFormes](index.md)
+- [ShapeDemos (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+- [Xamarin.Forms Formes](index.md)

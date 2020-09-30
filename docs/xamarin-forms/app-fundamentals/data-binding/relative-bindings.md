@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsLiaisons relatives
+title: Xamarin.Forms Liaisons relatives
 description: Cet article explique comment créer des liaisons relatives à l’aide de l’extension de balisage RelativeSource pour définir la source de liaison par rapport à la position de la cible de liaison.
 ms.prod: xamarin
 ms.assetid: CC64BB1D-8303-46B1-94B6-4EF2F20317A8
@@ -10,16 +10,16 @@ ms.date: 12/04/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8d4e2696e6027f07b7b8e638cd1e0f1d65a5503d
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 24fa816519b05b46c38015fa602a4e70fbc07d16
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139709"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91560388"
 ---
-# <a name="xamarinforms-relative-bindings"></a>Xamarin.FormsLiaisons relatives
+# <a name="no-locxamarinforms-relative-bindings"></a>Xamarin.Forms Liaisons relatives
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 Les liaisons relatives fournissent la possibilité de définir la source de liaison par rapport à la position de la cible de liaison. Elles sont créées avec l' `RelativeSource` extension de balisage et définies en tant que `Source` propriété d’une expression de liaison.
 
@@ -34,10 +34,10 @@ L' `RelativeSource` extension de balisage est prise en charge par la `RelativeSo
 
 La `Mode` propriété doit être définie sur l’un des `RelativeBindingSourceMode` membres de l’énumération :
 
-- `TemplatedParent`indique l’élément auquel le modèle, dans lequel se trouve l’élément lié, est appliqué. Pour plus d’informations, consultez [lier à un parent basé sur un modèle](#bind-to-a-templated-parent).
-- `Self`indique l’élément sur lequel la liaison est définie, ce qui vous permet de lier une propriété de cet élément à une autre propriété sur le même élément. Pour plus d’informations, consultez [lier à soi-même](#bind-to-self).
-- `FindAncestor`indique l’ancêtre dans l’arborescence d’éléments visuels de l’élément lié. Ce mode doit être utilisé pour établir une liaison à un contrôle ancêtre représenté par la `AncestorType` propriété. Pour plus d’informations, consultez [lier à un ancêtre](#bind-to-an-ancestor).
-- `FindAncestorBindingContext`indique le `BindingContext` de l’ancêtre dans l’arborescence d’éléments visuels de l’élément lié. Ce mode doit être utilisé pour établir une liaison avec `BindingContext` un ancêtre représenté par la `AncestorType` propriété. Pour plus d’informations, consultez [lier à un ancêtre](#bind-to-an-ancestor).
+- `TemplatedParent` indique l’élément auquel le modèle, dans lequel se trouve l’élément lié, est appliqué. Pour plus d’informations, consultez [lier à un parent basé sur un modèle](#bind-to-a-templated-parent).
+- `Self` indique l’élément sur lequel la liaison est définie, ce qui vous permet de lier une propriété de cet élément à une autre propriété sur le même élément. Pour plus d’informations, consultez [lier à soi-même](#bind-to-self).
+- `FindAncestor` indique l’ancêtre dans l’arborescence d’éléments visuels de l’élément lié. Ce mode doit être utilisé pour établir une liaison à un contrôle ancêtre représenté par la `AncestorType` propriété. Pour plus d’informations, consultez [lier à un ancêtre](#bind-to-an-ancestor).
+- `FindAncestorBindingContext` indique le `BindingContext` de l’ancêtre dans l’arborescence d’éléments visuels de l’élément lié. Ce mode doit être utilisé pour établir une liaison avec `BindingContext` un ancêtre représenté par la `AncestorType` propriété. Pour plus d’informations, consultez [lier à un ancêtre](#bind-to-an-ancestor).
 
 La `Mode` propriété est la propriété de contenu de la `RelativeSourceExtension` classe. Par conséquent, pour les expressions de balisage XAML exprimées à l’aide d’accolades, vous pouvez éliminer la `Mode=` partie de l’expression.
 
@@ -186,6 +186,6 @@ Pour plus d’informations sur les modèles de contrôle, consultez [ Xamarin.Fo
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Démonstrations de liaison de données (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+- [Démonstrations de liaison de données (exemple)](/samples/xamarin/xamarin-forms-samples/databindingdemos)
 - [Extensions de balisage XAML](~/xamarin-forms/xaml/markup-extensions/index.md)
-- [Xamarin.FormsModèles de contrôle](~/xamarin-forms/app-fundamentals/templates/control-template.md)
+- [Xamarin.Forms Modèles de contrôle](~/xamarin-forms/app-fundamentals/templates/control-template.md)

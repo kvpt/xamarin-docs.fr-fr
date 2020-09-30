@@ -10,16 +10,16 @@ ms.date: 10/25/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 08be571d3ba69891a56c08efd556a999e51431c8
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 2dd2abed23704f6a67ac34bc828c48e7200cf99a
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139852"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91558715"
 ---
 # <a name="part-4-data-binding-basics"></a>Partie 4. Notions de base sur la liaison de données
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
 _Les liaisons de données permettent de lier les propriétés de deux objets afin qu’une modification dans l’un provoque une modification dans l’autre. Il s’agit d’un outil très utile, tandis que les liaisons de données peuvent être définies entièrement dans le code, XAML fournit des raccourcis et une commodité. Par conséquent, l’une des extensions de balisage les plus importantes dans Xamarin.Forms est la liaison._
 
@@ -114,10 +114,10 @@ Une vue unique peut avoir des liaisons de données sur plusieurs de ses proprié
 La solution à ce problème et à d’autres problèmes implique la `Mode` propriété, qui est définie sur un membre de l' `BindingMode` énumération :
 
 - `Default`
-- `OneWay`: les valeurs sont transférées de la source à la cible
-- `OneWayToSource`: les valeurs sont transférées de la cible à la source.
-- `TwoWay`: les valeurs sont transférées dans les deux sens entre la source et la cible
-- `OneTime`— les données passent de la source à la cible, mais uniquement lorsque les `BindingContext` modifications
+- `OneWay` : les valeurs sont transférées de la source à la cible
+- `OneWayToSource` : les valeurs sont transférées de la cible à la source.
+- `TwoWay` : les valeurs sont transférées dans les deux sens entre la source et la cible
+- `OneTime` — les données passent de la source à la cible, mais uniquement lorsque les `BindingContext` modifications
 
 Le programme suivant illustre une utilisation courante des `OneWayToSource` modes de `TwoWay` liaison et. Quatre `Slider` vues sont conçues pour contrôler les `Scale` `Rotate` Propriétés,, `RotateX` et `RotateY` d’un `Label` . Au début, il semblerait que ces quatre propriétés du `Label` doivent être des cibles de liaison de données, car chacune est définie par un `Slider` . Toutefois, le `BindingContext` de ne `Label` peut être qu’un seul objet et il y a quatre curseurs différents.
 
@@ -213,7 +213,7 @@ Toutefois, la liaison de la `Scale` propriété est `TwoWay` . Cela est dû au f
 
 Rien n’illustre la puissance du XAML et des liaisons de données mieux qu’un modèle `ListView` .
 
-`ListView`définit une `ItemsSource` propriété de type `IEnumerable` et affiche les éléments de cette collection. Ces éléments peuvent être des objets de n’importe quel type. Par défaut, `ListView` utilise la `ToString` méthode de chaque élément pour afficher cet élément. Parfois, c’est exactement ce que vous voulez, mais dans de nombreux cas, `ToString` retourne uniquement le nom de classe complet de l’objet.
+`ListView` définit une `ItemsSource` propriété de type `IEnumerable` et affiche les éléments de cette collection. Ces éléments peuvent être des objets de n’importe quel type. Par défaut, `ListView` utilise la `ToString` méthode de chaque élément pour afficher cet élément. Parfois, c’est exactement ce que vous voulez, mais dans de nombreux cas, `ToString` retourne uniquement le nom de classe complet de l’objet.
 
 Toutefois, les éléments de la `ListView` collection peuvent être affichés comme vous le souhaitez par le biais de l’utilisation d’un *modèle*, qui implique une classe qui dérive de `Cell` . Le modèle est cloné pour chaque élément du `ListView` , et les liaisons de données qui ont été définies sur le modèle sont transférées vers les clones individuels.
 
@@ -401,7 +401,7 @@ Voici le résultat :
 
 [![Liaison à une collection avec un DataTemplate et des convertisseurs](data-binding-basics-images/listview3.png)](data-binding-basics-images/listview3-large.png#lightbox)
 
-Le `ListView` est assez sophistiqué pour gérer les modifications qui peuvent se produire dynamiquement dans les données sous-jacentes, mais uniquement si vous effectuez certaines étapes. Si la collection d’éléments assignée à la `ItemsSource` propriété des `ListView` modifications au moment de l’exécution (autrement dit, si des éléments peuvent être ajoutés ou supprimés de la collection), utilisez une `ObservableCollection` classe pour ces éléments. `ObservableCollection`implémente l' `INotifyCollectionChanged` interface et `ListView` installe un gestionnaire pour l' `CollectionChanged` événement.
+Le `ListView` est assez sophistiqué pour gérer les modifications qui peuvent se produire dynamiquement dans les données sous-jacentes, mais uniquement si vous effectuez certaines étapes. Si la collection d’éléments assignée à la `ItemsSource` propriété des `ListView` modifications au moment de l’exécution (autrement dit, si des éléments peuvent être ajoutés ou supprimés de la collection), utilisez une `ObservableCollection` classe pour ces éléments. `ObservableCollection` implémente l' `INotifyCollectionChanged` interface et `ListView` installe un gestionnaire pour l' `CollectionChanged` événement.
 
 Si les propriétés des éléments eux-mêmes sont modifiées pendant l’exécution, les éléments de la collection doivent implémenter l' `INotifyPropertyChanged` interface et les modifications de signal apportées aux valeurs de propriété à l’aide de l' `PropertyChanged` événement. Cela est illustré dans la partie suivante de cette série, [partie 5. De la liaison de données à MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md).
 
@@ -409,9 +409,9 @@ Si les propriétés des éléments eux-mêmes sont modifiées pendant l’exécu
 
 Les liaisons de données fournissent un mécanisme puissant pour lier les propriétés entre deux objets dans une page, ou entre des objets visuels et des données sous-jacentes. Toutefois, lorsque l’application commence à travailler avec des sources de données, un modèle architectural d’application populaire commence à émerger comme un paradigme utile. Ce sujet est abordé dans la [partie 5. Des liaisons de données à MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md).
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
+- [XamlSamples](/samples/xamarin/xamarin-forms-samples/xamlsamples)
 - [Partie 1. Prise en main avec XAML (exemple)](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
 - [Partie 2. Syntaxe XAML essentielle (exemple)](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
 - [Partie 3. Extensions de balisage XAML (exemple)](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)

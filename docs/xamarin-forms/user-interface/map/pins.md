@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsÉpingler les broches
+title: Xamarin.Forms Épingler les broches
 description: Cet article explique comment créer des codes confidentiels sur une Xamarin.Forms carte.
 ms.prod: xamarin
 ms.assetid: F8FC081B-A811-4FBB-B8F8-30D6FD36BD40
@@ -10,16 +10,16 @@ ms.date: 10/23/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5e22888291a430863b8e45ee21d359a5acec750f
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 476ef1b8fd6c8e16c5fb3e5fdd1ac60eafd90b7c
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138435"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91559842"
 ---
-# <a name="xamarinforms-map-pins"></a>Xamarin.FormsÉpingler les broches
+# <a name="no-locxamarinforms-map-pins"></a>Xamarin.Forms Épingler les broches
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
 Le Xamarin.Forms [`Map`](xref:Xamarin.Forms.Maps.Map) contrôle permet aux emplacements d’être marqués avec des [`Pin`](xref:Xamarin.Forms.Maps.Pin) objets. Un `Pin` est un marqueur de carte qui ouvre une fenêtre d’informations lorsqu’il est frappé :
 
@@ -157,7 +157,7 @@ L' `PinClickedEventArgs` objet qui accompagne les deux événements a une `HideI
 
 ## <a name="pin-types"></a>Types de code confidentiel
 
-[`Pin`](xref:Xamarin.Forms.Maps.Pin)les objets incluent une [`Type`](xref:Xamarin.Forms.Maps.Pin.Type) propriété, de type [`PinType`](xref:Xamarin.Forms.Maps.PinType) , qui représente le type de pin. L’énumération `PinType` définit les membres suivants :
+[`Pin`](xref:Xamarin.Forms.Maps.Pin) les objets incluent une [`Type`](xref:Xamarin.Forms.Maps.Pin.Type) propriété, de type [`PinType`](xref:Xamarin.Forms.Maps.PinType) , qui représente le type de pin. L’énumération `PinType` définit les membres suivants :
 
 - `Generic`, représente un code confidentiel générique.
 - `Place`, représente un code confidentiel pour un lieu.
@@ -271,7 +271,7 @@ Pour plus d’informations sur les sélecteurs de modèle de données, consultez
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Exemple Maps](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+- [Exemple Maps](/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 - [Convertisseur personnalisé de carte](~/xamarin-forms/app-fundamentals/custom-renderer/map-pin.md)
 - [Passage d’arguments en XAML](~/xamarin-forms/xaml/passing-arguments.md)
 - [Création d’un Xamarin.Forms DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)

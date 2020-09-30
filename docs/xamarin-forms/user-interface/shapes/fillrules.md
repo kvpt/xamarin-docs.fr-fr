@@ -1,6 +1,6 @@
 ---
-title: 'Xamarin.FormsFormes : règles de remplissage'
-description: Xamarin.FormsLes règles de remplissage de formes déterminent si un point se trouve dans la région de remplissage d’une forme.
+title: 'Xamarin.Forms Formes : règles de remplissage'
+description: Xamarin.Forms Les règles de remplissage de formes déterminent si un point se trouve dans la région de remplissage d’une forme.
 ms.prod: xamarin
 ms.assetid: 5CABB22B-C6BE-43D1-91D9-6E90A4BD5622
 ms.technology: xamarin-forms
@@ -10,14 +10,14 @@ ms.date: 06/24/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 536992f5a8501f51e14dc15caa9825771e4ed950
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: a1277b0acda598128e69b39a99910a468f6baa11
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918603"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91559257"
 ---
-# <a name="no-locxamarinforms-shapes-fill-rules"></a>Xamarin.FormsFormes : règles de remplissage
+# <a name="no-locxamarinforms-shapes-fill-rules"></a>Xamarin.Forms Formes : règles de remplissage
 
 ![API de la version préliminaire](~/media/shared/preview.png)
 
@@ -192,5 +192,5 @@ Une somme de zéro entraîne le non-remplissage de l’anneau.
 
 ## <a name="related-links"></a>Liens connexes
 
-- [ShapeDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
-- [Xamarin.FormsFormes](index.md)
+- [ShapeDemos (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+- [Xamarin.Forms Formes](index.md)

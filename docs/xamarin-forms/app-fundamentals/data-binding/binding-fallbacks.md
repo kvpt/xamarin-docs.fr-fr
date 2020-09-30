@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsLiaison de secours
+title: Xamarin.Forms Liaison de secours
 description: Cet article explique comment renforcer des liaisons en définissant des valeurs de repli qui seront utilisées si une liaison échoue.
 ms.prod: xamarin
 ms.assetid: 637ACD9D-3E5D-4014-86DE-A77D1FEF238A
@@ -10,16 +10,16 @@ ms.date: 08/16/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2c5ce10aa0a1137ad4e4832d5dc931c902b82810
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 24a9a351dbe6932b09add2ee7c3111256e013201
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84946206"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91560687"
 ---
-# <a name="xamarinforms-binding-fallbacks"></a>Xamarin.FormsLiaison de secours
+# <a name="no-locxamarinforms-binding-fallbacks"></a>Xamarin.Forms Liaison de secours
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 Une liaison de données échoue parfois car la source de la liaison ne peut pas être résolue ou parce que la liaison réussit mais retourne une valeur `null`. De tels scénarios peuvent être gérés avec des convertisseurs de valeurs ou du code supplémentaire, mais il est possible de renforcer les liaisons de données en définissant des valeurs de repli à utiliser si le processus de liaison échoue. Pour ce faire, vous devez définir [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) les [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) Propriétés et dans une expression de liaison. Étant donné que ces propriétés résident dans la [`BindingBase`](xref:Xamarin.Forms.BindingBase) classe, elles peuvent être utilisées avec des liaisons, des liaisons multiples, des liaisons compilées et avec l' `Binding` extension de balisage.
 
@@ -107,6 +107,6 @@ Lorsque la propriété `TargetNullValue` n’est pas définie dans une expressio
 > [!IMPORTANT]
 > Le formatage de chaîne n’est pas appliqué dans une expression de liaison lorsque la propriété `TargetNullValue` est définie.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [Démonstrations de liaison de données (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+- [Démonstrations de liaison de données (exemple)](/samples/xamarin/xamarin-forms-samples/databindingdemos)

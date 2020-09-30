@@ -1,5 +1,5 @@
 ---
-title: 'Xamarin.FormsFormes : polygone'
+title: 'Xamarin.Forms Formes : polygone'
 description: La Xamarin.Forms classe Polygon peut être utilisée pour dessiner des polygones, qui sont des séries de lignes connectées qui forment des formes fermées.
 ms.prod: xamarin
 ms.assetid: D6539F60-A5AC-46EF-86EB-E9F508EB1FA8
@@ -10,14 +10,14 @@ ms.date: 06/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 52043bd507d35a1ebe2628c13c14429c604569c9
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 7464b3e4088986a87aa29c77ee8c6baa78266f84
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918483"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91558971"
 ---
-# <a name="no-locxamarinforms-shapes-polygon"></a>Xamarin.FormsFormes : polygone
+# <a name="no-locxamarinforms-shapes-polygon"></a>Xamarin.Forms Formes : polygone
 
 ![API de la version préliminaire](~/media/shared/preview.png)
 
@@ -99,6 +99,6 @@ Dans cet exemple, le comportement de remplissage de chaque polygone est détermi
 
 ## <a name="related-links"></a>Liens connexes
 
-- [ShapeDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
-- [Xamarin.FormsFormes](index.md)
-- [Xamarin.FormsFormes : règles de remplissage](fillrules.md)
+- [ShapeDemos (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+- [Xamarin.Forms Formes](index.md)
+- [Xamarin.Forms Formes : règles de remplissage](fillrules.md)

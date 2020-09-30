@@ -1,6 +1,6 @@
 ---
-title: Xamarin.FormsFormes
-description: Xamarin.FormsLes formes sont des types de vues qui vous permettent de dessiner des formes à l’écran.
+title: Xamarin.Forms Formes
+description: Xamarin.Forms Les formes sont des types de vues qui vous permettent de dessiner des formes à l’écran.
 ms.prod: xamarin
 ms.assetid: 4E749FE8-852C-46DA-BB1E-652936106357
 ms.technology: xamarin-forms
@@ -10,23 +10,23 @@ ms.date: 07/30/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6a0771ac0dbbbc89301aeca3812c3b49e14655a2
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 07765fdb9f67f21415db495da1b635b0507b7ed1
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918461"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91559205"
 ---
-# <a name="no-locxamarinforms-shapes"></a>Xamarin.FormsFormes
+# <a name="no-locxamarinforms-shapes"></a>Xamarin.Forms Formes
 
 ![API de la version préliminaire](~/media/shared/preview.png)
 
-Un `Shape` est un type de [`View`](xref:Xamarin.Forms.View) qui vous permet de dessiner une forme à l’écran. `Shape`les objets peuvent être utilisés dans les classes de disposition et la plupart des contrôles, car la `Shape` classe dérive de la `View` classe.
+Un `Shape` est un type de [`View`](xref:Xamarin.Forms.View) qui vous permet de dessiner une forme à l’écran. `Shape` les objets peuvent être utilisés dans les classes de disposition et la plupart des contrôles, car la `Shape` classe dérive de la `View` classe.
 
-Xamarin.FormsLes formes sont disponibles dans l' `Xamarin.Forms.Shapes` espace de noms sur iOS, Android, MacOS, le plateforme Windows universelle (UWP) et le Windows Presentation Foundation (WPF).
+Xamarin.Forms Les formes sont disponibles dans l' `Xamarin.Forms.Shapes` espace de noms sur iOS, Android, MacOS, le plateforme Windows universelle (UWP) et le Windows Presentation Foundation (WPF).
 
 > [!IMPORTANT]
-> Xamarin.FormsLes formes sont actuellement expérimentales et ne peuvent être utilisées qu’en définissant l' `Shapes_Experimental` indicateur. Pour plus d’informations, consultez la page [indicateurs expérimentaux](~/xamarin-forms/internals/experimental-flags.md).
+> Xamarin.Forms Les formes sont actuellement expérimentales et ne peuvent être utilisées qu’en définissant l' `Shapes_Experimental` indicateur. Pour plus d’informations, consultez la page [indicateurs expérimentaux](~/xamarin-forms/internals/experimental-flags.md).
 
 `Shape` définit les propriétés suivantes :
 
@@ -42,11 +42,11 @@ Xamarin.FormsLes formes sont disponibles dans l' `Xamarin.Forms.Shapes` espace d
 
 Ces propriétés sont sauvegardées par des [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) objets, ce qui signifie qu’elles peuvent être des cibles de liaisons de données et être stylisées.
 
-Xamarin.Formsdéfinit un certain nombre d’objets qui dérivent de la `Shape` classe. Il s’agit de,, `Ellipse` `Line` ,, `Path` `Polygon` `Polyline` et `Rectangle` .
+Xamarin.Forms définit un certain nombre d’objets qui dérivent de la `Shape` classe. Il s’agit de,, `Ellipse` `Line` ,, `Path` `Polygon` `Polyline` et `Rectangle` .
 
 ## <a name="paint-shapes"></a>Formes de peinture
 
-`Brush`les objets sont utilisés pour peindre les formes `Stroke` et `Fill` :
+`Brush` les objets sont utilisés pour peindre les formes `Stroke` et `Fill` :
 
 ```xaml
 <Ellipse Fill="DarkBlue"
@@ -62,7 +62,7 @@ Dans cet exemple, le trait et le remplissage d’un `Ellipse` sont spécifiés 
 ![Formes de peinture](images/ellipse.png "Formes de peinture")
 
 > [!IMPORTANT]
-> `Brush`les objets utilisent un convertisseur de type qui permet [`Color`](xref:Xamarin.Forms.Color) de spécifier des valeurs pour la `Stroke` propriété.
+> `Brush` les objets utilisent un convertisseur de type qui permet [`Color`](xref:Xamarin.Forms.Color) de spécifier des valeurs pour la `Stroke` propriété.
 
 Si vous ne spécifiez `Brush` pas d’objet pour `Stroke` ou si vous affectez `StrokeThickness` à la valeur 0, la bordure autour de la forme n’est pas dessinée.
 
@@ -70,7 +70,7 @@ Pour plus d’informations sur les `Brush` objets, consultez [ Xamarin.Forms pin
 
 ## <a name="stretch-shapes"></a>Étirer les formes
 
-`Shape`les objets ont une `Aspect` propriété, de type `Stretch` . Cette propriété détermine la façon dont `Shape` le contenu d’un objet est étiré pour remplir l' `Shape` espace de disposition de l’objet. L' `Shape` espace de disposition d’un objet correspond à la quantité d’espace `Shape` allouée par le Xamarin.Forms système de disposition, en raison d’un explicite et d’un `WidthRequest` `HeightRequest` paramètre ou de ses `HorizontalOptions` `VerticalOptions` paramètres et.
+`Shape` les objets ont une `Aspect` propriété, de type `Stretch` . Cette propriété détermine la façon dont `Shape` le contenu d’un objet est étiré pour remplir l' `Shape` espace de disposition de l’objet. L' `Shape` espace de disposition d’un objet correspond à la quantité d’espace `Shape` allouée par le Xamarin.Forms système de disposition, en raison d’un explicite et d’un `WidthRequest` `HeightRequest` paramètre ou de ses `HorizontalOptions` `VerticalOptions` paramètres et.
 
 L’énumération `Stretch` définit les membres suivants :
 
@@ -102,9 +102,9 @@ Dans cet exemple, un `Path` objet dessine un cœur. Les `Path` Propriétés et d
 
 ## <a name="draw-dashed-shapes"></a>Dessiner des formes en pointillés
 
-`Shape`les objets ont une `StrokeDashArray` propriété, de type `DoubleCollection` . Cette propriété représente une collection de `double` valeurs qui indiquent le motif des tirets et des intervalles utilisés pour définir le contour d’une forme. Un `DoubleCollection` est un `ObservableCollection` de `double` valeurs. Chaque `double` dans la collection spécifie la longueur d’un tiret ou d’un intervalle. Le premier élément de la collection, situé à l’index 0, spécifie la longueur d’un tiret. Le deuxième élément de la collection, situé à l’index 1, spécifie la longueur d’un intervalle. Par conséquent, les objets avec une valeur d’index pair spécifient des tirets, tandis que les objets avec une valeur d’index impair spécifient des lacunes.
+`Shape` les objets ont une `StrokeDashArray` propriété, de type `DoubleCollection` . Cette propriété représente une collection de `double` valeurs qui indiquent le motif des tirets et des intervalles utilisés pour définir le contour d’une forme. Un `DoubleCollection` est un `ObservableCollection` de `double` valeurs. Chaque `double` dans la collection spécifie la longueur d’un tiret ou d’un intervalle. Le premier élément de la collection, situé à l’index 0, spécifie la longueur d’un tiret. Le deuxième élément de la collection, situé à l’index 1, spécifie la longueur d’un intervalle. Par conséquent, les objets avec une valeur d’index pair spécifient des tirets, tandis que les objets avec une valeur d’index impair spécifient des lacunes.
 
-`Shape`les objets ont également une `StrokeDashOffset` propriété, de type `double` , qui spécifie la distance dans le motif des tirets où un tiret commence. Si vous ne définissez pas cette propriété, le `Shape` a un contour solide.
+`Shape` les objets ont également une `StrokeDashOffset` propriété, de type `double` , qui spécifie la distance dans le motif des tirets où un tiret commence. Si vous ne définissez pas cette propriété, le `Shape` a un contour solide.
 
 Les formes en pointillés peuvent être dessinées en définissant les `StrokeDashArray` `StrokeDashOffset` Propriétés et. La `StrokeDashArray` propriété doit être définie sur une ou plusieurs `double` valeurs, chaque paire étant délimitée par une virgule unique et/ou un ou plusieurs espaces. Par exemple, « 0,5 1,0 » et « 0.5, 1.0 » sont tous deux valides.
 
@@ -129,7 +129,7 @@ Dans cet exemple, un rectangle plein avec un trait en pointillés est dessiné 
 
 Une ligne comporte trois parties : embout de début, corps de ligne et extrémité de fin. Les majuscules de début et de fin décrivent la forme au début et à la fin d’une ligne ou d’un segment.
 
-`Shape`les objets ont une `StrokeLineCap` propriété, de type `PenLineCap` , qui décrit la forme au début et à la fin d’une ligne ou d’un segment. L’énumération `PenLineCap` définit les membres suivants :
+`Shape` les objets ont une `StrokeLineCap` propriété, de type `PenLineCap` , qui décrit la forme au début et à la fin d’une ligne ou d’un segment. L’énumération `PenLineCap` définit les membres suivants :
 
 - `Flat`, qui représente une extrémité qui ne s’étend pas au-delà du dernier point de la ligne. Cela est comparable à l’absence d’extrémité de ligne et est la valeur par défaut de la `StrokeLineCap` propriété.
 - `Square`, qui représente un rectangle dont la hauteur est égale à l’épaisseur de la ligne et une longueur égale à la moitié de l’épaisseur de la ligne.
@@ -156,7 +156,7 @@ Dans cet exemple, la ligne rouge est arrondie au début et à la fin de la ligne
 
 ## <a name="control-line-joins"></a>Jointures de lignes de contrôle
 
-`Shape`les objets ont une `StrokeLineJoin` propriété, de type `PenLineJoin` , qui spécifie le type de jointure utilisé aux sommets de la forme. L’énumération `PenLineJoin` définit les membres suivants :
+`Shape` les objets ont une `StrokeLineJoin` propriété, de type `PenLineJoin` , qui spécifie le type de jointure utilisé aux sommets de la forme. L’énumération `PenLineJoin` définit les membres suivants :
 
 - `Miter`, qui représente des vertex angulaires normaux. C’est la valeur par défaut de la propriété `StrokeLineJoin`.
 - `Bevel`, qui représente les vertex biseautés.
@@ -180,6 +180,6 @@ Dans cet exemple, la polyligne bleue foncée a arrondi les jointures à ses somm
 
 ## <a name="related-links"></a>Liens connexes
 
-- [ShapeDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
-- [Xamarin.FormsBrosse](~/xamarin-forms/user-interface/brushes/index.md)
-- [Couleurs dansXamarin.Forms](~/xamarin-forms/user-interface/colors.md)
+- [ShapeDemos (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+- [Xamarin.Forms Brosse](~/xamarin-forms/user-interface/brushes/index.md)
+- [Couleurs dans Xamarin.Forms](~/xamarin-forms/user-interface/colors.md)

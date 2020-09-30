@@ -1,5 +1,5 @@
 ---
-title: Lancer l’application Map native à partir deXamarin.Forms
+title: Lancer l’application Map native à partir de Xamarin.Forms
 description: L’application Maps natives sur chaque plateforme peut être lancée à partir d’une Xamarin.Forms application par la Xamarin.Essentials classe Launcher.
 ms.prod: xamarin
 ms.assetid: 5CF7CD67-3F20-4D80-B99E-D35A5FD1019A
@@ -10,16 +10,16 @@ ms.date: 10/30/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c135d5dd02bba5102f5a93132f079526c84865d5
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: ede34258650c378a45ee694f90de1e8b249acf71
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84129335"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91559881"
 ---
-# <a name="launch-the-native-map-app-from-xamarinforms"></a>Lancer l’application Map native à partir deXamarin.Forms
+# <a name="launch-the-native-map-app-from-no-locxamarinforms"></a>Lancer l’application Map native à partir de Xamarin.Forms
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
 L’application Map native sur chaque plateforme peut être lancée à partir d’une Xamarin.Forms application par la Xamarin.Essentials `Launcher` classe. Cette classe permet à une application d’ouvrir une autre application par le biais de son modèle d’URI personnalisé. La fonctionnalité de lancement peut être appelée à l’aide de la `OpenAsync` méthode, en passant un `string` `Uri` argument ou qui représente le schéma d’URL personnalisé à ouvrir. Pour plus d’informations sur Xamarin.Essentials , consultez [Xamarin.Essentials](~/essentials/index.md?context=xamarin/xamarin-forms) .
 
@@ -80,7 +80,7 @@ Cet exemple de code entraîne le lancement de l’application de mappage native 
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Exemple Maps](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+- [Exemple Maps](/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 - [Xamarin.Essentials](~/essentials/index.md?context=xamarin/xamarin-forms)
 - [Liens de carte](https://developer.apple.com/library/archive/featuredarticles/iPhoneURLScheme_Reference/MapLinks/MapLinks.html)
 - [Guide du développeur Maps](https://developer.android.com/guide/components/intents-common.html#Maps)

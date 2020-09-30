@@ -1,6 +1,6 @@
 ---
 title: 'Configuration de la plateforme GTK #'
-description: 'Xamarin.Formsprend désormais en charge la version préliminaire de la plateforme GTK #'
+description: 'Xamarin.Forms prend désormais en charge la version préliminaire de la plateforme GTK #'
 ms.prod: xamarin
 ms.assetid: 3417FB95-3E4B-47DA-85D0-F34832747236
 ms.technology: xamarin-forms
@@ -10,23 +10,23 @@ ms.date: 04/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a5635da9f7c083609ce1e0f120d0613fff9bd77b
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 1ced6b54ce91f9b14d16a1baf8f5dd1d85902a42
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84198106"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91558399"
 ---
 # <a name="gtk-platform-setup"></a>Configuration de la plateforme GTK #
 
-![PRÉVERSION](~/media/shared/preview.png)
+![Préversion](~/media/shared/preview.png)
 
-Xamarin.Formsprend désormais en charge l’Aperçu pour les applications GTK #. GTK # est un kit d’outils d’interface utilisateur graphique qui lie le GTK + Toolkit et diverses bibliothèques GNOME, permettant ainsi le développement d’applications graphiques GNOME entièrement natives à l’aide de mono et de .NET. Cet article explique comment ajouter un projet GTK # à une Xamarin.Forms solution.
+Xamarin.Forms prend désormais en charge l’Aperçu pour les applications GTK #. GTK # est un kit d’outils d’interface utilisateur graphique qui lie le GTK + Toolkit et diverses bibliothèques GNOME, permettant ainsi le développement d’applications graphiques GNOME entièrement natives à l’aide de mono et de .NET. Cet article explique comment ajouter un projet GTK # à une Xamarin.Forms solution.
 
 > [!IMPORTANT]
-> Xamarin.Formsla prise en charge de GTK # est fournie par la communauté. Pour plus d’informations, consultez [ Xamarin.Forms prise en charge des plateformes](https://github.com/xamarin/Xamarin.Forms/wiki/Platform-Support).
+> Xamarin.Forms la prise en charge de GTK # est fournie par la communauté. Pour plus d’informations, consultez [ Xamarin.Forms prise en charge des plateformes](https://github.com/xamarin/Xamarin.Forms/wiki/Platform-Support).
 
-Avant de commencer, créez une Xamarin.Forms solution ou utilisez une Xamarin.Forms solution existante, par exemple [**GameOfLife**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-gameoflife).
+Avant de commencer, créez une Xamarin.Forms solution ou utilisez une Xamarin.Forms solution existante, par exemple [**GameOfLife**](/samples/xamarin/xamarin-forms-samples/boxview-gameoflife).
 
 > [!NOTE]
 > Bien que cet article se concentre sur l’ajout d’une application GTK # à une Xamarin.Forms solution dans VS2017 et Visual Studio pour Mac, elle peut également être effectuée dans [MonoDevelop](https://www.monodevelop.com/) pour Linux.
@@ -51,13 +51,13 @@ Suivez ces instructions pour ajouter une application GTK # qui s’exécutera su
 
 4. Dans le **Explorateur de solutions**, cliquez avec le bouton droit sur le nouveau projet GTK, puis sélectionnez **gérer les packages NuGet**. Sélectionnez l’onglet **Parcourir** , puis recherchez **Xamarin.Forms** 3,0 ou une version ultérieure.
 
-    ![Sélectionner le Xamarin.Forms package NuGet](gtk-images/win/select-forms-nuget-package.png "Sélectionnez la [ ! Opérationnel. NO-LOC (Xamarin. Forms)] package NuGet")
+    ![Sélectionnez le package ::: No-Loc (Xamarin. Forms) ::: NuGet](gtk-images/win/select-forms-nuget-package.png "Sélectionnez le package ::: No-Loc (Xamarin. Forms) ::: NuGet")
 
     Sélectionnez le package, puis cliquez sur le bouton **installer** .
 
 5. Recherchez maintenant ** Xamarin.Forms . Package Platform. GTK** 3,0 ou supérieur.
 
-    ![Sélectionnez le Xamarin.Forms . Package NuGet Platform. GTK](gtk-images/win/select-forms-platform-nuget-package.png "Sélectionnez la [ ! Opérationnel. NO-LOC (Xamarin. Forms)]. Package NuGet Platform. GTK")
+    ![Sélectionnez ::: No-Loc (Xamarin. Forms) :::. Package NuGet Platform. GTK](gtk-images/win/select-forms-platform-nuget-package.png "Sélectionnez ::: No-Loc (Xamarin. Forms) :::. Package NuGet Platform. GTK")
 
     Sélectionnez le package, puis cliquez sur le bouton **installer** .
 
@@ -128,11 +128,11 @@ Suivez ces instructions pour ajouter une application GTK # qui s’exécutera su
 
 4. Dans le **panneau solutions**, cliquez avec le bouton droit sur **packages > ajouter des packages...** pour le projet GTK, puis ajoutez le Xamarin.Forms package NuGet version préliminaire 3,0 ou ultérieur.
 
-    ![Sélectionner le Xamarin.Forms package NuGet](gtk-images/mac/select-forms-nuget-package.png "Sélectionnez la [ ! Opérationnel. NO-LOC (Xamarin. Forms)] package NuGet")
+    ![Sélectionnez le package ::: No-Loc (Xamarin. Forms) ::: NuGet](gtk-images/mac/select-forms-nuget-package.png "Sélectionnez le package ::: No-Loc (Xamarin. Forms) ::: NuGet")
 
 5. Dans le **panneau solutions**, cliquez avec le bouton droit sur **packages > ajouter des packages.** .. pour le projet GTK, puis ajoutez Xamarin.Forms . Platform. GTK 3,0 version préliminaire ou ultérieure du package NuGet.
 
-    ![Sélectionnez le Xamarin.Forms . Package NuGet Platform. GTK](gtk-images/mac/select-forms-platform-nuget-package.png "Sélectionnez la [ ! Opérationnel. NO-LOC (Xamarin. Forms)]. Package NuGet Platform. GTK")
+    ![Sélectionnez ::: No-Loc (Xamarin. Forms) :::. Package NuGet Platform. GTK](gtk-images/mac/select-forms-platform-nuget-package.png "Sélectionnez ::: No-Loc (Xamarin. Forms) :::. Package NuGet Platform. GTK")
 
 6. Mettez à jour les autres projets de plateforme pour utiliser la même Xamarin.Forms version que celle utilisée par le projet GTK.
 

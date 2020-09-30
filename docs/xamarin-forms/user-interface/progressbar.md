@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsProgressBar
+title: Xamarin.Forms ProgressBar
 description: Le Xamarin.Forms ProgressBar est un contrôle qui représente visuellement la progression sous la forme d’une barre horizontale remplie en fonction d’une propriété de type float.
 ms.prod: xamarin
 ms.assetId: C2F85FED-797C-466B-A0FD-E73CFB79B267
@@ -10,15 +10,15 @@ ms.date: 07/09/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b4ac6231c0483c0c44755c2ac9539f237dd64251
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 111b3ad13902b272256464f6f70f0db3dfd015b6
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136277"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91559452"
 ---
-# <a name="xamarinforms-progressbar"></a>Xamarin.FormsProgressBar
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-progressbardemos/)
+# <a name="no-locxamarinforms-progressbar"></a>Xamarin.Forms ProgressBar
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-progressbardemos/)
 
 Le Xamarin.Forms [`ProgressBar`](xref:Xamarin.Forms.ProgressBar) contrôle représente visuellement la progression sous la forme d’une barre horizontale qui est remplie à un pourcentage représenté par une `float` valeur. La `ProgressBar` classe hérite de [`View`](xref:Xamarin.Forms.View) .
 
@@ -28,8 +28,8 @@ Les captures d’écran suivantes montrent une `ProgressBar` sur iOS et Android�
 
 Le `ProgressBar` contrôle définit deux propriétés :
 
-* [`Progress`](xref:Xamarin.Forms.ProgressBar.Progress)est une `float` valeur qui représente la progression actuelle sous la forme d’une valeur comprise entre 0 et 1. `Progress`les valeurs inférieures à 0 seront ancrées à 0, les valeurs supérieures à 1 seront ancrées à 1.
-* [`ProgressColor`](xref:Xamarin.Forms.ProgressBar.ProgressColor)est un `Color` qui affecte la couleur de la barre intérieure représentant la progression actuelle.
+* [`Progress`](xref:Xamarin.Forms.ProgressBar.Progress) est une `float` valeur qui représente la progression actuelle sous la forme d’une valeur comprise entre 0 et 1. `Progress` les valeurs inférieures à 0 seront ancrées à 0, les valeurs supérieures à 1 seront ancrées à 1.
+* [`ProgressColor`](xref:Xamarin.Forms.ProgressBar.ProgressColor) est un `Color` qui affecte la couleur de la barre intérieure représentant la progression actuelle.
 
 Ces propriétés sont sauvegardées par des [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) objets, ce qui signifie que `ProgressBar` peut être stylisé et être la cible des liaisons de données.
 
@@ -86,4 +86,4 @@ Pour plus d’informations sur l' `Easing` énumération, consultez [fonctions X
 
 ## <a name="related-links"></a>Liens connexes
 
-* [Démonstrations de ProgressBar](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-progressbardemos/)
+* [Démonstrations de ProgressBar](/samples/xamarin/xamarin-forms-samples/userinterface-progressbardemos/)

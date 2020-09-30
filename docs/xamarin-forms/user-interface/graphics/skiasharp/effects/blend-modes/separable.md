@@ -10,16 +10,16 @@ ms.date: 08/23/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c1939c30cbefdbf8d6546761a8c6ac7199bfff62
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 0fd934a305e34bb7406a0379a0882873e3400fe8
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139683"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91558360"
 ---
 # <a name="the-separable-blend-modes"></a>Modes de fusion séparable
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 Comme vous l’avez vu dans l’article [**SkiaSharp porter-Duff Blend modes**](porter-duff.md), les modes de mélange porter-Duff effectuent généralement des opérations de découpage. Les modes de fusion séparable sont différents. Les modes séparables modifient les composants de couleur rouge, vert et bleu d’une image. Les modes de fusion séparable peuvent mélanger la couleur pour démontrer que la combinaison de rouge, de vert et de bleu est effectivement blanche :
 
@@ -153,18 +153,18 @@ Le tableau suivant présente tous les modes de fusion séparables avec une brèv
 | Mode de fusion   | Aucun changement | Opération |
 | ------------ | --------- | --------- |
 | `Plus`       | Noir     | Éclaircit en ajoutant des couleurs : SC + DC |
-| `Modulate`   | White     | Assombrit en multipliant les couleurs : SC · Métafichier | 
+| `Modulate`   | Blancs     | Assombrit en multipliant les couleurs : SC · Métafichier | 
 | `Screen`     | Noir     | Complète le produit de compléments : SC + DC &ndash; SC · Métafichier |
-| `Overlay`    | Gris      | Inverse de`HardLight` |
-| `Darken`     | White     | Nombre minimal de couleurs : min (SC, DC) |
+| `Overlay`    | Gris      | Inverse de `HardLight` |
+| `Darken`     | Blancs     | Nombre minimal de couleurs : min (SC, DC) |
 | `Lighten`    | Noir     | Nombre maximal de couleurs : Max (SC, DC) |
 | `ColorDodge` | Noir     | Éclaircit la destination en fonction de la source |
-| `ColorBurn`  | White     | Assombrit la destination en fonction de la source | 
+| `ColorBurn`  | Blancs     | Assombrit la destination en fonction de la source | 
 | `HardLight`  | Gris      | Similaire à l’effet de la lumière crue |
 | `SoftLight`  | Gris      | Similaire à l’effet de la lumière douce | 
 | `Difference` | Noir     | Soustrait le plus sombre du plus clair : ABS (DC &ndash; SC) | 
 | `Exclusion`  | Noir     | Semblable à, `Difference` mais contraste inférieur |
-| `Multiply`   | White     | Assombrit en multipliant les couleurs : SC · Métafichier |
+| `Multiply`   | Blancs     | Assombrit en multipliant les couleurs : SC · Métafichier |
 
 Vous trouverez des algorithmes plus détaillés dans la spécification du W3C sur la [**composition et la fusion de niveau 1**](https://www.w3.org/TR/compositing-1/) et la [**référence skia SkBlendMode**](https://skia.org/user/api/SkBlendMode_Reference), bien que la notation dans ces deux sources ne soit pas la même. Gardez à l’esprit que `Plus` est généralement considéré comme un mode de fusion porter-Duff et qu’il ne fait `Modulate` pas partie de la spécification du W3C.
 
@@ -430,5 +430,5 @@ Le `Darken` mode fonctionne également pour ce même effet.
 
 ## <a name="related-links"></a>Liens connexes
 
-- [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [API SkiaSharp](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (exemple)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
