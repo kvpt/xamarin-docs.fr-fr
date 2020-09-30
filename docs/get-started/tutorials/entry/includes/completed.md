@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: e9c20f8ca0656f6bad72e1e09fbe873a9208be2b
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: cea36ad2a1f8ae54ad1e38dc94d6eb222822b8f3
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "71107228"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91451493"
 ---
 Félicitations ! Vous avez terminé ce didacticiel qui vous a expliqué comment effectuer les opérations suivantes :
 
@@ -23,6 +23,6 @@ Pour en savoir plus sur les principes fondamentaux de la création d’applicati
 
 ## <a name="related-links"></a>Liens connexes
 
-- [EntryTutorial (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-entrytutorial/)
+- [EntryTutorial (exemple)](/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-entrytutorial/)
 - [Xamarin.Forms Entry (guide)](~/xamarin-forms/user-interface/text/entry.md)
 - [API Entry](xref:Xamarin.Forms.Entry)

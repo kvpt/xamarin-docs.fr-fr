@@ -1,23 +1,23 @@
 ### YamlMime:Landing
 title: Xamarin.iOS
-summary: Xamarin.iOS expose le kit SDK iOS complet pour les développeurs .NET. Créez des applications iOS entièrement natives à l’aide de C# ou F# dans Visual Studio.
+summary: Xamarin.iOS expose l’intégralité du Kit de développement logiciel (SDK) iOS pour les développeurs .NET. Générez des applications iOS entièrement natives à l’aide de C# ou F# dans Visual Studio.
 metadata:
   title: Xamarin.iOS
-  description: Xamarin.iOS expose le kit SDK iOS complet pour les développeurs .NET.
+  description: Xamarin.iOS expose l’intégralité du Kit de développement logiciel (SDK) iOS pour les développeurs .NET.
   ms.topic: landing-page
   ms.prod: xamarin
   ms.assetid: 7DF889E9-23F6-408F-B836-E0FDF5F0FA9B
   author: davidbritch
   ms.author: dabritch
   ms.date: 01/24/2020
-  ms.openlocfilehash: f800b61bfdf9d1e79eed6e943c2b49e4724ef641
-  ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+  ms.openlocfilehash: c54bbc3d1157ad46abbfe798dbf3227efaed4f78
+  ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
   ms.translationtype: HT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 04/09/2020
-  ms.locfileid: "77374108"
+  ms.lasthandoff: 09/29/2020
+  ms.locfileid: "91432221"
 landingContent:
-- title: Bien démarrer
+- title: Prise en main
   linkLists:
   - linkListType: concept
     links:
@@ -53,7 +53,7 @@ landingContent:
       url: ~/ios/app-fundamentals/security-privacy.md
     - text: Entrées tactiles
       url: ~/ios/app-fundamentals/touch/index.md
-    - text: En savoir plus >
+    - text: Voir plus >
       url: ~/ios/app-fundamentals/index.md
 - title: Interface utilisateur
   linkLists:
@@ -65,13 +65,13 @@ landingContent:
       url: ~/ios/user-interface/storyboards/index.md
     - text: Interfaces utilisateur
       url: ~/ios/user-interface/ios-ui/index.md
-    - text: Commandes
+    - text: Contrôles
       url: ~/ios/user-interface/controls/index.md
     - text: Contraintes programmatiques de disposition
       url: ~/ios/user-interface/programmatic-layout-constraints.md
     - text: MonoTouch.Dialog
       url: ~/ios/user-interface/monotouch.dialog/index.md
-- title: Fonctionnalités de la plate-forme
+- title: Fonctionnalités de la plateforme
   linkLists:
   - linkListType: concept
     links:
@@ -85,7 +85,7 @@ landingContent:
       url: ~/ios/platform/passkit.md
     - text: PhotoKit
       url: ~/ios/platform/photokit.md
-    - text: Recherche
+    - text: Rechercher
       url: ~/ios/platform/search/index.md
     - text: SiriKit
       url: ~/ios/platform/sirikit/index.md
@@ -93,22 +93,22 @@ landingContent:
       url: ~/ios/platform/3d-touch.md
     - text: Touch ID et Face ID
       url: ~/ios/platform/touch-id-face-id.md
-    - text: En savoir plus >
+    - text: Voir plus >
       url: ~/ios/platform/index.md
 - title: Xamarin.Essentials
   linkLists:
   - linkListType: concept
     links:
-    - text: À propos
+    - text: À propos de
       url: ~/essentials/index.md?context=xamarin/ios
-    - text: Bien démarrer
+    - text: Prise en main
       url: ~/essentials/get-started.md?context=xamarin/ios
     - text: Prise en charge des plateformes et des fonctionnalités
       url: ~/essentials/platform-feature-support.md?context=xamarin/ios
-    - text: Dépannage
+    - text: Résolution des problèmes
       url: ~/essentials/troubleshooting.md?context=xamarin/ios
     - text: Notes de publication
-      url: https://docs.microsoft.com/xamarin/essentials/release-notes/
+      url: /xamarin/essentials/release-notes/
 - title: Données et services cloud
   linkLists:
   - linkListType: concept
@@ -145,11 +145,11 @@ landingContent:
       url: ~/ios/deploy-test/using-instruments-to-detect-native-leaks-using-markheap.md
     - text: Performances
       url: ~/ios/deploy-test/performance.md
-    - text: Test des unités
+    - text: Test unitaire
       url: ~/ios/deploy-test/touch.unit.md
     - text: Déploiement sans fil
       url: ~/ios/deploy-test/wireless-deployment.md
-    - text: En savoir plus >
+    - text: Voir plus >
       url: ~/ios/deploy-test/index.md
 - title: Éléments internes et concepts avancés
   linkLists:
@@ -167,7 +167,7 @@ landingContent:
       url: ~/ios/internals/xib-code-generation.md
     - text: Architecture iOS
       url: ~/ios/internals/architecture.md
-    - text: Limites
+    - text: Limitations
       url: ~/ios/internals/limitations.md
     - text: Nouveau RefCount
       url: ~/ios/internals/newrefcount.md
@@ -179,7 +179,7 @@ landingContent:
   linkLists:
   - linkListType: concept
     links:
-    - text: Bien démarrer
+    - text: Prise en main
       url: ~/ios/watchos/get-started/index.md
     - text: Notions de base des applications
       url: ~/ios/watchos/app-fundamentals/index.md
@@ -191,13 +191,13 @@ landingContent:
       url: ~/essentials/index.md?context=xamarin/watchos
     - text: Déploiement et test
       url: ~/ios/watchos/deploy-test/index.md
-    - text: Dépannage
+    - text: Résolution des problèmes
       url: ~/ios/watchos/troubleshooting.md
 - title: tvOS
   linkLists:
   - linkListType: concept
     links:
-    - text: Bien démarrer
+    - text: Prise en main
       url: ~/ios/tvos/get-started/index.md
     - text: Notions de base des applications
       url: ~/ios/tvos/app-fundamentals/index.md
@@ -211,5 +211,5 @@ landingContent:
       url: ~/ios/tvos/deploy-test/index.md
     - text: Éléments internes
       url: ~/ios/tvos/internals/index.md
-    - text: Dépannage
+    - text: Résolution des problèmes
       url: ~/ios/tvos/troubleshooting.md

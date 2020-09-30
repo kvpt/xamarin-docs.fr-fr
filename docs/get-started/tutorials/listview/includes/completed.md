@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: b01ea403fde614bc06e616c3b1e30bfd8ed10a0f
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 8d7572d4fb04bd7974c1badc28226c991e60ddcd
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "71107225"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91451561"
 ---
 Félicitations ! Vous avez terminé ce didacticiel qui vous a expliqué comment effectuer les opérations suivantes :
 
@@ -24,6 +24,6 @@ Pour en savoir plus sur les principes fondamentaux de la création d’applicati
 
 ## <a name="related-links"></a>Liens connexes
 
-- [ListViewTutorial (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-listviewtutorial/)
+- [ListViewTutorial (exemple)](/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-listviewtutorial/)
 - [Xamarin.Forms ListView (guide)](~/xamarin-forms/user-interface/listview/index.md)
 - [API ListView](xref:Xamarin.Forms.ListView)

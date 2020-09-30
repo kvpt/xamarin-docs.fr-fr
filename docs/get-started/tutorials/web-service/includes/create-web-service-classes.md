@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 3b1603b6af5ebb5558c3cd764f41fdbe24351b9b
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 5fe6bab32a70c8af03bdca2151312d44fbf3834e
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "68669634"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91451434"
 ---
 Les demandes REST sont établies via HTTP en utilisant les mêmes verbes HTTP que ceux utilisés par les navigateurs web pour récupérer des pages et envoyer des données aux serveurs. Dans cet exercice, vous allez créer une classe qui utilise le verbe GET pour récupérer des données à partir de l’API web [OpenWeatherMap](https://openweathermap.org/). Cette API web peut être utilisée pour récupérer des données de prévisions météorologiques pour un emplacement spécifié. L’utilisation de cette API web suppose de vous inscrire au préalable pour obtenir une clé API.
 
@@ -82,7 +82,7 @@ Les demandes REST sont établies via HTTP en utilisant les mêmes verbes HTTP qu
     Ce code définit quatre classes qui seront utilisées pour modéliser les données JSON extraites du service web. Chaque propriété est ornée d’un attribut `JsonProperty`, qui contient un nom de champ JSON. Newtonsoft.Json utilisera ce mappage des noms de champs JSON aux propriétés CLR lors de la désérialisation des données JSON en objets de modèle.
 
     > [!NOTE]
-    > Les définitions de classe ci-dessus ont été simplifiées et ne modélisent pas entièrement les données JSON extraites du service web. Pour obtenir un exemple de modèle de données complet, consultez l’exemple [Weather App](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/weather/).
+    > Les définitions de classe ci-dessus ont été simplifiées et ne modélisent pas entièrement les données JSON extraites du service web. Pour obtenir un exemple de modèle de données complet, consultez l’exemple [Weather App](/samples/xamarin/xamarin-forms-samples/weather/).
 
 1. Dans **l’Explorateur de solutions**, dans le projet **WebServiceTutorial**, ajoutez une classe nommée `RestService` au projet. Puis, dans **RestService.cs**, supprimez tout le code du modèle et remplacez-le par le code suivant :
 
@@ -202,7 +202,7 @@ Les demandes REST sont établies via HTTP en utilisant les mêmes verbes HTTP qu
     Ce code définit quatre classes qui seront utilisées pour modéliser les données JSON extraites du service web. Chaque propriété est ornée d’un attribut `JsonProperty`, qui contient un nom de champ JSON. Newtonsoft.Json utilisera ce mappage des noms de champs JSON aux propriétés CLR lors de la désérialisation des données JSON en objets de modèle.
 
     > [!NOTE]
-    > Les définitions de classe ci-dessus ont été simplifiées et ne modélisent pas entièrement les données JSON extraites du service web. Pour obtenir un exemple de modèle de données complet, consultez l’exemple [Weather App](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/weather/).
+    > Les définitions de classe ci-dessus ont été simplifiées et ne modélisent pas entièrement les données JSON extraites du service web. Pour obtenir un exemple de modèle de données complet, consultez l’exemple [Weather App](/samples/xamarin/xamarin-forms-samples/weather/).
 
 1. Dans **Panneau Solutions**, dans le projet **WebServiceTutorial**, ajoutez une classe nommée `RestService` au projet. Puis, dans **RestService.cs**, supprimez tout le code du modèle et remplacez-le par le code suivant :
 
