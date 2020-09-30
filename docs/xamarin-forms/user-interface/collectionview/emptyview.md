@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsCollectionView EmptyView
+title: Xamarin.Forms CollectionView EmptyView
 description: Dans CollectionView, vous pouvez spécifier une vue vide qui fournit des commentaires à l’utilisateur quand aucune donnée n’est disponible pour l’affichage. La vue vide peut être une chaîne, une vue ou plusieurs vues.
 ms.prod: xamarin
 ms.assetid: 6CEBCFE6-5577-4F68-9709-431062609153
@@ -10,18 +10,18 @@ ms.date: 05/06/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d35e39e55d66452e47c7a3e3faf86a7a7d6adaca
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 041e614d94342834ed8e62c0f432794b3bc7d21a
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136487"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556410"
 ---
-# <a name="xamarinforms-collectionview-emptyview"></a>Xamarin.FormsCollectionView EmptyView
+# <a name="no-locxamarinforms-collectionview-emptyview"></a>Xamarin.Forms CollectionView EmptyView
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)définit les propriétés suivantes qui peuvent être utilisées pour fournir des commentaires de l’utilisateur lorsqu’il n’y a pas de données à afficher :
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) définit les propriétés suivantes qui peuvent être utilisées pour fournir des commentaires de l’utilisateur lorsqu’il n’y a pas de données à afficher :
 
 - [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView), de type `object` , la chaîne, la liaison ou la vue qui s’affiche lorsque la [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) propriété a la valeur `null` , ou lorsque la collection spécifiée par la `ItemsSource` propriété a la valeur `null` ou est vide. La valeur par défaut est `null`.
 - [`EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate), de type [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) , le modèle à utiliser pour mettre en forme le spécifié `EmptyView` . La valeur par défaut est `null`.
@@ -330,7 +330,7 @@ Pour plus d’informations sur les sélecteurs de modèle de données, consultez
 
 ## <a name="related-links"></a>Liens connexes
 
-- [CollectionView (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
-- [Xamarin.FormsModèles de données](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
-- [Xamarin.FormsDictionnaires de ressources](~/xamarin-forms/xaml/resource-dictionaries.md)
+- [CollectionView (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+- [Xamarin.Forms Modèles de données](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
+- [Xamarin.Forms Dictionnaires de ressources](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [Créer un Xamarin.Forms DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)

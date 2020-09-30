@@ -10,16 +10,16 @@ ms.date: 09/20/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 46a1b4d00b9eea276b9a3b3d5bffbdac3d31e0ef
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: b5c1310e300373fe75cbcd1464220acf989516ba
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136576"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91555682"
 ---
 # <a name="refreshview-pull-direction-on-windows"></a>Direction d’extraction de RefreshView sur Windows
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Cette plateforme Windows universelle spécifique à la plateforme permet de modifier la direction d’extraction d’un pour `RefreshView` qu’elle corresponde à l’orientation du contrôle à défilement qui affiche des données. Il est consommé en XAML en affectant `RefreshView.RefreshPullDirection` à la propriété pouvant être liée la valeur de l' `RefreshPullDirection` énumération :
 
@@ -47,10 +47,10 @@ refreshView.On<Windows>().SetRefreshPullDirection(RefreshPullDirection.LeftToRig
 
 La `RefreshView.On<Windows>` méthode spécifie que ce spécifique à la plateforme s’exécutera uniquement sur le plateforme Windows universelle. La `RefreshView.SetRefreshPullDirection` méthode, dans l' [`Xamarin.Forms.PlatformConfiguration.WindowsSpecific`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) espace de noms, est utilisée pour définir la direction de l’extraction de `RefreshView` , avec l' `RefreshPullDirection` énumération qui fournit quatre valeurs possibles :
 
-- `LeftToRight`indique qu’une opération d’extraction de gauche à droite lance une actualisation.
-- `TopToBottom`indique qu’une opération d’extraction de haut en bas lance une actualisation et est la direction d’extraction par défaut d’un `RefreshView` .
-- `RightToLeft`indique qu’une opération d’extraction de droite à gauche lance une actualisation.
-- `BottomToTop`indique qu’une opération pull de bas en haut lance une actualisation.
+- `LeftToRight` indique qu’une opération d’extraction de gauche à droite lance une actualisation.
+- `TopToBottom` indique qu’une opération d’extraction de haut en bas lance une actualisation et est la direction d’extraction par défaut d’un `RefreshView` .
+- `RightToLeft` indique qu’une opération d’extraction de droite à gauche lance une actualisation.
+- `BottomToTop` indique qu’une opération pull de bas en haut lance une actualisation.
 
 En outre, la `GetRefreshPullDirection` méthode peut être utilisée pour retourner le actuel `RefreshPullDirection` du `RefreshView` .
 
@@ -63,6 +63,6 @@ Le résultat est qu’un spécifié `RefreshPullDirection` est appliqué au `Ref
 
 ## <a name="related-links"></a>Liens connexes
 
-- [PlatformSpecifics (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [Création de caractéristiques de la plateforme](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [API WindowsSpecific](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)

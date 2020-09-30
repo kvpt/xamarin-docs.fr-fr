@@ -10,12 +10,12 @@ ms.date: 03/23/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5cb43bfe572b98a6530dfeb8d923ac71b5b633a7
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 5ea4fa88925925ba7c81f47c30875c3419603ab8
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86932040"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91555461"
 ---
 # <a name="the-scale-transform"></a>La transformation d’échelle
 
@@ -105,7 +105,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Vous vous demandez peut-être : comment les facteurs de mise à l’échelle affectent-ils la valeur retournée par la `MeasureText` méthode de `SKPaint` ? La réponse est : pas du tout. `Scale`est une méthode de `SKCanvas` . Elle n’affecte pas les opérations que vous effectuez avec un `SKPaint` objet tant que vous n’utilisez pas cet objet pour restituer un élément sur le canevas.
+Vous vous demandez peut-être : comment les facteurs de mise à l’échelle affectent-ils la valeur retournée par la `MeasureText` méthode de `SKPaint` ? La réponse est : pas du tout. `Scale` est une méthode de `SKCanvas` . Elle n’affecte pas les opérations que vous effectuez avec un `SKPaint` objet tant que vous n’utilisez pas cet objet pour restituer un élément sur le canevas.
 
 Comme vous pouvez le voir, tout ce qui est dessiné après l' `Scale` appel augmente proportionnellement :
 
@@ -348,5 +348,5 @@ Le code affiche également l’étoile 10 autres fois, chaque fois qui réduit l
 
 ## <a name="related-links"></a>Liens associés
 
-- [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [API SkiaSharp](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (exemple)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

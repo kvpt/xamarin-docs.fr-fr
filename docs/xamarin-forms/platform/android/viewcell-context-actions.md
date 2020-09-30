@@ -10,16 +10,16 @@ ms.date: 09/24/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 053697921f1adacc102e9e9bee9dd17f8d44526b
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 6cbdea3656daa4df894a79edc70453c78e3844bc
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84128555"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556748"
 ---
 # <a name="viewcell-context-actions-on-android"></a>Actions contextuelles de ViewCell sur Android
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Par défaut, à partir de Xamarin.Forms 4,3, quand un [`ViewCell`](xref:Xamarin.Forms.ViewCell) dans une application Android définit des actions de contexte pour chaque élément dans un [`ListView`](xref:Xamarin.Forms.ListView) , le menu actions de contexte est mis à jour lorsque l’élément sélectionné dans `ListView` change. Toutefois, dans les versions précédentes du Xamarin.Forms menu actions de contexte n’a pas été mis à jour, et ce comportement est appelé `ViewCell` mode hérité. Ce mode hérité peut entraîner un comportement incorrect si un `ListView` utilise un [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector) pour définir son `ItemTemplate` objet à partir d' [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) objets qui définissent des actions de contexte différentes.
 
@@ -72,7 +72,7 @@ Dans ce mode, les éléments de menu d’action de contexte corrects sont affich
 
 ## <a name="related-links"></a>Liens connexes
 
-- [PlatformSpecifics (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [Création de caractéristiques de la plateforme](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [API AndroidSpecific](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
 - [API AndroidSpecific. AppCompat](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)

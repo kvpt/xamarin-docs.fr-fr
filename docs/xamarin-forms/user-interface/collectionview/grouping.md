@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsRegroupement CollectionView
+title: Xamarin.Forms Regroupement CollectionView
 description: CollectionView peut afficher des données regroupées correctement en affectant à sa propriété IsGrouped la valeur true.
 ms.prod: xamarin
 ms.assetid: 7E494245-FDBD-49D6-B7FA-CEF976EB59BB
@@ -10,20 +10,20 @@ ms.date: 09/17/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 51661d6573d78386f4ca8bfea0063b752295c2d8
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 51bdcc6f9a95911c548269dbf7b3050cc5921183
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136459"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556618"
 ---
-# <a name="xamarinforms-collectionview-grouping"></a>Xamarin.FormsRegroupement CollectionView
+# <a name="no-locxamarinforms-collectionview-grouping"></a>Xamarin.Forms Regroupement CollectionView
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
 Les jeux de données volumineux peuvent souvent devenir difficiles à manier lorsqu’ils sont présentés dans une liste de défilement continu. Dans ce scénario, l’Organisation des données en groupes peut améliorer l’expérience utilisateur en facilitant la navigation dans les données.
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)prend en charge l’affichage des données groupées et définit les propriétés suivantes qui contrôlent la façon dont elles sont présentées :
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) prend en charge l’affichage des données groupées et définit les propriétés suivantes qui contrôlent la façon dont elles sont présentées :
 
 - `IsGrouped`, de type `bool` , indique si les données sous-jacentes doivent être affichées dans des groupes. La valeur par défaut de cette propriété est `false`.
 - `GroupHeaderTemplate`, de type [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) , le modèle à utiliser pour l’en-tête de chaque groupe.
@@ -142,7 +142,7 @@ Ce code crée deux groupes dans la `Animals` collection. Le premier `AnimalGroup
 
 ## <a name="display-grouped-data"></a>Afficher des données groupées
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)affiche des données groupées, à condition que les données aient été regroupées correctement, en affectant à la propriété la valeur `IsGrouped` `true` :
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) affiche des données groupées, à condition que les données aient été regroupées correctement, en affectant à la propriété la valeur `IsGrouped` `true` :
 
 ```xaml
 <CollectionView ItemsSource="{Binding Animals}"
@@ -241,7 +241,7 @@ Quand un [`CollectionView`](xref:Xamarin.Forms.CollectionView) affiche des donn�
 
 ## <a name="group-without-templates"></a>Groupe sans modèles
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)peut afficher des données regroupées correctement sans affecter à la propriété la valeur [`CollectionView.ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate) [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) :
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) peut afficher des données regroupées correctement sans affecter à la propriété la valeur [`CollectionView.ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate) [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) :
 
 ```xaml
 <CollectionView ItemsSource="{Binding Animals}"
@@ -252,5 +252,5 @@ Dans ce scénario, des données significatives peuvent être affichées en subst
 
 ## <a name="related-links"></a>Liens connexes
 
-- [CollectionView (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
-- [Xamarin.FormsModèles de données](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
+- [CollectionView (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+- [Xamarin.Forms Modèles de données](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)

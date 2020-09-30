@@ -10,16 +10,16 @@ ms.date: 05/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 4eea7d500876793357113453493fa2fe2ede6cc4
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 32de64c0fa6b0ec0a0b03c8075710e1cbc92dd49
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84140012"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557411"
 ---
 # <a name="three-ways-to-draw-an-arc"></a>Trois façons de dessiner un arc
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Découvrez comment utiliser SkiaSharp pour définir des arcs de trois façons différentes_
 
@@ -29,7 +29,7 @@ Un arc est une courbe sur la circonférence d’une ellipse, telle que les parti
 
 Malgré la simplicité de cette définition, il n’existe aucun moyen de définir une fonction de dessin d’arc qui répond à tous les besoins et, par conséquent, aucun consensus entre les systèmes graphiques de la meilleure façon de dessiner un arc. Pour cette raison, la `SKPath` classe ne se limite pas à une seule approche.
 
-`SKPath`définit une [`AddArc`](xref:SkiaSharp.SKPath.AddArc*) méthode, cinq [`ArcTo`](xref:SkiaSharp.SKPath.ArcTo*) méthodes différentes et deux méthodes relatives [`RArcTo`](xref:SkiaSharp.SKPath.RArcTo*) . Ces méthodes se répartissent en trois catégories, qui représentent trois approches très différentes pour la spécification d’un arc. Celui que vous utilisez dépend des informations disponibles pour définir l’arc et de la façon dont cet arc s’ajuste aux autres graphiques que vous dessinez.
+`SKPath` définit une [`AddArc`](xref:SkiaSharp.SKPath.AddArc*) méthode, cinq [`ArcTo`](xref:SkiaSharp.SKPath.ArcTo*) méthodes différentes et deux méthodes relatives [`RArcTo`](xref:SkiaSharp.SKPath.RArcTo*) . Ces méthodes se répartissent en trois catégories, qui représentent trois approches très différentes pour la spécification d’un arc. Celui que vous utilisez dépend des informations disponibles pour définir l’arc et de la façon dont cet arc s’ajuste aux autres graphiques que vous dessinez.
 
 ## <a name="the-angle-arc"></a>L’arc d’angle
 
@@ -65,7 +65,7 @@ Les `startAngle` `sweepAngle` arguments ou peuvent être négatifs : l’arc es
 
 Toutefois, `AddArc` ne définit *pas* un contour fermé. Si vous appelez `LineTo` après `AddArc` , une ligne est dessinée de la fin de l’arc jusqu’au point dans la `LineTo` méthode, et il en est de même pour `ArcTo` .
 
-`AddArc`démarre automatiquement un nouveau contour et est fonctionnellement équivalent à un appel à `ArcTo` avec un argument final de `true` :
+`AddArc` démarre automatiquement un nouveau contour et est fonctionnellement équivalent à un appel à `ArcTo` avec un argument final de `true` :
 
 ```csharp
 path.ArcTo (oval, startAngle, sweepAngle, true);
@@ -221,7 +221,7 @@ Pour voir à quoi il ressemble sans l’explosion, commentez simplement l' `Tran
 
 Le deuxième type d’arc pris en charge par `SKPath` est l' *arc tangente*, donc appelé, car l’arc est la circonférence d’un cercle tangent à deux lignes connectées.
 
-Un arc tangente est ajouté à un chemin d’accès avec un appel à la [`ArcTo`](xref:SkiaSharp.SKPath.ArcTo(SkiaSharp.SKPoint,SkiaSharp.SKPoint,System.Single)) méthode avec deux `SKPoint` paramètres, ou la [`ArcTo`](xref:SkiaSharp.SKPath.ArcTo(System.Single,System.Single,System.Single,System.Single,System.Single)) surcharge avec des `Single` paramètres distincts pour les points :
+Un arc tangente est ajouté à un chemin d’accès avec un appel à la  [`ArcTo`](xref:SkiaSharp.SKPath.ArcTo(SkiaSharp.SKPoint,SkiaSharp.SKPoint,System.Single)) méthode avec deux `SKPoint` paramètres, ou la [`ArcTo`](xref:SkiaSharp.SKPath.ArcTo(System.Single,System.Single,System.Single,System.Single,System.Single)) surcharge avec des `Single` paramètres distincts pour les points :
 
 ```csharp
 public void ArcTo (SKPoint point1, SKPoint point2, Single radius)
@@ -498,7 +498,7 @@ Voici le programme en cours d’exécution :
 
 ## <a name="the-elliptical-arc"></a>L’arc elliptique
 
-L’arc elliptique est ajouté à un chemin d’accès avec un appel à la [`ArcTo`](xref:SkiaSharp.SKPath.ArcTo(SkiaSharp.SKPoint,System.Single,SkiaSharp.SKPathArcSize,SkiaSharp.SKPathDirection,SkiaSharp.SKPoint)) méthode qui a deux `SKPoint` paramètres, ou la [`ArcTo`](xref:SkiaSharp.SKPath.ArcTo(System.Single,System.Single,System.Single,SkiaSharp.SKPathArcSize,SkiaSharp.SKPathDirection,System.Single,System.Single)) surcharge avec des coordonnées X et Y distinctes :
+L’arc elliptique est ajouté à un chemin d’accès avec un appel à la [`ArcTo`](xref:SkiaSharp.SKPath.ArcTo(SkiaSharp.SKPoint,System.Single,SkiaSharp.SKPathArcSize,SkiaSharp.SKPathDirection,SkiaSharp.SKPoint)) méthode qui a deux `SKPoint` paramètres, ou la  [`ArcTo`](xref:SkiaSharp.SKPath.ArcTo(System.Single,System.Single,System.Single,SkiaSharp.SKPathArcSize,SkiaSharp.SKPathDirection,System.Single,System.Single)) surcharge avec des coordonnées X et Y distinctes :
 
 ```csharp
 public void ArcTo (SKPoint r, Single xAxisRotate, SKPathArcSize largeArc, SKPathDirection sweep, SKPoint xy)
@@ -669,7 +669,7 @@ Pour obtenir un ajustement plus étroit, utilisez la `TightBounds` propriété, 
 
 Bien que les connexions entre les arcs et les lignes droites soient mathématiquement lisses, le passage d’un arc à un autre peut sembler un peu brusque. Un meilleur signe infini est présenté dans l’article suivant sur [**trois types de courbes de Bézier**](beziers.md).
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [API SkiaSharp](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (exemple)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

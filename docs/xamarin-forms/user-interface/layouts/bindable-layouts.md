@@ -1,5 +1,5 @@
 ---
-title: Dispositions pouvant être liées dansXamarin.Forms
+title: Dispositions pouvant être liées dans Xamarin.Forms
 description: Les dispositions pouvant être liées permettent aux classes de disposition de générer leur contenu en liant à une collection d’éléments, avec l’option permettant de définir l’apparence de chaque élément avec un DataTemplate.
 ms.prod: xamarin
 ms.assetid: 824C3319-20A0-42D0-8632-CDECD98349C3
@@ -10,30 +10,30 @@ ms.date: 03/09/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9d0497c0c0593b54f69bac84307976c4050e9c95
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a5b1e43586810521e87360d8b6537d9bafdabad7
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138240"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91555435"
 ---
-# <a name="bindable-layouts-in-xamarinforms"></a>Dispositions pouvant être liées dansXamarin.Forms
+# <a name="bindable-layouts-in-no-locxamarinforms"></a>Dispositions pouvant être liées dans Xamarin.Forms
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-bindablelayouts)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-bindablelayouts)
 
 Les dispositions pouvant être liées activent toute classe de disposition qui dérive de la [`Layout<T>`](xref:Xamarin.Forms.Layout`1) classe pour générer son contenu en liant à une collection d’éléments, avec l’option permettant de définir l’apparence de chaque élément avec un [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) . Les dispositions pouvant être liées sont fournies par la `BindableLayout` classe, qui expose les propriétés jointes suivantes :
 
-- `ItemsSource`: spécifie la collection d' `IEnumerable` éléments à afficher par la disposition.
-- `ItemTemplate`: spécifie le [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) à appliquer à chaque élément de la collection d’éléments affichés par la disposition.
-- `ItemTemplateSelector`– Spécifie le [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector) qui sera utilisé pour choisir un [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) pour un élément au moment de l’exécution.
+- `ItemsSource` : spécifie la collection d' `IEnumerable` éléments à afficher par la disposition.
+- `ItemTemplate` : spécifie le [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) à appliquer à chaque élément de la collection d’éléments affichés par la disposition.
+- `ItemTemplateSelector` – Spécifie le [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector) qui sera utilisé pour choisir un [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) pour un élément au moment de l’exécution.
 
 > [!NOTE]
 > La `ItemTemplate` propriété est prioritaire lorsque les `ItemTemplate` Propriétés et `ItemTemplateSelector` sont définies.
 
 En outre, la `BindableLayout` classe expose les propriétés pouvant être liées suivantes :
 
-- `EmptyView`: spécifie la `string` vue ou qui s’affiche lorsque la `ItemsSource` propriété est ou `null` lorsque la collection spécifiée par la `ItemsSource` propriété est ou est `null` vide. La valeur par défaut est `null`.
-- `EmptyViewTemplate`– Spécifie le [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) qui sera affiché lorsque la `ItemsSource` propriété est `null` , ou lorsque la collection spécifiée par la `ItemsSource` propriété est `null` ou est vide. La valeur par défaut est `null`.
+- `EmptyView` : spécifie la `string` vue ou qui s’affiche lorsque la `ItemsSource` propriété est ou `null` lorsque la collection spécifiée par la `ItemsSource` propriété est ou est `null` vide. La valeur par défaut est `null`.
+- `EmptyViewTemplate` – Spécifie le [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) qui sera affiché lorsque la `ItemsSource` propriété est `null` , ou lorsque la collection spécifiée par la `ItemsSource` propriété est `null` ou est vide. La valeur par défaut est `null`.
 
 > [!NOTE]
 > La `EmptyViewTemplate` propriété est prioritaire lorsque les `EmptyView` Propriétés et `EmptyViewTemplate` sont définies.
@@ -253,7 +253,7 @@ La `ToggleEmptyView` méthode affecte `EmptyView` à la propriété de l' `stack
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Démonstration de la mise en page pouvant être liée (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-bindablelayouts)
+- [Démonstration de la mise en page pouvant être liée (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-bindablelayouts)
 - [Création d’une disposition personnalisée](~/xamarin-forms/user-interface/layouts/custom.md)
-- [Xamarin.FormsModèles de données](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
+- [Xamarin.Forms Modèles de données](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
 - [Création d’un Xamarin.Forms DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)

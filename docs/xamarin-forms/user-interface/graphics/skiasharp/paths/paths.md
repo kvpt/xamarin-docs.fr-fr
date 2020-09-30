@@ -10,12 +10,12 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a7a4e8c4467438d1f732508a15bee7045310109b
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 6387da5ffa240c2509a2942a1e721def8f8d39b9
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86931220"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91555630"
 ---
 # <a name="path-basics-in-skiasharp"></a>Concepts de base du chemin d’accès dans SkiaSharp
 
@@ -31,15 +31,15 @@ Un chemin d’accès graphique est encapsulé par l' [`SKPath`](xref:SkiaSharp.S
 
 Un profil commence généralement par un appel à la méthode suivante `SKPath` :
 
-- [`MoveTo`](xref:SkiaSharp.SKPath.MoveTo*)pour commencer un nouveau contour
+- [`MoveTo`](xref:SkiaSharp.SKPath.MoveTo*) pour commencer un nouveau contour
 
 L’argument de cette méthode est un point unique, que vous pouvez exprimer en tant que `SKPoint` valeur ou en tant que coordonnées X et Y distinctes. L' `MoveTo` appel établit un point au début du contour et un *point actuel*initial. Vous pouvez appeler les méthodes suivantes pour continuer le contour avec une ligne ou une courbe du point actuel jusqu’à un point spécifié dans la méthode, qui devient alors le nouveau point actuel :
 
-- [`LineTo`](xref:SkiaSharp.SKPath.LineTo*)pour ajouter une ligne droite au tracé
-- [`ArcTo`](xref:SkiaSharp.SKPath.ArcTo*)pour ajouter un arc, qui est une ligne sur la circonférence d’un cercle ou d’une ellipse
-- [`CubicTo`](xref:SkiaSharp.SKPath.CubicTo*)pour ajouter une spline de Bézier cubique
-- [`QuadTo`](xref:SkiaSharp.SKPath.QuadTo*)pour ajouter une spline de Bézier quadratique
-- [`ConicTo`](xref:SkiaSharp.SKPath.ConicTo*)pour ajouter une spline de Bézier rationnelle rationnelle, qui peut restituer avec précision des sections coniques (ellipses, paraboliqueas et hyperboliques)
+- [`LineTo`](xref:SkiaSharp.SKPath.LineTo*) pour ajouter une ligne droite au tracé
+- [`ArcTo`](xref:SkiaSharp.SKPath.ArcTo*) pour ajouter un arc, qui est une ligne sur la circonférence d’un cercle ou d’une ellipse
+- [`CubicTo`](xref:SkiaSharp.SKPath.CubicTo*) pour ajouter une spline de Bézier cubique
+- [`QuadTo`](xref:SkiaSharp.SKPath.QuadTo*) pour ajouter une spline de Bézier quadratique
+- [`ConicTo`](xref:SkiaSharp.SKPath.ConicTo*) pour ajouter une spline de Bézier rationnelle rationnelle, qui peut restituer avec précision des sections coniques (ellipses, paraboliqueas et hyperboliques)
 
 Aucune de ces cinq méthodes ne contient toutes les informations nécessaires pour décrire la ligne ou la courbe. Chacune de ces cinq méthodes fonctionne conjointement avec le point actuel établi par l’appel de méthode qui la précède immédiatement. Par exemple, la `LineTo` méthode ajoute une ligne droite au contour en fonction du point actuel, de sorte que le paramètre de `LineTo` n’est qu’un point unique.
 
@@ -108,25 +108,25 @@ Le premier contour se compose d’un appel à [`MoveTo`](xref:SkiaSharp.SKPath.M
 
 Comme vous pouvez le voir, le premier contour est évidemment une série de trois lignes connectées, mais la fin ne se connecte pas au début. Les deux lignes se chevauchent en haut. Le deuxième contour est évidemment fermé et a été effectué avec un nombre d’appels inférieur, `LineTo` car la `Close` méthode ajoute automatiquement une dernière ligne pour fermer le contour.
 
-`SKCanvas`définit une seule [`DrawPath`](xref:SkiaSharp.SKCanvas.DrawPath(SkiaSharp.SKPath,SkiaSharp.SKPaint)) méthode, qui, dans cette démonstration, est appelée deux fois pour remplir et rayer le tracé. Toutes les contournements sont remplis, même ceux qui ne sont pas fermés. Dans le cadre du remplissage de chemins d’accès non fermés, une ligne droite est supposée exister entre les points de départ et de fin des contournements. Si vous supprimez le dernier `LineTo` du premier contour ou que vous supprimez l' `Close` appel du deuxième contour, chaque contour n’aura que deux côtés, mais sera rempli comme s’il s’agissait d’un triangle.
+`SKCanvas` définit une seule [`DrawPath`](xref:SkiaSharp.SKCanvas.DrawPath(SkiaSharp.SKPath,SkiaSharp.SKPaint)) méthode, qui, dans cette démonstration, est appelée deux fois pour remplir et rayer le tracé. Toutes les contournements sont remplis, même ceux qui ne sont pas fermés. Dans le cadre du remplissage de chemins d’accès non fermés, une ligne droite est supposée exister entre les points de départ et de fin des contournements. Si vous supprimez le dernier `LineTo` du premier contour ou que vous supprimez l' `Close` appel du deuxième contour, chaque contour n’aura que deux côtés, mais sera rempli comme s’il s’agissait d’un triangle.
 
-`SKPath`définit de nombreuses autres méthodes et propriétés. Les méthodes suivantes ajoutent des conversions entières au chemin d’accès, qui peuvent être fermées ou non fermées selon la méthode :
+`SKPath` définit de nombreuses autres méthodes et propriétés. Les méthodes suivantes ajoutent des conversions entières au chemin d’accès, qui peuvent être fermées ou non fermées selon la méthode :
 
 - [`AddRect`](xref:SkiaSharp.SKPath.AddRect*)
 - [`AddRoundedRect`](xref:SkiaSharp.SKPath.AddRoundedRect(SkiaSharp.SKRect,System.Single,System.Single,SkiaSharp.SKPathDirection))
 - [`AddCircle`](xref:SkiaSharp.SKPath.AddCircle(System.Single,System.Single,System.Single,SkiaSharp.SKPathDirection))
 - [`AddOval`](xref:SkiaSharp.SKPath.AddOval(SkiaSharp.SKRect,SkiaSharp.SKPathDirection))
-- [`AddArc`](xref:SkiaSharp.SKPath.AddArc(SkiaSharp.SKRect,System.Single,System.Single))pour ajouter une courbe sur la circonférence d’une ellipse
-- [`AddPath`](xref:SkiaSharp.SKPath.AddPath*)pour ajouter un autre chemin d’accès au chemin d’accès actuel
-- [`AddPathReverse`](xref:SkiaSharp.SKPath.AddPathReverse(SkiaSharp.SKPath))pour ajouter un autre chemin d’accès en sens inverse
+- [`AddArc`](xref:SkiaSharp.SKPath.AddArc(SkiaSharp.SKRect,System.Single,System.Single)) pour ajouter une courbe sur la circonférence d’une ellipse
+- [`AddPath`](xref:SkiaSharp.SKPath.AddPath*) pour ajouter un autre chemin d’accès au chemin d’accès actuel
+- [`AddPathReverse`](xref:SkiaSharp.SKPath.AddPathReverse(SkiaSharp.SKPath)) pour ajouter un autre chemin d’accès en sens inverse
 
 N’oubliez pas qu’un `SKPath` objet définit uniquement une géométrie &mdash; une série de points et de connexions. Uniquement lorsqu’un `SKPath` est combiné avec un `SKPaint` objet, le chemin d’accès est rendu avec une couleur, une largeur de trait et ainsi de suite particulières. En outre, gardez à l’esprit que l' `SKPaint` objet passé à la `DrawPath` méthode définit les caractéristiques du chemin d’accès complet. Si vous souhaitez dessiner un texte nécessitant plusieurs couleurs, vous devez utiliser un chemin d’accès distinct pour chaque couleur.
 
 Tout comme l’apparence du début et de la fin d’une ligne est définie par un embout de trait, l’apparence de la connexion entre deux lignes est définie par une *jointure de traits*. Pour ce faire, affectez [`StrokeJoin`](xref:SkiaSharp.SKPaint.StrokeJoin) à la propriété de `SKPaint` la valeur un membre de l' [`SKStrokeJoin`](xref:SkiaSharp.SKStrokeJoin) énumération :
 
-- `Miter`pour une jointure Pointy
-- `Round`pour une jointure arrondie
-- `Bevel`pour une jointure hachée
+- `Miter` pour une jointure Pointy
+- `Round` pour une jointure arrondie
+- `Bevel` pour une jointure hachée
 
 La page **jointures de traits** affiche ces trois jointures de trait avec du code similaire à la page de **extrémités de trait** . Il s’agit du `PaintSurface` Gestionnaire d’événements dans la [`StrokeJoinsPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/StrokeJoinsPage.cs) classe :
 
@@ -200,5 +200,5 @@ La jointure à onglets se compose d’un point aigu où les lignes se connectent
 
 ## <a name="related-links"></a>Liens associés
 
-- [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [API SkiaSharp](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (exemple)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

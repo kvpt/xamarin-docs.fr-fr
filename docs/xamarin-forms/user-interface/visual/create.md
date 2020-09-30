@@ -10,18 +10,18 @@ ms.date: 03/12/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 23edbb007e912d13858686d1c5ec574c9e3349c7
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a8e8388a6a460b3a2958d3ab3b9a4c9c34ea1831
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84127138"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556462"
 ---
-# <a name="create-a-xamarinforms-visual-renderer"></a>Créer un Xamarin.Forms convertisseur visuel
+# <a name="create-a-no-locxamarinforms-visual-renderer"></a>Créer un Xamarin.Forms convertisseur visuel
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)
 
-Xamarin.FormsVisual permet de créer des convertisseurs et de les appliquer de manière sélective aux [`VisualElement`](xref:Xamarin.Forms.VisualElement) objets, sans avoir à les afficher sous-classes Xamarin.Forms . Un convertisseur qui spécifie un `IVisual` type, dans le cadre de son `ExportRendererAttribute` , sera utilisé pour le rendu de l’option choisi dans les vues, plutôt que dans le convertisseur par défaut. Au moment de la sélection du convertisseur, la `Visual` propriété de la vue est inspectée et incluse dans le processus de sélection du convertisseur.
+Xamarin.Forms Visual permet de créer des convertisseurs et de les appliquer de manière sélective aux [`VisualElement`](xref:Xamarin.Forms.VisualElement) objets, sans avoir à les afficher sous-classes Xamarin.Forms . Un convertisseur qui spécifie un `IVisual` type, dans le cadre de son `ExportRendererAttribute` , sera utilisé pour le rendu de l’option choisi dans les vues, plutôt que dans le convertisseur par défaut. Au moment de la sélection du convertisseur, la `Visual` propriété de la vue est inspectée et incluse dans le processus de sélection du convertisseur.
 
 > [!IMPORTANT]
 > Actuellement [`Visual`](xref:Xamarin.Forms.VisualElement.Visual) , la propriété ne peut pas être modifiée une fois que la vue a été rendue, mais cela sera modifié dans une version ultérieure.
@@ -175,6 +175,6 @@ Le `IVisual` type peut ensuite être consommé via son nom inscrit :
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Élément visuel (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)
-- [Xamarin.FormsÉlément visuel](material-visual.md)
+- [Élément visuel (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)
+- [Xamarin.Forms Élément visuel](material-visual.md)
 - [Renderers personnalisés](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)

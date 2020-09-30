@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsStackLayout
+title: Xamarin.Forms StackLayout
 description: Un StackLayout organise les vues enfants dans une pile unidimensionnelle, horizontalement ou verticalement.
 ms.prod: xamarin
 ms.assetid: 6A91EA70-268C-462C-AAAF-F8DA011403F8
@@ -10,18 +10,18 @@ ms.date: 05/11/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f624674cc6d4ba1bdc34a42fb52fb63ff8a7135a
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 0c8e7c0e3edb581e13944ce48e2241f035791574
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137967"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556852"
 ---
-# <a name="xamarinforms-stacklayout"></a>Xamarin.FormsStackLayout
+# <a name="no-locxamarinforms-stacklayout"></a>Xamarin.Forms StackLayout
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-stacklayoutdemos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-stacklayoutdemos)
 
-[![Xamarin.FormsStackLayout](stacklayout-images/layouts.png "[! Opérationnel. NO-LOC (Xamarin. Forms)] StackLayout")](stacklayout-images/layouts-large.png#lightbox "[! Opérationnel. NO-LOC (Xamarin. Forms)] StackLayout")
+[![::: No-Loc (Xamarin. Forms) ::: StackLayout](stacklayout-images/layouts.png "::: No-Loc (Xamarin. Forms) ::: StackLayout")](stacklayout-images/layouts-large.png#lightbox "::: No-Loc (Xamarin. Forms) ::: StackLayout")
 
 [`StackLayout`](xref:Xamarin.Forms.StackLayout)Organise les vues enfants dans une pile unidimensionnelle, horizontalement ou verticalement. Par défaut, un `StackLayout` est orienté verticalement. En outre, un `StackLayout` peut être utilisé comme une disposition parente qui contient d’autres dispositions enfants.
 
@@ -213,7 +213,7 @@ Les [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) [`VerticalO
 > [!TIP]
 > Ne définissez pas [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) les [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) Propriétés et d’un [`StackLayout`](xref:Xamarin.Forms.StackLayout) , sauf si vous en avez besoin. Les valeurs par défaut de `LayoutOptions.Fill` et `LayoutOptions.FillAndExpand` permettent la meilleure optimisation de la disposition. La modification de ces propriétés a un coût et consomme de la mémoire, même lors de la restauration des valeurs par défaut.
 
-### <a name="alignment"></a>Alignement
+### <a name="alignment"></a>Alignment
 
 L’exemple XAML suivant définit des préférences d’alignement sur chaque vue enfant dans le [`StackLayout`](xref:Xamarin.Forms.StackLayout) :
 
@@ -471,7 +471,7 @@ public class CombinedStackLayoutPageCS : ContentPage
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Démonstrations StackLayout (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-stacklayoutdemos)
-- [Options de disposition dansXamarin.Forms](layout-options.md)
+- [Démonstrations StackLayout (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-stacklayoutdemos)
+- [Options de disposition dans Xamarin.Forms](layout-options.md)
 - [Choisir une Xamarin.Forms disposition](choose-layout.md)
 - [Améliorer les Xamarin.Forms performances des applications](~/xamarin-forms/deploy-test/performance.md)

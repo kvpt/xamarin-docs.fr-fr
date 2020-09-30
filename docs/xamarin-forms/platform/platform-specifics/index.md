@@ -10,12 +10,12 @@ ms.date: 10/01/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e0c6e305287c97abac3500cba4771479b60381ac
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: b029ffdb0a16d9f54951ae3754ca0f1eb7f69aaa
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939800"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556878"
 ---
 # <a name="platform-specifics"></a>Spécificités de la plateforme
 
@@ -56,11 +56,11 @@ Le résultat de l’exposition d’un effet en tant que spécifique à une plate
 > [!NOTE]
 > Il est prévu que les fournisseurs utilisent cette technique pour créer leurs propres propres plateformes, afin de faciliter la consommation par les utilisateurs. Bien que les utilisateurs puissent choisir de créer leurs propres propres plateformes, il convient de noter qu’il nécessite davantage de code que la création et l’utilisation d’un effet.
 
-L' [exemple d’application](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shadowplatformspecific) illustre un `Shadow` spécifique à une plateforme qui ajoute une ombre au texte affiché par un [`Label`](xref:Xamarin.Forms.Label) contrôle :
+L' [exemple d’application](/samples/xamarin/xamarin-forms-samples/userinterface-shadowplatformspecific) illustre un `Shadow` spécifique à une plateforme qui ajoute une ombre au texte affiché par un [`Label`](xref:Xamarin.Forms.Label) contrôle :
 
 ![Shadow-spécifique à la plateforme](images/screenshots.png)
 
-L' [exemple d’application](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shadowplatformspecific) implémente la `Shadow` plateforme spécifique à chaque plateforme, afin de faciliter la compréhension. Toutefois, hormis chaque implémentation d’effet propre à la plateforme, l’implémentation de la classe Shadow est largement identique pour chaque plateforme. Par conséquent, ce guide se concentre sur l’implémentation de la classe Shadow et l’effet associé sur une plate-forme unique.
+L' [exemple d’application](/samples/xamarin/xamarin-forms-samples/userinterface-shadowplatformspecific) implémente la `Shadow` plateforme spécifique à chaque plateforme, afin de faciliter la compréhension. Toutefois, hormis chaque implémentation d’effet propre à la plateforme, l’implémentation de la classe Shadow est largement identique pour chaque plateforme. Par conséquent, ce guide se concentre sur l’implémentation de la classe Shadow et l’effet associé sur une plate-forme unique.
 
 Pour plus d’informations sur les effets, consultez [Personnalisation des contrôles avec des effets](~/xamarin-forms/app-fundamentals/effects/index.md).
 
@@ -280,11 +280,11 @@ shadowLabel.On<iOS>().SetIsShadowed(true);
 
 ## <a name="related-links"></a>Liens connexes
 
-- [PlatformSpecifics (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
-- [ShadowPlatformSpecific (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shadowplatformspecific)
+- [PlatformSpecifics (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [ShadowPlatformSpecific (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-shadowplatformspecific)
 - [Spécificités de la plateforme iOS](~/xamarin-forms/platform/ios/index.md)
 - [Spécificités de la plateforme Android](~/xamarin-forms/platform/android/index.md)
 - [Spécificités de la plateforme Windows](~/xamarin-forms/platform/windows/index.md)
 - [Personnalisation des contrôles avec des effets](~/xamarin-forms/app-fundamentals/effects/index.md)
-- [Propriétés attachées](~/xamarin-forms/xaml/attached-properties.md)
+- [Propriétés jointes](~/xamarin-forms/xaml/attached-properties.md)
 - [API PlatformConfiguration](xref:Xamarin.Forms.PlatformConfiguration)

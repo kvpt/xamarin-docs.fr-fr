@@ -10,16 +10,16 @@ ms.date: 07/17/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5c3909271580d0568d7c603de0d434ff5b3f3bc4
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 9a39433a0bad518055542adb190f4f441675ddfb
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138669"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556371"
 ---
 # <a name="segmented-display-of-skiasharp-bitmaps"></a>Affichage segmenté des bitmaps SkiaSharp
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 L' `SKCanvas` objet SkiaSharp définit une méthode nommée `DrawBitmapNinePatch` et deux méthodes nommées `DrawBitmapLattice` qui sont très similaires. Ces deux méthodes restituent une bitmap à la taille d’un rectangle de destination, mais au lieu d’étirer la bitmap uniformément, elles affichent des parties de la bitmap dans ses dimensions en pixels et étirent d’autres parties de la bitmap afin qu’elles s’ajustent au rectangle :
 
@@ -27,7 +27,7 @@ L' `SKCanvas` objet SkiaSharp définit une méthode nommée `DrawBitmapNinePatch
 
 Ces méthodes sont généralement utilisées pour le rendu des bitmaps qui font partie d’objets d’interface utilisateur tels que des boutons. Lorsque vous concevez un bouton, en général vous souhaitez que la taille d’un bouton soit basée sur le contenu du bouton, mais vous souhaitez probablement que la bordure du bouton soit de la même largeur, quel que soit le contenu du bouton. Il s’agit d’une application idéale de `DrawBitmapNinePatch` .
 
-`DrawBitmapNinePatch`est un cas particulier de `DrawBitmapLattice` , mais il s’agit de la plus simple des deux méthodes à utiliser et à comprendre.
+`DrawBitmapNinePatch` est un cas particulier de `DrawBitmapLattice` , mais il s’agit de la plus simple des deux méthodes à utiliser et à comprendre.
 
 ## <a name="the-nine-patch-display"></a>Affichage des neuf correctifs 
 
@@ -47,7 +47,7 @@ canvas.DrawBitmapNinePatch(bitmap, centerRectangle, destRectangle, paint);
 
 Le rectangle central est relatif à l’image bitmap. Il s’agit d’une `SKRectI` valeur (la version entière de `SKRect` ) et toutes les coordonnées et tailles sont exprimées en unités de pixels. Le rectangle de destination est relatif à la surface d’affichage. L'argument `paint` est obligatoire.
 
-La page d' **affichage des neuf patchs** de l’exemple [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) utilise tout d’abord un constructeur statique pour créer une propriété statique publique de type `SKBitmap` :
+La page d' **affichage des neuf patchs** de l’exemple [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) utilise tout d’abord un constructeur statique pour créer une propriété statique publique de type `SKBitmap` :
 
 ```csharp
 public partial class NinePatchDisplayPage : ContentPage
@@ -131,7 +131,7 @@ La [`SKLattice`](xref:SkiaSharp.SKLattice) structure définit quatre propriété
 - [`XDivs`](xref:SkiaSharp.SKLattice.XDivs), un tableau d’entiers
 - [`YDivs`](xref:SkiaSharp.SKLattice.YDivs), un tableau d’entiers
 - [`Flags`](xref:SkiaSharp.SKLattice.Flags), un tableau de `SKLatticeFlags` , un type énumération
-- [`Bounds`](xref:SkiaSharp.SKLattice.Bounds)de type `Nullable<SKRectI>` pour spécifier un rectangle source facultatif dans la bitmap
+- [`Bounds`](xref:SkiaSharp.SKLattice.Bounds) de type `Nullable<SKRectI>` pour spécifier un rectangle source facultatif dans la bitmap
 
 Le `XDivs` tableau divise la largeur de la bitmap en bandes verticales. La première bande s’étend du pixel 0 à gauche à `XDivs[0]` . Cette bande est rendue dans sa largeur en pixels. La seconde bande s’étend de `XDivs[0]` à `XDivs[1]` , et est étirée. La troisième bande s’étend de `XDivs[1]` à `XDivs[2]` et est rendue dans sa largeur en pixels. La dernière bande s’étend du dernier élément du tableau au bord droit de l’image bitmap. Si le tableau a un nombre pair d’éléments, il est affiché dans sa largeur en pixels. Dans le cas contraire, il est étiré. Le nombre total de bandes verticales est supérieur au nombre d’éléments contenus dans le tableau.
 
@@ -141,8 +141,8 @@ Ensemble, le `XDivs` `YDivs` tableau et divise le bitmap en rectangles. Le nombr
 
 Selon la documentation de skia, le `Flags` tableau contient un élément pour chaque rectangle, d’abord la ligne supérieure des rectangles, puis la deuxième ligne, et ainsi de suite. Le `Flags` tableau est de type [`SKLatticeFlags`](xref:SkiaSharp.SKLatticeFlags) , une énumération avec les membres suivants :
 
-- `Default`avec la valeur 0
-- `Transparent`avec la valeur 1
+- `Default` avec la valeur 0
+- `Transparent` avec la valeur 1
 
 Toutefois, ces indicateurs ne semblent pas fonctionner comme ils le devraient, et il est préférable de les ignorer. Mais n’affectez pas la valeur `Flags` à la propriété `null` . Affectez-lui un tableau de `SKLatticeFlags` valeurs suffisamment grand pour englober le nombre total de rectangles.
 
@@ -230,5 +230,5 @@ La page d' **affichage** de réseau généralise la création du `Flags` tableau
 
 ## <a name="related-links"></a>Liens connexes
 
-- [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [API SkiaSharp](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (exemple)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

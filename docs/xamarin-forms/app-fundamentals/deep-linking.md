@@ -11,12 +11,12 @@ ms.date: 11/28/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d2bd0bf696e652e95e0feb88cca7cf685b14433b
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 5c5d95c3d326961db9d56631a0d7190d64ede72a
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936498"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556059"
 ---
 # <a name="application-indexing-and-deep-linking"></a>Indexation d’applications et liens ciblés
 
@@ -28,7 +28,7 @@ _L’indexation des applications permet aux applications qui seraient autrement 
 
 **Liaison profonde avec Xamarin.Forms et vidéo Azure**
 
-Xamarin.Formsl’indexation d’application et la liaison profonde fournissent une API pour la publication de métadonnées pour l’indexation d’application lorsque les utilisateurs parcourent des applications. Le contenu indexé peut alors être recherché dans Spotlight Search, dans Google Search ou dans une recherche web. Le fait d’appuyer sur un résultat de recherche qui contient un lien ciblé déclenche un événement qui peut être géré par une application et qui est généralement utilisé pour accéder à la page référencée à partir du lien ciblé.
+Xamarin.Forms l’indexation d’application et la liaison profonde fournissent une API pour la publication de métadonnées pour l’indexation d’application lorsque les utilisateurs parcourent des applications. Le contenu indexé peut alors être recherché dans Spotlight Search, dans Google Search ou dans une recherche web. Le fait d’appuyer sur un résultat de recherche qui contient un lien ciblé déclenche un événement qui peut être géré par une application et qui est généralement utilisé pour accéder à la page référencée à partir du lien ciblé.
 
 Cet exemple d’application montre une application de liste Todo où les données sont stockées dans une base de données SQLite locale, comme illustré dans les captures d’écran suivantes :
 
@@ -39,9 +39,9 @@ Chaque instance `TodoItem` créée par l’utilisateur est indexée. La recherch
 Pour plus d’informations sur l’utilisation d’une base de données SQLite, consultez [ Xamarin.Forms bases de données locales](~/xamarin-forms/data-cloud/data/databases.md).
 
 > [!NOTE]
-> Xamarin.Formsl’indexation des applications et la fonctionnalité de liaison profonde sont uniquement disponibles sur les plateformes iOS et Android, et nécessitent au minimum iOS 9 et l’API 23 respectivement.
+> Xamarin.Forms l’indexation des applications et la fonctionnalité de liaison profonde sont uniquement disponibles sur les plateformes iOS et Android, et nécessitent au minimum iOS 9 et l’API 23 respectivement.
 
-## <a name="setup"></a>Installation
+## <a name="setup"></a>Programme d’installation
 
 Les sections suivantes fournissent des instructions d’installation supplémentaires pour utiliser cette fonctionnalité sur les plateformes iOS et Android.
 
@@ -251,7 +251,7 @@ Cet article a expliqué comment utiliser l’indexation d’application et la li
 
 ## <a name="related-links"></a>Liens associés
 
-- [Deep Linking (sample)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/deeplinking)
+- [Deep Linking (sample)](/samples/xamarin/xamarin-forms-samples/deeplinking)
 - [API de recherche iOS](~/ios/platform/search/index.md)
 - [Liaison d’applications dans Android 6.0](~/android/platform/app-linking.md)
 - [AppLinkEntry](xref:Xamarin.Forms.AppLinkEntry)

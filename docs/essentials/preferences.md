@@ -9,18 +9,18 @@ ms.custom: video
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2dc00a10e70972429f123b0dfb7adb6a083a883d
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 60a5fbaa8386d0ecdc5d205b3262e05406cec4a6
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91433682"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556241"
 ---
 # <a name="no-locxamarinessentials-preferences"></a>Xamarin.Essentials: Préférences
 
 La classe **Preferences** permet de stocker les préférences d’application dans un magasin de clés/valeurs.
 
-## <a name="get-started"></a>Bien démarrer
+## <a name="get-started"></a>Prise en main
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -62,7 +62,7 @@ Pour supprimer toutes les préférences :
 Preferences.Clear();
 ```
 
-En plus de ces méthodes, vous pouvez utiliser un `sharedName` facultatif qui permet de créer des conteneurs supplémentaires pour des préférences. Lisez les spécificités d’implémentation en fonction de la plateforme, ci-dessous.
+Les méthodes ci-dessus prennent également un facultatif `sharedName` qui peut être utilisé pour créer des conteneurs supplémentaires pour les préférences. Lisez les spécificités d’implémentation en fonction de la plateforme, ci-dessous.
 
 ## <a name="supported-data-types"></a>Types de données pris en charge
 
@@ -78,7 +78,7 @@ Les types de données suivants sont pris en charge dans **Preferences** :
 
 ## <a name="integrate-with-system-settings"></a>Intégrer avec les paramètres système
 
-Les préférences sont stockées en mode natif, ce qui vous permet d’intégrer vos paramètres dans les paramètres système natifs. Suivez les documetnation et les exemples de la plateforme pour les intégrer à la plateforme :
+Les préférences sont stockées en mode natif, ce qui vous permet d’intégrer vos paramètres dans les paramètres système natifs. Suivez la documentation de la plateforme et des exemples pour l’intégrer à la plateforme :
 
 * Apple : [implémentation d’un bundle de paramètres iOS](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/UserDefaults/Preferences/Preferences.html)
 * [Exemple de préférences application iOS](/samples/xamarin/ios-samples/appprefs/)
@@ -93,7 +93,7 @@ Les valeurs de `DateTime` sont stockées dans un format binaire 64 bits (entier 
 
 # <a name="android"></a>[Android](#tab/android)
 
-Toutes les données sont stockées dans les [Préférences partagées](https://developer.android.com/training/data-storage/shared-preferences.html). Si aucun `sharedName` n’est spécifié, les préférences partagées par défaut sont utilisées. Sinon, le nom sert à obtenir des préférences partagées **privées** avec le nom spécifié.
+Toutes les données sont stockées dans les [Préférences partagées](https://developer.android.com/training/data-storage/shared-preferences.html). Si `sharedName` vous spécifiez non, les préférences partagées par défaut sont utilisées, sinon le nom est utilisé pour obtenir des préférences partagées **privées** portant le nom spécifié.
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
@@ -101,7 +101,7 @@ Toutes les données sont stockées dans les [Préférences partagées](https://d
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
 
-[ApplicationDataContainer](/uwp/api/windows.storage.applicationdatacontainer) permet de stocker les valeurs sur l’appareil. Si aucun `sharedName` n’est spécifié, `LocalSettings` est utilisé. Sinon, le nom sert à créer un conteneur dans `LocalSettings`.
+[ApplicationDataContainer](/uwp/api/windows.storage.applicationdatacontainer) permet de stocker les valeurs sur l’appareil. Si aucun `sharedName` n’est spécifié `LocalSettings` , le sont utilisés ; sinon, le nom est utilisé pour créer un conteneur à l’intérieur de `LocalSettings` .
 
 `LocalSettings` présente également la restriction suivante : le nom de chaque paramètre peut avoir une longueur de 255 caractères au maximum. Chaque paramètre peut avoir une taille maximale de 8 Ko et chaque paramètre composite peut comporter jusqu’à 64 Ko d’octets.
 
@@ -109,11 +109,11 @@ Toutes les données sont stockées dans les [Préférences partagées](https://d
 
 ## <a name="persistence"></a>Persistance
 
-La désinstallation de l’application entraîne la suppression de toutes les _Préférences_. Il existe une exception à cette règle. Il s’agit du cas où les applications ciblent (et s’exécutent sur) Android 6.0 (niveau d’API 23) ou version ultérieure, et utilisent la [__sauvegarde automatique__](https://developer.android.com/guide/topics/data/autobackup). Cette fonctionnalité est activée par défaut et conserve les données de l’application, notamment les __Préférences partagées__, utilisées par l’API de **Préférences**. Vous pouvez désactiver cette fonctionnalité en suivant la [documentation](https://developer.android.com/guide/topics/data/autobackup) de Google.
+La désinstallation de l’application entraîne la suppression de toutes les _Préférences_ , à l’exception des applications qui ciblent et s’exécutent sur Android 6,0 (niveau d’API 23) ou ultérieur qui utilise la [__sauvegarde automatique__](https://developer.android.com/guide/topics/data/autobackup). Cette fonctionnalité est activée par défaut et conserve les données de l’application, notamment les __Préférences partagées__, utilisées par l’API de **Préférences**. Vous pouvez désactiver cette fonctionnalité en suivant la [documentation](https://developer.android.com/guide/topics/data/autobackup) de Google.
 
-## <a name="limitations"></a>Limites
+## <a name="limitations"></a>Limitations
 
-Quand vous stockez une chaîne, cette API permet de stocker de petites quantités de texte.  Les performances risquent d’être médiocres si vous essayez de l’utiliser pour stocker de grandes quantités de texte.
+Quand vous stockez une chaîne, cette API permet de stocker de petites quantités de texte. Les performances risquent d’être médiocres si vous essayez de l’utiliser pour stocker de grandes quantités de texte.
 
 ## <a name="api"></a>API
 

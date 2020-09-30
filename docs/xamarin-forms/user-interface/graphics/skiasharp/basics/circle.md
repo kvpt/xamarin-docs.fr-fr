@@ -10,12 +10,12 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 785532d1a8fedfaef367c8fb8ae437220c3de9c4
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 538a3ea3bd5b2293f93047d9796a185abfa5f2b9
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938175"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556592"
 ---
 # <a name="drawing-a-simple-circle-in-skiasharp"></a>Dessin d’un cercle simple dans SkiaSharp
 
@@ -25,7 +25,7 @@ _Découvrez les principes de base du dessin SkiaSharp, y compris les canevas et 
 
 Cet article présente les concepts de dessin de graphiques dans Xamarin.Forms à l’aide de SkiaSharp, notamment la création d’un `SKCanvasView` objet pour héberger les graphiques, la gestion de l' `PaintSurface` événement et l’utilisation d’un `SKPaint` objet pour spécifier la couleur et d’autres attributs de dessin.
 
-Le programme [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) contient tous les exemples de code de cette série d’articles SkiaSharp. La première page est intitulée **simple Circle** et appelle la classe page [`SimpleCirclePage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs) . Ce code montre comment dessiner un cercle au centre de la page avec un rayon de 100 pixels. Le contour du cercle est rouge et l’intérieur du cercle est bleu.
+Le programme [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) contient tous les exemples de code de cette série d’articles SkiaSharp. La première page est intitulée **simple Circle** et appelle la classe page [`SimpleCirclePage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs) . Ce code montre comment dessiner un cercle au centre de la page avec un rayon de 100 pixels. Le contour du cercle est rouge et l’intérieur du cercle est bleu.
 
 ![Cercle bleu encadré en rouge](circle-images/circleexample.png)
 
@@ -63,8 +63,8 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 L' [`SKPaintSurfaceEventArgs`](xref:SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs) objet qui accompagne l’événement a deux propriétés :
 
-- [`Info`](xref:SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs.Info)de type[`SKImageInfo`](xref:SkiaSharp.SKImageInfo)
-- [`Surface`](xref:SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs.Surface)de type[`SKSurface`](xref:SkiaSharp.SKSurface)
+- [`Info`](xref:SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs.Info) de type [`SKImageInfo`](xref:SkiaSharp.SKImageInfo)
+- [`Surface`](xref:SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs.Surface) de type [`SKSurface`](xref:SkiaSharp.SKSurface)
 
 La `SKImageInfo` structure contient des informations sur la surface de dessin, surtout, sa largeur et sa hauteur en pixels. L' `SKSurface` objet représente la surface de dessin elle-même. Dans ce programme, la surface de dessin est un affichage vidéo, mais dans d’autres programmes, un `SKSurface` objet peut également représenter un bitmap sur lequel vous utilisez SkiaSharp pour dessiner.
 
@@ -109,7 +109,7 @@ La [`Style`](xref:SkiaSharp.SKPaint.Style) propriété indique que vous souhaite
 - [`Stroke`](xref:SkiaSharp.SKPaintStyle.Stroke)
 - [`StrokeAndFill`](xref:SkiaSharp.SKPaintStyle.StrokeAndFill)
 
-Par défaut, il s’agit de `Fill`. Utilisez la troisième option pour rayer la ligne et remplir l’intérieur avec la même couleur.
+La valeur par défaut est `Fill`. Utilisez la troisième option pour rayer la ligne et remplir l’intérieur avec la même couleur.
 
 Affectez [`Color`](xref:SkiaSharp.SKPaint.Color) à la propriété une valeur de type [`SKColor`](xref:SkiaSharp.SKColor) . Une façon d’obtenir une `SKColor` valeur consiste à convertir une Xamarin.Forms `Color` valeur en `SKColor` valeur à l’aide de la méthode d’extension [`ToSKColor`](xref:SkiaSharp.Views.Forms.Extensions.ToSKColor*) . La [`Extensions`](xref:SkiaSharp.Views.Forms.Extensions) classe de l' `SkiaSharp.Views.Forms` espace de noms comprend d’autres méthodes qui effectuent une conversion entre Xamarin.Forms des valeurs et des valeurs SkiaSharp.
 
@@ -163,5 +163,5 @@ L’exemple suivant dans l’article [intégration Xamarin.Forms à](~/xamarin-f
 
 ## <a name="related-links"></a>Liens associés
 
-- [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [API SkiaSharp](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (exemple)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

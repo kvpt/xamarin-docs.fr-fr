@@ -10,12 +10,12 @@ ms.date: 02/08/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 4c07f2667230695c6b884eb4902e68f7f4120f6b
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 719bc923a53d6a2ce9250def48a99893cadac32d
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939501"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91555305"
 ---
 # <a name="spell-checking-using-the-bing-spell-check-api"></a>Vérification de l’orthographe à l’aide de l’API Vérification orthographique Bing
 
@@ -27,8 +27,8 @@ _Vérification orthographique Bing effectue une vérification orthographique con
 
 L’API REST Vérification orthographique Bing a deux modes de fonctionnement, et un mode doit être spécifié lors de l’exécution d’une requête auprès de l’API :
 
-- `Spell`corrige le texte abrégé (jusqu’à 9 mots) sans modification de la casse.
-- `Proof`corrige le texte long, fournit des corrections de casse et des signes de ponctuation de base, et supprime les corrections agressives.
+- `Spell` corrige le texte abrégé (jusqu’à 9 mots) sans modification de la casse.
+- `Proof` corrige le texte long, fournit des corrections de casse et des signes de ponctuation de base, et supprime les corrections agressives.
 
 > [!NOTE]
 > Si vous n’avez pas [d’abonnement Azure](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing), créez un [compte gratuit](https://aka.ms/azfree-docs-mobileapps) avant de commencer.
@@ -140,10 +140,10 @@ La réponse de l’API est retournée au format JSON. Les données JSON suivante
 
 Le `flaggedTokens` tableau contient un tableau de mots dans le texte qui ont été marqués comme n’étant pas correctement orthographiés ou qui sont incorrects par programmation. Le tableau est vide si aucune erreur d’orthographe ou de grammaire n’est détectée. Les balises dans le tableau sont les suivantes :
 
-- `offset`: décalage de base zéro entre le début de la chaîne de texte et le mot qui a été marqué.
-- `token`: mot de la chaîne de texte qui n’est pas orthographié correctement ou qui est incorrect.
-- `type`: type de l’erreur qui a provoqué l’indicateur du mot. Il existe deux valeurs possibles : `RepeatedToken` et `UnknownToken` .
-- `suggestions`: tableau de mots qui corrigeront l’erreur d’orthographe ou de grammaire. Le tableau est constitué d’un `suggestion` et d’un `score` , qui indique le niveau de confiance que la correction suggérée est correcte.
+- `offset` : décalage de base zéro entre le début de la chaîne de texte et le mot qui a été marqué.
+- `token` : mot de la chaîne de texte qui n’est pas orthographié correctement ou qui est incorrect.
+- `type` : type de l’erreur qui a provoqué l’indicateur du mot. Il existe deux valeurs possibles : `RepeatedToken` et `UnknownToken` .
+- `suggestions` : tableau de mots qui corrigeront l’erreur d’orthographe ou de grammaire. Le tableau est constitué d’un `suggestion` et d’un `score` , qui indique le niveau de confiance que la correction suggérée est correcte.
 
 Dans l’exemple d’application, la réponse JSON est désérialisée dans une `SpellCheckResult` instance, et le résultat est retourné à la méthode d’appel pour l’affichage. L’exemple de code suivant montre comment l' `SpellCheckResult` instance est traitée pour l’affichage :
 
@@ -172,5 +172,5 @@ Cet article explique comment utiliser l’API REST Vérification orthographique 
 
 - [Documentation Vérification orthographique Bing](/azure/cognitive-services/bing-spell-check/)
 - [Utilisation d’un service Web RESTful](~/xamarin-forms/data-cloud/web-services/rest.md)
-- [Cognitive Services todo (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
+- [Cognitive Services todo (exemple)](/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 - [Informations de référence sur l’API Vérification orthographique Bing v7](/rest/api/cognitiveservices/bing-spell-check-api-v7-reference/)

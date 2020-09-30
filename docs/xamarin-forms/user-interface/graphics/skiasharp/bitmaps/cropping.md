@@ -10,16 +10,16 @@ ms.date: 07/17/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d613c4f73c0a377a599b0137ce2f2b557c04ad6a
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 45634695050dc6f74a9b1617a2180481e3788d11
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84572336"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557320"
 ---
 # <a name="cropping-skiasharp-bitmaps"></a>Rognage des bitmaps SkiaSharp
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 L’article [**création et dessin de bitmaps SkiaSharp**](drawing.md) a décrit comment un `SKBitmap` objet peut être passé à un `SKCanvas` constructeur. Toute méthode de dessin appelée sur ce canevas provoque le rendu des graphiques sur l’image bitmap. Ces méthodes de dessin incluent `DrawBitmap` , ce qui signifie que cette technique autorise le transfert d’une partie ou de la totalité d’une image bitmap vers une autre bitmap, peut-être avec des transformations appliquées.
 
@@ -448,7 +448,7 @@ class PhotoCropperCanvasView : SKCanvasView
 
 ## <a name="hosting-the-photo-cropper-canvas-view"></a>Hébergement de la vue Canvas photo Cropper
 
-Avec ces deux classes gérant la logique de rognage, la page de **rognage des photos** dans l’application **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** a très peu de travail. Le fichier XAML instancie un `Grid` pour héberger le `PhotoCropperCanvasView` et un bouton **terminé** :
+Avec ces deux classes gérant la logique de rognage, la page de **rognage des photos** dans l’application **[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** a très peu de travail. Le fichier XAML instancie un `Grid` pour héberger le `PhotoCropperCanvasView` et un bouton **terminé** :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -535,9 +535,9 @@ Vous verrez le rectangle de rognage limité à une caractéristique de proportio
 
 ## <a name="dividing-a-bitmap-into-tiles"></a>Division d’une image bitmap en mosaïques
 
-Une Xamarin.Forms version du célèbre puzzle 14-15 est apparue dans le chapitre 22 du livre [_création d’Mobile Apps avec Xamarin. Forms_](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md) et peut être téléchargée en tant que [**XamagonXuzzle**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/XamagonXuzzle). Toutefois, le puzzle devient plus amusant (et souvent plus difficile) lorsqu’il est basé sur une image de votre propre bibliothèque de photos.
+Une Xamarin.Forms version du célèbre puzzle 14-15 est apparue dans le chapitre 22 du livre [_création Xamarin.Forms d’Mobile Apps avec_](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md) et peut être téléchargée en tant que [**XamagonXuzzle**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/XamagonXuzzle). Toutefois, le puzzle devient plus amusant (et souvent plus difficile) lorsqu’il est basé sur une image de votre propre bibliothèque de photos.
 
-Cette version du puzzle 14-15 fait partie de l’application **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** et se compose d’une série de pages intitulée **photo puzzle**.
+Cette version du puzzle 14-15 fait partie de l’application **[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** et se compose d’une série de pages intitulée **photo puzzle**.
 
 Le fichier **PhotoPuzzlePage1. Xaml** se compose d’un `Button` :
 
@@ -650,7 +650,7 @@ public partial class PhotoPuzzlePage2 : ContentPage
 
 Quand l’utilisateur clique sur le bouton **terminé** , le `Clicked` Gestionnaire accède à `PhotoPuzzlePage3` , en passant le bitmap de rotation final dans le constructeur de la page.
 
-`PhotoPuzzlePage3`autorise le rognage de la photo. Le programme requiert une image bitmap carrée pour se diviser en une grille 4 par 4 de vignettes.
+`PhotoPuzzlePage3` autorise le rognage de la photo. Le programme requiert une image bitmap carrée pour se diviser en une grille 4 par 4 de vignettes.
 
 Le fichier **PhotoPuzzlePage3. Xaml** contient un `Label` , un `Grid` pour héberger le `PhotoCropperCanvasView` et un autre bouton **terminé** :
 
@@ -739,7 +739,7 @@ public partial class PhotoPuzzlePage3 : ContentPage
 
 Le gestionnaire de bouton **terminé** obtient la largeur et la hauteur de la bitmap rognée (ces deux valeurs doivent être identiques), puis les divise en 15 bitmaps distinctes, chacun d’entre eux étant de 1/4 la largeur et la hauteur de l’original. (La dernière des 16 bitmaps possibles n’est pas créée.) La `DrawBitmap` méthode avec un rectangle source et destination permet la création d’une image bitmap basée sur un sous-ensemble d’une bitmap plus grande.
 
-## <a name="converting-to-xamarinforms-bitmaps"></a>Convertir en Xamarin.Forms bitmaps
+## <a name="converting-to-no-locxamarinforms-bitmaps"></a>Convertir en Xamarin.Forms bitmaps
 
 Dans la `OnDoneButtonClicked` méthode, le tableau créé pour les 15 bitmaps est de type [`ImageSource`](xref:Xamarin.Forms.ImageSource) :
 
@@ -747,7 +747,7 @@ Dans la `OnDoneButtonClicked` méthode, le tableau créé pour les 15 bitmaps es
 ImageSource[] imgSources = new ImageSource[15];
 ```
 
-`ImageSource`est le Xamarin.Forms type de base qui encapsule une image bitmap. Heureusement, SkiaSharp permet la conversion de bitmaps SkiaSharp en Xamarin.Forms bitmaps. L’assembly **SkiaSharp. views. Forms** définit une [`SKBitmapImageSource`](xref:SkiaSharp.Views.Forms.SKBitmapImageSource) classe qui dérive de, `ImageSource` mais qui peut être créée en fonction d’un `SKBitmap` objet SkiaSharp. `SKBitmapImageSource`définit même les conversions entre `SKBitmapImageSource` et `SKBitmap` , et c’est ainsi que les `SKBitmap` objets sont stockés dans un tableau en tant qu' Xamarin.Forms images bitmap :
+`ImageSource` est le Xamarin.Forms type de base qui encapsule une image bitmap. Heureusement, SkiaSharp permet la conversion de bitmaps SkiaSharp en Xamarin.Forms bitmaps. L’assembly **SkiaSharp. views. Forms** définit une [`SKBitmapImageSource`](xref:SkiaSharp.Views.Forms.SKBitmapImageSource) classe qui dérive de, `ImageSource` mais qui peut être créée en fonction d’un `SKBitmap` objet SkiaSharp. `SKBitmapImageSource` définit même les conversions entre `SKBitmapImageSource` et `SKBitmap` , et c’est ainsi que les `SKBitmap` objets sont stockés dans un tableau en tant qu' Xamarin.Forms images bitmap :
 
 ```csharp
 imgSources[4 * row + col] = (SKBitmapImageSource)bitmap;
@@ -765,5 +765,5 @@ Vous pouvez désormais les remettre dans le bon ordre. Les vignettes de la même
 
 ## <a name="related-links"></a>Liens connexes
 
-- [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [API SkiaSharp](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (exemple)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

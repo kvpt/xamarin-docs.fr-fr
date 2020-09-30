@@ -10,12 +10,12 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 644e6ab4acffa7acf2d86733d68fed8db07a752a
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 75d19e41243076da127d58defdabeca908d900cd
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86932364"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556085"
 ---
 # <a name="lines-and-stroke-caps"></a>Lignes et extrémités de trait
 
@@ -37,11 +37,11 @@ Par défaut, la [`StrokeWidth`](xref:SkiaSharp.SKPaint.StrokeWidth) propriété 
 
 L’apparence du début et de la fin des lignes est appelée un *embout de ligne* ou, dans skia, une extrémité de *trait*. Dans ce contexte, le mot « Cap » fait référence à un type de chapeau &mdash; qui se trouve à la fin de la ligne. Vous définissez la [`StrokeCap`](xref:SkiaSharp.SKPaint.StrokeCap) propriété de l' `SKPaint` objet sur l’un des membres suivants de l' [`SKStrokeCap`](xref:SkiaSharp.SKStrokeCap) énumération :
 
-- `Butt`(valeur par défaut)
+- `Butt` (valeur par défaut)
 - `Square`
 - `Round`
 
-Ils sont mieux illustrés par un exemple de programme. La section **lignes et chemins d’accès SkiaSharp** du programme [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) commence par une page intitulée **traits** d’accès en fonction de la [`StrokeCapsPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/StrokeCapsPage.cs) classe. Cette page définit un `PaintSurface` Gestionnaire d’événements qui parcourt les trois membres de l' `SKStrokeCap` énumération, en affichant à la fois le nom du membre de l’énumération et en dessinant une ligne à l’aide de cette extrémité de trait :
+Ils sont mieux illustrés par un exemple de programme. La section **lignes et chemins d’accès SkiaSharp** du programme [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) commence par une page intitulée **traits** d’accès en fonction de la [`StrokeCapsPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/StrokeCapsPage.cs) classe. Cette page définit un `PaintSurface` Gestionnaire d’événements qui parcourt les trois membres de l' `SKStrokeCap` énumération, en affichant à la fois le nom du membre de l’énumération et en dessinant une ligne à l’aide de cette extrémité de trait :
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -109,9 +109,9 @@ DrawPoints (SKPointMode mode, points, paint)
 
 Le `points` paramètre est un tableau de `SKPoint` valeurs et `mode` est membre de l' [`SKPointMode`](xref:SkiaSharp.SKPointMode) énumération, qui a trois membres :
 
-- `Points`pour afficher les points individuels
-- `Lines`pour connecter chaque paire de points
-- `Polygon`pour connecter tous les points consécutifs
+- `Points` pour afficher les points individuels
+- `Lines` pour connecter chaque paire de points
+- `Polygon` pour connecter tous les points consécutifs
 
 La page **lignes multiples** illustre cette méthode. Le fichier [**MultipleLinesPage. Xaml**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/MultipleLinesPage.xaml) instancie deux `Picker` vues qui vous permettent de sélectionner un membre de l' `SKPointMode` énumération et un membre de l' `SKStrokeCap` énumération :
 
@@ -243,5 +243,5 @@ Le fait que les lignes soient connectées ou non connectées est un aspect cruci
 
 ## <a name="related-links"></a>Liens associés
 
-- [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [API SkiaSharp](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (exemple)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

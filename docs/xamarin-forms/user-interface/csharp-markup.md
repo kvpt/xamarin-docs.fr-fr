@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsBalisage C#
+title: Xamarin.Forms Balisage C#
 description: Le balisage C# est un ensemble de méthodes et de classes d’assistance Fluent pour simplifier le processus de création d' Xamarin.Forms interfaces utilisateur déclaratives en C#.
 ms.prod: xamarin
 ms.assetid: D41B9DCD-5C34-4C2F-B177-FC082AB2E9E0
@@ -10,14 +10,14 @@ ms.date: 05/15/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3e8c95e84dd525c274403290712260ba86abd677
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: a07931bfa53a5e4d77c2755b08745b8dd962b695
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918563"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557151"
 ---
-# <a name="no-locxamarinforms-c-markup"></a>Xamarin.FormsBalisage C#
+# <a name="no-locxamarinforms-c-markup"></a>Xamarin.Forms Balisage C#
 
 ![API de la version préliminaire](~/media/shared/preview.png)
 
@@ -231,7 +231,7 @@ new Label { Text = "Tap Me" }
 
 Étant donné qu’un module de reconnaissance de mouvement est un `BindableObject` , vous pouvez utiliser les `Bind` `BindCommand` méthodes d’extension et lorsque vous l’initialisez. Vous pouvez également initialiser des types de module de reconnaissance de mouvement personnalisés avec la `Gesture<TGestureElement, TGestureRecognizer>` méthode d’extension.
 
-## <a name="layout"></a>Disposition
+## <a name="layout"></a>Mise en page
 
 Le balisage C# comprend une série de méthodes d’extension de disposition qui prennent en charge le positionnement des vues dans les dispositions et le contenu dans les vues :
 
@@ -283,7 +283,7 @@ new Label { }
 Les énumérations peuvent être utilisées pour définir [`Grid`](xref:Xamarin.Forms.Grid) des lignes et des colonnes, au lieu d’utiliser des nombres. Cela offre l’avantage que la renumérotation n’est pas nécessaire lors de l’ajout ou de la suppression de lignes ou de colonnes.
 
 > [!IMPORTANT]
-> La définition de [`Grid`](xref:Xamarin.Forms.Grid) lignes et de colonnes à l’aide d’énumérations requiert la `using` directive suivante :`using static Xamarin.Forms.Markup.GridRowsColumns;`
+> La définition de [`Grid`](xref:Xamarin.Forms.Grid) lignes et de colonnes à l’aide d’énumérations requiert la `using` directive suivante : `using static Xamarin.Forms.Markup.GridRowsColumns;`
 
 Le code suivant montre un exemple de définition et de consommation de [`Grid`](xref:Xamarin.Forms.Grid) lignes et de colonnes à l’aide d’énumérations :
 
@@ -553,7 +553,7 @@ L’application cohérente de cette Convention vous permet d’analyser rapideme
 
 ## <a name="related-links"></a>Liens connexes
 
-- [CSharpForMarkupDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-csharpmarkupdemos/)
+- [CSharpForMarkupDemos (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-csharpmarkupdemos/)
 - [Fonctionnalités de la plateforme Android](~/xamarin-forms/platform/android/index.md)
 - [fonctionnalités de la plateforme iOS](~/xamarin-forms/platform/ios/index.md)
 - [Fonctionnalités de la plateforme Windows](~/xamarin-forms/platform/windows/index.md)

@@ -11,12 +11,12 @@ ms.date: 11/01/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 727bac49c5bff522125a2f21a9742e428b81c924
-ms.sourcegitcommit: bb18e6b3b5d592374b17932efa1e85c3b5fbad57
+ms.openlocfilehash: fac41e57d13815dcd202521d16ae4730e1d99cfa
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88950740"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91555864"
 ---
 # <a name="no-locxamarinforms-string-and-image-localization"></a>Xamarin.Forms Localisation de chaînes et d’images
 
@@ -26,7 +26,7 @@ La localisation est le processus d’adaptation d’une application pour répond
 
 ![Captures d’écran de l’application de localisation sur iOS et Android](text-images/localizationdemo-screenshots.png)
 
-Le .NET Framework comprend un mécanisme intégré pour la localisation d’applications à l’aide de [fichiers de ressources resx](https://docs.microsoft.com/dotnet/framework/resources/creating-resource-files-for-desktop-apps). Un fichier de ressources stocke du texte et d’autres contenus sous forme de paires nom/valeur qui permettent à l’application de récupérer du contenu pour une clé fournie. Les fichiers de ressources permettent de séparer le contenu localisé du code d’application.
+Le .NET Framework comprend un mécanisme intégré pour la localisation d’applications à l’aide de [fichiers de ressources resx](/dotnet/framework/resources/creating-resource-files-for-desktop-apps). Un fichier de ressources stocke du texte et d’autres contenus sous forme de paires nom/valeur qui permettent à l’application de récupérer du contenu pour une clé fournie. Les fichiers de ressources permettent de séparer le contenu localisé du code d’application.
 
 L’utilisation de fichiers de ressources pour localiser Xamarin.Forms des applications vous oblige à effectuer les étapes suivantes :
 
@@ -153,7 +153,7 @@ using System.Resources;
 
 Une fois qu’un fichier de ressources par défaut a été créé et que la culture par défaut a été spécifiée dans le fichier **AssemblyInfo.cs** , l’application peut récupérer des chaînes localisées au moment de l’exécution.
 
-Pour plus d’informations sur les fichiers de ressources, consultez [créer des fichiers de ressources pour les applications .net](https://docs.microsoft.com/dotnet/framework/resources/creating-resource-files-for-desktop-apps).
+Pour plus d’informations sur les fichiers de ressources, consultez [créer des fichiers de ressources pour les applications .net](/dotnet/framework/resources/creating-resource-files-for-desktop-apps).
 
 ## <a name="specify-supported-languages-on-ios"></a>Spécifier les langues prises en charge sur iOS
 
@@ -306,7 +306,7 @@ Image flag = new Image
 
 ## <a name="localize-the-application-name"></a>Localiser le nom de l’application
 
-Le nom de l’application est spécifié par plateforme et n’utilise pas les fichiers de ressources resx. Pour localiser le nom de l’application sur Android, consultez [localiser le nom de l’application sur Android](~/android/app-fundamentals/localization.md#stringsxml-file-format). Pour localiser le nom de l’application sur iOS, consultez [localiser le nom de l’application sur iOS](~/ios/app-fundamentals/localization/index.md#app-name). Pour localiser le nom de l’application sur UWP, consultez [localiser des chaînes dans le manifeste du package UWP](https://docs.microsoft.com/windows/uwp/app-resources/localize-strings-ui-manifest).
+Le nom de l’application est spécifié par plateforme et n’utilise pas les fichiers de ressources resx. Pour localiser le nom de l’application sur Android, consultez [localiser le nom de l’application sur Android](~/android/app-fundamentals/localization.md#stringsxml-file-format). Pour localiser le nom de l’application sur iOS, consultez [localiser le nom de l’application sur iOS](~/ios/app-fundamentals/localization/index.md#app-name). Pour localiser le nom de l’application sur UWP, consultez [localiser des chaînes dans le manifeste du package UWP](/windows/uwp/app-resources/localize-strings-ui-manifest).
 
 ## <a name="test-localization"></a>Localisation des tests
 
@@ -318,11 +318,11 @@ Sur Android, les paramètres de langue sont détectés et mis en cache au démar
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Exemple de projet de localisation](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingresxlocalization)
-- [Créer des fichiers de ressources pour les applications .NET](https://docs.microsoft.com/dotnet/framework/resources/creating-resource-files-for-desktop-apps)
+- [Exemple de projet de localisation](/samples/xamarin/xamarin-forms-samples/usingresxlocalization)
+- [Créer des fichiers de ressources pour les applications .NET](/dotnet/framework/resources/creating-resource-files-for-desktop-apps)
 - [Localisation multiplateforme](~/cross-platform/app-fundamentals/localization.md)
-- [Utilisation de la classe CultureInfo (MSDN)](https://docs.microsoft.com/dotnet/api/system.globalization.cultureinfo)
+- [Utilisation de la classe CultureInfo (MSDN)](/dotnet/api/system.globalization.cultureinfo)
 - [Localisation Android](~/android/app-fundamentals/localization.md)
 - [Localisation iOS](~/ios/app-fundamentals/localization/index.md)
 - [Localisation UWP](/windows/uwp/design/globalizing/globalizing-portal/)
-- [Localisation et utilisation de ressources pour une culture spécifique (MSDN)](https://msdn.microsoft.com/library/s9ckwb4b%28v=vs.90%29.aspx)
+- [Localisation et utilisation de ressources pour une culture spécifique (MSDN)](/previous-versions/visualstudio/visual-studio-2008/s9ckwb4b(v=vs.90))

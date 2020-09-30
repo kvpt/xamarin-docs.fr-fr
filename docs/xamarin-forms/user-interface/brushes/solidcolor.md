@@ -1,5 +1,5 @@
 ---
-title: 'Xamarin.FormsPinceaux : couleurs unies'
+title: 'Xamarin.Forms Pinceaux : couleurs unies'
 description: La Xamarin.Forms classe SolidColorBrush peint une zone avec une couleur unie.
 ms.prod: xamarin
 ms.assetid: 4225D40A-16C1-40E1-ACBE-23E321E7FDE4
@@ -10,18 +10,18 @@ ms.date: 07/27/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7b77cab7c0f87dbedf66651c3ab59ef20b7f3ecd
-ms.sourcegitcommit: 579ec4f2884fa391e5e214a3952cd6004c521eb8
+ms.openlocfilehash: 3c3caf064ca550086f8e7924786ac8bcaf1badfc
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87919561"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556280"
 ---
-# <a name="no-locxamarinforms-brushes-solid-colors"></a>Xamarin.FormsPinceaux : couleurs unies
+# <a name="no-locxamarinforms-brushes-solid-colors"></a>Xamarin.Forms Pinceaux : couleurs unies
 
 ![API d’aperçu](~/media/shared/preview.png "Cette API est actuellement en préversion.")
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/BrushDemos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-brushdemos/)
 
 La `SolidColorBrush` classe dérive de la `Brush` classe et est utilisée pour peindre une zone avec une couleur unie. Il existe plusieurs façons de spécifier la couleur d’un `SolidColorBrush` . Par exemple, vous pouvez spécifier sa couleur à l’aide d’une [`Color`](xref:Xamarin.Forms.Color) valeur ou de l’un des objets prédéfinis `SolidColorBrush` fournis par la `Brush` classe.
 
@@ -35,7 +35,7 @@ Il existe trois techniques principales pour créer un `SolidColorBrush` . Vous p
 
 ### <a name="use-a-predefined-color"></a>Utiliser une couleur prédéfinie
 
-Xamarin.Formscomprend un convertisseur de type qui crée un `SolidColorBrush` à partir d’une [`Color`](xref:Xamarin.Forms.Color) valeur. En XAML, cela permet de `SolidColorBrush` créer un à partir d’une valeur prédéfinie `Color` :
+Xamarin.Forms comprend un convertisseur de type qui crée un `SolidColorBrush` à partir d’une [`Color`](xref:Xamarin.Forms.Color) valeur. En XAML, cela permet de `SolidColorBrush` créer un à partir d’une valeur prédéfinie `Color` :
 
 ```xaml
 <Frame Background="DarkBlue"
@@ -98,11 +98,11 @@ Pour obtenir la liste des objets prédéfinis `SolidColorBrush` fournis par la `
 
 ### <a name="use-hexadecimal-notation"></a>Utiliser la notation hexadécimale
 
-`SolidColorBrush`les objets peuvent également être créés à l’aide de la notation hexadécimale. Avec cette approche, une couleur est spécifiée en termes de la quantité de rouge, de vert et de bleu à combiner en une seule couleur. Le format principal pour la spécification d’une couleur à l’aide de la notation hexadécimale est `#rrggbb` , où :
+`SolidColorBrush` les objets peuvent également être créés à l’aide de la notation hexadécimale. Avec cette approche, une couleur est spécifiée en termes de la quantité de rouge, de vert et de bleu à combiner en une seule couleur. Le format principal pour la spécification d’une couleur à l’aide de la notation hexadécimale est `#rrggbb` , où :
 
-- `rr`nombre hexadécimal à deux chiffres spécifiant la quantité relative de rouge.
-- `gg`nombre hexadécimal à deux chiffres spécifiant la quantité relative de vert.
-- `bb`nombre hexadécimal à deux chiffres spécifiant la quantité relative de bleu.
+- `rr` nombre hexadécimal à deux chiffres spécifiant la quantité relative de rouge.
+- `gg` nombre hexadécimal à deux chiffres spécifiant la quantité relative de vert.
+- `bb` nombre hexadécimal à deux chiffres spécifiant la quantité relative de bleu.
 
 En outre, une couleur peut être spécifiée comme `#aarrggbb` où `aa` spécifie la valeur alpha, ou transparence, de la couleur. Cette approche vous permet de créer des couleurs qui sont partiellement transparentes.
 
@@ -131,5 +131,5 @@ Pour plus de commodité, la `Brush` classe fournit un ensemble d' `SolidColorBru
 
 ## <a name="related-links"></a>Liens connexes
 
-- [BrushesDemos (exemple)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/BrushDemos)
-- [Couleurs dansXamarin.Forms](~/xamarin-forms/user-interface/colors.md)
+- [BrushesDemos (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-brushdemos/)
+- [Couleurs dans Xamarin.Forms](~/xamarin-forms/user-interface/colors.md)

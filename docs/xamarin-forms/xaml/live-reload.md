@@ -11,12 +11,12 @@ ms.date: 10/26/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b67594e2675c774512f3bf64f2e91ef10dbff444
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: bdc5b715d4502590b56b41b864835a47076ad518
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84134210"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556449"
 ---
 # <a name="xamarin-live-reload-preview"></a>Xamarin Live Reload (préversion)
 
@@ -28,12 +28,12 @@ ms.locfileid: "84134210"
 
 Le rechargement Xamarin Live vous permet d' **apporter des modifications à votre code XAML et de voir qu’ils sont reflétés, sans nécessiter une autre compilation et un nouveau déploiement**. Toutes les modifications apportées à votre code XAML seront redéployées lors de l’enregistrement et reflétées sur votre cible de déploiement.
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Configuration requise
 
 * [Visual Studio 2017 version 15,7 ou ultérieure](https://visualstudio.microsoft.com/vs/) avec la charge de travail **développement mobile avec .net** .
 * [ Xamarin.Forms 3.0.0 ou version ultérieure](https://www.nuget.org/packages/Xamarin.Forms/).
 
-## <a name="getting-started"></a>Mise en route
+## <a name="getting-started"></a>Prise en main
 ### <a name="1-install-xamarin-live-reload-from-the-visual-studio-marketplace"></a>1. Installez Xamarin Live Reload à partir du Visual Studio Marketplace
 
 Le rechargement Xamarin Live est distribué via le Visual Studio Marketplace. Pour installer l’extension, accédez à la [page Xamarin Live reload sur le](https://marketplace.visualstudio.com/items?itemName=Xamarin.XamarinLiveReload) site Web Visual Studio Marketplace, puis cliquez sur **Télécharger**.
@@ -84,7 +84,7 @@ Compilez et déployez votre application. Une fois l’application déployée, ou
 
 Le rechargement dynamique fonctionne avec les modifications apportées à un fichier XAML. Les modifications apportées à C# ou l’ajout/la suppression de packages NuGet requièrent une nouvelle build et le déploiement pour prendre effet.
 
-## <a name="frequently-asked-questions"></a>Forum Aux Questions 
+## <a name="frequently-asked-questions"></a>Questions fréquemment posées 
 ### <a name="is-xamarin-live-reload-available-on-visual-studio-for-mac"></a>Le rechargement dynamique de Xamarin est-il disponible sur Visual Studio pour Mac ? 
 
 Non, la version préliminaire de Xamarin Live Reload n’est disponible que pour Visual Studio 2017.
@@ -113,7 +113,7 @@ Si vous déboguez sur un émulateur Android ou un simulateur iOS, le rechargemen
 
 Non. En fait, vous pouvez même démarrer toutes les cibles d’application prises en charge (Android, iOS et UWP) sur un nombre quelconque d’appareils ou de simulateurs/émulateurs, et voir toutes les mises à jour en même temps. 
 
-## <a name="limitations"></a>Limites
+## <a name="limitations"></a>Limitations
 
 * Seul le rechargement du code XAML est pris en charge.
 * L’état de l’interface utilisateur ne peut pas être maintenu entre les redéploiement, sauf si vous utilisez MVVM.
@@ -127,7 +127,7 @@ Non. En fait, vous pouvez même démarrer toutes les cibles d’application pris
 * Les éléments contenant AutomationId peuvent entraîner un échec de rechargement.
 * La modification du code XAML pendant le débogage UWP peut entraîner un blocage du Runtime. Solution de contournement : utilisez **exécuter sans débogage (Ctrl + F5)** au lieu de **Démarrer le débogage (F5)**.
 
-## <a name="troubleshooting"></a>Dépannage
+## <a name="troubleshooting"></a>Résolution des problèmes
 
 ### <a name="error-codes"></a>Codes d’erreur
 
@@ -145,7 +145,7 @@ Non. En fait, vous pouvez même démarrer toutes les cibles d’application pris
 
 * *Exception lors du chargement des assemblys : System. IO. FileNotFoundException : impossible de charger l’assembly’Xamarin. live. Reload, version = 0.3.27.0, culture = neutral, PublicKeyToken = '.*
 
-  Le projet hôte doit utiliser `PackageReference` au lieu de`packages.config`
+  Le projet hôte doit utiliser `PackageReference` au lieu de `packages.config`
 
 ### <a name="app-doesnt-connect"></a>L’application ne se connecte pas
 
@@ -186,7 +186,7 @@ Le moyen le plus simple consiste probablement à installer le serveur [mosquitto
 
 1. Créer une nouvelle machine virtuelle Ubuntu Server dans le portail Azure
 2. Ajouter une nouvelle règle de port d’entrée pour 1883 (port MQTT par défaut) dans l’onglet mise en réseau
-3. Ouvrir le [Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview) (mode bash)
+3. Ouvrir le [Cloud Shell](/azure/cloud-shell/overview) (mode bash)
 4. Tapez en `ssh [USERNAME]@[PUBLIC_IP]` utilisant le nom d’utilisateur que vous avez choisi dans 1) et l’adresse IP publique indiquée dans la page vue d’ensemble de votre machine virtuelle
 5. Exécutez `sudo apt-get install mosquitto` , en entrant le mot de passe que vous avez choisi dans 1)
 

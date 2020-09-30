@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsTimePicker
+title: Xamarin.Forms TimePicker
 description: Le TimePicker est une Xamarin.Forms vue qui permet à l’utilisateur de sélectionner une heure. Cet article explique comment consommer un TimePicker dans une Xamarin.Forms application.
 ms.prod: xamarin
 ms.assetid: 2E99FB23-B82D-4EB4-AFB3-5002E736E7B2
@@ -10,27 +10,27 @@ ms.date: 10/16/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7c2e6b97f2207ebb6543fb6a720cd430331f989b
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 9b913d9d310b4b2f1b560d06256f18e7532e1834
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138227"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556527"
 ---
-# <a name="xamarinforms-timepicker"></a>Xamarin.FormsTimePicker
+# <a name="no-locxamarinforms-timepicker"></a>Xamarin.Forms TimePicker
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-timepicker)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-timepicker)
 
 _Xamarin.FormsVue qui permet à l’utilisateur de sélectionner une heure._
 
 Xamarin.Forms [`TimePicker`](xref:Xamarin.Forms.TimePicker) Appelle le contrôle de sélecteur de temps de la plateforme et permet à l’utilisateur de sélectionner une heure. `TimePicker` définit les propriétés suivantes :
 
-- [`Time`](xref:Xamarin.Forms.TimePicker.Time)de type `TimeSpan` , l’heure sélectionnée, dont la valeur par défaut est `TimeSpan` égale à 0. Le `TimeSpan` type indique une durée écoulée depuis minuit.
-- [`Format`](xref:Xamarin.Forms.TimePicker.Format)de type `string` , une chaîne de mise en forme .NET [standard](/dotnet/standard/base-types/standard-date-and-time-format-strings/) ou [personnalisée](/dotnet/standard/base-types/custom-date-and-time-format-strings/) , qui a comme valeur par défaut « t », le modèle d’heure abrégée.
-- [`TextColor`](xref:Xamarin.Forms.TimePicker.TextColor)de type [`Color`](xref:Xamarin.Forms.Color) , la couleur utilisée pour afficher l’heure sélectionnée, qui a comme valeur par défaut [`Color.Default`](xref:Xamarin.Forms.Color.Default) .
-- [`FontAttributes`](xref:Xamarin.Forms.TimePicker.FontAttributes)de type [`FontAttributes`](xref:Xamarin.Forms.FontAttributes) , qui a comme valeur par défaut [`FontAtributes.None`](xref:Xamarin.Forms.FontAttributes.None) .
-- [`FontFamily`](xref:Xamarin.Forms.TimePicker.FontFamily)de type `string` , qui a comme valeur par défaut `null` .
-- [`FontSize`](xref:Xamarin.Forms.TimePicker.FontSize)de type `double` , qui a comme valeur par défaut-1,0.
+- [`Time`](xref:Xamarin.Forms.TimePicker.Time) de type `TimeSpan` , l’heure sélectionnée, dont la valeur par défaut est `TimeSpan` égale à 0. Le `TimeSpan` type indique une durée écoulée depuis minuit.
+- [`Format`](xref:Xamarin.Forms.TimePicker.Format) de type `string` , une chaîne de mise en forme .NET [standard](/dotnet/standard/base-types/standard-date-and-time-format-strings/) ou [personnalisée](/dotnet/standard/base-types/custom-date-and-time-format-strings/) , qui a comme valeur par défaut « t », le modèle d’heure abrégée.
+- [`TextColor`](xref:Xamarin.Forms.TimePicker.TextColor) de type [`Color`](xref:Xamarin.Forms.Color) , la couleur utilisée pour afficher l’heure sélectionnée, qui a comme valeur par défaut [`Color.Default`](xref:Xamarin.Forms.Color.Default) .
+- [`FontAttributes`](xref:Xamarin.Forms.TimePicker.FontAttributes) de type [`FontAttributes`](xref:Xamarin.Forms.FontAttributes) , qui a comme valeur par défaut [`FontAtributes.None`](xref:Xamarin.Forms.FontAttributes.None) .
+- [`FontFamily`](xref:Xamarin.Forms.TimePicker.FontFamily) de type `string` , qui a comme valeur par défaut `null` .
+- [`FontSize`](xref:Xamarin.Forms.TimePicker.FontSize) de type `double` , qui a comme valeur par défaut-1,0.
 - `CharacterSpacing`, de type `double` , est l’espacement entre les caractères du `TimePicker` texte.
 
 Toutes ces propriétés sont sauvegardées par des [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) objets, ce qui signifie qu’elles peuvent être stylisées et que les propriétés peuvent être des cibles de liaisons de données. La [`Time`](xref:Xamarin.Forms.TimePicker.Time) propriété a un mode de liaison par défaut de, ce qui [`BindingMode.TwoWay`](xref:Xamarin.Forms.BindingMode.TwoWay) signifie qu’elle peut être la cible d’une liaison de données dans une application qui utilise l’architecture [MVVM (Model-View-ViewModel)](~/xamarin-forms/enterprise-application-patterns/mvvm.md) .
@@ -83,7 +83,7 @@ Toutefois, cela n’est pas recommandé. Selon le paramètre de la [`Format`](xr
 
 ## <a name="timepicker-in-an-application"></a>TimePicker dans une application
 
-L’exemple [**SetTimer**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-timepicker) comprend [`TimePicker`](xref:Xamarin.Forms.TimePicker) [`Entry`](xref:Xamarin.Forms.Entry) des vues, et [`Switch`](xref:Xamarin.Forms.Switch) sur sa page. Le `TimePicker` peut être utilisé pour sélectionner une heure et, lorsque ce délai se produit, une boîte de dialogue d’alerte s’affiche pour rappeler l’utilisateur du texte dans le `Entry` , à condition que le `Switch` soit activé. Voici le fichier XAML :
+L’exemple [**SetTimer**](/samples/xamarin/xamarin-forms-samples/userinterface-timepicker) comprend [`TimePicker`](xref:Xamarin.Forms.TimePicker) [`Entry`](xref:Xamarin.Forms.Entry) des vues, et [`Switch`](xref:Xamarin.Forms.Switch) sur sa page. Le `TimePicker` peut être utilisé pour sélectionner une heure et, lorsque ce délai se produit, une boîte de dialogue d’alerte s’affiche pour rappeler l’utilisateur du texte dans le `Entry` , à condition que le `Switch` soit activé. Voici le fichier XAML :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -183,5 +183,5 @@ Dès que la boîte de dialogue d’alerte s’affiche, la [`Switch`](xref:Xamari
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Exemple SetTimer](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-timepicker)
+- [Exemple SetTimer](/samples/xamarin/xamarin-forms-samples/userinterface-timepicker)
 - [API TimePicker](xref:Xamarin.Forms.TimePicker)

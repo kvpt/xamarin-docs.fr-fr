@@ -1,5 +1,5 @@
 ---
-title: Gestion des fichiers dansXamarin.Forms
+title: Gestion des fichiers dans Xamarin.Forms
 description: La gestion des fichiers avec Xamarin.Forms peut être effectuée à l’aide de code dans une bibliothèque .NET standard, ou à l’aide de ressources incorporées.
 ms.prod: xamarin
 ms.assetid: 9987C3F6-5F04-403B-BBB4-ECB024EA6CC8
@@ -10,22 +10,22 @@ ms.date: 06/21/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f62e5522b5b9a10a3806a70fe949561d77ce0d4e
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: f8d81e037d63a7144263ce4b3520647e6829bd57
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84574351"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557255"
 ---
-# <a name="file-handling-in-xamarinforms"></a>Gestion des fichiers dansXamarin.Forms
+# <a name="file-handling-in-no-locxamarinforms"></a>Gestion des fichiers dans Xamarin.Forms
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfiles)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfiles)
 
 _La gestion des fichiers avec Xamarin.Forms peut être effectuée à l’aide de code dans une bibliothèque .NET standard, ou à l’aide de ressources incorporées._
 
 ## <a name="overview"></a>Vue d’ensemble
 
-Xamarin.Formsle code s’exécute sur plusieurs plateformes, chacune ayant son propre système de fichiers. Auparavant, la lecture et l’écriture des fichiers étaient plus faciles à effectuer avec les API de fichiers natives à chaque plateforme. Pour distribuer des fichiers de données à l’aide d’une application, une solution plus simple consiste à utiliser des ressources incorporées. Toutefois, avec .NET Standard 2.0, il est possible de partager du code d’accès de fichier dans les bibliothèques .NET Standard.
+Xamarin.Forms le code s’exécute sur plusieurs plateformes, chacune ayant son propre système de fichiers. Auparavant, la lecture et l’écriture des fichiers étaient plus faciles à effectuer avec les API de fichiers natives à chaque plateforme. Pour distribuer des fichiers de données à l’aide d’une application, une solution plus simple consiste à utiliser des ressources incorporées. Toutefois, avec .NET Standard 2.0, il est possible de partager du code d’accès de fichier dans les bibliothèques .NET Standard.
 
 Pour plus d’informations sur la gestion des fichiers image, consultez [Utilisation des images](~/xamarin-forms/user-interface/images.md).
 
@@ -87,7 +87,7 @@ using (var reader = new System.IO.StreamReader (stream))
 }
 ```
 
-La variable`text` peut ensuite être utilisée pour afficher le texte ou l’utiliser dans le code. Cette capture d’écran de l’[exemple d’application](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfiles) montre le texte affiché dans un contrôle `Label`.
+La variable`text` peut ensuite être utilisée pour afficher le texte ou l’utiliser dans le code. Cette capture d’écran de l’[exemple d’application](/samples/xamarin/xamarin-forms-samples/workingwithfiles) montre le texte affiché dans un contrôle `Label`.
 
  [![Fichier texte incorporé dans la bibliothèque .NET standard](files-images/pcltext-sml.png "Fichier texte incorporé dans .NET Standard bibliothèque affichée dans l’application")](files-images/pcltext.png#lightbox "Fichier texte incorporé dans .NET Standard bibliothèque affichée dans l’application")
 
@@ -157,8 +157,8 @@ foreach (var res in assembly.GetManifestResourceNames()) {
 
 Cet article vous a montré certaines opérations de fichier simples pour enregistrer et charger du texte sur l’appareil, et pour charger des ressources incorporées. Avec .NET Standard 2.0, il est possible de partager du code d’accès de fichier dans les bibliothèques .NET Standard.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [FilesSample](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfiles)
-- [Xamarin.FormsExtraits](https://github.com/xamarin/xamarin-forms-samples)
+- [FilesSample](/samples/xamarin/xamarin-forms-samples/workingwithfiles)
+- [Xamarin.Forms Extraits](https://github.com/xamarin/xamarin-forms-samples)
 - [Utilisation du système de fichiers dans Xamarin.iOS](~/ios/app-fundamentals/file-system.md)

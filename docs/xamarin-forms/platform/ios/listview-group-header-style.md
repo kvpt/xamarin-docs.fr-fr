@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 46e8dec3d5644defdeb8a2265a73815adfde92d8
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: b8be4610a327fb9902d62efb061406bff16de484
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136031"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557476"
 ---
 # <a name="listview-group-header-style-on-ios"></a>Style d’en-tête de groupe ListView sur iOS
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Ce contrôle spécifique à la plateforme iOS indique si les [`ListView`](xref:Xamarin.Forms.ListView) cellules d’en-tête sont flottantes lors du défilement. Il est consommé en XAML en affectant `ListView.GroupHeaderStyle` à la propriété pouvant être liée la valeur de l' `GroupHeaderStyle` énumération :
 
@@ -46,8 +46,8 @@ listView.On<iOS>().SetGroupHeaderStyle(GroupHeaderStyle.Grouped);
 
 La `ListView.On<iOS>` méthode spécifie que ce spécifique à la plateforme s’exécutera uniquement sur iOS. La `ListView.SetGroupHeaderStyle` méthode, dans l' [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) espace de noms, est utilisée pour contrôler si les [`ListView`](xref:Xamarin.Forms.ListView) cellules d’en-tête sont flottantes lors du défilement. L' `GroupHeaderStyle` énumération fournit deux valeurs possibles :
 
-- `Plain`: indique que les cellules d’en-tête sont flottantes lorsque le [`ListView`](xref:Xamarin.Forms.ListView) est défilé (valeur par défaut).
-- `Grouped`: indique que les cellules d’en-tête ne flottent pas lorsque le [`ListView`](xref:Xamarin.Forms.ListView) défile.
+- `Plain` : indique que les cellules d’en-tête sont flottantes lorsque le [`ListView`](xref:Xamarin.Forms.ListView) est défilé (valeur par défaut).
+- `Grouped` : indique que les cellules d’en-tête ne flottent pas lorsque le [`ListView`](xref:Xamarin.Forms.ListView) défile.
 
 En outre, la `ListView.GetGroupHeaderStyle` méthode peut être utilisée pour retourner le `GroupHeaderStyle` appliqué au [`ListView`](xref:Xamarin.Forms.ListView) .
 
@@ -57,6 +57,6 @@ Le résultat est qu’une `GroupHeaderStyle` valeur spécifiée est appliquée a
 
 ## <a name="related-links"></a>Liens connexes
 
-- [PlatformSpecifics (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [Création de caractéristiques de la plateforme](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [API iOSSpecific](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

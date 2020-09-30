@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsIndicatorView
+title: Xamarin.Forms IndicatorView
 description: Le IndicatorView est un contrôle qui affiche des indicateurs qui représentent le nombre d’éléments et la position actuelle dans un CarouselView.
 ms.prod: xamarin
 ms.assetId: BBCC223B-4B02-46B7-80BB-EE0E86A67CE2
@@ -10,16 +10,16 @@ ms.date: 02/27/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0e6d223fd10e7b792f2d145a7cdd417865a095bb
-ms.sourcegitcommit: d86b7a18cf8b1ef28cd0fe1d311f1c58a65101a8
+ms.openlocfilehash: 95c4e247ca0be6e5f0f39a7bc95c41a73b3f590e
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85101435"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556787"
 ---
-# <a name="xamarinforms-indicatorview"></a>Xamarin.FormsIndicatorView
+# <a name="no-locxamarinforms-indicatorview"></a>Xamarin.Forms IndicatorView
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-indicatorviewdemos/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-indicatorviewdemos/)
 
 Le `IndicatorView` est un contrôle qui affiche des indicateurs qui représentent le nombre d’éléments, et la position actuelle, dans un `CarouselView` :
 
@@ -69,8 +69,8 @@ Dans cet exemple, le `IndicatorView` est rendu sous le `CarouselView` , avec un 
 
 La `IndicatorView` classe a une `IndicatorsShape` propriété, qui détermine la forme des indicateurs. Cette propriété peut être définie sur l’un des `IndicatorShape` membres de l’énumération :
 
-- `Circle`Spécifie que les formes d’indicateur seront circulaires. C’est la valeur par défaut de la propriété `IndicatorView.IndicatorsShape`.
-- `Square`indique que les formes d’indicateur seront carrées.
+- `Circle` Spécifie que les formes d’indicateur seront circulaires. C’est la valeur par défaut de la propriété `IndicatorView.IndicatorsShape`.
+- `Square` indique que les formes d’indicateur seront carrées.
 
 L’exemple suivant montre un `IndicatorView` configuré pour utiliser des indicateurs carrés :
 
@@ -138,5 +138,5 @@ Pour plus d’informations sur l' `FontImage` extension de balisage, consultez [
 
 ## <a name="related-links"></a>Liens connexes
 
-- [IndicatorView (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-indicatorviewdemos/)
+- [IndicatorView (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-indicatorviewdemos/)
 - [FontImage, extension de balisage](~/xamarin-forms/xaml/markup-extensions/consuming.md#fontimage-markup-extension)

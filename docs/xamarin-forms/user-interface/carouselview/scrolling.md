@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsDéfilement CarouselView
+title: Xamarin.Forms Défilement CarouselView
 description: Lorsqu’un utilisateur effectue un balayage pour lancer un défilement, la position de fin du défilement peut être contrôlée afin que les éléments soient entièrement affichés. En outre, CarouselView définit deux méthodes ScrollTo, qui défilent par programmation des éléments dans la vue.
 ms.prod: xamarin
 ms.assetid: 92D7B618-07FA-4343-9D0F-212525E92C39
@@ -10,20 +10,20 @@ ms.date: 01/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5c15760919c2511ee24485ab7539463ec252d999
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 5e48b962130acf98aa99c83773318d077dde2666
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918136"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556644"
 ---
-# <a name="no-locxamarinforms-carouselview-scrolling"></a>Xamarin.FormsDéfilement CarouselView
+# <a name="no-locxamarinforms-carouselview-scrolling"></a>Xamarin.Forms Défilement CarouselView
 
 ![API de la version préliminaire](~/media/shared/preview.png)
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView)définit les propriétés associées au défilement suivantes :
+[`CarouselView`](xref:Xamarin.Forms.CarouselView) définit les propriétés associées au défilement suivantes :
 
 - `HorizontalScrollBarVisibility`, de type `ScrollBarVisibility` , qui spécifie quand la barre de défilement horizontale est visible.
 - `IsDragging`, de type `bool` , qui indique si le `CarouselView` fait défiler. Il s’agit d’une propriété en lecture seule, dont la valeur par défaut est `false` .
@@ -33,15 +33,15 @@ ms.locfileid: "87918136"
 
 Toutes ces propriétés sont sauvegardées par des [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) objets, ce qui signifie qu’elles peuvent être des cibles de liaisons de données.
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView)définit également deux [`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*) méthodes qui défilent les éléments dans la vue. L’une des surcharges fait défiler l’élément à l’index spécifié dans la vue, tandis que l’autre fait défiler l’élément spécifié dans la vue. Les deux surcharges ont des arguments supplémentaires qui peuvent être spécifiés pour indiquer la position exacte de l’élément une fois le défilement terminé, et s’il faut animer le défilement.
+[`CarouselView`](xref:Xamarin.Forms.CarouselView) définit également deux [`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*) méthodes qui défilent les éléments dans la vue. L’une des surcharges fait défiler l’élément à l’index spécifié dans la vue, tandis que l’autre fait défiler l’élément spécifié dans la vue. Les deux surcharges ont des arguments supplémentaires qui peuvent être spécifiés pour indiquer la position exacte de l’élément une fois le défilement terminé, et s’il faut animer le défilement.
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView)définit un [`ScrollToRequested`](xref:Xamarin.Forms.ItemsView.ScrollToRequested) événement qui est déclenché lorsque l’une des [`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*) méthodes est appelée. L' [`ScrollToRequestedEventArgs`](xref:Xamarin.Forms.ScrollToRequestedEventArgs) objet qui accompagne l' `ScrollToRequested` événement a de nombreuses propriétés, notamment `IsAnimated` , `Index` , `Item` et `ScrollToPosition` . Ces propriétés sont définies à partir des arguments spécifiés dans les `ScrollTo` appels de méthode.
+[`CarouselView`](xref:Xamarin.Forms.CarouselView) définit un [`ScrollToRequested`](xref:Xamarin.Forms.ItemsView.ScrollToRequested) événement qui est déclenché lorsque l’une des [`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*) méthodes est appelée. L' [`ScrollToRequestedEventArgs`](xref:Xamarin.Forms.ScrollToRequestedEventArgs) objet qui accompagne l' `ScrollToRequested` événement a de nombreuses propriétés, notamment `IsAnimated` , `Index` , `Item` et `ScrollToPosition` . Ces propriétés sont définies à partir des arguments spécifiés dans les `ScrollTo` appels de méthode.
 
 En outre, [`CarouselView`](xref:Xamarin.Forms.CarouselView) définit un `Scrolled` événement qui est déclenché pour indiquer que le défilement s’est produit. L' `ItemsViewScrolledEventArgs` objet qui accompagne l' `Scrolled` événement a de nombreuses propriétés. Pour plus d’informations, consultez [détecter le défilement](#detect-scrolling).
 
 Lorsqu’un utilisateur effectue un balayage pour lancer un défilement, la position de fin du défilement peut être contrôlée afin que les éléments soient entièrement affichés. Cette fonctionnalité est appelée alignement, car les éléments sont alignés à la position lorsque le défilement s’arrête. Pour plus d’informations, consultez [points d’alignement](#snap-points).
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView)peut également charger des données de façon incrémentielle au fur et à mesure que l’utilisateur fait défiler. Pour plus d’informations, consultez [charger des données de façon incrémentielle](populate-data.md#load-data-incrementally).
+[`CarouselView`](xref:Xamarin.Forms.CarouselView) peut également charger des données de façon incrémentielle au fur et à mesure que l’utilisateur fait défiler. Pour plus d’informations, consultez [charger des données de façon incrémentielle](populate-data.md#load-data-incrementally).
 
 ## <a name="detect-scrolling"></a>Détecter le défilement
 
@@ -167,11 +167,11 @@ Cet exemple de code entraîne le défilement de l’élément à la fin de la vu
 
 ## <a name="control-scroll-position-when-new-items-are-added"></a>Contrôler la position de défilement quand de nouveaux éléments sont ajoutés
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView)définit une `ItemsUpdatingScrollMode` propriété, qui est stockée par une propriété pouvant être liée. Cette propriété obtient ou définit une `ItemsUpdatingScrollMode` valeur d’énumération qui représente le comportement de défilement de `CarouselView` quand de nouveaux éléments y sont ajoutés. L’énumération `ItemsUpdatingScrollMode` définit les membres suivants :
+[`CarouselView`](xref:Xamarin.Forms.CarouselView) définit une `ItemsUpdatingScrollMode` propriété, qui est stockée par une propriété pouvant être liée. Cette propriété obtient ou définit une `ItemsUpdatingScrollMode` valeur d’énumération qui représente le comportement de défilement de `CarouselView` quand de nouveaux éléments y sont ajoutés. L’énumération `ItemsUpdatingScrollMode` définit les membres suivants :
 
-- `KeepItemsInView`ajuste le décalage de défilement pour maintenir le premier élément visible affiché lorsque de nouveaux éléments sont ajoutés.
-- `KeepScrollOffset`conserve le décalage de défilement par rapport au début de la liste lors de l’ajout de nouveaux éléments.
-- `KeepLastItemInView`ajuste le décalage de défilement pour maintenir le dernier élément visible quand de nouveaux éléments sont ajoutés.
+- `KeepItemsInView` ajuste le décalage de défilement pour maintenir le premier élément visible affiché lorsque de nouveaux éléments sont ajoutés.
+- `KeepScrollOffset` conserve le décalage de défilement par rapport au début de la liste lors de l’ajout de nouveaux éléments.
+- `KeepLastItemInView` ajuste le décalage de défilement pour maintenir le dernier élément visible quand de nouveaux éléments sont ajoutés.
 
 La valeur par défaut de la `ItemsUpdatingScrollMode` propriété est `KeepItemsInView` . Par conséquent, lorsque de nouveaux éléments sont ajoutés à un, [`CarouselView`](xref:Xamarin.Forms.CarouselView) le premier élément visible dans la liste reste affiché. Pour vous assurer que les éléments récemment ajoutés sont toujours visibles au bas de la liste, la `ItemsUpdatingScrollMode` propriété doit être définie sur `KeepLastItemInView` :
 
@@ -192,11 +192,11 @@ CarouselView carouselView = new CarouselView
 
 ## <a name="scroll-bar-visibility"></a>Visibilité de la barre de défilement
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView)définit `HorizontalScrollBarVisibility` `VerticalScrollBarVisibility` les propriétés et, qui sont sauvegardées par des propriétés pouvant être liées. Ces propriétés obtiennent ou définissent une [`ScrollBarVisibility`](xref:Xamarin.Forms.ScrollBarVisibility) valeur d’énumération qui représente le moment où la barre de défilement horizontale ou verticale est visible. L’énumération `ScrollBarVisibility` définit les membres suivants :
+[`CarouselView`](xref:Xamarin.Forms.CarouselView) définit `HorizontalScrollBarVisibility` `VerticalScrollBarVisibility` les propriétés et, qui sont sauvegardées par des propriétés pouvant être liées. Ces propriétés obtiennent ou définissent une [`ScrollBarVisibility`](xref:Xamarin.Forms.ScrollBarVisibility) valeur d’énumération qui représente le moment où la barre de défilement horizontale ou verticale est visible. L’énumération `ScrollBarVisibility` définit les membres suivants :
 
-- [`Default`](xref:Xamarin.Forms.ScrollBarVisibility)indique le comportement par défaut de la barre de défilement pour la plateforme, et est la valeur par défaut pour les `HorizontalScrollBarVisibility` `VerticalScrollBarVisibility` Propriétés et.
-- [`Always`](xref:Xamarin.Forms.ScrollBarVisibility)indique que les barres de défilement sont visibles, même lorsque le contenu s’ajuste à la vue.
-- [`Never`](xref:Xamarin.Forms.ScrollBarVisibility)indique que les barres de défilement ne sont pas visibles, même si le contenu ne tient pas dans la vue.
+- [`Default`](xref:Xamarin.Forms.ScrollBarVisibility) indique le comportement par défaut de la barre de défilement pour la plateforme, et est la valeur par défaut pour les `HorizontalScrollBarVisibility` `VerticalScrollBarVisibility` Propriétés et.
+- [`Always`](xref:Xamarin.Forms.ScrollBarVisibility) indique que les barres de défilement sont visibles, même lorsque le contenu s’ajuste à la vue.
+- [`Never`](xref:Xamarin.Forms.ScrollBarVisibility) indique que les barres de défilement ne sont pas visibles, même si le contenu ne tient pas dans la vue.
 
 ## <a name="snap-points"></a>Points d’ancrage
 
@@ -214,9 +214,9 @@ Ces propriétés sont sauvegardées par des [`BindableProperty`](xref:Xamarin.Fo
 
 L' [`SnapPointsType`](xref:Xamarin.Forms.SnapPointsType) énumération définit les membres suivants :
 
-- `None`indique que le défilement n’est pas aligné sur les éléments.
-- `Mandatory`indique que le contenu s’aligne toujours sur le point d’alignement le plus proche jusqu’où le défilement s’arrête naturellement, le long de la direction d’inertie.
-- `MandatorySingle`indique le même comportement que `Mandatory` , mais ne fait que faire défiler un élément à la fois.
+- `None` indique que le défilement n’est pas aligné sur les éléments.
+- `Mandatory` indique que le contenu s’aligne toujours sur le point d’alignement le plus proche jusqu’où le défilement s’arrête naturellement, le long de la direction d’inertie.
+- `MandatorySingle` indique le même comportement que `Mandatory` , mais ne fait que faire défiler un élément à la fois.
 
 Par défaut, sur un [`CarouselView`](xref:Xamarin.Forms.CarouselView) , la [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType) propriété a la valeur, ce qui `SnapPointsType.MandatorySingle` garantit que le défilement ne fait que faire défiler un élément à la fois.
 
@@ -337,4 +337,4 @@ Lorsqu’un utilisateur fait défiler pour lancer un défilement dans un défile
 
 ## <a name="related-links"></a>Liens connexes
 
-- [CarouselView (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
+- [CarouselView (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)

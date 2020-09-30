@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsInscription et résolution DependencyService
+title: Xamarin.Forms Inscription et résolution DependencyService
 description: Cet article explique comment utiliser la Xamarin.Forms classe DependencyService pour appeler des fonctionnalités de plateforme natives.
 ms.prod: xamarin
 ms.assetid: 5d019604-4f6f-4932-9b26-1fce3b4d88f8
@@ -10,16 +10,16 @@ ms.date: 06/05/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 050b53be5e4ae67e2adbc1436bbd56ff824f5f7b
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: da3c6c2f55f1cdbed1b3c4e1bb16c4f78e32cf23
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84946388"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556046"
 ---
-# <a name="xamarinforms-dependencyservice-registration-and-resolution"></a>Xamarin.FormsInscription et résolution DependencyService
+# <a name="no-locxamarinforms-dependencyservice-registration-and-resolution"></a>Xamarin.Forms Inscription et résolution DependencyService
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/)
 
 Quand vous utilisez Xamarin.Forms [`DependencyService`](xref:Xamarin.Forms.DependencyService) pour appeler la fonctionnalité de plateforme native, les implémentations de plateforme doivent être inscrites auprès du `DependencyService` , puis résolues à partir du code partagé pour les appeler.
 
@@ -192,5 +192,5 @@ Pour plus d’informations sur l’appel de la méthode `Dispose` d’un objet, 
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Démonstrations de DependencyService (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/)
-- [Résolution des dépendances dansXamarin.Forms](~/xamarin-forms/internals/dependency-resolution.md)
+- [Démonstrations de DependencyService (exemple)](/samples/xamarin/xamarin-forms-samples/dependencyservice/)
+- [Résolution des dépendances dans Xamarin.Forms](~/xamarin-forms/internals/dependency-resolution.md)

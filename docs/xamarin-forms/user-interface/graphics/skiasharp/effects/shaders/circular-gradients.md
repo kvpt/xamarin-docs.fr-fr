@@ -10,16 +10,16 @@ ms.date: 08/23/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 418d29010a8cce81d2bb8c365608c54b61739622
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: ec84ac906ac146f37ba5b161a898582ce483bc95
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84135640"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556670"
 ---
 # <a name="the-skiasharp-circular-gradients"></a>Dégradés circulaires SkiaSharp
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 La [`SKShader`](xref:SkiaSharp.SKShader) classe définit des méthodes statiques pour créer quatre types différents de dégradés. L’article sur le [**gradient linéaire SkiaSharp**](linear-gradient.md) décrit la [`CreateLinearGradient`](xref:SkiaSharp.SKShader.CreateLinearGradient*) méthode. Cet article couvre les trois autres types de dégradés, qui sont tous basés sur des cercles.
 
@@ -57,7 +57,7 @@ Les deux premiers arguments spécifient le centre d’un cercle et un rayon. Le 
 
 Si vous utilisez `CreateRadialGradient` pour remplir un cercle, vous pouvez définir le centre du dégradé au centre du cercle et le rayon du dégradé sur le rayon du cercle. Dans ce cas, l' `SKShaderTileMode` argument n’a aucun effet sur le rendu du dégradé. Toutefois, si la zone remplie par le dégradé est plus grande que le cercle défini par le dégradé, l' `SKShaderTileMode` argument a un effet profond sur ce qui se passe en dehors du cercle.
 
-L’effet de `SKShaderMode` est illustré dans la page **dégradé radial** de l’exemple [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) . Le fichier XAML de cette page instancie un `Picker` qui vous permet de sélectionner l’un des trois membres de l' `SKShaderTileMode` énumération :
+L’effet de `SKShaderMode` est illustré dans la page **dégradé radial** de l’exemple [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) . Le fichier XAML de cette page instancie un `Picker` qui vous permet de sélectionner l’un des trois membres de l' `SKShaderTileMode` énumération :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -334,7 +334,7 @@ public class RadialSpecularHighlightPage : ContentPage
 }
 ```
 
-L' `CreateRadialGradient` appel crée un dégradé qui commence à ce `offCenter` point avec un blanc et se termine par le rouge à une distance égale à la moitié du rayon. Voici à quoi elle ressemble :
+L' `CreateRadialGradient` appel crée un dégradé qui commence à ce `offCenter` point avec un blanc et se termine par le rouge à une distance égale à la moitié du rayon. Voici à quoi il ressemble :
 
 [![Surbrillance spéculaire radial](circular-gradients-images/RadialSpecularHighlight.png "Surbrillance spéculaire radial")](circular-gradients-images/RadialSpecularHighlight-Large.png#lightbox)
 
@@ -622,5 +622,5 @@ Les deux cercles ont des centres de `offCenter` et `center` . Le cercle centré 
 
 ## <a name="related-links"></a>Liens connexes
 
-- [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [API SkiaSharp](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (exemple)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

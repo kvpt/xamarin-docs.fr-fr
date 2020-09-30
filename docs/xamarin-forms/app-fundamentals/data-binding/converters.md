@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsConvertisseurs de valeurs de liaison
+title: Xamarin.Forms Convertisseurs de valeurs de liaison
 description: Cet article explique comment effectuer un cast ou une conversion de valeurs dans une Xamarin.Forms liaison de données en implémentant un convertisseur de valeur (qui est également appelé convertisseur de liaison ou convertisseur de valeur de liaison).
 ms.prod: xamarin
 ms.assetid: 02B1BBE6-D804-490D-BDD4-8ACED8B70C92
@@ -10,16 +10,16 @@ ms.date: 01/05/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e1a4faabc8f0703b497062a8c5d587221692dab7
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 2a5912d18787543b05b3937f2b8b5c6a36b04873
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139758"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556813"
 ---
-# <a name="xamarinforms-binding-value-converters"></a>Xamarin.FormsConvertisseurs de valeurs de liaison
+# <a name="no-locxamarinforms-binding-value-converters"></a>Xamarin.Forms Convertisseurs de valeurs de liaison
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 Les liaisons de données transfèrent généralement des données d’une propriété source vers une propriété cible et, dans certains cas, de la propriété cible vers la propriété source. Ce transfert est direct lorsque les propriétés source et cible sont du même type, ou quand un type peut être converti vers l’autre type via une conversion implicite. Lorsque ce n’est pas le cas, une conversion de type doit avoir lieu.
 
@@ -54,7 +54,7 @@ La méthode `ConvertBack` est appelée lorsque les données sont transférées d
 
 Si la liaison de données inclut également un paramètre `StringFormat`, le convertisseur de valeurs est appelé avant que le résultat soit formaté en tant que chaîne.
 
-La page **Enable Buttons** (Activer les boutons) dans l’exemple [**Data Binding Demos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos) (Démos des liaisons de données) illustre l’utilisation de ce convertisseur de valeurs dans une liaison de données. `IntToBoolConverter` est instancié dans le dictionnaire de ressources de la page. Il est ensuite référencé avec une extension de balisage `StaticResource` pour définir la propriété `Converter` dans deux liaisons de données. Il est très courant de partager des convertisseurs de données entre plusieurs liaisons de données sur la page :
+La page **Enable Buttons** (Activer les boutons) dans l’exemple [**Data Binding Demos**](/samples/xamarin/xamarin-forms-samples/databindingdemos) (Démos des liaisons de données) illustre l’utilisation de ce convertisseur de valeurs dans une liaison de données. `IntToBoolConverter` est instancié dans le dictionnaire de ressources de la page. Il est ensuite référencé avec une extension de balisage `StaticResource` pour définir la propriété `Converter` dans deux liaisons de données. Il est très courant de partager des convertisseurs de données entre plusieurs liaisons de données sur la page :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -467,7 +467,7 @@ Voici le résultat :
 
 [![Sélecteur de couleurs RVB](converters-images/rgbcolorselector-small.png "Sélecteur de couleurs RVB")](converters-images/rgbcolorselector-large.png#lightbox "Sélecteur de couleurs RVB")
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [Démonstrations de liaison de données (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+- [Démonstrations de liaison de données (exemple)](/samples/xamarin/xamarin-forms-samples/databindingdemos)
 - [Chapitre sur la liaison de données à partir de Xamarin.Forms Book](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

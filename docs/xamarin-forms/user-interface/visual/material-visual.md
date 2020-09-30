@@ -1,6 +1,6 @@
 ---
-title: Xamarin.FormsÉlément visuel
-description: Xamarin.FormsLe visuel matière peut être utilisé pour créer Xamarin.Forms des applications qui semblent quasiment identiques sur iOS et Android.
+title: Xamarin.Forms Élément visuel
+description: Xamarin.Forms Le visuel matière peut être utilisé pour créer Xamarin.Forms des applications qui semblent quasiment identiques sur iOS et Android.
 ms.prod: xamarin
 ms.assetid: B774F68C-EF9E-49E1-B738-CDC64879ADA2
 ms.technology: xamarin-forms
@@ -10,20 +10,20 @@ ms.date: 11/25/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: bba7d77d8cf565b1b2db2c1324e171389c5d0280
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 753644b372fafc7c3ea22008267844251527050d
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84127177"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556475"
 ---
-# <a name="xamarinforms-material-visual"></a>Xamarin.FormsÉlément visuel
+# <a name="no-locxamarinforms-material-visual"></a>Xamarin.Forms Élément visuel
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)
 
 La [conception de matériau](https://material.io) est un système de conception consignes strictes créé par Google, qui régit la taille, la couleur, l’espacement et d’autres aspects liés à l’apparence et au comportement des vues et des dispositions.
 
-Xamarin.FormsLe visuel matière peut être utilisé pour appliquer des règles de conception de matériau aux Xamarin.Forms applications, créant des applications qui semblent quasiment identiques sur iOS et Android. Lorsque l’élément visuel matériel est activé, les vues prises en charge adoptent la même conception multiplateforme, créant ainsi une apparence unifiée.
+Xamarin.Forms Le visuel matière peut être utilisé pour appliquer des règles de conception de matériau aux Xamarin.Forms applications, créant des applications qui semblent quasiment identiques sur iOS et Android. Lorsque l’élément visuel matériel est activé, les vues prises en charge adoptent la même conception multiplateforme, créant ainsi une apparence unifiée.
 
 [![Captures d’écran de l’élément visuel](material-visual-images/material-visual-cropped.png)](material-visual-images/material-visual.png#lightbox)
 
@@ -92,9 +92,9 @@ contentPage.Visual = VisualMarker.Material;
 
 La définition de la `VisualElement.Visual` propriété pour `Material` indiquer à votre application d’utiliser les convertisseurs visuels Material à la place des convertisseurs par défaut. La [`Visual`](xref:Xamarin.Forms.VisualElement.Visual) propriété peut être définie sur n’importe quel type implémentant `IVisual` , avec la [`VisualMarker`](xref:Xamarin.Forms.VisualMarker) classe qui fournit les `IVisual` propriétés suivantes :
 
-- `Default`: indique que la vue doit être restituée à l’aide du convertisseur par défaut.
-- `MatchParent`: indique que la vue doit utiliser le même convertisseur que son parent direct.
-- `Material`: indique que la vue doit être rendue à l’aide d’un convertisseur de matériau.
+- `Default` : indique que la vue doit être restituée à l’aide du convertisseur par défaut.
+- `MatchParent` : indique que la vue doit utiliser le même convertisseur que son parent direct.
+- `Material` : indique que la vue doit être rendue à l’aide d’un convertisseur de matériau.
 
 > [!IMPORTANT]
 > La [`Visual`](xref:Xamarin.Forms.VisualElement.Visual) propriété est définie dans la [`VisualElement`](xref:Xamarin.Forms.VisualElement) classe, les vues héritant `Visual` de la valeur de propriété de leurs parents. Par conséquent, la définition de la `Visual` propriété sur un [`ContentPage`](xref:Xamarin.Forms.ContentPage) garantit que toutes les vues prises en charge dans la page utiliseront cet visuel. En outre, la `Visual` propriété peut être substituée sur une vue.
@@ -157,7 +157,7 @@ Pour plus d’informations sur les convertisseurs personnalisés, consultez [con
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Élément visuel (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)
+- [Élément visuel (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)
 - [Créer un Xamarin.Forms convertisseur visuel](create.md)
-- [Xamarin.FormsEffets](~/xamarin-forms/app-fundamentals/effects/index.md)
+- [Xamarin.Forms Effets](~/xamarin-forms/app-fundamentals/effects/index.md)
 - [Renderers personnalisés](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)

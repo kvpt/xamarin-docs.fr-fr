@@ -10,16 +10,16 @@ ms.date: 01/14/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 171ecc02fda304135e5f535c3e798067595d7047
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e5888e77948bef0fbb60a4e0068cbedf2d2a50e7
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139319"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91555383"
 ---
 # <a name="speech-recognition-using-azure-speech-service"></a>Reconnaissance vocale à l’aide du service Azure Speech
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-cognitivespeechservice)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-cognitivespeechservice)
 
 Azure Speech service est une API basée sur le Cloud qui offre les fonctionnalités suivantes :
 
@@ -34,7 +34,7 @@ Cet article explique comment la reconnaissance vocale en texte est implémentée
 
 ## <a name="create-an-azure-speech-service-resource"></a>Créer une ressource Azure Speech service
 
-Azure Speech service fait partie d’Azure Cognitive Services, qui fournit des API basées sur le Cloud pour des tâches telles que la reconnaissance d’images, la reconnaissance vocale et la traduction, et la recherche Bing. Pour plus d’informations, voir [qu’est-ce qu’Azure cognitive services ?](https://docs.microsoft.com/azure/cognitive-services/welcome).
+Azure Speech service fait partie d’Azure Cognitive Services, qui fournit des API basées sur le Cloud pour des tâches telles que la reconnaissance d’images, la reconnaissance vocale et la traduction, et la recherche Bing. Pour plus d’informations, voir [qu’est-ce qu’Azure cognitive services ?](/azure/cognitive-services/welcome).
 
 L’exemple de projet requiert la création d’une ressource Azure Cognitive Services dans votre Portail Azure. Une ressource de Cognitive Services peut être créée pour un service unique, tel que Speech service, ou en tant que ressource à plusieurs services. Les étapes de création d’une ressource de service vocal sont les suivantes :
 
@@ -43,7 +43,7 @@ L’exemple de projet requiert la création d’une ressource Azure Cognitive Se
 1. Obtenez les informations sur la clé et la région de l’API pour votre ressource.
 1. Mettez à jour l’exemple de fichier **constants.cs** .
 
-Pour obtenir un guide pas à pas de la création d’une ressource, consultez [créer une ressource cognitive services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account).
+Pour obtenir un guide pas à pas de la création d’une ressource, consultez [créer une ressource cognitive services](/azure/cognitive-services/cognitive-services-apis-create-account).
 
 > [!NOTE]
 > Si vous n’avez pas [d’abonnement Azure](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing), créez un [compte gratuit](https://aka.ms/azfree-docs-mobileapps) avant de commencer. Une fois que vous avez un compte, vous pouvez créer une ressource de service unique au niveau gratuit pour tester le service.
@@ -471,7 +471,7 @@ Exécutez l’application et cliquez sur le bouton **transcrire** . L’applicat
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Exemple de service Azure Speech](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-cognitivespeechservice)
-- [Vue d’ensemble du service Azure Speech](https://docs.microsoft.com/azure/cognitive-services/speech-service/overview)
-- [Créer une ressource Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account)
-- [Démarrage rapide : Reconnaître la voix à partir d’un microphone](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstarts/speech-to-text-from-microphone)
+- [Exemple de service Azure Speech](/samples/xamarin/xamarin-forms-samples/webservices-cognitivespeechservice)
+- [Vue d’ensemble du service Azure Speech](/azure/cognitive-services/speech-service/overview)
+- [Créer une ressource Cognitive Services](/azure/cognitive-services/cognitive-services-apis-create-account)
+- [Démarrage rapide : Reconnaître la voix à partir d’un microphone](/azure/cognitive-services/speech-service/quickstarts/speech-to-text-from-microphone)

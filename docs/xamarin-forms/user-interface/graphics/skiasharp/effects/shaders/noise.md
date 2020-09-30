@@ -10,16 +10,16 @@ ms.date: 08/23/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 45ec48c0b7b58e26fa47d7343e96bb49591cb339
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 00b6251f530a4927d069ae92ec919645a06baf15
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84127762"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91555396"
 ---
 # <a name="skiasharp-noise-and-composing"></a>SkiaSharp le bruit et la composition
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 Les graphiques vectoriels simples ont tendance à paraître innaturels. Les lignes droites, les courbes lissées et les couleurs unies ne sont pas similaires aux imperfections des objets réels. En travaillant sur les graphiques générés par ordinateur pour le film _Tron_1982, le chercheur en informatique Ken Perl a commencé à développer des algorithmes qui utilisaient des processus aléatoires pour obtenir des textures plus réalistes. Dans 1997, Ken Perl a remporté un prix d’Académie pour la réalisation technique. Son travail est connu sous le nom de « Perl » et est pris en charge dans SkiaSharp. Voici un exemple :
 
@@ -31,7 +31,7 @@ La prise en charge du bruit perl dans skia est basée sur une spécification W3C
 
 ## <a name="exploring-perlin-noise"></a>Exploration du bruit perl
 
-La [`SKShader`](xref:SkiaSharp.SKShader) classe définit deux méthodes statiques différentes pour générer le bruit perl : [`CreatePerlinNoiseFractalNoise`](xref:SkiaSharp.SKShader.CreatePerlinNoiseFractalNoise*) et [`CreatePerlinNoiseTurbulence`](xref:SkiaSharp.SKShader.CreatePerlinNoiseTurbulence*) . Les paramètres sont identiques :
+La [`SKShader`](xref:SkiaSharp.SKShader) classe définit deux méthodes statiques différentes pour générer le bruit perl :  [`CreatePerlinNoiseFractalNoise`](xref:SkiaSharp.SKShader.CreatePerlinNoiseFractalNoise*) et [`CreatePerlinNoiseTurbulence`](xref:SkiaSharp.SKShader.CreatePerlinNoiseTurbulence*) . Les paramètres sont identiques :
 
 ```csharp
 public static SkiaSharp CreatePerlinNoiseFractalNoise (float baseFrequencyX, float baseFrequencyY, int numOctaves, float seed);
@@ -47,7 +47,7 @@ La `numOctaves` valeur est un entier égal ou supérieur à 1. Il se réfère à
 
 Le `seed` paramètre est le point de départ pour le générateur de nombres aléatoires. Bien qu’elle soit spécifiée comme valeur à virgule flottante, la fraction est tronquée avant d’être utilisée, et 0 est le même que 1.
 
-La page de **bruit perl** dans l’exemple [ **SkiaSharpFormsDemos**)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) vous permet de faire des essais avec différentes valeurs des `baseFrequency` `numOctaves` arguments et. Voici le fichier XAML :
+La page de **bruit perl** dans l’exemple [ **SkiaSharpFormsDemos**)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) vous permet de faire des essais avec différentes valeurs des `baseFrequency` `numOctaves` arguments et. Voici le fichier XAML :
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -188,7 +188,7 @@ public static SKShader CreatePerlinNoiseFractalNoise (float baseFrequencyX, floa
 public static SKShader CreatePerlinNoiseTurbulence (float baseFrequencyX, float baseFrequencyY, int numOctaves, float seed, SKPointI tileSize);
 ```
 
-La [`SKPointI`](xref:SkiaSharp.SKPointI) structure est la version entière de la [`SKPoint`](xref:SkiaSharp.SKPoint) structure familière. `SKPointI`définit `X` les `Y` Propriétés et de type `int` plutôt que `float` .
+La [`SKPointI`](xref:SkiaSharp.SKPointI) structure est la version entière de la [`SKPoint`](xref:SkiaSharp.SKPoint) structure familière. `SKPointI` définit `X` les `Y` Propriétés et de type `int` plutôt que `float` .
 
 Ces méthodes créent un modèle répétitif de la taille spécifiée. Dans chaque vignette, le bord droit est le même que le bord gauche, et le bord supérieur est le même que le bord inférieur. Cette caractéristique est illustrée dans la page de **bruit perl en mosaïque** . Le fichier XAML est similaire à l’exemple précédent, mais il n’a qu’une `Stepper` vue permettant de modifier l' `seed` argument :
 
@@ -401,5 +401,5 @@ Le dernier paramètre est un membre de l' `SKBlendMode` énumération, une énum
 
 ## <a name="related-links"></a>Liens connexes
 
-- [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [API SkiaSharp](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (exemple)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

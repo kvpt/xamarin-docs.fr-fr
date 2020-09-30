@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsMode de liaison
+title: Xamarin.Forms Mode de liaison
 description: Cet article explique comment contrôler le flux d’informations entre la source et la cible à l’aide d’un mode de liaison, qui est spécifié avec un membre de l’énumération BindingMode. Chaque propriété pouvant être liée possède un mode de liaison par défaut, lequel indique le mode en vigueur lorsque cette propriété est une cible de liaison de données.
 ms.prod: xamarin
 ms.assetid: D087C389-2E9E-47B9-A341-5B14AC732C45
@@ -10,20 +10,20 @@ ms.date: 05/01/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c14215071a1d9d3ec804c307fa6edbbe4ddcf8e9
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 8a7c62ec6d7329227abd8f52644212341098185f
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139774"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556436"
 ---
-# <a name="xamarinforms-binding-mode"></a>Xamarin.FormsMode de liaison
+# <a name="no-locxamarinforms-binding-mode"></a>Xamarin.Forms Mode de liaison
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 Dans l’[article précédent](basic-bindings.md), les pages **Alternative Code Binding** (Liaison de code alternative) et **Alternative XAML Binding** (Liaison XAML alternative) présentaient un objet `Label` avec sa propriété `Scale` liée à la propriété `Value` d’un élément `Slider`. Comme la valeur initiale `Slider` est 0, la propriété `Scale` du `Label` était définie sur 0 au lieu de 1 et le `Label` disparaissait.
 
-Dans l’exemple [**DataBindingDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos), la page **Reverse Binding** (Liaison inverse) est similaire aux programmes de l’article précédent, si ce n’est que la liaison de données est définie sur le `Slider` plutôt que sur le `Label`:
+Dans l’exemple [**DataBindingDemos**](/samples/xamarin/xamarin-forms-samples/databindingdemos), la page **Reverse Binding** (Liaison inverse) est similaire aux programmes de l’article précédent, si ce n’est que la liaison de données est définie sur le `Slider` plutôt que sur le `Label`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -684,7 +684,7 @@ L’autre capture d’écran montre les paramètres modifiés. Lorsque vous test
 
 Dans le prochain article, vous verrez comment spécifier un [**formatage de chaîne**](string-formatting.md) des liaisons de données qui sont définies sur la propriété `Text` de `Label`.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [Démonstrations de liaison de données (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+- [Démonstrations de liaison de données (exemple)](/samples/xamarin/xamarin-forms-samples/databindingdemos)
 - [Chapitre sur la liaison de données à partir de Xamarin.Forms Book](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

@@ -10,12 +10,12 @@ ms.date: 04/12/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 020319761ba1274495b7595a0d18435f98a5f990
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 911365b6293fecd3bf309f3e61d9b232d90b7a13
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937174"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556553"
 ---
 # <a name="matrix-transforms-in-skiasharp"></a>Transformations de matrice dans SkiaSharp
 
@@ -41,7 +41,7 @@ La matrice de transformation par défaut est la matrice d’identité et est con
 | 0  0  1 |
 </pre>
 
-Vous pouvez créer une matrice d’identité à l’aide de la [`SKMatrix.MakeIdentity`](xref:SkiaSharp.SKMatrix.MakeIdentity) méthode statique :
+Vous pouvez créer une matrice d’identité à l’aide de la  [`SKMatrix.MakeIdentity`](xref:SkiaSharp.SKMatrix.MakeIdentity) méthode statique :
 
 ```csharp
 SKMatrix matrix = SKMatrix.MakeIdentity();
@@ -174,7 +174,7 @@ La `Scale` transformation est multipliée par la `Translate` transformation pour
 |  0   0   1 |   | tx  ty   1 |   | tx  ty   1 |
 </pre>
 
-`Scale`peut être appelé avant `Translate` ce qui suit :
+`Scale` peut être appelé avant `Translate` ce qui suit :
 
 ```csharp
 canvas.Scale(sx, sy);
@@ -221,7 +221,7 @@ La `SKMatrix` structure définit neuf propriétés de lecture/écriture de type 
 │ TransX  TransY  Persp2 │
 </pre>
 
-`SKMatrix`définit également une propriété nommée [`Values`](xref:SkiaSharp.SKMatrix.Values) de type `float[]` . Cette propriété peut être utilisée pour définir ou obtenir les neuf valeurs en une seule capture dans l’ordre,,,,,, `ScaleX` `SkewX` `TransX` `SkewY` `ScaleY` `TransY` `Persp0` , `Persp1` et `Persp2` .
+`SKMatrix` définit également une propriété nommée [`Values`](xref:SkiaSharp.SKMatrix.Values) de type `float[]` . Cette propriété peut être utilisée pour définir ou obtenir les neuf valeurs en une seule capture dans l’ordre,,,,,, `ScaleX` `SkewX` `TransX` `SkewY` `ScaleY` `TransY` `Persp0` , `Persp1` et `Persp2` .
 
 Les `Persp0` `Persp1` cellules, et `Persp2` sont présentées dans l’article [**transformations non affines**](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/non-affine.md). Si ces cellules ont leurs valeurs par défaut 0, 0 et 1, la transformation est multipliée par un point de coordonnée comme suit :
 
@@ -243,14 +243,14 @@ La `SKMatrix` structure définit plusieurs méthodes statiques pour créer des `
 
 - [`MakeTranslation`](xref:SkiaSharp.SKMatrix.MakeTranslation(System.Single,System.Single))
 - [`MakeScale`](xref:SkiaSharp.SKMatrix.MakeScale(System.Single,System.Single))
-- [`MakeScale`](xref:SkiaSharp.SKMatrix.MakeScale(System.Single,System.Single,System.Single,System.Single))avec un point pivot
-- [`MakeRotation`](xref:SkiaSharp.SKMatrix.MakeRotation(System.Single))pour un angle en radians
-- [`MakeRotation`](xref:SkiaSharp.SKMatrix.MakeRotation(System.Single,System.Single,System.Single))pour un angle en radians avec un point pivot
+- [`MakeScale`](xref:SkiaSharp.SKMatrix.MakeScale(System.Single,System.Single,System.Single,System.Single)) avec un point pivot
+- [`MakeRotation`](xref:SkiaSharp.SKMatrix.MakeRotation(System.Single)) pour un angle en radians
+- [`MakeRotation`](xref:SkiaSharp.SKMatrix.MakeRotation(System.Single,System.Single,System.Single)) pour un angle en radians avec un point pivot
 - [`MakeRotationDegrees`](xref:SkiaSharp.SKMatrix.MakeRotationDegrees(System.Single))
-- [`MakeRotationDegrees`](xref:SkiaSharp.SKMatrix.MakeRotationDegrees(System.Single,System.Single,System.Single))avec un point pivot
+- [`MakeRotationDegrees`](xref:SkiaSharp.SKMatrix.MakeRotationDegrees(System.Single,System.Single,System.Single)) avec un point pivot
 - [`MakeSkew`](xref:SkiaSharp.SKMatrix.MakeSkew(System.Single,System.Single))
 
-`SKMatrix`définit également plusieurs méthodes statiques qui concatènent deux matrices, ce qui signifie qu’elles sont multipliées. Ces méthodes sont nommées [`Concat`](xref:SkiaSharp.SKMatrix.Concat*) , [`PostConcat`](xref:SkiaSharp.SKMatrix.PostConcat*) , et [`PreConcat`](xref:SkiaSharp.SKMatrix.PreConcat*) , et il y a deux versions de chacune. Ces méthodes n’ont aucune valeur de retour ; au lieu de cela, elles référencent des `SKMatrix` valeurs existantes via des `ref` arguments. Dans l’exemple suivant, `A` , `B` et `R` (pour « result ») sont toutes des `SKMatrix` valeurs.
+`SKMatrix` définit également plusieurs méthodes statiques qui concatènent deux matrices, ce qui signifie qu’elles sont multipliées. Ces méthodes sont nommées [`Concat`](xref:SkiaSharp.SKMatrix.Concat*) , [`PostConcat`](xref:SkiaSharp.SKMatrix.PostConcat*) , et [`PreConcat`](xref:SkiaSharp.SKMatrix.PreConcat*) , et il y a deux versions de chacune. Ces méthodes n’ont aucune valeur de retour ; au lieu de cela, elles référencent des `SKMatrix` valeurs existantes via des `ref` arguments. Dans l’exemple suivant, `A` , `B` et `R` (pour « result ») sont toutes des `SKMatrix` valeurs.
 
 Les deux `Concat` méthodes sont appelées comme suit :
 
@@ -444,9 +444,9 @@ Si vous utilisez cette dernière méthode, gardez à l’esprit que la structure
 
 Une façon d’obtenir une idée de la transformation affine consiste à déplacer de manière interactive trois angles d’une image bitmap sur l’écran et à voir les résultats de la transformation. Il s’agit de l’idée sous-jacente de la page **afficher la matrice affine** . Cette page requiert deux autres classes qui sont également utilisées dans d’autres démonstrations :
 
-La [`TouchPoint`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/TouchPoint.cs) classe affiche un cercle translucide qui peut être glissé à l’écran. `TouchPoint`requiert `SKCanvasView` l’attachement d’un élément ou d’un élément parent d’un `SKCanvasView` [`TouchEffect`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/TouchEffect.cs) . Affectez à la propriété `Capture` la valeur `true`. Dans le `TouchAction` Gestionnaire d’événements, le programme doit appeler la `ProcessTouchEvent` méthode dans `TouchPoint` pour `TouchPoint` chaque instance. La méthode retourne `true` si l’événement tactile a entraîné le déplacement du point tactile. En outre, le `PaintSurface` gestionnaire doit appeler la `Paint` méthode dans chaque `TouchPoint` instance, en lui passant l' `SKCanvas` objet.
+La [`TouchPoint`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/TouchPoint.cs) classe affiche un cercle translucide qui peut être glissé à l’écran. `TouchPoint` requiert `SKCanvasView` l’attachement d’un élément ou d’un élément parent d’un `SKCanvasView` [`TouchEffect`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/TouchEffect.cs) . Affectez à la propriété `Capture` la valeur `true`. Dans le `TouchAction` Gestionnaire d’événements, le programme doit appeler la `ProcessTouchEvent` méthode dans `TouchPoint` pour `TouchPoint` chaque instance. La méthode retourne `true` si l’événement tactile a entraîné le déplacement du point tactile. En outre, le `PaintSurface` gestionnaire doit appeler la `Paint` méthode dans chaque `TouchPoint` instance, en lui passant l' `SKCanvas` objet.
 
-`TouchPoint`illustre une façon courante qu’un visuel SkiaSharp puisse être encapsulé dans une classe distincte. La classe peut définir des propriétés pour spécifier les caractéristiques du visuel, et une méthode nommée `Paint` avec un `SKCanvas` argument peut le rendre.
+`TouchPoint` illustre une façon courante qu’un visuel SkiaSharp puisse être encapsulé dans une classe distincte. La classe peut définir des propriétés pour spécifier les caractéristiques du visuel, et une méthode nommée `Paint` avec un `SKCanvas` argument peut le rendre.
 
 La `Center` propriété de `TouchPoint` indique l’emplacement de l’objet. Cette propriété peut être définie pour initialiser l’emplacement. la propriété change lorsque l’utilisateur fait glisser le cercle autour du canevas.
 
@@ -655,5 +655,5 @@ Les valeurs non null de `Persp0` et `Persp1` entraînent des transformations qui
 
 ## <a name="related-links"></a>Liens associés
 
-- [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [API SkiaSharp](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (exemple)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

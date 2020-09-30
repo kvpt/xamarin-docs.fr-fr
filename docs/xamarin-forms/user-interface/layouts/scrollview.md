@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsScrollView
+title: Xamarin.Forms ScrollView
 description: Le Xamarin.Forms ScrollView est une disposition capable de faire défiler son contenu.
 ms.prod: xamarin
 ms.assetid: 7B542872-B3D1-49B3-B15E-0E98F53C1F6E
@@ -10,25 +10,25 @@ ms.date: 05/27/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f527acabe3b051cbfd6450ba6f5328449b1a728c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: af8513d86b7cf02ec7adcee75241d8ce99e2dfab
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84199140"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556826"
 ---
-# <a name="xamarinforms-scrollview"></a>Xamarin.FormsScrollView
+# <a name="no-locxamarinforms-scrollview"></a>Xamarin.Forms ScrollView
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-scrollviewdemos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-scrollviewdemos)
 
-[![Xamarin.FormsScrollView](scrollview-images/layouts.png "[! Opérationnel. NO-LOC (Xamarin. Forms)] ScrollView")](scrollview-images/layouts-large.png#lightbox "[! Opérationnel. NO-LOC (Xamarin. Forms)] ScrollView")
+[![::: No-Loc (Xamarin. Forms) ::: ScrollView](scrollview-images/layouts.png "::: No-Loc (Xamarin. Forms) ::: ScrollView")](scrollview-images/layouts-large.png#lightbox "::: No-Loc (Xamarin. Forms) ::: ScrollView")
 
-[`ScrollView`](xref:Xamarin.Forms.ScrollView)est une disposition qui est capable de faire défiler son contenu. La `ScrollView` classe dérive de la [`Layout`](xref:Xamarin.Forms.Layout) classe et, par défaut, fait défiler le contenu verticalement. Un `ScrollView` ne peut avoir qu’un seul enfant, bien qu’il puisse s’agir d’autres dispositions.
+[`ScrollView`](xref:Xamarin.Forms.ScrollView) est une disposition qui est capable de faire défiler son contenu. La `ScrollView` classe dérive de la [`Layout`](xref:Xamarin.Forms.Layout) classe et, par défaut, fait défiler le contenu verticalement. Un `ScrollView` ne peut avoir qu’un seul enfant, bien qu’il puisse s’agir d’autres dispositions.
 
 > [!WARNING]
-> [`ScrollView`](xref:Xamarin.Forms.ScrollView)les objets ne doivent pas être imbriqués. En outre, les `ScrollView` objets ne doivent pas être imbriqués avec d’autres contrôles qui fournissent le défilement, tels que [`CollectionView`](xref:Xamarin.Forms.CollectionView) , [`ListView`](xref:Xamarin.Forms.ListView) et [`WebView`](xref:Xamarin.Forms.WebView) .
+> [`ScrollView`](xref:Xamarin.Forms.ScrollView) les objets ne doivent pas être imbriqués. En outre, les `ScrollView` objets ne doivent pas être imbriqués avec d’autres contrôles qui fournissent le défilement, tels que [`CollectionView`](xref:Xamarin.Forms.CollectionView) , [`ListView`](xref:Xamarin.Forms.ListView) et [`WebView`](xref:Xamarin.Forms.WebView) .
 
-[`ScrollView`](xref:Xamarin.Forms.ScrollView)définit les propriétés suivantes :
+[`ScrollView`](xref:Xamarin.Forms.ScrollView) définit les propriétés suivantes :
 
 - [`Content`](xref:Xamarin.Forms.ScrollView.Content), de type [`View`](xref:Xamarin.Forms.View) , représente le contenu à afficher dans le [`ScrollView`](xref:Xamarin.Forms.ScrollView) .
 - [`ContentSize`](xref:Xamarin.Forms.ScrollView), de type [`Size`](xref:Xamarin.Forms.Size) , représente la taille du contenu. Il s’agit d’une propriété en lecture seule.
@@ -205,19 +205,19 @@ public class BlackCatPageCS : ContentPage
 
 ## <a name="orientation"></a>Orientation
 
-[`ScrollView`](xref:Xamarin.Forms.ScrollView)a une [`Orientation`](xref:Xamarin.Forms.ScrollView.Orientation) propriété, qui représente la direction de défilement du `ScrollView` . Cette propriété est de type [`ScrollOrientation`](xref:Xamarin.Forms.ScrollOrientation) , qui définit les membres suivants :
+[`ScrollView`](xref:Xamarin.Forms.ScrollView) a une [`Orientation`](xref:Xamarin.Forms.ScrollView.Orientation) propriété, qui représente la direction de défilement du `ScrollView` . Cette propriété est de type [`ScrollOrientation`](xref:Xamarin.Forms.ScrollOrientation) , qui définit les membres suivants :
 
-- `Vertical`indique que le `ScrollView` fait défiler verticalement. Ce membre est la valeur par défaut de la [`Orientation`](xref:Xamarin.Forms.ScrollView.Orientation) propriété.
-- `Horizontal`indique que le `ScrollView` défile horizontalement.
-- `Both`indique que le `ScrollView` défile horizontalement et verticalement.
-- `Neither`indique que le `ScrollView` ne défilera pas.
+- `Vertical` indique que le `ScrollView` fait défiler verticalement. Ce membre est la valeur par défaut de la [`Orientation`](xref:Xamarin.Forms.ScrollView.Orientation) propriété.
+- `Horizontal` indique que le `ScrollView` défile horizontalement.
+- `Both` indique que le `ScrollView` défile horizontalement et verticalement.
+- `Neither` indique que le `ScrollView` ne défilera pas.
 
 > [!TIP]
 > Le défilement peut être désactivé en affectant [`Orientation`](xref:Xamarin.Forms.ScrollView.OrientationProperty) à la propriété la valeur `Neither` .
 
 ## <a name="detect-scrolling"></a>Détecter le défilement
 
-[`ScrollView`](xref:Xamarin.Forms.ScrollView)définit un [`Scrolled`](xref:Xamarin.Forms.ScrollView.Scrolled) événement qui est déclenché pour indiquer que le défilement s’est produit. L' [`ScrolledEventArgs`](xref:Xamarin.Forms.ScrolledEventArgs) objet qui accompagne l' `Scrolled` événement possède les `ScrollX` Propriétés et, à la `ScrollY` fois de type `double` .
+[`ScrollView`](xref:Xamarin.Forms.ScrollView) définit un [`Scrolled`](xref:Xamarin.Forms.ScrollView.Scrolled) événement qui est déclenché pour indiquer que le défilement s’est produit. L' [`ScrolledEventArgs`](xref:Xamarin.Forms.ScrolledEventArgs) objet qui accompagne l' `Scrolled` événement possède les `ScrollX` Propriétés et, à la `ScrollY` fois de type `double` .
 
 > [!IMPORTANT]
 > Les `ScrolledEventArgs.ScrollX` `ScrolledEventArgs.ScrollY` Propriétés et peuvent avoir des valeurs négatives, en raison de l’effet de rebond qui se produit lors du défilement vers le début d’un [`ScrollView`](xref:Xamarin.Forms.ScrollView) .
@@ -253,7 +253,7 @@ Dans cet exemple, le `OnScrollViewScrolled` Gestionnaire d’événements génè
 
 ## <a name="scroll-programmatically"></a>Faire défiler par programmation
 
-[`ScrollView`](xref:Xamarin.Forms.ScrollView)définit deux [`ScrollToAsync`](xref:Xamarin.Forms.ScrollView.ScrollToAsync*) méthodes qui défilent de façon asynchrone le `ScrollView` . L’une des surcharges défile jusqu’à une position spécifiée dans `ScrollView` , tandis que l’autre fait défiler un élément spécifié dans la vue. Les deux surcharges ont un argument supplémentaire qui peut être utilisé pour indiquer s’il faut animer le défilement.
+[`ScrollView`](xref:Xamarin.Forms.ScrollView) définit deux [`ScrollToAsync`](xref:Xamarin.Forms.ScrollView.ScrollToAsync*) méthodes qui défilent de façon asynchrone le `ScrollView` . L’une des surcharges défile jusqu’à une position spécifiée dans `ScrollView` , tandis que l’autre fait défiler un élément spécifié dans la vue. Les deux surcharges ont un argument supplémentaire qui peut être utilisé pour indiquer s’il faut animer le défilement.
 
 > [!IMPORTANT]
 > Les [`ScrollToAsync`](xref:Xamarin.Forms.ScrollView.ScrollToAsync*) méthodes n’entraînent pas de défilement lorsque la [`ScrollView.Orientation`](xref:Xamarin.Forms.ScrollView.OrientationProperty) propriété a la valeur `Neither` .
@@ -280,21 +280,21 @@ Le troisième argument de [`ScrollToAsync`](xref:Xamarin.Forms.ScrollView.Scroll
 
 Lorsque vous faites défiler un élément dans la vue, la position exacte de l’élément après la fin du défilement peut être définie avec le deuxième argument, `position` , de la [`ScrollToAsync`](xref:Xamarin.Forms.ScrollView.ScrollToAsync*) méthode. Cet argument accepte un [`ScrollToPosition`](xref:Xamarin.Forms.ScrollToPosition) membre de l’énumération :
 
-- `MakeVisible`indique que l’élément doit défiler jusqu’à ce qu’il soit visible dans le `ScrollView` .
-- `Start`indique que l’élément doit défiler jusqu’au début de `ScrollView` .
-- `Center`indique que l’élément doit défiler jusqu’au centre de `ScrollView` .
-- `End`indique que l’élément doit défiler jusqu’à la fin de `ScrollView` .
+- `MakeVisible` indique que l’élément doit défiler jusqu’à ce qu’il soit visible dans le `ScrollView` .
+- `Start` indique que l’élément doit défiler jusqu’au début de `ScrollView` .
+- `Center` indique que l’élément doit défiler jusqu’au centre de `ScrollView` .
+- `End` indique que l’élément doit défiler jusqu’à la fin de `ScrollView` .
 
 ## <a name="scroll-bar-visibility"></a>Visibilité de la barre de défilement
 
-[`ScrollView`](xref:Xamarin.Forms.ScrollView)définit [`HorizontalScrollBarVisibility`](xref:Xamarin.Forms.ScrollView) [`VerticalScrollBarVisibility`](xref:Xamarin.Forms.ScrollView) les propriétés et, qui sont sauvegardées par des propriétés pouvant être liées. Ces propriétés obtiennent ou définissent une [`ScrollBarVisibility`](xref:Xamarin.Forms.ScrollView.HorizontalScrollBarVisibility) valeur d’énumération qui indique si la barre de défilement horizontale ou verticale est visible. L’énumération `ScrollBarVisibility` définit les membres suivants :
+[`ScrollView`](xref:Xamarin.Forms.ScrollView) définit [`HorizontalScrollBarVisibility`](xref:Xamarin.Forms.ScrollView) [`VerticalScrollBarVisibility`](xref:Xamarin.Forms.ScrollView) les propriétés et, qui sont sauvegardées par des propriétés pouvant être liées. Ces propriétés obtiennent ou définissent une [`ScrollBarVisibility`](xref:Xamarin.Forms.ScrollView.HorizontalScrollBarVisibility) valeur d’énumération qui indique si la barre de défilement horizontale ou verticale est visible. L’énumération `ScrollBarVisibility` définit les membres suivants :
 
-- `Default`indique le comportement par défaut de la barre de défilement pour la plateforme, et est la valeur par défaut des `HorizontalScrollBarVisibility` `VerticalScrollBarVisibility` Propriétés et.
-- `Always`indique que les barres de défilement sont visibles, même lorsque le contenu s’ajuste à la vue.
-- `Never`indique que les barres de défilement ne sont pas visibles, même si le contenu ne tient pas dans la vue.
+- `Default` indique le comportement par défaut de la barre de défilement pour la plateforme, et est la valeur par défaut des `HorizontalScrollBarVisibility` `VerticalScrollBarVisibility` Propriétés et.
+- `Always` indique que les barres de défilement sont visibles, même lorsque le contenu s’ajuste à la vue.
+- `Never` indique que les barres de défilement ne sont pas visibles, même si le contenu ne tient pas dans la vue.
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Démonstrations ScrollView (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-scrollviewdemos)
-- [Xamarin.FormsStackLayout](stacklayout.md)
-- [Dispositions pouvant être liées dansXamarin.Forms](bindable-layouts.md)
+- [Démonstrations ScrollView (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-scrollviewdemos)
+- [Xamarin.Forms StackLayout](stacklayout.md)
+- [Dispositions pouvant être liées dans Xamarin.Forms](bindable-layouts.md)

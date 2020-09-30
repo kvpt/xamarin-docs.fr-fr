@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsPrésentation de DependencyService
+title: Xamarin.Forms Présentation de DependencyService
 description: Cet article explique comment utiliser la Xamarin.Forms classe DependencyService pour appeler des fonctionnalités de plateforme natives.
 ms.prod: xamarin
 ms.assetid: 5d019604-4f6f-4932-9b26-1fce3b4d88f8
@@ -10,16 +10,16 @@ ms.date: 06/12/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f4d43a0c9c4878733d65b170c27e744b397aa4d0
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 2d63ac91031fc4a2cc127272a075f15a8ea81f4e
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138357"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91555280"
 ---
-# <a name="xamarinforms-dependencyservice-introduction"></a>Xamarin.FormsPrésentation de DependencyService
+# <a name="no-locxamarinforms-dependencyservice-introduction"></a>Xamarin.Forms Présentation de DependencyService
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/)
 
 La [`DependencyService`](xref:Xamarin.Forms.DependencyService) classe est un localisateur de service qui permet Xamarin.Forms aux applications d’appeler des fonctionnalités de plateforme natives à partir de code partagé.
 
@@ -32,7 +32,7 @@ Le processus d’utilisation de [`DependencyService`](xref:Xamarin.Forms.Depende
 
 Le diagramme suivant montre comment les fonctionnalités de plateforme natives sont appelées dans une Xamarin.Forms application :
 
-![Vue d’ensemble de l’emplacement du service à l’aide de la Xamarin.Forms classe DependencyService](introduction-images/dependency-service.png "Emplacement du service DependencyService")
+![Vue d’ensemble de l’emplacement du service à l’aide de la classe ::: No-Loc (Xamarin. Forms) ::: DependencyService](introduction-images/dependency-service.png "Emplacement du service DependencyService")
 
 ## <a name="create-an-interface"></a>Créer une interface
 
@@ -159,5 +159,5 @@ Pour plus d’informations sur la résolution des implémentations de plateforme
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Démonstrations de DependencyService (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/)
-- [Xamarin.FormsInscription et résolution DependencyService](registration-and-resolution.md)
+- [Démonstrations de DependencyService (exemple)](/samples/xamarin/xamarin-forms-samples/dependencyservice/)
+- [Xamarin.Forms Inscription et résolution DependencyService](registration-and-resolution.md)

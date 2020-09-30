@@ -10,12 +10,12 @@ ms.date: 08/05/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 24468e88d39283d2b8282fe0cb9b59f33fcef2f0
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 13527bd8da1322df15bde45bcc8162f62a1f556a
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936693"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91555916"
 ---
 # <a name="passing-effect-parameters-as-common-language-runtime-properties"></a>Passer des paramètres d’effet en tant que propriétés CLR (Common Language Runtime)
 
@@ -243,8 +243,8 @@ Cet article a montré comment utiliser des propriétés CLR pour passer des para
 
 ## <a name="related-links"></a>Liens associés
 
-- [Convertisseurs personnalisés](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)
+- [Renderers personnalisés](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)
 - [Effet](xref:Xamarin.Forms.Effect)
 - [PlatformEffect](xref:Xamarin.Forms.PlatformEffect`2)
 - [RoutingEffect](xref:Xamarin.Forms.RoutingEffect)
-- [Effet d’ombre (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)
+- [Effet d’ombre (exemple)](/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)

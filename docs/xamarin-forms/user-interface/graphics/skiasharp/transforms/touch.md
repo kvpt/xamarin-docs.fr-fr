@@ -10,12 +10,12 @@ ms.date: 09/14/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6de2caf95d4ce983f7e97e0bc017932df534aedb
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: c6d568e948f02952fa71ed21af48160a53bfc419
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86931857"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556540"
 ---
 # <a name="touch-manipulations"></a>Manipulations tactiles
 
@@ -419,7 +419,7 @@ enum TouchManipulationMode
 }
 ```
 
-`PanOnly`glissement d’un doigt qui est implémenté avec la traduction. Toutes les options suivantes incluent également le panoramique, mais impliquent deux doigts : `IsotropicScale` est une opération de pincement qui se traduit par une mise à l’échelle de l’objet de manière égale dans les directions horizontale et verticale. `AnisotropicScale`autorise une mise à l’échelle inégale.
+`PanOnly` glissement d’un doigt qui est implémenté avec la traduction. Toutes les options suivantes incluent également le panoramique, mais impliquent deux doigts : `IsotropicScale` est une opération de pincement qui se traduit par une mise à l’échelle de l’objet de manière égale dans les directions horizontale et verticale. `AnisotropicScale` autorise une mise à l’échelle inégale.
 
 L' `ScaleRotate` option est pour la mise à l’échelle et la rotation à deux doigts. La mise à l’échelle est isotrope. Comme mentionné précédemment, l’implémentation de la rotation à deux doigts avec une mise à l’échelle anisotrope est problématique, car les mouvements des doigts sont fondamentalement les mêmes.
 
@@ -708,7 +708,7 @@ Dans les `Moved` `Released` événements et, la méthode appelle `Manipulate` . 
 
 Cela est important : la `Manipulate` méthode peut supposer qu’elle traite le mouvement d’un seul doigt. Au moment de cet appel, aucun autre doigt ne bouge, et s’ils se déplacent vraiment (comme c’est probablement le cas), ces mouvements sont traités dans les appels futurs à `Manipulate` .
 
-La `Manipulate` méthode copie d’abord le dictionnaire dans un tableau pour plus de commodité. Elle ignore les deux premières entrées. Si plus de deux doigts tentent de manipuler le bitmap, les autres sont ignorés. `Manipulate`est le membre final de `TouchManipulationBitmap` :
+La `Manipulate` méthode copie d’abord le dictionnaire dans un tableau pour plus de commodité. Elle ignore les deux premières entrées. Si plus de deux doigts tentent de manipuler le bitmap, les autres sont ignorés. `Manipulate` est le membre final de `TouchManipulationBitmap` :
 
 ```csharp
 class TouchManipulationBitmap
@@ -751,7 +751,7 @@ Pour la manipulation d’un seul doigt, `pivotPoint` est le centre de l’image 
 
 Dans les deux cas, `TouchManipulationManager` retourne une `SKMatrix` valeur, que la méthode concatène avec la `Matrix` propriété actuelle que `TouchManipulationPage` utilise pour restituer la bitmap.
 
-`TouchManipulationManager`est généralisé et n’utilise pas d’autres fichiers à l’exception de `TouchManipulationMode` . Vous serez peut-être en mesure d’utiliser cette classe sans modification dans vos propres applications. Elle définit une seule propriété de type `TouchManipulationMode` :
+`TouchManipulationManager` est généralisé et n’utilise pas d’autres fichiers à l’exception de `TouchManipulationMode` . Vous serez peut-être en mesure d’utiliser cette classe sans modification dans vos propres applications. Elle définit une seule propriété de type `TouchManipulationMode` :
 
 ```csharp
 class TouchManipulationManager
@@ -763,7 +763,7 @@ class TouchManipulationManager
 
 Toutefois, vous souhaiterez probablement éviter l' `AnisotropicScale` option. C’est très facile avec cette option pour manipuler le bitmap afin que l’un des facteurs de mise à l’échelle devienne zéro. Cela rend la bitmap disparaître de la vue, jamais à retourner. Si vous avez véritablement besoin de la mise à l’échelle anisotrope, vous souhaiterez améliorer la logique pour éviter des résultats indésirables.
 
-`TouchManipulationManager`utilise des vecteurs, mais étant donné qu’il n’y a aucune `SKVector` structure dans SkiaSharp, `SKPoint` est utilisé à la place. `SKPoint`prend en charge l’opérateur de soustraction et le résultat peut être traité comme un vecteur. La seule logique spécifique au vecteur qui devait être ajoutée est un `Magnitude` calcul :
+`TouchManipulationManager` utilise des vecteurs, mais étant donné qu’il n’y a aucune `SKVector` structure dans SkiaSharp, `SKPoint` est utilisé à la place. `SKPoint` prend en charge l’opérateur de soustraction et le résultat peut être traité comme un vecteur. La seule logique spécifique au vecteur qui devait être ajoutée est un `Magnitude` calcul :
 
 ```csharp
 class TouchManipulationManager
@@ -1273,6 +1273,6 @@ Ce code divise efficacement la zone de l’image bitmap en une forme en losange 
 
 ## <a name="related-links"></a>Liens associés
 
-- [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [API SkiaSharp](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (exemple)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 - [Appel d’événements à partir d’effets](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)

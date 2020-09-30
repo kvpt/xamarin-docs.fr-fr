@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsSélection de CollectionView
+title: Xamarin.Forms Sélection de CollectionView
 description: Par défaut, la sélection CollectionView est désactivée. Toutefois, une sélection unique et une sélection multiple peuvent être activées.
 ms.prod: xamarin
 ms.assetid: 423D91C7-1E58-4735-9E80-58F11CDFD953
@@ -10,18 +10,18 @@ ms.date: 05/06/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 39f118d7073fc551923f891681c8c6cf6a4c5ddd
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: c432c1981ba057f61bba780b7997c8b78f8cef3f
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137382"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557346"
 ---
-# <a name="xamarinforms-collectionview-selection"></a>Xamarin.FormsSélection de CollectionView
+# <a name="no-locxamarinforms-collectionview-selection"></a>Xamarin.Forms Sélection de CollectionView
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)définit les propriétés suivantes qui contrôlent la sélection des éléments :
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) définit les propriétés suivantes qui contrôlent la sélection des éléments :
 
 - [`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMode), de type [`SelectionMode`](xref:Xamarin.Forms.SelectionMode) , le mode de sélection.
 - [`SelectedItem`](xref:Xamarin.Forms.SelectableItemsView.SelectedItem), de type `object` , l’élément sélectionné dans la liste. Cette propriété a un mode de liaison par défaut de `TwoWay` et a une `null` valeur quand aucun élément n’est sélectionné.
@@ -33,14 +33,14 @@ Toutes ces propriétés sont sauvegardées par des [`BindableProperty`](xref:Xam
 
 Par défaut, la [`CollectionView`](xref:Xamarin.Forms.CollectionView) sélection est désactivée. Toutefois, ce comportement peut être modifié en affectant [`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMode) à la valeur de la propriété l’un des membres de l' [`SelectionMode`](xref:Xamarin.Forms.SelectionMode) énumération :
 
-- `None`: indique que les éléments ne peuvent pas être sélectionnés. Il s’agit de la valeur par défaut.
-- `Single`: indique qu’un seul élément peut être sélectionné, avec l’élément sélectionné mis en surbrillance.
-- `Multiple`: indique que plusieurs éléments peuvent être sélectionnés et que les éléments sélectionnés sont mis en surbrillance.
+- `None` : indique que les éléments ne peuvent pas être sélectionnés. Valeur par défaut.
+- `Single` : indique qu’un seul élément peut être sélectionné, avec l’élément sélectionné mis en surbrillance.
+- `Multiple` : indique que plusieurs éléments peuvent être sélectionnés et que les éléments sélectionnés sont mis en surbrillance.
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)définit un [`SelectionChanged`](xref:Xamarin.Forms.SelectableItemsView.SelectionChanged) événement qui est déclenché lorsque la [`SelectedItem`](xref:Xamarin.Forms.SelectableItemsView.SelectedItem) propriété change, soit parce que l’utilisateur a sélectionné un élément dans la liste, soit lorsqu’une application définit la propriété. En outre, cet événement est également déclenché lorsque la [`SelectedItems`](xref:Xamarin.Forms.SelectableItemsView.SelectedItems) propriété change. L' [`SelectionChangedEventArgs`](xref:Xamarin.Forms.SelectionChangedEventArgs) objet qui accompagne l' `SelectionChanged` événement a deux propriétés, de type `IReadOnlyList<object>` :
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) définit un [`SelectionChanged`](xref:Xamarin.Forms.SelectableItemsView.SelectionChanged) événement qui est déclenché lorsque la [`SelectedItem`](xref:Xamarin.Forms.SelectableItemsView.SelectedItem) propriété change, soit parce que l’utilisateur a sélectionné un élément dans la liste, soit lorsqu’une application définit la propriété. En outre, cet événement est également déclenché lorsque la [`SelectedItems`](xref:Xamarin.Forms.SelectableItemsView.SelectedItems) propriété change. L' [`SelectionChangedEventArgs`](xref:Xamarin.Forms.SelectionChangedEventArgs) objet qui accompagne l' `SelectionChanged` événement a deux propriétés, de type `IReadOnlyList<object>` :
 
-- `PreviousSelection`: liste des éléments qui ont été sélectionnés avant la modification de la sélection.
-- `CurrentSelection`: liste des éléments sélectionnés, après la modification de la sélection.
+- `PreviousSelection` : liste des éléments qui ont été sélectionnés avant la modification de la sélection.
+- `CurrentSelection` : liste des éléments sélectionnés, après la modification de la sélection.
 
 En outre, [`CollectionView`](xref:Xamarin.Forms.CollectionView) dispose d’une `UpdateSelectedItems` méthode qui met à jour la [`SelectedItems`](xref:Xamarin.Forms.SelectableItemsView.SelectedItems) propriété avec une liste d’éléments sélectionnés, tout en déclenchant une seule notification de modification.
 
@@ -267,7 +267,7 @@ Les [`SelectedItem`](xref:Xamarin.Forms.SelectableItemsView.SelectedItem) [`Sele
 
 ## <a name="change-selected-item-color"></a>Modifier la couleur de l’élément sélectionné
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)a un `Selected` [`VisualState`](xref:Xamarin.Forms.VisualState) qui peut être utilisé pour initier une modification visuelle à l’élément sélectionné dans le `CollectionView` . Un cas d’usage courant `VisualState` est de modifier la couleur d’arrière-plan de l’élément sélectionné, qui est illustrée dans l’exemple XAML suivant :
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) a un `Selected` [`VisualState`](xref:Xamarin.Forms.VisualState) qui peut être utilisé pour initier une modification visuelle à l’élément sélectionné dans le `CollectionView` . Un cas d’usage courant `VisualState` est de modifier la couleur d’arrière-plan de l’élément sélectionné, qui est illustrée dans l’exemple XAML suivant :
 
 ```xaml
 <ContentPage ...>
@@ -314,7 +314,7 @@ Pour plus d’informations sur les États visuels, consultez [ Xamarin.Forms Ges
 
 ## <a name="disable-selection"></a>Désactiver la sélection
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)la sélection est désactivée par défaut. Toutefois, si `CollectionView` la sélection est activée, elle peut être désactivée en affectant à la propriété la valeur [`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMode) `None` :
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) la sélection est désactivée par défaut. Toutefois, si `CollectionView` la sélection est activée, elle peut être désactivée en affectant à la propriété la valeur [`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMode) `None` :
 
 ```xaml
 <CollectionView ...
@@ -338,5 +338,5 @@ Lorsque la [`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMod
 
 ## <a name="related-links"></a>Liens connexes
 
-- [CollectionView (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
-- [Xamarin.FormsGestionnaire d’état visuel](~/xamarin-forms/user-interface/visual-state-manager.md)
+- [CollectionView (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+- [Xamarin.Forms Gestionnaire d’état visuel](~/xamarin-forms/user-interface/visual-state-manager.md)

@@ -10,12 +10,12 @@ ms.date: 08/21/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 38b44bbb8f01f090d286bb2203014455a32a2290
-ms.sourcegitcommit: 808ff109928a1eea16e17e23ea81f8c903a239e8
+ms.openlocfilehash: 6f5702695698881a30cfbf3e63110856a97a2c24
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88181483"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91555345"
 ---
 # <a name="choose-a-no-locxamarinforms-layout"></a>Choisir une Xamarin.Forms disposition
 
@@ -78,7 +78,7 @@ Cela ne sert à rien, car des calculs de dispositions inutiles sont effectués. 
 
 Pour plus d’informations, consultez [ Xamarin.Forms StackLayout](stacklayout.md).
 
-## <a name="grid"></a>Grid
+## <a name="grid"></a>Grille
 
 Un [`Grid`](xref:Xamarin.Forms.Grid) est utilisé pour afficher des éléments dans les lignes et les colonnes, qui peuvent avoir des tailles proportionnelles ou absolues. Les lignes et les colonnes d’une grille sont spécifiées avec les [`RowDefinitions`](xref:Xamarin.Forms.Grid.RowDefinitions) [`ColumnDefinitions`](xref:Xamarin.Forms.Grid.ColumnDefinitions) Propriétés et.
 
@@ -250,7 +250,7 @@ En outre, les performances de rendu de page peuvent également être améliorée
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Disposition (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
+- [Disposition (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-layout)
 - [Xamarin.Forms Dispositions (vidéo)](https://youtu.be/4HlLjTZQzjM)
 - [Xamarin.Forms StackLayout](stacklayout.md)
 - [Xamarin.Forms Boutons](grid.md)

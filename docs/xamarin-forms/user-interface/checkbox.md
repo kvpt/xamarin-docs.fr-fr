@@ -1,34 +1,23 @@
 ---
-title: Xamarin.FormsActivé
-description: La Xamarin.Forms case à cocher est un type de bouton qui peut être activé ou vide. Lorsqu’une case à cocher est activée, elle est considérée comme étant activée. Quand une case à cocher est vide, elle est considérée comme étant désactivée.
-ms.prod: xamarin
-ms.assetid: B8B9268B-BCB8-42B9-B08C-C0F22C137238
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 06/11/2019
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 8399dde2e4e2c9fb53b38fca2923eb0e3bfc6ce3
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136472"
----
-# <a name="xamarinforms-checkbox"></a>Xamarin.FormsActivé
+titre : « Xamarin.Forms CheckBox » Description : la Xamarin.Forms case à cocher est un type de bouton qui peut être activé ou vide. Lorsqu’une case à cocher est activée, elle est considérée comme étant activée. Quand une case à cocher est vide, elle est considérée comme étant désactivée.
+ms. Prod : xamarin ms. AssetID : B8B9268B-BCB8-42B9-B08C-C0F22C137238 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 06/11/2019 No-Loc :
+- "Xamarin.Forms"
+- "Xamarin.Essentials"
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-checkboxdemos/)
+---
+
+# <a name="no-locxamarinforms-checkbox"></a>Xamarin.Forms Activé
+
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-checkboxdemos/)
 
 Le Xamarin.Forms `CheckBox` est un type de bouton qui peut être activé ou vide. Lorsqu’une case à cocher est activée, elle est considérée comme étant activée. Quand une case à cocher est vide, elle est considérée comme étant désactivée.
 
-`CheckBox`définit une `bool` propriété nommée `IsChecked` , qui indique si l’option `CheckBox` est activée. Cette propriété est également sauvegardée par un [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) objet, ce qui signifie qu’elle peut être stylisée et être la cible des liaisons de données.
+`CheckBox` définit une `bool` propriété nommée `IsChecked` , qui indique si l’option `CheckBox` est activée. Cette propriété est également sauvegardée par un [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) objet, ce qui signifie qu’elle peut être stylisée et être la cible des liaisons de données.
 
 > [!NOTE]
 > La `IsChecked` propriété pouvant être liée a un mode de liaison par défaut de [`BindingMode.TwoWay`](xref:Xamarin.Forms.BindingMode.TwoWay) .
 
-`CheckBox`définit un `CheckedChanged` événement qui est déclenché lorsque la `IsChecked` propriété change, soit via une manipulation de l’utilisateur, soit quand une application définit la `IsChecked` propriété. L' `CheckedChangedEventArgs` objet qui accompagne l' `CheckedChanged` événement a une propriété unique nommée `Value` , de type `bool` . Lorsque l’événement est déclenché, la valeur de la `Value` propriété est définie sur la nouvelle valeur de la `IsChecked` propriété.
+`CheckBox` définit un `CheckedChanged` événement qui est déclenché lorsque la `IsChecked` propriété change, soit via une manipulation de l’utilisateur, soit quand une application définit la `IsChecked` propriété. L' `CheckedChangedEventArgs` objet qui accompagne l' `CheckedChanged` événement a une propriété unique nommée `Value` , de type `bool` . Lorsque l’événement est déclenché, la valeur de la `Value` propriété est définie sur la nouvelle valeur de la `IsChecked` propriété.
 
 ## <a name="create-a-checkbox"></a>Créer une case à cocher
 
@@ -133,7 +122,7 @@ Les captures d’écran suivantes montrent une série d’objets cochés `CheckB
 
 ## <a name="checkbox-visual-states"></a>États visuels des cases à cocher
 
-`CheckBox`a un `IsChecked` [`VisualState`](xref:Xamarin.Forms.VisualState) qui peut être utilisé pour initier une modification visuelle au `CheckBox` lorsqu’il est activé.
+`CheckBox` a un `IsChecked` [`VisualState`](xref:Xamarin.Forms.VisualState) qui peut être utilisé pour initier une modification visuelle au `CheckBox` lorsqu’il est activé.
 
 L’exemple de code XAML suivant montre comment définir un état visuel pour l' `IsChecked` État :
 
@@ -165,6 +154,6 @@ Pour plus d’informations sur les États visuels, consultez [ Xamarin.Forms Ges
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Démonstrations de case à cocher (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-checkboxdemos/)
-- [Xamarin.FormsDéclencheurs](~/xamarin-forms/app-fundamentals/triggers.md)
-- [Xamarin.FormsGestionnaire d’état visuel](~/xamarin-forms/user-interface/visual-state-manager.md)
+- [Démonstrations de case à cocher (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-checkboxdemos/)
+- [Xamarin.Forms Déclencheurs](~/xamarin-forms/app-fundamentals/triggers.md)
+- [Xamarin.Forms Gestionnaire d’état visuel](~/xamarin-forms/user-interface/visual-state-manager.md)

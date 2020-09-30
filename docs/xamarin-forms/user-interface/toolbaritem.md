@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsToolbarItem
+title: Xamarin.Forms ToolbarItem
 description: La classe ToolbarItem est un type spécial de bouton utilisé dans la barre de navigation d’une application.
 ms.prod: xamarin
 ms.assetId: CC737D54-0280-46BD-A2BC-A0FB67DDD6A1
@@ -10,16 +10,16 @@ ms.date: 07/29/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 46aba32ebbae1646b9af00877bba530b619210cd
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: c6aabe5931dce51889432e7d5dce2be40631ffe2
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138214"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556501"
 ---
-# <a name="xamarinforms-toolbaritem"></a>Xamarin.FormsToolbarItem
+# <a name="no-locxamarinforms-toolbaritem"></a>Xamarin.Forms ToolbarItem
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-toolbaritem/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-toolbaritem/)
 
 La Xamarin.Forms [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) classe est un type spécial de bouton qui peut être ajouté à la `Page` collection d’un objet `ToolbarItems` . Chaque `ToolbarItem` objet apparaît sous la forme d’un bouton dans la barre de navigation de l’application. Une `ToolbarItem` instance peut avoir une icône et apparaître en tant qu’élément de menu principal ou secondaire. La `ToolbarItem` classe hérite de [`MenuItem`](xref:Xamarin.Forms.MenuItem) .
 
@@ -34,10 +34,10 @@ La `ToolbarItem` classe définit les propriétés suivantes :
 
 La `ToolbarItem` classe hérite des propriétés suivantes utilisées en général de la `MenuItem` classe :
 
-* [`Command`](xref:Xamarin.Forms.MenuItem.Command)est un `ICommand` qui permet de lier des actions d’utilisateur, telles que des clics de doigt ou des clics, aux commandes définies sur un ViewModel.
-* [`CommandParameter`](xref:Xamarin.Forms.MenuItem.CommandParameter)est un `object` qui spécifie le paramètre qui doit être passé à l' `Command` .
-* [`IconImageSource`](xref:Xamarin.Forms.MenuItem.IconImageSource)est une `ImageSource` valeur qui détermine l’icône d’affichage sur un `ToolbarItem` objet.
-* [`Text`](xref:Xamarin.Forms.MenuItem.Text)est un `string` qui détermine le texte affiché sur un `ToolbarItem` objet.
+* [`Command`](xref:Xamarin.Forms.MenuItem.Command) est un `ICommand` qui permet de lier des actions d’utilisateur, telles que des clics de doigt ou des clics, aux commandes définies sur un ViewModel.
+* [`CommandParameter`](xref:Xamarin.Forms.MenuItem.CommandParameter) est un `object` qui spécifie le paramètre qui doit être passé à l' `Command` .
+* [`IconImageSource`](xref:Xamarin.Forms.MenuItem.IconImageSource) est une `ImageSource` valeur qui détermine l’icône d’affichage sur un `ToolbarItem` objet.
+* [`Text`](xref:Xamarin.Forms.MenuItem.Text) est un `string` qui détermine le texte affiché sur un `ToolbarItem` objet.
 
 Ces propriétés sont sauvegardées par des [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) objets, ce qui signifie qu’une `ToolbarItem` instance peut être la cible des liaisons de données.
 
@@ -103,7 +103,7 @@ void OnItemClicked(object sender, EventArgs e)
 }
 ```
 
-`ToolbarItem`les objets peuvent également utiliser `Command` les `CommandParameter` Propriétés et pour réagir à l’entrée d’utilisateur sans gestionnaires d’événements. Pour plus d’informations sur l' `ICommand` interface et la liaison de données MVVM, consultez le [ Xamarin.Forms comportement de MenuItem MVVM](~/xamarin-forms/user-interface/menuitem.md#define-menuitem-behavior-with-mvvm).
+`ToolbarItem` les objets peuvent également utiliser `Command` les `CommandParameter` Propriétés et pour réagir à l’entrée d’utilisateur sans gestionnaires d’événements. Pour plus d’informations sur l' `ICommand` interface et la liaison de données MVVM, consultez le [ Xamarin.Forms comportement de MenuItem MVVM](~/xamarin-forms/user-interface/menuitem.md#define-menuitem-behavior-with-mvvm).
 
 ## <a name="enable-or-disable-a-toolbaritem-at-runtime"></a>Activer ou désactiver un ToolbarItem au moment de l’exécution
 
@@ -115,7 +115,7 @@ Pour plus d’informations, consultez [activer ou désactiver un MenuItem au mom
 
 L' `ToolbarItemOrder` énumération a des `Default` `Primary` valeurs, et `Secondary` .
 
-Lorsque la `Order` propriété a la valeur `Primary` , l' `ToolbarItem` objet s’affiche dans la barre de navigation principale sur toutes les plateformes. `ToolbarItem`les objets sont classés par ordre de priorité sur le titre de la page, qui sera tronqué pour libérer de l’espace pour les éléments. Les captures d’écran suivantes montrent des `ToolbarItem` objets dans le menu principal sur iOS et Android :
+Lorsque la `Order` propriété a la valeur `Primary` , l' `ToolbarItem` objet s’affiche dans la barre de navigation principale sur toutes les plateformes. `ToolbarItem` les objets sont classés par ordre de priorité sur le titre de la page, qui sera tronqué pour libérer de l’espace pour les éléments. Les captures d’écran suivantes montrent des `ToolbarItem` objets dans le menu principal sur iOS et Android :
 
 ![Capture d’écran du menu principal de ToolbarItem Android et iOS](toolbaritem-images/toolbaritem-primary-menu.png "Capture d’écran du menu principal de ToolbarItem sur Android et iOS")
 
@@ -128,6 +128,6 @@ Lorsque la `Order` propriété a la valeur `Secondary` , le comportement varie d
 
 ## <a name="related-links"></a>Liens connexes
 
-* [Démos de ToolbarItem](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-toolbaritem/)
-* [Images dansXamarin.Forms](~/xamarin-forms/user-interface/images.md)
-* [Xamarin.FormsMenuItem](~/xamarin-forms/user-interface/menuitem.md)
+* [Démos de ToolbarItem](/samples/xamarin/xamarin-forms-samples/userinterface-toolbaritem/)
+* [Images dans Xamarin.Forms](~/xamarin-forms/user-interface/images.md)
+* [Xamarin.Forms MenuItem](~/xamarin-forms/user-interface/menuitem.md)
