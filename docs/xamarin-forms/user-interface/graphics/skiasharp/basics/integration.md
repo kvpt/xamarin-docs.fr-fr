@@ -1,5 +1,5 @@
 ---
-title: Intégrer àXamarin.Forms
+title: Intégrer à Xamarin.Forms
 description: Cet article explique comment créer des graphiques SkiaSharp qui répondent à des éléments tactiles et Xamarin.Forms illustre cette procédure avec un exemple de code.
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
@@ -10,14 +10,14 @@ ms.date: 02/09/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 60f53fb00786b183f36f7cfefa6af9062bb682db
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: cca93508e022420e0d5d11de079420b367188052
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938162"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562247"
 ---
-# <a name="integrating-with-xamarinforms"></a>Intégrer àXamarin.Forms
+# <a name="integrating-with-no-locxamarinforms"></a>Intégrer à Xamarin.Forms
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
@@ -28,7 +28,7 @@ Les graphiques SkiaSharp peuvent s’intégrer au reste de de Xamarin.Forms plus
 ![Sélection d’une couleur avec des curseurs](integration-images/integrationexample.png)
 
 Une autre approche de la création de graphiques SkiaSharp interactifs dans Xamarin.Forms est d’utiliser Touch.
-La deuxième page du programme [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) est autorisée à **appuyer sur Activer/désactiver le remplissage**. Il dessine un cercle simple de deux manières &mdash; sans remplissage et avec un remplissage &mdash; activé par un TAP. La [`TapToggleFillPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml.cs) classe montre comment vous pouvez modifier les graphiques SkiaSharp en réponse à une entrée de l’utilisateur.
+La deuxième page du programme [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) est autorisée à **appuyer sur Activer/désactiver le remplissage**. Il dessine un cercle simple de deux manières &mdash; sans remplissage et avec un remplissage &mdash; activé par un TAP. La [`TapToggleFillPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml.cs) classe montre comment vous pouvez modifier les graphiques SkiaSharp en réponse à une entrée de l’utilisateur.
 
 Pour cette page, la `SKCanvasView` classe est instanciée dans le fichier [TapToggleFill. Xaml](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml) , qui définit également un Xamarin.Forms [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) sur la vue :
 
@@ -244,5 +244,5 @@ Mais la meilleure façon d’avoir une idée pour les deux modèles consiste à 
 
 ## <a name="related-links"></a>Liens associés
 
-- [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [API SkiaSharp](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (exemple)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

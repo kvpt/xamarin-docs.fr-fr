@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsRoundEffect réutilisable
+title: Xamarin.Forms RoundEffect réutilisable
 description: RoundEffect est un effet réutilisable qui peut être appliqué à n’importe quel contrôle dérivant de VisualElement pour afficher le contrôle sous forme de cercle.
 ms.prod: xamarin
 ms.assetid: B5DE7507-B565-4EE5-9897-27E5733FD173
@@ -10,16 +10,16 @@ ms.date: 10/25/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: fc3776934a4c109b2527132b11c6c6a93b7d9f9e
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 47b459945aec4ef8f1c3fa9729efd82461aec0e0
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138851"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91561961"
 ---
-# <a name="xamarinforms-reusable-roundeffect"></a>Xamarin.FormsRoundEffect réutilisable
+# <a name="no-locxamarinforms-reusable-roundeffect"></a>Xamarin.Forms RoundEffect réutilisable
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-roundeffect/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-roundeffect/)
 
 Le RoundEffect simplifie le rendu d’un contrôle qui dérive de VisualElement sous la forme d’un cercle. Cet effet peut être utilisé pour créer des images circulaires, des boutons et d’autres contrôles :
 
@@ -224,6 +224,6 @@ La `RoundEffect` classe peut être appliquée à n’importe quel contrôle qui 
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Exemple d’application RoundEffect](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-roundeffect/)
+- [Exemple d’application RoundEffect](/samples/xamarin/xamarin-forms-samples/effects-roundeffect/)
 - [Présentation des effets](~/xamarin-forms/app-fundamentals/effects/introduction.md)
 - [Création d’un effet](~/xamarin-forms/app-fundamentals/effects/creating.md)

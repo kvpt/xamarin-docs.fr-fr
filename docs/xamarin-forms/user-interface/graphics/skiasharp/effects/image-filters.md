@@ -10,16 +10,16 @@ ms.date: 08/27/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: eedbca080fce9f3001a7b1e2358845fd63c6121b
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 4f10d39ff9fb08897f12cf1991ddcd2d7793b695
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136342"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91564028"
 ---
 # <a name="skiasharp-image-filters"></a>Filtres d’image SkiaSharp
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 Les filtres d’images sont des effets qui fonctionnent sur tous les bits de couleur des pixels qui composent une image. Ils sont plus polyvalents que les filtres de masque, qui fonctionnent uniquement sur le canal alpha comme décrit dans l’article [**filtres de masque SkiaSharp**](mask-filters.md). Pour utiliser un filtre d’image, affectez à la propriété de la valeur d' [`ImageFilter`](xref:SkiaSharp.SKPaint.ImageFilter) `SKPaint` un objet de type [`SKImageFilter`](xref:SkiaSharp.SKImageFilter) que vous avez créé en appelant l’une des méthodes statiques de la classe.
 
@@ -41,7 +41,7 @@ public static SkiaSharp.SKImageFilter CreateBlur (float sigmaX, float sigmaY,
 
 La méthode a deux valeurs Sigma &mdash; la première pour l’étendue floue dans la direction horizontale et la seconde pour la direction verticale. Vous pouvez monter en cascade des filtres d’images en spécifiant un autre filtre d’image comme troisième argument facultatif. Un rectangle de rognage peut également être spécifié.
 
-La page **expérience d’image floue** dans le [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) comprend deux `Slider` vues qui vous permettent d’expérimenter la définition de différents niveaux de flou :
+La page **expérience d’image floue** dans le [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) comprend deux `Slider` vues qui vous permettent d’expérimenter la définition de différents niveaux de flou :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -445,5 +445,5 @@ Une autre approche du texte en relief et d’empreinte a été illustrée dans l
 
 ## <a name="related-links"></a>Liens connexes
 
-- [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [API SkiaSharp](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (exemple)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

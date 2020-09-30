@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 90282262926fef663183be247e37d64dd1be9124
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a9ab12b5aabee03d84c58580ec200de4b63d5106
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138565"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562429"
 ---
 # <a name="cell-background-color-on-ios"></a>Couleur d’arrière-plan de cellule sur iOS
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Ce paramètre spécifique à la plateforme iOS définit la couleur d’arrière-plan par défaut des [`Cell`](xref:Xamarin.Forms.Cell) instances. Il est consommé en XAML en affectant `Cell.DefaultBackgroundColor` à la propriété pouvant être liée la valeur [`Color`](xref:Xamarin.Forms.Color) :
 
@@ -63,6 +63,6 @@ Le résultat est que la couleur d’arrière-plan dans un [`Cell`](xref:Xamarin.
 
 ## <a name="related-links"></a>Liens connexes
 
-- [PlatformSpecifics (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [Création de caractéristiques de la plateforme](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [API iOSSpecific](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

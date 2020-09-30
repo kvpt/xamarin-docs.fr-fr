@@ -10,16 +10,16 @@ ms.date: 01/15/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d8bd539c2bb0e8963afae3392b6f8e99d79af9af
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: ebe153ab8dfe4645b6c71fc6b973a6f001f97c0d
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136966"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91564067"
 ---
 # <a name="visualelement-first-responder-on-ios"></a>VisualElement premier répondeur sur iOS
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Ce spécifique à la plateforme iOS permet à un [`VisualElement`](xref:Xamarin.Forms.VisualElement) objet de devenir le premier répondeur aux événements tactiles, plutôt qu’à la page contenant l’élément. Il est consommé en XAML en affectant `VisualElement.CanBecomeFirstResponder` à la propriété pouvant être liée la valeur `true` :
 
@@ -52,6 +52,6 @@ Le résultat est qu’un [`VisualElement`](xref:Xamarin.Forms.VisualElement) peu
 
 ## <a name="related-links"></a>Liens connexes
 
-- [PlatformSpecifics (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [Création de caractéristiques de la plateforme](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [API iOSSpecific](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

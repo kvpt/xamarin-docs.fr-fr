@@ -10,12 +10,12 @@ ms.date: 04/06/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7ecc094abf816f11dcb16d9eba7d715c8c4e4ab1
-ms.sourcegitcommit: a003b036f6fb83818e2ecc9c72a641e3aeb373bd
+ms.openlocfilehash: 3a085226da3c63f4f151bc657976bba384c02170
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88964819"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91561142"
 ---
 # <a name="reusable-effectbehavior"></a>EffectBehavior réutilisable
 
@@ -35,7 +35,7 @@ Les propriétés de comportement suivantes doivent être définies pour utiliser
 Pour plus d’informations sur les effets, consultez [Effets](~/xamarin-forms/app-fundamentals/effects/index.md).
 
 > [!NOTE]
-> `EffectBehavior`Est une classe personnalisée qui peut se trouver dans l' [exemple de comportement d’effet](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-effectbehavior)et qui ne fait pas partie de Xamarin.Forms .
+> `EffectBehavior`Est une classe personnalisée qui peut se trouver dans l' [exemple de comportement d’effet](/samples/xamarin/xamarin-forms-samples/behaviors-effectbehavior)et qui ne fait pas partie de Xamarin.Forms .
 
 ## <a name="creating-the-behavior"></a>Création du comportement
 
@@ -171,6 +171,6 @@ Cet article a décrit l’utilisation d’un comportement pour ajouter un effet 
 ## <a name="related-links"></a>Liens associés
 
 - [Effects (Effets)](~/xamarin-forms/app-fundamentals/effects/index.md)
-- [EffectBehavior (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-effectbehavior)
+- [EffectBehavior (exemple)](/samples/xamarin/xamarin-forms-samples/behaviors-effectbehavior)
 - [Comportement](xref:Xamarin.Forms.Behavior)
 - [Comportement &lt; T&gt;](xref:Xamarin.Forms.Behavior`1)

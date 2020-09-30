@@ -10,12 +10,12 @@ ms.date: 08/04/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2d929043a6b4cd5dd8b06318df0d7a347708fe6c
-ms.sourcegitcommit: c3329ab25d377907d8804cdd5e26dc84a274f39c
+ms.openlocfilehash: d3eb7edbb24c7e28ee375e1de85f6a7597ec63ac
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88130914"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91561013"
 ---
 # <a name="add-drag-and-drop-gesture-recognizers"></a>Ajouter des modules de reconnaissance de mouvement de glisser-déplacer
 
@@ -35,10 +35,10 @@ La *source de glissement*, qui est l’élément sur lequel le mouvement de glis
 Le processus d’activation de la fonction glisser-déplacer dans une application est le suivant :
 
 1. Activez l’opération glisser sur un élément en ajoutant un `DragGestureRecognizer` objet à sa `GestureRecognizers` collection et en affectant à la propriété la valeur `DragGestureRecognizer.CanDrag` `true` . Pour plus d’informations, consultez [activer l’opération glisser](#enable-drag).
-1. facultatif Générez un package de données. Xamarin.Formsremplit automatiquement le package de données pour les contrôles d’image et de texte, mais pour d’autres contenus, vous devez construire votre propre package de données. Pour plus d’informations, consultez [créer un package de données](#build-a-data-package).
+1. facultatif Générez un package de données. Xamarin.Forms remplit automatiquement le package de données pour les contrôles d’image et de texte, mais pour d’autres contenus, vous devez construire votre propre package de données. Pour plus d’informations, consultez [créer un package de données](#build-a-data-package).
 1. Activez la suppression sur un élément en ajoutant un `DropGestureRecognizer` objet `GestureRecognizers` à sa collection et en affectant à la propriété la valeur `DropGestureRecognizer.AllowDrop` `true` . Pour plus d’informations, consultez [activer Drop](#enable-drop).
 1. facultatif Gérez l' `DropGestureRecognizer.DragOver` événement pour indiquer le type d’opération autorisé par la cible de déplacement. Pour plus d’informations, consultez [gérer l’événement DragOver](#handle-the-dragover-event).
-1. facultatif Traitez le package de données pour recevoir le contenu supprimé. Xamarin.Formsrécupère automatiquement les données d’image et de texte à partir du package de données, mais pour tout autre contenu, vous devez traiter le package de données. Pour plus d’informations, consultez [traiter le package de données](#process-the-data-package).
+1. facultatif Traitez le package de données pour recevoir le contenu supprimé. Xamarin.Forms récupère automatiquement les données d’image et de texte à partir du package de données, mais pour tout autre contenu, vous devez traiter le package de données. Pour plus d’informations, consultez [traiter le package de données](#process-the-data-package).
 
 > [!NOTE]
 > Le fait de faire glisser des éléments vers et depuis [`CollectionView`](xref:Xamarin.Forms.CollectionView) n’est pas pris en charge actuellement.
@@ -82,7 +82,7 @@ Dans cet exemple, un mouvement de glissement peut être initié sur [`Image`](xr
 
 ## <a name="build-a-data-package"></a>Créer un package de données
 
-Xamarin.Formsgénère automatiquement un package de données pour vous, quand un glisser-déplacer est initié, pour les contrôles suivants :
+Xamarin.Forms génère automatiquement un package de données pour vous, quand un glisser-déplacer est initié, pour les contrôles suivants :
 
 - Contrôles de texte. Vous pouvez faire glisser des valeurs de texte à partir d’objets,,, [`CheckBox`](xref:Xamarin.Forms.CheckBox) [`DatePicker`](xref:Xamarin.Forms.DatePicker) [`Editor`](xref:Xamarin.Forms.Editor) [`Entry`](xref:Xamarin.Forms.Entry) , [`Label`](xref:Xamarin.Forms.Label) , [`RadioButton`](xref:Xamarin.Forms.RadioButton) , [`Switch`](xref:Xamarin.Forms.Switch) et [`TimePicker`](xref:Xamarin.Forms.TimePicker) .
 - Contrôles image. Vous pouvez faire glisser des images à partir de [`Button`](xref:Xamarin.Forms.Button) [`Image`](xref:Xamarin.Forms.Image) contrôles, et [`ImageButton`](xref:Xamarin.Forms.ImageButton) .
@@ -259,14 +259,14 @@ Le tableau suivant présente les propriétés qui sont définies, ainsi que tout
 
 | Control | Propriété | Conversion |
 | --- | --- | --- |
-| `CheckBox` | `IsChecked` | `string`est converti en `bool` . |
-| `DatePicker` | `Date` | `string`est converti en `DateTime` . |
+| `CheckBox` | `IsChecked` | `string` est converti en `bool` . |
+| `DatePicker` | `Date` | `string` est converti en `DateTime` . |
 | `Editor` | `Text` ||
 | `Entry` | `Text` ||
 | `Label` | `Text` ||
-| `RadioButton` | `IsChecked` | `string`est converti en `bool` . |
-| `Switch` | `IsToggled` | `string`est converti en `bool` . |
-| `TimePicker` | `Time` | `string`est converti en `TimeSpan` . |
+| `RadioButton` | `IsChecked` | `string` est converti en `bool` . |
+| `Switch` | `IsToggled` | `string` est converti en `bool` . |
+| `TimePicker` | `Time` | `string` est converti en `TimeSpan` . |
 
 Pour du contenu autre que du texte et des images, vous devez traiter le package de données vous-même.
 
@@ -312,4 +312,4 @@ Dans cet exemple, l' `Square` objet est récupéré à partir du conteneur des p
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Mouvement glisser-déplacer (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-draganddropgesture/)
+- [Mouvement glisser-déplacer (exemple)](/samples/xamarin/xamarin-forms-samples/workingwithgestures-draganddropgesture/)

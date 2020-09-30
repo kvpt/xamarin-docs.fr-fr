@@ -10,16 +10,16 @@ ms.date: 07/12/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 763f44c26d653aa32429b2aa764989e18e8b8078
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: d9a96de5520a03b2ef51426be2c589c736ca2396
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139969"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562390"
 ---
 # <a name="animating-skiasharp-bitmaps"></a>Animation de bitmaps SkiaSharp
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 Les applications qui animent les graphiques SkiaSharp appellent généralement `InvalidateSurface` sur `SKCanvasView` une vitesse fixe, souvent toutes les 16 millisecondes. L’invalidation de la surface déclenche un appel au `PaintSurface` Gestionnaire pour redessiner l’affichage. À mesure que les éléments visuels sont redessinés 60 fois par seconde, ils semblent être facilement animés.
 
@@ -37,13 +37,13 @@ Le deuxième exemple montre comment utiliser SkiaSharp pour afficher un fichier 
 
 ## <a name="bitmap-animation"></a>Animation bitmap
 
-L’ensemble de Mandelbrot est visuellement fascinant, mais computionally long. (Pour une description de l’ensemble de Mandelbrot et des mathématiques utilisés ici, consultez le [chapitre 20 de _création d’Mobile Apps avec Xamarin. Forms_ ](https://xamarin.azureedge.net/developer/xamarin-forms-book/XamarinFormsBook-Ch20-Apr2016.pdf) à partir de la page 666. La description suivante part du principe que les connaissances en arrière-plan.)
+L’ensemble de Mandelbrot est visuellement fascinant, mais computionally long. (Pour une description de l’ensemble de Mandelbrot et des mathématiques utilisés ici, consultez le [chapitre 20 de la rubrique _création d’Mobile Apps avec à Xamarin.Forms _ ](https://xamarin.azureedge.net/developer/xamarin-forms-book/XamarinFormsBook-Ch20-Apr2016.pdf) partir de la page 666. La description suivante part du principe que les connaissances en arrière-plan.)
 
-L’exemple d' [**animation Mandelbrot**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-mandelanima) utilise l’animation bitmap pour simuler un zoom continu d’un point fixe dans l’ensemble de Mandelbrot. Le zoom avant est suivi par un zoom arrière, puis le cycle se répète indéfiniment ou jusqu’à ce que vous terminiez le programme.
+L’exemple d' [**animation Mandelbrot**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-mandelanima) utilise l’animation bitmap pour simuler un zoom continu d’un point fixe dans l’ensemble de Mandelbrot. Le zoom avant est suivi par un zoom arrière, puis le cycle se répète indéfiniment ou jusqu’à ce que vous terminiez le programme.
 
 Le programme prépare cette animation en créant jusqu’à 50 bitmaps qu’il stocke dans le stockage local de l’application. Chaque bitmap englobe la moitié de la largeur et de la hauteur du plan complexe comme bitmap précédente. (Dans le programme, ces bitmaps sont dites pour représenter des _niveaux de zoom_intégraux.) Les bitmaps sont ensuite affichés dans l’ordre. La mise à l’échelle de chaque bitmap est animée pour fournir une progression fluide d’une image bitmap à une autre.
 
-À l’instar du dernier programme décrit dans le chapitre 20 de la _création d’Mobile Apps avec Xamarin. Forms_, le calcul de l’ensemble de Mandelbrot dans l' **animation Mandelbrot** est une méthode asynchrone avec huit paramètres. Les paramètres incluent un point central complexe, ainsi qu’une largeur et une hauteur du plan complexe entourant ce point central. Les trois paramètres suivants sont la largeur et la hauteur en pixels de l’image bitmap à créer, ainsi qu’un nombre maximal d’itérations pour le calcul récursif. Le `progress` paramètre est utilisé pour afficher la progression de ce calcul. Le `cancelToken` paramètre n’est pas utilisé dans ce programme :
+À l’instar du dernier programme décrit dans le chapitre 20 de la _création d’Mobile Apps Xamarin.Forms avec _, le calcul de l’ensemble de Mandelbrot dans l' **animation Mandelbrot** est une méthode asynchrone avec huit paramètres. Les paramètres incluent un point central complexe, ainsi qu’une largeur et une hauteur du plan complexe entourant ce point central. Les trois paramètres suivants sont la largeur et la hauteur en pixels de l’image bitmap à créer, ainsi qu’un nombre maximal d’itérations pour le calcul récursif. Le `progress` paramètre est utilisé pour afficher la progression de ce calcul. Le `cancelToken` paramètre n’est pas utilisé dans ce programme :
 
 ```csharp
 static class Mandelbrot
@@ -182,9 +182,9 @@ public partial class MainPage : ContentPage
 }
 ```
 
-À un moment donné, vous souhaiterez probablement remplacer la `COUNT` valeur par 50 pour voir la plage complète de l’animation. Les valeurs supérieures à 50 ne sont pas utiles. Autour d’un niveau de zoom de 48, la résolution des nombres à virgule flottante double précision devient insuffisante pour le calcul du jeu de Mandelbrot. Ce problème est abordé à la page 684 de la _création d’Mobile Apps avec Xamarin. Forms_.
+À un moment donné, vous souhaiterez probablement remplacer la `COUNT` valeur par 50 pour voir la plage complète de l’animation. Les valeurs supérieures à 50 ne sont pas utiles. Autour d’un niveau de zoom de 48, la résolution des nombres à virgule flottante double précision devient insuffisante pour le calcul du jeu de Mandelbrot. Ce problème est abordé sur la page 684 de la _création Xamarin.Forms d’Mobile Apps avec _.
 
-La `center` valeur est très importante. Il s’agit de l’objectif du zoom d’animation. Les trois valeurs du fichier sont celles utilisées dans les trois captures d’écran finales du chapitre 20 de la _création d’Mobile Apps avec Xamarin. Forms_ à la page 684, mais vous pouvez expérimenter le programme dans ce chapitre pour trouver l’une de vos propres valeurs.
+La `center` valeur est très importante. Il s’agit de l’objectif du zoom d’animation. Les trois valeurs du fichier sont celles utilisées dans les trois captures d’écran finales du chapitre 20 de la _création Xamarin.Forms d’Mobile Apps avec_ la page 684, mais vous pouvez faire des essais avec le programme de ce chapitre pour trouver l’une de vos propres valeurs.
 
 L’exemple d' **animation Mandelbrot** stocke ces `COUNT` bitmaps dans le stockage d’applications local. 50 les bitmaps requièrent plus de 20 mégaoctets de stockage sur votre appareil. vous pouvez donc être amené à connaître la quantité de stockage que ces bitmaps occupent et, à un moment donné, vous souhaiterez peut-être les supprimer. C’est l’objectif de ces deux méthodes au bas de la `MainPage` classe :
 
@@ -381,7 +381,7 @@ Notez que le programme stocke ces bitmaps dans le stockage d’applications loca
 
 Une fois que toutes les bitmaps ont été créées ou chargées en mémoire, la méthode démarre un `Stopwatch` objet et appelle `Device.StartTimer` . La `OnTimerTick` méthode est appelée toutes les 16 millisecondes.
 
-`OnTimerTick`calcule une `time` valeur en millisecondes comprise entre 0 et 6000 fois, ce qui répartit `COUNT` six secondes pour l’affichage de chaque bitmap. La `progress` valeur utilise la `Math.Sin` valeur pour créer une animation sinusoïdale qui sera plus lente au début du cycle, et plus lente à la fin, car elle inverse le sens.
+`OnTimerTick` calcule une `time` valeur en millisecondes comprise entre 0 et 6000 fois, ce qui répartit `COUNT` six secondes pour l’affichage de chaque bitmap. La `progress` valeur utilise la `Math.Sin` valeur pour créer une animation sinusoïdale qui sera plus lente au début du cycle, et plus lente à la fin, car elle inverse le sens.
 
 La valeur est comprise `progress` entre 0 et `COUNT` . Cela signifie que la partie entière de `progress` est un index dans le `bitmaps` tableau, tandis que la partie fractionnaire de `progress` indique un niveau de zoom pour cette bitmap particulière. Ces valeurs sont stockées dans les `bitmapIndex` `bitmapProgress` champs et, et sont affichées par `Label` et `Slider` dans le fichier XAML. Le `SKCanvasView` est invalidé pour mettre à jour l’affichage de la bitmap :
 
@@ -472,7 +472,7 @@ Voici le programme en cours d’exécution :
 
 La spécification GIF (Graphics Interchange Format) comprend une fonctionnalité qui permet à un seul fichier GIF de contenir plusieurs images séquentielles d’une scène qui peuvent être affichées successivement, souvent dans une boucle. Ces fichiers sont appelés _GIF animés_. Les navigateurs Web peuvent lire des images GIF animées, et SkiaSharp permet à une application d’extraire les frames d’un fichier GIF animé et de les afficher de façon séquentielle.
 
-L’exemple [SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) comprend une ressource GIF animée nommée **Newtons_cradle_animation_book_2.gif** créée par DemonDeLuxe et téléchargée à partir de la page du [berceau de Newton](https://en.wikipedia.org/wiki/Newton%27s_cradle) dans Wikipédia. La page **GIF animée** inclut un fichier XAML qui fournit ces informations et instancie un `SKCanvasView` :
+L’exemple [SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) comprend une ressource GIF animée nommée **Newtons_cradle_animation_book_2.gif** créée par DemonDeLuxe et téléchargée à partir de la page du [berceau de Newton](https://en.wikipedia.org/wiki/Newton%27s_cradle) dans Wikipédia. La page **GIF animée** inclut un fichier XAML qui fournit ces informations et instancie un `SKCanvasView` :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -509,7 +509,7 @@ Ces frames étant finalement enregistrés sous forme de bitmaps individuelles, l
 
 La [`FrameInfo`](xref:SkiaSharp.SKCodec.FrameInfo) propriété de la `SKCodec` classe est un tableau de [`SKCodecFrameInfo`](xref:SkiaSharp.SKCodecFrameInfo) valeurs, une pour chaque frame, mais la seule chose que ce programme effectue à partir de cette structure est le [`Duration`](xref:SkiaSharp.SKCodecFrameInfo.Duration) du frame en millisecondes.
 
-`SKCodec`définit une propriété nommée [`Info`](xref:SkiaSharp.SKCodec.Info) de type [`SKImageInfo`](xref:SkiaSharp.SKImageInfo) , mais cette `SKImageInfo` valeur indique (au moins pour cette image) que le type de couleur est, ce qui `SKColorType.Index8` signifie que chaque pixel est un index dans un type de couleur. Pour éviter de vous soucier des tables de couleurs, le programme utilise les [`Width`](xref:SkiaSharp.SKImageInfo.Width) [`Height`](xref:SkiaSharp.SKImageInfo.Height) informations de et de cette structure pour construire sa propre valeur de couleur entière `ImageInfo` . Chaque `SKBitmap` est créé à partir de ce.
+`SKCodec` définit une propriété nommée [`Info`](xref:SkiaSharp.SKCodec.Info) de type [`SKImageInfo`](xref:SkiaSharp.SKImageInfo) , mais cette `SKImageInfo` valeur indique (au moins pour cette image) que le type de couleur est, ce qui `SKColorType.Index8` signifie que chaque pixel est un index dans un type de couleur. Pour éviter de vous soucier des tables de couleurs, le programme utilise les [`Width`](xref:SkiaSharp.SKImageInfo.Width) [`Height`](xref:SkiaSharp.SKImageInfo.Height) informations de et de cette structure pour construire sa propre valeur de couleur entière `ImageInfo` . Chaque `SKBitmap` est créé à partir de ce.
 
 La `GetPixels` méthode de `SKBitmap` retourne un qui `IntPtr` référence les bits de pixel de cette bitmap. Ces bits de pixel n’ont pas encore été définis. Qui `IntPtr` est passé à l’une des [`GetPixels`](xref:SkiaSharp.SKCodec.GetPixels(SkiaSharp.SKImageInfo,System.IntPtr,SkiaSharp.SKCodecOptions)) méthodes de `SKCodec` . Cette méthode copie le frame du fichier GIF dans l’espace mémoire référencé par le `IntPtr` . Le [`SKCodecOptions`](xref:SkiaSharp.SKCodecOptions) constructeur indique le numéro de frame :
 
@@ -662,6 +662,6 @@ Bien entendu, vous souhaiterez exécuter le programme vous-même pour voir l’a
 
 ## <a name="related-links"></a>Liens connexes
 
-- [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
-- [Animation Mandelbrot (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-mandelanima)
+- [API SkiaSharp](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (exemple)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [Animation Mandelbrot (exemple)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-mandelanima)

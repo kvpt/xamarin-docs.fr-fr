@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsMention
+title: Xamarin.Forms Mention
 description: Cet article explique comment utiliser la Xamarin.Forms classe Entry pour accepter une entrée de texte ou de mot de passe sur une seule ligne dans une application.
 ms.prod: xamarin
 ms.assetid: 9923C541-3C10-4D14-BAB5-C4D6C514FB1E
@@ -10,14 +10,14 @@ ms.date: 07/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3738a0fa3519f18864c2430430a6716bed5be130
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: ab2f0880f694bd9e270385dd6e0256374ed76c43
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918224"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562221"
 ---
-# <a name="no-locxamarinforms-entry"></a>Xamarin.FormsMention
+# <a name="no-locxamarinforms-entry"></a>Xamarin.Forms Mention
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
@@ -78,10 +78,10 @@ var entry = new Entry { Text = "This is a read-only Entry", IsReadOnly = true })
 
 Un [`Entry`](xref:Xamarin.Forms.Entry) peut transformer la casse de son texte, stocké dans la `Text` propriété, en affectant `TextTransform` à la propriété une valeur de l' `TextTransform` énumération. Cette énumération a quatre valeurs :
 
-- `None`indique que le texte ne sera pas transformé.
-- `Default`indique que le comportement par défaut de la plateforme sera utilisé. C’est la valeur par défaut de la propriété `TextTransform`.
-- `Lowercase`indique que le texte sera transformé en minuscules.
-- `Uppercase`indique que le texte sera transformé en majuscules.
+- `None` indique que le texte ne sera pas transformé.
+- `Default` indique que le comportement par défaut de la plateforme sera utilisé. C’est la valeur par défaut de la propriété `TextTransform`.
+- `Lowercase` indique que le texte sera transformé en minuscules.
+- `Uppercase` indique que le texte sera transformé en majuscules.
 
 L’exemple suivant illustre la transformation de texte en majuscules :
 
@@ -136,7 +136,7 @@ En conséquence, les caractères du texte affiché par le sont espacés d' [`Ent
 
 ## <a name="password-fields"></a>Champs de mot de passe
 
-`Entry`fournit la `IsPassword` propriété. Lorsque `IsPassword` a `true` la valeur, le contenu du champ est présenté sous la forme de cercles noirs :
+`Entry` fournit la `IsPassword` propriété. Lorsque `IsPassword` a `true` la valeur, le contenu du champ est présenté sous la forme de cercles noirs :
 
 En XAML :
 
@@ -198,8 +198,8 @@ La valeur par défaut de la [`SelectionLength`](xref:Xamarin.Forms.Entry.Selecti
 
 La `ClearButtonVisibility` propriété peut être utilisée pour contrôler si une [`Entry`](xref:Xamarin.Forms.Entry) affiche un bouton Effacer, ce qui permet à l’utilisateur d’effacer le texte. Cette propriété doit être définie sur un `ClearButtonVisibility` membre de l’énumération :
 
-- `Never`indique qu’un bouton Effacer ne sera jamais affiché. Il s'agit de la valeur par défaut de la propriété `Entry.ClearButtonVisibility`.
-- `WhileEditing`indique qu’un bouton Effacer s’affichera dans le [`Entry`](xref:Xamarin.Forms.Entry) , alors qu’il a le focus et le texte.
+- `Never` indique qu’un bouton Effacer ne sera jamais affiché. Il s'agit de la valeur par défaut de la propriété `Entry.ClearButtonVisibility`.
+- `WhileEditing` indique qu’un bouton Effacer s’affichera dans le [`Entry`](xref:Xamarin.Forms.Entry) , alors qu’il a le focus et le texte.
 
 L’exemple suivant illustre la définition de la propriété en XAML :
 
@@ -222,14 +222,14 @@ Les captures d’écran suivantes montrent une [`Entry`](xref:Xamarin.Forms.Entr
 
 Le clavier présenté lorsque les utilisateurs interagissent avec un [`Entry`](xref:Xamarin.Forms.Entry) peut être défini par programmation via la [`Keyboard`](xref:Xamarin.Forms.InputView.Keyboard) propriété, à l’une des propriétés suivantes à partir de la [`Keyboard`](xref:Xamarin.Forms.Keyboard) classe :
 
-- [`Chat`](xref:Xamarin.Forms.Keyboard.Chat): utilisé pour le texte et les emplacements où les Emoji sont utiles.
-- [`Default`](xref:Xamarin.Forms.Keyboard.Default): clavier par défaut.
-- [`Email`](xref:Xamarin.Forms.Keyboard.Email)– utilisé lors de la saisie des adresses e-mail.
-- [`Numeric`](xref:Xamarin.Forms.Keyboard.Numeric): utilisé lors de l’entrée de nombres.
-- [`Plain`](xref:Xamarin.Forms.Keyboard.Plain): utilisé lors de l’entrée de texte, sans aucun [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) spécifié.
-- [`Telephone`](xref:Xamarin.Forms.Keyboard.Telephone)– utilisé lors de l’entrée de numéros de téléphone.
-- [`Text`](xref:Xamarin.Forms.Keyboard.Text): utilisé lors de la saisie de texte.
-- [`Url`](xref:Xamarin.Forms.Keyboard.Url): permet d’entrer des chemins de fichier & des adresses Web.
+- [`Chat`](xref:Xamarin.Forms.Keyboard.Chat) : utilisé pour le texte et les emplacements où les Emoji sont utiles.
+- [`Default`](xref:Xamarin.Forms.Keyboard.Default) : clavier par défaut.
+- [`Email`](xref:Xamarin.Forms.Keyboard.Email) – utilisé lors de la saisie des adresses e-mail.
+- [`Numeric`](xref:Xamarin.Forms.Keyboard.Numeric) : utilisé lors de l’entrée de nombres.
+- [`Plain`](xref:Xamarin.Forms.Keyboard.Plain) : utilisé lors de l’entrée de texte, sans aucun [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) spécifié.
+- [`Telephone`](xref:Xamarin.Forms.Keyboard.Telephone) – utilisé lors de l’entrée de numéros de téléphone.
+- [`Text`](xref:Xamarin.Forms.Keyboard.Text) : utilisé lors de la saisie de texte.
+- [`Url`](xref:Xamarin.Forms.Keyboard.Url) : permet d’entrer des chemins de fichier & des adresses Web.
 
 Cela peut être accompli en XAML de la façon suivante :
 
@@ -245,16 +245,16 @@ var entry = new Entry { Keyboard = Keyboard.Chat };
 
 Vous trouverez des exemples de chaque clavier dans notre référentiel [Recipes](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/choose-keyboard-for-entry) .
 
-La [`Keyboard`](xref:Xamarin.Forms.Keyboard) classe a également une [`Create`](xref:Xamarin.Forms.Keyboard.Create*) méthode de fabrique qui peut être utilisée pour personnaliser un clavier en spécifiant le comportement de mise en majuscules, de vérification orthographique et de suggestion. [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags)les valeurs d’énumération sont spécifiées comme arguments de la méthode, avec un personnalisé `Keyboard` qui est retourné. L’énumération `KeyboardFlags` contient les valeurs suivantes :
+La [`Keyboard`](xref:Xamarin.Forms.Keyboard) classe a également une [`Create`](xref:Xamarin.Forms.Keyboard.Create*) méthode de fabrique qui peut être utilisée pour personnaliser un clavier en spécifiant le comportement de mise en majuscules, de vérification orthographique et de suggestion. [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) les valeurs d’énumération sont spécifiées comme arguments de la méthode, avec un personnalisé `Keyboard` qui est retourné. L’énumération `KeyboardFlags` contient les valeurs suivantes :
 
-- [`None`](xref:Xamarin.Forms.KeyboardFlags.None): aucune fonctionnalité n’est ajoutée au clavier.
-- [`CapitalizeSentence`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeSentence): indique que la première lettre du premier mot de chaque phrase entrée est automatiquement mise en majuscules.
-- [`Spellcheck`](xref:Xamarin.Forms.KeyboardFlags.Spellcheck): indique que l’orthographe est effectuée sur le texte entré.
-- [`Suggestions`](xref:Xamarin.Forms.KeyboardFlags.Suggestions): indique que les saisies semi-automatiques de mot seront proposées dans le texte entré.
-- [`CapitalizeWord`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeWord): indique que la première lettre de chaque mot sera automatiquement mise en majuscules.
-- [`CapitalizeCharacter`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeCharacter): indique que chaque caractère sera automatiquement mis en majuscules.
-- [`CapitalizeNone`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeNone): indique qu’aucune mise en majuscule automatique n’aura lieu.
-- [`All`](xref:Xamarin.Forms.KeyboardFlags.All): indique que l’orthographe, la saisie semi-automatique des mots et la mise en majuscule des phrases se produisent dans le texte entré.
+- [`None`](xref:Xamarin.Forms.KeyboardFlags.None) : aucune fonctionnalité n’est ajoutée au clavier.
+- [`CapitalizeSentence`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeSentence) : indique que la première lettre du premier mot de chaque phrase entrée est automatiquement mise en majuscules.
+- [`Spellcheck`](xref:Xamarin.Forms.KeyboardFlags.Spellcheck) : indique que l’orthographe est effectuée sur le texte entré.
+- [`Suggestions`](xref:Xamarin.Forms.KeyboardFlags.Suggestions) : indique que les saisies semi-automatiques de mot seront proposées dans le texte entré.
+- [`CapitalizeWord`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeWord) : indique que la première lettre de chaque mot sera automatiquement mise en majuscules.
+- [`CapitalizeCharacter`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeCharacter) : indique que chaque caractère sera automatiquement mis en majuscules.
+- [`CapitalizeNone`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeNone) : indique qu’aucune mise en majuscule automatique n’aura lieu.
+- [`All`](xref:Xamarin.Forms.KeyboardFlags.All) : indique que l’orthographe, la saisie semi-automatique des mots et la mise en majuscule des phrases se produisent dans le texte entré.
 
 L’exemple de code XAML suivant montre comment personnaliser la valeur par défaut [`Keyboard`](xref:Xamarin.Forms.Keyboard) pour proposer des saisies semi-automatiques de mots et mettre en majuscules chaque caractère entré :
 
@@ -281,12 +281,12 @@ entry.Keyboard = Keyboard.Create(KeyboardFlags.Suggestions | KeyboardFlags.Capit
 
 L’apparence de la touche retour sur le clavier logiciel, qui est affichée lorsqu’un [`Entry`](xref:Xamarin.Forms.Entry) a le focus, peut être personnalisée en affectant [`ReturnType`](xref:Xamarin.Forms.Entry.ReturnType) à la propriété une valeur de l' [`ReturnType`](xref:Xamarin.Forms.ReturnType) énumération :
 
-- [`Default`](xref:Xamarin.Forms.ReturnType.Default): indique qu’aucune clé de retour spécifique n’est requise et que la valeur par défaut de la plateforme est utilisée.
-- [`Done`](xref:Xamarin.Forms.ReturnType.Done): indique une clé de retour « Done ».
-- [`Go`](xref:Xamarin.Forms.ReturnType.Go): indique une clé de retour « Go ».
-- [`Next`](xref:Xamarin.Forms.ReturnType.Next): indique une clé de retour « Next ».
-- [`Search`](xref:Xamarin.Forms.ReturnType.Search): indique une clé de retour « Search ».
-- [`Send`](xref:Xamarin.Forms.ReturnType.Send): indique une clé de retour « Send ».
+- [`Default`](xref:Xamarin.Forms.ReturnType.Default) : indique qu’aucune clé de retour spécifique n’est requise et que la valeur par défaut de la plateforme est utilisée.
+- [`Done`](xref:Xamarin.Forms.ReturnType.Done) : indique une clé de retour « Done ».
+- [`Go`](xref:Xamarin.Forms.ReturnType.Go) : indique une clé de retour « Go ».
+- [`Next`](xref:Xamarin.Forms.ReturnType.Next) : indique une clé de retour « Next ».
+- [`Search`](xref:Xamarin.Forms.ReturnType.Search) : indique une clé de retour « Search ».
+- [`Send`](xref:Xamarin.Forms.ReturnType.Send) : indique une clé de retour « Send ».
 
 L’exemple de code XAML suivant montre comment définir la clé de retour :
 
@@ -394,9 +394,9 @@ L’entrée expose deux événements :
 > [!NOTE]
 > La [`VisualElement`](xref:Xamarin.Forms.VisualElement) classe, dont [`Entry`](xref:Xamarin.Forms.Entry) hérite, possède également les [`Focused`](xref:Xamarin.Forms.VisualElement.Focused) [`Unfocused`](xref:Xamarin.Forms.VisualElement.Unfocused) événements et.
 
-### <a name="completed"></a>Completed
+### <a name="completed"></a>Effectué
 
-L' `Completed` événement est utilisé pour réagir à l’achèvement d’une interaction avec une entrée. `Completed`est déclenché lorsque l’utilisateur termine l’entrée par un champ en appuyant sur la touche retour sur le clavier (ou en appuyant sur la touche Tab sur UWP). Le gestionnaire de l’événement est un gestionnaire d’événements générique, qui prend l’expéditeur et `EventArgs` :
+L' `Completed` événement est utilisé pour réagir à l’achèvement d’une interaction avec une entrée. `Completed` est déclenché lorsque l’utilisateur termine l’entrée par un champ en appuyant sur la touche retour sur le clavier (ou en appuyant sur la touche Tab sur UWP). Le gestionnaire de l’événement est un gestionnaire d’événements générique, qui prend l’expéditeur et `EventArgs` :
 
 ```csharp
 void Entry_Completed (object sender, EventArgs e)
@@ -424,7 +424,7 @@ Une fois l' [`Completed`](xref:Xamarin.Forms.Entry.Completed) événement décle
 
 L' `TextChanged` événement est utilisé pour réagir à une modification du contenu d’un champ.
 
-`TextChanged`est déclenché chaque fois que le `Text` de `Entry` change. Le gestionnaire de l’événement prend une instance de `TextChangedEventArgs` . `TextChangedEventArgs`fournit l’accès aux valeurs anciennes et nouvelles de `Entry` `Text` via les `OldTextValue` Propriétés et `NewTextValue` :
+`TextChanged` est déclenché chaque fois que le `Text` de `Entry` change. Le gestionnaire de l’événement prend une instance de `TextChangedEventArgs` . `TextChangedEventArgs` fournit l’accès aux valeurs anciennes et nouvelles de `Entry` `Text` via les `OldTextValue` Propriétés et `NewTextValue` :
 
 ```csharp
 void Entry_TextChanged (object sender, TextChangedEventArgs e)
@@ -449,5 +449,5 @@ entry.TextChanged += Entry_TextChanged;
 
 ## <a name="related-links"></a>Liens associés
 
-- [Texte (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
+- [Texte (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-text)
 - [API Entry](xref:Xamarin.Forms.Entry)

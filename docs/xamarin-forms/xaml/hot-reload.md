@@ -1,5 +1,5 @@
 ---
-title: Rechargement à chaud XAML pourXamarin.Forms
+title: Rechargement à chaud XAML pour Xamarin.Forms
 description: Rechargez les modifications apportées à votre fichier XAML instantanément sur votre application en cours d’exécution afin de ne pas avoir à générer votre Xamarin.Forms projet après chaque modification XAML.
 ms.prod: xamarin
 ms.assetid: E220F054-32EE-424C-A7E5-6156BE271519
@@ -10,14 +10,14 @@ ms.date: 03/14/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0655739c95ba58b8d93aae6d3987d54bd0582c7b
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: ca79a8a4059a303b6f4bfa152d645311a6056ffd
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84127450"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563885"
 ---
-# <a name="xaml-hot-reload-for-xamarinforms"></a>Rechargement à chaud XAML pourXamarin.Forms
+# <a name="xaml-hot-reload-for-no-locxamarinforms"></a>Rechargement à chaud XAML pour Xamarin.Forms
 
 Le rechargement à chaud XAML se connecte à votre flux de travail existant pour augmenter votre productivité et vous faire gagner du temps. Sans le rechargement à chaud XAML, vous devez générer et déployer votre application chaque fois que vous souhaitez voir une modification XAML. Avec le rechargement à chaud, lorsque vous enregistrez votre fichier XAML, les modifications sont reflétées dans votre application en cours d’exécution. En outre, votre état de navigation et vos données sont conservés, ce qui vous permet d’effectuer rapidement une itération sur votre interface utilisateur sans perdre votre place dans l’application. Par conséquent, avec le rechargement à chaud XAML, vous allez consacrer moins de temps à la reconstruction et au déploiement de vos applications pour valider les modifications de l’interface utilisateur.
 
@@ -34,7 +34,7 @@ Le rechargement à chaud XAML se connecte à votre flux de travail existant pour
 Visual Studio 2019 pour Mac | 8,4 ou version ultérieure
 Xamarin.Forms | 4,1 ou version ultérieure
 
-## <a name="enable-xaml-hot-reload-for-xamarinforms"></a>Activer le rechargement à chaud XAML pourXamarin.Forms
+## <a name="enable-xaml-hot-reload-for-no-locxamarinforms"></a>Activer le rechargement à chaud XAML pour Xamarin.Forms
 
 Si vous démarrez à partir d’un modèle, le rechargement à chaud XAML est activé par défaut et le projet est configuré pour fonctionner sans aucune configuration supplémentaire. Déboguez votre application sur un émulateur, un simulateur ou un appareil physique Android ou iOS, modifiez votre code XAML, puis enregistrez votre fichier pour déclencher un rechargement à chaud XAML.
 
@@ -57,8 +57,8 @@ Si vous apportez une modification que le rechargement à chaud XAML ne peut pas 
 ## <a name="reload-on-multiple-platforms-at-once"></a>Rechargement sur plusieurs plateformes à la fois
 
 Le rechargement à chaud XAML prend en charge le débogage simultané dans Visual Studio et Visual Studio pour Mac. Vous pouvez déployer une cible Android et une cible iOS en même temps pour voir vos modifications reflétées sur les deux plateformes à la fois. Pour déboguer sur plusieurs plateformes, consultez :
-* **Windows** [: définir plusieurs projets de démarrage](https://docs.microsoft.com/visualstudio/ide/how-to-set-multiple-startup-projects?view=vs-2019)
-* **Mac** [définir plusieurs projets de démarrage](https://docs.microsoft.com/visualstudio/mac/set-startup-projects?view=vsmac-2019)
+* **Windows** [: définir plusieurs projets de démarrage](/visualstudio/ide/how-to-set-multiple-startup-projects?view=vs-2019)
+* **Mac** [définir plusieurs projets de démarrage](/visualstudio/mac/set-startup-projects?view=vsmac-2019)
 
 ## <a name="known-limitations"></a>Limitations connues
 
@@ -70,12 +70,12 @@ Le rechargement à chaud XAML prend en charge le débogage simultané dans Visua
 * La mise à jour de la hiérarchie visuelle de votre application de Shell dans AppShell. XAML peut entraîner des problèmes de maintenance de l’état de votre application. Si vous rencontrez des problèmes, régénérez l’application pour continuer le rechargement.
 * Le rechargement à chaud XAML ne peut pas recharger le code C#, y compris les gestionnaires d’événements, les contrôles personnalisés, la page code-behind et les autres classes.
 
-## <a name="more-resources"></a>Ressources complémentaires
+## <a name="more-resources"></a>Plus de ressources
 
 * [Trucs et astuces pour le rechargement à chaud XAML](https://devblogs.microsoft.com/xamarin/tips-tricks-xaml-hot-reload/)
 * [Rechargement à chaud XAML pour Xamarin.Forms en profondeur : le Xamarin Show](https://www.youtube.com/watch?v=crhjjPjzknk)
 
-## <a name="troubleshooting"></a>Dépannage
+## <a name="troubleshooting"></a>Résolution des problèmes
 
 * Si le rechargement à chaud XAML ne parvient pas à s’initialiser :
   * Mettez à jour votre Xamarin.Forms version.

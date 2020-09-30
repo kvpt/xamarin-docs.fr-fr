@@ -10,18 +10,18 @@ ms.date: 05/09/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 47770b4f57da530677dead051fc657ab24e776f5
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: db0591f89447a2ae083f5ac73f6e002b4d0ee6f8
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86933807"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91561350"
 ---
-# <a name="keyboard-accessibility-in-xamarinforms"></a>Accessibilité du clavier dansXamarin.Forms
+# <a name="keyboard-accessibility-in-no-locxamarinforms"></a>Accessibilité du clavier dans Xamarin.Forms
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-accessibility)
 
-Les utilisateurs qui utilisent des lecteurs d’écran ou ayant des problèmes avec la mobilité peuvent rencontrer des difficultés à utiliser des applications qui ne fournissent pas un accès par clavier approprié. Xamarin.Formsles applications peuvent avoir un ordre de tabulation attendu spécifié pour améliorer leur facilité d’utilisation et leur accessibilité. Spécifier un ordre de tabulation pour les contrôles permet la navigation au clavier, prépare les pages d’application à recevoir des entrées dans un ordre particulier et laisse les lecteurs d’écran lire les éléments actifs à leur utilisateur.
+Les utilisateurs qui utilisent des lecteurs d’écran ou ayant des problèmes avec la mobilité peuvent rencontrer des difficultés à utiliser des applications qui ne fournissent pas un accès par clavier approprié. Xamarin.Forms les applications peuvent avoir un ordre de tabulation attendu spécifié pour améliorer leur facilité d’utilisation et leur accessibilité. Spécifier un ordre de tabulation pour les contrôles permet la navigation au clavier, prépare les pages d’application à recevoir des entrées dans un ordre particulier et laisse les lecteurs d’écran lire les éléments actifs à leur utilisateur.
 
 Par défaut, l’ordre de tabulation des contrôles correspond à celui où ils sont listés en XAML ou ajoutés par programmation à une collection enfant. Cet ordre est l’ordre dans lequel vous naviguerez entre les contrôles avec un clavier et dans lequel les contrôles seront lus par les lecteurs d’écran. Il constitue souvent le meilleur ordre possible. Toutefois, l’ordre par défaut ne correspond pas toujours à l’ordre attendu, comme le montre l’exemple de code XAML suivant :
 
@@ -69,9 +69,9 @@ La `VisualElement.TabIndex` propriété est utilisée pour indiquer l’ordre da
 
 Les règles suivantes s’appliquent lorsque vous utilisez l’ordre des tabulations par défaut ou définissez la propriété `TabIndex` :
 
-- [`VisualElement`](xref:Xamarin.Forms.VisualElement)les instances avec un `TabIndex` égal à 0 sont ajoutées à l’ordre de tabulation en fonction de leur ordre de déclaration dans les collections XAML ou enfants.
-- [`VisualElement`](xref:Xamarin.Forms.VisualElement)les instances avec un `TabIndex` supérieur à 0 sont ajoutées à l’ordre de tabulation en fonction de leur `TabIndex` valeur.
-- [`VisualElement`](xref:Xamarin.Forms.VisualElement)les instances d’une `TabIndex` valeur inférieure à 0 sont ajoutées à l’ordre de tabulation et apparaissent avant toute valeur nulle.
+- [`VisualElement`](xref:Xamarin.Forms.VisualElement) les instances avec un `TabIndex` égal à 0 sont ajoutées à l’ordre de tabulation en fonction de leur ordre de déclaration dans les collections XAML ou enfants.
+- [`VisualElement`](xref:Xamarin.Forms.VisualElement) les instances avec un `TabIndex` supérieur à 0 sont ajoutées à l’ordre de tabulation en fonction de leur `TabIndex` valeur.
+- [`VisualElement`](xref:Xamarin.Forms.VisualElement) les instances d’une `TabIndex` valeur inférieure à 0 sont ajoutées à l’ordre de tabulation et apparaissent avant toute valeur nulle.
 - Les conflits sur une propriété `TabIndex` sont résolus par ordre de déclaration.
 
 Après avoir défini l’ordre des tabulations, en appuyant sur la touche Tab, vous déplacez le focus d’un contrôle à l’autre, dans l’ordre croissant de `TabIndex`, en revenant au premier contrôle après avoir atteint le contrôle final.
@@ -149,4 +149,4 @@ Les propriétés `TabIndex` et `IsTabStop` sont prises en charge sur les contrô
 
 ## <a name="related-links"></a>Liens associés
 
-- [Accessibilité (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-accessibility)
+- [Accessibilité (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-accessibility)

@@ -1,5 +1,5 @@
 ---
-title: Rechercher des données avec Azure Search etXamarin.Forms
+title: Rechercher des données avec Azure Search et Xamarin.Forms
 description: Cet article explique comment utiliser la bibliothèque de recherche Microsoft Azure pour intégrer Azure Search dans une Xamarin.Forms application.
 ms.prod: xamarin
 ms.assetid: A4AEF233-3672-4174-9DBA-15BEE3030C0B
@@ -10,14 +10,14 @@ ms.date: 12/05/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 29e73f4051eda9117663992af9e710483e4b772b
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 14d26c1360c1c1b7997598ef1263e3dd62e3c013
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86934093"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91561779"
 ---
-# <a name="search-data-with-azure-search-and-xamarinforms"></a>Rechercher des données avec Azure Search etXamarin.Forms
+# <a name="search-data-with-azure-search-and-no-locxamarinforms"></a>Rechercher des données avec Azure Search et Xamarin.Forms
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azuresearch)
 
@@ -44,7 +44,7 @@ Azure Search prend également en charge la récupération de suggestions en fonc
 > [!NOTE]
 > Si vous n’avez pas [d’abonnement Azure](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing), créez un [compte gratuit](https://aka.ms/azfree-docs-mobileapps) avant de commencer.
 
-## <a name="setup"></a>Installation
+## <a name="setup"></a>Programme d’installation
 
 Le processus d’intégration d’Azure Search dans une Xamarin.Forms application est le suivant :
 
@@ -96,12 +96,12 @@ static void CreateSearchIndex()
 
 La `Index.Name` propriété doit être définie sur le nom de l’index et la `Index.Fields` propriété doit être définie sur un tableau d' `Field` objets. Chaque `Field` instance spécifie un nom, un type et des propriétés qui spécifient comment le champ est utilisé. Ces propriétés sont les suivantes :
 
-- `IsKey`: indique si le champ est la clé de l’index. Un seul champ dans l’index, de type `DataType.String` , doit être désigné comme champ clé.
-- `IsFacetable`: indique s’il est possible d’effectuer une navigation à facettes sur ce champ. La valeur par défaut est `false`.
-- `IsFilterable`: indique si le champ peut être utilisé dans les requêtes de filtre. La valeur par défaut est `false`.
-- `IsRetrievable`: indique si le champ peut être récupéré dans les résultats de la recherche. La valeur par défaut est `true`.
-- `IsSearchable`: indique si le champ est inclus dans les recherches en texte intégral. La valeur par défaut est `false`.
-- `IsSortable`: indique si le champ peut être utilisé dans les `OrderBy` expressions. La valeur par défaut est `false`.
+- `IsKey` : indique si le champ est la clé de l’index. Un seul champ dans l’index, de type `DataType.String` , doit être désigné comme champ clé.
+- `IsFacetable` : indique s’il est possible d’effectuer une navigation à facettes sur ce champ. La valeur par défaut est `false`.
+- `IsFilterable` : indique si le champ peut être utilisé dans les requêtes de filtre. La valeur par défaut est `false`.
+- `IsRetrievable` : indique si le champ peut être récupéré dans les résultats de la recherche. La valeur par défaut est `true`.
+- `IsSearchable` : indique si le champ est inclus dans les recherches en texte intégral. La valeur par défaut est `false`.
+- `IsSortable` : indique si le champ peut être utilisé dans les `OrderBy` expressions. La valeur par défaut est `false`.
 
 > [!NOTE]
 > La modification d’un index après son déploiement implique la reconstruction et le rechargement des données.
@@ -262,11 +262,11 @@ async Task AzureSuggestions(string text)
 
 La `SuggestAsync` méthode prend un argument de texte de recherche, le nom du générateur de suggestions à utiliser (défini dans l’index) et un objet facultatif `SuggestParameters` qui peut être utilisé pour affiner la requête. L' `SuggestParameters` instance définit les propriétés suivantes :
 
-- `UseFuzzyMatching`– Lorsque la valeur est définie sur `true` , Azure search recherche les suggestions, même s’il existe un caractère substitué ou manquant dans le texte recherché.
-- `HighlightPreTag`: balise précédée des accès aux suggestions.
-- `HighlightPostTag`: balise ajoutée aux correspondances de suggestions.
-- `MinimumCoverage`– représente le pourcentage de l’index qui doit être couvert par une requête de suggestion pour que la requête soit signalée comme ayant réussi. La valeur par défaut est 80.
-- `Top`: nombre de suggestions à récupérer. Il doit s’agir d’un entier compris entre 1 et 100, avec 5 comme valeur par défaut.
+- `UseFuzzyMatching` – Lorsque la valeur est définie sur `true` , Azure search recherche les suggestions, même s’il existe un caractère substitué ou manquant dans le texte recherché.
+- `HighlightPreTag` : balise précédée des accès aux suggestions.
+- `HighlightPostTag` : balise ajoutée aux correspondances de suggestions.
+- `MinimumCoverage` – représente le pourcentage de l’index qui doit être couvert par une requête de suggestion pour que la requête soit signalée comme ayant réussi. La valeur par défaut est 80.
+- `Top` : nombre de suggestions à récupérer. Il doit s’agir d’un entier compris entre 1 et 100, avec 5 comme valeur par défaut.
 
 L’effet global est que les 10 premiers résultats de l’index sont retournés avec la mise en surbrillance des correspondances, et les résultats incluent des documents incluant des termes de recherche de même orthographe.
 
@@ -282,6 +282,6 @@ Cet article a montré comment utiliser la bibliothèque de recherche Microsoft A
 
 ## <a name="related-links"></a>Liens associés
 
-- [Recherche Azure (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azuresearch)
+- [Recherche Azure (exemple)](/samples/xamarin/xamarin-forms-samples/webservices-azuresearch)
 - [Documentation recherche Azure](/azure/search/)
 - [Bibliothèque de recherche de Microsoft Azure](https://www.nuget.org/packages/Microsoft.Azure.Search/)

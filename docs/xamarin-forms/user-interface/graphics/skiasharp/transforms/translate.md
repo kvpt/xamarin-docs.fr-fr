@@ -10,12 +10,12 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ed20da1005447334a99ea40c177c8f88d59d71ce
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 31a76e160186caec74665b7615323eb8e60b698a
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938468"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562325"
 ---
 # <a name="the-translate-transform"></a>La transformation de traduction
 
@@ -41,7 +41,7 @@ Ces arguments peuvent être négatifs. Une deuxième [`Translate`](xref:SkiaShar
 public void Translate (SKPoint point)
 ```
 
-La page de **traduction accumulée** de l’exemple de programme [**SkiaSharpForms**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) montre que plusieurs appels de la `Translate` méthode sont cumulatifs. La [`AccumulatedTranslatePage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/AccumulatedTranslatePage.cs) classe affiche 20 versions du même rectangle, chaque décalage par rapport au rectangle précédent suffit pour qu’elles s’étendent le long de la diagonale. Voici le `PaintSurface` Gestionnaire d’événements :
+La page de **traduction accumulée** de l’exemple de programme [**SkiaSharpForms**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) montre que plusieurs appels de la `Translate` méthode sont cumulatifs. La [`AccumulatedTranslatePage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/AccumulatedTranslatePage.cs) classe affiche 20 versions du même rectangle, chaque décalage par rapport au rectangle précédent suffit pour qu’elles s’étendent le long de la diagonale. Voici le `PaintSurface` Gestionnaire d’événements :
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -308,5 +308,5 @@ Notez que l’étoile conserve la même orientation que lorsqu’elle s’appuie
 
 ## <a name="related-links"></a>Liens associés
 
-- [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [API SkiaSharp](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (exemple)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

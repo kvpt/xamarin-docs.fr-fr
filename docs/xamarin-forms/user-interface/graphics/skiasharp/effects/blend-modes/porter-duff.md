@@ -10,16 +10,16 @@ ms.date: 08/23/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a1e6290c0f85b54c3fd8958bc43667714bdece20
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 12e3e95b0f87d0e93d157bebe057874430866c2b
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84131051"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91560778"
 ---
 # <a name="porter-duff-blend-modes"></a>Modes de fusion porter-Duff
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 Les modes de fusion porter-Duff sont nommés après Thomas porter et Tom Duff, qui ont développé une algébrique de composition tout en travaillant pour Lucasfilm. Leur [_composition_](https://graphics.pixar.com/library/Compositing/paper.pdf) papier a été publiée dans le numéro de juillet 1984 des images _informatiques_, pages 253 à 259. Ces modes de fusion sont essentiels pour la composition, qui consiste à assembler différentes images dans une scène composite :
 
@@ -286,7 +286,7 @@ La page de **composition du mur brique** illustre un exemple de tâche de compos
 
 ![Singe assis](porter-duff-images/SeatedMonkey.jpg "Singe assis")
 
-En préparation de la composition, un _cache_ correspondant a été créé, qui est une autre bitmap noire à l’endroit où vous souhaitez que l’image apparaisse et transparente dans le cas contraire. Ce fichier est nommé **SeatedMonkeyMatte.png** et se trouve parmi les ressources du dossier **Media** dans l’exemple [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) :
+En préparation de la composition, un _cache_ correspondant a été créé, qui est une autre bitmap noire à l’endroit où vous souhaitez que l’image apparaisse et transparente dans le cas contraire. Ce fichier est nommé **SeatedMonkeyMatte.png** et se trouve parmi les ressources du dossier **Media** dans l’exemple [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) :
 
 ![Cache du singe assis](porter-duff-images/SeatedMonkeyMatte.png "Cache du singe assis")
 
@@ -905,5 +905,5 @@ Les captures d’écran suivantes illustrent les trois types de transitions diff
 
 ## <a name="related-links"></a>Liens connexes
 
-- [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [API SkiaSharp](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (exemple)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

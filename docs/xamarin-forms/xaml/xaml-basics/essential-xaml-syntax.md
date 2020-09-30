@@ -10,16 +10,16 @@ ms.date: 10/25/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c400bb342568a0399e2a582496f85ead273b6994
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e8afb0aa2a36a73af6c63e48a6c1048d8b69cf90
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84572180"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563976"
 ---
 # <a name="part-2-essential-xaml-syntax"></a>Partie 2. Syntaxe XAML essentielle
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
 _XAML est principalement conçu pour instancier et initialiser des objets. Mais souvent, les propriétés doivent être définies sur des objets complexes qui ne peuvent pas être facilement représentés en tant que chaînes XML, et parfois les propriétés définies par une classe doivent être définies sur une classe enfant. Ces deux besoins nécessitent les fonctionnalités de syntaxe XAML essentielles des éléments de propriété et des propriétés jointes._
 
@@ -85,9 +85,9 @@ Ces deux méthodes pour spécifier la `TextColor` propriété sont fonctionnelle
 
 Avec cette nouvelle syntaxe, vous pouvez introduire une terminologie pratique :
 
-- `Label`est un *élément objet*. Il s’agit d’un Xamarin.Forms objet exprimé sous la forme d’un élément XML.
-- `Text`, `VerticalOptions` `FontAttributes` et `FontSize` sont des *attributs de propriété*. Il s’agit Xamarin.Forms de propriétés exprimées en tant qu’attributs XML.
-- Dans cet extrait de code final, `TextColor` est devenu un *élément de propriété*. Il s’agit d’une Xamarin.Forms propriété, mais elle est désormais un élément XML.
+- `Label` est un  *élément objet*. Il s’agit d’un Xamarin.Forms objet exprimé sous la forme d’un élément XML.
+- `Text`,  `VerticalOptions` `FontAttributes` et  `FontSize` sont des  *attributs de propriété*. Il s’agit Xamarin.Forms de propriétés exprimées en tant qu’attributs XML.
+- Dans cet extrait de code final, `TextColor` est devenu un  *élément de propriété*. Il s’agit d’une Xamarin.Forms propriété, mais elle est désormais un élément XML.
 
 La définition des éléments de propriété peut sembler être une violation de la syntaxe XML, mais ce n’est pas le fait. Le point n’a aucune signification particulière dans XML. À un décodeur XML, `Label.TextColor` est simplement un élément enfant normal.
 
@@ -172,7 +172,7 @@ Voici le début du fichier XAML pour une `GridDemoPage` classe, en présentant l
 
 Notez la syntaxe abrégée permettant de définir des cellules de taille automatique, des cellules de largeur et de hauteur de pixel, ainsi que des paramètres en étoile.
 
-## <a name="attached-properties"></a>Propriétés attachées
+## <a name="attached-properties"></a>Propriétés jointes
 
 Vous venez de voir que le `Grid` requiert des éléments de propriété pour les `RowDefinitions` `ColumnDefinitions` collections et pour définir les lignes et les colonnes. Toutefois, il doit également y avoir un moyen pour le programmeur d’indiquer la ligne et la colonne où chaque enfant du `Grid` réside.
 
@@ -364,7 +364,7 @@ public class ContentPage : TemplatedPage
 
 Cela signifie que les `Content` balises d’éléments de propriété ne sont pas requises. Tout contenu XML qui apparaît entre les balises de début et de fin `ContentPage` est supposé être assigné à la `Content` propriété.
 
- `StackLayout`, `Grid` , `AbsoluteLayout` et sont `RelativeLayout` tous dérivés de `Layout<View>` , et si vous recherchez `Layout<T>` dans la Xamarin.Forms documentation, vous verrez un autre `ContentProperty` attribut :
+ `StackLayout`, `Grid` , `AbsoluteLayout` et sont `RelativeLayout` tous dérivés de `Layout<View>` , et si vous recherchez `Layout<T>` dans la  Xamarin.Forms documentation, vous verrez un autre `ContentProperty` attribut :
 
 ```csharp
 [Xamarin.Forms.ContentProperty("Children")]
@@ -400,7 +400,7 @@ Vous pouvez également effectuer une opération similaire en XAML à l’aide de
 </ContentPage>
 ```
 
-Au sein de ces balises, incluez une `OnPlatform` balise. `OnPlatform`est une classe générique. Vous devez spécifier l’argument de type générique, dans le cas présent, `Thickness` , qui est le type de `Padding` propriété. Heureusement, il existe un attribut XAML spécifiquement pour définir des arguments génériques appelés `x:TypeArguments` . Cela doit correspondre au type de la propriété que vous définissez :
+Au sein de ces balises, incluez une `OnPlatform` balise. `OnPlatform` est une classe générique. Vous devez spécifier l’argument de type générique, dans le cas présent, `Thickness` , qui est le type de `Padding` propriété. Heureusement, il existe un attribut XAML spécifiquement pour définir des arguments génériques appelés `x:TypeArguments` . Cela doit correspondre au type de la propriété que vous définissez :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -416,7 +416,7 @@ Au sein de ces balises, incluez une `OnPlatform` balise. `OnPlatform`est une cla
 </ContentPage>
 ```
 
-`OnPlatform`a une propriété nommée `Platforms` qui est un `IList` d' `On` objets. Utilisez des balises d’éléments de propriété pour cette propriété :
+`OnPlatform` a une propriété nommée `Platforms` qui est un `IList` d' `On` objets. Utilisez des balises d’éléments de propriété pour cette propriété :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -532,9 +532,9 @@ Il s’agit de la méthode standard pour définir une propriété dépendante de
 
 Avec les éléments de propriété et les propriétés jointes, une grande partie de la syntaxe XAML de base a été établie. Toutefois, vous devez parfois définir des propriétés pour des objets de manière indirecte, par exemple, à partir d’un dictionnaire de ressources. Cette approche est traitée dans la partie suivante, partie [3. Extensions de balisage XAML](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md).
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
+- [XamlSamples](/samples/xamarin/xamarin-forms-samples/xamlsamples)
 - [Partie 1. Prise en main avec XAML](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
 - [Partie 3. Extensions de balisage XAML](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
 - [Partie 4. Principes fondamentaux de la liaison de données](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)

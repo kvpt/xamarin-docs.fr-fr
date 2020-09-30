@@ -10,16 +10,16 @@ ms.date: 08/28/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b9c89d4d426884d678e77687ffa226cced97be58
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 809477fe466ee7a8f0985308896c14341f2dd460
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136381"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91561935"
 ---
 # <a name="skiasharp-color-filters"></a>Filtres de couleurs SkiaSharp
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 Les filtres de couleur peuvent traduire les couleurs d’une image bitmap (ou d’une autre image) en d’autres couleurs pour des effets tels que l’affiche :
 
@@ -123,7 +123,7 @@ La [`SKColorFilter.CreateColorMatrix`](xref:SkiaSharp.SKColorFilter.CreateColorM
 public static SKColorFilter CreateColorMatrix (float[] matrix);
 ```
 
-où `matrix` est un tableau des 20 `float` valeurs. Lors de la création du tableau en C#, il est facile de mettre en forme les nombres afin qu’ils ressemblent à la matrice 4 × 5. Cela est illustré dans la page matrice de nuances de **gris** de l’exemple [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) :
+où `matrix` est un tableau des 20 `float` valeurs. Lors de la création du tableau en C#, il est facile de mettre en forme les nombres afin qu’ils ressemblent à la matrice 4 × 5. Cela est illustré dans la page matrice de nuances de **gris** de l’exemple [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) :
 
 ```csharp
 public class GrayScaleMatrixPage : ContentPage
@@ -166,7 +166,7 @@ public class GrayScaleMatrixPage : ContentPage
 }
 ```
 
-La `DrawBitmap` méthode utilisée dans ce code provient du fichier **BitmapExtension.cs** inclus avec l’exemple [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) . 
+La `DrawBitmap` méthode utilisée dans ce code provient du fichier **BitmapExtension.cs** inclus avec l’exemple [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) . 
 
 Voici le résultat s’exécutant sur iOS, Android et plateforme Windows universelle :
 
@@ -176,7 +176,7 @@ Regardez la valeur de la quatrième ligne et de la quatrième colonne. C’est l
 
 Lorsque vous expérimentez des matrices de couleurs, vous pouvez traiter la transformation soit du point de vue de la source, soit du point de vue de la destination. Comment le pixel rouge de la source doit-il contribuer aux pixels rouge, vert et bleu de la destination ? Cela est déterminé par les valeurs de la première _colonne_ de la matrice. En guise d’alternative, comment le pixel rouge de destination doit-il être affecté par les pixels rouge, vert et bleu de la source ? Cela est déterminé par la première _ligne_ de la matrice.
 
-Pour obtenir des idées sur l’utilisation des transformations de couleurs, consultez la page [**recoloriage des images**](https://docs.microsoft.com/dotnet/framework/winforms/advanced/recoloring-images) . La discussion concerne Windows Forms et la matrice est un format différent, mais les concepts sont identiques.
+Pour obtenir des idées sur l’utilisation des transformations de couleurs, consultez la page [**recoloriage des images**](/dotnet/framework/winforms/advanced/recoloring-images) . La discussion concerne Windows Forms et la matrice est un format différent, mais les concepts sont identiques.
 
 La **matrice pastel** calcule le pixel rouge de destination en atténuant le pixel rouge source et en mettant légèrement en évidence les pixels rouges et verts. Ce processus se produit de la même façon pour les pixels vert et bleu :
 
@@ -302,5 +302,5 @@ Vous pouvez utiliser différentes tables de couleurs pour les différents canaux
 
 ## <a name="related-links"></a>Liens connexes
 
-- [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [API SkiaSharp](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (exemple)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

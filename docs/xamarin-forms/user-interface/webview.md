@@ -10,12 +10,12 @@ ms.date: 05/06/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e0fbdc91c2661732e3afdbde44ce9891f89c5f62
-ms.sourcegitcommit: 14d67a2db82e67471584b1749e0d5b9ec0c0c09b
+ms.openlocfilehash: d535956e03ac02e2cf0c5d7528ee8e363a2a1e55
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88228636"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91561649"
 ---
 # <a name="no-locxamarinforms-webview"></a>Xamarin.Forms WebView
 
@@ -329,7 +329,7 @@ public partial class InAppBrowserXaml : ContentPage
 }
 ```
 
-C’est tout !
+Et voilà !
 
 ![Boutons de navigation WebView](webview-images/in-app-browser.png)
 
@@ -420,7 +420,7 @@ Une application peut revenir à l’utilisation de la `UIWebView` classe IOS pou
 
 `WebView` sur Android, par défaut, est environ aussi rapide que le navigateur intégré.
 
-La [WebView UWP](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/web-view) utilise le moteur de rendu Microsoft Edge. Les appareils de bureau et tablettes doivent avoir les mêmes performances que l’utilisation du navigateur Edge lui-même.
+La [WebView UWP](/windows/uwp/design/controls-and-patterns/web-view) utilise le moteur de rendu Microsoft Edge. Les appareils de bureau et tablettes doivent avoir les mêmes performances que l’utilisation du navigateur Edge lui-même.
 
 ## <a name="permissions"></a>Autorisations
 
@@ -430,7 +430,7 @@ Pour que `WebView` fonctionne, vous devez vous assurer que les autorisations son
 - **Android** &ndash; nécessite `INTERNET`  uniquement lors de l’affichage du contenu à partir du réseau. Le contenu local ne requiert pas d’autorisations spéciales.
 - **iOS** &ndash; ne requiert pas d’autorisations spéciales.
 
-## <a name="layout"></a>Layout
+## <a name="layout"></a>Mise en page
 
 Contrairement à la plupart des autres Xamarin.Forms vues, `WebView` exige que `HeightRequest` et `WidthRequest` soient spécifiés lorsqu’ils sont contenus dans StackLayout ou RelativeLayout. Si vous ne parvenez pas à spécifier ces propriétés, le `WebView` n’est pas restitué.
 
@@ -490,7 +490,7 @@ Grid *sans* WidthRequest & HeightRequest. La grille est l’une des quelques dis
 
 ## <a name="invoking-javascript"></a>Appeler JavaScript
 
-[`WebView`](xref:Xamarin.Forms.WebView) offre la possibilité d’appeler une fonction JavaScript à partir de C# et de retourner tout résultat au code C# appelant. Pour ce faire, vous devez utiliser la [`WebView.EvaluateJavaScriptAsync`](xref:Xamarin.Forms.WebView.EvaluateJavaScriptAsync*) méthode, qui est illustrée dans l’exemple suivant de l’exemple [WebView](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-webview) :
+[`WebView`](xref:Xamarin.Forms.WebView) offre la possibilité d’appeler une fonction JavaScript à partir de C# et de retourner tout résultat au code C# appelant. Pour ce faire, vous devez utiliser la [`WebView.EvaluateJavaScriptAsync`](xref:Xamarin.Forms.WebView.EvaluateJavaScriptAsync*) méthode, qui est illustrée dans l’exemple suivant de l’exemple [WebView](/samples/xamarin/xamarin-forms-samples/userinterface-webview) :
 
 ```csharp
 var numberEntry = new Entry { Text = "5" };
@@ -597,6 +597,6 @@ Désormais, lorsque vous créez une nouvelle build (version Release) et l’envo
 
 ## <a name="related-links"></a>Liens associés
 
-- [Utilisation de WebView (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithwebview)
-- [WebView (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-webview)
+- [Utilisation de WebView (exemple)](/samples/xamarin/xamarin-forms-samples/workingwithwebview)
+- [WebView (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-webview)
 - [Désapprobation UIWebView](~/ios/user-interface/controls/webview.md#uiwebview-deprecation)

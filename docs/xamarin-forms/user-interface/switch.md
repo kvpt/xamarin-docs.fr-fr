@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsUtilisez
+title: Xamarin.Forms Utilisez
 description: Le Xamarin.Forms commutateur est un type de bouton qui peut être manipulé par l’utilisateur pour basculer entre les États activé et désactivé. Cet article explique comment utiliser la classe Switch pour afficher un élément d’interface utilisateur de basculement.
 ms.prod: xamarin
 ms.assetId: B2F9CC65-481B-4323-8E77-C6BE29C90DE9
@@ -10,16 +10,16 @@ ms.date: 05/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 12831eec6ba97eee7cde7479729c5c22dce78e90
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 94f77fd70fee595efd341ff7372828b12661442d
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84946422"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91561727"
 ---
-# <a name="xamarinforms-switch"></a>Xamarin.FormsUtilisez
+# <a name="no-locxamarinforms-switch"></a>Xamarin.Forms Utilisez
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-switchdemos/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-switchdemos/)
 
 Le Xamarin.Forms [`Switch`](xref:Xamarin.Forms.Switch) contrôle est un bouton bascule horizontal qui peut être manipulé par l’utilisateur pour basculer entre les États activés et désactivés, représentés par une `boolean` valeur. La `Switch` classe hérite de [`View`](xref:Xamarin.Forms.View) .
 
@@ -29,9 +29,9 @@ Les captures d’écran suivantes montrent un `Switch` contrôle **on** dans ses
 
 Le `Switch` contrôle définit les propriétés suivantes :
 
-- [`IsToggled`](xref:Xamarin.Forms.Switch.IsToggled)est une `boolean` valeur qui indique si `Switch` est **activé**.
+- [`IsToggled`](xref:Xamarin.Forms.Switch.IsToggled) est une `boolean` valeur qui indique si `Switch` est **activé**.
 - [`OnColor`](xref:Xamarin.Forms.Switch.OnColor)est un `Color` qui affecte la façon dont le `Switch` est rendu dans l’état activé **on**ou désactivé.
-- `ThumbColor`est le `Color` du curseur de commutateur.
+- `ThumbColor` est le `Color` du curseur de commutateur.
 
 Ces propriétés sont sauvegardées par un [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) objet, ce qui signifie que `Switch` peut être stylisé et être la cible des liaisons de données.
 
@@ -125,7 +125,7 @@ Pour plus d’informations sur les déclencheurs, consultez [ Xamarin.Forms déc
 
 ## <a name="switch-visual-states"></a>Changer les États visuels
 
-[`Switch`](xref:Xamarin.Forms.Switch)a `On` et les `Off` États visuels qui peuvent être utilisés pour initier une modification visuelle lorsque la [`IsToggled`](xref:Xamarin.Forms.Switch.IsToggled) propriété change.
+[`Switch`](xref:Xamarin.Forms.Switch) a `On` et les `Off` États visuels qui peuvent être utilisés pour initier une modification visuelle lorsque la [`IsToggled`](xref:Xamarin.Forms.Switch.IsToggled) propriété change.
 
 L’exemple de code XAML suivant montre comment définir des États visuels pour les `On` `Off` États et :
 
@@ -163,6 +163,6 @@ Une application peut entrer dans un État où le `Switch` basculement n’est pa
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Basculer les démonstrations](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-switchdemos/)
-- [Xamarin.FormsDéclencheurs](~/xamarin-forms/app-fundamentals/triggers.md)
-- [Xamarin.FormsGestionnaire d’état visuel](~/xamarin-forms/user-interface/visual-state-manager.md)
+- [Basculer les démonstrations](/samples/xamarin/xamarin-forms-samples/userinterface-switchdemos/)
+- [Xamarin.Forms Déclencheurs](~/xamarin-forms/app-fundamentals/triggers.md)
+- [Xamarin.Forms Gestionnaire d’état visuel](~/xamarin-forms/user-interface/visual-state-manager.md)

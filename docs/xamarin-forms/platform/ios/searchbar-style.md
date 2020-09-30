@@ -10,16 +10,16 @@ ms.date: 03/05/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e02ef600af761915d05c912b586e409dd6f46b85
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a9eacc76fb3da6296039a713e15c4eaa30828d44
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137083"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91560960"
 ---
 # <a name="searchbar-style-on-ios"></a>Style SearchBar sur iOS
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Cette plateforme iOS détermine si un [`SearchBar`](xref:Xamarin.Forms.SearchBar) a un arrière-plan. Il est consommé en XAML en affectant `SearchBar.SearchBarStyle` à la propriété pouvant être liée la valeur de l' `UISearchBarStyle` énumération :
 
@@ -47,9 +47,9 @@ searchBar.On<iOS>().SetSearchBarStyle(UISearchBarStyle.Minimal);
 
 La `SearchBar.On<iOS>` méthode spécifie que ce spécifique à la plateforme s’exécutera uniquement sur iOS. La `SearchBar.SetSearchBarStyle` méthode, dans l' [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) espace de noms, est utilisée pour contrôler si le [`SearchBar`](xref:Xamarin.Forms.SearchBar) a un arrière-plan. L' `UISearchBarStyle` énumération fournit trois valeurs possibles :
 
-- `Default`indique que le [`SearchBar`](xref:Xamarin.Forms.SearchBar) a le style par défaut. Il s’agit de la valeur par défaut de la `SearchBar.SearchBarStyle` propriété pouvant être liée.
-- `Prominent`indique que le [`SearchBar`](xref:Xamarin.Forms.SearchBar) a un arrière-plan translucide et que le champ de recherche est opaque.
-- `Minimal`indique que n' [`SearchBar`](xref:Xamarin.Forms.SearchBar) a pas d’arrière-plan et que le champ de recherche est transparent.
+- `Default` indique que le [`SearchBar`](xref:Xamarin.Forms.SearchBar) a le style par défaut. Il s’agit de la valeur par défaut de la `SearchBar.SearchBarStyle` propriété pouvant être liée.
+- `Prominent` indique que le [`SearchBar`](xref:Xamarin.Forms.SearchBar) a un arrière-plan translucide et que le champ de recherche est opaque.
+- `Minimal` indique que n' [`SearchBar`](xref:Xamarin.Forms.SearchBar) a pas d’arrière-plan et que le champ de recherche est transparent.
 
 En outre, la `SearchBar.GetSearchBarStyle` méthode peut être utilisée pour retourner le `UISearchBarStyle` appliqué au `SearchBar` .
 
@@ -63,6 +63,6 @@ Les captures d’écran suivantes montrent les `UISearchBarStyle` membres appliq
 
 ## <a name="related-links"></a>Liens connexes
 
-- [PlatformSpecifics (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [Création de caractéristiques de la plateforme](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [API iOSSpecific](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

@@ -1,5 +1,5 @@
 ---
-title: Créer une disposition personnalisée dansXamarin.Forms
+title: Créer une disposition personnalisée dans Xamarin.Forms
 description: Cet article explique comment écrire une classe de disposition personnalisée et illustre une classe WrapLayout sensible à l’orientation qui réorganise ses enfants horizontalement sur la page, puis encapsule l’affichage des enfants suivants sur des lignes supplémentaires.
 ms.prod: xamarin
 ms.assetid: B0CFDB59-14E5-49E9-965A-3DCCEDAC2E31
@@ -10,18 +10,18 @@ ms.date: 03/29/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b3063a644a48a8796b03b1a6acedbbcbfc7acbf7
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 63a939e7093bcbe52f1aed376253c7aa78b078bf
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86934262"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563846"
 ---
-# <a name="create-a-custom-layout-in-xamarinforms"></a>Créer une disposition personnalisée dansXamarin.Forms
+# <a name="create-a-custom-layout-in-no-locxamarinforms"></a>Créer une disposition personnalisée dans Xamarin.Forms
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
 
-_Xamarin.Formsdéfinit cinq classes de disposition (StackLayout, AbsoluteLayout, RelativeLayout, Grid et FlexLayout) et chacune réorganise ses enfants d’une façon différente. Toutefois, il est parfois nécessaire d’organiser le contenu de la page à l’aide d’une disposition non fournie par Xamarin.Forms . Cet article explique comment écrire une classe de disposition personnalisée et illustre une classe WrapLayout sensible à l’orientation qui réorganise ses enfants horizontalement sur la page, puis encapsule l’affichage des enfants suivants sur des lignes supplémentaires._
+_Xamarin.Forms définit cinq classes de disposition (StackLayout, AbsoluteLayout, RelativeLayout, Grid et FlexLayout) et chacune réorganise ses enfants d’une façon différente. Toutefois, il est parfois nécessaire d’organiser le contenu de la page à l’aide d’une disposition non fournie par Xamarin.Forms . Cet article explique comment écrire une classe de disposition personnalisée et illustre une classe WrapLayout sensible à l’orientation qui réorganise ses enfants horizontalement sur la page, puis encapsule l’affichage des enfants suivants sur des lignes supplémentaires._
 
 Dans Xamarin.Forms , toutes les classes de disposition dérivent de la [`Layout<T>`](xref:Xamarin.Forms.Layout`1) classe et contraignent le type générique à [`View`](xref:Xamarin.Forms.View) et à ses types dérivés. À son tour, la `Layout<T>` classe dérive de la [`Layout`](xref:Xamarin.Forms.Layout) classe, qui fournit le mécanisme permettant de positionner et de redimensionner des éléments enfants.
 
@@ -40,7 +40,7 @@ La [`VisualElement`](xref:Xamarin.Forms.VisualElement) classe définit un [ `Mea
 
 Ce cycle garantit que chaque élément visuel sur la page reçoit des appels aux `Measure` `Layout` méthodes et. Le processus est illustré dans le diagramme suivant :
 
-![Xamarin.FormsCycle de disposition](custom-images/layout-cycle.png)
+![::: No-Loc (Xamarin. Forms) ::: Layout cycle](custom-images/layout-cycle.png)
 
 > [!NOTE]
 > Notez que les cycles de disposition peuvent également se produire sur un sous-ensemble de l’arborescence d’éléments visuels si une modification affecte la disposition. Cela comprend les éléments ajoutés ou supprimés d’une collection, tels que dans [`StackLayout`](xref:Xamarin.Forms.StackLayout) , une modification de la [`IsVisible`](xref:Xamarin.Forms.VisualElement.IsVisible) propriété d’un élément ou une modification de la taille d’un élément.
@@ -108,10 +108,10 @@ public class WrapLayout : Layout<View>
 
 La `LayoutData` structure stocke les données relatives à une collection d’enfants dans plusieurs propriétés :
 
-- `VisibleChildCount`: nombre d’enfants visibles dans la disposition.
-- `CellSize`: taille maximale de tous les enfants, ajustée à la taille de la disposition.
-- `Rows`: nombre de lignes.
-- `Columns`: nombre de colonnes.
+- `VisibleChildCount` : nombre d’enfants visibles dans la disposition.
+- `CellSize` : taille maximale de tous les enfants, ajustée à la taille de la disposition.
+- `Rows` : nombre de lignes.
+- `Columns` : nombre de colonnes.
 
 Le `layoutDataCache` champ est utilisé pour stocker plusieurs `LayoutData` valeurs. Lorsque l’application démarre, deux `LayoutData` objets sont mis en cache dans le `layoutDataCache` dictionnaire pour l’orientation actuelle : un pour les arguments de contrainte à la `OnMeasure` substitution et un pour les `width` arguments et `height` à la `LayoutChildren` substitution. Lors de la rotation de l’appareil en orientation paysage, le `OnMeasure` remplacement et le `LayoutChildren` remplacement seront de nouveau appelés, ce qui entraînera la mise en cache d’un autre `LayoutData` objet dans le dictionnaire. Toutefois, lors du retour de l’appareil à l’orientation portrait, aucun autre calcul n’est nécessaire, car le `layoutDataCache` contient déjà les données requises.
 
@@ -412,7 +412,7 @@ Le nombre de colonnes dans chaque ligne dépend de la taille de la photo, de la 
 
 ## <a name="related-links"></a>Liens connexes
 
-- [WrapLayout (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
+- [WrapLayout (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
 - [Dispositions personnalisées](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter26.md)
 - [Création de dispositions personnalisées dans Xamarin.Forms (vidéo)](https://www.youtube.com/watch?v=sxjOqNZFhKU)
 - [Mise en page\<T>](xref:Xamarin.Forms.Layout`1)

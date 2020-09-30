@@ -1,5 +1,5 @@
 ---
-title: Chargement du code XAML au moment de l’exécution dansXamarin.Forms
+title: Chargement du code XAML au moment de l’exécution dans Xamarin.Forms
 description: XAML peut être chargé et analysé au moment de l’exécution avec les méthodes d’extension LoadFromXaml.
 ms.prod: xamarin
 ms.assetid: 25F73FBF-2DD3-468E-A2D8-0897414F0F4A
@@ -10,20 +10,20 @@ ms.date: 12/12/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d750aa84a48ad4c8015a619d819134cefc63c3d9
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 071a7de630d7d7b7582e3c9fa8906919e92d1fb5
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139371"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562000"
 ---
-# <a name="loading-xaml-at-runtime-in-xamarinforms"></a>Chargement du code XAML au moment de l’exécution dansXamarin.Forms
+# <a name="loading-xaml-at-runtime-in-no-locxamarinforms"></a>Chargement du code XAML au moment de l’exécution dans Xamarin.Forms
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-loadruntimexaml)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-loadruntimexaml)
 
 L' [`Xamarin.Forms.Xaml`](xref:Xamarin.Forms.Xaml) espace de noms comprend deux [`LoadFromXaml`](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*) méthodes d’extension qui peuvent être utilisées pour charger et analyser le XAML au moment de l’exécution.
 
-## <a name="background"></a>Arrière-plan
+## <a name="background"></a>Contexte
 
 Quand une Xamarin.Forms classe XAML est construite, la [`LoadFromXaml`](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*) méthode est appelée indirectement. Cela est dû au fait que le fichier code-behind pour une classe XAML appelle la `InitializeComponent` méthode à partir de son constructeur :
 
@@ -104,4 +104,4 @@ Dans cet exemple, le code XAML pour un [`ContentPage`](xref:Xamarin.Forms.Conten
 
 ## <a name="related-links"></a>Liens connexes
 
-- [LoadRuntimeXAML (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-loadruntimexaml)
+- [LoadRuntimeXAML (exemple)](/samples/xamarin/xamarin-forms-samples/xaml-loadruntimexaml)

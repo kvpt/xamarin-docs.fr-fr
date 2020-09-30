@@ -1,6 +1,6 @@
 ---
 title: Génériques en Xamarin.Forms XAML
-description: Xamarin.FormsXAML assure la prise en charge de l’utilisation des types CLR génériques en spécifiant les contraintes génériques en tant qu’arguments de type.
+description: Xamarin.Forms XAML assure la prise en charge de l’utilisation des types CLR génériques en spécifiant les contraintes génériques en tant qu’arguments de type.
 ms.prod: xamarin
 ms.assetid: 97B73048-4F90-41AD-AB48-8EB804C4998B
 ms.technology: xamarin-forms
@@ -10,18 +10,18 @@ ms.date: 04/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5a033e5feeefc41b97be29491a70632e767aa1b4
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e6856e0ef513905a6300dcaf661ea33f4a89852c
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84565198"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563911"
 ---
-# <a name="generics-in-xamarinforms-xaml"></a>Génériques en Xamarin.Forms XAML
+# <a name="generics-in-no-locxamarinforms-xaml"></a>Génériques en Xamarin.Forms XAML
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-generics/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-generics/)
 
-Xamarin.FormsXAML assure la prise en charge de l’utilisation des types CLR génériques en spécifiant les contraintes génériques en tant qu’arguments de type. Cette prise en charge est fournie par la `x:TypeArguments` directive, qui passe les arguments de type de restriction d’un générique au constructeur du type générique.
+Xamarin.Forms XAML assure la prise en charge de l’utilisation des types CLR génériques en spécifiant les contraintes génériques en tant qu’arguments de type. Cette prise en charge est fournie par la `x:TypeArguments` directive, qui passe les arguments de type de restriction d’un générique au constructeur du type générique.
 
 > [!IMPORTANT]
 > La définition de classes génériques en Xamarin.Forms XAML, avec la `x:TypeArguments` directive, n’est pas prise en charge.
@@ -212,7 +212,7 @@ Dans cet exemple, `GenericsDemo.Models` est défini en tant qu' `models` espace 
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Génériques en XAML (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-generics/)
+- [Génériques en XAML (exemple)](/samples/xamarin/xamarin-forms-samples/xaml-generics/)
 - [Primitives de langage XAML 2009](/dotnet/desktop-wpf/xaml-services/types-for-primitives#xaml-2009-language-primitives)
 - [x :Type (extension de balisage)](~/xamarin-forms/xaml/markup-extensions/consuming.md#xtype-markup-extension)
 - [Passer des arguments de constructeur](~/xamarin-forms/xaml/passing-arguments.md#passing-constructor-arguments)

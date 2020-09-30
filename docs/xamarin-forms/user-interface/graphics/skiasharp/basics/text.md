@@ -10,12 +10,12 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a98c7210f2e71f6f26d53da3555f3f9b5e016952
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 032a01a1e4e0f2b3e3d394aec6a30bd215fd84f8
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86935978"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562416"
 ---
 # <a name="integrating-text-and-graphics"></a>Intégration de texte et de graphisme
 
@@ -65,10 +65,10 @@ Le deuxième [`MeasureText`](xref:SkiaSharp.SKPaint.MeasureText(System.String,Sk
 
 Les `Left` `Top` Propriétés et de la `SKRect` structure indiquent les coordonnées de l’angle supérieur gauche du texte rendu si le texte est affiché par un `DrawText` appel avec des positions X et Y égales à 0. Par exemple, quand ce programme s’exécute sur un simulateur iPhone 7, `TextSize` la valeur 90,6254 est affectée en tant que résultat du calcul suivant le premier appel à `MeasureText` . La `SKRect` valeur obtenue à partir du deuxième appel à `MeasureText` a les valeurs de propriétés suivantes :
 
-- `Left`= 6
+- `Left` = 6
 - `Top` = &ndash;68
-- `Width`= 664,8214
-- `Height`= 88 ;
+- `Width` = 664,8214
+- `Height` = 88 ;
 
 Gardez à l’esprit que les coordonnées X et Y que vous transmettez à la `DrawText` méthode spécifient le côté gauche du texte au niveau de la ligne de base. La `Top` valeur indique que le texte étend 68 pixels au-dessus de cette ligne de base et (en le soustrayant 68 de 88) de 20 pixels sous la ligne de base. La `Left` valeur 6 indique que le texte commence six pixels à droite de la valeur X dans l' `DrawText` appel. Cela permet un espacement entre les caractères standard. Si vous souhaitez afficher le texte dans l’angle supérieur gauche de l’affichage, transmettez les valeurs négatives de ces `Left` `Top` valeurs et comme les coordonnées X et Y de `DrawText` , dans cet exemple, &ndash; 6 et 68.
 
@@ -179,5 +179,5 @@ Un autre objet graphique courant est l’image bitmap. C’est une grande rubriq
 
 ## <a name="related-links"></a>Liens associés
 
-- [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [API SkiaSharp](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (exemple)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

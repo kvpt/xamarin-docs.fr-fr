@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsPropriétés pouvant être liées
+title: Xamarin.Forms Propriétés pouvant être liées
 description: Cet article fournit une introduction aux propriétés pouvant être liées et montre comment les créer et les utiliser.
 ms.prod: xamarin
 ms.assetid: 1EE869D8-6FE1-45CA-A0AD-26EC7D032AD7
@@ -10,14 +10,14 @@ ms.date: 01/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7d83728edc161a89b381330884e86f09b7788e3d
-ms.sourcegitcommit: 898ba8e5140ae32a7df7e07c056aff65f6fe4260
+ms.openlocfilehash: df2cf99ef0ea1fcbb1b52dda7abb6c8cfdd2d2e7
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86226779"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91561532"
 ---
-# <a name="xamarinforms-bindable-properties"></a>Xamarin.FormsPropriétés pouvant être liées
+# <a name="no-locxamarinforms-bindable-properties"></a>Xamarin.Forms Propriétés pouvant être liées
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior)
 
@@ -221,8 +221,8 @@ Le `defaultValueCreator` paramètre est défini sur un `Func` qui appelle [ `Dev
 ## <a name="related-links"></a>Liens connexes
 
 - [Espaces de noms XAML](~/xamarin-forms/xaml/namespaces.md)
-- [Comportement de l’événement à la commande (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior)
-- [Rappel de validation (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-validationcallback)
-- [Forcer le rappel de la valeur (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-coercevaluecallback)
+- [Comportement de l’événement à la commande (exemple)](/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior)
+- [Rappel de validation (exemple)](/samples/xamarin/xamarin-forms-samples/xaml-validationcallback)
+- [Forcer le rappel de la valeur (exemple)](/samples/xamarin/xamarin-forms-samples/xaml-coercevaluecallback)
 - [API BindableProperty](xref:Xamarin.Forms.BindableProperty)
 - [API BindableObject](xref:Xamarin.Forms.BindableObject)

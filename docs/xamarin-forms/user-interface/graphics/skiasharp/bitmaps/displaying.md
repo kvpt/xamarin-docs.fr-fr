@@ -10,16 +10,16 @@ ms.date: 07/17/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b0fecac02c44e3ba721dd4625e7bee264c6869d0
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 1427b6f8461c74ded933fe562a7d17221790383a
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84134756"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562312"
 ---
 # <a name="displaying-skiasharp-bitmaps"></a>Affichage des bitmaps SkiaSharp
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 Le sujet des bitmaps SkiaSharp a été introduit dans l’article **[concepts de base de la bitmap dans SkiaSharp](../basics/bitmaps.md)**. Cet article a montré trois façons de charger des bitmaps et de trois façons d’afficher des bitmaps. Cet article passe en revue les techniques permettant de charger des bitmaps et va plus loin dans l’utilisation des `DrawBitmap` méthodes de `SKCanvas` .
 
@@ -27,7 +27,7 @@ Le sujet des bitmaps SkiaSharp a été introduit dans l’article **[concepts de
 
 Les `DrawBitmapLattice` `DrawBitmapNinePatch` méthodes et sont présentées dans l’article **[affichage segmenté des bitmaps SkiaSharp](segmented.md)**.
 
-Les exemples de cette page proviennent de l’application **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** . Dans la page d’hébergement de cette application, choisissez **SkiaSharp bitmaps**, puis accédez à la section **affichage des bitmaps** .
+Les exemples de cette page proviennent de l’application **[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** . Dans la page d’hébergement de cette application, choisissez **SkiaSharp bitmaps**, puis accédez à la section **affichage des bitmaps** .
 
 ## <a name="loading-a-bitmap"></a>Chargement d’une image bitmap
 
@@ -95,7 +95,7 @@ using (Stream stream = assembly.GetManifestResourceStream(resourceID))
 
 Les fichiers bitmap peuvent également être stockés en tant que ressources dans le projet de plateforme individuel pour iOS, Android et le plateforme Windows universelle (UWP). Toutefois, le chargement de ces bitmaps requiert du code qui se trouve dans le projet de plateforme.
 
-Une troisième approche pour obtenir une image bitmap provient de la bibliothèque d’images de l’utilisateur. Le code suivant utilise un service de dépendance inclus dans l’application **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** . La bibliothèque de .NET Standard **SkiaSharpFormsDemo** inclut l' `IPhotoLibrary` interface, tandis que chacun des projets de plateforme contient une `PhotoLibrary` classe qui implémente cette interface.
+Une troisième approche pour obtenir une image bitmap provient de la bibliothèque d’images de l’utilisateur. Le code suivant utilise un service de dépendance inclus dans l’application **[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** . La bibliothèque de .NET Standard **SkiaSharpFormsDemo** inclut l' `IPhotoLibrary` interface, tandis que chacun des projets de plateforme contient une `PhotoLibrary` classe qui implémente cette interface.
 
 ```csharp
 IPhotoicturePicker picturePicker = DependencyService.Get<IPhotoLibrary>();
@@ -147,7 +147,7 @@ Toutefois, la couleur elle-même n’est pas pertinente. Seul le canal alpha est
 
 L' `SKPaint` objet joue également un rôle lors de l’affichage de bitmaps à l’aide de modes de fusion ou d’effets de filtre. Celles-ci sont illustrées dans les articles [SkiaSharp la composition et les modes de fusion](../effects/blend-modes/index.md) et les filtres d' [image SkiaSharp](../effects/image-filters.md).
 
-La page **dimensions en pixels** de l’exemple de programme **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** affiche une ressource bitmap de 320 pixels de large par 240 pixels de haut :
+La page **dimensions en pixels** de l’exemple de programme **[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** affiche une ressource bitmap de 320 pixels de large par 240 pixels de haut :
 
 ```csharp
 public class PixelDimensionsPage : ContentPage
@@ -197,7 +197,7 @@ Si l’application souhaite afficher le bitmap dans son coin supérieur gauche, 
 
 ## <a name="a-method-for-loading-resource-bitmaps"></a>Méthode de chargement des bitmaps de ressources
 
-La plupart des exemples de la sortie doivent charger des ressources bitmap. La `BitmapExtensions` classe statique de la solution **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** contient une méthode pour vous aider :
+La plupart des exemples de la sortie doivent charger des ressources bitmap. La `BitmapExtensions` classe statique de la solution **[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** contient une méthode pour vous aider :
 
 ```csharp
 static class BitmapExtensions
@@ -322,7 +322,7 @@ Les proportions de la bitmap sont conservées, mais les zones à gauche et à dr
 
 ## <a name="a-versatile-bitmap-display-function"></a>Fonction d’affichage bitmap polyvalente
 
-Les environnements de programmation XAML (tels que UWP et Xamarin.Forms ) disposent d’une fonction permettant de développer ou de réduire la taille des bitmaps tout en conservant leurs proportions. Bien que SkiaSharp n’inclue pas cette fonctionnalité, vous pouvez l’implémenter vous-même. La `BitmapExtensions` classe incluse dans l’application [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) montre comment. La classe définit deux nouvelles `DrawBitmap` méthodes qui effectuent le calcul des proportions. Ces nouvelles méthodes sont des méthodes d’extension de `SKCanvas` .
+Les environnements de programmation XAML (tels que UWP et Xamarin.Forms ) disposent d’une fonction permettant de développer ou de réduire la taille des bitmaps tout en conservant leurs proportions. Bien que SkiaSharp n’inclue pas cette fonctionnalité, vous pouvez l’implémenter vous-même. La `BitmapExtensions` classe incluse dans l’application [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) montre comment. La classe définit deux nouvelles `DrawBitmap` méthodes qui effectuent le calcul des proportions. Ces nouvelles méthodes sont des méthodes d’extension de `SKCanvas` .
 
 Les nouvelles `DrawBitmap` méthodes incluent un paramètre de type `BitmapStretch` , une énumération définie dans le fichier **BitmapExtensions.cs** :
 
@@ -338,7 +338,7 @@ public enum BitmapStretch
 }
 ```
 
-Les `None` membres,, `Fill` `Uniform` et `UniformToFill` sont les mêmes que ceux de l' [`Stretch`](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.stretch.aspx) énumération UWP. L' Xamarin.Forms [`Aspect`](xref:Xamarin.Forms.Aspect) énumération similaire définit les membres `Fill` , `AspectFit` et `AspectFill` .
+Les `None` membres,, `Fill` `Uniform` et `UniformToFill` sont les mêmes que ceux de l' [`Stretch`](/uwp/api/Windows.UI.Xaml.Media.Stretch) énumération UWP. L' Xamarin.Forms [`Aspect`](xref:Xamarin.Forms.Aspect) énumération similaire définit les membres `Fill` , `AspectFit` et `AspectFill` .
 
 La page de **mise à l’échelle uniforme** présentée ci-dessus Centre l’image bitmap dans le rectangle, mais vous pouvez avoir besoin d’autres options, telles que le positionnement de l’image bitmap à gauche ou à droite du rectangle, ou le haut ou le bas. C’est l’objectif de l' `BitmapAlignment` énumération :
 
@@ -668,5 +668,5 @@ Ce rectangle source isole la tête du singe, comme indiqué dans les captures d�
 
 ## <a name="related-links"></a>Liens connexes
 
-- [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [API SkiaSharp](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (exemple)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

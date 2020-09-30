@@ -10,12 +10,12 @@ ms.date: 11/06/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 4a9dca7556e9e08915e7e8915a0c01cd1ce6f676
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 13d9ddb5ba13960b4ed5af8f4fdb98b486b7e93e
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86935718"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562273"
 ---
 # <a name="customizing-a-map-pin"></a>Personnalisation d’une épingle de carte
 
@@ -38,7 +38,7 @@ Le processus de rendu peut être utilisé pour implémenter des personnalisation
 Nous allons maintenant aborder chaque élément tour à tour pour implémenter un renderer `CustomMap` qui affiche une carte native avec une épingle personnalisée et une vue personnalisée des données de l’épingle sur chaque plateforme.
 
 > [!NOTE]
-> [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps)doit être initialisée et configurée avant d’être utilisée. Pour plus d’informations, consultez [`Maps Control`](~/xamarin-forms/user-interface/map/index.md).
+> [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps) doit être initialisée et configurée avant d’être utilisée. Pour plus d’informations, consultez [`Maps Control`](~/xamarin-forms/user-interface/map/index.md).
 
 ## <a name="creating-the-custom-map"></a>Création de la carte personnalisée
 
@@ -650,11 +650,11 @@ private async void OnInfoButtonTapped(object sender, TappedRoutedEventArgs e)
 
 Cette méthode ouvre un navigateur web et accède à l’adresse stockée dans la propriété `Url` de l’instance `CustomPin`. Notez que l’adresse a été définie lors de la création de la collection `CustomPin` dans le projet de bibliothèque .NET Standard.
 
-Pour plus d’informations sur la personnalisation d’une instance `MapControl`, consultez [Vue d’ensemble des cartes et de l’emplacement](https://msdn.microsoft.com/library/windows/apps/mt219699.aspx) sur MSDN.
+Pour plus d’informations sur la personnalisation d’une instance `MapControl`, consultez [Vue d’ensemble des cartes et de l’emplacement](/windows/uwp/maps-and-location/) sur MSDN.
 
 ## <a name="related-links"></a>Liens associés
 
 - [Contrôle Maps](~/xamarin-forms/user-interface/map/index.md)
 - [Cartes iOS](~/ios/user-interface/controls/ios-maps/index.md)
 - [API Cartes](~/android/platform/maps-and-location/maps/maps-api.md)
-- [Épingle personnalisée (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-map-pin)
+- [Épingle personnalisée (exemple)](/samples/xamarin/xamarin-forms-samples/customrenderers-map-pin)

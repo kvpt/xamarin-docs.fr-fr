@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsTableView
+title: Xamarin.Forms TableView
 description: Cet article explique comment utiliser la Xamarin.Forms classe TableView pour présenter des menus déroulants, des paramètres et des formulaires d’entrée dans des applications.
 ms.prod: xamarin
 ms.assetid: D1619D19-A74F-40DF-8E53-B1B7DFF7A3FB
@@ -10,30 +10,30 @@ ms.date: 09/25/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: bf09856efddbd1887ee93b34014ef0f573058f4d
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 2a54b5e2523f4d1993cf0c86ba141135b1e9d74c
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84565289"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91561742"
 ---
-# <a name="xamarinforms-tableview"></a>Xamarin.FormsTableView
+# <a name="no-locxamarinforms-tableview"></a>Xamarin.Forms TableView
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-tableview)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-tableview)
 
-[`TableView`](xref:Xamarin.Forms.TableView)est une vue qui permet d’afficher des listes déroulantes de données ou des choix où des lignes ne partagent pas le même modèle. Contrairement à [ListView](~/xamarin-forms/user-interface/listview/index.md), `TableView` n’a pas le concept de `ItemsSource` , de sorte que les éléments doivent être ajoutés manuellement comme enfants.
+[`TableView`](xref:Xamarin.Forms.TableView) est une vue qui permet d’afficher des listes déroulantes de données ou des choix où des lignes ne partagent pas le même modèle. Contrairement à [ListView](~/xamarin-forms/user-interface/listview/index.md), `TableView` n’a pas le concept de `ItemsSource` , de sorte que les éléments doivent être ajoutés manuellement comme enfants.
 
 ![Exemple TableView](tableview-images/tableview-all-sml.png)
 
 ## <a name="use-cases"></a>Cas d'utilisation
 
-[`TableView`](xref:Xamarin.Forms.TableView)est utile dans les cas suivants :
+[`TableView`](xref:Xamarin.Forms.TableView) est utile dans les cas suivants :
 
 - présentation d’une liste de paramètres
 - la collecte de données dans un formulaire, ou
 - affiche les données présentées différemment d’une ligne à l’autre (par exemple, nombres, pourcentages et images).
 
-[`TableView`](xref:Xamarin.Forms.TableView)gère le défilement et la disposition des lignes dans des sections attrayantes, ce qui est souvent nécessaire pour les scénarios ci-dessus. Le `TableView` contrôle utilise la vue équivalente sous-jacente de chaque plateforme, le cas échéant, en créant une apparence native pour chaque plateforme.
+[`TableView`](xref:Xamarin.Forms.TableView) gère le défilement et la disposition des lignes dans des sections attrayantes, ce qui est souvent nécessaire pour les scénarios ci-dessus. Le `TableView` contrôle utilise la vue équivalente sous-jacente de chaque plateforme, le cas échéant, en créant une apparence native pour chaque plateforme.
 
 ## <a name="structure"></a>Structure
 
@@ -70,12 +70,12 @@ Content = new TableView
 
 ## <a name="appearance"></a>Apparence
 
-[`TableView`](xref:Xamarin.Forms.TableView)expose la [`Intent`](xref:Xamarin.Forms.TableView.Intent) propriété, qui peut être définie sur l’un des [`TableIntent`](xref:Xamarin.Forms.TableIntent) membres de l’énumération :
+[`TableView`](xref:Xamarin.Forms.TableView) expose la [`Intent`](xref:Xamarin.Forms.TableView.Intent) propriété, qui peut être définie sur l’un des [`TableIntent`](xref:Xamarin.Forms.TableIntent) membres de l’énumération :
 
-- `Data`: à utiliser lors de l’affichage des entrées de données. Notez que [ListView](~/xamarin-forms/user-interface/listview/index.md) peut être une meilleure option pour faire défiler des listes de données.
-- `Form`: à utiliser lorsque l’TableView fait office de formulaire.
-- `Menu`: à utiliser lors de la présentation d’un menu de sélections.
-- `Settings`: à utiliser lors de l’affichage d’une liste de paramètres de configuration.
+- `Data` : à utiliser lors de l’affichage des entrées de données. Notez que [ListView](~/xamarin-forms/user-interface/listview/index.md) peut être une meilleure option pour faire défiler des listes de données.
+- `Form` : à utiliser lorsque l’TableView fait office de formulaire.
+- `Menu` : à utiliser lors de la présentation d’un menu de sélections.
+- `Settings` : à utiliser lors de l’affichage d’une liste de paramètres de configuration.
 
 La [`TableIntent`](xref:Xamarin.Forms.TableIntent) valeur que vous choisissez peut avoir un impact sur la façon dont le [`TableView`](xref:Xamarin.Forms.TableView) s’affiche sur chaque plateforme. Même s’il n’y a pas de différences claires, il est recommandé de sélectionner le qui correspond le mieux à la `TableIntent` façon dont vous envisagez d’utiliser la table.
 
@@ -83,7 +83,7 @@ En outre, la couleur du texte affiché pour chaque [`TableSection`](xref:Xamarin
 
 ## <a name="built-in-cells"></a>Cellules intégrées
 
-Xamarin.Formsest fourni avec des cellules intégrées pour la collecte et l’affichage d’informations. Bien que [`ListView`](xref:Xamarin.Forms.ListView) et [`TableView`](xref:Xamarin.Forms.TableView) puissent utiliser toutes les mêmes cellules, [`SwitchCell`](xref:Xamarin.Forms.SwitchCell) et [`EntryCell`](xref:Xamarin.Forms.EntryCell) sont les plus pertinents pour un `TableView` scénario.
+Xamarin.Forms est fourni avec des cellules intégrées pour la collecte et l’affichage d’informations. Bien que [`ListView`](xref:Xamarin.Forms.ListView) et [`TableView`](xref:Xamarin.Forms.TableView) puissent utiliser toutes les mêmes cellules, [`SwitchCell`](xref:Xamarin.Forms.SwitchCell) et [`EntryCell`](xref:Xamarin.Forms.EntryCell) sont les plus pertinents pour un `TableView` scénario.
 
 Consultez [apparence des cellules ListView](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md) pour obtenir une description détaillée de [TextCell](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#textcell) et [ImageCell](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#imagecell).
 
@@ -91,29 +91,29 @@ Consultez [apparence des cellules ListView](~/xamarin-forms/user-interface/listv
 
 [`SwitchCell`](xref:Xamarin.Forms.SwitchCell)est le contrôle à utiliser pour la présentation et la capture d’une activation ou d’une désactivation ou d’un `true` / `false` État. Il définit les propriétés suivantes :
 
-- `Text`: texte à afficher à côté du commutateur.
-- `On`: indique si le commutateur s’affiche comme activé ou désactivé.
-- `OnColor`: le [`Color`](xref:Xamarin.Forms.Color) du commutateur lorsqu’il se trouve à l’emplacement.
+- `Text` : texte à afficher à côté du commutateur.
+- `On` : indique si le commutateur s’affiche comme activé ou désactivé.
+- `OnColor` : le [`Color`](xref:Xamarin.Forms.Color) du commutateur lorsqu’il se trouve à l’emplacement.
 
 Toutes ces propriétés peuvent être liées.
 
-[`SwitchCell`](xref:Xamarin.Forms.SwitchCell)expose également l' `OnChanged` événement, ce qui vous permet de répondre aux modifications de l’état de la cellule.
+[`SwitchCell`](xref:Xamarin.Forms.SwitchCell) expose également l' `OnChanged` événement, ce qui vous permet de répondre aux modifications de l’état de la cellule.
 
 ![Exemple SwitchCell](tableview-images/switch-cell.png)
 
 ### <a name="entrycell"></a>EntryCell
 
-[`EntryCell`](xref:Xamarin.Forms.EntryCell)est utile lorsque vous devez afficher des données texte que l’utilisateur peut modifier. Il définit les propriétés suivantes :
+[`EntryCell`](xref:Xamarin.Forms.EntryCell) est utile lorsque vous devez afficher des données texte que l’utilisateur peut modifier. Il définit les propriétés suivantes :
 
-- `Keyboard`: Clavier à afficher pendant la modification. Il existe des options pour les valeurs numériques, les courriers électroniques, les numéros de téléphone, etc., [consultez les documents de l’API](xref:Xamarin.Forms.Keyboard).
-- `Label`: Texte de l’étiquette à afficher à gauche du champ d’entrée de texte.
-- `LabelColor`: Couleur du texte de l’étiquette.
-- `Placeholder`: Texte à afficher dans le champ d’entrée lorsqu’il est null ou vide. Ce texte disparaît à la début de la saisie de texte.
-- `Text`: Texte du champ d’entrée.
-- `HorizontalTextAlignment`: Alignement horizontal du texte. Les valeurs sont centrées, gauches ou alignées à droite. [Consultez les documents de l’API](xref:Xamarin.Forms.TextAlignment).
-- `VerticalTextAlignment`: Alignement vertical du texte. Les valeurs sont `Start` , `Center` ou `End` .
+- `Keyboard` : Clavier à afficher pendant la modification. Il existe des options pour les valeurs numériques, les courriers électroniques, les numéros de téléphone, etc., [consultez les documents de l’API](xref:Xamarin.Forms.Keyboard).
+- `Label` : Texte de l’étiquette à afficher à gauche du champ d’entrée de texte.
+- `LabelColor` : Couleur du texte de l’étiquette.
+- `Placeholder` : Texte à afficher dans le champ d’entrée lorsqu’il est null ou vide. Ce texte disparaît à la début de la saisie de texte.
+- `Text` : Texte du champ d’entrée.
+- `HorizontalTextAlignment` : Alignement horizontal du texte. Les valeurs sont centrées, gauches ou alignées à droite. [Consultez les documents de l’API](xref:Xamarin.Forms.TextAlignment).
+- `VerticalTextAlignment` : Alignement vertical du texte. Les valeurs sont `Start` , `Center` ou `End` .
 
-[`EntryCell`](xref:Xamarin.Forms.EntryCell)expose également l' `Completed` événement, qui est déclenché quand l’utilisateur appuie sur le bouton « Done » sur le clavier lors de la modification de texte.
+[`EntryCell`](xref:Xamarin.Forms.EntryCell) expose également l' `Completed` événement, qui est déclenché quand l’utilisateur appuie sur le bouton « Done » sur le clavier lors de la modification de texte.
 
 ![Exemple EntryCell](tableview-images/entry-cell.png)
 
@@ -193,8 +193,8 @@ L’élément racine sous [`TableView`](xref:Xamarin.Forms.TableView) est le [`T
 
 La [`TableView`](xref:Xamarin.Forms.TableView) classe a deux propriétés qui peuvent être utilisées pour modifier la hauteur de ligne des cellules :
 
-- [`RowHeight`](xref:Xamarin.Forms.TableView.RowHeight): définit la hauteur de chaque ligne sur un `int` .
-- [`HasUnevenRows`](xref:Xamarin.Forms.TableView.HasUnevenRows): les lignes ont des hauteurs variables si la valeur est `true` . Notez que lors de l’affectation de la valeur à cette propriété `true` , les hauteurs de lignes seront automatiquement calculées et appliquées par Xamarin.Forms .
+- [`RowHeight`](xref:Xamarin.Forms.TableView.RowHeight) : définit la hauteur de chaque ligne sur un `int` .
+- [`HasUnevenRows`](xref:Xamarin.Forms.TableView.HasUnevenRows) : les lignes ont des hauteurs variables si la valeur est `true` . Notez que lors de l’affectation de la valeur à cette propriété `true` , les hauteurs de lignes seront automatiquement calculées et appliquées par Xamarin.Forms .
 
 Lorsque la hauteur du contenu dans une cellule d’un [`TableView`](xref:Xamarin.Forms.TableView) est modifiée, la hauteur de ligne est implicitement mise à jour sur Android et le plateforme Windows universelle (UWP). Toutefois, sur iOS, la mise à jour doit être forcée en affectant à la propriété la valeur [`HasUnevenRows`](xref:Xamarin.Forms.TableView.HasUnevenRows) `true` et en appelant la [`Cell.ForceUpdateSize`](xref:Xamarin.Forms.Cell.ForceUpdateSize) méthode.
 
@@ -253,4 +253,4 @@ Les captures d’écran suivantes montrent la cellule après avoir frappé sur 
 
 ## <a name="related-links"></a>Liens connexes
 
-- [TableView (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-tableview)
+- [TableView (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-tableview)

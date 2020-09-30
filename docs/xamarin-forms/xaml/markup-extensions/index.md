@@ -10,16 +10,16 @@ ms.date: 01/05/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 568cffc335f28b1a47f3278ad061d851ebef84b6
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 98eb35697aee9022a837a7b0b531edb0c53b2239
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84130388"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562143"
 ---
 # <a name="xaml-markup-extensions"></a>Extensions de balisage XAML
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
 
 Les extensions de balisage XAML permettent d’étendre la puissance et la flexibilité du code XAML en permettant de définir des attributs d’élément à partir de sources autres que des chaînes de texte littéral.
 
@@ -59,9 +59,9 @@ Utilisez les extensions de balisage XAML définies dans Xamarin.Forms .
 
 Écrivez vos propres extensions de balisage XAML personnalisées.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [Extensions de balisage (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
+- [Extensions de balisage (exemple)](/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
 - [Chapitre sur les extensions de balisage XAML du Xamarin.Forms livre](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)
 - [Dictionnaires de ressources](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [Styles dynamiques](~/xamarin-forms/user-interface/styles/dynamic.md)

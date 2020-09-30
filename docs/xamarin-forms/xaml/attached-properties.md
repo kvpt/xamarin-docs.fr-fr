@@ -1,5 +1,5 @@
 ---
-title: Propriétés attachées
+title: Propriétés jointes
 description: Cet article fournit une introduction aux propriétés jointes et montre comment les créer et les utiliser.
 ms.prod: xamarin
 ms.assetid: 6E9DCDC3-A0E4-46A6-BAA9-4FEB6DF8A5A8
@@ -10,19 +10,19 @@ ms.date: 06/02/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1277b3cd875c1b4e05e45202a8e30ef2ff93972a
-ms.sourcegitcommit: 898ba8e5140ae32a7df7e07c056aff65f6fe4260
+ms.openlocfilehash: 61edbb347b4d3466d1ca756208adb5d173d63b34
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86226792"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91561545"
 ---
-# <a name="attached-properties"></a>Propriétés attachées
+# <a name="attached-properties"></a>Propriétés jointes
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)
 
 
-Les propriétés jointes permettent à un objet d’assigner une valeur pour une propriété qui n’est pas définie par sa propre classe. Par exemple, les éléments enfants peuvent utiliser des propriétés jointes pour informer leur élément parent de la façon dont ils doivent être présentés dans l’interface utilisateur. Le [`Grid`](xref:Xamarin.Forms.Grid) contrôle permet de spécifier la ligne et la colonne d’un enfant en définissant `Grid.Row` les `Grid.Column` propriétés jointes et. `Grid.Row`et `Grid.Column` sont des propriétés jointes, car elles sont définies sur les éléments qui sont des enfants d’un `Grid` , plutôt que sur le `Grid` lui-même.
+Les propriétés jointes permettent à un objet d’assigner une valeur pour une propriété qui n’est pas définie par sa propre classe. Par exemple, les éléments enfants peuvent utiliser des propriétés jointes pour informer leur élément parent de la façon dont ils doivent être présentés dans l’interface utilisateur. Le [`Grid`](xref:Xamarin.Forms.Grid) contrôle permet de spécifier la ligne et la colonne d’un enfant en définissant `Grid.Row` les `Grid.Column` propriétés jointes et. `Grid.Row` et `Grid.Column` sont des propriétés jointes, car elles sont définies sur les éléments qui sont des enfants d’un `Grid` , plutôt que sur le `Grid` lui-même.
 
 Les propriétés pouvant être liées doivent être implémentées en tant que propriétés jointes dans les scénarios suivants :
 
@@ -145,6 +145,6 @@ Lors de la création d’une propriété jointe, il existe un certain nombre de 
 
 - [Propriétés pouvant être liées](~/xamarin-forms/xaml/bindable-properties.md)
 - [Espaces de noms XAML](~/xamarin-forms/xaml/namespaces.md)
-- [Effet d’ombre (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)
+- [Effet d’ombre (exemple)](/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)
 - [API BindableProperty](xref:Xamarin.Forms.BindableProperty)
 - [API BindableObject](xref:Xamarin.Forms.BindableObject)

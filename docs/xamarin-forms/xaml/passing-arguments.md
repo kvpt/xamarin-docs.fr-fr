@@ -10,16 +10,16 @@ ms.date: 10/25/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 84d8901b7f8dee8ffd6c3ba22d30c76b456555f0
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: dcf09adc690aee5487107630eb74bb8c4e9599cb
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84571504"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562169"
 ---
 # <a name="passing-arguments-in-xaml"></a>Passage d’arguments en XAML
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-passingconstructorarguments)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-passingconstructorarguments)
 
 _Cet article montre comment utiliser les attributs XAML qui peuvent être utilisés pour passer des arguments à des constructeurs non définis par défaut, pour appeler des méthodes de fabrique et pour spécifier le type d’un argument générique._
 
@@ -34,7 +34,7 @@ En outre, l' `x:TypeArguments` attribut peut être utilisé pour spécifier les 
 
 ## <a name="passing-constructor-arguments"></a>Passer des arguments de constructeur
 
-Les arguments peuvent être passés à un constructeur non défini par défaut à l’aide de l' `x:Arguments` attribut. Chaque argument de constructeur doit être délimité dans un élément XML qui représente le type de l’argument. Xamarin.Formsprend en charge les éléments suivants pour les types de base :
+Les arguments peuvent être passés à un constructeur non défini par défaut à l’aide de l' `x:Arguments` attribut. Chaque argument de constructeur doit être délimité dans un élément XML qui représente le type de l’argument. Xamarin.Forms prend en charge les éléments suivants pour les types de base :
 
 - `x:Array`
 - `x:Boolean`
@@ -136,7 +136,7 @@ La [`Color`](xref:Xamarin.Forms.Color) structure définit un certain nombre de m
 </BoxView>
 ```
 
-Le nombre d’éléments dans la `x:Arguments` balise, ainsi que les types de ces éléments, doivent correspondre aux arguments de la méthode de fabrique appelée. La [`FromRgba`](xref:Xamarin.Forms.Color.FromRgba(System.Int32,System.Int32,System.Int32,System.Int32)) méthode de fabrique requiert quatre [`Int32`](https://docs.microsoft.com/dotnet/api/system.int32) paramètres, qui représentent les valeurs rouge, vert, bleu et alpha, entre 0 et 255 respectivement. La [`FromHsla`](xref:Xamarin.Forms.Color.FromHsla(System.Double,System.Double,System.Double,System.Double)) méthode de fabrique requiert quatre [`Double`](https://docs.microsoft.com/dotnet/api/system.double) paramètres, qui représentent les valeurs de teinte, de saturation, de luminosité et alpha, allant de 0 à 1, respectivement. La [`FromHex`](xref:Xamarin.Forms.Color.FromHex(System.String)) méthode de fabrique requiert un [`String`](https://docs.microsoft.com/dotnet/api/system.string) qui représente la couleur RVB hexadécimale (a).
+Le nombre d’éléments dans la `x:Arguments` balise, ainsi que les types de ces éléments, doivent correspondre aux arguments de la méthode de fabrique appelée. La [`FromRgba`](xref:Xamarin.Forms.Color.FromRgba(System.Int32,System.Int32,System.Int32,System.Int32)) méthode de fabrique requiert quatre [`Int32`](/dotnet/api/system.int32) paramètres, qui représentent les valeurs rouge, vert, bleu et alpha, entre 0 et 255 respectivement. La [`FromHsla`](xref:Xamarin.Forms.Color.FromHsla(System.Double,System.Double,System.Double,System.Double)) méthode de fabrique requiert quatre [`Double`](/dotnet/api/system.double) paramètres, qui représentent les valeurs de teinte, de saturation, de luminosité et alpha, allant de 0 à 1, respectivement. La [`FromHex`](xref:Xamarin.Forms.Color.FromHex(System.String)) méthode de fabrique requiert un [`String`](/dotnet/api/system.string) qui représente la couleur RVB hexadécimale (a).
 
 Les captures d’écran suivantes montrent le résultat de l’appel de chaque [`Color`](xref:Xamarin.Forms.Color) méthode de fabrique avec les valeurs d’argument spécifiées :
 
@@ -164,9 +164,9 @@ La [`OnPlatform`](xref:Xamarin.Forms.OnPlatform`1) classe est une classe génér
 
 Pour plus d’informations sur les arguments de type générique, consultez [génériques en Xamarin.Forms XAML](generics.md).
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [Passer des arguments de constructeur (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-passingconstructorarguments)
-- [Appel des méthodes de fabrique (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-callingfactorymethods)
+- [Passer des arguments de constructeur (exemple)](/samples/xamarin/xamarin-forms-samples/xaml-passingconstructorarguments)
+- [Appel des méthodes de fabrique (exemple)](/samples/xamarin/xamarin-forms-samples/xaml-callingfactorymethods)
 - [Espaces de noms XAML](~/xamarin-forms/xaml/namespaces.md)
 - [Génériques en Xamarin.Forms XAML](generics.md)

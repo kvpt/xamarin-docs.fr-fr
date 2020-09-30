@@ -10,12 +10,12 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 71e64f7b8286f22040a802336e9be756d932c0cd
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 3052220b914b09f18490846bbd2558bbf07e4d3a
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936537"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562260"
 ---
 # <a name="basic-animation-in-skiasharp"></a>Animation de base dans SkiaSharp
 
@@ -27,7 +27,7 @@ Vous pouvez animer des graphiques SkiaSharp dans Xamarin.Forms en provoquant l' 
 
 ![Plusieurs cercles concentriques ont apparemment été étendus à partir du centre](animation-images/animationexample.png)
 
-La page d' **ellipse Pulsating** dans le programme [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) anime les deux axes d’une ellipse afin qu’elle semble être Pulsating, et vous pouvez même contrôler le taux de cette pulsation. Le fichier [**PulsatingEllipsePage. Xaml**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml) instancie un Xamarin.Forms `Slider` et un `Label` pour afficher la valeur actuelle du curseur. Il s’agit d’une méthode courante pour intégrer un `SKCanvasView` avec d’autres Xamarin.Forms vues :
+La page d' **ellipse Pulsating** dans le programme [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) anime les deux axes d’une ellipse afin qu’elle semble être Pulsating, et vous pouvez même contrôler le taux de cette pulsation. Le fichier [**PulsatingEllipsePage. Xaml**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml) instancie un Xamarin.Forms `Slider` et un `Label` pour afficher la valeur actuelle du curseur. Il s’agit d’une méthode courante pour intégrer un `SKCanvasView` avec d’autres Xamarin.Forms vues :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -146,7 +146,7 @@ La méthode calcule un rayon maximal en fonction de la taille de la zone d’aff
 
 [![Capture d’écran triple de la page d’ellipse Pulsating](animation-images/pulsatingellipse-small.png)](animation-images/pulsatingellipse-large.png#lightbox "Capture d’écran triple de la page d’ellipse Pulsating")
 
-Notez que l' `SKPaint` objet est créé dans un `using` bloc. Comme de nombreuses classes SkiaSharp `SKPaint` dérivent de, `SKObject` qui dérive de `SKNativeObject` , qui implémente l' [`IDisposable`](xref:System.IDisposable) interface. `SKPaint`Substitue la `Dispose` méthode pour libérer des ressources non managées.
+Notez que l' `SKPaint` objet est créé dans un `using` bloc. Comme de nombreuses classes SkiaSharp `SKPaint` dérivent de, `SKObject` qui dérive de `SKNativeObject` , qui implémente l' [`IDisposable`](xref:System.IDisposable) interface. `SKPaint` Substitue la `Dispose` méthode pour libérer des ressources non managées.
 
  `SKPaint`Le fait de placer dans un `using` Bloc garantit que `Dispose` est appelé à la fin du bloc pour libérer ces ressources non managées. Cela se produit quand la mémoire utilisée par l' `SKPaint` objet est libérée par le garbage collector .net, mais dans le code d’animation, il est préférable d’être proactif pour libérer de la mémoire de manière plus ordonnée.
 
@@ -251,5 +251,5 @@ Le résultat est que l’image a le même résultat lorsque est `t` égal à 0 c
 
 ## <a name="related-links"></a>Liens associés
 
-- [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [API SkiaSharp](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (exemple)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

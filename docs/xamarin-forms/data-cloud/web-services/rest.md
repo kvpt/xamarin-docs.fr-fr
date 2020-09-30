@@ -10,12 +10,12 @@ ms.date: 05/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 972a5ac99ff775ea7301f803c333d8239ae7f193
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 6af0641fe1f8f9be772b25c26825232b6bdba9b7
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938188"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562377"
 ---
 # <a name="consume-a-restful-web-service"></a>Utilisation d’un service Web RESTful
 
@@ -59,7 +59,7 @@ Le service REST est écrit à l’aide de ASP.NET Core et fournit les opération
 |Obtenir une liste de tâches|GET|/api/todoitems/|
 |Créer un nouvel élément de tâche|POST|/api/todoitems/|TodoItem au format JSON|
 |Mettre à jour une tâche|PUT|/api/todoitems/|TodoItem au format JSON|
-|Supprimer une tâche|DELETE|/api/todoitems/{id}|
+|Supprimer une tâche|Suppression|/api/todoitems/{id}|
 
 La majorité des URI incluent l' `TodoItem` ID dans le chemin d’accès. Par exemple, pour supprimer l' `TodoItem` dont l’ID est `6bb8a868-dba1-4f1a-93b7-24ebce87e243` , le client envoie une requête Delete à `http://hostname/api/todoitems/6bb8a868-dba1-4f1a-93b7-24ebce87e243` . Pour plus d’informations sur le modèle de données utilisé dans l’exemple d’application, consultez [modélisation des données](~/xamarin-forms/data-cloud/web-services/introduction.md).
 
@@ -214,5 +214,5 @@ Le service REST envoie un code d’état HTTP dans la `HttpResponseMessage.IsSuc
 ## <a name="related-links"></a>Liens associés
 
 - [Création de services principaux pour les applications mobiles natives](/aspnet/core/mobile/native-mobile-backend/)
-- [TodoREST (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)
-- [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx)
+- [TodoREST (exemple)](/samples/xamarin/xamarin-forms-samples/webservices-todorest)
+- [HttpClient](/dotnet/api/system.net.http.httpclient)

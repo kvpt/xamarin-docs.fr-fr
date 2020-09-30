@@ -10,12 +10,12 @@ ms.date: 04/14/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 855fde62483dcbc6f8769e7a8eb66d84aadfe1da
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 9bb2720d60f62c0bac6ab30007e226c362d1c5cd
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86934977"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563872"
 ---
 # <a name="3d-rotations-in-skiasharp"></a>Rotations 3D dans SkiaSharp
 
@@ -117,7 +117,7 @@ La rotation autour de l’axe Z est la même que dans les graphiques 2D :
 
 Le sens de la rotation est implicite par la direction du système de coordonnées. Il s’agit d’un système gauche. par conséquent, si vous pointez le curseur de votre main gauche vers des valeurs croissantes pour un axe particulier, vers la droite pour la rotation autour de l’axe X, vers le bas pour la rotation autour de l’axe Y et vers la rotation autour de l’axe Z, la courbe de vos autres doigts indique la direction de rotation pour les angles positifs
 
-`SKMatrix44`a généralisé [`CreateRotation`](xref:SkiaSharp.SKMatrix44.CreateRotation(System.Single,System.Single,System.Single,System.Single)) des méthodes et statiques [`CreateRotationDegrees`](xref:SkiaSharp.SKMatrix44.CreateRotationDegrees(System.Single,System.Single,System.Single,System.Single)) qui vous permettent de spécifier l’axe autour duquel la rotation se produit :
+`SKMatrix44` a généralisé [`CreateRotation`](xref:SkiaSharp.SKMatrix44.CreateRotation(System.Single,System.Single,System.Single,System.Single)) des méthodes et statiques [`CreateRotationDegrees`](xref:SkiaSharp.SKMatrix44.CreateRotationDegrees(System.Single,System.Single,System.Single,System.Single)) qui vous permettent de spécifier l’axe autour duquel la rotation se produit :
 
 ```csharp
 public static SKMatrix44 CreateRotationDegrees (Single x, Single y, Single z, Single degrees)
@@ -540,5 +540,5 @@ Cette rotation 3D est entourée de plusieurs transformations 2D pour déplacer l
 
 ## <a name="related-links"></a>Liens associés
 
-- [API SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [API SkiaSharp](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (exemple)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

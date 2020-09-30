@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Formsdictionnaires de ressources
-description: Xamarin.FormsLes ressources XAML sont des objets qui peuvent être partagés et réutilisés dans une Xamarin.Forms application.
+title: Xamarin.Forms dictionnaires de ressources
+description: Xamarin.Forms Les ressources XAML sont des objets qui peuvent être partagés et réutilisés dans une Xamarin.Forms application.
 ms.prod: xamarin
 ms.assetid: DF103686-4A92-40FA-9CF1-A9376293B13C
 ms.technology: xamarin-forms
@@ -11,16 +11,16 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.custom: video
-ms.openlocfilehash: a1c7cfd4a0f3549b11ac51dc13b40da552f6b758
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: cdf34d78751345857e89c6bfa6862b58207ad01e
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139410"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562130"
 ---
-# <a name="xamarinforms-resource-dictionaries"></a>Xamarin.Formsdictionnaires de ressources
+# <a name="no-locxamarinforms-resource-dictionaries"></a>Xamarin.Forms dictionnaires de ressources
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-resourcedictionaries)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-resourcedictionaries)
 
 Un [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) est un référentiel pour les ressources utilisées par une Xamarin.Forms application. Les ressources typiques stockées dans un `ResourceDictionary` incluent des [styles](~/xamarin-forms/user-interface/styles/index.md), des [modèles de contrôle](~/xamarin-forms/app-fundamentals/templates/control-template.md), des modèles de [données](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md), des couleurs et des convertisseurs.
 
@@ -236,9 +236,9 @@ Lorsque [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) les ressou
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Dictionnaires de ressources (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-resourcedictionaries)
+- [Dictionnaires de ressources (exemple)](/samples/xamarin/xamarin-forms-samples/xaml-resourcedictionaries)
 - [Extensions de balisage XAML](~/xamarin-forms/xaml/markup-extensions/index.md)
-- [Xamarin.FormsIls](~/xamarin-forms/user-interface/styles/index.md)
+- [Xamarin.Forms Ils](~/xamarin-forms/user-interface/styles/index.md)
 - [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
 
 ## <a name="related-video"></a>Vidéo connexe

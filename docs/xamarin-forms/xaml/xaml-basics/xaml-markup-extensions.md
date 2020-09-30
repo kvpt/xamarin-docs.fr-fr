@@ -10,16 +10,16 @@ ms.date: 03/27/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3fcea963b253ea34601a36434007f18d925975eb
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 9923a7f0605a7ca5d9d81269c3d855e92fbccaf4
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84131337"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91564080"
 ---
 # <a name="part-3-xaml-markup-extensions"></a>Partie 3. Extensions de balisage XAML
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
 _Les extensions de balisage XAML constituent une fonctionnalité importante du langage XAML qui permet de définir des propriétés sur des objets ou des valeurs qui sont référencés indirectement à partir d’autres sources. Les extensions de balisage XAML sont particulièrement importantes pour le partage d’objets et le référencement des constantes utilisées dans une application, mais elles trouvent leur plus grand utilitaire dans les liaisons de données._
 
@@ -146,7 +146,7 @@ Il est maintenant nécessaire de définir les `HorizontalOptions` `VerticalOptio
 
 L' `StaticResource` extension de balisage est toujours délimitée par des accolades et comprend la clé de dictionnaire.
 
-Le nom le `StaticResource` distingue de `DynamicResource` , qui Xamarin.Forms prend également en charge. `DynamicResource`concerne les clés de dictionnaire associées à des valeurs qui peuvent changer pendant l’exécution, tandis que `StaticResource` accède aux éléments du dictionnaire une seule fois lorsque les éléments de la page sont construits.
+Le nom le `StaticResource` distingue de `DynamicResource` , qui Xamarin.Forms prend également en charge. `DynamicResource` concerne les clés de dictionnaire associées à des valeurs qui peuvent changer pendant l’exécution, tandis que `StaticResource` accède aux éléments du dictionnaire une seule fois lorsque les éléments de la page sont construits.
 
 Pour la `BorderWidth` propriété, il est nécessaire de stocker un double dans le dictionnaire. XAML définit facilement des balises pour les types de données courants tels que `x:Double` et `x:Int32` :
 
@@ -323,7 +323,7 @@ Parfois, les développeurs qui débutent avec XAML se demandent s’ils peuvent 
 
 ## <a name="the-xstatic-markup-extension"></a>L’extension de balisage x :Static
 
-En dépit des similitudes de leurs noms, `x:Static` et `StaticResource` sont très différents. `StaticResource`retourne un objet à partir d’un dictionnaire de ressources alors qu' `x:Static` il accède à l’un des éléments suivants :
+En dépit des similitudes de leurs noms, `x:Static` et `StaticResource` sont très différents. `StaticResource` retourne un objet à partir d’un dictionnaire de ressources alors qu' `x:Static` il accède à l’un des éléments suivants :
 
 - champ statique public
 - une propriété statique publique
@@ -444,9 +444,9 @@ La taille de la résultante `BoxView` par rapport à l’écran dépend de la pl
 
 Plusieurs extensions de balisage sont intrinsèques à XAML et prises en charge dans les Xamarin.Forms fichiers XAML. Certains d’entre eux ne sont pas utilisés très souvent, mais sont essentiels lorsque vous en avez besoin :
 
-- Si une propriété a une valeur qui n’est pas une `null` valeur par défaut, mais que vous souhaitez lui affecter `null` la valeur, affectez-lui la valeur de l' `{x:Null}` extension de balisage.
-- Si une propriété est de type `Type` , vous pouvez l’assigner à un `Type` objet à l’aide de l’extension de balisage `{x:Type someClass}` .
-- Vous pouvez définir des tableaux en XAML à l’aide de l' `x:Array` extension de balisage. Cette extension de balisage a un attribut obligatoire nommé `Type` qui indique le type des éléments dans le tableau.
+- Si une propriété a une valeur qui n’est pas une `null` valeur par défaut, mais que vous souhaitez lui affecter  `null` la valeur, affectez-lui la valeur de l' `{x:Null}` extension de balisage.
+- Si une propriété est de type `Type` , vous pouvez l’assigner à un  `Type` objet à l’aide de l’extension de balisage `{x:Type someClass}` .
+- Vous pouvez définir des tableaux en XAML à l’aide de l' `x:Array` extension de balisage. Cette extension de balisage a un attribut obligatoire nommé  `Type` qui indique le type des éléments dans le tableau.
 - L' `Binding` extension de balisage est présentée dans la [partie 4. Notions de base](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)de la liaison de données.
 - L' `RelativeSource` extension de balisage est présentée dans [liaisons relatives](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md).
 
@@ -561,9 +561,9 @@ Voici le programme en cours d’exécution :
 
 Les extensions de balisage XAML indiquées ici fournissent une prise en charge importante pour les fichiers XAML. Mais peut-être l’extension de balisage XAML la plus précieuse est `Binding` , ce qui est abordé dans la partie suivante de cette série, [partie 4. Notions de base](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)de la liaison de données.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
-- [XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
+- [XamlSamples](/samples/xamarin/xamarin-forms-samples/xamlsamples)
 - [Partie 1. Prise en main avec XAML](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
 - [Partie 2. Syntaxe XAML essentielle](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
 - [Partie 4. Principes fondamentaux de la liaison de données](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)

@@ -10,12 +10,12 @@ ms.date: 04/24/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: de5ebf086af7fa8d7c6360bf3a1f48f57b834e44
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 01e439812c3935e890acf0b9b83579b5813d8e21
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938435"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563950"
 ---
 # <a name="device-orientation"></a>Orientation de l’appareil
 
@@ -88,7 +88,7 @@ Sur la plateforme Windows universelle (UWP), les orientations prises en charge s
 
 ## <a name="reacting-to-changes-in-orientation"></a>Réagir aux changements d’orientation
 
-Xamarin.Formsn’offre pas d’événements natifs pour avertir votre application des modifications d’orientation dans le code partagé. Toutefois, [Xamarin.Essentials](~/essentials/index.md) contient une `DeviceDisplay` classe [] qui fournit des notifications de changements d’orientation.
+Xamarin.Forms n’offre pas d’événements natifs pour avertir votre application des modifications d’orientation dans le code partagé. Toutefois, [Xamarin.Essentials](~/essentials/index.md) contient une `DeviceDisplay` classe [] qui fournit des notifications de changements d’orientation.
 
 Pour détecter les orientations sans Xamarin.Essentials , surveillez l' `SizeChanged` événement du `Page` , qui se déclenche lorsque la largeur ou la hauteur des `Page` modifications est atteinte. Lorsque la largeur de `Page` est supérieure à la hauteur, l’appareil est en mode paysage. Pour plus d’informations, consultez [afficher une image en fonction de l’orientation de l’écran](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/screen-orientation).
 
@@ -215,7 +215,7 @@ protected override void OnSizeAllocated (double width, double height){
 
 Notez les points suivants :
 
-- `outerStack`est ajusté pour présenter l’image et les contrôles sous la forme d’une pile horizontale ou verticale en fonction de l’orientation, afin de tirer le meilleur parti de l’espace disponible.
+- `outerStack` est ajusté pour présenter l’image et les contrôles sous la forme d’une pile horizontale ou verticale en fonction de l’orientation, afin de tirer le meilleur parti de l’espace disponible.
 
 ### <a name="absolutelayout"></a>AbsoluteLayout
 
@@ -464,7 +464,7 @@ Notez les points suivants :
 
 ## <a name="related-links"></a>Liens associés
 
-- [Disposition (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
-- [Exemple BusinessTumble (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-businesstumble)
-- [Disposition réactive (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-responsivelayout)
+- [Disposition (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-layout)
+- [Exemple BusinessTumble (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-businesstumble)
+- [Disposition réactive (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-responsivelayout)
 - [Afficher une image en fonction de l’orientation de l’écran](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/screen-orientation)

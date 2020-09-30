@@ -10,12 +10,12 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 88761472c4beae3f40f2ca6852eea4db8276c4c9
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 162683c4fabb0a8b6deed1fb30bd7a7dece1f597
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86930679"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562286"
 ---
 # <a name="large-page-titles-on-ios"></a>Titres de page de grande taille sur iOS
 
@@ -77,9 +77,9 @@ public class iOSLargeTitlePageCS : ContentPage
 
 La `Page.On<iOS>` méthode spécifie que ce spécifique à la plateforme s’exécutera uniquement sur iOS. La `Page.SetLargeTitleDisplay` méthode, dans l' [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) espace de noms, contrôle le comportement de grand titre sur le [`Page`](xref:Xamarin.Forms.Page) , avec l' `LargeTitleDisplayMode` énumération qui fournit trois valeurs possibles :
 
-- `Always`: force la barre de navigation et la taille de police à utiliser le grand format.
-- `Automatic`: utilisez le même style (grand ou petit) que l’élément précédent dans la pile de navigation.
-- `Never`: force l’utilisation de la barre de navigation de petite taille standard.
+- `Always` : force la barre de navigation et la taille de police à utiliser le grand format.
+- `Automatic` : utilisez le même style (grand ou petit) que l’élément précédent dans la pile de navigation.
+- `Never` : force l’utilisation de la barre de navigation de petite taille standard.
 
 En outre, la `SetLargeTitleDisplay` méthode peut être utilisée pour basculer les valeurs d’énumération en appelant la `LargeTitleDisplay` méthode, qui retourne le actuel `LargeTitleDisplayMode` :
 
@@ -104,6 +104,6 @@ Le résultat est qu’un spécifié `LargeTitleDisplayMode` est appliqué au [`P
 
 ## <a name="related-links"></a>Liens connexes
 
-- [PlatformSpecifics (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [Création de caractéristiques de la plateforme](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [API iOSSpecific](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

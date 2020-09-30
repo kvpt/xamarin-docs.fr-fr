@@ -10,12 +10,12 @@ ms.date: 07/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3a7dedad6fc33b75a687f94897b64d04a72a0b08
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 42f89f09bd84127fd19bc3ab64794bdac7f145d7
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918439"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91561623"
 ---
 # <a name="no-locxamarinforms-editor"></a>Xamarin.Forms Éditeur
 
@@ -75,10 +75,10 @@ var editor = new Editor { Text = "This is a read-only Editor", IsReadOnly = true
 
 Un [`Editor`](xref:Xamarin.Forms.Editor) peut transformer la casse de son texte, stocké dans la `Text` propriété, en affectant `TextTransform` à la propriété une valeur de l' `TextTransform` énumération. Cette énumération a quatre valeurs :
 
-- `None`indique que le texte ne sera pas transformé.
-- `Default`indique que le comportement par défaut de la plateforme sera utilisé. C’est la valeur par défaut de la propriété `TextTransform`.
-- `Lowercase`indique que le texte sera transformé en minuscules.
-- `Uppercase`indique que le texte sera transformé en majuscules.
+- `None` indique que le texte ne sera pas transformé.
+- `Default` indique que le comportement par défaut de la plateforme sera utilisé. C’est la valeur par défaut de la propriété `TextTransform`.
+- `Lowercase` indique que le texte sera transformé en minuscules.
+- `Uppercase` indique que le texte sera transformé en majuscules.
 
 L’exemple suivant illustre la transformation de texte en majuscules :
 
@@ -135,8 +135,8 @@ En conséquence, les caractères du texte affiché par le sont espacés d' [`Edi
 
 Un [`Editor`](xref:Xamarin.Forms.Editor) peut être configuré pour redimensionner automatiquement son contenu en affectant à la [`Editor.AutoSize`](xref:Xamarin.Forms.Editor.AutoSize) propriété la [`TextChanges`](xref:Xamarin.Forms.EditorAutoSizeOption.TextChanges) valeur, qui est une valeur de l' [`EditoAutoSizeOption`](xref:Xamarin.Forms.EditorAutoSizeOption) énumération. Cette énumération a deux valeurs :
 
-- [`Disabled`](xref:Xamarin.Forms.EditorAutoSizeOption.Disabled)indique que le redimensionnement automatique est désactivé et qu’il s’agit de la valeur par défaut.
-- [`TextChanges`](xref:Xamarin.Forms.EditorAutoSizeOption.TextChanges)indique que le redimensionnement automatique est activé.
+- [`Disabled`](xref:Xamarin.Forms.EditorAutoSizeOption.Disabled) indique que le redimensionnement automatique est désactivé et qu’il s’agit de la valeur par défaut.
+- [`TextChanges`](xref:Xamarin.Forms.EditorAutoSizeOption.TextChanges) indique que le redimensionnement automatique est activé.
 
 Pour ce faire, vous pouvez utiliser le code comme suit :
 
@@ -157,14 +157,14 @@ Lorsque le redimensionnement automatique est activé, la hauteur du [`Editor`](x
 
 Le clavier présenté lorsque les utilisateurs interagissent avec un [`Editor`](xref:Xamarin.Forms.Editor) peut être défini par programmation via la [`Keyboard`](xref:Xamarin.Forms.InputView.Keyboard) propriété, à l’une des propriétés suivantes à partir de la [`Keyboard`](xref:Xamarin.Forms.Keyboard) classe :
 
-- [`Chat`](xref:Xamarin.Forms.Keyboard.Chat): utilisé pour le texte et les emplacements où les Emoji sont utiles.
-- [`Default`](xref:Xamarin.Forms.Keyboard.Default): clavier par défaut.
-- [`Email`](xref:Xamarin.Forms.Keyboard.Email)– utilisé lors de la saisie des adresses e-mail.
-- [`Numeric`](xref:Xamarin.Forms.Keyboard.Numeric): utilisé lors de l’entrée de nombres.
-- [`Plain`](xref:Xamarin.Forms.Keyboard.Plain): utilisé lors de l’entrée de texte, sans aucun [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) spécifié.
-- [`Telephone`](xref:Xamarin.Forms.Keyboard.Telephone)– utilisé lors de l’entrée de numéros de téléphone.
-- [`Text`](xref:Xamarin.Forms.Keyboard.Text): utilisé lors de la saisie de texte.
-- [`Url`](xref:Xamarin.Forms.Keyboard.Url): permet d’entrer des chemins de fichier & des adresses Web.
+- [`Chat`](xref:Xamarin.Forms.Keyboard.Chat) : utilisé pour le texte et les emplacements où les Emoji sont utiles.
+- [`Default`](xref:Xamarin.Forms.Keyboard.Default) : clavier par défaut.
+- [`Email`](xref:Xamarin.Forms.Keyboard.Email) – utilisé lors de la saisie des adresses e-mail.
+- [`Numeric`](xref:Xamarin.Forms.Keyboard.Numeric) : utilisé lors de l’entrée de nombres.
+- [`Plain`](xref:Xamarin.Forms.Keyboard.Plain) : utilisé lors de l’entrée de texte, sans aucun [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) spécifié.
+- [`Telephone`](xref:Xamarin.Forms.Keyboard.Telephone) – utilisé lors de l’entrée de numéros de téléphone.
+- [`Text`](xref:Xamarin.Forms.Keyboard.Text) : utilisé lors de la saisie de texte.
+- [`Url`](xref:Xamarin.Forms.Keyboard.Url) : permet d’entrer des chemins de fichier & des adresses Web.
 
 Cela peut être accompli en XAML de la façon suivante :
 
@@ -180,16 +180,16 @@ var editor = new Editor { Keyboard = Keyboard.Chat };
 
 Vous trouverez des exemples de chaque clavier dans notre référentiel [Recipes](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/choose-keyboard-for-entry) .
 
-La [`Keyboard`](xref:Xamarin.Forms.Keyboard) classe a également une [`Create`](xref:Xamarin.Forms.Keyboard.Create*) méthode de fabrique qui peut être utilisée pour personnaliser un clavier en spécifiant le comportement de mise en majuscules, de vérification orthographique et de suggestion. [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags)les valeurs d’énumération sont spécifiées comme arguments de la méthode, avec un personnalisé `Keyboard` qui est retourné. L’énumération `KeyboardFlags` contient les valeurs suivantes :
+La [`Keyboard`](xref:Xamarin.Forms.Keyboard) classe a également une [`Create`](xref:Xamarin.Forms.Keyboard.Create*) méthode de fabrique qui peut être utilisée pour personnaliser un clavier en spécifiant le comportement de mise en majuscules, de vérification orthographique et de suggestion. [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) les valeurs d’énumération sont spécifiées comme arguments de la méthode, avec un personnalisé `Keyboard` qui est retourné. L’énumération `KeyboardFlags` contient les valeurs suivantes :
 
-- [`None`](xref:Xamarin.Forms.KeyboardFlags.None): aucune fonctionnalité n’est ajoutée au clavier.
-- [`CapitalizeSentence`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeSentence): indique que la première lettre du premier mot de chaque phrase entrée est automatiquement mise en majuscules.
-- [`Spellcheck`](xref:Xamarin.Forms.KeyboardFlags.Spellcheck): indique que l’orthographe est effectuée sur le texte entré.
-- [`Suggestions`](xref:Xamarin.Forms.KeyboardFlags.Suggestions): indique que les saisies semi-automatiques de mot seront proposées dans le texte entré.
-- [`CapitalizeWord`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeWord): indique que la première lettre de chaque mot sera automatiquement mise en majuscules.
-- [`CapitalizeCharacter`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeCharacter): indique que chaque caractère sera automatiquement mis en majuscules.
-- [`CapitalizeNone`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeNone): indique qu’aucune mise en majuscule automatique n’aura lieu.
-- [`All`](xref:Xamarin.Forms.KeyboardFlags.All): indique que l’orthographe, la saisie semi-automatique des mots et la mise en majuscule des phrases se produisent dans le texte entré.
+- [`None`](xref:Xamarin.Forms.KeyboardFlags.None) : aucune fonctionnalité n’est ajoutée au clavier.
+- [`CapitalizeSentence`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeSentence) : indique que la première lettre du premier mot de chaque phrase entrée est automatiquement mise en majuscules.
+- [`Spellcheck`](xref:Xamarin.Forms.KeyboardFlags.Spellcheck) : indique que l’orthographe est effectuée sur le texte entré.
+- [`Suggestions`](xref:Xamarin.Forms.KeyboardFlags.Suggestions) : indique que les saisies semi-automatiques de mot seront proposées dans le texte entré.
+- [`CapitalizeWord`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeWord) : indique que la première lettre de chaque mot sera automatiquement mise en majuscules.
+- [`CapitalizeCharacter`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeCharacter) : indique que chaque caractère sera automatiquement mis en majuscules.
+- [`CapitalizeNone`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeNone) : indique qu’aucune mise en majuscule automatique n’aura lieu.
+- [`All`](xref:Xamarin.Forms.KeyboardFlags.All) : indique que l’orthographe, la saisie semi-automatique des mots et la mise en majuscule des phrases se produisent dans le texte entré.
 
 L’exemple de code XAML suivant montre comment personnaliser la valeur par défaut [`Keyboard`](xref:Xamarin.Forms.Keyboard) pour proposer des saisies semi-automatiques de mots et mettre en majuscules chaque caractère entré :
 
@@ -248,7 +248,7 @@ var editor = new Editor { ... IsTextPredictionEnabled = false };
 
 ## <a name="colors"></a>Couleurs
 
-`Editor`peut être défini pour utiliser une couleur d’arrière-plan personnalisée via la `BackgroundColor` propriété. Une attention particulière est nécessaire pour s’assurer que les couleurs seront utilisables sur chaque plateforme. Étant donné que chaque plateforme a des valeurs par défaut différentes pour la couleur de texte, vous devrez peut-être définir une couleur d’arrière-plan personnalisée pour chaque plateforme. Pour plus d’informations sur l’optimisation de l’interface utilisateur pour chaque plateforme, consultez [utilisation des ajustements de plateforme](~/xamarin-forms/platform/device.md) .
+`Editor` peut être défini pour utiliser une couleur d’arrière-plan personnalisée via la `BackgroundColor` propriété. Une attention particulière est nécessaire pour s’assurer que les couleurs seront utilisables sur chaque plateforme. Étant donné que chaque plateforme a des valeurs par défaut différentes pour la couleur de texte, vous devrez peut-être définir une couleur d’arrière-plan personnalisée pour chaque plateforme. Pour plus d’informations sur l’optimisation de l’interface utilisateur pour chaque plateforme, consultez [utilisation des ajustements de plateforme](~/xamarin-forms/platform/device.md) .
 
 En C# :
 
@@ -296,7 +296,7 @@ Assurez-vous que les couleurs de texte et d’arrière-plan que vous choisissez 
 
 ## <a name="events-and-interactivity"></a>Événements et interactivité
 
-`Editor`expose deux événements :
+`Editor` expose deux événements :
 
 - [TextChanged](xref:Xamarin.Forms.InputView.TextChanged) &ndash; déclenché lorsque le texte est modifié dans l’éditeur. Fournit le texte avant et après la modification.
 - [Terminé](xref:Xamarin.Forms.Editor.Completed) &ndash; déclenché lorsque l’utilisateur a terminé l’entrée en appuyant sur la touche retour sur le clavier.
@@ -304,9 +304,9 @@ Assurez-vous que les couleurs de texte et d’arrière-plan que vous choisissez 
 > [!NOTE]
 > La [`VisualElement`](xref:Xamarin.Forms.VisualElement) classe, dont [`Entry`](xref:Xamarin.Forms.Entry) hérite, possède également les [`Focused`](xref:Xamarin.Forms.VisualElement.Focused) [`Unfocused`](xref:Xamarin.Forms.VisualElement.Unfocused) événements et.
 
-### <a name="completed"></a>Completed
+### <a name="completed"></a>Effectué
 
-L' `Completed` événement est utilisé pour réagir à l’achèvement d’une interaction avec un `Editor` . `Completed`est déclenché lorsque l’utilisateur termine l’entrée par un champ en entrant la touche retour sur le clavier (ou en appuyant sur la touche Tab sur UWP). Le gestionnaire de l’événement est un gestionnaire d’événements générique, qui prend l’expéditeur et `EventArgs` :
+L' `Completed` événement est utilisé pour réagir à l’achèvement d’une interaction avec un `Editor` . `Completed` est déclenché lorsque l’utilisateur termine l’entrée par un champ en entrant la touche retour sur le clavier (ou en appuyant sur la touche Tab sur UWP). Le gestionnaire de l’événement est un gestionnaire d’événements générique, qui prend l’expéditeur et `EventArgs` :
 
 ```csharp
 void EditorCompleted (object sender, EventArgs e)
@@ -354,7 +354,7 @@ Title="Editor Demo">
 
 L' `TextChanged` événement est utilisé pour réagir à une modification du contenu d’un champ.
 
-`TextChanged`est déclenché chaque fois que le `Text` de `Editor` change. Le gestionnaire de l’événement prend une instance de `TextChangedEventArgs` . `TextChangedEventArgs`fournit l’accès aux valeurs anciennes et nouvelles de `Editor` `Text` via les `OldTextValue` Propriétés et `NewTextValue` :
+`TextChanged` est déclenché chaque fois que le `Text` de `Editor` change. Le gestionnaire de l’événement prend une instance de `TextChangedEventArgs` . `TextChangedEventArgs` fournit l’accès aux valeurs anciennes et nouvelles de `Editor` `Text` via les `OldTextValue` Propriétés et `NewTextValue` :
 
 ```csharp
 void EditorTextChanged (object sender, TextChangedEventArgs e)
@@ -401,5 +401,5 @@ Title="Editor Demo">
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Texte (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
+- [Texte (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-text)
 - [API Editor](xref:Xamarin.Forms.Editor)
