@@ -919,7 +919,7 @@ items:
       - name: Authentificateur web
         href: ~/essentials/web-authenticator.md?context=xamarin/xamarin-forms
       - name: Notes de publication de Xamarin.Essentials
-        href: 'https://docs.microsoft.com/xamarin/essentials/release-notes/'
+        href: /xamarin/essentials/release-notes/
       - name: Résolution des problèmes
         href: ~/essentials/troubleshooting.md?context=xamarin/xamarin-forms
   - name: Données et Azure Cloud Services
@@ -1033,7 +1033,7 @@ items:
           - name: "Pourquoi mon projet Android Xamarin.Forms.Maps échoue avec COMPILETODALVIK\_: ERREUR INATTENDUE DE NIVEAU SUPÉRIEUR\_?"
             href: troubleshooting/questions/maps-compiletodalvik-error.md
   - name: Notes de publication
-    href: 'https://docs.microsoft.com/xamarin/xamarin-forms/release-notes/'
+    href: /xamarin/xamarin-forms/release-notes/
   - name: Exemples
     href: samples/index.md
   - name: Création d’applications mobiles avec Xamarin.Forms
