@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 95067df17424d5b9367578e675d747317a827de9
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 6316d1013a608a4e03c1cad73adaba96e1e37dc7
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "71059643"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91451623"
 ---
 Félicitations ! Vous avez terminé ce didacticiel qui vous a expliqué comment effectuer les opérations suivantes :
 
@@ -12,7 +12,7 @@ Félicitations ! Vous avez terminé ce didacticiel qui vous a expliqué comment 
 >
 > - Créer un élément [`Button`](xref:Xamarin.Forms.Button) Xamarin.Forms en XAML.
 > - Répondre à une activation du `Button` par pression.
-> - Modifier l’apparence du `Button`.
+> - Modifier l’apparence de l’élément `Button`.
 
 ## <a name="next-steps"></a>Étapes suivantes
 
@@ -23,6 +23,6 @@ Pour en savoir plus sur les principes fondamentaux de la création d’applicati
 
 ## <a name="related-links"></a>Liens connexes
 
-- [ButtonTutorial (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-buttontutorial/)
+- [ButtonTutorial (exemple)](/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-buttontutorial/)
 - [Xamarin.Forms Button (guide)](~/xamarin-forms/user-interface/button.md)
 - [API Button](xref:Xamarin.Forms.Button)

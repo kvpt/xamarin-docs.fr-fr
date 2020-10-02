@@ -1,17 +1,17 @@
 ---
-ms.openlocfilehash: b1c6e031d30dc4c30007e04cd8e883c8ddf2e6a0
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 5bf1a6dea7d39dcf4601b3a2d09a34d1f50004c4
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "71107222"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91451458"
 ---
 Félicitations ! Vous avez terminé ce didacticiel qui vous a expliqué comment effectuer les opérations suivantes :
 
 > [!div class="checklist"]
 >
 > - Créer un élément [`Label`](xref:Xamarin.Forms.Label) Xamarin.Forms en XAML.
-> - Modifier l’apparence du `Label`.
+> - Modifier l’apparence de l’élément `Label`.
 > - Présenter du texte dans un seul `Label` qui possède plusieurs formats.
 
 ## <a name="next-steps"></a>Étapes suivantes
@@ -23,6 +23,6 @@ Pour en savoir plus sur les principes fondamentaux de la création d’applicati
 
 ## <a name="related-links"></a>Liens connexes
 
-- [LabelTutorial (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-labeltutorial/)
+- [LabelTutorial (exemple)](/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-labeltutorial/)
 - [Xamarin.Forms Label (guide)](~/xamarin-forms/user-interface/text/label.md)
 - [API Label](xref:Xamarin.Forms.Label)
