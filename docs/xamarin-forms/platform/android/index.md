@@ -10,12 +10,12 @@ ms.date: 12/11/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9e5aeedb7dd51717a9bb987e90dffdcd9b514da0
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: cce3fbf6f80b8a0fddff2ed2b2af027721faf59d
+ms.sourcegitcommit: bfe713c038a0d6c4362da4c3221d7aee9ab03d2b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937941"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91805607"
 ---
 # <a name="android-platform-features"></a>Fonctionnalités de la plateforme Android
 
@@ -35,7 +35,7 @@ Les fonctionnalités spécifiques à la plateforme suivantes sont fournies pour 
 - À l’aide des valeurs de remplissage par défaut et d’ombre des boutons Android. Pour plus d’informations, consultez [remplissage de bouton et ombres sur Android](button-padding-shadow.md).
 - Définition des options de l’éditeur de méthode d’entrée pour le clavier conditionnel d’un [`Entry`](xref:Xamarin.Forms.Entry) . Pour plus d’informations, consultez [options de l’éditeur de méthode d’entrée d’entrée sur Android](entry-ime-options.md).
 - Activation d’une ombre portée sur un `ImageButton` . Pour plus d’informations, consultez la section [ImageButton supprimer les ombres sur Android](imagebutton-drop-shadow.md).
-- Activation du défilement rapide dans un [`ListView`](xref:Xamarin.Forms.ListView) pour plus d’informations, consultez [défilement rapide de ListView sur Android](listview-fast-scrolling.md).
+- Activation du défilement rapide dans un [`ListView`](xref:Xamarin.Forms.ListView) . Pour plus d’informations, consultez [défilement rapide de ListView sur Android](listview-fast-scrolling.md).
 - Contrôle de la transition utilisée lors de l’ouverture d’un `SwipeView` . Pour plus d’informations, consultez [mode de transition par balayage SwipeView](swipeview-swipetransitionmode.md).
 - Contrôler si un [`WebView`](xref:Xamarin.Forms.WebView) peut afficher du contenu mixte. Pour plus d’informations, consultez [vue d’ensemble du contenu mixte sur Android](webview-mixed-content.md).
 - Activation du zoom sur un [`WebView`](xref:Xamarin.Forms.WebView) . Pour plus d’informations, consultez [Zoom WebView sur Android](webview-zoom-controls.md).
@@ -62,7 +62,7 @@ La fonctionnalité spécifique à la plateforme suivante est fournie pour la Xam
 
 ## <a name="material-design-via-appcompat"></a>Conception de matériau via AppCompat
 
-Xamarin.FormsLes projets Android utilisent désormais `FormsAppCompatActivity` la classe de base de leur activité principale. Cette classe utilise les fonctionnalités de **AppCompat** fournies par Android pour implémenter des thèmes de conception de matériau.
+Xamarin.Forms Les projets Android utilisent désormais `FormsAppCompatActivity` la classe de base de leur activité principale. Cette classe utilise les fonctionnalités de **AppCompat** fournies par Android pour implémenter des thèmes de conception de matériau.
 
 Pour ajouter des thèmes de conception de matériau à votre Xamarin.Forms projet Android, suivez les [instructions d’installation pour la prise en charge de AppCompat](appcompat-material-design.md)
 
