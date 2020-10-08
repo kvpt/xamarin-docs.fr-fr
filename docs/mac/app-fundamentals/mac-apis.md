@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/02/2017
-ms.openlocfilehash: 67638a261cd9a6e8c356924d47ea4adb4eae6a80
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: efac76338af710e716decf47635652bf8de74910
+ms.sourcegitcommit: 6d347e1d7641ac1d2b389fb1dc7a6882a08f7c00
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91430995"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91851507"
 ---
 # <a name="macos-apis-for-xamarinmac-developers"></a>API macOS pour les développeurs Xamarin. Mac
 
@@ -33,8 +33,8 @@ La déclaration peut être lue de gauche à droite :
 - Le `-` préfixe signifie qu’il s’agit d’une méthode d’instance (non statique). + signifie qu’il s’agit d’une méthode de classe (statique)
 - `(BOOL)` est le type de retour (bool en C#)
 - `canDragRowsWithIndexes` première partie du nom.
-- `(NSIndexSet *)rowIndexes` est le premier paramètre et son type est. Le premier paramètre est au format : `(Type) pararmName`
-- `atPoint:(NSPoint)mouseDownPoint` est le deuxième paramètre et son type. Chaque paramètre après le premier est le format : `selectorPart:(Type) pararmName`
+- `(NSIndexSet *)rowIndexes` est le premier paramètre et son type est. Le premier paramètre est au format : `(Type) paramName`
+- `atPoint:(NSPoint)mouseDownPoint` est le deuxième paramètre et son type. Chaque paramètre après le premier est le format : `selectorPart:(Type) paramName`
 - Le nom complet de ce sélecteur de messages est : `canDragRowsWithIndexes:atPoint:` . Notez `:` qu’à la fin, il est important.
 - La liaison C# Xamarin. Mac réelle est : `bool CanDragRows (NSIndexSet rowIndexes, PointF mouseDownPoint)`
 
@@ -45,7 +45,7 @@ Cet appel du sélecteur peut être lu de la même façon :
 ```
 
 - L’instance `v` a son `canDragRowsWithIndexes:atPoint` Sélecteur appelé avec deux paramètres, `set` et `point` , passé.
-- En C#, l’appel de la méthode se présente comme suit : `x.CanDragRows (set, point);`
+- En C#, l’appel de la méthode se présente comme suit : `v.CanDragRows (set, point);`
 
 <a name="finding_selector"></a>
 

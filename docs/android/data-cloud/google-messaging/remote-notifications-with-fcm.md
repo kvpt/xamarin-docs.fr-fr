@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 07/31/2018
-ms.openlocfilehash: 702ca70e220d8e4d28a1a2ddc6be40daae052d58
-ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
+ms.openlocfilehash: 75edc03706908df365bfda05229a8081ef50a4ac
+ms.sourcegitcommit: db5173f26edbb94b0ec60ab9a708fa04478480f6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91456049"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91853288"
 ---
 # <a name="remote-notifications-with-firebase-cloud-messaging"></a>Notifications à distance avec Firebase Cloud Messaging
 
@@ -476,7 +476,7 @@ La chaîne longue étiquetée avec **Token** est le jeton d’ID d’instance qu
 Log.Debug(TAG, "google app id: " + GetString(Resource.String.google_app_id));
 ```
 
-La `google_app_id` valeur consignée dans la fenêtre sortie doit correspondre à la `mobilesdk_app_id` valeur enregistrée dans **google-services.js**.
+La `google_app_id` valeur consignée dans la fenêtre sortie doit correspondre à la `mobilesdk_app_id` valeur enregistrée dans **google-services.js**. `Resource.String.google_app_id`Est généré par MSBuild lors du traitement **degoogle-services.jssur**. 
 
 ### <a name="send-a-message"></a>Envoyer un message
 
@@ -764,7 +764,7 @@ unSubscribeButton.Click += delegate {
 };
 ```
 
-Pour annuler complètement l’inscription de l’appareil dans FCM, supprimez l’ID d’instance en appelant la méthode [DeleteInstanceId](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId.html#deleteInstanceId%28%29) sur la classe [FirebaseInstanceId](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId) . Par exemple :
+Pour annuler complètement l’inscription de l’appareil dans FCM, supprimez l’ID d’instance en appelant la méthode [DeleteInstanceId](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId.html#deleteInstanceId%28%29) sur la classe [FirebaseInstanceId](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId) . Exemple :
 
 ```csharp
 FirebaseInstanceId.Instance.DeleteInstanceId();
@@ -772,7 +772,7 @@ FirebaseInstanceId.Instance.DeleteInstanceId();
 
 Cet appel de méthode supprime l’ID d’instance et les données qui lui sont associées. Par conséquent, l’envoi périodique de données FCM à l’appareil est interrompu.
 
-## <a name="troubleshooting"></a>Résolution des problèmes
+## <a name="troubleshooting"></a>Dépannage
 
 Les rubriques suivantes décrivent les problèmes et les solutions de contournement qui peuvent survenir lors de l’utilisation de Firebase Cloud Messaging avec Xamarin. Android.
 

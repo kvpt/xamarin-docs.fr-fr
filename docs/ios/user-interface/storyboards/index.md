@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: b70a4693f356fdf83ca2f7fee9615855a5569712
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 65cc67516442ea2602812a3b1f6ff4f0c71abb05
+ms.sourcegitcommit: 6d347e1d7641ac1d2b389fb1dc7a6882a08f7c00
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91437019"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91851546"
 ---
 # <a name="introduction-to-storyboards-in-xamarinios"></a>Présentation des storyboards dans Xamarin. iOS
 
@@ -78,7 +78,7 @@ Il existe différents types de transitions, chacun donnant le contrôle de la pr
 
  iOS 8 a introduit des [classes de taille](~/ios/user-interface/storyboards/unified-storyboards.md#size-classes) pour permettre à un fichier de Storyboard iOS de fonctionner avec toutes les tailles d’écran disponibles, ce qui permet aux développeurs de créer une interface utilisateur pour tous les appareils iOS. Par défaut, toutes les nouvelles applications Xamarin. iOS utilisent des classes de taille. Pour utiliser les classes de taille d’un ancien projet, reportez-vous au guide [Présentation des storyboards unifiés](~/ios/user-interface/storyboards/unified-storyboards.md) .
 
-Toute application utilisant des classes de taille utilisera également la nouvelle [*SEGUES adaptative*](~/ios/user-interface/storyboards/unified-storyboards.md). Lorsque vous utilisez des classes de taille, n’oubliez pas que nous ne spécifions pas de météo directement sur un iPhone ou un iPad. En d’autres termes, nous créons une interface utilisateur qui aura toujours le même aspect, quelle que soit la quantité réelle d’espace de travail. Les SEGUES adaptatifs fonctionnent en déterminant l’environnement et en déterminant la meilleure façon de présenter le contenu. Les SEGUES adaptatifs sont affichés ci-dessous :
+Toute application utilisant des classes de taille utilisera également la nouvelle [*SEGUES adaptative*](~/ios/user-interface/storyboards/unified-storyboards.md). Lorsque vous utilisez des classes de taille, n’oubliez pas que nous ne spécifions pas directement si nous utilisons un iPhone ou un iPad. En d’autres termes, nous créons une interface utilisateur qui aura toujours le même aspect, quelle que soit la quantité réelle d’espace de travail. Les SEGUES adaptatifs fonctionnent en déterminant l’environnement et en déterminant la meilleure façon de présenter le contenu. Les SEGUES adaptatifs sont affichés ci-dessous :
 
 [![Liste déroulante SEGUES adaptatif](images/adaptivesegue.png)](images/adaptivesegue.png#lightbox)
 
@@ -326,7 +326,7 @@ Avant de commencer, suivez les étapes 1 à 8 ci-dessus. Dans ces étapes, nous 
 
     [![Lignes de centre](images/passwordvc.png)](images/passwordvc.png#lightbox)
 
-2. Créez un segue entre le bouton atteindre le rose et le contrôleur d’affichage en faisant glisser le pointeur de la souris du *PinkButton* vers le *PinkViewController*, puis en sélectionnant **Push** sur souris.
+2. Créez un segue entre le bouton atteindre le rose et le contrôleur d’affichage en Ctrl-Dragging du *PinkButton* au *PinkViewController*, puis en sélectionnant **pousser** au niveau de la souris.
 
 3. Cliquez sur segue et donnez-lui l' *identificateur* `SegueToPink` :
 
