@@ -6,31 +6,31 @@ ms.assetid: 9C0A932C-7601-4357-B3F7-62ABAC835019
 author: davidortinau
 ms.author: daortin
 ms.date: 10/11/2017
-ms.openlocfilehash: 4d6ab6cf48c5c365a4d8d05ef108a4d3a5d16134
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 7fe8c563b78459959a5c8b50883ed539040f7a7b
+ms.sourcegitcommit: 37f5b0380df75da6e2b09ef39a8e71deb50bfe0e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016191"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91943595"
 ---
 # <a name="creating-bindings-with-objective-sharpie"></a>Création de liaisons avec une netteté objective
 
 _Cette section fournit une introduction à l’outil de ligne de commande Xamarin, utilisé pour automatiser le processus de création d’une liaison à une bibliothèque objective-C._
 
-- [Vue d’ensemble](#overview) & [historique](#history)
-- [Bien démarrer](get-started.md)
+- [Vue d’ensemble](#overview)  &  [Historique](#history)
+- [Prise en main](get-started.md)
 - [Outils et commandes](tools.md)
-- [Fonctionnalités](platform/index.md)
+- [Caractéristiques](platform/index.md)
 - [Exemples](examples/index.md)
 - [Exécuter la procédure pas à pas](~/ios/platform/binding-objective-c/walkthrough.md)
 - [Historique des versions](releases.md)
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d’ensemble
 
 La finesse d’objectif est un outil en ligne de commande qui permet de démarrer le premier passage d’une liaison.
 Il fonctionne en analysant les fichiers d’en-tête d’une bibliothèque native pour mapper l’API publique dans la [définition de liaison](~/cross-platform/macios/binding/objective-c-libraries.md#The_API_definition_file) (un processus qui a été précédemment effectué manuellement).
 
-Objective Sharp utilise des fichiers d’en-tête d’analyse Clang, de sorte que la liaison est aussi exacte et complète que possible. Cela peut réduire de manière considérable le temps et les efforts nécessaires pour produire une liaison de qualité.
+Objective Sharp utilise Clang pour analyser les fichiers d’en-tête. la liaison est donc aussi exacte et minutieuse que possible. Cela peut réduire de manière considérable le temps et les efforts nécessaires pour produire une liaison de qualité.
 
 > [!IMPORTANT]
 > La finesse d’objectif est un outil destiné aux développeurs Xamarin expérimentés ayant une connaissance approfondie de Objective-C (et de l’extension C). Avant de tenter de lier une bibliothèque objective-C, vous devez avoir une connaissance approfondie de la façon de générer la bibliothèque native sur la ligne de commande (et de bien comprendre le fonctionnement de la bibliothèque native).
@@ -48,4 +48,4 @@ Toutefois, objective Sharp est un outil très avancé qui nécessite une connais
 - [Liaison de bibliothèques Objective-C](~/cross-platform/macios/binding/objective-c-libraries.md)
 - [Détails de la liaison](~/cross-platform/macios/binding/overview.md)
 - [Guide de référence des types de liaison](~/cross-platform/macios/binding/binding-types-reference.md)
-- [Xamarin pour les développeurs Objective-C](~/ios/get-started/objective-c-developers/index.md)
+- [Xamarin pour les développeurs objective-C](~/ios/get-started/objective-c-developers/index.md)
