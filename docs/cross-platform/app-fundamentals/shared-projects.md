@@ -6,12 +6,12 @@ ms.assetid: 191c71fb-44a4-4e6c-af4b-7b1107dce6af
 author: davidortinau
 ms.author: daortin
 ms.date: 07/18/2018
-ms.openlocfilehash: 1a71b84d1068fef1730196bafb0f0d7e2a948c5c
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: bd8314e0f84dd74477782a1cfdcb6b91953ecdcd
+ms.sourcegitcommit: 827daa78c090bf79a1b55da45bb8012a1723b720
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936914"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91997517"
 ---
 # <a name="shared-projects-code-sharing"></a>Partage de code des projets partagés
 
@@ -59,7 +59,7 @@ L’ajout d’une référence à un projet partagé s’effectue de la même fa�
 
 ![Référence de projet au projet partagé](shared-projects-images/xs-reference.png)
 
-Une fois que le projet partagé est référencé par une autre bibliothèque ou application, vous pouvez générer la solution et afficher toutes les erreurs dans le code. Quand le projet partagé est référencé par _deux ou plusieurs_ autres projets, un menu s’affiche dans l’angle supérieur gauche de l’éditeur de code source qui montre le choix des projets qui font référence à ce fichier.
+Une fois que le projet partagé est référencé par une autre bibliothèque ou application, vous pouvez générer la solution et afficher toutes les erreurs dans le code. Quand le projet partagé est référencé par _deux ou plusieurs_ autres projets, un menu s’affiche dans l’angle supérieur gauche de l’éditeur de code source qui indique les projets qui font référence à ce fichier.
 
 ## <a name="shared-project-options"></a>Options de projet partagé
 
