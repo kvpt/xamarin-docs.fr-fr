@@ -10,12 +10,12 @@ ms.date: 07/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 42f89f09bd84127fd19bc3ab64794bdac7f145d7
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 257962516b8a183e63c49b22bc2be108364d9425
+ms.sourcegitcommit: e7d6f8bb074c08d87f7507ad5f1377cfacefa32a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91561623"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92041884"
 ---
 # <a name="no-locxamarinforms-editor"></a>Xamarin.Forms Éditeur
 
@@ -133,7 +133,7 @@ En conséquence, les caractères du texte affiché par le sont espacés d' [`Edi
 
 ## <a name="auto-size-an-editor"></a>Redimensionner automatiquement un éditeur
 
-Un [`Editor`](xref:Xamarin.Forms.Editor) peut être configuré pour redimensionner automatiquement son contenu en affectant à la [`Editor.AutoSize`](xref:Xamarin.Forms.Editor.AutoSize) propriété la [`TextChanges`](xref:Xamarin.Forms.EditorAutoSizeOption.TextChanges) valeur, qui est une valeur de l' [`EditoAutoSizeOption`](xref:Xamarin.Forms.EditorAutoSizeOption) énumération. Cette énumération a deux valeurs :
+Un [`Editor`](xref:Xamarin.Forms.Editor) peut être configuré pour redimensionner automatiquement son contenu en affectant à la [`Editor.AutoSize`](xref:Xamarin.Forms.Editor.AutoSize) propriété la [`TextChanges`](xref:Xamarin.Forms.EditorAutoSizeOption.TextChanges) valeur, qui est une valeur de l' [`EditorAutoSizeOption`](xref:Xamarin.Forms.EditorAutoSizeOption) énumération. Cette énumération a deux valeurs :
 
 - [`Disabled`](xref:Xamarin.Forms.EditorAutoSizeOption.Disabled) indique que le redimensionnement automatique est désactivé et qu’il s’agit de la valeur par défaut.
 - [`TextChanges`](xref:Xamarin.Forms.EditorAutoSizeOption.TextChanges) indique que le redimensionnement automatique est activé.
@@ -304,7 +304,7 @@ Assurez-vous que les couleurs de texte et d’arrière-plan que vous choisissez 
 > [!NOTE]
 > La [`VisualElement`](xref:Xamarin.Forms.VisualElement) classe, dont [`Entry`](xref:Xamarin.Forms.Entry) hérite, possède également les [`Focused`](xref:Xamarin.Forms.VisualElement.Focused) [`Unfocused`](xref:Xamarin.Forms.VisualElement.Unfocused) événements et.
 
-### <a name="completed"></a>Effectué
+### <a name="completed"></a>Completed
 
 L' `Completed` événement est utilisé pour réagir à l’achèvement d’une interaction avec un `Editor` . `Completed` est déclenché lorsque l’utilisateur termine l’entrée par un champ en entrant la touche retour sur le clavier (ou en appuyant sur la touche Tab sur UWP). Le gestionnaire de l’événement est un gestionnaire d’événements générique, qui prend l’expéditeur et `EventArgs` :
 
