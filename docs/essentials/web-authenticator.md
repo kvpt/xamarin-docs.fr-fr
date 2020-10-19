@@ -8,12 +8,12 @@ ms.date: 03/26/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6f67ca1ff260c342de8686f24dffe396c591c171
-ms.sourcegitcommit: dac04cec56290fb19034f3e135708f6966a8f035
+ms.openlocfilehash: 8f36dd37d670da5245fbc649a8235d4fb9c327c6
+ms.sourcegitcommit: 31bdc3809b1b71865cdc596f0a67fa45a71d0838
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/19/2020
-ms.locfileid: "92169954"
+ms.locfileid: "92171090"
 ---
 # <a name="no-locxamarinessentials-web-authenticator"></a>Xamarin.Essentials: Web Authenticator
 
@@ -36,7 +36,7 @@ La meilleure pratique consiste à utiliser un serveur principal Web comme couche
 > [!IMPORTANT]
 > Nous vous recommandons vivement d’utiliser des modèles et des bibliothèques d’authentification mobiles plus anciennes qui n’exploitent pas un backend Web dans le workflow d’authentification en raison de leur manque de sécurité inhérent au stockage des secrets des clients.
 
-## <a name="get-started"></a>Bien démarrer
+## <a name="get-started"></a>Prise en main
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -95,7 +95,7 @@ Sur iOS, vous devez ajouter le modèle d’URI de rappel de votre application à
 > [!NOTE]
 > Vous devez envisager d’utiliser [des liens d’application universelle](https://developer.apple.com/documentation/uikit/inter-process_communication/allowing_apps_and_websites_to_link_to_your_content) pour inscrire l’URI de rappel de votre application comme meilleure pratique.
 
-Vous devrez également remplacer la `AppDelegate` `OpenUrl` méthode de pour appeler Essentials :
+Vous devez également substituer les `AppDelegate` `OpenUrl` `ContinueUserActivity` méthodes et pour appeler Essentials :
 
 ```csharp
 public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
@@ -104,6 +104,13 @@ public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
         return true;
 
     return base.OpenUrl(app, url, options);
+}
+
+public override bool ContinueUserActivity(UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)
+{
+    if (Xamarin.Essentials.Platform.ContinueUserActivity(application, userActivity, completionHandler))
+        return true;
+    return base.ContinueUserActivity(application, userActivity, completionHandler);
 }
 ```
 
