@@ -8,12 +8,12 @@ ms.date: 03/26/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c4437f05eddd6885f88fc57ddc108f4fc9f4376d
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 6f67ca1ff260c342de8686f24dffe396c591c171
+ms.sourcegitcommit: dac04cec56290fb19034f3e135708f6966a8f035
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91433530"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92169954"
 ---
 # <a name="no-locxamarinessentials-web-authenticator"></a>Xamarin.Essentials: Web Authenticator
 
@@ -74,7 +74,23 @@ protected override void OnResume()
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
-Sur iOS, vous devez ajouter le modèle d’URI de rappel de votre application à votre fichier info. plist.
+Sur iOS, vous devez ajouter le modèle d’URI de rappel de votre application à votre fichier info. plist, par exemple :
+
+```xml
+<key>CFBundleURLTypes</key>
+<array>
+    <dict>
+        <key>CFBundleURLName</key>
+        <string>xamarinessentials</string>
+        <key>CFBundleURLSchemes</key>
+        <array>
+            <string>xamarinessentials</string>
+        </array>
+        <key>CFBundleTypeRole</key>
+        <string>Editor</string>
+    </dict>
+</array>
+```
 
 > [!NOTE]
 > Vous devez envisager d’utiliser [des liens d’application universelle](https://developer.apple.com/documentation/uikit/inter-process_communication/allowing_apps_and_websites_to_link_to_your_content) pour inscrire l’URI de rappel de votre application comme meilleure pratique.
@@ -195,14 +211,18 @@ Il est possible d’utiliser l' `WebAuthenticator` API avec n’importe quel ser
 3. Utilisez `.AddCookie()` dans votre `.AddAuthentication()` appel Startup.cs.
 4. Tous les fournisseurs doivent être configurés avec `.SaveTokens = true;` .
 
+
+«» services CSharp. AddAuthentication (o => {o. DefaultScheme = CookieAuthenticationDefaults. AuthenticationScheme ;}). AddCookie() . AddFacebook (FB => {FB. AppId = configuration ["FacebookAppId"]; disposez. AppSecret = configuration ["FacebookAppSecret"]; disposez. SaveTokens = true ; });
+```
+
 > [!TIP]
-> Si vous souhaitez inclure la connexion Apple, vous pouvez utiliser le `AspNet.Security.OAuth.Apple` package NuGet.  Vous pouvez consulter l' [exemple complet Startup.cs](https://github.com/xamarin/Essentials/blob/develop/Samples/Sample.Server.WebAuthenticator/Startup.cs#L32-L60) dans le référentiel GitHub Essentials.
+> If you'd like to include Apple Sign In, you can use the `AspNet.Security.OAuth.Apple` NuGet package.  You can view the full [Startup.cs sample](https://github.com/xamarin/Essentials/blob/develop/Samples/Sample.Server.WebAuthenticator/Startup.cs#L32-L60) in the Essentials GitHub repository.
 
-### <a name="add-a-custom-mobile-auth-controller"></a>Ajouter un contrôleur d’authentification mobile personnalisé
+### Add a custom mobile auth controller
 
-Avec un workflow d’authentification mobile, il est généralement préférable d’initialiser le Flow directement à un fournisseur que l’utilisateur a choisi (par exemple, en cliquant sur un bouton Microsoft sur l’écran de connexion de l’application).  Il est également important de pouvoir retourner les informations pertinentes à votre application au niveau d’un URI de rappel spécifique pour mettre fin au processus d’authentification.
+With a mobile authentication flow it is usually desirable to initiate the flow directly to a provider that the user has chosen (e.g. by clicking a "Microsoft" button on the sign in screen of the app).  It is also important to be able to return relevant information to your app at a specific callback URI to end the authentication flow.
 
-Pour ce faire, utilisez un contrôleur d’API personnalisé :
+To achieve this, use a custom API Controller:
 
 ```csharp
 [Route("mobileauth")]

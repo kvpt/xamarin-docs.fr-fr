@@ -9,18 +9,18 @@ ms.date: 03/13/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 4a671be5f65e0e35c89f4acec17f406a214b9fa9
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 09e39f5cc99e5556274fb8d55db7f8b81970f8e1
+ms.sourcegitcommit: dac04cec56290fb19034f3e135708f6966a8f035
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91434620"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92169930"
 ---
 # <a name="no-locxamarinessentials-geolocation"></a>Xamarin.Essentials: Géolocalisation
 
 La classe **Geolocation** fournit des API permettant de récupérer les coordonnées de géolocalisation de l’appareil.
 
-## <a name="get-started"></a>Prise en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -120,31 +120,44 @@ L’altitude n’est pas toujours disponible. Dans ce cas, la propriété `Altit
 Pour interroger les coordonnées relatives à la [localisation](xref:Xamarin.Essentials.Location) de l’appareil actuel, vous pouvez utiliser `GetLocationAsync`. Il est préférable de passer un `GeolocationRequest` et un `CancellationToken` complets, car il peut s’écouler un certain temps avant d’obtenir la localisation de l’appareil.
 
 ```csharp
-try
-{
-    var request = new GeolocationRequest(GeolocationAccuracy.Medium);
-    var location = await Geolocation.GetLocationAsync(request);
+CancellationTokenSource cts;
 
-    if (location != null)
+async Task GetCurrentLocation()
+{
+    try
     {
-        Console.WriteLine($"Latitude: {location.Latitude}, Longitude: {location.Longitude}, Altitude: {location.Altitude}");
+        var request = new GeolocationRequest(GeolocationAccuracy.Medium, TimeSpan.FromSeconds(10));
+        cts = new CancellationTokenSource();
+        var location = await Geolocation.GetLocationAsync(request, cts.Token);
+
+        if (location != null)
+        {
+            Console.WriteLine($"Latitude: {location.Latitude}, Longitude: {location.Longitude}, Altitude: {location.Altitude}");
+        }
+    }
+    catch (FeatureNotSupportedException fnsEx)
+    {
+        // Handle not supported on device exception
+    }
+    catch (FeatureNotEnabledException fneEx)
+    {
+        // Handle not enabled on device exception
+    }
+    catch (PermissionException pEx)
+    {
+        // Handle permission exception
+    }
+    catch (Exception ex)
+    {
+        // Unable to get location
     }
 }
-catch (FeatureNotSupportedException fnsEx)
+
+protected override void OnDisappearing()
 {
-    // Handle not supported on device exception
-}
-catch (FeatureNotEnabledException fneEx)
-{
-    // Handle not enabled on device exception
-}
-catch (PermissionException pEx)
-{
-    // Handle permission exception
-}
-catch (Exception ex)
-{
-    // Unable to get location
+    if (cts != null && !cts.IsCancellationRequested)
+        cts.Cancel();
+    base.OnDisappearing();
 }
 ```
 
@@ -176,7 +189,7 @@ Le tableau suivant indique la précision en fonction de la plateforme :
 | iOS | 100 |
 | UWP | 30 - 500 |
 
-### <a name="high"></a>Importante
+### <a name="high"></a>Élevé
 
 | Plateforme | Distance (en mètres) |
 | --- | --- |
