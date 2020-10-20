@@ -8,12 +8,12 @@ ms.date: 03/26/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8f36dd37d670da5245fbc649a8235d4fb9c327c6
-ms.sourcegitcommit: 31bdc3809b1b71865cdc596f0a67fa45a71d0838
+ms.openlocfilehash: f373b8c249d4dba11db3b8445648afe2c61d273f
+ms.sourcegitcommit: eda6acc7471acc2f95df498e747376006e3d3f2a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92171090"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92214821"
 ---
 # <a name="no-locxamarinessentials-web-authenticator"></a>Xamarin.Essentials: Web Authenticator
 
@@ -213,7 +213,7 @@ var accessToken = r?.AccessToken;
 
 Il est possible d’utiliser l' `WebAuthenticator` API avec n’importe quel service de back end Web.  Pour l’utiliser avec une application ASP.NET Core, vous devez d’abord configurer l’application Web en procédant comme suit :
 
-1. Configurez les [fournisseurs d’authentification sociale externes](/aspnet/core/security/authentication/social/?tabs=visual-studio&view=aspnetcore-3.1) souhaités dans une application Web ASP.net core.
+1. Configurez les [fournisseurs d’authentification sociale externes](/aspnet/core/security/authentication/social/?tabs=visual-studio) souhaités dans une application Web ASP.net core.
 2. Définissez le schéma d’authentification par défaut sur `CookieAuthenticationDefaults.AuthenticationScheme` dans votre `.AddAuthentication()` appel.
 3. Utilisez `.AddCookie()` dans votre `.AddAuthentication()` appel Startup.cs.
 4. Tous les fournisseurs doivent être configurés avec `.SaveTokens = true;` .
@@ -255,6 +255,9 @@ L’objectif de ce contrôleur est de déduire le schéma (fournisseur) demandé
 Parfois, vous pouvez retourner des données telles que le fournisseur `access_token` à l’application que vous pouvez effectuer via les paramètres de requête de l’URI de rappel. Vous pouvez également créer votre propre identité sur votre serveur et transmettre votre propre jeton à l’application. C’est à vous de savoir comment faire cette partie !
 
 Consultez l' [exemple de contrôleur complet](https://github.com/xamarin/Essentials/blob/develop/Samples/Sample.Server.WebAuthenticator/Controllers/MobileAuthController.cs) dans le référentiel Essentials.
+
+> [!NOTE]
+> L’exemple ci-dessus montre comment retourner le jeton d’accès à partir du fournisseur d’authentification tierce (IE : OAuth). Pour obtenir un jeton que vous pouvez utiliser pour autoriser des requêtes Web sur le backend Web, vous devez créer votre propre jeton dans votre application Web et le retourner à la place.  La [vue d’ensemble de l’authentification ASP.net Core](/aspnet/core/security/authentication) contient plus d’informations sur les scénarios d’authentification avancés dans ASP.net core.
 
 -----
 ## <a name="api"></a>API
