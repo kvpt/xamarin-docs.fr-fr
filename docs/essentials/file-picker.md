@@ -8,12 +8,12 @@ ms.date: 09/22/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b3ee20de5534329f9e4686c908fe923ba94f3fff
-ms.sourcegitcommit: 744f977b0595f489c592e29c8a3ba548fde02b6f
+ms.openlocfilehash: e997ae3137110e18df9eed90ef07bfa2703e8088
+ms.sourcegitcommit: 58247fe066ad271ee43c8967ac3301fdab6ca2d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91414769"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92629598"
 ---
 # <a name="no-locxamarinessentials-file-picker"></a>Xamarin.Essentials: Sélecteur de fichiers
 
@@ -45,7 +45,7 @@ Ouvrez le fichier **AndroidManifest.xml** sous le dossier **Propriétés** , pui
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 ```
 
-Vous pouvez également cliquer avec le bouton droit sur le projet Android, et ouvrir les propriétés du projet. Sous le **manifeste Android** , recherchez la zone **autorisations requises :** , puis cochez cette autorisation. Cela entraîne la mise à jour automatique du fichier **AndroidManifest.xml**.
+Vous pouvez également cliquer avec le bouton droit sur le projet Android, et ouvrir les propriétés du projet. Sous le **manifeste Android** , recherchez la zone **autorisations requises :** , puis cochez cette autorisation. Cela entraîne la mise à jour automatique du fichier **AndroidManifest.xml** .
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
@@ -56,6 +56,9 @@ Aucune configuration supplémentaire n’est requise.
 Aucune configuration supplémentaire n’est requise.
 
 -----
+
+> [!TIP]
+> Toutes les méthodes doivent être appelées sur le thread d’interface utilisateur, car les vérifications et les demandes d’autorisations sont gérées automatiquement par Xamarin.Essentials .
 
 ## <a name="pick-file"></a>Sélectionner un fichier
 

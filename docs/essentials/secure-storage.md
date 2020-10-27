@@ -9,12 +9,12 @@ ms.custom: video
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f4bb252448abe3c2987def143634d15b5cae194c
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 4a5190ef3e9f61fdb6d08f9cd68202e55a4faead
+ms.sourcegitcommit: 58247fe066ad271ee43c8967ac3301fdab6ca2d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91433498"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92629584"
 ---
 # <a name="no-locxamarinessentials-secure-storage"></a>Xamarin.Essentials: Stockage sécurisé
 
@@ -24,7 +24,7 @@ La classe **SecureStorage** permet de stocker en toute sécurité des paires cl�
 
 [!include[](~/essentials/includes/get-started.md)]
 
-Pour accéder à la fonctionnalité **SecureStorage**, la configuration requise dépend de la plateforme :
+Pour accéder à la fonctionnalité **SecureStorage** , la configuration requise dépend de la plateforme :
 
 # <a name="android"></a>[Android](#tab/android)
 
@@ -54,7 +54,7 @@ Il est possible de configurer la sauvegarde automatique de façon à ce que la s
     </application>
     ```
 
-2. Créez un fichier XML nommé **auto_backup_rules.xml** dans le répertoire **ressources/xml** à l’aide de l’action de génération d’**AndroidResource**. Ensuite, définissez le contenu suivant, qui comporte toutes les préférences partagées à l’exception de `SecureStorage` :
+2. Créez un fichier XML nommé **auto_backup_rules.xml** dans le répertoire **ressources/xml** à l’aide de l’action de génération d’ **AndroidResource** . Ensuite, définissez le contenu suivant, qui comporte toutes les préférences partagées à l’exception de `SecureStorage` :
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -66,11 +66,11 @@ Il est possible de configurer la sauvegarde automatique de façon à ce que la s
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
-Si le travail de développement s’effectue sur le **simulateur iOS**, activez le droit **Keychain** et ajoutez un groupe d’accès au trousseau pour l’identificateur de bundle de l’application.
+Si le travail de développement s’effectue sur le **simulateur iOS** , activez le droit **Keychain** et ajoutez un groupe d’accès au trousseau pour l’identificateur de bundle de l’application.
 
 Ouvrez **Entitlements.plist** dans le projet iOS, repérez le droit **Keychain** et activez-le. L’identificateur de l’application est automatiquement ajouté comme groupe.
 
-Dans les propriétés du projet, sous **Signature du bundle iOS**, définissez le paramètre **Droits personnalisés** sur **Entitlements.plist**.
+Dans les propriétés du projet, sous **Signature du bundle iOS** , définissez le paramètre **Droits personnalisés** sur **Entitlements.plist** .
 
 > [!TIP]
 > En cas de déploiement sur un appareil iOS, ce droit n’est pas obligatoire et doit être supprimé.
@@ -130,11 +130,14 @@ Pour supprimer toutes les clés, appelez :
 SecureStorage.RemoveAll();
 ```
 
+> [!TIP]
+> Il est possible qu’une exception soit levée lors de l’appel `GetAsync` de ou de `SetAsync` . Cela peut être dû à un appareil qui ne prend pas en charge le stockage sécurisé, les clés de chiffrement modifiées ou la corruption de données. Il est préférable de gérer cela en supprimant et en rajoutant le paramètre dans la mesure du possible.
+
 ## <a name="platform-implementation-specifics"></a>Caractéristiques de mise en œuvre de la plateforme
 
 # <a name="android"></a>[Android](#tab/android)
 
-Le [magasin de clés Android](https://developer.android.com/training/articles/keystore.html) est utilisé pour stocker la clé de chiffrement permettant de chiffrer la valeur avant de l’enregistrer dans les [Préférences partagées](https://developer.android.com/training/data-storage/shared-preferences.html) avec le nom de fichier **[VOTRE-ID-DE-PACKAGE-D-APPLICATION].xamarinessentials**.  La clé (qui n’est pas une clé de chiffrement, mais la _clé_ de la _valeur_) utilisée dans le fichier de préférences partagées est un _hachage MD5_ de la clé transmise aux API`SecureStorage`.
+Le [magasin de clés Android](https://developer.android.com/training/articles/keystore.html) est utilisé pour stocker la clé de chiffrement permettant de chiffrer la valeur avant de l’enregistrer dans les [Préférences partagées](https://developer.android.com/training/data-storage/shared-preferences.html) avec le nom de fichier **[VOTRE-ID-DE-PACKAGE-D-APPLICATION].xamarinessentials** .  La clé (qui n’est pas une clé de chiffrement, mais la _clé_ de la _valeur_ ) utilisée dans le fichier de préférences partagées est un _hachage MD5_ de la clé transmise aux API`SecureStorage`.
 
 **Niveau d’API 23 et plus**
 
@@ -142,13 +145,13 @@ Dans les niveaux d’API récents, une clé **AES** est récupérée auprès du 
 
 **Niveau d’API 22 et moins**
 
-Dans les anciens niveaux d’API, le magasin de clés Android ne prend en charge que le stockage de clés **RSA**, utilisées avec un chiffrement **ECB/RSA/PKCS1Padding** pour chiffrer une clé **AES** (générée au hasard à l’exécution) et stockées dans le fichier de préférences partagées sous la clé _SecureStorageKey_, si elle n’a pas déjà été générée.
+Dans les anciens niveaux d’API, le magasin de clés Android ne prend en charge que le stockage de clés **RSA** , utilisées avec un chiffrement **ECB/RSA/PKCS1Padding** pour chiffrer une clé **AES** (générée au hasard à l’exécution) et stockées dans le fichier de préférences partagées sous la clé _SecureStorageKey_ , si elle n’a pas déjà été générée.
 
 **SecureStorage** utilise l’API [Préférences](preferences.md) et suit la persistance des données décrite dans la documentation [Préférences](preferences.md#persistence). Si un appareil est mis à niveau du niveau d’API 22 (ou moins) au niveau d’API 23 (ou plus), ce type de chiffrement sera toujours utilisé, sauf si l’application est désinstallée ou si **RemoveAll** est appelé.
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
-[KeyChain](xref:Security.SecKeyChain) permet de stocker en toute sécurité des valeurs sur des appareils iOS.  `SecRecord`, utilisé pour stocker la valeur, a une valeur `Service` définie sur **[VOTRE-ID-DE-BUNDLE-D-APPLICATIONS].xamarinessentials**.
+[KeyChain](xref:Security.SecKeyChain) permet de stocker en toute sécurité des valeurs sur des appareils iOS.  `SecRecord`, utilisé pour stocker la valeur, a une valeur `Service` définie sur **[VOTRE-ID-DE-BUNDLE-D-APPLICATIONS].xamarinessentials** .
 
 Dans certains cas, les données KeyChain sont synchronisées avec iCloud, et il se peut que la désinstallation de l’application ne retire pas les valeurs sécurisées d’iCloud et autres appareils de l’utilisateur.
 
@@ -156,7 +159,7 @@ Dans certains cas, les données KeyChain sont synchronisées avec iCloud, et il 
 
 [DataProtectionProvider](/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider) permet de chiffrer de façon sécurisée des valeurs sur des appareils UWP.
 
-Ces valeurs chiffrées sont stockées dans `ApplicationData.Current.LocalSettings`, à l’intérieur d’un conteneur, avec le nom **[VOTRE-ID-D-APPLICATION].xamarinessentials**.
+Ces valeurs chiffrées sont stockées dans `ApplicationData.Current.LocalSettings`, à l’intérieur d’un conteneur, avec le nom **[VOTRE-ID-D-APPLICATION].xamarinessentials** .
 
 **SecureStorage** utilise l’API [Préférences](preferences.md) et suit la persistance des données décrite dans la documentation [Préférences](preferences.md#persistence). Elle utilise également `LocalSettings` qui a une restriction selon laquelle le nom de chaque paramètre peut comporter 255 caractères au maximum. Chaque paramètre peut avoir une taille maximale de 8 Ko et chaque paramètre composite peut comporter jusqu’à 64 Ko d’octets.
 

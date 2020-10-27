@@ -8,12 +8,12 @@ ms.date: 09/22/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7c4299abf9c461a16f67ccf3d8caf03d5e568f13
-ms.sourcegitcommit: 827daa78c090bf79a1b55da45bb8012a1723b720
+ms.openlocfilehash: 9a988803b5e18ab91ff65a2b4976158458f68274
+ms.sourcegitcommit: 58247fe066ad271ee43c8967ac3301fdab6ca2d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91997503"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92629559"
 ---
 # <a name="no-locxamarinessentials-media-picker"></a>Xamarin.Essentials: Sélecteur de média
 
@@ -56,7 +56,7 @@ Ouvrez le fichier **AndroidManifest.xml** sous le dossier **Propriétés** , pui
 <uses-permission android:name="android.permission.CAMERA" />
 ```
 
-Vous pouvez également cliquer avec le bouton droit sur le projet Android, et ouvrir les propriétés du projet. Sous le **manifeste Android** , recherchez la zone **autorisations requises :** , puis vérifiez ces autorisations. Cela entraîne la mise à jour automatique du fichier **AndroidManifest.xml**.
+Vous pouvez également cliquer avec le bouton droit sur le projet Android, et ouvrir les propriétés du projet. Sous le **manifeste Android** , recherchez la zone **autorisations requises :** , puis vérifiez ces autorisations. Cela entraîne la mise à jour automatique du fichier **AndroidManifest.xml** .
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
@@ -91,6 +91,9 @@ La `MediaPicker` classe possède les méthodes suivantes qui retournent toutes u
 * `CaptureVideoAsync`: Ouvre l’appareil photo pour prendre une vidéo.
 
 Chaque méthode accepte éventuellement un `MediaPickerOptions` paramètre qui autorise la définition de `Title` sur certains systèmes d’exploitation qui sont affichés aux utilisateurs.
+
+> [!TIP]
+> Toutes les méthodes doivent être appelées sur le thread d’interface utilisateur, car les vérifications et les demandes d’autorisations sont gérées automatiquement par Xamarin.Essentials .
 
 ## <a name="general-usage"></a>Utilisation générale
 

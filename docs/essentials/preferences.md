@@ -9,18 +9,18 @@ ms.custom: video
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 60a5fbaa8386d0ecdc5d205b3262e05406cec4a6
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 07bfcabc7ffef20bee43531bfab3e78155beb9a9
+ms.sourcegitcommit: 58247fe066ad271ee43c8967ac3301fdab6ca2d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556241"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92629572"
 ---
 # <a name="no-locxamarinessentials-preferences"></a>Xamarin.Essentials: Préférences
 
 La classe **Preferences** permet de stocker les préférences d’application dans un magasin de clés/valeurs.
 
-## <a name="get-started"></a>Prise en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -62,11 +62,12 @@ Pour supprimer toutes les préférences :
 Preferences.Clear();
 ```
 
-Les méthodes ci-dessus prennent également un facultatif `sharedName` qui peut être utilisé pour créer des conteneurs supplémentaires pour les préférences. Lisez les spécificités d’implémentation en fonction de la plateforme, ci-dessous.
+> [!TIP]
+> Les méthodes ci-dessus prennent un `string` paramètre facultatif appelé `sharedName` . Ce paramètre est utilisé pour créer des conteneurs supplémentaires pour les préférences qui sont utiles dans certains cas d’usage. Un cas d’utilisation est lorsque votre application a besoin de partager des préférences entre les extensions ou une application de surveillance. Veuillez lire les détails de l’implémentation de la plateforme ci-dessous.
 
 ## <a name="supported-data-types"></a>Types de données pris en charge
 
-Les types de données suivants sont pris en charge dans **Preferences** :
+Les types de données suivants sont pris en charge dans **Preferences**  :
 
 - **bool**
 - **double**
@@ -109,9 +110,9 @@ Toutes les données sont stockées dans les [Préférences partagées](https://d
 
 ## <a name="persistence"></a>Persistance
 
-La désinstallation de l’application entraîne la suppression de toutes les _Préférences_ , à l’exception des applications qui ciblent et s’exécutent sur Android 6,0 (niveau d’API 23) ou ultérieur qui utilise la [__sauvegarde automatique__](https://developer.android.com/guide/topics/data/autobackup). Cette fonctionnalité est activée par défaut et conserve les données de l’application, notamment les __Préférences partagées__, utilisées par l’API de **Préférences**. Vous pouvez désactiver cette fonctionnalité en suivant la [documentation](https://developer.android.com/guide/topics/data/autobackup) de Google.
+La désinstallation de l’application entraîne la suppression de toutes les _Préférences_ , à l’exception des applications qui ciblent et s’exécutent sur Android 6,0 (niveau d’API 23) ou ultérieur qui utilise la [__sauvegarde automatique__](https://developer.android.com/guide/topics/data/autobackup). Cette fonctionnalité est activée par défaut et conserve les données de l’application, notamment les __Préférences partagées__ , utilisées par l’API de **Préférences** . Vous pouvez désactiver cette fonctionnalité en suivant la [documentation](https://developer.android.com/guide/topics/data/autobackup) de Google.
 
-## <a name="limitations"></a>Limitations
+## <a name="limitations"></a>Limites
 
 Quand vous stockez une chaîne, cette API permet de stocker de petites quantités de texte. Les performances risquent d’être médiocres si vous essayez de l’utiliser pour stocker de grandes quantités de texte.
 

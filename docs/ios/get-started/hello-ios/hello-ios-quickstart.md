@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: bde05cfeecaeba389224bbbdb7ae01fcb7bcb56c
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: da84a7faf2e08f35d364d7301102027342792f61
+ms.sourcegitcommit: 01ccefd54c0ced724784dbe1aec9ecfc9b00e633
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91434117"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92630255"
 ---
 # <a name="hello-ios--quickstart"></a>Hello.iOS - Démarrage rapide
 
@@ -22,7 +22,7 @@ Ce guide décrit comment créer une application qui convertit un numéro de tél
 
  [![L’application de démarrage rapide Hello. iOS](hello-ios-quickstart-images/image1.png)](hello-ios-quickstart-images/image1.png#lightbox)
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>Spécifications
 
 Le développement iOS avec Xamarin exige :
 
@@ -56,7 +56,7 @@ Avant de commencer, téléchargez le [jeu d’icônes d’application Xamarin](h
 
 Cette procédure pas à pas décrit comment créer une application nommée Phoneword qui convertit un numéro de téléphone alphanumérique en numéro de téléphone numérique.
 
-1. Lancez Visual Studio pour Mac à partir du dossier **Applications** ou à partir de **Spotlight** :
+1. Lancez Visual Studio pour Mac à partir du dossier **Applications** ou à partir de **Spotlight**  :
 
     ![Écran de lancement](hello-ios-quickstart-images/image2new.png)
 
@@ -64,11 +64,11 @@ Cette procédure pas à pas décrit comment créer une application nommée Phone
 
     ![Solution iOS](hello-ios-quickstart-images/image3new.png)
 
-2. À partir de la **boîte de dialogue Nouvelle Solution**, choisissez le modèle **iOS > Application > Application avec affichage unique**, en vérifiant que C# est sélectionné. Cliquez sur **suivant**:
+2. À partir de la **boîte de dialogue Nouvelle Solution** , choisissez le modèle **iOS > Application > Application avec affichage unique** , en vérifiant que C# est sélectionné. Cliquez sur **suivant** :
 
     ![Choisir Application avec affichage unique](hello-ios-quickstart-images/image4new.png)
 
-3. Configurez l’application. Attribuez-lui le **nom de ** `Phoneword_iOS` et conservez les valeurs par défaut des autres champs. Cliquez sur **suivant**:
+3. Configurez l’application. Attribuez-lui le **nom de** `Phoneword_iOS` et conservez les valeurs par défaut des autres champs. Cliquez sur **suivant** :
 
     ![Entrer le nom de l’application](hello-ios-quickstart-images/image5new.png)
 
@@ -76,30 +76,30 @@ Cette procédure pas à pas décrit comment créer une application nommée Phone
 
     ![Choisir l’emplacement du projet](hello-ios-quickstart-images/image6new.png)
 
-5. Cliquez sur **Créer** pour créer la **solution**.
+5. Cliquez sur **Créer** pour créer la **solution** .
 
-6. Ouvrez le fichier **Main.storyboard** en double-cliquant dessus dans le **Panneau Solutions**. Vous obtenez ainsi un moyen visuel de créer une interface utilisateur :
+6. Ouvrez le fichier **Main.storyboard** en double-cliquant dessus dans le **Panneau Solutions** . Veillez à ouvrir le fichier à l’aide du concepteur iOS de Visual Studio (cliquez avec le bouton droit sur le Storyboard, puis sélectionnez **Ouvrir avec > concepteur iOS** ). Vous obtenez ainsi un moyen visuel de créer une interface utilisateur :
 
     ![Concepteur iOS](hello-ios-quickstart-images/image7new.png)
 
     Notez que les _classes de taille_ sont activées par défaut. Reportez-vous au guide sur les [storyboards unifiés](~/ios/user-interface/storyboards/unified-storyboards.md) pour en savoir plus à leur sujet.
 
-7. Dans le **Panneau Boîte à outils**, tapez « étiquette » dans la barre de recherche, puis faites glisser une **étiquette** dans l’aire de conception (la zone située au centre) :
+7. Dans le **Panneau Boîte à outils** , tapez « étiquette » dans la barre de recherche, puis faites glisser une **étiquette** dans l’aire de conception (la zone située au centre) :
 
     ![Faire glisser une étiquette dans l’aire de conception (zone centrale)](hello-ios-quickstart-images/image8new.png)
 
     > [!NOTE]
-    > Vous pouvez afficher le **Panneau Propriétés** ou la **Boîte à outils** à tout moment en navigant vers **Afficher > Blocs**.
+    > Vous pouvez afficher le **Panneau Propriétés** ou la **Boîte à outils** à tout moment en navigant vers **Afficher > Blocs** .
 
 8. Saisissez les poignées des *contrôles de déplacement* (cercles autour des contrôles) pour élargir l’étiquette :
 
     ![Élargir l’étiquette](hello-ios-quickstart-images/image9.png)
 
-9. Avec l’**étiquette** sélectionnée dans l’aire de conception, utilisez le **Panneau Propriétés** pour remplacer la propriété **Texte** de l’**étiquette** par « Entrez un numéro Phoneword : »
+9. Avec l’ **étiquette** sélectionnée dans l’aire de conception, utilisez le **Panneau Propriétés** pour remplacer la propriété **Texte** de l’ **étiquette** par « Entrez un numéro Phoneword : »
 
     ![Renseigner l’étiquette par Entrez un numéro Phoneword](hello-ios-quickstart-images/image10.png)
 
-10. Recherchez « champ de texte » dans la boîte à outils et faites glisser un **champ de texte** depuis la **boîte à outils** vers l’aire de conception pour le placer sous l’**étiquette**. Ajustez la largeur jusqu’à ce que le **champ de texte** ait la même largeur que l' **étiquette**:
+10. Recherchez « champ de texte » dans la boîte à outils et faites glisser un **champ de texte** depuis la **boîte à outils** vers l’aire de conception pour le placer sous l’ **étiquette** . Ajustez la largeur jusqu’à ce que le **champ de texte** ait la même largeur que l' **étiquette** :
 
     ![Définir une largeur identique pour le champ de texte et l’étiquette](hello-ios-quickstart-images/image12new.png)
 
@@ -107,7 +107,7 @@ Cette procédure pas à pas décrit comment créer une application nommée Phone
 
     ![Remplacer la propriété Titre par 1-855-XAMARIN](hello-ios-quickstart-images/image13new.png)
 
-12. Faites glisser un **bouton** depuis la **boîte à outils** vers l’aire de conception, puis placez-le sous le **champ de texte**. Ajustez la largeur de sorte que le **bouton** soit aussi large que le **champ de texte** et l' **étiquette**:
+12. Faites glisser un **bouton** depuis la **boîte à outils** vers l’aire de conception, puis placez-le sous le **champ de texte** . Ajustez la largeur de sorte que le **bouton** soit aussi large que le **champ de texte** et l' **étiquette** :
 
     ![Ajuster la largeur de sorte que le bouton soit aussi large que le champ de texte et l’étiquette](hello-ios-quickstart-images/image14new.png)
 
@@ -115,7 +115,7 @@ Cette procédure pas à pas décrit comment créer une application nommée Phone
 
     ![Remplacez la propriété titre par translate](hello-ios-quickstart-images/image15new.png)
 
-14. Répétez les deux étapes ci-dessus et faites glisser un **bouton** depuis la **boîte à outils** vers l’aire de conception pour le placer sous le premier **bouton**. Ajustez la largeur de sorte que le **bouton** soit aussi large que le premier **bouton** :
+14. Répétez les deux étapes ci-dessus et faites glisser un **bouton** depuis la **boîte à outils** vers l’aire de conception pour le placer sous le premier **bouton** . Ajustez la largeur de sorte que le **bouton** soit aussi large que le premier **bouton**  :
 
     ![Ajuster la largeur de sorte que le bouton soit aussi large que le premier bouton](hello-ios-quickstart-images/image16new.png)
 
@@ -123,13 +123,13 @@ Cette procédure pas à pas décrit comment créer une application nommée Phone
 
     ![Remplacez la propriété Title par Call](hello-ios-quickstart-images/image17new.png)
 
-    Enregistrez les modifications en accédant à **Fichier > Enregistrer** ou en appuyant sur **⌘ + S**.
+    Enregistrez les modifications en accédant à **Fichier > Enregistrer** ou en appuyant sur **⌘ + S** .
 
-16. Il est nécessaire d’ajouter une certaine logique à l’application pour convertir des numéros de téléphone alphanumériques en numéros numériques. Ajoutez un fichier au projet en cliquant avec le bouton droit sur le projet **Phoneword_iOS** dans le **Panneau Solutions**, puis en choisissant **Ajouter > Nouveau fichier...** ou en appuyant sur **⌘ + N** :
+16. Il est nécessaire d’ajouter une certaine logique à l’application pour convertir des numéros de téléphone alphanumériques en numéros numériques. Ajoutez un fichier au projet en cliquant avec le bouton droit sur le projet **Phoneword_iOS** dans le **Panneau Solutions** , puis en choisissant **Ajouter > Nouveau fichier...** ou en appuyant sur **⌘ + N**  :
 
     ![Ajouter un nouveau fichier au projet](hello-ios-quickstart-images/image18.png)
 
-17. Dans la boîte de dialogue **Nouveau fichier**, sélectionnez **Général > Classe vide** et nommez le nouveau fichier `PhoneTranslator` :
+17. Dans la boîte de dialogue **Nouveau fichier** , sélectionnez **Général > Classe vide** et nommez le nouveau fichier `PhoneTranslator` :
 
     ![Sélectionner une classe vide et nommer le nouveau fichier PhoneTranslator](hello-ios-quickstart-images/image19.png)
 
@@ -203,7 +203,7 @@ Cette procédure pas à pas décrit comment créer une application nommée Phone
 
     ![Ajouter du code pour associer l’interface utilisateur](hello-ios-quickstart-images/image20new.png)
 
-20. Commencez par associer le `TranslateButton`. Dans la classe **ViewController**, recherchez la méthode `ViewDidLoad` et ajoutez le code suivant sous l’appel à `base.ViewDidLoad()` :
+20. Commencez par associer le `TranslateButton`. Dans la classe **ViewController** , recherchez la méthode `ViewDidLoad` et ajoutez le code suivant sous l’appel à `base.ViewDidLoad()` :
 
     ```csharp
     string translatedNumber = "";
@@ -246,13 +246,13 @@ Cette procédure pas à pas décrit comment créer une application nommée Phone
         };
     ```
 
-22. Enregistrez les modifications, puis générez l’application en choisissant **générer > générer tout** ou en appuyant sur **⌘ + B**.  Si l’application se compile, un message de réussite apparaît en haut de l’IDE :
+22. Enregistrez les modifications, puis générez l’application en choisissant **générer > générer tout** ou en appuyant sur **⌘ + B** .  Si l’application se compile, un message de réussite apparaît en haut de l’IDE :
 
     ![Un message de réussite s’affiche en haut de l’IDE](hello-ios-quickstart-images/image21.png)
 
     En cas d’erreurs, examinez les étapes précédentes et corrigez les erreurs éventuelles jusqu’à ce que l’application soit générée.
 
-23. Enfin, testez l’application dans le **simulateur iOS**. En haut à gauche de l’IDE, choisissez **Déboguer** dans la première liste déroulante, et **iPhone XR iOS 12.0** (ou tout autre simulateur disponible) dans la deuxième liste déroulante, puis appuyez sur **Démarrer** (le bouton triangulaire qui ressemble à un bouton de lecture) :
+23. Enfin, testez l’application dans le **simulateur iOS** . En haut à gauche de l’IDE, choisissez **Déboguer** dans la première liste déroulante, et **iPhone XR iOS 12.0** (ou tout autre simulateur disponible) dans la deuxième liste déroulante, puis appuyez sur **Démarrer** (le bouton triangulaire qui ressemble à un bouton de lecture) :
 
     ![Sélectionnez un simulateur, puis appuyez sur Démarrer](hello-ios-quickstart-images/image27.png)
 
@@ -280,7 +280,7 @@ Cette procédure pas à pas décrit comment créer une application nommée Phone
 > [!NOTE]
 > Avant de poursuivre cette procédure pas à pas, vous devez être déjà connecté à votre Mac à partir de Visual Studio. En effet, Xamarin.iOS s’appuie sur des outils Apple pour générer et lancer le concepteur et les applications iOS. Afin de préparer la configuration, suivez les étapes du guide [Appairer avec un Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
 
-1. Lancez Visual Studio à partir du menu **Démarrer** :
+1. Lancez Visual Studio à partir du menu **Démarrer**  :
 
     ![Écran de démarrage](hello-ios-quickstart-images/image001-.png)
 
@@ -298,11 +298,11 @@ Cette procédure pas à pas décrit comment créer une application nommée Phone
 
     Si ce n’est pas le cas, aucune connexion n’a été établie à votre hôte de build Mac. Vous devez alors suivre les étapes du [guide de configuration](~/ios/get-started/installation/windows/connecting-to-mac/index.md) pour vous connecter.
 
-1. Ouvrez le fichier **Main.storyboard** dans le concepteur iOS en double-cliquant dessus dans l’**Explorateur de solutions** :
+1. Ouvrez le fichier **Main.storyboard** dans le concepteur iOS en double-cliquant dessus dans l’ **Explorateur de solutions**  :
 
     ![Concepteur iOS](hello-ios-quickstart-images/vs-image7.png)
 
-1. Ouvrez l’onglet **Boîte à outils**, tapez « étiquette » dans la barre de recherche, puis faites glisser une **Étiquette** dans l’aire de conception (la zone située au centre) :
+1. Ouvrez l’onglet **Boîte à outils** , tapez « étiquette » dans la barre de recherche, puis faites glisser une **Étiquette** dans l’aire de conception (la zone située au centre) :
 
     ![Faire glisser une étiquette dans l’aire de conception (zone centrale)](hello-ios-quickstart-images/vs-image8.png)
 
@@ -310,14 +310,14 @@ Cette procédure pas à pas décrit comment créer une application nommée Phone
 
     ![Élargir l’étiquette](hello-ios-quickstart-images/vs-image9.png)
 
-1. Avec l’**étiquette** sélectionnée dans l’aire de conception, utilisez les **fenêtres Propriétés** pour remplacer la propriété **Texte** de l’**étiquette** par « Entrez un numéro Phoneword : »
+1. Avec l’ **étiquette** sélectionnée dans l’aire de conception, utilisez les **fenêtres Propriétés** pour remplacer la propriété **Texte** de l’ **étiquette** par « Entrez un numéro Phoneword : »
 
     ![Remplacer la propriété Texte de l’étiquette par « Entrez un numéro Phoneword »](hello-ios-quickstart-images/vs-image10.png)
 
     > [!NOTE]
-    > Vous pouvez afficher les **Propriétés** ou la **Boîte à outils** à tout moment en navigant vers le menu **Afficher**.
+    > Vous pouvez afficher les **Propriétés** ou la **Boîte à outils** à tout moment en navigant vers le menu **Afficher** .
 
-1. Recherchez « champ de texte » dans la boîte à outils et faites glisser un **champ de texte** depuis la **boîte à outils** vers l’aire de conception pour le placer sous l’**étiquette**. Ajustez la largeur jusqu’à ce que le **champ de texte** ait la même largeur que l' **étiquette**:
+1. Recherchez « champ de texte » dans la boîte à outils et faites glisser un **champ de texte** depuis la **boîte à outils** vers l’aire de conception pour le placer sous l’ **étiquette** . Ajustez la largeur jusqu’à ce que le **champ de texte** ait la même largeur que l' **étiquette** :
 
     ![Ajuster la largeur jusqu’à ce que le champ de texte ait la même largeur que l’étiquette](hello-ios-quickstart-images/vs-image12.png)
 
@@ -325,7 +325,7 @@ Cette procédure pas à pas décrit comment créer une application nommée Phone
 
     ![Remplacer la propriété Texte par 1-855-XAMARIN](hello-ios-quickstart-images/vs-image13.png)
 
-1. Faites glisser un **bouton** depuis la **boîte à outils** vers l’aire de conception, puis placez-le sous le **champ de texte**. Ajustez la largeur de sorte que le **bouton** soit aussi large que le **champ de texte** et l' **étiquette**:
+1. Faites glisser un **bouton** depuis la **boîte à outils** vers l’aire de conception, puis placez-le sous le **champ de texte** . Ajustez la largeur de sorte que le **bouton** soit aussi large que le **champ de texte** et l' **étiquette** :
 
     ![Ajuster la largeur de sorte que le bouton soit aussi large que le champ de texte et l’étiquette](hello-ios-quickstart-images/vs-image14.png)
 
@@ -333,7 +333,7 @@ Cette procédure pas à pas décrit comment créer une application nommée Phone
 
     ![Remplacez la propriété titre par translate](hello-ios-quickstart-images/vs-image15.png)
 
-1. Répétez les deux étapes précédentes et faites glisser un **bouton** depuis la **boîte à outils** vers l’aire de conception pour le placer sous le premier **bouton**. Ajustez la largeur de sorte que le **bouton** soit aussi large que le premier **bouton** :
+1. Répétez les deux étapes précédentes et faites glisser un **bouton** depuis la **boîte à outils** vers l’aire de conception pour le placer sous le premier **bouton** . Ajustez la largeur de sorte que le **bouton** soit aussi large que le premier **bouton**  :
 
     ![Ajuster la largeur de sorte que le bouton soit aussi large que le premier bouton](hello-ios-quickstart-images/vs-image16.png)
 
@@ -341,9 +341,9 @@ Cette procédure pas à pas décrit comment créer une application nommée Phone
 
     ![Remplacez la propriété Title par Call](hello-ios-quickstart-images/vs-image17.png)
 
-    Enregistrez les modifications en accédant à **Fichier > Enregistrer tout** ou en appuyant sur **Ctrl+S**.
+    Enregistrez les modifications en accédant à **Fichier > Enregistrer tout** ou en appuyant sur **Ctrl+S** .
 
-1. Ajoutez du code pour convertir des numéros de téléphone alphanumériques en numéros de téléphone numériques. Pour cela, commencez par ajouter un nouveau fichier au projet en cliquant avec le bouton droit sur le projet **Phoneword** dans l’**Explorateur de solutions**, puis en choisissant **Ajouter > Nouvel élément...** ou en appuyant sur **Ctrl+Maj+A** :
+1. Ajoutez du code pour convertir des numéros de téléphone alphanumériques en numéros de téléphone numériques. Pour cela, commencez par ajouter un nouveau fichier au projet en cliquant avec le bouton droit sur le projet **Phoneword** dans l’ **Explorateur de solutions** , puis en choisissant **Ajouter > Nouvel élément...** ou en appuyant sur **Ctrl+Maj+A**  :
 
     ![Ajouter du code pour convertir des numéros de téléphone alphanumériques en chiffres](hello-ios-quickstart-images/vs-image18.png)
 
@@ -420,11 +420,11 @@ Cette procédure pas à pas décrit comment créer une application nommée Phone
 
     Enregistrez le fichier **PhoneTranslator.cs** et fermez-le.
 
-1. Double-cliquez sur **ViewController.cs** dans l’**Explorateur de solutions** pour l’ouvrir et ajouter une logique aux interactions de poignée avec les boutons :
+1. Double-cliquez sur **ViewController.cs** dans l’ **Explorateur de solutions** pour l’ouvrir et ajouter une logique aux interactions de poignée avec les boutons :
 
     ![Logique ajoutée aux interactions de poignée avec les boutons](hello-ios-quickstart-images/vs-image20.png)
 
-1. Commencez par associer le `TranslateButton`. Dans la classe **ViewController**, recherchez la méthode `ViewDidLoad`. Ajoutez le code de bouton suivant dans `ViewDidLoad`, l’appel à `base.ViewDidLoad()` :
+1. Commencez par associer le `TranslateButton`. Dans la classe **ViewController** , recherchez la méthode `ViewDidLoad`. Ajoutez le code de bouton suivant dans `ViewDidLoad`, l’appel à `base.ViewDidLoad()` :
 
     ```csharp
     string translatedNumber = "";
@@ -468,13 +468,13 @@ Cette procédure pas à pas décrit comment créer une application nommée Phone
     };
     ```
 
-1. Enregistrez les modifications, puis générez l’application en choisissant **générer > générer la solution** ou en appuyant sur **Ctrl + Maj + B**.  Si l’application se compile, un message de réussite s’affiche en bas de l’IDE :
+1. Enregistrez les modifications, puis générez l’application en choisissant **générer > générer la solution** ou en appuyant sur **Ctrl + Maj + B** .  Si l’application se compile, un message de réussite s’affiche en bas de l’IDE :
 
     ![Un message de réussite s’affiche au bas de l’IDE](hello-ios-quickstart-images/vs-image21.png)
 
     En cas d’erreurs, examinez les étapes précédentes et corrigez les erreurs éventuelles jusqu’à ce que l’application soit générée.
 
-1. Enfin, testez l’application dans **Remoted iOS Simulator**. Dans la barre d’outils de l’IDE, choisissez **Déboguer** et **iPhone 8 Plus iOS x.x** dans les menus déroulants, puis appuyez sur **Démarrer** (le triangle vert qui ressemble à un bouton de lecture) :
+1. Enfin, testez l’application dans **Remoted iOS Simulator** . Dans la barre d’outils de l’IDE, choisissez **Déboguer** et **iPhone 8 Plus iOS x.x** dans les menus déroulants, puis appuyez sur **Démarrer** (le triangle vert qui ressemble à un bouton de lecture) :
 
     ![Appuyer sur Démarrer](hello-ios-quickstart-images/vs-image27.png)
 

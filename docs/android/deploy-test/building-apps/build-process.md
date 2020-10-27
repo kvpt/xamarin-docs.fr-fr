@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 09/11/2020
-ms.openlocfilehash: d89f686be99dc8ae8d1aada12dcbe94d857424d7
-ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
+ms.openlocfilehash: 4a89cfbb2406b6a5cda125044d43736dfa02d791
+ms.sourcegitcommit: 01ccefd54c0ced724784dbe1aec9ecfc9b00e633
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91454960"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92630229"
 ---
 # <a name="build-process"></a>Processus de génération
 
@@ -22,9 +22,9 @@ Le processus de génération Xamarin. Android est responsable du collage de tout
 
 En gros, il existe deux types de packages d’application Android (les fichiers `.apk`) que le système de génération Xamarin.Android peut produire :
 
-- Des versions **Release**, qui sont entièrement autonomes et ne nécessitent pas de packages supplémentaires pour s’exécuter. Ce sont ces packages qui sont fournis à un App Store.
+- Des versions **Release** , qui sont entièrement autonomes et ne nécessitent pas de packages supplémentaires pour s’exécuter. Ce sont ces packages qui sont fournis à un App Store.
 
-- Des versions **Debug**, qui ne le sont pas.
+- Des versions **Debug** , qui ne le sont pas.
 
 Ce n’est pas par hasard qu’elles correspondent à la `Configuration` de MSBuild qui produit le package.
 
@@ -77,7 +77,7 @@ Les propriétés MSBuild suivantes permettent de contrôler la génération du `
 
 ## <a name="signing-properties"></a>Propriétés de signature
 
-Les propriétés de signature contrôlent comment le package d’application est signé pour qu’il puisse être installé sur un appareil Android. Pour permettre une itération plus rapide des générations, les tâches Xamarin.Android ne signent pas les packages pendant le processus de génération, car l’opération de signature est assez lente. Au lieu de cela, les packages sont signés (si nécessaire) avant l’installation ou pendant l’exportation, par l’IDE ou par la cible de génération *Install*. Le fait d’appeler la cible *SignAndroidPackage* produit un package avec le suffixe `-Signed.apk` dans le répertoire de sortie.
+Les propriétés de signature contrôlent comment le package d’application est signé pour qu’il puisse être installé sur un appareil Android. Pour permettre une itération plus rapide des générations, les tâches Xamarin.Android ne signent pas les packages pendant le processus de génération, car l’opération de signature est assez lente. Au lieu de cela, les packages sont signés (si nécessaire) avant l’installation ou pendant l’exportation, par l’IDE ou par la cible de génération *Install* . Le fait d’appeler la cible *SignAndroidPackage* produit un package avec le suffixe `-Signed.apk` dans le répertoire de sortie.
 
 Par défaut, la cible de signature génère si nécessaire une nouvelle clé de signature de débogage. Si vous souhaitez utiliser une clé spécifique, par exemple sur un serveur de builds, les propriétés MSBuild suivantes sont utilisées :
 
