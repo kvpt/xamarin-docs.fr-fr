@@ -6,16 +6,16 @@ ms.assetid: E1783E34-1C0F-401A-80D5-B2BE5508F5F8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/29/2020
+ms.date: 10/27/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 089fb69dfc12b23bb594d5f88a50b37f9694c778
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 77f47af2ed2cce787cf0f66e524c2314ef4c9452
+ms.sourcegitcommit: 1550019cd1e858d4d13a4ae6dfb4a5947702f24b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563378"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92897499"
 ---
 # <a name="no-locxamarinforms-collectionview-data"></a>Xamarin.Forms Données CollectionView
 
@@ -35,56 +35,10 @@ Ces propriétés sont sauvegardées par des [`BindableProperty`](xref:Xamarin.Fo
 
 ## <a name="populate-a-collectionview-with-data"></a>Remplir un CollectionView avec des données
 
-Un [`CollectionView`](xref:Xamarin.Forms.CollectionView) est rempli avec des données en affectant [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) à sa propriété une collection qui implémente `IEnumerable` . Les éléments peuvent être ajoutés en XAML en initialisant la `ItemsSource` propriété à partir d’un tableau de chaînes :
-
-```xaml
-<CollectionView>
-  <CollectionView.ItemsSource>
-    <x:Array Type="{x:Type x:String}">
-      <x:String>Baboon</x:String>
-      <x:String>Capuchin Monkey</x:String>
-      <x:String>Blue Monkey</x:String>
-      <x:String>Squirrel Monkey</x:String>
-      <x:String>Golden Lion Tamarin</x:String>
-      <x:String>Howler Monkey</x:String>
-      <x:String>Japanese Macaque</x:String>
-    </x:Array>
-  </CollectionView.ItemsSource>
-</CollectionView>
-```
-
-> [!NOTE]
-> Notez que l’élément `x:Array` nécessite un attribut `Type` qui indique le type des éléments du tableau.
-
-Le code C# équivalent est :
-
-```csharp
-CollectionView collectionView = new CollectionView();
-collectionView.ItemsSource = new string[]
-{
-    "Baboon",
-    "Capuchin Monkey",
-    "Blue Monkey",
-    "Squirrel Monkey",
-    "Golden Lion Tamarin",
-    "Howler Monkey",
-    "Japanese Macaque"
-};
-```
-
-> [!WARNING]
-> [`CollectionView`](xref:Xamarin.Forms.CollectionView) lèvera une exception si son [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) est mis à jour à partir du thread d’interface utilisateur.
-
-Par défaut, [`CollectionView`](xref:Xamarin.Forms.CollectionView) affiche les éléments dans une liste verticale, comme illustré dans les captures d’écran suivantes :
-
-[![Capture d’écran de CollectionView contenant des éléments de texte, sur iOS et Android](populate-data-images/text.png "Éléments de texte dans un CollectionView")](populate-data-images/text-large.png#lightbox "Éléments de texte dans un CollectionView")
+Un [`CollectionView`](xref:Xamarin.Forms.CollectionView) est rempli avec des données en affectant [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) à sa propriété une collection qui implémente `IEnumerable` . Par défaut, [`CollectionView`](xref:Xamarin.Forms.CollectionView) affiche les éléments dans une liste verticale.
 
 > [!IMPORTANT]
 > Si [`CollectionView`](xref:Xamarin.Forms.CollectionView) est requis pour l’actualisation à mesure que des éléments sont ajoutés, supprimés ou modifiés dans la collection sous-jacente, la collection sous-jacente doit être une `IEnumerable` collection qui envoie des notifications de modification de propriété, telles que `ObservableCollection` .
-
-Pour plus d’informations sur la modification de la [`CollectionView`](xref:Xamarin.Forms.CollectionView) disposition, consultez [ Xamarin.Forms disposition CollectionView](layout.md). Pour plus d’informations sur la façon de définir l’apparence de chaque élément dans `CollectionView` , consultez [définir l’apparence des éléments](#define-item-appearance).
-
-### <a name="data-binding"></a>Liaison de données
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView) peut être rempli de données à l’aide d’une liaison de données pour lier sa [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) propriété à une `IEnumerable` collection. En XAML, cela est accompli avec l' `Binding` extension de balisage :
 
@@ -104,7 +58,10 @@ Dans cet exemple, les [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) 
 > [!NOTE]
 > Les liaisons compilées peuvent être activées pour améliorer les performances de liaison de données dans les Xamarin.Forms applications. Pour plus d’informations, consultez [Liaisons compilées](~/xamarin-forms/app-fundamentals/data-binding/compiled-bindings.md).
 
-Pour plus d’informations sur la liaison de données, consultez [ Xamarin.Forms liaison de données](~/xamarin-forms/app-fundamentals/data-binding/index.md).
+Pour plus d’informations sur la modification de la [`CollectionView`](xref:Xamarin.Forms.CollectionView) disposition, consultez [ Xamarin.Forms disposition CollectionView](layout.md). Pour plus d’informations sur la façon de définir l’apparence de chaque élément dans `CollectionView` , consultez [définir l’apparence des éléments](#define-item-appearance). Pour plus d’informations sur la liaison de données, consultez [ Xamarin.Forms liaison de données](~/xamarin-forms/app-fundamentals/data-binding/index.md).
+
+> [!WARNING]
+> [`CollectionView`](xref:Xamarin.Forms.CollectionView) lèvera une exception si son [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) est mis à jour à partir du thread d’interface utilisateur.
 
 ## <a name="define-item-appearance"></a>Définir l’apparence des éléments
 

@@ -11,12 +11,12 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 - Firebase
-ms.openlocfilehash: 721785fe2eeb35f0ef04d1a7854afe4039a66849
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 6135d8caec196ded385bc0f962f007c41d20e2cb
+ms.sourcegitcommit: 1550019cd1e858d4d13a4ae6dfb4a5947702f24b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91561831"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92897493"
 ---
 # <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-no-locxamarinforms"></a>Envoyer et recevoir des notifications Push avec Azure Notification Hubs et Xamarin.Forms
 
@@ -122,7 +122,7 @@ public static class AppConstants
 Personnalisez les valeurs suivantes dans `AppConstants` pour connecter l’exemple d’application à votre Hub de notification Azure :
 
 * `NotificationHubName`: Utilisez le nom du concentrateur de notification Azure que vous avez créé dans votre Portail Azure.
-* `ListenConnectionString`: Cette valeur se trouve dans le hub de notification Azure sous **stratégies d’accès**.
+* `ListenConnectionString`: Cette valeur se trouve dans le hub de notification Azure sous **stratégies d’accès** .
 
 La capture d’écran suivante montre où ces valeurs se trouvent dans le Portail Azure :
 
@@ -278,9 +278,6 @@ Les messages entrants sont convertis en notification locale à l’aide de la `S
 
 La notification locale et l' `Intent` exemple nécessitent que l’utilisateur appuie sur la notification. Cela est souhaitable lorsque l’utilisateur doit agir avant de modifier l’état de l’application. Toutefois, vous souhaiterez peut-être accéder aux données du message sans intervention de l’utilisateur dans certains cas. L’exemple précédent envoie également le message directement à l' `MainPage` instance actuelle avec la `SendMessageToMainPage` méthode. En production, si vous implémentez les deux méthodes pour un seul type de message, l' `MainPage` objet recevra des messages en double si l’utilisateur appuie sur la notification.
 
-> [!NOTE]
-> L’application Android recevra uniquement les notifications push si elle s’exécute en arrière-plan ou au premier plan. Pour recevoir des notifications push lorsque le principal `Activity` n’est pas en cours d’exécution, vous devez implémenter un service qui dépasse le cadre de cet exemple. Pour plus d’informations, consultez [création de services Android](../../../android/app-fundamentals/services/index.md) .
-
 ### <a name="add-incoming-notifications-to-the-no-locxamarinforms-ui"></a>Ajouter des notifications entrantes à l' Xamarin.Forms interface utilisateur
 
 La `MainActivity` classe doit obtenir l’autorisation de gérer les notifications et de gérer les données des messages entrants. Le code suivant illustre l’implémentation complète de `MainActivity` :
@@ -396,7 +393,7 @@ void RegisterForRemoteNotifications()
     if (UIDevice.CurrentDevice.CheckSystemVersion(10, 0))
     {
         UNUserNotificationCenter.Current.RequestAuthorization(UNAuthorizationOptions.Alert |
-            UNAuthorizationOptions.Sound |
+            UNAuthorizationOptions.Badge |
             UNAuthorizationOptions.Sound,
             (granted, error) =>
             {
@@ -537,7 +534,7 @@ public static class DispatcherConstants
 }
 ```
 
-Vous devez configurer le `DispatcherConstants.cs` fichier pour qu’il corresponde à votre configuration Azure notification Hub. La valeur de la `SubscriptionTags` propriété doit correspondre aux valeurs utilisées dans les applications clientes. La `NotificationHubName` propriété est le nom de votre instance Azure notification Hub. La `FullAccessConnectionString` propriété est la clé d’accès trouvée dans vos **stratégies d’accès**au hub de notification. La capture d’écran suivante montre l’emplacement `NotificationHubName` des `FullAccessConnectionString` Propriétés et dans le portail Azure :
+Vous devez configurer le `DispatcherConstants.cs` fichier pour qu’il corresponde à votre configuration Azure notification Hub. La valeur de la `SubscriptionTags` propriété doit correspondre aux valeurs utilisées dans les applications clientes. La `NotificationHubName` propriété est le nom de votre instance Azure notification Hub. La `FullAccessConnectionString` propriété est la clé d’accès trouvée dans vos **stratégies d’accès** au hub de notification. La capture d’écran suivante montre l’emplacement `NotificationHubName` des `FullAccessConnectionString` Propriétés et dans le portail Azure :
 
 ![Capture d’écran du nom et FullAccessConnectionString du Hub de notification Azure](azure-notification-hub-images/notification-hub-full-access-policy.png "Nom et FullAccessConnectionString du Hub de notification Azure")
 

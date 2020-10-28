@@ -6,22 +6,25 @@ ms.assetid: B5DE7507-B565-4EE5-9897-27E5733FD173
 ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
-ms.date: 10/25/2019
+ms.date: 10/27/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 47b459945aec4ef8f1c3fa9729efd82461aec0e0
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: e1474167d3bb56f0e5eb7ee0a8d321a5d4367ef2
+ms.sourcegitcommit: 1550019cd1e858d4d13a4ae6dfb4a5947702f24b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91561961"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92897557"
 ---
 # <a name="no-locxamarinforms-reusable-roundeffect"></a>Xamarin.Forms RoundEffect réutilisable
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-roundeffect/)
 
-Le RoundEffect simplifie le rendu d’un contrôle qui dérive de VisualElement sous la forme d’un cercle. Cet effet peut être utilisé pour créer des images circulaires, des boutons et d’autres contrôles :
+> [!IMPORTANT]
+> Il n’est plus nécessaire d’utiliser un `RoundEffect` pour restituer un contrôle sous forme de cercle. La dernière approche recommandée consiste à découper le contrôle à l’aide d’un `EllipseGeometry` . Pour plus d’informations, consultez [clip avec une géométrie](~/xamarin-forms/user-interface/shapes/geometries.md#clip-with-a-geometry).
+
+Le RoundEffect simplifie le rendu de tout contrôle qui dérive de `VisualElement` en tant que cercle. Cet effet peut être utilisé pour créer des images circulaires, des boutons et d’autres contrôles :
 
 [![Captures d’écran RoundEffect sur iOS et Android](example-roundeffect-images/round-effect-cropped.png)](example-roundeffect-images/round-effect.png#lightbox)
 

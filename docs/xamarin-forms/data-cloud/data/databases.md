@@ -10,12 +10,12 @@ ms.date: 12/05/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6c5390057baf48634056101d44540020648ea709
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: afa5ccf8f4d4485ae7a9a45bcbc745bddee20f5c
+ms.sourcegitcommit: 1550019cd1e858d4d13a4ae6dfb4a5947702f24b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563105"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92897479"
 ---
 # <a name="no-locxamarinforms-local-databases"></a>Xamarin.Forms Bases de données locales
 
@@ -40,13 +40,12 @@ Utilisez le gestionnaire de package NuGet pour rechercher **SQLite-net-PCL** et 
 Il existe plusieurs packages NuGet portant des noms similaires. Le package correct possède ces attributs :
 
 - **ID :** sqlite-net-pcl
-- **Author(s) :** SQLite-net
-- **Propriétaire (s) :** praeclarum
-- **URL du projet :** https://github.com/praeclarum/sqlite-net
+- **Auteurs :** SQLite-net
+- **Propriétaires :** praeclarum
 - **Lien NuGet :** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 
 > [!NOTE]
-> Ne vous fiez pas au nom du package. Vous devez utiliser le package NuGet **sqlite-net-pcl**, même dans les projets .NET Standard.
+> Ne vous fiez pas au nom du package. Vous devez utiliser le package NuGet **sqlite-net-pcl** , même dans les projets .NET Standard.
 
 ## <a name="configure-app-constants"></a>Configurer des constantes d’application
 
@@ -256,13 +255,13 @@ SQLite fournit une API robuste avec plus de fonctionnalités que celles décrite
 
 Pour plus d’informations, consultez [la documentation SQLite](https://www.sqlite.org/docs.html) sur sqlite.org.
 
-### <a name="write-ahead-logging"></a>Journalisation avec écriture anticipée
+### <a name="write-ahead-logging"></a>Journalisation Write-Ahead
 
 Par défaut, SQLite utilise un journal de restauration traditionnel. Une copie du contenu de la base de données inchangée est écrite dans un fichier de restauration distinct, puis les modifications sont écrites directement dans le fichier de base de données. La validation se produit lorsque le journal de restauration est supprimé.
 
-La journalisation en écriture anticipée (WAL) écrit d’abord les modifications dans un fichier WAL distinct. En mode WAL, une validation est un enregistrement spécial, ajouté au fichier WAL, qui permet à plusieurs transactions de se produire dans un seul fichier WAL. Un fichier WAL est fusionné dans le fichier de base de données dans une opération spéciale appelée _point de contrôle_.
+La journalisation des Write-Ahead (WAL) écrit d’abord les modifications dans un fichier WAL distinct. En mode WAL, une validation est un enregistrement spécial, ajouté au fichier WAL, qui permet à plusieurs transactions de se produire dans un seul fichier WAL. Un fichier WAL est fusionné dans le fichier de base de données dans une opération spéciale appelée _point de contrôle_ .
 
-WAL peut être plus rapide pour les bases de données locales, car les lecteurs et les enregistreurs ne se bloquent pas mutuellement, ce qui permet d’effectuer des opérations de lecture et d’écriture simultanées. Toutefois, le mode WAL n’autorise pas les modifications apportées à la taille de la _page_, ajoute des associations de fichiers supplémentaires à la base de données et ajoute l’opération _de point de contrôle_ supplémentaire.
+WAL peut être plus rapide pour les bases de données locales, car les lecteurs et les enregistreurs ne se bloquent pas mutuellement, ce qui permet d’effectuer des opérations de lecture et d’écriture simultanées. Toutefois, le mode WAL n’autorise pas les modifications apportées à la taille de la _page_ , ajoute des associations de fichiers supplémentaires à la base de données et ajoute l’opération _de point de contrôle_ supplémentaire.
 
 Pour activer WAL dans SQLite.NET, appelez la `EnableWriteAheadLoggingAsync` méthode sur l' `SQLiteAsyncConnection` instance :
 
@@ -270,7 +269,7 @@ Pour activer WAL dans SQLite.NET, appelez la `EnableWriteAheadLoggingAsync` mét
 await Database.EnableWriteAheadLoggingAsync();
 ```
 
-Pour plus d’informations, consultez [journalisation en écriture anticipée SQLite](https://www.sqlite.org/wal.html) sur sqlite.org.
+Pour plus d’informations, consultez [SQLite Write-Ahead Logging](https://www.sqlite.org/wal.html) on sqlite.org.
 
 ### <a name="copying-a-database"></a>Copie d’une base de données
 

@@ -6,13 +6,13 @@ ms.assetid: E73AE622-664C-4A90-B5B2-BD47D0E7A1A7
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/18/2020
-ms.openlocfilehash: 0c10e73d8d6c2dcafacbb069eaf905a227030b87
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.date: 10/26/2020
+ms.openlocfilehash: 6a3154d159c491c6460e118395286aa33cfa7e7e
+ms.sourcegitcommit: 1550019cd1e858d4d13a4ae6dfb4a5947702f24b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557528"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92897453"
 ---
 # <a name="xamarinforms-multi-bindings"></a>Liaisons multiples Xamarin. Forms
 
@@ -155,6 +155,33 @@ Dans cet exemple, l' `MultiBinding` objet utilise l' `AllTrueMultiConverter` ins
 
 Par défaut, la [`CheckBox.IsChecked`](xref:Xamarin.Forms.CheckBox.IsChecked) propriété utilise une [`TwoWay`](xref:Xamarin.Forms.BindingMode.TwoWay) liaison. Par conséquent, la `ConvertBack` méthode de l' `AllTrueMultiConverter` instance est exécutée lorsque la [`CheckBox`](xref:Xamarin.Forms.CheckBox) propriété est désactivée par l’utilisateur, ce qui définit les valeurs de liaison source sur la valeur de la `CheckBox.IsChecked` propriété.
 
+Le code C# équivalent est illustré ci-dessous :
+
+```csharp
+public class MultiBindingConverterCodePage : ContentPage
+{
+    public MultiBindingConverterCodePage()
+    {
+        BindingContext = new GroupViewModel();
+
+        CheckBox checkBox = new CheckBox();
+        checkBox.SetBinding(CheckBox.IsCheckedProperty, new MultiBinding
+        {
+            Bindings = new Collection<BindingBase>
+            {
+                new Binding("Employee1.IsOver16"),
+                new Binding("Employee1.HasPassedTest"),
+                new Binding("Employee1.IsSuspended", converter: new InverterConverter())
+            },
+            Converter = new AllTrueMultiConverter()
+        });
+
+        Title = "MultiBinding converter demo";
+        Content = checkBox;
+    }
+}
+```
+
 ## <a name="format-strings"></a>Chaînes de format
 
 Un `MultiBinding` peut mettre en forme n’importe quel résultat à plusieurs liaisons qui est affiché sous forme de chaîne, avec la `StringFormat` propriété. Cette propriété peut être définie sur une chaîne de mise en forme .NET standard, avec des espaces réservés, qui spécifie comment mettre en forme le résultat de la liaison multiple :
@@ -172,6 +199,22 @@ Un `MultiBinding` peut mettre en forme n’importe quel résultat à plusieurs l
 ```
 
 Dans cet exemple, la `StringFormat` propriété combine les trois valeurs liées dans une chaîne unique qui est affichée par le [`Label`](xref:Xamarin.Forms.Label) .
+
+Le code C# équivalent est illustré ci-dessous :
+
+```csharp
+Label label = new Label();
+label.SetBinding(Label.TextProperty, new MultiBinding
+{
+    Bindings = new Collection<BindingBase>
+    {
+        new Binding("Employee1.Forename"),
+        new Binding("Employee1.MiddleName"),
+        new Binding("Employee1.Surname")
+    },
+    StringFormat = "{0} {1} {2}"
+});
+```
 
 > [!IMPORTANT]
 > Le nombre de paramètres dans un format de chaîne composite ne peut pas dépasser le nombre d' `Binding` objets enfants dans le `MultiBinding` .
