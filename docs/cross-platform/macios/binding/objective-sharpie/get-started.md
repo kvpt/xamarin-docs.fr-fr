@@ -6,12 +6,12 @@ ms.assetid: 577512BF-1A90-41E5-89DE-9E056C478678
 author: davidortinau
 ms.author: daortin
 ms.date: 10/11/2017
-ms.openlocfilehash: 35f2db71f582c7e6e30448cf32ba4d95033652bf
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 5bee8df72290cab3ed6d5c23fef6c2ae2f1a2559
+ms.sourcegitcommit: d1980b2251999224e71c1289e4b4097595b7e261
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84570984"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92928514"
 ---
 # <a name="getting-started-with-objective-sharpie"></a>Prise en main avec une grande finesse objective
 
@@ -22,13 +22,13 @@ ms.locfileid: "84570984"
 
 ## <a name="installing-objective-sharpie"></a>Installation de la finesse objective
 
-La finesse d’objectif est actuellement un outil en ligne de commande autonome pour Mac OS X 10,10 et versions ultérieures, et n’est _pas un produit Xamarin entièrement pris en charge_. Elle doit être utilisée uniquement par les développeurs avancés pour faciliter la création d’un projet de liaison à une bibliothèque objective-C tierce.
+La finesse d’objectif est actuellement un outil en ligne de commande autonome pour Mac OS X 10,10 et versions ultérieures, et n’est _pas un produit Xamarin entièrement pris en charge_ . Elle doit être utilisée uniquement par les développeurs avancés pour faciliter la création d’un projet de liaison à une bibliothèque objective-C tierce.
 
 Vous pouvez télécharger objective Sharp en tant que programme d’installation standard du package OS X.
 Exécutez le programme d’installation et suivez toutes les invites à l’écran de l’Assistant Installation de :
 
 - **Version actuelle : 3,4**
-  - [Télécharger la dernière version Release](https://dl.xamarin.com/objective-sharpie/ObjectiveSharpie.pkg)
+  - [Télécharger la dernière version Release](https://aka.ms/objective-sharpie)
   - [Annonce du Forum](https://forums.xamarin.com/discussion/104800/objective-sharpie-3-4)
 
 > [!TIP]

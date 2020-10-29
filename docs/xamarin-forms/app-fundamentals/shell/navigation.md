@@ -10,12 +10,12 @@ ms.date: 04/02/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6cf4932c3265d1d66200ae12ba448a758586f11c
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: ee027399aec51bb7ae4fac15e9c706c65d3af235
+ms.sourcegitcommit: d1980b2251999224e71c1289e4b4097595b7e261
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563144"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92928631"
 ---
 # <a name="no-locxamarinforms-shell-navigation"></a>Xamarin.Forms Navigation dans le shell
 
@@ -41,9 +41,9 @@ La navigation est effectuée en appelant la méthode `GoToAsync` à partir de la
 
 La navigation est effectuée dans une application Shell en spécifiant un URI vers lequel naviguer. Les URI de navigation peuvent avoir trois composants :
 
-- Un *itinéraire*, qui définit le chemin d’accès au contenu existant dans le cadre de la hiérarchie visuelle Shell.
-- *Page*. Les pages qui n’existent pas dans la hiérarchie visuelle Shell peuvent être transmises en mode push à la pile de navigation depuis n’importe où dans une application Shell. Par exemple, une page de détails d’un élément ne sera pas définie dans la hiérarchie visuelle Shell, mais elle peut être transmise en mode push à la pile de navigation selon les besoins.
-- Un ou plusieurs *paramètres de requête*. Les paramètres de requête sont des paramètres qui peuvent être transmis à la page de destination lors de la navigation.
+- Un *itinéraire* , qui définit le chemin d’accès au contenu existant dans le cadre de la hiérarchie visuelle Shell.
+- *Page* . Les pages qui n’existent pas dans la hiérarchie visuelle Shell peuvent être transmises en mode push à la pile de navigation depuis n’importe où dans une application Shell. Par exemple, une page de détails d’un élément ne sera pas définie dans la hiérarchie visuelle Shell, mais elle peut être transmise en mode push à la pile de navigation selon les besoins.
+- Un ou plusieurs *paramètres de requête* . Les paramètres de requête sont des paramètres qui peuvent être transmis à la page de destination lors de la navigation.
 
 Lorsqu’un URI de navigation comprend les trois composants, la structure est : //route/page?queryParameters
 
@@ -108,7 +108,7 @@ Routing.RegisterRoute("dogdetails", typeof(DogDetailPage));
 Routing.RegisterRoute("elephantdetails", typeof(ElephantDetailPage));
 ```
 
-Cet exemple inscrit des pages de détail sur l’élément, qui ne sont pas définies dans la sous-classe Shell, en tant qu’itinéraires. Ces pages sont ensuite accessibles à l’aide d’une navigation basée sur URI, depuis n’importe où dans l’application. Les itinéraires pour ces pages sont appelés *itinéraires globaux*.
+Cet exemple inscrit des pages de détail sur l’élément, qui ne sont pas définies dans la sous-classe Shell, en tant qu’itinéraires. Ces pages sont ensuite accessibles à l’aide d’une navigation basée sur URI, depuis n’importe où dans l’application. Les itinéraires pour ces pages sont appelés *itinéraires globaux* .
 
 > [!NOTE]
 > Les pages dont les itinéraires ont été inscrits avec la méthode `Routing.RegisterRoute` peuvent être désinscrites avec la méthode `Routing.UnRegisterRoute`, si nécessaire.
@@ -213,8 +213,8 @@ Les formats d’itinéraires suivants ne sont pas valides :
 
 | Format | Explication |
 | --- | --- |
-| *route* ou /*route* | Les itinéraires dans la hiérarchie visuelle ne peuvent pas être transmis en mode push à la pile de navigation. |
-| //*page* ou ///*page* | Actuellement, les itinéraires globaux ne peuvent pas représenter la seule page de la pile de navigation. Par conséquent, l’acheminement absolu pour les itinéraires globaux n’est pas pris en charge. |
+| *route* ou / *route* | Les itinéraires dans la hiérarchie visuelle ne peuvent pas être transmis en mode push à la pile de navigation. |
+| //*page* ou /// *page* | Actuellement, les itinéraires globaux ne peuvent pas représenter la seule page de la pile de navigation. Par conséquent, l’acheminement absolu pour les itinéraires globaux n’est pas pris en charge. |
 
 L’utilisation d’un de ces formats d’acheminement lève une exception `Exception`.
 
@@ -254,9 +254,6 @@ La classe `Shell` définit un événement `Navigating` déclenché quand la navi
 
 En outre, la classe `ShellNavigatingEventArgs` fournit une méthode `Cancel` qui peut être utilisée pour annuler la navigation.
 
-> [!NOTE]
-> L’événement `Navigated` est déclenché par la méthode substituable `OnNavigating` dans la classe `Shell`.
-
 La classe `Shell` définit également un événement `Navigated` déclenché quand la navigation est terminée. L’objet `ShellNavigatedEventArgs` qui accompagne l’événement `Navigating` fournit les propriétés suivantes :
 
 | Propriété | Type | Description |
@@ -264,9 +261,6 @@ La classe `Shell` définit également un événement `Navigated` déclenché qua
 | `Current` | `ShellNavigationState` | URI de la page actuelle. |
 | `Previous`| `ShellNavigationState` | URI de la page précédente. |
 | `Source`  | `ShellNavigationSource` | Le type de navigation qui s’est produit. |
-
-> [!NOTE]
-> L’événement `Navigating` est déclenché par la méthode substituable `OnNavigated` dans la classe `Shell`.
 
 Les classes `ShellNavigatedEventArgs` et `ShellNavigatingEventArgs` comportent des propriétés `Source` de type `ShellNavigationSource`. Cette énumération fournit les valeurs suivantes :
 

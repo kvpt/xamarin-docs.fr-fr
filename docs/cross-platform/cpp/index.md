@@ -5,12 +5,12 @@ description: Visual Studio pour Mac peut être utilisé pour créer et intégrer
 author: mikeparker104
 ms.author: miparker
 ms.date: 11/07/2019
-ms.openlocfilehash: 80878ec36eb319ff6c798788493469793efdcf56
-ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
+ms.openlocfilehash: 8422affab86ea176cad4e57833188dcd5738a99a
+ms.sourcegitcommit: d1980b2251999224e71c1289e4b4097595b7e261
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91457989"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92928501"
 ---
 # <a name="use-cc-libraries-with-xamarin"></a>Utiliser des bibliothèques C/C++ avec Xamarin
 
@@ -24,7 +24,7 @@ Toutefois, dans certains cas, il existe un désir (ou une exigence) de conserver
 
 Ce billet décrit une approche de haut niveau pour ce scénario et vous guide dans un exemple simple.
 
-## <a name="background"></a>Contexte
+## <a name="background"></a>Arrière-plan
 
 C/C++ est considéré comme un langage multiplateforme, mais il est important de veiller à ce que le code source soit effectivement multiplateforme, en utilisant uniquement C/C++ pris en charge par tous les compilateurs cibles et contenant peu ou pas de code spécifique à la plateforme ou au compilateur.
 
@@ -45,17 +45,17 @@ Les 4 étapes sont les suivantes :
 
 ### <a name="stage-1-compiling-the-cc-source-code-into-platform-specific-native-libraries"></a>Étape 1 : compilation du code source C/C++ dans des bibliothèques natives spécifiques à une plateforme
 
-L’objectif de cette étape est de créer des bibliothèques natives qui peuvent être appelées par le wrapper C#. Cela peut être utile en fonction de votre situation. Les nombreux outils et processus qu’il est possible d’introduire dans ce scénario courant n’entrent pas dans le cadre de cet article. Les principales considérations sont le maintien de la synchronisation du code base C/C++ avec tout code wrapper natif, un test unitaire suffisant et l’automatisation de la génération. 
+L’objectif de cette étape est de créer des bibliothèques natives qui peuvent être appelées par le wrapper C#. Cela peut être utile en fonction de votre situation. Les nombreux outils et processus qu’il est possible d’introduire dans ce scénario courant n’entrent pas dans le cadre de cet article. Les principales considérations sont le maintien de la synchronisation du code base C/C++ avec tout code wrapper natif, un test unitaire suffisant et l’automatisation de la génération.
 
 Les bibliothèques de la procédure pas à pas ont été créées à l’aide de Visual Studio Code avec un script d’interpréteur de commandes associé. Une version étendue de cette procédure pas à pas est disponible dans le [référentiel GITHUB Cat mobile](https://github.com/xamcat/mobcat-samples/tree/master/cpp_with_xamarin) qui traite de cette partie de l’exemple de façon plus approfondie. Dans ce cas, les bibliothèques natives sont traitées comme une dépendance tierce. Toutefois, cette étape est illustrée pour le contexte.
 
-Par souci de simplicité, la procédure pas à pas cible uniquement un sous-ensemble d’architectures. Pour iOS, il utilise l’utilitaire LiPo pour créer un seul binaire Fat à partir des fichiers binaires propres à l’architecture individuels. Android utilise des binaires dynamiques avec une extension. so et iOS utilise un binaire Fat statique avec une extension. a. 
+Par souci de simplicité, la procédure pas à pas cible uniquement un sous-ensemble d’architectures. Pour iOS, il utilise l’utilitaire LiPo pour créer un seul binaire Fat à partir des fichiers binaires propres à l’architecture individuels. Android utilise des binaires dynamiques avec une extension. so et iOS utilise un binaire Fat statique avec une extension. a.
 
 ### <a name="stage-2-wrapping-the-native-libraries-with-a-visual-studio-solution"></a>Étape 2 : encapsulation des bibliothèques natives avec une solution Visual Studio
 
 L’étape suivante consiste à encapsuler les bibliothèques natives afin qu’elles soient facilement utilisées à partir de .NET. Pour ce faire, vous disposez d’une solution Visual Studio avec quatre projets. Un projet partagé contient le code commun. Les projets ciblant chacun des Xamarin. Android, Xamarin. iOS et .NET Standard permettent de référencer la bibliothèque de manière indépendante de la plateforme.
 
-Le wrapper utilise «[The appât and Switch pli](https://log.paulbetts.org/the-bait-and-switch-pcl-trick/)», décrit par Paul Betts. Ce n’est pas le seul moyen, mais cela facilite la référence à la bibliothèque et évite d’avoir à gérer explicitement les implémentations spécifiques à la plateforme au sein de l’application consommatrice elle-même. L’astuce consiste essentiellement à s’assurer que les cibles (.NET Standard, Android, iOS) partagent le même espace de noms, le même nom d’assembly et la même structure de classe. Dans la mesure où NuGet préfèrera toujours une bibliothèque spécifique à la plateforme, la version de .NET Standard n’est jamais utilisée au moment de l’exécution.
+Le wrapper utilise «[l’appât et le pli du commutateur](https://github.com/JFMG/Bait-and-Switch-PCL-example)». Ce n’est pas le seul moyen, mais cela facilite la référence à la bibliothèque et évite d’avoir à gérer explicitement les implémentations spécifiques à la plateforme au sein de l’application consommatrice elle-même. L’astuce consiste essentiellement à s’assurer que les cibles (.NET Standard, Android, iOS) partagent le même espace de noms, le même nom d’assembly et la même structure de classe. Dans la mesure où NuGet préfèrera toujours une bibliothèque spécifique à la plateforme, la version de .NET Standard n’est jamais utilisée au moment de l’exécution.
 
 La majeure partie du travail de cette étape se concentrera sur l’utilisation de P/Invoke pour appeler les méthodes de la bibliothèque native et la gestion des références aux objets sous-jacents. L’objectif est d’exposer les fonctionnalités de la bibliothèque au consommateur tout en éliminant toute complexité. Les développeurs Xamarin. Forms n’ont pas besoin de connaître le fonctionnement interne de la bibliothèque non managée. Elle doit être similaire à celle d’une autre bibliothèque C# managée.
 
@@ -75,7 +75,7 @@ Le référentiel de code source contient une [liste de lectures supplémentaires
 
 ## <a name="walk-through"></a>Procédure pas à pas
 
-Les étapes fournies sont spécifiques à **Visual Studio pour Mac**, mais la structure fonctionne également dans **Visual Studio 2017** .
+Les étapes fournies sont spécifiques à **Visual Studio pour Mac** , mais la structure fonctionne également dans **Visual Studio 2017** .
 
 ### <a name="prerequisites"></a>Prérequis
 
@@ -136,32 +136,32 @@ Cette étape nécessite les [bibliothèques précompilées](https://github.com/x
 
 ### <a name="creating-the-visual-studio-solution"></a>Création de la solution Visual Studio
 
-1. Dans **Visual Studio pour Mac**, cliquez sur **nouveau projet** (dans la *page Bienvenue*) ou **nouvelle solution** (à partir du menu *fichier* ).
-2. Dans la fenêtre **nouveau projet** , choisissez **projet partagé** (dans la *bibliothèque multiplateforme >*), puis cliquez sur **suivant**.
-3. Mettez à jour les champs suivants, puis cliquez sur **créer**:
+1. Dans **Visual Studio pour Mac** , cliquez sur **nouveau projet** (dans la *page Bienvenue* ) ou **nouvelle solution** (à partir du menu *fichier* ).
+2. Dans la fenêtre **nouveau projet** , choisissez **projet partagé** (dans la *bibliothèque multiplateforme >* ), puis cliquez sur **suivant** .
+3. Mettez à jour les champs suivants, puis cliquez sur **créer** :
 
     - **Nom du projet :** MathFuncs. Shared  
     - **Nom de la solution :** MathFuncs  
     - **Emplacement :** Utiliser l’emplacement d’enregistrement par défaut (ou choisir une alternative)   
     - **Créez un projet dans le répertoire de la solution :** Activer la case à cocher
-4. Dans **Explorateur de solutions**, double-cliquez sur le projet **MathFuncs. Shared** et accédez à **principaux paramètres**.
-5. Supprimez **. Partagé** à partir de l' **espace de noms par défaut** afin qu’il soit défini sur **MathFuncs** uniquement, puis cliquez sur **OK**.
-6. Ouvrez **MyClass.cs** (créé par le modèle), puis renommez la classe et le nom de fichier en **MyMathFuncsWrapper** et remplacez l’espace de noms par **MathFuncs**.
-7. **Ctrl + clic** sur la solution **MathFuncs**, puis choisissez **Ajouter un nouveau projet...** dans le menu **Ajouter** .
-8. Dans la fenêtre **nouveau projet** , choisissez **bibliothèque de .NET standard** (dans la *bibliothèque multiplateforme >*), puis cliquez sur **suivant**.
-9. Choisissez **.NET Standard 2,0** , puis cliquez sur **suivant**.
-10. Mettez à jour les champs suivants, puis cliquez sur **créer**:
+4. Dans **Explorateur de solutions** , double-cliquez sur le projet **MathFuncs. Shared** et accédez à **principaux paramètres** .
+5. Supprimez **. Partagé** à partir de l' **espace de noms par défaut** afin qu’il soit défini sur **MathFuncs** uniquement, puis cliquez sur **OK** .
+6. Ouvrez **MyClass.cs** (créé par le modèle), puis renommez la classe et le nom de fichier en **MyMathFuncsWrapper** et remplacez l’espace de noms par **MathFuncs** .
+7. **Ctrl + clic** sur la solution **MathFuncs** , puis choisissez **Ajouter un nouveau projet...** dans le menu **Ajouter** .
+8. Dans la fenêtre **nouveau projet** , choisissez **bibliothèque de .NET standard** (dans la *bibliothèque multiplateforme >* ), puis cliquez sur **suivant** .
+9. Choisissez **.NET Standard 2,0** , puis cliquez sur **suivant** .
+10. Mettez à jour les champs suivants, puis cliquez sur **créer** :
 
     - **Nom du projet :** MathFuncs. standard  
     - **Emplacement :** Utiliser le même emplacement d’enregistrement que le projet partagé   
 
-11. Dans **Explorateur de solutions**, double-cliquez sur le projet **MathFuncs. standard** .
-12. Accédez à **principaux paramètres**, puis mettez à jour **espace de noms par défaut** sur **MathFuncs**.
-13. Accédez aux paramètres de **sortie** , puis mettez à jour le nom de l' **assembly** sur **MathFuncs**.
-14. Accédez aux paramètres **du compilateur** , modifiez la **configuration** en **Release**, en définissant les **informations de débogage** sur **symboles uniquement** , puis cliquez sur **OK**.
+11. Dans **Explorateur de solutions** , double-cliquez sur le projet **MathFuncs. standard** .
+12. Accédez à **principaux paramètres** , puis mettez à jour **espace de noms par défaut** sur **MathFuncs** .
+13. Accédez aux paramètres de **sortie** , puis mettez à jour le nom de l' **assembly** sur **MathFuncs** .
+14. Accédez aux paramètres **du compilateur** , modifiez la **configuration** en **Release** , en définissant les **informations de débogage** sur **symboles uniquement** , puis cliquez sur **OK** .
 15. Suppression de **Class1.cs/Getting démarrée** à partir du projet (si l’un de ces éléments a été inclus dans le modèle).
-16. **Ctrl + clic** dans le dossier **dépendances/références** du projet, puis choisissez **modifier les références**.
-17. Sélectionnez **MathFuncs. Shared** sous l’onglet **projets** , puis cliquez sur **OK**.
+16. **Ctrl + clic** dans le dossier **dépendances/références** du projet, puis choisissez **modifier les références** .
+17. Sélectionnez **MathFuncs. Shared** sous l’onglet **projets** , puis cliquez sur **OK** .
 18. Répétez les étapes 7-17 (en ignorant l’étape 9) à l’aide des configurations suivantes :
 
     | **NOM DU PROJET**  | **NOM DU MODÈLE**   | **MENU NOUVEAU PROJET**   |
@@ -169,15 +169,15 @@ Cette étape nécessite les [bibliothèques précompilées](https://github.com/x
     | MathFuncs. Android | Bibliothèque de classes       | Bibliothèque de > Android      |
     | MathFuncs. iOS     | Bibliothèque de liaisons     | Bibliothèque de > iOS          |
 
-19. Dans **Explorateur de solutions**, double-cliquez sur le projet **MathFuncs. Android** , puis accédez aux paramètres **du compilateur** .
+19. Dans **Explorateur de solutions** , double-cliquez sur le projet **MathFuncs. Android** , puis accédez aux paramètres **du compilateur** .
 
-20. Avec la **configuration** définie à **Déboguer**, modifiez **définir les symboles** pour inclure **Android ;**.
+20. Avec la **configuration** définie à **Déboguer** , modifiez **définir les symboles** pour inclure **Android ;** .
 
-21. Modifiez la **configuration** en **Release**, puis modifiez **définir les symboles** pour inclure également **Android ;**.
+21. Modifiez la **configuration** en **Release** , puis modifiez **définir les symboles** pour inclure également **Android ;** .
 
-22. Répétez les étapes 19-20 pour **MathFuncs. iOS**, en modifiant **définir les symboles** pour inclure **iOS ;** au lieu d' **Android ;** dans les deux cas.
+22. Répétez les étapes 19-20 pour **MathFuncs. iOS** , en modifiant **définir les symboles** pour inclure **iOS ;** au lieu d' **Android ;** dans les deux cas.
 
-23. Générez la solution dans la configuration **Release** (**Ctrl + Commande + B**) et vérifiez que les trois assemblys de sortie (Android, iOS, .NET standard) (dans les dossiers bin de projet respectifs) partagent le même nom **MathFuncs.dll**.
+23. Générez la solution dans la configuration **Release** ( **Ctrl + Commande + B** ) et vérifiez que les trois assemblys de sortie (Android, iOS, .NET standard) (dans les dossiers bin de projet respectifs) partagent le même nom **MathFuncs.dll** .
 
 À ce niveau, la solution doit avoir trois cibles, une pour Android, iOS et .NET Standard, et un projet partagé qui est référencé par chacune des trois cibles. Ils doivent être configurés pour utiliser le même espace de noms par défaut et les mêmes assemblys de sortie portant le même nom. Cela est nécessaire pour l’approche « appât et commutateur » mentionnée précédemment.
 
@@ -189,7 +189,7 @@ Le processus d’ajout des bibliothèques natives à la solution Wrapper varie l
 
 1. **Ctrl + clic** sur le projet **MathFuncs. Android** , puis choisissez **nouveau dossier** dans le menu **Ajouter** attribution de **noms.**
 
-2. Pour chaque **Abi** (interface binaire d’application), appuyez sur **Ctrl + clic** sur le dossier **libs** , puis choisissez **nouveau dossier** dans le menu **Ajouter** , en le nommant après cet **Abi**. Dans ce cas :
+2. Pour chaque **Abi** (interface binaire d’application), appuyez sur **Ctrl + clic** sur le dossier **libs** , puis choisissez **nouveau dossier** dans le menu **Ajouter** , en le nommant après cet **Abi** . Dans ce cas :
 
     - arm64-v8a
     - armeabi-v7a
@@ -220,7 +220,7 @@ Le processus d’ajout des bibliothèques natives à la solution Wrapper varie l
     **x86_64 :** libs/Android/x86_64
 
     > [!NOTE]
-    > Pour ajouter des fichiers, appuyez sur **Ctrl et cliquez** sur le dossier représentant l' **Abi**respectif, puis choisissez **Ajouter des fichiers...** dans le menu **Ajouter** . Choisissez la bibliothèque appropriée (à partir du répertoire **PrecompiledLibs** ), cliquez sur **ouvrir** , puis sur **OK** en laissant l’option par défaut pour *copier le fichier dans le répertoire*.
+    > Pour ajouter des fichiers, appuyez sur **Ctrl et cliquez** sur le dossier représentant l' **Abi** respectif, puis choisissez **Ajouter des fichiers...** dans le menu **Ajouter** . Choisissez la bibliothèque appropriée (à partir du répertoire **PrecompiledLibs** ), cliquez sur **ouvrir** , puis sur **OK** en laissant l’option par défaut pour *copier le fichier dans le répertoire* .
 
 5. Pour chacun des fichiers **. so** , **Ctrl + clic** , puis choisissez l’option **EmbeddedNativeLibrary** dans le menu **action de génération** .
 
@@ -240,8 +240,8 @@ Le dossier **libs** doit maintenant s’afficher comme suit :
 
 #### <a name="native-references-for-mathfuncsios"></a>Références natives pour MathFuncs. iOS
 
-1. **Ctrl + clic** sur le projet **MathFuncs. iOS** , puis choisissez **Ajouter une référence Native** dans le menu **Ajouter** . 
-2. Choisissez la bibliothèque **libMathFuncs. a** (à partir de libs/iOS sous le répertoire **PrecompiledLibs** ), puis cliquez sur **ouvrir** . 
+1. **Ctrl + clic** sur le projet **MathFuncs. iOS** , puis choisissez **Ajouter une référence Native** dans le menu **Ajouter** .
+2. Choisissez la bibliothèque **libMathFuncs. a** (à partir de libs/iOS sous le répertoire **PrecompiledLibs** ), puis cliquez sur **ouvrir** .
 3. **Ctrl + clic** sur le fichier **libMathFuncs** (dans le dossier **références natives** , puis choisissez l’option **Propriétés** dans le menu  
 4. Configurez les propriétés de la **référence Native** afin qu’elles soient activées (avec une icône représentant une coche) dans le panneau **Propriétés** :
 
@@ -252,7 +252,7 @@ Le dossier **libs** doit maintenant s’afficher comme suit :
     > [!NOTE]
     > L’utilisation d’un type de projet de bibliothèque de liaison avec une [référence Native](../macios/native-references.md) incorpore la bibliothèque statique et lui permet d’être liée automatiquement à l’application Xamarin. IOS qui la référence (même si elle est incluse via un package NuGet).
 
-5. Ouvrez **ApiDefinition.cs**, en supprimant le code commenté par un modèle (en laissant uniquement l' `MathFuncs` espace de noms), puis effectuez la même étape pour **structs.cs** 
+5. Ouvrez **ApiDefinition.cs** , en supprimant le code commenté par un modèle (en laissant uniquement l' `MathFuncs` espace de noms), puis effectuez la même étape pour **structs.cs**
 
     > [!NOTE]
     > Un projet de bibliothèque de liaisons requiert ces fichiers (avec les actions de génération *ObjCBindingApiDefinition* et *ObjCBindingCoreSource* ) afin de générer. Toutefois, nous allons écrire le code, pour appeler notre bibliothèque native, en dehors de ces fichiers d’une manière qui peut être partagée entre les cibles de bibliothèque Android et iOS à l’aide de P/Invoke standard.
@@ -263,7 +263,7 @@ Le dossier **libs** doit maintenant s’afficher comme suit :
 
 #### <a name="creating-a-safehandle"></a>Création d’un SafeHandle
 
-1. **Ctrl + clic** sur le projet **MathFuncs. Shared** , puis choisissez **Ajouter un fichier...** dans le menu **Ajouter** . 
+1. **Ctrl + clic** sur le projet **MathFuncs. Shared** , puis choisissez **Ajouter un fichier...** dans le menu **Ajouter** .
 2. Choisissez **classe vide** dans la fenêtre **nouveau fichier** , nommez-la **MyMathFuncsSafeHandle** , puis cliquez sur **nouveau**
 3. Implémentez la classe **MyMathFuncsSafeHandle** :
 
@@ -289,11 +289,11 @@ Le dossier **libs** doit maintenant s’afficher comme suit :
     ```
 
     > [!NOTE]
-    > Un [SafeHandle](/dotnet/api/system.runtime.interopservices.safehandle?view=netframework-4.7.2) est la meilleure façon de travailler avec des ressources non managées dans du code managé. Cela élimine un grand nombre de code réutilisable lié à la finalisation critique et au cycle de vie des objets. Le propriétaire de ce descripteur peut ensuite le traiter comme n’importe quelle autre ressource gérée et n’a pas besoin d’implémenter le [modèle entièrement jetable](/dotnet/standard/garbage-collection/implementing-dispose). 
+    > Un [SafeHandle](/dotnet/api/system.runtime.interopservices.safehandle?view=netframework-4.7.2) est la meilleure façon de travailler avec des ressources non managées dans du code managé. Cela élimine un grand nombre de code réutilisable lié à la finalisation critique et au cycle de vie des objets. Le propriétaire de ce descripteur peut ensuite le traiter comme n’importe quelle autre ressource gérée et n’a pas besoin d’implémenter le [modèle entièrement jetable](/dotnet/standard/garbage-collection/implementing-dispose).
 
 #### <a name="creating-the-internal-wrapper-class"></a>Création de la classe wrapper interne
 
-1. Ouvrez **MyMathFuncsWrapper.cs**, en le remplaçant par une classe statique interne
+1. Ouvrez **MyMathFuncsWrapper.cs** , en le remplaçant par une classe statique interne
 
     ```csharp
     namespace MathFuncs
@@ -315,7 +315,7 @@ Le dossier **libs** doit maintenant s’afficher comme suit :
     ```
 
     > [!NOTE]
-    > Cela définit la valeur de constante **DllName** selon que la bibliothèque est en cours de génération pour **Android** ou **iOS**. Cela permet de traiter les différentes conventions d’affectation de noms utilisées par chaque plateforme respective, mais également le type de bibliothèque utilisé dans ce cas. Android utilise une bibliothèque dynamique et attend un nom de fichier, y compris l’extension. Pour iOS, '*__Internal*'est nécessaire, car nous utilisons une bibliothèque statique.
+    > Cela définit la valeur de constante **DllName** selon que la bibliothèque est en cours de génération pour **Android** ou **iOS** . Cela permet de traiter les différentes conventions d’affectation de noms utilisées par chaque plateforme respective, mais également le type de bibliothèque utilisé dans ce cas. Android utilise une bibliothèque dynamique et attend un nom de fichier, y compris l’extension. Pour iOS, ' *__Internal* 'est nécessaire, car nous utilisons une bibliothèque statique.
 
 3. Ajoutez une référence à **System. Runtime. InteropServices** en haut du fichier **MyMathFuncsWrapper.cs**
 
@@ -353,7 +353,7 @@ Le dossier **libs** doit maintenant s’afficher comme suit :
     ```
 
     > [!NOTE]
-    > Nous utilisons des types simples pour les paramètres de cet exemple. Dans la mesure où le marshaling est une copie au niveau du bit dans ce cas, il ne nécessite aucun travail supplémentaire de notre part. Notez également l’utilisation de la classe **MyMathFuncsSafeHandle** au lieu du **IntPtr**standard. **IntPtr** est mappé automatiquement au **SafeHandle** dans le cadre du processus de marshaling.
+    > Nous utilisons des types simples pour les paramètres de cet exemple. Dans la mesure où le marshaling est une copie au niveau du bit dans ce cas, il ne nécessite aucun travail supplémentaire de notre part. Notez également l’utilisation de la classe **MyMathFuncsSafeHandle** au lieu du **IntPtr** standard. **IntPtr** est mappé automatiquement au **SafeHandle** dans le cadre du processus de marshaling.
 
 6. Vérifiez que la classe **MyMathFuncsWrapper** terminée s’affiche comme ci-dessous :
 
@@ -409,7 +409,7 @@ Le dossier **libs** doit maintenant s’afficher comme suit :
 
 Maintenant que le wrapper est terminé, créez une classe MyMathFuncs qui gérera la référence à l’objet MyMathFuncs C++ non managé.  
 
-1. **Ctrl + clic** sur le projet **MathFuncs. Shared** , puis choisissez **Ajouter un fichier...** dans le menu **Ajouter** . 
+1. **Ctrl + clic** sur le projet **MathFuncs. Shared** , puis choisissez **Ajouter un fichier...** dans le menu **Ajouter** .
 2. Choisissez **classe vide** dans la fenêtre **nouveau fichier** , nommez-la **MyMathFuncs** , puis cliquez sur **nouveau**
 3. Ajoutez les membres suivants à la classe **MyMathFuncs** :
 
@@ -477,9 +477,9 @@ Maintenant que le wrapper est terminé, créez une classe MyMathFuncs qui gérer
 
 Pour que la bibliothèque soit empaquetée et distribuée via NuGet, la solution a besoin d’un fichier **NuSpec** . Cela permet d’identifier les assemblys qui seront inclus pour chaque plateforme prise en charge.
 
-1. **Ctrl + clic** sur la solution **MathFuncs**, puis choisissez **Ajouter un dossier de solution** dans le menu **Ajouter** attribution de nom **SolutionItems**.
+1. **Ctrl + clic** sur la solution **MathFuncs** , puis choisissez **Ajouter un dossier de solution** dans le menu **Ajouter** attribution de nom **SolutionItems** .
 2. **Ctrl + clic** sur le dossier **SolutionItems** , puis choisissez **nouveau fichier...** dans le menu **Ajouter** .
-3. Choisissez **fichier XML vide** dans la fenêtre **nouveau fichier** , nommez-le **MathFuncs. NuSpec** , puis cliquez sur **nouveau**.
+3. Choisissez **fichier XML vide** dans la fenêtre **nouveau fichier** , nommez-le **MathFuncs. NuSpec** , puis cliquez sur **nouveau** .
 4. Mettez à jour **MathFuncs. NuSpec** avec les métadonnées de package de base à afficher au consommateur **NuGet** . Par exemple :
 
     ```xml
@@ -555,11 +555,11 @@ Pour que la bibliothèque soit empaquetée et distribuée via NuGet, la solution
         <!-- Android -->
         <file src="MathFuncs.Android/bin/Release/MathFuncs.dll" target="lib/MonoAndroid81/MathFuncs.dll" />
         <file src="MathFuncs.Android/bin/Release/MathFuncs.pdb" target="lib/MonoAndroid81/MathFuncs.pdb" />
-        
+
         <!-- iOS -->
         <file src="MathFuncs.iOS/bin/Release/MathFuncs.dll" target="lib/Xamarin.iOS10/MathFuncs.dll" />
         <file src="MathFuncs.iOS/bin/Release/MathFuncs.pdb" target="lib/Xamarin.iOS10/MathFuncs.pdb" />
-        
+
         <!-- netstandard2.0 -->
         <file src="MathFuncs.Standard/bin/Release/netstandard2.0/MathFuncs.dll" target="lib/netstandard2.0/MathFuncs.dll" />
         <file src="MathFuncs.Standard/bin/Release/netstandard2.0/MathFuncs.pdb" target="lib/netstandard2.0/MathFuncs.pdb" />
@@ -581,14 +581,14 @@ L’étape suivante consiste à empaqueter et distribuer le package NuGet afin q
 
 La forme la plus simple du flux NuGet est un répertoire local :
 
-1. Dans **Finder**, accédez à un répertoire pratique. Par exemple, **/Users**.
-2. Choisissez **nouveau dossier** dans le menu **fichier** , en fournissant un nom explicite, par exemple **local-NuGet-Feed**.
+1. Dans **Finder** , accédez à un répertoire pratique. Par exemple, **/Users** .
+2. Choisissez **nouveau dossier** dans le menu **fichier** , en fournissant un nom explicite, par exemple **local-NuGet-Feed** .
 
 ### <a name="creating-the-package"></a>Création du package
 
-1. Définissez la **configuration de build** sur **Release**, puis exécutez une génération à l’aide de la **commande + B**.
+1. Définissez la **configuration de build** sur **Release** , puis exécutez une génération à l’aide de la **commande + B** .
 2. Ouvrez le **Terminal** et accédez au répertoire contenant le fichier **NuSpec** .
-3. Dans **Terminal**, exécutez la commande du **Pack NuGet** en spécifiant le fichier **NuSpec** , la **version** (par exemple, 1.0.0) et le **outputDirectory** à l’aide du dossier créé à l' [étape précédente](#preparing-a-local-packages-directory), autrement dit, **local-NuGet-Feed**. Par exemple :
+3. Dans **Terminal** , exécutez la commande du **Pack NuGet** en spécifiant le fichier **NuSpec** , la **version** (par exemple, 1.0.0) et le **outputDirectory** à l’aide du dossier créé à l' [étape précédente](#preparing-a-local-packages-directory), autrement dit, **local-NuGet-Feed** . Par exemple :
 
     ```bash
     nuget pack MathFuncs.nuspec -Version 1.0.0 -OutputDirectory ~/local-nuget-feed
@@ -608,62 +608,62 @@ Pour effectuer la procédure pas à pas, créez une application **Xamarin. Forms
 
 ### <a name="creating-the-xamarinforms-project"></a>Création du projet **Xamarin. Forms**
 
-1. Ouvrez une nouvelle instance de **Visual Studio pour Mac**. Pour ce faire, vous pouvez utiliser le **Terminal**:
+1. Ouvrez une nouvelle instance de **Visual Studio pour Mac** . Pour ce faire, vous pouvez utiliser le **Terminal** :
 
     ```bash
     open -n -a "Visual Studio"
     ```
 
-2. Dans **Visual Studio pour Mac**, cliquez sur **nouveau projet** (dans la *page Bienvenue*) ou **nouvelle solution** (à partir du menu *fichier* ).
-3. Dans la fenêtre **nouveau projet** , choisissez **application Formulaires vide** (dans l' *application > multiplateformes*), puis cliquez sur **suivant**.
-4. Mettez à jour les champs suivants, puis cliquez sur **suivant**:
+2. Dans **Visual Studio pour Mac** , cliquez sur **nouveau projet** (dans la *page Bienvenue* ) ou **nouvelle solution** (à partir du menu *fichier* ).
+3. Dans la fenêtre **nouveau projet** , choisissez **application Formulaires vide** (dans l' *application > multiplateformes* ), puis cliquez sur **suivant** .
+4. Mettez à jour les champs suivants, puis cliquez sur **suivant** :
 
     - **Nom de l’application :** MathFuncsApp.
-    - **Identificateur de l’Organisation :** Utilisez un espace de noms inversé, par exemple _com. {your_org}_.
+    - **Identificateur de l’Organisation :** Utilisez un espace de noms inversé, par exemple _com. {your_org}_ .
     - **Plateformes cibles :** Utilisez la valeur par défaut (les cibles Android et iOS).
     - **Code partagé :** Définissez cette valeur sur .NET Standard (une solution « bibliothèque partagée » est possible, mais au-delà de la portée de cette procédure pas à pas).
 
-5. Mettez à jour les champs suivants, puis cliquez sur **créer**:
+5. Mettez à jour les champs suivants, puis cliquez sur **créer** :
 
     - **Nom du projet :** MathFuncsApp.
     - **Nom de la solution :** MathFuncsApp.  
     - **Emplacement :** Utilisez l’emplacement d’enregistrement par défaut (ou choisissez une alternative).
 
-6. Dans **Explorateur de solutions**, appuyez sur **Ctrl + clic** sur la cible (**MathFuncsApp. Android** ou **MathFuncs. iOS**) pour le test initial, puis choisissez **définir comme projet de démarrage**.
-7. Choisissez l’émulateur d' **appareil** ou de **simulateur**préféré / **Emulator**. 
-8. Exécutez la solution (**commande + retour**) pour confirmer que le projet **Xamarin. Forms** basé sur un modèle est généré et s’exécute. 
+6. Dans **Explorateur de solutions** , appuyez sur **Ctrl + clic** sur la cible ( **MathFuncsApp. Android** ou **MathFuncs. iOS** ) pour le test initial, puis choisissez **définir comme projet de démarrage** .
+7. Choisissez l’émulateur d' **appareil** ou de **simulateur** préféré / **Emulator** .
+8. Exécutez la solution ( **commande + retour** ) pour confirmer que le projet **Xamarin. Forms** basé sur un modèle est généré et s’exécute.
 
     > [!NOTE]
     > **iOS** (le simulateur) a tendance à avoir le temps de build/déploiement le plus rapide.
 
 ### <a name="adding-the-local-nuget-feed-to-the-nuget-configuration"></a>Ajout du flux NuGet local à la configuration NuGet
 
-1. Dans **Visual Studio**, choisissez **Préférences** (dans le menu **Visual Studio** ).
-2. Choisissez **sources** dans la section **NuGet** , puis cliquez sur **Ajouter**.
-3. Mettez à jour les champs suivants, puis cliquez sur **Ajouter une source**:
+1. Dans **Visual Studio** , choisissez **Préférences** (dans le menu **Visual Studio** ).
+2. Choisissez **sources** dans la section **NuGet** , puis cliquez sur **Ajouter** .
+3. Mettez à jour les champs suivants, puis cliquez sur **Ajouter une source** :
 
     - **Nom :** Fournissez un nom explicite, par exemple, local-packages.  
     - **Emplacement :** Spécifiez le dossier **local-NuGet-Feed** créé à l' [étape précédente](#preparing-a-local-packages-directory).
 
     > [!NOTE]
-    > Dans ce cas, il est inutile de spécifier un **nom d’utilisateur** et un **mot de passe**. 
+    > Dans ce cas, il est inutile de spécifier un **nom d’utilisateur** et un **mot de passe** .
 
-4. Cliquez sur **OK**.
+4. Cliquez sur **OK** .
 
 ### <a name="referencing-the-package"></a>Référencement du package
 
-Répétez les étapes suivantes pour chaque projet (**MathFuncsApp**, **MathFuncsApp. Android**et **MathFuncsApp. iOS**).
+Répétez les étapes suivantes pour chaque projet ( **MathFuncsApp** , **MathFuncsApp. Android** et **MathFuncsApp. iOS** ).
 
 1. **Ctrl + clic** sur le projet, puis choisissez **Ajouter des packages NuGet...** dans le menu **Ajouter** .
-2. Recherchez **MathFuncs**. 
-3. Vérifiez que la **version** du package est **1.0.0** et que les autres détails s’affichent comme prévu, par exemple le **titre** et la **Description**, autrement dit, *MathFuncs* et exemple de *bibliothèque de wrappers C++*. 
-4. Sélectionnez le package **MathFuncs** , puis cliquez sur **Ajouter un package**.
+2. Recherchez **MathFuncs** .
+3. Vérifiez que la **version** du package est **1.0.0** et que les autres détails s’affichent comme prévu, par exemple le **titre** et la **Description** , autrement dit, *MathFuncs* et exemple de *bibliothèque de wrappers C++* .
+4. Sélectionnez le package **MathFuncs** , puis cliquez sur **Ajouter un package** .
 
 ### <a name="using-the-library-functions"></a>Utilisation des fonctions de bibliothèque
 
 À présent, avec une référence au package **MathFuncs** dans chacun des projets, les fonctions sont disponibles pour le code C#.
 
-1. Ouvrez **MainPage.Xaml.cs** dans le projet **MathFuncsApp** common **Xamarin. Forms**(référencé par **MathFuncsApp. Android** et **MathFuncsApp. iOS**).
+1. Ouvrez **MainPage.Xaml.cs** dans le projet **MathFuncsApp** common **Xamarin. Forms** (référencé par **MathFuncsApp. Android** et **MathFuncsApp. iOS** ).
 2. Ajoutez des instructions **using** pour **System. Diagnostics** et **MathFuncs** en haut du fichier :
 
     ```csharp
@@ -755,11 +755,11 @@ Répétez les étapes suivantes pour chaque projet (**MathFuncsApp**, **MathFunc
     ```
 
     > [!NOTE]
-    > Si vous rencontrez un «*DLLNotFoundException*» lors des tests sur Android ou une erreur de génération sur iOS, veillez à vérifier que l’architecture de l’UC de l’appareil/de l’émulateur/simulateur que vous utilisez est compatible avec le sous-ensemble que nous avons choisi de prendre en charge. 
+    > Si vous rencontrez un « *DLLNotFoundException* » lors des tests sur Android ou une erreur de génération sur iOS, veillez à vérifier que l’architecture de l’UC de l’appareil/de l’émulateur/simulateur que vous utilisez est compatible avec le sous-ensemble que nous avons choisi de prendre en charge.
 
 ## <a name="summary"></a>Résumé
 
-Cet article a expliqué comment créer une application Xamarin. Forms qui utilise des bibliothèques natives via un wrapper .NET commun distribué via un package NuGet. L’exemple fourni dans cette procédure pas à pas est intentionnellement très simpliste pour démontrer plus facilement l’approche. Une application réelle devra gérer des complexités telles que la gestion des exceptions, les rappels, le marshaling de types plus complexes et la liaison avec d’autres bibliothèques de dépendances. Un point important à prendre en compte est le processus par lequel l’évolution du code C++ est coordonnée et synchronisée avec les applications du wrapper et du client. Ce processus peut varier selon que l’une ou l’autre de ces préoccupations est la responsabilité d’une seule équipe. Dans les deux cas, l’automatisation est un véritable avantage. Voici quelques ressources qui fournissent des informations supplémentaires sur certains concepts clés, ainsi que les téléchargements correspondants. 
+Cet article a expliqué comment créer une application Xamarin. Forms qui utilise des bibliothèques natives via un wrapper .NET commun distribué via un package NuGet. L’exemple fourni dans cette procédure pas à pas est intentionnellement très simpliste pour démontrer plus facilement l’approche. Une application réelle devra gérer des complexités telles que la gestion des exceptions, les rappels, le marshaling de types plus complexes et la liaison avec d’autres bibliothèques de dépendances. Un point important à prendre en compte est le processus par lequel l’évolution du code C++ est coordonnée et synchronisée avec les applications du wrapper et du client. Ce processus peut varier selon que l’une ou l’autre de ces préoccupations est la responsabilité d’une seule équipe. Dans les deux cas, l’automatisation est un véritable avantage. Voici quelques ressources qui fournissent des informations supplémentaires sur certains concepts clés, ainsi que les téléchargements correspondants.
 
 ### <a name="downloads"></a>Téléchargements
 
