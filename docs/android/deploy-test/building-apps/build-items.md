@@ -8,10 +8,10 @@ author: jonpryor
 ms.author: jopryo
 ms.date: 09/23/2020
 ms.openlocfilehash: 8a23e973687ac9f775042685122d558788fc7be7
-ms.sourcegitcommit: 1550019cd1e858d4d13a4ae6dfb4a5947702f24b
+ms.sourcegitcommit: d1980b2251999224e71c1289e4b4097595b7e261
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 10/30/2020
 ms.locfileid: "92897440"
 ---
 # <a name="build-items"></a>Éléments de génération
@@ -97,7 +97,7 @@ Tous les fichiers avec une action de génération *AndroidResource* sont compil�
 </ItemGroup>
 ```
 
-Les utilisateurs plus expérimentés souhaitent éventuellement avoir des ressources différentes utilisées dans des configurations différentes, mais avec le même chemin effectif. Il faut pour cela avoir plusieurs répertoires de ressources et des fichiers avec les mêmes chemins relatifs au sein de ces différents répertoires, et utiliser des conditions MSBuild pour inclure de façon conditionnelle des fichiers différents dans les différentes configurations. Par exemple :
+Les utilisateurs plus expérimentés souhaitent éventuellement avoir des ressources différentes utilisées dans des configurations différentes, mais avec le même chemin effectif. Il faut pour cela avoir plusieurs répertoires de ressources et des fichiers avec les mêmes chemins relatifs au sein de ces différents répertoires, et utiliser des conditions MSBuild pour inclure de façon conditionnelle des fichiers différents dans les différentes configurations. Exemple :
 
 ```xml
 <ItemGroup Condition="'$(Configuration)'!='Debug'">
