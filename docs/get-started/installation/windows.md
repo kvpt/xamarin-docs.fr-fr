@@ -10,10 +10,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 255c870407f1657196abd826b46c7e9b114285c9
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.sourcegitcommit: d1980b2251999224e71c1289e4b4097595b7e261
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 11/01/2020
 ms.locfileid: "91433325"
 ---
 # <a name="installing-xamarin-in-visual-studio-2019"></a>Installation de Xamarin dans Visual Studio 2019
@@ -26,11 +26,11 @@ Vérifiez la [configuration requise](~/cross-platform/get-started/requirements.m
 
 [!include[](~/cross-platform/includes/install-xamarin-windows-2019.md)]
 
-Dans Visual Studio 2019, vérifiez que Xamarin est installé en cliquant sur le menu **Aide**. Si Xamarin est installé, vous devriez voir l’élément de menu **Xamarin**, comme dans cette capture d’écran :
+Dans Visual Studio 2019, vérifiez que Xamarin est installé en cliquant sur le menu **Aide** . Si Xamarin est installé, vous devriez voir l’élément de menu **Xamarin** , comme dans cette capture d’écran :
 
 ![Élément de menu Xamarin dans le menu Aide](windows-images/12-xamarin-menu-item.png "Élément de menu Xamarin dans le menu Aide")
 
-Vous pouvez cliquer sur **Aide > À propos de Microsoft Visual Studio**, puis faire défiler la liste des produits installés pour voir si Xamarin y figure :
+Vous pouvez cliquer sur **Aide > À propos de Microsoft Visual Studio** , puis faire défiler la liste des produits installés pour voir si Xamarin y figure :
 
 ![Écran des produits Visual Studio 2019 installés](windows-images/13-xamarin-is-installed.png "Écran des produits Visual Studio 2019 installés")
 
