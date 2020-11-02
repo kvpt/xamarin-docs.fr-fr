@@ -10,12 +10,12 @@ ms.date: 01/13/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 575169459433725ae3f3a7db675fc65caef1494e
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: c89c6b50335405b56349e502f95b9d2975a04f73
+ms.sourcegitcommit: 145bd7550d19088c84949ecf5b1cc39002183234
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563443"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93185509"
 ---
 # <a name="no-locxamarinforms-control-templates"></a>Xamarin.Forms modèles de contrôle
 
@@ -122,7 +122,7 @@ L’exemple de code XAML suivant illustre un [`ControlTemplate`](xref:Xamarin.Fo
 </ContentPage>
 ```
 
-Lorsqu’un [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) est déclaré en tant que ressource, il doit avoir une clé spécifiée avec l' `x:Key` attribut afin qu’il puisse être identifié dans le dictionnaire de ressources. Dans cet exemple, l’élément racine du `CardViewControlTemplate` est un objet [`Frame`](xref:Xamarin.Forms.Frame). L’objet `Frame` utilise l’extension de balisage `RelativeSource` pour définir comme `BindingContext` l’instance de l’objet runtime à laquelle le modèle sera appliqué, connu sous le nom de *parent basé sur un modèle*. L' `Frame` objet utilise une combinaison d' [`Grid`](xref:Xamarin.Forms.Grid) objets,,, `Frame` [`Image`](xref:Xamarin.Forms.Image) [`Label`](xref:Xamarin.Forms.Label) et [`BoxView`](xref:Xamarin.Forms.BoxView) pour définir la structure visuelle d’un `CardView` objet. Les expressions de liaison de ces objets sont résolues par rapport à des propriétés `CardView`, en raison de l’héritage du `BindingContext` à partir de l’élément `Frame` racine. Pour plus d’informations sur l' `RelativeSource` extension de balisage, consultez [ Xamarin.Forms liaisons relatives](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md).
+Lorsqu’un [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) est déclaré en tant que ressource, il doit avoir une clé spécifiée avec l' `x:Key` attribut afin qu’il puisse être identifié dans le dictionnaire de ressources. Dans cet exemple, l’élément racine du `CardViewControlTemplate` est un objet [`Frame`](xref:Xamarin.Forms.Frame). L’objet `Frame` utilise l’extension de balisage `RelativeSource` pour définir comme `BindingContext` l’instance de l’objet runtime à laquelle le modèle sera appliqué, connu sous le nom de *parent basé sur un modèle* . L' `Frame` objet utilise une combinaison d' [`Grid`](xref:Xamarin.Forms.Grid) objets,,, `Frame` [`Image`](xref:Xamarin.Forms.Image) [`Label`](xref:Xamarin.Forms.Label) et [`BoxView`](xref:Xamarin.Forms.BoxView) pour définir la structure visuelle d’un `CardView` objet. Les expressions de liaison de ces objets sont résolues par rapport à des propriétés `CardView`, en raison de l’héritage du `BindingContext` à partir de l’élément `Frame` racine. Pour plus d’informations sur l' `RelativeSource` extension de balisage, consultez [ Xamarin.Forms liaisons relatives](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md).
 
 ## <a name="consume-a-controltemplate"></a>Consommer un ControlTemplate
 
@@ -172,12 +172,12 @@ Les captures d’écran suivantes montrent le `CardViewControlTemplate` appliqu�
 L' `TemplateBinding` extension de balisage lie une propriété d’un élément qui se trouve dans [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) à une propriété publique définie par la page basée sur un modèle ou un contrôle personnalisé basé sur un modèle. Quand vous utilisez un `TemplateBinding`, vous permettez aux propriétés sur le contrôle de faire office de paramètres du modèle. Ainsi, quand une propriété sur un contrôle personnalisé basé sur un modèle ou une page basée sur un modèle est définie, cette valeur est passée à l’élément sur lequel se trouve le `TemplateBinding`.
 
 > [!IMPORTANT]
-> L' `TemplateBinding` extension de balisage est une alternative à la création d’un [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) qui utilise l' `RelativeSource` extension de balisage pour définir le `BindingContext` de l’élément racine dans le modèle sur son parent basé sur un modèle. L’extension de balisage `TemplateBinding` élimine la liaison `RelativeSource` et remplace les expressions `Binding` par des expressions `TemplateBinding`.
+> L' `TemplateBinding` expression de balisage permet de `RelativeSource` Supprimer la liaison du modèle de contrôle précédent et remplace les `Binding` expressions.
 
 L’extension de balisage `TemplateBinding` définit les propriétés suivantes :
 
 - `Path`, de type `string`, le chemin de la propriété.
-- `Mode`, de type `BindingMode`, la direction dans laquelle les modifications se propagent entre la *source* et la *cible*.
+- `Mode`, de type `BindingMode`, la direction dans laquelle les modifications se propagent entre la *source* et la *cible* .
 - `Converter`, de type `IValueConverter`, le convertisseur de valeur de liaison.
 - `ConverterParameter`, de type `object`, le paramètre du convertisseur de valeur de liaison.
 - `StringFormat`, de type `string`, le format de chaîne pour la liaison.
@@ -253,7 +253,7 @@ L’exemple de code XAML suivant montre un [`ControlTemplate`](xref:Xamarin.Form
 
 Dans cet exemple, l’extension de balisage `TemplateBinding` résout les expressions de liaison par rapport aux propriétés de chaque objet `CardView`. Les captures d’écran suivantes montrent le `CardViewControlTemplate` appliqué aux trois objets `CardView` :
 
-[![Captures d’écran d’objets CardView basés sur un modèle, sur iOS et Android](control-template-images/templatebinding-controltemplate.png "Objets CardView basés sur un modèle")](control-template-images/templatebinding-controltemplate-large.png#lightbox "Objets CardView basés sur un modèle")
+[![Captures d’écran d’objets CardView basés sur un modèle](control-template-images/templatebinding-controltemplate.png "Objets CardView basés sur un modèle")](control-template-images/templatebinding-controltemplate-large.png#lightbox "Objets CardView basés sur un modèle")
 
 > [!IMPORTANT]
 > L’utilisation de l’extension de balisage `TemplateBinding` équivaut à affecter comme `BindingContext` de l’élément racine du modèle son parent basé sur un modèle avec l’extension de balisage `RelativeSource`, puis à résoudre les liaisons des objets enfants avec l’extension de balisage `Binding`. En fait, l’extension de balisage `TemplateBinding` crée un `Binding` dont la `Source` est `RelativeBindingSource.TemplatedParent`.
@@ -497,7 +497,7 @@ Lors de l’exécution, lorsque `TealTemplate` est appliqué à la page, le cont
 
 ## <a name="get-a-named-element-from-a-template"></a>Obtenir un élément nommé à partir d’un modèle
 
-Les éléments nommés dans un modèle de contrôle peuvent être récupérés à partir du contrôle personnalisé basé sur un modèle ou de la page basée sur un modèle. Pour cela, vous pouvez utiliser la `GetTemplateChild` méthode, qui retourne l’élément nommé dans l’arborescence d’éléments visuels instanciés [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) , s’il est trouvé. Sinon, `null`est retourné.
+Les éléments nommés dans un modèle de contrôle peuvent être récupérés à partir du contrôle personnalisé basé sur un modèle ou de la page basée sur un modèle. Pour cela, vous pouvez utiliser la `GetTemplateChild` méthode, qui retourne l’élément nommé dans l’arborescence d’éléments visuels instanciés [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) , s’il est trouvé. Sinon, il retourne `null`.
 
 Après qu’un modèle de contrôle a été instancié, la méthode du modèle `OnApplyTemplate` est appelée. La méthode `GetTemplateChild` doit donc être appelée à partir d’une substitution `OnApplyTemplate` dans la page ou le contrôle basé sur un modèle.
 
@@ -549,7 +549,7 @@ public partial class AccessTemplateElementPage : HeaderFooterPage
 
 Dans cet exemple, l' [`Label`](xref:Xamarin.Forms.Label) objet nommé `changeThemeLabel` est récupéré une fois que le `ControlTemplate` a été instancié. `changeThemeLabel` est alors accessible et peut ensuite être manipulé par la classe `AccessTemplateElementPage`. Les captures d’écran suivantes montrent que le texte affiché par le `Label` a été modifié :
 
-[![Captures d’écran d’un objet de page basé sur un modèle, sur iOS et Android](control-template-images/get-named-element.png "ContentPage basé sur un modèle")](control-template-images/get-named-element-large.png#lightbox "ContentPage basé sur un modèle")
+[![Captures d’écran de l’objet page avec modèle](control-template-images/get-named-element.png "ContentPage basé sur un modèle")](control-template-images/get-named-element-large.png#lightbox "ContentPage basé sur un modèle")
 
 ## <a name="bind-to-a-viewmodel"></a>Lier à un viewmodel
 
@@ -625,13 +625,13 @@ Dans cet exemple, le `BindingContext` de la page est défini sur une instance de
 
 Dans cet exemple, l’élément racine de [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) est un [`Frame`](xref:Xamarin.Forms.Frame) objet. L’objet `Frame` utilise l’extension de balisage `RelativeSource` pour affecter le parent basé sur un modèle comme `BindingContext`. Les expressions de liaison de l’objet `Frame` et ses enfants sont résolues par rapport à des propriétés `CardView`, en raison de l’héritage du `BindingContext` à partir de l’élément `Frame` racine. Les captures d’écran suivantes montrent la page qui affiche la collection `People`, qui se compose de trois éléments :
 
-[![Captures d’écran d’objets CardView basés sur un modèle, sur iOS et Android](control-template-images/viewmodel-controltemplate.png "Objets CardView basés sur un modèle")](control-template-images/viewmodel-controltemplate-large.png#lightbox "Objets CardView basés sur un modèle")
+[![Captures d’écran de trois objets CardView basés sur un modèle](control-template-images/viewmodel-controltemplate.png "Objets CardView basés sur un modèle")](control-template-images/viewmodel-controltemplate-large.png#lightbox "Objets CardView basés sur un modèle")
 
 Tandis que les objets dans sont [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) liés aux propriétés de son parent basé sur un modèle, le dans [`Button`](xref:Xamarin.Forms.Button) le modèle de contrôle est lié à son parent basé sur un modèle et à `DeletePersonCommand` dans le ViewModel. En effet, la `Button.Command` propriété redéfinit sa source de liaison comme étant le contexte de liaison de l’ancêtre dont le type de contexte de liaison est `PeopleViewModel` , qui est le [`StackLayout`](xref:Xamarin.Forms.StackLayout) . La partie `Path` des expressions de liaison peut ensuite résoudre la propriété `DeletePersonCommand`. Toutefois, la `Button.CommandParameter` propriété ne modifie pas sa source de liaison, plutôt qu’elle l’hérite de son parent dans le [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) . Ainsi, la propriété `CommandParameter` est liée à la propriété `CardTitle` du `CardView`.
 
 L’effet global des [`Button`](xref:Xamarin.Forms.Button) liaisons est que lorsque le `Button` est frappé, le `DeletePersonCommand` de la `PeopleViewModel` classe est exécuté, avec la valeur de la `CardName` propriété passée à l' `DeletePersonCommand` . Cela entraîne la suppression du `CardView` spécifié de la disposition pouvant être liée :
 
-[![Captures d’écran d’objets CardView basés sur un modèle, sur iOS et Android](control-template-images/viewmodel-itemdeleted.png "Objets CardView basés sur un modèle")](control-template-images/viewmodel-itemdeleted-large.png#lightbox "Objets CardView basés sur un modèle")
+[![Captures d’écran de deux objets CardView basés sur un modèle](control-template-images/viewmodel-itemdeleted.png "Objets CardView basés sur un modèle")](control-template-images/viewmodel-itemdeleted-large.png#lightbox "Objets CardView basés sur un modèle")
 
 Pour plus d’informations sur les liaisons relatives, consultez [ Xamarin.Forms liaisons relatives](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md).
 

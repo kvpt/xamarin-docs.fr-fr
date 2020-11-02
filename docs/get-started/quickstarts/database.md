@@ -13,10 +13,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 0992f7db22d79e58db0306bc09329f2852ef9489
-ms.sourcegitcommit: d1980b2251999224e71c1289e4b4097595b7e261
+ms.sourcegitcommit: 145bd7550d19088c84949ecf5b1cc39002183234
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 11/02/2020
 ms.locfileid: "92897518"
 ---
 # <a name="store-data-in-a-local-sqlitenet-database"></a>Stocker des données dans une base de données SQLite.NET locale

@@ -1,6 +1,6 @@
 ---
 titre : implémentation d’une description de vue : cet article explique comment créer un convertisseur personnalisé pour un Xamarin.Forms contrôle personnalisé utilisé pour afficher un flux vidéo en version préliminaire à partir de l’appareil photo de l’appareil.
-ms. Prod : xamarin ms. AssetID : 915E25E7-4A6B-4F34-B7B4-07D5F4B240F2 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 05/10/2018 No-Loc :
+ms. Prod : xamarin ms. AssetID : 915E25E7-4A6B-4F34-B7B4-07D5F4B240F2 ms. Technology : xamarin-Forms Author : davidbritch ms. Author : dabritch ms. Date : 10/30/2020 No-Loc :
 - "Xamarin.Forms"
 - "Xamarin.Essentials"
 
@@ -12,6 +12,9 @@ ms. Prod : xamarin ms. AssetID : 915E25E7-4A6B-4F34-B7B4-07D5F4B240F2 ms. Tech
 _Xamarin.Forms les contrôles d’interface utilisateur personnalisés doivent dériver de la classe d’affichage, qui est utilisée pour placer des mises en page et des contrôles à l’écran. Cet article explique comment créer un convertisseur personnalisé pour un Xamarin.Forms contrôle personnalisé utilisé pour afficher un flux vidéo de préversion à partir de l’appareil photo de l’appareil._
 
 Chaque Xamarin.Forms vue possède un convertisseur associé pour chaque plateforme qui crée une instance d’un contrôle natif. Lorsqu’un [`View`](xref:Xamarin.Forms.View) est rendu par une Xamarin.Forms application dans iOS, la `ViewRenderer` classe est instanciée, qui à son tour instancie un `UIView` contrôle natif. Sur la plateforme Android, la classe `ViewRenderer` instancie un contrôle `View` natif. Sur la plateforme Windows universelle (UWP), la classe `ViewRenderer` instancie un contrôle `FrameworkElement` natif. Pour plus d’informations sur le convertisseur et les classes de contrôle natifs sur lesquelles les Xamarin.Forms contrôles sont mappés, consultez [classes de base de convertisseur et contrôles natifs](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
+
+> [!NOTE]
+> Certains contrôles sur Android utilisent des convertisseurs rapides qui ne consomment pas la `ViewRenderer` classe. Pour plus d’informations sur les convertisseurs rapides, consultez les [ Xamarin.Forms convertisseurs rapides](~/xamarin-forms/internals/fast-renderers.md).
 
 Le diagramme suivant illustre la relation entre le [`View`](xref:Xamarin.Forms.View) et les contrôles natifs correspondants qui l’implémentent :
 
@@ -38,7 +41,8 @@ public class CameraPreview : View
     declaringType: typeof(CameraPreview),
     defaultValue: CameraOptions.Rear);
 
-  public CameraOptions Camera {
+  public CameraOptions Camera
+  {
     get { return (CameraOptions)GetValue (CameraProperty); }
     set { SetValue (CameraProperty, value); }
   }
@@ -55,13 +59,12 @@ Vous pouvez référencer le contrôle personnalisé `CameraPreview` en XAML dans
 <ContentPage ...
              xmlns:local="clr-namespace:CustomRenderer;assembly=CustomRenderer"
              ...>
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Camera Preview:" />
-            <local:CameraPreview Camera="Rear"
-              HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+    <StackLayout>
+        <Label Text="Camera Preview:" />
+        <local:CameraPreview Camera="Rear"
+                             HorizontalOptions="FillAndExpand"
+                             VerticalOptions="FillAndExpand" />
+    </StackLayout>
 </ContentPage>
 ```
 
@@ -75,10 +78,13 @@ public class MainPageCS : ContentPage
   public MainPageCS ()
   {
     ...
-    Content = new StackLayout {
-      Children = {
+    Content = new StackLayout
+    {
+      Children =
+      {
         new Label { Text = "Camera Preview:" },
-        new CameraPreview {
+        new CameraPreview
+        {
           Camera = CameraOptions.Rear,
           HorizontalOptions = LayoutOptions.FillAndExpand,
           VerticalOptions = LayoutOptions.FillAndExpand
@@ -95,10 +101,16 @@ Un renderer personnalisé peut maintenant être ajouté à chaque projet d’app
 
 ## <a name="creating-the-custom-renderer-on-each-platform"></a>Création du renderer personnalisé sur chaque plateforme
 
-Le processus de création de la classe de renderer personnalisé est le suivant :
+Le processus de création de la classe de convertisseur personnalisée sur iOS et UWP est le suivant :
 
 1. Créez une sous-classe de la classe `ViewRenderer<T1,T2>` qui restitue le contrôle personnalisé. Le premier argument de type doit être le contrôle personnalisé auquel le renderer est destiné ; dans le cas présent, `CameraPreview`. Le deuxième argument de type doit être le contrôle natif qui implémentera le contrôle personnalisé.
 1. Remplacez la méthode `OnElementChanged` qui restitue le contrôle personnalisé et écrivez une logique pour le personnaliser. Cette méthode est appelée lorsque le Xamarin.Forms contrôle correspondant est créé.
+1. Ajoutez un `ExportRenderer` attribut à la classe de convertisseur personnalisée pour spécifier qu’il sera utilisé pour restituer le Xamarin.Forms contrôle personnalisé. Cet attribut est utilisé pour inscrire le convertisseur personnalisé avec Xamarin.Forms .
+
+Le processus de création de la classe de rendu personnalisé sur Android, en tant que convertisseur rapide, est le suivant :
+
+1. Créez une sous-classe du contrôle Android qui restitue le contrôle personnalisé. De plus, spécifiez que la sous-classe implémente les `IVisualElementRenderer` `IViewRenderer` interfaces et.
+1. Implémentez `IVisualElementRenderer` les `IViewRenderer` interfaces et dans la classe de convertisseur rapide.
 1. Ajoutez un `ExportRenderer` attribut à la classe de convertisseur personnalisée pour spécifier qu’il sera utilisé pour restituer le Xamarin.Forms contrôle personnalisé. Cet attribut est utilisé pour inscrire le convertisseur personnalisé avec Xamarin.Forms .
 
 > [!NOTE]
@@ -108,7 +120,7 @@ Le diagramme suivant illustre les responsabilités de chaque projet dans l’exe
 
 ![Responsabilités du projet de renderer personnalisé CameraPreview](view-images/solution-structure.png)
 
-Le contrôle personnalisé `CameraPreview` est restitué par des classes de renderer spécifiques à la plateforme qui dérivent toutes de la classe `ViewRenderer` pour chaque plateforme. Il en résulte le rendu de chaque contrôle personnalisé `CameraPreview` avec des contrôles spécifiques à la plateforme, comme le montrent les captures d’écran suivantes :
+Le `CameraPreview` contrôle personnalisé est rendu par les classes de convertisseur spécifiques à la plateforme, qui dérivent de la `ViewRenderer` classe sur iOS et UWP, et à partir de la `FrameLayout` classe sur Android. Il en résulte le rendu de chaque contrôle personnalisé `CameraPreview` avec des contrôles spécifiques à la plateforme, comme le montrent les captures d’écran suivantes :
 
 ![CameraPreview sur chaque plateforme](view-images/screenshots.png)
 
@@ -123,12 +135,15 @@ protected override void OnElementChanged (ElementChangedEventArgs<NativeListView
 {
   base.OnElementChanged (e);
 
-  if (e.OldElement != null) {
+  if (e.OldElement != null)
+  {
     // Unsubscribe from event handlers and cleanup any resources
   }
 
-  if (e.NewElement != null) {
-    if (Control == null) {
+  if (e.NewElement != null)
+  {    
+    if (Control == null)
+    {
       // Instantiate the native control and assign it to the Control property with
       // the SetNativeControl method
     }
@@ -195,62 +210,89 @@ Sous réserve que la propriété `Control` ait la valeur `null`, la méthode `Se
 
 ### <a name="creating-the-custom-renderer-on-android"></a>Création du renderer personnalisé sur Android
 
-L’exemple de code suivant illustre le renderer personnalisé pour la plateforme Android :
+L’exemple de code suivant montre le convertisseur rapide pour la plateforme Android :
 
 ```csharp
 [assembly: ExportRenderer(typeof(CustomRenderer.CameraPreview), typeof(CameraPreviewRenderer))]
 namespace CustomRenderer.Droid
 {
-    public class CameraPreviewRenderer : ViewRenderer<CustomRenderer.CameraPreview, CustomRenderer.Droid.CameraPreview>
+    public class CameraPreviewRenderer : FrameLayout, IVisualElementRenderer, IViewRenderer
     {
-        CameraPreview cameraPreview;
+        // ...
+        CameraPreview element;
+        VisualElementTracker visualElementTracker;
+        VisualElementRenderer visualElementRenderer;
+        FragmentManager fragmentManager;
+        CameraFragment cameraFragment;
+
+        FragmentManager FragmentManager => fragmentManager ??= Context.GetFragmentManager();
+
+        public event EventHandler<VisualElementChangedEventArgs> ElementChanged;
+        public event EventHandler<PropertyChangedEventArgs> ElementPropertyChanged;
+
+        CameraPreview Element
+        {
+            get => element;
+            set
+            {
+                if (element == value)
+                {
+                    return;
+                }
+
+                var oldElement = element;
+                element = value;
+                OnElementChanged(new ElementChangedEventArgs<CameraPreview>(oldElement, element));
+            }
+        }
 
         public CameraPreviewRenderer(Context context) : base(context)
         {
+            visualElementRenderer = new VisualElementRenderer(this);
         }
 
-        protected override void OnElementChanged(ElementChangedEventArgs<CustomRenderer.CameraPreview> e)
+        void OnElementChanged(ElementChangedEventArgs<CameraPreview> e)
         {
-            base.OnElementChanged(e);
+            CameraFragment newFragment = null;
 
             if (e.OldElement != null)
             {
-                // Unsubscribe
-                cameraPreview.Click -= OnCameraPreviewClicked;
+                e.OldElement.PropertyChanged -= OnElementPropertyChanged;
+                cameraFragment.Dispose();
             }
             if (e.NewElement != null)
             {
-                if (Control == null)
-                {
-                  cameraPreview = new CameraPreview(Context);
-                  SetNativeControl(cameraPreview);
-                }
-                Control.Preview = Camera.Open((int)e.NewElement.Camera);
+                this.EnsureId();
 
-                // Subscribe
-                cameraPreview.Click += OnCameraPreviewClicked;
+                e.NewElement.PropertyChanged += OnElementPropertyChanged;
+
+                ElevationHelper.SetElevation(this, e.NewElement);
+                newFragment = new CameraFragment { Element = element };
             }
+
+            FragmentManager.BeginTransaction()
+                .Replace(Id, cameraFragment = newFragment, "camera")
+                .Commit();
+            ElementChanged?.Invoke(this, new VisualElementChangedEventArgs(e.OldElement, e.NewElement));
         }
 
-        void OnCameraPreviewClicked(object sender, EventArgs e)
+        async void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
-            if (cameraPreview.IsPreviewing)
+            ElementPropertyChanged?.Invoke(this, e);
+
+            switch (e.PropertyName)
             {
-                cameraPreview.Preview.StopPreview();
-                cameraPreview.IsPreviewing = false;
+                case "Width":
+                    await cameraFragment.RetrieveCameraDevice();
+                    break;
             }
-            else
-            {
-                cameraPreview.Preview.StartPreview();
-                cameraPreview.IsPreviewing = true;
-            }
-        }
-        ...
+        }       
+        // ...
     }
 }
 ```
 
-Sous réserve que la propriété `Control` ait la valeur `null`, la méthode `SetNativeControl` est appelée pour instancier un nouveau contrôle `CameraPreview` et affecter une référence à ce dernier à la propriété `Control`. Le contrôle `CameraPreview` est un contrôle personnalisé spécifique à la plateforme qui utilise l’API `Camera` afin de fournir le flux d’aperçu de la caméra. Le `CameraPreview` contrôle est ensuite configuré, à condition que le convertisseur personnalisé soit attaché à un nouvel Xamarin.Forms élément. Cette configuration implique la création d’un objet `Camera` natif pour accéder à une caméra matérielle particulière et l’inscription d’un gestionnaire d’événements pour traiter l’événement `Click`. À son tour, ce gestionnaire arrête et démarre l’aperçu vidéo quand l’utilisateur appuie dessus. L' `Click` événement est désabonné de si l' Xamarin.Forms élément auquel le convertisseur est attaché change.
+Dans cet exemple, la `OnElementChanged` méthode crée un `CameraFragment` objet, à condition que le convertisseur personnalisé soit attaché à un nouvel Xamarin.Forms élément. Le `CameraFragment` type est une classe personnalisée qui utilise l' `Camera2` API pour fournir le flux d’aperçu à partir de l’appareil photo. L' `CameraFragment` objet est supprimé lorsque l' Xamarin.Forms élément auquel le convertisseur est attaché les modifications.
 
 ### <a name="creating-the-custom-renderer-on-uwp"></a>Création du renderer personnalisé sur UWP
 
