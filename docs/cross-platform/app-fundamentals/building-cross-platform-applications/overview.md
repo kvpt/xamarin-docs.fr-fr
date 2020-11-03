@@ -6,18 +6,18 @@ ms.assetid: E442EEFB-FA9C-40E9-9668-5A3F915C8400
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 72b41854160d0810bbc4a58972f638ef920a4068
-ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
+ms.openlocfilehash: bdf641ca15919958627850e000c117eeedd12de9
+ms.sourcegitcommit: 836d54779190b1bef1b43bc0c2016c9b3034bfda
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91457482"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93281246"
 ---
 # <a name="building-cross-platform-applications-overview"></a>Vue d’ensemble de la création d’applications multiplateformes
 
 Ce guide présente la plate-forme Xamarin et explique comment concevoir une application multiplateforme pour optimiser la réutilisation du code et offrir une expérience native de haute qualité sur toutes les plateformes mobiles principales : iOS, Android et Windows Phone.
 
-L’approche utilisée dans ce document s’applique généralement aux applications de productivité et aux applications de jeu. Toutefois, l’accent est mis sur la productivité et l’utilitaire (applications sans jeu). Pour obtenir des conseils sur le développement de jeux interplateformes, consultez le [document Introduction aux documents monojeu](~/graphics-games/monogame/introduction/index.md) ou à l' [outils Visual Studio pour Unity](/visualstudio/cross-platform/visual-studio-tools-for-unity) .
+L’approche utilisée dans ce document s’applique généralement aux applications de productivité et aux applications de jeu. Toutefois, l’accent est mis sur la productivité et l’utilitaire (applications sans jeu). Consultez [outils Visual Studio pour Unity](/visualstudio/cross-platform/visual-studio-tools-for-unity) pour obtenir des conseils sur le développement de jeux multiplateforme.
 
 L’expression « écriture unique, exécuter partout » est souvent utilisée pour chantent les termes d’un code base unique qui s’exécute sans modification sur plusieurs plateformes. Bien qu’il présente l’avantage d’une réutilisation de code, cette approche entraîne souvent des applications qui possèdent un ensemble de fonctionnalités à dénominateur commun plus faible et une interface utilisateur générique qui ne s’intègre pas parfaitement aux plateformes cibles.
 
@@ -34,7 +34,7 @@ Voici un résumé des points clés pour la création d’applications multiplate
 1. Sur Windows, vous utiliserez le XAML pour la couche de présentation, créé dans Visual Studio ou le concepteur d’interface utilisateur de Blend.
 1. Sur Mac, vous allez utiliser des storyboards pour la couche de présentation créée dans Xcode.
 
-Les projets Xamarin. Forms sont pris en charge sur toutes les plateformes et vous permettent de créer des interfaces utilisateur qui peuvent être partagées entre les plateformes à l’aide du langage XAML Xamarin. Forms. 
+Les projets Xamarin. Forms sont pris en charge sur toutes les plateformes et vous permettent de créer des interfaces utilisateur qui peuvent être partagées entre les plateformes à l’aide du langage XAML Xamarin. Forms.
 
 La quantité de réutilisation de code dépend en grande partie de la quantité de code conservé dans le noyau partagé et de la quantité de code spécifique à l’interface utilisateur. Le code principal est tout ce qui n’interagit pas directement avec l’utilisateur, mais il fournit à la place des services pour les parties de l’application qui collectent et affichent ces informations.
 

@@ -7,21 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 08/30/2017
-ms.openlocfilehash: 6803ecf2303ff2c91265f3ac8352a7aa15e74d40
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 6e96a57d2425d99839b723520ac24bafa57cc1a3
+ms.sourcegitcommit: 836d54779190b1bef1b43bc0c2016c9b3034bfda
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91436204"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93281259"
 ---
 # <a name="introduction-to-arkit-in-xamarinios"></a>Présentation de ARKit dans Xamarin. iOS
 
 _Réalité augmentée pour iOS 11_
 
-ARKit permet un large éventail d’applications et de jeux de réalité augmentés. Cette section couvre les sujets suivants :
-
-- [Prise en main avec ARKit](#gettingstarted)
-- [Utilisation de ARKit avec UrhoSharp](urhosharp.md)
+ARKit permet un large éventail d’applications et de jeux de réalité augmentés
 
 <a name="gettingstarted"></a>
 
@@ -103,16 +100,15 @@ Il est recommandé de suspendre la session ARKit quand le contrôleur d’affich
 SceneView.Session.Pause();
 ```
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Le code ci-dessus génère une application ARKit simple. Des exemples plus complexes s’attendent à ce que le contrôleur d’affichage hébergeant la session de réalité augmentée à implémenter `IARSCNViewDelegate` et que des méthodes supplémentaires soient implémentées.
 
-ARKit fournit un grand nombre de fonctionnalités plus sophistiquées, telles que le suivi des surfaces et l’interaction avec l’utilisateur. Pour obtenir un exemple de combinaison de suivi ARKit avec UrhoSharp, consultez la [démonstration UrhoSharp](urhosharp.md) .
+ARKit fournit un grand nombre de fonctionnalités plus sophistiquées, telles que le suivi des surfaces et l’interaction avec l’utilisateur.
 
 ## <a name="related-links"></a>Liens associés
 
 - [Réalité augmentée (Apple)](https://developer.apple.com/arkit/)
-- [Utilisation de ARKit avec UrhoSharp](urhosharp.md)
 - [Exemple simple de ARKit (jet)](/samples/xamarin/ios-samples/ios11-arkitsample)
 - [ARKit placement d’objets (exemple)](/samples/xamarin/ios-samples/ios11-arkitplacingobjects)
 - [Présentation de la réalité augmentée par ARKit pour iOS (WWDC) (vidéo)](https://developer.apple.com/videos/play/wwdc2017/602/)
