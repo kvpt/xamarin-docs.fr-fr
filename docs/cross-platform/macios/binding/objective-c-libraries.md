@@ -6,12 +6,12 @@ ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
 author: davidortinau
 ms.author: daortin
 ms.date: 03/06/2018
-ms.openlocfilehash: ebb9baf7bb1a6da96615eac65d5384cb7a05a9d6
-ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
+ms.openlocfilehash: d7f66d9bda014337ae6108ab42158faa856632bb
+ms.sourcegitcommit: 4f0223cf13e14d35c52fa72a026b1c7696bf8929
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91457599"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93278336"
 ---
 # <a name="binding-objective-c-libraries"></a>Liaison des bibliothèques objective-C
 
@@ -37,14 +37,14 @@ Vous pouvez utiliser l’exemple de projet de [liaison iOS](https://github.com/x
 # <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
 Le moyen le plus simple de créer une liaison consiste à créer un projet de liaison Xamarin. iOS.
-Pour ce faire, vous pouvez Visual Studio pour Mac en sélectionnant le type de projet, bibliothèque de **> iOS > bibliothèques de liaisons**:
+Pour ce faire, vous pouvez Visual Studio pour Mac en sélectionnant le type de projet, bibliothèque de **> iOS > bibliothèques de liaisons** :
 
 [![Pour ce faire, à partir de Visual Studio pour Mac, sélectionnez le type de projet Bibliothèque de liaisons de bibliothèque iOS](objective-c-libraries-images/00-sml.png)](objective-c-libraries-images/00.png#lightbox)
 
-# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Le moyen le plus simple de créer une liaison consiste à créer un projet de liaison Xamarin. iOS.
-Pour ce faire, vous pouvez utiliser Visual Studio sur Windows en sélectionnant le type de projet, **Visual C# > ios > bibliothèques de liaisons (IOS)**:
+Pour ce faire, vous pouvez utiliser Visual Studio sur Windows en sélectionnant le type de projet, **Visual C# > ios > bibliothèques de liaisons (IOS)** :
 
 [![Bibliothèque de liaisons iOS iOS](objective-c-libraries-images/00vs-sml.png)](objective-c-libraries-images/00vs.png#lightbox)
 
@@ -445,7 +445,7 @@ class MyDelegate : NSObject, IUITableViewDelegate {
 }
 ```
 
-L’implémentation pour les méthodes d’interface est automatiquement exportée avec le nom approprié. il est donc équivalent à ce qui suit :
+L’implémentation pour les méthodes d’interface requises est exportée avec le nom approprié. elle est donc équivalente à ce qui suit :
 
 ```csharp
 class MyDelegate : NSObject, IUITableViewDelegate {
@@ -456,7 +456,29 @@ class MyDelegate : NSObject, IUITableViewDelegate {
 }
 ```
 
-Peu importe si l’interface est implémentée implicitement ou explicitement.
+Cela fonctionne pour tous les membres de protocole requis, mais il existe un cas particulier avec les sélecteurs facultatifs à connaître.
+Les membres de protocole facultatifs sont traités de la même façon lors de l’utilisation de la classe de base :
+
+```
+public class UrlSessionDelegate : NSUrlSessionDownloadDelegate {
+    public override void DidWriteData (NSUrlSession session, NSUrlSessionDownloadTask downloadTask, long bytesWritten, long totalBytesWritten, long totalBytesExpectedToWrite)
+```
+
+Toutefois, lors de l’utilisation de l’interface de protocole, il est nécessaire d’ajouter [Export]. L’IDE l’ajoute via la saisie semi-automatique lorsque vous l’ajoutez à partir de l’opération de remplacement. 
+
+```
+public class UrlSessionDelegate : NSObject, INSUrlSessionDownloadDelegate {
+    [Export ("URLSession:downloadTask:didWriteData:totalBytesWritten:totalBytesExpectedToWrite:")]
+    public void DidWriteData (NSUrlSession session, NSUrlSessionDownloadTask downloadTask, long bytesWritten, long totalBytesWritten, long totalBytesExpectedToWrite)
+```
+
+Il existe une légère différence de comportement entre les deux lors de l’exécution.
+
+- Les utilisateurs de la classe de base (NSUrlSessionDownloadDelegate dans l’exemple) fournissent tous les sélecteurs requis et facultatifs, et retournent des valeurs par défaut raisonnables.
+- Les utilisateurs de l’interface (INSUrlSessionDownloadDelegate, par exemple) répondent uniquement aux sélecteurs exacts fournis.
+
+Certaines classes rares peuvent se comporter différemment. Dans la plupart des cas, cependant, il est possible d’utiliser l’un ou l’autre.
+
 
 <a name="Binding_Class_Extensions"></a>
 
