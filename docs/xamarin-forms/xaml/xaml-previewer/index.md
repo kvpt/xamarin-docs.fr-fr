@@ -1,5 +1,5 @@
 ---
-title: Générateur d’aperçu XAML pourXamarin.Forms
+title: Générateur d’aperçu XAML pour Xamarin.Forms
 description: Cet article explique comment utiliser le générateur d’aperçu XAML pour afficher les Xamarin.Forms dispositions rendues à mesure que vous tapez. Le générateur d’aperçu XAML est disponible dans Visual Studio 2019 et Visual Studio 2019 pour Mac.
 zone_pivot_groups: platform
 ms.prod: xamarin
@@ -11,16 +11,19 @@ ms.date: 03/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6916d5fde688c5b1162f12db0d36bc3ca27156d8
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: dff01728c986b23e59af702edb3bfd8c74ad744a
+ms.sourcegitcommit: d2aa3a8bf9a60b6708db55b10b0c6893c06d3256
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137317"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93331446"
 ---
-# <a name="xaml-previewer-for-xamarinforms"></a>Générateur d’aperçu XAML pourXamarin.Forms
+# <a name="xaml-previewer-for-no-locxamarinforms"></a>Générateur d’aperçu XAML pour Xamarin.Forms
 
 _Afficher les Xamarin.Forms dispositions rendues à mesure que vous tapez_
+
+> [!WARNING]
+> La méthode recommandée pour afficher un aperçu de votre code XAML est désormais avec le **[rechargement à chaud XAML](~/xamarin-forms/xaml/hot-reload.md)**.
 
 ## <a name="overview"></a>Vue d’ensemble
 
@@ -34,7 +37,7 @@ Le générateur d’aperçu XAML vous montre comment votre Xamarin.Forms page XA
 
 Vous pouvez ouvrir le générateur d’aperçu XAML en cliquant sur les flèches du volet mode fractionné. Si vous souhaitez modifier le comportement par défaut du mode fractionné, utilisez les **outils > Options > boîte de dialogue Xamarin > générateur d' Xamarin.Forms Aperçu XAML** . Dans cette boîte de dialogue, vous pouvez sélectionner la vue de document par défaut et l’orientation de fractionnement.
 
-[![Xamarin.FormsOptions du générateur d’aperçu dans Visual Studio](xaml-previewer-images/xamlp-options-vs-sm.png "[! Opérationnel. NO-LOC (Xamarin. Forms)] options du générateur d’aperçu dans Visual Studio")](xaml-previewer-images/xamlp-options-vs-lg.png#lightbox)
+[![::: No-Loc (Xamarin. Forms) ::: options du générateur d’aperçu dans Visual Studio](xaml-previewer-images/xamlp-options-vs-sm.png "::: No-Loc (Xamarin. Forms) ::: options du générateur d’aperçu dans Visual Studio")](xaml-previewer-images/xamlp-options-vs-lg.png#lightbox)
 
 Lorsque vous ouvrez un fichier XAML, l’éditeur ouvre le fichier de taille complète ou en regard du générateur d’aperçu, en fonction des paramètres sélectionnés dans la boîte de dialogue **outils > Options > boîte de dialogue Xamarin > Xamarin.Forms Générateur d’aperçu XAML** . Toutefois, le fractionnement peut être modifié pour chaque fichier dans la fenêtre de l’éditeur.
 
@@ -42,15 +45,15 @@ Lorsque vous ouvrez un fichier XAML, l’éditeur ouvre le fichier de taille com
 
 Choisissez si vous souhaitez voir votre code, le générateur d’aperçu XAML, ou les deux, en sélectionnant ces boutons dans le volet mode fractionné. Le bouton du milieu permute le côté générateur d’aperçu et votre code :
 
-[![Xamarin.FormsContrôles d’aperçu pour basculer entre la conception, la source et le mode fractionné dans Visual Studio](xaml-previewer-images/xamlp-controls-splitview-vs-sm.png "[! Opérationnel. NO-LOC (Xamarin. Forms)] contrôles d’aperçu pour basculer entre le mode Design, source et le mode fractionné dans Visual Studio")](xaml-previewer-images/xamlp-controls-splitview-vs-lg.png#lightbox)
+[![::: No-Loc (Xamarin. Forms) ::: contrôles d’aperçu pour basculer entre la conception, la source et le mode fractionné dans Visual Studio](xaml-previewer-images/xamlp-controls-splitview-vs-sm.png "::: No-Loc (Xamarin. Forms) ::: contrôles d’aperçu pour basculer entre la conception, la source et le mode fractionné dans Visual Studio")](xaml-previewer-images/xamlp-controls-splitview-vs-lg.png#lightbox)
 
 Vous pouvez modifier l’écran pour le fractionner verticalement ou horizontalement, ou pour réduire entièrement un volet :
 
-[![Xamarin.FormsContrôles d’orientation du volet de l’aperçu dans Visual Studio](xaml-previewer-images/xamlp-controls-orientation-vs-sm.png "[! Opérationnel. NO-LOC (Xamarin. Forms)] contrôles d’orientation du volet d’aperçu dans Visual Studio")](xaml-previewer-images/xamlp-controls-orientation-vs-lg.png#lightbox)
+[![::: No-Loc (Xamarin. Forms) ::: contrôle d’orientation du volet d’aperçu dans Visual Studio](xaml-previewer-images/xamlp-controls-orientation-vs-sm.png "::: No-Loc (Xamarin. Forms) ::: contrôle d’orientation du volet d’aperçu dans Visual Studio")](xaml-previewer-images/xamlp-controls-orientation-vs-lg.png#lightbox)
 
 #### <a name="enable-or-disable-the-xaml-previewer"></a>Activer ou désactiver le générateur d’aperçu XAML
 
-Vous pouvez désactiver le générateur d’aperçu XAML dans la boîte de dialogue **outils > Options > boîte de dialogue Xamarin > Xamarin.Forms Générateur d’aperçu XAML** en sélectionnant **éditeur XML par** défaut comme **éditeur XAML par défaut**. Cela désactive également la structure du document, le panneau des propriétés et la boîte à outils XAML. Pour réactiver le générateur d’aperçu XAML et les outils, modifiez votre **éditeur XAML par défaut** en ** Xamarin.Forms Générateur d’aperçu**.
+Vous pouvez désactiver le générateur d’aperçu XAML dans la boîte de dialogue **outils > Options > boîte de dialogue Xamarin > Xamarin.Forms Générateur d’aperçu XAML** en sélectionnant **éditeur XML par** défaut comme **éditeur XAML par défaut**. Cela désactive également la structure du document, le panneau des propriétés et la boîte à outils XAML. Pour réactiver le générateur d’aperçu XAML et les outils, modifiez votre **éditeur XAML par défaut** en **Xamarin.Forms Générateur d’aperçu**.
 
 ::: zone-end
 ::: zone pivot="macos"
@@ -59,14 +62,14 @@ Vous pouvez désactiver le générateur d’aperçu XAML dans la boîte de dialo
 
 Le bouton **Aperçu** est affiché dans l’éditeur lorsque vous ouvrez une page XAML. Affichez ou masquez le générateur d’aperçu en appuyant sur les boutons d' **Aperçu** ou de **fractionnement** dans le coin inférieur gauche de toute fenêtre de document XAML :
 
-[![Xamarin.FormsGénérateur d’aperçu activé avec le bouton d’aperçu ou de fractionnement](xaml-previewer-images/xamlp-list-sml.png)](xaml-previewer-images/xamlp-list.png#lightbox)
+[![::: No-Loc (Xamarin. Forms) ::: Preview activé avec le bouton d’aperçu ou de fractionnement](xaml-previewer-images/xamlp-list-sml.png)](xaml-previewer-images/xamlp-list.png#lightbox)
 
 > [!NOTE]
 > Dans les versions antérieures de Visual Studio pour Mac, le bouton **Aperçu** était situé en haut à droite de la fenêtre.
 
 #### <a name="enable-or-disable-the-xaml-previewer"></a>Activer ou désactiver le générateur d’aperçu XAML
 
-Vous pouvez désactiver le générateur d’aperçu XAML dans les **Préférences du > Visual Studio > éditeur de texte >** boîte de dialogue XAML en sélectionnant **éditeur XML par défaut** comme **éditeur XAML par défaut**. Cela désactive également la structure du document, le panneau des propriétés et la boîte à outils XAML. Pour réactiver le générateur d’aperçu XAML et les outils, modifiez votre **éditeur XAML par défaut** en ** Xamarin.Forms Générateur d’aperçu**.
+Vous pouvez désactiver le générateur d’aperçu XAML dans les **Préférences du > Visual Studio > éditeur de texte >** boîte de dialogue XAML en sélectionnant **éditeur XML par défaut** comme **éditeur XAML par défaut**. Cela désactive également la structure du document, le panneau des propriétés et la boîte à outils XAML. Pour réactiver le générateur d’aperçu XAML et les outils, modifiez votre **éditeur XAML par défaut** en **Xamarin.Forms Générateur d’aperçu**.
 
 ::: zone-end
 
@@ -75,7 +78,7 @@ Vous pouvez désactiver le générateur d’aperçu XAML dans les **Préférence
 Les options situées en haut du volet de visualisation sont les suivantes :
 
 * **Android** : afficher la version Android de l’écran
-* **iOS** : afficher la version IOS de l’écran (*Remarque : Si vous utilisez Visual Studio sur Windows, vous devez être [associé à un Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md) pour utiliser ce mode*)
+* **iOS** : afficher la version IOS de l’écran ( *Remarque : Si vous utilisez Visual Studio sur Windows, vous devez être [associé à un Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md) pour utiliser ce mode* )
 * Liste déroulante **périphérique** des appareils Android ou iOS, y compris la résolution et la taille d’écran
 * **Portrait (icône)** : utilise l’orientation portrait pour la préversion
 * **Paysage (icône)** : utilise l’orientation paysage pour la préversion

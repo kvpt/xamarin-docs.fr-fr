@@ -7,24 +7,27 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/31/2018
-ms.openlocfilehash: 157e16da2c524029c29e767cd6b3e5eb550a2389
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 3a58fc58b429a8a16437773289cd4d7286bbff81
+ms.sourcegitcommit: d2aa3a8bf9a60b6708db55b10b0c6893c06d3256
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021764"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93331481"
 ---
 # <a name="building-user-interfaces-with-the-ios-designer"></a>Création d’interfaces utilisateur à l’aide du concepteur iOS
 
 _Le Xamarin Designer pour iOS est un concepteur visuel pour les formats de Storyboard et de Interface Builder iOS entièrement intégrés à Visual Studio pour Mac et Visual Studio. Le concepteur iOS assure une compatibilité complète avec les formats de Storyboard et. XIB, afin que les fichiers puissent être modifiés dans Visual Studio pour Mac ou Visual Studio en plus de l’Interface Builder de Xcode. En outre, le Xamarin Designer pour iOS prend en charge des fonctionnalités avancées telles que les contrôles personnalisés qui s’affichent au moment du design dans l’éditeur._
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+> [!WARNING]
+> La méthode recommandée pour créer des interfaces utilisateur iOS est maintenant directement sur un Mac exécutant Xcode. Vous trouverez plus d’informations [ici](~/ios/user-interface/ios-use-xcode.md).
 
-[![Concepteur iOS dans Visual Studio pour Mac](images/designer-vsmac-sml.png "Le concepteur iOS")](images/designer-vsmac.png#lightbox)
+# <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+[![Concepteur iOS dans Visual Studio pour Mac](images/designer-vsmac-sml.png "Concepteur iOS")](images/designer-vsmac.png#lightbox)
 
-[![Concepteur iOS dans Visual Studio](images/designer-vs.png "Le concepteur iOS")](images/designer-vs.png#lightbox)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
+
+[![Concepteur iOS dans Visual Studio](images/designer-vs.png "Concepteur iOS")](images/designer-vs.png#lightbox)
 
 -----
 
@@ -34,18 +37,18 @@ Le Xamarin Designer pour iOS est disponible dans Visual Studio pour Mac et dans 
 
 Ces guides partent du principe que vous êtes familiarisé avec le contenu décrit dans les [guides de prise en main Xamarin. iOS](~/ios/get-started/index.md).
 
-## <a name="ios-designer-basicsintroductionmd"></a>[Principes de base du concepteur iOS](introduction.md)
+## <a name="ios-designer-basics"></a>[Principes de base du concepteur iOS](introduction.md)
 
 Ce guide couvre les fonctionnalités du concepteur Xamarin iOS. Il aborde les principes fondamentaux du concepteur, en expliquant comment utiliser le concepteur pour disposer les contrôles visuellement et comment modifier des propriétés.
 
-## <a name="designable-controls-overviewios-designable-controls-overviewmd"></a>[Vue d’ensemble des contrôles concevables](ios-designable-controls-overview.md)
+## <a name="designable-controls-overview"></a>[Vue d’ensemble des contrôles concevables](ios-designable-controls-overview.md)
 
 Ce guide se penche sur les contrôles personnalisés, sur la façon dont ils sont créés et sur les exigences qu’ils doivent respecter pour être rendu sur l’aire de conception. En outre, il montre comment déboguer les problèmes courants qui peuvent se produire lors de l’utilisation de contrôles concevables.
 
-## <a name="walkthrough---using-custom-controls-with-ios-designerios-designable-controls-walkthroughmd"></a>[Procédure pas à pas : utilisation de contrôles personnalisés avec le concepteur iOS](ios-designable-controls-walkthrough.md)
+## <a name="walkthrough---using-custom-controls-with-ios-designer"></a>[Procédure pas à pas : utilisation de contrôles personnalisés avec le concepteur iOS](ios-designable-controls-walkthrough.md)
 
 Cet article fournit une procédure pas à pas qui montre comment créer un contrôle personnalisé et l’utiliser dans le concepteur iOS. Il montre comment rendre un contrôle disponible dans la boîte à outils du concepteur afin qu’il puisse être déplacé sur une vue. En outre, il montre comment implémenter un contrôle pour qu’il s’affiche correctement au moment de la conception et de l’exécution, et comment créer des propriétés qui peuvent être définies au moment de la conception.
 
-## <a name="auto-layout-with-the-xamarin-ios-designerdesigner-auto-layoutmd"></a>[Disposition automatique avec le concepteur iOS Xamarin](designer-auto-layout.md)
+## <a name="auto-layout-with-the-xamarin-ios-designer"></a>[Disposition automatique avec le concepteur iOS Xamarin](designer-auto-layout.md)
 
 Ce guide présente la disposition automatique iOS et le flux de travail des nouvelles contraintes disponibles dans le concepteur iOS.
