@@ -72,7 +72,7 @@
           href: curves/text-paths.md
         - name: Informations et énumération de tracés
           href: curves/information.md
-    - name: Bitmaps
+    - name: Images bitmap
       href: bitmaps/index.md
       items:
         - name: Affichage de bitmaps
@@ -89,7 +89,7 @@
           href: bitmaps/pixel-bits.md
         - name: Animation de bitmaps
           href: bitmaps/animating.md
-    - name: Effects (Effets)
+    - name: Effets
       href: effects/index.md
       items:
         - name: Nuanceurs
@@ -118,10 +118,5 @@
           href: effects/image-filters.md
         - name: Filtres de couleur
           href: effects/color-filters.md
-    - name: Exemples indépendants de la plateforme
-      href: ~/graphics-games/skiasharp/introduction.md
-      items:
-        - name: Notes spécifiques à la plateforme
-          href: ~/graphics-games/skiasharp/platform.md
     - name: Informations de référence sur les API
       href: /dotnet/api/skiasharp/
