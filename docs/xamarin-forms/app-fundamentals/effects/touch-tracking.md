@@ -10,16 +10,16 @@ ms.date: 12/14/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3bbad7f96403cb1f386b80b2923b0cdd222f9596
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: d9cece5bc0b9799a4c2ac951cde8196a66465bd4
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91555877"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375276"
 ---
 # <a name="invoking-events-from-effects"></a>Appel d’événements à partir d’effets
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/)
 
 _Un effet peut définir et appeler un événement, en signalant les modifications apportées à la vue Native sous-jacente. Cet article explique comment implémenter le suivi des doigts multipoint de bas niveau et comment générer des événements qui signalent une activité tactile._
 
@@ -31,9 +31,9 @@ Un effet est idéal pour le suivi des doigts multipoint, car il peut être attac
 
 Les plateformes iOS, Android et Windows universelle incluent toutes une API de bas niveau qui permet aux applications de détecter l’activité tactile. Ces plateformes distinguent toutes trois types d’événements tactiles de base :
 
-- *Enfoncé*, quand un doigt touche l’écran
-- *Déplacé*, quand un doigt touchant l’écran se déplace
-- *Relâché*, quand le doigt est détaché de l’écran
+- *Enfoncé* , quand un doigt touche l’écran
+- *Déplacé* , quand un doigt touchant l’écran se déplace
+- *Relâché* , quand le doigt est détaché de l’écran
 
 Dans un environnement d’interaction tactile multipoint, plusieurs doigts peuvent toucher l’écran en même temps. Les différentes plateformes incluent un numéro d’identification (ID) que les applications peuvent utiliser pour faire la distinction entre plusieurs doigts.
 
@@ -460,7 +460,7 @@ Vous pouvez déplacer plusieurs éléments `BoxView` simultanément en utilisant
 
 ### <a name="subclassing-the-view"></a>Sous-classement de la vue
 
-Il est souvent plus facile pour un Xamarin.Forms élément de gérer ses propres événements tactiles. La page **Draggable BoxView Dragging** fonctionne comme la page **BoxView Dragging**, mais les éléments que l’utilisateur fait glisser sont des instances d’une classe [`DraggableBoxView`](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffect/TouchTrackingEffect/TouchTrackingEffect/DraggableBoxView.cs) qui dérive de `BoxView` :
+Il est souvent plus facile pour un Xamarin.Forms élément de gérer ses propres événements tactiles. La page **Draggable BoxView Dragging** fonctionne comme la page **BoxView Dragging** , mais les éléments que l’utilisateur fait glisser sont des instances d’une classe [`DraggableBoxView`](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffect/TouchTrackingEffect/TouchTrackingEffect/DraggableBoxView.cs) qui dérive de `BoxView` :
 
 ```csharp
 class DraggableBoxView : BoxView
@@ -803,7 +803,7 @@ Les différents éléments `WhiteKey` et `BlackKey` sont organisés dans le [fic
 
 Si vous balayez avec votre doigt sur les touches, vous voyez grâce à de légères modifications de couleur que les événements tactiles sont transférés d’une touche à une autre.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a montré comment appeler des événements dans un effet, et comment écrire et utiliser un effet qui implémente un traitement de l’interaction tactile multipoint de bas niveau.
 

@@ -10,16 +10,16 @@ ms.date: 08/07/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7eef9cdf353c527be4e1de4721a5658a7763dabe
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 123a0868ce098f8c54e6805a1b2b9a6efb04c238
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557541"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375393"
 ---
 # <a name="theme-a-no-locxamarinforms-application"></a>Thème d’une Xamarin.Forms application
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-theming/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-theming/)
 
 Xamarin.Forms les applications peuvent répondre de manière dynamique aux modifications de style au moment de l’exécution à l’aide de l' `DynamicResource` extension de balisage. Cette extension de balisage est similaire à l' `StaticResource` extension de balisage, dans le sens où les deux utilisent une clé de dictionnaire pour extraire une valeur d’un [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) . Toutefois, si l' `StaticResource` extension de balisage effectue une recherche dans un dictionnaire unique, l' `DynamicResource` extension de balisage maintient un lien vers la clé du dictionnaire. Par conséquent, si la valeur associée à la clé est remplacée, la modification est appliquée à [`VisualElement`](xref:Xamarin.Forms.VisualElement) . Cela permet d’implémenter les thèmes d’exécution dans les Xamarin.Forms applications.
 
@@ -86,7 +86,7 @@ Chaque [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) contient de
 
 ## <a name="set-a-default-theme"></a>Définir un thème par défaut
 
-Une application requiert un thème par défaut, afin que les contrôles aient des valeurs pour les ressources qu’elles consomment. Un thème par défaut peut être défini en fusionnant le thème du [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) au niveau de l’application `ResourceDictionary` défini dans **app. Xaml**:
+Une application requiert un thème par défaut, afin que les contrôles aient des valeurs pour les ressources qu’elles consomment. Un thème par défaut peut être défini en fusionnant le thème du [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) au niveau de l’application `ResourceDictionary` défini dans **app. Xaml** :
 
 ```xaml
 <Application xmlns="http://xamarin.com/schemas/2014/forms"

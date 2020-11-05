@@ -10,16 +10,16 @@ ms.date: 04/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e6856e0ef513905a6300dcaf661ea33f4a89852c
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 05d0917ac748ca27350f43ae225f1cb1d1aad84f
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563911"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375380"
 ---
 # <a name="generics-in-no-locxamarinforms-xaml"></a>Génériques en Xamarin.Forms XAML
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-generics/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/xaml-generics/)
 
 Xamarin.Forms XAML assure la prise en charge de l’utilisation des types CLR génériques en spécifiant les contraintes génériques en tant qu’arguments de type. Cette prise en charge est fournie par la `x:TypeArguments` directive, qui passe les arguments de type de restriction d’un générique au constructeur du type générique.
 

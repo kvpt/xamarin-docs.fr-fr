@@ -10,16 +10,16 @@ ms.date: 12/11/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c010ac513cec8ac59927325dbe80ad1c8ac556d8
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 98f91ec614df08997e7cbf23530086f541500b5d
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91559998"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375471"
 ---
 # <a name="listview-performance"></a>Performances de ListView
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistviewnative)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/workingwithlistviewnative)
 
 Lors de l’écriture d’applications mobiles, les performances sont importantes. Les utilisateurs s’attendent à attendre un défilement régulier et des temps de chargement rapides. Si vous ne répondez pas aux attentes de vos utilisateurs, vous coûterez les évaluations dans le magasin d’applications, ou dans le cas d’une application métier, vous coûterez le temps et l’argent de votre organisation.
 

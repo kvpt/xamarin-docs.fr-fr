@@ -10,35 +10,38 @@ ms.date: 11/04/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8aea3ad36f6c35e9faf2771fc6b54c378c304afb
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 3facf6e1e5796d8e17488f3c018cba23e5f99b7f
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86933599"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375354"
 ---
 # <a name="dependency-injection"></a>Injection de dépendances
+
+> [!NOTE]
+> Ce livre électronique a été publié au printemps de 2017 et n’a pas été mis à jour depuis. Le livre reste très utile, mais certains éléments du matériel sont obsolètes.
 
 En général, un constructeur de classe est appelé lors de l’instanciation d’un objet, et toutes les valeurs requises par l’objet sont passées en tant qu’arguments au constructeur. Il s’agit d’un exemple d’injection de dépendances, et spécifiquement appelé *injection de constructeur*. Les dépendances requises par l’objet sont injectées dans le constructeur.
 
 En spécifiant des dépendances comme types d’interfaces, l’injection de dépendances permet de découpler les types concrets du code qui dépend de ces types. Elle utilise généralement un conteneur qui contient une liste d’inscriptions et de mappages entre les interfaces et les types abstraits, ainsi que les types concrets qui implémentent ou étendent ces types.
 
-Il existe également d’autres types d’injection de dépendances, tels que l' *injection d’accesseur Set de propriété*et l' *injection d’appel de méthode*, mais ils sont moins fréquents. Par conséquent, ce chapitre se concentre uniquement sur l’exécution de l’injection de constructeur avec un conteneur d’injection de dépendance.
+Il existe également d’autres types d’injection de dépendances, tels que l' *injection d’accesseur Set de propriété* et l' *injection d’appel de méthode* , mais ils sont moins fréquents. Par conséquent, ce chapitre se concentre uniquement sur l’exécution de l’injection de constructeur avec un conteneur d’injection de dépendance.
 
 ## <a name="introduction-to-dependency-injection"></a>Présentation de l’injection de dépendances
 
 L’injection de dépendances est une version spécialisée du modèle d’inversion de contrôle (IoC, inversion of Control), où la préoccupation est le processus d’obtention de la dépendance requise. Avec l’injection de dépendances, une autre classe est chargée d’injecter les dépendances dans un objet au moment de l’exécution. L’exemple de code suivant montre comment la `ProfileViewModel` classe est structurée lors de l’utilisation de l’injection de dépendances :
 
 ```csharp
-public class ProfileViewModel : ViewModelBase  
+public class ProfileViewModel : ViewModelBase  
 {  
-    private IOrderService _orderService;  
+    private IOrderService _orderService;  
 
-    public ProfileViewModel(IOrderService orderService)  
-    {  
-        _orderService = orderService;  
-    }  
-    ...  
+    public ProfileViewModel(IOrderService orderService)  
+    {  
+        _orderService = orderService;  
+    }  
+    ...  
 }
 ```
 
@@ -160,7 +163,7 @@ La première fois que le `LoginViewModel` type est résolu, le conteneur crée u
 > [!NOTE]
 > Les types inscrits en tant que singletons sont supprimés lorsque le conteneur est supprimé.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 L’injection de dépendances permet de découpler des types concrets du code qui dépend de ces types. Elle utilise généralement un conteneur qui contient une liste d’inscriptions et de mappages entre les interfaces et les types abstraits, ainsi que les types concrets qui implémentent ou étendent ces types.
 

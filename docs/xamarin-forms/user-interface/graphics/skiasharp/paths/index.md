@@ -10,22 +10,22 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 380c9d5b8159a1a142ebf005955e4345dbc6e6d8
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 1c5a83a626b9a0fab55b84c7d8cc8e4fbaea3683
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562897"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375250"
 ---
 # <a name="skiasharp-lines-and-paths"></a>Lignes et chemins d’accès SkiaSharp
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Utiliser SkiaSharp pour dessiner des lignes et des tracés graphiques_
 
 La [section précédente](~/xamarin-forms/user-interface/graphics/skiasharp/basics/index.md) a démontré que la `SKCanvas` classe SkiaSharp comprend plusieurs méthodes pour dessiner des cercles, des ovales, des rectangles, des rectangles arrondis, du texte et des bitmaps. Cette section et les sections suivantes couvrent les différentes classes connectées à la création et au rendu des *chemins graphiques*.
 
-Le chemin d’accès aux graphiques est l’approche la plus généralisée pour dessiner des lignes et des courbes dans SkiaSharp. Cette section traite de l’utilisation d’un [`SKPath`](xref:SkiaSharp.SKPath) objet pour dessiner des lignes droites et de l’utilisation d’une collection de petites lignes droites (appelée *polyligne*) pour dessiner des courbes que vous pouvez définir de façon algorithmique. Une section ultérieure sur les [**courbes et chemins d’accès SkiaSharp**](../curves/index.md) aborde les différents types de courbes pris en charge par `SKPath` .
+Le chemin d’accès aux graphiques est l’approche la plus généralisée pour dessiner des lignes et des courbes dans SkiaSharp. Cette section traite de l’utilisation d’un [`SKPath`](xref:SkiaSharp.SKPath) objet pour dessiner des lignes droites et de l’utilisation d’une collection de petites lignes droites (appelée *polyligne* ) pour dessiner des courbes que vous pouvez définir de façon algorithmique. Une section ultérieure sur les [**courbes et chemins d’accès SkiaSharp**](../curves/index.md) aborde les différents types de courbes pris en charge par `SKPath` .
 
 Tous les exemples de programmes de cette section s’affichent sous les lignes d’en-tête **et les chemins d’accès** dans la page d’hébergement du programme [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) , et dans le dossier [**paths**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths) de cette solution.
 

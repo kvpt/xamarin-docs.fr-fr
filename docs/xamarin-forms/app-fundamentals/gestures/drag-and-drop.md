@@ -10,18 +10,18 @@ ms.date: 10/27/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: af56e84598f73693a8cb0e93573b789a716c194a
-ms.sourcegitcommit: 1550019cd1e858d4d13a4ae6dfb4a5947702f24b
+ms.openlocfilehash: 30e77d4978e9a191c1ba19e80109f9854cc46f8f
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92897466"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375237"
 ---
 # <a name="add-drag-and-drop-gesture-recognizers"></a>Ajouter des modules de reconnaissance de mouvement de glisser-déplacer
 
 ![API de la version préliminaire](~/media/shared/preview.png)
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-draganddropgesture/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/workingwithgestures-draganddropgesture/)
 
 Un mouvement de glisser-déplacer permet de faire glisser des éléments et leurs packages de données associés à partir d’un emplacement à l’écran à un autre emplacement à l’aide d’un mouvement continu. La fonction glisser-déplacer peut avoir lieu dans une application unique, ou elle peut démarrer dans une application et se terminer dans une autre.
 
@@ -80,7 +80,7 @@ Dans cet exemple, un mouvement de glissement peut être initié sur [`Image`](xr
 > [!TIP]
 > Sur iOS, Android et UWP, un mouvement de glissement est initié avec une pression longue, suivie d’un glissement.
 
-Pour obtenir un exemple d’utilisation de `DragGestureRecognizer` commandes, consultez l' [exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-draganddropgesture/).
+Pour obtenir un exemple d’utilisation de `DragGestureRecognizer` commandes, consultez l' [exemple](/samples/xamarin/xamarin-forms-samples/workingwithgestures-draganddropgesture/).
 
 ## <a name="build-a-data-package"></a>Créer un package de données
 
@@ -214,7 +214,7 @@ L’exemple de code XAML suivant montre un `DropGestureRecognizer` attaché à u
 
 Dans cet exemple, quand une source de glissement est déplacée sur la [`Image`](xref:Xamarin.Forms.Image) cible de déplacement, la source de glissement est copiée dans la cible de déplacement, à condition que la source de glissement soit un [`ImageSource`](xref:Xamarin.Forms.ImageSource) . Cela se produit parce que Xamarin.Forms copie automatiquement les images glissées et le texte vers les cibles de dépôt compatibles.
 
-Pour obtenir un exemple d’utilisation de `DropGestureRecognizer` commandes, consultez l' [exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-draganddropgesture/).
+Pour obtenir un exemple d’utilisation de `DropGestureRecognizer` commandes, consultez l' [exemple](/samples/xamarin/xamarin-forms-samples/workingwithgestures-draganddropgesture/).
 
 ## <a name="handle-the-dragover-event"></a>Gérer l’événement DragOver
 

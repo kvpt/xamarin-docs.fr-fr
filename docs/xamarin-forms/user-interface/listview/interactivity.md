@@ -10,16 +10,16 @@ ms.date: 09/25/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d665a80d6f1e0319fc9dc8696db379cf781ee833
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 4a922a841452e5e934cc7dcb88a9f84373ae3ded
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91560115"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375493"
 ---
 # <a name="listview-interactivity"></a>Interactivité de ListView
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-interactivity)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-listview-interactivity)
 
 La Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) classe prend en charge l’interaction de l’utilisateur avec les données qu’il présente.
 
@@ -27,7 +27,7 @@ La Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) classe prend en charg
 
 Le [`ListView`](xref:Xamarin.Forms.ListView) mode de sélection est contrôlé en affectant [`ListView.SelectionMode`](xref:Xamarin.Forms.ListView.SelectionMode) à la propriété une valeur de l' [`ListViewSelectionMode`](xref:Xamarin.Forms.ListViewSelectionMode) énumération :
 
-- [`Single`](xref:Xamarin.Forms.ListViewSelectionMode.Single) indique qu’un seul élément peut être sélectionné, avec l’élément sélectionné mis en surbrillance. Valeur par défaut.
+- [`Single`](xref:Xamarin.Forms.ListViewSelectionMode.Single) indique qu’un seul élément peut être sélectionné, avec l’élément sélectionné mis en surbrillance. Il s’agit de la valeur par défaut.
 - [`None`](xref:Xamarin.Forms.ListViewSelectionMode.None) indique que les éléments ne peuvent pas être sélectionnés.
 
 Lorsqu’un utilisateur clique sur un élément, deux événements sont déclenchés :
@@ -181,7 +181,7 @@ listView.RefreshControlColor = Color.Red;
 
 Les captures d’écran suivantes montrent une extraction à l’utilisation de l’utilisateur :
 
-![Extraction de ListView pour l’actualisation en cours](interactivity-images/refresh-start.png)
+![Extraction de ListView pour actualiser In-Progress](interactivity-images/refresh-start.png)
 
 Les captures d’écran suivantes montrent l’extraction à actualiser une fois que l’utilisateur a libéré l’extraction, le compteur étant affiché pendant la [`ListView`](xref:Xamarin.Forms.ListView) mise à jour de :
 

@@ -10,16 +10,16 @@ ms.date: 10/26/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5e1ad1d4fa9d5ce006373382e85398edac59a82a
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 37973db6288f092d756a29de61731a296eac3924
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557593"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375406"
 ---
 # <a name="text-in-no-locxamarinforms"></a>Texte dans Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
 _Utilisation Xamarin.Forms de pour entrer ou afficher du texte._
 
@@ -59,7 +59,7 @@ Notez que, contrairement à `Label` , `Entry` ne peut pas avoir de paramètres d
 
 Pour plus d’informations, consultez l’article de l' [éditeur](editor.md) .
 
-## <a name="fonts"></a>[Polices](fonts.md)
+## <a name="fonts"></a>[Police](fonts.md)
 
 De nombreux contrôles prennent en charge des paramètres de police différents à l’aide des polices intégrées sur chaque plateforme, ou des polices personnalisées incluses avec votre application. Consultez l’article sur les [polices](fonts.md) pour obtenir des informations plus détaillées.
 

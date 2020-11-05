@@ -12,16 +12,16 @@ ms.date: 04/01/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 96b3e6bd055c0bc89ae7bcbb66c8b3f48b21ad17
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: b550aed2dd2038a48fa4eafcf1ed1d874a08eb03
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91436226"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375523"
 ---
 # <a name="create-a-single-page-no-locxamarinforms-application"></a>Créer une application à page unique Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-singlepage/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/getstarted-notes-singlepage/)
 
 Dans ce guide de démarrage rapide, vous allez apprendre à :
 
@@ -35,7 +35,7 @@ Le Guide de démarrage rapide vous guide dans la création d’une Xamarin.Forms
 
 ::: zone pivot="windows"
 
-### <a name="prerequisites"></a>Conditions préalables requises
+### <a name="prerequisites"></a>Prérequis
 
 - Installation de Visual Studio 2019 (dernière version) et de la charge de travail **Développement mobile en .NET**.
 - Connaissance de C#.
@@ -53,24 +53,24 @@ Pour plus d’informations sur ces prérequis, consultez [Installation de Xamari
 
     ![Modèles de projet multiplateforme](single-page-images/vs/new-project-2019.png)
 
-3. Dans la fenêtre **Configurer votre nouveau projet**, affectez à **Nom du projet** la valeur **Notes**, choisissez un emplacement approprié pour le projet, puis cliquez sur le bouton **Créer** :
+3. Dans la fenêtre **Configurer votre nouveau projet** , affectez à **Nom du projet** la valeur **Notes** , choisissez un emplacement approprié pour le projet, puis cliquez sur le bouton **Créer**  :
 
     ![Configurer votre projet](single-page-images/vs/configure-project.png)
 
     > [!IMPORTANT]
     > Pour les extraits C# et XAML de ce guide de démarrage rapide, la solution doit se nommer **Notes**. L’utilisation d’un autre nom entraîne des erreurs de build quand vous copiez le code à partir de ce guide de démarrage rapide dans la solution.
 
-4. Dans la boîte de dialogue **Nouvelle application multiplateforme**, cliquez sur **Application vide**, puis cliquez sur le bouton **OK** :
+4. Dans la boîte de dialogue **Nouvelle application multiplateforme** , cliquez sur **Application vide** , puis cliquez sur le bouton **OK**  :
 
     ![Nouvelle application multiplateforme](single-page-images/vs/new-app-2019.png)
 
     Pour plus d’informations sur la bibliothèque de .NET Standard qui est créée, consultez [anatomie d’une Xamarin.Forms application](deepdive.md#anatomy-of-a-xamarinforms-application) dans la présentation [ Xamarin.Forms approfondie des Démarrages rapides](deepdive.md).
 
-5. Dans l’**Explorateur de solutions**, dans le projet **Notes**, double-cliquez sur **MainPage.xaml** pour l’ouvrir :
+5. Dans l’ **Explorateur de solutions** , dans le projet **Notes** , double-cliquez sur **MainPage.xaml** pour l’ouvrir :
 
     ![Ouvrir MainPage.xaml](single-page-images/vs/open-mainpage-xaml-2019.png)
 
-6. Dans **MainPage. Xaml**, supprimez tout le code du modèle et remplacez-le par le code suivant :
+6. Dans **MainPage. Xaml** , supprimez tout le code du modèle et remplacez-le par le code suivant :
 
     ```xaml
     <?xml version="1.0" encoding="utf-8"?>
@@ -103,11 +103,11 @@ Pour plus d’informations sur ces prérequis, consultez [Installation de Xamari
 
     Enregistrez les modifications apportées à **MainPage.xaml** en appuyant sur **Ctrl+S** et fermez le fichier.
 
-7. Dans l’**Explorateur de solutions**, dans le projet **Notes**, développez **MainPage.xaml**, puis double-cliquez sur **MainPage.xaml.cs** pour l’ouvrir :
+7. Dans l’ **Explorateur de solutions** , dans le projet **Notes** , développez **MainPage.xaml** , puis double-cliquez sur **MainPage.xaml.cs** pour l’ouvrir :
 
     ![Ouvrir MainPage.xaml.cs](single-page-images/vs/open-mainpage-codebehind-2019.png)
 
-8. Dans **MainPage.Xaml.cs**, supprimez tout le code du modèle et remplacez-le par le code suivant :
+8. Dans **MainPage.Xaml.cs** , supprimez tout le code du modèle et remplacez-le par le code suivant :
 
     ```csharp
     using System;
@@ -172,7 +172,7 @@ Pour plus d’informations sur ces prérequis, consultez [Installation de Xamari
     > [!NOTE]
     > Les étapes suivantes doivent être effectuées uniquement si vous disposez d’un [Mac couplé](~/ios/get-started/installation/windows/connecting-to-mac/index.md) qui répond à la configuration système requise pour le Xamarin.Forms développement.
 
-3. Dans la barre d’outils Visual Studio, cliquez avec le bouton droit sur le projet **Notes.iOS**, puis sélectionnez **Définir comme projet de démarrage**.
+3. Dans la barre d’outils Visual Studio, cliquez avec le bouton droit sur le projet **Notes.iOS** , puis sélectionnez **Définir comme projet de démarrage**.
 
       ![Définir iOS en tant que projet de démarrage](single-page-images/vs/set-as-startup-project-ios.png)
 
@@ -189,7 +189,7 @@ Pour plus d’informations sur ces prérequis, consultez [Installation de Xamari
 ::: zone-end
 ::: zone pivot="win-vs2017"
 
-### <a name="prerequisites"></a>Conditions préalables requises
+### <a name="prerequisites"></a>Prérequis
 
 - Installation de Visual Studio 2017 et de la charge de travail **Développement mobile en .NET**.
 - Connaissance de C#.
@@ -203,24 +203,24 @@ Pour plus d’informations sur ces prérequis, consultez [Installation de Xamari
 
     ![Nouveau projet](single-page-images/vs/new-solution.png)
 
-2. Dans la boîte de dialogue **nouveau projet** , cliquez sur **multiplateforme**, sélectionnez le modèle **application mobile ( Xamarin.Forms )** , définissez le nom sur **Notes**, choisissez un emplacement approprié pour le projet et cliquez sur le bouton **OK** :
+2. Dans la boîte de dialogue **nouveau projet** , cliquez sur **multiplateforme** , sélectionnez le modèle **application mobile ( Xamarin.Forms )** , définissez le nom sur **Notes** , choisissez un emplacement approprié pour le projet et cliquez sur le bouton **OK** :
 
     ![Modèles de projet multiplateforme](single-page-images/vs/new-project.png)
 
     > [!IMPORTANT]
     > Pour les extraits C# et XAML de ce guide de démarrage rapide, la solution doit se nommer **Notes**. L’utilisation d’un autre nom entraîne des erreurs de build quand vous copiez le code à partir de ce guide de démarrage rapide dans la solution.
 
-3. Dans la boîte de dialogue **Nouvelle application multiplateforme**, cliquez sur **Application vide**, sélectionnez **.NET Standard** comme stratégie de partage de code et cliquez sur le bouton **OK** :
+3. Dans la boîte de dialogue **Nouvelle application multiplateforme** , cliquez sur **Application vide** , sélectionnez **.NET Standard** comme stratégie de partage de code et cliquez sur le bouton **OK**  :
 
     ![Nouvelle application multiplateforme](single-page-images/vs/new-app.png)
 
     Pour plus d’informations sur la bibliothèque de .NET Standard qui est créée, consultez [anatomie d’une Xamarin.Forms application](deepdive.md#anatomy-of-a-xamarinforms-application) dans la présentation [ Xamarin.Forms approfondie des Démarrages rapides](deepdive.md).
 
-4. Dans l’**Explorateur de solutions**, dans le projet **Notes**, double-cliquez sur **MainPage.xaml** pour l’ouvrir :
+4. Dans l’ **Explorateur de solutions** , dans le projet **Notes** , double-cliquez sur **MainPage.xaml** pour l’ouvrir :
 
     ![Ouvrir MainPage.xaml](single-page-images/vs/open-mainpage-xaml.png)
 
-5. Dans **MainPage. Xaml**, supprimez tout le code du modèle et remplacez-le par le code suivant :
+5. Dans **MainPage. Xaml** , supprimez tout le code du modèle et remplacez-le par le code suivant :
 
     ```xaml
     <?xml version="1.0" encoding="utf-8"?>
@@ -253,11 +253,11 @@ Pour plus d’informations sur ces prérequis, consultez [Installation de Xamari
 
     Enregistrez les modifications apportées à **MainPage.xaml** en appuyant sur **Ctrl+S** et fermez le fichier.
 
-6. Dans l’**Explorateur de solutions**, dans le projet **Notes**, développez **MainPage.xaml**, puis double-cliquez sur **MainPage.xaml.cs** pour l’ouvrir :
+6. Dans l’ **Explorateur de solutions** , dans le projet **Notes** , développez **MainPage.xaml** , puis double-cliquez sur **MainPage.xaml.cs** pour l’ouvrir :
 
     ![Ouvrir MainPage.xaml.cs](single-page-images/vs/open-mainpage-codebehind.png)
 
-7. Dans **MainPage.Xaml.cs**, supprimez tout le code du modèle et remplacez-le par le code suivant :
+7. Dans **MainPage.Xaml.cs** , supprimez tout le code du modèle et remplacez-le par le code suivant :
 
     ```csharp
     using System;
@@ -322,7 +322,7 @@ Pour plus d’informations sur ces prérequis, consultez [Installation de Xamari
     > [!NOTE]
     > Les étapes suivantes doivent être effectuées uniquement si vous disposez d’un [Mac couplé](~/ios/get-started/installation/windows/connecting-to-mac/index.md) qui répond à la configuration système requise pour le Xamarin.Forms développement.
 
-3. Dans la barre d’outils Visual Studio, cliquez avec le bouton droit sur le projet **Notes.iOS**, puis sélectionnez **Définir comme projet de démarrage**.
+3. Dans la barre d’outils Visual Studio, cliquez avec le bouton droit sur le projet **Notes.iOS** , puis sélectionnez **Définir comme projet de démarrage**.
 
       ![Définir iOS en tant que projet de démarrage](single-page-images/vs/set-as-startup-project-ios.png)
 
@@ -339,7 +339,7 @@ Pour plus d’informations sur ces prérequis, consultez [Installation de Xamari
 ::: zone-end
 ::: zone pivot="macos"
 
-### <a name="prerequisites"></a>Conditions préalables requises
+### <a name="prerequisites"></a>Prérequis
 
 - Visual Studio pour Mac (dernière version) avec installation de la prise en charge des plateformes iOS et Android.
 - Xcode (dernière version).
@@ -353,15 +353,15 @@ Pour plus d’informations sur ces prérequis, consultez [Installation de Xamari
 
     ![Nouvelle solution](single-page-images/vsmac/new-project.png)
 
-2. Dans la boîte de dialogue **Choisir un modèle pour votre nouveau projet**, cliquez sur **Multiplateforme > Application**, sélectionnez le modèle **Application Forms vide**, puis cliquez sur le bouton **Suivant** :
+2. Dans la boîte de dialogue **Choisir un modèle pour votre nouveau projet** , cliquez sur **Multiplateforme > Application** , sélectionnez le modèle **Application Forms vide** , puis cliquez sur le bouton **Suivant** :
 
     ![Choisir un modèle](single-page-images/vsmac/choose-template.png)
 
-3. Dans la boîte de dialogue **Configurer une application Forms vide**, nommez la nouvelle application **Notes**, vérifiez que la case d’option **Utiliser .NET Standard** est sélectionnée, puis cliquez sur le bouton **Suivant** :    
+3. Dans la boîte de dialogue **Configurer une application Forms vide** , nommez la nouvelle application **Notes** , vérifiez que la case d’option **Utiliser .NET Standard** est sélectionnée, puis cliquez sur le bouton **Suivant**  :    
 
     ![Configurer l’application Formulaires](single-page-images/vsmac/configure-app.png)
 
-4. Dans la boîte de dialogue **Configurer votre nouvelle application Forms vide**, laissez **Notes** comme noms de la solution et du projet, choisissez un emplacement approprié pour le projet, puis cliquez sur le bouton **Créer** pour créer le projet :
+4. Dans la boîte de dialogue **Configurer votre nouvelle application Forms vide** , laissez **Notes** comme noms de la solution et du projet, choisissez un emplacement approprié pour le projet, puis cliquez sur le bouton **Créer** pour créer le projet :
 
     ![Configurer le projet Formulaires](single-page-images/vsmac/configure-project.png)
 
@@ -370,11 +370,11 @@ Pour plus d’informations sur ces prérequis, consultez [Installation de Xamari
 
     Pour plus d’informations sur la bibliothèque de .NET Standard qui est créée, consultez [anatomie d’une Xamarin.Forms application](deepdive.md#anatomy-of-a-xamarinforms-application) dans la présentation [ Xamarin.Forms approfondie des Démarrages rapides](deepdive.md).
 
-5. Dans le **Panneau Solutions**, dans le projet **Notes**, double-cliquez sur **MainPage.xaml** pour l’ouvrir :
+5. Dans le **Panneau Solutions** , dans le projet **Notes** , double-cliquez sur **MainPage.xaml** pour l’ouvrir :
 
     ![MainPage.xaml](single-page-images/vsmac/mainpage-xaml.png)
 
-6. Dans **MainPage. Xaml**, supprimez tout le code du modèle et remplacez-le par le code suivant :
+6. Dans **MainPage. Xaml** , supprimez tout le code du modèle et remplacez-le par le code suivant :
 
     ```xaml
     <?xml version="1.0" encoding="utf-8"?>
@@ -405,13 +405,13 @@ Pour plus d’informations sur ces prérequis, consultez [Installation de Xamari
 
     Ce code définit de manière déclarative l’interface utilisateur de la page, qui se compose d’un [`Label`](xref:Xamarin.Forms.Label) pour afficher du texte, d’une [`Editor`](xref:Xamarin.Forms.Editor) entrée de texte et de deux [`Button`](xref:Xamarin.Forms.Button) instances qui indiquent à l’application d’enregistrer ou de supprimer un fichier. Les deux `Button` instances sont disposées horizontalement dans un [`Grid`](xref:Xamarin.Forms.Grid) , avec `Label` , `Editor` , et `Grid` disposées verticalement dans un [`StackLayout`](xref:Xamarin.Forms.StackLayout) . Pour plus d’informations sur la création de l’interface utilisateur, consultez [interface utilisateur](deepdive.md#user-interface) dans la présentation [ Xamarin.Forms approfondie des Démarrages rapides](deepdive.md).
 
-    Enregistrez les modifications apportées à **MainPage.xaml** en choisissant **Fichier > Enregistrer** (ou en appuyant sur **&#8984;+S**) et fermez le fichier.
+    Enregistrez les modifications apportées à **MainPage.xaml** en choisissant **Fichier > Enregistrer** (ou en appuyant sur **&#8984;+S** ) et fermez le fichier.
 
-7. Dans le **Panneau Solutions**, dans le projet **Notes**, développez **MainPage.xaml**, puis double-cliquez sur **MainPage.xaml.cs** pour l’ouvrir :
+7. Dans le **Panneau Solutions** , dans le projet **Notes** , développez **MainPage.xaml** , puis double-cliquez sur **MainPage.xaml.cs** pour l’ouvrir :
 
     ![MainPage.xaml.cs](single-page-images/vsmac/mainpage-xaml-cs.png)
 
-8. Dans **MainPage.Xaml.cs**, supprimez tout le code du modèle et remplacez-le par le code suivant :
+8. Dans **MainPage.Xaml.cs** , supprimez tout le code du modèle et remplacez-le par le code suivant :
 
     ```csharp
     using System;
@@ -453,17 +453,17 @@ Pour plus d’informations sur ces prérequis, consultez [Installation de Xamari
 
     Ce code définit un champ `_fileName`, qui référence un fichier nommé `notes.txt` qui stocke les données de notes dans le dossier de données d’application locale pour l’application. Lors de l’exécution du constructeur de page, le fichier est lu, s’il existe, et affiché dans le [`Editor`](xref:Xamarin.Forms.Editor) . Lorsque l' **enregistrement** [`Button`](xref:Xamarin.Forms.Button) est activé `OnSaveButtonClicked` , le gestionnaire d’événements est exécuté, ce qui permet d’enregistrer le contenu du `Editor` dans le fichier. Lorsque la **suppression** `Button` est activée, le `OnDeleteButtonClicked` Gestionnaire d’événements est exécuté, ce qui supprime le fichier, à condition qu’il existe, et supprime tout texte de `Editor` . Pour plus d’informations sur l’interaction avec l’utilisateur, consultez [réponse à l’interaction](deepdive.md#responding-to-user-interaction) de l’utilisateur dans la présentation [ Xamarin.Forms approfondie des Démarrages rapides](deepdive.md).
 
-    Enregistrez les modifications apportées à **MainPage.xaml.cs** en choisissant **Fichier > Enregistrer** (ou en appuyant sur **&#8984;+S**) et fermez le fichier.
+    Enregistrez les modifications apportées à **MainPage.xaml.cs** en choisissant **Fichier > Enregistrer** (ou en appuyant sur **&#8984;+S** ) et fermez le fichier.
 
 ### <a name="building-the-quickstart"></a>Génération du guide de démarrage rapide
 
-1. Dans Visual Studio pour Mac, sélectionnez l’élément de menu **Générer > Générer tout** (ou appuyez sur **&#8984;+B**). Les projets sont générés et un message de réussite s’affiche dans la barre d’outils Visual Studio pour Mac.
+1. Dans Visual Studio pour Mac, sélectionnez l’élément de menu **Générer > Générer tout** (ou appuyez sur **&#8984;+B** ). Les projets sont générés et un message de réussite s’affiche dans la barre d’outils Visual Studio pour Mac.
 
       ![Build réussie](single-page-images/vsmac/build-successful.png)
 
     En cas d’erreurs, répétez les étapes précédentes et corrigez les erreurs éventuelles jusqu’à ce que les projets soient générés.
 
-2. Dans le **Panneau Solutions**, sélectionnez le projet **Notes.iOS**, cliquez avec le bouton droit, puis sélectionnez **Définir en tant que projet de démarrage** :
+2. Dans le **Panneau Solutions** , sélectionnez le projet **Notes.iOS** , cliquez avec le bouton droit, puis sélectionnez **Définir en tant que projet de démarrage**  :
 
       ![Définir iOS en tant que projet de démarrage](single-page-images/vsmac/set-startup-project-ios.png)
 
@@ -477,7 +477,7 @@ Pour plus d’informations sur ces prérequis, consultez [Installation de Xamari
 
     Pour plus d’informations sur la façon dont l’application est lancée sur chaque plateforme, consultez [lancement de l’application sur chaque plateforme](deepdive.md#launching-the-application-on-each-platform) dans le [ Xamarin.Forms didacticiel de démarrage rapide](deepdive.md).
 
-4. Dans le **Panneau Solutions**, sélectionnez le projet **Notes.Droid**, cliquez avec le bouton droit, puis sélectionnez **Définir en tant que projet de démarrage** :
+4. Dans le **Panneau Solutions** , sélectionnez le projet **Notes.Droid** , cliquez avec le bouton droit, puis sélectionnez **Définir en tant que projet de démarrage**  :
 
       ![Définir Android en tant que projet de démarrage](single-page-images/vsmac/set-startup-project-android.png)
 

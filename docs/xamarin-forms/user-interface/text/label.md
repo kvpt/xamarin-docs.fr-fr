@@ -10,16 +10,16 @@ ms.date: 07/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 742cc1171901d5aa9b81cab31fd45258686c2085
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 045d2fa3575323a6a829921fb1b346c6d310cc6e
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557580"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374769"
 ---
 # <a name="no-locxamarinforms-label"></a>Xamarin.Forms Noms
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
 _Afficher le texte dans Xamarin.Forms_
 
@@ -169,7 +169,7 @@ Les captures d’écran suivantes montrent le résultat de la définition de la 
 
 Pour plus d’informations sur les couleurs, consultez [couleurs](~/xamarin-forms/user-interface/colors.md).
 
-## <a name="fonts"></a>Polices
+## <a name="fonts"></a>Fonts
 
 Pour plus d’informations sur la spécification des polices sur un `Label` , consultez [polices](~/xamarin-forms/user-interface/text/fonts.md).
 

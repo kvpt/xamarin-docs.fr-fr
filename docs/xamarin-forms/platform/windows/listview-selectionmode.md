@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: de412e064fa84e516dcb8e9b604068c84a2689e6
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 9588feeaae1391bcd2ac7fd05e7340a3a40f6236
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563612"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374795"
 ---
 # <a name="listview-selectionmode-on-windows"></a>Contrôle SelectionMode de ListView sur Windows
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Sur la plateforme Windows universelle, par défaut, Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) utilise l' `ItemClick` événement natif pour répondre à l’interaction, plutôt qu’à l' `Tapped` événement natif. Cela fournit des fonctionnalités d’accessibilité afin que le narrateur Windows et le clavier puissent interagir avec le `ListView` . Toutefois, il affiche également les gestes TAP dans le `ListView` inopérant.
 

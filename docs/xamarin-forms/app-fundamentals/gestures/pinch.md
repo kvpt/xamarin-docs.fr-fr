@@ -10,16 +10,16 @@ ms.date: 01/21/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: bb471787a4b3304be3df008fc3ecea66ff8263b3
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 4f7f0a1d8951166327b84f0003f5670f117d65f9
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91560986"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375209"
 ---
 # <a name="add-a-pinch-gesture-recognizer"></a>Ajouter un module de reconnaissance de mouvement de pincement
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-pinchgesture)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/workingwithgestures-pinchgesture)
 
 _Le mouvement de pincement est utilisé pour effectuer un zoom interactif et est implémenté avec la classe PinchGestureRecognizer. Un scénario courant pour le geste de pincement consiste à effectuer un zoom interactif d’une image à l’emplacement de pincement. Pour ce faire, il faut mettre à l’échelle le contenu de la fenêtre d’affichage et est illustré dans cet article._
 

@@ -10,16 +10,16 @@ ms.date: 07/17/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1427b6f8461c74ded933fe562a7d17221790383a
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: c266cdee5a0949edc6ade7fff81816d0405af27f
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562312"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374886"
 ---
 # <a name="displaying-skiasharp-bitmaps"></a>Affichage des bitmaps SkiaSharp
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 Le sujet des bitmaps SkiaSharp a été introduit dans l’article **[concepts de base de la bitmap dans SkiaSharp](../basics/bitmaps.md)**. Cet article a montré trois façons de charger des bitmaps et de trois façons d’afficher des bitmaps. Cet article passe en revue les techniques permettant de charger des bitmaps et va plus loin dans l’utilisation des `DrawBitmap` méthodes de `SKCanvas` .
 
@@ -27,7 +27,7 @@ Le sujet des bitmaps SkiaSharp a été introduit dans l’article **[concepts de
 
 Les `DrawBitmapLattice` `DrawBitmapNinePatch` méthodes et sont présentées dans l’article **[affichage segmenté des bitmaps SkiaSharp](segmented.md)**.
 
-Les exemples de cette page proviennent de l’application **[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** . Dans la page d’hébergement de cette application, choisissez **SkiaSharp bitmaps**, puis accédez à la section **affichage des bitmaps** .
+Les exemples de cette page proviennent de l’application **[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** . Dans la page d’hébergement de cette application, choisissez **SkiaSharp bitmaps** , puis accédez à la section **affichage des bitmaps** .
 
 ## <a name="loading-a-bitmap"></a>Chargement d’une image bitmap
 
@@ -622,7 +622,7 @@ Voici quelques combinaisons d’options :
 
 [![Modes de mise à l’échelle](displaying-images/ScalingModes.png "Modes de mise à l’échelle")](displaying-images/ScalingModes-Large.png#lightbox)
 
-La page du **sous-ensemble rectangle** a pratiquement le même fichier XAML que les **modes de mise à l’échelle**, mais le fichier code-behind définit un sous-ensemble rectangulaire de la bitmap donnée par le `SOURCE` champ : 
+La page du **sous-ensemble rectangle** a pratiquement le même fichier XAML que les **modes de mise à l’échelle** , mais le fichier code-behind définit un sous-ensemble rectangulaire de la bitmap donnée par le `SOURCE` champ : 
 
 ```csharp
 public partial class ScalingModesPage : ContentPage

@@ -10,16 +10,16 @@ ms.date: 05/06/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c432c1981ba057f61bba780b7997c8b78f8cef3f
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: fd4ac89b60cdac8509e5c057c698ef79f7e6e969
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557346"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375341"
 ---
 # <a name="no-locxamarinforms-collectionview-selection"></a>Xamarin.Forms Sélection de CollectionView
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView) définit les propriétés suivantes qui contrôlent la sélection des éléments :
 
@@ -33,7 +33,7 @@ Toutes ces propriétés sont sauvegardées par des [`BindableProperty`](xref:Xam
 
 Par défaut, la [`CollectionView`](xref:Xamarin.Forms.CollectionView) sélection est désactivée. Toutefois, ce comportement peut être modifié en affectant [`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMode) à la valeur de la propriété l’un des membres de l' [`SelectionMode`](xref:Xamarin.Forms.SelectionMode) énumération :
 
-- `None` : indique que les éléments ne peuvent pas être sélectionnés. Valeur par défaut.
+- `None` : indique que les éléments ne peuvent pas être sélectionnés. Il s’agit de la valeur par défaut.
 - `Single` : indique qu’un seul élément peut être sélectionné, avec l’élément sélectionné mis en surbrillance.
 - `Multiple` : indique que plusieurs éléments peuvent être sélectionnés et que les éléments sélectionnés sont mis en surbrillance.
 

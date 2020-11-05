@@ -10,16 +10,16 @@ ms.date: 07/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ab2f0880f694bd9e270385dd6e0256374ed76c43
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 625dd57d1f84b95cef1c6513ae832af805bf565a
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562221"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375029"
 ---
 # <a name="no-locxamarinforms-entry"></a>Xamarin.Forms Mention
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
 Xamarin.Forms [`Entry`](xref:Xamarin.Forms.Entry) Est utilisé pour l’entrée de texte sur une seule ligne. `Entry`, Comme la [`Editor`](xref:Xamarin.Forms.Editor) vue, prend en charge plusieurs types de claviers. En outre, `Entry` peut être utilisé comme champ de mot de passe.
 

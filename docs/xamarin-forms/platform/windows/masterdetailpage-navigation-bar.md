@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e6fac17f28703ec7254958e19bff7132bee6b78a
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: e39c16b900b89f0f3ba4c55fffc4e360070a0540
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91555721"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374808"
 ---
 # <a name="masterdetailpage-navigation-bar-on-windows"></a>Barre de navigation MasterDetailPage sur Windows
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Ce plateforme Windows universelle spécifique à la plateforme est utilisé pour réduire la barre de navigation sur un [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) et est consommé en XAML en définissant les [`MasterDetailPage.CollapseStyle`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapseStyleProperty) [`MasterDetailPage.CollapsedPaneWidth`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapsedPaneWidthProperty) propriétés jointes et :
 
@@ -47,7 +47,7 @@ La `MasterDetailPage.On<Windows>` méthode spécifie que ce spécifique à la pl
 
 Le résultat est qu’un spécifié [`CollapseStyle`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle) est appliqué à l' [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) instance, avec la largeur également spécifiée :
 
-[![Barre de navigation réduite spécifique à la plateforme](masterdetailpage-navigation-bar-images/collapsed-navigation-bar.png)](masterdetailpage-navigation-bar-images/collapsed-navigation-bar-large.png#lightbox "Barre de navigation réduite spécifique à la plateforme")
+[![Barre de navigation réduite spécifique à la plateforme](masterdetailpage-navigation-bar-images/collapsed-navigation-bar.png)](masterdetailpage-navigation-bar-images/collapsed-navigation-bar-large.png#lightbox "Barre de navigation réduite Platform-Specific")
 
 ## <a name="related-links"></a>Liens connexes
 

@@ -10,18 +10,18 @@ ms.date: 02/12/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d417f5e0b2b0bea5a3e129c87e94b289dc7201ed
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 812adbbb4a9572d38dd57a3edd5c1a561909f1b0
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562481"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374964"
 ---
 # <a name="binding-video-sources-to-the-player"></a>Liaison de sources vidéo au lecteur
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
-Quand la propriété `Source` de l’affichage `VideoPlayer` est définie sur un nouveau fichier vidéo, la lecture de la vidéo existante s’arrête et celle de la nouvelle vidéo commence. Cela est illustré par la page **Sélectionner une vidéo web** de l’exemple [**VideoPlayerDemos**](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos). La page inclut un `ListView` avec les titres des trois vidéos référencées à partir du fichier **App.xaml** :
+Quand la propriété `Source` de l’affichage `VideoPlayer` est définie sur un nouveau fichier vidéo, la lecture de la vidéo existante s’arrête et celle de la nouvelle vidéo commence. Cela est illustré par la page **Sélectionner une vidéo web** de l’exemple [**VideoPlayerDemos**](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos). La page inclut un `ListView` avec les titres des trois vidéos référencées à partir du fichier **App.xaml**  :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -99,7 +99,7 @@ namespace VideoPlayerDemos
 }
 ```
 
-Le `ListView` dans le fichier **BindToVideoPlayer.xaml** contient un tableau de ces objets `VideoInfo`, chacun d’eux initialisé avec un titre de vidéo et l’objet `UriVideoSource` du dictionnaire de ressources dans ** App.XAML** :
+Le `ListView` dans le fichier **BindToVideoPlayer.xaml** contient un tableau de ces objets `VideoInfo`, chacun d’eux initialisé avec un titre de vidéo et l’objet `UriVideoSource` du dictionnaire de ressources dans **App.XAML**  :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -140,7 +140,7 @@ Le `ListView` dans le fichier **BindToVideoPlayer.xaml** contient un tableau de 
 
 La propriété `Source` de `VideoPlayer` est liée au `ListView`. Le `Path` de la liaison est spécifié en tant que `SelectedItem.VideoSource`, qui est un tracé composite constitué de deux propriétés : `SelectedItem` est une propriété de `ListView`. L’élément sélectionné est de type `VideoInfo`, qui a une propriété `VideoSource`.
 
-Comme avec la première page **Sélectionner une vidéo web**, aucun élément n’est sélectionné initialement à partir du `ListView` de sorte que vous devez sélectionner l’une des vidéos avant le début de la lecture.
+Comme avec la première page **Sélectionner une vidéo web** , aucun élément n’est sélectionné initialement à partir du `ListView` de sorte que vous devez sélectionner l’une des vidéos avant le début de la lecture.
 
 ## <a name="related-links"></a>Liens associés
 

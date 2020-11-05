@@ -10,16 +10,16 @@ ms.date: 04/06/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3a085226da3c63f4f151bc657976bba384c02170
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 6cc6b1a33f2334239d2135d6ffe72c24d2243335
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91561142"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374743"
 ---
 # <a name="reusable-effectbehavior"></a>EffectBehavior réutilisable
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-effectbehavior)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/behaviors-effectbehavior)
 
 _Les comportements sont une approche utile pour ajouter un effet à un contrôle, en supprimant le code de gestion de l’effet de la plaque de chaudière des fichiers code-behind. Cet article décrit la création et l’utilisation d’un Xamarin.Forms comportement pour ajouter un effet à un contrôle._
 
@@ -164,13 +164,13 @@ Lors de l’exécution, lorsque le comportement est attaché au [`Label`](xref:X
 
 L’avantage d’utiliser ce comportement pour ajouter et supprimer des effets dans des contrôles est que le code réutilisable qui gère les effets peut être supprimé des fichiers code-behind.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a décrit l’utilisation d’un comportement pour ajouter un effet à un contrôle. La `EffectBehavior` classe est un comportement personnalisé réutilisable Xamarin.Forms qui ajoute une [`Effect`](xref:Xamarin.Forms.Effect) instance à un contrôle lorsque le comportement est attaché au contrôle et supprime l' `Effect` instance lorsque le comportement est détaché du contrôle.
 
 ## <a name="related-links"></a>Liens associés
 
-- [Effects (Effets)](~/xamarin-forms/app-fundamentals/effects/index.md)
+- [Effets](~/xamarin-forms/app-fundamentals/effects/index.md)
 - [EffectBehavior (exemple)](/samples/xamarin/xamarin-forms-samples/behaviors-effectbehavior)
 - [Comportement](xref:Xamarin.Forms.Behavior)
 - [Comportement &lt; T&gt;](xref:Xamarin.Forms.Behavior`1)

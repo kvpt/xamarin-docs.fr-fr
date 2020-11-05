@@ -10,19 +10,19 @@ ms.date: 07/18/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 4b0a3e14126dc8c92a1d1b60db7dbb2afd8e8c12
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 6b117688e1bf85266c274a44e6a4b1fda1ef5134
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136589"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375146"
 ---
 # <a name="summary-of-chapter-27-custom-renderers"></a>Résumé du chapitre 27. Renderers personnalisés
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter27)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter27)
 
-> [!NOTE] 
-> Les notes de cette page indiquent les zones où elles Xamarin.Forms divergent du matériel présenté dans le livre.
+> [!NOTE]
+> Ce livre a été publié à la printemps de 2016 et n’a pas été mis à jour depuis. Le livre reste très utile, mais certains d’entre eux sont obsolètes et certaines rubriques ne sont plus entièrement correctes ou complètes.
 
 Un Xamarin.Forms élément tel que `Button` est restitué avec un bouton spécifique à la plateforme encapsulé dans une classe nommée `ButtonRenderer` .  Voici la [version IOS de `ButtonRenderer` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.iOS/Renderers/ButtonRenderer.cs), la [version Android de `ButtonRenderer` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.Android/Renderers/ButtonRenderer.cs)et la [ `ButtonRenderer` version UWP de ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.UAP/ButtonRenderer.cs).
 
@@ -39,7 +39,7 @@ Vous pouvez afficher la source sur GitHub à l’aide des liens suivants :
 - [**Xamarin.Forms. Platform. UAP**](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Platform.UAP)
 
 > [!NOTE]
-> Les `WinRT` assemblys mentionnés dans le livre ne font plus partie de cette solution. 
+> Les `WinRT` assemblys mentionnés dans le livre ne font plus partie de cette solution.
 
 L’exemple [**PlatformClassHierarchy**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter27/PlatformClassHierarchy) affiche une hiérarchie de classes pour les assemblys qui sont valides pour la plateforme en cours d’exécution.
 
@@ -47,18 +47,18 @@ Vous remarquerez une classe importante nommée `ViewRenderer` . Il s’agit de l
 
 IOS [`ViewRenderer<TView, TNativeView>`](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.iOS/ViewRenderer.cs#L25) a des arguments génériques :
 
-- `TView`soumis à[`Xamarin.Forms.View`](xref:Xamarin.Forms.View)
-- `TNativeView`soumis à[`UIKit.UIView`](xref:UIKit.UIView)
+- `TView` soumis à [`Xamarin.Forms.View`](xref:Xamarin.Forms.View)
+- `TNativeView` soumis à [`UIKit.UIView`](xref:UIKit.UIView)
 
 Android [`ViewRenderer<TView, TNativeView>`](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.Android/ViewRenderer.cs#L17) a des arguments génériques :
 
-- `TView`soumis à[`Xamarin.Forms.View`](xref:Xamarin.Forms.View)
-- `TNativeView`soumis à[`Android.Views.View`](xref:Android.Views.View)
+- `TView` soumis à [`Xamarin.Forms.View`](xref:Xamarin.Forms.View)
+- `TNativeView` soumis à [`Android.Views.View`](xref:Android.Views.View)
 
 La UWP [`ViewRenderer<TElement, TNativeElement>`](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.UAP/ViewRenderer.cs#L6) a des arguments génériques nommés différemment :
 
-- `TElement`soumis à[`Xamarin.Forms.View`](xref:Xamarin.Forms.View)
-- `TNativeElement`soumis à[`Windows.UI.Xaml.FrameworkElement`](/uwp/api/Windows.UI.Xaml.FrameworkElement)
+- `TElement` soumis à [`Xamarin.Forms.View`](xref:Xamarin.Forms.View)
+- `TNativeElement` soumis à [`Windows.UI.Xaml.FrameworkElement`](/uwp/api/Windows.UI.Xaml.FrameworkElement)
 
 Lors de l’écriture d’un convertisseur, vous allez dériver une classe de `View` , puis écrire plusieurs `ViewRenderer` classes, une pour chaque plateforme prise en charge. Chaque implémentation spécifique à la plateforme fait référence à une classe native qui dérive du type que vous spécifiez comme `TNativeView` `TNativeElement` paramètre ou.
 
@@ -80,9 +80,9 @@ Tous les `ViewRenderer` dérivés contiennent un `ExportRenderer` attribut au ni
 
 ## <a name="renderers-and-properties"></a>Convertisseurs et propriétés
 
-L’ensemble suivant de convertisseurs implémente le dessin ellipse et se trouve dans les différents projets de la solution [**Xamarin. FormsBook. Platform**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform) .
+L’ensemble de convertisseurs suivant implémente le dessin ellipse et se trouve dans les différents projets de la solution [**Xamarin.Forms book. Platform**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform) .
 
-La [`EllipseView`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/EllipseView.cs) classe se trouve dans la plateforme **Xamarin. FormsBook. Platform** . La classe est semblable à `BoxView` et définit simplement une propriété unique : `Color` de type `Color` .
+La [`EllipseView`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/EllipseView.cs) classe se trouve dans la plateforme **Xamarin.Forms book. Platform** . La classe est semblable à `BoxView` et définit simplement une propriété unique : `Color` de type `Color` .
 
 Les convertisseurs peuvent transférer les valeurs de propriété définies sur un `View` à l’objet natif en substituant la `OnElementPropertyChanged` méthode dans le convertisseur. Au sein de cette méthode (et dans la plupart du convertisseur), deux propriétés sont disponibles :
 
@@ -109,9 +109,9 @@ Il est également possible que les convertisseurs génèrent indirectement des �
 
 Les trois convertisseurs sont les suivants :
 
-- Libéré[`StepSliderRenderer`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.iOS/StepSliderRenderer.cs)
-- Tablette[`StepSliderRenderer`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Android/StepSliderRenderer.cs)
-- UWP[`StepSliderRenderer`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT/StepSliderRenderer.cs)
+- Libéré [`StepSliderRenderer`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.iOS/StepSliderRenderer.cs)
+- Tablette [`StepSliderRenderer`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Android/StepSliderRenderer.cs)
+- UWP [`StepSliderRenderer`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT/StepSliderRenderer.cs)
 
 Les convertisseurs détectent les modifications apportées au contrôle natif, puis appellent `SetValueFromRenderer` , qui fait référence à une propriété pouvant être liée définie dans le `StepSlider` , une modification dans laquelle déclenche `StepSlider` un `ValueChanged` événement.
 

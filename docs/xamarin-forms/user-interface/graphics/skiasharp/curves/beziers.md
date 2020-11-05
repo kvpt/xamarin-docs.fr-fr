@@ -10,16 +10,16 @@ ms.date: 05/25/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9193cef76a5f474f3681b15a1315e5840b41d88a
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: aee429b3dcc898ae0663817d52ed5b03d919e239
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562975"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375367"
 ---
 # <a name="three-types-of-bzier-curves"></a>Trois types de courbes Bézier
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Découvrez comment utiliser SkiaSharp pour restituer des courbes de Bézier cubiques, quadratiques et coniques_
 
@@ -31,7 +31,7 @@ Les courbes de Bézier sont connues pour être bien adaptées à la conception i
 
 Les contours de caractère des polices basées sur l’ordinateur sont généralement définies avec des courbes de Bézier.
 
-L’article Wikipédia sur la [**courbe Bézier**](https://en.wikipedia.org/wiki/B%C3%A9zier_curve) contient des informations générales utiles. Le terme *courbe Bézier* fait référence à une famille de courbes similaires. SkiaSharp prend en charge trois types de courbes de Bézier, appelés *cubes*, *quadratiques*et *coniques*. Le cône est également appelé *Rational quadratique*.
+L’article Wikipédia sur la [**courbe Bézier**](https://en.wikipedia.org/wiki/B%C3%A9zier_curve) contient des informations générales utiles. Le terme *courbe Bézier* fait référence à une famille de courbes similaires. SkiaSharp prend en charge trois types de courbes de Bézier, appelés *cubes* , *quadratiques* et *coniques*. Le cône est également appelé *Rational quadratique*.
 
 ## <a name="the-cubic-bzier-curve"></a>Courbe de Bézier cubique
 
@@ -122,7 +122,7 @@ L’exposant le plus élevé de 3 confirme qu’il s’agit de polynômes cubiqu
 
 Il est parfois pratique d’utiliser une courbe de Bézier pour restituer un arc de cercle. Une courbe de Bézier cubique peut se rapprocher d’un arc de cercle très bien jusqu’à un quart de cercle, donc quatre courbes de Bézier connectées peuvent définir un cercle entier. Cette approximation est abordée dans deux articles publiés il y a plus de 25 ans :
 
-> Si l’on Dokken, et al, « bonne approximation des cercles par courbure-courbes de Bézier continues », la *conception géométrique assistée par ordinateur 7* (1990), 33-41.
+> Dokken, et al, « bonne approximation des cercles par Curvature-Continuous les courbes de Bézier », « *Computer-Design Geometry 7* (1990), 33-41.
 
 > Michael Goldapp, « approximation des arcs circulaires par des polynômes cubiques », « *Computer-Design Geometry 8* (1991), 227-238.
 
@@ -420,7 +420,7 @@ Toutefois, la forme d’une courbe de Bézier quadratique n’est pas elliptique
 
 La courbe de Bézier conique &mdash; également connue sous le nom de courbe de Bézier quadratique rationnelle &mdash; est un ajout relativement récent à la famille de courbes de Bézier. À l’instar de la courbe de Bézier quadratique, la courbe de Bézier quadratique rationnelle implique un point de départ, un point de terminaison et un point de contrôle. Mais la courbe de Bézier quadratique rationnelle requiert également une valeur de *pondération* . C’est ce qu’on appelle *Rational* quadratique, car les formules paramétriques impliquent des ratios.
 
-Les équations paramétriques pour X et Y sont des ratios qui partagent le même dénominateur. Voici l’équation pour le dénominateur pour *t* allant de 0 à 1 et une valeur de poids de *w*:
+Les équations paramétriques pour X et Y sont des ratios qui partagent le même dénominateur. Voici l’équation pour le dénominateur pour *t* allant de 0 à 1 et une valeur de poids de *w* :
 
 d (t) = (1 – t) ² + 2Wt (1 – t) + t ²
 

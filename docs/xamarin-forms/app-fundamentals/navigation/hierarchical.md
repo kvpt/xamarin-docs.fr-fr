@@ -10,16 +10,16 @@ ms.date: 03/10/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8e8c52c03534ca5d8b653eed4d8fc2c8f39edf61
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 9f72541bddcadabe4ce4fa71c2a4dfcae3c3c898
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562637"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374977"
 ---
 # <a name="hierarchical-navigation"></a>Navigation hiérarchique
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-hierarchical)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/navigation-hierarchical)
 
 _La classe NavigationPage fournit une expérience de navigation hiérarchique dans laquelle l’utilisateur peut naviguer dans les pages, vers l’avant et vers l’arrière, selon les besoins. La classe implémente la navigation sous la forme d’une pile d’objets page LIFO (dernier entré, premier sorti). Cet article montre comment utiliser la classe NavigationPage pour effectuer la navigation dans une pile de pages._
 
@@ -348,7 +348,7 @@ En guise d’alternative, une barre de navigation étendue peut être suggérée
 > [!NOTE]
 > Les [`BackButtonTitle`](xref:Xamarin.Forms.NavigationPage.BackButtonTitleProperty) Propriétés,, [`Title`](xref:Xamarin.Forms.Page.Title) [`TitleIcon`](xref:Xamarin.Forms.NavigationPage.TitleIconProperty) et [`TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) peuvent toutes définir des valeurs qui occupent de l’espace dans la barre de navigation. Bien que la taille de la barre de navigation varie en fonction de la plateforme et de la taille de l’écran, la définition de toutes ces propriétés provoquera des conflits en raison de l’espace limité disponible. Au lieu d’essayer d’utiliser une combinaison de ces propriétés, vous obtiendrez peut-être plus facilement la conception de barre de navigation souhaitée en définissant uniquement la propriété `TitleView`.
 
-### <a name="limitations"></a>Limitations
+### <a name="limitations"></a>Limites
 
 Il existe un certain nombre de limitations à connaître lorsque vous affichez un [`View`](xref:Xamarin.Forms.View) dans la barre de navigation d’un [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) :
 

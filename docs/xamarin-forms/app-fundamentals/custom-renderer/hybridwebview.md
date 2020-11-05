@@ -10,16 +10,16 @@ ms.date: 03/31/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3d0cbae406861565d91b0bbc9f39d661c547ca1e
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: dcfb713da09a9dab1974110e161d8045132f6b2f
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91561155"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375016"
 ---
 # <a name="customizing-a-webview"></a>Personnalisation d’une WebView
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-hybridwebview)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/customrenderers-hybridwebview)
 
 _Un Xamarin.Forms `WebView` est une vue qui affiche du contenu Web et HTML dans votre application. Cet article explique comment créer un convertisseur personnalisé qui étend le `WebView` pour permettre au code C# d’être appelé à partir de JavaScript._
 
@@ -148,7 +148,7 @@ Le processus de création de la classe de renderer personnalisé est le suivant�
 
 1. Créez une sous-classe de la `WkWebViewRenderer` classe sur iOS, et la `WebViewRenderer` classe sur Android et UWP, qui restitue le contrôle personnalisé.
 1. Substituez la `OnElementChanged` méthode qui restitue le [`WebView`](xref:Xamarin.Forms.WebView) et la logique d’écriture pour le personnaliser. Cette méthode est appelée lors de la création d’un `HybridWebView` objet.
-1. Ajoutez un `ExportRenderer` attribut à la classe de convertisseur personnalisé ou à *AssemblyInfo.cs*pour spécifier qu’il sera utilisé pour restituer le Xamarin.Forms contrôle personnalisé. Cet attribut est utilisé pour inscrire le convertisseur personnalisé avec Xamarin.Forms .
+1. Ajoutez un `ExportRenderer` attribut à la classe de convertisseur personnalisé ou à *AssemblyInfo.cs* pour spécifier qu’il sera utilisé pour restituer le Xamarin.Forms contrôle personnalisé. Cet attribut est utilisé pour inscrire le convertisseur personnalisé avec Xamarin.Forms .
 
 > [!NOTE]
 > Pour la plupart des Xamarin.Forms éléments, il est facultatif de fournir un convertisseur personnalisé dans chaque projet de plateforme. Si un renderer personnalisé n’est pas inscrit, le renderer par défaut de la classe de base du contrôle est utilisé. Toutefois, les renderers personnalisés sont nécessaires dans chaque projet de plateforme lors du rendu d’un élément [View](xref:Xamarin.Forms.View).

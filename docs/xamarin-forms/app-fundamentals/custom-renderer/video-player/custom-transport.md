@@ -10,18 +10,18 @@ ms.date: 02/12/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5d48c699ed89e91452efe84749a1dedac18a34f5
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 947e630457a652b18abb6979b1f99fa9b1e8c389
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562728"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374990"
 ---
 # <a name="custom-video-transport-controls"></a>Contrôles de transport vidéo personnalisés
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
-Les contrôles de transport d’un lecteur vidéo incluent les boutons qui effectuent les fonctions **Lecture**, **Pause** et **Arrêt**. Ces boutons sont habituellement identifiés par des icônes familières plutôt que du texte, et les fonctions **Lecture** et **Pause** sont généralement combinées en un seul bouton.
+Les contrôles de transport d’un lecteur vidéo incluent les boutons qui effectuent les fonctions **Lecture** , **Pause** et **Arrêt**. Ces boutons sont habituellement identifiés par des icônes familières plutôt que du texte, et les fonctions **Lecture** et **Pause** sont généralement combinées en un seul bouton.
 
 Par défaut, `VideoPlayer` affiche des contrôles de transport pris en charge par chaque plateforme. Quand vous affectez `false` à la propriété `AreTransportControlsEnabled`, ces contrôles sont supprimés. Vous pouvez ensuite contrôler `VideoPlayer` par programmation ou fournir vos propres contrôles de transport.
 
@@ -215,7 +215,7 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="the-video-player-status"></a>État du lecteur vidéo
 
-L’implémentation des fonctions **Lecture**, **Pause** et **Arrêt** n’est pas suffisante pour prendre en charge les contrôles de transport. Les commandes **Lecture** et **Pause** sont souvent implémentées avec le même bouton qui change d’apparence pour indiquer si la vidéo est actuellement en cours de lecture ou en pause. En outre, le bouton ne doit même pas être activé si la vidéo n’a pas encore été chargée.
+L’implémentation des fonctions **Lecture** , **Pause** et **Arrêt** n’est pas suffisante pour prendre en charge les contrôles de transport. Les commandes **Lecture** et **Pause** sont souvent implémentées avec le même bouton qui change d’apparence pour indiquer si la vidéo est actuellement en cours de lecture ou en pause. En outre, le bouton ne doit même pas être activé si la vidéo n’a pas encore été chargée.
 
 Ces exigences impliquent que le lecteur vidéo doit proposer un état indiquant s’il est en cours de lecture ou en pause, ou s’il n’est pas encore prêt à lire une vidéo. (Chaque plateforme prend également en charge des propriétés qui indiquent si la vidéo peut être mise en pause ou déplacée vers une nouvelle position, mais ces propriétés étant applicables au streaming vidéo plutôt qu’aux fichiers vidéo, elles ne sont pas prises en charge dans le `VideoPlayer` décrit ici.)
 
@@ -525,7 +525,7 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="play-pause-and-stop-buttons"></a>Boutons de lecture, de pause et d’arrêt
 
-L’utilisation de caractères Unicode pour les images **Lecture**, **Pause** et **Arrêt** symboliques est problématique. La section [Divers technique](https://unicode-table.com/en/blocks/miscellaneous-technical/) de la convention Unicode Standard définit trois symboles apparemment appropriés à cet effet. Ces règles sont les suivantes :
+L’utilisation de caractères Unicode pour les images **Lecture** , **Pause** et **Arrêt** symboliques est problématique. La section [Divers technique](https://unicode-table.com/en/blocks/miscellaneous-technical/) de la convention Unicode Standard définit trois symboles apparemment appropriés à cet effet. Ces règles sont les suivantes :
 
 - 0x23F5 (triangle noir moyen pointant vers la droite) ou &#x23F5; pour **Lecture**
 - 0x23F8 (double barre verticale) ou &#x23F8; pour **Pause**
@@ -537,13 +537,13 @@ Pour cette raison, le point de code 0x23F5 ne peut pas être utilisé pour **Lec
 
 - 0x25B6 (triangle noir pointant vers la droite) ou &#x25B6; pour **Lecture**
 
-Ce symbole est pris en charge par chaque plateforme, à ceci près qu’il s’agit d’un triangle noir ordinaire qui ne ressemble pas à l’apparence 3D de **Pause** ni d’**Arrêt**. Vous avez la possibilité de compléter le point de code 0x25B6 par un code variante :
+Ce symbole est pris en charge par chaque plateforme, à ceci près qu’il s’agit d’un triangle noir ordinaire qui ne ressemble pas à l’apparence 3D de **Pause** ni d’ **Arrêt**. Vous avez la possibilité de compléter le point de code 0x25B6 par un code variante :
 
 - 0x25B6 suivi de 0xFE0F (variante 16) ou &#x25B6;&#xFE0F; pour **Lecture**
 
-C’est ce qui est utilisé dans la balise ci-dessous. Sur iOS, ce code donne au symbole **Lecture** la même apparence 3D que les boutons **Pause** et **Arrêt**, mais la variante ne fonctionne pas sur Android et UWP.
+C’est ce qui est utilisé dans la balise ci-dessous. Sur iOS, ce code donne au symbole **Lecture** la même apparence 3D que les boutons **Pause** et **Arrêt** , mais la variante ne fonctionne pas sur Android et UWP.
 
-La page **Transport personnalisé** affecte à la propriété **AreTransportControlsEnabled** la valeur **false** et inclut un élément `ActivityIndicator` affiché lors du chargement de la vidéo ainsi que deux boutons. Des objets `DataTrigger` servent à activer et désactiver l’élément `ActivityIndicator` et les boutons ainsi qu’à basculer le premier bouton entre **Lecture** et **Pause** :
+La page **Transport personnalisé** affecte à la propriété **AreTransportControlsEnabled** la valeur **false** et inclut un élément `ActivityIndicator` affiché lors du chargement de la vidéo ainsi que deux boutons. Des objets `DataTrigger` servent à activer et désactiver l’élément `ActivityIndicator` et les boutons ainsi qu’à basculer le premier bouton entre **Lecture** et **Pause**  :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -650,7 +650,7 @@ namespace VideoPlayerDemos
 }
 ```
 
-Comme `AutoPlay` a la valeur `false` dans le fichier **CustomTransport.xaml**, vous devez appuyer sur le bouton de **lecture** quand celui-ci est activé pour démarrer la vidéo. Les boutons sont définis afin que les caractères Unicode abordés ci-dessus soient accompagnés de leurs équivalents textuels. Les boutons ont une apparence cohérente sur chaque plateforme lors de la lecture de la vidéo :
+Comme `AutoPlay` a la valeur `false` dans le fichier **CustomTransport.xaml** , vous devez appuyer sur le bouton de **lecture** quand celui-ci est activé pour démarrer la vidéo. Les boutons sont définis afin que les caractères Unicode abordés ci-dessus soient accompagnés de leurs équivalents textuels. Les boutons ont une apparence cohérente sur chaque plateforme lors de la lecture de la vidéo :
 
 [![Transport personnalisé en train de fonctionner](custom-transport-images/customtransportplaying-small.png "Transport personnalisé en train de fonctionner")](custom-transport-images/customtransportplaying-large.png#lightbox "Transport personnalisé en train de fonctionner")
 

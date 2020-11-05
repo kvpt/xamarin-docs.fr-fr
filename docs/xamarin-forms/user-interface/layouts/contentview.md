@@ -10,16 +10,16 @@ ms.date: 08/14/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: eb94b2943cfe4659bb77764f810d45dc8b189005
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: a11178b9034561e9f1fdf1bbf17cf28cfe9d967b
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91555370"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375081"
 ---
 # <a name="no-locxamarinforms-contentview"></a>Xamarin.Forms ContentView
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-contentviewdemos/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-contentviewdemos/)
 
 La Xamarin.Forms [`ContentView`](xref:Xamarin.Forms.ContentView) classe est un type de `Layout` qui contient un seul élément enfant et est généralement utilisé pour créer des contrôles personnalisés et réutilisables. La `ContentView` classe hérite de [`TemplatedView`](xref:Xamarin.Forms.TemplatedView) . Cet article, ainsi que l’exemple associé, expliquent comment créer un `CardView` contrôle personnalisé basé sur la `ContentView` classe.
 
@@ -119,7 +119,7 @@ L’interface utilisateur du contrôle personnalisé utilise `ContentView` comme
 </ContentView>
 ```
 
-L' `ContentView` élément affecte la valeur `x:Name` à **this**la propriété, qui peut être utilisée pour accéder à l’objet lié à l' `CardView` instance. Les éléments de la disposition définissent des liaisons sur leurs propriétés aux valeurs définies sur l’objet lié.
+L' `ContentView` élément affecte la valeur `x:Name` à **this** la propriété, qui peut être utilisée pour accéder à l’objet lié à l' `CardView` instance. Les éléments de la disposition définissent des liaisons sur leurs propriétés aux valeurs définies sur l’objet lié.
 
 Pour plus d’informations sur la liaison de données, consultez [ Xamarin.Forms liaison de données](~/xamarin-forms/app-fundamentals/data-binding/index.md).
 

@@ -10,16 +10,16 @@ ms.date: 01/15/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 372c268c13c50719953ac63bcc43cc8d9bff4bdd
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: a8c8a378775a9e52731e4b2df37b983fc15c1867
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563716"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375315"
 ---
 # <a name="timepicker-item-selection-on-ios"></a>Sélection de l’élément TimePicker sur iOS
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Ce contrôle spécifique à la plateforme iOS lorsque la sélection d’élément se produit dans un [`TimePicker`](xref:Xamarin.Forms.TimePicker) , ce qui permet à l’utilisateur de spécifier la sélection de cet élément lors de l’exploration des éléments du contrôle, ou uniquement une fois que le bouton **terminé** est enfoncé. Il est consommé en XAML en affectant `TimePicker.UpdateMode` à la propriété jointe une valeur de l' `UpdateMode` énumération :
 
@@ -65,7 +65,7 @@ switch (timePicker.On<iOS>().UpdateMode())
 
 Le résultat est qu’un spécifié `UpdateMode` est appliqué au [`TimePicker`](xref:Xamarin.Forms.TimePicker) , qui contrôle le moment où la sélection de l’élément se produit :
 
-[![Capture d’écran des modes de mise à jour TimePicker](timepicker-selection-images/timepicker-updatemode.png "TimePicker UpdateMode-spécifique à la plateforme")](timepicker-selection-images/timepicker-updatemode-large.png#lightbox "TimePicker UpdateMode-spécifique à la plateforme")
+[![Capture d’écran des modes de mise à jour TimePicker](timepicker-selection-images/timepicker-updatemode.png "Platform-Specific UpdateMode TimePicker")](timepicker-selection-images/timepicker-updatemode-large.png#lightbox "Platform-Specific UpdateMode TimePicker")
 
 ## <a name="related-links"></a>Liens connexes
 
