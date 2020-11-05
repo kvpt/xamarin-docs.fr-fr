@@ -11,16 +11,16 @@ ms.date: 11/01/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: fac41e57d13815dcd202521d16ae4730e1d99cfa
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: cb811972d622ffdcf6042e030528a88fb18abaf7
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91555864"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93369803"
 ---
 # <a name="no-locxamarinforms-string-and-image-localization"></a>Xamarin.Forms Localisation de chaînes et d’images
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingresxlocalization)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/usingresxlocalization)
 
 La localisation est le processus d’adaptation d’une application pour répondre à la langue ou aux exigences culturelles spécifiques d’un marché cible. Pour effectuer la localisation, le texte et les images d’une application devront peut-être être traduites dans plusieurs langues. Une application localisée affiche automatiquement le texte traduit en fonction des paramètres de culture de l’appareil mobile :
 
@@ -67,7 +67,7 @@ Lors de l’exécution, l’application tente de résoudre une demande de ressou
 1. AppResources. fr. resx
 1. AppResources. resx (par défaut)
 
-La capture d’écran suivante montre un fichier de traduction en espagnol nommé **AppResources.es.cs**:
+La capture d’écran suivante montre un fichier de traduction en espagnol nommé **AppResources.es.cs** :
 
 ![Spécifier des ressources texte espagnoles par défaut dans un fichier. resx](text-images/pc-spanish-strings.png)
 
@@ -112,7 +112,7 @@ Lors de l’exécution, l’application tente de résoudre une demande de ressou
 1. AppResources. fr. resx
 1. AppResources. resx (par défaut)
 
-Les fichiers de traduction de langue doivent avoir les mêmes valeurs de **nom** que le fichier par défaut. Le code XML suivant montre le fichier de traduction espagnol nommé **AppResources. es. resx**:
+Les fichiers de traduction de langue doivent avoir les mêmes valeurs de **nom** que le fichier par défaut. Le code XML suivant montre le fichier de traduction espagnol nommé **AppResources. es. resx** :
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -187,7 +187,7 @@ Pour plus d’informations, consultez [spécification des langues par défaut et
 
 ## <a name="localize-text-in-no-locxamarinforms"></a>Localiser le texte dans Xamarin.Forms
 
-Le texte est localisé dans Xamarin.Forms à l’aide de la `AppResources` classe générée. Cette classe est nommée en fonction du nom de fichier de ressources par défaut. Étant donné que l’exemple de fichier de ressources de projet est nommé **AppResources.cs**, Visual Studio génère une classe correspondante appelée `AppResources` . Les propriétés statiques sont générées dans la `AppResources` classe pour chaque ligne du fichier de ressources. Les propriétés statiques suivantes sont générées dans la classe de l’exemple d’application `AppResources` :
+Le texte est localisé dans Xamarin.Forms à l’aide de la `AppResources` classe générée. Cette classe est nommée en fonction du nom de fichier de ressources par défaut. Étant donné que l’exemple de fichier de ressources de projet est nommé **AppResources.cs** , Visual Studio génère une classe correspondante appelée `AppResources` . Les propriétés statiques sont générées dans la `AppResources` classe pour chaque ligne du fichier de ressources. Les propriétés statiques suivantes sont générées dans la classe de l’exemple d’application `AppResources` :
 
 - AddButton
 - NotesLabel

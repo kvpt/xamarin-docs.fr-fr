@@ -10,16 +10,16 @@ ms.date: 10/25/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e8afb0aa2a36a73af6c63e48a6c1048d8b69cf90
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 23d24ab7477bb7d9e95e4d78f25f334ae13a8ea2
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563976"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368516"
 ---
 # <a name="part-2-essential-xaml-syntax"></a>Partie 2. Syntaxe XAML essentielle
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
 _XAML est principalement conçu pour instancier et initialiser des objets. Mais souvent, les propriétés doivent être définies sur des objets complexes qui ne peuvent pas être facilement représentés en tant que chaînes XML, et parfois les propriétés définies par une classe doivent être définies sur une classe enfant. Ces deux besoins nécessitent les fonctionnalités de syntaxe XAML essentielles des éléments de propriété et des propriétés jointes._
 
@@ -172,7 +172,7 @@ Voici le début du fichier XAML pour une `GridDemoPage` classe, en présentant l
 
 Notez la syntaxe abrégée permettant de définir des cellules de taille automatique, des cellules de largeur et de hauteur de pixel, ainsi que des paramètres en étoile.
 
-## <a name="attached-properties"></a>Propriétés jointes
+## <a name="attached-properties"></a>Propriétés attachées
 
 Vous venez de voir que le `Grid` requiert des éléments de propriété pour les `RowDefinitions` `ColumnDefinitions` collections et pour définir les lignes et les colonnes. Toutefois, il doit également y avoir un moyen pour le programmeur d’indiquer la ligne et la colonne où chaque enfant du `Grid` réside.
 
@@ -257,7 +257,7 @@ Les `Grid.Row` `Grid.Column` paramètres et de 0 ne sont pas obligatoires, mais 
 
 Voici à quoi elle ressemble :
 
-[![Disposition de grille](essential-xaml-syntax-images/griddemo.png)](essential-xaml-syntax-images/griddemo-large.png#lightbox)
+[![Disposition Grille](essential-xaml-syntax-images/griddemo.png)](essential-xaml-syntax-images/griddemo-large.png#lightbox)
 
 En cas de jugement uniquement à partir de la syntaxe, ces attributs,, `Grid.Row` `Grid.Column` `Grid.RowSpan` et `Grid.ColumnSpan` semblent être des champs ou des propriétés statiques de `Grid` , mais ils sont intéressants, mais ils `Grid` ne définissent rien, `Row` `Column` , `RowSpan` ou `ColumnSpan` .
 
@@ -528,7 +528,7 @@ Il s’agit de la méthode standard pour définir une propriété dépendante de
 > [!NOTE]
 > L' `OnPlatform` extension de balisage peut également être utilisée en XAML pour personnaliser l’apparence de l’interface utilisateur pour chaque plateforme. Il fournit les mêmes fonctionnalités que les `OnPlatform` `On` classes et, mais avec une représentation plus concise. Pour plus d’informations, consultez [OnPlatform Markup Extension](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform-markup-extension).
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Avec les éléments de propriété et les propriétés jointes, une grande partie de la syntaxe XAML de base a été établie. Toutefois, vous devez parfois définir des propriétés pour des objets de manière indirecte, par exemple, à partir d’un dictionnaire de ressources. Cette approche est traitée dans la partie suivante, partie [3. Extensions de balisage XAML](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md).
 

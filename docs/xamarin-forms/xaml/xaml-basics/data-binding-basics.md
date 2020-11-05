@@ -10,16 +10,16 @@ ms.date: 10/25/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2dd2abed23704f6a67ac34bc828c48e7200cf99a
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 23191be26f8b47393e5cd86f27704fc35c5d5a5c
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91558715"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368906"
 ---
 # <a name="part-4-data-binding-basics"></a>Partie 4. Notions de base sur la liaison de données
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
 _Les liaisons de données permettent de lier les propriétés de deux objets afin qu’une modification dans l’un provoque une modification dans l’autre. Il s’agit d’un outil très utile, tandis que les liaisons de données peuvent être définies entièrement dans le code, XAML fournit des raccourcis et une commodité. Par conséquent, l’une des extensions de balisage les plus importantes dans Xamarin.Forms est la liaison._
 
@@ -215,7 +215,7 @@ Rien n’illustre la puissance du XAML et des liaisons de données mieux qu’un
 
 `ListView` définit une `ItemsSource` propriété de type `IEnumerable` et affiche les éléments de cette collection. Ces éléments peuvent être des objets de n’importe quel type. Par défaut, `ListView` utilise la `ToString` méthode de chaque élément pour afficher cet élément. Parfois, c’est exactement ce que vous voulez, mais dans de nombreux cas, `ToString` retourne uniquement le nom de classe complet de l’objet.
 
-Toutefois, les éléments de la `ListView` collection peuvent être affichés comme vous le souhaitez par le biais de l’utilisation d’un *modèle*, qui implique une classe qui dérive de `Cell` . Le modèle est cloné pour chaque élément du `ListView` , et les liaisons de données qui ont été définies sur le modèle sont transférées vers les clones individuels.
+Toutefois, les éléments de la `ListView` collection peuvent être affichés comme vous le souhaitez par le biais de l’utilisation d’un *modèle* , qui implique une classe qui dérive de `Cell` . Le modèle est cloné pour chaque élément du `ListView` , et les liaisons de données qui ont été définies sur le modèle sont transférées vers les clones individuels.
 
 Très souvent, vous souhaiterez créer une cellule personnalisée pour ces éléments à l’aide de la `ViewCell` classe. Ce processus est quelque peu confus dans le code, mais dans XAML, il devient très simple.
 
@@ -342,7 +342,7 @@ Notez l’utilisation de `OnPlatform` pour définir la taille d’un `BoxView` e
 
 Le précédent fichier XAML de **démonstration ListView** affiche les `R` propriétés individuelles, `G` et `B` de la Xamarin.Forms `Color` structure. Ces propriétés sont de type `double` et sont comprises entre 0 et 1. Si vous souhaitez afficher les valeurs hexadécimales, vous ne pouvez pas simplement utiliser `StringFormat` avec une spécification de mise en forme « x2 ». Qui ne fonctionne que pour les entiers et en plus, les `double` valeurs doivent être multipliées par 255.
 
-Ce petit problème a été résolu avec un *convertisseur de valeur*, également appelé convertisseur de *liaison*. Il s’agit d’une classe qui implémente l' `IValueConverter` interface, ce qui signifie qu’elle a deux méthodes nommées `Convert` et `ConvertBack` . La `Convert` méthode est appelée lorsqu’une valeur est transférée de la source à la cible ; la `ConvertBack` méthode est appelée pour les transferts de la cible vers la source dans les `OneWayToSource` `TwoWay` liaisons ou :
+Ce petit problème a été résolu avec un *convertisseur de valeur* , également appelé convertisseur de *liaison*. Il s’agit d’une classe qui implémente l' `IValueConverter` interface, ce qui signifie qu’elle a deux méthodes nommées `Convert` et `ConvertBack` . La `Convert` méthode est appelée lorsqu’une valeur est transférée de la source à la cible ; la `ConvertBack` méthode est appelée pour les transferts de la cible vers la source dans les `OneWayToSource` `TwoWay` liaisons ou :
 
 ```csharp
 using System;
@@ -405,7 +405,7 @@ Le `ListView` est assez sophistiqué pour gérer les modifications qui peuvent s
 
 Si les propriétés des éléments eux-mêmes sont modifiées pendant l’exécution, les éléments de la collection doivent implémenter l' `INotifyPropertyChanged` interface et les modifications de signal apportées aux valeurs de propriété à l’aide de l' `PropertyChanged` événement. Cela est illustré dans la partie suivante de cette série, [partie 5. De la liaison de données à MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md).
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Les liaisons de données fournissent un mécanisme puissant pour lier les propriétés entre deux objets dans une page, ou entre des objets visuels et des données sous-jacentes. Toutefois, lorsque l’application commence à travailler avec des sources de données, un modèle architectural d’application populaire commence à émerger comme un paradigme utile. Ce sujet est abordé dans la [partie 5. Des liaisons de données à MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md).
 

@@ -12,12 +12,12 @@ ms.date: 05/23/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e6670faf921248c007c20307fddb6a34057c5202
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: d2bb00eeadb3862d25032da45860f1cc12e3aad2
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91436669"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93369881"
 ---
 # <a name="build-your-first-no-locxamarinforms-app"></a>Créer votre première Xamarin.Forms application
 
@@ -29,13 +29,13 @@ _Regardez cette vidéo et suivez la procédure pour créer votre première appli
 
 ## <a name="step-by-step-instructions-for-windows"></a>Instructions pas à pas pour Windows
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
 
 Suivez ces étapes, ainsi que la vidéo ci-dessus :
 
-1. Choisissez **Fichier > Nouveau > Projet**, ou appuyez sur le bouton **Créer un projet** :
+1. Choisissez **Fichier > Nouveau > Projet** , ou appuyez sur le bouton **Créer un projet**  :
 
-    [![Créer un projet](images/win-2019/01-sml.png)](images/win-2019/01.png#lightbox)
+    [![Créer un nouveau projet](images/win-2019/01-sml.png)](images/win-2019/01.png#lightbox)
 
 2. Recherchez « Xamarin », ou choisissez **Mobile** dans le menu **Type de projet**. Sélectionnez le type de projet **application mobile ( Xamarin.Forms )** :
 
@@ -45,17 +45,17 @@ Suivez ces étapes, ainsi que la vidéo ci-dessus :
 
     [![Choisir un nom de projet](images/win-2019/03-sml.png)](images/win-2019/03.png#lightbox)
 
-4. Cliquez sur le type de projet **Vide**, puis vérifiez qu’**Android** et **iOS** sont sélectionnés :
+4. Cliquez sur le type de projet **Vide** , puis vérifiez qu’ **Android** et **iOS** sont sélectionnés :
 
     [![Android et iOS, avec .NET Standard](images/win-2019/04-sml.png)](images/win-2019/04.png#lightbox)
 
 5. Attendez que les paquets NuGet soient restaurés (un message indiquant la fin de la restauration s’affiche dans la barre d’état).
 
-6. Les nouvelles installations de Visual Studio 2019 ne disposent pas d’un Émulateur Android configuré. Cliquez sur la flèche déroulante vers le bas du bouton **Déboguer**, puis choisissez **Créer un émulateur Android** pour lancer l’écran de création de l’émulateur :
+6. Les nouvelles installations de Visual Studio 2019 ne disposent pas d’un Émulateur Android configuré. Cliquez sur la flèche déroulante vers le bas du bouton **Déboguer** , puis choisissez **Créer un émulateur Android** pour lancer l’écran de création de l’émulateur :
 
     ![Liste déroulante Créer un émulateur Android](images/win-2019/debug-dropdown.png)
 
-7. Dans l’écran de création de l’émulateur, utilisez les paramètres par défaut, puis cliquez sur le bouton **Créer** :
+7. Dans l’écran de création de l’émulateur, utilisez les paramètres par défaut, puis cliquez sur le bouton **Créer**  :
 
     [![Écran de création de l’émulateur Android](images/win-2019/create-emulator-sml.png)](images/win-2019/create-emulator.png#lightbox)
 
@@ -63,7 +63,7 @@ Suivez ces étapes, ainsi que la vidéo ci-dessus :
 
     ![Émulateur Android dans le Gestionnaire d’appareils](images/win-2019/start-emulator.png)
 
-9. Visual Studio 2019 doit maintenant afficher le nom du nouvel émulateur sur le bouton **Déboguer** :
+9. Visual Studio 2019 doit maintenant afficher le nom du nouvel émulateur sur le bouton **Déboguer**  :
 
     ![Nom de l’Émulateur Android sur le bouton Déboguer](images/win-2019/debug-emulator-name.png)
 
@@ -114,21 +114,21 @@ Cette vidéo décrit le processus de génération et de test d’une application
 
 ## <a name="step-by-step-instructions-for-windows"></a>Instructions pas à pas pour Windows
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
 
 Suivez ces étapes, ainsi que la vidéo ci-dessus :
 
-1. Choisissez **fichier > nouveau > projet...** ou appuyez sur le bouton **créer un nouveau projet.** .., puis sélectionnez **Visual C# > multiplateforme > application mobile ( Xamarin.Forms )**:
+1. Choisissez **fichier > nouveau > projet...** ou appuyez sur le bouton **créer un nouveau projet.** .., puis sélectionnez **Visual C# > multiplateforme > application mobile ( Xamarin.Forms )** :
 
     [![Application mobile ( ::: No-Loc (Xamarin. Forms) :::)](images/win/01-sml.png)](images/win/01.png#lightbox)
 
-2. Vérifiez qu’**Android** et **iOS** sont sélectionnés, ainsi que le partage de code **.NET Standard** :
+2. Vérifiez qu’ **Android** et **iOS** sont sélectionnés, ainsi que le partage de code **.NET Standard**  :
 
     [![Android et iOS, avec .NET Standard](images/win/02-sml.png)](images/win/02.png#lightbox)
 
 3. Attendez que les paquets NuGet soient restaurés (un message indiquant la fin de la restauration s’affiche dans la barre d’état).
 
-4. Lancez l’émulateur Android en appuyant sur le bouton de débogage (ou sur l’élément de menu **Déboguer > Démarrer le débogage**).
+4. Lancez l’émulateur Android en appuyant sur le bouton de débogage (ou sur l’élément de menu **Déboguer > Démarrer le débogage** ).
 
 5. Modifiez **MainPage.xaml** en ajoutant ce code XAML avant la fin de `</StackLayout>` :
 
@@ -161,15 +161,15 @@ Suivez ces étapes, ainsi que la vidéo ci-dessus :
 
 ## <a name="step-by-step-instructions-for-mac"></a>Instructions pas à pas pour Mac
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
 
 Suivez ces étapes, ainsi que la vidéo ci-dessus :
 
-1. Choisissez **Fichier > Nouvelle solution**, ou appuyez sur le bouton **Nouveau projet**, puis sélectionnez **Multiplateforme > Application > Application Forms vide** :
+1. Choisissez **Fichier > Nouvelle solution** , ou appuyez sur le bouton **Nouveau projet** , puis sélectionnez **Multiplateforme > Application > Application Forms vide**  :
 
     [![Application Formulaires vide](images/01-sml.png)](images/01.png#lightbox)
 
-2. Vérifiez qu’**Android** et **iOS** sont sélectionnés, ainsi que le partage de code **.NET Standard** :
+2. Vérifiez qu’ **Android** et **iOS** sont sélectionnés, ainsi que le partage de code **.NET Standard**  :
 
     [![Android et iOS, avec .NET Standard](images/02-sml.png)](images/02.png#lightbox)
 
@@ -177,7 +177,7 @@ Suivez ces étapes, ainsi que la vidéo ci-dessus :
 
     ![Application Android](images/03-sml.png)
 
-4. Lancez l’émulateur Android en appuyant sur le bouton de débogage (ou sur **Exécuter > Démarrer le débogage**).
+4. Lancez l’émulateur Android en appuyant sur le bouton de débogage (ou sur **Exécuter > Démarrer le débogage** ).
 
 5. Modifiez **MainPage.xaml** en ajoutant ce code XAML avant la fin de `</StackLayout>` :
 

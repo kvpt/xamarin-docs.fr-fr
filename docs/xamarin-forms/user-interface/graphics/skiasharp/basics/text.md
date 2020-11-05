@@ -10,16 +10,16 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 032a01a1e4e0f2b3e3d394aec6a30bd215fd84f8
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: fdc529e6b5f1678bd26b40a17b5e0c5257a6dc0e
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562416"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368581"
 ---
 # <a name="integrating-text-and-graphics"></a>Intégration de texte et de graphisme
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Voir comment déterminer la taille de la chaîne de texte rendue pour intégrer du texte à des graphiques SkiaSharp_
 

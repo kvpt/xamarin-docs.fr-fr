@@ -10,22 +10,22 @@ ms.date: 05/15/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a07931bfa53a5e4d77c2755b08745b8dd962b695
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: e874543b356ffe5dd821c6c2f20e487d79919449
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557151"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367918"
 ---
 # <a name="no-locxamarinforms-c-markup"></a>Xamarin.Forms Balisage C#
 
 ![API de la version préliminaire](~/media/shared/preview.png)
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-csharpmarkupdemos/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-csharpmarkupdemos/)
 
 Le balisage C# est un ensemble de méthodes et de classes d’assistance Fluent pour simplifier le processus de création d' Xamarin.Forms interfaces utilisateur déclaratives en C#. L’API Fluent fournie par le balisage C# est disponible dans l' `Xamarin.Forms.Markup` espace de noms.
 
-Tout comme avec XAML, le balisage C# permet une séparation nette entre le balisage de l’interface utilisateur et la logique d’interface utilisateur. Cela est possible en séparant le balisage de l’interface utilisateur et la logique d’interface utilisateur en fichiers de classe partielle distincts. Par exemple, pour une page de connexion, le balisage de l’interface utilisateur se trouve dans un fichier nommé *LoginPage.cs*, tandis que la logique de l’interface utilisateur se trouve dans un fichier nommé *LoginPage.Logic.cs*.
+Tout comme avec XAML, le balisage C# permet une séparation nette entre le balisage de l’interface utilisateur et la logique d’interface utilisateur. Cela est possible en séparant le balisage de l’interface utilisateur et la logique d’interface utilisateur en fichiers de classe partielle distincts. Par exemple, pour une page de connexion, le balisage de l’interface utilisateur se trouve dans un fichier nommé *LoginPage.cs* , tandis que la logique de l’interface utilisateur se trouve dans un fichier nommé *LoginPage.Logic.cs*.
 
 Le balisage C# est disponible à partir de Xamarin.Forms 4,6. Toutefois, il est actuellement expérimental et ne peut être utilisé qu’en ajoutant la ligne de code suivante à votre fichier *app.cs* :
 
@@ -231,7 +231,7 @@ new Label { Text = "Tap Me" }
 
 Étant donné qu’un module de reconnaissance de mouvement est un `BindableObject` , vous pouvez utiliser les `Bind` `BindCommand` méthodes d’extension et lorsque vous l’initialisez. Vous pouvez également initialiser des types de module de reconnaissance de mouvement personnalisés avec la `Gesture<TGestureElement, TGestureRecognizer>` méthode d’extension.
 
-## <a name="layout"></a>Mise en page
+## <a name="layout"></a>Layout
 
 Le balisage C# comprend une série de méthodes d’extension de disposition qui prennent en charge le positionnement des vues dans les dispositions et le contenu dans les vues :
 
@@ -357,7 +357,7 @@ new Grid
 }
 ```
 
-## <a name="fonts"></a>Polices
+## <a name="fonts"></a>Fonts
 
 Les contrôles de la liste suivante peuvent appeler les `FontSize` `Bold` méthodes d’extension,, `Italic` et `Font` pour définir l’apparence du texte affiché par le contrôle :
 
@@ -371,7 +371,7 @@ Les contrôles de la liste suivante peuvent appeler les `FontSize` `Bold` métho
 - `Span`
 - `TimePicker`
 
-## <a name="effects"></a>Effects (Effets)
+## <a name="effects"></a>Effets
 
 Les effets peuvent être attachés aux contrôles avec la `Effect` méthode d’extension :
 
@@ -529,10 +529,10 @@ Pour plus d’informations sur les spécificités des plateformes, consultez fon
 
 L’ordre et le regroupement recommandés des propriétés et des méthodes d’assistance sont les suivants :
 
-- **Objectif**: toute propriété ou méthode d’assistance dont la valeur identifie l’objectif du contrôle (par exemple `Text` ,, `Placeholder` . `Assign` ).
-- **Autre**: toutes les propriétés ou méthodes d’assistance qui ne sont pas de disposition ou de liaison, sur la même ligne ou sur plusieurs lignes.
-- **Disposition**: la disposition est ordonnée à l’intérieur : lignes et colonnes, options de disposition, marge, taille, marge intérieure et alignement du contenu.
-- **Liaison**: la liaison de données est effectuée à la fin de la chaîne de méthode, avec une propriété liée par ligne. Si la propriété pouvant être liée *par défaut* est liée, elle doit être à la fin de la chaîne de méthode.
+- **Objectif** : toute propriété ou méthode d’assistance dont la valeur identifie l’objectif du contrôle (par exemple `Text` ,, `Placeholder` . `Assign` ).
+- **Autre** : toutes les propriétés ou méthodes d’assistance qui ne sont pas de disposition ou de liaison, sur la même ligne ou sur plusieurs lignes.
+- **Disposition** : la disposition est ordonnée à l’intérieur : lignes et colonnes, options de disposition, marge, taille, marge intérieure et alignement du contenu.
+- **Liaison** : la liaison de données est effectuée à la fin de la chaîne de méthode, avec une propriété liée par ligne. Si la propriété pouvant être liée *par défaut* est liée, elle doit être à la fin de la chaîne de méthode.
 
 Le code suivant montre un exemple de la Convention suivante :
 

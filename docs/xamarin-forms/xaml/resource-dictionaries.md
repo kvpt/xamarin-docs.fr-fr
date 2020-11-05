@@ -11,16 +11,16 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.custom: video
-ms.openlocfilehash: cdf34d78751345857e89c6bfa6862b58207ad01e
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 90068096eced1fd1ddd2eb59b845eb4d5e41286f
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562130"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368880"
 ---
 # <a name="no-locxamarinforms-resource-dictionaries"></a>Xamarin.Forms dictionnaires de ressources
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-resourcedictionaries)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/xaml-resourcedictionaries)
 
 Un [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) est un référentiel pour les ressources utilisées par une Xamarin.Forms application. Les ressources typiques stockées dans un `ResourceDictionary` incluent des [styles](~/xamarin-forms/user-interface/styles/index.md), des [modèles de contrôle](~/xamarin-forms/app-fundamentals/templates/control-template.md), des modèles de [données](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md), des couleurs et des convertisseurs.
 
@@ -137,7 +137,7 @@ Une classe dérivée de [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictio
 
 Pour créer un fichier de ce type, ajoutez un nouvel **affichage de contenu** ou un élément de **page de contenu** au projet (mais pas un affichage de **contenu** ou une **page de contenu** avec un seul fichier C#). Supprimez le fichier code-behind, et dans le fichier XAML, remplacez le nom de la classe de base [`ContentView`](xref:Xamarin.Forms.ContentView) ou par [`ContentPage`](xref:Xamarin.Forms.ContentPage) [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) . En outre, supprimez l' `x:Class` attribut de la balise racine du fichier.
 
-L’exemple de code XAML suivant montre un [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) nommé **MyResourceDictionary. Xaml**:
+L’exemple de code XAML suivant montre un [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) nommé **MyResourceDictionary. Xaml** :
 
 ```xaml
 <ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
@@ -194,7 +194,7 @@ Cette syntaxe n’instancie pas la `MyResourceDictionary` classe. Au lieu de cel
 
 ### <a name="merge-resource-dictionaries-from-other-assemblies"></a>Fusionner des dictionnaires de ressources à partir d’autres assemblys
 
-Un [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) peut également être fusionné dans un autre `ResourceDictionary` en l’ajoutant à la [`MergedDictionaries`](xref:Xamarin.Forms.ResourceDictionary.MergedDictionaries) propriété de `ResourceDictionary` . Cette technique permet de fusionner les dictionnaires de ressources, quel que soit l’assembly dans lequel ils résident. La fusion de dictionnaires de ressources à partir d’assemblys externes requiert que la valeur de l' [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) action de génération soit définie sur **EmbeddedResource**, sur un fichier code-behind et sur la définition de l' `x:Class` attribut dans la balise racine du fichier.
+Un [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) peut également être fusionné dans un autre `ResourceDictionary` en l’ajoutant à la [`MergedDictionaries`](xref:Xamarin.Forms.ResourceDictionary.MergedDictionaries) propriété de `ResourceDictionary` . Cette technique permet de fusionner les dictionnaires de ressources, quel que soit l’assembly dans lequel ils résident. La fusion de dictionnaires de ressources à partir d’assemblys externes requiert que la valeur de l' [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) action de génération soit définie sur **EmbeddedResource** , sur un fichier code-behind et sur la définition de l' `x:Class` attribut dans la balise racine du fichier.
 
 > [!WARNING]
 > La [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) classe définit également une [`MergedWith`](xref:Xamarin.Forms.ResourceDictionary.MergedWith) propriété. Toutefois, cette propriété est dépréciée et ne doit plus être utilisée.

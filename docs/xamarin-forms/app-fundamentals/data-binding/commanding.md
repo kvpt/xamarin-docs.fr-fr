@@ -10,16 +10,16 @@ ms.date: 01/05/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7edde81a926b142a5e792a203e96ee61b1fdfb7b
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: cd37166c461abe6b92a280dd52098d85c2393fbd
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562702"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93369829"
 ---
 # <a name="the-no-locxamarinforms-command-interface"></a>Xamarin.FormsInterface de commande
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 Dans l’architecture MVVM (modèle-vue-vue modèle), les liaisons de données sont définies entre les propriétés de ViewModel (généralement une classe dérivée de `INotifyPropertyChanged`) et les propriétés dans la vue (généralement le fichier XAML). Parfois, une application a des besoins qui vont au-delà de ces liaisons de propriété en exigeant de l’utilisateur qu’il lance des commandes qui affectent un élément dans le ViewModel. Ces commandes sont généralement signalées par des clics de bouton ou des appuis tactiles et, en règle générale, elles sont traitées dans le fichier code-behind dans un gestionnaire pour l’événement `Clicked` du `Button` ou l’événement `Tapped` d’un `TapGestureRecognizer`.
 
@@ -288,7 +288,7 @@ L’écran iOS de gauche montre la disposition avant qu’un âge valide soit en
 
 Le programme n’a aucune fonctionnalité pour modifier des entrées existantes et n’enregistre pas les entrées lorsque vous quittez la page.
 
-Toute la logique pour les boutons **New**, **Submit** et **Cancel** est gérée dans `PersonCollectionViewModel` via les définitions des propriétés `NewCommand`, `SubmitCommand` et `CancelCommand`. Le constructeur du `PersonCollectionViewModel` définit ces trois propriétés sur des objets de type `Command`.  
+Toute la logique pour les boutons **New** , **Submit** et **Cancel** est gérée dans `PersonCollectionViewModel` via les définitions des propriétés `NewCommand`, `SubmitCommand` et `CancelCommand`. Le constructeur du `PersonCollectionViewModel` définit ces trois propriétés sur des objets de type `Command`.  
 
 Un [constructeur](xref:Xamarin.Forms.Command.%23ctor(System.Action,System.Func{System.Boolean})) de la classe `Command` vous permet de passer des arguments de type `Action` et `Func<bool>` correspondant aux méthodes `Execute` et `CanExecute`. Le plus facile est de définir ces actions et fonctions en tant que fonctions lambda directement dans le constructeur `Command`. Voici la définition de l’objet `Command` pour la propriété `NewCommand` :
 
@@ -334,7 +334,7 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
 }
 ```
 
-Lorsque l’utilisateur clique sur le bouton **New**, la fonction `execute` passée au constructeur `Command` est exécutée. Ceci crée un nouvel objet `PersonViewModel`, définit un gestionnaire sur l’événement `PropertyChanged` de cet objet, définit `IsEditing` sur `true`et appelle la méthode `RefreshCanExecutes` définie après le constructeur.
+Lorsque l’utilisateur clique sur le bouton **New** , la fonction `execute` passée au constructeur `Command` est exécutée. Ceci crée un nouvel objet `PersonViewModel`, définit un gestionnaire sur l’événement `PropertyChanged` de cet objet, définit `IsEditing` sur `true`et appelle la méthode `RefreshCanExecutes` définie après le constructeur.
 
 Outre l’implémentation de l’interface `ICommand`, la classe `Command` définit également une méthode nommée `ChangeCanExecute`. Votre ViewModel doit appeler `ChangeCanExecute` pour une propriété `ICommand` chaque fois que quelque chose se produit qui peut changer la valeur renvoyée de la méthode `CanExecute`. Un appel à `ChangeCanExecute` provoque le déclenchement de la méthode `CanExecuteChanged` par la classe `Command`. Le `Button` dispose d’un gestionnaire joint pour cet événement et répond en appelant `CanExecute` à nouveau, puis en s’activant lui-même sur la base de la valeur renvoyée par cette méthode.
 
@@ -691,7 +691,7 @@ Toutes les méthodes `execute` appellent `RefreshCanExecutes`, qui appelle à so
 
 ## <a name="asynchronous-commanding-for-navigation-menus"></a>Exécution asynchrone de commandes pour les menus de navigation
 
-L’exécution de commandes est pratique pour implémenter des menus de navigation, tels que celui du programme [**Data Binding Demos**](/samples/xamarin/xamarin-forms-samples/databindingdemos) (Démos des liaisons de données) lui-même. Voici une partie de **MainPage.xaml** :
+L’exécution de commandes est pratique pour implémenter des menus de navigation, tels que celui du programme [**Data Binding Demos**](/samples/xamarin/xamarin-forms-samples/databindingdemos) (Démos des liaisons de données) lui-même. Voici une partie de **MainPage.xaml**  :
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -730,7 +730,7 @@ L’exécution de commandes est pratique pour implémenter des menus de navigati
 
 Lors de l’utilisation de l’exécution de commandes avec XAML, les propriétés `CommandParameter` sont généralement définies en tant que chaînes. Dans ce cas, toutefois, une extension de balisage XAML est utilisée pour que le `CommandParameter` soit de type `System.Type`.
 
-Chaque propriété `Command` est liée à une propriété nommée `NavigateCommand`. Cette propriété est définie dans le fichier code-behind, **MainPage.xaml.cs** :
+Chaque propriété `Command` est liée à une propriété nommée `NavigateCommand`. Cette propriété est définie dans le fichier code-behind, **MainPage.xaml.cs**  :
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -757,7 +757,7 @@ Le constructeur définit la propriété `NavigateCommand` sur une méthode `exec
 
 Le constructeur définit également le `BindingContext` de la page sur lui-même afin que les liaisons référencent la propriété `NavigateCommand` dans cette classe.
 
-L’ordre du code dans ce constructeur fait une différence : l’appel de `InitializeComponent` entraîne l’analyse du code XAML, mais à ce stade, la liaison à une propriété nommée `NavigateCommand` ne peut pas être résolue, car `BindingContext` est défini sur `null`. Si le `BindingContext` est défini dans le constructeur *avant que la propriété * `NavigateCommand` soit définie, la liaison peut être résolue lorsque `BindingContext` est défini, mais à ce stade, `NavigateCommand` a encore pour valeur `null`. La définition de `NavigateCommand` après `BindingContext` n’a aucun effet sur la liaison, car une modification de `NavigateCommand` ne déclenche pas d’événement `PropertyChanged`, et la liaison ne sait pas que `NavigateCommand` est désormais valide.
+L’ordre du code dans ce constructeur fait une différence : l’appel de `InitializeComponent` entraîne l’analyse du code XAML, mais à ce stade, la liaison à une propriété nommée `NavigateCommand` ne peut pas être résolue, car `BindingContext` est défini sur `null`. Si le `BindingContext` est défini dans le constructeur *avant que la propriété* `NavigateCommand` soit définie, la liaison peut être résolue lorsque `BindingContext` est défini, mais à ce stade, `NavigateCommand` a encore pour valeur `null`. La définition de `NavigateCommand` après `BindingContext` n’a aucun effet sur la liaison, car une modification de `NavigateCommand` ne déclenche pas d’événement `PropertyChanged`, et la liaison ne sait pas que `NavigateCommand` est désormais valide.
 
 La définition des deux propriétés `NavigateCommand` et `BindingContext` (dans n’importe quel ordre) avant l’appel à `InitializeComponent` fonctionne, car les deux composantes de la liaison sont définies lorsque l’analyseur XAML rencontre la définition de la liaison.
 

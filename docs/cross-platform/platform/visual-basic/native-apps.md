@@ -6,16 +6,16 @@ ms.assetid: 455fda67-3879-4299-8036-b12840e6a498
 author: davidortinau
 ms.author: daortin
 ms.date: 04/24/2019
-ms.openlocfilehash: 77df7d986f63861667c67b9c74b88ea6176f42ad
-ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
+ms.openlocfilehash: 96f8a8c2fa49e1ff59621908ef89d08d302aaffa
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91458184"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367970"
 ---
 # <a name="visual-basic-in-xamarin-android-and-ios"></a>Visual Basic dans Xamarin Android et iOS
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/mobile-samples/visualbasic-taskyvb/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/mobile-samples/visualbasic-taskyvb/)
 
 L’exemple d’application [TaskyVB](/samples/xamarin/mobile-samples/visualbasic-taskyvb/) montre comment Visual Basic code compilé dans une bibliothèque de .NET standard peut être utilisé avec Xamarin. Voici quelques captures d’écran des applications qui s’exécutent sur Android et iOS :
 
@@ -188,7 +188,7 @@ Visual Studio 2019 pour Mac _permet_ de compiler des projets visual studio .NET 
 
 Visual Studio 2017 _ne peut pas_ générer des projets Visual Basic.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a montré comment utiliser Visual Basic code dans des applications Xamarin à l’aide de Visual Studio et des bibliothèques de .NET Standard. Même si Xamarin ne prend pas en charge directement Visual Basic, la compilation des Visual Basic dans une bibliothèque de .NET Standard permet d’inclure du code écrit avec Visual Basic dans des applications iOS et Android.
 

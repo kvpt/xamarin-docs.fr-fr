@@ -12,16 +12,16 @@ ms.date: 02/07/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9794f429744611654ce883b48aa828b997ec881f
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 099c95af190fc9b43c8e8497eebdeec44aed36cd
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91435435"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368438"
 ---
 # <a name="style-a-cross-platform-no-locxamarinforms-application"></a>Styliser une application multiplateforme Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-styled/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/getstarted-notes-styled/)
 
 Dans ce guide de démarrage rapide, vous allez apprendre à :
 
@@ -32,7 +32,7 @@ Le Guide de démarrage rapide explique comment styliser une Xamarin.Forms applic
 Page de [ ![ Commentaires](styling-images/screenshots1-sml.png)](styling-images/screenshots1.png#lightbox "Page de notes")page 
  [ ![ entrée note](styling-images/screenshots2-sml.png)](styling-images/screenshots2.png#lightbox "Page d’entrée de note")
 
-### <a name="prerequisites"></a>Conditions préalables requises
+### <a name="prerequisites"></a>Prérequis
 
 Vous devez suivre correctement le [précédent guide de démarrage rapide](database.md) avant de tenter de suivre ce guide de démarrage rapide. Vous pouvez également télécharger l’[exemple du précédent guide de démarrage rapide](/samples/xamarin/xamarin-forms-samples/getstarted-notes-database/), et l’utiliser comme point de départ pour ce guide de démarrage rapide.
 
@@ -42,7 +42,7 @@ Vous devez suivre correctement le [précédent guide de démarrage rapide](datab
 
 1. Lancez Visual Studio, puis ouvrez la solution Notes.
 
-2. Dans l’**Explorateur de solutions**, dans le projet **Notes**, double-cliquez sur **App.xaml** pour l’ouvrir. Remplacez ensuite le code existant par le code suivant :
+2. Dans l’ **Explorateur de solutions** , dans le projet **Notes** , double-cliquez sur **App.xaml** pour l’ouvrir. Remplacez ensuite le code existant par le code suivant :
 
     ```xaml
     <?xml version="1.0" encoding="utf-8"?>
@@ -78,9 +78,9 @@ Vous devez suivre correctement le [précédent guide de démarrage rapide](datab
 
     Ce code définit une [`Thickness`](xref:Xamarin.Forms.Thickness) valeur, une série de [`Color`](xref:Xamarin.Forms.Color) valeurs et des styles implicites pour [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) et [`ContentPage`](xref:Xamarin.Forms.ContentPage) . Notez que ces styles, qui sont au niveau de l’application [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) , peuvent être utilisés dans l’ensemble de l’application. Pour plus d’informations sur le style XAML, consultez l’article sur les [styles](deepdive.md#styling) dans la présentation [ Xamarin.Forms approfondie des Démarrages rapides](deepdive.md).
 
-    Enregistrez les changements apportés à **App.xaml** en appuyant sur **Ctrl+S**, puis fermez le fichier.
+    Enregistrez les changements apportés à **App.xaml** en appuyant sur **Ctrl+S** , puis fermez le fichier.
 
-3. Dans l’**Explorateur de solutions**, dans le projet **Notes**, double-cliquez sur **NotesPage.xaml** pour l’ouvrir. Remplacez ensuite le code existant par le code suivant :
+3. Dans l’ **Explorateur de solutions** , dans le projet **Notes** , double-cliquez sur **NotesPage.xaml** pour l’ouvrir. Remplacez ensuite le code existant par le code suivant :
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -118,9 +118,9 @@ Vous devez suivre correctement le [précédent guide de démarrage rapide](datab
 
     Ce code ajoute un style implicite à au niveau de la [`ListView`](xref:Xamarin.Forms.ListView) page [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) et affecte à la `ListView.Margin` propriété une valeur définie au niveau de l’application `ResourceDictionary` . Notez que le style implicite de `ListView` a été ajouté à `ResourceDictionary` au niveau de la page, car il est uniquement consommé par `NotesPage`. Pour plus d’informations sur le style XAML, consultez l’article sur les [styles](deepdive.md#styling) dans la présentation [ Xamarin.Forms approfondie des Démarrages rapides](deepdive.md).
 
-    Enregistrez les changements apportés à **NotesPage.xaml** en appuyant sur **Ctrl+S**, puis fermez le fichier.
+    Enregistrez les changements apportés à **NotesPage.xaml** en appuyant sur **Ctrl+S** , puis fermez le fichier.
 
-4. Dans l’**Explorateur de solutions**, dans le projet **Notes**, double-cliquez sur **NoteEntryPage.xaml** pour l’ouvrir. Remplacez ensuite le code existant par le code suivant :
+4. Dans l’ **Explorateur de solutions** , dans le projet **Notes** , double-cliquez sur **NoteEntryPage.xaml** pour l’ouvrir. Remplacez ensuite le code existant par le code suivant :
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -167,11 +167,11 @@ Vous devez suivre correctement le [précédent guide de démarrage rapide](datab
 
     Ce code ajoute des styles implicites pour les [`Editor`](xref:Xamarin.Forms.Editor) [`Button`](xref:Xamarin.Forms.Button) vues et au niveau de la page [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) , et affecte `StackLayout.Margin` à la propriété une valeur définie au niveau de l’application `ResourceDictionary` . Notez que les styles implicites de `Editor` et `Button` ont été ajoutés à `ResourceDictionary` au niveau de la page, car ils sont consommés uniquement par `NoteEntryPage`. Pour plus d’informations sur le style XAML, consultez l’article sur les [styles](deepdive.md#styling) dans la présentation [ Xamarin.Forms approfondie des Démarrages rapides](deepdive.md).
 
-    Enregistrez les changements apportés à **NoteEntryPage.xaml** en appuyant sur **Ctrl+S**, puis fermez le fichier.
+    Enregistrez les changements apportés à **NoteEntryPage.xaml** en appuyant sur **Ctrl+S** , puis fermez le fichier.
 
 5. Générez et exécutez le projet sur chaque plateforme. Pour plus d’informations, consultez [Génération du guide de démarrage rapide](single-page.md#building-the-quickstart).
 
-    Dans **NotesPage**, appuyez sur le bouton **+** pour accéder à **NoteEntryPage**, puis entrez une note. Sur chaque page, notez la façon dont le style a changé par rapport au précédent guide de démarrage rapide.
+    Dans **NotesPage** , appuyez sur le bouton **+** pour accéder à **NoteEntryPage** , puis entrez une note. Sur chaque page, notez la façon dont le style a changé par rapport au précédent guide de démarrage rapide.
 
 ::: zone-end
 ::: zone pivot="macos"
@@ -180,7 +180,7 @@ Vous devez suivre correctement le [précédent guide de démarrage rapide](datab
 
 1. Lancez Visual Studio pour Mac, puis ouvrez le projet Notes.
 
-2. Dans le **Panneau Solutions**, dans le projet **Notes**, double-cliquez sur **App.xaml** pour l’ouvrir. Remplacez ensuite le code existant par le code suivant :
+2. Dans le **Panneau Solutions** , dans le projet **Notes** , double-cliquez sur **App.xaml** pour l’ouvrir. Remplacez ensuite le code existant par le code suivant :
 
     ```xaml
     <?xml version="1.0" encoding="utf-8"?>
@@ -216,9 +216,9 @@ Vous devez suivre correctement le [précédent guide de démarrage rapide](datab
 
     Ce code définit une [`Thickness`](xref:Xamarin.Forms.Thickness) valeur, une série de [`Color`](xref:Xamarin.Forms.Color) valeurs et des styles implicites pour [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) et [`ContentPage`](xref:Xamarin.Forms.ContentPage) . Notez que ces styles, qui sont au niveau de l’application [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) , peuvent être utilisés dans l’ensemble de l’application. Pour plus d’informations sur le style XAML, consultez l’article sur les [styles](deepdive.md#styling) dans la présentation [ Xamarin.Forms approfondie des Démarrages rapides](deepdive.md).
 
-    Enregistrez les changements apportés à **App.xaml** en choisissant **Fichier > Enregistrer** (ou en appuyant sur **&#8984;+S**), puis fermez le fichier.
+    Enregistrez les changements apportés à **App.xaml** en choisissant **Fichier > Enregistrer** (ou en appuyant sur **&#8984;+S** ), puis fermez le fichier.
 
-3. Dans le **Panneau Solutions**, dans le projet **Notes**, double-cliquez sur **NotesPage.xaml** pour l’ouvrir. Remplacez ensuite le code existant par le code suivant :
+3. Dans le **Panneau Solutions** , dans le projet **Notes** , double-cliquez sur **NotesPage.xaml** pour l’ouvrir. Remplacez ensuite le code existant par le code suivant :
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -256,9 +256,9 @@ Vous devez suivre correctement le [précédent guide de démarrage rapide](datab
 
     Ce code ajoute un style implicite à au niveau de la [`ListView`](xref:Xamarin.Forms.ListView) page [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) et affecte à la `ListView.Margin` propriété une valeur définie au niveau de l’application `ResourceDictionary` . Notez que le style implicite de `ListView` a été ajouté à `ResourceDictionary` au niveau de la page, car il est uniquement consommé par `NotesPage`. Pour plus d’informations sur le style XAML, consultez l’article sur les [styles](deepdive.md#styling) dans la présentation [ Xamarin.Forms approfondie des Démarrages rapides](deepdive.md).
 
-    Enregistrez les changements apportés à **NotesPage.xaml** en choisissant **Fichier > Enregistrer** (ou en appuyant sur **&#8984;+S**), puis fermez le fichier.
+    Enregistrez les changements apportés à **NotesPage.xaml** en choisissant **Fichier > Enregistrer** (ou en appuyant sur **&#8984;+S** ), puis fermez le fichier.
 
-4. Dans le **Panneau Solutions**, dans le projet **Notes**, double-cliquez sur **NoteEntryPage.xaml** pour l’ouvrir. Remplacez ensuite le code existant par le code suivant :
+4. Dans le **Panneau Solutions** , dans le projet **Notes** , double-cliquez sur **NoteEntryPage.xaml** pour l’ouvrir. Remplacez ensuite le code existant par le code suivant :
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -305,11 +305,11 @@ Vous devez suivre correctement le [précédent guide de démarrage rapide](datab
 
     Ce code ajoute des styles implicites pour les [`Editor`](xref:Xamarin.Forms.Editor) [`Button`](xref:Xamarin.Forms.Button) vues et au niveau de la page [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) , et affecte `StackLayout.Margin` à la propriété une valeur définie au niveau de l’application `ResourceDictionary` . Notez que les styles implicites de `Editor` et `Button` ont été ajoutés à `ResourceDictionary` au niveau de la page, car ils sont consommés uniquement par `NoteEntryPage`. Pour plus d’informations sur le style XAML, consultez l’article sur les [styles](deepdive.md#styling) dans la présentation [ Xamarin.Forms approfondie des Démarrages rapides](deepdive.md).
 
-    Enregistrez les changements apportés à **NoteEntryPage.xaml** en choisissant **Fichier > Enregistrer** (ou en appuyant sur **&#8984;+S**), puis fermez le fichier.
+    Enregistrez les changements apportés à **NoteEntryPage.xaml** en choisissant **Fichier > Enregistrer** (ou en appuyant sur **&#8984;+S** ), puis fermez le fichier.
 
 5. Générez et exécutez le projet sur chaque plateforme. Pour plus d’informations, consultez [Génération du guide de démarrage rapide](single-page.md#building-the-quickstart).
 
-    Dans **NotesPage**, appuyez sur le bouton **+** pour accéder à **NoteEntryPage**, puis entrez une note. Sur chaque page, notez la façon dont le style a changé par rapport au précédent guide de démarrage rapide.
+    Dans **NotesPage** , appuyez sur le bouton **+** pour accéder à **NoteEntryPage** , puis entrez une note. Sur chaque page, notez la façon dont le style a changé par rapport au précédent guide de démarrage rapide.
 
 ::: zone-end
 

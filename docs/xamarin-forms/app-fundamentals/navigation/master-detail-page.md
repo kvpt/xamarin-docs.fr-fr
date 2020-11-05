@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms Page maître-détail
+title: Xamarin.Forms Page Master-Detail
 description: 'Le Xamarin.Forms MasterDetailPage est une page qui gère deux pages d’informations associées : une page maître qui présente des éléments et une page de détails qui présente des détails sur les éléments de la page maître. Cet article explique comment utiliser MasterDetailPage et comment naviguer entre ses pages d’informations.'
 ms.prod: xamarin
 ms.assetid: 119945E3-58B8-4630-A3D2-8B561529D53B
@@ -10,16 +10,16 @@ ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d29dafd5bcdf991f275580850d77a4923d37286e
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 46f88b1672690645a8e71aba2c0dbe44d7b123cd
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563053"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368763"
 ---
-# <a name="no-locxamarinforms-master-detail-page"></a>Xamarin.Forms Page maître-détail
+# <a name="no-locxamarinforms-master-detail-page"></a>Xamarin.Forms Page Master-Detail
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-masterdetailpage)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/navigation-masterdetailpage)
 
 _Le Xamarin.Forms MasterDetailPage est une page qui gère deux pages d’informations associées : une page maître qui présente des éléments et une page de détails qui présente des détails sur les éléments de la page maître. Cet article explique comment utiliser un MasterDetailPage et naviguer entre ses pages d’informations._
 
@@ -254,11 +254,11 @@ Les captures d’écran suivantes montrent la page de détail `ContactPage`, qui
 
 La manière dont [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) gère les pages maître et détails varie selon que l’application s’exécute sur un téléphone ou une tablette, l’orientation de l’appareil et la valeur de la [`MasterBehavior`](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior) propriété. Cette propriété détermine le mode d’affichage de la page de détail. Valeurs possibles :
 
-- **Default** - Les pages sont affichées à l’aide de la plateforme par défaut.
-- **Popover** - La page de détail recouvre complètement ou partiellement la page maître.
-- **Split** - La page maître est affichée à gauche, et la page de détail à droite.
-- **SplitOnLandscape** - Un écran partagé est utilisé quand l’appareil est en orientation paysage.
-- **SplitOnPortrait** - Un écran partagé est utilisé quand l’appareil est en orientation portrait.
+- **Default**  - Les pages sont affichées à l’aide de la plateforme par défaut.
+- **Popover**  - La page de détail recouvre complètement ou partiellement la page maître.
+- **Split**  - La page maître est affichée à gauche, et la page de détail à droite.
+- **SplitOnLandscape**  - Un écran partagé est utilisé quand l’appareil est en orientation paysage.
+- **SplitOnPortrait**  - Un écran partagé est utilisé quand l’appareil est en orientation portrait.
 
 L’exemple de code XAML suivant montre comment définir la [`MasterBehavior`](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior) propriété sur un [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) :
 
@@ -289,7 +289,7 @@ public class MainPageCS : MasterDetailPage
 
 Toutefois, la valeur de la [`MasterBehavior`](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior) propriété affecte uniquement les applications qui s’exécutent sur les tablettes ou le bureau. Les applications qui s’exécutent sur des téléphones ont toujours le comportement *Popover*.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a montré comment utiliser un [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) et naviguer entre ses pages d’informations. Xamarin.Forms `MasterDetailPage` Est une page qui gère deux pages d’informations associées : une page maître qui présente des éléments et une page de détails qui présente des détails sur les éléments de la page maître.
 

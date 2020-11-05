@@ -10,12 +10,12 @@ metadata:
   author: davidbritch
   ms.author: dabritch
   ms.date: 01/24/2020
-  ms.openlocfilehash: c54bbc3d1157ad46abbfe798dbf3227efaed4f78
-  ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+  ms.openlocfilehash: 0e85efff7b1f5af066d21e876de0b31ff7ae5f85
+  ms.sourcegitcommit: d2aa3a8bf9a60b6708db55b10b0c6893c06d3256
   ms.translationtype: HT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 09/29/2020
-  ms.locfileid: "91432221"
+  ms.lasthandoff: 11/04/2020
+  ms.locfileid: "93331314"
 landingContent:
 - title: Prise en main
   linkLists:
@@ -51,9 +51,9 @@ landingContent:
       url: ~/ios/app-fundamentals/localization/index.md
     - text: Sécurité et confidentialité
       url: ~/ios/app-fundamentals/security-privacy.md
-    - text: Entrées tactiles
+    - text: Toucher
       url: ~/ios/app-fundamentals/touch/index.md
-    - text: Voir plus >
+    - text: En savoir plus >
       url: ~/ios/app-fundamentals/index.md
 - title: Interface utilisateur
   linkLists:
@@ -71,7 +71,9 @@ landingContent:
       url: ~/ios/user-interface/programmatic-layout-constraints.md
     - text: MonoTouch.Dialog
       url: ~/ios/user-interface/monotouch.dialog/index.md
-- title: Fonctionnalités de la plateforme
+    - text: Conception avec Xcode
+      url: ~/ios/user-interface/ios-use-xcode.md
+- title: Fonctionnalités de la plate-forme
   linkLists:
   - linkListType: concept
     links:
@@ -85,7 +87,7 @@ landingContent:
       url: ~/ios/platform/passkit.md
     - text: PhotoKit
       url: ~/ios/platform/photokit.md
-    - text: Rechercher
+    - text: Recherche
       url: ~/ios/platform/search/index.md
     - text: SiriKit
       url: ~/ios/platform/sirikit/index.md
@@ -93,7 +95,7 @@ landingContent:
       url: ~/ios/platform/3d-touch.md
     - text: Touch ID et Face ID
       url: ~/ios/platform/touch-id-face-id.md
-    - text: Voir plus >
+    - text: En savoir plus >
       url: ~/ios/platform/index.md
 - title: Xamarin.Essentials
   linkLists:
@@ -101,7 +103,7 @@ landingContent:
     links:
     - text: À propos de
       url: ~/essentials/index.md?context=xamarin/ios
-    - text: Prise en main
+    - text: Commencer
       url: ~/essentials/get-started.md?context=xamarin/ios
     - text: Prise en charge des plateformes et des fonctionnalités
       url: ~/essentials/platform-feature-support.md?context=xamarin/ios
@@ -145,11 +147,11 @@ landingContent:
       url: ~/ios/deploy-test/using-instruments-to-detect-native-leaks-using-markheap.md
     - text: Performances
       url: ~/ios/deploy-test/performance.md
-    - text: Test unitaire
+    - text: Effectuer des tests unitaires
       url: ~/ios/deploy-test/touch.unit.md
     - text: Déploiement sans fil
       url: ~/ios/deploy-test/wireless-deployment.md
-    - text: Voir plus >
+    - text: En savoir plus >
       url: ~/ios/deploy-test/index.md
 - title: Éléments internes et concepts avancés
   linkLists:
@@ -179,7 +181,7 @@ landingContent:
   linkLists:
   - linkListType: concept
     links:
-    - text: Prise en main
+    - text: Commencer
       url: ~/ios/watchos/get-started/index.md
     - text: Notions de base des applications
       url: ~/ios/watchos/app-fundamentals/index.md
@@ -197,7 +199,7 @@ landingContent:
   linkLists:
   - linkListType: concept
     links:
-    - text: Prise en main
+    - text: Commencer
       url: ~/ios/tvos/get-started/index.md
     - text: Notions de base des applications
       url: ~/ios/tvos/app-fundamentals/index.md

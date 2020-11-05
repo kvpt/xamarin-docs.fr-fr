@@ -11,16 +11,16 @@ ms.date: 05/07/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: fe27c00752723ac34d614c510f1305b197933715
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 05f5e79f9df59859c4514150ec591e0a96912ed5
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91558165"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368776"
 ---
 # <a name="right-to-left-localization"></a>Localisation de droite à gauche
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todolocalizedrtl)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/todolocalizedrtl)
 
 _La localisation de droite à gauche ajoute la prise en charge du sens du déroulement de droite à gauche aux Xamarin.Forms applications._
 
@@ -121,7 +121,7 @@ using System.Resources;
 
 Vous pouvez ensuite tester la localisation de droite à gauche en remplaçant la langue et la région de l’appareil/du simulateur par les paramètres régionaux de droite à gauche appropriés.
 
-## <a name="limitations"></a>Limitations
+## <a name="limitations"></a>Limites
 
 Xamarin.Forms la localisation de droite à gauche présente actuellement un certain nombre de limitations :
 

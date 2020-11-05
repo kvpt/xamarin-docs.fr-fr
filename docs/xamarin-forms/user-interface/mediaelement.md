@@ -10,18 +10,18 @@ ms.date: 02/18/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 43702453d1defc3b5a63aba845231f514913d7c5
-ms.sourcegitcommit: 1649554b8c08369b713d20246154455c0ba7d1c0
+ms.openlocfilehash: 0daae3edcfbf95d75c566b3ce10f20c83d099e13
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91712563"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368318"
 ---
 # <a name="no-locxamarinforms-mediaelement"></a>Xamarin.Forms MediaElement
 
 ![API de la version préliminaire](~/media/shared/preview.png)
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-mediaelementdemos/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-mediaelementdemos/)
 
 [`MediaElement`](xref:Xamarin.Forms.MediaElement) est une vue pour la lecture de données audio et vidéo. Les médias pris en charge par la plateforme sous-jacente peuvent être lus à partir des sources suivantes :
 
@@ -324,7 +324,7 @@ Il n’est généralement pas nécessaire d’examiner la [`CurrentState`](xref:
 
 ## <a name="implement-custom-transport-controls"></a>Implémenter des contrôles de transport personnalisés
 
-Les contrôles de transport d’un lecteur multimédia incluent les boutons qui exécutent les fonctions **lire**, **suspendre**et **arrêter**. Ces boutons sont habituellement identifiés par des icônes familières plutôt que du texte, et les fonctions **Lecture** et **Pause** sont généralement combinées en un seul bouton.
+Les contrôles de transport d’un lecteur multimédia incluent les boutons qui exécutent les fonctions **lire** , **suspendre** et **arrêter**. Ces boutons sont habituellement identifiés par des icônes familières plutôt que du texte, et les fonctions **Lecture** et **Pause** sont généralement combinées en un seul bouton.
 
 Par défaut, les [`MediaElement`](xref:Xamarin.Forms.MediaElement) contrôles de lecture sont désactivés. Cela vous permet de contrôler `MediaElement` par programme ou en fournissant vos propres contrôles de transport. Pour la prise en charge de cela, `MediaElement` comprend [`Play`](xref:Xamarin.Forms.MediaElement.Play) [`Pause`](xref:Xamarin.Forms.MediaElement.Pause) les méthodes, et [`Stop`](xref:Xamarin.Forms.MediaElement.Stop) .
 
@@ -377,7 +377,7 @@ L’exemple de code XAML suivant montre une page qui contient un [`MediaElement`
 </ContentPage>
 ```
 
-Dans cet exemple, les contrôles de transport personnalisés sont définis en tant qu' [`Button`](xref:Xamarin.Forms.Button) objets. Toutefois, il n’y a que deux `Button` objets, le premier `Button` représentant la **lecture** et la **Pause**, et le second `Button` qui représente l' **arrêt**. [`DataTrigger`](xref:Xamarin.Forms.DataTrigger) les objets sont utilisés pour activer et désactiver les boutons, et pour basculer le premier bouton entre **lecture** et **Pause**. Pour plus d’informations sur les déclencheurs de données, consultez [ Xamarin.Forms déclencheurs](~/xamarin-forms/app-fundamentals/triggers.md).
+Dans cet exemple, les contrôles de transport personnalisés sont définis en tant qu' [`Button`](xref:Xamarin.Forms.Button) objets. Toutefois, il n’y a que deux `Button` objets, le premier `Button` représentant la **lecture** et la **Pause** , et le second `Button` qui représente l' **arrêt**. [`DataTrigger`](xref:Xamarin.Forms.DataTrigger) les objets sont utilisés pour activer et désactiver les boutons, et pour basculer le premier bouton entre **lecture** et **Pause**. Pour plus d’informations sur les déclencheurs de données, consultez [ Xamarin.Forms déclencheurs](~/xamarin-forms/app-fundamentals/triggers.md).
 
 Le fichier code-behind contient les gestionnaires des [`Clicked`](xref:Xamarin.Forms.Button.Clicked) événements :
 

@@ -10,16 +10,16 @@ ms.date: 12/28/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cba4c670e9e092eef92f7b37eefc750782c94367
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: bd726a5e5d6064ecb9aa1c862697e08a9c4733f4
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563833"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93370115"
 ---
 # <a name="store-and-access-data-in-azure-storage-from-no-locxamarinforms"></a>Stocker des données et y accéder dans stockage Azure à partir de Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurestorage)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/webservices-azurestorage)
 
 _Le stockage Azure est une solution de stockage cloud évolutive qui peut être utilisée pour stocker des données structurées et non structurées. Cet article explique comment utiliser Xamarin.Forms pour stocker du texte et des données binaires dans le stockage Azure, et comment accéder aux données._
 
@@ -61,11 +61,11 @@ Un objet blob est un fichier de tout type et de toute taille. Le stockage Azure 
 
 Un objet blob est chargé dans le stockage Azure et téléchargé à partir du stockage Azure, sous la forme d’un flux d’octets. Par conséquent, les fichiers doivent être convertis en un flux d’octets avant le chargement, puis reconvertis en leur représentation d’origine après le téléchargement.
 
-Chaque objet stocké dans le stockage Azure a une adresse URL unique. Le nom du compte de stockage constitue le sous-domaine de cette adresse et la combinaison du sous-domaine et du nom de domaine forme un *point de terminaison* pour le compte de stockage. Par exemple, si votre compte de stockage est nommé *mystorageaccount*, le point de terminaison d’objet BLOB par défaut pour le compte de stockage est `https://mystorageaccount.blob.core.windows.net` .
+Chaque objet stocké dans le stockage Azure a une adresse URL unique. Le nom du compte de stockage constitue le sous-domaine de cette adresse et la combinaison du sous-domaine et du nom de domaine forme un *point de terminaison* pour le compte de stockage. Par exemple, si votre compte de stockage est nommé *mystorageaccount* , le point de terminaison d’objet BLOB par défaut pour le compte de stockage est `https://mystorageaccount.blob.core.windows.net` .
 
 L’URL permettant d’accéder à un objet dans un compte de stockage est constituée de l’ajout de l’emplacement de l’objet dans le compte de stockage au point de terminaison. Par exemple, une adresse d’objet BLOB sera au format `https://mystorageaccount.blob.core.windows.net/mycontainer/myblob` .
 
-## <a name="setup"></a>Programme d’installation
+## <a name="setup"></a>Configuration
 
 Le processus d’intégration d’un compte de stockage Azure dans une Xamarin.Forms application est le suivant :
 

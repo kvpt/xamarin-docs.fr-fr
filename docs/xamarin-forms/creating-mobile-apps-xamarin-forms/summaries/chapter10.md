@@ -10,16 +10,19 @@ ms.date: 07/19/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8f23034df684e778677e4f2e480e1c41807536fb
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: b2083a8dd17749074258c8bd5e6d1a7374c758f9
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136810"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368490"
 ---
 # <a name="summary-of-chapter-10-xaml-markup-extensions"></a>Résumé du chapitre 10. Extensions de balisage XAML
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10)
+
+> [!NOTE]
+> Ce livre a été publié à la printemps de 2016 et n’a pas été mis à jour depuis. Le livre reste très utile, mais certains d’entre eux sont obsolètes et certaines rubriques ne sont plus entièrement correctes ou complètes.
 
 Normalement, l’analyseur XAML convertit n’importe quelle chaîne définie en tant que valeur d’attribut en type de la propriété selon les conversions standard pour les types de données .NET de base, ou un [`TypeConverter`](xref:Xamarin.Forms.TypeConverter) dérivé attaché à la propriété ou son type avec un [`TypeConverterAttribute`](xref:Xamarin.Forms.TypeConverterAttribute) .
 
@@ -33,16 +36,16 @@ Une extension de balisage XAML est une classe qui implémente l' [`IMarkupExtens
 
 Les extensions de balisage XAML suivantes sont prises en charge par toutes les implémentations de XAML :
 
-- `x:Static`pris en charge par[`StaticExtension`](xref:Xamarin.Forms.Xaml.StaticExtension)
-- `x:Reference`pris en charge par[`ReferenceExtension`](xref:Xamarin.Forms.Xaml.ReferenceExtension)
-- `x:Type`pris en charge par[`TypeExtension`](xref:Xamarin.Forms.Xaml.TypeExtension)
-- `x:Null`pris en charge par[`NullExtension`](xref:Xamarin.Forms.Xaml.NullExtension)
-- `x:Array`pris en charge par[`ArrayExtension`](xref:Xamarin.Forms.Xaml.ArrayExtension)
+- `x:Static` pris en charge par [`StaticExtension`](xref:Xamarin.Forms.Xaml.StaticExtension)
+- `x:Reference` pris en charge par [`ReferenceExtension`](xref:Xamarin.Forms.Xaml.ReferenceExtension)
+- `x:Type` pris en charge par [`TypeExtension`](xref:Xamarin.Forms.Xaml.TypeExtension)
+- `x:Null` pris en charge par [`NullExtension`](xref:Xamarin.Forms.Xaml.NullExtension)
+- `x:Array` pris en charge par [`ArrayExtension`](xref:Xamarin.Forms.Xaml.ArrayExtension)
 
 Ces quatre extensions de balisage XAML sont prises en charge par de nombreuses implémentations de XAML, notamment Xamarin.Forms :
 
-- `StaticResource`pris en charge par[`StaticResourceExtension`](xref:Xamarin.Forms.Xaml.StaticResourceExtension)
-- `DynamicResource`pris en charge par[`DynamicResourceExtension`](xref:Xamarin.Forms.Xaml.DynamicResourceExtension)
+- `StaticResource` pris en charge par [`StaticResourceExtension`](xref:Xamarin.Forms.Xaml.StaticResourceExtension)
+- `DynamicResource` pris en charge par [`DynamicResourceExtension`](xref:Xamarin.Forms.Xaml.DynamicResourceExtension)
 - `Binding`pris en charge par [`BindingExtension`](xref:Xamarin.Forms.Xaml.BindingExtension) &mdash; décrit dans le [chapitre 16. Liaison de données](chapter16.md)
 - `TemplateBinding`pris en charge par [`TemplateBindingExtension`](xref:Xamarin.Forms.Xaml.TemplateBindingExtension) &mdash; non couvert dans le livre
 
@@ -92,7 +95,7 @@ Utilisez [`x:Array`](xref:Xamarin.Forms.Xaml.ArrayExtension) pour définir un ta
 
 Vous pouvez créer vos propres extensions de balisage XAML en écrivant une classe qui implémente l' [`IMarkupExtension`](xref:Xamarin.Forms.Xaml.IMarkupExtension) interface à l’aide d’une [`ProvideValue`](xref:Xamarin.Forms.Xaml.IMarkupExtension.ProvideValue(System.IServiceProvider)) méthode.
 
-La [`HslColorExtension`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/HslColorExtension.cs) classe satisfait ces exigences. Elle crée une valeur de type `Color` en fonction des valeurs des propriétés nommées `H` ,, `S` `L` et `A` . Cette classe est le premier élément d’une Xamarin.Forms bibliothèque nommée [**Xamarin. FormsBook. Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) , qui est créé et utilisé au cours de ce document.
+La [`HslColorExtension`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/HslColorExtension.cs) classe satisfait ces exigences. Elle crée une valeur de type `Color` en fonction des valeurs des propriétés nommées `H` ,, `S` `L` et `A` . Cette classe est le premier élément d’une Xamarin.Forms bibliothèque nommée [**Xamarin.Forms book. Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) qui est créée et utilisée au cours de ce document.
 
 L’exemple [**CustomExtensionDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/CustomExtensionDemo) montre comment référencer cette bibliothèque et utiliser l’extension de balisage personnalisée.
 

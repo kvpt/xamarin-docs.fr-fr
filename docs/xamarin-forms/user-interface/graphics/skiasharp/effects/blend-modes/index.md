@@ -10,20 +10,20 @@ ms.date: 08/23/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: dd1ef993fc2184561f01dad99aa01858251f8f73
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 1c345edf4c9980497d1fcd877a9142819afa9b56
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91560674"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368646"
 ---
 # <a name="skiasharp-blend-modes"></a>Modes de fusion SkiaSharp
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 Ces articles se concentrent sur la [`BlendMode`](xref:SkiaSharp.SKPaint.BlendMode) propriété de [`SKPaint`](xref:SkiaSharp.SKPaint) . La `BlendMode` propriété est de type [`SKBlendMode`](xref:SkiaSharp.SKBlendMode) , une énumération avec 29 membres.
 
-La `BlendMode` propriété détermine ce qui se passe lorsqu’un objet graphique (souvent appelé _source_) est rendu sur des objets graphiques existants (appelé la _destination_). Normalement, nous pensons que le nouvel objet graphique masque les objets en dessous. Mais cela se produit uniquement parce que le mode de fusion par défaut est, ce qui `SKBlendMode.SrcOver` signifie que la source est dessinée _sur_ la destination. Les 28 autres membres de `SKBlendMode` provoquent d’autres effets. Dans la programmation graphique, la technique consistant à combiner des objets graphiques de différentes manières est appelée _composition_.
+La `BlendMode` propriété détermine ce qui se passe lorsqu’un objet graphique (souvent appelé _source_ ) est rendu sur des objets graphiques existants (appelé la _destination_ ). Normalement, nous pensons que le nouvel objet graphique masque les objets en dessous. Mais cela se produit uniquement parce que le mode de fusion par défaut est, ce qui `SKBlendMode.SrcOver` signifie que la source est dessinée _sur_ la destination. Les 28 autres membres de `SKBlendMode` provoquent d’autres effets. Dans la programmation graphique, la technique consistant à combiner des objets graphiques de différentes manières est appelée _composition_.
 
 ## <a name="the-skblendmodes-enumeration"></a>Énumération SKBlendModes
 
@@ -51,7 +51,7 @@ Les noms de ces trois catégories prendront plus de sens dans les discussions qu
 
 Ces _modes de fusion sont décrits dans le_ même ordre que dans le document du W3C sur la **composition et le niveau de fusion** , mais il existe quelques différences : le `Src` mode est appelé « _copie_ » dans le document du W3C et `Plus` est plus _léger_. Le document W3C définit un mode de fusion _normal_ qui n’est pas inclus dans `SKBlendModes` , car il est identique à `SrcOver` . Le `Modulate` mode de fusion (en haut de la première colonne) n’est pas inclus dans le document du W3C et la discussion du `Multiply` mode précède `Screen` .
 
-Étant donné que le `Modulate` mode de fusion est propre à skia, il est abordé comme un mode porter-Duff supplémentaire et en mode séparable.
+Étant donné que le `Modulate` mode de fusion est propre à skia, il est abordé comme un mode de Porter-Duff supplémentaire et comme mode séparable.
 
 ## <a name="the-importance-of-transparency"></a>L’importance de la transparence
 
@@ -81,9 +81,9 @@ Cet arrière-plan rouge s’affiche derrière vos graphiques SkiaSharp, car la z
 
 L’article [**SkiaSharp transparent**](../../basics/transparency.md) a montré des techniques de base dans l’utilisation de la transparence pour réorganiser plusieurs graphiques dans une image composite. Les modes de fusion vont au-delà de cela, mais la transparence reste cruciale pour les modes de fusion.
 
-## <a name="skiasharp-porter-duff-blend-modes"></a>[SkiaSharp porter-Duff Blend, modes](porter-duff.md)
+## <a name="skiasharp-porter-duff-blend-modes"></a>[SkiaSharp Porter-Duff modes de fusion](porter-duff.md)
 
-Utilisez les modes de fusion porter-Duff pour composer des scènes en fonction des images source et de destination.
+Utilisez les modes Porter-Duff Blend pour composer des scènes en fonction des images source et de destination.
 
 ## <a name="skiasharp-separable-blend-modes"></a>[Modes de fusion séparable SkiaSharp](separable.md)
 

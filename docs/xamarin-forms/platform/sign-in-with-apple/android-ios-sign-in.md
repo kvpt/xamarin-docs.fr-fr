@@ -1,5 +1,5 @@
 ---
-title: Utiliser la connexion avec Apple pourXamarin.Forms
+title: Utiliser la connexion avec Apple pour Xamarin.Forms
 description: Découvrez comment implémenter la connexion avec Apple dans vos Xamarin.Forms applications mobiles.
 ms.prod: xamarin
 ms.assetid: 2E47E7F2-93D4-4CA3-9E66-247466D25E4D
@@ -10,16 +10,16 @@ ms.date: 09/10/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: fb37f8fb2d01154bf2e749e685c4e96c12d6bc5e
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: ca039e45bd7456f2cde2a733748777cddee0e8a8
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139488"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368607"
 ---
-# <a name="use-sign-in-with-apple-in-xamarinforms"></a>Utiliser la connexion avec Apple dansXamarin.Forms
+# <a name="use-sign-in-with-apple-in-no-locxamarinforms"></a>Utiliser la connexion avec Apple dans Xamarin.Forms
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/signinwithapple/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/signinwithapple/)
 
 Connectez-vous avec Apple pour toutes les nouvelles applications sur iOS 13 qui utilisent des services d’authentification tiers. Les détails de l’implémentation entre iOS et Android sont très différents. Ce guide explique comment procéder dès aujourd’hui dans Xamarin.Forms .
 
@@ -34,8 +34,8 @@ Cet exemple propose une implémentation de consignes strictes pour que la connex
 
 Nous utilisons deux Azure Functions pour faciliter le déroulement de l’authentification :
 
-1. `applesignin_auth`-Génère l’URL d’autorisation de connexion Apple et y redirige.  Nous faisons cela côté serveur, au lieu de l’application mobile, afin de mettre en cache le `state` et de le valider lorsque les serveurs d’Apple envoient un rappel.
-2. `applesignin_callback`-Gère le rappel après Apple et échange en toute sécurité le code d’autorisation pour un jeton d’accès et un jeton d’ID.  Enfin, elle redirige vers le schéma d’URI de l’application, en passant les jetons dans un fragment d’URL.
+1. `applesignin_auth` -Génère l’URL d’autorisation de connexion Apple et y redirige.  Nous faisons cela côté serveur, au lieu de l’application mobile, afin de mettre en cache le `state` et de le valider lorsque les serveurs d’Apple envoient un rappel.
+2. `applesignin_callback` -Gère le rappel après Apple et échange en toute sécurité le code d’autorisation pour un jeton d’accès et un jeton d’ID.  Enfin, elle redirige vers le schéma d’URI de l’application, en passant les jetons dans un fragment d’URL.
 
 L’application mobile s’inscrit elle-même pour gérer le modèle d’URI personnalisé que nous avons sélectionné (dans ce cas `xamarinformsapplesignin://` ), la `applesignin_callback` fonction peut relayer les jetons vers celle-ci.
 
@@ -46,7 +46,7 @@ Lorsque l’utilisateur démarre l’authentification, les étapes suivantes se 
 3. L’utilisateur entre ses informations d’identification en toute sécurité dans la page d’autorisation de connexion Apple hébergée sur les serveurs d’Apple.
 4. Une fois le processus de connexion Apple terminé sur les serveurs Apple, Apple effectue une redirection vers la `redirect_uri` qui est la `applesignin_callback` fonction Azure.
 5. La demande d’Apple envoyée à la `applesignin_callback` fonction est validée pour garantir que le correct `state` est retourné et que les revendications de jeton d’ID sont valides.
-6. La `applesignin_callback` fonction Azure échange le qui `code` lui est envoyé par Apple, pour un jeton d' _accès_, un _jeton d’actualisation_et un _jeton d’ID_ (qui contient des revendications sur l’ID d’utilisateur, le nom et l’adresse de messagerie).
+6. La `applesignin_callback` fonction Azure échange le qui `code` lui est envoyé par Apple, pour un jeton d' _accès_ , un _jeton d’actualisation_ et un _jeton d’ID_ (qui contient des revendications sur l’ID d’utilisateur, le nom et l’adresse de messagerie).
 7. La `applesignin_callback` fonction Azure redirige enfin vers le schéma d’URI de l’application ( `xamarinformsapplesignin://` ) en ajoutant un fragment d’URI avec les jetons (par exemple `xamarinformsapplesignin://#access_token=...&refresh_token=...&id_token=...` ,).
 8. L’application mobile analyse le fragment d’URI dans un `AppleAccount` et valide la `nonce` revendication reçue correspond à la `nonce` générée au début du Workflow.
 9. L’application mobile est désormais authentifiée.
@@ -59,12 +59,12 @@ Cet exemple utilise Azure Functions. Un contrôleur de ASP.NET Core ou une solut
 
 Plusieurs paramètres d’application doivent être configurés lors de l’utilisation de Azure Functions :
 
-- `APPLE_SIGNIN_KEY_ID`-C’est votre `KeyId` version antérieure.
-- `APPLE_SIGNIN_TEAM_ID`-Il s’agit généralement de l' _ID d’équipe_ trouvé dans votre [profil d’appartenance](https://developer.apple.com/account/#/membership)
-- `APPLE_SIGNIN_SERVER_ID`: Il s’agit `ServerId` de l’ancienne version.  Il ne s’agit *pas* de votre _ID d’ensemble_d’applications, mais plutôt de l' *identificateur* de l’ID de *services* que vous avez créé.
-- `APPLE_SIGNIN_APP_CALLBACK_URI`: Il s’agit du modèle d’URI personnalisé que vous souhaitez rediriger vers votre application avec.  Dans cet exemple, `xamarinformsapplesignin://` est utilisé.
-- `APPLE_SIGNIN_REDIRECT_URI`: *URL de redirection* que vous configurez lors de la création de votre *ID de services* dans la section de configuration *de la connexion Apple* .  Pour effectuer un test, il peut ressembler à ceci :`http://local.test:7071/api/applesignin_callback`
-- `APPLE_SIGNIN_P8_KEY`-Le contenu textuel de votre `.p8` fichier, avec toutes les `\n` nouvelles lignes supprimées. il s’agit donc d’une chaîne longue.
+- `APPLE_SIGNIN_KEY_ID` -C’est votre `KeyId` version antérieure.
+- `APPLE_SIGNIN_TEAM_ID` -Il s’agit généralement de l' _ID d’équipe_ trouvé dans votre [profil d’appartenance](https://developer.apple.com/account/#/membership)
+- `APPLE_SIGNIN_SERVER_ID`: Il s’agit `ServerId` de l’ancienne version.  Il ne s’agit *pas* de votre _ID d’ensemble_ d’applications, mais plutôt de l' *identificateur* de l’ID de *services* que vous avez créé.
+- `APPLE_SIGNIN_APP_CALLBACK_URI` : Il s’agit du modèle d’URI personnalisé que vous souhaitez rediriger vers votre application avec.  Dans cet exemple, `xamarinformsapplesignin://` est utilisé.
+- `APPLE_SIGNIN_REDIRECT_URI` : *URL de redirection* que vous configurez lors de la création de votre *ID de services* dans la section de configuration *de la connexion Apple* .  Pour effectuer un test, il peut ressembler à ceci : `http://local.test:7071/api/applesignin_callback`
+- `APPLE_SIGNIN_P8_KEY` -Le contenu textuel de votre `.p8` fichier, avec toutes les `\n` nouvelles lignes supprimées. il s’agit donc d’une chaîne longue.
 
 ### <a name="security-considerations"></a>Considérations relatives à la sécurité
 
@@ -244,7 +244,7 @@ public class WebAppleSignInService : IAppleSignInService
 }
 ```
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article décrit les étapes nécessaires à la configuration de la connexion avec Apple pour une utilisation dans vos Xamarin.Forms applications.
 

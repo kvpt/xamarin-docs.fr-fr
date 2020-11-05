@@ -10,16 +10,16 @@ ms.date: 02/27/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 4d53f999e27aa5aea852f09e8650ea66aac1d9b9
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 364cda6372986113e8a782a061783e0ca5455f3b
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91558828"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368542"
 ---
 # <a name="no-locxamarinforms-slider"></a>Xamarin.Forms Curseur
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)
 
 _Utilisez un curseur pour la sélection à partir d’une plage de valeurs continues._
 
@@ -298,7 +298,7 @@ Par exemple, pour la plage par défaut de 0 à 1, la `StepFrequency` propriété
 
 ### <a name="the-stepslider-solution"></a>La solution StepSlider
 
-Un plus polyvalent `StepSlider` est abordé dans le [chapitre 27. Les convertisseurs personnalisés](https://xamarin.azureedge.net/developer/xamarin-forms-book/XamarinFormsBook-Ch27-Apr2016.pdf) du livre *qui créent des Xamarin.Forms Mobile Apps avec *. `StepSlider`Est semblable à `Slider` mais ajoute une `Steps` propriété pour spécifier le nombre de valeurs entre `Minimum` et `Maximum` .
+Un plus polyvalent `StepSlider` est abordé dans le [chapitre 27. Les convertisseurs personnalisés](https://xamarin.azureedge.net/developer/xamarin-forms-book/XamarinFormsBook-Ch27-Apr2016.pdf) du livre *qui créent des Xamarin.Forms Mobile Apps avec*. `StepSlider`Est semblable à `Slider` mais ajoute une `Steps` propriété pour spécifier le nombre de valeurs entre `Minimum` et `Maximum` .
 
 ## <a name="sliders-for-color-selection"></a>Curseurs pour la sélection des couleurs
 

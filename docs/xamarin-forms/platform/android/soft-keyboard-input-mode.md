@@ -10,16 +10,16 @@ ms.date: 07/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3baadfcb06a595c5809dbabd484a8f886ab84aec
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: e041c766d0a4beefb8b4c74b9024c7554c818511
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562364"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368633"
 ---
 # <a name="soft-keyboard-input-mode-on-android"></a>Mode d’entrée de clavier Soft sur Android
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Ce spécifique à la plateforme Android est utilisé pour définir le mode d’opération d’une zone de saisie de clavier souple et est consommé en XAML en affectant [`Application.WindowSoftInputModeAdjust`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Application.WindowSoftInputModeAdjustProperty) à la propriété jointe la valeur de l' [`WindowSoftInputModeAdjust`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust) énumération :
 
@@ -45,7 +45,7 @@ La `Application.On<Android>` méthode spécifie que ce spécifique à la platefo
 
 Le résultat est que le mode de fonctionnement de la zone d’entrée du clavier conditionnel peut être défini lorsqu’un contrôle d’entrée a le focus :
 
-[![Mode de fonctionnement du clavier logiciel-spécifique à la plateforme](soft-keyboard-input-mode-images/pan-resize.png)](soft-keyboard-input-mode-images/pan-resize-large.png#lightbox "Mode de fonctionnement du clavier logiciel-spécifique à la plateforme")
+[![Mode de fonctionnement du clavier logiciel-spécifique à la plateforme](soft-keyboard-input-mode-images/pan-resize.png)](soft-keyboard-input-mode-images/pan-resize-large.png#lightbox "Mode de fonctionnement du clavier logiciel Platform-Specific")
 
 ## <a name="related-links"></a>Liens connexes
 

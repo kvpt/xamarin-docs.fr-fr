@@ -11,16 +11,16 @@ ms.date: 10/25/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8cb59738519af933e509ebf63a923e573667941e
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: a62fee4ca3cdb4de7f23856f123389df23692f62
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562910"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368919"
 ---
 # <a name="part-5-from-data-bindings-to-mvvm"></a>Partie 5. Des liaisons de données à MVVM
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
 _Le modèle d’architecture MVVM (Model-View-ViewModel) a été inventé avec XAML à l’esprit. Le modèle applique une séparation entre trois couches logicielles (l’interface utilisateur XAML, appelée vue). données sous-jacentes, appelées modèle ; et un intermédiaire entre la vue et le modèle, appelé ViewModel. La vue et le ViewModel sont souvent connectés via des liaisons de données définies dans le fichier XAML. L’BindingContext de la vue est généralement une instance du ViewModel._
 
@@ -298,7 +298,7 @@ Le fichier XAML suivant contient un `BoxView` dont la `Color` propriété est li
 
 La liaison sur chaque `Label` est la valeur par défaut `OneWay` . Elle doit uniquement afficher la valeur. Mais la liaison sur chaque `Slider` est `TwoWay` . Cela permet `Slider` à d’être initialisé à partir du ViewModel. Notez que la `Color` propriété a la valeur `Aqua` lorsque le ViewModel est instancié. Mais une modification dans le `Slider` doit également définir une nouvelle valeur pour la propriété dans le ViewModel, qui calcule ensuite une nouvelle couleur.
 
-[![MVVM utilisant des liaisons de données bidirectionnelles](data-bindings-to-mvvm-images/hslcolorscroll.png)](data-bindings-to-mvvm-images/hslcolorscroll-large.png#lightbox "MVVM utilisant des liaisons de données bidirectionnelles")
+[![MVVM utilisant des liaisons de données Two-Way](data-bindings-to-mvvm-images/hslcolorscroll.png)](data-bindings-to-mvvm-images/hslcolorscroll-large.png#lightbox "MVVM utilisant des liaisons de données Two-Way")
 
 ## <a name="commanding-with-viewmodels"></a>Commande avec ViewModels
 
@@ -566,7 +566,7 @@ La `Command` propriété du premier `Button` qui apparaît dans ce balisage est 
 Les commandes peuvent également appeler des méthodes asynchrones. Pour ce faire, utilisez les `async` `await` Mots clés et lors de la spécification de la `Execute` méthode :
 
 ```csharp
-DownloadCommand = new Command (async () => await DownloadAsync ());
+DownloadCommand = new Command (async () => await DownloadAsync ());
 ```
 
 Cela indique que la `DownloadAsync` méthode est un `Task` et doit être attendue :
@@ -708,7 +708,7 @@ private async void OnListViewItemSelected(object sender, SelectedItemChangedEven
 
 **Xamarin évoluer 2016 : MVVM simple avec Xamarin.Forms et Prism**
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 XAML est un outil puissant permettant de définir des interfaces utilisateur dans des Xamarin.Forms applications, notamment lorsque la liaison de données et MVVM sont utilisées. Le résultat est une représentation propre, élégante et pouvant être intégrée à une interface utilisateur avec toute la prise en charge en arrière-plan dans le code.
 

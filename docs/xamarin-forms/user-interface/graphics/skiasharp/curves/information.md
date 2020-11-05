@@ -10,16 +10,16 @@ ms.date: 09/12/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cf9ebb819d5b424963170d563575c4900bbed28b
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 64a81b04961ebb0d03f661e99839b7ed78d710f2
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556358"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368672"
 ---
 # <a name="path-information-and-enumeration"></a>Informations et énumération de tracés
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Obtenir des informations sur les chemins et énumérer le contenu_
 
@@ -141,7 +141,7 @@ Les membres de l' [`SKPathMeasureMatrixFlags`](xref:SkiaSharp.SKPathMeasureMatri
 
 La page à **demi-tube Unicycle** anime un chiffre en forme de bâton sur un unicycle qui semble passer en arrière et en arrière sur une courbe de Bézier cubique :
 
-[![Capture d’écran triple de la page à demi-tube Unicycle](information-images/unicyclehalfpipe-small.png)](information-images/unicyclehalfpipe-large.png#lightbox "Capture d’écran triple de la page à demi-tube Unicycle")
+[![Capture d’écran triple de la page de Half-Pipe Unicycle](information-images/unicyclehalfpipe-small.png)](information-images/unicyclehalfpipe-large.png#lightbox "Capture d’écran triple de la page de Half-Pipe Unicycle")
 
 L' `SKPaint` objet utilisé pour le détourage du demi-canal et du Unicycle est défini en tant que champ dans la `UnicycleHalfPipePage` classe. Également défini est l' `SKPath` objet pour le Unicycle :
 

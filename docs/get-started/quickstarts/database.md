@@ -12,16 +12,16 @@ ms.date: 04/01/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0992f7db22d79e58db0306bc09329f2852ef9489
-ms.sourcegitcommit: 145bd7550d19088c84949ecf5b1cc39002183234
+ms.openlocfilehash: 54a6dca3b16ed4ac9fb7ab2065f1d8462a3f3da4
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "92897518"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368113"
 ---
 # <a name="store-data-in-a-local-sqlitenet-database"></a>Stocker des données dans une base de données SQLite.NET locale
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-database/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/getstarted-notes-database/)
 
 Dans ce guide de démarrage rapide, vous allez apprendre à :
 
@@ -86,9 +86,9 @@ Vous devez suivre correctement le [précédent guide de démarrage rapide](multi
     > [!WARNING]
     > À ce stade, si vous tentez de générer l’application, cela entraîne des erreurs qui seront corrigées plus tard.
 
-5. Dans l’ **Explorateur de solutions** , ajoutez un nouveau dossier nommé **Data** au projet **Notes** .
+5. Dans l’ **Explorateur de solutions** , ajoutez un nouveau dossier nommé **Data** au projet **Notes**.
 
-6. Dans l’ **Explorateur de solutions** , dans le projet **Notes** , ajoutez une nouvelle classe nommée **NoteDatabase** au dossier **Data** .
+6. Dans l’ **Explorateur de solutions** , dans le projet **Notes** , ajoutez une nouvelle classe nommée **NoteDatabase** au dossier **Data**.
 
 7. Dans **NoteDatabase.cs** , remplacez le code existant par le code suivant :
 
@@ -249,7 +249,7 @@ Vous devez suivre correctement le [précédent guide de démarrage rapide](multi
 
 11. Générez et exécutez le projet sur chaque plateforme. Pour plus d’informations, consultez [Génération du guide de démarrage rapide](single-page.md#building-the-quickstart).
 
-    Dans **NotesPage** , appuyez sur le bouton **+** pour accéder à **NoteEntryPage** , puis entrez une note. Une fois que vous avez enregistré la note, l’application revient à **NotesPage** .
+    Dans **NotesPage** , appuyez sur le bouton **+** pour accéder à **NoteEntryPage** , puis entrez une note. Une fois que vous avez enregistré la note, l’application revient à **NotesPage**.
 
     Entrez un certain nombre de notes, de longueur variable, pour observer le comportement de l’application.
 
@@ -303,9 +303,9 @@ Vous devez suivre correctement le [précédent guide de démarrage rapide](multi
     > [!WARNING]
     > À ce stade, si vous tentez de générer l’application, cela entraîne des erreurs qui seront corrigées plus tard.
 
-5. Dans le **Panneau Solutions** , ajoutez un nouveau dossier nommé **Data** au projet **Notes** .
+5. Dans le **Panneau Solutions** , ajoutez un nouveau dossier nommé **Data** au projet **Notes**.
 
-6. Dans le **Panneau Solutions** , dans le projet **Notes** , ajoutez une nouvelle classe nommée **NoteDatabase** au dossier **Data** .
+6. Dans le **Panneau Solutions** , dans le projet **Notes** , ajoutez une nouvelle classe nommée **NoteDatabase** au dossier **Data**.
 
 7. Dans **NoteDatabase.cs** , remplacez le code existant par le code suivant :
 
@@ -466,7 +466,7 @@ Vous devez suivre correctement le [précédent guide de démarrage rapide](multi
 
 11. Générez et exécutez le projet sur chaque plateforme. Pour plus d’informations, consultez [Génération du guide de démarrage rapide](single-page.md#building-the-quickstart).
 
-    Dans **NotesPage** , appuyez sur le bouton **+** pour accéder à **NoteEntryPage** , puis entrez une note. Une fois que vous avez enregistré la note, l’application revient à **NotesPage** .
+    Dans **NotesPage** , appuyez sur le bouton **+** pour accéder à **NoteEntryPage** , puis entrez une note. Une fois que vous avez enregistré la note, l’application revient à **NotesPage**.
 
     Entrez un certain nombre de notes, de longueur variable, pour observer le comportement de l’application.
 

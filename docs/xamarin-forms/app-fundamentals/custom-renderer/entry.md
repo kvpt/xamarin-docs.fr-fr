@@ -10,16 +10,16 @@ ms.date: 11/26/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a96e81314ad48ab0618083c215048e0678d09768
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: c04626a3139a7fa44b2b13b2c1dd343188322f3c
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557372"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368503"
 ---
 # <a name="customizing-an-entry"></a>Personnalisation d’une entrée
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-entry)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/customrenderers-entry)
 
 _Le Xamarin.Forms contrôle d’entrée permet de modifier une seule ligne de texte. Cet article montre comment créer un convertisseur personnalisé pour le contrôle d’entrée, ce qui permet aux développeurs de remplacer le rendu natif par défaut par leur propre personnalisation propre à la plateforme._
 
@@ -206,7 +206,7 @@ namespace CustomRenderer.UWP
 
 L’appel à la méthode `OnElementChanged` de la classe de base instancie un contrôle `TextBox` UWP, avec une référence au contrôle assigné à la propriété `Control` du renderer. La couleur d’arrière-plan est ensuite définie sur cyan en créant une instance `SolidColorBrush`.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a montré comment créer un convertisseur de contrôle personnalisé pour le Xamarin.Forms [`Entry`](xref:Xamarin.Forms.Entry) contrôle, ce qui permet aux développeurs de substituer le rendu natif par défaut avec leur propre rendu propre à la plateforme. Les convertisseurs personnalisés fournissent une approche puissante pour personnaliser l’apparence des Xamarin.Forms contrôles. Ils peuvent être utilisés aussi bien pour les petits changements de style que pour la personnalisation de la disposition sophistiquée d’une plateforme et du comportement.
 

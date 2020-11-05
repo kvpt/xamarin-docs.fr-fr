@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 12/16/2019
-ms.openlocfilehash: 526de99f32a8682cbe6862e46f90c674cf7d3dc6
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: a092b5f84ebf0481652f5093a4898e44a55e19f8
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91430372"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93369556"
 ---
 # <a name="use-touch-id-and-face-id-with-xamarinios"></a>Utiliser Touch ID et face ID avec Xamarin. iOS
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-faceidsample/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/ios-samples/ios11-faceidsample/)
 
 iOS prend en charge deux systèmes d’authentification biométrique :
 
@@ -25,7 +25,7 @@ iOS prend en charge deux systèmes d’authentification biométrique :
 
 Touch ID a été introduit dans iOS 7 et face ID dans iOS 11.
 
-Ces systèmes d’authentification s’appuient sur un processeur de sécurité matériel appelé « _enclave sécurisée_». L’enclave sécurisée est responsable du chiffrement des représentations mathématiques des données de face et d’empreinte digitale, et de l’authentification des utilisateurs à l’aide de ces informations. D’après Apple, les données de visage et d’empreinte ne laissent pas l’appareil et ne sont pas sauvegardées dans iCloud. Les applications interagissent avec l’enclave sécurisée via l’API _d’authentification locale_ et ne peuvent pas récupérer les données de visage ou d’empreinte digitale, ni accéder directement à l’enclave sécurisée.
+Ces systèmes d’authentification s’appuient sur un processeur de sécurité matériel appelé « _enclave sécurisée_ ». L’enclave sécurisée est responsable du chiffrement des représentations mathématiques des données de face et d’empreinte digitale, et de l’authentification des utilisateurs à l’aide de ces informations. D’après Apple, les données de visage et d’empreinte ne laissent pas l’appareil et ne sont pas sauvegardées dans iCloud. Les applications interagissent avec l’enclave sécurisée via l’API _d’authentification locale_ et ne peuvent pas récupérer les données de visage ou d’empreinte digitale, ni accéder directement à l’enclave sécurisée.
 
 Touch ID et face ID peuvent être utilisés par les applications pour authentifier un utilisateur avant de fournir l’accès au contenu protégé.
 

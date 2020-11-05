@@ -10,16 +10,16 @@ ms.date: 04/06/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6c8c43a877a102d9e16070da00813b00e7ef1c38
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: d6c8154891f6ec295b7082dc6eebe46916d4e4e0
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91561363"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368056"
 ---
 # <a name="attached-behaviors"></a>Comportements attachés
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-attachednumericvalidationbehavior)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/behaviors-attachednumericvalidationbehavior)
 
 _Les comportements attachés sont des classes statiques avec une ou plusieurs propriétés jointes. Cet article montre comment créer et consommer des comportements attachés._
 
@@ -128,7 +128,7 @@ NumericValidationBehavior.SetAttachBehavior (entry, false);
 
 Lors de l’exécution, la méthode `OnAttachBehaviorChanged` est exécutée quand la valeur de la propriété attachée `AttachBehavior` est définie sur `false`. La `OnAttachBehaviorChanged` méthode annule ensuite l’inscription du gestionnaire d’événements pour l’événement, ce qui permet de s' [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) assurer que le comportement n’est pas exécuté lorsque l’utilisateur interagit avec le contrôle.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a montré comment créer et consommer des comportements attachés. Les comportements attachés sont des classes `static` avec une ou plusieurs propriétés attachées.
 

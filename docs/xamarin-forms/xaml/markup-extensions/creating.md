@@ -10,18 +10,18 @@ ms.date: 01/05/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 43c8cd0dd7b50e3a5bfbd15d9858bd4502fedacc
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 87153223c79365053bfc05b2a8a97c9aa1d4c4a4
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91558776"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93369049"
 ---
 # <a name="creating-xaml-markup-extensions"></a>Création d’extensions de balisage XAML
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
 
-Au niveau de la programmation, une extension de balisage XAML est une classe qui implémente l' [`IMarkupExtension`](xref:Xamarin.Forms.Xaml.IMarkupExtension) [`IMarkupExtension<T>`](xref:Xamarin.Forms.Xaml.IMarkupExtension`1) interface ou. Vous pouvez explorer le code source des extensions de balisage standard décrites ci-dessous dans le [répertoire **MarkupExtensions** ](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Xaml/MarkupExtensions) du Xamarin.Forms référentiel github.
+Au niveau de la programmation, une extension de balisage XAML est une classe qui implémente l' [`IMarkupExtension`](xref:Xamarin.Forms.Xaml.IMarkupExtension) [`IMarkupExtension<T>`](xref:Xamarin.Forms.Xaml.IMarkupExtension`1) interface ou. Vous pouvez explorer le code source des extensions de balisage standard décrites ci-dessous dans le [répertoire **MarkupExtensions**](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Xaml/MarkupExtensions) du Xamarin.Forms référentiel github.
 
 Il est également possible de définir vos propres extensions de balisage XAML personnalisées en dérivant de `IMarkupExtension` ou de `IMarkupExtension<T>` . Utilisez le formulaire générique si l’extension de balisage obtient une valeur d’un type particulier. C’est le cas avec plusieurs extensions de Xamarin.Forms balisage :
 
@@ -188,7 +188,7 @@ Voici le programme en cours d’exécution :
 
 ## <a name="service-providers"></a>Fournisseurs de services
 
-En utilisant l' `IServiceProvider` argument pour `ProvideValue` , les extensions de balisage XAML peuvent accéder à des informations utiles sur le fichier XAML dans lequel elles sont utilisées. Toutefois, pour utiliser `IServiceProvider` correctement l’argument, vous devez savoir quels sont les types de services disponibles dans des contextes particuliers. La meilleure façon d’acquérir une bonne compréhension de cette fonctionnalité consiste à étudier le code source des extensions de balisage XAML existantes dans le [dossier **MarkupExtensions** ](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Xaml/MarkupExtensions) du Xamarin.Forms référentiel sur GitHub. N’oubliez pas que certains types de services sont internes à Xamarin.Forms .
+En utilisant l' `IServiceProvider` argument pour `ProvideValue` , les extensions de balisage XAML peuvent accéder à des informations utiles sur le fichier XAML dans lequel elles sont utilisées. Toutefois, pour utiliser `IServiceProvider` correctement l’argument, vous devez savoir quels sont les types de services disponibles dans des contextes particuliers. La meilleure façon d’acquérir une bonne compréhension de cette fonctionnalité consiste à étudier le code source des extensions de balisage XAML existantes dans le [dossier **MarkupExtensions**](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Xaml/MarkupExtensions) du Xamarin.Forms référentiel sur GitHub. N’oubliez pas que certains types de services sont internes à Xamarin.Forms .
 
 Dans certaines extensions de balisage XAML, ce service peut être utile :
 

@@ -10,16 +10,16 @@ ms.date: 05/24/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f2e6735be2593133f755f87b365b8352bf09ebb4
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 12af5d9be025fb2113d70a93a364619aff75598d
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563079"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93370063"
 ---
 # <a name="svg-path-data-in-skiasharp"></a>Données du chemin d’accès SVG dans SkiaSharp
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Définir des chemins d’accès à l’aide de chaînes de texte dans le format graphique vectoriel Scalable_
 
@@ -109,7 +109,7 @@ Définissez l' *indicateur grand arc* sur 1 pour l’arc de grande taille ou sur
 
 Définissez l' *indicateur de balayage* sur 1 pour le sens des aiguilles d’une montre et sur 0 pour le sens des aiguilles d’une montre.
 
-L’arc est dessiné jusqu’au point (*x*, *y*), qui devient la nouvelle position actuelle.
+L’arc est dessiné jusqu’au point ( *x* , *y* ), qui devient la nouvelle position actuelle.
 
 ## <a name="cubicto"></a>**CubicTo**
 
@@ -117,7 +117,7 @@ L’arc est dessiné jusqu’au point (*x*, *y*), qui devient la nouvelle positi
 C x1 y1 x2 y2 x3 y3 ...
 ```
 
-Cette commande ajoute une courbe de Bézier cubique de la position actuelle à (*x3*, *Y3*), qui devient la nouvelle position actuelle. Les points (*x1*, *Y1*) et (*x2*, *Y2*) sont des points de contrôle.
+Cette commande ajoute une courbe de Bézier cubique de la position actuelle à ( *x3* , *Y3* ), qui devient la nouvelle position actuelle. Les points ( *x1* , *Y1* ) et ( *x2* , *Y2* ) sont des points de contrôle.
 
 Plusieurs courbes de Bézier peuvent être spécifiées par une seule `C` commande. Le nombre de points doit être un multiple de 3.
 
@@ -135,7 +135,7 @@ Cette commande doit suivre une commande Bézier normale (bien que cela ne soit p
 Q x1 y1 x2 y2 ...
 ```
 
-Pour les courbes de Bézier quadratiques, le nombre de points doit être un multiple de 2. Le point de contrôle est (*x1*, *Y1*) et le point de terminaison (et la nouvelle position actuelle) est (*x2*, *Y2*)
+Pour les courbes de Bézier quadratiques, le nombre de points doit être un multiple de 2. Le point de contrôle est ( *x1* , *Y1* ) et le point de terminaison (et la nouvelle position actuelle) est ( *x2* , *Y2* )
 
 Il y a également une commande de courbe quadratique lisse :
 

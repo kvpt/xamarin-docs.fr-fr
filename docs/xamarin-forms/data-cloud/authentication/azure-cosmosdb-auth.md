@@ -10,16 +10,16 @@ ms.date: 06/16/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2dacbc18fdbc7d9c7bd38d5ddfad2157e3a0a503
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: caa4f78d70f583c22fb4a00fd85b91ec7357013a
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563287"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93369738"
 ---
 # <a name="authenticate-users-with-an-azure-cosmos-db-document-database-and-no-locxamarinforms"></a>Authentifier les utilisateurs avec une base de données de documents Azure Cosmos DB et Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-tododocumentdbauth)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/webservices-tododocumentdbauth)
 
 _Azure Cosmos DB les bases de données de documents prennent en charge les collections partitionnées, qui peuvent s’étendre sur plusieurs serveurs et partitions, tout en prenant en charge un stockage et un débit illimités. Cet article explique comment combiner le contrôle d’accès avec des collections partitionnées, afin qu’un utilisateur puisse uniquement accéder à ses propres documents dans une Xamarin.Forms application._
 
@@ -51,7 +51,7 @@ Le répartiteur de jetons de ressource est un service d’API Web de niveau inte
 
 Pour plus d’informations sur le partitionnement de Cosmos DB, consultez [comment partitionner et mettre à l’échelle dans Azure Cosmos DB](/azure/cosmos-db/partition-data/). Pour plus d’informations sur le contrôle d’accès Cosmos DB, consultez [sécurisation de l’accès à Cosmos DB Data](/azure/cosmos-db/secure-access-to-data/) and [Access Control dans l’API SQL](/rest/api/documentdb/access-control-on-documentdb-resources/).
 
-## <a name="setup"></a>Programme d’installation
+## <a name="setup"></a>Configuration
 
 Le processus d’intégration du répartiteur de jetons de ressource dans une Xamarin.Forms application est le suivant :
 
@@ -258,7 +258,7 @@ Cela garantit que Cosmos DB sait à partir de quelle collection partitionnée su
 
 Pour plus d’informations sur la suppression d’un document d’une collection de documents, consultez [Suppression d’un document d’une collection de documents](~/xamarin-forms/data-cloud/azure-services/azure-cosmosdb.md#deleting-a-document-from-a-document-collection).
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a expliqué comment combiner le contrôle d’accès avec des collections partitionnées, afin qu’un utilisateur puisse uniquement accéder à ses propres documents de base de données de documents dans une Xamarin.Forms application. La spécification de l’identité de l’utilisateur en tant que clé de partition garantit qu’une collection partitionnée ne peut stocker que des documents pour cet utilisateur.
 
