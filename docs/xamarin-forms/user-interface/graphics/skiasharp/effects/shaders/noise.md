@@ -10,18 +10,18 @@ ms.date: 08/23/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 00b6251f530a4927d069ae92ec919645a06baf15
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 1a9a8b8dc31369b5774935a2e8fca5cf17faa24b
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91555396"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93371246"
 ---
 # <a name="skiasharp-noise-and-composing"></a>SkiaSharp le bruit et la composition
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-Les graphiques vectoriels simples ont tendance à paraître innaturels. Les lignes droites, les courbes lissées et les couleurs unies ne sont pas similaires aux imperfections des objets réels. En travaillant sur les graphiques générés par ordinateur pour le film _Tron_1982, le chercheur en informatique Ken Perl a commencé à développer des algorithmes qui utilisaient des processus aléatoires pour obtenir des textures plus réalistes. Dans 1997, Ken Perl a remporté un prix d’Académie pour la réalisation technique. Son travail est connu sous le nom de « Perl » et est pris en charge dans SkiaSharp. Voici un exemple :
+Les graphiques vectoriels simples ont tendance à paraître innaturels. Les lignes droites, les courbes lissées et les couleurs unies ne sont pas similaires aux imperfections des objets réels. En travaillant sur les graphiques générés par ordinateur pour le film _Tron_ 1982, le chercheur en informatique Ken Perl a commencé à développer des algorithmes qui utilisaient des processus aléatoires pour obtenir des textures plus réalistes. Dans 1997, Ken Perl a remporté un prix d’Académie pour la réalisation technique. Son travail est connu sous le nom de « Perl » et est pris en charge dans SkiaSharp. Voici un exemple :
 
 ![Exemple de bruit perl](noise-images/NoiseSample.png "Exemple de bruit perl")
 
@@ -47,7 +47,7 @@ La `numOctaves` valeur est un entier égal ou supérieur à 1. Il se réfère à
 
 Le `seed` paramètre est le point de départ pour le générateur de nombres aléatoires. Bien qu’elle soit spécifiée comme valeur à virgule flottante, la fraction est tronquée avant d’être utilisée, et 0 est le même que 1.
 
-La page de **bruit perl** dans l’exemple [ **SkiaSharpFormsDemos**)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) vous permet de faire des essais avec différentes valeurs des `baseFrequency` `numOctaves` arguments et. Voici le fichier XAML :
+La page de **bruit perl** dans l’exemple [ **SkiaSharpFormsDemos** )](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) vous permet de faire des essais avec différentes valeurs des `baseFrequency` `numOctaves` arguments et. Voici le fichier XAML :
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>

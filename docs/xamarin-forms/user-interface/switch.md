@@ -10,16 +10,16 @@ ms.date: 05/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 94f77fd70fee595efd341ff7372828b12661442d
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: b44a3fa34044327be6a928588397c3371f196336
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91561727"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93371129"
 ---
 # <a name="no-locxamarinforms-switch"></a>Xamarin.Forms Utilisez
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-switchdemos/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-switchdemos/)
 
 Le Xamarin.Forms [`Switch`](xref:Xamarin.Forms.Switch) contrôle est un bouton bascule horizontal qui peut être manipulé par l’utilisateur pour basculer entre les États activés et désactivés, représentés par une `boolean` valeur. La `Switch` classe hérite de [`View`](xref:Xamarin.Forms.View) .
 
@@ -30,7 +30,7 @@ Les captures d’écran suivantes montrent un `Switch` contrôle **on** dans ses
 Le `Switch` contrôle définit les propriétés suivantes :
 
 - [`IsToggled`](xref:Xamarin.Forms.Switch.IsToggled) est une `boolean` valeur qui indique si `Switch` est **activé**.
-- [`OnColor`](xref:Xamarin.Forms.Switch.OnColor)est un `Color` qui affecte la façon dont le `Switch` est rendu dans l’état activé **on**ou désactivé.
+- [`OnColor`](xref:Xamarin.Forms.Switch.OnColor)est un `Color` qui affecte la façon dont le `Switch` est rendu dans l’état activé **on** ou désactivé.
 - `ThumbColor` est le `Color` du curseur de commutateur.
 
 Ces propriétés sont sauvegardées par un [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) objet, ce qui signifie que `Switch` peut être stylisé et être la cible des liaisons de données.

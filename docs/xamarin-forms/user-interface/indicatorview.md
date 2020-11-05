@@ -10,16 +10,16 @@ ms.date: 02/27/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 95c4e247ca0be6e5f0f39a7bc95c41a73b3f590e
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 938bdc55cc577bda53fcf8c6d70bc71ea5cb97a0
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556787"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93371961"
 ---
 # <a name="no-locxamarinforms-indicatorview"></a>Xamarin.Forms IndicatorView
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-indicatorviewdemos/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-indicatorviewdemos/)
 
 Le `IndicatorView` est un contrôle qui affiche des indicateurs qui représentent le nombre d’éléments, et la position actuelle, dans un `CarouselView` :
 

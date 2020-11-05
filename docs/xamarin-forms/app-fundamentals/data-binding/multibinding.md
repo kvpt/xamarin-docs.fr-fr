@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2020
-ms.openlocfilehash: 6a3154d159c491c6460e118395286aa33cfa7e7e
-ms.sourcegitcommit: 1550019cd1e858d4d13a4ae6dfb4a5947702f24b
+ms.openlocfilehash: 79d27cf9d6ba01235962b43ee7f05c904c265c2f
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92897453"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93370843"
 ---
 # <a name="xamarinforms-multi-bindings"></a>Liaisons multiples Xamarin. Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 Les liaisons multiples offrent la possibilité d’attacher une collection d' [`Binding`](xref:Xamarin.Forms.Binding) objets à une propriété de cible de liaison unique. Ils sont créés avec la `MultiBinding` classe, qui évalue tous ses `Binding` objets et retourne une valeur unique par le biais d’une `IMultiValueConverter` instance fournie par votre application. En outre, `MultiBinding` réévalue tous ses `Binding` objets lorsqu’une des données liées est modifiée.
 

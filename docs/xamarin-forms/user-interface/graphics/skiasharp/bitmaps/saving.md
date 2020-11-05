@@ -10,16 +10,16 @@ ms.date: 07/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2e0c4d247f3ecf9c1b8e077c4a96712e9ed138ca
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 1d50c03fcea043c4b29db4a82ee3dc1712c288df
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562949"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93372078"
 ---
 # <a name="saving-skiasharp-bitmaps-to-files"></a>Enregistrement de bitmaps SkiaSharp dans des fichiers
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 Après la création ou la modification d’une image bitmap par une application SkiaSharp, l’application peut souhaiter enregistrer l’image bitmap dans la bibliothèque de photos de l’utilisateur :
 
@@ -32,9 +32,9 @@ Cette tâche englobe deux étapes :
 
 ## <a name="file-formats-and-codecs"></a>Formats de fichiers et codecs
 
-La plupart des formats de fichier bitmap populaires actuels utilisent la compression pour réduire l’espace de stockage. Les deux grandes catégories de techniques de compression sont appelées « _perte_ » et « _sans perte_». Ces termes indiquent si l’algorithme de compression entraîne ou non la perte de données.
+La plupart des formats de fichier bitmap populaires actuels utilisent la compression pour réduire l’espace de stockage. Les deux grandes catégories de techniques de compression sont appelées « _perte_ » et « _sans perte_ ». Ces termes indiquent si l’algorithme de compression entraîne ou non la perte de données.
 
-Le format de perte le plus populaire a été développé par le groupe Joint Photographic Experts et est appelé JPEG. L’algorithme de compression JPEG analyse l’image à l’aide d’un outil mathématique appelé _transformation cosinus discret_et tente de supprimer des données qui ne sont pas essentielles pour préserver la fidélité visuelle de l’image. Le degré de compression peut être contrôlé avec un paramètre généralement appelé _qualité_. Les paramètres de qualité supérieure génèrent des fichiers plus volumineux.
+Le format de perte le plus populaire a été développé par le groupe Joint Photographic Experts et est appelé JPEG. L’algorithme de compression JPEG analyse l’image à l’aide d’un outil mathématique appelé _transformation cosinus discret_ et tente de supprimer des données qui ne sont pas essentielles pour préserver la fidélité visuelle de l’image. Le degré de compression peut être contrôlé avec un paramètre généralement appelé _qualité_. Les paramètres de qualité supérieure génèrent des fichiers plus volumineux.
 
 En revanche, un algorithme de compression sans perte analyse l’image pour la répétition et les modèles de pixels qui peuvent être encodés d’une manière qui réduit les données, mais n’entraîne pas la perte de toutes les informations. Les données bitmap d’origine peuvent être entièrement restaurées à partir du fichier compressé. Le format de fichier compressé sans perte principal utilisé aujourd’hui est le format PNG (Portable Network Graphics).
 
@@ -476,7 +476,7 @@ L’article [**peinture par doigt dans SkiaSharp**](../paths/finger-paint.md) a 
 
 La page **Finger Paint with Save** de l’exemple [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) conserve également l’intégralité du dessin dans une collection d' `SKPath` objets, mais affiche également le dessin sur une image bitmap, qu’il peut enregistrer dans votre bibliothèque de photos.
 
-Une grande partie de ce programme est semblable au programme de **peinture par doigt** d’origine. L’une des améliorations est que le fichier XAML instancie désormais les boutons **Clear** et **Save**:
+Une grande partie de ce programme est semblable au programme de **peinture par doigt** d’origine. L’une des améliorations est que le fichier XAML instancie désormais les boutons **Clear** et **Save** :
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -705,7 +705,7 @@ Une technique très similaire est utilisée dans l’exemple [**SpinPaint**](/sa
 
 [![Peinture de rotation](saving-images/SpinPaint.png "Peinture de rotation")](saving-images/SpinPaint-Large.png#lightbox)
 
-Le bouton d' **enregistrement** de la `SpinPaint` classe est semblable à **Finger Paint** en ce qu’il enregistre l’image dans un nom de dossier fixe (**SpainPaint**) et un nom de fichier construit à partir de la date et de l’heure.
+Le bouton d' **enregistrement** de la `SpinPaint` classe est semblable à **Finger Paint** en ce qu’il enregistre l’image dans un nom de dossier fixe ( **SpainPaint** ) et un nom de fichier construit à partir de la date et de l’heure.
 
 ## <a name="related-links"></a>Liens connexes
 

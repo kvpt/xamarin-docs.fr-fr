@@ -10,16 +10,16 @@ ms.date: 02/07/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3da0223bf72e4de60cc50be2562a0fdbd279f52e
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: b84336f836c3fa421537daf7e43de01e7be20b01
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91559738"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93371285"
 ---
 # <a name="no-locxamarinforms-map-initialization-and-configuration"></a>Xamarin.Forms Initialisation et configuration de la carte
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
 Le [`Map`](xref:Xamarin.Forms.Maps.Map) contrôle utilise le contrôle de carte natif sur chaque plateforme. Cela offre une expérience de cartes rapide et familière pour les utilisateurs, mais signifie que certaines étapes de configuration sont nécessaires pour respecter les exigences de chaque API de plateformes.
 
@@ -57,7 +57,7 @@ Une configuration supplémentaire est requise sur Android et le plateforme Windo
 
 ### <a name="ios"></a>iOS
 
-L’affichage et l’interaction avec une carte sur iOS ne nécessitent aucune configuration supplémentaire. Toutefois, pour accéder aux services d’emplacement, vous devez définir les clés suivantes dans **info. plist**:
+L’affichage et l’interaction avec une carte sur iOS ne nécessitent aucune configuration supplémentaire. Toutefois, pour accéder aux services d’emplacement, vous devez définir les clés suivantes dans **info. plist** :
 
 - iOS 11 et versions ultérieures
   - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) – pour l’utilisation des services d’emplacement lorsque l’application est en cours d’utilisation
@@ -121,7 +121,7 @@ Pour que votre APK accède à Google Maps, vous devez inclure les empreintes de 
 
 #### <a name="specify-the-google-play-services-version-number"></a>Spécifier le numéro de version de Google Play services
 
-Ajoutez la déclaration suivante dans l' `<application>` élément de **AndroidManifest.xml**:
+Ajoutez la déclaration suivante dans l' `<application>` élément de **AndroidManifest.xml** :
 
 ```xml
 <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
@@ -131,7 +131,7 @@ Cela incorpore la version de Google Play services avec laquelle l’application 
 
 #### <a name="specify-the-requirement-for-the-apache-http-legacy-library"></a>Spécifier la configuration requise pour la bibliothèque Legacy HTTP Apache
 
-Si votre Xamarin.Forms application cible l’API 28 ou une version ultérieure, vous devez ajouter la déclaration suivante dans l' `<application>` élément de **AndroidManifest.xml**:
+Si votre Xamarin.Forms application cible l’API 28 ou une version ultérieure, vous devez ajouter la déclaration suivante dans l' `<application>` élément de **AndroidManifest.xml** :
 
 ```xml
 <uses-library android:name="org.apache.http.legacy" android:required="false" />    
@@ -245,7 +245,7 @@ Sur UWP, votre application doit être authentifiée pour pouvoir afficher une ca
 
 En outre, si votre application doit accéder à l’emplacement de l’utilisateur, vous devez activer la fonctionnalité d’emplacement dans le manifeste du package. Cela peut être accompli de la façon suivante :
 
-1. Dans l’**Explorateur de solutions**, double-cliquez sur **package.appxmanifest**, puis sélectionnez l’onglet **Capacités**.
+1. Dans l’ **Explorateur de solutions** , double-cliquez sur **package.appxmanifest** , puis sélectionnez l’onglet **Capacités**.
 1. Dans la liste des **fonctionnalités** , activez la case à cocher **emplacement**. Cela ajoute la `location` fonctionnalité de l’appareil au fichier manifeste du package.
 
     ```xml
@@ -257,7 +257,7 @@ En outre, si votre application doit accéder à l’emplacement de l’utilisate
 
 #### <a name="release-builds"></a>Versions release
 
-Les versions de la version UWP utilisent la compilation native .NET pour compiler l’application directement en code natif. Toutefois, il en résulte que le convertisseur du [`Map`](xref:Xamarin.Forms.Maps.Map) contrôle sur UWP peut être lié à l’exécutable. Cela peut être résolu à l’aide d’une surcharge spécifique à UWP de la `Forms.Init` méthode dans **app.Xaml.cs**:
+Les versions de la version UWP utilisent la compilation native .NET pour compiler l’application directement en code natif. Toutefois, il en résulte que le convertisseur du [`Map`](xref:Xamarin.Forms.Maps.Map) contrôle sur UWP peut être lié à l’exécutable. Cela peut être résolu à l’aide d’une surcharge spécifique à UWP de la `Forms.Init` méthode dans **app.Xaml.cs** :
 
 ```csharp
 var assembliesToInclude = new [] { typeof(Xamarin.Forms.Maps.UWP.MapRenderer).GetTypeInfo().Assembly };

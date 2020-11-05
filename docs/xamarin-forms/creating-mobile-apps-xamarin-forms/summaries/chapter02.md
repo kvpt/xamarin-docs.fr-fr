@@ -10,27 +10,27 @@ ms.date: 07/17/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 78da3ed91acea0c056074d712d368de70b251392
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 49b7a049444fe87f9237afb18935b74638fa9ebf
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136914"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93370505"
 ---
 # <a name="summary-of-chapter-2-anatomy-of-an-app"></a>Résumé du chapitre 2. Anatomie d’une application
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02)
 
 > [!NOTE]
-> Les notes de cette page indiquent les zones où elles Xamarin.Forms divergent du matériel présenté dans le livre.
+> Ce livre a été publié à la printemps de 2016 et n’a pas été mis à jour depuis. Le livre reste très utile, mais certains d’entre eux sont obsolètes et certaines rubriques ne sont plus entièrement correctes ou complètes.
 
-Dans une Xamarin.Forms application, les objets qui occupent de l’espace sur l’écran sont appelés *éléments visuels*, encapsulés par la [`VisualElement`](xref:Xamarin.Forms.VisualElement) classe. Les éléments visuels peuvent être répartis en trois catégories correspondant à ces classes :
+Dans une Xamarin.Forms application, les objets qui occupent de l’espace sur l’écran sont appelés *éléments visuels* , encapsulés par la [`VisualElement`](xref:Xamarin.Forms.VisualElement) classe. Les éléments visuels peuvent être répartis en trois catégories correspondant à ces classes :
 
 - [Page](xref:Xamarin.Forms.Page)
 - [Disposition](xref:Xamarin.Forms.Layout)
-- [Afficher](xref:Xamarin.Forms.View)
+- [Visualiser](xref:Xamarin.Forms.View)
 
-Un `Page` dérivé occupe tout l’écran, ou presque la totalité de l’écran. Souvent, l’enfant d’une page est un `Layout` dérivé permettant d’organiser les éléments visuels enfants. Les enfants de `Layout` peuvent être d’autres `Layout` classes ou `View` dérivées (souvent appelées *éléments*), qui sont des objets familiers tels que du texte, des bitmaps, des curseurs, des boutons, des zones de liste, etc.
+Un `Page` dérivé occupe tout l’écran, ou presque la totalité de l’écran. Souvent, l’enfant d’une page est un `Layout` dérivé permettant d’organiser les éléments visuels enfants. Les enfants de `Layout` peuvent être d’autres `Layout` classes ou `View` dérivées (souvent appelées *éléments* ), qui sont des objets familiers tels que du texte, des bitmaps, des curseurs, des boutons, des zones de liste, etc.
 
 Ce chapitre explique comment créer une application en vous concentrant sur [`Label`](xref:Xamarin.Forms.Label) , qui est la `View` dérivée qui affiche du texte.
 
@@ -49,7 +49,7 @@ Cet exemple illustre une Xamarin.Forms solution créée dans Visual Studio sans 
 - [**Hello. UWP**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.UWP), un projet d’application pour le plateforme Windows universelle (Windows 10 et Windows 10 mobile)
 
 > [!NOTE]
-> Xamarin.Formsne prend plus en charge Windows 8.1, Windows Phone 8,1 ou Windows 10 mobile, mais Xamarin.Forms les applications s’exécutent sur le bureau Windows 10.
+> Xamarin.Forms ne prend plus en charge Windows 8.1, Windows Phone 8,1 ou Windows 10 mobile, mais Xamarin.Forms les applications s’exécutent sur le bureau Windows 10.
 
 Vous pouvez faire de ces projets d’application le projet de démarrage, puis générer et exécuter le programme sur un appareil ou un simulateur.
 
@@ -57,7 +57,7 @@ Dans la plupart de vos Xamarin.Forms programmes, vous ne modifierez pas les proj
 
 ## <a name="inside-the-files"></a>À l’intérieur des fichiers
 
-Les visuels affichés par le programme **Hello** sont définis dans le constructeur de la [`App`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello/App.cs) classe. `App`dérive de la Xamarin.Forms classe [`Application`](xref:Xamarin.Forms.Application) .
+Les visuels affichés par le programme **Hello** sont définis dans le constructeur de la [`App`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello/App.cs) classe. `App` dérive de la Xamarin.Forms classe [`Application`](xref:Xamarin.Forms.Application) .
 
 > [!NOTE]
 > Modèles de solution Visual Studio pour Xamarin.Forms créer une page avec un fichier XAML. XAML n’est pas couvert dans ce livre avant le [chapitre 7](chapter07.md).
@@ -82,21 +82,21 @@ Les sections **références** des cinq projets d’application incluent des asse
 
 Chacun des projets d’application contient un appel à la `Forms.Init` méthode statique dans l' `Xamarin.Forms` espace de noms. La bibliothèque est initialisée Xamarin.Forms . Une version différente de `Forms.Init` est définie pour chaque plateforme. Les appels à cette méthode se trouvent dans les classes suivantes :
 
-- Libéré[`AppDelegate`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.iOS/AppDelegate.cs)
-- Tablette[`MainActivity`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Droid/MainActivity.cs)
+- Libéré [`AppDelegate`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.iOS/AppDelegate.cs)
+- Tablette [`MainActivity`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Droid/MainActivity.cs)
 - UWP : [ `App` classe, `OnLaunched` méthode](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Droid/MainActivity.cs)
 
 En outre, chaque plateforme doit instancier l' `App` emplacement de la classe dans la bibliothèque partagée. Cela se produit dans un appel à `LoadApplication` dans les classes suivantes :
 
-- Libéré[`AppDelegate`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.iOS/AppDelegate.cs)
-- Tablette[`MainActivity`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Droid/MainActivity.cs)
-- UWP[`MainPage`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.UWP/MainPage.xaml.cs)
+- Libéré [`AppDelegate`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.iOS/AppDelegate.cs)
+- Tablette [`MainActivity`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Droid/MainActivity.cs)
+- UWP [`MainPage`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.UWP/MainPage.xaml.cs)
 
 Dans le cas contraire, ces projets d’application sont des programmes « ne rien faire » normaux.
 
 ## <a name="pcl-or-sap"></a>PCL ou SAP ?
 
-Il est possible de créer une Xamarin.Forms solution avec le code commun dans une bibliothèque de classes portable (PCL) ou un projet de ressources partagées (SAP). Pour créer une solution SAP, sélectionnez l’option partagé dans Visual Studio. La solution [**HelloSap**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/HelloSap) illustre le modèle SAP sans aucune modification.
+Il est possible de créer une Xamarin.Forms solution avec le code commun dans une bibliothèque de classes portable (PCL) ou un projet de ressources partagées (SAP). Pour créer une solution SAP, sélectionnez l’option partagé dans Visual Studio. La solution  [**HelloSap**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/HelloSap) illustre le modèle SAP sans aucune modification.
 
 > [!NOTE]
 > Les bibliothèques de classes portables ont été remplacées par les bibliothèques de .NET Standard. Tout l’exemple de code du livre a été converti pour utiliser des bibliothèques .NET standard. Dans le cas contraire, les bibliothèques PCL et .NET Standard sont conceptuellement très similaires.
@@ -107,9 +107,9 @@ La plupart des Xamarin.Forms développeurs préfèrent l’approche de la biblio
 
 Avec l’approche SAP, le code du projet partagé peut exécuter un code différent pour les différentes plateformes en utilisant les directives de préprocesseur C# ( `#if` , # `elif` et `#endif` ) avec ces identificateurs prédéfinis :
 
-- Libéré`__IOS__`
+- iOS : `__IOS__`
 - Android : `__ANDROID__`
-- UWP`WINDOWS_UWP`
+- UWP `WINDOWS_UWP`
 
 Dans une bibliothèque partagée, vous pouvez déterminer la plateforme que vous utilisez lors de l’exécution, comme vous le verrez plus loin dans ce chapitre.
 
@@ -123,14 +123,14 @@ Le texte est affiché dans l’angle supérieur gauche de la page. Sur iOS, cela
 
 ### <a name="solution-1-include-padding-on-the-page"></a>Solution 1. Inclure le remplissage sur la page
 
-Définissez une [`Padding`](xref:Xamarin.Forms.Page.Padding) propriété sur la page. `Padding`est de type [`Thickness`](xref:Xamarin.Forms.Thickness) , une structure avec quatre propriétés :
+Définissez une [`Padding`](xref:Xamarin.Forms.Page.Padding) propriété sur la page. `Padding` est de type [`Thickness`](xref:Xamarin.Forms.Thickness) , une structure avec quatre propriétés :
 
 - [`Left`](xref:Xamarin.Forms.Thickness.Left)
 - [`Top`](xref:Xamarin.Forms.Thickness.Top)
 - [`Right`](xref:Xamarin.Forms.Thickness.Right)
 - [`Bottom`](xref:Xamarin.Forms.Thickness.Bottom)
 
-`Padding`définit une zone à l’intérieur d’une page où le contenu est exclu. Cela permet `Label` à d’éviter de remplacer la barre d’État iOS.
+`Padding` définit une zone à l’intérieur d’une page où le contenu est exclu. Cela permet `Label` à d’éviter de remplacer la barre d’État iOS.
 
 ### <a name="solution-2-include-padding-just-for-ios-sap-only"></a>Solution 2. Inclure le remplissage uniquement pour iOS (SAP uniquement)
 
@@ -144,7 +144,7 @@ Les `Device.OnPlatform` méthodes sont utilisées pour exécuter du code spécif
 
 - [`iOS`](xref:Xamarin.Forms.TargetPlatform.iOS)
 - [`Android`](xref:Xamarin.Forms.TargetPlatform.Android)
-- [`Windows`](xref:Xamarin.Forms.TargetPlatform.Windows)pour les appareils UWP.
+- [`Windows`](xref:Xamarin.Forms.TargetPlatform.Windows) pour les appareils UWP.
 
 Les `Device.OnPlatform` méthodes, la `Device.OS` propriété et l' `TargetPlatform` énumération sont désormais dépréciées. Utilisez plutôt la [`Device.RuntimePlatform`](xref:Xamarin.Forms.Device.RuntimePlatform) propriété et comparez la `string` valeur de retour avec les champs statiques suivants :
 
@@ -157,7 +157,7 @@ La [`Device.Idiom`](xref:Xamarin.Forms.Device.Idiom) propriété en lecture seul
 - [`Desktop`](xref:Xamarin.Forms.TargetIdiom.Desktop)
 - [`Tablet`](xref:Xamarin.Forms.TargetIdiom.Tablet)
 - [`Phone`](xref:Xamarin.Forms.TargetIdiom.Phone)
-- [`Unsupported`](xref:Xamarin.Forms.TargetIdiom.Unsupported)n’est pas utilisé
+- [`Unsupported`](xref:Xamarin.Forms.TargetIdiom.Unsupported) n’est pas utilisé
 
 Pour iOS et Android, la coupure entre `Tablet` et `Phone` est une largeur portrait de 600 unités. Pour la plateforme Windows, `Desktop` indique une application UWP s’exécutant sous Windows 10 et `Phone` indique une application UWP s’exécutant sous l’application Windows 10.
 
@@ -186,7 +186,7 @@ En général, ces propriétés ne sont pas utilisées directement. Au lieu de ce
 - [`LayoutOptions.EndAndExpand`](xref:Xamarin.Forms.LayoutOptions.EndAndExpand)
 - [`LayoutOptions.FillAndExpand`](xref:Xamarin.Forms.LayoutOptions.FillAndExpand)
 
-`HorizontalOptions`et `VerticalOptions` sont les propriétés les plus importantes de la Xamarin.Forms mise en page. elles sont abordées plus en détail dans le [**Chapitre 4. Défilement de la pile**](chapter04.md).
+`HorizontalOptions` et `VerticalOptions` sont les propriétés les plus importantes de la Xamarin.Forms mise en page. elles sont abordées plus en détail dans le [**Chapitre 4. Défilement de la pile**](chapter04.md).
 
 Voici le résultat avec les `HorizontalOptions` Propriétés et `VerticalOptions` des `Label` deux ayant la valeur `LayoutOptions.Center` :
 
@@ -207,4 +207,4 @@ Ces deux propriétés sont définies uniquement par `Label` , tandis que les `Ho
 - [Chapitre 2 texte intégral (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch02-Apr2016.pdf)
 - [Exemples du chapitre 2](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02)
 - [Exemples de chapitre 2 F #](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/FS)
-- [Prise en main avecXamarin.Forms](~/get-started/index.yml)
+- [Prise en main avec Xamarin.Forms](~/get-started/index.yml)

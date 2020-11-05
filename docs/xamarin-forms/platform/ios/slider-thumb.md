@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c3e74d52eee5da11dffc3c8a778fa2f691f1ca02
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 66fd7fcd5accbc1b6b1595fcb8ee7b1f8eb8d6d4
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91560934"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93370739"
 ---
 # <a name="slider-thumb-tap-on-ios"></a>Robinet curseur sur iOS
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Ce spécifique à la plateforme iOS permet [`Slider.Value`](xref:Xamarin.Forms.Slider.Value) de définir la propriété en appuyant sur une position sur la [`Slider`](xref:Xamarin.Forms.Slider) barre, plutôt qu’en faisant glisser le `Slider` curseur de défilement. Il est consommé en XAML en affectant [`Slider.UpdateOnTap`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Slider.UpdateOnTapProperty) à la propriété pouvant être liée la valeur `true` :
 

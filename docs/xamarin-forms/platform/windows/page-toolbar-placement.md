@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f0d552db24e89c3bc10ca6f38f9e8f936bd4290d
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 4caf352024d7ae2a89d49ff021f0f90f35fdd8eb
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91555760"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93372208"
 ---
 # <a name="page-toolbar-placement-on-windows"></a>Positionnement de la barre d’outils de la page sur Windows
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Ce plateforme Windows universelle spécifique à la plateforme est utilisé pour modifier le positionnement d’une barre d’outils sur un [`Page`](xref:Xamarin.Forms.Page) et est consommé en XAML en affectant [`Page.ToolbarPlacement`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.Page.ToolbarPlacementProperty) à la propriété jointe la valeur de l' [`ToolbarPlacement`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement) énumération :
 
@@ -45,7 +45,7 @@ La `Page.On<Windows>` méthode spécifie que ce spécifique à la plateforme s�
 
 Le résultat est que la position de la barre d’outils spécifiée est appliquée à l' [`Page`](xref:Xamarin.Forms.Page) instance :
 
-[![Positionnement de la barre d’outils spécifique à la plateforme](page-toolbar-placement-images/toolbar-placement.png)](page-toolbar-placement-images/toolbar-placement-large.png#lightbox "Positionnement de la barre d’outils spécifique à la plateforme")
+[![Positionnement de la barre d’outils spécifique à la plateforme](page-toolbar-placement-images/toolbar-placement.png)](page-toolbar-placement-images/toolbar-placement-large.png#lightbox "Platform-Specific de positionnement de la barre d’outils")
 
 ## <a name="related-links"></a>Liens connexes
 

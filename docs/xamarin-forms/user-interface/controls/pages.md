@@ -10,16 +10,16 @@ ms.date: 01/12/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9164275b75c021a79b6ea5ea64194997ad804ece
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 2a3540773aec977c6d17592ff6a0ea1e16acc2b9
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563209"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93372169"
 ---
 # <a name="no-locxamarinforms-pages"></a>Xamarin.Forms Pages
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/formsgallery/)
 
 _Xamarin.Forms Les pages représentent des écrans d’application mobile multiplateforme._
 

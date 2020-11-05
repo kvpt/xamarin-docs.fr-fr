@@ -10,23 +10,23 @@ ms.date: 05/22/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e2c6898439da5869d79bc500643ca3cfc52c2e3f
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: db32d4250bf5ba63761c59f67b64b59fa565e651
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557554"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93371012"
 ---
 # <a name="no-locxamarinforms-text-styles"></a>Xamarin.Forms Styles de texte
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
 _Styliser du texte dans Xamarin.Forms_
 
 Les styles peuvent être utilisés pour ajuster l’apparence des étiquettes, des entrées et des éditeurs. Les styles peuvent être définis une fois et utilisés par de nombreuses vues, mais un style peut être utilisé uniquement avec les vues d’un seul type.
 Les styles peuvent être attribués `Key` et appliqués de manière sélective à l’aide de la propriété d’un contrôle spécifique `Style` .
 
-## <a name="built-in-styles"></a>Styles intégrés
+## <a name="built-in-styles"></a>Styles de Built-In
 
 Xamarin.Forms comprend plusieurs styles [intégrés](xref:Xamarin.Forms.Device.Styles) pour les scénarios courants :
 

@@ -10,16 +10,16 @@ ms.date: 11/05/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2336a4fbd92a7e9158d332de1ea2e2b018d144ce
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: db7101d5e50dc6ee7840023f6ec4efeb2c52150b
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556657"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93370193"
 ---
 # <a name="simple-animations-in-no-locxamarinforms"></a>Animations simples dans Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-basic)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-animation-basic)
 
 _La classe ViewExtensions fournit des méthodes d’extension qui peuvent être utilisées pour construire des animations simples. Cet article explique comment créer et annuler des animations à l’aide de la classe ViewExtensions._
 
@@ -230,7 +230,7 @@ ViewExtensions.CancelAnimations (image);
 
 Cette opération annule immédiatement toutes les animations en cours d’exécution sur l' [`Image`](xref:Xamarin.Forms.Image) instance.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a montré comment créer et annuler des animations à l’aide de la [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) classe. Cette classe fournit des méthodes d’extension qui peuvent être utilisées pour construire des animations simples qui font pivoter, mettre à l’échelle, traduire et estomper des [`VisualElement`](xref:Xamarin.Forms.VisualElement) instances.
 

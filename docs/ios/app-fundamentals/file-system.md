@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 11/12/2018
-ms.openlocfilehash: ef632b4bff3313de82c71cb5839ecdc24c9242ad
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: ffb49329b38705d097520b24d53285d5dbf15167
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91431491"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93371805"
 ---
 # <a name="file-system-access-in-xamarinios"></a>Accès au système de fichiers dans Xamarin. iOS
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/ios-samples/filesystemsamplecode)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/ios-samples/filesystemsamplecode)
 
 Vous pouvez utiliser Xamarin. iOS et les `System.IO` classes de la *bibliothèque de classes de base .net (BCL)* pour accéder au système de fichiers iOS. La classe `File` permet de créer, supprimer et lire des fichiers, et la classe `Directory` permet de créer, supprimer ou énumérer le contenu des répertoires. Vous pouvez également utiliser `Stream` des sous-classes, qui permettent de mieux contrôler les opérations sur les fichiers (par exemple, la compression ou la recherche de position dans un fichier).
 
@@ -155,7 +155,7 @@ Pour marquer un fichier à inclure, cliquez avec le bouton droit sur le ou les f
 
 Il est important de comprendre que le système de fichiers iOS respecte la *casse*. Le respect de la casse signifie que vos noms de fichiers et de répertoires doivent correspondre exactement – **README.txt** et **readme.txt** seraient considérés comme des noms de fichiers différents.
 
-Cela peut être confus pour les développeurs .NET qui sont plus familiarisés avec le système de fichiers Windows, qui ne respecte pas la *casse* : les **fichiers** **, les fichiers et**les **fichiers** font tous référence au même répertoire.
+Cela peut être confus pour les développeurs .NET qui sont plus familiarisés avec le système de fichiers Windows, qui ne respecte pas la *casse* : les **fichiers** **, les fichiers et** les **fichiers** font tous référence au même répertoire.
 
 > [!WARNING]
 > Le simulateur iOS ne respecte pas la casse.
@@ -200,7 +200,7 @@ Ces répertoires, la façon de déterminer leur chemin d’accès et leurs objec
 
 |Répertoire|Description|
 |---|---|
-|[ApplicationName]. app/|**Dans iOS 7 et les versions antérieures**, il s’agit du `ApplicationBundle` répertoire dans lequel l’exécutable de votre application est stocké. La structure de répertoires que vous créez dans votre application existe dans ce répertoire (par exemple, les images et autres types de fichiers que vous avez marqués comme ressources dans votre projet Visual Studio pour Mac).<br /><br />Si vous avez besoin d’accéder aux fichiers de contenu à l’intérieur de votre offre groupée d’applications, le chemin d’accès à ce répertoire est disponible via la `NSBundle.MainBundle.BundlePath` propriété.|
+|[ApplicationName]. app/|**Dans iOS 7 et les versions antérieures** , il s’agit du `ApplicationBundle` répertoire dans lequel l’exécutable de votre application est stocké. La structure de répertoires que vous créez dans votre application existe dans ce répertoire (par exemple, les images et autres types de fichiers que vous avez marqués comme ressources dans votre projet Visual Studio pour Mac).<br /><br />Si vous avez besoin d’accéder aux fichiers de contenu à l’intérieur de votre offre groupée d’applications, le chemin d’accès à ce répertoire est disponible via la `NSBundle.MainBundle.BundlePath` propriété.|
 |Évoqu|Utilisez ce répertoire pour stocker les documents utilisateur et les fichiers de données d’application.<br /><br />Le contenu de ce répertoire peut être mis à la disposition de l’utilisateur par le biais du partage de fichiers iTunes (bien que cela soit désactivé par défaut). Ajoutez une `UIFileSharingEnabled` clé booléenne au fichier info. plist pour permettre aux utilisateurs d’accéder à ces fichiers.<br /><br />Même si une application n’active pas immédiatement le partage de fichiers, vous devez éviter de placer les fichiers qui doivent être masqués par vos utilisateurs dans ce répertoire (tels que les fichiers de base de données, sauf si vous envisagez de les partager). Tant que les fichiers sensibles restent masqués, ces fichiers ne sont pas exposés (et éventuellement déplacés, modifiés ou supprimés par iTunes) si le partage de fichiers est activé dans une version ultérieure.<br /><br /> Vous pouvez utiliser la `Environment.GetFolderPath (Environment.SpecialFolder.MyDocuments)` méthode pour obtenir le chemin d’accès au répertoire documents de votre application.<br /><br />Le contenu de ce répertoire est sauvegardé par iTunes.|
 |Bibliothèque|Le répertoire de bibliothèque est un bon emplacement pour stocker des fichiers qui ne sont pas créés directement par l’utilisateur, tels que des bases de données ou d’autres fichiers générés par l’application. Le contenu de ce répertoire n’est jamais exposé à l’utilisateur via iTunes.<br /><br />Vous pouvez créer vos propres sous-répertoires dans la bibliothèque. Toutefois, il existe déjà des répertoires créés par le système, dont vous devez être conscient, y compris les préférences et les caches.<br /><br />Le contenu de ce répertoire (à l’exception du sous-répertoire caches) est sauvegardé par iTunes. Les répertoires personnalisés que vous créez dans la bibliothèque seront sauvegardés.|
 |Bibliothèque/Préférences/|Les fichiers de préférences spécifiques à l’application sont stockés dans ce répertoire. Ne créez pas ces fichiers directement. Utilisez plutôt la `NSUserDefaults` classe.<br /><br />Le contenu de ce répertoire est sauvegardé par iTunes.|
@@ -263,7 +263,7 @@ Les utilisateurs ne peuvent accéder aux éléments de niveau supérieur de ce r
 
 Les utilisateurs qui modifient le contenu du dossier documents peuvent provoquer des problèmes s’ils ne sont pas vigilants. Votre application doit prendre cela en considération et être résiliente aux mises à jour destructrices du dossier Documents.
 
-L’exemple de code de cet article crée un fichier et un dossier dans le dossier documents (dans **SampleCode.cs**) et active le partage de fichiers dans le fichier **info. plist** . Cette capture d’écran montre comment elles apparaissent dans iTunes :
+L’exemple de code de cet article crée un fichier et un dossier dans le dossier documents (dans **SampleCode.cs** ) et active le partage de fichiers dans le fichier **info. plist** . Cette capture d’écran montre comment elles apparaissent dans iTunes :
 
 [![Cette capture d’écran montre comment les fichiers apparaissent dans iTunes](file-system-images/15-itunes-file-sharing-example-sml.png)](file-system-images/15-itunes-file-sharing-example.png#lightbox)
 
@@ -319,7 +319,7 @@ NSFileManager.SetSkipBackupAttribute (filename, false); // file will be backed-u
 
 ### <a name="configure-an-app-group"></a>Configurer un groupe d’applications
 
-L’emplacement partagé est configuré à l’aide d’un [groupe d’applications](https://developer.apple.com/library/archive/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/EnablingAppSandbox.html#//apple_ref/doc/uid/TP40011195-CH4-SW19), qui est configuré dans la section **certificats, identificateurs & profils** du [Centre de développement iOS](https://developer.apple.com/devcenter/ios/). Cette valeur doit également être référencée dans les **droits. plist**de chaque projet.
+L’emplacement partagé est configuré à l’aide d’un [groupe d’applications](https://developer.apple.com/library/archive/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/EnablingAppSandbox.html#//apple_ref/doc/uid/TP40011195-CH4-SW19), qui est configuré dans la section **certificats, identificateurs & profils** du [Centre de développement iOS](https://developer.apple.com/devcenter/ios/). Cette valeur doit également être référencée dans les **droits. plist** de chaque projet.
 
 Pour plus d’informations sur la création et la configuration d’un groupe d’applications, reportez-vous au Guide des [fonctionnalités du groupe d’applications](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md) .
 

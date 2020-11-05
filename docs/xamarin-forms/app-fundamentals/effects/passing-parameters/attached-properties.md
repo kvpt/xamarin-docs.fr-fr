@@ -10,16 +10,16 @@ ms.date: 08/05/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c014396f9670ece93295c2c8da1738f9dc7dae9e
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 103839c7016b7e9776e80f3f3459f8dc92b3bcbb
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91555981"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93371649"
 ---
 # <a name="passing-effect-parameters-as-attached-properties"></a>Passer des paramètres d’effet en tant que propriétés jointes
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffectruntimechange)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/effects-shadoweffectruntimechange)
 
 _Les propriétés jointes peuvent être utilisées pour définir des paramètres d’effet qui répondent aux modifications de propriété d’exécution. Cet article montre comment utiliser des propriétés jointes pour passer des paramètres à un effet et comment modifier un paramètre au moment de l’exécution._
 
@@ -104,8 +104,8 @@ La classe `ShadowEffect` contient cinq propriétés jointes, elles-mêmes ayant 
 
 La classe imbriquée `LabelShadowEffect` , qui sous-classe la [`RoutingEffect`](xref:Xamarin.Forms.RoutingEffect) classe, prend en charge l’ajout et la suppression d’effets. La classe `RoutingEffect` représente un effet indépendant de la plateforme qui wrappe un effet interne généralement propre à une plateforme. Cela simplifie le processus de suppression de l’effet, car il n’y a pas d’accès au moment de la compilation aux informations de type pour un effet propre à la plateforme. Le constructeur `LabelShadowEffect` appelle le constructeur de classe de base, en passant un paramètre constitué d’une concaténation du nom du groupe de résolution, et l’ID unique qui a été spécifié sur la classe d’effet propre à chaque plateforme. Cela permet l’ajout et la suppression de l’effet dans la méthode `OnHasShadowChanged` de la façon suivante :
 
-- **Ajout de l’effet** : une nouvelle instance de `LabelShadowEffect` est ajoutée à la collection [`Effects`](xref:Xamarin.Forms.Element.Effects) du contrôle. Cela remplace l’utilisation [`Effect.Resolve`](xref:Xamarin.Forms.Effect.Resolve(System.String)) de la méthode pour ajouter l’effet.
-- **Suppression de l’effet** : la première instance de `LabelShadowEffect` dans la collection [`Effects`](xref:Xamarin.Forms.Element.Effects) du contrôle est retirée et supprimée.
+- **Ajout de l’effet**  : une nouvelle instance de `LabelShadowEffect` est ajoutée à la collection [`Effects`](xref:Xamarin.Forms.Element.Effects) du contrôle. Cela remplace l’utilisation [`Effect.Resolve`](xref:Xamarin.Forms.Effect.Resolve(System.String)) de la méthode pour ajouter l’effet.
+- **Suppression de l’effet**  : la première instance de `LabelShadowEffect` dans la collection [`Effects`](xref:Xamarin.Forms.Element.Effects) du contrôle est retirée et supprimée.
 
 ## <a name="consuming-the-effect"></a>Consommation de l’effet
 
@@ -164,7 +164,7 @@ ShadowEffect.SetColor (label, Color.Teal);
 
 ### <a name="consuming-the-effect-with-a-style"></a>Consommation de l’effet avec un style
 
-Les effets qui peuvent être consommés en ajoutant des propriétés jointes à un contrôle peuvent également être consommés par un style. L’exemple de code XAML suivant montre un style *explicite* pour l’effet d’ombre, applicable aux contrôles [`Label`](xref:Xamarin.Forms.Label) :
+Les effets qui peuvent être consommés en ajoutant des propriétés jointes à un contrôle peuvent également être consommés par un style. L’exemple de code XAML suivant montre un style *explicite* pour l’effet d’ombre, applicable aux contrôles  [`Label`](xref:Xamarin.Forms.Label) :
 
 ```xaml
 <Style x:Key="ShadowEffectStyle" TargetType="Label">
@@ -432,7 +432,7 @@ public class LabelShadowEffect : PlatformEffect
 
 La méthode `OnElementPropertyChanged` met à jour la couleur ou le décalage de l’ombre si la valeur de la propriété jointe `ShadowEffect` appropriée a changé. Une vérification de la propriété changée doit toujours être effectuée, car cette substitution peut être appelée plusieurs fois.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a décrit comment utiliser des propriétés jointes pour passer des paramètres à un effet et comment changer un paramètre au moment de l’exécution. Les propriétés jointes permettent de définir des paramètres d’effet qui répondent aux changements apportés aux propriétés au moment de l’exécution.
 

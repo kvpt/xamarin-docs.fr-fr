@@ -10,16 +10,16 @@ ms.date: 02/17/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a8aea2617d31289266e792afba773973eddb2d93
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 46e4147b61d4d78ec30e047452720c422e7b1dc9
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562234"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93371857"
 ---
 # <a name="style-inheritance-in-no-locxamarinforms"></a>Héritage de style dans Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 
 _Les styles peuvent hériter d’autres styles pour réduire la duplication et permettre la réutilisation._
 
@@ -165,4 +165,4 @@ Les `baseStyle` [`View`](xref:Xamarin.Forms.View) instances cibles et définit l
 - [Utilisation des styles (exemple)](/samples/xamarin/xamarin-forms-samples/workingwithstyles)
 - [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
 - [Style](xref:Xamarin.Forms.Style)
-- [Déclaré](xref:Xamarin.Forms.Setter)
+- [Setter](xref:Xamarin.Forms.Setter)

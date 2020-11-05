@@ -10,16 +10,16 @@ ms.date: 07/17/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9a39433a0bad518055542adb190f4f441675ddfb
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: fe63f3fdab5d508ab0202fbfe93bdc223f97d28a
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556371"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93370167"
 ---
 # <a name="segmented-display-of-skiasharp-bitmaps"></a>Affichage segmenté des bitmaps SkiaSharp
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 L' `SKCanvas` objet SkiaSharp définit une méthode nommée `DrawBitmapNinePatch` et deux méthodes nommées `DrawBitmapLattice` qui sont très similaires. Ces deux méthodes restituent une bitmap à la taille d’un rectangle de destination, mais au lieu d’étirer la bitmap uniformément, elles affichent des parties de la bitmap dans ses dimensions en pixels et étirent d’autres parties de la bitmap afin qu’elles s’ajustent au rectangle :
 
@@ -110,7 +110,7 @@ public class NinePatchDisplayPage : ContentPage
 
 Le `centerRect` rectangle englobe le tableau central de 16 cercles. Les cercles des angles s’affichent dans leurs dimensions en pixels, et tout le reste est étiré en conséquence :
 
-[![Neuf-affichage des correctifs](segmented-images/NinePatchDisplay.png "Neuf-affichage des correctifs")](segmented-images/NinePatchDisplay-Large.png#lightbox)
+[![Neuf-affichage des correctifs](segmented-images/NinePatchDisplay.png "Affichage Nine-Patch")](segmented-images/NinePatchDisplay-Large.png#lightbox)
 
 La page UWP se trouve à 500 pixels de largeur et affiche donc les lignes du haut et du bas sous la forme d’une série de cercles de même taille. Dans le cas contraire, tous les cercles qui ne se trouvent pas dans les angles sont étirés pour former des ellipses.
 
@@ -182,7 +182,7 @@ Les `XDivs` Propriétés et `YDivs` sont toutes deux définies sur des tableaux 
 
 L’affichage est identique à celui du programme précédent :
 
-[![Treillis neuf-correctif](segmented-images/LatticeNinePatch.png "Treillis neuf-correctif")](segmented-images/LatticeNinePatch-Large.png#lightbox)
+[![Treillis neuf-correctif](segmented-images/LatticeNinePatch.png "Nine-Patch de treillis")](segmented-images/LatticeNinePatch-Large.png#lightbox)
 
 La page d' **affichage de treillis** divise la bitmap en 16 rectangles :
 

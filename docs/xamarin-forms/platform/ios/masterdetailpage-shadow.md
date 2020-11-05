@@ -10,16 +10,16 @@ ms.date: 03/05/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0b3f7a28452d8507c4cb4a42d75b5edb5d62d8e4
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: fc6185a303e8fd7bdf68903d3d7bacc646cde601
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563681"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93372416"
 ---
 # <a name="masterdetailpage-shadow-on-ios"></a>Ombre MasterDetailPage sur iOS
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Ce contrôle propre à la plateforme détermine si une ombre est appliquée à la page de détails d’une [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) , lors de la révélation de la page maître. Il est consommé en XAML en affectant `MasterDetailPage.ApplyShadow` à la propriété pouvant être liée la valeur `true` :
 

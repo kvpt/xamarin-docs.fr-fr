@@ -10,16 +10,16 @@ ms.date: 10/24/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b109459f583afd491b613b4e32e4e4530eeb5ca4
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: cb1aa068e702b4d12bf112486e77a1c893b68956
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562689"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93370856"
 ---
 # <a name="creating-an-effect"></a>Création d’un effet
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-focuseffect)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/effects-focuseffect)
 
 _Les effets simplifient la personnalisation d’un contrôle. Cet article montre comment créer un effet qui modifie la couleur d’arrière-plan du contrôle d’entrée lorsque le contrôle obtient le focus._
 
@@ -265,7 +265,7 @@ public HomePageCS ()
 
 [`Effect.Resolve`](xref:Xamarin.Forms.Effect.Resolve(System.String))Retourne un [`Effect`](xref:Xamarin.Forms.Effect) pour le nom spécifié, qui est une concaténation du nom du groupe de résolutions (spécifié à l’aide de l' [`ResolutionGroupName`](xref:Xamarin.Forms.ResolutionGroupNameAttribute) attribut sur la classe Effect) et de l’ID unique spécifié à l’aide de l' [`ExportEffect`](xref:Xamarin.Forms.ExportEffectAttribute) attribut sur la classe Effect. Si une plateforme ne fournit pas l’effet, la méthode `Effect.Resolve` retourne une valeur non `null`.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a montré comment créer un effet qui modifie la couleur d’arrière-plan du [`Entry`](xref:Xamarin.Forms.Entry) contrôle lorsque le contrôle obtient le focus.
 

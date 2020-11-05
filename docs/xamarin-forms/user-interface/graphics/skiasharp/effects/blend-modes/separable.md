@@ -10,18 +10,18 @@ ms.date: 08/23/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0fd934a305e34bb7406a0379a0882873e3400fe8
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 3480c2fe2ef94a2a1beee9a924a59cd90d3a42b3
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91558360"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93370804"
 ---
 # <a name="the-separable-blend-modes"></a>Modes de fusion séparable
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-Comme vous l’avez vu dans l’article [**SkiaSharp porter-Duff Blend modes**](porter-duff.md), les modes de mélange porter-Duff effectuent généralement des opérations de découpage. Les modes de fusion séparable sont différents. Les modes séparables modifient les composants de couleur rouge, vert et bleu d’une image. Les modes de fusion séparable peuvent mélanger la couleur pour démontrer que la combinaison de rouge, de vert et de bleu est effectivement blanche :
+Comme vous l’avez vu dans l’article [**SkiaSharp Porter-Duff modes de fusion**](porter-duff.md), les modes Porter-Duff Blend effectuent généralement des opérations de découpage. Les modes de fusion séparable sont différents. Les modes séparables modifient les composants de couleur rouge, vert et bleu d’une image. Les modes de fusion séparable peuvent mélanger la couleur pour démontrer que la combinaison de rouge, de vert et de bleu est effectivement blanche :
 
 ![Couleurs primaires](separable-images/SeparableSample.png "Couleurs primaires")
 
@@ -153,20 +153,20 @@ Le tableau suivant présente tous les modes de fusion séparables avec une brèv
 | Mode de fusion   | Aucun changement | Opération |
 | ------------ | --------- | --------- |
 | `Plus`       | Noir     | Éclaircit en ajoutant des couleurs : SC + DC |
-| `Modulate`   | Blancs     | Assombrit en multipliant les couleurs : SC · Métafichier | 
+| `Modulate`   | White     | Assombrit en multipliant les couleurs : SC · Métafichier | 
 | `Screen`     | Noir     | Complète le produit de compléments : SC + DC &ndash; SC · Métafichier |
 | `Overlay`    | Gris      | Inverse de `HardLight` |
-| `Darken`     | Blancs     | Nombre minimal de couleurs : min (SC, DC) |
+| `Darken`     | White     | Nombre minimal de couleurs : min (SC, DC) |
 | `Lighten`    | Noir     | Nombre maximal de couleurs : Max (SC, DC) |
 | `ColorDodge` | Noir     | Éclaircit la destination en fonction de la source |
-| `ColorBurn`  | Blancs     | Assombrit la destination en fonction de la source | 
+| `ColorBurn`  | White     | Assombrit la destination en fonction de la source | 
 | `HardLight`  | Gris      | Similaire à l’effet de la lumière crue |
 | `SoftLight`  | Gris      | Similaire à l’effet de la lumière douce | 
 | `Difference` | Noir     | Soustrait le plus sombre du plus clair : ABS (DC &ndash; SC) | 
 | `Exclusion`  | Noir     | Semblable à, `Difference` mais contraste inférieur |
-| `Multiply`   | Blancs     | Assombrit en multipliant les couleurs : SC · Métafichier |
+| `Multiply`   | White     | Assombrit en multipliant les couleurs : SC · Métafichier |
 
-Vous trouverez des algorithmes plus détaillés dans la spécification du W3C sur la [**composition et la fusion de niveau 1**](https://www.w3.org/TR/compositing-1/) et la [**référence skia SkBlendMode**](https://skia.org/user/api/SkBlendMode_Reference), bien que la notation dans ces deux sources ne soit pas la même. Gardez à l’esprit que `Plus` est généralement considéré comme un mode de fusion porter-Duff et qu’il ne fait `Modulate` pas partie de la spécification du W3C.
+Vous trouverez des algorithmes plus détaillés dans la spécification du W3C sur la [**composition et la fusion de niveau 1**](https://www.w3.org/TR/compositing-1/) et la [**référence skia SkBlendMode**](https://skia.org/user/api/SkBlendMode_Reference), bien que la notation dans ces deux sources ne soit pas la même. Gardez à l’esprit que `Plus` est généralement considéré comme un Porter-Duff mode Blend et qu’il ne fait `Modulate` pas partie de la spécification du W3C.
 
 Si la source est transparente, pour tous les modes de fusion séparable à l’exception de `Modulate` , le mode de fusion n’a aucun effet. Comme vous l’avez vu précédemment, le `Modulate` mode fondu incorpore le canal alpha dans la multiplication. Sinon, `Modulate` a le même effet que `Multiply` . 
 

@@ -10,16 +10,19 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6ea63fc483025fc6f9b0c7f379b6dfdc6ca30de8
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: f1c5af73c7c7fd160f715d7dbfab26c72cb06a31
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84198087"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93371545"
 ---
 # <a name="preface-to-enterprise-app-development"></a>Préface au développement d’applications d’entreprise
 
-Ce livre électronique fournit des conseils sur la création d’applications d’entreprise multiplateforme à l’aide de Xamarin.Forms . Xamarin.Formsest une boîte à outils d’interface utilisateur multiplateforme qui permet aux développeurs de créer facilement des dispositions d’interface utilisateur natives qui peuvent être partagées entre différentes plateformes, notamment iOS, Android et le plateforme Windows universelle (UWP). Il offre une solution complète pour les applications d’entreprise à employé (B2E), d’entreprise à entreprise (B2B) et d’entreprise à consommateur (B2C), offrant ainsi la possibilité de partager du code sur toutes les plateformes cibles et de réduire le coût total de possession (TCO).
+> [!NOTE]
+> Ce livre électronique a été publié au printemps de 2017 et n’a pas été mis à jour depuis. Le livre reste très utile, mais certains éléments du matériel sont obsolètes.
+
+Ce livre électronique fournit des conseils sur la création d’applications d’entreprise multiplateforme à l’aide de Xamarin.Forms . Xamarin.Forms est une boîte à outils d’interface utilisateur multiplateforme qui permet aux développeurs de créer facilement des dispositions d’interface utilisateur natives qui peuvent être partagées entre différentes plateformes, notamment iOS, Android et le plateforme Windows universelle (UWP). Il offre une solution complète pour les applications d’entreprise à employé (B2E), d’entreprise à entreprise (B2B) et d’entreprise à consommateur (B2C), offrant ainsi la possibilité de partager du code sur toutes les plateformes cibles et de réduire le coût total de possession (TCO).
 
 Ce guide fournit des conseils architecturaux pour le développement d’applications d’entreprise adaptables, gérables et pouvant être testées Xamarin.Forms . Des conseils sont fournis sur la façon d’implémenter MVVM, l’injection de dépendances, la navigation, la validation et la gestion de la configuration, tout en maintenant un couplage faible. En outre, il existe également des conseils sur l’exécution de l’authentification et de l’autorisation avec IdentityServer, l’accès aux données à partir de microservices en conteneur et les tests unitaires.
 
@@ -43,7 +46,7 @@ Ce guide se concentre sur la création d’applications d’entreprise multiplat
 
 N’hésitez pas à transmettre ce guide aux membres de l’équipe afin de garantir une compréhension commune du développement d’applications d’entreprise multiplateforme à l’aide de Xamarin.Forms . Faire en sorte que tout le monde travaille à partir d’un ensemble commun de terminologies et de principes sous-jacents permet de garantir une application cohérente des modèles et des pratiques d’architecture.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Télécharger le livre électronique (PDF de 2 Mo)](https://aka.ms/xamarinpatternsebook)
 - [eShopOnContainers (GitHub) (exemple)](https://github.com/dotnet-architecture/eShopOnContainers)

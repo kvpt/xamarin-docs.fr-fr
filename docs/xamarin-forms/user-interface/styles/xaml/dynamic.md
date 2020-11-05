@@ -11,16 +11,16 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.custom: video
-ms.openlocfilehash: d6944da583679d58885c20d327b3e43e176eb6fa
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 520af44a307c8d493f550bbaeaa009bcdc94d8e0
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563352"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93371610"
 ---
 # <a name="dynamic-styles-in-no-locxamarinforms"></a>Styles dynamiques dans Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-dynamicstyles)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-styles-dynamicstyles)
 
 _Les styles ne répondent pas aux modifications de propriété et restent inchangés pour la durée d’une application. Par exemple, après avoir assigné un style à un élément visuel, si l’une des instances d’accesseur Set est modifiée, supprimée ou qu’une nouvelle instance d’accesseur Set a été ajoutée, les modifications ne seront pas appliquées à l’élément visuel. Toutefois, les applications peuvent répondre de manière dynamique aux modifications de style au moment de l’exécution à l’aide de ressources dynamiques._
 
@@ -218,7 +218,7 @@ Le `tealSearchBarStyle` est assigné directement à la [`Style`](xref:Xamarin.Fo
 - [Utilisation des styles (exemple)](/samples/xamarin/xamarin-forms-samples/workingwithstyles)
 - [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
 - [Style](xref:Xamarin.Forms.Style)
-- [Déclaré](xref:Xamarin.Forms.Setter)
+- [Setter](xref:Xamarin.Forms.Setter)
 
 ## <a name="related-video"></a>Vidéo connexe
 

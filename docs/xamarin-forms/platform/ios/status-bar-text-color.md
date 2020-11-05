@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 09b5f145b273d234322eb560207c65aab3313558
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 9459ce5e8b8f167f94d1f88e79d9acb32e4788bf
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91560792"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93370609"
 ---
 # <a name="navigationpage-bar-text-color-mode-on-ios"></a>Mode de couleur du texte de la barre NavigationPage sur iOS
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Ce contrôle propre à la plateforme détermine si la couleur de texte de la barre d’État sur un [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) est ajustée pour correspondre à la luminosité de la barre de navigation. Il est consommé en XAML en affectant [`NavigationPage.StatusBarTextColorMode`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.StatusBarTextColorModeProperty) à la propriété jointe une valeur de l' [`StatusBarTextColorMode`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode) énumération :
 
@@ -75,7 +75,7 @@ En outre, le [ `GetStatusBarTextColorMode` ] (XREF : Xamarin.Forms . PlatformCo
 
 Le résultat est que la couleur de texte de la barre d’état d’un [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) peut être ajustée pour correspondre à la luminosité de la barre de navigation. Dans cet exemple, la couleur de texte de la barre d’état change lorsque l’utilisateur bascule entre les [`Master`](xref:Xamarin.Forms.MasterDetailPage.Master) [`Detail`](xref:Xamarin.Forms.MasterDetailPage.Detail) pages et d’un [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) :
 
-![Texte de la barre d’État mode couleur-spécifique à la plateforme](status-bar-text-color-images/status-bar-text-color-mode.png)
+![Mode de couleur du texte de la barre d’État Platform-Specific](status-bar-text-color-images/status-bar-text-color-mode.png)
 
 ## <a name="related-links"></a>Liens connexes
 

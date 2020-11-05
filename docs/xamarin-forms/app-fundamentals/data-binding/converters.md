@@ -10,20 +10,20 @@ ms.date: 01/05/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2a5912d18787543b05b3937f2b8b5c6a36b04873
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 7a2d7251f3896994ab75aba07c2fb03af6558c4e
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556813"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93370921"
 ---
 # <a name="no-locxamarinforms-binding-value-converters"></a>Xamarin.Forms Convertisseurs de valeurs de liaison
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 Les liaisons de données transfèrent généralement des données d’une propriété source vers une propriété cible et, dans certains cas, de la propriété cible vers la propriété source. Ce transfert est direct lorsque les propriétés source et cible sont du même type, ou quand un type peut être converti vers l’autre type via une conversion implicite. Lorsque ce n’est pas le cas, une conversion de type doit avoir lieu.
 
-Dans l’article [**Formatage de chaîne**](string-formatting.md), vous avez vu comment utiliser la propriété `StringFormat` d’une liaison de données pour convertir n’importe quel type en chaîne. Pour les autres types de conversions, vous devez écrire du code spécialisé dans une classe qui implémente l' [`IValueConverter`](xref:Xamarin.Forms.IValueConverter) interface. (Le plateforme Windows universelle contient une classe similaire nommée [`IValueConverter`](/uwp/api/Windows.UI.Xaml.Data.IValueConverter/) dans l' `Windows.UI.Xaml.Data` espace de noms, mais il `IValueConverter` se trouve dans l' `Xamarin.Forms` espace de noms.) Les classes qui implémentent `IValueConverter` sont appelées *convertisseurs de valeur*, mais elles sont également souvent appelées *convertisseurs de liaison* ou *convertisseurs de valeur de liaison*.
+Dans l’article [**Formatage de chaîne**](string-formatting.md), vous avez vu comment utiliser la propriété `StringFormat` d’une liaison de données pour convertir n’importe quel type en chaîne. Pour les autres types de conversions, vous devez écrire du code spécialisé dans une classe qui implémente l' [`IValueConverter`](xref:Xamarin.Forms.IValueConverter) interface. (Le plateforme Windows universelle contient une classe similaire nommée [`IValueConverter`](/uwp/api/Windows.UI.Xaml.Data.IValueConverter/) dans l' `Windows.UI.Xaml.Data` espace de noms, mais il `IValueConverter` se trouve dans l' `Xamarin.Forms` espace de noms.) Les classes qui implémentent `IValueConverter` sont appelées *convertisseurs de valeur* , mais elles sont également souvent appelées *convertisseurs de liaison* ou *convertisseurs de valeur de liaison*.
 
 ## <a name="the-ivalueconverter-interface"></a>Interface IValueConverter
 

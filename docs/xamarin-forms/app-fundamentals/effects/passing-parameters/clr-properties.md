@@ -10,16 +10,16 @@ ms.date: 08/05/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 13527bd8da1322df15bde45bcc8162f62a1f556a
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 81e72d060e9852b5825e1ba5547bb4d39c32f38c
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91555916"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93371636"
 ---
 # <a name="passing-effect-parameters-as-common-language-runtime-properties"></a>Passer des paramètres d’effet en tant que propriétés CLR (Common Language Runtime)
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)
 
 _Les propriétés CLR (Common Language Runtime) peuvent être utilisées pour définir des paramètres Effects qui ne répondent pas aux modifications de propriété d’exécution. Cet article montre comment utiliser les propriétés CLR pour passer des paramètres à un effet._
 
@@ -237,7 +237,7 @@ namespace EffectsDemo.UWP
 
 La plateforme Windows universelle ne fournit pas d’effet d’ombre, et l' `LabelShadowEffect` implémentation sur les deux plates-formes en simule une en ajoutant un deuxième décalage [`Label`](xref:Xamarin.Forms.Label) derrière le réplica principal `Label` . La méthode `OnAttached` récupère l’instance `ShadowEffect`, crée le nouveau contrôle `Label` et définit certaines propriétés de disposition sur `Label`. Il crée ensuite l’ombre en définissant [`TextColor`](xref:Xamarin.Forms.Label.TextColor) les [`TranslationX`](xref:Xamarin.Forms.VisualElement.TranslationX) Propriétés, et [`TranslationY`](xref:Xamarin.Forms.VisualElement.TranslationY) pour contrôler la couleur et l’emplacement du `Label` . Le contrôle `shadowLabel` est alors inséré en décalage derrière le contrôle `Label` principal. Cette fonctionnalité est wrappée dans un bloc `try`/`catch` au cas où le contrôle auquel l’effet est joint n’a pas les propriétés `Control.Layer`. Aucune implémentation n’est fournie par la méthode `OnDetached`, car aucun nettoyage n’est nécessaire.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a montré comment utiliser des propriétés CLR pour passer des paramètres à un effet. Les propriétés CLR permettent de définir des paramètres d’effet qui ne répondent pas aux changements apportés aux propriétés au moment de l’exécution.
 

@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 99e163364161287a8506bfc741d737edfaf88e4c
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: c565467d3c42dbaa9f9d9fc40352efbc964503a9
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556761"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93372312"
 ---
 # <a name="navigationpage-bar-translucency-on-ios"></a>NavigationPage bar translucidité sur iOS
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Ce spécifique à la plateforme iOS est utilisé pour modifier la transparence de la barre de navigation sur un [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) et est consommé en XAML en affectant [`NavigationPage.IsNavigationBarTranslucent`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.IsNavigationBarTranslucentProperty) une valeur à la propriété jointe `boolean` :
 
@@ -53,7 +53,7 @@ La `NavigationPage.On<iOS>` méthode spécifie que ce spécifique à la platefor
 
 Le résultat est que la transparence de la barre de navigation peut être modifiée :
 
-![Barre de navigation translucide-spécifique à la plateforme](navigation-bar-translucent-images/translucent-navigation-bar.png)
+![Platform-Specific de la barre de navigation translucide](navigation-bar-translucent-images/translucent-navigation-bar.png)
 
 ## <a name="related-links"></a>Liens connexes
 

@@ -10,16 +10,16 @@ ms.date: 07/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e399ae590dbd1260f3b2a403c39ef7e7d98d3592
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: dcff583f929e0ce8cda9fe81dc88452c6056ddf1
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557359"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93371480"
 ---
 # <a name="no-locxamarinforms-collectionview-layout"></a>Xamarin.Forms Disposition CollectionView
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView) définit les propriétés suivantes qui contrôlent la disposition :
 
@@ -550,7 +550,7 @@ Ce code génère une grille verticale à deux colonnes, dont l’espacement vert
 
 Par défaut, chaque élément d’un [`CollectionView`](xref:Xamarin.Forms.CollectionView) est mesuré et dimensionné individuellement, à condition que les éléments d’interface utilisateur dans [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) ne spécifient pas de tailles fixes. Ce comportement, qui peut être modifié, est spécifié par la [`CollectionView.ItemSizingStrategy`](xref:Xamarin.Forms.StructuredItemsView.ItemSizingStrategy) valeur de la propriété. Cette valeur de propriété peut être définie sur l’un des membres de l' [`ItemSizingStrategy`](xref:Xamarin.Forms.ItemSizingStrategy) énumération :
 
-- `MeasureAllItems` : chaque élément est mesuré individuellement. Valeur par défaut.
+- `MeasureAllItems` : chaque élément est mesuré individuellement. Il s’agit de la valeur par défaut.
 - `MeasureFirstItem` : seul le premier élément est mesuré, avec tous les éléments suivants ayant la même taille que le premier élément.
 
 > [!IMPORTANT]

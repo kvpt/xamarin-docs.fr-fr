@@ -10,16 +10,16 @@ ms.date: 06/16/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 604d2aa8368c85b852530f999601fffca8e104e6
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 79c32595053cc80ffae91b5434e18690ca2dce4a
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562923"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93370713"
 ---
 # <a name="clipping-with-paths-and-regions"></a>Détourage avec tracés et régions
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Utiliser des chemins d’accès pour découper des graphiques dans des zones spécifiques et pour créer des régions_
 
@@ -511,7 +511,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Il n’est pas vraiment similaire à un trèfle à quatre feuilles, mais il s’agit d’une image qui serait autrement difficile à afficher sans découpage :
 
-[![Capture d’écran triple de la page de trèfle à quatre feuilles](clipping-images//fourleafclover-small.png)](clipping-images/fourleafclover-large.png#lightbox)
+[![Capture d’écran triple de la page du Four-Leaf trèfle](clipping-images//fourleafclover-small.png)](clipping-images/fourleafclover-large.png#lightbox)
 
 ## <a name="related-links"></a>Liens associés
 

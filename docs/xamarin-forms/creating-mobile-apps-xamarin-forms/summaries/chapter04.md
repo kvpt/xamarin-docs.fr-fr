@@ -10,20 +10,23 @@ ms.date: 07/19/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6b86bfe1e343cd50f4a133726d16364b3efb8bee
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 26b9aa33267c56a82edfd38a1d7eefa6a5cd82a2
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84198275"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93370362"
 ---
 # <a name="summary-of-chapter-4-scrolling-the-stack"></a>Résumé du chapitre 4. Défilement de la pile
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04)
 
-Ce chapitre est principalement consacré à l’introduction du concept de *disposition*, qui est le terme global pour les classes et les techniques utilisées par Xamarin.Forms pour organiser l’affichage visuel de plusieurs vues sur la page.
+> [!NOTE]
+> Ce livre a été publié à la printemps de 2016 et n’a pas été mis à jour depuis. Le livre reste très utile, mais certains d’entre eux sont obsolètes et certaines rubriques ne sont plus entièrement correctes ou complètes.
 
-La disposition implique plusieurs classes qui dérivent de [`Layout`](xref:Xamarin.Forms.Layout) et [`Layout<T>`](xref:Xamarin.Forms.Layout`1) . Ce chapitre se concentre sur [`StackLayout`](xref:Xamarin.Forms.StackLayout) .
+Ce chapitre est principalement consacré à l’introduction du concept de *disposition* , qui est le terme global pour les classes et les techniques utilisées par Xamarin.Forms pour organiser l’affichage visuel de plusieurs vues sur la page.
+
+La disposition implique plusieurs classes qui dérivent de [`Layout`](xref:Xamarin.Forms.Layout) et  [`Layout<T>`](xref:Xamarin.Forms.Layout`1) . Ce chapitre se concentre sur [`StackLayout`](xref:Xamarin.Forms.StackLayout) .
 
 > [!NOTE]
 > Le [`FlexLayout`](~/xamarin-forms/user-interface/layouts/flex-layout.md) introduit dans Xamarin.Forms 3,0 peut être utilisé de manière similaire à `StackLayout` mais avec davantage de flexibilité.
@@ -32,9 +35,9 @@ Les [`ScrollView`](xref:Xamarin.Forms.ScrollView) classes, et sont également pr
 
 ## <a name="stacks-of-views"></a>Piles de vues
 
-[`StackLayout`](xref:Xamarin.Forms.StackLayout)dérive de `Layout<View>` et hérite d’une [`Children`](xref:Xamarin.Forms.Layout`1) propriété de type `IList<View>` . Vous ajoutez plusieurs éléments d’affichage à cette collection et `StackLayout` les affiche dans une pile horizontale ou verticale.
+[`StackLayout`](xref:Xamarin.Forms.StackLayout) dérive de `Layout<View>` et hérite d’une [`Children`](xref:Xamarin.Forms.Layout`1) propriété de type `IList<View>` . Vous ajoutez plusieurs éléments d’affichage à cette collection et `StackLayout` les affiche dans une pile horizontale ou verticale.
 
-Affectez [`Orientation`](xref:Xamarin.Forms.StackLayout.Orientation) à la propriété de `StackLayout` la valeur un membre de l' [`StackOrientation`](xref:Xamarin.Forms.StackOrientation) énumération, [`Vertical`](xref:Xamarin.Forms.StackOrientation.Vertical) ou [`Horizontal`](xref:Xamarin.Forms.StackOrientation.Horizontal) . Par défaut, il s’agit de `Vertical`.
+Affectez [`Orientation`](xref:Xamarin.Forms.StackLayout.Orientation) à la propriété de `StackLayout` la valeur un membre de l' [`StackOrientation`](xref:Xamarin.Forms.StackOrientation) énumération, [`Vertical`](xref:Xamarin.Forms.StackOrientation.Vertical) ou [`Horizontal`](xref:Xamarin.Forms.StackOrientation.Horizontal) . La valeur par défaut est `Vertical`.
 
 Affectez [`Spacing`](xref:Xamarin.Forms.StackLayout.Spacing) à la propriété de la `StackLayout` `double` valeur une valeur pour spécifier l’espacement entre les enfants. La valeur par défaut est 6.
 
@@ -46,7 +49,7 @@ Si un `StackLayout` contient trop d’enfants à afficher sur une page, vous pou
 
 Affectez [`Content`](xref:Xamarin.Forms.ScrollView.Content) à la propriété de `ScrollView` la vue que vous souhaitez faire défiler. Il s’agit souvent d’un `StackLayout` , mais il peut s’agir de n’importe quelle vue.
 
-Affectez [`Orientation`](xref:Xamarin.Forms.ScrollView.Orientation) à la propriété de `ScrollView` la valeur un membre de la [`ScrollOrientation`](xref:Xamarin.Forms.ScrollOrientation) propriété,, [`Vertical`](xref:Xamarin.Forms.ScrollOrientation.Vertical) [`Horizontal`](xref:Xamarin.Forms.ScrollOrientation.Horizontal) ou [`Both`](xref:Xamarin.Forms.ScrollOrientation.Both) . Par défaut, il s’agit de `Vertical`. Si le contenu d’un `ScrollView` est un `StackLayout` , les deux orientations doivent être cohérentes.
+Affectez [`Orientation`](xref:Xamarin.Forms.ScrollView.Orientation) à la propriété de `ScrollView` la valeur un membre de la [`ScrollOrientation`](xref:Xamarin.Forms.ScrollOrientation) propriété,, [`Vertical`](xref:Xamarin.Forms.ScrollOrientation.Vertical) [`Horizontal`](xref:Xamarin.Forms.ScrollOrientation.Horizontal) ou [`Both`](xref:Xamarin.Forms.ScrollOrientation.Both) . La valeur par défaut est `Vertical`. Si le contenu d’un `ScrollView` est un `StackLayout` , les deux orientations doivent être cohérentes.
 
 L’exemple [**ReflectedColors**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/ReflectedColors) illustre l’utilisation de `ScrollView` et `StackLayout` pour afficher les couleurs disponibles. L’exemple montre également comment utiliser la réflexion .NET pour obtenir toutes les propriétés et les champs statiques publics de la `Color` structure sans qu’il soit nécessaire de les répertorier explicitement.
 
@@ -56,8 +59,8 @@ Quand un `StackLayout` empile ses enfants, chaque enfant occupe un emplacement p
 
 La `LayoutOptions` structure définit deux propriétés :
 
-- [`Alignment`](xref:Xamarin.Forms.LayoutOptions.Alignment)du type énumération [`LayoutAlignment`](xref:Xamarin.Forms.LayoutAlignment) avec quatre membres,,, [`Start`](xref:Xamarin.Forms.LayoutAlignment.Start) [`Center`](xref:Xamarin.Forms.LayoutAlignment.Center) [`End`](xref:Xamarin.Forms.LayoutAlignment.End) et[`Fill`](xref:Xamarin.Forms.LayoutAlignment.Fill)
-- [`Expands`](xref:Xamarin.Forms.LayoutOptions.Expands)de type`bool`
+- [`Alignment`](xref:Xamarin.Forms.LayoutOptions.Alignment) du type énumération [`LayoutAlignment`](xref:Xamarin.Forms.LayoutAlignment) avec quatre membres,,, [`Start`](xref:Xamarin.Forms.LayoutAlignment.Start) [`Center`](xref:Xamarin.Forms.LayoutAlignment.Center) [`End`](xref:Xamarin.Forms.LayoutAlignment.End) et [`Fill`](xref:Xamarin.Forms.LayoutAlignment.Fill)
+- [`Expands`](xref:Xamarin.Forms.LayoutOptions.Expands) de type `bool`
 
 Pour plus de commodité, la `LayoutOptions` structure définit également huit champs statiques en lecture seule de type `LayoutOptions` qui englobent toutes les combinaisons des deux propriétés d’instance :
 
@@ -86,7 +89,7 @@ Cela est illustré dans l’exemple [**VerticalOptionsDemo**](https://github.com
 
 Ces deux vues rectangulaires sont souvent utilisées à des fins de présentation.
 
-La [`Frame`](xref:Xamarin.Forms.Frame) vue affiche une image rectangulaire autour d’une autre vue, qui peut être une disposition telle que `StackLayout` . `Frame`hérite d’une [`Content`](xref:Xamarin.Forms.ContentView.Content) propriété de [`ContentView`](xref:Xamarin.Forms.ContentView) que vous affectez à la vue à afficher dans le `Frame` . `Frame`Est transparent par défaut. Définissez les trois propriétés suivantes pour personnaliser l’apparence du frame :
+La [`Frame`](xref:Xamarin.Forms.Frame) vue affiche une image rectangulaire autour d’une autre vue, qui peut être une disposition telle que `StackLayout` . `Frame` hérite d’une [`Content`](xref:Xamarin.Forms.ContentView.Content) propriété de [`ContentView`](xref:Xamarin.Forms.ContentView) que vous affectez à la vue à afficher dans le `Frame` . `Frame`Est transparent par défaut. Définissez les trois propriétés suivantes pour personnaliser l’apparence du frame :
 
 - [`OutlineColor`](xref:Xamarin.Forms.Frame.OutlineColor)Propriété pour la rendre visible. Il est courant de définir `OutlineColor` sur `Color.Accent` lorsque vous ne connaissez pas le modèle de couleurs sous-jacent.
 - La [`HasShadow`](xref:Xamarin.Forms.Frame.HasShadow) propriété peut avoir la valeur `true` pour afficher une ombre noire sur les appareils iOS.

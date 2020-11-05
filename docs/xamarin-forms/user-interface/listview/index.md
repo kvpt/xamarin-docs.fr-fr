@@ -10,16 +10,16 @@ ms.date: 09/04/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: fa3769d2533a5a6b482c92b832d54506e4954250
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 18a9347de9297c4c853cf695d169992ca60ace36
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91560141"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93372013"
 ---
 # <a name="no-locxamarinforms-listview"></a>Xamarin.Forms Liste
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistview)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/workingwithlistview)
 
 [`ListView`](xref:Xamarin.Forms.ListView) est une vue pour la présentation de listes de données, en particulier les longues listes nécessitant un défilement.
 
@@ -67,7 +67,7 @@ La capture d’écran suivante montre un `ListView` avec des éléments ImageCel
 
 Pour en savoir plus sur la personnalisation des cellules dans un `ListView` , consultez Personnalisation de l' [apparence des cellules ListView](customizing-cell-appearance.md).
 
-## <a name="functionality"></a>Fonctionnalités
+## <a name="functionality"></a>Fonctionnalité
 
 La `ListView` classe prend en charge un certain nombre de styles d’interaction.
 

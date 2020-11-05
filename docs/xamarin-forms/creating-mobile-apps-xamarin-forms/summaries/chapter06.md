@@ -10,16 +10,19 @@ ms.date: 07/18/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f9bafbf4af2a89acd02d436604e882be87cbde8c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 8a95f4a88ea0adff78475dab8699308fbe49aa46
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136836"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93370206"
 ---
 # <a name="summary-of-chapter-6-button-clicks"></a>Résumé du chapitre 6. Clics de bouton
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06)
+
+> [!NOTE]
+> Ce livre a été publié à la printemps de 2016 et n’a pas été mis à jour depuis. Le livre reste très utile, mais certains d’entre eux sont obsolètes et certaines rubriques ne sont plus entièrement correctes ou complètes.
 
 [`Button`](xref:Xamarin.Forms.Button)Est la vue qui permet à l’utilisateur de lancer une commande. Un `Button` est identifié par du texte (et éventuellement une image, comme illustré dans le [chapitre 13, bitmaps](chapter13.md)). Par conséquent, `Button` définit un grand nombre des mêmes propriétés que `Label` :
 
@@ -29,13 +32,13 @@ ms.locfileid: "84136836"
 - [`FontAttributes`](xref:Xamarin.Forms.Button.FontAttributes)
 - [`TextColor`](xref:Xamarin.Forms.Button.TextColor)
 
-`Button`définit également trois propriétés qui régissent l’apparence de sa bordure, mais la prise en charge de ces propriétés et leur indépendance mutuelle sont spécifiques à la plateforme :
+`Button` définit également trois propriétés qui régissent l’apparence de sa bordure, mais la prise en charge de ces propriétés et leur indépendance mutuelle sont spécifiques à la plateforme :
 
-- [`BorderColor`](xref:Xamarin.Forms.Button.BorderColor)de type`Color`
-- [`BorderWidth`](xref:Xamarin.Forms.Button.BorderWidth)de type`Double`
-- [`BorderRadius`](xref:Xamarin.Forms.Button.BorderRadius)de type`Double`
+- [`BorderColor`](xref:Xamarin.Forms.Button.BorderColor) de type `Color`
+- [`BorderWidth`](xref:Xamarin.Forms.Button.BorderWidth) de type `Double`
+- [`BorderRadius`](xref:Xamarin.Forms.Button.BorderRadius) de type `Double`
 
-`Button`hérite également de toutes les propriétés de `VisualElement` et `View` , y compris `BackgroundColor` , `HorizontalOptions` et `VerticalOptions` .
+`Button` hérite également de toutes les propriétés de `VisualElement` et `View` , y compris `BackgroundColor` , `HorizontalOptions` et `VerticalOptions` .
 
 ## <a name="processing-the-click"></a>Traitement du clic
 
@@ -93,4 +96,4 @@ L’exemple [**PersistentKeypad**](https://github.com/xamarin/xamarin-forms-book
 - [Chapitre 6 texte intégral (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch06-Apr2016.pdf)
 - [Exemples du chapitre 6](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06)
 - [Exemples de chapitre 6 F #](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/FS)
-- [Xamarin.FormsBouton](~/xamarin-forms/user-interface/button.md)
+- [Xamarin.Forms Bouton](~/xamarin-forms/user-interface/button.md)
