@@ -10,16 +10,16 @@ ms.date: 07/12/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d9a96de5520a03b2ef51426be2c589c736ca2396
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: eeaf62c684100ff9fd5bb9ffd15162bdb4c6afd6
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562390"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93366514"
 ---
 # <a name="animating-skiasharp-bitmaps"></a>Animation de bitmaps SkiaSharp
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 Les applications qui animent les graphiques SkiaSharp appellent généralement `InvalidateSurface` sur `SKCanvasView` une vitesse fixe, souvent toutes les 16 millisecondes. L’invalidation de la surface déclenche un appel au `PaintSurface` Gestionnaire pour redessiner l’affichage. À mesure que les éléments visuels sont redessinés 60 fois par seconde, ils semblent être facilement animés.
 
@@ -37,13 +37,13 @@ Le deuxième exemple montre comment utiliser SkiaSharp pour afficher un fichier 
 
 ## <a name="bitmap-animation"></a>Animation bitmap
 
-L’ensemble de Mandelbrot est visuellement fascinant, mais computionally long. (Pour une description de l’ensemble de Mandelbrot et des mathématiques utilisés ici, consultez le [chapitre 20 de la rubrique _création d’Mobile Apps avec à Xamarin.Forms _ ](https://xamarin.azureedge.net/developer/xamarin-forms-book/XamarinFormsBook-Ch20-Apr2016.pdf) partir de la page 666. La description suivante part du principe que les connaissances en arrière-plan.)
+L’ensemble de Mandelbrot est visuellement fascinant, mais computionally long. (Pour une description de l’ensemble de Mandelbrot et des mathématiques utilisés ici, consultez le [chapitre 20 de la rubrique _création d’Mobile Apps avec à Xamarin.Forms_](https://xamarin.azureedge.net/developer/xamarin-forms-book/XamarinFormsBook-Ch20-Apr2016.pdf) partir de la page 666. La description suivante part du principe que les connaissances en arrière-plan.)
 
 L’exemple d' [**animation Mandelbrot**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-mandelanima) utilise l’animation bitmap pour simuler un zoom continu d’un point fixe dans l’ensemble de Mandelbrot. Le zoom avant est suivi par un zoom arrière, puis le cycle se répète indéfiniment ou jusqu’à ce que vous terminiez le programme.
 
-Le programme prépare cette animation en créant jusqu’à 50 bitmaps qu’il stocke dans le stockage local de l’application. Chaque bitmap englobe la moitié de la largeur et de la hauteur du plan complexe comme bitmap précédente. (Dans le programme, ces bitmaps sont dites pour représenter des _niveaux de zoom_intégraux.) Les bitmaps sont ensuite affichés dans l’ordre. La mise à l’échelle de chaque bitmap est animée pour fournir une progression fluide d’une image bitmap à une autre.
+Le programme prépare cette animation en créant jusqu’à 50 bitmaps qu’il stocke dans le stockage local de l’application. Chaque bitmap englobe la moitié de la largeur et de la hauteur du plan complexe comme bitmap précédente. (Dans le programme, ces bitmaps sont dites pour représenter des _niveaux de zoom_ intégraux.) Les bitmaps sont ensuite affichés dans l’ordre. La mise à l’échelle de chaque bitmap est animée pour fournir une progression fluide d’une image bitmap à une autre.
 
-À l’instar du dernier programme décrit dans le chapitre 20 de la _création d’Mobile Apps Xamarin.Forms avec _, le calcul de l’ensemble de Mandelbrot dans l' **animation Mandelbrot** est une méthode asynchrone avec huit paramètres. Les paramètres incluent un point central complexe, ainsi qu’une largeur et une hauteur du plan complexe entourant ce point central. Les trois paramètres suivants sont la largeur et la hauteur en pixels de l’image bitmap à créer, ainsi qu’un nombre maximal d’itérations pour le calcul récursif. Le `progress` paramètre est utilisé pour afficher la progression de ce calcul. Le `cancelToken` paramètre n’est pas utilisé dans ce programme :
+À l’instar du dernier programme décrit dans le chapitre 20 de la _création d’Mobile Apps Xamarin.Forms avec_ , le calcul de l’ensemble de Mandelbrot dans l' **animation Mandelbrot** est une méthode asynchrone avec huit paramètres. Les paramètres incluent un point central complexe, ainsi qu’une largeur et une hauteur du plan complexe entourant ce point central. Les trois paramètres suivants sont la largeur et la hauteur en pixels de l’image bitmap à créer, ainsi qu’un nombre maximal d’itérations pour le calcul récursif. Le `progress` paramètre est utilisé pour afficher la progression de ce calcul. Le `cancelToken` paramètre n’est pas utilisé dans ce programme :
 
 ```csharp
 static class Mandelbrot
@@ -182,7 +182,7 @@ public partial class MainPage : ContentPage
 }
 ```
 
-À un moment donné, vous souhaiterez probablement remplacer la `COUNT` valeur par 50 pour voir la plage complète de l’animation. Les valeurs supérieures à 50 ne sont pas utiles. Autour d’un niveau de zoom de 48, la résolution des nombres à virgule flottante double précision devient insuffisante pour le calcul du jeu de Mandelbrot. Ce problème est abordé sur la page 684 de la _création Xamarin.Forms d’Mobile Apps avec _.
+À un moment donné, vous souhaiterez probablement remplacer la `COUNT` valeur par 50 pour voir la plage complète de l’animation. Les valeurs supérieures à 50 ne sont pas utiles. Autour d’un niveau de zoom de 48, la résolution des nombres à virgule flottante double précision devient insuffisante pour le calcul du jeu de Mandelbrot. Ce problème est abordé sur la page 684 de la _création Xamarin.Forms d’Mobile Apps avec_.
 
 La `center` valeur est très importante. Il s’agit de l’objectif du zoom d’animation. Les trois valeurs du fichier sont celles utilisées dans les trois captures d’écran finales du chapitre 20 de la _création Xamarin.Forms d’Mobile Apps avec_ la page 684, mais vous pouvez faire des essais avec le programme de ce chapitre pour trouver l’une de vos propres valeurs.
 

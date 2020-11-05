@@ -10,16 +10,16 @@ ms.date: 07/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7eb21f9a6a679c294a848d7fa79721c6db03bb0d
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 19f09025e44bb7deddbb8a9e6ae326d2137a5ce0
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563222"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367528"
 ---
 # <a name="visualelement-elevation-on-android"></a>Élévation VisualElement sur Android
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Ce spécifique à la plateforme Android est utilisé pour contrôler l’élévation, ou ordre de plan, des éléments visuels sur les applications qui ciblent l’API 21 ou une version ultérieure. L’élévation d’un élément visuel détermine son ordre de dessin, avec des éléments visuels avec des valeurs Z plus élevées obturant des éléments visuels avec des valeurs Z inférieures. Il est consommé en XAML en affectant `VisualElement.Elevation` une valeur à la propriété jointe `boolean` :
 

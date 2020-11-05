@@ -10,16 +10,16 @@ ms.date: 04/24/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 01e439812c3935e890acf0b9b83579b5813d8e21
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 5c49ee7022166983f55bca4a39dd726412b070c8
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563950"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93366202"
 ---
 # <a name="device-orientation"></a>Orientation de l’appareil
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-responsivelayout)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-responsivelayout)
 
 Il est important de prendre en compte la façon dont votre application est utilisée et comment l’orientation paysage peut être incorporée pour améliorer l’expérience utilisateur. Les dispositions individuelles peuvent être conçues pour prendre en charge plusieurs orientations et utiliser au mieux l’espace disponible. Au niveau de l’application, la rotation peut être désactivée ou activée.
 
@@ -43,7 +43,7 @@ Dans Visual Studio pour Mac, ouvrez le projet iOS et ouvrez le fichier **info. p
 
 ![Informations de déploiement de iPhone dans Visual Studio pour Mac](device-orientation-images/orientation-vsmac.png)
 
-Si vous préférez modifier les valeurs à l’aide d’une interface de l’éditeur de clé-valeur, sélectionnez l’onglet **Source**> en bas de l’écran :
+Si vous préférez modifier les valeurs à l’aide d’une interface de l’éditeur de clé-valeur, sélectionnez l’onglet **Source** > en bas de l’écran :
 
 ![Orientations d’appareils prises en charge dans Visual Studio pour Mac](device-orientation-images/orientation-source-vsmac.png)
 
@@ -76,9 +76,9 @@ Xamarin. Android prend en charge plusieurs options pour spécifier l’orientati
 - **ReversePortrait** &ndash; fait en sorte que l’application utilise l’orientation portrait, face à la direction opposée d’habitude, afin de s’afficher « à l’envers ».
 - **FullSensor** &ndash; fait en sorte que l’application s’appuie sur des données de capteur pour sélectionner l’orientation correcte (parmi les 4 possibles).
 - **FullUser** &ndash; fait en sorte que l’application utilise les préférences d’orientation de l’utilisateur. Si la rotation automatique est activée, les 4 orientations peuvent être utilisées.
-- **UserLandscape** &ndash; _ \[ Non pris \] en charge_ , l’application utilise l’orientation paysage, sauf si la rotation automatique est activée pour l’utilisateur, auquel cas elle utilise le capteur pour déterminer l’orientation. Cette option interrompt la compilation.
-- **UserPortrait** &ndash; _ \[ Non pris \] en charge_ , l’application utilise l’orientation portrait, sauf si la rotation automatique est activée pour l’utilisateur, auquel cas elle utilise le capteur pour déterminer l’orientation. Cette option interrompt la compilation.
-- **Verrouillé** &ndash; _ \[ Non pris \] en charge_ , l’application utilise l’orientation de l’écran, quel que soit son lancement, sans répondre aux modifications de l’orientation physique de l’appareil. Cette option interrompt la compilation.
+- **UserLandscape** &ndash; _\[ Non pris \] en charge_ , l’application utilise l’orientation paysage, sauf si la rotation automatique est activée pour l’utilisateur, auquel cas elle utilise le capteur pour déterminer l’orientation. Cette option interrompt la compilation.
+- **UserPortrait** &ndash; _\[ Non pris \] en charge_ , l’application utilise l’orientation portrait, sauf si la rotation automatique est activée pour l’utilisateur, auquel cas elle utilise le capteur pour déterminer l’orientation. Cette option interrompt la compilation.
+- **Verrouillé** &ndash; _\[ Non pris \] en charge_ , l’application utilise l’orientation de l’écran, quel que soit son lancement, sans répondre aux modifications de l’orientation physique de l’appareil. Cette option interrompt la compilation.
 
 Notez que les API Android natives fournissent un grand contrôle sur la façon dont l’orientation est gérée, y compris des options qui contredisent explicitement les préférences exprimées par l’utilisateur.
 
@@ -213,7 +213,7 @@ protected override void OnSizeAllocated (double width, double height){
 }
 ```
 
-Notez les points suivants :
+Notez ce qui suit :
 
 - `outerStack` est ajusté pour présenter l’image et les contrôles sous la forme d’une pile horizontale ou verticale en fonction de l’orientation, afin de tirer le meilleur parti de l’espace disponible.
 
@@ -264,7 +264,7 @@ Title="AbsoluteLayout - XAML" BackgroundImageSource="deer.jpg">
 </ContentPage>
 ```
 
-Notez les points suivants :
+Notez ce qui suit :
 
 - En raison de la disposition de la page, le code procédural n’a pas besoin d’introduire de réactivité.
 - `ScrollView`Est utilisé pour permettre l’affichage de l’étiquette même lorsque la hauteur de l’écran est inférieure à la somme des hauteurs fixes des boutons et de l’image.
@@ -355,7 +355,7 @@ BackgroundImageSource="deer.jpg">
 
 ```
 
-Notez les points suivants :
+Notez ce qui suit :
 
 - En raison de la disposition de la page, le code procédural n’a pas besoin d’introduire de réactivité.
 - `ScrollView`Est utilisé pour permettre l’affichage de l’étiquette même lorsque la hauteur de l’écran est inférieure à la somme des hauteurs fixes des boutons et de l’image.
@@ -458,7 +458,7 @@ protected override void OnSizeAllocated (double width, double height){
 }
 ```
 
-Notez les points suivants :
+Notez ce qui suit :
 
 - En raison de la disposition de la page, il existe une méthode pour modifier l’emplacement de la grille des contrôles.
 

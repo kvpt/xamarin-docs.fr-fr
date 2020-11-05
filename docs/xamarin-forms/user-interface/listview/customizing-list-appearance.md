@@ -10,16 +10,16 @@ ms.date: 12/13/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: dcf4e7ca0f081ff000aaa69d8be3a3cb3aa43e8e
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 415c10706252b11cc2ec009137feab1d6d7d90ba
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91560284"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93365942"
 ---
 # <a name="listview-appearance"></a>Apparence de ListView
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-grouping)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-listview-grouping)
 
 Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) Vous permet de personnaliser la présentation de la liste, en plus des [`ViewCell`](xref:Xamarin.Forms.ViewCell) instances de chaque ligne de la liste.
 

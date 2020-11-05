@@ -11,16 +11,16 @@ ms.date: 10/25/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3d2620014c9554712c746b98de3b9a0eeaa20864
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 1c660c04e89c56f10435964425b2b20dbf5c8eb3
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562754"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93365864"
 ---
 # <a name="no-locxamarinforms-xaml-basics"></a>Xamarin.Forms Concepts de base du langage XAML
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
 Le langage XAML (eXtensible Application Markup Language) est un langage basé sur XML créé par Microsoft comme alternative à la programmation de code pour instancier et initialiser des objets, et à organiser ces objets dans des hiérarchies de type parent-enfant. XAML a été adapté à plusieurs technologies dans .NET Framework, mais il a trouvé son utilitaire le plus performant pour définir la disposition des interfaces utilisateur au sein du Windows Presentation Foundation (WPF), Silverlight, le Windows Runtime et le plateforme Windows universelle (UWP).
 
@@ -52,9 +52,9 @@ XAML est fondamentalement XML, mais XAML possède des fonctionnalités de syntax
 
 Ces fonctionnalités ne sont *pas* des extensions XML. XAML est entièrement conforme à XML. Toutefois, ces fonctionnalités de syntaxe XAML utilisent XML de manière unique. Elles sont décrites en détail dans les articles ci-dessous, qui se terminent par une introduction à l’utilisation du code XAML pour l’implémentation de MVVM.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>Spécifications
 
-Cet article suppose une connaissance du fonctionnement de Xamarin.Forms . Cet article suppose également une certaine connaissance de XML, notamment la compréhension de l’utilisation des déclarations d’espaces de noms XML et des termes *élément*, *balise*et *attribut*.
+Cet article suppose une connaissance du fonctionnement de Xamarin.Forms . Cet article suppose également une certaine connaissance de XML, notamment la compréhension de l’utilisation des déclarations d’espaces de noms XML et des termes *élément* , *balise* et *attribut*.
 
 Lorsque vous êtes familiarisé avec Xamarin.Forms et XML, commencez par lire la [partie 1. Prise en main avec XAML](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md).
 

@@ -10,16 +10,16 @@ ms.date: 02/12/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 00b6617f754eb251eae0a7be9715deb840c33102
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 15529520668f4d6353fe99c13ddb2e6cc2801500
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562741"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367229"
 ---
 # <a name="custom-video-positioning"></a>Positionnement vidéo personnalisé
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
 Les contrôles de transport implémentés par chaque plateforme incluent une barre de position. Cette barre ressemble à un curseur ou une barre de défilement et indique la position actuelle de la vidéo au sein de sa durée totale. En outre, l’utilisateur peut avancer ou reculer la barre de position vers une nouvelle position dans la vidéo.
 
@@ -421,7 +421,7 @@ La documentation de la série UWP [`MediaElement`](/uwp/api/Windows.UI.Xaml.Cont
 
 Il s’agit d’un conseil judicieux, mais les trois classes `VideoPlayerRenderer` utilisent déjà indirectement une minuterie pour mettre à jour la propriété `Position`. La propriété `Position` est modifiée dans un gestionnaire pour l’événement `UpdateStatus`, qui est déclenché uniquement 10 fois par seconde.
 
-Par conséquent, la propriété `Position` du `VideoPlayer` peut être liée à la propriété `Position` du `PositionSlider` sans problèmes de performances, comme illustré dans la page **Barre de position personnalisée** :
+Par conséquent, la propriété `Position` du `VideoPlayer` peut être liée à la propriété `Position` du `PositionSlider` sans problèmes de performances, comme illustré dans la page **Barre de position personnalisée**  :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

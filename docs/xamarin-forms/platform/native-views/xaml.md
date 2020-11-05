@@ -10,16 +10,16 @@ ms.date: 03/23/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 78bd93e2f6556480ae7d2903771d7d6303dda148
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: cd7c29f835b34b4c5ffb9a5af589815a09546a87
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91558374"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93365903"
 ---
 # <a name="native-views-in-xaml"></a>Vues natives en XAML
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-nativeswitch)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-nativeswitch)
 
 _Les affichages natifs d’iOS, Android et le plateforme Windows universelle peuvent être directement référencés à partir de Xamarin.Forms fichiers XAML. Les propriétés et les gestionnaires d’événements peuvent être définis sur des vues natives et interagir avec les Xamarin.Forms vues. Cet article montre comment utiliser des vues natives à partir de Xamarin.Forms fichiers XAML._
 
@@ -109,7 +109,7 @@ La page contient également un commutateur natif pour chaque plateforme. Chaque 
 ![Commutateur natif désactivé avec le commutateur natif ](xaml-images/native-switch-disabled.png)
  ![](xaml-images/native-switch-enabled.png)
 
-Les liaisons bidirectionnelles sont prises en charge automatiquement, à condition que la propriété native implémente `INotifyPropertyChanged` ou prenne en charge l’observation de la valeur de clé (KVO) sur iOS, ou qu’elle soit `DependencyProperty` sur UWP. Toutefois, de nombreuses vues natives ne prennent pas en charge la notification de modification de propriété. Pour ces vues, vous pouvez spécifier une [`UpdateSourceEventName`](xref:Xamarin.Forms.Binding.UpdateSourceEventName) valeur de propriété dans le cadre de l’expression de liaison. Cette propriété doit être définie sur le nom d’un événement dans la vue native qui signale quand la propriété cible a été modifiée. Ensuite, lorsque la valeur du commutateur natif change, la `Binding` classe est informée que l’utilisateur a modifié la valeur du commutateur et que la valeur de la `NativeSwitchPageViewModel.IsSwitchOn` propriété est mise à jour.
+Les liaisons bidirectionnelles sont prises en charge automatiquement, à condition que la propriété native implémente `INotifyPropertyChanged` , ou prenne en charge Key-Value observation (KVO) sur iOS, ou `DependencyProperty` sur UWP. Toutefois, de nombreuses vues natives ne prennent pas en charge la notification de modification de propriété. Pour ces vues, vous pouvez spécifier une [`UpdateSourceEventName`](xref:Xamarin.Forms.Binding.UpdateSourceEventName) valeur de propriété dans le cadre de l’expression de liaison. Cette propriété doit être définie sur le nom d’un événement dans la vue native qui signale quand la propriété cible a été modifiée. Ensuite, lorsque la valeur du commutateur natif change, la `Binding` classe est informée que l’utilisateur a modifié la valeur du commutateur et que la valeur de la `NativeSwitchPageViewModel.IsSwitchOn` propriété est mise à jour.
 
 ## <a name="pass-arguments-to-native-views"></a>Passer des arguments à des vues natives
 

@@ -10,16 +10,16 @@ ms.date: 11/29/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7fec48c86e68d2115a919e620e8b0f4e46740a03
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: c2ae9d7bd2195e48fede30082b70f8a1a6d49ac3
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562494"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367360"
 ---
 # <a name="customizing-a-listview"></a>Personnalisation d’un ListView
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-listview)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/customrenderers-listview)
 
 _Un Xamarin.Forms ListView est une vue qui affiche une collection de données sous la forme d’une liste verticale. Cet article montre comment créer un convertisseur personnalisé qui encapsule des contrôles de liste spécifiques à la plateforme et des dispositions de cellule natives, ce qui permet de mieux contrôler les performances des contrôles de liste natifs._
 
@@ -557,7 +557,7 @@ protected override void OnElementPropertyChanged(object sender, System.Component
 
 La méthode remplit à nouveau le contrôle natif `ListView` des données ayant changé, à condition que la propriété pouvant être liée `NativeListView.Items` ait changé.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Dans cet article, nous avons vu comment créer un renderer personnalisé qui encapsule des contrôles de liste spécifiques à la plateforme et des dispositions de cellule natives afin de mieux contrôler les performances des contrôles de liste natifs.
 

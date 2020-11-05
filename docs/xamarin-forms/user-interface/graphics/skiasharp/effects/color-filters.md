@@ -10,16 +10,16 @@ ms.date: 08/28/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 809477fe466ee7a8f0985308896c14341f2dd460
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: f7a31f54cb90fa3633217e8eb59d92c1e4d063c7
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91561935"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93365915"
 ---
 # <a name="skiasharp-color-filters"></a>Filtres de couleurs SkiaSharp
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 Les filtres de couleur peuvent traduire les couleurs d’une image bitmap (ou d’une autre image) en d’autres couleurs pour des effets tels que l’affiche :
 
@@ -170,7 +170,7 @@ La `DrawBitmap` méthode utilisée dans ce code provient du fichier **BitmapExte
 
 Voici le résultat s’exécutant sur iOS, Android et plateforme Windows universelle :
 
-[![Matrice de nuances de gris](color-filters-images/GrayScaleMatrix.png "Matrice de nuances de gris")](color-filters-images/GrayScaleMatrix-Large.png#lightbox)
+[![Matrice de nuances de gris](color-filters-images/GrayScaleMatrix.png "Matrice de Gray-Scale")](color-filters-images/GrayScaleMatrix-Large.png#lightbox)
 
 Regardez la valeur de la quatrième ligne et de la quatrième colonne. C’est le facteur crucial qui est multiplié par la valeur de la couleur d’origine pour la valeur de la couleur transformée. Si cette cellule est égale à zéro, rien ne s’affiche et le problème peut être difficile à localiser.
 

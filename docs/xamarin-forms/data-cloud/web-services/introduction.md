@@ -10,16 +10,16 @@ ms.date: 02/28/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ebff259519776718f41ab0fcc0a7abb0c692dac6
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 7d1cb1d9fa418cd16cb25519680e526864c9917c
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563417"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367723"
 ---
 # <a name="no-locxamarinforms-web-services-introduction"></a>Xamarin.Forms Présentation des services Web
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/webservices-todorest)
 
 _Cette rubrique fournit une procédure pas à pas de l' Xamarin.Forms exemple d’application qui montre comment communiquer avec différents services Web. Bien que chaque service Web utilise un exemple d’application distinct, il est similaire au fonctionnement et partage des classes communes._
 
@@ -47,7 +47,7 @@ Le projet de code partagé pour chaque exemple d’application se compose de tro
 |--- |--- |
 |Données|Contient les classes et les interfaces utilisées pour gérer les éléments de données, et communiquer avec le service Web. Au minimum, cela comprend la `TodoItemManager` classe, qui est exposée via une propriété de la `App` classe pour appeler des opérations de service Web.|
 |Modèles|Contient les classes de modèle de données pour l’application. Au minimum, cela comprend la `TodoItem` classe, qui modélise un élément unique de données utilisé par l’application. Le dossier peut également inclure toutes les classes supplémentaires utilisées pour modéliser les données utilisateur.|
-|Affichages|Contient les pages de l’application. Il s’agit généralement des `TodoListPage` `TodoItemPage` classes et, ainsi que de toute classe supplémentaire utilisée à des fins d’authentification.|
+|Les vues|Contient les pages de l’application. Il s’agit généralement des `TodoListPage` `TodoItemPage` classes et, ainsi que de toute classe supplémentaire utilisée à des fins d’authentification.|
 
 Le projet de code partagé pour chaque application se compose également d’un certain nombre de fichiers importants :
 

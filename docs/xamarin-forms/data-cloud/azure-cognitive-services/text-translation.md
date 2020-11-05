@@ -10,16 +10,16 @@ ms.date: 02/08/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2b26e80267be9af6bf300b2ffc82e43fe717f59c
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 857a4e465a4f42d2fd6a2a4d977334820fb2ea4f
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563118"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93366085"
 ---
 # <a name="text-translation-using-the-translator-api"></a>Traduction de texte à l’aide de l’API Translator
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
 _L’API Microsoft Translator peut être utilisée pour traduire la parole et le texte via une API REST. Cet article explique comment utiliser l’API de traduction de texte Translator Text Microsoft pour traduire du texte d’une langue à l’autre dans une Xamarin.Forms application._
 
@@ -145,7 +145,7 @@ Dans l’exemple d’application, la réponse XML est analysée dans une `XDocum
 
 ![Traduction de texte en allemand](text-translation-images/text-translation.png)
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article explique comment utiliser l’API de traduction de texte Translator Text Microsoft pour traduire du texte d’une langue en texte d’une autre langue dans une Xamarin.Forms application. En plus de traduire du texte, l’API Microsoft Translator peut également transcrire la parole d’une langue à une autre.
 

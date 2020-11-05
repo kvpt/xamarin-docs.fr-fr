@@ -10,14 +10,17 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3f85c6528a1bf599c38a39b4e88400bc8b0c4f05
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 310a4e94a91eeb0d8d1c1f6ccb6fa30f0ff1f563
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86931987"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93366566"
 ---
 # <a name="containerized-microservices"></a>Microservices conteneurisés
+
+> [!NOTE]
+> Ce livre électronique a été publié au printemps de 2017 et n’a pas été mis à jour depuis. Le livre reste très utile, mais certains éléments du matériel sont obsolètes.
 
 Le développement d’applications client-serveur a donné lieu à la création d’applications à plusieurs niveaux qui utilisent des technologies spécifiques dans chaque niveau. Ces applications sont souvent appelées des applications *monolithiques* et sont empaquetées sur le matériel avant les pics de charge. Le principal inconvénient de cette approche de développement est le couplage étroit entre les composants au sein de chaque niveau, que les composants individuels ne peuvent pas être facilement mis à l’échelle et le coût des tests. Une mise à jour simple peut avoir des effets imprévus sur le reste du niveau, et par conséquent, une modification apportée à un composant d’application nécessite de retester et de redéployer son niveau entier.
 
@@ -25,7 +28,7 @@ En particulier en ce qui concerne l’âge du Cloud, les composants individuels 
 
 ![Approche de mise à l’échelle des applications monolithiques](containerized-microservices-images/monolithicapp.png)
 
-**Figure 8-1**: approche de mise à l’échelle des applications monolithiques
+**Figure 8-1** : approche de mise à l’échelle des applications monolithiques
 
 ## <a name="microservices"></a>Microservices
 
@@ -35,7 +38,7 @@ Les microservices peuvent être mis à l’échelle indépendamment, par rapport
 
 ![Approche de mise à l’échelle des applications de microservices](containerized-microservices-images/microservicesapp.png)
 
-**Figure 8-2**: approche de mise à l’échelle des applications de microservices
+**Figure 8-2** : approche de mise à l’échelle des applications de microservices
 
 La montée en charge des microservices peut être quasiment instantanée, ce qui permet à une application de s’adapter à l’évolution des charges. Par exemple, un microservice unique dans la fonctionnalité Web d’une application peut être le seul microservice de l’application qui doit être mis à l’échelle pour gérer le trafic entrant supplémentaire.
 
@@ -69,7 +72,7 @@ Il existe de nombreuses similitudes entre les conteneurs et les machines virtuel
 
 ![Approche de mise à l’échelle des applications de microservices](containerized-microservices-images/containersvsvirtualmachines.png)
 
-**Figure 8-3**: comparaison des machines virtuelles et des conteneurs
+**Figure 8-3** : comparaison des machines virtuelles et des conteneurs
 
 Un conteneur exécute un système d’exploitation, a un système de fichiers et est accessible sur un réseau comme s’il s’agissait d’une machine physique ou virtuelle. Toutefois, la technologie et les concepts utilisés par les conteneurs sont très différents de ceux des machines virtuelles. Les machines virtuelles incluent les applications, les dépendances requises et un système d’exploitation invité complet. Les conteneurs incluent l’application et ses dépendances, mais partagent le système d’exploitation avec d’autres conteneurs, s’exécutant en tant que processus isolés sur le système d’exploitation hôte (à part les conteneurs Hyper-V qui s’exécutent à l’intérieur d’une machine virtuelle spéciale par conteneur). Par conséquent, les conteneurs partagent des ressources et nécessitent généralement moins de ressources que les machines virtuelles.
 
@@ -89,7 +92,7 @@ L’application de référence eShopOnContainers utilise Dockr pour héberger qu
 
 ![microservices principaux de l’application de référence eShopOnContainers](containerized-microservices-images/microservicesarchitecture.png)
 
-**Figure 8-4**: microservices back-end de l’application de référence eShopOnContainers
+**Figure 8-4** : microservices back-end de l’application de référence eShopOnContainers
 
 L’architecture des services principaux dans l’application de référence est décomposée en plusieurs sous-systèmes autonomes sous la forme de microservices et de conteneurs de collaboration. Chaque microservice fournit une seule zone de fonctionnalités : un service d’identité, un service de catalogue, un service de tri et un service de panier.
 
@@ -103,7 +106,7 @@ L’application mobile eShopOnContainers communique avec les microservices back-
 
 ![Approche de mise à l’échelle des applications de microservices](containerized-microservices-images/directclienttomicroservicecommunication.png)
 
-**Figure 8-5**: communication directe entre les clients et les microservices
+**Figure 8-5** : communication directe entre les clients et les microservices
 
 Avec la communication directe entre les clients et les microservices, l’application mobile envoie des demandes à chaque microservice directement par le biais de son point de terminaison public, avec un port TCP différent pour chaque microservice. En production, le point de terminaison est généralement mappé à l’équilibreur de charge du microservice, qui distribue les demandes sur les instances disponibles.
 
@@ -134,7 +137,7 @@ Le bus d’événements eShopOnContainers, implémenté à l’aide de RabbitMQ,
 
 ![Communication un-à-plusieurs](containerized-microservices-images/eventdrivencommunication.png)
 
-**Figure 8-9**: communication un-à-plusieurs
+**Figure 8-9** : communication un-à-plusieurs
 
 Cette approche de communication un-à-plusieurs utilise des événements pour mettre en œuvre des transactions commerciales qui s’étendent sur plusieurs services, garantissant une cohérence éventuelle entre les services. Une transaction cohérente est constituée d’une série d’étapes distribuées. Par conséquent, lorsque le microservice de profil utilisateur reçoit la commande UpdateUser, il met à jour les informations de l’utilisateur dans sa base de données et publie l’événement UserUpdated dans le bus d’événements. Le microservice de panier et le microservice de commande se sont abonnés pour recevoir cet événement et, en réponse, mettent à jour leurs informations d’acheteur dans leurs bases de données respectives.
 
@@ -143,7 +146,7 @@ Cette approche de communication un-à-plusieurs utilise des événements pour me
 
 Pour plus d’informations sur l’implémentation du bus d’événements, consultez [microservices .net : architecture pour les applications .net en conteneur](https://aka.ms/microservicesebook).
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Les microservices offrent une approche du développement et du déploiement d’applications adaptées aux exigences en termes d’agilité, de mise à l’échelle et de fiabilité des applications Cloud modernes. L’un des principaux avantages des microservices est qu’ils peuvent être mis à l’échelle de manière indépendante, ce qui signifie qu’il est possible de mettre à l’échelle une zone fonctionnelle spécifique nécessitant davantage de puissance de traitement ou de bande passante réseau pour prendre en charge la demande, sans mettre à l’échelle les zones de l’application qui ne subissent pas une demande accrue.
 

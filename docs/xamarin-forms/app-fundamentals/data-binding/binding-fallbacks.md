@@ -10,16 +10,16 @@ ms.date: 08/16/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 24a9a351dbe6932b09add2ee7c3111256e013201
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: d288d43bcee5719c1ab3667812e5bac4891bb188
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91560687"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93366319"
 ---
 # <a name="no-locxamarinforms-binding-fallbacks"></a>Xamarin.Forms Liaison de secours
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 Une liaison de données échoue parfois car la source de la liaison ne peut pas être résolue ou parce que la liaison réussit mais retourne une valeur `null`. De tels scénarios peuvent être gérés avec des convertisseurs de valeurs ou du code supplémentaire, mais il est possible de renforcer les liaisons de données en définissant des valeurs de repli à utiliser si le processus de liaison échoue. Pour ce faire, vous devez définir [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) les [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) Propriétés et dans une expression de liaison. Étant donné que ces propriétés résident dans la [`BindingBase`](xref:Xamarin.Forms.BindingBase) classe, elles peuvent être utilisées avec des liaisons, des liaisons multiples, des liaisons compilées et avec l' `Binding` extension de balisage.
 
@@ -53,7 +53,7 @@ Voici le programme en cours d’exécution :
 
 ![Liaison FallbackValue](binding-fallbacks-images/bindingunavailable-detail-cropped.png "Liaison FallbackValue")
 
-Lorsque la `FallbackValue` propriété n’est pas définie dans une expression de liaison et que le chemin de liaison ou une partie du chemin d’accès n’est pas résolu, [`BindableProperty.DefaultValue`](xref:Xamarin.Forms.BindableProperty.DefaultValue) est défini sur la cible. Toutefois, lorsque la propriété `FallbackValue` est définie et que le chemin de liaison ou une partie de ce chemin n’est pas résolu(e), la valeur de la propriété `FallbackValue` est définie sur la cible. Par conséquent, dans la page **MonkeyDetail**, le [`Label`](xref:Xamarin.Forms.Label) affiche « Population size unknown » (Taille de la population inconnue), car l’objet lié n’a pas de propriété `Population`.
+Lorsque la `FallbackValue` propriété n’est pas définie dans une expression de liaison et que le chemin de liaison ou une partie du chemin d’accès n’est pas résolu, [`BindableProperty.DefaultValue`](xref:Xamarin.Forms.BindableProperty.DefaultValue) est défini sur la cible. Toutefois, lorsque la propriété `FallbackValue` est définie et que le chemin de liaison ou une partie de ce chemin n’est pas résolu(e), la valeur de la propriété `FallbackValue` est définie sur la cible. Par conséquent, dans la page **MonkeyDetail** , le [`Label`](xref:Xamarin.Forms.Label) affiche « Population size unknown » (Taille de la population inconnue), car l’objet lié n’a pas de propriété `Population`.
 
 > [!IMPORTANT]
 > Un convertisseur de valeurs défini n’est pas exécuté dans une expression de liaison lorsque la [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) propriété est définie.

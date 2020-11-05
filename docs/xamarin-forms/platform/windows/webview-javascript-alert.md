@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c7ff394fbe050fbd97c574c7edc32376e7d1b069
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: c0a52bc7d0f8b5c8dc07975653c819aa7f3ec2be
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557216"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367394"
 ---
 # <a name="webview-javascript-alerts-on-windows"></a>Afficher des alertes JavaScript sur Windows
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Ce spécifique à la plateforme permet [`WebView`](xref:Xamarin.Forms.WebView) à un d’afficher des alertes JavaScript dans une boîte de dialogue de message UWP. Il est consommé en XAML en affectant [`WebView.IsJavaScriptAlertEnabled`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.WebView.IsJavaScriptAlertEnabledProperty) une valeur à la propriété jointe `boolean` :
 

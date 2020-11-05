@@ -10,16 +10,16 @@ ms.date: 03/09/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a5b1e43586810521e87360d8b6537d9bafdabad7
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: f8bd745f2fee5e2e1b8bb03d474578127a360ac2
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91555435"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367671"
 ---
 # <a name="bindable-layouts-in-no-locxamarinforms"></a>Dispositions pouvant être liées dans Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-bindablelayouts)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-bindablelayouts)
 
 Les dispositions pouvant être liées activent toute classe de disposition qui dérive de la [`Layout<T>`](xref:Xamarin.Forms.Layout`1) classe pour générer son contenu en liant à une collection d’éléments, avec l’option permettant de définir l’apparence de chaque élément avec un [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) . Les dispositions pouvant être liées sont fournies par la `BindableLayout` classe, qui expose les propriétés jointes suivantes :
 

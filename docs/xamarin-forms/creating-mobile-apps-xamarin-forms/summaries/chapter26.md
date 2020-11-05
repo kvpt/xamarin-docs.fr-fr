@@ -10,22 +10,25 @@ ms.date: 11/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: deb46d1a70e7c707c998be8669b4af3b8e8d7ead
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 377de0ff7e48971f9214cf86aec19ce14859139e
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136602"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93366228"
 ---
 # <a name="summary-of-chapter-26-custom-layouts"></a>Résumé du chapitre 26. Dispositions personnalisées
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26)
 
-Xamarin.Formscomprend plusieurs classes dérivées de [`Layout<View>`](xref:Xamarin.Forms.Layout`1) :
+> [!NOTE]
+> Ce livre a été publié à la printemps de 2016 et n’a pas été mis à jour depuis. Le livre reste très utile, mais certains d’entre eux sont obsolètes et certaines rubriques ne sont plus entièrement correctes ou complètes.
+
+Xamarin.Forms comprend plusieurs classes dérivées de [`Layout<View>`](xref:Xamarin.Forms.Layout`1) :
 
 - `StackLayout`,
 - `Grid`,
-- `AbsoluteLayout` et
+- `AbsoluteLayout`. Et
 - `RelativeLayout`.
 
 Ce chapitre décrit comment créer vos propres classes qui dérivent de `Layout<View>` .
@@ -44,11 +47,11 @@ La disposition commence en haut de l’arborescence d’éléments visuels par l
 
 Un appel à `Layout` est requis pour qu’un élément apparaisse sur l’écran et entraîne la définition des propriétés en lecture seule suivantes. Ils sont cohérents avec le `Rectangle` passé à la méthode :
 
-- [`Bounds`](xref:Xamarin.Forms.VisualElement.Bounds)de type`Rectangle`
-- [`X`](xref:Xamarin.Forms.VisualElement.X)de type`double`
-- [`Y`](xref:Xamarin.Forms.VisualElement.Y)de type`double`
-- [`Width`](xref:Xamarin.Forms.VisualElement.Width)de type`double`
-- [`Height`](xref:Xamarin.Forms.VisualElement.Height)de type`double`
+- [`Bounds`](xref:Xamarin.Forms.VisualElement.Bounds) de type `Rectangle`
+- [`X`](xref:Xamarin.Forms.VisualElement.X) de type `double`
+- [`Y`](xref:Xamarin.Forms.VisualElement.Y) de type `double`
+- [`Width`](xref:Xamarin.Forms.VisualElement.Width) de type `double`
+- [`Height`](xref:Xamarin.Forms.VisualElement.Height) de type `double`
 
 Avant l' `Layout` appel, `Height` et `Width` ont des valeurs factices de &ndash; 1.
 
@@ -63,12 +66,12 @@ Enfin, l’événement suivant est déclenché :
 
 La `OnSizeAllocated` méthode est substituée par `Page` et `Layout` , qui sont les seules deux classes de Xamarin.Forms qui peuvent avoir des enfants. La méthode substituée appelle
 
-- [`UpdateChildrenLayout`](xref:Xamarin.Forms.Page.UpdateChildrenLayout)pour les `Page` dérivés et [`UpdateChildrenLayout`](xref:Xamarin.Forms.Layout.UpdateChildrenLayout) pour les `Layout` dérivés, qui appellent
-- [`LayoutChildren`](xref:Xamarin.Forms.Page.LayoutChildren(System.Double,System.Double,System.Double,System.Double))pour les `Page` dérivés et [`LayoutChildren`](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) pour les `Layout` dérivés.
+- [`UpdateChildrenLayout`](xref:Xamarin.Forms.Page.UpdateChildrenLayout) pour les `Page` dérivés et [`UpdateChildrenLayout`](xref:Xamarin.Forms.Layout.UpdateChildrenLayout) pour les `Layout` dérivés, qui appellent
+- [`LayoutChildren`](xref:Xamarin.Forms.Page.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) pour les `Page` dérivés et [`LayoutChildren`](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) pour les `Layout` dérivés.
 
-`LayoutChildren`appelle ensuite `Layout` pour chacun des enfants de l’élément. Si au moins un enfant a un nouveau `Bounds` paramètre, l’événement suivant est déclenché :
+`LayoutChildren` appelle ensuite `Layout` pour chacun des enfants de l’élément. Si au moins un enfant a un nouveau `Bounds` paramètre, l’événement suivant est déclenché :
 
-- [`LayoutChanged`](xref:Xamarin.Forms.Page.LayoutChanged)pour les `Page` dérivés et [`LayoutChanged`](xref:Xamarin.Forms.Layout.LayoutChanged) pour les `Layout` dérivés
+- [`LayoutChanged`](xref:Xamarin.Forms.Page.LayoutChanged) pour les `Page` dérivés et [`LayoutChanged`](xref:Xamarin.Forms.Layout.LayoutChanged) pour les `Layout` dérivés
 
 ### <a name="constraints-and-size-requests"></a>Contraintes et requêtes de taille
 
@@ -83,20 +86,20 @@ Une fois le livre publié, la `GetSizeRequest` méthode était dépréciée et r
 La `Measure` méthode [`Margin`](xref:Xamarin.Forms.View.Margin) prend en charge la propriété et inclut un argument de type [`MeasureFlag`](xref:Xamarin.Forms.MeasureFlags) , qui a deux membres :
 
 - [`IncludeMargins`](xref:Xamarin.Forms.MeasureFlags.IncludeMargins)
-- [`None`](xref:Xamarin.Forms.MeasureFlags.None)pour ne pas inclure de marges
+- [`None`](xref:Xamarin.Forms.MeasureFlags.None) pour ne pas inclure de marges
 
-Pour de nombreux éléments, `GetSizeRequest` ou `Measure` obtient la taille native de l’élément à partir de son convertisseur. Les deux méthodes ont des paramètres pour les *contraintes*de largeur et de hauteur. Par exemple, un `Label` utilise la contrainte Width pour déterminer comment encapsuler plusieurs lignes de texte.
+Pour de nombreux éléments, `GetSizeRequest` ou `Measure` obtient la taille native de l’élément à partir de son convertisseur. Les deux méthodes ont des paramètres pour les *contraintes* de largeur et de hauteur. Par exemple, un `Label` utilise la contrainte Width pour déterminer comment encapsuler plusieurs lignes de texte.
 
 `GetSizeRequest`Et `Measure` retournent toutes deux une valeur de type [`SizeRequest`](xref:Xamarin.Forms.SizeRequest) , qui a deux propriétés :
 
-- [`Request`](xref:Xamarin.Forms.SizeRequest.Request)de type`Size`
-- [`Minimum`](xref:Xamarin.Forms.SizeRequest.Minimum)de type`Size`
+- [`Request`](xref:Xamarin.Forms.SizeRequest.Request) de type `Size`
+- [`Minimum`](xref:Xamarin.Forms.SizeRequest.Minimum) de type `Size`
 
 Très souvent, ces deux valeurs sont les mêmes, et la `Minimum` valeur peut généralement être ignorée.
 
-`VisualElement`définit également une méthode protégée semblable à `GetSizeRequest` celle-ci qui est appelée à partir de `GetSizeRequest` :
+`VisualElement` définit également une méthode protégée semblable à `GetSizeRequest` celle-ci qui est appelée à partir de `GetSizeRequest` :
 
-- [`OnSizeRequest`](xref:Xamarin.Forms.VisualElement.OnSizeRequest(System.Double,System.Double))retourne une `SizeRequest` valeur
+- [`OnSizeRequest`](xref:Xamarin.Forms.VisualElement.OnSizeRequest(System.Double,System.Double)) retourne une `SizeRequest` valeur
 
 Cette méthode est désormais dépréciée et remplacée par :
 
@@ -104,10 +107,10 @@ Cette méthode est désormais dépréciée et remplacée par :
 
 Chaque classe qui dérive de `Layout` ou `Layout<T>` doit substituer `OnSizeRequest` ou `OnMeasure` . C’est là qu’une classe Layout détermine sa propre taille, qui est généralement basée sur la taille de ses enfants, qu’elle obtient en appelant `GetSizeRequest` ou `Measure` sur les enfants. Avant et après l’appel de `OnSizeRequest` ou `OnMeasure` , `GetSizeRequest` ou `Measure` apporte des ajustements basés sur les propriétés suivantes :
 
-- [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest)de type `double` , affecte la `Request` propriété de`SizeRequest`
-- [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest)de type `double` , affecte la `Request` propriété de`SizeRequest`
-- [`MinimumWidthRequest`](xref:Xamarin.Forms.VisualElement.MinimumWidthRequest)de type `double` , affecte la `Minimum` propriété de`SizeRequest`
-- [`MinimumHeightRequest`](xref:Xamarin.Forms.VisualElement.MinimumHeightRequest)de type `double` , affecte la `Minimum` propriété de`SizeRequest`
+- [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest)de type `double` , affecte la `Request` propriété de `SizeRequest`
+- [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) de type `double` , affecte la `Request` propriété de `SizeRequest`
+- [`MinimumWidthRequest`](xref:Xamarin.Forms.VisualElement.MinimumWidthRequest) de type `double` , affecte la `Minimum` propriété de `SizeRequest`
+- [`MinimumHeightRequest`](xref:Xamarin.Forms.VisualElement.MinimumHeightRequest) de type `double` , affecte la `Minimum` propriété de `SizeRequest`
 
 ### <a name="infinite-constraints"></a>Contraintes infinies
 
@@ -128,7 +131,7 @@ Une classe de disposition personnalisée dérive de `Layout<View>` . Il a deux r
 
 La `for` `foreach` boucle ou dans ces substitutions doit ignorer tout enfant dont la `IsVisible` propriété a la valeur `false` .
 
-Un appel à `OnMeasure` n’est pas garanti. `OnMeasure`n’est pas appelé si le parent de la disposition régit la taille de la disposition (par exemple, une disposition qui remplit une page). Pour cette raison, `LayoutChildren` ne peut pas reposer sur les tailles enfants obtenues pendant l' `OnMeasure` appel. Très souvent, `LayoutChildren` doit lui-même appeler `Measure` sur les enfants de la disposition, ou vous pouvez implémenter une logique de mise en cache de taille (à discuter plus tard).
+Un appel à `OnMeasure` n’est pas garanti. `OnMeasure` n’est pas appelé si le parent de la disposition régit la taille de la disposition (par exemple, une disposition qui remplit une page). Pour cette raison, `LayoutChildren` ne peut pas reposer sur les tailles enfants obtenues pendant l' `OnMeasure` appel. Très souvent, `LayoutChildren` doit lui-même appeler `Measure` sur les enfants de la disposition, ou vous pouvez implémenter une logique de mise en cache de taille (à discuter plus tard).
 
 ### <a name="an-easy-example"></a>Exemple simple
 
@@ -142,7 +145,7 @@ L’une des tâches qui `VerticalStack` doivent être exécutées se produit pen
 
 Souvent, une modification de la propriété d’un élément affecte la façon dont cet élément apparaît dans la disposition. La disposition doit être invalidée pour déclencher une nouvelle disposition.
 
-`VisualElement`définit une méthode protégée [`InvalidateMeasure`](xref:Xamarin.Forms.VisualElement.InvalidateMeasure) , qui est généralement appelée par le gestionnaire de modification de propriété d’une propriété pouvant être liée dont la modification affecte la taille de l’élément. La `InvalidateMeasure` méthode déclenche un [`MeasureInvalidated`](xref:Xamarin.Forms.VisualElement.MeasureInvalidated) événement.
+`VisualElement` définit une méthode protégée [`InvalidateMeasure`](xref:Xamarin.Forms.VisualElement.InvalidateMeasure) , qui est généralement appelée par le gestionnaire de modification de propriété d’une propriété pouvant être liée dont la modification affecte la taille de l’élément. La `InvalidateMeasure` méthode déclenche un [`MeasureInvalidated`](xref:Xamarin.Forms.VisualElement.MeasureInvalidated) événement.
 
 La `Layout` classe définit une méthode protégée semblable nommée [`InvalidateLayout`](xref:Xamarin.Forms.Layout.InvalidateLayout) , qu’un `Layout` dérivée doit appeler pour toute modification qui affecte la façon dont il positionne et dimensionne ses enfants.
 
@@ -152,17 +155,17 @@ La `Layout` classe définit une méthode protégée semblable nommée [`Invalida
 
 2. Un `Layout<T>` dérivé qui définit des propriétés pouvant être liées peuvent être substitués [`OnAdded`](xref:Xamarin.Forms.Layout`1.OnAdded*) pour ajouter un gestionnaire de modification de propriété à ses enfants et [`OnRemoved`](xref:Xamarin.Forms.Layout`1.OnRemoved*) pour supprimer ce gestionnaire. Le gestionnaire doit vérifier les modifications apportées à ces propriétés pouvant être liées et répondre en appelant `InvalidateLayout` .
 
-3. Un `Layout<T>` dérivé qui implémente un cache de tailles enfants doit substituer `InvalidateLayout` et [`OnChildMeasureInvalidated`](xref:Xamarin.Forms.Layout.OnChildMeasureInvalidated) et effacer le cache lorsque ces méthodes sont appelées.
+3. Un `Layout<T>` dérivé qui implémente un cache de tailles enfants doit substituer `InvalidateLayout` et  [`OnChildMeasureInvalidated`](xref:Xamarin.Forms.Layout.OnChildMeasureInvalidated) et effacer le cache lorsque ces méthodes sont appelées.
 
 ### <a name="a-layout-with-properties"></a>Disposition avec des propriétés
 
-La [`WrapLayout`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/WrapLayout.cs) classe de [**Xamarin. FormsBook. Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) suppose que tous ses enfants ont la même taille et encapsule les enfants d’une ligne (ou colonne) à la suivante. Il définit une `Orientation` propriété comme `StackLayout` , et, et des `ColumnSpacing` `RowSpacing` propriétés comme `Grid` , et il met en cache des tailles enfants.
+La [`WrapLayout`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/WrapLayout.cs) classe dans [**Xamarin.Forms book. Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) suppose que tous ses enfants ont la même taille et encapsule les enfants d’une ligne (ou colonne) à la suivante. Il définit une `Orientation` propriété comme `StackLayout` , et, et des `ColumnSpacing` `RowSpacing` propriétés comme `Grid` , et il met en cache des tailles enfants.
 
 L’exemple [**photowrap**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/PhotoWrap) met un `WrapLayout` dans un `ScrollView` pour afficher des photos boursières.
 
 ### <a name="no-unconstrained-dimensions-allowed"></a>Aucune dimension non contrainte n’est autorisée.
 
-Le [`UniformGridLayout`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/UniformGridLayout.cs) dans la bibliothèque [**Xamarin. FormsBook. Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) est conçu pour afficher tous ses enfants dans lui-même. Par conséquent, il ne peut pas traiter les dimensions sans contrainte et lève une exception si une exception est rencontrée.
+Le [`UniformGridLayout`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/UniformGridLayout.cs) dans la bibliothèque [**Xamarin.Forms book. Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) est conçu pour afficher tous ses enfants dans lui-même. Par conséquent, il ne peut pas traiter les dimensions sans contrainte et lève une exception si une exception est rencontrée.
 
 L’exemple [**photogrid**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/PhotoGrid) montre les `UniformGridLayout` éléments suivants :
 
@@ -179,13 +182,13 @@ La `Layout` classe définit deux méthodes qui vous permettent de déplacer un e
 
 Pour les enfants qui se chevauchent, les enfants à la fin de la collection apparaissent visuellement en haut des enfants au début de la collection.
 
-La [`OverlapLayout`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/OverlapLayout.cs) classe de la bibliothèque [**Xamarin. FormsBook. Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) définit une propriété jointe pour indiquer l’ordre de rendu et permettre ainsi l’affichage de l’un de ses enfants en plus des autres. L’exemple [**StudentCardFile**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/StudentCardFile) illustre ce qui suit :
+La [`OverlapLayout`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/OverlapLayout.cs) classe de la bibliothèque [**Xamarin.Forms book. Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) définit une propriété jointe pour indiquer l’ordre de rendu et permettre ainsi l’affichage de l’un de ses enfants en plus des autres. L’exemple [**StudentCardFile**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/StudentCardFile) illustre ce qui suit :
 
 [![Capture triple de la grille du fichier de carte étudiant](images/ch26fg10-small.png "Superposition des enfants de disposition")](images/ch26fg10-large.png#lightbox "Superposition des enfants de disposition")
 
 ### <a name="more-attached-bindable-properties"></a>Plus de propriétés pouvant être liées
 
-La [`CartesianLayout`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/CartesianLayout.cs) classe de la bibliothèque [**Xamarin. FormsBook. Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) définit des propriétés pouvant être liées et associées pour spécifier deux `Point` valeurs et une valeur d’épaisseur et manipuler des `BoxView` éléments pour ressembler à des lignes.
+La [`CartesianLayout`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/CartesianLayout.cs) classe de la bibliothèque [**Xamarin.Forms book. Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) définit des propriétés pouvant être liées et attachées pour spécifier deux `Point` valeurs et une valeur d’épaisseur et manipule des `BoxView` éléments pour ressembler à des lignes.
 
 L’exemple [**UnitCube**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/UnitCube) utilise cette valeur pour dessiner un cube 3D.
 

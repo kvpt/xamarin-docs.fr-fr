@@ -10,16 +10,16 @@ ms.date: 10/01/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b029ffdb0a16d9f54951ae3754ca0f1eb7f69aaa
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: ca78ee1c31e4f6e2089d5860543aabafe1a80c3a
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556878"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93366904"
 ---
 # <a name="platform-specifics"></a>Spécificités de la plateforme
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 _Les spécificités des plateformes vous permettent d’utiliser des fonctionnalités uniquement disponibles sur une plateforme spécifique, sans implémenter de convertisseurs ou d’effets personnalisés._
 
@@ -46,7 +46,7 @@ Les fournisseurs peuvent créer leurs propres propres plateformes avec des effet
 Le processus de création d’un spécifique à une plateforme est le suivant :
 
 1. Implémentez les fonctionnalités spécifiques comme un effet. Pour plus d’informations, consultez [création d’un effet](~/xamarin-forms/app-fundamentals/effects/creating.md).
-1. Créez une classe spécifique à la plateforme qui expose l’effet. Pour plus d’informations, consultez [création d’une classe spécifique à une plateforme](#creating-a-platform-specific-class).
+1. Créez une classe spécifique à la plateforme qui expose l’effet. Pour plus d’informations, consultez [création d’une classe Platform-Specific](#creating-a-platform-specific-class).
 1. Dans la classe spécifique à la plateforme, implémentez une propriété jointe pour permettre l’utilisation de la plateforme spécifique via XAML. Pour plus d’informations, consultez [Ajout d’une propriété jointe](#adding-an-attached-property).
 1. Dans la classe spécifique à la plateforme, implémentez des méthodes d’extension pour permettre l’utilisation de la plateforme spécifique via une API de code fluent. Pour plus d’informations, consultez [Ajout de méthodes d’extension](#adding-extension-methods).
 1. Modifiez l’implémentation de l’effet afin que l’effet soit appliqué uniquement si le spécifique à la plateforme a été appelé sur la même plateforme que l’effet. Pour plus d’informations, consultez [création de l’effet](#creating-the-effect).
@@ -58,7 +58,7 @@ Le résultat de l’exposition d’un effet en tant que spécifique à une plate
 
 L' [exemple d’application](/samples/xamarin/xamarin-forms-samples/userinterface-shadowplatformspecific) illustre un `Shadow` spécifique à une plateforme qui ajoute une ombre au texte affiché par un [`Label`](xref:Xamarin.Forms.Label) contrôle :
 
-![Shadow-spécifique à la plateforme](images/screenshots.png)
+![Platform-Specific Shadow](images/screenshots.png)
 
 L' [exemple d’application](/samples/xamarin/xamarin-forms-samples/userinterface-shadowplatformspecific) implémente la `Shadow` plateforme spécifique à chaque plateforme, afin de faciliter la compréhension. Toutefois, hormis chaque implémentation d’effet propre à la plateforme, l’implémentation de la classe Shadow est largement identique pour chaque plateforme. Par conséquent, ce guide se concentre sur l’implémentation de la classe Shadow et l’effet associé sur une plate-forme unique.
 
@@ -286,5 +286,5 @@ shadowLabel.On<iOS>().SetIsShadowed(true);
 - [Spécificités de la plateforme Android](~/xamarin-forms/platform/android/index.md)
 - [Spécificités de la plateforme Windows](~/xamarin-forms/platform/windows/index.md)
 - [Personnalisation des contrôles avec des effets](~/xamarin-forms/app-fundamentals/effects/index.md)
-- [Propriétés jointes](~/xamarin-forms/xaml/attached-properties.md)
+- [Propriétés attachées](~/xamarin-forms/xaml/attached-properties.md)
 - [API PlatformConfiguration](xref:Xamarin.Forms.PlatformConfiguration)

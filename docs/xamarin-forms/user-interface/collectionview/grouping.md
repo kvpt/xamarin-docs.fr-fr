@@ -10,16 +10,16 @@ ms.date: 09/17/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 51bdcc6f9a95911c548269dbf7b3050cc5921183
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 8858be2839de58369a6b5f0cb8a6c09c44bb3861
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556618"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93366150"
 ---
 # <a name="no-locxamarinforms-collectionview-grouping"></a>Xamarin.Forms Regroupement CollectionView
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
 Les jeux de données volumineux peuvent souvent devenir difficiles à manier lorsqu’ils sont présentés dans une liste de défilement continu. Dans ce scénario, l’Organisation des données en groupes peut améliorer l’expérience utilisateur en facilitant la navigation dans les données.
 
@@ -51,7 +51,7 @@ Le processus de regroupement de données consiste donc à :
 - Créez une `IEnumerable<T>` collection, où `T` est le type qui modélise un seul groupe d’éléments. Ce regroupement est donc un ensemble de groupes, qui stocke les données groupées.
 - Ajoutez des données à la `IEnumerable<T>` collection.
 
-### <a name="example"></a>Exemple
+### <a name="example"></a>Exemples
 
 Lors du regroupement de données, la première étape consiste à créer un type qui modélise un seul élément. L’exemple suivant illustre la `Animal` classe de l’exemple d’application :
 

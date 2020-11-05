@@ -10,16 +10,16 @@ ms.date: 08/22/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e63d92cde5925561dae4217c3c46af2c2c59f795
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: c6179f94b43f12a7bf4b91a05702c0539f3c8658
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563989"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367788"
 ---
 # <a name="skiasharp-effects"></a>Effets SkiaSharp
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 La [`SKPaint`](xref:SkiaSharp.SKPaint) classe SkiaSharp définit six propriétés qui peuvent être classées sous le terme général des _effets_. Il s’agit des propriétés qui modifient l’affichage normal des graphiques d’une certaine façon. Les effets SkiaSharp se répartissent en six catégories :
 
@@ -33,7 +33,7 @@ Affectez [`Shader`](xref:SkiaSharp.SKPaint.Shader) à la propriété de la valeu
 
 ## <a name="blend-modes"></a>[Modes de fusion](blend-modes/index.md)
 
-Affectez [`BlendMode`](xref:SkiaSharp.SKPaint.BlendMode) à la propriété de la valeur d' `SKPaint` un membre de l' [`SKBlendMode`](xref:SkiaSharp.SKBlendMode) énumération pour régir ce qui se produit lorsqu’un graphique source est affiché sur une destination. SkiaSharp prend en charge tous les modes de fusion et de composition CSS, y compris les modes porter-Duff, les modes de fusion séparable et les modes de fusion non séparables.
+Affectez [`BlendMode`](xref:SkiaSharp.SKPaint.BlendMode) à la propriété de la valeur d' `SKPaint` un membre de l' [`SKBlendMode`](xref:SkiaSharp.SKBlendMode) énumération pour régir ce qui se produit lorsqu’un graphique source est affiché sur une destination. SkiaSharp prend en charge tous les modes de fusion et de composition CSS, y compris les modes de Porter-Duff, les modes de fusion séparable et les modes de fusion non séparables.
 
 ## <a name="mask-filters"></a>[Filtres de masque](mask-filters.md)
 

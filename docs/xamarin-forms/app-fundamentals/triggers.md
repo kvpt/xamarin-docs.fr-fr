@@ -10,16 +10,16 @@ ms.date: 04/17/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 29fb1300e62d15130e999f6816e2afefcd3fba3b
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 1f2484fe7c6dee1f1b4df1318263624f3f50f604
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562598"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367177"
 ---
 # <a name="no-locxamarinforms-triggers"></a>Xamarin.Forms Déclencheurs
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithtriggers)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/workingwithtriggers)
 
 Les déclencheurs vous permettent d’exprimer des actions de manière déclarative en XAML. Les actions en question modifient l’apparence des contrôles en fonction des événements ou des modifications apportées aux propriétés. En outre, les déclencheurs d’État, qui sont un groupe spécialisé de déclencheurs, définissent quand un [`VisualState`](xref:Xamarin.Forms.VisualState) doit être appliqué.
 
@@ -44,13 +44,13 @@ Cet exemple montre un déclencheur qui modifie la couleur d’arrière-plan d’
 
 Les parties importantes de la déclaration d’un déclencheur sont :
 
-- **TargetType** : type du contrôle auquel le déclencheur est appliqué.
+- **TargetType**  : type du contrôle auquel le déclencheur est appliqué.
 
-- **Property** : propriété du contrôle qui est supervisé.
+- **Property**  : propriété du contrôle qui est supervisé.
 
-- **Value** : valeur qui entraîne l’activation du déclencheur, pour la propriété supervisée.
+- **Value**  : valeur qui entraîne l’activation du déclencheur, pour la propriété supervisée.
 
-- **Setter** : collection d’éléments `Setter` qui peuvent être ajoutés lorsque la condition de déclenchement est remplie. Vous devez spécifier le `Property` et le `Value` à définir.
+- **Setter**  : collection d’éléments `Setter` qui peuvent être ajoutés lorsque la condition de déclenchement est remplie. Vous devez spécifier le `Property` et le `Value` à définir.
 
 - **EnterActions et ExitActions** (non montrés ici) : sont écrits en code et peuvent être utilisés en plus des éléments `Setter` (ou à leur place). Ils sont [décrits ci-dessous](#enteractions-and-exitactions).
 

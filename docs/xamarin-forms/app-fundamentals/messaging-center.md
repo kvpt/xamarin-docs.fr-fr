@@ -10,16 +10,16 @@ ms.date: 10/08/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d24ff6831bb8b52d840ff2db7c13c3eb674b7bd8
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 5ccff2fd24537be0bbf2d809b20a00bc35667c95
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91555786"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93366853"
 ---
 # <a name="no-locxamarinforms-messagingcenter"></a>Xamarin.Forms MessagingCenter
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingmessagingcenter)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/usingmessagingcenter)
 
 Le modèle publier-s’abonner est un modèle de messagerie dans lequel les serveurs de publication envoient des messages sans avoir connaissance des destinataires, appelés des abonnés. De même, les abonnés écoutent des messages spécifiques, sans avoir connaissance des serveurs de publication.
 
@@ -94,7 +94,7 @@ Dans cet exemple, la [`Subscribe`](xref:Xamarin.Forms.MessagingCenter.Subscribe*
 Les abonnés peuvent se désinscrire des messages qu’ils ne souhaitent plus recevoir. Cela est possible avec l’une des [`MessagingCenter.Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*) surcharges suivantes :
 
 ```csharp
-MessagingCenter.Unsubscribe<MainPage>(this, "Hi");
+MessagingCenter.Unsubscribe<MainPage>(this, "Hi");
 ```
 
 Dans cet exemple, la [`Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*) méthode annule l’abonnement `this` de l’objet au `Hi` message envoyé par `MainPage` le type.
@@ -102,7 +102,7 @@ Dans cet exemple, la [`Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscr
 Les messages contenant des données de charge utile doivent être désabonnés de l’utilisation de la [`Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*) surcharge qui spécifie deux arguments génériques :
 
 ```csharp
-MessagingCenter.Unsubscribe<MainPage, string>(this, "Hi");
+MessagingCenter.Unsubscribe<MainPage, string>(this, "Hi");
 ```
 
 Dans cet exemple, la [`Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*) méthode annule l’abonnement `this` de l’objet au `Hi` message envoyé par `MainPage` le type, dont les données de la charge utile sont `string` .

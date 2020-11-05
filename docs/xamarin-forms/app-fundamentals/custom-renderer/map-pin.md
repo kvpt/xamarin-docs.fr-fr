@@ -10,16 +10,16 @@ ms.date: 11/06/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 13d9ddb5ba13960b4ed5af8f4fdb98b486b7e93e
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: f4e0387b6b64c5a3bf801a31c6e333b6f514df1d
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562273"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367366"
 ---
 # <a name="customizing-a-map-pin"></a>Personnalisation d’une épingle de carte
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-map-pin)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/customrenderers-map-pin)
 
 _Cet article montre comment créer un renderer personnalisé pour le contrôle Map qui affiche une carte native avec une épingle personnalisée et une vue personnalisée des données de l’épingle sur chaque plateforme._
 
@@ -176,7 +176,7 @@ Les captures d’écran suivantes montrent la carte, avant et après la personna
 
 ![Contrôle de carte avant et après la personnalisation](map-pin-images/map-layout-ios.png)
 
-Sur iOS, l’épingle est appelée *annotation* et peut être une image personnalisée ou une épingle définie par le système de différentes couleurs. Les annotations peuvent éventuellement présenter une *légende*, qui s’affiche en réponse à l’utilisateur quand il sélectionne l’annotation. La légende affiche les propriétés `Label` et `Address` de l’instance `Pin` avec les vues d’accessoires gauche et droite facultatives. Dans la capture d’écran ci-dessus, la vue d’accessoire gauche est l’image d’un singe, tandis que la vue d’accessoire droite est le bouton *Information*.
+Sur iOS, l’épingle est appelée *annotation* et peut être une image personnalisée ou une épingle définie par le système de différentes couleurs. Les annotations peuvent éventuellement présenter une *légende* , qui s’affiche en réponse à l’utilisateur quand il sélectionne l’annotation. La légende affiche les propriétés `Label` et `Address` de l’instance `Pin` avec les vues d’accessoires gauche et droite facultatives. Dans la capture d’écran ci-dessus, la vue d’accessoire gauche est l’image d’un singe, tandis que la vue d’accessoire droite est le bouton *Information*.
 
 L’exemple de code suivant illustre le renderer personnalisé pour la plateforme iOS :
 

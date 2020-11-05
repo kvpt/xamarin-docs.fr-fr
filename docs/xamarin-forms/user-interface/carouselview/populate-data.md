@@ -10,18 +10,18 @@ ms.date: 10/27/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 82098c47a313eac48b457575620287af74aacd15
-ms.sourcegitcommit: 1550019cd1e858d4d13a4ae6dfb4a5947702f24b
+ms.openlocfilehash: dd3672141382c4b68ccaa90511f184b3ad875411
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92897544"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93365760"
 ---
 # <a name="no-locxamarinforms-carouselview-data"></a>Xamarin.Forms Données CarouselView
 
 ![API de la version préliminaire](~/media/shared/preview.png)
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView) comprend les propriétés suivantes qui définissent les données à afficher et leur apparence :
 

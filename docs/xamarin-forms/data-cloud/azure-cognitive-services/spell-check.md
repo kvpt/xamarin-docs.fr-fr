@@ -10,16 +10,16 @@ ms.date: 02/08/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 719bc923a53d6a2ce9250def48a99893cadac32d
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 4446e92ee1d9b6938464375ba36c6e8e4cdfed6b
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91555305"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93365786"
 ---
 # <a name="spell-checking-using-the-bing-spell-check-api"></a>Vérification de l’orthographe à l’aide de l’API Vérification orthographique Bing
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
 _Vérification orthographique Bing effectue une vérification orthographique contextuelle du texte, en fournissant des suggestions incorporées pour les mots mal orthographiés. Cet article explique comment utiliser l’API REST Vérification orthographique Bing pour corriger les fautes d’orthographe dans une Xamarin.Forms application._
 
@@ -164,7 +164,7 @@ Ce code itère au sein de la `FlaggedTokens` collection et remplace tous les mot
 > [!NOTE]
 > L’exemple ci-dessus utilise `Replace` pour des raisons de simplicité, mais dans une grande quantité de texte, il peut remplacer le mauvais jeton. L’API fournit la `offset` valeur qui doit être utilisée dans les applications de production pour identifier l’emplacement correct dans le texte source pour effectuer une mise à jour.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article explique comment utiliser l’API REST Vérification orthographique Bing pour corriger les fautes d’orthographe dans une Xamarin.Forms application. Vérification orthographique Bing effectue une vérification orthographique contextuelle du texte, en fournissant des suggestions incorporées pour les mots mal orthographiés.
 

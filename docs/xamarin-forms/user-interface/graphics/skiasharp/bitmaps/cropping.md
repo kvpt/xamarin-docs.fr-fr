@@ -10,16 +10,16 @@ ms.date: 07/17/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 45634695050dc6f74a9b1617a2180481e3788d11
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 639b9db51d4a9f0bb0ddd55a3d35bcbda7e31962
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557320"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93366462"
 ---
 # <a name="cropping-skiasharp-bitmaps"></a>Rognage des bitmaps SkiaSharp
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 L’article [**création et dessin de bitmaps SkiaSharp**](drawing.md) a décrit comment un `SKBitmap` objet peut être passé à un `SKCanvas` constructeur. Toute méthode de dessin appelée sur ce canevas provoque le rendu des graphiques sur l’image bitmap. Ces méthodes de dessin incluent `DrawBitmap` , ce qui signifie que cette technique autorise le transfert d’une partie ou de la totalité d’une image bitmap vers une autre bitmap, peut-être avec des transformations appliquées.
 

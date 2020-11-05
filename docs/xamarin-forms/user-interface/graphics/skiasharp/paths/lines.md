@@ -10,20 +10,20 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 75d19e41243076da127d58defdabeca908d900cd
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 7e27db7cd05c1997d3ac889b36aca5e3716d2d08
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556085"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367593"
 ---
 # <a name="lines-and-stroke-caps"></a>Lignes et extrémités de trait
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Découvrez comment utiliser SkiaSharp pour dessiner des lignes avec des épaisseurs de trait différentes_
 
-Dans SkiaSharp, le rendu d’une seule ligne est très différent du rendu d’une série de lignes droites connectées. Toutefois, même lors du dessin de lignes uniques, il est souvent nécessaire de fournir aux lignes une largeur de trait particulière. À mesure que ces lignes deviennent larges, l’apparence des extrémités des lignes devient également importante. L’apparence de la fin de la ligne est appelée *extrémité du trait*:
+Dans SkiaSharp, le rendu d’une seule ligne est très différent du rendu d’une série de lignes droites connectées. Toutefois, même lors du dessin de lignes uniques, il est souvent nécessaire de fournir aux lignes une largeur de trait particulière. À mesure que ces lignes deviennent larges, l’apparence des extrémités des lignes devient également importante. L’apparence de la fin de la ligne est appelée *extrémité du trait* :
 
 ![Trois options d’extrémité de trait](lines-images/strokecapsexample.png)
 

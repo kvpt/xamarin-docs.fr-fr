@@ -10,16 +10,16 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: aa427035dc33b617bed14e0c6aa0b0db27efca7f
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 63833e80b15bb27ab656825b4b1f6b1e3eb31670
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556566"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367814"
 ---
 # <a name="the-path-fill-types"></a>Types de remplissage des tracés
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Découvrez les différents effets possibles avec les types de remplissage de chemin SkiaSharp_
 
@@ -173,7 +173,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Normalement, le type de remplissage du chemin d’accès doit affecter uniquement les remplissages et non les traits, mais les deux `Inverse` modes affectent les remplissages et les traits. Pour les remplissages, les deux `Inverse` types remplissent les zones de manière opposée afin que la zone en dehors de l’étoile soit remplie. Pour les traits, les deux `Inverse` types colorent tout sauf le trait. L’utilisation de ces types de remplissage inverse peut produire des effets impairs, comme le montre la capture d’écran iOS :
 
-[![Capture d’écran triple de la page en étoile à cinq branches](fill-types-images/fivepointedstar-small.png)](fill-types-images/fivepointedstar-large.png#lightbox "Capture d’écran triple de la page en étoile à cinq branches")
+[![Capture d’écran triple de la page Five-Pointed Star](fill-types-images/fivepointedstar-small.png)](fill-types-images/fivepointedstar-large.png#lightbox "Capture d’écran triple de la page Five-Pointed Star")
 
 La capture d’écran Android affiche les effets pair-impair et d’enroulement classiques, mais l’ordre du trait et du remplissage affecte également les résultats.
 

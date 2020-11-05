@@ -1,6 +1,6 @@
 ---
-title: Modes de fusion porter-Duff
-description: Utilisez les modes de fusion porter-Duff pour composer des scènes en fonction des images source et de destination.
+title: Modes de fusion Porter-Duff
+description: Utilisez les modes Porter-Duff Blend pour composer des scènes en fonction des images source et de destination.
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 57F172F8-BA03-43EC-A215-ED6B78696BB5
@@ -10,32 +10,32 @@ ms.date: 08/23/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 12e3e95b0f87d0e93d157bebe057874430866c2b
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 104039bdb211eb823c4306071804e9680793840a
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91560778"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93365838"
 ---
-# <a name="porter-duff-blend-modes"></a>Modes de fusion porter-Duff
+# <a name="porter-duff-blend-modes"></a>Modes de fusion Porter-Duff
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-Les modes de fusion porter-Duff sont nommés après Thomas porter et Tom Duff, qui ont développé une algébrique de composition tout en travaillant pour Lucasfilm. Leur [_composition_](https://graphics.pixar.com/library/Compositing/paper.pdf) papier a été publiée dans le numéro de juillet 1984 des images _informatiques_, pages 253 à 259. Ces modes de fusion sont essentiels pour la composition, qui consiste à assembler différentes images dans une scène composite :
+Les modes de fusion Porter-Duff sont nommés après Thomas porter et Tom Duff, qui ont développé une algébrique de composition tout en travaillant pour Lucasfilm. Leur [_composition_](https://graphics.pixar.com/library/Compositing/paper.pdf) papier a été publiée dans le numéro de juillet 1984 des images _informatiques_ , pages 253 à 259. Ces modes de fusion sont essentiels pour la composition, qui consiste à assembler différentes images dans une scène composite :
 
-![Exemple porter-Duff](porter-duff-images/PorterDuffSample.png "Exemple porter-Duff")
+![Exemple porter-Duff](porter-duff-images/PorterDuffSample.png "Exemple de Porter-Duff")
 
-## <a name="porter-duff-concepts"></a>Concepts de porter-Duff
+## <a name="porter-duff-concepts"></a>Concepts de Porter-Duff
 
 Supposons qu’un rectangle brun occupe les deux tiers gauche et supérieur de votre surface d’affichage :
 
-![Porter-Duff destination](porter-duff-images/PorterDuffDst.png "Porter-Duff destination")
+![Porter-Duff destination](porter-duff-images/PorterDuffDst.png "Destination de la Porter-Duff")
 
 Cette zone est appelée _destination_ ou parfois l' _arrière-plan_ ou le _fond_.
 
 Vous souhaitez dessiner le rectangle suivant, qui est de la même taille que la destination. Le rectangle est transparent, à l’exception d’une zone bleue qui occupe les deux tiers à droite et en bas :
 
-![Porter-Duff source](porter-duff-images/PorterDuffSrc.png "Porter-Duff source")
+![Porter-Duff source](porter-duff-images/PorterDuffSrc.png "Source de Porter-Duff")
 
 C’est ce que l’on appelle la _source_ ou parfois le _premier plan_.
 
@@ -47,7 +47,7 @@ Les pixels transparents de la source permettent l’affichage de l’arrière-pl
 
 Toutefois, il est possible de spécifier un mode de fondu différent pour un effet différent. Si vous spécifiez `SKBlendMode.DstOver` , dans la zone où la source et la destination se croisent, la destination apparaît à la place de la source :
 
-![Porter-Duff de la destination](porter-duff-images/PorterDuffDstOver.png "Porter-Duff de la destination")
+![Porter-Duff de la destination](porter-duff-images/PorterDuffDstOver.png "Porter-Duff la destination sur")
 
 Le `SKBlendMode.DstIn` mode de fusion affiche uniquement la zone dans laquelle la destination et la source se croisent à l’aide de la couleur de destination :
 
@@ -55,7 +55,7 @@ Le `SKBlendMode.DstIn` mode de fusion affiche uniquement la zone dans laquelle l
 
 Le mode de fusion `SKBlendMode.Xor` (exclusif ou) n’affiche rien quand les deux zones se chevauchent :
 
-![Porter-Duff exclusif ou](porter-duff-images/PorterDuffXor.png "Porter-Duff exclusif ou")
+![Porter-Duff exclusif ou](porter-duff-images/PorterDuffXor.png "Porter-Duff or exclusif")
 
 Les rectangles de destination et de source colorés divisent efficacement la surface d’affichage en quatre zones uniques qui peuvent être colorées de différentes façons correspondant à la présence des rectangles de destination et sources :
 
@@ -63,13 +63,13 @@ Les rectangles de destination et de source colorés divisent efficacement la sur
 
 Les rectangles situés en haut à droite et en bas à gauche sont toujours vides, car la destination et la source sont transparentes dans ces zones. La couleur de destination occupe la zone supérieure gauche, ce qui signifie que la zone peut être colorée avec la couleur de destination ou pas du tout. De même, la couleur source occupe la zone inférieure droite, de sorte que la zone peut être colorée avec la couleur source ou pas du tout. L’intersection de la destination et de la source au milieu peut être colorée avec la couleur de destination, la couleur source ou pas du tout.
 
-Le nombre total de combinaisons est 2 (pour l’angle supérieur gauche) multiplié par 2 (pour le coin inférieur droit) fois 3 (pour le centre) ou 12. Il s’agit des 12 modes de composition porter-Duff de base.
+Le nombre total de combinaisons est 2 (pour l’angle supérieur gauche) multiplié par 2 (pour le coin inférieur droit) fois 3 (pour le centre) ou 12. Il s’agit des 12 modes de composition de base Porter-Duff.
 
 Jusqu’à la fin de la _composition d’images numériques_ (page 256), porter et Duff ajoutent un 13e mode appelé _plus_ (correspondant au `SKBlendMode.Plus` membre SKIASHARP et le mode _allégé_ W3C (qui ne doit pas être confondu avec le mode _éclairci_ du W3C). Ce `Plus` mode ajoute les couleurs de destination et de source, un processus qui sera décrit plus en détail dans les plus brefs délais.
 
-Skia ajoute un quatorzième mode appelé `Modulate` qui est très semblable à `Plus` , à ceci près que les couleurs de destination et source sont multipliées. Il peut être traité comme un mode de fondu porter-Duff supplémentaire.
+Skia ajoute un quatorzième mode appelé `Modulate` qui est très semblable à `Plus` , à ceci près que les couleurs de destination et source sont multipliées. Il peut être traité comme un Porter-Duff mode de fondu supplémentaire.
 
-Voici les 14 modes porter-Duff tels qu’ils sont définis dans SkiaSharp. Le tableau montre la couleur de chacune des trois zones non vides dans le diagramme ci-dessus :
+Voici les 14 modes d' Porter-Duff tels qu’ils sont définis dans SkiaSharp. Le tableau montre la couleur de chacune des trois zones non vides dans le diagramme ci-dessus :
 
 | Mode       | Destination | Ensembles | Source |
 | ---------- |:-----------:|:------------:|:------:|
@@ -85,7 +85,7 @@ Voici les 14 modes porter-Duff tels qu’ils sont définis dans SkiaSharp. Le ta
 | `SrcATop`  | X           | Source       |        |
 | `DstATop`  |             | Destination  | X      |
 | `Xor`      | X           |              | X      |
-| `Plus`     | X           | SUM          | X      |
+| `Plus`     | X           | Somme          | X      |
 | `Modulate` |             | Produit      |        | 
 
 Ces modes de fusion sont symétriques. La source et la destination peuvent être échangées et tous les modes sont toujours disponibles.
@@ -262,9 +262,9 @@ public class PorterDuffGridPage : ContentPage
 
 Voici le résultat :
 
-[![Grille porter-Duff](porter-duff-images/PorterDuffGrid.png "Grille porter-Duff")](porter-duff-images/PorterDuffGrid-Large.png#lightbox)
+[![Grille porter-Duff](porter-duff-images/PorterDuffGrid.png "Grille de Porter-Duff")](porter-duff-images/PorterDuffGrid-Large.png#lightbox)
 
-Vous souhaiterez vous convaincre que la transparence est essentielle au bon fonctionnement des modes de fusion porter-Duff. La `PorterDuffCanvasView` classe contient un total de trois appels à la `Canvas.Clear` méthode. Tous utilisent la méthode sans paramètre, qui définit tous les pixels comme transparents :
+Vous souhaiterez vous convaincre que la transparence est essentielle au bon fonctionnement des modes de fusion Porter-Duff. La `PorterDuffCanvasView` classe contient un total de trois appels à la `Canvas.Clear` méthode. Tous utilisent la méthode sans paramètre, qui définit tous les pixels comme transparents :
 
 ```csharp
 canvas.Clear();
@@ -280,7 +280,7 @@ Après cette modification, certains modes de fusion semblent fonctionner, contra
 
 Il peut être tentant de remplacer les bitmaps de la page de **grille porter-Duff** par des appels plus simples `DrawRect` . Cela fonctionne pour le rectangle de destination, mais pas pour le rectangle source. Le rectangle source doit englober plus que la zone de couleur bleue. Le rectangle source doit inclure une zone transparente qui correspond à la zone de couleur de la destination. Ce sont uniquement les modes de fusion qui fonctionnent.
 
-## <a name="using-mattes-with-porter-duff"></a>Utilisation de Matts avec porter-Duff
+## <a name="using-mattes-with-porter-duff"></a>Utilisation de Matts avec Porter-Duff
 
 La page de **composition du mur brique** illustre un exemple de tâche de composition classique : une image doit être Assemblée à partir de plusieurs éléments, y compris une image bitmap avec un arrière-plan qui doit être éliminé. Voici le **SeatedMonkey.jpg** bitmap avec l’arrière-plan problématique :
 
@@ -366,9 +366,9 @@ public partial class BrickWallCompositingPage : ContentPage
 
 Quand le programme s’exécute pour la première fois, rien n’est visible à l’exception de `Button` :
 
-[![Étape de composition du mur brique 0](porter-duff-images/BrickWallCompositing0.png "Étape de composition du mur brique 0")](porter-duff-images/BrickWallCompositing0-Large.png#lightbox)
+[![Étape de composition du mur brique 0](porter-duff-images/BrickWallCompositing0.png "Brick-Wall de la composition de l’étape 0")](porter-duff-images/BrickWallCompositing0-Large.png#lightbox)
 
-Le fait d’appuyer sur la touche `Button` une seule fois provoque un `step` incrément de 1, et le `PaintSurface` gestionnaire affiche maintenant **SeatedMonkey.jpg**:
+Le fait d’appuyer sur la touche `Button` une seule fois provoque un `step` incrément de 1, et le `PaintSurface` gestionnaire affiche maintenant **SeatedMonkey.jpg** :
 
 ```csharp
 public partial class BrickWallCompositingPage : ContentPage
@@ -392,7 +392,7 @@ public partial class BrickWallCompositingPage : ContentPage
 
 Il n’y a pas d' `SKPaint` objet et, par conséquent, aucun mode de fusion. Le bitmap apparaît au bas de l’écran :
 
-[![Étape de composition du mur brique 1](porter-duff-images/BrickWallCompositing1.png "Étape de composition du mur brique 1")](porter-duff-images/BrickWallCompositing1-Large.png#lightbox)
+[![Étape de composition du mur brique 1](porter-duff-images/BrickWallCompositing1.png "Brick-Wall de la composition de l’étape 1")](porter-duff-images/BrickWallCompositing1-Large.png#lightbox)
 
 Appuyez de nouveau sur la touche `Button` et `step` incrémente la valeur 2. Il s’agit de l’étape essentielle de l’affichage du fichier **SeatedMonkeyMatte.png** :
 
@@ -419,7 +419,7 @@ public partial class BrickWallCompositingPage : ContentPage
 
 Le mode de fusion est, ce qui `SKBlendMode.DstIn` signifie que la destination sera conservée dans les zones correspondant à des zones non transparentes de la source. Le reste du rectangle de destination correspondant à la bitmap d’origine devient transparent :
 
-[![Étape de composition du mur brique 2](porter-duff-images/BrickWallCompositing2.png "Étape de composition du mur brique 2")](porter-duff-images/BrickWallCompositing2-Large.png#lightbox)
+[![Étape de composition du mur brique 2](porter-duff-images/BrickWallCompositing2.png "Brick-Wall de la composition de l’étape 2")](porter-duff-images/BrickWallCompositing2-Large.png#lightbox)
 
 L’arrière-plan a été supprimé. 
 
@@ -456,7 +456,7 @@ public partial class BrickWallCompositingPage : ContentPage
 
 Étant donné que ce trottoir doit être placé derrière le singe, le mode de fusion est `DstOver` . La destination apparaît uniquement lorsque l’arrière-plan est transparent :
 
-[![Étape de composition du mur brique 3](porter-duff-images/BrickWallCompositing3.png "Étape de composition du mur brique 3")](porter-duff-images/BrickWallCompositing3-Large.png#lightbox)
+[![Étape de composition du mur brique 3](porter-duff-images/BrickWallCompositing3.png "Brick-Wall de la composition de l’étape 3")](porter-duff-images/BrickWallCompositing3-Large.png#lightbox)
 
 La dernière étape consiste à ajouter un mur de briques. Le programme utilise la vignette de l’image bitmap du mur brique disponible en tant que propriété statique `BrickWallTile` dans la `AlgorithmicBrickWallPage` classe. Une transformation de traduction est ajoutée à l' `SKShader.CreateBitmap` appel pour déplacer les vignettes afin que la ligne inférieure soit une vignette complète :
 
@@ -489,15 +489,15 @@ public partial class BrickWallCompositingPage : ContentPage
 
 Pour plus de commodité, l' `DrawRect` appel affiche ce nuanceur sur la zone de dessin entière, mais le `DstOver` mode limite la sortie à la zone du canevas qui est toujours transparente :
 
-[![Étape de composition du mur brique 4](porter-duff-images/BrickWallCompositing4.png "Étape de composition du mur brique 4")](porter-duff-images/BrickWallCompositing4-Large.png#lightbox)
+[![Étape de composition du mur brique 4](porter-duff-images/BrickWallCompositing4.png "Brick-Wall de la composition de l’étape 4")](porter-duff-images/BrickWallCompositing4-Large.png#lightbox)
 
 Évidemment, il existe d’autres façons de composer cette scène. Il peut être créé en commençant à l’arrière-plan et en progressant jusqu’au premier plan. Toutefois, l’utilisation des modes de fusion vous offre plus de souplesse. En particulier, l’utilisation du cache permet d’exclure l’arrière-plan d’une image bitmap de la scène composée.
 
-Comme vous l’avez appris dans l’article de [découpage avec des chemins d’accès et des régions](../../curves/clipping.md), la `SKCanvas` classe définit trois types de découpage, correspondant aux [`ClipRect`](xref:SkiaSharp.SKCanvas.ClipRect*) [`ClipPath`](xref:SkiaSharp.SKCanvas.ClipPath*) méthodes, et [`ClipRegion`](xref:SkiaSharp.SKCanvas.ClipRegion*) . Les modes de fusion porter-Duff ajoutent un autre type de découpage, ce qui permet de restreindre une image à tout ce que vous pouvez dessiner, y compris les bitmaps. Le cache utilisé dans la **composition du mur de briques** définit essentiellement une zone de découpage.
+Comme vous l’avez appris dans l’article de [découpage avec des chemins d’accès et des régions](../../curves/clipping.md), la `SKCanvas` classe définit trois types de découpage, correspondant aux [`ClipRect`](xref:SkiaSharp.SKCanvas.ClipRect*) [`ClipPath`](xref:SkiaSharp.SKCanvas.ClipPath*) méthodes, et [`ClipRegion`](xref:SkiaSharp.SKCanvas.ClipRegion*) . Les modes Porter-Duff Blend ajoutent un autre type de découpage, ce qui permet de restreindre une image à tout ce que vous pouvez dessiner, y compris les bitmaps. Le cache utilisé dans la **composition du mur de briques** définit essentiellement une zone de découpage.
 
 ## <a name="gradient-transparency-and-transitions"></a>Transparence et transitions de dégradé
 
-Les exemples de modes de fusion porter-Duff indiqués plus haut dans cet article comportent toutes les images impliquées dans des pixels opaques et des pixels transparents, mais pas des pixels partiellement transparents. Les fonctions en mode Blend sont également définies pour ces pixels. Le tableau suivant est une définition plus formelle des modes de fusion porter-Duff qui utilise la notation trouvée dans la [**référence skia SkBlendMode**](https://skia.org/user/api/SkBlendMode_Reference). (Étant donné que la **référence SkBlendMode** est une référence skia, la syntaxe C++ est utilisée.)
+Les exemples de Porter-Duff modes de fusion présentés plus haut dans cet article comportent toutes les images impliquées dans des pixels opaques et des pixels transparents, mais pas des pixels partiellement transparents. Les fonctions en mode Blend sont également définies pour ces pixels. Le tableau suivant est une définition plus formelle des Porter-Duff modes Blend qui utilise la notation trouvée dans la [**référence SkBlendMode**](https://skia.org/user/api/SkBlendMode_Reference)skia. (Étant donné que la **référence SkBlendMode** est une référence skia, la syntaxe C++ est utilisée.)
 
 D’un point de vue conceptuel, les composants rouge, vert, bleu et alpha de chaque pixel sont convertis d’octets en nombres à virgule flottante dans la plage comprise entre 0 et 1. Pour le canal alpha, 0 est entièrement transparent et 1 est entièrement opaque
 
@@ -529,13 +529,13 @@ Le résultat est indiqué entre crochets avec le canal alpha et la couleur RVB s
 | `Plus`     | [Sa + da, SC + DC] |
 | `Modulate` | Sa DA, SC · Métafichier | 
 
-Ces opérations sont plus faciles à analyser lorsque les fonctions **da** et **sa** sont égales à 0 ou à 1. Par exemple, pour le mode par défaut `SrcOver` , **si sa** est égale à 0, **SC** est également 0 et le résultat est **[DA, DC]**, l’alpha et la couleur de destination. Si **sa** valeur est 1, le résultat est **[sa, SC]**, la source alpha et la couleur, ou **[1, SC]**.
+Ces opérations sont plus faciles à analyser lorsque les fonctions **da** et **sa** sont égales à 0 ou à 1. Par exemple, pour le mode par défaut `SrcOver` , **si sa** est égale à 0, **SC** est également 0 et le résultat est **[DA, DC]** , l’alpha et la couleur de destination. Si **sa** valeur est 1, le résultat est **[sa, SC]** , la source alpha et la couleur, ou **[1, SC]**.
 
 Les `Plus` `Modulate` modes et sont un peu différents des autres dans la mesure où de nouvelles couleurs peuvent résulter de la combinaison de la source et de la destination. Le `Plus` mode peut être interprété soit avec des composants d’octets, soit avec des composants à virgule flottante. Dans la page de **grille porter-Duff** indiquée précédemment, la couleur de destination est **(0xC0, 0x80, 0x00)** et la couleur source est **(0x00, 0x80, 0xC0)**. Chaque paire de composants est ajoutée, mais la somme est ancrée à 0xFF. Le résultat est la couleur **(0xC0, 0xFF, 0xC0)**. Il s’agit de la couleur affichée dans l’intersection.
 
 Pour le `Modulate` mode, les valeurs RVB doivent être converties en virgule flottante. La couleur de destination est **(0,75, 0,5, 0)** et la source est **(0, 0,5, 0,75)**. Les composants RGB sont multipliés ensemble, et le résultat est **(0, 0,25, 0)**. Il s’agit de la couleur affichée dans l’intersection dans la page de **grille porter-Duff** pour ce mode.
 
-La page de **transparence porter-Duff** vous permet d’examiner la manière dont les modes de fusion porter-Duff fonctionnent sur les objets graphiques partiellement transparents. Le fichier XAML comprend un `Picker` avec les modes porter-Duff :
+La page de **transparence porter-Duff** vous permet d’examiner la manière dont les modes Porter-Duff Blend fonctionnent sur les objets graphiques partiellement transparents. Le fichier XAML comprend un `Picker` avec les modes de Porter-Duff :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -652,13 +652,13 @@ public partial class PorterDuffTransparencyPage : ContentPage
 }
 ```
 
-Ce programme montre que les modes de fusion porter-Duff peuvent être utilisés avec des objets graphiques autres que des bitmaps. Toutefois, la source doit inclure une zone transparente. C’est le cas ici, car le dégradé remplit le rectangle, mais une partie du dégradé est transparente.
+Ce programme montre que les modes Porter-Duff Blend peuvent être utilisés avec des objets graphiques autres que des bitmaps. Toutefois, la source doit inclure une zone transparente. C’est le cas ici, car le dégradé remplit le rectangle, mais une partie du dégradé est transparente.
 
 Voici trois exemples :
 
-[![Porter-transparence Duff](porter-duff-images/PorterDuffTransparency.png "Porter-transparence Duff")](porter-duff-images/PorterDuffTransparency-Large.png#lightbox)
+[![Porter-transparence Duff](porter-duff-images/PorterDuffTransparency.png "Transparence Porter-Duff")](porter-duff-images/PorterDuffTransparency-Large.png#lightbox)
 
-La configuration de la destination et de la source est très similaire aux diagrammes illustrés dans la page 255 du document original porter-Duff [_composition d’images numériques_](https://graphics.pixar.com/library/Compositing/paper.pdf) , mais cette page montre que les modes de fusion sont corrects pour les zones de transparence partielle.
+La configuration de la destination et de la source est très similaire aux diagrammes illustrés dans la page 255 du document d’origine Porter-Duff [_composition d’images numériques_](https://graphics.pixar.com/library/Compositing/paper.pdf) , mais cette page montre que les modes de fusion sont corrects pour les zones de transparence partielle.
 
 Vous pouvez utiliser des dégradés transparents pour des effets différents. L’une des possibilités est le masquage, qui est similaire à la technique illustrée dans la section [**dégradés radiaux pour le masquage**](../shaders/circular-gradients.md#radial-gradients-for-masking) de la **page dégradés circulaires SkiaSharp**. La majeure partie de la page **masque de composition** est semblable à celle du programme précédent. Il charge une ressource bitmap et détermine un rectangle dans lequel l’afficher. Un dégradé radial est créé sur la base d’un centre et d’un rayon prédéfinis :
 
@@ -740,7 +740,7 @@ Toutes les zones transparentes de la zone de dessin sont colorées en rose :
 
 [![Masque de composition](porter-duff-images/CompositingMask.png "Masque de composition")](porter-duff-images/CompositingMask-Large.png#lightbox)
 
-Vous pouvez également utiliser les modes porter-Duff et les dégradés partiellement transparents pour les transitions d’une image à l’autre. La page **transitions de dégradé** comprend un `Slider` pour indiquer un niveau de progression de la transition de 0 à 1, et un `Picker` pour choisir le type de transition souhaité :
+Vous pouvez également utiliser des modes de Porter-Duff et des dégradés partiellement transparents pour les transitions d’une image à l’autre. La page **transitions de dégradé** comprend un `Slider` pour indiquer un niveau de progression de la transition de 0 à 1, et un `Picker` pour choisir le type de transition souhaité :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

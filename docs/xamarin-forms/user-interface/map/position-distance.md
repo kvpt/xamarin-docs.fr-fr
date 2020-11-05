@@ -10,16 +10,16 @@ ms.date: 03/10/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 896b7f878e1ec9c3ed3c8324330c288220963e62
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: ccdcfc28e1d439b390459be242b959f53d0bd915
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91559712"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367710"
 ---
 # <a name="no-locxamarinforms-map-position-and-distance"></a>Xamarin.Forms Position et distance de la carte
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
 L' [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps) espace de noms contient un [`Position`](xref:Xamarin.Forms.Maps.Position) struct qui est généralement utilisé lors du positionnement d’un mappage et de ses codes confidentiels, ainsi [`Distance`](xref:Xamarin.Forms.Maps.Distance) qu’un struct qui peut éventuellement être utilisé lors du positionnement d’un mappage.
 

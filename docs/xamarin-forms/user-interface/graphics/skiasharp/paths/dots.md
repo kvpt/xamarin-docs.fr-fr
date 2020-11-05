@@ -10,16 +10,16 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5064a53b140c26acdc5149f5495cc002e657a9b0
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 56a652f6f8ff2c4e9780d72117241d79f71210b5
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91564002"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367385"
 ---
 # <a name="dots-and-dashes-in-skiasharp"></a>Points et tirets dans SkiaSharp
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Maîtrisez les subtilités de dessin de lignes en pointillés et en pointillés dans SkiaSharp_
 
@@ -27,7 +27,7 @@ SkiaSharp vous permet de dessiner des lignes qui ne sont pas solides, mais qui s
 
 ![Ligne en pointillés](dots-images/dottedlinesample.png)
 
-Pour ce faire, il s’agit d’un *effet de chemin d’accès*, qui est une instance de la [`SKPathEffect`](xref:SkiaSharp.SKPathEffect) classe que vous affectez à la [`PathEffect`](xref:SkiaSharp.SKPaint.PathEffect) propriété de `SKPaint` . Vous pouvez créer un effet de tracé (ou combiner des effets de tracés) à l’aide de l’une des méthodes de création statique définies par `SKPathEffect` . ( `SKPathEffect` est l’un des six effets pris en charge par SkiaSharp ; les autres sont décrits dans la section [**SkiaSharp Effect**](../effects/index.md).)
+Pour ce faire, il s’agit d’un *effet de chemin d’accès* , qui est une instance de la [`SKPathEffect`](xref:SkiaSharp.SKPathEffect) classe que vous affectez à la [`PathEffect`](xref:SkiaSharp.SKPaint.PathEffect) propriété de `SKPaint` . Vous pouvez créer un effet de tracé (ou combiner des effets de tracés) à l’aide de l’une des méthodes de création statique définies par `SKPathEffect` . ( `SKPathEffect` est l’un des six effets pris en charge par SkiaSharp ; les autres sont décrits dans la section [**SkiaSharp Effect**](../effects/index.md).)
 
 Pour dessiner des lignes en pointillés ou en pointillés, vous utilisez la [`SKPathEffect.CreateDash`](xref:SkiaSharp.SKPathEffect.CreateDash(System.Single[],System.Single)) méthode statique. Il existe deux arguments : le premier est un tableau de `float` valeurs qui indiquent les longueurs des points et des tirets et la longueur des espaces entre eux. Ce tableau doit avoir un nombre pair d’éléments, et il doit y avoir au moins deux éléments. (Il peut y avoir zéro élément dans le tableau, mais il en résulte une ligne pleine.) S’il y a deux éléments, le premier est la longueur d’un point ou d’un tiret, et le deuxième est la longueur de l’intervalle avant le point ou le tiret suivant. S’il y a plus de deux éléments, ils sont dans cet ordre : la longueur du tiret, la longueur de l’intervalle, la longueur du tiret, la longueur de l’espace, etc.
 

@@ -10,22 +10,22 @@ ms.date: 08/23/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2cc0806af28360cf4bf2bb7e382e8d0a423abab9
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 9d2ac2eec5422068243ac43e78092e25c10652f5
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91555526"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93366776"
 ---
 # <a name="the-skiasharp-linear-gradient"></a>Dégradé linéaire SkiaSharp
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-La [`SKPaint`](xref:SkiaSharp.SKPaint) classe définit une [`Color`](xref:SkiaSharp.SKPaint.Color) propriété utilisée pour rayer des lignes ou des zones de remplissage avec une couleur unie. Vous pouvez également tracer des lignes ou des zones de remplissage avec des _dégradés_, qui sont des fusions progressives de couleurs :
+La [`SKPaint`](xref:SkiaSharp.SKPaint) classe définit une [`Color`](xref:SkiaSharp.SKPaint.Color) propriété utilisée pour rayer des lignes ou des zones de remplissage avec une couleur unie. Vous pouvez également tracer des lignes ou des zones de remplissage avec des _dégradés_ , qui sont des fusions progressives de couleurs :
 
 ![Exemple de dégradé linéaire](linear-gradient-images/LinearGradientSample.png "Exemple de dégradé linéaire")
 
-Le type de dégradé le plus basique est un dégradé _linéaire_ . Le mélange des couleurs se produit sur une ligne (appelée _ligne de dégradé_) d’un point à un autre. Les lignes qui sont perpendiculaires à la ligne de dégradé ont la même couleur. Vous créez un dégradé linéaire à l’aide de l’une des deux méthodes statiques [`SKShader.CreateLinearGradient`](xref:SkiaSharp.SKShader.CreateLinearGradient*) . La différence entre les deux surcharges est que l’une comprend une transformation de matrice et l’autre pas. 
+Le type de dégradé le plus basique est un dégradé _linéaire_ . Le mélange des couleurs se produit sur une ligne (appelée _ligne de dégradé_ ) d’un point à un autre. Les lignes qui sont perpendiculaires à la ligne de dégradé ont la même couleur. Vous créez un dégradé linéaire à l’aide de l’une des deux méthodes statiques [`SKShader.CreateLinearGradient`](xref:SkiaSharp.SKShader.CreateLinearGradient*) . La différence entre les deux surcharges est que l’une comprend une transformation de matrice et l’autre pas. 
 
 Ces méthodes retournent un objet de type [`SKShader`](xref:SkiaSharp.SKShader) que vous affectez à la [`Shader`](xref:SkiaSharp.SKPaint.Shader) propriété de `SKPaint` . Si la `Shader` propriété est non null, elle se substitue à la `Color` propriété. Toute ligne rayée ou toute zone remplie à l’aide `SKPaint` de cet objet est basée sur le dégradé plutôt que sur la couleur unie.
 

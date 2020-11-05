@@ -10,16 +10,16 @@ ms.date: 02/12/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ff9f44ad790f3acda1e855f3308942bb702e66ee
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 595eda84026a9b609f7bd0dadb72fdc9ac762a34
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563898"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367236"
 ---
 # <a name="accessing-the-devices-video-library"></a>Accès à la vidéothèque de l’appareil
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
 La plupart des appareils mobiles et ordinateurs de bureau modernes ont la possibilité d’enregistrer des vidéos à l’aide de l’appareil photo de l’appareil. Les vidéos créées par un utilisateur sont ensuite stockées sous forme de fichiers sur l’appareil. Ces fichiers peuvent être récupérés à partir de la bibliothèque d’images et lus par la classe `VideoPlayer` comme toute autre vidéo.
 
@@ -149,7 +149,7 @@ namespace VideoPlayerDemos.Droid
 }
 ```
 
-La méthode `OnCreate` dans `MainActivity` stocke sa propre instance dans la propriété `Current` statique. Cela permet à l’implémentation de `IVideoPicker` d’obtenir l’instance `MainActivity` pour le démarrage du sélecteur **Sélectionner une vidéo** :
+La méthode `OnCreate` dans `MainActivity` stocke sa propre instance dans la propriété `Current` statique. Cela permet à l’implémentation de `IVideoPicker` d’obtenir l’instance `MainActivity` pour le démarrage du sélecteur **Sélectionner une vidéo**  :
 
 ```csharp
 using System;

@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6a81e5a589e99a62aeaea58707228afd03016a8c
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: f02de8bc2bf0ed1091c73c3a91f748400f8615b7
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563937"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367580"
 ---
 # <a name="visualelement-blur-on-ios"></a>VisualElement flou sur iOS
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Ce spécifique à la plateforme iOS est utilisé pour brouiller le contenu en dessous de lui et peut être appliqué à n’importe quel [`VisualElement`](xref:Xamarin.Forms.VisualElement) . Il est consommé en XAML en affectant [`VisualElement.BlurEffect`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.BlurEffectProperty) à la propriété jointe une valeur de l' [`BlurEffectStyle`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle) énumération :
 
@@ -49,7 +49,7 @@ La `BoxView.On<iOS>` méthode spécifie que ce spécifique à la plateforme s’
 
 Le résultat est qu’un spécifié [`BlurEffectStyle`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle) est appliqué à l' [`BoxView`](xref:Xamarin.Forms.BoxView) instance, ce qui atténue la [`Image`](xref:Xamarin.Forms.Image) couche en dessous :
 
-![Effet de flou propre à la plateforme](applying-blur-images/blur-effect.png)
+![Effet de flou Platform-Specific](applying-blur-images/blur-effect.png)
 
 > [!NOTE]
 > Lors de l’ajout d’un effet de flou à un [`VisualElement`](xref:Xamarin.Forms.VisualElement) , les événements tactiles sont toujours reçus par `VisualElement` .

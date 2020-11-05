@@ -10,16 +10,16 @@ ms.date: 04/02/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 90f93c2fd17771ccd8bc5dc67404b76cd4ab9c30
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 316f79d72ade21fd068112e2d01660502d0ed0d2
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563001"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93366761"
 ---
 # <a name="consume-an-aspnet-web-service-asmx"></a>Consommer un service web ASP.NET (ASMX)
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todoasmx)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/webservices-todoasmx)
 
 _ASMX offre la possibilité de créer des services Web qui envoient des messages à l’aide du protocole SOAP (Simple Object Access Protocol). SOAP est un protocole indépendant de la plateforme et indépendant du langage pour la création et l’accès aux services Web. Les consommateurs d’un service ASMX n’ont pas besoin de savoir quoi que ce soit sur la plateforme, le modèle objet ou le langage de programmation utilisé pour implémenter le service. Ils doivent uniquement comprendre comment envoyer et recevoir des messages SOAP. Cet article montre comment utiliser un service SOAP ASMX à partir d’une Xamarin.Forms application._
 

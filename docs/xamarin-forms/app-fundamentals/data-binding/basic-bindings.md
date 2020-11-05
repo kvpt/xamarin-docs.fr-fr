@@ -11,18 +11,18 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.custom: video
-ms.openlocfilehash: 9bedde64f0eda233c289cb31296854b5cbca54a1
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 107916edee01171b8ff5d4871de3b1243c385dd5
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91561116"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93366423"
 ---
 # <a name="no-locxamarinforms-basic-bindings"></a>Xamarin.Forms Liaisons de base
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
-Une Xamarin.Forms liaison de données lie une paire de propriétés entre deux objets, au moins l’un d’eux est généralement un objet d’interface utilisateur. Ces deux objets sont appelés la *cible* et la *source* :
+Une Xamarin.Forms liaison de données lie une paire de propriétés entre deux objets, au moins l’un d’eux est généralement un objet d’interface utilisateur. Ces deux objets sont appelés la *cible* et la *source*  :
 
 - La *cible* est l’objet (et la propriété) sur lequel la liaison de données est définie.
 - La *source* est l’objet (et la propriété) référencé par la liaison de données.
@@ -102,7 +102,7 @@ Lorsque vous manipulez l’objet `Slider`, l’objet `Label` pivote en conséque
 
 [![Liaison de code de base](basic-bindings-images/basiccodebinding-small.png "Liaison de code de base")](basic-bindings-images/basiccodebinding-large.png#lightbox "Liaison de code de base")
 
-La page **Basic Xaml Binding** (Liaison Xaml de base) est identique à la page **Basic Code Binding**, si ce n’est qu’elle définit la liaison de données entière en XAML :
+La page **Basic Xaml Binding** (Liaison Xaml de base) est identique à la page **Basic Code Binding** , si ce n’est qu’elle définit la liaison de données entière en XAML :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -156,7 +156,7 @@ Le balisage affiché dans la page **Basic XAML Binding** peut être simplifié 
 
 La propriété `BindingContext` est un composant important des liaisons de données, mais elle n’est pas toujours nécessaire. L’objet source peut être spécifié à la place dans l’appel `SetBinding` ou dans l’extension de balisage `Binding`.
 
-Cela est illustré dans l’exemple **Alternative Code Binding** (Liaison de code alternative). Le fichier XAML est similaire à l’exemple **Basic Code Binding**, si ce n’est que l’élément `Slider` est défini pour contrôler la propriété `Scale` de l’objet `Label`. Pour cette raison, l’élément `Slider` est défini pour une plage allant de &ndash;2 à 2 :
+Cela est illustré dans l’exemple **Alternative Code Binding** (Liaison de code alternative). Le fichier XAML est similaire à l’exemple **Basic Code Binding** , si ce n’est que l’élément `Slider` est défini pour contrôler la propriété `Scale` de l’objet `Label`. Pour cette raison, l’élément `Slider` est défini pour une plage allant de &ndash;2 à 2 :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

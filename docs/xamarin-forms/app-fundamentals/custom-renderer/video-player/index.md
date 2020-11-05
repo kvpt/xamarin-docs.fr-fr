@@ -10,16 +10,16 @@ ms.date: 02/12/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a4b092d90b3afa2197c1db576545d233eb6e208d
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 34c3e2bb09c6e285f38b3c17bab2e10debe1d890
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563508"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367255"
 ---
 # <a name="implementing-a-video-player"></a>Implémentation d’un lecteur vidéo
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
 Il est parfois souhaitable de lire des fichiers vidéo dans une Xamarin.Forms application. Cette série d’articles explique comment écrire des convertisseurs personnalisés pour iOS, Android et la plateforme Windows universelle (UWP) pour une Xamarin.Forms classe nommée `VideoPlayer` .
 
@@ -31,7 +31,7 @@ Dans l’exemple [**VideoPlayerDemos**](/samples/xamarin/xamarin-forms-samples/c
 - Une ressource incorporée dans l’application de plateforme
 - La vidéothèque de l’appareil
 
-Les lecteurs vidéo nécessitent des *contrôles de transport*, qui sont des boutons de lecture et de pause de la vidéo, et une barre de positionnement qui montre la progression de la vidéo et permet à l’utilisateur de passer rapidement à un autre emplacement. `VideoPlayer` peut utiliser les contrôles de transport et la barre de positionnement fournis par la plateforme (comme montré ci-dessous), mais vous pouvez aussi fournir des contrôles de transport et une barre de positionnement personnalisés. Voici le programme exécuté sur iOS, Android et la plateforme Windows universelle :
+Les lecteurs vidéo nécessitent des *contrôles de transport* , qui sont des boutons de lecture et de pause de la vidéo, et une barre de positionnement qui montre la progression de la vidéo et permet à l’utilisateur de passer rapidement à un autre emplacement. `VideoPlayer` peut utiliser les contrôles de transport et la barre de positionnement fournis par la plateforme (comme montré ci-dessous), mais vous pouvez aussi fournir des contrôles de transport et une barre de positionnement personnalisés. Voici le programme exécuté sur iOS, Android et la plateforme Windows universelle :
 
 [![Lire une vidéo Web](web-videos-images/playwebvideo-small.png "Lire une vidéo Web")](web-videos-images/playwebvideo-large.png#lightbox "Lire une vidéo Web")
 
@@ -63,7 +63,7 @@ Quand vous créez une vidéo avec l’appareil photo de l’appareil, le fichier
 
 ## <a name="custom-video-transport-controls"></a>[Contrôles de transport vidéo personnalisés](custom-transport.md)
 
-Bien que les lecteurs vidéo de chaque plateforme fournissent leurs propres contrôles de transport sous la forme de boutons pour **Lire** et **Mettre en pause**, vous pouvez supprimer l’affichage de ces boutons et fournir les vôtres. Cet article vous montre comment procéder.
+Bien que les lecteurs vidéo de chaque plateforme fournissent leurs propres contrôles de transport sous la forme de boutons pour **Lire** et **Mettre en pause** , vous pouvez supprimer l’affichage de ces boutons et fournir les vôtres. Cet article vous montre comment procéder.
 
 ## <a name="custom-video-positioning"></a>[Positionnement vidéo personnalisé](custom-positioning.md)
 
