@@ -11,16 +11,16 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 - Firebase
-ms.openlocfilehash: 6135d8caec196ded385bc0f962f007c41d20e2cb
-ms.sourcegitcommit: 1550019cd1e858d4d13a4ae6dfb4a5947702f24b
+ms.openlocfilehash: 498e3b0bd2cb88df3e04dc19c66dbe671a8378dd
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92897493"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374444"
 ---
 # <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-no-locxamarinforms"></a>Envoyer et recevoir des notifications Push avec Azure Notification Hubs et Xamarin.Forms
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurenotificationhub/)
+[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/webservices-azurenotificationhub/)
 
 Les notifications push fournissent des informations à partir d’un système principal vers une application mobile. Apple, Google et d’autres plateformes disposent chacune de leur propre service de notification push (PNS). Azure Notification Hubs vous permet de centraliser les notifications sur les plateformes afin que votre application principale puisse communiquer avec un concentrateur unique, ce qui prend en charge la distribution des notifications à chaque PNS spécifique à la plateforme.
 
@@ -122,7 +122,7 @@ public static class AppConstants
 Personnalisez les valeurs suivantes dans `AppConstants` pour connecter l’exemple d’application à votre Hub de notification Azure :
 
 * `NotificationHubName`: Utilisez le nom du concentrateur de notification Azure que vous avez créé dans votre Portail Azure.
-* `ListenConnectionString`: Cette valeur se trouve dans le hub de notification Azure sous **stratégies d’accès** .
+* `ListenConnectionString`: Cette valeur se trouve dans le hub de notification Azure sous **stratégies d’accès**.
 
 La capture d’écran suivante montre où ces valeurs se trouvent dans le Portail Azure :
 

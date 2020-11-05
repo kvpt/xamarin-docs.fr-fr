@@ -10,16 +10,16 @@ ms.date: 07/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8eff115e894f77aeacff0f6c072bfd338fa19844
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: c28f10441e624a316762c5e677f613335a3f0f94
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91560505"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373261"
 ---
 # <a name="no-locxamarinforms-device-class"></a>Xamarin.Forms Classe d’appareil
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithdevice)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/workingwithdevice)
 
 La [`Device`](xref:Xamarin.Forms.Device) classe contient un certain nombre de propriétés et de méthodes pour aider les développeurs à personnaliser la disposition et les fonctionnalités en fonction de chaque plateforme.
 

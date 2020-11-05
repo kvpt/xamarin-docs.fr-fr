@@ -10,16 +10,16 @@ ms.date: 05/24/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f783dcc9d0070e8e816f378d261191444822841b
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 69a9ddc0096b0a351a7f190f428040b5092c5154
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91561948"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373300"
 ---
 # <a name="skiasharp-curves-and-paths"></a>Courbes et chemins d’accès SkiaSharp
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Découvrez comment utiliser SkiaSharp pour dessiner des courbes et utiliser des fonctionnalités de chemin d’accès_
 

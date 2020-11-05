@@ -10,16 +10,16 @@ ms.date: 08/08/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 60c58ee17f68a12e3e51170f143adc9dc204e275
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 90d97e690c4d1fcdb22f17bbc856f9f9b2d0900c
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562767"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374652"
 ---
 # <a name="controls-reference"></a>Informations de référence sur les contrôles
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/formsgallery/)
 
 L’interface utilisateur d’une Xamarin.Forms application est constituée d’objets qui mappent aux contrôles natifs de chaque plateforme cible. Cela permet aux applications spécifiques à la plateforme pour iOS, Android et le plateforme Windows universelle d’utiliser le Xamarin.Forms code contenu dans une [bibliothèque de .NET standard](~/cross-platform/app-fundamentals/net-standard.md).
 
@@ -27,7 +27,7 @@ Les quatre principaux groupes de contrôles utilisés pour créer l’interface 
 
 - [**Pages**](pages.md)
 - [**Dispositions**](layouts.md)
-- [**Affichages**](views.md)
+- [**Affichage**](views.md)
 - [**Cellules**](cells.md)
 
 Une Xamarin.Forms page occupe généralement la totalité de l’écran. La page contient généralement une disposition, qui contient des vues et éventuellement d’autres dispositions. Les cellules sont des composants spécialisés utilisés dans le cadre de la connexion à [`TableView`](xref:Xamarin.Forms.TableView) et [`ListView`](xref:Xamarin.Forms.ListView) . Un diagramme de classes qui affiche la hiérarchie des types généralement utilisés pour générer une interface utilisateur dans Xamarin.Forms peut être trouvé dans la [ Xamarin.Forms hiérarchie de classes de contrôles](~/xamarin-forms/internals/class-hierarchy.md).

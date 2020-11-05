@@ -10,16 +10,16 @@ ms.date: 05/09/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: db0591f89447a2ae083f5ac73f6e002b4d0ee6f8
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 011ef1fcb2de53cb1f1aa6f0b2c3953e9240d132
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91561350"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374496"
 ---
 # <a name="keyboard-accessibility-in-no-locxamarinforms"></a>Accessibilité du clavier dans Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-accessibility)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-accessibility)
 
 Les utilisateurs qui utilisent des lecteurs d’écran ou ayant des problèmes avec la mobilité peuvent rencontrer des difficultés à utiliser des applications qui ne fournissent pas un accès par clavier approprié. Xamarin.Forms les applications peuvent avoir un ordre de tabulation attendu spécifié pour améliorer leur facilité d’utilisation et leur accessibilité. Spécifier un ordre de tabulation pour les contrôles permet la navigation au clavier, prépare les pages d’application à recevoir des entrées dans un ordre particulier et laisse les lecteurs d’écran lire les éléments actifs à leur utilisateur.
 

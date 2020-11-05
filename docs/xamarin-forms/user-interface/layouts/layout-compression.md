@@ -10,16 +10,16 @@ ms.date: 12/13/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d5e1cb9709c224ed5059de24bb45eed882ef216b
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: c710328426590322f60f482708931c160b2100ca
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563534"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93372650"
 ---
 # <a name="layout-compression"></a>Compression des dispositions
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layoutcompression)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-layoutcompression)
 
 _La compression de disposition supprime les dispositions spécifiées de l’arborescence d’éléments visuels afin d’améliorer les performances de rendu des pages. Cet article explique comment activer la compression de disposition et les avantages qu’elle peut apporter._
 
@@ -117,7 +117,7 @@ Par rapport à la hiérarchie d’affichage imbriqué d’origine de 17 vues, ce
 
 L’exemple d’application contient une page extraite d’une application réelle. Sans la compression de disposition et les convertisseurs rapides, la page produit une hiérarchie d’affichage imbriquée de 130 affichages sur Android. L’activation de convertisseurs rapides et la compression de disposition sur les classes de disposition appropriées réduit la hiérarchie d’affichage imbriquée à 70 affichages, soit une réduction de 46%.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 La compression de disposition supprime les dispositions spécifiées de l’arborescence d’éléments visuels afin d’améliorer les performances de rendu des pages. Les avantages en matière de performances de cette technique varient selon la complexité d’une page, la version du système d’exploitation utilisé et l’appareil sur lequel l’application est en cours d’exécution. Toutefois, les gains en termes de performances les plus importants seront visibles sur les appareils les plus anciens.
 

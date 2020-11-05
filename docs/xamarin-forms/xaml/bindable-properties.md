@@ -10,16 +10,16 @@ ms.date: 01/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: df2cf99ef0ea1fcbb1b52dda7abb6c8cfdd2d2e7
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: f50dde4bb96f43c6487cb40889746514f23d9d44
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91561532"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374080"
 ---
 # <a name="no-locxamarinforms-bindable-properties"></a>Xamarin.Forms Propriétés pouvant être liées
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior)
 
 Les propriétés pouvant être liées étendent la fonctionnalité de propriété CLR en sauvegardant une propriété avec un [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) type, au lieu de sauvegarder une propriété avec un champ. L’objectif des propriétés pouvant être liées est de fournir un système de propriétés qui prend en charge la liaison de données, les styles, les modèles et les valeurs définis par le biais de relations parent-enfant. En outre, les propriétés pouvant être liées peuvent fournir des valeurs par défaut, la validation des valeurs de propriété et les rappels qui surveillent les modifications de propriété.
 

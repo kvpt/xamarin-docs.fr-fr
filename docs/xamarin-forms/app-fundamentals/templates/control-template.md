@@ -10,16 +10,16 @@ ms.date: 01/13/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c89c6b50335405b56349e502f95b9d2975a04f73
-ms.sourcegitcommit: 145bd7550d19088c84949ecf5b1cc39002183234
+ms.openlocfilehash: ad65c46f216af9a24eb02ab55411f0a89ac61100
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93185509"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374613"
 ---
 # <a name="no-locxamarinforms-control-templates"></a>Xamarin.Forms modèles de contrôle
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-controltemplatedemos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/templates-controltemplatedemos)
 
 Xamarin.Forms les modèles de contrôle vous permettent de définir la structure visuelle des [`ContentView`](xref:Xamarin.Forms.ContentView) contrôles personnalisés dérivés et des [`ContentPage`](xref:Xamarin.Forms.ContentPage) pages dérivées. Les modèles de contrôle séparent l’interface utilisateur d’un contrôle personnalisé ou d’une page, de la logique qui implémente le contrôle ou la page. Du contenu supplémentaire peut également être inséré dans le contrôle personnalisé basé sur un modèle, ou dans la page basée sur un modèle, à un emplacement prédéfini.
 
@@ -122,7 +122,7 @@ L’exemple de code XAML suivant illustre un [`ControlTemplate`](xref:Xamarin.Fo
 </ContentPage>
 ```
 
-Lorsqu’un [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) est déclaré en tant que ressource, il doit avoir une clé spécifiée avec l' `x:Key` attribut afin qu’il puisse être identifié dans le dictionnaire de ressources. Dans cet exemple, l’élément racine du `CardViewControlTemplate` est un objet [`Frame`](xref:Xamarin.Forms.Frame). L’objet `Frame` utilise l’extension de balisage `RelativeSource` pour définir comme `BindingContext` l’instance de l’objet runtime à laquelle le modèle sera appliqué, connu sous le nom de *parent basé sur un modèle* . L' `Frame` objet utilise une combinaison d' [`Grid`](xref:Xamarin.Forms.Grid) objets,,, `Frame` [`Image`](xref:Xamarin.Forms.Image) [`Label`](xref:Xamarin.Forms.Label) et [`BoxView`](xref:Xamarin.Forms.BoxView) pour définir la structure visuelle d’un `CardView` objet. Les expressions de liaison de ces objets sont résolues par rapport à des propriétés `CardView`, en raison de l’héritage du `BindingContext` à partir de l’élément `Frame` racine. Pour plus d’informations sur l' `RelativeSource` extension de balisage, consultez [ Xamarin.Forms liaisons relatives](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md).
+Lorsqu’un [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) est déclaré en tant que ressource, il doit avoir une clé spécifiée avec l' `x:Key` attribut afin qu’il puisse être identifié dans le dictionnaire de ressources. Dans cet exemple, l’élément racine du `CardViewControlTemplate` est un objet [`Frame`](xref:Xamarin.Forms.Frame). L’objet `Frame` utilise l’extension de balisage `RelativeSource` pour définir comme `BindingContext` l’instance de l’objet runtime à laquelle le modèle sera appliqué, connu sous le nom de *parent basé sur un modèle*. L' `Frame` objet utilise une combinaison d' [`Grid`](xref:Xamarin.Forms.Grid) objets,,, `Frame` [`Image`](xref:Xamarin.Forms.Image) [`Label`](xref:Xamarin.Forms.Label) et [`BoxView`](xref:Xamarin.Forms.BoxView) pour définir la structure visuelle d’un `CardView` objet. Les expressions de liaison de ces objets sont résolues par rapport à des propriétés `CardView`, en raison de l’héritage du `BindingContext` à partir de l’élément `Frame` racine. Pour plus d’informations sur l' `RelativeSource` extension de balisage, consultez [ Xamarin.Forms liaisons relatives](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md).
 
 ## <a name="consume-a-controltemplate"></a>Consommer un ControlTemplate
 
@@ -177,7 +177,7 @@ L' `TemplateBinding` extension de balisage lie une propriété d’un élément 
 L’extension de balisage `TemplateBinding` définit les propriétés suivantes :
 
 - `Path`, de type `string`, le chemin de la propriété.
-- `Mode`, de type `BindingMode`, la direction dans laquelle les modifications se propagent entre la *source* et la *cible* .
+- `Mode`, de type `BindingMode`, la direction dans laquelle les modifications se propagent entre la *source* et la *cible*.
 - `Converter`, de type `IValueConverter`, le convertisseur de valeur de liaison.
 - `ConverterParameter`, de type `object`, le paramètre du convertisseur de valeur de liaison.
 - `StringFormat`, de type `string`, le format de chaîne pour la liaison.

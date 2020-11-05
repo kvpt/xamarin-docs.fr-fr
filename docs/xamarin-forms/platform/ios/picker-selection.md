@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8e8c5696235e0258ab4e300a821c1ef804e6bd50
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 5b7315fce6a51c570c4486c54fdfc81932a4b8f8
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556683"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93372682"
 ---
 # <a name="picker-item-selection-on-ios"></a>Sélection de l’élément de sélecteur sur iOS
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Ce contrôle spécifique à la plateforme iOS lorsque la sélection d’élément se produit dans un [`Picker`](xref:Xamarin.Forms.Picker) , ce qui permet à l’utilisateur de spécifier la sélection de cet élément lors de l’exploration des éléments du contrôle, ou uniquement une fois que le bouton **terminé** est enfoncé. Il est consommé en XAML en affectant `Picker.UpdateMode` à la propriété jointe une valeur de l' `UpdateMode` énumération :
 
@@ -66,7 +66,7 @@ switch (picker.On<iOS>().UpdateMode())
 
 Le résultat est qu’un spécifié `UpdateMode` est appliqué au [`Picker`](xref:Xamarin.Forms.Picker) , qui contrôle le moment où la sélection de l’élément se produit :
 
-[![Sélecteur UpdateMode-spécifique à la plateforme](picker-selection-images/picker-updatemode.png)](picker-selection-images/picker-updatemode-large.png#lightbox "Sélecteur UpdateMode-spécifique à la plateforme")
+[![Sélecteur UpdateMode-spécifique à la plateforme](picker-selection-images/picker-updatemode.png)](picker-selection-images/picker-updatemode-large.png#lightbox "Platform-Specific de la UpdateMode du sélecteur")
 
 ## <a name="related-links"></a>Liens connexes
 

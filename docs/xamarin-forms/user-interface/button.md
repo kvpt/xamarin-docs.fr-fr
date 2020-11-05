@@ -10,16 +10,16 @@ ms.date: 07/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: fba8dcb344f79c21815a58cff0d8132967381cca
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 6534d25e46ecdd5fcdcd9c525aa49b8e2ded5f49
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556735"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374210"
 ---
 # <a name="no-locxamarinforms-button"></a>Xamarin.Forms Bouton
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)
 
 _Le bouton répond à un TAP ou à un clic qui indique à une application d’effectuer une tâche particulière._
 
@@ -59,7 +59,7 @@ Le `Button` tend à occuper tout l’espace qui lui est autorisé. Par exemple, 
 
 Par défaut, `Button` est rectangulaire, mais vous pouvez lui attribuer des angles arrondis à l’aide de la [`CornerRadius`](xref:Xamarin.Forms.Button.CornerRadius) propriété, comme décrit ci-dessous dans l' [**apparence du bouton**](#button-appearance).
 
-La [`Text`](xref:Xamarin.Forms.Button.Text) propriété spécifie le texte qui apparaît dans le `Button` . L' [`Clicked`](xref:Xamarin.Forms.Button.Clicked) événement est défini sur un gestionnaire d’événements nommé `OnButtonClicked` . Ce gestionnaire se trouve dans le fichier code-behind, **BasicButtonClickPage.Xaml.cs**:
+La [`Text`](xref:Xamarin.Forms.Button.Text) propriété spécifie le texte qui apparaît dans le `Button` . L' [`Clicked`](xref:Xamarin.Forms.Button.Clicked) événement est défini sur un gestionnaire d’événements nommé `OnButtonClicked` . Ce gestionnaire se trouve dans le fichier code-behind, **BasicButtonClickPage.Xaml.cs** :
 
 ```csharp
 public partial class BasicButtonClickPage : ContentPage
@@ -133,7 +133,7 @@ Tout est effectué dans le constructeur de la classe. Étant donné que le `Clic
 button.Clicked += async (sender, args) => await label.RelRotateTo(360, 1000);
 ```
 
-Bien entendu, vous pouvez également définir le gestionnaire d’événements comme une méthode distincte (tout comme la `OnButtonClick` méthode dans un **clic de bouton de base**) et attacher cette méthode à l’événement :
+Bien entendu, vous pouvez également définir le gestionnaire d’événements comme une méthode distincte (tout comme la `OnButtonClick` méthode dans un **clic de bouton de base** ) et attacher cette méthode à l’événement :
 
 ```csharp
 button.Clicked += OnButtonClicked;
@@ -631,7 +631,7 @@ class ToggleButton : Button
 
 Le `ToggleButton` constructeur attache un gestionnaire à l' `Clicked` événement afin qu’il puisse modifier la valeur de la `IsToggled` propriété. La `OnIsToggledChanged` méthode déclenche l' `Toggled` événement.
 
-La dernière ligne de la `OnIsToggledChanged` méthode appelle la `VisualStateManager.GoToState` méthode statique avec les deux chaînes de texte « ToggledOn » et « ToggledOff ». Vous pouvez en savoir plus sur cette méthode et sur la manière dont votre application peut répondre aux États visuels dans l’article [** Xamarin.Forms Gestionnaire d’état visuel**](~/xamarin-forms/user-interface/visual-state-manager.md).
+La dernière ligne de la `OnIsToggledChanged` méthode appelle la `VisualStateManager.GoToState` méthode statique avec les deux chaînes de texte « ToggledOn » et « ToggledOff ». Vous pouvez en savoir plus sur cette méthode et sur la manière dont votre application peut répondre aux États visuels dans l’article [**Xamarin.Forms Gestionnaire d’état visuel**](~/xamarin-forms/user-interface/visual-state-manager.md).
 
 Étant donné que `ToggleButton` effectue l’appel à `VisualStateManager.GoToState` , la classe elle-même n’a pas besoin d’inclure des fonctionnalités supplémentaires pour modifier l’apparence du bouton en fonction de son `IsToggled` État. C’est la responsabilité du XAML qui héberge le `ToggleButton` .
 

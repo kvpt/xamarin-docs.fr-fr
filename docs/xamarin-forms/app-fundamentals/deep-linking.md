@@ -11,16 +11,16 @@ ms.date: 11/28/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5c5d95c3d326961db9d56631a0d7190d64ede72a
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 99da232d13202aadc338ff419042998f646b7c28
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556059"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373066"
 ---
 # <a name="application-indexing-and-deep-linking"></a>Indexation d’applications et liens ciblés
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/deeplinking)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/deeplinking)
 
 _L’indexation des applications permet aux applications qui seraient autrement oubliées après quelques utilisations de rester pertinentes en apparaissant dans les résultats de la recherche. La liaison profonde permet aux applications de répondre à un résultat de recherche qui contient des données d’application, généralement en accédant à une page référencée à partir d’un lien profond. Cet article explique comment utiliser l’indexation d’application et la liaison profonde pour faciliter la Xamarin.Forms recherche de contenu d’application sur les appareils iOS et Android._
 
@@ -41,7 +41,7 @@ Pour plus d’informations sur l’utilisation d’une base de données SQLite, 
 > [!NOTE]
 > Xamarin.Forms l’indexation des applications et la fonctionnalité de liaison profonde sont uniquement disponibles sur les plateformes iOS et Android, et nécessitent au minimum iOS 9 et l’API 23 respectivement.
 
-## <a name="setup"></a>Programme d’installation
+## <a name="setup"></a>Configuration
 
 Les sections suivantes fournissent des instructions d’installation supplémentaires pour utiliser cette fonctionnalité sur les plateformes iOS et Android.
 
@@ -68,8 +68,8 @@ Sur la plateforme Android, vous devez répondre à un nombre de prérequis pour 
 Une fois ces conditions préalables remplies, la configuration supplémentaire suivante est requise pour utiliser Xamarin.Forms l’indexation d’application et la liaison profonde sur la plateforme Android :
 
 1. Installez le [ Xamarin.Forms . AppLinks](https://www.nuget.org/packages/Xamarin.Forms.AppLinks/) le package NuGet dans le projet d’application Android.
-1. Dans le fichier **MainActivity.cs**, ajoutez une déclaration pour utiliser l’espace de noms `Xamarin.Forms.Platform.Android.AppLinks`.
-1. Dans le fichier **MainActivity.cs**, ajoutez une déclaration pour utiliser l’espace de noms `Firebase`.
+1. Dans le fichier **MainActivity.cs** , ajoutez une déclaration pour utiliser l’espace de noms `Xamarin.Forms.Platform.Android.AppLinks`.
+1. Dans le fichier **MainActivity.cs** , ajoutez une déclaration pour utiliser l’espace de noms `Firebase`.
 1. Dans un navigateur web, créez un projet via la [console Firebase](https://console.firebase.google.com/).
 1. Dans la console Firebase, ajoutez Firebase à votre application Android et entrez les données nécessaires.
 1. Téléchargez le fichier **google-services.json** qui en résulte.
@@ -81,7 +81,7 @@ FirebaseApp.InitializeApp(this);
 AndroidAppLinks.Init(this);
 ```
 
-Une fois que **google-services.json** est ajouté au projet (et que l’action de génération *GoogleServicesJson** est définie), le processus de génération extrait l’ID client et la clé API, puis ajoute ces informations d’identification au fichier manifeste généré.
+Une fois que **google-services.json** est ajouté au projet (et que l’action de génération *GoogleServicesJson* * est définie), le processus de génération extrait l’ID client et la clé API, puis ajoute ces informations d’identification au fichier manifeste généré.
 
 > [!NOTE]
 > Dans cet article, les termes « lien d’application » et « lien ciblé » sont souvent utilisés de manière interchangeable. Toutefois, ils ont des significations distinctes sur Android : un lien ciblé est un filtre d’intention qui permet aux utilisateurs d’entrer directement une activité spécifique dans l’application. Un lien ciblé peut ouvrir une boîte de dialogue de désambiguïsation, qui permet à l’utilisateur de sélectionner l’une des nombreuses applications capables de gérer l’URL. Un lien d’application Android est un lien ciblé basé sur l’URL de votre site web, et dont l’appartenance à ce site a été vérifiée. Si vous cliquez sur un lien d’application, votre application s’ouvre si elle est installée, sans ouvrir de boîte de dialogue de désambiguïsation.
@@ -245,7 +245,7 @@ De plus, vous pouvez spécifier les valeurs des clés suivantes :
 
 Pour plus d’informations sur Handoff, consultez [Introduction à Handoff](~/ios/platform/handoff.md).
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a expliqué comment utiliser l’indexation d’application et la liaison profonde pour faciliter la Xamarin.Forms recherche de contenu d’application sur les appareils iOS et Android. L’indexation d’applications permet aux applications de rester pertinentes en apparaissant dans les résultats de recherche, qui sinon auraient été oubliées après quelques utilisations.
 

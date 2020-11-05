@@ -10,18 +10,18 @@ ms.date: 06/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7464b3e4088986a87aa29c77ee8c6baa78266f84
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: ff3d99759c161924260a465cf59a31c21795339d
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91558971"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373846"
 ---
 # <a name="no-locxamarinforms-shapes-polygon"></a>Xamarin.Forms Formes : polygone
 
 ![API de la version préliminaire](~/media/shared/preview.png)
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 La `Polygon` classe dérive de la `Shape` classe et peut être utilisée pour dessiner des polygones, qui sont des séries de lignes connectées qui forment des formes fermées. Pour plus d’informations sur les propriétés que la `Polygon` classe hérite de la `Shape` classe, consultez [ Xamarin.Forms Shapes](index.md).
 

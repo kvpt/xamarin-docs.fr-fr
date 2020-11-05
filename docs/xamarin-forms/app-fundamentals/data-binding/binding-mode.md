@@ -10,18 +10,18 @@ ms.date: 05/01/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8a7c62ec6d7329227abd8f52644212341098185f
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 1ab0603555c55d969e1bee8ae709df3cac23de73
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556436"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373638"
 ---
 # <a name="no-locxamarinforms-binding-mode"></a>Xamarin.Forms Mode de liaison
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
-Dans l’[article précédent](basic-bindings.md), les pages **Alternative Code Binding** (Liaison de code alternative) et **Alternative XAML Binding** (Liaison XAML alternative) présentaient un objet `Label` avec sa propriété `Scale` liée à la propriété `Value` d’un élément `Slider`. Comme la valeur initiale `Slider` est 0, la propriété `Scale` du `Label` était définie sur 0 au lieu de 1 et le `Label` disparaissait.
+Dans l’ [article précédent](basic-bindings.md), les pages **Alternative Code Binding** (Liaison de code alternative) et **Alternative XAML Binding** (Liaison XAML alternative) présentaient un objet `Label` avec sa propriété `Scale` liée à la propriété `Value` d’un élément `Slider`. Comme la valeur initiale `Slider` est 0, la propriété `Scale` du `Label` était définie sur 0 au lieu de 1 et le `Label` disparaissait.
 
 Dans l’exemple [**DataBindingDemos**](/samples/xamarin/xamarin-forms-samples/databindingdemos), la page **Reverse Binding** (Liaison inverse) est similaire aux programmes de l’article précédent, si ce n’est que la liaison de données est définie sur le `Slider` plutôt que sur le `Label`:
 
@@ -208,7 +208,7 @@ public class HslColorViewModel : INotifyPropertyChanged
 }
 ```
 
-Lorsque la propriété `Color` change, la méthode statique `GetNearestColorName` dans la classe `NamedColor` (également incluse dans la solution **DataBindingDemos**) obtient la couleur nommée la plus proche et définit la propriété `Name`. Cette propriété `Name` a un accesseur `set` privé et ne peut donc pas être définie depuis l’extérieur de la classe.
+Lorsque la propriété `Color` change, la méthode statique `GetNearestColorName` dans la classe `NamedColor` (également incluse dans la solution **DataBindingDemos** ) obtient la couleur nommée la plus proche et définit la propriété `Name`. Cette propriété `Name` a un accesseur `set` privé et ne peut donc pas être définie depuis l’extérieur de la classe.
 
 Lorsqu’un ViewModel est défini comme source de liaison, l’infrastructure de liaison attache un gestionnaire à l’événement `PropertyChanged`. De cette façon, la liaison peut être avertie des modifications apportées aux propriétés et peut alors définir les propriétés cibles à partir des valeurs modifiées.
 
@@ -268,7 +268,7 @@ La propriété `Value` de `Slider`, toutefois, est `TwoWay`. Cela permet de déf
 
 Lorsque vous manipulez les curseurs, les `BoxView` et `Label` sont mis à jour en conséquence, comme illustré par la capture d’écran Android.
 
-L’instanciation du ViewModel dans le dictionnaire de ressources est une approche courante. Il est également possible d’instancier le ViewModel dans les balises d’élément de propriété pour la propriété `BindingContext`. Dans le fichier XAML **Simple Color Selector**, essayez de supprimer le `HslColorViewModel` du dictionnaire de ressources et définissez-le sur la propriété `BindingContext` de l’objet `Grid`, comme suit :
+L’instanciation du ViewModel dans le dictionnaire de ressources est une approche courante. Il est également possible d’instancier le ViewModel dans les balises d’élément de propriété pour la propriété `BindingContext`. Dans le fichier XAML **Simple Color Selector** , essayez de supprimer le `HslColorViewModel` du dictionnaire de ressources et définissez-le sur la propriété `BindingContext` de l’objet `Grid`, comme suit :
 
 ```xaml
 <Grid>

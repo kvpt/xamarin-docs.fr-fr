@@ -10,16 +10,16 @@ ms.date: 04/06/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 53df681e79c4c233a8908764d31c8ee416c8a621
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: d5b0cc2bb4617a0f093971dfca69e8352779c088
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91561168"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373651"
 ---
 # <a name="create-no-locxamarinforms-behaviors"></a>Créer des Xamarin.Forms comportements
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-numericvalidationbehavior)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/behaviors-numericvalidationbehavior)
 
 _Xamarin.Forms les comportements sont créés en dérivant de la classe Behavior ou Behavior &lt; T &gt; . Cet article montre comment créer et utiliser des Xamarin.Forms comportements._
 
@@ -207,7 +207,7 @@ entry.Behaviors.Clear();
 
 De plus, notez que les comportements ne sont pas supprimés implicitement des contrôles quand les pages sont dépilées de la pile de navigation. Ils doivent être explicitement supprimés avant que les pages ne soient hors de portée.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a montré comment créer et utiliser des Xamarin.Forms comportements. Xamarin.Forms les comportements sont créés par dérivation à partir de [`Behavior`](xref:Xamarin.Forms.Behavior) la [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) classe ou.
 

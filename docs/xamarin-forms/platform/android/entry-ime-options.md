@@ -10,16 +10,16 @@ ms.date: 07/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 308b0aa56afdbdbd0ac1e918eefd72b1edb4f338
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 79ceca6f028ec5d0399251e178d82d1b2fff81ef
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563820"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373339"
 ---
 # <a name="entry-input-method-editor-options-on-android"></a>Options de l’éditeur de méthode d’entrée d’entrée sur Android
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Ce spécifique à la plateforme Android définit les options de l’éditeur de méthode d’entrée (IME) pour le clavier logiciel d’un [`Entry`](xref:Xamarin.Forms.Entry) . Cela comprend la définition du bouton d’action de l’utilisateur dans le coin inférieur du clavier logiciel et les interactions avec le `Entry` . Il est consommé en XAML en affectant [`Entry.ImeOptions`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Entry.ImeOptionsProperty) à la propriété jointe une valeur de l' [`ImeFlags`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags) énumération :
 

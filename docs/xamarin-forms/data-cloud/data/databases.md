@@ -10,16 +10,16 @@ ms.date: 12/05/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: afa5ccf8f4d4485ae7a9a45bcbc745bddee20f5c
-ms.sourcegitcommit: 1550019cd1e858d4d13a4ae6dfb4a5947702f24b
+ms.openlocfilehash: 4331b29c54b5f7c59daf0a9e04cd398693e79201
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92897479"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374704"
 ---
 # <a name="no-locxamarinforms-local-databases"></a>Xamarin.Forms Bases de données locales
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/todo)
 
 Le moteur de base de données SQLite permet Xamarin.Forms aux applications de charger et d’enregistrer des objets de données dans du code partagé. L’exemple d’application utilise une table de base de données SQLite pour stocker les éléments todo. Cet article explique comment utiliser SQLite.Net dans du code partagé pour stocker et récupérer des informations dans une base de données locale.
 
@@ -40,7 +40,7 @@ Utilisez le gestionnaire de package NuGet pour rechercher **SQLite-net-PCL** et 
 Il existe plusieurs packages NuGet portant des noms similaires. Le package correct possède ces attributs :
 
 - **ID :** sqlite-net-pcl
-- **Auteurs :** SQLite-net
+- **Auteurs :** SQLite-net
 - **Propriétaires :** praeclarum
 - **Lien NuGet :** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 
@@ -259,7 +259,7 @@ Pour plus d’informations, consultez [la documentation SQLite](https://www.sqli
 
 Par défaut, SQLite utilise un journal de restauration traditionnel. Une copie du contenu de la base de données inchangée est écrite dans un fichier de restauration distinct, puis les modifications sont écrites directement dans le fichier de base de données. La validation se produit lorsque le journal de restauration est supprimé.
 
-La journalisation des Write-Ahead (WAL) écrit d’abord les modifications dans un fichier WAL distinct. En mode WAL, une validation est un enregistrement spécial, ajouté au fichier WAL, qui permet à plusieurs transactions de se produire dans un seul fichier WAL. Un fichier WAL est fusionné dans le fichier de base de données dans une opération spéciale appelée _point de contrôle_ .
+La journalisation des Write-Ahead (WAL) écrit d’abord les modifications dans un fichier WAL distinct. En mode WAL, une validation est un enregistrement spécial, ajouté au fichier WAL, qui permet à plusieurs transactions de se produire dans un seul fichier WAL. Un fichier WAL est fusionné dans le fichier de base de données dans une opération spéciale appelée _point de contrôle_.
 
 WAL peut être plus rapide pour les bases de données locales, car les lecteurs et les enregistreurs ne se bloquent pas mutuellement, ce qui permet d’effectuer des opérations de lecture et d’écriture simultanées. Toutefois, le mode WAL n’autorise pas les modifications apportées à la taille de la _page_ , ajoute des associations de fichiers supplémentaires à la base de données et ajoute l’opération _de point de contrôle_ supplémentaire.
 

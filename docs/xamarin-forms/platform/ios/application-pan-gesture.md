@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5bea8b58d8b80ced97856fc7c981afdd5c2102a7
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: f1baf5d71cc25a1f84ff683e9d0072f34715c0da
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562403"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373235"
 ---
 # <a name="simultaneous-pan-gesture-recognition-on-ios"></a>Reconnaissance simultanée des mouvements de panoramique sur iOS
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Lorsqu’un [`PanGestureRecognizer`](xref:Xamarin.Forms.PanGestureRecognizer) est attaché à une vue à l’intérieur d’une vue de défilement, tous les mouvements de panoramique sont capturés par `PanGestureRecognizer` et ne sont pas passés à la vue de défilement. Par conséquent, la vue de défilement ne défilera plus.
 

@@ -10,16 +10,16 @@ ms.date: 06/21/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f8d81e037d63a7144263ce4b3520647e6829bd57
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 11f33c07d2a98e326717f284f0b5d6308a65a693
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557255"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374717"
 ---
 # <a name="file-handling-in-no-locxamarinforms"></a>Gestion des fichiers dans Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfiles)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/workingwithfiles)
 
 _La gestion des fichiers avec Xamarin.Forms peut être effectuée à l’aide de code dans une bibliothèque .NET standard, ou à l’aide de ressources incorporées._
 
@@ -63,7 +63,7 @@ Ces opérations sont démontrées dans l’exemple d’application, qui inclut u
 
 ## <a name="loading-files-embedded-as-resources"></a>Chargement de fichiers incorporés en tant que ressources
 
-Pour incorporer un fichier dans un assembly **.NET Standard**, créez ou ajoutez un fichier, puis vérifiez que **Action de génération = EmbeddedResource**.
+Pour incorporer un fichier dans un assembly **.NET Standard** , créez ou ajoutez un fichier, puis vérifiez que **Action de génération = EmbeddedResource**.
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
@@ -75,7 +75,7 @@ Pour incorporer un fichier dans un assembly **.NET Standard**, créez ou ajoutez
 
 -----
 
-`GetManifestResourceStream` est utilisé pour accéder au fichier incorporé à l’aide de son **ID de ressource**. Par défaut, l’ID de ressource est le nom de fichier préfixé avec l’espace de noms par défaut pour le projet dans lequel il est incorporé. dans ce cas, l’assembly est **WorkingWithFiles** et le nom de fichier est **LibTextResource.txt**, donc l’ID de ressource est `WorkingWithFiles.LibTextResource.txt` .
+`GetManifestResourceStream` est utilisé pour accéder au fichier incorporé à l’aide de son **ID de ressource**. Par défaut, l’ID de ressource est le nom de fichier préfixé avec l’espace de noms par défaut pour le projet dans lequel il est incorporé. dans ce cas, l’assembly est **WorkingWithFiles** et le nom de fichier est **LibTextResource.txt** , donc l’ID de ressource est `WorkingWithFiles.LibTextResource.txt` .
 
 ```csharp
 var assembly = IntrospectionExtensions.GetTypeInfo(typeof(LoadResourceText)).Assembly;
@@ -113,8 +113,8 @@ Les projets partagés peuvent également contenir des fichiers agissant comme de
 
 Il existe deux solutions à ce problème de projet partagé :
 
-- **Synchroniser les projets** : modifiez les propriétés du projet pour que chaque plateforme utilise les **mêmes** nom d’assembly et espace de noms par défaut. Cette valeur peut ensuite être « codée en dur » comme préfixe pour les ID de ressource incorporée dans le projet partagé.
-- **Directives de compilateur #if** : utilisez des directives de compilateur pour définir le préfixe d’ID de ressource approprié, et utilisez cette valeur pour construire de façon dynamique l’ID de ressource approprié.
+- **Synchroniser les projets**  : modifiez les propriétés du projet pour que chaque plateforme utilise les **mêmes** nom d’assembly et espace de noms par défaut. Cette valeur peut ensuite être « codée en dur » comme préfixe pour les ID de ressource incorporée dans le projet partagé.
+- **Directives de compilateur #if**  : utilisez des directives de compilateur pour définir le préfixe d’ID de ressource approprié, et utilisez cette valeur pour construire de façon dynamique l’ID de ressource approprié.
 
 Voici le code qui illustre la deuxième option : Les directives de compilateur sont utilisées pour sélectionner le préfixe de ressource codé en dur (qui est normalement le même que l’espace de noms par défaut du projet de référence). La variable `resourcePrefix` est ensuite utilisée pour créer un ID de ressource valide, en le concaténant avec le nom de fichier de la ressource incorporée.
 
@@ -135,9 +135,9 @@ Stream stream = assembly.GetManifestResourceStream
 
 ### <a name="organizing-resources"></a>Organisation des ressources
 
-Les exemples ci-dessus supposent que le fichier est incorporé dans la racine du projet bibliothèque .NET Standard, auquel cas l’ID de ressource est au format **Namespace.Filename.Extension**, tel que `WorkingWithFiles.LibTextResource.txt` et `WorkingWithFiles.iOS.SharedTextResource.txt`.
+Les exemples ci-dessus supposent que le fichier est incorporé dans la racine du projet bibliothèque .NET Standard, auquel cas l’ID de ressource est au format **Namespace.Filename.Extension** , tel que `WorkingWithFiles.LibTextResource.txt` et `WorkingWithFiles.iOS.SharedTextResource.txt`.
 
-Il est possible d’organiser les ressources incorporées dans des dossiers. Lorsqu’une ressource incorporée est placée dans un dossier, le nom du dossier est intégré à l’ID de ressource (séparé par des points). Le format de l’ID de ressource devient alors **EspaceDeNoms.Dossier.NomDeFichier.Extension**. Si vous placez les fichiers de l’exemple d’application dans un dossier **MyFolder**, les ID de ressource correspondants deviennent `WorkingWithFiles.MyFolder.LibTextResource.txt` et `WorkingWithFiles.iOS.MyFolder.SharedTextResource.txt`.
+Il est possible d’organiser les ressources incorporées dans des dossiers. Lorsqu’une ressource incorporée est placée dans un dossier, le nom du dossier est intégré à l’ID de ressource (séparé par des points). Le format de l’ID de ressource devient alors **EspaceDeNoms.Dossier.NomDeFichier.Extension**. Si vous placez les fichiers de l’exemple d’application dans un dossier **MyFolder** , les ID de ressource correspondants deviennent `WorkingWithFiles.MyFolder.LibTextResource.txt` et `WorkingWithFiles.iOS.MyFolder.SharedTextResource.txt`.
 
 ### <a name="debugging-embedded-resources"></a>Débogage des ressources incorporées
 
@@ -153,7 +153,7 @@ foreach (var res in assembly.GetManifestResourceNames()) {
 }
 ```
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article vous a montré certaines opérations de fichier simples pour enregistrer et charger du texte sur l’appareil, et pour charger des ressources incorporées. Avec .NET Standard 2.0, il est possible de partager du code d’accès de fichier dans les bibliothèques .NET Standard.
 

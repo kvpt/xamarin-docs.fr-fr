@@ -10,22 +10,25 @@ ms.date: 11/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 09622adc269027b589a7345a7d4411c3dcecbf0c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 4ab09546bb2a1dcbc221f3819bc891ce096ce569
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136641"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373965"
 ---
 # <a name="summary-of-chapter-24-page-navigation"></a>Résumé du chapitre 24. Navigation de page
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24)
+
+> [!NOTE]
+> Ce livre a été publié à la printemps de 2016 et n’a pas été mis à jour depuis. Le livre reste très utile, mais certains d’entre eux sont obsolètes et certaines rubriques ne sont plus entièrement correctes ou complètes.
 
 De nombreuses applications se composent de plusieurs pages parmi lesquelles l’utilisateur navigue. L’application dispose toujours d’une page *principale* ou d’une page d' *Accueil* , et à partir de là, l’utilisateur accède à d’autres pages, qui sont conservées dans une pile pour naviguer vers l’arrière. Des options de navigation supplémentaires sont décrites dans le [**chapitre 25. Variétés de page**](chapter25.md).
 
 ## <a name="modal-pages-and-modeless-pages"></a>Pages modales et pages non modales
 
-`VisualElement`définit une [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) propriété de type [`INavigation`](xref:Xamarin.Forms.INavigation) , qui comprend les deux méthodes suivantes pour accéder à une nouvelle page :
+`VisualElement` définit une [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) propriété de type [`INavigation`](xref:Xamarin.Forms.INavigation) , qui comprend les deux méthodes suivantes pour accéder à une nouvelle page :
 
 - [ `PushAsync` ] (XREF : Xamarin.Forms . INavigation. PushAsync ( Xamarin.Forms . Page))
 - [ `PushModalAsync` ] (XREF : Xamarin.Forms . INavigation. PushModalAsync ( Xamarin.Forms . Page))
@@ -60,12 +63,12 @@ Toutefois, les méthodes de navigation de page standard incluent l’animation p
 
 ### <a name="visual-and-functional-variations"></a>Variations visuelles et fonctionnelles
 
-`NavigationPage`comprend deux propriétés que vous pouvez définir quand vous instanciez la classe dans votre `App` méthode :
+`NavigationPage` comprend deux propriétés que vous pouvez définir quand vous instanciez la classe dans votre `App` méthode :
 
 - [`BarBackgroundColor`](xref:Xamarin.Forms.NavigationPage.BarBackgroundColor)
 - [`BarTextColor`](xref:Xamarin.Forms.NavigationPage.BarTextColor)
 
-`NavigationPage`comprend également quatre propriétés pouvant être liées qui affectent la page particulière sur laquelle elles sont définies :
+`NavigationPage` comprend également quatre propriétés pouvant être liées qui affectent la page particulière sur laquelle elles sont définies :
 
 - [ `SetHasBackButton` ] (XREF : Xamarin.Forms . NavigationPage. SetHasBackButton ( Xamarin.Forms . Page, System. Boolean)) et [ `GetHasBackButton` ] (XREF : Xamarin.Forms . NavigationPage. GetHasBackButton ( Xamarin.Forms . Page))
 - [ `SetHasNavigationBar` ] (XREF : Xamarin.Forms . NavigationPage. SetHasNavigationBar ( Xamarin.Forms . BindableObject, System. Boolean)) et [ `GetHasNavigationBar` ] (XREF : Xamarin.Forms . NavigationPage. GetHasNavigationBar ( Xamarin.Forms . BindableObject))
@@ -82,8 +85,8 @@ En outre, les appels `OnAppearing` aux `OnDisappearing` méthodes et n’indique
 
 L' `INavigation` interface comprend deux propriétés de collection qui vous permettent d’examiner la pile de navigation :
 
-- [`NavigationStack`](xref:Xamarin.Forms.INavigation.NavigationStack)de type `IReadOnlyList<Page>` pour la pile non modale
-- [`ModalStack`](xref:Xamarin.Forms.INavigation.ModalStack)de type `IReadOnlyList<Page>` pour la pile modale
+- [`NavigationStack`](xref:Xamarin.Forms.INavigation.NavigationStack) de type `IReadOnlyList<Page>` pour la pile non modale
+- [`ModalStack`](xref:Xamarin.Forms.INavigation.ModalStack) de type `IReadOnlyList<Page>` pour la pile modale
 
 Il est plus sûr d’accéder à ces piles à partir de la `Navigation` propriété de `NavigationPage` (qui doit être la `App` propriété de la classe [`MainPage`](xref:Xamarin.Forms.Application.MainPage) ). Il est possible d’examiner ces piles uniquement en toute sécurité une fois que les méthodes de navigation de page asynchrones sont terminées. La [`CurrentPage`](xref:Xamarin.Forms.NavigationPage.CurrentPage) propriété de `NavigationPage` n’indique pas la page actuelle si la page actuelle est une page modale, mais indique à la place la dernière page non modale.
 
@@ -116,7 +119,7 @@ L’exemple [**ViewGalleryInst**](https://github.com/xamarin/xamarin-forms-book-
 
 - [ `RemovePage` ] (XREF : Xamarin.Forms . INavigation. RemovePage ( Xamarin.Forms . Page))
 - [ `InsertPageBefore` ] (XREF : Xamarin.Forms . INavigation. InsertPageBefore ( Xamarin.Forms . Page, Xamarin.Forms . Page))
-- [`PopToRootAsync`](xref:Xamarin.Forms.INavigation.PopToRootAsync)et [`PopToRootAsync`](xref:Xamarin.Forms.INavigation.PopToRootAsync(System.Boolean)) avec une animation facultative
+- [`PopToRootAsync`](xref:Xamarin.Forms.INavigation.PopToRootAsync) et [`PopToRootAsync`](xref:Xamarin.Forms.INavigation.PopToRootAsync(System.Boolean)) avec une animation facultative
 
 ### <a name="dynamic-page-generation"></a>Génération de page dynamique
 
@@ -164,9 +167,9 @@ L' `App` approche de classe intermédiaire ou ViewModel est idéale lorsque l’
 
 Dans le cas général, un programme multipage qui passe en mode veille doit accéder à la même page lors de sa restauration. Cela signifie qu’un tel programme doit enregistrer le contenu de la pile de navigation. Cette section montre comment automatiser ce processus dans une classe conçue à cet effet. Cette classe appelle également les pages individuelles pour leur permettre d’enregistrer et de restaurer leur état de page.
 
-La bibliothèque [**Xamarin. FormsBook. Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) définit une interface nommée [`IPersistantPage`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/IPersistentPage.cs) que les classes peuvent implémenter pour enregistrer et restaurer des éléments dans le `Properties` dictionnaire.
+La bibliothèque [**Xamarin.Forms book. Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) définit une interface nommée [`IPersistantPage`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/IPersistentPage.cs) que les classes peuvent implémenter pour enregistrer et restaurer des éléments dans le `Properties` dictionnaire.
 
-La [`MultiPageRestorableApp`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MultiPageRestorableApp.cs) classe de la bibliothèque **Xamarin. FormsBook. Toolkit** dérive de `Application` . Vous pouvez ensuite dériver votre `App` classe de `MultiPageRestorableApp` et effectuer des nettoyages.
+La [`MultiPageRestorableApp`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MultiPageRestorableApp.cs) classe de la bibliothèque **Xamarin.Forms book. Toolkit** dérive de `Application` . Vous pouvez ensuite dériver votre `App` classe de `MultiPageRestorableApp` et effectuer des nettoyages.
 
 Le [**StackRestoreDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/StackRestoreDemo) illustre l’utilisation de `MultiPageRestorableApp` .
 

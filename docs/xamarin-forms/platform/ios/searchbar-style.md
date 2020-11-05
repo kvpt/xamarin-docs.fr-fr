@@ -10,16 +10,16 @@ ms.date: 03/05/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a9eacc76fb3da6296039a713e15c4eaa30828d44
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 9cb48c5ddca6f5e6f6aeba76d27d9cd2c95dd450
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91560960"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373677"
 ---
 # <a name="searchbar-style-on-ios"></a>Style SearchBar sur iOS
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Cette plateforme iOS détermine si un [`SearchBar`](xref:Xamarin.Forms.SearchBar) a un arrière-plan. Il est consommé en XAML en affectant `SearchBar.SearchBarStyle` à la propriété pouvant être liée la valeur de l' `UISearchBarStyle` énumération :
 

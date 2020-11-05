@@ -10,16 +10,16 @@ ms.date: 07/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c355816ec1b89801814b217cad8a23be2f453226
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 0f33d3e10b549e6e3e45d35a259ece71bf68724c
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563794"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373326"
 ---
 # <a name="imagebutton-drop-shadows-on-android"></a>Supprimer les ombres sur Android
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Ce spécifique à la plateforme Android est utilisé pour activer une ombre portée sur un `ImageButton` . Il est consommé en XAML en affectant `ImageButton.IsShadowEnabled` à la propriété pouvant être liée la valeur `true` , ainsi qu’un certain nombre de propriétés modifiables facultatives supplémentaires qui contrôlent l’ombre portée :
 

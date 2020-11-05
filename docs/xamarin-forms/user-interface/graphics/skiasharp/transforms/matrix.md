@@ -10,16 +10,16 @@ ms.date: 04/12/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 911365b6293fecd3bf309f3e61d9b232d90b7a13
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: e26e4b66cfc9648eee3c1caab2f8cdc0c02d5c7b
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556553"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374561"
 ---
 # <a name="matrix-transforms-in-skiasharp"></a>Transformations de matrice dans SkiaSharp
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Explorez plus en profondeur dans les transformations SkiaSharp avec la matrice de transformation polyvalente_
 
@@ -153,7 +153,7 @@ Tous ces types de transformations sont classés en tant que transformations *aff
 
 ## <a name="matrix-multiplication"></a>Multiplication de matrices
 
-L’un des avantages importants de l’utilisation de la matrice de transformation est que les transformations composites peuvent être obtenues par multiplication de matrice, qui est souvent appelée *concaténation*dans la documentation SkiaSharp. La plupart des méthodes liées aux transformations dans `SKCanvas` font référence à « pré-concaténation » ou « pre-Concat ». Cela fait référence à l’ordre de multiplication, ce qui est important, car la multiplication de matrice n’est pas commutative.
+L’un des avantages importants de l’utilisation de la matrice de transformation est que les transformations composites peuvent être obtenues par multiplication de matrice, qui est souvent appelée *concaténation* dans la documentation SkiaSharp. La plupart des méthodes liées aux transformations dans `SKCanvas` font référence à « pré-concaténation » ou « pre-Concat ». Cela fait référence à l’ordre de multiplication, ce qui est important, car la multiplication de matrice n’est pas commutative.
 
 Par exemple, la documentation de la [`Translate`](xref:SkiaSharp.SKCanvas.Translate(System.Single,System.Single)) méthode indique qu’il « CONVERSE la matrice actuelle avec la traduction spécifiée », tandis que la documentation de la [`Scale`](xref:SkiaSharp.SKCanvas.Scale(System.Single,System.Single)) méthode indique qu’il s’agit d’un conchat de la matrice actuelle avec l’échelle spécifiée.
 

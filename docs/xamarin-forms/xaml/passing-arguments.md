@@ -10,16 +10,16 @@ ms.date: 10/25/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: dcf09adc690aee5487107630eb74bb8c4e9599cb
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: b07ec0ef50670aef5b933d5010d523989bb19eff
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562169"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374301"
 ---
 # <a name="passing-arguments-in-xaml"></a>Passage d’arguments en XAML
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-passingconstructorarguments)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/xaml-passingconstructorarguments)
 
 _Cet article montre comment utiliser les attributs XAML qui peuvent être utilisés pour passer des arguments à des constructeurs non définis par défaut, pour appeler des méthodes de fabrique et pour spécifier le type d’un argument générique._
 

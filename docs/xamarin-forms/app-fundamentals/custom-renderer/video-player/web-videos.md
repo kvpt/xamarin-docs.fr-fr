@@ -10,16 +10,16 @@ ms.date: 02/12/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 113265ffd26fcb1daf1cc85867e55f3e8ebd091f
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 29d3dbc29424089b9e5c492395ccbadfa0a69ae7
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557944"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373404"
 ---
 # <a name="playing-a-web-video"></a>Lecture d’une vidéo web
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
 La classe `VideoPlayer` définit une propriété `Source` utilisée pour spécifier la source du fichier vidéo ainsi qu’une propriété `AutoPlay`. `AutoPlay` a la valeur par défaut `true`, ce qui signifie que la lecture de la vidéo doit démarrer automatiquement après la définition de `Source` :
 
@@ -466,7 +466,7 @@ Avec l’implémentation de ces propriétés dans les trois renderers, il est po
 </ContentPage>
 ```
 
-La classe `VideoSourceConverter` convertit la chaîne en `UriVideoSource`. Quand vous accédez à la page **Lire une vidéo web**, le chargement de la vidéo commence et la lecture démarre quand une quantité suffisante de données a été téléchargée et mise en mémoire tampon. La vidéo dure environ 10 minutes :
+La classe `VideoSourceConverter` convertit la chaîne en `UriVideoSource`. Quand vous accédez à la page **Lire une vidéo web** , le chargement de la vidéo commence et la lecture démarre quand une quantité suffisante de données a été téléchargée et mise en mémoire tampon. La vidéo dure environ 10 minutes :
 
 [![Lire une vidéo Web](web-videos-images/playwebvideo-small.png "Lire une vidéo Web")](web-videos-images/playwebvideo-large.png#lightbox "Lire une vidéo Web")
 

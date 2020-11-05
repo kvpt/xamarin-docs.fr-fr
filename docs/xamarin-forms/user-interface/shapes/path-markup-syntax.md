@@ -10,18 +10,18 @@ ms.date: 06/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 743f6366cc7e798247ea0151720a81e9cbddfeeb
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: c774b795fce50b32f01b50c29cb71dd5fd02585c
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91559102"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373521"
 ---
 # <a name="no-locxamarinforms-shapes-path-markup-syntax"></a>Xamarin.Forms Shapes : syntaxe de balisage de chemin
 
 ![API de la version préliminaire](~/media/shared/preview.png)
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 Xamarin.Forms la syntaxe de balisage Path vous permet de spécifier de manière compacte des géométries de chemin d’accès en XAML. La syntaxe est spécifiée sous la forme d’une valeur de chaîne pour la `Path.Data` propriété :
 
@@ -126,7 +126,7 @@ Pour plus d’informations sur la création d’une courbe de Bézier cubique en
 
 ### <a name="quadratic-bezier-curve-command"></a>Commande de courbe de Bézier quadratique
 
-La commande de courbe de Bézier quadratique crée une courbe de Bézier quadratique entre le point actuel et le point de terminaison spécifié à l’aide du point de contrôle spécifié. La syntaxe de cette commande est : le point de terminaison `Q` *ControlPoint* *endPoint* ou le point de `q` *controlPoint* *terminaison*ControlPoint.
+La commande de courbe de Bézier quadratique crée une courbe de Bézier quadratique entre le point actuel et le point de terminaison spécifié à l’aide du point de contrôle spécifié. La syntaxe de cette commande est : le point de terminaison `Q` *ControlPoint* *endPoint* ou le point de `q` *controlPoint* *terminaison* ControlPoint.
 
 Dans cette syntaxe :
 
@@ -139,7 +139,7 @@ Pour plus d’informations sur la création d’une courbe de Bézier quadratiqu
 
 ### <a name="smooth-cubic-bezier-curve-command"></a>Commande lisser la courbe de Bézier cubique
 
-La commande lisser la courbe de Bézier cubique crée une courbe de Bézier cubique entre le point actuel et le point de terminaison spécifié à l’aide du point de contrôle spécifié. La syntaxe de cette commande est : `S` *controlPoint2* *point* de terminaison ControlPoint2 ou point de `s` *controlPoint2* *terminaison*ControlPoint2.  
+La commande lisser la courbe de Bézier cubique crée une courbe de Bézier cubique entre le point actuel et le point de terminaison spécifié à l’aide du point de contrôle spécifié. La syntaxe de cette commande est : `S` *controlPoint2* *point* de terminaison ControlPoint2 ou point de `s` *controlPoint2* *terminaison* ControlPoint2.  
 
 Dans cette syntaxe :
 

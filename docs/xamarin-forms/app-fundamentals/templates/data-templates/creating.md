@@ -10,16 +10,16 @@ ms.date: 09/11/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f4ca18a34dc66a81fd30ce4ae2b60e31df8cffb5
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 1da087a8906eb87b14f015371a584b164a8a9340
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562611"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373027"
 ---
 # <a name="creating-a-no-locxamarinforms-datatemplate"></a>Création d’un Xamarin.Forms DataTemplate
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplates)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/templates-datatemplates)
 
 _Les modèles de données peuvent être créés en ligne, dans un ResourceDictionary, ou à partir d’un type personnalisé ou d’un Xamarin.Forms type de cellule approprié. Cet article explore chaque technique._
 
@@ -282,7 +282,7 @@ public class WithDataTemplatePageCS : ContentPage
 
 Le [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) est ajouté au [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) à l’aide de la [`Add`](xref:Xamarin.Forms.ResourceDictionary.Add(System.String,System.Object)) méthode, qui spécifie une `Key` chaîne utilisée pour référencer le `DataTemplate` lors de sa récupération.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a expliqué comment créer des modèles de données, inline, à partir d’un type personnalisé ou dans un [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) . Vous devez utiliser un modèle inline si vous n’avez pas besoin de réutiliser le modèle de données ailleurs. Vous pouvez aussi réutiliser un modèle de données en le définissant en tant que type personnalisé, ou en tant que ressource au niveau du contrôle, de la page ou de l’application.
 

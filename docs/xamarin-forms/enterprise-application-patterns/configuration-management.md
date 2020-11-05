@@ -10,14 +10,17 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6def31ebfe2a619f1d5db1e0fba071494afbcd3e
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 618b3ee23698ef2d5e74d0fc4997f5f2e215d47a
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86931961"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374236"
 ---
 # <a name="configuration-management"></a>Gestion de la configuration
+
+> [!NOTE]
+> Ce livre électronique a été publié au printemps de 2017 et n’a pas été mis à jour depuis. Le livre reste très utile, mais certains éléments du matériel sont obsolètes.
 
 Les paramètres permettent de séparer les données qui configurent le comportement d’une application à partir du code, ce qui permet de modifier le comportement sans reconstruire l’application. Il existe deux types de paramètres : les paramètres de l’application et les paramètres utilisateur.
 
@@ -25,7 +28,7 @@ Les paramètres d’application sont des données créées et gérées par une a
 
 Les paramètres utilisateur sont les paramètres personnalisables d’une application qui affectent le comportement de l’application et ne nécessitent pas de réajustement fréquent. Par exemple, une application peut permettre à l’utilisateur de spécifier l’emplacement à partir duquel récupérer des données et comment l’afficher à l’écran.
 
-Xamarin.Formscomprend un dictionnaire permanent qui peut être utilisé pour stocker des données de paramètres. Ce dictionnaire est accessible à l’aide de la [`Application.Current.Properties`](xref:Xamarin.Forms.Application.Properties) propriété, et toutes les données qui y sont placées sont enregistrées lorsque l’application passe à l’état de veille, et elle est restaurée lorsque l’application reprend ou redémarre. En outre, la [`Application`](xref:Xamarin.Forms.Application) classe a également une [`SavePropertiesAsync`](xref:Xamarin.Forms.Application.SavePropertiesAsync) méthode qui permet à une application d’enregistrer ses paramètres quand cela est nécessaire. Pour plus d’informations sur ce dictionnaire, consultez [dictionnaire des propriétés](~/xamarin-forms/app-fundamentals/application-class.md#properties-dictionary).
+Xamarin.Forms comprend un dictionnaire permanent qui peut être utilisé pour stocker des données de paramètres. Ce dictionnaire est accessible à l’aide de la [`Application.Current.Properties`](xref:Xamarin.Forms.Application.Properties) propriété, et toutes les données qui y sont placées sont enregistrées lorsque l’application passe à l’état de veille, et elle est restaurée lorsque l’application reprend ou redémarre. En outre, la [`Application`](xref:Xamarin.Forms.Application) classe a également une [`SavePropertiesAsync`](xref:Xamarin.Forms.Application.SavePropertiesAsync) méthode qui permet à une application d’enregistrer ses paramètres quand cela est nécessaire. Pour plus d’informations sur ce dictionnaire, consultez [dictionnaire des propriétés](~/xamarin-forms/app-fundamentals/application-class.md#properties-dictionary).
 
 L’inconvénient du stockage de données à l’aide du Xamarin.Forms dictionnaire permanent est qu’il n’est pas facilement lié aux données. Par conséquent, l’application mobile eShopOnContainers utilise la bibliothèque Xam. plugins. Settings, disponible à partir de [NuGet](https://www.nuget.org/packages/Xam.Plugins.Settings/). Cette bibliothèque fournit une approche multiplateforme, de type sécurisé et cohérente pour la persistance et la récupération des paramètres de l’application et de l’utilisateur, tout en utilisant la gestion des paramètres natifs fournie par chaque plateforme. En outre, il est facile d’utiliser la liaison de données pour accéder aux données de paramètres exposées par la bibliothèque.
 
@@ -37,16 +40,16 @@ L’inconvénient du stockage de données à l’aide du Xamarin.Forms dictionna
 Lors de l’utilisation de la bibliothèque Xam. plugins. Settings, vous devez créer une classe statique unique qui contiendra les paramètres de l’application et de l’utilisateur requis par l’application. L’exemple de code suivant montre la classe de paramètres dans l’application mobile eShopOnContainers :
 
 ```csharp
-public static class Settings  
+public static class Settings  
 {  
-    private static ISettings AppSettings  
-    {  
-        get  
-        {  
-            return CrossSettings.Current;  
-        }  
-    }  
-    ...  
+    private static ISettings AppSettings  
+    {  
+        get  
+        {  
+            return CrossSettings.Current;  
+        }  
+    }  
+    ...  
 }
 ```
 
@@ -60,24 +63,24 @@ Les paramètres peuvent être lus et écrits via l' `ISettings` API, qui est fou
 Chaque paramètre se compose d’une clé, d’une valeur par défaut et d’une propriété. L’exemple de code suivant affiche les trois éléments pour un paramètre utilisateur qui représente l’URL de base pour l’services en ligne à laquelle l’application mobile eShopOnContainers se connecte :
 
 ```csharp
-public static class Settings  
+public static class Settings  
 {  
-    ...  
-    private const string IdUrlBase = "url_base";  
-    private static readonly string UrlBaseDefault = GlobalSetting.Instance.BaseEndpoint;  
-    ...  
+    ...  
+    private const string IdUrlBase = "url_base";  
+    private static readonly string UrlBaseDefault = GlobalSetting.Instance.BaseEndpoint;  
+    ...  
 
-    public static string UrlBase  
-    {  
-        get  
-        {  
-            return AppSettings.GetValueOrDefault<string>(IdUrlBase, UrlBaseDefault);  
-        }  
-        set  
-        {  
-            AppSettings.AddOrUpdateValue<string>(IdUrlBase, value);  
-        }  
-    }  
+    public static string UrlBase  
+    {  
+        get  
+        {  
+            return AppSettings.GetValueOrDefault<string>(IdUrlBase, UrlBaseDefault);  
+        }  
+        set  
+        {  
+            AppSettings.AddOrUpdateValue<string>(IdUrlBase, value);  
+        }  
+    }  
 }
 ```
 
@@ -88,33 +91,33 @@ La `UrlBase` propriété statique utilise deux méthodes de l' `ISettings` API p
 Plutôt que de définir une valeur par défaut à l’intérieur de la `Settings` classe, la `UrlBaseDefault` chaîne obtient sa valeur à partir de la `GlobalSetting` classe. L’exemple de code suivant montre la `BaseEndpoint` propriété et la `UpdateEndpoint` méthode de cette classe :
 
 ```csharp
-public class GlobalSetting  
+public class GlobalSetting  
 {  
-    ...  
-    public string BaseEndpoint  
-    {  
-        get { return _baseEndpoint; }  
-        set  
-        {  
-            _baseEndpoint = value;  
-            UpdateEndpoint(_baseEndpoint);  
-        }  
-    }  
-    ...  
+    ...  
+    public string BaseEndpoint  
+    {  
+        get { return _baseEndpoint; }  
+        set  
+        {  
+            _baseEndpoint = value;  
+            UpdateEndpoint(_baseEndpoint);  
+        }  
+    }  
+    ...  
 
-    private void UpdateEndpoint(string baseEndpoint)  
-    {  
-        RegisterWebsite = string.Format("{0}:5105/Account/Register", baseEndpoint);  
-        CatalogEndpoint = string.Format("{0}:5101", baseEndpoint);  
-        OrdersEndpoint = string.Format("{0}:5102", baseEndpoint);  
-        BasketEndpoint = string.Format("{0}:5103", baseEndpoint);  
-        IdentityEndpoint = string.Format("{0}:5105/connect/authorize", baseEndpoint);  
-        UserInfoEndpoint = string.Format("{0}:5105/connect/userinfo", baseEndpoint);  
-        TokenEndpoint = string.Format("{0}:5105/connect/token", baseEndpoint);  
-        LogoutEndpoint = string.Format("{0}:5105/connect/endsession", baseEndpoint);  
-        IdentityCallback = string.Format("{0}:5105/xamarincallback", baseEndpoint);  
-        LogoutCallback = string.Format("{0}:5105/Account/Redirecting", baseEndpoint);  
-    }  
+    private void UpdateEndpoint(string baseEndpoint)  
+    {  
+        RegisterWebsite = string.Format("{0}:5105/Account/Register", baseEndpoint);  
+        CatalogEndpoint = string.Format("{0}:5101", baseEndpoint);  
+        OrdersEndpoint = string.Format("{0}:5102", baseEndpoint);  
+        BasketEndpoint = string.Format("{0}:5103", baseEndpoint);  
+        IdentityEndpoint = string.Format("{0}:5105/connect/authorize", baseEndpoint);  
+        UserInfoEndpoint = string.Format("{0}:5105/connect/userinfo", baseEndpoint);  
+        TokenEndpoint = string.Format("{0}:5105/connect/token", baseEndpoint);  
+        LogoutEndpoint = string.Format("{0}:5105/connect/endsession", baseEndpoint);  
+        IdentityCallback = string.Format("{0}:5105/xamarincallback", baseEndpoint);  
+        LogoutCallback = string.Format("{0}:5105/Account/Redirecting", baseEndpoint);  
+    }  
 }
 ```
 
@@ -126,42 +129,42 @@ Dans l’application mobile eShopOnContainers, le `SettingsView` expose deux par
 
 ![Paramètres utilisateur exposés par l’application mobile eShopOnContainers](configuration-management-images/settings-endpoint.png)
 
-**Figure 7-1**: paramètres utilisateur exposés par l’application mobile eShopOnContainers
+**Figure 7-1** : paramètres utilisateur exposés par l’application mobile eShopOnContainers
 
 La liaison de données peut être utilisée pour récupérer et définir les paramètres exposés par la `Settings` classe. Cela est réalisé par les contrôles sur la liaison d’affichage pour afficher les propriétés du modèle qui, à leur tour, accèdent aux propriétés de la `Settings` classe, et le déclenchement d’une notification de modification de propriété si la valeur des paramètres a changé. Pour plus d’informations sur la façon dont l’application mobile eShopOnContainers construit les modèles de vue et les associe aux vues, consultez [création automatique d’un modèle de vue avec un localisateur de modèle de vue](~/xamarin-forms/enterprise-application-patterns/mvvm.md#automatically-creating-a-view-model-with-a-view-model-locator).
 
 L’exemple de code suivant affiche le [`Entry`](xref:Xamarin.Forms.Entry) contrôle de `SettingsView` qui permet à l’utilisateur d’entrer une URL de point de terminaison de base pour les microservices en conteneur :
 
 ```xaml
-<Entry Text="{Binding Endpoint, Mode=TwoWay}" />
+<Entry Text="{Binding Endpoint, Mode=TwoWay}" />
 ```
 
 Ce [`Entry`](xref:Xamarin.Forms.Entry) contrôle crée une liaison avec la `Endpoint` propriété de la `SettingsViewModel` classe, à l’aide d’une liaison bidirectionnelle. L’exemple de code suivant montre la propriété de point de terminaison :
 
 ```csharp
-public string Endpoint  
+public string Endpoint  
 {  
-    get { return _endpoint; }  
-    set  
-    {  
-        _endpoint = value;  
+    get { return _endpoint; }  
+    set  
+    {  
+        _endpoint = value;  
 
-        if(!string.IsNullOrEmpty(_endpoint))  
-        {  
-            UpdateEndpoint(_endpoint);  
-        }  
+        if(!string.IsNullOrEmpty(_endpoint))  
+        {  
+            UpdateEndpoint(_endpoint);  
+        }  
 
-        RaisePropertyChanged(() => Endpoint);  
-    }  
+        RaisePropertyChanged(() => Endpoint);  
+    }  
 }
 ```
 
 Lorsque la `Endpoint` propriété est définie `UpdateEndpoint` , la méthode est appelée, à condition que la valeur fournie soit valide, et que la notification de modification de propriété soit levée. L’exemple de code suivant montre la méthode `UpdateEndpoint` :
 
 ```csharp
-private void UpdateEndpoint(string endpoint)  
+private void UpdateEndpoint(string endpoint)  
 {  
-    Settings.UrlBase = endpoint;  
+    Settings.UrlBase = endpoint;  
 }
 ```
 
@@ -170,11 +173,11 @@ Cette méthode met à jour la `UrlBase` propriété de la `Settings` classe avec
 Quand `SettingsView` accède à, la `InitializeAsync` méthode dans la `SettingsViewModel` classe est exécutée. L’exemple de code suivant illustre cette méthode :
 
 ```csharp
-public override Task InitializeAsync(object navigationData)  
+public override Task InitializeAsync(object navigationData)  
 {  
-    ...  
-    Endpoint = Settings.UrlBase;  
-    ...  
+    ...  
+    Endpoint = Settings.UrlBase;  
+    ...  
 }
 ```
 
@@ -182,7 +185,7 @@ La méthode affecte `Endpoint` à la propriété la valeur de la `UrlBase` propr
 
 Ce mécanisme garantit que chaque fois qu’un utilisateur accède au SettingsView, les paramètres utilisateur sont récupérés à partir du stockage spécifique à la plateforme et présentés via la liaison de données. Ensuite, si l’utilisateur modifie les valeurs des paramètres, la liaison de données garantit qu’ils sont immédiatement rendus persistants dans un stockage spécifique à la plateforme.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Les paramètres permettent de séparer les données qui configurent le comportement d’une application à partir du code, ce qui permet de modifier le comportement sans reconstruire l’application. Les paramètres de l’application sont les données créées et gérées par une application, et les paramètres utilisateur sont les paramètres personnalisables d’une application qui affectent le comportement de l’application et ne nécessitent pas de réajustement fréquent.
 

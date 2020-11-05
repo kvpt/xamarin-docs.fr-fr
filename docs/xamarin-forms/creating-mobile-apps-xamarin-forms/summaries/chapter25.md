@@ -10,21 +10,24 @@ ms.date: 11/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e66fb50b8d537ee0267457d5b0ab0f417813e676
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 05b7821a08140dda411842c5f978be2027fcc033
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136615"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373970"
 ---
 # <a name="summary-of-chapter-25-page-varieties"></a>Résumé du chapitre 25. Variétés de page
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25)
+
+> [!NOTE]
+> Ce livre a été publié à la printemps de 2016 et n’a pas été mis à jour depuis. Le livre reste très utile, mais certains d’entre eux sont obsolètes et certaines rubriques ne sont plus entièrement correctes ou complètes.
 
 Jusqu’à présent, vous avez vu deux classes qui dérivent de `Page` : `ContentPage` et `NavigationPage` . Ce chapitre présente deux autres :
 
-- [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage)gère deux pages, un maître et un détail
-- [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)gère plusieurs pages enfants accessibles via les onglets
+- [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) gère deux pages, un maître et un détail
+- [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) gère plusieurs pages enfants accessibles via les onglets
 
 Ces types de pages fournissent des options de navigation plus sophistiquées que celles `NavagationPage` présentées au [chapitre 24. Navigation entre les pages](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter24.md).
 
@@ -37,7 +40,7 @@ Il existe deux façons fondamentales de basculer entre ces deux pages :
 - *fractionnement* où le maître et le détail sont côte à côte
 - *menu segue* où la page de détails couvre ou partiellement la page maître
 
-Il existe plusieurs variantes de l’approche *menu segue* (*diapositive*, *chevauchement*et *échange*), mais celles-ci dépendent généralement de la plateforme. Vous pouvez affecter [`MasterDetailBehavior`](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior) à la propriété de `MasterDetailPage` la valeur un membre de l' [`MasterBehavior`](xref:Xamarin.Forms.MasterBehavior) énumération :
+Il existe plusieurs variantes de l’approche *menu segue* ( *diapositive* , *chevauchement* et *échange* ), mais celles-ci dépendent généralement de la plateforme. Vous pouvez affecter [`MasterDetailBehavior`](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior) à la propriété de `MasterDetailPage` la valeur un membre de l' [`MasterBehavior`](xref:Xamarin.Forms.MasterBehavior) énumération :
 
 - [`Default`](xref:Xamarin.Forms.MasterBehavior.Default)
 - [`Split`](xref:Xamarin.Forms.MasterBehavior.Split)
@@ -78,26 +81,26 @@ L’exemple [**MasterDetailTaps**](https://github.com/xamarin/xamarin-forms-book
 
 L [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) 'est une collection de pages que vous pouvez basculer entre les onglets. Il dérive de `MultiPage<Page>` et ne définit aucune propriété ou méthode publique propre. [`MultiPage<T>`](xref:Xamarin.Forms.MultiPage`1)Toutefois, définit une propriété :
 
-- [`Children`](xref:Xamarin.Forms.MultiPage`1.Children)propriété de type`IList<T>`
+- [`Children`](xref:Xamarin.Forms.MultiPage`1.Children) propriété de type `IList<T>`
 
 Vous remplissez cette `Children` collection avec des objets page.
 
 Une autre approche vous permet de définir les enfants de la même `TabbedPage` manière `ListView` qu’un à l’aide de ces deux propriétés qui génèrent automatiquement les pages à onglets :
 
-- [`ItemsSource`](xref:Xamarin.Forms.MultiPage`1.ItemsSource)de type`IEnumerable`
-- [`ItemTemplate`](xref:Xamarin.Forms.MultiPage`1.ItemTemplate)de type`DataTemplate`
+- [`ItemsSource`](xref:Xamarin.Forms.MultiPage`1.ItemsSource) de type `IEnumerable`
+- [`ItemTemplate`](xref:Xamarin.Forms.MultiPage`1.ItemTemplate) de type `DataTemplate`
 
 Toutefois, cette approche ne fonctionne pas correctement sur iOS lorsque la collection contient plus de quelques éléments.
 
-`MultiPage<T>`définit deux propriétés supplémentaires qui vous permettent d’effectuer le suivi de la page actuellement affichée :
+`MultiPage<T>` définit deux propriétés supplémentaires qui vous permettent d’effectuer le suivi de la page actuellement affichée :
 
-- [`CurrentPage`](xref:Xamarin.Forms.MultiPage`1.CurrentPage)de type `T` , qui fait référence à la page
-- [`SelectedItem`](xref:Xamarin.Forms.MultiPage`1.SelectedItem)de type `Object` , qui fait référence à l’objet dans la `ItemsSource` collection
+- [`CurrentPage`](xref:Xamarin.Forms.MultiPage`1.CurrentPage) de type `T` , qui fait référence à la page
+- [`SelectedItem`](xref:Xamarin.Forms.MultiPage`1.SelectedItem) de type `Object` , qui fait référence à l’objet dans la `ItemsSource` collection
 
-`MultiPage<T>`définit également deux événements :
+`MultiPage<T>` définit également deux événements :
 
-- [`PagesChanged`](xref:Xamarin.Forms.MultiPage`1.PagesChanged)Quand la `ItemsSource` collection est modifiée
-- [`CurrentPageChanged`](xref:Xamarin.Forms.MultiPage`1.CurrentPageChanged)Lorsque la page affichée change
+- [`PagesChanged`](xref:Xamarin.Forms.MultiPage`1.PagesChanged) Quand la `ItemsSource` collection est modifiée
+- [`CurrentPageChanged`](xref:Xamarin.Forms.MultiPage`1.CurrentPageChanged) Lorsque la page affichée change
 
 ### <a name="discrete-tab-pages"></a>Pages d’onglet discrètes
 
@@ -111,7 +114,7 @@ L’exemple [**StudentNotes**](https://github.com/xamarin/xamarin-forms-book-sam
 
 ### <a name="using-an-itemtemplate"></a>Utilisation d’un ItemTemplate
 
-L’exemple [**MultiTabbedColor**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25/MultiTabbedColors) utilise la [`NamedColor`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NamedColor.cs) classe dans la bibliothèque [**Xamarin. FormsBook. Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) . Le fichier [MultiTabbedColorsPage. Xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/MultiTabbedColors/MultiTabbedColors/MultiTabbedColors/MultiTabbedColorsPage.xaml) affecte `DataTemplate` à la propriété de la valeur d’une arborescence d’éléments visuels à partir de `TabbedPage` `ContentPage` qui contient des liaisons aux propriétés de `NamedColor` (y compris une liaison à la `Title` propriété).
+L’exemple [**MultiTabbedColor**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25/MultiTabbedColors) utilise la [`NamedColor`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NamedColor.cs) classe de la bibliothèque [**Xamarin.Forms book. Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) . Le fichier [MultiTabbedColorsPage. Xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/MultiTabbedColors/MultiTabbedColors/MultiTabbedColors/MultiTabbedColorsPage.xaml) affecte `DataTemplate` à la propriété de la valeur d’une arborescence d’éléments visuels à partir de `TabbedPage` `ContentPage` qui contient des liaisons aux propriétés de `NamedColor` (y compris une liaison à la `Title` propriété).
 
 Toutefois, cela pose problème sur iOS. Seuls quelques éléments peuvent être affichés, et il n’existe pas de bonne méthode pour leur attribuer des icônes.
 

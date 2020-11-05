@@ -10,16 +10,16 @@ ms.date: 03/27/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9923a7f0605a7ca5d9d81269c3d855e92fbccaf4
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: b934885369882dea2c3a5de1954b428fcfcbac59
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91564080"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374600"
 ---
 # <a name="part-3-xaml-markup-extensions"></a>Partie 3. Extensions de balisage XAML
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
 _Les extensions de balisage XAML constituent une fonctionnalité importante du langage XAML qui permet de définir des propriétés sur des objets ou des valeurs qui sont référencés indirectement à partir d’autres sources. Les extensions de balisage XAML sont particulièrement importantes pour le partage d’objets et le référencement des constantes utilisées dans une application, mais elles trouvent leur plus grand utilitaire dans les liaisons de données._
 
@@ -398,7 +398,7 @@ Vous aurez besoin de déclarations d’espace de noms XML supplémentaires pour 
 xmlns:local="clr-namespace:XamlSamples"
 ```
 
-Vous pouvez également définir des déclarations d’espaces de noms XML pour les espaces de noms .NET dans n’importe quel assembly auquel la bibliothèque .NET Standard fait référence. Par exemple, voici un `sys` préfixe pour l’espace de `System` noms .NET standard, qui se trouve dans l’assembly **netstandard** . Étant donné qu’il s’agit d’un autre assembly, vous devez également spécifier le nom de l’assembly, dans ce cas **netstandard**:
+Vous pouvez également définir des déclarations d’espaces de noms XML pour les espaces de noms .NET dans n’importe quel assembly auquel la bibliothèque .NET Standard fait référence. Par exemple, voici un `sys` préfixe pour l’espace de `System` noms .NET standard, qui se trouve dans l’assembly **netstandard** . Étant donné qu’il s’agit d’un autre assembly, vous devez également spécifier le nom de l’assembly, dans ce cas **netstandard** :
 
 ```csharp
 xmlns:sys="clr-namespace:System;assembly=netstandard"
@@ -557,7 +557,7 @@ Voici le programme en cours d’exécution :
 
 [![Disposition relative utilisant des contraintes](xaml-markup-extensions-images/relativelayout.png)](xaml-markup-extensions-images/relativelayout-large.png#lightbox)
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Les extensions de balisage XAML indiquées ici fournissent une prise en charge importante pour les fichiers XAML. Mais peut-être l’extension de balisage XAML la plus précieuse est `Binding` , ce qui est abordé dans la partie suivante de cette série, [partie 4. Notions de base](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)de la liaison de données.
 

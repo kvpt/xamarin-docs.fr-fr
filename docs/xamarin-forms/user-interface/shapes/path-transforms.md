@@ -10,18 +10,18 @@ ms.date: 07/02/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 37ee7fe2278176024dc1662b87b494e84344b98c
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: e8e41ef3b17c253132668ac7be5ed448695f3685
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91558958"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373859"
 ---
 # <a name="no-locxamarinforms-shapes-path-transforms"></a>Xamarin.Forms Formes : transformations de chemin d’accès
 
 ![API de la version préliminaire](~/media/shared/preview.png)
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 `Transform`Définit comment transformer un `Path` objet d’un espace de coordonnées en un autre espace de coordonnées. Lorsqu’une transformation est appliquée à un `Path` objet, elle modifie le mode de rendu de l’objet dans l’interface utilisateur.
 
@@ -310,7 +310,7 @@ Le tableau suivant présente la structure d’une Xamarin.Forms matrice :
         M12
     :::column-end:::
     :::column:::
-        0,0
+        0.0
     :::column-end:::
 :::row-end:::
 :::row:::
@@ -321,7 +321,7 @@ Le tableau suivant présente la structure d’une Xamarin.Forms matrice :
         M22
     :::column-end:::
     :::column:::
-        0,0
+        0.0
     :::column-end:::
 :::row-end:::
 :::row:::
@@ -332,7 +332,7 @@ Le tableau suivant présente la structure d’une Xamarin.Forms matrice :
         OffsetY
     :::column-end:::
     :::column:::
-        1,0
+        1.0
     :::column-end:::
 :::row-end:::
 

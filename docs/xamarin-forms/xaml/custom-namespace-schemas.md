@@ -10,16 +10,16 @@ ms.date: 12/21/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5c7e0d90358ec230436276070ea2792539c446e5
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: f950db0694b21239b742867d519e893d9a62384c
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91561480"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374067"
 ---
 # <a name="xaml-custom-namespace-schemas-in-no-locxamarinforms"></a>Schémas d’espace de noms personnalisé XAML dans Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-customnamespaceschemas)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/xaml-customnamespaceschemas)
 
 Les types d’une bibliothèque peuvent être référencés en XAML en déclarant un espace de noms XAML pour la bibliothèque, avec la déclaration d’espace de noms qui spécifie le nom de l’espace de noms CLR (Common Language Runtime) et un nom d’assembly :
 

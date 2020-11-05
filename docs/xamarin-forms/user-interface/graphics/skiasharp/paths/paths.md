@@ -10,16 +10,16 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6387da5ffa240c2509a2942a1e721def8f8d39b9
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: f80660c5875db77c85c39f570e9ae58c6c821eb6
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91555630"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374626"
 ---
 # <a name="path-basics-in-skiasharp"></a>Concepts de base du chemin d’accès dans SkiaSharp
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Explorer l’objet SkiaSharp SKPath pour combiner les lignes et les courbes connectées_
 
@@ -33,7 +33,7 @@ Un profil commence généralement par un appel à la méthode suivante `SKPath` 
 
 - [`MoveTo`](xref:SkiaSharp.SKPath.MoveTo*) pour commencer un nouveau contour
 
-L’argument de cette méthode est un point unique, que vous pouvez exprimer en tant que `SKPoint` valeur ou en tant que coordonnées X et Y distinctes. L' `MoveTo` appel établit un point au début du contour et un *point actuel*initial. Vous pouvez appeler les méthodes suivantes pour continuer le contour avec une ligne ou une courbe du point actuel jusqu’à un point spécifié dans la méthode, qui devient alors le nouveau point actuel :
+L’argument de cette méthode est un point unique, que vous pouvez exprimer en tant que `SKPoint` valeur ou en tant que coordonnées X et Y distinctes. L' `MoveTo` appel établit un point au début du contour et un *point actuel* initial. Vous pouvez appeler les méthodes suivantes pour continuer le contour avec une ligne ou une courbe du point actuel jusqu’à un point spécifié dans la méthode, qui devient alors le nouveau point actuel :
 
 - [`LineTo`](xref:SkiaSharp.SKPath.LineTo*) pour ajouter une ligne droite au tracé
 - [`ArcTo`](xref:SkiaSharp.SKPath.ArcTo*) pour ajouter un arc, qui est une ligne sur la circonférence d’un cercle ou d’une ellipse

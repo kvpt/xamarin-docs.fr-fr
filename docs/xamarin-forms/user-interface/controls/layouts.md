@@ -10,16 +10,16 @@ ms.date: 05/21/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f749bda3f0fb10edf8c662ef08c22164087dee47
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: d64f1919bebc1988753a7b6d37c8d31fcb6d84e3
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563742"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373248"
 ---
 # <a name="no-locxamarinforms-layouts"></a>Xamarin.Forms Dispositions
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/formsgallery)
 
 _Xamarin.Forms Les dispositions sont utilisées pour composer des contrôles d’interface utilisateur dans des structures visuelles._
 

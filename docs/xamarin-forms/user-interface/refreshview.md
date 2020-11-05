@@ -12,16 +12,16 @@ no-loc:
 - Xamarin.Essentials
 - RefreshView
 - Universal Windows Platform
-ms.openlocfilehash: aa71e486e81c62a39840e4db05f206c4cb20bacd
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 470093465191897a56cd54a6edaf828afbf40e11
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91559309"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93372871"
 ---
 # <a name="no-locxamarinforms-no-locrefreshview"></a>Xamarin.Forms RefreshView
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-refreshviewdemo/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-refreshviewdemo/)
 
 Le `RefreshView` est un contrôle conteneur qui fournit des fonctionnalités pull pour actualiser le contenu défilant. Par conséquent, l’enfant de `RefreshView` doit être un contrôle à défilement, tel que [`ScrollView`](xref:Xamarin.Forms.ScrollView) , [`CollectionView`](xref:Xamarin.Forms.CollectionView) ou [`ListView`](xref:Xamarin.Forms.ListView) .
 

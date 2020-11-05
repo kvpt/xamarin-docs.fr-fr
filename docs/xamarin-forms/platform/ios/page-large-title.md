@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 162683c4fabb0a8b6deed1fb30bd7a7dece1f597
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: cd1271df727b3b37c49f744e0893703b9c2460d5
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562286"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373716"
 ---
 # <a name="large-page-titles-on-ios"></a>Titres de page de grande taille sur iOS
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Ce spécifique à la plateforme iOS est utilisé pour afficher le titre de la page sous la forme d’un grand titre dans la barre de navigation d’un [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) , pour les appareils qui utilisent iOS 11 ou une version ultérieure. Un titre de grande taille est aligné à gauche et utilise une police plus grande, et passe à un titre standard lorsque l’utilisateur commence à faire défiler le contenu, afin que l’ensemble de l’écran soit utilisé efficacement. Toutefois, dans l’orientation paysage, le titre revient au centre de la barre de navigation pour optimiser la disposition du contenu. Il est consommé en XAML en affectant `NavigationPage.PrefersLargeTitles` une valeur à la propriété jointe `boolean` :
 
@@ -100,7 +100,7 @@ switch (On<iOS>().LargeTitleDisplay())
 
 Le résultat est qu’un spécifié `LargeTitleDisplayMode` est appliqué au [`Page`](xref:Xamarin.Forms.Page) , qui contrôle le comportement du titre volumineux :
 
-![Effet de flou propre à la plateforme](page-large-title-images/large-title.png)
+![Effet de flou Platform-Specific](page-large-title-images/large-title.png)
 
 ## <a name="related-links"></a>Liens connexes
 

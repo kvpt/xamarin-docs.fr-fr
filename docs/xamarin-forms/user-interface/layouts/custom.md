@@ -10,16 +10,16 @@ ms.date: 03/29/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 63a939e7093bcbe52f1aed376253c7aa78b078bf
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 2a7aa9ec588879eb4f59e42cf9848d6e3c560625
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563846"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373794"
 ---
 # <a name="create-a-custom-layout-in-no-locxamarinforms"></a>Créer une disposition personnalisée dans Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
 
 _Xamarin.Forms définit cinq classes de disposition (StackLayout, AbsoluteLayout, RelativeLayout, Grid et FlexLayout) et chacune réorganise ses enfants d’une façon différente. Toutefois, il est parfois nécessaire d’organiser le contenu de la page à l’aide d’une disposition non fournie par Xamarin.Forms . Cet article explique comment écrire une classe de disposition personnalisée et illustre une classe WrapLayout sensible à l’orientation qui réorganise ses enfants horizontalement sur la page, puis encapsule l’affichage des enfants suivants sur des lignes supplémentaires._
 
@@ -29,7 +29,7 @@ Chaque élément visuel est responsable de la détermination de sa propre taille
 
 Une compréhension approfondie de la Xamarin.Forms disposition et des cycles d’invalidation est nécessaire pour créer une disposition personnalisée. Ces cycles seront à présent abordés.
 
-## <a name="layout"></a>Mise en page
+## <a name="layout"></a>Layout
 
 La disposition commence en haut de l’arborescence d’éléments visuels par une page et se poursuit dans toutes les branches de l’arborescence d’éléments visuels pour englober chaque élément visuel d’une page. Les éléments qui sont parents d’autres éléments sont responsables du dimensionnement et du positionnement de leurs enfants par rapport à eux-mêmes.
 
@@ -50,7 +50,7 @@ Chaque Xamarin.Forms classe qui a une `Content` propriété ou `Children` a une 
 En outre, chaque classe qui dérive de [`Layout`](xref:Xamarin.Forms.Layout) ou [`Layout<View>`](xref:Xamarin.Forms.Layout`1) doit substituer la [`OnMeasure`](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) méthode, qui est l’endroit où une classe de disposition détermine la taille nécessaire en effectuant des appels au [ `Measure` ] (XREF : Xamarin.Forms . VisualElement. Measure (System. double, System. double, Xamarin.Forms . MeasureFlags)) de ses enfants.
 
 > [!NOTE]
-> Les éléments déterminent leur taille en fonction des *contraintes*, qui indiquent la quantité d’espace disponible pour un élément dans le parent de l’élément. Contraintes passées à [ `Measure` ] (XREF : Xamarin.Forms . VisualElement. Measure (System. double, System. double, Xamarin.Forms . MeasureFlags)) et les [`OnMeasure`](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) méthodes peuvent être comprises entre 0 et `Double.PositiveInfinity` . Un élément est *restreint*, ou *complètement restreint*, lorsqu’il reçoit un appel à son [ `Measure` ] (XREF : Xamarin.Forms . VisualElement. Measure (System. double, System. double, Xamarin.Forms . MeasureFlags)) avec des arguments non infinis-l’élément est soumis à une taille particulière. Un élément est sans *contrainte*, ou *partiellement contraint*, lorsqu’il reçoit un appel à sa `Measure` méthode avec au moins un argument égal à `Double.PositiveInfinity` : la contrainte infinie peut être considérée comme indiquant le redimensionnement automatique.
+> Les éléments déterminent leur taille en fonction des *contraintes* , qui indiquent la quantité d’espace disponible pour un élément dans le parent de l’élément. Contraintes passées à [ `Measure` ] (XREF : Xamarin.Forms . VisualElement. Measure (System. double, System. double, Xamarin.Forms . MeasureFlags)) et les [`OnMeasure`](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) méthodes peuvent être comprises entre 0 et `Double.PositiveInfinity` . Un élément est *restreint* , ou *complètement restreint* , lorsqu’il reçoit un appel à son [ `Measure` ] (XREF : Xamarin.Forms . VisualElement. Measure (System. double, System. double, Xamarin.Forms . MeasureFlags)) avec des arguments non infinis-l’élément est soumis à une taille particulière. Un élément est sans *contrainte* , ou *partiellement contraint* , lorsqu’il reçoit un appel à sa `Measure` méthode avec au moins un argument égal à `Double.PositiveInfinity` : la contrainte infinie peut être considérée comme indiquant le redimensionnement automatique.
 
 ## <a name="invalidation"></a>Invalidation
 
@@ -73,15 +73,15 @@ La [`InvalidateLayout`](xref:Xamarin.Forms.Layout.InvalidateLayout) valeur peut 
 Le processus de création d’une disposition personnalisée est le suivant :
 
 1. Créez une classe qui dérive de la classe `Layout<View>`. Pour plus d’informations, consultez [créer un WrapLayout](#create-a-wraplayout).
-1. [*facultatif*] Ajoutez des propriétés, sauvegardées par des propriétés pouvant être liées, pour tous les paramètres qui doivent être définis sur la classe Layout. Pour plus d’informations, consultez [Ajouter des propriétés sauvegardées par des propriétés pouvant être liées](#add-properties-backed-by-bindable-properties).
+1. [ *facultatif* ] Ajoutez des propriétés, sauvegardées par des propriétés pouvant être liées, pour tous les paramètres qui doivent être définis sur la classe Layout. Pour plus d’informations, consultez [Ajouter des propriétés sauvegardées par des propriétés pouvant être liées](#add-properties-backed-by-bindable-properties).
 1. Substituez la [`OnMeasure`](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) méthode pour appeler [ `Measure` ] (XREF : Xamarin.Forms . VisualElement. Measure (System. double, System. double, Xamarin.Forms . MeasureFlags)) sur tous les enfants de la disposition, et retourner une taille demandée pour la disposition. Pour plus d’informations, consultez [substitution de la méthode OnMeasure](#override-the-onmeasure-method).
 1. Substituez la [`LayoutChildren`](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) méthode pour appeler [ `Layout` ] (XREF : Xamarin.Forms . VisualElement. Layout ( Xamarin.Forms . Rectangle)) sur tous les enfants de la disposition. Échec de l’appel de [ `Layout` ] (XREF : Xamarin.Forms . VisualElement. Layout ( Xamarin.Forms . Rectangle))) : la méthode sur chaque enfant dans une mise en page entraîne la non-réception de la taille ou de la position correcte de l’enfant, et par conséquent, l’enfant ne devient pas visible sur la page. Pour plus d’informations, consultez [substitution de la méthode LayoutChildren](#override-the-layoutchildren-method).
 
     > [!NOTE]
     > Lors de l’énumération des enfants dans [`OnMeasure`](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) et des [`LayoutChildren`](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) substitutions, ignorez tout enfant dont la [`IsVisible`](xref:Xamarin.Forms.VisualElement.IsVisible) propriété a la valeur `false` . Cela permet de s’assurer que la disposition personnalisée ne laisse pas d’espace pour les enfants invisibles.
 
-1. [*facultatif*] Substituez la [`InvalidateLayout`](xref:Xamarin.Forms.Layout.InvalidateLayout) méthode pour être averti lorsque des enfants sont ajoutés ou supprimés de la disposition. Pour plus d’informations, consultez [substitution de la méthode InvalidateLayout](#override-the-invalidatelayout-method).
-1. [*facultatif*] Substituez la [`OnChildMeasureInvalidated`](xref:Xamarin.Forms.Layout.OnChildMeasureInvalidated) méthode pour être averti lorsque l’un des enfants de la disposition change de taille. Pour plus d’informations, consultez [substitution de la méthode OnChildMeasureInvalidated](#override-the-onchildmeasureinvalidated-method).
+1. [ *facultatif* ] Substituez la [`InvalidateLayout`](xref:Xamarin.Forms.Layout.InvalidateLayout) méthode pour être averti lorsque des enfants sont ajoutés ou supprimés de la disposition. Pour plus d’informations, consultez [substitution de la méthode InvalidateLayout](#override-the-invalidatelayout-method).
+1. [ *facultatif* ] Substituez la [`OnChildMeasureInvalidated`](xref:Xamarin.Forms.Layout.OnChildMeasureInvalidated) méthode pour être averti lorsque l’un des enfants de la disposition change de taille. Pour plus d’informations, consultez [substitution de la méthode OnChildMeasureInvalidated](#override-the-onchildmeasureinvalidated-method).
 
 > [!NOTE]
 > Notez que le [`OnMeasure`](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) remplacement ne sera pas appelé si la taille de la disposition est régie par son parent, plutôt que par ses enfants. Toutefois, la substitution sera appelée si une ou les deux contraintes sont infinies, ou si la classe Layout a des valeurs de propriété ou non par défaut [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) . Pour cette raison, le [`LayoutChildren`](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) remplacement ne peut pas reposer sur les tailles enfants obtenues pendant l’appel de la [`OnMeasure`](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) méthode. Au lieu de cela, vous `LayoutChildren` devez appeler [ `Measure` ] (XREF : Xamarin.Forms . VisualElement. Measure (System. double, System. double, Xamarin.Forms . MeasureFlags)) sur les enfants de la disposition, avant d’appeler la méthode [ `Layout` ] (XREF : Xamarin.Forms . VisualElement. Layout ( Xamarin.Forms . Rectangle)). En guise d’alternative, la taille des enfants obtenus dans la `OnMeasure` substitution peut être mise en cache pour éviter les appels ultérieurs `Measure` dans la `LayoutChildren` substitution, mais la classe Layout devra savoir quand les tailles doivent être retirées. Pour plus d’informations, consultez [calculer et mettre en cache les données de disposition](#calculate-and-cache-layout-data).
@@ -92,7 +92,7 @@ La classe Layout peut ensuite être consommée en l’ajoutant à un [`Page`](xr
 
 L’exemple d’application illustre une classe sensible à l’orientation `WrapLayout` qui réorganise ses enfants horizontalement sur la page, puis encapsule l’affichage des enfants suivants sur des lignes supplémentaires.
 
-La `WrapLayout` classe alloue la même quantité d’espace pour chaque enfant, connue sous le nom de *taille de cellule*, en fonction de la taille maximale des enfants. Les enfants inférieurs à la taille de la cellule peuvent être positionnés dans la cellule en fonction de leurs [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) valeurs de propriété et.
+La `WrapLayout` classe alloue la même quantité d’espace pour chaque enfant, connue sous le nom de *taille de cellule* , en fonction de la taille maximale des enfants. Les enfants inférieurs à la taille de la cellule peuvent être positionnés dans la cellule en fonction de leurs [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) valeurs de propriété et.
 
 La `WrapLayout` définition de classe est présentée dans l’exemple de code suivant :
 
@@ -415,6 +415,6 @@ Le nombre de colonnes dans chaque ligne dépend de la taille de la photo, de la 
 - [WrapLayout (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
 - [Dispositions personnalisées](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter26.md)
 - [Création de dispositions personnalisées dans Xamarin.Forms (vidéo)](https://www.youtube.com/watch?v=sxjOqNZFhKU)
-- [Mise en page\<T>](xref:Xamarin.Forms.Layout`1)
+- [Layout\<T>](xref:Xamarin.Forms.Layout`1)
 - [Disposition](xref:Xamarin.Forms.Layout)
 - [VisualElement](xref:Xamarin.Forms.VisualElement)

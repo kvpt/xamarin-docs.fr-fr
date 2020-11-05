@@ -10,16 +10,16 @@ ms.date: 03/23/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2a6e19d25cefb4b8fcd870a9b590f129b2d9d85b
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: eb0c8bd01c9cab8a4048c0ee3deacad7afd56899
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557879"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373887"
 ---
 # <a name="the-rotate-transform"></a>La transformation de rotation
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Explorez les effets et les animations possibles avec la transformation de rotation SkiaSharp_
 
@@ -258,7 +258,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Les `revolveDegrees` `rotateDegrees` champs et sont animés. Ce programme utilise une autre technique d’animation basée sur la Xamarin.Forms [`Animation`](xref:Xamarin.Forms.Animation) classe. (Cette classe est décrite dans le [Chapitre 22 de la rubrique *création d’Mobile Apps Xamarin.Forms avec * ](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch22-Apr2016.pdf)) la `OnAppearing` substitution crée deux `Animation` objets avec des méthodes de rappel, puis appelle `Commit` sur ceux-ci pour une durée d’animation :
+Les `revolveDegrees` `rotateDegrees` champs et sont animés. Ce programme utilise une autre technique d’animation basée sur la Xamarin.Forms [`Animation`](xref:Xamarin.Forms.Animation) classe. (Cette classe est décrite dans le [Chapitre 22 de la rubrique *création d’Mobile Apps Xamarin.Forms avec*](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch22-Apr2016.pdf)) la `OnAppearing` substitution crée deux `Animation` objets avec des méthodes de rappel, puis appelle `Commit` sur ceux-ci pour une durée d’animation :
 
 ```csharp
 protected override void OnAppearing()

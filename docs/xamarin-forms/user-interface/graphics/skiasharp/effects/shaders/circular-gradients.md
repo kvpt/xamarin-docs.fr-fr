@@ -10,16 +10,16 @@ ms.date: 08/23/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ec84ac906ac146f37ba5b161a898582ce483bc95
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: db2baea124f013d3b35451e62bd67c32dcebc470
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556670"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373599"
 ---
 # <a name="the-skiasharp-circular-gradients"></a>Dégradés circulaires SkiaSharp
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 La [`SKShader`](xref:SkiaSharp.SKShader) classe définit des méthodes statiques pour créer quatre types différents de dégradés. L’article sur le [**gradient linéaire SkiaSharp**](linear-gradient.md) décrit la [`CreateLinearGradient`](xref:SkiaSharp.SKShader.CreateLinearGradient*) méthode. Cet article couvre les trois autres types de dégradés, qui sont tous basés sur des cercles.
 
@@ -215,7 +215,7 @@ Si vous avez rempli le canevas entier avec ce dégradé, vous verrez qu’il est
 
 ## <a name="radial-gradients-for-masking"></a>Dégradés radiaux pour le masquage
 
-Comme les dégradés linéaires, les dégradés radiaux peuvent incorporer des couleurs transparentes ou partiellement transparentes. Cette fonctionnalité est utile pour un processus appelé _masquage_, qui masque une partie d’une image pour accentuer une autre partie de l’image.
+Comme les dégradés linéaires, les dégradés radiaux peuvent incorporer des couleurs transparentes ou partiellement transparentes. Cette fonctionnalité est utile pour un processus appelé _masquage_ , qui masque une partie d’une image pour accentuer une autre partie de l’image.
 
 La page **masque de dégradé radial** montre un exemple. Le programme charge l’une des bitmaps de ressource. Les `CENTER` `RADIUS` champs et ont été déterminés à partir d’un examen de la bitmap et font référence à une zone qui doit être mise en surbrillance. Le `PaintSurface` Gestionnaire commence par calculer un rectangle pour afficher la bitmap, puis l’affiche dans ce rectangle :
 
@@ -285,7 +285,7 @@ Après avoir dessiné la bitmap, un code simple est converti en `CENTER` et `RAD
 
 [![Masque de dégradé radial](circular-gradients-images/RadialGradientMask.png "Masque de dégradé radial")](circular-gradients-images/RadialGradientMask-Large.png#lightbox)
 
-Cette approche n’est pas la meilleure façon de masquer une image bitmap. Le problème est que le masque a principalement une couleur blanche, qui a été choisie pour correspondre à l’arrière-plan de la zone de dessin. Si l’arrière-plan est une autre couleur &mdash; ou peut-être un dégradé lui-même &mdash; ne correspond pas. Une meilleure approche du masquage est illustrée dans l’article [SkiaSharp porter-Duff Blend modes](../blend-modes/porter-duff.md).
+Cette approche n’est pas la meilleure façon de masquer une image bitmap. Le problème est que le masque a principalement une couleur blanche, qui a été choisie pour correspondre à l’arrière-plan de la zone de dessin. Si l’arrière-plan est une autre couleur &mdash; ou peut-être un dégradé lui-même &mdash; ne correspond pas. Une meilleure approche du masquage est présentée dans l’article [SkiaSharp Porter-Duff modes Blend](../blend-modes/porter-duff.md).
 
 ## <a name="radial-gradients-for-specular-highlights"></a>Dégradés radiaux pour les surbrillances spéculaires
 

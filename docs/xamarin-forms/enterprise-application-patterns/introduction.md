@@ -10,14 +10,17 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 665971607d8c67f77ad5172778cddcd97bf79841
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: e085006f3f7479d35e4991503e52ce19ced7f75b
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86932624"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374535"
 ---
 # <a name="introduction-to-enterprise-app-development"></a>Présentation du développement d’applications d’entreprise
+
+> [!NOTE]
+> Ce livre électronique a été publié au printemps de 2017 et n’a pas été mis à jour depuis. Le livre reste très utile, mais certains éléments du matériel sont obsolètes.
 
 Quelle que soit la plateforme, les développeurs d’applications d’entreprise sont confrontés à plusieurs défis :
 
@@ -37,7 +40,7 @@ Une solution efficace pour relever ces défis consiste à partitionner une appli
 - Il encourage la réutilisation et une séparation nette des préoccupations entre les fonctions horizontales de l’application, telles que l’authentification et l’accès aux données, ainsi que les fonctionnalités verticales, telles que les fonctionnalités métier spécifiques aux applications. Cela permet de gérer plus facilement les dépendances et les interactions entre les composants de l’application.
 - Il permet de conserver une séparation des rôles en permettant à différentes personnes ou équipes de se concentrer sur une tâche ou une fonctionnalité spécifique, en fonction de leur expertise. En particulier, il fournit une séparation plus propre entre l’interface utilisateur et la logique métier de l’application.
 
-Toutefois, il existe de nombreux problèmes qui doivent être résolus lors du partitionnement d’une application en composants discrets et faiblement couplés. notamment :
+Toutefois, il existe de nombreux problèmes qui doivent être résolus lors du partitionnement d’une application en composants discrets et faiblement couplés. À savoir :
 
 - Déterminer comment fournir une séparation nette des problèmes entre les contrôles d’interface utilisateur et leur logique. L’une des décisions les plus importantes lors de la création d’une Xamarin.Forms application d’entreprise est de déterminer si la logique métier doit être placée dans les fichiers code-behind, ou de créer une séparation claire des préoccupations entre les contrôles d’interface utilisateur et leur logique, afin de rendre l’application plus gérable et testable. Pour plus d’informations, consultez [Model-View-ViewModel](~/xamarin-forms/enterprise-application-patterns/mvvm.md).
 - Détermination de l’utilisation ou non d’un conteneur d’injection de dépendances. Les conteneurs d’injection de dépendances réduisent le couplage des dépendances entre les objets en fournissant une fonctionnalité permettant de construire des instances de classes avec leurs dépendances injectées, et de gérer leur durée de vie en fonction de la configuration du conteneur. Pour plus d’informations, consultez [injection de dépendances](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md).
@@ -67,7 +70,7 @@ La figure 1-1 fournit une vue d’ensemble de l’architecture de l’exemple d�
 
 ![architecture de haut niveau eShopOnContainers](introduction-images/architecture.png)
 
-**Figure 1-1**: architecture de haut niveau eShopOnContainers
+**Figure 1-1** : architecture de haut niveau eShopOnContainers
 
 L’exemple d’application est fourni avec trois applications clientes :
 
@@ -94,7 +97,7 @@ Ce guide se concentre sur la création d’applications d’entreprise multiplat
 
 [![Application mobile eShopOnContainers](introduction-images/screenshots.png)](introduction-images/screenshots-large.png#lightbox "Application mobile eShopOnContainers")
 
-**Figure 1-2**: application mobile eShopOnContainers
+**Figure 1-2** : application mobile eShopOnContainers
 
 L’application mobile consomme les services principaux fournis par l’application de référence eShopOnContainers. Toutefois, il peut être configuré pour consommer des données de services fictifs pour ceux qui souhaitent éviter de déployer les services principaux.
 
@@ -107,9 +110,9 @@ L’application mobile eShopOnContainers exerce les Xamarin.Forms fonctionnalit�
 - Styles
 - Animations
 - Commandes
-- comportements
+- Comportements
 - Déclencheurs
-- Effects (Effets)
+- Effets
 - Renderers personnalisés
 - MessagingCenter
 - Contrôles personnalisés
@@ -142,10 +145,10 @@ Le projet PCL eShopOnContainers. Core contient les dossiers suivants :
 |Dossier|Description|
 |--- |--- |
 |Animations|Contient des classes qui permettent aux animations d’être consommées en XAML.|
-|comportements|Contient les comportements exposés aux classes d’affichage.|
+|Comportements|Contient les comportements exposés aux classes d’affichage.|
 |Contrôles|Contient des contrôles personnalisés utilisés par l’application.|
 |Convertisseurs|Contient des convertisseurs de valeurs qui appliquent une logique personnalisée à une liaison.|
-|Effects (Effets)|Contient la `EntryLineColorEffect` classe, qui est utilisée pour modifier la couleur de bordure de `Entry` contrôles spécifiques.|
+|Effets|Contient la `EntryLineColorEffect` classe, qui est utilisée pour modifier la couleur de bordure de `Entry` contrôles spécifiques.|
 |Exceptions|Contient le personnalisé `ServiceAuthenticationException` .|
 |Extensions|Contient des méthodes d’extension pour les `VisualElement` `IEnumerable` classes et.|
 |Programmes d’assistance|Contient des classes d’assistance pour l’application.|
@@ -161,7 +164,7 @@ Le projet PCL eShopOnContainers. Core contient les dossiers suivants :
 
 Les projets de plateforme contiennent des implémentations d’effet, des implémentations de convertisseur personnalisées et d’autres ressources spécifiques à la plateforme.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Les plateformes et outils de développement d’applications mobiles multiplateforme de Xamarin fournissent une solution complète pour les applications clientes mobiles B2E, B2B et B2C, offrant ainsi la possibilité de partager du code sur toutes les plateformes cibles (iOS, Android et Windows) et de réduire le coût total de possession. Les applications peuvent partager l’interface utilisateur et le code de la logique de l’application, tout en conservant l’apparence native de la plateforme.
 

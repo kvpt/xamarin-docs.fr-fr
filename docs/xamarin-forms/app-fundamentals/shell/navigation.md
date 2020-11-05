@@ -10,16 +10,16 @@ ms.date: 04/02/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ee027399aec51bb7ae4fac15e9c706c65d3af235
-ms.sourcegitcommit: d1980b2251999224e71c1289e4b4097595b7e261
+ms.openlocfilehash: fb9d5243e5be4d99d741349564854c9c54e7a1bb
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92928631"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373287"
 ---
 # <a name="no-locxamarinforms-shell-navigation"></a>Xamarin.Forms Navigation dans le shell
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
 Xamarin.Forms L’interpréteur de commandes comprend une expérience de navigation basée sur les URI qui utilise des itinéraires pour accéder à n’importe quelle page de l’application, sans devoir suivre une hiérarchie de navigation définie. De plus, l’utilisateur peut revenir en arrière sans avoir à visiter toutes les pages de la pile de navigation.
 
@@ -42,8 +42,8 @@ La navigation est effectuée en appelant la méthode `GoToAsync` à partir de la
 La navigation est effectuée dans une application Shell en spécifiant un URI vers lequel naviguer. Les URI de navigation peuvent avoir trois composants :
 
 - Un *itinéraire* , qui définit le chemin d’accès au contenu existant dans le cadre de la hiérarchie visuelle Shell.
-- *Page* . Les pages qui n’existent pas dans la hiérarchie visuelle Shell peuvent être transmises en mode push à la pile de navigation depuis n’importe où dans une application Shell. Par exemple, une page de détails d’un élément ne sera pas définie dans la hiérarchie visuelle Shell, mais elle peut être transmise en mode push à la pile de navigation selon les besoins.
-- Un ou plusieurs *paramètres de requête* . Les paramètres de requête sont des paramètres qui peuvent être transmis à la page de destination lors de la navigation.
+- *Page*. Les pages qui n’existent pas dans la hiérarchie visuelle Shell peuvent être transmises en mode push à la pile de navigation depuis n’importe où dans une application Shell. Par exemple, une page de détails d’un élément ne sera pas définie dans la hiérarchie visuelle Shell, mais elle peut être transmise en mode push à la pile de navigation selon les besoins.
+- Un ou plusieurs *paramètres de requête*. Les paramètres de requête sont des paramètres qui peuvent être transmis à la page de destination lors de la navigation.
 
 Lorsqu’un URI de navigation comprend les trois composants, la structure est : //route/page?queryParameters
 
@@ -108,7 +108,7 @@ Routing.RegisterRoute("dogdetails", typeof(DogDetailPage));
 Routing.RegisterRoute("elephantdetails", typeof(ElephantDetailPage));
 ```
 
-Cet exemple inscrit des pages de détail sur l’élément, qui ne sont pas définies dans la sous-classe Shell, en tant qu’itinéraires. Ces pages sont ensuite accessibles à l’aide d’une navigation basée sur URI, depuis n’importe où dans l’application. Les itinéraires pour ces pages sont appelés *itinéraires globaux* .
+Cet exemple inscrit des pages de détail sur l’élément, qui ne sont pas définies dans la sous-classe Shell, en tant qu’itinéraires. Ces pages sont ensuite accessibles à l’aide d’une navigation basée sur URI, depuis n’importe où dans l’application. Les itinéraires pour ces pages sont appelés *itinéraires globaux*.
 
 > [!NOTE]
 > Les pages dont les itinéraires ont été inscrits avec la méthode `Routing.RegisterRoute` peuvent être désinscrites avec la méthode `Routing.UnRegisterRoute`, si nécessaire.

@@ -10,16 +10,16 @@ ms.date: 03/12/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a8e8388a6a460b3a2958d3ab3b9a4c9c34ea1831
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 3cf29c550a6ef3e4f12bdc3a1525d33b53198220
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556462"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374389"
 ---
 # <a name="create-a-no-locxamarinforms-visual-renderer"></a>Créer un Xamarin.Forms convertisseur visuel
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)
 
 Xamarin.Forms Visual permet de créer des convertisseurs et de les appliquer de manière sélective aux [`VisualElement`](xref:Xamarin.Forms.VisualElement) objets, sans avoir à les afficher sous-classes Xamarin.Forms . Un convertisseur qui spécifie un `IVisual` type, dans le cadre de son `ExportRendererAttribute` , sera utilisé pour le rendu de l’option choisi dans les vues, plutôt que dans le convertisseur par défaut. Au moment de la sélection du convertisseur, la `Visual` propriété de la vue est inspectée et incluse dans le processus de sélection du convertisseur.
 

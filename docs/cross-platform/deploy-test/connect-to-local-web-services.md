@@ -6,16 +6,16 @@ ms.assetid: FD8FE199-898B-4841-8041-CC9CA1A00917
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/29/2020
-ms.openlocfilehash: 9520f4e81403869542cf758627b8e3cfc9fabdd8
-ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
+ms.openlocfilehash: 2b289e5ffe4fba5c2f20caf0cf1d59cd277767f9
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91457976"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373417"
 ---
 # <a name="connect-to-local-web-services-from-ios-simulators-and-android-emulators"></a>Se connecter aux services Web locaux à partir des simulateurs iOS et des émulateurs Android
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/webservices-todorest/)
 
 De nombreuses applications mobiles consomment des services web. Pendant la phase de développement, il est courant de déployer un service web localement et de le consommer à partir d’une application mobile en cours d’exécution dans le simulateur iOS ou l’émulateur Android. Cela évite d’avoir à déployer le service web sur un point de terminaison hébergé et garantit une expérience de débogage simple, car l’application mobile et le web service mobile sont exécutés localement.
 

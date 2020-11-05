@@ -10,18 +10,18 @@ ms.date: 08/23/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8c6d139e47974247ce4af6bfa6c32331fcf7c824
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 92bcdd2c86387f229b9acf066456985c4a7ad514
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563131"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373664"
 ---
 # <a name="skiasharp-bitmap-tiling"></a>Mosaïque de bitmaps SkiaSharp
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/catclock)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/catclock)
 
 Comme vous l’avez vu dans les deux articles précédents, la [`SKShader`](xref:SkiaSharp.SKShader) classe peut créer des dégradés linéaires ou circulaires. Cet article se concentre sur l' `SKShader` objet qui utilise une image bitmap pour juxtaposer une zone. L’image bitmap peut être répétée horizontalement et verticalement, soit à l’aide de son orientation d’origine, soit à tour de point horizontalement et verticalement. Le retournement évite les discontinuités entre les vignettes :
 
@@ -369,7 +369,7 @@ Si la transformation est appliquée à la vignette individuelle, chaque image r�
 
 Dans la section [**alignement**](#tile-alignment)de la mosaïque, vous verrez un exemple de transformation de traduction appliquée au nuanceur.
 
-L’exemple d' [**horloge Cat**](/samples/xamarin/xamarin-forms-samples/catclock) autonome (qui ne fait pas partie de **SkiaSharpFormsDemos**) simule un arrière-plan de grain de bois à l’aide d’une mosaïque de bitmap basée sur cette image bitmap carrée de 240 pixels :
+L’exemple d' [**horloge Cat**](/samples/xamarin/xamarin-forms-samples/catclock) autonome (qui ne fait pas partie de **SkiaSharpFormsDemos** ) simule un arrière-plan de grain de bois à l’aide d’une mosaïque de bitmap basée sur cette image bitmap carrée de 240 pixels :
 
 ![Grain grain](bitmap-tiling-images/WoodGrain.png "Grain grain")
 
@@ -655,7 +655,7 @@ public class ChainLinkFencePage : ContentPage
 
 Notez que le nuanceur est pivoté de 45 degrés de manière à ce qu’il soit orienté comme une barrière de liaison de chaîne réelle :
 
-[![Limite de liaison de chaîne](bitmap-tiling-images/ChainLinkFence.png "Limite de liaison de chaîne")](bitmap-tiling-images/ChainLinkFence-Large.png#lightbox)
+[![Limite de liaison de chaîne](bitmap-tiling-images/ChainLinkFence.png "Clôture de Chain-Link")](bitmap-tiling-images/ChainLinkFence-Large.png#lightbox)
 
 ## <a name="animating-bitmap-tiles"></a>Animer des vignettes de bitmap
 

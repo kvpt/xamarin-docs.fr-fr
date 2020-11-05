@@ -10,16 +10,16 @@ ms.date: 07/26/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3fba761d2740f323fb55e80d8cb4e3ba3d8e7cad
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 32571724c945c4bbd845943ac72fc959c42d584a
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563599"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374353"
 ---
 # <a name="no-locxamarinforms-boxview"></a>Xamarin.Forms BoxView
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-basicboxview)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/boxview-basicboxview)
 
 [`BoxView`](xref:Xamarin.Forms.BoxView) génère le rendu d’un rectangle simple d’une largeur, d’une hauteur et d’une couleur spécifiées. Vous pouvez utiliser `BoxView` pour la décoration, les graphiques rudimentaires et pour l’interaction avec l’utilisateur via Touch.
 
@@ -349,7 +349,7 @@ Le programme **GameOfLife** comprend également une `LifeGrid` classe qui encaps
 
 Le programme [**DotMatrixClock**](/samples/xamarin/xamarin-forms-samples/boxview-dotmatrixclock) crée 210 `BoxView` éléments pour simuler les points d’un vieux affichage de matrice à 5 par 7. Vous pouvez lire l’heure en mode portrait ou paysage, mais elle est plus grande en mode paysage :
 
-[![Horloge matricielle](boxview-images/dotmatrixclock-small.png "Horloge matricielle")](boxview-images/dotmatrixclock-large.png#lightbox "Horloge matricielle")
+[![Horloge matricielle](boxview-images/dotmatrixclock-small.png "Horloge Dot-Matrix")](boxview-images/dotmatrixclock-large.png#lightbox "Horloge Dot-Matrix")
 
 Le fichier XAML ne fait que instancier le `AbsoluteLayout` utilisé pour l’horloge :
 

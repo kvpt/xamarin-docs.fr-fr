@@ -10,16 +10,16 @@ ms.date: 07/14/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1769a1eb562d4ae0551598493afa9b04491a42d5
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 50b64b394314ae2f63ab1f756f1cc73ba29e59e7
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562793"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93372845"
 ---
 # <a name="easing-functions-in-no-locxamarinforms"></a>Fonctions d’accélération dans Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-easing)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-animation-easing)
 
 _Xamarin.Forms comprend une classe d’accélération qui vous permet de spécifier une fonction de transfert qui contrôle la vitesse à laquelle les animations augmentent ou ralentissent lorsqu’elles sont en cours d’exécution. Cet article montre comment utiliser les fonctions d’accélération prédéfinies et comment créer des fonctions d’accélération personnalisées._
 
@@ -103,7 +103,7 @@ await image.TranslateTo (0, 200, 2000, new Easing (t => 1 - Math.Cos (10 * Math.
 
 La fonction d’accélération personnalisée est spécifiée en tant qu’argument de fonction lambda pour le [`Easing`](xref:Xamarin.Forms.Easing) constructeur et utilise la `Math.Cos` méthode pour créer un effet de déplacement lent qui est amorti par la `Math.Exp` méthode. Par conséquent, l' [`Image`](xref:Xamarin.Forms.Image) instance est traduite afin d’être supprimée à son emplacement de repos final.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a montré comment utiliser les fonctions d’accélération prédéfinies et comment créer des fonctions d’accélération personnalisées. Xamarin.Forms comprend une [`Easing`](xref:Xamarin.Forms.Easing) classe qui vous permet de spécifier une fonction de transfert qui contrôle la vitesse à laquelle les animations augmentent ou ralentissent lorsqu’elles sont en cours d’exécution.
 

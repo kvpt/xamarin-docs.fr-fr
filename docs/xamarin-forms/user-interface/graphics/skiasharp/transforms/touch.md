@@ -10,16 +10,16 @@ ms.date: 09/14/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c6d568e948f02952fa71ed21af48160a53bfc419
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: ee69ca1e95f7dcffa60387579e89c3a2d3e985da
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556540"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374288"
 ---
 # <a name="touch-manipulations"></a>Manipulations tactiles
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Utiliser des transformations de matrice pour implémenter le glissement, le pincement et la rotation tactiles_
 
@@ -268,7 +268,7 @@ Toutefois, la gestion de l' `Moved` action est plus complexe. S’il n’y a qu�
 
 Ensuite, le programme calcule deux vecteurs de la nouvelle position du doigt par rapport au point pivot, et l’ancienne position du doigt par rapport au point pivot. Les ratios de ces vecteurs sont des facteurs de mise à l’échelle. Étant donné que la division par zéro est une possibilité, les valeurs infinies ou les valeurs NaN (non numériques) doivent être vérifiées. Si tout est correct, une transformation de mise à l’échelle est concaténée avec la `SKMatrix` valeur enregistrée en tant que champ.
 
-À mesure que vous expérimentez cette page, vous remarquerez que vous pouvez faire glisser l’image bitmap avec un ou deux doigts ou la mettre à l’échelle avec deux doigts. La mise à l’échelle est _anisotrope_, ce qui signifie que la mise à l’échelle peut être différente dans les directions horizontale et verticale. Cela déforme les proportions, mais vous permet également d’inverser l’image bitmap pour créer une image miroir. Vous pouvez également découvrir que vous pouvez réduire la bitmap à une dimension zéro et la faire disparaître. Dans le code de production, vous souhaiterez vous prémunir contre cela.
+À mesure que vous expérimentez cette page, vous remarquerez que vous pouvez faire glisser l’image bitmap avec un ou deux doigts ou la mettre à l’échelle avec deux doigts. La mise à l’échelle est _anisotrope_ , ce qui signifie que la mise à l’échelle peut être différente dans les directions horizontale et verticale. Cela déforme les proportions, mais vous permet également d’inverser l’image bitmap pour créer une image miroir. Vous pouvez également découvrir que vous pouvez réduire la bitmap à une dimension zéro et la faire disparaître. Dans le code de production, vous souhaiterez vous prémunir contre cela.
 
 ## <a name="two-finger-rotation"></a>Rotation à deux doigts
 
@@ -1060,7 +1060,7 @@ Le code parcourt la collection et affiche le tas des bitmaps du début à la fin
 
 [![Capture d’écran triple de la page de vue à nuages de points bitmap](touch-images/bitmapscatterview-small.png)](touch-images/bitmapscatterview-large.png#lightbox "Capture d’écran triple de la page de vue à nuages de points bitmap")
 
-## <a name="single-finger-scaling"></a>Mise à l’échelle à un seul doigt
+## <a name="single-finger-scaling"></a>Mise à l’échelle Single-Finger
 
 Une opération de mise à l’échelle requiert généralement un geste de pincement à deux doigts. Toutefois, il est possible d’implémenter la mise à l’échelle avec un seul doigt en faisant passer le doigt des angles d’une image bitmap.
 

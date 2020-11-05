@@ -10,16 +10,16 @@ ms.date: 02/08/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f40220a29611bb365dc77eeb5e85445a0df19fd6
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 4dba270cbc08b3ce9209568a1e625e71cfa17d8d
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563248"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374457"
 ---
 # <a name="no-locxamarinforms-and-azure-cognitive-services-introduction"></a>Xamarin.Forms et présentation d’Azure Cognitive Services
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
 _Microsoft Cognitive Services sont un ensemble d’API, de kits de développement logiciel (SDK) et de services accessibles aux développeurs pour rendre leurs applications plus intelligentes en ajoutant des fonctionnalités telles que la reconnaissance faciale, la reconnaissance vocale et la compréhension de la langue. Cet article fournit une présentation de l’exemple d’application qui montre comment appeler certaines des API Microsoft cognitive service._
 
@@ -66,7 +66,7 @@ Le projet de code partagé pour l’exemple d’application se compose de cinq d
 |Référentiels|Contient l' `ITodoItemRepository` interface et la `TodoItemRepository` classe utilisées pour effectuer des opérations de base de données.|
 |Services|Contient les interfaces et les classes utilisées pour accéder à différentes API Microsoft cognitive service, ainsi que les interfaces utilisées par la `DependencyService` classe pour localiser les classes qui implémentent les interfaces dans les projets de plateforme.|
 |Utils|Contient la `Timer` classe, qui est utilisée par la `AuthenticationService` classe pour renouveler un jeton d’accès JWT toutes les 9 minutes.|
-|Affichages|Contient les pages de l’application.|
+|Les vues|Contient les pages de l’application.|
 
 Le projet de code partagé contient également des fichiers importants :
 

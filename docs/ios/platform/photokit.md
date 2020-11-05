@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/14/2017
-ms.openlocfilehash: 4fe58dbc02da47d5791afbbfe0132fd21e774b63
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 5b9bcbd941c1f2d0a1e0e89d5fe34f09c7b5a0dc
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939787"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373762"
 ---
 # <a name="photokit-in-xamarinios"></a>PhotoKit dans Xamarin. iOS
 
-[![Télécharger l’exemple ](~/media/shared/download.png) Télécharger un exemple de code](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-samplephotoapp/)
+[![Télécharger l’exemple ](~/media/shared/download.png) Télécharger un exemple de code](/samples/xamarin/ios-samples/ios11-samplephotoapp/)
 
 PhotoKit est une infrastructure qui permet aux applications d’interroger la bibliothèque d’images système et de créer des interfaces utilisateur personnalisées pour afficher et modifier son contenu. Il comprend un certain nombre de classes qui représentent les ressources d’images et de vidéos, ainsi que des collections d’éléments multimédias tels que des albums et des dossiers.
 

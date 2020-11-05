@@ -10,16 +10,16 @@ ms.date: 07/17/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 91051b1ffc859d4e3deb62d41709db0c587b2789
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 3ca546f69dd8c4995747ad352c54e9ba184b2425
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91560830"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373495"
 ---
 # <a name="creating-and-drawing-on-skiasharp-bitmaps"></a>Création et dessin sur des bitmaps SkiaSharp
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 Vous avez vu comment une application peut charger des bitmaps à partir du Web, à partir de ressources d’application et de la bibliothèque de photos de l’utilisateur. Il est également possible de créer des bitmaps dans votre application. L’approche la plus simple implique l’un des constructeurs de [`SKBitmap`](xref:SkiaSharp.SKBitmap.%23ctor(System.Int32,System.Int32,System.Boolean)) :
 
@@ -271,7 +271,7 @@ La bitmap suivante incluse avec l’application **[SkiaSharpFormsDemos](/samples
 
 ![Alpiners](drawing-images/MountainClimbers.jpg "Alpiners")
 
-Supposez que vous n’avez pas reçu l’autorisation du singe sur la gauche pour publier cette photographie. Une solution consiste à obscurcir le visage du singe à l’aide d’une technique appelée « _pixelisation_». Les pixels de la face sont remplacés par des blocs de couleur, de sorte que vous ne pouvez pas créer les fonctionnalités. Les blocs de couleur sont généralement dérivés de l’image d’origine en calculant la moyenne des couleurs des pixels correspondant à ces blocs. Mais vous n’avez pas besoin d’effectuer cette moyenne vous-même. Cela se produit automatiquement lorsque vous copiez une image bitmap dans une dimension de pixels plus petite.
+Supposez que vous n’avez pas reçu l’autorisation du singe sur la gauche pour publier cette photographie. Une solution consiste à obscurcir le visage du singe à l’aide d’une technique appelée « _pixelisation_ ». Les pixels de la face sont remplacés par des blocs de couleur, de sorte que vous ne pouvez pas créer les fonctionnalités. Les blocs de couleur sont généralement dérivés de l’image d’origine en calculant la moyenne des couleurs des pixels correspondant à ces blocs. Mais vous n’avez pas besoin d’effectuer cette moyenne vous-même. Cela se produit automatiquement lorsque vous copiez une image bitmap dans une dimension de pixels plus petite.
 
 Le visage du singe gauche occupe approximativement une zone carrée de 72 pixels avec un angle supérieur gauche au point (112, 238). Remplaçons cette zone carrée de 72 pixels par un tableau de 9 par 9 de blocs colorés, chacun d’entre eux étant de 8 x 8 pixels carrés.
 

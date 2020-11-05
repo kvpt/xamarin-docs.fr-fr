@@ -10,16 +10,16 @@ ms.date: 08/23/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a77ebb07a09c1bbd2df482c81040f271cdf8f56e
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: ea590c0390ab045e5cf8b526aee66c2408d1b784
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556345"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374665"
 ---
 # <a name="the-non-separable-blend-modes"></a>Modes de fusion non séparables
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 Comme vous l’avez vu dans l’article [**SkiaSharp séparable Blend modes**](separable.md), les modes de fusion séparable effectuent des opérations sur les canaux rouge, vert et bleu séparément. Les modes de fusion non séparables ne le font pas. En opérant sur les niveaux de couleur teinte, saturation et luminosité, les modes de fusion non séparables peuvent altérer les couleurs de manière intéressante :
 
@@ -211,11 +211,11 @@ En règle générale, il est préférable d’utiliser l’un des modes de fusio
 
 ## <a name="a-matte-for-a-separable-mode"></a>Cache pour un mode séparable
 
-Voici l’une des bitmaps incluses comme ressource dans l’exemple [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) . Le nom de fichier est **Banana.jpg**:
+Voici l’une des bitmaps incluses comme ressource dans l’exemple [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) . Le nom de fichier est **Banana.jpg** :
 
 ![Singe de la banane](non-separable-images/Banana.jpg "Singe de la banane")
 
-Il est possible de créer un cache qui englobe uniquement la banane. Il s’agit également d’une ressource dans l’exemple [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) . Le nom de fichier est **BananaMatte.png**:
+Il est possible de créer un cache qui englobe uniquement la banane. Il s’agit également d’une ressource dans l’exemple [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) . Le nom de fichier est **BananaMatte.png** :
 
 ![Cache de bananes](non-separable-images/BananaMatte.png "Cache de bananes")
 

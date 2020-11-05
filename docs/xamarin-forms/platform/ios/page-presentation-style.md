@@ -10,16 +10,16 @@ ms.date: 04/02/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9ed0c2b9b0916349b11f64e83c57f2737c302e92
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: c522b1e9c191a4f030355f0cfcca1240d64e09df
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557463"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373703"
 ---
 # <a name="modal-page-presentation-style-on-ios"></a>Style de présentation de page modal sur iOS
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Ce spécifique à la plateforme iOS est utilisé pour définir le style de présentation d’une page modale et peut également être utilisé pour afficher les pages modales qui ont des arrière-plans transparents. Il est consommé en XAML en affectant `Page.ModalPresentationStyle` à la propriété pouvant être liée la `UIModalPresentationStyle` valeur d’énumération :
 

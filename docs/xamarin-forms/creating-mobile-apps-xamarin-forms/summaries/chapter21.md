@@ -10,20 +10,23 @@ ms.date: 11/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 32393108f84ea3a57079c86b6a9a8e628ceca03a
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: cb822c7ac2a05dc9f0d51f51e9737add4395b84d
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136667"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374024"
 ---
 # <a name="summary-of-chapter-21-transforms"></a>Résumé du chapitre 21. Transformations
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21)
+
+> [!NOTE]
+> Ce livre a été publié à la printemps de 2016 et n’a pas été mis à jour depuis. Le livre reste très utile, mais certains d’entre eux sont obsolètes et certaines rubriques ne sont plus entièrement correctes ou complètes.
 
 Une Xamarin.Forms vue apparaît à l’écran dans un emplacement et une taille déterminés par son parent, qui est généralement `Layout` un `Layout<View>` dérivé de ou. La *transformation* est une Xamarin.Forms fonctionnalité qui peut modifier cet emplacement, sa taille ou même l’orientation.
 
-Xamarin.Formsprend en charge trois types de transformations de base :
+Xamarin.Forms prend en charge trois types de transformations de base :
 
 - *Traduction* &mdash; déplacer un élément horizontalement ou verticalement
 - Mise à l' *échelle* &mdash; modifier la taille d’un élément
@@ -94,15 +97,15 @@ La [`Rotation`](xref:Xamarin.Forms.VisualElement.Rotation) propriété est spéc
 
 L’exemple [**BoxViewCircle**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/BoxViewCircle) illustre la mathématique nécessaire pour dessiner un cercle à l’aide d’éléments paysage 64 minuscules `BoxView` .
 
-L’exemple [**RotatedText**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/RotatedText) affiche plusieurs `Label` éléments avec la même chaîne de texte pivotée pour apparaître comme spokes.
+L’exemple  [**RotatedText**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/RotatedText) affiche plusieurs `Label` éléments avec la même chaîne de texte pivotée pour apparaître comme spokes.
 
 L’exemple [**CircularText**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/CircularText) affiche une chaîne de texte qui s’affiche pour encapsuler un cercle.
 
 ### <a name="an-analog-clock"></a>Une horloge analogique
 
-La bibliothèque [**Xamarin. FormsBook. Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) contient une [`AnalogClockViewModel`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AnalogClockViewModel.cs) classe qui calcule les angles des aiguilles d’une horloge. Pour éviter les dépendances de plateforme dans le ViewModel, la classe utilise `Task.Delay` plutôt qu’un minuteur pour la recherche d’une nouvelle `DateTime` valeur.
+La bibliothèque [**Xamarin.Forms book. Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) contient une [`AnalogClockViewModel`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AnalogClockViewModel.cs) classe qui calcule les angles des aiguilles d’une horloge. Pour éviter les dépendances de plateforme dans le ViewModel, la classe utilise `Task.Delay` plutôt qu’un minuteur pour la recherche d’une nouvelle `DateTime` valeur.
 
-Également inclus dans **Xamarin. FormsBook. Toolkit** est une [`SecondTickConverter`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/SecondTickConverter.cs) classe qui implémente `IValueConverter` et sert à arrondir un deuxième angle à la seconde la plus proche.
+Également inclus dans **Xamarin.Forms book. Toolkit** est une [`SecondTickConverter`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/SecondTickConverter.cs) classe qui implémente `IValueConverter` et sert à arrondir un deuxième angle à la seconde la plus proche.
 
 Le [**MinimalBoxViewClock**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/MinimalBoxViewClock) utilise trois éléments rotatifs `BoxView` pour dessiner une horloge analogique.
 
@@ -110,7 +113,7 @@ Le [**BoxViewClock**](https://github.com/xamarin/xamarin-forms-book-samples/tree
 
 [![Capture d’écran triple de BoxView Clock](images/ch21fg17-small.png "Face de l’horloge analogique")](images/ch21fg17-large.png#lightbox "Face de l’horloge analogique")
 
-En outre [`SecondBackEaseConverter`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/SecondBackEaseConverter.cs) , une classe dans **Xamarin. FormsBook. Toolkit** fait apparaître un petit peu avant de passer en arrière, puis revenir à sa position correcte.
+En outre [`SecondBackEaseConverter`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/SecondBackEaseConverter.cs) , une classe dans **Xamarin.Forms book. Toolkit** fait apparaître la deuxième main avant d’aller plus loin, puis de revenir à sa position correcte.
 
 ### <a name="vertical-sliders"></a>Curseurs verticaux ?
 

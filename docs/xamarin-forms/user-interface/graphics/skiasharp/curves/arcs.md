@@ -10,16 +10,16 @@ ms.date: 05/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 32de64c0fa6b0ec0a0b03c8075710e1cbc92dd49
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 5f48300b6c974bbbb0106f1afaa6c863f8159c58
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557411"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374637"
 ---
 # <a name="three-ways-to-draw-an-arc"></a>Trois façons de dessiner un arc
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Découvrez comment utiliser SkiaSharp pour définir des arcs de trois façons différentes_
 
@@ -219,7 +219,7 @@ Pour voir à quoi il ressemble sans l’explosion, commentez simplement l' `Tran
 
 ## <a name="the-tangent-arc"></a>Arc tangente
 
-Le deuxième type d’arc pris en charge par `SKPath` est l' *arc tangente*, donc appelé, car l’arc est la circonférence d’un cercle tangent à deux lignes connectées.
+Le deuxième type d’arc pris en charge par `SKPath` est l' *arc tangente* , donc appelé, car l’arc est la circonférence d’un cercle tangent à deux lignes connectées.
 
 Un arc tangente est ajouté à un chemin d’accès avec un appel à la  [`ArcTo`](xref:SkiaSharp.SKPath.ArcTo(SkiaSharp.SKPoint,SkiaSharp.SKPoint,System.Single)) méthode avec deux `SKPoint` paramètres, ou la [`ArcTo`](xref:SkiaSharp.SKPath.ArcTo(System.Single,System.Single,System.Single,System.Single,System.Single)) surcharge avec des `Single` paramètres distincts pour les points :
 
@@ -235,7 +235,7 @@ La `ArcTo` méthode implique trois points :
 
 - Le point actuel du contour, ou le point (0, 0) si `MoveTo` n’a pas été appelé
 - Le premier argument point de la `ArcTo` méthode, appelé *point d’angle*
-- Le deuxième argument point de `ArcTo` , appelé *point de destination*:
+- Le deuxième argument point de `ArcTo` , appelé *point de destination* :
 
 ![Trois points qui commencent un arc tangent](arcs-images/tangentarcthreepoints.png)
 

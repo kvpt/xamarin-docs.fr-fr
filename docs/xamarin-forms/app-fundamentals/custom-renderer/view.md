@@ -7,7 +7,7 @@ ms. Prod : xamarin ms. AssetID : 915E25E7-4A6B-4F34-B7B4-07D5F4B240F2 ms. Tech
 ---
 # <a name="implementing-a-view"></a>Implémentation d’une vue
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-view)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/customrenderers-view)
 
 _Xamarin.Forms les contrôles d’interface utilisateur personnalisés doivent dériver de la classe d’affichage, qui est utilisée pour placer des mises en page et des contrôles à l’écran. Cet article explique comment créer un convertisseur personnalisé pour un Xamarin.Forms contrôle personnalisé utilisé pour afficher un flux vidéo de préversion à partir de l’appareil photo de l’appareil._
 
@@ -355,7 +355,7 @@ Sous réserve que la propriété `Control` ait la valeur `null`, un nouveau `Cap
 > [!NOTE]
 > Il est important d’arrêter et de supprimer les objets qui fournissent un accès à la caméra dans une application UWP. Si vous ne le faites pas, il peut se produire une interférence avec d’autres applications qui tentent d’accéder à la caméra de l’appareil. Pour plus d’informations, consultez [Afficher l’aperçu de la caméra](/windows/uwp/audio-video-camera/simple-camera-preview-access/).
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a montré comment créer un convertisseur personnalisé pour un Xamarin.Forms contrôle personnalisé utilisé pour afficher un flux vidéo de préversion à partir de l’appareil photo de l’appareil. Xamarin.Forms les contrôles d’interface utilisateur personnalisés doivent dériver de la [`View`](xref:Xamarin.Forms.View) classe, qui est utilisée pour placer des dispositions et des contrôles à l’écran.
 

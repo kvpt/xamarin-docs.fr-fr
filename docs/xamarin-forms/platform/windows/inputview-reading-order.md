@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0fd754b2d41de61238cb7b0b2f34c1035d8dc2bf
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 55907b5878a112d0ad640cc95049183dd68d89f3
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557762"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374691"
 ---
 # <a name="inputview-reading-order-on-windows"></a>Ordre de lecture InputView sur Windows
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Ce plateforme Windows universelle spécifique à la plateforme active l’ordre de lecture (de gauche à droite ou de droite à gauche) du texte bidirectionnel dans [`Entry`](xref:Xamarin.Forms.Entry) [`Editor`](xref:Xamarin.Forms.Editor) les instances, et [`Label`](xref:Xamarin.Forms.Label) à détecter de manière dynamique. Il est consommé en XAML en affectant [`InputView.DetectReadingOrderFromContent`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.InputView.DetectReadingOrderFromContentProperty) `Entry` `Editor` une valeur à la propriété (instances et) ou [`Label.DetectReadingOrderFromContent`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.Label.DetectReadingOrderFromContentProperty) à la propriété jointe `boolean` :
 

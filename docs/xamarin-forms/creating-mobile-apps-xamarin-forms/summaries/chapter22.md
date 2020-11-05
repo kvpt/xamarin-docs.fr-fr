@@ -10,16 +10,19 @@ ms.date: 11/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2a8a089c210a3fe2f48dbe32bf8cda6179af2a78
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: f1eca69ac9e5ff802132041f4084a86c3443d745
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136628"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374002"
 ---
 # <a name="summary-of-chapter-22-animation"></a>Résumé du chapitre 22. Animation
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22)
+
+> [!NOTE]
+> Ce livre a été publié à la printemps de 2016 et n’a pas été mis à jour depuis. Le livre reste très utile, mais certains d’entre eux sont obsolètes et certaines rubriques ne sont plus entièrement correctes ou complètes.
 
 Vous avez vu que vous pouvez créer vos propres animations à l’aide du Xamarin.Forms minuteur ou `Task.Delay` , mais il est généralement plus facile d’utiliser les fonctionnalités d’animation fournies par Xamarin.Forms . Trois classes implémentent les animations suivantes :
 
@@ -76,10 +79,10 @@ Le [**CircleButton**](https://github.com/xamarin/xamarin-forms-book-samples/tree
 En général, les animations sont linéaires d’une valeur de début à une valeur de fin. Les fonctions d’accélération peuvent entraîner une accélération ou un ralentissement des animations au cours de leur cours. Le dernier argument facultatif des méthodes d’animation est de type [`Easing`](xref:Xamarin.Forms.Easing) , une classe qui définit 11 champs statiques en lecture seule de type `Easing` :
 
 - [`Linear`](xref:Xamarin.Forms.Easing.Linear), la valeur par défaut
-- [`SinIn`](xref:Xamarin.Forms.Easing.SinIn), [`SinOut`](xref:Xamarin.Forms.Easing.SinOut) et[`SinInOut`](xref:Xamarin.Forms.Easing.SinInOut)
-- [`CubicIn`](xref:Xamarin.Forms.Easing.CubicIn), [`CubicOut`](xref:Xamarin.Forms.Easing.CubicOut) et[`CubicInOut`](xref:Xamarin.Forms.Easing.CubicInOut)
-- [`BounceIn`](xref:Xamarin.Forms.Easing.BounceIn)les[`BounceOut`](xref:Xamarin.Forms.Easing.BounceOut)
-- [`SpringIn`](xref:Xamarin.Forms.Easing.SpringIn)les[`SpringOut`](xref:Xamarin.Forms.Easing.SpringOut)
+- [`SinIn`](xref:Xamarin.Forms.Easing.SinIn) , [`SinOut`](xref:Xamarin.Forms.Easing.SinOut) et [`SinInOut`](xref:Xamarin.Forms.Easing.SinInOut)
+- [`CubicIn`](xref:Xamarin.Forms.Easing.CubicIn) , [`CubicOut`](xref:Xamarin.Forms.Easing.CubicOut) et [`CubicInOut`](xref:Xamarin.Forms.Easing.CubicInOut)
+- [`BounceIn`](xref:Xamarin.Forms.Easing.BounceIn) les [`BounceOut`](xref:Xamarin.Forms.Easing.BounceOut)
+- [`SpringIn`](xref:Xamarin.Forms.Easing.SpringIn) les [`SpringOut`](xref:Xamarin.Forms.Easing.SpringOut)
 
 Le `In` suffixe indique que l’effet se trouve au début de l’animation, `Out` signifie à la fin et `InOut` signifie qu’il est au début et à la fin de l’animation.
 
@@ -87,13 +90,13 @@ L’exemple [**BounceButton**](https://github.com/xamarin/xamarin-forms-book-sam
 
 ### <a name="your-own-easing-functions"></a>Vos propres fonctions d’accélération
 
-Vous pouvez également définir vos propres fonctions d’accélération en passant un [`Func<double, double>`](xref:System.Func`2) au [ `Easing` constructeur](xref:Xamarin.Forms.Easing.%23ctor(System.Func{System.Double,System.Double})). `Easing`définit également une conversion implicite de `Func<double, double>` en `Easing` . L’argument de la fonction d’accélération est toujours compris entre 0 et 1, car l’animation se poursuit de façon linéaire du début à la fin. La fonction retourne *généralement* une valeur comprise entre 0 et 1, mais elle peut être brièvement négative ou supérieure à 1 (comme c’est le cas avec les `SpringIn` `SpringOut` fonctions et) ou peut arrêter les règles si vous savez ce que vous faites.
+Vous pouvez également définir vos propres fonctions d’accélération en passant un [`Func<double, double>`](xref:System.Func`2) au [ `Easing` constructeur](xref:Xamarin.Forms.Easing.%23ctor(System.Func{System.Double,System.Double})). `Easing` définit également une conversion implicite de `Func<double, double>` en `Easing` . L’argument de la fonction d’accélération est toujours compris entre 0 et 1, car l’animation se poursuit de façon linéaire du début à la fin. La fonction retourne *généralement* une valeur comprise entre 0 et 1, mais elle peut être brièvement négative ou supérieure à 1 (comme c’est le cas avec les `SpringIn` `SpringOut` fonctions et) ou peut arrêter les règles si vous savez ce que vous faites.
 
 L’exemple [**UneasyScale**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/UneasyScale) illustre une fonction d’accélération personnalisée, et [**CustomCubicEase**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/CustomCubicEase) en illustre une autre.
 
 L’exemple [**SwingButton**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/SwingButton) illustre également une fonction d’accélération personnalisée, ainsi qu’une technique permettant de modifier les `AnchorX` `AnchorY` Propriétés et dans une séquence d’animations de rotation.
 
-La bibliothèque [**Xamarin. FormsBook. Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) a une [`JiggleButton`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/JiggleButton.cs) classe qui utilise une fonction d’accélération personnalisée pour agiter un bouton quand l’utilisateur clique dessus. L’exemple [**JiggleButtonDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/JiggleButtonDemo) le montre.
+La bibliothèque [**Xamarin.Forms book. Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) a une [`JiggleButton`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/JiggleButton.cs) classe qui utilise une fonction d’accélération personnalisée pour agiter un bouton quand l’utilisateur clique dessus. L’exemple [**JiggleButtonDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/JiggleButtonDemo) le montre.
 
 ### <a name="entrance-animations"></a>Animations d’entrée
 
@@ -173,15 +176,15 @@ L’exemple [**ConcurrentAnimations**](https://github.com/xamarin/xamarin-forms-
 
 [ `TranslateTo` ] (XREF : Xamarin.Forms . ViewExtensions. TranslateTo ( Xamarin.Forms . VisualElement, System. double, System. double, System. UInt32, Xamarin.Forms . Accélération)) `ViewExtensions` ne fonctionne pas avec la [`Easing.SpringOut`](xref:Xamarin.Forms.Easing.SpringOut) fonction. Elle s’arrête lorsque la sortie d’accélération est supérieure à 1.
 
-La bibliothèque [**Xamarin. FormsBook. Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) contient une [`MoreViewExtensions`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs) classe avec [`TranslateXTo`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L12) des [`TranslateYTo`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L49) méthodes d’extension et qui n’ont pas ce problème, ainsi que les [`CancelTranslateXTo`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L44) [`CancelTranslateYTo`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L71) méthodes et pour annuler ces animations.
+La bibliothèque [**Xamarin.Forms book. Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) contient une [`MoreViewExtensions`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs) classe avec [`TranslateXTo`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L12) des [`TranslateYTo`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L49) méthodes d’extension et qui n’ont pas ce problème, ainsi que les [`CancelTranslateXTo`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L44) [`CancelTranslateYTo`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L71) méthodes et pour annuler ces animations.
 
 Le [**SpringSlidingEntrance**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/SpringSlidingEntrance) illustre la `TranslateXTo` méthode.
 
-La `MoreExtensions` classe contient également une [`TranslateXYTo`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L76) méthode d’extension qui combine les traductions X et Y, et une [`CancelTranslateXYTo`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L113) méthode.
+La `MoreExtensions` classe contient également une  [`TranslateXYTo`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L76) méthode d’extension qui combine les traductions X et Y, et une [`CancelTranslateXYTo`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L113) méthode.
 
 ### <a name="implementing-a-bezier-animation"></a>Implémentation d’une animation Bézier
 
-Il est également possible de développer une animation qui déplace un élément le long du tracé d’une spline de Bézier. La bibliothèque [**Xamarin. FormsBook. Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) contient une [`BezierSpline`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/BezierSpline.cs) structure qui encapsule une spline de Bézier et une [`BezierTangent`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/BezierTangent.cs) énumération pour contrôler l’orientation.
+Il est également possible de développer une animation qui déplace un élément le long du tracé d’une spline de Bézier. La bibliothèque [**Xamarin.Forms book. Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) contient une [`BezierSpline`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/BezierSpline.cs) structure qui encapsule une spline de Bézier et une [`BezierTangent`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/BezierTangent.cs) énumération pour contrôler l’orientation.
 
 La [`MoreViewExtensions`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs) classe contient une [`BezierPathTo`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L118) méthode d’extension et une [`CancelBezierPathTo`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L161) méthode.
 
@@ -191,7 +194,7 @@ L’exemple [**BezierLoop**](https://github.com/xamarin/xamarin-forms-book-sampl
 
 Un type d’animation manquant dans la collection standard est une animation de couleur. Le problème est qu’il n’existe aucun moyen d’interpoler entre deux `Color` valeurs. Il est possible d’interpoler les valeurs RVB individuelles, mais le plus simple est d’interpoler les valeurs TSL.
 
-Pour cette raison, la [`MoreViewExtensions`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs) classe de la bibliothèque [**Xamarin. FormsBook. Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) contient deux `Color` méthodes d’animation : [`RgbColorAnimation`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L166) et [`HslColorAnimation`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L188) . (Il existe également deux méthodes d’annulation : [`CancelRgbColorAnimation`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L183) et [`CancelHslColorAnimation`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L206) ).
+Pour cette raison, la [`MoreViewExtensions`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs) classe de la bibliothèque [**Xamarin.Forms book. Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) contient deux `Color` méthodes d’animation : [`RgbColorAnimation`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L166) et [`HslColorAnimation`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L188) . (Il existe également deux méthodes d’annulation : [`CancelRgbColorAnimation`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L183) et [`CancelHslColorAnimation`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L206) ).
 
 Les deux méthodes utilisent [`ColorAnimation`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L211) , qui exécute l’animation en appelant la méthode générique étendue [`Animate`](xref:Xamarin.Forms.AnimationExtensions.Animate*) dans [`AnimationExtensions`](xref:Xamarin.Forms.AnimationExtensions) .
 

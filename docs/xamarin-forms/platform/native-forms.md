@@ -10,16 +10,16 @@ ms.date: 08/19/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e34144f253b19796ea6ec83cb3873fe373aeb914
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: aec9f0ec0b3092a5f84f183fb90cfc8bc9da7324
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91560609"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374223"
 ---
 # <a name="no-locxamarinforms-in-xamarin-native-projects"></a>Xamarin.Forms dans les projets natifs Xamarin
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/native2forms)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/native2forms)
 
 En règle générale, une Xamarin.Forms application comprend une ou plusieurs pages qui dérivent de [`ContentPage`](xref:Xamarin.Forms.ContentPage) , et ces pages sont partagées par toutes les plateformes d’un projet de bibliothèque .NET standard ou d’un projet partagé. Toutefois, les formulaires natifs permettent `ContentPage` d’ajouter des pages dérivées directement aux applications natives Xamarin. iOS, Xamarin. Android et UWP. Par rapport au fait que le projet natif consomme des `ContentPage` pages dérivées d’une .NET standard projet de bibliothèque ou d’un projet partagé, l’avantage d’ajouter des pages directement aux projets natifs est que les pages peuvent être étendues avec des vues natives. Les vues natives peuvent ensuite être nommées en XAML avec `x:Name` et référencées à partir du code-behind. Pour plus d’informations sur les vues natives, consultez [affichages natifs](~/xamarin-forms/platform/native-views/index.md).
 

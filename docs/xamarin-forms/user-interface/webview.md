@@ -10,16 +10,16 @@ ms.date: 05/06/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d535956e03ac02e2cf0c5d7528ee8e363a2a1e55
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 9b22b46cb5452e558328c383ed97e66a60cfc166
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91561649"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374132"
 ---
 # <a name="no-locxamarinforms-webview"></a>Xamarin.Forms WebView
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithwebview)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/workingwithwebview)
 
 [`WebView`](xref:Xamarin.Forms.WebView) est une vue permettant d’afficher du contenu Web et HTML dans votre application :
 
@@ -175,7 +175,7 @@ Les implémentations de l’interface pour chaque plateforme doivent ensuite êt
 
 #### <a name="ios"></a>iOS
 
-Sur iOS, le contenu Web doit se trouver dans le répertoire racine ou le répertoire de **ressources** du projet à l’aide de l’action de génération *BundleResource*, comme illustré ci-dessous :
+Sur iOS, le contenu Web doit se trouver dans le répertoire racine ou le répertoire de **ressources** du projet à l’aide de l’action de génération *BundleResource* , comme illustré ci-dessous :
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
@@ -430,7 +430,7 @@ Pour que `WebView` fonctionne, vous devez vous assurer que les autorisations son
 - **Android** &ndash; nécessite `INTERNET`  uniquement lors de l’affichage du contenu à partir du réseau. Le contenu local ne requiert pas d’autorisations spéciales.
 - **iOS** &ndash; ne requiert pas d’autorisations spéciales.
 
-## <a name="layout"></a>Mise en page
+## <a name="layout"></a>Layout
 
 Contrairement à la plupart des autres Xamarin.Forms vues, `WebView` exige que `HeightRequest` et `WidthRequest` soient spécifiés lorsqu’ils sont contenus dans StackLayout ou RelativeLayout. Si vous ne parvenez pas à spécifier ces propriétés, le `WebView` n’est pas restitué.
 
@@ -557,9 +557,9 @@ Une version préliminaire de l’éditeur de liens est disponible pour résoudre
 
 Les conditions préalables à ce fonctionnement sont les suivantes :
 
-- ** Xamarin.Forms 4,5 ou version ultérieure**. Xamarin.Forms 4,6, ou une version ultérieure, est requis si votre application utilise un élément visuel Material.
+- **Xamarin.Forms 4,5 ou version ultérieure**. Xamarin.Forms 4,6, ou une version ultérieure, est requis si votre application utilise un élément visuel Material.
 - **Xamarin. iOS 13.10.0.17 ou version ultérieure**. Vérifiez votre version de Xamarin. iOS [dans Visual Studio](~/cross-platform/troubleshooting/questions/version-logs.md#version-information). Cette version de Xamarin. iOS est incluse avec Visual Studio pour Mac 8.4.1 et Visual Studio 16.4.3.
-- **Supprimez les `UIWebView` références à **. Votre code ne doit pas contenir de références à `UIWebView` ou à des classes qui utilisent `UIWebView` .
+- **Supprimez les `UIWebView` références à**. Votre code ne doit pas contenir de références à `UIWebView` ou à des classes qui utilisent `UIWebView` .
 
 Pour plus d’informations sur la détection et la suppression de `UIWebView` références, consultez [dépréciation de UIWebView](~/ios/user-interface/controls/webview.md#uiwebview-deprecation).
 

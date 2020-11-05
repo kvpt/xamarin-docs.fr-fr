@@ -6,18 +6,18 @@ ms.assetid: da4b4ba9-9205-47dc-8bae-23272ede2c50
 author: davidortinau
 ms.author: daortin
 ms.date: 04/24/2019
-ms.openlocfilehash: 5b042116f6d1fe2832298d09e3d47cba745973ad
-ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
+ms.openlocfilehash: 8cb26c3d8cec03cfaa12f7acb974c9944119bdfc
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91456871"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374106"
 ---
 # <a name="xamarinforms-using-visual-basicnet"></a>Xamarin. Forms à l’aide de Visual Basic.NET
 
 Xamarin ne prend pas en charge Visual Basic directement-suivez les instructions de cette page pour créer une solution Xamarin. Forms C#, puis remplacez le projet C# .NET Standard par Visual Basic.
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/mobile-samples/visualbasic-xamarinformsvb/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/mobile-samples/visualbasic-xamarinformsvb/)
 
 [![Créez une solution Xamarin. Forms, puis remplacez le projet .NET Standard par Visual Basic](xamarin-forms-images/hero-sml.png)](xamarin-forms-images/hero.png#lightbox)
 
@@ -30,13 +30,13 @@ Procédez comme suit pour créer un projet Xamarin. Forms simple qui utilise Vis
 
 1. Dans Visual Studio 2019, choisissez **créer un nouveau projet**.
 
-2. Dans la fenêtre **créer un nouveau projet** , tapez **Xamarin. Forms** pour filtrer la liste et sélectionnez **application mobile (Xamarin. Forms)**, puis appuyez sur **suivant**.
+2. Dans la fenêtre **créer un nouveau projet** , tapez **Xamarin. Forms** pour filtrer la liste et sélectionnez **application mobile (Xamarin. Forms)** , puis appuyez sur **suivant**.
 
     [![Filtrer les applications Xamarin. Forms](xamarin-forms-images/02-sml.png)](xamarin-forms-images/02.png#lightbox)
 
 3. Dans l’écran suivant, tapez un nom pour le projet et appuyez sur **créer**.
 
-4. Choisissez le modèle **vide** , puis appuyez sur **OK**:
+4. Choisissez le modèle **vide** , puis appuyez sur **OK** :
 
     [![Modèle Xamarin. Forms vide](xamarin-forms-images/04-sml.png)](xamarin-forms-images/04.png#lightbox)
 
@@ -50,15 +50,15 @@ Procédez comme suit pour créer un projet Xamarin. Forms simple qui utilise Vis
 
 7. Dans l’écran suivant, tapez un nom pour le projet et appuyez sur **créer**.
 
-8. Cliquez avec le bouton droit sur le projet Visual Basic et choisissez **Propriétés**, puis modifiez l' **espace de noms par défaut** pour qu’il corresponde aux projets C# existants :
+8. Cliquez avec le bouton droit sur le projet Visual Basic et choisissez **Propriétés** , puis modifiez l' **espace de noms par défaut** pour qu’il corresponde aux projets C# existants :
 
     [![Vérifier que l’espace de noms racine Visual Basic correspond à l’application Xamarin. Forms](xamarin-forms-images/07a-sml.png)](xamarin-forms-images/07a.png#lightbox)
 
-9. Cliquez avec le bouton droit sur le nouveau projet de Visual Basic et sélectionnez **gérer les packages NuGet**, puis installez **Xamarin. Forms** et fermez la fenêtre du gestionnaire de package.
+9. Cliquez avec le bouton droit sur le nouveau projet de Visual Basic et sélectionnez **gérer les packages NuGet** , puis installez **Xamarin. Forms** et fermez la fenêtre du gestionnaire de package.
 
     [![Formulaires et fermer la fenêtre du gestionnaire de package](xamarin-forms-images/07b-sml.png)](xamarin-forms-images/07b.png#lightbox)
 
-10. Renommez le fichier **Class1. vb** par défaut en **app. vb**:
+10. Renommez le fichier **Class1. vb** par défaut en **app. vb** :
 
     [![Renommer la classe et le fichier Class1 par défaut en app](xamarin-forms-images/08.png)](xamarin-forms-images/08.png#lightbox)
 

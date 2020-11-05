@@ -10,16 +10,16 @@ ms.date: 06/15/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 59a4d5c0730719d6cc332728c6cab641d02239b4
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 226c20acef7fc65cd0a4daf082c86e3c9c17bf54
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563560"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373773"
 ---
 # <a name="no-locxamarinforms-grid"></a>Xamarin.Forms Boutons
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-griddemos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-griddemos)
 
 [![::: No-Loc (Xamarin. Forms) ::: Grid](grid-images/layouts.png "::: No-Loc (Xamarin. Forms) ::: Grid")](grid-images/layouts-large.png#lightbox "::: No-Loc (Xamarin. Forms) ::: Grid")
 
@@ -270,7 +270,7 @@ public class BasicGridPageCS : ContentPage
 
 Dans le code, pour spécifier la hauteur d’un [`RowDefinition`](xref:Xamarin.Forms.RowDefinition) objet et la largeur d’un [`ColumnDefinition`](xref:Xamarin.Forms.ColumnDefinition) objet, vous utilisez des valeurs de la [`GridLength`](xref:Xamarin.Forms.GridLength) structure, souvent en association avec l' [`GridUnitType`](xref:Xamarin.Forms.GridUnitType) énumération.
 
-L’exemple de code ci-dessus montre également plusieurs approches différentes pour l’ajout d’enfants au [`Grid`](xref:Xamarin.Forms.Grid) et la spécification des cellules dans lesquelles ils résident. Lors de l’utilisation de la `Add` surcharge qui spécifie les arguments *gauche*, *droite*, *haut*et *bas* , tandis que les arguments *gauche* et *supérieur* font toujours référence aux cellules dans le `Grid` , les arguments de *droite* et du *bas* semblent faire référence aux cellules qui se trouvent en dehors de `Grid` . En effet, l’argument de *droite* doit toujours être supérieur à l’argument de *gauche* , et l’argument *inférieur* doit toujours être supérieur à l’argument du *haut* . L’exemple suivant, qui suppose un 2x2 `Grid` , affiche le code équivalent à l’aide des deux `Add` surcharges :
+L’exemple de code ci-dessus montre également plusieurs approches différentes pour l’ajout d’enfants au [`Grid`](xref:Xamarin.Forms.Grid) et la spécification des cellules dans lesquelles ils résident. Lors de l’utilisation de la `Add` surcharge qui spécifie les arguments *gauche* , *droite* , *haut* et *bas* , tandis que les arguments *gauche* et *supérieur* font toujours référence aux cellules dans le `Grid` , les arguments de *droite* et du *bas* semblent faire référence aux cellules qui se trouvent en dehors de `Grid` . En effet, l’argument de *droite* doit toujours être supérieur à l’argument de *gauche* , et l’argument *inférieur* doit toujours être supérieur à l’argument du *haut* . L’exemple suivant, qui suppose un 2x2 `Grid` , affiche le code équivalent à l’aide des deux `Add` surcharges :
 
 ```csharp
 // left, top
@@ -344,7 +344,7 @@ public GridSpacingPageCS()
 }
 ```
 
-## <a name="alignment"></a>Alignment
+## <a name="alignment"></a>Alignement
 
 Les vues enfants dans un [`Grid`](xref:Xamarin.Forms.Grid) peuvent être positionnées dans leurs cellules par les [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) Propriétés et. Ces propriétés peuvent être définies sur les champs suivants à partir de la [`LayoutOptions`](xref:Xamarin.Forms.LayoutOptions) structure :
 

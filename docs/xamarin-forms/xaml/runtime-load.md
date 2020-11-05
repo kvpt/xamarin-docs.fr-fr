@@ -10,20 +10,20 @@ ms.date: 12/12/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 071a7de630d7d7b7582e3c9fa8906919e92d1fb5
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: c027ef35462e6d2d43acf4ea5241a38abe15d41f
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562000"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374275"
 ---
 # <a name="loading-xaml-at-runtime-in-no-locxamarinforms"></a>Chargement du code XAML au moment de l’exécution dans Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-loadruntimexaml)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/xaml-loadruntimexaml)
 
 L' [`Xamarin.Forms.Xaml`](xref:Xamarin.Forms.Xaml) espace de noms comprend deux [`LoadFromXaml`](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*) méthodes d’extension qui peuvent être utilisées pour charger et analyser le XAML au moment de l’exécution.
 
-## <a name="background"></a>Contexte
+## <a name="background"></a>Arrière-plan
 
 Quand une Xamarin.Forms classe XAML est construite, la [`LoadFromXaml`](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*) méthode est appelée indirectement. Cela est dû au fait que le fichier code-behind pour une classe XAML appelle la `InitializeComponent` méthode à partir de son constructeur :
 
@@ -37,7 +37,7 @@ public partial class MainPage : ContentPage
 }
 ```
 
-Lorsque Visual Studio génère un projet contenant un fichier XAML, il analyse le fichier XAML pour générer un fichier de code C# (par exemple, **MainPage.Xaml.g.cs**) qui contient la définition de la `InitializeComponent` méthode :
+Lorsque Visual Studio génère un projet contenant un fichier XAML, il analyse le fichier XAML pour générer un fichier de code C# (par exemple, **MainPage.Xaml.g.cs** ) qui contient la définition de la `InitializeComponent` méthode :
 
 ```csharp
 private void InitializeComponent()

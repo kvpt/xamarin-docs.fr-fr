@@ -10,16 +10,16 @@ ms.date: 12/05/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 14d26c1360c1c1b7997598ef1263e3dd62e3c013
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 487ff8114a36212c1e7d413cc9bd1f4f2c016faa
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91561779"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374431"
 ---
 # <a name="search-data-with-azure-search-and-no-locxamarinforms"></a>Rechercher des données avec Azure Search et Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azuresearch)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/webservices-azuresearch)
 
 _Recherche Azure est un service Cloud qui fournit des fonctionnalités d’indexation et d’interrogation pour les données chargées. Cela supprime les exigences en matière d’infrastructure et les complexités de l’algorithme de recherche traditionnellement associées à l’implémentation de la fonctionnalité de recherche dans une application. Cet article explique comment utiliser la bibliothèque de recherche Microsoft Azure pour intégrer Azure Search dans une Xamarin.Forms application._
 
@@ -44,7 +44,7 @@ Azure Search prend également en charge la récupération de suggestions en fonc
 > [!NOTE]
 > Si vous n’avez pas [d’abonnement Azure](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing), créez un [compte gratuit](https://aka.ms/azfree-docs-mobileapps) avant de commencer.
 
-## <a name="setup"></a>Programme d’installation
+## <a name="setup"></a>Configuration
 
 Le processus d’intégration d’Azure Search dans une Xamarin.Forms application est le suivant :
 
@@ -276,7 +276,7 @@ La `SuggestAsync` méthode retourne un `DocumentSuggestResult` objet qui contien
 
 Notez que dans l’exemple d’application, la `SuggestAsync` méthode est appelée uniquement lorsque l’utilisateur finit de saisir un terme de recherche. Toutefois, il peut également être utilisé pour prendre en charge les requêtes de recherche à saisie semi-automatique en s’exécutant sur chaque pression.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a montré comment utiliser la bibliothèque de recherche Microsoft Azure pour intégrer Azure Search dans une Xamarin.Forms application. Recherche Azure est un service Cloud qui fournit des fonctionnalités d’indexation et d’interrogation pour les données chargées. Cela supprime les exigences en matière d’infrastructure et les complexités de l’algorithme de recherche traditionnellement associées à l’implémentation de la fonctionnalité de recherche dans une application.
 

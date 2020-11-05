@@ -10,16 +10,16 @@ ms.date: 05/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6af0641fe1f8f9be772b25c26825232b6bdba9b7
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 3146d1c1de66c0b2bc2e9c2d86a7a50d406ecd7e
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562377"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373365"
 ---
 # <a name="consume-a-restful-web-service"></a>Utilisation d’un service Web RESTful
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/webservices-todorest)
 
 _L’intégration d’un service Web dans une application est un scénario courant. Cet article explique comment utiliser un service Web RESTful à partir d’une Xamarin.Forms application._
 

@@ -10,16 +10,16 @@ ms.date: 05/27/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: af8513d86b7cf02ec7adcee75241d8ce99e2dfab
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: f59d58ed582b3fd6fd5cc25b08bbf1c262d602b4
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556826"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93372679"
 ---
 # <a name="no-locxamarinforms-scrollview"></a>Xamarin.Forms ScrollView
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-scrollviewdemos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-scrollviewdemos)
 
 [![::: No-Loc (Xamarin. Forms) ::: ScrollView](scrollview-images/layouts.png "::: No-Loc (Xamarin. Forms) ::: ScrollView")](scrollview-images/layouts-large.png#lightbox "::: No-Loc (Xamarin. Forms) ::: ScrollView")
 

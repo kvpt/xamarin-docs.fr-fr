@@ -10,14 +10,17 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cf7e3a260308a81dc40c4fe81be66e5436ed7c63
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 8a5b7ecb0272543785c98bfff12bec7fcccf7fc8
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86935796"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373937"
 ---
 # <a name="validation-in-enterprise-apps"></a>Validation dans les applications d’entreprise
+
+> [!NOTE]
+> Ce livre électronique a été publié au printemps de 2017 et n’a pas été mis à jour depuis. Le livre reste très utile, mais certains éléments du matériel sont obsolètes.
 
 Toute application qui accepte les entrées d’utilisateurs doit s’assurer que l’entrée est valide. Une application peut, par exemple, Rechercher des entrées qui contiennent uniquement des caractères dans une plage particulière, qui est d’une certaine longueur ou qui correspond à un format particulier. Sans validation, un utilisateur peut fournir des données qui provoquent l’échec de l’application. La validation applique des règles d’entreprise et empêche une personne malveillante d’injecter des données malveillantes.
 
@@ -25,7 +28,7 @@ Dans le contexte du modèle MVVM (Model-View-ViewModel), un modèle de vue ou un
 
 [![Classes de validation dans l’application mobile eShopOnContainers](validation-images/validation.png)](validation-images/validation-large.png#lightbox "Classes de validation dans l’application mobile eShopOnContainers")
 
-**Figure 6-1**: classes de validation dans l’application mobile eShopOnContainers
+**Figure 6-1** : classes de validation dans l’application mobile eShopOnContainers
 
 Les propriétés de modèle de vue qui nécessitent une validation sont de type `ValidatableObject<T>` , et chaque `ValidatableObject<T>` instance a des règles de validation ajoutées à sa `Validations` propriété. La validation est appelée à partir du modèle de vue en appelant la `Validate` méthode de l' `ValidatableObject<T>` instance, qui récupère les règles de validation et les exécute sur la `ValidatableObject<T>` `Value` propriété. Toutes les erreurs de validation sont placées dans la `Errors` propriété de l' `ValidatableObject<T>` instance et la `IsValid` propriété de l' `ValidatableObject<T>` instance est mise à jour pour indiquer si la validation a réussi ou échoué.
 
@@ -36,10 +39,10 @@ La notification de modification de propriété est fournie par la `ExtendedBinda
 Les règles de validation sont spécifiées en créant une classe qui dérive de l' `IValidationRule<T>` interface, qui est illustrée dans l’exemple de code suivant :
 
 ```csharp
-public interface IValidationRule<T>  
+public interface IValidationRule<T>  
 {  
-    string ValidationMessage { get; set; }  
-    bool Check(T value);  
+    string ValidationMessage { get; set; }  
+    bool Check(T value);  
 }
 ```
 
@@ -48,20 +51,20 @@ Cette interface spécifie qu’une classe de règles de validation doit fournir 
 L’exemple de code suivant montre la `IsNotNullOrEmptyRule<T>` règle de validation, qui est utilisée pour effectuer la validation du nom d’utilisateur et du mot de passe entrés par l’utilisateur lors de l' `LoginView` utilisation de services fictifs dans l’application mobile eShopOnContainers :
 
 ```csharp
-public class IsNotNullOrEmptyRule<T> : IValidationRule<T>  
+public class IsNotNullOrEmptyRule<T> : IValidationRule<T>  
 {  
-    public string ValidationMessage { get; set; }  
+    public string ValidationMessage { get; set; }  
 
-    public bool Check(T value)  
-    {  
-        if (value == null)  
-        {  
-            return false;  
-        }  
+    public bool Check(T value)  
+    {  
+        if (value == null)  
+        {  
+            return false;  
+        }  
 
-        var str = value as string;  
-        return !string.IsNullOrWhiteSpace(str);  
-    }  
+        var str = value as string;  
+        return !string.IsNullOrWhiteSpace(str);  
+    }  
 }
 ```
 
@@ -70,23 +73,23 @@ La `Check` méthode retourne une `boolean` valeur qui indique si l’argument `n
 Bien qu’il ne soit pas utilisé par l’application mobile eShopOnContainers, l’exemple de code suivant montre une règle de validation pour la validation des adresses de messagerie :
 
 ```csharp
-public class EmailRule<T> : IValidationRule<T>  
+public class EmailRule<T> : IValidationRule<T>  
 {  
-    public string ValidationMessage { get; set; }  
+    public string ValidationMessage { get; set; }  
 
-    public bool Check(T value)  
-    {  
-        if (value == null)  
-        {  
-            return false;  
-        }  
+    public bool Check(T value)  
+    {  
+        if (value == null)  
+        {  
+            return false;  
+        }  
 
-        var str = value as string;  
-        Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");  
-        Match match = regex.Match(str);  
+        var str = value as string;  
+        Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");  
+        Match match = regex.Match(str);  
 
-        return match.Success;  
-    }  
+        return match.Success;  
+    }  
 }
 ```
 
@@ -100,46 +103,46 @@ La `Check` méthode retourne une `boolean` valeur indiquant si l’argument de v
 Dans l’application mobile eShopOnContainers, les propriétés de modèle qui nécessitent une validation sont déclarées comme étant de type `ValidatableObject<T>` , où `T` est le type des données à valider. L’exemple de code suivant montre deux propriétés de ce type :
 
 ```csharp
-public ValidatableObject<string> UserName  
+public ValidatableObject<string> UserName  
 {  
-    get  
-    {  
-        return _userName;  
-    }  
-    set  
-    {  
-        _userName = value;  
-        RaisePropertyChanged(() => UserName);  
-    }  
+    get  
+    {  
+        return _userName;  
+    }  
+    set  
+    {  
+        _userName = value;  
+        RaisePropertyChanged(() => UserName);  
+    }  
 }  
 
-public ValidatableObject<string> Password  
+public ValidatableObject<string> Password  
 {  
-    get  
-    {  
-        return _password;  
-    }  
-    set  
-    {  
-        _password = value;  
-        RaisePropertyChanged(() => Password);  
-    }  
+    get  
+    {  
+        return _password;  
+    }  
+    set  
+    {  
+        _password = value;  
+        RaisePropertyChanged(() => Password);  
+    }  
 }
 ```
 
 Pour que la validation se produise, des règles de validation doivent être ajoutées à la `Validations` collection de chaque `ValidatableObject<T>` instance, comme illustré dans l’exemple de code suivant :
 
 ```csharp
-private void AddValidations()  
+private void AddValidations()  
 {  
-    _userName.Validations.Add(new IsNotNullOrEmptyRule<string>   
-    {   
-        ValidationMessage = "A username is required."   
-    });  
-    _password.Validations.Add(new IsNotNullOrEmptyRule<string>   
-    {   
-        ValidationMessage = "A password is required."   
-    });  
+    _userName.Validations.Add(new IsNotNullOrEmptyRule<string>   
+    {   
+        ValidationMessage = "A username is required."   
+    });  
+    _password.Validations.Add(new IsNotNullOrEmptyRule<string>   
+    {   
+        ValidationMessage = "A password is required."   
+    });  
 }
 ```
 
@@ -154,39 +157,39 @@ L’approche de validation utilisée dans l’application mobile eShopOnContaine
 La validation peut être déclenchée manuellement pour une propriété de modèle de vue. Par exemple, cela se produit dans l’application mobile eShopOnContainers quand l’utilisateur appuie sur le bouton de **connexion** sur le `LoginView` , lors de l’utilisation de services fictifs. Le délégué de commande appelle la `MockSignInAsync` méthode dans le `LoginViewModel` , qui appelle la validation en exécutant la `Validate` méthode, qui est illustrée dans l’exemple de code suivant :
 
 ```csharp
-private bool Validate()  
+private bool Validate()  
 {  
-    bool isValidUser = ValidateUserName();  
-    bool isValidPassword = ValidatePassword();  
-    return isValidUser && isValidPassword;  
+    bool isValidUser = ValidateUserName();  
+    bool isValidPassword = ValidatePassword();  
+    return isValidUser && isValidPassword;  
 }  
 
-private bool ValidateUserName()  
+private bool ValidateUserName()  
 {  
-    return _userName.Validate();  
+    return _userName.Validate();  
 }  
 
-private bool ValidatePassword()  
+private bool ValidatePassword()  
 {  
-    return _password.Validate();  
+    return _password.Validate();  
 }
 ```
 
 La `Validate` méthode effectue la validation du nom d’utilisateur et du mot de passe entrés par l’utilisateur sur le `LoginView` , en appelant la méthode Validate sur chaque `ValidatableObject<T>` instance. L’exemple de code suivant montre la méthode Validate de la `ValidatableObject<T>` classe :
 
 ```csharp
-public bool Validate()  
+public bool Validate()  
 {  
-    Errors.Clear();  
+    Errors.Clear();  
 
-    IEnumerable<string> errors = _validations  
-        .Where(v => !v.Check(Value))  
-        .Select(v => v.ValidationMessage);  
+    IEnumerable<string> errors = _validations  
+        .Where(v => !v.Check(Value))  
+        .Select(v => v.ValidationMessage);  
 
-    Errors = errors.ToList();  
-    IsValid = !Errors.Any();  
+    Errors = errors.ToList();  
+    IsValid = !Errors.Any();  
 
-    return this.IsValid;  
+    return this.IsValid;  
 }
 ```
 
@@ -197,13 +200,13 @@ Cette méthode efface la `Errors` collection, puis récupère toutes les règles
 La validation peut également être déclenchée chaque fois qu’une propriété liée change. Par exemple, lorsqu’une liaison bidirectionnelle dans le `LoginView` définit la `UserName` `Password` propriété ou, la validation est déclenchée. L’exemple de code suivant montre comment cela se produit :
 
 ```xaml
-<Entry Text="{Binding UserName.Value, Mode=TwoWay}">  
-    <Entry.Behaviors>  
-        <behaviors:EventToCommandBehavior  
-            EventName="TextChanged"  
-            Command="{Binding ValidateUserNameCommand}" />  
-    </Entry.Behaviors>  
-    ...  
+<Entry Text="{Binding UserName.Value, Mode=TwoWay}">  
+    <Entry.Behaviors>  
+        <behaviors:EventToCommandBehavior  
+            EventName="TextChanged"  
+            Command="{Binding ValidateUserNameCommand}" />  
+    </Entry.Behaviors>  
+    ...  
 </Entry>
 ```
 
@@ -238,14 +241,14 @@ Le `LineColorBehavior` comportement attaché est utilisé pour mettre en surbril
 Le [`Entry`](xref:Xamarin.Forms.Entry) contrôle consomme un style explicite, qui est illustré dans l’exemple de code suivant :
 
 ```xaml
-<Style x:Key="EntryStyle"  
-       TargetType="{x:Type Entry}">  
-    ...  
-    <Setter Property="behaviors:LineColorBehavior.ApplyLineColor"  
-            Value="True" />  
-    <Setter Property="behaviors:LineColorBehavior.LineColor"  
-            Value="{StaticResource BlackColor}" />  
-    ...  
+<Style x:Key="EntryStyle"  
+       TargetType="{x:Type Entry}">  
+    ...  
+    <Setter Property="behaviors:LineColorBehavior.ApplyLineColor"  
+            Value="True" />  
+    <Setter Property="behaviors:LineColorBehavior.LineColor"  
+            Value="{StaticResource BlackColor}" />  
+    ...  
 </Style>
 ```
 
@@ -254,33 +257,33 @@ Ce style définit les `ApplyLineColor` `LineColor` propriétés jointes et du `L
 Lorsque la valeur de la `ApplyLineColor` propriété jointe est définie, ou change, le `LineColorBehavior` comportement attaché exécute la `OnApplyLineColorChanged` méthode, qui est illustrée dans l’exemple de code suivant :
 
 ```csharp
-public static class LineColorBehavior  
+public static class LineColorBehavior  
 {  
-    ...  
-    private static void OnApplyLineColorChanged(  
-                BindableObject bindable, object oldValue, object newValue)  
-    {  
-        var view = bindable as View;  
-        if (view == null)  
-        {  
-            return;  
-        }  
+    ...  
+    private static void OnApplyLineColorChanged(  
+                BindableObject bindable, object oldValue, object newValue)  
+    {  
+        var view = bindable as View;  
+        if (view == null)  
+        {  
+            return;  
+        }  
 
-        bool hasLine = (bool)newValue;  
-        if (hasLine)  
-        {  
-            view.Effects.Add(new EntryLineColorEffect());  
-        }  
-        else  
-        {  
-            var entryLineColorEffectToRemove =   
-                    view.Effects.FirstOrDefault(e => e is EntryLineColorEffect);  
-            if (entryLineColorEffectToRemove != null)  
-            {  
-                view.Effects.Remove(entryLineColorEffectToRemove);  
-            }  
-        }  
-    }  
+        bool hasLine = (bool)newValue;  
+        if (hasLine)  
+        {  
+            view.Effects.Add(new EntryLineColorEffect());  
+        }  
+        else  
+        {  
+            var entryLineColorEffectToRemove =   
+                    view.Effects.FirstOrDefault(e => e is EntryLineColorEffect);  
+            if (entryLineColorEffectToRemove != null)  
+            {  
+                view.Effects.Remove(entryLineColorEffectToRemove);  
+            }  
+        }  
+    }  
 }
 ```
 
@@ -289,11 +292,11 @@ Les paramètres de cette méthode fournissent l’instance du contrôle auquel l
 La `EntryLineColorEffect` sous-classe la [`RoutingEffect`](xref:Xamarin.Forms.RoutingEffect) classe et est illustrée dans l’exemple de code suivant :
 
 ```csharp
-public class EntryLineColorEffect : RoutingEffect  
+public class EntryLineColorEffect : RoutingEffect  
 {  
-    public EntryLineColorEffect() : base("eShopOnContainers.EntryLineColorEffect")  
-    {  
-    }  
+    public EntryLineColorEffect() : base("eShopOnContainers.EntryLineColorEffect")  
+    {  
+    }  
 }
 ```
 
@@ -302,76 +305,76 @@ La [`RoutingEffect`](xref:Xamarin.Forms.RoutingEffect) classe représente un eff
 L’exemple de code suivant montre l' `eShopOnContainers.EntryLineColorEffect` implémentation pour iOS :
 
 ```csharp
-[assembly: ResolutionGroupName("eShopOnContainers")]  
-[assembly: ExportEffect(typeof(EntryLineColorEffect), "EntryLineColorEffect")]  
-namespace eShopOnContainers.iOS.Effects  
+[assembly: ResolutionGroupName("eShopOnContainers")]  
+[assembly: ExportEffect(typeof(EntryLineColorEffect), "EntryLineColorEffect")]  
+namespace eShopOnContainers.iOS.Effects  
 {  
-    public class EntryLineColorEffect : PlatformEffect  
-    {  
-        UITextField control;  
+    public class EntryLineColorEffect : PlatformEffect  
+    {  
+        UITextField control;  
 
-        protected override void OnAttached()  
-        {  
-            try  
-            {  
-                control = Control as UITextField;  
-                UpdateLineColor();  
-            }  
-            catch (Exception ex)  
-            {  
-                Console.WriteLine("Can't set property on attached control. Error: ", ex.Message);  
-            }  
-        }  
+        protected override void OnAttached()  
+        {  
+            try  
+            {  
+                control = Control as UITextField;  
+                UpdateLineColor();  
+            }  
+            catch (Exception ex)  
+            {  
+                Console.WriteLine("Can't set property on attached control. Error: ", ex.Message);  
+            }  
+        }  
 
-        protected override void OnDetached()  
-        {  
-            control = null;  
-        }  
+        protected override void OnDetached()  
+        {  
+            control = null;  
+        }  
 
-        protected override void OnElementPropertyChanged(PropertyChangedEventArgs args)  
-        {  
-            base.OnElementPropertyChanged(args);  
+        protected override void OnElementPropertyChanged(PropertyChangedEventArgs args)  
+        {  
+            base.OnElementPropertyChanged(args);  
 
-            if (args.PropertyName == LineColorBehavior.LineColorProperty.PropertyName ||  
-                args.PropertyName == "Height")  
-            {  
-                Initialize();  
-                UpdateLineColor();  
-            }  
-        }  
+            if (args.PropertyName == LineColorBehavior.LineColorProperty.PropertyName ||  
+                args.PropertyName == "Height")  
+            {  
+                Initialize();  
+                UpdateLineColor();  
+            }  
+        }  
 
-        private void Initialize()  
-        {  
-            var entry = Element as Entry;  
-            if (entry != null)  
-            {  
-                Control.Bounds = new CGRect(0, 0, entry.Width, entry.Height);  
-            }  
-        }  
+        private void Initialize()  
+        {  
+            var entry = Element as Entry;  
+            if (entry != null)  
+            {  
+                Control.Bounds = new CGRect(0, 0, entry.Width, entry.Height);  
+            }  
+        }  
 
-        private void UpdateLineColor()  
-        {  
-            BorderLineLayer lineLayer = control.Layer.Sublayers.OfType<BorderLineLayer>()  
-                                                             .FirstOrDefault();  
+        private void UpdateLineColor()  
+        {  
+            BorderLineLayer lineLayer = control.Layer.Sublayers.OfType<BorderLineLayer>()  
+                                                             .FirstOrDefault();  
 
-            if (lineLayer == null)  
-            {  
-                lineLayer = new BorderLineLayer();  
-                lineLayer.MasksToBounds = true;  
-                lineLayer.BorderWidth = 1.0f;  
-                control.Layer.AddSublayer(lineLayer);  
-                control.BorderStyle = UITextBorderStyle.None;  
-            }  
+            if (lineLayer == null)  
+            {  
+                lineLayer = new BorderLineLayer();  
+                lineLayer.MasksToBounds = true;  
+                lineLayer.BorderWidth = 1.0f;  
+                control.Layer.AddSublayer(lineLayer);  
+                control.BorderStyle = UITextBorderStyle.None;  
+            }  
 
-            lineLayer.Frame = new CGRect(0f, Control.Frame.Height-1f, Control.Bounds.Width, 1f);  
-            lineLayer.BorderColor = LineColorBehavior.GetLineColor(Element).ToCGColor();  
-            control.TintColor = control.TextColor;  
-        }  
+            lineLayer.Frame = new CGRect(0f, Control.Frame.Height-1f, Control.Bounds.Width, 1f);  
+            lineLayer.BorderColor = LineColorBehavior.GetLineColor(Element).ToCGColor();  
+            control.TintColor = control.TextColor;  
+        }  
 
-        private class BorderLineLayer : CALayer  
-        {  
-        }  
-    }  
+        private class BorderLineLayer : CALayer  
+        {  
+        }  
+    }  
 }
 ```
 
@@ -381,22 +384,22 @@ Quand des données valides sont entrées dans le [`Entry`](xref:Xamarin.Forms.En
 
 ![Ligne noire indiquant l’absence d’erreur de validation](validation-images/validation-blackline.png)
 
-**Figure 6-3**: ligne noire indiquant l’absence d’erreur de validation
+**Figure 6-3** : ligne noire indiquant l’absence d’erreur de validation
 
 Le [`Entry`](xref:Xamarin.Forms.Entry) contrôle a également un [`DataTrigger`](xref:Xamarin.Forms.DataTrigger) ajouté à sa [`Triggers`](xref:Xamarin.Forms.VisualElement.Triggers) collection. L’exemple de code suivant montre les `DataTrigger` éléments suivants :
 
 ```xaml
-<Entry Text="{Binding UserName.Value, Mode=TwoWay}">  
-    ...  
-    <Entry.Triggers>  
-        <DataTrigger   
-            TargetType="Entry"  
-            Binding="{Binding UserName.IsValid}"  
-            Value="False">  
-            <Setter Property="behaviors:LineColorBehavior.LineColor"   
-                    Value="{StaticResource ErrorColor}" />  
-        </DataTrigger>  
-    </Entry.Triggers>  
+<Entry Text="{Binding UserName.Value, Mode=TwoWay}">  
+    ...  
+    <Entry.Triggers>  
+        <DataTrigger   
+            TargetType="Entry"  
+            Binding="{Binding UserName.IsValid}"  
+            Value="False">  
+            <Setter Property="behaviors:LineColorBehavior.LineColor"   
+                    Value="{StaticResource ErrorColor}" />  
+        </DataTrigger>  
+    </Entry.Triggers>  
 </Entry>
 ```
 
@@ -404,7 +407,7 @@ Cela [`DataTrigger`](xref:Xamarin.Forms.DataTrigger) surveille la `UserName.IsVa
 
 ![Ligne rouge indiquant une erreur de validation](validation-images/validation-redline.png)
 
-**Figure 6-4**: ligne rouge indiquant une erreur de validation
+**Figure 6-4** : ligne rouge indiquant une erreur de validation
 
 La ligne dans le [`Entry`](xref:Xamarin.Forms.Entry) contrôle reste en rouge alors que les données entrées ne sont pas valides. dans le cas contraire, elle devient noire pour indiquer que les données entrées sont valides.
 
@@ -415,13 +418,13 @@ Pour plus d’informations sur les déclencheurs, consultez [déclencheurs](~/xa
 L’interface utilisateur affiche les messages d’erreur de validation dans les contrôles Label situés sous chaque contrôle dont les données n’ont pas été validées. L’exemple de code suivant affiche [`Label`](xref:Xamarin.Forms.Label) un message d’erreur de validation si l’utilisateur n’a pas entré un nom d’utilisateur valide :
 
 ```xaml
-<Label Text="{Binding UserName.Errors, Converter={StaticResource FirstValidationErrorConverter}}"  
-       Style="{StaticResource ValidationErrorLabelStyle}" />
+<Label Text="{Binding UserName.Errors, Converter={StaticResource FirstValidationErrorConverter}}"  
+       Style="{StaticResource ValidationErrorLabelStyle}" />
 ```
 
 Chaque [`Label`](xref:Xamarin.Forms.Label) lie à la `Errors` propriété de l’objet de modèle de vue qui est en cours de validation. La `Errors` propriété est fournie par la `ValidatableObject<T>` classe et est de type `List<string>` . Étant donné que la `Errors` propriété peut contenir plusieurs erreurs de validation, l' `FirstValidationErrorConverter` instance est utilisée pour récupérer la première erreur de la collection en vue de son affichage.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 L’application mobile eShopOnContainers effectue une validation synchrone côté client des propriétés de modèle de vue et avertit l’utilisateur des erreurs de validation en mettant en surbrillance le contrôle qui contient les données non valides et en affichant les messages d’erreur qui informent l’utilisateur de la raison pour laquelle les données ne sont pas valides.
 

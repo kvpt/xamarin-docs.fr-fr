@@ -10,16 +10,16 @@ ms.date: 09/18/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1bc2ed53b12e6953033760b072d38353c65a6708
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: ecd30a9473351b146c41b6599bdb74f3b53d11f6
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563456"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373391"
 ---
 # <a name="no-locxamarinforms-compiled-bindings"></a>Xamarin.Forms Liaisons compilées
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 _Les liaisons compilées sont résolues plus rapidement que les liaisons classiques, ce qui améliore les performances de liaison de données dans les Xamarin.Forms applications._
 
@@ -38,7 +38,7 @@ Le processus permettant d’utiliser des liaisons compilées est le suivant :
 > [!NOTE]
 > Il est recommandé de définir l' `x:DataType` attribut au même niveau dans la hiérarchie d’affichage lorsque le [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) est défini. Toutefois, cet attribut peut être redéfini à n’importe quel emplacement d’une hiérarchie d’affichage.
 
-Pour utiliser des liaisons compilées, l' `x:DataType` attribut doit être défini sur un littéral de chaîne ou un type à l’aide de l' `x:Type` extension de balisage. Au moment de la compilation XAML, toutes les expressions de liaison non valides seront signalées comme erreurs de build. Toutefois, le compilateur XAML signalera uniquement une erreur de build pour la première expression de liaison non valide qu’il rencontrera. Toutes les expressions de liaison valides définies sur le `VisualElement` ou ses enfants seront compilées, que le [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) soit défini en XAML ou dans le code. La compilation d’une expression de liaison génère du code compilé qui obtiendra une valeur d’une propriété de la *source* et la définira sur la propriété de la *cible* spécifiée dans le balisage. En outre, en fonction de l’expression de liaison, le code généré peut observer des modifications dans la valeur de la propriété *source* et actualiser la propriété *cible*, et il peut renvoyer (push) des modifications à partir de la *cible* vers la *source*.
+Pour utiliser des liaisons compilées, l' `x:DataType` attribut doit être défini sur un littéral de chaîne ou un type à l’aide de l' `x:Type` extension de balisage. Au moment de la compilation XAML, toutes les expressions de liaison non valides seront signalées comme erreurs de build. Toutefois, le compilateur XAML signalera uniquement une erreur de build pour la première expression de liaison non valide qu’il rencontrera. Toutes les expressions de liaison valides définies sur le `VisualElement` ou ses enfants seront compilées, que le [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) soit défini en XAML ou dans le code. La compilation d’une expression de liaison génère du code compilé qui obtiendra une valeur d’une propriété de la *source* et la définira sur la propriété de la *cible* spécifiée dans le balisage. En outre, en fonction de l’expression de liaison, le code généré peut observer des modifications dans la valeur de la propriété *source* et actualiser la propriété *cible* , et il peut renvoyer (push) des modifications à partir de la *cible* vers la *source*.
 
 > [!IMPORTANT]
 > Les liaisons compilées sont actuellement désactivées pour toutes les expressions de liaison qui définissent la [`Source`](xref:Xamarin.Forms.Binding.Source) propriété. Cela tient au fait que la propriété `Source` est toujours définie à l’aide de l’extension de balisage `x:Reference`, qui ne peut pas être résolue au moment de la compilation.

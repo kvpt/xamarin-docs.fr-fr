@@ -10,16 +10,16 @@ ms.date: 05/24/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9ce36af6b8b2a70a7993ff9605c6a7b7735fd974
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: f4b15911f48b4260da8839f376800e95c63bf0e4
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563274"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373625"
 ---
 # <a name="create-a-no-locxamarinforms-shell-application"></a>Créer une Xamarin.Forms application Shell
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
 Le processus de création d’une Xamarin.Forms application Shell est le suivant :
 

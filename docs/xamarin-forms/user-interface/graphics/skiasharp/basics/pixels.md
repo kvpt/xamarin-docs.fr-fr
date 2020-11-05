@@ -10,16 +10,16 @@ ms.date: 02/09/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3df3a606c54d7367079638d48330dfe1b214043b
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 5f12dbd4ef0cfea9d276fd8c939afab585541ece
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563183"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373892"
 ---
 # <a name="pixels-and-device-independent-units"></a>Unités indépendantes de l’appareil et pixels
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Explorez les différences Xamarin.Forms entre les coordonnées et coordonnées SkiaSharp_
 
@@ -29,7 +29,7 @@ Cet article explore les différences dans le système de coordonnées utilisé d
 
 Si vous avez programmé dans pendant Xamarin.Forms un certain temps, vous pouvez avoir une idée des Xamarin.Forms coordonnées et des tailles. Les cercles dessinés dans les deux articles précédents peuvent paraître un peu petit pour vous.
 
-Ces cercles *sont* petits par rapport à la Xamarin.Forms taille. Par défaut, SkiaSharp dessine en unités de pixels tout en Xamarin.Forms base les coordonnées et les tailles sur une unité indépendante du périphérique établie par la plateforme sous-jacente. (Vous trouverez plus d’informations sur le Xamarin.Forms système de coordonnées dans le [Chapitre 5. Gestion des tailles](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter05.md) du livre création d' *Mobile Apps avec Xamarin.Forms *.)
+Ces cercles *sont* petits par rapport à la Xamarin.Forms taille. Par défaut, SkiaSharp dessine en unités de pixels tout en Xamarin.Forms base les coordonnées et les tailles sur une unité indépendante du périphérique établie par la plateforme sous-jacente. (Vous trouverez plus d’informations sur le Xamarin.Forms système de coordonnées dans le [Chapitre 5. Gestion des tailles](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter05.md) du livre création d' *Mobile Apps avec Xamarin.Forms*.)
 
 La page dans le programme [**SkewSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) intitulée **taille** de la surface utilise la sortie de texte SkiaSharp pour afficher la taille de la surface d’affichage à partir de trois sources différentes :
 

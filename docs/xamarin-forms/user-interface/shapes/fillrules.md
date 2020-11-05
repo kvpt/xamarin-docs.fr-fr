@@ -10,18 +10,18 @@ ms.date: 06/24/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a1277b0acda598128e69b39a99910a468f6baa11
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 39524a294245236bc1af875d8b6268d2129fead7
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91559257"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373079"
 ---
 # <a name="no-locxamarinforms-shapes-fill-rules"></a>Xamarin.Forms Formes : règles de remplissage
 
 ![API de la version préliminaire](~/media/shared/preview.png)
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 Plusieurs Xamarin.Forms classes Shapes ont `FillRule` des propriétés, de type `FillRule` . Il s’agit notamment de `Polygon` , `Polyline` et `GeometryGroup` .
 

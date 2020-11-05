@@ -10,28 +10,28 @@ ms.date: 07/18/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ad71dc5f5389f1676698a761a138b3f76ffa9fa0
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 75c79c7a5300cf5708bb46740bec11f84b59c786
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136680"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374015"
 ---
 # <a name="summary-of-chapter-20-async-and-file-io"></a>Résumé du chapitre 20. E/S de fichier et asynchrone
 
-[![Télécharger ](~/media/shared/download.png) l’exemple télécharger l’exemple](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20)
 
-> [!NOTE] 
-> Les notes de cette page indiquent les zones où elles Xamarin.Forms divergent du matériel présenté dans le livre.
+> [!NOTE]
+> Ce livre a été publié à la printemps de 2016 et n’a pas été mis à jour depuis. Le livre reste très utile, mais certains d’entre eux sont obsolètes et certaines rubriques ne sont plus entièrement correctes ou complètes.
 
- Une interface utilisateur graphique doit répondre séquentiellement aux événements d’entrée d’utilisateur. Cela implique que tous les traitements des événements d’entrée utilisateur doivent se produire dans un thread unique, souvent appelé *thread principal* ou *thread d’interface utilisateur*.
+Une interface utilisateur graphique doit répondre séquentiellement aux événements d’entrée d’utilisateur. Cela implique que tous les traitements des événements d’entrée utilisateur doivent se produire dans un thread unique, souvent appelé *thread principal* ou *thread d’interface utilisateur*.
 
 Les utilisateurs s’attendent à ce que les interfaces utilisateur graphiques soient réactives. Cela signifie qu’un programme doit traiter rapidement les événements d’entrée d’utilisateur. Si ce n’est pas possible, le traitement doit être redélégué aux threads d’exécution secondaires.
 
 Plusieurs exemples de programmes de ce livre ont utilisé la [`WebRequest`](xref:System.Net.WebRequest) classe. Dans cette classe [`BeginGetResponse`](xref:System.Net.WebRequest.BeginGetResponse(System.AsyncCallback,System.Object)) , la méthode démarre un thread de travail, qui appelle une fonction de rappel lorsqu’elle est terminée. Toutefois, cette fonction de rappel s’exécute dans le thread de travail, donc le programme doit appeler [`Device.BeginInvokeOnMainThread`](xref:Xamarin.Forms.Device.BeginInvokeOnMainThread(System.Action)) la méthode pour accéder à l’interface utilisateur.
 
 > [!NOTE]
-> Xamarin.Formsles programmes doivent utiliser [`HttpClient`](xref:System.Net.Http.HttpClient) plutôt que [`WebRequest`](xref:System.Net.WebRequest) pour accéder aux fichiers sur Internet. `HttpClient`prend en charge les opérations asynchrones.
+> Xamarin.Forms les programmes doivent utiliser [`HttpClient`](xref:System.Net.Http.HttpClient) plutôt que [`WebRequest`](xref:System.Net.WebRequest) pour accéder aux fichiers sur Internet. `HttpClient` prend en charge les opérations asynchrones.
 
 Une approche plus moderne du traitement asynchrone est disponible dans .NET et C#. Cela implique les [`Task`](xref:System.Threading.Tasks.Task) [`Task<TResult>`](xref:System.Threading.Tasks.Task`1) classes et, ainsi que d’autres types dans les [`System.Threading`](xref:System.Threading) espaces de noms et, ainsi [`System.Threading.Tasks`](xref:System.Threading.Tasks) que les `async` Mots clés C# 5,0 et `await` . C’est ce que ce chapitre se concentre.
 
@@ -39,9 +39,9 @@ Une approche plus moderne du traitement asynchrone est disponible dans .NET et C
 
 La `Page` classe elle-même contient trois méthodes asynchrones pour afficher des zones d’alerte :
 
-- [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert(System.String,System.String,System.String))retourne un `Task` objet.
-- [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert(System.String,System.String,System.String,System.String))retourne un `Task<bool>` objet.
-- [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet(System.String,System.String,System.String,System.String[]))retourne un `Task<string>` objet.
+- [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert(System.String,System.String,System.String)) retourne un `Task` objet.
+- [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert(System.String,System.String,System.String,System.String)) retourne un `Task<bool>` objet.
+- [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet(System.String,System.String,System.String,System.String[])) retourne un `Task<string>` objet.
 
 Les `Task` objets indiquent que ces méthodes implémentent le modèle asynchrone basé sur des tâches, appelé TAP. Ces `Task` objets sont retournés rapidement à partir de la méthode. Les `Task<T>` valeurs de retour constituent une « promesse » qu’une valeur de type `TResult` sera disponible quand la tâche se termine. La `Task` valeur de retour indique une action asynchrone qui se termine, mais pour laquelle aucune valeur n’est retournée.
 
@@ -57,7 +57,7 @@ L’exemple [**AlertLambdas**](https://github.com/xamarin/xamarin-forms-book-sam
 
 ### <a name="an-alert-with-await"></a>Une alerte avec await
 
-Une approche plus simple implique les `async` `await` Mots clés et introduits dans C# 5. L’exemple [**AlertAwait**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/AlertAwait) illustre son utilisation.
+Une approche plus simple implique les `async` `await` Mots clés et introduits dans C# 5. L’exemple  [**AlertAwait**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/AlertAwait) illustre son utilisation.
 
 ### <a name="an-alert-with-nothing"></a>Alerte sans rien
 
@@ -102,31 +102,31 @@ Le code illustrant cette nouvelle approche se trouve dans une bibliothèque, afi
 
 Il est avantageux de stocker du code réutilisable dans les bibliothèques. Cela est évidemment plus difficile lorsque différentes parties du code réutilisable sont destinées à des systèmes d’exploitation entièrement différents.
 
-La solution [**Xamarin. FormsBook. Platform**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform) illustre une approche. Cette solution contient sept projets différents :
+La solution [**Xamarin.Forms book. Platform**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform) illustre une approche. Cette solution contient sept projets différents :
 
-- [**Xamarin. FormsBook. Platform**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform), un Xamarin.Forms PCL normal
-- [**Xamarin. FormsBook. Platform. iOS**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.iOS), bibliothèque de classes iOS
-- [**Xamarin. FormsBook. Platform. Android**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Android), bibliothèque de classes Android
-- [**Xamarin. FormsBook. Platform. UWP**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.UWP), bibliothèque de classes Windows universelle
-- [**Xamarin. FormsBook. Platform. WinRT**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT), projet partagé pour le code qui est commun à toutes les plateformes Windows
+- [**Xamarin.Forms Book. Platform**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform), un Xamarin.Forms PILOTES
+- [**Xamarin.Forms Book. Platform. iOS**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.iOS), bibliothèque de classes iOS
+- [**Xamarin.Forms Book. Platform. Android**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Android), bibliothèque de classes Android
+- [**Xamarin.Forms Book. Platform. UWP**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.UWP), une bibliothèque de classes Windows universelle
+- [**Xamarin.Forms Book. Platform. WinRT**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT), projet partagé pour le code qui est commun à toutes les plateformes Windows
 
-Tous les projets de plateforme individuels (à l’exception de **Xamarin. FormsBook. Platform. WinRT**) ont des références à **Xamarin. FormsBook. Platform**. Les trois projets Windows ont une référence à **Xamarin. FormsBook. Platform. WinRT**.
+Tous les projets de plateforme individuels (à l’exception de **Xamarin.Forms book. Platform. WinRT** ) comportent des références à **Xamarin.Forms book. Platform**. Les trois projets Windows ont une référence à **Xamarin.Forms book. Platform. WinRT**.
 
 Tous les projets contiennent une `Toolkit.Init` méthode statique pour garantir que la bibliothèque est chargée si elle n’est pas directement référencée par un projet dans une Xamarin.Forms solution d’application.
 
-Le projet **Xamarin. FormsBook. Platform** contient la nouvelle [`IFileHelper`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/IFileHelper.cs) interface. Toutes les méthodes ont maintenant des noms avec des `Async` suffixes et des objets de retour `Task` .
+Le projet **Xamarin.Forms book. Platform** contient la nouvelle [`IFileHelper`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/IFileHelper.cs) interface. Toutes les méthodes ont maintenant des noms avec des `Async` suffixes et des objets de retour `Task` .
 
-Le projet **Xamarin. FormsBook. Platform. WinRT** contient la [`FileHelper`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT/FileHelper.cs) classe de l’Windows Runtime.
+Le projet **Xamarin.Forms book. Platform. WinRT** contient la [`FileHelper`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT/FileHelper.cs) classe de l’Windows Runtime.
 
-Le projet **Xamarin. FormsBook. Platform. iOS** contient la [`FileHelper`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.iOS/FileHelper.cs) classe pour iOS. Ces méthodes doivent maintenant être asynchrones. Certaines méthodes utilisent les versions asynchrones des méthodes définies dans `StreamWriter` et `StreamReader` : [`WriteAsync`](xref:System.IO.StreamWriter.WriteAsync(System.String)) et [`ReadToEndAsync`](xref:System.IO.StreamReader.ReadToEndAsync) . D’autres convertissent un résultat en `Task` objet à l’aide de la [`FromResult`](xref:System.Threading.Tasks.Task.FromResult*) méthode.
+Le projet **Xamarin.Forms book. Platform. iOS** contient la [`FileHelper`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.iOS/FileHelper.cs) classe pour iOS. Ces méthodes doivent maintenant être asynchrones. Certaines méthodes utilisent les versions asynchrones des méthodes définies dans `StreamWriter` et `StreamReader` : [`WriteAsync`](xref:System.IO.StreamWriter.WriteAsync(System.String)) et [`ReadToEndAsync`](xref:System.IO.StreamReader.ReadToEndAsync) . D’autres convertissent un résultat en `Task` objet à l’aide de la [`FromResult`](xref:System.Threading.Tasks.Task.FromResult*) méthode.
 
-Le projet **Xamarin. FormsBook. Platform. Android** contient une [`FileHelper`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Android/FileHelper.cs) classe similaire pour Android.
+Le projet **Xamarin.Forms book. Platform. Android** contient une [`FileHelper`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Android/FileHelper.cs) classe similaire pour Android.
 
-Le projet **Xamarin. FormsBook. Platform** contient également une [`FileHelper`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/FileHelper.cs) classe qui facilite l’utilisation de l' `DependencyService` objet.
+Le projet **Xamarin.Forms livre. Platform** contient également une [`FileHelper`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/FileHelper.cs) classe qui facilite l’utilisation de l' `DependencyService` objet.
 
-Pour utiliser ces bibliothèques, une solution d’application doit inclure tous les projets de la solution **Xamarin. FormsBook. Platform** , et chacun des projets d’application doit avoir une référence à la bibliothèque correspondante dans **Xamarin. FormsBook. Platform**.
+Pour utiliser ces bibliothèques, une solution d’application doit inclure tous les projets de la solution **Xamarin.Forms book. Platform** , et chacun des projets d’application doit avoir une référence à la bibliothèque correspondante dans **Xamarin.Forms book. Platform**.
 
-La solution [**TextFileAsync**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/TextFileAsync) montre comment utiliser les bibliothèques **Xamarin. FormsBook. Platform** . Chacun des projets a un appel à `Toolkit.Init` . L’application utilise les fonctions d’e/s de fichier asynchrones.
+La solution [**TextFileAsync**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/TextFileAsync) montre comment utiliser les bibliothèques **Xamarin.Forms book. Platform** . Chacun des projets a un appel à `Toolkit.Init` . L’application utilise les fonctions d’e/s de fichier asynchrones.
 
 ### <a name="keeping-it-in-the-background"></a>Conserver en arrière-plan
 
@@ -144,7 +144,7 @@ Les différents `Task.Run` modèles sont présentés ci-dessous.
 
 ### <a name="the-basic-mandelbrot-set"></a>Ensemble de Mandelbrot de base
 
-Pour dessiner le groupe Mandelbrot en temps réel, le [** Xamarin.Forms . **](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)La bibliothèque de la boîte à outils a une [`Complex`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/Complex.cs) structure semblable à celle de l' `System.Numerics` espace de noms.
+Pour dessiner le groupe Mandelbrot en temps réel, le [**Xamarin.Forms .**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)La bibliothèque de la boîte à outils a une [`Complex`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/Complex.cs) structure semblable à celle de l' `System.Numerics` espace de noms.
 
 L’exemple [**MandelbrotSet**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/MandelbrotSet) contient une `CalculateMandeblotAsync` méthode dans son fichier code-behind qui calcule le jeu de Mandelbrot noir et blanc de base et utilise [`BmpMaker`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/BmpMaker.cs) pour le placer sur une image bitmap.
 

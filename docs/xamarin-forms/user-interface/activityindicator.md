@@ -10,15 +10,15 @@ ms.date: 07/10/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 76136067f40d378a6bfa28698f15b6872bb40c93
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 739fc90eda513e4627f5804283bdcab9c0cbacb4
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562343"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373118"
 ---
 # <a name="no-locxamarinforms-activityindicator"></a>Xamarin.Forms ActivityIndicator
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-activityindicatordemos/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-activityindicatordemos/)
 
 Le Xamarin.Forms [`ActivityIndicator`](xref:Xamarin.Forms.ActivityIndicator) contrôle affiche une animation qui montre que l’application est engagée dans une activité longue. Contrairement à [`ProgressBar`](xref:Xamarin.Forms.ProgressBar) , le `ActivityIndicator` n’indique aucune progression. `ActivityIndicator`Hérite de [`View`](xref:Xamarin.Forms.View) .
 
@@ -68,4 +68,4 @@ Les captures d’écran suivantes montrent le `ActivityIndicator` avec la `Color
 ## <a name="related-links"></a>Liens connexes
 
 * [Démonstrations ActivityIndicator](/samples/xamarin/xamarin-forms-samples/userinterface-activityindicatordemos/)
-* [Barre de progression](~/xamarin-forms/user-interface/progressbar.md)
+* [ProgressBar](~/xamarin-forms/user-interface/progressbar.md)

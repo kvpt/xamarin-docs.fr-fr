@@ -10,16 +10,16 @@ ms.date: 01/29/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3f3eca53f9f7347472a554b4ec30b83f40a96e0e
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: c5be4e600b370c39387302aea42645c8684501ea
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563300"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374379"
 ---
 # <a name="no-locxamarinforms-shell-page-configuration"></a>Xamarin.Forms Configuration de la page de Shell
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
 La `Shell` classe définit les propriétés jointes qui peuvent être utilisées pour configurer l’apparence des pages dans les applications de l' Xamarin.Forms interpréteur de commandes. Cela comprend la définition des couleurs des pages, la définition du mode de présentation de la page, la désactivation de la barre de navigation, la désactivation de la barre d’onglets et l’affichage des affichages dans la barre de navigation.
 

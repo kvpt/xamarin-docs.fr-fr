@@ -10,16 +10,16 @@ ms.date: 04/27/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 71df780c648bcaa5a2ca4db388b52ac77a64d158
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 32997a1453ca52abdfa0cac60e7637ae3367eeb2
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91560544"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374197"
 ---
 # <a name="native-views-in-c"></a>Vues natives en C\#
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeembedding)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-nativeembedding)
 
 _Les vues natives d’iOS, Android et UWP peuvent être directement référencées à partir des Xamarin.Forms pages créées à l’aide de C#. Cet article explique comment ajouter des vues natives à une Xamarin.Forms mise en page créée à l’aide de C# et comment remplacer la disposition des vues personnalisées pour corriger leur utilisation de l’API de mesure._
 
@@ -29,7 +29,7 @@ Tout Xamarin.Forms contrôle qui permet `Content` d’être défini ou qui a une
 
 Les captures d’écran suivantes montrent des vues spécifiques à la plateforme qui ont été ajoutées à Xamarin.Forms [`StackLayout`](xref:Xamarin.Forms.StackLayout) :
 
-[![StackLayout contenant des vues spécifiques à la plateforme](code-images/screenshots-sml.png)](code-images/screenshots.png#lightbox "StackLayout contenant des vues spécifiques à la plateforme")
+[![StackLayout contenant des vues Platform-Specific](code-images/screenshots-sml.png)](code-images/screenshots.png#lightbox "StackLayout contenant des vues Platform-Specific")
 
 La possibilité d’ajouter des vues spécifiques à une plateforme à une Xamarin.Forms disposition est activée par deux méthodes d’extension sur chaque plateforme :
 
@@ -42,7 +42,7 @@ L’utilisation de ces méthodes dans un Xamarin.Forms projet partagé nécessit
 - **Android** – Xamarin.Forms . Platform. Android
 - **Plateforme Windows universelle (UWP)** : Xamarin.Forms . Platform. UWP
 
-## <a name="adding-platform-specific-views-on-each-platform"></a>Ajout d’affichages spécifiques à la plateforme sur chaque plateforme
+## <a name="adding-platform-specific-views-on-each-platform"></a>Ajout de Platform-Specific vues sur chaque plateforme
 
 Les sections suivantes montrent comment ajouter des affichages spécifiques à la plateforme à une Xamarin.Forms disposition sur chaque plateforme.
 
@@ -319,7 +319,7 @@ Cette méthode utilise la largeur fournie par la `CustomControl.ArrangeOverride`
 
 ![UWP CustomControl avec délégué ArrangeOverride](code-images/winrt-good-measurement.png)
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a expliqué comment ajouter des vues natives à une Xamarin.Forms mise en page créée à l’aide de C# et comment remplacer la disposition des vues personnalisées pour corriger leur utilisation de l’API de mesure.
 

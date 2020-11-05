@@ -11,16 +11,16 @@ ms.date: 07/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 39a6dbcbd5e825c6630bfb60b61bf00a308fdc0e
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 656a9dbec5f0520b4167c482b227ea863eb4c412
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562780"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373534"
 ---
 # <a name="styling-no-locxamarinforms-apps-using-cascading-style-sheets-css"></a>Stylisation d' Xamarin.Forms applications à l’aide de feuilles de style en cascade (CSS)
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-monkeyappcss)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-styles-monkeyappcss)
 
 _Xamarin.Forms prend en charge le style des éléments visuels à l’aide d’feuilles de style en cascade (CSS)._
 
@@ -334,7 +334,7 @@ Ce sélecteur identifie tous les [`Image`](xref:Xamarin.Forms.Image) éléments 
 
 Les sélecteurs CSS suivants sont pris en charge par Xamarin.Forms :
 
-|Sélecteur| Exemple|Description|
+|Sélecteur|Exemple|Description|
 |---|---|---|
 |`.class`|`.header`|Sélectionne tous les éléments avec la `StyleClass` propriété contenant « Header ». Notez que ce sélecteur respecte la casse.|
 |`#id`|`#email`|Sélectionne tous les éléments dont la `StyleId` valeur est `email` . Si `StyleId` n’est pas défini, revenir à `x:Name` . Lors de l’utilisation de XAML, `x:Name` est préférable à `StyleId` . Notez que ce sélecteur respecte la casse.|
@@ -363,7 +363,7 @@ Les sélecteurs suivants ne sont pas pris en charge actuellement :
 
 ## <a name="property-reference"></a>Informations de référence sur les propriétés
 
-Les propriétés CSS suivantes sont prises en charge par Xamarin.Forms (dans la colonne **valeurs** , les types sont en _italique_, tandis que les littéraux de chaîne sont `gray` ) :
+Les propriétés CSS suivantes sont prises en charge par Xamarin.Forms (dans la colonne **valeurs** , les types sont en _italique_ , tandis que les littéraux de chaîne sont `gray` ) :
 
 |Propriété|S’applique à|Valeurs|Exemple|
 |---|---|---|---|
@@ -395,11 +395,11 @@ Les propriétés CSS suivantes sont prises en charge par Xamarin.Forms (dans la 
 |`margin-top`|`View`|_épaisseur_ \|`initial` |`margin-top: 2;`|
 |`margin-right`|`View`|_épaisseur_ \|`initial` |`margin-right: 1;`|
 |`margin-bottom`|`View`|_épaisseur_ \|`initial` |`margin-bottom: 6;`|
-|`max-lines`|`Label`|_entier_ \|`initial`|`max-lines: 2;`|
+|`max-lines`|`Label`|_int_ \| `initial`|`max-lines: 2;`|
 |`min-height`|`VisualElement`|_double_ \|`initial` |`min-height: 50;`|
 |`min-width`|`VisualElement`|_double_ \|`initial` |`min-width: 112;`|
 |`opacity`|`VisualElement`|_double_ \|`initial` |`opacity: .3;`|
-|`order`|`VisualElement`|_entier_ \|`initial`|`order: -1;`|
+|`order`|`VisualElement`|_int_ \| `initial`|`order: -1;`|
 |`padding`|`Button`, `ImageButton`, `Layout`, `Page`|_épaisseur_ \|`initial` |`padding: 6 12 12;`|
 |`padding-left`|`Button`, `ImageButton`, `Layout`, `Page`|_double_ \|`initial`|`padding-left: 3;`|
 |`padding-top`|`Button`, `ImageButton`, `Layout`, `Page`| _double_ \|`initial` |`padding-top: 4;`|
@@ -411,7 +411,7 @@ Les propriétés CSS suivantes sont prises en charge par Xamarin.Forms (dans la 
 |`text-decoration`|`Label`, `Span`|`none` \| `underline` \| `strikethrough` \| `line-through` \| `initial`|`text-decoration: underline, line-through;`|
 |`text-transform`|`Button`,`Editor`, `Entry`, `Label`, `SearchBar`, `SearchHandler`|`none` \| `default` \| `uppercase` \| `lowercase` \| `initial` |`text-transform: uppercase;`|
 |`transform`|`VisualElement`| `none`, `rotate`, `rotateX`, `rotateY`, `scale`, `scaleX`, `scaleY`, `translate`, `translateX`, `translateY`, `initial` |`transform: rotate(180), scaleX(2.5);`|
-|`transform-origin`|`VisualElement`| _double_, _double_ \|`initial` |`transform-origin: 7.5, 12.5;`|
+|`transform-origin`|`VisualElement`| _double_ , _double_ \|`initial` |`transform-origin: 7.5, 12.5;`|
 |`vertical-align`|`Label`|`left` \| `top` \| `right` \| `bottom` \| `start` \| `center` \| `middle` \| `end` \| `initial`|`vertical-align: bottom;`|
 |`visibility`|`VisualElement`|`true` \| `visible` \| `false` \| `hidden` \| `collapse` \| `initial`|`visibility: hidden;`|
 |`width`|`VisualElement`|_double_ \|`initial`|`min-width: 320;`|
@@ -431,14 +431,14 @@ Le ciblage `Span` d’éléments a un problème connu empêchant les étendues d
 
 ### <a name="no-locxamarinforms-specific-properties"></a>Xamarin.Forms propriétés spécifiques
 
-Les Xamarin.Forms Propriétés CSS spécifiques suivantes sont également prises en charge (dans la colonne **valeurs** , les types sont en _italique_, tandis que les littéraux de chaîne sont `gray` ) :
+Les Xamarin.Forms Propriétés CSS spécifiques suivantes sont également prises en charge (dans la colonne **valeurs** , les types sont en _italique_ , tandis que les littéraux de chaîne sont `gray` ) :
 
 |Propriété|S’applique à|Valeurs|Exemple|
 |---|---|---|---|
 |`-xf-bar-background-color`|`NavigationPage`, `TabbedPage`|_couleur_ \|`initial` |`-xf-bar-background-color: teal;`|
 |`-xf-bar-text-color`|`NavigationPage`, `TabbedPage`|_couleur_ \|`initial` |`-xf-bar-text-color: gray`|
 |`-xf-horizontal-scroll-bar-visibility`|`ScrollView`| `default` \| `always` \| `never` \| `initial` |`-xf-horizontal-scroll-bar-visibility: never;`|
-|`-xf-max-length`|`Entry`, `Editor`, `SearchBar`|_entier_ \|`initial` |`-xf-max-length: 20;`|
+|`-xf-max-length`|`Entry`, `Editor`, `SearchBar`|_int_ \| `initial` |`-xf-max-length: 20;`|
 |`-xf-max-track-color`|`Slider`|_couleur_ \|`initial` |`-xf-max-track-color: red;`|
 |`-xf-min-track-color`|`Slider`|_couleur_ \|`initial` |`-xf-min-track-color: yellow;`|
 |`-xf-orientation`|`ScrollView`, `StackLayout`| `horizontal` \| `vertical` \| `both` \| `initial`. `both` est pris en charge uniquement sur un `ScrollView` . |`-xf-orientation: horizontal;`|
@@ -452,7 +452,7 @@ Les Xamarin.Forms Propriétés CSS spécifiques suivantes sont également prises
 
 ### <a name="no-locxamarinforms-shell-specific-properties"></a>Xamarin.Forms Propriétés spécifiques à l’interpréteur de commandes
 
-Les Xamarin.Forms Propriétés CSS spécifiques à l’interpréteur de commandes suivantes sont également prises en charge (dans la colonne **valeurs** , les types sont en _italique_, tandis que les littéraux de chaîne sont `gray` ) :
+Les Xamarin.Forms Propriétés CSS spécifiques à l’interpréteur de commandes suivantes sont également prises en charge (dans la colonne **valeurs** , les types sont en _italique_ , tandis que les littéraux de chaîne sont `gray` ) :
 
 |Propriété|S’applique à|Valeurs|Exemple|
 |---|---|---|---|

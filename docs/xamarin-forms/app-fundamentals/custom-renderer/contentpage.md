@@ -10,16 +10,16 @@ ms.date: 11/29/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 4d9749c110019f2cf711c1df56196d3296223641
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 10e794dba276ed9d67b0e947d203cce0b62b7353
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557970"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374483"
 ---
 # <a name="customizing-a-contentpage"></a>Personnalisation d’un ContentPage
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-contentpage)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/customrenderers-contentpage)
 
 _Un ContentPage est un élément visuel qui affiche une vue unique et occupe la majeure partie de l’écran. Cet article montre comment créer un convertisseur personnalisé pour la page ContentPage, ce qui permet aux développeurs de remplacer le rendu natif par défaut par leur propre personnalisation propre à la plateforme._
 
@@ -247,7 +247,7 @@ Quand vous implémentez un renderer personnalisé qui dérive de `PageRenderer` 
 > [!NOTE]
 > Il est important d’arrêter et de supprimer les objets qui fournissent un accès à la caméra dans une application UWP. Si vous ne le faites pas, il peut se produire une interférence avec d’autres applications qui tentent d’accéder à la caméra de l’appareil. Pour plus d’informations, consultez [Afficher l’aperçu de la caméra](/windows/uwp/audio-video-camera/simple-camera-preview-access).
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a montré comment créer un convertisseur personnalisé pour la [`ContentPage`](xref:Xamarin.Forms.ContentPage) page, ce qui permet aux développeurs de substituer le rendu natif par défaut avec leur propre personnalisation propre à la plateforme. Un `ContentPage` est un élément visuel qui affiche une seule vue et occupe la majeure partie de l’écran.
 

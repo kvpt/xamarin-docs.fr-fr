@@ -10,16 +10,16 @@ ms.date: 03/28/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 596fab91a1f64e0fb6c5483e354c2ef15fd24346
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 8d6b489ff31333e87c28796c7de49bf0e59bff9d
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557918"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373573"
 ---
 # <a name="consume-a-windows-communication-foundation-wcf-web-service"></a>Utiliser un service Web Windows Communication Foundation (WCF)
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todowcf)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/webservices-todowcf)
 
 _WCF est l’infrastructure unifiée de Microsoft pour la création d’applications orientées service. Il permet aux développeurs de créer des applications distribuées sécurisées, fiables, transactionnelles et interopérables. Cet article montre comment utiliser un service SOAP (Simple Object Access Protocol) WCF à partir d’une Xamarin.Forms application._
 
@@ -63,11 +63,11 @@ Pour plus d’informations sur le modèle de données utilisé dans l’applicat
 
 Un *proxy* doit être généré pour consommer un service WCF, ce qui permet à l’application de se connecter au service. Le proxy est construit en consommant des métadonnées de service qui définissent les méthodes et la configuration de service associée. Ces métadonnées sont exposées sous la forme d’un document Web Services Description Language (WSDL) qui est généré par le service Web. Le proxy peut être généré à l’aide de la Microsoft WCF Web Service Reference Provider dans Visual Studio 2017 pour ajouter une référence de service pour le service Web à une bibliothèque de .NET Standard. Une alternative à la création du proxy à l’aide de l’Microsoft WCF Web Service Reference Provider dans Visual Studio 2017 consiste à utiliser l’outil ServiceModel Metadata Utility Tool (svcutil.exe). Pour plus d’informations, consultez outil de l' [utilitaire de métadonnées ServiceModel (Svcutil.exe)](/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe/).
 
-Les classes proxy générées fournissent des méthodes pour consommer les services Web qui utilisent le modèle de conception APM (Asynchronous Programming Model). Dans ce modèle, une opération asynchrone est implémentée sous la forme de deux méthodes nommées *BeginNomOpération* et *EndNomOpération*, qui commencent et terminent l’opération asynchrone.
+Les classes proxy générées fournissent des méthodes pour consommer les services Web qui utilisent le modèle de conception APM (Asynchronous Programming Model). Dans ce modèle, une opération asynchrone est implémentée sous la forme de deux méthodes nommées *BeginNomOpération* et *EndNomOpération* , qui commencent et terminent l’opération asynchrone.
 
-La méthode *BeginNomOpération* commence l’opération asynchrone et retourne un objet qui implémente l' `IAsyncResult` interface. Après l’appel de *BeginNomOpération*, une application peut continuer à exécuter des instructions sur le thread appelant, tandis que l’opération asynchrone a lieu sur un thread de pool de threads.
+La méthode *BeginNomOpération* commence l’opération asynchrone et retourne un objet qui implémente l' `IAsyncResult` interface. Après l’appel de *BeginNomOpération* , une application peut continuer à exécuter des instructions sur le thread appelant, tandis que l’opération asynchrone a lieu sur un thread de pool de threads.
 
-Pour chaque appel à *BeginNomOpération*, l’application doit également appeler *EndNomOpération* pour obtenir les résultats de l’opération. La valeur de retour de *EndNomOpération* est identique à celle retournée par la méthode de service Web synchrone. Par exemple, la `EndGetTodoItems` méthode retourne une collection d' `TodoItem` instances. La méthode *EndNomOpération* comprend également un `IAsyncResult` paramètre qui doit être défini sur l’instance retournée par l’appel correspondant à la méthode *BeginNomOpération* .
+Pour chaque appel à *BeginNomOpération* , l’application doit également appeler *EndNomOpération* pour obtenir les résultats de l’opération. La valeur de retour de *EndNomOpération* est identique à celle retournée par la méthode de service Web synchrone. Par exemple, la `EndGetTodoItems` méthode retourne une collection d' `TodoItem` instances. La méthode *EndNomOpération* comprend également un `IAsyncResult` paramètre qui doit être défini sur l’instance retournée par l’appel correspondant à la méthode *BeginNomOpération* .
 
 La bibliothèque parallèle de tâches (TPL) peut simplifier le processus d’utilisation d’une paire de méthodes de programmation APM Begin/End en encapsulant les opérations asynchrones dans le même `Task` objet. Cette encapsulation est fournie par plusieurs surcharges de la `TaskFactory.FromAsync` méthode.
 

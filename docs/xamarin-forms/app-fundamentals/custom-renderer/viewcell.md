@@ -10,16 +10,16 @@ ms.date: 12/07/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 20de91e7a9d0acf5c5aacfb7a05088aec2c20c71
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: e4d1cb15812ca95a33196960c22574c0fada223f
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91558295"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373508"
 ---
 # <a name="customizing-a-viewcell"></a>Personnalisation d’une ViewCell
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-viewcell)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/customrenderers-viewcell)
 
 _Un Xamarin.Forms ViewCell est une cellule qui peut être ajoutée à un ListView ou un TableView, qui contient une vue définie par le développeur. Cet article montre comment créer un convertisseur personnalisé pour un ViewCell qui est hébergé dans un Xamarin.Forms contrôle ListView. Cela empêche les Xamarin.Forms calculs de disposition d’être appelés de façon répétée pendant le défilement de ListView._
 
@@ -567,7 +567,7 @@ Le `DataTemplate` est stocké dans le dictionnaire de ressources de niveau appli
 
 `DataTemplate` spécifie les contrôles permettant d’afficher le contenu de la cellule ainsi que leurs disposition et apparence. Deux contrôles `TextBlock` et un contrôle `Image` sont utilisés pour afficher le contenu de la cellule par le biais de la liaison de données. En outre, une instance de `ConcatImageExtensionConverter` est utilisée pour concaténer l’extension de fichier `.jpg` à chaque nom de fichier image. Ainsi, le contrôle `Image` peut charger et afficher l’image quand sa propriété `Source` est définie.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a montré comment créer un convertisseur personnalisé pour un [`ViewCell`](xref:Xamarin.Forms.ViewCell) qui est hébergé à l’intérieur d’un Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) contrôle. Cela empêche les Xamarin.Forms calculs de disposition d’être appelés de façon répétée pendant le `ListView` défilement.
 
