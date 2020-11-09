@@ -9,12 +9,12 @@ ms.custom: video
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 93ad745790a746924f7037e490985c53c332c089
-ms.sourcegitcommit: dac04cec56290fb19034f3e135708f6966a8f035
+ms.openlocfilehash: 6c6092a73d2a32999423d0fceef5757a1a5bdd6e
+ms.sourcegitcommit: 7a7ab7e0cd7c29c7198ec4c8c70bae76a4e52127
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92169915"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94374845"
 ---
 # <a name="no-locxamarinessentials-share"></a>Xamarin.Essentials: Partager
 
@@ -62,7 +62,7 @@ L’interface utilisateur de partage avec une application externe s’affiche qu
 
 ![Partager](images/share.png)
 
-## <a name="files"></a>Files
+## <a name="file"></a>Fichier
 
 Cette fonctionnalité permet à une application de partager des fichiers avec d’autres applications sur l’appareil. Xamarin.Essentials détecte automatiquement le type de fichier (MIME) et demande un partage. Chaque plateforme peut prendre uniquement en charge certaines extensions de fichiers spécifiques.
 
@@ -77,6 +77,25 @@ await Share.RequestAsync(new ShareFileRequest
 {
     Title = Title,
     File = new ShareFile(file)
+});
+```
+
+## <a name="multiple-files"></a>Fichiers multiples
+
+![API de la version préliminaire](~/media/shared/preview.png)
+
+L’utilisation de l’option partager plusieurs fichiers est différente du fichier unique uniquement en cas d’envoi de plusieurs fichiers à la fois
+
+```csharp
+var file1 = Path.Combine(FileSystem.CacheDirectory, "Attachment1.txt");
+File.WriteAllText(file, "Content 1");
+var file2 = Path.Combine(FileSystem.CacheDirectory, "Attachment2.txt");
+File.WriteAllText(file, "Content 2");
+
+await Share.RequestAsync(new ShareMultipleFilesRequest
+{
+    Title = ShareFilesTitle,
+    Files = new ShareFile[] { new ShareFile(file1), new ShareFile(file2) },
 });
 ```
 
