@@ -9,18 +9,18 @@ ms.custom: video
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6c6092a73d2a32999423d0fceef5757a1a5bdd6e
-ms.sourcegitcommit: 7a7ab7e0cd7c29c7198ec4c8c70bae76a4e52127
+ms.openlocfilehash: 0870dd94c15f1bd94d5c6864b3d4caeb96349f32
+ms.sourcegitcommit: 83793378b28e8ef8624406309b4ecd41aa1a3a14
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94374845"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94503265"
 ---
 # <a name="no-locxamarinessentials-share"></a>Xamarin.Essentials: Partager
 
 La classe **Share** permet à une application de partager des données comme du texte et des liens web avec d’autres applications sur l’appareil.
 
-## <a name="get-started"></a>Bien démarrer
+## <a name="get-started"></a>Prise en main
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -84,7 +84,7 @@ await Share.RequestAsync(new ShareFileRequest
 
 ![API de la version préliminaire](~/media/shared/preview.png)
 
-L’utilisation de l’option partager plusieurs fichiers est différente du fichier unique uniquement en cas d’envoi de plusieurs fichiers à la fois
+L’utilisation de l’option partager plusieurs fichiers diffère du fichier unique dans le seul cas où vous pouvez envoyer plusieurs fichiers à la fois :
 
 ```csharp
 var file1 = Path.Combine(FileSystem.CacheDirectory, "Attachment1.txt");
@@ -95,7 +95,7 @@ File.WriteAllText(file, "Content 2");
 await Share.RequestAsync(new ShareMultipleFilesRequest
 {
     Title = ShareFilesTitle,
-    Files = new ShareFile[] { new ShareFile(file1), new ShareFile(file2) },
+    Files = new ShareFile[] { new ShareFile(file1), new ShareFile(file2) }
 });
 ```
 
