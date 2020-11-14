@@ -6,16 +6,16 @@ ms.assetid: A2C1BD59-1A16-4E26-A825-0338E2AF9E65
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/19/2020
+ms.date: 11/13/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c774b795fce50b32f01b50c29cb71dd5fd02585c
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 4f60a48d2d8b43ea08ccc36401103d8987e48b1c
+ms.sourcegitcommit: f920ac0724f09e5c9b4f36be1995a5a17a6d9f95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93373521"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94591045"
 ---
 # <a name="no-locxamarinforms-shapes-path-markup-syntax"></a>Xamarin.Forms Shapes : syntaxe de balisage de chemin
 
@@ -43,7 +43,13 @@ Dans l’exemple ci-dessus, la syntaxe de balisage Path spécifie un point de d�
 Dans la syntaxe de balisage Path, les espaces ne sont pas requis avant ou après les commandes. En outre, deux nombres n’ont pas besoin d’être séparés par une virgule ou un espace blanc, mais cela n’est possible que lorsque la chaîne n’est pas ambiguë.
 
 > [!TIP]
-> Path Markup Language utilise une syntaxe compatible avec les définitions de chemin d’images SVG (Scalable Vector Graphics). il peut donc être utile pour le portage de graphiques au format SVG.
+> La syntaxe de balisage Path est compatible avec les définitions de chemin d’images SVG (Scalable Vector Graphics). elle peut donc être utile pour le portage de graphiques au format SVG.
+
+Bien que la syntaxe de balisage de chemin d’accès soit destinée à être consommée en XAML, elle peut être convertie en un `Geometry` objet dans le code en appelant la `ConvertFromInvariantString` méthode dans la `PathGeometryConverter` classe :
+
+```csharp
+Geometry pathData = (Geometry)new PathGeometryConverter().ConvertFromInvariantString("M13.908992,16.207977 L32.000049,16.207977 32.000049,31.999985 13.908992,30.109983Z");
+```
 
 ## <a name="move-command"></a>Commande de déplacement
 

@@ -10,12 +10,12 @@ ms.date: 09/17/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1872f86c0e7be6ab07b4e962d17be7d8030c1d96
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 557c82ac9318faaef5628a15989af2982a7f5ba4
+ms.sourcegitcommit: f2942b518f51317acbb263be5bc0c91e66239f50
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93373157"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94590413"
 ---
 # <a name="no-locxamarinforms-collectionview-scrolling"></a>Xamarin.Forms Défilement CollectionView
 
@@ -132,7 +132,7 @@ collectionView.ScrollTo(monkey, position: ScrollToPosition.MakeVisible);
 
 Cet exemple de code entraîne le défilement minimal requis pour faire défiler l’élément dans l’affichage :
 
-[![Capture d’écran d’une liste verticale CollectionView avec un élément défilé dans l’affichage, sur iOS et Android](scrolling-images/scrolltoposition-makevisible.png "CollectionView liste verticale avec élément défilé")](scrolling-images/scrolltoposition-makevisible-large.png#lightbox "CollectionView liste verticale avec élément défilé")
+[![Capture d’écran d’une liste verticale CollectionView avec ScrollToPosition. MakeVisible, sur iOS et Android](scrolling-images/scrolltoposition-makevisible.png "CollectionView liste verticale avec élément défilé")](scrolling-images/scrolltoposition-makevisible-large.png#lightbox "CollectionView liste verticale avec élément défilé")
 
 > [!NOTE]
 > Le [`ScrollToPosition.MakeVisible`](xref:Xamarin.Forms.ScrollToPosition) membre est utilisé par défaut, si l' `position` argument n’est pas spécifié lors de l’appel de la `ScrollTo` méthode.
@@ -147,7 +147,7 @@ collectionView.ScrollTo(monkey, position: ScrollToPosition.Start);
 
 Cet exemple de code entraîne le défilement de l’élément jusqu’au début de la vue :
 
-[![Capture d’écran d’une liste verticale CollectionView avec un élément défilé dans l’affichage, sur iOS et Android](scrolling-images/scrolltoposition-start.png "CollectionView liste verticale avec élément défilé")](scrolling-images/scrolltoposition-start-large.png#lightbox "CollectionView liste verticale avec élément défilé")
+[![Capture d’écran d’une liste verticale CollectionView avec ScrollToPosition. Start, sur iOS et Android](scrolling-images/scrolltoposition-start.png "CollectionView liste verticale avec élément défilé")](scrolling-images/scrolltoposition-start-large.png#lightbox "CollectionView liste verticale avec élément défilé")
 
 ### <a name="center"></a>Center
 
@@ -159,7 +159,7 @@ collectionView.ScrollTo(monkey, position: ScrollToPosition.Center);
 
 Cet exemple de code entraîne le défilement de l’élément au centre de la vue :
 
-[![Capture d’écran d’une liste verticale CollectionView avec un élément défilé dans l’affichage, sur iOS et Android](scrolling-images/scrolltoposition-center.png "CollectionView liste verticale avec élément défilé")](scrolling-images/scrolltoposition-center-large.png#lightbox "CollectionView liste verticale avec élément défilé")
+[![Capture d’écran d’une liste verticale CollectionView avec ScrollToPosition. Center, sur iOS et Android](scrolling-images/scrolltoposition-center.png "CollectionView liste verticale avec élément défilé")](scrolling-images/scrolltoposition-center-large.png#lightbox "CollectionView liste verticale avec élément défilé")
 
 ### <a name="end"></a>End
 
@@ -171,17 +171,17 @@ collectionView.ScrollTo(monkey, position: ScrollToPosition.End);
 
 Cet exemple de code entraîne le défilement de l’élément à la fin de la vue :
 
-[![Capture d’écran d’une liste verticale CollectionView avec un élément défilé dans l’affichage, sur iOS et Android](scrolling-images/scrolltoposition-end.png "CollectionView liste verticale avec élément défilé")](scrolling-images/scrolltoposition-end-large.png#lightbox "CollectionView liste verticale avec élément défilé")
+[![Capture d’écran d’une liste verticale CollectionView avec ScrollToPosition. end, sur iOS et Android](scrolling-images/scrolltoposition-end.png "CollectionView liste verticale avec élément défilé")](scrolling-images/scrolltoposition-end-large.png#lightbox "CollectionView liste verticale avec élément défilé")
 
 ## <a name="control-scroll-position-when-new-items-are-added"></a>Contrôler la position de défilement quand de nouveaux éléments sont ajoutés
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView) définit une `ItemsUpdatingScrollMode` propriété, qui est stockée par une propriété pouvant être liée. Cette propriété obtient ou définit une `ItemsUpdatingScrollMode` valeur d’énumération qui représente le comportement de défilement de `CollectionView` quand de nouveaux éléments y sont ajoutés. L’énumération `ItemsUpdatingScrollMode` définit les membres suivants :
 
-- `KeepItemsInView` ajuste le décalage de défilement pour maintenir le premier élément visible affiché lorsque de nouveaux éléments sont ajoutés.
-- `KeepScrollOffset` conserve le décalage de défilement par rapport au début de la liste lors de l’ajout de nouveaux éléments.
-- `KeepLastItemInView` ajuste le décalage de défilement pour maintenir le dernier élément visible quand de nouveaux éléments sont ajoutés.
+- `KeepItemsInView` conserve le premier élément de la liste affiché lors de l’ajout de nouveaux éléments.
+- `KeepScrollOffset` garantit que la position de défilement actuelle est conservée lors de l’ajout de nouveaux éléments.
+- `KeepLastItemInView` ajuste le décalage de défilement pour conserver le dernier élément de la liste affiché lorsque de nouveaux éléments sont ajoutés.
 
-La valeur par défaut de la `ItemsUpdatingScrollMode` propriété est `KeepItemsInView` . Par conséquent, lorsque de nouveaux éléments sont ajoutés à un, [`CollectionView`](xref:Xamarin.Forms.CollectionView) le premier élément visible dans la liste reste affiché. Pour vous assurer que les éléments récemment ajoutés sont toujours visibles au bas de la liste, la `ItemsUpdatingScrollMode` propriété doit être définie sur `KeepLastItemInView` :
+La valeur par défaut de la `ItemsUpdatingScrollMode` propriété est `KeepItemsInView` . Par conséquent, lorsque de nouveaux éléments sont ajoutés à un, [`CollectionView`](xref:Xamarin.Forms.CollectionView) le premier élément de la liste reste affiché. Pour vous assurer que le dernier élément de la liste est affiché lors de l’ajout de nouveaux éléments, affectez à la propriété la valeur `ItemsUpdatingScrollMode` `KeepLastItemInView` :
 
 ```xaml
 <CollectionView ItemsUpdatingScrollMode="KeepLastItemInView">

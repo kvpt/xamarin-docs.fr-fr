@@ -6,16 +6,16 @@ ms.assetid: C946057F-C77C-412D-82A0-DAF475A24EF5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/07/2019
+ms.date: 11/06/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d5c380a5ce6e76b0f9275b09d2943be479ef09e4
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: ef4c8717b419d1be4c4050f86b183385d6c10072
+ms.sourcegitcommit: f2942b518f51317acbb263be5bc0c91e66239f50
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93370895"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94590335"
 ---
 # <a name="no-locxamarinforms-tabbedpage"></a>Xamarin.Forms TabbedPage
 
@@ -27,15 +27,17 @@ Le Xamarin.Forms [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) se compose d’un
 
 Sur iOS, la liste des onglets apparaît au bas de l’écran et la zone de détails apparaît au-dessus. Chaque onglet est constitué d’un titre et d’une icône, qui doit être un fichier PNG avec un canal alpha. En orientation portrait, les icônes de la barre d’onglets apparaissent au-dessus des titres des onglets. Dans l’orientation paysage, les icônes et les titres s’affichent côte à côte. En outre, une barre d’onglets standard ou compacte peut s’afficher, en fonction de l’appareil et de l’orientation. S’il y a plus de cinq onglets, un onglet **Plus** s’affiche et permet d’accéder aux onglets supplémentaires. Pour plus d’informations sur les conditions requises pour les icônes, consultez taille de l' [icône de barre d’onglets](https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/custom-icons#tab-bar-icon-size) sur Developer.Apple.com.
 
-> [!TIP]
-> Le `TabbedRenderer` pour iOS a une méthode substituable `GetIcon` qui peut être utilisée pour charger les icônes de tabulation à partir d’une source spécifiée. Cette substitution permet d’utiliser des images SVG en tant qu’icônes sur un `TabbedPage`. Vous pouvez aussi fournir des versions sélectionnées et désélectionnées d’une icône.
-
 Sur Android, la liste des onglets apparaît en haut de l’écran et la zone de détails est affichée en dessous. Chaque onglet est constitué d’un titre et d’une icône, qui doit être un fichier PNG avec un canal alpha. Toutefois, les onglets peuvent être déplacés vers le bas de l’écran avec un spécifique à la plateforme. S’il y a plus de cinq onglets et que la liste d’onglets se trouve au bas de l’écran, un onglet *plus* s’affiche et peut être utilisé pour accéder aux onglets supplémentaires. Pour plus d’informations sur les exigences relatives aux icônes, consultez les [onglets](https://material.io/components/tabs/#) sur Material.IO et la [prise en charge de différentes densités de pixels](https://developer.android.com/training/multiscreen/screendensities) sur Developer.Android.com. Pour plus d’informations sur le déplacement des onglets vers le bas de l’écran, consultez Définition de la couleur et de l’emplacement de la [barre d’outils TabbedPage](~/xamarin-forms/platform/android/tabbedpage-toolbar-placement-color.md).
 
-> [!TIP]
-> Le `TabbedPageRenderer` pour Android AppCompat a une méthode substituable `SetTabIconImageSource` qui peut être utilisée pour charger des icônes d’onglet à partir d’un personnalisé `Drawable` . Cette substitution rend possible l’utilisation d’images SVG comme icônes sur un `TabbedPage`, et fonctionne à la fois avec les barres d’onglets supérieures et inférieures.
-
 Sur la plateforme Windows universelle (UWP), la liste des onglets s’affiche en haut de l’écran et la zone de détails est indiquée ci-dessous. Chaque onglet est constitué d’un titre. Toutefois, les icônes peuvent être ajoutées à chaque onglet avec un spécifique à la plateforme. Pour plus d’informations, consultez [TabbedPage icons on Windows](~/xamarin-forms/platform/windows/tabbedpage-icons.md).
+
+> [!TIP]
+> Les fichiers SVG (Scalable Vector Graphic) peuvent être affichés sous forme d’icônes d’onglets sur un [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) :
+>
+> - La `TabbedRenderer` classe iOS a une méthode substituable `GetIcon` qui peut être utilisée pour charger les icônes de tabulation à partir d’une source spécifiée. En outre, les versions sélectionnées et non sélectionnées d’une icône peuvent être fournies si nécessaire.
+> - La classe Android AppCompat `TabbedPageRenderer` a une méthode substituable `SetTabIconImageSource` qui peut être utilisée pour charger des icônes d’onglet à partir d’un personnalisé `Drawable` . Les fichiers SVG peuvent également être convertis en ressources vectorielles pouvant être dessinées à l’aide de vecteurs, qui peuvent être affichées automatiquement par Xamarin.Forms . Pour plus d’informations sur la conversion de fichiers SVG en ressources vectorielles dessinables, consultez [Ajouter des graphiques vectoriels à plusieurs densités](https://developer.android.com/studio/write/vector-asset-studio) sur Developer.Android.com.
+>
+> Pour plus d’informations, consultez [ Xamarin.Forms TabbedPage avec les icônes de tabulation SVG](/samples/xamarin/xamarin-forms-samples/navigation-tabbedpagewithsvgtabicons).
 
 ## <a name="create-a-tabbedpage"></a>Créer un TabbedPage
 
@@ -240,6 +242,7 @@ En sélectionnant un autre onglet, vous affichez l' [`ContentPage`](xref:Xamarin
 
 - [TabbedPageWithNavigationPage (exemple)](/samples/xamarin/xamarin-forms-samples/navigation-tabbedpagewithnavigationpage)
 - [TabbedPage (exemple)](/samples/xamarin/xamarin-forms-samples/navigation-tabbedpage)
+- [TabbedPage avec les icônes de tabulation SVG](/samples/xamarin/xamarin-forms-samples/navigation-tabbedpagewithsvgtabicons)
 - [Navigation hiérarchique](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md)
 - [Types de pages](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf)
 - [API TabbedPage](xref:Xamarin.Forms.TabbedPage)

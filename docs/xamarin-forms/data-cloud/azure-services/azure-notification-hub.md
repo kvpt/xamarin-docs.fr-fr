@@ -11,12 +11,12 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 - Firebase
-ms.openlocfilehash: 498e3b0bd2cb88df3e04dc19c66dbe671a8378dd
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: b560eedb1968db791c57620686c4ddb854153b1c
+ms.sourcegitcommit: f2942b518f51317acbb263be5bc0c91e66239f50
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93374444"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94590400"
 ---
 # <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-no-locxamarinforms"></a>Envoyer et recevoir des notifications Push avec Azure Notification Hubs et Xamarin.Forms
 
@@ -142,8 +142,10 @@ Procédez comme suit pour configurer l’application Android afin de recevoir et
 1. [Remplacer](#override-firebasemessagingservice-to-handle-messages) `FirebaseMessagingService` pour gérer les messages.
 1. [Ajoutez](#add-incoming-notifications-to-the-xamarinforms-ui) des notifications entrantes à Xamarin.Forms l’interface utilisateur.
 
-> [!NOTE]
-> L' `GoogleServicesJson` action de génération fait partie du `Xamarin.GooglePlayServices.Base` package NuGet. Visual Studio 2019 définit les actions de génération disponibles au démarrage. Si vous ne voyez pas `GoogleServicesJson` comme action de génération, redémarrez Visual Studio 2019 après avoir installé les packages NuGet.
+L' `GoogleServicesJson` action de génération fait partie du `Xamarin.GooglePlayServices.Base` package NuGet. Visual Studio 2019 définit les actions de génération disponibles au démarrage. Si vous ne voyez pas `GoogleServicesJson` comme action de génération, redémarrez Visual Studio 2019 après avoir installé les packages NuGet.
+
+> [!IMPORTANT]
+> La remise de notifications push alors que l’application est en veille requiert désormais l’utilisation de AndroidX. Pour plus d’informations sur la migration vers AndroidX, consultez [migration de AndroidX dans Xamarin.Forms ](~/xamarin-forms/platform/android/androidx-migration.md).
 
 ### <a name="configure-android-manifest"></a>Configurer le manifeste Android
 

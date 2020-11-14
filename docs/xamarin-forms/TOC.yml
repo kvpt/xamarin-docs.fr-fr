@@ -41,7 +41,7 @@ items:
             href: ~/get-started/quickstarts/styling.md
           - name: Immersion
             href: ~/get-started/quickstarts/deepdive.md
-      - name: Didacticiels
+      - name: Tutoriels
         href: ~/get-started/tutorials/index.yml
         items:
           - name: Disposition de pile
@@ -948,8 +948,6 @@ items:
             href: data-cloud/azure-services/azure-search.md
           - name: Azure Functions
             href: data-cloud/azure-services/azure-functions.md
-          - name: Service Azure SignalR
-            href: data-cloud/azure-services/azure-signalr.md
       - name: Azure Cognitive Services
         items:
           - name: Vue d’ensemble de Cognitive Services

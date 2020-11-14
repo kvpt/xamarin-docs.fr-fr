@@ -10,12 +10,12 @@ ms.date: 04/02/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: fb9d5243e5be4d99d741349564854c9c54e7a1bb
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: f29bacf3546b2148a3d97c3c1ccaa44e02872be8
+ms.sourcegitcommit: f2942b518f51317acbb263be5bc0c91e66239f50
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93373287"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94590309"
 ---
 # <a name="no-locxamarinforms-shell-navigation"></a>Xamarin.Forms Navigation dans le shell
 
@@ -149,20 +149,24 @@ Cet exemple accède à la page pour l’itinéraire `monkeys`, avec l’itinéra
 
 ### <a name="relative-routes"></a>Itinéraires relatifs
 
-La navigation peut également être effectuée en spécifiant un URI relatif valide en tant qu’argument pour la méthode `GoToAsync`. Le système d’acheminement tente de faire correspondre l’URI à un objet `ShellContent`. Par conséquent, si tous les itinéraires d’une application sont uniques, la navigation peut être effectuée en spécifiant uniquement le nom d’itinéraire unique comme un URI relatif :
+La navigation peut également être effectuée en spécifiant un URI relatif valide en tant qu’argument pour la méthode `GoToAsync`. Le système d’acheminement tente de faire correspondre l’URI à un objet `ShellContent`. Par conséquent, si tous les itinéraires d’une application sont uniques, la navigation peut être effectuée en spécifiant uniquement le nom de l’itinéraire unique en tant qu’URI relatif.
+
+Les formats d’itinéraire relatifs suivants sont pris en charge :
+
+| Format | Description |
+| --- | --- |
+| *route* | La hiérarchie de routage sera recherchée pour l’itinéraire spécifié, à partir de la position actuelle. La page correspondante fait l’objet d’un push dans la pile de navigation. |
+| /*Itinéraire* | La hiérarchie de routage sera recherchée à partir de l’itinéraire spécifié, vers le bas à partir de la position actuelle. La page correspondante fait l’objet d’un push dans la pile de navigation. |
+| //*Itinéraire* | La hiérarchie de routage sera recherchée pour l’itinéraire spécifié, vers le haut à partir de la position actuelle. La page correspondante remplace la pile de navigation. |
+| ///*Itinéraire* | La hiérarchie de routage sera recherchée pour l’itinéraire spécifié, vers le bas à partir de la position actuelle. La page correspondante remplace la pile de navigation. |
+
+L’exemple suivant accède à la page de l' `monkeydetails` Itinéraire :
 
 ```csharp
 await Shell.Current.GoToAsync("monkeydetails");
 ```
 
-Cet exemple accède à la page pour l’itinéraire `monkeydetails`.
-
-En outre, les formats d’itinéraires relatifs suivants sont pris en charge :
-
-| Format | Description |
-| --- | --- |
-| //*Itinéraire* | La hiérarchie de l’itinéraire sera recherchée pour l’itinéraire spécifié, en amont de l’itinéraire actuellement affiché. |
-| ///*Itinéraire* | La hiérarchie de l’itinéraire sera recherchée pour l’itinéraire spécifié, en aval de l’itinéraire actuellement affiché. |
+Dans cet exemple, la `monkeyDetails` route est recherchée dans la hiérarchie jusqu’à ce que la page correspondante soit trouvée. Lorsque la page est trouvée, elle est poussée vers la pile de navigation.
 
 #### <a name="contextual-navigation"></a>Navigation contextuelle
 
@@ -185,13 +189,13 @@ La navigation vers l’arrière peut être effectuée en spécifiant « .. » 
 await Shell.Current.GoToAsync("..");
 ```
 
-La navigation vers l’arrière avec « .. » peut également être associée à un itinéraire, comme suit :
+La navigation vers l’arrière avec « .. » peut également être associée à un itinéraire :
 
 ```csharp
 await Shell.Current.GoToAsync("../route");
 ```
 
-Dans cet exemple, l’effet global consiste à naviguer vers l’arrière, puis à naviguer vers l’itinéraire spécifié.
+Dans cet exemple, la navigation vers l’arrière est effectuée, puis la navigation vers l’itinéraire spécifié.
 
 > [!IMPORTANT]
 > Naviguer vers l’arrière et dans un itinéraire spécifié n’est possible que si la navigation vers l’arrière vous place à l’emplacement actuel dans la hiérarchie de routage pour accéder à l’itinéraire spécifié.
@@ -202,10 +206,20 @@ De même, il est possible de parcourir plusieurs fois, puis d’accéder à un i
 await Shell.Current.GoToAsync("../../route");
 ```
 
-Dans cet exemple, l’effet global consiste à parcourir deux fois en arrière, puis à naviguer vers l’itinéraire spécifié.
+Dans cet exemple, la navigation vers l’arrière est effectuée deux fois, puis la navigation vers l’itinéraire spécifié.
+
+En outre, les données peuvent être transmises via des propriétés de requête lors de la navigation vers l’arrière :
+
+```csharp
+await Shell.Current.GoToAsync($"..?parameterToPassBack={parameterValueToPassBack}");
+```
+
+Dans cet exemple, la navigation vers l’arrière est effectuée et la valeur du paramètre de requête est transmise au paramètre de requête sur la page précédente.
 
 > [!NOTE]
-> Les données peuvent également être passées lors de la navigation avec « .. ». Pour plus d’informations, consultez [transmettre des données](#pass-data).
+> Les paramètres de requête peuvent être ajoutés à toute demande de navigation vers l’arrière.
+
+Pour plus d’informations sur le passage de données lors de la navigation, consultez [passer des données](#pass-data).
 
 ### <a name="invalid-routes"></a>Itinéraires non valides
 
@@ -239,6 +253,22 @@ La classe `Tab` définit une propriété `Stack` de type `IReadOnlyList<Page>` q
 - `OnPopToRootAsync`, retourne `Task` et est appelée lorsque `INavigation.OnPopToRootAsync` est appelée.
 - `OnPushAsync`, retourne `Task` et est appelée lorsque `INavigation.PushAsync` est appelée.
 - `OnRemovePage`, appelée lorsque `INavigation.RemovePage` est appelée.
+
+Par exemple, l’exemple de code suivant montre comment substituer la `OnRemovePage` méthode :
+
+```csharp
+public class MyTab : Tab
+{
+    protected override void OnRemovePage(Page page)
+    {
+        base.OnRemovePage(page);
+
+        // Custom logic
+    }
+}
+```
+
+`MyTab` les objets peuvent ensuite être consommés dans votre hiérarchie visuelle de l’interpréteur de commandes au lieu d' `Tab` objets.
 
 ## <a name="navigation-events"></a>Événements de navigation
 

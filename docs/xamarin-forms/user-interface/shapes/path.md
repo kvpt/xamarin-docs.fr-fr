@@ -10,12 +10,12 @@ ms.date: 06/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 62bfb13f3aa4c09da76eca6723a34e6e8a72853d
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 1ba44903f20d0431c27f2d49429b2feb9c9a51e0
+ms.sourcegitcommit: f920ac0724f09e5c9b4f36be1995a5a17a6d9f95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93373729"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94591058"
 ---
 # <a name="no-locxamarinforms-shapes-path"></a>Xamarin.Forms Formes : chemin d’accès
 
@@ -56,9 +56,6 @@ L’exemple de code XAML suivant montre comment dessiner un triangle à l’aide
 La `Data` chaîne commence par la commande Move, indiquée par `M` , qui établit un point de départ absolu pour le chemin d’accès. `L` commande de ligne qui crée une ligne droite à partir du point de départ jusqu’au point de terminaison spécifié. `Z` commande Close, qui crée une ligne qui relie le point actuel au point de départ. Le résultat est un triangle :
 
 ![Triangle du tracé](path-images/triangle.png "Triangle du tracé")
-
-> [!NOTE]
-> La syntaxe de balisage de chemin d’accès est uniquement disponible en XAML.
 
 Pour plus d’informations sur la syntaxe de balisage de chemin d’accès, consultez [ Xamarin.Forms syntaxe de balisage Path](path-markup-syntax.md).
 
