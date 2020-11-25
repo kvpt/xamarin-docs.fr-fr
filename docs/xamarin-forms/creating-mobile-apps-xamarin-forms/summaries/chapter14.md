@@ -11,11 +11,11 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 09011647428e2af1bdfcdb2f9def8da64ef84144
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.sourcegitcommit: bda07768b51e6d24f897ccae16e152dc7a83effa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93374839"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96039111"
 ---
 # <a name="summary-of-chapter-14-absolute-layout"></a>Résumé du chapitre 14. Disposition absolue
 
