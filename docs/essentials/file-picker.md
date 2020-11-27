@@ -8,12 +8,12 @@ ms.date: 09/22/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e997ae3137110e18df9eed90ef07bfa2703e8088
-ms.sourcegitcommit: 58247fe066ad271ee43c8967ac3301fdab6ca2d1
+ms.openlocfilehash: f98f0cdea812a91bbe6caf1e248e468d9a960ac6
+ms.sourcegitcommit: 8fa0cb9ccbc107d697aa5b9113a4e5d1e75d6eb9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92629598"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96303035"
 ---
 # <a name="no-locxamarinessentials-file-picker"></a>Xamarin.Essentials: Sélecteur de fichiers
 
@@ -21,7 +21,7 @@ La classe **FilePicker** permet à un utilisateur de sélectionner un ou plusieu
 
 ![API de la version préliminaire](~/media/shared/preview.png)
 
-## <a name="get-started"></a>Bien démarrer
+## <a name="get-started"></a>Prise en main
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -45,7 +45,7 @@ Ouvrez le fichier **AndroidManifest.xml** sous le dossier **Propriétés** , pui
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 ```
 
-Vous pouvez également cliquer avec le bouton droit sur le projet Android, et ouvrir les propriétés du projet. Sous le **manifeste Android** , recherchez la zone **autorisations requises :** , puis cochez cette autorisation. Cela entraîne la mise à jour automatique du fichier **AndroidManifest.xml** .
+Vous pouvez également cliquer avec le bouton droit sur le projet Android, et ouvrir les propriétés du projet. Sous le **manifeste Android** , recherchez la zone **autorisations requises :** , puis cochez cette autorisation. Cela entraîne la mise à jour automatique du fichier **AndroidManifest.xml**.
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
@@ -110,6 +110,21 @@ var options = new PickOptions
 ## <a name="pick-multiple-files"></a>Sélectionner plusieurs fichiers
 
 Si vous souhaitez que votre utilisateur sélectionne plusieurs fichiers, vous pouvez appeler la `FilePicker.PickMultipleAsync()` méthode. Elle prend également `PickOptions` comme paramètre pour spécifier des informations supplémentaires. Les résultats sont les mêmes que `PickAsync` , mais au lieu d’un unique, `FileResult` un `IEnumerable<FileResult>` est retourné qui peut être itéré.
+
+
+## <a name="platform-differences"></a>Différences entre les plateformes
+
+# <a name="android"></a>[Android](#tab/android)
+
+- L’URI du fichier résultant peut ne pas être conservé entre les redémarrages.
+
+# <a name="ios"></a>[iOS](#tab/ios)
+
+Aucune différence entre les plateformes.
+
+# <a name="uwp"></a>[UWP](#tab/uwp)
+
+Aucune différence entre les plateformes.
 
 ## <a name="api"></a>API
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/28/2018
-ms.openlocfilehash: b9404e8a54899d3af6e6534fc9157e78139ca7d1
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 2472086c700a6b2a93a4a1a834d7a7d3e6e635ce
+ms.sourcegitcommit: 8fa0cb9ccbc107d697aa5b9113a4e5d1e75d6eb9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84568718"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96303055"
 ---
 # <a name="activity-lifecycle"></a>Cycle de vie des activités
 
@@ -56,7 +56,7 @@ Ces États peuvent être divisés en 4 groupes principaux, comme suit :
 
 1. *Redémarré* &ndash; Il est possible pour une activité qui n’est pas en pause de s’arrêter dans le cycle de vie d’être supprimée de la mémoire par Android. Si l’utilisateur revient à l’activité, il doit être redémarré, restauré à son état enregistré précédemment, puis affiché à l’utilisateur.
 
-### <a name="activity-re-creation-in-response-to-configuration-changes"></a>Recréation d’activité en réponse à des modifications de configuration
+### <a name="activity-re-creation-in-response-to-configuration-changes"></a>Re-Creation d’activité en réponse à des modifications de configuration
 
 Pour compliquer les choses, Android lève une clé supplémentaire dans la combinaison appelée modifications de configuration. Les modifications de configuration sont des cycles de destruction et de recréation d’activité rapides qui se produisent lorsque la configuration d’une activité change. par exemple, lorsque l’appareil est [pivoté](~/android/app-fundamentals/handling-rotation.md) (et que l’activité doit être reconstruite en mode paysage ou portrait), lorsque le clavier est affiché (et l’activité est présentée avec une opportunité de se redimensionner), ou lorsque l’appareil est placé dans une ancre, entre autres.
 
@@ -76,13 +76,13 @@ Examinons chacune de ces méthodes de cycle de vie et leur utilisation :
 #### <a name="oncreate"></a>OnCreate
 
 [OnCreate](xref:Android.App.Activity.OnCreate*) est la première méthode à appeler lors de la création d’une activité.
-`OnCreate`est toujours substitué pour effectuer toutes les initialisations de démarrage qui peuvent être requises par une activité telle que :
+`OnCreate` est toujours substitué pour effectuer toutes les initialisations de démarrage qui peuvent être requises par une activité telle que :
 
 - Création d’affichages
 - Initialiser des variables
 - Liaison de données statiques à des listes
 
-`OnCreate`prend un paramètre [Bundle](xref:Android.OS.Bundle) , qui est un dictionnaire pour stocker et transmettre des informations d’État et des objets entre les activités si le bundle n’est pas null, cela indique que l’activité est en cours de redémarrage et qu’elle doit restaurer son état à partir de l’instance précédente. Le code suivant montre comment récupérer des valeurs à partir du bundle :
+`OnCreate` prend un paramètre [Bundle](xref:Android.OS.Bundle) , qui est un dictionnaire pour stocker et transmettre des informations d’État et des objets entre les activités si le bundle n’est pas null, cela indique que l’activité est en cours de redémarrage et qu’elle doit restaurer son état à partir de l’instance précédente. Le code suivant montre comment récupérer des valeurs à partir du bundle :
 
 ```csharp
 protected override void OnCreate(Bundle bundle)
@@ -134,7 +134,7 @@ public void OnResume()
 }
 ```
 
-`OnResume`est important, car toute opération effectuée dans `OnPause` doit être annulée dans `OnResume` , car il s’agit de la seule méthode de cycle de vie dont l’exécution est garantie après le `OnPause` retour de l’activité.
+`OnResume` est important, car toute opération effectuée dans `OnPause` doit être annulée dans `OnResume` , car il s’agit de la seule méthode de cycle de vie dont l’exécution est garantie après le `OnPause` retour de l’activité.
 
 #### <a name="onpause"></a>OnPause
 
@@ -168,8 +168,8 @@ public void OnPause()
 
 Il existe deux méthodes de cycle de vie possibles qui seront appelées après `OnPause` :
 
-1. `OnResume`est appelé si l’activité doit être retournée au premier plan.
-1. `OnStop`est appelé si l’activité est placée en arrière-plan.
+1. `OnResume` est appelé si l’activité doit être retournée au premier plan.
+1. `OnStop` est appelé si l’activité est placée en arrière-plan.
 
 #### <a name="onstop"></a>OnStop
 
@@ -179,11 +179,11 @@ Il existe deux méthodes de cycle de vie possibles qui seront appelées après `
 - Une activité existante est placée au premier plan.
 - L’activité est en cours de destruction.
 
-`OnStop`ne peut pas toujours être appelé dans des situations de mémoire insuffisante, par exemple quand Android est privé de ressources et ne peut pas être correctement en arrière-plan de l’activité. Pour cette raison, il est préférable de ne pas s’appuyer sur l’appel de la `OnStop` méthode lors de la préparation d’une activité pour la destruction. Les méthodes de cycle de vie suivantes peuvent être appelées après celle-ci `OnDestroy` si l’activité est en cours, ou `OnRestart` si l’activité est à nouveau en interaction avec l’utilisateur.
+`OnStop` ne peut pas toujours être appelé dans des situations de mémoire insuffisante, par exemple quand Android est privé de ressources et ne peut pas être correctement en arrière-plan de l’activité. Pour cette raison, il est préférable de ne pas s’appuyer sur l’appel de la `OnStop` méthode lors de la préparation d’une activité pour la destruction. Les méthodes de cycle de vie suivantes peuvent être appelées après celle-ci `OnDestroy` si l’activité est en cours, ou `OnRestart` si l’activité est à nouveau en interaction avec l’utilisateur.
 
 #### <a name="ondestroy"></a>OnDestroy
 
-[OnDestroy](xref:Android.App.Activity.OnDestroy) est la dernière méthode appelée sur une instance d’activité avant qu’elle ne soit détruite et complètement supprimée de la mémoire. Dans les situations extrêmes, Android peut arrêter le processus d’application qui héberge l’activité, ce qui entraînera l' `OnDestroy` invocation de. La plupart des activités n’implémentent pas cette méthode, car la plupart des opérations de nettoyage et d’arrêt ont été effectuées dans les `OnPause` `OnStop` méthodes et. La `OnDestroy` méthode est généralement remplacée pour nettoyer les ressources longues qui peuvent provoquer des fuites de ressources. Il peut s’agir, par exemple, de threads d’arrière-plan démarrés dans `OnCreate` .
+[OnDestroy](xref:Android.App.Activity.OnDestroy) est la dernière méthode appelée sur une instance d’activité avant qu’elle ne soit détruite et complètement supprimée de la mémoire. Dans les situations extrêmes, Android peut arrêter le processus d’application qui héberge l’activité, ce qui entraînera l' `OnDestroy` invocation de. La plupart des activités n’implémentent pas cette méthode, car la plupart des opérations de nettoyage et d’arrêt ont été effectuées dans les `OnPause` `OnStop` méthodes et. La `OnDestroy` méthode est généralement remplacée pour nettoyer les tâches de longue durée qui peuvent provoquer des fuites de ressources. Il peut s’agir, par exemple, de threads d’arrière-plan démarrés dans `OnCreate` .
 
 Aucune méthode de cycle de vie n’est appelée une fois que l’activité a été détruite.
 
@@ -471,7 +471,7 @@ Dans cette section, nous avons appris à conserver les données d’État simple
 
 Le cycle de vie des activités Android fournit une infrastructure puissante pour la gestion de l’état des activités dans une application, mais il peut être difficile de comprendre et d’implémenter. Ce chapitre présente les différents États qu’une activité peut franchir pendant sa durée de vie, ainsi que les méthodes de cycle de vie associées à ces États. Ensuite, vous trouverez des conseils sur le type de logique qui doit être exécuté dans chacune de ces méthodes.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Rotation de la gestion](~/android/app-fundamentals/handling-rotation.md)
 - [Activité Android](xref:Android.App.Activity)

@@ -6,12 +6,12 @@ ms.assetid: EBBBB886-1CEF-4DF4-AFDD-CA96049F878E
 author: davidortinau
 ms.author: daortin
 ms.date: 11/14/2017
-ms.openlocfilehash: a8b63638861e8d44deb4ea72959d7461190f7713
-ms.sourcegitcommit: 6266ef043ae0289f174e901f204f2a280a53c071
+ms.openlocfilehash: 2fbd42efcdb3de10a7f094db2197a75d88d27b66
+ms.sourcegitcommit: 8fa0cb9ccbc107d697aa5b9113a4e5d1e75d6eb9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/30/2019
-ms.locfileid: "75545804"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96303025"
 ---
 # <a name="net-embedding-limitations"></a>Limitations de l’incorporation .NET
 
@@ -29,7 +29,7 @@ Il n’est pas possible que deux runtimes mono coexistent dans la même applicat
 
 L’incorporation .NET facilite l’intégration du runtime mono dans les applications en exposant un ensemble d’API prêtes à l’emploi pour le langage et la plateforme cibles.
 
-Toutefois, il ne s’agit pas d’une intégration bidirectionnelle, par exemple, vous ne pouvez pas sous-classer un type managé et vous attendez à ce que le code managé soit rappelé à l’intérieur de votre code natif, puisque votre code managé n’est pas conscient de ce coexistence.
+Toutefois, il ne s’agit pas d’une intégration bidirectionnelle, par exemple, vous ne pouvez pas sous-classer un type managé et vous attendez à ce que le code managé soit rappelé à l’intérieur de votre code natif, puisque votre code managé n’a pas conscience de cette coexistence.
 
 En fonction de vos besoins, il peut être possible de contourner des parties de cette limitation, par exemple
 
@@ -41,9 +41,9 @@ En fonction de vos besoins, il peut être possible de contourner des parties de 
 
 ### <a name="nullability"></a>Possibilité de valeurs nulles
 
-Il n’existe aucune métadonnée dans .NET qui nous indique si une référence null est acceptable ou non pour une API. La plupart des API lèvent `ArgumentNullException` si elles ne peuvent pas faire face à un argument `null`. Cela pose problème car la gestion des exceptions objective-C est mieux évitée.
+Il n’existe aucune métadonnée dans .NET qui nous indique si une référence null est acceptable ou non pour une API. La plupart des API seront levées `ArgumentNullException` si elles ne peuvent pas faire face à un `null` argument. Cela pose problème car la gestion des exceptions objective-C est mieux évitée.
 
-Étant donné que nous ne pouvons pas générer des annotations de possibilité de valeur null dans les fichiers d’en-tête et que vous souhaitez réduire les exceptions managées, nous avons par défaut des arguments non null (`NS_ASSUME_NONNULL_BEGIN`) et ajoutons des annotations de possibilité de valeur NULL lorsque la précision est possible.
+Étant donné que nous ne pouvons pas générer des annotations de possibilité de valeur null dans les fichiers d’en-tête et que vous souhaitez réduire les exceptions managées, nous avons par défaut des arguments non null ( `NS_ASSUME_NONNULL_BEGIN` ) et ajoutons des annotations de valeur null, lorsque la précision est possible.
 
 ### <a name="bitcode-ios"></a>Bitcode (iOS)
 

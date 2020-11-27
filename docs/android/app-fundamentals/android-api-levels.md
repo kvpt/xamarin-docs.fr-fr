@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 08/21/2018
-ms.openlocfilehash: 188cc5b2ffba4540766edf0403d3a55228a21d6d
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: bb41a6e4ea477ed0a7932df441678e53a304aa35
+ms.sourcegitcommit: 8fa0cb9ccbc107d697aa5b9113a4e5d1e75d6eb9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84568870"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96303096"
 ---
 # <a name="understanding-android-api-levels"></a>Présentation des niveaux d’API Android
 
@@ -31,8 +31,8 @@ Xamarin. Android expose trois paramètres de projet de niveau d’API Android :
 Avant de pouvoir configurer un niveau d’API pour votre projet, vous devez installer les composants de plateforme du kit de développement logiciel (SDK) pour ce niveau d’API. Pour plus d’informations sur le téléchargement et l’installation de Android SDK composants, consultez [Android SDK le programme d’installation](~/android/get-started/installation/android-sdk.md).
 
 > [!NOTE]
-> À compter du 2018 août, la console Google Play nécessitera que les nouvelles applications ciblent le niveau d’API 26 (Android 8,0) ou une version ultérieure.
-Les applications existantes seront nécessaires pour cibler le niveau d’API 26 ou supérieur à partir du 2018 novembre. Pour plus d’informations, consultez amélioration de la [sécurité et des performances des applications sur Google Play pour les années à venir](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
+> Depuis le 2020 août, la console Google Play nécessite que les nouvelles applications ciblent le niveau d’API 29 (Android 10,0) ou une version ultérieure.
+Les applications existantes sont requises pour cibler le niveau d’API 29 ou supérieur à partir du 2020 novembre. Pour plus d’informations, consultez [exigences de niveau d’API cible pour la console de lecture](https://support.google.com/googleplay/android-developer/answer/9859152#targetsdk) dans « créer et configurer votre application » dans la documentation de la console Play.
 
 <!-- markdownlint-disable MD001 -->
 
@@ -104,7 +104,7 @@ Ces paramètres sont utilisés pour s’assurer que les fonctionnalités nécess
 
 ## <a name="project-api-level-settings"></a>Paramètres au niveau de l’API du projet
 
-Les sections suivantes expliquent comment utiliser le gestionnaire du kit de développement logiciel (SDK) pour préparer votre environnement de développement pour les niveaux d’API que vous souhaitez cibler, suivis d’explications détaillées sur la configuration de la version *cible de .NET Framework*, de la *version Android minimale*et des paramètres de la *version cible d’Android* dans Xamarin. Android.
+Les sections suivantes expliquent comment utiliser le gestionnaire du kit de développement logiciel (SDK) pour préparer votre environnement de développement pour les niveaux d’API que vous souhaitez cibler, suivis d’explications détaillées sur la configuration de la version *cible de .NET Framework*, de la *version Android minimale* et des paramètres de la *version cible d’Android* dans Xamarin. Android.
 
 ### <a name="android-sdk-platforms"></a>Plates-formes Android SDK
 
@@ -180,7 +180,7 @@ Pour accéder à ce paramètre dans Visual Studio, ouvrez les propriétés du pr
 
 [![Version d’Android cible définie à compiler à l’aide de la version du SDK](android-api-levels-images/vs-target-version-sml.png)](android-api-levels-images/vs-target-version.png#lightbox)
 
-Nous vous recommandons de définir explicitement la version Android cible sur la dernière version d’Android que vous utilisez pour tester votre application. Dans l’idéal, il doit être défini avec la dernière version de Android SDK, &ndash; ce qui vous permet d’utiliser les nouvelles API avant de procéder aux changements de comportement. Pour la plupart des développeurs *, nous vous* déconseillons de définir la version d’Android cible pour **utiliser compiler à l’aide**de la version du SDK.
+Nous vous recommandons de définir explicitement la version Android cible sur la dernière version d’Android que vous utilisez pour tester votre application. Dans l’idéal, il doit être défini avec la dernière version de Android SDK, &ndash; ce qui vous permet d’utiliser les nouvelles API avant de procéder aux changements de comportement. Pour la plupart des développeurs *, nous vous* déconseillons de définir la version d’Android cible pour **utiliser compiler à l’aide** de la version du SDK.
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
@@ -261,9 +261,9 @@ Ces meilleures pratiques sont recommandées afin d’éviter la situation dans l
 
 ## <a name="summary"></a>Résumé
 
-Ce guide a expliqué comment les niveaux d’API Android sont utilisés pour gérer la compatibilité des applications entre les différentes versions d’Android. Il a fourni des étapes détaillées pour la configuration de l' *infrastructure cible*Xamarin. Android, de la *version d’Android minimale*et des paramètres de projet de *version Android cible* . Il vous a fourni des instructions sur l’utilisation du gestionnaire de Android SDK pour installer des packages de SDK. il contient des exemples d’écriture de code pour gérer différents niveaux d’API au moment de l’exécution et explique comment gérer les niveaux d’API lors de la création ou de l’utilisation de bibliothèques Android. Elle a également fourni une liste complète qui lie les niveaux d’API aux numéros de version Android (tels que Android 4,4), les noms de version Android (tels que KitKat) et les codes de version de build Xamarin. Android.
+Ce guide a expliqué comment les niveaux d’API Android sont utilisés pour gérer la compatibilité des applications entre les différentes versions d’Android. Il a fourni des étapes détaillées pour la configuration de l' *infrastructure cible* Xamarin. Android, de la *version d’Android minimale* et des paramètres de projet de *version Android cible* . Il vous a fourni des instructions sur l’utilisation du gestionnaire de Android SDK pour installer des packages de SDK. il contient des exemples d’écriture de code pour gérer différents niveaux d’API au moment de l’exécution et explique comment gérer les niveaux d’API lors de la création ou de l’utilisation de bibliothèques Android. Elle a également fourni une liste complète qui lie les niveaux d’API aux numéros de version Android (tels que Android 4,4), les noms de version Android (tels que KitKat) et les codes de version de build Xamarin. Android.
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Configuration du kit Android SDK](~/android/get-started/installation/android-sdk.md)
 - [Modifications des outils de l’interface CLI SDK](~/android/troubleshooting/sdk-cli-tooling-changes.md)
