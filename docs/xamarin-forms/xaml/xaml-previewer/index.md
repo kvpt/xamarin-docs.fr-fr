@@ -11,25 +11,26 @@ ms.date: 03/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: dff01728c986b23e59af702edb3bfd8c74ad744a
-ms.sourcegitcommit: d2aa3a8bf9a60b6708db55b10b0c6893c06d3256
+ms.openlocfilehash: 5af5846c77c5cd63e14494c25e5dc04ebcea4b7d
+ms.sourcegitcommit: f90e908a72cf616ee303c2751729b62f11654379
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93331446"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96299957"
 ---
 # <a name="xaml-previewer-for-no-locxamarinforms"></a>Générateur d’aperçu XAML pour Xamarin.Forms
 
 _Afficher les Xamarin.Forms dispositions rendues à mesure que vous tapez_
 
 > [!WARNING]
+> Le générateur d’aperçu XAML va commencer à être supprimé dans Visual Studio 2019 version 16,8 et Visual Studio pour Mac version 8,8.
 > La méthode recommandée pour afficher un aperçu de votre code XAML est désormais avec le **[rechargement à chaud XAML](~/xamarin-forms/xaml/hot-reload.md)**.
 
 ## <a name="overview"></a>Vue d’ensemble
 
 Le générateur d’aperçu XAML vous montre comment votre Xamarin.Forms page XAML s’affichera sur iOS et Android. Lorsque vous apportez des modifications à votre code XAML, vous les voyez immédiatement en regard de votre code. Le générateur d’aperçu XAML est disponible dans Visual Studio et Visual Studio pour Mac.
 
-## <a name="getting-started"></a>Prise en main
+## <a name="getting-started"></a>Mise en route
 
 ::: zone pivot="windows"
 
@@ -78,7 +79,7 @@ Vous pouvez désactiver le générateur d’aperçu XAML dans les **Préférence
 Les options situées en haut du volet de visualisation sont les suivantes :
 
 * **Android** : afficher la version Android de l’écran
-* **iOS** : afficher la version IOS de l’écran ( *Remarque : Si vous utilisez Visual Studio sur Windows, vous devez être [associé à un Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md) pour utiliser ce mode* )
+* **iOS** : afficher la version IOS de l’écran (*Remarque : Si vous utilisez Visual Studio sur Windows, vous devez être [associé à un Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md) pour utiliser ce mode*)
 * Liste déroulante **périphérique** des appareils Android ou iOS, y compris la résolution et la taille d’écran
 * **Portrait (icône)** : utilise l’orientation portrait pour la préversion
 * **Paysage (icône)** : utilise l’orientation paysage pour la préversion
@@ -101,7 +102,7 @@ if (!DesignMode.IsDesignModeEnabled)
 
 Cette propriété est utile si vous initialisez une bibliothèque dans votre constructeur de page dont l’exécution échoue au moment du Design.
 
-## <a name="troubleshooting"></a>Dépannage
+## <a name="troubleshooting"></a>Résolution des problèmes
 
 Si le générateur d’aperçu ne fonctionne pas, vérifiez les problèmes ci-dessous et les [Forums Xamarin](https://forums.xamarin.com/categories/xamarin-forms).
 
