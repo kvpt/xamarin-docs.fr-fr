@@ -7,14 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 44297e32821721d483a265e7d2a69016f4e1a87b
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 37d90bc42e843dd3b3c8f07689e0e229225ff57d
+ms.sourcegitcommit: d1f0e0a9100548cfe0960ed2225b979cc1d7c28f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86940021"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96439468"
 ---
 # <a name="auto-layout-with-the-xamarin-designer-for-ios"></a>Disposition automatique avec le Xamarin Designer pour iOS
+
+> [!WARNING]
+> Le concepteur iOS va commencer à être supprimé dans Visual Studio 2019 version 16,8 et Visual Studio 2019 pour Mac version 8,8.
+> La méthode recommandée pour créer des interfaces utilisateur iOS est directement sur un Mac exécutant Xcode. Pour plus d’informations, consultez [conception d’interfaces utilisateur avec Xcode](../storyboards/index.md). 
 
 La disposition automatique (également appelée « disposition adaptative ») est une approche de conception réactive. Contrairement au système de disposition transitoire, où l’emplacement de chaque élément est codé en dur à un point de l’écran, la disposition automatique concerne les *relations* , c’est-à-dire les positions des éléments par rapport à d’autres éléments sur l’aire de conception. Au cœur de la disposition automatique se trouve l’idée de contraintes ou de règles qui définissent le positionnement d’un élément ou d’un ensemble d’éléments dans le contexte d’autres éléments à l’écran. Étant donné que les éléments ne sont pas liés à une position particulière sur l’écran, les contraintes aident à créer une disposition adaptative qui semble correcte sur différentes tailles d’écran et orientations de périphérique.
 
@@ -30,7 +34,7 @@ Ce guide suppose que vous connaissez les composants du concepteur à partir du G
 
 Une contrainte est une représentation mathématique de la relation entre deux éléments à l’écran. Le fait de représenter la position d’un élément d’interface utilisateur en tant que relation mathématique résout plusieurs problèmes associés au codage en dur de l’emplacement d’un élément d’interface utilisateur. Par exemple, si nous devions placer un bouton 20px à partir du bas de l’écran en mode portrait, la position du bouton serait en dehors de l’écran en mode paysage. Pour éviter cela, nous pouvons définir une contrainte qui place le bord inférieur du bouton 20px à partir du bas de la vue. La position du bord du bouton est alors calculée en tant que *bouton. Bottom = View. Bottom-20px*, ce qui placerait le bouton 20px à partir du bas de la vue en mode portrait et paysage. La possibilité de calculer le positionnement en fonction d’une relation mathématique est de savoir ce qui rend les contraintes utiles dans la conception de l’interface utilisateur.
 
-Quand nous définissons une contrainte, nous créons un `NSLayoutConstraint` objet qui prend comme arguments les objets à contraindre et les propriétés, ou *attributs*, sur lesquelles la contrainte agira. Dans le concepteur iOS, les attributs incluent des bords tels que les bords *gauche*, *droit*, *supérieur*et *inférieur* d’un élément. Elles incluent également des attributs de taille, tels que la *hauteur* et la *largeur*, et l’emplacement du point central *, centerus et* *CenterY*. Par exemple, lorsque nous ajoutons une contrainte sur la position de la limite gauche de deux boutons, le concepteur génère le code suivant sous les couvertures :
+Quand nous définissons une contrainte, nous créons un `NSLayoutConstraint` objet qui prend comme arguments les objets à contraindre et les propriétés, ou *attributs*, sur lesquelles la contrainte agira. Dans le concepteur iOS, les attributs incluent des bords tels que les bords *gauche*, *droit*, *supérieur* et *inférieur* d’un élément. Elles incluent également des attributs de taille, tels que la *hauteur* et la *largeur*, et l’emplacement du point central *, centerus et* *CenterY*. Par exemple, lorsque nous ajoutons une contrainte sur la position de la limite gauche de deux boutons, le concepteur génère le code suivant sous les couvertures :
 
 ```csharp
 View.AddConstraint (NSLayoutConstraint.Create (Button1, NSLayoutAttribute.Left, NSLayoutRelation.Equal, Button2, NSLayoutAttribute.Left, 1, 10));
@@ -77,7 +81,7 @@ Le **W** définira la largeur et **H** définira la contrainte de hauteur. Lorsq
 
 Quatre zones de liste déroulante pour les contraintes d’espacement répertorie les vues voisines pour ancrer la contrainte
 
-## <a name="surface-based-constraint-editing"></a>Modification des contraintes basées sur une surface
+## <a name="surface-based-constraint-editing"></a>Modification des contraintes de Surface-Based
 
 Pour une modification plus fine des contraintes, nous pouvons interagir avec les contraintes directement sur l’aire de conception. Cette section présente les principes fondamentaux de la modification des contraintes basée sur la surface, y compris les contrôles d’espacement des épingles, les zones de dépôt et l’utilisation de différents types de contraintes.
 
@@ -89,7 +93,7 @@ L’outil de concepteur iOS offre deux types de contrôles pour manipuler des é
 
 Elles sont basculées en sélectionnant le bouton mode contraintes dans la barre contraintes.
 
-Les poignées en forme de 4 T de chaque côté de l’élément définissent les bords *supérieur*, *droit*, *inférieur*et *gauche* de l’élément pour une contrainte. Les deux poignées I en forme à droite et en bas de l’élément définissent respectivement la *hauteur* et la *largeur* de la contrainte. Le carré moyen gère à *la fois les* contraintes *CenterX et CenterY* .
+Les poignées en forme de 4 T de chaque côté de l’élément définissent les bords *supérieur*, *droit*, *inférieur* et *gauche* de l’élément pour une contrainte. Les deux poignées I en forme à droite et en bas de l’élément définissent respectivement la *hauteur* et la *largeur* de la contrainte. Le carré moyen gère à *la fois les* contraintes *CenterX et CenterY* .
 
 Pour créer une contrainte, choisissez une poignée et faites-la glisser quelque part sur l’aire de conception. Lorsque vous démarrez l’opération glisser, une série de lignes/zones vertes apparaît sur l’aire indiquant ce que vous pouvez contraindre. Par exemple, dans la capture d’écran ci-dessous, nous allons contraindre le côté supérieur du bouton central :
 
@@ -226,7 +230,7 @@ Ici, la clé appelle la `LayoutIfNeeded` méthode de la vue parente dans le bloc
 
 ## <a name="summary"></a>Résumé
 
-Ce guide a introduit la disposition iOS auto (ou « Adaptive ») et le concept de contraintes sous forme de représentations mathématiques des relations entre les éléments sur l’aire de conception. Il a décrit comment activer la disposition automatique dans le concepteur iOS, utiliser la **barre d’outils contraintes**et modifier des contraintes individuellement sur l’aire de conception. Ensuite, il a expliqué comment résoudre trois problèmes courants liés aux contraintes. Enfin, il a montré comment modifier des contraintes dans le code.
+Ce guide a introduit la disposition iOS auto (ou « Adaptive ») et le concept de contraintes sous forme de représentations mathématiques des relations entre les éléments sur l’aire de conception. Il a décrit comment activer la disposition automatique dans le concepteur iOS, utiliser la **barre d’outils contraintes** et modifier des contraintes individuellement sur l’aire de conception. Ensuite, il a expliqué comment résoudre trois problèmes courants liés aux contraintes. Enfin, il a montré comment modifier des contraintes dans le code.
 
 ## <a name="related-links"></a>Liens associés
 

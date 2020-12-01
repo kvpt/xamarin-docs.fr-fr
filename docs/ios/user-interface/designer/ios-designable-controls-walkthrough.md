@@ -7,16 +7,20 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: ad07d6e7381c646273eae8fe6aaecb2d487027f7
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: f4b161159423bc7e5d6d99e9dfd4407532106979
+ms.sourcegitcommit: d1f0e0a9100548cfe0960ed2225b979cc1d7c28f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91436804"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96439453"
 ---
 # <a name="using-custom-controls-with-the-ios-designer"></a>utilisation de contrôles personnalisés avec le concepteur iOS
 
-## <a name="requirements"></a>Configuration requise
+> [!WARNING]
+> Le concepteur iOS va commencer à être supprimé dans Visual Studio 2019 version 16,8 et Visual Studio 2019 pour Mac version 8,8.
+> La méthode recommandée pour créer des interfaces utilisateur iOS est directement sur un Mac exécutant Xcode. Pour plus d’informations, consultez [conception d’interfaces utilisateur avec Xcode](../storyboards/index.md). 
+
+## <a name="requirements"></a>Spécifications
 
 Le Xamarin Designer pour iOS est disponible dans Visual Studio pour Mac et Visual Studio 2017 et versions ultérieures sur Windows.
 
@@ -198,7 +202,7 @@ Ce guide suppose que vous connaissez le contenu abordé dans les guides de [pris
 
     [![Exemple d’exécution d’application](ios-designable-controls-walkthrough-images/10-app.png)](ios-designable-controls-walkthrough-images/10-app.png#lightbox)
 
-## <a name="adding-design-time-properties"></a>Ajout de propriétés au moment de la conception
+## <a name="adding-design-time-properties"></a>Ajout de propriétés de Design-Time
 
 Le concepteur comprend également la prise en charge au moment du design des contrôles personnalisés de type de propriété numeric, Enumeration, String, bool, CGSize, UIColor et UIImage. Pour illustrer cela, nous allons ajouter une propriété au `ScratchTicketView` pour définir l’image qui est « rayée ».
 
@@ -262,9 +266,9 @@ L’inclusion d’un `ExportAttribute` et d’un `BrowsableAttribute` avec l’a
 
 ## <a name="summary"></a>Résumé
 
-Dans cet article, nous avons parcouru la création d’un contrôle personnalisé, ainsi que son utilisation dans une application iOS à l’aide du concepteur iOS. Nous avons vu comment créer et générer le contrôle pour le rendre disponible pour une application dans la **boîte à outils**du concepteur. En outre, nous avons vu comment implémenter le contrôle de sorte qu’il s’affiche correctement à la fois au moment du design et au moment de l’exécution, et comment exposer des propriétés de contrôle personnalisées dans le concepteur.
+Dans cet article, nous avons parcouru la création d’un contrôle personnalisé, ainsi que son utilisation dans une application iOS à l’aide du concepteur iOS. Nous avons vu comment créer et générer le contrôle pour le rendre disponible pour une application dans la **boîte à outils** du concepteur. En outre, nous avons vu comment implémenter le contrôle de sorte qu’il s’affiche correctement à la fois au moment du design et au moment de l’exécution, et comment exposer des propriétés de contrôle personnalisées dans le concepteur.
 
 ## <a name="related-links"></a>Liens associés
 
 - [ScratchTicket (exemple)](/samples/xamarin/ios-samples/scratchticket)
-- [images requises (exemple)](https://github.com/xamarin/ios-samples/blob/master/ScratchTicket/Resources/images.zip?raw=true)
+- [Images requises (exemple)](https://github.com/xamarin/ios-samples/blob/master/ScratchTicket/Resources/images.zip?raw=true)

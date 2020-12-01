@@ -7,16 +7,20 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 5c8a852a37e2cd5c679283bc4d078f19e6e5d241
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 593f03588d691071d4a231d9ed788391530d5608
+ms.sourcegitcommit: d1f0e0a9100548cfe0960ed2225b979cc1d7c28f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939683"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96439422"
 ---
 # <a name="custom-controls-in-the-xamarin-designer-for-ios"></a>Contrôles personnalisés dans le Xamarin Designer pour iOS
 
 _Le Xamarin Designer pour iOS prend en charge le rendu des contrôles personnalisés créés dans votre projet ou référencés à partir de sources externes telles que le magasin de composants Xamarin._
+
+> [!WARNING]
+> Le concepteur iOS va commencer à être supprimé dans Visual Studio 2019 version 16,8 et Visual Studio 2019 pour Mac version 8,8.
+> La méthode recommandée pour créer des interfaces utilisateur iOS est directement sur un Mac exécutant Xcode. Pour plus d’informations, consultez [conception d’interfaces utilisateur avec Xcode](../storyboards/index.md). 
 
 Le Xamarin Designer pour iOS est un outil puissant pour la visualisation de l’interface utilisateur d’une application et fournit la prise en charge de l’édition WYSIWYG pour la plupart des vues iOS et des contrôleurs d’affichage. Votre application peut également contenir des contrôles personnalisés qui étendent ceux intégrés à iOS. Si ces contrôles personnalisés sont écrits avec quelques instructions à l’esprit, ils peuvent également être rendus par le concepteur iOS, ce qui offre une expérience d’édition encore plus riche. Ce document examine ces instructions.
 
@@ -24,9 +28,9 @@ Le Xamarin Designer pour iOS est un outil puissant pour la visualisation de l’
 
 Un contrôle qui remplit toutes les conditions suivantes sera restitué sur l’aire de conception :
 
-1. Il s’agit d’une sous-classe directe ou indirecte de [UIView](xref:UIKit.UIView) ou [UIViewController](xref:UIKit.UIViewController). D’autres sous-classes [NSObject](xref:Foundation.NSObject) s’affichent sous la forme d’une icône sur l’aire de conception.
-2. Il a un [RegisterAttribute](xref:Foundation.RegisterAttribute) pour l’exposer à Objective-C.
-3. Il a [le constructeur IntPtr requis](~/ios/internals/api-design/index.md).
+1. Il s’agit d’une sous-classe directe ou indirecte de  [UIView](xref:UIKit.UIView) ou  [UIViewController](xref:UIKit.UIViewController). D’autres sous-classes [NSObject](xref:Foundation.NSObject) s’affichent sous la forme d’une icône sur l’aire de conception.
+2. Il a un  [RegisterAttribute](xref:Foundation.RegisterAttribute) pour l’exposer à Objective-C.
+3. Il a  [le constructeur IntPtr requis](~/ios/internals/api-design/index.md).
 4. Il implémente l’interface [IComponent](xref:System.ComponentModel.IComponent) ou a un [DesignTimeVisibleAttribute](xref:System.ComponentModel.DesignTimeVisibleAttribute) défini sur true.
 
 Les contrôles définis dans le code qui répondent aux exigences ci-dessus s’affichent dans le concepteur lorsque leur projet conteneur est compilé pour le simulateur. Par défaut, tous les contrôles personnalisés s’affichent dans la section **composants personnalisés** de la **boîte à outils**. Toutefois, [CategoryAttribute](xref:System.ComponentModel.CategoryAttribute) peut être appliqué à la classe du contrôle personnalisé pour spécifier une autre section.
@@ -38,7 +42,7 @@ Le concepteur ne prend pas en charge le chargement de bibliothèques objective-C
 Une propriété déclarée par un contrôle personnalisé s’affiche dans le volet des propriétés si les conditions suivantes sont remplies :
 
 1. La propriété possède un accesseur get et un accesseur set publics.
-1. La propriété a un [ExportAttribute](xref:Foundation.ExportAttribute) , ainsi qu’un [BrowsableAttribute](xref:System.ComponentModel.BrowsableAttribute) défini sur true.
+1. La propriété a un  [ExportAttribute](xref:Foundation.ExportAttribute) , ainsi qu’un  [BrowsableAttribute](xref:System.ComponentModel.BrowsableAttribute) défini sur true.
 1. Le type de propriété est un type numérique, un type énumération, une chaîne, un bool, [SizeF](xref:System.Drawing.SizeF), [UIColor](xref:UIKit.UIColor)ou [UIImage](xref:UIKit.UIImage). Cette liste de types pris en charge peut être développée à l’avenir.
 
 La propriété peut également être décorée avec un [DisplayNameAttribute](xref:System.ComponentModel.DisplayNameAttribute) pour spécifier l’étiquette qui s’affiche dans le volet des propriétés.
@@ -124,10 +128,10 @@ public class CustomView : UIView {
 
 Le `CustomView` composant expose une `Counter` propriété qui peut être définie par le développeur à l’intérieur du concepteur iOS. Toutefois, quelle que soit la valeur définie dans le concepteur, la valeur de la `Counter` propriété sera toujours égale à zéro (0). Voici pourquoi :
 
-- Une instance du `CustomControl` est incluse dans le fichier de table de montage séquentiel.
-- Toutes les propriétés modifiées dans le concepteur iOS sont définies (comme la définition de la valeur de `Counter` sur deux (2), par exemple).
-- La `AwakeFromNib` méthode est exécutée et un appel à la méthode du composant est effectué `Initialize` .
-- L’intérieur `Initialize` de la valeur de la `Counter` propriété est remis à zéro (0).
+- Une instance du  `CustomControl` est incluse dans le fichier de table de montage séquentiel.
+- Toutes les propriétés modifiées dans le concepteur iOS sont définies (comme la définition de la valeur de  `Counter` sur deux (2), par exemple).
+- La  `AwakeFromNib` méthode est exécutée et un appel à la méthode du composant est effectué  `Initialize` .
+- L’intérieur  `Initialize` de la valeur de la  `Counter` propriété est remis à zéro (0).
 
 Pour résoudre ce problème, initialisez la `Counter` propriété ailleurs (par exemple, dans le constructeur du composant) ou ne substituez pas la `AwakeFromNib` méthode et appelez `Initialize` si le composant ne requiert aucune initialisation supplémentaire en dehors de ce qui est actuellement géré par ses constructeurs.
 
@@ -135,7 +139,7 @@ Pour résoudre ce problème, initialisez la `Counter` propriété ailleurs (par 
 
 Sur l’aire de conception, un contrôle personnalisé doit respecter quelques restrictions :
 
-- Les ressources de bundle d’applications ne sont pas disponibles en mode création. Les images sont disponibles lorsqu’elles sont chargées via les [méthodes UIImage](xref:UIKit.UIImage) .
+- Les ressources de bundle d’applications ne sont pas disponibles en mode création. Les images sont disponibles lorsqu’elles sont chargées via les  [méthodes UIImage](xref:UIKit.UIImage) .
 - Les opérations asynchrones, telles que les requêtes Web, ne doivent pas être effectuées en mode création. L’aire de conception ne prend pas en charge l’animation ou les autres mises à jour asynchrones de l’interface utilisateur du contrôle.
 
 Un contrôle personnalisé peut implémenter [IComponent](xref:System.ComponentModel.IComponent) et utiliser la propriété [DesignMode](xref:System.ComponentModel.ISite.DesignMode) pour vérifier s’il se trouve sur l’aire de conception. Dans cet exemple, l’étiquette affiche « mode Design » sur l’aire de conception et « Runtime » au moment de l’exécution :

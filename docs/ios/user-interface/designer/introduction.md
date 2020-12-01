@@ -7,20 +7,24 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 01/31/2018
-ms.openlocfilehash: 7c6b5a4dd2f6f5d4992d84d5d8690a6dda3d20e3
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 07f3e313a743c9d95f8baf2be7a31f16c6ca4f7e
+ms.sourcegitcommit: d1f0e0a9100548cfe0960ed2225b979cc1d7c28f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91432758"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96439479"
 ---
 # <a name="ios-designer-basics"></a>notions de base du concepteur iOS
 
 _Ce guide présente les Xamarin Designer pour iOS. Il montre comment utiliser le concepteur iOS pour disposer visuellement des contrôles, comment accéder à ces contrôles dans le code et comment modifier des propriétés._
 
+> [!WARNING]
+> Le concepteur iOS va commencer à être supprimé dans Visual Studio 2019 version 16,8 et Visual Studio 2019 pour Mac version 8,8.
+> La méthode recommandée pour créer des interfaces utilisateur iOS est directement sur un Mac exécutant Xcode. Pour plus d’informations, consultez [conception d’interfaces utilisateur avec Xcode](../storyboards/index.md). 
+
 Le Xamarin Designer pour iOS est un concepteur d’interface visuel semblable au Interface Builder de Xcode et le Android Designer. Certaines de ses nombreuses fonctionnalités incluent une intégration transparente à Visual Studio pour Windows et Mac, la modification par glisser-déplacer, une interface pour la configuration des gestionnaires d’événements et la possibilité de restituer des contrôles personnalisés.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>Spécifications
 
 Le concepteur iOS est disponible dans Visual Studio pour Mac et Visual Studio 2017 et versions ultérieures sur Windows. Dans Visual Studio pour Windows, le concepteur iOS requiert une connexion à un hôte de build Mac correctement configuré, même si Xcode n’a pas besoin d’être en cours d’exécution.
 
@@ -68,7 +72,7 @@ Certains contrôles, tels que les étiquettes contenant du texte statique, peuve
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio pour Mac](#tab/macos)
 
-Pour pouvoir accéder et manipuler le bouton dans le code, il doit avoir un identificateur unique. Fournissez un identificateur unique en sélectionnant le bouton, en ouvrant la **panneau Propriétés**et en définissant son champ de **nom** sur une valeur telle que « submitButton » :
+Pour pouvoir accéder et manipuler le bouton dans le code, il doit avoir un identificateur unique. Fournissez un identificateur unique en sélectionnant le bouton, en ouvrant la **panneau Propriétés** et en définissant son champ de **nom** sur une valeur telle que « submitButton » :
 
 [![Définition du nom d’un bouton dans le Panneau Propriétés](introduction-images/4-settingbuttonname-vsmac.png "Définition du nom d’un bouton dans le Panneau Propriétés")](introduction-images/4-settingbuttonname-vsmac-large.png#lightbox)
 
@@ -298,7 +302,7 @@ Une fois développée, la barre d’outils inférieure affiche tous les périph�
 
 Notez que la sélection d’un appareil et d’une orientation modifie uniquement la manière dont le concepteur iOS affiche un aperçu de la conception. Quelle que soit la sélection actuelle, les contraintes nouvellement ajoutées sont appliquées sur l’ensemble des appareils et des orientations, sauf si le bouton **modifier les traits** a été utilisé pour spécifier un autre élément.
 
-Lorsque les [classes de taille](~/ios/user-interface/storyboards/unified-storyboards.md#size-classes) sont [activées](~/ios/user-interface/storyboards/unified-storyboards.md#enabling-size-classes), le bouton **modifier les traits** s’affiche dans la barre d’outils inférieure développée.  En cliquant sur le bouton **modifier les traits** , vous affichez les options de création d’une variante d’interface en fonction de la classe de taille représentée par l’appareil et l’orientation sélectionnés. Penchez-vous sur les exemples suivants :
+Lorsque les [classes de taille](~/ios/user-interface/storyboards/unified-storyboards.md#size-classes) sont [activées](~/ios/user-interface/storyboards/unified-storyboards.md#enabling-size-classes), le bouton **modifier les traits** s’affiche dans la barre d’outils inférieure développée.  En cliquant sur le bouton **modifier les traits** , vous affichez les options de création d’une variante d’interface en fonction de la classe de taille représentée par l’appareil et l’orientation sélectionnés. Prenons les exemples suivants :
 
 - Si **iPhone se**  /  **portrait**, est sélectionné, menu segue fournit des options pour créer une variation d’interface pour la classe compact Width, normal height. 
 - Si **iPad Pro 9,7 "**  /  **mode**  /  **plein écran** est sélectionné, menu segue fournit des options pour créer une variation d’interface pour la largeur normale, classe de taille normale.
@@ -488,7 +492,7 @@ Pour plus d’informations sur l’utilisation des storyboards, reportez-vous à
 
 Cet exemple et d’autres guides relatifs au concepteur iOS font référence à l’utilisation des storyboards comme approche standard pour la création d’interfaces utilisateur, puisque la plupart des modèles de projet Xamarin. iOS fournissent un Storyboard par défaut.
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Ce guide fournit une introduction au concepteur iOS, décrivant ses fonctionnalités et détaillant les outils qu’il propose pour concevoir de magnifiques interfaces utilisateur.
 
