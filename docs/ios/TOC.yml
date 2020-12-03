@@ -140,9 +140,11 @@
       items:
         - name: Vue d'ensemble
           href: user-interface/index.md
-        - name: Storyboards
+        - name: Conception avec Xcode
           href: user-interface/storyboards/index.md
           items:
+            - name: Storyboards
+              href: user-interface/storyboards/indepth-storyboard.md
             - name: Storyboards unifiés
               href: user-interface/storyboards/unified-storyboards.md
         - name: Concepteur iOS
