@@ -10,12 +10,12 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7df914ae5b6de38b5179f5b1139b9c41e9559198
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 3cd4a9078a22c1f002cbc414490455c716ba884a
+ms.sourcegitcommit: 342cfbd2502ad92cadada4fa9aec669b99d7830a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93367450"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96604584"
 ---
 # <a name="visualelement-access-keys-on-windows"></a>Clés d’accès VisualElement sur Windows
 
@@ -103,7 +103,10 @@ Le résultat est que les conseils de clé d’accès peuvent être affichés en 
 
 Lorsqu’un utilisateur active une touche d’accès, en appuyant sur la touche Alt suivie de la touche d’accès, l’action par défaut pour le `VisualElement` est exécutée. Par exemple, lorsqu’un utilisateur active la touche d’accès sur un [`Switch`](xref:Xamarin.Forms.Switch) , `Switch` est basculé. Lorsqu’un utilisateur active la touche d’accès sur un [`Entry`](xref:Xamarin.Forms.Entry) , le a le `Entry` focus. Lorsqu’un utilisateur active la touche d’accès sur un [`Button`](xref:Xamarin.Forms.Button) , le gestionnaire d’événements pour l' [`Clicked`](xref:Xamarin.Forms.Button.Clicked) événement est exécuté.
 
-Pour plus d’informations sur les clés d’accès, consultez [clés d’accès](/windows/uwp/design/input/access-keys#key-tip-positioning).
+> [!WARNING]
+> Par défaut, les clés d’accès peuvent être activées lorsqu’une boîte de dialogue modale est affichée, par exemple par les `DisplayAlert` `DisplayPromptAsync` méthodes et. Toutefois, une logique personnalisée peut être écrite pour désactiver les clés d’accès dans ce scénario. Pour ce faire, vous devez gérer l' `Dispatcher.AcceleratorKeyActivated` événement dans la `MainPage` classe de votre projet UWP, et dans le gestionnaire d’événements, affectez `Handled` à la propriété des arguments d’événement la valeur `true` lorsqu’une boîte de dialogue modale est affichée.
+
+Pour plus d’informations sur les clés d’accès, consultez [clés d’accès](/windows/uwp/design/input/access-keys).
 
 ## <a name="related-links"></a>Liens connexes
 

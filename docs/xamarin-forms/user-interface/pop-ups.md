@@ -10,12 +10,12 @@ ms.date: 03/10/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5f70420690a9d81e5697c2e0bfefdf107aed9c86
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: f1caf08cf0fc2fdba6c9a9156280f9d3dafe0322
+ms.sourcegitcommit: 342cfbd2502ad92cadada4fa9aec669b99d7830a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93375419"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96604558"
 ---
 # <a name="display-pop-ups"></a>Afficher les fenêtres contextuelles
 
@@ -46,6 +46,9 @@ async void OnAlertYesNoClicked (object sender, EventArgs e)
 ```
 
 [![DisplayAlert](pop-ups-images/alert2-sml.png "Boîte de dialogue d’alerte avec deux boutons")](pop-ups-images/alert2.png#lightbox "Boîte de dialogue d’alerte avec deux boutons")
+
+> [!WARNING]
+> Par défaut, les clés d’accès UWP peuvent être activées lors de l’affichage d’une alerte. Pour plus d’informations, consultez [clés d’accès VisualElement sur Windows](~/xamarin-forms/platform/windows/visualelement-access-keys.md).
 
 ## <a name="guide-users-through-tasks"></a>Guider les utilisateurs à travers les tâches
 
@@ -109,6 +112,9 @@ string result = await DisplayPromptAsync("Question 2", "What's 5 + 5?", initialV
 Ce code affiche une réponse prédéfinie de 10, limite le nombre de caractères pouvant être entrés à 2, et affiche le clavier numérique pour les entrées utilisateur :
 
 [![Capture d’écran d’une invite modale, sur iOS et Android](pop-ups-images/keyboard-prompt.png "Invite modale")](pop-ups-images/keyboard-prompt-large.png#lightbox "Invite modale")
+
+> [!WARNING]
+> Par défaut, les clés d’accès UWP peuvent être activées lorsqu’une invite s’affiche. Pour plus d’informations, consultez [clés d’accès VisualElement sur Windows](~/xamarin-forms/platform/windows/visualelement-access-keys.md).
 
 ## <a name="related-links"></a>Liens connexes
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 3e572e22e6c02e5401ad0e2c2293d601660ac08f
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: f08f40437bc5eeaded5870ced594ed398033fe6e
+ms.sourcegitcommit: 342cfbd2502ad92cadada4fa9aec669b99d7830a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030142"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96604298"
 ---
 # <a name="building-watchos-apps-with-xamarin"></a>Création d’applications Watchos avec Xamarin
 
@@ -20,32 +20,36 @@ ms.locfileid: "73030142"
 
 <!-- watch images courtesy of http://infinitapps.com/bezel/ -->
 
-## <a name="getting-startedioswatchosget-startedindexmd"></a>[Bien démarrer](~/ios/watchos/get-started/index.md)
+## <a name="getting-started"></a>[Prise en main](~/ios/watchos/get-started/index.md)
 
 * [Présentation de Watchos](~/ios/watchos/get-started/intro-to-watchos.md).
 * [Informations sur l’installation](~/ios/watchos/get-started/installation.md).
 * Générez votre [première application Watchos](~/ios/watchos/get-started/hello-watch.md) à l’aide de Xamarin.
 
-## <a name="user-interfaceioswatchosuser-interfaceindexmd"></a>[Interface utilisateur](~/ios/watchos/user-interface/index.md)
+## <a name="user-interface"></a>[Interface utilisateur](~/ios/watchos/user-interface/index.md)
 
 Brève présentation des contrôles inclus dans l’exemple d’application du catalogue du kit de surveillance, y compris l' [image](~/ios/watchos/user-interface/image.md), le [menu](~/ios/watchos/user-interface/menu.md) [table](~/ios/watchos/user-interface/menu.md) et les contrôles [d’entrée de texte](~/ios/watchos/user-interface/text-input.md) .
 
-## <a name="platform-featuresplatformindexmd"></a>[Fonctionnalités de la plateforme](platform/index.md)
+## <a name="platform-features"></a>[Fonctionnalités de la plateforme](platform/index.md)
 
 Comment inclure des fonctionnalités de surveillanceos spécifiques telles que [des notifications](~/ios/watchos/platform/notifications.md) et des [complications](~/ios/watchos/platform/complications.md) dans des applications de surveillance.
 
-## <a name="app-fundamentalsioswatchosapp-fundamentalsindexmd"></a>[Principes de base de l’application](~/ios/watchos/app-fundamentals/index.md)
+## <a name="app-fundamentals"></a>[Notions de base des applications](~/ios/watchos/app-fundamentals/index.md)
 
 Utilisation de différents aspects de l’API Watchos, y compris l' [application parente](~/ios/watchos/app-fundamentals/parent-app.md), les [icônes](~/ios/watchos/app-fundamentals/icons.md), la [disposition](~/ios/watchos/app-fundamentals/layout.md), la [navigation](~/ios/watchos/app-fundamentals/navigation.md), les [tailles d’écran](~/ios/watchos/app-fundamentals/screen-sizes.md)et les [paramètres](~/ios/watchos/app-fundamentals/settings.md).
 
-## <a name="deployment-and-testingioswatchosdeploy-testindexmd"></a>[Déploiement et tests](~/ios/watchos/deploy-test/index.md)
+## <a name="deployment-and-testing"></a>[Déploiement et tests](~/ios/watchos/deploy-test/index.md)
 
 Liste de vérification et instructions pour déployer des appareils de test Apple Watch Apps et l’App Store.
 
-## <a name="troubleshootingioswatchostroubleshootingmd"></a>[Résolution des problèmes](~/ios/watchos/troubleshooting.md)
+## <a name="troubleshooting"></a>[Dépannage](~/ios/watchos/troubleshooting.md)
 
 Problèmes connus et solutions de contournement.
 
-## <a name="api-documentationxrefwatchkit"></a>[Documentation de l’API](xref:WatchKit)
+## <a name="xamarin-watchos-on-qa"></a>[Xamarin Watchos sur Q&A](/answers/topics/dotnet-watchos.html)
+
+Posez des questions sur la création et le déploiement d’applications Watchos avec Xamarin.
+
+## <a name="api-documentation"></a>[Documentation sur les API](xref:WatchKit)
 
 Couverture de la classe et de la méthode de l’API du kit de surveillance.

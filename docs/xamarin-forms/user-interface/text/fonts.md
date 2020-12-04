@@ -11,12 +11,12 @@ ms.custom: contperfq2
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c6fdbaf8d218044de9a4fe30ffe7e3df05619bdb
-ms.sourcegitcommit: f920ac0724f09e5c9b4f36be1995a5a17a6d9f95
+ms.openlocfilehash: 271c6c5e510a892919b5d87c4dbc38ad8e9d657d
+ms.sourcegitcommit: 342cfbd2502ad92cadada4fa9aec669b99d7830a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94591071"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96604571"
 ---
 # <a name="fonts-in-no-locxamarinforms"></a>Polices dans Xamarin.Forms
 
@@ -24,7 +24,7 @@ ms.locfileid: "94591071"
 
 Par défaut, Xamarin.Forms utilise une police système définie par chaque plateforme. Toutefois, les contrôles qui affichent du texte définissent des propriétés que vous pouvez utiliser pour modifier cette police :
 
-- `FontAttributes`, de type `FontAttributes` , qui est une énumération avec trois membres : `None` , `Build` et `Italic` . La valeur par défaut de cette propriété est `None`.
+- `FontAttributes`, de type `FontAttributes` , qui est une énumération avec trois membres : `None` , `Bold` et `Italic` . La valeur par défaut de cette propriété est `None`.
 - `FontSize`, de type `double`.
 - `FontFamily`, de type `string`.
 
@@ -107,8 +107,8 @@ Il existe plusieurs techniques qui peuvent être utilisées pour tenter de déri
 
 Des polices personnalisées peuvent être ajoutées à votre Xamarin.Forms projet partagé et utilisées par des projets de plateforme sans aucun travail supplémentaire. Pour ce faire, procédez comme suit :
 
-1. Ajoutez la police à votre Xamarin.Forms projet partagé en tant que ressource incorporée ( **action de génération : EmbeddedResource** ).
-1. Enregistrez le fichier de polices avec l’assembly, dans un fichier tel que **AssemblyInfo.cs** , à l’aide de l' `ExportFont` attribut. Un alias facultatif peut également être spécifié.
+1. Ajoutez la police à votre Xamarin.Forms projet partagé en tant que ressource incorporée (**action de génération : EmbeddedResource**).
+1. Enregistrez le fichier de polices avec l’assembly, dans un fichier tel que **AssemblyInfo.cs**, à l’aide de l' `ExportFont` attribut. Un alias facultatif peut également être spécifié.
 
 L’exemple suivant montre le Lobster-Regular police en cours d’inscription avec l’assembly, ainsi qu’un alias :
 
@@ -201,7 +201,7 @@ Pour plus d’informations sur la façon de fournir des valeurs spécifiques à 
 
 Xamarin.Forms définit des champs dans l' [`NamedSize`](xref:Xamarin.Forms.NamedSize) énumération qui représentent des tailles de police spécifiques. Le tableau suivant présente les `NamedSize` membres et leurs tailles par défaut sur iOS, Android et le plateforme Windows universelle (UWP) :
 
-| Membre | iOS | Android | UWP |
+| Membre | iOS | Téléphone | UWP |
 | --- | --- | --- | --- |
 | `Default` | 16 | 14 | 14 |
 | `Micro` | 11 | 10 | 15,667 |
