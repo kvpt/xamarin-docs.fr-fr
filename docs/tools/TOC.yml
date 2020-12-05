@@ -28,14 +28,14 @@
           href: live-player/player.md
         - name: Dépannage
           href: live-player/troubleshooting.md
-    - name: Profileur
+    - name: Profiler
       href: profiler/index.md
       items:
-        - name: Dépannage
+        - name: Résolution des problèmes
           href: profiler/troubleshooting.md
         - name: Notes de publication
           href: /xamarin/tools/profiler/release-notes/
-    - name: Workbooks
+    - name: Classeurs
       href: workbooks/index.md
       items:
         - name: Installation et configuration requise
@@ -69,7 +69,7 @@
     - name: Incorporation .NET
       href: dotnet-embedding/index.md
       items:
-        - name: Mise en route
+        - name: Prise en main
           href: dotnet-embedding/get-started/index.md
           items:
             - name: Installation
@@ -79,7 +79,7 @@
             - name: Java
               href: dotnet-embedding/get-started/java/index.md
               items:
-                - name: Android
+                - name: Téléphone
                   href: dotnet-embedding/get-started/java/android.md
             - name: Objective-C
               href: dotnet-embedding/get-started/objective-c/index.md
@@ -100,7 +100,7 @@
               href: dotnet-embedding/objective-c/best-practices.md
             - name: Plateformes
               href: dotnet-embedding/objective-c/platforms.md
-        - name: Limites
+        - name: Limitations
           href: dotnet-embedding/limitations.md
         - name: Notes de publication
           href: /xamarin/tools/dotnet-embedding/release-notes/
