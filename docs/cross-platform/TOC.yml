@@ -1,4 +1,4 @@
-- name: Multiplateforme
+- name: Système multiplateforme
   href: index.yml
   expanded: true
   items:
@@ -6,7 +6,7 @@
       href: get-started/index.md
       expanded: true
       items:
-        - name: Spécifications
+        - name: Configuration requise
           displayName: System requirements
           href: get-started/requirements.md
         - name: Cycle de vie du développement de logiciel mobile
@@ -14,7 +14,7 @@
         - name: Procédure pas à pas pour créer une application multiplateforme
           href: app-fundamentals/building-cross-platform-applications/index.md
           items:
-            - name: Vue d'ensemble
+            - name: Vue d’ensemble
               href: app-fundamentals/building-cross-platform-applications/overview.md
             - name: "Partie\_1\_: Présentation de la plateforme mobile Xamarin"
               href: app-fundamentals/building-cross-platform-applications/understanding-the-xamarin-mobile-platform.md
@@ -33,7 +33,7 @@
     - name: Partage de code
       href: app-fundamentals/index.md
       items:
-        - name: Vue d'ensemble
+        - name: Vue d’ensemble
           href: app-fundamentals/code-sharing.md
         - name: .NET Standard
           href: app-fundamentals/net-standard.md
@@ -57,21 +57,21 @@
           href: app-fundamentals/nuget-manual.md
         - name: Utiliser des bibliothèques C/C++ dans des applications multiplateformes
           href: cpp/index.md
-    - name: Langages pris en charge
+    - name: Support multilingue
       href: platform/index.md
       items:
-        - name: 'C#'
+        - name: C#
           items:
             - name: Vue d’ensemble de la prise en charge asynchrone
               href: platform/async.md
             - name: "Fonctionnalités du langage C#\_6"
               href: platform/csharp-six.md
-        - name: 'F#'
+        - name: F#
           href: platform/fsharp/index.md
           items:
-            - name: Prise en main
+            - name: Bien démarrer
               href: platform/fsharp/overview.md
-            - name: 'Exemples en F#'
+            - name: Exemples en F#
               href: platform/fsharp/samples.md
         - name: Visual Basic
           href: platform/visual-basic/index.md
@@ -99,7 +99,7 @@
         - name: TLS (Transport Layer Security)
           href: app-fundamentals/transport-layer-security.md
           items:
-            - name: Android
+            - name: Téléphone
               href: ~/android/app-fundamentals/http-stack.md?context=xamarin/cross-platform
             - name: iOS et Mac
               href: ~/cross-platform/macios/http-stack.md?context=xamarin/cross-platform
@@ -127,10 +127,10 @@
           href: desktop/porting.md
         - name: Exemples
           href: desktop/samples.md
-    - name: Résolution des problèmes
+    - name: Dépannage
       href: troubleshooting/index.md
       items:
-        - name: FAQ
+        - name: Forum aux questions
           displayName: FAQ
           href: troubleshooting/questions/index.md
           items:
@@ -138,7 +138,7 @@
               href: troubleshooting/questions/pcl-support-libraries.md
             - name: API de réflexion de bibliothèque de classes portable
               href: troubleshooting/questions/pcl-reflection.md
-            - name: 'Étude de cas PCL : Comment résoudre des problèmes liés à System.Diagnostics.Tracing pour le package NuGet Microsoft TPL Dataflow ?'
+            - name: 'Étude de cas de bibliothèque de classes portable : Comment résoudre des problèmes liés à System.Diagnostics.Tracing pour le package NuGet Microsoft TPL Dataflow ?'
               href: troubleshooting/questions/pcl-case-study.md
             - name: Comment mettre à jour NuGet ?
               href: troubleshooting/questions/nuget-update.md
@@ -172,5 +172,7 @@
               href: troubleshooting/questions/vs-config-manager.md
         - name: Mise à jour des références de composants avec NuGet
           href: troubleshooting/component-nuget.md
+    - name: Développement interplateforme sur Q&A
+      href: /answers/topics/dotnet-crossplatform-general.html
     - name: Exemples
       href: samples/index.md

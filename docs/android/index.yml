@@ -10,14 +10,14 @@ metadata:
   author: davidbritch
   ms.author: dabritch
   ms.date: 01/27/2020
-  ms.openlocfilehash: 593d8d20433222e1b18fd65b86a7586aa5560933
-  ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
+  ms.openlocfilehash: 4cd192b0580067a24b497febda2e843a7c997b62
+  ms.sourcegitcommit: 342cfbd2502ad92cadada4fa9aec669b99d7830a
   ms.translationtype: HT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 09/29/2020
-  ms.locfileid: "91454284"
+  ms.lasthandoff: 12/04/2020
+  ms.locfileid: "96604246"
 landingContent:
-- title: Prise en main
+- title: Bien démarrer
   linkLists:
   - linkListType: concept
     links:
@@ -31,6 +31,10 @@ landingContent:
       url: ~/android/get-started/hello-android-multiscreen/index.md
     - text: Xamarin pour les développeurs Java
       url: ~/android/get-started/java-developers.md
+  - linkListType: get-started
+    links:
+    - text: Xamarin.Android sur Q&A
+      url: /answers/topics/dotnet-android.html
 - title: Notions de base des applications
   linkLists:
   - linkListType: concept
@@ -53,7 +57,7 @@ landingContent:
       url: ~/android/app-fundamentals/permissions.md
     - text: Entrées tactiles et mouvements
       url: ~/android/app-fundamentals/touch/index.md
-    - text: Voir plus >
+    - text: En savoir plus >
       url: ~/android/app-fundamentals/index.md
 - title: Interface utilisateur
   linkLists:
@@ -63,11 +67,11 @@ landingContent:
       url: ~/android/user-interface/android-designer/index.md
     - text: Thème matériau
       url: ~/android/user-interface/material-theme.md
-    - text: User Profile
+    - text: Profil utilisateur
       url: ~/android/user-interface/user-profile.md
     - text: Écran de démarrage
       url: ~/android/user-interface/splash-screen.md
-    - text: Dispositions
+    - text: Mises en forme
       url: ~/android/user-interface/layouts/index.md
     - text: Contrôles
       url: ~/android/user-interface/controls/index.md
@@ -93,7 +97,7 @@ landingContent:
       url: ~/android/platform/android-job-scheduler.md
     - text: Cartes et emplacement
       url: ~/android/platform/maps-and-location/index.md
-    - text: Voir plus >
+    - text: En savoir plus >
       url: ~/android/platform/index.md
 - title: Xamarin.Essentials
   linkLists:
@@ -101,7 +105,7 @@ landingContent:
     links:
     - text: À propos de
       url: ~/essentials/index.md?context=xamarin/android
-    - text: Prise en main
+    - text: Commencer
       url: ~/essentials/get-started.md?context=xamarin/android
     - text: Prise en charge des plateformes et des fonctionnalités
       url: ~/essentials/platform-feature-support.md?context=xamarin/android
@@ -145,7 +149,7 @@ landingContent:
       url: ~/android/deploy-test/signing/index.md
     - text: Publier une application
       url: ~/android/deploy-test/publishing/index.md
-    - text: Voir plus >
+    - text: En savoir plus >
       url: ~/android/deploy-test/index.md
 - title: Éléments internes et concepts avancés
   linkLists:
@@ -165,7 +169,7 @@ landingContent:
   linkLists:
   - linkListType: concept
     links:
-    - text: Prise en main
+    - text: Bien démarrer
       url: ~/android/wear/get-started/index.md
     - text: Interface utilisateur
       url: ~/android/wear/user-interface/index.md

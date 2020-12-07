@@ -41,7 +41,7 @@ items:
             href: ~/get-started/quickstarts/styling.md
           - name: Immersion
             href: ~/get-started/quickstarts/deepdive.md
-      - name: Tutoriels
+      - name: Didacticiels
         href: ~/get-started/tutorials/index.yml
         items:
           - name: Disposition de pile
@@ -145,6 +145,8 @@ items:
             href: xaml/field-modifiers.md
           - name: Chargement de XAML lors de l’exécution
             href: xaml/runtime-load.md
+      - name: Xamarin.Forms XAML sur Q&A
+        href: /answers/topics/dotnet-xamarinforms-xaml.html
   - name: Notions de base des applications
     items:
       - name: Vue d'ensemble
@@ -922,6 +924,8 @@ items:
         href: /xamarin/essentials/release-notes/
       - name: Résolution des problèmes
         href: ~/essentials/troubleshooting.md?context=xamarin/xamarin-forms
+      - name: Xamarin.Essentials sur Q&A
+        href: /answers/topics/dotnet-xamarinessentials.html
   - name: Données et Azure Cloud Services
     items:
       - name: Vue d'ensemble
@@ -1030,6 +1034,8 @@ items:
             href: troubleshooting/questions/android-linkassemblies-error.md
           - name: "Pourquoi mon projet Android Xamarin.Forms.Maps échoue avec COMPILETODALVIK\_: ERREUR INATTENDUE DE NIVEAU SUPÉRIEUR\_?"
             href: troubleshooting/questions/maps-compiletodalvik-error.md
+  - name: Xamarin.Forms sur Q&A
+    href: /answers/topics/dotnet-xamarinforms.html
   - name: Notes de publication
     href: /xamarin/xamarin-forms/release-notes/
   - name: Exemples

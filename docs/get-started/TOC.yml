@@ -1,4 +1,4 @@
-- name: Découvrir
+- name: Bien démarrer
   href: index.yml
   expanded: true
   items:
@@ -37,17 +37,17 @@
           href: quickstarts/multi-page.md
         - name: Base de données
           href: quickstarts/database.md
-        - name: Style
+        - name: Styles
           href: quickstarts/styling.md
         - name: Immersion
           href: quickstarts/deepdive.md
-    - name: Tutoriels
+    - name: Didacticiels
       href: tutorials/index.yml
       expanded: true
       items:
         - name: Disposition de pile
           href: tutorials/stacklayout/index.yml
-        - name: Étiquette
+        - name: Etiquette
           href: tutorials/label/index.yml
         - name: Bouton
           href: tutorials/button/index.yml
@@ -63,11 +63,11 @@
           href: tutorials/listview/index.yml
         - name: Fenêtres contextuelles
           href: tutorials/pop-ups/index.yml
-        - name: Cycle de vie de l'application
+        - name: Cycle de vie d’application
           href: tutorials/app-lifecycle/index.yml
         - name: Base de données locale
           href: tutorials/local-database/index.yml
-        - name: SERVICES WEB
+        - name: Services web
           href: tutorials/web-service/index.yml
     - name: En savoir plus sur Xamarin
       expanded: true
@@ -82,3 +82,5 @@
           href: ~/xamarin-forms/data-cloud/index.yml
     - name: Conseils de développement
       href: ~/cross-platform/index.yml
+    - name: Xamarin.Forms sur Q&A
+      href: /answers/topics/dotnet-xamarinforms.html

@@ -483,6 +483,8 @@
           href: /xamarin/essentials/release-notes/
         - name: Résolution des problèmes
           href: ~/essentials/troubleshooting.md?context=xamarin/android
+        - name: Xamarin.Essentials sur Q&A
+          href: /answers/topics/dotnet-xamarinessentials.html
     - name: Services de données et cloud
       href: data-cloud/index.md
       items:
@@ -694,6 +696,8 @@
               href: wear/deploy-test/debug-on-device.md
             - name: Packaging
               href: wear/deploy-test/packaging.md
+    - name: Xamarin.Android sur Q&A
+      href: /answers/topics/dotnet-android.html
     - name: Notes de publication
       href: /xamarin/android/release-notes/
     - name: Exemples
