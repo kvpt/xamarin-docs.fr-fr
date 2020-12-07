@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/05/2017
-ms.openlocfilehash: 07b39f87b6eeb0fc24486be83573a721abc07966
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: a54a0012f7b5ed3d147242e3ee02b2ed6fe890bf
+ms.sourcegitcommit: 0a41c4aa6db72cd2d0cecbe0dc893024cecac71d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572401"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96749876"
 ---
 # <a name="exception-marshaling-in-xamarinios"></a>Regroupement d’exceptions dans Xamarin. iOS
 
@@ -36,11 +36,11 @@ L’action par défaut consiste à ne rien faire. Pour l’exemple ci-dessus, ce
 
 ### <a name="broken-code"></a>Code endommagé
 
-Prenons l’exemple de code suivant :
+Considérez l’exemple de code suivant :
 
 ``` csharp
-var dict = new NSMutableDictionary ();
-dict.LowLevelSetObject (IntPtr.Zero, IntPtr.Zero); 
+var dict = new NSMutableDictionary ();
+dict.LowlevelSetObject (IntPtr.Zero, IntPtr.Zero); 
 ```
 
 Cela lèvera un NSInvalidArgumentException objective-C en code natif :
@@ -98,10 +98,10 @@ Un autre problème se produit ici, car le runtime mono ne sait pas comment déro
 Lorsque le rappel d’exception objective-C Xamarin. iOS est appelé, la pile se présente comme suit :
 
 ```
- 0 libxamarin-debug.dylib   exception_handler(exc=name: "NSInvalidArgumentException" - reason: "*** setObjectForKey: key cannot be nil")
+ 0 libxamarin-debug.dylib   exception_handler(exc=name: "NSInvalidArgumentException" - reason: "**_ setObjectForKey: key cannot be nil")
  1 CoreFoundation           __handleUncaughtException + 809
  2 libobjc.A.dylib          _objc_terminate() + 100
- 3 libc++abi.dylib          std::__terminate(void (*)()) + 14
+ 3 libc++abi.dylib          std::__terminate(void (_)()) + 14
  4 libc++abi.dylib          __cxa_throw + 122
  5 libobjc.A.dylib          objc_exception_throw + 337
  6 CoreFoundation           -[__NSDictionaryM setObject:forKey:] + 1015
@@ -217,7 +217,7 @@ Cela est également assez courant lors du débogage d’applications Xamarin. Ma
 
 Pour résumer, le fait d’avoir le runtime objective-C ou les frames de déroulement d’exécution mono qu’ils ne sont pas programmés pour gérer peut entraîner des comportements non définis, tels que des incidents, des fuites de mémoire et d’autres types de comportements imprévisibles (mis).
 
-## <a name="solution"></a>Solution
+## <a name="solution"></a>Solution
 
 Dans Xamarin. iOS 10 et Xamarin. Mac 2,10, nous avons ajouté la prise en charge de l’interception des exceptions managées et objective-C sur n’importe quelle limite managée-native, et de la conversion de cette exception en l’autre type.
 
@@ -303,7 +303,7 @@ Runtime.MarshalObjectiveCException += (object sender, MarshalObjectiveCException
 
 <a name="build_time_flags"></a>
 
-## <a name="build-time-flags"></a>Indicateurs au moment de la génération
+## <a name="build-time-flags"></a>Indicateurs de Build-Time
 
 Il est possible de passer les options suivantes à **mTouch** (pour les applications Xamarin. IOS) et **MMP** (pour les applications Xamarin. Mac), qui déterminent si l’interception des exceptions est activée et définit l’action par défaut qui doit se produire :
 
@@ -325,12 +325,12 @@ Il est possible de passer les options suivantes à **mTouch** (pour les applicat
 
 L' `disable` option désactivera _principalement_ l’interception, sauf que nous intercepterons toujours les exceptions quand elles n’ajouteront pas de surcharge d’exécution. Les événements de marshaling sont toujours déclenchés pour ces exceptions, avec le mode par défaut étant le mode par défaut pour la plateforme en cours d’exécution.
 
-## <a name="limitations"></a>Limites
+## <a name="limitations"></a>Limitations
 
 Nous interceptons uniquement les appels P/Invoke à la `objc_msgSend` famille de fonctions quand vous tentez d’intercepter des exceptions objective-C. Cela signifie qu’un appel P/Invoke à une autre fonction C, qui lève ensuite des exceptions objective-C, s’exécutera toujours dans le comportement ancien et non défini (cela peut être amélioré à l’avenir).
 
 [2]: https://developer.apple.com/reference/foundation/1409609-nssetuncaughtexceptionhandler?language=objc
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Marshaling d’exceptions (exemple)](https://github.com/xamarin/mac-ios-samples/tree/master/ExceptionMarshaling)

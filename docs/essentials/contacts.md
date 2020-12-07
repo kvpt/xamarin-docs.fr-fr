@@ -8,12 +8,12 @@ ms.date: 09/22/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: bd239a8dcf192c0bdbc6265769208f4fc989bbbe
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 19c9929706b7cf285b22562b094d2de2a25ff77d
+ms.sourcegitcommit: 0a41c4aa6db72cd2d0cecbe0dc893024cecac71d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91434485"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96749889"
 ---
 # <a name="no-locxamarinessentials-contacts"></a>Xamarin.Essentials: Contacts
 
@@ -21,7 +21,7 @@ La classe **contacts** permet à un utilisateur de choisir un contact et de réc
 
 ![API de la version préliminaire](~/media/shared/preview.png)
 
-## <a name="get-started"></a>Prise en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -64,7 +64,7 @@ Dans les `Package.appxmanifest` **fonctionnalités** sous, assurez-vous que la `
 
 -----
 
-## <a name="picking-a-contact"></a>Sélection d’un contact
+## <a name="pick-a-contact"></a>Choisir un contact
 
 En appelant `Contacts.PickContactAsync()` la boîte de dialogue contact s’affiche et permet à l’utilisateur de recevoir des informations sur l’utilisateur.
 
@@ -77,17 +77,61 @@ try
     if(contact == null)
         return;
 
-    var name = contact.Name;
-    var contactType = contact.ContactType; // Unknown, Personal, Work
-    var numbers = contact.Numbers; // List of phone numbers
-    var emails = contact.Emails; // List of email addresses 
-    
+    var id = contact.Id;
+    var namePrefix = contact.NamePrefix;
+    var givenName = contact.GivenName;
+    var middleName = contact.MiddleName;
+    var familyName = contact.FamilyName;
+    var nameSuffix = contact.NameSuffix;
+    var displayName = contact.DisplayName;
+    var phones = contact.Phones; // List of phone numbers
+    var emails = contact.Emails; // List of email addresses
 }
 catch (Exception ex)
 {
     // Handle exception here.
 }
 ```
+
+## <a name="get-all-contacts"></a>Récupérer tous les contacts
+
+```csharp
+ObservableCollection<Contact> contactsCollect = new ObservableCollection<Contact>();
+
+try
+{
+    // cancellationToken parameter is optional
+    var cancellationToken = default(CancellationToken);
+    var contacts = await Contacts.GetAllAsync(cancellationToken);
+
+    if (contacts == null)
+        return;
+
+    foreach (var contact in contacts)
+        contactsCollect.Add(contact);
+}
+catch (Exception ex)
+{
+    // Handle exception here.
+}
+```
+
+## <a name="platform-differences"></a>Différences de plateforme
+
+# <a name="android"></a>[Android](#tab/android)
+
+- Le `cancellationToken` paramètre de la `GetAllAsync` méthode est utilisé uniquement sur UWP.
+
+# <a name="ios"></a>[iOS](#tab/ios)
+
+- Le `cancellationToken` paramètre de la `GetAllAsync` méthode est utilisé uniquement sur UWP.
+- La plateforme iOS ne prend pas en charge la `DisplayName` propriété en mode natif, donc la `DisplayName` valeur est construite comme « GivenName familyName ».
+
+# <a name="uwp"></a>[UWP](#tab/uwp)
+
+Aucune différence entre les plateformes.
+
+-----
 
 
 ## <a name="api"></a>API
