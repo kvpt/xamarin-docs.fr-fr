@@ -10,12 +10,12 @@ ms.date: 03/10/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f1caf08cf0fc2fdba6c9a9156280f9d3dafe0322
-ms.sourcegitcommit: 342cfbd2502ad92cadada4fa9aec669b99d7830a
+ms.openlocfilehash: 4af29f2df797aea4bbd0655fc0564e289f2c2a3b
+ms.sourcegitcommit: 1d19ee87e317a72de05f3f0fa73dfcaeb767cbd1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96604558"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96755017"
 ---
 # <a name="display-pop-ups"></a>Afficher les fenêtres contextuelles
 
@@ -45,10 +45,10 @@ async void OnAlertYesNoClicked (object sender, EventArgs e)
 }
 ```
 
-[![DisplayAlert](pop-ups-images/alert2-sml.png "Boîte de dialogue d’alerte avec deux boutons")](pop-ups-images/alert2.png#lightbox "Boîte de dialogue d’alerte avec deux boutons")
+[![Boîte de dialogue d’alerte avec deux boutons](pop-ups-images/alert2-sml.png)](pop-ups-images/alert2.png#lightbox)
 
 > [!WARNING]
-> Par défaut, les clés d’accès UWP peuvent être activées lors de l’affichage d’une alerte. Pour plus d’informations, consultez [clés d’accès VisualElement sur Windows](~/xamarin-forms/platform/windows/visualelement-access-keys.md).
+> Par défaut, sur UWP, lorsqu’une alerte est affichée, toutes les clés d’accès définies sur la page derrière l’alerte peuvent toujours être activées. Pour plus d’informations, consultez [clés d’accès VisualElement sur Windows](~/xamarin-forms/platform/windows/visualelement-access-keys.md).
 
 ## <a name="guide-users-through-tasks"></a>Guider les utilisateurs à travers les tâches
 
@@ -111,10 +111,10 @@ string result = await DisplayPromptAsync("Question 2", "What's 5 + 5?", initialV
 
 Ce code affiche une réponse prédéfinie de 10, limite le nombre de caractères pouvant être entrés à 2, et affiche le clavier numérique pour les entrées utilisateur :
 
-[![Capture d’écran d’une invite modale, sur iOS et Android](pop-ups-images/keyboard-prompt.png "Invite modale")](pop-ups-images/keyboard-prompt-large.png#lightbox "Invite modale")
+[![Capture d’écran d’une invite modale facultative, sur iOS et Android](pop-ups-images/keyboard-prompt.png "Invite modale")](pop-ups-images/keyboard-prompt-large.png#lightbox "Invite modale")
 
 > [!WARNING]
-> Par défaut, les clés d’accès UWP peuvent être activées lorsqu’une invite s’affiche. Pour plus d’informations, consultez [clés d’accès VisualElement sur Windows](~/xamarin-forms/platform/windows/visualelement-access-keys.md).
+> Par défaut, sur UWP, quand une invite s’affiche, toutes les clés d’accès définies sur la page derrière l’invite peuvent toujours être activées. Pour plus d’informations, consultez [clés d’accès VisualElement sur Windows](~/xamarin-forms/platform/windows/visualelement-access-keys.md).
 
 ## <a name="related-links"></a>Liens connexes
 
