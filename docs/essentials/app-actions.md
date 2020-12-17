@@ -8,12 +8,12 @@ ms.date: 09/22/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: add9143ff1a9546d3d2c8cfb851f621083bf356d
-ms.sourcegitcommit: 744f977b0595f489c592e29c8a3ba548fde02b6f
+ms.openlocfilehash: e85206d8e48db1a6f168c6f89ca494519a0fe95c
+ms.sourcegitcommit: 4bb12419da2547c0afc17903ae46052b29cd0dc4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91414765"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97628181"
 ---
 # <a name="no-locxamarinessentials-app-actions"></a>Xamarin.Essentials: Actions de l’application
 
@@ -21,7 +21,7 @@ La classe **AppActions** vous permet de créer et de répondre aux raccourcis d�
 
 ![API de la version préliminaire](~/media/shared/preview.png)
 
-## <a name="get-started"></a>Bien démarrer
+## <a name="get-started"></a>Prendre en main
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -29,7 +29,18 @@ Pour accéder à la fonctionnalité **AppActions** , la configuration spécifiqu
 
 # <a name="android"></a>[Android](#tab/android)
 
-Dans la, `MainActivity` Ajoutez la logique suivante pour gérer les actions :
+Ajoutez le filtre d’intention à votre `MainActivity` classe :
+
+```csharp
+[IntentFilter(
+        new[] { Xamarin.Essentials.Platform.Intent.ActionAppAction },
+        Categories = new[] { Intent.CategoryDefault })]
+public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
+{
+    ...
+```
+
+Ajoutez ensuite la logique suivante pour gérer les actions :
 
 ```csharp
 protected override void OnResume()
