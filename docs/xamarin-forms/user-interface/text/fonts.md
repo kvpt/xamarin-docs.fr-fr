@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/04/2020
-ms.custom: contperfq2
+ms.custom: contperf-fy21q2
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 271c6c5e510a892919b5d87c4dbc38ad8e9d657d
-ms.sourcegitcommit: 342cfbd2502ad92cadada4fa9aec669b99d7830a
+ms.openlocfilehash: 146c67655c420611b2a0901efa6cc22ef780713e
+ms.sourcegitcommit: c5e72d2ca4152b62ab6583f0dbe84b3ba29d8283
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96604571"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97677528"
 ---
 # <a name="fonts-in-no-locxamarinforms"></a>Polices dans Xamarin.Forms
 
@@ -201,7 +201,7 @@ Pour plus d’informations sur la façon de fournir des valeurs spécifiques à 
 
 Xamarin.Forms définit des champs dans l' [`NamedSize`](xref:Xamarin.Forms.NamedSize) énumération qui représentent des tailles de police spécifiques. Le tableau suivant présente les `NamedSize` membres et leurs tailles par défaut sur iOS, Android et le plateforme Windows universelle (UWP) :
 
-| Membre | iOS | Téléphone | UWP |
+| Membre | iOS | Android | UWP |
 | --- | --- | --- | --- |
 | `Default` | 16 | 14 | 14 |
 | `Micro` | 11 | 10 | 15,667 |
