@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsConvertisseurs rapides
+title: Xamarin.Forms Convertisseurs rapides
 description: Cet article présente les convertisseurs rapides, qui réduisent les coûts d’inflation et de rendu d’un Xamarin.Forms contrôle sur Android en aplatint la hiérarchie des contrôles natifs résultante.
 ms.prod: xamarin
 ms.assetid: 097f87f2-d891-4f3c-be02-fb7d195a481a
@@ -10,14 +10,14 @@ ms.date: 05/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 29f79e4aed0314fe1590fa26c8e4b052e14a94d6
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: c9d3b023acc3c38bf1ad056a140145680fbbba10
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84198062"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97939795"
 ---
-# <a name="xamarinforms-fast-renderers"></a>Xamarin.FormsConvertisseurs rapides
+# <a name="no-locxamarinforms-fast-renderers"></a>Xamarin.Forms Convertisseurs rapides
 
 Traditionnellement, la plupart des convertisseurs de contrôle d’origine sur Android sont composés de deux vues :
 
@@ -34,7 +34,6 @@ Les convertisseurs rapides sont disponibles pour les contrôles suivants dans Xa
 - [`Frame`](xref:Xamarin.Forms.Frame)
 - [`Image`](xref:Xamarin.Forms.Image)
 - [`Label`](xref:Xamarin.Forms.Label)
-- [`MediaElement`](xref:Xamarin.Forms.MediaElement)
 
 Fonctionnellement, ces convertisseurs rapides ne sont pas différents des convertisseurs hérités. À partir de Xamarin.Forms 4,0, toutes les applications `FormsAppCompatActivity` qui ciblent utiliseront ces convertisseurs rapides par défaut. Les convertisseurs pour tous les nouveaux contrôles, y compris [`ImageButton`](xref:Xamarin.Forms.ImageButton) et [`CollectionView`](xref:Xamarin.Forms.CollectionView) , utilisent l’approche de rendu rapide.
 

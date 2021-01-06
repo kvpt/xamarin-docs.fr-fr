@@ -10,12 +10,12 @@ ms.date: 11/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 05b7821a08140dda411842c5f978be2027fcc033
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: f37006e15ad4cc2c6c8d03f3c88c1c8f57fe4fd5
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93373970"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940068"
 ---
 # <a name="summary-of-chapter-25-page-varieties"></a>Résumé du chapitre 25. Variétés de page
 
@@ -40,7 +40,7 @@ Il existe deux façons fondamentales de basculer entre ces deux pages :
 - *fractionnement* où le maître et le détail sont côte à côte
 - *menu segue* où la page de détails couvre ou partiellement la page maître
 
-Il existe plusieurs variantes de l’approche *menu segue* ( *diapositive* , *chevauchement* et *échange* ), mais celles-ci dépendent généralement de la plateforme. Vous pouvez affecter [`MasterDetailBehavior`](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior) à la propriété de `MasterDetailPage` la valeur un membre de l' [`MasterBehavior`](xref:Xamarin.Forms.MasterBehavior) énumération :
+Il existe plusieurs variantes de l’approche *menu segue* (*diapositive*, *chevauchement* et *échange*), mais celles-ci dépendent généralement de la plateforme. Vous pouvez affecter [`MasterDetailBehavior`](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior) à la propriété de `MasterDetailPage` la valeur un membre de l' [`MasterBehavior`](xref:Xamarin.Forms.MasterBehavior) énumération :
 
 - [`Default`](xref:Xamarin.Forms.MasterBehavior.Default)
 - [`Split`](xref:Xamarin.Forms.MasterBehavior.Split)
@@ -122,5 +122,5 @@ Toutefois, cela pose problème sur iOS. Seuls quelques éléments peuvent être 
 
 - [Chapitre 25 texte intégral (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch25-Apr2016.pdf)
 - [Chapitre 25 exemples](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25)
-- [Page maître-détail](~/xamarin-forms/app-fundamentals/navigation/master-detail-page.md)
+- [Page maître-détail](~/xamarin-forms/app-fundamentals/navigation/flyoutpage.md)
 - [Page à onglets](~/xamarin-forms/app-fundamentals/navigation/tabbed-page.md)

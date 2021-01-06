@@ -10,12 +10,12 @@ ms.date: 05/06/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9b22b46cb5452e558328c383ed97e66a60cfc166
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 05de8c554864108b90433c335074c61fc3def8cf
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93374132"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97939951"
 ---
 # <a name="no-locxamarinforms-webview"></a>Xamarin.Forms WebView
 
@@ -25,7 +25,7 @@ ms.locfileid: "93374132"
 
 ![Dans l’Explorateur d’applications](webview-images/in-app-browser.png)
 
-## <a name="content"></a>Contenu
+## <a name="content"></a>Content
 
 `WebView` prend en charge les types de contenu suivants :
 
@@ -175,7 +175,7 @@ Les implémentations de l’interface pour chaque plateforme doivent ensuite êt
 
 #### <a name="ios"></a>iOS
 
-Sur iOS, le contenu Web doit se trouver dans le répertoire racine ou le répertoire de **ressources** du projet à l’aide de l’action de génération *BundleResource* , comme illustré ci-dessous :
+Sur iOS, le contenu Web doit se trouver dans le répertoire racine ou le répertoire de **ressources** du projet à l’aide de l’action de génération *BundleResource*, comme illustré ci-dessous :
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
@@ -329,7 +329,7 @@ public partial class InAppBrowserXaml : ContentPage
 }
 ```
 
-Et voilà !
+C’est tout !
 
 ![Boutons de navigation WebView](webview-images/in-app-browser.png)
 
@@ -417,6 +417,9 @@ Une application peut revenir à l’utilisation de la `UIWebView` classe IOS pou
 // Opt-in to using UIWebView instead of WkWebView.
 [assembly: ExportRenderer(typeof(Xamarin.Forms.WebView), typeof(Xamarin.Forms.Platform.iOS.WebViewRenderer))]
 ```
+
+> [!NOTE]
+> Dans Xamarin.Forms 5,0, la `WebViewRenderer` classe a été supprimée. Par conséquent, Xamarin.Forms 5,0 ne contient pas de référence au `UIWebView` contrôle.
 
 `WebView` sur Android, par défaut, est environ aussi rapide que le navigateur intégré.
 
@@ -552,6 +555,9 @@ Dans cet exemple, un seul `Cookie` est ajouté à l' `CookieContainer` objet, qu
 ## <a name="uiwebview-deprecation-and-app-store-rejection-itms-90809"></a>Désapprobation UIWebView et rejet de l’App Store (ITMS-90809)
 
 À compter du 2020 avril, [Apple rejette les applications](https://developer.apple.com/news/?id=12232019b) qui utilisent toujours l’API déconseillée `UIWebView` . Si Xamarin.Forms a été remplacé `WKWebView` par par défaut, il existe toujours une référence à l’ancien SDK dans les Xamarin.Forms fichiers binaires. Le comportement actuel de l' [éditeur de liens iOS](~/ios/deploy-test/linker.md) ne supprime pas cela et, par conséquent, l’API déconseillée `UIWebView` semblera toujours être référencée à partir de votre application lorsque vous la soumettez à l’App Store.
+
+> [!IMPORTANT]
+> Dans Xamarin.Forms 5,0, la `WebViewRenderer` classe a été supprimée. Par conséquent, Xamarin.Forms 5,0 ne contient pas de référence au `UIWebView` contrôle.
 
 Une version préliminaire de l’éditeur de liens est disponible pour résoudre ce problème. Pour activer la préversion, vous devrez fournir un argument supplémentaire `--optimize=experimental-xforms-product-type` à l’éditeur de liens.
 

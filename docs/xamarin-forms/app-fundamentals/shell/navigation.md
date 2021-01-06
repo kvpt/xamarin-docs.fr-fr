@@ -6,16 +6,16 @@ ms.assetid: 57079D89-D1CB-48BD-9FEE-539CEC29EABB
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/02/2020
+ms.date: 10/06/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f29bacf3546b2148a3d97c3c1ccaa44e02872be8
-ms.sourcegitcommit: f2942b518f51317acbb263be5bc0c91e66239f50
+ms.openlocfilehash: 5fb215ea92035965b48fff85ef4ccc70edc65fdf
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94590309"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97939171"
 ---
 # <a name="no-locxamarinforms-shell-navigation"></a>Xamarin.Forms Navigation dans le shell
 
@@ -27,6 +27,7 @@ Xamarin.Forms L’interpréteur de commandes comprend une expérience de navigat
 
 - `BackButtonBehavior`, de type `BackButtonBehavior` : une propriété qui définit le comportement du bouton Précédent.
 - `CurrentItem`, de type `FlyoutItem` ; l’élément `FlyoutItem` sélectionné.
+- `CurrentPage`, de type `Page` , la page actuellement affichée.
 - `CurrentState`, de type `ShellNavigationState` : l’état actuel de la navigation de l’élément `Shell`.
 - `Current`, de type `Shell` : un alias converti pour `Application.Current.MainPage`.
 
@@ -41,7 +42,7 @@ La navigation est effectuée en appelant la méthode `GoToAsync` à partir de la
 
 La navigation est effectuée dans une application Shell en spécifiant un URI vers lequel naviguer. Les URI de navigation peuvent avoir trois composants :
 
-- Un *itinéraire* , qui définit le chemin d’accès au contenu existant dans le cadre de la hiérarchie visuelle Shell.
+- Un *itinéraire*, qui définit le chemin d’accès au contenu existant dans le cadre de la hiérarchie visuelle Shell.
 - *Page*. Les pages qui n’existent pas dans la hiérarchie visuelle Shell peuvent être transmises en mode push à la pile de navigation depuis n’importe où dans une application Shell. Par exemple, une page de détails d’un élément ne sera pas définie dans la hiérarchie visuelle Shell, mais elle peut être transmise en mode push à la pile de navigation selon les besoins.
 - Un ou plusieurs *paramètres de requête*. Les paramètres de requête sont des paramètres qui peuvent être transmis à la page de destination lors de la navigation.
 
@@ -227,8 +228,8 @@ Les formats d’itinéraires suivants ne sont pas valides :
 
 | Format | Explication |
 | --- | --- |
-| *route* ou / *route* | Les itinéraires dans la hiérarchie visuelle ne peuvent pas être transmis en mode push à la pile de navigation. |
-| //*page* ou /// *page* | Actuellement, les itinéraires globaux ne peuvent pas représenter la seule page de la pile de navigation. Par conséquent, l’acheminement absolu pour les itinéraires globaux n’est pas pris en charge. |
+| *route* ou /*route* | Les itinéraires dans la hiérarchie visuelle ne peuvent pas être transmis en mode push à la pile de navigation. |
+| //*page* ou ///*page* | Actuellement, les itinéraires globaux ne peuvent pas représenter la seule page de la pile de navigation. Par conséquent, l’acheminement absolu pour les itinéraires globaux n’est pas pris en charge. |
 
 L’utilisation d’un de ces formats d’acheminement lève une exception `Exception`.
 
@@ -282,7 +283,7 @@ La classe `Shell` définit un événement `Navigating` déclenché quand la navi
 | `CanCancel`  | `bool` | Valeur indiquant s’il est possible d’annuler la navigation. |
 | `Cancelled`  | `bool` | Valeur indiquant si la navigation a été annulée. |
 
-En outre, la classe `ShellNavigatingEventArgs` fournit une méthode `Cancel` qui peut être utilisée pour annuler la navigation.
+En outre, la `ShellNavigatingEventArgs` classe fournit une `Cancel` méthode qui peut être utilisée pour annuler la navigation et une `GetDeferral` méthode qui retourne un `ShellNavigatingDeferral` jeton qui peut être utilisé pour terminer la navigation. Pour plus d’informations sur le report de navigation, consultez [Report de navigation](#navigation-deferral).
 
 La classe `Shell` définit également un événement `Navigated` déclenché quand la navigation est terminée. L’objet `ShellNavigatedEventArgs` qui accompagne l’événement `Navigating` fournit les propriétés suivantes :
 
@@ -316,6 +317,35 @@ void OnNavigating(object sender, ShellNavigatingEventArgs e)
     }
 }
 ```
+
+## <a name="navigation-deferral"></a>Report de navigation
+
+La navigation dans le Shell peut être interceptée et terminée ou annulée en fonction du choix de l’utilisateur. Pour ce faire, vous pouvez substituer la `OnNavigating` méthode dans votre sous- `Shell` classe et appeler la `GetDeferral` méthode sur l' `ShellNavigatingEventArgs` objet. Cette méthode retourne un `ShellNavigatingDeferral` jeton qui a une `Complete` méthode, qui peut être utilisée pour terminer la requête de navigation :
+
+```csharp
+public MyShell : Shell
+{
+    // ...
+    protected override async void OnNavigating(ShellNavigatingEventArgs args)
+    {
+        base.OnNavigating(args);
+
+        ShellNavigatingDeferral token = args.GetDeferral();
+        var result = await DisplayActionSheet("Navigate?", "Cancel", "Yes", "No");
+
+        if (result != "Yes")
+        {
+            args.Cancel();
+        }
+        token.Complete();
+    }    
+}
+```
+
+Dans cet exemple, une feuille d’action s’affiche pour inviter l’utilisateur à terminer la demande de navigation, ou à l’annuler. La navigation est annulée en appelant la `Cancel` méthode sur l' `ShellNavigatingEventArgs` objet. La navigation est effectuée en appelant la `Complete` méthode sur le `ShellNavigatingDeferral` jeton qui a été récupéré par la `GetDeferral` méthode sur l' `ShellNavigatingEventArgs` objet.
+
+> [!IMPORTANT]
+> La `GoToAsync` méthode lève une `InvalidOperationException` si un utilisateur tente de naviguer pendant qu’un report de navigation est en attente.
 
 ## <a name="pass-data"></a>Passer des données
 

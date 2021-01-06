@@ -1,6 +1,6 @@
 ---
-title: Xamarin.FormsDéplacement
-description: Ce guide explique comment effectuer une navigation dans les Xamarin.Forms applications. Xamarin.Formsfournit un certain nombre d’expériences de navigation entre les pages différentes, en fonction du type de page utilisé.
+title: Xamarin.Forms Déplacement
+description: Ce guide explique comment effectuer une navigation dans les Xamarin.Forms applications. Xamarin.Forms fournit un certain nombre d’expériences de navigation entre les pages différentes, en fonction du type de page utilisé.
 ms.prod: xamarin
 ms.assetid: BC5D0C6C-D5A9-4B12-A492-ED1F570CEC87
 ms.technology: xamarin-forms
@@ -10,18 +10,18 @@ ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 65aa0f060e4d48834017a334d69b2f21645825f3
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: d976048b15c1fc545e1fbdc6c911e3cb4542d4f2
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937187"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97939093"
 ---
-# <a name="xamarinforms-navigation"></a>Xamarin.FormsDéplacement
+# <a name="no-locxamarinforms-navigation"></a>Xamarin.Forms Déplacement
 
-_Xamarin.Formsfournit un certain nombre d’expériences de navigation entre les pages différentes, en fonction du type de page utilisé._
+_Xamarin.Forms fournit un certain nombre d’expériences de navigation entre les pages différentes, en fonction du type de page utilisé._
 
-![Xamarin.FormsTypes de pages](images/page-types.png)
+![::: No-Loc (Xamarin. Forms) ::: types de page](images/page-types.png)
 
 Les Xamarin.Forms applications Shell utilisent également une expérience de navigation basée sur un URI qui n’applique pas de hiérarchie de navigation définie. Pour plus d’informations, consultez navigation dans le [ Xamarin.Forms Shell](~/xamarin-forms/app-fundamentals/shell/navigation.md).
 
@@ -37,10 +37,10 @@ Le Xamarin.Forms [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) se compose d’un
 
 Xamarin.Forms [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) Est une page que les utilisateurs peuvent balayer de côté à côté pour naviguer dans les pages de contenu, comme une galerie.
 
-## <a name="masterdetailpage"></a>[MasterDetailPage](master-detail-page.md)
+## <a name="flyoutpage"></a>[FlyoutPage](flyoutpage.md)
 
-Xamarin.Forms [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) Est une page qui gère deux pages d’informations associées : une page maître qui présente des éléments et une page de détails qui présente des détails sur les éléments de la page maître.
+Xamarin.Forms [`FlyoutPage`](xref:Xamarin.Forms.FlyoutPage) Est une page qui gère deux pages d’informations associées : une page de menu volant qui présente des éléments et une page de détails qui présente des détails sur les éléments de la page du menu volant.
 
 ## <a name="modal-pages"></a>[Pages modales](modal.md)
 
-Xamarin.Formsprend également en charge les pages modales. Une page modale encourage les utilisateurs à effectuer une tâche autonome et ne peut pas être quittée tant que la tâche n’est pas terminée ou annulée.
+Xamarin.Forms prend également en charge les pages modales. Une page modale encourage les utilisateurs à effectuer une tâche autonome et ne peut pas être quittée tant que la tâche n’est pas terminée ou annulée.

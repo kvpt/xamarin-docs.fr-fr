@@ -6,20 +6,18 @@ ms.assetid: BEA2B3F5-96B0-4E39-88A6-0FAFE95C3DCD
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/28/2020
+ms.date: 09/24/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 01dba502f6a561aac122e9fa44d7b257c76c5b4b
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 44eb40a63c5b1117ba6eb58bde3a3d6a4a49154b
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93374327"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940055"
 ---
 # <a name="no-locxamarinforms-brushes-linear-gradients"></a>Xamarin.Forms Pinceaux : dégradés linéaires
-
-![API d’aperçu](~/media/shared/preview.png "Cette API est actuellement en préversion.")
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-brushdemos/)
 

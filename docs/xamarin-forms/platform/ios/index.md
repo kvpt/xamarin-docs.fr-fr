@@ -1,5 +1,5 @@
 ---
-title: fonctionnalités de la plateforme iOS dansXamarin.Forms
+title: fonctionnalités de la plateforme iOS dans Xamarin.Forms
 description: Ajout de fonctionnalités spécifiques à iOS aux Xamarin.Forms applications.
 ms.prod: xamarin
 ms.assetid: 634AB62E-68C8-454C-838B-F1CC4E4E21BC
@@ -10,14 +10,14 @@ ms.date: 03/05/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f11100b6e13a3ace2ae3a56bcfc279294089d842
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: b9c000f0a30aba0e5ed8cc1d1458355770a26ffc
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939033"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940263"
 ---
-# <a name="ios-platform-features-in-xamarinforms"></a>fonctionnalités de la plateforme iOS dansXamarin.Forms
+# <a name="ios-platform-features-in-no-locxamarinforms"></a>fonctionnalités de la plateforme iOS dans Xamarin.Forms
 
 Le développement Xamarin.Forms d’applications pour iOS nécessite Visual Studio. La [page plateformes prises en charge](~/get-started/supported-platforms.md) contient des informations supplémentaires sur les conditions préalables.
 
@@ -49,7 +49,7 @@ Les fonctionnalités suivantes propres à la plateforme sont fournies pour les X
 
 Les fonctionnalités suivantes propres à la plateforme sont fournies pour les Xamarin.Forms pages sur iOS :
 
-- Contrôle de l’application de la page de détails d’une [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) ombre, lors de la révélation de la page maître. Pour plus d’informations, consultez [Shadow MasterDetailPage](masterdetailpage-shadow.md).
+- Contrôle de l’application de la page de détails d’une [`FlyoutPage`](xref:Xamarin.Forms.FlyoutPage) ombre, lors de la révélation de la page de menu volant. Pour plus d’informations, consultez [Shadow FlyoutPage](flyoutpage-shadow.md).
 - Masquage du séparateur de barre de navigation sur un [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) . Pour plus d’informations, consultez [séparateur de barre NavigationPage sur iOS](navigation-bar-separator.md).
 - Contrôle de l’affichage transparent de la barre de navigation. Pour plus d’informations, consultez [barre de navigation translucidité sur iOS](navigation-bar-translucent.md).
 - Contrôle si la couleur de texte de la barre d’État sur un [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) est ajustée pour correspondre à la luminosité de la barre de navigation. Pour plus d’informations, consultez [mode de couleur du texte de la barre NavigationPage sur iOS](status-bar-text-color.md).
@@ -72,7 +72,7 @@ La fonctionnalité spécifique à la plateforme suivante est fournie pour la Xam
 
 ## <a name="ios-specific-formatting"></a>mise en forme spécifique à iOS
 
-Xamarin.Formspermet de définir des couleurs et des styles d’interface utilisateur multiplateforme, mais il existe d’autres options pour définir le thème de votre iOS à l’aide d’API de plateforme dans le projet iOS.
+Xamarin.Forms permet de définir des couleurs et des styles d’interface utilisateur multiplateforme, mais il existe d’autres options pour définir le thème de votre iOS à l’aide d’API de plateforme dans le projet iOS.
 
 [En savoir plus](formatting.md) sur la mise en forme de l’interface utilisateur à l’aide d’API spécifiques à iOS, telles que la configuration d' **info. plist** et l' `UIAppearance` API.
 

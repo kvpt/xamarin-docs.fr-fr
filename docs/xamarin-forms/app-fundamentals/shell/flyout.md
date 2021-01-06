@@ -10,18 +10,18 @@ ms.date: 07/30/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 90f06c0379cc40a946970ad4248dc8527ee34f3a
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 4faa0923e074460ef254db319dfcfd01cc832dce
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93372780"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940123"
 ---
 # <a name="no-locxamarinforms-shell-flyout"></a>Xamarin.Forms Menu volant Shell
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
-Le menu volant est le menu racine d’une application Shell, accessible via une icône ou en balayant depuis le côté de l’écran. Il se compose d’un en-tête facultatif, d’éléments de menu volant et d’éléments de menu facultatifs :
+Le menu volant est le menu racine d’une application Shell, accessible via une icône ou en balayant depuis le côté de l’écran. Le lanceur se compose d’un en-tête facultatif, d’éléments de menu volant, d’éléments de menu facultatifs et d’un pied de page facultatif :
 
 ![Capture d’écran d’un menu volant annoté](flyout-images/flyout-annotated.png "Menu volant annoté")
 
@@ -133,6 +133,59 @@ L’exemple suivant montre comment réduire l’en-tête du menu volant lorsque 
     ...
 </Shell>
 ```
+
+## <a name="flyout-footer"></a>Pied de page du menu volant
+
+Le pied de page du menu volant est le contenu qui s’affiche éventuellement en bas du menu volant, dont l’apparence est définie par une `object` qui peut être définie via la valeur de la `Shell.FlyoutFooter` propriété :
+
+```xaml
+<Shell.FlyoutFooter>
+    <controls:FlyoutFooter />
+</Shell.FlyoutFooter>
+```
+
+Le type `FlyoutFooter` s’affiche dans l’exemple suivant :
+
+```xaml
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sys="clr-namespace:System;assembly=netstandard"
+             x:Class="Xaminals.Controls.FlyoutFooter">
+    <StackLayout>
+        <Label Text="Xaminals"
+               TextColor="GhostWhite"
+               FontAttributes="Bold"
+               HorizontalOptions="Center" />
+        <Label Text="{Binding Source={x:Static sys:DateTime.Now}, StringFormat='{0:MMMM dd, yyyy}'}"
+               TextColor="GhostWhite"
+               HorizontalOptions="Center" />
+    </StackLayout>
+</ContentView>
+```
+
+Cela entraîne le pied de page du menu volant suivant :
+
+![Capture d’écran du pied de page du menu volant](flyout-images/flyout-footer.png "Pied de page du menu volant")
+
+Vous pouvez également définir l’apparence du pied de page du menu volant en affectant à la propriété la valeur `Shell.FlyoutFooterTemplate` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) :
+
+```xaml
+<Shell.FlyoutFooterTemplate>
+    <DataTemplate>
+        <StackLayout>
+            <Label Text="Xaminals"
+                   TextColor="GhostWhite"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+            <Label Text="{Binding Source={x:Static sys:DateTime.Now}, StringFormat='{0:MMMM dd, yyyy}'}"
+                   TextColor="GhostWhite"
+                   HorizontalOptions="Center" />
+        </StackLayout>
+    </DataTemplate>
+</Shell.FlyoutFooterTemplate>
+```
+
+Le pied de page du menu volant est fixe au bas du menu volant et peut avoir n’importe quelle hauteur. En outre, le pied de page ne masque jamais les éléments de menu.
 
 ## <a name="flyout-background-image"></a>Image d'arrière-plan du menu volant
 

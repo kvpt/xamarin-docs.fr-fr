@@ -6,16 +6,16 @@ ms.assetid: 46AB0D5E-0025-4A8A-9D00-3E66C3D0BA2E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/10/2020
+ms.date: 12/10/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 4af29f2df797aea4bbd0655fc0564e289f2c2a3b
-ms.sourcegitcommit: 1d19ee87e317a72de05f3f0fa73dfcaeb767cbd1
+ms.openlocfilehash: 09cffb4e5c7d8f6b78d5ab1de6ec9839c3969e87
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96755017"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940107"
 ---
 # <a name="display-pop-ups"></a>Afficher les fenêtres contextuelles
 
@@ -47,6 +47,8 @@ async void OnAlertYesNoClicked (object sender, EventArgs e)
 
 [![Boîte de dialogue d’alerte avec deux boutons](pop-ups-images/alert2-sml.png)](pop-ups-images/alert2.png#lightbox)
 
+La [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*) méthode a également des surcharges qui acceptent un [`FlowDirection`](xref:Xamarin.Forms.FlowDirection) argument qui spécifie la direction dans laquelle les éléments d’interface utilisateur sont acheminés dans l’alerte. Pour plus d’informations sur le sens du déroulement, consultez [localisation de droite à gauche](~/xamarin-forms/app-fundamentals/localization/right-to-left.md).
+
 > [!WARNING]
 > Par défaut, sur UWP, lorsqu’une alerte est affichée, toutes les clés d’accès définies sur la page derrière l’alerte peuvent toujours être activées. Pour plus d’informations, consultez [clés d’accès VisualElement sur Windows](~/xamarin-forms/platform/windows/visualelement-access-keys.md).
 
@@ -77,6 +79,8 @@ async void OnActionSheetCancelDeleteClicked (object sender, EventArgs e)
 ```
 
 [![DisplayActionSheet](pop-ups-images/action2-sml.png "Boîte de dialogue de la feuille d’action avec le bouton détruire")](pop-ups-images/action2.png#lightbox "Boîte de dialogue de la feuille d’action avec le bouton détruire")
+
+La [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*) méthode a également une surcharge qui accepte un [`FlowDirection`](xref:Xamarin.Forms.FlowDirection) argument qui spécifie la direction dans laquelle les éléments d’interface utilisateur sont acheminés dans la feuille d’action. Pour plus d’informations sur le sens du déroulement, consultez [localisation de droite à gauche](~/xamarin-forms/app-fundamentals/localization/right-to-left.md).
 
 ## <a name="display-a-prompt"></a>Afficher une invite
 
@@ -119,3 +123,4 @@ Ce code affiche une réponse prédéfinie de 10, limite le nombre de caractères
 ## <a name="related-links"></a>Liens connexes
 
 - [PopupsSample](/samples/xamarin/xamarin-forms-samples/navigation-pop-ups)
+- [Localisation de droite à gauche](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)

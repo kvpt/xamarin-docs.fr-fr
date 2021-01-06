@@ -8,12 +8,12 @@ ms.date: 03/26/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 04090a2e9d97f1a5f4dae8fa850a39c3465ba05b
-ms.sourcegitcommit: 0c31f1398ec1de1a2b18ec7f25f30630df968db1
+ms.openlocfilehash: f05868bbf8da9597c4290ba687f767f3995ba437
+ms.sourcegitcommit: 07ee6a95f77f9a12fadb857e549cdcdb1928c7d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96544667"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97904982"
 ---
 # <a name="no-locxamarinessentials-web-authenticator"></a>Xamarin.Essentials: Web Authenticator
 
@@ -36,7 +36,7 @@ La meilleure pratique consiste à utiliser un serveur principal Web comme couche
 > [!IMPORTANT]
 > Nous vous recommandons vivement d’utiliser des modèles et des bibliothèques d’authentification mobiles plus anciennes qui n’exploitent pas un backend Web dans le workflow d’authentification en raison de leur manque de sécurité inhérent au stockage des secrets des clients.
 
-## <a name="get-started"></a>Prise en main
+## <a name="get-started"></a>Bien démarrer
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -45,9 +45,6 @@ Pour accéder à la fonctionnalité **WebAuthenticator** , la configuration spé
 # <a name="android"></a>[Android](#tab/android)
 
 Android requiert un filtre d’intention pour gérer votre URI de rappel. Pour ce faire, il suffit de sous-classer la `WebAuthenticatorCallbackActivity` classe :
-
-> [!NOTE]
-> Vous devez envisager d’implémenter [des liens d’application Android](https://developer.android.com/training/app-links/) pour gérer l’URI de rappel et vérifier que votre application est la seule qui peut s’inscrire pour gérer l’URI de rappel.
 
 ```csharp
 const string CALLBACK_SCHEME = "myapp";
@@ -58,17 +55,6 @@ const string CALLBACK_SCHEME = "myapp";
     DataScheme = CALLBACK_SCHEME)]
 public class WebAuthenticationCallbackActivity : Xamarin.Essentials.WebAuthenticatorCallbackActivity
 {
-}
-```
-
-Vous devrez également rappeler Essentials à partir du `OnResume` remplacement dans votre `MainActivity` :
-
-```csharp
-protected override void OnResume()
-{
-    base.OnResume();
-
-    Xamarin.Essentials.Platform.OnResume();
 }
 ```
 
@@ -91,9 +77,6 @@ Sur iOS, vous devez ajouter le modèle d’URI de rappel de votre application à
     </dict>
 </array>
 ```
-
-> [!NOTE]
-> Vous devez envisager d’utiliser [des liens d’application universelle](https://developer.apple.com/documentation/uikit/inter-process_communication/allowing_apps_and_websites_to_link_to_your_content) pour inscrire l’URI de rappel de votre application comme meilleure pratique.
 
 Vous devez également substituer les `AppDelegate` `OpenUrl` `ContinueUserActivity` méthodes et pour appeler Essentials :
 

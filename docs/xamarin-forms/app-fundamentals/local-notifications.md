@@ -10,12 +10,12 @@ ms.date: 12/03/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5009e74bac79ad6a560bd4ab1cb039a74d8b49be
-ms.sourcegitcommit: 342cfbd2502ad92cadada4fa9aec669b99d7830a
+ms.openlocfilehash: 1dad280ee8253d4ef627c5ab7ec9c8dcfa0408a2
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96604527"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940445"
 ---
 # <a name="local-notifications-in-no-locxamarinforms"></a>Notifications locales dans Xamarin.Forms
 
@@ -153,7 +153,7 @@ using Android.App;
 using Android.Content;
 using Android.Graphics;
 using Android.OS;
-using Android.Support.V4.App;
+using AndroidX.Core.App;
 using Xamarin.Forms;
 using AndroidApp = Android.App.Application;
 
@@ -487,7 +487,7 @@ public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 
 iOS offre de nombreuses options avancées pour les notifications. Pour plus d’informations, consultez [notifications dans Xamarin. iOS](~/ios/platform/user-notifications/index.md).
 
-## <a name="test-the-application"></a>Test de l’application
+## <a name="test-the-application"></a>Tester l’application
 
 Une fois que les projets de plateforme contiennent une implémentation inscrite de l' `INotificationManager` interface, l’application peut être testée sur les deux plateformes. Exécutez l’application et cliquez sur l’un des boutons **créer une notification** pour créer une notification.
 

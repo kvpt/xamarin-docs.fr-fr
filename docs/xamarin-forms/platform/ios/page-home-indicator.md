@@ -10,12 +10,12 @@ ms.date: 05/09/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 49fd8c563509d88b80fcb91b5e6298b8a5bb3363
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 20d8bb1140599b5b858c52fde1e54393e66d7bd1
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93372299"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940549"
 ---
 # <a name="home-indicator-visibility-on-ios"></a>Visibilité de l’indicateur de démarrage sur iOS
 
@@ -48,7 +48,7 @@ Le résultat est que la visibilité de l’indicateur de démarrage sur un [`Pag
 ![Capture d’écran de la visibilité de l’indicateur de démarrage sur une page iOS](page-home-indicator-images/home-indicator-visibility.png "Visibilité de l’indicateur de la page d’accueil")
 
 > [!NOTE]
-> Ce spécifique à la plateforme peut être appliqué [`ContentPage`](xref:Xamarin.Forms.ContentPage) aux [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) objets,, [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) et [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) .
+> Ce spécifique à la plateforme peut être appliqué [`ContentPage`](xref:Xamarin.Forms.ContentPage) aux [`FlyoutPage`](xref:Xamarin.Forms.FlyoutPage) objets,, [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) et [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) .
 
 ## <a name="related-links"></a>Liens connexes
 

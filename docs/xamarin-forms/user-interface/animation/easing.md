@@ -6,16 +6,16 @@ ms.assetid: E6F124C7-A161-4C1F-AF40-52F0935E54DE
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/14/2016
+ms.date: 09/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 50b64b394314ae2f63ab1f756f1cc73ba29e59e7
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 6ec4c16249aadce668b9fe33dad661e1f7e7ee9e
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93372845"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97939015"
 ---
 # <a name="easing-functions-in-no-locxamarinforms"></a>Fonctions d’accélération dans Xamarin.Forms
 
@@ -54,6 +54,9 @@ await image.TranslateTo(0, -200, 2000, Easing.BounceOut);
 ```
 
 En spécifiant une fonction d’accélération pour une animation, la vélocité d’animation devient non linéaire et produit l’effet fourni par la fonction d’accélération. Si vous omettez une fonction d’accélération lors de la création d’une animation, celle-ci utilise la fonction d’accélération par défaut [`Linear`](xref:Xamarin.Forms.Easing.Linear) , qui produit une vélocité linéaire.
+
+> [!NOTE]
+> Xamarin.Forms 5,0 comprend un convertisseur de type qui convertit une représentation sous forme de chaîne d’une fonction d’accélération en [`Easing`](xref:Xamarin.Forms.Easing) membre d’énumération approprié. Ce convertisseur de type est automatiquement appelé sur toutes les propriétés de type `Easing` qui sont définies en XAML.
 
 Pour plus d’informations sur l’utilisation des méthodes d’extension d’animation dans la [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) classe, consultez [animations simples](~/xamarin-forms/user-interface/animation/simple.md). Les fonctions d’accélération peuvent également être consommées par la [`Animation`](xref:Xamarin.Forms.Animation) classe. Pour plus d’informations, consultez [animations personnalisées](~/xamarin-forms/user-interface/animation/custom.md).
 
@@ -103,7 +106,7 @@ await image.TranslateTo (0, 200, 2000, new Easing (t => 1 - Math.Cos (10 * Math.
 
 La fonction d’accélération personnalisée est spécifiée en tant qu’argument de fonction lambda pour le [`Easing`](xref:Xamarin.Forms.Easing) constructeur et utilise la `Math.Cos` méthode pour créer un effet de déplacement lent qui est amorti par la `Math.Exp` méthode. Par conséquent, l' [`Image`](xref:Xamarin.Forms.Image) instance est traduite afin d’être supprimée à son emplacement de repos final.
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article a montré comment utiliser les fonctions d’accélération prédéfinies et comment créer des fonctions d’accélération personnalisées. Xamarin.Forms comprend une [`Easing`](xref:Xamarin.Forms.Easing) classe qui vous permet de spécifier une fonction de transfert qui contrôle la vitesse à laquelle les animations augmentent ou ralentissent lorsqu’elles sont en cours d’exécution.
 

@@ -10,12 +10,12 @@ ms.date: 12/11/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cce3fbf6f80b8a0fddff2ed2b2af027721faf59d
-ms.sourcegitcommit: bfe713c038a0d6c4362da4c3221d7aee9ab03d2b
+ms.openlocfilehash: 76b0d9eff175755d6fc13178a864ae99b345efd3
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91805607"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940198"
 ---
 # <a name="android-platform-features"></a>Fonctionnalités de la plateforme Android
 
@@ -64,8 +64,6 @@ La fonctionnalité spécifique à la plateforme suivante est fournie pour la Xam
 
 Xamarin.Forms Les projets Android utilisent désormais `FormsAppCompatActivity` la classe de base de leur activité principale. Cette classe utilise les fonctionnalités de **AppCompat** fournies par Android pour implémenter des thèmes de conception de matériau.
 
-Pour ajouter des thèmes de conception de matériau à votre Xamarin.Forms projet Android, suivez les [instructions d’installation pour la prise en charge de AppCompat](appcompat-material-design.md)
-
 Voici l’exemple **TODO** avec la valeur par défaut `FormsApplicationActivity` :
 
 [![Exemple d’application todo sans AppCompat](images/before-appcompat-sml.png)](images/before-appcompat.png#lightbox "Exemple d’application todo sans AppCompat")
@@ -80,7 +78,3 @@ Et il s’agit du même code après la mise à niveau du projet pour utiliser `F
 ## <a name="androidx-migration"></a>Migration AndroidX
 
 AndroidX remplace la bibliothèque de prise en charge Android. Pour en savoir plus sur AndroidX et sur la façon de migrer une Xamarin.Forms application pour utiliser des bibliothèques AndroidX, consultez [migration de AndroidX dans Xamarin.Forms ](~/xamarin-forms/platform/android/androidx-migration.md).
-
-## <a name="related-links"></a>Liens connexes
-
-- [Ajouter une prise en charge de la conception matérielle](appcompat-material-design.md)

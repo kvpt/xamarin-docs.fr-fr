@@ -10,12 +10,12 @@ ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e8dd18caf7ab6730c8529660d83511cf8c65edcf
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 289f2637b10e1ad163b0c3693176625f3bd82e6f
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93375159"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940094"
 ---
 # <a name="no-locxamarinforms-carousel-page"></a>Xamarin.Forms Page du carrousel
 
@@ -43,7 +43,7 @@ Un nouveau balayage de droite à gauche permet d’accéder à la troisième pag
 > [!NOTE]
 > [`CarouselPage`](xref:Xamarin.Forms.CarouselPage)Ne prend pas en charge la virtualisation de l’interface utilisateur. Par conséquent, les performances peuvent être affectées si le `CarouselPage` contient trop d’éléments enfants.
 
-Si un [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) est incorporé dans la [`Detail`](xref:Xamarin.Forms.MasterDetailPage.Detail) page d’un [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) , la [`MasterDetailPage.IsGestureEnabled`](xref:Xamarin.Forms.MasterDetailPage.IsGestureEnabledProperty) propriété doit avoir la valeur `false` pour empêcher les conflits de mouvements entre `CarouselPage` et `MasterDetailPage` .
+Si un [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) est incorporé dans la [`Detail`](xref:Xamarin.Forms.FlyoutPage.Detail) page d’un [`FlyoutPage`](xref:Xamarin.Forms.FlyoutPage) , la [`FlyoutPage.IsGestureEnabled`](xref:Xamarin.Forms.FlyoutPage.IsGestureEnabledProperty) propriété doit avoir la valeur `false` pour empêcher les conflits de mouvements entre `CarouselPage` et `FlyoutPage` .
 
 Pour plus d’informations sur le [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) , consultez le [chapitre 25](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf) du livre de Charles Petzold Xamarin.Forms .
 

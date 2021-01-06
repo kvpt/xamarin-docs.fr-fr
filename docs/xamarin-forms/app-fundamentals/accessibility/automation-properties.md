@@ -10,12 +10,12 @@ ms.date: 12/18/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 98cf9f67188f67c4575823024106e100f6f22608
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 53f6a44ef28e00613ed0ee4e05a4e86a26bc7a6a
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93374509"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940575"
 ---
 # <a name="automation-properties-in-no-locxamarinforms"></a>Propriétés Automation dans Xamarin.Forms
 
@@ -145,11 +145,11 @@ Les sections suivantes décrivent les subtilités de la définition des valeurs 
 
 Sur Android, pour définir le texte que les lecteurs d’écran liront pour la flèche précédent dans la barre d’action d’un [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) , définissez les `AutomationProperties.Name` `AutomationProperties.HelpText` Propriétés et sur un [`Page`](xref:Xamarin.Forms.Page) . Toutefois, notez que cette opération n’a aucun effet sur les boutons Retour du système d’exploitation.
 
-### <a name="masterdetailpage"></a>MasterDetailPage
+### <a name="flyoutpage"></a>FlyoutPage
 
-Sur iOS et le plateforme Windows universelle (UWP), pour définir le texte que les lecteurs d’écran liront pour le bouton bascule sur un [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) , définissez les `AutomationProperties.Name` Propriétés, et `AutomationProperties.HelpText` sur `MasterDetailPage` , ou sur la `IconImageSource` propriété de la `Master` page.
+Sur iOS et le plateforme Windows universelle (UWP), pour définir le texte que les lecteurs d’écran liront pour le bouton bascule sur un [`FlyoutPage`](xref:Xamarin.Forms.FlyoutPage) , définissez les `AutomationProperties.Name` Propriétés, et `AutomationProperties.HelpText` sur `FlyoutPage` , ou sur la `IconImageSource` propriété de la `Flyout` page.
 
-Sur Android, pour définir le texte que les lecteurs d’écran liraront pour le bouton bascule sur un [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) , ajoutez des ressources de type chaîne au projet Android :
+Sur Android, pour définir le texte que les lecteurs d’écran liraront pour le bouton bascule sur un [`FlyoutPage`](xref:Xamarin.Forms.FlyoutPage) , ajoutez des ressources de type chaîne au projet Android :
 
 ```xml
 <resources>
@@ -159,11 +159,11 @@ Sur Android, pour définir le texte que les lecteurs d’écran liraront pour le
 </resources>
 ```
 
-Ensuite, définissez la propriété `AutomationId` de la propriété `IconImageSource` de la page `Master` sur la chaîne appropriée :
+Ensuite, définissez la propriété `AutomationId` de la propriété `IconImageSource` de la page `Flyout` sur la chaîne appropriée :
 
 ```csharp
-var master = new ContentPage { ... };
-master.IconImageSource.AutomationId = "btnMDPAutomationID";
+var flyout = new ContentPage { ... };
+flyout.IconImageSource.AutomationId = "btnMDPAutomationID";
 ```
 
 ### <a name="toolbaritem"></a>ToolbarItem

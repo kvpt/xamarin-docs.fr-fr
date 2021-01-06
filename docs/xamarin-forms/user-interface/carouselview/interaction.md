@@ -6,16 +6,16 @@ ms.assetid: 854D97E5-D119-4BE2-AE7C-BD428792C992
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/11/2020
+ms.date: 09/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c6b6a5a538d69d396f8b30381fd1d0b73d3f0e9f
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: d8187c82033a872752a314b03950793cad4ac0d1
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93373820"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97939158"
 ---
 # <a name="no-locxamarinforms-carouselview-interaction"></a>Xamarin.Forms Interaction CarouselView
 
@@ -28,6 +28,7 @@ ms.locfileid: "93373820"
 - `CurrentItemChangedCommandParameter`, de type `object` : paramètre passé à la commande `CurrentItemChangedCommand`.
 - `IsBounceEnabled`, de type `bool` , qui spécifie si le `CarouselView` rebondit au niveau d’une limite de contenu. La valeur par défaut est `true`.
 - `IsSwipeEnabled`, de type `bool` , qui détermine si un mouvement de balayage va modifier l’élément affiché. La valeur par défaut est `true`.
+- `Loop`, de type `bool` , qui détermine si le `CarouselView` fournit un accès en boucle à sa collection d’éléments. La valeur par défaut est `true`.
 - `Position`, de type `int` , l’index de l’élément actuel dans la collection sous-jacente. Cette propriété a un mode de liaison par défaut de `TwoWay` et a une valeur 0 lorsqu’il n’y a aucune donnée à afficher.
 - `PositionChangedCommand`, de type `ICommand` , qui est exécuté lorsque la position change.
 - `PositionChangedCommandParameter`, de type `object` : paramètre passé à la commande `PositionChangedCommand`.
@@ -355,6 +356,10 @@ La `CurrentItem` propriété peut être effacée en la définissant, ou l’obje
 ## <a name="disable-bounce"></a>Désactiver le rebond
 
 Par défaut, [`CarouselView`](xref:Xamarin.Forms.CarouselView) rebondit les éléments aux limites du contenu. Vous pouvez désactiver cette option en affectant à la propriété la valeur `IsBounceEnabled` `false` .
+
+## <a name="disable-loop"></a>Désactiver la boucle
+
+Par défaut, [`CarouselView`](xref:Xamarin.Forms.CarouselView) fournit un accès en boucle à sa collection d’éléments. Par conséquent, le balayage vers l’arrière à partir du premier élément de la collection affiche le dernier élément de la collection. De même, le balayage par progression à partir du dernier élément de la collection retourne au premier élément de la collection. Ce comportement peut être désactivé en affectant `Loop` à la propriété la valeur `false` .
 
 ## <a name="disable-swipe-interaction"></a>Désactiver l’interaction de balayage
 

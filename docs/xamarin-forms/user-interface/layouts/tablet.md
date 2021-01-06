@@ -10,16 +10,16 @@ ms.date: 02/01/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8c53b1e58ad97f7d0e17972a2b232c16e05ecc1a
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 5eb6a13888d96cac6fe193457ccc20659869ab68
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86934886"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940380"
 ---
 # <a name="layout-for-tablet-and-desktop-apps"></a>Mise en page pour les applications de bureau et tablette
 
-Xamarin.Formsprend en charge tous les types d’appareils disponibles sur les plateformes prises en charge. ainsi, en plus des téléphones, les applications peuvent également s’exécuter sur :
+Xamarin.Forms prend en charge tous les types d’appareils disponibles sur les plateformes prises en charge. ainsi, en plus des téléphones, les applications peuvent également s’exécuter sur :
 
 - iPad
 - Tablettes Android,
@@ -49,7 +49,7 @@ La fonctionnalité de fractionnement d’écran signifie que vous devez concevoi
 
 ### <a name="android-tablets"></a>Tablettes Android
 
-L’écosystème Android offre une multitude de tailles d’écran prises en charge, allant des petits téléphones jusqu’aux tablettes volumineuses. Xamarin.Formspeut prendre en charge toutes les tailles d’écran, mais comme avec les autres plateformes, vous souhaiterez peut-être ajuster votre interface utilisateur pour les périphériques plus volumineux.
+L’écosystème Android offre une multitude de tailles d’écran prises en charge, allant des petits téléphones jusqu’aux tablettes volumineuses. Xamarin.Forms peut prendre en charge toutes les tailles d’écran, mais comme avec les autres plateformes, vous souhaiterez peut-être ajuster votre interface utilisateur pour les périphériques plus volumineux.
 
 Lorsque vous prenez en charge de nombreuses résolutions d’écran différentes, vous pouvez fournir vos ressources d’images natives dans différentes tailles pour optimiser l’expérience utilisateur.
 Consultez la documentation des [ressources Android](~/android/app-fundamentals/resources-in-android/index.md) (et, en particulier, la [création de ressources pour différentes tailles d’écran](~/android/app-fundamentals/resources-in-android/resources-for-varying-screens.md)) pour plus d’informations sur la façon de structurer les dossiers et les noms de fichiers dans votre projet d’application Android afin d’inclure des ressources d’image optimisées dans votre application.
@@ -81,11 +81,11 @@ if (Device.Idiom == TargetIdiom.Phone)
 
 Cette approche peut être développée pour apporter des modifications significatives à des dispositions de page individuelles, ou même pour restituer des pages entièrement différentes sur des écrans plus grands.
 
-### <a name="leverage-masterdetailpage"></a>Tirer parti de MasterDetailPage
+### <a name="leverage-flyoutpage"></a>Tirer parti de FlyoutPage
 
-Le [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) est idéal pour les écrans plus grands, en particulier sur l’iPad où il utilise le [`UISplitViewController`](xref:UIKit.UISplitViewController) pour fournir une expérience iOS native.
+Le [`FlyoutPage`](xref:Xamarin.Forms.FlyoutPage) est idéal pour les écrans plus grands, en particulier sur l’iPad où il utilise le [`UISplitViewController`](xref:UIKit.UISplitViewController) pour fournir une expérience iOS native.
 
-Consultez [ce billet de blog Xamarin](https://devblogs.microsoft.com/xamarin/bringing-xamarin-forms-apps-to-tablets/) pour découvrir comment adapter votre interface utilisateur afin que les téléphones utilisent une disposition et les écrans plus grands puissent utiliser une autre (avec `MasterDetailPage` ).
+Consultez [ce billet de blog Xamarin](https://devblogs.microsoft.com/xamarin/bringing-xamarin-forms-apps-to-tablets/) pour découvrir comment adapter votre interface utilisateur afin que les téléphones utilisent une disposition et les écrans plus grands puissent utiliser une autre (avec `FlyoutPage` ).
 
 ## <a name="related-links"></a>Liens associés
 

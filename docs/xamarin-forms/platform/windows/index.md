@@ -6,22 +6,22 @@ ms.assetid: F6EA9E49-FB3E-442F-AF13-B7AD0C80D11F
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 01/16/2020
+ms.date: 12/10/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0cdbd39f0217b0e4d175eb2443250eb3df8dd046
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: d5f65deaad97bd69641fa4cc577d9a476106ac3a
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936173"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940354"
 ---
 # <a name="windows-platform-features"></a>Fonctionnalités de la plateforme Windows
 
 Le développement Xamarin.Forms d’applications pour les plateformes Windows nécessite Visual Studio. La [page plateformes prises en charge](~/get-started/supported-platforms.md) contient des informations supplémentaires sur les conditions préalables.
 
-![Xamarin.FormsApplications s’exécutant sur Windows](images/allhanselman.png)
+![::: No-Loc (Xamarin. Forms) ::: applications s’exécutant sur Windows](images/allhanselman.png)
 
 ## <a name="platform-specifics"></a>Spécificités des plateformes
 
@@ -38,11 +38,12 @@ Les fonctionnalités spécifiques à la plateforme suivantes sont fournies pour 
 - Activation de la prise en charge des gestes TAP dans un [`ListView`](xref:Xamarin.Forms.ListView) . Pour plus d’informations, consultez [ListView SelectionMode sur Windows](listview-selectionmode.md).
 - Activation de la direction de l’extraction d’un `RefreshView` à modifier. Pour plus d’informations, consultez [direction RefreshView pull sur Windows](refreshview-pulldirection.md).
 - Activation [`SearchBar`](xref:Xamarin.Forms.SearchBar) d’un pour interagir avec le moteur de vérification orthographique. Pour plus d’informations, consultez [SearchBar vérification orthographique sur Windows](searchbar-spell-check.md).
+- Définition du thread sur lequel un [`WebView`](xref:Xamarin.Forms.WebView) héberge son contenu. Pour plus d’informations, consultez [mode d’exécution WebView sur Windows](webview-executionmode.md).
 - Activation [`WebView`](xref:Xamarin.Forms.WebView) d’un pour afficher des alertes JavaScript dans une boîte de dialogue de message UWP. Pour plus d’informations, consultez [afficher des alertes JavaScript sur Windows](webview-javascript-alert.md).
 
 Les fonctionnalités suivantes propres à la plateforme sont fournies pour les Xamarin.Forms pages sur UWP :
 
-- Réduction de la [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) barre de navigation. Pour plus d’informations, consultez [barre de navigation MasterDetailPage sur Windows](masterdetailpage-navigation-bar.md).
+- Réduction de la [`FlyoutPage`](xref:Xamarin.Forms.FlyoutPage) barre de navigation. Pour plus d’informations, consultez [barre de navigation FlyoutPage sur Windows](flyoutpage-navigation-bar.md).
 - Définition des options de positionnement de la barre d’outils. Pour plus d’informations, consultez [positionnement de la barre d’outils de la page sur Windows](page-toolbar-placement.md).
 - Activation des icônes de page à afficher dans une [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) barre d’outils. Pour plus d’informations, consultez [TabbedPage icons on Windows](tabbedpage-icons.md).
 
@@ -55,9 +56,9 @@ La fonctionnalité spécifique à la plateforme suivante est fournie pour la Xam
 Les Xamarin.Forms modèles disponibles dans Visual Studio contiennent un projet plateforme Windows universelle (UWP).
 
 > [!NOTE]
-> Xamarin.Forms1. x et 2. x prennent en charge _Windows Phone 8 Silverlight_, _Windows Phone 8,1_et le développement d’applications _Windows 8.1_ . Toutefois, ces types de projets ont été dépréciés.
+> Xamarin.Forms 1. x et 2. x prennent en charge _Windows Phone 8 Silverlight_, _Windows Phone 8,1_ et le développement d’applications _Windows 8.1_ . Toutefois, ces types de projets ont été dépréciés.
 
-## <a name="getting-started"></a>Mise en route
+## <a name="getting-started"></a>Prise en main
 
 Accédez à **fichier > nouveau projet >** dans Visual Studio et choisissez l’un des modèles **multiplateforme > application vide ( Xamarin.Forms )** pour commencer.
 

@@ -10,12 +10,12 @@ ms.date: 07/18/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: abe8161ea8536f5fb8b13c71fe49ebad57460ca1
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 6e53fdc689c15b3495af838f4788c1a50ad7a989
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93370414"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940341"
 ---
 # <a name="summary-of-chapter-3-deeper-into-text"></a>Résumé du chapitre 3. Détails du texte
 
@@ -115,7 +115,7 @@ La `Color.Accent` valeur entraîne une couleur spécifique à la plateforme (et 
 
 Les différentes plateformes ont un modèle de couleurs par défaut, comme indiqué dans la liste ci-dessus.
 
-Quand vous ciblez Android, il est possible de basculer vers un modèle sombre, en spécifiant un thème clair dans le fichier Android.Manifest.xml, ou en [ajoutant des conceptions AppCompat et Material](~/xamarin-forms/platform/android/appcompat-material-design.md).
+Quand vous ciblez Android, il est possible de basculer vers un modèle sombre en clair en spécifiant un thème clair dans le fichier Android.Manifest.xml.
 
 Pour les plateformes Windows, le thème de couleur est normalement sélectionné par l’utilisateur, mais vous pouvez ajouter un `RequestedTheme` ensemble d’attributs à `Light` ou `Dark` dans le fichier app. XAML de la plateforme. Par défaut, le fichier app. xaml du projet UWP contient un attribut dont la `RequestedTheme` valeur est `Light` .
 

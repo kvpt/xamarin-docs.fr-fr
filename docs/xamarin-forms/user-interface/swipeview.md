@@ -6,20 +6,18 @@ ms.assetId: 602456B5-701B-4948-B454-B1F31283F1CF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/26/2020
+ms.date: 10/05/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c9ebee7914d8d2ccfb284910f31d87999b22701f
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: de3d7df922a0b6bdc6644e2684c6f01176abbe42
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93369647"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940497"
 ---
 # <a name="no-locxamarinforms-swipeview"></a>Xamarin.Forms SwipeView
-
-![API de la version préliminaire](~/media/shared/preview.png)
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-swipeviewdemos/)
 
@@ -27,18 +25,13 @@ Le `SwipeView` est un contrôle conteneur qui encapsule un élément de contenu 
 
 [![Capture d’écran des éléments de balayage SwipeView dans un CollectionView, sur iOS et Android](swipeview-images/swipeview-collectionview.png "SwipeView les éléments de balayage")](swipeview-images/swipeview-collectionview-large.png#lightbox "SwipeView les éléments de balayage")
 
-`SwipeView` est disponible dans Xamarin.Forms 4,4. Toutefois, il est actuellement expérimental et ne peut être utilisé qu’en ajoutant la ligne de code suivante à votre classe `AppDelegate` sur iOS, à votre `MainActivity` classe sur Android, ou à votre `App` classe sur UWP, avant d’appeler `Forms.Init` :
-
-```csharp
-Forms.SetFlags("SwipeView_Experimental");
-```
-
 `SwipeView` définit les propriétés suivantes :
 
 - `LeftItems`, de type `SwipeItems` , qui représente les éléments de balayage qui peuvent être appelés lorsque le contrôle est extrait du côté gauche.
 - `RightItems`, de type `SwipeItems` , qui représente les éléments de balayage qui peuvent être appelés lorsque le contrôle est extrait du côté droit.
 - `TopItems`, de type `SwipeItems` , qui représente les éléments de balayage qui peuvent être appelés lorsque le contrôle est extrait du haut vers le haut.
 - `BottomItems`, de type `SwipeItems` , qui représente les éléments de balayage qui peuvent être appelés lorsque le contrôle est extrait du bas vers le haut.
+- `Threshold`, de type `double` , qui représente le nombre d’unités indépendantes du périphérique qui déclenchent un mouvement de balayage pour révéler entièrement les éléments de balayage.
 
 Ces propriétés sont sauvegardées par des [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) objets, ce qui signifie qu’elles peuvent être des cibles de liaisons de données et être stylisées.
 
@@ -186,7 +179,7 @@ L’apparence de chaque `SwipeItem` est définie par une combinaison des `Text` 
 
 [![Capture d’écran des éléments de balayage SwipeView, sur iOS et Android](swipeview-images/swipeview-swipeitems.png "SwipeView les éléments de balayage")](swipeview-images/swipeview-swipeitems-large.png#lightbox "SwipeView les éléments de balayage")
 
-Lorsqu’un `SwipeItem` est frappé, son `Invoked` événement se déclenche et est géré par son gestionnaire d’événements inscrit. La `Command` propriété peut également être définie sur une `ICommand` implémentation qui sera exécutée lorsque le `SwipeItem` sera appelé.
+Lorsqu’un `SwipeItem` est frappé, son `Invoked` événement se déclenche et est géré par son gestionnaire d’événements inscrit. En outre, l' `MenuItem.Clicked` événement se déclenche. La `Command` propriété peut également être définie sur une `ICommand` implémentation qui sera exécutée lorsque le `SwipeItem` sera appelé.
 
 > [!NOTE]
 > Lorsque l’apparence d’un `SwipeItem` est définie uniquement à l’aide des `Text` `IconImageSource` Propriétés ou, le contenu est toujours centré.
@@ -234,6 +227,30 @@ Les `SwipeStarted` `SwipeChanging` événements, et `SwipeEnded` signalent la di
 - `Left` indique qu’un balayage à gauche s’est produit.
 - `Up` indique qu’un balayage vers le haut s’est produit.
 - `Down` indique qu’un balayage vers le bas s’est produit.
+
+## <a name="swipe-threshold"></a>Seuil de balayage
+
+`SwipeView` comprend une `Threshold` propriété, de type `double` , qui représente le nombre d’unités indépendantes du périphérique qui déclenchent un mouvement de balayage pour révéler entièrement les éléments balayés.
+
+L’exemple suivant montre un `SwipeView` qui définit la `Threshold` propriété :
+
+```xaml
+<SwipeView Threshold="200">
+    <SwipeView.LeftItems>
+        <SwipeItems>
+            <SwipeItem Text="Favorite"
+                       IconImageSource="favorite.png"
+                       BackgroundColor="LightGreen" />
+        </SwipeItems>
+    </SwipeView.LeftItems>
+    <!-- Content -->
+</SwipeView>
+```
+
+Dans cet exemple, le `SwipeView` doit être balayé pour 200 unités indépendantes du périphérique avant que le `SwipeItem` soit entièrement révélé.
+
+> [!NOTE]
+> Actuellement, la `Threshold` propriété est implémentée uniquement sur iOS et Android.
 
 ## <a name="swipe-mode"></a>Mode balayage
 
