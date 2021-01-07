@@ -308,8 +308,8 @@ items:
             href: app-fundamentals/navigation/tabbed-page.md
           - name: CarouselPage
             href: app-fundamentals/navigation/carousel-page.md
-          - name: MasterDetailPage
-            href: app-fundamentals/navigation/master-detail-page.md
+          - name: FlyoutPage
+            href: app-fundamentals/navigation/flyoutpage.md
           - name: Pages modales
             href: app-fundamentals/navigation/modal.md
       - name: Shell
@@ -354,8 +354,6 @@ items:
     items:
       - name: Vue d'ensemble
         href: user-interface/index.yml
-      - name: Balisage C#
-        href: user-interface/csharp-markup.md
       - name: Informations de référence sur les contrôles
         items:
           - name: Vue d'ensemble
@@ -376,8 +374,6 @@ items:
         items:
           - name: BoxView
             href: user-interface/boxview.md
-          - name: Expander
-            href: user-interface/expander.md
           - name: Image
             href: user-interface/images.md
           - name: Etiquette
@@ -400,8 +396,6 @@ items:
                 href: user-interface/map/geocoder.md
               - name: Lancer l’application de carte native
                 href: user-interface/map/native-map-app.md
-          - name: MediaElement
-            href: user-interface/mediaelement.md
           - name: Formes
             items:
               - name: Vue d'ensemble
@@ -561,13 +555,6 @@ items:
                     href: user-interface/brushes/radialgradient.md
           - name: Couleurs
             href: user-interface/colors.md
-          - name: DataPages
-            href: user-interface/datapages/index.md
-            items:
-              - name: Bien démarrer
-                href: user-interface/datapages/get-started.md
-              - name: Informations de référence sur les contrôles
-                href: user-interface/datapages/controls.md
           - name: Afficher des fenêtres contextuelles
             href: user-interface/pop-ups.md
           - name: Polices
@@ -668,8 +655,6 @@ items:
             href: platform/android/index.md
           - name: Migration AndroidX
             href: platform/android/androidx-migration.md
-          - name: AppCompat et conception matérielle
-            href: platform/android/appcompat-material-design.md
           - name: Ombres et remplissage de bouton
             href: platform/android/button-padding-shadow.md
           - name: Options de l’éditeur de méthode d’entrée
@@ -716,6 +701,8 @@ items:
             href: platform/ios/entry-cursor-color.md
           - name: Taille de police d’entrée
             href: platform/ios/entry-font-size.md
+          - name: Ombre FlyoutPage
+            href: platform/ios/flyoutpage-shadow.md
           - name: Mise en forme
             href: platform/ios/formatting.md
           - name: Style de présentation de page modale
@@ -730,8 +717,6 @@ items:
             href: platform/ios/listview-separator-style.md
           - name: Principales mises à jour du contrôle de thread
             href: platform/ios/main-thread-updates-ui.md
-          - name: Ombre MasterDetailPage
-            href: platform/ios/masterdetailpage-shadow.md
           - name: Séparateur de la barre NavigationPage
             href: platform/ios/navigation-bar-separator.md
           - name: Mode de couleur de texte de la barre NavigationPage
@@ -774,12 +759,12 @@ items:
             href: platform/windows/index.md
           - name: Répertoire d’images par défaut
             href: platform/windows/default-image-directory.md
+          - name: Barre de navigation FlyoutPage
+            href: platform/windows/flyoutpage-navigation-bar.md
           - name: Ordre de lecture InputView
             href: platform/windows/inputview-reading-order.md
           - name: ListView SelectionMode
             href: platform/windows/listview-selectionmode.md
-          - name: Barre de navigation MasterDetailPage
-            href: platform/windows/masterdetailpage-navigation-bar.md
           - name: Positionnement de la barre d’outils de page
             href: platform/windows/page-toolbar-placement.md
           - name: Configuration de la plateforme
@@ -794,6 +779,8 @@ items:
             href: platform/windows/visualelement-access-keys.md
           - name: Mode de couleur hérité VisualElement
             href: platform/windows/legacy-color-mode.md
+          - name: Mode d’exécution WebView
+            href: platform/windows/webview-executionmode.md
           - name: Alertes JavaScript WebView
             href: platform/windows/webview-javascript-alert.md
       - name: Créer des spécificités de la plateforme
@@ -1026,6 +1013,8 @@ items:
       - name: Questions fréquemment posées
         href: troubleshooting/questions/index.md
         items:
+          - name: "Comment migrer une application vers Xamarin.Forms 5.0\_?"
+            href: troubleshooting/questions/forms5-migration.md
           - name: "Puis-je mettre à jour le modèle par défaut Xamarin.Forms vers un package NuGet plus récent\_?"
             href: troubleshooting/questions/update-forms-template.md
           - name: "Pourquoi le concepteur Visual Studio XAML ne fonctionne-t-il pas pour les fichiers XAML de Xamarin.Forms\_?"
