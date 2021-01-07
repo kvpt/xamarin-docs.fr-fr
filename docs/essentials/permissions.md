@@ -5,22 +5,22 @@ ms.assetid: 34062D84-3E55-4AF7-A688-8551068B1E57
 author: jamesmontemagno
 ms.author: jamont
 ms.custom: video
-ms.date: 09/22/2020
+ms.date: 01/04/2021
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 25677d79b29902ed0cdd0b2ed08da021d7ef9e6f
-ms.sourcegitcommit: d2daaa6ca5fe630f80d5a8151985d9f96a2fc93b
+ms.openlocfilehash: 3d0ec65b363f727834b12e6a12e832fbcf446ea9
+ms.sourcegitcommit: 995ee23d93e08dceb8754cc6c682cd2f4594345b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96513016"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97972355"
 ---
 # <a name="no-locxamarinessentials-permissions"></a>Xamarin.Essentials: Autorisations
 
 La classe d' **autorisations** offre la possibilité de vérifier et de demander des autorisations d’exécution.
 
-## <a name="get-started"></a>Bien démarrer
+## <a name="get-started"></a>Prendre en main
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -71,8 +71,6 @@ Lorsque `CheckStatusAsync` vous utilisez ou `RequestAsync` un `PermissionStatus`
 
 ## <a name="explain-why-permission-is-needed"></a>Expliquer la raison pour laquelle l’autorisation est nécessaire
 
-![API de la version préliminaire](~/media/shared/preview.png)
-
 Il est recommandé d’expliquer les raisons pour lesquelles votre application a besoin d’une autorisation spécifique. Sur iOS, vous devez spécifier une chaîne qui est présentée à l’utilisateur. Android n’a pas cette possibilité et, par défaut, l’état de l’autorisation est désactivé. Cela limite la possibilité de savoir si l’utilisateur a refusé l’autorisation ou s’il s’agit de la première fois qu’il invite l’utilisateur. La `ShouldShowRationale` méthode peut être utilisée pour déterminer si une interface utilisateur pédagogique doit être affichée. Si la méthode retourne `true` cela, c’est parce que l’utilisateur a refusé ou désactivé l’autorisation par le passé. D’autres plateformes sont toujours retournées `false` lors de l’appel de cette méthode.
 
 ## <a name="available-permissions"></a>Autorisations disponibles
@@ -91,10 +89,10 @@ Guide des icônes :
 | Appareil photo | ![Android pris en charge](~/media/shared/yes.png "Android pris en charge") | ![iOS pris en charge](~/media/shared/yes.png "iOS pris en charge") | ![UWP non pris en charge](~/media/shared/no.png "UWP non pris en charge") | ![Watchos non pris en charge](~/media/shared/no.png "Watchos non pris en charge") | ![tvOS non pris en charge](~/media/shared/no.png "tvOS non pris en charge") | ![Tizen pris en charge](~/media/shared/yes.png "Tizen pris en charge") |
 | ContactsRead | ![Android pris en charge](~/media/shared/yes.png "Android pris en charge") | ![iOS pris en charge](~/media/shared/yes.png "iOS pris en charge") | ![UWP pris en charge](~/media/shared/yes.png "UWP pris en charge") | ![Watchos non pris en charge](~/media/shared/no.png "Watchos non pris en charge") | ![tvOS non pris en charge](~/media/shared/no.png "tvOS non pris en charge") | ![Tizen non pris en charge](~/media/shared/no.png "Tizen non pris en charge") |
 | ContactsWrite | ![Android pris en charge](~/media/shared/yes.png "Android pris en charge") | ![iOS pris en charge](~/media/shared/yes.png "iOS pris en charge") | ![UWP pris en charge](~/media/shared/yes.png "UWP pris en charge") | ![Watchos non pris en charge](~/media/shared/no.png "Watchos non pris en charge") | ![tvOS non pris en charge](~/media/shared/no.png "tvOS non pris en charge") | ![Tizen non pris en charge](~/media/shared/no.png "Tizen non pris en charge") |
-| Lampe de poche | ![Android pris en charge](~/media/shared/yes.png "Android pris en charge") | ![iOS non pris en charge](~/media/shared/no.png "iOS non pris en charge") | ![UWP non pris en charge](~/media/shared/no.png "UWP non pris en charge") | ![Watchos non pris en charge](~/media/shared/no.png "Watchos non pris en charge") | ![tvOS non pris en charge](~/media/shared/no.png "tvOS non pris en charge") | ![Tizen pris en charge](~/media/shared/yes.png "Tizen pris en charge") |
+| Lampe torche | ![Android pris en charge](~/media/shared/yes.png "Android pris en charge") | ![iOS non pris en charge](~/media/shared/no.png "iOS non pris en charge") | ![UWP non pris en charge](~/media/shared/no.png "UWP non pris en charge") | ![Watchos non pris en charge](~/media/shared/no.png "Watchos non pris en charge") | ![tvOS non pris en charge](~/media/shared/no.png "tvOS non pris en charge") | ![Tizen pris en charge](~/media/shared/yes.png "Tizen pris en charge") |
 | LocationWhenInUse | ![Android pris en charge](~/media/shared/yes.png "Android pris en charge") | ![iOS pris en charge](~/media/shared/yes.png "iOS pris en charge") | ![UWP pris en charge](~/media/shared/yes.png "UWP pris en charge") | ![Watchos pris en charge](~/media/shared/yes.png "Watchos pris en charge") | ![tvOS pris en charge](~/media/shared/yes.png "tvOS pris en charge")  | ![Tizen pris en charge](~/media/shared/yes.png "Tizen pris en charge") |
 | LocationAlways | ![Android pris en charge](~/media/shared/yes.png "Android pris en charge") | ![iOS pris en charge](~/media/shared/yes.png "iOS pris en charge") | ![UWP pris en charge](~/media/shared/yes.png "UWP pris en charge") | ![Watchos pris en charge](~/media/shared/yes.png "Watchos pris en charge") | ![tvOS non pris en charge](~/media/shared/no.png "tvOS non pris en charge") | ![Tizen pris en charge](~/media/shared/yes.png "Tizen pris en charge") |
-| Média | ![Android non pris en charge](~/media/shared/no.png "Android non pris en charge") | ![iOS pris en charge](~/media/shared/yes.png "iOS pris en charge") | ![UWP non pris en charge](~/media/shared/no.png "UWP non pris en charge") | ![Watchos non pris en charge](~/media/shared/no.png "Watchos non pris en charge") | ![tvOS non pris en charge](~/media/shared/no.png "tvOS non pris en charge") | ![Tizen non pris en charge](~/media/shared/no.png "Tizen non pris en charge") |
+| Médias | ![Android non pris en charge](~/media/shared/no.png "Android non pris en charge") | ![iOS pris en charge](~/media/shared/yes.png "iOS pris en charge") | ![UWP non pris en charge](~/media/shared/no.png "UWP non pris en charge") | ![Watchos non pris en charge](~/media/shared/no.png "Watchos non pris en charge") | ![tvOS non pris en charge](~/media/shared/no.png "tvOS non pris en charge") | ![Tizen non pris en charge](~/media/shared/no.png "Tizen non pris en charge") |
 | Microphone | ![Android pris en charge](~/media/shared/yes.png "Android pris en charge") | ![iOS pris en charge](~/media/shared/yes.png "iOS pris en charge") | ![UWP pris en charge](~/media/shared/yes.png "UWP pris en charge") | ![Watchos non pris en charge](~/media/shared/no.png "Watchos non pris en charge") | ![tvOS non pris en charge](~/media/shared/no.png "tvOS non pris en charge") | ![Tizen pris en charge](~/media/shared/yes.png "Tizen pris en charge") |
 | Téléphone | ![Android pris en charge](~/media/shared/yes.png "Android pris en charge") | ![iOS pris en charge](~/media/shared/yes.png "iOS pris en charge") | ![UWP non pris en charge](~/media/shared/no.png "UWP non pris en charge") | ![Watchos non pris en charge](~/media/shared/no.png "Watchos non pris en charge") | ![tvOS non pris en charge](~/media/shared/no.png "tvOS non pris en charge") | ![Tizen non pris en charge](~/media/shared/no.png "Tizen non pris en charge") |
 | Photo | ![Android non pris en charge](~/media/shared/no.png "Android non pris en charge") | ![iOS pris en charge](~/media/shared/yes.png "iOS pris en charge") | ![UWP non pris en charge](~/media/shared/no.png "UWP non pris en charge") | ![Watchos non pris en charge](~/media/shared/no.png "Watchos non pris en charge") | ![tvOS pris en charge](~/media/shared/yes.png "tvOS pris en charge") | ![Tizen non pris en charge](~/media/shared/no.png "Tizen non pris en charge") |

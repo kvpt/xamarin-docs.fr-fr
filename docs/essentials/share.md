@@ -4,23 +4,23 @@ description: La classe share dans Xamarin.Essentials permet à une application d
 ms.assetid: B7B01D55-0129-4C87-B515-89F8F4E94665
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 01/06/2020
+ms.date: 01/04/2021
 ms.custom: video
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0870dd94c15f1bd94d5c6864b3d4caeb96349f32
-ms.sourcegitcommit: 83793378b28e8ef8624406309b4ecd41aa1a3a14
+ms.openlocfilehash: 67c3aad219cdc71fd9d88783ca42803dfd1fe4f4
+ms.sourcegitcommit: 995ee23d93e08dceb8754cc6c682cd2f4594345b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94503265"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97972277"
 ---
 # <a name="no-locxamarinessentials-share"></a>Xamarin.Essentials: Partager
 
 La classe **Share** permet à une application de partager des données comme du texte et des liens web avec d’autres applications sur l’appareil.
 
-## <a name="get-started"></a>Prise en main
+## <a name="get-started"></a>Prendre en main
 
 [!include[](~/essentials/includes/get-started.md)]
 
@@ -60,7 +60,7 @@ public class ShareTest
 
 L’interface utilisateur de partage avec une application externe s’affiche quand la requête est effectuée :
 
-![Partager](images/share.png)
+![Partager avec l’interface utilisateur d’une application externe](images/share.png)
 
 ## <a name="file"></a>Fichier
 
@@ -81,8 +81,6 @@ await Share.RequestAsync(new ShareFileRequest
 ```
 
 ## <a name="multiple-files"></a>Fichiers multiples
-
-![API de la version préliminaire](~/media/shared/preview.png)
 
 L’utilisation de l’option partager plusieurs fichiers diffère du fichier unique dans le seul cas où vous pouvez envoyer plusieurs fichiers à la fois :
 

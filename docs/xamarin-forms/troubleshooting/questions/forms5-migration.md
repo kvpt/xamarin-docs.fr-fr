@@ -1,5 +1,6 @@
 ---
 title: Comment faire migrer mon application vers Xamarin.Forms 5,0 ?
+description: Comment migrer votre application vers Xamarin.Forms 5,0, avec la focalisation sur Android sur UWP.
 ms.assetid: AD04FEE9-B8F5-4CA5-AB31-EF1225867E4B
 ms.prod: xamarin
 ms.technology: xamarin-forms
@@ -10,12 +11,12 @@ ms.date: 10/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a97cd62906ea7a75609d957e3a85a268807c4f46
-ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
+ms.openlocfilehash: 8f93d20dac789abed57f8f41bf41778ad50a5fb5
+ms.sourcegitcommit: 995ee23d93e08dceb8754cc6c682cd2f4594345b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97940770"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97972316"
 ---
 # <a name="how-do-i-migrate-my-app-to-no-locxamarinforms-50"></a>Comment faire migrer mon application vers Xamarin.Forms 5,0 ?
 
@@ -31,7 +32,7 @@ Xamarin.Forms 5,0 comprend les modifications avec rupture suivantes :
 
 En outre, les projets Android et UWP générés avec Xamarin.Forms 5,0 requièrent une mise à jour.
 
-## <a name="android"></a>Android
+## <a name="android"></a>Téléphone
 
 Les projets Android créés avec Xamarin.Forms 5,0 requièrent que vous ayez installé la plateforme AndroidX (Android 10,0) dans votre environnement de développement. Pour ce faire, vous pouvez utiliser le gestionnaire de Android SDK. Pour plus d’informations sur AndroidX, consultez [migration de Xamarin.Forms AndroidX dans ](~/xamarin-forms/platform/android/androidx-migration.md).
 
@@ -111,10 +112,10 @@ ToolbarResource = Resource.Layout.Toolbar;
 
 ## <a name="uwp"></a>UWP
 
-Xamarin.Forms 5,0 recommande une version de plateforme cible de >= 10.0.17763.0 pour les projets UWP. La version de la plateforme cible peut être définie dans Visual Studio ou dans le fichier UWP. csproj :
+Xamarin.Forms 5,0 recommande une version de plateforme cible de >= 10.0.18362.0 pour les projets UWP. La version de la plateforme cible peut être définie dans Visual Studio ou dans le fichier UWP. csproj :
 
 ```xml
-<TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.17763.0</TargetPlatformVersion>
+<TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.18362.0</TargetPlatformVersion>
 ```
 
 Un avertissement de génération est généré si votre projet UWP utilise une version de plateforme cible inférieure.
