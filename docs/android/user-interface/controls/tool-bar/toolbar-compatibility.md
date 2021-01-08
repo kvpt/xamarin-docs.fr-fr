@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/15/2018
-ms.openlocfilehash: 8d5f5ff1cfe7876862371a9732f0ab8186bbeeba
-ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
+ms.openlocfilehash: 8d5f0b06a804e9b9af7bb15111c70e4505c79fd0
+ms.sourcegitcommit: 40a56bbc1e038a9181101580ad18a4584edb5ab0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91457622"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98025511"
 ---
 # <a name="toolbar-compatibility"></a>Compatibilité de la barre d’outils
 
@@ -45,7 +45,7 @@ Ensuite, ajoutez le package de la [bibliothèque de prise en charge Android v7](
 
 [![Capture d’écran du package AppCompat v7 sélectionné dans gérer les packages NuGet](toolbar-compatibility-images/01-appcompat-nuget-sml.png)](toolbar-compatibility-images/01-appcompat-nuget.png#lightbox)
 
-Quand ce NuGet est installé, plusieurs autres packages NuGet sont également installés s’ils ne sont pas déjà présents (tels que **Xamarin. Android. support. animated. Vector. Drawing**, **Xamarin. Android. support. v4**et **Xamarin. Android. support. Vector. Drawable**). Pour plus d’informations sur l’installation des packages NuGet, consultez [procédure pas à pas : inclusion d’un NuGet dans votre projet](/visualstudio/mac/nuget-walkthrough). 
+Quand ce NuGet est installé, plusieurs autres packages NuGet sont également installés s’ils ne sont pas déjà présents (tels que **Xamarin. Android. support. animated. Vector. Drawing**, **Xamarin. Android. support. v4** et **Xamarin. Android. support. Vector. Drawable**). Pour plus d’informations sur l’installation des packages NuGet, consultez [procédure pas à pas : inclusion d’un NuGet dans votre projet](/visualstudio/mac/nuget-walkthrough). 
 
 ## <a name="use-an-appcompat-theme-and-toolbar"></a>Utiliser un thème et une barre d’outils AppCompat
 
@@ -166,7 +166,7 @@ Comment ce commutateur d’espace de noms assure-t-il la prise en charge de l' `
 
 ## <a name="subclass-appcompatactivity"></a>Sous-classe AppCompatActivity
 
-La dernière étape de la conversion consiste à modifier `MainActivity` afin qu’il s’agit d’une sous-classe de `AppCompactActivity` . Modifiez **MainActivity.cs** et ajoutez les `using` instructions suivantes : 
+La dernière étape de la conversion consiste à modifier `MainActivity` afin qu’il s’agit d’une sous-classe de `AppCompatActivity` . Modifiez **MainActivity.cs** et ajoutez les `using` instructions suivantes : 
 
 ```csharp
 using Android.Support.V7.App;
