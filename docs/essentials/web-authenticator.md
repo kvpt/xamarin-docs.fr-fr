@@ -8,12 +8,12 @@ ms.date: 03/26/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f05868bbf8da9597c4290ba687f767f3995ba437
-ms.sourcegitcommit: 07ee6a95f77f9a12fadb857e549cdcdb1928c7d3
+ms.openlocfilehash: 4ab7c5dab6a414e15531e0e0e812d604e05ab1cc
+ms.sourcegitcommit: 3edcc63fcf86409b73cd6e5dc77f0093a99b3f87
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97904982"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98062600"
 ---
 # <a name="no-locxamarinessentials-web-authenticator"></a>Xamarin.Essentials: Web Authenticator
 
@@ -56,6 +56,16 @@ const string CALLBACK_SCHEME = "myapp";
 public class WebAuthenticationCallbackActivity : Xamarin.Essentials.WebAuthenticatorCallbackActivity
 {
 }
+```
+Si la version d’Android cible de votre projet est définie sur **Android 11 (API R 30),** vous devez mettre à jour votre manifeste Android avec les requêtes utilisées avec les nouvelles [exigences de visibilité du package](https://developer.android.com/preview/privacy/package-visibility).
+
+Ouvrez le fichier **AndroidManifest.xml** sous le dossier Propriétés, puis ajoutez ce qui suit dans le nœud manifeste :
+```XML
+<queries>
+    <intent>
+        <action android:name="android.support.customtabs.action.CustomTabsService" />
+    </intent>
+</queries>
 ```
 
 # <a name="ios"></a>[iOS](#tab/ios)
