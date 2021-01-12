@@ -10,16 +10,16 @@ ms.date: 03/05/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0b05cb37a2399f438b9003e39341feb138bce490
-ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
+ms.openlocfilehash: 9f601ed1cfd7938a2340650604b925339328f29d
+ms.sourcegitcommit: 1decf2c65dc4c36513f7dd459a5df01e170a036f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97940742"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98115221"
 ---
 # <a name="flyoutpage-shadow-on-ios"></a>Ombre FlyoutPage sur iOS
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Ce contrôle propre à la plateforme détermine si une ombre est appliquée à la page de détails d’une [`FlyoutPage`](xref:Xamarin.Forms.FlyoutPage) , lors de la révélation de la page de menu volant. Il est consommé en XAML en affectant `FlyoutPage.ApplyShadow` à la propriété pouvant être liée la valeur `true` :
 
@@ -56,6 +56,6 @@ Le résultat est que la page de détails d’un [`FlyoutPage`](xref:Xamarin.Form
 
 ## <a name="related-links"></a>Liens connexes
 
-- [PlatformSpecifics (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (exemple)](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [Création de caractéristiques de la plateforme](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [API iOSSpecific](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

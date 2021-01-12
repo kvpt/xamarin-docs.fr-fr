@@ -6,16 +6,16 @@ ms.assetId: 602456B5-701B-4948-B454-B1F31283F1CF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/05/2020
+ms.date: 01/11/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: de3d7df922a0b6bdc6644e2684c6f01176abbe42
-ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
+ms.openlocfilehash: d0ebae93405cb115a0f1e87453ab9b438202ef30
+ms.sourcegitcommit: 1decf2c65dc4c36513f7dd459a5df01e170a036f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97940497"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98115247"
 ---
 # <a name="no-locxamarinforms-swipeview"></a>Xamarin.Forms SwipeView
 
@@ -37,12 +37,11 @@ Ces propriétés sont sauvegardées par des [`BindableProperty`](xref:Xamarin.Fo
 
 En outre, le `SwipeView` hérite de la [`Content`](xref:Xamarin.Forms.ContentView.Content) propriété de la [`ContentView`](xref:Xamarin.Forms.ContentView) classe. La `Content` propriété est la propriété de contenu de la `SwipeView` classe et n’a donc pas besoin d’être explicitement définie.
 
-La `SwipeView` classe définit également quatre événements :
+La `SwipeView` classe définit également trois événements :
 
 - `SwipeStarted` est déclenché au démarrage d’un balayage. L' `SwipeStartedEventArgs` objet qui accompagne cet événement a une `SwipeDirection` propriété, de type `SwipeDirection` .
 - `SwipeChanging` est déclenché lors du déplacement du balayage. L' `SwipeChangingEventArgs` objet qui accompagne cet événement a une `SwipeDirection` propriété, de type `SwipeDirection` et une `Offset` propriété de type `double` .
-- `SwipeEnded` est déclenché lorsqu’un balayage se termine. L' `SwipeEndedEventArgs` objet qui accompagne cet événement a une `SwipeDirection` propriété, de type `SwipeDirection` .
-- `CloseRequested` est déclenché lorsque les éléments de balayage sont fermés.
+- `SwipeEnded` est déclenché lorsqu’un balayage se termine. L' `SwipeEndedEventArgs` objet qui accompagne cet événement a une `SwipeDirection` propriété, de type `SwipeDirection` et une `IsOpen` propriété de type `bool` .
 
 En outre, `SwipeView` comprend `Open` les `Close` méthodes et, qui ouvrent et ferment respectivement les éléments de balayage.
 
@@ -346,7 +345,7 @@ Dans cet exemple, le `SwipeItemView` comprend un [`StackLayout`](xref:Xamarin.Fo
 
 ## <a name="open-and-close-a-swipeview-programmatically"></a>Ouvrir et fermer un SwipeView par programmation
 
-`SwipeView` comprend `Open` les `Close` méthodes et, qui ouvrent et ferment respectivement les éléments de balayage.
+`SwipeView` comprend `Open` les `Close` méthodes et, qui ouvrent et ferment respectivement les éléments de balayage. Par défaut, ces méthodes animent le `SwipeView` lorsqu’elle est ouverte ou fermée.
 
 La `Open` méthode requiert un `OpenSwipeItem` argument pour spécifier la direction `SwipeView` à partir de laquelle le sera ouvert. L' `OpenSwipeItem` énumération a quatre membres :
 
@@ -354,6 +353,8 @@ La `Open` méthode requiert un `OpenSwipeItem` argument pour spécifier la direc
 - `TopItems`, qui indique que le `SwipeView` sera ouvert à partir du haut, pour afficher les éléments de balayage dans la `TopItems` collection.
 - `RightItems`, qui indique que le `SwipeView` sera ouvert à partir de la droite pour afficher les éléments de balayage dans `RightItems` la collection.
 - `BottomItems`, qui indique que le `SwipeView` sera ouvert à partir du bas pour afficher les éléments de balayage dans la `BottomItems` collection.
+
+En outre, la `Open` méthode accepte également un `bool` argument facultatif qui définit si le `SwipeView` sera animé à son ouverture.
 
 À partir d’un `SwipeView` nommé `swipeView` , l’exemple suivant montre comment ouvrir un `SwipeView` pour afficher les éléments de balayage dans la `LeftItems` collection :
 
@@ -368,7 +369,7 @@ swipeView.Close();
 ```
 
 > [!NOTE]
-> Lorsque la `Close` méthode est appelée, l' `CloseRequested` événement est déclenché.
+> La `Close` méthode accepte également un `bool` argument facultatif qui définit si le `SwipeView` sera animé à sa fermeture.
 
 ## <a name="disable-a-swipeview"></a>Désactiver un SwipeView
 

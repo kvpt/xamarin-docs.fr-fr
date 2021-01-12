@@ -10,12 +10,12 @@ ms.date: 11/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f37006e15ad4cc2c6c8d03f3c88c1c8f57fe4fd5
-ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
+ms.openlocfilehash: d9d0d75a393cc30ffaf698625cd49cf0ce5b5741
+ms.sourcegitcommit: 1decf2c65dc4c36513f7dd459a5df01e170a036f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97940068"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98115260"
 ---
 # <a name="summary-of-chapter-25-page-varieties"></a>Résumé du chapitre 25. Variétés de page
 
@@ -33,7 +33,7 @@ Ces types de pages fournissent des options de navigation plus sophistiquées que
 
 ## <a name="master-and-detail"></a>Maître et détail
 
-[`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage)Définit deux propriétés de type `Page` : [`Master`](xref:Xamarin.Forms.MasterDetailPage.Master) et [`Detail`](xref:Xamarin.Forms.MasterDetailPage.Detail) . En général, vous définissez chacune de ces propriétés sur un `ContentPage` . Le `MasterDetailPage` s’affiche et passe d’une page à l’autre.
+[`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage)Définit deux propriétés de type `Page` : [`Master`](xref:Xamarin.Forms.MasterDetailPage.Master) et `Detail` . En général, vous définissez chacune de ces propriétés sur un `ContentPage` . Le `MasterDetailPage` s’affiche et passe d’une page à l’autre.
 
 Il existe deux façons fondamentales de basculer entre ces deux pages :
 
@@ -62,7 +62,7 @@ L’exemple [**SchoolAndDetail**](https://github.com/xamarin/xamarin-forms-book-
 
 Les `Master` `Detail` Propriétés et sont définies avec des arborescences d’éléments visuels dans le fichier [SchoolAndDetailPage. Xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/SchoolAndDetail/SchoolAndDetail/SchoolAndDetail/SchoolAndDetailPage.xaml) , qui dérive de `MasterDetailPage` . Cette organisation permet de définir des liaisons de données entre les pages maître et de détails.
 
-Ce fichier XAML affecte également [`IsPresented`](xref:Xamarin.Forms.MasterDetailPage.IsPresented) à la propriété de la `MasterDetailPage` valeur `True` . La page maître est alors affichée au démarrage ; par défaut, la page de détails s’affiche. Le fichier [SchoolAndDetailPage.Xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/SchoolAndDetail/SchoolAndDetail/SchoolAndDetail/SchoolAndDetailPage.xaml.cs) `IsPresented` est défini sur `false` lorsqu’un élément est sélectionné dans la `ListView` page maître. La page de détails s’affiche alors :
+Ce fichier XAML affecte également `IsPresented` à la propriété de la `MasterDetailPage` valeur `True` . La page maître est alors affichée au démarrage ; par défaut, la page de détails s’affiche. Le fichier [SchoolAndDetailPage.Xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/SchoolAndDetail/SchoolAndDetail/SchoolAndDetail/SchoolAndDetailPage.xaml.cs) `IsPresented` est défini sur `false` lorsqu’un élément est sélectionné dans la `ListView` page maître. La page de détails s’affiche alors :
 
 [![Capture triple de l’école et des détails](images/ch25fg09-small.png "Page de détails à partir d’un MasterDetailPage")](images/ch25fg09-large.png#lightbox "Page de détails à partir d’un MasterDetailPage")
 
@@ -70,8 +70,8 @@ Ce fichier XAML affecte également [`IsPresented`](xref:Xamarin.Forms.MasterDeta
 
 Bien que Xamarin.Forms offre une interface utilisateur pour basculer entre les vues maître et détail, vous pouvez fournir les vôtres. Pour ce faire :
 
-- Affectez à la propriété la valeur [`IsGestureEnabled`](xref:Xamarin.Forms.MasterDetailPage.IsGestureEnabled) `false` pour désactiver le balayage
-- Substituez la [`ShouldShowToolbarButton`](xref:Xamarin.Forms.MasterDetailPage.ShouldShowToolbarButton) méthode et retournez `false` pour masquer les boutons de la barre d’outils sur Windows 8.1 et Windows Phone 8,1.
+- Affectez à la propriété la valeur `IsGestureEnabled` `false` pour désactiver le balayage
+- Substituez la `ShouldShowToolbarButton` méthode et retournez `false` pour masquer les boutons de la barre d’outils sur Windows 8.1 et Windows Phone 8,1.
 
 Vous devez ensuite fournir un moyen de basculer entre les pages maître et de détails, comme illustré par l’exemple [**ColorsDetail**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25/ColorsDetails) .
 

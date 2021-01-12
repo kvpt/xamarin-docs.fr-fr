@@ -1,5 +1,5 @@
 ---
-title: Migration de AndroidX dansXamarin.Forms
+title: Migration de AndroidX dans Xamarin.Forms
 description: Cet article explique pourquoi AndroidX existe et comment migrer vers AndroidX dans votre Xamarin.Forms application.
 ms.prod: xamarin
 ms.assetid: 98884003-E65A-4EB4-842D-66CFE27344A4
@@ -10,16 +10,19 @@ ms.date: 01/22/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c2df309a8a12a05a4b492bb66977aa2411142850
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 3ef1d0322018e5c404204fdaf9f4816891cc39f3
+ms.sourcegitcommit: 1decf2c65dc4c36513f7dd459a5df01e170a036f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138266"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98115130"
 ---
-# <a name="androidx-migration-in-xamarinforms"></a>Migration de AndroidX dansXamarin.Forms
+# <a name="androidx-migration-in-no-locxamarinforms"></a>Migration de AndroidX dans Xamarin.Forms
 
 AndroidX remplace la bibliothèque de prise en charge Android. Cet article explique pourquoi AndroidX existe, comment il affecte Xamarin.Forms et comment migrer votre application pour utiliser les bibliothèques AndroidX.
+
+> [!IMPORTANT]
+> Si vous migrez une application vers Xamarin.Forms 5,0, consultez [Comment faire migrer mon application vers Xamarin.Forms 5,0 ?](~/xamarin-forms/troubleshooting/questions/forms5-migration.md).
 
 ## <a name="history-of-androidx"></a>Historique de AndroidX
 
@@ -30,17 +33,17 @@ Si la bibliothèque de support était à l’origine un fichier binaire unique, 
 - `Fragment`Classe de prise en charge.
 - `RecyclerView`, Utilisé pour gérer des listes longues.
 - Prise en charge Multidex pour les applications avec plus de 65 536 méthodes.
-- Classe `ActivityCompat`.
+- La classe `ActivityCompat`.
 
 AndroidX est un remplacement de la bibliothèque de prise en charge, qui n’est plus conservée-tout le développement de la bibliothèque se produit dans la bibliothèque AndroidX. AndroidX est une bibliothèque repensée qui utilise le contrôle de version sémantique, des noms de packages plus clairs et une meilleure prise en charge des modèles d’architecture d’application courants. AndroidX version 1.0.0 est l’équivalent binaire pour la prise en charge de la version de bibliothèque 28.0.0. Pour obtenir la liste complète des mappages de classes de la bibliothèque de prise en charge à AndroidX, consultez [mappages de classes de bibliothèque de prise en charge](https://developer.android.com/jetpack/androidx/migrate/class-mappings) sur Developer.Android.com.
 
 Google a créé un processus de migration appelé Jetifier avec AndroidX. Le Jetifier inspecte le bytecode jar pendant le processus de génération et remappe les références de la bibliothèque de prise en charge, à la fois dans le code de l’application et dans les dépendances, à leur équivalent AndroidX.
 
-Dans une Xamarin.Forms application, tout comme dans une application Java Android, les dépendances jar doivent être migrées vers AndroidX. Toutefois, les liaisons Xamarin doivent également être migrées pour pointer vers les fichiers jar sous-jacents appropriés. Xamarin.Formsajout de la prise en charge de la migration automatique de AndroidX dans la version 4,5.
+Dans une Xamarin.Forms application, tout comme dans une application Java Android, les dépendances jar doivent être migrées vers AndroidX. Toutefois, les liaisons Xamarin doivent également être migrées pour pointer vers les fichiers jar sous-jacents appropriés. Xamarin.Forms ajout de la prise en charge de la migration automatique de AndroidX dans la version 4,5.
 
 Pour plus d’informations sur AndroidX, consultez [vue d’ensemble d’AndroidX](https://developer.android.com/jetpack/androidx) sur Developer.Android.com.
 
-## <a name="automatic-migration-in-xamarinforms"></a>Migration automatique dansXamarin.Forms
+## <a name="automatic-migration-in-no-locxamarinforms"></a>Migration automatique dans Xamarin.Forms
 
 Pour migrer automatiquement vers AndroidX, un Xamarin.Forms projet doit :
 
@@ -76,5 +79,6 @@ Une fois les packages manquants résolus, la reconstruction du projet charge les
 
 ## <a name="related-links"></a>Liens connexes
 
+- [Comment faire migrer mon application vers Xamarin.Forms 5,0 ?](~/xamarin-forms/troubleshooting/questions/forms5-migration.md)
 - [Vue d’ensemble de la bibliothèque de support Android](https://developer.android.com/topic/libraries/support-library/index) sur Developer.Android.com
 - [Présentation de AndroidX](https://developer.android.com/jetpack/androidx) sur Developer.Android.com

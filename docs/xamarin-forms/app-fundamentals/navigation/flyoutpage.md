@@ -10,16 +10,16 @@ ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ad3b5d76816710d45cd1d8e738771e39555401fa
-ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
+ms.openlocfilehash: ea0be2136b354ef7a613904799481079bcae52ad
+ms.sourcegitcommit: 1decf2c65dc4c36513f7dd459a5df01e170a036f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97940687"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98115234"
 ---
 # <a name="no-locxamarinforms-flyoutpage"></a>Xamarin.Forms FlyoutPage
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-flyoutpage)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](/samples/xamarin/xamarin-forms-samples/navigation-flyoutpage)
 
 Une page de menu volant affiche généralement une liste d’éléments, comme illustré dans les captures d’écran suivantes :
 
@@ -294,5 +294,5 @@ public class MainPageCS : FlyoutPage
 ## <a name="related-links"></a>Liens connexes
 
 - [Types de pages](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf)
-- [FlyoutPage (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-flyoutpage)
+- [FlyoutPage (exemple)](/samples/xamarin/xamarin-forms-samples/navigation-flyoutpage)
 - [API FlyoutPage](xref:Xamarin.Forms.FlyoutPage)

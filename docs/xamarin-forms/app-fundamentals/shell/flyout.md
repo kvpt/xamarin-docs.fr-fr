@@ -6,16 +6,16 @@ ms.assetid: FEDE51EB-577E-4B3E-9890-B7C1A5E52516
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/30/2020
+ms.date: 01/12/2021
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 4faa0923e074460ef254db319dfcfd01cc832dce
-ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
+ms.openlocfilehash: bad3a19de5a8feae2ca2fd02c1a454ac379e9f42
+ms.sourcegitcommit: 1decf2c65dc4c36513f7dd459a5df01e170a036f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97940123"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98115156"
 ---
 # <a name="no-locxamarinforms-shell-flyout"></a>Xamarin.Forms Menu volant Shell
 
@@ -63,6 +63,20 @@ En outre, il est possible d’ouvrir et de fermer le menu volant programmatiquem
 ```csharp
 Shell.Current.FlyoutIsPresented = false;
 ```
+
+## <a name="flyout-width-and-height"></a>Largeur et hauteur du menu volant
+
+La largeur et la hauteur du menu volant peuvent être personnalisées en affectant des `Shell.FlyoutWidth` `Shell.FlyoutHeight` valeurs aux propriétés et jointes `double` :
+
+```xaml
+<Shell ...
+       FlyoutWidth="400"
+       FlyoutHeight="200">
+    ...
+</Shell>
+```
+
+Cela permet des scénarios tels que le développement du menu volant sur tout l’écran, ou la réduction de la hauteur du menu volant afin qu’il ne masque pas la barre d’onglets.
 
 ## <a name="flyout-header"></a>En-tête de menu volant
 
@@ -540,7 +554,23 @@ En outre, les [`Grid`](xref:Xamarin.Forms.Grid) [`Image`](xref:Xamarin.Forms.Ima
 > [!NOTE]
 > Le même modèle peut également être utilisé pour les `MenuItem` objets.
 
-## <a name="flyoutitem-tab-order"></a>Ordre de tabulation FlyoutItem
+## <a name="set-flyoutitem-visibility"></a>Définir la visibilité FlyoutItem
+
+Les éléments de menu volant sont visibles dans le menu volant par défaut. Toutefois, un élément de menu volant peut être masqué dans le menu volant en affectant à la `Shell.FlyoutItemIsVisible` propriété jointe, qui a comme valeur par défaut `true` `false` :
+
+```xaml
+<Shell ...>
+    <FlyoutItem ...
+                Shell.FlyoutItemIsVisible="False">
+        ...
+    </FlyoutItem>
+</Shell>
+```
+
+> [!NOTE]
+> La `Shell.FlyoutItemIsVisible` propriété jointe peut être définie sur les `FlyoutItem` `MenuItem` objets,, `Tab` et `ShellContent` .
+
+## <a name="set-flyoutitem-tab-order"></a>Définir l’ordre de tabulation FlyoutItem
 
 Par défaut, l’ordre de tabulation des objets `FlyoutItem` est identique à l’ordre dans lequel ils apparaissent dans XAML ou sont ajoutés programmatiquement à une collection d’enfants. Les objets `FlyoutItem` seront parcourus dans cet ordre avec un clavier. Cet ordre par défaut est souvent le meilleur possible.
 
@@ -588,6 +618,54 @@ Dans cet exemple, la `CurrentItem` propriété est définie dans la classe sous-
 ```csharp
 Shell.Current.CurrentItem = aboutItem;
 ```
+
+## <a name="replace-flyout-content"></a>Remplacer le contenu du menu volant
+
+Les éléments de menu volant, qui représentent le contenu du menu volant, peuvent éventuellement être remplacés par votre propre contenu en affectant `Shell.FlyoutContent` à la propriété pouvant être liée la valeur `object` :
+
+```xaml
+<Shell.FlyoutContent>
+    <CollectionView BindingContext="{x:Reference shell}"
+                    IsGrouped="True"
+                    ItemsSource="{Binding FlyoutItems}">
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <Label Text="{Binding Title}"
+                       TextColor="White"
+                       FontSize="Large" />
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+</Shell.FlyoutContent>
+```
+
+Dans cet exemple, le contenu du menu volant est remplacé par un [`CollectionView`](xref:Xamarin.Forms.CollectionView) qui affiche le titre de chaque élément de la `FlyoutItems` collection.
+
+> [!NOTE]
+> La `FlyoutItems` propriété, dans la `Shell` classe, est une collection en lecture seule d’éléments de menu volant.
+
+Vous pouvez également définir le contenu du menu volant en affectant à la propriété la valeur `Shell.FlyoutContentTemplate` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) :
+
+```xaml
+<Shell.FlyoutContentTemplate>
+    <DataTemplate>
+        <CollectionView BindingContext="{x:Reference shell}"
+                        IsGrouped="True"
+                        ItemsSource="{Binding FlyoutItems}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Label Text="{Binding Title}"
+                           TextColor="White"
+                           FontSize="Large" />
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </DataTemplate>
+</Shell.FlyoutContentTemplate>
+```
+
+> [!IMPORTANT]
+> Un en-tête de menu volant peut éventuellement être affiché au-dessus de votre contenu de menu volant, et un pied de page de menu volant peut éventuellement être affiché sous votre contenu de menu volant. Si le contenu de votre menu volant est défilant, Shell tente de respecter le comportement de défilement de votre en-tête de menu volant.
 
 ## <a name="menu-items"></a>Éléments de menu
 
