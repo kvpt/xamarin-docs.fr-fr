@@ -11,12 +11,12 @@ ms.date: 10/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8f93d20dac789abed57f8f41bf41778ad50a5fb5
-ms.sourcegitcommit: 995ee23d93e08dceb8754cc6c682cd2f4594345b
+ms.openlocfilehash: 2a8aa964dd2f18998e15d68df72f3cee1bd0ac5a
+ms.sourcegitcommit: 86663f94f8eddb808eb4504cd32ddaf217b6406c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97972316"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98166639"
 ---
 # <a name="how-do-i-migrate-my-app-to-no-locxamarinforms-50"></a>Comment faire migrer mon application vers Xamarin.Forms 5,0 ?
 
@@ -32,7 +32,7 @@ Xamarin.Forms 5,0 comprend les modifications avec rupture suivantes :
 
 En outre, les projets Android et UWP générés avec Xamarin.Forms 5,0 requièrent une mise à jour.
 
-## <a name="android"></a>Téléphone
+## <a name="android"></a>Android
 
 Les projets Android créés avec Xamarin.Forms 5,0 requièrent que vous ayez installé la plateforme AndroidX (Android 10,0) dans votre environnement de développement. Pour ce faire, vous pouvez utiliser le gestionnaire de Android SDK. Pour plus d’informations sur AndroidX, consultez [migration de Xamarin.Forms AndroidX dans ](~/xamarin-forms/platform/android/androidx-migration.md).
 
@@ -96,7 +96,7 @@ Pour ce faire, vous pouvez mettre à jour vos `using` instructions pour utiliser
 | `Android.Support.V7.App` | `AndroidX.AppCompat.App` |
 | `Android.Support.V7.Widget` | `AndroidX.AppCompat.Widget` |
 
-Pour obtenir la liste complète des mappages de classe à partir des bibliothèques de prise en charge vers AndroidX, consultez [mappages de classes de bibliothèque de prise en charge](https://developer.android.com/jetpack/androidx/migrate/class-mappings) sur Developer.Android.com.
+Pour obtenir la liste complète des mappages de classe à partir des bibliothèques de prise en charge vers AndroidX, consultez [mappages de classes AndroidX](https://github.com/xamarin/AndroidX/blob/master/mappings/androidx-class-mapping.csv) sur GitHub.com. Pour obtenir la liste complète des mappages d’assemblys à partir des bibliothèques de prise en charge vers AndroidX, consultez [assemblys AndroidX](https://github.com/xamarin/AndroidX/blob/master/mappings/androidx-assemblies.csv) sur GitHub.com
 
 #### <a name="remove-axml-files"></a>Supprimer les fichiers AXML
 
@@ -124,3 +124,5 @@ Un avertissement de génération est généré si votre projet UWP utilise une v
 
 - [Fonctionnalités déplacées à partir de Xamarin.Forms](https://github.com/xamarin/XamarinCommunityToolkit/wiki/Features-moved-from-Xamarin.Forms)
 - [Migration de AndroidX dans Xamarin.Forms](~/xamarin-forms/platform/android/androidx-migration.md)
+- [Mappages de classes AndroidX](https://github.com/xamarin/AndroidX/blob/master/mappings/androidx-class-mapping.csv)
+- [Assemblys AndroidX](https://github.com/xamarin/AndroidX/blob/master/mappings/androidx-assemblies.csv)
