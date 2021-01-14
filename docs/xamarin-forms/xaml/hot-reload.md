@@ -6,16 +6,16 @@ ms.assetid: E220F054-32EE-424C-A7E5-6156BE271519
 ms.technology: xamarin-forms
 author: maddyleger1
 ms.author: maleger
-ms.date: 03/14/2020
+ms.date: 01/14/2021
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ca79a8a4059a303b6f4bfa152d645311a6056ffd
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 62c7be9bd737b4d1860dca9f75cdde6acfadaa96
+ms.sourcegitcommit: 99e340360e8615fbc2971f48d6856f8701594825
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563885"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98204097"
 ---
 # <a name="xaml-hot-reload-for-no-locxamarinforms"></a>Rechargement à chaud XAML pour Xamarin.Forms
 
@@ -40,9 +40,10 @@ Si vous démarrez à partir d’un modèle, le rechargement à chaud XAML est ac
 
 Si vous travaillez à partir d’une Xamarin.Forms solution existante, aucune installation supplémentaire n’est requise pour utiliser le rechargement à chaud XAML, mais vous devrez peut-être vérifier votre configuration pour garantir la meilleure expérience. Tout d’abord, activez-le dans les paramètres de votre IDE :
 
-* Sur Windows, activez la case à cocher **activer le rechargement à chaud Xamarin** dans **Outils**  >  **options**  >  **Xamarin**  >  **rechargement chaud**.
-* Sur Mac, activez la case à cocher **activer le rechargement à chaud Xamarin** dans Outils Préférences **Visual Studio**  >  **Preferences**  >  **pour**le  >  **rechargement à chaud XAML**Xamarin.
-  * Dans les versions antérieures de Visual Studio pour Mac, le menu se trouve dans les préférences **Visual Studio**  >  **Preferences**  >  **projets**  >  **Xamarin rechargement à chaud**.
+* Sur Windows, activez la case à cocher **activer le rechargement à chaud XAML** (et les plateformes requises) dans **Outils**  >  **options**  >  **débogage** à  >  **chaud rechargement**.
+  * Dans les versions antérieures de Visual Studio 2019, la case à cocher se trouve dans **Outils**  >  **options**  >  **Xamarin**  >  **rechargement chaud**.
+* Sur Mac, activez la case à cocher **activer le rechargement à chaud Xamarin** dans Outils Préférences **Visual Studio**  >    >  **pour** le  >  **rechargement à chaud XAML** Xamarin.
+  * Dans les versions antérieures de Visual Studio pour Mac, la case à cocher se trouve dans les préférences **Visual Studio**  >    >  **projets**  >  **Xamarin à chaud**.
 
 Ensuite, dans vos paramètres de build Android et iOS, vérifiez que l’éditeur de liens est défini sur « ne pas lier » ou sur « lien aucun ». Pour utiliser le rechargement à chaud XAML avec un appareil iOS physique, vous devez également **activer l’option Activer l’interpréteur mono** (visual studio 16,4 et versions ultérieures) ou ajouter **--interpréteur** à vos **arguments mtouch supplémentaires** (Visual Studio 16,3 et versions antérieures).
 
@@ -75,7 +76,7 @@ Le rechargement à chaud XAML prend en charge le débogage simultané dans Visua
 * [Trucs et astuces pour le rechargement à chaud XAML](https://devblogs.microsoft.com/xamarin/tips-tricks-xaml-hot-reload/)
 * [Rechargement à chaud XAML pour Xamarin.Forms en profondeur : le Xamarin Show](https://www.youtube.com/watch?v=crhjjPjzknk)
 
-## <a name="troubleshooting"></a>Résolution des problèmes
+## <a name="troubleshooting"></a>Dépannage
 
 * Si le rechargement à chaud XAML ne parvient pas à s’initialiser :
   * Mettez à jour votre Xamarin.Forms version.
@@ -84,4 +85,4 @@ Le rechargement à chaud XAML prend en charge le débogage simultané dans Visua
 * Si rien ne se produit lors de l’enregistrement de votre fichier XAML, assurez-vous que le rechargement à chaud XAML est activé dans l’IDE.
 * Si vous effectuez un débogage sur un iPhone physique et que votre application ne répond plus, vérifiez que l’interpréteur est activé. Pour l’activer, activez la case à cocher **activer l’interpréteur mono** (Visual Studio 16.4/8.4 and up) ou Add **--interpréteur** dans le champ **arguments mTouch supplémentaires** (Visual Studio 16.3/8.3 et versions antérieures) dans vos paramètres de génération iOS.
 
-Pour signaler un bogue, utilisez **l’aide**  >  **Envoyer des commentaires**  >  **signaler un problème** sur Windows et **l’aide**pour  >  **signaler un problème** sur Mac.
+Pour signaler un bogue, utilisez **l’aide**  >  **Envoyer des commentaires**  >  **signaler un problème** sur Windows et **l’aide** pour  >  **signaler un problème** sur Mac.
