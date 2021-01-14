@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/09/2018
-ms.openlocfilehash: 418a0196849099da03983085aca9ceed2077207b
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 480ec0d4a815d62422e31a4110af52ca1628d1f7
+ms.sourcegitcommit: d4d293174a8324ce82b8f961ae6eadce294cafd7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030921"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98194898"
 ---
 # <a name="where-can-i-find-the-dsym-file-to-symbolicate-ios-crash-logs"></a>Où trouver le fichier .dSYM pour générer les symboles des journaux de plantage iOS ?
 
@@ -20,17 +20,17 @@ Lors de la génération d’une application iOS avec Visual Studio pour Mac ou V
 
 - Si vous avez activé les builds spécifiques à l’appareil, le. dSYM se trouve dans le répertoire suivant :
 
-    **&lt;répertoire du projet&gt;/bin/&lt;Platform&gt;/&lt;configuration&gt;/Device-builds/&lt;&gt;-&lt;&gt;**
+    **&lt;répertoire &gt; du projet &lt; /bin/ &gt; / &lt; configuration &gt; de la plateforme/Device-builds/ &lt; de l’appareil &gt; - &lt; -version&gt;/**
 
-    Exemple :
+    Par exemple :
   
     **TestApp/bin/iPhone/Release/Device-builds/iPhone 8.4-11.3.1/**
 
 - Si vous n’avez pas activé les builds spécifiques à l’appareil, le. dSYM se trouve dans le répertoire suivant :
 
-    **&lt;répertoire du projet&gt;/bin/&lt;de la plateforme&gt;/&lt;de configuration&gt;/**
+    **&lt;configuration de &gt; la &lt; plateforme &gt; /bin/ / &lt; Directory Project&gt;/**
 
-    Exemple :
+    Par exemple :
 
     **TestApp/bin/iPhone/mise en version/**
 
@@ -39,5 +39,5 @@ Lors de la génération d’une application iOS avec Visual Studio pour Mac ou V
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Fichiers d’incident Symbolicating iOS (Xamarin. iOS)](https://www.jmillerdev.net/symbolicating-ios-crash-files-xamarin-ios/)
+- [Fichiers d’incident Symbolicating iOS (Xamarin. iOS)](https://www.jmillerdev.com/symbolicating-ios-crash-files-xamarin-ios/)
 - [Démystification des journaux de panne des applications iOS](https://www.raywenderlich.com/23704/demystifying-ios-application-crash-logs)
