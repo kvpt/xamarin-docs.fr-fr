@@ -1,19 +1,19 @@
 ---
-title: Utilisation de City Team avec Xamarin
+title: Utilisation de TeamCity avec Xamarin
 description: Ce guide aborde les étapes nécessaires à l’utilisation de TeamCity pour compiler des applications mobiles, puis les envoyer à App Center test.
 ms.prod: xamarin
 ms.assetid: AC2626CB-28A7-4808-B2A9-789D67899546
 author: davidortinau
 ms.author: daortin
 ms.date: 04/01/2020
-ms.openlocfilehash: a7118cc3ce9c0a5c4254bb5921800fe38acd85a0
-ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
+ms.openlocfilehash: 553f40a407fa8003a6545214a545f00b01fb0ed6
+ms.sourcegitcommit: b75c369adb8e02a429b6c0fed8ba4a855099bf01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91458223"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98555033"
 ---
-# <a name="using-team-city-with-xamarin"></a>Utilisation de City Team avec Xamarin
+# <a name="using-teamcity-with-xamarin"></a>Utilisation de TeamCity avec Xamarin
 
 _Ce guide aborde les étapes nécessaires à l’utilisation de TeamCity pour compiler des applications mobiles, puis les envoyer à App Center test._
 
@@ -39,7 +39,7 @@ Plusieurs étapes sont nécessaires à la configuration de TeamCity :
 
 - **Création d’un projet TeamCity** : une fois les trois étapes précédentes terminées, nous devons créer un projet TeamCity qui contiendra toutes les métadonnées nécessaires pour récupérer le code source, compilez les projets et soumettez les tests à App Center test.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>Spécifications
 
 Une expérience avec [App Center Test](/appcenter/test-cloud/) est nécessaire.
 
@@ -59,7 +59,7 @@ L’une des étapes importantes de la configuration d’un serveur de builds con
 1. **Visual Studio pour Mac** : cela comprend Xamarin. iOS et Xamarin. Android.
 2. **Connectez-vous au magasin de composants Xamarin** – cette étape est facultative et n’est nécessaire que si votre application utilise des composants du magasin de composants Xamarin. La connexion proactive au magasin de composants à ce stade empêchera tout problème quand une build TeamCity essaie de compiler l’application.
 3. **Xcode** – Xcode est requis pour compiler et signer des applications iOS.
-4. **Outils en ligne de commande Xcode** : cela est décrit à l’étape 1 de la section Installation du Guide de [mise à jour de Ruby avec rbenv](https://github.com/calabash/calabash-ios/wiki) .
+4. **Outils de Command-Line Xcode** – décrit à l’étape 1 de la section Installation du Guide de [mise à jour de Ruby avec rbenv](https://github.com/calabash/calabash-ios/wiki) .
 5. **Signature de l’identité & profils de provisionnement** : importez les certificats et le profil de provisionnement via Xcode. Pour plus d’informations, consultez le Guide d’Apple sur l' [exportation des identités de signature et des profils de provisionnement](https://developer.apple.com/library/ios/recipes/xcode_help-accounts_preferences/articles/export_signing_assets.html) .
 6. **Magasins de clés Android** : copiez les magasins de clés Android nécessaires dans un répertoire auquel l’utilisateur TeamCity a accès, c.-à-d. `~/Documents/keystores/MyAndroidApp1` .
 7. **Calabash** : il s’agit d’une étape facultative si votre application a des tests écrits à l’aide de Calabash. Pour plus d’informations, consultez le guide [d’installation de Calabash sur OS X Mavericks](https://github.com/calabash/calabash-ios/wiki) et le Guide de [mise à jour de Ruby avec rbenv](https://github.com/calabash/calabash-ios/wiki) .
@@ -81,7 +81,7 @@ Bien qu’il soit possible pour TeamCity de gérer tous les aspects de la compil
 
 Le script de génération peut être aussi simple qu’un fichier PowerShell (sur Windows) ou un script bash (sur OS X). Lors de la création du script de génération, il existe plusieurs choix pour les langages de script :
 
-- [**Rake**](https://github.com/jimweirich/rake) : il s’agit d’un langage spécifique à un domaine (DSL) pour la génération de projets, en fonction de Ruby. Rake présente l’avantage de la popularité et un écosystème riche de bibliothèques.
+- [**Rake**](https://github.com/jimweirich/rake) : il s’agit d’un langage de Domain-Specific (DSL) pour la génération de projets, en fonction de Ruby. Rake présente l’avantage de la popularité et un écosystème riche de bibliothèques.
 
 - [**psake**](https://github.com/psake/psake) – il s’agit d’une bibliothèque Windows PowerShell pour la création de logiciels
 
@@ -200,7 +200,7 @@ Une fois TeamCity installé et Visual Studio pour Mac pouvez générer votre pro
 
 8. Une fois la génération terminée, examinez le journal de génération et vérifiez s’il existe des problèmes ou des avertissements avec la build qui requièrent votre attention.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Ce guide a expliqué comment utiliser TeamCity pour générer des applications mobiles Xamarin, puis les envoyer à App Center test. Nous avons abordé la création d’un script de génération pour automatiser le processus de génération. Le script de génération s’occupe de la compilation de l’application, de l’envoi à App Center test et de l’attente des résultats.
 
