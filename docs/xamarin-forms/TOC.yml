@@ -59,7 +59,7 @@ items:
           - name: Disposition de grille
             href: ~/get-started/tutorials/grid/index.yml
           - name: Listes
-            href: ~/get-started/tutorials/listview/index.yml
+            href: ~/get-started/tutorials/collectionview/index.yml
           - name: Fenêtres contextuelles
             href: ~/get-started/tutorials/pop-ups/index.yml
           - name: Cycle de vie d’application
@@ -352,7 +352,7 @@ items:
         href: app-fundamentals/triggers.md
   - name: Interface utilisateur
     items:
-      - name: Vue d'ensemble
+      - name: Vue d’ensemble
         href: user-interface/index.yml
       - name: Informations de référence sur les contrôles
         items:
@@ -755,7 +755,7 @@ items:
             href: platform/ios/visualelement-first-responder.md
       - name: Windows
         items:
-          - name: Vue d'ensemble
+          - name: Vue d’ensemble
             href: platform/windows/index.md
           - name: Répertoire d’images par défaut
             href: platform/windows/default-image-directory.md
