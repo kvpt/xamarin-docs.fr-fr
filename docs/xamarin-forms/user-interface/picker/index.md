@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsEmoji
+title: Xamarin.Forms Sélecteur
 description: Le Xamarin.Forms Sélecteur affiche une liste succincte d’éléments, à partir desquels l’utilisateur peut sélectionner un élément. Cet article explique comment utiliser la classe Picker pour sélectionner un élément de texte dans une liste de données.
 ms.prod: xamarin
 ms.assetid: D4815A4B-104B-4294-951B-BD8F2EC33C86
