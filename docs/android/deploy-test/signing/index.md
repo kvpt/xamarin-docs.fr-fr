@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 07/02/2018
-ms.openlocfilehash: 44003e55ee88db727c26def56b3363dbf6c982e9
-ms.sourcegitcommit: 124d845f8d2768353e8b7fe1ab1d959a589367f7
+ms.openlocfilehash: 07c20be730d73b080d99b2fecb88b26115c37bc2
+ms.sourcegitcommit: 63029dd7ea4edb707a53ea936ddbee684a926204
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91872275"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98609025"
 ---
 # <a name="signing-the-android-application-package"></a>Signature du paquet d’application Android
 
@@ -28,7 +28,7 @@ Dans [Archiver pour publication](~/android/deploy-test/release-prep/index.md#arc
 
 Dans [Archiver pour publication](~/android/deploy-test/release-prep/index.md#archive), la boîte de dialogue **Signer et distribuer...** proposait deux options pour la distribution. Sélectionnez **Ad-Hoc** et cliquez sur **Suivant** :
 
-[![Boîte de dialogue signer et distribuer](images/xs/01-select-ad-hoc-sml.png)](images/xs/01-select-ad-hoc.png#lightbox)
+[![Boîte de dialogue signer et distribuer, sélectionnez canal de distribution Android.](images/xs/01-select-ad-hoc-sml.png)](images/xs/01-select-ad-hoc.png#lightbox)
 
 -----
 
@@ -56,7 +56,7 @@ L’exemple suivant illustre le type d’informations qui doivent être fournies
 
 Le magasin de clés ainsi créé se trouve à l’emplacement suivant :
 
-**C : \\ utilisateurs \\ *nom_utilisateur* \\ AppData \\ local \\ Xamarin \\ mono pour Android alias du \\ magasin de clés \\ *ALIAS* \\ *ALIAS*. keystore**
+**C : \\ utilisateurs \\ *nom_utilisateur* \\ AppData \\ local \\ Xamarin \\ mono pour Android alias du \\ magasin de clés \\  \\ . keystore**
 
 Par exemple, en utilisant **chimp** comme alias, la procédure ci-dessus créerait une nouvelle clé de signature à l’emplacement suivant :
 
@@ -125,13 +125,13 @@ La capture d’écran suivante affiche un exemple de l’application prête à �
 Comme nous le voyons ici, un nouveau certificat a été ajouté au magasin de clés. Pour publier une application sur Google Play, cliquez sur **Annuler** et accédez à la rubrique [Publication sur Google Play](~/android/deploy-test/publishing/publishing-to-google-play/index.md).
 Sinon, cliquez sur **Suivant** pour publier l’application *ad-hoc* (en vue de sa distribution indépendante) comme illustré dans cet exemple :
 
-[![Boîte de dialogue signer et distribuer](images/xs/04-select-identity-sml.png)](images/xs/04-select-identity.png#lightbox)
+[![Boîte de dialogue signer et distribuer, identité de signature Android.](images/xs/04-select-identity-sml.png)](images/xs/04-select-identity.png#lightbox)
 
 La boîte de dialogue **Publier en tant qu’Ad Hoc** affiche un résumé de l’application signée avant sa publication. Si ces informations sont correctes, cliquez sur **Publier**.
 
 [![Boîte de dialogue publier en tant que ad hoc](images/xs/05-publish-ad-hoc-sml.png)](images/xs/05-publish-ad-hoc.png#lightbox)
 
-La boîte de dialogue **Fichier APK de sortie** enregistre l’APK dans le chemin spécifié. Cliquez sur **Enregistrer**.
+La boîte de dialogue **Fichier APK de sortie** enregistre l’APK dans le chemin spécifié. Cliquez sur **Save** (Enregistrer).
 
 ![Boîte de dialogue Fichier APK de sortie](images/xs/06-output-apk-file.png)
 

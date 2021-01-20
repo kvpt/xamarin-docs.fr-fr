@@ -1,0 +1,41 @@
+### YamlMime:Tutorial
+title: Tutoriel CollectionView Xamarin.Forms
+metadata:
+  title: Tutoriel CollectionView Xamarin.Forms
+  description: Découvrez comment présenter des listes de données en utilisant la CollectionView de Xamarin.Forms.
+  audience: Developer
+  level: Beginner
+  ms.topic: interactive-tutorial
+  ms.date: 01/15/2021
+  author: davidbritch
+  ms.author: dabritch
+  no-loc:
+  - Xamarin.Forms
+  - Xamarin.Essentials
+  ms.openlocfilehash: 36f481c6c8790725f797e51fbf1839a1981d741b
+  ms.sourcegitcommit: b75c369adb8e02a429b6c0fed8ba4a855099bf01
+  ms.translationtype: HT
+  ms.contentlocale: fr-FR
+  ms.lasthandoff: 01/18/2021
+  ms.locfileid: "98558984"
+items:
+- durationInMinutes: 1
+  content: >
+    [!INCLUDE [](includes/intro.md)]
+- title: Créer une CollectionView
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [](includes/create.md)]
+- title: Remplir de données
+  durationInMinutes: 4
+  content: >
+    [!INCLUDE [](includes/populate-data.md)]
+- title: Répondre à la sélection d’un élément
+  durationInMinutes: 3
+  content: >
+    [!INCLUDE [](includes/item-selection.md)]
+- title: Personnaliser l’apparence des éléments
+  durationInMinutes: 3
+  content: >
+    [!INCLUDE [](includes/customize-item-appearance.md)]
+- content: '[!INCLUDE [](includes/completed.md)]'

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 8f379e8639846d9a6424c4aaadf83ff89d7a8684
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 62706082496732f60136e4283d5ff7a087488dd3
+ms.sourcegitcommit: b75c369adb8e02a429b6c0fed8ba4a855099bf01
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "71107230"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98557155"
 ---
 Avant de tenter ce didacticiel, vous devez avoir suivi les guides et didacticiels suivants :
 
@@ -12,7 +12,7 @@ Avant de tenter ce didacticiel, vous devez avoir suivi les guides et didacticiel
 - Didacticiel [StackLayout](~/get-started/tutorials/stacklayout/index.yml).
 - Didacticiel [Button](~/get-started/tutorials/button/index.yml).
 - Didacticiel [Entry](~/get-started/tutorials/entry/index.yml).
-- Didacticiel [ListView](~/get-started/tutorials/listview/index.yml).
+- Tutoriel [CollectionView](~/get-started/tutorials/collectionview/index.yml).
 
 Dans ce tutoriel, vous allez apprendre à :
 

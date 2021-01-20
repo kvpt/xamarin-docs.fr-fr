@@ -10,12 +10,12 @@ ms.date: 09/24/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e78acc88c9f159fdeb797663f1c90283ed0d803b
-ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
+ms.openlocfilehash: 3daf08c688be41652ae2573b0bf58e2ace2072c6
+ms.sourcegitcommit: 63029dd7ea4edb707a53ea936ddbee684a926204
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97939782"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98609142"
 ---
 # <a name="no-locxamarinforms-shapes-fill-rules"></a>Xamarin.Forms Formes : règles de remplissage
 
@@ -101,11 +101,11 @@ L’exemple XAML suivant crée et restitue une forme composite, avec le `FillRul
 
 Dans cet exemple, une forme composite composée d’une série d’anneaux concentriques s’affiche :
 
-![Forme composite avec une règle de remplissage différente de zéro](fillrule-images/nonzero.png "Forme composite avec une règle de remplissage différente de zéro")
+![Le diagramme illustre quatre cercles concentriques, tous remplis.](fillrule-images/nonzero.png "Forme composite avec une règle de remplissage différente de zéro")
 
 Dans la forme composite, Notez que tous les anneaux sont remplis. Cela est dû au fait que tous les segments s’exécutent dans la même direction, et qu’un rayon dessiné à partir de n’importe quel point franchit un ou plusieurs segments et que la somme des croisements n’est pas égale à zéro :
 
-![Forme composite annotée avec une règle de remplissage différente de zéro](fillrule-images/nonzero-annotated.png "Forme composite annotée avec une règle de remplissage différente de zéro")
+![Le diagramme montre les cercles du diagramme précédent avec des flèches directionnelles et un rayon annoté avec + 1 pour chaque cercle traversé.](fillrule-images/nonzero-annotated.png "Forme composite annotée avec une règle de remplissage différente de zéro")
 
 Dans l’image ci-dessus, les flèches rouges représentent la direction dans laquelle les segments sont dessinés, tandis que la flèche noire représente un rayon arbitraire exécuté à partir d’un point dans l’anneau le plus profond. En commençant par une valeur égale à zéro, pour chaque segment que le rayon traverse, une valeur de un est ajoutée car le segment traverse le rayon de gauche à droite.
 
@@ -172,11 +172,11 @@ Une forme plus complexe avec des segments exécutés dans des directions différ
 
 Dans cet exemple, une série de segments d’arc sont dessinés, qui ne sont pas fermés :
 
-![Forme composite avec une règle de remplissage différente de zéro](fillrule-images/nonzero-gaps.png "Forme composite avec une règle de remplissage différente de zéro")
+![Le diagramme illustre quatre cercles concentriques, les plus éloignés et les plus éloignés étant remplis.](fillrule-images/nonzero-gaps.png "Forme composite avec une règle de remplissage différente de zéro")
 
 Dans l’image ci-dessus, le troisième arc à partir du centre n’est pas rempli. Cela est dû au fait que la somme des valeurs d’un rayon donné traversant les segments dans son chemin d’accès est égale à zéro :
 
-![Forme composite annotée avec une règle de remplissage différente de zéro](fillrule-images/nonzero-gaps-annotated.png "Forme composite annotée avec une règle de remplissage différente de zéro")
+![Le diagramme montre les cercles du diagramme précédent avec des flèches directionnelles et deux rayons annotés avec + 1 ou-1 pour chaque cercle qu’ils croisent.](fillrule-images/nonzero-gaps-annotated.png "Forme composite annotée avec une règle de remplissage différente de zéro")
 
 Dans l’image ci-dessus, le cercle rouge représente un point, les lignes noires représentent des rayons arbitraires qui sortent du point de la région non remplie, et les flèches rouges représentent la direction dans laquelle les segments sont dessinés. Comme vous pouvez le constater, la somme des valeurs des rayons qui franchissent les segments est égale à zéro :
 
